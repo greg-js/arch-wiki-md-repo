@@ -54,9 +54,7 @@ OTHER_OPTS='-a alsa -m alsa_seq -r 48000'
 
 ```
 
-After that, you can [start/enable](/index.php/Start/enable "Start/enable") the fluidsynth service. Be aware of bug [https://bugs.archlinux.org/task/50122](https://bugs.archlinux.org/task/50122) when using the pulseaudio driver.
-
-Note that you can't use root to restart the fluidsynth service, if you're using the pulseaudio driver. Pulseaudio won't allow root to connect, since the pulseaudio server is usually started by the user (and not root). You can solve it by creating a [systemd/User](/index.php/Systemd/User "Systemd/User") service (replacing `multi-user.target` with `default.target` in the copied `fluidsynth.service`).
+After that, you can [start/enable](/index.php/Start/enable "Start/enable") the fluidsynth service. Note that you can't use root to restart the fluidsynth service, if you're using the pulseaudio driver. Pulseaudio won't allow root to connect, since the pulseaudio server is usually started by the user (and not root). You can solve it by creating a [systemd/User](/index.php/Systemd/User "Systemd/User") service (replacing `multi-user.target` with `default.target` in the copied `fluidsynth.service`).
 
 The following will give you an output software MIDI port (in addition of hardware MIDI ports on your system, if any):
 

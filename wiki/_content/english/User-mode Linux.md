@@ -1,13 +1,17 @@
 User-mode-Linux (UML) is a method to run Linux inside Linux as a normal process. Please check [[1]](http://user-mode-linux.sourceforge.net/) for in-depth information what UML is and how it works.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Why use UML?](#Why_use_UML.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Why use UML?](#Why_use_UML?)
 *   [2 HOWTO](#HOWTO)
-    *   [2.1 Setup by hostfs + vde2](#Setup_by_hostfs_.2B_vde2)
+    *   [2.1 Setup by hostfs + vde2](#Setup_by_hostfs_+_vde2)
         *   [2.1.1 Required packages](#Required_packages)
         *   [2.1.2 Launch script](#Launch_script)
-    *   [2.2 Setup by rootfs + tap](#Setup_by_rootfs_.2B_tap)
+    *   [2.2 Setup by rootfs + tap](#Setup_by_rootfs_+_tap)
         *   [2.2.1 Required packages](#Required_packages_2)
         *   [2.2.2 Build rootfs image](#Build_rootfs_image)
     *   [2.3 Marionnet](#Marionnet)

@@ -2,7 +2,11 @@
 
 Este artículo explica la instalación del paquete *virtualenv* y de *virtualenvwrapper*, un complemento para *virtualenv* diseñado por [Dough Hellmann](https://github.com/dhellmann) que facilita enormemente el uso de *virtualenv*. Además, se explica a continuación el uso más básico de ambas herramientas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Entornos virtuales](#Entornos_virtuales)
 *   [2 Virtualenv](#Virtualenv)

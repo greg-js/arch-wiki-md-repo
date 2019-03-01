@@ -2,7 +2,11 @@ From [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(progr
 
 	"The D programming language, also known simply as D, is an object-oriented, imperative, multi-paradigm system programming language by Walter Bright of Digital Mars. It originated as a re-engineering of C++, but even though it is predominantly influenced by that language, it is not a variant of it. D has redesigned some C++ features and has been influenced by concepts used in other programming languages, such as Java, C#, and Eiffel".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Testing the installation](#Testing_the_installation)
@@ -12,7 +16,7 @@ From [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(progr
 
 ## Installation
 
-To program in D you will need two things - a D compiler and a library. Easiest way to get started fast is to install [dlang-dmd](https://www.archlinux.org/groups/x86_64/dlang-dmd/) package group. It will provide the official compiler ([dmd](https://www.archlinux.org/packages/?name=dmd)), the standard lbrary [libphobos](https://www.archlinux.org/packages/?name=libphobos) and [dtools](https://www.archlinux.org/packages/?name=dtools), a collection of small development tools.
+To program in D you will need two things - a D compiler and a library. Easiest way to get started fast is to install [dlang-dmd](https://www.archlinux.org/groups/x86_64/dlang-dmd/) package group. It will provide the official compiler ([dmd](https://www.archlinux.org/packages/?name=dmd)), the standard library [libphobos](https://www.archlinux.org/packages/?name=libphobos) and [dtools](https://www.archlinux.org/packages/?name=dtools), a collection of small development tools.
 
 ## Testing the installation
 
@@ -23,7 +27,7 @@ import std.stdio;
 
 void main() {
    string yourName = "archer";
-   writefln("Hello %s!", yourName);
+   writefln("Hello %s!", yourName);
 }
 
 ```

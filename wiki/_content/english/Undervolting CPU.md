@@ -23,13 +23,12 @@ Undervolting is a process through which voltage to computer processors and compo
         *   [2.1.2 Configuration and usage](#Configuration_and_usage)
     *   [2.2 amdctl](#amdctl)
         *   [2.2.1 Installation](#Installation_2)
-        *   [2.2.2 Usage](#Usage)
 
 ## Overview
 
 *   [PHC](/index.php/PHC "PHC") - a tool to undervolt some old generation Intel and AMD processors. **Not** compatible with `intel_pstate` [CPU frequency driver](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling").
 *   [#intel-undervolt](#intel-undervolt) - a tool for undervolting Haswell and newer Intel CPU using MSR. Compatible with `intel_pstate`.
-*   [#amdctl](#amdctl) - a tool for undervolting K10 and newer AMD CPUs
+*   [#amdctl](#amdctl) - a tool for undervolting K10 and newer AMD CPUs.
 
 ## Tools
 
@@ -83,12 +82,8 @@ Once you find stable configuration, you can also [enable](/index.php/Enable "Ena
 
 ### amdctl
 
-[amdctl](https://github.com/kevinlekiller/amdctl/) is a tool for undervolting K10 and newer AMD CPUs
+[amdctl](https://github.com/kevinlekiller/amdctl/) is a tool for undervolting K10 and newer AMD CPUs.
 
 #### Installation
 
 The tool can be installed as [amdctl-git](https://aur.archlinux.org/packages/amdctl-git/).
-
-#### Usage
-
-todo

@@ -102,21 +102,21 @@ To exit the virtual environment, run the function provided by `bin/activate`:
 
 ## Python versions
 
-The binary versions depend on which virtual environment tool was used. For instance, the *python* command used in the Python 2 example points to `bin/python2.7`, while the one in the *venv* example points to `bin/python3.6`.
+The binary versions depend on which virtual environment tool was used. For instance, the *python* command used in the Python 2 example points to `bin/python2.7`, while the one in the *venv* example points to `bin/python3.7`.
 
 One major difference between *venv* and *virtualenv* is that the former uses the system's Python binary by default:
 
 ```
-$ ls -l venv/bin/python3.6
-lrwxrwxrwx 1 foo foo 7 Jun  3 19:57 venv/bin/python3.6 -> /usr/bin/python3
+$ ls -l venv/bin/python3.7
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:57 venv/bin/python3.7 -> /usr/bin/python3
 
 ```
 
 The *virtualenv* tool uses a separate Python binary in the environment directory:
 
 ```
-$ ls -l virtualenv/bin/python3.6
-lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 virtualenv/bin/python3.6 -> python3
+$ ls -l virtualenv/bin/python3.7
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 virtualenv/bin/python3.7 -> python3
 
 ```
 

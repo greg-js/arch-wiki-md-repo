@@ -573,9 +573,11 @@ On stock arch, pacman only trust keys which are either signed by you (That can b
  `/etc/pacman.conf` 
 ```
 ...
-XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
+XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 --continue-at - --fail --output %o %u
 ...
 ```
+
+**Note:** Due to work in progress for database signatures, you might get 404 for the signatures. Depending on your [Pacman/Package_signing#Configuring pacman](/index.php/Pacman/Package_signing#Configuring_pacman "Pacman/Package signing"), it should be harmless.
 
 ## Java
 
@@ -896,7 +898,7 @@ nameserver 127.0.0.1
 
 Start the **dnsmasq** daemon.
 
-Finally if you use *dhcpd* you would need to change its settings to that it does not alter the resolv configuration file. Just add this line in the configuration file:
+Finally if you use [dhcpcd](/index.php/Dhcpcd "Dhcpcd") you would need to change its settings to that it does not alter the resolv configuration file. Just add this line in the configuration file:
 
  `/etc/dhcpcd.conf` 
 ```
@@ -908,7 +910,7 @@ If you already have an *nohook* line, just add **resolv.conf** separated with a 
 
 ## Torsocks
 
-**torsocks** will allow you use an application via the Tor network without the need to make configuration changes to the application involved. From the man page:
+[torsocks](https://www.archlinux.org/packages/?name=torsocks) will allow you use an application via the Tor network without the need to make configuration changes to the application involved. From the man page:
 
 *torsocks is a wrapper between the torsocks library and the application in order to make every Internet communication go through the Tor network.*
 
@@ -1034,7 +1036,7 @@ Refer to [superuser.com](https://superuser.com/questions/710253/allow-non-root-p
 
 ### Problem with user value
 
-If the **tor** daemon failed to start, then run the following command as root (or use sudo)
+If the **tor** daemon failed to start, then run the following command as root (or use [sudo](/index.php/Sudo "Sudo"))
 
 ```
 # tor

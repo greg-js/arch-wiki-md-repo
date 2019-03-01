@@ -278,7 +278,7 @@ If it still does not work, try disabling DPM, by setting the [kernel parameters]
 
 ### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
 
-If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
+If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amdgpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
 
 ### Cursor corruption
 

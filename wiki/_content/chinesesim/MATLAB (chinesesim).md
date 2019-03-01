@@ -10,7 +10,11 @@ Related articles
 
 	*MATLAB是可用于数值计算，可视化和编程的高级语言和交互式环境。MATLAB可以分析数据，开发算法和创建模型和应用程序。与电子表格或传统编程语言（如C / C ++或Java）相比，Matlab的语言，工具和内置数学函数可以使用户更快地探索多种解决问题的方法并形成解决方案。*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 概览](#概览)
 *   [2 安装](#安装)

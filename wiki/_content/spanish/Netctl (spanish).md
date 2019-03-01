@@ -149,7 +149,7 @@ Desde netctl 1.3, es posible controlar manualmente una interfaz gestionada de ot
 
 *netctl* se vale del directorio `/etc/netctl` para almacenar los distintos perfiles de las conexiones de red **en lugar de** `/etc/network.d`, (el cual era el directorio en el cual *netcfg* almacenaba los perfiles de las conexiones de red).
 
-Para migrar de netcfg a *netcfg* es necesario, al menos, lo siguiente:
+Para migrar de netcfg a *netctl* es necesario, al menos, lo siguiente:
 
 *   Desactivar el servicio netcfg: `systemctl disable netcfg.service`.
 *   Desinstalar *netcfg* e instalar *netctl*.

@@ -1,6 +1,10 @@
 Tato stránka popisuje jak opravit počítač, jehož jádro při náběhu zpanikaří (= **kernel panic**, jádro zastaví svoji činnost).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Řešení problému](#Řešení_problému)
 *   [2 1\. možnost: Přeinstalace jádra](#1._možnost:_Přeinstalace_jádra)

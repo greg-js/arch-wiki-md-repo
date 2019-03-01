@@ -27,13 +27,14 @@ This page contains information about running games and related system configurat
         *   [3.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
         *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse's_buffering)
     *   [3.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
-*   [4 Improving performance](#Improving_performance)
-    *   [4.1 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
-        *   [4.1.1 Policies](#Policies)
-        *   [4.1.2 Nice levels](#Nice_levels)
-        *   [4.1.3 Core affinity](#Core_affinity)
-        *   [4.1.4 General case](#General_case)
-        *   [4.1.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
+*   [4 Remote gaming](#Remote_gaming)
+*   [5 Improving performance](#Improving_performance)
+    *   [5.1 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
+        *   [5.1.1 Policies](#Policies)
+        *   [5.1.2 Nice levels](#Nice_levels)
+        *   [5.1.3 Core affinity](#Core_affinity)
+        *   [5.1.4 General case](#General_case)
+        *   [5.1.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 
 ## Game environments
 
@@ -199,6 +200,20 @@ Matching the buffers can reduce stuttering and increase performance marginally. 
 ### Double check your CPU frequency scaling settings
 
 If your system is currently configured to properly insert its own cpu frequency scaling driver, the system sets the default governor to Ondemand. By default, this governor only adjusts the clock if the system is utilizing 95% of its CPU, and then only for a very short period of time. This saves power and reduces heat, but has a noticeable impact on performance. You can instead only have the system downclock when it is idle, by tuning the system governor. To do so, see [Cpufrequtils#Tuning the ondemand governor](/index.php/Cpufrequtils#Tuning_the_ondemand_governor "Cpufrequtils").
+
+## Remote gaming
+
+Cloud gaming has gained a lot of popularity in the last few years, because of low client-side hardware requirements. The only important thing is rock-stable internet connection (over the ethernet cable or 5ghz WiFi recommended) with a minimum speed of 5-10mbps (depending on the video quality and framerate).
+
+*   [Steam In-Home](/index.php/Steam#In-home_streaming "Steam") — Remotely play games on the LAN from host machine. Some users managed to get it working over the VPN.
+*   [Parsec](https://ui.parsecgaming.com/) — Remotely play games either from your host machine or rented (within an app) cloud machine. It prioritizes direct connection to the host (great for VPN connections) and if it's not available, then connects via Parsec's servers. Can be installed as [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/).
+*   [LiquidSky](https://liquidsky.com/) — Remotely play games from rented (within an app) cloud machine. Can be installed as [liquidsky](https://aur.archlinux.org/packages/liquidsky/).
+*   [Shadow](https://shadow.tech/) — Remotely play games from rented (within an app) cloud machine. Can be installed as [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/).
+
+Also there are other services where users have reported success getting it to work under Linux (via [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton):
+
+*   [PS Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) — Play PS4, PS3 and PS2 games on PC.
+*   [PLAYKEY](https://playkey.net/) — Yet another cloud gaming service.
 
 ## Improving performance
 

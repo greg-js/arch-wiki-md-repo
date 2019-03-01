@@ -4,7 +4,7 @@
 *   [一般建议](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
 
-**翻译状态：** 本文是英文页面 [Installing_Arch_Linux_on_a_USB_key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-9-9，点击[这里](https://wiki.archlinux.org/index.php?title=Installing_Arch_Linux_on_a_USB_key&diff=0&oldid=398959)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-01，点击[这里](https://wiki.archlinux.org/index.php?title=Installing+Arch+Linux+on+a+USB+key&diff=0&oldid=566121)可以查看翻译后英文页面的改动。
 
 本页讨论如何在U盘(闪存盘)上安装一个常规的 Arch，这里的系统是指一个可以升级和使用的系统，而不是一个用来引导系统启动的[USB 安装媒介](/index.php/USB_Installation_Media_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "USB Installation Media (简体中文)")。
 
@@ -22,9 +22,8 @@
     *   [3.3 Syslinux](#Syslinux)
 *   [4 小技巧](#小技巧)
     *   [4.1 在多个机器上使用优盘](#在多个机器上使用优盘)
-        *   [4.1.1 架构](#架构)
-        *   [4.1.2 输入设备](#输入设备)
-        *   [4.1.3 显卡驱动](#显卡驱动)
+        *   [4.1.1 输入设备](#输入设备)
+        *   [4.1.2 显卡驱动](#显卡驱动)
     *   [4.2 兼容性](#兼容性)
         *   [4.2.1 持久块设备命名](#持久块设备命名)
         *   [4.2.2 内核参数](#内核参数)
@@ -50,14 +49,11 @@
 
 按照[安装指南](/index.php/Installation_guide "Installation guide")进行安装，仅需注意以下几点：
 
-*   如果 cfdisk 由于 "Partition ends in the final partial cylinder" 这个错误失败，唯一的解决方法就是干掉U盘上的所有分区。打开另一个终端(Alt+F2)，输入 fdisk /dev/sdX (sdX 对应你的 U盘)，显示分区表(p)，查看，删除掉已存在的分区(d)然后保存修改(w)。最后，再进 cfdisk。
-*   强烈建议，关于如何选择文件系统的问题，请先阅读一下 [SSD](/index.php/SSD "SSD") 这篇文章 [关于优化 SSD 固态硬盘读写的技巧](/index.php/SSD#Tips_for_minimizing_disk_reads/writes "SSD")，总地来说，不带日志(journal)功能的 ext4 是比较通用的优选方案。可以用这样的命令来创建：`# mkfs.ext4 -O "^has_journal" /dev/sdXX`。因为带日志功能的文件系统日志更新会在一定程度上消耗闪存有限的写入寿命。由于同样的原因，最好放弃 swap 分区。注意这个建议并不适用于安装在 USB(机械)硬盘的情况。
-*   用 `# mkinitcpio -p linux`创建 RAM Disk 前，在修改 `/etc/mkinitcpio.conf`，将 `block` 添加到紧挨 udev 的后面. 只有这样早期用户空间才能正确的装入模块。
+*   [创建 RAM Disk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") 前，修改 `/etc/mkinitcpio.conf`，将 `block` 和 `keyboard` 钩子移动到 `autodetect` 前面。只有这样生成的早期用户空间才能包含支持不同的系统硬件的模块。
+*   强烈建议，关于如何选择文件系统的问题，请先阅读一下 [SSD](/index.php/SSD "SSD") 这篇文章 [关于优化 SSD 固态硬盘读写的技巧](/index.php/Improving_performance "Improving performance")，总地来说，不带日志(journal)功能的 ext4 是比较通用的优选方案。可以用这样的命令来创建：`# mkfs.ext4 -O "^has_journal" /dev/sdXX`。因为带日志功能的文件系统日志更新会在一定程度上消耗闪存有限的写入寿命。由于同样的原因，最好放弃 swap 分区。注意这个建议并不适用于安装在 USB(机械)硬盘的情况。
 *   如果想在其它操作系统上继续使用优盘，可以使用 NTFS 或 exFAT 创建数据分区. 数据分区需要是设备的第一个分区，因为 Windows 会假定移动设备仅有一个分区。需要安装 [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) 和 [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g).网上有一些工具可以翻转U盘的可移动媒体位使得操作系统把它当作额外的硬盘，这样你就可以使用你选择的任意磁盘划分方式。
 
 **警告:** 因为不是所有的U盘都可以翻转可移动媒体位而且使用不成熟的软件进行操作可能会损坏你的设备，所以不推荐使用翻转可移动媒体位的方法
-
-*   安装[NetworkManager](/index.php/NetworkManager "NetworkManager")来管理网络，它可以改变不同硬件的接口名称
 
 ## 配置
 
@@ -74,20 +70,11 @@
 
 GRUB legacy的配置文件`menu.lst` 应该大致如下进行编辑:
 
-使用固定的`/dev/sda*X*`:
-
-```
-root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/sda1 ro
-initrd /boot/initramfs-linux.img
-
-```
-
 使用标签时，你的配置文件应该像这样:
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-label/**Arch** rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -96,7 +83,7 @@ initrd /boot/initramfs-linux.img
 
 ```
 root (hd0,0)
-kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+kernel /boot/vmlinuz-linux root=/dev/disk/by-uuid/3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
 initrd /boot/initramfs-linux.img
 
 ```
@@ -128,22 +115,11 @@ initrd /boot/initramfs-linux.img
 如果希望在运行UEFI的计算机上运行，确定你遵循了[GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB")的说明，并加上--removable 选项（否则可能会损坏已有的GRUB安装），例如：
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--removable** --recheck
+# grub-install --target=x86_64-efi --efi-directory=*esp*  **--removable** --recheck
 
 ```
 
 ### Syslinux
-
-使用固定的`/dev/sda*X*`:
-
-```
-LABEL Arch
-        MENU LABEL Arch Linux
-        LINUX ../vmlinuz-linux
-        APPEND root=/dev/sdax ro
-        INITRD ../initramfs-linux.img
-
-```
 
 使用UUID:
 
@@ -151,7 +127,7 @@ LABEL Arch
 LABEL Arch
         MENU LABEL Arch Linux
         LINUX ../vmlinuz-linux
-        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa ro
+        APPEND root=UUID=3a9f8929-627b-4667-9db4-388c4eaaf9fa rw
         INITRD ../initramfs-linux.img
 
 ```
@@ -159,12 +135,6 @@ LABEL Arch
 ## 小技巧
 
 ### 在多个机器上使用优盘
-
-#### 架构
-
-i686 架构可以在 32位和 64位系统上使用，而且 32位二进制软件包会减少空间占用。
-
-**注意:** 如果要 Chroot 到 64 位系统（例如进行安装或系统修复），必须使用 x86_64 Arch.
 
 #### 输入设备
 
@@ -198,7 +168,7 @@ i686 架构可以在 32位和 64位系统上使用，而且 32位二进制软件
 
 ### 最小化磁盘访问
 
-*   你也许希望[journald](/index.php/Systemd#Journal "Systemd")将日志储存到内存中,例如新建这样的配置文件来实现 :
+*   要将 [journald](/index.php/Systemd "Systemd") 日志储存到内存中,可以新建配置文件:
 
  `/etc/systemd/journald.conf.d/usbstick.conf` 
 ```

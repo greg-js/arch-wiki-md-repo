@@ -10,7 +10,7 @@ This article describes how to install Arch Linux on a Chromebook in a container 
 
 	Disadvantages
 
-*   Audio support is still [in progress](https://crbug.com/781398) (Feb 4 2019)
+*   Audio support rolling in [Chroms Os 74](https://crbug.com/781398) (Feb 28 2019)
 *   OpenGL support is still [in progress](https://crbug.com/837073) (Feb 4 2019)
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

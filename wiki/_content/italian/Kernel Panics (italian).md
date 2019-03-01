@@ -1,6 +1,10 @@
 In questa pagina si descrive come ritornare ad una versione precedente del kernel, nel caso in cui quella corrente abbia avuto qualche problema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Avvio dal CD di installazione](#Avvio_dal_CD_di_installazione)
 *   [2 Chroot nel proprio disco di root](#Chroot_nel_proprio_disco_di_root)

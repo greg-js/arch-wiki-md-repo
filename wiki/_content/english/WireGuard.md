@@ -58,7 +58,7 @@ The below commands demonstrate how to setup a basic tunnel between two peers wit
 | Internal IP address | 10.0.0.1/24 | 10.0.0.2/24 |
 | Wireguard listening port | UDP/48574 | UDP/39814 |
 
-The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the *ip* commands below and will be shared internally within the new WireGuard network. The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
+The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) commands below and will be shared internally within the new WireGuard network using [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8). The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
 
 ### Key generation
 
@@ -109,11 +109,11 @@ This peer will listen on UDP port 48574 and will accept connection from peer B b
 
 ```
 
-`[Peer B public key]` should have the same format as `EsnHH9m6RthHSs+sd9uM6eCHe/mMVFaRh93GYadDDnM=`. `allowed-ips` is a list of addresses that peer A will be able to send traffic to; `allowed-ips 0.0.0.0/0` would allow sending traffic to any address.
+`[Peer B public key]` should have the same format as `EsnHH9m6RthHSs+sd9uM6eCHe/mMVFaRh93GYadDDnM=`. The keyword `allowed-ips` is a list of addresses that peer A will be able to send traffic to; `allowed-ips 0.0.0.0/0` would allow sending traffic to any IPv4 address, `::/0` allows sending traffic to any IPv6 address.
 
 ### Peer B setup
 
-As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
+As with peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
 
 ```
 # ip link add dev wg0 type wireguard
@@ -126,7 +126,7 @@ As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 
 
 ### Basic checkups
 
-Invoking the `wg` command without parameter will give a quick overview of the current configuration.
+Invoking the [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8) command without parameter will give a quick overview of the current configuration.
 
 As an example, when Peer A has been configured we are able to see its identity and its associated peers:
 
@@ -240,7 +240,6 @@ Generate key pairs for the server and for each client as explained in [#Key gene
 
 Create the server config file:
 
-**Note:** The *PresharedKey* line is optional. If retained, the server and each client are required to have it in their respective config files. See the wg manpage for more.
  `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
@@ -262,17 +261,14 @@ AllowedIPs = 10.200.200.2/32
 [Peer]
 # client bar
 PublicKey = [BAR's PUBLIC KEY]
-PresharedKey = [PRE-SHARED KEY]
 AllowedIPs = 10.200.200.3/32
 ```
 
-**Note:** Additional peers can be listed in the same format as needed.
+Additional peers can be listed in the same format as needed. Each peer required the `PublicKey` to be set. However, specifying `PresharedKey` is optional.
 
-The interface can be managed manually or by systemctl.
+The interface can be managed manually using [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) or using a [systemd](/index.php/Systemd "Systemd") service managed via [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1).
 
-For example: bring the interface up by using `wg-quick up wg0` and bring it down by using `wg-quick down wg0`.
-
-Alternatively, systemctl can be used to manage the interface. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") it via `wg-quick@.service` where the server config name is inserted after the "@" symbol. For example, [start](/index.php/Start "Start") `wg-quick@wg0.service`.
+The interface may be brought up using `wg-quick up wg0` respectively by [starting](/index.php/Start "Start") and potentially [enabling](/index.php/Enable "Enable") the interface via `wg-quick@*interface*.service`, e.g. `wg-quick@wg0.service`. To close the interface use `wg-quick down wg0` respectively [stop](/index.php/Stop "Stop") `wg-quick@*interface*.service`.
 
 ### Client config
 
@@ -301,14 +297,13 @@ DNS = 10.200.200.1
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
 PresharedKey = [PRE-SHARED KEY]
-AllowedIPs = 0.0.0.0/0
+AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = my.ddns.address.com:51820
 ```
 
-**Note:**
+Using the catch-all `AllowedIPs = 0.0.0.0/0, ::/0` will forward all IPv4 (`0.0.0.0/0`) and IPv6 (`::/0`) traffic over the VPN.
 
-*   Using `AllowedIPs = 0.0.0.0/0, ::/0` will forward all IPv4 and IPv6 traffic over the VPN.
-*   Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
+**Note:** Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
 
 **Tip:** If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to share the config with the client:
 ```

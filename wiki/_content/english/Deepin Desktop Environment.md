@@ -17,7 +17,8 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
     *   [2.1 Via a display manager](#Via_a_display_manager)
     *   [2.2 Via xinit](#Via_xinit)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Customize the touchpad gesture](#Customize_the_touchpad_gesture)
+    *   [3.1 Customize touchpad gesture behavior](#Customize_touchpad_gesture_behavior)
+    *   [3.2 Changing default deepin sounds](#Changing_default_deepin_sounds)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
     *   [4.2 Wireless network does not connect](#Wireless_network_does_not_connect)
@@ -55,9 +56,9 @@ To use Deepin via [xinit](/index.php/Xinit "Xinit"), you'll need to add the foll
 
 ## Configuration
 
-### Customize the touchpad gesture
+### Customize touchpad gesture behavior
 
-Deepin doesn't officially support customize the gesture, but we can do it by changing the configuration file. Configuration file directory:
+Deepin doesn't officially support customizing the gesture behaviors, but it is possible to manually change this by editing the configuration file. Configuration file directory:
 
 ```
 /usr/share/dde-daemon/gesture.json
@@ -65,6 +66,17 @@ Deepin doesn't officially support customize the gesture, but we can do it by cha
 ```
 
 Reboot or re-login after you edit the file.
+
+### Changing default deepin sounds
+
+While this is not officially supported, it is possible to change or even remove the default sounds that are used by Deepin (ex. login sound). Simply replace the sounds in the directory:
+
+```
+/usr/share/sounds/deepin/stereo
+
+```
+
+Note: If you simply want to disable the sound effects entirely, it can be done from Deepin's system settings (sound section).
 
 ## Troubleshooting
 

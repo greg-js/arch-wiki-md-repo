@@ -8,7 +8,7 @@ From the [libinput](https://freedesktop.org/wiki/Software/libinput/) wiki page:
 
 	libinput is a library to handle input devices in Wayland compositors and to provide a generic X.Org input driver. It provides device detection, device handling, input device event processing and abstraction so minimize the amount of custom input code compositors need to provide the common set of functionality that users expect.
 
-The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [libinput documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
+The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [libinput documentation](https://wayland.freedesktop.org/libinput/doc/latest/) for more information.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -164,8 +164,8 @@ There are different GUI tools:
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
-    *   Set of keyboard, mouse, controller, and touch pad options. Some features are still placeholders.
-    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is a rewritten KCM for all input devices supported by libinput.
+    *   Keyboard, mouse and controller devices can be configured from System Settings. Default touchpad module is still based on the old synaptics driver and won't work for libinput configuration.
+    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is an old KDE configuration module for all input devices supported by libinput. It works for touchpad configuration but options are not restored at the next startup. See [here](https://bugs.kde.org/show_bug.cgi?id=402882).
 
 ## Tips and tricks
 
@@ -329,7 +329,10 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
 ### Touchpad settings not taking effect in KDE's Touchpad KCM
 
-KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to install [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) or set the options manually with `xinput set-prop`.
+KDE touchpad configuration module does not have libinput support for [Xorg](/index.php/Xorg "Xorg"). Even Xorg configuration section related to touchpad device under `/etc/X11/xorg.conf.d/` does not work because default options are overwritten when Plasma session is started. Until full support is provided, some workarounds are
+
+*   installing [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/), but changed options are lost at the next startup;
+*   setting the options manually with `xinput set-prop` and saving needed commands in a bash script located in `~/.config/autostart-scripts/` to apply non-default options at Plasma startup.
 
 ### Touchpad not detected at all
 

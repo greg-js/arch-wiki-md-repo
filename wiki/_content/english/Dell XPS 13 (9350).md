@@ -26,7 +26,11 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 
 As of kernel 4.3, the Intel Skylake architecture is supported.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
 *   [2 BIOS](#BIOS)
@@ -173,14 +177,14 @@ Edit your `/etc/mkinitcpio.conf` file:
 
 ```
 
-Then update the bootloader.
+Then update the [initial ramfs](/index.php/Arch_boot_process#initramfs "Arch boot process"), e.g. for the stock Linux kernel:
 
 ```
    # mkinitcpio -p linux
 
 ```
 
-where `linux` is the name of the image loaded on boot. If you installed [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) then change that to `linux-mainline`.
+Replace `linux` with the image which is to be booted, e.g. `linux-hardened`, etc.
 
 ### Note on Mount Options
 
@@ -317,8 +321,8 @@ Some people reported white hissing/crackling noises when using headphones. To ge
 ```
  $ amixer -c 0 cset 'numid=10' 1
  numid=10,iface=MIXER,name='Headphone Mic Boost Volume'
-   ; type=INTEGER,access=rw---R--,values=2,min=0,max=3,step=0
-   : values=1,1
+   ; type=INTEGER,access=rw---R--,values=2,min=0,max=3,step=0
+   : values=1,1
    | dBscale-min=0.00dB,step=10.00dB,mute=0
 
 ```

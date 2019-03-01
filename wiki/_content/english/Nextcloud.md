@@ -29,6 +29,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
         *   [3.4.1 Apache](#Apache)
             *   [3.4.1.1 WebDAV](#WebDAV)
         *   [3.4.2 Nginx](#Nginx)
+        *   [3.4.3 lighttpd](#lighttpd)
 *   [4 Initialize](#Initialize)
     *   [4.1 Create storage directories](#Create_storage_directories)
     *   [4.2 Configure caching](#Configure_caching)
@@ -239,6 +240,12 @@ server {
 }
 
 ```
+
+#### lighttpd
+
+Enable [lighttpd#FastCGI](/index.php/Lighttpd#FastCGI "Lighttpd"), e.g. by adding `server.modules += ( "mod_fastcgi" )` to `/etc/lighttpd/lighttpd.conf`.
+
+Create a link to `/usr/share/webapps/nextcloud` in your `/srv/http/` directory (or configured root).
 
 ## Initialize
 

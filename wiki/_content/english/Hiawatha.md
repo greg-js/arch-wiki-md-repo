@@ -136,7 +136,16 @@ VirtualHost {
 
 ### Reverse proxy
 
-This example shows a reverse proxy configuration which forwards requests to `https://service.domain.net` to another local running web service on port `8181`:
+Hiawatha's man pages suggest using the following
+
+```
+ReverseProxy [!]<pattern> [<skip directories>] http[s]://<hostname>[:<port>][/<path>] [<timeout>] [keep-alive]
+
+```
+
+`<timeout>` is the time in seconds Hiawatha tries to connect to the other webservice. Adding `keep-alive` enables keep-alive connections to the final webserver.
+
+As an example, a webservice reverse proxy configuration which forwards requests from `https://service.domain.net` to another local running web service on port `8181` looks like (timout 10s):
 
  `/etc/hiawatha/hiawatha.conf` 
 ```
@@ -144,9 +153,16 @@ VirtualHost {
         Hostname = service.domain.net
         WebsiteRoot = /var/www/domain
         StartFile = index.html
-        ReverseProxy .* http://127.0.0.1:8181/
+        ReverseProxy .* http://127.0.0.1:8181/ 10
         RequireTLS = yes
 }
+
+```
+
+If a UNIX socket is needed instead:
+
+```
+ReverseProxy .* /unix/socket 10
 
 ```
 

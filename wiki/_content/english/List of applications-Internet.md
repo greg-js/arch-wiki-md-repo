@@ -781,6 +781,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://github.com/vitalif/grive2](https://github.com/vitalif/grive2) || [grive](https://aur.archlinux.org/packages/grive/)
 
+*   **ODrive** — Google Drive GUI for Windows / Mac / Linux.
+
+	[https://github.com/liberodark/ODrive](https://github.com/liberodark/ODrive) || [odrive-bin](https://aur.archlinux.org/packages/odrive-bin/)
+
 *   **hubiC** — Proprietary synchronization client service and command line tools for hubiC.
 
 	[https://hubic.com/en/downloads](https://hubic.com/en/downloads) || [hubic](https://aur.archlinux.org/packages/hubic/)

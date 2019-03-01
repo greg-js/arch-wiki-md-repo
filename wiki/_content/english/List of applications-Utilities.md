@@ -538,9 +538,9 @@ For archiving and compression command-line tools, see [Archiving and compression
 
 	[https://github.com/mate-desktop/engrampa](https://github.com/mate-desktop/engrampa) || [engrampa](https://www.archlinux.org/packages/?name=engrampa)
 
-*   **[File Roller](https://en.wikipedia.org/wiki/File_Roller "wikipedia:File Roller")** — Archive manager included in the GNOME desktop.
+*   **[GNOME Archive Manager](https://en.wikipedia.org/wiki/GNOME_Archive_Manager "wikipedia:GNOME Archive Manager")** — Archive manager included in the GNOME desktop (previously File Roller).
 
-	[http://fileroller.sourceforge.net/](http://fileroller.sourceforge.net/) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
+	[https://wiki.gnome.org/Apps/FileRoller](https://wiki.gnome.org/Apps/FileRoller) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
 
 *   **p7zip-gui** — The GUI belonging to the p7zip software.
 

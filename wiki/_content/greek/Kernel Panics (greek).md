@@ -1,6 +1,10 @@
 Αυτή η σελίδα περιγράφει πως να γυρίσετε πίσω, σε μια προηγουμένως εγκατεστημένη έκδοση πυρήνα αν η τρέχουσα αποτύχει να ξεκινήσει
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Ξεκινώντας από το CD εγκατάστασης](#Ξεκινώντας_από_το_CD_εγκατάστασης)
 *   [2 Κάνοντας chroot στην κανονική σας εγκατάσταση](#Κάνοντας_chroot_στην_κανονική_σας_εγκατάσταση)

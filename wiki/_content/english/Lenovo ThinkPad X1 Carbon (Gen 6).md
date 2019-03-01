@@ -12,9 +12,8 @@ The Lenovo ThinkPad X1 Carbon, 6th generation is an ultrabook introduced in earl
 To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
 
 ```
-# sudo dmidecode -t system | grep Version
-
-Version: ThinkPad X1 Carbon 6th
+# sudo dmidecode -s system-version
+ThinkPad X1 Carbon 6th
 
 ```
 
@@ -39,7 +38,7 @@ Version: ThinkPad X1 Carbon 6th
 | 
 
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
-2.  [The Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
+2.  [The Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but scanning does not yet work (06cb:009a).
 3.  S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues).
 4.  See [this blog post](https://200ok.ch/posts/2018-12-17_making_bluetooth_work_on_lenovo_x1_carbon_6th_gen_with_linux.html) for improvements to reliability.
 5.  Internal monitor acceleration does not appear to be supported.

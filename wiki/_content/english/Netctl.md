@@ -129,7 +129,7 @@ If you need to switch multiple profiles frequently (i.e., traveling with a lapto
 
 #### Wireless
 
-[Install](/index.php/Install "Install") the [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) package and [start/enable](/index.php/Start/enable "Start/enable") `netctl-auto@*interface*.service` systemd unit. *netctl* profiles will be started/stopped automatically as you move from the range of one network into the range of another network (roaming).
+[Start/enable](/index.php/Start/enable "Start/enable") `netctl-auto@*interface*.service` systemd unit. *netctl* profiles will be started/stopped automatically as you move from the range of one network into the range of another network (roaming).
 
 *   Profiles must use `Security=wpa-configsection` or `Security=wpa` to work with *netctl-auto* rather than `Security=wpa-config`.
 *   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
@@ -394,7 +394,7 @@ netctl supports hooks in `/etc/netctl/hooks/` and per interface hooks in `/etc/n
 
 When a profile is read, netctl sources **all executable** scripts in `hooks`, then it reads the profile file for the connection and finally it sources an executable script with the name of the interface used in the profile from the `interfaces` directory. Therefore, declarations in an interface script override declarations in the profile, which override declarations in hooks.
 
-The variables `$INTERFACE`, `$SSID`, `$ACTION` and `$Profile` are available in hooks/interfaces **only** when using `netctl-auto`
+The variables `$INTERFACE` and `$ACTION` are available in hooks/interfaces **only** when using `netctl-auto`
 
 #### Examples
 

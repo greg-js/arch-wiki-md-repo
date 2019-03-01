@@ -394,7 +394,7 @@ While running the installer ...
 *   For the address of the SMTP host, use `tls://localhost/` and port `587` if you used STARTTLS. Use `ssl://localhost/` with port `465` if you used SMTPS.
 *   See [#Postfix](#Postfix) for an explanation on that.
 
-The post install process is similar to any other webapp like [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") or PostFixAdmin. The configuration file is in `/etc/webapps/roundcubemail/config/config.inc.php` which works as an override over `default.inc.php`.
+The post install process is similar to any other webapp like [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") or PostFixAdmin. The configuration file is in `/etc/webapps/roundcubemail/config/config.inc.php` which works as an override over `defaults.inc.php`.
 
 #### Apache configuration
 

@@ -47,9 +47,9 @@ To host a Minecraft world on the LAN you will need two ports to be open on your 
 
 ### Installation
 
-Minecraft server can be installed as a [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [systemd](/index.php/Systemd "Systemd") unit files and includes a small control script.
+Minecraft server can be installed via the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional [systemd](/index.php/Systemd "Systemd") unit files and includes a small control script.
 
-Also see [#Alternative servers](#Alternative_servers) for alternative servers.
+Also see [#Alternative servers](#Alternative_servers) for an overview of alternative programs allowing to host Minecraft.
 
 ### Setup
 

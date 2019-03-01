@@ -542,6 +542,8 @@ You may adjust the "sharpness" parameter on your monitor settings to adjust the 
 
 **Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[7]](https://askubuntu.com/a/979551/763549).
 
+**Note:** If you are using the `modesetting` driver you will get mouse flickering. This can be solved by scaling your non-scaled screen by 0.9999x0.9999.
+
 ### Multiple external monitors
 
 There might be some problems in scaling more than one external monitors which have lower dpi than the built-in HiDPI display. In that case, you may want to try downscaling the HiDPI display instead, with e.g.

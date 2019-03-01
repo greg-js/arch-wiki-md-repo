@@ -2,12 +2,16 @@ Teclast X98 Plus II is a 2 in 1 tablet PC device, equipped with a 9.7 inch retin
 
 The tablet can run the x86_64 version of Archlinux, but at the time of writing this page, hardware support is partial.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 How to install](#How_to_install)
 *   [2 What works out of the box](#What_works_out_of_the_box)
 *   [3 What does not work](#What_does_not_work)
-    *   [3.1 Touchscreen (works)](#Touchscreen_.28works.29)
+    *   [3.1 Touchscreen (works)](#Touchscreen_(works))
     *   [3.2 Sound card](#Sound_card)
     *   [3.3 Camera](#Camera)
     *   [3.4 Accelerometer](#Accelerometer)
@@ -68,7 +72,7 @@ Unknown, the device name may be "Unicam ov2680"
 
 ### Accelerometer
 
-Unknown, the device name is "Kionix KXCJ9 3-axis accelerometer SPB"
+requires the package [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy), the device name is "Kionix KXCJ9 3-axis accelerometer SPB"
 
 ### Bluetooth
 

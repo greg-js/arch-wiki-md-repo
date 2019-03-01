@@ -24,8 +24,6 @@
 
 ## Configuration
 
-**Important:** Make sure your environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
-
 Nvim's user-specific configuration file is located in `~/.config/nvim/init.vim` Nvim is compatible with most of Vim's options, however there are options specific to Nvim. For a complete list of Nvim options, see Neovim's [help file](https://neovim.io/doc/user/options.html).
 
 Nvim's data directory is located in `~/.local/share/nvim/` and contains swap for open files, the [ShaDa](https://neovim.io/doc/user/starting.html#shada) (Shared Data) file, and the site directory for plugins.

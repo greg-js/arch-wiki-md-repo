@@ -2,16 +2,20 @@
 
 *virtualenv* 是为 [Python](/index.php/Python "Python") 程序建立独立环境的工具，可以安装本地软件包，建立工作环境并在其中执行 [Python](/index.php/Python "Python")。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 概览](#.E6.A6.82.E8.A7.88)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-    *   [3.1 创建虚拟环境](#.E5.88.9B.E5.BB.BA.E8.99.9A.E6.8B.9F.E7.8E.AF.E5.A2.83)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 概览](#概览)
+*   [2 安装](#安装)
+*   [3 使用](#使用)
+    *   [3.1 创建虚拟环境](#创建虚拟环境)
         *   [3.1.1 venv](#venv)
         *   [3.1.2 virtualenv](#virtualenv)
-    *   [3.2 激活](#.E6.BF.80.E6.B4.BB)
-*   [4 Python 版本](#Python_.E7.89.88.E6.9C.AC)
+    *   [3.2 激活](#激活)
+*   [4 Python 版本](#Python_版本)
 *   [5 virtualenvwrapper](#virtualenvwrapper)
     *   [5.1 Installation](#Installation)
     *   [5.2 Basic usage](#Basic_usage)

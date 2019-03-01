@@ -6,7 +6,7 @@ Related articles
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
 *   [Fan speed control (Русский)](/index.php/Fan_speed_control_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fan speed control (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 15 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=555240).
+**Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 28 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=567556).
 
 Понижение напряжения (даунвольтинг/андервольтинг) — это динамический процесс снижения напряжения процессора и других компонентов во время их работы. Он позволяет динамически масштабировать напряжение устройств для снижения энергопотребления, уменьшения тепловыделения и экономии заряда батареи, не влияя на их производительность.
 
@@ -23,11 +23,14 @@ Related articles
     *   [2.1 intel-undervolt](#intel-undervolt)
         *   [2.1.1 Установка](#Установка)
         *   [2.1.2 Настройка и использование](#Настройка_и_использование)
+    *   [2.2 amdctl](#amdctl)
+        *   [2.2.1 Установка](#Установка_2)
 
 ## Описание
 
 *   [PHC (Русский)](/index.php/PHC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PHC (Русский)") — утилита для андервольтинга некоторых старых поколений процессоров Intel и AMD. **Не** совместимо с [драйвером управления частотой процессора](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Драйвер_управления_частотой_процессора "CPU frequency scaling (Русский)") `intel_pstate`.
 *   [#intel-undervolt](#intel-undervolt) — утилита для андервольтинга процессоров Intel Haswell и выше с помощью MSR. Совместима с `intel_pstate`.
+*   [#amdctl](#amdctl) — утилита для андервольтинга процессоров AMD K10 и выше.
 
 ## Утилиты
 
@@ -78,3 +81,11 @@ apply 4 'Analog I/O' 0
 ```
 
 Как только вы найдёте стабильные значения, вы можете также [включить](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C "Включить") `intel-undervolt.service`, чтобы сделать эти настройки постоянными.
+
+### amdctl
+
+[amdctl](https://github.com/kevinlekiller/amdctl/) — утилита для понижения напряжения процессоров AMD K10 и выше.
+
+#### Установка
+
+Данная утилита может быть установлена с помощью пакета [amdctl-git](https://aur.archlinux.org/packages/amdctl-git/) из AUR.

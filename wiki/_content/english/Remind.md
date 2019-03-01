@@ -1,6 +1,10 @@
-[Remind](https://roaringpenguin.com/products/remind) is a sophisticated calendar and alarm program.
+[Remind](https://dianne.skoll.ca/projects/remind/) is a sophisticated calendar and alarm program.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

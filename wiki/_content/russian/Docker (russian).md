@@ -35,7 +35,7 @@
 *   [6 Устранение неполадок](#Устранение_неполадок)
     *   [6.1 docker0 Bridge не получает IP адреса/нет доступа к Интернету в контейнерах](#docker0_Bridge_не_получает_IP_адреса/нет_доступа_к_Интернету_в_контейнерах)
     *   [6.2 Слишком низкое значение количества процессов/потоков по умолчанию](#Слишком_низкое_значение_количества_процессов/потоков_по_умолчанию)
-    *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+    *   [6.3 Ошибка инициализации графического драйвера: devmapper](#Ошибка_инициализации_графического_драйвера:_devmapper)
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
     *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
     *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
@@ -359,16 +359,16 @@ fork failed: Resource temporarily unavailable
 TasksMax=infinity
 ```
 
-### Error initializing graphdriver: devmapper
+### Ошибка инициализации графического драйвера: devmapper
 
-If *systemctl* fails to start docker and provides an error:
+Если *systemctl* не запускает Docker и выдает ошибку::
 
 ```
 Error starting daemon: error initializing graphdriver: devmapper: Device docker-8:2-915035-pool is not a thin pool
 
 ```
 
-Then, try the following steps to resolve the error. Stop the service, back up `/var/lib/docker/` (if desired), remove the contents of `/var/lib/docker/`, and try to start the service. See the open [GitHub issue](https://github.com/docker/docker/issues/21304) for details.
+Попробуйте выполнить следующие действия, чтобы устранить ошибку. Остановите службу, сделайте резервную копию `/var/lib/docker/` (если это необходимо), удалите содержимое `/var/lib/docker/`, и попробуйте запустить службу. Смотрите [описание проблемы на GitHub](https://github.com/docker/docker/issues/21304) для более детальной информации.
 
 ### Failed to create some/path/to/file: No space left on device
 

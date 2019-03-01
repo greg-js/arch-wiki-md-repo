@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Scheme](/index.php/Scheme "Scheme"). Дата последней синхронизации: 6 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Scheme&diff=0&oldid=562042).
+**Состояние перевода:** На этой странице представлен перевод статьи [Scheme](/index.php/Scheme "Scheme"). Дата последней синхронизации: 28 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Scheme&diff=0&oldid=567504).
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Scheme "wikipedia:ru:Scheme"):
 

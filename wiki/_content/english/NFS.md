@@ -138,14 +138,14 @@ host=192.168.1.123
 
 The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
 
-Even though idmapd may be running, it may not be fully enabled. Verify if `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `N`, on disabled run:
+Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y`, enable it by:
 
 ```
 # echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
 
 ```
 
-Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, e.g.:
+Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, i.e.:
 
  `/etc/modprobe.d/nfsd.conf`  `options nfsd nfs4_disable_idmapping=0` 
 

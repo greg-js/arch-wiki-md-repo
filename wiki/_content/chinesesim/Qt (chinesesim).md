@@ -4,7 +4,7 @@
 *   [Uniform Look for QT and GTK Applications (简体中文)](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for QT and GTK Applications (简体中文)")
 *   [GTK+ (简体中文)](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Qt](/index.php/Qt "Qt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-02，点击[这里](https://wiki.archlinux.org/index.php?title=Qt&diff=0&oldid=547169)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Qt](/index.php/Qt "Qt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-01，点击[这里](https://wiki.archlinux.org/index.php?title=Qt&diff=0&oldid=564980)可以查看翻译后英文页面的改动。
 
 [Qt](http://qt-project.org/) 是一个跨平台的应用程序和组件工具，使用标准 C++编写，通过大量使用代码生成器 [Meta Object Compiler(moc)](http://qt-project.org/doc/qt-4.8/moc.html)以及数个宏来扩展语言的功能。它有一些更重要的特性包括：
 
@@ -12,17 +12,21 @@
 *   完善的国际化支持。
 *   提供 SQL 数据访问、XML 解析、线程管理、网络支持和统一的文件处理跨平台应用编程接口。
 
-Qt 框架正在成为主要的开发平台，是 [KDE](/index.php/KDE "KDE") 软件社区和其它一些重要开源和闭源应用的基石，例如 [VLC](/index.php/VLC "VLC")、[VirtualBox](/index.php/VirtualBox "VirtualBox")、[Opera](/index.php/Opera "Opera") 和 [Mathematica](/index.php/Mathematica "Mathematica") 等等。
+Qt 框架是 [KDE](/index.php/KDE "KDE") 软件社区和其它一些重要开源和闭源应用的基石，例如 [VLC](/index.php/VLC "VLC")、[VirtualBox](/index.php/VirtualBox "VirtualBox")、[Opera](/index.php/Opera "Opera") 和 [Mathematica](/index.php/Mathematica "Mathematica") 等等。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 默认 Qt 库](#默认_Qt_库)
     *   [2.1 修改环境变量](#修改环境变量)
     *   [2.2 使用配置文件](#使用配置文件)
 *   [3 外观](#外观)
-    *   [3.1 Qt4](#Qt4)
-    *   [3.2 Qt5](#Qt5)
+    *   [3.1 Qt5](#Qt5)
+    *   [3.2 Qt4](#Qt4)
     *   [3.3 Qt 样式表](#Qt_样式表)
     *   [3.4 GTK+ 和 Qt](#GTK+_和_Qt)
     *   [3.5 Configuration of Qt5 apps under environments other than KDE](#Configuration_of_Qt5_apps_under_environments_other_than_KDE)
@@ -39,11 +43,10 @@ Qt 框架正在成为主要的开发平台，是 [KDE](/index.php/KDE "KDE") 软
         *   [4.3.7 Perl](#Perl)
         *   [4.3.8 Lua](#Lua)
 *   [5 问题解决](#问题解决)
-    *   [5.1 Qt programs crash when opening file dialogs under GNOME Wayland](#Qt_programs_crash_when_opening_file_dialogs_under_GNOME_Wayland)
-    *   [5.2 Disable/Change Qt journal logging behaviour](#Disable/Change_Qt_journal_logging_behaviour)
-    *   [5.3 Icon theme is not applied](#Icon_theme_is_not_applied)
-    *   [5.4 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
-    *   [5.5 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.1 Disable/Change Qt journal logging behaviour](#Disable/Change_Qt_journal_logging_behaviour)
+    *   [5.2 Icon theme is not applied](#Icon_theme_is_not_applied)
+    *   [5.3 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
+    *   [5.4 Qt4 style not respected](#Qt4_style_not_respected)
 *   [6 参阅](#参阅)
 
 ## 安装
@@ -62,7 +65,7 @@ Qt软件包不再提供通常的二进制文件`/usr/bin/qmake`,而是将它们�
 
 ### 修改环境变量
 
-可以通过 `QT_SELECT` [环境变量](/index.php/Environment_variable "Environment variable") 设置默认的 QT. 例如要使用 Qt4，可以在`~/.bash_profile` 或 `~/.zsh_profile` 中 `export QT_SELECT=4`。
+可以通过 `QT_SELECT` [环境变量](/index.php/Environment_variable "Environment variable") 设置默认的 QT. 例如要使用 Qt4，可以设置 `export QT_SELECT=4`。
 
 ### 使用配置文件
 
@@ -74,6 +77,38 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 ```
 
 ## 外观
+
+### Qt5
+
+Qt5基于当前使用的桌面环境来决定所使用的样式：
+
+*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
+*   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
+*   In other desktop environments, it uses Fusion.
+
+如果要强制指定一种样式，你可以设置`QT_STYLE_OVERRIDE`环境变量（[environment variable](/index.php/Environment_variable "Environment variable")）。特别的，如果你想要使用[GTK+](/index.php/GTK%2B "GTK+")主题，把它设置成`gtk2`（注意：你将需要安装在下文中提到的Qt样式插件来获取GTK+样式）。Qt5应用同时也支持`-style`标志，你可以用它来使用指定的样式运行一个Qt5应用程序。
+
+The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
+
+*   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
+
+	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze](https://www.archlinux.org/packages/?name=breeze)
+
+*   **Oxygen** — KDE Oxygen style.
+
+	[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
+
+*   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
+
+	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
+
+*   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
+
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
+
+*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
+
+	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
 
 ### Qt4
 
@@ -118,38 +153,6 @@ Qt4 已经包含数种样式，例如 GTK+ 样式、Windows 样式、CDE 样式�
 *   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)
-
-### Qt5
-
-Qt5基于当前使用的桌面环境来决定所使用的样式：
-
-*   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
-*   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
-*   In other desktop environments, it uses Fusion.
-
-如果要强制指定一种样式，你可以设置`QT_STYLE_OVERRIDE`环境变量（[environment variable](/index.php/Environment_variable "Environment variable")）。特别的，如果你想要使用[GTK+](/index.php/GTK%2B "GTK+")主题，把它设置成`gtk2`（注意：你将需要安装在下文中提到的Qt样式插件来获取GTK+样式）。Qt5应用同时也支持`-style`标志，你可以用它来使用指定的样式运行一个Qt5应用程序。
-
-The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
-
-*   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
-
-	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze](https://www.archlinux.org/packages/?name=breeze)
-
-*   **Oxygen** — KDE Oxygen style.
-
-	[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
-
-*   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
-
-	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
-
-*   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
-
-	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
-
-*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
-
-	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
 
 ### Qt 样式表
 
@@ -411,19 +414,6 @@ label:show()
 **Note:** QtLua is not designed to develop an application in pure Lua but rather to extend a Qt C++ application using Lua as scripting language.
 
 ## 问题解决
-
-### Qt programs crash when opening file dialogs under GNOME Wayland
-
-Under a GNOME Wayland environment, Qt programs such as Smplayer and Calibre may crash when opening a "FileDiag" (e.g. the "Open file" or "Save as" dialogs), because by default Qt tries to use the native GTK FileDiag, but the invocation assumes the use of X11 and would segfault in Wayland. This issue can be worked around in two ways:
-
-*   Force the use of X11 GDK backend for these Qt programs.
-
-```
-GDK_BACKEND=x11 some_qt_program
-
-```
-
-*   Install the latest git snapshot of [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/), which contains a fix. The platform plugin should work automatically under GNOME (3.20 or later); if not, manually set the [environment variable](/index.php/Environment_variables#Using_pam_env "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform` . This also has the effect of [uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 ### Disable/Change Qt journal logging behaviour
 

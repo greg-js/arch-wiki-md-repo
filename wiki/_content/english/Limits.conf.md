@@ -3,7 +3,7 @@ Related articles
 *   [Cgroups](/index.php/Cgroups "Cgroups")
 *   [Security](/index.php/Security "Security")
 
-`/etc/security/limits.conf` allows setting resource limits for users logged in via [PAM](/index.php/PAM "PAM"). This is a useful way of preventing, for example, fork-bombs from using up all system resources.
+`/etc/security/limits.conf` allows setting resource limits for users logged in via [PAM](/index.php/PAM "PAM"). This is a useful way of preventing, for example, [fork-bombs](https://en.wikipedia.org/wiki/Fork_bomb "wikipedia:Fork bomb") from using up all system resources.
 
 **Note:** The file does not affect system services. For [systemd](/index.php/Systemd "Systemd") services the files `/etc/systemd/system.conf`, `/etc/systemd/user.conf`, and `/etc/systemd/<systemd_unit>/override.conf` control the limit. See the [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5) man page for details.
 

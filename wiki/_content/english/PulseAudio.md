@@ -115,6 +115,10 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 #### Graphical
 
+*   **KMix** — [KDE](/index.php/KDE "KDE") volume control application supporting several platforms including PulseAudio, system tray applet configurable.
+
+	[https://cgit.kde.org/kmix.git/](https://cgit.kde.org/kmix.git/) || [kmix](https://www.archlinux.org/packages/?name=kmix)
+
 *   **MicTray** — Lightweight system tray application which lets you control the microphone state and volume using PulseAudio.
 
 	[https://github.com/Junker/MicTray](https://github.com/Junker/MicTray) || [mictray](https://aur.archlinux.org/packages/mictray/)

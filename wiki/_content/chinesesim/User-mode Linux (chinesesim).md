@@ -1,10 +1,14 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 什么是 user-mode-linux?](#.E4.BB.80.E4.B9.88.E6.98.AF_user-mode-linux.3F)
-*   [2 为什么使用 UML?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E4.BD.BF.E7.94.A8_UML.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 什么是 user-mode-linux?](#什么是_user-mode-linux?)
+*   [2 为什么使用 UML?](#为什么使用_UML?)
 *   [3 HOWTO](#HOWTO)
-*   [4 运行所需:](#.E8.BF.90.E8.A1.8C.E6.89.80.E9.9C.80:)
-*   [5 现在开始](#.E7.8E.B0.E5.9C.A8.E5.BC.80.E5.A7.8B)
+*   [4 运行所需:](#运行所需:)
+*   [5 现在开始](#现在开始)
 
 #### 什么是 user-mode-linux?
 
@@ -63,7 +67,7 @@ sh archbootstrap /mnt/ ftp://archlinux-mirror
 可以通过禁用 hotplugin 来加快启动时间，在 */mnt/etc/rc.conf* 加入:
 
 ```
-DAEMONS=(syslog-ng !hotplug !pcmcia network netfs crond)
+DAEMONS=(syslog-ng !hotplug !pcmcia network netfs crond)
 
 ```
 

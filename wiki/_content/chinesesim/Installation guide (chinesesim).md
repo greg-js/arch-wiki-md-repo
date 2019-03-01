@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-10，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=562589)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=565601)可以查看翻译后英文页面的改动。
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")。请注意，代码段可能会有占位符（格式是 `*italics*`），你可能需要手动去掉它们。
 
@@ -20,7 +20,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
     *   [1.5 连接到因特网](#连接到因特网)
     *   [1.6 更新系统时间](#更新系统时间)
     *   [1.7 建立硬盘分区](#建立硬盘分区)
-        *   [1.7.1 分区例子](#分区例子)
+        *   [1.7.1 分区示例](#分区示例)
     *   [1.8 格式化分区](#格式化分区)
     *   [1.9 挂载分区](#挂载分区)
 *   [2 安装](#安装)
@@ -147,61 +147,56 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 
 如果需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[disk encryption](/index.php/Disk_encryption "Disk encryption") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
 
-#### 分区例子
+#### 分区示例
 
-| BIOS with [MBR](/index.php/MBR "MBR") or GPT |
+| BIOS 和 [MBR](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Master_Boot_Record "Partitioning (简体中文)") |
 | 挂载点 | 分区 | [分区类型](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | 建议大小 |
-| None | /dev/sd*X*1 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
-| `/` | /dev/sd*X*2 | Linux | 剩余所有空间 |
-| [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap "Swap") | 大于 512 MiB |
-| UEFI with [GPT](/index.php/GPT "GPT") |
-| 挂载点 | 分区 | [分区类型 (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | 建议大小 |
-| `/boot` or `/efi` | /dev/sd*X*1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
-| `/` | /dev/sd*X*2 | Linux | 剩余所有空间 |
-| [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap "Swap") | 大于 512 MiB |
+| `/mnt` | `/dev/sd*X*1` | Linux | 剩余空间 |
+| [SWAP] | `/dev/sd*X*2` | Linux swap (交换空间) | 大于 512 MiB |
+| UEFI with [GPT](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID_分区表 "Partitioning (简体中文)") |
+| 挂载点 | 分区 | [分区类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | 建议大小 |
+| `/mnt/boot` or `/mnt/efi` | `/dev/sd*X*1` | [EFI 系统分区](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "EFI system partition (简体中文)") | 256–512 MiB |
+| `/mnt` | `/dev/sd*X*2` | Linux x86-64 根目录 (/) | 剩余空间 |
+| [SWAP] | `/dev/sd*X*3` | Linux swap (交换空间) | 大于 512 MiB |
+
+参阅[布局示例](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#布局示例 "Partitioning (简体中文)")。
 
 **注意:**
 
-*   使用 [fdisk](/index.php/Fdisk "Fdisk") 或 [parted](/index.php/Parted "Parted") 修改分区表，例如 `fdisk /dev/sd*X*`。
-*   只要文件系统支持，[Swap (简体中文)](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)") 空间可以在一个 [swap file](/index.php/Swap_file "Swap file")上设置
+*   请使用 [fdisk](/index.php/Fdisk_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fdisk (简体中文)") 或 [parted](/index.php/Parted_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Parted (简体中文)") 修改分区表，例如 `fdisk /dev/sd*X*`。
+*   如果文件系统支持，[交换空间](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)")也可以设在[交换文件](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#交换文件 "Swap (简体中文)")上。
 
 ### 格式化分区
 
-当分区建立好了，这些分区都需要使用适当的 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)") 进行格式化。举个例子，如果想将 `/dev/sd*X*2` 格式化成 `*ext4*`，可以运行：
+当分区建立好了，这些分区都需要使用适当的[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")进行格式化。举个例子，如果根分区在 `/dev/sd*X*1` 上并且会使用 `*ext4*` 文件系统，运行：
 
 ```
- # mkfs.*ext4* /dev/sd*X*2
+ # mkfs.*ext4* /dev/sd*X*1
 
 ```
 
 如果您创建了交换分区（例如 `/dev/*sda3*`），使用 mkswap 将其初始化：
 
 ```
- # mkswap /dev/sd*X*3
- # swapon /dev/sd*X*3
+ # mkswap /dev/sd*X*2
+ # swapon /dev/sd*X*2
 
 ```
 
-详情参见 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建文件系统 "File systems (简体中文)")。
+详情参见[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#创建文件系统 "File systems (简体中文)")。
 
 ### 挂载分区
 
-首先将根分区 [挂载](/index.php/Mount "Mount") 到 `/mnt`，例如：
+将根分区[挂载](/index.php/Mount "Mount")到 `/mnt`，例如：
 
 ```
-# mount /dev/sd*X*2 /mnt
-
-```
-
-如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home` 等等）。
-
-```
-# mkdir /mnt/*boot*
-# mount /dev/sd*X*1 /mnt/boot
+# mount /dev/sd*X*1 /mnt
 
 ```
 
-接下来 [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) 将会自动检测挂载的文件系统和 swap 分区。
+创建其他剩余的挂载点（比如 `/mnt/efi`）并挂载其相应的分区。
+
+接下来 [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) 将会自动检测挂载的文件系统和交换空间。
 
 ## 安装
 

@@ -51,7 +51,7 @@ Related articles
 
 ## Configuration
 
-Offlineimap is distributed with two default configuration files, which are both located in `/usr/share/offlineimap/`. `offlineimap.conf` contains every setting and is thorougly documented. Alternatively, `offlineimap.conf.minimal` is not commented and only contains a small number of settings (see: [Minimal](#Minimal)).
+Offlineimap is distributed with two default configuration files, which are both located in `/usr/share/offlineimap/`. `offlineimap.conf` contains every setting and is thoroughly documented. Alternatively, `offlineimap.conf.minimal` is not commented and only contains a small number of settings; see: [#Minimal](#Minimal).
 
 Copy one of the default configuration files to `~/.offlineimaprc`.
 
@@ -171,11 +171,11 @@ holdconnectionopen = yes
 
 To start the daemon automatically on login, [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") the [systemd/User](/index.php/Systemd/User "Systemd/User") service `offlineimap.service` using the `--user` flag.
 
-In case you have more than one account configured, it is advised to use `offlineimap@.service` instead of increasing maxsyncaccounts parameter ([source](http://www.offlineimap.org/configuration/2016/01/29/why-i-m-not-using-maxconnctions.html)). Simply [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `offlineimap@youraccountname.service`.
+In case you have more than one account configured, it is advised to use `offlineimap@.service` instead of increasing maxsyncaccounts parameter[[1]](http://www.offlineimap.org/configuration/2016/01/29/why-i-m-not-using-maxconnctions.html). Simply [start/enable](/index.php/Start/enable "Start/enable") `offlineimap@youraccountname.service`.
 
 #### systemd timer
 
-Alternatively, it's possible to manage OfflineIMAP completely using systemd-user [timers](/index.php/Systemd/Timers "Systemd/Timers"), start/enable `offlineimap-oneshot.timer` with the `--user` flag.
+Alternatively, it is possible to manage OfflineIMAP completely using systemd-user [timers](/index.php/Systemd/Timers "Systemd/Timers"), start/enable `offlineimap-oneshot.timer` with the `--user` flag.
 
 This timer by default runs OfflineIMAP every 15 minutes. This can be easily changed by creating a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"). For example, the following modifies the timer to check every 5 minutes:
 
@@ -250,7 +250,7 @@ ssl_version = tls1_2
 **Note:**
 
 *   If you have Gmail set to another language, the folder names may appear translated too, e.g. "verzonden_berichten" instead of "sent_mail".
-*   After version 6.3.5, offlineimap also creates remote folders to match your local ones. Thus you may need a nametrans rule for your local repository too that reverses the effects of this nametrans rule. If you don't want to make a reverse nametrans rule, you can disable remote folder creation by putting this in your remote configuration: `createfolders = False`
+*   After version 6.3.5, offlineimap also creates remote folders to match your local ones. Thus you may need a nametrans rule for your local repository too that reverses the effects of this nametrans rule. If you do not want to make a reverse nametrans rule, you can disable remote folder creation by putting this in your remote configuration: `createfolders = False`
 *   As of 1 October 2012 gmail SSL certificate fingerprint is not always the same. This prevents from using `cert_fingerprint` and makes the `sslcacertfile` way a better solution for the SSL verification (see [#SSL fingerprint does not match](#SSL_fingerprint_does_not_match)).
 
 ### Password management
@@ -365,7 +365,7 @@ remotepasseval = get_password("examplerepo")
 
 ##### Option 1: python2-gnomekeyring script
 
-**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[1]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
+**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[2]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
 
 Install [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring). Then:
 
@@ -415,7 +415,7 @@ To set the credentials, run this script from a shell.
 
 ##### Option 2: gnome-keyring-query script
 
-**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[2]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
+**Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[3]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
 
 Install [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/). Then create the following:
 
@@ -534,7 +534,7 @@ pythonfile = /home/user/offlineimap.py
 ...
 [Repository RemoteEmail]
 remoteuser = username@host.net
-# Set the DB path as well as the title and username of the specific entry you'd like to use.
+# Set the DB path as well as the title and username of the specific entry you would like to use.
 # This will prompt you on STDIN at runtime for the kdb master password.
 remotepasseval = get_keepass_pw("/path/to/database.kdb", title="<entry title>", username="<entry username>")
 ...
@@ -545,7 +545,7 @@ Note that as-is, this does not support KDBs with keyfiles, only KDBs with passwo
 
 ##### Old kdb format
 
-If your key database is stored in an old format, you the xpath strings may not be correct. This method should work in that case, but it's not compatible with the current default format (v4)
+If your key database is stored in an old format, you the xpath strings may not be correct. This method should work in that case, but it is not compatible with the current default format (v4)
 
 Install [python2-keepass-git](https://aur.archlinux.org/packages/python2-keepass-git/) from the AUR, then add the following to your offlineimap.py file:
 
@@ -631,19 +631,8 @@ ERROR: Server SSL fingerprint 'keykeykey' for hostname 'example.com' does not ma
 
 To solve this, add to `~/.offlineimaprc` (in the same section as `ssl = yes`) one of the following:
 
-*   either add `cert_fingerprint`, with the certificate fingerprint of the remote server. This checks whether the remote server certificate matches the given fingerprint.
-
-```
-cert_fingerprint = keykeykey
-
-```
-
-*   or add `sslcacertfile` with the path to the system CA certificates file. Needs [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) installed. This validates the remote ssl certificate chain against the Certification Authorities in that file.
-
-```
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-
-```
+*   either add `cert_fingerprint`, with the certificate fingerprint of the remote server. This checks whether the remote server certificate matches the given fingerprint. `cert_fingerprint = keykeykey` 
+*   or add `sslcacertfile` with the path to the system CA certificates file. Needs [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) installed. This validates the remote ssl certificate chain against the Certification Authorities in that file. `sslcacertfile = /etc/ssl/certs/ca-certificates.crt` 
 
 ### Copying message, connection closed
 

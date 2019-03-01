@@ -3,27 +3,33 @@
 *   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
 *   [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")
 
+**翻译状态：** 本文是英文页面 [Swap](/index.php/Swap "Swap") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-03，点击[这里](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=508606)可以查看翻译后英文页面的改动。
+
 	*Linux 将物理内存分为内存段，叫做页面。交换是指内存页面被复制到预先设定好的硬盘空间(叫做交换空间)的过程，目的是释放对于页面的内存。物理内存和交换空间的总大小是可用的虚拟内存的总量。*
 
 	- Linux.com, [关于 Linux Swap 空间](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 交换空间](#.E4.BA.A4.E6.8D.A2.E7.A9.BA.E9.97.B4)
-*   [2 交换分区](#.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA)
-    *   [2.1 通过 Systemd 激活](#.E9.80.9A.E8.BF.87_Systemd_.E6.BF.80.E6.B4.BB)
-    *   [2.2 关闭交换分区](#.E5.85.B3.E9.97.AD.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA)
-*   [3 交换文件](#.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [3.1 手动方式](#.E6.89.8B.E5.8A.A8.E6.96.B9.E5.BC.8F)
-        *   [3.1.1 建立交换文件](#.E5.BB.BA.E7.AB.8B.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-        *   [3.1.2 删除交换文件](#.E5.88.A0.E9.99.A4.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6)
-    *   [3.2 自动化](#.E8.87.AA.E5.8A.A8.E5.8C.96)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 交换空间](#交换空间)
+*   [2 交换分区](#交换分区)
+    *   [2.1 通过 Systemd 激活](#通过_Systemd_激活)
+    *   [2.2 关闭交换分区](#关闭交换分区)
+*   [3 交换文件](#交换文件)
+    *   [3.1 手动方式](#手动方式)
+        *   [3.1.1 建立交换文件](#建立交换文件)
+        *   [3.1.2 删除交换文件](#删除交换文件)
+    *   [3.2 自动化](#自动化)
         *   [3.2.1 systemd-swap](#systemd-swap)
-*   [4 使用 USB 设备交换](#.E4.BD.BF.E7.94.A8_USB_.E8.AE.BE.E5.A4.87.E4.BA.A4.E6.8D.A2)
-*   [5 交换测试](#.E4.BA.A4.E6.8D.A2.E6.B5.8B.E8.AF.95)
-*   [6 性能优化](#.E6.80.A7.E8.83.BD.E4.BC.98.E5.8C.96)
+*   [4 使用 USB 设备交换](#使用_USB_设备交换)
+*   [5 交换测试](#交换测试)
+*   [6 性能优化](#性能优化)
     *   [6.1 Swappiness](#Swappiness)
-    *   [6.2 优先级](#.E4.BC.98.E5.85.88.E7.BA.A7)
+    *   [6.2 优先级](#优先级)
 
 ## 交换空间
 
