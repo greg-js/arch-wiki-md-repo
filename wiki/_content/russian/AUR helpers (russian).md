@@ -4,37 +4,6 @@
 
 Список графических фронтендов для pacman, некоторые из которых могут работать с AUR можно найти в [соответствующей статье](/index.php/Pacman_GUI_Frontends_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman GUI Frontends (Русский)").
 
-<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
-
-## Contents
-
-<label class="toctogglelabel" for="toctogglecheckbox"></label>
-
-*   [1 Список вспомогательных инструментов](#Список_вспомогательных_инструментов)
-    *   [1.1 aurget](#aurget)
-    *   [1.2 aurora](#aurora)
-    *   [1.3 aurpac](#aurpac)
-    *   [1.4 aurploader](#aurploader)
-    *   [1.5 aursh](#aursh)
-    *   [1.6 autoaur](#autoaur)
-    *   [1.7 burp](#burp)
-    *   [1.8 cower](#cower)
-    *   [1.9 haskell-archlinux](#haskell-archlinux)
-    *   [1.10 makeaur](#makeaur)
-    *   [1.11 Meat ( Alpha / Under development )](#Meat_(_Alpha_/_Under_development_))
-    *   [1.12 pacaur](#pacaur)
-    *   [1.13 packer](#packer)
-    *   [1.14 pacmoon](#pacmoon)
-    *   [1.15 paktahn](#paktahn)
-    *   [1.16 pbfetch](#pbfetch)
-    *   [1.17 pbget](#pbget)
-    *   [1.18 pkgman](#pkgman)
-    *   [1.19 powaur](#powaur)
-    *   [1.20 spinach](#spinach)
-    *   [1.21 srcman](#srcman)
-    *   [1.22 yaourt](#yaourt)
-*   [2 Сравнительная таблица](#Сравнительная_таблица)
-
 ## Список вспомогательных инструментов
 
 ### aurget

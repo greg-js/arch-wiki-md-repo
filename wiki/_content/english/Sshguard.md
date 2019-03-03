@@ -19,7 +19,7 @@ sshguard is not vulnerable to most (or maybe any) of the log analysis [vulnerabi
 
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)
-    *   [2.1 FirewallD](#FirewallD)
+    *   [2.1 firewalld](#firewalld)
     *   [2.2 UFW](#UFW)
     *   [2.3 iptables](#iptables)
     *   [2.4 nftables](#nftables)
@@ -48,9 +48,9 @@ Both temporary and permanent bans are done by adding an entry into the "sshguard
 
 You must configure one of the following firewalls to be used with sshguard in order for blocking to work.
 
-#### FirewallD
+#### firewalld
 
-sshguard can work with Firewalld. Make sure you have firewalld enabled, configured and setup first. To make sshguard write to your zone of preference, issue the following commands:
+sshguard can work with [firewalld](/index.php/Firewalld "Firewalld"). Make sure you have firewalld enabled, configured and setup first. To make sshguard write to your zone of preference, issue the following commands:
 
 ```
 # firewallctl zone "<zone name>" --permanent add rich-rule "rule source ipset=sshguard4 drop"

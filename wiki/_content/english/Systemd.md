@@ -521,6 +521,7 @@ To delay a service after the network is up, include the following dependencies i
 The network wait service of the particular application that manages the network, must also be enabled so that `network-online.target` properly reflects the network status.
 
 *   For the ones using [NetworkManager](/index.php/NetworkManager "NetworkManager"), [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`.
+*   In the case of [netctl](/index.php/Netctl "Netctl"), enable the `netctl-wait-online.service`.
 *   If using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` is by default enabled automatically whenever `systemd-networkd.service` has been enabled; check this is the case with `systemctl is-enabled systemd-networkd-wait-online.service`, there is no other action needed.
 
 For more detailed explanations see [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) in the systemd wiki.

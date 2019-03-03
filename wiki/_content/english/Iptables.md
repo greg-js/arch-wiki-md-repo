@@ -62,7 +62,7 @@ The stock Arch Linux kernel is compiled with iptables support. You will only nee
 
 	[https://gitlab.com/hsleisink/firetable](https://gitlab.com/hsleisink/firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)
 
-*   **[firewalld](https://en.wikipedia.org/wiki/firewalld "wikipedia:firewalld") (firewall-cmd)** — Daemon and console interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
+*   **[firewalld](/index.php/Firewalld "Firewalld") (firewall-cmd)** — Daemon and console interface for configuring network and firewall zones as well as setting up and configuring firewall rules.
 
 	[https://firewalld.org/](https://firewalld.org/) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
 

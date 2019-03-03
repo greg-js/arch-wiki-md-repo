@@ -93,7 +93,7 @@ $ xinput set-prop 14 303 {1 1}
 
 ### Via Xorg configuration file
 
-See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Button re-mapping](#Button_re-mapping) illustrate examples.
+See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#libinput](/index.php/Logitech_Marble_Mouse#libinput "Logitech Marble Mouse") and [#Button re-mapping](#Button_re-mapping) illustrate examples.
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
 
@@ -116,6 +116,7 @@ One way to check which devices are managed by libinput is the [xorg logfile](/in
 [    28.878] (II) Using input driver 'libinput' for 'SynPS/2 Synaptics TouchPad'
 [    28.886] (II) Using input driver 'libinput' for 'TPPS/2 IBM TrackPoint'
 [    28.895] (II) Using input driver 'libinput' for 'ThinkPad Extra Buttons'
+
 ```
 
 is a notebook without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. devices are autodetected.
@@ -152,7 +153,7 @@ The input device can then be configured with any of the lines in the CONFIGURATI
 *   `Option "NaturalScrolling" "true"`: natural (reverse) scrolling
 *   `Option "ScrollMethod" "edge"`: edge (vertical) scrolling
 
-Bear in mind that some of them may only apply to certain devices and you'll need to restart X for changes to take effect.
+Bear in mind that some of them may only apply to certain devices and you will need to restart X for changes to take effect.
 
 ### Graphical tools
 
@@ -164,8 +165,8 @@ There are different GUI tools:
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
-    *   Keyboard, mouse and controller devices can be configured from System Settings. Default touchpad module is still based on the old synaptics driver and won't work for libinput configuration.
-    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is an old KDE configuration module for all input devices supported by libinput. It works for touchpad configuration but options are not restored at the next startup. See [here](https://bugs.kde.org/show_bug.cgi?id=402882).
+    *   Keyboard, mouse and controller devices can be configured from System Settings. Default touchpad module is still based on the old synaptics driver and will not work for libinput configuration.
+    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is an old KDE configuration module for all input devices supported by libinput. It works for touchpad configuration but options are not restored at the next startup. See [KDE Bug 402882](https://bugs.kde.org/show_bug.cgi?id=402882).
 
 ## Tips and tricks
 
@@ -218,6 +219,7 @@ for i in $(xinput list | grep "Logitech USB Receiver" | perl -n -e'/id=(\d+)/ &&
 	fi
 done
 ...
+
 ```
 
 ### Change touchpad sensitivity
@@ -226,9 +228,7 @@ The method of finding the correct thresholds for when libinput registers a touch
 
 Custom touchpad pressure values can be set via temporary local device quirks. See [[3]](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html).
 
-**Note:**
-
-Quirks are an internal API and are not guaranteed to work in future libinput versions. Between versions 1.11 and 1.12, udev rules [[4]](https://wayland.freedesktop.org/libinput/doc/1.11.3/udev_config.html#hwdb) were replaced by `.quirk` files [[5]](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html).
+**Note:** Quirks are an internal API and are not guaranteed to work in future libinput versions. Between versions 1.11 and 1.12, udev rules [[4]](https://wayland.freedesktop.org/libinput/doc/1.11.3/udev_config.html#hwdb) were replaced by `.quirk` files [[5]](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html).
 
 ### Disable touchpad
 
@@ -329,7 +329,7 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
 ### Touchpad settings not taking effect in KDE's Touchpad KCM
 
-KDE touchpad configuration module does not have libinput support for [Xorg](/index.php/Xorg "Xorg"). Even Xorg configuration section related to touchpad device under `/etc/X11/xorg.conf.d/` does not work because default options are overwritten when Plasma session is started. Until full support is provided, some workarounds are
+KDE touchpad configuration module does not have libinput support for [Xorg](/index.php/Xorg "Xorg"). Even Xorg configuration section related to touchpad device under `/etc/X11/xorg.conf.d/` does not work because default options are overwritten when Plasma session is started. Until full support is provided, some workarounds are:
 
 *   installing [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/), but changed options are lost at the next startup;
 *   setting the options manually with `xinput set-prop` and saving needed commands in a bash script located in `~/.config/autostart-scripts/` to apply non-default options at Plasma startup.

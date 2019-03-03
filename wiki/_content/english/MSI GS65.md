@@ -194,6 +194,8 @@ The following buttons don't have any function or keycodes.
 
 #### Non-US Keyboards' Backslash/Pipe 102nd Key
 
+**Warning:** As of Feb 2019, systemd 241.7 reverted this change; this workaround is no longer required.
+
 Systemd v240 addressed an issue for US keyboards which broke the mapping for the 102nd key on non-US keyboards. This is the key on the right of the space bar. For a UK keyboard it is the backslash/pipe key and you can correct the scancode to keycode mapping with `# setkeycodes 56 86` . To make this permanent, save the command to an executable shell script with a #!/bin/sh shebang, then create and enable the following systemd unit file:
 
 ```

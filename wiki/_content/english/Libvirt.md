@@ -72,7 +72,7 @@ For network connectivity, install:
 *   [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils) for bridged networking.
 *   [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat) for remote management over [SSH](/index.php/SSH "SSH").
 
-**Note:** If you are using [firewalld](https://www.archlinux.org/packages/?name=firewalld), as of libvirt 4.8.0 you need to change the firewall backend in `/etc/firewalld/firewalld.conf` from nftables to iptables.
+**Note:** If you are using [firewalld](/index.php/Firewalld "Firewalld"), as of libvirt 4.8.0 you need to change the firewall backend in `/etc/firewalld/firewalld.conf` from nftables to iptables.
 
 ### Client
 

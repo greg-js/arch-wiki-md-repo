@@ -7,7 +7,7 @@ Artículos relacionados
 *   [Pam abl](/index.php/Pam_abl "Pam abl")
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)")
-*   [SSHFS](/index.php/SSHFS "SSHFS")
+*   [SSHFS (Español)](/index.php/SSHFS_(Espa%C3%B1ol) "SSHFS (Español)")
 *   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 

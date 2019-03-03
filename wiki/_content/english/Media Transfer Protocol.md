@@ -26,6 +26,7 @@ The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Proto
     *   [6.1 jmtpfs: Input/output error upon first access](#jmtpfs:_Input/output_error_upon_first_access)
     *   [6.2 kio-mtp: cannot use "Open with File Manager" action](#kio-mtp:_cannot_use_"Open_with_File_Manager"_action)
     *   [6.3 kio-mtp being called simultaneously by different services](#kio-mtp_being_called_simultaneously_by_different_services)
+    *   [6.4 Android File Transfer: connect failed: no MTP device found](#Android_File_Transfer:_connect_failed:_no_MTP_device_found)
 
 ## Connecting
 
@@ -306,3 +307,15 @@ Change the line `Exec=kioclient exec mtp:udi=%i/` to `Exec=dolphin "mtp:/"`.
 Parallel usage of mtpfs and kio-mtp, as well as conflicting services using kio-mtp -music players included- should be avoided, as mentioned in [this forum](https://bbs.archlinux.org/viewtopic.php?pid=1657736#p1657736).
 
 Amarok's plugin for MTP services, for example, might be preventing Dolphin (plasma) to access different phone model's files. Switching it off was a solution for at least one user.
+
+### Android File Transfer: connect failed: no MTP device found
+
+After installing [android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer), while trying to mount any MTP device if you get the following error:
+
+ `$ aft-mtp-mount /path/to/folder` 
+```
+connect failed: no MTP device found
+
+```
+
+then install the package: [android-udev](https://www.archlinux.org/packages/?name=android-udev). This package contains per manufacturer/device [udev rules](/index.php/Udev_rules "Udev rules") for MTP devices, making it easier to use [ADB](/index.php/ADB "ADB") or MTP.

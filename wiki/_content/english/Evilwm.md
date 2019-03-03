@@ -1,6 +1,10 @@
-[evilwm](http://www.6809.org.uk/evilwm/) is a minimalist window manager for the X Window system. It's minimalist in that it omits unnecessary stuff like window decorations and icons. But it's very usable in that it provides good keyboard control with repositioning and maximize toggles, solid window drags, snap-to-border support, and virtual desktops. Its installed binary size is only 0.07 MB.
+[evilwm](http://www.6809.org.uk/evilwm/) is a minimalist [window manager](/index.php/Window_manager "Window manager") for the [X](/index.php/X "X") Window system. It's minimalist in that it omits unnecessary stuff like window decorations and icons. But it's very usable in that it provides good keyboard control with repositioning and maximize toggles, solid window drags, snap-to-border support, and virtual desktops. Its installed binary size is only 0.07 MB.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
@@ -9,14 +13,14 @@
     *   [3.1 Keyboard controls](#Keyboard_controls)
     *   [3.2 Mouse controls](#Mouse_controls)
     *   [3.3 Virtual desktops](#Virtual_desktops)
-*   [4 Tips & Tricks](#Tips_.26_Tricks)
+*   [4 Tips & Tricks](#Tips_&_Tricks)
     *   [4.1 Horizontal window maximize](#Horizontal_window_maximize)
     *   [4.2 Exit evilwm by ending a program](#Exit_evilwm_by_ending_a_program)
     *   [4.3 Resize windows using the keyboard](#Resize_windows_using_the_keyboard)
     *   [4.4 Keybindings](#Keybindings)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Lost focus bug fix](#Lost_focus_bug_fix)
-    *   [5.2 evilwm doesn't start](#evilwm_doesn.27t_start)
+    *   [5.2 evilwm doesn't start](#evilwm_doesn't_start)
     *   [5.3 Missing fonts.dir](#Missing_fonts.dir)
 *   [6 Links](#Links)
 

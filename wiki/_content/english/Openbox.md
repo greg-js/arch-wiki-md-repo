@@ -540,7 +540,7 @@ See the [Oblogout](/index.php/Oblogout "Oblogout") article for an overview on ho
 
 ### Openbox for multihead users
 
-While Openbox provides better than average multihead support on its own, [openbox-multihead-git](https://aur.archlinux.org/packages/openbox-multihead-git/) provides a development branch called **Openbox Multihead** that gives multihead users per-monitor desktops. This model is not commonly found in floating window managers, but exists mainly in tiling window managers. It is explained well on the [Xmonad web site](http://xmonad.org/tour.html#workspace). Also, please see [README.MULTIHEAD](https://github.com/BurntSushi/openbox-multihead/blob/multihead/README.MULTIHEAD) for a more comprehensive description of the new features and configuration options found in Openbox Multihead.
+While Openbox provides better than average multihead support on its own, [openbox-multihead-git](https://aur.archlinux.org/packages/openbox-multihead-git/) provides a development branch called **Openbox Multihead** that gives multihead users per-monitor desktops. This model is not commonly found in floating window managers, but exists mainly in [tiling window managers](/index.php/Window_manager#Types "Window manager"). It is explained well on the [Xmonad web site](http://xmonad.org/tour.html#workspace). Also, please see [README.MULTIHEAD](https://github.com/BurntSushi/openbox-multihead/blob/multihead/README.MULTIHEAD) for a more comprehensive description of the new features and configuration options found in Openbox Multihead.
 
 Openbox Multihead will function like normal Openbox when only a single head is available.
 
@@ -635,14 +635,14 @@ The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides
 
 ### Xprop values for applications
 
-[xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) can be used to relay property values for selected applications. Where frequently using per-application settings, the following [Bash Alias](/index.php/Bash#Aliases "Bash") may be useful: dy:
+[xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) can be used to relay property values for selected applications. Where frequently using per-application settings, the following [Bash Alias](/index.php/Bash#Aliases "Bash") may be useful:
 
 ```
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 
 ```
 
-To use Xorg-XProp, run using the alias given `xp`, and click on the active program desired to define with per-application settins. The results displayed will only be the information that Openbox itself requires, namely the `WM_WINDOW_ROLE` and `WM_CLASS` (name and class) values:
+To use Xorg-XProp, run using the alias given `xp`, and click on the active program desired to define with per-application settings. The results displayed will only be the information that Openbox itself requires, namely the `WM_WINDOW_ROLE` and `WM_CLASS` (name and class) values:
 
 ```
 WM_WINDOW_ROLE(STRING) = "roster"

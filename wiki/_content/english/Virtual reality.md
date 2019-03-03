@@ -2,7 +2,11 @@
 
 A number of peripherals have been released or are about to be released recently which have brought affordable, extremely immersive virtual reality to everyone. Most of these peripherals have full or partial Linux support, and many have [AUR](/index.php/AUR "AUR") packages.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Compatibility matrix](#Compatibility_matrix)
 *   [2 Peripherals and toolkits](#Peripherals_and_toolkits)
@@ -17,6 +21,7 @@ A number of peripherals have been released or are about to be released recently 
         *   [2.4.1 Setting up](#Setting_up_3)
     *   [2.5 OpenHMD](#OpenHMD)
         *   [2.5.1 Installation](#Installation)
+        *   [2.5.2 SteamVR support](#SteamVR_support)
 *   [3 Supported software](#Supported_software)
     *   [3.1 Dolphin (original VR fork)](#Dolphin_(original_VR_fork))
     *   [3.2 Dolphin (official OSVR support)](#Dolphin_(official_OSVR_support))
@@ -118,6 +123,15 @@ Bindings for .NET, Java, Perl, Python and Rust are available from third-parties.
 #### Installation
 
 Install [openhmd-git](https://aur.archlinux.org/packages/openhmd-git/).
+
+#### SteamVR support
+
+It is possible to use OpenHMD with SteamVR. To do that, you need to install [steamvr-openhmd-git](https://aur.archlinux.org/packages/steamvr-openhmd-git/) and create symlink that points to the OpenHMD SteamVR driver inside your SteamVR drivers directory, e.g.:
+
+```
+ ln -s /usr/lib/steamvr/openhmd ~/.steam/steam/steamapps/common/SteamVR/drivers/openhmd
+
+```
 
 ## Supported software
 

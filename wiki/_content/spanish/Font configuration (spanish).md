@@ -32,9 +32,9 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
     *   [2.6 Desactivar auto-hinter para fuentes en negrita](#Desactivar_auto-hinter_para_fuentes_en_negrita)
     *   [2.7 Reemplazar o establecer las fuentes por defecto](#Reemplazar_o_establecer_las_fuentes_por_defecto)
     *   [2.8 Lista blanca y lista negra de fuentes](#Lista_blanca_y_lista_negra_de_fuentes)
-    *   [2.9 Disable bitmap fonts](#Disable_bitmap_fonts)
-    *   [2.10 Disable scaling of bitmap fonts](#Disable_scaling_of_bitmap_fonts)
-    *   [2.11 Create bold and italic styles for incomplete fonts](#Create_bold_and_italic_styles_for_incomplete_fonts)
+    *   [2.9 Desactivar fuentes bitmap](#Desactivar_fuentes_bitmap)
+    *   [2.10 Desactivar escalado de fuentes bitmap](#Desactivar_escalado_de_fuentes_bitmap)
+    *   [2.11 Crear estilos negrita e itálica para fuentes incompletas](#Crear_estilos_negrita_e_itálica_para_fuentes_incompletas)
     *   [2.12 Change rule overriding](#Change_rule_overriding)
     *   [2.13 Query the current settings](#Query_the_current_settings)
 *   [3 Applications without fontconfig support](#Applications_without_fontconfig_support)
@@ -366,11 +366,11 @@ Normalmente cuando ambos elementos se combinan, `<rejectfont>` se usa primero de
 
 ```
 
-### Disable bitmap fonts
+### Desactivar fuentes bitmap
 
-Bitmap fonts are sometimes used as fallbacks for missing fonts, which may cause text to be rendered pixelated or too large. Use the `70-no-bitmaps.conf` [preset](#Presets) to disable this behavior.
+Las fuentes mapa de bits (bitmap) se utilizan a veces como alternativa de una fuente que falta, puede hacer que el texto se represente pixelado o muy grande. Utilice el [ajuste predeterminado](#Ajustes_predeterminados) `70-no-bitmaps.conf` para desactivar este comportamiento.
 
-To disable embedded bitmap for all fonts:
+Para desactivar bitmap incrustado para todas las fuentes:
 
  `~/.config/fontconfig/conf.d/20-no-embedded.conf` 
 ```
@@ -386,7 +386,7 @@ To disable embedded bitmap for all fonts:
 
 ```
 
-To disable embedded bitmap fonts for a specific font:
+Para desactivar bitmap incrustado para una fuente específica:
 
 ```
 <match target="font">
@@ -400,38 +400,38 @@ To disable embedded bitmap fonts for a specific font:
 
 ```
 
-### Disable scaling of bitmap fonts
+### Desactivar escalado de fuentes bitmap
 
-To disable scaling of bitmap fonts (which often makes them blurry), remove `/etc/fonts/conf.d/10-scale-bitmap-fonts.conf`.
+Para desactivar el escalado de las fuentes bitmap (lo que a veces los emborrona), elimine `/etc/fonts/conf.d/10-scale-bitmap-fonts.conf`.
 
-### Create bold and italic styles for incomplete fonts
+### Crear estilos negrita e itálica para fuentes incompletas
 
-FreeType has the ability to automatically create *italic* and **bold** styles for fonts that do not have them, but only if explicitly required by the application. Given programs rarely send these requests, this section covers manually forcing generation of missing styles.
+FreeType tiene la habilidad de crear automáticamente los estilos **itálica** y **negrita** para fuentes que no los tienen, pero solo si la aplicación lo requiere. Los programas raramente envían estas peticiones, esta sección cubre la generación forzada de los estilos faltantes.
 
-Start by editing `/usr/share/fonts/fonts.cache-1` as explained below. Store a copy of the modifications on another file, because a font update with `fc-cache` will overwrite `/usr/share/fonts/fonts.cache-1`.
+Empiece editando `/usr/share/fonts/fonts.cache-1` como se explica abajo. Guarde una copia de la modificación en otro archivo porque la actualización de fuentes con `fc-cache` sobrescribirá `/usr/share/fonts/fonts.cache-1`.
 
-Assuming the Dupree font is installed:
+Asumiendo que la fuente Dupree está instalada:
 
 ```
 "dupree.ttf" 0 "Dupree:style=Regular:slant=0:weight=80:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
-Duplicate the line, change `style=Regular` to `style=Bold` or any other style. Also change `slant=0` to `slant=100` for italic, `weight=80` to `weight=200` for bold, or combine them for ***bold italic***:
+Duplique la linea, cambie `style=Regular` a `style=Bold` o cualquier otro estilo. Cambie también `slant=0` a `slant=100` para itálica, `weight=80` a `weight=200` para negrita, o combinelas para ***negrita e itálica***:
 
 ```
 "dupree.ttf" 0 "Dupree:style=Bold Italic:slant=100:weight=200:width=100:foundry=unknown:index=0:outline=True:*etc...*
 
 ```
 
-Now add necessary modifications to `$XDG_CONFIG_HOME/fontconfig/fonts.conf`:
+Ahora añada las modificaciones necesarias a `$XDG_CONFIG_HOME/fontconfig/fonts.conf`:
 
 ```
 ...
 <match target="font">
     <test name="family" qual="any">
         <string>Dupree</string>
-         <!-- other fonts here .... -->
+         <!-- otras fuentes aqui .... -->
      </test>
      <test name="weight" compare="more_eq"><int>140</int></test>
      <edit name="embolden" mode="assign"><bool>true</bool></edit>
@@ -440,7 +440,7 @@ Now add necessary modifications to `$XDG_CONFIG_HOME/fontconfig/fonts.conf`:
 <match target="font">
     <test name="family" qual="any">
         <string>Dupree</string>
-        <!-- other fonts here .... -->
+        <!-- otras fuentes aqui .... -->
     </test>
     <test name="slant" compare="more_eq"><int>80</int></test>
     <edit name="matrix" mode="assign">
@@ -457,7 +457,7 @@ Now add necessary modifications to `$XDG_CONFIG_HOME/fontconfig/fonts.conf`:
 
 ```
 
-**Tip:** Use the value `embolden` for existing bold fonts in order to make them even bolder.
+**Sugerencia:** Utilice el valor `embolden` para las fuentes negritas existentes para hacerlas aún mas negritas.
 
 ### Change rule overriding
 

@@ -11,7 +11,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 28 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=567377).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 1 марта 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=567628).
 
 KDE — проект, состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
@@ -417,7 +417,7 @@ Phonon широко используется в среде KDE, как для а
 
 ### PIM
 
-KDE поставляет свой собственный набор [PIM-приложений](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "wikipedia:ru:Персональный информационный менеджер"), который включает электронные письма, контакты, календарь и так далее. Для их установки можно использовать мета-пакет [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
+KDE поставляет свой собственный набор приложений для [управления персональной информацией](https://en.wikipedia.org/wiki/Personal_information_management "wikipedia:Personal information management") (электронными письмами, контактами, календарями и так далее). Для их установки используйте мета-пакет [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
 
 #### Akonadi
 
@@ -594,7 +594,7 @@ $ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
 
 ```
 
-Данная команда переименует **все** файлы конфигурации Plasma вашего пользователя в **.bak* (например, `plasmarc.bak`) и когда вы перезайдёте в Plasma, вы снова получите настройки по умолчанию. Для возвращения предыдущего состояния файлов конфигурации достаточно будет убрать расширение *.bak*. Если у вас уже есть файлы **.bak*, сначала переименуйте, переместите или удалите их. Также крайне рекомендуется регулярно создавать бекапы, смотрите статью [Backup programs (Русский)](/index.php/Backup_programs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Backup programs (Русский)") для получения информации о возможных решениях.
+Данная команда переименует **все** файлы конфигурации Plasma вашего пользователя в **.bak* (например, `plasmarc.bak`) и когда вы перезайдёте в Plasma, вы снова получите настройки по умолчанию. Для возвращения предыдущего состояния файлов конфигурации достаточно будет убрать расширение *.bak*. Если у вас уже есть файлы **.bak*, сначала переименуйте, переместите или удалите их. Также крайне рекомендуется регулярно создавать бекапы, смотрите статью [Synchronization and backup programs (Русский)](/index.php/Synchronization_and_backup_programs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Synchronization and backup programs (Русский)") для получения информации о возможных решениях.
 
 #### Очистка кэша для решения проблем с обновлением
 

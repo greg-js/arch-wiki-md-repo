@@ -369,13 +369,13 @@ Históricamente, hubo [PkgD](https://bbs.archlinux.org/viewtopic.php?id=64391) y
 
 #### Caché de lectura y escritura
 
-Para compartir paquetes entre varios equipos, simplemente comparta `/var/cache/pacman/` utilizando cualquier protocolo de montaje basado en red. Esta sección muestra cómo usar [shfs](/index.php/Shfs "Shfs") o [SSHFS](/index.php/SSHFS "SSHFS") para compartir una caché de paquetes más los directorios de biblioteca relacionados entre múltiples ordenadores de la misma red local. Tenga en cuenta que una caché compartida en red puede ser lenta dependiendo de la elección del sistema de archivos, entre otros factores.
+Para compartir paquetes entre varios equipos, simplemente comparta `/var/cache/pacman/` utilizando cualquier protocolo de montaje basado en red. Esta sección muestra cómo usar [shfs](/index.php/Shfs "Shfs") o [SSHFS](/index.php/SSHFS_(Espa%C3%B1ol) "SSHFS (Español)") para compartir una caché de paquetes más los directorios de biblioteca relacionados entre múltiples ordenadores de la misma red local. Tenga en cuenta que una caché compartida en red puede ser lenta dependiendo de la elección del sistema de archivos, entre otros factores.
 
 Primero, instale cualquier paquete de sistema de ficheros que soporte la red: [shfs-utils](https://www.archlinux.org/packages/?name=shfs-utils), [sshfs](https://www.archlinux.org/packages/?name=sshfs), [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs), [samba](https://www.archlinux.org/packages/?name=samba) or [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils).
 
 **Sugerencia:**
 
-*   Para usar *sshfs* o *shfs*, considere leer [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").
+*   Para usar *sshfs* o *shfs*, considere leer [Using SSH Keys (Español)](/index.php/Using_SSH_Keys_(Espa%C3%B1ol) "Using SSH Keys (Español)").
 *   Por defecto, *smbfs* no sirve nombres de archivo que contengan dos puntos, lo que hace que el cliente descargue de nuevo el paquete otra vez. Para evitarlo, utilice la función `mapchars` opción de montaje en el cliente.
 
 Luego, para compartir los paquetes actuales, monte `/var/cache/pacman/pkg` del servidor a `/var/cache/pacman/pkg` en cada máquina cliente

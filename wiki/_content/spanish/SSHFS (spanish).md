@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [SSHFS](/index.php/SSHFS "SSHFS"), revisada por última vez el **2019-02-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=566372) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [SSHFS](/index.php/SSHFS "SSHFS"), revisada por última vez el **2019-03-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=SSHFS&diff=0&oldid=566372) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -28,8 +28,8 @@ Artículos relacionados
 *   [5 Solución de problemas](#Solución_de_problemas)
     *   [5.1 Lista de comprobación](#Lista_de_comprobación)
     *   [5.2 Connection reset by peer](#Connection_reset_by_peer)
-    *   [5.3 Remote host has disconnected](#Remote_host_has_disconnected)
-    *   [5.4 fstab mounting issues](#fstab_mounting_issues)
+    *   [5.3 El host remoto se ha desconectado](#El_host_remoto_se_ha_desconectado)
+    *   [5.4 Problemas de montaje fstab](#Problemas_de_montaje_fstab)
 *   [6 Véase también](#Véase_también)
 
 ## Instalación
@@ -234,32 +234,32 @@ $ chown -R USUARIO_C: /mnt/cliente/carpeta
 *   Añadiendo la opción '`sshfs_debug`' (como en '`sshfs -o sshfs_debug user@server ...`') puede ayudar a resolver el problema.
 *   Si eso no revela nada útil, también puede intentar añadir la opción '`debug`'
 *   Si está intentando hacer sshfs a través de un enrutador que utiliza DD-WRT o similar, hay una solución [aquí](http://www.dd-wrt.com/wiki/index.php/SFTP_with_DD-WRT). (tenga en cuenta que la opción -osftp_server=/opt/libexec/sftp-server se puede utilizar para la orden sshfs en lugar de parchear dropbear)
-*   If you see this only on boot, it may be that systemd is attempting to mount prior to a network connection being available. Enabling the 'wait-online' service appropriate to your network connection (eg. systemd-networkd-wait-online.service) fixes this.
-*   Old Forum thread: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613)
-*   Make sure your user can log into the server (especially when using AllowUsers)
-*   Make sure `Subsystem sftp /usr/lib/ssh/sftp-server` is enabled in `/etc/ssh/sshd_config`.
+*   Si ve esto solo durante el arranque, puede ser que systemd esté intentando montar antes de que haya una conexión de red disponible. Habilite el servicio de 'espera-en-línea' apropiado para su conexión de red (por ejemplo, systemd-networkd-wait-online.service) para solucionar esto.
+*   Hilo antiguo del foro: [sshfs: Connection reset by peer](https://bbs.archlinux.org/viewtopic.php?id=27613)
+*   Asegúrese de que su usuario pueda iniciar sesión en el servidor (especialmente al utilizar AllowUsers)
+*   Asegúrese de que `Subsystem sftp /usr/lib/ssh/sftp-server` está activado en `/etc/ssh/sshd_config`.
 
-**Note:** When providing more than one option for sshfs, they must be comma separated. Like so: '`sshfs -o sshfs_debug,IdentityFile=</path/to/key> user@server ...`')
+**Nota:** Cuando se proporciona más de una opción para sshfs, deben estar separadas por comas. Al igual que: '`sshfs -o sshfs_debug,IdentityFile=</ruta/a/la/clave> usuario@servidor ...`')
 
-### Remote host has disconnected
+### El host remoto se ha desconectado
 
-If you receive this message directly after attempting to use *sshfs*:
+Si recibe este mensaje directamente después de intentar utilizar *sshfs*:
 
-*   First make sure that the **remote** machine has *sftp* installed! It will not work, if not.
-*   Then, check that the path of the `Subsystem sftp` in `/etc/ssh/sshd_config` on the remote machine is valid.
+*   Primero asegúrese de que la máquina **remota** tiene instalado *sftp*. No funcionará si no lo tiene.
+*   Después, comprueba que la ruta de `Subsystem sftp` en `/etc/ssh/sshd_config` en la máquina remota es válida.
 
-### fstab mounting issues
+### Problemas de montaje fstab
 
-To get verbose debugging output, add the following to the mount options:
+Para obtener una salida de depuración detallada, añada lo siguiente a las opciones de montaje:
 
 ```
 ssh_command=ssh\040-vv,sshfs_debug,debug
 
 ```
 
-**Note:** Here, `\040` represents a space which fstab uses to separate fields.
+**Nota:** Aquí, `\040` representa un espacio que fstab utiliza para separar campos.
 
-To be able to run `mount -av` and see the debug output, remove the following:
+Para poder ejecutar `mount -av` y ver la salida de depuración, elimine lo siguiente:
 
 ```
  noauto,x-systemd.automount

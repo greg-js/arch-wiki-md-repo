@@ -70,7 +70,7 @@ $ fusermount -u *punto_de_montaje*
 
 	[https://github.com/s3fs-fuse/s3fs-fuse](https://github.com/s3fs-fuse/s3fs-fuse) || [s3fs-fuse](https://www.archlinux.org/packages/?name=s3fs-fuse)
 
-*   **[SSHFS](/index.php/SSHFS "SSHFS")** — Cliente de sistema de archivos basado en FUSE para montar directorios sobre SSH.
+*   **[SSHFS](/index.php/SSHFS_(Espa%C3%B1ol) "SSHFS (Español)")** — Cliente de sistema de archivos basado en FUSE para montar directorios sobre SSH.
 
 	[https://github.com/libfuse/sshfs](https://github.com/libfuse/sshfs) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 

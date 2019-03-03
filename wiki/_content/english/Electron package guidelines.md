@@ -36,7 +36,7 @@ Some electron applications have compiled native extensions which link to the ele
 Alternatively, you can remove the electron dependency from `package.json` and set the correct environment variables before running npm:
 
 ```
-export npm_config_target=$(cat /usr/lib/electron/version | tail -c +2)
+export npm_config_target=$(tail -c +2 /usr/lib/electron/version)
 export npm_config_arch=x64
 export npm_config_target_arch=x64
 export npm_config_disturl=[https://atom.io/download/electron](https://atom.io/download/electron)

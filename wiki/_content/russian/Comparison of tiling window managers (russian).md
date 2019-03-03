@@ -2,7 +2,11 @@
 
 Эта статья предусматривает объективное сравнение наиболее популярных *тайловых* [оконных менеджеров](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)") (в отличие от *плавающих* оконных менеджеров).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Таблица сравнения](#Таблица_сравнения)
     *   [1.1 Стиль управления](#Стиль_управления)

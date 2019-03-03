@@ -7,7 +7,11 @@
 
 **[Video Acceleration API](http://www.freedesktop.org/wiki/Software/vaapi)** — спецификация и открытая библиотека, созданная с целью предоставить возможность аппаратного кодирования и декодирования видео.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Поддерживаемые видеокарты](#Поддерживаемые_видеокарты)
     *   [1.1 Поддерживаемые форматы](#Поддерживаемые_форматы)
@@ -92,7 +96,7 @@ export LIBVA_DRIVER_NAME=vdpau
 
 ### Проверка
 
-Проверрьте настройки VAAPI выполнив `vainfo`, которое предоставляет пакет [libva](https://www.archlinux.org/packages/?name=libva):
+Проверрьте настройки VAAPI выполнив `vainfo`, которое предоставляет пакет [libva-utils](https://www.archlinux.org/packages/?name=libva-utils):
 
  `$ vainfo` 
 ```

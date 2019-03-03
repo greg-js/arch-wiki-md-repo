@@ -74,7 +74,7 @@ $ arch-nspawn "$CHROOT"/root pacman -U /root/nodejs-svgo-1.1.1-1-any.pkg.tar.xz
 
 ```
 
-**Warning:** This voids the warrantee on your "Clean" CHROOT!
+**Warning:** This voids the warranty on your "Clean" CHROOT!
 
 #### Create a PGO cache
 

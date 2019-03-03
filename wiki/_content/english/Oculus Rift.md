@@ -1,6 +1,10 @@
-The Oculus Rift is a virtual reality head-mounted display developed by [Oculus VR](http://www.oculusvr.com/). Note: CV1 Remains unsupported in Linux. This article covers setup for DK1 and DK2 only.
+The Oculus Rift is a virtual reality head-mounted display developed by [Oculus VR](http://www.oculusvr.com/). This article covers setup for the official Oculus Rift SDK on Linux, which supports DK1 and DK2 only (but not CV1). If you want to use your Oculus Rift CV1 on Linux, you need to use [OpenHMD](/index.php/Virtual_reality#OpenHMD "Virtual reality") instead.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Hardware](#Hardware)

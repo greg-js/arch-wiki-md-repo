@@ -53,7 +53,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 [Install](/index.php/Install "Install") the userspace utilities package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
-**Tip:** Most [iptables front-ends](/index.php/Iptables#Front-ends "Iptables") feature no direct or indirect support of nftables, but may introduce it.[[1]](https://www.spinics.net/lists/netfilter/msg58215.html) One graphical front-end that supports both, nftables and iptables, is [firewalld](https://www.archlinux.org/packages/?name=firewalld).[[2]](https://firewalld.org/2018/07/nftables-backend)
+**Tip:** Most [iptables front-ends](/index.php/Iptables#Front-ends "Iptables") feature no direct or indirect support of nftables, but may introduce it.[[1]](https://www.spinics.net/lists/netfilter/msg58215.html) One graphical front-end that supports both, nftables and iptables, is [firewalld](/index.php/Firewalld "Firewalld").[[2]](https://firewalld.org/2018/07/nftables-backend)
 
 ## Usage
 

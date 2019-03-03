@@ -8,7 +8,11 @@ Related articles
 
 **fdm** (*fetch and deliver mail*), is a simple program for delivering and filtering mail. Comparing it to other same-purposed applications shows that it has similarities with [Mutt](/index.php/Mutt "Mutt")'s very focused design principles.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Configuring](#Configuring)
@@ -18,7 +22,9 @@ Related articles
 *   [3 Testing](#Testing)
 *   [4 Extended usage](#Extended_usage)
     *   [4.1 Additional filtering](#Additional_filtering)
-    *   [4.2 Automation with cron](#Automation_with_cron)
+    *   [4.2 Automation](#Automation)
+        *   [4.2.1 Cron](#Cron)
+        *   [4.2.2 Systemd Timer](#Systemd_Timer)
 *   [5 See also](#See_also)
 
 ## Installing
@@ -31,7 +37,7 @@ Related articles
 
 ### mbox
 
-Alpine uses the mbox format, so we need to set up some files that we will be editing.
+Alpine uses the mbox format, so we need to set up some files that we will be editing:
 
 ```
 $ cd
@@ -43,7 +49,7 @@ $ chmod 600 .fdm.conf mail/INBOX
 
 ### maildir
 
-Mutt prefers a capitized mail directory, and is able to use the maildir format. If you plan on using Mutt do the following setup.
+Mutt prefers a capitized mail directory, and is able to use the maildir format. If you plan on using Mutt do the following setup:
 
 ```
 $ cd
@@ -96,8 +102,6 @@ This will keep your mail untouched on the server incase there are errors. Look o
 
 ## Extended usage
 
-*Non-essential features that add to* fdm'*s usability*
-
 ### Additional filtering
 
 If you want to have mail from a certain account go to a specific mailbox, you could add the following lines to your fdm.conf file. From the config file above, if you wanted to filter the mail from `*bar@gmail.com*` into it's own folder `*bar-mail*`, you would add this below the existing "action" line:
@@ -118,13 +122,62 @@ match account *bar* action *bar-deliver*
 
 Then all mail to `*bar@gmail.com*` will be put into the `*bar-mail*` mail folder.
 
-### Automation with cron
+### Automation
 
-If all went well, set up a [cron](/index.php/Cron "Cron") job to check your mail regularly.
+Since *fdm* does not run as a daemon, timed mail fetching is left to job schedulers like [cron](/index.php/Cron "Cron") or [systemd timers](/index.php/Systemd/Timers "Systemd/Timers"). This section will show implementations for both.
+
+#### Cron
+
+Fetch and sort mail from all accounts every 15 minutes, appending a log all matches to a local file:
+
+ `$ crontab -e` 
+```
+...
+*/15 * * * * fdm fetch >> $HOME/[Mm]ail/fdm.log
 
 ```
-$ crontab -e
-*/15 * * * * fdm fetch >> $HOME/[Mm]ail/fdm.log
+
+#### Systemd Timer
+
+Setup the fdm service for the local user to fetch and sort mail from all accounts:
+
+ `${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/fdm.service` 
+```
+[Unit]
+
+Description=Fetch mail using fdm
+After=network.target network-online.target dbus.socket
+Documentation=man:fdm(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/fdm fetch
+
+```
+
+Then setup the timer to run the service every 15 minutes:
+
+ `${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/fdm.timer` 
+```
+[Unit]
+Description=Fetch mail using fdm
+
+[Timer]
+# Uncomment to run the service two minutes after booting
+# OnBootSec=2m
+OnUnitActiveSec=15m
+Persistant=true
+
+[Install]
+WantedBy=timers.target
+
+```
+
+Finally:
+
+```
+$ systemctl --user daemon-refresh
+$ systemctl --user start fdm.timer
 
 ```
 

@@ -406,7 +406,7 @@ The following web browsers can integrate with Plasma:
 
 ### PIM
 
-KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
+KDE offers its own stack for [personal information management](https://en.wikipedia.org/wiki/Personal_information_management "wikipedia:Personal information management"). This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
 
 #### Akonadi
 

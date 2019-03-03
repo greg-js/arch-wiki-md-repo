@@ -300,6 +300,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://github.com/mate-desktop/mate-screensaver](https://github.com/mate-desktop/mate-screensaver) || [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver)
 
+*   **Deepin Screensaver** — A lightweight Qt5 based screensaver.
+
+	[https://github.com/linuxdeepin/deepin-screensaver](https://github.com/linuxdeepin/deepin-screensaver) || [deepin-screensaver](https://www.archlinux.org/packages/?name=deepin-screensaver)
+
 *   **physlock** — Screen and console locker.
 
 	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock](https://www.archlinux.org/packages/?name=physlock)
