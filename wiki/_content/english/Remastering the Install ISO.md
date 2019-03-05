@@ -63,7 +63,7 @@ $ cp -a /mnt/archiso ~/customiso
 
 ```
 
-**Note:** Make sure `customiso` does not exist beforehand, otherwise this will create a subdirectory called `archiso` inside `customiso`
+**Note:** Make sure `customiso` does not exist beforehand, otherwise this will create a subdirectory called `archiso` inside `customiso`.
 
 ### Customization
 
@@ -72,14 +72,14 @@ $ cp -a /mnt/archiso ~/customiso
 Change into the directory of the x86_64 system:
 
 ```
- $ cd ~/customiso/arch/x86_64
+$ cd ~/customiso/arch/x86_64
 
 ```
 
 Unsquash `airootfs.sfs` (to `squashfs-root`):
 
 ```
- $ unsquashfs airootfs.sfs
+$ unsquashfs airootfs.sfs
 
 ```
 
@@ -88,83 +88,84 @@ Unsquash `airootfs.sfs` (to `squashfs-root`):
 If you will need to run `mkinitcpio` within `arch-chroot`, you need to temporarily copy the kernel over:
 
 ```
- $ cp ../boot/x86_64/vmlinuz squashfs-root/boot/vmlinuz-linux
+$ cp ../boot/x86_64/vmlinuz squashfs-root/boot/vmlinuz-linux
 
 ```
 
 Now you can modify the content of the system in `squashfs-root`. You can also chroot into this system to install packages etc.:
 
 ```
- # arch-chroot squashfs-root /bin/bash
+# arch-chroot squashfs-root /bin/bash
 
 ```
 
-**Note:** `arch-chroot` is part of the package [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts)
+**Note:**
 
-**Note:** If the `arch-chroot` script is not available in your system (e.g, when remastering arch-based distros), mount the api file systems and copy over your DNS details. See [Chroot#Using chroot](/index.php/Chroot#Using_chroot "Chroot").
+*   `arch-chroot` is part of the package [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
+*   If the `arch-chroot` script is not available in your system (e.g, when remastering from other distributions), mount the API file systems and copy over your DNS details. See [Chroot#Using chroot](/index.php/Chroot#Using_chroot "Chroot").
 
 To be able to install package, you have to initialise the pacman keyring:
 
 ```
- (chroot) # pacman-key --init
- (chroot) # pacman-key --populate archlinux
+(chroot) # pacman-key --init
+(chroot) # pacman-key --populate archlinux
 
 ```
 
-**Note:** This step can take quite a while, be patient. (see [Pacman-Key](/index.php/Pacman-key#Initializing_the_keyring "Pacman-key"))
+**Note:** This step can take quite a while, be patient. See [Pacman/Package signing#Initializing the keyring](/index.php/Pacman/Package_signing#Initializing_the_keyring "Pacman/Package signing").
 
 If the kernel or initrd is updated, additional steps are required. In this case you have to install [archiso](https://www.archlinux.org/packages/?name=archiso) inside the chroot and change the content of `/etc/mkinitcpio.conf`:
 
 ```
- (chroot) # pacman -Syu --force archiso linux
- (chroot) # nano /etc/mkinitcpio.conf
+(chroot) # pacman -Syu --force archiso linux
+(chroot) # nano /etc/mkinitcpio.conf
 
 ```
 
 Change the line that says `HOOKS="...` to:
 
 ```
- HOOKS="base udev memdisk archiso_shutdown archiso archiso_loop_mnt archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs archiso_kms block pcmcia filesystems keyboard"
+HOOKS="base udev memdisk archiso_shutdown archiso archiso_loop_mnt archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs archiso_kms block filesystems keyboard"
 
 ```
 
 Now update the initramfs:
 
 ```
- (chroot) # mkinitcpio -p linux
+(chroot) # mkinitcpio -p linux
 
 ```
 
 When you are done, create a list of all installed packages, clean the pacman cache and exit the chroot:
 
 ```
- (chroot) # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > /pkglist.txt
- (chroot) # pacman -Scc
- (chroot) # exit
+(chroot) # LANG=C pacman -Sl | awk '/\[installed\]$/ {print $1 "/" $2 "-" $3}' > /pkglist.txt
+(chroot) # pacman -Scc
+(chroot) # exit
 
 ```
 
-If you updated the kernel or the initramfs, move them over to the system, and remove the fallback initramfs (the install ISO doesn't use this):
+If you updated the kernel or the initramfs, move them over to the system, and remove the fallback initramfs (the install ISO does not use this):
 
 ```
- $ mv squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
- $ mv squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
- $ rm squashfs-root/boot/initramfs-linux-fallback.img
+$ mv squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
+$ mv squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+$ rm squashfs-root/boot/initramfs-linux-fallback.img
 
 ```
 
 Move the list of packages:
 
 ```
- $ mv squashfs-root/pkglist.txt ~/customiso/arch/pkglist.x86_64.txt
+$ mv squashfs-root/pkglist.txt ~/customiso/arch/pkglist.x86_64.txt
 
 ```
 
 Now recreate `airootfs.sfs`:
 
 ```
- $ rm airootfs.sfs
- $ mksquashfs squashfs-root airootfs.sfs
+$ rm airootfs.sfs
+$ mksquashfs squashfs-root airootfs.sfs
 
 ```
 
@@ -173,14 +174,14 @@ Now recreate `airootfs.sfs`:
 Cleanup:
 
 ```
- # rm -r squashfs-root
+# rm -r squashfs-root
 
 ```
 
-Now update the MD5 checksum of `airootfs.sfs`:
+Now update the SHA512 checksum of `airootfs.sfs`:
 
 ```
- $ md5sum airootfs.sfs > airootfs.md5
+$ sha512sum airootfs.sfs > airootfs.sha512
 
 ```
 
@@ -189,23 +190,23 @@ Now update the MD5 checksum of `airootfs.sfs`:
 If you have updated the kernel or the initramfs and wish to boot on EFI systems, update the EFI boot image. You will need [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) as the EFI boot image is a `FAT16` filesystem.
 
 ```
- $ mkdir mnt
- # mount -t vfat -o loop ~/customiso/EFI/archiso/efiboot.img mnt
- # cp ~/customiso/arch/boot/x86_64/vmlinuz mnt/EFI/archiso/vmlinuz.efi
- # cp ~/customiso/arch/boot/x86_64/archiso.img mnt/EFI/archiso/archiso.img
+$ mkdir mnt
+# mount -t vfat -o loop ~/customiso/EFI/archiso/efiboot.img mnt
+# cp ~/customiso/arch/boot/x86_64/vmlinuz mnt/EFI/archiso/vmlinuz.efi
+# cp ~/customiso/arch/boot/x86_64/archiso.img mnt/EFI/archiso/archiso.img
 
 ```
 
 If you see `No space left on device` errors, you might need to resize `efiboot.img`. You can also create a new `efiboot.img` and copy the old files (replace `50` with the required size).
 
 ```
- $ dd if=/dev/zero bs=1M count=50 of=efiboot-new.img
- $ mkfs.fat -n "ARCHISO_EFI" efiboot-new.img
- $ mkdir new
- # mount -t fat -o loop efiboot-new.img new
- $ cp -r mnt/* new/
- # umount new mnt
- $ mv efiboot-new.img ~/customiso/EFI/archiso/efiboot.img
+$ dd if=/dev/zero bs=1M count=50 of=efiboot-new.img
+$ mkfs.fat -n "ARCHISO_EFI" efiboot-new.img
+$ mkdir new
+# mount -t fat -o loop efiboot-new.img new
+$ cp -r mnt/* new/
+# umount new mnt
+$ mv efiboot-new.img ~/customiso/EFI/archiso/efiboot.img
 
 ```
 
@@ -220,11 +221,12 @@ $ genisoimage -l -r -J -V "ARCH_201209" -b isolinux/isolinux.bin -no-emul-boot -
 
 ```
 
-**Note:** The ISO label must remain the same as the original label (in this case `ARCH_201209`) for the image to boot successfully.
+**Note:**
 
-**Note:** The `-b` and `-c` options expect paths relative to the root of the ISO
+*   The ISO label must remain the same as the original label (in this case `ARCH_201209`) for the image to boot successfully.
+*   The `-b` and `-c` options expect paths relative to the root of the ISO.
 
-The resulting ISO image will boot only from CD, DVD or BD. For booting from USB stick or hard disk, it needs the [isohybrid](http://www.syslinux.org/wiki/index.php/Isohybrid) feature. This can be achieved by postprocessing the ISO by program isohybrid included in [syslinux](https://www.archlinux.org/packages/?name=syslinux). Officially, the version of installed SYSLINUX has to be the same as the version of /isolinux/isolinux.bin in the ISO. It is not known whether really incompatible version combinations exist.
+The resulting ISO image will boot only from CD, DVD or BD. For booting from USB stick or hard disk, it needs the [isohybrid](http://www.syslinux.org/wiki/index.php/Isohybrid) feature. This can be achieved by postprocessing the ISO by program isohybrid included in [syslinux](https://www.archlinux.org/packages/?name=syslinux). Officially, the version of installed SYSLINUX has to be the same as the version of `/isolinux/isolinux.bin` in the ISO. It is not known whether really incompatible version combinations exist.
 
 An alternative to genisoimage plus isohybrid can be derived from the xorriso run of mkarchiso.
 
@@ -243,14 +245,14 @@ $ xorriso -as mkisofs \
 
 ```
 
-Option -isohybrid-mbr needs an [MBR](/index.php/MBR "MBR") template file. Most probably there is already such a file /isolinux/isohdpfx.bin in the original ISO, which matches the SYSLINUX version used in the ISO. Only if this file is missing in the copied ISO content, it has to be cut out of the original ISO image file, before above xorriso run is performed:
+Option `-isohybrid-mbr` needs an [MBR](/index.php/MBR "MBR") template file. Most probably there is already such a file `/isolinux/isohdpfx.bin` in the original ISO, which matches the SYSLINUX version used in the ISO. Only if this file is missing in the copied ISO content, it has to be cut out of the original ISO image file, before above xorriso run is performed:
 
 ```
 $ dd if=/path/to/archISO bs=512 count=1 of=~/customiso/isolinux/isohdpfx.bin
 
 ```
 
-If the original ISO supports bootability via EFI, this can be activated in the new ISO by inserting the following options between the lines "-isohybrid-mbr ..." and "-output ...":
+If the original ISO supports bootability via EFI, this can be activated in the new ISO by inserting the following options between the lines `-isohybrid-mbr ...` and `-output ...`:
 
 ```
        -eltorito-alt-boot \
@@ -259,9 +261,9 @@ If the original ISO supports bootability via EFI, this can be activated in the n
 
 ```
 
-The file /EFI/archiso/efiboot.img is a FAT filesystem image file. If it is missing in the original ISO, then there was no EFI support in that ISO.
+The file `/EFI/archiso/efiboot.img` is a FAT filesystem image file. If it is missing in the original ISO, then there was no UEFI support in that ISO.
 
-The newly created ISO image `arch-custom.iso` is found in the home directory. You can write the ISO image to a USB stick as explained in [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media"). Alternatively you can burn the ISO image on a CD, DVD, or BD with your preferred software. On Arch, that is covered in the [article about burning an ISO image](/index.php/Optical_disc_drive#Burning_an_ISO_image_to_CD.2C_DVD.2C_or_BD "Optical disc drive").
+The newly created ISO image `arch-custom.iso` is found in the home directory. You can write the ISO image to a USB stick as explained in [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media"). Alternatively you can burn the ISO image on a CD, DVD, or BD with your preferred software. On Arch, that is covered in the [article about burning an ISO image](/index.php/Optical_disc_drive#Burning_an_ISO_image_to_CD,_DVD,_or_BD "Optical disc drive").
 
 ## See also
 

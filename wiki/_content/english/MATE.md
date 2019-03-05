@@ -28,19 +28,20 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [4.1 Enabling compositing](#Enabling_compositing)
     *   [4.2 Enabling new window centering](#Enabling_new_window_centering)
     *   [4.3 Enabling window snapping](#Enabling_window_snapping)
-    *   [4.4 Show or hide desktop icons](#Show_or_hide_desktop_icons)
-        *   [4.4.1 Hide all desktop icons](#Hide_all_desktop_icons)
-        *   [4.4.2 Hide individual icons](#Hide_individual_icons)
-    *   [4.5 Use a different window manager](#Use_a_different_window_manager)
-    *   [4.6 Prevent Caja from managing the desktop](#Prevent_Caja_from_managing_the_desktop)
-    *   [4.7 Change window decoration button order](#Change_window_decoration_button_order)
-    *   [4.8 Auto open file manager after drive mount](#Auto_open_file_manager_after_drive_mount)
-    *   [4.9 Screensaver](#Screensaver)
-    *   [4.10 Spatial view in Caja](#Spatial_view_in_Caja)
-    *   [4.11 Change font DPI setting](#Change_font_DPI_setting)
-    *   [4.12 Change applications menu icon](#Change_applications_menu_icon)
-    *   [4.13 Panel speed settings](#Panel_speed_settings)
-    *   [4.14 Set the terminal for caja-open-terminal](#Set_the_terminal_for_caja-open-terminal)
+    *   [4.4 Undecorating maximized windows](#Undecorating_maximized_windows)
+    *   [4.5 Show or hide desktop icons](#Show_or_hide_desktop_icons)
+        *   [4.5.1 Hide all desktop icons](#Hide_all_desktop_icons)
+        *   [4.5.2 Hide individual icons](#Hide_individual_icons)
+    *   [4.6 Use a different window manager](#Use_a_different_window_manager)
+    *   [4.7 Prevent Caja from managing the desktop](#Prevent_Caja_from_managing_the_desktop)
+    *   [4.8 Change window decoration button order](#Change_window_decoration_button_order)
+    *   [4.9 Auto open file manager after drive mount](#Auto_open_file_manager_after_drive_mount)
+    *   [4.10 Screensaver](#Screensaver)
+    *   [4.11 Spatial view in Caja](#Spatial_view_in_Caja)
+    *   [4.12 Change font DPI setting](#Change_font_DPI_setting)
+    *   [4.13 Change applications menu icon](#Change_applications_menu_icon)
+    *   [4.14 Panel speed settings](#Panel_speed_settings)
+    *   [4.15 Set the terminal for caja-open-terminal](#Set_the_terminal_for_caja-open-terminal)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Toggling compositing](#Toggling_compositing)
     *   [5.2 Vertical sync for compositing](#Vertical_sync_for_compositing)
@@ -194,6 +195,12 @@ Window snapping is not be enabled by default, to enable it navigate to run *Syst
 $ gsettings set org.mate.Marco.general allow-tiling true
 
 ```
+
+### Undecorating maximized windows
+
+Hiding the decorations of maximized windows is possible with the [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/) tool: After installing it, navigate to *System > Preferences > Look and Feel > MATE Tweak > Windows* and enable *Undecorate maximized windows* in the *Window Behaviour* section.
+
+**Tip:** If this option is grayed out and unavailable, try installing the [mate-extra](https://www.archlinux.org/packages/?name=mate-extra) group.
 
 ### Show or hide desktop icons
 

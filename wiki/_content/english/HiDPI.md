@@ -174,7 +174,7 @@ The tray icons are not scaled with the rest of the desktop, since Plasma ignores
 
 ### Xfce
 
-Go to *Settings Manager > Appearance > Fonts*, and change the DPI parameter. The value of 180 or 192 seems to work well on Retina screens. To get a more precise number, you can use `xdpyinfo | grep resolution`, and then double it.
+Xfce uses the DPI given by the X server. There is an option to override Font DPI (*Settings Manager > Appearance > Fonts > DPI > Custom DPI setting*) but it's better to adjust X server DPI instead. See [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg") for how to fix it.
 
 To enlarge icons in system tray, *right-click on it (aim for empty space / top pixels / bottom pixels, so that you will not activate icons themselves) > Properties*, set “Maximum icon size” to 32, 48 or 64.
 

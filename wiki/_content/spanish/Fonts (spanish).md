@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-2-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=565234) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-3-4**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=566575) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -334,7 +334,7 @@ Webs relevantes:
 *   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - Un tipo de letra clásico en Naskh, estilo pionero de Amiria Press.
 *   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - Colección de fuentes árabes libres.
 *   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - Fuentes de El complejo de impresión del gran Corán Rey Fahd en al-Madinah al-Munawwarah.
-*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Fuente árabe Unicode desde SIL.
+*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Fuente árabe Unicode desde SIL [SIL](https://en.wikipedia.org/wiki/es:SIL_International "wikipedia:es:SIL International").
 *   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - Fuente árabe Unicode desde SIL. (Alternativa de la fuente árabe tradicional).
 
 #### Braille
@@ -535,7 +535,7 @@ Fontconfig permite que cada usuario configure el orden a través de `$XDG_CONFIG
 
 También se puede añadir una sección para sans-serif y monospace. Para más información. eche un vistazo al manual de fontconfig.
 
-Vea también [Establecer o reemplazar las fuentes por defecto (en inglés](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration").
+Vea también [Establecer o reemplazar las fuentes por defecto](/index.php/Font_configuration_(Espa%C3%B1ol)#Reemplazar_o_establecer_las_fuentes_por_defecto "Font configuration (Español)").
 
 ## Alias de fuente
 

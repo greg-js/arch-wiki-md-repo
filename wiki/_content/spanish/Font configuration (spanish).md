@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Font configuration](/index.php/Font_configuration "Font configuration"), revisada por última vez el **2019-03-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=566533) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples")
@@ -35,18 +38,18 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
     *   [2.9 Desactivar fuentes bitmap](#Desactivar_fuentes_bitmap)
     *   [2.10 Desactivar escalado de fuentes bitmap](#Desactivar_escalado_de_fuentes_bitmap)
     *   [2.11 Crear estilos negrita e itálica para fuentes incompletas](#Crear_estilos_negrita_e_itálica_para_fuentes_incompletas)
-    *   [2.12 Change rule overriding](#Change_rule_overriding)
-    *   [2.13 Query the current settings](#Query_the_current_settings)
-*   [3 Applications without fontconfig support](#Applications_without_fontconfig_support)
+    *   [2.12 Cambiar prioridad de las reglas](#Cambiar_prioridad_de_las_reglas)
+    *   [2.13 Consultar la configuración actual](#Consultar_la_configuración_actual)
+*   [3 Aplicaciones sin soporte fontconfig](#Aplicaciones_sin_soporte_fontconfig)
 *   [4 Solución de problemas](#Solución_de_problemas)
-    *   [4.1 Distorted fonts](#Distorted_fonts)
-    *   [4.2 Calibri, Cambria, Monaco, etc. not rendering properly](#Calibri,_Cambria,_Monaco,_etc._not_rendering_properly)
-    *   [4.3 Applications overriding hinting](#Applications_overriding_hinting)
-    *   [4.4 Applications not picking up hinting from DE's settings](#Applications_not_picking_up_hinting_from_DE's_settings)
-    *   [4.5 Incorrect hinting in GTK applications on non-Gnome systems](#Incorrect_hinting_in_GTK_applications_on_non-Gnome_systems)
-    *   [4.6 Helvetica font problem in generated PDFs](#Helvetica_font_problem_in_generated_PDFs)
-    *   [4.7 FreeType Breaking Bitmap Fonts](#FreeType_Breaking_Bitmap_Fonts)
-*   [5 See also](#See_also)
+    *   [4.1 Fuentes distorsionadas](#Fuentes_distorsionadas)
+    *   [4.2 Calibri, Cambria, Monaco, etc. no se representan apropiadamente](#Calibri,_Cambria,_Monaco,_etc._no_se_representan_apropiadamente)
+    *   [4.3 Applicaciones que ignoran hinting](#Applicaciones_que_ignoran_hinting)
+    *   [4.4 Aplicaciones no recogen hinting de la configuración del entorno de escritorio](#Aplicaciones_no_recogen_hinting_de_la_configuración_del_entorno_de_escritorio)
+    *   [4.5 Hinting incorrecto en aplicaciones GTK sobre sistemas no Gnome](#Hinting_incorrecto_en_aplicaciones_GTK_sobre_sistemas_no_Gnome)
+    *   [4.6 Problema con la fuente Helvetica en PDFs generados](#Problema_con_la_fuente_Helvetica_en_PDFs_generados)
+    *   [4.7 FreeType rompe fuentes Bitmap](#FreeType_rompe_fuentes_Bitmap)
+*   [5 Véase también](#Véase_también)
 
 ## Path de fuentes
 
@@ -459,11 +462,11 @@ Ahora añada las modificaciones necesarias a `$XDG_CONFIG_HOME/fontconfig/fonts.
 
 **Sugerencia:** Utilice el valor `embolden` para las fuentes negritas existentes para hacerlas aún mas negritas.
 
-### Change rule overriding
+### Cambiar prioridad de las reglas
 
-Fontconfig processes files in `/etc/fonts/conf.d` in numerical order. This enables rules or files to override one another, but often confuses users about what file gets parsed last.
+Fontconfig procesa archivos de `/etc/fonts/conf.d` en un orden numérico. Esto activa reglas o archivos que se anulan unos a otros, pero a menudo confunde a los usuarios cobre cual es el último archivo que se analiza.
 
-To guarantee that personal settings take precedence over any other rules, change their ordering:
+Para garantizar que los ajustes personales tienen preferencia sobre cualquier regla, cambie el orden:
 
 ```
 # cd /etc/fonts/conf.d
@@ -471,11 +474,11 @@ To guarantee that personal settings take precedence over any other rules, change
 
 ```
 
-This change seems however to be unnecessary for the most of the cases, because a user is given enough control by default to set up own font preferences, hinting and antialiasing properties, alias new fonts to generic font families, etc.
+Este cambio parece innecesario para la mayoría de los casos, porque el usuario tiene suficiente control por defecto para establecer sus propias preferencias, hinting y propiedades antialiasing, alias de nuevas fuentes para generar familias de fuentes, etc.
 
-### Query the current settings
+### Consultar la configuración actual
 
-To find out what settings are in effect, use `fc-match --verbose`. eg.
+Para ver qué ajustes están aplicandose, utilize `fc-match --verbose`. p.ej.
 
  `$ fc-match --verbose Sans` 
 ```
@@ -486,11 +489,11 @@ hinting: True(s)
 
 ```
 
-Look up the meaning of the numbers at [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) Eg. 'hintstyle: 3' means 'hintfull'
+Busque el significado de los números en [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) P.ej. 'hintstyle: 3' significa 'hintfull'.
 
-## Applications without fontconfig support
+## Aplicaciones sin soporte fontconfig
 
-Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
+Algunas aplicaciones como [URxvt](/index.php/URxvt "URxvt") ignoran los ajustes fontconfig. Puede abordarlo utilizando `~/.Xresources`, pero es tan flexible como fontconfig. Por Ejemplo (vea [Configuración de FontConfig](#Configuración_de_FontConfig) para las explicaciones de las opciones):
 
  `~/.Xresources` 
 ```
@@ -503,17 +506,17 @@ Xft.rgba: rgb
 
 ```
 
-Make sure the settings are loaded properly when X starts with `xrdb -q` (see [Xresources](/index.php/Xresources "Xresources") for more information).
+Asegúrese que los ajustes se cargan apropiadamente cuando X se inicia con `xrdb -q` (vea [Xresources (en inglés)](/index.php/Xresources "Xresources") para más información).
 
 ## Solución de problemas
 
-### Distorted fonts
+### Fuentes distorsionadas
 
-**Note:** 96 DPI is not a standard. You should use your monitor's actual DPI to get proper font rendering, especially when using subpixel rendering.
+**Nota:** 96 ppp no es estándar. Debe de utilizar sus ppp actuales de su monitor para que las fuentes se rendericen adecuadamente, especialmente cuando se utiliza el renderizado subpixel.
 
-If fonts are still unexpectedly large or small, poorly proportioned or simply rendering poorly, fontconfig may be using the incorrect DPI.
+Si las fuentes de forma inesperada se ven grandes o pequeñas, mal proporcionadas o simplemente mal renderizadas, fontconfig puede estar utilizando unos ppp incorrectos.
 
-Fontconfig should be able to detect DPI parameters as discovered by the Xorg server. You can check the automatically discovered DPI with `xdpyinfo` (provided by the [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) package):
+Fontconfig debe ser capaz de detectar los parámetros ppp que Xorg server descubre. Puede comprobar automáticamente los ppp descubiertos con `xdpyinfo` (proporcionado por el paquete [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo)):
 
  `$ xdpyinfo | grep dots` 
 ```
@@ -521,9 +524,9 @@ Fontconfig should be able to detect DPI parameters as discovered by the Xorg ser
 
 ```
 
-If the DPI is detected incorrectly (usually due to an incorrect monitor [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data "wikipedia:Extended Display Identification Data")), you can specify it manually in the Xorg configuration, see [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg"). This is the recommended solution, but it may not work with buggy drivers.
+Si los ppp que se detectan son incorrectos (usualmente debido a un [EDID](https://en.wikipedia.org/wiki/es:EDID "wikipedia:es:EDID") del monitor incorrecto) puede especificar manualmente la configuración de Xorg, vea [Tamaño de la pantalla y DPI](/index.php/Xorg_(Espa%C3%B1ol)#Tamaño_de_la_pantalla_y_DPI "Xorg (Español)"). Esta es la solución recomendada, pero puede que no funcione con controladores buggy.
 
-Fontconfig will default to the Xft.dpi variable if it is set. Xft.dpi is usually set by desktop environments (usually to Xorg's DPI setting) or manually in `~/.Xdefaults` or `~/.Xresources`. Use xrdb to query for the value:
+Fontconfig por defecto irá a la variable Xft.dpi si está establecida. Xft.dpi lo establecen normalmente los entornos de escritorio (generalmente los ajustes ppp de Xorg) o manualmente en `~/.Xdefaults` o `~/.Xresources`. Utilice xrdb para consultar el valor:
 
  `$ xrdb -query | grep dpi` 
 ```
@@ -531,7 +534,7 @@ Xft.dpi:	102
 
 ```
 
-Those still having problems can fall back to manually setting the DPI used by fontconfig:
+Aquellos que todavía tienen problemas pueden volver manualmente a la configuración ppp utilizada por fontconfig:
 
 ```
 ...
@@ -542,19 +545,19 @@ Those still having problems can fall back to manually setting the DPI used by fo
 
 ```
 
-### Calibri, Cambria, Monaco, etc. not rendering properly
+### Calibri, Cambria, Monaco, etc. no se representan apropiadamente
 
-Some scalable fonts have embedded bitmap versions which are rendered instead, mainly at smaller sizes. Using [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") as replacements can improve the rendering in these cases.
+Algunas fuentes escalables tienen versiones bitmap incrustados que se representan en su lugar, principalmente en los tamaños pequeños. Utilizar [Fuentes compatibles con la métrica (en inglés)](/index.php/Metric-compatible_fonts "Metric-compatible fonts") como sustituto puede mejorar la representación en estos casos.
 
-You can also force using scalable fonts at all sizes by [disabling embedded bitmap](#Disable_bitmap_fonts), sacrificing some rendering quality.
+También puede forzar que se utilice fuentes escalables para todos los tamaños con [deshabilitar bitmap incrustado](#Desactivar_fuentes_bitmap), sacrificando alguna calidad de renderizado.
 
-### Applications overriding hinting
+### Applicaciones que ignoran hinting
 
-Some applications or desktop environments may override default fontconfig hinting and anti-aliasing settings. This may happen with [GNOME](/index.php/GNOME "GNOME") 3, for example while you are using Qt applications like [vlc](https://www.archlinux.org/packages/?name=vlc) or [smplayer](https://www.archlinux.org/packages/?name=smplayer). Use the specific configuration program for the application in such cases. For GNOME, try [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
+Algunas aplicaciones o entornos de escritorio pueden anular la configuración hinting de fontconfig y anti-aliasing por defecto. Esto puede ocurrir con [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") 3, por ejemplo mientras utiliza aplicaciones Qt como [vlc](https://www.archlinux.org/packages/?name=vlc) o [smplayer](https://www.archlinux.org/packages/?name=smplayer). Utilice la configuración del programa específico de la aplicación para estos casos. Para GNOME, pruebe [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
-### Applications not picking up hinting from DE's settings
+### Aplicaciones no recogen hinting de la configuración del entorno de escritorio
 
-For instance, under GNOME it sometimes happens that Firefox applies full hinting even when it's set to "none" in GNOME's settings, which results in sharp and widened fonts. In this case you would have to add hinting settings to your `fonts.conf` file:
+Por ejemplo, en GNOME a veces ocurre que Firefox aplica hinting completo en vez del valor "ninguno" en los ajustes de GNOME, que termina con unas fuentes afiladas y ampliadas. En este caso tendría que añadir ajustes hinting al archivo `fonts.conf`:
 
 ```
 <?xml version='1.0'?>
@@ -569,13 +572,13 @@ For instance, under GNOME it sometimes happens that Firefox applies full hinting
 
 ```
 
-In this example, hinting is set to "grayscale".
+En este ejemplo, hinting se establece a "escala de grises".
 
-### Incorrect hinting in GTK applications on non-Gnome systems
+### Hinting incorrecto en aplicaciones GTK sobre sistemas no Gnome
 
-[GNOME](/index.php/GNOME "GNOME") uses the XSETTINGS system to configure font rendering. Outside of GNOME, GTK applications rely on fontconfig, but some fonts get the hinting wrong causing them to look too bold or too light.
+[GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") utiliza el sistema XSETTINGS para configurar la renderización de fuentes. Fuera de GNOME, aplicaciones GTK confían en fontconfig, pero algunas fuentes obtienen un hinting incorrecto causando que se vean demasiado negritas o demasiado finas.
 
-A simple solution is using [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) to provide the configuration, for example:
+Una solución simple es utilizar [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) para proporcionar la configuración, por ejemplo:
 
  `~/.xsettingsd` 
 ```
@@ -586,35 +589,35 @@ Xft/Antialias 1
 
 ```
 
-Alternatively you could just write the font configuration as `Xft.*` directives in `~/.Xresources` without using a settings daemon.
+También puede simplemente escribir en la configuración de la fuente como directivas `Xft.*` en `~/.Xresources` sin utilizar un demonio configurador.
 
-### Helvetica font problem in generated PDFs
+### Problema con la fuente Helvetica en PDFs generados
 
-If the following command
+En el siguiente comando
 
 ```
 fc-match helvetica
 
 ```
 
-produces
+produce
 
 ```
 helvR12-ISO8859-1.pcf.gz: "Helvetica" "Regular"
 
 ```
 
-then the bitmap font provided by [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) is likely to be embedded into PDFs generated by "Print to File" or "Export" in various applications. The bitmap font was probably installed as a consequence of installing the whole [xorg](https://www.archlinux.org/groups/x86_64/xorg/) group (which is usually NOT recommended). To solve the pixelized font problem, you can uninstall the package. Install [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) (Type 1) or [tex-gyre-fonts](https://www.archlinux.org/packages/?name=tex-gyre-fonts) (OpenType) for corresponding free subsitute of Helvetica (and other PostScript/PDF base fonts).
+entonces la fuente bitamp proporcionada por [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) es probable que se incruste dentro del PDF generado por "Imprimir a un archivo" o "Exportar" en varias aplicaciones. La fuente bitmap probablemente estaba instalada como consecuencia de instalar el grupo de la familia [xorg](https://www.archlinux.org/groups/x86_64/xorg/) (que normalmente NO se recomienda). Para solucionar el problema de la fuente pixelada, puede desinstalar el paquete. Instalar [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) (Type 1) o [tex-gyre-fonts](https://www.archlinux.org/packages/?name=tex-gyre-fonts) (OpenType) para una adecuada sustitución libre de Helvetica (y otras fuentes basadas en PostScript/PDF).
 
-You may also experience similar problem when you open a PDF which requires Helvetica but does not have it embedded for viewing.
+Puede experimentar problemas similares cuando abra un PDF que requiera Helvetica pero no la tiene incrustada para ver.
 
-### FreeType Breaking Bitmap Fonts
+### FreeType rompe fuentes Bitmap
 
-Some users are reporting problems ([FS#52502](https://bugs.archlinux.org/task/52502)) with bitmap fonts having changed names after upgrading [freetype2](https://www.archlinux.org/packages/?name=freetype2) to version 2.7.1, creating havok in terminal emulators and several other programs such as [dwm](https://aur.archlinux.org/packages/dwm/) or [dmenu](https://www.archlinux.org/packages/?name=dmenu) by falling back to another (different) font. This was caused by the changes to the PCF font family format, which is described in their *release notes* [[4]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Users transitioning from the old format might want to create a *font alias* to remedy the problems, like the solution which is described in [[5]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), given here too:
+Algunos usuarios están reportando problemas ([FS#52502](https://bugs.archlinux.org/task/52502)) con las fuentes bitmap tienen nombres cambiados después de actualizar [freetype2](https://www.archlinux.org/packages/?name=freetype2) a la versión 2.7.1, creando havok en emuladores de terminal y otros muchos programas como [dwm](https://aur.archlinux.org/packages/dwm/) o [dmenu](https://www.archlinux.org/packages/?name=dmenu) utilizando como fuentes alternativas otras fuentes diferentes. Esto se causó por los cambios del formato de la familia de fuentes PCF, que como se describe en *notas de la versión* [[3]](https://sourceforge.net/projects/freetype/files/freetype2/2.7.1/). Usuarios que han realizado la transición del antiguo formato podrían crear un *alias de fuente* para resolver los problemas, como la solución que se describe en [[4]](https://forum.manjaro.org/t/terminus-font-name-fix-after-freetype2-update-to-2-7-1-1/15530), dada aquí también:
 
-Assume we want to create an alias for [terminus-font](https://www.archlinux.org/packages/?name=terminus-font), which was renamed from `Terminus` to `xos4 Terminus` in the previously described [freetype2](https://www.archlinux.org/packages/?name=freetype2) update:
+Asuma que queremos crear un alias para [terminus-font](https://www.archlinux.org/packages/?name=terminus-font), que se renombró de `Terminus` a `xos4 Terminus` en la anterior actualización de [freetype2](https://www.archlinux.org/packages/?name=freetype2) descrita previamente:
 
-*   Create a configuration file in `/etc/fonts/conf.avail/` for the *font alias*:
+*   Crea un archivo de configuración en `/etc/fonts/conf.avail/` para el *alias de fuente*:
 
  `/etc/fonts/conf.avail/33-TerminusPCFFont.conf` 
 ```
@@ -630,14 +633,14 @@ Assume we want to create an alias for [terminus-font](https://www.archlinux.org/
 
 ```
 
-*   Create a symbolic link towards it in the `/etc/fonts/conf.d` directory. In our example we would link as follows: `ln -s /etc/fonts/conf.avail/33-TerminusPCFFont.conf /etc/fonts/conf.d` to make the change permanent.
+*   Crea un enlace simbólico hacia el directorio `/etc/fonts/conf.d`. En nuestro ejemplo deberíamos enlazarlo así: `ln -s /etc/fonts/conf.avail/33-TerminusPCFFont.conf /etc/fonts/conf.d` para hacer que los cambios sean permanentes.
 
-Everything should now work as it did before the update, the *font alias* should not be in effect, but make sure to either reload `.Xresources` or restart the display server first so the affected programs can use the alias.
+Todo debería funcionar como lo hacía antes de la actualización, el *alias de fuente* no debería surtir efecto, pero asegúrese de que recarga `.Xresources` o reinicia el servidor de la pantalla antes de que los programas afectados puedan utilizar el alias.
 
-## See also
+## Véase también
 
-*   [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig")
-*   [Fonts in X11R6.8.2](http://www.x.org/X11R6.8.2/doc/fonts.html) - Official Xorg font information
-*   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
-*   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)
-*   [On slight hinting](http://www.freetype.org/freetype2/docs/text-rendering-general.html)
+*   [Fontconfig Wikipedia](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig")
+*   [Fuentes en X11R6.8.2](http://www.x.org/X11R6.8.2/doc/fonts.html) - Información oficial de la fuente Xorg
+*   [FreeType 2 visión general](http://freetype.sourceforge.net/freetype2/)
+*   [Hilo de la representación de fuentes Gentoo](https://forums.gentoo.org/viewtopic-t-723341.html)
+*   [hinting leve](http://www.freetype.org/freetype2/docs/text-rendering-general.html)

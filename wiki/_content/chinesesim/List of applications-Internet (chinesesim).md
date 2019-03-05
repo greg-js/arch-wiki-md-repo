@@ -40,68 +40,54 @@
         *   [1.4.1 下载管理器](#下载管理器)
             *   [1.4.1.1 命令行](#命令行)
             *   [1.4.1.2 图形界面](#图形界面_2)
-        *   [1.4.2 Cloud storage servers](#Cloud_storage_servers)
-        *   [1.4.3 Cloud synchronization clients](#Cloud_synchronization_clients)
+        *   [1.4.2 云存储服务器](#云存储服务器)
+        *   [1.4.3 云同步客户端](#云同步客户端)
         *   [1.4.4 FTP](#FTP)
-            *   [1.4.4.1 FTP clients](#FTP_clients)
-            *   [1.4.4.2 FTP servers](#FTP_servers)
-        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.5.1 Console](#Console)
-            *   [1.4.5.2 Graphical](#Graphical)
-        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.7 Pastebin clients](#Pastebin_clients)
-    *   [1.5 下载](#下载)
-        *   [1.5.1 FTP](#FTP_2)
-            *   [1.5.1.1 FTP 客户端](#FTP_客户端)
-            *   [1.5.1.2 FTP 服务器](#FTP_服务器)
-        *   [1.5.2 BitTorrent 客户端](#BitTorrent_客户端)
-            *   [1.5.2.1 命令行](#命令行_2)
-                *   [1.5.2.1.1 命令行后端](#命令行后端)
-                *   [1.5.2.1.2 纯命令行界面](#纯命令行界面)
-            *   [1.5.2.2 图形环境](#图形环境)
-                *   [1.5.2.2.1 libtorrent-rasterbar 后端](#libtorrent-rasterbar_后端)
-                *   [1.5.2.2.2 libktorrent 后端](#libktorrent_后端)
-                *   [1.5.2.2.3 其它](#其它_2)
-        *   [1.5.3 电驴](#电驴)
-        *   [1.5.4 Gnutella](#Gnutella)
-    *   [1.6 通讯](#通讯)
-        *   [1.6.1 邮件客户端](#邮件客户端)
-            *   [1.6.1.1 终端](#终端_2)
-            *   [1.6.1.2 图形界面](#图形界面_3)
-        *   [1.6.2 即时聊天](#即时聊天)
-            *   [1.6.2.1 多协议客户端](#多协议客户端)
-                *   [1.6.2.1.1 命令行](#命令行_3)
-                *   [1.6.2.1.2 图形环境](#图形环境_2)
-        *   [1.6.3 IRC 客户端](#IRC_客户端)
-            *   [1.6.3.1 终端](#终端_3)
-            *   [1.6.3.2 图形界面](#图形界面_4)
-            *   [1.6.3.3 XMPP (Jabber)](#XMPP_(Jabber))
-                *   [1.6.3.3.1 命令行客户端](#命令行客户端)
-                *   [1.6.3.3.2 图形界面客户端](#图形界面客户端)
-                *   [1.6.3.3.3 服务器](#服务器)
-            *   [1.6.3.4 多协议客户端](#多协议客户端_2)
-                *   [1.6.3.4.1 命令行](#命令行_4)
-                *   [1.6.3.4.2 图形界面](#图形界面_5)
-        *   [1.6.4 局域网聊天](#局域网聊天)
-        *   [1.6.5 软件式电话](#软件式电话)
-            *   [1.6.5.1 客户端](#客户端)
-                *   [1.6.5.1.1 SIP](#SIP)
-                *   [1.6.5.1.2 IAX2](#IAX2)
-                *   [1.6.5.1.3 Skype](#Skype)
-                *   [1.6.5.1.4 其它](#其它_3)
-                *   [1.6.5.1.5 多协议](#多协议)
-            *   [1.6.5.2 实用工具](#实用工具)
-    *   [1.7 新闻，RSS 与博客](#新闻，RSS_与博客)
-        *   [1.7.1 新闻抓取](#新闻抓取)
-            *   [1.7.1.1 终端](#终端_4)
-            *   [1.7.1.2 图形界面](#图形界面_6)
-        *   [1.7.2 播客客户端](#播客客户端)
-        *   [1.7.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
-        *   [1.7.4 博客软件](#博客软件)
-        *   [1.7.5 微博客户端](#微博客户端)
-    *   [1.8 网络剪贴板](#网络剪贴板)
-    *   [1.9 比特币](#比特币)
-    *   [1.10 Surveying](#Surveying)
+            *   [1.4.4.1 FTP客户端](#FTP客户端)
+            *   [1.4.4.2 FTP服务器](#FTP服务器)
+        *   [1.4.5 BitTorrent客户端](#BitTorrent客户端)
+            *   [1.4.5.1 命令行](#命令行_2)
+            *   [1.4.5.2 图形界面](#图形界面_3)
+        *   [1.4.6 其他端到端（P2P）网络](#其他端到端（P2P）网络)
+        *   [1.4.7 Pastebin（粘贴箱）客户端](#Pastebin（粘贴箱）客户端)
+    *   [1.5 通讯](#通讯)
+        *   [1.5.1 邮件客户端](#邮件客户端)
+            *   [1.5.1.1 终端](#终端_2)
+            *   [1.5.1.2 图形界面](#图形界面_4)
+        *   [1.5.2 即时聊天](#即时聊天)
+            *   [1.5.2.1 多协议客户端](#多协议客户端)
+                *   [1.5.2.1.1 命令行](#命令行_3)
+                *   [1.5.2.1.2 图形环境](#图形环境)
+        *   [1.5.3 IRC 客户端](#IRC_客户端)
+            *   [1.5.3.1 终端](#终端_3)
+            *   [1.5.3.2 图形界面](#图形界面_5)
+            *   [1.5.3.3 XMPP (Jabber)](#XMPP_(Jabber))
+                *   [1.5.3.3.1 命令行客户端](#命令行客户端)
+                *   [1.5.3.3.2 图形界面客户端](#图形界面客户端)
+                *   [1.5.3.3.3 服务器](#服务器)
+            *   [1.5.3.4 多协议客户端](#多协议客户端_2)
+                *   [1.5.3.4.1 命令行](#命令行_4)
+                *   [1.5.3.4.2 图形界面](#图形界面_6)
+        *   [1.5.4 局域网聊天](#局域网聊天)
+        *   [1.5.5 软件式电话](#软件式电话)
+            *   [1.5.5.1 客户端](#客户端)
+                *   [1.5.5.1.1 SIP](#SIP)
+                *   [1.5.5.1.2 IAX2](#IAX2)
+                *   [1.5.5.1.3 Skype](#Skype)
+                *   [1.5.5.1.4 其它](#其它_2)
+                *   [1.5.5.1.5 多协议](#多协议)
+            *   [1.5.5.2 实用工具](#实用工具)
+    *   [1.6 新闻，RSS 与博客](#新闻，RSS_与博客)
+        *   [1.6.1 新闻抓取](#新闻抓取)
+            *   [1.6.1.1 终端](#终端_4)
+            *   [1.6.1.2 图形界面](#图形界面_7)
+        *   [1.6.2 播客客户端](#播客客户端)
+        *   [1.6.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
+        *   [1.6.4 博客软件](#博客软件)
+        *   [1.6.5 微博客户端](#微博客户端)
+    *   [1.7 网络剪贴板](#网络剪贴板)
+    *   [1.8 比特币](#比特币)
+    *   [1.9 Surveying](#Surveying)
 
 ## 互联网
 
@@ -723,521 +709,355 @@ Apache也支持 WSGI ，通过 [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")模块.
 
 	[http://xdman.sourceforge.net/](http://xdman.sourceforge.net/) || [xdman](https://aur.archlinux.org/packages/xdman/)
 
-#### Cloud storage servers
+#### 云存储服务器
 
-*   **[Cozy](/index.php/Cozy "Cozy")** — A personal cloud you can hack, host and delete.
+*   **[Cozy](/index.php/Cozy "Cozy")** — 一款你可以破解，托管和删除的私有云.
 
 	[https://cozy.io/](https://cozy.io/) || [cozy-stack](https://www.archlinux.org/packages/?name=cozy-stack)
 
-*   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — A cloud server to store your files centrally on a hardware controlled by you.
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — 一款将文件集中存储在由你掌控的硬件上的云服务器.
 
 	[https://nextcloud.com](https://nextcloud.com) || [nextcloud](https://www.archlinux.org/packages/?name=nextcloud)
 
-*   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
+*   **[Pydio](/index.php/Pydio "Pydio")** — 成熟且开源的针对文件分享和同步的web程序.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)
 
-*   **[Seafile](/index.php/Seafile "Seafile")** — An online file storage and collaboration tool with advanced support for file syncing, privacy protection and teamwork.
+*   **[Seafile](/index.php/Seafile "Seafile")** — 一种在线文件存储和协作的工具，具有对文件同步、隐私保护和团队协作的高级支持.
 
 	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
 
-#### Cloud synchronization clients
+#### 云同步客户端
 
 **Tip:**
 
-*   Some [synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") provide direct support for some cloud-storage services.
-*   Some [FUSE filesystems](/index.php/FUSE#List_of_FUSE_filesystems "FUSE") provide a way to mount cloud-storage as a filesystem. Google Drive can be accessed also by [gvfs-google](https://www.archlinux.org/packages/?name=gvfs-google) for GVFS-based applications (like [Nautilus](/index.php/Nautilus "Nautilus")), and by [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive) for KIO-based applications (like [Dolphin](/index.php/Dolphin "Dolphin")).
-*   See [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") to achieve zero-knowledge (client-side transparent encryption) storage on any third-party cloud service.
+*   一些 [synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") 提供了对云存储服务的直接支持.
+*   一些 [FUSE filesystems](/index.php/FUSE#List_of_FUSE_filesystems "FUSE") 提供了将云存储挂载为文件系统的方式. Google Drive能通过 [gvfs-google](https://www.archlinux.org/packages/?name=gvfs-google) 来提供对基于GVFS的程序(比如 [Nautilus](/index.php/Nautilus "Nautilus")(GNOME桌面文件管理器))的支持, 和通过 [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive) 来提供对基于KIO的程序的支持 (比如 [Dolphin](/index.php/Dolphin "Dolphin")(KDE桌面文件管理器)).
+*   查阅 [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") 来实现在任何第三方云服务的“零知识“ (客户端透明加密) 存储.
 
-*   **aws-cli** — CLI for Amazon Web Services, including efficient file transfers to and from Amazon S3.
+*   **aws-cli** — 针对亚马逊Web服务(Amazon Web Service)的CLI, 包括高效的从亚马逊S3上传或下载的文件传输.
 
 	[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) || [aws-cli](https://www.archlinux.org/packages/?name=aws-cli)
 
-*   **Backblaze B2** — Backblaze B2 open-source command-line client.
+*   **Backblaze B2** — 开源的命令行客户端.
 
 	[https://www.backblaze.com/b2/cloud-storage.html](https://www.backblaze.com/b2/cloud-storage.html) || [backblaze-b2](https://aur.archlinux.org/packages/backblaze-b2/)
 
-*   **CloudCross** — Synchronize local files and folders with many cloud providers. Mail.ru Cloud, Yandex Disk, Google Drive, OneDrive and Dropbox support is available.
+*   **CloudCross** — 将本地文件和文件夹同步到许多云服务器提供商. Mail.ru Cloud, Yandex Disk, Google Drive, OneDrive 和 Dropbox 的服务都是支持的.
 
 	[https://cloudcross.mastersoft24.ru/](https://cloudcross.mastersoft24.ru/) || [cloudcross](https://aur.archlinux.org/packages/cloudcross/)
 
-*   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
+*   **[Cozy](/index.php/Cozy "Cozy") Drive** — 针对Cozy的客户端.
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)
 
-*   **drive** — Tiny program to pull or push Google Drive files.
+*   **drive** — 上传或下载Google Drive的小型程序.
 
 	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive-bin](https://aur.archlinux.org/packages/drive-bin/)
 
-*   **DriveSync** — Command line utility that synchronizes your Google Drive files with a local folder on your machine.
+*   **DriveSync** — 将Google Drive的文件同步到你机器的一个本地文件夹的命令行工具.
 
 	[https://github.com/MStadlmeier/drivesync](https://github.com/MStadlmeier/drivesync) || [drivesync](https://aur.archlinux.org/packages/drivesync/)
 
-*   **[Dropbox](/index.php/Dropbox "Dropbox")** — Proprietary desktop client for Dropbox.
+*   **[Dropbox](/index.php/Dropbox "Dropbox")** — Dropbox的专有客户端.
 
 	[https://www.dropbox.com/](https://www.dropbox.com/) || [dropbox](https://aur.archlinux.org/packages/dropbox/)
 
-*   **gdrive** — Command line utility for interacting with Google Drive.
+*   **gdrive** — 与Google Drive交互的命令行工具.
 
 	[https://github.com/prasmussen/gdrive](https://github.com/prasmussen/gdrive) || [gdrive](https://aur.archlinux.org/packages/gdrive/)
 
-*   **Grive** — Google Drive client with support for new Drive REST API and partial sync.
+*   **Grive** — Google Drive客户端，支持最新的Drive REST API 和部分同步.
 
 	[https://github.com/vitalif/grive2](https://github.com/vitalif/grive2) || [grive](https://aur.archlinux.org/packages/grive/)
 
-*   **hubiC** — Proprietary synchronization client service and command line tools for hubiC.
+*   **hubiC** — 针对hubiC的专有同步客户端服务和命令行工具.
 
 	[https://hubic.com/en/downloads](https://hubic.com/en/downloads) || [hubic](https://aur.archlinux.org/packages/hubic/)
 
-*   **[Insync](/index.php/Insync "Insync")** — Unofficial proprietary Google Drive desktop client.
+*   **[Insync](/index.php/Insync "Insync")** — 非官方的专有Google Drive客户端.
 
 	[https://www.insynchq.com/](https://www.insynchq.com/) || [insync](https://aur.archlinux.org/packages/insync/)
 
-*   **[Mail.ru](https://en.wikipedia.org/wiki/Mail.Ru "wikipedia:Mail.Ru") Cloud** — Proprietary client for Mail.ru Cloud storage service.
+*   **[Mail.ru](https://en.wikipedia.org/wiki/Mail.Ru "wikipedia:Mail.Ru") Cloud** — 针对Mail.ru云存储服务的专有.
 
 	[https://cloud.mail.ru/](https://cloud.mail.ru/) || [mailru-cloud](https://aur.archlinux.org/packages/mailru-cloud/)
 
-*   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — Desktop client to sync files with Mega.
+*   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — 同步 Mega的文件的桌面客户端.
 
 	[https://mega.nz/](https://mega.nz/) || [megasync](https://aur.archlinux.org/packages/megasync/)
 
-*   **Megatools** — Unofficial CLI for Mega.
+*   **Megatools** — 针对Mega的非官方CLI.
 
 	[https://megatools.megous.com/](https://megatools.megous.com/) || [megatools](https://aur.archlinux.org/packages/megatools/)
 
-*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — Desktop client for Nextcloud.
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — 针对Nextcloud的桌面客户端.
 
 	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client)
 
-*   **Nutstore** — Desktop client for Nutstore.
+*   **Nutstore** — 针对Nutstore的客户端.
 
 	[https://www.jianguoyun.com/](https://www.jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
 
-*   **OneDrive** — Unofficial CLI for [OneDrive](https://onedrive.live.com/about/).
+*   **OneDrive** — 针对 [OneDrive](https://onedrive.live.com/about/)的非官方CLI.
 
 	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive](https://aur.archlinux.org/packages/onedrive/)
 
-*   **[ownCloud](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud") Desktop Client** — Desktop syncing client for ownCloud.
+*   **[ownCloud](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud") Desktop Client** — 针对 ownCloud的桌面同步客户端.
 
 	[https://owncloud.com/client/](https://owncloud.com/client/) || [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client)
 
-*   **pCloud Drive** — Proprietary desktop syncing client for pCloud. Based on the [Electron](https://electronjs.org/) platform.
+*   **pCloud Drive** — 针对pCloud的专有桌面同步客户端. 基于 [Electron](https://electronjs.org/) 平台.
 
 	[https://www.pcloud.com/download-free-online-cloud-file-storage.html](https://www.pcloud.com/download-free-online-cloud-file-storage.html) || [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/)
 
-*   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop client for Pydio.
+*   **[Pydio](/index.php/Pydio "Pydio")Sync** — 针对Pydio的桌面客户端.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
 
-*   **S3cmd** — Unofficial CLI for Amazon S3.
+*   **S3cmd** — 针对Amazon S3的非官方CLI.
 
 	[http://s3tools.org/s3cmd](http://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
 
-*   **[Seafile](/index.php/Seafile "Seafile") Client** — GUI client for Seafile.
+*   **[Seafile](/index.php/Seafile "Seafile") Client** — 针对Seafile的GUI.
 
 	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
 
-*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — Proprietary client for SpiderOak One.
+*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — 针对SpiderOak One的专有客户端.
 
 	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
 
-*   **[Tresorit](https://en.wikipedia.org/wiki/Tresorit "wikipedia:Tresorit")** — Proprietary desktop syncing client for Tresorit.
+*   **[Tresorit](https://en.wikipedia.org/wiki/Tresorit "wikipedia:Tresorit")** — 针对Tresorit的专有桌面同步客户端.
 
 	[https://tresorit.com/download](https://tresorit.com/download) || [tresorit](https://aur.archlinux.org/packages/tresorit/)
 
-*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Proprietary CLI for Yandex Disk.
+*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — 针对Yandex Disk的专有CLI.
 
 	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
 
 #### FTP
 
-##### FTP clients
+##### FTP客户端
 
-See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
+也可查阅 [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
 
-*   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — Fast and reliable FTP, FTPS and SFTP client.
+*   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — 快速和可靠的FTP, FTPS 和 SFTP 客户端.
 
 	[http://filezilla-project.org/](http://filezilla-project.org/) || [filezilla](https://www.archlinux.org/packages/?name=filezilla)
 
-*   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — Multithreaded FTP client for Linux.
+*   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — 针对Linux的多线程客户端.
 
 	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
 
-*   **ftp** — Simple ftp client provided by GNU Inetutils
+*   **ftp** — 由GNU Inetutils 提供的简单的ftp客户端
 
 	[https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
 
-*   **ncftp** — A set of free application programs implementing FTP.
+*   **ncftp** — 实现FTP的一系列免费应用程序.
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
 
-*   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
+*   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — 针对 [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD")的有许多高级特性的ftp客户端.
 
 	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
 
-Some file managers like [Dolphin](/index.php/Dolphin "Dolphin"), [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
+一些文件管理器像 [Dolphin](/index.php/Dolphin "Dolphin"), [GNOME Files](/index.php/GNOME_Files "GNOME Files") 和 [Thunar](/index.php/Thunar "Thunar") 也提供FTP功能.
 
-##### FTP servers
+##### FTP服务器
 
-See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/List_of_FTP_server_software "wikipedia:List of FTP server software").
+也可查阅 [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/List_of_FTP_server_software "wikipedia:List of FTP server software").
 
-*   **[bftpd](/index.php/Bftpd "Bftpd")** — Small, easy-to-configure FTP server
+*   **[bftpd](/index.php/Bftpd "Bftpd")** — 小巧和易配置的ftp服务器
 
 	[http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
 
-*   **chezdav** — WebDAV server that allows to share a particular directory.
+*   **chezdav** — 允许分享一个特定目录的WebDAV服务器.
 
 	[https://wiki.gnome.org/phodav](https://wiki.gnome.org/phodav) || [phodav](https://www.archlinux.org/packages/?name=phodav)
 
-*   **ftpd** — Simple ftp server provided by GNU Inetutils
+*   **ftpd** — 由GNU Inetutils提供的简单ftp服务器
 
 	[https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
 
-*   **[proFTPd](/index.php/Proftpd "Proftpd")** — A secure and configurable FTP server
+*   **[proFTPd](/index.php/Proftpd "Proftpd")** — 一个安全和可配置的ftp服务器
 
 	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)
 
-*   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — Free (BSD-licensed), secure, production-quality and standard-compliant FTP server.
+*   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — 免费（BSD许可证），安全，生产质量和标准兼容的FTP服务器.
 
 	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
 
-*   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
+*   **[SSH](/index.php/SSH "SSH")** — SFTP是一个网络协议，它提供在任何可靠的数据流间的文件访问、文件传输和文件管理.
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
-*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
+*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — 针对类UNIX系统的轻量、稳定和安全的FTP服务器.
 
 	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
 
-#### BitTorrent clients
+#### BitTorrent客户端
 
-Some [download managers](#Download_managers) are also able to connect to the BitTorrent network: [Aria2](/index.php/Aria2 "Aria2"), [LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp"), FatRat, [FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire"), [KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet"), [MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey"), uGet.
+一些[download managers](#Download_managers)也能连接到Bittorrent网络: [Aria2](/index.php/Aria2 "Aria2"), [LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp"), FatRat, [FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire"), [KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet"), [MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey"), uGet.
 
-See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
-
-##### Console
-
-*   **btpd** — The BitTorrent Protocol Daemon.
-
-	[https://github.com/btpd/btpd](https://github.com/btpd/btpd) || [btpd](https://aur.archlinux.org/packages/btpd/)
-
-*   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
-
-	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
-
-*   **peerflix** — Streaming torrent client for node.js.
-
-	[https://github.com/mafintosh/peerflix](https://github.com/mafintosh/peerflix) || [peerflix](https://aur.archlinux.org/packages/peerflix/)
-
-*   **[rTorrent](/index.php/RTorrent "RTorrent")** — Simple and lightweight ncurses BitTorrent client. Requires [libtorrent](https://www.archlinux.org/packages/?name=libtorrent) backend.
-
-	[https://rakshasa.github.io/rtorrent/](https://rakshasa.github.io/rtorrent/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
-
-*   **[Transmission](/index.php/Transmission "Transmission") CLI** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends. This package includes backend, daemon, command-line interface, and a Web UI interface.
-
-	[https://transmissionbt.com/](https://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
-
-##### Graphical
-
-*   **[Deluge](/index.php/Deluge "Deluge")** — User-friendly BitTorrent client written in PyGTK that can run as a daemon.
-
-	[https://deluge-torrent.org/](https://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
-
-*   **Fragments** — Easy to use BitTorrent client which follows the GNOME HIG and includes well thought-out features.
-
-	[https://gitlab.gnome.org/haecker-felix/Fragments](https://gitlab.gnome.org/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
-
-*   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
-
-	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
-
-*   **Powder Player** — Hybrid between a streaming BitTorrent client and a player. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://powder.media/](https://powder.media/) || [powder-player-bin](https://aur.archlinux.org/packages/powder-player-bin/)
-
-*   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
-
-	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
-
-*   **Torrential** — Simple torrent client for elementary OS.
-
-	[https://github.com/davidmhewitt/torrential](https://github.com/davidmhewitt/torrential) || [torrential](https://aur.archlinux.org/packages/torrential/)
-
-*   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends.
-
-	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
-
-*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK+ client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
-
-	[https://github.com/transmission-remote-gtk/transmission-remote-gtk](https://github.com/transmission-remote-gtk/transmission-remote-gtk) || [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
-
-*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system BitTorrent client.
-
-	[https://www.tribler.org](https://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
-
-*   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Feature-rich BitTorrent client written in Java (formerly Azureus).
-
-	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
-
-*   **WebTorrent Desktop** — Streaming BitTorrent application. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://webtorrent.io/desktop/](https://webtorrent.io/desktop/) || [webtorrent-desktop](https://aur.archlinux.org/packages/webtorrent-desktop/)
-
-#### Other P2P networks
-
-See also [Wikipedia:Comparison of file-sharing applications](https://en.wikipedia.org/wiki/Comparison_of_file-sharing_applications "wikipedia:Comparison of file-sharing applications").
-
-*   **[aMule](/index.php/AMule "AMule")** — Well-known eDonkey/Kad client with a daemon version and GTK+, web, and CLI front-ends.
-
-	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
-
-*   **EiskaltDC++** — Direct Connect and ADC client.
-
-	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK+: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
-
-*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK+ server/client for the Gnutella peer-to-peer network.
-
-	[http://gtk-gnutella.sourceforge.net/](http://gtk-gnutella.sourceforge.net/) || [gtk-gnutella](https://aur.archlinux.org/packages/gtk-gnutella/)
-
-*   **KaMule** — KDE graphical front-end for aMule.
-
-	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
-
-*   **LBRY** — Browser and wallet for LBRY, the decentralized, user-controlled content marketplace. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://lbry.io/](https://lbry.io/) || [lbry-app-bin](https://aur.archlinux.org/packages/lbry-app-bin/)
-
-*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports HTTP, FTP, BitTorrent, Direct Connect, eDonkey and FastTrack.
-
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
-
-*   **ncdc** — Modern and lightweight Direct Connect and ADC client with a friendly ncurses interface.
-
-	[https://dev.yorhel.nl/ncdc](https://dev.yorhel.nl/ncdc) || [ncdc](https://aur.archlinux.org/packages/ncdc/)
-
-*   **Nicotine+** — A graphical client for the Soulseek P2P network.
-
-	[https://www.nicotine-plus.org/](https://www.nicotine-plus.org/) || [nicotine+](https://www.archlinux.org/packages/?name=nicotine%2B)
-
-*   **Valknut** — Direct Connect client (like DC++) with segmented downloading.
-
-	[http://wxdcgui.sourceforge.net/](http://wxdcgui.sourceforge.net/) || [valknut](https://aur.archlinux.org/packages/valknut/)
-
-#### Pastebin clients
-
-See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
-
-Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
-
-**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
-
-**Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
-
-*   **Elmer** — Pastebin client similar to wgetpaste and curlpaste, except written in Perl and usable with wget or curl. Servers: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
-
-	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
-
-*   **Fb-client** — Client for the [paste.xinu.at](http://paste.xinu.at/) pastebin.
-
-	[http://paste.xinu.at](http://paste.xinu.at) || [fb-client](https://www.archlinux.org/packages/?name=fb-client)
-
-*   **Gist** — Command-line interface for the [gist.github.com](https://gist.github.com/) pastebin service.
-
-	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
-
-*   **imgur** — A CLI client which can upload image to [imgur.com](http://imgur.com) image sharing service.
-
-	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
-
-*   **Ix** — Client for the ix.io pastebin.
-
-	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
-
-*   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](https://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
-
-	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
-
-*   **[pbpst](/index.php/Pbpst "Pbpst")** — A small tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)).
-
-	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst)
-
-*   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
-
-	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/)
-
-*   **Uppity** — The pastebin client with an attitude.
-
-	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)
-
-*   **Wgetpaste** — Bash script that automates pasting to a number of pastebin services. Servers: [pastebin.ca](http://pastebin.ca/), [codepad.org](http://codepad.org/), [dpaste.com](http://dpaste.com/) and [pastebin.osuosl.org](http://pastebin.osuosl.org/).
-
-	[http://wgetpaste.zlin.dk/](http://wgetpaste.zlin.dk/) || [wgetpaste](https://www.archlinux.org/packages/?name=wgetpaste)
-
-### 下载
-
-#### FTP
-
-##### FTP 客户端
-
-See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
-
-*   **[CurlFtpFS](/index.php/CurlFtpFS "CurlFtpFS")** — Filesystem for accessing FTP hosts; based on FUSE and libcurl.
-
-	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
-
-*   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent, RapidShare and more.
-
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
-
-*   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — 快速可靠的 FTP, FTPS and SFTP 客户端.
-
-	[http://filezilla-project.org/](http://filezilla-project.org/) || [filezilla](https://www.archlinux.org/packages/?name=filezilla)
-
-*   **[fuseftp](/index.php/FtpFs#Fuseftp "FtpFs")** — FTP filesystem written in Perl, using [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace").
-
-	[http://freshmeat.net/projects/fuseftp/](http://freshmeat.net/projects/fuseftp/) || [fuseftp](https://aur.archlinux.org/packages/fuseftp/)
-
-*   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — Multithreaded FTP client for Linux.
-
-	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
-
-*   **[LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp")** — Sophisticated command-line FTP client.
-
-	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
-
-*   **LftpFS** — Read-only filesystem based on lftp (also supports HTTP, FISH, SFTP, HTTPS, FTPS and proxies).
-
-	[http://lftpfs.sourceforge.net/](http://lftpfs.sourceforge.net/) || [lftpfs](https://aur.archlinux.org/packages/lftpfs/)
-
-*   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
-
-	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
-
-一些像 Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Files") 和 [Thunar](/index.php/Thunar "Thunar") 这样的文件管理器也提供FTP功能.
-
-##### FTP 服务器
-
-*   **bftpd** — 小巧, 易配置的 FTP 服务器
-
-	[http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
-
-*   **[proFTPd](/index.php/Proftpd "Proftpd")** — 一个安全的可配置的 FTP 服务器
-
-	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)
-
-*   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — Free (BSD-licensed), secure, production-quality and standard-compliant FTP server.
-
-	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
-
-*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — 适用于 类UNIX 系统的，轻量级的，标准的，安全的 FTP 服务器。
-
-	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
-
-#### BitTorrent 客户端
-
-参见 [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
+也可查阅 [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
 
 ##### 命令行
 
-###### 命令行后端
+*   **btpd** — Bittorrent协议守护进程.
 
-虽说可以在命令行上用，但均有可选的图形前端。
+	[https://github.com/btpd/btpd](https://github.com/btpd/btpd) || [btpd](https://aur.archlinux.org/packages/btpd/)
 
-*   **[aria2](/index.php/Aria2 "Aria2")** — 轻量级的下载工具，支持 HTTP(S), FTP, BitTorrent (DHT, PEX, MSE/PE)协议以及元链接。能够以守护进程运行，通过 JSON-RPC & XML-RPC 接口管理
+*   **Ctorrent** — CTorrent是一个BitTorrent的C++实现，轻量且快速.
 
-	[http://aria2.sourceforge.net/](http://aria2.sourceforge.net/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
+	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
 
-*   **[btpd](/index.php/Btpd "Btpd")** — 简单，命令行界面，守护进程，同时也有 web 和 GTK+ 界面。
+*   **peerflix** — 针对node.js的流torrent客户端.
 
-	[http://github.com/btpd/btpd](http://github.com/btpd/btpd) || [btpd](https://aur.archlinux.org/packages/btpd/)
+	[https://github.com/mafintosh/peerflix](https://github.com/mafintosh/peerflix) || [peerflix](https://aur.archlinux.org/packages/peerflix/)
 
-*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — 支持 BitTorrent 的多协议 P2P 客户端
+*   **[rTorrent](/index.php/RTorrent "RTorrent")** — 简单和轻量的ncurses BitTorrent 客户端. 需要 [libtorrent](https://www.archlinux.org/packages/?name=libtorrent) 后端.
 
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
+	[https://rakshasa.github.io/rtorrent/](https://rakshasa.github.io/rtorrent/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
 
-*   **[Transmission](https://en.wikipedia.org/wiki/Transmission_(BitTorrent_client) "wikipedia:Transmission (BitTorrent client)")** — 简单易用的BitTorrent 客户端，拥有守护程序版本, TK+, Qt 图形用户界面, 网页和命令行前端
+*   **[Transmission](/index.php/Transmission "Transmission") CLI** — 简单易用的BitTorrent client带有一个守护进程版本和多前端. 这个包包括了后端、守护进程、命令行界面和一个web UI界面.
 
-	[http://www.transmissionbt.com/](http://www.transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
+	[https://transmissionbt.com/](https://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
 
-###### 纯命令行界面
+##### 图形界面
 
-*   **[rTorrent](/index.php/RTorrent "RTorrent")** — 简单的轻量级 BitTorrent 客户端
+*   **[Deluge](/index.php/Deluge "Deluge")** — 用户友好的BitTorrent客户端，用PyGTK写成，能以守护进程运行.
 
-	[http://libtorrent.rakshasa.no/](http://libtorrent.rakshasa.no/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
+	[https://deluge-torrent.org/](https://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
 
-##### 图形环境
+*   **Fragments** — 易用的BitTorrent客户端，遵循GNOME HIG规则并包括了许多经考虑的特性.
 
-###### libtorrent-rasterbar 后端
+	[https://gitlab.gnome.org/haecker-felix/Fragments](https://gitlab.gnome.org/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
 
-*   **[Deluge](/index.php/Deluge "Deluge")** — 用户友好的 BitTorrent 客户端，用Python和PyGTK编写
+*   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — 针对KDE的功能丰富的BitTorrent客户端.
 
-	[http://deluge-torrent.org/](http://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
+	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
 
-*   **FatRat** — 基于 Qt 和 C++ 的下载器，支持 HTTP, FTP, SFTP. BT, rapidshare 以及更多。
+*   **Powder Player** — 流式Bittorrent客户端和播放器的混合，基于[Electron](https://electronjs.org/) 平台.
 
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat](https://aur.archlinux.org/packages/fatrat/)
+	[https://powder.media/](https://powder.media/) || [powder-player-bin](https://aur.archlinux.org/packages/powder-player-bin/)
 
-*   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — 一个和 µtorrent 相类似的开源 （GPLv2)BitTorrent 客户端。
+*   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — 开源的(GPLv2许可证) BitTorrent 客户端，非常像 µtorrent.
 
-	[http://qbittorrent.sourceforge.net/](http://qbittorrent.sourceforge.net/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent)
+	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
-*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 第四代文件共享系统 BT 客户端。
+*   **Torrential** — 针对elementary OS的简单torrent客户端.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
+	[https://github.com/davidmhewitt/torrential](https://github.com/davidmhewitt/torrential) || [torrential](https://aur.archlinux.org/packages/torrential/)
 
-###### libktorrent 后端
+*   **[Transmission](/index.php/Transmission "Transmission")** — 简单易用的BitTorrent客户端，带有守护进程版本和多前端.
 
-*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — 一个支持 HTTP(S). FTP 和 BitTorrent 的 KDE 下载管理器.
+	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK+客户端，针对远程管理使用相同HTTP RFC协议的Transmission BitTorrent客户端.
 
-*   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — 一个 KDE 下的多功能 BitTorrent 客户端.
+	[https://github.com/transmission-remote-gtk/transmission-remote-gtk](https://github.com/transmission-remote-gtk/transmission-remote-gtk) || [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
 
-	[http://ktorrent.org/](http://ktorrent.org/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
+*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 第四代文件分享系统的BitTorrent 客户端.
 
-###### 其它
+	[https://www.tribler.org](https://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
-*   **QTorrent** — 一个用PyQt写的BT客户端.
-
-	[http://thegraveyard.org/qtorrent.php](http://thegraveyard.org/qtorrent.php) || [qtorrent](https://aur.archlinux.org/packages/qtorrent/)
-
-*   **Tixati** — BitTorrent 协议，P2P 客户端。P
-
-	[http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)
-
-*   **[Transmission](https://en.wikipedia.org/wiki/Transmission_(BitTorrent_client) "wikipedia:Transmission (BitTorrent client)")** — 简单易用的 BitTorrent 客户端，拥有守护程序版本, 拥有 GTK+, Qt 图形用户界面, 网页和命令行前端
-
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
-
-*   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — 功能强大的 BitTorrent 客户端，用 Java 编写（以前是 Azureus）.
+*   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — 用Java写的功能丰富的Bittorrent客户端(之前是 Azureus).
 
 	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
 
-#### 电驴
+*   **WebTorrent Desktop** — 流式BitTorrent程序. 基于[Electron](https://electronjs.org/) 平台.
 
-eDonkey仍然是第二大p2p网络 (参见 [Internet Study 2008/2009](http://www.ipoque.com/en/resources/internet-studies)).
+	[https://webtorrent.io/desktop/](https://webtorrent.io/desktop/) || [webtorrent-desktop](https://aur.archlinux.org/packages/webtorrent-desktop/)
 
-*   **[aMule](/index.php/AMule "AMule")** — 著名的有守护进程的eDonkey/Kad 客户端，拥有GTK+,网页和命令行前端
+#### 其他端到端（P2P）网络
+
+另请参见 [Wikipedia:Comparison of file-sharing applications](https://en.wikipedia.org/wiki/Comparison_of_file-sharing_applications "wikipedia:Comparison of file-sharing applications").
+
+*   **[aMule](/index.php/AMule "AMule")** — 著名的 eDonkey/Kad 客户端，带有守护进程版本和GTK+, web, 和 CLI 前端.
 
 	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
 
-*   **[MlDonkey](/index.php?title=MlDonkey&action=edit&redlink=1 "MlDonkey (page does not exist)")** — A multi-network P2P client.
+*   **EiskaltDC++** — 直连和ADC客户端.
 
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
+	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK+: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
 
-*   **[Neoloader](/index.php?title=Neoloader&action=edit&redlink=1 "Neoloader (page does not exist)")** — Privacy using NeoKads mash routing.
+*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK+服务器/客户端，针对Gnutella的P2P网络.
 
-	[http://http://neoloader.com/](http://http://neoloader.com/) || [neoloader](https://aur.archlinux.org/packages/neoloader/)
+	[http://gtk-gnutella.sourceforge.net/](http://gtk-gnutella.sourceforge.net/) || [gtk-gnutella](https://aur.archlinux.org/packages/gtk-gnutella/)
 
-*   **KaMule** — kde下的aMule图形前端.
+*   **KaMule** — KDE的针对aMule的图形化前端.
 
 	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
 
-#### Gnutella
+*   **LBRY** — LBRY的浏览器和钱包,分散的，用户控制的内容市场基于[Electron](https://electronjs.org/) 平台.
 
-*   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
+	[https://lbry.io/](https://lbry.io/) || [lbry-app-bin](https://aur.archlinux.org/packages/lbry-app-bin/)
 
-	[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
+*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — 多协议的P2P客户端，支持HTTP, FTP, BitTorrent, Direct Connect, eDonkey 和 FastTrack.
+
+	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
+
+*   **ncdc** — 现代的轻量的直连和ADC客户端，带有一个友好的ncurses界面.
+
+	[https://dev.yorhel.nl/ncdc](https://dev.yorhel.nl/ncdc) || [ncdc](https://aur.archlinux.org/packages/ncdc/)
+
+*   **Nicotine+** — 针对Soulseek P2P网络的图形化客户端.
+
+	[https://www.nicotine-plus.org/](https://www.nicotine-plus.org/) || [nicotine+](https://www.archlinux.org/packages/?name=nicotine%2B)
+
+*   **Valknut** — 直连客户端(像 DC++)带有断电续传功能.
+
+	[http://wxdcgui.sourceforge.net/](http://wxdcgui.sourceforge.net/) || [valknut](https://aur.archlinux.org/packages/valknut/)
+
+#### Pastebin（粘贴箱）客户端
+
+也可查阅 [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
+
+Pastebin服务经常用作引用文本或图片，特别是协作和故障排除的时候.Pastebin客户端提供了从命令行上传的方便的方法.
+
+**Tip:** 你可以使用curl访问[ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) 和 [ix.io](http://ix.io/) 的pastebins. 比如把一个命令的管道输出到ptpb: `*command* | curl -F c=@- https://ptpb.pw ` 或者上传一个文件 (包括图片): `curl -F c=@- https://ptpb.pw < *file*` 
+
+**Note:** [pastebin.com](http://pastebin.com/) 对于某些人来说被阻塞了，而且有很多烦人问题的历史 (javascript, 广告, 格式很烂, 等等).*不要*使用它.
+
+*   **Elmer** — Pastebin客户端，类似于wgetpaste 和 curlpaste, 除了用 Perl写成和能通过wget或curl使用. 服务器: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
+
+	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
+
+*   **Fb-client** — 针对 [paste.xinu.at](http://paste.xinu.at/) pastebin的客户端.
+
+	[http://paste.xinu.at](http://paste.xinu.at) || [fb-client](https://www.archlinux.org/packages/?name=fb-client)
+
+*   **Gist** — 针对[gist.github.com](https://gist.github.com/) pastebin 服务的命令行界面.
+
+	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
+
+*   **imgur** — 一个CLI客户端能上传图片到[imgur.com](http://imgur.com)图片分享服务.
+
+	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
+
+*   **Ix** — 针对ix.io pastebin的客户端.
+
+	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
+
+*   **Pastebinit** — 非常小的Python脚本，能作为Pastebin客户端。 服务器: [pastie.org](http://pastie.org/), [paste.kde.org](https://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) 还有其它的 (全部名单可查阅 `pastebinit -l`).
+
+	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
+
+*   **[pbpst](/index.php/Pbpst "Pbpst")** — 与 pb实例交互的小巧工具(eg [ptpb.pw](https://ptpb.pw)).
+
+	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst)
+
+*   **ruby-haste** — 针对[hastebin.com](http://hastebin.com/)的客户端.
+
+	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/)
+
+*   **Uppity** — 有态度的pastebin客户端.
+
+	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)
+
+*   **Wgetpaste** — 自动粘贴到许多pastebin服务的Bash脚本. 服务器: [pastebin.ca](http://pastebin.ca/), [codepad.org](http://codepad.org/), [dpaste.com](http://dpaste.com/) and [pastebin.osuosl.org](http://pastebin.osuosl.org/).
+
+	[http://wgetpaste.zlin.dk/](http://wgetpaste.zlin.dk/) || [wgetpaste](https://www.archlinux.org/packages/?name=wgetpaste)
 
 ### 通讯
 

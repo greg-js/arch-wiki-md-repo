@@ -151,7 +151,7 @@ Other mount options are filesystem specific, therefore see the relevant articles
 *   [Ext3](/index.php/Ext3 "Ext3")
 *   [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4")
 *   [JFS Filesystem#Optimizations](/index.php/JFS_Filesystem#Optimizations "JFS Filesystem")
-*   [XFS](/index.php/XFS "XFS")
+*   [XFS#Performance](/index.php/XFS#Performance "XFS")
 *   [Btrfs#Defragmentation](/index.php/Btrfs#Defragmentation "Btrfs"), [Btrfs#Compression](/index.php/Btrfs#Compression "Btrfs"), and [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5)
 *   [ZFS#Tuning](/index.php/ZFS#Tuning "ZFS")
 
@@ -218,17 +218,17 @@ While some of the early algorithms have now been decommissioned, the official Li
 **Note:**
 
 *   The block multi-queue *(blk-mq)* mode must be disabled at boot time to be able to access the legacy *CFQ* and *Deadline* schedulers. This is done by adding `scsi_mod.use_blk_mq=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). The multi-queue schedulers are no longer available once in this mode.
-*   The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but may improve system responsiveness. [Benchmarking](/index.php/Benchmarking "Benchmarking") may be used to indicate each I/O scheduler performance.
+*   The best choice of scheduler depends on both the device and the exact nature of the workload. Also, the throughput in MB/s is not the only measure of performance: deadline or fairness deteriorate the overall throughput but may improve system responsiveness. [Benchmarking](/index.php/Benchmarking "Benchmarking") may be useful to indicate each I/O scheduler performance.
 
-To see the available schedulers for a device and the active one, in brackets:
+To list the available schedulers for a device and the active scheduler (in brackets):
 
  `$ cat /sys/block/***sda***/queue/scheduler`  `mq-deadline kyber [bfq] none` 
 
-or for all devices:
+To list the available schedulers for all devices:
 
- `$ cat /sys/block/**sd***/queue/scheduler` 
+ `$ cat /sys/block/*****/queue/scheduler` 
 ```
-mq-deadline kyber [bfq] none
+none
 [mq-deadline] kyber bfq none
 mq-deadline kyber [bfq] none
 ```
@@ -240,13 +240,13 @@ To change the active I/O scheduler to *bfq* for device *sda*, use:
 
 ```
 
-The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots. For example the [udev](/index.php/Udev "Udev") rule below sets the scheduler to *mq-deadline* for [SSD](/index.php/SSD "SSD") drives, *none* for [NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe") and *bfq* for rotational drives:
+The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots. For example the [udev](/index.php/Udev "Udev") rule below sets the scheduler to *none* for [NVMe](/index.php/NVMe "NVMe"), *mq-deadline* for [SSD](/index.php/SSD "SSD")/eMMC, and *bfq* for rotational drives:
 
  `/etc/udev/rules.d/60-ioschedulers.rules` 
 ```
 # set scheduler for NVMe
 ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none"
-# set schedular for SSD and eMMC
+# set scheduler for SSD and eMMC
 ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="mq-deadline"
 # set scheduler for rotating disks
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"

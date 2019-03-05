@@ -27,7 +27,8 @@ Related articles
 *   [5 Multiple Dropbox instances](#Multiple_Dropbox_instances)
 *   [6 Dropbox on laptops](#Dropbox_on_laptops)
     *   [6.1 Using netctl](#Using_netctl)
-    *   [6.2 Using wicd](#Using_wicd)
+    *   [6.2 Using NetworkManager](#Using_NetworkManager)
+    *   [6.3 Using wicd](#Using_wicd)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Using Dropbox with non-ext4 filesystems](#Using_Dropbox_with_non-ext4_filesystems)
     *   [7.2 Dropbox keeps saying Downloading files](#Dropbox_keeps_saying_Downloading_files)
@@ -207,6 +208,49 @@ ExecDownPre="*any other code*; killall dropbox"
 ```
 
 Obviously, `*your_user*` has to be edited and `*any other code*;` can be omitted if you do not have any. The above will make sure that Dropbox is running only if there is a network profile active.
+
+### Using NetworkManager
+
+For [NetworkManager](/index.php/NetworkManager "NetworkManager"), use its [dispatcher](https://wiki.archlinux.org/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher) feature.
+
+Create the following file:
+
+ `/etc/NetworkManager/dispatcher.d/10-dropbox.sh` 
+```
+#!/bin/sh
+USER=''your_user''
+status=$2
+case $status in
+       up)
+		su -c 'DISPLAY=:0 /usr/bin/dropbox & ' $USER
+       ;;
+       down)
+       		killall dropbox
+       ;;
+esac
+
+```
+
+or, for the systemd alternative:
+
+ `/etc/NetworkManager/dispatcher.d/10-dropbox.sh` 
+```
+#!/bin/sh
+USER=''your_user''
+status=$2
+
+case $status in
+       up)
+		systemctl start dropbox@$USER.service
+       ;;
+       down)
+       		systemctl stop dropbox@USER.service
+       ;;
+esac
+
+```
+
+Do not forget to change scripts to be owned by root and to make them executable.
 
 ### Using wicd
 

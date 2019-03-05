@@ -47,7 +47,7 @@ SELinux is not officially supported (see [[1]](https://lists.archlinux.org/piper
 | Name | Status | Available at |
 | SELinux enabled kernel | Implemented for [linux](https://www.archlinux.org/packages/?name=linux), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) | Available in official repositories since [4.18.8](https://git.archlinux.org/svntogit/packages.git/commit/?id=c46609a4b0325c363455264844091b71de01eddc). |
 | SELinux Userspace tools and libraries | Implemented in AUR: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux) | Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) |
-| SELinux Policy | Work in progress, using [Reference Policy](https://github.com/TresysTechnology/refpolicy) as upstream | Upstream: [https://github.com/TresysTechnology/refpolicy](https://github.com/TresysTechnology/refpolicy) (since release 20170805 the policy has integrated support for systemd and single-/usr/bin directory) |
+| SELinux Policy | Work in progress, using [Reference Policy](https://github.com/SELinuxProject/refpolicy) as upstream | Upstream: [https://github.com/SELinuxProject/refpolicy](https://github.com/SELinuxProject/refpolicy) (since release 20170805 the policy has integrated support for systemd and single-/usr/bin directory) |
 
 Summary of changes in AUR as compared to official core packages:
 
@@ -207,7 +207,7 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 
 	[selinux-refpolicy-git](https://aur.archlinux.org/packages/selinux-refpolicy-git/)
 
-	Reference policy git master ([https://github.com/TresysTechnology/refpolicy](https://github.com/TresysTechnology/refpolicy)) built with configuration specific for Arch Linux
+	Reference policy git master ([https://github.com/SELinuxProject/refpolicy](https://github.com/SELinuxProject/refpolicy)) built with configuration specific for Arch Linux
 
 	[selinux-refpolicy-arch](https://aur.archlinux.org/packages/selinux-refpolicy-arch/)
 
@@ -308,14 +308,14 @@ session         required        pam_selinux.so open
 
 ### Installing a policy
 
-**Warning:** The reference policy as given by [Tresys](https://github.com/TresysTechnology/refpolicy/wiki) is not very good for Arch Linux, as before release 20170805 almost no file were labelled correctly. The major problems were:
+**Warning:** The reference policy as given by [SELinuxProject](https://github.com/SELinuxProject/refpolicy/wiki) is not very good for Arch Linux, as before release 20170805 almost no file were labelled correctly. The major problems were:
 
 *   `/lib` and `/usr/lib` were considered different (and also `/bin`, `/sbin`, `/usr/bin` and `/usr/sbin`). This introduced some instability when applying labels to the whole system, as files in these folders might be seen with 2 (or 4) different labels.
 *   systemd was not yet supported (C. PeBenito, main developer of the refpolicy, announced its willingness to work on it in its github repository in October 2014, [http://oss.tresys.com/pipermail/refpolicy/2014-October/007430.html](http://oss.tresys.com/pipermail/refpolicy/2014-October/007430.html))
 
 Since refpolicy release 20170805 these two points have been addressed, but most people submitting patches to improve the policy use an other distribution (Debian, Gentoo, RHEL, etc.). Therefore the compatibility with Arch Linux packages is not perfect (for example the policy may not support the most recent features of a program).
 
-Policies are the mainstay of SELinux. They are what govern its behaviour. The only policy currently available in the AUR is the Reference Policy. In order to install it, you should use the source files, which may be got from the package [selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/) or by downloading the latest release on [https://github.com/TresysTechnology/refpolicy/wiki/DownloadRelease#current-release](https://github.com/TresysTechnology/refpolicy/wiki/DownloadRelease#current-release). When using the AUR package, navigate to `/etc/selinux/refpolicy/src/policy` and run the following commands:
+Policies are the mainstay of SELinux. They are what govern its behaviour. The only policy currently available in the AUR is the Reference Policy. In order to install it, you should use the source files, which may be got from the package [selinux-refpolicy-src](https://aur.archlinux.org/packages/selinux-refpolicy-src/) or by downloading the latest release on [https://github.com/SELinuxProject/refpolicy/wiki/DownloadRelease#current-release](https://github.com/SELinuxProject/refpolicy/wiki/DownloadRelease#current-release). When using the AUR package, navigate to `/etc/selinux/refpolicy/src/policy` and run the following commands:
 
 ```
 # make bare
@@ -518,7 +518,7 @@ Please report issues on GitHub: [https://github.com/archlinuxhardened/selinux/is
 *   [Gentoo SELinux Handbook](https://wiki.gentoo.org/wiki/SELinux)
 *   [Fedora Project's SELinux Wiki](https://fedoraproject.org/wiki/SELinux)
 *   [NSA's Official SELinux Homepage](https://www.nsa.gov/what-we-do/research/selinux/)
-*   [SELinux Userspace Homepage](http://userspace.selinuxproject.org/)
-    *   [Reference Policy Homepage](http://oss.tresys.com/projects/refpolicy)
-    *   [SETools Homepage](http://oss.tresys.com/projects/setools)
+*   [SELinux Project Homepage](https://github.com/SELinuxProject)
+    *   [Reference Policy Homepage](https://github.com/SELinuxProject/refpolicy/wiki)
+    *   [SETools Homepage](https://github.com/SELinuxProject/setools/wiki)
 *   [ArchLinux, SELinux and You (archived)](https://web.archive.org/web/20140816115906/http://jamesthebard.net/archlinux-selinux-and-you-a-trip-down-the-rabbit-hole/)

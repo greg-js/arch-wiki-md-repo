@@ -25,7 +25,8 @@ The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesyst
         *   [4.1.3 Using filesystem events](#Using_filesystem_events)
         *   [4.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
         *   [4.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_(2))
-        *   [4.1.6 Using pacman hook](#Using_pacman_hook)
+        *   [4.1.6 Using mkinitcpio preset](#Using_mkinitcpio_preset)
+        *   [4.1.7 Using pacman hook](#Using_pacman_hook)
 *   [5 Known issues](#Known_issues)
     *   [5.1 ESP on RAID](#ESP_on_RAID)
 *   [6 See also](#See_also)
@@ -312,6 +313,31 @@ To test that, just run:
 # rm /boot/initramfs-linux.img
 # mkinitcpio -p linux
 
+```
+
+#### Using mkinitcpio preset
+
+As the presets in `/etc/mkinitcpio.d/` support shell scripting, the kernel and initramfs can be copied by just editing the presets.
+
+ `/etc/mkinitcpio.d/0.preset` 
+```
+ESP_DIR="*esp*/EFI/arch"
+cp -af "/boot/vmlinuz-linux${suffix}" "$ESP_DIR/"
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="$ESP_DIR/vmlinuz-linux${suffix}"
+PRESETS=('default')
+default_config="/etc/mkinitcpio.conf"
+default_image="$ESP_DIR/initramfs-linux${suffix}.img"
+```
+ `/etc/mkinitcpio.d/linux.preset` 
+```
+source /etc/mkinitcpio.d/0.preset
+
+```
+ `/etc/mkinitcpio.d/linux-zen.preset` 
+```
+suffix='-zen'
+source /etc/mkinitcpio.d/0.preset
 ```
 
 #### Using pacman hook

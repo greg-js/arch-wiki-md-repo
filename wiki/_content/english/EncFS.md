@@ -14,7 +14,11 @@ This particular method of securing data is obviously not perfect, but there are 
 
 For more details on how EncFS compares to other disk encryption solution, see [Disk encryption#Comparison table](/index.php/Disk_encryption#Comparison_table "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comparison to eCryptFS](#Comparison_to_eCryptFS)
 *   [2 Installation](#Installation)
@@ -59,11 +63,11 @@ The performance of both depends on the type of disk activity. While eCryptFS can
 To create a secured repository, type:
 
 ```
-$ encfs ~/.*name* ~/*name*
+$ encfs ~/.*encrypted* ~/*origin*
 
 ```
 
-Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The first is a fairly secure default setup. The second allows specifying algorithms and other options. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/.*name*`, and their unencrypted versions in `~/*name*`.
+Note that absolute paths must be used. This will be followed by a prompt about whether you want to go with the default options, expert configuration or a paranoid preset. The first is a fairly secure default setup. The second allows specifying algorithms and other options. After entering a key for the encryption, the encoded file-system will be created and mounted. The encoded files are stored, in this example, at `~/.*encrypted*`, and their unencrypted versions in `~/*origin*`.
 
 **Tip:** Using EncFS on exFAT formatted partitions might end up with slow performance as exFAT is also fuse-mounted by default. Use another way to mount the exFAT partition, or change the partition format if possible.
 

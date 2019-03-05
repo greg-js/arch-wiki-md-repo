@@ -128,11 +128,19 @@ Since swap is managed by systemd, it will be activated again on the next system 
 
 As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
 
-**Warning:** [Btrfs](/index.php/Btrfs "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+**Warning:** [Btrfs](/index.php/Btrfs "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
 ### Manually
 
 #### Swap file creation
+
+For copy-on-write file systems like [Btrfs](/index.php/Btrfs "Btrfs"), first create a zero length file and set the `No_COW` attribute on it with [chattr](/index.php/Chattr "Chattr"):
+
+```
+# touch /swapfile
+# chattr +C /swapfile
+
+```
 
 As root use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). For example, creating a 512 MiB swap file:
 

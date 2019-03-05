@@ -623,7 +623,7 @@ table ip nat {
     type nat hook prerouting priority 0;
   }
   chain postrouting {
-    type nat hook postrouting priority 0;
+    type nat hook postrouting priority 100;
     oifname "enp0s2" masquerade
   }
 }

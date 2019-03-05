@@ -205,8 +205,6 @@ More information about making other devices use Pi-Hole can be found at [upstrea
 
 ## Pi-hole standalone
 
-The Arch Linux Pi-hole Standalone variant is born from the need to use Pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
-
 ### Installation
 
 [Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package. The Pi-hole standalone package install a statically enabled timer (and relative service) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it. You need to manually start `pi-hole-gravity.timer` or simply reboot after your configuration is finished.
@@ -320,46 +318,27 @@ or, via web interface, clicking on *Enable*.
 
 ### Cloudflared DNS service
 
-Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create a configuration file under /etc/cloudflared/
+Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
 
-For example:
-
-```
-/etc/cloudflared/cloudflared.yml
-
-```
-
+ `/etc/cloudflared/cloudflared.yml` 
 ```
 proxy-dns: true
 proxy-dns-upstream:
- - [https://1.0.0.1/dns-query](https://1.0.0.1/dns-query)
- - [https://1.1.1.1/dns-query](https://1.1.1.1/dns-query)
- - [https://2606:4700:4700::1111/dns-query](https://2606:4700:4700::1111/dns-query)
- - [https://2606:4700:4700::1001/dns-query](https://2606:4700:4700::1001/dns-query)
-proxy-dns-port: 8000
+ - https://1.0.0.1/dns-query
+ - https://1.1.1.1/dns-query
+ - https://2606:4700:4700::1111/dns-query
+ - https://2606:4700:4700::1001/dns-query
+proxy-dns-port: 5053
 proxy-dns-address: 0.0.0.0
 logfile: /var/log/cloudflared.log
 
 ```
 
-Then, start/enable the service with:
-
-```
-#systemctl enable cloudflared@cloudflared
-#systemctl start cloudflared@cloudflared
-
-```
-
-Finally, go to your pihole admin settings and set a custom Upstream DNS server:
-
-```
-127.0.0.1#8000
-
-```
+Then [start and enable](/index.php/Start/enable "Start/enable") `cloudflared@cloudflared.service`. Now you can use `127.0.0.1#5053` as a DNS server in Pi-Hole.
 
 ### Use with VPN server
 
-Pi-Hole server can be used on the same host where VPN server is deployed, so connected VPN clients can also use Pi-Hole.
+Pi-Hole can be used by connected VPN clients.
 
 #### OpenVPN
 

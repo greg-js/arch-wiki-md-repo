@@ -22,6 +22,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
         *   [4.3.1 Inspect fragmentation levels](#Inspect_fragmentation_levels)
         *   [4.3.2 Perform defragmentation](#Perform_defragmentation)
     *   [4.4 Free inode btree](#Free_inode_btree)
+    *   [4.5 External XFS Journal](#External_XFS_Journal)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Root file system quota](#Root_file_system_quota)
 *   [6 See also](#See_also)
@@ -52,15 +53,17 @@ Once unmounted, run the [xfs_repair(8)](https://jlk.fjfi.cvut.cz/arch/manpages/m
 
 ### Online Metadata Checking (scrub)
 
-**Warning:** This program is EXPERIMENTAL, which means that its behaviour and interface could change at any time, see [xfs_scrub(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_scrub.8).
+**Warning:** This program is EXPERIMENTAL, which means that its behavior and interface could change at any time, see [xfs_scrub(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_scrub.8).
 
-`xfs_scrub` asks the kernel to scrub all metadata objects in the [filesystem](/index.php/Filesystem "Filesystem"). Metadata records are scanned for obviously bad values and then cross-referenced against other metadata. The goal is to establish a reasonable confidence about the consistency of the overall filesystem by examining the consistency of individual metadata records against the other metadata in the filesystem. Damaged metadata can be rebuilt from other metadata if there exists redundant data structures which are intact.
+`xfs_scrub` asks the kernel to scrub all metadata objects in the XFS filesystem. Metadata records are scanned for obviously bad values and then cross-referenced against other metadata. The goal is to establish a reasonable confidence about the consistency of the overall filesystem by examining the consistency of individual metadata records against the other metadata in the filesystem. Damaged metadata can be rebuilt from other metadata if there exists redundant data structures which are intact.
 
-[Enable](/index.php/Enable "Enable") `xfs_scrub_all.timer` to periodic check online metadata for all filesystems. One may want to [edit](/index.php/Edit "Edit") `xfs_scrub_all.timer`, since it runs every Sunday at 3:10am.
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `xfs_scrub_all.timer` to periodic check online metadata for all XFS filesystems.
+
+**Note:** One may want to [edit](/index.php/Edit "Edit") `xfs_scrub_all.timer`: the timer runs every Sunday at 3:10am and will be [triggered immediately](/index.php/Systemd/Timers#Realtime_timer "Systemd/Timers") if it missed the last start time, i.e. due to the system being powered off.
 
 ## Integrity
 
-xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disabled using the `-m crc=0` switch when calling [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8).
+[xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disabled using the `-m crc=0` switch when calling [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8).
 
 ```
 # mkfs.xfs -m crc=0 /dev/*target_partition*
@@ -82,9 +85,12 @@ For optimal speed, just create an XFS file system with:
 
 Yep, so simple - since all of the ["boost knobs" are already "on" by default](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E).
 
-**Warning:** Disabling atime and other performance enhancements make data corruption and failure much more likely.
+Also see [xfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs.5) for details of all available mount options.
 
-See also [Improving performance#Input/output schedulers](/index.php/Improving_performance#Input/output_schedulers "Improving performance").
+**Tip:** When using the XFS filesystem on [RAID](/index.php/RAID "RAID") devices, performance improvements may be possible by using `largeio`, `swalloc`, increased `logbsize` and `allocsize` values, etc. The following articles may provide additional details about those flags:
+
+*   [https://www.beegfs.io/wiki/StorageServerTuning](https://www.beegfs.io/wiki/StorageServerTuning)
+*   [https://help.marklogic.com/Knowledgebase/Article/View/505/0/recommended-xfs-settings-for-marklogic-server](https://help.marklogic.com/Knowledgebase/Article/View/505/0/recommended-xfs-settings-for-marklogic-server)
 
 ### Stripe size and width
 
@@ -141,6 +147,14 @@ or shortly (`finobt` depends `crc`)
 # mkfs.xfs -m crc=0 /dev/*target_partition*
 
 ```
+
+### External XFS Journal
+
+Using an external log (metadata journal) on for instance a [SSD](/index.php/SSD "SSD") may be useful to improve performance [[1]](https://docs.oracle.com/cd/E37670_01/E37355/html/ol_extjnl_xfs.html). See [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) for details about the `logdev` parameter.
+
+**Warning:** Beware using flash-memory may wear-out the drive. See [Improving performance#Reduce disk reads/writes](/index.php/Improving_performance#Reduce_disk_reads/writes "Improving performance") for SSD wear-out details.
+
+To reserve an external journal with a specified size when you create an XFS file system, specify the `-l logdev=device,size=size` option to the `mkfs.xfs` command. If you omit the `size` parameter, a journal size based on the size of the file system is used. To mount the XFS file system so that it uses the external journal, specify the `-o logdev=device` option to the [mount](/index.php/Mount "Mount") command.
 
 ## Troubleshooting
 

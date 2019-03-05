@@ -107,14 +107,14 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 #### Manual (fwupdmgr)
 
-Lenovo provides a cabinet file that can be directly installed with fwupdmgr. Take the most recent .cab file from [Lenovo ThinkPad X1 Carbon (Gen 6) driver website](https://pcsupport.lenovo.com/fr/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads)
+Lenovo provides a cabinet file that can be directly installed with fwupdmgr. Take the most recent `.cab` file from the [Lenovo ThinkPad X1 Carbon (Gen 6) driver website](https://pcsupport.lenovo.com/fr/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads).
 
 1.  Make sure the AC adapter is firmly connected to the target computer.
 2.  Launch Terminal.
 3.  Move to the directory where the cabinet file was placed.
-4.  Run 'fwupdmgr install xxxxxxxx.cab' to schedule firmware update.
+4.  Run `fwupdmgr install xxxxxxxx.cab` to schedule firmware update.
 5.  Restart the system.
-6.  The computer will be restarted and the EFI BIOS will be updated.
+6.  The computer will be restarted and the UEFI BIOS will be updated.
 
 #### Manual (El Torito)
 

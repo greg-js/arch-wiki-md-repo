@@ -259,4 +259,4 @@ To resolve this, either use one cpu core, or go to machine settings -> System ->
 
 ### VirtualBox falls out to EFI shell
 
-Currently VirtualBox does not support PXE booting in UEFI mode. See [this](https://forums.virtualbox.org/viewtopic.php?f=9&t=84349). You can try qemu instead.
+Currently VirtualBox does not support PXE booting in UEFI mode. See [this](https://forums.virtualbox.org/viewtopic.php?f=9&t=84349). You can try qemu instead. Alternatively you can use VMware Workstation 15.0.2 (it supports uefi pxe boot) or just a real hardware.

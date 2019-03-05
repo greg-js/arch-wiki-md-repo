@@ -4,7 +4,7 @@ You describe your firewall/gateway requirements using entries in a set of config
 
 Shorewall can be used on a dedicated firewall system, a multi-function gateway/router/server or on a standalone GNU/Linux system. Shorewall does not use Netfilter's ipchains compatibility mode and can thus take advantage of Netfilter's connection state tracking capabilities.
 
-[Shorewall development ended on February 21st, 2019.](https://sourceforge.net/p/shorewall/mailman/message/36589783/)
+**Warning:** [Shorewall active development ended on February 21st, 2019](https://sourceforge.net/p/shorewall/mailman/message/36589783/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

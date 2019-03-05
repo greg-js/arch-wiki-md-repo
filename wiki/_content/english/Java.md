@@ -233,7 +233,7 @@ If an invalid Java environment link is set, calling the `archlinux-java fix` com
 
 ### Launching an application with the non-default java version
 
-If you want to launch an application with another version of java than the default one (for example if you have both version jre7 and jre8 installed on your system), you can wrap your application in a small bash script to locally change the default PATH of java. For example if the default version is jre7 and you want use jre8:
+If you want to launch an application with another version of java than the default one (for example if you have both version jre7 and jre8 installed on your system), you can wrap your application in a small bash script to locally change the default PATH of java. For example if the default version is jre7 and you want to use jre8:
 
 ```
 #!/bin/sh 

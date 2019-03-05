@@ -8,11 +8,11 @@ Artículos relacionados
 *   [OpenDMARC](/index.php/OpenDMARC "OpenDMARC")
 *   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
 
-[Postfix](https://en.wikipedia.org/wiki/Postfix_(software) is a [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent") that according to [its website](http://www.postfix.org/):
+[Postfix](https://en.wikipedia.org/wiki/es:Postfix "wikipedia:es:Postfix") es un [agente de transferencia de correo](/index.php/Mail_transfer_agent "Mail transfer agent") que de acuerdo con [su sitio web](http://www.postfix.org/):
 
-	attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.
+	intenta ser rápido, fácil de administrar y seguro, al mismo tiempo que es lo suficientemente compatible con sendmail para no molestar a los usuarios existentes. Por lo tanto, el exterior es parecido a sendmail, pero el interior es completamente diferente.
 
-This article builds upon [Mail server](/index.php/Mail_server "Mail server"). The goal of this article is to setup Postfix and explain what the basic configuration files do. There are instructions for setting up local system user-only delivery and a link to a guide for virtual user delivery.
+Este artículo se basa en [Servidor de correo](/index.php/Mail_server "Mail server"). El objetivo de este artículo es configurar Postfix y explicar qué hacen los archivos de configuración básicos. Hay instrucciones para configurar la entrega solo para usuarios locales del sistema y un enlace a una guía para la entrega a usuarios virtuales.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,10 +20,10 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Aliases](#Aliases)
-    *   [2.2 Local mail](#Local_mail)
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
+    *   [2.1 Alias](#Alias)
+    *   [2.2 Correo local](#Correo_local)
     *   [2.3 Virtual mail](#Virtual_mail)
     *   [2.4 Check configuration](#Check_configuration)
 *   [3 Start Postfix](#Start_Postfix)
@@ -36,11 +36,11 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
     *   [5.3 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
     *   [5.4 DANE (DNSSEC)](#DANE_(DNSSEC))
         *   [5.4.1 Resource Record](#Resource_Record)
-        *   [5.4.2 Configuration](#Configuration_2)
+        *   [5.4.2 Configuration](#Configuration)
 *   [6 Extras](#Extras)
     *   [6.1 Postgrey](#Postgrey)
-        *   [6.1.1 Installation](#Installation_2)
-        *   [6.1.2 Configuration](#Configuration_3)
+        *   [6.1.1 Installation](#Installation)
+        *   [6.1.2 Configuration](#Configuration_2)
         *   [6.1.3 Whitelisting](#Whitelisting)
         *   [6.1.4 Troubleshooting](#Troubleshooting)
     *   [6.2 SpamAssassin](#SpamAssassin)
@@ -54,55 +54,55 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
     *   [7.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_"database_/etc/postfix/*.db_is_older_than_source_file_..")
 *   [8 See also](#See_also)
 
-## Installation
+## Instalación
 
-[Install](/index.php/Install "Install") the [postfix](https://www.archlinux.org/packages/?name=postfix) package.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [postfix](https://www.archlinux.org/packages/?name=postfix).
 
-## Configuration
+## Configuración
 
-See [Postfix Basic Configuration](http://www.postfix.org/BASIC_CONFIGURATION_README.html). Configuration files are in `/etc/postfix` by default. The two most important files are:
+Véase [Configuración básica de Postfix](http://www.postfix.org/BASIC_CONFIGURATION_README.html). Los archivos de configuración están en `/etc/postfix` por defecto. Los dos archivos más importantes son:
 
-*   `master.cf`, defines what Postfix services are enabled an what how clients connect to them, see [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
-*   `main.cf`, the main configuration file, see [postconf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postconf.5)
+*   `master.cf`, define qué servicios de Postfix están habilitados y cómo se conectan los clientes con ellos, véase [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
+*   `main.cf`, el archivo de configuración principal, véase [postconf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postconf.5)
 
-Configuration changes need a `postfix.service` [reload](/index.php/Reload "Reload") in order to take effect.
+Los cambios de configuración necesitan un [reinicio](/index.php/Reload_(Espa%C3%B1ol) "Reload (Español)") de `postfix.service` para tener efecto.
 
-### Aliases
+### Alias
 
-See [aliases(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postfix/aliases.5.en).
+Véase [aliases(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postfix/aliases.5.es).
 
-You can specify aliases (also known as forwarders) in `/etc/postfix/aliases`.
+Puede especificar los alias (también conocidos como reenviadores) en `/etc/postfix/aliases`.
 
-You need to map all mail addressed to *root* to another account since it is not a good idea to read mail as root.
+Debe asignar todo el correo dirigido a *root* a otra cuenta, ya que no es una buena idea leer el correo como superusuario.
 
-Uncomment the following line, and change `you` to a real account.
-
-```
-root: you
+Descomente la siguiente línea, y cambie `tú` a una cuenta real.
 
 ```
+root: tú
 
-Once you have finished editing `/etc/postfix/aliases` you must run the postalias command:
+```
+
+Una vez que haya terminado de editar `/etc/postfix/aliases` debe ejecutar la orden postalias:
 
 ```
 postalias /etc/postfix/aliases
 
 ```
 
-For later changes you can use:
+Para cambios posteriores puedes utilizar:
 
 ```
 newaliases
 
 ```
 
-**Tip:** Alternatively you can create the file `~/.forward`, e.g. `/root/.forward` for root. Specify the user to whom root mail should be forwarded, e.g. *user@localhost*. `/root/.forward` 
+**Sugerencia:** Alternativamente puede crear el archivo `~/.forward`, por ejemplo `/root/.forward` para el superusuario. Especifique el usuario al que se debe reenviar el correo del superusuario, por ejemplo *usuario@localhost*. `/root/.forward` 
 ```
-user@localhost
+usuario@localhost
 
 ```
 
-### Local mail
+### Correo local
 
 To only deliver mail to local system users (that are in `/etc/passwd`) update `/etc/postfix/main.cf` to reflect the following configuration. Uncomment, change, or add the following lines:
 

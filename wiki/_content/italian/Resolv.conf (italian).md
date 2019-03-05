@@ -4,7 +4,11 @@ Dalla pagina di manuale [resolv.conf(5)](http://www.kernel.org/doc/man-pages/onl
 
 	*In un sistema correttamente configurato questo file potrebbe non essere necessario. L'unico server dei nomi(DNS) che verrà interrogato sarà la macchina stessa; il nome dominio(domain name) è determinato dal nome macchina ed il percorso del dominio di ricerca è costruito dal nome dominio."*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Mantenere le impostazioni dei DNS](#Mantenere_le_impostazioni_dei_DNS)
     *   [1.1 Modificare la configurazione di dhcpcd](#Modificare_la_configurazione_di_dhcpcd)

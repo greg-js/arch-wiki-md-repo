@@ -102,7 +102,7 @@ The loader configuration is stored in the file `*esp*/loader/loader.conf` and it
 
 *   `default` – default entry to select as defined in [#Adding loaders](#Adding_loaders); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
 *   `timeout` – menu timeout in seconds before the default entry is booted. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
-*   `editor` – whether to enable the kernel parameters editor or not. `yes` (default) is enabled, `no` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `no`.
+*   `editor` – whether to enable the kernel parameters editor or not. `yes` (default) is enabled, `no` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `no` if the machine can be accessed by unauthorized persons.
 *   `auto-entries` – shows automatic entries for Windows, EFI Shell, and Default Loader if set to `1` (default), `0` to hide;
 *   `auto-firmware` – shows entry for rebooting into UEFI firmware settings if set to `1` (default), `0` to hide;
 *   `console-mode` – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for non-standard modes provided by the device firmware, if any, `auto` picks a suitable mode automatically, `max` for highest available mode, `keep` (default) for the firmware selected mode.

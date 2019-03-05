@@ -619,15 +619,15 @@ ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="05c6", 
 
 ```
 
-Alternatively, to blacklist devices that are not working with USB autosuspend and enable it for all other devices:
+Alternatively, to blacklist devices that are not working with USB autosuspend and enable it for all other devices, use `autosuspend=-1` and `autosuspend_delay_ms=-1`:
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
 ```
-# blacklist for usb autosuspend
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", GOTO="power_usb_rules_end"
-
 ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
-LABEL="power_usb_rules_end"
+
+# blacklist for usb autosuspend
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", TEST=="power/autosuspend", ATTR{power/autosuspend}="-1"
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", TEST=="power/autosuspend_delay_ms", ATTR{power/autosuspend_delay_ms}="-1"
 
 ```
 

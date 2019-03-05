@@ -1,6 +1,10 @@
 The following are examples of encrypting a secondary, i.e. non-root, filesystem with dm-crypt.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Partition](#Partition)
@@ -30,7 +34,7 @@ First make sure the partition is empty (has no file system attached to it). Dele
 Then setup the LUKS header with:
 
 ```
-# cryptsetup *options* luksFormat --type luks2 *device*
+# cryptsetup *options* luksFormat *device*
 
 ```
 

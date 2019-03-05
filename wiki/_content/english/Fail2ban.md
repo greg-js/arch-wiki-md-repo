@@ -120,28 +120,30 @@ Most [firewalls](/index.php/Firewalls "Firewalls") and services should work out 
 
 **Warning:** If the attacker knows your IP address, they can send packets with a spoofed source header and get your IP address locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
 
-Edit `/etc/fail2ban/jail.d/sshd.local`, add this section and update the list of trusted IP addresses in `ignoreip`.
+Edit `/etc/fail2ban/jail.d/sshd.local`, add this section and update the list of trusted IP addresses in `ignoreip`:
 
-If your firewall is [iptables](/index.php/Iptables "Iptables"):
-
+ `/etc/fail2ban/jail.d/sshd.local` 
 ```
 [sshd]
-enabled  = true
-filter   = sshd
+enabled   = true
+filter    = sshd
 banaction = iptables
-backend  = systemd
-maxretry = 5
-findtime = 1d
-bantime  = 2w
-ignoreip = 127.0.0.1/8
-
+backend   = systemd
+maxretry  = 5
+findtime  = 1d
+bantime   = 2w
+ignoreip  = 127.0.0.1/8
 ```
 
-fail2ban has IPv6 support since version 0.10\. Adapt your firewall accordingly, e.g. start and enable `ip6tables.service`.
+**Note:**
 
-**Note:** If your firewall is [shorewall](/index.php/Shorewall "Shorewall"), replace `iptables` with `shorewall`. You can also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
+*   It may be necessary to set `LogLevel VERBOSE` in `/etc/ssh/sshd_config` to allow full fail2ban monitoring as otherwise password failures may not be logged correctly.
+*   Fail2ban has IPv6 support since version 0.10\. Adapt your [firewall](/index.php/Firewall "Firewall") accordingly, e.g. [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `ip6tables.service`.
 
-**Note:** It may be necessary to set `LogLevel VERBOSE` in `/etc/ssh/sshd_config` to allow full fail2ban monitoring as otherwise password failures may not be logged correctly.
+**Tip:**
+
+*   If using [iptables](/index.php/Iptables "Iptables") front-ends like [ufw](/index.php/Ufw "Ufw"), one can use `banaction = ufw` instead of using [iptables](/index.php/Iptables "Iptables").
+*   When using [Shorewall](/index.php/Shorewall "Shorewall"), one can use `banaction = shorewall` and also set `BLACKLIST` to `ALL` in `/etc/shorewall/shorewall.conf`, otherwise the rule added to ban an IP address will affect only new connections.
 
 ### Service hardening
 

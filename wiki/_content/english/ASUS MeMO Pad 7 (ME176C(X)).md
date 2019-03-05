@@ -1,3 +1,26 @@
+| Working | Broken |
+| 
+
+*   SD card
+*   Graphics ([i915](/index.php/I915 "I915"))
+*   [Touchscreen](/index.php/Touchscreen "Touchscreen")
+*   Battery/Charging
+*   Audio ([ALSA](/index.php/ALSA "ALSA"))
+*   [WiFi](/index.php/WiFi "WiFi")
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
+*   USB-OTG, USB gadget mode
+*   Sensors
+*   [Backlight](/index.php/Backlight "Backlight")
+*   [Suspend](/index.php/Suspend "Suspend")
+*   [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration")
+
+ | 
+
+*   Camera
+*   GPS
+
+ |
+
 The [ASUS MeMO Pad 7 (ME176C)](https://www.asus.com/Tablets/ASUS_MeMO_Pad_7_ME176C/) is an x86_64-based Android tablet. With Android 5.0 (Lollipop) it was updated with [UEFI](/index.php/UEFI "UEFI") boot, which makes it possible to boot any Linux distribution on it. In general, Arch Linux works as-is, but there are additional (custom) packages available for full functionality.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -77,7 +100,7 @@ At the very least, you need a single root partition, and `/boot` on the ASUS Pro
 
 **Note:** The [package signing key](/index.php/Package_signing#Adding_unofficial_keys "Package signing") for the ME176C [unofficial user repository](/index.php/Unofficial_user_repository "Unofficial user repository") is automatically trusted for installations from the custom ISO.
 
-After installation, but before rebooting, configure the ME176C [unofficial user repository](/index.php/Unofficial_user_repository "Unofficial user repository") and install the additional packages in the chroot:
+After installation, but before rebooting, configure the [ME176C unofficial user repository](/index.php/Unofficial_user_repository#me176c "Unofficial user repository") and install the additional packages in the chroot:
 
 ```
 # pacman -S me176c
@@ -122,7 +145,7 @@ options  root=PARTUUID=... rw
 *   [me176c-battery](https://aur.archlinux.org/packages/me176c-battery/) provides [systemd](/index.php/Systemd "Systemd") units for the battery daemon `upi_ug31xx` used on the stock ROM. It may be needed for the battery driver to work correctly. [Start/enable](/index.php/Start/enable "Start/enable") `upi_ug31xx.service`.
 *   [thermald-me176c](https://aur.archlinux.org/packages/thermald-me176c/) provides a custom configuration for [thermald](/index.php/CPU_frequency_scaling#thermald "CPU frequency scaling") based on values from the stock ROM. [Start/enable](/index.php/Start/enable "Start/enable") `thermald-me176c.service` instead of `thermald.service`.
 
-These packages are maintained on [GitHub](https://github.com/me176c-dev/archlinux-me176c) and are available through the [AUR](/index.php/AUR "AUR") or through an [unofficial user repository](/index.php/Unofficial_user_repository "Unofficial user repository"): TODO
+These packages are maintained on [GitHub](https://github.com/me176c-dev/archlinux-me176c) and are available through the [AUR](/index.php/AUR "AUR") or through the [ME176C unofficial user repository](/index.php/Unofficial_user_repository#me176c "Unofficial user repository"). Older versions are available on [GitHub Releases](https://github.com/me176c-dev/archlinux-me176c/releases).
 
 [Microcode](/index.php/Microcode "Microcode") updates for this tablet are not included in [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode), consider installing [intel-ucode-byt-t-c0](https://aur.archlinux.org/packages/intel-ucode-byt-t-c0/) instead and [enable early microcode updates](/index.php/Microcode#Enabling_early_microcode_updates "Microcode") for `/intel-ucode-byt-t-c0.img`.
 
@@ -137,6 +160,20 @@ With [me176c-factory](https://aur.archlinux.org/packages/me176c-factory/) instal
 The tablet has only very little RAM, so you almost certainly want to set up some kind of [swap](/index.php/Swap "Swap") space. However, keep in mind SD cards are slow and flash storage in general has only a limited amount of write cycles. Using it as swap space may kill it quickly. An alternative is [ZRAM](/index.php/ZRAM "ZRAM"), which compresses parts of the RAM to provide additional space at the cost of higher CPU usage.
 
 ### Audio
+
+**Warning:** The speaker volume can be set higher than supported by the hardware. Setting it to very high values may damage the speakers or cause distortions.
+
+Unless you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), you need to configure a few [ALSA](/index.php/ALSA "ALSA") mixers to make audio working. This is done using `alsaucm`:
+
+```
+# alsaucm -i -c bytcr-rt5640
+alsaucm>> reset
+alsaucm>> set _verb HiFi
+alsaucm>> set _enadev Speaker
+
+```
+
+Using [ALSA](/index.php/ALSA "ALSA") some audio files (especially MP3/AAC) are not played correctly when converted to `float` format instead of `s16`. This does not happen when using [PulseAudio](/index.php/PulseAudio "PulseAudio").
 
 ### WiFi/Bluetooth
 

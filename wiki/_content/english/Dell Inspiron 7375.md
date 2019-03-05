@@ -91,7 +91,7 @@ quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic
 
 The upgrade to 4.20 patched for Raver Ridge installing [linux-amd-raven](https://aur.archlinux.org/packages/linux-amd-raven/) and may be you will want to install after [linux-amd-raven-headers](https://aur.archlinux.org/packages/linux-amd-raven-headers/) in order to build DKMS modules.
 
-Sinde idle=nomwait makes it run hotter. After the kernel upgrade you can remove idle=nomwait from grub, getting the following line:
+Since idle=nomwait makes it run hotter. After the kernel upgrade you can remove idle=nomwait from grub, getting the following line:
 
 ```
 quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2
@@ -99,6 +99,8 @@ quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic
 ```
 
 you can use grub-customizer to make it easier
+
+If you keep experiencing hangups after start using [linux-amd-raven](https://aur.archlinux.org/packages/linux-amd-raven/) try [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) with [linux-mainline-headers](https://aur.archlinux.org/packages/linux-mainline-headers/)
 
 ### Power Saving Modes
 
@@ -130,4 +132,16 @@ Ill pull request upon more testing
 
 ## Others
 
-this is wip, please wait
+This laptop gets super hot, in order to decrease temperature and perform long intensive tasks, you can perform the following hardware hacks (witch might void guarantee and i will not take any responsibility for breaking the laptop)
+
+1.- Change Dissipation Paste on the CPU, the included one is not very good
+
+2.- Give fresh air by making holes on the bottom like the ones on the link: [here](https://s3.us-east-2.amazonaws.com/danielfm123-public/proyects/dell+7375/dell+7375+results.jpeg), the holes were performed using 1.5 mm drill (1.0mm is fine too) and this [grid](https://s3.us-east-2.amazonaws.com/danielfm123-public/proyects/dell+7375/grid.pdf)
+
+In order to perform the holes, take the bottom cover out and fir with tape the grid to the inside side of the plate, then drill from inside to outside side of the plate where the lines cross on the grid. After finishing clean very well all the metal residuals.
+
+If you don't have a vertical drill, stick the grid into a 0.5cm wood, and put the wood on top of the plate. It will give you more control.
+
+3.- After doing 1 and 2 you can add a cooling base with a fan in the bottom and you should be able to play games with out burning the laptop.
+
+4.- If you made the holes you can make the laptop more quiet with [this NBFC settings](https://s3.us-east-2.amazonaws.com/danielfm123-public/proyects/dell+7375/Dell+Inspiron+7375+custom.xml)

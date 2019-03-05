@@ -47,27 +47,28 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.26 llvm-svn](#llvm-svn)
     *   [2.27 markzz](#markzz)
     *   [2.28 maximbaz](#maximbaz)
-    *   [2.29 miffe](#miffe)
-    *   [2.30 mikelpint](#mikelpint)
-    *   [2.31 Minerva W Science](#Minerva_W_Science)
-    *   [2.32 mobile](#mobile)
-    *   [2.33 nah](#nah)
-    *   [2.34 pkgbuilder](#pkgbuilder)
-    *   [2.35 post-factum kernels](#post-factum_kernels)
-    *   [2.36 QOwnNotes](#QOwnNotes)
-    *   [2.37 qt-debug](#qt-debug)
-    *   [2.38 quarry](#quarry)
-    *   [2.39 repo-ck](#repo-ck)
-    *   [2.40 seblu](#seblu)
-    *   [2.41 seiichiro](#seiichiro)
-    *   [2.42 sergej-repo](#sergej-repo)
-    *   [2.43 siosm-aur](#siosm-aur)
-    *   [2.44 sublime-text](#sublime-text)
-    *   [2.45 subtitlecomposer](#subtitlecomposer)
-    *   [2.46 trinity](#trinity)
-    *   [2.47 ungoo](#ungoo)
-    *   [2.48 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.49 xyne-x86_64](#xyne-x86_64)
+    *   [2.29 me176c](#me176c)
+    *   [2.30 miffe](#miffe)
+    *   [2.31 mikelpint](#mikelpint)
+    *   [2.32 Minerva W Science](#Minerva_W_Science)
+    *   [2.33 mobile](#mobile)
+    *   [2.34 nah](#nah)
+    *   [2.35 pkgbuilder](#pkgbuilder)
+    *   [2.36 post-factum kernels](#post-factum_kernels)
+    *   [2.37 QOwnNotes](#QOwnNotes)
+    *   [2.38 qt-debug](#qt-debug)
+    *   [2.39 quarry](#quarry)
+    *   [2.40 repo-ck](#repo-ck)
+    *   [2.41 seblu](#seblu)
+    *   [2.42 seiichiro](#seiichiro)
+    *   [2.43 sergej-repo](#sergej-repo)
+    *   [2.44 siosm-aur](#siosm-aur)
+    *   [2.45 sublime-text](#sublime-text)
+    *   [2.46 subtitlecomposer](#subtitlecomposer)
+    *   [2.47 trinity](#trinity)
+    *   [2.48 ungoo](#ungoo)
+    *   [2.49 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.50 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -474,6 +475,18 @@ Server = https://repo.markzz.com/arch/$repo/$arch
 ```
 [maximbaz]
 Server = https://pkgbuild.com/~maximbaz/repo/
+
+```
+
+### me176c
+
+*   **Maintainer:** [lambdadroid](https://github.com/lambdadroid)
+*   **Description:** Packages for [ASUS MeMO Pad 7 (ME176C(X))](/index.php/ASUS_MeMO_Pad_7_(ME176C(X)) "ASUS MeMO Pad 7 (ME176C(X))")
+*   **Key-ID:** 2B1138A8BB59D786A3BF42AAD996DA70572407FB
+
+```
+[me176c]
+Server = https://me176c.uber.space/archlinux
 
 ```
 

@@ -1018,8 +1018,7 @@ Your partition layout should look similar to this:
 Number  Start (sector)    End (sector)  Size       Code  Name
    1            2048            4095   1024.0 KiB  EF02  BIOS boot partition
    2            4096         1130495   550.0 MiB   EF00  EFI System
-   3         1130496         1540095   200.0 MiB   8300  Linux filesystem
-   4         1540096        69205982   32.3 GiB    8E00  Linux LVM
+   3         1130496        68239360   32.0 GiB    8E00  Linux LVM
 
 ```
 

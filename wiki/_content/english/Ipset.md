@@ -92,7 +92,7 @@ Finally, configure [iptables](/index.php/Iptables "Iptables") to block any addre
 
 ### Making ipset persistent
 
-ipset you have created is stored in memory and will be gone after reboot. To make the ipset persistent you have to do the followings:
+The ipset you have created is stored in memory and will be gone after reboot. To make the ipset persistent you have to do the followings:
 
 First save the ipset to /etc/ipset.conf:
 

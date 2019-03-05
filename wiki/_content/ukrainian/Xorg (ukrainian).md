@@ -226,7 +226,7 @@ $ grep -e "Using input driver " Xorg.0.log
 *   Новіші версії Xorg йдуть з автоконфігуруванням, тому ручна конфігурація не потрібна.
 *   Якщо Xorg не може виявити якийсь монітор або знайти автоматичного налаштування, можна використовувати файл конфігурації. Загальний випадок, коли це необхідно, це система, яка завантажується без монітора і автоматично запускає Xorg, або з [віртуальної консолі](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") при [вході](/index.php/Start_X_at_login "Start X at login"), або з [менеджеру вікон](/index.php/Display_manager "Display manager").
 
-Для конфігурації без-моніторних систем потрібен драйвер [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy), [встановіть](/index.php/Install "Install") його та створіть файл конфігурації, подібний до цього:
+Для конфігурації без-моніторних систем потрібен драйвер [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy); [встановіть](/index.php/Install "Install") його та створіть файл конфігурації, подібний до цього:
 
  `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
@@ -250,6 +250,7 @@ Section "Screen"
         SubSection "Display"
         EndSubSection
 EndSection
+
 ```
 
 ### Декілька моніторів
@@ -296,10 +297,12 @@ Bus ID тут 1:0:0.
 
 DPI X-сервера визначається наступним чином:
 
-1.  Параметр командного рядка -dpi має найвищий пріоритет.
-2.  Якщо це не використовується, параметр DisplaySize у конфігураційному файлі Xorg використовується для виведення DPI, враховуючи дозвіл екрана.
-3.  Якщо не заданий параметр DisplaySize, значення розміру монітора використовуються з [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") для виведення DPI, враховуючи дозвіл екрана.
-4.  Якщо DDC не визначає розмір, 75 DPI використовуються типово.
+1.  Параметр командного рядка `-dpi` має найвищий пріоритет.
+
+1.  Якщо це не використовується, параметр `DisplaySize` у конфігураційному файлі Xorg використовується для виведення DPI, враховуючи дозвіл екрана.
+
+1.  Якщо не заданий параметр `DisplaySize`, значення розміру монітора використовуються з [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") для виведення DPI, враховуючи дозвіл екрана.
+2.  Якщо DDC не визначає розмір, 75 DPI використовуються типово.
 
 Щоб отримати правильну кількість точок на дюйм (DPI), розмір дисплея повинен бути розпізнаний або встановлений. Наявність правильного DPI є особливо необхідним, коли потрібні дрібні деталі (наприклад, візуалізація шрифтів). Раніше виробники намагалися створити стандарт для 96 DPI (діагональний монітор розміром 10,3" був би 800x600, монітор 13,2" - 1024x768). В наш час DPI екрану різняться і можуть бути не рівними по горизонталі і вертикалі. Наприклад, 19-дюймовий широкоформатний РК-дисплей на 1440x900 може мати DPI 89x87\. Щоб встановити DPI, сервер Xorg намагається автоматично визначити фізичний розмір екрану монітора за допомогою графічної карти з DDC. ~~Коли сервер Xorg знає фізичний розмір екрану, він зможе встановити правильний DPI в залежності від розміру дозволу.~~
 
@@ -393,7 +396,7 @@ $ xrdb -query | grep dpi
 
 ```
 
-З версіями бібліотеки GTK після 3.16, коли ця змінна явно не встановлена, GTK встановлює його 96\. Щоб програми GTK підкорялися серверу DPI, вам може знадобитися точно встановити Xft.dpi на те ж значення, що і сервер. Ресурс Xft.dpi - це метод, за допомогою якого деякі настільні середовища примушують DPI до певного значення в особистих налаштуваннях. Серед них KDE та TDE.
+З версіями бібліотеки GTK після 3.16, коли ця змінна явно не встановлена, GTK встановлює його 96\. Щоб програми GTK підкорялися серверу DPI, вам може знадобитися точно встановити Xft.dpi на те ж значення, що і сервер. Ресурс Xft.dpi - це метод, за допомогою якого деякі настільні середовища примушують DPI до певного значення в особистих налаштуваннях. Серед них [KDE](/index.php/KDE "KDE") та [TDE](/index.php/TDE "TDE").
 
 ### Управління енергозбереженням монітора
 
@@ -520,22 +523,24 @@ kill -9 $pid
 
 ### Блокування доступу до TTY
 
-Щоб заблокувати доступ до tty в X, до [xorg.conf](#Configuration) додати наступне:
+Щоб заблокувати доступ до tty в X, до [xorg.conf](#Конфігурація) додати наступне:
 
 ```
 Section "ServerFlags"
     Option "DontVTSwitch" "True"
 EndSection
+
 ```
 
 ### Запобігання закриттю X-сервера користувачем
 
-Щоб запобігти втручанню користувача в роботу X-сервера, додайте наступне до [xorg.conf](#Configuration):
+Щоб запобігти втручанню користувача в роботу X-сервера, додайте наступне до [xorg.conf](#Конфігурація):
 
 ```
 Section "ServerFlags"
     Option "DontZap"      "True"
 EndSection
+
 ```
 
 ## Вирішення проблем
@@ -553,7 +558,6 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 ```
 
 *   In the logfile then be on the lookout for any lines beginning with `(EE)`, which represent errors, and also `(WW)`, which are warnings that could indicate other issues.
-
 *   If there is an *empty* `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
 *   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F2`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
 
@@ -606,9 +610,7 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 
 ### Program requests "font '(null)'"
 
-*   Error message: "*unable to load font `(null)'.*"
-
-Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try `xdpyinfo` from [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), like this:
+Error message: `unable to load font `(null)'`. Some programs only work with bitmap fonts. Two major packages with bitmap fonts are available, [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). You do not need both; one should be enough. To find out which one would be better in your case, try `xdpyinfo` from [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo), like this:
 
 ```
 $ xdpyinfo | grep resolution

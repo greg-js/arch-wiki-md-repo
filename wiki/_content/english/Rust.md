@@ -223,7 +223,7 @@ The [Racer](https://github.com/phildawes/racer) autocomplete engine is the curre
 After installing the source code, you can either use `Cargo` to install racer or obtain it from the repos ([rust-racer](https://www.archlinux.org/packages/?name=rust-racer)).
 
 ```
-$ cargo install racer
+$ cargo +nightly install racer
 
 ```
 

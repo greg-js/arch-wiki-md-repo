@@ -182,18 +182,14 @@ As this solution does not use an official certificate authority (CA), a security
 
 Hiawatha provides a script to obtain a [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") certificate in an automated fashion using the [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") v2 protocol and therefore supporting wildcard domains such as **.mydomain.org*.
 
-The package [hiawatha-letsencrypt](https://aur.archlinux.org/packages/hiawatha-letsencrypt/) installs this script.
-
-The package also provides [systemd](/index.php/Systemd "Systemd") *.service* and *.timer* files .
-
-A configuration file example `letsencrypt.conf` is provided in the directory `/etc/letsencrypt/`. The user's configuration must be saved in either `~/.letsencrypt/`, `/etc/letsencrypt/` or `/usr/local/etc/letsencrypt/`.
+A configuration file example `letsencrypt.conf` is provided in the directory `/usr/lib/hiawatha/letsencrypt`. The user's configuration must be saved in `~/.letsencrypt/`.
 
 #### Obtain a certificate
 
 The detailed instructions are described in this [README.txt](https://gitlab.com/hsleisink/hiawatha/raw/v10.7/extra/letsencrypt/README.txt) and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
 
-1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ letsencrypt register` 
-2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `# letsencrypt request www.my-domain.org` 
+1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ lefh register` 
+2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `*www.my-domain.org*.pem` will be created. `# lefh request *www.my-domain.org*` 
 
 If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again. Do not rush into production before making sure the test was successful: letsencrypt enforces rate limit for failed attempts and one may get temporarily banned.
 
@@ -204,7 +200,7 @@ If the above succeeds, you can switch from the ***testing*** to the ***productio
 The following command can be used to renew the certificate and restart the server upon renewal:
 
 ```
-# */path/to*/letsencrypt renew restart
+# lefh renew restart
 
 ```
 
@@ -218,23 +214,23 @@ In order to automate the renewal of the certificate, schedule a cronjob for the 
 
 ##### Automation with a systemd timer
 
-A [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") can be used for the repetition of the renewal process, both service and timer unit files are provided in [hiawatha-letsencrypt](https://aur.archlinux.org/packages/hiawatha-letsencrypt/):
+A [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") can be used for the repetition of the renewal process:
 
- `/etc/systemd/system/hiawatha-letsencrypt-renew.service ` 
+ `/etc/systemd/system/lefh-renew.service ` 
 ```
 [Unit]
-Description=Renew Let's Encrypt certificates
+Description=Renew Let's Encrypt certificates for Hiawatha
 Wants=network-online.target
 After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=*/path/to/*letsencrypt renew restart
+ExecStart=/usr/bin/lefh renew restart
 ```
- `/etc/systemd/system/hiawatha-letsencrypt-renew.timer ` 
+ `/etc/systemd/system/lefh-renew.timer ` 
 ```
 [Unit]
-Description=Daily renewal of Let's Encrypt's certificates
+Description=Daily renewal of Let's Encrypt's certificates for Hiawatha
 
 [Timer]
 OnCalendar=daily
@@ -246,7 +242,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `hiawatha-letsencrypt-renew.timer`.
+[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `lefh-renew.timer`.
 
 **Note:** The service waits for the network to be up and online, for more information on the implementation of the network dependency, see [Systemd#Running services after the network is up](/index.php/Systemd#Running_services_after_the_network_is_up "Systemd").
 
