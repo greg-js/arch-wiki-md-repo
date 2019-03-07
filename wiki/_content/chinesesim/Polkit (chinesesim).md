@@ -1,39 +1,50 @@
-**翻译状态：** 本文是英文页面 [Polkit](/index.php/Polkit "Polkit") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-11，点击[这里](https://wiki.archlinux.org/index.php?title=Polkit&diff=0&oldid=430809)可以查看翻译后英文页面的改动。
+Related articles
+
+*   [Session](/index.php/Session "Session")
+*   [Sudo (简体中文)](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")
+*   [用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")
+
+**翻译状态：** 本文是英文页面 [Polkit](/index.php/Polkit "Polkit") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Polkit&diff=0&oldid=549015)可以查看翻译后英文页面的改动。
 
 来自 [polkit 主页](http://www.freedesktop.org/wiki/Software/polkit/)：
 
-	*polkit 是一个应用程序级别的工具集，通过定义和审核权限规则，实现不同优先级进程间的通讯：控制决策集中在统一的框架之中，决定低优先级进程是否有权访问高优先级进程。*
+	polkit 是一个应用程序级别的工具集，通过定义和审核权限规则，实现不同优先级进程间的通讯：控制决策集中在统一的框架之中，决定低优先级进程是否有权访问高优先级进程。
 
 Polkit 在系统层级进行权限控制，提供了一个低优先级进程和高优先级进程进行通讯的系统。和 sudo 等程序不同，Polkit 并没有赋予进程完全的 root 权限，而是通过一个集中的策略系统进行更精细的授权。
 
 Polkit 定义出一系列操作，例如运行 GParted, 并将用户按照群组或用户名进行划分，例如 wheel 群组用户。然后定义每个操作是否可以由某些用户执行，执行操作前是否需要一些额外的确认，例如通过输入密码确认用户是不是属于某个群组。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 身份认证组件](#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 操作](#.E6.93.8D.E4.BD.9C)
-    *   [2.2 认证规则](#.E8.AE.A4.E8.AF.81.E8.A7.84.E5.88.99)
-    *   [2.3 管理员身份认证](#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81)
-*   [3 范例](#.E8.8C.83.E4.BE.8B)
-    *   [3.1 禁用挂起和休眠](#.E7.A6.81.E7.94.A8.E6.8C.82.E8.B5.B7.E5.92.8C.E4.BC.91.E7.9C.A0)
-    *   [3.2 跳过口令提示](#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA)
-        *   [3.2.1 全局规则](#.E5.85.A8.E5.B1.80.E8.A7.84.E5.88.99)
-        *   [3.2.2 针对特定的动作设置](#.E9.92.88.E5.AF.B9.E7.89.B9.E5.AE.9A.E7.9A.84.E5.8A.A8.E4.BD.9C.E8.AE.BE.E7.BD.AE)
-        *   [3.2.3 Udisks](#Udisks)
-    *   [3.3 允许一般用户管理某个 systemd 单元](#.E5.85.81.E8.AE.B8.E4.B8.80.E8.88.AC.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E6.9F.90.E4.B8.AA_systemd_.E5.8D.95.E5.85.83)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 身份认证组件](#身份认证组件)
+*   [2 配置](#配置)
+    *   [2.1 操作](#操作)
+    *   [2.2 认证规则](#认证规则)
+    *   [2.3 管理员身份认证](#管理员身份认证)
+*   [3 范例](#范例)
+    *   [3.1 调试/输出](#调试/输出)
+    *   [3.2 禁用挂起和休眠](#禁用挂起和休眠)
+    *   [3.3 跳过口令提示](#跳过口令提示)
+        *   [3.3.1 全局规则](#全局规则)
+        *   [3.3.2 针对特定的动作设置](#针对特定的动作设置)
+        *   [3.3.3 Udisks](#Udisks)
+    *   [3.4 允许一般用户管理某个 systemd 单元](#允许一般用户管理某个_systemd_单元)
+*   [4 参阅](#参阅)
 
 ## 安装
 
-安装 [polkit](https://www.archlinux.org/packages/?name=polkit) 包。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [polkit](https://www.archlinux.org/packages/?name=polkit) 包。
 
 ### 身份认证组件
 
 Polkit 的权限管理是基于用户或群组进行配置，而身份认证组件的作用就是让会话用户证明自己是某个用户或属于某个群组。
 
-图形化环境[Cinnamon](/index.php/Cinnamon "Cinnamon")、[Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")、[GNOME](/index.php/GNOME "GNOME")、[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")、[KDE](/index.php/KDE "KDE")、[LXDE](/index.php/LXDE "LXDE")、[LXQt](/index.php/LXQt "LXQt")、[MATE](/index.php/MATE "MATE") 和 [Xfce](/index.php/Xfce "Xfce") 各自都已有认证组件。请按照下列清单确认安装了对应的身份认证组件，并且在登录时 [自动启动](/index.php/Autostarting "Autostarting") 它。
+图形化环境[Cinnamon](/index.php/Cinnamon "Cinnamon")、[Deepin](/index.php/Deepin "Deepin")、[GNOME](/index.php/GNOME "GNOME")、[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")、[KDE](/index.php/KDE "KDE")、[LXDE](/index.php/LXDE "LXDE")、[LXQt](/index.php/LXQt "LXQt")、[MATE](/index.php/MATE "MATE")、theShell 和 [Xfce](/index.php/Xfce "Xfce") 各自都已有认证组件。请按照下列清单确认安装了对应的身份认证组件，并且在登录时 [自动启动](/index.php/Autostarting "Autostarting") 它。
 
 其他桌面环境需要从下列实现中选用一种，[polkit](https://www.archlinux.org/packages/?name=polkit) 软件包提供了一个名为“pkttyagent”的基于文本方式的认证代理，作为后备方案。
 
@@ -42,7 +53,8 @@ Polkit 的权限管理是基于用户或群组进行配置，而身份认证组�
 *   [mate-polkit](https://www.archlinux.org/packages/?name=mate-polkit)，提供了 `/usr/lib/mate-polkit/polkit-mate-authentication-agent-1`
 *   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)，提供了 `/usr/bin/polkit-efl-authentication-agent-1`
 *   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)，提供了 `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
-*   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent)，提供了 `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
+*   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent)，提供了 `/usr/lib/polkit-kde-authentication-agent-1`
+*   [ts-polkitagent](https://aur.archlinux.org/packages/ts-polkitagent/), 提供了 `/usr/lib/ts-polkitagent`
 *   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/)，提供了 `/usr/lib/xfce-polkit/xfce-polkit`
 
 ## 配置
@@ -56,7 +68,7 @@ Polkit 定义了两种不同的内容：
 
 Polkit 没有取代系统已有的权限系统，而是在已有的群组和管理员上进行管控。**.rules** 文件指定了一个用户的子集合，涉及到一个或多个**操作**文件中指定的操作，并规定这些用户可以执行哪些操作，需要满足哪些限制。举例来说，GParted 默认规则要求所有用户认证为管理员之后才能使用，可以用规则文件修改默认规则，规定某个用户不需要管理员身份认证就可以执行操作，也可以完全禁止某个用户使用 GParted。
 
-**注意:** 如果用户不是通过 polkit 申请权限，比如通过命令行直接以 root 权限执行，这里的禁止设定就无法起作用。所以应该用 polkit 给低权限用户更高的权限，而不应该用 polkit 限制高权限用户可以执行的操作。
+**注意:** 如果用户不是通过 polkit 申请权限，比如通过命令行直接以 root 权限执行，这里的禁止设定就无法起作用。所以应该用 polkit 给低权限用户更高的权限，而不应该用 polkit 限制高权限用户可以执行的操作。出于安全考虑，[sudoers](/index.php/Sudo "Sudo")仍然是一种方法。
 
 ### 操作
 
@@ -163,6 +175,18 @@ polkit.addAdminRule(function(action, subject) {
 
 ## 范例
 
+### 调试/输出
+
+下面的规则会输出关于所请求的访问的详细信息。
+
+ `/etc/polkit-1/rules.d/00-log-access.rules` 
+```
+polkit.addRule(function(action, subject) {
+    polkit.log("action=" + action);
+    polkit.log("subject=" + subject);
+});
+```
+
 ### 禁用挂起和休眠
 
 下面规则禁止所有用户通过 Polkit 进行挂起和休眠。
@@ -251,3 +275,4 @@ polkit.addRule(function(action, subject) {
 ## 参阅
 
 *   [Polkit 手册页面](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html)
+*   [使用PolKit授权](https://doc.opensuse.org/documentation/leap/security/html/book.security/cha.security.policykit.html) (openSUSE Leap 42.2 安全指南)

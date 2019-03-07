@@ -44,7 +44,7 @@ Despite not being required for an Arch Linux install, a BIOS update is strongly 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The recommended minimum BIOS version is v1.17 (listed as 0.1.17 on LVFS); the latest version, v1.18, contains additional fixes, but is not available on LVFS as of February 2019.
+The recommended minimum BIOS version is v1.17 (listed as 0.1.17 on LVFS); the latest version, v1.19, contains additional bug fixes, and although it is not available yet on LVFS (as of early March 2019) the `.cab` update file can be manually downloaded from the [v1.19 update page](https://pcsupport.lenovo.com/us/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-X-SERIES-LAPTOPS/THINKPAD-X1-EXTREME/downloads/DS504956) and installed by running `fwupdmgr install n2eet37w.cab` as root.
 
 ### Graphics
 

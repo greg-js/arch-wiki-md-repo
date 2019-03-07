@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [LXDM](/index.php/LXDM "LXDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-17，点击[这里](https://wiki.archlinux.org/index.php?title=LXDM&diff=0&oldid=430730)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [LXDM](/index.php/LXDM "LXDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-07，点击[这里](https://wiki.archlinux.org/index.php?title=LXDM&diff=0&oldid=560379)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -16,35 +16,29 @@ LXDM 不支持 XDMCP 协议，要使用 XDMCP，请使用 [LightDM](/index.php/L
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
-*   [2 用法](#用法)
-*   [3 配置](#配置)
-    *   [3.1 登录时解锁密钥环](#登录时解锁密钥环)
-        *   [3.1.1 默认会话](#默认会话)
-        *   [3.1.2 全局](#全局)
-        *   [3.1.3 分用户配置](#分用户配置)
-    *   [3.2 自动登录](#自动登录)
-    *   [3.3 注销行为](#注销行为)
-    *   [3.4 会话列表](#会话列表)
-*   [4 提示和技巧](#提示和技巧)
-    *   [4.1 Adding face icons](#Adding_face_icons)
-    *   [4.2 自动用户和切换用户](#自动用户和切换用户)
-    *   [4.3 主题](#主题)
-    *   [4.4 高级会话配置](#高级会话配置)
+*   [2 配置](#配置)
+    *   [2.1 登录时解锁密钥环](#登录时解锁密钥环)
+        *   [2.1.1 默认会话](#默认会话)
+        *   [2.1.2 全局](#全局)
+        *   [2.1.3 分用户配置](#分用户配置)
+    *   [2.2 自动登录](#自动登录)
+    *   [2.3 注销行为](#注销行为)
+    *   [2.4 会话列表](#会话列表)
+*   [3 提示和技巧](#提示和技巧)
+    *   [3.1 Adding face icons](#Adding_face_icons)
+    *   [3.2 自动用户和切换用户](#自动用户和切换用户)
+    *   [3.3 主题](#主题)
+    *   [3.4 高级会话配置](#高级会话配置)
+*   [4 问题处理](#问题处理)
+    *   [4.1 白闪](#白闪)
 
 ## 安装
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [lxdm](https://www.archlinux.org/packages/?name=lxdm) 软件包。
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") [lxdm](https://www.archlinux.org/packages/?name=lxdm) 软件包或安装 GTK 软件包 [lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3)。
 
-或者安装[AUR](/index.php/AUR "AUR")中的[lxdm-git](https://aur.archlinux.org/packages/lxdm-git/).
+或者安装[AUR](/index.php/AUR "AUR")中的 [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/).
 
-## 用法
-
-现在 [lxdm](https://www.archlinux.org/packages/?name=lxdm) 提供了 lxdm.service 文件。启用：
-
-```
-# systemctl enable lxdm.service
-
-```
+[启用](/index.php/Enable "Enable") [systemd](/index.php/Systemd "Systemd") 服务 `lxdm.service`。
 
 ## 配置
 
@@ -197,18 +191,6 @@ $ lxdm -c USER_SWITCH
 
 [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") 也支持此功能，参见 [XScreenSaver#LXDM](/index.php/XScreenSaver#LXDM "XScreenSaver").
 
-If you use the [Xfce](/index.php/Xfce "Xfce") desktop, the Switch User functionality of its Action Button panel item specifically looks for the *gdmflexiserver* executable in order to enable itself. If you provide it with an executable shell script `/usr/bin/gdmflexiserver` consisting of
-
-```
-#!/bin/sh
-/usr/bin/lxdm -c USER_SWITCH
-
-```
-
-then user switching in Xfce should work fine also with LXDM.
-
-[XScreenSaver](/index.php/XScreenSaver "XScreenSaver") can also perform this task. For more, see the [this section](/index.php/XScreenSaver#LXDM "XScreenSaver") of the Xscreensaver article.
-
 ### 主题
 
 LXDM 主题位于 `/usr/share/lxdm/themes`.
@@ -225,6 +207,14 @@ theme=theme_name
 
 ```
 
+要让 LXDM 使用 GTK 主题(位于 `/usr/share/themes`)，在配置文件中设置：
+
+```
+## GTK theme
+gtk_theme=gtk_theme_name
+
+```
+
 ### 高级会话配置
 
 用户登录后，LXDM 会按下面顺序引用全部文件：
@@ -238,4 +228,17 @@ theme=theme_name
 
 LXDM **不会** 引用 `~/.xinitrc`，所以如果需要从使用这些文件的显示管理器迁移到 LXDM，需要将设置移动到其它文件，例如 `~/.xprofile`. LXDM 也不会引用 `~/.bash_profile`.
 
+如果还想使用 `~/.xinitrc`，可以在 `/etc/lxdm/PostLogin` 中加入：
+
+```
+source ~/.xinitrc
+
+```
+
 LXDM 也会使用 .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), 和 .[Xmodmap](/index.php/Xmodmap "Xmodmap"). LXDM 系统配置和用户配置的详细状况可以参考 `/etc/lxdm/Xsession`[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
+
+## 问题处理
+
+### 白闪
+
+When using the default LXDM `theme=Industrial` and a dark background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK+](/index.php/GTK%2B "GTK+") theme. To avoid this change `gtk_theme=Adwaita` to `gtk_theme=Adwaita-dark` or to another dark theme.

@@ -25,6 +25,7 @@ This article describes the basics of the Linux console and how to configure the 
 *   [3 Fonts](#Fonts)
     *   [3.1 Preview and temporary changes](#Preview_and_temporary_changes)
     *   [3.2 Persistent configuration](#Persistent_configuration)
+    *   [3.3 HiDPI](#HiDPI)
 *   [4 See also](#See_also)
 
 ## Implementation
@@ -127,6 +128,10 @@ It means that second part of ISO/IEC 8859 characters are used with size 16\. You
 To use the specified font in early userspace, use the `consolefont` hook in `/etc/mkinitcpio.conf`. See [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") for more information.
 
 If the fonts appear to not change on boot, or change only temporarily, it is most likely that they got reset when graphics driver was initialized and console was switched to framebuffer. To avoid this, load your graphics driver earlier. See for example [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), [[3]](https://bbs.archlinux.org/viewtopic.php?id=145765) or other ways to setup your framebuffer before `/etc/vconsole.conf` is applied.
+
+### HiDPI
+
+See [HiDPI#Linux console](/index.php/HiDPI#Linux_console "HiDPI").
 
 ## See also
 

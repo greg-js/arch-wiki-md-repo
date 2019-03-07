@@ -1,14 +1,19 @@
 This guide is to help Arch users with Palm(R) devices. While installation in Arch is easy, it can be confusing for those who are new. Also see [Palm Evolution](/index.php/Palm_Evolution "Palm Evolution").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing packages](#Installing_packages)
 *   [2 Finding your device](#Finding_your_device)
-    *   [2.1 tty* based sync](#tty.2A_based_sync)
-    *   [2.2 libusb based sync](#libusb_based_sync)
+    *   [2.1 Checking the Hardware](#Checking_the_Hardware)
+    *   [2.2 tty* based sync](#tty*_based_sync)
+    *   [2.3 libusb based sync](#libusb_based_sync)
 *   [3 Setting up the software](#Setting_up_the_software)
 *   [4 Hotsync over Bluetooth](#Hotsync_over_Bluetooth)
-*   [5 Palm T|X](#Palm_T.7CX)
+*   [5 Palm T|X](#Palm_T|X)
 *   [6 Palm Centro](#Palm_Centro)
 *   [7 Troubleshooting](#Troubleshooting)
 
@@ -23,6 +28,44 @@ You will need to [install](/index.php/Install "Install") one of the various Pers
 ## Finding your device
 
 You can sync in two ways, either by using libusb (preferred) or by using ttyUSB*/ttyS*
+
+### Checking the Hardware
+
+If you have a USB connection you can test it with:
+
+```
+$ lsusb
+
+```
+
+Which lists all the devices connected to the ports. If your device is missing it may be one of those Palm Pilots (like the Zire 71) that only 'appears' on the system when it is actually transferring. In this case, press the transfer button on the cradle or "Hotsync" from the Palm Menus, type lsusb again, and you should get a display which resembles this.
+
+```
+$ lsusb
+Bus 002 Device 001: ID 0000:0000  
+Bus 005 Device 001: ID 0000:0000  
+Bus 003 Device 003: ID 055f:0006 Mustek Systems, Inc. ScanExpress 1200 UB
+Bus 003 Device 002: ID 04e8:3242 Samsung Electronics Co., Ltd 
+Bus 003 Device 001: ID 0000:0000  
+Bus 004 Device 001: ID 0000:0000  
+Bus 001 Device 005: ID 0830:0060 Palm, Inc. Palm Tungsten T / Zire 71
+Bus 001 Device 004: ID 06d6:0025 Aashima Technology B.V. 
+Bus 001 Device 001: ID 0000:0000  
+
+```
+
+Then cancel the Hotsync on the Palm.
+
+If you have a Serial Zire, it should be possible to test it by putting the Palm into hotsync and typing
+
+```
+cat </dev/ttyS0
+
+```
+
+which should display reams of gobbledegook.
+
+To test the network link is difficult ; the simplest way is to see if your Palm is talking to the same Wifi system as your computer.
 
 ### tty* based sync
 

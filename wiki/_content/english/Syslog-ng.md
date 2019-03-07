@@ -2,31 +2,39 @@ Related articles
 
 *   [rsyslog](/index.php/Rsyslog "Rsyslog")
 
-**Note:** With [systemd's journal](/index.php/Systemd_journal "Systemd journal"), syslog-ng is not needed by most users.
+[syslog-ng](https://en.wikipedia.org/wiki/syslog-ng "w:syslog-ng") is a [syslog](https://en.wikipedia.org/wiki/syslog "w:syslog") implementation which can take log messages from sources and forward them to destinations, based on powerful filter directives.
+
+**Note:** With [systemd's journal](/index.php/Systemd/Journal "Systemd/Journal"), syslog-ng is not needed by most users.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Overview](#Overview)
-*   [2 Sources](#Sources)
-    *   [2.1 syslog-ng and systemd journal](#syslog-ng_and_systemd_journal)
-*   [3 Destinations](#Destinations)
-*   [4 Creating Filters for Messages](#Creating_Filters_for_Messages)
-*   [5 Log Paths](#Log_Paths)
-*   [6 Tips and Tricks](#Tips_and_Tricks)
-    *   [6.1 Have syslog-ng reload the configuration file](#Have_syslog-ng_reload_the_configuration_file)
-    *   [6.2 Failover Logging to Remote Host](#Failover_Logging_to_Remote_Host)
-    *   [6.3 Move log to another file](#Move_log_to_another_file)
-    *   [6.4 Configuring as a loghost](#Configuring_as_a_loghost)
-    *   [6.5 Improve Performance](#Improve_Performance)
-        *   [6.5.1 Write every so often](#Write_every_so_often)
-        *   [6.5.2 Avoid redundant processing and disk space](#Avoid_redundant_processing_and_disk_space)
-    *   [6.6 PostgreSQL Destination](#PostgreSQL_Destination)
-    *   [6.7 ISO 8601 timestamps](#ISO_8601_timestamps)
-    *   [6.8 RFC 3339 timestamps](#RFC_3339_timestamps)
-    *   [6.9 Log Levels](#Log_Levels)
-    *   [6.10 Macros and Variables](#Macros_and_Variables)
-    *   [6.11 See Also](#See_Also)
-*   [7 External Links](#External_Links)
+*   [2 Installation](#Installation)
+    *   [2.1 systemd/journald integration](#systemd/journald_integration)
+*   [3 Sources](#Sources)
+    *   [3.1 syslog-ng and systemd journal](#syslog-ng_and_systemd_journal)
+*   [4 Destinations](#Destinations)
+*   [5 Creating Filters for Messages](#Creating_Filters_for_Messages)
+*   [6 Log Paths](#Log_Paths)
+*   [7 Tips and Tricks](#Tips_and_Tricks)
+    *   [7.1 Have syslog-ng reload the configuration file](#Have_syslog-ng_reload_the_configuration_file)
+    *   [7.2 Failover Logging to Remote Host](#Failover_Logging_to_Remote_Host)
+    *   [7.3 Move log to another file](#Move_log_to_another_file)
+    *   [7.4 Configuring as a loghost](#Configuring_as_a_loghost)
+    *   [7.5 Improve Performance](#Improve_Performance)
+        *   [7.5.1 Write every so often](#Write_every_so_often)
+        *   [7.5.2 Avoid redundant processing and disk space](#Avoid_redundant_processing_and_disk_space)
+    *   [7.6 PostgreSQL Destination](#PostgreSQL_Destination)
+    *   [7.7 ISO 8601 timestamps](#ISO_8601_timestamps)
+    *   [7.8 RFC 3339 timestamps](#RFC_3339_timestamps)
+    *   [7.9 Log Levels](#Log_Levels)
+    *   [7.10 Macros and Variables](#Macros_and_Variables)
+    *   [7.11 See Also](#See_Also)
+*   [8 External Links](#External_Links)
 
 ## Overview
 
@@ -38,9 +46,17 @@ syslog-ng takes incoming log messages from defined '[sources](#Sources)' and for
 
 Sources are defined using the "source" directive. These incoming messages are then filtered according to defined filters ("filter" keyword), i.e. according to originating program or log level, and sent to the appropriate "destination". Destinations include log files (e.g. `/var/log/messages.log`), printing messages on a console and remote servers. The pivotal function is [log](#Log_Paths). This function defines which filters should be applied to a certain source, and where the resulting messages should be sent to.
 
-[Enable](/index.php/Enable "Enable") syslog-ng with the `syslog-ng.service` service file. As of *systemd* 216, messages are no longer forwarded to syslog by default. Syslog-ng did not become journald aware until months later with the release of syslog-ng 3.6\. This meant that if you were running systemd 216 or greater and syslog-ng you needed to set the option `ForwardToSyslog=yes` in `/etc/systemd/journald.conf` to actually use *syslog-ng* with *journald*.
+## Installation
 
-If you use a current [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng), it is not necessary to change the option because <a class="mw-selflink selflink">syslog-ng</a> pulls the messages from the journal. If you have set `ForwardToSyslog=yes` you should revert it to `ForwardToSyslog=no` in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn *journald'*s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as *syslog-ng* tries to follow the 'journald' journal file.
+[Install](/index.php/Install "Install") the [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) package.
+
+To use syslog-ng, [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `syslog-ng@default.service`.
+
+### systemd/journald integration
+
+syslog-ng pulls in the messages from the systemd journal by default. Keeping `ForwardToSyslog=no` in `/etc/systemd/journald.conf` is recommended in order to avoid the overhead associated with the socket and to avoid [needless error messages in the log](https://github.com/balabit/syslog-ng/issues/314). If on the other hand you do not want to store your logs twice and turn *journald'*s `Storage=none`, you **will** need `ForwardToSyslog=yes`, as *syslog-ng* tries to follow the 'journald' journal file.
+
+See [#syslog-ng and systemd journal](#syslog-ng_and_systemd_journal) for more details.
 
 ## Sources
 
@@ -109,7 +125,7 @@ source src {
 
 If, on the other hand, you wish *not* to retain the journald logs, but only syslog-ng's text logs, set `Storage=volatile` and `ForwardToSyslog=yes` in `/etc/systemd/journald.conf`. This will store journald in ram. As of syslog-ng 3.6.3, syslog-ng is using journald as the system(); source so if you set `Storage=none`, the systemd journal will drop all messages and **not** forward them to syslog-ng.
 
-After the change [restart](/index.php/Restart "Restart") the `systemd-journald.service` and `syslog-ng.service` daemons.
+After the change [restart](/index.php/Restart "Restart") the `systemd-journald.service` and `syslog-ng@default.service` daemons.
 
 ## Destinations
 

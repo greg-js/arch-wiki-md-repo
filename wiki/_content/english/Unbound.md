@@ -329,7 +329,7 @@ server:
 forward-zone:
         name: "."
         forward-tls-upstream: yes
-        forward-addr: 1.1.1.1@853#cloudflare-dns
+        forward-addr: 1.1.1.1@853#cloudflare-dns.com
 
 ```
 

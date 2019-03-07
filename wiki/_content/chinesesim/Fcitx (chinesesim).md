@@ -8,7 +8,11 @@ Related articles
 
 [Fcitx](https://en.wikipedia.org/wiki/Fcitx "wikipedia:Fcitx") (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 输入法引擎](#输入法引擎)
@@ -18,8 +22,8 @@ Related articles
     *   [1.2 输入法模块](#输入法模块)
     *   [1.3 其它](#其它)
 *   [2 使用](#使用)
-    *   [2.1 桌面环境](#桌面环境)
-    *   [2.2 非桌面环境](#非桌面环境)
+    *   [2.1 桌面环境下自动启动（Autostart)](#桌面环境下自动启动（Autostart))
+    *   [2.2 设置环境变量](#设置环境变量)
     *   [2.3 Xim](#Xim)
 *   [3 配置](#配置)
     *   [3.1 配置工具](#配置工具)
@@ -100,7 +104,7 @@ Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-
 
 ## 使用
 
-### 桌面环境
+### 桌面环境下自动启动（Autostart)
 
 如果您用 XDG 兼容的桌面环境，比如 [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), 那么当您安装好 Fcitx 并重新登录后，Fcitx 应该会自动启动。如果没有的话，可以打开控制台并运行`fcitx`。为检验 Fcitx 是否正常运行, 打开一个程序，比如 leafpad, 按 CTRL+Space 激活 Fcitx 并试着输入几个字。
 
@@ -115,7 +119,9 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 当 iBus 等其它输入法程序同时启动且开启了 Xim 支持时, 可能会害 Fcitx 启动不了，请确保已禁用了其它输入法程序的自动启动。
 
-### 非桌面环境
+以及请按以下方式设置环境变量，以便 Gtk/Qt 程序使用输入法插件（IM module）与 fcitx 通讯，而不是依赖 XIM 。
+
+### 设置环境变量
 
 将下面内容加入桌面的启动脚本，以注册输入法模块并支持 xim 程序。
 
@@ -149,6 +155,8 @@ QT_IM_MODULE=xim
 重新登录后让环境变量生效。
 
 **Note:** Gtk2 从 2.24.20 开始，使用 `/usr/lib/gtk-2.0/2.10.0/immodules.cache` 作为缓存文件。如果设置了 `GTK_IM_MODULE_FILE` 环境变量或在安装后修改了配置，请清掉环境变量并使用 `/usr/bin/gtk-query-immodules-2.0 --update-cache` 更新缓存。
+
+**Note:** Qt5 应用程序不再像 Qt4 那样支持 XIM 输入法协议，因此完全依赖输入法模块（IM Module）和 fcitx 沟通。
 
 ## 配置
 

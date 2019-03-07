@@ -94,6 +94,7 @@ $ chromium --disk-cache-dir=/tmp/cache
 Cache should be considered temporary and will **not** be saved after a reboot or hard lock. Alternatively, use:
 
  `/etc/fstab`  `tmpfs	/home/*username*/.cache	tmpfs	noatime,nodev,nosuid,size=400M	0	0` 
+**Warning:** It is not recommended to use [tmpfs](/index.php/Tmpfs "Tmpfs") for `~/.cache` as this may be used for applications to cache files that must be kept after a reboot.
 
 #### Profile in tmpfs
 

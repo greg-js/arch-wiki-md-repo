@@ -6,7 +6,11 @@ Related articles
 
 [Conky](https://en.wikipedia.org/wiki/Conky_(software) is a system monitor software for the X Window System. It is available for GNU/Linux and FreeBSD. It is free software released under the terms of the GPL license. Conky is able to monitor many system variables including CPU, memory, swap, disk space, temperature, top, upload, download, system messages, and much more. It is extremely configurable, however, the configuration can be a little hard to understand. *Conky* is a fork of torsmo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -46,19 +50,19 @@ Additional utility:
 
 ## Configuration
 
-By default conky uses a configuration file located at `~/.conkyrc`. You can print out an example configuration with:
+By default conky uses a configuration file located at `~/.config/conky/conky.conf`. You can print out an example configuration with:
 
 ```
-$ conky -C
+$ conky --print-config
 
 ```
 
-If you do not want to have a dotfile in home, you can create a file elsewhere and tell conky to use it using arguments.
+If you prefer to have a configuration [dotfile](/index.php/Dotfile "Dotfile") in home, you can create a file elsewhere and tell conky to use it using arguments.
 
-For example to tell conky to use a file located in the user's configuration directory:
+For example to tell conky to use a dotfile located in the user's home directory:
 
 ```
-$ conky -c ~/.config/conky/conky.conf
+$ conky --config=~/.conky.conf
 
 ```
 
@@ -90,7 +94,7 @@ xinerama_head = 2,
 
 ### Config file syntax changed
 
-Since Conky 1.10, configuration files have been written with a new Lua syntax, like so:
+Since Conky 1.10, configuration files have been written with a new [Lua](/index.php/Lua "Lua") syntax, like so:
 
 ```
  conky.config = {
@@ -177,7 +181,7 @@ Conky supports two different types of transparency. Pseudo-transparency and real
 
 #### Pseudo-transparency
 
-Pseudo-transparency is enabled by default in conky. Pseudo-transparency works by copying the background image from the root window and using the relevant section as the background for conky. Some window managers set the background wallpaper to a level above the root window which can cause conky to have a grey background. To fix this issue you need to set it manually with *feh*.
+Pseudo-transparency is enabled by default in conky. Pseudo-transparency works by copying the background image from the root window and using the relevant section as the background for conky. Some window managers set the background wallpaper to a level above the root window which can cause conky to have a grey background. To fix this issue you need to set it manually. An example with [feh](/index.php/Feh "Feh") is:
 
 In `~/.xinitrc`:
 
@@ -239,7 +243,7 @@ own_window_type = 'desktop',
 
 ```
 
-Refer to *conky*s man page for the exact differences. But the latter option enables you to snap windows to *conky*s border using resize key-binds in e.g. Openbox, which the first one does not.
+Refer to [conky(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/conky.1) [man page](/index.php/Man_page "Man page") for the exact differences. But the latter option enables you to snap windows to *conky*s border using resize key-binds in e.g. Openbox, which the first one does not.
 
 ### Integrate with GNOME Shell
 
@@ -255,7 +259,7 @@ own_window_type = 'desktop',
 
 ### Fix scrolling with UTF-8 multibyte characters
 
-The current version of *conky* (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
+1.9.0, and other versions of *conky* up to August 2018, suffer from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
 
 ### Prevent flickering
 

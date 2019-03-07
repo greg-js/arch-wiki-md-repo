@@ -1,10 +1,18 @@
+Related articles
+
+*   [Kexec](/index.php/Kexec "Kexec")
+
 [Kdump](https://www.kernel.org/doc/Documentation/kdump/kdump.txt) is a standard Linux mechanism to dump machine memory content on kernel crash. Kdump is based on [Kexec](/index.php/Kexec "Kexec"). Kdump utilizes two kernels: system kernel and dump capture kernel. System kernel is a normal kernel that is booted with special kdump-specific flags. We need to tell the system kernel to reserve some amount of physical memory where dump-capture kernel will be loaded. We need to load the dump capture kernel in advance because at the moment crash happens there is no way to read any data from disk because kernel is broken.
 
 Once kernel crash happens the kernel crash handler uses [Kexec](/index.php/Kexec "Kexec") mechanism to boot dump capture kernel. Please note that memory with system kernel is untouched and accessible from dump capture kernel as seen at the moment of crash. Once dump capture kernel is booted, the user can use the file `/proc/vmcore` to get access to memory of crashed system kernel. The dump can be saved to disk or copied over network to some other machine for further investigation.
 
 In real production environments system and dump capture kernel will be different - system kernel needs a lot of features and compiled with a many kernel flags/drivers. While dump capture kernel goal is to be minimalistic and take as small amount of memory as possible, e.g. dump capture kernel can be compiled without network support if we store memory dump to disk only. But in this article we will simplify things and use the same kernel both as system and dump capture one. It means we will load the same kernel code twice - one as normal system kernel, another one to reserved memory area.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Compiling kernel](#Compiling_kernel)
 *   [2 Setup kdump kernel](#Setup_kdump_kernel)
@@ -133,7 +141,7 @@ After=local-fs.target
 
 [Service]
 Type=idle
-ExecStart=/bin/sh -c 'mkdir -p /var/crash/ && /usr/bin/makedumpfile -c -d 31 /proc/vmcore "/var/crash/crashdump-$$(date +%F-%T)"'
+ExecStart=/bin/sh -c 'mkdir -p /var/crash/ && /usr/bin/makedumpfile -c -d 31 /proc/vmcore "/var/crash/crashdump-$$(date +%%F-%%T)"'
 ExecStopPost=/usr/bin/systemctl reboot
 UMask=0077
 StandardInput=tty-force
@@ -157,6 +165,8 @@ Type=oneshot
 [Install]
 WantedBy=multi-user.target
 ```
+
+Note that, in the above, "single" has been removed from the kernel command line.
 
 ## Analyzing core dump
 

@@ -207,6 +207,9 @@ This creates a directory with a default `Cargo.toml` file, set to build an execu
 name = "hello_world"
 version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
+edition = "2018"
+
+[dependencies]
 ```
 
 ## IDE support

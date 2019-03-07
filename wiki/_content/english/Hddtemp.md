@@ -5,7 +5,11 @@ Related articles
 
 [hddtemp](https://savannah.nongnu.org/projects/hddtemp/) is a small utility (with daemon) that gives the hard-drive temperature via [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") (for drives supporting this feature).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -23,7 +27,7 @@ Related articles
 Hddtemp requires root privileges. The command `hddtemp` must be followed by at least one drive's location. You can list several drives separated by spaces:
 
 ```
-# hddtemp /dev/sd*X1* /dev/sd*X2* ... /dev/sd*Xn*
+# hddtemp /dev/disk/by-id/wwn-0x60015ee0000b237f /dev/sd*X2* ... /dev/sd*Xn*
 
 ```
 
@@ -93,7 +97,7 @@ Add the following text:
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/hddtemp -dF /dev/sda /dev/sdb /dev/sdc
+ExecStart=/usr/bin/hddtemp --daemon --foreground /dev/disk/by-id/wwn-0x60015ee0000b237f /dev/sdb
 ```
 
 Change the device names to the ones you want to monitor.
@@ -111,7 +115,7 @@ Hddtemp can be integrated with [system monitors](/index.php/List_of_applications
 Hddtemp usually reads field `194` from the smart data of the drive. In SSDs temperature information is usually stored in field `190`. To obtain this information, one can run:
 
 ```
-$ smartctl -a /dev/sdX
+$ smartctl --all /dev/sdX
 
 ```
 

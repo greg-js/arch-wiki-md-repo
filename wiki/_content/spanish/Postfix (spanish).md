@@ -24,12 +24,12 @@ Este artículo se basa en [Servidor de correo](/index.php/Mail_server "Mail serv
 *   [2 Configuración](#Configuración)
     *   [2.1 Alias](#Alias)
     *   [2.2 Correo local](#Correo_local)
-    *   [2.3 Virtual mail](#Virtual_mail)
-    *   [2.4 Check configuration](#Check_configuration)
-*   [3 Start Postfix](#Start_Postfix)
+    *   [2.3 Correo virtual](#Correo_virtual)
+    *   [2.4 Comprobar configuración](#Comprobar_configuración)
+*   [3 Iniciar Postfix](#Iniciar_Postfix)
 *   [4 TLS](#TLS)
-    *   [4.1 Secure SMTP (sending)](#Secure_SMTP_(sending))
-    *   [4.2 Secure SMTP (receiving)](#Secure_SMTP_(receiving))
+    *   [4.1 SMTP seguro (enviando)](#SMTP_seguro_(enviando))
+    *   [4.2 SMTP seguro (recibiendo)](#SMTP_seguro_(recibiendo))
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Blacklist incoming emails](#Blacklist_incoming_emails)
     *   [5.2 Hide the sender's IP and user agent in the Received header](#Hide_the_sender's_IP_and_user_agent_in_the_Received_header)
@@ -104,7 +104,7 @@ usuario@localhost
 
 ### Correo local
 
-To only deliver mail to local system users (that are in `/etc/passwd`) update `/etc/postfix/main.cf` to reflect the following configuration. Uncomment, change, or add the following lines:
+Para enviar correo solo a los usuarios locales del sistema (que están en `/etc/passwd`) actualice `/etc/postfix/main.cf` para reflejar la siguiente configuración. Descomente, cambie o añada las siguientes líneas:
 
 ```
 myhostname = localhost
@@ -116,56 +116,56 @@ default_transport = error: outside mail is not deliverable
 
 ```
 
-All other settings may remain unchanged. After setting up the above configuration file, you may wish to set up some [#Aliases](#Aliases) and then [#Start Postfix](#Start_Postfix).
+Todos los demás ajustes pueden permanecer sin cambios. Después de configurar el archivo de configuración anterior, es posible que desee configurar algunos [#Alias](#Alias) y luego [#Iniciar Postfix](#Iniciar_Postfix).
 
-### Virtual mail
+### Correo virtual
 
-Virtual mail is mail that does not map to a user account (`/etc/passwd`).
+El correo virtual es un correo que no se asigna a una cuenta de usuario (`/etc/passwd`).
 
-See [Virtual user mail system with Postfix, Dovecot and Roundcube](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube "Virtual user mail system with Postfix, Dovecot and Roundcube") for a comprehensive guide how to set it up.
+Véase [Virtual user mail system with Postfix, Dovecot and Roundcube](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube "Virtual user mail system with Postfix, Dovecot and Roundcube") para una guía completa de cómo configurarlo.
 
-### Check configuration
+### Comprobar configuración
 
-Run the `postfix check` command. It should output anything that you might have done wrong in a config file.
+Ejecute la orden `postfix check`. Debería mostrar cualquier cosa que pueda haber hecho mal en un archivo de configuración.
 
-To see all of your configs, type `postconf`. To see how you differ from the defaults, try `postconf -n`.
+Para ver todas sus configuraciones, escriba `postconf`. Para ver en qué se diferencian de los valores por defecto, pruebe `postconf -n`.
 
-## Start Postfix
+## Iniciar Postfix
 
-**Note:** You must run `newaliases` at least once for Postfix to run, even if you did not set up any [#Aliases](#Aliases).
+**Nota:** Debe ejecutar `newaliases` al menos una vez para que Postfix se ejecute, incluso si no configuró ningún [#Alias](#Alias).
 
-[Start/enable](/index.php/Start/enable "Start/enable") the `postfix.service`.
+[Inicie/active](/index.php/Start/enable_(Espa%C3%B1ol) "Start/enable (Español)") `postfix.service`.
 
 ## TLS
 
-For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
+Para más información, véase [Soporte TLS en Postfix](http://www.postfix.org/TLS_README.html).
 
-### Secure SMTP (sending)
+### SMTP seguro (enviando)
 
-By default, Postfix/sendmail will not send email encrypted to other SMTP servers. To use TLS when available, add the following line to `main.cf`:
+Por defecto, Postfix/sendmailno enviará correo electrónico cifrado a otros servidores SMTP. Para utilizar TLS cuando esté disponible, añada la siguiente línea a `main.cf`:
 
  `/etc/postfix/main.cf`  `smtp_tls_security_level = may` 
 
-To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`. Note, however, that this violates [RFC:2487](https://tools.ietf.org/html/rfc2487 "rfc:2487") if the SMTP server is publicly referenced.
+Para *forzar* TLS (y fallar cuando el servidor remoto no lo soporte), cambie `may` a `encrypt`. Note, sin embargo, que esto viola el [RFC:2487](https://tools.ietf.org/html/rfc2487 "rfc:2487") si el servidor SMTP es referenciado públicamente.
 
-### Secure SMTP (receiving)
+### SMTP seguro (recibiendo)
 
-**Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent FREAK/Logjam. Since mid-2015, the default settings have been safe against [POODLE](https://en.wikipedia.org/wiki/POODLE "wikipedia:POODLE"). For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
+**Advertencia:** Si implementa [TLS](https://en.wikipedia.org/wiki/es:Transport_Layer_Security "wikipedia:es:Transport Layer Security"), asegúrese de seguir la [guía de weakdh.org](https://weakdh.org/sysadmin.html) para prevenir FREAK/Logjam. Desde mediados de 2015, la configuración predeterminada ha sido segura contra [POODLE](https://en.wikipedia.org/wiki/es:Ataque_POODLE "wikipedia:es:Ataque POODLE"). Para más información véase [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-By default, Postfix will not accept secure mail.
+Por defecto, Postfix no aceptará el correo seguro.
 
-You need to [obtain a certificate](/index.php/Obtain_a_certificate "Obtain a certificate"). Point Postfix to your TLS certificates by adding the following lines to `main.cf`:
+Necesita [obtener un certificado](/index.php/Obtain_a_certificate "Obtain a certificate"). Apunte Postfix a sus certificados TLS añadiendo las líneas siguientes a `main.cf`:
 
  `/etc/postfix/main.cf` 
 ```
 smtpd_tls_security_level = may
-smtpd_tls_cert_file = **/path/to/cert.pem**
-smtpd_tls_key_file = **/path/to/key.pem**
+smtpd_tls_cert_file = **/ruta/al/cert.pem**
+smtpd_tls_key_file = **/ruta/al/key.pem**
 ```
 
-There are two ways to accept secure mail. STARTTLS over SMTP (port 587) and SMTPS (port 465). The latter was previously deprecated but was reinstated by [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
+Hay dos formas de aceptar el correo seguro. STARTTLS sobre SMTP (puerto 587) y SMTPS (puerto 465). Este último fue previamente desaprobado pero fue reintegrado por el [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
 
-To enable STARTTLS over SMTP (port 587), uncomment the following lines in `master.cf`:
+Para activar STARTTLS sobre SMTP (puerto 587), descomente las siguientes líneas en `master.cf`:
 
  `/etc/postfix/master.cf` 
 ```

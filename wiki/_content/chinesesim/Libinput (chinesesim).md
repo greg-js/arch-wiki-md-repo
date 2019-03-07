@@ -4,11 +4,11 @@ Related articles
 *   [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
 *   [Wayland](/index.php/Wayland "Wayland")
 
-**翻译状态：** 本文是英文页面 [Libinput](/index.php/Libinput "Libinput") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-01-31，点击[这里](https://wiki.archlinux.org/index.php?title=Libinput&diff=0&oldid=553763)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Libinput](/index.php/Libinput "Libinput") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-07，点击[这里](https://wiki.archlinux.org/index.php?title=Libinput&diff=0&oldid=553763)可以查看翻译后英文页面的改动。
 
 来自[libinput](https://freedesktop.org/wiki/Software/libinput/) wiki 项目
 
-	libinput 是一个函数库，在Wayland上用来接收设备的输入，在X.Org上提供h输入设备的驱动。它提供对设备事件的检测和接收。对输入设备信号进行处理。它提供了一些列的函数供用户使用。
+	libinput 是一个函数库，在 Wayland 上用来接收设备的输入，在 X.Org 上提供输入设备的驱动。它提供对设备事件的检测和接收。对输入设备信号进行处理。它提供了一些列的函数供用户使用。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -38,11 +38,11 @@ Related articles
 
 ## 安装
 
-在Wayland上使用libinput不需要安装。[libinput](https://www.archlinux.org/packages/?name=libinput)包是所有Wayland图形环境的依赖包并且已经安装，也不需要额外的驱动。
+在 Wayland 上使用 libinput 不需要安装。[libinput](https://www.archlinux.org/packages/?name=libinput) 包是所有 Wayland 图形环境的依赖包并且已经安装，也不需要额外的驱动。
 
-如果想要在[Xorg](/index.php/Xorg "Xorg")上[安装libinput](/index.php/%E5%AE%89%E8%A3%85 "安装")，使用[xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)包。此包允许libinput在X上作为驱动使用。此驱动会代替evdev和synaptics运行。 [[1]](https://freedesktop.org/wiki/Software/libinput/)
+如果想要在 [Xorg](/index.php/Xorg "Xorg") 上 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") libinput，使用 [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) 包。此包允许 libinput 在 X 上作为驱动使用。此驱动会代替 evdev 和 synaptics 运行。 [[1]](https://freedesktop.org/wiki/Software/libinput/)
 
-你可能也要安装[xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput)来更改runtime设置
+你可能也要安装 [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) 来更改 runtime 设置
 
 ## 配置
 
@@ -52,39 +52,39 @@ Related articles
 
 ### 使用 xinput
 
-First, execute:
+首先，执行:
 
 ```
 # libinput list-devices
 
 ```
 
-It will output the devices on the system and their respective features supported by libinput.
+这将会输出系统中的设备和它们被 libinput 支持的具体特性。
 
-After a [restart](/index.php/Restart "Restart") of the graphical environment, the devices should be managed by libinput with default configuration, if no other drivers are configured to take precedence.
+重启图形环境之后，如果没有其它驱动程序被配置为优先级，设备应由具有默认配置的 libinput 管理。
 
-See [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) for general options to set and information about allowable values. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
+参见 [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) 了解可设定的常规选项和有关允许参数的信息。*xinput* 工具用于查看或更改运行中的的特定设备的可用选项。例如：
 
 ```
 $ xinput list
 
 ```
 
-to view all devices and determine their names and numbers. In the following, `*device*` is either the name or number identifying the device to operate with.
+查看所有设备并确定其名称和编号。 在下文中，`*device*` 是用于标识要操作的设备的名称或编号。
 
 ```
 $ xinput list-props *device*
 
 ```
 
-to view and
+查看
 
 ```
 $ xinput set-prop *device* *option-number* *setting*
 
 ```
 
-to change a setting. For example, to set both options of libinput Click Method Enabled (303), the following is issued:
+以及修改一项设置。例如，设置开启 libinput 的两种单击选项（303），则使用以下命令：
 
 ```
 $ xinput set-prop 14 303 {1 1}
@@ -93,18 +93,18 @@ $ xinput set-prop 14 303 {1 1}
 
 ### 使用 Xorg 配置文件
 
-See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Button re-mapping](#Button_re-mapping) illustrate examples.
+参见 [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") 了解永久的选项设置。[Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") 和 [#Button re-mapping](#Button_re-mapping) 中做出了举例。
 
-Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
+[Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") 的替代驱动程序通常可以安装共存。如果您打算为一个设备切换驱动程序以使用 libinput，请确保没有其它驱动程序的旧配置文件 `/etc/X11/xorg.conf.d/` 拥有优先级。
 
-**Tip:** If you have libinput and synaptics installed in parallel with default configuration (i.e. no files in `/etc/X11/xorg.conf.d` for either), synaptics will take precedence due to its higher numeric order `70-` in the default installation directory. To avoid this, you can symlink the default libinput configuration (`40-libinput.conf`) to `/etc/X11/xorg.conf.d/` where directory search order precedence over `70-synaptics.conf` will take place instead:
+**Tip:** 如果你同时安装了 libinput 和 synaptics 并使用其默认配置（即 `/etc/X11/xorg.conf.d/` 中没有属于两者中任一的文件），synaptics 将因其在默认安装目录中拥有更高的数字顺序 `70-` 而获得优先级。为了避免这种情况，您可以将默认的 libinput 配置文件（`40-libinput.conf`）符号链接到目录搜索顺序优先于 `70-synaptics.conf` 的 `/etc/X11/xorg.conf.d/` 中去取代它：
 ```
 # ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
 
 ```
-If you *do* have `/etc/X11/xorg.conf.d/` configuration files for both, the libinput file must be ordered second; see [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg"). If you want to disable libinput (and fallback to older drivers) - just remove the previously created symbolic link from `/etc/X11/xorg.conf.d/`.
+如果你的 `/etc/X11/xorg.conf.d/` 中*确认*存在两者的配置文件，libinput 的文件一定拥有较次的优先级顺序; 见 [Xorg＃Using .conf files](/index.php?title=Xorg%EF%BC%83Using_.conf_files&action=edit&redlink=1 "Xorg＃Using .conf files (page does not exist)")。如果要禁用 libinput（并回退到较旧的驱动程序）- 只需从 `/etc/X11/xorg.conf.d/` 中删除之前创建的符号链接即可。
 
-One way to check which devices are managed by libinput is the [xorg logfile](/index.php/Xorg#General "Xorg"). For example, the following:
+检查哪些设备是由 libinput 管理的一种方法是查看 [xorg logfile](/index.php?title=Xorg%EF%BC%83General&action=edit&redlink=1 "Xorg＃General (page does not exist)")。以下是一个例子：
 
  `$ grep -e "Using input driver 'libinput'" */path/to/Xorg.0.log*` 
 ```
@@ -118,15 +118,15 @@ One way to check which devices are managed by libinput is the [xorg logfile](/in
 [    28.895] (II) Using input driver 'libinput' for 'ThinkPad Extra Buttons'
 ```
 
-is a notebook without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. devices are autodetected.
+这是一台 `/etc/X11/xorg.conf.d/` 中没有任何配置文件的笔记本电脑，也就是说，设备是被自动检测出来的。
 
-Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
+当然，你可以选择为一个设备使用替代的驱动程序，而为其它设备选择 libinput。许多因素可能会影响到底使用哪个驱动程序。举个例子，与 [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") 相比，libinput 驱动程序根据自己的喜好去自定义触摸板行为的选项较少，但处理多点触控事件的程序逻辑要多得多（例如，手掌检测）。因此，如果你在使用某个驱动程序的时候，在硬件上遭遇了问题，那么尝试一下替代驱动程序是合理的。
 
-Custom configuration files should be placed in `/etc/X11/xorg.conf.d/` and following a widely used naming schema `30-touchpad.conf` is often chosen as filename.
+自定义配置文件应放在 `/etc/X11/xorg.conf.d/` 中，并且通常选择被广泛使用的命名模式 `30-touchpad.conf` 作为文件名。
 
-**Tip:** Have a look at CONFIGURATION DETAILS in `/usr/share/X11/xorg.conf.d/40-libinput.conf` for guidance and refer to the [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) manual page for a detailed description of available configuration options.
+**Tip:** 阅读 `/usr/share/X11/xorg.conf.d/40-libinput.conf` 中的 CONFIGURATION DETAILS 以获取指导并参考 [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4) 手册页有关可用配置选项的详细说明
 
-A basic configuration should have the following structure:
+一个基本的配置应该遵循以下的结构：
 
  `/etc/X11/xorg.conf.d/30-touchpad.conf` 
 ```
@@ -138,21 +138,21 @@ EndSection
 
 ```
 
-You may define as many sections as you like in a single configuration file (usually one per input device). To configure the device of your choice specify a filter by using one of the filters in the INPUTCLASS SECTION [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), e.g.
+你可以在单个配置文件中定义任意多的部分（通常每个输入设备一个配置部分） 要配置你选择的设备，请指定 INPUTCLASS SECTION [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) 中的一个过滤器，例如：
 
 *   `MatchIsPointer "on"` (trackpoint)
 *   `MatchIsKeyboard "on"`
 *   `MatchIsTouchpad "on"`
 *   `MatchIsTouchscreen "on"`
 
-输入设备能够在CONFIGURATION中进行配置，详情请看[libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)。一些常用的配置选项有：
+输入设备能够在 CONFIGURATION 中进行配置，详情请看 [libinput(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4)。一些常用的配置选项有：
 
 *   `Option "Tapping" "on"`: 触摸以点击
 *   `Option "ClickMethod" "clickfinger"`: 触摸板不再拥有中右键区域的区分，与之代替的是双指代表右键，三指代表中键。 详情请看[docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad-softbuttons.html#clickfinger-behavior).
 *   `Option "NaturalScrolling" "true"`: 自然滚动（反方向滚动）
 *   `Option "ScrollMethod" "edge"`: 边缘滚动页面
 
-注意：有的功能只在特定设备中起作用，并且你可能需要重启 ‘X服务’ 来让功能生效。。
+注意：有的功能只在特定设备中起作用，并且你可能需要重启 “X服务” 来让功能生效。
 
 ### 图形工具
 

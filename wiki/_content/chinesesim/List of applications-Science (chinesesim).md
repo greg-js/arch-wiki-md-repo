@@ -77,7 +77,7 @@
 
 *   **[KCalc](https://en.wikipedia.org/wiki/KCalc "wikipedia:KCalc")** — KDE内建的科学计算器。
 
-	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kdeutils-kcalc](https://www.archlinux.org/packages/?name=kdeutils-kcalc)
+	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
 
 *   **Qalculate** — 具备容错输入，常数识别及单位运算的计算器和方程求解器。
 
@@ -373,6 +373,10 @@
 
 #### 电子学
 
+*   **[KiCad](https://en.wikipedia.org/wiki/KiCad "wikipedia:KiCad")** — 一款用于印刷电路板设计的自由软件。
+
+	[http://www.kicad-pcb.org/](http://www.kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
+
 See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
 
 #### 物理系统模拟器
@@ -383,7 +387,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 *   **[Step](https://en.wikipedia.org/wiki/Step_(software) "wikipedia:Step (software)")** — 包含在KDE的二维物理模拟引擎。
 
-	[http://edu.kde.org/step/](http://edu.kde.org/step/) || [kdeedu-step](https://www.archlinux.org/packages/?name=kdeedu-step)
+	[http://edu.kde.org/step/](http://edu.kde.org/step/) || [step](https://www.archlinux.org/packages/?name=step)
 
 *   **[SWMM](https://en.wikipedia.org/wiki/SWMM "wikipedia:SWMM")** — 雨水管理模型。
 

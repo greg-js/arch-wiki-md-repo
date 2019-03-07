@@ -5,7 +5,11 @@ Related articles
 
 The purpose of this article is to demonstrate the use of an **iPad**, **iPod** or **iPhone** with Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Connecting to a device](#Connecting_to_a_device)
     *   [1.1 Manual mounting](#Manual_mounting)
@@ -238,6 +242,20 @@ To unmount your device:
 
 ```
 # umount <mountpoint>
+
+```
+
+Members of group `fuse` can mount devices as regular user:
+
+```
+$ ifuse <mountpoint>
+
+```
+
+To unmount:
+
+```
+$ fusermount -u <mountpoint>
 
 ```
 

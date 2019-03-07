@@ -149,7 +149,7 @@ As root use `fallocate` to create a swap file the size of your choosing (M = [Me
 
 ```
 
-**Note:** *fallocate* may cause problems with some file systems such as [F2FS](/index.php/F2FS "F2FS") or [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) As an alternative, using *dd* is more reliable, but slower: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
+**Note:** *fallocate* may cause problems with some file systems such as [F2FS](/index.php/F2FS "F2FS").[[1]](https://github.com/karelzak/util-linux/issues/633) As an alternative, using *dd* is more reliable, but slower: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
 
 Set the right permissions (a world-readable swap file is a huge local vulnerability)
 

@@ -997,7 +997,7 @@ For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot part
 
 For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/efi`.
 
-Create a partition of type `8E00`, which will later contain the encrypted container for the LVM.
+Create a partition of type `8309`, which will later contain the encrypted container for the LVM.
 
 Create the LUKS encrypted container:
 
@@ -1018,7 +1018,7 @@ Your partition layout should look similar to this:
 Number  Start (sector)    End (sector)  Size       Code  Name
    1            2048            4095   1024.0 KiB  EF02  BIOS boot partition
    2            4096         1130495   550.0 MiB   EF00  EFI System
-   3         1130496        68239360   32.0 GiB    8E00  Linux LVM
+   3         1130496        68239360   32.0 GiB    8309  Linux LUKS
 
 ```
 

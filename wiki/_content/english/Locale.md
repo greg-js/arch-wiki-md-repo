@@ -204,7 +204,7 @@ To get around potential issues, Arch used to set `LC_COLLATE=C` in `/etc/profile
 
 The locale set for this variable will always override `LANG` and all the other `LC_*` variables, whether they are set or not.
 
-`LC_ALL` is the only `LC_*` variable, which **cannot** be set in `locale.conf` files: it is meant to be used only for testing or troubleshooting purposes, for example in `/etc/profile`.
+`LC_ALL` is the only `LC_*` variable which **cannot** be set in `locale.conf` files: it is meant to be used only for testing or troubleshooting purposes, for example in `/etc/profile`.
 
 ## Troubleshooting
 
@@ -229,7 +229,7 @@ You need to launch these applications from a UTF-8 locale or they will drop UTF-
 
 It is possible that the environment variables are redefined in other files than `locale.conf`, for example `~/.pam_environment`. See [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") for details.
 
-If you're using a desktop environment, such as [GNOME](/index.php/GNOME "GNOME"), its language settings may be overriding the settings in `locale.conf`.
+If you are using a desktop environment, such as [GNOME](/index.php/GNOME "GNOME"), its language settings may be overriding the settings in `locale.conf`.
 
 [KDE](/index.php/KDE "KDE") Plasma also allows to change the UI's language through the system settings. If the desktop environment is still using the default language after the modification, [deleting the file at](https://bbs.archlinux.org/viewtopic.php?pid=1435219#p1435219) `~/.config/plasma-localerc` (previously: `~/.config/plasma-locale-settings.sh`) should resolve the issue.
 

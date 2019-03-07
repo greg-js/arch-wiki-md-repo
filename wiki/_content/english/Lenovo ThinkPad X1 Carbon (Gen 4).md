@@ -54,16 +54,16 @@ Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using 
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | Camera | Yes |
-| Fingerprint Reader | No |
+| Fingerprint Reader | Yes |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | microSD card reader | Yes |
 
 ### Fingerprint Reader
 
-An open source Linux driver prototype has been developed by reverse engineering the Windows driver. The project seems to have died while in early testing. [[1]](https://github.com/nmikhailov/Validity90)
+The fingerprint reader included with this model, `138a:0090 Validity Sensors, Inc`, currently [lacks](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54) an official Linux driver. Synaptics (which has acquired Validity Sensors) has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
-The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks an official linux driver. [libfprint bugreport](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+An open source Linux driver has been [protyped](https://github.com/nmikhailov/Validity90) by reverse engineering the Windows driver, and then [further developed](https://github.com/3v1n0/libfprint) into a package which can be installed with [libfprint-vfs0090-git](https://aur.archlinux.org/packages/libfprint-vfs0090-git/).
 
 ## Configuration
 

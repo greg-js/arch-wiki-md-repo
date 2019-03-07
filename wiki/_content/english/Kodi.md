@@ -53,7 +53,7 @@ All of the official addons in the [kodi-addons](https://www.archlinux.org/groups
 
 ## Running
 
-The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies two binaries for two different use cases:
+The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies methods to run for two different use cases:
 
 1.  `/usr/bin/kodi` is meant to be run by any user on an on-demand basis. Use it like any other program on the system.
 2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC "wikipedia:Home theater PC"). See [#Running standalone](#Running_standalone) for more information.

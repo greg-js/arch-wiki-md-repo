@@ -2,7 +2,11 @@ From the project [home page](https://www.videolan.org/vlc/):
 
 	VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Language](#Language)
@@ -38,14 +42,14 @@ Notable variants are:
 VLC does not offer an option to change language in its *Preferences* menu. But you can use the *LANGUAGE=* prefix. For instance, modify the `/usr/share/applications/vlc.desktop` line:
 
 ```
-Exec=/usr/bin/vlc %U
+Exec=/usr/bin/vlc %U
 
 ```
 
 to:
 
 ```
-Exec=LANGUAGE=fr /usr/bin/vlc %U
+Exec=LANGUAGE=fr /usr/bin/vlc %U
 
 ```
 
@@ -104,6 +108,15 @@ Alternatively, you can use dbus-send [as discussed here](https://theelitist.gith
 $ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
 ```
+
+It is also possible to start vlc with an ncurses dialog
+
+```
+$ vlc -I ncurses
+
+```
+
+see the [documentaion](https://wiki.videolan.org/Documentation:Modules/ncurses/) for more information
 
 ### Preventing multiple instances
 
@@ -205,7 +218,7 @@ If VLC does not play any videos or audio files over SFTP make sure you have [ssh
 If it refuses to play any media files containing spaces via SFTP and always asks for authentication change the Exec line in the `vlc.desktop` file to:
 
 ```
-Exec=/usr/bin/vlc --started-from-file %F
+Exec=/usr/bin/vlc --started-from-file %F
 
 ```
 

@@ -33,6 +33,7 @@ This article explains some methods for general troubleshooting. For application 
         *   [3.1.1 Example scenario: bad module](#Example_scenario:_bad_module)
     *   [3.2 Reboot into root shell and fix problem](#Reboot_into_root_shell_and_fix_problem)
 *   [4 Package management](#Package_management)
+    *   [4.1 Fixing a broken system](#Fixing_a_broken_system)
 *   [5 fuser](#fuser)
 *   [6 Session permissions](#Session_permissions)
 *   [7 Message: "error while loading shared libraries"](#Message:_"error_while_loading_shared_libraries")
@@ -289,6 +290,46 @@ Disable the service or program that is causing the panic, roll-back a faulty upd
 ## Package management
 
 See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for general topics, and [pacman/Package signing#Troubleshooting](/index.php/Pacman/Package_signing#Troubleshooting "Pacman/Package signing") for issues with PGP keys.
+
+### Fixing a broken system
+
+If you performed a [partial upgrade](/index.php/Partial_upgrade "Partial upgrade"), and the system is broken enough that you are unable to run *pacman*, [boot using a monthly Arch ISO from a USB flash drive, an optical disc or a network with PXE](/index.php/Installation_guide#Pre-installation "Installation guide"). (Don't follow any of the rest of the installation guide.)
+
+Mount your root filesystem:
+
+```
+[ISO] # mount /dev/*rootFilesystemDevice* /mnt
+
+```
+
+Mount any other partitions that you created separately, adding the prefix `/mnt` to all of them, i.e.:
+
+```
+[ISO] # mount /dev/*bootDevice* /mnt/boot
+
+```
+
+Try using your system's *pacman*:
+
+```
+[ISO] # arch-chroot /mnt
+[chroot] # pacman -Syu
+
+```
+
+If that fails, exit the *chroot*, and try:
+
+```
+[ISO] # pacman -Syu --sysroot /mnt
+
+```
+
+If that fails, try:
+
+```
+[ISO] # pacman -Syu --root /mnt --cachedir /mnt/var/cache/pacman/pkg
+
+```
 
 ## fuser
 

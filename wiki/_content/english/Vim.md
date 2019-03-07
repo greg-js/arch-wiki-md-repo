@@ -66,9 +66,9 @@ Vim includes a broad help system that can be accessed with the `:h *subject*` co
 
 ## Configuration
 
-Vim's user-specific configuration file is located in the home directory: `~/.vimrc`, and Vim files of current user are located inside `~/.vim/`. The global configuration file is located at `/etc/vimrc`. Global Vim files are located inside `/usr/share/vim/`.
+Vim's user-specific configuration file is located in the home directory: `~/.vimrc`, and Vim files of current user are located inside `~/.vim/`. The global configuration file is located at `/etc/vimrc`. Global Vim files such as `defaults.vim` and `archlinux.vim` are located inside `/usr/share/vim/`.
 
-**Note:** Commonly expected behavior such as syntax highlighting is enabled in `defaults.vim`, which is loaded when no `~/.vimrc` is present. Add `let skip_defaults_vim=1` to `/etc/vimrc` to disable loading of `defaults.vim` completely. [[1]](https://github.com/vim/vim/issues/1033)
+**Note:** Commonly expected behavior such as syntax highlighting is enabled in `defaults.vim`, which is loaded when no `~/.vimrc` is present. Add `let skip_defaults_vim=1` to `/etc/vimrc` to disable loading of `defaults.vim` completely. [[1]](https://github.com/vim/vim/issues/1033) Alternatively, to enable `defaults.vim` even when `~/.vimrc` is present, see `:h defaults` in vim.
 
 ### Clipboard
 
@@ -293,7 +293,7 @@ Adding plugins to Vim can increase your productivity. Plugins can alter Vim's UI
 
 #### Using the built-in package manager
 
-Vim 8 added the possibility to load natively third-party plugins. It is possible to use this functionality by storing third-party packages in `~/.vim/pack/foo`.
+Vim 8 added the possibility to load third-party plugins natively. It is possible to use this functionality by storing third-party packages in `~/.vim/pack/foo`.
 
 #### Using a plugin manager
 

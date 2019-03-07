@@ -422,7 +422,7 @@ IRB.conf[:HISTORY_FILE] ||= File.join(ENV["XDG_DATA_HOME"], "irb", "history")
  |
 | [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[84]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi` |
 | [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
-| [Java](/index.php/Java "Java") OpenJDK | `~/.java/.userPrefs` | [[85]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
+| [Java#OpenJDK](/index.php/Java#OpenJDK "Java") | `~/.java/.userPrefs` | [[85]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
 | [less](/index.php/Core_utilities "Core utilities") | `~/.lesshst` | 
 
 `$ mkdir -p "$XDG_CACHE_HOME"/less

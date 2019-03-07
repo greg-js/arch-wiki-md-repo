@@ -14,8 +14,8 @@
     *   [1.2 Input method module](#Input_method_module)
     *   [1.3 Others](#Others)
 *   [2 Usage](#Usage)
-    *   [2.1 Desktop Environment](#Desktop_Environment)
-    *   [2.2 Non desktop environment](#Non_desktop_environment)
+    *   [2.1 Desktop Environment Autostart](#Desktop_Environment_Autostart)
+    *   [2.2 Set environment variables for IM modules](#Set_environment_variables_for_IM_modules)
     *   [2.3 XIM](#XIM)
 *   [3 Configuration](#Configuration)
     *   [3.1 GUI configuration tools](#GUI_configuration_tools)
@@ -96,7 +96,7 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 **Note:** You need to have [Chinese, Japanese, Korean or Vietnamese font](/index.php/Fonts#Chinese,_Japanese,_Korean,_Vietnamese "Fonts") installed to be able to enter the corresponding characters.
 
-### Desktop Environment
+### Desktop Environment Autostart
 
 If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you re-login, the autostart should work out of box. If not run the *fcitx* executable. To see if fcitx is working correctly, open an application and press `Ctrl+Space` (the default shortcut for switching the input method) to invoke fcitx and input some words.
 
@@ -104,7 +104,9 @@ If fcitx failed to start with your desktop automatically or if you want to chang
 
 When other input methods with xim support are also running, fcitx may fail to start due to an xim error. Ensure that no other input methods are running before you start fcitx.
 
-### Non desktop environment
+Also please set the following environment variables to prefer IM modules for GTK/Qt applications.
+
+### Set environment variables for IM modules
 
 [Define](/index.php/Define "Define") the environment variables to register the input method modules and support xim programs.
 
@@ -138,6 +140,8 @@ QT_IM_MODULE=xim
 **Warning:** Using XIM can sometimes cause problems including not being able to input, no cursor following, word selection window issue, application freeze on input method restart. For these XIM related problems, Fcitx cannot provide any fix or support. This is the same with any other input method framework, so please use the GTK+ and Qt input method modules instead of xim whenever possible
 
 **Note:** Gtk2 uses `/usr/lib/gtk-2.0/2.10.0/immodules.cache` as immodule cache file since 2.24.20\. If you have set `GTM_IM_MODULE_FILE` environment variable or do not use install script of official packages to update the cache, please change/clear the environment variable and use `/usr/bin/gtk-query-immodules-2.0 --update-cache` to update immodule cache.
+
+**Note:** Qt5 applications no longer support XIM protocol as Qt4 did, and rely on IM modules entirely for communicating with fcitx.
 
 ## Configuration
 

@@ -81,7 +81,7 @@ Related articles
 
 Samba is configured in the `/etc/samba/smb.conf` configuration file, which is extensively documented in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5).
 
-Because the [samba](https://www.archlinux.org/packages/?name=samba) package does not provide this file, one needs to create it **before** starting *smbd*.
+Because the [samba](https://www.archlinux.org/packages/?name=samba) package does not provide this file, one needs to create it **before** starting *smb*.service.
 
 A documented example as in `smb.conf.default` from the [Samba git repository](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) may be used to setup `/etc/samba/smb.conf`.
 

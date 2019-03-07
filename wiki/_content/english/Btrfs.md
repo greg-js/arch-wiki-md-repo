@@ -34,6 +34,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [3.4 Quota](#Quota)
     *   [3.5 Commit Interval](#Commit_Interval)
     *   [3.6 SSD TRIM](#SSD_TRIM)
+    *   [3.7 Swap file](#Swap_file)
 *   [4 Usage](#Usage)
     *   [4.1 Displaying used/free space](#Displaying_used/free_space)
     *   [4.2 Defragmentation](#Defragmentation)
@@ -47,8 +48,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [4.8 Deduplication](#Deduplication)
 *   [5 Known issues](#Known_issues)
     *   [5.1 Encryption](#Encryption)
-    *   [5.2 Swap file](#Swap_file)
-    *   [5.3 TLP](#TLP)
+    *   [5.2 TLP](#TLP)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Partitionless Btrfs disk](#Partitionless_Btrfs_disk)
     *   [6.2 Ext3/4 to Btrfs conversion](#Ext3/4_to_Btrfs_conversion)
@@ -301,6 +301,24 @@ A Btrfs filesystem is able to free unused blocks from an SSD drive supporting th
 
 More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
 
+### Swap file
+
+[Swap files](/index.php/Swap#Swap_file "Swap") in Btrfs is supported in Linux 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7).
+
+The proper way to initialize a swapfile is described in `btrfs(5)`.
+
+```
+   # truncate -s 0 swapfile
+   # chattr +C swapfile
+   # fallocate -l 2G swapfile
+   # chmod 0600 swapfile
+   # mkswap swapfile
+   # swapon swapfile
+
+```
+
+It is important to note that the swapfile can't be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swapfile inn.
+
 ## Usage
 
 ### Displaying used/free space
@@ -314,7 +332,7 @@ General linux userspace tools such as `df` will inaccurately report free space o
 
 **Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
 
-See [[3]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
+See [[4]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
 
 ### Defragmentation
 
@@ -365,7 +383,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 ### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[4]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[5]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 
@@ -429,12 +447,6 @@ A few limitations should be known before trying.
 Btrfs has no built-in encryption support, but this [may](https://lwn.net/Articles/700487/) come in the future. Users can encrypt the partition before running `mkfs.btrfs`. See [dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
 
 Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "EncFS") or [TrueCrypt](/index.php/TrueCrypt "TrueCrypt"), though perhaps without some of Btrfs' features.
-
-### Swap file
-
-[Swap files](/index.php/Swap#Swap_file "Swap") in Btrfs will be supported in Linux 5.0.[[5]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7). At the moment, Btrfs intentionally does not support [swap files](/index.php/Swap_file "Swap file") to prevent file system corruption.[[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F)
-
-Alternatively, swap file can be mounted on a [loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device") with poorer performance and inability to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) and enable swapfc in its configuration to automate this.
 
 ### TLP
 

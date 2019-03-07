@@ -372,20 +372,22 @@ Error starting daemon: error initializing graphdriver: devmapper: Device docker-
 
 ### Failed to create some/path/to/file: No space left on device
 
-If you are getting an error message like this:
+Если вы получаете сообщение об ошибке, подобное этому:
 
 ```
 ERROR: Failed to create some/path/to/file: No space left on device
 
 ```
 
-when building or running a Docker image, even though you do have enough disk space available, make sure:
+При создании или исполнении Docker образа, даже если у вас достаточно свободного места на диске, убедитесь, что:
 
-*   [Tmpfs](/index.php/Tmpfs "Tmpfs") is disabled or has enough memory allocation. Docker might be trying to write files into `/tmp` but fails due to restrictions in memory usage and not disk space.
-*   If you are using [XFS](/index.php/XFS "XFS"), you might want to remove the `noquota` mount option from the relevant entries in `/etc/fstab` (usually where `/tmp` and/or `/var/lib/docker` reside). Refer to [Disk quota](/index.php/Disk_quota "Disk quota") for more information, especially if you plan on using and resizing `overlay2` Docker storage driver.
-*   XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
+*   [Tmpfs](/index.php/Tmpfs "Tmpfs") отключен или имеет достаточно памяти. Docker может пытаться записать файлы в `/tmp` но терпит неудачу из-за ограничений в использовании памяти, а не дискового пространства.
+*   Если вы используете [XFS](/index.php/XFS "XFS"), Вы можете удалить опцию монтирования `noquota` из соответствующих записей в `/etc/fstab` (обычно, где находятся `/tmp` и/или `/var/lib/docker`). Для получения дополнительной информации обратитесь к [Disk quota](/index.php/Disk_quota "Disk quota"), особенно, если вы планируете использовать и изменить размер `overlay2` Docker хранилища.
+*   Варианты установки монтирования квоты XFS (`uquota`, `gquota`, `prjquota`, и т.д.) выдают ошибку при перемонтировании файловой системы.
 
-**Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) may be worth reading.
+Чтобы включить квоту для корневой файловой системы, параметр монтирования должен быть передан как [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Впоследствии его не следует указывать среди параметров монтирования в `/etc/fstab` для корневой файловой системы (`/`).
+
+**Примечание:** Есть некоторые отличия XFS Quota по сравнению со стандартом Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) рекомендуется к прочтению.
 
 ### Invalid cross-device link in kernel 4.19.1
 

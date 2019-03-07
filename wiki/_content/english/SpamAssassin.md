@@ -4,7 +4,11 @@ Related articles
 
 [SpamAssassin](https://spamassassin.apache.org/) is a mail filter to identify spam.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -87,7 +91,7 @@ Follow one of the above instructions to call SpamAssassin from within your mail 
 
 ```
 
-Add the 2 files from [http://wiki.apache.org/spamassassin/ClamAVPlugin](http://wiki.apache.org/spamassassin/ClamAVPlugin) into `/etc/mail/spamassassin/`. Edit `/etc/mail/spamassassin/clamav.pm` and update `$CLAM_SOCK` to point to your Clamd socket location (default is `/var/lib/clamav/clamd.sock`).
+Add the 2 files from [http://wiki.apache.org/spamassassin/ClamAVPlugin](http://wiki.apache.org/spamassassin/ClamAVPlugin) into `/etc/mail/spamassassin/`. Edit `/etc/mail/spamassassin/clamav.pm` and update `$CLAM_SOCK` to point to your Clamd socket location (default is `/run/clamav/clamd.ctl`).
 
 Finally, [restart](/index.php/Restart "Restart") `spamassassin.service`.
 

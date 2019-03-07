@@ -92,7 +92,7 @@ The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot
 
 #### Hibernation into swap file
 
-**Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+**Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
 Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
 

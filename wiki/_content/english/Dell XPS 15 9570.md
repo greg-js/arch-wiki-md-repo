@@ -50,7 +50,7 @@ By default, the very inefficient s2idle suspend variant is incorrectly selected.
 
 ```
 
-To make the change permanent add `mem_sleep_default=deep` to your kernel parameters.
+To make the change permanent add `mem_sleep_default=deep` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 Read more regarding the sleep variants on the kernel documentation [[1]](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html).
 
@@ -88,7 +88,7 @@ Works but additional configuration is needed. (see *[[3]](https://github.com/Bum
     *   If [laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools") is installed, add the graphic card to **AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST** in **/etc/laptop-mode/conf.d/runtime-pm.conf**
 *   Uninstall or disable bbswitch
 *   Install bumblebee and set **PMMethod=none** in nvidia section
-*   Install nvidia driver
+*   Install [nvidia](/index.php/Nvidia "Nvidia") driver
 *   Reboot
 
 Note: This is just one configuration that worked. There are more configurations that might work just as well or even better. Sometimes nvidia driver can not be unloaded because some process is still using it.

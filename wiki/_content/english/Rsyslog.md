@@ -2,7 +2,7 @@ Related articles
 
 *   [syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 
-[rsyslog](http://www.rsyslog.com/) is an alternate logger to [syslog-ng](/index.php/Syslog-ng "Syslog-ng") and offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
+[rsyslog](https://www.rsyslog.com) is an alternate logger to [syslog-ng](/index.php/Syslog-ng "Syslog-ng") and offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -65,7 +65,7 @@ To use **somehost** as the hostname. Move **somehost.localdomain** to the first 
 
 ## Configuration
 
-Since systemd 216 (August 2014) there is no longer a default forward from [systemd journal](/index.php/Systemd_journal "Systemd journal") to a running syslog daemon - so in order to gather system logs you either have to **turn journald Forward Feature on** or **use the imjournal** module of rsyslog to gather the logs by importing it from the systemd journald.
+Since systemd 216 (August 2014) there is no longer a default forward from [systemd journal](/index.php/Systemd_journal "Systemd journal") to a running syslog daemon - so in order to gather system logs you either have to turn on [#journald's syslog-forward feature](#journald's_syslog-forward_feature) or use the [#imjournal](#imjournal) module of rsyslog to gather the logs by importing it from the systemd journald.
 
 #### imjournal
 
@@ -109,8 +109,8 @@ auth.*                                                  -/var/log/auth
 ### References
 
 *   [Archwiki reference for systemd-syslog integration](/index.php/Systemd/Journal#Journald_in_conjunction_with_syslog "Systemd/Journal")
-*   [Structure of the rsyslog.conf file](http://www.rsyslog.com/doc/rsyslog_conf.html).
-*   [Reference documentation on imjournal input module](http://www.rsyslog.com/doc/v8-stable/configuration/modules/imjournal.html?highlight=imjournal)
+*   [Structure of the rsyslog.conf file](https://www.rsyslog.com/doc/v8-stable/configuration/index.html).
+*   [Reference documentation on imjournal input module](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imjournal.html?highlight=imjournal)
 
 ## Facility Levels
 
@@ -192,5 +192,4 @@ Installation and configuration steps:
 
 ## See also
 
-*   [Rsyslog manual](http://www.rsyslog.com/doc/manual.html)
-*   [rsyslog's versus syslog-ng](http://www.rsyslog.com/doc-rsyslog_ng_comparison.html).
+*   [Rsyslog manual](https://www.rsyslog.com/doc/v8-stable/)

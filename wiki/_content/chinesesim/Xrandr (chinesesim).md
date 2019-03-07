@@ -3,7 +3,7 @@ Related articles
 *   [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
 *   [Multihead](/index.php/Multihead "Multihead")
 
-**翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-6-16，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=477117)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Xrandr](/index.php/Xrandr "Xrandr") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-07，点击[这里](https://wiki.archlinux.org/index.php?title=Xrandr&diff=0&oldid=567409)可以查看翻译后英文页面的改动。
 
 "xrandr" 是一款官方的 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (*Resize and Rotate*)[Wikipedia:X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") 扩展配置工具。它可以设置屏幕显示的大小、方向、镜像等。对多显示器的情况，请参考 [Multihead](/index.php/Multihead "Multihead") 页面。
 
@@ -27,13 +27,14 @@ Related articles
     *   [7.1 添加未检测到的分辨率](#添加未检测到的分辨率)
         *   [7.1.1 EDID 校验和无效](#EDID_校验和无效)
     *   [7.2 纠正电视机分辨率过扫](#纠正电视机分辨率过扫)
-    *   [7.3 Full RGB in HDMI](#Full_RGB_in_HDMI)
-        *   [7.3.1 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
+    *   [7.3 Correction of overscan tv resolutions via --transform](#Correction_of_overscan_tv_resolutions_via_--transform)
+    *   [7.4 Full RGB in HDMI](#Full_RGB_in_HDMI)
+        *   [7.4.1 Screen resolution reverts back after a blink](#Screen_resolution_reverts_back_after_a_blink)
 *   [8 参见](#参见)
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr)。
 
 ### 图形化操作程序
 
@@ -47,7 +48,7 @@ Related articles
 
 ## 测试配置
 
-当没有添加任何选项直接运行时，*xrandr* 列出该系统可用的显示输出设备 (`VGA-1`, `HDMI-1`等等) 和每一台设备可设置的分辨率，当前分辨率后面带有一个*****号和一个**+**号:
+当没有添加任何选项直接运行时，*xrandr* 列出该系统可用的显示输出设备 (`VGA-1`, `HDMI-1` 等等) 和每一台设备可设置的分辨率，当前分辨率后面带有一个*****号和一个**+**号:
 
  `xrandr` 
 ```
@@ -100,7 +101,7 @@ $ xrandr --output HDMI-1 --off --output HDMI-2 --auto
 
 由于出错的硬件或驱动，xrandr 可能并不能检测出您的显示器所有的有效分辨率。不过，我们可以在xrandr里添加所需要的分辨率。 Also, this same procedure can be used to add refresh rates you know are supported, but not enabled by your driver。
 
-首先，运行`gtf`或者`cvt`，查询某分辨率的有效扫描频率。对于个别LCD显示器（例如samsung 2343NW），可能需要用到"cvt -r"（具有减少空白显示的效果）命令。
+首先，运行`gtf`或者`cvt`，查询某分辨率的有效扫描频率。
 
 ```
  $ cvt 1280 1024
@@ -430,6 +431,17 @@ With a flat panel TV, [w:overscan](https://en.wikipedia.org/wiki/overscan "w:ove
 Check your TV if there is a parameter to change. If not, apply an `underscan` and change border values. The required `underscan vborder` and `underscan hborder` values can be different for you, just check it and change it by more or less.
 
 `$ xrandr --output HDMI-0 --set underscan on --set "underscan vborder" 25 --set "underscan hborder" 40`
+
+### Correction of overscan tv resolutions via --transform
+
+If underscan is not available another solution is using `xrandr --transform *a,b,c,d,e,f,g,h,i*`, which applies a transformation matrix on the output. See the [xrandr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xrandr.1#RandR_version_1.3_options) manual page for the explanation of the transformation.
+
+For example, the transformation scaling horizontal coordinates by `0.8`, vertical coordinates by `1.04` and moving the screen by 35 pixels right and 19 pixels down, is:
+
+```
+$ xrandr --output HDMI1 --transform 0.80,0,-35,0,1.04,-19,0,0,1
+
+```
 
 ### Full RGB in HDMI
 

@@ -1,6 +1,10 @@
 Depending on requirements, different methods may be used to encrypt the [swap](/index.php/Swap "Swap") partition which are described in the following. A setup where the swap encryption is re-initialised on reboot (with a new encryption) provides higher data protection, because it avoids sensitive file fragments which may have been swapped out a long time ago without being overwritten. However, re-encrypting swap also forbids using a suspend-to-disk feature generally.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Without suspend-to-disk support](#Without_suspend-to-disk_support)
     *   [1.1 UUID and LABEL](#UUID_and_LABEL)
@@ -233,7 +237,7 @@ At boot time, the `openswap` hook will open the swap partition so the kernel res
 
 A swap file can be used to reserve swap-space within an existing partition and may also be setup inside an encrypted blockdevice's partition. When resuming from a swapfile the `resume` hook must be supplied with the passphrase to unlock the device where the swap file is located.
 
-**Warning:** [Btrfs](/index.php/Dm-crypt/Drive_preparation#Btrfs_subvolumes "Dm-crypt/Drive preparation") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") when mounted through a loop device, this will result in severely degraded swap performance.
+**Warning:** [Btrfs](/index.php/Dm-crypt/Drive_preparation#Btrfs_subvolumes "Dm-crypt/Drive preparation") does not support swap files on kernel versions below 5.0\. Failure to heed this warning may result in file system corruption. While a swap file may be used on [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") when mounted through a loop device, this will result in severely degraded swap performance.
 
 To create it, first choose a mapped partition (e.g. `/dev/mapper/rootDevice`) whose mounted filesystem (e.g. `/`) contains enough free space to create a swapfile with the desired size.
 
