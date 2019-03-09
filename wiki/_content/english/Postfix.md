@@ -342,7 +342,7 @@ cond_copy '/usr/lib/libdb.so*' lib
 
 ```
 
-And don't forget to reload Postfix.
+And don't forget to [reload](/index.php/Reload "Reload") Postfix.
 
 ### DANE (DNSSEC)
 

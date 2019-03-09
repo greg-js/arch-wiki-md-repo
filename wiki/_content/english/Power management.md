@@ -641,18 +641,6 @@ options usbcore autosuspend=5
 
 Similarly to `power/control`, the delay time can be fine-tuned per device by setting the `power/autosuspend` attribute.
 
-An alternative is to control this behavior by an [udev](/index.php/Udev "Udev") rule:
-
- `/etc/udev/rules.d/50-usb_power_save.rules` 
-```
-ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
-
-# blacklist for usb autosuspend
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", TEST=="power/autosuspend", ATTR{power/autosuspend}="-1"
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", TEST=="power/autosuspend_delay_ms", ATTR{power/autosuspend_delay_ms}="-1"
-
-```
-
 See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/usb/power-management.txt) for more information on USB power management.
 
 #### SATA Active Link Power Management

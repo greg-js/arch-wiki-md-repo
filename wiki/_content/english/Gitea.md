@@ -190,7 +190,7 @@ Make sure [SSH](/index.php/SSH "SSH") is properly configured and running.
 You might want to set `SSH_DOMAIN`, e.g.:
 
  `/etc/gitea/app.ini`  `SSH_DOMAIN                 = git.domain.tld` 
-**Note:** If you set the `PROTOCOL` to be `unix`, then you need to set `LOCAL_ROOT_URL` to `[http://unix/](http://unix/)`. See this [comment](https://github.com/go-gitea/gitea/issues/3741#issuecomment-377334757)
+**Note:** If you set the `PROTOCOL` to be `unix`, then you need to unset `LOCAL_ROOT_URL` or set it to `[http://unix/](http://unix/)`. See this [comment](https://github.com/go-gitea/gitea/issues/3741#issuecomment-377334757)
 
 #### Configure SSH
 

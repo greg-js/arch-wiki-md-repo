@@ -333,7 +333,7 @@ The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Waylan
 
 To enable Wayland support in Qt 5, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package.
 
-To run a Qt 5 app with the Wayland plugin, use `-platform wayland` or set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable").
+To run a Qt 5 app with the Wayland plugin [[1]](https://wiki.qt.io/QtWayland#How_do_I_use_QtWayland.3F), use `-platform wayland` or `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). To force the usage of [X11](/index.php/X11 "X11") on a Wayland session, use `QT_QPA_PLATFORM=xcb`.
 
 ### Clutter
 
@@ -368,7 +368,7 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
-| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[1]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[2]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
+| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[2]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[3]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
 | Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
 | Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/imbavirus/mazecompositor) is a 3D Qt based Wayland compositor |
@@ -464,7 +464,7 @@ Supporting widget toolkits:
 #### wlroots input inhibitor protocol
 
 [Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's `Compositor shortcuts inhibit` protocol.
-Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[3]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[4]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
+Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[4]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[5]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
 No widget toolkit or application is known to support this protocol.
 
 ## See also

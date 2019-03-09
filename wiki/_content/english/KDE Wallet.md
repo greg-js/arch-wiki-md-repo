@@ -29,6 +29,8 @@
 
 Optional [install](/index.php/Install "Install") [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) for the wallet management tool. This tool can be used to create a KDE Wallet with `blowfish` encryption and more settings not provided by the *kcm-module*.
 
+**Tip:** An alternative is to use KWalletManager and set an empty Kwallet-password, thus preventing the need of entering a password to unlock a wallet. Simple don't enter a password on both fields in *Change Password..*. This may however lead to unwanted (read/write) access to the user's wallet. Enabling *Prompt when an application accesses a wallet* under *Access Control* is highly recommended to prevent unwanted access to the wallet.
+
 ### Configure display manager
 
 The following lines must be present under their corresponding sections:

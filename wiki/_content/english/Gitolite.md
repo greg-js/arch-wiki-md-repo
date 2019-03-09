@@ -1,6 +1,10 @@
-[Gitolite](https://github.com/sitaramc/gitolite) allows you to host Git repositories for multiple users easily and securely.
+[Gitolite](https://github.com/sitaramc/gitolite) allows you to host [Git](/index.php/Git "Git") repositories for multiple users easily and securely.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

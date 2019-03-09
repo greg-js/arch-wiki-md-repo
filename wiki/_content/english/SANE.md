@@ -15,6 +15,7 @@ Related articles
 *   [2 Verification](#Verification)
 *   [3 Installing a scanner driver](#Installing_a_scanner_driver)
     *   [3.1 Firmware](#Firmware)
+    *   [3.2 Fujitsu fi series](#Fujitsu_fi_series)
 *   [4 Install a frontend](#Install_a_frontend)
 *   [5 Network scanning](#Network_scanning)
     *   [5.1 Sharing your scanner over a network](#Sharing_your_scanner_over_a_network)
@@ -95,6 +96,10 @@ Then you need to tell sane where the firmware is:
 *   Make sure the firmware entry is uncommented and let the file-path point to where you put the firmware file for your scanner. Be sure that members of the group `scanner` can access the `/etc/sane.d/*<backend-name>*.conf` file.
 
 If the backend of your scanner is not part of the sane package (such as `hpaio.conf` which is part of [hplip](https://www.archlinux.org/packages/?name=hplip)), you need to uncomment the relevant entry in `/etc/sane.d/dll.d` or in `/etc/sane.d/dll.conf`.
+
+### Fujitsu fi series
+
+For some of the Fujitsu fi series document scanners, the [pfufs](https://aur.archlinux.org/packages/pfufs/) proprietary driver offers advanced functionality over the already mature SANE default driver, such as control of an optional imprinter for stamping scanned documents or requesting accurate status of the consumables from the host.
 
 ## Install a frontend
 

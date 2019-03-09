@@ -36,7 +36,7 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
 
 ## Connecting to a device
 
-Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) package. Restarting the file manager or application might be needed. Also confirm that usbmuxd is running in the background if the device is still not being recognized by the file manager or application.
+Applications which use GVFS, such as some file managers (GNOME Files, Thunar) or media players (Rhythmbox) can interact with iOS devices after [installing](/index.php/Install "Install") the [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc) and [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) packages. Restarting the file manager or application might be needed. Also confirm that usbmuxd is running in the background if the device is still not being recognized by the file manager or application.
 
 #### Manual mounting
 

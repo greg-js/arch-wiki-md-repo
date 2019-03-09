@@ -40,11 +40,15 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 
 ### BIOS update
 
-Despite not being required for an Arch Linux install, a BIOS update is strongly recommended for general use of the laptop - the initial 1.13 version devices seem to ship with contains multiple bugs that can result in bricking the laptop: [Reddit thread discussing the issue](https://www.reddit.com/r/thinkpad/comments/a2g0k4/warning_do_not_change_from_hybrid_graphics_to/); [another Reddit thread discussing a different bricking issue](https://www.reddit.com/r/thinkpad/comments/9qreoj/psa_do_not_enable_bios_support_for_thunderbolt/).
+Despite not being strictly required for an Arch Linux install, a BIOS update is strongly recommended for general use of the laptop - the initial 1.13 version devices seem to ship with contains multiple bugs that can result in bricking the laptop: [Reddit thread discussing the issue](https://www.reddit.com/r/thinkpad/comments/a2g0k4/warning_do_not_change_from_hybrid_graphics_to/); [another Reddit thread discussing a different bricking issue](https://www.reddit.com/r/thinkpad/comments/9qreoj/psa_do_not_enable_bios_support_for_thunderbolt/).
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The recommended minimum BIOS version is v1.17 (listed as 0.1.17 on LVFS); the latest version, v1.19, contains additional bug fixes, and although it is not available yet on LVFS (as of early March 2019) the `.cab` update file can be manually downloaded from the [v1.19 update page](https://pcsupport.lenovo.com/us/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-X-SERIES-LAPTOPS/THINKPAD-X1-EXTREME/downloads/DS504956) and installed by running `fwupdmgr install n2eet37w.cab` as root.
+The latest version, v1.19, is highly recommended, and can be installed by manually downloading [the update](https://download.lenovo.com/pccbbs/mobiles/n2eet37w.cab) and running `fwupdmgr install n2eet37w.cab` as root.
+
+The latest version available on the LVFS as of early March 2019 is v1.17 (listed as 0.1.17). While that version resolves all known critical (read: hard bricking) issues, it still contains multiple bugs, particularly related to power management and early boot, that are fixed in the later versions, so v1.19 should be preferred when possible.
+
+All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ### Graphics
 

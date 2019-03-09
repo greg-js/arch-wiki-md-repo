@@ -35,11 +35,13 @@ Related articles
     *   [4.3 GStreamer](#GStreamer)
     *   [4.4 OpenAL](#OpenAL)
     *   [4.5 libao](#libao)
-*   [5 Equalizer](#Equalizer)
-    *   [5.1 Load equalizer sink and dbus-protocol module](#Load_equalizer_sink_and_dbus-protocol_module)
-    *   [5.2 GUI front-end](#GUI_front-end)
-    *   [5.3 Load equalizer and dbus module on every boot](#Load_equalizer_and_dbus_module_on_every_boot)
-    *   [5.4 Alternative equalizers](#Alternative_equalizers)
+*   [5 Audio post-processing](#Audio_post-processing)
+    *   [5.1 PulseEffects](#PulseEffects)
+    *   [5.2 PulseAudio Equalizer](#PulseAudio_Equalizer)
+        *   [5.2.1 Load equalizer sink and dbus-protocol module](#Load_equalizer_sink_and_dbus-protocol_module)
+        *   [5.2.2 GUI front-end](#GUI_front-end)
+        *   [5.2.3 Load equalizer and dbus module on every boot](#Load_equalizer_and_dbus_module_on_every_boot)
+    *   [5.3 Other equalizers](#Other_equalizers)
 *   [6 Applications](#Applications)
     *   [6.1 QEMU](#QEMU)
     *   [6.2 AlsaMixer.app](#AlsaMixer.app)
@@ -48,7 +50,8 @@ Related articles
     *   [6.5 Audacious](#Audacious)
     *   [6.6 Music Player Daemon (MPD)](#Music_Player_Daemon_(MPD))
     *   [6.7 MPlayer](#MPlayer)
-    *   [6.8 guvcview](#guvcview)
+    *   [6.8 mpv](#mpv)
+    *   [6.9 guvcview](#guvcview)
 *   [7 Networked audio](#Networked_audio)
     *   [7.1 Basic setup with direct connection](#Basic_setup_with_direct_connection)
         *   [7.1.1 On the server](#On_the_server)
@@ -433,15 +436,21 @@ Be sure to remove the `dev=default` option of the alsa driver or adjust it to sp
 
 **Note:** You could possibly also keep the libao standard of outputting to the *alsa* driver and its default device if you install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) since the ALSA default device then **is** PulseAudio.
 
-## Equalizer
+## Audio post-processing
 
-**Warning:** The equalizer module is considered [unstable and might be removed from PulseAudio](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html). See [#Alternative equalizers](#Alternative_equalizers) for available alternatives.
+### PulseEffects
 
-PulseAudio has an integrated 10-band equalizer system. In order to use the equalizer do the following:
+PulseEffects is a GTK advanced utility for applying audio effects to applications output or to microphone before sending its audio stream to a recording tool. The user has full control over which effects to apply and their order. To install it, choose between [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) or [pulseeffects-git](https://aur.archlinux.org/packages/pulseeffects-git/).
 
-Install [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer):
+Effects for applications output are limiter, auto gain, expander, compressor, multiband compressor, equalizer, bass enhancer, exciter, crystalizer, reverberation, crossfeed, filter (lowpass, highpass, bandpass and bandreject modes), stereo tools, loudness, maximizer, pitch, gate, multiband gate, deesser and convolver. Effects applicable to input streams are gate, multiband gate, WebRTC, limiter, compressor, multiband compressor, equalizer, reverberation, pitch, filter (lowpass, highpass, bandpass and bandreject modes) and deesser.
 
-### Load equalizer sink and dbus-protocol module
+### PulseAudio Equalizer
+
+**Warning:** PulseAudio equalizer module is considered [unstable and might be removed from PulseAudio](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html).
+
+PulseAudio has an integrated 10-band equalizer system. In order to use the equalizer, install [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer) and read the following sections.
+
+#### Load equalizer sink and dbus-protocol module
 
 ```
 $ pactl load-module module-equalizer-sink
@@ -449,9 +458,9 @@ $ pactl load-module module-dbus-protocol
 
 ```
 
-### GUI front-end
+#### GUI front-end
 
-run:
+In order to start the GUI, run:
 
 ```
 $ qpaeq
@@ -460,7 +469,7 @@ $ qpaeq
 
 **Note:** If qpaeq has no effect, install [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) and change "ALSA Playback on" to "FFT based equalizer on ..." while the media player is running.
 
-### Load equalizer and dbus module on every boot
+#### Load equalizer and dbus module on every boot
 
 Edit the `/etc/pulse/default.pa` or `~/.config/pulse/default.pa` file with your favorite editor and append the following lines:
 
@@ -473,12 +482,9 @@ load-module module-dbus-protocol
 
 **Note:** The equalizer sink needs to be loaded after the master sink is already available.
 
-### Alternative equalizers
+### Other equalizers
 
-The following are optional replacements of [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer):
-
-*   [pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa) - based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins).
-*   [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) - audio effects (peak limiting, compression, reverberation, auto volume and 15 bands equalization) for Pulseaudio applications.
+[pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa), based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins), is an alternative to [#PulseAudio Equalizer](#PulseAudio_Equalizer).
 
 ## Applications
 
@@ -544,13 +550,17 @@ If the phonon-gstreamer backend is used for Phonon, GStreamer should also be con
 
 ### Music Player Daemon (MPD)
 
-[configure](http://mpd.wikia.com/wiki/PulseAudio) [MPD](/index.php/MPD "MPD") to use PulseAudio. See also [MPD/Tips and Tricks#PulseAudio](/index.php/MPD/Tips_and_Tricks#PulseAudio "MPD/Tips and Tricks").
+[Configure](http://mpd.wikia.com/wiki/PulseAudio) [MPD](/index.php/MPD "MPD") to use PulseAudio. See also [MPD/Tips and Tricks#PulseAudio](/index.php/MPD/Tips_and_Tricks#PulseAudio "MPD/Tips and Tricks").
 
 ### MPlayer
 
 [MPlayer](/index.php/MPlayer "MPlayer") natively supports PulseAudio output with the `-ao pulse` option. It can also be configured to default to PulseAudio output, in `~/.mplayer/config` for per-user, or `/etc/mplayer/mplayer.conf` for system-wide:
 
  `/etc/mplayer/mplayer.conf`  `ao=pulse` 
+
+### mpv
+
+[mpv](/index.php/Mpv "Mpv") supports PulseAudio same as written for [#MPlayer](#MPlayer). Configuration in `~/.config/mpv/mpv.conf` per-user, or `/etc/mpv/mpv.conf` system-wide.
 
 ### guvcview
 

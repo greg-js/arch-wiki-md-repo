@@ -30,18 +30,18 @@ Este artículo se basa en [Servidor de correo](/index.php/Mail_server "Mail serv
 *   [4 TLS](#TLS)
     *   [4.1 SMTP seguro (enviando)](#SMTP_seguro_(enviando))
     *   [4.2 SMTP seguro (recibiendo)](#SMTP_seguro_(recibiendo))
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Blacklist incoming emails](#Blacklist_incoming_emails)
-    *   [5.2 Hide the sender's IP and user agent in the Received header](#Hide_the_sender's_IP_and_user_agent_in_the_Received_header)
-    *   [5.3 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+*   [5 Consejos y trucos](#Consejos_y_trucos)
+    *   [5.1 Lista negra de correos electrónicos entrantes](#Lista_negra_de_correos_electrónicos_entrantes)
+    *   [5.2 Ocultar la IP y el agente de usuario del remitente en el encabezado Received](#Ocultar_la_IP_y_el_agente_de_usuario_del_remitente_en_el_encabezado_Received)
+    *   [5.3 Postfix en una jaula chroot](#Postfix_en_una_jaula_chroot)
     *   [5.4 DANE (DNSSEC)](#DANE_(DNSSEC))
-        *   [5.4.1 Resource Record](#Resource_Record)
-        *   [5.4.2 Configuration](#Configuration)
+        *   [5.4.1 Registro de recursos](#Registro_de_recursos)
+        *   [5.4.2 Configuración](#Configuración_2)
 *   [6 Extras](#Extras)
     *   [6.1 Postgrey](#Postgrey)
-        *   [6.1.1 Installation](#Installation)
-        *   [6.1.2 Configuration](#Configuration_2)
-        *   [6.1.3 Whitelisting](#Whitelisting)
+        *   [6.1.1 Instalación](#Instalación_2)
+        *   [6.1.2 Configuración](#Configuración_3)
+        *   [6.1.3 Lista blanca](#Lista_blanca)
         *   [6.1.4 Troubleshooting](#Troubleshooting)
     *   [6.2 SpamAssassin](#SpamAssassin)
         *   [6.2.1 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
@@ -183,9 +183,9 @@ submission inet n       -       n       -       -       smtpd
   -o milter_macro_daemon_name=ORIGINATING
 ```
 
-The `smtpd_*_restrictions` options remain commented because `$mua_*_restrictions` are not defined in main.cf by default. If you do decide to set any of `$mua_*_restrictions`, uncomment those lines too.
+Las opciones `smtpd_*_restrictions` permanecen comentadas porque `$mua_*_restrictions` no están definidas en main.cf por defecto. Si defide configurar alguna `$mua_*_restrictions`, descomente esas líneas también.
 
-To enable SMTPS (port 465), uncomment the following lines in `master.cf`:
+Para activar SMTPS (puerto 465), descomente las líneas siguientes en `master.cf`:
 
  `/etc/postfix/master.cf` 
 ```
@@ -203,64 +203,64 @@ To enable SMTPS (port 465), uncomment the following lines in `master.cf`:
 
 ```
 
-And in the first line, replace `**smtps**` with `submissions`. (this is the official service name according to [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt); Postfix still references the old name)
+Y en primera línea, reemplace `**smtps**` con `submissions`. (este es el nombre oficial del servicio según [IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt); Postfix todavía hace referencia al nombre antiguo)
 
-The rationale surrounding the `$smtpd_*_restrictions` lines is the same as above.
+El razonamiento que rodea a las líneas `$smtpd_*_restrictions` es el mismo que arriba.
 
-**Note:** If you get an error message like `postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype`, make sure that you have the following line in `postfix/master.cf`:
+**Nota:** Si obtiene un mensaje de error como `postfix/master[5309]: fatal: 0.0.0.0:smtps: Servname not supported for ai_socktype`, asegúrese de tener la siguiente línea en `postfix/master.cf`:
 ```
 submissions inet n       -       n       -       -       smtpd
 
 ```
 
-Also make sure that `/etc/services` is up to date and includes the following line:
+También asegúrese de que `/etc/services` está actualizado e incluye la siguiente línea:
 
 ```
 submissions 465/tcp
 
 ```
 
-## Tips and tricks
+## Consejos y trucos
 
-### Blacklist incoming emails
+### Lista negra de correos electrónicos entrantes
 
-Manually blacklisting incoming emails by sender address can easily be done with Postfix.
+La lista negra de correos electrónicos entrantes por dirección del remitente se puede hacer fácilmente con Postfix.
 
-Create and open `/etc/postfix/blacklist_incoming` file and append sender email address:
-
-```
-user@example.com REJECT
+Cree y abra el fichero `/etc/postfix/blacklist_incoming` y añada la dirección de correo electrónico del remitente:
 
 ```
+usuario@ejemplo.com REJECT
 
-Then use the `postmap` command to create a database:
+```
+
+Luego use la orden `postmap` para crear una base de datos:
 
 ```
 # postmap hash:blacklist_incoming
 
 ```
 
-Add the following code before the first permit rule in `main.cf`:
+Añada el siguiente código antes de la primera regla permisiva en `main.cf`:
 
 ```
 smtpd_recipient_restrictions = check_sender_access hash:/etc/postfix/blacklist_incoming
 
 ```
 
-Finally [restart](/index.php/Restart "Restart") `postfix.service`.
+Finalmente [reinicie](/index.php/Restart_(Espa%C3%B1ol) "Restart (Español)") `postfix.service`.
 
-### Hide the sender's IP and user agent in the Received header
+### Ocultar la IP y el agente de usuario del remitente en el encabezado Received
 
-This is a privacy concern mostly, if you use Thunderbird and send an email. The received header will contain your LAN and WAN IP and info about the email client you used. (Original source: [AskUbuntu](http://askubuntu.com/questions/78163/when-sending-email-with-postfix-how-can-i-hide-the-senders-ip-and-username-in)) What we want to do is remove the Received header from outgoing emails. This can be done by the following steps:
+Este es un problema de privacidad principalmente, si utiliza Thunderbird y envía un correo electrónico. El encabezado Received contendrá su IP LAN y WAN e información sobre el cliente de correo electrónico que utilizó. (Fuente original: [AskUbuntu](http://askubuntu.com/questions/78163/when-sending-email-with-postfix-how-can-i-hide-the-senders-ip-and-username-in)) Lo que queremos hacer es eliminar el encabezado Received de los correos electrónicos salientes.
 
-Add the following line to `main.cf`:
+Para hacer esto, primero añada la siguiente línea a `main.cf`:
 
 ```
 smtp_header_checks = regexp:/etc/postfix/smtp_header_checks
 
 ```
 
-Create `/etc/postfix/smtp_header_checks` with this content:
+Cree `/etc/postfix/smtp_header_checks` con este contenido:
 
 ```
 /^Received: .*/     IGNORE
@@ -268,15 +268,15 @@ Create `/etc/postfix/smtp_header_checks` with this content:
 
 ```
 
-Finally, [restart](/index.php/Restart "Restart") `postfix.service`.
+Finalmente, [reinicie](/index.php/Restart_(Espa%C3%B1ol) "Restart (Español)") `postfix.service`.
 
-### Postfix in a chroot jail
+### Postfix en una jaula chroot
 
-Postfix is not put in a chroot jail by default. The Postfix documentation [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) provides details about how to accomplish such a jail. The steps are outlined below and are based on the chroot-setup script provided in the Postfix source code.
+Postfix no se pone en una jaula chroot por defecto. La documentación de Postfix [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) proporciona detalles sobre cómo llevar a cabo tal enjaulado. Los pasos se describen a continuación y se basan en el script de configuración de chroot que se proporciona en el código fuente de Postfix.
 
-First, go into the `master.cf` file in the directory `/etc/postfix` and change all the chroot entries to 'yes' (y) except for the services `qmgr`, `proxymap`, `proxywrite`, `local`, and `virtual`
+Primero, entre en el archivo `master.cf` en el directorio `/etc/postfix` y cambie todas las entradas chroot a 'yes' (y) excepto para los servicios `qmgr`, `proxymap`, `proxywrite`, `local`, y `virtual`
 
-Second, create two functions that will help us later with copying files over into the chroot jail (see last step)
+Segundo, cree dos funciones que nos ayudarán más adelante con la copia de archivos en la jaula chroot (véase el último paso)
 
 ```
 CP="cp -p"
@@ -296,7 +296,7 @@ cond_copy() {
 
 ```
 
-Next, make the new directories for the jail:
+A continuación, haga los nuevos directorios para la jaula:
 
 ```
 set -e
@@ -316,7 +316,7 @@ test -d /lib64 && mkdir -p lib64
 
 ```
 
-Find the localtime file
+Encuentra el archivo localtime:
 
 ```
 lt=/etc/localtime
@@ -327,7 +327,7 @@ rm -f etc/localtime
 
 ```
 
-Copy localtime and some other system files into the chroot's etc
+Copie localtime y algunos archivos de sistema en el directorio etc del chroot:
 
 ```
 $CP -f $lt /etc/services /etc/resolv.conf /etc/nsswitch.conf etc
@@ -336,7 +336,7 @@ ln -s -f /etc/localtime usr/lib/zoneinfo
 
 ```
 
-Copy required libraries into the chroot using the previously created function `cond_copy`
+Copie las bibliotecas requeridas en el chroot utilizando la función creada previamente `cond_copy`
 
 ```
 cond_copy '/usr/lib/libnss_*.so*' lib
@@ -345,21 +345,21 @@ cond_copy '/usr/lib/libdb.so*' lib
 
 ```
 
-And don't forget to reload Postfix.
+Y no olvide [recargar](/index.php/Reload_(Espa%C3%B1ol) "Reload (Español)") Postfix.
 
 ### DANE (DNSSEC)
 
-#### Resource Record
+#### Registro de recursos
 
-**Warning:** This is not a trivial section. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
+**Advertencia:** Esta no es una sección trivial. Tenga en cuenta que debe estar seguro de lo que está haciendo. Mejor lea antes [Errores comunes](https://dane.sys4.de/common_mistakes).
 
-[DANE](/index.php/DANE "DANE") supports several types of records, however not all of them are suitable in Postfix.
+[DANE](/index.php/DANE "DANE") admite varios tipos de registros, sin embargo, no todos ellos son adecuados en Postfix.
 
-Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
+El uso del certificado 0 no es compatible, el 1 se asigna al 3 y 2 es opcional, por lo tanto es recomendable publicar un registro "3". Más en [Registros de recursos](/index.php/DANE#Resource_Record "DANE").
 
-#### Configuration
+#### Configuración
 
-Opportunistic DANE is configured this way:
+DANE oportunista *(opportunistic)* se configura de esta manera:
 
  `/etc/postfix/main.cf` 
 ```
@@ -376,7 +376,7 @@ dane       unix  -       -       n       -       -       smtp
 
 ```
 
-To use per-domain policies, e.g. opportunistic DANE for example.org and mandatory DANE for example.com, use something like this:
+Para utilizar políticas por dominio, por ejemplo DANE oportunista para ejemplo.org y DANE obligatorio *(mandatory)* para ejemplo.com, utilice algo como esto:
 
  `/etc/postfix/main.cf` 
 ```
@@ -393,33 +393,33 @@ transport_maps = ${indexed}transport
 ```
  `transport` 
 ```
-example.com dane
-example.org dane
+ejemplo.com dane
+ejemplo.org dane
 
 ```
  `tls_policy` 
 ```
-example.com dane-only
+ejemplo.com dane-only
 
 ```
 
-**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes Postfix tempfail (respond with a `4.X.X` error code) on all deliveries that do not use DANE at all!
+**Nota:** Para DANE obligatorio global, cambie `smtp_tls_security_level` a `dane-only`. Tenga en cuenta que esto provoca un error tempfail en Postfix (responder con un código de error `4.X.X`) en todos los envíos que no utilicen DANE.
 
-Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
+La documentación completa se encuentra [aquí](http://www.postfix.org/TLS_README.html#client_tls_dane).
 
 ## Extras
 
-*   **[PostfixAdmin](/index.php/PostfixAdmin "PostfixAdmin")** — A web-based administrative interface for Postfix.
+*   **[PostfixAdmin](/index.php/PostfixAdmin "PostfixAdmin")** — Una interfaz administrativa basada en web para Postfix.
 
 	[http://postfixadmin.sourceforge.net/](http://postfixadmin.sourceforge.net/) || [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin)
 
 ### Postgrey
 
-[Postgrey](http://postgrey.schweikert.ch/) can be used to enable [greylisting](https://en.wikipedia.org/wiki/Greylisting "wikipedia:Greylisting") for a Postfix mail server.
+[Postgrey](http://postgrey.schweikert.ch/) se puede utilizar para activar [listas grises](https://en.wikipedia.org/wiki/es:Lista_gris "wikipedia:es:Lista gris") en un servidor de correo Postfix.
 
-#### Installation
+#### Instalación
 
-[Install](/index.php/Install "Install") the [postgrey](https://www.archlinux.org/packages/?name=postgrey) package. To get it running quickly edit the Postfix configuration file and add these lines:
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [postgrey](https://www.archlinux.org/packages/?name=postgrey). Para tenerlo funcionando rápidamente, edite el archivo de configuración de Postfix y añada estas líneas:
 
  `/etc/postfix/main.cf` 
 ```
@@ -428,22 +428,22 @@ smtpd_recipient_restrictions =
 
 ```
 
-Then [start/enable](/index.php/Start/enable "Start/enable") the `postgrey` service. Afterwards, reload the `postfix` service. Now greylisting should be enabled.
+Luego [inicie/active](/index.php/Start/enable_(Espa%C3%B1ol) "Start/enable (Español)") el servicio `postgrey`. Después, recargue el servicio `postfix`. Ahora la lista gris debería estar activada.
 
-#### Configuration
+#### Configuración
 
-Configuration is done via editing the `postgrey.service` file. First copy it over to edit it.
+La configuración se realiza mediante la edición del archivo `postgrey.service`. Primero cópielo para editarlo.
 
 ```
 # cp /usr/lib/systemd/system/postgrey.service /etc/systemd/system/
 
 ```
 
-#### Whitelisting
+#### Lista blanca
 
-To add automatic whitelisting (successful deliveries are whitelisted and don't have to wait any more), you could add the `--auto-whitelist-clients=N` option and replace `N` by a suitably small number (or leave it at its default of 5).
+Para añadir listas blancas automáticas (los envíos exitosos entran en la lista blanca y no tienen que esperar nunca más), puede añadir la opción `--auto-whitelist-clients=N` y reemplazar `N` por un número adecuadamente pequeño (o dejarlo en su valor por defecto de 5).
 
-...actually, the preferred method should be the override:
+...en realidad, el método preferido debería ser la anulación *(override)*:
 
 ```
 cat /etc/systemd/system/postgrey.service.d/override.conf

@@ -48,13 +48,13 @@ To load all configuration files manually, execute
 which will also output the applied hierarchy. A single parameter file can also be loaded explicitly with
 
 ```
-# sysctl -p *filename.conf*
+# sysctl --load=*filename.conf*
 
 ```
 
 See [the new configuration files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) for more information.
 
-The parameters available are those listed under `/proc/sys/`. For example, the `kernel.sysrq` parameter refers to the file `/proc/sys/kernel/sysrq` on the file system. The `sysctl -a` command can be used to display all currently available values.
+The parameters available are those listed under `/proc/sys/`. For example, the `kernel.sysrq` parameter refers to the file `/proc/sys/kernel/sysrq` on the file system. The `sysctl --all` command can be used to display all currently available values.
 
 **Note:** If you have the kernel documentation installed ([linux-docs](https://www.archlinux.org/packages/?name=linux-docs)), you can find detailed information about sysctl settings in `/usr/lib/modules/$(uname -r)/build/Documentation/sysctl/`. It is highly recommended reading these before changing sysctl settings.
 

@@ -2,20 +2,26 @@ de [Home - LibreOffice](http://www.libreoffice.org/):
 
 	"LibreOffice es la poderosa suite de productividad personal de código abierto para Windows, Macintosh y Linux, que le ofrece seis aplicaciones ricas en funcionalidades para todas las necesidades de procesamiento de documentos y datos: Writer, Calc, Impress, Draw, Matemáticas y Base. Nuestra gran comunidad de diligentes usuarios, colaboradores y desarrolladores le ofrecen [asistencia](http://es.libreoffice.org/asistencia/) gratuita. ¡Usted también puede [participar](http://es.libreoffice.org/participe/)!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 LibreOffice en Arch Linux](#LibreOffice_en_Arch_Linux)
 *   [2 Instalación](#Instalación)
 *   [3 Extensiones de gestión](#Extensiones_de_gestión)
-*   [4 Corrección de ortografía](#Corrección_de_ortografía)
-*   [5 Reglas de división de palabras](#Reglas_de_división_de_palabras)
-*   [6 Sinónimos](#Sinónimos)
-*   [7 Instalando Macros](#Instalando_Macros)
-*   [8 Ejecutar LibreOffice](#Ejecutar_LibreOffice)
-*   [9 Acelerar LibreOffice](#Acelerar_LibreOffice)
-*   [10 Solución de problemas](#Solución_de_problemas)
-    *   [10.1 Sustitución de fuentes](#Sustitución_de_fuentes)
-    *   [10.2 No se pueden ingresar acentos](#No_se_pueden_ingresar_acentos)
+*   [4 Configuración del lenguaje](#Configuración_del_lenguaje)
+    *   [4.1 Corrección de ortografía](#Corrección_de_ortografía)
+    *   [4.2 Reglas de división de palabras](#Reglas_de_división_de_palabras)
+    *   [4.3 Sinónimos](#Sinónimos)
+    *   [4.4 Gramática](#Gramática)
+*   [5 Instalando Macros](#Instalando_Macros)
+*   [6 Ejecutar LibreOffice](#Ejecutar_LibreOffice)
+*   [7 Acelerar LibreOffice](#Acelerar_LibreOffice)
+*   [8 Solución de problemas](#Solución_de_problemas)
+    *   [8.1 Sustitución de fuentes](#Sustitución_de_fuentes)
+    *   [8.2 No se pueden ingresar acentos](#No_se_pueden_ingresar_acentos)
 
 ## LibreOffice en Arch Linux
 
@@ -50,32 +56,23 @@ Arch ofrece algunas extensiones adicionales. En este momento son:nlpsolver, pres
 
 Compruebe el gestor de Extensiones incorporado en LibreOffice, u [Obtenga extensiones en Internet](http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List) si desea instalar más extensiones.
 
-## Corrección de ortografía
+## Configuración del lenguaje
 
-Para revisar la ortografía necesitará hunspell y un diccionario de hunspell (como hunspell-es, hunspell-en, etc.)
+### Corrección de ortografía
 
-```
-# pacman -S hunspell hunspell-es_es
+Para revisar la ortografía necesitará hunspell y diccionario de hunspell: [hunspell](https://www.archlinux.org/packages/?name=hunspell), [hunspell-es_es](https://www.archlinux.org/packages/?name=hunspell-es_es) y [hunspell-es_any](https://www.archlinux.org/packages/?name=hunspell-es_any).
 
-```
+### Reglas de división de palabras
 
-## Reglas de división de palabras
+Para disponer de las reglas de división también necesitará hyphen: [hyphen](https://www.archlinux.org/packages/?name=hyphen) y [hyphen-es](https://www.archlinux.org/packages/?name=hyphen-es).
 
-Para disponer de las reglas de división también necesitará hyphen + un conjunto de reglas (hyphen-en, hyphen-de)
+### Sinónimos
 
-```
-# pacman -S hyphen hyphen-es
+Para la opción Sinónimos necesitará mythes: [mythes-es](https://www.archlinux.org/packages/?name=mythes-es).
 
-```
+### Gramática
 
-## Sinónimos
-
-Para la opción Sinónimos necesitará mythes + un libro de sinónimos de mythes (mythes-en mythes-es)
-
-```
-# pacman -S mythes mythes-es
-
-```
+Para la opción de corrección de gramática son necesarios instalar los paquetes: [languagetool](https://www.archlinux.org/packages/?name=languagetool), [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/) y [languagetool-ngrams-es](https://aur.archlinux.org/packages/languagetool-ngrams-es/).
 
 ## Instalando Macros
 

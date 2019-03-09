@@ -776,10 +776,6 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK+ 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK+ 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
 
-*   **Miam-Player** — Cross-platform open source music player.
-
-	[http://mbach.github.io/Miam-Player/](http://mbach.github.io/Miam-Player/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
-
 *   **museeks** — Minimalistic and easy to use music player. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://museeks.io/](https://museeks.io/) || [museeks-bin](https://aur.archlinux.org/packages/museeks-bin/)

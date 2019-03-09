@@ -1,9 +1,13 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Readline](/index.php/Readline "Readline"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Readline&diff=0&oldid=551245) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Readline](/index.php/Readline "Readline"), revisada por última vez el **2019-03-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Readline&diff=0&oldid=567006) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Readline](https://www.gnu.org/software/readline/) es una biblioteca del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)"), utilizada por [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") y otros programas con interfaz CLI para editar e interactuar con la línea de órdenes. Véase [readline(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3) para más información.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Modo de edición](#Modo_de_edición)
@@ -23,7 +27,7 @@ Es probable que el paquete [readline](https://www.archlinux.org/packages/?name=r
 
 ## Modo de edición
 
-De manera predeterminada, Readline utiliza los atajos de estilo Emacs para interactuar con la línea de órdenes. Sin embargo, la interfaz de edición de estilo [vi](/index.php/Vi_(Espa%C3%B1ol) "Vi (Español)") también están soportados añadiendo lo siguiente a `~/.inputrc`:
+De manera predeterminada, Readline utiliza los atajos de estilo [Emacs](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)") para interactuar con la línea de órdenes. Sin embargo, la interfaz de edición de estilo [vi](/index.php/Vi_(Espa%C3%B1ol) "Vi (Español)") también están soportados añadiendo lo siguiente a `~/.inputrc`:
 
  `~/.inputrc`  ` set editing-mode vi` 
 
@@ -54,7 +58,7 @@ set vi-cmd-mode-string \1\e[2 q\2
 
 ```
 
-Esto establecerá un cursor en forma de bloque cuando esté en el modo de comando y un cursor de tubería cuando esté en el modo de inserción.
+Esto establecerá un cursor en forma de bloque cuando esté en el modo de comando y un cursor de tubería cuando esté en el modo de inserción. Tenga en cuenta que debe tener activado el indicador de modo para que esto funcione (véase [#Indicador de modo en el prompt](#Indicador_de_modo_en_el_prompt).
 
 La consola virtual utiliza diferentes códigos de escape, por lo que antes debe verificar qué terminal se está utilizando:
 

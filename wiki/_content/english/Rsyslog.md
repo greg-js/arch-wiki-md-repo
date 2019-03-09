@@ -2,7 +2,7 @@ Related articles
 
 *   [syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 
-[rsyslog](https://www.rsyslog.com) is an alternate logger to [syslog-ng](/index.php/Syslog-ng "Syslog-ng") and offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
+[rsyslog](https://www.rsyslog.com) is a [syslog](https://en.wikipedia.org/wiki/syslog "w:syslog") implementation that offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,13 +12,12 @@ Related articles
 
 *   [1 Installation](#Installation)
     *   [1.1 Starting service](#Starting_service)
-    *   [1.2 Configure Hostname](#Configure_Hostname)
+    *   [1.2 Configure hostname](#Configure_hostname)
 *   [2 Configuration](#Configuration)
     *   [2.1 imjournal](#imjournal)
     *   [2.2 journald's syslog-forward feature](#journald's_syslog-forward_feature)
-    *   [2.3 References](#References)
-*   [3 Facility Levels](#Facility_Levels)
-*   [4 Security Levels](#Security_Levels)
+*   [3 Facility levels](#Facility_levels)
+*   [4 Severity levels](#Severity_levels)
 *   [5 Examples](#Examples)
     *   [5.1 journald with rsyslog for kernel messages](#journald_with_rsyslog_for_kernel_messages)
 *   [6 See also](#See_also)
@@ -31,9 +30,9 @@ Related articles
 
 ### Starting service
 
-You can [start/enable](/index.php/Start/enable "Start/enable") the [rsyslog](https://aur.archlinux.org/packages/rsyslog/) service after installation.
+You can [start/enable](/index.php/Start/enable "Start/enable") `rsyslog.service` after installation.
 
-### Configure Hostname
+### Configure hostname
 
 Rsyslog uses the [glibc](https://www.archlinux.org/packages/?name=glibc) routine `gethostname()` or `gethostbyname()` to determine the hostname of the local machine. The `gethostname()` or `gethostbyname()` routine check the contents of `/etc/hosts` for the fully qualified domain name (FQDN) if you are not using [BIND](/index.php/BIND "BIND") or [NIS](/index.php/NIS "NIS").
 
@@ -43,10 +42,10 @@ The `/etc/hosts` file contains a number of lines that map FQDNs to IP addresses 
 
  `/etc/hosts` 
 ```
-#<ip-address>	<hostname.domain.org>	<hostname>
-#<ip-address>      <actual FQDN>                       <aliases>
-127.0.0.1	localhost.localdomain somehost.localdomain	localhost somehost
-::1		        localhost.localdomain somehost.localdomain	localhost somehost
+#<ip-address>    <hostname.domain.org> <hostname>
+#<ip-address>    <actual FQDN> <aliases>
+127.0.0.1        localhost.localdomain somehost.localdomain localhost somehost
+::1              localhost.localdomain somehost.localdomain localhost somehost
 
 ```
 
@@ -56,26 +55,30 @@ To use **somehost** as the hostname. Move **somehost.localdomain** to the first 
 
  `/etc/hosts` 
 ```
-#<ip-address>	<hostname.domain.org>	                        <hostname>
-#<ip-address>      <actual FQDN>                                              <aliases>
-127.0.0.1	somehost.localdomain localhost.localdomain	localhost somehost
-::1		        somehost.localdomain localhost.localdomain 	localhost somehost
+#<ip-address>    <hostname.domain.org> <hostname>
+#<ip-address>    <actual FQDN> <aliases>
+127.0.0.1        somehost.localdomain localhost.localdomain localhost somehost
+::1              somehost.localdomain localhost.localdomain localhost somehost
 
 ```
 
 ## Configuration
 
-Since systemd 216 (August 2014) there is no longer a default forward from [systemd journal](/index.php/Systemd_journal "Systemd journal") to a running syslog daemon - so in order to gather system logs you either have to turn on [#journald's syslog-forward feature](#journald's_syslog-forward_feature) or use the [#imjournal](#imjournal) module of rsyslog to gather the logs by importing it from the systemd journald.
+rsyslog is configured in `/etc/rsyslog.conf`. See [the official documentation](https://www.rsyslog.com/doc/v8-stable/configuration/index.html) for more information on the available configuration options.
+
+By default, all syslog messages are handled by [systemd's journal](/index.php/Systemd/Journal "Systemd/Journal"). In order to gather system logs in rsyslog, you either have to turn on [#journald's syslog-forward feature](#journald's_syslog-forward_feature) or use the [#imjournal](#imjournal) module of rsyslog to gather the logs by importing it from the systemd journald.
 
 #### imjournal
 
-By default, all syslog messages are handled by [systemd](/index.php/Systemd "Systemd"). If you want rsyslog to pull messages from systemd, load the *imjournal* module:
+If you want rsyslog to pull messages from systemd, load the *imjournal* module:
 
  `/etc/rsyslog.conf` 
 ```
 $ModLoad imjournal
 
 ```
+
+See [the documentation on the imjournal input module](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imjournal.html) for more information.
 
 #### journald's syslog-forward feature
 
@@ -106,13 +109,9 @@ auth.*                                                  -/var/log/auth
 
 ```
 
-### References
+See [Systemd/Journal#Journald in conjunction with syslog](/index.php/Systemd/Journal#Journald_in_conjunction_with_syslog "Systemd/Journal") for more information.
 
-*   [Archwiki reference for systemd-syslog integration](/index.php/Systemd/Journal#Journald_in_conjunction_with_syslog "Systemd/Journal")
-*   [Structure of the rsyslog.conf file](https://www.rsyslog.com/doc/v8-stable/configuration/index.html).
-*   [Reference documentation on imjournal input module](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imjournal.html?highlight=imjournal)
-
-## Facility Levels
+## Facility levels
 
 **Note:** The mapping between Facility Number and Keyword is not uniform over different operating systems and different syslog implementations. Use the keyword where possible, until it is determined which numbers are used by Arch.
 
@@ -142,9 +141,9 @@ auth.*                                                  -/var/log/auth
 | 22 | local6 | local use 6 (local6) |
 | 23 | local7 | local use 7 (local7) |
 
-## Security Levels
+## Severity levels
 
-As defined in [RFC 5424](http://tools.ietf.org/html/rfc5424), there are eight security levels:
+As defined in [RFC 5424](https://tools.ietf.org/html/rfc5424), there are eight severity levels:
 
 | Code | Severity | Keyword | Description | General Description |
 | 0 | Emergency | emerg (panic) | System is unusable. | A "panic" condition usually affecting multiple apps/servers/sites. At this level it would usually notify all tech staff on call. |

@@ -1,6 +1,10 @@
 [Transmission](http://www.transmissionbt.com/) is a light-weight and cross-platform BitTorrent client.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuring the GUI version](#Configuring_the_GUI_version)
@@ -40,7 +44,7 @@ Both GUI versions, *transmission-gtk* and *transmission-qt*, can function autono
 
 GUI versions are configured to work out-of-the-box, but the user may wish to change some of the settings. The default path to the GUI configuration files is `~/.config/transmission`.
 
-A guide to configuration options can be found on the Transmission web site: [https://github.com/transmission/transmission/wiki/Editing-Configuration-Files](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files).
+A guide to configuration options can be found on Transmission's [Github](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files).
 
 ## Transmission daemon and CLI
 
@@ -62,17 +66,27 @@ The commands for *transmission-cli* are:
 
 ### Starting and stopping the daemon
 
-As explained in [#Choosing a user](#Choosing_a_user), the transmission daemon can be run:
+Transmission's daemon can be run:
 
-*   As the user *transmission*, by starting/enabling `transmission.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+*   As the user *transmission*, by starting/enabling `transmission.service` using [systemd](/index.php/Systemd#Using_units "Systemd"). The user can be changed as explained in [#Choosing a user](#Choosing_a_user).
 
-	you can change the user as explained in [#Choosing a user](#Choosing_a_user)
+*   As your own user, by running under your user name:
 
-*   As your own user, by running under your user name: `$ transmission-daemon` The daemon can then be stopped with: `$ killall transmission-daemon` 
+```
+$ transmission-daemon
 
-Starting the daemon will create an initial *transmission* configuration file. See [#Configuring the daemon](#Configuring_the_daemon).
+```
 
-An alternative option to stop transmission is to use the *transmission-remote* command:
+Starting the daemon will create an initial configuration file. See [#Configuring the daemon](#Configuring_the_daemon).
+
+The daemon can then be stopped with:
+
+```
+$ pkill -3 transmission-daemon
+
+```
+
+An alternative option to stop Transmission is to use the *transmission-remote* command:
 
 ```
 $ transmission-remote --exit

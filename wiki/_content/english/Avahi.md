@@ -65,7 +65,7 @@ In case you want Avahi to support other TLDs, you should:
 Avahi includes several utilities which help you discover the services running on a network. For example, run
 
 ```
-$ avahi-browse -alr
+$ avahi-browse --all --ignore-local --resolve --terminate
 
 ```
 

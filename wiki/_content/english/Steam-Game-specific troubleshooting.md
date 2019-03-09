@@ -1735,24 +1735,7 @@ The game does not allow you to change its resolution on a multi-monitor setup on
 
 #### No sound
 
-The game does not properly support [PulseAudio](/index.php/PulseAudio "PulseAudio"), so you will have to use ALSA. Run the game with `SDL_AUDIODRIVER=alsa`. Create the file `~/.asoundrc`. Get your card/device number with `aplay -l`. Add the following to your `~/.asoundrc` (replace card and device no with the one you got from `aplay -l`)
-
-```
-pcm.!default { 
-    type hw
-    card 0
-    device 0
-}
-
-ctl.!default {
-    type hw
-    card 0
-    device 0 
-}
-
-```
-
-Before starting the game make sure to kill PulseAudio with `pulseaudio -k`.
+Install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa)
 
 ### No image
 

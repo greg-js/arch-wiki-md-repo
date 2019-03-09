@@ -303,21 +303,9 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Swap file
 
-[Swap files](/index.php/Swap#Swap_file "Swap") in Btrfs is supported in Linux 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7).
+[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7). The proper way to initialize a swapfile is described in [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5).
 
-The proper way to initialize a swapfile is described in `btrfs(5)`.
-
-```
-   # truncate -s 0 swapfile
-   # chattr +C swapfile
-   # fallocate -l 2G swapfile
-   # chmod 0600 swapfile
-   # mkswap swapfile
-   # swapon swapfile
-
-```
-
-It is important to note that the swapfile can't be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swapfile inn.
+**Note:** The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
 
 ## Usage
 

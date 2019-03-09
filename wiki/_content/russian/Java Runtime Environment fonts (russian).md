@@ -11,14 +11,18 @@
 
 Для использования с Java, лучшим поддерживаемым форматом шрифтов будет TrueType.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Anti-aliasing (Сглаживание)](#Anti-aliasing_.28.D0.A1.D0.B3.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5.29)
-    *   [1.1 Базовые настройки](#.D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
-    *   [1.2 Патч OpenJDK](#.D0.9F.D0.B0.D1.82.D1.87_OpenJDK)
-*   [2 Выбор шрифта](#.D0.92.D1.8B.D0.B1.D0.BE.D1.80_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.B0)
-    *   [2.1 Шрифты TrueType](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B_TrueType)
-    *   [2.2 Исправление Mojibake (для JRE8)](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_Mojibake_.28.D0.B4.D0.BB.D1.8F_JRE8.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Anti-aliasing (Сглаживание)](#Anti-aliasing_(Сглаживание))
+    *   [1.1 Базовые настройки](#Базовые_настройки)
+    *   [1.2 Патч OpenJDK](#Патч_OpenJDK)
+*   [2 Выбор шрифта](#Выбор_шрифта)
+    *   [2.1 Шрифты TrueType](#Шрифты_TrueType)
+    *   [2.2 Исправление Mojibake (для JRE8)](#Исправление_Mojibake_(для_JRE8))
 
 ## Anti-aliasing (Сглаживание)
 

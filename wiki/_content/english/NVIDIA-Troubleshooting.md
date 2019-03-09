@@ -469,6 +469,8 @@ EndSection
 
 Note how `01:00.0` is written as `1:0:0`.
 
+**Note:** lspci output is in hex format, but in config files the BusID's are in decimal format.
+
 ## Xorg fails during boot, but otherwise starts fine
 
 On very fast booting systems, systemd may attempt to start the display manager before the NVIDIA driver has fully initialized. You will see a message like the following in your logs only when Xorg runs during boot.

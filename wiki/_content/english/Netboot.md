@@ -20,9 +20,47 @@ To use netboot on a BIOS-based computer, you need either the ipxe.lkrn or ipxe.p
 
 ### Using ipxe.lkrn
 
-The ipxe.lkrn image can be booted like a Linux kernel. Any Linux bootloader (like Grub or syslinux) can be used to load it from your hard drive, a CD or a USB drive.
+The ipxe.lkrn image can be booted like a Linux kernel. Any Linux bootloader (like Grub or syslinux) can be used to load it from your hard drive, a CD or a USB drive. For example, the Syslinux wiki gives instructions to install[[1]](https://wiki.syslinux.org/wiki/index.php?title=Install) and configure[[2]](https://wiki.syslinux.org/wiki/index.php?title=Config) Syslinux on a bootable medium. To make a flash drive that boots ipxe.lkrn, first [format](/index.php/File_systems#Create_a_file_system "File systems") the drive with a FAT32 file system, and install Syslinux on the device with:
 
-You can try the image with qemu by running the following command:
+```
+# syslinux.exe --directory /boot/syslinux/ --install <device path>
+
+```
+
+"<device path>" should be the path of the device you want to make bootable, for example "/dev/sdb". You can check for the correct device path using [lsblk](/index.php/Device_file#lsblk "Device file"). Now mount the device:
+
+```
+# mount <device path> /mnt
+
+```
+
+And, copy the kernel image onto the device:
+
+```
+# cp ipxe.lkrn /mnt/boot
+
+```
+
+Finally, make a default configuration for syslinux in the directory you specified:
+
+```
+# cat >/mnt/boot/syslinux/syslinux.cfg <<EOF
+# DEFAULT arch_netboot
+#  SAY Booting Arch over the network.
+# LABEL arch_netboot
+#  KERNEL /boot/ipxe.lkrn
+# EOF
+
+```
+
+Now just unmount the device, and you should be able to boot Arch from the device:
+
+```
+# umount /mnt
+
+```
+
+Alternatively, you can also try the image with qemu by running the following command:
 
 ```
    qemu-system-x86_64 -enable-kvm -m 1G -kernel ipxe.lkrn

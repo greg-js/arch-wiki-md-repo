@@ -27,8 +27,7 @@ Related articles
         *   [5.2.3 Semi-transparency](#Semi-transparency)
     *   [5.3 Do not minimize on Show Desktop](#Do_not_minimize_on_Show_Desktop)
     *   [5.4 Integrate with GNOME Shell](#Integrate_with_GNOME_Shell)
-    *   [5.5 Fix scrolling with UTF-8 multibyte characters](#Fix_scrolling_with_UTF-8_multibyte_characters)
-    *   [5.6 Prevent flickering](#Prevent_flickering)
+    *   [5.5 Prevent flickering](#Prevent_flickering)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -257,10 +256,6 @@ own_window_type = 'desktop',
 
 ```
 
-### Fix scrolling with UTF-8 multibyte characters
-
-1.9.0, and other versions of *conky* up to August 2018, suffer from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
-
 ### Prevent flickering
 
 *Conky* needs Double Buffer Extension *(DBE)* support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled with [Xorg](/index.php/Xorg "Xorg") in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically as long as it is present within `/usr/lib/xorg/modules`. The list of loaded modules can be checked with `grep LoadModule /var/log/Xorg.0.log`.
@@ -282,4 +277,4 @@ To enable double buffering, add the `double_buffer` option to `conky.conf`:
 *   [Conky Configs on arch forums](https://bbs.archlinux.org/viewtopic.php?id=39906)
 *   [Conky](http://freecode.com/projects/conky/) on [Freecode](https://en.wikipedia.org/wiki/Freecode "wikipedia:Freecode")
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
-*   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
+*   [FAQ](https://github.com/brndnmtthws/conky/wiki/FAQ)

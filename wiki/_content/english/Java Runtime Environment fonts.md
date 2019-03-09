@@ -9,14 +9,18 @@ Some users may find the default Java fonts or the display mode of fonts in Java 
 
 TrueType fonts appear to be the best supported format for use with Java.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Anti-aliasing](#Anti-aliasing)
     *   [1.1 Basic settings](#Basic_settings)
     *   [1.2 OpenJDK patch](#OpenJDK_patch)
 *   [2 Font selection](#Font_selection)
     *   [2.1 TrueType fonts](#TrueType_fonts)
-    *   [2.2 Fixing Mojibake (For JRE8)](#Fixing_Mojibake_.28For_JRE8.29)
+    *   [2.2 Fixing Mojibake (For JRE8)](#Fixing_Mojibake_(For_JRE8))
 
 ## Anti-aliasing
 

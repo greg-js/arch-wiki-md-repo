@@ -78,7 +78,7 @@ $ fwupdmgr update
 
 ## Setup for UEFI BIOS upgrade
 
-**Warning:** An update to your UEFI firmware may discard the current [bootloader](/index.php/Bootloader "Bootloader") installation. It may be necessary to reinstall the bootloader using [chroot](/index.php/Chroot "Chroot") after the firmware update has been installed successful.
+**Warning:** An update to your UEFI firmware may discard the current [bootloader](/index.php/Bootloader "Bootloader") installation. It may be necessary to recreate the NVRAM entry (for example using [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface")) after the firmware update has been installed successful.
 
 The following requirements should be met:
 

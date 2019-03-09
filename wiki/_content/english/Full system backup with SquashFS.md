@@ -11,8 +11,8 @@ Related articles
 *   [1 Overview](#Overview)
 *   [2 Prepare live CD/DVD/USB](#Prepare_live_CD/DVD/USB)
 *   [3 Backup in live environment](#Backup_in_live_environment)
-*   [4 Restore(decompress)](#Restore(decompress))
-*   [5 Restore(mount and copy)](#Restore(mount_and_copy))
+*   [4 Restore (decompress)](#Restore_(decompress))
+*   [5 Restore (mount and copy)](#Restore_(mount_and_copy))
 
 ## Overview
 
@@ -24,31 +24,30 @@ You should have [squashfs-tools](https://www.archlinux.org/packages/?name=squash
 
 ## Backup in live environment
 
-Boot into live CD/DVD/USB and mount filesystems you'd like to backup.
+Boot into live CD/DVD/USB and mount filesystems you would like to backup.
 
 **Note:** The following example is for an EFI-grub Arch installation with sdb1 as EFI partition and sdb2 as root partition.
 
 ```
-mount /dev/sdb2 /mnt
-mount /dev/sdb1 /mnt/boot/efi
-/somewhere/mksquashfs.sh /mnt /somewhere/$(date +%Y%m%d_%a).sfs
+# fsck /dev/sdb2
+# fsck /dev/sdb1
+# mount /dev/sdb2 /mnt
+# mount /dev/sdb1 /mnt/boot/efi
+# /somewhere/mksquashfs.sh SOURCE_DIRECTORY BACKUP_ARCHIVE_DIRECTORY
+
 ```
 
 where
 
  `/somewhere/mksquashfs.sh` 
 ```
-#!/bin/bash
+#!/usr/bin/env bash
 
-# SYNTAX: mksquashfs.sh SOURCE_DIRECTORY BACKUP_ARCHIVE_DIRECTORY
-
-# Paths to exclude
-exclude='
-boot/efi
-boot/grub
-boot/initramfs-linux*.img
-'
-
+# Sanity
+if [ $# -ne 2 ]; then
+  echo "invoke: mksquashfs.sh SOURCE_DIRECTORY BACKUP_ARCHIVE_DIRECTORY"
+  exit 1
+fi
 echo -ne "
 
 Have you fsck'd? "
@@ -59,14 +58,17 @@ mksquashfs \
   "$1" "$2/$(date +%Y%m%d_%a).sfs" \
   -comp gzip \
   -xattrs \
-  -ef <(echo $exclude) \
-  -wildcards \
   -progress \
-  -mem 5G
+  -mem 5G \
+  -wildcards \
+  -e \
+  boot/efi \
+  boot/grub \
+  boot/initramfs-linux"*".img
 
 ```
 
-## Restore(decompress)
+## Restore (decompress)
 
 **Warning:** The following is complete but not yet tested. Do not use before this warning sign is removed.
 
@@ -81,7 +83,6 @@ archive=/somewhere/backup.sfs
 
 unsquashfs -stat $archive
 unsquashfs -force -dest $target $archive
-
 ```
 
 **Note:** To make system bootable after restore, you should:
@@ -92,13 +93,9 @@ unsquashfs -force -dest $target $archive
     2.  grub-install
     3.  grub-mkconfig
 
-## Restore(mount and copy)
+## Restore (mount and copy)
 
 **Warning:** The following is complete but not yet tested. Do not use before this warning sign is removed.
 
-```
-#!/bin/bash
-mount somewhere/backup.sfs /mnt
-cp /mnt/somefile /somewhere/damaged-somefile
-
-```
+1.  mount somewhere/backup.sfs /mnt
+2.  cp /mnt/somefile /somewhere/damaged-somefile

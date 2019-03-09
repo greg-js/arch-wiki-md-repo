@@ -388,7 +388,7 @@ usb-audio: Fast Track Pro config OK
 
 ```
 
-The interface also needs extra step of cofiguration to switch modes. It is done using option `device_setup` during module loading. The recommended way to setup the interface is using file in `modprobe.d`:
+The interface also needs extra step of configuration to switch modes. It is done using option `device_setup` during module loading. The recommended way to setup the interface is using file in `modprobe.d`:
 
  `/etc/modprobe.d/ftp.conf`  `options snd_usb_audio vid=0x763 pid=0x2012 device_setup=XXX index=YYY enable=1` 
 
@@ -564,7 +564,7 @@ With that said, if you are building a program which would host native *.so* VST 
 
 *   #archlinux-proaudio on freenode.net: Arch Linux pro-audio channel
 *   #lau on freenode.net: General Linux Audio channel for users
-*   #lad on freenode.net: General Linux AUdio channel for developers
+*   #lad on freenode.net: General Linux Audio channel for developers
 *   #opensourcemusicians on freenode.net: Large general OSS musician discussion channel
 
 ## See also

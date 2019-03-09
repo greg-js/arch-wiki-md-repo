@@ -1,6 +1,10 @@
 Mad Catz produces a series of gaming mice, for example the Saitek Cyborg R.A.T.3 Mouse (7 buttons USB wired) or the R.A.T9 (7 buttons USB wireless). The mice do not work properly in X without some reconfiguration. This article explains how to make it work with any desktop manager.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Issues](#Issues)
@@ -65,14 +69,17 @@ This is the configuration file that will get your R.A.T. 7 or R.A.T. 9 mouse wor
 
 ```
 Section "InputClass"
- Identifier "Mouse Remap"
- MatchProduct "Mad Catz Mad Catz M.M.O.7 Mouse"
- MatchIsPointer "true"
- MatchDevicePath "/dev/input/event*"
- Option "Buttons" "24"
- Option "ButtonMapping" "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24"
- Option "AutoReleaseButtons" "13 14 15"
- Option "ZAxisMapping" "4 5 6 7"
+  Identifier "Mouse Remap"
+  MatchProduct "Mad Catz Mad Catz M.M.O.7 Mouse|M.M.O.7"
+  MatchIsPointer "true"
+  MatchUSBID "0738:1713"
+  Driver "evdev"
+  Option "Buttons" "24"
+  Option "ButtonMapping" "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 0 21 22 23 24"
+  Option "AutoReleaseButtons" "20"
+  Option "ZAxisMapping" "4 5 6 7"
+# Option "Resolution" "3200"
+# Option "ConstantDeceleration" "2"
 EndSection
 
 ```

@@ -1,6 +1,10 @@
 [Gmrun](http://sourceforge.net/projects/gmrun) (Gnome Completion-Run) is an lightweight application launcher similar to [GNOME](/index.php/GNOME "GNOME") Run, [Application Finder](http://docs.xfce.org/xfce/xfce4-appfinder/start), [KRunner](http://userbase.kde.org/Plasma/Krunner), etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -18,7 +22,7 @@ Gmrun can be [installed](/index.php/Pacman "Pacman") with the package [gmrun](ht
 *   Gmrun features tab completion: pressing tab will bring up a scrollable list of possible matches.
 *   Web addresses entered into Gmrun will launch a web browser automatically.
 *   The same goes for email addresses, using the `mailto:` prefix e.g. `[mailto:foo@bar.com](mailto:foo@bar.com)`, will launch your email client.
-*   More shortcuts can be added to `~/.gmrunrc` (covered below) or you can modify the system-wide file at `/usr/share/gmrun/gmrunc`.
+*   More shortcuts can be added to `~/.gmrunrc` (See [#Configuration](#Configuration) below) or you can modify the system-wide file at `/etc/gmrunc`.
 *   You can enter search mode by entering `!` as the first letter, the title should change from *Run program* to *Search*, letters you input will then automatically come up with suggestions from your command history.
 *   `Ctrl-r` will allow you to search backwards through that history.
 *   `Ctrl-s` will search forward through the history.
@@ -28,7 +32,7 @@ Gmrun can be [installed](/index.php/Pacman "Pacman") with the package [gmrun](ht
 
 ## Configuration
 
-The configuration file is located at `/usr/share/gmrun/gmrunrc` but you can create a per-user configuration (recommended) in `~/.gmrunrc`. Please note that `%u` is expanded to the full command entered, `%s` is the last part after the shortcut (e.g. if you enter the URL `[https://www.archlinux.org](https://www.archlinux.org)`, `%u` would expand to `[https://www.archlinux.org](https://www.archlinux.org)` and `%s` would expand to `//www.archlinux.org`.
+The configuration file is located at `/etc/gmrunrc` but you can create a per-user configuration (recommended) in `~/.gmrunrc`. Please note that `%u` is expanded to the full command entered, `%s` is the last part after the shortcut (e.g. if you enter the URL `[https://www.archlinux.org](https://www.archlinux.org)`, `%u` would expand to `[https://www.archlinux.org](https://www.archlinux.org)` and `%s` would expand to `//www.archlinux.org`.
 
 Here is an example configuration file.
 

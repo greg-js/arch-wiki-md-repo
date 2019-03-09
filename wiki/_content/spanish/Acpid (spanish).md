@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Acpid](/index.php/Acpid "Acpid"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Acpid&diff=0&oldid=550485) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Acpid](/index.php/Acpid "Acpid"), revisada por última vez el **2019-03-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Acpid&diff=0&oldid=564902) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Related articles
 
@@ -15,7 +15,11 @@ Related articles
 
 **Nota:** Los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), el administrador de inicio de sesión de [systemd](/index.php/Power_management_(Espa%C3%B1ol)#Eventos_de_ACPI "Power management (Español)") y algunos demonios que [manejan teclas extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") pueden implementar esquemas propios de manejo de eventos, independientes de acpid. La ejecución de más de un sistema al mismo tiempo puede provocar un comportamiento inesperado, como suspender dos veces seguidas después de presionar un botón de suspensión. Tenga esto en cuenta y active solo los manejadores que necesite.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -45,7 +49,7 @@ button/sleep)
         SLPB) echo -n mem >/sys/power/state ;;
 	 *)    logger "ACPI action undefined: $2" ;;
     esac
-    ;;
+    ;;
 
 ```
 
@@ -108,7 +112,7 @@ De manera predeterminada, todos los eventos ACPI se pasan a través del script `
 ```
 # Pasar todos los eventos a nuestro script de un solo controlador
 event=.*
-action=/etc/acpi/handler.sh %e
+action=/etc/acpi/handler.sh %e
 
 ```
 
@@ -119,7 +123,7 @@ Como superusuario, cree el siguiente archivo:
  `/etc/acpi/events/sleep-button` 
 ```
 event=button sleep.*
-action=/etc/acpi/actions/sleep-button.sh %e
+action=/etc/acpi/actions/sleep-button.sh %e
 ```
 
 Ahora cree el siguiente archivo:
@@ -133,12 +137,14 @@ case "$3" in
 esac
 ```
 
-Finalmente, haga el script ejecutable:
+Haga el script ejecutable:
 
 ```
 # chmod +x /etc/acpi/actions/sleep-button.sh
 
 ```
+
+Finalmente, [recargue](/index.php/Reload_(Espa%C3%B1ol) "Reload (Español)") `acpid.service` para que acpid reconozca los cambios en estos archivos.
 
 Al usar este método, es fácil crear cualquier cantidad de scripts de eventos/acciones individuales.
 
@@ -159,17 +165,17 @@ ac_adapter)
             case "$4" in
                 00000000)
                     echo -n 50 > /sys/class/backlight/acpi_video0/brightness
-                    ;;
+                    ;;
                 00000001)
                     echo -n 100 > /sys/class/backlight/acpi_video0/brightness
-                    ;;
+                    ;;
             esac
 
 ```
 
 ### Activar el control del volumen
 
-Averigüe la identidad acpi de los botones de volumen (ver arriba) y sustitúyalos por los eventos acpi en los archivos a continuación.
+Averigüe la identidad acpi de los botones de volumen (véase arriba) y sustitúyalos por los eventos acpi en los archivos a continuación.
 
  `/etc/acpi/events/vol-d` 
 ```

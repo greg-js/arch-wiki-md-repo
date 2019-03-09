@@ -9,7 +9,11 @@ From [ACPI site](http://www.acpi.info/):
 
 ACPI modules are kernel modules for different ACPI parts. They enable special ACPI functions or add information to `/proc` or `/sys`. These information can be parsed by [acpid](/index.php/Acpid "Acpid") for events or other monitoring applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Which modules are available?](#Which_modules_are_available?)
 *   [2 How to select the correct ones](#How_to_select_the_correct_ones)
@@ -95,7 +99,7 @@ Add the working ones to configuration files in `/etc/modules-load.d`. `/etc/modu
 
 ## Getting information
 
-To read out battery information, you can simply [install](/index.php/Install "Install") the package [acpi](https://www.archlinux.org/packages/?name=acpi) in the [official repositories](/index.php/Official_repositories "Official repositories") and run:
+To read out battery information, you can simply [install](/index.php/Install "Install") the package [acpi](https://www.archlinux.org/packages/?name=acpi) from the [official repositories](/index.php/Official_repositories "Official repositories") and run:
 
 ```
 acpi -i
@@ -119,7 +123,7 @@ If problems with power management persist despite having loaded the proper modul
 
 Sometimes you see "ACPI: EC: input buffer is not empty, aborting transaction". This is a problem with ACPI, more specifically an incompatibility of the BIOS. There may be four ways to solve this issue:
 
-*   If available, update the BIOS.
+*   If available, [flash BIOS](/index.php/Flash_BIOS "Flash BIOS").
 
 *   Use `acpi=off` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), however this will kill all ACPI functionality like battery charging and power saving.
 

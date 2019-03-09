@@ -146,6 +146,8 @@ net {IP_OF_SCANNER}
 
 ```
 
+Upstream version of [iscan](https://www.archlinux.org/packages/?name=iscan) does not support 16bpc color depth scanning. Choosing any bit depth other than 8 makes iscan stop without warning, leaving the scanner stuck until restarted. To enable 16bpc scanning, iscan requires to be patched. Use [ABS](/index.php/ABS "ABS") and apply patch found in [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1835448#p1835448) to enable 16bpc depth mode.
+
 ### Image Scan v3
 
 Some models require "Image Scan 3", which is different from "Image Scan! for Linux" and is not available in the official repositores. Install [imagescan](https://www.archlinux.org/packages/?name=imagescan) for the base program. It should detect supported USB scanners automatically by default. If you want to make use of a network scanner you also have to install [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/). Then edit `/etc/utsushi/utsushi.conf`, and enter the ip address of your scanner to it.
