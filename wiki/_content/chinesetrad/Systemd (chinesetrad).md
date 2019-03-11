@@ -413,7 +413,7 @@ Systemd Timer是以 *.timer* 为附檔名的設定檔，記錄由system裡面由
 
 ## 日誌
 
-systemd 提供了自己的日誌系統（logging system），稱為 [journald](/index.php?title=Journald&action=edit&redlink=1 "Journald (page does not exist)"). 使用 systemd 日誌，無需額外安裝日誌服務（syslog）。讀取日誌的命令：
+systemd 提供了自己的日誌系統（logging system），稱為 [journald](/index.php/Journald "Journald"). 使用 systemd 日誌，無需額外安裝日誌服務（syslog）。讀取日誌的命令：
 
 ```
 # journalctl
@@ -667,7 +667,7 @@ $ ulimit -c unlimited
 
 不少用戶使用 `systemd-analyze` 命令以後報告啟動的時間比預計的要長,通常會說 `systemd-analyze` 分析結果表示 [NetworkManager](/index.php/NetworkManager "NetworkManager") 佔用了太多的啟動時間.
 
-有些用戶的問題是 `/var/log/journal` 資料夾似乎過大.這也許也會對像`systemctl status` 或 `journalctl` 的命令有影响.一种解決方案是删除其中的檔案 (但最好將他們備份到某处) 然後限制日誌檔案的大小.請參考[journald](/index.php?title=Journald&action=edit&redlink=1 "Journald (page does not exist)").
+有些用戶的問題是 `/var/log/journal` 資料夾似乎過大.這也許也會對像`systemctl status` 或 `journalctl` 的命令有影响.一种解決方案是删除其中的檔案 (但最好將他們備份到某处) 然後限制日誌檔案的大小.請參考[journald](/index.php/Journald "Journald").
 
 ### systemd-tmpfiles-setup.service 在啟動時啟動失敗
 

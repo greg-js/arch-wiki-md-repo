@@ -211,7 +211,7 @@ Thread hijacking is the process of replying to an existing thread with a differe
 
 #### Dustbin policy (marked for deletion)
 
-Threads that are locked/closed because they are either already documented on the boards or Wiki or are inconsistent with the Arch Way will be moved to Dust/troll-bin. After a period of five days, the thread will be deleted. The Moderator responsible will clearly mark the thread as "Binned" or "For deletion."
+Threads that are locked/closed because they are either already documented on the boards or Wiki or are inconsistent with the Arch Way will be moved to Dust/troll-bin. After a period of five days, the thread will be eligible for deletion at the discretion of the staff. The Moderator responsible will clearly mark the thread as "Binned" or "For deletion."
 
 ### Mailing lists
 

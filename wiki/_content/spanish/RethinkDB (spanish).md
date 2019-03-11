@@ -5,7 +5,7 @@ RethinkDB es una base de datos orientada a documentos similar a [MongoDB](/index
 
 ## Instalación
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [rethinkdb](https://www.archlinux.org/packages/?name=rethinkdb) desde el repositorio oficial.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [rethinkdb](https://aur.archlinux.org/packages/rethinkdb/) desde el repositorio oficial.
 
 Cree y establezca permisos de usuario para la carpeta RethinkDB:
 

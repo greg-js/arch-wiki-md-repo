@@ -6,7 +6,11 @@ Related articles
 
 [Dropbox](https://www.dropbox.com) is a file sharing system that recently introduced a GNU/Linux client. Use it to transparently sync files across computers and architectures. Simply drop files into your `~/Dropbox` folder, and they will automatically sync to your centralized repository.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 AUR](#AUR)
@@ -133,7 +137,7 @@ $ systemctl --user {start|enable} dropbox@:0.service
 
 ```
 
-That way you can easily start it in your main display (likely :0) or in another one, without having to hard code it.
+That way you can easily start it in your main display (likely :0) or in another one, without having to hard code it.
 
 **Note:** After a lot of trial and error I found that using `/usr/bin/dropboxd` didn't start the service and it didn't show any error either (even when running it directly from the terminal worked fine). I believe it has to do that starting it that way systemd doesn't know which user is actually running the daemon.
 

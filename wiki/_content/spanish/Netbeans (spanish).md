@@ -4,7 +4,11 @@ De [Wikipedia](https://es.wikipedia.org/wiki/NetBeans):
 
 «**NetBeans** es un entorno de desarrollo integrado libre, hecho principalmente para el lenguaje de programación **Java**. Existe además un número importante de módulos para extenderlo. **NetBeans IDE** es un producto libre y gratuito sin restricciones de uso.»
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Consejos](#Consejos)
@@ -25,6 +29,10 @@ Primero tendrás que instalar algún entorno de desarrollo java. El recomendado 
 Los paquetes de instalación de Netbeans en español están en el [AUR](/index.php/Arch_User_Repository "Arch User Repository"):
 
 1.  [netbeans-es](https://aur.archlinux.org/packages/netbeans-es/)
+
+La traducción al español solo está disponible hasta la versión 8.2, para instalar la versión en inglés:
+
+1.  [netbeans](https://www.archlinux.org/packages/?name=netbeans)
 
 ## Consejos
 

@@ -1,6 +1,9 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Dbeaver](/index.php/Dbeaver "Dbeaver"), revisada por última vez el **2019-02-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dbeaver&diff=0&oldid=567403) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Dbeaver es una herramienta de administración de base de datos multiplataforma. Para más información acerca de las características vea la [página oficial](https://dbeaver.jkiss.org/).
 
-Soporta bases de datos populares tales como [MySQL](/index.php/MySQL "MySQL"), [MariaDB](/index.php/MariaDB "MariaDB"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [SQLite](/index.php/SQLite "SQLite"), [Oracle](/index.php/Oracle "Oracle").
+Soporta bases de datos populares tales como [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)"), [MariaDB](/index.php/MariaDB "MariaDB"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [SQLite](/index.php/SQLite "SQLite"), [Oracle](/index.php/Oracle "Oracle").
 
 Proporciona una arquitectura de complementos (basado en la arquitectura de complementos de Eclipse) que permite modificar gran parte del comportamiento de la aplicación para proveer funcionalidad específica de la base de datos o características que son independientes de la base de datos. Esto es una aplicación de escritorio escrito en Java y basado en la plataforma de Eclipse.
 
@@ -45,4 +48,4 @@ Si recibe un error como éste:
 
 ```
 
-Intente agregar `export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"` en su [xinitrc](/index.php/Xinitrc "Xinitrc").
+Intente agregar `export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"` en su [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").

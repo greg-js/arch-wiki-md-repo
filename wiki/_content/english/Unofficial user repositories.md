@@ -300,10 +300,10 @@ Server = https://downloads.devkitpro.org/packages
 ### disastrousaur
 
 *   **Maintainer:** [TheGoliath](https://aur.archlinux.org/account/TheGoliath/)
-*   **Description:** AUR packages mostly useful for daily use. Supporting package and database signing.
+*   **Description:** Well known AUR package managers, many of the most popular packages available on the AUR, as well as those that I favor myself
 *   **Upstream page:** [https://mirror.repohost.de/disastrousaur](https://mirror.repohost.de/disastrousaur)
 *   **Key-ID:** CBAE582A876533FD
-*   **Keyfile:** [https://mirror.xdfr.de/disastrousaur.key](https://mirror.xdfr.de/disastrousaur.key)
+*   **Keyfile:** [https://mirror.repohost.de/disastrousaur.key](https://mirror.repohost.de/disastrousaur.key)
 
 ```
 [disastrousaur]
@@ -469,8 +469,8 @@ Server = https://repo.markzz.com/arch/$repo/$arch
 ### maximbaz
 
 *   **Maintainer:** [Maxim Baz](https://www.archlinux.org/people/trusted-users/#maximbaz)
-*   **Description:** Personal repo with AUR packages (notably [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)).
-*   **Key-ID:** 12C87A28FEAC6B20
+*   **Description:** Personal repo with AUR packages.
+*   **Key-ID:** Not needed, as maintainer is a TU
 
 ```
 [maximbaz]

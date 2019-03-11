@@ -67,7 +67,7 @@ and notes |
 To verify TRIM support, run:
 
 ```
-# lsblk --discard
+$ lsblk --discard
 
 ```
 

@@ -1,13 +1,16 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Snap](/index.php/Snap "Snap"), revisada por última vez el **2019-02-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Snap&diff=0&oldid=568314) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
-*   [Flatpak (Español)](/index.php?title=Flatpak_(Espa%C3%B1ol)&action=edit&redlink=1 "Flatpak (Español) (page does not exist)")
+*   [Flatpak](/index.php/Flatpak "Flatpak")
 *   [AppArmor](/index.php/AppArmor "AppArmor")
 
 [Snap](https://snapcraft.io/) es un sistema de despliegue y manejo de paquetes. Los paquetes son llamados 'snaps' y la herramienta para usarlos es 'snapd', la cual funciona en una amplia gama de distribuciones Linux y permite, por lo tanto, el despliege ascendente de software agnóstico a la distribución. Snap fue originalmente diseñado y desarrollado por Canonical.
 
-[snapd](https://github.com/snapcore/snapd) es un daemon REST API para la administración de paquetes snaps. Los usuarios pueden interactuar con él al usar el cliente *snap*, el cual es parte del mismo paquete.
+[snapd](https://github.com/snapcore/snapd) es un demonio REST API para la administración de paquetes snaps. Los usuarios pueden interactuar con él al usar el cliente *snap*, el cual es parte del mismo paquete.
 
-Los snaps pueden ser confinados usando [AppArmor](/index.php/AppArmor "AppArmor") el cual ahora es habilitado por kernel predeterminado. Consulte las páginas wiki pertinentes para encontrar instrucciones para habilitar [AppArmor](/index.php/AppArmor "AppArmor") en su sistema.
+Los snaps pueden ser confinados usando [AppArmor](/index.php/AppArmor "AppArmor") el cual ahora es habilitado por el kernel predeterminado. Consulte las páginas wiki relevantes para encontrar instrucciones para habilitar [AppArmor](/index.php/AppArmor "AppArmor") en su sistema.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -17,12 +20,12 @@ Los snaps pueden ser confinados usando [AppArmor](/index.php/AppArmor "AppArmor"
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
-*   [3 Uso](#Uso)
+*   [3 Utilización](#Utilización)
     *   [3.1 Buscando](#Buscando)
     *   [3.2 Instalando](#Instalando)
     *   [3.3 Actualización](#Actualización)
     *   [3.4 Removiendo](#Removiendo)
-*   [4 Tips y trucos](#Tips_y_trucos)
+*   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Snaps Clásicas](#Snaps_Clásicas)
     *   [4.2 Confinamiento](#Confinamiento)
 *   [5 Administración Gráfica](#Administración_Gráfica)
@@ -33,13 +36,13 @@ Los snaps pueden ser confinados usando [AppArmor](/index.php/AppArmor "AppArmor"
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [snapd](https://aur.archlinux.org/packages/snapd/) o [snapd-git](https://aur.archlinux.org/packages/snapd-git/).
 
-**Tip:** `snapd` instala un script en `/etc/profile.d/snapd.sh` para exportar las rutas de los binarios instalados con el paquete snapd y los accesos directos. Reinicie una vez para que el cambio surta efecto.
+**Sugerencia:** `snapd` instala un script en `/etc/profile.d/snapd.sh` para exportar las rutas de los binarios instalados con el paquete snapd y los accesos directos. Reinicie una vez para que el cambio surta efecto.
 
 Desde la versión 2.36, `snapd` habilita el soporte AppArmor para Arch Linux. Para usarlo, tiene que habilitar AppArmor en su sistema, vea [AppArmor#Instalación](/index.php?title=AppArmor_(Espa%C3%B1ol)&action=edit&redlink=1 "AppArmor (Español) (page does not exist)").
 
-**Note:** Si AppArmor no está habilitado en su sistema todas las snaps se ejecutarán en modo `devel` lo que significa que tendrán el mismo, acceso sin restricciones a su sistema como las aplicaciones instaladas desde los repositorios Arch Linux.
+**Nota:** Si AppArmor no está habilitado en su sistema todas las snaps se ejecutarán en modo `devel` lo que significa que tendrán el mismo, acceso sin restricciones a su sistema como las aplicaciones instaladas desde los repositorios Arch Linux.
 
-Si está usando [AppArmor](/index.php?title=AppArmor_(Espa%C3%B1ol)&action=edit&redlink=1 "AppArmor (Español) (page does not exist)"):
+Si está usando [AppArmor](/index.php/AppArmor "AppArmor"):
 
 ```
  $ systemctl enable --now apparmor.service
@@ -49,9 +52,9 @@ Si está usando [AppArmor](/index.php?title=AppArmor_(Espa%C3%B1ol)&action=edit&
 
 ## Configuración
 
-Para lanzar el daemon `snapd` cuando *snap* intente usarlo, [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") y/o [habilite](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") `snapd.socket`
+Para lanzar el demonio `snapd` cuando *snap* intente usarlo, [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") y/o [habilite](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") `snapd.socket`
 
-## Uso
+## Utilización
 
 La herramienta *snap* es utilizada para administrar las snaps.
 
@@ -127,11 +130,11 @@ Los snaps pueden ser removidos al ejecutar:
 
 ```
 
-## Tips y trucos
+## Consejos y trucos
 
 ### Snaps Clásicas
 
-Algunas snaps (e.j. Skype y Pycharm) use el confinamiento clásico. Sin embargo, el confinamiento clásico requiere el directorio `/snap`, que no es compatible con FHS. Por lo tanto, el paquete snapd no lleva éste directorio. Sin embargo, si el usuario lo desea, puede crear manualmente un enlace simbólico de `/snap` a `/var/lib/snapd/snap`, para permitir la instalación de snaps clásicas:
+Algunas snaps (e.j. Skype y Pycharm) usan el confinamiento clásico. Sin embargo, el confinamiento clásico requiere el directorio `/snap`, que no es compatible con FHS. Por lo tanto, el paquete snapd no lleva éste directorio. Sin embargo, si el usuario lo desea, puede crear manualmente un enlace simbólico de `/snap` a `/var/lib/snapd/snap`, para permitir la instalación de snaps clásicas:
 
 ```
 # ln -s /var/lib/snapd/snap /snap
@@ -201,6 +204,6 @@ Las listas de correo relacionadas con Arch Linux y otros canales oficiales de so
 
 ## Véase también
 
-*   [Sitio official](https://snapcraft.io/)
-*   [repositorio GitHub](https://github.com/snapcore/snapd)
-*   [arstechnica article](http://arstechnica.com/information-technology/2016/06/goodbye-apt-and-yum-ubuntus-snap-apps-are-coming-to-distros-everywhere/) (06/16) acerca de snaps de Ubuntu que estarán disponibles para Arch y otras distribuciones
+*   [Sitio oficial](https://snapcraft.io/)
+*   [Repositorio GitHub](https://github.com/snapcore/snapd)
+*   [Artículo de arstechnica](http://arstechnica.com/information-technology/2016/06/goodbye-apt-and-yum-ubuntus-snap-apps-are-coming-to-distros-everywhere/) (06/16) acerca de snaps de Ubuntu que estarán disponibles para Arch y otras distribuciones

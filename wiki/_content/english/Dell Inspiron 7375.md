@@ -16,6 +16,7 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
         *   [2.3.1 plugged](#plugged)
         *   [2.3.2 On battery](#On_battery)
     *   [2.4 Fan Control](#Fan_Control)
+    *   [2.5 Wifi](#Wifi)
 *   [3 Others](#Others)
 
 ## Hardware Details
@@ -129,6 +130,10 @@ once you have kernel 4.20, this setup plus tlp will give you the same battery ti
 I'm having good results tuning with [nbfc](https://aur.archlinux.org/packages/nbfc/) I made a config based on Dell Inspiron 7348 avivable on [my nbfc fork](https://github.com/danielfm123/nbfc/blob/master/Configs/Dell%20Inspiron%207375.xml) witch has more than the default 2 levels of speed in bios.
 
 Ill pull request upon more testing
+
+### Wifi
+
+Broadcom wifi works.... sometimes.... you will need linux firmware package.(if someone can write a tutorial, please help i was using manjaro) I switched for an intel ac 8260 and now works perfect, as a reference, [amazon link](https://www.amazon.com/gp/product/B0197W86IE/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) to the product.
 
 ## Others
 

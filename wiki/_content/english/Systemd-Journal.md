@@ -1,5 +1,3 @@
-See [systemd](/index.php/Systemd "Systemd") for the main article.
-
 *systemd* has its own logging system called the journal; therefore, running a `syslog` daemon is no longer required. To read the log, use:
 
 ```
@@ -7,7 +5,7 @@ See [systemd](/index.php/Systemd "Systemd") for the main article.
 
 ```
 
-In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If that directory is deleted, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated if `Storage=persistent` is added to journald.conf and `systemd-journald.service` is [restarted](/index.php/Restart "Restart") (or the system is rebooted).
+In Arch Linux, the directory `/var/log/journal/` is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package, and the journal (when `Storage=` is set to `auto` in `/etc/systemd/journald.conf`) will write to `/var/log/journal/`. If that directory is deleted, *systemd* will **not** recreate it automatically and instead will write its logs to `/run/systemd/journal` in a nonpersistent way. However, the folder will be recreated if `Storage=persistent` is added to `journald.conf` and `systemd-journald.service` is [restarted](/index.php/Restart "Restart") (or the system is rebooted).
 
 Systemd journal classifies messages by [Priority level](#Priority_level) and [Facility](#Facility). Logging classification corresponds to classic [Syslog](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog") protocol ([RFC 5424](https://tools.ietf.org/html/rfc5424)).
 

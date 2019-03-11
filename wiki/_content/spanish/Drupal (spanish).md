@@ -10,7 +10,7 @@ Artículos relacionados
 *   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
 *   [SQLite](/index.php/SQLite "SQLite")
 *   [Sendmail](/index.php/Sendmail "Sendmail")
-*   [PostFix](/index.php/PostFix "PostFix")
+*   [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)")
 *   [Exim](/index.php/Exim "Exim")
 
 De [Wikipedia](https://en.wikipedia.org/wiki/es:Drupal "wikipedia:es:Drupal"):
@@ -21,7 +21,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:Drupal "wikipedia:es:Drupal"):
 
 	*Es un programa libre, con licencia GNU/GPL, escrito en PHP, combinable con MySQL, desarrollado y mantenido por una activa comunidad de usuarios. Destaca por la calidad de su código y de las páginas generadas, el respeto de los estándares de la web, y un énfasis especial en la usabilidad y consistencia de todo el sistema.*
 
-Este artículo describe cómo configurar Drupal y [Apache](/index.php/Apache_HTTP_Server_(Espa%C3%B1ol) "Apache HTTP Server (Español)"), [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP_(Espa%C3%B1ol) "PHP (Español)") y [Postfix](/index.php/Postfix "Postfix") para trabajar con él. Se da por hecho que tiene algún tipo de servidor [LAMP](/index.php/LAMP_(Espa%C3%B1ol) "LAMP (Español)") (Linux, Apache, MySQL, PHP), LAPP (Linux, Apache, PostgreSQL, PHP) o LASP (Linux, Apache, SQLite, PHP) ya configurado.
+Este artículo describe cómo configurar Drupal y [Apache](/index.php/Apache_HTTP_Server_(Espa%C3%B1ol) "Apache HTTP Server (Español)"), [MySQL](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") o [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP_(Espa%C3%B1ol) "PHP (Español)") y [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)") para trabajar con él. Se da por hecho que tiene algún tipo de servidor [LAMP](/index.php/LAMP_(Espa%C3%B1ol) "LAMP (Español)") (Linux, Apache, MySQL, PHP), LAPP (Linux, Apache, PostgreSQL, PHP) o LASP (Linux, Apache, SQLite, PHP) ya configurado.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -148,7 +148,7 @@ Finalmente, [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "
 
 ### Enviar correos
 
-Drupal necesita un MTA compatible con Sendmail como por ejemplo [Sendmail](/index.php/Sendmail "Sendmail"), [Postfix](/index.php/Postfix "Postfix") o [Exim](/index.php/Exim "Exim") si planea enviar correos desde su configuración local. Alternativamente, existen múltiples soluciones para enviar correos mediante servidores de correo externos a través de SMTP u otros medios como [SMTP](https://drupal.org/project/smtp) o [PHPMailer](https://drupal.org/project/phpmailer). Utilice la [página de búsqueda](https://www.drupal.org/search/site/mail) para encontrar más posibilidades.
+Drupal necesita un MTA compatible con Sendmail como por ejemplo [Sendmail](/index.php/Sendmail "Sendmail"), [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)") o [Exim](/index.php/Exim "Exim") si planea enviar correos desde su configuración local. Alternativamente, existen múltiples soluciones para enviar correos mediante servidores de correo externos a través de SMTP u otros medios como [SMTP](https://drupal.org/project/smtp) o [PHPMailer](https://drupal.org/project/phpmailer). Utilice la [página de búsqueda](https://www.drupal.org/search/site/mail) para encontrar más posibilidades.
 
 ### Programación con Cron
 

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Installation](#Installation)
@@ -51,6 +55,8 @@ Standard installation works per the [Installation guide](/index.php/Installation
 It is possible to use [Bumblebee](/index.php/Bumblebee "Bumblebee") to make the Nvidia GPU in this laptop usable. In order to avoid issues caused by the BIOS in the GS63VR when using bbswitch, add `acpi_osi=! acpi_osi="Windows 2009"` to the kernel options at boot (per [NVIDIA Optimus#Lockup issue (lspci hangs)](/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs) "NVIDIA Optimus")).
 
 For HDMI/DP ouput: [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee").
+
+As alternative, you can use [Optimus Manager](https://github.com/Askannz/optimus-manager). You can change between Intel and Nvidia restarting the X server and use external screen use nouveau driver.
 
 ### Touchpad
 

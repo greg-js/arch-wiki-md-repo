@@ -65,8 +65,9 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [5.1.1 KDE/Openbox session](#KDE/Openbox_session)
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_/_multiple_monitors)
-    *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
-    *   [5.4 Disable Bookmarks Showing in Application Menu](#Disable_Bookmarks_Showing_in_Application_Menu)
+    *   [5.3 Configuring ICC profiles](#Configuring_ICC_profiles)
+    *   [5.4 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
+    *   [5.5 Disable Bookmarks Showing in Application Menu](#Disable_Bookmarks_Showing_in_Application_Menu)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fonts](#Fonts)
         *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
@@ -525,7 +526,13 @@ When replacing Kwin with a window manager which does not provide a Compositor (s
 
 ### Configuring monitor resolution / multiple monitors
 
-To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to *System Settings > Display and Monitor*.
+To enable display resolution management and multiple monitors in Plasma, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This provides additional options to *System Settings > Display and Monitor*.
+
+### Configuring ICC profiles
+
+To enable [ICC profiles](/index.php/ICC_profiles "ICC profiles") in Plasma, [install](/index.php/Install "Install") [colord-kde](https://www.archlinux.org/packages/?name=colord-kde). This provides additional options to *System Settings > Color Corrections*.
+
+ICC profiles can be imported using *Add Profile*.
 
 ### Disable opening application launcher with Super key (Windows key)
 

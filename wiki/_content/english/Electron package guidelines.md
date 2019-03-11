@@ -14,6 +14,7 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 *   [1 Using the system electron](#Using_the_system_electron)
     *   [1.1 Building compiled extensions against the system electron](#Building_compiled_extensions_against_the_system_electron)
+    *   [1.2 Using electron-builder with system electron](#Using_electron-builder_with_system_electron)
 *   [2 Architecture](#Architecture)
 *   [3 Directory structure](#Directory_structure)
 
@@ -49,6 +50,19 @@ HOME="$srcdir/.electron-gyp" npm install
 Set `HOME` to a path inside the `$srcdir` so the build process doesn't place any files in your real `HOME` directory. Make sure to adjust the path for all further commands that make use of the `.electron-gyp` cache.
 
 (more details [here](https://electronjs.org/docs/tutorial/using-native-node-modules)).
+
+### Using electron-builder with system electron
+
+Many projects use **electron-builder** to build and package the Javascript file and Electron binaries. By default electron-builder downloads the entire electron version that is defined in the package management file (e.g. `package.json`). This might not be desired if you want to use the system electron and save the bandwidth since you're going to throw away the electron binaries anyway. The electron-builder provides the configurations `electronDist` and `electronVersion`, to specify a custom path of Electron and the version the application is packaged for respectively.
+
+Find the electron-builder configuration file (e.g. `electron-builder.json`) and add the following settings:
+
+*   `electronDist` to `/usr/lib/electron` for [electron](https://www.archlinux.org/packages/?name=electron) or `/usr/lib/electron2` for [electron2](https://www.archlinux.org/packages/?name=electron2)
+*   `electronVersion` to the contents of `/usr/lib/electron/version` without the leading `v`
+
+Packages that apply this: [rocketchat-desktop](https://aur.archlinux.org/packages/rocketchat-desktop/) [ubports-installer-git](https://aur.archlinux.org/packages/ubports-installer-git/)
+
+[electron-bilder configuration](https://www.electron.build/configuration/configuration)
 
 ## Architecture
 

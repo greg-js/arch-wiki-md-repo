@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fdisk](/index.php/Fdisk "Fdisk"), revisada por última vez el **2018-12-17**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=559268) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fdisk](/index.php/Fdisk "Fdisk"), revisada por última vez el **2019-03-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=568258) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -115,7 +115,7 @@ Seleccione el tipo de identificación de la partición. El valor predeterminado,
 **Sugerencia:**
 
 *   Cuando se particiona, siempre es una buena idea seguir los valores predeterminados para los sectores de inicio y final de la partición. Además, especifique los tamaños de partición con la notación *+<tamaño>{M,G,...}*. Dichas particiones siempre se alinean de acuerdo con las propiedades del dispositivo.
-*   En un disco con particionado MBR, deje al menos 16.5 KiB de espacio libre al final del disco para simplificar la [conversión entre MBR y GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk") si alguna vez surge la necesidad.
+*   En un disco con una tabla de partición MBR, deje al menos 33 512-byte sectores (16.5 KiB) de espacio libre sin particionar al final del disco para permitir la [conversión entre MBR y GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
 *   La [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") requiere el tipo `EFI System`.
 *   [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") requiere una [partición de arranque BIOS](/index.php/BIOS_boot_partition_(Espa%C3%B1ol) "BIOS boot partition (Español)") con el tipo `BIOS boot` al instalar GRUB en un disco.
 *   Se recomienda utilizar `Linux swap` para cualquier partición [swap](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"), ya que systemd lo montará automáticamente.

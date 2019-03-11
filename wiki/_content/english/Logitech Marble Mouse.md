@@ -56,7 +56,7 @@ Section "InputClass"
   Driver       "libinput"
   Option       "ScrollMethod"    "button"
   Option       "ScrollButton"    "8"
-  Option       "MiddleEmulation" "on"
+  Option       "MiddleEmulation" "true"
 EndSection
 
 ```
@@ -77,7 +77,7 @@ Section "InputClass"
   Driver        "libinput"
   Option        "ScrollMethod"        "button"
   Option        "ScrollButton"        "9"
-  Option        "MiddleEmulation"     "on"
+  Option        "MiddleEmulation"     "true"
   Option        "HorizontalScrolling" "false"
   Option        "ButtonMapping"       "1 2 3 4 5 6 7 9 8"
 EndSection

@@ -191,7 +191,7 @@
 
 *   **ccrypt** — Консольная утилита для шифрования и расшифровки файлов и потоков
 
-	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
+	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://aur.archlinux.org/packages/ccrypt/)
 
 *   **[GnuPG](/index.php/GnuPG_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GnuPG (Русский)")** — Завершенная и бесплатная реализация стандарта OpenPGP от проекта GNU, как это определено в RFC4880\. Свободная замена PGP с открытым исходным кодом, чаще всего используемая для цифровых подписей пакетов
 

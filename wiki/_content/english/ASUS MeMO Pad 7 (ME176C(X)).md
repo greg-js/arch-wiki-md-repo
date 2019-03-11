@@ -68,7 +68,7 @@ The [ASUS MeMO Pad 7 (ME176C)](https://www.asus.com/Tablets/ASUS_MeMO_Pad_7_ME17
 The tablet can boot using [UEFI](/index.php/UEFI "UEFI") from the internal storage and USB(-OTG). It does not seem to be able to boot directly from an external SD card. However, it is possible to keep only the boot partition on the internal storage and have the root partition on an external SD card for dual/multi boot.
 
 1.  To boot from internal storage you need an UEFI boot loader. [me176c-boot](https://github.com/me176c-dev/me176c-boot#readme) is a fork of [systemd-boot](/index.php/Systemd-boot "Systemd-boot") with extra features for this tablet. See [me176c-boot - Installation](https://github.com/me176c-dev/me176c-boot#installation).
-2.  There is not enough space on the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") to use it as a boot partition. Follow [me176c-boot - Setting up an additional ESP partition](https://github.com/me176c-dev/me176c-boot#setting-up-an-additional-esp-partition) to set up a supplemental ESP on the APD (ASUS Product Demo) partition.
+2.  There is not enough space on the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") to use it as a boot partition. Follow [me176c-boot - Setting up an additional ESP partition](https://github.com/me176c-dev/me176c-boot#setting-up-an-additional-esp-partition) to set up a supplemental ESP on the APD (ASUS Product Demo) partition.
 
 ### Boot the live environment
 
@@ -115,7 +115,7 @@ Consider [removing](/index.php/Removing "Removing") [linux](https://www.archlinu
 
 ### Boot loader configuration
 
-There is no need to install any boot loader when using [me176c-boot](https://github.com/me176c-dev/me176c-boot#readme). However, you need to [create a loader configuration](/index.php/Systemd-boot#Adding_loaders "Systemd-boot") for your Arch Linux installation. The configuration needs to reside on the main [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). While in the chroot, mount the [ESP](/index.php/ESP "ESP") at `/mnt`:
+There is no need to install any boot loader when using [me176c-boot](https://github.com/me176c-dev/me176c-boot#readme). However, you need to [create a loader configuration](/index.php/Systemd-boot#Adding_loaders "Systemd-boot") for your Arch Linux installation. The configuration needs to reside on the main [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). While in the chroot, mount the [ESP](/index.php/ESP "ESP") at `/mnt`:
 
 ```
 # mount /dev/disk/by-partlabel/ESP /mnt
@@ -183,7 +183,7 @@ WiFi and Bluetooth share the same antenna, so the chip switches between WiFi and
 
 ### Screen rotation
 
-See [Automatic Rotation](/index.php/Tablet_PC#Automatic_Rotation "Tablet PC"). To rotate the [Linux console](/index.php/Linux_console "Linux console"), add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `fbcon=rotate:<direction>`, e.g. `fbcon=rotate:1` to rotate 90° (see [fbcon.txt](https://www.kernel.org/doc/Documentation/fb/fbcon.txt)).
+See [Automatic Rotation](/index.php/Tablet_PC#Automatic_rotation "Tablet PC"). To rotate the [Linux console](/index.php/Linux_console "Linux console"), add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `fbcon=rotate:<direction>`, e.g. `fbcon=rotate:1` to rotate 90° (see [fbcon.txt](https://www.kernel.org/doc/Documentation/fb/fbcon.txt)).
 
 ### Hall sensor
 

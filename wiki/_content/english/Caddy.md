@@ -1,6 +1,10 @@
 [Caddy](https://caddyserver.com/) is a HTTP/2 capable web server with automatic HTTPS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -23,6 +27,8 @@ gzip
 log ../access.log
 
 ```
+
+A more comprehensive example that would get you an A+ rating on [https://securityheaders.com](https://securityheaders.com) is [https://gist.github.com/Strykar/e5c0e32ef21f3d9f04eab3e42349f9d0](https://gist.github.com/Strykar/e5c0e32ef21f3d9f04eab3e42349f9d0)
 
 ## Usage
 

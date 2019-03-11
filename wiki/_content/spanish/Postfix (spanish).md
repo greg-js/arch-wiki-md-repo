@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Postfix](/index.php/Postfix "Postfix"), revisada por última vez el **2019-03-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Postfix&diff=0&oldid=567766) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Postfix](/index.php/Postfix "Postfix"), revisada por última vez el **2019-03-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Postfix&diff=0&oldid=568296) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -42,17 +42,17 @@ Este artículo se basa en [Servidor de correo](/index.php/Mail_server "Mail serv
         *   [6.1.1 Instalación](#Instalación_2)
         *   [6.1.2 Configuración](#Configuración_3)
         *   [6.1.3 Lista blanca](#Lista_blanca)
-        *   [6.1.4 Troubleshooting](#Troubleshooting)
+        *   [6.1.4 Solución de problemas](#Solución_de_problemas)
     *   [6.2 SpamAssassin](#SpamAssassin)
-        *   [6.2.1 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
-        *   [6.2.2 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_/_Sieve_(Mailfiltering))
-        *   [6.2.3 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_/_Sieve)
-    *   [6.3 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [6.4 Sender Policy Framework](#Sender_Policy_Framework)
-    *   [6.5 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
-*   [7 Troubleshooting](#Troubleshooting_2)
+        *   [6.2.1 Configuración genérica independiente de SpamAssassin](#Configuración_genérica_independiente_de_SpamAssassin)
+        *   [6.2.2 SpamAssassin combinado con Dovecot LDA / Sieve (Filtrado de correo)](#SpamAssassin_combinado_con_Dovecot_LDA_/_Sieve_(Filtrado_de_correo))
+        *   [6.2.3 SpamAssassin combinado con Dovecot LMTP / Sieve](#SpamAssassin_combinado_con_Dovecot_LMTP_/_Sieve)
+    *   [6.3 Procesamiento de correo basado en reglas](#Procesamiento_de_correo_basado_en_reglas)
+    *   [6.4 Marco de políticas de remitentes](#Marco_de_políticas_de_remitentes)
+    *   [6.5 Esquema de reescritura del remitente](#Esquema_de_reescritura_del_remitente)
+*   [7 Solución de problemas](#Solución_de_problemas_2)
     *   [7.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_"database_/etc/postfix/*.db_is_older_than_source_file_..")
-*   [8 See also](#See_also)
+*   [8 Véase también](#Véase_también)
 
 ## Instalación
 
@@ -462,43 +462,43 @@ ExecStart=/usr/bin/postgrey --inet=127.0.0.1:10030 \
 
 ```
 
-To add your own list of whitelisted clients in addition to the default ones, create the file `/etc/postfix/whitelist_clients.local` and enter one host or domain per line, then restart `postgrey.service` so the changes take effect.
+Para añadir su propia lista de clientes en la lista blanca además de los predeterminados, cree el archivo `/etc/postfix/whitelist_clients.local` e introduzca un dominio por línea, luego [reinicie](/index.php/Restart_(Espa%C3%B1ol) "Restart (Español)") `postgrey.service` para que los cambios surtan efecto.
 
-#### Troubleshooting
+#### Solución de problemas
 
-If you specify `--unix=/path/to/socket` and the socket file is not created ensure you have removed the default `--inet=127.0.0.1:10030` from the service file.
+Si especifica `--unix=/path/to/socket` y el archivo de socket no se crea, asegúrese de haber eliminado el valor predeterminado `--inet=127.0.0.1:10030` del archivo de servicio.
 
-For a full documentation of possible options see `perldoc postgrey`.
+Para una documentación completa de las posibles opciones véase `perldoc postgrey`.
 
 ### SpamAssassin
 
-This section describes how to integrate [SpamAssassin](/index.php/SpamAssassin "SpamAssassin").
+Esta sección describe cómo integrar [SpamAssassin](/index.php/SpamAssassin "SpamAssassin").
 
-#### SpamAssassin stand-alone generic setup
+#### Configuración genérica independiente de SpamAssassin
 
-**Note:** If you want to combine SpamAssassin and Dovecot Mail Filtering, ignore the next two lines and continue further down instead.
+**Nota:** Si desea combinar SpamAssassin y Dovecot Mail Filtering, ignore las siguientes dos líneas y continúe después.
 
-Edit `/etc/postfix/master.cf` and add the content filter under smtp.
+Edite `/etc/postfix/master.cf` y añada el filtro de contenido bajo smtp.
 
 ```
 smtp      inet  n       -       n       -       -       smtpd
   -o content_filter=spamassassin
 ```
 
-Also add the following service entry for SpamAssassin
+También añada la siguiente entrada de servicio para SpamAssassin.
 
 ```
 spamassassin unix -     n       n       -       -       pipe
   flags=R user=spamd argv=/usr/bin/vendor_perl/spamc -e /usr/bin/sendmail -oi -f ${sender} ${recipient}
 ```
 
-Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `spamassassin.service`.
+Ahora puede [iniciar](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") y [activar](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") `spamassassin.service`.
 
-#### SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)
+#### SpamAssassin combinado con Dovecot LDA / Sieve (Filtrado de correo)
 
-Set up LDA and the Sieve-Plugin as described in [Dovecot#Sieve](/index.php/Dovecot#Sieve "Dovecot"). But ignore the last line `mailbox_command...` .
+Configure LDA y Sieve-Plugin como se describe en [Dovecot#Sieve](/index.php/Dovecot#Sieve "Dovecot"). Pero ignore la última línea `mailbox_command...` .
 
-Instead add a pipe in `/etc/postfix/master.cf`:
+En su lugar, añada una tubería *(pipe)* en `/etc/postfix/master.cf`:
 
 ```
  dovecot   unix  -       n       n       -       -       pipe
@@ -506,18 +506,18 @@ Instead add a pipe in `/etc/postfix/master.cf`:
 
 ```
 
-And activate it in `/etc/postfix/main.cf`:
+Y actívelo en `/etc/postfix/main.cf`:
 
 ```
  virtual_transport = dovecot
 
 ```
 
-#### SpamAssassin combined with Dovecot LMTP / Sieve
+#### SpamAssassin combinado con Dovecot LMTP / Sieve
 
-Set up the LMTP and Sieve as described in [Dovecot#Sieve](/index.php/Dovecot#Sieve "Dovecot").
+Configure LMTP y Sieve como se describe en [Dovecot#Sieve](/index.php/Dovecot#Sieve "Dovecot").
 
-Edit `/etc/dovecot/conf.d/90-plugins.conf` and add:
+Edite `/etc/dovecot/conf.d/90-plugins.conf` y añada:
 
 ```
  sieve_before = /etc/dovecot/sieve.before.d/
@@ -528,7 +528,7 @@ Edit `/etc/dovecot/conf.d/90-plugins.conf` and add:
 
 ```
 
-Create the directory and put spamassassin in as a binary that can be ran by dovecot:
+Cree el directorio y coloque spamassassin como un binario que pueda ser ejecutado por dovecot:
 
 ```
  # mkdir /etc/dovecot/sieve-filter
@@ -536,7 +536,7 @@ Create the directory and put spamassassin in as a binary that can be ran by dove
 
 ```
 
-Create a new file, `/etc/dovecot/sieve.before.d/spamassassin.sieve` which contains:
+Cree un nuevo archivo, `/etc/dovecot/sieve.before.d/spamassassin.sieve` que contenga:
 
 ```
  require [ "vnd.dovecot.filter" ];
@@ -544,7 +544,7 @@ Create a new file, `/etc/dovecot/sieve.before.d/spamassassin.sieve` which contai
 
 ```
 
-Compile the sieve rules `spamassassin.svbin`:
+Compile las reglas sieve `spamassassin.svbin`:
 
 ```
  # cd /etc/dovecot/sieve.before.d
@@ -552,13 +552,13 @@ Compile the sieve rules `spamassassin.svbin`:
 
 ```
 
-Finally, [restart](/index.php/Restart "Restart") `dovecot.service`.
+Finalmente, [reinicie](/index.php/Restart_(Espa%C3%B1ol) "Restart (Español)") `dovecot.service`.
 
-### Rule-based mail processing
+### Procesamiento de correo basado en reglas
 
-With policy services one can easily finetune Postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/pkgbase/policyd) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
+Con los servicios de políticas se puede ajustar fácilmente el comportamiento de Postfix en la entrega de correos. [postfwd](https://www.archlinux.org/packages/?name=postfwd) y policyd ([policyd-mysql](https://aur.archlinux.org/packages/policyd-mysql/), [policyd-pgsql](https://aur.archlinux.org/packages/policyd-pgsql/) o [policyd-sqlite](https://aur.archlinux.org/packages/policyd-sqlite/)) proporcionan servicios para hacerlo. Esto le permite, por ejemplo, implementar listas grises y negras de remitentes y receptores, así como el control de políticas [SPF](/index.php/SPF "SPF").
 
-Policy services are standalone services and connected to Postfix like this:
+Los servicios de políticas son servicios independientes y están conectados a Postfix tal que así:
 
  `/etc/postfix/main.cf` 
 ```
@@ -569,19 +569,19 @@ smtpd_recipient_restrictions =
 
 ```
 
-Placing policy services at the end of the queue reduces load, as only legitimate mails are processed. Be sure to place it before the first permit statement to catch all incoming messages.
+La colocación de los servicios de políticas al final de la cola reduce la carga, ya que solo se procesan los correos legítimos. Asegúrese de colocarlo antes de la primera declaración permisiva para capturar todos los mensajes entrantes.
 
-### Sender Policy Framework
+### Marco de políticas de remitentes
 
-To use the [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") with Postfix, [install](/index.php/Install "Install") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/).
+Para utilizar el [marco de políticas de remitentes](/index.php/Sender_Policy_Framework "Sender Policy Framework") con Postfix, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/).
 
-Edit `/etc/python-policyd-spf/policyd-spf.conf` to your needs. An extensively commented version can be found at `/etc/python-policyd-spf/policyd-spf.conf.commented`. Pay some extra attention to the HELO check policy, as standard settings strictly reject HELO failures.
+Edite `/etc/python-policyd-spf/policyd-spf.conf` a sus necesidades. Una versión ampliamente comentada se puede encontrar en `/etc/python-policyd-spf/policyd-spf.conf.commented`. Preste especial atención a la política de verificación HELO, ya que la configuración estándar rechaza estrictamente los fallos HELO.
 
-In the main.cf add a timeout for the policyd:
+En el archivo `main.cf`, añada un tiempo de espera para policyd:
 
  `/etc/postfix/main.cf`  `policy-spf_time_limit = 3600s` 
 
-Then add a transport
+A continuación, añada un transporte:
 
  `/etc/postfix/master.cf` 
 ```
@@ -589,7 +589,7 @@ policy-spf  unix  -       n       n       -       0       spawn
      user=nobody argv=/usr/bin/policyd-spf
 ```
 
-Lastly you need to add the policyd to the `smtpd_recipient_restrictions`. To minimize load put it to the end of the restrictions but above any `reject_rbl_client` DNSBL line:
+Por último, debe añadir policyd a `smtpd_recipient_restrictions`. Para minimizar la carga, sitúela al final de las restricciones pero por encima de cualquier línea `reject_rbl_client` DNSBL:
 
  `/etc/postfix/main.cf` 
 ```
@@ -601,13 +601,13 @@ smtpd_recipient_restrictions=
      check_policy_service unix:private/policy-spf
 ```
 
-You can test your Setup with the following:
+Puede comprobar su configuración con lo siguiente:
 
  `/etc/python-policyd-spf/policyd-spf.conf`  `defaultSeedOnly = 0` 
 
-### Sender Rewriting Scheme
+### Esquema de reescritura del remitente
 
-To use the [Sender Rewriting Scheme](/index.php/Sender_Rewriting_Scheme "Sender Rewriting Scheme") with Postfix, [install](/index.php/Install "Install") [postsrsd](https://aur.archlinux.org/packages/postsrsd/) and adjust the settings:
+Para utilizar el [esquema de reescritura del remitente](/index.php/Sender_Rewriting_Scheme "Sender Rewriting Scheme") con Postfix, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [postsrsd](https://aur.archlinux.org/packages/postsrsd/) y ajuste la configuración:
 
  `/etc/postsrsd/postsrsd` 
 ```
@@ -621,7 +621,7 @@ RUN_AS=postsrsd
 CHROOT=/usr/lib/postsrsd
 ```
 
-Enable and start the daemon, making sure it runs after reboot as well. Then configure Postfix accordingly by tweaking the following lines:
+Active e inicie el demonio, asegurándose de que se ejecute también después de reiniciar. A continuación, configure Postfix en consecuencia ajustando las siguientes líneas:
 
  `/etc/postfix/main.cf` 
 ```
@@ -631,13 +631,13 @@ recipient_canonical_maps = tcp:localhost:10002
 recipient_canonical_classes= envelope_recipient,header_recipient
 ```
 
-Restart Postfix and start forwarding mail.
+Reinicie Postfix y comience a reenviar correo.
 
-## Troubleshooting
+## Solución de problemas
 
 ### Warning: "database /etc/postfix/*.db is older than source file .."
 
-If you get one or both warnings with `journalctl`
+Si recibe alguna o ambas advertencias con `journalctl`:
 
 ```
 warning: database /etc/postfix/virtual.db is older than source file /etc/postfix/virtual
@@ -645,7 +645,7 @@ warning: database /etc/postfix/transport.db is older than source file /etc/postf
 
 ```
 
-then you can fix it by using these commands depending on the messages you get
+Entonces puede solucionarlo utilizando estas órdenes dependiendo de los mensajes que reciba:
 
 ```
 postmap /etc/postfix/transport
@@ -653,10 +653,10 @@ postmap /etc/postfix/virtual
 
 ```
 
-and restart `postfix.service`
+Y [reiniciar](/index.php/Restart_(Espa%C3%B1ol) "Restart (Español)") `postfix.service`.
 
-## See also
+## Véase también
 
-*   [Official documentation](http://www.postfix.org/documentation.html)
-*   [Postfix Ubuntu documentation](https://help.ubuntu.com/community/Postfix)
-*   [Out of Office](http://linox.be/index.php/2005/07/13/44/) for Squirrelmail
+*   [Documentación oficial](http://www.postfix.org/documentation.html)
+*   [Documentación de Ubuntu sobre Postfix](https://help.ubuntu.com/community/Postfix)
+*   [Fuera de la oficina](http://linox.be/index.php/2005/07/13/44/) para Squirrelmail

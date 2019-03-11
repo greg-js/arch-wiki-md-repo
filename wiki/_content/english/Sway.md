@@ -237,28 +237,28 @@ read lcd < /tmp/lcd
 
 Capturing the screen can be done using [grim](https://www.archlinux.org/packages/?name=grim) for screenshots and [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) for video. Optionally, [slurp](https://www.archlinux.org/packages/?name=slurp) can be used to select the part of the screen to capture.
 
-Take a screenshot of the whole screen :
+Take a screenshot of the whole screen:
 
 ```
 grim screenshot.png
 
 ```
 
-Take a screenshot of a part of the screen :
+Take a screenshot of a part of the screen:
 
 ```
 grim -g "$(slurp)" screenshot.png
 
 ```
 
-Capture a video of the whole screen :
+Capture a video of the whole screen:
 
 ```
 wf-recorder -o recording.mp4
 
 ```
 
-Capture a video of a part of the screen :
+Capture a video of a part of the screen:
 
 ```
 wf-recorder -g "$(slurp)"

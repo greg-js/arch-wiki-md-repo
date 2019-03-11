@@ -37,13 +37,10 @@
     *   [6.2 Слишком низкое значение количества процессов/потоков по умолчанию](#Слишком_низкое_значение_количества_процессов/потоков_по_умолчанию)
     *   [6.3 Ошибка инициализации графического драйвера: devmapper](#Ошибка_инициализации_графического_драйвера:_devmapper)
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
-    *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
+    *   [6.5 Неверная ссылка между устройствами в ядре 4.19.1](#Неверная_ссылка_между_устройствами_в_ядре_4.19.1)
     *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
 *   [7 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
-*   [8 Сборка образа i686](#Сборка_образа_i686)
-    *   [8.1 Образ ArchLinux](#Образ_ArchLinux)
-    *   [8.2 Образ Debian](#Образ_Debian)
-*   [9 Смотрите также](#Смотрите_также)
+*   [8 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -389,16 +386,16 @@ ERROR: Failed to create some/path/to/file: No space left on device
 
 **Примечание:** Есть некоторые отличия XFS Quota по сравнению со стандартом Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) рекомендуется к прочтению.
 
-### Invalid cross-device link in kernel 4.19.1
+### Неверная ссылка между устройствами в ядре 4.19.1
 
-If commands like *dpkg* fail to run in docker, e.g:
+Если команды типа *dpkg* не запускаются в Docker, например:
 
 ```
 dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid cross-device link
 
 ```
 
-Either add a `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or downgrade to 4.18.x until [this issue](https://github.com/docker/for-linux/issues/480) is resolved. More info in the [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+Либо добавьте `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter")или поставьте версию 4.18.x, в которой [эта проблема](https://github.com/docker/for-linux/issues/480) решена. Больше информации в [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
 
 ### CPUACCT missing in docker with Linux-ck
 
@@ -420,58 +417,6 @@ LXC может быть удален в ближайшем будущем, од�
 [Service]
 ExecStart=
 ExecStart=/usr/bin/docker -d -e lxc
-
-```
-
-## Сборка образа i686
-
-Для архитектуры i686, мы **не** можем использовать образ x86_64, полученный с помощью следующей команды:
-
-```
-# docker pull base/archlinux
-
-```
-
-### Образ ArchLinux
-
-Вместо этого, посетите [реестр base/archlinux](https://registry.hub.docker.com/u/base/archlinux/) и перейдите по ссылке `mkimage-arch.sh` для скачивания `mkimage-arch.sh` и `mkimage-arch-pacman.conf`. Затем сделайте скрипт исполняемым:
-
-```
-$ chmod +x mkimage-arch.sh
-
-```
-
-и выполните следущее:
-
-```
-# LC_ALL=C ./mkimage-arch.sh # LC_ALL=C потому что скрипт парсит вывод консоли
-
-```
-
-Скрипт проверит наличие необходимых утилит. В случае их отсутствия будет предложено их установить.
-
-```
-$ docker run -t -i --rm archlinux /bin/bash # для запуска
-
-```
-
-Для медленных сетевых подключений и/или на слабых машинах можно увеличить тайм-аут сборки:
-
-```
-$ sed -i 's/timeout 60/timeout 120/' mkimage-arch.sh
-
-```
-
-### Образ Debian
-
-Собрать образ Debian можно с помощью [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"):
-
-```
-$ mkdir wheezy-chroot
-# debootstrap wheezy ./wheezy-chroot [http://http.debian.net/debian/](http://http.debian.net/debian/)
-$ cd wheezy-chroot
-# tar cpf - . | docker import - debian
-$ docker run -t -i --rm debian /bin/bash
 
 ```
 

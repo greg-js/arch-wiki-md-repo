@@ -1,18 +1,18 @@
-Related articles
+Artículos relacionados
 
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-*   [systemd](/index.php/Systemd "Systemd")
+*   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
 *   [Power management](/index.php/Power_management "Power management")
 
-Currently there are three methods of suspending available: **suspend to RAM** (usually called just **suspend**), **suspend to disk** (usually known as **hibernate**), and **hybrid suspend** (sometimes aptly called **suspend to both**):
+Actualmente hay tres métodos de suspensión disponibles: **suspender en RAM** (llamado solo **suspender**), **suspender en disco** (conocido como **hibernar**) y **suspensión híbrida** (a veces llamado **suspender a ambos**):
 
-*   **Suspend to RAM** method cuts power to most parts of the machine aside from the RAM, which is required to restore the machine's state. Because of the large power savings, it is advisable for laptops to automatically enter this mode when the computer is running on batteries and the lid is closed (or the user is inactive for some time).
+*   **Suspender en RAM**: Este método corta la corriente en muchas partes del sistema excepto de la RAM, que es necesaria para restaurar el estado de la máquina, de ahí el gran ahorro energético. Es recomendable para los portátiles que entre en este modo automáticamente cuando el ordenador esta consumiendo baterías y la pantalla está cerrada (o el usuario está inactivo por un periodo de tiempo).
 
-*   **Suspend to disk** method saves the machine's state into [swap space](/index.php/Swap_space "Swap space") and completely powers off the machine. When the machine is powered on, the state is restored. Until then, there is zero power consumption.
+*   **Suspender en disco**: Este método guarda el estado de la máquina en [espacio swap](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") y apaga completamente la máquina. Cuando la máquina se enciende el estado se restaura. Hasta entonces no hay consumo de energía.
 
-*   **Suspend to both** method saves the machine's state into swap space, but does not power off the machine. Instead, it invokes usual suspend to RAM. Therefore, if the battery is not depleted, the system can resume from RAM. If the battery is depleted, the system can be resumed from disk, which is much slower than resuming from RAM, but the machine's state has not been lost.
+*   **Suspensión híbrida**: Este método guarda el estado en el espacio swap, pero no apaga la máquina. En su lugar, invoca un suspender en RAM. De esta forma si la batería no se agota, el sistema puede continuar desde RAM. Si se agota, el sistema puede continuar desde el disco, que es más lento que continuar desde RAM, pero el estado de la máquina no se pierde.
 
-There are multiple low level interfaces (backends) providing basic functionality, and some high level interfaces providing tweaks to handle problematic hardware drivers/kernel modules (e.g. video card re-initialization).
+Hay varias interfaces de bajo nivel (backends) que proporcionan una funcionalidad básica y varias interfaces de alto nivel que proporcionan retoques para encargarse de los controladores de hardware problemáticos/módulos kernel (p.ej. reinicialización de la tarjeta de vídeo).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -68,6 +68,8 @@ See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Powe
 
 In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to [configure the initramfs](#Configure_the_initramfs). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
 
+**Note:** See [Dm-crypt/Swap encryption#With suspend-to-disk support](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") when using [encryption](/index.php/Encryption "Encryption").
+
 ### About swap partition/file size
 
 Even if your swap partition is smaller than RAM, you still have a big chance of hibernating successfully. According to [kernel documentation](https://www.kernel.org/doc/Documentation/power/interface.txt):
@@ -111,6 +113,8 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 ```
 
 In the example the value of `*swap_file_offset*` is the first `38912` with the two periods.
+
+**Tip:** The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
 
 **Note:**
 

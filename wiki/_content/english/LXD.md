@@ -17,7 +17,7 @@ Related articles
     *   [1.4 Accessing LXD as a unprivileged user](#Accessing_LXD_as_a_unprivileged_user)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 Create container](#Create_container)
-*   [3 Advance usage](#Advance_usage)
+*   [3 Advanced usage](#Advanced_usage)
     *   [3.1 LXD Networking](#LXD_Networking)
         *   [3.1.1 Example network configuration](#Example_network_configuration)
     *   [3.2 Modify processes and files limit](#Modify_processes_and_files_limit)
@@ -89,7 +89,7 @@ $ lxc launch images:archlinux/current/amd64 arch
 
 ```
 
-## Advance usage
+## Advanced usage
 
 ### LXD Networking
 

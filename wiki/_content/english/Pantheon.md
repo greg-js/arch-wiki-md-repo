@@ -103,13 +103,13 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-git](https://aur.archlinux.org/packages/pantheon-files-git/): File explorer developed from Marlin
 *   [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) or [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/): Terminal emulator
 *   [pantheon-code](https://www.archlinux.org/packages/?name=pantheon-code) or [pantheon-code-git](https://aur.archlinux.org/packages/pantheon-code-git/): Text editor formerly known as "Scratch"
-*   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
+*   [pantheon-calculator](https://www.archlinux.org/packages/?name=pantheon-calculator) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
 *   [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) or [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player formerly known as "Noise"
 *   [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) or [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player formerly known as "Audience"
 *   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar application formerly known as "Maya", integrates with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
 *   [epiphany-pantheon](https://aur.archlinux.org/packages/epiphany-pantheon/): Web browser replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
 *   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client developed from [geary](https://www.archlinux.org/packages/?name=geary)
-*   [pantheon-screenshot](https://aur.archlinux.org/packages/pantheon-screenshot/) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
+*   [pantheon-screenshot](https://www.archlinux.org/packages/?name=pantheon-screenshot) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster
 *   [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) or [pantheon-photos-git](https://aur.archlinux.org/packages/pantheon-photos-git/): Photo manager developed from [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 *   [pantheon-camera-git](https://aur.archlinux.org/packages/pantheon-camera-git/): Webcam app developed from [snap-photobooth](https://aur.archlinux.org/packages/snap-photobooth/)

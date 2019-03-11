@@ -137,9 +137,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 	[http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html](http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html) || [libfdk-aac](https://www.archlinux.org/packages/?name=libfdk-aac)
 
-*   **[Nero AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding")** — AAC audio codec (decode/encode/tag) all-in-one.
+*   **[Nero AAC](https://en.wikipedia.org/wiki/Nero_AAC_Codec "wikipedia:Nero AAC Codec")** — Nero AAC reference quality MPEG-4 and 3GPP audio codec. (deprecated)
 
-	[http://www.nero.com/eng/company/about-nero/nero-aac-codec.php](http://www.nero.com/eng/company/about-nero/nero-aac-codec.php) || [neroaac](https://aur.archlinux.org/packages/neroaac/)
+	[https://www.nero.com/](https://www.nero.com/) || [neroaac-bin](https://aur.archlinux.org/pkgbase/neroaac-bin/)
 
 ### Image codecs
 

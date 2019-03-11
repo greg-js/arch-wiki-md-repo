@@ -302,7 +302,7 @@ Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utiliti
 
 ### Entrega de correo electrónico local
 
-Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix "Postfix"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm_(Espa%C3%B1ol) "Fdm (Español)").
+Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm_(Espa%C3%B1ol) "Fdm (Español)").
 
 ### Impresión
 

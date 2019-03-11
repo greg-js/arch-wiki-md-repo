@@ -577,7 +577,7 @@ XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 --continue-at - --f
 ...
 ```
 
-**Note:** Due to work in progress for database signatures, you might get 404 for the signatures. Depending on your [Pacman/Package_signing#Configuring pacman](/index.php/Pacman/Package_signing#Configuring_pacman "Pacman/Package signing"), it should be harmless.
+**Note:** Due to work in progress for database signatures, you might get 404 for the signatures. Depending on your [Pacman/Package signing#Configuring pacman](/index.php/Pacman/Package_signing#Configuring_pacman "Pacman/Package signing"), it should be harmless.
 
 ## Java
 

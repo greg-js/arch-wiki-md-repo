@@ -84,11 +84,11 @@ Integrated graphics works well out of the box.
 Works but additional configuration is needed. (see *[[3]](https://github.com/Bumblebee-Project/bbswitch/issues/140#issuecomment-394180574))
 
 *   Disable runtime PM:
-    *   If [tlp](/index.php/Tlp "Tlp") is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
+    *   If [TLP](/index.php/TLP "TLP") is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
     *   If [laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools") is installed, add the graphic card to **AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST** in **/etc/laptop-mode/conf.d/runtime-pm.conf**
 *   Uninstall or disable bbswitch
 *   Install bumblebee and set **PMMethod=none** in nvidia section
-*   Install [nvidia](/index.php/Nvidia "Nvidia") driver
+*   Install [NVIDIA](/index.php/NVIDIA "NVIDIA") driver
 *   Reboot
 
 Note: This is just one configuration that worked. There are more configurations that might work just as well or even better. Sometimes nvidia driver can not be unloaded because some process is still using it.

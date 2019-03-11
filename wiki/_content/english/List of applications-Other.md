@@ -154,7 +154,7 @@ These applications support time, task and contacts management.
 
 *   **Pantheon Calendar** — Desktop calendar app designed for elementary OS.
 
-	[https://github.com/elementary/calendar](https://github.com/elementary/calendar) || [pantheon-calendar](https://aur.archlinux.org/packages/pantheon-calendar/)
+	[https://github.com/elementary/calendar](https://github.com/elementary/calendar) || [pantheon-calendar](https://www.archlinux.org/packages/?name=pantheon-calendar)
 
 *   **TkRemind** — Sophisticated calendar and alarm program.
 

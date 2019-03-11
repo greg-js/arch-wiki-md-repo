@@ -502,7 +502,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **ccrypt** — A command-line utility for encrypting and decrypting files and streams.
 
-	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
+	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://aur.archlinux.org/packages/ccrypt/)
 
 *   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — A security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard.
 

@@ -10,22 +10,29 @@
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Important note](#Important_note)
-*   [2 Version compatibility](#Version_compatibility)
-*   [3 Building a cross compiler](#Building_a_cross_compiler)
-*   [4 Package naming](#Package_naming)
-*   [5 File placement](#File_placement)
-*   [6 Example](#Example)
-*   [7 Hows and whys](#Hows_and_whys)
-    *   [7.1 Why not installing into /opt?](#Why_not_installing_into_/opt?)
-    *   [7.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing?)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message?)
-    *   [8.2 What does this error [error message] means?](#What_does_this_error_[error_message]_means?)
-    *   [8.3 Why do files get installed in wrong places?](#Why_do_files_get_installed_in_wrong_places?)
-*   [9 See also](#See_also)
+*   [1 What is cross compiling?](#What_is_cross_compiling?)
+*   [2 Important note](#Important_note)
+*   [3 Version compatibility](#Version_compatibility)
+*   [4 Building a cross compiler](#Building_a_cross_compiler)
+*   [5 Package naming](#Package_naming)
+*   [6 File placement](#File_placement)
+*   [7 Example](#Example)
+*   [8 Hows and whys](#Hows_and_whys)
+    *   [8.1 Why not installing into /opt?](#Why_not_installing_into_/opt?)
+    *   [8.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing?)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message?)
+    *   [9.2 What does this error [error message] means?](#What_does_this_error_[error_message]_means?)
+    *   [9.3 Why do files get installed in wrong places?](#Why_do_files_get_installed_in_wrong_places?)
+*   [10 See also](#See_also)
 
 **Tip:** As alternative for creation of cross-compiler packages you could use [crosstool-ng](http://crosstool-ng.org/) and create you own toolchain in fully automated way. crosstool-ng can be found on [crosstool-ng](https://aur.archlinux.org/packages/crosstool-ng/).
+
+## What is cross compiling?
+
+Cross compiling is producing run time binary format other than the default format the compiler is tuned for. A confusing example is [elf](https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "wikipedia:https://en.wikipedia.org/wiki/Executable and Linkable Format") and [a.out](https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/a.out "wikipedia:https://en.wikipedia.org/wiki/a.out"). Most, if not all, Linux machines compilers will, by default, produce an elf. Since that is the native Linux format. Most of them are able to produce an a.out format with a one or two command line options. Even though it is rather easy to produce with the native Linux compilers an a.out, this is still, per stricter definition, a cross compiling process.
+
+To emphasize a common mistake, one can cross compile for the same hardware architecture the compiler is run on. Compiling on Linux x86_64 machine to be run on an MS x86_64 machine is cross compiling.
 
 ## Important note
 

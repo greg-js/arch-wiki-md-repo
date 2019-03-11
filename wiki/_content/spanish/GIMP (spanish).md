@@ -1,6 +1,9 @@
+**Estado de la traducción**
+Este artículo es una traducción de [GIMP](/index.php/GIMP "GIMP"), revisada por última vez el **2019-02-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GIMP&diff=0&oldid=567416) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
-*   [GIMP/CMYK support (Español)](/index.php?title=GIMP/CMYK_support_(Espa%C3%B1ol)&action=edit&redlink=1 "GIMP/CMYK support (Español) (page does not exist)")
+*   [GIMP/CMYK support](/index.php/GIMP/CMYK_support "GIMP/CMYK support")
 *   [List of applications/Multimedia (Español)#Editores de imágenes matriciales o ráster](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol)#Editores_de_imágenes_matriciales_o_ráster "List of applications/Multimedia (Español)")
 
 [GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP") es un potente programa de edición de imágenes ráster, y comunmente usado para el retoque fotográico, composición de imágenes, y trabajo de diseño gráfico general. Puede ser usado como un simple programa de pintura, un programa de calidad de retoque fotográfico de calidad profesional, un sistema en línea de procesamiento por lotes, un procesador de imágenes de producción en masa, un convertidor de formato de imagen, etc.
@@ -12,7 +15,7 @@ Artículos relacionados
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
-*   [2 Tips y trucos](#Tips_y_trucos)
+*   [2 Consejos y trucos](#Consejos_y_trucos)
     *   [2.1 Subtítulos](#Subtítulos)
     *   [2.2 Crear un círculo](#Crear_un_círculo)
 *   [3 Solución de problemas](#Solución_de_problemas)
@@ -25,9 +28,9 @@ Artículos relacionados
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gimp](https://www.archlinux.org/packages/?name=gimp).
 
-**Tip:** GIMP implementa un de sistema de complementos y los repositorios ([official](https://www.archlinux.org/packages/?sort=&q=gimp&maintainer=&flagged=), [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=gimp&outdated=off&SB=n&SO=a&PP=50&do_Search=Go)) contienen más complementos que los listados en las dependencias opcionales del paquete.
+**Sugerencia:** GIMP implementa un de sistema de complementos y los repositorios ([official](https://www.archlinux.org/packages/?sort=&q=gimp&maintainer=&flagged=), [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=gimp&outdated=off&SB=n&SO=a&PP=50&do_Search=Go)) contienen más complementos que los listados en las dependencias opcionales del paquete.
 
-## Tips y trucos
+## Consejos y trucos
 
 ### Subtítulos
 
@@ -47,7 +50,7 @@ Para dibujar un círculo en GIMP siga éstos pasos:
 3.  Clic *Selección* y *Encoger*
 4.  Presione `Delete`
 
-**Tip:** *Agrandar* y *Borde* dan el mismo resultado.
+**Sugerencia:** *Agrandar* y *Borde* dan el mismo resultado.
 
 ## Solución de problemas
 
@@ -83,17 +86,17 @@ Agregue lo siguiente `~/.config/GIMP/2.10/fonts.conf` si tiene instaladas [noto-
 
 ```
 
-Vea [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) y [Configuración de fuentes#Lista blanca y lista negra de fuentes](/index.php/Font_configuration_(Espa%C3%B1ol) "Font configuration (Español)") para más información.
+Vea [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) y [Lista blanca y lista negra de fuentes](/index.php/Font_configuration_(Espa%C3%B1ol)#Lista_blanca_y_lista_negra_de_fuentes "Font configuration (Español)") para más información.
 
 ### Archivos PDF
 
 GIMP requiere de la biblioteca [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib) para abrir archivos PDF o informará que son no están reconocidos.
 
-Dado que GIMP rasteriza archivos PDF desde el principio, no explotará las capacidades intrínsecas de los PDF mientras se editan. Otros programas (como [LibreOffice Draw](/index.php/LibreOffice "LibreOffice")) pueden ser usados para una mejor edición de archivos PDF.
+Dado que GIMP rasteriza archivos PDF desde el principio, no explotará las capacidades intrínsecas de los PDF mientras se editan. Otros programas (como [LibreOffice Draw](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)")) pueden ser usados para una mejor edición de archivos PDF.
 
 ## Véase también
 
-*   [Official website](https://www.gimp.org/)
+*   [Sitio web oficial](https://www.gimp.org/)
 *   [debian:GIMP](https://wiki.debian.org/GIMP "debian:GIMP")
 *   [GIMP Magazine](https://gimpmagazine.org/resources/) - Index of GIMP resources, tutorials, communities
-*   [GIMP Forum](http://gimp-forum.net/)
+*   [Foro de GIMP](http://gimp-forum.net/)

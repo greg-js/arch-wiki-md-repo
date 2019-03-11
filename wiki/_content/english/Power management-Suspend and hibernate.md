@@ -68,6 +68,8 @@ See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Powe
 
 In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to [configure the initramfs](#Configure_the_initramfs). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
 
+**Note:** See [Dm-crypt/Swap encryption#With suspend-to-disk support](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") when using [encryption](/index.php/Encryption "Encryption").
+
 ### About swap partition/file size
 
 Even if your swap partition is smaller than RAM, you still have a big chance of hibernating successfully. According to [kernel documentation](https://www.kernel.org/doc/Documentation/power/interface.txt):
@@ -111,6 +113,8 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 ```
 
 In the example the value of `*swap_file_offset*` is the first `38912` with the two periods.
+
+**Tip:** The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
 
 **Note:**
 

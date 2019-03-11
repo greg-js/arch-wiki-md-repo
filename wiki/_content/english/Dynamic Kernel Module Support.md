@@ -168,16 +168,16 @@ Here is an example package that edits `dkms.conf` according to the package name 
 
  `PKGBUILD` 
 ```
-# Maintainer: foo <foo(at)gmail(dot)com>
-# Contributor: bar <bar(at)gmai(dot)com>
+# Maintainer: foo <foo(at)example(dot)org>
+# Contributor: bar <bar(at)example(dot)org>
 
-_pkgbase=amazing
-pkgname=amazing-dkms
+_pkgbase=example
+pkgname=example-dkms
 pkgver=1
 pkgrel=1
-pkgdesc="The Amazing kernel modules (DKMS)"
+pkgdesc="The Example kernel modules (DKMS)"
 arch=('i686' 'x86_64')
-url="[https://www.amazing.com/](https://www.amazing.com/)"
+url="[https://www.example.org/](https://www.example.org/)"
 license=('GPL2')
 depends=('dkms')
 conflicts=("${_pkgbase}")

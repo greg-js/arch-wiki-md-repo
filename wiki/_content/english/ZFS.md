@@ -1244,9 +1244,9 @@ and you would get snapshots created before and after the supplied command, and a
 
 As of [PR #261](https://github.com/archzfs/archzfs/pull/261), `archzfs` supports SSH unlocking of natively-encrypted ZFS datasets. This section describes how to use this feature, and is largely based on [dm-crypt/Specialties#Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](/index.php/Dm-crypt/Specialties#Remote_unlocking_(hooks:_netconf,_dropbear,_tinyssh,_ppp) "Dm-crypt/Specialties").
 
-1.  Install [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) to provide hooks for setting up early user space networking.
-2.  Choose an SSH server to use in early user space. The options are [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/) or [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/), and are mutually exclusive.
-    1.  If using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), it is also recommended to install [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/). This tool converts an existing OpenSSH hostkey to the TinySSH key format, preserving the key fingerprint and avoiding connection warnings. The TinySSH and Dropbear mkinitcpio install scripts will automatically convert existing hostkeys when generating a new initcpio image.
+1.  Install [mkinitcpio-netconf](https://www.archlinux.org/packages/?name=mkinitcpio-netconf) to provide hooks for setting up early user space networking.
+2.  Choose an SSH server to use in early user space. The options are [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh) or [mkinitcpio-dropbear](https://www.archlinux.org/packages/?name=mkinitcpio-dropbear), and are mutually exclusive.
+    1.  If using [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh), it is also recommended to install [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/). This tool converts an existing OpenSSH hostkey to the TinySSH key format, preserving the key fingerprint and avoiding connection warnings. The TinySSH and Dropbear mkinitcpio install scripts will automatically convert existing hostkeys when generating a new initcpio image.
 3.  Decide whether to use an existing OpenSSH key or generate a new one (recommended) for the host that will be connecting to and unlocking the encrypted ZFS machine. Copy the public key into `/etc/tinyssh/root_key` or `/etc/dropbear/root_key`. When generating the initcpio image, this file will be added to `authorized_keys` for the root user and is only valid in the initrd environment.
 4.  Add the `ip=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to your boot loader configuration. The `ip` string is [highly configurable](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt). A simple DHCP example is shown below. `ip=:::::eth0:dhcp` 
 5.  Edit `/etc/mkinitcpio.conf` to include the `netconf`, `dropbear` or `tinyssh`, and `zfsencryptssh` hooks before the `zfs` hook: `HOOKS=(... netconf <tinyssh>|<dropbear> zfsencryptssh zfs ...)` 
@@ -1255,7 +1255,7 @@ As of [PR #261](https://github.com/archzfs/archzfs/pull/261), `archzfs` supports
 
 #### Changing the SSH server port
 
-By default, [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/) and [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) listen on port `22`. You may wish to change this.
+By default, [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh) and [mkinitcpio-dropbear](https://www.archlinux.org/packages/?name=mkinitcpio-dropbear) listen on port `22`. You may wish to change this.
 
 For **TinySSH**, copy `/usr/lib/initcpio/hooks/tinyssh` to `/etc/initcpio/hooks/tinyssh`, and find/modify the following line in the `run_hook()` function:
 

@@ -105,17 +105,17 @@ objcopy ... --add-section .initrd=my_new_initrd
 
 ### rEFInd
 
-Edit boot options in `/boot/refind_linux.conf` as per [EFI boot stub above](#EFI_boot_stub_/_EFI_handover), example:
+Edit boot options in `/boot/refind_linux.conf` as per the following example:
 
 ```
-"Boot with standard options" "rw root=UUID=(...) **initrd=/boot/*cpu_manufacturer*-ucode.img** initrd=/boot/initramfs-linux.img"
+"Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img** initrd=/boot/initramfs-%v.img"
 
 ```
 
 Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/boot/*cpu_manufacturer*-ucode.img` (or `/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as required to the options line, and not in the main part of the stanza. E.g.:
 
 ```
-options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img**"
+options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img**"
 
 ```
 

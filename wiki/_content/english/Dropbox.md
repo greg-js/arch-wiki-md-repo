@@ -211,7 +211,7 @@ Obviously, `*your_user*` has to be edited and `*any other code*;` can be omitted
 
 ### Using NetworkManager
 
-For [NetworkManager](/index.php/NetworkManager "NetworkManager"), use its [dispatcher](https://wiki.archlinux.org/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher) feature.
+For [NetworkManager](/index.php/NetworkManager "NetworkManager"), use its [dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") feature.
 
 Create the following file:
 

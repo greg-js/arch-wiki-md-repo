@@ -109,7 +109,7 @@ For this portion you will need to figure out how to tell the client to attempt a
 
 ### Boot
 
-Looking at [journald](/index.php/Systemd#Journal "Systemd") on the PXE server will provide some additional insight to what exactly is going on during the early stages of the PXE boot process:
+Looking at [journald](/index.php/Journald "Journald") on the PXE server will provide some additional insight to what exactly is going on during the early stages of the PXE boot process:
 
  `# journalctl -u dnsmasq.service -f` 
 ```

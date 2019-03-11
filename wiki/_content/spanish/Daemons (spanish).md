@@ -91,8 +91,8 @@ NetworkManager-wait-online.service | Demonio de NetworkManager, proporciona la d
 | [Pdnsd](/index.php/Pdnsd "Pdnsd") | pdnsd | pdnsd.service | Servidor proxy DNS con memoria caché permanente. |
 | [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | Administrador de procesos FastCGI para PHP. |
 | [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | postgresql | postgresql.service | Servidor de base de datos PostgreSQL. |
-| [Postfix](/index.php/Postfix "Postfix") | postfix | postfix.service |
-| [Postgrey](/index.php/Postgrey "Postgrey") | postgrey | postgrey.service | Servicio de lista gris, utilizado con Postfix |
+| [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)") | postfix | postfix.service |
+| [Postgrey](/index.php/Postgrey_(Espa%C3%B1ol) "Postgrey (Español)") | postgrey | postgrey.service | Servicio de lista gris, utilizado con Postfix |
 | [PPTP server](/index.php/PPTP_server "PPTP server") | pptpd | pptpd.service | Una red privada virtual (VPN) que usa el protocolo de túnel punto a punto (PPTP). |
 | [pppd](/index.php/Pppd "Pppd") | pppd | ppp@.service | Un demonio que implementa el protocolo punto-a-punto al acceso telefónico a redes. |
 | [preload](/index.php/Preload "Preload") | preload | preload.service | Demonio que hace que las aplicaciones se ejecuten más rápido por la obtención previa de los archivos binarios y objetos compartidos. |

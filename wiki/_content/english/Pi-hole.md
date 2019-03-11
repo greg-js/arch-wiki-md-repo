@@ -56,8 +56,8 @@ Related articles
 
 There are 2 versions of Pi-Hole available for Arch Linux:
 
-*   [#Pi-hole_server](#Pi-hole_server) - This is default and well-known Pi-Hole server that most users are looking for. It is designed to be used as a DNS server for other devices on the LAN.
-*   [#Pi-hole_standalone](#Pi-hole_standalone) - This is alternative lightweight Pi-Hole installation, designed for a mobile context. It is intended to be used on the same device (e.g. laptop), where no external and centralised Pi-Hole server is available. It also has no web interface and automatically updates.
+*   [#Pi-hole server](#Pi-hole_server) - This is default and well-known Pi-Hole server that most users are looking for. It is designed to be used as a DNS server for other devices on the LAN.
+*   [#Pi-hole standalone](#Pi-hole_standalone) - This is alternative lightweight Pi-Hole installation, designed for a mobile context. It is intended to be used on the same device (e.g. laptop), where no external and centralised Pi-Hole server is available. It also has no web interface and automatically updates.
 
 ## Pi-hole server
 
@@ -368,7 +368,7 @@ DNS = *Pi-Hole-IP*
 
 ```
 
-See more information in [WireGuard#Client_config](/index.php/WireGuard#Client_config "WireGuard").
+See more information in [WireGuard#Client config](/index.php/WireGuard#Client_config "WireGuard").
 
 ### Additional blocklists
 

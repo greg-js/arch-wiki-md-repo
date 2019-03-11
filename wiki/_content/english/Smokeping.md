@@ -309,6 +309,8 @@ smokeping.example.com/cache {
 
 ```
 
+An updated version of this Caddy conf for smokeping - [https://gist.github.com/Strykar/4df1eb8aebc4d5f7039f6045301352c7](https://gist.github.com/Strykar/4df1eb8aebc4d5f7039f6045301352c7)
+
 ### Lighttpd
 
 First install Lighttpd and FastCGI:
@@ -400,7 +402,7 @@ Verify that your config is fine via `# nginx -t` and reload the configuration vi
 
 ## Advanced Configuration
 
-Smokeping is a powerful tool that can be configured in many ways. You can setup many different types of probes. You can setup slave smokeping servers that can send their statistics and show you probes from other servers. You can also create your custom probes in perl. These options are currently not covered by this guide, please consult the documentation on the [Smokeping website](http://oss.oetiker.ch/smokeping/index.en.html) instead.
+Smokeping is a powerful tool that can be configured in many ways. You can setup many different types of probes. You can setup slave smokeping servers that can send their statistics and show you probes from other servers. You can also create your custom probes in perl. These options are currently not covered by this guide, please consult the documentation on the [Smokeping website](http://oss.oetiker.ch/smokeping/index.en.html) instead. Also see - [https://github.com/oetiker/SmokePing/wiki/FAQ](https://github.com/oetiker/SmokePing/wiki/FAQ)
 
 ## Notes
 

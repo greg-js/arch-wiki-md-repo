@@ -1,4 +1,4 @@
-[Node.js](http://nodejs.org/) is a JavaScript runtime environment combined with useful libraries. It uses [Google's V8 engine](https://code.google.com/p/v8/) to execute code outside of the browser. Due to its event-driven, non-blocking I/O model, it is suitable for real-time web applications.
+[Node.js](http://nodejs.org/) is a JavaScript runtime environment combined with useful libraries. It uses [Google's V8 engine](https://v8.dev) to execute code outside of the browser. Due to its event-driven, non-blocking I/O model, it is suitable for real-time web applications.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

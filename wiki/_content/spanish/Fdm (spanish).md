@@ -6,12 +6,16 @@ Artículos relacionados
 *   [Alpine](/index.php/Alpine "Alpine")
 *   [msmtp](/index.php/Msmtp "Msmtp")
 *   [Mutt](/index.php/Mutt_(Espa%C3%B1ol) "Mutt (Español)")
-*   [Postfix](/index.php/Postfix "Postfix")
+*   [Postfix](/index.php/Postfix_(Espa%C3%B1ol) "Postfix (Español)")
 *   [SSMTP](/index.php/SSMTP "SSMTP")
 
 **fdm** (*fetch and deliver mail*), es un programa simple para entregar y filtrar correo. Al compararlo con otras aplicaciones con el mismo propósito muestra que tiene similitudes muy orientadas a los principios de diseño de [Mutt](/index.php/Mutt_(Espa%C3%B1ol) "Mutt (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

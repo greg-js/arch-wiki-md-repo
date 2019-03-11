@@ -9,14 +9,18 @@ Definición de swap dada por el artículo [«Todo sobre el espacio swap de Linux
 
 El soporte para swap es proporcionado por el kernel de Linux y utilidades en el espacio de usuario por el paquete [util-linux](https://www.archlinux.org/packages/?name=util-linux).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Espacio swap](#Espacio_swap)
-*   [2 Partición swap](#Partici.C3.B3n_swap)
-    *   [2.1 Activación por systemd](#Activaci.C3.B3n_por_systemd)
+*   [2 Partición swap](#Partición_swap)
+    *   [2.1 Activación por systemd](#Activación_por_systemd)
 *   [3 Archivo swap](#Archivo_swap)
-    *   [3.1 Creación de un archivo swap](#Creaci.C3.B3n_de_un_archivo_swap)
-    *   [3.2 Eliminación de un archivo swap](#Eliminaci.C3.B3n_de_un_archivo_swap)
+    *   [3.1 Creación de un archivo swap](#Creación_de_un_archivo_swap)
+    *   [3.2 Eliminación de un archivo swap](#Eliminación_de_un_archivo_swap)
 *   [4 Swap en un dispositivo USB](#Swap_en_un_dispositivo_USB)
 *   [5 Optimizar el rendimiento](#Optimizar_el_rendimiento)
     *   [5.1 Swappiness](#Swappiness)
@@ -75,7 +79,7 @@ Para activar esta partición swap en el arranque, añada la entrada siguiente al
 **Nota:**
 
 *   Añadir una entrada a fstab is optional es opcional en la mayoría de los casos con systemd. Vea la sección siguiente.
-*   Si utiliza un SSD con soporte TRIM, considere usar `defaults,discard` en la línea swap de [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"). Si activa manualmente swap con *swapon*, utilizar el parámetro `-d` o `--discard` producenel mismo efecto. Vea [swapon(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8) para más detalles.
+*   Si utiliza un SSD con soporte TRIM, considere usar `defaults,discard` en la línea swap de [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)"). Si activa manualmente swap con *swapon*, utilizar el parámetro `-d` o `--discard` producenel mismo efecto. Vea [swapon(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8) para más detalles.
 
 ### Activación por systemd
 

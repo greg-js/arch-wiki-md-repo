@@ -1029,7 +1029,7 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 
 Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
 
-**Tip:** You can access the [ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to ptpb: `*command* | curl -F c=@- https://ptpb.pw ` or upload a file (including images): `curl -F c=@- https://ptpb.pw < *file*` 
+**Tip:** You can access the [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to sprunge: `*command* | curl -F c=@- https://sprunge.us ` or upload a file (including images): `curl -F c=@- https://sprunge.us < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
 
@@ -1056,10 +1056,6 @@ Pastebin services are often used to quote text or images while collaborating and
 *   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](https://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
 
 	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
-
-*   **[pbpst](/index.php/Pbpst "Pbpst")** — A small tool to interact with pb instances (eg [ptpb.pw](https://ptpb.pw)).
-
-	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst)
 
 *   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
 

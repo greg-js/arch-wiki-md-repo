@@ -90,6 +90,8 @@ Extended partitions can be thought of as containers for logical partitions. A ha
 
 The customary numbering scheme is to create primary partitions *sda1* through *sda3* followed by an extended partition *sda4*. The logical partitions on *sda4* are numbered *sda5*, *sda6*, etc.
 
+**Tip:** When partitioning a MBR disk consider leaving at least 33 512-byte sectors (16.5 KiB) of free unpartitioned space at the end of the disk in case you ever decide to [convert it to GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk"). The space will be required for the backup GPT header.
+
 ### GUID Partition Table
 
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [Master Boot Record](#Master_Boot_Record) partitioning scheme method.
@@ -113,8 +115,8 @@ Some points to consider when choosing:
 
 Some advantages of GPT over MBR are:
 
-*   Provides a unique disk GUID and unique [partition GUID](/index.php/Persistent_block_device_naming#by-partuuid "Persistent block device naming") (`PARTUUID`) for each partition - A good filesystem-independent way of referencing partitions and disks.
-*   Provides a filesystem-independent [partition name](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") (`PARTLABEL`).
+*   Provides a unique disk GUID and unique partition GUID ([PARTUUID](/index.php/PARTUUID "PARTUUID")) for each partition - A good filesystem-independent way of referencing partitions and disks.
+*   Provides a filesystem-independent partition name ([PARTLABEL](/index.php/PARTLABEL "PARTLABEL")).
 *   Arbitrary number of partitions - depends on space allocated for the partition table - No need for extended and logical partitions. By default the GPT table contains space for defining 128 partitions. However if you want to define more partitions, you can allocate more space to the partition table (currently only *gdisk* is known to support this feature).
 *   Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 ZiB. MBR is limited to addressing 2 TiB of space per drive.
 *   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Gdisk#Recover_GPT_header "Gdisk") in case the primary ones are damaged.

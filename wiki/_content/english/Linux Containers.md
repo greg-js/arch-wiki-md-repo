@@ -1,6 +1,5 @@
 Related articles
 
-*   [AirVPN](/index.php/AirVPN "AirVPN")
 *   [ABS](/index.php/ABS "ABS")
 *   [Cgroups](/index.php/Cgroups "Cgroups")
 *   [Docker](/index.php/Docker "Docker")

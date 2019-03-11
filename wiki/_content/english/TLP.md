@@ -7,28 +7,38 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 	TLP brings you the benefits of advanced power management for Linux without the need to understand every technical detail. TLP comes with a default configuration already optimized for battery life, so you may just install and forget it. Nevertheless TLP is highly customizable to fulfill your specific requirements.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Installation](#Installation)
-    *   [1.1 ThinkPads only](#ThinkPads_only)
-    *   [1.2 Front end](#Front_end)
+    *   [1.1 Radio Device Wizard (tlp-rdw)](#Radio_Device_Wizard_(tlp-rdw))
+    *   [1.2 ThinkPads only](#ThinkPads_only)
+    *   [1.3 Front end](#Front_end)
 *   [2 Configuration](#Configuration)
     *   [2.1 Force battery (BAT) configuration](#Force_battery_(BAT)_configuration)
     *   [2.2 Btrfs](#Btrfs)
     *   [2.3 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
-    *   [2.4 Radio Device Wizard](#Radio_Device_Wizard)
-    *   [2.5 Command line](#Command_line)
+    *   [2.4 Command line](#Command_line)
 *   [3 Debugging](#Debugging)
 *   [4 Features intentionally excluded](#Features_intentionally_excluded)
 *   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [tlp](https://www.archlinux.org/packages/?name=tlp) package. Note its optional dependencies may help provide additional power saving.
+[Install](/index.php/Install "Install") the [tlp](https://www.archlinux.org/packages/?name=tlp) package. Installing the optional dependencies may help provide additional power saving.
 
-To complete TLP's install, you must [enable](/index.php/Enable "Enable") the systemd services `tlp.service` and `tlp-sleep.service`. You should also [mask](/index.php/Mask "Mask") the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `tlp.service` and `tlp-sleep.service`.
 
-**Note:** `tlp.service` starts `NetworkManager.service` if it is available: [FS#43733](https://bugs.archlinux.org/task/43733). If you use a different [network manager](/index.php/List_of_applications#Network_managers "List of applications"), [mask](/index.php/Mask "Mask") `NetworkManager.service` or [edit](/index.php/Edit "Edit") `tlp.service` and remove the service out of line `Wants=`.
+### Radio Device Wizard (tlp-rdw)
+
+When using the Radio Device Wizard ([tlp-rdw](https://www.archlinux.org/packages/?name=tlp-rdw)), it is required to use [NetworkManager](/index.php/NetworkManager "NetworkManager") and [enabling](/index.php/Enabling "Enabling") `NetworkManager-dispatcher.service`.
+
+One should also [mask](/index.php/Mask "Mask") the service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
+
+See [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#rdw) for details.
 
 ### ThinkPads only
 
@@ -85,12 +95,6 @@ Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the 
  RUNTIME_PM_BLACKLIST="01:00.0"
 
 ```
-
-### Radio Device Wizard
-
-The Radio Device Wizard allows a more sophisticated management of radio devices depending on network connect/disconnect events. It requires [NetworkManager](/index.php/NetworkManager "NetworkManager"), [tlp-rdw](https://www.archlinux.org/packages/?name=tlp-rdw) and [enabling](/index.php/Enabling "Enabling") `NetworkManager-dispatcher.service`.
-
-See [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#rdw) for details.
 
 ### Command line
 

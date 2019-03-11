@@ -316,31 +316,18 @@ extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
 
 If rEFInd automatically detects your kernel, you can place a `refind_linux.conf` file containing the kernel parameters in the same directory as your kernel. You can use `/usr/share/refind/refind_linux.conf-sample` as a starting point. The first uncommented line of `refind_linux.conf` will be the default parameters for the kernel. Subsequent lines will create entries in a submenu accessible using `+`, `F2`, or `Insert`.
 
- `/boot/refind_linux.conf` 
-```
-"Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap"
-"Boot using fallback initramfs"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/initramfs-%v-fallback.img"
-"Boot to terminal"               "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap systemd.unit=multi-user.target"
-```
-
-Alternatively, try running:
-
-```
-# mkrlconf
-
-```
-
-Which will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
+Alternatively, try running `mkrlconf` as root. It will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
 
 If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [microcode](/index.php/Microcode "Microcode") passed before the initramfs:
 
+ `/boot/refind_linux.conf` 
 ```
 "Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-%v.img"
 "Boot using fallback initramfs"  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-%v-fallback.img"
-
+"Boot to terminal"               "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-%v.img systemd.unit=multi-user.target"
 ```
 
-**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-%v.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-%v.img`.
+**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-%v.img` or, if `/boot` is a separate partition (e.g. the ESP), `initrd=/initramfs-%v.img`.
 
 **Note:** rEFInd replaces `%v` in `refind_linux.conf` with the kernel's version (by extracting if from the file name). For rEFInd to support Arch Linux kernels, the `extra_kernel_version_strings` in `esp/EFI/refind/refind.conf` must be edited as instructed in [#For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd).
 
@@ -369,10 +356,10 @@ menuentry "Arch Linux" {
 	icon     /EFI/refind/icons/os_arch.png
 	volume   "Arch Linux"
 	loader   /boot/vmlinuz-linux
-	initrd   /boot/initramfs-linux.img
-	options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap"
+	initrd   "/boot/initramfs-linux.img"
+	options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img"
 	submenuentry "Boot using fallback initramfs" {
-		initrd /boot/initramfs-linux-fallback.img
+		initrd "/boot/initramfs-linux-fallback.img"
 	}
 	submenuentry "Boot to terminal" {
 		add_options "systemd.unit=multi-user.target"
@@ -382,7 +369,7 @@ menuentry "Arch Linux" {
 
 It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label. If `volume` is not specified it defaults to volume from which rEFInd was launched (typically EFI system partition).
 
-**Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
+**Warning:** `loader` and `initrd` paths are relative to the root of `volume`. If `/boot` is a separate partition (e.g. the ESP), the loader and initrd paths would be `/vmlinuz-linux` and `/initramfs-linux.img`, respectively.
 
 ## Installation alongside an existing UEFI Windows installation
 

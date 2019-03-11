@@ -149,6 +149,8 @@ The following command will be used to create partitions:
 *   `*start*` is the beginning of the partition from the start of the device. It consists of a number followed by a [unit](http://www.gnu.org/software/parted/manual/parted.html#unit), for example `1MiB` means start at 1 MiB.
 *   `*end*` is the end of the partition from the start of the device (*not* from the `*start*` value). It has the same syntax as `*start*`, for example `100%` means end at the end of the device (use all the remaining space).
 
+**Tip:** On a disk with a MBR partition table leave at least 33 512-byte sectors (16.5 KiB) of free unpartitioned space at the end of the disk to allow [converting between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
+
 **Warning:** It is important that the partitions do not overlap each other: if you do not want to leave unused space in the device, make sure that each partition starts where the previous one ends.
 
 **Note:** *parted* may issue a warning like:

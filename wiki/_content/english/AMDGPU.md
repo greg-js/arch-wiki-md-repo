@@ -137,7 +137,7 @@ Option "TearFree" "true"
 *DRI* sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the [Xorg](/index.php/Xorg "Xorg") version is >= 1.18.3, otherwise DRI2 is used:
 
 ```
-Option "DRI" "3" 
+Option "DRI" "3"
 
 ```
 

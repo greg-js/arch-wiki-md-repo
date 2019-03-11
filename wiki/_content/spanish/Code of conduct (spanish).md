@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"), revisada por última vez el **2018-11-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=554662) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"), revisada por última vez el **2019-03-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=568270) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 La comunidad de Arch es una comunidad técnica cuyo propósito común es apoyar y mejorar Arch Linux.
 
@@ -214,7 +214,7 @@ Publicar una sola palabra o mensaje inútil (*«bumping»* -golpear-) para atrae
 
 #### Política Dustbin (temas marcados para su eliminación)
 
-Los temas que estén bloqueados/cerrados, ya sea porque estén documentados en las bases o la Wiki, ya sea por que son incompatibles con la filosofía de Arch, se moverán a *«Dust/troll-bin»*. Después de un período de cinco días, el tema será borrado. El Moderador responsable marcará claramente el hilo como *«Binned»* o *«For deletion»*.
+Los temas que estén bloqueados/cerrados, ya sea porque estén documentados en las bases o la Wiki, ya sea por que son incompatibles con la filosofía de Arch, se moverán a *«Dust/troll-bin»*. Después de un período de cinco días, el tema será elegible para ser eliminado a discreción del personal *(staff)*. El moderador responsable marcará claramente el tema como *«Binned»* o *«For deletion»*.
 
 ### Listas de correo
 

@@ -166,7 +166,7 @@ Linux kernel exposes UEFI variables data to userspace via **efivarfs** (**EFI** 
 
 ### Requirements for UEFI variable support
 
-1.  Kernel should be booted in UEFI mode via [EFISTUB](/index.php/EFISTUB "EFISTUB") (optionally using a [boot manager](/index.php/Boot_manager "Boot manager")) or via the EFI handover protocol using a UEFI [boot loader](/index.php/Boot_loader "Boot loader"), not via BIOS or CSM, or Apple's Boot Camp which is also a CSM.
+1.  Kernel should be booted in UEFI mode via [EFISTUB](/index.php/EFISTUB "EFISTUB") (optionally using a [boot manager](/index.php/Boot_manager "Boot manager")) or by a UEFI [boot loader](/index.php/Boot_loader "Boot loader") (using either the EFI handover protocol or the UEFI LoadImage function), not via BIOS or CSM, or Apple's Boot Camp which is also a CSM.
 2.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
 3.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
 4.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.
@@ -278,7 +278,7 @@ Few Asus and other AMI Aptio x86_64 UEFI firmware based motherboards (from Sandy
 
 Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded UEFI Shell which can be launched using either `F6`, `F11` or `F12` key.
 
-**Note:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a FAT32 USB pen drive with `Shell.efi` copied as `(USB)/EFI/BOOT/BOOTx64.EFI`. This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
+**Note:** If you are unable to launch UEFI Shell from the firmware directly using any of the above mentioned methods, create a [FAT32](/index.php/FAT32 "FAT32") USB pen drive with `Shell.efi` copied as `(USB)/EFI/BOOT/BOOTx64.EFI`. This USB should come up in the firmware boot menu. Launching this option will launch the UEFI Shell for you.
 
 ### Important UEFI Shell commands
 

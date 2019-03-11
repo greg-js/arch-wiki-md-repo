@@ -219,7 +219,7 @@ You will see notification that you can now stream games from host machine.
 
 **Note:** If above doesn't work - Windows is likely blocking all incoming traffic from different subnets, which means any connections coming from VPN tunnel will be dropped. This also can be confirmed by simply performing ping requests without any response to Windows machine from your VPN client. To workaround this, configure (or disable) all Windows firewalls (including existing antiviruses).
 
-**Tip:** See [Gaming#Remote_gaming](/index.php/Gaming#Remote_gaming "Gaming") for alternatives if above solution does not work.
+**Tip:** See [Gaming#Remote gaming](/index.php/Gaming#Remote_gaming "Gaming") for alternatives if above solution does not work.
 
 ### Steam Controller
 

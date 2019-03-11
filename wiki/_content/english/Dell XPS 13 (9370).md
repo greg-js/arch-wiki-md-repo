@@ -33,23 +33,24 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 
 *   [1 UEFI](#UEFI)
 *   [2 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
-*   [3 Video](#Video)
-*   [4 Storage](#Storage)
-*   [5 Wifi](#Wifi)
-*   [6 Bluetooth](#Bluetooth)
-*   [7 Keyboard](#Keyboard)
-*   [8 Power Management](#Power_Management)
-*   [9 Firmware Updates](#Firmware_Updates)
-*   [10 Thermal Throttling](#Thermal_Throttling)
-*   [11 Thermal Modes / Fan profiles](#Thermal_Modes_/_Fan_profiles)
-*   [12 Power Saving](#Power_Saving)
-*   [13 Touchpad](#Touchpad)
-    *   [13.1 Cursor Jump](#Cursor_Jump)
-    *   [13.2 Sensitivity](#Sensitivity)
-*   [14 Audio](#Audio)
-*   [15 Infrared camera](#Infrared_camera)
-*   [16 USB Type-C ports](#USB_Type-C_ports)
-*   [17 Fingerprint reader](#Fingerprint_reader)
+*   [3 Display](#Display)
+*   [4 Webcam](#Webcam)
+*   [5 Storage](#Storage)
+*   [6 Wifi](#Wifi)
+*   [7 Bluetooth](#Bluetooth)
+*   [8 Keyboard](#Keyboard)
+*   [9 Power Management](#Power_Management)
+*   [10 Firmware Updates](#Firmware_Updates)
+*   [11 Thermal Throttling](#Thermal_Throttling)
+*   [12 Thermal Modes / Fan profiles](#Thermal_Modes_/_Fan_profiles)
+*   [13 Power Saving](#Power_Saving)
+*   [14 Touchpad](#Touchpad)
+    *   [14.1 Cursor Jump](#Cursor_Jump)
+    *   [14.2 Sensitivity](#Sensitivity)
+*   [15 Audio](#Audio)
+*   [16 Infrared camera](#Infrared_camera)
+*   [17 USB Type-C ports](#USB_Type-C_ports)
+*   [18 Fingerprint reader](#Fingerprint_reader)
 
 ## UEFI
 
@@ -67,15 +68,13 @@ Booting and installing from a microSD card is also possible, as long as SD Card 
 
 In the XPS 13 the display panels (both FHD and 4K UHD) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).
 
-## Video
+## Display
 
 The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Intel graphics#Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
 
 If you have the 4K (3840x2160) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
 
 Note that the `enable_psr=1` kernel parameter appears not to work properly, at least on the touchscreen model.
-
-[Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).
 
 For me the system seems to freeze sometime which is due to enable_psr=1, you can either disable enable_psr=0 where you will loose battery life but get no freezes, or enable_psr=2 where you save battery life like enable_psr=1 but without any freezes. enable_psr=1 maximizes batterylife but for me gives the system freezes, hopefully this will get fixed in the future.
 
@@ -92,6 +91,14 @@ Some other options that save battery life are:
  options i915 enable_psr=2 enable_rc6=7 enable_fbc=1 semaphores=1 lvds_downclock=1 enable_guc_loading=1 enable_guc_submission=1
 
 ```
+
+## Webcam
+
+[Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).
+
+[If the webcam doesn't work after going into deep sleep, you need to update your bios](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049#.XIWx-3vI--8.link) to version [1.5.1](https://www.dell.com/support/home/ca/en/cadhs1/product-support/product/xps-13-9370-laptop/drivers) or newer. This can be done by copying the exe file to any fat32 drive (even the boot partition seems to work) and booting into the "BIOS Flash Update" utility by hitting F12 at boot time.
+
+Some users have reported problem of the webcam being stuck at 640x480.
 
 ## Storage
 

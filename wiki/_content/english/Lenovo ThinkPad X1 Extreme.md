@@ -25,7 +25,7 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 
 *   [1 Hardware compatibility](#Hardware_compatibility)
     *   [1.1 BIOS update](#BIOS_update)
-    *   [1.2 Graphics](#Graphics)
+    *   [1.2 Hybrid graphics](#Hybrid_graphics)
     *   [1.3 Thunderbolt](#Thunderbolt)
     *   [1.4 Other hardware](#Other_hardware)
 *   [2 Software tweaks](#Software_tweaks)
@@ -44,33 +44,17 @@ Despite not being strictly required for an Arch Linux install, a BIOS update is 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The latest version, v1.19, is highly recommended, and can be installed by manually downloading [the update](https://download.lenovo.com/pccbbs/mobiles/n2eet37w.cab) and running `fwupdmgr install n2eet37w.cab` as root.
+The latest version, v1.19, is highly recommended, and can be installed by running `fwupdmgr install [https://download.lenovo.com/pccbbs/mobiles/n2eet37w.cab](https://download.lenovo.com/pccbbs/mobiles/n2eet37w.cab)` as root. This will download the firmware directly from Lenovo. The firmware updates are digitally signed, so there is no additional risk caused by the direct download.
 
 The latest version available on the LVFS as of early March 2019 is v1.17 (listed as 0.1.17). While that version resolves all known critical (read: hard bricking) issues, it still contains multiple bugs, particularly related to power management and early boot, that are fixed in the later versions, so v1.19 should be preferred when possible.
 
 All information on this page generally assumes the latest BIOS unless explicitly stated.
 
-### Graphics
+### Hybrid graphics
 
-Text mode works out of the box.
+Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
-Starting X11 requires configuring the right card ID for the driver in [Xorg.conf](/index.php/Xorg.conf "Xorg.conf"), e.g.:
-
-```
-Section "Device"
-       Identifier  "Card1"
-       # pick between "modesetting" and "intel" here (intel requires xf86-video-intel)
-       Driver      "modesetting"
-       BusID       "PCI:0:2:0"
-EndSection
-
-```
-
-Wayland compositors generally don't require additional configuration (tested with Plasma and Sway).
-
-Hybrid graphics works via [Bumblebee](/index.php/Bumblebee "Bumblebee"). The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details. Note that this requires the use of `xf86-video-intel`, as the modesetting driver does not have virtual outputs.
-
-Nvidia-only mode has not been thoroughly tested, but seems to work fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
+Nvidia-only mode works fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
 
 ### Thunderbolt
 
@@ -114,7 +98,7 @@ Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Unde
 
 As of January 2019, the following commonly used kernel parameters are known to work:
 
-*   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings; will likely be enabled by default starting with Linux 5.1
+*   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings; will be enabled by default starting with Linux 5.1
 *   `i915.fastboot=1` - skips mode setting on startup, prevents flickering on compatible boot loaders (rEFInd, GRUB2 with resolution set, etc.); will be enabled by default starting with Linux 5.1
 *   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations
 

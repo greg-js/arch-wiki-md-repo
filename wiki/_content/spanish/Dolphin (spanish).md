@@ -1,10 +1,13 @@
-Related articles
+**Estado de la traducción**
+Este artículo es una traducción de [Dolphin](/index.php/Dolphin "Dolphin"), revisada por última vez el **2019-02-24**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dolphin&diff=0&oldid=567336) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Artículos relacionados
 
 *   [File manager functionality (Español)](/index.php/File_manager_functionality_(Espa%C3%B1ol) "File manager functionality (Español)")
 *   [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)")
 *   [udisks](/index.php/Udisks "Udisks")
 
-[Dolphin](https://www.kde.org/applications/system/dolphin/) es el administrador de archivos por defecto de [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). Para el emulador de vídeojuego de consola, vea [Emulador Dolphin](/index.php?title=Dolphin_emulator_(Espa%C3%B1ol)&action=edit&redlink=1 "Dolphin emulator (Español) (page does not exist)").
+[Dolphin](https://www.kde.org/applications/system/dolphin/) es el administrador de archivos por defecto de [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"). Para el emulador de vídeojuego de consola, vea [Emulador Dolphin](/index.php/Dolphin_emulator "Dolphin emulator").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -16,7 +19,7 @@ Related articles
     *   [1.1 Comparar archivos](#Comparar_archivos)
     *   [1.2 Previsualización de archivos](#Previsualización_de_archivos)
     *   [1.3 Vista CDs de audio](#Vista_CDs_de_audio)
-*   [2 Uso](#Uso)
+*   [2 Utilización](#Utilización)
     *   [2.1 Abrir terminal](#Abrir_terminal)
     *   [2.2 KIO Slaves](#KIO_Slaves)
 *   [3 Solución de Problemas](#Solución_de_Problemas)
@@ -31,7 +34,7 @@ Related articles
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [dolphin](https://www.archlinux.org/packages/?name=dolphin).
 
-Para la versión de control y soporte de [Dropbox](/index.php?title=Dropbox_(Espa%C3%B1ol)&action=edit&redlink=1 "Dropbox (Español) (page does not exist)"), instale [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). Para habilitar el plugin pertinente vaya a *Control > Configurar Dolphin... > Servicios*.
+Para la versión de control y soporte de [Dropbox](/index.php/Dropbox "Dropbox"), instale [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). Para habilitar el plugin pertinente vaya a *Control > Configurar Dolphin... > Servicios*.
 
 ### Comparar archivos
 
@@ -56,7 +59,7 @@ Habilite la previsualización del tipo de archivo requerido en *Control > Config
 
 El soporte para CDs de audio es provisto por la extensión [audiocd-kio](https://www.archlinux.org/packages/?name=audiocd-kio).
 
-## Uso
+## Utilización
 
 ### Abrir terminal
 
@@ -64,7 +67,7 @@ Dolphin y otras aplicaciones KDE usan [konsole](https://www.archlinux.org/packag
 
 ### KIO Slaves
 
-Dolphin utiliza *KIO slaves* para acceder a la red, papelera y otras funcionalidades, a diferencia de los administradores de archivos [GTK+](/index.php/GTK%2B "GTK+") quienes utilizan [GVFS](/index.php/GVFS "GVFS"). Los protocolos disponibles son mostrados en la barra de ubicación (modo editable) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). Para marcarlos rápidamente, clic derecho en el espacio de trabajo, y seleccione "Añadir a Lugares".
+Dolphin utiliza *KIO slaves* para acceder a la red, papelera y otras funcionalidades, a diferencia de los administradores de archivos [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") quienes utilizan [GVFS](/index.php/GVFS "GVFS"). Los protocolos disponibles son mostrados en la barra de ubicación (modo editable) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). Para marcarlos rápidamente, clic derecho en el espacio de trabajo, y seleccione "Añadir a Lugares".
 
 ## Solución de Problemas
 
@@ -74,7 +77,7 @@ Al crear una etiqueta de sistema, o etiqueta de partición, y Dplphin mostrará 
 
 ### Fuentes transparentes
 
-Las fuentes en marcos de selección pueden llegar a ser transparentes cuando usen [Estilos GTK+ Qt](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol)#QGtkStyle "Uniform look for Qt and GTK applications (Español)"). Los estilos Qt nativos como *Cleanlooks* y *Oxygen* no son afectados.
+Las fuentes en marcos de selección pueden llegar a ser transparentes cuando usen [Estilos GTK+ Qt](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications"). Los estilos Qt nativos como *Cleanlooks* y *Oxygen* no son afectados.
 
 ### Bloqueos en compartición SMB montada
 

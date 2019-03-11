@@ -85,6 +85,8 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
 
 ```
 
+**Warning:** Kernel name descriptors are not [persistent](/index.php/Persistent_block_device_naming "Persistent block device naming") and can change each boot, they should not be used in configuration files.
+
 ### File system labels
 
 Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* column with `LABEL=`:

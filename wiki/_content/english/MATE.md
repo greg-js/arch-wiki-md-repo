@@ -200,7 +200,7 @@ $ gsettings set org.mate.Marco.general allow-tiling true
 
 Hiding the decorations of maximized windows is possible with the [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/) tool: After installing it, navigate to *System > Preferences > Look and Feel > MATE Tweak > Windows* and enable *Undecorate maximized windows* in the *Window Behaviour* section.
 
-**Tip:** If this option is grayed out and unavailable, try installing the [mate-extra](https://www.archlinux.org/packages/?name=mate-extra) group.
+**Tip:** If this option is grayed out and unavailable, try installing the [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group.
 
 ### Show or hide desktop icons
 

@@ -60,7 +60,7 @@
 | <small>3.15.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(3)</small> |
 | <small>3.15.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
 | <small>3.16.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(3) (también en [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)"))</small> |
-| <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(10)</small> |
+| <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(9)</small> |
 | <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(0)</small> |
 | <small>4.1.1.</small> [Sistema de nombres de dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>4.2.</small> [Computación distribuída](/index.php/Category:Distributed_computing_(Espa%C3%B1ol) "Category:Distributed computing (Español)") <small>(1)</small> |
@@ -203,7 +203,7 @@
 | <small>5.3.1.8.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(5) (también en [Web](/index.php/Category:Web_(Espa%C3%B1ol) "Category:Web (Español)"))</small> |
 | <small>5.3.1.9.</small> [WebDAV](/index.php/Category:WebDAV_(Espa%C3%B1ol) "Category:WebDAV (Español)") <small>(2) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
 | <small>5.3.1.10.</small> [XMPP](/index.php/Category:XMPP_(Espa%C3%B1ol) "Category:XMPP (Español)") <small>(2) (también en [Mensajería instantánea](/index.php/Category:Instant_messaging_(Espa%C3%B1ol) "Category:Instant messaging (Español)"), [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
-| <small>5.4.</small> [Formatos de archivo](/index.php/Category:File_formats_(Espa%C3%B1ol) "Category:File formats (Español)") <small>(3)</small> |
+| <small>5.4.</small> [Formatos de archivo](/index.php/Category:File_formats_(Espa%C3%B1ol) "Category:File formats (Español)") <small>(4)</small> |
 | <small>5.4.1.</small> [Audio](/index.php/Category:Audio_(Espa%C3%B1ol) "Category:Audio (Español)") <small>(1) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
 | <small>5.4.2.</small> [Imagen](/index.php/Category:Image_(Espa%C3%B1ol) "Category:Image (Español)") <small>(3) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"))</small> |
 | <small>5.5.</small> [Listados de programas](/index.php/Category:Lists_of_software_(Espa%C3%B1ol) "Category:Lists of software (Español)") <small>(22) (también en [Listados](/index.php/Category:Lists_(Espa%C3%B1ol) "Category:Lists (Español)"))</small> |
@@ -303,5 +303,5 @@
 | <small>6.21.</small> [Sincronización](/index.php/Category:Synchronization_(Espa%C3%B1ol) "Category:Synchronization (Español)") <small>(1)</small> |
 | <small>6.21.1.</small> [Protocolo de tiempo de red (NTP)](/index.php/Category:Network_Time_Protocol_(Espa%C3%B1ol) "Category:Network Time Protocol (Español)") <small>(1) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>6.22.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(7)</small> |
-| <small>6.23.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(2)</small> |
+| <small>6.23.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(3)</small> |
 | <small>6.23.1.</small> [Hipervisores](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)") <small>(5)</small> |

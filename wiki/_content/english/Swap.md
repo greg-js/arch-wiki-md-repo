@@ -31,14 +31,13 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
         *   [3.1.2 Remove swap file](#Remove_swap_file)
     *   [3.2 Automated](#Automated)
         *   [3.2.1 systemd-swap](#systemd-swap)
-*   [4 Swap with USB device](#Swap_with_USB_device)
-*   [5 Swap encryption](#Swap_encryption)
-*   [6 Performance](#Performance)
-    *   [6.1 Swappiness](#Swappiness)
-    *   [6.2 VFS cache pressure](#VFS_cache_pressure)
-    *   [6.3 Priority](#Priority)
-    *   [6.4 Using zswap or zram](#Using_zswap_or_zram)
-    *   [6.5 Striping](#Striping)
+*   [4 Swap encryption](#Swap_encryption)
+*   [5 Performance](#Performance)
+    *   [5.1 Swappiness](#Swappiness)
+    *   [5.2 VFS cache pressure](#VFS_cache_pressure)
+    *   [5.3 Priority](#Priority)
+    *   [5.4 Using zswap or zram](#Using_zswap_or_zram)
+    *   [5.5 Striping](#Striping)
 
 ## Swap space
 
@@ -60,7 +59,7 @@ $ free -h
 
 ```
 
-free also indicates if memory is running short, which can be remedied by enabling swap or increasing swap.
+*free* also indicates if memory is running short, which can be remedied by enabling swap or increasing swap.
 
 **Note:** There is no performance advantage to either a contiguous swap file or a partition, both are treated the same way.
 
@@ -84,21 +83,16 @@ To enable the device for paging:
 
 ```
 
-To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab "Fstab"):
+To enable this swap partition on boot, add an entry to `/etc/fstab`:
 
 ```
-UUID=<UUID> none swap defaults 0 0
-
-```
-
-where the <UUID> is taken from the command:
-
-```
-lsblk -no UUID /dev/sd*xy*
+UUID=*device_UUID* none swap defaults 0 0
 
 ```
 
-**Tip:** UUIDs and LABELs should be favoured over the use of the device names given by the kernel as the device order could change in the future. See: [fstab](/index.php/Fstab "Fstab").
+where the *device_UUID* is the [UUID](/index.php/UUID "UUID") of the swap space.
+
+See [fstab](/index.php/Fstab "Fstab") for the file syntax.
 
 **Note:**
 
@@ -142,7 +136,7 @@ For copy-on-write file systems like [Btrfs](/index.php/Btrfs "Btrfs"), first cre
 
 ```
 
-As root use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). For example, creating a 512 MiB swap file:
+Use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). For example, creating a 512 MiB swap file:
 
 ```
 # fallocate -l 512M /swapfile
@@ -187,7 +181,7 @@ Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap fil
 To remove a swap file, it must be turned off first and then can be removed:
 
 ```
-# swapoff -a
+# swapoff /swapfile
 # rm -f /swapfile
 
 ```
@@ -201,26 +195,6 @@ Finally remove the relevant entry from `/etc/fstab`.
 [Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfc_enabled=1` in the *Swap File Chunked* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommended configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
 **Note:** If the journal keeps showing the following warning `systemd-swap[..]: WARN: swapFC: ENOSPC` and no swap file is being created, you need to set `swapfc_force_preallocated=1` in `/etc/systemd/swap.conf`.
-
-## Swap with USB device
-
-Thanks to the modularity offered by Linux, we can have multiple swap partitions spread over different devices. If you have a very full hard disk, a USB device can be used as a swap partition temporarily. However, this method has some severe disadvantages:
-
-*   A USB device is slower than a hard disk
-*   Flash memory has a limited number of write cycles. Using it as a swap partition can kill it quickly
-
-To add a USB device to swap, first take a USB flash drive and partition it for swap as described in [#Swap partition](#Swap_partition).
-
-Next open `/etc/fstab` and add
-
-```
-pri=0
-
-```
-
-to the mount options of the *original* swap entry so that the USB swap partition will take priority over the old swap partition.
-
-This guide will work for other memory such as SD cards, etc.
 
 ## Swap encryption
 

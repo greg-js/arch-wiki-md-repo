@@ -7,7 +7,11 @@ Amateur radio enthusiasts (sometimes called ham radio operators or "hams") have 
 
 **Warning:** International treaties require that users of amateur radio frequencies have a government-issued license. This only affects you if you have a transmitter and an antenna, receiving amateur radio or just downloading amateur radio software isn't illegal.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General information](#General_information)
 *   [2 Software list](#Software_list)
@@ -37,7 +41,7 @@ then logoff and logon.
 
 *   **Hamlib** — provides an interface between hardware and radio control programs. It is a software layer to facilitate the control of radios and other hardware (eg. for logging, digital modes) and is not a stand-alone application.
 
-	[https://sourceforge.net/projects/hamlib/](https://sourceforge.net/projects/hamlib/) || [hamlib](https://aur.archlinux.org/packages/hamlib/)
+	[https://sourceforge.net/projects/hamlib/](https://sourceforge.net/projects/hamlib/) || [hamlib](https://www.archlinux.org/packages/?name=hamlib)
 
 *   **Soundmodem** — was written by Tom Sailer (HB9JNX/AE4WA) to allow a standard PC soundcard to act as a packet radio modem for use with the various AX.25 communication modes. The data rate can be as high as 9600 baud depending on the hardware and application. Soundmodem can be used as a KISS modem on the serial port or as an AX.25 network device. To use soundmodem as an MKISS network device, the kernel must be re-built with MKISS modules. More information is in the [Xastir wiki](http://www.xastir.org/wiki/index.php/HowTo:SoundModem)
 
@@ -154,7 +158,7 @@ These are audio alarm recordings of a North American English speaker that do not
 
 **FreeDV** — is a Digital Voice mode for HF radio. It uses the free and open Codec2 voice codec to enable efficient narrow bandwith, low bitrate voice communication ideally suited for shortwave radio contacts. A SSB radio connected to a computer running the FreeDV GUI application are all that is needed to start using the FreeDV mode. FreeDV as well as Codec2 are available to Arch Linux via the AUR system. Both are needed for FreeDV to work!
 
-*   [http://www.rowetel.com/codec2.html](http://www.rowetel.com/codec2.html) [codec2](https://aur.archlinux.org/packages/codec2/)
+*   [http://www.rowetel.com/codec2.html](http://www.rowetel.com/codec2.html) [codec2](https://www.archlinux.org/packages/?name=codec2)
 
 	[http://freedv.org](http://freedv.org) || [freedv](https://aur.archlinux.org/packages/freedv/)
 

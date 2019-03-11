@@ -553,7 +553,7 @@ Finally, [restart](/index.php/Restart "Restart") `dovecot.service`.
 
 ### Rule-based mail processing
 
-With policy services one can easily finetune Postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/pkgbase/policyd) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
+With policy services one can easily finetune Postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and policyd ([policyd-mysql](https://aur.archlinux.org/packages/policyd-mysql/), [policyd-pgsql](https://aur.archlinux.org/packages/policyd-pgsql/) or [policyd-sqlite](https://aur.archlinux.org/packages/policyd-sqlite/)) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
 
 Policy services are standalone services and connected to Postfix like this:
 
@@ -574,7 +574,7 @@ To use the [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender 
 
 Edit `/etc/python-policyd-spf/policyd-spf.conf` to your needs. An extensively commented version can be found at `/etc/python-policyd-spf/policyd-spf.conf.commented`. Pay some extra attention to the HELO check policy, as standard settings strictly reject HELO failures.
 
-In the main.cf add a timeout for the policyd:
+In `main.cf` file, add a timeout for the policyd:
 
  `/etc/postfix/main.cf`  `policy-spf_time_limit = 3600s` 
 
@@ -634,7 +634,7 @@ Restart Postfix and start forwarding mail.
 
 ### Warning: "database /etc/postfix/*.db is older than source file .."
 
-If you get one or both warnings with `journalctl`
+If you get one or both warnings with `journalctl`:
 
 ```
 warning: database /etc/postfix/virtual.db is older than source file /etc/postfix/virtual
@@ -642,7 +642,7 @@ warning: database /etc/postfix/transport.db is older than source file /etc/postf
 
 ```
 
-then you can fix it by using these commands depending on the messages you get
+Then you can fix it by using these commands, depending on the messages you get:
 
 ```
 postmap /etc/postfix/transport
@@ -650,7 +650,7 @@ postmap /etc/postfix/virtual
 
 ```
 
-and restart `postfix.service`
+And [restart](/index.php/Restart "Restart") `postfix.service`.
 
 ## See also
 

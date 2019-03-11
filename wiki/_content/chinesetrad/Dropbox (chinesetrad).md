@@ -1,3 +1,7 @@
+相關文章
+
+*   [Backup programs](/index.php/Backup_programs "Backup programs")
+
 ## 安裝
 
 [dropbox](https://aur.archlinux.org/packages/dropbox/) 可以從 [AUR](/index.php/Arch_User_Repository "Arch User Repository") 安裝，你也可以選擇安裝 [dropbox-experimental](https://aur.archlinux.org/packages/dropbox-experimental/)。

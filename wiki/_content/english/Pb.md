@@ -7,7 +7,13 @@ Related articles
 
 **Warning:** A pastebin should not be used for sharing confidential or private information.
 
+**Warning:** Since 2019-03-08 the [official instance is no longer available](https://github.com/ptpb/pb/issues/246).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Server](#Server)
@@ -47,7 +53,7 @@ See [https://ptpb.pw](https://ptpb.pw) and [API specification](https://ptpb.pw/a
 
 ### pbpst
 
-See [pbpst(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pbpst.1) and [pbpst_db(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pbpst_db.5) for usage details.
+See [pbpst(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pbpst.1) and [pbpst_db(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pbpst_db.5) for usage details.
 
 **Note:**
 

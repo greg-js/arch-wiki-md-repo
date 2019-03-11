@@ -16,7 +16,11 @@ In Xorg, some *keysyms* (e.g. `XF86AudioPlay`, `XF86AudioRaiseVolume` etc.) can 
 
 In Linux console, some *keysyms* (e.g. `F1` to `F246`) can be mapped to certain actions (e.g. switch to other console or print some sequence of characters). See [Console keyboard configuration#Creating a custom keymap](/index.php/Console_keyboard_configuration#Creating_a_custom_keymap "Console keyboard configuration") for details.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Identifying scancodes](#Identifying_scancodes)
     *   [1.1 Using showkey](#Using_showkey)
@@ -43,14 +47,16 @@ and try to push keyboard keys; you should see *scancodes* being printed to the o
 
 For USB keyboards, it is apparently necessary to use [evtest(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/evtest.1) from the [evtest](https://www.archlinux.org/packages/?name=evtest) package instead of *showkey* [[1]](https://ask.fedoraproject.org/en/question/46201/how-to-map-scancodes-to-keycodes/):
 
+ `# evtest /dev/input/event12` 
 ```
-# evtest /dev/input/event12
 ...
 Event: time 1434666536.001123, type 4 (EV_MSC), code 4 (MSC_SCAN), value 70053
 Event: time 1434666536.001123, type 1 (EV_KEY), code 69 (KEY_NUMLOCK), value 0
 Event: time 1434666536.001123, -------------- EV_SYN ------------
 
 ```
+
+**Tip:** If you do not know which event number has device of your interest, you can run `evtest` without parameters and it will show you list of devices with their event numbers, then you can enter needed number.
 
 Use the "value" field of `MSC_SCAN`. This example shows that NumLock has scancode 70053 and keycode 69.
 
@@ -91,7 +97,7 @@ The *keycodes* used by [Xorg](/index.php/Xorg "Xorg") are reported by a utility 
 With the following command you can start *xev* and show only the relevant parts:
 
 ```
- $ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s
+ $ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s
 ", $5, $8 }'
 
 ```
@@ -113,6 +119,6 @@ Here is an example output:
 If you press a key and nothing appears in the terminal, it means that either the key does not have a *scancode*, the *scancode* is not mapped to a *keycode*, or some other process is capturing the keypress. If you suspect that a process listening to X server is capturing the keypress, you can try running *xev* from a clean X session:
 
 ```
-$ xinit /usr/bin/xterm -- :1
+$ xinit /usr/bin/xterm -- :1
 
 ```

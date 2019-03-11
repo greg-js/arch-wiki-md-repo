@@ -1,6 +1,10 @@
 [Dropbox](https://www.dropbox.com) è un sistema di condivisione file che recentemente ha introdotto un client GNU/Linux. Viene utilizzato per sincronizzare file in modo trasparente attraverso computer e architetture. Spostando i file nella propria cartella `~/Dropbox` essi verranno automaticamente sincronizzati con il proprio repository centralizzato.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Pacchetti opzionali](#Pacchetti_opzionali)
