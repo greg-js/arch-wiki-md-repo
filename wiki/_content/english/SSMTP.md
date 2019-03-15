@@ -24,9 +24,7 @@ SSMTP is a program which delivers email from a local computer to a configured ma
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [ssmtp](https://www.archlinux.org/packages/?name=ssmtp).
-
-**Note:** ssmtp has been removed from the community repos. This wiki is hence out of date.
+[Install](/index.php/Install "Install") the package [ssmtp](https://aur.archlinux.org/packages/ssmtp/).
 
 ## Forward to a Gmail mail server
 

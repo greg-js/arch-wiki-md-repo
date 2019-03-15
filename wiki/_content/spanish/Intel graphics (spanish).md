@@ -60,7 +60,7 @@ Para ver la lista de opciones, escriba [intel(4)](https://jlk.fjfi.cvut.cz/arch/
 
 ## KMS (Kernel Mode Setting)
 
-**Sugerencia:** Si tiene problemas con la resolución, compruebe [esta página](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Forzar_modos "Kernel mode setting (Español)").
+**Sugerencia:** Si tiene problemas con la resolución, consulte [esta página](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Forzar_modos_y_EDID "Kernel mode setting (Español)").
 
 [KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)") es necesario para ejecutar X y el entorno de escritorio, tales como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), [KDE](/index.php/KDE "KDE"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), etc. KMS es compatible con el chipset Intel cuando usa el driver i915 DRM, el cual ahora está activado por defecto en el kernel v2.6.32\. Las versiones 2.10 del kernel y las más recientes del driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) ya no dan soporte a UMS (excepto para la antigua familia de chipsets 810), que requieran el uso de KMS obligatoriamente. KMS se suele inicializar normalmente una vez arrancado el kernel. Es posible, sin embargo, habilitar KMS durante la fase de arranque el kernel, permitiendo que todo el proceso de arranque funcione en la resolución nativa.
 
@@ -272,7 +272,7 @@ Esta cuestión se aborda en el artículo [Xrandr](/index.php/Xrandr#Adding_undet
 
 ### Lentitud tras una actualización de libGL 9 e Intel-DRI 9
 
-Efectuar un [Downgrade](/index.php/Downgrading_packages#ARM "Downgrading packages") para Intel-DRI 8 y libGL 8.
+Efectue un [Downgrade](/index.php/Downgrading_packages_(Espa%C3%B1ol) "Downgrading packages (Español)") para Intel-DRI 8 y libGL 8.
 
 ### Texturas en negro en videojuegos
 

@@ -56,7 +56,7 @@ A simple `/etc/fstab`, using kernel name descriptors:
 
 **Tip:**
 
-*   The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
+*   The `auto` type lets the mount command guess what type of file system is used. This is useful for [optical media](/index.php/Optical_disc_drive "Optical disc drive") (CD/DVD/Blu-ray).
 *   If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`. See [fsck.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.btrfs.8).
 
 All specified devices within `/etc/fstab` will be automatically mounted on startup and when the `-a` flag is used with [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
@@ -65,11 +65,11 @@ See [fstab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5#DESCRIPTION) f
 
 ## Identifying filesystems
 
-There are different ways to identify filesystems that will be mounted in `/etc/fstab`: kernel name descriptor, label or UUID, and GPT labels and UUID for GPT disks. UUID must be privileged over kernel name descriptors and labels. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for more explanations. It is recommended to read that article first before continuing with this article.
+There are different ways to identify filesystems that will be mounted in `/etc/fstab`: kernel name descriptor, file system label and UUID, and GPT partition label and UUID for GPT disks. UUID or PARTUUID must be privileged over kernel name descriptors and labels. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for more explanations. It is recommended to read that article first before continuing with this article.
 
 In this section, we will describe how to mount filesystems using all the mount methods available via examples. The output of the commands `lsblk -f` and `blkid` used in the following examples are available in the article [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
-To use kernel name descriptors, use /dev/sd*xy* in the first column.
+To use [kernel name descriptors](/index.php/Device_file#Block_device_names "Device file"), use `/dev/sd*xy*` in the first column.
 
 ### Kernel name descriptors
 
@@ -89,7 +89,7 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
 
 ### File system labels
 
-Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* column with `LABEL=`:
+Run `lsblk -f` to list the partitions, and prefix the values in the [LABEL](/index.php/LABEL "LABEL") column with `LABEL=` or alternatively run `blkid` and use the [LABEL](/index.php/LABEL "LABEL") values without the quotes:
 
  `/etc/fstab` 
 ```
@@ -105,7 +105,7 @@ LABEL=SWAP        none         swap          defaults         0      0
 
 ### File system UUIDs
 
-Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* column with `UUID=`:
+Run `lsblk -f` to list the partitions, and prefix the values in the [UUID](/index.php/UUID "UUID") column with `UUID=` or alternatively run `blkid` and use the [UUID](/index.php/UUID "UUID") values without the quotes::
 
  `/etc/fstab` 
 ```
@@ -117,11 +117,9 @@ UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults  0      0
 
 ```
 
-**Tip:** If you would like to return just the UUID of a specific partition: `lsblk -no UUID /dev/sda2`.
-
 ### GPT partition labels
 
-Run `blkid` to list the partitions, and use the *PARTLABEL* values without the quotes:
+Run `blkid` to list the partitions, and use the [PARTLABEL](/index.php/PARTLABEL "PARTLABEL") values without the quotes:
 
  `/etc/fstab` 
 ```
@@ -137,7 +135,7 @@ PARTLABEL=SWAP                       none  swap   defaults  0      0
 
 ### GPT partition UUIDs
 
-Run `blkid` to list the partitions, and use the *PARTUUID* values without the quotes:
+Run `blkid` to list the partitions, and use the [PARTUUID](/index.php/PARTUUID "PARTUUID") values without the quotes:
 
  `/etc/fstab` 
 ```

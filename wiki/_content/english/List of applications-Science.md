@@ -418,7 +418,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **Geotag** — Match date/time information from photos with location information from a GPS unit or from a map.
 
-	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://aur.archlinux.org/packages/geotag/)
+	[http://geotag.sourceforge.net/](http://geotag.sourceforge.net/) || [geotag](https://www.archlinux.org/packages/?name=geotag)
 
 *   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
@@ -483,6 +483,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **Navit** — Modular turn-by-turn car navigation system.
 
 	[http://www.navit-project.org/](http://www.navit-project.org/) || [navit](https://www.archlinux.org/packages/?name=navit)
+
+*   **OffRoad** — Offline vector map display ported from OsmAnd.
+
+	[https://sourceforge.net/projects/offroadosm/](https://sourceforge.net/projects/offroadosm/) || [offroad](https://www.archlinux.org/packages/?name=offroad)
 
 *   **QMapShack** — Plan your next outdoor trip.
 
@@ -765,6 +769,10 @@ See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wi
 *   **Netlogo** — NetLogo is a multi-agent programmable modeling environment.
 
 	[http://ccl.northwestern.edu/netlogo/](http://ccl.northwestern.edu/netlogo/) || [netlogo](https://aur.archlinux.org/packages/netlogo/)
+
+*   **[AnyLogic](https://en.wikipedia.org/wiki/AnyLogic "wikipedia:AnyLogic")** — AnyLogic is a cross-platform proprietary multimethod simulation modeling tool, which is also available for personal use.
+
+	[https://www.anylogic.com/](https://www.anylogic.com/) || [anylogic-ple](https://aur.archlinux.org/packages/anylogic-ple/), [anylogic-university](https://aur.archlinux.org/packages/anylogic-university/), [anylogic-professional](https://aur.archlinux.org/packages/anylogic-professional/)
 
 ### Computer science
 

@@ -78,7 +78,7 @@ All of these software except Sendmail include a mail delivery agent.
 
 	[http://www.procmail.org/](http://www.procmail.org/) || [procmail](https://www.archlinux.org/packages/?name=procmail)
 
-*   **[Maildrop](/index.php?title=Maildrop&action=edit&redlink=1 "Maildrop (page does not exist)")** — A mail filter/mail delivery agent used by the Courier Mail Server.
+*   **Maildrop** — A mail filter/mail delivery agent used by the Courier Mail Server.
 
 	[https://www.courier-mta.org/maildrop/](https://www.courier-mta.org/maildrop/) || [courier-maildrop](https://aur.archlinux.org/packages/courier-maildrop/)
 
@@ -95,7 +95,7 @@ See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/
 | 143 | IMAP | STARTTLS |
 | 993 | IMAPS | implicit TLS |
 
-Note that implicit TLS is more secure than [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS "wikipedia:Opportunistic TLS") because the latter is vulnerable to [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack "wikipedia:Man-in-the-middle attack"), for more information see [[1]](https://serverfault.com/questions/523804/is-starttls-less-safe-than-tls-ssl) and [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
+**Note:** Implicit TLS is more secure than [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS "wikipedia:Opportunistic TLS") because the latter is vulnerable to [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack "wikipedia:Man-in-the-middle attack"). For more information, see [[1]](https://serverfault.com/questions/523804/is-starttls-less-safe-than-tls-ssl) and [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
 
 ## MX record
 

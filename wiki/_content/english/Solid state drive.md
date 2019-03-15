@@ -54,7 +54,7 @@ As of Linux kernel version 3.8 onwards, support for TRIM was continually added f
 (*fstrim*) | References
 and notes |
 | [Ext3](/index.php/Ext3 "Ext3") | No | ? |
-| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes | [[1]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/ext4.txt#n344) |
+| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes | [[1]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/ext4.txt?id=5012284700775a4e6e3fbe7eac4c543c4874b559#n342) |
 | [Btrfs](/index.php/Btrfs "Btrfs") | Yes | Yes |
 | [JFS](/index.php/JFS "JFS") | Yes | Yes | [[2]](https://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) |
 | [XFS](/index.php/XFS "XFS") | Yes | Yes | [[3]](http://xfs.org/index.php/FITRIM/discard) |

@@ -43,17 +43,21 @@ Download URLs linked from the PyPI website include an unpredictable hash that ne
 
 	Source package
 
-	`https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz`
+	`https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz`
 
-	Bilingual wheel package (Python 2 and Python 3 compatible)
+	Pure Python wheel package
 
-	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-py2.py3-none-any.whl`
+	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/${_name/-/_}-$pkgver-py2.py3-none-any.whl` (Bilingual – Python 2 and Python 3 compatible)
+
+	`https://files.pythonhosted.org/packages/py3/${_name::1}/$_name/${_name/-/_}-$pkgver-py3-none-any.whl` (Python 3 only)
+
+	Note that the distribution name can contain dashes, while its representation in a wheel filename cannot (they are converted to underscores).
 
 	Arch specific wheel package
 
-	in this example for `source_x86_64=('...')`. Also `_py=py36` can be used to not repeat the python version:
+	in this example for `source_x86_64=('...')`. Also `_py=py37` can be used to not repeat the python version:
 
-	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
+	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/${_name/-/_}-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
 
 Note that a custom `**_name**` variable is used instead of `pkgname` since python packages are generally prefixed with `python-`. This variable can generically be defined as follows:
 

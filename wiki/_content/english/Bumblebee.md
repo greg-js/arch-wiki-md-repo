@@ -154,14 +154,9 @@ $ optirun -b none nvidia-settings -c :8
 
 ```
 
-**Note:** A patched version of [nvdock](https://aur.archlinux.org/packages/nvdock/) is available in the package [nvdock-bumblebee](https://aur.archlinux.org/packages/nvdock-bumblebee/)
+**Note:** A patched version of [nvdock](https://aur.archlinux.org/packages/nvdock/) is available in the package [nvdock-bumblebee](https://aur.archlinux.org/packages/nvdock-bumblebee/).
 
-For a list of the options for `optirun`, view its manual page:
-
-```
-$ man optirun
-
-```
+For a list of all available options, see [optirun(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/optirun.1).
 
 ## Configuration
 

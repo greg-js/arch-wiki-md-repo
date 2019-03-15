@@ -90,18 +90,11 @@ quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic
 
 ```
 
-The upgrade to 4.20 patched for Raver Ridge installing [linux-amd-raven](https://aur.archlinux.org/packages/linux-amd-raven/) and may be you will want to install after [linux-amd-raven-headers](https://aur.archlinux.org/packages/linux-amd-raven-headers/) in order to build DKMS modules.
-
-Since idle=nomwait makes it run hotter. After the kernel upgrade you can remove idle=nomwait from grub, getting the following line:
-
-```
-quiet radeon.dpm=1 acpi_osi=Linux acpi_backlight=vendor amd_iommu=on ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2
-
-```
-
 you can use grub-customizer to make it easier
 
-If you keep experiencing hangups after start using [linux-amd-raven](https://aur.archlinux.org/packages/linux-amd-raven/) try [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) with [linux-mainline-headers](https://aur.archlinux.org/packages/linux-mainline-headers/)
+The upgrade to kernel 4.20 since raven support if there is problem try [linux-amd-raven](https://aur.archlinux.org/packages/linux-amd-raven/) and may be you will want to install after [linux-amd-raven-headers](https://aur.archlinux.org/packages/linux-amd-raven-headers/) in order to build DKMS modules.
+
+If you want bleeding edge features and power saving try [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) with [linux-amd-staging-drm-next-git-headers](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git-headers/), but keep idle=nomwait since still causes hangups.
 
 ### Power Saving Modes
 

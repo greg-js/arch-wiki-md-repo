@@ -1,6 +1,10 @@
 [Tiny Tiny RSS](https://tt-rss.org/) is an open source web-based news feed (RSS/Atom) aggregator, designed to allow you to read news from any location, while feeling as close to a real desktop application as possible.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Set up php and database](#Set_up_php_and_database)
@@ -23,11 +27,13 @@ tt-rss is installed into `/usr/share/webapps/tt-rss/`; you'll need to make this 
 
 	 `# ln -s /usr/share/webapps/tt-rss /usr/share/nginx/html/tt-rss` 
 
+You will need to recursively chown {ic|/usr/share/webapps/tt-rss}} to http:http.
+
 ### Set up php and database
 
 You'll need to set up a database, either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
-Create a user and database, e.g. with mysql:
+Create a ttrss user and database, e.g. with mysql:
 
 ```
 $ mysql -p -u root
@@ -37,7 +43,7 @@ mysql> GRANT ALL PRIVILEGES ON ttrss.* TO "ttrss"@"localhost" IDENTIFIED BY 'som
 
 ```
 
-Or create a user and database in PostgreSQL, e.g.:
+Or create a ttrss user and database in PostgreSQL, e.g.:
 
 ```
 [postgres]$ createuser -P --interactive
@@ -53,12 +59,12 @@ extension=iconv
 extension=mysqli # for MySQL
 extension=pdo_mysql # for MySQL
 extension=pdo_pgsql # for PostgreSQL
-extension=pgsql # for legacy PostgreSQL plugins
+extension=pgsql # for legacy PostgreSQL plugins (still required by default)
 extension=soap
 
 ```
 
-*If* `open_basedir` is set in `/etc/php/php.ini` (it isn't by default), add `/var/lib/tt-rss` to it.
+*If* `open_basedir` is set in `/etc/php/php.ini` (it isn't by default), add `/var/lib/tt-rss:/usr/share/webapps/tt-rss:/etc/webapps/tt-rss` to it.
 
 Application initialization can be done either automatically or manually.
 

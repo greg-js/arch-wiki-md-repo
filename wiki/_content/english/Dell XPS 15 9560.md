@@ -19,7 +19,11 @@
 
 This page contains recommendations for running Arch Linux on the Dell XPS 15 9560 (late 2016). With some configuration almost all the hardware is well supported. Exceptions are the fingerprint reader, occasional locks on resuming from suspend experienced by some users, and the lack of support for PRIME render offload to the discrete GPU in the Nvidia proprietary driver.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 UEFI](#UEFI)
     *   [1.1 Firmware Update](#Firmware_Update)
@@ -300,7 +304,7 @@ With the recent deprecation of synaptics, it is possible to use existing GUI (fo
 
 ### TB16
 
-TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://www.archlinux.org/packages/?name=bolt) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
+TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://www.archlinux.org/packages/?name=bolt) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated. Various quirks are detailed on the [Dell TB16](/index.php/Dell_TB16 "Dell TB16") page.
 
 ### Dell Docks
 

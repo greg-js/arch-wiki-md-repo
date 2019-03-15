@@ -6,7 +6,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
 	*cron* is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times, dates or intervals. It is commonly used to automate system maintenance or administration.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -68,7 +72,7 @@ cron registers the output from *stdout* and *stderr* and attempts to send it as 
 
 ssmtp is a send-only sendmail emulator which delivers email from a local computer to an smtp server. While there are currently no active maintainers, it is still by far the simplest way to transfer mail to a configured mailhub. There are no daemons to run, and configuration can be as simple as editing 3 lines in a single configuration file (if your host is trusted to relay unauthenticated email through your mailhub). ssmtp does not receive mail, expand aliases, or manage a queue.
 
-Install [ssmtp](https://www.archlinux.org/packages/?name=ssmtp), which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/ssmtp`. You must then edit `/etc/ssmtp/ssmtp.conf`. See [ssmtp](/index.php/SSMTP "SSMTP") for details. Creating a symbolic link to `/usr/bin/sendmail` insures that programs like [S-nail](/index.php/S-nail "S-nail") (or any package which provides `/usr/bin/mail` will just work without modification.
+Install [ssmtp](https://aur.archlinux.org/packages/ssmtp/), which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/ssmtp`. You must then edit `/etc/ssmtp/ssmtp.conf`. See [ssmtp](/index.php/SSMTP "SSMTP") for details. Creating a symbolic link to `/usr/bin/sendmail` insures that programs like [S-nail](/index.php/S-nail "S-nail") (or any package which provides `/usr/bin/mail` will just work without modification.
 
 Restart `cronie` to insure that it detects that you now have a `/usr/bin/sendmail` installed.
 
@@ -120,7 +124,7 @@ identity *myself*@myisp.com
        password *"secret"*
        starttls enabled
        default
-mda "/usr/bin/procmail -d %T"
+mda "/usr/bin/procmail -d %T"
 
 ```
 

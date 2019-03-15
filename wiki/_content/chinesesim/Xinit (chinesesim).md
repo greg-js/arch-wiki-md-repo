@@ -6,29 +6,31 @@
 *   [Xprofile_(简体中文)](/index.php/Xprofile_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xprofile (简体中文)")
 *   [Xresources](/index.php/Xresources "Xresources")
 
-**翻译状态：** 本文是英文页面 [xinit](/index.php/Xinit "Xinit") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-10，点击[这里](https://wiki.archlinux.org/index.php?title=xinit&diff=0&oldid=516945)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [xinit](/index.php/Xinit "Xinit") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-14，点击[这里](https://wiki.archlinux.org/index.php?title=xinit&diff=0&oldid=560963)可以查看翻译后英文页面的改动。
 
 摘自 [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 	用户可以通过 **xinit** 程序手动启动 [Xorg](/index.php/Xorg "Xorg") 显示服务器，[startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1) 脚本是 [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) 的前端。
 
-*xinit* 和 *startx* 可以带一个可选的客户端程序参数，如果未提供这个参数，它们会从 `~/.xinitrc` 确认要启动的客户端。所以 `xinit /usr/bin/foo` 等价于在 `~/.xinitrc` 中设置 `exec foo` 并执行 `xinit`。
+*xinit* 通常用在启动 X 时执行[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 或 [桌面环境](/index.php/Desktop_environment "Desktop environment")。虽然可以使用 *xinit* 在无窗口管理器的情况下启动图形程序，大部分图形程序都需要一个兼容 [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "wikipedia:Extended Window Manager Hints") 的窗口管理器。[显示管理器](/index.php/Display_manager "Display manager") 启动 [Xorg](/index.php/Xorg "Xorg") 并读取 [xprofile](/index.php/Xprofile "Xprofile")。
 
-*xinit* 通常用在启动 X 时执行[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 或 [桌面环境](/index.php/Desktop_environment "Desktop environment")。虽然可以使用 *xinit* 在无窗口管理器的情况下启动图形程序，大部分图形程序都需要一个兼容 [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "wikipedia:Extended Window Manager Hints") 的窗口管理器。`~/.xinitrc` 可以启动依赖 X 的程序，并在 X 启动时设置环境变量。[显示管理器](/index.php/Display_manager "Display manager") 启动 [Xorg](/index.php/Xorg "Xorg") 并读取 [xprofile](/index.php/Xprofile "Xprofile")。
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
     *   [2.1 xinitrc](#xinitrc)
     *   [2.2 xserverrc](#xserverrc)
 *   [3 使用](#使用)
-*   [4 在启动时自动启用 X](#在启动时自动启用_X)
-*   [5 提示和技巧](#提示和技巧)
-    *   [5.1 从命令行覆盖 xinitrc](#从命令行覆盖_xinitrc)
-    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments/window_managers)
-    *   [5.3 不启动窗口管理器，直接启动程序](#不启动窗口管理器，直接启动程序)
-    *   [5.4 Output redirection using startx](#Output_redirection_using_startx)
+*   [4 提示和技巧](#提示和技巧)
+    *   [4.1 从命令行覆盖 xinitrc](#从命令行覆盖_xinitrc)
+    *   [4.2 在启动时自动启用 X](#在启动时自动启用_X)
+    *   [4.3 Switching between desktop environments/window managers](#Switching_between_desktop_environments/window_managers)
+    *   [4.4 不启动窗口管理器，直接启动程序](#不启动窗口管理器，直接启动程序)
+    *   [4.5 Output redirection using startx](#Output_redirection_using_startx)
 
 ## 安装
 
@@ -36,9 +38,11 @@
 
 ## 配置
 
+*xinit* 和 *startx* 可以带一个可选的客户端程序参数，如果未提供这个参数，它们会从 `~/.xinitrc` 确认要启动的客户端。所以 `xinit /usr/bin/foo` 等价于在 `~/.xinitrc` 中设置 `exec foo` 并执行 `xinit`。
+
 ### xinitrc
 
-如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1)。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
+`~/.xinitrc` 可以方便的启动依赖 X 的程序，并在 X 启动时设置环境变量。如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1)。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
 
 ```
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -89,7 +93,7 @@ exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
 或者
 
 ```
-$ xinit -- :1
+$ xinit -- :1
 
 ```
 
@@ -110,7 +114,27 @@ $ pkill -15 -t tty"$XDG_VTNR" Xorg
 
 ```
 
-## 在启动时自动启用 X
+## 提示和技巧
+
+### 从命令行覆盖 xinitrc
+
+如果你有一个可用的 `~/.xinitrc`, 件，只想尝试下其他的窗口管理器/桌面环境，你可从命令行给 `startx` 完整路径
+
+```
+$ startx /full/path/to/window-manager
+
+```
+
+必须使用完整 **required**. 还有一个选项是为 [#xserverrc](#xserverrc) 提供额外参数，加在 `--` 后面，例如：
+
+```
+ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
+
+```
+
+参阅 [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
+
+### 在启动时自动启用 X
 
 先确保 *startx* 已经配置好了。
 
@@ -141,26 +165,6 @@ fi
 参阅 [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") 和 [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
 
 可以和 [自动登录到虚拟终端](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")一起使用.
-
-## 提示和技巧
-
-### 从命令行覆盖 xinitrc
-
-如果你有一个可用的 `~/.xinitrc`, 件，只想尝试下其他的窗口管理器/桌面环境，你可从命令行给 `startx` 完整路径
-
-```
-$ startx /full/path/to/window-manager
-
-```
-
-必须使用完整 **required**. 还有一个选项是为 [#xserverrc](#xserverrc) 提供额外参数，加在 `--` 后面，例如：
-
-```
- $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
-
-```
-
-参阅 [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
 ### Switching between desktop environments/window managers
 

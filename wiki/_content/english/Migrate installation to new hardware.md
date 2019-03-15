@@ -40,8 +40,8 @@ Which way you choose depends heavily on how the new system differs from your old
 #### What software?
 
 ```
-$ pacman -Qqe | grep -vx "$(pacman -Qqm)" > Packages
-$ pacman -Qqm > Packages.aur
+$ pacman -Qqen > Packages
+$ pacman -Qqem > Packages.aur
 
 ```
 

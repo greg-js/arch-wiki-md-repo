@@ -2,7 +2,6 @@ Related articles
 
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
 *   [Vagrant](/index.php/Vagrant "Vagrant")
 
 [Docker](https://en.wikipedia.org/wiki/Docker_(software) is a utility to pack, ship and run any application as a lightweight container.

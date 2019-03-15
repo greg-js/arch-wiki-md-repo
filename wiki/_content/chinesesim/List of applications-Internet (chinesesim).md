@@ -58,15 +58,15 @@
         *   [1.5.2 邮件服务器](#邮件服务器)
         *   [1.5.3 邮件检索代理](#邮件检索代理)
         *   [1.5.4 即时通信客户端](#即时通信客户端)
-            *   [1.5.4.1 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.4.1.1 Console](#Console)
-                *   [1.5.4.1.2 Graphical](#Graphical)
-            *   [1.5.4.2 IRC clients](#IRC_clients)
-                *   [1.5.4.2.1 Console](#Console_2)
-                *   [1.5.4.2.2 Graphical](#Graphical_2)
+            *   [1.5.4.1 多协议客户端](#多协议客户端)
+                *   [1.5.4.1.1 命令行](#命令行_4)
+                *   [1.5.4.1.2 图形界面](#图形界面_4)
+            *   [1.5.4.2 IRC客户端](#IRC客户端)
+                *   [1.5.4.2.1 命令行](#命令行_5)
+                *   [1.5.4.2.2 Graphical](#Graphical)
             *   [1.5.4.3 XMPP clients](#XMPP_clients)
-                *   [1.5.4.3.1 Console](#Console_3)
-                *   [1.5.4.3.2 Graphical](#Graphical_3)
+                *   [1.5.4.3.1 Console](#Console)
+                *   [1.5.4.3.2 Graphical](#Graphical_2)
             *   [1.5.4.4 SIP clients](#SIP_clients)
             *   [1.5.4.5 Matrix clients](#Matrix_clients)
             *   [1.5.4.6 Tox clients](#Tox_clients)
@@ -81,7 +81,7 @@
     *   [1.6 新闻，RSS 与博客](#新闻，RSS_与博客)
         *   [1.6.1 新闻抓取](#新闻抓取)
             *   [1.6.1.1 终端](#终端_2)
-            *   [1.6.1.2 图形界面](#图形界面_4)
+            *   [1.6.1.2 图形界面](#图形界面_5)
         *   [1.6.2 播客客户端](#播客客户端)
         *   [1.6.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
         *   [1.6.4 博客软件](#博客软件)
@@ -1250,85 +1250,85 @@ Pastebin服务经常用作引用文本或图片，特别是协作和故障排除
 
 #### 即时通信客户端
 
-See also [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") and [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/Comparison_of_VoIP_software "wikipedia:Comparison of VoIP software").
+也可查阅 [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") 和 [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/Comparison_of_VoIP_software "wikipedia:Comparison of VoIP software").
 
-This section lists all client software with [instant messaging](https://en.wikipedia.org/wiki/Instant_messaging "wikipedia:Instant messaging") support.
+这个部分在 [instant messaging](https://en.wikipedia.org/wiki/Instant_messaging "wikipedia:Instant messaging")的支持下列出了所有客户端软件.
 
-##### Multi-protocol clients
+##### 多协议客户端
 
-**Note:** All messengers, that support several networks by means of direct connections to them, belong to this section.
+**Note:** 支持多个网络直连的通信客户端都属于这个部分.
 
-The number of networks supported by these clients is very large but they (like any multi-protocol clients) usually have very limited or no support for network-specific features.
+这些客户端支持的网络的数量很大但他们(像所有的多协议客户的一样)通常对特定网络的功能支持有限.
 
-###### Console
+###### 命令行
 
-*   **BarnOwl** — Ncurses-based chat client with support for the Zephyr, XMPP, IRC and Twitter protocols.
+*   **BarnOwl** — 基于Ncurses的聊天客户端，支持Zephyr, XMPP, IRC 和 Twitter 的协议.
 
 	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
 
-*   **[BitlBee](/index.php/Bitlbee "Bitlbee")** — IRC gateway to popular chat networks (XMPP, ICQ and Twitter).
+*   **[BitlBee](/index.php/Bitlbee "Bitlbee")** — 连接到热门聊天网络的IRC网关(XMPP, ICQ 和 Twitter).
 
 	[http://bitlbee.org/](http://bitlbee.org/) || [bitlbee](https://www.archlinux.org/packages/?name=bitlbee)
 
-*   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Text mode menu- and window-driven IM interface. Supports most of widely used IM protocols, including ICQ, IRC, XMPP.
+*   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — 文字模式的菜单和窗口驱动的IM界面. 支持大部分广泛使用的IM协议,包括ICQ, IRC, XMPP.
 
 	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
-*   **EKG2** — Ncurses based XMPP, Gadu-Gadu, ICQ and IRC client.
+*   **EKG2** — 基于Ncurses的XMPP, Gadu-Gadu, ICQ 和 IRC 客户端.
 
 	[http://en.ekg2.org/](http://en.ekg2.org/) || [ekg2](https://aur.archlinux.org/packages/ekg2/)
 
-*   **Finch** — Ncurses-based chat client that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
+*   **Finch** — 基于Ncurses的聊天客户端，使用libpurple并支持它所以的协议(Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
 
-*   **Minbif** — IRC gateway to IM networks that uses libpurple.
+*   **Minbif** — 连接到使用libpurple的IM网络的IRC网关.
 
 	[https://symlink.me/projects/minbif/wiki](https://symlink.me/projects/minbif/wiki) || [minbif](https://www.archlinux.org/packages/?name=minbif)
 
-###### Graphical
+###### 图形界面
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME的即时消息客户端，使用 [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架，支持音频/视频.
 
 	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
-*   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video VoIP phone and instant messenger written in Java that supports protocols such as SIP, XMPP, ICQ, IRC and many other useful features.
+*   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — 音频/视频VoIP手机和即时通信客户端，用Java写成，支持SIP, XMPP, ICQ, IRC协议和许多其它有用的特性.
 
 	[https://jitsi.org/](https://jitsi.org/) || [jitsi](https://aur.archlinux.org/packages/jitsi/)
 
-*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — User-friendly IM supporting Bonjour, Gadu-Gadu, GroupWise, ICQ, XMPP.
+*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — 用户友好的IM客户端，支持Bonjour, Gadu-Gadu, GroupWise, ICQ, XMPP.
 
 	[https://userbase.kde.org/Kopete](https://userbase.kde.org/Kopete) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
-*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE即时通信客户端使用[Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架. 它的目的是做成Kopete的替代品.
 
 	[https://userbase.kde.org/Telepathy](https://userbase.kde.org/Telepathy) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
-*   **[Pidgin](/index.php/Pidgin "Pidgin")** — Multi-protocol instant messaging client with audio support that uses libpurple and supports all its protocols (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
+*   **[Pidgin](/index.php/Pidgin "Pidgin")** — 多协议即时通信客户端并有音频支持，使用的libpurple并支持所以它的协议 (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin)
 
-*   **qutIM** — Simple and user-friendly IM supporting ICQ, XMPP, Mail.Ru, IRC and VKontakte messaging.
+*   **qutIM** — 简单和用户友好的IM客户端支持ICQ, XMPP, Mail.Ru, IRC 和 VKontakte 消息.
 
 	[http://qutim.org/](http://qutim.org/) || [qutim](https://aur.archlinux.org/packages/qutim/)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter and XMPP.
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — 跨平台的IRC客户端，支持Twitter和XMPP.
 
 	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
-*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client supports instant messaging and chat using IRC, XMPP and Twitter.
+*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — 功能丰富的email客户端，支持用IRC，XMPP和Twitter的即时通信.
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
-*   **[Yate Client](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — Instant messenger and softphone supporting XMPP, SIP and H.323.
+*   **[Yate Client](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — 即时通信客户端和软件电话，支持XMPP, SIP and H.323.
 
 	[http://yateclient.yate.ro/](http://yateclient.yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
 
-##### IRC clients
+##### IRC客户端
 
-See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
+也可查阅 [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
 
-###### Console
+###### 命令行
 
 *   **[BitchX](https://en.wikipedia.org/wiki/BitchX "wikipedia:BitchX")** — Console-based IRC client developed from the popular [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 

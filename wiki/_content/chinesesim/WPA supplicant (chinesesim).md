@@ -1,52 +1,57 @@
-Related articles
+相关文章
 
 *   [网络配置](/index.php/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "网络配置")
 *   [无线网络配置](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE "无线网络配置")
-*   [WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise")
+*   [iwd](/index.php/Iwd "Iwd")
 
-**翻译状态：** 本文是英文页面 [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-01，点击[这里](https://wiki.archlinux.org/index.php?title=WPA_Supplicant&diff=0&oldid=450471)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-12，点击[这里](https://wiki.archlinux.org/index.php?title=WPA+supplicant&diff=0&oldid=557354)可以查看翻译后英文页面的改动。
 
-[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) 是跨平台的 WPA [请求者程序（supplicant）](https://en.wikipedia.org/wiki/Supplicant_(computer) "wikipedia:Supplicant (computer)")，支持 WEP、WPA 和 WPA2（[IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN （健壮安全网络-Robust Secure Network））。可以在桌面、笔记本甚至嵌入式系统中使用。
+[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) 是跨平台的 WPA [请求者程序（supplicant）](https://en.wikipedia.org/wiki/Supplicant_(computer) "wikipedia:Supplicant (computer)")，支持 WEP、WPA 和 WPA2([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i-2004 "wikipedia:IEEE 802.11i-2004")).。可以在桌面、笔记本甚至嵌入式系统中使用。
 
-*wpa_supplicant* 是在客户端使用的 IEEE 802.1X/WPA 组件，支持与 WPA Authenticator 的交互，控制漫游和无线驱动的 IEEE 802.11 验证和关联。
+*wpa_supplicant* 是在客户端使用的 IEEE 802.1X/WPA 组件，支持与 WPA Authenticator 的交互，控制漫游和无线驱动的[IEEE 802.11](https://en.wikipedia.org/wiki/IEEE_802.11 "wikipedia:IEEE 802.11") 验证和关联。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 概览](#.E6.A6.82.E8.A7.88)
-*   [3 用 wpa_cli 连接](#.E7.94.A8_wpa_cli_.E8.BF.9E.E6.8E.A5)
-*   [4 带 wpa 通行字的连接](#.E5.B8.A6_wpa_.E9.80.9A.E8.A1.8C.E5.AD.97.E7.9A.84.E8.BF.9E.E6.8E.A5)
-*   [5 高级用法](#.E9.AB.98.E7.BA.A7.E7.94.A8.E6.B3.95)
-    *   [5.1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [5.2 连接](#.E8.BF.9E.E6.8E.A5)
-        *   [5.2.1 手动连接](#.E6.89.8B.E5.8A.A8.E8.BF.9E.E6.8E.A5)
-        *   [5.2.2 引导时连接（systemd）](#.E5.BC.95.E5.AF.BC.E6.97.B6.E8.BF.9E.E6.8E.A5.EF.BC.88systemd.EF.BC.89)
-    *   [5.3 wpa_cli 操作脚本](#wpa_cli_.E6.93.8D.E4.BD.9C.E8.84.9A.E6.9C.AC)
-*   [6 排错](#.E6.8E.92.E9.94.99)
-    *   [6.1 某些硬件上 nl80211 驱动不支持](#.E6.9F.90.E4.BA.9B.E7.A1.AC.E4.BB.B6.E4.B8.8A_nl80211_.E9.A9.B1.E5.8A.A8.E4.B8.8D.E6.94.AF.E6.8C.81)
-    *   [6.2 挂载了网络共享（CIFS）时的关机问题](#.E6.8C.82.E8.BD.BD.E4.BA.86.E7.BD.91.E7.BB.9C.E5.85.B1.E4.BA.AB.EF.BC.88CIFS.EF.BC.89.E6.97.B6.E7.9A.84.E5.85.B3.E6.9C.BA.E9.97.AE.E9.A2.98)
-    *   [6.3 口令相关的问题](#.E5.8F.A3.E4.BB.A4.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 概览](#概览)
+*   [3 用 wpa_cli 连接](#用_wpa_cli_连接)
+*   [4 带 wpa 通行字的连接](#带_wpa_通行字的连接)
+*   [5 高级用法](#高级用法)
+    *   [5.1 配置](#配置)
+    *   [5.2 连接](#连接)
+        *   [5.2.1 手动连接](#手动连接)
+        *   [5.2.2 引导时连接（systemd）](#引导时连接（systemd）)
+            *   [5.2.2.1 802.1x/radius](#802.1x/radius)
+    *   [5.3 wpa_cli 操作脚本](#wpa_cli_操作脚本)
+*   [6 排错](#排错)
+    *   [6.1 某些硬件上 nl80211 驱动不支持](#某些硬件上_nl80211_驱动不支持)
+    *   [6.2 挂载了网络共享（CIFS）时的关机问题](#挂载了网络共享（CIFS）时的关机问题)
+    *   [6.3 口令相关的问题](#口令相关的问题)
+*   [7 参阅](#参阅)
 
 ## 安装
 
-[安装](/index.php/Install "Install") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 软件包。
+[安装](/index.php/Install "Install") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 软件包。此软件包提供了主程序 *wpa_supplicant*，密码工具 *wpa_passphrase* 和文字界面前端 *wpa_cli*.
 
-此外软件包 [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) 提供了图形界面 *wpa_gui*。
+此外软件包 [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) 提供了图形界面 *wpa_gui*。 [wpa-cute](https://aur.archlinux.org/packages/wpa-cute/) 是 *wpa_gui* 的一个分支，提供了额外的修正和改进。
 
 ## 概览
 
 连接到加密无线网络的第一步是让 *wpa_supplicant* 获取 WPA 认证者的认证。为此， *wpa_supplicant* 必须进行配置以使其能够向认证者提交认证信息。
 
-一旦完成认证，就可以正常连接网络，并通过 [iproute2](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") 手工获取 IP 地址；或者使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 或 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")之类的网络管理程序，通过配置一个*接口*然后通过 DHCP 自动获取 IP 地址。参阅[无线网络管理](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86 "无线网络配置")和[配置 IP 地址](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE_IP_.E5.9C.B0.E5.9D.80 "Network configuration (简体中文)")等文章中的方法和范例。
+完成认证后需要分配 IP 地址，请参考:[Network configuration#IP addresses](/index.php/Network_configuration#IP_addresses "Network configuration")。
 
 ## 用 wpa_cli 连接
 
-This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
+This connection method allows scanning for available networks, making use of *wpa_cli*, a command line tool which can be used to configure *wpa_supplicant*. See [wpa_cli(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_cli.8) for details.
 
 In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
 
- `/etc/wpa_supplicant/example.conf` 
+ `/etc/wpa_supplicant/wpa_supplicant.conf` 
 ```
 ctrl_interface=/run/wpa_supplicant
 update_config=1
@@ -55,7 +60,7 @@ update_config=1
 Now start *wpa_supplicant* with:
 
 ```
-# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
+# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/wpa_supplicant.conf
 
 ```
 
@@ -112,12 +117,7 @@ OK
 
 ```
 
-Once association is complete, all that is left to do is obtain an IP address as indicated in the [#Overview](#Overview), for example:
-
-```
-# dhcpcd *interface*
-
-```
+Once association is complete, you must obtain an IP address, for example, using [dhcpcd](/index.php/Dhcpcd#Running "Dhcpcd").
 
 ## 带 wpa 通行字的连接
 
@@ -146,7 +146,7 @@ Failed to open config file '/dev/fd/63', error: No such file or directory
 Failed to read or parse configuration '/dev/fd/63'
 
 ```
-参阅：[Help:Reading (简体中文)#一般用户还是 root 用户](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.B8.80.E8.88.AC.E7.94.A8.E6.88.B7.E8.BF.98.E6.98.AF_root_.E7.94.A8.E6.88.B7 "Help:Reading (简体中文)")。
+参阅：[Help:Reading (简体中文)#一般用户还是 root 用户](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#一般用户还是_root_用户 "Help:Reading (简体中文)")。
 
 **提示：**
 
@@ -154,12 +154,7 @@ Failed to read or parse configuration '/dev/fd/63'
 *   要找出无线网卡的名字，使用 `ip link` 命令。
 *   某些不常用的复杂通行字要求从文件输入，例如：`wpa_passphrase MYSSID < passphrase.txt`；或者从命令行输入，例如：`wpa_passphrase MYSSID <<< "passphrase"`。
 
-之后就可以像[#概览](#.E6.A6.82.E8.A7.88)中所述获取 IP 地址：
-
-```
-# dhcpcd *interface*
-
-```
+连接后需要获取 IP 地址，可以使用 [dhcpcd](/index.php/Dhcpcd#Running "Dhcpcd").
 
 ## 高级用法
 
@@ -167,7 +162,7 @@ Failed to read or parse configuration '/dev/fd/63'
 
 ### 配置
 
-如上文中[#带 wpa 通行字的连接](#.E5.B8.A6_wpa_.E9.80.9A.E8.A1.8C.E5.AD.97.E7.9A.84.E8.BF.9E.E6.8E.A5)一节所述，一个基本的配置文件可以这样生成：
+如上文中[#带 wpa 通行字的连接](#带_wpa_通行字的连接)一节所述，一个基本的配置文件可以这样生成：
 
 ```
 # wpa_passphrase MYSSID passphrase > /etc/wpa_supplicant/example.conf
@@ -258,9 +253,41 @@ followed by a method to obtain an ip address manually as indicated in the [#Over
 
 在引导时激活无线网络，就是激活服务于某个无线网络接口的上述服务单元之一。
 
-现在就可以像[概览](#.E6.A6.82.E8.A7.88)一节所述，可以选定某个网络接口并[激活](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")其服务单元的一个实例，从而获取一个 IP 地址。
+现在就可以像[概览](#概览)一节所述，可以选定某个网络接口并[激活](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")其服务单元的一个实例，从而获取一个 IP 地址。
 
 **提示：** *dhcpcd* 可以后台加载 *wpa_supplicant* ，参阅 [dhcpcd (简体中文)#10-wpa_supplicant](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#10-wpa_supplicant "Dhcpcd (简体中文)").
+
+##### 802.1x/radius
+
+To connect a wired adapter using 802.1x/radius you will need to specify some configurations and enable the necessary service for the adapter. This is useful for headless servers using *networkd*.
+
+Replace `*adapter*` with the wired adapter you wish to connect, and adapt the settings to match your 802.1x/radius requirements.
+
+ `/etc/wpa_supplicant/wpa_supplicant-wired-*adapter*.conf` 
+```
+ctrl_interface=/var/run/wpa_supplicant
+ap_scan=0
+network={
+  key_mgmt=IEEE8021X
+  eap=PEAP
+  identity="*user_name*"
+  password="*user_password*"
+  phase2="autheap=MSCHAPV2"
+}
+```
+
+**Tip:** The same configuration, but for a wireless adapter, would require changing `IEEE8021X` to `WPA-EAP` and removing the `ap_scan=0` line
+
+Since this file is storing a plaintext password, [chown](/index.php/Chown "Chown") it to `root:root` and [chmod](/index.php/Chmod "Chmod") it to `600`.
+
+Before running the `wpa_supplicant-wired@*adapter*.service` service, make sure to set the device down:
+
+```
+# ip link set *adapter* down
+
+```
+
+**Tip:** This setup can be used during system installation as well, though you may want to run using `dhcpcd@*adapter*.service` to solicit an address.
 
 ### wpa_cli 操作脚本
 
@@ -274,10 +301,10 @@ The following example will use [desktop notifications](/index.php/Desktop_notifi
 case "$2" in
     CONNECTED)
         notify-send "WPA supplicant: connection established";
-        ;;
+        ;;
     DISCONNECTED)
         notify-send "WPA supplicant: connection lost";
-        ;;
+        ;;
 esac
 
 ```
@@ -347,7 +374,8 @@ In some instances it was found that storing the passphrase cleartext in the `psk
 
 ## 参阅
 
-*   [WPA Supplicant 主页](http://hostap.epitest.fi/wpa_supplicant/)
+*   [wpa_supplicant 主页](https://w1.fi/wpa_supplicant/)
+*   [wpa_supplicant README](http://w1.fi/cgit/hostap/plain/wpa_supplicant/README) - 包含项目完整文档.
 *   [wpa_cli 用例](https://gist.github.com/buhman/7162560)
 *   [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8)
 *   [wpa_supplicant.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.conf.5)

@@ -328,7 +328,7 @@ Establezca la [contraseña](/index.php/Users_and_groups_(Espa%C3%B1ol)#Base_de_d
 
 ### Instalar gestor de arranque
 
-Consulte [Arch boot process (Español)#Boot loader](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Boot_loader "Arch boot process (Español)") para obtener una lista de cargadores de arranque compatibles con Linux.
+Consulte [Arch boot process (Español)#Gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") para obtener una lista de cargadores de arranque compatibles con Linux.
 
 **Nota:** Si tiene una CPU Intel o AMD, active las actualizaciones de [microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)").
 

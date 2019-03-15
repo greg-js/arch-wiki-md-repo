@@ -268,7 +268,7 @@ You can download a BSD licensed UEFI Shell from Intel's TianoCore UDK/EDK2 proje
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
 *   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date).
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/UDK2018/EdkShellBinPkg) (not updated anymore upstream).
-*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://ptpb.pw/~Shell2.zip) - from Clover EFI bootloader.
+*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://drive.google.com/uc?export=download&id=1OBXYj6MEs7VAZbYnjD9FxOYcZYIQoq36) - from Clover EFI bootloader.
 
 Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](https://edk2-devel.narkive.com/zCN4CEnb/inclusion-of-uefi-shell-in-linux-distro-iso).
 

@@ -2,28 +2,32 @@ Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 
-**翻译状态：** 本文是英文页面 [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-10，点击[这里](https://wiki.archlinux.org/index.php?title=NTFS-3G&diff=0&oldid=510372)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-14，点击[这里](https://wiki.archlinux.org/index.php?title=NTFS-3G&diff=0&oldid=521903)可以查看翻译后英文页面的改动。
 
 Linux内核目前只支持对微软NTFS文件系统的读取。 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) 是微软 NTFS 文件系统的一个开源实现，同时支持读和写。NTFS-3G 开发者使用 FUSE 文件系统来辅助开发，同时对可移植性有益。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 手动挂载](#.E6.89.8B.E5.8A.A8.E6.8C.82.E8.BD.BD)
-*   [3 格式化](#.E6.A0.BC.E5.BC.8F.E5.8C.96)
-*   [4 配置](#.E9.85.8D.E7.BD.AE)
-    *   [4.1 默认配置](#.E9.BB.98.E8.AE.A4.E9.85.8D.E7.BD.AE)
-    *   [4.2 Linux权限兼容](#Linux.E6.9D.83.E9.99.90.E5.85.BC.E5.AE.B9)
-    *   [4.3 允许组/用户](#.E5.85.81.E8.AE.B8.E7.BB.84.2F.E7.94.A8.E6.88.B7)
-    *   [4.4 基本的 ntfs-3g 选项](#.E5.9F.BA.E6.9C.AC.E7.9A.84_ntfs-3g_.E9.80.89.E9.A1.B9)
-    *   [4.5 允许用户挂载](#.E5.85.81.E8.AE.B8.E7.94.A8.E6.88.B7.E6.8C.82.E8.BD.BD)
-    *   [4.6 ntfs-config](#ntfs-config)
-*   [5 缩放NTFS分区](#.E7.BC.A9.E6.94.BENTFS.E5.88.86.E5.8C.BA)
-*   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [6.1 损坏的NTFS文件系统](#.E6.8D.9F.E5.9D.8F.E7.9A.84NTFS.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [6.2 元数据保存在Windows中，拒绝挂载](#.E5.85.83.E6.95.B0.E6.8D.AE.E4.BF.9D.E5.AD.98.E5.9C.A8Windows.E4.B8.AD.EF.BC.8C.E6.8B.92.E7.BB.9D.E6.8C.82.E8.BD.BD)
-    *   [6.3 挂载失败](#.E6.8C.82.E8.BD.BD.E5.A4.B1.E8.B4.A5)
-*   [7 参见](#.E5.8F.82.E8.A7.81)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 手动挂载](#手动挂载)
+*   [3 格式化](#格式化)
+*   [4 配置](#配置)
+    *   [4.1 默认配置](#默认配置)
+    *   [4.2 Linux权限兼容](#Linux权限兼容)
+    *   [4.3 允许组/用户](#允许组/用户)
+    *   [4.4 基本的 ntfs-3g 选项](#基本的_ntfs-3g_选项)
+    *   [4.5 允许用户挂载](#允许用户挂载)
+*   [5 缩放NTFS分区](#缩放NTFS分区)
+*   [6 疑难解答](#疑难解答)
+    *   [6.1 损坏的NTFS文件系统](#损坏的NTFS文件系统)
+    *   [6.2 元数据保存在Windows中，拒绝挂载](#元数据保存在Windows中，拒绝挂载)
+    *   [6.3 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
+    *   [6.4 挂载失败](#挂载失败)
+*   [7 参见](#参见)
 
 ## 安装
 
@@ -129,6 +133,10 @@ Linux系统通常将目录的权限设为755，将文件的权限设为644。如
 
 	与 `umask` 类似但是分别定义的是文件和目录的权限。
 
+	windows_names
+
+	prevents files, directories and extended attributes to be created with a name not allowed by windows.
+
 ### 允许用户挂载
 
 默认情况下，*ntfs-3g*需要 root 权限以装载文件系统, 即使在`/etc/fstab`中有“user”选项。有关详细信息，请参阅 [ntfs-3g-faq](http://www.tuxera.com/community/ntfs-3g-faq/#useroption)。仍然需要 fstab 中的用户选项。
@@ -137,10 +145,6 @@ Linux系统通常将目录的权限设为755，将文件的权限设为644。如
 
 *   [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)包没有内置FUSE支持。使用[ABS](/index.php/ABS "ABS")重新构建包 或安装[ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/)。
 *   卸载权限似乎存在问题，因此如果需要卸载文件系统，则仍需要 root 权限。您还可以使用`fusermount -u /mnt/*mountpoint*`来卸载文件系统并避免使用root权限。此外, 如果在`/etc/fstab`中使用`*users*`（复数）而不是`user`选项，您可以使用`mount`和`umount`命令装卸载文件系统。
-
-### ntfs-config
-
-如果其他方法不生效，[ntfs-config](https://aur.archlinux.org/packages/ntfs-config/)程序也许能帮助您配置NTFS分区。
 
 ## 缩放NTFS分区
 
@@ -213,6 +217,17 @@ powercfg /h off
 ```
 
 你可以在 *控制面板 >硬件与声音> 电源选项 > 系统设置 > 当电源键按下时做什么*， 去掉勾选*启用快速启动*
+
+### Deleting Windows hibernate metadata
+
+As an alternative to above clean shutdown method, there is a way to completely destroy NTFS metadata that was saved after hibernating. This method is only feasible if you're not able or unwilling to boot into Windows and shut it down completely. This is by placing **remove_hiberfile** option when you're mounting your NTFS file system using ntfs-3g.
+
+```
+# mount -t ntfs-3g -o remove_hiberfile /dev/*your_NTFS_partition* */mount/point*
+
+```
+
+**Warning:** Please note that this method means that the saved Windows session will be completely lost. Use this option under your own responsibility.
 
 ### 挂载失败
 

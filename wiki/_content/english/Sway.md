@@ -1,6 +1,6 @@
 *sway* is a compositor for [Wayland](/index.php/Wayland "Wayland") designed to be fully compatible with [i3](/index.php/I3 "I3"). According to [the official website](https://swaywm.org):
 
-	Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.
+	Sway is a tiling Wayland compositor and a drop-in replacement for the i3 window manager for X11\. It works with your existing i3 configuration and supports most of i3's features, plus a few extras.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -34,9 +34,7 @@
 
 ## Status
 
-Sway is a work-in-progress so caution is advised. However, the project's creator, [Drew DeVault](https://drewdevault.com/) (aka SirCmpwn) has deemed it ready for regular use.
-
-A detailed accounting of what features have been implemented and what features are still outstanding can be found at the following links:
+Sway is 100% compatible with i3, aside from several features that only make sense with X11\. A detailed accounting of completed features can be found at the following links:
 
 *   [i3 feature support](https://github.com/SirCmpwn/sway/issues/2#issue-99897933)
 *   [IPC feature support](https://github.com/SirCmpwn/sway/issues/98)
@@ -45,11 +43,7 @@ A detailed accounting of what features have been implemented and what features a
 
 ## Installation
 
-*sway* can be [installed](/index.php/Install "Install") with the [sway](https://www.archlinux.org/packages/?name=sway) package. This will install the stable (but abandoned) *0.15* version which is based on the (also abandoned) [wlc](https://github.com/Cloudef/wlc) library.
-
-At the time of writing, *sway 1.0-beta* (based on the new [wlroots](https://github.com/swaywm/wlroots) library) is under active development and quite stable. Install the following two [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") packages instead: [wlroots-git](https://aur.archlinux.org/packages/wlroots-git/) and [sway-git](https://aur.archlinux.org/packages/sway-git/).
-
-It's advisable to always update *wlroots* when you update *sway*, due to tight dependencies.
+*sway* can be [installed](/index.php/Install "Install") with the [sway](https://www.archlinux.org/packages/?name=sway) package. The development version can be installed using [wlroots-git](https://aur.archlinux.org/packages/wlroots-git/) and [sway-git](https://aur.archlinux.org/packages/sway-git/). It's advisable to always update *wlroots* when you update *sway*, due to tight dependencies.
 
 ## Starting
 
@@ -71,39 +65,21 @@ If you already use i3, then copy your i3 configuration to `~/.config/sway/config
 
 ### Keymap
 
-By default, sway starts with the US QWERTY keymap. You can override this behaviour by starting sway with:
+By default, sway starts with the US QWERTY keymap. To configure per-input:
 
+ `~/.config/sway/config` 
 ```
-$ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101; sway
-
-```
-
-This will launch sway with the keyboard set to the Colemak variant of the British keymap with the 101-key keyboard model.
-
-See [alias](/index.php/Alias "Alias") to simplify starting from a tty and [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") to start [#From a display manager](#From_a_display_manager).
-
-If none of the above worked, you could add:
-
-```
-export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101
+ input * xkb_layout us,de,ru"
+ input * xkb_variant "colemak,,typewriter"
+ input * xkb_options "grp:win_space_toggle"
+ input "MANUFACTURER1 Keyboard" xkb_model "pc101"
+ input "MANUFACTURER2 Keyboard" xkb_model "jp106"
 
 ```
 
-to either your `.bash_profile` or `.zprofile` (or similar).
+More details are available in [xkeyboard-config(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xkeyboard-config.7) and [sway-input(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sway-input.5).
 
-If you want multiple keyboard layouts at startup edit `.bash_profile` and add, for example US English and German layouts, switchable by `Mod+Space`:
-
- `~/.bash_profile` 
-```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  export XKB_DEFAULT_LAYOUT=us,de
-  export XKB_DEFAULT_OPTIONS=grp:win_space_toggle
-  exec sway
-fi
-
-```
-
-Another option for switching keyboard layout is `Alt`+`Shift`: `grp:alt_shift_toggle`.
+The keymap can also be configured using environment variables (`XKB_DEFAULT_LAYOUT`, `XKB_DEFAULT_VARIANT`, etc.) when starting sway.
 
 ### Statusbar
 
@@ -168,7 +144,7 @@ More documentation and options like acceleration profiles can be found in [sway-
 
 ### HiDPI
 
-Set your displays scale factor with the `output` command in your config file. The scale factor must be an integer, and is usually 2 for HiDPI screens.
+Set your displays scale factor with the `output` command in your config file. The scale factor can be fractional, but it is usually 2 for HiDPI screens.
 
 ```
 output <name> scale <factor>
@@ -265,6 +241,13 @@ wf-recorder -g "$(slurp)"
 
 ```
 
+Example of usage with [grim](https://www.archlinux.org/packages/?name=grim), [slurp](https://www.archlinux.org/packages/?name=slurp) and [wl-clipboard](https://www.archlinux.org/packages/?name=wl-clipboard), screenshot directly with Print button to clipboard.
+
+```
+bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
+
+```
+
 ## Known issues
 
 ### Application launchers
@@ -301,10 +284,10 @@ SWAYSOCK=/run/user/1000/sway-ipc.1000.4981.sock
 
 ```
 
-To work around this problem, you may try attaching to the first available sway socket, and retrying your command:
+To work around this problem, you may try attaching to a socket based on the running sway process:
 
 ```
-$ export SWAYSOCK=$(ls /run/user/*/sway-ipc.*.sock | head -n 1)
+$ export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 
 ```
 
@@ -321,3 +304,4 @@ You may be able to alter your TTY resolution (thus also altering the WLC and Swa
 *   [GitHub project](https://github.com/SirCmpwn/sway)
 *   [sr.ht git page](https://git.sr.ht/~sircmpwn/sway)
 *   [Website](https://swaywm.org)
+*   [Announcing the release of sway 1.0](https://drewdevault.com/2019/03/11/Sway-1.0-released.html)

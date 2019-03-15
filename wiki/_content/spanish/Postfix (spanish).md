@@ -48,7 +48,7 @@ Este artículo se basa en [Servidor de correo](/index.php/Mail_server "Mail serv
         *   [6.2.2 SpamAssassin combinado con Dovecot LDA / Sieve (Filtrado de correo)](#SpamAssassin_combinado_con_Dovecot_LDA_/_Sieve_(Filtrado_de_correo))
         *   [6.2.3 SpamAssassin combinado con Dovecot LMTP / Sieve](#SpamAssassin_combinado_con_Dovecot_LMTP_/_Sieve)
     *   [6.3 Procesamiento de correo basado en reglas](#Procesamiento_de_correo_basado_en_reglas)
-    *   [6.4 Marco de políticas de remitentes](#Marco_de_políticas_de_remitentes)
+    *   [6.4 Marco de políticas del remitente](#Marco_de_políticas_del_remitente)
     *   [6.5 Esquema de reescritura del remitente](#Esquema_de_reescritura_del_remitente)
 *   [7 Solución de problemas](#Solución_de_problemas_2)
     *   [7.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_"database_/etc/postfix/*.db_is_older_than_source_file_..")
@@ -571,9 +571,9 @@ smtpd_recipient_restrictions =
 
 La colocación de los servicios de políticas al final de la cola reduce la carga, ya que solo se procesan los correos legítimos. Asegúrese de colocarlo antes de la primera declaración permisiva para capturar todos los mensajes entrantes.
 
-### Marco de políticas de remitentes
+### Marco de políticas del remitente
 
-Para utilizar el [marco de políticas de remitentes](/index.php/Sender_Policy_Framework "Sender Policy Framework") con Postfix, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/).
+Para utilizar el [marco de políticas del remitente](/index.php/Sender_Policy_Framework "Sender Policy Framework") con Postfix, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [python-postfix-policyd-spf](https://aur.archlinux.org/packages/python-postfix-policyd-spf/).
 
 Edite `/etc/python-policyd-spf/policyd-spf.conf` a sus necesidades. Una versión ampliamente comentada se puede encontrar en `/etc/python-policyd-spf/policyd-spf.conf.commented`. Preste especial atención a la política de verificación HELO, ya que la configuración estándar rechaza estrictamente los fallos HELO.
 

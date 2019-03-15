@@ -35,9 +35,10 @@ Related articles
     *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
     *   [6.9 HSP/HFP profiles](#HSP/HFP_profiles)
     *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_/_Hon_Hai_/_Lite-On_Broadcom_device)
-    *   [6.11 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
-    *   [6.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [6.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+    *   [6.11 Intel combined wifi and bluetooth cards](#Intel_combined_wifi_and_bluetooth_cards)
+    *   [6.12 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
+    *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
@@ -452,6 +453,15 @@ Flash the firmware:
 ```
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
+
+### Intel combined wifi and bluetooth cards
+
+If you happen to use an intel wifi/bluetooth card older than model number 7260 and you notice that bluetooth connections can not be established or soon the connection is dropped then the default module parameter "bt_coex_active" may be causing those issues as described in the iwlwifi kernel documentation [[1]](https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi) under section "About iwldvm support and known issues" and subsection "Wi-Fi / Bluetooth coexistence". As described in the documentation add option "bt_coex_active=0" to the iwlwifi module:
+
+```
+# test ! -f /etc/modprobe.d/iwlwifi.conf && echo "options iwlwifi bt_coex_active=0" > /etc/modprobe.d/iwlwifi.conf || echo "ERROR! file already exists, please open the file and edit manually"
+
+```
 
 ### Device connects, then disconnects after a few moments
 

@@ -129,7 +129,7 @@ This is particularly useful if you are [making git/svn/hg/etc. packages](/index.
 
 #### build()
 
-Now you need to implement the `build()` function in the `PKGBUILD` file. This function uses common shell commands in [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) syntax to automatically compile software and create a `pkg` directory to install the software to. This allows *makepkg* to package files without having to sift through your file system.
+Now you need to implement the `build()` function in the `PKGBUILD` file. This function uses common shell commands in [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) syntax to automatically compile software and create a `pkgdir` directory to install the software to. This allows *makepkg* to package files without having to sift through your file system.
 
 The first step in the `build()` function is to change into the directory created by uncompressing the source tarball. *makepkg* will change the current directory to `$srcdir` before executing the `build()` function. Therefore, in most cases, like suggested in `/usr/share/pacman/PKGBUILD.proto`, the first command will look like this:
 
@@ -156,7 +156,7 @@ Users who do not need it (and occasionally maintainers who can not fix a package
 
 #### package()
 
-The final step is to put the compiled files in a directory where *makepkg* can retrieve them to create a package. This by default is the `pkg` directory—a simple fakeroot environment. The `pkg` directory replicates the hierarchy of the root file system of the software's installation paths. If you have to manually place files under the root of your filesystem, you should install them in the `pkg` directory under the same directory structure. For example, if you want to install a file to `/usr/bin`, it should instead be placed under `$pkgdir/usr/bin`. Very few install procedures require the user to copy dozens of files manually. Instead, for most software, calling `make install` will do so. The final line should look like the following in order to correctly install the software in the `pkg` directory:
+The final step is to put the compiled files in a directory where *makepkg* can retrieve them to create a package. This by default is the `pkgdir` directory—a simple fakeroot environment. The `pkgdir` directory replicates the hierarchy of the root file system of the software's installation paths. If you have to manually place files under the root of your filesystem, you should install them in the `pkgdir` directory under the same directory structure. For example, if you want to install a file to `/usr/bin`, it should instead be placed under `$pkgdir/usr/bin`. Very few install procedures require the user to copy dozens of files manually. Instead, for most software, calling `make install` will do so. The final line should look like the following in order to correctly install the software in the `pkgdir` directory:
 
 ```
 make DESTDIR="$pkgdir/" install

@@ -29,13 +29,14 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
 *   [3 Package pre-requisites to support archlinux-java](#Package_pre-requisites_to_support_archlinux-java)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 MySQL](#MySQL)
-    *   [4.2 Impersonate another window manager](#Impersonate_another_window_manager)
-    *   [4.3 Illegible fonts](#Illegible_fonts)
-    *   [4.4 Missing text in some applications](#Missing_text_in_some_applications)
-    *   [4.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM,_menus_immediately_closing)
-    *   [4.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
-    *   [4.7 JavaFX's MediaPlayer constructor throws an exception](#JavaFX's_MediaPlayer_constructor_throws_an_exception)
-    *   [4.8 Java applications cannot open external links](#Java_applications_cannot_open_external_links)
+    *   [4.2 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [4.3 Impersonate another window manager](#Impersonate_another_window_manager)
+    *   [4.4 Illegible fonts](#Illegible_fonts)
+    *   [4.5 Missing text in some applications](#Missing_text_in_some_applications)
+    *   [4.6 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM,_menus_immediately_closing)
+    *   [4.7 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
+    *   [4.8 JavaFX's MediaPlayer constructor throws an exception](#JavaFX's_MediaPlayer_constructor_throws_an_exception)
+    *   [4.9 Java applications cannot open external links](#Java_applications_cannot_open_external_links)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Better font rendering](#Better_font_rendering)
     *   [5.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_'Picked_up_JAVA_OPTIONS'_message_on_command_line)
@@ -267,6 +268,10 @@ Also please note that:
 ### MySQL
 
 Due to the fact that the JDBC-drivers often use the port in the URL to establish a connection to the database, it is considered "remote" (i.e., MySQL does not listen to the port as per its default settings) despite the fact that they are possibly running on the same host, Thus, to use JDBC and MySQL you should enable remote access to MySQL, following the instructions in [MariaDB#Grant remote access](/index.php/MariaDB#Grant_remote_access "MariaDB").
+
+### IntelliJ IDEA
+
+If you have faced the error `The selected directory is not a valid home for JDK` with the system java sdk path, you have to install a new jdk in octopi or with pacman, then select the new java sdk as the IntelliJ IDEA's JDK.
 
 ### Impersonate another window manager
 

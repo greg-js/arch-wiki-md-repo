@@ -9,7 +9,8 @@
 | [Bluetooth](#Wifi_and_Bluetooth) | Working |
 | [rfkill](#Wifi_and_Bluetooth) | Working |
 | Audio | Working |
-| [Touchpad](#Touchpad) | Working |
+| [Touchpad](#Touchpad_and_Touchscreen) | Working |
+| [Touchscreen](#Touchpad_and_Touchscreen) | Working |
 | Webcam | Working |
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
@@ -31,11 +32,12 @@
     *   [3.3 nvidia-xrun](#nvidia-xrun)
     *   [3.4 Troubleshoot](#Troubleshoot)
         *   [3.4.1 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
-*   [4 Thunderbolt docks](#Thunderbolt_docks)
-    *   [4.1 TB16](#TB16)
-*   [5 EFI firmware updates](#EFI_firmware_updates)
-*   [6 Tips and Tricks](#Tips_and_Tricks)
-    *   [6.1 Systemd doesn't wait for Network](#Systemd_doesn't_wait_for_Network)
+*   [4 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
+*   [5 Thunderbolt docks](#Thunderbolt_docks)
+    *   [5.1 TB16](#TB16)
+*   [6 EFI firmware updates](#EFI_firmware_updates)
+*   [7 Tips and Tricks](#Tips_and_Tricks)
+    *   [7.1 Systemd doesn't wait for Network](#Systemd_doesn't_wait_for_Network)
 
 ## Suspend
 
@@ -117,11 +119,63 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]
 
 ```
 
+## Touchpad and Touchscreen
+
+Wacom touchscreen and Synaptics touchpad:
+
+ `$ xinput` 
+```
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ SYNA2393:00 06CB:7A13 Touchpad            id=16   [slave  pointer  (2)]
+⎜   ↳ Wacom HID 488F Finger                     id=15   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+[truncated]
+```
+
+Both are i2c devices:
+
+ `$ udevadm info /dev/input/mouse3 # touchscreen` 
+```
+P: /devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-10/i2c-WCOM488F:00/0018:056A:488F.0006/input/input47/mouse3
+N: input/mouse3
+L: 0
+E: DEVPATH=/devices/pci0000:00/0000:00:15.0/i2c_designware.0/i2c-10/i2c-WCOM488F:00/0018:056A:488F.0006/input/input47/mouse3
+E: DEVNAME=/dev/input/mouse3
+E: MAJOR=13
+E: MINOR=35
+E: SUBSYSTEM=input
+E: USEC_INITIALIZED=5501073
+E: ID_INPUT=1
+E: ID_INPUT_TOUCHSCREEN=1
+E: ID_PATH=pci-0000:00:15.0-platform-i2c_designware.0
+E: ID_PATH_TAG=pci-0000_00_15_0-platform-i2c_designware_0
+```
+ `$ udevadm info /dev/input/mouse6 # touchpad` 
+```
+P: /devices/pci0000:00/0000:00:15.1/i2c_designware.1/i2c-11/i2c-SYNA2393:00/0018:06CB:7A13.0007/input/input38/mouse6
+N: input/mouse6
+L: 0
+S: input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse
+E: DEVPATH=/devices/pci0000:00/0000:00:15.1/i2c_designware.1/i2c-11/i2c-SYNA2393:00/0018:06CB:7A13.0007/input/input38/mouse6
+E: DEVNAME=/dev/input/mouse6
+E: MAJOR=13
+E: MINOR=38
+E: SUBSYSTEM=input
+E: USEC_INITIALIZED=4683741
+E: ID_INPUT=1
+E: ID_INPUT_TOUCHPAD=1
+E: ID_SERIAL=noserial
+E: ID_PATH=pci-0000:00:15.1-platform-i2c_designware.1
+E: ID_PATH_TAG=pci-0000_00_15_1-platform-i2c_designware_1
+E: DEVLINKS=/dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse
+```
+
 ## Thunderbolt docks
 
 ### TB16
 
-TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://www.archlinux.org/packages/?name=bolt) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
+TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://www.archlinux.org/packages/?name=bolt) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated. Various quirks are detailed on the [Dell TB16](/index.php/Dell_TB16 "Dell TB16") page.
 
 ## EFI firmware updates
 

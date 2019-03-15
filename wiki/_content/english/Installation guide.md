@@ -15,7 +15,7 @@ Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wiki
     *   [1.2 Boot the live environment](#Boot_the_live_environment)
     *   [1.3 Set the keyboard layout](#Set_the_keyboard_layout)
     *   [1.4 Verify the boot mode](#Verify_the_boot_mode)
-    *   [1.5 Connect to the Internet](#Connect_to_the_Internet)
+    *   [1.5 Connect to the internet](#Connect_to_the_internet)
     *   [1.6 Update the system clock](#Update_the_system_clock)
     *   [1.7 Partition the disks](#Partition_the_disks)
         *   [1.7.1 Example layouts](#Example_layouts)
@@ -103,16 +103,21 @@ If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archi
 
 If the directory does not exist, the system may be booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or CSM mode. Refer to your motherboard's manual for details.
 
-### Connect to the Internet
+### Connect to the internet
 
-The installation image enables the [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot. The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) "wikipedia:ping (networking utility)"):
+To set up a network connection, go through the following steps:
 
-```
-# ping archlinux.org
+1.  Ensure your [network interface](/index.php/Network_configuration#Network_interfaces "Network configuration") is listed and enabled, for example with [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8):
+     `# ip link` 
+2.  Connect to the network. Plug in the Ethernet cable or [connect to the wireless LAN](/index.php/Wireless_network_configuration "Wireless network configuration").
+3.  Configure your network connection:
+    *   [Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration")
+    *   Dynamic IP address: use [DHCP](/index.php/Network_configuration#DHCP "Network configuration").
 
-```
+    **Note:** The installation image enables [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot.
 
-If no connection is available, [stop](/index.php/Stop "Stop") the *dhcpcd* service with `systemctl stop dhcpcd@*interface*` where the `*interface*` name can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"), and configure the network as described in [Network configuration](/index.php/Network_configuration "Network configuration").
+4.  The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping "w:ping"):
+     `# ping archlinux.org` 
 
 ### Update the system clock
 
@@ -266,7 +271,7 @@ Uncomment `en_US.UTF-8 UTF-8` and other needed [locales](/index.php/Locale "Loca
 
 ```
 
-Set the `LANG` [variable](/index.php/Variable "Variable") in [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) accordingly, for example:
+Create the [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) file, and set the `LANG` [variable](/index.php/Variable "Variable") accordingly:
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 

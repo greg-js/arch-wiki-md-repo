@@ -111,9 +111,9 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	`ntfslabel /dev/*XXX* "*new label*"` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
 
-	zfs 
+	crypto_LUKS (LUKS2 only) 
 
-	this filesystem does not support `/dev/disk/by-label`, but [#by-partlabel](#by-partlabel) may be used
+	`cryptsetup config --label="*new label*" /dev/*XXX*` using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup)
 
 **Note:**
 

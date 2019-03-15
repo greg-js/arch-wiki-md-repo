@@ -55,26 +55,9 @@ It is also needed to set the following settings [[2]](https://www.dell.com/commu
 
 This model only supports the S0 (s2idle) sleep mode. [[3]](https://patchwork.kernel.org/patch/9758513/) Change the suspend mode to `s2idle` by adding the `mem_sleep_default=s2idle` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). **Note:** As of 2018/11/18, this does not seem required anymore: the kernel automatically sets it correctly.
 
-The system might wake up a few seconds after going to sleep due to ACPI EC. [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=192591) Also, the computer might not wake up automatically when pressing a key. To prevent all these issues, you need to adjust some parameters on sysfs:
+Devices using a Hynix SSD are affected by this bug. [[4]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875) The SSD is not supposed to be put into D3 state which results in 4-5% battery drain per hour during suspend. A patch set is available but will not be merged. [[5]](https://lore.kernel.org/patchwork/patch/1007283/)
 
- `/etc/tmpfiles.d/suspend-dell-9365.conf` 
-```
-# Syntax: Type Path Mode UID  GID  Age Argument
-# man tmpfiles.d for more details
-
-# Kernel bug: [https://bugzilla.kernel.org/show_bug.cgi?id=192591](https://bugzilla.kernel.org/show_bug.cgi?id=192591)
-
-# Use s2idle (not deep) for suspend.
-w /sys/power/mem_sleep - - - - s2idle
-
-# Enable key press to wakeup
-w /sys/devices/platform/i8042/serio0/power/wakeup - - - - enabled
-
-# Make sure we don't wake up the computer while sleeping
-w /sys/module/acpi/parameters/ec_no_wakeup - - - - Y
-```
-
-The two first parameters should be correct by default, so you might want not to set them. As of 2018/11/18, the third parameter (`/sys/module/acpi/parameters/ec_no_wakeup`) is required or the computer wakes up after a few seconds in suspend mode.
+You can install a patched kernel from the AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/) The battery drain during suspend should drop to 1-2% per hour.
 
 ### Screen not rotating
 
@@ -82,7 +65,7 @@ You need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=
 
 ### Fingerprint sensor
 
-The fingerprint sensor on this computer is not yet supported. [[5]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[6]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/52)
+The fingerprint sensor on this computer is not yet supported. [[6]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[7]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/52)
 
 ### Soundcard turning off and coil whine
 

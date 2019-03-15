@@ -10,7 +10,11 @@ KMS permite la resolución nativa en el framebuffer y permite al instante una co
 
 **Nota:** Los controladores propietarios [nvidia](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") y [Catalyst](/index.php/ATI_Catalyst_(Espa%C3%B1ol) "ATI Catalyst (Español)") también implementan el kernel mode-setting, pero como no implementan la integración en el kernel, carecen de un controlador fbdev para la consola de alta resolución.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Antecedentes](#Antecedentes)
 *   [2 Instalación](#Instalación)
@@ -67,7 +71,7 @@ Reconstruya la imagen del kernel (remítase al artículo [mkinitcpio](/index.php
 
 ### Tipos de letras demasiado pequeñas
 
-Vea [cambiar el tipo de letra por defecto](/index.php/Fonts#Changing_the_default_font "Fonts") para saber cómo cambiar las fuentes de la consola a una fuente grande. Los tipos de letras del terminal están disponibles en [community] para muchos tamaños, incluyendo los tamaños más grandes.
+Vea [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console") para saber cómo cambiar las fuentes de la consola a una fuente grande. Los tipos de letras del terminal están disponibles en [community] para muchos tamaños, incluyendo los tamaños más grandes.
 
 ### Cuestión sobre bootloading y dmesg
 

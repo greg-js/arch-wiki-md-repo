@@ -1574,9 +1574,9 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 ##### Graphical
 
-*   **Ciano** — Simple multimedia file converter.
+*   **Ciano** — Simple multimedia file converter using FFmpeg and ImageMagick.
 
-	[https://github.com/robertsanseries/ciano](https://github.com/robertsanseries/ciano) || [ciano-git](https://aur.archlinux.org/packages/ciano-git/)
+	[https://robertsanseries.github.io/ciano/](https://robertsanseries.github.io/ciano/) || [ciano](https://www.archlinux.org/packages/?name=ciano)
 
 *   **Curlew** — Easy to use multimedia converter written in Python and GTK3 and uses FFmpeg.
 

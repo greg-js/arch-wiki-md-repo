@@ -2,7 +2,11 @@ The TrackPoint is Lenovo's trademark for the pointing-stick in the middle of the
 
 Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For the `evdev` driver middle-click and scrolling requires extra configuration.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 GUI configuration](#GUI_configuration)
 *   [2 Middle button scroll](#Middle_button_scroll)
@@ -13,6 +17,7 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
         *   [3.1.1 udev rule](#udev_rule)
         *   [3.1.2 systemd.path unit](#systemd.path_unit)
         *   [3.1.3 udev hwdb entry](#udev_hwdb_entry)
+        *   [3.1.4 device-quirks](#device-quirks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
     *   [4.2 Trackpoint buttons do not always work](#Trackpoint_buttons_do_not_always_work)
@@ -123,6 +128,8 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 #### udev hwdb entry
 
+**Warning:** Since around [version 1.12](https://who-t.blogspot.com/2018/06/libinput-and-its-device-quirks-files.html) libinput stopped using udev hwdb for device-specific overrides and moved to ini-style files independent of hwdb(see below). This section is kept for reference.
+
 Libinput applies its own parameters to sysfs based on entries in the [udev hardware database](https://github.com/systemd/systemd/blob/master/hwdb/70-pointingstick.hwdb). This is the behavior on systems running a Wayland compositor, as libinput is the only supported input interface in that environment. Changes made prior to the start of a Wayland compositor or X session will be overwritten.
 
 To override libinput's default settings, add a local hwdb entry:
@@ -161,7 +168,22 @@ Run the following to generate some debug output:
 
 Finally, restart your Wayland compositor or X session to apply the changes.
 
-**Note:** It is planned that [libinput 1.12](https://who-t.blogspot.com/2018/06/libinput-and-its-device-quirks-files.html) will stop using udev hwdb for device-specific overrides and move to ini-style files independent of hwdb.
+#### device-quirks
+
+With the `libinput` switch to the new device-quirks `.ini`-style configuration files, you can adjust trackpoint parameters via local overrides in `/etc/libinput/`.
+
+For example, to override the pointing speed, create `/etc/libinput/local-overrides.quirks`:
+
+```
+[Trackpoint Override]
+MatchUdevType=pointingstick
+AttrTrackpointMultiplier=0.75
+
+```
+
+For more information, see [libinput: Installing temporary local device quirks](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html#installing-temporary-local-device-quirks)
+
+**Warning:** Model quirks are internal API and may change at any time. No backwards-compatibility is guaranteed. Local overrides should only be used until the distribution updates the libinput packages.
 
 ## Troubleshooting
 

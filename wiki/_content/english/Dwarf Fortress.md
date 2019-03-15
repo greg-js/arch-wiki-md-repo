@@ -1,39 +1,31 @@
 [Dwarf Fortress](http://www.bay12games.com/dwarves/) is a single-player fantasy game. You can control a dwarven outpost or an adventurer in a randomly generated, persistent world. It is renowned for its highly customizable, complex indepth gameplay.
 
-The game is played with keyboard only, though there exist [mods](http://dwarffortresswiki.org/index.php/DF2014:Utilities#DFHack) which enable mouse support via plugins. Without any graphic mods ([[1]](http://dwarffortresswiki.org/index.php/DF2014:Tilesets)) the game is displayed in a terminal-like window with ASCII characters ([screenshots](http://www.bay12games.com/dwarves/screens.html)).
+The game is played with keyboard only, though there exist [mods](http://dwarffortresswiki.org/index.php/DF2014:Utilities#DFHack) which enable mouse support via plugins. Without any graphic mods (also known as [tilesets](http://dwarffortresswiki.org/index.php/DF2014:Tilesets)) the game is displayed in a terminal-like window with ASCII characters ([screenshots](http://www.bay12games.com/dwarves/screens.html)).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Installation](#Installation)
-*   [2 Troubleshooting](#Troubleshooting)
-*   [3 Tools](#Tools)
-    *   [3.1 Dwarf Therapist](#Dwarf_Therapist)
-    *   [3.2 Manipulator](#Manipulator)
-    *   [3.3 SoundSense](#SoundSense)
-    *   [3.4 quickfort](#quickfort)
-    *   [3.5 StoneSense](#StoneSense)
+*   [2 Tools](#Tools)
+    *   [2.1 Dwarf Therapist](#Dwarf_Therapist)
+    *   [2.2 Manipulator](#Manipulator)
+    *   [2.3 SoundSense](#SoundSense)
+    *   [2.4 quickfort](#quickfort)
+    *   [2.5 StoneSense](#StoneSense)
 
 ## Installation
 
-[Install](/index.php/Install "Install") package [dwarffortress](https://www.archlinux.org/packages/?name=dwarffortress) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dwarffortress](https://www.archlinux.org/packages/?name=dwarffortress) package.
 
 Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bitmap tilesets:
 
 *   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)
 *   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/)
-*   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
+*   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/)
 *   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
-
-Your user needs to be in the `games` [user group](/index.php/User_group "User group") to run Dwarf Fortress. If you are not in the `games` group, add yourself, then log out and back in again:
-
-```
-# gpasswd -a *USERNAME* games
-
-```
-
-## Troubleshooting
-
-If you get an error stating *The file "index" must be in the "data" folder* then you may find a solution [here](http://robertqualls.com/2013/06/24/getting-dwarf-fortress-to-work-on-linux.html).
 
 ## Tools
 

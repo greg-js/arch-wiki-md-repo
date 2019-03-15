@@ -73,7 +73,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | No | Yes | Yes | Yes | Yes | bash, zsh | `bb-wrapper` for *pacman* wrapping, trust management |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | No | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` for *pacman* wrapping |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | No | Yes | Yes | No | No | No | – | [local repository](/index.php/Local_repository "Local repository") |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | Yes | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection, [build-only](https://github.com/vn971/rua/issues/13) |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | [No](https://github.com/vn971/rua/issues/21) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection, [build-only](https://github.com/vn971/rua/issues/13) |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/)
 <small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | No | No | No | No | No | No | – | wrapper for *cower* |
 | [spinach](https://aur.archlinux.org/packages/spinach/)

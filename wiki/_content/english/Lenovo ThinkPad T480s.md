@@ -25,7 +25,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [2 Powersaving](#Powersaving)
     *   [2.1 SD Card Reader](#SD_Card_Reader)
 *   [3 Thermal Throttling Fix](#Thermal_Throttling_Fix)
-*   [4 See also](#See_also)
+*   [4 USB-C DisplayPort](#USB-C_DisplayPort)
+*   [5 See also](#See_also)
 
 ## Hardware
 
@@ -124,6 +125,14 @@ This script forces the CPU package power limit (PL1/2) to 44 W (29 W on battery)
 Install it using the [throttled](https://aur.archlinux.org/packages/throttled/) or [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/) package.
 
 [https://github.com/erpalma/throttled](https://github.com/erpalma/throttled)
+
+## USB-C DisplayPort
+
+The following adapters were tested
+
+[Dell DA300](https://www.dell.com/en-au/shop/dell-usb-c-mobile-adapter-da300/apd/492-bcjf/pc-accessories) - Ethernet/HDMI/USB-A/DisplayPort all work. Display output maxes out at 2560x1440@60Hz / 3840x2160@30Hz. 4k@60Hz wasn't possible even with a modeline generated with cvt.
+
+[Moshi USB-C to HDMI Adapter](https://www.moshi.com/en/product/usb-c-to-hdmi-adapter/silver) - Up to 4k@60Hz Works out of the box with xrandr
 
 ## See also
 

@@ -1,146 +1,295 @@
+**Estado de la traducción**
+Este artículo es una traducción de [File systems](/index.php/File_systems "File systems"), revisada por última vez el **2019-03-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=File_systems&diff=0&oldid=566079) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
-*   [Mount](/index.php/Mount "Mount")
 *   [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)")
+*   [Device file (Español)#lsblk](/index.php/Device_file_(Espa%C3%B1ol)#lsblk "Device file (Español)")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
+*   [fsck](/index.php/Fsck "Fsck")
+*   [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
+*   [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications")
+*   [QEMU (Español)#Montaje de una partición dentro de una imagen de disco raw](/index.php/QEMU_(Espa%C3%B1ol)#Montaje_de_una_partición_dentro_de_una_imagen_de_disco_raw "QEMU (Español)")
+*   [udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")
+*   [udisks](/index.php/Udisks "Udisks")
+*   [umask (Español)](/index.php/Umask_(Espa%C3%B1ol) "Umask (Español)")
+*   [USB storage devices (Español)](/index.php/USB_storage_devices_(Espa%C3%B1ol) "USB storage devices (Español)")
 
-Desde [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
+De [Wikipedia](https://en.wikipedia.org/wiki/es:Sistema_de_archivos "wikipedia:es:Sistema de archivos"):
 
-	*Un **sistema de archivos** o **sistema de ficheros** (en inglés:* filesystem*) es un medio para organizar los datos que se espera se mantengan después que un programa haya terminado, al proporcionar procedimientos para almacenar, recuperar y actualizar dichos datos, así como gestionar el espacio disponible en el dispositivo(s) que lo contiene. Un sistema de archivos organiza los datos de una manera eficiente y está sintonizado con las características específicas del dispositivo.*
+	En informática, un sistema de archivos controla cómo se almacenan y recuperan los datos. Sin un sistema de archivos, la información colocada en un medio de almacenamiento sería una gran cantidad de datos sin una manera de decir dónde se detiene una información y comienza la siguiente. Al separar los datos en partes y darle a cada una un nombre, la información se aísla e identifica fácilmente. Tomando su nombre de la forma en que se nombran los sistemas de información en papel, cada grupo de datos se llama un «archivo». La estructura y las reglas lógicas utilizadas para administrar los grupos de información y sus nombres se denominan «sistema de archivos».
 
-Cada partición individual se puede configurar mediante uno de los muchos sistemas de archivos disponibles. Cada uno tiene sus propias ventajas, desventajas e idiosincrasias únicas. A continuación se hace una breve descripción de los sistemas de archivos compatibles; se hacen, también, enlaces a páginas de Wikipedia que proporcionan mucha más información.
+Las particiones individuales de la unidad se pueden configurar utilizando uno de los muchos y diferentes sistemas de archivos disponibles. Cada uno tiene sus propias ventajas, desventajas e idiosincrasias únicas. A continuación se ofrece una breve descripción de los sistemas de archivos compatibles; los enlaces son a páginas de Wikipedia que proporcionan mucha más información.
 
-Antes de ser formateado, el disco debe ser [particionado](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)").
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Tipos de sistemas de archivos](#Tipos_de_sistemas_de_archivos)
     *   [1.1 Journaling](#Journaling)
-    *   [1.2 Soporte técnico de Arch Linux](#Soporte_técnico_de_Arch_Linux)
-    *   [1.3 Sistemas de archivos basados en FUSE](#Sistemas_de_archivos_basados_en_FUSE)
-*   [2 Crear un sistema de archivos](#Crear_un_sistema_de_archivos)
-*   [3 Véase también](#Véase_también)
+    *   [1.2 Sistemas de archivos basados ​​en FUSE](#Sistemas_de_archivos_basados_​​en_FUSE)
+    *   [1.3 Sistemas de archivos apilables](#Sistemas_de_archivos_apilables)
+    *   [1.4 Sistemas de archivos de solo lectura](#Sistemas_de_archivos_de_solo_lectura)
+    *   [1.5 Sistemas de archivos agrupados (cluster)](#Sistemas_de_archivos_agrupados_(cluster))
+*   [2 Identificar los sistemas de archivos existentes](#Identificar_los_sistemas_de_archivos_existentes)
+*   [3 Crear un sistema de archivos](#Crear_un_sistema_de_archivos)
+*   [4 Montar un sistema de archivos](#Montar_un_sistema_de_archivos)
+    *   [4.1 Listar los sistemas de archivos montados](#Listar_los_sistemas_de_archivos_montados)
+    *   [4.2 Desmontar un sistema de archivos](#Desmontar_un_sistema_de_archivos)
+*   [5 Véase también](#Véase_también)
 
 ## Tipos de sistemas de archivos
 
-*   [Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs") - También conocido como «Better FS», es un **nuevo sistema de archivos con potentes funciones, similares al excelente ZFS de Sun/Oracle**. Estas incluyen la creación de instantáneas, striping y mirroring multi-disco (RAID software sin mdadm), sumas de comprobación, copias de seguridad incrementales, y compresión sobre la marcha integrada, que pueden dar un significativo aumento de las prestaciones, así como ahorrar espacio. A partir de enero de 2011, Btrfs es considerado inestable a pesar de que se ha estado insertando en el kernel principal con un estado experimental. Btrfs parece ser el futuro de los sistemas de archivos de GNU/Linux y se ofrece como una opción para el sistema de archivos de root en todos las instalaciones de las distribuciones más importantes.
-*   [exFAT](https://en.wikipedia.org/wiki/exFAT "wikipedia:exFAT") - **Sistema de archivos de Microsoft optimizado para unidades flash**. A diferencia de NTFS, exFAT no puede preasignar espacio en disco para un archivo con solo marcar el espacio arbitrariamente en el disco como «asignado». Al igual que en FAT, cuando se crea un archivo de longitud conocida, exFAT debe llevar a cabo una completa escritura física del mismo tamaño del archivo.
-*   [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2") - **Second Extended Filesystem** es un consolidado y maduro sistema de archivos para GNU/Linux muy estable. Uno de sus inconvenientes es que no tiene apoyo para el registro (journaling) (véase más abajo) o las barreras. La falta de *registro por diario* («journaling») puede traducirse en la pérdida de datos en caso de un corte de corriente o fallo del sistema. También puede **no** ser conveniente para las particiones root (`/`) y `/home`, porque las comprobaciones del sistema de archivos pueden tomar mucho tiempo. Un sistema de archivos ext2 puede ser [convertido a ext3](/index.php/Convert_ext2_to_ext3 "Convert ext2 to ext3").
-*   [ext3](https://en.wikipedia.org/wiki/ext3 "wikipedia:ext3") - **Third Extended Filesystem** es, esencialmente, el sistema de archivos ext2 pero con el apoyo de journaling y la escritura de barreras. Es compatible con ext2, bien probado, y extremadamente estable.
-*   [ext4](https://en.wikipedia.org/wiki/ext4 "wikipedia:ext4") - **Fourth Extended Filesystem** es un sistema de archivos nuevo que también es compatible con ext2 y ext3\. Proporciona apoyo para volúmenes con tamaños de hasta 1 exabyte (es decir, 1.048.576 terabytes) y archivos con tamaños de hasta 16 terabytes. Aumenta el límite de los 32.000 subdirectorios de ext3 a 64.000\. También ofrece la capacidad de desfragmentación en línea.
-*   [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") - **Flash-Friendly File System** es un sistema de archivos flash creado por Kim Jaegeuk (Hangul: 김재극) de Samsung para el kernel del sistema operativo Linux. La motivación para F2FS era construir un sistema de archivos que desde el principio tuviese en cuenta las características de los dispositivos de almacenamiento basados ​​en memoria flash NAND (como los discos de estado sólido, eMMC, y tarjetas SD), que han sido ampliamente utilizados en el en sistemas informáticos que van desde dispositivos móviles a servidores.
-*   [JFS](https://en.wikipedia.org/wiki/JFS_(file_system) - El **Journaled File System** de IBM fue el primer sistema de archivos en ofrecer journaling, y ha sido empleado durante muchos años en el sistema operativo IBM AIX® antes de ser portado a GNU/Linux. JFS demanda menos recursos de la CPU que cualquier otro disponible para los sistemas GNU/Linux. Es muy rápido en el formato, montaje y comprobación del sistema de archivos (fsck). JFS ofrece óptimas prestaciones en general, especialmente en conjunción con el planificador de I/O. No es tan ampliamente soportado como los sistemas de archivos ext o ReiserFS, pero, sin embargo, muy maduro y estable.
-*   [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") - **New Implementation of a Log-structured File System** fue desarrollado por NTT. Registra todos los datos en un formato continuo, a modo de un archivo de registro, que experimenta solo añadidos y nunca se sobrescribe. Está diseñado para reducir los tiempos de búsqueda y minimizar el tipo de pérdida de datos que se produce después de un accidente con los convencionales sistemas de archivos de Linux.
-*   [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") - **Sistema de archivos utilizado por Windows**. NTFS contiene algunas mejoras técnicas respecto a FAT y HPFS (High Performance File System), como el soporte mejorado para los metadatos y el uso de estructuras de datos avanzadas para mejorar el rendimiento, la confiabilidad y la utilización del espacio en disco, además de extensiones adicionales, como las listas de control de acceso de seguridad (ACL) y journaling del sistema de archivos.
-*   [Reiser4](https://en.wikipedia.org/wiki/Reiser4 "wikipedia:Reiser4") - **Sucesor del sistema de archivos ReiserFS**, desarrollado desde cero por Namesys y patrocinado por DARPA y Linspire, utiliza B*-trees junto con el enfoque del equilibrado del árbol de directorios, en el que los nodos poco poblados no se fusionarán hasta que no se efectúe un nivelado del disco, o cuando la memoria esté baja o se completa una operación. Este sistema también permite a Reiser4 crear archivos y directorios sin tener que perder el tiempo y el espacio a través de bloques fijos.
-*   [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "wikipedia:ReiserFS") - **Sistema de archivos con journaling y altas prestaciones de Hans Reiser (V3)** que utiliza un método muy interesante de transferencia de datos basado en un algoritmo creativo e innovador. ReiserFS es anunciado como muy rápido, especialmente cuando se trata de muchos archivos pequeños. ReiserFS es rápido en dar formato, sin embargo, comparativamente lento en el montaje. Muy maduro y estable. ReiserFS (V3) no está siendo activamente desarrollado en este momento. Generalmente considerado como una buena opción para `/var`.
-*   [Swap](https://en.wikipedia.org/wiki/Paging "wikipedia:Paging") - es el sistema de archivos utilizado para particiones de intercambio.
-*   [VFAT](https://en.wikipedia.org/wiki/File_Allocation_Table#VFAT "wikipedia:File Allocation Table") - **Virtual File Allocation Table** es técnicamente sencillo y con el apoyo de prácticamente todos los sistemas operativos existentes. Esto hace que sea un formato útil para las tarjetas de memoria de estado sólido y una manera práctica para compartir datos entre sistemas operativos. VFAT soporta nombres largos de archivos.
-*   [XFS](https://en.wikipedia.org/wiki/XFS "wikipedia:XFS") - **Primeros sistemas de archivos con journaling desarrollado originalmente por Silicon Graphics** para el sistema operativo IRIX y portado después a GNU/Linux. Proporciona un rendimiento muy rápido en los archivos y sistemas de archivos grandes y es muy rápido en el formato y montaje. Pruebas de benchmark comparativa han demostrado que es más lento cuando trata con muchos archivos pequeños. XFS es muy maduro y ofrece capacidad de desfragmentación en línea.
-*   [ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") - **Combinación de sistema de archivos y gestor de volumen lógicos diseñado por Sun Microsystems**. Las características de ZFS incluyen la protección contra la corrupción de datos, soporte para grandes capacidades de almacenamiento, la integración de los conceptos de sistema de archivos y la gestión de volúmenes, instantáneas y clones copy-on-write, la comprobación continua de la integridad y reparación automática de los archivos, RAID-Z y NFSv4 ACL nativos.
+Véase [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) para una visión general y [Wikipedia:es:Anexo:Comparación de sistemas de archivos](https://en.wikipedia.org/wiki/es:Anexo:Comparaci%C3%B3n_de_sistemas_de_archivos "wikipedia:es:Anexo:Comparación de sistemas de archivos") para una comparación detallada de características. Los sistemas de archivos soportados por el kernel están listados en `/proc/filesystems`.
+
+| Sistema de archivos | Orden para crearlo | Utilidades de usuario | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Documentación del kernel [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notas |
+| [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Sí | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [estado de su estabilidad](https://btrfs.wiki.kernel.org/index.php/Status) |
+| [VFAT](/index.php/VFAT_(Espa%C3%B1ol) "VFAT (Español)") | [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Sí | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
+| [exFAT](https://en.wikipedia.org/wiki/es:exFAT "w:es:exFAT") | [mkexfatfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkexfatfs.8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Sí | N/D (basado en FUSE) |
+| [F2FS](/index.php/F2FS "F2FS") | [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Sí | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | dispositivos basados ​​en flash |
+| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Sí ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
+| [ext4](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Sí ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
+| [HFS](https://en.wikipedia.org/wiki/es:Hierarchical_File_System "w:es:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) | No | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | sistema de archivos de [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") (8.x-10.12.x) |
+| [JFS](/index.php/JFS "JFS") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Sí ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | [mkfs.nilfs2(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.nilfs2.8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Sí | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
+| [NTFS](/index.php/NTFS_(Espa%C3%B1ol) "NTFS (Español)") | [mkfs.ntfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Sí | N/D (basado en FUSE) | sistema de archivos de [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") |
+| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | No |
+| [ReiserFS](https://en.wikipedia.org/wiki/es:ReiserFS "w:es:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Sí ([base](https://www.archlinux.org/groups/x86_64/base/)) |
+| [UDF](https://en.wikipedia.org/wiki/es:Universal_Disk_Format "w:es:Universal Disk Format") | [mkfs.udf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.udf.8) | [udftools](https://www.archlinux.org/packages/?name=udftools) | Opcional | [udf.txt](https://www.kernel.org/doc/Documentation/filesystems/udf.txt) |
+| [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Sí ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
+
+[xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
+[xfs-delayed-logging-design.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-delayed-logging-design.txt)
+[xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
+
+ |
+| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | No | N/D ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS") port) |
+
+**Nota:** El kernel tiene su propio controlador NTFS (véase [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), pero tiene soporte limitado para escribir archivos.
 
 ### Journaling
 
-Todos los sistemas de archivos antes vistos, con la excepción de ext2, FAT16/32, usan [journaling](https://en.wikipedia.org/wiki/es:Journaling "wikipedia:es:Journaling"). Journaling proporciona la rehabilitación de los fallos al registrar los cambios antes de que comprometan al sistema de archivos. En caso de un fallo del sistema o un corte de energía, este procedimiento es más rápido para informar en línea al sistema y es menos probable de que se dañe. El registro se lleva a cabo en un área específica del sistema de archivos.
+Todos los sistemas de archivos anteriores con la excepción de ext2, FAT16/32, Btrfs and ZFS, utilizan [journaling](https://en.wikipedia.org/wiki/es:Journaling "wikipedia:es:Journaling"). Journaling proporciona tolerancia a fallos al registrar los cambios antes de que se confirmen en el sistema de archivos. En el caso de un fallo del sistema o de alimentación, estos sistemas de archivos son más rápidos para volver a estar en línea y es menos probable que se corrompan. El registro se realiza en un área dedicada del sistema de archivos.
 
-No todas las técnicas de journaling son iguales. Solo ext3 y ext4 proporcionan la función *data-mode* («modalidad de datos») de journaling, que registra los datos y los meta-datos. La «modalidad de datos» de journaling conlleva una pérdida de velocidad y no está habilitada de forma predeterminada. Los otros sistemas de archivos ofrecen una «modalidad de clasificación» (*ordered-mode*) de journaling, que solo registra los meta-datos. Mientras el resto de los journaling restaurarán un sistema de archivos a un estado válido después de un accidente, la «modalidad de datos» de journaling ofrece la mayor protección contra la corrupción y pérdida de datos. Sin embaro, este último compromete el rendimiento del sistema, porque la modalidad de datos journaling hace dos operaciones de escritura: primero al registro y luego al disco. El equilibrio entre la velocidad del sistema y la seguridad de los datos debe tenerse presente a la hora de elegir entre uno u otro tipo de sistemas de archivos.
+No todas las técnicas Journaling son iguales. Ext3 y ext4 ofrecen data-mode journaling, que registra datos y metadatos, así como posibilidad de registrar solo los cambios de metadatos. Data-mode journaling viene con una penalización de velocidad y no está activada de forma predeterminada. Del mismo modo, [Reiser4](/index.php/Reiser4 "Reiser4") ofrece el llamado ["modelos de transacción"](https://reiser4.wiki.kernel.org/index.php/Reiser4_transaction_models), que incluye journaling puro (equivalente a data-mode journaling de ext4), aproximación a Copy-on-Write puro (equivalente al predeterminado de btrfs) y un enfoque combinado que alterna heurísticamente entre los dos anteriores.
 
-### Soporte técnico de Arch Linux
+**Nota:** Reiser4 no proporciona un equivalente al comportamiento de journaling predeterminado de ext4 (solo metadatos).
 
-*   **btrfs-progs** — soporte técnico para [Btrfs](/index.php/Btrfs "Btrfs").
+Los otros sistemas de archivos proporcionan ordered-mode journaling, que solo registra metadatos. Si bien todo journaling devolverá un sistema de archivos a un estado válido después de una caída, data-mode journaling ofrece la mayor protección contra la corrupción y la pérdida de datos. Sin embargo, existe un compromiso en el rendimiento del sistema, ya que data-mode journaling realiza dos operaciones de escritura: primero en el journal y luego en el disco. Al elegir el tipo de sistema de archivos, se debe considerar el equilibrio entre la velocidad del sistema y la seguridad de los datos.
 
-	[http://btrfs.wiki.kernel.org/](http://btrfs.wiki.kernel.org/) || [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
+Los sistemas de archivos basados ​​en copy-on-write, como Btrfs y ZFS, no tienen necesidad de usar el journal tradicional para proteger los metadatos, porque nunca se actualizan en el lugar. Aunque Btrfs todavía tiene un árbol de registro similar a journal, solo se utiliza para acelerar fdatasync/fsync.
 
-*   **dosfstools** — soporte técnico para VFAT.
+### Sistemas de archivos basados ​​en FUSE
 
-	[http://www.daniel-baumann.ch/software/dosfstools/](http://www.daniel-baumann.ch/software/dosfstools/) || [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
+Véase [FUSE](/index.php/FUSE_(Espa%C3%B1ol) "FUSE (Español)").
 
-*   **exfat-utils** — soporte técnico para exFAT.
+### Sistemas de archivos apilables
 
-	[http://code.google.com/e/exfat/](http://code.google.com/e/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
+*   **aufs** — Sistema de archivos de unificación multicapa avanzado, un sistema de archivos de unión basado en FUSE, una reescritura completa de Unionfs, fue rechazado de la línea principal de Linux y, en su lugar, OverlayFS se fusionó con el Kernel de Linux.
 
-*   **f2fs-tools** — Soporte técnico para [F2FS](/index.php/F2FS "F2FS").
+	[http://aufs.sourceforge.net](http://aufs.sourceforge.net) || [aufs](https://aur.archlinux.org/packages/aufs/)
 
-	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
+*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — El sistema de archivos de cifrado empresarial es un paquete de software de cifrado de disco para Linux. Se implementa como una capa de cifrado a nivel de sistema de archivos compatible con POSIX, con el objetivo de ofrecer una funcionalidad similar a la de GnuPG a nivel de sistema operativo.
 
-*   **e2fsprogs** — soporte técnico para ext2, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4").
+	[http://ecryptfs.org](http://ecryptfs.org) || [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils)
 
-	[http://e2fsprogs.sourceforge.net](http://e2fsprogs.sourceforge.net) || [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
+*   **mergerfs** — Un sistema de archivos de unión basado en FUSE.
 
-*   **jfsutils** — soporte técnico para [JFS](/index.php/JFS "JFS").
+	[https://github.com/trapexit/mergerfs](https://github.com/trapexit/mergerfs) || [mergerfs](https://aur.archlinux.org/packages/mergerfs/)
 
-	[http://jfs.sourceforge.net](http://jfs.sourceforge.net) || [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
+*   **mhddfs** — Sistema de archivos FUSE Multi-HDD, un sistema de archivos de unión basado en FUSE.
 
-*   **nilfs-utils** — soporte técnico para NILFS.
+	[http://mhddfs.uvw.ru](http://mhddfs.uvw.ru) || [mhddfs](https://aur.archlinux.org/packages/mhddfs/)
 
-	[http://www.nilfs.org/](http://www.nilfs.org/) || [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils)
+*   **[overlayfs](/index.php/Overlayfs "Overlayfs")** — OverlayFS es un servicio de sistema de archivos para Linux que implementa un montaje de unión para otros sistemas de archivos.
 
-*   **ntfs-3g** — soporte técnico para [NTFS](/index.php/NTFS "NTFS").
+	[https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-	[http://www.tuxera.com/community/ntfs-3g-download/](http://www.tuxera.com/community/ntfs-3g-download/) || [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
+*   **Unionfs** — Unionfs es un servicio de sistema de archivos para Linux, FreeBSD y NetBSD que implementa un montaje de unión para otros sistemas de archivos.
 
-*   **reiser4progs** — soporte técnico para [ReiserFSv4](/index.php/Reiser4 "Reiser4").
+	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
-	[http://sourceforge.net/projects/reiser4/](http://sourceforge.net/projects/reiser4/) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)
+*   **unionfs-fuse** — Una implementación de Unionfs en el espacio de usuario.
 
-*   **reiserfsprogs** — soporte técnico para ReiserFSv3.
+	[https://github.com/rpodgorny/unionfs-fuse](https://github.com/rpodgorny/unionfs-fuse) || [unionfs-fuse](https://www.archlinux.org/packages/?name=unionfs-fuse)
 
-	[https://www.kernel.org/](https://www.kernel.org/) || [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
+### Sistemas de archivos de solo lectura
 
-*   **xfsprogs** — soporte técnico para [XFS](/index.php/XFS "XFS").
+*   **[SquashFS](https://en.wikipedia.org/wiki/es:SquashFS "wikipedia:es:SquashFS")** — SquashFS es un sistema de archivos comprimido de solo lectura. SquashFS comprime archivos, inodos y directorios, y admite tamaños de bloque de hasta 1 MB para una mayor compresión.
 
-	[http://oss.sgi.com/projects/xfs/](http://oss.sgi.com/projects/xfs/) || [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
+	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
 
-*   **zfs** — soporte técnico para [ZFS](/index.php/ZFS "ZFS").
+### Sistemas de archivos agrupados (cluster)
 
-	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-git](https://aur.archlinux.org/packages/zfs-git/)
+*   **[Ceph](/index.php/Ceph "Ceph")** — Unificado, sistema de almacenamiento distribuido diseñado para un excelente rendimiento, fiabilidad y escalabilidad.
 
-### Sistemas de archivos basados en FUSE
+	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 
-El [sistema de archivos en el espacio de usuario](https://en.wikipedia.org/wiki/es:Sistema_de_archivos_en_el_espacio_de_usuario "wikipedia:es:Sistema de archivos en el espacio de usuario") (FUSE) es un mecanismo para sistemas operativos tipo Unix que permite a los usuarios sin privilegios de root crear sus propios sistemas de archivos sin necesidad de editar el código del núcleo. Esto se logra mediante la ejecución del código del sistema de archivos en *el espacio de usuario*, al tiempo que el módulo del kernel FUSE solo proporciona un «puente» a las interfaces del kernel que se está ejecutando.
+*   **[Glusterfs](/index.php/Glusterfs "Glusterfs")** — Sistema de archivos agrupado capaz de escalar a varios peta-bytes.
+
+	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **[IPFS](/index.php/IPFS "IPFS")** — Un protocolo de hipermedia de igual a igual *(peer-to-peer)* para que la web sea más rápida, segura y abierta. IPFS trata de reemplazar a HTTP y construir una mejor web para todos nosotros. Utiliza bloques para almacenar partes de un archivo, cada nodo de red almacena solo el contenido que le interesa, proporciona deduplicación, distribución, sistema escalable limitado solo por los usuarios. (actualmente en estado aplha)
+
+	[https://ipfs.io/](https://ipfs.io/) || [go-ipfs](https://www.archlinux.org/packages/?name=go-ipfs)
+
+*   **[MooseFS](https://en.wikipedia.org/wiki/MooseFS "wikipedia:MooseFS")** — MooseFS es un sistema de archivos distribuido en red de escalamiento horizontal tolerante a fallos, de alta disponibilidad y de alto rendimiento.
+
+	[https://moosefs.com](https://moosefs.com) || [moosefs](https://www.archlinux.org/packages/?name=moosefs)
+
+*   **[OpenAFS](/index.php/OpenAFS "OpenAFS")** — Implementación de código abierto del sistema de archivos distribuido AFS.
+
+	[http://www.openafs.org](http://www.openafs.org) || [openafs](https://aur.archlinux.org/packages/openafs/)
+
+*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — OrangeFS es un sistema de archivos de red de escalado horizontal diseñado para acceder de forma transparente al almacenamiento en disco multiservidor en paralelo. Ha optimizado el soporte de MPI-IO para aplicaciones paralelas y distribuidas. Simplifica el uso del almacenamiento paralelo no solo para clientes Linux, sino también para Windows, Hadoop y WebDAV. Compatible con POSIX. Parte del kernel de Linux desde la versión 4.6.
+
+	[http://www.orangefs.org/](http://www.orangefs.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **Sheepdog** — El sistema de almacenamiento de objetos distribuidos para servicios de volumen y contenedor. Gestiona los discos y nodos de forma inteligente.
+
+	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem es un sistema de archivos libre y abierto, seguro, descentralizado, tolerante a fallos y distribuido de igual a igual.
+
+	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
+
+## Identificar los sistemas de archivos existentes
+
+Para identificar los sistemas de archivos existentes, puede utilizar [lsblk](/index.php/Lsblk "Lsblk"):
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE LABEL     UUID                                 MOUNTPOINT
+sdb                                                          
+└─sdb1 vfat   Transcend 4A3C-A9E9
+```
+
+Un sistema de archivos existente, si está presente, se mostrará en la columna `FSTYPE`. Si está [montado](/index.php/Mount_(Espa%C3%B1ol) "Mount (Español)"), aparecerá en la columna `MOUNTPOINT`.
 
 ## Crear un sistema de archivos
 
-**Nota:**
+Los sistemas de archivos generalmente se crean en una [partición](/index.php/Partition_(Espa%C3%B1ol) "Partition (Español)"), dentro de contenedores lógicos como [LVM](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)"), [RAID](/index.php/RAID_(Espa%C3%B1ol) "RAID (Español)") y [dm-crypt](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)"), o en un archivo normal (véase [Wikipedia:es:Loop device](https://en.wikipedia.org/wiki/es:Loop_device "wikipedia:es:Loop device")). Esta sección describe el caso de la partición.
 
-*   Si desea cambiar el diseño de las particiones, vea [Partitioning](/index.php/Partitioning "Partitioning").
-*   Si desea crear una partición de intercambio, vea [Swap](/index.php/Swap "Swap").
+**Nota:** Los sistemas de archivos se pueden escribir directamente en un disco, conocido como *superfloppy* o [particless disk](/index.php/Partitioning#Partitionless_disk "Partitioning"). Ciertas limitaciones están involucradas con este método, particularmente si [arranca](/index.php/Arch_boot_process "Arch boot process") desde tal unidad. Véase [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") para un ejemplo.
 
-Antes de comenzar, se necesita saber qué nombre dio Linux al dispositivo. Los discos duros y memorias USB aparecen como `/dev/sd*x*`, donde «x» es una letra minúscula, mientras que las particiones aparecen como `/dev/sd*xY*`, donde «Y» es un número.
+**Advertencia:**
 
-Por lo general, los sistemas de archivos se crean en una partición, pero también se pueden crear en el interior de contenedores lógicos como [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") o [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
+*   Después de crear un nuevo sistema de archivos, es improbable que se recuperen los datos almacenados previamente en esta partición. **Haga una copia de seguridad de los datos que desee conservar**.
+*   El propósito de una partición dada puede restringir la elección del sistema de archivos. Por ejemplo, una [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") debe contener un sistema de archivos [FAT32](/index.php/FAT32_(Espa%C3%B1ol) "FAT32 (Español)"), y el sistema de archivos que contiene el directorio `/boot` debe estar soportado por el [cargador de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)").
 
-Para crear un nuevo sistema de archivos en una partición, el sistema de archivos existente ubicado en la partición no debe estar montado.
+Antes de continuar, [identifique el dispositivo](/index.php/Lsblk_(Espa%C3%B1ol) "Lsblk (Español)") donde se creará el sistema de archivos y si está montado o no. Por ejemplo:
 
-Si el dispositivo que desea formatear está montado, se mostrará en la columna *MOUNTPOINT* al ejecutar:
-
+ `$ lsblk -f` 
 ```
-$ lsblk
-
-```
-
-Para desmontarlo, puede usar *umount* sobre el directorio donde se ha montado el disco:
-
-```
-# umount /punto_de_montaje
+NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
+sda
+├─sda1                      C4DA-2C4D                            
+├─sda2 ext4                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 /mnt
+└─sda3                      56adc99b-a61e-46af-aab7-a6d07e504652 
 
 ```
 
-Para crear un nuevo sistema de archivos de tipo ext4, por ejemplo, en una partición haga:
-
-**Advertencia:** Al formatear un dispositivo se eliminan todos los datos que contenga, asegúrese de hacer copias de seguridad de todo aquello que desee conservar.
+Los sistemas de archivos montados **deben** ser [desmontados](#Desmontar_un_sistema_de_archivos) antes de continuar. En el ejemplo anterior, existe un sistema de archivos que está en `/dev/sda2` y se monta en `/mnt`. Se desmontaría con:
 
 ```
-# mkfs.ext4 /dev/*partición*
+# umount /dev/sda2
 
 ```
 
-La orden `mkfs` es solo un sistema front-end unificado para las diferentes herramientas de `mkfs.*fstype*`, por lo que alternativamente se puede usar también así:
+Para encontrar los sistemas de archivos que estén montados, véase [#Listar los sistemas de archivos montados](#Listar_los_sistemas_de_archivos_montados).
+
+Para crear un nuevo sistema de archivos, utilice [mkfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.8). Véase [#Tipos de sistemas de archivos](#Tipos_de_sistemas_de_archivos) para conocer el tipo exacto, así como las utilidades de espacio de usuario que desee instalar para un sistema de archivos en particular.
+
+Por ejemplo, para crear un nuevo sistema de archivos de tipo [ext4](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") (común para particiones de datos de Linux) en `/dev/sda1`, ejecute:
 
 ```
-# mkfs -t ext4 /dev/*partición*
+# mkfs.ext4 /dev/sda1
+
+```
+
+**Sugerencia:**
+
+*   Utilice la opción `-L` de *mkfs.ext4* para especificar una [etiqueta de sistema de archivos](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#by-label "Persistent block device naming (Español)"). *e2label* se puede utilizar para cambiar la etiqueta en un sistema de archivos existente.
+*   Los sistemas de archivos pueden ser *redimensionados* tras su creación, con ciertas limitaciones. Por ejemplo, el tamaño del sistema de archivos [XFS](/index.php/XFS "XFS") se puede aumentar, pero no se puede reducir. Véase [Capacidades de redimensionar](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "w:Comparison of file systems") y la documentación del sistema de archivos correspondiente para obtener más información.
+
+El nuevo sistema de archivos ahora se puede montar en el directorio de su elección.
+
+## Montar un sistema de archivos
+
+Para montar manualmente el sistema de archivos ubicado en un dispositivo (por ejemplo, una partición) en un directorio, utilice [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). Este ejemplo monta `/dev/sda1` en `/mnt`.
+
+```
+# mount /dev/sda1 /mnt
+
+```
+
+Esto vincula el sistema de archivos en `/dev/sda1` en el directorio `/mnt`, haciendo visible el contenido del sistema de archivos. Todos los datos que existían en `/mnt` antes de esta acción se vuelven invisibles hasta que se desmonte el dispositivo.
+
+[fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") contiene información sobre cómo se deben montar automáticamente los dispositivos, si están presentes. Véase el artículo [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") para obtener más información sobre cómo modificar este comportamiento.
+
+Si se especifica un dispositivo en `/etc/fstab` y solo se proporciona el dispositivo o el punto de montaje en la línea de órdenes, esa información se utilizará en el montaje. Por ejemplo, si `/etc/fstab` contiene una línea que indica que `/dev/sda1` debe montarse en `/mnt`, entonces lo siguiente montará automáticamente el dispositivo en esa ubicación:
+
+```
+# mount /dev/sda1
+
+```
+
+o
+
+```
+# mount /mnt
+
+```
+
+*mount* contiene varias opciones, muchas de las cuales dependen del sistema de archivos especificado. Las opciones se pueden cambiar, ya sea:
+
+*   utilizando opciones en la línea de órdenes con *mount*
+*   editando [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
+*   creando reglas [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")
+*   [compilando el kernel usted mismo](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
+*   o utilizando scripts de montaje específicos del sistema de archivos (situados en `/usr/bin/mount.*`).
+
+Véase estos artículos relacionados y el artículo del sistema de archivos de interés para obtener más información.
+
+### Listar los sistemas de archivos montados
+
+Para listar todos los sistemas de archivos montados utilice [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8):
+
+```
+$ findmnt
+
+```
+
+*findmnt* toma una variedad de argumentos que pueden filtrar la salida y mostrar información adicional. Por ejemplo, puede tomar un dispositivo o punto de montaje como argumento para mostrar solo información sobre lo que se especifica:
+
+```
+$ findmnt /dev/sda1
+
+```
+
+*findmnt* reúne información de `/etc/fstab`, `/etc/mtab`, y `/proc/self/mounts`.
+
+### Desmontar un sistema de archivos
+
+Para desmontar un sistema de archivos utilice [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8). Se puede especificar el dispositivo que contiene el sistema de archivos (por ejemplo, `/dev/sda1`) o el punto de montaje (por ejemplo, `/mnt`):
+
+```
+# umount /dev/sda1
+
+```
+
+o
+
+```
+# umount /mnt
 
 ```
 
 ## Véase también
 
-*   [wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems")
+*   [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5)
+*   [Documentación de sistemas de archivos soportados por Linux](https://www.kernel.org/doc/Documentation/filesystems/)
+*   [Wikipedia:es:Sistema de archivos](https://en.wikipedia.org/wiki/es:Sistema_de_archivos "wikipedia:es:Sistema de archivos")
+*   [Wikipedia:es:Mount](https://en.wikipedia.org/wiki/es:Mount "wikipedia:es:Mount")

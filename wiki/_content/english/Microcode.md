@@ -14,7 +14,7 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
         *   [2.1.1 Automatic method](#Automatic_method)
         *   [2.1.2 Manual method](#Manual_method)
     *   [2.2 systemd-boot](#systemd-boot)
-    *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_/_EFI_handover)
+    *   [2.3 EFISTUB](#EFISTUB)
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
     *   [2.6 LILO](#LILO)
@@ -87,7 +87,7 @@ initrd  /initramfs-linux.img
 
 The latest microcode `*cpu_manufacturer*-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) or [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/*cpu_manufacturer*-ucode.img` to your ESP at every update of the microcode package.
 
-### EFI boot stub / EFI handover
+### EFISTUB
 
 Append two `initrd=` options:
 

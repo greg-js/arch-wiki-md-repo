@@ -57,20 +57,24 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
         *   [8.2.3 Frame Buffer Compression](#Frame_Buffer_Compression)
         *   [8.2.4 GuC](#GuC)
     *   [8.3 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
-*   [9 Touchpad](#Touchpad)
-    *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
-    *   [9.2 Gestures](#Gestures)
-*   [10 Sound](#Sound)
-    *   [10.1 Coil whine when using headphones](#Coil_whine_when_using_headphones)
-    *   [10.2 High noise floor when using headphones](#High_noise_floor_when_using_headphones)
-*   [11 Microphone](#Microphone)
-*   [12 TPM](#TPM)
-    *   [12.1 TPM 2.0](#TPM_2.0)
-*   [13 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
-*   [14 lspci and lsusb](#lspci_and_lsusb)
-    *   [14.1 lspci](#lspci)
-    *   [14.2 lsusb](#lsusb)
-*   [15 See also](#See_also)
+*   [9 Power management](#Power_management)
+    *   [9.1 Fans](#Fans)
+    *   [9.2 Undervolting](#Undervolting)
+*   [10 Touchpad](#Touchpad)
+    *   [10.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
+    *   [10.2 Gestures](#Gestures)
+*   [11 Keyboard](#Keyboard)
+*   [12 Sound](#Sound)
+    *   [12.1 Coil whine when using headphones](#Coil_whine_when_using_headphones)
+    *   [12.2 High noise floor when using headphones](#High_noise_floor_when_using_headphones)
+*   [13 Microphone](#Microphone)
+*   [14 TPM](#TPM)
+    *   [14.1 TPM 2.0](#TPM_2.0)
+*   [15 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
+*   [16 lspci and lsusb](#lspci_and_lsusb)
+    *   [16.1 lspci](#lspci)
+    *   [16.2 lsusb](#lsusb)
+*   [17 See also](#See_also)
 
 ## Content adaptive brightness control
 
@@ -137,7 +141,9 @@ The system may hang for a few seconds, and after a moment, if you read nvm_versi
 
 ### External screen
 
-Support for external screens either using an USB-C to HDMI or USB-C to Mini Display ports adapters may not be working properly. Commonly the screen when plugged is reported to either:
+External sceens are working well with newer BIOS and Thunderbolt firmware versions applied, e.g. fully functional with the external dock Dell WD15\.
+
+Support for external screens either using an USB-C to HDMI or USB-C to Mini Display ports adapters may not be working properly in rare cases. Commonly the screen when plugged is reported to either:
 
 *   display an image for a few milliseconds then switch to a black screen;
 *   have no image at all;
@@ -270,6 +276,64 @@ EndSection
 
 or by adding `i915.enable_rc6=0` to the kernel boot parameters.
 
+## Power management
+
+### Fans
+
+The fans may remain on even at low temperatures, draining the battery and producing an unpleasant noise that will only stop on reboot. This is due to the fans being controlled by the BIOS by default.
+
+To prevent this behavior, configure i8k as described in [Fan speed control#Dell laptops](/index.php/Fan_speed_control#Dell_laptops "Fan speed control") and use [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/) utility to disable BIOS control of fans which conflicts with i8k. You may also want to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `dell-bios-fan-control.service` to ensure BIOS control of fans is disabled at boot.
+
+If i8kutils is installed it will show fan speed and temperature sensors with:
+
+```
+$ watch sensors
+
+```
+
+### Undervolting
+
+Undervolting CPU & GPU is possible. Use [intel-undervolt](https://aur.archlinux.org/packages/intel-undervolt/) utility. Change voltage settings by editing:
+
+```
+/etc/intel-undervolt.conf
+
+```
+
+For example, change *`undervolt 0 'CPU' 0.00`* to e.g. *`undervolt 0 'CPU' -25.00`* to decrease CPU setting by 25mV.
+
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `intel-undervolt.service`.
+
+**Warning:** Be careful, do not undervolt with unstable values. It may lead to a system unable to boot.
+
+Read undervolt settings:
+
+```
+# intel-undervolt -read
+
+```
+
+Apply undervolt settings from config file:
+
+```
+# intel-undervolt -apply
+
+```
+
+Measure power consumption:
+
+```
+# intel-undervolt -measure
+
+```
+
+Watch temperature sensors:
+
+```
+$ watch sensors
+
+```
+
 ## Touchpad
 
 Only key-presses work out of the box. Installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the [desktop environment](/index.php/Desktop_environment "Desktop environment").
@@ -301,6 +365,19 @@ Rebuild your initial ramdisk image (see [Mkinitcpio#Image creation and activatio
 ### Gestures
 
 Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for information about the current development state and available methods.
+
+## Keyboard
+
+By default, the keyboard backlight turns off after 10 seconds of inactivity. Some users might find this too short and annoying. Unfortunately this timeout cannot be adjusted by writing into `/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout` like on other Dell XPS laptops. The delay can't even be increased (or decreased) by editing this file:
+
+```
+/sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout
+
+```
+
+[The BIOS is preventing](https://github.com/dell/libsmbios/issues/48) the user from changing the timeout on AC like on Dell XPS 9370 laptop models. A kernel workaround was added in 4.18 only for Dell XPS 9370 and not XPS 9350.
+
+F-Keys to dim or disable/enable keyboard backlight does work.
 
 ## Sound
 

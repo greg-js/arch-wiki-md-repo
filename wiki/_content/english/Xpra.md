@@ -7,7 +7,11 @@ Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you 
 *   Xpra is usable over reasonably slow links and does its best to adapt to changing network bandwidth limits. (see also adaptive JPEG mode)
 *   Xpra is open-source (GPLv2+), multi-platform and multi-language, with current clients written in Python and Java.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Use](#Use)
@@ -23,6 +27,7 @@ Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you 
             *   [3.1.2.1 Method 1: .xinitrc](#Method_1:_.xinitrc)
             *   [3.1.2.2 Method 2: systemd user session](#Method_2:_systemd_user_session)
     *   [3.2 Error: Only console users are allowed to run the X server](#Error:_Only_console_users_are_allowed_to_run_the_X_server)
+    *   [3.3 Error: failed to connect to display :100](#Error:_failed_to_connect_to_display_:100)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -37,7 +42,7 @@ Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you 
 
 Start an xpra server on the machine where you want to run the applications (we are using display number **7** here):
 
- `$ xpra start :7` 
+ `$ xpra start :7` 
 
 Now you can start an application, e.g. firefox:
 
@@ -55,7 +60,7 @@ Note that if you start `screen` like this you don't have to specify the display 
 
 After running these commands, you don't see any windows yet. To actually see the applications on your display, you have to connect to the xpra server. If you are connecting to an xpra display on the same machine, start the xpra client like this:
 
- `$ xpra attach :7` 
+ `$ xpra attach :7` 
 
 Or, if you are connecting to a remote machine over ssh:
 
@@ -69,7 +74,7 @@ Programs continue to run on the server and you can reattach again later.
 
 You can stop the server with:
 
- `$ xpra stop :7` 
+ `$ xpra stop :7` 
 
 on the machine where the server is running, or remotely:
 
@@ -89,7 +94,7 @@ where:
 
 To attach it (on the server side):
 
- `$ xpra attach :7` 
+ `$ xpra attach :7` 
 
 To attach it (on the client side):
 
@@ -97,7 +102,7 @@ To attach it (on the client side):
 
 To detach press ctrl+c on terminal or run:
 
- `$ xpra detach :7` 
+ `$ xpra detach :7` 
 **Tip:** Screen resolution can be changed with [xrandr](/index.php/Xrandr "Xrandr").
 
 ### shadow remote desktop
@@ -232,6 +237,22 @@ Create the file /etc/X11/Xwrapper.config with the content
 allowed_users=anybody
 
 ```
+
+### Error: failed to connect to display :100
+
+Sometimes this errors are produced:
+
+ `/run/user/1000/xpra/:100.log` 
+```
+(EE) Fatal server error:
+(EE) parse_vt_settings: Cannot open /dev/tty0 (Permission denied)
+(EE) Server terminated with error (1). Closing log file.
+
+```
+
+To solve it is necessary run with `--xvfb=/usr/bin/Xorg`. Example:
+
+ `xpra start ssh://$USER@$SERVER/100 --start-child=/usr/bin/terminator --xvfb=/usr/bin/Xorg` 
 
 ## See also
 

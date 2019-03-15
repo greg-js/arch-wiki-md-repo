@@ -3,36 +3,40 @@
 *   [Users and Groups (简体中文)](/index.php/Users_and_Groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and Groups (简体中文)")
 *   [su](/index.php/Su "Su")
 
-**翻译状态：** 本文是英文页面 [Sudo](/index.php/Sudo "Sudo") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-13，点击[这里](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=437107)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Sudo](/index.php/Sudo "Sudo") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-15，点击[这里](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=559971)可以查看翻译后英文页面的改动。
 
-[sudo](http://www.gratisoft.us/sudo/)(substitute user do) 使得系统管理员可以授权特定用户或用户组作为 root 或他用户执行某些（或所有）命令，同时还能够对命令及其参数提供审核跟踪。
+[Sudo](https://www.sudo.ws/sudo/)(substitute user do) 使得系统管理员可以授权特定用户或用户组作为 root 或他用户执行某些（或所有）命令，同时还能够对命令及其参数提供审核跟踪。
 
 用户可以选择用 [su](/index.php/Su "Su") 切换到 root 用户运行命令，但是这种方式会启动一个 root shell 并允许用户运行之后的所有的命令。而 sudo 可以针对单个命令、仅在需要时授予临时权限，减少因为执行错误命令损坏系统的可能性。sudo 也能以其他用户身份执行命令并且记录用户执行的命令，以及失败的权限申请。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 使用](#.E4.BD.BF.E7.94.A8)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 查看当前设置](#.E6.9F.A5.E7.9C.8B.E5.BD.93.E5.89.8D.E8.AE.BE.E7.BD.AE)
-    *   [3.2 使用 visudo](#.E4.BD.BF.E7.94.A8_visudo)
-    *   [3.3 设置示例](#.E8.AE.BE.E7.BD.AE.E7.A4.BA.E4.BE.8B)
-    *   [3.4 sudoers文件默认权限](#sudoers.E6.96.87.E4.BB.B6.E9.BB.98.E8.AE.A4.E6.9D.83.E9.99.90)
-    *   [3.5 密码过期时间](#.E5.AF.86.E7.A0.81.E8.BF.87.E6.9C.9F.E6.97.B6.E9.97.B4)
-*   [4 使用技巧](#.E4.BD.BF.E7.94.A8.E6.8A.80.E5.B7.A7)
-    *   [4.1 bash 自动补全支持](#bash_.E8.87.AA.E5.8A.A8.E8.A1.A5.E5.85.A8.E6.94.AF.E6.8C.81)
-    *   [4.2 跨终端sudo](#.E8.B7.A8.E7.BB.88.E7.AB.AFsudo)
-    *   [4.3 环境变量](#.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-    *   [4.4 传递命令别名](#.E4.BC.A0.E9.80.92.E5.91.BD.E4.BB.A4.E5.88.AB.E5.90.8D)
-    *   [4.5 使用root密码](#.E4.BD.BF.E7.94.A8root.E5.AF.86.E7.A0.81)
-    *   [4.6 禁止root登陆](#.E7.A6.81.E6.AD.A2root.E7.99.BB.E9.99.86)
-        *   [4.6.1 gksu](#gksu)
-        *   [4.6.2 kdesu](#kdesu)
-    *   [4.7 让 sudo 使用 /etc/sudoers.d 中的文件](#.E8.AE.A9_sudo_.E4.BD.BF.E7.94.A8_.2Fetc.2Fsudoers.d_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
-*   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [5.1 SSH TTY 问题](#SSH_TTY_.E9.97.AE.E9.A2.98)
-    *   [5.2 权限 Umask](#.E6.9D.83.E9.99.90_Umask)
-    *   [5.3 默认 skeleton 文件](#.E9.BB.98.E8.AE.A4_skeleton_.E6.96.87.E4.BB.B6)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 使用](#使用)
+*   [3 配置](#配置)
+    *   [3.1 查看当前设置](#查看当前设置)
+    *   [3.2 使用 visudo](#使用_visudo)
+    *   [3.3 设置示例](#设置示例)
+    *   [3.4 sudoers文件默认权限](#sudoers文件默认权限)
+    *   [3.5 密码过期时间](#密码过期时间)
+*   [4 使用技巧](#使用技巧)
+    *   [4.1 bash 自动补全支持](#bash_自动补全支持)
+    *   [4.2 跨终端sudo](#跨终端sudo)
+    *   [4.3 环境变量](#环境变量)
+    *   [4.4 传递命令别名](#传递命令别名)
+    *   [4.5 使用root密码](#使用root密码)
+    *   [4.6 禁止root登陆](#禁止root登陆)
+        *   [4.6.1 kdesu](#kdesu)
+    *   [4.7 让 sudo 使用 /etc/sudoers.d 中的文件](#让_sudo_使用_/etc/sudoers.d_中的文件)
+    *   [4.8 编辑文件](#编辑文件)
+*   [5 疑难解答](#疑难解答)
+    *   [5.1 SSH TTY 问题](#SSH_TTY_问题)
+    *   [5.2 权限 Umask](#权限_Umask)
+    *   [5.3 默认 skeleton 文件](#默认_skeleton_文件)
 
 ## 安装
 
@@ -49,7 +53,7 @@ $ sudo *cmd*
 
 ```
 
-参见：[sudo 手册](http://www.gratisoft.us/sudo/man/sudo.html)。
+参见：[sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) 。
 
 ## 配置
 
@@ -83,7 +87,7 @@ sudo的配置文件是`/etc/sudoers`。`visudo`会锁住`sudoers`文件，保存
 # Reset environment by default
 Defaults      env_reset
 # Set default EDITOR to vim, and do not allow visudo to use EDITOR/VISUAL.
-Defaults      editor=/usr/bin/nano, !env_editor
+Defaults      editor=/usr/bin/nano, !env_editor
 
 ```
 
@@ -113,9 +117,11 @@ Defaults      editor=/usr/bin/nano, !env_editor
 要不询问某个用户的密码:
 
 ```
-Defaults:USER_NAME      !authenticate
+Defaults:USER_NAME      !authenticate
 
 ```
+
+**警告:** 任何以您的用户名运行的程序都可以无需密码就执行 sudo。
 
 只为用户启用部分命令的执行权限：
 
@@ -162,7 +168,7 @@ Defaults:用户名 timestamp_timeout=20
 
 ### bash 自动补全支持
 
-详情参见：[bash (简体中文)#自动命令补全](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.8A.A8.E5.91.BD.E4.BB.A4.E8.A1.A5.E5.85.A8 "Bash (简体中文)")。
+详情参见：[bash (简体中文)#自动命令补全](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#自动命令补全 "Bash (简体中文)")。
 
 ### 跨终端sudo
 
@@ -171,7 +177,7 @@ Defaults:用户名 timestamp_timeout=20
 如果不想每次启动新终端都重新输入密码，在配置文件中禁止**tty_tickets**即可：
 
 ```
-Defaults !tty_tickets
+Defaults !tty_tickets
 
 ```
 
@@ -194,7 +200,7 @@ alias sudo="sudo -E"
 在`/etc/sudoers`中添加以下内容作用相同：
 
 ```
-Defaults !env_reset
+Defaults !env_reset
 
 ```
 
@@ -267,18 +273,11 @@ $ sudo passwd root
 
 ```
 
-#### gksu
-
-要设置 *gksu* 使用 sudo 而不是 root:
-
-```
-$ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
-
-```
+**Tip:** 要在禁用 root 账号后使用交互 root 身份确认，请使用 `sudo -i`.
 
 #### kdesu
 
-KDE下常用 kdesu 以 root 权限执行图形程序。默认情况下，即使root账户被禁用，kdesu仍会尝试使用su切换root。需要配置kdesu以使用sudo，创建/编辑`~/.config/kdesurc` (KDE4 的 `~/.kde4/share/config/kdesurc`)，加入：
+KDE下常用 kdesu 以 root 权限执行图形程序。默认情况下，即使root账户被禁用，kdesu仍会尝试使用su切换root。需要配置kdesu以使用sudo，创建/编辑`~/.config/kdesurc`，加入：
 
 ```
 [super-user-command]
@@ -286,7 +285,7 @@ super-user-command=sudo
 
 ```
 
-或者使用下面命令，KDE 4 使用 kwriteconfig
+或者使用下面命令：
 
 ```
 $ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-command sudo
@@ -302,11 +301,28 @@ $ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-comma
 
 `/etc/sudoers.d/` 目录中的文件是按字母顺序加载的，`.` 或 `~` 开头的文件会被跳过。文件名应该以双字母开头，例如 `01_foo`，请注意配置文件的顺序以避免相互覆盖。
 
++
+
+**Warning:** The files in `/etc/sudoers.d/` are just as fragile as `/etc/sudoers` itself: any improperly formatted file will prevent `sudo` from working. Hence, for the same reason it is strongly advised to use `visudo`
+
+### 编辑文件
+
+`sudo -e` 或 `sudoedit` 可以实现用其它用户编辑文件，但是文件编辑器本身还是以当前用户运行。
+
+这样可以不已 root 用户运行程序，但是保存时具有 root 权限，详情参考 [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8#e).
+
+可以用 [meld](https://www.archlinux.org/packages/?name=meld) 管理 [pacnew](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave") 文件:
+
+```
+$ SUDO_EDITOR=meld sudo -e /etc/*file*{,.pacnew*}*
+
+```
+
 ## 疑难解答
 
 ### SSH TTY 问题
 
-远程执行命令时，SSH默认不会分配tty。没有tty，sudo就无法在获取密码时关闭回显。使用`-tt`选项强制SSH分配tty（使用两次`-tt`）。
+远程执行命令时，SSH默认不会分配tty。没有tty，sudo就无法在获取密码时关闭回显。使用`-tt`选项强制SSH分配tty。
 
 另一方面，sudoers中的`Defaults`选项`requiretty`要求只有拥有tty的用户才能使用sudo。可以通过`visudo`编辑配置文件，禁用这个选项：
 

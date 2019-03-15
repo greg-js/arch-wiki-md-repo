@@ -14,7 +14,7 @@ Related articles
 
 The required information is stored in a [partition table](#Partition_table) scheme such as MBR or GPT.
 
-Partition tables are created and modified using one of many [partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
+Partition tables are created and modified using one of many partitioning tools which must be compatible to the chosen scheme of partitioning table. Available tools are listed in the [#Partitioning tools](#Partitioning_tools) section.
 
 Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") before files can be written to it.
 
@@ -54,12 +54,12 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 *   [4 Partition alignment](#Partition_alignment)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Converting MBR to GPT](#Converting_MBR_to_GPT)
-    *   [5.2 GPT Kernel Support](#GPT_Kernel_Support)
+    *   [5.2 GPT kernel support](#GPT_kernel_support)
 *   [6 See also](#See_also)
 
 ## Partition table
 
-**Tip:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
+**Tip:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a [block device](/index.php/Block_device "Block device") name.
 
 There are two main types of partition table available: Master Boot Record (MBR), and GUID Partition Table (GPT). These are described below along with a discussion on how to choose between the two. A third, less common alternative is using a partitionless disk, which is also discussed.
 
@@ -320,7 +320,7 @@ For certain drives [Advanced Format](/index.php/Advanced_Format "Advanced Format
 
 See [gdisk#Convert between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
 
-### GPT Kernel Support
+### GPT kernel support
 
 The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in all Arch's [officially supported kernels](/index.php/Kernels#Officially_supported_kernels "Kernels"). In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
 

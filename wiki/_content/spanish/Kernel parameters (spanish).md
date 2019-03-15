@@ -6,7 +6,11 @@ Hay tres formas de pasar opciones al núcleo (también conocido por su nombre en
 
 Esta página explica con más detalle el segundo método y muestra una lista de los parámetros del núcleo más utilizados en Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración](#Configuración)
     *   [1.1 Syslinux](#Syslinux)

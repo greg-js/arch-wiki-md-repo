@@ -16,14 +16,15 @@ This page contains advanced Firefox configuration options and performance tweaks
 *   [1 Performance](#Performance)
     *   [1.1 Change Performance settings](#Change_Performance_settings)
     *   [1.2 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_(OMTC))
-    *   [1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
-    *   [1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-    *   [1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
-    *   [1.6 Longer interval between session information record](#Longer_interval_between_session_information_record)
-    *   [1.7 Referrer header control](#Referrer_header_control)
-    *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile's_SQLite_databases)
-    *   [1.9 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-    *   [1.10 Disable Pocket](#Disable_Pocket)
+    *   [1.3 Enable WebRender](#Enable_WebRender)
+    *   [1.4 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
+    *   [1.5 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+    *   [1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
+    *   [1.7 Longer interval between session information record](#Longer_interval_between_session_information_record)
+    *   [1.8 Referrer header control](#Referrer_header_control)
+    *   [1.9 Defragment the profile's SQLite databases](#Defragment_the_profile's_SQLite_databases)
+    *   [1.10 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+    *   [1.11 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -107,6 +108,16 @@ If OpenGL OMTC is disabled, you can force-enable it by going to `about:config` a
 **Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
 
 For more information on OMTC in Firefox read [MozillaWiki:Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing "mozillawiki:Platform/GFX/OffMainThreadCompositing").
+
+### Enable WebRender
+
+Enables WebRender compositor in Servo, instead of Gecko. Improves performance in supported hardware. Fixes some black visual glitches when "OpenGL Off-Main-Thread" is enabled. Currently it has some known bugs. You can read more in [MozillaWiki:Platform/GFX/Quantum Render](https://wiki.mozilla.org/Platform/GFX/Quantum_Render "mozillawiki:Platform/GFX/Quantum Render").
+
+You can force-enable it by going to `about:config` and setting `gfx.webrender.all` to `true`. Restart Firefox for changes to take effect.
+
+To check if webrender is enabled go to `about:support` and under the "Graphics" section look for "WEBRENDER". If it reports "available by user: Force enabled by pref", it means is enabled. Otherwise it will just report "opt-in by default".
+
+**Warning:** If WebRender is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you are not sure.
 
 ### Enable Accelerated Azure Canvas
 

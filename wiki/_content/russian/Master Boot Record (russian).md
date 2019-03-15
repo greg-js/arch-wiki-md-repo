@@ -7,7 +7,11 @@
 
 Master Boot Record (MBR) — это первый сектор (первые 512 байт) устройства хранения данных. MBR - это не партиция, а участок памяти, зарезервированный для загрузчика операционной системы и таблицы разделов диска.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Процесс загрузки](#Процесс_загрузки)
 *   [2 История](#История)

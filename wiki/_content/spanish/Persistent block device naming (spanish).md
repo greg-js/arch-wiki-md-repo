@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), revisada por última vez el **2014-12-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Persistent_block_device_naming&diff=0&oldid=349970) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
@@ -8,7 +11,11 @@ En este artículo se describe cómo utilizar nombres permanentes para sus dispos
 
 **Nota:** Si está usando [LVM2](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)"), este artículo no es relevante, dado que LVM se encarga de esto automáticamente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Métodos para nombrar los dispositivos de forma permanente](#Métodos_para_nombrar_los_dispositivos_de_forma_permanente)
     *   [1.1 by-label](#by-label)

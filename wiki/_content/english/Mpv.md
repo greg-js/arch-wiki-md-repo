@@ -366,14 +366,14 @@ The default `--ytdl-format` is `bestvideo+bestaudio/best`. For youtube videos th
 Setting the right youtube-dl format selectors can fix this easily though. In the following configuration example, only videos with a vertical resolution of 1080 pixels or less will be considered.
 
 ```
-ytdl-format=bestvideo[height<=?1080]+bestaudio/best
+ytdl-format="bestvideo[height<=?1080]+bestaudio/best"
 
 ```
 
 If you wish to avoid a certain codec altogether because you cannot hardware-decode it, you can add this to the format selector. For example, we can additionally choose to ignore VP9 as follows:
 
 ```
-ytdl-format=bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best
+ytdl-format="bestvideo[height<=?1080][vcodec!=vp9]+bestaudio/best"
 
 ```
 

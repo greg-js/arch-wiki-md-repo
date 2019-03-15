@@ -14,10 +14,11 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Waiting for connection](#Waiting_for_connection)
     *   [4.2 Waiting for Backup](#Waiting_for_Backup)
-    *   [4.3 Desktop GUI Crashes on startup](#Desktop_GUI_Crashes_on_startup)
-    *   [4.4 Out of Memory](#Out_of_Memory)
-    *   [4.5 Real time protection](#Real_time_protection)
-    *   [4.6 JRE Version Update](#JRE_Version_Update)
+    *   [4.3 Restore stuck preparing](#Restore_stuck_preparing)
+    *   [4.4 Desktop GUI Crashes on startup](#Desktop_GUI_Crashes_on_startup)
+    *   [4.5 Out of Memory](#Out_of_Memory)
+    *   [4.6 Real time protection](#Real_time_protection)
+    *   [4.7 JRE Version Update](#JRE_Version_Update)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -87,6 +88,19 @@ Make sure to create the new tmpdir and verify CrashPlan's user has access to it.
 ```
 
 [Restart](/index.php/Restart "Restart") CrashPlan.
+
+### Restore stuck preparing
+
+If a restore gets stuck at «Preparing», it may be due to a permission restriction on `/tmp` that causes communication between the restore tool and backup engine to fail. This can be caused by the sysctl variable `fs.protected_fifos` restricting the engine (running as `root`) from connecting to a named pipe owned by the desktop user contained in `/tmp` (similar to [tmpfs#Opening_symlinks_in_tmpfs_as_root_fails](/index.php/Tmpfs#Opening_symlinks_in_tmpfs_as_root_fails "Tmpfs")).
+
+The protection can be disabled to permit the restore to occur with
+
+```
+# sysctl fs.protected_fifos=0
+
+```
+
+See [Sysctl](/index.php/Sysctl "Sysctl") for instructions on making the change permanent.
 
 ### Desktop GUI Crashes on startup
 

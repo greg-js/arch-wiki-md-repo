@@ -14,7 +14,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
         *   [2.2.2 PDF forms](#PDF_forms)
 *   [3 Annotation](#Annotation)
 *   [4 Graphical PDF editing](#Graphical_PDF_editing)
-    *   [4.1 Simple editors](#Simple_editors)
+    *   [4.1 Basic editors](#Basic_editors)
     *   [4.2 Cropping tools](#Cropping_tools)
     *   [4.3 Advanced editors](#Advanced_editors)
 *   [5 PDF tools](#PDF_tools)
@@ -194,9 +194,9 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 *   [Inkscape](/index.php/Inkscape "Inkscape") can import a single page from a PDF and export to PDF; text is imported as cloned glyphs or text; with the latter embedded fonts are substituted.
 *   Graphics editors like [GIMP](/index.php/GIMP "GIMP") and [krita](https://www.archlinux.org/packages/?name=krita) can also import and export PDFs at the cost of [rasterization](https://en.wikipedia.org/wiki/Raster_graphics "wikipedia:Raster graphics").
 
-### Simple editors
+### Basic editors
 
-*   **pdfarranger** — Helps merge or split pdf documents and rotate, crop and rearrange pages. It's a maintained fork of PDF-Shuffler.
+*   **PDF Arranger** — Helps merge or split pdf documents and rotate, crop and rearrange pages. It's a maintained fork of PDF-Shuffler.
 
 	[https://github.com/jeromerobert/pdfarranger](https://github.com/jeromerobert/pdfarranger) || [pdfarranger](https://www.archlinux.org/packages/?name=pdfarranger)
 

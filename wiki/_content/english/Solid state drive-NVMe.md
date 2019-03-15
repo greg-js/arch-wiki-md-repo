@@ -4,7 +4,11 @@ Related articles
 
 [NVM Express](https://en.wikipedia.org/wiki/NVM_Express "wikipedia:NVM Express") (NVMe) is a specification for accessing [SSDs](/index.php/SSD "SSD") attached through the PCI Express bus. As a logical device interface, NVM Express has been designed from the ground up, capitalizing on the low latency and parallelism of PCI Express SSDs, and mirroring the parallelism of contemporary CPUs, platforms and applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Performance](#Performance)
@@ -71,7 +75,7 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 
 When APST is enabled the output should contain "Autonomous Power State Transition Enable (APSTE): Enabled" and there should be non-zero entries in the table below indicating the idle time before transitioning into each of the available states.
 
-If ASPT is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `# nvme id-ctrl /dev/nvme[0-9]` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) you must pass a value at least that high as parameter `default_ps_max_latency_us` for the `nvme_core` [kernel module](/index.php/Kernel_module "Kernel module"). This should enable ASPT and make the table in `# nvme get-feature` show the entries.
+If APST is enabled but no non-zero states appear in the table, the latencies might be too high for any states to be enabled by default. The output of `# nvme id-ctrl /dev/nvme[0-9]` should show the available non-operational power states of the NVME controller. If the total latency of any state (enlat + xlat) is greater than 25000 (25ms) you must pass a value at least that high as parameter `default_ps_max_latency_us` for the `nvme_core` [kernel module](/index.php/Kernel_module "Kernel module"). This should enable APST and make the table in `# nvme get-feature` show the entries.
 
 #### Samsung drive errors on Linux 4.10
 

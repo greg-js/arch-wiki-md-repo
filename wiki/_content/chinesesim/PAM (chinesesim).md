@@ -6,11 +6,11 @@ Related articles
 *   [pam_abl](/index.php/Pam_abl "Pam abl")
 *   [pam_oath](/index.php/Pam_oath "Pam oath")
 
-**翻译状态：** 本文是英文页面 [PAM](/index.php/PAM "PAM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-14，点击[这里](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=436909)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PAM](/index.php/PAM "PAM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-13，点击[这里](https://wiki.archlinux.org/index.php?title=PAM&diff=0&oldid=566242)可以查看翻译后英文页面的改动。
 
-Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进行系统级的用户认证。如下描述引用自 [[1]](http://www.linux-pam.org/whatispam.html):
+Linux PAM([Pluggable Authentication Modules](http://www.linux-pam.org/)) 是一个系统级用户认证框架。如下描述引用自 [项目介绍](http://www.linux-pam.org/whatispam.html):
 
-	PAM provides a way to develop programs that are independent of authentication scheme. These programs need "authentication modules" to be attached to them at run-time in order to work. Which authentication module is to be attached is dependent upon the local system setup and is at the discretion of the local system administrator. （ PAM 可以使程序开发与认证方式细节分离，而是在程序运行时调用“认证”模型完成工作。认证模型可以由本地系统管理员通过配置进行选择）
+	PAM 将程序开发与认证方式进行分离，程序在运行时调用附加的“认证”模块完成自己的工作。本地系统管理员通过配置选择要使用哪些认证模块。
 
 本文描述在 Arch Linux 下为本地和远端用户配置 PAM 权限的方式方法。具体的细节配置方法将在专门的文章内展开。
 
@@ -29,7 +29,7 @@ Linux PAM( Pluggable Authentication Modules ) 提供了一个框架，用于进�
     *   [3.1 安全性参数配置](#安全性参数配置)
     *   [3.2 PAM stack and module configuration](#PAM_stack_and_module_configuration)
 *   [4 更多 PAM 包](#更多_PAM_包)
-*   [5 相关资源](#相关资源)
+*   [5 参阅](#参阅)
 
 ## 安装
 
@@ -130,6 +130,10 @@ auth      optional  pam_permit.so
 
 	描述如何使用 `pam_limits.so` 来配置系统进程
 
+*   [Environment variables#Using pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables")
+
+	包含了用 `pam_env.so` 设置环境变量的示例。
+
 ### PAM stack and module configuration
 
 下面的章节说明对于具体的模块，如何修改 [#PAM 基础配置](#PAM_基础配置)
@@ -163,6 +167,15 @@ auth      optional  pam_permit.so
 *   [pam_oath](/index.php/Pam_oath "Pam oath")
 
 	`pam_oath.so` 软件方式的 two-factor 认证
+
+*   [fprint](/index.php/Fprint "Fprint")
+
+```
+	+	
+
+```
+
+	使用 `pam_fprintd.so` 进行指纹认证.
 
 来自于 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 的 PAM 模块:
 
@@ -206,7 +219,7 @@ PAM 相关的通用工具有：
 
 Note the AUR features a keyword tag for [PAM](https://aur.archlinux.org/packages/?O=0&SeB=k&K=pam&outdated=off&SB=p&SO=d&PP=50&do_Search=Go), but not all available packages are updated to include it. Hence, searching the [package description](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=pam&outdated=off&SB=p&SO=d&PP=50&do_Search=Go) may be necessary.
 
-## 相关资源
+## 参阅
 
 *   [linux-pam.org](http://www.linux-pam.org/) - The project homepage
 *   [Understanding and configuring PAM](https://www.ibm.com/developerworks/linux/library/l-pam/index.html) - An introductory article

@@ -8,7 +8,7 @@ From the project [home page](http://www.ffmpeg.org/):
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Package installation](#Package_installation)
+*   [1 Installation](#Installation)
 *   [2 Encoding examples](#Encoding_examples)
     *   [2.1 Screen capture](#Screen_capture)
     *   [2.2 Recording webcam](#Recording_webcam)
@@ -30,8 +30,8 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.14 Splitting files](#Splitting_files)
     *   [2.15 Hardware video acceleration](#Hardware_video_acceleration)
         *   [2.15.1 VA-API](#VA-API)
-        *   [2.15.2 Nvidia NVENC](#Nvidia_NVENC)
-        *   [2.15.3 Nvidia NVDEC](#Nvidia_NVDEC)
+        *   [2.15.2 NVIDIA NVENC/NVDEC](#NVIDIA_NVENC/NVDEC)
+        *   [2.15.3 Intel QuickSync (QSV)](#Intel_QuickSync_(QSV))
 *   [3 Preset files](#Preset_files)
     *   [3.1 Using preset files](#Using_preset_files)
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
@@ -41,7 +41,7 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [4.3 Create a screen of the video every X frames](#Create_a_screen_of_the_video_every_X_frames)
 *   [5 See also](#See_also)
 
-## Package installation
+## Installation
 
 **Note:** You may encounter FFmpeg forks like *libav* and *avconv*, see [The FFmpeg/Libav situation](http://blog.pkh.me/p/13-the-ffmpeg-libav-situation.html) for a blog article about the differences between the project and the current status of FFmpeg.
 
@@ -399,11 +399,11 @@ $ ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -vcodec h264_v
 
 ```
 
-#### Nvidia NVENC
+#### NVIDIA NVENC/NVDEC
 
-NVENC can be used for encoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [Hardware video acceleration#Driver support](/index.php/Hardware_video_acceleration#Driver_support "Hardware video acceleration").
+[NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") can be used for encoding/decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series, see [Hardware video acceleration#NVIDIA](/index.php/Hardware_video_acceleration#NVIDIA "Hardware video acceleration") for details.
 
-See [this gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) for some techniques. NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
+The [following gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) provides some techniques. NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
 
 To print available options execute (`hevc_nvenc` may also be available):
 
@@ -419,9 +419,13 @@ $ ffmpeg -i source.ext -c:v h264_nvenc -rc constqp -qp 28 output.mkv
 
 ```
 
-#### Nvidia NVDEC
+#### Intel QuickSync (QSV)
 
-NVDEC can be used for decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series (see [w:Nvidia NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") and [Hardware video acceleration#Driver support](/index.php/Hardware_video_acceleration#Driver_support "Hardware video acceleration").
+[Quick Sync Video](https://www.intel.com/content/www/us/en/architecture-and-technology/quick-sync-video/quick-sync-video-general.html%7CIntel®) uses media processing capabilities of an [Intel](/index.php/Intel "Intel") GPU to decode and encode fast, enabling the processor to complete other tasks and improving system responsiveness.
+
+This requires [intel-media-sdk](https://aur.archlinux.org/packages/intel-media-sdk/) to be installed and FFmpeg needs to be build with `--enable-libmfx`. Packages are available in [AUR](/index.php/AUR "AUR"): [ffmpeg-qsv](https://aur.archlinux.org/packages/ffmpeg-qsv/) or [ffmpeg-qsv-git](https://aur.archlinux.org/packages/ffmpeg-qsv-git/). The package [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) doesn't have this flag enabled.
+
+The usage of QuickSync is describe in the [FFmpeg Wiki](https://trac.ffmpeg.org/wiki/Hardware/QuickSync). It is recommended to use [VA-API](/index.php/VA-API "VA-API") [[1]](https://trac.ffmpeg.org/wiki/Hardware/VAAPI) with either the *iHD* or *i965* driver instead of using *libmfx* directly, see the FFmpeg Wiki section *Hybrid transcode* for encoding examples and [Hardware video acceleration#Configuring VA-API](/index.php/Hardware_video_acceleration#Configuring_VA-API "Hardware video acceleration") for driver instructions.
 
 ## Preset files
 

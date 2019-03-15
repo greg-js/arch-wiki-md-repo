@@ -265,7 +265,7 @@ If you want to have access to Windows services, install [Samba](/index.php/Samba
 
 The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Enable usershares](/index.php/Samba#Enable_usershares "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
 
-**Tip:** Use `*` (asterisk) for both username and password when accessing a Windows share without authentification in Dolphin's prompt.
+**Tip:** Use `*` (asterisk) for both username and password when accessing a Windows share without authentication in Dolphin's prompt.
 
 Unlike GTK file browsers which utilize GVfs also for the launched program, opening files from Samba shares in Dolphin via KIO makes Plasma copy the whole file to the local system first with most programs (VLC is an exception). To workaround this, you can use a GTK based file browser like [thunar](https://www.archlinux.org/packages/?name=thunar) with [gvfs](https://www.archlinux.org/packages/?name=gvfs) and [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) for saving login credentials) to access SMB shares in a more able way.
 

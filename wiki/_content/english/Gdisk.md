@@ -45,7 +45,7 @@ Related articles
 
 ## List partitions
 
-To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
+To list partition tables and partitions on a [block device](/index.php/Block_device "Block device"), you can run the following, where device is a name like `/dev/sda`, `/dev/nvme0n1`, `/dev/mmcblk0`, etc.:
 
 ```
 # gdisk -l /dev/sda
@@ -101,7 +101,7 @@ The following shows how to use *gdisk* to perform both the creation of a partiti
 
 *gdisk* performs partition alignment automatically on a 2048 512-byte sector (1 MiB) block size base which should be compatible with all [Advanced Format](/index.php/Advanced_Format "Advanced Format") HDDs and the vast majority of [SSDs](/index.php/SSD "SSD") if not all.
 
-To use *gdisk*, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`:
+To use *gdisk*, run the program with the name of the [block device](/index.php/Block_device "Block device") you want to change/edit. This example uses `/dev/sda`:
 
 ```
 # gdisk /dev/sda
@@ -185,7 +185,8 @@ After conversion, the [boot loader](/index.php/Boot_loader "Boot loader") will n
 
 **Warning:**
 
-*   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR does not have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
+*   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors (16.5 KiB) by default. MBR does not have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
+
 *   There are known corruption issues with the backup GPT on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
 
 To convert an MBR partition table to GPT using *sgdisk*, use the `-g`/`--mbrtogpt` option:

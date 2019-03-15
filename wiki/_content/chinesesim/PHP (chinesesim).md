@@ -6,11 +6,15 @@ Related articles
 *   [PHPLOC](/index.php/PHPLOC "PHPLOC")
 *   [PhpDox](/index.php/PhpDox "PhpDox")
 
-**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=449127)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-14，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=566895)可以查看翻译后英文页面的改动。
 
-[PHP](http://www.php.net/)是一种广泛使用的通用脚本语言，特别适合于Web开发，可嵌入到HTML。
+[PHP](https://secure.php.net/)是一种广泛使用的通用脚本语言，特别适合于 Web 开发，可嵌入到 HTML 中。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 运行](#运行)
@@ -21,10 +25,11 @@ Related articles
     *   [4.3 pthreads](#pthreads)
     *   [4.4 PCNTL](#PCNTL)
     *   [4.5 MySQL/MariaDB](#MySQL/MariaDB)
-    *   [4.6 PostgreSQL](#PostgreSQL)
-    *   [4.7 Sqlite](#Sqlite)
-    *   [4.8 XDebug](#XDebug)
-    *   [4.9 IMAP](#IMAP)
+    *   [4.6 Redis](#Redis)
+    *   [4.7 PostgreSQL](#PostgreSQL)
+    *   [4.8 Sqlite](#Sqlite)
+    *   [4.9 XDebug](#XDebug)
+    *   [4.10 IMAP](#IMAP)
 *   [5 缓存](#缓存)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -57,7 +62,7 @@ Related articles
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")安装[php](https://www.archlinux.org/packages/?name=php)。AUR 中也提供了老的版本，例如 [php56](https://aur.archlinux.org/packages/php56/).
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [php](https://www.archlinux.org/packages/?name=php)。AUR 中也提供了老的版本，包括 [php53](https://aur.archlinux.org/packages/php53/), [php55](https://aur.archlinux.org/packages/php55/), [php56](https://aur.archlinux.org/packages/php56/), [php70](https://aur.archlinux.org/packages/php70/), [php71](https://aur.archlinux.org/packages/php71/) 和 [php72](https://aur.archlinux.org/packages/php72/).
 
 注意：要想像纯CGI那样运行PHP，你需要安装 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) 。
 
@@ -103,7 +108,7 @@ $ pacman -Ss php-
 
 **Tip:** 不要编辑`/etc/php/php.ini`，扩展的启停可在 `/etc/php/conf.d` 中设置，如： (e.g. `/etc/php/conf.d/gd.ini`)
 
-要安装 PHP 老版本的扩展，可以在 AUR 中搜索 php56-*, 例如 [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)。
+要安装 PHP 的扩展，可以在 AUR 中搜索 php-* 或 php56-*, 例如 [php-imagick](https://aur.archlinux.org/packages/php-imagick/), [php-redis](https://aur.archlinux.org/packages/php-redis/) [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)。
 
 ### gd
 
@@ -149,13 +154,19 @@ extension=mysqli.so
 
 可以给网络脚本最低的 MySQL 用户权限，可以编辑 `/etc/mysql/my.cnf` 取消 `skip-networking` 行的注释，这样 MySQL 服务器就只能本地访问。设置之后需要重启 MySQL。
 
+### Redis
+
+安装并配置 [Redis](/index.php/Redis "Redis")，然后安装 [phpredis-git](https://aur.archlinux.org/packages/phpredis-git/).
+
+在 `/etc/php/conf.d/redis.ini` 中取消 redis 扩展的注释。
+
 ### PostgreSQL
 
 安装并配置 [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")，然后安装 [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) 软件包并取消 `/etc/php/php.ini` 中下面几行的注释:
 
 ```
-extension=pdo_pgsql.so
-extension=pgsql.so
+extension=pdo_pgsql
+extension=pgsql
 
 ```
 
@@ -164,8 +175,8 @@ extension=pgsql.so
 安装并配置 [SQLite](/index.php/SQLite "SQLite")，然后安装 [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite) 软件包并取消 `/etc/php/php.ini` 中下面几行的注释:
 
 ```
-extension=pdo_sqlite.so
-extension=sqlite3.so
+extension=pdo_sqlite
+extension=sqlite3
 
 ```
 
@@ -174,7 +185,7 @@ extension=sqlite3.so
 用 XDebug 可以很容易的通过修改的 var_dump() 函数进行调试，安装 [xdebug](https://www.archlinux.org/packages/?name=xdebug) 并取消 `/etc/php/conf.d/xdebug.ini` 中如下行前面的注释：
 
 ```
-zend_extension=xdebug.so
+zend_extension=xdebug
 xdebug.remote_enable=on
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
@@ -187,7 +198,7 @@ xdebug.remote_handler=dbgp
 安装 [php-imap](https://www.archlinux.org/packages/?name=php-imap) 并取消 `/etc/php/conf.d/xdebug.ini` 中如下行前面的注释:
 
 ```
- extension=imap.so
+ extension=imap
 
 ```
 
@@ -197,8 +208,6 @@ PHP有两种缓存： *opcode*/*bytecode* 缓存和*userland*/*user data* 缓存
 
 *   [Zend OPCache](https://en.wikipedia.org/wiki/Zend_Opcache "wikipedia:Zend Opcache")仅提供*opcode*缓存。
 *   [APCu](https://github.com/krakjoe/apcu/)仅提供*userland*缓存
-
-要获得最佳性能，应当开启两种缓存。按照下面[#OPCache](#OPCache)和[#APCu](#APCu)的步骤操作即可。
 
 ### OPCache
 
@@ -317,7 +326,7 @@ It can be installed with the [producer](https://aur.archlinux.org/packages/produ
 
 Ensure the zip extension is enabled.
 
- `$ grep zip /etc/php/php.ini`  `extension=zip.so` 
+ `/etc/php/php.ini`  `extension=zip` 
 
 ### /etc/php/php.ini not parsed
 

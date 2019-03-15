@@ -331,9 +331,9 @@ Add `--force-device-scale-factor=2` as a flag to the atom.desktop file:
 
 #### Firefox
 
-Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead. Another option, which will avoid Firefox-specific settings in many setups is to use the settings in [#X Resources](#X_Resources) as Firefox should respect the `Xft.dpi` value defined there.
+Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings. However, the suggested `GDK_SCALE` suggestion does not consistently scale the entirety of Firefox, and does not work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead. Another option, which will avoid Firefox-specific settings in many setups is to use the settings in [#X Resources](#X_Resources) as Firefox should respect the `Xft.dpi` value defined there.
 
-To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also doesn't consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
+To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also does not consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
 
  `~/.mozilla/firefox/*<profile>*/chrome/userChrome.css` 
 ```
@@ -354,6 +354,8 @@ To override those, open Firefox advanced preferences page (`about:config`) and s
 **Warning:** The following extension is not compatible with Firefox Quantum (version 57 and above).
 
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
+
+If you use Wayland, you can also use the Wayland-enabled packages of Firefox from the AUR: [firefox-wayland](https://aur.archlinux.org/packages/firefox-wayland/) (compiles from source) or [fedora-firefox-wayland-bin](https://aur.archlinux.org/packages/fedora-firefox-wayland-bin/) (binary from Fedora). You might experience some minor visual glitches with these packages.
 
 #### Chromium / Google Chrome
 

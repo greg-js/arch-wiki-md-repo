@@ -6,7 +6,11 @@ Related articles
 
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) is a port of the popular GUI SSH, Telnet, Rlogin and serial port connection client for Windows. It has support for advanced logging and termcap options, as well as a very configurable appearance and the ability to forward ports or create a SOCKS tunnel through an SSH destination. To start, simply run PuTTY, type the hostname of the host you would like to connect to and hit Open.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -40,7 +44,7 @@ After that you can import it to make an SSH connection: *Connection > SSH > Auth
 
 *Settings > Connection > Data : Terminal-type string = putty-256color*
 
-To test color support, execute the following command: [reference](http://www.commandlinefu.com/commands/view/5879/show-numerical-values-for-each-of-the-256-colors-in-bash)
+To test color support, execute the following command[[2]](http://www.commandlinefu.com/commands/view/5879/show-numerical-values-for-each-of-the-256-colors-in-bash):
 
 ```
 for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done

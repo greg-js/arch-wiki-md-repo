@@ -1,6 +1,10 @@
 Esta página es para dar a entender los términos usados en la comunidad de Arch Linux. Se libre de agregar o modificar cualquier término. Si decides agregar una, por favor agregarla en orden alfabético.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ABS](#ABS)
 *   [2 AUR](#AUR)
@@ -8,13 +12,13 @@ Esta página es para dar a entender los términos usados en la comunidad de Arch
 *   [4 TU](#TU)
 *   [5 TUR](#TUR)
 *   [6 bbs](#bbs)
-*   [7 [community]](#.5Bcommunity.5D)
-*   [8 [core]](#.5Bcore.5D)
-*   [9 custom/user repository](#custom.2Fuser_repository)
-*   [10 developer/desarrollador](#developer.2Fdesarrollador)
-*   [11 /etc/network-profiles](#.2Fetc.2Fnetwork-profiles)
-*   [12 /etc/rc.local](#.2Fetc.2Frc.local)
-*   [13 [extra]](#.5Bextra.5D)
+*   [7 [community]](#[community])
+*   [8 [core]](#[core])
+*   [9 custom/user repository](#custom/user_repository)
+*   [10 developer/desarrollador](#developer/desarrollador)
+*   [11 /etc/network-profiles](#/etc/network-profiles)
+*   [12 /etc/rc.local](#/etc/rc.local)
+*   [13 [extra]](#[extra])
 *   [14 hotplug](#hotplug)
 *   [15 hwd](#hwd)
 *   [16 hwdetect](#hwdetect)
@@ -25,14 +29,12 @@ Esta página es para dar a entender los términos usados en la comunidad de Arch
 *   [21 package](#package)
 *   [22 pacman](#pacman)
 *   [23 pacman.conf](#pacman.conf)
-*   [24 release/[release]](#release.2F.5Brelease.5D)
-*   [25 repository/repo](#repository.2Frepo)
+*   [24 release/[release]](#release/[release])
+*   [25 repository/repo](#repository/repo)
 *   [26 RTFM](#RTFM)
-*   [27 [testing]](#.5Btesting.5D)
+*   [27 [testing]](#[testing])
 *   [28 udev](#udev)
-*   [29 unstable/[unstable]](#unstable.2F.5Bunstable.5D)
-*   [30 versionpkg](#versionpkg)
-*   [31 wiki](#wiki)
+*   [29 wiki](#wiki)
 
 ## ABS
 
@@ -228,16 +230,6 @@ udev provides a dynamic device directory containing only the files for actually 
 Usually udev runs as udevd(8) and receives uevents directly from the kernel if a device is added or removed form the system.
 
 If udev receives a device event, it matches its configured rules against the available device attributes provided in sysfs to identify the device. Rules that match, may provide additional device information or specify a device node name and multiple symlink names and instruct udev to run additional programs as part of the device event handling.
-
-## unstable/[unstable]
-
-## versionpkg
-
-This is a very simple script that allows you to easily update your CVS and SVN packages without having to edit the PKGBUILDs manually to enter the date or revision number.
-
-Simply run this script rather than makepkg in the build dir. This script completely removes the need for backtick execution to set the date or tag version in PKGBUILDs.
-
-More detailed information can be found [here](/index.php/Arch_CVS_%26_SVN_PKGBUILD_guidelines#versionpkg_-_a_makepkg_wrapper_for_CVS.2FSVN_builds "Arch CVS & SVN PKGBUILD guidelines").
 
 ## wiki
 

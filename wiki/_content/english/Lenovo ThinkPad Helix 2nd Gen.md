@@ -10,11 +10,16 @@
 
 This hardware is substantially different from the [Lenovo ThinkPad Helix 1st Gen](/index.php/Lenovo_ThinkPad_Helix "Lenovo ThinkPad Helix") and thus the solutions outlined there are not helpful. Note: the following was tested with the standard ThinkPad Ultrabook keyboard, not the Pro one.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Suspend & Resume](#Suspend_&_Resume)
     *   [1.1 Enable suspend-to-idle (freeze/s2idle)](#Enable_suspend-to-idle_(freeze/s2idle))
     *   [1.2 Disable embedded-controller wake-ups](#Disable_embedded-controller_wake-ups)
+    *   [1.3 Workaround for no wifi connection on resume](#Workaround_for_no_wifi_connection_on_resume)
 *   [2 Sensors](#Sensors)
 *   [3 Touch Screen](#Touch_Screen)
 *   [4 Graphics](#Graphics)
@@ -41,6 +46,41 @@ On the most recent BIOS versions, this isn't necessary, since `/sys/power/mem_sl
 By default, s2idle will still exhibit a significant battery drain while suspended (the batteries will be dead within a few hours). It appears that the device suffers from embedded controller wake-ups. For a more reasonable drain while suspended (i.e. you can leave it suspended for days), you must set the `acpi.ec_no_wakeup=1` kernel parameter.
 
 **Note:** If you set the `acpi.ec_no_wakeup=1` kernel parameter, the device will not be able to wake up after any lid events (attaching/detaching the tablet from the base). So, it's a trade-off: enable the parameter and enjoy proper suspend behavior as long as you don't remove the device from the base (e.g. to close it), or do not set the parameter and enjoy the ability to close and re-open the laptop but suffer wake-level battery drainage.
+
+### Workaround for no wifi connection on resume
+
+The WiFi chip in this computer (Intel Wireless 7265) has a problem where it can stop re-connecting after waking from suspend. The system can no longer communicate with the card, so restarting NetworkManager (etc) is not sufficient to regain a connection, nor is unloading and reloading the `iwlwifi` module after resuming. A casual internet search reveals this to be a hardware problem that affects Windows users as well.
+
+An effective workaround, however, is to unload the kernel modules before suspending and reloading them upon resuming. For example, using systemd:
+
+ `/etc/systemd/system/suspend-unload-iwlwifi.service` 
+```
+[Unit]
+Description=Unload iwlwifi before suspending
+Before=suspend.target
+StopWhenUnneeded=no
+
+[Service]
+type=oneshot
+ExecStart=/usr/bin/bash -c "rmmod iwlmvm && rmmod iwlwifi"
+
+[Install]
+WantedBy=suspend.target
+```
+ `/etc/systemd/system/suspend-unload-iwlwifi.service` 
+```
+[Unit]
+Description=Unload iwlwifi before suspending
+Before=suspend.target
+StopWhenUnneeded=no
+
+[Service]
+type=oneshot
+ExecStart=/usr/bin/bash -c "lsmod iwlmvm iwlwifi"
+
+[Install]
+WantedBy=suspend.target
+```
 
 ## Sensors
 

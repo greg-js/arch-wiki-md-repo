@@ -58,6 +58,8 @@ Rust follows a regular six week release cycle, similar to the release cycle of F
 
 ## Installation
 
+There are 2 choices for a rustup installation, one is supported by Arch Linux, while the other is officially supported by Rust.
+
 ### Native installation
 
 To [install](/index.php/Install "Install") the latest stable version of Rust from the official Arch Linux software repository, [install](/index.php/Install "Install") the [rust](https://www.archlinux.org/packages/?name=rust) package. This will install the `rustc` compiler and [Cargo](#Cargo).
@@ -69,8 +71,6 @@ There's also development version of the Rust compiler available from [AUR](/inde
 The official and recommended method of installing Rust for the purpose of developing software is to use the [Rustup toolchain manager](https://www.rustup.rs/), written in Rust.
 
 The benefits to using the Rustup toolchain manager instead of the standalone prepackaged Rust in the software repository is the ability to install multiple toolchains (stable, beta, nightly) for multiple targets (windows, mac, android) and architectures (x86, x86_64, arm).
-
-One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by Arch Linux.
 
 #### Upstream installation script
 

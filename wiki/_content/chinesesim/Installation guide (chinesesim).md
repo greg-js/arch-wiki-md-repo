@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-02-27，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=565601)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-15，点击[这里](https://wiki.archlinux.org/index.php?title=Installation+guide&diff=0&oldid=568657)可以查看翻译后英文页面的改动。
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")。请注意，代码段可能会有占位符（格式是 `*italics*`），你可能需要手动去掉它们。
 
@@ -109,14 +109,19 @@ live 环境可以从 [USB 安装 U 盘](/index.php/USB_flash_installation_media 
 
 ### 连接到因特网
 
-守护进程 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 已被默认启用来探测 [有线网络设备](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)，并会尝试连接。可以使用 [ping](/index.php/Ping "Ping") 验证连接是否正常：
+用下面步骤设置网络：
 
-```
-# ping archlinux.org
+1.  确保系统已经启用了 [网络接口](/index.php/Network_configuration#Network_interfaces "Network configuration")，用 [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) 检查:
+     `# ip link` 
+2.  连接到网络，连接网线或[无线网络](/index.php/Wireless_network_configuration "Wireless network configuration").
+3.  配置网络连接:
+    *   [静态 IP](/index.php/Network_configuration#Static_IP_address "Network configuration")
+    *   [动态 IP](/index.php/Network_configuration#DHCP "Network configuration").
 
-```
+    **Note:** 安装镜像在启动时用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) 配置 [有线设备](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)。
 
-如果没有可用网络连接，利用 `systemctl stop dhcpcd@*网络接口*`，`TAB` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，`*网络接口*` 名可以通过 [Tab补全](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion")。要配置网络，详见 [网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
+4.  用 [ping](https://en.wikipedia.org/wiki/ping "w:ping") 检查网络连接:
+     `# ping archlinux.org` 
 
 ### 更新系统时间
 

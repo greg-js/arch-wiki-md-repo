@@ -15,6 +15,7 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 Socket activation](#Socket_activation)
 *   [2 Connection Interfaces](#Connection_Interfaces)
     *   [2.1 USB](#USB)
     *   [2.2 Parallel port](#Parallel_port)
@@ -46,6 +47,12 @@ Related articles
 If you intend to "print" into a PDF document, also install the [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf) package. By default, pdf files are stored in `/var/spool/cups-pdf/$USER`. The location can be changed in `/etc/cups/cups-pdf.conf`.
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `org.cups.cupsd.service`.
+
+### Socket activation
+
+[cups](https://www.archlinux.org/packages/?name=cups) provides a `org.cups.cupsd.socket` unit. If `org.cups.cupsd.socket` is enabled (and `org.cups.cupsd.service` is disabled), systemd will not start CUPS immediately, it will just listen to the appropriate sockets. Then, whenever a program attempts to connect to one of these CUPS sockets, systemd will start `org.cups.cupsd.service` and transparently hand over control of these ports to the CUPS process.
+
+This way, CUPS is only started once a program wants to make use of the service.
 
 ## Connection Interfaces
 

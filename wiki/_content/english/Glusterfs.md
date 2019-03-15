@@ -10,9 +10,9 @@ Related articles
 
 ## Configuration
 
-Glusterfs can be setup to run in many different configurations depending operating needs, including distributed and replicated. For the example below, a two node replicated server is being created, with nodes gluster1 and gluster2 each have two disks, one containing the OS sda, the other to be shared by glusterfs sdb. Unless stated all setup is carried on gluster1
+Glusterfs can be setup to run in many different configurations depending operating needs, including distributed and replicated. For the example below, a two node replicated server is being created, with nodes gluster1 and gluster2 each have two disks, one containing the OS (`sda`), the other to be shared by glusterfs (`sdb`). Unless stated, all setup is carried on gluster1:
 
-*   [Start/enable](/index.php/Start/enable "Start/enable") the gluster daemon `glusterd.service` on both servers.
+*   [Start/enable](/index.php/Start/enable "Start/enable") `glusterd.service` on both servers.
 
 *   Connect the servers
 
@@ -28,7 +28,7 @@ Glusterfs can be setup to run in many different configurations depending operati
 
  `/etc/fstab`  `/dev/sd*XY* /export/sd*XY* xfs defaults 0 0` 
 
-*   On both servers [mount](/index.php/Mount "Mount") the drives. Then create a "brick":
+*   On both servers [mount](/index.php/Mount "Mount") the drives. Then create a *brick*:
 
 ```
  # mkdir -p /export/sd*XY*/brick

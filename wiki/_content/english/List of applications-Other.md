@@ -412,10 +412,6 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 	[https://cointop.sh/](https://cointop.sh/) || [cointop](https://aur.archlinux.org/packages/cointop/)
 
-*   **Coinbash** — Single file bash script which display cryptocurrency market data.
-
-	[https://github.com/8go/coinbash](https://github.com/8go/coinbash) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
 *   **Electrum** — Lightweight [Bitcoin](/index.php/Bitcoin "Bitcoin") client.
 
 	[https://electrum.org/](https://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
@@ -991,6 +987,10 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 *   **HydraPaper** — Gtk utility to set two different backgrounds for each monitor on GNOME.
 
 	[https://github.com/gabmus/hydrapaper](https://github.com/gabmus/hydrapaper) || [hydrapaper-git](https://aur.archlinux.org/packages/hydrapaper-git/)
+
+*   **LiveWallpaper** — Animated 3D wallpapers.
+
+	[https://launchpad.net/livewallpaper](https://launchpad.net/livewallpaper) || [livewallpaper](https://www.archlinux.org/packages/?name=livewallpaper)
 
 *   **[Nitrogen](/index.php/Nitrogen "Nitrogen")** — A fast and lightweight desktop background browser and setter for X windows.
 

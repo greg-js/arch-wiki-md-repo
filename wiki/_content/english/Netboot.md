@@ -20,45 +20,48 @@ To use netboot on a BIOS-based computer, you need either the ipxe.lkrn or ipxe.p
 
 ### Using ipxe.lkrn
 
-The ipxe.lkrn image can be booted like a Linux kernel. Any Linux bootloader (like Grub or syslinux) can be used to load it from your hard drive, a CD or a USB drive. For example, the Syslinux wiki gives instructions to install[[1]](https://wiki.syslinux.org/wiki/index.php?title=Install) and configure[[2]](https://wiki.syslinux.org/wiki/index.php?title=Config) Syslinux on a bootable medium. To make a flash drive that boots ipxe.lkrn, first [format](/index.php/Format "Format") the drive with a FAT32 file system, and install Syslinux on the device with:
+The ipxe.lkrn image can be booted like a Linux kernel. Any Linux bootloader (like Grub or syslinux) can be used to load it from your hard drive, a CD or a USB drive. For example, the Syslinux wiki gives instructions to install[[1]](https://wiki.syslinux.org/wiki/index.php?title=Install) and configure[[2]](https://wiki.syslinux.org/wiki/index.php?title=Config) Syslinux on a bootable medium.
+
+You can make flash drive that boots ipxe.lkrn with the following steps:
+
+*   Find out your device path using [lsblk](/index.php/Lsblk "Lsblk"). Let's assume it is /dev/sdc.
+*   Create ms-dos partition table on the device.
+*   Create a primary partition with FAT32 file system and flag it as active.
+*   Mount partition, create ./boot/syslinux directory there and copy ipxe.lkrn to boot directory
 
 ```
-# syslinux.exe --directory /boot/syslinux/ --install <device path>
-
-```
-
-"<device path>" should be the path of the device you want to make bootable, for example "/dev/sdb". You can check for the correct device path using [lsblk](/index.php/Lsblk "Lsblk"). Now mount the device:
-
-```
-# mount <device path> /mnt
-
-```
-
-And, copy the kernel image onto the device:
-
-```
+# mount /dev/sdc /mnt
+# mkdir -p /mnt/boot/syslinux
 # cp ipxe.lkrn /mnt/boot
 
 ```
 
-Finally, make a default configuration for syslinux in the directory you specified:
+*   Create config for syslinux
 
+ `/mnt/boot/syslinux/syslinux.cfg ` 
 ```
-# cat >/mnt/boot/syslinux/syslinux.cfg <<EOF
-# DEFAULT arch_netboot
-#  SAY Booting Arch over the network.
-# LABEL arch_netboot
-#  KERNEL /boot/ipxe.lkrn
-# EOF
-
+DEFAULT arch_netboot
+   SAY Booting Arch over the network.
+LABEL arch_netboot
+   KERNEL /boot/ipxe.lkrn
 ```
 
-Now just unmount the device, and you should be able to boot Arch from the device:
+*   Unmount partition
 
 ```
 # umount /mnt
 
 ```
+
+*   Install syslinux mbr and syslinux itself
+
+```
+# ms-sys --mbrsyslinux /dev/sdc
+# syslinux --directory /boot/syslinux/ --install /dev/sdc1
+
+```
+
+*   Now you should be able to boot your usb stick with ipxe.lkrn.
 
 Alternatively, you can also try the image with qemu by running the following command:
 

@@ -9,7 +9,11 @@ sftpman offers both a command-line tool (*sftpman*) and a GTK frontend (*sftpman
 
 With sftpman, you first setup (define) your remote filesystems and then you mount/unmount them easily (with one click/command).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisite](#Prerequisite)
 *   [2 Installation](#Installation)
@@ -78,7 +82,7 @@ which mounts the filesystem to */mnt/sshfs/my-machine*
 To unmount:
 
 ```
-# sftpman unmount my-machine
+# sftpman umount my-machine
 
 ```
 

@@ -7,7 +7,11 @@ Articoli correlati
 
 Il Master Boot Record (MBR) comprende i primi 512 byte di un dispositivo di memorizzazione. Il MBR non è una partizione; è riservato al bootloader del sistema operativo e alla tabella delle partizioni del dispositivo di memorizzazione. Una nuova alternativa a MBR può essere la [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"), che fa parte delle specifiche dell'[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Processo di Boot](#Processo_di_Boot)
 *   [2 Storia](#Storia)

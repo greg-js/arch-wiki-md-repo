@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Microcode](/index.php/Microcode "Microcode") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=438585)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Microcode](/index.php/Microcode "Microcode") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=438585)可以查看翻译后英文页面的改动。
 
 处理器制造商发布对处理器[微码](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode")的稳定性和安全性更新。虽然微码可以通过BIOS进行更新，但Linux内核也可以在引导期间应用这些更新。这些更新提供了对系统稳定性至关重要的错误修复。如果没有这些更新，您可能会遇到虚假崩溃或难以跟踪的意外系统暂停。
 
@@ -20,11 +20,14 @@
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
     *   [2.6 LILO](#LILO)
-*   [3 验证微指令已在启动时更新](#验证微指令已在启动时更新)
-*   [4 哪些 CPU 可以接受微指令更新](#哪些_CPU_可以接受微指令更新)
-    *   [4.1 检查可用微指令更新](#检查可用微指令更新)
-*   [5 在自定义内核中启用微代码加载](#在自定义内核中启用微代码加载)
-*   [6 参阅](#参阅)
+*   [3 Late microcode updates](#Late_microcode_updates)
+    *   [3.1 Enabling late microcode updates](#Enabling_late_microcode_updates)
+    *   [3.2 Disabling late microcode updates](#Disabling_late_microcode_updates)
+*   [4 验证微指令已在启动时更新](#验证微指令已在启动时更新)
+*   [5 哪些 CPU 可以接受微指令更新](#哪些_CPU_可以接受微指令更新)
+    *   [5.1 检查可用微指令更新](#检查可用微指令更新)
+*   [6 在自定义内核中启用微代码加载](#在自定义内核中启用微代码加载)
+*   [7 参阅](#参阅)
 
 ## 安装
 
@@ -32,7 +35,7 @@
 
 对于 Intel 处理器，安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)。
 
-如果你在一个移动介质上安装Arch Linux（[Installing Arch Linux on a USB key (简体中文)](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")），需要应该安装以上两个厂商处理器的微码软件包。
+如果你在一个[移动介质上安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")，需要应该安装以上两个厂商处理器的微码软件包。
 
 ## 启用早期微码更新
 
@@ -72,29 +75,31 @@ initrd	**/boot/*cpu_manufacturer*-ucode.img** /boot/initramfs-linux.img
 
 ### systemd-boot
 
-在 `/boot/loader/entries/*entry*.conf` 中使用 `initrd` 两次：
+ `/boot/loader/entries/*entry*.conf` 
+```
+ title   Arch Linux
+ linux   /vmlinuz-linux
+ **initrd  /*cpu_manufacturer*-ucode.img**
+ initrd  /initramfs-linux.img
+ options ...
 
 ```
-title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /intel-ucode.img
-initrd  /initramfs-linux.img
-options ...
 
-```
-
-如果 ESP 没有挂载到 `/boot`, 请将 `/boot/intel-ucode.img` 复制到 [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
+最新的 `*cpu_manufacturer*-ucode.img` 必须在启动时存在于 [ESP分区](/index.php/EFI_system_partition "EFI system partition"). ESP 必须挂载到 `/boot`，这样才能在 [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) 或 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 更新时才能更新里面的 img 文件。否则需要在微代码更新时手动将 `/boot/*cpu_manufacturer*-ucode.img` 复制到 ESP。
 
 ### EFI boot stub / EFI handover
 
 添加两个 `initrd=` 选项:
 
- `initrd=/intel-ucode.img initrd=/initramfs-linux.img` 
+```
+**initrd=/*cpu_manufacturer*-ucode.img** initrd=/initramfs-linux.img
+
+```
 
 对于要创建包含全部initrd和命令行的内核，首先集成两个镜像：
 
 ```
-cat /boot/intel-ucode.img /boot/initramfs-linux.img > my_new_initrd
+cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > 
 objcopy ... --add-section .initrd=my_new_initrd
 ```
 
@@ -103,15 +108,20 @@ objcopy ... --add-section .initrd=my_new_initrd
 如上述每个 EFI boot stub 一样编辑 `/boot/refind_linux.conf` 中的引导选项，例如：
 
 ```
-"Boot with standard options" "ro root=UUID=(...) quiet initrd=/intel-ucode.img initrd=/initramfs-linux.img"
+"Boot using default options"    "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img** initrd=/boot/initramfs-%v.img"
 
 ```
 
-如果你在 `/boot/refind.conf` 中使用 [手动配置](/index.php/REFInd#Manual_boot_stanzas "REFInd") 定义所要引导的内核，那么简单地依需求添加 initrd=/intel-ucode.img 或 /boot/intel-ucode.img 到选项行，并不需要修改节的主干部分。
+如果在 `/boot/refind.conf` 中使用 [手动配置](/index.php/REFInd#Manual_boot_stanzas "REFInd") 定义所要引导的内核，那么简单地依需求添加 initrd=/intel-ucode.img 或 /boot/intel-ucode.img 到选项行，并不需要修改节的主干部分。
+
+```
+options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img**"
+
+```
 
 ### Syslinux
 
-**Note:** 在 `intel-ucode` 和 `initramfs-linux` initrd 文件间不要用空格，下面的点不是省略号，`INITRD` 行必须和下面示例中一样。
+**Note:** 在 `*cpu_manufacturer*-ucode.img` 和 `initramfs-linux` initrd 文件间不要用空格，下面的点不是省略号，`INITRD` 行必须和下面示例中一样。
 
 在配置文件`/boot/syslinux/syslinux.cfg`中，多个 initrd 可以通过逗号来分隔。
 
@@ -119,7 +129,7 @@ objcopy ... --add-section .initrd=my_new_initrd
 LABEL arch
     MENU LABEL Arch Linux
     LINUX ../vmlinuz-linux
-    INITRD ../intel-ucode.img,../initramfs-linux.img
+    INITRD **../*cpu_manufacturer*-ucode.img**,../initramfs-linux.img
     APPEND ...
 ```
 
@@ -161,6 +171,52 @@ initrd=/boot/initramfs-merged.img
 
 ```
 # lilo
+
+```
+
+## Late microcode updates
+
+Late loading of microcode updates happens after the system has booted. It uses files in `/usr/lib/firmware/amd-ucode/` and `/usr/lib/firmware/intel-ucode/`.
+
+For AMD processors the microcode update files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+
+For Intel processors no package provides the microcode update files ([FS#59841](https://bugs.archlinux.org/task/59841)). To use late loading you need to manually extract `intel-ucode/` from Intel's provided archive.
+
+### Enabling late microcode updates
+
+Unlike early loading, late loading of microcode updates on Arch Linux are enabled by default using `/usr/lib/tmpfiles.d/linux-firmware.conf`. After boot the file gets parsed by [systemd-tmpfiles-setup.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles-setup.service.8) and CPU microcode gets updated.
+
+To manually update the microcode on a running system run:
+
+```
+# echo 1 > /sys/devices/system/cpu/microcode/reload
+
+```
+
+This allows to apply microcode updates after [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) has updated without rebooting the system. You can even automate it with a [pacman hook](/index.php/Pacman_hook "Pacman hook"), e.g.:
+
+ `/etc/pacman.d/hooks/microcode_reload.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = File
+Target = usr/lib/firmware/amd-ucode/*
+
+[Action]
+Description = Applying CPU microcode updates...
+When = PostTransaction
+Depends = sh
+Exec = /bin/sh -c 'echo 1 > /sys/devices/system/cpu/microcode/reload'
+```
+
+### Disabling late microcode updates
+
+For AMD systems the CPU microcode will get updated even if [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) is not installed since the files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) ([FS#59840](https://bugs.archlinux.org/task/59840)). To disable late loading you must override the [tmpfile](/index.php/Tmpfile "Tmpfile") `/usr/lib/tmpfiles.d/linux-firmware.conf`. It can be done by creating a file with the same filename in `/etc/tmpfiles.d/`:
+
+```
+# ln -s /dev/null /etc/tmpfiles.d/linux-firmware.conf
 
 ```
 
@@ -240,10 +296,10 @@ $ dmesg | grep microcode
 启用 “CPU microcode loading support” 才能在启动早期加载微代码，必须编译到内核中，而不是编译为模块。然后将 “Early load microcode” 设置为 “Y”。
 
 ```
+CONFIG_BLK_DEV_INITRD=Y
 CONFIG_MICROCODE=y
 CONFIG_MICROCODE_INTEL=y
-CONFIG_MICROCODE_INTEL_EARLY=y
-CONFIG_MICROCODE_EARLY=y
+CONFIG_MICROCODE_AMD=y
 
 ```
 

@@ -11,7 +11,11 @@ This page is a starting point for a basic OpenLDAP installation and a sanity che
 
 **Tip:** Directory services are an enormous topic. Configuration can therefore be complex. If you are totally new to those concepts, [this](http://www.brennan.id.au/20-Shared_Address_Book_LDAP.html) is a good introduction that is easy to understand and that will get you started, even if you are new to LDAP.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -64,7 +68,7 @@ Now we delete the default root password and create a strong one:
 
 You will likely want to add some typically used [schemas](http://www.openldap.org/doc/admin24/schema.html) to the top of `slapd.conf`:
 
-**Note:** currently missing: cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema
+**Note:** A currently missing *samba.schema* can be taken from `/usr/share/doc/samba/examples/LDAP/samba.schema`. In order to employ it, copy it to `/etc/openldap/schema`.
 
 ```
 include         /etc/openldap/schema/cosine.schema

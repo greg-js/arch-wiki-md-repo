@@ -29,13 +29,14 @@ Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8
 *   [3 包支持archlinux-java的先决条件](#包支持archlinux-java的先决条件)
 *   [4 故障排除](#故障排除)
     *   [4.1 MySQL](#MySQL)
-    *   [4.2 冒充另一个窗口管理器](#冒充另一个窗口管理器)
-    *   [4.3 难以辨认的字体](#难以辨认的字体)
-    *   [4.4 一些应用缺少文字](#一些应用缺少文字)
-    *   [4.5 应用未调整WM大小，菜单快速关闭](#应用未调整WM大小，菜单快速关闭)
-    *   [4.6 当调试JavaFX程序的时候系统卡住](#当调试JavaFX程序的时候系统卡住)
-    *   [4.7 JavaFX 的 MediaPlayer 构造函数抛出了一个 exception](#JavaFX_的_MediaPlayer_构造函数抛出了一个_exception)
-    *   [4.8 Java程序无法打开外部链接](#Java程序无法打开外部链接)
+    *   [4.2 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [4.3 冒充另一个窗口管理器](#冒充另一个窗口管理器)
+    *   [4.4 难以辨认的字体](#难以辨认的字体)
+    *   [4.5 一些应用缺少文字](#一些应用缺少文字)
+    *   [4.6 应用未调整WM大小，菜单快速关闭](#应用未调整WM大小，菜单快速关闭)
+    *   [4.7 当调试JavaFX程序的时候系统卡住](#当调试JavaFX程序的时候系统卡住)
+    *   [4.8 JavaFX 的 MediaPlayer 构造函数抛出了一个 exception](#JavaFX_的_MediaPlayer_构造函数抛出了一个_exception)
+    *   [4.9 Java程序无法打开外部链接](#Java程序无法打开外部链接)
 *   [5 建议和技巧](#建议和技巧)
     *   [5.1 更好的字体渲染](#更好的字体渲染)
     *   [5.2 禁止命令行的 'Picked up _JAVA_OPTIONS' 消息](#禁止命令行的_'Picked_up_JAVA_OPTIONS'_消息)
@@ -262,6 +263,10 @@ exec /path/to/application "$@"
 ### MySQL
 
 因为JDBC-驱动经常使用URL的端口来建立到数据库的连接, 所以通过 "远程" (i.e., MySQL不会根据默认设置监听端口)的办法应该被考虑，尽管它们可能运行在同一个主机上, 所有, 要用JDBC和MySQL的话你应该启用到MySQL的远程连接，, 在[MySQL#Grant remote access](/index.php/MySQL#Grant_remote_access "MySQL")查询指导.
+
+### IntelliJ IDEA
+
+如果你在设置JDK的时候选择了系统的JDK，同时碰到了错误提示 `The selected directory is not a valid home for JDK`，这个时候你需要重新安装一个jdk，在IntelliJ IDEA设置jdk的时候选择新安装的JDK.
 
 ### 冒充另一个窗口管理器
 

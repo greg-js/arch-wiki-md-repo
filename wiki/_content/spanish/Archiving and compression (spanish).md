@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"), revisada por última vez el **2018-11-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=555712) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"), revisada por última vez el **2018-03-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=563810) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Las herramientas tradicionales de archivado y compresión de Unix se separan de acuerdo con la [filosofía de Unix](https://en.wikipedia.org/wiki/Unix_philosophy "wikipedia:Unix philosophy"):
 
@@ -29,8 +29,9 @@ Por supuesto, también hay [herramientas que hacen ambas cosas](#Archivado_y_com
 *   [4 Herramientas convenientes](#Herramientas_convenientes)
 *   [5 Determinar el formato de archivo](#Determinar_el_formato_de_archivo)
 *   [6 Herramientas esotéricas, raras u obsoletas](#Herramientas_esotéricas,_raras_u_obsoletas)
-*   [7 Bibliotecas de compresión](#Bibliotecas_de_compresión)
-*   [8 Véase también](#Véase_también)
+*   [7 Compresión del asignador de dispositivos](#Compresión_del_asignador_de_dispositivos)
+*   [8 Bibliotecas de compresión](#Bibliotecas_de_compresión)
+*   [9 Véase también](#Véase_también)
 
 ## Solo archivado
 
@@ -146,6 +147,18 @@ De lo contrario, puede utilizar la herramienta [file](https://www.archlinux.org/
 | [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Archivador con paridad para una mayor integridad de los datos. Véase también [Parchive](/index.php/Parchive "Parchive"). |
 | [shar](https://en.wikipedia.org/wiki/es:shar "wikipedia:es:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Crea archivos autoextraíbles que son scripts de shell válidos. |
 | [Zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) | [zoo](https://aur.archlinux.org/packages/zoo/) | .zoo | Era sobre todo popular en el sistema operativo [OpenVMS](https://en.wikipedia.org/wiki/es:OpenVMS "wikipedia:es:OpenVMS") antes de que PKZIP se hiciera popular. |
+
+## Compresión del asignador de dispositivos
+
+Se está trabajando para integrar (en el proyecto del kernel de Linux) el reciente proyecto VDO de código abierto, que proporciona una capa de deduplicación y compresión del asignador de dispositivos para aumentar la eficiencia del almacenamiento. Los siguientes paquetes están disponibles:
+
+*   **vdo** — Herramientas del espacio de usuario para gestionar volúmenes VDO
+
+	[https://github.com/dm-vdo/vdo](https://github.com/dm-vdo/vdo) || [vdo](https://aur.archlinux.org/packages/vdo/)
+
+*   **kvdo** — Un par de módulos del kernel que proporcionan grupos de almacenamiento de bloques deduplicados y/o comprimidos
+
+	[https://github.com/dm-vdo/kvdo](https://github.com/dm-vdo/kvdo) || [kvdo-dkms](https://aur.archlinux.org/packages/kvdo-dkms/)
 
 ## Bibliotecas de compresión
 

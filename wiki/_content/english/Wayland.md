@@ -51,7 +51,7 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
-| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), Grefsen, [Sway](/index.php/Sway "Sway") ([will be removed](https://drewdevault.com/2017/10/26/Fuck-you-nvidia.html)) |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME") |
 
 ## Weston
 

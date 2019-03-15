@@ -10,7 +10,7 @@
     *   [2.2 Driver loading](#Driver_loading)
     *   [2.3 Optional: device naming](#Optional:_device_naming)
 *   [3 Connecting internet](#Connecting_internet)
-*   [4 Sending SMS](#Sending_SMS)
+*   [4 Using gammu](#Using_gammu)
 *   [5 USSD Requests](#USSD_Requests)
 *   [6 Success Stories](#Success_Stories)
 *   [7 References](#References)
@@ -95,9 +95,9 @@ Now you have new 2 or 3 /dev/ttyUSB* devices.Most likely first of them (ttyUSB0 
 
 **Note:** If you want to use your 3G modem with [NetworkManager](/index.php/NetworkManager "NetworkManager"), you have to install the package [modemmanager](https://www.archlinux.org/packages/?name=modemmanager) and then [restart](/index.php/Restart "Restart") the `NetworkManager.service`. Now you can 'Enable Mobile Broadband' in the networkmanager applet.
 
-## Sending SMS
+## Using gammu
 
-You can use gammu.
+Use [gammu](https://www.archlinux.org/packages/?name=gammu) is acesss cell phones functionalities.
 
 Edit ~/.gammurc
 
@@ -110,12 +110,28 @@ Edit ~/.gammurc
 
 ```
 
-The run command:
+you can also generate the config using
 
 ```
- gammu sendsms TEXT +7123456789 -text qwe
+$ gammu-detect > ~/.gammurc 
 
 ```
+
+Sending SMS:
+
+```
+ # gammu sendsms TEXT +7123456789 -text qwe
+
+```
+
+find device info:
+
+```
+ # gammu identify
+
+```
+
+for gui use [wammu](https://www.archlinux.org/packages/?name=wammu) or [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui).
 
 ## USSD Requests
 

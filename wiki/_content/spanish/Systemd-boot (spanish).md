@@ -41,7 +41,7 @@ Es fácil de configurar, pero solo puede iniciar ejecutables EFI, tales como [EF
 
 ### Instalar el gestor de arranque EFI
 
-Para instalar el gestor de arranque EFI *systemd-boot* primero asegúrese de que el sistema haya arrancado en modo UEFI y que las [variables UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#UEFI_variables "Unified Extensible Firmware Interface (Español)") son accesibles. Esto se puede verificar ejecutando la orden `efivar --list`.
+Para instalar el gestor de arranque EFI *systemd-boot* primero asegúrese de que el sistema haya arrancado en modo UEFI y que las [variables de UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Variables_de_UEFI "Unified Extensible Firmware Interface (Español)") son accesibles. Esto se puede verificar ejecutando la orden `efivar --list`.
 
 Cabe señalar que *systemd-boot* solo puede cargar el kernel [EFISTUB](/index.php/EFISTUB "EFISTUB") desde la [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") (ESP). Para mantener el kernel actualizado, es más sencillo y, por lo tanto, mas **recomendable** montar la ESP en `/boot`. Si la ESP **no** está montada en `/boot`, los archivos kernel y de initramfs deben copiarse en dicha ESP. Consulte [EFI system partition (Español)#Puntos de montaje alternativos](/index.php/EFI_system_partition_(Espa%C3%B1ol)#Puntos_de_montaje_alternativos "EFI system partition (Español)") para más detalles.
 

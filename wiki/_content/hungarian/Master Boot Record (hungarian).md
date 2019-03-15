@@ -7,7 +7,11 @@ Related articles
 
 A Master Boot Record (MBR) egy tárolóeszköz első 512 bájtja. Az MBR nem valamiféle partíció, hanem a rendszerbetöltő és a partíciós tábla számára fenntartott hely. Az MBR újabb alternatívája a [GUID Partíciós Tábla](/index.php/GUID_Partition_Table_(Magyar) "GUID Partition Table (Magyar)"), mely része a [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specifikációnak.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Rendszerindítás (Boot)](#Rendszerindítás_(Boot))
 *   [2 Történet](#Történet)

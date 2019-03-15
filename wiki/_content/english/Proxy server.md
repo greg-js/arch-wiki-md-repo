@@ -6,7 +6,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Proxy_server "wikipedia:P
 
 	In computer networks, a proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 HTTPS MITM proxies](#HTTPS_MITM_proxies)
 *   [2 Environment variables](#Environment_variables)
@@ -101,7 +105,7 @@ function proxy_on() {
            rsync_proxy=$http_proxy \
            HTTP_PROXY=$http_proxy \
            HTTPS_PROXY=$http_proxy \
-           FTP_PROXY=$http_proxy \ 
+           FTP_PROXY=$http_proxy \
            RSYNC_PROXY=$http_proxy
 }
 

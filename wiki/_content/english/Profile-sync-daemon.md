@@ -132,7 +132,7 @@ Currently, the following browsers are auto-detected and managed:
 *   [inox](https://aur.archlinux.org/packages/inox/)
 *   [Midori](/index.php/Midori "Midori")
 *   [Opera](/index.php/Opera "Opera")
-*   [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+*   [Otter Browser](/index.php/Otter_Browser "Otter Browser")
 *   [Qutebrowser](/index.php/Qutebrowser "Qutebrowser")
 *   [palemoon](https://aur.archlinux.org/packages/palemoon/) / [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 *   [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)

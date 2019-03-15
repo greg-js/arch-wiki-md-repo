@@ -270,7 +270,6 @@ Example fonts.conf which also specifies a default font for the Japanese locale (
   </prefer>
  </alias>
 
- <dir>~/.fonts</dir>
 </fontconfig>
 
 ```

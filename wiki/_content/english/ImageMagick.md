@@ -2,7 +2,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
 
 	ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files. It can read and write over 200 image file formats.
 
-**Note:** [libmagick](https://www.archlinux.org/packages/?name=libmagick) uses [Ghostscript](/index.php/Ghostscript "Ghostscript") for PDF, EPS, PS and XPS parsing. Because their have been multiple vulnerabilities with Ghostscript[[1]](https://security.archlinux.org/package/ghostscript), these formats are now proactively disabled in `/etc/ImageMagick-7/policy.xml` with the following line:
+**Note:** [libmagick](https://www.archlinux.org/packages/?name=libmagick) uses [Ghostscript](/index.php/Ghostscript "Ghostscript") for PDF, EPS, PS and XPS parsing. Because there have been multiple vulnerabilities with Ghostscript[[1]](https://security.archlinux.org/package/ghostscript), these formats are now proactively disabled in `/etc/ImageMagick-7/policy.xml` with the following line:
 ```
 <policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
 
