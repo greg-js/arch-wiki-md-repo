@@ -11,7 +11,11 @@ Esta página aborda varios métodos sobre cómo grabar la instatánea de Arch Li
 
 Si desea realizar una instalación completa de Arch Linux desde una unidad USB (es decir, con valores persistentes), véase [Installing Arch Linux on a USB key (Español)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)"). Si desea usar la memoria USB arrancable de Arch Linux como un USB de rescate, consulte [chroot (Español)](/index.php/Chroot_(Espa%C3%B1ol) "Chroot (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Crear USB para arrancar desde sistemas BIOS y UEFI](#Crear_USB_para_arrancar_desde_sistemas_BIOS_y_UEFI)
     *   [1.1 Utilizar herramientas automatizadas](#Utilizar_herramientas_automatizadas)
@@ -263,7 +267,7 @@ Syslinux ya está preinstalado en `/mnt/usb/arch/boot/syslinux`. Instálelo comp
 
 ```
 > cd bios\
-> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
+> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
 > copy mbr\*.bin X:\arch\boot\syslinux\ /y
 
 ```
@@ -365,7 +369,7 @@ Si está en Vista o Win7, debe abrir la consola como administrador, o de lo cont
 
 #### Cargar el soporte de instalación desde la RAM
 
-Este método utiliza [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") y un [Ramdisk](/index.php/Tmpfs_(Espa%C3%B1ol) "Tmpfs (Español)") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) para cargar toda la imagen ISO de Arch Linux ISO en la memoria RAM. Dado que esto se ejecuta por completo desde la memoria del sistema, tendrá que asegurarse de que dicha memoria del sistema cuenta con una cantidad adecuada. Una cantidad mínima de RAM entre 500 MB y 1 GB debería ser suficiente para instalar Arch Linux desde un MEMDISK.
+Este método utiliza [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") y un [Ramdisk](/index.php/Tmpfs_(Espa%C3%B1ol) "Tmpfs (Español)") ([MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK)) para cargar toda la imagen ISO de Arch Linux ISO en la memoria RAM. Dado que esto se ejecuta por completo desde la memoria del sistema, tendrá que asegurarse de que dicha memoria del sistema cuenta con una cantidad adecuada. Una cantidad mínima de RAM entre 500 MB y 1 GB debería ser suficiente para instalar Arch Linux desde un MEMDISK.
 
 Para obtener más información sobre los requisitos del sistema de Arch Linux, así como los de MEMDISK véase la [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") y [esto](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). Para referencia, aquí está el [hilo anterior del foro](https://bbs.archlinux.org/viewtopic.php?id=135266).
 

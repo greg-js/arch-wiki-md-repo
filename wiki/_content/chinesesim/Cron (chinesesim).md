@@ -8,7 +8,11 @@
 
 	*cron* 是一个在 Unix 及类似操作系统上执行计划任务的程序。用户可以在指定的时间段周期性地运行命令或 shell 脚本，通常用于系统的自动化维护或者管理。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -69,7 +73,7 @@ cron 会记录 *stdout* 和 *stderr* 的输出并尝试通过 `sendmail` 命令�
 
 ssmtp 是一个仅包含发送功能的 sendmail 模拟器，可以从本地计算机向 smtp 服务器发送邮件。尽管目前已经没用活跃维护者，这个程序依然是发送邮件的最简单方式。没用需要运行的后台进程，最简单的配置只需要一个包含三行内容的配置文件(发送服务提供商支持未认证转发的时候)。ssmtp 无法收取邮件、展开扩展或管理队列。
 
-安装 [ssmtp](https://www.archlinux.org/packages/?name=ssmtp)，安装时会创建 `/usr/bin/sendmail` 链接，指向 `/usr/bin/ssmtp`. 安装后编辑 `/etc/ssmtp/ssmtp.conf` 配置文件。详情请参考 [ssmtp](/index.php/SSMTP "SSMTP")，到 `/usr/bin/sendmail` 的软链接可以确保 [S-nail](/index.php/S-nail "S-nail") 等提供 `/usr/bin/mail` 的程序可以无需修改直接使用。
+安装 [ssmtp](https://aur.archlinux.org/packages/ssmtp/)，安装时会创建 `/usr/bin/sendmail` 链接，指向 `/usr/bin/ssmtp`. 安装后编辑 `/etc/ssmtp/ssmtp.conf` 配置文件。详情请参考 [ssmtp](/index.php/SSMTP "SSMTP")，到 `/usr/bin/sendmail` 的软链接可以确保 [S-nail](/index.php/S-nail "S-nail") 等提供 `/usr/bin/mail` 的程序可以无需修改直接使用。
 
 安装配置完成后重启 `cronie` 以重新确认 `/usr/bin/sendmail` 已经被安装。
 
@@ -121,7 +125,7 @@ identity *myself*@myisp.com
        password *"secret"*
        starttls enabled
        default
-mda "/usr/bin/procmail -d %T"
+mda "/usr/bin/procmail -d %T"
 
 ```
 

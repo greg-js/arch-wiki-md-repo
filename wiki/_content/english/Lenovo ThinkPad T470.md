@@ -1,9 +1,14 @@
 | **Device** | **Status** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless](/index.php/Wireless "Wireless") | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| Mobile Broadband | Yes |
+| [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| [Touchscreen](/index.php/Touchscreen "Touchscreen") | Yes |
 | Fingerprint Reader | Yes |
+| Special keys | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T470 laptop.
 
@@ -37,10 +42,10 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.55. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program.
+As of writing, the current BIOS version is 1.56. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program.
 
 If you are using a UEFI boot scheme, this is probably the easiest and most officially supported way to keep all the firmware programs updated.
-**Note:** Users have observed a BIOS requirement of "UEFI/Legacy Boot" set to "UEFI Only" when using [fwupd](/index.php/Fwupd "Fwupd").
+**Note:** Users have observed a BIOS requirement of "UEFI/Legacy Boot" set to "UEFI Only" and enable Windows UEFI Firmware Update under UEFI BIOS Update Options when using [fwupd](/index.php/Fwupd "Fwupd").
 
 If it does not work for you or if you prefer these methods, it is still possible to do the BIOS update by booting on a specially crafted disk or USB stick. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
 

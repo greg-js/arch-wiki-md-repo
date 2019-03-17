@@ -829,7 +829,8 @@ If using a [share path](#Creating_a_share) located outside of a home-directory, 
 
  `/etc/apparmor.d/local/usr.sbin.smbd` 
 ```
-/data/** lrwk,
+"/data/" rk,
+"/data/**" lrwk,
 
 ```
 

@@ -32,6 +32,7 @@
     *   [3.3 nvidia-xrun](#nvidia-xrun)
     *   [3.4 Troubleshoot](#Troubleshoot)
         *   [3.4.1 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
+        *   [3.4.2 Built-in screen flickers after Linux 5.0.x upgrade](#Built-in_screen_flickers_after_Linux_5.0.x_upgrade)
 *   [4 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
 *   [5 Thunderbolt docks](#Thunderbolt_docks)
     *   [5.1 TB16](#TB16)
@@ -118,6 +119,15 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]
  options nvidia NVreg_EnableMSI=0
 
 ```
+
+#### Built-in screen flickers after Linux 5.0.x upgrade
+
+Some users reported that upgrading to Linux 5.0.x can cause the screen to flicker when booting up, making the built-in display unusable (see *[[6]](https://bugs.archlinux.org/task/61964))
+
+Currently, it seems that there are two possible workarounds :
+
+*   [Downgrade](/index.php/Downgrading_packages "Downgrading packages") to Linux 4.20.13.
+*   Apply [Albert Astals Cid's patch](https://invent.kde.org/snippets/44) on Linux kernel 5.0.x (see [kernel Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")).
 
 ## Touchpad and Touchscreen
 

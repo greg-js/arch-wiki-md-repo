@@ -254,6 +254,8 @@ or via [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
 While any other [network manager](/index.php/Network_manager "Network manager") can be used as well, NetworkManager provides the full integration via the shell network settings and a status indicator applet [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (not required for GNOME).
 
+**Note:** Hidden wireless networks set up with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)'s nmtui do not connect automatically. You need to create a new profile using GNOME control center in order to restore auto-connect capabilities for that network.
+
 #### Online accounts
 
 Backends for the GNOME messaging application [empathy](https://www.archlinux.org/packages/?name=empathy) as well as the GNOME Online Accounts section of the System Settings panel are provided in a separate group: [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/). See [Unable to add accounts in Empathy and GNOME Online Accounts](/index.php/GNOME/Troubleshooting#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts "GNOME/Troubleshooting"). Some online accounts, such as [ownCloud](/index.php/OwnCloud "OwnCloud"), require [gvfs-goa](https://www.archlinux.org/packages/?name=gvfs-goa) to be installed for full functionality in GNOME applications such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") and GNOME Documents [[2]](https://wiki.gnome.org/ThreePointSeven/Features/Owncloud).
@@ -411,7 +413,7 @@ The [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) allows
 
 ##### Icons on the Desktop
 
-Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/Files "Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) which partially replicates the desktop icon functionality available in GNOME 3.26 and prior. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
+Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/Files "Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/), which replicates the desktop icon functionality available in GNOME 3.26 and prior, but with some minor differences. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
 
 ##### Lock screen and background
 

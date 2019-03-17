@@ -226,7 +226,7 @@ $ genisoimage -l -r -J -V "ARCH_201209" -b isolinux/isolinux.bin -no-emul-boot -
 *   The ISO label must remain the same as the original label (in this case `ARCH_201209`) for the image to boot successfully.
 *   The `-b` and `-c` options expect paths relative to the root of the ISO.
 
-The resulting ISO image will boot only from CD, DVD or BD. For booting from USB stick or hard disk, it needs the [isohybrid](http://www.syslinux.org/wiki/index.php/Isohybrid) feature. This can be achieved by postprocessing the ISO by program isohybrid included in [syslinux](https://www.archlinux.org/packages/?name=syslinux). Officially, the version of installed SYSLINUX has to be the same as the version of `/isolinux/isolinux.bin` in the ISO. It is not known whether really incompatible version combinations exist.
+The resulting ISO image will boot only from CD, DVD or BD. For booting from USB stick or hard disk, it needs the [isohybrid](https://wiki.syslinux.org/wiki/index.php/Isohybrid) feature. This can be achieved by postprocessing the ISO by program isohybrid included in [syslinux](https://www.archlinux.org/packages/?name=syslinux). Officially, the version of installed SYSLINUX has to be the same as the version of `/isolinux/isolinux.bin` in the ISO. It is not known whether really incompatible version combinations exist.
 
 An alternative to genisoimage plus isohybrid can be derived from the xorriso run of mkarchiso.
 

@@ -53,7 +53,7 @@ Summary:
 
 #### NVME
 
-The name of storage devices, like [SSDs](/index.php/SSD "SSD"), that are attached via [NVM Express](/index.php/NVM_Express "NVM Express") (NVMe) starts with `nvme`. It is then followed by the number a starting from `0` for the device controller, `nvme0` for the first discovered NVMe controller, `nvme1` for the second, and so on. Next is the letter "n" and a number starting from `1` expressing the device on a controller, i.e. `nvme0n1` for first discovered device on first discovered controller, `nvme0n2` for second discovered device on first discovered controller, and so on. Existing [partitions](/index.php/Partition "Partition") on each device will be listed with the letter "p" and the number that is assigned to them in the partition table. For example, `nvme0n1p` for the partition with number `1` on first discovered device on first discovered controller, `nvme0n1p2` for partition `2`, and so on.
+The name of storage devices, like [SSDs](/index.php/SSD "SSD"), that are attached via [NVM Express](/index.php/NVM_Express "NVM Express") (NVMe) starts with `nvme`. It is then followed by a number starting from `0` for the device controller, `nvme0` for the first discovered NVMe controller, `nvme1` for the second, and so on. Next is the letter "n" and a number starting from `1` expressing the device on a controller, i.e. `nvme0n1` for first discovered device on first discovered controller, `nvme0n2` for second discovered device on first discovered controller, and so on. Existing [partitions](/index.php/Partition "Partition") on each device will be listed with the letter "p" and the number that is assigned to them in the partition table. For example, `nvme0n1p` for the partition with number `1` on first discovered device on first discovered controller, `nvme0n1p2` for partition `2`, and so on.
 
 Summary:
 
@@ -64,7 +64,7 @@ Summary:
 
 #### MMC
 
-[SD cards](https://en.wikipedia.org/wiki/SD_card "wikipedia:SD card"), [MMC cards](https://en.wikipedia.org/wiki/MultiMediaCard "wikipedia:MultiMediaCard") and [eMMC storage devices](https://en.wikipedia.org/wiki/MultiMediaCard#eMMC "wikipedia:MultiMediaCard") have their device name start with `mmcblk`. It is then followed by a number starting from `0` for the device, i.e. `mmcblk0` for first discovered device, `mmcblk1` for second discovered device and so on. Existing [partitions](/index.php/Partition "Partition") on each device will be listed with the letter "p" and the number that is assigned to them in the partition table. The partition with number `1` in the partition table would be `mmcblk0p1`, partition with number `2` would be `mmcblk0p2`, and so on.
+[SD cards](https://en.wikipedia.org/wiki/SD_card "wikipedia:SD card"), [MMC cards](https://en.wikipedia.org/wiki/MultiMediaCard "wikipedia:MultiMediaCard") and [eMMC storage devices](https://en.wikipedia.org/wiki/MultiMediaCard#eMMC "wikipedia:MultiMediaCard") are handled by the kernel's `mmc` driver and name of those devices start with `mmcblk`. It is then followed by a number starting from `0` for the device, i.e. `mmcblk0` for first discovered device, `mmcblk1` for second discovered device and so on. Existing [partitions](/index.php/Partition "Partition") on each device will be listed with the letter "p" and the number that is assigned to them in the partition table. The partition with number `1` in the partition table would be `mmcblk0p1`, partition with number `2` would be `mmcblk0p2`, and so on.
 
 Summary:
 

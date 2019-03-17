@@ -52,9 +52,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [3.2 GPT fdisk](#GPT_fdisk)
     *   [3.3 GNU Parted](#GNU_Parted)
 *   [4 Partition alignment](#Partition_alignment)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Converting MBR to GPT](#Converting_MBR_to_GPT)
-    *   [5.2 GPT kernel support](#GPT_kernel_support)
+*   [5 GPT kernel support](#GPT_kernel_support)
 *   [6 See also](#See_also)
 
 ## Partition table
@@ -123,6 +121,8 @@ Some advantages of GPT over MBR are:
 *   CRC32 checksums to detect errors and corruption of the header and partition table.
 
 The section on [#Partitioning tools](#Partitioning_tools) contains a table indicating which tools are available for creating and modifying GPT and MBR tables.
+
+**Tip:** It is possible to convert between MBR and GPT. See [gdisk#Convert between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
 
 ### Partitionless disk
 
@@ -314,13 +314,7 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 For certain drives [Advanced Format](/index.php/Advanced_Format "Advanced Format") might be able to provide a better-performing alignment.
 
-## Tips and tricks
-
-### Converting MBR to GPT
-
-See [gdisk#Convert between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk").
-
-### GPT kernel support
+## GPT kernel support
 
 The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in all Arch's [officially supported kernels](/index.php/Kernels#Officially_supported_kernels "Kernels"). In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
 

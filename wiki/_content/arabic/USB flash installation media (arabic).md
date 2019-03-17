@@ -8,7 +8,11 @@ Related articles
 
 **ملاحظة:** للإقلاع عبر [UEFI](/index.php/UEFI "UEFI") قم بالاطلاع على [هذه الإرشادات](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 في أنظمة جنو/لينوكس](#في_أنظمة_جنو/لينوكس)
     *   [1.1 إعادة الكتابة على ذاكرة USB](#إعادة_الكتابة_على_ذاكرة_USB)
@@ -256,7 +260,7 @@ dd if=image.iso of=/dev/sdb
 
 ### إقلاع ملف ISO من الذاكرة العشوائية RAM
 
-هذه الطريقة تتطلب [Syslinux](/index.php/Syslinux "Syslinux") و **[MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)** لتحميل ملف ISO كاملاً إلى ذاكرة RAM لذا تأكد من توفر ذاكرة RAM كافية لديك، حالما ينتهي التحميل وترى القائمة الرسومية يمكنك إزالة قرص USB أو حتى أن تضعه في حاسوب آخر وتعيد نفس العملية عليه، كما تسمح هذه الطريقة بإقلاع وتثبيت آرتش من (أو إلى) نفس قرص USB.
+هذه الطريقة تتطلب [Syslinux](/index.php/Syslinux "Syslinux") و **[MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK)** لتحميل ملف ISO كاملاً إلى ذاكرة RAM لذا تأكد من توفر ذاكرة RAM كافية لديك، حالما ينتهي التحميل وترى القائمة الرسومية يمكنك إزالة قرص USB أو حتى أن تضعه في حاسوب آخر وتعيد نفس العملية عليه، كما تسمح هذه الطريقة بإقلاع وتثبيت آرتش من (أو إلى) نفس قرص USB.
 
 **1.** قم بتهيئة Format قرص USB إلى نظام الملفات FAT32 ومن ثم أنشئ هذه المجلدات:
 
@@ -299,7 +303,7 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## استكشاف الأخطاء وإصلاحها
 
-**ملاحظة:** في طريقة [MEMDISK Method](#Boot_the_entire_ISO_from_RAM) إذا صادفك الخطأ الشائع "30 seconds" في حال قيامك بالإقلاع من نسخة i686 فقم بالضغط على المفتاح `Tab`بعد الوقوف على الخيار `Boot Arch Linux (i686)` وأضف `vmalloc=448M` في النهاية، مرجع: *إذا كانت صورة ISO أكبر من 128 ميغابايت وكنت تملك نظام تشغيل 32 بت يتوجب عليك زيادة الحد الأقصى لاستعمال الذاكرة الخاص بـ vmalloc* [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+**ملاحظة:** في طريقة [MEMDISK Method](#Boot_the_entire_ISO_from_RAM) إذا صادفك الخطأ الشائع "30 seconds" في حال قيامك بالإقلاع من نسخة i686 فقم بالضغط على المفتاح `Tab`بعد الوقوف على الخيار `Boot Arch Linux (i686)` وأضف `vmalloc=448M` في النهاية، مرجع: *إذا كانت صورة ISO أكبر من 128 ميغابايت وكنت تملك نظام تشغيل 32 بت يتوجب عليك زيادة الحد الأقصى لاستعمال الذاكرة الخاص بـ vmalloc* [(*)](https://wiki.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 **ملاحظة:** إذا ظهر لك خطأ "30 seconds" بسبب أن المجلد `/dev/disk/by-label/ARCH_XXXXXX` لا يمكن ربطه، قم بإعادة تسمية قرص USB إلى `ARCH_XXXXXX` (على سبيل المثال: `ARCH_201302`).
 

@@ -10,7 +10,11 @@ Artículos relacionados
 
 **Nota:** Syslinux no está en condiciones de acceder a los archivos contenidos en una partición diferente de aquella en la cual se ha instalado. Tal característica (llamada multi-fs) no está aún implementada. Para un gestor de arranque alternativo con características multi-fs. véase [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sistemas BIOS](#Sistemas_BIOS)
     *   [1.1 Proceso de arranque de Syslinux](#Proceso_de_arranque_de_Syslinux)
@@ -328,7 +332,7 @@ Configuration:
 
 ```
 
-Para más detalles sobre el sistema de menús, véase [the Syslinux documentation](http://git.kernel.org/?p=boot/syslinux/syslinux.git;a=blob;f=doc/menu.txt) or [the Syslinux wiki](http://www.syslinux.org/wiki/index.php/Menu).
+Para más detalles sobre el sistema de menús, véase [the Syslinux documentation](http://git.kernel.org/?p=boot/syslinux/syslinux.git;a=blob;f=doc/menu.txt) or [the Syslinux wiki](https://wiki.syslinux.org/wiki/index.php/Menu).
 
 #### Menú de arranque en modo gráfico
 
@@ -364,7 +368,7 @@ Configuración:
  MENU HELPMSGROW 16
  MENU HELPMSGENDROW 29
 
- # Refer to http://www.syslinux.org/wiki/index.php/Comboot/menu.c32
+ # Refer to https://wiki.syslinux.org/wiki/index.php/Comboot/menu.c32
 
  MENU COLOR border       30;44   #40ffffff #a0000000 std
  MENU COLOR title        1;36;44 #9033ccff #a0000000 std
@@ -502,7 +506,7 @@ reemplazando `/dev/sdb` con la unidad que desea cargar en cadena. Utilizando el 
 
 ```
 
-Para más información sobre chainloading, consulte [la wiki de Syslinux](http://www.syslinux.org/wiki/index.php/Comboot/chain.c32).
+Para más información sobre chainloading, consulte [la wiki de Syslinux](https://wiki.syslinux.org/wiki/index.php/Comboot/chain.c32).
 
 Si tiene [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") instalado en la misma partición, se puede cargar en cadena utilizando:
 
@@ -706,7 +710,7 @@ Para cargar pxelinux, sustituya `filename "/grub/i386-pc/core.0";` en `/etc/dhcp
 
 ### Arrancar una imágen ISO9660 con memdisk
 
-Syslinux permite arrancar imágenes ISO directamente con el módulo [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK), véase [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive") para obtener ejemplos.
+Syslinux permite arrancar imágenes ISO directamente con el módulo [memdisk](https://wiki.syslinux.org/wiki/index.php/MEMDISK), véase [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive") para obtener ejemplos.
 
 ## Solución de Problemas
 

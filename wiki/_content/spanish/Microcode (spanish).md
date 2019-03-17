@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Microcode](/index.php/Microcode "Microcode"), revisada por última vez el **2019-01-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=564971) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Microcode](/index.php/Microcode "Microcode"), revisada por última vez el **2019-03-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=568726) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Los fabricantes de procesadores lanzan actualizaciones de estabilidad y seguridad para el [microcódigo](https://en.wikipedia.org/wiki/es:Microc%C3%B3digo "wikipedia:es:Microcódigo") del procesador. Si bien el microcódigo se puede actualizar a través de BIOS, el kernel de Linux también puede aplicar estas actualizaciones durante el arranque. Estas actualizaciones proporcionan correcciones de errores que pueden ser críticas para la estabilidad de su sistema. Sin estas actualizaciones, puede experimentar falsos errores o paradas inesperadas del sistema que pueden ser difíciles de rastrear.
 
@@ -17,7 +17,7 @@ Los usuarios de las CPU que pertenecen a las familias de procesadores Intel Hasw
         *   [2.1.1 Método automático](#Método_automático)
         *   [2.1.2 Método manual](#Método_manual)
     *   [2.2 systemd-boot](#systemd-boot)
-    *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_/_EFI_handover)
+    *   [2.3 EFISTUB](#EFISTUB)
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
     *   [2.6 LILO](#LILO)
@@ -90,7 +90,7 @@ initrd  /initramfs-linux.img
 
 El último microcódigo `*fabricante_cpu*-ucode.img` debe estar disponible durante el arranque en su [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") (ESP). El ESP se debe montar como `/boot` para que el microcódigo se actualice cada vez que se actualice [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) o [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode). De lo contrario, copie `/boot/*fabricante_cpu*-ucode.img` a su ESP en cada actualización del paquete de microcódigo.
 
-### EFI boot stub / EFI handover
+### EFISTUB
 
 Añada dos opciones `initrd=`:
 
@@ -108,17 +108,17 @@ objcopy ... --add-section .initrd=mi_nuevo_initrd
 
 ### rEFInd
 
-Edite las opciones de arranque en `/boot/refind_linux.conf` según [EFI boot stub de arriba](#EFI_boot_stub_/_EFI_handover), ejemplo:
+Edite las opciones de arranque en `/boot/refind_linux.conf` según el siguiente ejemplo:
 
 ```
-"Arranque con opciones estándar" "rw root=UUID=(...) **initrd=/boot/*fabricante_cpu*-ucode.img** initrd=/boot/initramfs-linux.img"
+"Arrancar utilizando las opciones predeterminadas" "rw root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*fabricante_cpu*-ucode.img** initrd=/boot/initramfs-linux.img"
 
 ```
 
 Los usuarios que empleen [estancias manuales](/index.php/REFInd#Manual_boot_stanzas "REFInd") en `*esp*/EFI/refind/refind.conf` para definir los kernels deben añadir simplemente `initrd=/boot/*fabricante_cpu*-ucode.img` (o `/*fabricante_cpu*-ucode.img` si `/boot` es una partición separada) según sea necesario para las líneas de opciones, y no en la parte principal de la estancia. Por ejemplo:
 
 ```
-options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*fabricante_cpu*-ucode.img**"
+options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*fabricante_cpu*-ucode.img**"
 
 ```
 

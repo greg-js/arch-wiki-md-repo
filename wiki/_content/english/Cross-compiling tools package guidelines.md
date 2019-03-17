@@ -4,35 +4,30 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – <a class="mw-selflink selflink">Cross</a> – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Electron](/index.php/Electron_package_guidelines "Electron package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [R](/index.php/R_package_guidelines "R package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [Rust](/index.php/Rust_package_guidelines "Rust package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
+This page describes how to create packages for [cross-compiler](https://en.wikipedia.org/wiki/Cross_compiler "wikipedia:Cross compiler") toolchains.
+
+**Tip:** As alternative for creation of cross-compiler packages you could use [crosstool-ng](http://crosstool-ng.org/) and create you own toolchain in fully automated way. crosstool-ng can be found on [crosstool-ng](https://aur.archlinux.org/packages/crosstool-ng/).
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 What is cross compiling?](#What_is_cross_compiling?)
-*   [2 Important note](#Important_note)
-*   [3 Version compatibility](#Version_compatibility)
-*   [4 Building a cross compiler](#Building_a_cross_compiler)
-*   [5 Package naming](#Package_naming)
-*   [6 File placement](#File_placement)
-*   [7 Example](#Example)
-*   [8 Hows and whys](#Hows_and_whys)
-    *   [8.1 Why not installing into /opt?](#Why_not_installing_into_/opt?)
-    *   [8.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing?)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message?)
-    *   [9.2 What does this error [error message] means?](#What_does_this_error_[error_message]_means?)
-    *   [9.3 Why do files get installed in wrong places?](#Why_do_files_get_installed_in_wrong_places?)
-*   [10 See also](#See_also)
-
-**Tip:** As alternative for creation of cross-compiler packages you could use [crosstool-ng](http://crosstool-ng.org/) and create you own toolchain in fully automated way. crosstool-ng can be found on [crosstool-ng](https://aur.archlinux.org/packages/crosstool-ng/).
-
-## What is cross compiling?
-
-Cross compiling is producing run time binary format other than the default format the compiler is tuned for. A confusing example is [elf](https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "wikipedia:https://en.wikipedia.org/wiki/Executable and Linkable Format") and [a.out](https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/a.out "wikipedia:https://en.wikipedia.org/wiki/a.out"). Most, if not all, Linux machines compilers will, by default, produce an elf. Since that is the native Linux format. Most of them are able to produce an a.out format with a one or two command line options. Even though it is rather easy to produce with the native Linux compilers an a.out, this is still, per stricter definition, a cross compiling process.
-
-To emphasize a common mistake, one can cross compile for the same hardware architecture the compiler is run on. Compiling on Linux x86_64 machine to be run on an MS x86_64 machine is cross compiling.
+*   [1 Important note](#Important_note)
+*   [2 Version compatibility](#Version_compatibility)
+*   [3 Building a cross compiler](#Building_a_cross_compiler)
+*   [4 Package naming](#Package_naming)
+*   [5 File placement](#File_placement)
+*   [6 Example](#Example)
+*   [7 Hows and whys](#Hows_and_whys)
+    *   [7.1 Why not installing into /opt?](#Why_not_installing_into_/opt?)
+    *   [7.2 What is that *out-of-path executables* thing?](#What_is_that_out-of-path_executables_thing?)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 What to do if compilation fails without clear message?](#What_to_do_if_compilation_fails_without_clear_message?)
+    *   [8.2 What does this error [error message] means?](#What_does_this_error_[error_message]_means?)
+    *   [8.3 Why do files get installed in wrong places?](#Why_do_files_get_installed_in_wrong_places?)
+*   [9 See also](#See_also)
 
 ## Important note
 

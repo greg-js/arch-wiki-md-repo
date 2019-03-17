@@ -7,40 +7,44 @@
 
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX")是一个优秀的启动加载器集合，可以从硬盘、光盘或通过 [PXE](/index.php/PXE "PXE") 的网络引导启动系统。支持的 [文件系统](/index.php/File_systems "File systems") 包括 [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4")和非压缩的单设备 [Btrfs](/index.php/Btrfs "Btrfs").
 
-**Warning:** Syslinux 6.03 中，有些文件系统的功能不被支持。例如 ext4 的启动卷不支持 "64bit"。详情请参考 [[1]](http://www.syslinux.org/wiki/index.php/Filesystem)。
+**Warning:** Syslinux 6.03 中，有些文件系统的功能不被支持。例如 ext4 的启动卷不支持 "64bit"。详情请参考 [[1]](https://wiki.syslinux.org/wiki/index.php/Filesystem)。
 
 **Note:** Syslinux 本身只能访问其所在分区上的数据，通过 [#Chainloading](#Chainloading) 可以绕过这个限制。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-    *   [1.1 启动流程](#.E5.90.AF.E5.8A.A8.E6.B5.81.E7.A8.8B)
-    *   [1.2 在 BIOS 上安装](#.E5.9C.A8_BIOS_.E4.B8.8A.E5.AE.89.E8.A3.85)
-        *   [1.2.1 自动完成安装](#.E8.87.AA.E5.8A.A8.E5.AE.8C.E6.88.90.E5.AE.89.E8.A3.85)
-        *   [1.2.2 手工完成安装](#.E6.89.8B.E5.B7.A5.E5.AE.8C.E6.88.90.E5.AE.89.E8.A3.85)
-            *   [1.2.2.1 MBR分区表](#MBR.E5.88.86.E5.8C.BA.E8.A1.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 BIOS 系统](#BIOS_系统)
+    *   [1.1 启动流程](#启动流程)
+    *   [1.2 在 BIOS 上安装](#在_BIOS_上安装)
+        *   [1.2.1 自动完成安装](#自动完成安装)
+        *   [1.2.2 手工完成安装](#手工完成安装)
+            *   [1.2.2.1 MBR分区表](#MBR分区表)
         *   [1.2.3 GUID Partition Table aka GPT](#GUID_Partition_Table_aka_GPT)
-        *   [1.2.4 重启](#.E9.87.8D.E5.90.AF)
-*   [2 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
-    *   [2.1 UEFI Syslinux 的局限性](#UEFI_Syslinux_.E7.9A.84.E5.B1.80.E9.99.90.E6.80.A7)
-    *   [2.2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 示例](#.E7.A4.BA.E4.BE.8B)
-        *   [3.1.1 比较简单的 Syslinux 配置](#.E6.AF.94.E8.BE.83.E7.AE.80.E5.8D.95.E7.9A.84_Syslinux_.E9.85.8D.E7.BD.AE)
-        *   [3.1.2 文本的启动菜单](#.E6.96.87.E6.9C.AC.E7.9A.84.E5.90.AF.E5.8A.A8.E8.8F.9C.E5.8D.95)
-        *   [3.1.3 图形化的启动菜单](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E7.9A.84.E5.90.AF.E5.8A.A8.E8.8F.9C.E5.8D.95)
+        *   [1.2.4 重启](#重启)
+*   [2 UEFI 系统](#UEFI_系统)
+    *   [2.1 UEFI Syslinux 的局限性](#UEFI_Syslinux_的局限性)
+    *   [2.2 安装](#安装)
+*   [3 配置](#配置)
+    *   [3.1 示例](#示例)
+        *   [3.1.1 比较简单的 Syslinux 配置](#比较简单的_Syslinux_配置)
+        *   [3.1.2 文本的启动菜单](#文本的启动菜单)
+        *   [3.1.3 图形化的启动菜单](#图形化的启动菜单)
     *   [3.2 Chainloading](#Chainloading)
-    *   [3.3 使用内存测试 memtest](#.E4.BD.BF.E7.94.A8.E5.86.85.E5.AD.98.E6.B5.8B.E8.AF.95_memtest)
-    *   [3.4 使用硬件探测工具HDT](#.E4.BD.BF.E7.94.A8.E7.A1.AC.E4.BB.B6.E6.8E.A2.E6.B5.8B.E5.B7.A5.E5.85.B7HDT)
-    *   [3.5 重启和关闭电源](#.E9.87.8D.E5.90.AF.E5.92.8C.E5.85.B3.E9.97.AD.E7.94.B5.E6.BA.90)
-*   [4 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
-    *   [4.1 I have a Syslinux Prompt - Yikes!](#I_have_a_Syslinux_Prompt_-_Yikes.21)
-    *   [4.2 某些电脑中，会出现没找到默认配置或者界面](#.E6.9F.90.E4.BA.9B.E7.94.B5.E8.84.91.E4.B8.AD.EF.BC.8C.E4.BC.9A.E5.87.BA.E7.8E.B0.E6.B2.A1.E6.89.BE.E5.88.B0.E9.BB.98.E8.AE.A4.E9.85.8D.E7.BD.AE.E6.88.96.E8.80.85.E7.95.8C.E9.9D.A2)
+    *   [3.3 使用内存测试 memtest](#使用内存测试_memtest)
+    *   [3.4 使用硬件探测工具HDT](#使用硬件探测工具HDT)
+    *   [3.5 重启和关闭电源](#重启和关闭电源)
+*   [4 常见问题](#常见问题)
+    *   [4.1 I have a Syslinux Prompt - Yikes!](#I_have_a_Syslinux_Prompt_-_Yikes!)
+    *   [4.2 某些电脑中，会出现没找到默认配置或者界面](#某些电脑中，会出现没找到默认配置或者界面)
     *   [4.3 MISSING OPERATING SYSTEM](#MISSING_OPERATING_SYSTEM)
-    *   [4.4 Windows boots up! No Syslinux!](#Windows_boots_up.21_No_Syslinux.21)
-    *   [4.5 进入子菜单，但干不了任何事](#.E8.BF.9B.E5.85.A5.E5.AD.90.E8.8F.9C.E5.8D.95.EF.BC.8C.E4.BD.86.E5.B9.B2.E4.B8.8D.E4.BA.86.E4.BB.BB.E4.BD.95.E4.BA.8B)
-    *   [4.6 无法删除ldlinux.sys](#.E6.97.A0.E6.B3.95.E5.88.A0.E9.99.A4ldlinux.sys)
-*   [5 更多信息可见](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF.E5.8F.AF.E8.A7.81)
+    *   [4.4 Windows boots up! No Syslinux!](#Windows_boots_up!_No_Syslinux!)
+    *   [4.5 进入子菜单，但干不了任何事](#进入子菜单，但干不了任何事)
+    *   [4.6 无法删除ldlinux.sys](#无法删除ldlinux.sys)
+*   [5 更多信息可见](#更多信息可见)
 
 ## BIOS 系统
 
@@ -213,7 +217,7 @@ Verify:
 
 ```
 
-*   按照[#配置](#.E9.85.8D.E7.BD.AE)创建或编辑`$esp/EFI/syslinux/syslinux.cfg` [#Configuration](#Configuration).
+*   按照[#配置](#配置)创建或编辑`$esp/EFI/syslinux/syslinux.cfg` [#Configuration](#Configuration).
 
 **注意:** UEFI 的配置文件是 `$esp/EFI/syslinux/syslinux.cfg`, 而不是 `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI syslinux.
 

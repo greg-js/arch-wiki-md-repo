@@ -140,7 +140,7 @@ $ sendmail -t < test-mail.txt
 
 ```
 
-Some users might prefer the syntax of *mail* from [s-nail](https://www.archlinux.org/packages/?name=s-nail), [mailutils](https://www.archlinux.org/packages/?name=mailutils), or other *mailx* providers instead. For example, *mail* has options to provide the subject as an argument. *mail* requires *sendmail* and can use [ssmtp](https://www.archlinux.org/packages/?name=ssmtp) as *sendmail*.
+Some users might prefer the syntax of *mail* from [s-nail](https://www.archlinux.org/packages/?name=s-nail), [mailutils](https://www.archlinux.org/packages/?name=mailutils), or other *mailx* providers instead. For example, *mail* has options to provide the subject as an argument. *mail* requires *sendmail* and can use [ssmtp](https://aur.archlinux.org/packages/ssmtp/) as *sendmail*.
 
 ### Attachments
 

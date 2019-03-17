@@ -273,7 +273,7 @@ For more monospaced fonts see [#Bitmap](#Bitmap) and [#Families](#Families).
 
 *   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
-*   Fantasque Sans Mono ([ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/))
+*   Fantasque Sans Mono ([ttf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=ttf-fantasque-sans-mono), [otf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=otf-fantasque-sans-mono))
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – designed for Firefox OS
 *   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - an open source monospaced font, used as the default in KDE Plasma

@@ -224,7 +224,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-Environment=HOME=%h
+User=root
 Type=oneshot
 ExecStart=/usr/bin/lefh renew restart
 ```

@@ -31,6 +31,8 @@ This example covers the encryption of the `/home` partition, but it can be appli
 
 First make sure the partition is empty (has no file system attached to it). Delete the partition and create an empty one if it has a file system. Then prepare the partition by securely erasing it, see [Dm-crypt/Drive preparation#Secure erasure of the hard disk drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation").
 
+Create the partition which will contain the encrypted container.
+
 Then setup the LUKS header with:
 
 ```

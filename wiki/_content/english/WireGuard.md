@@ -31,7 +31,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
         *   [4.2.2 Using dnsmasq](#Using_dnsmasq)
         *   [4.2.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Using native systemd support](#Using_native_systemd_support)
+    *   [5.1 Using systemd-networkd](#Using_systemd-networkd)
         *   [5.1.1 Server](#Server_2)
         *   [5.1.2 Client foo](#Client_foo)
         *   [5.1.3 Client bar](#Client_bar)
@@ -47,7 +47,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 *   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
 *   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
 
-**Note:** [systemd](/index.php/Systemd "Systemd") has native support for setting up Wireguard interfaces since version 237\. See [#Using native systemd support](#Using_native_systemd_support) for details.
+**Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for setting up Wireguard interfaces since version 237\. See [#Using systemd-networkd](#Using_systemd-networkd) for details.
 
 ## Usage
 
@@ -212,7 +212,7 @@ Destination = 10.0.0.0/24
 
 The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
 
-**Tip:** Instead of using [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) for server/client configuration, one may want to use [systemd-networkd](#Using_native_systemd_support) native WireGuard support.
+**Tip:** Instead of using [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) for server/client configuration, one may want to use [systemd-networkd](#Using_systemd-networkd) native WireGuard support.
 
 ### Server
 
@@ -361,7 +361,7 @@ No `PostDown` key is necessary as *systemd-resolved* automatically revert all pa
 
 ## Tips and tricks
 
-### Using native systemd support
+### Using systemd-networkd
 
 [Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for WireGuard protocols and therefore does not require the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
 

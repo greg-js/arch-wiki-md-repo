@@ -442,7 +442,7 @@
 
 *   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — 专注重造经典Opera(12.x) UI，使用的是 Qt5.
 
-	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://www.archlinux.org/packages/?name=otter-browser)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — 一个键盘驱动的, 像[vim](/index.php/Vim "Vim")的浏览器基于PyQt5并且QtWebKit作为可选后端.
 

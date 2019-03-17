@@ -22,8 +22,10 @@ Related articles
     *   [2.3 Network](#Network)
 *   [3 Printer Drivers](#Printer_Drivers)
     *   [3.1 CUPS](#CUPS)
-    *   [3.2 Foomatic](#Foomatic)
-    *   [3.3 Manufacturer-specific drivers](#Manufacturer-specific_drivers)
+    *   [3.2 OpenPrinting CUPS filters](#OpenPrinting_CUPS_filters)
+    *   [3.3 Foomatic](#Foomatic)
+    *   [3.4 Gutenprint](#Gutenprint)
+    *   [3.5 Manufacturer-specific drivers](#Manufacturer-specific_drivers)
 *   [4 Printer URI](#Printer_URI)
     *   [4.1 USB](#USB_2)
     *   [4.2 Parallel port](#Parallel_port_2)
@@ -44,13 +46,13 @@ Related articles
 
 [Install](/index.php/Install "Install") the [cups](https://www.archlinux.org/packages/?name=cups) package.
 
-If you intend to "print" into a PDF document, also install the [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf) package. By default, pdf files are stored in `/var/spool/cups-pdf/$USER`. The location can be changed in `/etc/cups/cups-pdf.conf`.
+If you intend to "print" into a PDF document, also install the [cups-pdf](https://www.archlinux.org/packages/?name=cups-pdf) package. By default, pdf files are stored in `/var/spool/cups-pdf/*username*/`. The location can be changed in `/etc/cups/cups-pdf.conf`.
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `org.cups.cupsd.service`.
 
 ### Socket activation
 
-[cups](https://www.archlinux.org/packages/?name=cups) provides a `org.cups.cupsd.socket` unit. If `org.cups.cupsd.socket` is enabled (and `org.cups.cupsd.service` is disabled), systemd will not start CUPS immediately, it will just listen to the appropriate sockets. Then, whenever a program attempts to connect to one of these CUPS sockets, systemd will start `org.cups.cupsd.service` and transparently hand over control of these ports to the CUPS process.
+[cups](https://www.archlinux.org/packages/?name=cups) provides a `org.cups.cupsd.socket` unit. If `org.cups.cupsd.socket` is [enabled](/index.php/Enable "Enable") (and `org.cups.cupsd.service` is [disabled](/index.php/Disable "Disable")), systemd will not start CUPS immediately, it will just listen to the appropriate sockets. Then, whenever a program attempts to connect to one of these CUPS sockets, systemd will start `org.cups.cupsd.service` and transparently hand over control of these ports to the CUPS process.
 
 This way, CUPS is only started once a program wants to make use of the service.
 
@@ -87,9 +89,9 @@ To use a parallel port printer, the `lp`, `parport` and `parport_pc` [kernel mod
 
 ### Network
 
-[Avahi](/index.php/Avahi "Avahi") can be used to scan for printers on the local network. To use [Avahi](/index.php/Avahi "Avahi") hostnames to connect to networked printers, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
+To connect to a network printer via DNS-SD/mDNS, setup [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") with [Avahi](/index.php/Avahi "Avahi") and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
 
-If the system is connected to a networked printer using the [Samba](/index.php/Samba "Samba") protocol, or if the system is to be a print server for Windows clients, install the [samba](https://www.archlinux.org/packages/?name=samba) package.
+If the system is connected to a networked printer using the [SMB](/index.php/SMB "SMB") protocol, or if the system is to be a print server for Windows clients, install the [samba](https://www.archlinux.org/packages/?name=samba) package.
 
 ## Printer Drivers
 
@@ -103,15 +105,32 @@ When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD fil
 
 ### CUPS
 
-CUPS provides a few PPDs and filter binaries by default, which should work out of the box. CUPS also provides support for [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") and [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) printers.
+CUPS includes support for [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") and [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) printers.
+
+### OpenPrinting CUPS filters
+
+The Linux Foundation's OpenPrinting workgroup provides [cups-filters](https://wiki.linuxfoundation.org/openprinting/cups-filters). Those are backends, filters, and other binaries that were once part of CUPS but are no longer maintained by Apple. They are available in the [cups-filters](https://www.archlinux.org/packages/?name=cups-filters) package that is a dependency of [cups](https://www.archlinux.org/packages/?name=cups).
 
 ### Foomatic
 
-The [foomatic](https://wiki.linuxfoundation.org/openprinting/database/foomatic) project provides PPDs for many printer drivers, both free and nonfree. For more information about what foomatic does, see [Foomatic from the Developer's View](http://www.openprinting.org/download/kpfeifle/LinuxKongress2002/Tutorial/IV.Foomatic-Developer/IV.tutorial-handout-foomatic-development.html).
+The Linux Foundation's OpenPrinting workgroup's [foomatic](https://wiki.linuxfoundation.org/openprinting/database/foomatic) provides PPDs for many printer drivers, both free and nonfree. For more information about what foomatic does, see [Foomatic from the Developer's View](http://www.openprinting.org/download/kpfeifle/LinuxKongress2002/Tutorial/IV.Foomatic-Developer/IV.tutorial-handout-foomatic-development.html).
 
-To use foomatic, install [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine), and at least one of [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db), [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds), [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds), or [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds).
+To use foomatic, install [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) and at least one of:
 
-The foomatic PPDs may require additional filters, such as [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), or another source (for instance [min12xxw](https://aur.archlinux.org/packages/min12xxw/)). For [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) may also be required.
+*   [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) - a collection of XML files used by foomatic-db-engine to generate PPD files.
+*   [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds) - prebuilt PPD files.
+*   [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) - a collection of XML files from printer manufacturers under non-free licenses used by foomatic-db-engine to generate PPD files.
+*   [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) - prebuilt PPD files under non-free licenses.
+
+The foomatic PPDs may require additional filters, such as [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), or another source (for instance [min12xxw](https://aur.archlinux.org/packages/min12xxw/)). For [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) may also be required.
+
+### Gutenprint
+
+The [Gutenprint project](http://gimp-print.sourceforge.net/) provides drivers for Canon, Epson, Lexmark, Sony, Olympus, and PCL printers for use with CUPS and [GIMP](/index.php/GIMP "GIMP").
+
+Install [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds).
+
+**Note:** When the Gutenprint packages get updated, the printers using Gutenprint drivers will stop working until you run `cups-genppdupdate` as root and restart CUPS. *cups-genppdupdate* will update the PPD files of the configured printers, see [cups-genppdupdate(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cups-genppdupdate.8) for more details.
 
 ### Manufacturer-specific drivers
 
@@ -127,7 +146,7 @@ Listed below are additional steps to manually generate the URI if required. Some
 
 CUPS should be able to automatically generate a URI for USB printers, for example `usb://HP/DESKJET%20940C?serial=CN16E6C364BH`.
 
-If it doesn't, see [CUPS/Troubleshooting#USB printers](/index.php/CUPS/Troubleshooting#USB_printers "CUPS/Troubleshooting") for troubleshooting steps.
+If it does not, see [CUPS/Troubleshooting#USB printers](/index.php/CUPS/Troubleshooting#USB_printers "CUPS/Troubleshooting") for troubleshooting steps.
 
 ### Parallel port
 
@@ -138,6 +157,8 @@ The URI should be of the form `parallel:*device*`. For instance, if the printer 
 If you have set up [Avahi](/index.php/Avahi "Avahi") as in [#Network](#Network), CUPS should detect the printer URI. You can also use `avahi-discover` to find the name of your printer and its address (for instance, `BRN30055C6B4C7A.local/10.10.0.155:631`).
 
 The URI can also be generated manually, without using [Avahi](/index.php/Avahi "Avahi"). A list of the available URI schemes for networked printers is available in the [CUPS documentation](https://www.cups.org/doc/network.html#PROTOCOLS). As exact details of the URIs differ between printers, check either the manual of the printer or [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
+
+The URI for printers on [SMB](/index.php/SMB "SMB") shares is described in the [smbspool(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbspool.8) man page.
 
 Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU/Linux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
 
@@ -332,7 +353,7 @@ If your user does not have sufficient privileges to administer CUPS, the applica
 
 The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cups/cups-files.conf` (see [cupsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5) and [cups-files.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cups-files.conf.5)). After editing either file, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
 
-[User groups](/index.php/User_group "User group") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
+[User groups](/index.php/User_group "User group") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` and `root` [groups](/index.php/Groups "Groups") are used by default.
 
 [cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 
@@ -342,7 +363,10 @@ By default, all logs are sent to files in `/var/log/cups/`. By changing the valu
 
 CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shared printers in your network. This can be useful in large setups where the server is unknown. To use this feature, set up [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"), and start both `avahi-daemon.service` and `cups-browsed.service`. Jobs are sent directly to the printer without any processing so the created queues may not work, however driverless printers such as those supporting [IPP Everywhere](http://www.pwg.org/ipp/everywhere.html) or [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wikipedia:AirPrint") should work out of the box.
 
-**Note:** Searching for network printers [may significantly increase the time it takes for your computer to boot](https://bbs.archlinux.org/viewtopic.php?pid=1720219#p1720219).
+**Note:**
+
+*   Searching for network printers [may significantly increase the time it takes for your computer to boot](https://bbs.archlinux.org/viewtopic.php?pid=1720219#p1720219).
+*   `cups-browsed.service` is only needed to dynamically add and remove printers as they appear and disappear from a network. It is not required if you simply want to add a an mDNS supporting network printer to CUPS.
 
 ### Print servers and remote administration
 
@@ -354,7 +378,7 @@ See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing
 
 **Note:** You may need to install [cups-pk-helper](https://www.archlinux.org/packages/?name=cups-pk-helper) for working this rules.
 
-Here's an example that allows members of the wheel [user group](/index.php/User_group "User group") to administer printers without a password:
+Here is an example that allows members of the wheel [user group](/index.php/User_group "User group") to administer printers without a password:
 
  `/etc/polkit-1/rules.d/49-allow-passwordless-printer-admin.rules` 
 ```
@@ -364,6 +388,7 @@ polkit.addRule(function(action, subject) {
         return polkit.Result.YES; 
     } 
 });
+
 ```
 
 ### Without a local CUPS server

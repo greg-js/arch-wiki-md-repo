@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2019-01-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=560777) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General recommendations](/index.php/General_recommendations "General recommendations"), revisada por última vez el **2019-03-15**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=566274) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -37,6 +37,7 @@ Este documento es un índice con anotaciones a otros artículos populares e info
     *   [4.3 Entornos de escritorio](#Entornos_de_escritorio)
     *   [4.4 Administradores de ventanas](#Administradores_de_ventanas)
     *   [4.5 Administradores de pantalla](#Administradores_de_pantalla)
+    *   [4.6 Directorios de usuarios](#Directorios_de_usuarios)
 *   [5 Administración de energía](#Administración_de_energía)
     *   [5.1 Eventos de ACPI](#Eventos_de_ACPI)
     *   [5.2 Regulación de la frecuencia de la CPU](#Regulación_de_la_frecuencia_de_la_CPU)
@@ -172,7 +173,7 @@ Esta sección proporciona orientación para los usuarios que deseen ejecutar apl
 
 ### Controladores de pantalla
 
-El controlador de pantalla predeterminado *vesa* funcionará con la mayoría de las tarjetas de vídeo, pero el rendimiento puede mejorarse significativamente y las características adicionales pueden aprovecharse instalando el controlador apropiado para los productos [ATI](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)"), [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), o [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
+El controlador de pantalla predeterminado *vesa* funcionará con la mayoría de las tarjetas de vídeo, pero el rendimiento puede mejorarse significativamente y las características adicionales pueden aprovecharse instalando el controlador apropiado para los productos [AMD](/index.php/Xorg#AMD "Xorg"), [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), o [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
 
 ### Entornos de escritorio
 
@@ -185,6 +186,10 @@ Un entorno de escritorio completo proporciona una interfaz gráfica de usuario c
 ### Administradores de pantalla
 
 La mayoría de los entornos de escritorio incluyen un [administrador de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") para iniciar automáticamente el entorno gráfico y administrar los inicios de sesión de los usuarios. Los usuarios sin un entorno de escritorio pueden instalar uno por separado. También puede [iniciar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") como una alternativa simple a un administrador de pantalla.
+
+### Directorios de usuarios
+
+Los directorios de usuario conocidos como Descargas o Música son creados por el servicio de usuario `xdg-user-dirs-update.service`, proporcionado por [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) y activado de forma predeterminada después de instalar. Si su entorno de escritorio o administrador de ventanas no se incluye el paquete, puede [instalarlo](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") y ejecutar `xdg-user-dirs-update` manualmente según [XDG user directories#Creating default directories](/index.php/XDG_user_directories#Creating_default_directories "XDG user directories").
 
 ## Administración de energía
 
@@ -240,7 +245,7 @@ El [protocolo de tiempo de red](https://en.wikipedia.org/wiki/es:Network_Time_Pr
 
 ### Seguridad DNS
 
-Para una mayor seguridad al navegar por la web, pagos en línea, conectarse a servicios [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") y tareas similares, considere utilizar [resolvedores DNS](/index.php/DNS_resolver "DNS resolver") con soporte [DNSSEC](/index.php/DNSSEC "DNSSEC") que pueda validar registros [DNS](https://en.wikipedia.org/wiki/es:Domain_Name_System para cifrar el tráfico de DNS.
+Para una mayor seguridad al navegar por la web, pagos en línea, conectarse a servicios [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") y tareas similares, considere utilizar [resolvedores DNS](/index.php/DNS_resolver "DNS resolver") con soporte [DNSSEC](/index.php/DNSSEC "DNSSEC") que pueda validar registros [DNS](https://en.wikipedia.org/wiki/es:Domain_Name_System para más detalles.
 
 ### Configurar un cortafuegos
 

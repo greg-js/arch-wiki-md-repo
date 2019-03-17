@@ -11,7 +11,11 @@ From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wiki
 
 	*A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 配置服务](#配置服务)
     *   [1.1 DHCP](#DHCP)
@@ -298,4 +302,4 @@ You will then need to umount `$root` before you start the client.
 ## 参阅
 
 *   [kernel.org: Mounting the root filesystem via NFS (nfsroot)](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt)
-*   [syslinux.org: pxelinux FAQ](http://www.syslinux.org/wiki/index.php/PXELINUX)
+*   [syslinux.org: pxelinux FAQ](https://wiki.syslinux.org/wiki/index.php/PXELINUX)

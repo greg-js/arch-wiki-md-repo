@@ -9,7 +9,7 @@ This article describes how to use persistent names for your [block devices](/ind
 **Note:**
 
 *   Persistent naming has limits that are out-of-scope in this article. For example, while [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") may support a method, systemd may impose its own limits (e.g. [FS#42884](https://bugs.archlinux.org/task/42884)) on naming it can process during boot.
-*   If you are using [LVM](/index.php/LVM "LVM"), this article is not relevant as LVM takes care of this automatically.
+*   This article is not relevant for [LVM](/index.php/LVM "LVM") logical volumes as the `/dev/*VolumeGroupName*/*LogicalVolumeName*` device paths are persistent.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -32,6 +32,8 @@ This article describes how to use persistent names for your [block devices](/ind
 
 There are four different schemes for persistent naming: [by-label](#by-label), [by-uuid](#by-uuid), [by-id and by-path](#by-id_and_by-path). For those using disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), two additional schemes can be used [by-partlabel](#by-partlabel) and [by-partuuid](#by-partuuid). You can also use [static device names by using Udev](#Static_device_names_with_Udev).
 
+The directories in `/dev/disk/` are created and destroyed dynamically, depending on whether you there are devices in them.
+
 **Note:** Beware that [Disk cloning](/index.php/Disk_cloning "Disk cloning") creates two different disks with the same name.
 
 The following sections describes what the different persistent naming methods are and how they are used.
@@ -40,12 +42,14 @@ The [lsblk](/index.php/Lsblk "Lsblk") command can be used for viewing graphicall
 
  `$ lsblk -f` 
 ```
-NAME   FSTYPE LABEL  UUID                                 MOUNTPOINT
+NAME        FSTYPE LABEL  UUID                                 MOUNTPOINT
 sda                                                       
-├─sda1 vfat          CBB6-24F2                            /boot
-├─sda2 ext4   System 0a3407de-014b-458b-b5c1-848e92a327a3 /
-├─sda3 ext4   Data   b411dc99-f0a0-4c87-9e05-184977be8539 /home
-└─sda4 swap          f9fe0b69-a280-415d-a03a-a32752370dee [SWAP]
+├─sda1      vfat          CBB6-24F2                            /boot
+├─sda2      ext4   System 0a3407de-014b-458b-b5c1-848e92a327a3 /
+├─sda3      ext4   Data   b411dc99-f0a0-4c87-9e05-184977be8539 /home
+└─sda4      swap          f9fe0b69-a280-415d-a03a-a32752370dee [SWAP]
+mmcblk0
+└─mmcblk0p1 vfat          F4CA-5D75
 
 ```
 
@@ -57,11 +61,13 @@ For those using [GPT](/index.php/GPT "GPT"), use the `blkid` command instead. Th
 /dev/sda2: LABEL="System" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/Linux" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
 /dev/sda3: LABEL="Data" UUID="b411dc99-f0a0-4c87-9e05-184977be8539" TYPE="ext4" PARTLABEL="Home" PARTUUID="7280201c-fc5d-40f2-a9b2-466611d3d49e" 
 /dev/sda4: UUID="f9fe0b69-a280-415d-a03a-a32752370dee" TYPE="swap" PARTLABEL="Swap" PARTUUID="039b6c1c-7553-4455-9537-1befbc9fbc5b"
+/dev/mmcblk0: PTUUID="0003e1e5" PTTYPE="dos"
+/dev/mmcblk0p1: UUID="F4CA-5D75" TYPE="vfat" PARTUUID="0003e1e5-01"
 ```
 
 ### by-label
 
-Almost every [filesystem](/index.php/Filesystem "Filesystem") type can have a label. All your partitions that have one are listed in the `/dev/disk/by-label` directory. This directory is created and destroyed dynamically, depending on whether you have partitions with labels attached.
+Almost every [filesystem](/index.php/Filesystem "Filesystem") type can have a label. All your volumes that have one are listed in the `/dev/disk/by-label` directory.
 
  `$ ls -l /dev/disk/by-label` 
 ```
@@ -71,7 +77,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 System -> ../../sda2
 
 ```
 
-The labels of your filesystems can be changed. Following are some methods for changing labels on common filesystems:
+Most file systems support setting the label upon file system creation, see the [man page](/index.php/Man_page "Man page") of the relevant `mkfs.*` utility. For some file systems it is also possible to change the labels. Following are some methods for changing labels on common file systems:
 
 	swap 
 
@@ -111,13 +117,17 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	`ntfslabel /dev/*XXX* "*new label*"` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
 
+	udf 
+
+	`udflabel /dev/*XXX* "*new label*"` using [udftools](https://www.archlinux.org/packages/?name=udftools)
+
 	crypto_LUKS (LUKS2 only) 
 
 	`cryptsetup config --label="*new label*" /dev/*XXX*` using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup)
 
 **Note:**
 
-*   Changing the filesystem label of the root partition has to be done after booting from another partition because it needs to be unmounted first.
+*   The file system must not be mounted to change its label. For the root file system this can be accomplished by booting from another volume.
 *   Labels have to be unambiguous to prevent any possible conflicts.
 *   Labels can be up to 16 characters long.
 *   Since the label is a property of the filesystem, it is not suitable for addressing a single RAID device persistently.
@@ -125,7 +135,7 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 ### by-uuid
 
-[UUID](https://en.wikipedia.org/wiki/UUID "wikipedia:UUID") is a mechanism to give each [filesystem](/index.php/Filesystem "Filesystem") a unique identifier. These identifiers are generated by filesystem utilities (e.g. `mkfs.*`) when the partition gets formatted and are designed so that collisions are unlikely. All GNU/Linux filesystems (including swap and LUKS headers of raw encrypted devices) support UUID. FAT, exFAT and NTFS filesystems do not support UUID, but are still listed in `/dev/disk/by-uuid/` with a shorter UID (unique identifier):
+[UUID](https://en.wikipedia.org/wiki/UUID "wikipedia:UUID") is a mechanism to give each [filesystem](/index.php/Filesystem "Filesystem") a unique identifier. These identifiers are generated by filesystem utilities (e.g. `mkfs.*`) when the device gets formatted and are designed so that collisions are unlikely. All GNU/Linux filesystems (including swap and LUKS headers of raw encrypted devices) support UUID. FAT, exFAT and NTFS filesystems do not support UUID, but are still listed in `/dev/disk/by-uuid/` with a shorter UID (unique identifier):
 
  `$ ls -l /dev/disk/by-uuid/` 
 ```
@@ -134,14 +144,15 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 0a3407de-014b-458b-b5c1-848e92a327a3 -> .
 lrwxrwxrwx 1 root root 10 May 27 23:31 b411dc99-f0a0-4c87-9e05-184977be8539 -> ../../sda3
 lrwxrwxrwx 1 root root 10 May 27 23:31 CBB6-24F2 -> ../../sda1
 lrwxrwxrwx 1 root root 10 May 27 23:31 f9fe0b69-a280-415d-a03a-a32752370dee -> ../../sda4
+lrwxrwxrwx 1 root root 10 May 27 23:31 F4CA-5D75 -> ../../mmcblk0p1
 
 ```
 
 The advantage of using the UUID method is that it is much less likely that name collisions occur than with labels. Further, it is generated automatically on creation of the filesystem. It will, for example, stay unique even if the device is plugged into another system (which may perhaps have a device with the same label).
 
-The disadvantage is that UUIDs make long code lines hard to read and break formatting in many configuration files (e.g. [fstab](/index.php/Fstab "Fstab") or [crypttab](/index.php/Crypttab "Crypttab")). Also every time a partition is resized or reformatted a new UUID is generated and configs have to get adjusted (manually).
+The disadvantage is that UUIDs make long code lines hard to read and break formatting in many configuration files (e.g. [fstab](/index.php/Fstab "Fstab") or [crypttab](/index.php/Crypttab "Crypttab")). Also every time a volume is reformatted a new UUID is generated and configuration files have to get manually adjusted.
 
-**Tip:** In case your swap partition does not have an UUID assigned, you will need to reset the swap partition using [mkswap](/index.php/Swap#Swap_partition "Swap") utility.
+**Tip:** In case your swap does not have an UUID assigned, you will need to reset it using the [mkswap](/index.php/Swap#Swap_partition "Swap") utility.
 
 ### by-id and by-path
 
@@ -159,6 +170,8 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470
 lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part2 -> ../../sda2
 lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part3 -> ../../sda3
 lrwxrwxrwx 1 root root 10 May 27 23:31 ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-part4 -> ../../sda4
+lrwxrwxrwx 1 root root 10 May 27 23:31 mmc-SD32G_0x0040006d -> ../../mmcblk0
+lrwxrwxrwx 1 root root 10 May 27 23:31 mmc-SD32G_0x0040006d-part1 -> ../../mmcblk0p1
 lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f -> ../../sda
 lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f-part1 -> ../../sda1
 lrwxrwxrwx 1 root root 10 May 27 23:31 wwn-0x60015ee0000b237f-part2 -> ../../sda2
@@ -174,6 +187,8 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:00:1f.2-ata-1-part1 -> ../../sda
 lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:00:1f.2-ata-1-part2 -> ../../sda2
 lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:00:1f.2-ata-1-part3 -> ../../sda3
 lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:00:1f.2-ata-1-part4 -> ../../sda4
+lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:07:00.0-platform-rtsx_pci_sdmmc.0 -> ../../mmcblk0
+lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:07:00.0-platform-rtsx_pci_sdmmc.0-part1 -> ../../mmcblk0p1
 
 ```
 
@@ -181,11 +196,11 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 pci-0000:00:1f.2-ata-1-part4 -> ../../sda
 
 **Note:** This method only concerns disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table").
 
-Partition labels can be defined in the header of the partition entry on GPT disks.
+GPT partition labels can be defined in the header of the [partition entry](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2.E2.80.9333.29 "wikipedia:GUID Partition Table") on GPT disks.
 
-See also [Wikipedia:GUID Partition Table#Partition entries (LBA 2-33)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table").
+This method is very similar to the [filesystem labels](#by-label), except the partition labels do not get affected if the file system on the partition is changed.
 
-This method is very similar to the [filesystem labels](#by-label), excepted that the dynamic directory is `/dev/disk/by-partlabel`.
+All partitions that have partition labels are listed in the `/dev/disk/by-partlabel` directory.
 
  `ls -l /dev/disk/by-partlabel/` 
 ```
@@ -204,15 +219,16 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 Swap -> ../../sda4
 
 ### by-partuuid
 
-**Note:** This method only concerns disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table").
+Like [GPT partition labels](#by-partlabel), GPT partition UUIDs are defined in the [partition entry](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2.E2.80.9333.29 "wikipedia:GUID Partition Table") on GPT disks.
 
-Like [GPT partition labels](#by-partlabel), GPT partition UUIDs are defined in the partition entry on GPT disks. See also [Wikipedia:GUID Partition Table#Partition entries](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries "wikipedia:GUID Partition Table").
+MBR does not support partition UUIDs, but Linux[[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d33b98fc82b0908e91fb05ae081acaed7323f9d2) and software using libblkid[[5]](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/commit/?id=d67cc2889a0527b26d7bb8c76f2acac46751d673) (e.g. udev[[6]](https://github.com/systemd/systemd/pull/3293)) are capable of generating pseudo PARTUUIDs for MBR partitions. The format is `*SSSSSSSS*-*PP*`, where `*SSSSSSSS*` is a zero-filled 32-bit [MBR disk signature](https://en.wikipedia.org/wiki/Master_boot_record#Disk_identity "wikipedia:Master boot record"), and `*PP*` is a zero-filled partition number in hexadecimal form. Unlike a regular PARTUUID of a GPT partition, MBR's pseudo PARTUUID can change if the partition number changes.
 
 The dynamic directory is similar to other methods and, like [filesystem UUIDs](#by-uuid), using UUIDs is preferred over labels.
 
  `ls -l /dev/disk/by-partuuid/` 
 ```
 total 0
+lrwxrwxrwx 1 root root 10 May 27 23:31 0003e1e5-01 -> ../../mmcblk0p1
 lrwxrwxrwx 1 root root 10 May 27 23:31 039b6c1c-7553-4455-9537-1befbc9fbc5b -> ../../sda4
 lrwxrwxrwx 1 root root 10 May 27 23:31 7280201c-fc5d-40f2-a9b2-466611d3d49e -> ../../sda3
 lrwxrwxrwx 1 root root 10 May 27 23:31 98a81274-10f7-40db-872a-03df048df366 -> ../../sda2

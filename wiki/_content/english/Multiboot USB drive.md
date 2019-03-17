@@ -251,7 +251,7 @@ menuentry '[loopback]archlinux-2014.11-1-archboot' {
 
 ## Using Syslinux and memdisk
 
-Using the [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK) module, the ISO image is loaded into memory, and its bootloader is loaded. Make sure that the system that will boot this USB drive has sufficient amount of memory for the image file and running operating system.
+Using the [memdisk](https://wiki.syslinux.org/wiki/index.php/MEMDISK) module, the ISO image is loaded into memory, and its bootloader is loaded. Make sure that the system that will boot this USB drive has sufficient amount of memory for the image file and running operating system.
 
 ### Preparation
 
@@ -279,11 +279,11 @@ LABEL *some_label*
 
 ```
 
-See [memdisk on Syslinux wiki](http://www.syslinux.org/wiki/index.php/MEMDISK) for more configuration options.
+See [memdisk on Syslinux wiki](https://wiki.syslinux.org/wiki/index.php/MEMDISK) for more configuration options.
 
 ### Caveat for 32-bit systems
 
-When booting a 32-bit system from an image larger than 128MiB, it is necessary to increase the maximum memory usage of vmalloc. This is done by adding `vmalloc=*value*M` to the kernel parameters, where `*value*` is larger than the size of the ISO image in MiB.[[1]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+When booting a 32-bit system from an image larger than 128MiB, it is necessary to increase the maximum memory usage of vmalloc. This is done by adding `vmalloc=*value*M` to the kernel parameters, where `*value*` is larger than the size of the ISO image in MiB.[[1]](https://wiki.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 For example when booting the 32-bit system from the [Arch installation ISO](https://www.archlinux.org/download/), press the `Tab` key over the `Boot Arch Linux (i686)` entry and add `vmalloc=768M` at the end. Skipping this step will result in the following error during boot:
 
@@ -313,4 +313,4 @@ modprobe: ERROR: could not insert 'phram': Input/output error
     *   [https://help.ubuntu.com/community/Grub2/ISOBoot](https://help.ubuntu.com/community/Grub2/ISOBoot)
     *   [GRUB Live ISO Multiboot](https://github.com/thias/glim) - GRUB configurations for booting ISO images
 *   Syslinux:
-    *   [Boot an ISO image](http://www.syslinux.org/wiki/index.php?title=Boot_an_Iso_image)
+    *   [Boot an ISO image](https://wiki.syslinux.org/wiki/index.php?title=Boot_an_Iso_image)

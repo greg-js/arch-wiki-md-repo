@@ -456,12 +456,7 @@ The device should now be available. See [BBS#162688](https://bbs.archlinux.org/v
 
 ### Intel combined wifi and bluetooth cards
 
-If you happen to use an intel wifi/bluetooth card older than model number 7260 and you notice that bluetooth connections can not be established or soon the connection is dropped then the default module parameter "bt_coex_active" may be causing those issues as described in the iwlwifi kernel documentation [[1]](https://wireless.wiki.kernel.org/en/users/drivers/iwlwifi) under section "About iwldvm support and known issues" and subsection "Wi-Fi / Bluetooth coexistence". As described in the documentation add option "bt_coex_active=0" to the iwlwifi module:
-
-```
-# test ! -f /etc/modprobe.d/iwlwifi.conf && echo "options iwlwifi bt_coex_active=0" > /etc/modprobe.d/iwlwifi.conf || echo "ERROR! file already exists, please open the file and edit manually"
-
-```
+See [Wireless network configuration#Bluetooth coexistence](/index.php/Wireless_network_configuration#Bluetooth_coexistence "Wireless network configuration").
 
 ### Device connects, then disconnects after a few moments
 

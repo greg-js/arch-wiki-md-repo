@@ -634,7 +634,7 @@ home	/dev/MyVolGroup/crypthome   /etc/luks-keys/home
 
 ## LUKS on software RAID
 
-This example is based on a real-world setup for a workstation class laptop equipped with two SSDs of equal size, and an additional HDD for bulk storage. The end result is LUKS based full disk encryption (including `/boot`) for all drives, with the SSDs in a [RAID0](/index.php/RAID "RAID") array, and keyfiles used to unlock all encryption after [GRUB](/index.php/GRUB "GRUB") is given a correct passphrase at boot.
+This example is based on a real-world setup for a workstation class laptop equipped with two SSDs of equal size, and an additional HDD for bulk storage. The end result is LUKS1 based full disk encryption (including `/boot`) for all drives, with the SSDs in a [RAID0](/index.php/RAID "RAID") array, and keyfiles used to unlock all encryption after [GRUB](/index.php/GRUB "GRUB") is given a correct passphrase at boot.
 
 This setup utilizes a very simplistic partitioning scheme, with all the available RAID storage being mounted at `/` (no separate `/boot` partition), and the decrypted HDD being mounted at `/data`.
 
@@ -757,7 +757,7 @@ For UEFI systems, set up the EFI system partition:
 
 ### Configuring GRUB
 
-Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/etc/default/grub` with the following:
+Configure [GRUB](/index.php/GRUB "GRUB") for the LUKS1 encrypted system by editing `/etc/default/grub` with the following:
 
 ```
 GRUB_CMDLINE_LINUX="cryptdevice=/dev/md/root:cryptroot"
@@ -779,7 +779,7 @@ Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda
 
 ### Creating the keyfiles
 
-The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the encryption, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for details.
+The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the LUKS1 device, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for details.
 
 *   Create the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") and add the key to `/dev/md/root`.
 *   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot. See [dm-crypt/Device encryption#Unlocking a secondary partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
@@ -1079,7 +1079,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring GRUB
 
-Configure GRUB to allow booting from `/boot` on a LUKS encrypted partition:
+Configure GRUB to allow booting from `/boot` on a LUKS1 encrypted partition:
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
 
@@ -1118,7 +1118,7 @@ If all commands finished without errors, GRUB should prompt for the passphrase t
 
 ### Avoiding having to enter the passphrase twice
 
-While GRUB asks for a passphrase to unlock the encrypted partition after above instructions, the partition unlock is not passed on to the initramfs. Hence, you have to enter the passphrase twice at boot: once for GRUB and once for the initramfs.
+While GRUB asks for a passphrase to unlock the LUKS1 encrypted partition after above instructions, the partition unlock is not passed on to the initramfs. Hence, you have to enter the passphrase twice at boot: once for GRUB and once for the initramfs.
 
 This section deals with extra configuration to let the system boot by only entering the passphrase once, in GRUB. This is accomplished by [with a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 
@@ -1155,11 +1155,11 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 
 ## Btrfs subvolumes with swap
 
-The following example creates a full system encryption with LUKS using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
+The following example creates a full system encryption with LUKS1 using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
 If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda1` and is mounted at `/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
 
-Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[3]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
+Since `/boot` resides on the LUKS1 encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[3]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
 
 Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partition is shown.
 

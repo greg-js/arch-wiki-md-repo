@@ -23,9 +23,9 @@ The game is played with keyboard only, though there exist [mods](http://dwarffor
 Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bitmap tilesets:
 
 *   [dwarffortress-ironhand](https://aur.archlinux.org/packages/dwarffortress-ironhand/)
-*   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/)
 *   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/)
-*   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
+*   [dwarffortress-obsidian](https://aur.archlinux.org/packages/dwarffortress-obsidian/) (outdated: requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
+*   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/) (outdated: requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
 
 ## Tools
 

@@ -9,7 +9,11 @@ Artículos relacionados
 
 Una unidad [flash](https://en.wikipedia.org/wiki/es:Memoria_flash "wikipedia:es:Memoria flash") [USB](https://en.wikipedia.org/wiki/es:Universal_Serial_Bus "wikipedia:es:Universal Serial Bus") multiarranque permite arrancar múltiples [archivos ISO](https://en.wikipedia.org/wiki/es:Imagen_ISO "wikipedia:es:Imagen ISO") desde un solo dispositivo. Los archivos ISO se pueden copiar al dispositivo y arrancar directamente sin descomprimirlos primero. Hay varios métodos disponibles, pero es posible que no funcionen con todas las imágenes ISO.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Utilizar GRUB y dispositivos loopback](#Utilizar_GRUB_y_dispositivos_loopback)
     *   [1.1 Preparación](#Preparación)
@@ -251,7 +255,7 @@ menuentry '[loopback]archlinux-2014.11-1-archboot' {
 
 ## Utilizar Syslinux y memdisk
 
-Usando el módulo [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK), la imagen ISO se carga en la memoria y esta carga el gestor de arranque. Asegúrese de que el sistema que arrancará esta unidad USB tenga suficiente memoria para el archivo de imagen y el sistema operativo que se va a ejecutar.
+Usando el módulo [memdisk](https://wiki.syslinux.org/wiki/index.php/MEMDISK), la imagen ISO se carga en la memoria y esta carga el gestor de arranque. Asegúrese de que el sistema que arrancará esta unidad USB tenga suficiente memoria para el archivo de imagen y el sistema operativo que se va a ejecutar.
 
 ### Preparación
 
@@ -279,11 +283,11 @@ LABEL *some_label*
 
 ```
 
-Consulte [memdisk en la wiki de Syslinux](http://www.syslinux.org/wiki/index.php/MEMDISK) para más opciones de configuración.
+Consulte [memdisk en la wiki de Syslinux](https://wiki.syslinux.org/wiki/index.php/MEMDISK) para más opciones de configuración.
 
 ### Precaución para sistemas de 32 bits
 
-Al arrancar un sistema de 32 bits desde una imagen de más de 128MiB, es necesario aumentar el uso máximo de memoria virtual («vmalloc»). Esto se hace agregando `vmalloc=*value*M` a los parámetros del kernel, donde `*value*` debe ser más grande que el tamaño de la imagen ISO en MiB.[[1]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+Al arrancar un sistema de 32 bits desde una imagen de más de 128MiB, es necesario aumentar el uso máximo de memoria virtual («vmalloc»). Esto se hace agregando `vmalloc=*value*M` a los parámetros del kernel, donde `*value*` debe ser más grande que el tamaño de la imagen ISO en MiB.[[1]](https://wiki.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 Por ejemplo, al arrancar el sistema de 32 bits desde la [ISO de instalación de Arch](https://www.archlinux.org/download/), presione la tecla `Tab` sobre la entrada `Boot Arch Linux (i686)` y agregue `vmalloc=768M` al final. Si omite este paso, se producirá el siguiente error durante el arranque:
 
@@ -313,4 +317,4 @@ modprobe: ERROR: could not insert 'phram': Input/output error
     *   [https://help.ubuntu.com/community/Grub2/ISOBoot](https://help.ubuntu.com/community/Grub2/ISOBoot)
     *   [GRUB Live ISO Multiboot](https://github.com/thias/glim) — Configuraciones de GRUB para el arranque de imágenes ISO
 *   Syslinux:
-    *   [Arrancar una imagen ISO](http://www.syslinux.org/wiki/index.php?title=Boot_an_Iso_image)
+    *   [Arrancar una imagen ISO](https://wiki.syslinux.org/wiki/index.php?title=Boot_an_Iso_image)

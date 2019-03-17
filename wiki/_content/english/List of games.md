@@ -615,6 +615,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.2dboy.com](https://www.2dboy.com) || [worldofgoo](https://aur.archlinux.org/packages/worldofgoo/)
 
+*   **[Fish Fillets](https://en.wikipedia.org/wiki/Fish_Fillets "wikipedia:Fish Fillets")** — Port of the wonderful puzzle game Fish Fillets
+
+	[http://fillets.sf.net/](http://fillets.sf.net/) || [fillets-ng](https://www.archlinux.org/packages/?name=fillets-ng)
+
 ## Racing
 
 *   **Armagetron Advanced** — Tron Clone in 3D.

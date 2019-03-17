@@ -1,26 +1,28 @@
 相关文章
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface (简体中文)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=443307)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-16，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=567880)可以查看翻译后英文页面的改动。
 
 **systemd-boot** (以前被称为**gummiboot**) 是可以执行 EFI 镜像文件的简单 UEFI 启动管理器。启动的内容可以通过一个配置(glob)或者屏幕菜单选择。Arch 默认安装的 [systemd](https://www.archlinux.org/packages/?name=systemd) 提供了这个功能。
 
 配置很简单，但是只能启动 EFI 可执行程序，例如 Linux 内核 [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, Windows Boot Manager等。
 
-**Warning:** systemd-boot 提供了引导EFISTUB内核的简单接口，如果你在启动EFISTUB内核时遇到了困难(例如[FS#33745](https://bugs.archlinux.org/task/33745)), 你应该使用像[GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") 或 [ELILO](/index.php/Boot_loader#ELILO "Boot loader")这样的不使用EFISTUB的启动管理器.
-
 **Note:** 本文用 `$esp` 表示[EFI 系统分区](/index.php/EFI_system_partition "EFI system partition")，也就是 ESP 的挂载位置。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 安装](#安装)
-    *   [1.1 在UEFI 引导下安装](#在UEFI_引导下安装)
-    *   [1.2 在传统启动下安装](#在传统启动下安装)
-    *   [1.3 更新](#更新)
+    *   [1.1 安装 EFI 启动管理器](#安装_EFI_启动管理器)
+    *   [1.2 更新 EFI 启动管理器](#更新_EFI_启动管理器)
+        *   [1.2.1 手动更新](#手动更新)
+        *   [1.2.2 自动更新](#自动更新)
 *   [2 配置](#配置)
     *   [2.1 基本配置](#基本配置)
     *   [2.2 增加启动选项](#增加启动选项)
@@ -32,61 +34,68 @@
     *   [2.3 对休眠的支持](#对休眠的支持)
 *   [3 启动选单中的按键操作](#启动选单中的按键操作)
 *   [4 排除问题](#排除问题)
-    *   [4.1 通过efibootmgr手动添加启动选项](#通过efibootmgr手动添加启动选项)
-    *   [4.2 在Windows升级后不能看到启动菜单](#在Windows升级后不能看到启动菜单)
+    *   [4.1 在传统启动下安装](#在传统启动下安装)
+    *   [4.2 通过efibootmgr手动添加启动选项](#通过efibootmgr手动添加启动选项)
+    *   [4.3 在Windows升级后不能看到启动菜单](#在Windows升级后不能看到启动菜单)
 *   [5 参阅](#参阅)
 
 ## 安装
 
-### 在UEFI 引导下安装
+### 安装 EFI 启动管理器
 
-1.  确认启动方式是 UEFI 模式
-2.  验证[可以正确访问 EFI 变量](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface")
-3.  挂载 [EFI 系统分区](/index.php/EFI_system_partition "EFI system partition")(ESP)，下面的例子中会用 `$esp` 代替 EFI 系统分区的实际位置。
+要安装 *systemd-boot* EFI 启动管理器，首先确保启动方式是 UEFI 模式，可以访问 [UEFI 变量](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface")。用 `efivar --list` 命令进行检查。
 
-**Note:** systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#更新)部分。
+*systemd-boot* 仅可以从[ESP](/index.php/EFI_system_partition "EFI system partition") 分区加载 [EFISTUB](/index.php/EFISTUB "EFISTUB") 内核。要持续更新内核，建议将 ESP 挂载到 `/boot`. 如果没将 ESP 挂载到 `/boot`,需要手动将内核和 initramfs 复制到 ESP. 详情请参考 [EFI system partition#Alternative mount points](/index.php/EFI_system_partition#Alternative_mount_points "EFI system partition") .
 
-1.  如果 EFI 系统分区没挂载在 /boot 上的话，复制内核和 initramfs 到 ESP。
+下面的例子中会用 `$esp` 代替 EFI 系统分区的实际位置，例如 `/boot`。
 
-**Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
-
-1.  执行下面命令将 systemd-boot 程序复制到 EFI 系统分区并将 systemd-boot 安装成EFI启动管理器的默认的 EFI 程序。
+ESP 挂载到 `*esp*` 后，使用 [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bootctl.1) 将 *systemd-boot* 安装到 EFI 系统分区：
 
 ```
-# bootctl --path=*$esp* install
+# bootctl --path=*esp* install
 
 ```
 
-### 在传统启动下安装
+在 x64 架构的系统上，两个完全一样的二进制文件 `*esp*/EFI/systemd/systemd-bootx64.efi` 和 `*esp*/EFI/BOOT/BOOTX64.EFI` 会被复制到 ESP. 然后将 *systemd-boot* 设置为 EFI 启动管理器的默认 EFI 程序(默认启动项)。
 
-**Warning:** 这不是建议的方法!
+### 更新 EFI 启动管理器
 
-如果你以传统方式(MBR)启动电脑,或许能成功安装,不过需要在安装之后像你的固件提供如何启动systemd-boot的相关信息,为此你需要:
+每当 *systemd-boot* 有新版本时，用户都需要更新启动管理器。
 
-*   一个EFI Shell;
-*   或是你的UEFI 固件设置中提供了更改启动选项的界面.
+#### 手动更新
 
-**Note:** 例如某些 Dell Latitude 计算机上,UEFI固件设置界面提供了设置EFI启动所需的工具,而EFI Shell 无法修改那些设置.
-
-如果能这样做的话,进入你的 EFI Shell 或是 UEFI 固件设置,修改你的默认EFI启动加载器为 `$esp/EFI/systemd/systemd-bootx64.efi` (在i686架构上是 `systemd-bootia32.efi`).
-
-### 更新
-
-systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统分区 挂载在 `/boot`. 和 *gummiboot* 不同,Systemd-boot的升级需要用户手动进行:
+更新 *systemd-boot* 需要使用 *bootctl*。如果没指定 `path`，会按顺序检查 `/efi`, `/boot` 和 `/boot/efi`。
 
 ```
-# bootctl update  
+# bootctl update
 
 ```
 
-如果 EFI 系统分区不在 `/boot`, 需要加入 `--path=` 参数来指定. 例如:
+可以用 `path` 指定具体位置：
 
 ```
- # bootctl --path=*esp* update
+# bootctl --path=*esp* update
 
 ```
 
 **Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`.
+
+#### 自动更新
+
+The package [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) provides a [Pacman hook](/index.php/Pacman_hook "Pacman hook") to automate the update process. [Installing](/index.php/Install "Install") the package will add a hook which will be executed every time the [systemd](https://www.archlinux.org/packages/?name=systemd) package is upgraded. Alternatively, to replicate what the *systemd-boot-pacman-hook* package does without installing it, place the following pacman hook in the `/etc/pacman.d/hooks/` directory:
+
+ `/etc/pacman.d/hooks/100-systemd-boot.hook` 
+```
+[Trigger]
+Type = Package
+Operation = Upgrade
+Target = systemd
+
+[Action]
+Description = Updating systemd-boot
+When = PostTransaction
+Exec = /usr/bin/bootctl update
+```
 
 ## 配置
 
@@ -102,11 +111,12 @@ systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统
 
 下面是一个样例:
 
- `$esp/loader/loader.conf` 
+ `esp/loader/loader.conf` 
 ```
 default  arch
 timeout  4
-editor   0
+console-mode max
+editor   no
 
 ```
 
@@ -257,6 +267,19 @@ efi    /EFI/shellx64_v2.efi
 *   `1-9` -选项的编号
 
 ## 排除问题
+
+### 在传统启动下安装
+
+**Warning:** 这不是建议的方法!
+
+如果你以传统方式(MBR)启动电脑,或许能成功安装,不过需要在安装之后像你的固件提供如何启动systemd-boot的相关信息,为此你需要:
+
+*   一个EFI Shell;
+*   或是你的UEFI 固件设置中提供了更改启动选项的界面.
+
+**Note:** 例如某些 Dell Latitude 计算机上,UEFI固件设置界面提供了设置EFI启动所需的工具,而EFI Shell 无法修改那些设置.
+
+如果能这样做的话,进入你的 EFI Shell 或是 UEFI 固件设置,修改你的默认EFI启动加载器为 `$esp/EFI/systemd/systemd-bootx64.efi` (在i686架构上是 `systemd-bootia32.efi`).
 
 ### 通过efibootmgr手动添加启动选项
 

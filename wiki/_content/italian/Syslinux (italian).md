@@ -7,7 +7,11 @@ Articoli correlati
 
 **Nota:** Syslinux non può accedere a files che non si trovino nella partizione sulla quale è installato. Se si necessita della funzionalità multi-fs, si utilizzi un bootloader alternativo come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sistemi BIOS](#Sistemi_BIOS)
     *   [1.1 Visione d'insieme del processo di boot](#Visione_d'insieme_del_processo_di_boot)
@@ -64,7 +68,7 @@ Articoli correlati
     **Nota:** Se si utilizza il file system [Btrfs](/index.php/Btrfs "Btrfs") i metodi scritti sopra non funzioneranno in quanto i files vengono continuamente spostati, variando di conseguenza la posizione del file `ldlinux.sys`. Per questo motivo, in presenza di un file system BTRFS, l'intero boot code di `ldlinux.sys` viene copiato nello spazio che segue il VBR e non viene installato nel percorso canonico come avviene con altri file systems.
 
 5.  **Fase 3 - Caricamento del file `/boot/syslinux/ldlinux.c32`** - Il file `/boot/syslinux/ldlinux.sys` caricherà `/boot/syslinux/ldlinux.c32` (modulo principale) che contiene la parte di Syslinux che non è stato possibile inserire nel `ldlinux.sys` (a causa di limitazioni sulla grandezza dei files). Il file `ldlinux.c32` dovrebbe essere presente in ogni installazione di Syslinux/Extlinux e la sua versione dovrebbe corrispondere a quella del file `ldlinux.sys` installato, pena l'impossibilità di effettuare il boot. Si veda [http://bugzilla.syslinux.org/show_bug.cgi?id=7](http://bugzilla.syslinux.org/show_bug.cgi?id=7) per ulteriori informazioni.
-6.  **Fase 4 - Ricerca e caricamento del file di configurazione** - Una volta effettuato il caricamento di Syslinux, verrà cercato il file `/boot/syslinux/syslinux.cfg` (o, in certi casi, `/boot/syslinux/extlinux.conf`) e caricato, se presente. In caso di assenza del suddetto file, si verrà lasciati al prompt `boot:` di Syslinux. Quanto descritto in questa fase e il resto delle componenti secondarie di Syslinux (i moduli `/boot/syslinux/*.c32`, esclusi `lib*.c32` e `ldlinux.c32`) richiedono che i moduli libreria `/boot/syslinux/lib*.c32` siano presenti ([http://www.syslinux.org/wiki/index.php/Common_Problems#ELF](http://www.syslinux.org/wiki/index.php/Common_Problems#ELF)). Come sopra, la versione dei moduli libreria `lib*.c32` e dei moduli secondari `*.c32` deve combaciare con quella di `ldlinux.sys`.
+6.  **Fase 4 - Ricerca e caricamento del file di configurazione** - Una volta effettuato il caricamento di Syslinux, verrà cercato il file `/boot/syslinux/syslinux.cfg` (o, in certi casi, `/boot/syslinux/extlinux.conf`) e caricato, se presente. In caso di assenza del suddetto file, si verrà lasciati al prompt `boot:` di Syslinux. Quanto descritto in questa fase e il resto delle componenti secondarie di Syslinux (i moduli `/boot/syslinux/*.c32`, esclusi `lib*.c32` e `ldlinux.c32`) richiedono che i moduli libreria `/boot/syslinux/lib*.c32` siano presenti ([https://wiki.syslinux.org/wiki/index.php/Common_Problems#ELF](https://wiki.syslinux.org/wiki/index.php/Common_Problems#ELF)). Come sopra, la versione dei moduli libreria `lib*.c32` e dei moduli secondari `*.c32` deve combaciare con quella di `ldlinux.sys`.
 
 ### Limitazioni di Syslinux su sistemi BIOS
 
@@ -326,7 +330,7 @@ LABEL archfallback
 
 ```
 
-Per ulteriori dettagli sul menù, si veda [la documentazione di Syslinux](http://git.kernel.org/?p=boot/syslinux/syslinux.git;a=blob;f=doc/menu.txt) o il [wiki](http://www.syslinux.org/wiki/index.php/Menu) di Syslinux.
+Per ulteriori dettagli sul menù, si veda [la documentazione di Syslinux](http://git.kernel.org/?p=boot/syslinux/syslinux.git;a=blob;f=doc/menu.txt) o il [wiki](https://wiki.syslinux.org/wiki/index.php/Menu) di Syslinux.
 
 #### Menù grafico
 
@@ -363,7 +367,7 @@ MENU CMDLINEROW 11
 MENU HELPMSGROW 16
 MENU HELPMSGENDROW 29
 
-# Refer to http://www.syslinux.org/wiki/index.php/Comboot/menu.c32
+# Refer to https://wiki.syslinux.org/wiki/index.php/Comboot/menu.c32
 
 MENU COLOR border       30;44   #40ffffff #a0000000 std
 MENU COLOR title        1;36;44 #9033ccff #a0000000 std
@@ -473,7 +477,7 @@ MENU PASSWD passwd
 
 all'interno di un blocco `LABEL` per proteggere con password voci individuali.
 
-La password può essere espressa in chiaro o tramite il suo hash. Si veda in tal senso la [documentazione ufficiale](http://www.syslinux.org/wiki/index.php/Comboot/menu.c32).
+La password può essere espressa in chiaro o tramite il suo hash. Si veda in tal senso la [documentazione ufficiale](https://wiki.syslinux.org/wiki/index.php/Comboot/menu.c32).
 
 ### Chainloading
 
@@ -740,11 +744,11 @@ Per avviare pxelinux, si sostituisca `filename "/grub/i386-pc/core.0";` nel file
 
 ### Avviare un'immagine ISO 9660 tramite memdisk
 
-Syslinux supporta l'avvio di immagini ISO tramite il modulo [memdisk](http://www.syslinux.org/wiki/index.php/MEMDISK); si veda [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive") per ulteriori esempi.
+Syslinux supporta l'avvio di immagini ISO tramite il modulo [memdisk](https://wiki.syslinux.org/wiki/index.php/MEMDISK); si veda [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive") per ulteriori esempi.
 
 ### Utilizzare la console seriale
 
-Per abilitare la console seriale, si aggiunga `SERIAL port [baudrate]` in cima al proprio `syslinux.cfg`. *port* è un numero (0 per `/dev/ttyS0`). Se *baudrate* viene omesso, il default è 9600 bps. I parametri per la trasmissione seriale sono preimpostati a 8 bit, nessuna parità e 1 bit di stop. [[2]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D.)
+Per abilitare la console seriale, si aggiunga `SERIAL port [baudrate]` in cima al proprio `syslinux.cfg`. *port* è un numero (0 per `/dev/ttyS0`). Se *baudrate* viene omesso, il default è 9600 bps. I parametri per la trasmissione seriale sono preimpostati a 8 bit, nessuna parità e 1 bit di stop. [[2]](https://wiki.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D.)
 
  `syslinux.cfg` 
 ```
@@ -931,7 +935,7 @@ Per ottenere informazioni di debug più dettagliate sarà necessario ricompilare
 
 ### Compressione BTRFS
 
-L'avvio da partizioni BTRFS compresse non è supportato. [[4]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02)
+L'avvio da partizioni BTRFS compresse non è supportato. [[4]](https://wiki.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02)
 
 Verrà visualizzato il seguente messaggio d'errore:
 

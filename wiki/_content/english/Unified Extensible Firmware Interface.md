@@ -37,20 +37,21 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
         *   [5.3.1 bcfg](#bcfg)
         *   [5.3.2 map](#map)
         *   [5.3.3 edit](#edit)
-*   [6 UEFI Bootable Media](#UEFI_Bootable_Media)
-    *   [6.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
-    *   [6.2 Remove UEFI boot support from optical media](#Remove_UEFI_boot_support_from_optical_media)
-    *   [6.3 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
-        *   [6.3.1 Using GRUB](#Using_GRUB)
-*   [7 Testing UEFI in systems without native support](#Testing_UEFI_in_systems_without_native_support)
-    *   [7.1 OVMF for virtual machines](#OVMF_for_virtual_machines)
-    *   [7.2 DUET for BIOS only systems](#DUET_for_BIOS_only_systems)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Windows 7 will not boot in UEFI mode](#Windows_7_will_not_boot_in_UEFI_mode)
-    *   [8.2 Windows changes boot order](#Windows_changes_boot_order)
-    *   [8.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
-    *   [8.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
-*   [9 See also](#See_also)
+*   [6 UEFI drivers](#UEFI_drivers)
+*   [7 UEFI bootable media](#UEFI_bootable_media)
+    *   [7.1 Create UEFI bootable USB from ISO](#Create_UEFI_bootable_USB_from_ISO)
+    *   [7.2 Remove UEFI boot support from optical media](#Remove_UEFI_boot_support_from_optical_media)
+    *   [7.3 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
+        *   [7.3.1 Using GRUB](#Using_GRUB)
+*   [8 Testing UEFI in systems without native support](#Testing_UEFI_in_systems_without_native_support)
+    *   [8.1 OVMF for virtual machines](#OVMF_for_virtual_machines)
+    *   [8.2 DUET for BIOS only systems](#DUET_for_BIOS_only_systems)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Windows 7 will not boot in UEFI mode](#Windows_7_will_not_boot_in_UEFI_mode)
+    *   [9.2 Windows changes boot order](#Windows_changes_boot_order)
+    *   [9.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
+    *   [9.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
+*   [10 See also](#See_also)
 
 ## UEFI versions
 
@@ -374,11 +375,13 @@ Shell> edit FS0:\EFI\refind\refind.conf
 
 Type `Ctrl-E` for help.
 
-## UEFI Bootable Media
+## UEFI drivers
+
+## UEFI bootable media
 
 ### Create UEFI bootable USB from ISO
 
-Follow [USB flash installation media#BIOS and UEFI bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_bootable_USB "USB flash installation media")
+Follow [USB flash installation media#BIOS and UEFI bootable USB](/index.php/USB_flash_installation_media#BIOS_and_UEFI_bootable_USB "USB flash installation media").
 
 ### Remove UEFI boot support from optical media
 

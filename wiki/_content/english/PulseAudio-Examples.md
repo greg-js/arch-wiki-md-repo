@@ -257,6 +257,8 @@ Create a script to switch to the desired audio profile if an HDMI cable is plugg
 ```
 #!/bin/bash
 
+export PATH=/usr/bin
+
 USER_NAME=$(who | awk -v vt=tty$(fgconsole) '$0 ~ vt {print $1}')
 USER_ID=$(id -u "$USER_NAME")
 CARD_PATH="/sys/class/drm/card0/"
@@ -292,36 +294,12 @@ chmod +x /usr/local/bin/hdmi_sound_toggle.sh
 
 Create a [udev](/index.php/Udev "Udev") rule to run this script when the status of the HDMI change:
 
-**Note:** udev rule can't directly run a script, a workaround is to use a .service to run this script
- `/etc/udev/rules.d/99-hdmi_sound.rules`  `KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/systemctl start hdmi_sound_toggle.service"` 
-
-Finally, create the .service file required by the udev rule above:
-
- `/etc/systemd/system/hdmi_sound_toggle.service` 
-```
-[Unit]
-Description=hdmi sound hotplug
-
-[Service]
-Type=simple
-RemainAfterExit=no
-ExecStart=/usr/local/bin/hdmi_sound_toggle.sh
-
-[Install]
-WantedBy=multi-user.target
-```
+ `/etc/udev/rules.d/99-hdmi_sound.rules`  `KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/local/bin/hdmi_sound_toggle.sh"` 
 
 To make the change effective don't forget to reload the udev rules:
 
 ```
 udevadm control --reload-rules
-
-```
-
-You'll also need to reload the systemd units.
-
-```
-systemctl daemon-reload
 
 ```
 

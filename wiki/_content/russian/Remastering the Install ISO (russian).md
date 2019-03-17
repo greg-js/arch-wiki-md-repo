@@ -12,7 +12,11 @@
 
 Поскольку эти ISO являются загрузочными, они также могут использоваться для восстановления системы, тестирования, демонстрации проектов и т.д.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Archiso](#Archiso)
 *   [2 Вручную](#Вручную)
@@ -225,7 +229,7 @@ $ genisoimage -l -r -J -V "ARCH_201209" -b isolinux/isolinux.bin -no-emul-boot -
 
 **Примечание:** Варианты `-b` и `-c` ожидают пути относительно корня ISO
 
-Полученный образ ISO загрузится только с CD, DVD или BD. Для загрузки с USB-накопителя или жесткого диска ему нужна функция [isohybrid](http://www.syslinux.org/wiki/index.php/Isohybrid). Это может быть достигнуто путем постобработки ISO с помощью программы isohybrid, включенной в пакет [syslinux](https://www.archlinux.org/packages/?name=syslinux). Официально версия установленного SYSLINUX должна быть такой же, как версия /isolinux/isolinux.bin в ISO. Неизвестно, существуют ли действительно несовместимые комбинации версий.
+Полученный образ ISO загрузится только с CD, DVD или BD. Для загрузки с USB-накопителя или жесткого диска ему нужна функция [isohybrid](https://wiki.syslinux.org/wiki/index.php/Isohybrid). Это может быть достигнуто путем постобработки ISO с помощью программы isohybrid, включенной в пакет [syslinux](https://www.archlinux.org/packages/?name=syslinux). Официально версия установленного SYSLINUX должна быть такой же, как версия /isolinux/isolinux.bin в ISO. Неизвестно, существуют ли действительно несовместимые комбинации версий.
 
 Альтернатива genisoimage plus isohybrid может быть получена из xorriso run mkarchiso.
 

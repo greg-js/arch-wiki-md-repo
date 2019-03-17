@@ -1034,7 +1034,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **GNOME Notes** — Note editor for GNOME designed to remain simple to use.
 
-	[https://wiki.gnome.org/Apps/Notes](https://wiki.gnome.org/Apps/Notes) || [bijiben](https://www.archlinux.org/packages/?name=bijiben)
+	[https://wiki.gnome.org/Apps/Notes](https://wiki.gnome.org/Apps/Notes) || [gnome-notes](https://www.archlinux.org/packages/?name=gnome-notes)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — Port of Tomboy to C++. It is the same note taking application, including most of the add-ins.
 

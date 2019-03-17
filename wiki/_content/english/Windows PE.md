@@ -2,7 +2,11 @@
 
 **Warning:** By downloading the Windows Automated Installation Kit, you may be bound by its license, which prevents you from, among other things, using Windows PE as a general-purpose operating system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Use cases](#Use_cases)
 *   [2 Creating a bootable Windows PE image](#Creating_a_bootable_Windows_PE_image)
@@ -96,7 +100,7 @@ Simply [burn](/index.php/Optical_disc_drive#Burning "Optical disc drive") `winpe
 
 ### From Network
 
-Windows PE can be booted from the network using [PXELINUX](http://www.syslinux.org/wiki/index.php/PXELINUX) and its [MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK) module on BIOS systems. For UEFI systems, [wimboot](http://ipxe.org/wimboot) and [iPXE](http://ipxe.org) can be used.
+Windows PE can be booted from the network using [PXELINUX](https://wiki.syslinux.org/wiki/index.php/PXELINUX) and its [MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK) module on BIOS systems. For UEFI systems, [wimboot](http://ipxe.org/wimboot) and [iPXE](http://ipxe.org) can be used.
 
 Install [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa).
 

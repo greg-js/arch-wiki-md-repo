@@ -9,7 +9,11 @@
 
 如果要將 Arch Linux 完整的裝入 USB 裝置 (即所有更改皆永遠有效)，請參閱[安裝 Arch Linux 至 USB 碟](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key")。如果要使用可開機的 Arch Linux USB 隨身碟當作救援用 USB，請參閱[更換根目錄 (chroot)](/index.php/Change_root "Change root")。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS 和 UEFI 可開機 USB](#BIOS_和_UEFI_可開機_USB)
     *   [1.1 使用 dd](#使用_dd)
@@ -347,7 +351,7 @@ Vista 或 Win7 的使用者，請以系統管理員的身分啟動終端機，�
 
 #### 從 RAM 載入安裝媒體
 
-這個方式使用 [Syslinux](/index.php/Syslinux "Syslinux") 和 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) 將整個 Arch Linux ISO 載入記憶體 (RAM)。整個 Live 環境將完全在系統記憶體上執行，因此您需要確定系統的記憶體容量足夠。以 MEMDISK 為基礎的 Arch Linux 安裝最低 RAM 需求大小為 500 MB 到 1 GB 之間。
+這個方式使用 [Syslinux](/index.php/Syslinux "Syslinux") 和 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK)) 將整個 Arch Linux ISO 載入記憶體 (RAM)。整個 Live 環境將完全在系統記憶體上執行，因此您需要確定系統的記憶體容量足夠。以 MEMDISK 為基礎的 Arch Linux 安裝最低 RAM 需求大小為 500 MB 到 1 GB 之間。
 
 更多 Arch Linux 與 MEMDISK 的系統要求，請參閱[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")以及[這裡](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。
 
@@ -402,7 +406,7 @@ Windows 下有個工具 [[1]](http://www.pendrivelinux.com/universal-usb-install
 
 ## 疑難排解
 
-*   若您使用 [MEMDISK 方法](#從_RAM_載入安裝媒體)，在啟動 i686 版本時發生惡名昭彰的「30 秒」錯誤，在 `Boot Arch Linux (i686)` 選項上按下 `Tab` 鍵，在結尾加上 `vmalloc=448M`。也請參考：「若映像大於 128MiB 且使用 32 位元 OS，應增加 vmalloc 的最大記憶體用量」。[[2]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   若您使用 [MEMDISK 方法](#從_RAM_載入安裝媒體)，在啟動 i686 版本時發生惡名昭彰的「30 秒」錯誤，在 `Boot Arch Linux (i686)` 選項上按下 `Tab` 鍵，在結尾加上 `vmalloc=448M`。也請參考：「若映像大於 128MiB 且使用 32 位元 OS，應增加 vmalloc 的最大記憶體用量」。[[2]](https://wiki.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   若「30 秒」錯誤是肇因於 `/dev/disk/by-label/ARCH_XXXXXX` 未被掛載，試著重新命名 USB 媒體為 `ARCH_XXXXXX` (如 `ARCH_201302`)。
 

@@ -10,7 +10,11 @@ USB 驱动器，也被称为闪存驱动器、USB记忆棒、U盘等。可以从
 
 要在 U 盘上运行完整的 Arch Linux（即能保留设置），请阅读[在U盘中安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")。如果想将 Arch Linux LiveUSB 当作救援 USB 来用，参见[Change Root](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 BIOS 和 UEFI 可启动 USB](#BIOS_和_UEFI_可启动_USB)
     *   [1.1 dd](#dd)
@@ -251,7 +255,7 @@ $ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
 > cd bios\
-> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
+> for /r %Y in (*.c32) do copy "%Y" "X:\arch\boot\syslinux\" /y
 > copy mbr\*.bin X:\arch\boot\syslinux\ /y
 
 ```
@@ -369,7 +373,7 @@ C:\>flashnul **E:** -L *path\to\arch.iso*
 
 #### 在内存加载安装介质
 
-这个方法使用 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和一个 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) 来把整个 Arch Linux ISO 镜像加载到内存中。因为它将完全运行于系统内存中，您要确保使用这种方法安装的系统有足够的内存。至少 500MB 到 1G 内存就足以在 MEMDISK 上安装 Arch Linux。 Arch Linux 和 MEMDISK 系统要求参见[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")和[这里](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。[论坛参考贴](https://bbs.archlinux.org/viewtopic.php?id=135266)。
+这个方法使用 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和一个 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK)) 来把整个 Arch Linux ISO 镜像加载到内存中。因为它将完全运行于系统内存中，您要确保使用这种方法安装的系统有足够的内存。至少 500MB 到 1G 内存就足以在 MEMDISK 上安装 Arch Linux。 Arch Linux 和 MEMDISK 系统要求参见[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")和[这里](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。[论坛参考贴](https://bbs.archlinux.org/viewtopic.php?id=135266)。
 
 **提示：** 一旦安装程序加载完毕，您就可以移除 U 盘，甚至再在另一台机器上用它开始执行整个安装步骤。使用 MEMDISK 还允许你在同一个 U 盘中引导并安装 Arch Linux 到它上面。
 
@@ -418,7 +422,7 @@ DEFAULT arch_iso
 
 ## 故障排除
 
-*   对于 [MEMDISK 方法](#在内存加载安装介质)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+*   对于 [MEMDISK 方法](#在内存加载安装介质)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](https://wiki.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 *   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 *30 seconds error*，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201501`）。
 

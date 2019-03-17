@@ -12,7 +12,11 @@
 
 	*Бездисковая рабочая станция (или бездисковый узел) — это персональный компьютер, лишённый несъёмных средств для долговременного хранения данных и который использует для загрузки своей операционной системы с сервера.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Настройка сервера](#Настройка_сервера)
     *   [1.1 DHCP](#DHCP)
@@ -299,4 +303,4 @@ Puppet-агент создает vardir и ssldir, если они не суще
 ## Смотрите также
 
 *   [kernel.org: Монтирование корневой файловой системы через NFS (nfsroot)](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt)
-*   [syslinux.org: pxelinux FAQ](http://www.syslinux.org/wiki/index.php/PXELINUX)
+*   [syslinux.org: pxelinux FAQ](https://wiki.syslinux.org/wiki/index.php/PXELINUX)

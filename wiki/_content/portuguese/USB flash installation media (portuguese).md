@@ -340,7 +340,7 @@ Se sob o Vista ou o Win7, você deve abrir o console como administrador, senão 
 
 #### Carregar a mídia de instalação da RAM
 
-Este método usa [Syslinux](/index.php/Syslinux "Syslinux") e um [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://www.syslinux.org/wiki/index.php/MEMDISK)) para carregar toda a imagem ISO do Arch Linux na RAM. Como isso será executado inteiramente a partir da memória do sistema, você precisará certificar-se de que o sistema em que você estará instalando tenha uma quantidade adequada. Uma quantidade mínima de RAM entre 500 MB e 1 GB deve ser suficiente para uma instalação do Arch Linux baseada em MEMDISK.
+Este método usa [Syslinux](/index.php/Syslinux "Syslinux") e um [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK)) para carregar toda a imagem ISO do Arch Linux na RAM. Como isso será executado inteiramente a partir da memória do sistema, você precisará certificar-se de que o sistema em que você estará instalando tenha uma quantidade adequada. Uma quantidade mínima de RAM entre 500 MB e 1 GB deve ser suficiente para uma instalação do Arch Linux baseada em MEMDISK.
 
 Para obter mais informações sobre os requisitos do sistema Arch Linux, bem como sobre os do MEMDISK, consulte o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") e [aqui](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). Para referência, aqui está o [tópico do fórum anterior](https://bbs.archlinux.org/viewtopic.php?id=135266).
 

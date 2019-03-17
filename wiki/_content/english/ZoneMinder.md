@@ -129,6 +129,14 @@ ZM_DB_USER=zmuser
 ZM_DB_PASS=zmpass
 ```
 
+Set up sql mode, otherwise strange sql-related errors will occur when saving various parts of configuration
+
+ `/etc/mysql/my.cnf.d/zoneminder.cnf` 
+```
+[mysqld]
+sql_mode=NO_ENGINE_SUBSTITUTION
+```
+
 #### Security
 
 To increase security, you need to set a password for the root user:

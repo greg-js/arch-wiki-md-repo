@@ -128,8 +128,6 @@ Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Star
 
 #### udev hwdb entry
 
-**Warning:** Since around [version 1.12](https://who-t.blogspot.com/2018/06/libinput-and-its-device-quirks-files.html) libinput stopped using udev hwdb for device-specific overrides and moved to ini-style files independent of hwdb(see below). This section is kept for reference.
-
 Libinput applies its own parameters to sysfs based on entries in the [udev hardware database](https://github.com/systemd/systemd/blob/master/hwdb/70-pointingstick.hwdb). This is the behavior on systems running a Wayland compositor, as libinput is the only supported input interface in that environment. Changes made prior to the start of a Wayland compositor or X session will be overwritten.
 
 To override libinput's default settings, add a local hwdb entry:
@@ -183,7 +181,7 @@ AttrTrackpointMultiplier=0.75
 
 For more information, see [libinput: Installing temporary local device quirks](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html#installing-temporary-local-device-quirks)
 
-**Warning:** Model quirks are internal API and may change at any time. No backwards-compatibility is guaranteed. Local overrides should only be used until the distribution updates the libinput packages.
+**Note:** Model quirks are internal API and may change at any time. No backwards-compatibility is guaranteed. Local overrides should only be used until the distribution updates the libinput packages.
 
 ## Troubleshooting
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [DVB-T](/index.php/DVB-T "DVB-T")
+*   [GNU Radio](/index.php/GNU_Radio "GNU Radio")
+
 [RTL-SDR](http://sdr.osmocom.org/trac/wiki/rtl-sdr) is a set of tools that enables [DVB-T](/index.php/DVB-T "DVB-T") USB dongles based on the Realtek RTL2832U chipset to be used as cheap software defined radios, given that the chip allows transferring raw I/Q samples from the tuner straight to the host device.
 
 See the [RTL-SDR wiki](http://sdr.osmocom.org/trac/wiki/rtl-sdr) for exact technical specifications.
@@ -43,4 +48,4 @@ Some popular applications that use RTL-SDR:
 
 *   [dump1090-git](https://aur.archlinux.org/packages/dump1090-git/) - a lightweight ModeS (1090Mhz) decoder
 *   [multimon-ng-git](https://aur.archlinux.org/packages/multimon-ng-git/) - a decoder for various digital modes
-*   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux, see [gqrx](/index.php/Gqrx "Gqrx")
+*   [gqrx](https://www.archlinux.org/packages/?name=gqrx) - A popular sdr radio reciver for linux

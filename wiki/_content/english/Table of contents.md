@@ -225,7 +225,7 @@
 | <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(5)</small> |
 | <small>5.8.</small> [Software projects](/index.php/Category:Software_projects "Category:Software projects") <small>(0)</small> |
 | <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
-| <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
+| <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(10) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
 | <small>5.8.3.</small> [Electronic Frontier Foundation](/index.php/Category:Electronic_Frontier_Foundation "Category:Electronic Frontier Foundation") <small>(3)</small> |
 | <small>5.8.4.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
 | <small>5.8.5.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(14)</small> |

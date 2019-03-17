@@ -20,11 +20,11 @@ Hay varias interfaces de bajo nivel (backends) que proporcionan una funcionalida
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Low level interfaces](#Low_level_interfaces)
-    *   [1.1 kernel (swsusp)](#kernel_(swsusp))
-    *   [1.2 uswsusp](#uswsusp)
-*   [2 High level interfaces](#High_level_interfaces)
-    *   [2.1 systemd](#systemd)
+*   [1 Interfaces de bajo nivel](#Interfaces_de_bajo_nivel)
+    *   [1.1 Núcleo (swsusp)](#Núcleo_(swsusp))
+    *   [1.2 Uswsusp](#Uswsusp)
+*   [2 Interfaces de alto nivel](#Interfaces_de_alto_nivel)
+    *   [2.1 Systemd](#Systemd)
 *   [3 Hibernation](#Hibernation)
     *   [3.1 About swap partition/file size](#About_swap_partition/file_size)
     *   [3.2 Required kernel parameters](#Required_kernel_parameters)
@@ -38,31 +38,29 @@ Hay varias interfaces de bajo nivel (backends) que proporcionan una funcionalida
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
     *   [4.6 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
 
-## Low level interfaces
+## Interfaces de bajo nivel
 
-Though these interfaces can be used directly, it is advisable to use some of [high level interfaces](#High_level_interfaces) to suspend/hibernate. Using low level interfaces directly is significantly faster than using any high level interface, since running all the pre- and post-suspend hooks takes time, but hooks can properly set hardware clock, restore wireless etc.
+Aunque estas interfaces se pueden usar directamente es aconsejable que se utilice alguna [interfaz de alto nivel](#Interfaces_de_alto_nivel) para suspender/hibernar. Utilizar interfaces de bajo nivel es significativamente más rápido que utilizar las interfaces de alto nivel, ya que ejecutar los pre y post hooks lleva tiempo, pero estos hooks pueden establecer apropiadamente el reloj hardware, restaurar las redes inalámbricas, etc.
 
-### kernel (swsusp)
+### Núcleo (swsusp)
 
-The most straightforward approach is to directly inform the in-kernel software suspend code (swsusp) to enter a suspended state; the exact method and state depends on the level of hardware support. On modern kernels, writing appropriate strings to `/sys/power/state` is the primary mechanism to trigger this suspend.
+Lo más directo es informar directamente al núcleo (kernel) el código de suspensión del software para cambiar a un estado de suspensión (swsusp); el método exacto y el estado depende del nivel que soporta el hardware. En los núcleos modernos, el principal mecanismo para lanzar esta suspensión es escribir las apropiadas instrucciones en `/sys/power/state`.
 
-See [kernel documentation](https://www.kernel.org/doc/Documentation/power/states.txt) for details.
+vea la [documentación del kernel (en inglés)](https://www.kernel.org/doc/Documentation/power/states.txt) para más detalles.
 
-### uswsusp
+### Uswsusp
 
-The uswsusp ('Userspace Software Suspend') is a wrapper around the kernel's suspend-to-RAM mechanism, which performs some graphics adapter manipulations from userspace before suspending and after resuming.
+La suspensión de software de espacio de usuario ('uswsusp') es un envoltorio del mecanismo de suspensión a RAM del núcleo que realiza algunas manipulaciones del adaptador gráfico desde el espacio de usuario antes de suspender y después de reanudar. Vea el articulo del manual [Uswsusp](/index.php/Uswsusp "Uswsusp").
 
-See main article [Uswsusp](/index.php/Uswsusp "Uswsusp").
+## Interfaces de alto nivel
 
-## High level interfaces
+El objetivo de estos paquetes es proporcionar script/binarios que puedan invocar y realizar la suspensión/hibernación. En realidad los enlaces a los botones de encendido o a los clic en un menú o a los eventos de la tapa de un portátil se les deja a otras herramientas. Para suspender/hibernar automáticamente en ciertos eventos de energía, como el cierre de la tapa del ordenador o bajo porcentaje de batería puede que estés buscando ejecutar [Acpid (Español)](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
 
-The end goal of these packages is to provide binaries/scripts that can be invoked to perform suspend/hibernate. Actually hooking them up to power buttons or menu clicks or laptop lid events is usually left to other tools. To automatically suspend/hibernate on certain power events, such as laptop lid close or battery depletion percentage, you may want to look into running [Acpid](/index.php/Acpid "Acpid").
+### Systemd
 
-### systemd
+[Systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") proporciona de forma nativa comandos para suspender, hibernar y suspender de forma híbrida, vea [administración de energía con systemd (en inglés)](/index.php/Power_management#Power_management_with_systemd "Power management") para más detalles. Esta es la interfaz por defecto usada en Arch Linux.
 
-[systemd](/index.php/Systemd "Systemd") provides native commands for suspend, hibernate and a hybrid suspend, see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management") for details. This is the default interface used in Arch Linux.
-
-See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Power management") for additional information on configuring suspend/hibernate hooks. Also see [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1), [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8), and [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7).
+Vea [sleep hooks](/index.php/Power_management_(Espa%C3%B1ol)#Sleep_hooks "Power management (Español)") como información adicional para configurar los hook de suspensión/hibernación. Vea también [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1), [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8), y [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7).
 
 ## Hibernation
 

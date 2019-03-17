@@ -198,7 +198,7 @@
 
 *   **Otter-browser** — Браузер, целью которого является воссоздание классического пользовательского интерфейса Opera (12.x) при помощи Qt5
 
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://www.archlinux.org/packages/?name=otter-browser)
 
 *   **[QupZilla](https://en.wikipedia.org/wiki/ru:QupZilla "wikipedia:ru:QupZilla")** — Новый и очень быстрый веб-браузер с открытым исходным кодом, основанный на WebKit core и написанный с использованием фреймворка [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")
 

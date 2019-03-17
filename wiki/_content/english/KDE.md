@@ -84,6 +84,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
         *   [6.3.6 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
         *   [6.3.7 Plasma cursor sometimes shown incorrectly](#Plasma_cursor_sometimes_shown_incorrectly)
         *   [6.3.8 Unusable screen resolution set](#Unusable_screen_resolution_set)
+        *   [6.3.9 Blurry icons in System tray](#Blurry_icons_in_System_tray)
     *   [6.4 Sound problems](#Sound_problems)
         *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.4.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
@@ -675,6 +676,10 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 #### Unusable screen resolution set
 
 Your local configuration settings for kscreen can override those set in `xorg.conf`. Look for kscreen configuration files in `~/.local/share/kscreen/` and check if mode is being set to a resolution that is not supported by your monitor.
+
+#### Blurry icons in System tray
+
+In order to add icons to tray, applications often make use of the library appindicator. If your icons are blurry, check which version of libappindicator you have installed. If you only have [libappindicator-gtk2](https://www.archlinux.org/packages/?name=libappindicator-gtk2) installed, you can install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3) or [libappindicator-sharp](https://www.archlinux.org/packages/?name=libappindicator-sharp) as an attempt to get clear icons.
 
 ### Sound problems
 

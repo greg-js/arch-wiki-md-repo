@@ -539,13 +539,15 @@ Both the wired and wireless (with the *Xbox 360 Wireless Receiver for Windows*) 
 It has been reported that the default xpad driver has some issues with a few newer wired and wireless controllers, such as:
 
 *   incorrect button mapping. ([discussion in Steam bugtracker](https://github.com/ValveSoftware/steam-for-linux/issues/95#issuecomment-14009081))
-*   not-working sync. All four leds keep blinking, but controller works. ([discussion in Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=156028))
+*   not-working sync. All four LEDs keep blinking, but controller works. ([discussion in Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=156028))
 
 If you experience such issues, you can use either [#SteamOS xpad](#SteamOS_xpad) or [#xboxdrv](#xboxdrv) instead of the default `xpad` driver.
 
-If you wish to use the controller for controlling the mouse, or mapping buttons to keys, etc. you should use the [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/) package (configuration help can be found using `man joystick`). If the mouse locks itself in a corner, it might help changing the `MatchDevicePath` in `/etc/X11/xorg.conf.d/50-joystick.conf` from `/dev/input/event*` to `/dev/input/js*`.
+If you wish to use the controller for controlling the mouse, or mapping buttons to keys, etc. you should use the [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/) package (configuration help can be found using joystick(4)). If the mouse locks itself in a corner, it might help changing the `MatchDevicePath` in `/etc/X11/xorg.conf.d/50-joystick.conf` from `/dev/input/event*` to `/dev/input/js*`.
 
 **Tip:** If you use the [TLP](/index.php/TLP "TLP") power management tool, you may experience connection issues with your Microsoft wireless adapter (e.g. the indicator LED will go out after the adapter has been connected for a few seconds, and controller connection attempts fail). This is due to TLP's USB autosuspend functionality, and the solution is to add the Microsoft wireless adapter's device ID to this feature's blacklist (USB_BLACKLIST, check [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#usb) for more details).
+
+In order to connect via Bluetooth using KDE, add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `bluetooth.disable_ertm=1`.
 
 #### SteamOS xpad
 

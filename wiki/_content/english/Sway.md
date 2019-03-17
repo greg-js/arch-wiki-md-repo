@@ -45,6 +45,8 @@ Sway is 100% compatible with i3, aside from several features that only make sens
 
 *sway* can be [installed](/index.php/Install "Install") with the [sway](https://www.archlinux.org/packages/?name=sway) package. The development version can be installed using [wlroots-git](https://aur.archlinux.org/packages/wlroots-git/) and [sway-git](https://aur.archlinux.org/packages/sway-git/). It's advisable to always update *wlroots* when you update *sway*, due to tight dependencies.
 
+You may also install [swaylock](https://www.archlinux.org/packages/?name=swaylock) and [swayidle](https://www.archlinux.org/packages/?name=swayidle) to lock your screen and set up an idle manager.
+
 ## Starting
 
 **Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
@@ -254,7 +256,7 @@ bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 
 i3-dmenu-desktop, [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), [dmenu](https://www.archlinux.org/packages/?name=dmenu), and [rofi](https://www.archlinux.org/packages/?name=rofi) all function relatively well in Sway, but all run under XWayland and suffer from the same issue where they can become unresponsive if the cursor is moved to a native Wayland window. Moving the cursor to an XWayland window and pressing Escape should fix the issue, and sometimes running `pkill` does too.
 
-One alternative is [bemenu-git](https://aur.archlinux.org/packages/bemenu-git/), which is a native Wayland dmenu replacement.
+One alternative is [bemenu](https://www.archlinux.org/packages/?name=bemenu), which is a native Wayland dmenu replacement.
 
 Or you can build your own with a floating terminal and fzf (Discussed in an [GitHub Issue](https://github.com/swaywm/sway/issues/1367)).
 

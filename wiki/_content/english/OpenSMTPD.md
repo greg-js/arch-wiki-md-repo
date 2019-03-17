@@ -6,7 +6,7 @@ Related articles
 
 [OpenSMTPD](https://www.opensmtpd.org/) is a free [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent"), developed as part of the OpenBSD project. This article builds upon [Mail server](/index.php/Mail_server "Mail server").
 
-**Note:** Starting with [version 6.4.0](https://www.opensmtpd.org/announces/release-6.4.0.txt) OpenSMTPD depends on LibreSSL. Since [libressl](https://aur.archlinux.org/packages/libressl/) is not supported by Arch Linux, the [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) package is stuck in version 6.0.3p1 indefinitely.
+**Note:** Starting with [version 6.4.0](https://www.opensmtpd.org/announces/release-6.4.0.txt) OpenSMTPD depends on LibreSSL. Since [libressl](https://aur.archlinux.org/packages/libressl/) is not supported by Arch Linux, the [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) package is stuck in version 6.0.3p1 indefinitely. A posible solution is to [create a libressl package that installs into its own libdir and then adjust the opensmtpd PKGBUILD to use that include and lib dir](https://bbs.archlinux.org/viewtopic.php?pid=1837141#p1837141).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

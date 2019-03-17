@@ -5,7 +5,11 @@ Related articles
 
 Audiobook media can be Audio CDs or downloaded files, several formats exist. For certain hardware media players a specific format will be necessary. This article documents how to create or convert an audiobook of various format types.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 iPod-compatible format](#iPod-compatible_format)
     *   [1.1 Tools](#Tools)

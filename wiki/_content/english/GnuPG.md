@@ -33,7 +33,8 @@ According to the [official website](https://www.gnupg.org/):
     *   [4.1 Backup your private key](#Backup_your_private_key)
     *   [4.2 Edit your key](#Edit_your_key)
     *   [4.3 Exporting subkey](#Exporting_subkey)
-    *   [4.4 Rotating subkeys](#Rotating_subkeys)
+    *   [4.4 Extending expiry date](#Extending_expiry_date)
+    *   [4.5 Rotating subkeys](#Rotating_subkeys)
 *   [5 Signatures](#Signatures)
     *   [5.1 Create a signature](#Create_a_signature)
         *   [5.1.1 Sign a file](#Sign_a_file)
@@ -367,7 +368,7 @@ $ gpg --homedir /tmp/gpg --import /tmp/subkey.gpg
 $ gpg --homedir /tmp/gpg --edit-key *<user-id>*
 > passwd
 > save
-$ gpg --homedir /tmp/gpg -a --export-secret-subkeys [subkey id]! > /tmp/subkey.altpass.gpg
+$ gpg --homedir /tmp/gpg -a --export-secret-subkeys *[subkey id]*! > /tmp/subkey.altpass.gpg
 
 ```
 
@@ -375,13 +376,59 @@ $ gpg --homedir /tmp/gpg -a --export-secret-subkeys [subkey id]! > /tmp/subkey.a
 
 At this point, you can now use `/tmp/subkey.altpass.gpg` on your other devices.
 
+### Extending expiry date
+
+**Warning:** **Never** delete your expired or revoked subkeys unless you have a good reason. Doing so will cause you to lose the ability to decrypt files encrypted with the old subkey. Please **only** delete expired or revoked keys from other users to clean your keyring.
+
+It is good practice to set an expiration date on your subkeys, so that if you lose access to the key (e.g. you forget the passphrase) the key will not continue to be used indefinitely by others. When the key expires, it is relatively straight-forward to extend the expiry date:
+
+```
+$ gpg --edit-key *<user-id>*
+> expire
+
+```
+
+You will be prompted for a new expiry date, as well as the passphrase for your secret key, which is used to sign the new expiration date.
+
+Repeat this for any further subkeys that have expired:
+
+```
+> key 1
+> expire
+
+```
+
+Finally, save the changes and quit:
+
+```
+> save
+
+```
+
+Update it to a keyserver.
+
+```
+$ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
+
+```
+
+Alternatively, if you use this key on multiple computers, you can export the public key (with new signed expiration dates) and import it on those machines:
+
+```
+$ gpg --export *<user-id>* > pubkey.gpg
+$ gpg --import pubkey.gpg
+
+```
+
+There is no need to re-export your secret key or update your backups: the master secret key itself never expires, and the signature of the expiry date left on the public key and subkeys is all that is needed.
+
 ### Rotating subkeys
 
 **Warning:** **Never** delete your expired or revoked subkeys unless you have a good reason. Doing so will cause you to lose the ability to decrypt files encrypted with the old subkey. Please **only** delete expired or revoked keys from other users to clean your keyring.
 
-If you have set your subkeys to expire after a set time, you can create new ones. Do this a few weeks in advance to allow others to update their keyring.
+Alternatively, if you prefer to stop using subkeys entirely once they have expired, you can create new ones. Do this a few weeks in advance to allow others to update their keyring.
 
-**Tip:** You do not need to create a new key simply because it is expired. You can extend the expiration date.
+**Tip:** You do not need to create a new key simply because it is expired. You can extend the expiration date, see the section [#Extending expiry date](#Extending_expiry_date).
 
 Create new subkey (repeat for both signing and encrypting key)
 
@@ -406,6 +453,8 @@ Update it to a keyserver.
 $ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 
 ```
+
+You will also need to export a fresh copy of your secret keys for backup purposes. See the section [#Backup your private key](#Backup_your_private_key) for details on how to do this.
 
 **Tip:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
 
@@ -568,7 +617,7 @@ allow-loopback-pinentry
 
 ```
 
-Restart the gpg-agent process if it is running to let the change take effect.
+[Reload the agent](#Reload_the_agent) if it is running to let the change take effect.
 
 Second, either the application needs to be updated to include a commandline parameter to use loopback mode like so:
 

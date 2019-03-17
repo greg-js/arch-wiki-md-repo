@@ -28,7 +28,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [2 Suspend / Hibernation](#Suspend_/_Hibernation)
 *   [3 TrackPoint and Touchpad](#TrackPoint_and_Touchpad)
 *   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
-*   [5 UEFI](#UEFI)
+*   [5 UEFI and GRUB](#UEFI_and_GRUB)
 *   [6 Screen backlight](#Screen_backlight)
 *   [7 Encryption and keyboard](#Encryption_and_keyboard)
 *   [8 Special buttons](#Special_buttons)
@@ -113,11 +113,11 @@ See
 *   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix "Lenovo ThinkPad T480s")
 *   [https://github.com/erpalma/throttled](https://github.com/erpalma/throttled)
 
-## UEFI
+## UEFI and GRUB
 
-Lenovo T480 is tied in with Microsoft and will only boot to windows efi file or default EFI fallback file. Verified on bios version 1.14
+Lenovo T480 is tied in with Microsoft and will only boot to Windows EFI file or default EFI fallback file. Verified on firmware version 1.14.
 
-Sollution is to rename the .efi to that specific file.
+When GRUB is used, it is needed to rename the GRUB .efi to one of these specific file names. Please remember to repeat these steps (or use a pacman hook) when the GRUB package was updated.
 
 ```
  mount /dev/sdXY /mnt # replace XY with the letter & number of the Arch EFI system partition
@@ -133,7 +133,7 @@ Sollution is to rename the .efi to that specific file.
 ```
 
 ```
- # EFI fallback .efi file (As defined in the EFI standard.)
+ # EFI fallback .efi file (as defined in the EFI standard.)
 
 ```
 
@@ -144,6 +144,8 @@ Sollution is to rename the .efi to that specific file.
 ```
 
 Source: [http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-naming](http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-naming)
+
+Alternatively, systemd-boot can be used as a bootloader. systemd-boot already configures the EFI fallback file name as a default, so no further measures are required after installation.
 
 ## Screen backlight
 

@@ -4,7 +4,11 @@
 
 **Note:** 加载[Microcode](/index.php/Microcode "Microcode")更新需要调整启动加载器配置[[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 适用于 BIOS 和 UEFI 的启动加载器](#适用于_BIOS_和_UEFI_的启动加载器)
     *   [1.1 GRUB](#GRUB)
@@ -74,7 +78,7 @@ See [LILO](/index.php/LILO "LILO").
 | BIOS | [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4 "Ext4") | ReiserFS v3 | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
 | [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | On BIOS/GPT configuration requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition"). |
 | [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") | No | Yes | Yes | No | No | No | Yes | No | Cannot launch binaries from partitions other than [ESP](/index.php/ESP "ESP"). |
-| [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") | Yes | [Partial](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | [Partial](/index.php/Syslinux#Chainloading "Syslinux") | without: multi-device volumes, compression, encryption | without: `64bit` feature, encryption | No | Yes | v4 on [MBR](/index.php/MBR "MBR") only | No support for certain [file system](/index.php/File_system "File system") features [[2]](http://www.syslinux.org/wiki/index.php?title=Filesystem) |
+| [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") | Yes | [Partial](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | [Partial](/index.php/Syslinux#Chainloading "Syslinux") | without: multi-device volumes, compression, encryption | without: `64bit` feature, encryption | No | Yes | v4 on [MBR](/index.php/MBR "MBR") only | No support for certain [file system](/index.php/File_system "File system") features [[2]](https://wiki.syslinux.org/wiki/index.php?title=Filesystem) |
 | [EFISTUB](/index.php/EFISTUB "EFISTUB") | No | Yes | N/A | N/A | N/A | N/A | N/A | N/A |
 | [rEFInd](/index.php/REFInd "REFInd") | No | Yes | Yes | without encryption | without encryption | without tail-packing feature | Yes | No |
 | [Clover](/index.php/Clover "Clover") | emulates UEFI | Yes | Yes | No | Unknown | No | Yes | No | Main target audience is [Hackintosh](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh") users. |

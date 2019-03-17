@@ -8,7 +8,11 @@ Nel caso si sia interessati ad installare Arch Linux su un supporto USB si veda 
 
 **Nota:** Per i sistemi [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)") creare un supporto USB avviabile seguendo [queste](/index.php/Unified_Extensible_Firmware_Interface_(Italiano)#Creare_un_dispositivo_USB_avviabile_con_UEFI_dalla_ISO "Unified Extensible Firmware Interface (Italiano)") istruzioni.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Su GNU/Linux](#Su_GNU/Linux)
     *   [1.1 Sovrascrivendo i dati presenti sul supporto USB](#Sovrascrivendo_i_dati_presenti_sul_supporto_USB)
@@ -257,7 +261,7 @@ Una versione con licenza GPL di *dd* per Windows è disponibile [qui](http://www
 
 ### Avviare l'intera ISO dalla memoria RAM
 
-Questo metodo usa [Syslinux](/index.php/Syslinux "Syslinux") e [MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK#ISO_images) per caricare tutta l'immagine ISO in RAM, quindi accertarsi di avere ram a sufficienza. A processo ultimato si vedrà il menu grafico e il supporto USB può essere rimosso ed essere usato anche su un pc diverso per riavviare lo stesso processo. Questo permette di installare Arch da (e su) la stessa chiavetta.
+Questo metodo usa [Syslinux](/index.php/Syslinux "Syslinux") e [MEMDISK](https://wiki.syslinux.org/wiki/index.php/MEMDISK#ISO_images) per caricare tutta l'immagine ISO in RAM, quindi accertarsi di avere ram a sufficienza. A processo ultimato si vedrà il menu grafico e il supporto USB può essere rimosso ed essere usato anche su un pc diverso per riavviare lo stesso processo. Questo permette di installare Arch da (e su) la stessa chiavetta.
 
 **1.** Formattare il supporto USB in FAT32 e creare le seguenti directories:
 
@@ -298,7 +302,7 @@ Fatto!
 
 ## Risoluzione problemi
 
-**Nota:** Con il metodo MEMDISK, se si ottiene il classico errore **30 seconds error** (specialmente con la versione i686), premere `Tab` sulla voce `Boot Arch Linux (i686)` e aggiungere `vmalloc=256M` alla fine per immagini netinstall e `vmalloc=448M` per immagini core. Questo è da applicare solo al metodo MEMDISK. Per riferimento: *Se l'immagine è più grossa di 128MiB e si ha un OS a 32-bit, è necessario incrementare la memoria di vmalloc*. [(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+**Nota:** Con il metodo MEMDISK, se si ottiene il classico errore **30 seconds error** (specialmente con la versione i686), premere `Tab` sulla voce `Boot Arch Linux (i686)` e aggiungere `vmalloc=256M` alla fine per immagini netinstall e `vmalloc=448M` per immagini core. Questo è da applicare solo al metodo MEMDISK. Per riferimento: *Se l'immagine è più grossa di 128MiB e si ha un OS a 32-bit, è necessario incrementare la memoria di vmalloc*. [(*)](https://wiki.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 **Nota:**
 

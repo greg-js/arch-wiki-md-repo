@@ -5,7 +5,7 @@ Related articles
 
 The [EFI system partition](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") (also called ESP) is an OS independent partition that acts as the storage place for the EFI bootloaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot.
 
-The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesystems (see [UEFI specification version 2.7, section 13.3.1.1](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers.
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems (see [UEFI specification version 2.7, section 13.3.1.1](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional file systems; for example, the firmware in Apple [Macs](/index.php/Mac "Mac") supports the HFS+ file system.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -45,7 +45,7 @@ To find out the disk partition scheme and the system partition, use [fdisk](/ind
 The command returns:
 
 *   The disk's partition table: it indicates `Disklabel type: gpt` if the partition table is [GPT](/index.php/GPT "GPT") or `Disklabel type: dos` if it is [MBR](/index.php/MBR "MBR").
-*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB) partition with a type `EFI System` or `EFI (FAT-12/16/32)`. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB) partition with a type `EFI System` or `EFI (FAT-12/16/32)`. To confirm this is the ESP, [mount](/index.php/Mount "Mount") it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
 **Tip:** To find out whether it is a FAT12, FAT16 or FAT32 file system, use `minfo` from [mtools](https://www.archlinux.org/packages/?name=mtools).
 ```
@@ -77,7 +77,7 @@ EFI system partition on a [GUID Partition Table](/index.php/GUID_Partition_Table
 
 *   [fdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type `EFI System`.
 *   [gdisk](/index.php/Gdisk "Gdisk"): Create a partition with partition type `EF00`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with `fat32` as the file system type and set/activate the `esp` flag on it.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with `fat32` as the file system type and set the `esp` flag on it.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 
@@ -88,7 +88,7 @@ EFI system partition on a [Master Boot Record](/index.php/Master_Boot_Record "Ma
 **Choose one** of the following methods to create an ESP for a MBR partitioned disk:
 
 *   [fdisk](/index.php/Fdisk "Fdisk"): Create a primary partition with partition type `EFI (FAT-12/16/32)`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with `fat32` as the file system type and set/activate the `esp` flag on it.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with `fat32` as the file system type and set the `esp` flag on it.
 
 Proceed to [#Format the partition](#Format_the_partition) section below.
 

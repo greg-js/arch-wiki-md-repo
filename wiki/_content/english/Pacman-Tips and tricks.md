@@ -491,13 +491,11 @@ Draft example for a client, using `uname -m` within the share name ensures an ar
 
 #### Dynamic reverse proxy cache using nginx
 
-[nginx](/index.php/Nginx "Nginx") can be used to proxy requests to official upstream mirrors and cache the results to local disk. All subsequent requests for that file will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of servers with minimal effort.
+[nginx](/index.php/Nginx "Nginx") can be used to proxy package requests to official upstream mirrors and cache the results to the local disk. All subsequent requests for that package will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of computers.
 
-**Warning:** This method has a limitation. You must use mirrors that use the same relative path to package files and you must configure your cache to use that same path. In this example, we are using mirrors that use the relative path `/archlinux/$repo/os/$arch` and our cache's `Server` setting in `mirrorlist` is configured similarly.
+In this example, the cache server will run at `http://cache.domain.example:8080/` and store the packages in `/srv/http/pacman-cache/`.
 
-In this example, we will run the cache server on `http://cache.domain.example:8080/` and storing the packages in `/srv/http/pacman-cache/`.
-
-Create the directory for the cache and adjust the permissions so nginx can write files to it:
+Install [nginx](/index.php/Nginx "Nginx") on the computer that is going to host the cache. Create the directory for the cache and adjust the permissions so nginx can write files to it:
 
 ```
  # mkdir /srv/http/pacman-cache
@@ -505,18 +503,18 @@ Create the directory for the cache and adjust the permissions so nginx can write
 
 ```
 
-Next, configure nginx as the [dynamic cache](https://gist.github.com/anonymous/97ec4148f643de925e433bed3dc7ee7d) (read the comments for an explanation of the commands).
+Use the [nginx pacman cache config](https://github.com/nastasie-octavian/nginx_pacman_cache_config/blob/87d4897b8fa37e70da4238d7074c639c041daf39/nginx.conf) as a starting point for `/etc/nginx/nginx.conf`. Check that the `resolver` directive works for your needs. In the upstream server blocks, configure the `proxy_pass` directives with addresses of official mirrors, see examples in the config file about the expected format. Once you are satisfied with the configuration file [start and enable nginx](/index.php/Nginx#Running "Nginx").
 
-Finally, update your other Arch Linux servers to use this new cache by adding the following line to the `mirrorlist` file:
+In order to use the cache each Arch Linux computer (including the one hosting the cache) must have the following line at the top of the `mirrorlist` file:
 
  `/etc/pacman.d/mirrorlist` 
 ```
-Server = http://cache.domain.example:8080/archlinux/$repo/os/$arch
+Server = http://cache.domain.example:8080/$repo/os/$arch
 ...
 
 ```
 
-**Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is provided by [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
+**Note:** You will need to create a method to clear old packages, as the cache directory will continue to grow over time. `paccache` (which is provided by [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
 
 #### Synchronize pacman package cache using synchronization programs
 

@@ -369,6 +369,10 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[https://github.com/lirios/browser](https://github.com/lirios/browser) || [liri-browser-git](https://aur.archlinux.org/packages/liri-browser-git/)
 
+*   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5\. It can use Qt WebEngine as an alternative backend.
+
+	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://www.archlinux.org/packages/?name=otter-browser)
+
 *   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
 	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
@@ -419,10 +423,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://next.atlas.engineer/](https://next.atlas.engineer/) || [next-browser-git](https://aur.archlinux.org/packages/next-browser-git/)
 
-*   **Poseidon** — Fast, minimal and lightweight browser, written in Python.
-
-	[https://github.com/sidus-dev/poseidon](https://github.com/sidus-dev/poseidon) || [poseidon](https://aur.archlinux.org/packages/poseidon/)
-
 *   **[surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](https://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[https://surf.suckless.org/](https://surf.suckless.org/) || [surf](https://www.archlinux.org/packages/?name=surf)
@@ -430,10 +430,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **Surfer** — Simple keyboard based web browser, written in C.
 
 	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer](https://aur.archlinux.org/packages/surfer/)
-
-*   **[Uzbl](/index.php/Uzbl "Uzbl")** — Group of web interface tools which adhere to the Unix philosophy.
-
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
 

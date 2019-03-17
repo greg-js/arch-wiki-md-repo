@@ -1,6 +1,10 @@
 [Pidgin](http://www.pidgin.im/) is an easy to use and free chat client used by millions. Connect to Google Talk, ICQ, IRC, XMPP, and more chat networks all at once.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Spellcheck](#Spellcheck)
@@ -8,7 +12,7 @@
     *   [3.1 Facebook](#Facebook)
     *   [3.2 IRC](#IRC)
     *   [3.3 Sametime protocol](#Sametime_protocol)
-    *   [3.4 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP.2FSimple_protocol_for_Skype_for_Business.2FOffice_365.2FLync)
+    *   [3.4 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP/Simple_protocol_for_Skype_for_Business/Office_365/Lync)
     *   [3.5 Skype plugin](#Skype_plugin)
     *   [3.6 Rocket.Chat plugin](#Rocket.Chat_plugin)
 *   [4 Security](#Security)

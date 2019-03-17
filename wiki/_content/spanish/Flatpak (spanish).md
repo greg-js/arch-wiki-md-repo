@@ -6,7 +6,7 @@ Artículos relacionados
 *   [Snap (Español)](/index.php/Snap_(Espa%C3%B1ol) "Snap (Español)")
 *   [bubblewrap](/index.php/Bubblewrap "Bubblewrap")
 
-Del proyecto [README](https://github.com/flatpak/flatpak/blob/master/README.md): "*[Flatpak](http://flatpak.org) es un sistema de compilación, distribución y ejecución de aplicaciones de escritorio aisladas en Linux.*"
+Del [README](https://github.com/flatpak/flatpak/blob/master/README.md) del proyecto: "*[Flatpak](http://flatpak.org) es un sistema de compilación, distribución y ejecución de aplicaciones de escritorio aisladas en Linux.*"
 
 De [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
 
@@ -129,7 +129,7 @@ $ flatpak list
 
 ### Ejecutar aplicaciones
 
-Las aplicaciones flatpak también pueden ser ejecutadas desde la línea de comandos:
+Las aplicaciones flatpak también pueden ser ejecutadas desde la línea de órdenes:
 
 ```
 $ flatpak run *nombre*
@@ -174,7 +174,7 @@ Es sabido que ésto es necesario en Awesome.
 
 **Nota:** Posiblemente desee utilizar una cuenta de usuario no confiable y sin privilegios para empaquetar software que no sea de confianza porque no es aislado durante la creación de la app y el tiempo de ejecución.
 
-**Nota:** Al distribuir paquetes a otros, puede ser obligado legalmente a proporcionar el código fuente de parte del software empaquetado que sea solicitado. Posiblemente desee utilizar [ABS](/index.php/ABS "ABS") para compilar paquetes desde la fuente.
+**Nota:** Al distribuir paquetes a otros, puede ser obligado legalmente a proporcionar el código fuente de parte del software empaquetado que sea solicitado. Posiblemente desee utilizar [ABS](/index.php/ABS_(Espa%C3%B1ol) "ABS (Español)") para compilar paquetes desde la fuente.
 
 Puede crear un tiempo de ejecución personalizado basada en Arch y SDK base para Flatpak usando pacman. Así puede utilizarlo para compilar y empaquetar aplicaciones. Esto es una alternativa para uso personal para los tiempos de ejecución por defecto `org.freedesktop.BasePlatform` y `org.freedesktop.BaseSdk`.
 

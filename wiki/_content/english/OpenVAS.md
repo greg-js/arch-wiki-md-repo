@@ -1,6 +1,10 @@
 [OpenVAS](http://www.openvas.org/) stands for Open Vulnerability Assessment System and is a network security scanner with associated tools like a graphical user front-end. The core component is a server with a set of network vulnerability tests (NVTs) to detect security problems in remote systems and applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pre-install](#Pre-install)
     *   [1.1 Redis](#Redis)
@@ -93,6 +97,13 @@ Add an administrator user account, be sure to copy the password:
 
 ```
 # openvasmd --create-user=admin --role=Admin
+
+```
+
+You can also change the password of the user later on
+
+```
+# openvasmd --user=admin --new-password=<password>
 
 ```
 

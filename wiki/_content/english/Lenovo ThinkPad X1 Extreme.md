@@ -30,7 +30,7 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [1.4 Other hardware](#Other_hardware)
 *   [2 Software tweaks](#Software_tweaks)
     *   [2.1 Dolby Atmos Effect on Linux](#Dolby_Atmos_Effect_on_Linux)
-    *   [2.2 TLP](#TLP)
+    *   [2.2 Battery charge thresholds](#Battery_charge_thresholds)
     *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
     *   [2.4 CPU undervolting](#CPU_undervolting)
     *   [2.5 Kernel parameters](#Kernel_parameters)
@@ -74,15 +74,9 @@ Everything else works correctly out of the box.
 
 In order to get the same speaker sound quality/effect as on Dolby Atmos with Windows install & configure [PulseAudio](/index.php/PulseAudio "PulseAudio") and [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects). You can then download the Dolby Atmos preset from [JackHack96's Github](https://github.com/JackHack96/PulseEffects-Presets/tree/master/irs) and enable it in the "Convolver" tab of the PulseEffects GUI.
 
-### TLP
+### Battery charge thresholds
 
-To set battery start/stop thresholds with [TLP](/index.php/TLP "TLP"), install [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) and edit `/etc/default/tlp`:
-
-```
-START_CHARGE_THRESH_BAT0=80
-STOP_CHARGE_THRESH_BAT0=90
-
-```
+Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_supply/BAT0/charge_start_threshold` and `/sys/class/power_supply/BAT0/charge_stop_threshold`, or using [TLP](/index.php/TLP "TLP").
 
 ### CPU throttling workaround
 

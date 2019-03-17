@@ -77,7 +77,7 @@ See also [Wikipedia:List of data recovery software#File Recovery](https://en.wik
 
 *   **[dvdisaster](https://en.wikipedia.org/wiki/dvdisaster "wikipedia:dvdisaster")** — Additional error protection for CD/DVD media.
 
-	[https://sourceforge.net/projects/dvdisaster/](https://sourceforge.net/projects/dvdisaster/) || [dvdisaster](https://www.archlinux.org/packages/?name=dvdisaster)
+	[https://sourceforge.net/projects/dvdisaster/](https://sourceforge.net/projects/dvdisaster/) || [dvdisaster](https://aur.archlinux.org/packages/dvdisaster/)
 
 *   **ext4magic** — recover deleted or overwritten files on ext3 and ext4 filesystems.
 
