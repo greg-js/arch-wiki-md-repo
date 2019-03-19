@@ -437,7 +437,7 @@ This section explains the purpose of the essential groups from the [core/filesys
 Non-root workstation/desktop users often need to be added to some of following groups to allow access to hardware peripherals and facilitate system administration:
 
 | Group | Affected files | Purpose |
-| adm | Administration group, commonly used to give read access to protected logs (including [journal](/index.php/Systemd#Journal "Systemd") files). |
+| adm | Administration group, commonly used to give read access to protected logs (including [journal](/index.php/Systemd/Journal "Systemd/Journal") files). |
 | ftp | `/srv/ftp/` | Access to files served by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers. |
 | games | `/var/games` | Access to some game software. |
 | http | `/srv/http/` | Access to files served by [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") servers. |
@@ -447,7 +447,7 @@ Non-root workstation/desktop users often need to be added to some of following g
 | systemd-journal | `/var/log/journal/*` | Can be used to provide read-only access to the systemd logs, as an alternative to `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Otherwise, only user generated messages are displayed. |
 | users | Standard users group. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | RS-232 serial ports and devices connected to them. |
-| wheel | Administration group, commonly used to give privileges to perform administrative actions. Can be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It also has full read access to [journal](/index.php/Systemd#Journal "Systemd") files. |
+| wheel | Administration group, commonly used to give privileges to perform administrative actions. Can be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It also has full read access to [journal](/index.php/Systemd/Journal "Systemd/Journal") files. |
 
 ### System groups
 

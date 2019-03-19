@@ -88,7 +88,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
-| MFC-7460DN | [foomatic](/index.php/Foomatic "Foomatic") | Use the *Generic PCL 6 Printer wide margin - CUPS+Gutenprint* driver, with address `ipp://hostname-or-ip/pcl_p1`. |
+| MFC-7460DN | [Gutenprint](/index.php/Gutenprint "Gutenprint") | Use the *Generic PCL 6 Printer wide margin - CUPS+Gutenprint* driver, with address `ipp://hostname-or-ip/pcl_p1`. |
 | MFC-7840W | [brother-mfc-7840w](https://aur.archlinux.org/packages/brother-mfc-7840w/) |
 | MFC-9320CW | Install Brother's driver. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
@@ -214,10 +214,10 @@ With that, the printer will restart, and the latest firmware will be installed a
 
 ## Canon
 
-There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS), [#cnijfilter](#cnijfilter) ([cnijfilter2](/index.php/AUR "AUR") / [cnijfilter2-bin](/index.php/AUR "AUR")), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
+There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint"). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS), [#cnijfilter](#cnijfilter) ([cnijfilter2](/index.php/AUR "AUR") / [cnijfilter2-bin](/index.php/AUR "AUR")), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
-| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use the [TurboPrint](http://www.turboprint.info/) driver. |
+| iP4300 | [Gutenprint](/index.php/Gutenprint "Gutenprint") | Or use the [TurboPrint](http://www.turboprint.info/) driver. |
 | LBP810 | [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") |
 | LBP1120 |
 | LBP1210 |

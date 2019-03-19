@@ -26,6 +26,7 @@ The display server is accompanied by a *cursor theme* that helps various aspects
         *   [3.2.1 rdesktop](#rdesktop)
     *   [3.3 Change X shaped default cursor](#Change_X_shaped_default_cursor)
     *   [3.4 .Xdefaults](#.Xdefaults)
+    *   [3.5 Cursor size doesn't change on startup](#Cursor_size_doesn't_change_on_startup)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -237,7 +238,7 @@ $ ln -s left_ptr left_ptr_watch
 
 ### Supplying missing cursors
 
-Some programs set their own custom cursors which you may want to override. A common example of this is rdesktop, which connects to a Microsoft Windows computer and uses the cursors obtained from the remote machine, which can often be difficult to see due to protocol limitations yielding poor conversion quality.
+Some programs set their own custom curso`~/.Xresources`rs which you may want to override. A common example of this is rdesktop, which connects to a Microsoft Windows computer and uses the cursors obtained from the remote machine, which can often be difficult to see due to protocol limitations yielding poor conversion quality.
 
 This can be resolved by replacing these cursors with ones from the same (or another) cursor theme. In order to do this, the **hash** of the image must be obtained. This is done by setting the `XCURSOR_DISCOVER` environment variable prior to launching the application that sets these cursors:
 
@@ -304,6 +305,20 @@ The list of cursor styles is in [appendix B](https://tronche.com/gui/x/xlib/appe
 ### .Xdefaults
 
 If you have conflicting cursors then it might be because a different cursor has been set in the `~/.Xdefaults` file.
+
+### Cursor size doesn't change on startup
+
+If you are trying to change cursor size via `~/.Xresources` in your `~/.xinitrc` and it doesn't work, make sure that xrandr runs before loading `~/.Xresources`.
+
+Make sure your `~/.Xresources` looks similar to the following
+
+ `~/.xinitrc` 
+```
+xrandr &&
+...
+xrdb --merge ~/.Xresources &&
+exec wm
+```
 
 ## See also
 

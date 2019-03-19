@@ -25,15 +25,15 @@ Hay varias interfaces de bajo nivel (backends) que proporcionan una funcionalida
     *   [1.2 Uswsusp](#Uswsusp)
 *   [2 Interfaces de alto nivel](#Interfaces_de_alto_nivel)
     *   [2.1 Systemd](#Systemd)
-*   [3 Hibernation](#Hibernation)
-    *   [3.1 About swap partition/file size](#About_swap_partition/file_size)
-    *   [3.2 Required kernel parameters](#Required_kernel_parameters)
-        *   [3.2.1 Hibernation into swap file](#Hibernation_into_swap_file)
-    *   [3.3 Configure the initramfs](#Configure_the_initramfs)
-*   [4 Troubleshooting](#Troubleshooting)
+*   [3 Hibernar](#Hibernar)
+    *   [3.1 Sobre el tamaño de la partición/archivo swap](#Sobre_el_tamaño_de_la_partición/archivo_swap)
+    *   [3.2 Parámetros necesarios del kernel](#Parámetros_necesarios_del_kernel)
+        *   [3.2.1 Hibernar en un archivo swap](#Hibernar_en_un_archivo_swap)
+    *   [3.3 Configurar initramfs](#Configurar_initramfs)
+*   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
-    *   [4.2 VAIO users](#VAIO_users)
-    *   [4.3 Suspend/hibernate doesn't work, or not consistently](#Suspend/hibernate_doesn't_work,_or_not_consistently)
+    *   [4.2 Usuarios VAIO](#Usuarios_VAIO)
+    *   [4.3 Suspender/hibernar no funciona o no es consistente](#Suspender/hibernar_no_funciona_o_no_es_consistente)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
     *   [4.6 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
@@ -54,7 +54,7 @@ La suspensión de software de espacio de usuario ('uswsusp') es un envoltorio de
 
 ## Interfaces de alto nivel
 
-El objetivo de estos paquetes es proporcionar script/binarios que puedan invocar y realizar la suspensión/hibernación. En realidad los enlaces a los botones de encendido o a los clic en un menú o a los eventos de la tapa de un portátil se les deja a otras herramientas. Para suspender/hibernar automáticamente en ciertos eventos de energía, como el cierre de la tapa del ordenador o bajo porcentaje de batería puede que estés buscando ejecutar [Acpid (Español)](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
+El objetivo de estos paquetes es proporcionar script/binarios que puedan invocar y realizar la suspensión/hibernación. En realidad los enlaces a los botones de encendido o a los clic en un menú o a los eventos de la tapa de un portátil se les deja a otras herramientas. Para suspender/hibernar automáticamente en ciertos eventos de energía, como el cierre de la tapa del ordenador o bajo porcentaje de batería puede que estés buscando ejecutar [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
 
 ### Systemd
 
@@ -62,41 +62,41 @@ El objetivo de estos paquetes es proporcionar script/binarios que puedan invocar
 
 Vea [sleep hooks](/index.php/Power_management_(Espa%C3%B1ol)#Sleep_hooks "Power management (Español)") como información adicional para configurar los hook de suspensión/hibernación. Vea también [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1), [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8), y [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7).
 
-## Hibernation
+## Hibernar
 
-In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to [configure the initramfs](#Configure_the_initramfs). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
+Para utilizar la hibernación, necesita crear la partición o el archivo [swap](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"). Necesitará que el kernel apunte a su swap utilizando el parámetro del kernel `resume=`, configurado a través del gestor de arranque. También necesitará [configurar los initramfs](#Configurar_initramfs). Esto le dice al kernel que se reanude desde un espacio inicial específico del swap. Abajo se describen en detalle estos tres pasos.
 
-**Note:** See [Dm-crypt/Swap encryption#With suspend-to-disk support](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") when using [encryption](/index.php/Encryption "Encryption").
+**Nota:** Vea [soporte de suspensión en disco](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol)#Con_soporte_para_suspensión_en_disco "Dm-crypt/Swap encryption (Español)") cuando utilice el [cifrado](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)").
 
-### About swap partition/file size
+### Sobre el tamaño de la partición/archivo swap
 
-Even if your swap partition is smaller than RAM, you still have a big chance of hibernating successfully. According to [kernel documentation](https://www.kernel.org/doc/Documentation/power/interface.txt):
+Incluso si su partición swap es más pequeña que la RAM, tiene grandes oportunidades de hibernar correctamente. Acorde con la Even if your swap partition is smaller than RAM, you still have a big chance of hibernating successfully. According to [documentación del kernel (en inglés)](https://www.kernel.org/doc/Documentation/power/interface.txt):
 
-	*`/sys/power/image_size` controls the size of the image created by the suspend-to-disk mechanism. It can be written a string representing a non-negative integer that will be used as an upper limit of the image size, in bytes. The suspend-to-disk mechanism will do its best to ensure the image size will not exceed that number. However, if this turns out to be impossible, it will try to suspend anyway using the smallest image possible. In particular, if "0" is written to this file, the suspend image will be as small as possible. Reading from this file will display the current image size limit, which is set to 2/5 of available RAM by default.*
+	*`/sys/power/image_size` controla el tamaño de la imagen creada para el mecanismo suspender en disco. Se puede escribir representando un número entero no negativo que se utilizará como límite de la imagen creada, en bytes. El mecanismo suspender en disco se asegurará que la imagen no exceda ese número. Sin embargo, si es imposible, intentará suspender de cualquier forma utilizando la imagen más pequeña posible. Particularmente si en el archivo está escrito un "0" la imagen de suspensión sera lo más pequeña posible. Si se le ese archivo mostrará el actual límite de la imagen, que se establece 2/5 de la RAM disponible por defecto.*
 
-You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process.
+Puede disminuir el valor de `/sys/power/image_size` para hacer que la imagen sea lo más pequeña que sea posible (para particiones swap pequeñas) o aumentar para acelerar el proceso de hibernación.
 
-See [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") to make this change persistent.
+Vea [archivos temporales de systemd](/index.php/Systemd_(Espa%C3%B1ol)#Archivos_temporales "Systemd (Español)") para hacer este cambio permanente.
 
-### Required kernel parameters
+### Parámetros necesarios del kernel
 
-The kernel parameter `resume=*swap_partition*` has to be used. Either the name the kernel assigns to the partition or its [UUID](/index.php/UUID "UUID") can be used as `*swap_partition*`. For example:
+El parámetro del kernel `resume=*swap_partition*` se tiene que usar. Ya sea con el nombre que le asigna el kernel a la partición o su [UUID](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol)#by-uuid "Persistent block device naming (Español)") se puede utilizar como `*partición swap*`. Por ejemplo:
 
 *   `resume=/dev/sda1`
 *   `resume=UUID=4209c845-f495-4c43-8a03-5363dd433153`
-*   `resume=/dev/archVolumeGroup/archLogicVolume` -- example if using LVM
+*   `resume=/dev/archVolumeGroup/archLogicVolume` -- Ejemplo utilizando LVM
 
-Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
+Generalmente, el método de nombrar utilizado por el parámetro `resume` debe de ser el mismo utilizado por el parámetro `root`.
 
-The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details.
+La configuración depende del [gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") utilizado, para más detalles vea [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)").
 
-#### Hibernation into swap file
+#### Hibernar en un archivo swap
 
-**Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+**Advertencia:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") en el kernel Linux antes de la versión 5.0 no soporta archivos swap. Incumplir esta advertencia puede causar que se corrompa el sistema de archivos. Mientras que el archivo swap se utilice en Btrfs cuando está montado a través de un dispositivo loop hace que se degrade severamente el rendimiento de la swap.
 
-Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
+Utilizar un archivo swap en vez de una partición swap requiere un parámetro adicional del kernel `resume_offset=*compensación_del_archivo_swap*`.
 
-The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_file*`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
+el valor de `*compensación_del_archivo_swap*` se puede obtener ejecutando `filefrag -v *archivo_swap*`, la salida de este comando esta en un formato de tabla y el valor requerido se localiza en la primera fila de la columna `physical_offset`. Por ejemplo:
 
  `# filefrag -v /swapfile` 
 ```
@@ -110,54 +110,54 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 ```
 
-In the example the value of `*swap_file_offset*` is the first `38912` with the two periods.
+En el ejemplo el valor de la `*compensación_del_archivo_swap*` es el primer `38912` con dos puntos.
 
-**Tip:** The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
+**Sugerencia:** El siguiente comando se puede utilizar para identificar la `*compensación_del_archivo_swap*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
 
-**Note:**
+**Nota:**
 
-*   Before the first hibernation, a reboot is required to activate the feature.
-*   The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided within the set of tools [uswsusp](/index.php/Uswsusp "Uswsusp"). If using this method, then these two parameters have to be provided in `/etc/suspend.conf` via the keys `resume device` and `resume offset`. No reboot is required in this case.
+*   Antes de hibernar por primera vez es necesario reiniciar para activar la característica.
+*   el valor de `*compensación_del_archivo_swap*` se puede obtener también ejecutando `swap-offset *archivo_swap*`. El binario *swap-offset* lo proporciona el conjunto de herramientas [uswsusp (en inglés)](/index.php/Uswsusp "Uswsusp"). Si utiliza este método después se tiene que proporcionar estos dos parámetros en `/etc/suspend.conf` a través de `resume device` y `resume offset`. No se necesita reiniciar en este caso.
 
-**Tip:** You might want to decrease the [Swap#Swappiness](/index.php/Swap#Swappiness "Swap") for your swapfile if the only purpose is to be able to hibernate and not expand RAM.
+**Sugerencia:** Puede que quiera disminuir el [swappiness](/index.php/Swap_(Espa%C3%B1ol)#Swappiness "Swap (Español)") de su archivo swap si el único objetivo es ser capaz de hibernar y no expandir la RAM.
 
-### Configure the initramfs
+### Configurar initramfs
 
-*   When an [initramfs](/index.php/Initramfs "Initramfs") with the `base` hook is used, which is the default, the `resume` hook is required in `/etc/mkinitcpio.conf`. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the `resume` hook must go *after* the `udev` hook. This example was made starting from the default hook configuration:
+*   Cuando se utiliza el hook `base` en el [initramfs](/index.php/Arch_boot_process_(Espa%C3%B1ol)#initramfs "Arch boot process (Español)"), que está por defecto, es necesario el hook `resume` en `/etc/mkinitcpio.conf`. La partición swap está referenciada, ya sea por etiqueta o por UUID, a un nodo del dispositivo udev, por tanto el hook `resume` debe de ir *después* del hook `udev`. Este ejemplo se ha realizado partiendo de la configuración por defecto:
 
 	 `HOOKS=(base udev autodetect keyboard modconf block filesystems **resume** fsck)` 
 
-	Remember to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") for these changes to take effect.
+	Recuerde [regenerar los initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)") para que los cambios surtan efecto.
 
-**Note:** [LVM](/index.php/LVM "LVM") users should add the `resume` hook after `lvm2`.
+**Nota:** Los usuarios [LVM](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") deben añadir el hook `resume` después de `lvm2`.
 
-*   When an initramfs with the `systemd` hook is used, a resume mechanism is already provided, and no further hooks need to be added.
+*   Cuando se utiliza el hook `systemd` en el initramfs ya se proporciona el mecanismo de reanudación y no se necesita añadir nuevos hooks.
 
-## Troubleshooting
+## Solución de problemas
 
 ### ACPI_OS_NAME
 
-You might want to tweak your **DSDT table** to make it work. See [DSDT](/index.php/DSDT "DSDT") article
+Puede que quiera retocar su **tabla DSDT** para hacer que funcione. Vea el artículo [DSDT (en inglés)](/index.php/DSDT "DSDT").
 
-### VAIO users
+### Usuarios VAIO
 
-Add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_sleep=nonvs` to your bootloader.
+Añada el [parámetro del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `acpi_sleep=nonvs` a su gestor de arranque.
 
-### Suspend/hibernate doesn't work, or not consistently
+### Suspender/hibernar no funciona o no es consistente
 
-There have been many reports about the screen going black without easily viewable errors or the ability to do anything when going into and coming back from suspend and/or hibernate. These problems have been seen on both laptops and desktops. This is not an official solution, but switching to an older kernel, especially the LTS-kernel, will probably fix this.
+Ha habido muchos informes sobre que la pantalla se vuelve negra sin ver los errores fácilmente o poder hacer algo cuando se va a suspender/hibernar y vuelve atrás. Estos problemas se han visto tanto en portátiles como en escritorio. Esta es una solución no oficial pero cambiar a un kernel más antiguo, especialmente un kernel-LTS, resolverá probablemente este problema.
 
-Also problem may arise when using hardware watchdog timer (disabled by default, see `RuntimeWatchdogSec=` in [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5#OPTIONS)). Bugged watchdog timer may reset the computer before the system finished creating the hibernation image.
+También puede surgir el problema cuando se utiliza un temporizador de vigilancia hardware (desactivado por defecto, vea `RuntimeWatchdogSec=` en [systemd-system.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-system.conf.5#OPCIONES)). Un temporizador con errores puede reiniciar el ordenador antes de que se cree la imagen de hibernación.
 
-Sometimes the screen goes black due to device initialization from within the initramfs. Removing any modules you might have in [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") and rebuilding the initramfs, can possibly solve this issue, specially graphics drivers for [early KMS](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"). Initializing such devices before resuming can cause inconsistencies that prevents the system resuming from hibernation. This does not affect resuming from RAM. Also, check the blog article [best practices to debug suspend issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues).
+A veces la pantalla se vuelve negra en el inicio del dispositivo desde dentro del initramfs. Eliminar cualquier módulo que puede que tenga en [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#MÓDULOS "Mkinitcpio (Español)") y reconstruir los initramfs, posiblemente puede solucionar este error, especialmente con controladores gráficos para [iniciar de forma anticipada KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Iniciar_de_forma_anticipada_KMS "Kernel mode setting (Español)"). Iniciar tales dispositivos antes de reanudar puede causar inconsistencias que evitan reanudar desde la hibernación. Esto no afecta a reanudar desde RAM. También compruebe el artículo del blog [mejores prácticas para depurar errores de suspensión](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues).
 
-For Intel graphics drivers, enabling early KMS may help to solve the blank screen issue. Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for details.
+Para los controladores gráficos de Intel, activar KMS anticipado puede ayudar a solucionar el problema de la pantalla en negro. Vea [iniciar de forma anticipada KMS](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Iniciar_de_forma_anticipada_KMS "Kernel mode setting (Español)") para más detalles.
 
-After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[1]](https://bbs.archlinux.org/viewtopic.php?id=234646)
+Después de actualizar al kernel 4.15.3 puede fallar al reanudar con un cursor estático (sin parpadear) en la pantalla negra. After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. Poner en el módulo `nvidiafb` en la [lista negra](/index.php/Kernel_module_(Espa%C3%B1ol)#Lista_negra "Kernel module (Español)") puede ayudar. [[1]](https://bbs.archlinux.org/viewtopic.php?id=234646)
 
 ### Wake-on-LAN
 
-If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network interface card will consume power even if the computer is hibernated.
+Si [wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") está activado la tarjeta de red consumirá energía incluso si el ordenador está hibernado.
 
 ### Instantaneous wakeups from suspend
 

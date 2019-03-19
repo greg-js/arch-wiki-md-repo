@@ -50,6 +50,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [7.2 Errors after updating](#Errors_after_updating)
     *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
     *   [7.4 Failed to connect to Gitaly](#Failed_to_connect_to_Gitaly)
+    *   [7.5 Failed to connect via SSH](#Failed_to_connect_via_SSH)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -667,6 +668,15 @@ Sometimes, the Gitaly service won't get started, leaving GitLab unable to connec
 
 ```
 # systemctl start gitlab-gitaly
+
+```
+
+### Failed to connect via SSH
+
+If git operations (-T, pull, clone, etc.) fails using ssh try changing the shell:
+
+```
+# usermod -s /usr/share/webapps/gitlab-shell/bin/gitlab-shell-ruby gitlab
 
 ```
 

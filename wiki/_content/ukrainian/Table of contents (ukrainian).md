@@ -56,7 +56,7 @@
  <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(18)</small> |
  <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
  <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
- <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(22)</small> |
+ <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
  <small>3.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
  <small>3.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
  <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small> |
@@ -131,7 +131,7 @@
  <small>4.18.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
  <small>4.18.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
  <small>5.</small> [Software](/index.php/Category:Software "Category:Software") <small>(0)</small> |
- <small>5.1.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(16)</small> |
+ <small>5.1.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(17)</small> |
  <small>5.1.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
  <small>5.1.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
  <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(19) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
@@ -159,7 +159,7 @@
  <small>5.1.10.10.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(12)</small> |
  <small>5.1.10.11.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
  <small>5.1.10.12.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
- <small>5.1.11.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(21)</small> |
+ <small>5.1.11.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(22)</small> |
  <small>5.1.11.1.</small> [Audio](/index.php/Category:Audio "Category:Audio") <small>(9)</small> |
  <small>5.1.11.1.1.</small> [Music](/index.php/Category:Music "Category:Music") <small>(28)</small> |
  <small>5.1.11.2.</small> [Image](/index.php/Category:Image "Category:Image") <small>(9)</small> |

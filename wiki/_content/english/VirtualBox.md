@@ -94,7 +94,8 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 
 *   for [linux](https://www.archlinux.org/packages/?name=linux) kernel choose [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
 *   for other [kernels](/index.php/Kernels "Kernels") choose [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
-    *   It is also necessary to install the appropriate headers package(s) for your installed kernel(s): [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the [DKMS](/index.php/DKMS "DKMS") Pacman hook.
+
+It is also necessary to install the appropriate headers package(s) for your installed kernel(s): [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the [DKMS](/index.php/DKMS "DKMS") Pacman hook.
 
 ### Sign modules
 

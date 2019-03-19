@@ -149,6 +149,7 @@ And use `cp -a` or `rsync -t` in order to preserve the file's date & time.
 You can move photos and videos out of `*<mountpoint>*/DCIM/100APPLE`, however you need to trigger a rebuild of the "Camera Roll" database by deleting the old databases.
 
 ```
+# cd *<mountpoint>*/PhotoData
 # rm Photos* com.apple.photos.caches_metadata.plist
 
 ```

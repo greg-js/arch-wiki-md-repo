@@ -66,7 +66,8 @@ Related articles
     *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
     *   [7.11 Working with wired connections](#Working_with_wired_connections)
     *   [7.12 resolv.conf](#resolv.conf)
-        *   [7.12.1 Use openresolv](#Use_openresolv)
+        *   [7.12.1 /etc/resolv.conf](#/etc/resolv.conf)
+        *   [7.12.2 Use openresolv](#Use_openresolv)
     *   [7.13 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
@@ -112,7 +113,9 @@ Additional interfaces:
 
 ### VPN support
 
-NetworkManager VPN support is based on a plug-in system. If you need VPN support via NetworkManager, you have to install one of the following packages:
+NetworkManager since version 1.16 has native support for [WireGuard](/index.php/WireGuard "WireGuard")[[1]](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
+
+Support for other VPN types is based on a plug-in system. They are provided in the following packages:
 
 *   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) for [OpenConnect](/index.php/OpenConnect "OpenConnect")
 *   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) for [OpenVPN](/index.php/OpenVPN "OpenVPN")
@@ -125,9 +128,10 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
-*   [networkmanager-wireguard-git](https://aur.archlinux.org/packages/networkmanager-wireguard-git/) for [WireGuard](/index.php/WireGuard "WireGuard")
 
-**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+
+**Note:** To have fully functioning DNS resolution when using VPN, you should setup [split DNS](#DNS_caching_and_split_DNS).
 
 ## Usage
 
@@ -231,7 +235,7 @@ killall nm-applet
 
 When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
 
-The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
+The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
 
 In order to run `nm-applet` with such notifications disabled, start the applet with the following command:
 
@@ -335,7 +339,7 @@ dhcp=dhclient
 
 ### DNS caching and split DNS
 
-NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or [Unbound](/index.php/Unbound "Unbound") (via dnssec-trigger). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
+NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or Unbound via dnssec-trigger. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
 
 #### dnsmasq
 
@@ -820,7 +824,7 @@ After you have put this in, [restart](/index.php/Restart "Restart") `NetworkMana
 
 ### Configuring MAC address randomization
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[6]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
@@ -865,7 +869,11 @@ You can also edit the connection (and persist it to disk) or delete it. NetworkM
 
 ### resolv.conf
 
-*NetworkManager* overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf") by default.
+*NetworkManager* can manage `/etc/resolv.conf` either by [itself](#/etc/resolv.conf) or through [openresolv](#Use_openresolv).
+
+#### /etc/resolv.conf
+
+*NetworkManager* overwrites `/etc/resolv.conf` by default.
 
 This can be stopped by setting `dns=none` in a configuration file:
 

@@ -16,7 +16,6 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
         *   [1.1.2 scrot](#scrot)
         *   [1.1.3 escrotum](#escrotum)
         *   [1.1.4 maim](#maim)
-        *   [1.1.5 Flameshot](#Flameshot)
     *   [1.2 Desktop environment specific](#Desktop_environment_specific)
         *   [1.2.1 Spectacle](#Spectacle)
         *   [1.2.2 Xfce Screenshooter](#Xfce_Screenshooter)
@@ -47,7 +46,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
 
-*   **Flameshot** — Qt5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
+*   **[Flameshot](/index.php/Flameshot "Flameshot")** — Qt5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
 
 	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://www.archlinux.org/packages/?name=flameshot)
 
@@ -161,10 +160,6 @@ Because the command line interface its almost the same as scrot, can be used as 
 [maim](https://www.archlinux.org/packages/?name=maim) is aimed to be an improved scrot.
 
 Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot.
-
-#### Flameshot
-
-[flameshot](https://www.archlinux.org/packages/?name=flameshot) allows you to add simple shapes to your screenshot as you are taking it (either fullscreen or a selected region).
 
 ### Desktop environment specific
 

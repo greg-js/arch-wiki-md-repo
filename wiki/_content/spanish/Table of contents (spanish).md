@@ -133,7 +133,7 @@
 | <small>5.1.1.</small> [Accesibilidad](/index.php/Category:Accessibility_(Espa%C3%B1ol) "Category:Accessibility (Español)") <small>(1)</small> |
 | <small>5.1.2.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(2)</small> |
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications_(Espa%C3%B1ol) "Category:Console applications (Español)") <small>(7) (también en [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)"))</small> |
-| <small>5.1.4.</small> [Compresión y almacenamiendo de datos](/index.php/Category:Data_compression_and_archiving_(Espa%C3%B1ol) "Category:Data compression and archiving (Español)") <small>(2)</small> |
+| <small>5.1.4.</small> [Compresión y almacenamiendo de datos](/index.php/Category:Data_compression_and_archiving_(Espa%C3%B1ol) "Category:Data compression and archiving (Español)") <small>(3)</small> |
 | <small>5.1.5.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(3)</small> |
 | <small>5.1.5.1.</small> [DBMSs relacionales](/index.php/Category:Relational_DBMSs_(Espa%C3%B1ol) "Category:Relational DBMSs (Español)") <small>(1)</small> |
 | <small>5.1.6.</small> [Diccionarios](/index.php/Category:Dictionaries_(Espa%C3%B1ol) "Category:Dictionaries (Español)") <small>(2)</small> |

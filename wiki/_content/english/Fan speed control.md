@@ -248,6 +248,7 @@ Run `nbfc` to see all options. More information about configuration is available
 
 [i8kutils](https://aur.archlinux.org/packages/i8kutils/) is the main package to control fan speed. Additionally, you might want to install these:
 
+*   [acpi](https://www.archlinux.org/packages/?name=acpi) - must be installed to use `i8kmon`.
 *   [tcl](https://www.archlinux.org/packages/?name=tcl) - must be installed in order to run `i8kmon` as a background service (using the `--daemon` option).
 *   [tk](https://www.archlinux.org/packages/?name=tk) - must be installed together with [tcl](https://www.archlinux.org/packages/?name=tcl) to run as X11 desktop applet.
 *   [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/) - recommended if your BIOS overrides fan control

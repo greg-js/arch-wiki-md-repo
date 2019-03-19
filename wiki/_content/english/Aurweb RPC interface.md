@@ -17,9 +17,10 @@ The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [
         *   [1.1.1 search](#search)
         *   [1.1.2 info](#info)
     *   [1.2 Return types](#Return_types)
-        *   [1.2.1 error](#error)
-        *   [1.2.2 search](#search_2)
-        *   [1.2.3 info](#info_2)
+        *   [1.2.1 return data](#return_data)
+        *   [1.2.2 error](#error)
+        *   [1.2.3 search](#search_2)
+        *   [1.2.4 info](#info_2)
     *   [1.3 jsonp](#jsonp)
 *   [2 Limitations](#Limitations)
 *   [3 Reference clients](#Reference_clients)
@@ -132,7 +133,41 @@ The format of the return payload is:
 *   `multiinfo`
 *   `error`
 
+#### return data
+
 The type of `*ReturnData*` is an array of dictionary objects for the `search` and `multiinfo` `*ReturnType*`, and an empty array for `error` `*ReturnType*`.
+
+For the `*ReturnType*` `*search*`, `*ReturnData*` may contain the following fields:
+
+*   `ID`
+*   `Name`
+*   `PackageBaseID`
+*   `PackageBase`
+*   `Version`
+*   `Description`
+*   `URL`
+*   `NumVotes`
+*   `Popularity`
+*   `OutOfDate`
+*   `Maintainer`
+*   `FirstSubmitted`
+*   `LastModified`
+*   `URLPath`
+
+For the `*ReturnType*` `*info*` and `*multiinfo*`, `*ReturnData*` may additionally contain the following fields:
+
+*   `Depends`
+*   `MakeDepends`
+*   `OptDepends`
+*   `CheckDepends`
+*   `Conflicts`
+*   `Provides`
+*   `Replaces`
+*   `Groups`
+*   `License`
+*   `Keywords`
+
+Fields that a package does not contain will be omitted from the output.
 
 #### error
 
@@ -147,7 +182,7 @@ Example of `*ReturnType*` `error`:
 
 #### search
 
-The search type is the result returned from a search request operation. **The actual results of a search operation will be the same as an info request for each result. See the info section.**
+The search type is the result returned from a search request operation.
 
 Example of `*ReturnType*` `search`:
 
@@ -223,6 +258,8 @@ This would automatically call the JavaScript function `jsonp1192244621103` with 
 ## Limitations
 
 *   HTTP GET requests are limited to URI of 8190 bytes maximum length. However, the official AUR instance running on a nginx server with HTTP/2 uses the [default URI maximum length](https://nginx.org/en/docs/http/ngx_http_v2_module.html#http2_max_field_size) limit of 4443 bytes. Info requests with more than about 200 packages as an argument will need to be split.
+*   Search queries must be at least two characters long.
+*   Searches will fail if they contain 5000 or more results.
 *   The API rate is limited to a maximum of 4000 requests per day per IP.
 
 ## Reference clients

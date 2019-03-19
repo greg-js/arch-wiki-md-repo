@@ -811,7 +811,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **OneDrive** — Unofficial CLI for [OneDrive](https://onedrive.live.com/about/).
 
-	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive](https://aur.archlinux.org/packages/onedrive/)
+	[https://github.com/abraunegg/onedrive/](https://github.com/abraunegg/onedrive/) || [onedrive-bin](https://aur.archlinux.org/packages/onedrive-bin/)
 
 *   **[ownCloud](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud") Desktop Client** — Desktop syncing client for ownCloud.
 

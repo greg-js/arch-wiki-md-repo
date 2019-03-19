@@ -3,18 +3,22 @@ Artículos relacionados
 *   [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")
 *   [Environment variables](/index.php/Environment_variables "Environment variables")
 
-Existe una gran variedad de posibilidades para mejorar el indicador de bash y personalizandolo ayudara a ser más productivo en la linea de comandos. Se puede agregar información adicional al indicador, o simplemente colorearlo para hacer el indicador más atractivo.
+Existe una gran variedad de posibilidades para mejorar el indicador de bash y personalizándolo ayudará a ser más productivo en la línea de comandos. Se puede agregar información adicional al indicador, o simplemente colorearlo para hacer el indicador más atractivo.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Indicadores Basicos](#Indicadores_Basicos)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Indicadores Básicos](#Indicadores_Básicos)
 *   [2 Distinguir Indicadores de root y otros usuarios](#Distinguir_Indicadores_de_root_y_otros_usuarios)
 *   [3 Más personalizaciones para el indicador de Bash](#Más_personalizaciones_para_el_indicador_de_Bash)
 *   [4 Indicadores Avanzados](#Indicadores_Avanzados)
     *   [4.1 Wolfman](#Wolfman)
-*   [5 External Resources](#External_Resources)
+*   [5 Véase también](#Véase_también)
 
-## Indicadores Basicos
+## Indicadores Básicos
 
 Las siguientes configuraciones son útiles para distinguir el indicador de root de otros usuarios sin privilegios:
 
@@ -78,7 +82,7 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\]\[\e[1;
 
 ```
 
-Este indicador tiene las caracteristicas de que el nombre de usuario esta en verde, el directorio de trabajo en azul claro, un indicador $ en verde claro y la escritura de texto en blanco.
+Este indicador tiene las características de que el nombre de usuario está en verde, el directorio de trabajo en azul claro, un indicador $ en verde claro y la escritura de texto en blanco.
 
 Editar el indicador del usuario root:
 
@@ -101,23 +105,23 @@ PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$\[\e[m\]\[\e[0;
 
 ```
 
-Este indicador tiene las caracteristicas de que el nombre 'root' esta en rojo, el directorio de trabajo en azul claro, un indicador # en rojo y la escritura de texto en un horrible, tipo matrix, verde. ;)
+Este indicador tiene las características de que el nombre 'root' está en rojo, el directorio de trabajo en azul claro, un indicador # en rojo y la escritura de texto en un horrible, tipo matrix, verde. ;)
 
 Esta es la lista de algunos códigos de color para bash:
 
 ```
-Negro       0;30     Gris Obscuro  1;30
+Negro       0;30     Gris Oscuro   1;30
 Azul        0;34     Azul Claro    1;34
 Verde       0;32     Verde Claro   1;32
 Cyan        0;36     Cyan Claro    1;36
 Rojo        0;31     Rojo Claro    1;31
-Purpura     0;35     Fiuscha       1;35
+Púrpura     0;35     Fucsia        1;35
 Café        0;33     Amarillo      1;33
 Gris Claro  0;37     Blanco        1;37
 
 ```
 
-Reemplazar el digito 0 con 1 para obtener la versión del color claro, experimenta a tu gusto, y revisa el extracto de las páginas del manual de bash a continuación para además personalizar los carácteres especiales de escape.
+Reemplazar el dígito 0 con 1 para obtener la versión del color claro, experimenta a tu gusto, y revisa el extracto de las páginas del manual de bash a continuación para además personalizar los carácteres especiales de escape.
 
 **Consejo**:
 
@@ -150,7 +154,7 @@ PS1='\[$GREEN\]\u@\h \[$BLUE\]\w/\[$GREEN\] \$\[$WHITE\] '
 
 ```
 
-Los carácteres `\[` y `\]` son necesarios para evitar problemas con saltos de linea en la terminal.
+Los carácteres `\[` y `\]` son necesarios para evitar problemas con saltos de línea en la terminal.
 
 Para recargar el ambiente hacer:
 
@@ -161,7 +165,7 @@ source ~/.bashrc
 
 También puede ser deseable editar el archivo `/root/.bashrc` con un conjunto de entradas similares, usando RED para distiguir al usuario en la opción `\u`.
 
-Diferentes opciones pueden ser personalizadas con la secuencia de escape de la forma `\x` (extraidas de las páginas del manual de bash):
+Diferentes opciones pueden ser personalizadas con la secuencia de escape de la forma `\x` (extraídas de las páginas del manual de bash):
 
 ```
      Bash permite agregar estas cadenas al indicador mediante la inserción de *caracteres especiales escapados con diagonal invertida* que se decodifican como sigue:
@@ -172,8 +176,8 @@ Diferentes opciones pueden ser personalizadas con la secuencia de escape de la f
             \a     carácter de campana ASCII (07)
             \d     la fecha en formato día mes día (p.ej., "mié jul 02")
             \D{format}
-                   el formato es proporcionado a strftime(3) y el resultado es insertado en la cadena dle indicador; un formato vacío
-                   resulta en una representación de fecha especifica local. Las llaves son requeridas.
+                   el formato es proporcionado a strftime(3) y el resultado es insertado en la cadena del indicador; un formato vacío
+                   resulta en una representación de fecha específica local. Las llaves son requeridas.
             \e     caracter de escape ASCII (033)
             \h     el nombre del host hasta el primer `.'
             \H     el nombre del la máquina completo (FQDN)
@@ -206,10 +210,10 @@ nn   el caracter correspondiente al número en octal nnn
 
 ```
      El número de comando y el número histórico son generalmente diferentes: el número histórico de un comando es su posición  en  la
-     lista del historil, el cual puede incluir comandos restaurados desde el archivo histórico (ver HISTORY a continuación), mientras
-     que el número de comando es la posición en la secuencia de comandos ejecutadas durante la sesión actual del interprete.  Después
-     ls cadena es decodificada, esto es expandida mediante la expansión de parametros, substitucion de comandos, expansion aritmetica
-     y eliminacion de comillas, sujeto al valor de las opciones de variables del indicador del  interprete  (ver  la  descripción del
+     lista del historial, el cual puede incluir comandos restaurados desde el archivo histórico (ver HISTORY a continuación), mientras
+     que el número de comando es la posición en la secuencia de comandos ejecutadas durante la sesión actual del intérprete.  Después
+     la cadena es decodificada, esto es, expandida mediante la expansión de parámetros, sustitución de comandos, expansion aritmetica
+     y eliminacion de comillas, sujeto al valor de las opciones de variables del indicador del  intérprete  (ver  la  descripción del
      comando shopt en SHELL BUILTIN COMMANDS a continuación=.
 
 ```
@@ -265,10 +269,10 @@ bash_prompt() {
     case $TERM in
      xterm*|rxvt*)
          local TITLEBAR='\[\033]0;\u:${NEW_PWD}\007\]'
-          ;;
+          ;;
      *)
          local TITLEBAR=""
-          ;;
+          ;;
     esac
     local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
@@ -328,7 +332,7 @@ $ source ~/.bashrc
 
 ```
 
-## External Resources
+## Véase también
 
 *   Forum Discussion here: [https://bbs.archlinux.org/viewtopic.php?t=1817](https://bbs.archlinux.org/viewtopic.php?t=1817)
 *   [http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html)

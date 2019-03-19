@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-3-4**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=566575) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-3-4**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=568937) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -276,7 +276,7 @@ Para más fuentes mono espaciada vea [#Bitmap](#Bitmap) y [#Familias](#Familias)
 
 *   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), incluido en [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)).
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)).
-*   Fantasque Sans Mono ([ttf-fantasque-sans-git](https://aur.archlinux.org/packages/ttf-fantasque-sans-git/)).
+*   Fantasque Sans Mono ([ttf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=ttf-fantasque-sans-mono), [otf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=otf-fantasque-sans-mono)).
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – diseñado para Firefox OS.
 *   [FreeMono](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - fuente mono espaciada de código abierto, utilizada por defecto en KDE Plasma.

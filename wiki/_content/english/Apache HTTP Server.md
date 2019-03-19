@@ -462,6 +462,8 @@ Protocols h2 http/1.1
 
 For more information, see the [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html) documentation.
 
+Be aware that http2_module is not compatible with mpm_prefork_module that widely use for PHP setup. You may consider using [php-fpm](https://wiki.archlinux.org/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi) instead
+
 ## Troubleshooting
 
 ### Apache Status and Logs

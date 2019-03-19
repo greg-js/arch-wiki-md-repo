@@ -54,7 +54,7 @@ The main way to control herbstluftwm is though commands to herbstclient. Since h
 
 ### Script to switch to the next empty tag
 
-The following ruby script allows you to switch to the (next or previous) (full or empty) tag. Call it with the arguments (+1 or -1) and (full or empty). For example, if you save the script to herbst-move.py, then
+The following python script allows you to switch to the (next or previous) (full or empty) tag. Call it with the arguments (+1 or -1) and (full or empty). For example, if you save the script to herbst-move.py, then
 
 ```
 python3 herbst-move.py +1 full

@@ -19,7 +19,7 @@ KMS permite la resolución nativa en el framebuffer y permite al instante una co
 *   [1 Antecedentes](#Antecedentes)
 *   [2 Instalación](#Instalación)
     *   [2.1 Iniciar KMS con retardo](#Iniciar_KMS_con_retardo)
-    *   [2.2 Iniciar KMS tempranamente](#Iniciar_KMS_tempranamente)
+    *   [2.2 Iniciar de forma anticipada KMS](#Iniciar_de_forma_anticipada_KMS)
 *   [3 Solución de problemas](#Solución_de_problemas)
     *   [3.1 Tipos de letras demasiado pequeñas](#Tipos_de_letras_demasiado_pequeñas)
     *   [3.2 Cuestión sobre bootloading y dmesg](#Cuestión_sobre_bootloading_y_dmesg)
@@ -46,7 +46,7 @@ Los controladores [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), [
 
 Los controladores propietarios [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") y [ATI Catalyst](/index.php/ATI_Catalyst_(Espa%C3%B1ol) "ATI Catalyst (Español)") no se utilizan con los controladores abiertos. A fin de poder utilizar KMS debe reemplazarlos por los controladores de código abierto.
 
-### Iniciar KMS tempranamente
+### Iniciar de forma anticipada KMS
 
 Para cargar KMS tan pronto como sea posible en el proceso de arranque, añada el módulo [radeon](/index.php/Radeon "Radeon") (para tarjetas ATI/AMD), [i915](/index.php/Intel "Intel") (para tarjetas intel integradas) o [noveau](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)") (para tarjetas Nvidia) a la línea de `MODULES` en el archivo`/etc/mkinitcpio.conf`:
 

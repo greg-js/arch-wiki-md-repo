@@ -498,8 +498,8 @@ In this example, the cache server will run at `http://cache.domain.example:8080/
 Install [nginx](/index.php/Nginx "Nginx") on the computer that is going to host the cache. Create the directory for the cache and adjust the permissions so nginx can write files to it:
 
 ```
- # mkdir /srv/http/pacman-cache
- # chown http:http /srv/http/pacman-cache
+# mkdir /srv/http/pacman-cache
+# chown http:http /srv/http/pacman-cache
 
 ```
 

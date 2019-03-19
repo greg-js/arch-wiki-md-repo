@@ -6,7 +6,11 @@ This article describes how to configure and use a L2TP/IPsec Virtual Private Net
 
 This guide is primarily targeted for clients connecting to a Windows Server machine, as it uses some settings that are specific to the Microsoft implementation of L2TP/IPsec. However, it is adaptable with any other common L2TP/IPsec setup. The [Openswan wiki](https://github.com/xelerance/Openswan/wiki/L2tp-ipsec-configuration-using-openswan-and-xl2tpd) features instructions to set up a corresponding L2TP/IPSec Linux server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -19,6 +23,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 Script start up and shut down](#Script_start_up_and_shut_down)
     *   [5.2 A further script](#A_further_script)
+    *   [5.3 Script to resolve dns names and connect](#Script_to_resolve_dns_names_and_connect)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -354,6 +359,58 @@ function stop(){
 
 $1
 exit 0
+
+```
+
+### Script to resolve dns names and connect
+
+Very useful if you have dynamic IP for the server.
+
+```
+#!/bin/python
+
+from os import system
+from socket import gethostbyname
+from netifaces import ifaddresses, AF_INET
+from time import sleep
+
+# netifaces is a library installed with pip, not part of default insatllation of python
+# The script is useful if you have dynamic IP, or need to use a domain for the vpn server
+# gist: https://gist.github.com/physicalit/bf9e27c7ecbc12843cd68e442358616c
+# The template files are identical to the examples from the link above, except they use the sign `<` as placeholder for the server ip
+# can be added to cron, don't forghet to modify your domain and the ip/subnet from the `ip add route ...`
+
+ip = gethostbyname('your.domain.tld')
+
+file_list = ['/etc/xl2tpd/xl2tpd.conf_tmp', '/etc/ipsec.secrets_tmp', '/etc/ipsec.conf_tmp']
+
+def read_file(file):
+    with open(file, 'r') as f:
+        result = f.readlines()
+        #result = [l.rstrip('
+') for l in result]  # l.split('_')[0] 
+        return result
+
+def write_ip(ip):
+    for l in file_list:
+        result = [ip.join(e.split('<')) if "<" in e else e for e in read_file(l)]
+        with open(l.split('_')[0], 'w') as f:
+            for e in result:
+                f.write(e)
+
+if __name__ == "__main__":
+    write_ip(ip)
+    [ system('systemctl restart {}'.format(l)) for l in ['openswan', 'xl2tpd']]
+    vpn = system('ipsec auto --up L2TP-PSK')
+    system('echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control')
+    sleep(2) # very important or is not going to see ppp0 interface
+    if not vpn:
+        peer = ifaddresses('ppp0')[AF_INET][0]['peer']
+        route = system('ip route add 192.168.88.0/24 via {0} dev ppp0'.format(peer))
+        if not route:
+            print("VPN sucesfully connected. Route created.")
+        else:
+            print("VPN KO")
 
 ```
 

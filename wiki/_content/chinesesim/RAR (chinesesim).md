@@ -1,19 +1,23 @@
 RAR (and UNRAR) is the Linux port of the commandline-only version of [WinRAR](http://www.rarlab.com/download.htm) available in both the i686 and x86-64 flavors.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 主要特点](#.E4.B8.BB.E8.A6.81.E7.89.B9.E7.82.B9)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 主要特点](#主要特点)
+*   [2 安装](#安装)
     *   [2.1 RAR](#RAR)
     *   [2.2 UNRAR](#UNRAR)
-*   [3 配置文件](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-*   [4 RAR 压缩例子](#RAR_.E5.8E.8B.E7.BC.A9.E4.BE.8B.E5.AD.90)
-    *   [4.1 基本语法](#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95)
+*   [3 配置文件](#配置文件)
+*   [4 RAR 压缩例子](#RAR_压缩例子)
+    *   [4.1 基本语法](#基本语法)
     *   [4.2 Recursively compress an entire directory structure](#Recursively_compress_an_entire_directory_structure)
     *   [4.3 Mixed-mode archives](#Mixed-mode_archives)
     *   [4.4 Recursively compress many directory structures using a list](#Recursively_compress_many_directory_structures_using_a_list)
-*   [5 UNRAR 例子](#UNRAR_.E4.BE.8B.E5.AD.90)
-    *   [5.1 基本语法](#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95_2)
+*   [5 UNRAR 例子](#UNRAR_例子)
+    *   [5.1 基本语法](#基本语法_2)
 
 ## 主要特点
 

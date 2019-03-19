@@ -2,7 +2,11 @@
 
 [2bwm](https://aur.archlinux.org/packages/2bwm/) is a fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -10,10 +14,10 @@
 *   [3 Using 2bwm](#Using_2bwm)
     *   [3.1 General commands](#General_commands)
     *   [3.2 Window controls](#Window_controls)
-    *   [3.3 Move, resize and teleport a window](#Move.2C_resize_and_teleport_a_window)
+    *   [3.3 Move, resize and teleport a window](#Move,_resize_and_teleport_a_window)
     *   [3.4 Workspaces](#Workspaces)
     *   [3.5 Mouse controls](#Mouse_controls)
-*   [4 Tips & Tricks](#Tips_.26_Tricks)
+*   [4 Tips & Tricks](#Tips_&_Tricks)
     *   [4.1 Starting 2bwm over a terminal](#Starting_2bwm_over_a_terminal)
     *   [4.2 Get the current workspace number using a script](#Get_the_current_workspace_number_using_a_script)
     *   [4.3 Easy to remember outer border colours](#Easy_to_remember_outer_border_colours)

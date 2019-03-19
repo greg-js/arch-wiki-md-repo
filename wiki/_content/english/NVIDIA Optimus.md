@@ -191,7 +191,7 @@ You can read the official [forum thread](https://devtalk.nvidia.com/default/topi
 
 ### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 
-Add `rcutree.rcu_idle_gp_delay=1` to the kernel parameters. Original topic can be found [here](https://bbs.archlinux.org/viewtopic.php?id=169742).
+Add `rcutree.rcu_idle_gp_delay=1` to the kernel parameters. Original topic can be found in [[4]](https://github.com/Bumblebee-Project/Bumblebee/issues/455#issuecomment-22497464) and [[5]](https://bbs.archlinux.org/viewtopic.php?id=169742).
 
 ### Resolution, screen scan wrong. EDID errors in Xorg.log
 
@@ -238,7 +238,7 @@ Check if `$ lspci | grep VGA` outputs something similar to:
 
 ```
 
-NVIDIA drivers now offer Optimus support since 319.12 Beta [[4]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
+NVIDIA drivers now offer Optimus support since 319.12 Beta [[6]](http://www.nvidia.com/object/linux-display-amd64-319.12-driver.html) with kernels above and including 3.9.
 
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 

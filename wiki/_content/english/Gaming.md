@@ -209,10 +209,12 @@ Cloud gaming has gained a lot of popularity in the last few years, because of lo
 *   [Parsec](https://ui.parsecgaming.com/) — Remotely play games either from your host machine or rented (within an app) cloud machine. It prioritizes direct connection to the host (great for VPN connections) and if it's not available, then connects via Parsec's servers. Can be installed as [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/).
 *   [LiquidSky](https://liquidsky.com/) — Remotely play games from rented (within an app) cloud machine. Can be installed as [liquidsky](https://aur.archlinux.org/packages/liquidsky/).
 *   [Shadow](https://shadow.tech/) — Remotely play games from rented (within an app) cloud machine. Can be installed as [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/).
+*   [Vortex.gg](https://vortex.gg/dashboard) — Remotely play games from their servers. No installation or configuration is required. Works in browser.
+*   [Rainway.com](https://rainway.com/) — Remotely play games from your host machine. Works in browser (Linux client is coming at around 2019 Q3).
 
 Also there are other services where users have reported success getting it to work under Linux (via [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton):
 
-*   [PS Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) — Play PS4, PS3 and PS2 games on PC.
+*   [PS Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) — Play PS4, PS3 and PS2 games on PC. Alternatively, you can use emulators (see [Video_game_platform_emulators](/index.php/Video_game_platform_emulators "Video game platform emulators")).
 *   [PLAYKEY](https://playkey.net/) — Yet another cloud gaming service.
 
 ## Improving performance

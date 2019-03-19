@@ -2,6 +2,46 @@
 
 [dbus](https://www.archlinux.org/packages/?name=dbus) is pulled and installed as a dependency of [systemd](https://www.archlinux.org/packages/?name=systemd) and user session bus is [started automatically](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) for each user.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Alternative Implementations](#Alternative_Implementations)
+    *   [1.1 dbus-broker](#dbus-broker)
+*   [2 Debugging](#Debugging)
+*   [3 See also](#See_also)
+
+## Alternative Implementations
+
+### dbus-broker
+
+[dbus-broker](https://www.archlinux.org/packages/?name=dbus-broker) is a drop-in replacement for the libdbus reference implementation, which aims "to provide high performance and reliability, while keeping compatibility to the D-Bus reference implementation". [[1]](https://github.com/bus1/dbus-broker)
+
+To enable dbus-broker as the system bus:
+
+```
+# systemctl enable dbus-broker.service
+
+```
+
+To enable as a user bus, run as the desired user:
+
+```
+$ systemctl --user enable dbus-broker.service
+
+```
+
+Or, to enable for all users, run as root:
+
+```
+# systemctl --global enable dbus-broker.service
+
+```
+
+Reboot for these settings to take effect.
+
 ## Debugging
 
 *   **D-Feet** — Easy to use D-Bus debugger GUI tool. D-Feet can be used to inspect D-Bus interfaces of running programs and invoke methods on those interfaces.

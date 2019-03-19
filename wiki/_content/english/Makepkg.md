@@ -263,7 +263,7 @@ $ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKA
 
 ### Build 32-bit packages on a 64-bit system
 
-**Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package. The [chroot method](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") is preferred and has been verified to work for building the kernel packages.
+**Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package. The [schroot method](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") is preferred and has been verified to work for building the kernel packages.
 
 First, enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
 
@@ -284,6 +284,8 @@ and invoke makepkg as such
 $ linux32 makepkg --config ~/.makepkg.i686.conf
 
 ```
+
+Alternatively, native 32-bit packages can be built in a [clean chroot](/index.php/Building_in_a_32-bit_clean_chroot "Building in a 32-bit clean chroot").
 
 ## Troubleshooting
 
