@@ -1,6 +1,10 @@
 Эта статья описывает как настроить PostgreSQL и интегрировать ее с [PHP](/index.php/PHP "PHP") и [Apache](/index.php/Apache "Apache"). Она также описывает, как сделать PostgreSQL доступным из клиента удалённого доступа. Считаем, что [PHP](/index.php/PHP "PHP") и [Apache](/index.php/Apache "Apache") уже установлены. Если вам нужна помощь настройки любой из этих программ, смотрите [LAMP](/index.php/LAMP "LAMP") и следуйте всем разделам, кроме связанного с [MySQL](/index.php/MySQL "MySQL").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка PostgreSQL](#Установка_PostgreSQL)
 *   [2 Создание Вашей первой базы данных](#Создание_Вашей_первой_базы_данных)
@@ -360,7 +364,7 @@ returns
 blog      | postgres | UTF8      | C         | C     | 
 postgres  | postgres | SQL_ASCII | C         | C     | 
 template0 | postgres | SQL_ASCII | C         | C     | =c/postgres
-                                                     : postgres=CTc/postgres
+                                                     : postgres=CTc/postgres
 template1 | postgres | UTF8      | C         | C     |
 
 ```

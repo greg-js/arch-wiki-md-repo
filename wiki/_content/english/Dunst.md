@@ -29,7 +29,9 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package. There is no need to start or enable dunst; it is called by systemd when programs send notifications through dbus.
+[Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package. Launch `/usr/bin/dunst` and make sure your WM/DE starts it on startup/login.
+
+*(Note: It may seem like there's no need to manually start dunst, as it may get autostarted by dbus-daemon when programs send notifications through D-Bus. However, the notification service frequently has multiple daemons installed, and there is no way to know which daemon will be autostarted. The dbus-daemon maintainers explicitly warn against relying on autostart for multiple-provider services.)*
 
 An example configuration file is included at `/usr/share/dunst/dunstrc`. Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.
 

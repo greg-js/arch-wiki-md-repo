@@ -1,16 +1,20 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Введение](#.D0.92.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [3.1 Включение ACL](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_ACL)
-    *   [3.2 Изменение прав ACL](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2_ACL)
-    *   [3.3 Просмотр прав ACL](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BF.D1.80.D0.B0.D0.B2_ACL)
-*   [4 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
-    *   [4.1 Вывод команды ls](#.D0.92.D1.8B.D0.B2.D0.BE.D0.B4_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B_ls)
-    *   [4.2 Поиск файлов с правами ACL](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.81_.D0.BF.D1.80.D0.B0.D0.B2.D0.B0.D0.BC.D0.B8_ACL)
-    *   [4.3 Предоставление разрешений на выполнение личных файлов веб-сервером](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BD.D0.B0_.D0.B2.D1.8B.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B2.D0.B5.D0.B1-.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.BE.D0.BC)
-*   [5 Дополнительные ресурсы](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.80.D0.B5.D1.81.D1.83.D1.80.D1.81.D1.8B)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Введение](#Введение)
+*   [2 Установка](#Установка)
+*   [3 Настройка](#Настройка)
+    *   [3.1 Включение ACL](#Включение_ACL)
+    *   [3.2 Изменение прав ACL](#Изменение_прав_ACL)
+    *   [3.3 Просмотр прав ACL](#Просмотр_прав_ACL)
+*   [4 Примеры](#Примеры)
+    *   [4.1 Вывод команды ls](#Вывод_команды_ls)
+    *   [4.2 Поиск файлов с правами ACL](#Поиск_файлов_с_правами_ACL)
+    *   [4.3 Предоставление разрешений на выполнение личных файлов веб-сервером](#Предоставление_разрешений_на_выполнение_личных_файлов_веб-сервером)
+*   [5 Дополнительные ресурсы](#Дополнительные_ресурсы)
 
 ## Введение
 
@@ -239,5 +243,5 @@ other::---
 
 ## Дополнительные ресурсы
 
-*   [getfacl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/getfacl.1)
-*   [setfacl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/setfacl.1)
+*   [getfacl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getfacl.1)
+*   [setfacl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfacl.1)

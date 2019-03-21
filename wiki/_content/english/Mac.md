@@ -45,7 +45,8 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
             *   [6.3.1.1 NVIDIA note](#NVIDIA_note_2)
     *   [6.4 Wi-Fi](#Wi-Fi)
     *   [6.5 Power management](#Power_management)
-        *   [6.5.1 Suspend and Hibernate](#Suspend_and_Hibernate)
+        *   [6.5.1 Disabling Thunderbolt](#Disabling_Thunderbolt)
+        *   [6.5.2 Suspend and Hibernate](#Suspend_and_Hibernate)
     *   [6.6 Wake Up After Suspend](#Wake_Up_After_Suspend)
     *   [6.7 Light sensor](#Light_sensor)
     *   [6.8 Sound](#Sound)
@@ -710,7 +711,27 @@ You can easily check what card do your MacBook have by:
 
 [Powerdown](/index.php/Powerdown "Powerdown") is a very simple to set up set of scripts what will maximize your battery duration. A MacBook Air 2013 with powerdown provides about 11 hours of light usage with just powerdown installed. All the usual [power management](/index.php/Power_management "Power management") recomendations apply as well.
 
-Adding 'acpi_osi=' to kernel parameters reportedly brings the battery life of a MacBook Air 2013 from 5 hours to 11-12 hours. See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1530283#p1530283) for more information.
+#### Disabling Thunderbolt
+
+Linux still has poor power management for Thunderbolt adapters on Macs. This can cause the TB adapter(s) to be always-on and prevent the CPU from going into the deepest power-saving states [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=92111), drawing ca. 2W additional power even when not in use [[3]](https://github.com/Dunedan/mbp-2016-linux/issues/24#issuecomment-310952415). An easy way to see the CPU states is using powertop. The problem arises when the CPU does not go below C3 as a package (Pkg%pc3).
+
+One workaround is to add
+
+```
+   acpi_osi=!Darwin
+
+```
+
+to the kernel parameters in your bootloader, thereby telling the firmware that the system is not compatible with macOS [[4]](https://www.kernel.org/doc/Documentation/acpi/osi.txt). This should disable the TB adapter (at least on older Macs), and thus reduce power consumption greatly, but will probably come with side-effects (e.g. no Thunderbolt, maybe others?).
+
+It is also possible to [blacklist](https://wiki.archlinux.org/index.php/Kernel_module#Blacklisting) the thunderbolt module and then putting the controllers to sleep with
+
+```
+   echo auto > /sys/bus/pci/devices/0000:07:00.0/power/control
+
+```
+
+Check the correct device number with lspci. This can also be [automated](https://wiki.archlinux.org/index.php/Systemd#Temporary_files). This method reduces power consumption slightly, but still consumes 0.9 W more than the previous method on a Macbook Air 2013.
 
 #### Suspend and Hibernate
 
@@ -818,7 +839,7 @@ The values can be read from:
 
 A "cat" on this path returns two-tuples like (4,0). The below referenced lighter script ignores the second value - which always seems to be 0 - and uses the first number as measured environment lighting brightness value.
 
-If you want to use the built in light sensor to automatically adjust screen and keyboard backlight brightness check out **Lighter** [[2]](https://github.com/Janhouse/lighter) (simple perl script, easy to fine-tune) and **Lightum** [[3]](https://github.com/poliva/lightum) (Requires Gnome or KDE but is older and more complete than Lighter).
+If you want to use the built in light sensor to automatically adjust screen and keyboard backlight brightness check out **Lighter** [[5]](https://github.com/Janhouse/lighter) (simple perl script, easy to fine-tune) and **Lightum** [[6]](https://github.com/poliva/lightum) (Requires Gnome or KDE but is older and more complete than Lighter).
 
 ### Sound
 
@@ -1721,7 +1742,7 @@ There are more steps on how to resolve this issue in [this thread on the Arch fo
 
 ##### Suspend/Resume
 
-Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[4]](https://github.com/patjak/mba6x_bl).
+Brightness is either 0% or 100% after resuming from suspend. Until the kernel is fixed, use patjak's fix by installing [mba6x_bl-dkms](https://aur.archlinux.org/packages/mba6x_bl-dkms/). Patjak's github is at [[7]](https://github.com/patjak/mba6x_bl).
 
 ##### WiFi
 
@@ -1747,14 +1768,22 @@ Since 3.10.3 kernel touchpad works perfectly with [xf86-input-synaptics](https:/
 
 ##### Audio
 
-As of Linux 3.12, sound works out of the box. If you do not get sound with only [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), you may need to create a /etc/asound.conf with below entries:
+ALSA may recognise the HDMI audio out as card 0 which will be the default card. Confirm this by checking the output of
+
+```
+   aplay -l
+
+```
+
+If that is the case, you may need to create a /etc/asound.conf with below entries:
 
 ```
  defaults.pcm.card 1
- defaults.pcm.device 0
  defaults.ctl.card 1
 
 ```
+
+to use the HDA Intel card, ie. the built-in speakers / headphones.
 
 #### Mid 2012 13" — version 5,2
 

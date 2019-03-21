@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Linux console](/index.php/Linux_console "Linux console"). Data da última tradução: 2018-09-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console&diff=0&oldid=544177) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Linux console](/index.php/Linux_console "Linux console"). Data da última tradução: 2019-03-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console&diff=0&oldid=567964) na versão em inglês.
 
 Artigos relacionados
 
@@ -13,7 +13,11 @@ De acordo com [Wikipédia](https://en.wikipedia.org/wiki/Linux_console "wikipedi
 
 Este artigo descreve os conceitos básicos do console do Linux e como configurar a exibição da fonte. A configuração do teclado é descrita na subpágina [/Configuração de teclado](/index.php/Linux_console/Configura%C3%A7%C3%A3o_de_teclado "Linux console/Configuração de teclado").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Implementação](#Implementação)
     *   [1.1 Consoles virtuais](#Consoles_virtuais)
@@ -23,6 +27,7 @@ Este artigo descreve os conceitos básicos do console do Linux e como configurar
 *   [3 Fontes](#Fontes)
     *   [3.1 Visualizar alterações e alterações temporárias](#Visualizar_alterações_e_alterações_temporárias)
     *   [3.2 Configuração persistente](#Configuração_persistente)
+    *   [3.3 HiDPI](#HiDPI)
 *   [4 Veja também](#Veja_também)
 
 ## Implementação
@@ -125,6 +130,10 @@ Isso significa que a segunda parte dos caracteres ISO/IEC 8859 é usada com tama
 Para usar a fonte especificada no espaço do usuário, use o gancho `consolefont` em `/etc/mkinitcpio.conf`. Veja [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") para mais informações.
 
 Se as fontes parecerem não mudar na inicialização, ou mudarem apenas temporariamente, é mais provável que tenham sido reiniciadas quando o driver gráfico foi inicializado e o console foi mudado para o framebuffer. Para evitar isso, carregue seu driver de gráficos anteriormente. Veja por exemplo [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), [[3]](https://bbs.archlinux.org/viewtopic.php?id=145765) ou outras maneiras de configurar seu framebuffer antes de `/etc/vconsole.conf` é aplicado.
+
+### HiDPI
+
+Veja [HiDPI#Linux console](/index.php/HiDPI#Linux_console "HiDPI").
 
 ## Veja também
 

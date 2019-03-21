@@ -9,15 +9,18 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Details](#Hardware_Details)
-*   [2 Tunning](#Tunning)
-    *   [2.1 lm_sensors](#lm_sensors)
-    *   [2.2 Kernel and Grub Parameters](#Kernel_and_Grub_Parameters)
-    *   [2.3 Power Saving Modes](#Power_Saving_Modes)
-        *   [2.3.1 plugged](#plugged)
-        *   [2.3.2 On battery](#On_battery)
-    *   [2.4 Fan Control](#Fan_Control)
-    *   [2.5 Wifi](#Wifi)
-*   [3 Others](#Others)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Screen goes blank](#Screen_goes_blank)
+*   [3 Tunning](#Tunning)
+    *   [3.1 lm_sensors](#lm_sensors)
+    *   [3.2 Kernel and Grub Parameters](#Kernel_and_Grub_Parameters)
+    *   [3.3 Power Saving Modes](#Power_Saving_Modes)
+        *   [3.3.1 plugged](#plugged)
+        *   [3.3.2 On battery](#On_battery)
+    *   [3.4 Fan Control](#Fan_Control)
+    *   [3.5 Wifi](#Wifi)
+    *   [3.6 Blacklisting unused module](#Blacklisting_unused_module)
+*   [4 Others](#Others)
 
 ## Hardware Details
 
@@ -67,6 +70,17 @@ Bus 001 Device 002: ID 0483:91d1 STMicroelectronics Sensor Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+## Troubleshooting
+
+#### Screen goes blank
+
+The boot process normally gets stuck at certain point of the boot process and the scren goes blank. You can check if the caps lock LED still works. If that's the case, it means that **only** the amdgpu driver is gone. The rest of the system will be functional, meaning:
+
+*   You can ssh to that machine
+*   You can perform login and some debugging commands in blind mode, dumping their output into some files in the hard disk for posterior checks.
+
+The solution is to disable Legacy Boot in the BIOS, so the UEFI mode will be the one used to boot. Tested with Secure Boot turned **off**
 
 ## Tunning
 
@@ -127,6 +141,17 @@ Ill pull request upon more testing
 ### Wifi
 
 Broadcom wifi works.... sometimes.... you will need linux firmware package.(if someone can write a tutorial, please help i was using manjaro) I switched for an intel ac 8260 and now works perfect, as a reference, [amazon link](https://www.amazon.com/gp/product/B0197W86IE/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) to the product.
+
+### Blacklisting unused module
+
+There is no support for IPMI in this laptop so we can disable sp5100_tco in `/etc/modprobe.d/sp5100_tco.conf`:
+
+```
+blacklist sp5100_tco
+
+```
+
+This will prevent some warnings while booting.
 
 ## Others
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=564634) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-03-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=565326) na versão em inglês.
 
 Artigos relacionados
 
@@ -94,7 +94,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina é um ambiente de desktop leve escrito em Qt 5 para o FreeBSD que usa o Fluxbox para gerenciamento de janelas.
 
-	[https://lumina-desktop.org/](https://lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
+	[https://www.lumina-desktop.org/](https://www.lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork do Enlightenment atualmente usado como ambiente de desktop padrão no Bodhi Linux baseado em Ubuntu.
 

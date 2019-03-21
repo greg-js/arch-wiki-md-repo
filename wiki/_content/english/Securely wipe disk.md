@@ -312,7 +312,7 @@ xz: (stdout): Write error: No space left on device
 dd: writing to ‘standard output’: No space left on device
 20481+0 records in
 20480+0 records out
-10485760 bytes (10 MB) copied, 2.29914 s, 4.6 MB/s
+10485760 bytes (10 MB, 10 MiB) copied, 2.29914 s, 4.6 MB/s
 ```
 
 The file copy command `cp` can also be used to rewrite the device, because it ignores the type of the destination:
@@ -357,7 +357,7 @@ The process is finished when dd reports `No space left on device` and returns co
 dd: writing to ‘/dev/sdb’: No space left on device
 7959553+0 records in
 7959552+0 records out
-4075290624 bytes (4.1 GB) copied, 1247.7 s, 3.3 MB/s
+4075290624 bytes (4.1 GB, 3.8 GiB) copied, 1247.7 s, 3.3 MB/s
 
 ```
 

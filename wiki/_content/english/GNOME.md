@@ -254,7 +254,7 @@ or via [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
 While any other [network manager](/index.php/Network_manager "Network manager") can be used as well, NetworkManager provides the full integration via the shell network settings and a status indicator applet [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (not required for GNOME).
 
-**Note:** Hidden wireless networks set up with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)'s nmtui do not connect automatically. You need to create a new profile using GNOME control center in order to restore auto-connect capabilities for that network.
+**Note:** Hidden wireless networks set up with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)'s *nmtui* do not connect automatically. You need to create a new profile using GNOME control center in order to restore auto-connect capabilities for that network.
 
 #### Online accounts
 

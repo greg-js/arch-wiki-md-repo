@@ -83,10 +83,11 @@
         *   [1.6.3 Usenet newsreaders](#Usenet_newsreaders)
             *   [1.6.3.1 Console](#Console_10)
             *   [1.6.3.2 Graphical](#Graphical_10)
-        *   [1.6.4 Blog engines](#Blog_engines)
-        *   [1.6.5 Microblogging clients](#Microblogging_clients)
-            *   [1.6.5.1 Console](#Console_11)
-            *   [1.6.5.2 Graphical](#Graphical_11)
+        *   [1.6.4 Microblogging clients](#Microblogging_clients)
+            *   [1.6.4.1 Console](#Console_11)
+            *   [1.6.4.2 Graphical](#Graphical_11)
+        *   [1.6.5 Blog engines](#Blog_engines)
+        *   [1.6.6 Static site generators](#Static_site_generators)
     *   [1.7 Remote desktop](#Remote_desktop)
         *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
         *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
@@ -2001,48 +2002,6 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[http://www.mit.edu/people/jik/software/xrn.html](http://www.mit.edu/people/jik/software/xrn.html) || [xrn](https://aur.archlinux.org/packages/xrn/)
 
-#### Blog engines
-
-See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "wikipedia:Blog software") and [Wikipedia:List of content management systems](https://en.wikipedia.org/wiki/List_of_content_management_systems "wikipedia:List of content management systems").
-
-**Note:** Content managers, social networks, and blog publishers overlap in many functions.
-
-*   **[Diaspora](/index.php/Diaspora "Diaspora")** — A distributed privacy aware social network.
-
-	[https://diasporafoundation.org](https://diasporafoundation.org) || [diaspora-mysql](https://aur.archlinux.org/packages/diaspora-mysql/) or [diaspora-postgresql](https://aur.archlinux.org/packages/diaspora-postgresql/)
-
-*   **[Drupal](/index.php/Drupal "Drupal")** — A PHP-based content management platform.
-
-	[http://www.drupal.org/](http://www.drupal.org/) || [drupal](https://www.archlinux.org/packages/?name=drupal)
-
-*   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
-
-	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
-
-*   **[Jekyll](/index.php/Jekyll "Jekyll")** — A static blog engine, written in Ruby, which supports Markdown, textile and other formats.
-
-	[http://jekyllrb.com/](http://jekyllrb.com/) || [jekyll](https://aur.archlinux.org/packages/jekyll/)
-
-*   **[Joomla](/index.php/Joomla "Joomla")** — A php Content Management System (CMS) which enables you to build websites and powerful online applications.
-
-	[http://www.joomla.org/](http://www.joomla.org/) || [joomla](https://aur.archlinux.org/packages/joomla/)
-
-*   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not mantained anymore.
-
-	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
-
-*   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
-
-	[https://getnikola.com/](https://getnikola.com/) || [nikola](https://www.archlinux.org/packages/?name=nikola)
-
-*   **Pelican** — A static site generator, powered by Python.
-
-	[http://docs.getpelican.com/](http://docs.getpelican.com/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
-
-*   **[Wordpress](/index.php/Wordpress "Wordpress")** — Blog tool and publishing platform.
-
-	[https://wordpress.org/](https://wordpress.org/) || [wordpress](https://www.archlinux.org/packages/?name=wordpress)
-
 #### Microblogging clients
 
 See also [Wikipedia:List of Twitter services and applications](https://en.wikipedia.org/wiki/List_of_Twitter_services_and_applications "wikipedia:List of Twitter services and applications").
@@ -2094,6 +2053,54 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 *   **Whalebird** — Mastodon client application. Based on the [Electron](https://electronjs.org/) platform.
 
 	[https://whalebird.org/](https://whalebird.org/) || [whalebird-bin](https://aur.archlinux.org/packages/whalebird-bin/)
+
+#### Blog engines
+
+See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "wikipedia:Blog software") and [Wikipedia:List of content management systems](https://en.wikipedia.org/wiki/List_of_content_management_systems "wikipedia:List of content management systems").
+
+**Note:** Content managers, social networks, and blog publishers overlap in many functions.
+
+*   **[Diaspora](/index.php/Diaspora "Diaspora")** — A distributed privacy aware social network.
+
+	[https://diasporafoundation.org](https://diasporafoundation.org) || [diaspora-mysql](https://aur.archlinux.org/packages/diaspora-mysql/) or [diaspora-postgresql](https://aur.archlinux.org/packages/diaspora-postgresql/)
+
+*   **[Drupal](/index.php/Drupal "Drupal")** — A PHP-based content management platform.
+
+	[http://www.drupal.org/](http://www.drupal.org/) || [drupal](https://www.archlinux.org/packages/?name=drupal)
+
+*   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
+
+	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
+
+*   **[Joomla](/index.php/Joomla "Joomla")** — A php Content Management System (CMS) which enables you to build websites and powerful online applications.
+
+	[http://www.joomla.org/](http://www.joomla.org/) || [joomla](https://aur.archlinux.org/packages/joomla/)
+
+*   **[Wordpress](/index.php/Wordpress "Wordpress")** — Blog tool and publishing platform.
+
+	[https://wordpress.org/](https://wordpress.org/) || [wordpress](https://www.archlinux.org/packages/?name=wordpress)
+
+#### Static site generators
+
+*   **Hexo** — Fast, simple and powerful blog framework.
+
+	[https://hexo.io/](https://hexo.io/) || [nodejs-hexo-cli](https://aur.archlinux.org/packages/nodejs-hexo-cli/)
+
+*   **[Jekyll](/index.php/Jekyll "Jekyll")** — Static blog engine, written in Ruby, which supports Markdown, textile and other formats.
+
+	[http://jekyllrb.com/](http://jekyllrb.com/) || [jekyll](https://aur.archlinux.org/packages/jekyll/)
+
+*   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not maintained anymore.
+
+	[http://nanoblogger.sourceforge.net/](http://nanoblogger.sourceforge.net/) || [nanoblogger](https://aur.archlinux.org/packages/nanoblogger/)
+
+*   **Nikola** — Static site generator written in Python, with incremental rebuilds and multiple markup formats.
+
+	[https://getnikola.com/](https://getnikola.com/) || [nikola](https://www.archlinux.org/packages/?name=nikola)
+
+*   **Pelican** — Static site generator, powered by Python.
+
+	[http://docs.getpelican.com/](http://docs.getpelican.com/) || [pelican](https://www.archlinux.org/packages/?name=pelican)
 
 ### Remote desktop
 

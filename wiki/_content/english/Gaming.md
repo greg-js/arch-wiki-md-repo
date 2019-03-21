@@ -203,14 +203,16 @@ If your system is currently configured to properly insert its own cpu frequency 
 
 ## Remote gaming
 
-Cloud gaming has gained a lot of popularity in the last few years, because of low client-side hardware requirements. The only important thing is rock-stable internet connection (over the ethernet cable or 5ghz WiFi recommended) with a minimum speed of 5-10mbps (depending on the video quality and framerate).
+[Cloud gaming](https://en.wikipedia.org/wiki/Cloud_gaming "wikipedia:Cloud gaming") has gained a lot of popularity in the last few years, because of low client-side hardware requirements. The only important thing is stable internet connection (over the ethernet cable or 5 GHz WiFi recommended) with a minimum speed of 5–10 Mbit/s (depending on the video quality and framerate).
 
 *   [Steam In-Home](/index.php/Steam#In-home_streaming "Steam") — Remotely play games on the LAN from host machine. Some users managed to get it working over the VPN.
-*   [Parsec](https://ui.parsecgaming.com/) — Remotely play games either from your host machine or rented (within an app) cloud machine. It prioritizes direct connection to the host (great for VPN connections) and if it's not available, then connects via Parsec's servers. Can be installed as [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/).
-*   [LiquidSky](https://liquidsky.com/) — Remotely play games from rented (within an app) cloud machine. Can be installed as [liquidsky](https://aur.archlinux.org/packages/liquidsky/).
-*   [Shadow](https://shadow.tech/) — Remotely play games from rented (within an app) cloud machine. Can be installed as [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/).
-*   [Vortex.gg](https://vortex.gg/dashboard) — Remotely play games from their servers. No installation or configuration is required. Works in browser.
-*   [Rainway.com](https://rainway.com/) — Remotely play games from your host machine. Works in browser (Linux client is coming at around 2019 Q3).
+*   [Parsec](https://ui.parsecgaming.com/) — Remotely play games either from your Windows host machine or rented (within an app) Windows cloud machine. It prioritizes direct connection to the host (great for VPN connections) and if it's not available, then connects via Parsec's servers. Can be installed as [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/).
+*   [LiquidSky](https://liquidsky.com/) — Remotely play games from rented (within an app) Windows cloud machine. Can be installed as [liquidsky](https://aur.archlinux.org/packages/liquidsky/).
+*   [Shadow](https://shadow.tech/) — Remotely play games from rented (within an app) Windows cloud machine. Can be installed as [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/).
+*   [Vortex](https://vortex.gg/) — Remotely play games from their servers. No installation or configuration is required. Works in browser.
+*   [Rainway](https://rainway.com/) — Remotely play games from your Windows host machine. Works in browser (Linux client is coming at around 2019 Q3).
+*   [Moonlight](https://moonlight-stream.org/) — Remotely play games from your Windows host machine with Nvidia GPU. Can be installed as [moonlight](https://aur.archlinux.org/packages/moonlight/).
+*   [Dixper](https://dixper.gg/) — Remotely play games from your Windows host machine. Works in browser.
 
 Also there are other services where users have reported success getting it to work under Linux (via [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton):
 

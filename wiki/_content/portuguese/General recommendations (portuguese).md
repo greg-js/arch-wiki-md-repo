@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=563264) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=566274) na versão em inglês.
 
 Artigos relacionados
 
@@ -172,7 +172,7 @@ Essa seção fornece orientação para usuários interessados em usar aplicativo
 
 ### Drivers de exibição
 
-O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de vídeo, porém o desempenho pode ser drasticamente melhorado e recursos adicionais aproveitados instalando o driver apropriado para produtos [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel_(Portugu%C3%AAs) "Intel (Português)") ou [NVIDIA](/index.php/NVIDIA "NVIDIA").
+O driver de vídeo *vesa* padrão vai funcionar com a maioria das placas de vídeo, porém o desempenho pode ser drasticamente melhorado e recursos adicionais aproveitados instalando o driver apropriado para produtos [AMD](/index.php/Xorg#AMD "Xorg"), [Intel](/index.php/Intel_(Portugu%C3%AAs) "Intel (Português)") ou [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 ### Ambientes gráficos
 
@@ -244,7 +244,7 @@ O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "w
 
 ### Segurança de DNS
 
-Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)") e tarefas similares, considere usar um [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System para criptografar tráfego DNS.
+Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)") e tarefas similares, considere usar um [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System e um protocolo criptografado como [DNS sobre TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS sobre HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"). Veja [Resolução de nome de domínio](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio "Resolução de nome de domínio") para detalhes.
 
 ### Configuração de um firewall
 

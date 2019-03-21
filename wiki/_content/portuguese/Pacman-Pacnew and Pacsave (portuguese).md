@@ -1,17 +1,23 @@
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&diff=0&oldid=565433) na versão em inglês.
+
 Quando o *pacman* remove um pacote que tem um arquivo de configuração, ele normalmente cria uma cópia backup daquele arquivo de configuração e anexa *.pacsave* ao nome do arquivo. Da mesma forma, quando o *pacman* atualiza um pacote que inclui um novo arquivo de configuração pelo mantenedor, comparando-o com a configuração atualmente instalada, ele salva um arquivo *.pacnew* com a nova configuração. O *pacman* fornece um aviso quando esses arquivos são escritos.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Por que esses arquivos são criados](#Por_que_esses_arquivos_s.C3.A3o_criados)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Por que esses arquivos são criados](#Por_que_esses_arquivos_são_criados)
 *   [2 Arquivos backup do pacote](#Arquivos_backup_do_pacote)
 *   [3 Tipos explicados](#Tipos_explicados)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
-*   [4 Localizando arquivos .pac*](#Localizando_arquivos_.pac.2A)
+*   [4 Localizando arquivos .pac*](#Localizando_arquivos_.pac*)
 *   [5 Gerenciando arquivos .pacnew](#Gerenciando_arquivos_.pacnew)
     *   [5.1 pacdiff](#pacdiff)
-    *   [5.2 Utilitários de terceiros](#Utilit.C3.A1rios_de_terceiros)
-*   [6 Veja também](#Veja_tamb.C3.A9m)
+    *   [5.2 Utilitários de terceiros](#Utilitários_de_terceiros)
+*   [6 Veja também](#Veja_também)
 
 ## Por que esses arquivos são criados
 
@@ -40,7 +46,7 @@ backup=('etc/pulse/client.conf' 'etc/pulse/daemon.conf' 'etc/pulse/default.pa')
 
 ```
 
-Para evitar que um pacote sobrescreva um certo arquivo, veja [Pacman (Português)#Pular pacotes para não serem atualizados](/index.php/Pacman_(Portugu%C3%AAs)#Pular_pacotes_para_n.C3.A3o_serem_atualizados "Pacman (Português)").
+Para evitar que um pacote sobrescreva um certo arquivo, veja [Pacman (Português)#Pular pacotes para não serem atualizados](/index.php/Pacman_(Portugu%C3%AAs)#Pular_pacotes_para_não_serem_atualizados "Pacman (Português)").
 
 ## Tipos explicados
 
@@ -88,7 +94,7 @@ O pacman não lida com arquivos *.pacnew* automaticamente: você deve mantê-los
 
 ### pacdiff
 
-[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) fornece *pacdiff*, uma ferramenta simples para gerenciar arquivos pacnew/pacsave. Com isso, pode-se vai pesquisar por todos os arquivos *.pacnew* e *.pacsave* e pedir por quaisquer ações neles. Ele usa [vimdiff](/index.php/Vim#Merging_files "Vim") por padrão, mas você pode especificar uma ferramenta diferente com `DIFFPROG=*seu_editor* pacdiff`. Veja [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities") para outras ferramentas de comparação comum.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) fornece *pacdiff*, uma ferramenta simples para gerenciar arquivos pacnew/pacsave. Com isso, pode-se vai pesquisar por todos os arquivos *.pacnew* e *.pacsave* e pedir por quaisquer ações neles. Ele usa [vimdiff](/index.php/Vim#Merging_files "Vim") por padrão, mas você pode especificar uma ferramenta diferente com `DIFFPROG=*seu_editor* pacdiff`. Veja [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") para outras ferramentas de comparação comum.
 
 ### Utilitários de terceiros
 
@@ -115,6 +121,10 @@ Você pode usar uma das seguintes ferramentas:
 *   **pacnews-git** — Um script simples visando localizar todos os arquivos *.pacnew*, para então editá-los com [vimdiff](/index.php/Vim#Merging_files "Vim").
 
 	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)
+
+*   **pacfiles-mode** — Um pacote para [Emacs](/index.php/Emacs "Emacs") para gerenciar e mesclar arquivos *.pacnew*, disponível em [melpa](https://melpa.org/#/pacfiles-mode).
+
+	[https://github.com/UndeadKernel/pacfiles-mode](https://github.com/UndeadKernel/pacfiles-mode) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## Veja também
 

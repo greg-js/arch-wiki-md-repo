@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=554637) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=565817) na versão em inglês.
 
 Artigos relacionados
 
@@ -77,7 +77,7 @@ O resultado deve terminar com as seguintes linhas, indicando que a assinatura é
 
 ## Instalar um resolvedor de validação de DNSSEC
 
-Para usar o DNSSEC em todo o sistema, você pode usar um resolvedor de DNS que seja capaz de validar registros de DNSSEC, para que todas as pesquisas de DNS passem por ele. Veja [Resolução de nome de domínio#Resolvedores](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Resolvedores "Resolução de nome de domínio") para as opções disponíveis. Observe que cada um requer opções específicas para ativar seu recurso de validação do DNSSEC.
+Para usar o DNSSEC em todo o sistema, você pode usar um resolvedor de DNS que seja capaz de validar registros de DNSSEC, para que todas as pesquisas de DNS passem por ele. Veja [Resolução de nome de domínio#Servidores DNS](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Servidores_DNS "Resolução de nome de domínio") para as opções disponíveis. Observe que cada um requer opções específicas para ativar seu recurso de validação do DNSSEC.
 
 Se você tentar visitar um site com um endereço IP falso *(spoofed)*, o resolvedor de validação impedirá que você receba os dados DNS inválidos e seu navegador (ou outro aplicativo) será informado de que não existe esse host. Como todas as pesquisas de DNS passam pelo resolvedor de validação, você não precisa de um software que tenha suporte a DNSSEC integrado ao usar essa opção.
 

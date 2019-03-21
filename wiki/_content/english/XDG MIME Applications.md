@@ -12,7 +12,11 @@ The [XDG MIME Applications specification](https://specifications.freedesktop.org
 4.  [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) registers a [pacman hook](/index.php/Pacman_hook "Pacman hook") to build the Shared MIME-Info database cache, see [update-mime-database(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/update-mime-database.1).
 5.  [Desktop environments](/index.php/Desktop_environment "Desktop environment") and users can change default applications and add or remove MIME type to application associations using [mimeapps.list](#mimeapps.list) files.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Shared MIME database](#Shared_MIME_database)
     *   [1.1 New MIME types](#New_MIME_types)
@@ -36,7 +40,7 @@ The database is built from the XML files installed by packages in `/usr/share/mi
 
 The files in `/usr/share/mime/` should not be directly edited, however it is possible to maintain a separate database on a per-user basis in the `~/.local/share/mime/` tree.
 
-"URI scheme handling [..] are handled through applications handling the `x-scheme-handler/foo mime-type`, where foo is the URI scheme in question."[[1]](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#idm140625828587776)
+"URI scheme handling [..] are handled through applications handling the `x-scheme-handler/foo` MIME type, where foo is the URI scheme in question."[[1]](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#idm140625828587776)
 
 ### New MIME types
 

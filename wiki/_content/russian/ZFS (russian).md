@@ -22,28 +22,32 @@ ZOL это проект, спонсируемый [Ливерморской на
 *   Проект ZFSonLinux project должен поспевать за версиями ядра Linux. После выпуска стабильного релиза ZFSonLinux мейнтейнеры Arch ZFS публикуют его.
 *   Эта ситуация время от времени блокирует нормальный процесс обновлений из-за неудовлетворенных зависимостей, если новая версия ядра, предлагаемая в обновлении, еще не поддерживается ZFSonLinux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Главное](#.D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D0.BE.D0.B5)
-    *   [1.2 Корневой раздел на ZFS](#.D0.9A.D0.BE.D1.80.D0.BD.D0.B5.D0.B2.D0.BE.D0.B9_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB_.D0.BD.D0.B0_ZFS)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+    *   [1.1 Главное](#Главное)
+    *   [1.2 Корневой раздел на ZFS](#Корневой_раздел_на_ZFS)
     *   [1.3 DKMS](#DKMS)
-*   [2 Эксперименты с ZFS](#.D0.AD.D0.BA.D1.81.D0.BF.D0.B5.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D1.81_ZFS)
-*   [3 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [3.1 Автоматический запуск](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
-*   [4 Создание пула данных](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.83.D0.BB.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85)
-    *   [4.1 Advanced Format диски](#Advanced_Format_.D0.B4.D0.B8.D1.81.D0.BA.D0.B8)
+*   [2 Эксперименты с ZFS](#Эксперименты_с_ZFS)
+*   [3 Конфигурация](#Конфигурация)
+    *   [3.1 Автоматический запуск](#Автоматический_запуск)
+*   [4 Создание пула данных](#Создание_пула_данных)
+    *   [4.1 Advanced Format диски](#Advanced_Format_диски)
     *   [4.2 Verifying pool creation](#Verifying_pool_creation)
     *   [4.3 GRUB-compatible pool creation](#GRUB-compatible_pool_creation)
     *   [4.4 Importing a pool created by id](#Importing_a_pool_created_by_id)
-*   [5 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+*   [5 Настройка](#Настройка)
     *   [5.1 General](#General)
     *   [5.2 SSD Caching](#SSD_Caching)
     *   [5.3 Database](#Database)
-    *   [5.4 /tmp](#.2Ftmp)
+    *   [5.4 /tmp](#/tmp)
     *   [5.5 ZVOLs](#ZVOLs)
         *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
-*   [6 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
+*   [6 Использование](#Использование)
     *   [6.1 Scrub](#Scrub)
     *   [6.2 Check zfs pool status](#Check_zfs_pool_status)
     *   [6.3 Destroy a storage pool](#Destroy_a_storage_pool)
@@ -54,16 +58,16 @@ ZOL это проект, спонсируемый [Ливерморской на
     *   [6.8 Automatic snapshots](#Automatic_snapshots)
         *   [6.8.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
         *   [6.8.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
-*   [7 Устранение проблем](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+*   [7 Устранение проблем](#Устранение_проблем)
     *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
     *   [7.4 No hostid found](#No_hostid_found)
-    *   [7.5 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+    *   [7.5 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_"pool_may_be_in_use_from_other_system")
         *   [7.5.1 Unexported pool](#Unexported_pool)
         *   [7.5.2 Incorrect hostid](#Incorrect_hostid)
     *   [7.6 Devices have different sector alignment](#Devices_have_different_sector_alignment)
-*   [8 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
+*   [8 Советы и рекомендации](#Советы_и_рекомендации)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS on Linux](#Encryption_in_ZFS_on_Linux)
         *   [8.2.1 Using dm-crypt](#Using_dm-crypt)
@@ -71,7 +75,7 @@ ZOL это проект, спонсируемый [Ливерморской на
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
     *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
-*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [9 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -537,7 +541,7 @@ To find the name of the pool, see [#Check zfs pool status](#Check_zfs_pool_statu
 
 If a storage pool is to be used on another system, it will first need to be exported. It is also necessary to export a pool if it has been imported from the archiso as the hostid is different in the archiso as it is in the booted system. The zpool command will refuse to import any storage pools that have not been exported. It is possible to force the import with the `-f` argument, but this is considered bad form.
 
-Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_"pool_may_be_in_use_from_other_system")
 
 To export a pool,
 

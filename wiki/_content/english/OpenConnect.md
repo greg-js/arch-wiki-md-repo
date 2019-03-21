@@ -9,7 +9,7 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Juniper Pulse Client](#Juniper_Pulse_Client)
-    *   [2.2 Split Routing](#Split_Routing)
+    *   [2.2 Split routing](#Split_routing)
 *   [3 Integration](#Integration)
     *   [3.1 NetworkManager](#NetworkManager)
     *   [3.2 netctl](#netctl)
@@ -20,7 +20,7 @@
 
 ## Usage
 
-See [openconnect(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openconnect.8). Simply run openconnect as root and enter your username and password when prompted:
+See [openconnect(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openconnect.8). Simply run *openconnect* as root and enter your username and password when prompted:
 
 ```
 # openconnect *vpnserver*
@@ -50,9 +50,9 @@ In order to connect to a [Pulse Connect Secure](/index.php/Pulse_Connect_Secure 
 
 ```
 
-#### Split Routing
+#### Split routing
 
-Split routing can be achieved using [vpn-slice-git](https://aur.archlinux.org/packages/vpn-slice-git/) in place of vpnc-script, so that you can selectively access hosts over the VPN but otherwise remain on your own LAN. Example:
+Split routing can be achieved using [vpn-slice-git](https://aur.archlinux.org/packages/vpn-slice-git/) in place of *vpnc-script*, so that you can selectively access hosts over the VPN but otherwise remain on your own LAN. Example:
 
 ```
    sh
@@ -71,13 +71,13 @@ Split routing can be achieved using [vpn-slice-git](https://aur.archlinux.org/pa
 
 ### NetworkManager
 
-[Install](/index.php/Install "Install") the [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) package. Then configure and connect with *nm-applet* (network manager's tray icon utility from [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)) or similar utility. After installation, [restart](/index.php/Restart "Restart") the `NetworkManager.service`.
+[Install](/index.php/Install "Install") the [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) package. Then configure and connect with *nm-applet* (NetworkManager's icon tray utility from [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)) or similar utility. After installation, [restart](/index.php/Restart "Restart") the `NetworkManager.service`.
 
 See [NetworkManager](/index.php/NetworkManager "NetworkManager") for details.
 
 ### netctl
 
-A simple `tuntap` netctl.profile(5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow. For example:
+A simple `tuntap` [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) can be used to integrate OpenConnect in the normal [Netctl](/index.php/Netctl "Netctl") workflow. For example:
 
  `/etc/netctl/vpn` 
 ```

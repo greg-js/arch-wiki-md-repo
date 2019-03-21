@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=565037) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-03-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=568248) na versão em inglês.
 
 Artigos relacionados
 
@@ -106,7 +106,7 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 | [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | mutt | irssi |
 | [bamos](https://github.com/bamos/dotfiles) | zsh | i3/xmonad | vim/emacs | rxvt-unicode | tmux | mpv/cmus | conky/xmobar | mutt | ERC |
 | [brisbin33](https://github.com/pbrisbin/dotfiles) | [zsh](https://github.com/pbrisbin/oh-my-zsh) | [xmonad](https://github.com/pbrisbin/xmonad-config) | [vim](https://github.com/pbrisbin/vim-config) | rxvt-unicode | screen | dzen | [mutt](https://github.com/pbrisbin/mutt-config) | [irssi](https://github.com/pbrisbin/irssi-config) |
-| [BVollmerhaus](https://gitlab.com/BVollmerhaus/dotfiles) | bash | [i3-gaps](https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/i3/config) | [kakoune](https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/kak/kakrc) | rxvt-unicode | [polybar](https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/polybar/config) | thunderbird |
+| [BVollmerhaus](https://gitlab.com/BVollmerhaus/dotfiles) | [fish](https://gitlab.com/BVollmerhaus/dotfiles/tree/master/config/fish-custom) | [i3-gaps](https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/i3/config) | [kakoune](https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/kak/kakrc) | rxvt-unicode | [polybar](https://gitlab.com/BVollmerhaus/dotfiles/blob/master/config/polybar/config) | thunderbird |
 | [cinelli](https://github.com/cinelli/dotfiles) | zsh | dwm | vim | termite-git | pianobar | htop | mutt-kz | weechat |
 | [dikiaap](https://github.com/dikiaap/dotfiles) | zsh | i3-gaps | neovim | kitty | i3blocks |
 | [Earnestly](https://github.com/Earnestly/dotfiles) | zsh | i3/orbment | vim/emacs | termite | tmux | mpd | conky | mutt | weechat |
@@ -119,11 +119,13 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 | [jdevlieghere](https://github.com/JDevlieghere/dotfiles/) | zsh | xmonad | vim | terminal | tmux | htop | mutt | weechat |
 | [jelly](https://github.com/jelly/Dotfiles) | zsh | i3 | vim | termite | tmux | ncmpcpp | mutt-kz-git | weechat |
 | [maximbaz](https://github.com/maximbaz/dotfiles) | zsh | i3-gaps | neovim | alacritty | tmux | py3status | thunderbird |
+| [mehalter](https://gitlab.com/mehalter/dotfiles) | zsh | i3-gaps | neovim | termite | tmux | gpymusic | i3blocks, gotop | neomutt | weechat |
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
+| [oibind](https://github.com/oibind/dotfiles) | fish | awesome | neovim | termite | htop-vim | weechat |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
 | [pablox-cl](https://github.com/pablox-cl/dotfiles) | zsh (zplug) | gnome3 | neovim | kitty |
-| [reisub0](https://github.com/reisub0/dot) | bash | awesome | neovim | termite | mpd | conky |
+| [reisub0](https://github.com/reisub0/dot) | fish | qtile | neovim | kitty | mpd | conky |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3-gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [sitilge](https://git.sitilge.id.lv/sitilge/dotfiles) | zsh | awesome | neovim | termite | thunderbird |
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |

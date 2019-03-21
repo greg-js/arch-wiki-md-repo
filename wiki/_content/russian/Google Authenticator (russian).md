@@ -1,12 +1,16 @@
 Проект [Google Authenticator project](http://code.google.com/p/google-authenticator/) обеспечивает возможность двухфакторной аутентификации посредством одноразовых паролей ([OTP](https://ru.wikipedia.org/wiki/%D0%9E%D0%B4%D0%BD%D0%BE%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C)). Генератор OTP доступен для iOS, Android и Blackberry. Подобно [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication"), механизм аутентификации интегрируется в систему Linux PAM. Это руководство объясняет установку и настройку этого механизма.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка PAM](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_PAM)
-*   [3 Генерация секретного файла ключа](#.D0.93.D0.B5.D0.BD.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81.D0.B5.D0.BA.D1.80.D0.B5.D1.82.D0.BD.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.BA.D0.BB.D1.8E.D1.87.D0.B0)
-*   [4 Настройка генератора OTP](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B3.D0.B5.D0.BD.D0.B5.D1.80.D0.B0.D1.82.D0.BE.D1.80.D0.B0_OTP)
-*   [5 Проверка](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка PAM](#Настройка_PAM)
+*   [3 Генерация секретного файла ключа](#Генерация_секретного_файла_ключа)
+*   [4 Настройка генератора OTP](#Настройка_генератора_OTP)
+*   [5 Проверка](#Проверка)
 
 ## Установка
 

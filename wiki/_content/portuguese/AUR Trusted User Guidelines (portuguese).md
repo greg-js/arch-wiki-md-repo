@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=562395) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=565524) na versão em inglês.
 
 Artigos relacionados
 

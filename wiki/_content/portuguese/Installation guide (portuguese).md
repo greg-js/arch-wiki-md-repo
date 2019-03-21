@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=563317) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-03-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=568871) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -17,7 +17,7 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [1.2 Inicializar o ambiente live](#Inicializar_o_ambiente_live)
     *   [1.3 Definir o layout do teclado](#Definir_o_layout_do_teclado)
     *   [1.4 Verificar o modo de inicialização](#Verificar_o_modo_de_inicialização)
-    *   [1.5 Conectar à Internet](#Conectar_à_Internet)
+    *   [1.5 Conectar à internet](#Conectar_à_internet)
     *   [1.6 Atualizar o relógio do sistema](#Atualizar_o_relógio_do_sistema)
     *   [1.7 Partição dos discos](#Partição_dos_discos)
         *   [1.7.1 Exemplos de layouts](#Exemplos_de_layouts)
@@ -105,16 +105,19 @@ Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEF
 
 Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") ou CSM. Veja o manual da sua placa-mãe para detalhes.
 
-### Conectar à Internet
+### Conectar à internet
 
-A imagem de instalação habilita o *daemon* [dhcpcd](/index.php/Dhcpcd "Dhcpcd") para [dispositivos de rede cabeada](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização. A conexão pode ser verificada com [ping](https://en.wikipedia.org/wiki/pt:Ping "wikipedia:pt:Ping"):
+Para configurar uma conexão de rede, siga as etapas abaixo:
 
-```
-# ping archlinux.org
+1.  Certifique-se que sua [interface de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interfaces_de_rede "Configuração de rede") esteja listada e ativada, por exemplo, com [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+2.  Conecte-se à rede. Conecte o cabo Ethernet ou [conecte a uma rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
+3.  Configure sua conexão de rede:
+    *   [Endereço IP estático](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endereço_IP_estático "Configuração de rede")
+    *   Endereço IP dinâmico: use [DHCP](/index.php/Configura%C3%A7%C3%A3o_de_rede#DHCP "Configuração de rede").
 
-```
+    **Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede com fio](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
 
-Se nenhuma conexão estiver disponível, [pare](/index.php/Pare "Pare") o serviço *dhcpcd* com `systemctl stop dhcpcd@*interface*`, sendo que o nome `*interface*` pode ser [completado com tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Continue com a configuração de rede conforme descrito em [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede").
+4.  A conexão pode ser verificada com [ping](https://en.wikipedia.org/wiki/pt:ping "wikipedia:pt:ping"): `# ping archlinux.org` 
 
 ### Atualizar o relógio do sistema
 
@@ -147,16 +150,17 @@ Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php
 
 #### Exemplos de layouts
 
-| BIOS com [MBR](/index.php/MBR "MBR") ou GPT |
+| BIOS com [MBR](/index.php/MBR "MBR") |
 | Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") | Tamanho sugerido |
- /dev/sd*X*1 | [Partição de inicialização BIOS](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
-| `/mnt` | /dev/sd*X*2 | Linux | Restante do dispositivo |
-| [SWAP] | /dev/sd*X*3 | [Swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") Linux | Mais que 512 MiB |
+| `/mnt` | `/dev/sd*X*1` | Linux | Restante do dispositivo |
+| [SWAP] | `/dev/sd*X*2` | Swap Linux | Mais que 512 MiB |
 | UEFI com [GPT](/index.php/GPT "GPT") |
-| Ponto de montagem | Partição | [Tipo de partição (GUID)](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
-| `/mnt/boot` ou `/mnt/efi` | /dev/sd*X*1 | [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
-| `/mnt` | /dev/sd*X*2 | Linux | Restante do dispositivo |
-| [SWAP] | /dev/sd*X*3 | Linux [swap](/index.php/Swap_(Portugu%C3%AAs) "Swap (Português)") | Mais que 512 MiB |
+| Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
+| `/mnt/boot` ou `/mnt/efi` | `/dev/sd*X*1` | [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
+| `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Restante do dispositivo |
+| [SWAP] | `/dev/sd*X*3` | Linux swap | Mais que 512 MiB |
+
+Veja também [Partitioning#Example layouts](/index.php/Partitioning#Example_layouts "Partitioning").
 
 **Nota:**
 
@@ -165,18 +169,18 @@ Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php
 
 ### Formatar as partições
 
-Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, para formatar a partição raiz em `/dev/sd*X*2` com `*ext4*`, execute:
+Assim que as partições tenham sido criadas, cada uma deve ser formatada com um [sistema de arquivos](/index.php/File_system "File system") adequado. Por exemplo, se a partição raiz está em `/dev/sd*X*1` e receberá o sistema de arquivos `*ext4*`, execute:
 
 ```
-# mkfs.*ext4* /dev/sd*X*2
+# mkfs.*ext4* /dev/sd*X1*
 
 ```
 
 Se você criou uma partição para swap (por exemplo, `/dev/*sda3*`), inicialize-a com *mkswap*:
 
 ```
-# mkswap /dev/sd*X*3
-# swapon /dev/sd*X*3
+# mkswap /dev/sd*X2*
+# swapon /dev/sd*X2*
 
 ```
 
@@ -187,17 +191,11 @@ Veja [File systems#Create a file system](/index.php/File_systems#Create_a_file_s
 [Monte](/index.php/Mount "Mount") o sistema de arquivos da partição raiz em `/mnt`, por exemplo:
 
 ```
-# mount /dev/sd*X*2 /mnt
+# mount /dev/sd*X1* /mnt
 
 ```
 
-Onde necessário, crie pontos de montagem e monte as partições correspondentes. Por exemplo:
-
-```
-# mkdir /mnt/efi
-# mount /dev/sd*X*2 /mnt/efi
-
-```
+Crie quaisquer pontos de montagem restantes (tal como `/mnt/efi`) e monte suas partições correspondentes.
 
 [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) vai detectar os sistemas de arquivos montados e espaços swap.
 
@@ -280,7 +278,7 @@ Descomente `pt_BR.UTF-8 UTF-8` e qualquer outro [locale](/index.php/Locale_(Port
 
 ```
 
-Defina a [variável](/index.php/Vari%C3%A1vel "Variável") `LANG` em [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) adequadamente, por exemplo:
+Crie o arquivo {man|5|locale.conf}} e defina a [variável](/index.php/Vari%C3%A1vel "Variável") `LANG` adequadamente:
 
  `/etc/locale.conf`  `LANG=*pt_BR.UTF-8*` 
 

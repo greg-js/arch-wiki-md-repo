@@ -56,7 +56,7 @@
  <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(18)</small> |
  <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
  <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
- <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
+ <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(24)</small> |
  <small>3.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
  <small>3.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
  <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small> |

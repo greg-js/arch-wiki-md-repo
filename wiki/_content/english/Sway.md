@@ -166,9 +166,10 @@ swaymsg -t get_outputs
 
  `~/.config/sway/config` 
 ```
- bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
- bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
- bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
  bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
  bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
@@ -213,7 +214,7 @@ read lcd < /tmp/lcd
 
 ### Screen capture
 
-Capturing the screen can be done using [grim](https://www.archlinux.org/packages/?name=grim) for screenshots and [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) for video. Optionally, [slurp](https://www.archlinux.org/packages/?name=slurp) can be used to select the part of the screen to capture.
+Capturing the screen can be done using [grim](https://www.archlinux.org/packages/?name=grim) or [swayshot](https://aur.archlinux.org/packages/swayshot/) for screenshots and [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) for video. Optionally, [slurp](https://www.archlinux.org/packages/?name=slurp) can be used to select the part of the screen to capture.
 
 Take a screenshot of the whole screen:
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Aurweb_RPC_interface&diff=0&oldid=553497) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Aurweb_RPC_interface&diff=0&oldid=569027) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,17 +8,22 @@ A [interface RPC do Aurweb](https://aur.archlinux.org/rpc.php) é uma interface 
 
 **Nota:** Esse artigo descreve a v5 da API de Interface do RPC, conforme atualizado com o AUR v4.7.0 em 7 de julho de 2018.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Uso da API](#Uso_da_API)
     *   [1.1 Tipos de consulta](#Tipos_de_consulta)
         *   [1.1.1 search](#search)
         *   [1.1.2 info](#info)
     *   [1.2 Tipos de retorno](#Tipos_de_retorno)
-        *   [1.2.1 error](#error)
-        *   [1.2.2 search](#search_2)
-        *   [1.2.3 info](#info_2)
-    *   [1.3 jsonp](#jsonp)
+    *   [1.3 Dados de retorno](#Dados_de_retorno)
+        *   [1.3.1 error](#error)
+        *   [1.3.2 search](#search_2)
+        *   [1.3.3 info](#info_2)
+    *   [1.4 jsonp](#jsonp)
 *   [2 Limitações](#Limitações)
 *   [3 Clientes de referência](#Clientes_de_referência)
 
@@ -109,7 +114,7 @@ https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar
 Informação para múltiplos pacotes `foobar` e `bar`:
 
 ```
-https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
+https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar&arg[]=bar
 
 ```
 
@@ -130,7 +135,41 @@ O formato da carga retornada é:
 *   `multiinfo`
 *   `error`
 
+### Dados de retorno
+
 O tipo de `*DadosRetornados*` é um vetor de dicionário de objetos para os `*TipoRetornado*` `search` e `multiinfo` e um vetor vazio para `*TipoRetornado*` `error`.
+
+Para o `*TipoRetornado*` `*search*`, `*DadosRetornados*` pode conter os seguintes campos:
+
+*   `ID`
+*   `Name`
+*   `PackageBaseID`
+*   `PackageBase`
+*   `Version`
+*   `Description`
+*   `URL`
+*   `NumVotes`
+*   `Popularity`
+*   `OutOfDate`
+*   `Maintainer`
+*   `FirstSubmitted`
+*   `LastModified`
+*   `URLPath`
+
+Para os `*TipoRetornado*` `*info*` e `*multiinfo*`, `*DadosRetornados*` também pode conter os seguintes campos:
+
+*   `Depends`
+*   `MakeDepends`
+*   `OptDepends`
+*   `CheckDepends`
+*   `Conflicts`
+*   `Provides`
+*   `Replaces`
+*   `Groups`
+*   `License`
+*   `Keywords`
+
+Campos que um pacote não contém serão omitidos da saída.
 
 #### error
 
@@ -145,7 +184,7 @@ Exemplo de `*TipoRetornado*` `error`:
 
 #### search
 
-O tipo `search` é resultado retornado de uma operação de requisição de pesquisa. **Os reais resultados da uma operação de pesquisa serão os mesmos que os de uma requisição de informações para cada resultado. Veja a seção [#info](#info) abaixo.**
+O tipo `search` é resultado retornado de uma operação de requisição de pesquisa.
 
 Exemplo de `*TipoRetornado*` `search`:
 
@@ -221,6 +260,8 @@ Isso chamaria automaticamente a função JavaScript `jsonp1192244621103` com o p
 ## Limitações
 
 *   Requisições de HTTP GET são limitadas a uma URI com tamanho máximo de 8190 bytes. Porém, a instância oficial do AUR, no servidor nginx com HTTP/2, usa o limite de [tamanho máximo padrão de URI](https://nginx.org/en/docs/http/ngx_http_v2_module.html#http2_max_field_size) de 4443 bytes. Requisições de informações com mais do que 200 pacotes como argumento precisarão ser divididos.
+*   Consultas de pesquisa devem ter pelo menos dois caracteres.
+*   As pesquisas falharão se contiverem 5000 ou mais resultados.
 *   A taxa de API está limitada a um máximo de 4000 requisições por dia por IP.
 
 ## Clientes de referência

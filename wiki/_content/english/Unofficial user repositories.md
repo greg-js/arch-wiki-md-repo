@@ -307,7 +307,7 @@ Server = http://arch.suruatoel.xyz/$repo/$arch/
 [dkp-libs]
 Server = https://downloads.devkitpro.org/packages
 [dkp-linux]
-Server = https://downloads.devkitpro.org/packages
+Server = https://downloads.devkitpro.org/packages/linux
 
 ```
 

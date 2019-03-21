@@ -166,11 +166,11 @@ Just like other network interfaces, the wireless ones are controlled with *ip* f
 
 Managing a wireless connection requires a basic set of tools. Either use a [network manager](/index.php/Network_manager "Network manager") or use one of the following directly:
 
-| Software | Package | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 |
-| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No |
-| [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | No | Yes | Yes | No |
-| [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Yes | Yes | Yes | Yes |
-| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | No | Yes | Yes | Yes |
+| Software | Package | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) |
+| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No | Yes |
+| [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | No | Yes | Yes | No | Yes |
+| [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Yes | Yes | Yes | Yes | Yes |
+| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | No | Yes | Yes | Yes | No |
 
 1.  Deprecated.
 
@@ -356,7 +356,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### MS-CHAPv2
 
-WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[1]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[2]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
+WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[3]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
 
 ## Tips and tricks
 
@@ -450,7 +450,7 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 Hardware buttons to toggle wireless cards are handled by a vendor specific [kernel module](/index.php/Kernel_module "Kernel module"), frequently these are [WMI](https://lwn.net/Articles/391230/) modules. Particularly for very new hardware models, it happens that the model is not fully supported in the latest stable kernel yet. In this case it often helps to search the kernel bug tracker for information and report the model to the maintainer of the respective vendor kernel module, if it has not happened already.
 
-See also [[3]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
+See also [[4]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
 ### Observing Logs
 
@@ -528,7 +528,7 @@ Packet fragmentation improves throughput by splitting up packets with size excee
 
 #### Cause #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[4]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[5]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -605,7 +605,7 @@ New chipset as of 2014, released under their new commercial name Mediatek. It is
 
 ### Realtek
 
-See [[6]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+See [[7]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
 
 #### rtl8192cu
 
@@ -625,7 +625,7 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[7]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[8]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
@@ -737,7 +737,7 @@ If you have problems connecting to networks in general, random failures with you
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
@@ -751,7 +751,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[10]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[11]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[11]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[12]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
@@ -759,7 +759,7 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[13]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -818,7 +818,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[13]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[14]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/) package.
 
 #### hostap_cs
 

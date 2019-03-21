@@ -12,7 +12,9 @@ Described as ["The last word in filesystems"](http://web.archive.org/web/2006042
 
 ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://www.llnl.gov/) to develop a native Linux kernel module for its massive storage requirements and super computers.
 
-**Note:** Due to potential legal incompatibilities between CDDL license of ZFS code and GPL of the Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development is not supported by the kernel.
+**Note:**
+
+Due to potential legal incompatibilities between CDDL license of ZFS code and GPL of the Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development is not supported by the kernel.
 
 As a result:
 
@@ -161,9 +163,7 @@ To manually start the daemon:
 
 ```
 
-**Note:** Beginning with ZOL version 0.6.5.8 the ZFS service unit files have been changed so that you need to explicitly enable any ZFS services you want to run.
-
-See [https://github.com/archzfs/archzfs/issues/72](https://github.com/archzfs/archzfs/issues/72) for more information.
+**Note:** Beginning with ZOL version 0.6.5.8 the ZFS service unit files have been changed so that you need to explicitly enable any ZFS services you want to run. See [https://github.com/archzfs/archzfs/issues/72](https://github.com/archzfs/archzfs/issues/72) for more information.
 
 In order to mount zfs pools automatically on boot you need to enable the following services and targets:
 
@@ -185,9 +185,9 @@ or, as explained on [the GitHub issue](https://github.com/archzfs/archzfs/issues
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.
 
-**Note:** If some or all device have been used in a software RAID set it is paramount to erase any old RAID configuration information. ([Mdadm#Prepare the devices](/index.php/Mdadm#Prepare_the_devices "Mdadm"))
+**Note:** If some or all device have been used in a software RAID set it is paramount to [erase any old RAID configuration information](/index.php/Mdadm#Prepare_the_devices "Mdadm").
 
-**Warning:** For Advanced Format Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations), [1.15 How does ZFS on Linux handle Advanced Format disks?](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
+**Warning:** For [Advanced Format](/index.php/Advanced_Format "Advanced Format") Disks with 4KB sector size, an ashift of 12 is recommended for best performance. Advanced Format disks emulate a sector size of 512 bytes for compatibility with legacy systems, this causes ZFS to sometimes use an ashift option number that is not ideal. Once the pool has been created, the only way to change the ashift option is to recreate the pool. Using an ashift of 12 would also decrease available capacity. See [1.10 What’s going on with performance?](https://github.com/zfsonlinux/zfs/wiki/faq#performance-considerations), [1.15 How does ZFS on Linux handle Advanced Format disks?](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks), and [ZFS and Advanced Format disks](http://wiki.illumos.org/display/illumos/ZFS+and+Advanced+Format+disks).
 
 Having identified the list of drives, it is now time to get the IDs of the drives to add to the zpool. The [zfs on Linux developers recommend](https://github.com/zfsonlinux/zfs/wiki/faq#selecting-dev-names-when-creating-a-pool) using device IDs when creating ZFS storage pools of less than 10 devices. To find the IDs, simply:
 
@@ -206,7 +206,7 @@ lrwxrwxrwx 1 root root  9 Aug 12 16:26 ata-ST3000DM001-9YN166_S1F0KDGY -> ../../
 
 ```
 
-**Warning:** If you create zpools using device names (e.g. /dev/sda,/dev/sdb,...) ZFS might not be able to detect zpools intermittently on boot.
+**Warning:** If you create zpools using device names (e.g. `/dev/sda`,`/dev/sdb`,...) ZFS might not be able to detect zpools intermittently on boot.
 
 Disk labels and UUID can also be used for ZFS mounts by using [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") partitions. ZFS drives have labels but Linux is unable to read them at boot. Unlike [MBR](/index.php/Master_Boot_Record "Master Boot Record") partitions, GPT partitions directly support both UUID and labels independent of the format inside the partition. Partitioning rather than using the whole disk for ZFS offers two additional advantages. The OS does not generate bogus partition numbers from whatever unpredictable data ZFS has written to the partition sector, and if desired, you can easily over provision SSD drives, and slightly over provision spindle drives to ensure that different models with slightly different sector counts can zpool replace into your mirrors. This is a lot of organization and control over ZFS using readily available tools and techniques at almost zero cost.
 
@@ -247,7 +247,7 @@ Now, finally, create the ZFS pool:
 
 *   **pool**: This is the name of the pool.
 
-*   **raidz(2|3)|mirror**: This is the type of virtual device that will be created from the pool of devices, raidz is a single disk of parity, raidz2 for 2 disks of parity and raidz3 for 3 disks of parity, similar to raid5 and raid6\. Also available is **mirror**, which is similar to raid1 or raid10, but isn't constrained to just 2 device. If not specified, each device will be added as a vdev which is similar to raid0\. After creation, a device can be added to each single drive vdev to turn it into a mirror, which can be useful for migrating data.
+*   **raidz(2|3)|mirror**: This is the type of virtual device that will be created from the pool of devices, raidz is a single disk of parity, raidz2 for 2 disks of parity and raidz3 for 3 disks of parity, similar to raid5 and raid6\. Also available is **mirror**, which is similar to raid1 or raid10, but is not constrained to just 2 device. If not specified, each device will be added as a vdev which is similar to raid0\. After creation, a device can be added to each single drive vdev to turn it into a mirror, which can be useful for migrating data.
 
 *   **ids**: The names of the drives or partitions that to include into the pool. Get it from `/dev/disk/by-id`.
 
@@ -280,7 +280,7 @@ Create pool with two mirror vdevs:
 
 At pool creation, **ashift=12** should always be used, except with SSDs that have 8k sectors where **ashift=13** is correct. A vdev of 512 byte disks using 4k sectors will not experience performance issues, but a 4k disk using 512 byte sectors will. Since **ashift** cannot be changed after pool creation, even a pool with only 512 byte disks should use 4k because those disks may need to be replaced with 4k disks or the pool may be expanded by adding a vdev composed of 4k disks. Because correct detection of 4k disks is not reliable, `-o ashift=12` should always be specified during pool creation. See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks) for more details.
 
-**Tip:** Use [blockdev(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/blockdev.8) (part of [util-linux](https://www.archlinux.org/packages/?name=util-linux)) to print the sector size reported by the device's ioctls: `# blockdev --getpbsz /dev/sd*XY*`
+**Tip:** Use [blockdev(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/blockdev.8) (part of [util-linux](https://www.archlinux.org/packages/?name=util-linux)) to print the sector size reported by the device's ioctls: `# blockdev --getpbsz /dev/sd*XY*`.
 
 Create pool with ashift=12 and single raidz vdev:
 
@@ -296,7 +296,7 @@ Create pool with ashift=12 and single raidz vdev:
 
 ### Verifying pool creation
 
-If the command is successful, there will be no output. Using the `$ mount` command will show that the pool is mounted. Using `# zpool status` will show that the pool has been created.
+If the command is successful, there will be no output. Using the [mount](/index.php/Mount "Mount") command will show that the pool is mounted. Using `zpool status` will show that the pool has been created.
 
  `# zpool status` 
 ```
@@ -328,12 +328,12 @@ By default, *zpool create* enables all features on a pool. If `/boot` resides on
 You can create a pool with the incompatible features disabled:
 
 ```
-   # zpool create -o feature@multi_vdev_crash_dump=disabled \
-                  -o feature@large_dnode=disabled           \
-                  -o feature@sha512=disabled                \
-                  -o feature@skein=disabled                 \
-                  -o feature@edonr=disabled                 \
-                  $POOL_NAME $VDEVS
+# zpool create -o feature@multi_vdev_crash_dump=disabled \
+               -o feature@large_dnode=disabled           \
+               -o feature@sha512=disabled                \
+               -o feature@skein=disabled                 \
+               -o feature@edonr=disabled                 \
+               $POOL_NAME $VDEVS
 
 ```
 
@@ -343,10 +343,7 @@ When running the git version of ZFS on Linux, make sure to also add `-o feature@
 
 Eventually a pool may fail to auto mount and you need to import to bring your pool back. Take care to avoid the most obvious solution.
 
-```
-# ###zpool import zfsdata # Do not do this! Always use -d
-
-```
+**Warning:** Do not run `zpool import zfsdata`! Always use `-d`.
 
 This will import your pools using `/dev/sd?` which will lead to problems the next time you rearrange your drives. This may be as simple as rebooting with a USB drive left in the machine, which harkens back to a time when PCs would not boot when a floppy disk was left in a machine. Adapt one of the following commands to import your pool so that pool imports retain the persistence they were created with.
 
@@ -361,7 +358,7 @@ This will import your pools using `/dev/sd?` which will lead to problems the nex
 
 ### General
 
-Many parameters are available for zfs file systems, you can view a full list with `zfs get all <pool>`. Two common ones to adjust are **atime** and **compression**.
+Many parameters are available for zfs file systems, you can view a full list with `zfs get all <pool>`. Two common ones to adjust are `atime` and `compression`.
 
 Atime is enabled by default but for most users, it represents superfluous writes to the zpool and it can be disabled using the zfs command:
 
@@ -370,7 +367,7 @@ Atime is enabled by default but for most users, it represents superfluous writes
 
 ```
 
-As an alternative to turning off atime completely, **relatime** is available. This brings the default ext4/xfs atime semantics to ZFS, where access time is only updated if the modified time or changed time changes, or if the existing access time has not been updated within the past 24 hours. It is a compromise between atime=off and atime=on. This property *only* takes effect if **atime** is **on**:
+As an alternative to turning off atime completely, `relatime` is available. This brings the default ext4/XFS atime semantics to ZFS, where access time is only updated if the modified time or changed time changes, or if the existing access time has not been updated within the past 24 hours. It is a compromise between `atime=off` and `atime=on`. This property *only* takes effect if `atime` is `on`:
 
 ```
 # zfs set relatime=on <pool>
@@ -497,7 +494,7 @@ Please note, also, that if you want /tmp on ZFS, you will need to mask (disable)
 
 ### ZVOLs
 
-ZFS volumes (ZVOLs) can suffer from the same block size-related issues as RDBMSes, but it is worth noting that the default recordsize for ZVOLs is 8KiB already. If possible, it is best to align any partitions contained in a ZVOL to your recordsize (current versions of fdisk and gdisk by default automatically align at 1MiB segments, which works), and file system block sizes to the same size. Other than this, you might tweak the **recordsize** to accommodate the data inside the ZVOL as necessary (though 8KiB tends to be a good value for most file systems, even when using 4KiB blocks on that level).
+ZFS volumes (ZVOLs) can suffer from the same block size-related issues as RDBMSes, but it is worth noting that the default recordsize for ZVOLs is 8 KiB already. If possible, it is best to align any partitions contained in a ZVOL to your recordsize (current versions of fdisk and gdisk by default automatically align at 1MiB segments, which works), and file system block sizes to the same size. Other than this, you might tweak the **recordsize** to accommodate the data inside the ZVOL as necessary (though 8 KiB tends to be a good value for most file systems, even when using 4 KiB blocks on that level).
 
 #### RAIDZ and Advanced Format physical disks
 
@@ -521,23 +518,11 @@ It is then possible to apply ZFS specific attributes to the dataset. For example
 
 ```
 
-To see all the commands available in ZFS, use :
-
-```
-$ man zfs
-
-```
-
-or:
-
-```
-$ man zpool
-
-```
+To see all the commands available in ZFS, see zfs(8) or zpool(8).
 
 ### Native encryption
 
-Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Despite the fact that version 0.7 has been released, this feature is still not enabled in the stable version as of 0.7.3, so a development build still needs to be used. An easy way of telling if encryption is available in the version of zfs you have installed is to check for the ZFS_PROP_ENCRYPTION definition in /usr/src/zfs-*/include/sys/fs/zfs.h.
+Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Despite the fact that version 0.7 has been released, this feature is still not enabled in the stable version as of 0.7.3, so a development build still needs to be used. An easy way of telling if encryption is available in the version of zfs you have installed is to check for the `ZFS_PROP_ENCRYPTION` definition in `/usr/src/zfs-*/include/sys/fs/zfs.h`.
 
 *   Supported encryption options: `aes-128-ccm`, `aes-192-ccm`, `aes-256-ccm`, `aes-128-gcm`, `aes-192-gcm` and `aes-256-gcm`. When encryption is set to `on`, `aes-256-ccm` will be used.
 *   Supported keyformats: `passphrase`, `raw`, `hex`
@@ -614,7 +599,7 @@ From the Oracle blog post [Disk Scrub - Why and When?](https://blogs.oracle.com/
 *   How often are you experiencing disk failures? While the recruitment of a hot-spare disk invokes a "resilver" -- a targeted scrub of just the VDEV which lost a disk -- you should probably scrub at least as often as you experience disk failures on average in your specific environment.
 *   How often is the oldest piece of data on your disk read? You should scrub occasionally to prevent very old, very stale data from experiencing bit-rot and dying without you knowing it.
 
-	If any of your answers to the above are "I don't know", I'll provide a general guideline: you should probably be scrubbing your zpool at least once per month. It's a schedule that works well for most use cases, provides enough time for scrubs to complete before starting up again on all but the busiest & most heavily-loaded systems, and even on very large zpools (192+ disks) should complete fairly often between disk failures.
+	If any of your answers to the above are "I do not know", the general guideline is: you should probably be scrubbing your zpool at least once per month. It is a schedule that works well for most use cases, provides enough time for scrubs to complete before starting up again on all but the busiest & most heavily-loaded systems, and even on very large zpools (192+ disks) should complete fairly often between disk failures.
 
 In the [ZFS Administration Guide](https://pthree.org/2012/12/11/zfs-administration-part-vi-scrub-and-resilver/) by Aaron Toponce, he advises to scrub consumer disks once a week.
 
@@ -664,7 +649,11 @@ ZFS makes it easy to destroy a mounted storage pool, removing all metadata about
 
 And now when checking the status:
 
- `# zpool status`  `no pools available` 
+ `# zpool status` 
+```
+no pools available
+
+```
 
 To find the name of the pool, see [#Check zfs pool status](#Check_zfs_pool_status).
 
@@ -747,7 +736,7 @@ Add a line to `/etc/fstab`:
 
 #### ZFS Automatic Snapshot Service for Linux
 
-The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot-git/) package from [AUR](/index.php/AUR "AUR") provides a shell script to automate the management of snapshots, with each named by date and label (hourly, daily, etc), giving quick and convenient snapshotting of all ZFS datasets. The package also installs cron tasks for quarter-hourly, hourly, daily, weekly, and monthly snapshots. Optionally adjust the --keep parameter from the defaults depending on how far back the snapshots are to go (the monthly script by default keeps data for up to a year).
+The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot-git/) package from [AUR](/index.php/AUR "AUR") provides a shell script to automate the management of snapshots, with each named by date and label (hourly, daily, etc), giving quick and convenient snapshotting of all ZFS datasets. The package also installs cron tasks for quarter-hourly, hourly, daily, weekly, and monthly snapshots. Optionally adjust the `--keep parameter` from the defaults depending on how far back the snapshots are to go (the monthly script by default keeps data for up to a year).
 
 To prevent a dataset from being snapshotted at all, set `com.sun:auto-snapshot=false` on it. Likewise, set more fine-grained control as well by label, if, for example, no monthlies are to be kept on a snapshot, for example, set `com.sun:auto-snapshot:monthly=false`.
 
@@ -765,7 +754,9 @@ ZFS has support for creating shares by SMB or [NFS](/index.php/NFS "NFS").
 
 #### NFS
 
-When sharing from zfs there is no need to edit the `/etc/exports` file. For sharing with NFS make sure to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the services `nfs-server.service` and `zfs-share.service`. Next, to enable sharing over NFS, available to the whole network:
+When sharing from zfs there is no need to edit the `/etc/exports` file. For sharing with NFS make sure to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the services `nfs-server.service` and `zfs-share.service`.
+
+Next, to enable sharing over NFS, available to the whole network:
 
 ```
 # zfs set sharenfs=on <nameofzpool>/<nameofdataset>
@@ -781,13 +772,7 @@ To enable read/write access for a specific ip-range:
 
 To check if the dataset is shared succesfully:
 
-```
-# showmount -e `hostname`
-
-```
-
-It should return something like this:
-
+ `# showmount -e `hostname`` 
 ```
 Export list for hostname:
 /dataset 192.168.11.0/24
@@ -804,7 +789,6 @@ When sharing smb shares configuring usershares in your smb.conf will allow ZFS t
 #    usershare max shares = 100
 #    usershare allow guests = yes
 #    usershare owner only = no
-
 ```
 
 Create and set permissions on the user directory as root
@@ -939,8 +923,8 @@ Reboot again, if the zfs pool refuses to mount it means the hostid is not yet co
 
 Boot using zfs_force and write down the hostid. This one is just an example.
 
+ `$ hostid` 
 ```
-% hostid
 0a0af0f8
 
 ```
@@ -1001,11 +985,12 @@ config:
             ata-ST3000DM001-9YN166_S1F0JTM1    ONLINE       0     0     0
 
 errors: No known data errors
+
 ```
 
 ### Pool resilvering stuck/restarting/slow?
 
-According to the ZFSonLinux github it's a known issue since 2012 with ZFS-ZED which causes the resilvering process to constantly restart, sometimes get stuck and be generally slow for some hardware. The simplest mitigation is to stop zfs-zed.service until the resilver completes
+According to the ZFSonLinux github it is a known issue since 2012 with ZFS-ZED which causes the resilvering process to constantly restart, sometimes get stuck and be generally slow for some hardware. The simplest mitigation is to stop zfs-zed.service until the resilver completes
 
 ### Fix slow boot caused by failed import of unavailable pools in the initramfs zpool.cache
 
@@ -1018,21 +1003,14 @@ $ zdb -C
 
 ```
 
-To check you zpool.cache for pools you don't want imported at boot. If this command is showing (a) additional, currently unavailable pool(s), run:
+To check you zpool.cache for pools you do not want imported at boot. If this command is showing (a) additional, currently unavailable pool(s), run:
 
 ```
 # zpool set cachefile=/etc/zfs/zpool.cache zroot
 
 ```
 
-To clear the zpool.cache of any pools other than the pool named zroot. Sometimes there is no need to refresh your zpool.cache, but instead all you need to do is rebuild your initramfs:
-
-```
-# mkinitcpio -p linux
-
-```
-
-Or **linux-lts**, dependent upon the kernel variant you are running.
+To clear the zpool.cache of any pools other than the pool named zroot. Sometimes there is no need to refresh your zpool.cache, but instead all you need to do is [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ## Tips and tricks
 
@@ -1155,14 +1133,7 @@ uname will show the kernel version of the archiso. If they are different, run de
 
 This will load the correct kernel modules for the kernel version installed in the chroot installation.
 
-Regenerate the ramdisk:
-
-```
-# mkinitcpio -p linux
-
-```
-
-There should be no errors.
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs"). There should be no errors.
 
 ### Bind mount
 
@@ -1197,25 +1168,21 @@ Uncomment the following in the configuration file:
 
 Update 'root' in `ZED_EMAIL_ADDR="root"` to the email address you want to receive notifications at.
 
-If you're keeping your mailrc in your home directory, you can tell mail to get it from there by setting `MAILRC`:
+If you are keeping your mailrc in your home directory, you can tell mail to get it from there by setting `MAILRC`:
 
- `/etc/zfs/zed.d/zed.rc` 
-```
-export MAILRC=/home/<user>/.mailrc
-
-```
+ `/etc/zfs/zed.d/zed.rc`  `export MAILRC=/home/<user>/.mailrc` 
 
 This works because ZED sources this file, so `mailx` sees this environment variable.
 
 If you want to receive an email no matter the state of your pool, you will want to set `ZED_NOTIFY_VERBOSE=1`. You will need to do this temporary to test.
 
-Start and enable `zfs-zed.service`.
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `zfs-zed.service`.
 
-With `ZED_NOTIFY_VERBOSE=1`, you can test by running a scrub: `sudo zpool scrub <pool-name>`.
+With `ZED_NOTIFY_VERBOSE=1`, you can test by running a scrub as root: `zpool scrub <pool-name>`.
 
 ### Wrap shell commands in pre & post snapshots
 
-Since it's so cheap to make a snapshot, we can use this as a measure of security for sensitive commands such as system and package upgrades. If we make a snapshot before, and one after, we can later diff these snapshots to find out what changed on the filesystem after the command executed. Furthermore we can also rollback in case the outcome was not desired.
+Since it is so cheap to make a snapshot, we can use this as a measure of security for sensitive commands such as system and package upgrades. If we make a snapshot before, and one after, we can later diff these snapshots to find out what changed on the filesystem after the command executed. Furthermore we can also rollback in case the outcome was not desired.
 
 E.g.:
 
@@ -1250,7 +1217,7 @@ As of [PR #261](https://github.com/archzfs/archzfs/pull/261), `archzfs` supports
 3.  Decide whether to use an existing OpenSSH key or generate a new one (recommended) for the host that will be connecting to and unlocking the encrypted ZFS machine. Copy the public key into `/etc/tinyssh/root_key` or `/etc/dropbear/root_key`. When generating the initcpio image, this file will be added to `authorized_keys` for the root user and is only valid in the initrd environment.
 4.  Add the `ip=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to your boot loader configuration. The `ip` string is [highly configurable](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt). A simple DHCP example is shown below. `ip=:::::eth0:dhcp` 
 5.  Edit `/etc/mkinitcpio.conf` to include the `netconf`, `dropbear` or `tinyssh`, and `zfsencryptssh` hooks before the `zfs` hook: `HOOKS=(... netconf <tinyssh>|<dropbear> zfsencryptssh zfs ...)` 
-6.  Re-build the initcpio image: `sudo mkinitcpio -p linux` 
+6.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 7.  Reboot and try it out!
 
 #### Changing the SSH server port
@@ -1298,3 +1265,4 @@ The plink command can be put into a batch script for ease of use.
 *   [Solaris Internals -- ZFS Troubleshooting Guide](http://www.solarisinternals.com/wiki/index.php/ZFS_Troubleshooting_Guide)
 *   [How Pingdom uses ZFS to back up 5TB of MySQL data every day](http://royal.pingdom.com/2013/06/04/zfs-backup/)
 *   [Tutorial on adding the modules to a custom kernel](https://www.linuxquestions.org/questions/linux-from-scratch-13/%5Bhow-to%5D-add-zfs-to-the-linux-kernel-4175514510/)
+*   [How to create cross platform ZFS disks under Linux](https://github.com/danboid/creating-ZFS-disks-under-Linux)

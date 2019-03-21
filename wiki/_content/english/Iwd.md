@@ -26,6 +26,7 @@ IWD can work in standalone mode or in combination with comprehensive network man
     *   [4.3 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
+    *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -252,6 +253,29 @@ If you do not want to allow console user to modify the settings but allow readin
 ### Connect issues after reboot
 
 A low entropy pool can cause connection problems in particular noticeable after reboot. See [Random number generation](/index.php/Random_number_generation "Random number generation") for suggestions to increase the entropy pool.
+
+### Systemd unit fails on startup due to device not being available
+
+Some users have reported that the provided systemd unit does not wait for the wireless device to become available. [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803) Thus, the unit fails on startup. To fix this, one can create a systemd unit with the following content:
+
+ `/etc/systemd/system/iwd@.service` 
+```
+[Unit]
+Description=Wireless service on %I
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=dbus
+BusName=net.connman.iwd
+ExecStart=/usr/lib/iwd/iwd --interface %i
+LimitNPROC=1
+Restart=on-failure
+```
+
+Then one can enable the `iwd@*device*.service` unit for the specific wireless *device*.
+
+See [FS#61367](https://bugs.archlinux.org/task/61367).
 
 ## See also
 

@@ -10,7 +10,11 @@
 
 For the the second generation of Helx hardware (models 20CG and 20CH), see [Levovo ThinkPad Helix 2nd Gen](/index.php/Lenovo_ThinkPad_Helix_2nd_Gen "Lenovo ThinkPad Helix 2nd Gen").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Hardware Configuration](#Hardware_Configuration)
@@ -40,10 +44,13 @@ Booting using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") works perfe
 
 To fully support all hardware in X, one needs to ensure that the following driver packages are installed:
 
-*   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (for the clickpad)
-*   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitizers)
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (for the GPU)
 *   [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) (accelerometer/gyroscope, ambient light sensor, digital campass)
+
+When using Xorg without the libinput driver ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)), the following packages might be needed to support all features of the digitizer and touchpad:
+
+*   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (for the clickpad)
+*   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitizers)
 
 ### Bluetooth
 

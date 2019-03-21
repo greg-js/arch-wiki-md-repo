@@ -1,24 +1,28 @@
 [NetworkManager](http://projects.gnome.org/NetworkManager/) - это программа, облегчающая определение и конфигурацию средств для автоматического подключения к сети. Функционал NetworkManager полезен как для беспроводных, так и проводных сетей. Для подключения к беспроводным сетям, NetworkManager отдаёт предпочтение ранее известным сетям и обеспечивает переключение на наиболее стабильную сеть, но при их наличии, отдаёт предпочтение проводным сетям. Также поддерживаются подключения с использованием модема, и некоторые типы VPN. NetworkManager был разработан Red Hat, и в настоящее время содержится проектом [GNOME](/index.php/GNOME "GNOME").
 
-**Важно:** По умолчанию все пароли хранятся в чистом виде. См. [шифрование паролей к wifi](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.B9_.D0.BA_wifi).
+**Важно:** По умолчанию все пароли хранятся в чистом виде. См. [шифрование паролей к wifi](#Шифрование_паролей_к_wifi).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Базовая установка](#.D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Поддержка VPN](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_VPN)
-*   [2 Графические интерфейсы](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Базовая установка](#Базовая_установка)
+    *   [1.1 Поддержка VPN](#Поддержка_VPN)
+*   [2 Графические интерфейсы](#Графические_интерфейсы)
     *   [2.1 GNOME](#GNOME)
     *   [2.2 KDE](#KDE)
     *   [2.3 Xfce](#Xfce)
     *   [2.4 Openbox](#Openbox)
     *   [2.5 Other desktops and window managers](#Other_desktops_and_window_managers)
-    *   [2.6 Управление через командную строку](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D1.83.D1.8E_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D1.83)
+    *   [2.6 Управление через командную строку](#Управление_через_командную_строку)
         *   [2.6.1 nmcli examples](#nmcli_examples)
         *   [2.6.2 nmcli-dmenu](#nmcli-dmenu)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Автозапуск NetworkManager](#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_NetworkManager)
+    *   [3.1 Автозапуск NetworkManager](#Автозапуск_NetworkManager)
     *   [3.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
-    *   [3.3 Настройка разрешений PolicyKit](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9_PolicyKit)
+    *   [3.3 Настройка разрешений PolicyKit](#Настройка_разрешений_PolicyKit)
     *   [3.4 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
         *   [3.4.1 Avoiding the three seconds timeout](#Avoiding_the_three_seconds_timeout)
         *   [3.4.2 Start OpenNTPD](#Start_OpenNTPD)
@@ -47,7 +51,7 @@
     *   [5.15 Automatically connect to VPN not working on boot](#Automatically_connect_to_VPN_not_working_on_boot)
     *   [5.16 NetworkManager dispatcher does not run using systemd](#NetworkManager_dispatcher_does_not_run_using_systemd)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Шифрование паролей к wifi](#.D0.A8.D0.B8.D1.84.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B5.D0.B9_.D0.BA_wifi)
+    *   [6.1 Шифрование паролей к wifi](#Шифрование_паролей_к_wifi)
     *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
         *   [6.2.1 Ad-hoc](#Ad-hoc)
         *   [6.2.2 Real AP](#Real_AP)
@@ -61,15 +65,15 @@
     *   [6.7 Connect faster](#Connect_faster)
         *   [6.7.1 Disabling IPv6](#Disabling_IPv6)
     *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
-    *   [6.9 Настройка подмены MAC-адреса на случайный](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D0.BE.D0.B4.D0.BC.D0.B5.D0.BD.D1.8B_MAC-.D0.B0.D0.B4.D1.80.D0.B5.D1.81.D0.B0_.D0.BD.D0.B0_.D1.81.D0.BB.D1.83.D1.87.D0.B0.D0.B9.D0.BD.D1.8B.D0.B9)
-    *   [6.10 Включение IPv6 Privacy Extensions](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_IPv6_Privacy_Extensions)
-*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [6.9 Настройка подмены MAC-адреса на случайный](#Настройка_подмены_MAC-адреса_на_случайный)
+    *   [6.10 Включение IPv6 Privacy Extensions](#Включение_IPv6_Privacy_Extensions)
+*   [7 Смотрите также](#Смотрите_также)
 
 ## Базовая установка
 
 NetworkManager устанавливается пакетом [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)")
 
-**Примечание:** Убедитесь что не запущены никакие другие сервисы, претендующие на настройку сети, т.к. это вызовет их конфликт. Вы можете отобразить список запущенных сервисов командой `systemctl --type=service`, и затем [остановить](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") нужные.
+**Примечание:** Убедитесь что не запущены никакие другие сервисы, претендующие на настройку сети, т.к. это вызовет их конфликт. Вы можете отобразить список запущенных сервисов командой `systemctl --type=service`, и затем [остановить](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") нужные.
 
 ### Поддержка VPN
 
@@ -207,11 +211,11 @@ Alternatively there is [nmcli-dmenu](https://github.com/firecat53/nmcli-dmenu) w
 
 ## Configuration
 
-NetworkManager will require some additional steps to be able run properly. Make sure you have configured `/etc/hosts` as described [Network configuration (Русский)#Установка имени узла](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8_.D1.83.D0.B7.D0.BB.D0.B0 "Network configuration (Русский)").
+NetworkManager will require some additional steps to be able run properly. Make sure you have configured `/etc/hosts` as described [Network configuration (Русский)#Установка имени узла](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_имени_узла "Network configuration (Русский)").
 
 ### Автозапуск NetworkManager
 
-NetworkManager запускается ([Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)")) с помощью `NetworkManager.service`. После запуска демона NetworkManager, он автоматически подключатется к любой доступной сети, которые уже были настроены. Для любых "пользовательских соединений" или не настроенных соединений нужен *nmcli* или апплет для настройки и подключения.
+NetworkManager запускается ([Использование юнитов](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)")) с помощью `NetworkManager.service`. После запуска демона NetworkManager, он автоматически подключатется к любой доступной сети, которые уже были настроены. Для любых "пользовательских соединений" или не настроенных соединений нужен *nmcli* или апплет для настройки и подключения.
 
 **Note:** NetworkManager возможно будет печатать бессмысленные предупреждения ([FS#34971](https://bugs.archlinux.org/task/34971)) в ваш системный лог, когда [NetworkManager-dispatcher.service](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") и [ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager) не запущены. Чтобы сохранить журнал в чистоте и убрать эти сообщения, запустите оба сервиса, даже если они не требуются вашей среде.
 
@@ -223,7 +227,7 @@ In some cases the service will still fail to start sucessfully on boot due to th
 
 ### Настройка разрешений PolicyKit
 
-Смотрите [General troubleshooting (Русский)#Разрешения сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8 "General troubleshooting (Русский)") для создания рабочей сессии.
+Смотрите [General troubleshooting (Русский)#Разрешения сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Разрешения_сессии "General troubleshooting (Русский)") для создания рабочей сессии.
 
 With a working session, you have several options for granting the necessary privileges to NetworkManager:
 
@@ -247,7 +251,7 @@ All users in the `network` group will be able to add and remove networks without
 
 ### Network services with NetworkManager dispatcher
 
-There are quite a few network services that you will not want running until NetworkManager brings up an interface. Good examples are [NTPd](/index.php/NTPd "NTPd") and network filesystem mounts of various types (e.g. **netfs**). NetworkManager has the ability to start these services when you connect to a network and stop them when you disconnect. To activate the feature you need to [start](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") the `NetworkManager-dispatcher.service`.
+There are quite a few network services that you will not want running until NetworkManager brings up an interface. Good examples are [NTPd](/index.php/NTPd "NTPd") and network filesystem mounts of various types (e.g. **netfs**). NetworkManager has the ability to start these services when you connect to a network and stop them when you disconnect. To activate the feature you need to [start](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") the `NetworkManager-dispatcher.service`.
 
 Once the feature is active, scripts can be added to the `/etc/NetworkManager/dispatcher.d` directory. These scripts will need to have executable, user permissions. For security, it is good practice to make them owned by **root:root** and writable only by the owner.
 
@@ -485,7 +489,7 @@ Force an IP address renewal by your favorite means, and you should now see your 
 
  `/etc/NetworkManager/NetworkManager.conf`  `dhcp=dhcpcd` 
 
-Then [restart](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") `NetworkManager.service`.
+Then [restart](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)") `NetworkManager.service`.
 
 ### Missing default route
 

@@ -11,7 +11,11 @@ Benchmarking is the act of measuring performance and comparing the results to an
 
 Many tools can be used to determine system performance, the following provides a list of tools available.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Standalone tools](#Standalone_tools)
     *   [1.1 glxgears](#glxgears)
@@ -156,13 +160,11 @@ The [dd](/index.php/Dd "Dd") utility can be used to measure both reads and write
 
 First, enter a directory on the SSD with at least 1.1 GB of free space (and one that obviously gives your user wrx permissions) and write a test file to measure write speeds and to give the device something to read:
 
+ `$ dd if=/dev/zero of=*/path/to/SSD/*tempfile bs=1M count=1024 conv=fdatasync,notrunc status=progress` 
 ```
-$ cd /path/to/SSD
-$ dd if=/dev/zero of=tempfile bs=1M count=1024 conv=fdatasync,notrunc status=progress
 1024+0 records in
 1024+0 records out
-w bytes (x GB) copied, y s, z MB/s
-
+*v* bytes (*w* MB, *x* MiB) copied, *y* s, *z* MB/s
 ```
 
 **Tip:** See [dd-benchmark](https://romanrm.net/dd-benchmark) for an explanation on the requirement to `sync` and further related `dd` options.
@@ -172,20 +174,21 @@ Next, clear the buffer-cache to accurately measure read speeds directly from the
 ```
 # echo 3 > /proc/sys/vm/drop_caches
 $ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress
+```
+
+```
 1024+0 records in
 1024+0 records out
-w bytes (x GB) copied, y s, z MB/s
-
+*v* bytes (*w* MB, *x* MiB) copied, *y* s, *z* MB/s
 ```
 
 Now that the last file is in the buffer, repeat the command to see the speed of the buffer-cache:
 
+ `$ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress` 
 ```
-$ dd if=tempfile of=/dev/null bs=1M count=1024 status=progress
 1024+0 records in
 1024+0 records out
-w bytes (x GB) copied, y s, z GB/s
-
+*v* bytes (*w* MB, *x* MiB) copied, *y* s, *z* MB/s
 ```
 
 **Note:** One should run the above command 4-5 times and manually average the results for an accurate evaluation of the buffer read speed.

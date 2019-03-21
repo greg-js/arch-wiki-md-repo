@@ -7,32 +7,36 @@
 
 [Chromium](https://ru.wikipedia.org/wiki/Chromium) — графический веб-браузер с открытым исходным кодом, основанный на движке [Blink](https://en.wikipedia.org/wiki/ru:Blink_(%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA) и разрабатываемый корпорацией Google совместно с сообществом и некоторыми другими корпорациями.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 Chromium как браузер по умолчанию](#Chromium_.D0.BA.D0.B0.D0.BA_.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-    *   [2.2 Ассоциации файлов](#.D0.90.D1.81.D1.81.D0.BE.D1.86.D0.B8.D0.B0.D1.86.D0.B8.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2)
-    *   [2.3 Плагин Flash Player'a](#.D0.9F.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD_Flash_Player.27a)
-    *   [2.4 Плагин для просмотра файлов PDF](#.D0.9F.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_PDF)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Chromium как браузер по умолчанию](#Chromium_как_браузер_по_умолчанию)
+    *   [2.2 Ассоциации файлов](#Ассоциации_файлов)
+    *   [2.3 Плагин Flash Player'a](#Плагин_Flash_Player'a)
+    *   [2.4 Плагин для просмотра файлов PDF](#Плагин_для_просмотра_файлов_PDF)
         *   [2.4.1 libpdf](#libpdf)
         *   [2.4.2 PDF.js](#PDF.js)
-    *   [2.5 Сертификаты](#.D0.A1.D0.B5.D1.80.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.82.D1.8B)
-*   [3 Разные полезности](#.D0.A0.D0.B0.D0.B7.D0.BD.D1.8B.D0.B5_.D0.BF.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
-*   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [4.1 Частые зависания в KDE](#.D0.A7.D0.B0.D1.81.D1.82.D1.8B.D0.B5_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.B2_KDE)
-    *   [4.2 Звук, напоминающий треск](#.D0.97.D0.B2.D1.83.D0.BA.2C_.D0.BD.D0.B0.D0.BF.D0.BE.D0.BC.D0.B8.D0.BD.D0.B0.D1.8E.D1.89.D0.B8.D0.B9_.D1.82.D1.80.D0.B5.D1.81.D0.BA)
-    *   [4.3 Рендеринг шрифтов в плагине PDF](#.D0.A0.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D0.B2_.D0.BF.D0.BB.D0.B0.D0.B3.D0.B8.D0.BD.D0.B5_PDF)
-    *   [4.4 Принудительное 3D-ускорение в Flash Player и браузере](#.D0.9F.D1.80.D0.B8.D0.BD.D1.83.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D0.B5_3D-.D1.83.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_Flash_Player_.D0.B8_.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D0.B5)
-    *   [4.5 Ссылки "mailto" открываются в новых вкладках](#.D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8_.22mailto.22_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.B2_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.B2.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0.D1.85)
-    *   [4.6 Настройка прокси](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BF.D1.80.D0.BE.D0.BA.D1.81.D0.B8)
-    *   [4.7 speech-dispatcher выдает дампы памяти](#speech-dispatcher_.D0.B2.D1.8B.D0.B4.D0.B0.D0.B5.D1.82_.D0.B4.D0.B0.D0.BC.D0.BF.D1.8B_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8)
+    *   [2.5 Сертификаты](#Сертификаты)
+*   [3 Разные полезности](#Разные_полезности)
+*   [4 Решение проблем](#Решение_проблем)
+    *   [4.1 Частые зависания в KDE](#Частые_зависания_в_KDE)
+    *   [4.2 Звук, напоминающий треск](#Звук,_напоминающий_треск)
+    *   [4.3 Рендеринг шрифтов в плагине PDF](#Рендеринг_шрифтов_в_плагине_PDF)
+    *   [4.4 Принудительное 3D-ускорение в Flash Player и браузере](#Принудительное_3D-ускорение_в_Flash_Player_и_браузере)
+    *   [4.5 Ссылки "mailto" открываются в новых вкладках](#Ссылки_"mailto"_открываются_в_новых_вкладках)
+    *   [4.6 Настройка прокси](#Настройка_прокси)
+    *   [4.7 speech-dispatcher выдает дампы памяти](#speech-dispatcher_выдает_дампы_памяти)
     *   [4.8 WebGL](#WebGL)
-*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [5 Смотрите также](#Смотрите_также)
 
 ## Установка
 
-Проект с открытым исходным кодом, **Chromium**, можно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") с пакетом [chromium](https://www.archlinux.org/packages/?name=chromium). Помимо этого в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") можно найти:
+Проект с открытым исходным кодом, **Chromium**, можно [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") с пакетом [chromium](https://www.archlinux.org/packages/?name=chromium). Помимо этого в [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") можно найти:
 
 *   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/) — версия для разработчиков (уже собранный двоичный пакет: [chromium-browser-bin](https://aur.archlinux.org/packages/chromium-browser-bin/))
 *   [google-chrome](https://aur.archlinux.org/packages/google-chrome/) — модифицированный вариант, **Google Chrome**, включающий в себя Flash Player
@@ -69,7 +73,7 @@
 
 **libpdf** — собственная разработка Google для просмотра PDF файлов, которая включена в Chromium (начиная с версии 37) и в Google Chrome.
 
-При обновлении с версии 36 до версии 37 необходимо [удалить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакеты [chromium-libpdf](https://aur.archlinux.org/packages/chromium-libpdf/) и [chromium-libpdf-dev](https://aur.archlinux.org/packages/chromium-libpdf-dev/). Если плагин выключен, включите его на странице `chrome://plugins`.
+При обновлении с версии 36 до версии 37 необходимо [удалить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Удаление_пакетов "Pacman (Русский)") пакеты [chromium-libpdf](https://aur.archlinux.org/packages/chromium-libpdf/) и [chromium-libpdf-dev](https://aur.archlinux.org/packages/chromium-libpdf-dev/). Если плагин выключен, включите его на странице `chrome://plugins`.
 
 #### PDF.js
 
@@ -87,7 +91,7 @@
 
 ### Частые зависания в KDE
 
-[Удалите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse). Смотрите ветку форума [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
+[Удалите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Удаление_пакетов "Pacman (Русский)") пакет [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse). Смотрите ветку форума [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
 
 ### Звук, напоминающий треск
 

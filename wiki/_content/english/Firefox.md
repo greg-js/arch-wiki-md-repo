@@ -262,7 +262,7 @@ You can *Take a Screenshot* by either clicking the *Page actions* button (the th
 *   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[2]](https://github.com/mozilla-services/screenshots/issues/3503)
 *   If [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy") is enabled, to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
 
-As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` (you might need to enable the button first).
+As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` or `Ctrl+Shift+i` (you might need to enable the button first in the *Developer Tools Settings > Available Toolbox Buttons > Take a screenshot of the entire page*).
 
 ### Window manager rules
 

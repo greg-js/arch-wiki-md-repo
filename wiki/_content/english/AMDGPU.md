@@ -17,12 +17,15 @@ Related articles
 *   [2 Installation](#Installation)
     *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support)
         *   [2.1.1 Set required module parameters](#Set_required_module_parameters)
+            *   [2.1.1.1 Set module parameters in kernel command line](#Set_module_parameters_in_kernel_command_line)
+            *   [2.1.1.2 Set module parameters in modprobe.d](#Set_module_parameters_in_modprobe.d)
     *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
     *   [4.1 Tear Free Rendering](#Tear_Free_Rendering)
     *   [4.2 DRI level](#DRI_level)
+    *   [4.3 Variable refresh rate](#Variable_refresh_rate)
 *   [5 Features](#Features)
     *   [5.1 Video acceleration](#Video_acceleration)
     *   [5.2 Overclocking](#Overclocking)
@@ -64,6 +67,10 @@ To make sure the `amdgpu` is loaded first use the following [Mkinitcpio#MODULES]
 
 #### Set required module parameters
 
+The parameters of both `amdgpu` and `radeon` modules are `cik_support=` and `si_support=`. They can be set as a kernel parameter or in a configuration file for *modprobe* in [modprobe.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modprobe.d.5).
+
+##### Set module parameters in kernel command line
+
 To enable full support for SI/CIK when using the `amdgpu`, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent the `radeon` module from being used [[1]](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1):
 
  `$ dmesg` 
@@ -76,6 +83,25 @@ The flags depend on the cards GCN version:
 
 *   Southern Islands (SI): `radeon.si_support=0 amdgpu.si_support=1`
 *   Sea Islands (CIK): `radeon.cik_support=0 amdgpu.cik_support=1`
+
+##### Set module parameters in modprobe.d
+
+Create the following configuration files for *modprobe* in `/etc/modprobe.d/`. See [modprobe.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modprobe.d.5) for the file syntax.
+
+For Southern Islands (SI) add the lines with option `si_support=`, for Sea Islands (CIK) add those with option `cik_support=`.
+
+ `/etc/modprobe.d/amdgpu.conf` 
+```
+options amdgpu si_support=1
+options amdgpu cik_support=1
+```
+ `/etc/modprobe.d/radeon.conf` 
+```
+options radeon si_support=0
+options radeon cik_support=0
+```
+
+Make sure `modconf` is in the the HOOKS array in `/etc/mkinitcpio.conf` and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ### AMDGPU PRO
 
@@ -138,6 +164,30 @@ Option "TearFree" "true"
 
 ```
 Option "DRI" "3"
+
+```
+
+### Variable refresh rate
+
+Variable refresh rate (also known as FreeSync) allows the monitor to adjust its refresh rate to the output signal. This allows for games to eliminate screen tearing less usual vsync downsides such as stuttering:
+
+```
+Option "VariableRefresh" "true"
+
+```
+
+**Note:**
+
+*   The monitor and GPU need to support FreeSync and be connected over DisplayPort. HDMI is not supported.
+*   Only OpenGL applications can be adaptively refreshed. RADV [Vulkan](/index.php/Vulkan "Vulkan") does not (yet) support FreeSync.
+*   Mesa has blacklisted various desktop compositors, web browsers, and media players from enabling FreeSync support.
+
+Verify *vrr_capable* is set to *1* using [xrandr](/index.php/Xrandr "Xrandr"):
+
+ `$ xrandr --props` 
+```
+vrr_capable: 1
+        range: (0, 1)
 
 ```
 

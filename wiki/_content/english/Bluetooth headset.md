@@ -27,6 +27,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.4.7 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
         *   [1.4.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired,_but_is_not_recognized_by_device)
         *   [1.4.9 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
+        *   [1.4.10 Apple Airpods and other bluetooth headsets have low volume](#Apple_Airpods_and_other_bluetooth_headsets_have_low_volume)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -378,6 +379,32 @@ Device XX:XX:XX:XX:XX:XX My Device
 ```
 
 Then [restart](/index.php/Restart "Restart") `bluetooth.service`, turn on your bluetooth adapter, make your device discoverable, re-scan for devices, and re-pair your device. Depending on your bluetooth manager, you may need to perform a full reboot in order to re-discover the device.
+
+#### Apple Airpods and other bluetooth headsets have low volume
+
+Edit `/lib/systemd/system/bluetooth.service` and change the line:
+
+```
+   ExecStart=/usr/lib/bluetooth/bluetoothd
+
+```
+
+to:
+
+```
+   ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=avrcp
+
+```
+
+then run:
+
+```
+   sudo systemctl daemon-reload
+   sudo systemctl restart bluetooth.service
+
+```
+
+Finally, reconnect your headset.
 
 ## Legacy method: ALSA-BTSCO
 

@@ -551,11 +551,9 @@ This is a simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") tha
 
 #### As systemd unit
 
-Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`.
+Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`. See [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
 
 **Note:** Make sure the filename corresponds to the mountpoint you want to use. E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount the share under `/mnt/myshare`. Otherwise the following error might occur: `systemd[1]: mnt-myshare.mount: Where= setting does not match unit name. Refusing.`.
-
-`Requires=` replace (if needed) with your [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration").
 
 `What=` path to share
 
@@ -563,25 +561,29 @@ Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount
 
 `Options=` share mounting options
 
-**Note:** If you want to use a hostname for the server you want to share (instead of an IP address), add `systemd-resolved.service` to `After` and `Wants`. This might avoid mount errors at boot time that do not arise when testing the unit.
+**Note:**
+
+*   Network mount units automatically acquire `After` dependencies on *remote-fs-pre.target*, *network.target* and *network-online.target*, and gain a `Before` dependency on *remote-fs.target* unless `nofail` mount option is set. Towards the latter a `Wants` unit is added as well.
+*   [Append](/index.php/Append "Append") `noauto` to `Options` preventing automatically mount during boot (unless it is pulled in by some other unit).
+*   If you want to use a hostname for the server you want to share (instead of an IP address), add `nss-lookup.target` to `After` and `Wants`. This might avoid mount errors at boot time that do not arise when testing the unit.
+
  `/etc/systemd/system/mnt-myshare.mount` 
 ```
 [Unit]
 Description=Mount Share at boot
-Requires=systemd-networkd.service
-After=network-online.target
-Wants=network-online.target
 
 [Mount]
 What=//server/share
 Where=/mnt/myshare
-Options=credentials=/etc/samba/creds/myshare,iocharset=utf8,rw,x-systemd.automount
+Options=x-systemd.automount,credentials=/etc/samba/credentials/myshare,iocharset=utf8,rw
 Type=cifs
 TimeoutSec=30
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+**Tip:** In case of an unreachable system, [append](/index.php/Append "Append") `ForceUnmount=true` to `[Mount]`, allowing the share to be (force-)unmounted.
 
 To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
 

@@ -467,7 +467,7 @@ The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be 
 
 ### Sublime Text 3
 
-Sublime Text 3 has full support for display scaling. Go to *Preferences > Settings > User Settings* and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
+Sublime Text 3 has full support for display scaling. Go to *Preferences > Settings > User Settings* and add `"ui_scale": 2.0` to your settings.
 
 ### Thunderbird
 

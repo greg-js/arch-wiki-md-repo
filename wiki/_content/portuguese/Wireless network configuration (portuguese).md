@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-11-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=554905) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=569243) na versão em inglês.
 
 Artigos relacionados
 
@@ -168,11 +168,11 @@ Assim como outras interfaces de rede, as sem fio são controladas com *ip* do pa
 
 Gerenciar uma conexão sem fio requer um conjunto básico de ferramentas. Use um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") ou use um dos seguintes diretamente:
 
-| Software | Pacote | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 |
-| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html)  | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Sim | Não | Sim | Não |
-| [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | Não | Sim | Sim | Não |
-| [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Sim | Sim | Sim | Sim |
-| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | Não | Sim | Sim | Sim |
+| Software | Pacote | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) |
+| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Sim | Não | Sim | Não | Sim |
+| [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | Não | Sim | Sim | Não | Sim |
+| [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Sim | Sim | Sim | Sim | Sim |
+| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | Não | Sim | Sim | Sim | Não |
 
 1.  Obsoleto.
 
@@ -377,7 +377,7 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 #### MS-CHAPv2
 
-As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 com PEAP às vezes exigem [pptpclient](https://www.archlinux.org/packages/?name=pptpclient), além do pacote [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl "Netctl") parece funcionar facilmente sem ppp-mppe, no entanto. Em ambos os casos, o uso de MSCHAPv2 é desencorajado, pois é altamente vulnerável, embora o uso de outro método geralmente não seja uma opção. Veja também [[1]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) e [.pdf](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise).
+As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 com PEAP às vezes exigem [pptpclient](https://www.archlinux.org/packages/?name=pptpclient), além do pacote [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl "Netctl") parece funcionar facilmente sem ppp-mppe, no entanto. Em ambos os casos, o uso de MSCHAPv2 é desencorajado, pois é altamente vulnerável, embora o uso de outro método geralmente não seja uma opção. Veja também [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) e [.pdf](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise).
 
 ## Dicas e truques
 
@@ -471,7 +471,7 @@ Se a placa estiver com *hard blocked* ligado, use o botão de hardware (interrup
 
 Os botões de hardware para ligar ou desligar placas de rede sem fio são tratadas por um [módulo de kernel](/index.php/Kernel_module "Kernel module") específico do fornecedor, frequentemente estes são módulos [WMI](https://lwn.net/Articles/391230/). Particularmente para modelos de hardware muito novos, acontece que o modelo ainda não é totalmente suportado no kernel estável mais recente. Neste caso, muitas vezes, ajuda a procurar informações sobre o rastreador de bugs do kernel e relatar o modelo ao mantenedor do módulo do respectivo kernel do fornecedor, caso isso ainda não tenha ocorrido.
 
-Veja também [[2]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
+Veja também [[3]](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill).
 
 ### Observando os logs
 
@@ -510,7 +510,7 @@ Veja [Power saving#Network interfaces](/index.php/Power_saving#Network_interface
 
 *   Se a obtenção de um endereço IP falhar repetidamente usando o cliente padrão [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), tente instalar e usar [dhclient](https://www.archlinux.org/packages/?name=dhclient). Não se esqueça de selecionar *dhclient* como o cliente DHCP principal no [gerenciador de conexões](#Configuração_manual/automática).
 
-*   Se você puder obter um endereço IP para uma interface com fio e não para uma interface sem fio, tente desabilitar o recurso [economia de energia](#Economia_de_energia) da placa de rede sem fio (especifique {{ic|off} } em vez de `on`).
+*   Se você puder obter um endereço IP para uma interface com fio e não para uma interface sem fio, tente desabilitar o recurso [economia de energia](#Economia_de_energia) da placa de rede sem fio (especifique `off` em vez de `on`).
 
 *   Se você receber um erro de tempo limite devido a um problema de *waiting for carrier*, talvez seja necessário definir o modo de canal como `auto` para o dispositivo específico:
 
@@ -551,7 +551,7 @@ A fragmentação de pacotes melhora o rendimento dividindo pacotes com tamanho e
 
 #### Causa nº.1
 
-Se o dmesg disser `wlan0: deauthenticating from MAC by local choice (reason=3)` e você perder sua conexão Wi-Fi, é provável que você tenha uma economia de energia um pouco agressiva demais na sua placa Wi-Fi[[3]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Tente desabilitar os recursos [economia de energia](#Economia_de_energia) do placa sem fio (especifique `off` em vez de `on`).
+Se o dmesg disser `wlan0: deauthenticating from MAC by local choice (reason=3)` e você perder sua conexão Wi-Fi, é provável que você tenha uma economia de energia um pouco agressiva demais na sua placa Wi-Fi[[4]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Tente desabilitar os recursos [economia de energia](#Economia_de_energia) do placa sem fio (especifique `off` em vez de `on`).
 
 Se a sua placa não oferece suporte a ativar/desativar o modo de economia de energia, verifique o BIOS para obter opções de gerenciamento de energia. Desativar o gerenciamento de energia PCI-Express no BIOS de um Lenovo W520 resolveu esse problema.
 
@@ -628,7 +628,7 @@ Novo chipset a partir de 2014, lançado sob o novo nome comercial Mediatek. É u
 
 ### Realtek
 
-Veja [[5]](https://wikidevi.com/wiki/Realtek) para uma lista de chipsets Realtek e especificações.
+Veja [[6]](https://wikidevi.com/wiki/Realtek) para uma lista de chipsets Realtek e especificações.
 
 #### rtl8192cu
 
@@ -648,7 +648,7 @@ ou
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-Se você tiver um sinal fraco, talvez seu dispositivo tenha apenas uma antena física conectada e a seleção automática da antena esteja interrompida. Você pode forçar a escolha da antena com a opção do kernel `ant_sel=1` ou `ant_sel=2`. [[6]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+Se você tiver um sinal fraco, talvez seu dispositivo tenha apenas uma antena física conectada e a seleção automática da antena esteja interrompida. Você pode forçar a escolha da antena com a opção do kernel `ant_sel=1` ou `ant_sel=2`. [[7]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
@@ -657,9 +657,10 @@ Chipsets rtl8811au/rtl8812au/rtl8814au/rtl8821au da Realtek projetados para vár
 Vários pacotes fornece os drivers de kernel:
 
 | Chipset | Versão de driver | Pacote | Notas |
-| rtl8812au | 5.2.9.3 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Versão mais recente do driver para rtl8812au |
-| rtl8811au, rtl8812au e rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Funciona, para rtl8812au a versão mais recente é recomendada |
-| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possivelmente funciona para rtl8813au também |
+| rtl8811au, rtl8812au, rtl8814au and rtl8821au | 5.2.20 (possibilidade de usar a base 5.3.4) | [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) | Módulo de kernel Aircrack-ng para chipsets 8811au, 8812au, 8814au e 8821au com modo monitor e suporte a injeção. Possibilidade para uso da versão experimental v5.3.4 do driver editando o arquivo de PKGBUILD. |
+| rtl8812au | 5.2.20 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | A versão mais recente do driver oficial da Realtek para rtl8812au *somente*. |
+| rtl8811au, rtl8812au e rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Para rtl8812au, a versão mais recente 5.2.20 é recomendada. |
+| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possivelmente funciona para rtl8813au também. |
 
 Esses exibem [DKMS](/index.php/DKMS "DKMS"), então certifique-se que você tenha os cabeçalhos apropriados para seu kernel instalados.
 
@@ -759,7 +760,7 @@ Se você tiver problemas para se conectar a redes em geral, falhas aleatórias c
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-Se as falhas persistirem durante a inicialização e você estiver usando o driver Nouveau, tente [ativar o KMS antigo](/index.php/Nouveau#Enable_early_KMS "Nouveau") para evitar o conflito [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+Se as falhas persistirem durante a inicialização e você estiver usando o driver Nouveau, tente [ativar o KMS antigo](/index.php/Nouveau#Enable_early_KMS "Nouveau") para evitar o conflito [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
@@ -773,7 +774,7 @@ Se você tiver um problema com a velocidade de uplink lenta no modo 802.11n, por
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Não se confunda com o nome da opção, quando o valor é definido como `8`, ele não desabilita nada, mas reativa a agregação da antena de transmissão. [[9]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Não se confunda com o nome da opção, quando o valor é definido como `8`, ele não desabilita nada, mas reativa a agregação da antena de transmissão. [[10]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[11]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 Caso isso não funcione, você pode tentar desativar [economia de energia](/index.php/Power_saving#Network_interfaces "Power saving") para seu adaptador sem fio.
 
@@ -781,7 +782,7 @@ Caso isso não funcione, você pode tentar desativar [economia de energia](/inde
 
 ##### Coexistência com Bluetooth
 
-Se você tiver dificuldade em conectar um fone de ouvido Bluetooth e manter uma boa velocidade de downlink, tente desabilitar a coexistência Bluetooth [[11]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+Se você tiver dificuldade em conectar um fone de ouvido Bluetooth e manter uma boa velocidade de downlink, tente desabilitar a coexistência Bluetooth [[12]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -840,7 +841,7 @@ Veja o [wiki oficial](http://sourceforge.net/apps/mediawiki/acx100/index.php?tit
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) é um driver para o chipset WLAN ZyDAS ZD1211 802.11b/g USB, e está incluído nas versões recentes do kernel do Linux. Consulte [[12]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) para obter uma lista de dispositivos suportados. Você só precisa [instalar](/index.php/Instalar "Instalar") o firmware do dispositivo, fornecido pelo pacote [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/).
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) é um driver para o chipset WLAN ZyDAS ZD1211 802.11b/g USB, e está incluído nas versões recentes do kernel do Linux. Consulte [[13]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) para obter uma lista de dispositivos suportados. Você só precisa [instalar](/index.php/Instalar "Instalar") o firmware do dispositivo, fornecido pelo pacote [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/).
 
 #### hostap_cs
 

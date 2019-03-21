@@ -14,7 +14,11 @@ From [Ceph.com](https://ceph.com/):
 
 The official documentation [states](http://ceph.com/docs/master/install/#deploy-a-cluster-manually) "the manual procedure is primarily for exemplary purposes for those developing deployment scripts with Chef, Juju, Puppet, etc.".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Terminology](#Terminology)
 *   [2 Installation](#Installation)

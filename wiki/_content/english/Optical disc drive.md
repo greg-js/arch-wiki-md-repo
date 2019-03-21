@@ -11,7 +11,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
 
 	In computing, an optical disc drive (ODD) is a disk drive that uses laser light or electromagnetic waves within or near the visible light spectrum as part of the process of reading or writing data to or from optical discs. Some drives can only read from discs, but recent drives are commonly both readers and recorders, also called burners or writers. Compact discs, DVDs, and Blu-ray discs are common types of optical media which can be read and recorded by such drives. Optical drive is the generic name; drives are usually described as "CD" "DVD", or "Blu-ray", followed by "drive", "writer", etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Burning](#Burning)
     *   [1.1 Install burning utilities](#Install_burning_utilities)
@@ -361,7 +365,7 @@ $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
 ```
 43992+0 records in
 43992+0 records out
-90095616 bytes (90 MB) copied, 0.359539 s, 251 MB/s
+90095616 bytes (90 MB, 86 MiB) copied, 0.359539 s, 251 MB/s
 e5643e18e05f5646046bb2e4236986d8  -
 ```
 

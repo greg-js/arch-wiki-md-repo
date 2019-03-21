@@ -62,7 +62,7 @@ Without *rngd*, the above command will take lots of time to run. With *rngd* wor
 ```
 1+0 records in
 1+0 records out
-1024 bytes (1.0 kB) copied, 0.0199623 s, 51.3 kB/s
+1024 bytes (1.0 kB, 1.0 KiB) copied, 0.0199623 s, 51.3 kB/s
 
 ```
 

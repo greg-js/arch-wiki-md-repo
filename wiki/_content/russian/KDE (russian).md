@@ -11,7 +11,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 10 марта 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=568199).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 19 марта 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=568816).
 
 KDE — проект, состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
@@ -88,6 +88,7 @@ KDE активно поддерживает вики-ресурс [UserBase](htt
         *   [6.3.6 Разрыв изображения с NVIDIA](#Разрыв_изображения_с_NVIDIA)
         *   [6.3.7 Курсор иногда отображается неправильно](#Курсор_иногда_отображается_неправильно)
         *   [6.3.8 Непригодное для использования множество разрешений экрана](#Непригодное_для_использования_множество_разрешений_экрана)
+        *   [6.3.9 Размытые иконки в системном трее](#Размытые_иконки_в_системном_трее)
     *   [6.4 Звук](#Звук)
         *   [6.4.1 Отсутствие звука после выхода из ждущего режима](#Отсутствие_звука_после_выхода_из_ждущего_режима)
         *   [6.4.2 MP3-файлы не воспроизводятся с бекендом GStreamer в Phonon](#MP3-файлы_не_воспроизводятся_с_бекендом_GStreamer_в_Phonon)
@@ -684,6 +685,10 @@ $ ln -s /usr/share/icons/breeze_cursors/cursors ~/.icons/default/cursors
 #### Непригодное для использования множество разрешений экрана
 
 Ваши локальные настройки kscreen могут переопределять параметры `xorg.conf`. Просмотрите конфигурационные файлы kscreen в директории `~/.local/share/kscreen/` и проверьте, не задано ли режиму (mode) неподдерживаемое вашим дисплеем разрешение.
+
+#### Размытые иконки в системном трее
+
+Приложения часто используют библиотеку appindicator для добавления иконок в трей. Если они отображаются размытыми, проверьте установленную версию библиотеки в системе. В случае, если установлен только пакет [libappindicator-gtk2](https://www.archlinux.org/packages/?name=libappindicator-gtk2), попробуйте также установить [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3) или [libappindicator-sharp](https://www.archlinux.org/packages/?name=libappindicator-sharp).
 
 ### Звук
 

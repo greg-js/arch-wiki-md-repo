@@ -2,15 +2,19 @@ Security-Enhanced Linux (SELinux) это функция Linux, которая о
 
 Для выполнения SELinux под дистрибутивом Linux требуется: включить SELinux в ядро, инструменты SELinux Userspace и библиотеки, и SELinux Policies (главным образом на основе Reference Policy). Некоторые общие программы Linux должны также исправляться/компилироваться с функциями SELinux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Обязательные требования](#.D0.9E.D0.B1.D1.8F.D0.B7.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.82.D1.80.D0.B5.D0.B1.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [2 Установка необходимых пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-    *   [2.1 Описание пакета](#.D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Обязательные требования](#Обязательные_требования)
+*   [2 Установка необходимых пакетов](#Установка_необходимых_пакетов)
+    *   [2.1 Описание пакета](#Описание_пакета)
         *   [2.1.1 SELinux aware system utils](#SELinux_aware_system_utils)
-        *   [2.1.2 Пространство пользователя SELinux](#.D0.9F.D1.80.D0.BE.D1.81.D1.82.D1.80.D0.B0.D0.BD.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F_SELinux)
-        *   [2.1.3 Политики SELinux](#.D0.9F.D0.BE.D0.BB.D0.B8.D1.82.D0.B8.D0.BA.D0.B8_SELinux)
-        *   [2.1.4 Другие утилиты SELinux](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.83.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_SELinux)
+        *   [2.1.2 Пространство пользователя SELinux](#Пространство_пользователя_SELinux)
+        *   [2.1.3 Политики SELinux](#Политики_SELinux)
+        *   [2.1.4 Другие утилиты SELinux](#Другие_утилиты_SELinux)
 *   [3 Configuration](#Configuration)
     *   [3.1 Changing boot loader configuration](#Changing_boot_loader_configuration)
     *   [3.2 Mounting selinuxfs](#Mounting_selinuxfs)

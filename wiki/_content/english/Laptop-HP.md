@@ -229,7 +229,7 @@ Keyboard backlight: works | TO be able to boot, need to remove the initrd intel 
 
 ### Fan noise
 
-Since Linux 4.1x laptop's fan may not spin down to a lower rev step (and noise) effectively appearing stuck at higher spinning speed with no apparent temperature reason. Possible workarounds are a quick suspend to ram or power off for more than 10 minutes.
+Since Linux 4.1x laptop's fan may not spin down to a lower rev step (and noise) effectively appearing stuck at higher spinning speed with no apparent temperature reason. Possible workarounds are a quick suspend to ram or power off for more than 10 minutes. Related: [[3]](https://bbs.archlinux.org/viewtopic.php?id=192255) [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=153281)
 
 ### HP Compaq 8510w
 

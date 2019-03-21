@@ -14,7 +14,11 @@ For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1
 
 **Warning:** One should be extremely cautious using *dd*, as with any command of this kind it can destroy data irreversibly.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Disk cloning and restore](#Disk_cloning_and_restore)
@@ -65,7 +69,7 @@ This will clone the entire drive, including the MBR (and therefore bootloader), 
 
 **Note:** The block size you specify influences how read errors are handled. Read below. For data recovery, use [ddrescue](/index.php/Disk_cloning#Using_ddrescue "Disk cloning").
 
-The *dd* utility technically has an "input block size" (IBS) and an "output block size" (OBS). When you set `bs`, you effectively set both IBS and OBS. Normally, if your block size is, say, 1 MiB, *dd* will read 1024*1024 bytes and write as many bytes. But if a read error occurs, things will go wrong. Many people seem to think that *dd* will "fill up read errors with zeroes" if you use the `noerror,sync` options, but this is not what happens. *dd* will, according to documentation, fill up the OBS to IBS size *after completing its read*, which means adding zeroes at the *end* of the block. This means, for a disk, that effectively the whole 1 MiB would become messed up because of a single 512 byte read error in the beginning of the read: 12ERROR89 would become 128900000 instead of 120000089.
+The *dd* utility technically has an "input block size" (IBS) and an "output block size" (OBS). When you set `bs`, you effectively set both IBS and OBS. Normally, if your block size is, say, 1 MiB, *dd* will read 1024×1024 bytes and write as many bytes. But if a read error occurs, things will go wrong. Many people seem to think that *dd* will "fill up read errors with zeroes" if you use the `noerror,sync` options, but this is not what happens. *dd* will, according to documentation, fill up the OBS to IBS size *after completing its read*, which means adding zeroes at the *end* of the block. This means, for a disk, that effectively the whole 1 MiB would become messed up because of a single 512 byte read error in the beginning of the read: 12ERROR89 would become 128900000 instead of 120000089.
 
 If you are positive that your disk does not contain any errors, you could proceed using a larger block size, which will increase the speed of your copying several fold. For example, changing bs from 512 to 64K changed copying speed from 35 MB/s to 120 MB/s on a simple Celeron 2.7 GHz system. But keep in mind that read errors on the source disk will end up as *block errors* on the destination disk, i.e. a single 512-byte read error will mess up the whole 64 KiB output block.
 

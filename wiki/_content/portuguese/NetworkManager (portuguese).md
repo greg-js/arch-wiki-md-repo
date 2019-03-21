@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=564138) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=568992) na versão em inglês.
 
 Related articles
 
@@ -68,7 +68,8 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [7.10 Habilitar extensões de privacidade IPv6](#Habilitar_extensões_de_privacidade_IPv6)
     *   [7.11 Trabalhando com conexões cabeadas](#Trabalhando_com_conexões_cabeadas)
     *   [7.12 resolv.conf](#resolv.conf)
-        *   [7.12.1 Usar openresolv](#Usar_openresolv)
+        *   [7.12.1 /etc/resolv.conf](#/etc/resolv.conf)
+        *   [7.12.2 Usar openresolv](#Usar_openresolv)
     *   [7.13 Usando iwd como o backend de Wi-Fi](#Usando_iwd_como_o_backend_de_Wi-Fi)
 *   [8 Solução de problemas](#Solução_de_problemas)
     *   [8.1 Nenhum prompt para senha de redes Wi-Fi seguras](#Nenhum_prompt_para_senha_de_redes_Wi-Fi_seguras)
@@ -114,9 +115,11 @@ Interfaces adicionais:
 
 ### Suporte a VPN
 
-O suporte do NetworkManager VPN é baseado em um sistema de plug-in. Se você precisar de suporte VPN via NetworkManager, você precisa instalar um dos seguintes pacotes:
+O NetworkManager desde a versão 1.16 tem suporte nativo ao [WireGuard](/index.php/WireGuard "WireGuard")[[1]](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
 
-*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) para [OpenConnect](/index.php/OpenConnect "OpenConnect")
+O suporte para outros tipos de VPN é baseado em um sistema de plug-in. Eles são fornecidos nos seguintes pacotes:
+
+*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) para [OpenConnect](/index.php/OpenConnect_(Portugu%C3%AAs) "OpenConnect (Português)")
 *   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) para [OpenVPN](/index.php/OpenVPN "OpenVPN")
 *   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) para [PPTP Client](/index.php/PPTP_Client "PPTP Client")
 *   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) para [Vpnc](/index.php/Vpnc "Vpnc")
@@ -127,9 +130,10 @@ O suporte do NetworkManager VPN é baseado em um sistema de plug-in. Se você pr
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
-*   [networkmanager-wireguard-git](https://aur.archlinux.org/packages/networkmanager-wireguard-git/) para [WireGuard](/index.php/WireGuard "WireGuard")
 
-**Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+**Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+
+**Nota:** Pra ter uma resolução de DNS totalmente funcional ao usar VPN, você deve configurar [DNS dividido](#Cache_de_DNS_e_DNS_dividido).
 
 ## Uso
 
@@ -210,7 +214,7 @@ O [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem uma ferram
 
 ### KDE Plasma
 
-[Instale](/index.php/Instale "Instale") o pacote [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm). Em seguida, adicione-o à barra de tarefas do KDE por meio do menu *Opções de painel > Adicionar widgets > Rede*.
+[Instale](/index.php/Instale "Instale") o pacote [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm). Em seguida, adicione-o à barra de tarefas do KDE por meio do menu *Opções de painel > Adicionar widgets > Redes*.
 
 ### nm-applet
 
@@ -233,7 +237,7 @@ killall nm-applet
 
 Quando você fecha a janela *stalonetray*, ela fecha `nm-applet` também, então nenhuma memória extra é usada quando você terminar as configurações de rede.
 
-O applet pode mostrar notificações de eventos, como conexão ou desconexão de uma rede WiFi. Para que essas notificações sejam exibidas, verifique se você tem um servidor de notificação instalado - consulte [Notificações na área de trabalho](/index.php/Desktop_notifications "Desktop notifications"). Se você usar o applet sem um servidor de notificação, poderá ver algumas mensagens em stdout/stderr e o aplicativo poderá ser interrompido. Veja [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
+O applet pode mostrar notificações de eventos, como conexão ou desconexão de uma rede WiFi. Para que essas notificações sejam exibidas, verifique se você tem um servidor de notificação instalado - consulte [Notificações na área de trabalho](/index.php/Desktop_notifications "Desktop notifications"). Se você usar o applet sem um servidor de notificação, poderá ver algumas mensagens em stdout/stderr e o aplicativo poderá ser interrompido. Veja [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
 
 Para executar `nm-applet` com tais notificações desabilitadas, inicie o miniaplicativo com o seguinte comando:
 
@@ -337,7 +341,7 @@ dhcp=dhclient
 
 ### Cache de DNS e DNS dividido
 
-O NetworkManager possui um plugin para habilitar o cache DNS e DNS dividido usando [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), ou [Unbound](/index.php/Unbound "Unbound") (via dnssec-trigger). As vantagens dessa configuração são que as pesquisas de DNS serão armazenadas em cache, encurtando os tempos de resolução e as pesquisas de DNS dos hosts de VPN serão roteadas para os servidores DNS da VPN relevantes. Isso é especialmente útil se você estiver conectado a mais de uma VPN.
+O NetworkManager possui um plugin para habilitar o cache DNS e DNS dividido usando [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), ou Unbound via dnssec-trigger. As vantagens dessa configuração são que as pesquisas de DNS serão armazenadas em cache, encurtando os tempos de resolução e as pesquisas de DNS dos hosts de VPN serão roteadas para os servidores DNS da VPN relevantes. Isso é especialmente útil se você estiver conectado a mais de uma VPN.
 
 #### dnsmasq
 
@@ -398,7 +402,7 @@ dns=systemd-resolved
 
 #### Outros métodos
 
-**Dica:** Se [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") tem um assinante para o [resolvedor local de DNS](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Resolvedores "Resolução de nome de domínio"), defina o endereço de servidor local no `/etc/resolvconf.conf` e [configure o NetworkManager para usar openresolv](#Usar_openresolv).
+**Dica:** Se [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") tem um assinante para o [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") local, defina o endereço de servidor local no `/etc/resolvconf.conf` e [configure o NetworkManager para usar openresolv](#Usar_openresolv).
 
 Com um servidor DNS em cache já em funcionamento, o endereço do servidor DNS pode ser especificado nas configurações do NetworkManager (geralmente clicando com o botão direito do mouse no miniaplicativo). A instalação dependerá do tipo de front-end usado; o processo geralmente envolve clicar com o botão direito do mouse no miniaplicativo, editar (ou criar) um perfil e, em seguida, escolher o tipo de DHCP como *Automático (especificar endereços)*. Os endereços DNS precisarão ser inseridos e geralmente estão neste formato: `127.0.0.1, *Servidor-DNS-um*, ...`.
 
@@ -822,7 +826,7 @@ Depois de colocar isso, [reinicie](/index.php/Reinicie "Reinicie") o `NetworkMan
 
 ### Configurando aleatorização de endereço MAC
 
-**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
+**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
 
 A aleatorização de MAC pode ser usada para aumentar a privacidade, não revelando seu endereço MAC real à rede.
 
@@ -867,7 +871,11 @@ Você também pode editar a conexão (e persistir no disco) ou excluí-la. O Net
 
 ### resolv.conf
 
-O *NetworkManager* sobrescreve o [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)") por padrão.
+*NetworkManager* pode gerenciar `/etc/resolv.conf` por [conta própria](#/etc/resolv.conf) ou por meio de [openresolv](#Usar_openresolv).
+
+#### /etc/resolv.conf
+
+O *NetworkManager* sobrescreve o `/etc/resolv.conf` por padrão.
 
 Isso pode ser evitado definindo `dns=none` em um arquivo de configuração:
 
@@ -876,6 +884,8 @@ Isso pode ser evitado definindo `dns=none` em um arquivo de configuração:
 [main]
 dns=none
 ```
+
+**Nota:** Veja [#Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido), para configurar o NetworkManager usando outros backends de DNS, como o [dnsmasq](/index.php/Dnsmasq "Dnsmasq") e o [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), em vez de usar `dns=none`.
 
 Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=565125) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=569299) na versão em inglês.
 
 Artigos relacionados
 
@@ -121,7 +121,7 @@ Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `star
 *   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland").
 *   Wayland com o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA") atualmente sofre de um desempenho muito ruim: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em QT como VLC, calibre e smplayer usarem wayland.
+Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em [Qt](/index.php/Qt "Qt") como [VLC](/index.php/VLC "VLC"), calibre e SMPlayer usarem Wayland.
 
 Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 
@@ -129,9 +129,10 @@ Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
- export QT_QPA_PLATFORM
 
 ```
+
+Caso isso não funcione como esperado, você pode tentar alterar `[[ -z $XDG_SESSION_TYPE ]]` para `[[ $XDG_SESSION_TYPE = tty ]]`.
 
 ### Aplicativos do GNOME no Wayland
 
@@ -254,6 +255,8 @@ Ou via [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") é a ferramenta nativa do projeto GNOME para controlar as configurações de rede pelo Shell. [Instale](/index.php/Instale "Instale") o pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) e [habilite](/index.php/Habilite "Habilite") a unit do systemd `NetworkManager.service`.
 
 Enquanto qualquer outro [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") pode ser usado, NetworkManager fornece a integração completa via configurações de rede shell e um miniaplicativo indicador de status [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (não exigido para o GNOME).
+
+**Nota:** Redes sem fio ocultas configuradas com o *nmtui* do [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) não conectam automaticamente. Você precisa criar um novo perfil usando o centro de controle do GNOME para restaurar as capacidades de autoconexão para aquela rede.
 
 #### Contas on-line
 
@@ -412,7 +415,7 @@ O [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) permite 
 
 ##### Ícones na área de trabalho
 
-Até o GNOME 3.28, os ícones na área de trabalho eram fornecidos pelo [Arquivos](/index.php/Files "Files"), que desenhava uma janela transparente sobre a área de trabalho contendo os ícones. A partir do GNOME 3.28 essa funcionalidade foi removida e os ícones da área de trabalho não estão mais disponíveis no GNOME. Possíveis soluções incluem o uso do [Nemo](/index.php/Nemo "Nemo") (um fork do Arquivos que ainda possui a funcionalidade de ícones do desktop) ou a instalação do [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) que replica parcialmente a funcionalidade do ícone do desktop disponível no GNOME 3.26 e anteriores. Para mais informações, consulte o seguinte [tópico no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?id=235633).
+Até o GNOME 3.28, os ícones na área de trabalho eram fornecidos pelo [Arquivos](/index.php/Files "Files"), que desenhava uma janela transparente sobre a área de trabalho contendo os ícones. A partir do GNOME 3.28 essa funcionalidade foi removida e os ícones da área de trabalho não estão mais disponíveis no GNOME. Possíveis soluções incluem o uso do [Nemo](/index.php/Nemo "Nemo") (um fork do Arquivos que ainda possui a funcionalidade de ícones do desktop) ou a instalação do [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/), o qual replica a funcionalidade do ícone do desktop disponível no GNOME 3.26 e anteriores, mas com pequenas diferenças. Para mais informações, consulte o seguinte [tópico no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?id=235633).
 
 ##### Tela de bloqueio e plano de fundo
 

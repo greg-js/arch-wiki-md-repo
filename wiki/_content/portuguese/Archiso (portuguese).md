@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=559444) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=565315) na versão em inglês.
 
 Artigos relacionados
 
@@ -257,7 +257,7 @@ Recompilar a iso após modificações não é oficialmente suportado. No entanto
 
 ```
 
-Além disso, é necessário editar o script `airootfs/root/customize_airootfs.sh` e adicionar um comando `id` no início da linha `useradd` como mostrado aqui. Caso contrário, a reconstrução será interrompida neste ponto, porque o usuário a ser adicionado já existe [FS#41865](https://bugs.archlinux.org/task/41865).
+Se você editou `airootfs/root/customize_airootfs.sh` para criar um usuário sem privilégios, a recompilação falhará ao criá-lo porque o usuário já existirá ([FS#41865](https://bugs.archlinux.org/task/41865)). Para evitar esse problema, você precisa verificar se o usuário existe antes de executar `useradd`, por exemplo, executando `id`:
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch

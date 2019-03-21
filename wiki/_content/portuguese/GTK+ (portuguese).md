@@ -58,7 +58,8 @@ As duas versões do GTK+ estão atualmente disponíveis nos [repositórios ofici
 
 *   **GTK+ 3.x** está disponível com o pacote [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 *   **GTK+ 2.x** está disponível com o pacote [gtk2](https://www.archlinux.org/packages/?name=gtk2).
-*   **GTK+ 1.x** está disponível com o pacote [gtk](https://aur.archlinux.org/packages/gtk/).
+
+**GTK+ 1.x** está disponível com o pacote [gtk](https://aur.archlinux.org/packages/gtk/).
 
 ## Temas
 
@@ -162,7 +163,7 @@ Outras ferramentas GUI geralmente sobrescrevem os [arquivos de configuração](#
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-	Após a instalação, `kde-gtk-config` também pode ser encontrado em *Configurações do sistema > Estilo dos aplicativos > GTK*.
+	Após a instalação, `kde-gtk-config` também pode ser encontrado em *Configurações do sistema > Estilo dos aplicativos > GNOME/GTK Application Style*.
 
 *   **LXAppearance** — Ferramenta de configuração de estilo independente para GTK+ 2 e GTK+ 3 do projeto LXDE (não requer outras partes da área de trabalho do LXDE).
 
@@ -188,22 +189,22 @@ Outras ferramentas GUI geralmente sobrescrevem os [arquivos de configuração](#
 
 ## Configuração
 
-GTK+ settings can be specified manually in configuration files, but desktop environments and applications can override these settings. Depending on GTK+ version, these files are located at:
+As configurações do GTK+ podem ser especificadas manualmente nos arquivos de configuração, mas os ambientes e aplicativos de desktop podem substituir essas configurações. Dependendo da versão do GTK+, esses arquivos estão localizados em:
 
-*   GTK+ 2 user specific: `~/.gtkrc-2.0`
-*   GTK+ 2 system wide: `/etc/gtk-2.0/gtkrc`
-*   GTK+ 3 user specific: `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, or `$HOME/.config/gtk-3.0/settings.ini` if `$XDG_CONFIG_HOME` is not set
-*   GTK+ 3 system wide: `/etc/gtk-3.0/settings.ini`
+*   específico de usuário no GTK+ 2: `~/.gtkrc-2.0`
+*   todo o sistema no GTK+ 2: `/etc/gtk-2.0/gtkrc`
+*   específico de usuário no GTK+ 3: `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, ou `$HOME/.config/gtk-3.0/settings.ini` se `$XDG_CONFIG_HOME` não estiver definido
+*   todo o sistema no GTK+ 3: `/etc/gtk-3.0/settings.ini`
 
-**Note:**
+**Nota:**
 
-*   See the [GTK+ 3 *GtkSettings* properties](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings.properties) (and [GTK+ 2 properties](https://developer.gnome.org/gtk2/stable/GtkSettings.html#GtkSettings.properties)) in the GTK+ programming reference manual for the full list of currently supported GTK+ configuration options.
-*   Some of the settings described below (such as `gtk-icon-sizes`) are deprecated and ignored since GTK+ 3.10.
-*   If you edit your GTK+ configuration files, only newly started applications will display the changes.
+*   Veja as [propriedades de *GtkSettings* do GTK+ 3](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings.properties) (e as [propriedades do GTK+ 2](https://developer.gnome.org/gtk2/stable/GtkSettings.html#GtkSettings.properties)) no manual de referência de programação do GTK+ para a lista completa as opções de configuração de GTK+ atualmente válidas.
+*   Algumas das configurações descritas abaixo (como `gtk-icon-size`) são obsoletas e ignoradas desde o GTK+ 3.10.
+*   Se você editar seus arquivos de configuração do GTK+, apenas os aplicativos recém-iniciados exibirão as alterações.
 
 ### Configuração básica de tema
 
-To manually change the GTK+ theme, icons, font and font size, add the following to the configuration files, for example:
+Para alterar manualmente o tema, os ícones, a fonte e o tamanho da fonte do GTK+, adicione o seguinte aos arquivos de configuração, por exemplo:
 
 *   GTK+ 2:
 
@@ -224,11 +225,11 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Note:** The icon theme name is the name defined in the theme's index file, *not* the name of its directory.
+**Nota:** O nome do tema do ícone é o nome definido no arquivo de índice do tema, *não* o nome de seu diretório.
 
 ### Variante escura de tema
 
-Some GTK+ 3 themes contain a dark theme variant, but it's only used by default when the application requests it explicitly. To use dark theme variant with all GTK+ 3 applications, set:
+Alguns temas do GTK+ 3 contêm uma variante de tema escuro, mas ela é usada apenas por padrão quando o aplicativo solicita isso explicitamente. Para usar a variante do tema escuro com todos os aplicativos GTK+ 3, defina:
 
 ```
 gtk-application-prefer-dark-theme = true
@@ -237,7 +238,7 @@ gtk-application-prefer-dark-theme = true
 
 ### Atalhos de teclado
 
-Keyboard shortcuts (otherwise known as *accelerators* in GTK+) may be changed by hovering the mouse over the respective menu item, and pressing the desired key combination. To enable this feature, set:
+Os atalhos de teclado (também conhecidos como *aceleradores* no GTK+) podem ser alterados passando o mouse sobre o respectivo item de menu e pressionando a combinação de teclas desejada. Para ativar esse recurso, defina:
 
 ```
 gtk-can-change-accels = 1
@@ -246,7 +247,7 @@ gtk-can-change-accels = 1
 
 #### Vinculações de teclas Emacs
 
-To have Emacs-like key bindings in GTK+ applications add the following:
+Para ter associações de teclas do tipo Emacs em aplicativos de GTK+, adicione o seguinte:
 
  `~/.gtkrc-2.0`  `gtk-key-theme-name = "Emacs"`  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -254,25 +255,25 @@ To have Emacs-like key bindings in GTK+ applications add the following:
 gtk-key-theme-name = Emacs
 ```
 
-For GTK+3 also run:
+Para GTK+3, também execute:
 
 ```
 $ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
 ```
 
-XFCE has a similar setting:
+XFCE possui uma configuração similar:
 
 ```
 $ xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
 
 ```
 
-The config files in `/usr/share/themes/Emacs/` determine what the Emacs bindings are, and can be changed. Copying sections to the users `~/.gtkrc-2.0` file allows for changes on a per user basis.
+Os arquivos de configuração em `/usr/share/themes/Emacs/` determinam quais são as ligações do Emacs e podem ser alteradas. Copiar seções para o arquivo `~/.gtkrc-2.0` permite alterações por usuário.
 
 ### Atraso no menu do GNOME
 
-This setting controls the delay between pointing the mouse at a menu and that menu opening. This delay is measured in milliseconds.
+Essa configuração controla o atraso entre apontar o mouse em um menu e a abertura do menu. Esse atraso é medido em milissegundos.
 
 ```
 gtk-menu-popup-delay = 0
@@ -281,16 +282,16 @@ gtk-menu-popup-delay = 0
 
 ### Reduzir tamanhos de widgets
 
-If you have a small screen or you just do not like big icons and widgets, you can resize things easily.
+Se você tem uma tela pequena ou simplesmente não gosta de grandes ícones e widgets, pode redimensionar as coisas facilmente.
 
-To have icons without text in toolbars ([valid values](https://developer.gnome.org/gtk3/stable/gtk3-Standard-Enumerations.html#GtkToolbarStyle)), use
+Para ter ícones sem texto nas barras de ferramentas ([valores válidos](https://developer.gnome.org/gtk3/stable/gtk3-Standard-Enumerations.html#GtkToolbarStyle)), use
 
 ```
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
 
 ```
 
-To use smaller icons, use a line like this:
+Para ícones menores, use uma linha como essa:
 
 ```
 gtk-icon-sizes = "panel-menu=16,16:panel=16,16:gtk-menu=16,16:gtk-large-toolbar=16,16\
@@ -298,25 +299,25 @@ gtk-icon-sizes = "panel-menu=16,16:panel=16,16:gtk-menu=16,16:gtk-large-toolbar=
 
 ```
 
-Or to remove icons from buttons completely:
+Ou para remover ícones de botões completamente:
 
 ```
 gtk-button-images = 0
 
 ```
 
-You can also remove icons from menus:
+Você também pode remover ícones de menus:
 
 ```
 gtk-menu-images = 0
 
 ```
 
-See also [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-gnome-theme/) and [[2]](http://gnome-look.org/content/show.php/Simple+eGTK?content=119812).
+Veja também [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-gnome-theme/) e [[2]](http://gnome-look.org/content/show.php/Simple+eGTK?content=119812).
 
 ### Ocultar botões de CSD
 
-To remove the minimize and maximize buttons from *gtk3* windows:
+Para remover os botões minimizar e maximizar das janelas em *gtk3*:
 
 ```
 gtk-decoration-layout=menu:close
@@ -327,7 +328,7 @@ See [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gt
 
 ### Desabilitar colagem com mouse
 
-To turn off pasting on middle mouse button click (aka PRIMARY):
+Para desaligar colagem ao clicar com o botão do meio do mouse (também conhecido como PRIMARY):
 
 ```
 gtk-enable-primary-paste=false
@@ -336,11 +337,11 @@ gtk-enable-primary-paste=false
 
 ### Localização inicial do seletor de arquivos
 
-Open the file-chooser within the **current working directory** and not the **recent** location. Normally the **current working directory** is the *Home* directory.
+Abra o seletor de arquivos dentro do **diretório de trabalho atual** e não o local **recentes**. Normalmente o **diretório de trabalho atual** é a pasta pessoal.
 
 **GTK+ 3**
 
-Change [setting](/index.php/GNOME#Configuration "GNOME") with the following command:
+Altere a [configuração](/index.php/GNOME_(Portugu%C3%AAs)#Configuração "GNOME (Português)") com o seguinte comando:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
@@ -349,7 +350,7 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 
 **GTK+ 2**
 
-Add the following to `~/.config/gtk-2.0/gtkfilechooser.ini`:
+Adicione o seguinte para `~/.config/gtk-2.0/gtkfilechooser.ini`:
 
 ```
 StartupMode=cwd
@@ -358,11 +359,11 @@ StartupMode=cwd
 
 ### Comportamento de rolagem legada
 
-**Note:** This setting is not obeyed by all GTK+ applications.
+**Nota:** Essa configuração não é obedecida por todos os aplicativos GTK+.
 
-**Tip:** Legacy scrolling behaviour can be achieved reliably simply by using right click instead of left click.
+**Dica:** Comportamento de rolagem legado pode ser alcançado de forma confiável simplesmente usando o botão direito em vez de clicar com o botão esquerdo do mouse.
 
-Prior to GTK+ 3.6, clicking on either side of the slider in the scrollbar would move the scrollbar in the direction of the click by approximately one page. Since GTK+ 3.6, the slider will move directly to the position of the click. This behaviour can be reverted in some applications by creating the file with the content below:
+Antes do GTK+ 3.6, clicar em um dos lados do controle deslizante na barra de rolagem moveria a barra de rolagem na direção do clique em aproximadamente uma página. Desde o GTK + 3.6, o controle deslizante se moverá diretamente para a posição do clique. Esse comportamento pode ser revertido em alguns aplicativos, criando o arquivo com o conteúdo abaixo:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -602,7 +603,7 @@ NautilusWindow {
 
 ### Eventos de foco incorretos com gerenciadores de janela tiling
 
-**Note:** This disables touchscreen support for GTK3 applications. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+**Note:** This disables smooth scrolling and touchscreen support for GTK3 applications. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
 [Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 
