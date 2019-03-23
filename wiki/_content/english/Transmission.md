@@ -26,6 +26,7 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
     *   [5.2 Web interface cannot be reached](#Web_interface_cannot_be_reached)
+    *   [5.3 Failed to set send/receive buffer](#Failed_to_set_send/receive_buffer)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -289,6 +290,18 @@ Package Builders: to set a custom default at compile time, #define PACKAGE_DATA_
 ```
 
 Even if you use the graphical interface, you still need to install [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) in order for web interface to work.
+
+#### Failed to set send/receive buffer
+
+Transmission might display either of these messages in the journal on startup:
+
+```
+UDP Failed to set receive buffer: requested 4194304, got 425984
+UDP Failed to set send buffer: requested 1048576, got 425984
+
+```
+
+These can be fixed by setting `net.core.rmem_max=4194304` and `net.core.wmem_max=1048576` with [sysctl](/index.php/Sysctl "Sysctl").
 
 ## See also
 

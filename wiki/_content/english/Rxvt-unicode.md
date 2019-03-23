@@ -374,7 +374,7 @@ TermExec = ${Terminal} -e
 
 ### My numerical keypad acts weird and generates differing output? (e.g. in vim)
 
-Some Debian GNU/Linux users seem to have this problem, although no specific details were reported so far. It is possible that this is caused by the wrong TERM setting, although the details of whether and how this can happen are unknown, as TERM=rxvt should offer a compatible keymap. See the answer to the previous question, and please report if that helped.
+Some Debian GNU/Linux users seem to have this problem, although no specific details were reported so far. It is possible that this is caused by the wrong TERM setting, although the details of whether and how this can happen are unknown, as TERM=rxvt should offer a compatible keymap.
 
 However, using the *xmodmap* program ([xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap)), you can re-map your number pad keys back.
 

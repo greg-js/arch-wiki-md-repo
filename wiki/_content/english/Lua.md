@@ -7,9 +7,9 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-    *   [1.1 LuaJIT](#LuaJIT)
-*   [2 Modules](#Modules)
-*   [3 See also](#See_also)
+*   [2 JIT compilation support](#JIT_compilation_support)
+*   [3 Modules](#Modules)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -19,9 +19,11 @@ There are multiple versions available:
 *   [lua52](https://www.archlinux.org/packages/?name=lua52) — Lua 5.2
 *   [lua51](https://www.archlinux.org/packages/?name=lua51) — Lua 5.1
 
-### LuaJIT
+## JIT compilation support
 
-The repositories also offer the [LuaJIT](https://luajit.org/), a [Just-in-time compiler](https://en.wikipedia.org/wiki/Just-in-time_compilation "wikipedia:Just-in-time compilation") as [luajit](https://www.archlinux.org/packages/?name=luajit) which implements the language as version 5.1\. This version is best suited for higher performance constrains.
+[Just-in-time compilation](https://en.wikipedia.org/wiki/Just-in-time_compilation "wikipedia:Just-in-time compilation") is a method of compiling source code at run-time, rather than before. [LuaJIT](https://luajit.org/) is a drop-in replacement for Lua 5.1\. This version is best suited for higher performance constrains.
+
+For JIT compilation support [install](/index.php/Install "Install") the [luajit](https://www.archlinux.org/packages/?name=luajit) package.
 
 ## Modules
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [GTK+](/index.php/GTK%2B "GTK+"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=569350) na versão em inglês.
+
 Artigos relacionados
 
 *   [Visual uniforme para aplicativos Qt e GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications")
@@ -374,26 +376,26 @@ gtk-primary-button-warps-slider = false
 
 ### Desabilitar barras de rolagem de sobreposição
 
-Since GTK+ 3.15, overlay scrollbars are enabled by default, meaning that scrollbars will be shown only on mouseover in GTK+ 3 applications. This behavior can be reverted by setting the following environment variable: `GTK_OVERLAY_SCROLLING=0`. See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
+Desde o GTK+ 3.15, as barras de rolagem de sobreposição são ativadas por padrão, o que significa que as barras de rolagem serão mostradas apenas ao passar o mouse nas aplicações do GTK+ 3\. Esse comportamento pode ser revertido pela configuração da seguinte variável de ambiente: `GTK_OVERLAY_SCROLLING=0`. Veja [Variáveis de ambiente#Aplicativos gráficos](/index.php/Vari%C3%A1veis_de_ambiente#Aplicativos_gráficos "Variáveis de ambiente").
 
-GTK+ 4 will no longer support `GTK_OVERLAY_SCROLLING`. It has already been [dropped](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) from master. As of GTK+ 4, the overlay nature of the scrollbars is part of the toolkit. The blanket toggle has been removed to prevent developers from breaking applications that haven't been tested with both combinations. To allow application developers to decide what their applications should look like, the toolkit instead provides a mechanism to opt-out or add a setting for users. The function [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-set-overlay-scrolling) can be used to enable/disable overlay scrolling on a *per-application* basis. Application developers can optionally use [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) to have a user setting bound to the property.
+O GTK+ 4 deixará de dar suporte a `GTK_OVERLAY_SCROLLING`. Ele já foi [retirado](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) do ramo mestre. A partir do GTK+ 4, a natureza de sobreposição das barras de rolagem é parte do kit de ferramentas. A alternância geral foi removida para impedir que os desenvolvedores quebrem aplicativos que não foram testados com ambas as combinações. Para permitir que os desenvolvedores de aplicativos decidam como devem ser seus aplicativos, o kit de ferramentas fornece um mecanismo para desativar ou adicionar uma configuração aos usuários. A função [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-set-overlay-scrolling) pode ser usada para ativar/desativar a sobreposição de rolagem em uma base *por aplicativo*. Os desenvolvedores de aplicativos podem, opcionalmente, usar o [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) para ter uma configuração de usuário vinculada à propriedade.
 
 #### Remover indicadores de rolagem de sobreposição
 
-The positions of the overlay scrollbars are indicated by thin dashed lines in the application window. These dashed lines will be present even when overlay scrolling is disabled using the environment variable discussed in the section above. To remove the indicator lines, create the following file:
+As posições das barras de rolagem de sobreposição são indicadas por linhas tracejadas finas na janela do aplicativo. Essas linhas tracejadas estarão presentes mesmo quando a rolagem de overlay estiver desabilitada usando a variável de ambiente discutida na seção acima. Para remover as linhas do indicador, crie o seguinte arquivo:
 
  `~/.config/gtk-3.0/gtk.css` 
 ```
-/* Remove dotted lines from GTK+ 3 applications */
+/* Remover linhas tracejadas de aplicativos GTK+ 3 */
 undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
 
 ```
 
 ### Exemplos
 
-GTK+ example configurations:
+Exemplo de configurações do GTK+:
 
-**Note:** May be ignored by some [desktop environments](/index.php/Desktop_environments "Desktop environments") (e.g. [GNOME](/index.php/GNOME "GNOME")).
+**Nota:** Pode ser ignorado para alguns [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") (p.ex., [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")).
  `~/.gtkrc-2.0` 
 ```
 gtk-theme-name="Arc-Dark"
@@ -436,43 +438,43 @@ gtk-xft-rgba=rgb
 
 ## Backend do GDK
 
-GDK (the underlying abstraction layer of GTK+) supports multiple backends to display GTK+ applications. The default backend is *x11*.
+O GDK (a camada de abstração subjacente do GTK+) possui suporte a vários backends para exibir aplicativos GTK+. O backend padrão é *x11*.
 
 ### Backend do Broadway
 
-The GDK Broadway backend provides support for displaying GTK+ applications in a web browser, using HTML5 and web sockets. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
+O backend do GDK Broadway fornece suporte para a exibição de aplicativos GTK+ em um navegador da Web, usando HTML5 e soquetes da web. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
 
-When using broadwayd, specify the display number to use, prefixed with a colon, similar to X. The default display number is 1.
+Ao usar *broadwayd*, especifique o número de exibição a ser usado, prefixado com caractere de dois pontos, semelhante a X. O número de exibição padrão é 1.
 
 ```
 $ display_number=:5
 
 ```
 
-Start it.
+Inicie-o.
 
 ```
 $ broadwayd $display_number 
 
 ```
 
-Port Used on default
+Porta usada por padrão
 
 ```
 port = 8080 + $display_number
 
 ```
 
-Point your browser to [http://127.0.0.1:port](http://127.0.0.1:port)
+Aponte seu navegador para [http://127.0.0.1:port](http://127.0.0.1:port)
 
-To Start apps
+Para iniciar aplicativos
 
 ```
 $ GDK_BACKEND=broadway BROADWAY_DISPLAY=$display_number *<<app>>*
 
 ```
 
-Alternatively can set address and port
+Alternativamente, você pode definir endereço e porta
 
 ```
 $ broadwayd --port $port_number --address $address $display_number
@@ -481,17 +483,17 @@ $ broadwayd --port $port_number --address $address $display_number
 
 ### Backend do Wayland
 
-The GDK [Wayland](/index.php/Wayland "Wayland") backend can be enabled by setting the `GDK_BACKEND=wayland` environment variable.
+O backend GDK do [Wayland](/index.php/Wayland "Wayland") pode ser ativado definindo a variável de ambiente `GDK_BACKEND=wayland`.
 
-**Tip:** To disable GTK window decorations in Wayland, [install](/index.php/Install "Install") the [gtk3-optional-csd](https://aur.archlinux.org/packages/gtk3-optional-csd/) package and set the environment variable `GTK_CSD=0`.
+**Dica:** Para desabilitar as decorações de janela do GTK no Wayland, [instale](/index.php/Instale "Instale") o pacote [gtk3-optional-csd](https://aur.archlinux.org/packages/gtk3-optional-csd/) e defina a variável de ambiente `GTK_CSD=0`.
 
 ## Solução de problemas
 
 ### Temas diferentes entre aplicativos GTK+ 2 e GTK+ 3
 
-In general, if a selected theme has support for both GTK+ 2 and GTK+ 3, the theme will be applied to all GTK+ 2 and GTK+ 3 applications. If a selected theme has support for only GTK+ 2, it will be used for GTK+ 2 applications and the default GTK+ theme will be used for GTK+ 3 applications. If the selected theme has support for only GTK+ 3, it will be used for GTK+ 3 applications and the default GTK+ theme will be used for GTK+ 2 applications. Thus for application theme consistency, it is best to use a theme which has support for both GTK+ 2 and GTK+ 3.
+Em geral, se um tema selecionado tiver suporte ao GTK+ 2 e ao GTK+ 3, o tema será aplicado a todos os aplicativos GTK+ 2 e GTK+ 3\. Se um tema selecionado tiver suporte apenas ao GTK+ 2, ele será usado para aplicativos do GTK+ 2 e o tema padrão do GTK+ será usado para aplicativos do GTK+ 3\. Se o tema selecionado tiver suporte apenas ao GTK+ 3, ele será usado para aplicativos do GTK+ 3 e o tema padrão do GTK+ será usado para aplicativos do GTK+ 2\. Assim, para a consistência do tema da aplicação, é melhor usar um tema que tenha suporte ao GTK+ 2 e o GTK+ 3.
 
-You could find what themes installed on your system have both an GTK+ 2 and GTK+ 3 version by using this command (does not work with names containing spaces):
+Você poderia encontrar quais temas instalados em seu sistema possuem uma versão GTK+ 2 e GTK+ 3 usando este comando (não funciona com nomes que contenham espaços):
 
 ```
 find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.*\)\/gtk-3.0$/\1/") -wholename "*/gtk-2.0" | sed -e "s/.*\/\(.*\)\/gtk-2.0/\1"/
@@ -500,9 +502,9 @@ find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.
 
 ### Tema não aplicado para aplicativos de root
 
-As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) are not read by other accounts, the selected theme will not apply to [X applications run as root](/index.php/Running_X_apps_as_root "Running X apps as root"). Possible solutions include:
+Como arquivos de tema de usuário (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) não são lidos por outras contas, o tema selecionado não será aplicado a [aplicativos X sendo executados como root](/index.php/Executando_aplicativos_GUI_como_root "Executando aplicativos GUI como root"). Possíveis soluções incluem:
 
-*   Create symlinks, e.g
+*   Criar links simbólicos, p.ex.:
 
 ```
 # ln -s /home/[username]/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
@@ -510,21 +512,21 @@ As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) ar
 
 ```
 
-*   Configure system-wide theme files: `/etc/gtk-3.0/settings.ini` (GTK+ 3) or `/etc/gtk-2.0/gtkrc` (GTK+ 2)
-*   Adjust the theme as root
+*   Configurar arquivos de temas para todo sistema: `/etc/gtk-3.0/settings.ini` (GTK+ 3) ou `/etc/gtk-2.0/gtkrc` (GTK+ 2)
+*   Ajustar o tema como root
 
 ```
 # sudo lxappearance
 
 ```
 
-*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
+*   Usar o daemon de configurações (é isso que a maioria dos ambientes desktop fazem). Uma variante agnóstica a desktop usando [XSettings](https://specifications.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) está disponível sob nome [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
 
 ### Decorações do lado do cliente
 
-GTK 3.12 introduced [client-side decorations](https://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), which move the title-bar away from the window manager. This may present issues such as [double title-bars](http://redmine.audacious-media-player.org/boards/1/topics/1135), no title-bar at all or [double shadows](https://github.com/chjj/compton/issues/189) with compositing enabled.
+O GTK 3.12 introduziu [decorações para cliente](https://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), que move a barra de cabeçalho para fora do gerenciador de janela. Isso pode apresentar problemas como [barras de título duplas](http://redmine.audacious-media-player.org/boards/1/topics/1135), nenhuma barra de título ou [sombras duplas](https://github.com/chjj/compton/issues/189) com composição habilitada.
 
-To remove the shadow and gap around windows (for example in combination with a tiling window manager), create the following file:
+Para remover a sombra e o espaço em torno das janelas (por exemplo, em combinação com um gerenciador de janela de *tiling*), crie o seguinte arquivo:
 
  `~/.config/gtk-3.0/gtk.css` 
 ```
@@ -555,37 +557,37 @@ GtkLabel.title {
 
 ```
 
-To adjust the buttons in the header bar, use the `gtk-decoration-layout` setting. [[5]](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings--gtk-decoration-layout) The below examples removes all buttons:
+Para ajustar os botões na barra de cabeçalho, use a configuração `gtk-decoration-layout`[[5]](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings--gtk-decoration-layout). Os exemplos abaixo removem todos os botões:
 
  `~/.config/gtk-3.0/settings.ini`  `gtk-decoration-layout=menu:` 
 
 ### Cedilha ç/Ç em vez de ć/Ć
 
-See [[6]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056), and [[7]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056/comments/37) for a workaround using Xcompose (US international layout).
+Veja [[6]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056) e [[7]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056/comments/37) para uma a solução de contorno usando Xcompose (layout EUA internacional).
 
 ### Suprimir aviso sobre barramento de acessibilidade
 
-If you do not use any [Gnome Accessibility](https://wiki.gnome.org/Accessibility) features, you may receive warnings like:
+Se você não usa nenhuma recurso do [Acesso Universal do GNOMe](https://wiki.gnome.org/Accessibility), você pode receber avisos com:
 
 ```
 WARNING **: Couldn't connect to accessibility bus:
 
 ```
 
-To suppress these warnings, execute programs with `NO_AT_BRIDGE=1` or set that as a global [environment variable](/index.php/Environment_variable "Environment variable").
+Para suprimir esses avisos, execute programas com `NO_AT_BRIDGE=1` ou defina isso como uma [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") global.
 
 ### Incompatibilidade de cor de fundo da barra de título
 
-If you are using a [window manager](/index.php/Window_manager "Window manager") which uses a window decoration theme that mimics the GTK+ theme background color, you may find that the titlebar color no longer completely matches the application color in some GTK+ 3 applications. As a workaround, create the following file:
+Se você estiver usando um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") que usa um tema de decoração de janelas que imita a cor de fundo do tema GTK+, você pode descobrir que a cor da barra de título não combina mais com a cor do aplicativo em alguns aplicativos do GTK+ 3\. Como solução alternativa, crie o seguinte arquivo:
 
  `~/.config/gtk-3.0/gtk.css` 
 ```
-/* Always use background color */
+/* Sempre usa cor de plano de fundo */
 GtkWindow {
     background-color: @theme_bg_color;
 }
 
-/* Fix tooltip background override */
+/* Corrige substituição de plano de fundo da dica de ferramenta */
 .tooltip {
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -594,7 +596,7 @@ GtkWindow {
     background-color: transparent;
 }
 
-/* Fix Nautilus desktop window background override */
+/* Corrige substituição de plano de fundo da janela da área de trabalho do Nautilus */
 NautilusWindow {
      background-color: transparent; 
 }
@@ -603,17 +605,17 @@ NautilusWindow {
 
 ### Eventos de foco incorretos com gerenciadores de janela tiling
 
-**Note:** This disables smooth scrolling and touchscreen support for GTK3 applications. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+**Nota:** Isso desabilita suporte a touchscreen e rolagem suave para aplicativos GTK3\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
-[Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+[Defina](/index.php/Defina "Defina") `GDK_CORE_DEVICE_EVENTS=1` para usar entrada no estilo GTK2 em vez de xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 
 ### Suporte a miniaturas para diálogo de arquivos GTK+ 2
 
-Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) to have the option to view files as thumbnails instead of list in the GTK+ file chooser.
+Instale [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) para ter a opção para ver arquivos como miniaturas em vez de lista no seletor de arquivos GTK+.
 
 ### Botão e ícones de menu
 
-For some applications in GNOME's Wayland session. Your `~/.config/gtk-3.0/settings.ini` file is misconfigured. This can happen if you try other GTK+ based desktop environments. These are the offending values:
+Para algumas aplicações na sessão Wayland do GNOME. Seu arquivo `~/.config/gtk-3.0/settings.ini` está desconfigurado. Isso pode acontecer se você tentar outros ambientes de área de trabalho baseados em GTK+. Estes são os valores ofensivos:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -622,17 +624,17 @@ gtk-button-images=1
 gtk-menu-images=1
 ```
 
-Simply set them to 0 or remove the whole file to use GNOME defaults.
+Basta defini-los como 0 ou remover o arquivo inteiro para usar os padrões do GNOME.
 
 ### GTK+ 3 sem polkit
 
-GTK+3 depends on polkit through colord, which is required for printing. However printing works fine without polkit installed; at least with a monochrome printer and package versions gtk3-print-backends=3.22.19-2 and colord=1.4.1-1.
+O GTK + 3 depende do polkit através do colord, que é necessário para impressão. No entanto, a impressão funciona bem sem o polkit instalado; pelo menos com uma impressora monocromática e versões de pacote gtk3-print-backends=3.22.19-2 e colord=1.4.1-1.
 
 ### Alguns temas de GTK+ 2 só alteram a paleta de cores da UI
 
-Depending on the theme of choice's support for GTK+ 2, UI controls may still have the default Raleigh appearance, possibly with a different color palette. This is due to these themes requiring the GTK+ 2 Murrine engine, which is missing (GTK+ 2 programs should complain about it on their standard error output). Install the [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) package.
+Dependendo do tema de escolha do suporte para o GTK+ 2, os controles da interface do usuário ainda podem ter a aparência padrão do Raleigh, possivelmente com uma paleta de cores diferente. Isso se deve a esses temas que exigem o mecanismo Murrine GTK+ 2, que está faltando (programas GTK+ 2 devem reclamar sobre isso em sua saída de erro padrão). Instale o pacote [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine).
 
 ## Veja também
 
-*   [The official GTK+ website](https://www.gtk.org/)
-*   [Wikipedia article about GTK+](https://en.wikipedia.org/wiki/GTK%2B "wikipedia:GTK+")
+*   [O site oficial do GTK+](https://www.gtk.org/)
+*   [Artigo do Wikipédia sobre o GTK+](https://en.wikipedia.org/wiki/GTK%2B "wikipedia:GTK+")

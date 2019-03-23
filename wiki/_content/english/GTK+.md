@@ -442,7 +442,7 @@ GDK (the underlying abstraction layer of GTK+) supports multiple backends to dis
 
 The GDK Broadway backend provides support for displaying GTK+ applications in a web browser, using HTML5 and web sockets. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
 
-When using broadwayd, specify the display number to use, prefixed with a colon, similar to X. The default display number is 1.
+When using *broadwayd*, specify the display number to use, prefixed with a colon, similar to X. The default display number is 1.
 
 ```
 $ display_number=:5

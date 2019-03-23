@@ -1,6 +1,10 @@
 [Wireshark](https://www.wireshark.org/) is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Capturing as normal user](#Capturing_as_normal_user)
@@ -13,7 +17,7 @@
 
 [Install](/index.php/Install "Install") the [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) package for the Wireshark GUI or [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) for just the `tshark` CLI.
 
-For the deprecated GTK+ interface, install the [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) package. Note that this package will be removed in the future (Wireshark 3.0).
+**Note:** The deprecated GTK+ interface has been removed in Wireshark 3.0.
 
 ## Capturing as normal user
 

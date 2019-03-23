@@ -34,18 +34,18 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [3.4 Quota](#Quota)
     *   [3.5 Commit Interval](#Commit_Interval)
     *   [3.6 SSD TRIM](#SSD_TRIM)
-    *   [3.7 Swap file](#Swap_file)
 *   [4 Usage](#Usage)
-    *   [4.1 Displaying used/free space](#Displaying_used/free_space)
-    *   [4.2 Defragmentation](#Defragmentation)
-    *   [4.3 RAID](#RAID)
-    *   [4.4 Scrub](#Scrub)
-        *   [4.4.1 Start manually](#Start_manually)
-        *   [4.4.2 Start with a service or timer](#Start_with_a_service_or_timer)
-    *   [4.5 Balance](#Balance)
-    *   [4.6 Snapshots](#Snapshots)
-    *   [4.7 Send/receive](#Send/receive)
-    *   [4.8 Deduplication](#Deduplication)
+    *   [4.1 Swap file](#Swap_file)
+    *   [4.2 Displaying used/free space](#Displaying_used/free_space)
+    *   [4.3 Defragmentation](#Defragmentation)
+    *   [4.4 RAID](#RAID)
+    *   [4.5 Scrub](#Scrub)
+        *   [4.5.1 Start manually](#Start_manually)
+        *   [4.5.2 Start with a service or timer](#Start_with_a_service_or_timer)
+    *   [4.6 Balance](#Balance)
+    *   [4.7 Snapshots](#Snapshots)
+    *   [4.8 Send/receive](#Send/receive)
+    *   [4.9 Deduplication](#Deduplication)
 *   [5 Known issues](#Known_issues)
     *   [5.1 Encryption](#Encryption)
     *   [5.2 TLP](#TLP)
@@ -301,13 +301,15 @@ A Btrfs filesystem is able to free unused blocks from an SSD drive supporting th
 
 More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
 
+## Usage
+
 ### Swap file
 
 [Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7). The proper way to initialize a swapfile is described in [btrfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5).
 
 **Note:** The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
 
-## Usage
+**Warning:** Linux kernels before v5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btfrs can lead to file system corruption if using kernels before v5.0.
 
 ### Displaying used/free space
 

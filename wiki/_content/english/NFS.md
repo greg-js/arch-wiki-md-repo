@@ -9,8 +9,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 **Note:**
 
 *   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
-*   Unlike [Samba](/index.php/Samba "Samba"), NFS doesn't have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
-*   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. It is however possible to overrule the UID/GID by using `anonuid`/`anongid` with `all_squash` in `/etc/exports`.
+*   Unlike [Samba](/index.php/Samba "Samba"), NFS does not have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
+*   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. [#Enable NFSv4 idmapping](#Enable_NFSv4_idmapping) or overrule the UID/GID manually by using `anonuid`/`anongid` together with `all_squash` in `/etc/exports`.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -54,7 +54,7 @@ It is **highly** recommended to use a [time synchronization](/index.php/Time_syn
 
 Global configuration options are set in `/etc/nfs.conf`. Users of simple configurations should not need to edit this file.
 
-The NFS server needs a list of exports (directories to share) which are defined in `/etc/exports` or `/etc/exports.d/*.exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
+The NFS server needs a list of exports (see [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5) for details) which are defined in `/etc/exports` or `/etc/exports.d/*.exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
 
 Consider this following example wherein:
 
@@ -79,7 +79,6 @@ To make the bind mount persistent across reboots, add it to [fstab](/index.php/F
 
 Add directories to be shared and limit them to a range of addresses via a CIDR or hostname(s) of client machines that will be allowed to mount them in `/etc/exports`, e.g.:
 
-**Tip:** Use an asterisk (*) to allow access from any interface.
  `/etc/exports` 
 ```
 /srv/nfs        192.168.1.0/24(rw,sync,crossmnt,fsid=0)
@@ -87,6 +86,11 @@ Add directories to be shared and limit them to a range of addresses via a CIDR o
 /srv/nfs/home   192.168.1.0/24(rw,sync,nohide)
 /srv/nfs/public 192.168.1.0/24(ro,all_squash,insecure) desktop(rw,sync,all_squash,anonuid=99,anongid=99) # map to user/group - in this case *nobody*
 ```
+
+**Tip:**
+
+*   The `crossmnt` option is necessary to share exported directories inside an exported directory.
+*   Use an asterisk (*) to allow access from any interface.
 
 It should be noted that modifying `/etc/exports` while the server is running will require a re-export for changes to take effect:
 
@@ -104,7 +108,7 @@ To view the current loaded exports state in more detail, use:
 
 For more information about all available options see [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5).
 
-**Tip:** [ip2cidr](http://ip2cidr.com/) is a tool to convert an IP ranges to correctly structured CDIR specification.
+**Tip:** [ip2cidr](http://ip2cidr.com/) is a tool to convert an IP ranges to correctly structured CIDR specification.
 
 **Note:** If the target export is a [tmpfs](/index.php/Tmpfs "Tmpfs") filesystem, the `fsid=1` option is required.
 
@@ -134,11 +138,14 @@ host=192.168.1.123
 
 ##### Enable NFSv4 idmapping
 
-**Note:** Another option is to make sure the UID's/GID's match on both the client and server.
+**Note:**
+
+*   NFSv4 idmapping needs to be enabled on **both** the client and server.
+*   Another option is to make sure the user and group IDs (UID and GID) match on both the client and server.
 
 The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
 
-Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y`, enable it by:
+Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
 
 ```
 # echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
@@ -147,7 +154,11 @@ Even though idmapd may be running, it may not be fully enabled. If `/sys/module/
 
 Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, i.e.:
 
- `/etc/modprobe.d/nfsd.conf`  `options nfsd nfs4_disable_idmapping=0` 
+ `/etc/modprobe.d/nfsd.conf` 
+```
+options nfs nfs4_disable_idmapping=0
+options nfsd nfs4_disable_idmapping=0
+```
 
 To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.conf` on **both** the server and the client:
 
@@ -156,14 +167,6 @@ To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.con
 # The following should be set to the local NFSv4 domain name
 # The default is the host's DNS domain name.
 Domain = *domain.tld*
-```
-
-On the client one should also enable NFSv4 idmapping:
-
- `/etc/modprobe.d/nfsd.conf` 
-```
-options nfs nfs4_disable_idmapping=0
-options nfsd nfs4_disable_idmapping=0
 ```
 
 ##### Static ports for NFSv3
@@ -198,11 +201,7 @@ To enable access through a [firewall](/index.php/Firewall "Firewall"), TCP and U
 
 When using NFSv4, make sure TCP port `2049` is open. No other port opening should be required:
 
- `/etc/iptables/iptables.rules` 
-```
--A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT
-
-```
+ `/etc/iptables/iptables.rules`  `-A INPUT -p tcp -m tcp --dport 2049 -j ACCEPT` 
 
 When using an older NFS version, make sure other ports are open:
 
@@ -226,7 +225,6 @@ To have this configuration load on every system start, edit `/etc/iptables/iptab
 -A INPUT -p udp -m udp --dport 111 -j ACCEPT
 -A INPUT -p udp -m udp --dport 2049 -j ACCEPT
 -A INPUT -p udp -m udp --dport 20048 -j ACCEPT
-
 ```
 
 The previous commands can be saved by executing:
@@ -246,7 +244,6 @@ If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the
 -A INPUT -p tcp -m tcp --dport 32803 -j ACCEPT
 -A INPUT -p udp -m udp --dport 32765 -j ACCEPT
 -A INPUT -p udp -m udp --dport 32803 -j ACCEPT
-
 ```
 
 To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
@@ -291,12 +288,7 @@ If mount fails try including the server's export root (required for Debian/RHEL/
 
 Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always on, and the NFS shares are available whenever the client boots up. Edit `/etc/fstab` file, and add an appropriate line reflecting the setup. Again, the server's NFS export root is omitted.
 
- `/etc/fstab` 
-```
-servername:/music   /mountpoint/on/client   nfs   defaults,rsize=32768,wsize=32768,timeo=900,retrans=5,_netdev	0 0
-
-```
-
+ `/etc/fstab`  `servername:/music   /mountpoint/on/client   nfs   defaults,rsize=32768,wsize=32768,timeo=900,retrans=5,_netdev	0 0` 
 **Note:** Consult [nfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) and [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more mount options.
 
 Some additional mount options to consider:
@@ -321,7 +313,7 @@ Some additional mount options to consider:
 
 	_netdev
 
-	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS, although [automount](#Mount_using_.2Fetc.2Ffstab_with_systemd) may be a more preferred solution.
+	The `_netdev` option tells the system to wait until the network is up before trying to mount the share - [systemd](/index.php/Systemd "Systemd") assumes this for NFS, although [automount](#Mount_using_/etc/fstab_with_systemd) may be a more preferred solution.
 
 **Note:** Setting the sixth field (`fs_passno`) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 
@@ -369,7 +361,11 @@ In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS 
 
 To make the change permanent, create a [systemd-tmpfile](/index.php/Systemd#Temporary_files "Systemd"):
 
- `/etc/tmpfiles.d/nfsd-block-size.conf`  `w /proc/fs/nfsd/max_block_size - - - - 32768` 
+ `/etc/tmpfiles.d/nfsd-block-size.conf` 
+```
+w /proc/fs/nfsd/max_block_size - - - - 32768
+
+```
 
 To mount with the increased `rsize` and `wsize` mount options:
 
@@ -445,16 +441,16 @@ done
 
 **Note:** If you want to test using a TCP probe instead of ICMP ping (default is tcp port 2049 in NFS4) then replace the line:
 ```
- # Check if the server is reachable
- ping -c 1 "${SERVER}" &>/dev/null
+# Check if the server is reachable
+ping -c 1 "${SERVER}" &>/dev/null
 
 ```
 
 with:
 
 ```
- # Check if the server is reachable
- timeout 1 bash -c ": < /dev/tcp/${SERVER}/2049"
+# Check if the server is reachable
+timeout 1 bash -c ": < /dev/tcp/${SERVER}/2049"
 
 ```
 in the `auto_share` script above.
@@ -488,7 +484,6 @@ OnCalendar=*-*-* *:*:00
 
 [Install]
 WantedBy=timers.target
-
 ```
  `/etc/systemd/system/auto_share.service` 
 ```
@@ -502,7 +497,6 @@ ExecStart=/usr/local/bin/auto_share
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `auto_share.timer`.
@@ -559,7 +553,7 @@ Create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the
 
 ## Troubleshooting
 
-There is a dedicated article [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting").
+There is a dedicated article [NFS/Troubleshooting](/index.php/NFS/Troubleshooting "NFS/Troubleshooting").
 
 ## See also
 

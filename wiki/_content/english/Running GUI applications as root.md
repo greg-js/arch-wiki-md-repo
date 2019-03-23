@@ -2,7 +2,11 @@
 
 Avoid running graphical applications as [root](/index.php/Root_user "Root user") if possible, see [#Circumvent running graphical apps as root](#Circumvent_running_graphical_apps_as_root).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Circumvent running graphical apps as root](#Circumvent_running_graphical_apps_as_root)
     *   [1.1 sudoedit](#sudoedit)
@@ -43,7 +47,7 @@ $ gedit admin:///etc/fstab
 
 By default, and for security reasons, root will be unable to connect to a non-root user's [X server](/index.php/X_server "X server"). There are multiple ways of allowing root to do so however, if necessary.
 
-The proper, recommended way to run GUI apps under X with elevated privileges is to create a [Polkit](/index.php/Polkit "Polkit") policy, as shown in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=999328#p999328). This should however "*only be used for legacy programs*", as [pkexec(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pkexec.1) reminds. Applications should rather "*defer the privileged operations to an auditable, self-contained,* minimal *piece of code that gets executed after doing a privilege escalation, and gets dropped when not needed*"[[4]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5). This may be the object of a bug report to the upstream project.
+The proper, recommended way to run GUI apps under X with elevated privileges is to create a [Polkit](/index.php/Polkit "Polkit") policy, as shown in [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=999328#p999328). This should however "*only be used for legacy programs*", as [pkexec(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pkexec.1) reminds. Applications should rather "*defer the privileged operations to an auditable, self-contained, **minimal** piece of code that gets executed after doing a privilege escalation, and gets dropped when not needed*"[[4]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5). This may be the object of a bug report to the upstream project.
 
 ### Punctual methods
 
@@ -87,14 +91,14 @@ session         optional        pam_xauth.so
 
 ```
 
-to `/etc/pam.d/su` and `/etc/pam.d/su-l`. Then switch to your root user using 'su' or 'su -'.
+to `/etc/pam.d/su` and `/etc/pam.d/su-l`. Then switch to your root user using `su` or `su -`.
 
 	**Method 2**: Globally in `/etc/profile`
 
 Add the following line to `/etc/profile`:
 
 ```
-export XAUTHORITY=/home/non-root-usersname/.Xauthority
+export XAUTHORITY=/home/*username*/.Xauthority
 
 ```
 
@@ -103,11 +107,11 @@ This will permanently allow root to connect to a non-root user's X server.
 Or, merely specify a particular app:
 
 ```
-export XAUTHORITY=/home/usersname/.Xauthority kwrite
+export XAUTHORITY=/home/*username*/.Xauthority *appname*
 
 ```
 
-(to allow root to access kwrite, for instance.)
+where `*appname*` is the name of the particular app. (e.g. *kwrite*)
 
 ## Wayland
 
@@ -118,7 +122,7 @@ $ sudo gedit
 No protocol specified
 Unable to init server: Could not connect: Connection refused
 
-(gedit:2349): Gtk-WARNING **: cannot open display: :0
+(gedit:2349): Gtk-WARNING **: cannot open display: :0
 
 ```
 

@@ -137,10 +137,10 @@
 | <small>5.1.5.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(3)</small> |
 | <small>5.1.5.1.</small> [DBMSs relacionales](/index.php/Category:Relational_DBMSs_(Espa%C3%B1ol) "Category:Relational DBMSs (Español)") <small>(1)</small> |
 | <small>5.1.6.</small> [Diccionarios](/index.php/Category:Dictionaries_(Espa%C3%B1ol) "Category:Dictionaries (Español)") <small>(2)</small> |
-| <small>5.1.7.</small> [Emulación](/index.php/Category:Emulation_(Espa%C3%B1ol) "Category:Emulation (Español)") <small>(6)</small> |
+| <small>5.1.7.</small> [Emulación](/index.php/Category:Emulation_(Espa%C3%B1ol) "Category:Emulation (Español)") <small>(7)</small> |
 | <small>5.1.7.1.</small> [Emuladores de terminal](/index.php/Category:Terminal_emulators_(Espa%C3%B1ol) "Category:Terminal emulators (Español)") <small>(3) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"), [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
 | <small>5.1.8.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(5)</small> |
-| <small>5.1.9.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(7)</small> |
+| <small>5.1.9.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(8)</small> |
 | <small>5.1.10.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(2) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>5.1.10.1.</small> [Redes de anonimato](/index.php/Category:Anonymity_networks_(Espa%C3%B1ol) "Category:Anonymity networks (Español)") <small>(3) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.1.10.2.</small> [BitTorrent](/index.php/Category:BitTorrent_(Espa%C3%B1ol) "Category:BitTorrent (Español)") <small>(2) (también en [Punto-a-punto](/index.php/Category:Peer-to-peer_(Espa%C3%B1ol) "Category:Peer-to-peer (Español)"), [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
@@ -254,7 +254,7 @@
 | <small>6.6.1.8.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(5) (también en [Web](/index.php/Category:Web_(Espa%C3%B1ol) "Category:Web (Español)"))</small> |
 | <small>6.6.1.9.</small> [WebDAV](/index.php/Category:WebDAV_(Espa%C3%B1ol) "Category:WebDAV (Español)") <small>(2) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
 | <small>6.6.1.10.</small> [XMPP](/index.php/Category:XMPP_(Espa%C3%B1ol) "Category:XMPP (Español)") <small>(2) (también en [Mensajería instantánea](/index.php/Category:Instant_messaging_(Espa%C3%B1ol) "Category:Instant messaging (Español)"), [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"))</small> |
-| <small>6.7.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(8)</small> |
+| <small>6.7.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(9)</small> |
 | <small>6.7.1.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)"))</small> |
 | <small>6.7.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(2)</small> |
 | <small>6.8.</small> [Compartir archivos](/index.php/Category:File_sharing_(Espa%C3%B1ol) "Category:File sharing (Español)") <small>(0) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
@@ -274,7 +274,7 @@
 | <small>6.11.4.1.</small> [Gestores de ventanas dinánicas](/index.php/Category:Dynamic_WMs_(Espa%C3%B1ol) "Category:Dynamic WMs (Español)") <small>(3)</small> |
 | <small>6.11.4.2.</small> [Gestores de ventanas apiladas (o flotantes)](/index.php/Category:Stacking_WMs_(Espa%C3%B1ol) "Category:Stacking WMs (Español)") <small>(6)</small> |
 | <small>6.11.4.3.</small> [Gestores de ventanas en mosaicos](/index.php/Category:Tiling_WMs_(Espa%C3%B1ol) "Category:Tiling WMs (Español)") <small>(3)</small> |
-| <small>6.11.5.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(16)</small> |
+| <small>6.11.5.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(17)</small> |
 | <small>6.11.5.1.</small> [Órdenes Xorg](/index.php/Category:Xorg_commands_(Espa%C3%B1ol) "Category:Xorg commands (Español)") <small>(6) (también en [Órdenes](/index.php/Category:Commands_(Espa%C3%B1ol) "Category:Commands (Español)"))</small> |
 | <small>6.12.</small> [Kernel](/index.php/Category:Kernel_(Espa%C3%B1ol) "Category:Kernel (Español)") <small>(8)</small> |
 | <small>6.13.</small> [Configuración de teclado](/index.php/Category:Keyboard_configuration_(Espa%C3%B1ol) "Category:Keyboard configuration (Español)") <small>(1) (también en [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)"))</small> |

@@ -5,7 +5,11 @@ Related articles
 
 The freedesktop project provides the [Icon Theme Specification](http://standards.freedesktop.org/icon-theme-spec/latest/), which applies to most linux desktop environments and tries to unify the look of a whole bunch of icons in an *icon-theme*. Freedesktop also provides the [Icon Naming Specification](http://standards.freedesktop.org/icon-naming-spec/latest/), which defines a standard naming scheme for icons believed to be installed on any system. The default theme *hicolor* should include them all.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Icons and emblems](#Icons_and_emblems)
@@ -13,7 +17,7 @@ The freedesktop project provides the [Icon Theme Specification](http://standards
     *   [1.3 Icon themes](#Icon_themes)
         *   [1.3.1 From a package](#From_a_package)
         *   [1.3.2 Manually](#Manually)
-*   [2 fstab / gvfs](#fstab_.2F_gvfs)
+*   [2 fstab / gvfs](#fstab_/_gvfs)
 
 ## Installation
 

@@ -258,6 +258,7 @@
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Vim/YouCompleteMe (Русский)](/index.php/Vim/YouCompleteMe_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim/YouCompleteMe (Русский)") | Не требуется | [Elnee](/index.php/User:Elnee "User:Elnee") | - |
 | [Xcompmgr (Русский)](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
+| [XDG MIME Applications (Русский)](/index.php/XDG_MIME_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XDG MIME Applications (Русский)") | Не требуется | [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") | - |
 | [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Xprofile (Русский)](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |

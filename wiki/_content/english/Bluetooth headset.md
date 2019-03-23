@@ -802,7 +802,7 @@ $ pacmd set-card-profile *card_number* a2dp_sink
 
 ```
 
-This can also be automatically selected by appending `auto_switch=2` to `load-module module-bluetooth-policy` in `/etc/pulse/default.pa`.
+For enabling automatic profile switching from A2DP to HSP when a recording stream appears without any role set, you can append `auto_switch=2` to `load-module module-bluetooth-policy` in `/etc/pulse/default.pa`.
 
 For more information about PulseAudio profiles, see [PulseAudio Documentation](https://freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Bluetooth/#index1h2).
 

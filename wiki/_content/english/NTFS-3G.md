@@ -4,7 +4,11 @@ Related articles
 
 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) is an open source implementation of [Microsoft NTFS](https://en.wikipedia.org/wiki/NTFS "w:NTFS") that includes read *and* write support (the Linux kernel only supports reading NTFS). NTFS-3G developers use the FUSE file system to facilitate development and to help with portability.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Manual mounting](#Manual_mounting)
@@ -12,15 +16,16 @@ Related articles
 *   [4 Configuring](#Configuring)
     *   [4.1 Default settings](#Default_settings)
     *   [4.2 Linux compatible permissions](#Linux_compatible_permissions)
-    *   [4.3 Allowing group/user](#Allowing_group.2Fuser)
+    *   [4.3 Allowing group/user](#Allowing_group/user)
     *   [4.4 Basic NTFS-3G options](#Basic_NTFS-3G_options)
     *   [4.5 Allowing user to mount](#Allowing_user_to_mount)
 *   [5 Resizing NTFS partition](#Resizing_NTFS_partition)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
-    *   [6.2 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache.2C_refused_to_mount)
-    *   [6.3 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
-    *   [6.4 Mount failure](#Mount_failure)
+    *   [6.1 "Unsupported reparse point" errors](#"Unsupported_reparse_point"_errors)
+    *   [6.2 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
+    *   [6.3 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache,_refused_to_mount)
+    *   [6.4 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
+    *   [6.5 Mount failure](#Mount_failure)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -166,6 +171,10 @@ Note that the important programs for resizing NTFS partitions include ntfs-3g an
 If you already have Arch Linux installed on your system and simply want to resize an existing NTFS partition, you can use the parted and ntfs-3g packages to do it. Optionally, you can use the GParted GUI after installing the [GParted](/index.php/GParted "GParted") package.
 
 ## Troubleshooting
+
+### "Unsupported reparse point" errors
+
+If you have a Windows 10 partition and are seeing broken symbolic links to 'unsupported reparse point' when trying to access some system files, then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/).
 
 ### Damaged NTFS filesystems
 

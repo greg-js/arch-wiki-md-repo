@@ -55,7 +55,7 @@ To use Freepats with TiMidity, add the following lines to `timidity.cfg`:
 
  `/etc/timidity++/timidity.cfg` 
 ```
-soundfont /usr/share/soundfonts/timidity-freepats.sf2
+soundfont /usr/share/soundfonts/freepats-general-midi.sf2
 
 ```
 

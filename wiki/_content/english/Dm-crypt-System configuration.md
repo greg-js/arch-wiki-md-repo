@@ -284,13 +284,6 @@ rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*:UUID=*ZZZZ
 
 ```
 
-or
-
-```
-rd.luks.key=*/path/to/keyfile*:UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*
-
-```
-
 Replace `UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*` with the identifier of the device on which the keyfile is located. If the type of file system is different than your root file system, you must [include the kernel module for it in the initramfs](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
 
 #### Timeout

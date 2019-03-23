@@ -368,7 +368,7 @@ Use `setup_dxvk32` for 32-bit applications.
 
 With the open-source gallium-based drivers (mostly AMD cards) there is a [Gallium Direct3D state tracker](https://wiki.ixit.cz/d3d9) that aims to provide nearly-native performance for DirectX 9\. In most cases it has less visual glitches than the upstream wine and doubles the performances. It consumes much less CPU time than CSMT.
 
-To use it, install [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine). There is also a standalone version that can be installed with any wine version at [GitHub](https://github.com/dhewg/nine).
+To use it, install [wine-nine](https://www.archlinux.org/packages/?name=wine-nine). This is a standalone package that can be installed with any wine version.
 
 ### Unregister existing Wine file associations
 

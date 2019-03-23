@@ -81,12 +81,11 @@ function proxy_on() {
             >&2 echo "Invalid address"
             return 1
         fi
-
-        local http_proxy=$1
-        export http_proxy="$http_proxy" \
-               https_proxy=$http_proxy \
-               ftp_proxy=$http_proxy \
-               rsync_proxy=$http_proxy
+        local proxy=$1
+        export http_proxy="$proxy" \
+               https_proxy=$proxy \
+               ftp_proxy=$proxy \
+               rsync_proxy=$proxy
         echo "Proxy environment variable set."
         return 0
     fi
@@ -100,15 +99,15 @@ function proxy_on() {
 
     echo -n "server: "; read server
     echo -n "port: "; read port
-    local http_proxy=$pre$server:$port
-    export http_proxy="$http_proxy" \
-           https_proxy=$http_proxy \
-           ftp_proxy=$http_proxy \
-           rsync_proxy=$http_proxy \
-           HTTP_PROXY=$http_proxy \
-           HTTPS_PROXY=$http_proxy \
-           FTP_PROXY=$http_proxy \
-           RSYNC_PROXY=$http_proxy
+    local proxy=$pre$server:$port
+    export http_proxy="$proxy" \
+           https_proxy=$proxy \
+           ftp_proxy=$proxy \
+           rsync_proxy=$proxy \
+           HTTP_PROXY=$proxy \
+           HTTPS_PROXY=$proxy \
+           FTP_PROXY=$proxy \
+           RSYNC_PROXY=$proxy
 }
 
 function proxy_off(){

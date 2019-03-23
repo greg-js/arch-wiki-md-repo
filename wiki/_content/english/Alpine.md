@@ -1,14 +1,18 @@
 [Alpine](http://www.washington.edu/alpine/) is based on pine, a text-based E-mail and newsclient that was originally released by the University of Washington in 1991\. It is an easier to use alternative to [mutt](/index.php/Mutt "Mutt"), a more lightweight approach to the mail reader concept.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 IMAP](#IMAP)
 *   [3 Setting the return address](#Setting_the_return_address)
 *   [4 What else can you configure?](#What_else_can_you_configure?)
 *   [5 Printing from alpine](#Printing_from_alpine)
-*   [6 Remote Configuration](#Remote_Configuration)
-*   [7 Tips and Tricks](#Tips_and_Tricks)
+*   [6 Remote configuration](#Remote_configuration)
+*   [7 Tips and tricks](#Tips_and_tricks)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -104,7 +108,7 @@ personal-print-category=3
 
 Replace *YOURPRINTER* with the name of your printer. Note that these settings can also be applied in the setup UI of Alpine. See the manpage of `a2ps` for more configuration options.
 
-## Remote Configuration
+## Remote configuration
 
 From the setup page, press `Z` to enter RemoteConfigSetup. You will be prompted to upload your addressbook, signature, and configuration. In order to use the remote configuration on any computer, on the command line, enter:
 
@@ -115,7 +119,7 @@ $ alpine -p "{mailserver.org:143/user=jimbob123/tls}remote_pinerc"
 
 It may be desirable to make this command an alias in your [.bashrc](/index.php/Bash#Aliases "Bash").
 
-## Tips and Tricks
+## Tips and tricks
 
 There is no direct, or immediately apparent command for arbitrarily invoking an update of the inbox, however, as indirectly referenced in the manual;
 

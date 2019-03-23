@@ -1,3 +1,7 @@
+Related articles
+
+*   [Convert FLAC to MP3#With FFmpeg](/index.php/Convert_FLAC_to_MP3#With_FFmpeg "Convert FLAC to MP3")
+
 From the project [home page](http://www.ffmpeg.org/):
 
 	FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.

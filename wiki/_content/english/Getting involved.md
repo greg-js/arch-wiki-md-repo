@@ -17,6 +17,7 @@ This article describes how both new and experienced Arch users can contribute to
     *   [1.1 Post on the forums](#Post_on_the_forums)
     *   [1.2 Improve this wiki](#Improve_this_wiki)
     *   [1.3 Join the chatroom](#Join_the_chatroom)
+    *   [1.4 Join the mailing lists](#Join_the_mailing_lists)
 *   [2 Packaging](#Packaging)
     *   [2.1 Report installed packages](#Report_installed_packages)
     *   [2.2 Fix and report bugs](#Fix_and_report_bugs)
@@ -47,6 +48,10 @@ One of the easiest ways to get involved is participating in the [Arch Linux Foru
 ### Join the chatroom
 
 You can help other users solve problems on the [IRC channel](/index.php/IRC_channel "IRC channel"). It is of vital importance however, that you read the [channel rules](/index.php/Code_of_conduct#IRC "Code of conduct") before participating. [Further channels](/index.php/IRC_channel#Other_channels "IRC channel") are available for specific topics.
+
+### Join the mailing lists
+
+Join the discussion on one or more of the public [mailing lists](https://lists.archlinux.org/). Make sure to stay on topic as provided in the list description.
 
 ## Packaging
 

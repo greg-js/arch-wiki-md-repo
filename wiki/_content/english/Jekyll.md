@@ -11,7 +11,7 @@ Werner announced the release of Jekyll on his website on November 17, 2008\. [[1
 *   [1 Installation](#Installation)
     *   [1.1 RubyGems (recommended)](#RubyGems_(recommended))
     *   [1.2 AUR (alternate)](#AUR_(alternate))
-    *   [1.3 Rubygems binary repository](#Rubygems_binary_repository)
+    *   [1.3 RubyGems binary repository](#RubyGems_binary_repository)
 *   [2 Select a markup language](#Select_a_markup_language)
     *   [2.1 Textile](#Textile)
     *   [2.2 Markdown](#Markdown)
@@ -50,11 +50,13 @@ $ gem install jekyll
 
 See [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") for more information on Gem management in Arch.
 
+**Note:** If RubyGems fails with a [timeout error](https://help.rubygems.org/discussions/problems/31074-timeout-error), either disable [IPv6](https://wiki.archlinux.org/index.php/IPv6#Disable_IPv6) or [Prefer IPv4 over IPv6](https://wiki.archlinux.org/index.php/IPv6#Prefer_IPv4_over_IPv6).
+
 ### AUR (alternate)
 
 Alternately, [jekyll](https://aur.archlinux.org/packages/jekyll/) can be installed from the [AUR](/index.php/AUR "AUR").
 
-### Rubygems binary repository
+### RubyGems binary repository
 
 [Install](/index.php/Install "Install") *jekyll* from the unofficial [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") repository.
 

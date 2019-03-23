@@ -330,5 +330,5 @@
 | <small>6.22.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization "Category:Cloud synchronization") <small>(3)</small> |
 | <small>6.22.2.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.23.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(19)</small> |
-| <small>6.24.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(25)</small> |
+| <small>6.24.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(26)</small> |
 | <small>6.24.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |

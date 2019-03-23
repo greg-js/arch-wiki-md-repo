@@ -90,6 +90,8 @@ $ gem install mysql2
 
 ```
 
+**Note:** If RubyGems fails with a [timeout error](https://help.rubygems.org/discussions/problems/31074-timeout-error), either disable [IPv6](https://wiki.archlinux.org/index.php/IPv6#Disable_IPv6) or [Prefer IPv4 over IPv6](https://wiki.archlinux.org/index.php/IPv6#Prefer_IPv4_over_IPv6).
+
 The process can be sped up somewhat if you do not need local documentation:
 
 ```

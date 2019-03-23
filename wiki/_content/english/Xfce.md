@@ -346,9 +346,9 @@ See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/ind
 
 #### Sound themes
 
-XFCE4 supports [freedesktop system sounds](https://www.freedesktop.org/wiki/Specifications/sound-theme-spec/), but it does not configured out of the box.
+XFCE4 supports [freedesktop system sounds](https://www.freedesktop.org/wiki/Specifications/sound-theme-spec/), but it is not configured out of the box.
 
-To enable sound theme:
+To enable a sound theme:
 
 1.  Install [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) and [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse) for [PulseAudio](/index.php/PulseAudio "PulseAudio") support;
 2.  "canberra-gtk-module" should be in the GTK_MODULES environment variable (re-login may be required);
@@ -356,7 +356,7 @@ To enable sound theme:
 4.  In the Settings Editor set "xsettings/Net/SoundThemeName" to a sound theme located in `/usr/share/sounds/`;
 5.  Turn on "System Sounds" in audio mixer (e.g. pavucontrol).
 
-[sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop) provides a compatible sound theme, but it lacks many required events. Better choice is [sound-theme-smooth](https://aur.archlinux.org/packages/sound-theme-smooth/) (SoundThemeName should be "Smooth").
+[sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop) provides a compatible sound theme, but it lacks many required events. A better choice is [sound-theme-smooth](https://aur.archlinux.org/packages/sound-theme-smooth/) (SoundThemeName should be "Smooth").
 
 #### Keyboard volume buttons
 

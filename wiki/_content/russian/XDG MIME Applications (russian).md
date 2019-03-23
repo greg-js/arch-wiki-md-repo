@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications"). Дата последней синхронизации: 25 апреля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XDG_MIME_Applications&diff=0&oldid=518651).
+**Состояние перевода:** На этой странице представлен перевод статьи [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications"). Дата последней синхронизации: 21 марта 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XDG_MIME_Applications&diff=0&oldid=569272).
 
 Ссылки по теме
 
@@ -8,7 +8,17 @@
 
 [Спецификация от XDG для приложений MIME](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html) основывается на [#Общей базе данных MIME](#Общая_база_данных_MIME) и на [#Ярлыках приложений](#Ярлыки_приложений) для предоставления [приложений по умолчанию](/index.php/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E "Приложения по умолчанию").
 
+1.  Программы описывают поддерживаемые MIME-типы используя [ярлыки приложений](/index.php/%D0%AF%D1%80%D0%BB%D1%8B%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9 "Ярлыки приложений").
+2.  Пакет [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) регистрирует [pacman-хук](/index.php/Pacman_hook "Pacman hook") для построения базы данных с кешем поддерживаемых MIME-типов на основе ярлыков приложений, см. [update-desktop-database(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/update-desktop-database.1).
+3.  Приложения могут устанавливать MIME-типы, добавляя XML-файлы в `/usr/share/mime/packages/`.
+4.  Пакет [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) регистрирует [pacman-хук](/index.php/Pacman_hook "Pacman hook") для построения общей базы данных с кешем MIME-типов, см. [update-mime-database(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/update-mime-database.1).
+5.  [Окружения рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") и пользователи могут изменять приложения по умолчанию и добавлять или удалять MIME-типы приложений используя файлы [mimeapps.list](#mimeapps.list).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Общая база данных MIME](#Общая_база_данных_MIME)
     *   [1.1 Новый тип MIME](#Новый_тип_MIME)
@@ -32,7 +42,7 @@
 
 Файлы в `/usr/share/mime/` не должны редактироваться напрямую, однако их можно сохранить в отдельную базу данных для каждого пользователя в `~/.local/share/mime/`.
 
-"Обработка схемы URI [..] обрабатывается через приложения, обрабатывающие `x-scheme-handler/foo mime-type`, где foo - это схема URI, о которой идет речь."[[1]](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#idm140625828587776)
+"Обработка схемы URI [..] обрабатывается через приложения, обрабатывающие MIME-тип `x-scheme-handler/foo`, где foo - это схема URI, о которой идет речь."[[1]](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#idm140625828587776)
 
 ### Новый тип MIME
 

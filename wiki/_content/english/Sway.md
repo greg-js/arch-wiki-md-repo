@@ -25,11 +25,11 @@
     *   [5.1 Autostart on login](#Autostart_on_login)
     *   [5.2 Backlight toggle](#Backlight_toggle)
     *   [5.3 Screen capture](#Screen_capture)
-*   [6 Known issues](#Known_issues)
+*   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Application launchers](#Application_launchers)
     *   [6.2 VirtualBox](#VirtualBox)
-    *   [6.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
-    *   [6.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
+    *   [6.3 Sway socket not detected](#Sway_socket_not_detected)
+    *   [6.4 Incorrect monitor resolution](#Incorrect_monitor_resolution)
 *   [7 See also](#See_also)
 
 ## Status
@@ -251,7 +251,7 @@ bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 
 ```
 
-## Known issues
+## Troubleshooting
 
 ### Application launchers
 
@@ -267,7 +267,7 @@ The reason for this issue is that Wayland clients/windows do not have access to 
 
 Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "VirtualBox").
 
-### Sway Socket Not Detected
+### Sway socket not detected
 
 Using a `swaymsg` argument, such as `swaymsg -t get_outputs`, will sometimes return the message:
 
@@ -296,11 +296,11 @@ $ export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 
 To avoid this error, run the command outside of a multiplexer.
 
-### Incorrect Monitor Resolution
+### Incorrect monitor resolution
 
 Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The compositor [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
 
-You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries ([see Kernel Mode Setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
+You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries (see [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
 
 ## See also
 

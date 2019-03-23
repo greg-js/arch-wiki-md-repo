@@ -92,11 +92,12 @@ Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Unde
 
 ### Kernel parameters
 
-As of January 2019, the following commonly used kernel parameters are known to work:
+As of March 2019, the following commonly used kernel parameters are known to work:
 
 *   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings; will be enabled by default starting with Linux 5.1
 *   `i915.fastboot=1` - skips mode setting on startup, prevents flickering on compatible boot loaders (rEFInd, GRUB2 with resolution set, etc.); will be enabled by default starting with Linux 5.1
 *   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations
+*   `acpi_osi=Linux` - resolves issue where the system can hang for minutes on restart/shutdown
 
 ## Specifications
 

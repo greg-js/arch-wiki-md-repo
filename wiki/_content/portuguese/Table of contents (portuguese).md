@@ -111,7 +111,7 @@
 | <small>7.6.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
 | <small>7.7.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(5)</small> |
 | <small>7.8.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(2)</small> |
-| <small>7.9.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(3)</small> |
+| <small>7.9.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(4)</small> |
 | <small>7.9.1.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>7.9.2.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |
 | <small>7.9.2.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
@@ -127,7 +127,7 @@
 | <small>7.14.</small> [Logging](/index.php/Category:Logging_(Portugu%C3%AAs) "Category:Logging (Português)") <small>(1)</small> |
 | <small>7.15.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(20)</small> |
 | <small>7.16.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
-| <small>7.17.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(8)</small> |
+| <small>7.17.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
 | <small>7.17.1.</small> [Cryptography](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
 | <small>7.17.1.1.</small> [Encryption](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(2)</small> |
 | <small>7.17.2.</small> [Sandboxing](/index.php/Category:Sandboxing_(Portugu%C3%AAs) "Category:Sandboxing (Português)") <small>(1)</small> |
