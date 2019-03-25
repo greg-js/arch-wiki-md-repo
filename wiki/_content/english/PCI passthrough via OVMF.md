@@ -328,7 +328,7 @@ to
 
 ```
 
-Next, find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `cat /dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Now add those devices to your configuration
+Next, find your keyboard and mouse devices in `/dev/input/by-id/`. You may find multiple devices associated to your mouse or keyboard, so try `cat /dev/input/by-id/*device_id*` and either hit some keys on the keyboard or wiggle your mouse to see if input comes through, if so you have got the right device. Now add those devices to your configuration right before the closing </domain> tag:
 
  `$ virsh edit [vmname]` 
 ```

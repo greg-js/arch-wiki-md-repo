@@ -4,7 +4,11 @@
 
 [Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – <a class="mw-selflink selflink">Seguridad</a> – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Seguridad](#Seguridad)
     *   [1.1 Cortafuegos](#Cortafuegos)

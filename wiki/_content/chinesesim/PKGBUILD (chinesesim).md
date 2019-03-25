@@ -21,7 +21,11 @@ Arch Linux 用 [makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%8
 
 一般来说，这些变量按下面的顺序出现在 PKGBUILD 文件中，但这并不是强制性的，只要使用正确的 [Bash](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)") 语法就行了。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 软件包名称](#软件包名称)
     *   [1.1 pkgbase](#pkgbase)

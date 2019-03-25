@@ -118,7 +118,7 @@ For more information about all available options see [exports(5)](https://jlk.fj
 
 **Warning:** A hard dependency of serving NFS (`rpc-gssd.service`) will wait until the [random number generator](/index.php/Random_number_generator "Random number generator") pool is sufficiently initialized possibly delaying the boot process. This is particularly prevalent on headless servers. It is *highly* recommended to populate the entropy pool using a utility such as [Rng-tools](/index.php/Rng-tools "Rng-tools") (if [TPM](/index.php/TPM "TPM") is supported) or [Haveged](/index.php/Haveged "Haveged") in these scenarios.
 
-If you are exporting ZFS shares, also start and enable `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot.
+If exporting ZFS shares, also start and enable `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot.
 
 #### Miscellaneous
 
@@ -130,7 +130,7 @@ By default, starting `nfs-server.service` will listen for connections on all net
 ```
 [nfsd]
 host=192.168.1.123
-# Alternatively, you can use your hostname.
+# Alternatively, use the hostname.
 # host=myhostname
 ```
 
@@ -331,7 +331,7 @@ One might have to reboot the client to make systemd aware of the changes to fsta
     If experiencing any issues with the mount failing due to the network not being up/available, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`. It will ensure that `network.target` has all the links available prior to being active.
 *   The `users` mount option would allow user mounts, but be aware it implies further options as `noexec` for example.
 *   The `x-systemd.idle-timeout=1min` option will unmount the NFS share automatically after 1 minute of non-use. Good for laptops which might suddenly disconnect from the network.
-*   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. You may also try to add the `x-systemd.requires=network-online.target` mount option if shutdown takes too long.
+*   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. Also try to add the `x-systemd.requires=network-online.target` mount option if shutdown takes too long.
 *   Using mount options as `noatime`, `nodiratime`, `noac`, `nocto` may be used to increase NFS performance.
 
 #### Mount using autofs
@@ -388,7 +388,7 @@ lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsi
 
 **Note:**
 
-*   You must use hostnames in [fstab](/index.php/Fstab "Fstab") for this to work, not IP addresses.
+*   Use hostnames in [fstab](/index.php/Fstab "Fstab") for this to work, not IP addresses.
 *   In order to mount NFS shares with non-root users the `users` option has to be added.
 *   The `noauto` mount option tells [systemd](/index.php/Systemd "Systemd") to not automatically [mount](/index.php/Mount "Mount") the shares at boot, otherwise this may causing the boot process to stall.
 
@@ -439,7 +439,7 @@ done
 
 ```
 
-**Note:** If you want to test using a TCP probe instead of ICMP ping (default is tcp port 2049 in NFS4) then replace the line:
+**Note:** Test using a TCP probe instead of ICMP ping (default is tcp port 2049 in NFS4) then replace the line:
 ```
 # Check if the server is reachable
 ping -c 1 "${SERVER}" &>/dev/null

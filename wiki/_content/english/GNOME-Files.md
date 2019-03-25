@@ -26,7 +26,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
     *   [2.5 Always show text-entry location](#Always_show_text-entry_location)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Thumbnails](#Thumbnails)
-    *   [3.2 Create an empty document in Files 3.6 and above](#Create_an_empty_document_in_Files_3.6_and_above)
+    *   [3.2 Create a new document from the right-click menu](#Create_a_new_document_from_the_right-click_menu)
     *   [3.3 Music files metadata in list view](#Music_files_metadata_in_list_view)
     *   [3.4 Hiding files](#Hiding_files)
     *   [3.5 Open current directory in Tilix](#Open_current_directory_in_Tilix)
@@ -69,11 +69,11 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 *   **Send to Menu** — Files context menu for sending files.
 
-	[https://download.gnome.org/sources/nautilus-sendto/](https://download.gnome.org/sources/nautilus-sendto/) || [nautilus-sendto](https://www.archlinux.org/packages/?name=nautilus-sendto)
+	[https://gitlab.gnome.org/GNOME/nautilus-sendto](https://gitlab.gnome.org/GNOME/nautilus-sendto) || [nautilus-sendto](https://www.archlinux.org/packages/?name=nautilus-sendto)
 
 *   **Seahorse Nautilus** — PGP encryption and signing for Files
 
-	[https://gitlab.gnome.org/GNOME/seahorse-nautilus/](https://gitlab.gnome.org/GNOME/seahorse-nautilus/) || [seahorse-nautilus](https://www.archlinux.org/packages/?name=seahorse-nautilus)
+	[https://gitlab.gnome.org/GNOME/seahorse-nautilus](https://gitlab.gnome.org/GNOME/seahorse-nautilus) || [seahorse-nautilus](https://www.archlinux.org/packages/?name=seahorse-nautilus)
 
 *   **File Roller** — An application for browsing archives
 
@@ -134,9 +134,9 @@ See [File manager functionality#Thumbnail previews](/index.php/File_manager_func
 
 Sometimes video thumbnails are not shown. To solve it (as mentioned in [No video thumbnails on nautilus](https://bbs.archlinux.org/viewtopic.php?id=168626)), you must install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer), [gst-libav](https://www.archlinux.org/packages/?name=gst-libav), [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly), and remove the content of `~/.cache/thumbnails/fail/`.
 
-### Create an empty document in Files 3.6 and above
+### Create a new document from the right-click menu
 
-GNOME 3.6 brought changes to Files. The option to create an empty document has been removed from the right-click menu in Files. To get this option back one has to create a `~/Templates/` folder in your home folder and place an empty file inside the folder through your favorite Terminal by `touch ~/Templates/new` or by using any other file manager. Then just restart Files.
+To get this option one has to create a `~/Templates/` folder in your home folder and place an empty file inside the folder through your favorite Terminal by `touch ~/Templates/new` or by using any other file manager. Then just restart Files.
 
 On non-English installations, the templates directory might have another name. One can find the actual directory with `xdg-user-dir TEMPLATES`.
 
@@ -153,7 +153,7 @@ XDG_TEMPLATES_DIR="$HOME/some/path"
 
 GNOME Files lacks the ability to display metadata for music files in list view mode. A [Python](/index.php/Python "Python") script is available which adds list view columns for the artist, album, track title, bit rate and more.
 
-To use the script you first need to [install](/index.php/Install "Install") the following: [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/), [mutagen](https://www.archlinux.org/packages/?name=mutagen), [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), [kaa-metadata](https://aur.archlinux.org/packages/kaa-metadata/) and [python2-exiv2](https://aur.archlinux.org/packages/python2-exiv2/).
+To use the script you first need to [install](/index.php/Install "Install") the following: [python2-exiv2](https://aur.archlinux.org/packages/python2-exiv2/), [python2-mutagen](https://www.archlinux.org/packages/?name=python2-mutagen), [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/), [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow) and [kaa-metadata](https://aur.archlinux.org/packages/kaa-metadata/).
 
 Once the dependencies are installed, save the [bsc-v2.py](http://pastebin.com/zN69twVP) script to `~/.local/share/nautilus-python/extensions` (create the directory if it does not exist) and restart Files.
 

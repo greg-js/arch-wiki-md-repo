@@ -442,7 +442,7 @@ See also [Wikipedia:Comparison of project management software](https://en.wikipe
 
 *   **Planner** — Project management application for GNOME.
 
-	[https://www.calligra.org/plan/](https://www.calligra.org/plan/) || [planner](https://www.archlinux.org/packages/?name=planner)
+	[https://wiki.gnome.org/Apps/Planner](https://wiki.gnome.org/Apps/Planner) || [planner](https://www.archlinux.org/packages/?name=planner)
 
 *   **[ProjectLibre](https://en.wikipedia.org/wiki/ProjectLibre "wikipedia:ProjectLibre")** — Project management software alternative to [Microsoft Project](https://en.wikipedia.org/wiki/Microsoft_Project "wikipedia:Microsoft Project").
 

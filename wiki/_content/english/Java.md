@@ -420,4 +420,4 @@ Not setting this may result in java programs not being drawn properly.
 
 ## See also
 
-*   [Introduction to Programming Using Java](https://math.hws.edu/javanotes/)
+*   [Introduction to Programming Using Java](https://math.hws.edu/javanotes8/)

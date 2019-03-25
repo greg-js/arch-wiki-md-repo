@@ -10,7 +10,7 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(34)</small> |
+| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(35)</small> |
 | <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(6) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
 | <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
 | <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |

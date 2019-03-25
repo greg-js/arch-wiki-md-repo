@@ -2,7 +2,11 @@
 
 O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de código aberto. Ele é usado para solucionar de problemas de rede, análise, desenvolvimento de software e protocolo de comunicação e educação.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Capturando como um usuário normal](#Capturando_como_um_usuário_normal)

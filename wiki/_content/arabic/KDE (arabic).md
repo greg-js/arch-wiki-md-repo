@@ -16,7 +16,11 @@ Related articles
 
 The KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/). Users can get detailed information about most KDE applications there.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 التثبيت](#التثبيت)
     *   [1.1 التثبيت الكامل](#التثبيت_الكامل)

@@ -64,7 +64,7 @@ $ arch-nspawn "$CHROOT"/root pacman -S openmp upx optipng
 
 ```
 
-Then [download](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository") and [build](/index.php/DeveloperWiki:Building_in_a_clean_chroot#Building_in_the_chroot "DeveloperWiki:Building in a clean chroot") [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
+Then [download](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository") and [build](/index.php/DeveloperWiki:Building_in_a_clean_chroot#Building_in_the_chroot "DeveloperWiki:Building in a clean chroot") [pacman-git](https://aur.archlinux.org/packages/pacman-git/), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
 
 To install them in the base chroot, copy their package files into it and install them, e.g.:
 

@@ -6,7 +6,7 @@ Related articles
 
 *dhcpcd* is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](https://roy.marples.name/projects/dhcpcd) for the full list of features.
 
-**Note:** *dhcpcd* (DHCP **client** daemon) is not the same as [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
+**Note:** Roy Marples' *dhcpcd* (DHCP **client** daemon) is not the same as Internet Systems Consortium's [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -27,7 +27,7 @@ Related articles
     *   [5.1 Speed up DHCP by disabling ARP probing](#Speed_up_DHCP_by_disabling_ARP_probing)
     *   [5.2 Remove old DHCP lease](#Remove_old_DHCP_lease)
     *   [5.3 Different IPs when multi-booting](#Different_IPs_when_multi-booting)
-    *   [5.4 resolv.conf](#resolv.conf)
+    *   [5.4 /etc/resolv.conf](#/etc/resolv.conf)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Client ID](#Client_ID)
     *   [6.2 Check DHCP problem by releasing IP first](#Check_DHCP_problem_by_releasing_IP_first)
@@ -151,7 +151,7 @@ fallback static_eth0
 
 ### 10-wpa_supplicant
 
-Enable this hook by creating a symbolic link (to ensure that always the current version is used, even after package updates):
+Enable this hook by creating a symbolic link, which ensures the current version is used, even after package updates:
 
 ```
 # ln -s /usr/share/dhcpcd/hooks/10-wpa_supplicant /usr/lib/dhcpcd/dhcpcd-hooks/
@@ -177,7 +177,7 @@ by default, in that order, but a custom path can be set by adding `env wpa_suppl
 
 If you manage wireless connections with *wpa_supplicant* itself, the hook may create unwanted connection events. For example, if you stop *wpa_supplicant* the hook may bring the interface up again. Also, if you use [netctl-auto](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* is started automatically with `/run/network/wpa_supplicant_*interface*.conf` for config, so starting it again from the hook is unnecessary and may result in boot-time parse errors of the `/etc/wpa_supplicant/wpa_supplicant.conf` file, which only contains dummy values in the default packaged version.
 
-To disable the hook, add `nohook wpa_supplicant` to `dhcpcd.conf`.
+To disable the hook remove the symbolic link you added, or add `nohook wpa_supplicant` to `dhcpcd.conf`.
 
 ## Tips and tricks
 
@@ -217,11 +217,11 @@ On OS X it is directly accessible in `Network\adapter\dhcp preferences panel`.
 
 If you are using a [dnsmasq](/index.php/Dnsmasq "Dnsmasq") DHCP server, the different DUIDs can be used in appropriate `dhcp-host=` rules in its configuration.
 
-### resolv.conf
+### /etc/resolv.conf
 
-*dhcpcd'* by default overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+If [resolvconf](/index.php/Resolvconf "Resolvconf") is available DNS information will be sent to it, if not, then *dhcpcd* itself will write to `/etc/resolv.conf`.
 
-This can be stopped by adding the following to the last section of `/etc/dhcpcd.conf`:
+`/etc/resolv.conf` overwriting can be stopped by disabling the hook `/usr/lib/dhcpcd/dhcpcd-hooks/20-resolv.conf`. Do so by adding the following to the last section of `/etc/dhcpcd.conf`:
 
 ```
 nohook resolv.conf
@@ -243,6 +243,8 @@ For example, to set it to Google's DNS servers:
 static domain_name_servers=8.8.8.8 8.8.4.4
 
 ```
+
+**Tip:** When using [openresolv](/index.php/Openresolv "Openresolv"), DNS servers can instead be set in `/etc/resolvconf.conf`. This way they will not get overwritten by any *resolvconf* supporting software.
 
 ## Troubleshooting
 

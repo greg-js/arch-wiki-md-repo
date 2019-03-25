@@ -61,9 +61,9 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 
 [Network managers](/index.php/Network_manager "Network manager") tend to overwrite `/etc/resolv.conf`, for specifics see the corresponding section:
 
-*   [dhcpcd#resolv.conf](/index.php/Dhcpcd#resolv.conf "Dhcpcd")
+*   [dhcpcd#/etc/resolv.conf](/index.php/Dhcpcd#/etc/resolv.conf "Dhcpcd")
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
-*   [NetworkManager#resolv.conf](/index.php/NetworkManager#resolv.conf "NetworkManager")
+*   [NetworkManager#/etc/resolv.conf](/index.php/NetworkManager#/etc/resolv.conf "NetworkManager")
 
 To prevent programs from overwriting `/etc/resolv.conf` you can also write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute"):
 
@@ -119,6 +119,8 @@ $ drill @*nameserver* TXT *domain*
 If you do not specify a DNS server *drill* uses the nameservers defined in `/etc/resolv.conf`.
 
 *   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
+
+**Tip:** Some DNS servers ship with their own DNS lookup utilities. E.g. [knot](https://www.archlinux.org/packages/?name=knot) has [khost(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/khost.1) and [kdig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kdig.1), [Unbound](/index.php/Unbound "Unbound")—[unbound-host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-host.1).
 
 ## Resolver performance
 

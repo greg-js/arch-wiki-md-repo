@@ -1,6 +1,10 @@
-Slock is the "Simple X display locker" [[1]](http://tools.suckless.org/slock/).
+Slock, or the "Simple X display locker", is a display locker for [X](/index.php/X "X") that aims to be minimal, fast, and lightweight.[[1]](http://tools.suckless.org/slock/).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -36,7 +40,7 @@ $ slock *cmd* *[arg ...]*
  `/etc/systemd/system/slock@.service` 
 ```
 [Unit]
-Description=Lock X session using slock for user %i
+Description=Lock X session using slock for user %i
 Before=sleep.target
 
 [Service]

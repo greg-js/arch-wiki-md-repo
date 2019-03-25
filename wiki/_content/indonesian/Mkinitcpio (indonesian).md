@@ -5,7 +5,11 @@ Related articles
 
 **mkinitcpio** adalah generasi berikutnya dari pembuatan [initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sekilas Pandang](#Sekilas_Pandang)
 *   [2 Installation](#Installation)
@@ -26,12 +30,12 @@ Related articles
     *   [5.3 Using net](#Using_net)
     *   [5.4 Using LVM](#Using_LVM)
     *   [5.5 Using encrypted root](#Using_encrypted_root)
-    *   [5.6 /usr as a separate partition](#.2Fusr_as_a_separate_partition)
+    *   [5.6 /usr as a separate partition](#/usr_as_a_separate_partition)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Extracting the image](#Extracting_the_image)
     *   [6.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
-    *   [6.3 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
-    *   [6.4 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
+    *   [6.3 "/dev must be mounted" when it already is](#"/dev_must_be_mounted"_when_it_already_is)
+    *   [6.4 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS/LVM/resume_setup)
     *   [6.5 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
     *   [6.6 mkinitcpio creates images with all the shared libraries missing](#mkinitcpio_creates_images_with_all_the_shared_libraries_missing)
     *   [6.7 Standard rescue procedures](#Standard_rescue_procedures)

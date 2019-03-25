@@ -128,7 +128,7 @@ You can choose one of the following implementations:
 
 You can write your own libnotify display messages easily in many programming languages through GObject-Introspection or bindings, or you can simply use bash.
 
-The following examples display simple a "Hello world" notification.
+The following examples display a simple "Hello world" notification.
 
 ### Bash
 

@@ -1,3 +1,14 @@
+Related articles
+
+*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
+*   [Creating packages](/index.php/Creating_packages "Creating packages")
+*   [Category:Package development](/index.php/Category:Package_development "Category:Package development")
+*   [Pacman tips](/index.php/Pacman_tips "Pacman tips")
+*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+*   [makepkg](/index.php/Makepkg "Makepkg")
+*   [pacman](/index.php/Pacman "Pacman")
+
 `PKGBUILD` је Arch Linux фајл који описује изградњу пакета кад се креирају пакети. Овај чланак описује могуће `PKGBUILD` променљиве.
 
 ## Грађење пакета

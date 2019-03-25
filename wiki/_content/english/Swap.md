@@ -136,6 +136,8 @@ For copy-on-write file systems like [Btrfs](/index.php/Btrfs "Btrfs"), first cre
 
 ```
 
+See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs") for more information.
+
 Use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). For example, creating a 512 MiB swap file:
 
 ```

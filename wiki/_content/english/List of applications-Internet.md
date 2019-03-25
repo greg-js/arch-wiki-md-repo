@@ -308,11 +308,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default.
 
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/) or [brave-bin](https://aur.archlinux.org/packages/brave-bin/)
-
-*   **Inox** — A privacy-focused patchset for Chromium, which disables Google services, proprietary features, prevents "calling home" and unhides all extensions.
-
-	[https://github.com/gcarq/inox-patchset](https://github.com/gcarq/inox-patchset) || [inox](https://aur.archlinux.org/packages/inox/) or [inox-bin](https://aur.archlinux.org/packages/inox-bin/)
+	[https://www.brave.com/](https://www.brave.com/) || [brave-bin](https://aur.archlinux.org/packages/brave-bin/)
 
 *   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium).
 
@@ -1540,7 +1536,7 @@ See also [Matrix](/index.php/Matrix "Matrix").
 
 *   **nheko** — Desktop client for the Matrix protocol.
 
-	[https://github.com/mujx/nheko](https://github.com/mujx/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/)
+	[https://github.com/Nheko-Reborn/nheko](https://github.com/Nheko-Reborn/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/)
 
 *   **Quaternion** — Qt5-based IM client for the Matrix protocol.
 

@@ -6,7 +6,7 @@ Related articles
 
 According to the [official website](https://www.gnupg.org/):
 
-	GnuPG is a complete and free implementation of the [OpenPGP](http://openpgp.org/about/) standard as defined by [RFC4880](https://tools.ietf.org/html/rfc4880) (also known as PGP). GnuPG allows you to encrypt and sign your data and communication. It features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
+	GnuPG is a complete and free implementation of the [OpenPGP](http://openpgp.org/about/) standard as defined by [RFC4880](https://tools.ietf.org/html/rfc4880) (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. GnuPG also provides support for S/MIME and Secure Shell (ssh).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -33,8 +33,9 @@ According to the [official website](https://www.gnupg.org/):
     *   [4.1 Backup your private key](#Backup_your_private_key)
     *   [4.2 Edit your key](#Edit_your_key)
     *   [4.3 Exporting subkey](#Exporting_subkey)
-    *   [4.4 Extending expiry date](#Extending_expiry_date)
+    *   [4.4 Extending expiration date](#Extending_expiration_date)
     *   [4.5 Rotating subkeys](#Rotating_subkeys)
+    *   [4.6 Revoke a key](#Revoke_a_key)
 *   [5 Signatures](#Signatures)
     *   [5.1 Create a signature](#Create_a_signature)
         *   [5.1.1 Sign a file](#Sign_a_file)
@@ -131,12 +132,12 @@ $ gpg --full-gen-key
 
 ```
 
-**Tip:** Use the `--expert` option for getting alternative ciphers like [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography").
+**Tip:** Use the `--expert` option for getting alternative ciphers like [ECC](https://en.wikipedia.org/wiki/Elliptic_curve_cryptography "wikipedia:Elliptic curve cryptography"). [[1]](https://www.gnupg.org/faq/whats-new-in-2.1.html#ecc)
 
 The command will prompt for answers to several questions. For general use most people will want:
 
 *   the RSA (sign only) and a RSA (encrypt only) key.
-*   a keysize of the default value (2048). A larger keysize of 4096 "gives us almost nothing, while costing us quite a lot"[[1]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
+*   a keysize of the default value (2048). A larger keysize of 4096 "gives us almost nothing, while costing us quite a lot"[[2]](https://www.gnupg.org/faq/gnupg-faq.html#no_default_of_rsa4096).
 *   an expiration date. A period of a year is good enough for the average user. This way even if access is lost to the keyring, it will allow others to know that it is no longer valid. Later, if necessary, the expiration date can be extended without having to re-issue a new key.
 *   your name and email address. You can add multiple identities to the same key later (*e.g.*, if you have multiple email addresses you want to associate with this key).
 *   *no* optional comment. Since the semantics of the comment field are [not well-defined](https://lists.gnupg.org/pipermail/gnupg-devel/2015-July/030150.html), it has limited value for identification.
@@ -153,9 +154,9 @@ $ gpg --gen-revoke --armor --output=*revocation_certificate.asc* *user-id*
 
 ```
 
-This certificate can be used to revoke your key if it is ever lost or compromised. Protect your revocation key like you protect your secret keys. Print it out, save it on a disk, and store it safely. It will be short enough that you can type it back in by hand without much effort if you just print it out.
+This certificate can be used to [revoke your key](#Revoke_a_key) if it is ever lost or compromised.
 
-If you lose your secret key or it is compromised, you will want to revoke your key by uploading the revocation certificate to a public keyserver (assuming you uploaded your public key to a public keyserver in the first place).
+**Warning:** Anyone with access to the revocation certificate can revoke your key. Protect your revocation certificate like you protect your secret keys. Print it out, save it on a disk, and store it safely. It will be short enough that you can type it back in by hand without much effort if you just print it out.
 
 ### List keys
 
@@ -210,7 +211,7 @@ $ gpg --send-keys *key-id*
 
 ```
 
-**Warning:** Once a key has been submitted to a keyserver, it cannot be deleted from the server.[[2]](https://pgp.mit.edu/faq.html)
+**Warning:** Once a key has been submitted to a keyserver, it cannot be deleted from the server.[[3]](https://pgp.mit.edu/faq.html)
 
 To find out details of a key on the keyserver, without importing it, do:
 
@@ -229,7 +230,7 @@ $ gpg --recv-keys *key-id*
 **Warning:**
 
 *   You should verify the authenticity of the retrieved public key by comparing its fingerprint with one that the owner published on an independent source(s) (e.g., contacting the person directly). See [Wikipedia:Public key fingerprint](https://en.wikipedia.org/wiki/Public_key_fingerprint "wikipedia:Public key fingerprint") for more information.
-*   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[3]](https://lkml.org/lkml/2016/8/15/445)
+*   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[4]](https://lkml.org/lkml/2016/8/15/445)
 
 **Tip:**
 
@@ -376,11 +377,11 @@ $ gpg --homedir /tmp/gpg -a --export-secret-subkeys *[subkey id]*! > /tmp/subkey
 
 At this point, you can now use `/tmp/subkey.altpass.gpg` on your other devices.
 
-### Extending expiry date
+### Extending expiration date
 
 **Warning:** **Never** delete your expired or revoked subkeys unless you have a good reason. Doing so will cause you to lose the ability to decrypt files encrypted with the old subkey. Please **only** delete expired or revoked keys from other users to clean your keyring.
 
-It is good practice to set an expiration date on your subkeys, so that if you lose access to the key (e.g. you forget the passphrase) the key will not continue to be used indefinitely by others. When the key expires, it is relatively straight-forward to extend the expiry date:
+It is good practice to set an expiration date on your subkeys, so that if you lose access to the key (e.g. you forget the passphrase) the key will not continue to be used indefinitely by others. When the key expires, it is relatively straight-forward to extend the expiration date:
 
 ```
 $ gpg --edit-key *<user-id>*
@@ -388,7 +389,7 @@ $ gpg --edit-key *<user-id>*
 
 ```
 
-You will be prompted for a new expiry date, as well as the passphrase for your secret key, which is used to sign the new expiration date.
+You will be prompted for a new expiration date, as well as the passphrase for your secret key, which is used to sign the new expiration date.
 
 Repeat this for any further subkeys that have expired:
 
@@ -420,7 +421,7 @@ $ gpg --import pubkey.gpg
 
 ```
 
-There is no need to re-export your secret key or update your backups: the master secret key itself never expires, and the signature of the expiry date left on the public key and subkeys is all that is needed.
+There is no need to re-export your secret key or update your backups: the master secret key itself never expires, and the signature of the expiration date left on the public key and subkeys is all that is needed.
 
 ### Rotating subkeys
 
@@ -428,7 +429,7 @@ There is no need to re-export your secret key or update your backups: the master
 
 Alternatively, if you prefer to stop using subkeys entirely once they have expired, you can create new ones. Do this a few weeks in advance to allow others to update their keyring.
 
-**Tip:** You do not need to create a new key simply because it is expired. You can extend the expiration date, see the section [#Extending expiry date](#Extending_expiry_date).
+**Tip:** You do not need to create a new key simply because it is expired. You can extend the expiration date, see the section [#Extending expiration date](#Extending_expiration_date).
 
 Create new subkey (repeat for both signing and encrypting key)
 
@@ -457,6 +458,17 @@ $ gpg --keyserver pgp.mit.edu --send-keys *<user-id>*
 You will also need to export a fresh copy of your secret keys for backup purposes. See the section [#Backup your private key](#Backup_your_private_key) for details on how to do this.
 
 **Tip:** Revoking expired subkeys is unnecessary and arguably bad form. If you are constantly revoking keys, it may cause others to lack confidence in you.
+
+### Revoke a key
+
+If you lose your secret key or it is compromised, you will want to revoke your key by first [importing your public key](#Import_a_public_key) if you not longer have access to the keypair. Then, you will import your [revocation certificate](#Generate_a_revocation_certificate):
+
+```
+$ gpg --import revocation_certificate.asc
+
+```
+
+You now need to make your now-revoked key public. If you used a keyserver, [send the key to the keyserver](#Use_a_keyserver). Otherwise, distribute the revoked key to your colleagues.
 
 ## Signatures
 
@@ -634,7 +646,7 @@ pinentry-mode loopback
 
 ```
 
-**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[4]](https://bugs.g10code.com/gnupg/issue1772)
+**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[5]](https://bugs.g10code.com/gnupg/issue1772)
 
 ### SSH agent
 
@@ -662,7 +674,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 ```
 
-**Note:** The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[5]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
+**Note:** The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[6]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
 #### Configure pinentry to use the correct TTY
 

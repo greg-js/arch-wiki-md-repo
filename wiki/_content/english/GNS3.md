@@ -4,7 +4,11 @@ From the webpage:
 
 	*GNS3 is an open source software that simulate complex networks while being as close as possible to the way real networks perform. All of this without having dedicated network hardware such as routers and switches.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Adding virtual machines](#Adding_virtual_machines)
@@ -105,13 +109,13 @@ VPCS is a simple virtual PC simulator, supported by GNS3 and useful to enhance t
 [Wireshark](/index.php/Wireshark "Wireshark") can be used with GNS3 to "sniff" packets from the links between devices of a virtual topology. Install it, create a symlink under `~/GNS3/wireshark/` directory, then change the settings to instruct GNS3 to use the right version; e.g. if using [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk), opting for Wireshark Live Traffic Capture, go to *Preferences > Packet capture preferences* and change:
 
 ```
-tail -f -c +0b %c | wireshark -o "gui.window_title:%d" -k -i -
+tail -f -c +0b %c | wireshark -o "gui.window_title:%d" -k -i -
 
 ```
 
 to
 
 ```
-tail -f -c +0b %c | wireshark-gtk -o "gui.window_title:%d" -k -i -
+tail -f -c +0b %c | wireshark-gtk -o "gui.window_title:%d" -k -i -
 
 ```

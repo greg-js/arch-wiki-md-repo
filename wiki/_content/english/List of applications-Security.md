@@ -152,7 +152,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
-	[https://www.wireshark.org/](https://www.wireshark.org/) || CLI: [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli), GTK+: [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk), Qt: [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt)
+	[https://www.wireshark.org/](https://www.wireshark.org/) || CLI: [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli), GUI: [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt)
 
 *   **[Xplico](https://en.wikipedia.org/wiki/Xplico "wikipedia:Xplico")** — Network forensics analysis tool (NFAT), which is a software that reconstructs the contents of acquisitions performed with a packet sniffer.
 

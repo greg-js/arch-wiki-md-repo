@@ -69,7 +69,7 @@ The kernel contains two built-in open-source drivers: **brcmfmac** for native Fu
 
 Two reverse-engineered open-source drivers are built-in to the kernel: **b43** and **b43legacy**. b43 supports most newer Broadcom chipsets, while the b43legacy driver only supports the early BCM4301 and BCM4306 rev.2 chipsets. To avoid erroneous detection of your WiFi card's chipset, [blacklist](/index.php/Blacklist "Blacklist") the unused driver.
 
-Both of these drivers require non-free firmware to function. Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/).
+Both of these drivers require non-free firmware to function. Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) or [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/).
 
 **Note:**
 

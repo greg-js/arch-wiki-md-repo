@@ -1,13 +1,17 @@
 В этой статье я постараюсь описать установку android-sdk под arch linux, включая особенности x64 систем.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Подготовка.](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0.)
-*   [2 Установка android-sdk](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_android-sdk)
-    *   [2.1 Установка через yaourt.](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_yaourt.)
-        *   [2.1.1 Настройка Netbeans](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Netbeans)
-    *   [2.2 Установка через Eclipse](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Eclipse)
-*   [3 Прописать PATH](#.D0.9F.D1.80.D0.BE.D0.BF.D0.B8.D1.81.D0.B0.D1.82.D1.8C_PATH)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Подготовка.](#Подготовка.)
+*   [2 Установка android-sdk](#Установка_android-sdk)
+    *   [2.1 Установка через yaourt.](#Установка_через_yaourt.)
+        *   [2.1.1 Настройка Netbeans](#Настройка_Netbeans)
+    *   [2.2 Установка через Eclipse](#Установка_через_Eclipse)
+*   [3 Прописать PATH](#Прописать_PATH)
 
 ## Подготовка.
 

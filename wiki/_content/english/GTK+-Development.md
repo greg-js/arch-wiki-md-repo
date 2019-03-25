@@ -524,7 +524,7 @@ Hello.secondary_text = "This is an example dialog."
 Hello.run
 ```
 
-*   Dependency: [ruby-gtk3](https://aur.archlinux.org/packages/ruby-gtk3/)
+*   Dependency: [ruby-gtk3](https://www.archlinux.org/packages/?name=ruby-gtk3)
 
  `hello_world.rb` 
 ```

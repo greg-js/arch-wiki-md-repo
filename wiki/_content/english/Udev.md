@@ -168,13 +168,13 @@ See [Udisks](/index.php/Udisks "Udisks").
 
 ### Mounting drives in rules
 
-To mount removable drives, do not call `mount` from *udev* rules. This is ill-advised for two reasons: (1) Systemd by default runs `systemd-udevd.service` with a separate "mount namespace" (see [namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/namespaces.7)), which means that mounts will not be visible to the rest of the system. Even if you change the service parameters to fix this (commenting out the `PrivateMounts` and `MountFlags` lines), there is another problem which is that processes started from Udev are killed after a few seconds. In case of FUSE filesystems, such as [exFAT](/index.php/ExFAT "ExFAT") (which is common to find on mp3 players or shareable thumb drives) and [NTFS](/index.php/NTFS "NTFS"), "mount" starts a user-space process to handle the filesystem internals; when this is killed you will get `Transport endpoint not connected` errors if you try to access the filesystem.
+To mount removable drives, do not call `mount` from *udev* rules. This is ill-advised for two reasons: (1) systemd by default runs `systemd-udevd.service` with a separate "mount namespace" (see [namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/namespaces.7)), which means that mounts will not be visible to the rest of the system. (2) Even if you change the service parameters to fix this (commenting out the `PrivateMounts` and `MountFlags` lines), there is another problem which is that processes started from Udev are killed after a few seconds. In case of FUSE filesystems, such as [exFAT](/index.php/ExFAT "ExFAT") (which is common to find on mp3 players or shareable thumb drives) and [NTFS](/index.php/NTFS "NTFS"), "mount" starts a user-space process to handle the filesystem internals; when this is killed you will get `Transport endpoint not connected` errors if you try to access the filesystem.
 
 There are some options that work:
 
-*   Start a custom Systemd service from the Udev rule; the Systemd service can invoke a script which can start any number of long-running processes (like FUSE). An concise example which automatically mounts USB disks under `/media` is [udev-media-automount](https://github.com/Ferk/udev-media-automount). It was found to be fast and reliable. A variant of the same idea is explained in [this blog post](http://jasonwryan.com/blog/2014/01/20/udev/).
+*   Start a custom systemd service from the Udev rule; the systemd service can invoke a script which can start any number of long-running processes (like FUSE). An concise example which automatically mounts USB disks under `/media` is [udev-media-automount](https://github.com/Ferk/udev-media-automount). It was found to be fast and reliable. A variant of the same idea is explained in [this blog post](http://jasonwryan.com/blog/2014/01/20/udev/).
 
-*   Use `systemd-mount` instead of `mount` in your Udev rule. This is [recommended by Systemd developers](https://github.com/systemd/systemd/issues/11982#issuecomment-472529566). For example this Udev rule should mount USB disks under "/media":
+*   Use `systemd-mount` instead of `mount` in your Udev rule. This is [recommended by systemd developers](https://github.com/systemd/systemd/issues/11982#issuecomment-472529566). For example this Udev rule should mount USB disks under "/media":
 
 ```
 # ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="/usr/bin/systemd-mount --no-block --automount=yes --collect $devnode /media"
@@ -183,7 +183,7 @@ There are some options that work:
 
 As of this writing, however, it was found to be slow and unreliable.
 
-*   Use a package like [Udisks](/index.php/Udisks "Udisks") or [Udiskie](/index.php/Udiskie "Udiskie"). These are very powerful, but difficult to set up. Also, they are meant to be used in single user sessions, since they make filesystems available under the ownership whatever unprivileged "regular user" happens to be currently logged in.
+*   Use a package like [Udisks](/index.php/Udisks "Udisks") or [Udiskie](/index.php/Udiskie "Udiskie"). These are very powerful, but difficult to set up. Also, they are meant to be used in single user sessions, since they make some filesystems available under the ownership of the unprivileged user whose session is currently active.
 
 ### Accessing firmware programmers and USB virtual comm devices
 

@@ -13,7 +13,11 @@ Un `PKGBUILD` è un file di descrizione della costruzione di pacchetti di Arch L
 
 I pacchetti in Arch Linux sono costruiti utilizzando il comando [makepkg](/index.php/Makepkg "Makepkg") e le informazioni sono memorizzate in un file `PKGBUILD`. Quando `makepkg` viene eseguito, cerca un `PKGBUILD` nella directory corrente e segue le istruzioni ivi contenute sia per compilare che per acquisire i file necessari al confezionamento di un pacchetto (`pkgname.pkg.tar.xz`). Il pacchetto risultante contiene i file binari e le istruzioni di installazione e può essere facilmente installato tramite [pacman](/index.php/Pacman "Pacman").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Variabili](#Variabili)
     *   [1.1 pkgname](#pkgname)
@@ -42,7 +46,7 @@ I pacchetti in Arch Linux sono costruiti utilizzando il comando [makepkg](/index
     *   [1.24 noextract](#noextract)
     *   [1.25 md5sums](#md5sums)
     *   [1.26 sha1sums](#sha1sums)
-    *   [1.27 sha256sums, sha384sums, sha512sums](#sha256sums.2C_sha384sums.2C_sha512sums)
+    *   [1.27 sha256sums, sha384sums, sha512sums](#sha256sums,_sha384sums,_sha512sums)
 *   [2 Consultare anche](#Consultare_anche)
 
 ## Variabili
@@ -221,7 +225,7 @@ un array di file che sono necessari per compilare il pacchetto. Deve contenere l
 
 ### noextract
 
-Un array di file elencati nell'array `source` che non dovrebbero essere estratti dal loro archivio da `makepkg`. Per lo più si applica a certi archivi che non possono essere gestiti da `/usr/bin/bsdtar` visto che [libarchive](https://www.archlinux.org/packages/?name=libarchive) processa tutti i file come flussi piuttosto che ad accesso casuale come fa [unzip](https://www.archlinux.org/packages/?name=unzip). In queste situazioni si dovrebbero aggiungere gli strumenti di decompressione alternativi (ad esempio `unzip`, `p7zip`, etc.) all'array `makedepends` e le prime linee della funzione [prepare()](/index.php/Creating_packages_(Italiano)#La_funzione_prepare.28.29 "Creating packages (Italiano)") dovrebbero estrarre l'archivio di sorgenti manualmente; ad esempio:
+Un array di file elencati nell'array `source` che non dovrebbero essere estratti dal loro archivio da `makepkg`. Per lo più si applica a certi archivi che non possono essere gestiti da `/usr/bin/bsdtar` visto che [libarchive](https://www.archlinux.org/packages/?name=libarchive) processa tutti i file come flussi piuttosto che ad accesso casuale come fa [unzip](https://www.archlinux.org/packages/?name=unzip). In queste situazioni si dovrebbero aggiungere gli strumenti di decompressione alternativi (ad esempio `unzip`, `p7zip`, etc.) all'array `makedepends` e le prime linee della funzione [prepare()](/index.php/Creating_packages_(Italiano)#La_funzione_prepare() "Creating packages (Italiano)") dovrebbero estrarre l'archivio di sorgenti manualmente; ad esempio:
 
 ```
 unzip [source].zip

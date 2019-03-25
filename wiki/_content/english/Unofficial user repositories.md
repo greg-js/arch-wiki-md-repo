@@ -54,22 +54,23 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.33 Minerva W Science](#Minerva_W_Science)
     *   [2.34 mobile](#mobile)
     *   [2.35 nah](#nah)
-    *   [2.36 pkgbuilder](#pkgbuilder)
-    *   [2.37 post-factum kernels](#post-factum_kernels)
-    *   [2.38 QOwnNotes](#QOwnNotes)
-    *   [2.39 qt-debug](#qt-debug)
-    *   [2.40 quarry](#quarry)
-    *   [2.41 repo-ck](#repo-ck)
-    *   [2.42 seblu](#seblu)
-    *   [2.43 seiichiro](#seiichiro)
-    *   [2.44 sergej-repo](#sergej-repo)
-    *   [2.45 siosm-aur](#siosm-aur)
-    *   [2.46 sublime-text](#sublime-text)
-    *   [2.47 subtitlecomposer](#subtitlecomposer)
-    *   [2.48 trinity](#trinity)
-    *   [2.49 ungoo](#ungoo)
-    *   [2.50 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.51 xyne-x86_64](#xyne-x86_64)
+    *   [2.36 origincode](#origincode)
+    *   [2.37 pkgbuilder](#pkgbuilder)
+    *   [2.38 post-factum kernels](#post-factum_kernels)
+    *   [2.39 QOwnNotes](#QOwnNotes)
+    *   [2.40 qt-debug](#qt-debug)
+    *   [2.41 quarry](#quarry)
+    *   [2.42 repo-ck](#repo-ck)
+    *   [2.43 seblu](#seblu)
+    *   [2.44 seiichiro](#seiichiro)
+    *   [2.45 sergej-repo](#sergej-repo)
+    *   [2.46 siosm-aur](#siosm-aur)
+    *   [2.47 sublime-text](#sublime-text)
+    *   [2.48 subtitlecomposer](#subtitlecomposer)
+    *   [2.49 trinity](#trinity)
+    *   [2.50 ungoo](#ungoo)
+    *   [2.51 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.52 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -563,6 +564,18 @@ Server = https://farwayer.keybase.pub/arch/$repo
 ```
 [nah]
 Server = https://repo.nah.nz/$repo
+
+```
+
+### origincode
+
+*   **Maintainer:** [OriginCode](https://t.me/OriginCode)
+*   **Description:** A few staging or testing packages from [Unofficial_user_repositories#archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories"), and some daily use packages.
+*   **Key-ID:** 5D80C1CC
+
+```
+[origincode]
+Server = https://repo.origincode.top/repo/
 
 ```
 

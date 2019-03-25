@@ -6,7 +6,11 @@
 
 The [KDE](/index.php/KDE "KDE") packages on Arch Linux follow a certain schema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Build directory](#Build_directory)
 *   [2 Install prefix](#Install_prefix)
@@ -49,6 +53,13 @@ Every packages must set the `CMAKE_INSTALL_PREFIX` variable, but also we have to
 
 ```
 -DCMAKE_INSTALL_PREFIX=$(kde4-config --prefix)
+
+```
+
+or for KDE 5:
+
+```
+-DCMAKE_INSTALL_PREFIX=$(kf5-config --prefix)
 
 ```
 

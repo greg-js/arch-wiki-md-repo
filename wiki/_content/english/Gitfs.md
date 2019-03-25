@@ -6,12 +6,16 @@ From [gitfs](https://www.presslabs.org/gitfs/docs/):
 
 	gitfs is useful in places where you want to keep track of all your files, but at the same time you don’t have the possibility of organizing everything into commits yourself. A FUSE file system for git repositories, with local cache.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Write access to /var/lib/gitfs](#Write_access_to_.2Fvar.2Flib.2Fgitfs)
+    *   [3.1 Write access to /var/lib/gitfs](#Write_access_to_/var/lib/gitfs)
     *   [3.2 Write access to pygit2](#Write_access_to_pygit2)
     *   [3.3 Options for use with ssh key](#Options_for_use_with_ssh_key)
 
@@ -21,7 +25,7 @@ From [gitfs](https://www.presslabs.org/gitfs/docs/):
 
 ## Usage
 
-gitfs enables to mount a remote git repository as a [FUSE](/index.php/Fuse "Fuse") filesystem, for example:
+gitfs enables a user to mount a remote git repository as a [FUSE](/index.php/Fuse "Fuse") filesystem, for example:
 
 ```
 $ gitfs http://example.com/repository.git */mount/directory*

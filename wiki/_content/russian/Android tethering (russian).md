@@ -1,22 +1,26 @@
 [Тетеринг](https://en.wikipedia.org/wiki/ru:%D0%A2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B3 "wikipedia:ru:Тетеринг") - это раздача интернета на компьютер со смартфона с помощью его сетевого подключения. USB-модем и точка доступа Wi-Fi точки доступа поддерживаются изначально с Android Froyo (2.2). В более старых версиях ОС Android большинство неофициальных ПЗУ имеют эту функцию.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Точка доступа Wi-Fi](#.D0.A2.D0.BE.D1.87.D0.BA.D0.B0_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_Wi-Fi)
-*   [2 USB модем](#USB_.D0.BC.D0.BE.D0.B4.D0.B5.D0.BC)
-    *   [2.1 Что вам понадобится](#.D0.A7.D1.82.D0.BE_.D0.B2.D0.B0.D0.BC_.D0.BF.D0.BE.D0.BD.D0.B0.D0.B4.D0.BE.D0.B1.D0.B8.D1.82.D1.81.D1.8F)
-    *   [2.2 Порядок действий](#.D0.9F.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.B4.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.B8.D0.B9)
-*   [3 USB-модем с OpenVPN](#USB-.D0.BC.D0.BE.D0.B4.D0.B5.D0.BC_.D1.81_OpenVPN)
-    *   [3.1 Необходимые инструменты](#.D0.9D.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D1.8B.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
-        *   [3.1.1 Настройка телефонного соединения в Arch Linux](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.82.D0.B5.D0.BB.D0.B5.D1.84.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D1.81.D0.BE.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_Arch_Linux)
-    *   [3.2 Процедура](#.D0.9F.D1.80.D0.BE.D1.86.D0.B5.D0.B4.D1.83.D1.80.D0.B0)
-    *   [3.3 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Точка доступа Wi-Fi](#Точка_доступа_Wi-Fi)
+*   [2 USB модем](#USB_модем)
+    *   [2.1 Что вам понадобится](#Что_вам_понадобится)
+    *   [2.2 Порядок действий](#Порядок_действий)
+*   [3 USB-модем с OpenVPN](#USB-модем_с_OpenVPN)
+    *   [3.1 Необходимые инструменты](#Необходимые_инструменты)
+        *   [3.1.1 Настройка телефонного соединения в Arch Linux](#Настройка_телефонного_соединения_в_Arch_Linux)
+    *   [3.2 Процедура](#Процедура)
+    *   [3.3 Исправление проблем](#Исправление_проблем)
         *   [3.3.1 DNS](#DNS)
         *   [3.3.2 NetworkManager](#NetworkManager)
-*   [4 Модем через Bluetooth](#.D0.9C.D0.BE.D0.B4.D0.B5.D0.BC_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_Bluetooth)
-*   [5 Подключение через прокси-сервер SOCKS](#.D0.9F.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D1.80.D0.BE.D0.BA.D1.81.D0.B8-.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80_SOCKS)
-    *   [5.1 Необходимые инструменты](#.D0.9D.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D1.8B.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_2)
-    *   [5.2 инструкции](#.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.86.D0.B8.D0.B8)
+*   [4 Модем через Bluetooth](#Модем_через_Bluetooth)
+*   [5 Подключение через прокси-сервер SOCKS](#Подключение_через_прокси-сервер_SOCKS)
+    *   [5.1 Необходимые инструменты](#Необходимые_инструменты_2)
+    *   [5.2 инструкции](#инструкции)
         *   [5.2.1 Tetherbot](#Tetherbot)
         *   [5.2.2 Proxoid](#Proxoid)
 
@@ -144,7 +148,7 @@ NetworkManager может выполнить это действие и само
 
  `$ dbus-send --system --type=method_call --dest=org.bluez /org/bluez/hci0/dev_AA_BB_CC_DD_EE_FF org.bluez.Network1.Connect string:'nap'` 
 
-Это создаст сетевой интерфейс `bnep0`. В заключение, [настройте сетевое соединение](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_IP-.D0.B0.D0.B4.D1.80.D0.B5.D1.81.D0.B0 "Network configuration (Русский)") на этом интерфейсе; Android по умолчанию предлагает DHCP.
+Это создаст сетевой интерфейс `bnep0`. В заключение, [настройте сетевое соединение](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Настройка_IP-адреса "Network configuration (Русский)") на этом интерфейсе; Android по умолчанию предлагает DHCP.
 
 ## Подключение через прокси-сервер SOCKS
 

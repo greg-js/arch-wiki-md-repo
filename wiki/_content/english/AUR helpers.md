@@ -74,8 +74,6 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | No | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` for *pacman* wrapping |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | No | Yes | Yes | No | No | No | – | [local repository](/index.php/Local_repository "Local repository") |
 | [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | [No](https://github.com/vn971/rua/issues/21) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection, [build-only](https://github.com/vn971/rua/issues/13) |
-| [burgaur](https://aur.archlinux.org/packages/burgaur/)
-<small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | No | No | No | No | No | No | – | wrapper for *cower* |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([discontinued](https://github.com/floft/spinach))</small> | Bash | [Yes](https://github.com/floft/spinach/commit/5455747) | No | No | No | No | No | – | – |
 
@@ -95,8 +93,6 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [aurman](https://aur.archlinux.org/packages/aurman/)
 <small>([discontinued](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Yes | Yes | Yes | Yes | [No](https://github.com/polygamma/aurman/issues/259) | Yes | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
 [--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | bash, fish | batch interaction 1/2, fetch PGP keys |
-| [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
-<small>(discontinued)</small> | Bash | Yes | No | Yes | No | No | No | – | – | – |
 | [yaourt](https://aur.archlinux.org/packages/yaourt/)
 <small>([discontinued](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [No](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Optional | Optional | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | bash, fish, zsh | [unclean build](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html), batch interaction 1 |
 

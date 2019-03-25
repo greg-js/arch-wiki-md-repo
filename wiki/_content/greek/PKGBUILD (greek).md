@@ -9,9 +9,13 @@
 
 Τα πακέτα στο Arch Linux δημιουργούνται με το εργαλείο [makepkg](/index.php/Makepkg "Makepkg") και οι πληροφορίες για τη δημιουργία τους βρίσκονται στο αρχείο PKGBUILD. Όταν εκτελείται η εντολή **makepkg**, το πρόγραμμα ψάχνει για ένα αρχείο `PKGBUILD` στον τρέχον κατάλογο και ακολουθεί τις οδηγίες είτε για την μεταγλώττιση είτε για την ανάκτηση των αρχείων που απαιτούνται για τη δημιουργία του πακέτου (`*pkgname*.pkg.tar.xz`) το οποίο τελικά θα περιέχει όλα τα binary αρχεία καθώς και τις οδηγίες εγκατάστασης και μπορεί πλέον να εγκατασταθεί απευθείας μέσω του [pacman](/index.php/Pacman "Pacman").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Μεταβλητές](#.CE.9C.CE.B5.CF.84.CE.B1.CE.B2.CE.BB.CE.B7.CF.84.CE.AD.CF.82)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Μεταβλητές](#Μεταβλητές)
     *   [1.1 pkgname](#pkgname)
     *   [1.2 pkgver](#pkgver)
     *   [1.3 pkgrel](#pkgrel)
@@ -36,8 +40,8 @@
     *   [1.22 noextract](#noextract)
     *   [1.23 md5sums](#md5sums)
     *   [1.24 sha1sums](#sha1sums)
-    *   [1.25 sha256sums, sha384sums, sha512sums](#sha256sums.2C_sha384sums.2C_sha512sums)
-*   [2 Δείτε επίσης](#.CE.94.CE.B5.CE.AF.CF.84.CE.B5_.CE.B5.CF.80.CE.AF.CF.83.CE.B7.CF.82)
+    *   [1.25 sha256sums, sha384sums, sha512sums](#sha256sums,_sha384sums,_sha512sums)
+*   [2 Δείτε επίσης](#Δείτε_επίσης)
 
 ## Μεταβλητές
 
@@ -123,7 +127,7 @@ fi
 
 ### checkdepends
 
-Μια σειρά πακέτων από τα οποία εξαρτάται το εν λόγω πακέτο ώστε να εκτελέσει την σειρά δοκιμών του τα οποία όμως δεν χρειάζονται κατά την κανονική εκτέλεση. Τα πακέτα που παραθέτονται σε αυτή την λίστα ακολουθούν το ίδιο πρότυπο με το πεδίο depends. Αυτές οι εξαρτήσεις λαμβάνονται υπόψη μόνο όταν η συνάρτηση [check()](/index.php/Creating_packages#The_check.28.29_function "Creating packages") είναι παρούσα και πρόκειται να εκτελεστεί από το makepkg.
+Μια σειρά πακέτων από τα οποία εξαρτάται το εν λόγω πακέτο ώστε να εκτελέσει την σειρά δοκιμών του τα οποία όμως δεν χρειάζονται κατά την κανονική εκτέλεση. Τα πακέτα που παραθέτονται σε αυτή την λίστα ακολουθούν το ίδιο πρότυπο με το πεδίο depends. Αυτές οι εξαρτήσεις λαμβάνονται υπόψη μόνο όταν η συνάρτηση [check()](/index.php/Creating_packages#The_check()_function "Creating packages") είναι παρούσα και πρόκειται να εκτελεστεί από το makepkg.
 
 ### optdepends
 
@@ -210,7 +214,7 @@ pacman -Qc *pkgname*
 
 ### noextract
 
-Μια σειρά αρχείων τα οποία παραθέτονται στο πεδίο `source`, δεν πρέπει να εξαχθούν από την συμπιεσμένη τους μορφή με το `makepkg`. Εφαρμόζεται κυρίως σε συγκεκριμένα αρχεία zip τα οποία δεν μπορεί να χειριστεί το `/usr/bin/bsdtar` διότι το [libarchive](https://www.archlinux.org/packages/?name=libarchive) αντιμετωπίζει όλα τα αρχεία ως ροές σε αντίθεση με το [unzip](https://www.archlinux.org/packages/?name=unzip) που ακολουθεί την λογική της τυχαίας προσπέλασης. Σε αυτές τις περιπτώσεις το `unzip` πρέπει να παρατίθεται στο πεδίο `makedepends` και η πρώτη γραμμή της συνάρτησης [build()](/index.php/Creating_packages#The_build.28.29_function "Creating packages") πρέπει να περιέχει:
+Μια σειρά αρχείων τα οποία παραθέτονται στο πεδίο `source`, δεν πρέπει να εξαχθούν από την συμπιεσμένη τους μορφή με το `makepkg`. Εφαρμόζεται κυρίως σε συγκεκριμένα αρχεία zip τα οποία δεν μπορεί να χειριστεί το `/usr/bin/bsdtar` διότι το [libarchive](https://www.archlinux.org/packages/?name=libarchive) αντιμετωπίζει όλα τα αρχεία ως ροές σε αντίθεση με το [unzip](https://www.archlinux.org/packages/?name=unzip) που ακολουθεί την λογική της τυχαίας προσπέλασης. Σε αυτές τις περιπτώσεις το `unzip` πρέπει να παρατίθεται στο πεδίο `makedepends` και η πρώτη γραμμή της συνάρτησης [build()](/index.php/Creating_packages#The_build()_function "Creating packages") πρέπει να περιέχει:
 
 ```
 cd "$srcdir/$pkgname-$pkgver"

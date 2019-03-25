@@ -305,21 +305,21 @@ $ pacman -Fo */ruta/al/nombre_del_archivo*
 
 ```
 
-Para enumerar todos los paquetes que no sean necesarios como dependencias (huérfanos):
+Para listar todos los paquetes que no sean necesarios como dependencias (huérfanos):
 
 ```
 $ pacman -Qdt
 
 ```
 
-Para enumerar todos los paquetes explícitamente instalados y no requeridos como dependencias:
+Para listar todos los paquetes explícitamente instalados y no requeridos como dependencias:
 
 ```
 $ pacman -Qet
 
 ```
 
-Para enumerar el árbol de dependencias de un paquete:
+Para ver el árbol de dependencias de un paquete:
 
 ```
 $ pactree *nombre_paquete*

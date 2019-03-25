@@ -216,7 +216,7 @@ Alternatively you can generate your edid with tools like [read-edid](https://www
 
 ### Wrong resolution without EDID errors
 
-Using `nvidia-xconfig`, incorrect information might be generated in Xorg.conf and in particular wrong monitor refresh rates that restruct the possible resolutions. Try commenting out the `HorizSync`/`VertRefresh` lines. If this helps, you can probably also remove everything else not mentioned in this article.
+Using *nvidia-xconfig*, incorrect information might be generated in Xorg.conf and in particular wrong monitor refresh rates that restruct the possible resolutions. Try commenting out the `HorizSync`/`VertRefresh` lines. If this helps, you can probably also remove everything else not mentioned in this article.
 
 ### Lockup issue (lspci hangs)
 

@@ -6,7 +6,11 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 
 **Note:** The Linux Editor is currently experimental. Please report all bugs to the [Unity forums](http://forum.unity3d.com/forums/linux-editor-support-feedback-experimental.93/)!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Android Support](#Android_Support)

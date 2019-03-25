@@ -69,7 +69,7 @@ Unlike most interactive programs, suspension is not enabled by default. To chang
 
 ### Text wrapping
 
-Unlike many text editors, *nano* wraps text. To disable this put this in your `~/.config/nano/nanorc`
+*nano* before version 4.0, unlike many text editors, hard-wraps text. To disable this put this in your `~/.config/nano/nanorc`
 
 ```
 set nowrap

@@ -2,16 +2,20 @@
 
 Wireshark 是一款免费开源的包分析器。可用于网络排错、网络分析、软件和通讯协议开发以及教学等。Wireshark 原名 Ethereal，2006年五月该项目因商标纠纷而改名。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 以普通用户身份抓包](#.E4.BB.A5.E6.99.AE.E9.80.9A.E7.94.A8.E6.88.B7.E8.BA.AB.E4.BB.BD.E6.8A.93.E5.8C.85)
-    *   [2.1 将用户加入 wireshark 组](#.E5.B0.86.E7.94.A8.E6.88.B7.E5.8A.A0.E5.85.A5_wireshark_.E7.BB.84)
-    *   [2.2 使用 sudo](#.E4.BD.BF.E7.94.A8_sudo)
-*   [3 一些抓包技巧](#.E4.B8.80.E4.BA.9B.E6.8A.93.E5.8C.85.E6.8A.80.E5.B7.A7)
-    *   [3.1 过滤 TCP 包](#.E8.BF.87.E6.BB.A4_TCP_.E5.8C.85)
-    *   [3.2 过滤 UDP 包](#.E8.BF.87.E6.BB.A4_UDP_.E5.8C.85)
-    *   [3.3 过滤指定 IP 地址的包](#.E8.BF.87.E6.BB.A4.E6.8C.87.E5.AE.9A_IP_.E5.9C.B0.E5.9D.80.E7.9A.84.E5.8C.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 以普通用户身份抓包](#以普通用户身份抓包)
+    *   [2.1 将用户加入 wireshark 组](#将用户加入_wireshark_组)
+    *   [2.2 使用 sudo](#使用_sudo)
+*   [3 一些抓包技巧](#一些抓包技巧)
+    *   [3.1 过滤 TCP 包](#过滤_TCP_包)
+    *   [3.2 过滤 UDP 包](#过滤_UDP_包)
+    *   [3.3 过滤指定 IP 地址的包](#过滤指定_IP_地址的包)
 
 ## 安装
 

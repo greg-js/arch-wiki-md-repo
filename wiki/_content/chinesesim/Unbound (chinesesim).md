@@ -1,6 +1,12 @@
-[Unbound](https://unbound.net/) 是验证，递归和缓存 DNS 解析器。
+Related articles
 
-**翻译状态：** 本文是英文页面 [Unbound](/index.php/Unbound "Unbound") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Unbound&diff=0&oldid=397940)可以查看翻译后英文页面的改动。
+*   [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution")
+
+[Unbound](https://unbound.net/) 是一个具有验证，递归和缓存等功能的 DNS 解析器。根据[Wikipedia](https://en.wikipedia.org/wiki/Unbound_(DNS_Server) "wikipedia:Unbound (DNS Server)")：
+
+	Unbound has supplanted the Berkeley Internet Name Domain ([BIND](/index.php/BIND "BIND")) as the default, base-system name server in several open source projects, where it is perceived as smaller, more modern, and more secure for most applications.
+
+**翻译状态：** 本文是英文页面 [Unbound](/index.php/Unbound "Unbound") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-03-24，点击[这里](https://wiki.archlinux.org/index.php?title=Unbound&diff=0&oldid=397940)可以查看翻译后英文页面的改动。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -10,50 +16,82 @@
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
-    *   [2.1 访问控制](#访问控制)
-    *   [2.2 Root 提示](#Root_提示)
-    *   [2.3 设置 /etc/resolv.conf为本地DNS服务](#设置_/etc/resolv.conf为本地DNS服务)
-    *   [2.4 记录](#记录)
+    *   [2.1 本地DNS服务器](#本地DNS服务器)
+    *   [2.2 访问控制](#访问控制)
+    *   [2.3 使用DNS over TLS进行转发](#使用DNS_over_TLS进行转发)
+    *   [2.4 根域名服务器](#根域名服务器)
     *   [2.5 DNSSEC验证](#DNSSEC验证)
+        *   [2.5.1 测试DNSSEC](#测试DNSSEC)
     *   [2.6 转发查询](#转发查询)
+        *   [2.6.1 允许本地网络使用DNS](#允许本地网络使用DNS)
+            *   [2.6.1.1 使用openresolv](#使用openresolv)
+            *   [2.6.1.2 手动制定DNS服务器](#手动制定DNS服务器)
+                *   [2.6.1.2.1 包含本地DNS服务器](#包含本地DNS服务器)
+        *   [2.6.2 转发所有其余的请求](#转发所有其余的请求)
+            *   [2.6.2.1 使用openresolv](#使用openresolv_2)
+            *   [2.6.2.2 手动指定DNS服务器](#手动指定DNS服务器)
 *   [3 使用](#使用)
-    *   [3.1 启动Unbound](#启动Unbound)
-    *   [3.2 远程控制Unbound](#远程控制Unbound)
-        *   [3.2.1 设置 unbound-control](#设置_unbound-control)
+    *   [3.1 启动unbound](#启动unbound)
+    *   [3.2 远程控制unbound](#远程控制unbound)
+        *   [3.2.1 配置unbound-control](#配置unbound-control)
         *   [3.2.2 使用unbound-control](#使用unbound-control)
-*   [4 添加一个权威DNS服务器](#添加一个权威DNS服务器)
-*   [5 WAN面临的DNS](#WAN面临的DNS)
-*   [6 Issues concerning num-threads](#Issues_concerning_num-threads)
-*   [7 参阅](#参阅)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 域名黑名单](#域名黑名单)
+    *   [4.2 添加一个authoritative DNS服务器](#添加一个authoritative_DNS服务器)
+    *   [4.3 WAN facing DNS](#WAN_facing_DNS)
+    *   [4.4 根域名服务器与systemd timer](#根域名服务器与systemd_timer)
+*   [5 疑难解答](#疑难解答)
+    *   [5.1 有关num-threads的问题](#有关num-threads的问题)
+*   [6 参阅](#参阅)
 
 ## 安装
 
-安装 [unbound](https://www.archlinux.org/packages/?name=unbound) 软件包来自 [official repositories](/index.php/Official_repositories "Official repositories")。 此外, [expat](https://www.archlinux.org/packages/?name=expat) 作为[DNSSEC](/index.php/DNSSEC "DNSSEC")验证请求。
+安装 [unbound](https://www.archlinux.org/packages/?name=unbound) 软件包。 此外, [expat](https://www.archlinux.org/packages/?name=expat) 是使用[DNSSEC](/index.php/DNSSEC "DNSSEC")验证请求所必须的。
 
 ## 配置
 
-*unbound*配置非常简单。示例配置文件位于 `/etc/unbound/unbound.conf.example`，可以复制此文件到 `/etc/unbound/unbound.conf` 然后按需要进行修改。同时可以支持 IPv4 和 IPv6。
+默认配置已经位于`/etc/unbound/unbound.conf`文件中。此外，`/etc/unbound/unbound.conf.example`文件包含了其他的可配置设置项，并以注释的形式给出了示范设置。以下章节重点解释和默认配置文件不同的设置项。如需了解更多细节，参见[unbound.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound.conf.5)。
+
+除非特别声明，这一节列出的选项都是放置在配置文件的`server`节中，类似这样：
+
+ `/etc/unbound/unbound.conf` 
+```
+server:
+  ...
+  *setting*: *value*
+  ...
+
+```
+
+**Note:** 请确保你的配置文件中已经设置了`do-daemonize: no`,否则`unbound.service`会无法启动.
+
+### 本地DNS服务器
+
+如果你想要使用*unbound*作为本地DNS服务器，请把[resolv.conf](/index.php/Resolv.conf "Resolv.conf")中的域名服务器（nameserver）设置到回环地址`::1`和`127.0.0.1`。你可能想要让你的配置[Domain name resolution (简体中文)#给/etc/resolv.conf添加写保护](/index.php/Domain_name_resolution_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#给/etc/resolv.conf添加写保护 "Domain name resolution (简体中文)")。
+
+**Tip:** 实现这个目的的一个简便方法是安装[openresolv](/index.php/Openresolv "Openresolv")，然后取消文件`/etc/resolvconf.conf`中包含`name_servers="::1 127.0.0.1"`的那一行的注释。然后运行`resolvconf -u`来重新生成`/etc/resolv.conf`。
+
+要了解如何测试设置项，参见[Domain name resolution#Lookup utilities](/index.php/Domain_name_resolution#Lookup_utilities "Domain name resolution")。
+
+在把[resolv.conf](/index.php/Resolv.conf "Resolv.conf")中的设置更改为持久化设置后，请特别注意检查正在使用的服务器是`::1`或`127.0.0.1`。
+
+你还需要对“unbound”进行设置，以使它[#转发查询](#转发查询)到你所选择的DNS服务器。
 
 ### 访问控制
 
-You can specify the interfaces to answer queries from by IP address. To listen on *localhost*, use:
+你可以通过IP地址来指定响应请求的端口。默认监听的是*localhost*。
 
-```
-interface: 127.0.0.1
-
-```
-
-监听所有接口，使用：
+为了在所有端口上监听，使用以下配置：
 
 ```
 interface: 0.0.0.0
 
 ```
 
-可以进一步被配置 `访问控制` 选项:
+为了通过IP地址来控制可以访问服务器的系统，使用`access-control`选项：
 
 ```
-access-control: *子网* *行为*
+access-control: *subnet* *action*
 
 ```
 
@@ -64,93 +102,148 @@ access-control: 192.168.1.0/24 allow
 
 ```
 
-*action* can be one of `deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok). By default everything is refused except for localhost.
+*action*可以是`deny` (drop message), `refuse` (polite error reply), `allow` (recursive ok), or `allow_snoop` (recursive and nonrecursive ok)中的任意一个。默认除了localhost之外的所有东西都会被拒绝。
 
-### Root 提示
+### 使用DNS over TLS进行转发
 
-For querying a host that is not cached as an address the resolver needs to start at the top of the server tree and query the root servers to know where to go for the top level domain for the address being queried. Therefore it is necessary to put a *root hints* file into the *unbound* config directory. The simplest way to do this is to run the command:
+为了使用这个功能，你需要设置`tls-cert-bundle`选项来指定本地系统的根证书认证包，以使得unbound可以转发TLS请求并指定允许DNS over TLS的服务器数量。
 
- `# wget ftp://FTP.INTERNIC.NET/domain/named.cache -O /etc/unbound/root.hints` 
-
-It is a good idea to run this every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by setting up a [cron](/index.php/Cron "Cron") job for the task.
-
-Point *unbound* to the `root.hints` file:
-
-```
-root-hints: "/etc/unbound/root.hints"
-
-```
-
-### 设置 /etc/resolv.conf为本地DNS服务
-
-编辑 `/etc/resolv.conf` (参阅 [resolv.conf](/index.php/Resolv.conf "Resolv.conf")):
-
-```
-nameserver 127.0.0.1
-
-```
-
-Also if you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line with the local domain such as:
-
-```
-domain localdomain.com
-nameserver 127.0.0.1
-
-```
-
-That way you can refer to local hosts such as mainmachine1.localdomain.com as simply mainmachine1 when using the ssh command, but the drill command below still requires the fully qualified domain names in order to perform lookups.
-
-Testing the server before making it default can be done using the drill command from the [ldns](https://www.archlinux.org/packages/?name=ldns) package with examples from internal and external forward and reverse addresses:
-
-```
-$ drill @127.0.0.1 www.cnn.com
-$ drill @127.0.0.1 localmachine.localdomain.com
-$ drill @127.0.0.1 -x w.x.y.z 
-
-```
-
-where `w.x.y.z` can be a local or external IP address and the `-x` option requests a reverse lookup. Once all is working, and you have `/etc/resolv.conf` set to use `127.0.0.1` as the nameserver then you no longer need the `@127.0.0.1` in the *drill* command, and you can test again that it uses the default DNS server - check that the server used as listed at the bottom of the output from each of these commands shows it is `127.0.0.1` being queried.
-
-### 记录
-
-如果你想要记录 *unbound*, 然后创建一个日志文件，也可以在同一个目录中, 但你可以选择任何位置。一种方法是做为root:
-
-```
-# touch /etc/unbound/unbound.log
-# chown unbound:unbound /etc/unbound/unbound.log
-
-```
-
-然后，你可以在设置主要包括记录参数，文件如下。`unbound.conf`
-
-### DNSSEC验证
-
-You will need the root server trust key anchor file. It is provided by the [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors) package (already installed as a dependency), however, *unbound* needs read and write access to the file. The `unbound.service` service accomplishes this by copying the `/etc/trusted-key.key` file to `/etc/unbound/trusted-key.key`. You just need to point *unbound* to this file:
+对每个服务器你都需要用 @ 来指定连接的端口，同时你也要用 # 来指明它的域名是什么。虽然它看起来像注释，the hashtag name allows for the TLS authentication name to be set for stub-zones and with `unbound-control forward control` command。在 @ 和 # 之间不应该有空格。
 
  `/etc/unbound/unbound.conf` 
 ```
+...
 server:
-  ...
-  trust-anchor-file: trusted-key.key
-  ...
+...
+	tls-cert-bundle: /etc/ssl/certs/ca-certificates.crt
+...
+forward-zone:
+        name: "."
+        forward-tls-upstream: yes
+        forward-addr: 1.1.1.1@853#cloudflare-dns.com
 
 ```
 
-Also make sure that if a general [forward](#Forwarding_queries) to the Google servers had been in place, then comment them out otherwise DNS queries will fail. DNSSEC validation will be done if the DNS server being queried supports it.
+### 根域名服务器
 
-**Note:** Including DNSSEC checking significantly increases DNS lookup times for initial lookups. Once an address is cached locally, then the lookup is virtually instantaneous.
+为了查询一个没有被缓存成地址的主机，解释器需要从服务器树的根开始、对根服务器进行请求来知道去哪里找到目标地址的顶级域名。Unbound内置了一些根节点，但是推荐你提供一个根节点文件给它以免内置的过于老旧。
 
-现在可以测试DNSSEC是否工作, 使用 *drill* (安装为依赖)为 [ldns](https://www.archlinux.org/packages/?name=ldns) :
-
-```
-drill sigfail.verteiltesysteme.net # should return rcode: SERVFAIL
-drill sigok.verteiltesysteme.net   # should return rcode: NOERROR
+首先，告诉*unbound*使用`root.hints`文件：
 
 ```
+root-hints: root.hints
+
+```
+
+然后把你的*root hints*文件放进*unbound*的配置文件夹。实现这个目标最简单的方法是运行下面的命令：
+
+ `# curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache` 
+
+建议每六个月更新一次`root.hints`来保持根服务器列表是最新的。你可以手动完成这个任务，也可以使用[Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")。详情参见[#根域名服务器与systemd timer](#根域名服务器与systemd_timer)。
+
+### DNSSEC验证
+
+为了使用[DNSSEC](/index.php/DNSSEC "DNSSEC")验证，你需要在`server:`节中添加以下设置来告诉*unbound*服务器根证书文件的位置：
+
+ `/etc/unbound/unbound.conf`  `trust-anchor-file: trusted-key.key` 
+
+`/etc/unbound/trusted-key.key`是从依赖项[dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors)所提供的的`/etc/trusted-key.key`复制而来的，它的[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")按照[unbound-anchor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-anchor.8)生成了`/etc/trusted-key.key`。
+
+如果总的[#转发查询](#转发查询)设置到了不支持DNSSEC的DNS服务器，那么请确保已经把这些DNS服务器注释掉，否则DNS请求会失败。DNSSEC验证只会在被请求的DNS服务器支持它的时候成功完成。
+
+**Note:** 如果使用DNSSEC，在地址被缓存之前DNS查询时间将会显著增加。
+
+#### 测试DNSSEC
+
+为了测试DNSSEC是否工作，在[starting](/index.php/Starting "Starting") `unbound.service`之后：
+
+```
+$ unbound-host -C /etc/unbound/unbound.conf -v sigok.verteiltesysteme.net
+
+```
+
+得到的回应应该是附带`(secure)`字样的ip地址。
+
+```
+$ unbound-host -C /etc/unbound/unbound.conf -v sigfail.verteiltesysteme.net
+
+```
+
+这次的回应应该包含`(BOGUS (security failure))`字样。
+
+另外你也可以使用“drill”来测试：
+
+```
+$ drill sigok.verteiltesysteme.net
+$ drill sigfail.verteiltesysteme.net
+
+```
+
+第一个命令应该返回`NOERROR`的`rcode`；而第二个命令应该返回`SERVFAIL`的`rcode`。
 
 ### 转发查询
 
-If you have a local network which you wish to have DNS queries for and there is a local DNS server that you would like to forward queries to then you should include this line:
+如果你只想转发请求到外部的DNS服务器，请跳到[#转发所有其余的请求](#转发所有其余的请求)。
+
+#### 允许本地网络使用DNS
+
+##### 使用openresolv
+
+如果你的网络管理器支持[openresolv](/index.php/Openresolv "Openresolv")，你可以通过设置来使它提供本地DNS服务器、使用unbound来查询域名。 [[2]](https://roy.marples.name/projects/openresolv/config)
+
+ `/etc/resolvconf.conf` 
+```
+...
+private_interfaces="*"
+
+# Write out unbound configuration file
+unbound_conf=/etc/unbound/resolvconf.conf
+```
+
+运行`resolvconf -u`来生成文件。
+
+配置unbound读取openresolv生成的文件并允许回应[private IP address ranges](https://en.wikipedia.org/wiki/Private_network "wikipedia:Private network")：
+
+ `/etc/unbound/unbound.conf` 
+```
+include: "/etc/unbound/resolvconf.conf"
+...
+server:
+...
+   private-domain: "intranet"
+   private-domain: "internal"
+   private-domain: "private"
+   private-domain: "corp"
+   private-domain: "home"
+   private-domain: "lan"
+
+   unblock-lan-zones: yes
+   insecure-lan-zones: yes
+   ...
+
+```
+
+另外你可能想要对私有DNS域名空间禁用DNSSEC[[3]](https://tools.ietf.org/html/rfc6762#appendix-G)：
+
+ `/etc/unbound/unbound.conf` 
+```
+
+...
+server:
+...
+   domain-insecure: "intranet"
+   domain-insecure: "internal"
+   domain-insecure: "private"
+   domain-insecure: "corp"
+   domain-insecure: "home"
+   domain-insecure: "lan"
+...
+
+```
+
+##### 手动制定DNS服务器
+
+如果你有一个需要DNS请求的本地网络，同时你想要把请求都转发给一个本地的DNS服务器，那么你需要添加这一行：
 
 ```
 private-address: *本地子网/子网掩码*
@@ -164,34 +257,31 @@ private-address: 10.0.0.0/24
 
 ```
 
-**Note:** You can use private-address to protect against DNS Rebind attacks. Therefore you may enable RFC1918 networks (10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16 fd00::/8 fe80::/10). Unbound may enable this feature by default in future releases.
+**Note:** 你可以使用私有地址来防止DNS劫持攻击。为了达到这个目的，你可能需要允许RFC1918网络(10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16 fd00::/8 fe80::/10)。 Unbound的未来版本可能会默认启用这个功能。
 
-To include a local DNS server for both forward and reverse local addresses a set of lines similar to these below is necessary with a forward and reverse lookup (choose the IP address of the server providing DNS for the local network accordingly by changing 10.0.0.1 in the lines below):
+###### 包含本地DNS服务器
+
+为了包含一个本地DNS服务器，以用于转发和反代本地地址，类似下面的一组配置是必要的（请把下面的10.0.0.1替换为本地网络中提供DNS服务的服务器的地址）：
 
 ```
 local-zone: "10.in-addr.arpa." transparent
 
 ```
 
-This line above is important to get the reverse lookup to work correctly.
+上面这一行对于让反向查询正常工作是非常重要的。
 
 ```
 forward-zone:
 name: "mynetwork.com."
-forward-addr: 10.0.0.1        # Home DNS
-
-```
-
-```
-forward-zone:
-name: "10.in-addr.arpa."
 forward-addr: 10.0.0.1
+forward-zone:
+local-data: "1.0.0.127.in-addr.arpa. 10800 IN PTR localhost."
 
 ```
 
-**Note:** There is a difference between forward zones and stub zones - stub zones will only work when connected to an authoritative DNS server directly. This would work for lookups from a [BIND](/index.php/BIND "BIND") DNS server if it is providing authoritative DNS - but if you are referring queries to an *unbound* server in which internal lookups are forwarded on to another DNS server, then defining the referral as a stub zone in the machine here will not work. In that case it is necessary to define a forward zone as above, since forward zones can have daisy chain lookups onward to other DNS servers. i.e. forward zones can refer queries to recursive DNS servers. This distinction is important as you do not get any error messages indicating what the problem is if you use a stub zone inappropriately.
+**Note:** 转发空间和根空间之间的区别是，根空间只有在直接连接到一个authoritative DNS服务器的时候才能正常工作。如果一个[BIND](/index.php/BIND "BIND")DNS服务器提供authoritative DNS，那么这个特性对于来自于它的请求有用——但是如果你在把请求指向一个*unbound*服务器（内部查询都被转发到另一个DNS服务器），那么把这个指向定义为该机器上的根空间是不会起作用的。在这种情况下，你必须把它定义为上面所说的转发空间，因为转发空间可以通过链式查询去到别的DNS服务器上，亦即转发空间可以把请求指向递归DNS服务器。这个区别是很重要的，因为如果你不恰当地使用根空间，你不会得到能够说明问题的错误信息。
 
-You can set up the localhost forward and reverse lookups with the following lines:
+你可以通过下面的配置来设定localhost的前向和反向查询：
 
 ```
 local-zone: "localhost." static
@@ -205,120 +295,180 @@ local-data: "1.0.0.127.in-addr.arpa. 10800 IN PTR localhost."
 
 ```
 
-Then to use specific servers for default forward zones that are outside of the local machine and outside of the local network (i.e. all other queries will be forwarded to them, and then cached) add this to the configuration file (and in this example the first two addresses are the fast google DNS servers):
+#### 转发所有其余的请求
+
+##### 使用openresolv
+
+如果你的网络管理器支持[openresolv](/index.php/Openresolv "Openresolv")，你可以通过配置使它提供上游DNS服务器给unbound。 [[4]](https://roy.marples.name/projects/openresolv/config)
+
+ `/etc/resolvconf.conf` 
+```
+...
+# Write out unbound configuration file
+unbound_conf=/etc/unbound/resolvconf.conf
+```
+
+运行`resolvconf -u`来生成文件。
+
+最后配置unound读取openresolv生成的文件：
 
 ```
-forward-zone:
-  name: "."
-  forward-addr: 8.8.8.8
-  forward-addr: 8.8.4.4
-  forward-addr: 208.67.222.222
-  forward-addr: 208.67.220.220
+include: "/etc/unbound/resolvconf.conf"
 
 ```
 
-This will make *unbound* use Google and OpenDNS servers as the forward zone for external lookups.
+##### 手动指定DNS服务器
 
-**Note:** OpenDNS strips DNSSEC records from responses. Do not use the above forward zone if you want to enable [#DNSSEC validation](#DNSSEC_validation).
+为了使本地机器之外的、本地网络外部的默认转发区域使用指定的服务器，请在配置文件中添加一个名字是`.`的转发区域。在这个例子里，所有的请求都被转发到谷歌的DNS服务器：
+
+```
+ forward-zone:
+ forward-addr: 8.8.8.8
+ forward-addr: 8.8.4.4
+
+```
 
 ## 使用
 
-### 启动Unbound
+### 启动unbound
 
-The *unbound* package provides `unbound.service`, just [start](/index.php/Start "Start") it. You may want to *enable* it so that it starts at boot.
+[Start/enable](/index.php/Start/enable "Start/enable") `unbound.service` systemd服务。
 
-### 远程控制Unbound
+### 远程控制unbound
 
-*unbound* ships with the `unbound-control` utility which enables us to remotely administer the unbound server. It is similar to the [pdnsd-ctl](/index.php/Pdnsd#pdnsd-ctl "Pdnsd") command of [pdnsd](https://www.archlinux.org/packages/?name=pdnsd).
+*unbound*安装的时候自带了`unbound-control`工具，利用这个工具我们可以远程控制unbound服务器。它和[pdnsd](https://www.archlinux.org/packages/?name=pdnsd)的[pdnsd-ctl](/index.php/Pdnsd#pdnsd-ctl "Pdnsd")命令很类似。
 
-#### 设置 unbound-control
+#### 配置unbound-control
 
-在你之后开始使用它, 以下步骤需要执行：
+在能够使用它之前你需要做下面的事情：
 
-1)首先，你需要运行下面的命令
+1) 首先，运行：
 
 ```
 # unbound-control-setup
 
 ```
 
-which will generate a self-signed certificate and private key for the server, as well as the client. These files will be created in the `/etc/unbound` directory.
+来为你的服务器和客户端生成一个self-signed的证书和private key。生成的文件位于`/etc/unbound`文件夹。
 
-2) 之后, 编辑 `/etc/unbound/unbound.conf` 并把下面的内容放在。 The **control-enable: yes** option is necessary, the rest can be adjusted as required.
+2) 然后，把下面的内容放进`/etc/unbound/unbound.conf`文件。`control-enable: yes`是一定要有的，其余的内容可以按照所需进行调整。
 
 ```
 remote-control:
-    # Enable remote control with unbound-control(8) here.
-    # set up the keys and certificates with unbound-control-setup.
-    control-enable: yes
-
-    # what interfaces are listened to for remote control.
-    # give 0.0.0.0 and ::0 to listen to all interfaces.
-    control-interface: 127.0.0.1
-
-    # port number for remote control operations.
-    control-port: 8953
-
-    # unbound server key file.
-    server-key-file: "/etc/unbound/unbound_server.key"
-
-    # unbound server certificate file.
-    server-cert-file: "/etc/unbound/unbound_server.pem"
-
-    # unbound-control key file.
-    control-key-file: "/etc/unbound/unbound_control.key"
-
-    # unbound-control certificate file.
-    control-cert-file: "/etc/unbound/unbound_control.pem"
+   # Enable remote control with unbound-control(8) here.
+   # 用unbound-control-setup生成的keys and certificates进行配置。
+   control-enable: yes
+   # 设定监听哪个地址.
+   # give 0.0.0.0 and ::0 to listen to all interfaces.
+   control-interface: 127.0.0.1
+   # 远程控制用的端口.
+   control-port: 8953
+   # unbound server key file.
+   server-key-file: "/etc/unbound/unbound_server.key"
+   # unbound server certificate file.
+   server-cert-file: "/etc/unbound/unbound_server.pem"
+   # unbound-control key file.
+   control-key-file: "/etc/unbound/unbound_control.key"
+   # unbound-control certificate file.
+   control-cert-file: "/etc/unbound/unbound_control.pem"
 
 ```
 
 #### 使用unbound-control
 
-Some of the commands that can be used with *unbound-control* are:
+下面是*unbound-control*可以使用的一部分命令：
 
-*   print statistics without resetting them
+*   不重置数据的情况下查看统计数据
 
 ```
  # unbound-control stats_noreset
 
 ```
 
-*   dump cache to stdout
+*   把cache dump到stdout
 
 ```
  # unbound-control dump_cache
 
 ```
 
-*   flush cache and reload configuration
+*   清空cache并且重新加载配置
 
 ```
  # unbound-control reload
 
 ```
 
-Please refer to [unbound-control(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-control.8) for a detailed look at the operations it supports.
+请参考[unbound-control(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-control.8)来了解*unbound-control*支持的操作。
 
-## 添加一个权威DNS服务器
+## 提示与技巧
 
-For users who wish to run both a validating, recursive, caching DNS server as well as an authoritative DNS server on a single machine then it may be useful to refer to the wiki page [NSD](/index.php/NSD "NSD") which gives an example of a configuration for such a system. Having one server for authoritative DNS queries and a separate DNS server for the validating, recursive, caching DNS functions gives increased security over a single DNS server providing all of these functions. Many users have used bind as a single DNS server, and some help on migration from bind to the combination of running nsd and bind is provided in the [NSD](/index.php/NSD "NSD") wiki page.
+### 域名黑名单
 
-## WAN面临的DNS
+你可以打开这个网页[adservers](https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext)，把它的内容保存到`/etc/unbound/adservers`，然后把下面的配置直接添加到unbound配置文件里就可以了：
 
-It is also possible to change the configuration files and interfaces on which the server is listening so that DNS queries from machines outside of the local network can access specific machines within the LAN. This is useful for web and mail servers which are accessible from anywhere, and the same techniques can be employed as has been achieved using bind for many years, in combination with suitable port forwarding on firewall machines to forward incoming requests to the right machine.
+ `/etc/unbound/unbound.conf` 
+```
+server:
+...
+  include: /etc/unbound/adservers
 
-## Issues concerning num-threads
+```
 
-The man page for `unbound.conf` mentions:
+**Tip:**
+
+*   为了在查询这些hosts的时候返回OK状态指示，你可以更改默认的127.0.0.1重定向，改成重定向到你所控制的服务器并让那台服务器返回空的204回应，参考[[5]](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
+*   如果需要把其他格式的hosts文件转换成unbound的格式的，请运行这个命令: `$ grep '^0\.0\.0\.0' *hostsfile* | awk '{print "local-zone: \""$2"\" always_nxdomain"}' > /etc/unbound/adservers` 
+
+### 添加一个authoritative DNS服务器
+
+对于想要在一台机器上同时两个DNS服务器（一个是提供验证、递归、缓存功能的DNS服务器，另一个是authoritative DNS服务器）的用户来说，参考[NSD](/index.php/NSD "NSD")的维基页面可能会有所帮助。那个页面提供了一个示范配置。一个服务器专门响应authoritative DNS请求，另一个服务器提供验证、递归、缓存等DNS功能，这样会比一个服务器提供所有功能会更安全。很多用户已经在使用Bind作为DNS服务器，而针对从Bind变成Bind和NSD协同工作的过程的帮助在[NSD](/index.php/NSD "NSD")页面有提供。
+
+### WAN facing DNS
+
+通过更改配置文件和服务器所监听的接口（地址）来允许来自本地网络之外的机器的DNS请求进入本地网络（LAN）内的某台特定机器，这个想法是可行的。这个功能对于公开的网站服务器和邮件服务器是非常有用的。这个在bind上已经实现了多年的技术，通过正确配置防火墙机器上的端口转发——转发这些请求到正确的机器上——也可以在unbound上实现。
+
+### 根域名服务器与systemd timer
+
+下面是一个systemd服务和timer的示例文件，它用来每隔一个月更新一次`root.hints`，所用的方法与[#根域名服务器](#根域名服务器)中的相同：
+
+ `/etc/systemd/system/roothints.service` 
+```
+[Unit]
+Description=Update root hints for unbound
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache
+```
+ `/etc/systemd/system/roothints.timer` 
+```
+[Unit]
+Description=Run root.hints monthly
+
+[Timer]
+OnCalendar=monthly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+最后[Start/enable](/index.php/Start/enable "Start/enable") `roothints.timer` systemd timer就可以了。
+
+## 疑难解答
+
+### 有关num-threads的问题
+
+`unbound.conf`的man page提到：
 
 ```
      outgoing-range: <number>
-             Number of ports to open. This number of file  descriptors  can  be  opened  per thread.
+           Number of ports to open. This number of file  descriptors  can  be  opened  per thread.
 
 ```
 
-and some sources suggest that the `num-threads` parameter should be set to the number of cpu cores. The sample `unbound.conf.example` file merely has:
+网上的一些人建议`num-threads`这个参数应该设置成你的CPU的核心数量。示范配置文件`unbound.conf.example`里关于这个选项只有下面这两行：
 
 ```
        # number of threads to create. 1 disables threading.
@@ -326,14 +476,15 @@ and some sources suggest that the `num-threads` parameter should be set to the n
 
 ```
 
-However it is not possible to arbitrarily increase `num-threads` above `1` without causing *unbound* to start with warnings in the logs about exceeding the number of file descriptors. In reality for most users running on small networks or on a single machine it should be unnecessary to seek performance enhancement by increasing `num-threads` above `1`. If you do wish to do so then refer to [official documentation](http://www.unbound.net/documentation/howto_optimise.html) and the following rule of thumb should work:
+但是人为地把`num-threads`提高到比`1`就一定会造成*unbound*在启动的时候在log里写一个warning提示说exceeding the number of file descriptors。实际上对于大多数在小型网络或是单机上运行unbound的用户来说，通过让`num-threads`超过`1`来得到性能提升是徒劳的。如果你一定要这么做，那么请参考[official documentation](http://www.unbound.net/documentation/howto_optimise.html)。下面这条经验法则应该对你有所帮助：
 
 	*Set `num-threads` equal to the number of CPU cores on the system. E.g. for 4 CPUs with 2 cores each, use 8.*
 
-Set the `outgoing-range` to as large a value as possible, see the sections in the referred web page above on how to overcome the limit of `1024` in total. This services more clients at a time. With 1 core, try `950`. With 2 cores, try `450`. With 4 cores try `200`. The `num-queries-per-thread` is best set at half the number of the `outgoing-range`.
+把`outgoing-range`设置得尽可能大，参考上面的链接来突破总数是`1024`这个限制。这样就会使得unbound可以同时为更多客户端提供服务。1个核心设置`950`，2个核心设置`450`，四个核心设置`200`。`num-queries-per-thread`最好设置成`outgoing-range`的一半。
 
-Because of the limit on `outgoing-range` thus also limits `num-queries-per-thread`, it is better to compile with [libevent](https://www.archlinux.org/packages/?name=libevent), so that there is no `1024` limit on `outgoing-range`. If you need to compile this way for a heavy duty DNS server then you will need to compile the programme from source instead of using the [unbound](https://www.archlinux.org/packages/?name=unbound) package.
+因为`outgoing-range`是有限制的，同时`num-queries-per-thread`也因此受到了限制，所以最好在编译的时候带上[libevent](https://www.archlinux.org/packages/?name=libevent)，这样就不会有`1024`限制了。如果你有一个高负荷DNS服务器使得你不得不这样编译，你需要从源码编译unbound而不是直接安装[unbound](https://www.archlinux.org/packages/?name=unbound)。
 
 ## 参阅
 
+*   [Fedora change to Unbound](https://fedoraproject.org/wiki/Changes/Default_Local_DNS_Resolver)
 *   [Block hosts that contain advertisements](https://github.com/jodrell/unbound-block-hosts/)

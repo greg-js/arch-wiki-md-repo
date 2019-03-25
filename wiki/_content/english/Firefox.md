@@ -30,6 +30,7 @@ Related articles
     *   [5.1 Dark themes](#Dark_themes)
     *   [5.2 Screenshot of webpage](#Screenshot_of_webpage)
     *   [5.3 Window manager rules](#Window_manager_rules)
+        *   [5.3.1 Profiles](#Profiles)
     *   [5.4 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
@@ -42,13 +43,12 @@ Related articles
     *   [6.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_'Back'_button)
     *   [6.9 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
     *   [6.10 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_dialog_does_not_appear)
-    *   [6.11 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
-    *   [6.12 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [6.13 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
-    *   [6.14 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
-    *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [6.16 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.17 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.11 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
+    *   [6.12 JavaScript context menu does not appear on some sites](#JavaScript_context_menu_does_not_appear_on_some_sites)
+    *   [6.13 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
+    *   [6.14 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
+    *   [6.15 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [6.16 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -266,19 +266,21 @@ As an alternative you can use the full-page screenshot button in the *Developer 
 
 ### Window manager rules
 
-To apply different configurations to Firefox windows, change the WM_CLASS string by using Firefox's `--class` option, to a custom one. [[3]](https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options#X11_options)
+To apply different configurations to Firefox windows, change the WM_CLASS string by using Firefox's `--class` option, to a custom one.
+
+#### Profiles
 
 To start new Firefox instances, multiple profiles are required. To create a new profile:
 
 ```
-$ firefox --ProfileManager
+$ firefox [--new-instance] -P
 
 ```
 
 Class can be specified when launching Firefox with a not-in-use profile:
 
 ```
-$ firefox -P *profile_name* --class=*class_name*
+$ firefox [--new-instance] -P *profile_name* --class=*class_name*
 
 ```
 
@@ -336,15 +338,15 @@ To scroll on middle-click (default for Windows browsers) set `general.autoScroll
 
 ### Backspace does not work as the 'Back' button
 
-According to [mozillaZine](http://kb.mozillazine.org/Browser.backspace_action), the `Backspace` key was mapped based on which platform the browser was running on. As a compromise, this preference was created to allow the `Backspace` key to either go back/forward, scroll up/down a page, or do nothing.
+According to [MozillaZine](http://kb.mozillazine.org/Browser.backspace_action), the `Backspace` key was mapped based on which platform the browser was running on. As a compromise, this preference was created to allow the `Backspace` key to either go back/forward, scroll up/down a page, or do nothing.
 
-To make `Backspace` behave like the back button and go back one page in the session history, set `browser.backspace_action` to `0` in `about:config`.
+To make `Backspace` go back one page in the tab's history and `Shift+Backspace` go forward, set `browser.backspace_action` to `0` in `about:config`.
 
 To have the `Backspace` key scroll up one page and `Shift+Backspace` scroll down one page, set `browser.backspace_action` to `1`. Setting this property to any other value will leave the key unmapped (Arch Linux defaults to `2`, in other words, it is unmapped by default).
 
 ### Firefox does not remember login information
 
-It may be due to a corrupted `cookies.sqlite` file in [Firefox's profile](https://support.mozilla.org/t5/Firefox/Profiles-Where-Firefox-stores-your-bookmarks-passwords-and-other/ta-p/4608#w_how-do-i-find-my-profile) folder. In order to fix this, just rename or remove `cookie.sqlite` while Firefox is not running.
+It may be due to a corrupted `cookies.sqlite` file in [Firefox's profile](https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data) folder. In order to fix this, just rename or remove `cookie.sqlite` while Firefox is not running.
 
 Open a terminal of choice and type the following:
 
@@ -365,21 +367,17 @@ From the [Mozilla support](https://support.mozilla.com/en-US/questions/767751) s
 2.  Set `browser.warnOnQuit` to `true`.
 3.  Set `browser.showQuitWarning` to `true`.
 
-### Silently fails when installing desktop apps from marketplace
-
-Installation of apps from Firefox OS Marketplace will silently fail if there is no `~/.local/share/applications` folder.
-
 ### Firefox detects the wrong version of my plugin
 
 When you close Firefox, the latter saves the current timestamp and version of your plugins inside `pluginreg.dat` located in your profile folder, typically in `~/.mozilla/firefox/*xxxxxxxx*.default/`.
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
-### Javascript context menu does not appear on some sites
+### JavaScript context menu does not appear on some sites
 
-In `about:config`, unset the `dom.w3c_touch_events.enabled` setting.
+You can try setting `dom.w3c_touch_events.enabled` to `0` in `about:config`.
 
 ### Firefox does not remember default spell check language
 
@@ -391,13 +389,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[4]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[5]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[6]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[7]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

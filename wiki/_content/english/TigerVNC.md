@@ -33,6 +33,7 @@ Related articles
     *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_(Arch_ARM))
     *   [6.3 Recommended security settings](#Recommended_security_settings)
     *   [6.4 Toggling Fullscreen](#Toggling_Fullscreen)
+    *   [6.5 Changing password](#Changing_password)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Unable to type '<' character](#Unable_to_type_'<'_character)
     *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
@@ -380,6 +381,10 @@ $ vncviewer 10.1.10.2 -X509CA */path/to/cert.pem*
 ### Toggling Fullscreen
 
 This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
+
+### Changing password
+
+Use the tool [vncpasswd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncpasswd.1) to change or set the password used to access VNC desktops.
 
 ## Troubleshooting
 

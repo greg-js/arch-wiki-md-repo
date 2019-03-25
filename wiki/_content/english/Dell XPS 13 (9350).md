@@ -68,6 +68,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [12.1 Coil whine when using headphones](#Coil_whine_when_using_headphones)
     *   [12.2 High noise floor when using headphones](#High_noise_floor_when_using_headphones)
 *   [13 Microphone](#Microphone)
+    *   [13.1 No audio input through combo jack](#No_audio_input_through_combo_jack)
 *   [14 TPM](#TPM)
     *   [14.1 TPM 2.0](#TPM_2.0)
 *   [15 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
@@ -440,6 +441,14 @@ This will prevent PulseAudio to fiddle with the gain setting at all.
 **Note:** Not all hardware has the "Digital" channel
 
 For ALSA, increase "Digital" channel for microphone to work.
+
+### No audio input through combo jack
+
+**Note:** This might only apply for the Developer Edition
+
+The device is recognized when you plug in a headset, however there is no audio input when you speak into the microphone. To solve this issue you have to pass `model=auto` to the `snd-hda-intel` kernel module. You can do this with a drop-in file:
+
+ `/etc/modprobe.d/fix-audio-input.conf`  `options snd-hda-intel model=auto` 
 
 ## TPM
 

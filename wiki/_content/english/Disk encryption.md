@@ -77,7 +77,7 @@ While encrypting only the user data itself (often located within the home direct
     *   (potential remedies: avoid such applications; mount `/tmp` inside a [ramdisk](/index.php/Ramdisk "Ramdisk"))
 *   `/var` (log files and databases and such; for example, [mlocate](/index.php/Mlocate "Mlocate") stores an index of all file names in `/var/lib/mlocate/mlocate.db`)
 
-The solution is to encrypt both system and user data, preventing unauthorized physical access to private data that may be cached by the system. This however comes with the disadvantage that unlocking of the encrypted parts of the disk has to happen at boot time. Another benefit of system data encryption is that it complicates to install malware like [keyloggers](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") or rootkits for someone with physical access.
+The solution is to encrypt both system and user data, preventing unauthorized physical access to private data that may be cached by the system. This however comes with the disadvantage that unlocking of the encrypted parts of the disk has to happen at boot time. Another benefit of system data encryption is that it complicates the installation of malware like [keyloggers](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") or rootkits for someone with physical access.
 
 ## Available methods
 

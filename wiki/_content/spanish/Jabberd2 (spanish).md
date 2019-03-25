@@ -3,7 +3,11 @@ Este artículo es una traducción de [Jabberd2](/index.php/Jabberd2 "Jabberd2"),
 
 [jabberd2](http://jabberd2.org/) es un servidor [XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP"), escrito en lenguaje C y con licencia de software libre bajo la Licencia Pública General de GNU. Fue inspirado por jabberd14.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)

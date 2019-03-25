@@ -27,7 +27,7 @@ In X10, *cut buffers* were introduced. These were limited buffers that stored ar
 
 ## Selections
 
-[Freedesktop.org](/index.php/Freedesktop.org "Freedesktop.org") describes the two main *selections* as follows:[[1]](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
+[Freedesktop.org](/index.php/Freedesktop.org "Freedesktop.org") describes the two main *selections* as follows:[[4]](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 
 	PRIMARY
 

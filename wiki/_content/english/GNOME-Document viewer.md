@@ -1,4 +1,4 @@
-[Document viewer](https://en.wikipedia.org/wiki/Evince "w:Evince") is specifically designed to support the file following formats: [PDF, PostScript, DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu"), tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt). For a comprehensive list of formats supported, see [Supported Document Formats](https://wiki.gnome.org/Apps/Evince/SupportedDocumentFormats).
+[Document viewer](https://en.wikipedia.org/wiki/Evince "w:Evince") is specifically designed to support the following file formats: [PDF, PostScript, DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu"), tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr,cbz,cb7 and cbt). For a comprehensive list of formats supported, see [Supported Document Formats](https://wiki.gnome.org/Apps/Evince/SupportedDocumentFormats).
 
 Document viewer uses the poppler library as a backend.
 

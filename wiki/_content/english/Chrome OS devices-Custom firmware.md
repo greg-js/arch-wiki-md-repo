@@ -5,24 +5,28 @@ Related articles
 
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Why flash a custom firmware?](#Why_flash_a_custom_firmware.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Why flash a custom firmware?](#Why_flash_a_custom_firmware?)
     *   [1.1 Pros](#Pros)
     *   [1.2 Cons](#Cons)
 *   [2 Flashing the custom firmware](#Flashing_the_custom_firmware)
     *   [2.1 Disable the hardware write protection](#Disable_the_hardware_write_protection)
-    *   [2.2 Flashing with MrChromebox's Firmware Utility Script](#Flashing_with_MrChromebox.27s_Firmware_Utility_Script)
+    *   [2.2 Flashing with MrChromebox's Firmware Utility Script](#Flashing_with_MrChromebox's_Firmware_Utility_Script)
         *   [2.2.1 Introduction to the firmware](#Introduction_to_the_firmware)
         *   [2.2.2 Understanding the script](#Understanding_the_script)
-            *   [2.2.2.1 What MrChromebox's Firmware Utility Script script does ?](#What_MrChromebox.27s_Firmware_Utility_Script_script_does_.3F)
-            *   [2.2.2.2 What the script does not do ?](#What_the_script_does_not_do_.3F)
+            *   [2.2.2.1 What MrChromebox's Firmware Utility Script script does ?](#What_MrChromebox's_Firmware_Utility_Script_script_does_?)
+            *   [2.2.2.2 What the script does not do ?](#What_the_script_does_not_do_?)
         *   [2.2.3 Flashing the firmware](#Flashing_the_firmware)
         *   [2.2.4 Using the script from Arch Linux](#Using_the_script_from_Arch_Linux)
-    *   [2.3 Flashing with John Lewis' script](#Flashing_with_John_Lewis.27_script)
+    *   [2.3 Flashing with John Lewis' script](#Flashing_with_John_Lewis'_script)
         *   [2.3.1 Understanding the script](#Understanding_the_script_2)
-            *   [2.3.1.1 What John Lewis' flash_chromebook_rom.sh script does ?](#What_John_Lewis.27_flash_chromebook_rom.sh_script_does_.3F)
-            *   [2.3.1.2 What the script does not do ?](#What_the_script_does_not_do_.3F_2)
+            *   [2.3.1.1 What John Lewis' flash_chromebook_rom.sh script does ?](#What_John_Lewis'_flash_chromebook_rom.sh_script_does_?)
+            *   [2.3.1.2 What the script does not do ?](#What_the_script_does_not_do_?_2)
             *   [2.3.1.3 Conclusions](#Conclusions)
         *   [2.3.2 Running the script in Chrome OS](#Running_the_script_in_Chrome_OS)
         *   [2.3.3 Running the script in Arch Linux](#Running_the_script_in_Arch_Linux)
@@ -46,19 +50,17 @@ Related articles
 
 ### Pros
 
-*   Adds a much recent version of SeaBIOS.
-*   Adds SeaBIOS payload of coreboot to Chrome OS devices that did not shipped with SeaBIOS.
-*   Option of using a [UEFI](/index.php/UEFI "UEFI") coreboot payload (with MrChromebox's custom firmware).
-*   Reduce boot time.
-*   Remove developer Mode screen.
+*   Allows the use of a [UEFI](/index.php/UEFI "UEFI") coreboot payload (with MrChromebox's custom firmware).
+*   May reduce boot time.
+*   Removes the Developer Mode screen that some users find annoying.
 *   Enables VMX in models in which it is not active by default.
-*   Fixes some issues (like suspend) without further modifications.
+*   Fixes some issues (like suspend).
 
 ### Cons
 
-*   Dangerous, might brick your device.
-*   Cannot boot stock Chrome OS (you can install [Arnold the Bat’s Chromium OS build](https://arnoldthebat.co.uk/wordpress/chromium-os/) and it should be possible upgrade it to full blown Chrome OS with a script).
-*   It is possible that some quirks will be added.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1460520#p1460520) Keep in mind that some of this quirks are the result of using the old fallback read-only Embedded Controller (EC) firmware image, and thus they may be resolved (e.g. [the one linked before](https://github.com/MrChromebox/firmware/issues/15)) in firmware images which provide EC image updates, such as MrChromebox's one.
+*   Dangerous, and has the potential to render a device unusable.
+*   Cannot boot stock Chrome OS (you can install [Arnold the Bat’s Chromium OS build](https://arnoldthebat.co.uk/wordpress/chromium-os/) and it should be possible to upgrade it to full blown Chrome OS with a script if the user desires).
+*   Custom-BIOS specific bugs may occur.
 
 ## Flashing the custom firmware
 
@@ -68,7 +70,7 @@ There are several approaches for flashing a custom firmware:
 *   Use John Lewis' script.
 *   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
 
-**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F﻿).
+**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[1]](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F﻿).
 
 ### Disable the hardware write protection
 
@@ -80,15 +82,15 @@ See the [Disabling the hardware write protection](#Disabling_the_hardware_write_
 
 MrChromebox's firmware for Chromebooks and Chromeboxes has some differences compared to other third-party custom firmware, namely:
 
-*   Provides a [UEFI](/index.php/UEFI "UEFI") implementation via the Tianocore coreboot payload.
+*   A [UEFI](/index.php/UEFI "UEFI") implementation via the Tianocore coreboot payload.
 
-*   Provides updates for the Embedded Controller (EC) of some of the devices it supports, solving some hardware idiosyncrasies associated with other custom firmware.
+*   Updates for the Embedded Controller (EC) of some of the devices it supports, solving some bugs associated with other custom firmware.
 
-*   Built based on latest coreboot upstream, rather than on the frozen source snapshot provided by Google.
+*   Built based on the latest coreboot upstream, rather than on the frozen source snapshot provided by Google.
 
-*   Full source code and build scripts available on [github](https://github.com/MrChromebox)
+*   Source code and build scripts available on [github](https://github.com/MrChromebox)
 
-The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected in one of them and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) with no option of changing this default behaviour.
+The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected, and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) with no option of changing this behaviour.
 
 #### Understanding the script
 
@@ -234,7 +236,7 @@ Chrome OS already includes `flashrom`.
 ### Required tools
 
 *   Programmer, both the [Raspberry Pi](http://flashrom.org/RaspberryPi) and the [Bus Pirate](http://flashrom.org/Bus_Pirate) are mentioned as compatible devices on the [flashrom wiki](http://flashrom.org/). The [Bus Pirate](http://flashrom.org/Bus_Pirate) is preferable as it will allow you to use Chromium OS's version of `flashrom` that supports `--wp-disable` and `--wp-status` flags.
-*   SOIC clip is recommended, see [[3]](http://flashrom.org/ISP).
+*   SOIC clip is recommended, see [[2]](http://flashrom.org/ISP).
 *   Female jumper wires.
 *   If you want to use Chromium OS's `flashrom` another Linux machine (32bit or 64bit) is required.
 
@@ -265,7 +267,7 @@ There are two parts to the firmware write protection: hardware and software.
 
 ### Hardware write protection
 
-The hardware write protection is an electrical circuit which prevents writing to the software protection special registers; it's normally enforced by the grounding of the !WP pin on the SOIC8 chip. Thus the hardware write protection only protects directly these special registers, but indirectly also the data in the firmware chip.
+The hardware write protection is an electrical circuit which prevents writing to the software protection special registers; it's normally enforced by the grounding of the !WP pin on the SOIC8 chip. Thus the hardware write protection only protects directly these special registers, but indirectly also the data in the firmware chip.
 
 Early Chromebook models (2012-2013) used a jumper or switch to implement hardware write protection. Most models from 2014-2017 used a screw, and Kabylake/Apollolake (and newer) models from 2017 on use the battery sense line (so disconnecting the battery is necessary to disable the hardware write protect).
 

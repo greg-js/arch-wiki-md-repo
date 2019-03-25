@@ -4,7 +4,11 @@
 
 [Internet](/index.php/List_of_Applications/Internet_(%C4%8Cesky) "List of Applications/Internet (Česky)") – [Multimedia](/index.php?title=List_of_Applications/Multimedia_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Multimedia (Česky) (page does not exist)") – [Utility](/index.php?title=List_of_Applications/Utilities_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Utilities (Česky) (page does not exist)") – [Dokumenty](/index.php?title=List_of_Applications/Documents_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Documents (Česky) (page does not exist)") – [Bezpečnost](/index.php?title=List_of_Applications/Security_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Security (Česky) (page does not exist)") – [Hry](/index.php?title=List_of_Applications/Games_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Games (Česky) (page does not exist)") – [Věda](/index.php?title=List_of_Applications/Science_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Science (Česky) (page does not exist)") – [Ostatní](/index.php?title=List_of_Applications/Other_(%C4%8Cesky)&action=edit&redlink=1 "List of Applications/Other (Česky) (page does not exist)")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Internet](#Internet)
     *   [1.1 BitTorrent klienti](#BitTorrent_klienti)

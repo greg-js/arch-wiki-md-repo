@@ -39,6 +39,8 @@ Related articles
             *   [4.7.1.3 DNSSEC](#DNSSEC)
         *   [4.7.2 systemd-resolved](#systemd-resolved)
         *   [4.7.3 Other methods](#Other_methods)
+            *   [4.7.3.1 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
+            *   [4.7.3.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
 *   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
     *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
     *   [5.2 Dispatcher examples](#Dispatcher_examples)
@@ -65,8 +67,8 @@ Related articles
     *   [7.9 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
     *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
     *   [7.11 Working with wired connections](#Working_with_wired_connections)
-    *   [7.12 resolv.conf](#resolv.conf)
-        *   [7.12.1 /etc/resolv.conf](#/etc/resolv.conf)
+    *   [7.12 /etc/resolv.conf](#/etc/resolv.conf)
+        *   [7.12.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
         *   [7.12.2 Use openresolv](#Use_openresolv)
     *   [7.13 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
 *   [8 Troubleshooting](#Troubleshooting)
@@ -89,7 +91,6 @@ Related articles
     *   [8.17 Turn off hostname sending](#Turn_off_hostname_sending)
     *   [8.18 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
     *   [8.19 nm-applet tray icons display wrongly](#nm-applet_tray_icons_display_wrongly)
-    *   [8.20 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -244,11 +245,7 @@ $ nm-applet --no-agent
 
 ```
 
-**Tip:** `nm-applet` might be started automatically with a [autostart desktop file](/index.php/XDG_Autostart "XDG Autostart"), to add the --no-agent option modify the Exec line there, i.e.
-```
-Exec=nm-applet --no-agent
-
-```
+**Tip:** `nm-applet` might be started automatically with a [autostart desktop file](/index.php/XDG_Autostart "XDG Autostart"), to add the --no-agent option modify the Exec line there, i.e. `Exec=nm-applet --no-agent` 
 
 #### Appindicator
 
@@ -316,7 +313,7 @@ See also [Proxy settings](/index.php/Proxy_settings "Proxy settings").
 
 ### Checking connectivity
 
-NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5#CONNECTIVITY_SECTION).
 
 For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
 
@@ -329,7 +326,7 @@ By default NetworkManager will use its internal DHCP client, based on systemd-ne
 
 **Warning:** NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5).
 
-To change the DHCP client backend, set the option `dhcp=*dhcp_client_name*` in the `[main]` section of NetworkManager's configuration file. E.g.:
+To change the DHCP client backend, set the option `main.dhcp=*dhcp_client_name*` with a configuration file in `/etc/NetworkManager/conf.d/`. E.g.:
 
  `/etc/NetworkManager/conf.d/dhcp-client.conf` 
 ```
@@ -343,7 +340,7 @@ NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](
 
 #### dnsmasq
 
-Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed. Then, create `/etc/NetworkManager/conf.d/dns.conf` and add the following to it:
+Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed. Then set `main.dns=dnsmasq` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/dns.conf` 
 ```
@@ -351,9 +348,9 @@ Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been i
 dns=dnsmasq
 ```
 
-Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `drill example.com` and verifying the server and query times.
+Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The original DNS servers can be found in `/run/NetworkManager/no-stub-resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `drill example.com` and verifying the server and query times.
 
-**Note:** You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq by itself without using the systemd service and without reading the dnsmasq's default configuration file(s).
+**Note:** You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq without using the systemd service and without reading the dnsmasq's default configuration file(s).
 
 ##### Custom configuration
 
@@ -376,7 +373,7 @@ In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately
 
 The dnsmasq instance started by NetworkManager by default will not validate [DNSSEC](/index.php/DNSSEC "DNSSEC") since it is started with the `--proxy-dnssec` option. It will trust whatever DNSSEC information it gets from the upstream DNS server.
 
-For dnsmasq to properly validate DNSSEC, create the following configuration file:
+For dnsmasq to properly validate DNSSEC, thus breaking DNS resolution with name servers that do not support it, create the following configuration file:
 
  `/etc/NetworkManager/dnsmasq.d/dnssec.conf` 
 ```
@@ -390,7 +387,7 @@ NetworkManager can use [systemd-resolved](/index.php/Systemd-resolved "Systemd-r
 
 systemd-resolved will be used automatically if `/etc/resolv.conf` is a [symlink](/index.php/Systemd-resolved#DNS "Systemd-resolved") to `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` or `/usr/lib/systemd/resolv.conf`.
 
-You can enable it explicitly by setting the `dns=` option in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
+You can enable it explicitly by setting `main.dns=systemd-resolved` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/dns.conf` 
 ```
@@ -400,7 +397,11 @@ dns=systemd-resolved
 
 #### Other methods
 
-**Tip:** If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for the local [DNS resolver](/index.php/DNS_resolver "DNS resolver"), set the local server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
+##### DNS resolver with an openresolv subscriber
+
+If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for your local [DNS resolver](/index.php/DNS_resolver "DNS resolver"), set up the subscriber and [configure NetworkManager to use openresolv](#Use_openresolv).
+
+##### Setting custom DNS servers in a connection
 
 With an already working caching DNS server, the DNS server address can be specified in NetworkManager's settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
@@ -712,7 +713,7 @@ If the option was selected previously and you un-tick it, you may have to use th
 
 You can share your internet connection (e.g. 3G or wired) with a few clicks. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
 
-*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
+[Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
 
 Create the shared connection:
 
@@ -867,15 +868,25 @@ By default, NetworkManager generates a connection profile for each wired etherne
 
 You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
 
-### resolv.conf
+### /etc/resolv.conf
 
-*NetworkManager* can manage `/etc/resolv.conf` either by [itself](#/etc/resolv.conf) or through [openresolv](#Use_openresolv).
+By default `/etc/resolv.conf` is managed by *NetworkManager* unless it is a symlink.
 
-#### /etc/resolv.conf
+It can be configured to write it through [openresolv](#Use_openresolv) or to [not touch it at all](#Unmanaged_/etc/resolv.conf).
 
-*NetworkManager* overwrites `/etc/resolv.conf` by default.
+Using openresolv allows NetworkManager to coexists with other *resolvconf* supporting software or, for example, to run a local DNS caching and split-DNS resolver for which openresolv has a [subscriber](/index.php/Openresolv#Subscribers "Openresolv").
 
-This can be stopped by setting `dns=none` in a configuration file:
+*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+
+**Note:**
+
+*   If NetworkManager is configured to use either [dnsmasq](#dnsmasq) or [systemd-resolved](#systemd-resolved), then the apropriate loopback addresses will be written to `/etc/resolv.conf`.
+*   The `resolv.conf` file NetworkManager writes or would write to `/etc/resolv.conf` can be found at `/run/NetworkManager/resolv.conf`.
+*   A `resolv.conf` file with the acquired name servers and search domains can be found at `/run/NetworkManager/no-stub-resolv.conf`.
+
+#### Unmanaged /etc/resolv.conf
+
+To stop NetworkManager from touching `/etc/resolv.conf`, set `main.dns=none` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/dns.conf` 
 ```
@@ -883,23 +894,19 @@ This can be stopped by setting `dns=none` in a configuration file:
 dns=none
 ```
 
-**Note:** See [#DNS caching and split DNS](#DNS_caching_and_split_DNS), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `dns=none`.
+**Note:** See [#DNS caching and split DNS](#DNS_caching_and_split_DNS), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `main.dns=none`.
 
 After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
 
-*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
-
 #### Use openresolv
 
-To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
+To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set `main.rc-manager=resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/rc-manager.conf` 
 ```
 [main]
 rc-manager=resolvconf
 ```
-
-Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 ### Using iwd as the Wi-Fi backend
 
@@ -1087,10 +1094,6 @@ After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notif
 Currently the tray icons of nm-applet are drawn on top of one another, i.e. the icon displaying wireless strength might show on top of the icon indicating no wired connection. This is apparently a GTK3 bug/problem: [https://gitlab.gnome.org/GNOME/gtk/issues/1280](https://gitlab.gnome.org/GNOME/gtk/issues/1280) .
 
 A patched version of GTK3 exists in AUR, which apparently fixes the tray icon bug: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
-
-### Disable NetworkManager when using dbus
-
-It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") `NetworkManager.service` and `NetworkManager-dispatcher.service`.
 
 ## See also
 
