@@ -85,9 +85,17 @@ For more information, see [fprintd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 By default you are allowed to enroll new fingerprints without prompting for the password or the fingerprint. You can change this behavior using Polkit rules.
 
+There are two locations that contains the polkit configuration files.
+
+*   /etc/polkit-1/rules.d/
+
+*   /usr/share/polkit-1/rules.d/
+
+**Note:** You should not modify the files under **/etc/polkit-1/rules.d** because they will be overwritten on update. Copy them in **/usr/share/polkit-1/rules.d/** first.
+
 In the following example only superuser can enroll fingerprints:
 
- `/etc/polkit-1/rules.d/50-net.reactivated.fprint.device.enroll.rules` 
+ `/usr/share/polkit-1/rules.d/50-net.reactivated.fprint.device.enroll.rules` 
 ```
 polkit.addRule(function (action, subject) {
   if (action.id == "net.reactivated.fprint.device.enroll") {

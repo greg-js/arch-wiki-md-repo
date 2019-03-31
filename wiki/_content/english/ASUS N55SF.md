@@ -12,7 +12,11 @@
 | Special Keys | **Untested** |
 | Power management | **Working, see below** |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Configuration](#Configuration)
@@ -217,7 +221,7 @@ Working.
 
 ### Bluetooth
 
-Should be working out of the box - just remember to install [bluez-firmware](https://www.archlinux.org/packages/?name=bluez-firmware).
+Should be working out of the box - just remember to install [bluez-firmware](https://aur.archlinux.org/packages/bluez-firmware/).
 
 ### Power management
 

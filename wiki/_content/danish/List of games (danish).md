@@ -6,20 +6,24 @@ Related articles
 
 Denne sider viser kun populære spil for GNU/Linux. For at lære mere omkring kørsel af spil og relateret system konfigurations tips, se [Gaming](/index.php/Gaming "Gaming"). Se [Netbook Games](/index.php/Netbook_Games "Netbook Games") for spil lavet til netbooks.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Spil Miljøer](#Spil_Milj.C3.B8er)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Spil Miljøer](#Spil_Miljøer)
 *   [2 Action og eventyr](#Action_og_eventyr)
 *   [3 Arcade](#Arcade)
 *   [4 Course](#Course)
 *   [5 Undervisning](#Undervisning)
 *   [6 Platform spil](#Platform_spil)
-*   [7 Role Playing Game (RPG)](#Role_Playing_Game_.28RPG.29)
-*   [8 Skydespil: FPS, Third Person](#Skydespil:_FPS.2C_Third_Person)
+*   [7 Role Playing Game (RPG)](#Role_Playing_Game_(RPG))
+*   [8 Skydespil: FPS, Third Person](#Skydespil:_FPS,_Third_Person)
 *   [9 Simulation](#Simulation)
 *   [10 MMOG - MMORPG](#MMOG_-_MMORPG)
 *   [11 Strategi](#Strategi)
-*   [12 Tycoon/Management Spil](#Tycoon.2FManagement_Spil)
+*   [12 Tycoon/Management Spil](#Tycoon/Management_Spil)
 *   [13 Puzzle](#Puzzle)
 *   [14 CLI spil](#CLI_spil)
 *   [15 Emulators](#Emulators)
@@ -62,7 +66,7 @@ Der findes flere spil miljøer for at spille spil i Linux:
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — 3D game to guide a ball through a maze
 
-	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
+	[http://neverball.org/](http://neverball.org/) || [neverball](https://aur.archlinux.org/packages/neverball/)
 
 ## Arcade
 

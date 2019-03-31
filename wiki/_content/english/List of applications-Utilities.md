@@ -294,7 +294,7 @@ See also [Wikipedia:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal
 
 *   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **dvtm** — [dwm](/index.php/Dwm "Dwm")-style window manager in the console.
 
@@ -898,7 +898,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **Alleyoop** — Find memory-management problems in your programs using the valgrind tool.
 
-	[http://alleyoop.sourceforge.net/](http://alleyoop.sourceforge.net/) || [alleyoop](https://www.archlinux.org/packages/?name=alleyoop)
+	[http://alleyoop.sourceforge.net/](http://alleyoop.sourceforge.net/) || [alleyoop](https://aur.archlinux.org/packages/alleyoop/)
 
 *   **Bustle** — Draws sequence diagrams of D-Bus activity. It shows signal emissions, method calls and their corresponding returns, with time stamps for each individual event and the duration of each method call.
 
@@ -1002,7 +1002,7 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 
 *   **Bless** — High quality, full featured hex editor.
 
-	[https://web.archive.org/web/20170503150524/http://home.gna.org/bless/](https://web.archive.org/web/20170503150524/http://home.gna.org/bless/) || [bless](https://www.archlinux.org/packages/?name=bless)
+	[https://web.archive.org/web/20170503150524/http://home.gna.org/bless/](https://web.archive.org/web/20170503150524/http://home.gna.org/bless/) || [bless](https://aur.archlinux.org/packages/bless/)
 
 *   **GHex** — Hex editor for GNOME, which allows the user to load data from any file, view and edit it in either hex or ascii.
 
@@ -1656,7 +1656,7 @@ See also [Cron](/index.php/Cron "Cron").
 
 *   **GNOME Schedule** — Graphical interface to crontab and at for GNOME.
 
-	[http://gnome-schedule.sourceforge.net/](http://gnome-schedule.sourceforge.net/) || [gnome-schedule](https://www.archlinux.org/packages/?name=gnome-schedule)
+	[http://gnome-schedule.sourceforge.net/](http://gnome-schedule.sourceforge.net/) || [gnome-schedule](https://aur.archlinux.org/packages/gnome-schedule/)
 
 *   **KCron** — Tool for KDE to run applications in the background at regular intervals. It's a graphical interface to the Cron command.
 

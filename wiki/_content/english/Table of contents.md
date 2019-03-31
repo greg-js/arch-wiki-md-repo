@@ -272,7 +272,7 @@
 | <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.7.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.8.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
-| <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(50)</small> |
+| <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(49)</small> |
 | <small>6.9.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
 | <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
 | <small>6.9.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |

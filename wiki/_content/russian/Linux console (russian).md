@@ -13,7 +13,11 @@ Related articles
 
 Эта статься объясняет основы консоли Linux и как настроить отображение шрифтов в ней. Настройка клавиатуры описана в подстранице [Консоль Linux/Настройка клавиатуры](/index.php/%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C_Linux/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B "Консоль Linux/Настройка клавиатуры").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Реализация](#Реализация)
     *   [1.1 Виртуальная консоль](#Виртуальная_консоль)
@@ -70,7 +74,7 @@ The [Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux
 
 The [kbd](https://www.archlinux.org/packages/?name=kbd) package provides tools to change virtual console font and font mapping. Available fonts are saved in the `/usr/share/kbd/consolefonts/` directory, those ending with *.psfu* or *.psfu.gz* have a Unicode translation map built-in.
 
-Keymaps, the connection between the key pressed and the character used by the computer, are found in the subdirectories of `/usr/share/kbd/keymaps/`, see [/Keyboard configuration](/index.php?title=Linux_console_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Keyboard_configuration&action=edit&redlink=1 "Linux console (Русский)/Keyboard configuration (page does not exist)") for details.
+Keymaps, the connection between the key pressed and the character used by the computer, are found in the subdirectories of `/usr/share/kbd/keymaps/`, see [/Keyboard configuration (Русский)](/index.php/Linux_console_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Keyboard_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Linux console (Русский)/Keyboard configuration (Русский)") for details.
 
 **Note:** Replacing the font can cause issues with programs that expect a standard VGA-style font, such as those using line drawing graphics.
 

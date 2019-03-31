@@ -226,7 +226,7 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 ### Static TLS errors
 
-MATLAB has a number of libraries that have been compiled with static thread local storage (TLS) including the help broswer `doc` and the BLAS libraries. For example,
+MATLAB has a number of libraries that have been compiled with static thread local storage (TLS) including the help browser `doc` and the BLAS libraries. For example,
 
 ```
 >> doc('help');

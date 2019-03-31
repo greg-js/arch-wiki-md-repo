@@ -688,7 +688,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Aplicación para visualizar PDF y tomar notas.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ### Telefonía
 

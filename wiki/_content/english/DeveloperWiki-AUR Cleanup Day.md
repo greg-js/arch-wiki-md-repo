@@ -15,7 +15,7 @@
 
 ## About
 
-AUR Cleanup Day is a bi-yearly event at the 20th of September.
+AUR Cleanup Day is a bi-yearly event on the 20th of September. The next one will be in 2019.
 
 Cleanup suggestions will be looked at sooner if you submit them to the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/). Some guidelines are listed [here](https://wiki.archlinux.org/index.php/AUR#Other_requests).
 

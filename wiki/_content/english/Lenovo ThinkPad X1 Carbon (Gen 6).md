@@ -169,7 +169,7 @@ sudo systemctl enable --now lenovo_fix.service
 
 The script also supports more advance thermal/performance features including CPU undervolting. See the [lenovo-throttling-fix repository](https://github.com/erpalma/lenovo-throttling-fix) `README.md` for details.
 
-**Note:** If you installed [thermald](https://www.archlinux.org/packages/?name=thermald), it may conflict with the throttling fix in this package. Consider disabling thermald or otherwise work around this.
+**Note:** If you installed [thermald](https://aur.archlinux.org/packages/thermald/), it may conflict with the throttling fix in this package. Consider disabling thermald or otherwise work around this.
 
 ## Audio crackling
 

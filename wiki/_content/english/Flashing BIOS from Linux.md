@@ -319,7 +319,7 @@ Finally reboot your machine, making sure the CD drive is first in the boot seque
 
 ## Bootable optical disk emulation
 
-The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked on Lenovo laptops like X220, X230, X260, W540, T450 and T450s. It may work for other vendors as well.
+The script Geteltorito.pl will extract the [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) boot image. It has worked with Lenovo laptops like the X1 Carbon, X220, X230, X260, W540, T450 and T450s. It may work for other vendors as well.
 
 ### Installation
 

@@ -7,7 +7,11 @@ Related articles
 
 This article outlines the additional software packages necessary to expand the features and functionality of file managers, particularly where using a [window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"). The ability to access partitions and removable media without a password - if affected - has also been provided.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Additional features](#Additional_features)
@@ -51,8 +55,6 @@ Particularly where using - or intending to use - a lightweight environment, it s
 ### Mounting
 
 *   The Gnome virtual filesystem ([gvfs](https://www.archlinux.org/packages/?name=gvfs)) provides mounting and trash functionality. GVFS uses [udisks2](https://www.archlinux.org/packages/?name=udisks2) for mounting functionality and is the recommended solution for most file managers.
-
-**Tip:** For some file managers it may be useful to have the package [gamin](https://www.archlinux.org/packages/?name=gamin) installed. [Gamin](/index.php/Gamin "Gamin") is a file and directory monitoring system.
 
 Folders used by GVFS:
 

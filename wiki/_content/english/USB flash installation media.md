@@ -198,9 +198,9 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 **Note:** Here, we will denote the targeted partition as `/dev/sd**Xn**`. In any of the following commands, adjust **X** and **n** according to your system.
 
-*   Make sure that the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package is installed on the system.
-*   If not done yet, create the partition table and/or partition on the device before continuing. The partition `/dev/sd**Xn**` must be formatted to [FAT32](/index.php/FAT32 "FAT32").
-*   Mount the ISO image, mount the FAT32 filesystem located in the USB flash device, and copy the contents of the ISO image to it. Then unmount the ISO image, but keep the FAT32 partition mounted (this will be used in subsequent steps). Eg:
+*   If not done yet, create a [partition table](/index.php/Partition_table "Partition table") on `/dev/sd**X**`.
+*   If not done yet, create a partition on the device. The partition `/dev/sd**Xn**` must be formatted to [FAT32](/index.php/FAT32 "FAT32").
+*   Mount the ISO image, mount the FAT32 filesystem located in the USB flash device, and copy the contents of the ISO image to it. Then unmount the ISO image, but keep the FAT32 partition mounted (this may be used in subsequent steps). For example:
 
 ```
 # mkdir -p /mnt/{iso,usb}
@@ -212,11 +212,11 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 ```
 
-To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_*YYYYMM*` (with the appropriate release year and month) is used. Thus, the partition’s label has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_*YYYYMM*` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
+To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partition to boot from is required. By default the label `ARCH_*YYYYMM*` (with the appropriate release year and month) is used. Thus, the [file system’s label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") has to be set accordingly, for example using *gparted*. Alternatively, you can change this behaviour by altering the lines ending by `archisolabel=ARCH_*YYYYMM*` in the file `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (for BIOS boot), and in `/mnt/usb/loader/entries/archiso-x86_64.conf` (for UEFI boot). To use an UUID instead, replace those portions of lines with `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`. The UUID can be retrieved with `blkid -o value -s UUID /dev/sd**Xn**`.
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
-Syslinux is already preinstalled in `/mnt/usb/arch/boot/syslinux`. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux").
+Syslinux legacy boot files are already preinstalled in `/mnt/usb/arch/boot/syslinux`. If you want to be able to boot your usb stick in legacy mode, install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package and follow [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") instructions.
 
 #### In Windows
 

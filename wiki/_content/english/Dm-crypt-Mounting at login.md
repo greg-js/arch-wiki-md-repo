@@ -21,10 +21,28 @@ This tutorial assumes you have already created your encrypted partition, as desc
 ...
 
 auth       include    system-auth
-**auth       optional   pam_exec.so expose_authtok quiet /usr/bin/cryptsetup open /dev/*PARTITION* home-*YOURNAME***
+**auth       optional   pam_exec.so expose_authtok /etc/pam_cryptsetup.sh**
 
 ...
 ```
+
+Then create the mentioned script.
+
+ `/etc/pam_cryptsetup.sh` 
+```
+#!/bin/sh
+
+CRYPT_USER="*YOURNAME*"
+MAPPER="/dev/mapper/home-"$CRYPT_USER
+
+if [ "$PAM_USER" == "$CRYPT_USER" ] && [ ! -e $MAPPER ]
+then
+  tr '\0' '
+' | /usr/bin/cryptsetup open /dev/*PARTITION* home-*YOURNAME*
+fi
+```
+
+Execute `chmod +x /etc/pam_cryptsetup.sh` to make it executable.
 
 Now edit `/etc/fstab` to mount the unlocked device using [systemd.automount](/index.php/Fstab#Automount_with_systemd "Fstab"):
 

@@ -10,7 +10,7 @@
 | Card Reader | Working | rtsx_pci |
 | Wireless Switch | Working | ? |
 | Function/Multimedia Keys | Working | ? |
-| Suspend/Resume | Working | ? |
+| Suspend/Resume | Partially Working (no deep sleep, only S2Idle) | ? |
 | Fingerprint sensor | Not working | ? synaptic 06cb:00bb |
 
 This article covers specific configuration of this laptop. Currently based on experience with Xfce4, running on X.org.
@@ -132,7 +132,7 @@ All the media keys works. The mute button does not light up though.
 
 ### Auto Rotation
 
-Installing screen-rotator and iio-sensor-proxy: works out of the box.
+Installing screen-rotator and iio-sensor-proxy: works out of the box on older kernels. Seems broken in 4.12+
 
 ### Dual boot
 
@@ -148,7 +148,7 @@ Works out of the box with a generic USB-C to HDMI adapter
 
 ### Bluetooth
 
-Seems to work out of the box. May need further testing. Some random disconnects are experienced with an apple magic mouse. no issue with a bt keyboard.
+Works out of the box.
 
 ### ACPI Errors
 

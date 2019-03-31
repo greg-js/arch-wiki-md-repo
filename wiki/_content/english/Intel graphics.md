@@ -277,7 +277,7 @@ The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/s
 
 ```
 
-**Note:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.
+**Note:** Do not use [driconf](https://aur.archlinux.org/packages/driconf/) to create this file. It is buggy and will set the wrong driver.
 
 ### SNA issues
 

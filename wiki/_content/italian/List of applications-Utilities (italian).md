@@ -293,7 +293,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Completa applicazione dock che permette di aprire i programmi più comuni e gestire facilmente e velocemente le finestre.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Un leggero pannello per il desktop, NETWM compliant.
 

@@ -780,7 +780,7 @@ It is important to note that a substantial range of both **Openbox-specific** an
 
 ### Installation: official and AUR
 
-A good selection of [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) are available from the official repositories.
+A good selection of [openbox-themes](https://aur.archlinux.org/packages/openbox-themes/) are available from the official repositories.
 
 Both Openbox-specific and Openbox-compatible themes installed from the [official repositories](/index.php/Official_repositories "Official repositories") and/or the [AUR](/index.php/AUR "AUR") will be automatically installed to the `/usr/share/themes` directory. Both will also be immediately available for selection.
 

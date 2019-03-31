@@ -52,6 +52,7 @@ This is required for executable gems to work without typing out the full locatio
 You may want to append this variable to `.profile` instead:
 
  `~/.profile`  `PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"` 
+**Note:** After saving the changes, restart the terminal for changes to apply.
 
 Use `gem env` to view the current RubyGems environment:
 

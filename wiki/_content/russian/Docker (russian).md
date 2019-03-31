@@ -38,7 +38,7 @@
     *   [6.3 Ошибка инициализации графического драйвера: devmapper](#Ошибка_инициализации_графического_драйвера:_devmapper)
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
     *   [6.5 Неверная ссылка между устройствами в ядре 4.19.1](#Неверная_ссылка_между_устройствами_в_ядре_4.19.1)
-    *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
+    *   [6.6 Отсутствие CPUACCT в docker с Linux-ck](#Отсутствие_CPUACCT_в_docker_с_Linux-ck)
 *   [7 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [8 Смотрите также](#Смотрите_также)
 
@@ -395,15 +395,15 @@ dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid 
 
 ```
 
-Либо добавьте `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter")или поставьте версию 4.18.x, в которой [эта проблема](https://github.com/docker/for-linux/issues/480) решена. Больше информации в [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+Либо добавьте `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") или поставьте версию 4.18.x, в которой [эта проблема](https://github.com/docker/for-linux/issues/480) решена. Больше информации в [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
 
-### CPUACCT missing in docker with Linux-ck
+### Отсутствие CPUACCT в docker с Linux-ck
 
-In newer versions of [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) with 4.19, 4.20 seems general), a change to the MuQSS was made that disables the `CONFIG_CGROUP_CPUACCT` option from the kernel, which makes *some* usage of docker (`run` or `build`) to produce the following error:
+В новых версиях [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) кажется общей проблемой в версиях 4.19, 4.20), было сделано изменение в MuQSS, которое отключает опцию в ядре `CONFIG_CGROUP_CPUACCT`, что делает «некоторое» использование docker (`run` или `build`) вызывающим следующую ошибку:
 
  `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
 
-This error does not seems to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
+Эта ошибка, похоже, не влияет на демон docker, только на контейнеры. Читайте больше в [Linux-ck#CPUACCT отсутствует в docker](/index.php/Linux-ck#CPUACCT_отсутствует_в_docker "Linux-ck").
 
 ## Docker 0.9.0 — 1.2.x и LXC
 

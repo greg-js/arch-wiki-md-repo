@@ -184,7 +184,7 @@ These applications support time, task and contacts management.
 
 *   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
 
-	[http://projecthamster.org/](http://projecthamster.org/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.org/](http://projecthamster.org/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **Kapow** — Punch clock to track time spent on projects.
 
@@ -298,7 +298,7 @@ These applications support time, task and contacts management.
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Easy quick task management app written in C#.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **Zanshin** — To-do management application based on Akonadi.
 
@@ -328,7 +328,7 @@ These applications support time, task and contacts management.
 
 *   **LDAP Administration Tool** — Browse LDAP-based directories and add/edit/delete entries contained within.
 
-	[https://sourceforge.net/projects/ldap-at/](https://sourceforge.net/projects/ldap-at/) || [lat](https://www.archlinux.org/packages/?name=lat)
+	[https://sourceforge.net/projects/ldap-at/](https://sourceforge.net/projects/ldap-at/) || [lat](https://aur.archlinux.org/packages/lat/)
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Contacts** — Contacts app for Nextcloud.
 
@@ -348,7 +348,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **BillReminder** — Small and quick accounting application designed to allow for easy tracking of bills.
 
-	[https://gitlab.gnome.org/Archive/billreminder](https://gitlab.gnome.org/Archive/billreminder) || [billreminder](https://www.archlinux.org/packages/?name=billreminder)
+	[https://gitlab.gnome.org/Archive/billreminder](https://gitlab.gnome.org/Archive/billreminder) || [billreminder](https://aur.archlinux.org/packages/billreminder/)
 
 *   **Eqonomize!** — Cross-platform personal accounting software, with focus on efficiency and ease of use for the small household economy.
 
@@ -442,7 +442,7 @@ See also [Wikipedia:Comparison of project management software](https://en.wikipe
 
 *   **Planner** — Project management application for GNOME.
 
-	[https://wiki.gnome.org/Apps/Planner](https://wiki.gnome.org/Apps/Planner) || [planner](https://www.archlinux.org/packages/?name=planner)
+	[https://wiki.gnome.org/Apps/Planner](https://wiki.gnome.org/Apps/Planner) || [planner](https://aur.archlinux.org/packages/planner/)
 
 *   **[ProjectLibre](https://en.wikipedia.org/wiki/ProjectLibre "wikipedia:ProjectLibre")** — Project management software alternative to [Microsoft Project](https://en.wikipedia.org/wiki/Microsoft_Project "wikipedia:Microsoft Project").
 
@@ -510,7 +510,7 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 
 *   **GNU Typist** — Universal typing tutor.
 
-	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://www.archlinux.org/packages/?name=gtypist)
+	[https://www.gnu.org/software/gtypist/](https://www.gnu.org/software/gtypist/) || [gtypist](https://aur.archlinux.org/packages/gtypist/)
 
 *   **psani-profi** — Program that will teach you touchtyping (Czech).
 
@@ -554,7 +554,7 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 
 *   **Gourmet** — Simple but powerful recipe-managing application.
 
-	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://www.archlinux.org/packages/?name=gourmet)
+	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://aur.archlinux.org/packages/gourmet/)
 
 *   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
 
@@ -754,7 +754,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Full fledged dock application that makes opening common applications and managing windows easier and quicker.
 
-	[http://www.go-docky.com/](http://www.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://www.go-docky.com/](http://www.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
@@ -872,7 +872,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **Gnome-Pie** — Circular application launcher (pie menu) for Linux. It is made of several pies, each consisting of multiple slices.
 
@@ -1042,7 +1042,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **[gDesklets](https://en.wikipedia.org/wiki/gDesklets "wikipedia:gDesklets")** — System for bringing mini programs (desklets) onto your desktop.
 
-	[https://launchpad.net/gdesklets](https://launchpad.net/gdesklets) || [gdesklets](https://www.archlinux.org/packages/?name=gdesklets)
+	[https://launchpad.net/gdesklets](https://launchpad.net/gdesklets) || [gdesklets](https://aur.archlinux.org/packages/gdesklets/)
 
 *   **GPhotoFrame** — Photo frame gadget for the GNOME Desktop.
 
@@ -1054,7 +1054,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **[Screenlets](https://en.wikipedia.org/wiki/Screenlets "wikipedia:Screenlets")** — Widget framework that consists of small owner-drawn applications.
 
-	[https://launchpad.net/screenlets](https://launchpad.net/screenlets) || [screenlets-pack-basic](https://www.archlinux.org/packages/?name=screenlets-pack-basic)
+	[https://launchpad.net/screenlets](https://launchpad.net/screenlets) || [screenlets-pack-basic](https://aur.archlinux.org/packages/screenlets-pack-basic/)
 
 #### Desktop notifications
 

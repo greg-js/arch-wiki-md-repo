@@ -4,7 +4,7 @@ Gamin re-implementa a especificação do [FAM](/index.php/FAM_(Portugu%C3%AAs) "
 
 ## Instalação
 
-[Instale](/index.php/Instale "Instale") o pacote [gamin](https://www.archlinux.org/packages/?name=gamin).
+[Instale](/index.php/Instale "Instale") o pacote [gamin](https://aur.archlinux.org/packages/gamin/).
 
 ## Veja também
 

@@ -10,12 +10,16 @@ Lenovo ThinkPad X1 Carbon (X1C). There is also a touch version. Comes without op
 
 **Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Booting](#Booting)
     *   [1.1 Legacy-BIOS](#Legacy-BIOS)
     *   [1.2 UEFI](#UEFI)
-    *   [1.3 Hanging on "HWP enabled" message](#Hanging_on_.22HWP_enabled.22_message)
+    *   [1.3 Hanging on "HWP enabled" message](#Hanging_on_"HWP_enabled"_message)
 *   [2 Hardware](#Hardware)
     *   [2.1 Audio](#Audio)
         *   [2.1.1 Xbindkeys](#Xbindkeys)
@@ -29,11 +33,11 @@ Lenovo ThinkPad X1 Carbon (X1C). There is also a touch version. Comes without op
     *   [2.5 KMS](#KMS)
     *   [2.6 Webcam](#Webcam)
     *   [2.7 Fingerprint Reader](#Fingerprint_Reader)
-    *   [2.8 WWAN (Mobile broadband)](#WWAN_.28Mobile_broadband.29)
+    *   [2.8 WWAN (Mobile broadband)](#WWAN_(Mobile_broadband))
     *   [2.9 GPS](#GPS)
     *   [2.10 Keyboard backlight](#Keyboard_backlight)
     *   [2.11 Bluetooth](#Bluetooth)
-    *   [2.12 Mouse/Touchpad](#Mouse.2FTouchpad)
+    *   [2.12 Mouse/Touchpad](#Mouse/Touchpad)
     *   [2.13 Docking](#Docking)
 
 ## Booting
@@ -246,7 +250,7 @@ Run `sudo gpsd -b -N /dev/gps0`
 
 To test it `xgps`
 
-Or use e.g. [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps) in [AUR](/index.php/AUR "AUR").
+Or use e.g. [foxtrotgps](https://aur.archlinux.org/packages/foxtrotgps/) in [AUR](/index.php/AUR "AUR").
 
 See [this link](https://www.thinkwiki.org/wiki/Ericsson_H5321_gw_Mobile_Broadband_Module) for more info.
 

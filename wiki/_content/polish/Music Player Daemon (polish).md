@@ -1,30 +1,34 @@
 **MPD** (**M**usic **P**layer **D**aemon) jest to lekki i szybki odtwarzacz dźwięku działający na zasadzie serwer-klient. MPD uruchamia się w tle jako usługa systemowa (daemon). Posiada obsługę playlist, zarządza muzyką na podstawie bazy danych. Do obsługi potrzebny będzie jeden z klientów czyli program obsługujący serwer mpd.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja MPD](#Instalacja_MPD)
 *   [2 Konfiguracja MPD](#Konfiguracja_MPD)
     *   [2.1 Konfiguracja lokalna](#Konfiguracja_lokalna)
     *   [2.2 Konfiguracja globalna](#Konfiguracja_globalna)
         *   [2.2.1 Katalog muzyki](#Katalog_muzyki)
-        *   [2.2.2 Zmiana użytkownika](#Zmiana_u.C5.BCytkownika)
+        *   [2.2.2 Zmiana użytkownika](#Zmiana_użytkownika)
     *   [2.3 Wszystkie opcje konfiguracji](#Wszystkie_opcje_konfiguracji)
         *   [2.3.1 Pliki i katalogi](#Pliki_i_katalogi)
         *   [2.3.2 Podstawowe ustawienia MPD](#Podstawowe_ustawienia_MPD)
-        *   [2.3.3 Zachowywanie symbolicznych linków](#Zachowywanie_symbolicznych_link.C3.B3w)
-        *   [2.3.4 Zeroconf / Avahi](#Zeroconf_.2F_Avahi)
-        *   [2.3.5 Kontrola dostępu](#Kontrola_dost.C4.99pu)
-        *   [2.3.6 Wyjście dźwięku](#Wyj.C5.9Bcie_d.C5.BAwi.C4.99ku)
-        *   [2.3.7 Normalizacja lub obsługa replaygain](#Normalizacja_lub_obs.C5.82uga_replaygain)
-        *   [2.3.8 Wewnętrzne bufory MPD](#Wewn.C4.99trzne_bufory_MPD)
-        *   [2.3.9 Limitacja zasobów](#Limitacja_zasob.C3.B3w)
-        *   [2.3.10 Ustawienia TCP (keep alive)](#Ustawienia_TCP_.28keep_alive.29)
-        *   [2.3.11 Kodowanie znaków](#Kodowanie_znak.C3.B3w)
+        *   [2.3.3 Zachowywanie symbolicznych linków](#Zachowywanie_symbolicznych_linków)
+        *   [2.3.4 Zeroconf / Avahi](#Zeroconf_/_Avahi)
+        *   [2.3.5 Kontrola dostępu](#Kontrola_dostępu)
+        *   [2.3.6 Wyjście dźwięku](#Wyjście_dźwięku)
+        *   [2.3.7 Normalizacja lub obsługa replaygain](#Normalizacja_lub_obsługa_replaygain)
+        *   [2.3.8 Wewnętrzne bufory MPD](#Wewnętrzne_bufory_MPD)
+        *   [2.3.9 Limitacja zasobów](#Limitacja_zasobów)
+        *   [2.3.10 Ustawienia TCP (keep alive)](#Ustawienia_TCP_(keep_alive))
+        *   [2.3.11 Kodowanie znaków](#Kodowanie_znaków)
 *   [3 Klienty](#Klienty)
     *   [3.1 Konsola](#Konsola)
     *   [3.2 Graficzne](#Graficzne)
-    *   [3.3 Sieć](#Sie.C4.87)
-*   [4 Linki zewnętrzne](#Linki_zewn.C4.99trzne)
+    *   [3.3 Sieć](#Sieć)
+*   [4 Linki zewnętrzne](#Linki_zewnętrzne)
 
 ## Instalacja MPD
 
@@ -112,7 +116,7 @@ X-GNOME-Autostart-enabled=false
 
 ### Konfiguracja globalna
 
-**Warning:** Users of PulseAudio with a local mpd have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") in order to run mpd as its own user!
+**Warning:** Users of PulseAudio with a local mpd have to implement a [workaround](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_(with_separate_mpd_user) "Music Player Daemon/Tips and tricks") in order to run mpd as its own user!
 
 Domyślnie w Archu pliki MPD trzymane są tu: `/var/lib/mpd`; domyślny użytkownik to *mpd*.
 
@@ -367,7 +371,7 @@ Do obsługi MPD potrzebny jest oddzielny klient. Zobacz listę klientów na [mpd
 
 *   **gmpc** — Klient w GTK2\. Projektowany by być lekkim, łatwym, a przy okazji dostarczać wszystkie opcje MPD. Użytkownicy mogą wybierać kilka różnych metod przeglądania bazy muzycznej, rozszerzać opcje wtyczkami.
 
-	[http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client](http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
+	[http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client](http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client) || [gmpc](https://aur.archlinux.org/packages/gmpc/)
 
 *   **Cantata** — Bogaty w opcje, z dużą swobodą konfiguracji interfejsu, klient MPD dla KDE4
 

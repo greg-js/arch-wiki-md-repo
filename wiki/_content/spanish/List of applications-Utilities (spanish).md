@@ -300,7 +300,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Aplicación dock propiamente dicha que abre las aplicaciones más comunes y las ventanas de forma más fácil y rápida.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Ligero, panel de escritorio compatible NETWM.
 

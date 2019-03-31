@@ -23,7 +23,9 @@ iwd can work in standalone mode or in combination with comprehensive network man
         *   [2.1.4 Manage known networks](#Manage_known_networks)
 *   [3 WPA Enterprise](#WPA_Enterprise)
     *   [3.1 EAP-PWD](#EAP-PWD)
-    *   [3.2 TLS Based EAP Methods](#TLS_Based_EAP_Methods)
+    *   [3.2 EAP-PEAP](#EAP-PEAP)
+    *   [3.3 TLS Based EAP Methods](#TLS_Based_EAP_Methods)
+    *   [3.4 Other cases](#Other_cases)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
@@ -31,6 +33,7 @@ iwd can work in standalone mode or in combination with comprehensive network man
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
     *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
+    *   [5.3 Network device name varies from boot to boot](#Network_device_name_varies_from_boot_to_boot)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -157,6 +160,26 @@ Autoconnect=True
 
 If you do not want autoconnect to the AP you can set the option to False and connect manually to the access point via `iwctl`. The same applies to the password, if you do not want to store it plaintext leave the option out of the file and just connect to the enterprise AP.
 
+### EAP-PEAP
+
+Like EAP-PWD, you also need to create a `*essid*.8021x` in the folder. Before you proceed to write the configuration file, this is also a good time to find out which CA certificate your organization uses. This is an example configuration file that uses MSCHAPv2 password authentication:
+
+ `/var/lib/iwd/*essid*.8021x` 
+```
+[Security]
+EAP-Method=PEAP
+EAP-Identity=anonymous@realm.edu
+EAP-PEAP-CACert=/path/to/root.crt
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=johndoe@realm.edu
+EAP-PEAP-Phase2-Password=hunter2
+
+[Settings]
+Autoconnect=true
+```
+
+**Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt.
+
 ### TLS Based EAP Methods
 
 Until Linux kernel v4.20, to connect to EAP-TLS, EAP-TTLS, and EAP-PEAP, the kernel has to be patched. Edit the PKGBUILD for the kernel and add the following sources
@@ -186,7 +209,9 @@ $ updpkgsums
 
 and build the package.
 
-Example configuration files for these network types can be found in subdirectories here [https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests)
+### Other cases
+
+More example tests can be [found in the test cases](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests) of the upstream repository.
 
 ## Optional configuration
 
@@ -298,6 +323,16 @@ Restart=on-failure
 Then one can enable the `iwd@*device*.service` unit for the specific wireless *device*.
 
 See [FS#61367](https://bugs.archlinux.org/task/61367).
+
+### Network device name varies from boot to boot
+
+Since systemd 197, all network devices are renamed by systenmd/udevd on boot to have predictable names. [[3]](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) Unfortunately, if iwd is started before renaming is done, the network device will be blocked and renaming will fail. This causes an annoying issue when a network device name varies from boot to boot. The solution is to set a proper dependency for iwd to run after systemd/udevd. [[4]](https://lists.01.org/pipermail/iwd/2019-March/005837.html)
+
+ `/etc/systemd/system/iwd.service.d/override.conf` 
+```
+[Unit]
+After=systemd-udevd.service
+```
 
 ## See also
 

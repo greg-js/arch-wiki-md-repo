@@ -178,7 +178,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTEX "wikipedia:AUCTEX")** — Extensible package for writing and formatting TeX files in Emacs.
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK+-based editor.
 
@@ -356,7 +356,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Medit** — 编程专用。
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Leafpad "wikipedia:Xfce")** — Xfce 桌面环境自带的文本编辑器
 
@@ -392,7 +392,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Scribes** — 终极，最小，即简单与强悍的合体。
 
-	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
+	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://aur.archlinux.org/packages/scribes/)
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — 闭源，由 C++ 和 Python 编写而成，集成众多高级功能插件之大成，却难得地一直保持轻量流畅的高水准。
 
@@ -531,7 +531,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Pdf viewer/note taking application.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
 
@@ -667,7 +667,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **Cherrytree** — 阶层式笔记本程序，支持富文本，语法高亮，以 XML 或数据库文件储存数据。
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — 迁移 Tomboy 到 C++ 的一种尝试。
 
@@ -675,7 +675,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **KeepNote** — 支持富文本，跨平台的 GTK+ 笔记应用程序
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — 手动处理纷杂笔记的小程序，从属 [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/) 。
 
@@ -765,7 +765,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **Xournal** — an application for notetaking, sketching, keeping a journal using a stylus.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ### 参考书目管理
 

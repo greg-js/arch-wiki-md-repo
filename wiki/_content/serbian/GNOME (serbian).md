@@ -20,7 +20,11 @@ Od [GNOME: Desktop projekat slobodnog softvera](http://www.gnome.org/about/):
 
 Ovaj clanak pokriva GNOME desktop okruzenje.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacija](#Instalacija)
     *   [1.1 Baza](#Baza)
@@ -28,16 +32,16 @@ Ovaj clanak pokriva GNOME desktop okruzenje.
 *   [2 Daemoni i moduli koji su neophodni za GNOM](#Daemoni_i_moduli_koji_su_neophodni_za_GNOM)
 *   [3 Pokretanje GNOM-a](#Pokretanje_GNOM-a)
 *   [4 Dodela privilegija pod GNOM-om](#Dodela_privilegija_pod_GNOM-om)
-    *   [4.1 Gasenje/restartovanje privilegija](#Gasenje.2Frestartovanje_privilegija)
+    *   [4.1 Gasenje/restartovanje privilegija](#Gasenje/restartovanje_privilegija)
     *   [4.2 Privilegije za skaliranje procesora](#Privilegije_za_skaliranje_procesora)
-*   [5 GDM (GNOM menadzer ekrana)](#GDM_.28GNOM_menadzer_ekrana.29)
+*   [5 GDM (GNOM menadzer ekrana)](#GDM_(GNOM_menadzer_ekrana))
     *   [5.1 Podesavanje](#Podesavanje)
     *   [5.2 Automatsko prijavljivanje](#Automatsko_prijavljivanje)
-    *   [5.3 Prijavljivanje bez sifre (predpredjivanje upozorenja za lozinku u GDM-u):](#Prijavljivanje_bez_sifre_.28predpredjivanje_upozorenja_za_lozinku_u_GDM-u.29:)
+    *   [5.3 Prijavljivanje bez sifre (predpredjivanje upozorenja za lozinku u GDM-u):](#Prijavljivanje_bez_sifre_(predpredjivanje_upozorenja_za_lozinku_u_GDM-u):)
     *   [5.4 Vise](#Vise)
     *   [5.5 GDM legat](#GDM_legat)
 *   [6 Ulepsavanje](#Ulepsavanje)
-*   [7 Mintmeni (Napredni [Alternativni] GNOME meni)](#Mintmeni_.28Napredni_.5BAlternativni.5D_GNOME_meni.29)
+*   [7 Mintmeni (Napredni [Alternativni] GNOME meni)](#Mintmeni_(Napredni_[Alternativni]_GNOME_meni))
 *   [8 XDG korisnicki direktorijumi](#XDG_korisnicki_direktorijumi)
 *   [9 Resavanje problema](#Resavanje_problema)
     *   [9.1 Generalno resenje](#Generalno_resenje)
@@ -194,7 +198,7 @@ Za podesavanje gksu koristite [Sudo](/index.php/Sudo "Sudo") pre nego [Su](/inde
 
 Proverite da li ste vec ispravno podesili [Sudo](/index.php/Sudo "Sudo").
 
-Instalirajte [gamin](https://www.archlinux.org/packages/?name=gamin) ako zelite da izmene na fajlovima budu odmah detektovane.
+Instalirajte [gamin](https://aur.archlinux.org/packages/gamin/) ako zelite da izmene na fajlovima budu odmah detektovane.
 
 Postoji mogucnost da vec imate instaliran FAM koji je zapostavljen. Ako ga imate instaliranog, uklonite ga kad budete upozoreni prilikom instaliranja gamin-a.
 
@@ -452,7 +456,7 @@ Sada, kada ste u System > Administration > Users and Groups (komanda: users-admi
 
 ### Vise
 
-Napomenimo da sa verzijom 1.6.1 xorg-server, `Ctrl+Alt+Backspace` NECE vise restartovati gdm. Za uputstvo za ponovno osposobljavanje ove opcije, pogledajte [Xorg#Ctrl-Alt-Backspace doesn't work](/index.php/Xorg#Ctrl-Alt-Backspace_doesn.27t_work "Xorg").
+Napomenimo da sa verzijom 1.6.1 xorg-server, `Ctrl+Alt+Backspace` NECE vise restartovati gdm. Za uputstvo za ponovno osposobljavanje ove opcije, pogledajte [Xorg#Ctrl-Alt-Backspace doesn't work](/index.php/Xorg#Ctrl-Alt-Backspace_doesn't_work "Xorg").
 
 Za vise informacija o grafickim prijavljivanjima (DM-ovi), pogledajte [ovau odlicnu stranu](http://endor.clublinux.org/RHCE-21.html).
 
@@ -553,7 +557,7 @@ $ mv ~/.gnome2/session ~/.gnome2/session.old
 
 ### GNOM lagovi
 
-Pogledajte [FAQ stranicu](/index.php/FAQ#Q.29_Why_is_Arch_so_slow.3F_Programs_open_slowly_or_do_not_run_at_all.21 "FAQ") za moguca resenja.
+Pogledajte [FAQ stranicu](/index.php/FAQ#Q.29_Why_is_Arch_so_slow?_Programs_open_slowly_or_do_not_run_at_all! "FAQ") za moguca resenja.
 
 Ako je gnom logovanje sporo, mozete da probate da onemogucite flopi jedinice u biosu. Ovo ce spreciti "flopi" modul da se ucitava i moze da smanji vreme logovanja.
 

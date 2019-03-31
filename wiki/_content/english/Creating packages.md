@@ -111,7 +111,9 @@ They contain *absolute* paths, which means you do not have to worry about your w
 
 ### PKGBUILD functions
 
-There are five functions, listed here in the order they are executed. Beside the fifth function, `package()`, which is required in every PKGBUILD, if one function does not exist it is simply skipped.
+When building a package, `makepkg` will invoke the following five functions if they have been defined in the PKGBUILD. Function `package()` is required in every PKGBUILD and will always be invoked. If any of the other functions is not defined, `makepkg` will simply skip the invocation of that function.
+
+During the build, the functions are invoked in the order in which they are listed here.
 
 #### prepare()
 

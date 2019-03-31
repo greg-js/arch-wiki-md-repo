@@ -333,10 +333,12 @@ The `myhostname` [Name Service Switch](/index.php/Name_Service_Switch "Name Serv
 
 Some clients may however still rely on `/etc/hosts`, see [[4]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
 
-To configure the hosts file, add the following line to `/etc/hosts`:
+To configure the hosts file, add the following lines to `/etc/hosts`:
 
 ```
-127.0.1.1	*myhostname*.localdomain	*myhostname*
+127.0.0.1        localhost.localdomain         localhost
+::1              localhost.localdomain         localhost
+127.0.1.1        *myhostname*.localdomain        *myhostname*
 
 ```
 
@@ -346,8 +348,9 @@ As a result the system resolves to both entries:
 
  `$ getent hosts` 
 ```
-127.0.0.1       localhost
-127.0.1.1       *myhostname*.localdomain	*myhostname*
+127.0.0.1       localhost.localdomain localhost
+127.0.0.1       localhost.localdomain localhost
+127.0.1.1       *myhostname*.localdomain *myhostname*
 
 ```
 

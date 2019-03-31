@@ -391,7 +391,7 @@ template1 | postgres | UTF8      | C         | C     |
 
 *   **pgAdmin** — Comprehensive design and management GUI for PostgreSQL.
 
-	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3) or [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
+	[https://www.pgadmin.org/](https://www.pgadmin.org/) || [pgadmin3](https://aur.archlinux.org/packages/pgadmin3/) or [pgadmin4](https://www.archlinux.org/packages/?name=pgadmin4)
 
 *   **pgModeler** — Graphical schema designer for PostgreSQL.
 

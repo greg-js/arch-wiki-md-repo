@@ -569,7 +569,7 @@ Server = https://repo.nah.nz/$repo
 
 ### origincode
 
-*   **Maintainer:** [OriginCode](https://t.me/OriginCode)
+*   **Maintainer:** [OriginCode](https://aur.archlinux.org/account/OriginCode)
 *   **Description:** A few staging or testing packages from [Unofficial_user_repositories#archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories"), and some daily use packages.
 *   **Key-ID:** 5D80C1CC
 

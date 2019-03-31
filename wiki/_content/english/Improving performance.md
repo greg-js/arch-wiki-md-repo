@@ -376,7 +376,7 @@ The performance of the Mesa drivers can be configured via [drirc](https://dri.fr
 
 *   **DRIconf** — Configuration applet for the Direct Rendering Infrastructure. It allows customizing performance and visual quality settings of OpenGL drivers on a per-driver, per-screen and/or per-application level.
 
-	[https://dri.freedesktop.org/wiki/DriConf/](https://dri.freedesktop.org/wiki/DriConf/) || [driconf](https://www.archlinux.org/packages/?name=driconf)
+	[https://dri.freedesktop.org/wiki/DriConf/](https://dri.freedesktop.org/wiki/DriConf/) || [driconf](https://aur.archlinux.org/packages/driconf/)
 
 ### Overclocking
 

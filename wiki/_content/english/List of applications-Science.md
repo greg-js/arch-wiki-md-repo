@@ -410,7 +410,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **FoxtrotGPS** — Lightweight and fast mapping application.
 
-	[https://www.foxtrotgps.org/](https://www.foxtrotgps.org/) || [foxtrotgps](https://www.archlinux.org/packages/?name=foxtrotgps)
+	[https://www.foxtrotgps.org/](https://www.foxtrotgps.org/) || [foxtrotgps](https://aur.archlinux.org/packages/foxtrotgps/)
 
 *   **Gebabbel** — Alternative GUI for GPSBabel.
 

@@ -221,7 +221,7 @@ La definizione del **gartsize**, se non autorilevata, può essere effettuata agg
 
  `man radeon` 
 
-Un valido strumento da provare è [driconf](https://www.archlinux.org/packages/?name=driconf). Permette di modificare diverse configurazioni, come vsync, anisotropic filtering, texture compression, etc. Con questo utile strumento è anche possibile disabilitare il "Low Impact fallback" necessario ad alcuni programmi (es. Google Earth).
+Un valido strumento da provare è [driconf](https://aur.archlinux.org/packages/driconf/). Permette di modificare diverse configurazioni, come vsync, anisotropic filtering, texture compression, etc. Con questo utile strumento è anche possibile disabilitare il "Low Impact fallback" necessario ad alcuni programmi (es. Google Earth).
 
 ### Attivare PCI-E 2.0
 

@@ -13,7 +13,7 @@
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
 *   [Официальные репозитории#gnome-unstable](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8#gnome-unstable "Официальные репозитории")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 21 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=567043).
+**Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 28 марта 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=569299).
 
 [GNOME](https://en.wikipedia.org/wiki/ru:GNOME "wikipedia:ru:GNOME") (произностися как /(ɡ)noʊm/) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
@@ -256,6 +256,8 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 
 В отличие от других [менеджеров сети](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet"), которые могут быть также использованы, NetworkManager обеспечивает полную интеграцию через настройки сети оболочки и предоставляет апплет индикатора статуса [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (не требуется для GNOME).
 
+**Note:** Скрытые беспроводные сети, созданные с помощью *nmtui* (консольный интерфейс для [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)) не подключаются автоматически. Вы должны создать новый профиль в настройках GNOME для того, чтобы восстановить возможность автоподключения к этой сети.
+
 #### Сетевые учетные записи
 
 Бекенды для приложения обмена сообщениями GNOME [empathy](https://www.archlinux.org/packages/?name=empathy) и для Сетевых учетных записей GNOME, которые располагаются в Параметрах системы, находятся в отдельной группе: [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/). Смотрите [не удается добавить аккаунты в Empathy и Сетевые учетные записи GNOME](/index.php/GNOME/Troubleshooting#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts "GNOME/Troubleshooting"). Некоторые сетевые учетные записи, такие как [ownCloud](/index.php/OwnCloud "OwnCloud"), требуют установки [gvfs-goa](https://www.archlinux.org/packages/?name=gvfs-goa) для полной работоспособности в приложениях GNOME, таких как [GNOME Files](/index.php/GNOME_Files "GNOME Files") и GNOME Documents [[1]](https://wiki.gnome.org/ThreePointSeven/Features/Owncloud).
@@ -417,7 +419,7 @@ GNOME реализует [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart
 
 ##### Иконки на рабочем столе
 
-До GNOME 3.28 иконки на рабочем столе предоставлялись [Files](/index.php/GNOME/Files "GNOME/Files"). В GNOME 3.28 такая функциональность была удалена. Чтобы вернуть эту функциональность, можно использовать [Nemo](/index.php/Nemo "Nemo") (форк Files, у которого есть данная функция) или установить расширение [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/), которое частично воспроизводит такие иконки на рабочем столе, какие были в GNOME 3.26 и ниже. Для большей информации смотрите тему форума - [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633)
+До GNOME 3.28 иконки на рабочем столе предоставлялись [Files](/index.php/GNOME/Files "GNOME/Files"). В GNOME 3.28 такая функциональность была удалена. Чтобы вернуть эту функциональность, можно использовать [Nemo](/index.php/Nemo "Nemo") (форк Files, у которого есть данная функция) или установить расширение [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/), которое воспроизводит такие иконки на рабочем столе, какие были в GNOME 3.26 и ниже, но с некоторыми отличиями. Для большей информации смотрите тему форума - [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633)
 
 ##### Фон экрана блокировки и рабочего стола
 

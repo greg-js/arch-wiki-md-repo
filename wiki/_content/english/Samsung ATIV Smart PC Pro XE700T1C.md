@@ -110,4 +110,4 @@ The tablet has an USB por so you can put a keyoard or a combo keyboard. With blu
 
 If you have installed the wacom driver, the stylus works fine.
 
-I use [xournal](https://www.archlinux.org/packages/?name=xournal) for writing notes, and found enabling, "Use XInput", "Eraser Tip" and "Pressure sensitivity", as well as setting "Button 3 Mapping" to "Eraser" gave the best, and expected results.
+I use [xournal](https://aur.archlinux.org/packages/xournal/) for writing notes, and found enabling, "Use XInput", "Eraser Tip" and "Pressure sensitivity", as well as setting "Button 3 Mapping" to "Eraser" gave the best, and expected results.

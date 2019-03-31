@@ -1,6 +1,10 @@
 [Clam AntiVirus](https://www.clamav.net) is an open source (GPL) anti-virus toolkit for UNIX. It provides a number of utilities including a flexible and scalable multi-threaded daemon, a command line scanner and advanced tool for automatic database updates. Because ClamAV's main use is on file/mail servers for Windows desktops, it primarily detects Windows viruses and malware with its built-in signatures.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Updating database](#Updating_database)
@@ -18,6 +22,8 @@
     *   [9.3 Error: Can't create temporary directory](#Error:_Can't_create_temporary_directory)
 *   [10 Tips and tricks](#Tips_and_tricks)
     *   [10.1 Run in multiple threads](#Run_in_multiple_threads)
+        *   [10.1.1 Using clamscan](#Using_clamscan)
+        *   [10.1.2 Using clamdscan](#Using_clamdscan)
 *   [11 See also](#See_also)
 
 ## Installation
@@ -308,25 +314,29 @@ Correct permissions:
 
 ### Run in multiple threads
 
-When scanning a file or directory from command line using either `clamscan` or `clamdscan`, only single CPU thread is used to scan the files one-by-one. This may be ok in cases when you don't want your computer to become sluggish while the scan is going on, but if you want to scan a large folder or a USB drive quickly, you may want to use all available CPUs to speed up the process.
+#### Using clamscan
 
-`clamscan` is designed to be single-threaded, so you'd need to use something like `xargs` to run the scan in parallel:
+When scanning a file or directory from command line using `clamscan` only single CPU thread is used. This may be ok in cases when timing is not critical or you don't want computer to become sluggish. If there is a need to scan large folder or USB drive quickly you may want to use all available CPUs to speed up the process.
+
+`clamscan` is designed to be single-threaded, so `xargs` can be used to run the scan in parallel:
 
 ```
-$ find /home/archie -type f -print | xargs -P 2 clamscan
+$ find /home/archie -type f -print | xargs -P $(nproc) clamscan
 
 ```
 
-In this example the `-P` parameter for `xargs` runs `clamscan` in up-to 2 processes at the same time. If you have more CPUs available adjust this parameter accordingly. `--max-lines` and `--max-args` options will allow even finer control of batching the workload across the threads.
+In this example the `-P` parameter for `xargs` runs `clamscan` in as many processes as there are CPUs (reported by `nproc` at the same time. `--max-lines` and `--max-args` options will allow even finer control of batching the workload across the threads.
 
 Use the following version if filenames may contain spaces or other special characters (as USB and ex-Windows drives frequently do):
 
 ```
-$ find /home/archie -type f -print0 | xargs -0 -P 2 clamscan
+$ find /home/archie -type f -print0 | xargs -0 -P $(nproc) clamscan
 
 ```
 
-`clamdscan` uses `clamd` daemon to perform scanning. You need to start the `clamd` daemon first (see [#Starting the daemon](#Starting_the_daemon)) and then run the following command:
+#### Using clamdscan
+
+If you already have `clamd` daemon running `clamdscan` can be used instead (see [#Starting the daemon](#Starting_the_daemon)):
 
 ```
 $ clamdscan --multiscan --fdpass /home/archie

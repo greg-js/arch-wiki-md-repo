@@ -8,102 +8,117 @@ Related articles
 
 [网络管理器](http://projects.gnome.org/NetworkManager/)(NetworManager)是检测网络、自动连接网络的程序。无论是无线还是有线连接，它都可以令您轻松管理。对于无线网络,网络管理器优先连接已知的网络并可以自动切换到最可靠的无线网络。利用网络管理器的程序可以自由切换在线和离线模式。网络管理器会相对无线网络优先选择有线网络，支持 VPN。网络管理器最初由 Redhat 公司开发，现在由 [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 管理。
 
-**警告:** 请注意, Wi-Fi 的密码默认情况下是明文保存的。参见 [#加密的Wi-Fi密码](#.E5.8A.A0.E5.AF.86.E7.9A.84Wi-Fi.E5.AF.86.E7.A0.81)
+**警告:** 请注意, Wi-Fi 的密码默认情况下是明文保存的。参见 [#加密的Wi-Fi密码](#加密的Wi-Fi密码)
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 VPN 支持](#VPN_.E6.94.AF.E6.8C.81)
-    *   [1.2 PPPoE / DSL 支持](#PPPoE_.2F_DSL_.E6.94.AF.E6.8C.81)
-*   [2 前端](#.E5.89.8D.E7.AB.AF)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 移动网络支持](#移动网络支持)
+    *   [1.2 VPN 支持](#VPN_支持)
+    *   [1.3 PPPoE / DSL 支持](#PPPoE_/_DSL_支持)
+*   [2 前端](#前端)
     *   [2.1 GNOME](#GNOME)
     *   [2.2 KDE Plasma](#KDE_Plasma)
     *   [2.3 nm-applet](#nm-applet)
         *   [2.3.1 Appindicator](#Appindicator)
-    *   [2.4 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
+    *   [2.4 命令行](#命令行)
         *   [2.4.1 nmcli](#nmcli)
         *   [2.4.2 nmtui](#nmtui)
         *   [2.4.3 nmcli-dmenu](#nmcli-dmenu)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 启用 NetworkManager](#.E5.90.AF.E7.94.A8_NetworkManager)
-    *   [3.2 设置 PolicyKit 权限](#.E8.AE.BE.E7.BD.AE_PolicyKit_.E6.9D.83.E9.99.90)
-    *   [3.3 使用 NetworkManager 调度网络服务](#.E4.BD.BF.E7.94.A8_NetworkManager_.E8.B0.83.E5.BA.A6.E7.BD.91.E7.BB.9C.E6.9C.8D.E5.8A.A1)
-        *   [3.3.1 避免超时](#.E9.81.BF.E5.85.8D.E8.B6.85.E6.97.B6)
-        *   [3.3.2 启动 OpenNTPD](#.E5.90.AF.E5.8A.A8_OpenNTPD)
-        *   [3.3.3 使用sshfs挂载远程文件夹](#.E4.BD.BF.E7.94.A8sshfs.E6.8C.82.E8.BD.BD.E8.BF.9C.E7.A8.8B.E6.96.87.E4.BB.B6.E5.A4.B9)
-        *   [3.3.4 使用 dispatcher 在网络连接建立后连接 vpn](#.E4.BD.BF.E7.94.A8_dispatcher_.E5.9C.A8.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5.E5.BB.BA.E7.AB.8B.E5.90.8E.E8.BF.9E.E6.8E.A5_vpn)
-    *   [3.4 代理设置](#.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
-    *   [3.5 禁用 NetworkManager](#.E7.A6.81.E7.94.A8_NetworkManager)
-*   [4 测试](#.E6.B5.8B.E8.AF.95)
-*   [5 常见问题](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98)
-    *   [5.1 安全Wi-Fi网络不提示输入密码](#.E5.AE.89.E5.85.A8Wi-Fi.E7.BD.91.E7.BB.9C.E4.B8.8D.E6.8F.90.E7.A4.BA.E8.BE.93.E5.85.A5.E5.AF.86.E7.A0.81)
-    *   [5.2 PPTP 通道中无流量](#PPTP_.E9.80.9A.E9.81.93.E4.B8.AD.E6.97.A0.E6.B5.81.E9.87.8F)
-    *   [5.3 网络管理功能失效](#.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86.E5.8A.9F.E8.83.BD.E5.A4.B1.E6.95.88)
-    *   [5.4 定制resolv.conf](#.E5.AE.9A.E5.88.B6resolv.conf)
-    *   [5.5 使用 resolv.conf.head 和 resolv.conf.tail](#.E4.BD.BF.E7.94.A8_resolv.conf.head_.E5.92.8C_resolv.conf.tail)
-    *   [5.6 在resolv.conf中保留改动](#.E5.9C.A8resolv.conf.E4.B8.AD.E4.BF.9D.E7.95.99.E6.94.B9.E5.8A.A8)
-    *   [5.7 使用dhclient时的DHCP问题](#.E4.BD.BF.E7.94.A8dhclient.E6.97.B6.E7.9A.84DHCP.E9.97.AE.E9.A2.98)
-    *   [5.8 主机名问题](#.E4.B8.BB.E6.9C.BA.E5.90.8D.E9.97.AE.E9.A2.98)
-    *   [5.9 配置dhclient把主机名推送到DHCP服务器](#.E9.85.8D.E7.BD.AEdhclient.E6.8A.8A.E4.B8.BB.E6.9C.BA.E5.90.8D.E6.8E.A8.E9.80.81.E5.88.B0DHCP.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [5.10 配置NetworkManager使用一个特性的DHCP客户端](#.E9.85.8D.E7.BD.AENetworkManager.E4.BD.BF.E7.94.A8.E4.B8.80.E4.B8.AA.E7.89.B9.E6.80.A7.E7.9A.84DHCP.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [5.11 缺少默认路由 route](#.E7.BC.BA.E5.B0.91.E9.BB.98.E8.AE.A4.E8.B7.AF.E7.94.B1_route)
-    *   [5.12 没有探测到 3G 模块](#.E6.B2.A1.E6.9C.89.E6.8E.A2.E6.B5.8B.E5.88.B0_3G_.E6.A8.A1.E5.9D.97)
-    *   [5.13 在笔记本上关闭WLAN](#.E5.9C.A8.E7.AC.94.E8.AE.B0.E6.9C.AC.E4.B8.8A.E5.85.B3.E9.97.ADWLAN)
-    *   [5.14 静态 IP 设置 变成 DHCP](#.E9.9D.99.E6.80.81_IP_.E8.AE.BE.E7.BD.AE_.E5.8F.98.E6.88.90_DHCP)
-    *   [5.15 普通用户无法编辑链接](#.E6.99.AE.E9.80.9A.E7.94.A8.E6.88.B7.E6.97.A0.E6.B3.95.E7.BC.96.E8.BE.91.E9.93.BE.E6.8E.A5)
-    *   [5.16 删除隐蔽无线网络链接](#.E5.88.A0.E9.99.A4.E9.9A.90.E8.94.BD.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E9.93.BE.E6.8E.A5)
-    *   [5.17 GNOME VPN失效问题](#GNOME_VPN.E5.A4.B1.E6.95.88.E9.97.AE.E9.A2.98)
+*   [3 配置](#配置)
+    *   [3.1 启用 NetworkManager](#启用_NetworkManager)
+    *   [3.2 设置 PolicyKit 权限](#设置_PolicyKit_权限)
+    *   [3.3 使用 NetworkManager 调度网络服务](#使用_NetworkManager_调度网络服务)
+        *   [3.3.1 避免超时](#避免超时)
+        *   [3.3.2 启动 OpenNTPD](#启动_OpenNTPD)
+        *   [3.3.3 使用sshfs挂载远程文件夹](#使用sshfs挂载远程文件夹)
+        *   [3.3.4 使用 dispatcher 在网络连接建立后连接 vpn](#使用_dispatcher_在网络连接建立后连接_vpn)
+    *   [3.4 代理设置](#代理设置)
+    *   [3.5 禁用 NetworkManager](#禁用_NetworkManager)
+*   [4 测试](#测试)
+*   [5 常见问题](#常见问题)
+    *   [5.1 安全Wi-Fi网络不提示输入密码](#安全Wi-Fi网络不提示输入密码)
+    *   [5.2 PPTP 通道中无流量](#PPTP_通道中无流量)
+    *   [5.3 网络管理功能失效](#网络管理功能失效)
+    *   [5.4 定制resolv.conf](#定制resolv.conf)
+    *   [5.5 使用 resolv.conf.head 和 resolv.conf.tail](#使用_resolv.conf.head_和_resolv.conf.tail)
+    *   [5.6 在resolv.conf中保留改动](#在resolv.conf中保留改动)
+    *   [5.7 使用dhclient时的DHCP问题](#使用dhclient时的DHCP问题)
+    *   [5.8 主机名问题](#主机名问题)
+    *   [5.9 配置dhclient把主机名推送到DHCP服务器](#配置dhclient把主机名推送到DHCP服务器)
+    *   [5.10 配置NetworkManager使用一个特性的DHCP客户端](#配置NetworkManager使用一个特性的DHCP客户端)
+    *   [5.11 缺少默认路由 route](#缺少默认路由_route)
+    *   [5.12 没有探测到 3G 模块](#没有探测到_3G_模块)
+    *   [5.13 在笔记本上关闭WLAN](#在笔记本上关闭WLAN)
+    *   [5.14 静态 IP 设置 变成 DHCP](#静态_IP_设置_变成_DHCP)
+    *   [5.15 普通用户无法编辑链接](#普通用户无法编辑链接)
+    *   [5.16 删除隐蔽无线网络链接](#删除隐蔽无线网络链接)
+    *   [5.17 GNOME VPN失效问题](#GNOME_VPN失效问题)
     *   [5.18 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [5.19 引导时自动连接到VPN不工作](#.E5.BC.95.E5.AF.BC.E6.97.B6.E8.87.AA.E5.8A.A8.E8.BF.9E.E6.8E.A5.E5.88.B0VPN.E4.B8.8D.E5.B7.A5.E4.BD.9C)
-    *   [5.20 dhcpd不断地拒绝租约](#dhcpd.E4.B8.8D.E6.96.AD.E5.9C.B0.E6.8B.92.E7.BB.9D.E7.A7.9F.E7.BA.A6)
-    *   [5.21 Systemd瓶颈](#Systemd.E7.93.B6.E9.A2.88)
-    *   [5.22 网络(WiFi)经常有规律地断开](#.E7.BD.91.E7.BB.9C.28WiFi.29.E7.BB.8F.E5.B8.B8.E6.9C.89.E8.A7.84.E5.BE.8B.E5.9C.B0.E6.96.AD.E5.BC.80)
-*   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [6.1 加密的Wi-Fi密码](#.E5.8A.A0.E5.AF.86.E7.9A.84Wi-Fi.E5.AF.86.E7.A0.81)
-    *   [6.2 通过Wi-Fi共享网络连接](#.E9.80.9A.E8.BF.87Wi-Fi.E5.85.B1.E4.BA.AB.E7.BD.91.E7.BB.9C.E8.BF.9E.E6.8E.A5)
+    *   [5.19 引导时自动连接到VPN不工作](#引导时自动连接到VPN不工作)
+    *   [5.20 dhcpd不断地拒绝租约](#dhcpd不断地拒绝租约)
+    *   [5.21 Systemd瓶颈](#Systemd瓶颈)
+    *   [5.22 网络(WiFi)经常有规律地断开](#网络(WiFi)经常有规律地断开)
+*   [6 提示与技巧](#提示与技巧)
+    *   [6.1 加密的Wi-Fi密码](#加密的Wi-Fi密码)
+    *   [6.2 通过Wi-Fi共享网络连接](#通过Wi-Fi共享网络连接)
         *   [6.2.1 Ad-hoc](#Ad-hoc)
         *   [6.2.2 Real AP](#Real_AP)
-    *   [6.3 通过Ethernet共享连接](#.E9.80.9A.E8.BF.87Ethernet.E5.85.B1.E4.BA.AB.E8.BF.9E.E6.8E.A5)
-    *   [6.4 在cron任务（jobs）或脚本中检查网络是否连接](#.E5.9C.A8cron.E4.BB.BB.E5.8A.A1.EF.BC.88jobs.EF.BC.89.E6.88.96.E8.84.9A.E6.9C.AC.E4.B8.AD.E6.A3.80.E6.9F.A5.E7.BD.91.E7.BB.9C.E6.98.AF.E5.90.A6.E8.BF.9E.E6.8E.A5)
-    *   [6.5 登陆后自动解锁秘钥环](#.E7.99.BB.E9.99.86.E5.90.8E.E8.87.AA.E5.8A.A8.E8.A7.A3.E9.94.81.E7.A7.98.E9.92.A5.E7.8E.AF)
+    *   [6.3 通过Ethernet共享连接](#通过Ethernet共享连接)
+    *   [6.4 在cron任务（jobs）或脚本中检查网络是否连接](#在cron任务（jobs）或脚本中检查网络是否连接)
+    *   [6.5 登陆后自动解锁秘钥环](#登陆后自动解锁秘钥环)
         *   [6.5.1 GNOME](#GNOME_2)
-        *   [6.5.2 SLiM 登录管理器](#SLiM_.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [6.6 有密码认证的KDE and OpenConnect VPN](#.E6.9C.89.E5.AF.86.E7.A0.81.E8.AE.A4.E8.AF.81.E7.9A.84KDE_and_OpenConnect_VPN)
-    *   [6.7 忽略特定设备](#.E5.BF.BD.E7.95.A5.E7.89.B9.E5.AE.9A.E8.AE.BE.E5.A4.87)
-    *   [6.8 启用DNS缓存](#.E5.90.AF.E7.94.A8DNS.E7.BC.93.E5.AD.98)
-    *   [6.9 启用IPv6隐私扩展](#.E5.90.AF.E7.94.A8IPv6.E9.9A.90.E7.A7.81.E6.89.A9.E5.B1.95)
-*   [7 其它资源](#.E5.85.B6.E5.AE.83.E8.B5.84.E6.BA.90)
+        *   [6.5.2 SLiM 登录管理器](#SLiM_登录管理器)
+    *   [6.6 有密码认证的KDE and OpenConnect VPN](#有密码认证的KDE_and_OpenConnect_VPN)
+    *   [6.7 忽略特定设备](#忽略特定设备)
+    *   [6.8 启用DNS缓存](#启用DNS缓存)
+    *   [6.9 启用IPv6隐私扩展](#启用IPv6隐私扩展)
+*   [7 其它资源](#其它资源)
 
 ## 安装
 
-网络管理器可以通过[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)包[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。这个包不包括托盘插件*nm-applet*,此插件是[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)包的一部分。从1.0版本开始，网络管理内部获得了对基本DHCP功能的支持。对于全功能的DHCP或者如果你需要IPV6支持，[dhclient](https://www.archlinux.org/packages/?name=dhclient) 集成了这些功能。
+NetworkManager可以通过[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)包[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")。这个包包括了一个daemon、一个命令行界面(`nmcli`)和一个基于curses的界面(`nmtui`)。NetworkManager支持基本的DHCP功能。对于全功能的DHCP和IPV6支持，请安装[dhclient](https://www.archlinux.org/packages/?name=dhclient) 。安装好之后你需要[启用daemon](#启用_NetworkManager)。
 
-```
-# pacman -Syu networkmanager
+额外的用户界面：
 
-```
+*   [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor)，提供图形界面，
+*   [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)，提供系统托盘图标(`nm-applet`)。
 
-**Note:** 你必须确保没有其他想要配置网络相关的服务正在运行; 事实上, 多个网络配置服务之间会相互冲突。如果想知道当前有哪些服务正在运行, 可以运行 `systemctl --type=service` 然后 [停止](/index.php/Systemd#Using_units "Systemd") 多余的网络配置服务。参见 [#配置](#.E9.85.8D.E7.BD.AE) 来激活 NetworkManager 服务。
+**Note:** 你必须确保没有其他会对网络进行配置的服务正在运行;事实上, 多个网络配置服务之间会相互冲突。如果想知道当前有哪些服务正在运行, 可以运行 `systemctl --type=service` 然后 [停止](/index.php/Systemd#Using_units "Systemd") 多余的网络配置服务。参见 [#配置](#配置) 来激活 NetworkManager 服务。
+
+### 移动网络支持
+
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")[modemmanager](https://www.archlinux.org/packages/?name=modemmanager)、[mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info)和[usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch)来支持连接移动网络。详情参见[USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem")。
 
 ### VPN 支持
 
-NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 NetworkManager 来使用 VPN, 请安装以下任一软件包:
+从1.16版本开始NetworkManager对[WireGuard](/index.php/WireGuard "WireGuard")有原生支持[[1]](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/)。
 
-*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect)
-*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
-*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
-*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
+NetworkManager 对其他 VPN 的支持基于一个插件系统。请针对需要的VPN类型选择性安装以下的软件包:
 
-通过 [AUR](/index.php/AUR "AUR"):
-
+*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) for [OpenConnect](/index.php/OpenConnect "OpenConnect")
+*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) for [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) for [PPTP Client](/index.php/PPTP_Client "PPTP Client")
+*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) for [Vpnc](/index.php/Vpnc "Vpnc")
+*   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan) for [strongSwan](/index.php/StrongSwan "StrongSwan")
+*   [networkmanager-fortisslvpn-git](https://aur.archlinux.org/packages/networkmanager-fortisslvpn-git/)
+*   [networkmanager-iodine-git](https://aur.archlinux.org/packages/networkmanager-iodine-git/)
+*   [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
-*   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan)
+*   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
+*   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
 
-**警告:** VPN支持[不稳定](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn)，检查守护进程正确处理了通过GUI设置的选项，并对每一个发行包二次检查。[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+**警告:** VPN支持是[unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn)，请通过GUI检查daemon进程的选项是否正确设置了，并在每次更新之后再次检查。[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+
+**Note:** 为了在使用VPN的时候使用全功能的DNS，你应该设置[split DNS](/index.php/NetworkManager#DNS_caching_and_split_DNS "NetworkManager")。
 
 ### PPPoE / DSL 支持
 
-安装 [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) 来获得 PPPoE / DSL 连接支持。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) 来获得对 PPPoE / DSL 连接的支持。使用`nm-connection-editor`并添加一个新的DSL/PPPoE连接。
 
 ## 前端
 
@@ -111,7 +126,7 @@ NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 Netwo
 
 ### GNOME
 
-[GNOME](/index.php/GNOME "GNOME")在网络设置里拥有内置的工具。
+[GNOME](/index.php/GNOME "GNOME")在 *网络设置* 里有内置的配置工具。
 
 ### KDE Plasma
 
@@ -123,7 +138,7 @@ NetworkManager 的 VPN 支持基于一个插件系统。如果需要通过 Netwo
 
 存储连接密码，安装并配置 [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")。
 
-注意对某个连接启用了勾选框选项 `对其他用户可用` 时，NetworkManager将密码明文存储，即使相应的文件只能被root访问（或者其他使用 `nm-applet` 的用户）。参照 [#加密的Wi-Fi密码](#.E5.8A.A0.E5.AF.86.E7.9A.84Wi-Fi.E5.AF.86.E7.A0.81)。
+注意对某个连接启用了勾选框选项 `对其他用户可用` 时，NetworkManager将密码明文存储，即使相应的文件只能被root访问（或者其他使用 `nm-applet` 的用户）。参照 [#加密的Wi-Fi密码](#加密的Wi-Fi密码)。
 
 在没有系统托盘的情况下运行 `nm-applet`，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或者 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。比如，你可以在自己的路径中添加这样的脚本：
 
@@ -138,7 +153,7 @@ killall nm-applet
 
 当关闭了 *stalonetray* 窗口，就也关闭了 `nm-applet`，所以当完成网络配置后就没有额外的内存消耗了。
 
-此小程序可以显示一些事件的消息，比如连接或断开WiFi。为了显示这些消息，确保你已安装了一个消息服务器 - 参照 [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")。如果你在没有消息服务器的情况下使用，消息可能会出现在stdout/stderr，程序也有可能挂起。参照 [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313)。
+此小程序可以显示一些事件的消息，比如连接或断开WiFi。为了显示这些消息，确保你已安装了一个消息服务器 - 参照 [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")。如果你在没有消息服务器的情况下使用，消息可能会出现在stdout/stderr，程序也有可能挂起。参照 [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313)。
 
 为了在消息服务被禁用的情况下使用 `nm-applet`，用以下命令运行程序：
 
@@ -196,7 +211,7 @@ NetworkManager 需要做这么几步保证正常运行。确保你`/etc/hosts`�
 
 ### 启用 NetworkManager
 
-NetworkManager通过`NetworkManager.service`[控制](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。 NetworkManager 守护进程启动后，会自动连接到任何可用的已经配置的**系统连接**。**用户连接**或未配置的连接需要通过`nmcli`或桌面工具进行配置和连接。
+NetworkManager通过`NetworkManager.service`[控制](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)")。 NetworkManager 守护进程启动后，会自动连接到任何可用的已经配置的**系统连接**。**用户连接**或未配置的连接需要通过`nmcli`或桌面工具进行配置和连接。
 
 开机启用 NetworkManager：
 
@@ -332,7 +347,7 @@ esac
 
 ```
 
-如果想在任意 Wi-Fi 网络都可以自动连接 VPN, 你可以用这样给 ESSID 赋值: `ESSID=$(iwgetid -r)`。记住要给脚本设置相应的权限, 参见 [上文](#.E7.BD.91.E7.BB.9C.E5.88.86.E9.85.8D.E5.99.A8)。
+如果想在任意 Wi-Fi 网络都可以自动连接 VPN, 你可以用这样给 ESSID 赋值: `ESSID=$(iwgetid -r)`。记住要给脚本设置相应的权限, 参见 [上文](#网络分配器)。
 
 如果想任意用户都能使用 VPN, 即使已经在 `nm-applet` 中勾选了 *Make the VPN connection available to all users* 选项, 由于 [VPN secrets 保管方式的原因](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), 连接依然可能会失败并且 NetworkManager 会报错 'no valid VPN secrets'。这样就需要执行步骤2:
 

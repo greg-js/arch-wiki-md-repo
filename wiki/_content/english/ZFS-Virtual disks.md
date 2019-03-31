@@ -9,7 +9,11 @@ The examples in this article are shown with a set of virtual discs known in ZFS 
 
 **Note:** Using a file as a VDEV is a great method to play with ZFS but isn't viable strategy for storing "real" data.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install the ZFS Family of Packages](#Install_the_ZFS_Family_of_Packages)
 *   [2 Creating and Destroying Zpools](#Creating_and_Destroying_Zpools)
@@ -527,17 +531,17 @@ zpool/docs@004      0      -  8.17M  -
 
 If your system is not configured to load the zfs pool upon boot, or for whatever reason you want to manually remove and add back the pool, or if you have lost your pool completely, a convenient way is to use import/export.
 
-If your pool was named <pool>
+If your pool was named <zpool>
 
 ```
-# zpool import pool
+# zpool import -d /scratch zpool
 
 ```
 
 If you have any problems accessing your pool at any time, try export and reimport.
 
 ```
-# zfs export pool
-# zfs import pool
+# zpool export zpool
+# zpool import -d /scratch zpool
 
 ```

@@ -6,7 +6,11 @@ Related articles
 
 [Lenovo ThinkPad X230](http://www.lenovo.com/hk/en/productcatalog/pdf/X230-datasheet.pdf)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Kernel](#Kernel)
@@ -20,8 +24,8 @@ Related articles
 *   [2 USB BIOS update](#USB_BIOS_update)
 *   [3 Power Saving](#Power_Saving)
     *   [3.1 TLP](#TLP)
-*   [4 x230T (tablet version)](#x230T_.28tablet_version.29)
-    *   [4.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_.28tablet_version.29)
+*   [4 x230T (tablet version)](#x230T_(tablet_version))
+    *   [4.1 Multitouch screen for the x230t (tablet version)](#Multitouch_screen_for_the_x230t_(tablet_version))
     *   [4.2 Wacom tablet input](#Wacom_tablet_input)
 *   [5 Not Working](#Not_Working)
 *   [6 See also](#See_also)
@@ -115,7 +119,7 @@ There is an issue with system shutdown with power saving tools that cannot disti
 # /etc/rc.local.shutdown: Local shutdown script.
 # A script to act as a workaround for the bug in the runtime power management module, which causes thinkpad laptops to restart after shutting down. 
 # Bus list for the runtime power management module.
-buslist="pci i2c"
+buslist="pci i2c usb"
 for bus in $buslist; do                                                             
   for i in /sys/bus/$bus/devices/*/power/control; do                              
     echo on > $i
@@ -137,6 +141,9 @@ Type=oneshot
 ExecStart=/etc/rc.local.shutdown
 StandardInput=tty
 RemainAfterExit=yes
+
+[Install]
+WantedBy=shutdown.target
 
 ```
 

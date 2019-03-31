@@ -2,7 +2,11 @@
 
 [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") 就是变更当前进程及其子进程的可见根路径。变更后，程序无法访问可见根目录外文件和命令。这个目录叫作 *chroot jail*。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 原因](#原因)
 *   [2 必要条件](#必要条件)

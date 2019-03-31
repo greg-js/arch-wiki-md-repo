@@ -317,7 +317,7 @@ Alternatively, you can install the [bluez-hid2hci](https://www.archlinux.org/pac
 
 ### hcitool scan: Device not found
 
-*   On some Dell laptops (e.g. Studio 15) you have to switch the Bluetooth mode from HID to HCI. Install the [bluez-hid2hci](https://www.archlinux.org/packages/?name=bluez-hid2hci) package, then [udev](/index.php/Udev "Udev") should do this automatically. Alternatively, you can run this command to switch to HCI manually:
+*   On some laptops (e.g. Dell Studio 15, Lenovo Thinkpad X1) you have to switch the Bluetooth mode from HID to HCI. Install the [bluez-hid2hci](https://www.archlinux.org/packages/?name=bluez-hid2hci) package, then [udev](/index.php/Udev "Udev") should do this automatically. Alternatively, you can run this command to switch to HCI manually:
 
 ```
 # /usr/lib/udev/hid2hci

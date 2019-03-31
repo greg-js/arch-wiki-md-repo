@@ -62,7 +62,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Cherrytree** — Applicazione per le note di tipo gerarchico, con supporto ad evidenziazione della sintassi e rich text. Immagazzina le informazioni in un file .xml singolo o in un database sqlite.
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — Porting sperimentale di Tomboy al C++.
 
@@ -70,7 +70,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **KeepNote** — Applicazione multipiattaforma GTK+ per le note, con supporto al rich text.
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Piccola applicazione utile per archiviare ed organizzare note di vario genere, parte della suite [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -136,7 +136,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Hamster** — Applicazione di monitoraggio volta ad aiutarvi a tenere traccia di quanto tempo avete speso durante la giornata sulle attività che si sceglie di seguire.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Programma per il calendario e gli appuntamenti, parte della suite KDE PIM.
 
@@ -164,7 +164,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque "wikipedia:Tasque")** — Semplice e veloce applicazione per la gestione delle attività, scritto in C Sharp.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **TkRemind** — Sofisticato calendario e reminder.
 
@@ -260,7 +260,7 @@ Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.p
 
 *   **dtach** — Programma che emula la funzione detach di [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Window manager a schermo intero che effettua la multiplazione di un terminale fisico
 
@@ -484,7 +484,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **medit** — Editor di testo per programmazione e dintorni
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Mousepad "wikipedia:Xfce")** — Veloce editor di testi per l'ambiente desktop Xfce.
 
@@ -642,7 +642,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con molti plugins, originariamente sviluppato per il desktop GNOME.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **Kupfer** — Comodo comando e uno strumento di accesso per il desktop GNOME che può lanciare applicazioni, aprire documenti e accedere a differenti tipi di oggetti e agire su di essi.
 

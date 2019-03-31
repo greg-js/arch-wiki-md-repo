@@ -4,7 +4,11 @@ Artículos relacionados
 *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
 *   [PHC](/index.php/PHC "PHC")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Herramientas del espacio de usuario](#Herramientas_del_espacio_de_usuario)
     *   [1.1 thermald](#thermald)
@@ -19,7 +23,7 @@ Artículos relacionados
 
 ### thermald
 
-[thermald](https://www.archlinux.org/packages/?name=thermald) es un demonio de Linux que previene el sobrecalentamiento del ordenador; controla y equilibra la temperatura utilizando los métodos de refrigeración disponibles en la máquina.
+[thermald](https://aur.archlinux.org/packages/thermald/) es un demonio de Linux que previene el sobrecalentamiento del ordenador; controla y equilibra la temperatura utilizando los métodos de refrigeración disponibles en la máquina.
 
 De manera predeterminada, monitorea la temperatura la UCP usando los sensores de temperatura digitales disponibles en la misma, y mantiene la temperatura de la UCP bajo control antes que la máquina tome una medida correctiva que resulte agresiva.
 

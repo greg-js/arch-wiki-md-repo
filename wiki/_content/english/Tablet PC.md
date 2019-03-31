@@ -429,7 +429,7 @@ So, when you want to enter an upper-case letter, use your gesture for the shift 
 
 ### Xournal
 
-[Xournal](http://xournal.sourceforge.net/) is an application for notetaking, sketching, and keeping a journal using a stylus. Xournal aims to provide superior graphical quality (subpixel resolution) and overall functionality. [xournal](https://www.archlinux.org/packages/?name=xournal) can be installed from the **extra** repository.
+[Xournal](http://xournal.sourceforge.net/) is an application for notetaking, sketching, and keeping a journal using a stylus. Xournal aims to provide superior graphical quality (subpixel resolution) and overall functionality. [xournal](https://aur.archlinux.org/packages/xournal/) can be installed from the **extra** repository.
 
 You can also extend the functionality of Xournal with patches, to enable things such as autosaving documents and inserting images. See [SourceForge](http://sourceforge.net/tracker/?group_id=163434&atid=827735) for links to all the available patches. To apply a patch, download the PKGBUILD for Xournal from the [ABS](/index.php/ABS "ABS"), and reference the article [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
 

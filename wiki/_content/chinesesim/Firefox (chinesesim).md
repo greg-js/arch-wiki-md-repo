@@ -138,7 +138,7 @@ about:plugins
 
 #### arch-firefox-search
 
-[arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search)为Firefox搜索框添加Arch相关内容的搜索引擎（AUR、wiki、论坛……)：
+[arch-firefox-search](https://aur.archlinux.org/packages/arch-firefox-search/)为Firefox搜索框添加Arch相关内容的搜索引擎（AUR、wiki、论坛……)：
 
 ```
 # pacman -S arch-firefox-search

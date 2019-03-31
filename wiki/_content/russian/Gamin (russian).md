@@ -6,7 +6,7 @@
 
 ```
 # pacman -Rdd fam
-# pacman -S [gamin](https://www.archlinux.org/packages/?name=gamin)
+# pacman -S [gamin](https://aur.archlinux.org/packages/gamin/)
 
 ```
 

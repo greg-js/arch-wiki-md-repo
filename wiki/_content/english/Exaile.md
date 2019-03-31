@@ -30,7 +30,7 @@ If you use [ALSA](/index.php/ALSA "ALSA") and want to use alsasink instead of th
 
 ### Playing audio CDs
 
-Exaile requires `python-cddb` to play audio cd's. The correct package for this is [cddb-py](https://www.archlinux.org/packages/?name=cddb-py).
+Exaile requires `python-cddb` to play audio cd's. The correct package for this is [cddb-py](https://aur.archlinux.org/packages/cddb-py/).
 
 ## Enabling multimedia keys irrespective of DE/WM
 

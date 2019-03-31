@@ -93,8 +93,6 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [aurman](https://aur.archlinux.org/packages/aurman/)
 <small>([discontinued](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Yes | Yes | Yes | Yes | [No](https://github.com/polygamma/aurman/issues/259) | Yes | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
 [--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | bash, fish | batch interaction 1/2, fetch PGP keys |
-| [yaourt](https://aur.archlinux.org/packages/yaourt/)
-<small>([discontinued](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [No](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Optional | Optional | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | bash, fish, zsh | [unclean build](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html), batch interaction 1 |
 
 ## Graphical
 

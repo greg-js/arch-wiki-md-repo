@@ -15,9 +15,42 @@ This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
 | Webcam | Working |
 | Card Reader | Untested |
 | Function/Multimedia Keys | Working |
-| [Power Management](#Power_Saving) | Working |
-| [EFI firmware updates](#EFI_firmware_updates) | Untested |
-| [Fingerprint reader](#Fingerprint_reader) | Not working |
+| [Power Management](#Power_Management) | Working |
+| [EFI Firmware Updates](#EFI_Firmware_Updates) | Working |
+| [Fingerprint Reader](#Fingerprint_Reader) | Not working |
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Suspend](#Suspend)
+*   [2 Hibernate](#Hibernate)
+*   [3 Graphics](#Graphics)
+*   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
+*   [5 Audio](#Audio)
+*   [6 Power Management](#Power_Management)
+*   [7 EFI Firmware Updates](#EFI_Firmware_Updates)
+*   [8 Fingerprint Reader](#Fingerprint_Reader)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Overheating](#Overheating)
+
+## Suspend
+
+## Hibernate
+
+## Graphics
+
+## Wifi and Bluetooth
+
+## Audio
+
+## Power Management
+
+## EFI Firmware Updates
+
+## Fingerprint Reader
 
 ## Troubleshooting
 

@@ -91,7 +91,7 @@ There are a number of other unofficial MATE applications that are contributed to
 
 *   **MATE Menu** — Advanced menu for MATE Panel, a fork of MintMenu.
 
-	[https://github.com/ubuntu-mate/mate-menu](https://github.com/ubuntu-mate/mate-menu) || [mate-menu](https://www.archlinux.org/packages/?name=mate-menu)
+	[https://github.com/ubuntu-mate/mate-menu](https://github.com/ubuntu-mate/mate-menu) || [mate-menu](https://aur.archlinux.org/packages/mate-menu/)
 
 *   **MATE Tweak** — Tweak tool for MATE, a fork of mintDesktop.
 

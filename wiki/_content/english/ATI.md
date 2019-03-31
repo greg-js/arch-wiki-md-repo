@@ -183,7 +183,7 @@ EndSection
 
 ```
 
-**Tip:** [driconf](https://www.archlinux.org/packages/?name=driconf) is a tool which allows several settings to be modified: vsync, anisotropic filtering, texture compression, etc. Using this tool it is also possible to "disable Low Impact fallback" needed by some programs (e.g. Google Earth).
+**Tip:** [driconf](https://aur.archlinux.org/packages/driconf/) is a tool which allows several settings to be modified: vsync, anisotropic filtering, texture compression, etc. Using this tool it is also possible to "disable Low Impact fallback" needed by some programs (e.g. Google Earth).
 
 ### Kernel parameters
 
@@ -594,7 +594,7 @@ There are three possible solutions:
 
 *   Try adding `pci=nomsi` to your boot loader [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 *   If this does not work, you can try adding `noapic` instead of `pci=nomsi`.
-*   If none of the above work, then you can try running `vblank_mode=0 glxgears` or `vblank_mode=1 glxgears` to see which one works for you, then install [driconf](https://www.archlinux.org/packages/?name=driconf) and set that option in `~/.drirc`.
+*   If none of the above work, then you can try running `vblank_mode=0 glxgears` or `vblank_mode=1 glxgears` to see which one works for you, then install [driconf](https://aur.archlinux.org/packages/driconf/) and set that option in `~/.drirc`.
 
 ### Cursor corruption after coming out of sleep
 

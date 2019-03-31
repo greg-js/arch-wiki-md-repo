@@ -142,7 +142,7 @@ If this does not fix the tearing, consider disabling Xfwm's compositor and using
 
 ### Horizontal line above dock windows
 
-Xfwm may incorrectly render shadows above some dock windows (e.g. [plank](https://www.archlinux.org/packages/?name=plank) or [docky](https://www.archlinux.org/packages/?name=docky)). This would result in a horizontal line across the screen. A workaround is to disable *Show shadows under dock windows* under *Settings > Window Manager Tweaks > Compositor*.
+Xfwm may incorrectly render shadows above some dock windows (e.g. [plank](https://www.archlinux.org/packages/?name=plank) or [docky](https://aur.archlinux.org/packages/docky/)). This would result in a horizontal line across the screen. A workaround is to disable *Show shadows under dock windows* under *Settings > Window Manager Tweaks > Compositor*.
 
 ## See also
 

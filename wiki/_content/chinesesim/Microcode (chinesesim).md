@@ -1,5 +1,3 @@
-**翻译状态：** 本文是英文页面 [Microcode](/index.php/Microcode "Microcode") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-21，点击[这里](https://wiki.archlinux.org/index.php?title=Microcode&diff=0&oldid=438585)可以查看翻译后英文页面的改动。
-
 处理器制造商发布对处理器[微码](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode")的稳定性和安全性更新。虽然微码可以通过BIOS进行更新，但Linux内核也可以在引导期间应用这些更新。这些更新提供了对系统稳定性至关重要的错误修复。如果没有这些更新，您可能会遇到虚假崩溃或难以跟踪的意外系统暂停。
 
 属于Intel Haswell和Broadwell处理器系列的CP US用户必须安装这些微代码更新，以确保系统稳定性。当然，所有用户都应该安装这些更新。

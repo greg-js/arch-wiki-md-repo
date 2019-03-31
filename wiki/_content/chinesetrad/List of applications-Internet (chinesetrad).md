@@ -369,7 +369,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 
@@ -635,7 +635,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client for the GNOME desktop inspired by [Irssi](/index.php/Irssi "Irssi").
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — GTK-based IRC client that works on both Linux and Windows.
 

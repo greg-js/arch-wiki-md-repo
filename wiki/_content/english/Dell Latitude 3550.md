@@ -1,6 +1,10 @@
 Intel Core i7-5500U Processor, NVIDIA GeForce 830M 2GB Graphics 15.6" FHD (1920x1080) Wide View Anti-Glare LED-backlit 8GB1 DDR3L at 1600MHz
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Hardware](#Hardware)
@@ -47,21 +51,21 @@ Detected modules
 
  `hwdetect --show-modules` 
 ```
- AGP      : intel-gtt 
- ACPI     : ac acpi_pad battery button fan processor thermal video 
- BLOCK    : scsi_mod sd_mod ahci libahci libata uvcvideo usb-common usbcore ehci-hcd ehci-pci xhci-hcd xhci-pci 
- CPUFREQ  : acpi-cpufreq pcc-cpufreq 
- CRYPTO   : aesni-intel aes-x86_64 crc32c-intel crc32-pclmul crct10dif-pclmul ghash-clmulni-intel glue_helper ablk_helper cryptd gf128mul lrw 
- DRM      : drm_kms_helper drm i915 
- HWMON    : coretemp hwmon 
- I2C      : i2c-algo-bit i2c-designware-core i2c-designware-platform i2c-i801 i2c-core 
- INPUT    : evdev joydev atkbd mousedev psmouse i8042 libps2 serio serio_raw sparse-keymap hid i2c-hid 
- KVM      : kvm-intel kvm 
- MEDIA    : media uvcvideo v4l2-common videobuf2-core videobuf2-memops videobuf2-vmalloc videodev 
- NET      : r8169 mii iwlwifi rfkill cfg80211 
- SOUND    : pcspkr snd-hwdep snd snd-pcm snd-timer snd-hda-codec snd-hda-controller snd-hda-intel soundcore 
+ AGP      : intel-gtt 
+ ACPI     : ac acpi_pad battery button fan processor thermal video 
+ BLOCK    : scsi_mod sd_mod ahci libahci libata uvcvideo usb-common usbcore ehci-hcd ehci-pci xhci-hcd xhci-pci 
+ CPUFREQ  : acpi-cpufreq pcc-cpufreq 
+ CRYPTO   : aesni-intel aes-x86_64 crc32c-intel crc32-pclmul crct10dif-pclmul ghash-clmulni-intel glue_helper ablk_helper cryptd gf128mul lrw 
+ DRM      : drm_kms_helper drm i915 
+ HWMON    : coretemp hwmon 
+ I2C      : i2c-algo-bit i2c-designware-core i2c-designware-platform i2c-i801 i2c-core 
+ INPUT    : evdev joydev atkbd mousedev psmouse i8042 libps2 serio serio_raw sparse-keymap hid i2c-hid 
+ KVM      : kvm-intel kvm 
+ MEDIA    : media uvcvideo v4l2-common videobuf2-core videobuf2-memops videobuf2-vmalloc videodev 
+ NET      : r8169 mii iwlwifi rfkill cfg80211 
+ SOUND    : pcspkr snd-hwdep snd snd-pcm snd-timer snd-hda-codec snd-hda-controller snd-hda-intel soundcore 
  WATCHDOG : iTCO_vendor_support iTCO_wdt 
- OTHER    : iosf_mbi i8k dw_dmac_core dw_dmac dcdbas gpio-lynxpoint led-class mac_hid lpc_ich mei mei-me mmc_core sdhci-acpi sdhci shpchp dell-laptop dell-wmi mxm-wmi wmi intel_rapl spi-pxa2xx-platform intel_powerclamp x86_pkg_temp_thermal 8250_dw 
+ OTHER    : iosf_mbi i8k dw_dmac_core dw_dmac dcdbas gpio-lynxpoint led-class mac_hid lpc_ich mei mei-me mmc_core sdhci-acpi sdhci shpchp dell-laptop dell-wmi mxm-wmi wmi intel_rapl spi-pxa2xx-platform intel_powerclamp x86_pkg_temp_thermal 8250_dw 
 
 ```
 
@@ -97,4 +101,4 @@ works with [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptic
 
 ### Cpu frequency scaling
 
-install from aur [thermald](https://www.archlinux.org/packages/?name=thermald) or [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)
+install from aur [thermald](https://aur.archlinux.org/packages/thermald/) or [pstate-frequency](https://aur.archlinux.org/packages/pstate-frequency/)

@@ -15,38 +15,42 @@ Para uma lista abrangente dos modelos de GPU Intel e processadores, veja [essa c
 
 **Nota:** PowerVR-based graphics ([GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) não suportam os drivers open source.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalação](#Instalação)
 *   [2 Carregando](#Carregando)
     *   [2.1 Habilitando KMS mais cedo no boot](#Habilitando_KMS_mais_cedo_no_boot)
-*   [3 Configuração do Xorg](#Configura.C3.A7.C3.A3o_do_Xorg)
-*   [4 Opções de economia de energia](#Op.C3.A7.C3.B5es_de_economia_de_energia)
-    *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
-    *   [4.2 Compressão Framebuffer (enable_fbc)](#Compress.C3.A3o_Framebuffer_.28enable_fbc.29)
+*   [3 Configuração do Xorg](#Configuração_do_Xorg)
+*   [4 Opções de economia de energia](#Opções_de_economia_de_energia)
+    *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_(enable_rc6))
+    *   [4.2 Compressão Framebuffer (enable_fbc)](#Compressão_Framebuffer_(enable_fbc))
 *   [5 Dicas e Truques](#Dicas_e_Truques)
-    *   [5.1 Tear-free video (Video sem glitches)](#Tear-free_video_.28Video_sem_glitches.29)
-    *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
-    *   [5.3 Selecionando o modo de scala (scaling mode)](#Selecionando_o_modo_de_scala_.28scaling_mode.29)
-    *   [5.4 Problemas com o KMS: o console é limitado a uma área pequena](#Problemas_com_o_KMS:_o_console_.C3.A9_limitado_a_uma_.C3.A1rea_pequena)
-    *   [5.5 Decodificação H.264 em GMA 4500](#Decodifica.C3.A7.C3.A3o_H.264_em_GMA_4500)
+    *   [5.1 Tear-free video (Video sem glitches)](#Tear-free_video_(Video_sem_glitches))
+    *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_(VSYNC))
+    *   [5.3 Selecionando o modo de scala (scaling mode)](#Selecionando_o_modo_de_scala_(scaling_mode))
+    *   [5.4 Problemas com o KMS: o console é limitado a uma área pequena](#Problemas_com_o_KMS:_o_console_é_limitado_a_uma_área_pequena)
+    *   [5.5 Decodificação H.264 em GMA 4500](#Decodificação_H.264_em_GMA_4500)
     *   [5.6 Definindo brilho e gama](#Definindo_brilho_e_gama)
-*   [6 Resolução de Problemas](#Resolu.C3.A7.C3.A3o_de_Problemas)
+*   [6 Resolução de Problemas](#Resolução_de_Problemas)
     *   [6.1 Problemas com SNA](#Problemas_com_SNA)
     *   [6.2 Problemas com DRI3](#Problemas_com_DRI3)
-    *   [6.3 Fontes e tela corrompidas em aplicações GTK+ (missing glyphs after suspend/resume)](#Fontes_e_tela_corrompidas_em_aplica.C3.A7.C3.B5es_GTK.2B_.28missing_glyphs_after_suspend.2Fresume.29)
-    *   [6.4 Tela branca durante o boot, enquanto carrega os módulos](#Tela_branca_durante_o_boot.2C_enquanto_carrega_os_m.C3.B3dulos)
+    *   [6.3 Fontes e tela corrompidas em aplicações GTK+ (missing glyphs after suspend/resume)](#Fontes_e_tela_corrompidas_em_aplicações_GTK+_(missing_glyphs_after_suspend/resume))
+    *   [6.4 Tela branca durante o boot, enquanto carrega os módulos](#Tela_branca_durante_o_boot,_enquanto_carrega_os_módulos)
     *   [6.5 X trava com o driver intel](#X_trava_com_o_driver_intel)
-    *   [6.6 Adicionando resoluções não detectadas](#Adicionando_resolu.C3.A7.C3.B5es_n.C3.A3o_detectadas)
+    *   [6.6 Adicionando resoluções não detectadas](#Adicionando_resoluções_não_detectadas)
     *   [6.7 Problema da escala da cor](#Problema_da_escala_da_cor)
-    *   [6.8 O Brilho não está ajustando](#O_Brilho_n.C3.A3o_est.C3.A1_ajustando)
-    *   [6.9 Desabilitando a compressão do frame buffer](#Desabilitando_a_compress.C3.A3o_do_frame_buffer)
-    *   [6.10 Corrupção/Falta de Resposta no Chromium e Firefox](#Corrup.C3.A7.C3.A3o.2FFalta_de_Resposta_no_Chromium_e_Firefox)
-    *   [6.11 Kernel crashing com kernels 4.0+ em placas Broadwell/Core-M](#Kernel_crashing_com_kernels_4.0.2B_em_placas_Broadwell.2FCore-M)
-    *   [6.12 Suporte à Skylake](#Suporte_.C3.A0_Skylake)
-    *   [6.13 Lag em convidados do Windows (Máquinas Virtuais)](#Lag_em_convidados_do_Windows_.28M.C3.A1quinas_Virtuais.29)
+    *   [6.8 O Brilho não está ajustando](#O_Brilho_não_está_ajustando)
+    *   [6.9 Desabilitando a compressão do frame buffer](#Desabilitando_a_compressão_do_frame_buffer)
+    *   [6.10 Corrupção/Falta de Resposta no Chromium e Firefox](#Corrupção/Falta_de_Resposta_no_Chromium_e_Firefox)
+    *   [6.11 Kernel crashing com kernels 4.0+ em placas Broadwell/Core-M](#Kernel_crashing_com_kernels_4.0+_em_placas_Broadwell/Core-M)
+    *   [6.12 Suporte à Skylake](#Suporte_à_Skylake)
+    *   [6.13 Lag em convidados do Windows (Máquinas Virtuais)](#Lag_em_convidados_do_Windows_(Máquinas_Virtuais))
     *   [6.14 Tela piscando](#Tela_piscando)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+*   [7 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -60,7 +64,7 @@ Instale o pacote [mesa](https://www.archlinux.org/packages/?name=mesa), que forn
 
 Não se esqueça de checar [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Nota:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg (Português)#Instalação do Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Instala.C3.A7.C3.A3o_do_Xorg "Xorg (Português)"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Nota:** Existe uma discussão ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) em que alguns recomendam não se instalar o driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), deixando apenas o modesetting driver, que é o driver embutido no kernel. Veja [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg (Português)#Instalação do Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Instalação_do_Xorg "Xorg (Português)"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). Entretanto, o driver modesetting pode também causar alguns problemas [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Carregando
 
@@ -81,7 +85,7 @@ Em [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KM
 
 Não é preciso nenhuma configuração para se rodar o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
-{{Nota|A geração Skylake/HD 530 pode necessitar de configurações adicionais, veja [#Suporte à Skylake](#Suporte_.C3.A0_Skylake)!
+{{Nota|A geração Skylake/HD 530 pode necessitar de configurações adicionais, veja [#Suporte à Skylake](#Suporte_à_Skylake)!
 
 No entanto, para tirar vantagem de algumas opções do driver, será necessário que se crie um arquivo de configuração do Xorg, similar ao que se encontra abaixo:
 
@@ -163,7 +167,7 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 ### Tear-free video (Video sem glitches)
 
-A aceleração SNA causa tearing em alguns computadores. Para concertar isso,ative a opção `"TearFree"` no driver, adicionando a seguinte linha a em sua configuração do Xorg: [arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
+A aceleração SNA causa tearing em alguns computadores. Para concertar isso,ative a opção `"TearFree"` no driver, adicionando a seguinte linha a em sua configuração do Xorg: [arquivo de configuração](#Configuração_do_Xorg):
 
 ```
 Option "TearFree" "true"
@@ -194,7 +198,7 @@ O driver intel [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-00
 
 **Atenção:**
 
-*   Não use [driconf](https://www.archlinux.org/packages/?name=driconf) para criar esse arquivo. É bugado e vai selecionar o driver errado.
+*   Não use [driconf](https://aur.archlinux.org/packages/driconf/) para criar esse arquivo. É bugado e vai selecionar o driver errado.
 *   Para melhor performance pode-se também desligar o vsync, principalmente para jogos.
 
 ### Selecionando o modo de scala (scaling mode)
@@ -239,7 +243,7 @@ Veja [Backlight](/index.php/Backlight "Backlight").
 
 ### Problemas com SNA
 
-*SNA* é o método padrão de aceleração do driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Se você enfrenta problemas com o *SNA* (e.g. pixelated graphics (gráficos pixelados?), texto corrompido, etc.), ente usar *UXA*, o que pode ser feito ao adicionar a seguinte linha ao seu arquivo de configuração Xorg: [arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
+*SNA* é o método padrão de aceleração do driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Se você enfrenta problemas com o *SNA* (e.g. pixelated graphics (gráficos pixelados?), texto corrompido, etc.), ente usar *UXA*, o que pode ser feito ao adicionar a seguinte linha ao seu arquivo de configuração Xorg: [arquivo de configuração](#Configuração_do_Xorg):
 
 ```
 Option      "AccelMethod"  "uxa"
@@ -250,7 +254,7 @@ Veja [intel(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intel.4) sobre `Optio
 
 ### Problemas com DRI3
 
-*DRI3* é padrão em [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Podem surgir alguns problemas em alguns sistemas, como: [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Para mudar para *DRI2* adicione a seguinte linha ao seu arquivo de configuração do Xorg: [arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
+*DRI3* é padrão em [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Podem surgir alguns problemas em alguns sistemas, como: [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Para mudar para *DRI2* adicione a seguinte linha ao seu arquivo de configuração do Xorg: [arquivo de configuração](#Configuração_do_Xorg):
 
 ```
 Option "DRI" "2"
@@ -285,7 +289,7 @@ video=VGA-1:1280x800
 
 ### X trava com o driver intel
 
-Alguns problemas com o X travando, o bloqueio da GPU ou problemas com o congelamento do X podem ser corrigidos desativando o uso da GPU com a opção `NoAccel` - adicione as seguintes linhas ao seu[arquivo de configuração](#Configura.C3.A7.C3.A3o_do_Xorg):
+Alguns problemas com o X travando, o bloqueio da GPU ou problemas com o congelamento do X podem ser corrigidos desativando o uso da GPU com a opção `NoAccel` - adicione as seguintes linhas ao seu[arquivo de configuração](#Configuração_do_Xorg):
 
 ```
   Option "NoAccel" "True"
@@ -437,7 +441,7 @@ A saída de vídeo de um convidado do Windows (windows guest) no VirtualBox às 
 
 Os seguintes recursos de economia de energia usados por intel iGPUs são conhecidos por causar cintilação em alguns casos. Uma solução temporária é desativar um deles usando a opção [kernel boot parameter](/index.php/Kernel_parameters "Kernel parameters") apropriada:
 
-*   Rc6 sleep modes (ver [#RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)), pode ser desabilitado com `i915.enable_rc6=0`.
+*   Rc6 sleep modes (ver [#RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_(enable_rc6))), pode ser desabilitado com `i915.enable_rc6=0`.
 
 *   *Panel Self Refresh (PSR) [FS#49628](https://bugs.archlinux.org/task/49628) [FS#49371](https://bugs.archlinux.org/task/49371) [FS#50605](https://bugs.archlinux.org/task/50605), ativado por padrão desde o kernel mainline 4.6\. Para desativar esse recurso, use a opção `i915.enable_psr=0`.
 

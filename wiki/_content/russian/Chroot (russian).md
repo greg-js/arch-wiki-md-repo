@@ -6,7 +6,11 @@
 
 [Chroot](https://en.wikipedia.org/wiki/ru:chroot "wikipedia:ru:chroot") — операция изменения корневого каталога диска для запущенного процесса и его дочерних процессов. Программа, запущенная в таком окружении не может получить доступ к файлам вне нового корневого каталога. Это измененное окружение называется *chroot jail*.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Причины](#Причины)
 *   [2 Требования](#Требования)

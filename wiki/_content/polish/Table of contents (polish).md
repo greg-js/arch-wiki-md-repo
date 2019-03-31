@@ -38,7 +38,7 @@
 | <small>7.4.2.</small> [Linia komend](/index.php/Category:Command-line_(Polski) "Category:Command-line (Polski)") <small>(0) (również w [Oprogramowanie](/index.php/Category:Software_(Polski) "Category:Software (Polski)"))</small> |
 | <small>7.4.2.1.</small> [Emulatory terminala](/index.php/Category:Terminal_emulators_(Polski) "Category:Terminal emulators (Polski)") <small>(1) (również w [Aplikacje](/index.php/Category:Applications_(Polski) "Category:Applications (Polski)"), [Emulacje](/index.php/Category:Emulation_(Polski) "Category:Emulation (Polski)"))</small> |
 | <small>7.4.3.</small> [Pliki konfiguracyjne](/index.php/Category:Configuration_files_(Polski) "Category:Configuration files (Polski)") <small>(1)</small> |
-| <small>7.4.4.</small> [Menedżery kompozycji](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(2)</small> |
+| <small>7.4.4.</small> [Menedżery kompozycji](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(3)</small> |
 | <small>7.4.5.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Polski) "Category:Graphical user interfaces (Polski)") <small>(0)</small> |
 | <small>7.4.5.1.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(Polski) "Category:Widget toolkits (Polski)") <small>(1) (również w [Rozwijanie](/index.php/Category:Development_(Polski) "Category:Development (Polski)"))</small> |
 | <small>7.4.6.</small> [Multimedia](/index.php/Category:Multimedia_(Polski) "Category:Multimedia (Polski)") <small>(1)</small> |

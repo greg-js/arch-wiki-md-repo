@@ -226,16 +226,9 @@ Or remove it altogether to disable auto login.
 
 ## Build the ISO
 
-Now you are ready to turn your files into the .iso which you can then burn to CD or USB:
+Now you are ready to turn your files into the .iso which you can then burn to CD or USB.
 
-First create the `out/` directory (optional, build.sh will create it if nonexist),
-
-```
-# mkdir ~/archlive/out/
-
-```
-
-then inside `~/archlive`, execute:
+Inside `~/archlive`, execute:
 
 ```
 # ./build.sh -v

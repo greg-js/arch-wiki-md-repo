@@ -37,6 +37,7 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
     *   [4.7 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
     *   [4.8 JavaFX's MediaPlayer constructor throws an exception](#JavaFX's_MediaPlayer_constructor_throws_an_exception)
     *   [4.9 Java applications cannot open external links](#Java_applications_cannot_open_external_links)
+    *   [4.10 Error initializing QuantumRenderer: no suitable pipeline found](#Error_initializing_QuantumRenderer:_no_suitable_pipeline_found)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Better font rendering](#Better_font_rendering)
     *   [5.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_'Picked_up_JAVA_OPTIONS'_message_on_command_line)
@@ -342,6 +343,10 @@ See [https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplay
 ### Java applications cannot open external links
 
 If a Java application is not able to open a link to, for example, your web browser, install [gvfs](https://www.archlinux.org/packages/?name=gvfs). This is required by the Desktop.Action.BROWSE method. See [[3]](https://bugs.launchpad.net/ubuntu/+source/openjdk-8/+bug/1574879/comments/2)
+
+### Error initializing QuantumRenderer: no suitable pipeline found
+
+Possible issues / solutions: - gtk2 is missing. Install [gtk2](https://www.archlinux.org/packages/?name=gtk2) - OpenJFX is missing. Install [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx)
 
 ## Tips and tricks
 

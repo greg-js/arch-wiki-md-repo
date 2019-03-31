@@ -24,7 +24,7 @@ Los snaps pueden ser confinados usando [AppArmor](/index.php/AppArmor "AppArmor"
     *   [3.1 Buscando](#Buscando)
     *   [3.2 Instalando](#Instalando)
     *   [3.3 Actualización](#Actualización)
-    *   [3.4 Removiendo](#Removiendo)
+    *   [3.4 Eliminando](#Eliminando)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Snaps Clásicas](#Snaps_Clásicas)
     *   [4.2 Confinamiento](#Confinamiento)
@@ -121,9 +121,9 @@ Para establecer un tiempo de actualización diferente, ej. dos veces al día:
 
 Vea [página de documentación de opciones de sistema](https://forum.snapcraft.io/t/system-options/87) para detalles sobre como personalizar el tiempo de actualización.
 
-### Removiendo
+### Eliminando
 
-Los snaps pueden ser removidos al ejecutar:
+Los snaps pueden ser eliminados al ejecutar:
 
 ```
 # snap remove *snapname*
@@ -143,7 +143,7 @@ Algunas snaps (e.j. Skype y Pycharm) usan el confinamiento clásico. Sin embargo
 
 ### Confinamiento
 
-Cuando se utiliza [AppArmor](/index.php?title=AppArmor_(Espa%C3%B1ol)&action=edit&redlink=1 "AppArmor (Español) (page does not exist)"), snapd (2.36+) generará los mismos perfiles para las snaps como en Ubuntu. El analizador de [AppArmor](/index.php?title=AppArmor_(Espa%C3%B1ol)&action=edit&redlink=1 "AppArmor (Español) (page does not exist)") es suficientemente inteligente para eliminar las reglas que aún no son compatibles por la línea principal del kernel.
+Cuando se utiliza [AppArmor](/index.php/AppArmor "AppArmor"), snapd (2.36+) generará los mismos perfiles para las snaps como en Ubuntu. El analizador de [AppArmor](/index.php/AppArmor "AppArmor") es suficientemente inteligente para eliminar las reglas que aún no son compatibles por la línea principal del kernel.
 
 Para verificar si el confinamiento básico está funcionando, instale la snap *hello-world*. Luego ejecute lo siguiente:
 

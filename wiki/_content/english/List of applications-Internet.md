@@ -1088,7 +1088,7 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 *   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 
@@ -1316,7 +1316,7 @@ The number of networks supported by these clients is very large but they (like a
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client that also supports Twitter and XMPP.
 
-	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client supports instant messaging and chat using IRC, XMPP and Twitter.
 
@@ -2028,7 +2028,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Corebird** — Native GTK+ Twitter client for the Linux desktop.
 
-	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://www.archlinux.org/packages/?name=corebird)
+	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://aur.archlinux.org/packages/corebird/)
 
 *   **Mikutter** — Simple, powerful Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
 

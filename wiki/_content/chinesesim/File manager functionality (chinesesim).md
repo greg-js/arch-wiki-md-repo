@@ -10,7 +10,11 @@ Related articles
 
 本文介绍扩展文件管理器功能的相关软件，特别是使用窗口管理器如[Openbox](/index.php/Openbox "Openbox")的时候。还提供了在没有密码的情况下访问分区和可移动媒体的能力（如果受到影响）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 概要](#概要)
 *   [2 附加功能](#附加功能)
@@ -55,7 +59,7 @@ Related articles
 
 *   [gvfs](https://www.archlinux.org/packages/?name=gvfs): Gnome虚拟文件系统(gvfs)提供挂载和回收站功能。GVFS使用[udisks2](https://www.archlinux.org/packages/?name=udisks2)来提供挂载功能，是大多数文件管理器推荐的解决方案。
 
-**提示：** 对于某些文件管理器，安装软件包[gamin](https://www.archlinux.org/packages/?name=gamin)可能很管用。[Gamin](/index.php/Gamin "Gamin")是一个文件和目录监控系统。
+**提示：** 对于某些文件管理器，安装软件包[gamin](https://aur.archlinux.org/packages/gamin/)可能很管用。[Gamin](/index.php/Gamin "Gamin")是一个文件和目录监控系统。
 
 GVFS使用的文件夹：
 

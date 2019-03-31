@@ -75,7 +75,7 @@ Artículos relacionados
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — Juego 3D para guiar una bola por un laberinto.
 
-	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
+	[http://neverball.org/](http://neverball.org/) || [neverball](https://aur.archlinux.org/packages/neverball/)
 
 *   **[Rune](https://en.wikipedia.org/wiki/Rune_(video_game) "wikipedia:Rune (video game)")** — Juego en tercera persona Adventure/Hack'n Slay usando Unreal Engine. Funciona bien desde la instalación box.
 

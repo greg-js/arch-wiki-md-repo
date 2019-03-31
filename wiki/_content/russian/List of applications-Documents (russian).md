@@ -174,7 +174,7 @@
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/ru:AUCTeX "wikipedia:ru:AUCTeX")** — Расширяемый пакет для написания и форматирования файлов TeX в Emacs
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/ru:Gummi "wikipedia:ru:Gummi")** — Легковесный, основанный на GTK+, редактор TeX/LaTeX
 
@@ -366,7 +366,7 @@
 
 *   **Medit** — Текстовый редактор для программирования и "околопрограммирования"
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/ru:Xfce#Mousepad.C2.A0.E2.80.94_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.BE.D0.B2.D1.8B.D0.B9_.D1.80.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80 "wikipedia:ru:Xfce")** — Быстрый текстовый редактор для окружения рабочего стола Xfce
 
@@ -402,7 +402,7 @@
 
 *   **Scribes** — Ультраминималистичный текстовый редактор, который сочетает простоту с мощью
 
-	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
+	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://aur.archlinux.org/packages/scribes/)
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/ru:Sublime_Text "wikipedia:ru:Sublime Text")** — Редактор с закрытым исходным кодом, написанный на C++ и Python. Имеет большое количество возможностей и плагинов, но при этом остаётся легковесным и приятным
 
@@ -452,7 +452,7 @@
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Приложение просмотра PDF и создания заметок
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ##### Управление книгами
 
@@ -534,7 +534,7 @@
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Приложение просмотра PDF и создания заметок
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/ru:Xpdf "wikipedia:ru:Xpdf")** — Программа просмотра, которая способна декодировать LZW и читать зашифрованные файлы PDF
 
@@ -666,7 +666,7 @@
 
 *   **Cherrytree** — Иерархическое приложение ведения заметок, предоставляющее богатую подсветку текста и синтаксиса и хранение данных в одном файле xml или sqlite
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/ru:Gnote "wikipedia:ru:Gnote")** — Экспериментальный порт Tomboy на C++
 
@@ -674,7 +674,7 @@
 
 *   **KeepNote** — Кроссплатформенное приложение GTK+ для ведения заметок с богатыми возможностями форматирования текста
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Небольшая программа, удобная для создания и управления различными заметками. Является частью [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 

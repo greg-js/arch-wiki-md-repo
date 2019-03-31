@@ -305,6 +305,15 @@ $ mysql_upgrade -u root -p
 
 ```
 
+To upgrade from 10.1.x to 10.3.x:
+
+*   keep the 10.1.x database daemon running
+*   upgrade the package
+*   run `mysql_upgrade` (from the new package version) against the old still-running daemon. This will produce some error messages; however, the upgrade will succeed.
+*   restart the daemon, so the 10.3.x daemon runs.
+
+Alternatively, stop the (old) daemon, run the (new) daemon in safe mode, run `mysql_upgrade` against that, and then start the (new) daemon as described below in [troubleshooting](/index.php/MariaDB#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start "MariaDB").
+
 ### Checking, optimizing and repairing databases
 
 [mariadb](https://www.archlinux.org/packages/?name=mariadb) ships with `mysqlcheck` which can be used to check, repair, and optimize tables within databases from the shell. See the mysqlcheck man page for more. Several command tasks are shown:

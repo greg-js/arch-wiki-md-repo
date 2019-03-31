@@ -325,7 +325,7 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 ### Driconf
 
-[driconf](https://www.archlinux.org/packages/?name=driconf)是[官方库](/index.php/Official_repositories "Official repositories")中收录的小工具，它可以修改开源驱动的直接渲染设置。启用HyperZ功能将显著改善性能。
+[driconf](https://aur.archlinux.org/packages/driconf/)是[官方库](/index.php/Official_repositories "Official repositories")中收录的小工具，它可以修改开源驱动的直接渲染设置。启用HyperZ功能将显著改善性能。
 
 ### GPU超频
 

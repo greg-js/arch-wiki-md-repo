@@ -7,28 +7,32 @@
 
 **[MPD](http://mpd.wikia.com)** (**m**usic **p**layer **d**aemon) 是一个服务器-客户端架构的音频播放器. 功能包括音频播放, 播放列表管理和音乐库维护，所有功能占用的资源都很少. 你需要一个独立的 [客户端](#Clients) 与它进行交互。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 设置](#.E8.AE.BE.E7.BD.AE)
-    *   [2.1 全局配置](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE)
-        *   [2.1.1 音乐目录](#.E9.9F.B3.E4.B9.90.E7.9B.AE.E5.BD.95)
-        *   [2.1.2 启动 MPD](#.E5.90.AF.E5.8A.A8_MPD)
-            *   [2.1.2.1 套接字启动](#.E5.A5.97.E6.8E.A5.E5.AD.97.E5.90.AF.E5.8A.A8)
-        *   [2.1.3 配置音频](#.E9.85.8D.E7.BD.AE.E9.9F.B3.E9.A2.91)
-        *   [2.1.4 更改用户](#.E6.9B.B4.E6.94.B9.E7.94.A8.E6.88.B7)
-        *   [2.1.5 MPD 启动时间轴](#MPD_.E5.90.AF.E5.8A.A8.E6.97.B6.E9.97.B4.E8.BD.B4)
-    *   [2.2 本地配置（单用户）](#.E6.9C.AC.E5.9C.B0.E9.85.8D.E7.BD.AE.EF.BC.88.E5.8D.95.E7.94.A8.E6.88.B7.EF.BC.89)
-        *   [2.2.1 在 tty 登陆时自启动](#.E5.9C.A8_tty_.E7.99.BB.E9.99.86.E6.97.B6.E8.87.AA.E5.90.AF.E5.8A.A8)
-        *   [2.2.2 在 X 下自启动](#.E5.9C.A8_X_.E4.B8.8B.E8.87.AA.E5.90.AF.E5.8A.A8)
-        *   [2.2.3 通过 systemd 自启动](#.E9.80.9A.E8.BF.87_systemd_.E8.87.AA.E5.90.AF.E5.8A.A8)
-        *   [2.2.4 脚本配置](#.E8.84.9A.E6.9C.AC.E9.85.8D.E7.BD.AE)
-    *   [2.3 多 mpd 实例设置](#.E5.A4.9A_mpd_.E5.AE.9E.E4.BE.8B.E8.AE.BE.E7.BD.AE)
-*   [3 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [3.1 命令行下](#.E5.91.BD.E4.BB.A4.E8.A1.8C.E4.B8.8B)
-    *   [3.2 图形界面下](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E4.B8.8B)
-    *   [3.3 Web界面](#Web.E7.95.8C.E9.9D.A2)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 设置](#设置)
+    *   [2.1 全局配置](#全局配置)
+        *   [2.1.1 音乐目录](#音乐目录)
+        *   [2.1.2 启动 MPD](#启动_MPD)
+            *   [2.1.2.1 套接字启动](#套接字启动)
+        *   [2.1.3 配置音频](#配置音频)
+        *   [2.1.4 更改用户](#更改用户)
+        *   [2.1.5 MPD 启动时间轴](#MPD_启动时间轴)
+    *   [2.2 本地配置（单用户）](#本地配置（单用户）)
+        *   [2.2.1 在 tty 登陆时自启动](#在_tty_登陆时自启动)
+        *   [2.2.2 在 X 下自启动](#在_X_下自启动)
+        *   [2.2.3 通过 systemd 自启动](#通过_systemd_自启动)
+        *   [2.2.4 脚本配置](#脚本配置)
+    *   [2.3 多 mpd 实例设置](#多_mpd_实例设置)
+*   [3 客户端](#客户端)
+    *   [3.1 命令行下](#命令行下)
+    *   [3.2 图形界面下](#图形界面下)
+    *   [3.3 Web界面](#Web界面)
+*   [4 参阅](#参阅)
 
 ## 安装
 
@@ -53,7 +57,7 @@ MPD 的配置文件是 `mpd.conf`，运行方式不同，文件的位置也不�
 
 ### 全局配置
 
-**警告:** 使用 PulseAudio 并且将 mpd 设置为全局配置的用户可能需要 [一个小技巧](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_.28with_separate_mpd_user.29 "Music Player Daemon/Tips and tricks") 来作为自己的用户运行 mpd！
+**警告:** 使用 PulseAudio 并且将 mpd 设置为全局配置的用户可能需要 [一个小技巧](/index.php/Music_Player_Daemon/Tips_and_tricks#Local_(with_separate_mpd_user) "Music Player Daemon/Tips and tricks") 来作为自己的用户运行 mpd！
 
 The default /etc/mpd.conf keeps the setup in /var/lib/mpd which is assigned to user as well as primary group mpd.
 
@@ -70,7 +74,7 @@ MPD需要拥有 **所有** 音乐收藏父目录的 `+x` 权限并且可以读�
 
 有很多方法可以解决这个问题，下面是其中不错的一个
 
-*   [将 MPD 作为用户运行](#.E6.9C.AC.E5.9C.B0.E9.85.8D.E7.BD.AE.EF.BC.88.E5.8D.95.E7.94.A8.E6.88.B7.EF.BC.89)
+*   [将 MPD 作为用户运行](#本地配置（单用户）)
 *   将 mpd 用户添加到登录组，并授予用户目录组权限。
 
 ```
@@ -87,7 +91,7 @@ MPD 配置必须仅包含一个目录，如果音乐集包含在多个目录下�
 
 #### 启动 MPD
 
-可以使用 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") 来控制 MPD 服务，即`mpd.service`，第一次启动 MPD 时会花费一些时间，因为 MPD 会扫描音乐目录。
+可以使用 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") 来控制 MPD 服务，即`mpd.service`，第一次启动 MPD 时会花费一些时间，因为 MPD 会扫描音乐目录。
 
 安装一个客户端程序 ([ncmpc](https://www.archlinux.org/packages/?name=ncmpc) 是一个轻便易用的客户端程序)，享受音乐吧！
 
@@ -224,19 +228,19 @@ X-GNOME-Autostart-enabled=false
 
 ```
 
-如果没有使用桌面环境，将 [#在 tty 登陆时自启动](#.E5.9C.A8_tty_.E7.99.BB.E9.99.86.E6.97.B6.E8.87.AA.E5.90.AF.E5.8A.A8) 中的命令加入到 [自启动文件](/index.php/Autostarting#Graphical "Autostarting")。
+如果没有使用桌面环境，将 [#在 tty 登陆时自启动](#在_tty_登陆时自启动) 中的命令加入到 [自启动文件](/index.php/Autostarting#Graphical "Autostarting")。
 
 #### 通过 systemd 自启动
 
 **注意:** 本章节假设 systemd 用户会话管理器已经运行。具体信息查看 [systemd/User (简体中文)](/index.php/Systemd/User_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/User (简体中文)")。
 
-[mpd](https://www.archlinux.org/packages/?name=mpd) 提供了用户服务文件 `/usr/lib/systemd/user/mpd.service`。配置文件预计存在 `~/.mpdconf` 或者 `~/.config/mpd/mpd.conf` 中，如果想要使用不同的路径，参考 [systemd (简体中文)#修改现存单元文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)")。进程不会以 root 启动，所以在 MPD 配置文件中不能使用 `user` 和 `group` 变量，进程已经拥有用户权限，因此没有必要进一步更改他们。
+[mpd](https://www.archlinux.org/packages/?name=mpd) 提供了用户服务文件 `/usr/lib/systemd/user/mpd.service`。配置文件预计存在 `~/.mpdconf` 或者 `~/.config/mpd/mpd.conf` 中，如果想要使用不同的路径，参考 [systemd (简体中文)#修改现存单元文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#修改现存单元文件 "Systemd (简体中文)")。进程不会以 root 启动，所以在 MPD 配置文件中不能使用 `user` 和 `group` 变量，进程已经拥有用户权限，因此没有必要进一步更改他们。
 
 所有你需要做的是启用和启动 `mpd` [用户服务](/index.php/Systemd/User_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/User (简体中文)")。
 
 **注意:**
 
-*   [mpd](https://www.archlinux.org/packages/?name=mpd) 也提供了系统服务文件 `/usr/lib/systemd/system/mpd.service`，但是当以 root 身份启动进程时，进程不会读取用户配置文件而是会回落到 `/etc/mpd.conf`。[全局配置](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE) 中已经介绍过了。
+*   [mpd](https://www.archlinux.org/packages/?name=mpd) 也提供了系统服务文件 `/usr/lib/systemd/system/mpd.service`，但是当以 root 身份启动进程时，进程不会读取用户配置文件而是会回落到 `/etc/mpd.conf`。[全局配置](#全局配置) 中已经介绍过了。
 *   确保停用任何以前用过的启动 mpd 的方法。
 
 #### 脚本配置
@@ -306,7 +310,7 @@ Rasi 创建了一个脚本，该脚本可以创建合适的目录结构、配置
 
 *   **gmpc** — GTK2 写的 MPD 前端。被设计为轻量且易用，同时也对所有的 MPD 的特性提供完全访问。为用户提供几种不同的方法来浏览音乐。可以通过很多可获得的插件来扩展。
 
-	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
+	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://aur.archlinux.org/packages/gmpc/)
 
 *   **Cantata** — 多功能的 Qt4, Qt5 或者 KDE4 客户端，具有很多可配置的接口。
 

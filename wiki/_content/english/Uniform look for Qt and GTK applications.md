@@ -5,7 +5,11 @@ Related articles
 
 [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") based programs both use a different widget toolkit to render the graphical user interface. Each come with different themes, styles and icon sets by default, among other things, so the "look and feel" differ significantly. This article will help you make your Qt and GTK+ applications look similar for a more streamlined and integrated desktop experience.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK+)
@@ -110,7 +114,9 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 
 ### KDE file dialogs for GTK+ applications
 
-**Chromium** At least for chromium installing `kdialog` makes chromium used kde file dialog ( so `KGtk-wrapper` is not required )
+**Chromium**
+
+At least for chromium installing `kdialog` makes chromium used kde file dialog ( so `KGtk-wrapper` is not required )
 
 **Warning:** Some GTK+ applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash ([Firefox](/index.php/Firefox "Firefox") or [Thunderbird](/index.php/Thunderbird "Thunderbird")).
 
@@ -122,7 +128,11 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 
 *   Modifying the KDE .desktop shortcuts files you can find at `/usr/share/applications/` to prefix the `Exec` statement with kgtk-wrapper.
 
-	e.g. with [GIMP](/index.php/GIMP "GIMP"), edit the `/usr/share/applications/gimp.desktop` shortcut file and replace `Exec=gimp-2.8 %U` by `Exec=kgtk-wrapper gimp-2.8 %U`.
+	e.g. with [GIMP](/index.php/GIMP "GIMP"), edit the `/usr/share/applications/gimp.desktop` shortcut file and replace `Exec=gimp-2.8 %U` by `Exec=kgtk-wrapper gimp-2.8 %U`.
+
+**Firefox**
+
+Firefox can use kde file dialogs natively. See [Firefox#KDE/GNOME integration](/index.php/Firefox#KDE/GNOME_integration "Firefox")
 
 ### Using a GTK+ icon theme in Qt apps
 

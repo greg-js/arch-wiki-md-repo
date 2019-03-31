@@ -36,6 +36,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [4.5 Help command](#Help_command)
     *   [4.6 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
     *   [4.7 Persistent rehash](#Persistent_rehash)
+        *   [4.7.1 On-demand rehash](#On-demand_rehash)
     *   [4.8 Bind key to ncurses application](#Bind_key_to_ncurses_application)
     *   [4.9 File manager key binds](#File_manager_key_binds)
     *   [4.10 xterm title](#xterm_title)
@@ -487,6 +488,48 @@ This 'rehash' can be set to happen automatically.[[3]](https://github.com/robbyr
 zstyle ':completion:*' rehash true
 
 ```
+
+#### On-demand rehash
+
+As above, however [pacman](/index.php/Pacman "Pacman") can be configured with [hooks](/index.php/Pacman#Hooks "Pacman") to automatically request a `rehash`, which does not incur the performance penalty of constant rehashing as above. To enable this, create the `/etc/pacman.d/hooks` directory, and a `/var/cache/pacman` directory, then create a hook file:
+
+ `/etc/pacman.d/hooks/zsh.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+[Action]
+Depends = zsh
+When = PostTransaction
+Exec = /usr/bin/env touch /var/cache/zsh/pacman
+```
+
+This keeps the modification date of the file `/var/cache/zsh/pacman` consistent with the last time a package was installed, upgraded or removed. Then, `zsh` must be coaxed into rehashing its own command cache when it goes out of date, by adding to your `~/.zshrc`:
+
+ `~/.zshrc` 
+```
+zshcache_time="$(date +%s%N)"
+
+autoload -Uz add-zsh-hook
+
+rehash_precmd() {
+  if [[ -a /var/cache/zsh/pacman ]]; then
+    local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
+    if (( zsh_cache_time < paccache_time )); then
+      rehash
+      zshcache_time="$paccache_time"
+    fi
+  fi
+}
+
+add-zsh-hook -Uz precmd rehash_precmd
+
+```
+
+If the `precmd` hook is triggered before `/var/cache/zsh/pacman` is updated, completion may not work until a new prompt is initiated. Running an empty command, e.g. pressing `enter`, should be sufficient.
 
 ### Bind key to ncurses application
 

@@ -72,7 +72,7 @@ Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/w
 
 *   **dtach** — Programa que emula la capacidad de desconexión de [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Gestor de ventanas a tamaño completo que multiplexa una terminal física.
 
@@ -208,7 +208,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Aplicación dock consolidada que facilita la tarea de abrir aplicaciones muy usadas y el gestionar las ventanas.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Panel de escritorio ligero compatible con NETWM.
 
@@ -308,7 +308,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con muchos plugins, originalmente desarrollado para el escritorio GNOME.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **j4-dmenu-desktop** — Lanzador de aplicaciones dmenu muy rápido.
 
@@ -490,7 +490,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **Hamster** — Aplicación de seguimiento que le ayuda a controlar cuanto tiempo ha invertido a lo largo del día en actividades que ha decidido hacerles seguimiento.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Programa de calendario y agenda, parte de [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -526,7 +526,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — aplicación de gestión rápida y fácil de tareas escrita en C Sharp.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **Tider** — Aplicación de seguimiento ligera (basada en GTK+)
 

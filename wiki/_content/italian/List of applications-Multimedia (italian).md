@@ -642,7 +642,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Visualizzatore di pdf e note.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ### Telefonia
 

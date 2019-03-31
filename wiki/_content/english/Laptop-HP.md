@@ -201,7 +201,17 @@ Webcam: Works
 Card reader: not tested
 Fingerprint scanner: not tested
 Keyboard backlit: works | Secure boot works with GRUB, coexists with Windows Pro. Windows partition is accessible disabling Bitlocker. (installed from Archiso) -- |
-| HP EliteBook 830 G5 | 2018.11 | Intel Core i5-8250u, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | Intel(R) PRO/1000 *e1000e* | Intel 8265/8275\. Driver: *iwlwifi* | Yes | ACPI: works
+| HP ProBook 450 G6 | 2019.03 | Intel Core i5-8265U, UHD Graphics 620 (Whiskey Lake) - works out of the box; NVIDIA GeForce MX130 (2 GB DDR5 dedicated) - untested | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | Works. | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: not tested
+Battery: works
+Display dimming: works
+CPU frequency scaling: not tested | Not present | Hot keys: Works
+Webcam: not tested
+Card reader: not tested
+Fingerprint scanner: not tested
+Keyboard backlit: works | Secure boot works with GRUB. FN button light is constantly on. FN + F11 (wifi) can't be set (the other "special" buttons are fine). Microphone quality is average. The audio quality is decent. No wifi/eth cable connectivity issues. The touchpad may lag after hibernation. -- |
+| HP EliteBook 830 G5 | 2018.11 | Intel Core i5-8250u, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | Realtek RTL8111HSH-CG 10/100/1000 GbE NIC | Intel 9560\. Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: work
 Battery: works

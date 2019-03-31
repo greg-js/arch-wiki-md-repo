@@ -260,7 +260,7 @@ You can try out different fonts by copying them and changing the `font` setting 
 
 ### Upgrading
 
-Pacman updates the rEFInd files in `/usr/share/refind/` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new configuration file will be copied as `refind.conf-sample` so that you can integrate changes into your existing configuration file using a diff tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to figure out which files to copy yourself.
+Pacman updates the rEFInd files in `/usr/share/refind/` and will not copy new files to the ESP for you. If `refind-install` worked for your original installation of rEFInd, you can rerun it to copy the updated files. The new configuration file will be copied as `refind.conf-sample` so that you can integrate changes into your existing configuration file using a [diff](/index.php/Diff "Diff") tool. If your rEFInd required [#Manual installation](#Manual_installation), you will need to figure out which files to copy yourself.
 
 #### Pacman hook
 

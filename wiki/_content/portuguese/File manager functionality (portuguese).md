@@ -9,7 +9,11 @@ Artigos relacionados
 
 Este artigo descreve os pacotes de software adicionais necessários para expandir os recursos e a funcionalidade dos gerenciadores de arquivos, especialmente quando se usa um [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") como o [Openbox](/index.php/Openbox "Openbox"). A capacidade de acessar partições e mídias removíveis sem uma senha - se afetada - também foi fornecida.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visão geral](#Visão_geral)
 *   [2 Recursos adicionais](#Recursos_adicionais)
@@ -54,7 +58,7 @@ Particularmente, quando usando - ou pretendendo usar - um ambiente leve, deve-se
 
 *   O sistema de arquivos virtual do GNOME ([gvfs](https://www.archlinux.org/packages/?name=gvfs)) fornece funcionalidade de montagem e lixo. O GVFS usa [udisks2](https://www.archlinux.org/packages/?name=udisks2) para funcionalidade de montagem e é a solução recomendada para a maioria dos gerenciadores de arquivos.
 
-**Dica:** Para alguns gerenciadores de arquivos, pode ser útil ter o pacote [gamin](https://www.archlinux.org/packages/?name=gamin) instalado. [Gamin](/index.php/Gamin_(Portugu%C3%AAs) "Gamin (Português)") é um sistema de monitoramento de arquivos e diretórios.
+**Dica:** Para alguns gerenciadores de arquivos, pode ser útil ter o pacote [gamin](https://aur.archlinux.org/packages/gamin/) instalado. [Gamin](/index.php/Gamin_(Portugu%C3%AAs) "Gamin (Português)") é um sistema de monitoramento de arquivos e diretórios.
 
 Pastas usadas pelo GVFS:
 

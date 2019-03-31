@@ -17,10 +17,13 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 *   [4 Canon](#Canon)
     *   [4.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer/scanners)
 *   [5 Epson](#Epson)
-    *   [5.1 Image Scan v3](#Image_Scan_v3)
-    *   [5.2 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
-    *   [5.3 Epson Perfection 1270](#Epson_Perfection_1270)
-    *   [5.4 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670/2480/2580/3490/3590)
+    *   [5.1 Driver-Backends](#Driver-Backends)
+        *   [5.1.1 Image Scan! for Linux](#Image_Scan!_for_Linux)
+        *   [5.1.2 Image Scan v3](#Image_Scan_v3)
+    *   [5.2 Epson DS-6500](#Epson_DS-6500)
+    *   [5.3 Epson Perfection V550 Photo](#Epson_Perfection_V550_Photo)
+    *   [5.4 Epson Perfection 1270](#Epson_Perfection_1270)
+    *   [5.5 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670/2480/2580/3490/3590)
 *   [6 Fujitsu](#Fujitsu)
     *   [6.1 ScanSnap S300/S300M](#ScanSnap_S300/S300M)
 *   [7 HP](#HP)
@@ -133,7 +136,11 @@ Alternative: for some Canon Pixma all-in-one printer/scanners, which are not det
 
 ## Epson
 
-With Epson scanners, you can use "Image Scan! for Linux".
+### Driver-Backends
+
+For Epson scanners, you can choose between two different backends: "**Image Scan! for Linux**" ([iscan](https://www.archlinux.org/packages/?name=iscan)/epkowa) or "**Image Scan v3**" ([imagescan](https://www.archlinux.org/packages/?name=imagescan)/utsushi). You can check [here](http://www.sane-project.org/lists/sane-backends-external.html#S-EPKOWA) for all supported **iscan/epkowa** devices and [here](http://www.sane-project.org/lists/sane-backends-external.html#S-UTSUSHI) for all **imagescan/utsushi** devices.
+
+#### Image Scan! for Linux
 
 *   Install the [iscan](https://www.archlinux.org/packages/?name=iscan) package
 *   Install the appropriate iscan-plugin package for your scanner (for example, [iscan-plugin-gt-x820](https://aur.archlinux.org/packages/iscan-plugin-gt-x820/) for the Epson Perfection Photo V600)
@@ -148,9 +155,9 @@ net {IP_OF_SCANNER}
 
 Upstream version of [iscan](https://www.archlinux.org/packages/?name=iscan) does not support 16bpc color depth scanning. Choosing any bit depth other than 8 makes iscan stop without warning, leaving the scanner stuck until restarted. To enable 16bpc scanning, iscan requires to be patched. Use [ABS](/index.php/ABS "ABS") and apply patch found in [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1835448#p1835448) to enable 16bpc depth mode.
 
-### Image Scan v3
+#### Image Scan v3
 
-Some models require "Image Scan 3", which is different from "Image Scan! for Linux" and is not available in the official repositores. Install [imagescan](https://www.archlinux.org/packages/?name=imagescan) for the base program. It should detect supported USB scanners automatically by default. If you want to make use of a network scanner you also have to install [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/). Then edit `/etc/utsushi/utsushi.conf`, and enter the ip address of your scanner to it.
+If you have to use Image Scan v3-backend you can install [imagescan](https://www.archlinux.org/packages/?name=imagescan). It should detect supported USB scanners automatically by default. If you want to make use of a network scanner you also have to install [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/). Then edit `/etc/utsushi/utsushi.conf` and enter the ip address of your scanner to it.
 
 ```
 [devices]
@@ -160,7 +167,18 @@ myscanner.model  = Model-name
 
 ```
 
-When you then start Image Scan v3, the name of the scan should be visible in the top left corner. If a connection problem happened, an error dialog will be shown.
+When you then start Image Scan v3 by typing in the command
+
+```
+$ utsushi
+
+```
+
+the name of the scanner should be visible in the top left corner. If a connection problem happened, an error dialog will be shown.
+
+### Epson DS-6500
+
+Usually this device works with the epsonds-backend. However, there may be an error "Error during device I / O" when scanning multiple pages. If this error occurs, the Image Scan v3 backend can be used and [imagescan](https://www.archlinux.org/packages/?name=imagescan) needs to be installed. If you want to use the network module, the scanner can be configured in the `/etc/utsushi/utsushi.conf` after installing [imagescan-plugin-networkscan](https://aur.archlinux.org/packages/imagescan-plugin-networkscan/) as described above.
 
 ### Epson Perfection V550 Photo
 

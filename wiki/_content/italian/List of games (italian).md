@@ -71,7 +71,7 @@
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — Gioco 3D dove bisogna guidare una palla attraverso ostacoli.
 
-	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
+	[http://neverball.org/](http://neverball.org/) || [neverball](https://aur.archlinux.org/packages/neverball/)
 
 *   **[Rune](https://en.wikipedia.org/wiki/Rune_(video_game) "wikipedia:Rune (video game)")** — Avventura in 3rd persona Hack'n Slay uscito nel '99\. Rune richiede una grande isntalalzione
 

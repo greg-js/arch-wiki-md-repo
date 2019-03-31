@@ -523,8 +523,8 @@ Now create a configuration file to be used in the GRUB core image. This is in th
 
  `early-grub.cfg` 
 ```
-root=(memdisk)
-prefix=($root)/
+set root=(memdisk)
+set prefix=($root)/
 
 terminal_input at_keyboard
 keymap /dvorak.gkb

@@ -50,6 +50,44 @@ The integrated Vega GPU works with the AMDGPU drivers. `GDK_SCALE=2` is somewhat
 
 Kernel 4.19.5 or greater is needed. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=198715#c14) [[2]](https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.5)
 
+The built in ELAN digitizer doesn't use the wacom driver by default, but it can be configured to do so. Switching to the wacom driver allows easier configuration of the digitizer and pen through tools like xsetwacom. This can be achieved with the following xorg configuration file:
+
+ `/etc/X11/xorg.conf.d/99-ELAN-stylus.conf` 
+```
+Section "InputClass"
+    Identifier "Elan driver override"
+    MatchUSBID "04f3:*"
+    MatchDevicePath "/dev/input/event*"
+    MatchIsTablet "true"
+    Driver "wacom"
+EndSection
+
+```
+
+After a reboot xsetwacom should now correctly register the device.
+
+ `xsetwacom --list devices` 
+```
+ELAN0732:00 04F3:262A stylus    	id: 13	type: STYLUS    
+ELAN0732:00 04F3:262A eraser    	id: 18	type: ERASER
+
+```
+
+You can use xinput to probe the different devices and find out what actions get triggered by which buttons. For instance the "wacom bamboo ink" pen triggers the eraser device while touching the screen while maintaining the second side button pressed.
+
+```
+xinput test $deviceID
+
+```
+
+The following simple example script will bind rightclick to the eraser device.
+
+```
+device=$(xsetwacom --list | grep -i "eraser" |  awk '{print $(NF-2)}') 
+xsetwacom --set "$device" button 1 3
+
+```
+
 ## Orientation Sensor
 
 No `iio` sensors are enumerated as of 4.18-rc7, with all possible iio modules compiled. `iio-sensor-proxy` returns no sensors detected.

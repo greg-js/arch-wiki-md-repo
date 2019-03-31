@@ -349,7 +349,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cliente IRC multiplataforma para el escritorio GNOME inspirado en [Irssi](/index.php/Irssi "Irssi").
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — Cliente IRC basado en GTK que funciona tanto en Linux como en Windows.
 
@@ -525,7 +525,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **mu/mu4e** — Indexador de email (mu) y cliente para emacs (mu4e). Basado en xapian para las búsquedas rápidas.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Pequeño, pero muy potente, cliente de correo electrónico basado en texto.
 

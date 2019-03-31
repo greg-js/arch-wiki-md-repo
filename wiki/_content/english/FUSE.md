@@ -61,7 +61,7 @@ $ fusermount -u *mountpoint*
 
 *   **HubicFuse** — FUSE filesystem to access HubiC cloud storage.
 
-	[https://github.com/TurboGit/hubicfuse](https://github.com/TurboGit/hubicfuse) || [hubicfuse](https://www.archlinux.org/packages/?name=hubicfuse)
+	[https://github.com/TurboGit/hubicfuse](https://github.com/TurboGit/hubicfuse) || [hubicfuse](https://aur.archlinux.org/packages/hubicfuse/)
 
 *   **MegaFuse** — MEGA client for Linux, based on FUSE.
 

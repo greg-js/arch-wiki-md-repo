@@ -242,7 +242,7 @@ $ kcmshell5 autostart
 
 图标主题可以在 *系统设置 > 图标* 中安装或改变.
 
-**注意:** 虽然所有现代的Linux发行版都共享统一的图标主题格式，但像 [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")这样的桌面使用更少的图标（特别在工具栏和菜单中）。为这些桌面开发的主题一边都缺少 Plasma 和 KDE 应用需要的图标。建议安装与 Plasma 兼容的主题。
+**注意:** 虽然所有现代的Linux发行版都共享统一的图标主题格式，但像 [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")这样的桌面使用更少的图标（特别是在工具栏和菜单中）。为这些桌面开发的主题一般都缺少 Plasma 和 KDE 应用需要的图标。建议安装与 Plasma 兼容的主题。
 
 **提示：** 部分图标主题不从默认图标主题中引入图标，这将导致部分图标缺失。要想从默认图标主题中导入缺失图标，把`breeze`添加到 `/usr/share/icon/*theme-name*/index.theme`的`Inherits=` 中，比如`Inherits=breeze,hicolor`。每次更新图标主题时你都需要重新使用这个补丁，尝试使用[Pacman hooks](/index.php/Pacman_hooks "Pacman hooks")来自动完成这项任务。
 
@@ -288,7 +288,7 @@ Plasma Netbool shell （上网本交互界面）已从 Plasma 5 中移除，请�
 
 Dophin 的共享服务需要 [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) 软件包以及 usershares。关于如何配置usershares（`smb.conf`未启动它），详见 [Samba (简体中文)#建立 Usershare 路径](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#建立_Usershare_路径 "Samba (简体中文)")。在重新启动Samba之后，Dolphin的共享应该无需进一步配置。
 
-Plasma 访问 SMB 共享的能力有限。写入到 Windows 共享存在问题，打开 Windows 共享内文件（例：大的视频文件）会让 Plasma 先将整个文件先复制到本地系统。要解决这个问题，您可以安装类似 [thunar](https://www.archlinux.org/packages/?name=thunar) 加 [gvfs](https://www.archlinux.org/packages/?name=gvfs) 和 [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb)（和 [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) 用于保存登录凭据）的基于GTK的文件浏览器，以更有效的方式访问 SMB 共享。 另一种可能的解决方法则是通过 {Pkg|cifs-utils}} 来 [挂载](/index.php/File_systems#Mount_a_file_system "File systems") Samba 共享从而让 Plasma 把 SMB 共享当成一个普通的本地文件夹从而正常访问。对于公共共享的写入访问，mount命令可能如下所示：
+Plasma 访问 SMB 共享的能力有限。写入到 Windows 共享存在问题，打开 Windows 共享内文件（例：大的视频文件）会让 Plasma 先将整个文件先复制到本地系统。要解决这个问题，您可以安装类似 [thunar](https://www.archlinux.org/packages/?name=thunar) 加 [gvfs](https://www.archlinux.org/packages/?name=gvfs) 和 [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb)（和 [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) 用于保存登录凭据）的基于GTK的文件浏览器，以更有效的方式访问 SMB 共享。 另一种可能的解决方法则是通过 [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) 来 [挂载](/index.php/File_systems#Mount_a_file_system "File systems") Samba 共享从而让 Plasma 把 SMB 共享当成一个普通的本地文件夹从而正常访问。对于公共共享的写入访问，mount命令可能如下所示：
 
 ```
 # mount -t cifs -o username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 //networkhost/share/ /home/user/localmountpoint/
@@ -313,9 +313,9 @@ KDE 桌面活动是类似于“虚拟桌面”的 Plasma 组件，你可以独�
 
 ### 节能
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) 以便使用 KDE 内置的 "**PowerDevil 电源管理**"的节能服务，它可以调整系统的节能配置文件和/或（如果支持的话）屏幕的亮度。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) 以便使用 KDE 内置的 "**PowerDevil 电源管理**"的节能服务，它可以用于调整系统的节能配置、（如果支持的话）屏幕的亮度并提供更详细的电源报告。可以选用[powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/)作为替代品，它不需要[NetworkManager](/index.php/NetworkManager "NetworkManager")和[Bluez](/index.php/Bluez "Bluez")作为依赖。
 
-**注意:** Powerdevil 可能无法 [覆盖](/index.php/Power_management#Power_managers "Power management") 所有的 logind 设置(例如笔记本翻盖动作). 请修改 [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
+**Note:** Powerdevil 可能无法 [覆盖](/index.php/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#电源管理器 "Power management (简体中文)") 所有的 logind 设置(例如笔记本合盖动作). 如果遇到这样的问题，需要修改logind的设置，请参考 [Power management (简体中文)#用 systemd 进行电源管理](/index.php/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#用_systemd_进行电源管理 "Power management (简体中文)").
 
 ### 程序自启动
 
@@ -366,7 +366,7 @@ KDE 中广泛地使用 Phonon 用于声音（例如系统通知或者 KDE 声音
 
 *   可以同时安装多个后端，并在 *系统设置 > 多媒体 > 后端* 中进行优先级设定。
 *   根据 [KDE 这个帖子](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), VLC 后端不支持 [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain")。
-*   如果你选择 VLC 后端，你可能会在每次kde想要发送一个语音警告时遇到崩溃（以及在很多其他情况下，参见[[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   如果你选择 VLC 后端，你可能会在每次kde想要发送一个语音警告时遇到崩溃（以及在很多其他情况下，参见[[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   你可以尝试运行以下代码进行修复：
 
  `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
@@ -432,7 +432,7 @@ KDE 使用 Baloo 实现文件索引和查找。
 
 在默认情况下，桌面搜索的 KCM 仅显示两个选项：一个将文件夹放入黑名单的面板以及一种一次点击来禁用它的方法。
 
-或者你可以编辑 `~/.config/baloofilerc` 文件[[5]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl stop` 和 `balooctl disable`。
+或者你可以编辑 `~/.config/baloofilerc` 文件[[6]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl stop` 和 `balooctl disable`。
 
 将文件夹添加到黑名单或完全禁用了Baloo之后，`baloo_file_cleaner` 进程将会自动删除所有不需要的索引文件。它们被存储在 `~/.local/share/baloo/` 。
 
@@ -567,7 +567,7 @@ Name=/home/*username*/.local/share/akonadi/akonadi.db
 
 ### 使用其他窗口管理器
 
-Plasma 中的组件选择器设置已不再允许更改窗口管理器。[[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)若需要更改窗口管理器，你需要在 KDE 启动之前设置 `KDEWM` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。[[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE)为此，你可以在 `~/.config/plasma-workspace/env` 中创建一个名为 `set_window_manager.sh` 的脚本，并在这导出 `KDEWM` 变量。例：使用 i3 窗口管理器：
+Plasma 中的组件选择器设置已不再允许更改窗口管理器。[[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)若需要更改窗口管理器，你需要在 KDE 启动之前设置 `KDEWM` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。[[8]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE)为此，你可以在 `~/.config/plasma-workspace/env` 中创建一个名为 `set_window_manager.sh` 的脚本，并在这导出 `KDEWM` 变量。例：使用 i3 窗口管理器：
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 

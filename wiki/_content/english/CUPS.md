@@ -89,9 +89,11 @@ To use a parallel port printer, the `lp`, `parport` and `parport_pc` [kernel mod
 
 ### Network
 
-To connect to a network printer via DNS-SD/mDNS, setup [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") with [Avahi](/index.php/Avahi "Avahi") and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
+To discover or share printers using DNS-SD/mDNS, setup [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") with [Avahi](/index.php/Avahi "Avahi") and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
 
-If the system is connected to a networked printer using the [SMB](/index.php/SMB "SMB") protocol, or if the system is to be a print server for Windows clients, install the [samba](https://www.archlinux.org/packages/?name=samba) package.
+**Note:** DNS-SD is only supported when using [Avahi](/index.php/Avahi "Avahi"). CUPS does not support using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") for DNS-SD, see [CUPS issue 5452](https://github.com/apple/cups/issues/5452).
+
+To share printers with [Samba](/index.php/Samba "Samba"), e.g. if the system is to be a print server for Windows clients, the [samba](https://www.archlinux.org/packages/?name=samba) package will be required.
 
 ## Printer Drivers
 
@@ -111,6 +113,8 @@ CUPS includes support for [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wik
 
 The Linux Foundation's OpenPrinting workgroup provides [cups-filters](https://wiki.linuxfoundation.org/openprinting/cups-filters). Those are backends, filters, and other binaries that were once part of CUPS but are no longer maintained by Apple. They are available in the [cups-filters](https://www.archlinux.org/packages/?name=cups-filters) package that is a dependency of [cups](https://www.archlinux.org/packages/?name=cups).
 
+Non-PostScript printers require [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) to be installed. For [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) may also be required.
+
 ### Foomatic
 
 The Linux Foundation's OpenPrinting workgroup's [foomatic](https://wiki.linuxfoundation.org/openprinting/database/foomatic) provides PPDs for many printer drivers, both free and nonfree. For more information about what foomatic does, see [Foomatic from the Developer's View](http://www.openprinting.org/download/kpfeifle/LinuxKongress2002/Tutorial/IV.Foomatic-Developer/IV.tutorial-handout-foomatic-development.html).
@@ -122,7 +126,7 @@ To use foomatic, install [foomatic-db-engine](https://www.archlinux.org/packages
 *   [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) - a collection of XML files from printer manufacturers under non-free licenses used by foomatic-db-engine to generate PPD files.
 *   [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) - prebuilt PPD files under non-free licenses.
 
-The foomatic PPDs may require additional filters, such as [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), or another source (for instance [min12xxw](https://aur.archlinux.org/packages/min12xxw/)). For [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) may also be required.
+The foomatic PPDs may require additional filters, such as [min12xxw](https://aur.archlinux.org/packages/min12xxw/).
 
 ### Gutenprint
 
@@ -366,7 +370,7 @@ CUPS can use [Avahi](/index.php/Avahi "Avahi") browsing to discover unknown shar
 **Note:**
 
 *   Searching for network printers [may significantly increase the time it takes for your computer to boot](https://bbs.archlinux.org/viewtopic.php?pid=1720219#p1720219).
-*   `cups-browsed.service` is only needed to dynamically add and remove printers as they appear and disappear from a network. It is not required if you simply want to add a an mDNS supporting network printer to CUPS.
+*   `cups-browsed.service` is only needed to dynamically add and remove printers as they appear and disappear from a network. It is not required if you simply want to add a an DNS-SD/mDNS supporting network printer to CUPS.
 
 ### Print servers and remote administration
 

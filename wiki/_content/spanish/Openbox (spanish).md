@@ -8,7 +8,11 @@ Artículos relacionados
 
 Openbox es un gestor de ventanas ligero, altamente configurable y con amplia compatibilidad con los estándares. Sus posibilidades están bien documentadas en el [Sitio Web Oficial](http://openbox.org/wiki). Este artículo se referirá a como ejecutar Openbox en Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Actualizando a Openbox 3.5](#Actualizando_a_Openbox_3.5)
@@ -63,19 +67,19 @@ $ cp /etc/xdg/openbox/{rc.xml,menu.xml,autostart, environment} ~/.config/openbox
 
 Estos archivos son la base de tu configuración en openbox. Cada archivo apunta a un único aspecto de la configuración y cumplen los siguientes roles:
 
-	`rc.xml` 
+	`rc.xml`
 
 	Es el principal archivo de configuración de Openbox. Se utiliza para configurar los atajos de teclado, temas, escritorios virtuales demás propiedades.
 
-	`menu.xml` 
+	`menu.xml`
 
 	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú](#Menús).
 
-	`autostart` 
+	`autostart`
 
 	Este es el archivo que se lee al iniciar la sesión de openbox. Contiene los programas que se iniciarán con la sesión. típicamente es usado para lanzar páneles/docks, establecer la imagen de fondo o ejecutar scripts al inicio.
 
-	`environment` 
+	`environment`
 
 	Este archivo establece las variables del entorno openbox. Cualquier variable establecida será ejcutada en cada inicio de sesión. Usado para iniciar IMEs, exportar módulos de idioma, indicar el directorio por defecto y demás.
 
@@ -347,7 +351,7 @@ Ver Artículo Principal: [Openbox Themes and Apps (Español)#Temas y Aparencia](
 
 ### Temas de Openbox
 
-Los temas de Openbox controlan la apariencia de los bordes de ventana, incluyendo la barra del título y sus botones ademas de las notificaciones (OSD). Una serie de temas estan disponibles instalando el paquete [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes), disponible desde los repositorios oficiales.
+Los temas de Openbox controlan la apariencia de los bordes de ventana, incluyendo la barra del título y sus botones ademas de las notificaciones (OSD). Una serie de temas estan disponibles instalando el paquete [openbox-themes](https://aur.archlinux.org/packages/openbox-themes/), disponible desde los repositorios oficiales.
 
 [Box-Look](http://www.box-look.org/index.php?xcontentmode=7402) es una gran fuente de recursos para obtener temas de Openbox.
 

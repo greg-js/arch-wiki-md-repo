@@ -42,6 +42,7 @@ Stand-alone [DHCP](/index.php/DHCP "DHCP") clients:
 
 [VPN](/index.php/VPN "VPN") clients:
 
+*   [OpenConnect](/index.php/OpenConnect "OpenConnect")
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
 *   [strongSwan](/index.php/StrongSwan "StrongSwan")
 *   [WireGuard](/index.php/WireGuard "WireGuard")

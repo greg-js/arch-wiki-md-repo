@@ -407,7 +407,7 @@
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/ru:KTechLab "wikipedia:ru:KTechLab")** — IDE для создания электронных цепей и цепей PIC microcontroller, а также их имитации, предоставляющая обширные возможности с автомаршрутами и имитацией всех общих электронных и логических компонентов
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Графическое приложение для создания и имитации электрических цепей. Для имитации используется движок [ngspice](https://en.wikipedia.org/wiki/ru:Ngspice "wikipedia:ru:Ngspice") или [Gnucap](https://en.wikipedia.org/wiki/ru:GnuCap "wikipedia:ru:GnuCap")
 

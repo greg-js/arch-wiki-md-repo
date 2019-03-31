@@ -515,6 +515,8 @@ The first time you visit a Widevine-enabled page Firefox will display a prompt b
 
 **Note:** Please make sure to check the *Play DRM content* option under Content-Preference.
 
+It is also required that the private mode browsing is disabled, for the window and in the preferences.
+
 ### Remove full screen warning
 
 Warning about video displayed in full screen mode ("… is now fullscreen") can be disabled by setting `full-screen-api.warning.timeout` to `0` in `about:config`.

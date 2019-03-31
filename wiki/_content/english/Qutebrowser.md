@@ -1,13 +1,17 @@
 [qutebrowser](https://github.com/qutebrowser/qutebrowser) is a keyboard-focused web browser based on Python and PyQt5.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 User configuration](#User_configuration)
         *   [2.1.1 Configuration in Qutebrowser](#Configuration_in_Qutebrowser)
-    *   [2.2 Keybindings](#Keybindings)
-    *   [2.3 Video playback](#Video_playback)
+        *   [2.1.2 Keybindings](#Keybindings)
+    *   [2.2 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Automatically enter login information](#Automatically_enter_login_information)
     *   [3.2 Turn on spell checking](#Turn_on_spell_checking)
@@ -72,11 +76,11 @@ This configures DuckDuckGo as your default search engine while the placeholder `
 
 Then, as described by the comment in the qutebrowser UI, you can search the Arch Linux wiki by typing `o wa <searchterm>`. Notice that the arguments required to perform a search vary across search engines. For example, to set up Google, use `https://www.google.com/search?hl=en&q={}`.
 
-### Keybindings
-
-Keybindings reside in `$XDG_CONFIG_HOME/qutebrowser/keys.conf`.
+#### Keybindings
 
 You can edit the keybindings directly from the browser with the command `:bind *key* *command*` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.
+
+See the [documentation](http://qutebrowser.org/doc/help/configuring.html#_binding_keys) for examples.
 
 ### Video playback
 
@@ -181,7 +185,7 @@ Set `content.webgl` to `false` to disable WebGL.
 
 ### dwb-like session handling
 
-To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, while keeping the configuration shared.
+To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option (multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/lib/dotfiles/bin/qutebrowser). It uses `--basedir` to separate data, cache and runtime for each session, while keeping the configuration shared.
 
 ### Disable websites
 

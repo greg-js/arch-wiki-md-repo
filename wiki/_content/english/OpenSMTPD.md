@@ -41,6 +41,8 @@ Related articles
 
 OpenSMTPD is configured in `/etc/smtpd`.
 
+**Note:** Starting with OpenSMTPD [version 6.4.0](https://www.opensmtpd.org/announces/release-6.4.0.txt) the configuration file syntax has been completely reworked, breaking compatibility with previous configuration files. The following examples are for old version 6.0.3p1.
+
 ### Local mail
 
 To have local mail working, for example for [cron](/index.php/Cron "Cron") mails, it is enough to simply [start](/index.php/Start "Start") `smtpd.service`.

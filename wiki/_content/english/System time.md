@@ -115,7 +115,7 @@ To revert to the hardware clock being in UTC, type:
 
 ```
 
-These generates `/etc/adjtime` automatically and updates the RTC accordingly; no further configuration is required.
+These generate `/etc/adjtime` automatically and update the RTC accordingly; no further configuration is required.
 
 During kernel startup, at the point when the RTC driver is loaded, the system clock may be set from the hardware clock. Whether this occurs depends on the hardware platform, the version of the kernel and kernel build options. If this does occur, at this point in the boot sequence, the hardware clock time is assumed to be UTC and the value of `/sys/class/rtc/rtc*N*/hctosys` (N=0,1,2,..) will be set to 1\.
 

@@ -52,8 +52,6 @@ The following requirements must be fulfilled in order to run Steam on Arch Linux
 
 [Install](/index.php/Install "Install") [steamcmd](https://aur.archlinux.org/packages/steamcmd/) for the command-line version of the [Steam](https://developer.valvesoftware.com/wiki/SteamCMD).
 
-**Note:** This package installs files under *root*, so you must run SteamCMD as *root*.
-
 ### Alternative Flatpak installation
 
 Steam can also be installed with [Flatpak](/index.php/Flatpak "Flatpak") as `com.valvesoftware.Steam` from [Flathub](https://flathub.org/). The easiest way to install it for the current user is by using the Flathub repo and flatpak command:
@@ -116,6 +114,7 @@ By default Steam simply appends your option string to the launch command. To set
 To start Steam in Big Picture Mode from a [Display manager](/index.php/Display_manager "Display manager"), you can either:
 
 *   Install [steamos-compositor](https://aur.archlinux.org/packages/steamos-compositor/)
+*   Alternatively, install [steamos-compositor-plus](https://aur.archlinux.org/packages/steamos-compositor-plus/), which hides the annoying color flashing on startup of Proton games and adds a fix for games that start in the background
 *   Manually add a Steam entry (*but you lose the steam compositor advantages: mainly you **can't** control Big Picture mode with keyboard or gamepad*):
 
 create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:

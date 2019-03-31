@@ -82,7 +82,7 @@ $ fwupdmgr update
 
 The following requirements should be met:
 
-1.  Make sure you are booted in [UEFI](/index.php/UEFI "UEFI") mode.
+1.  Make sure you are booted in [UEFI](/index.php/UEFI "UEFI") mode, it will not work in legacy boot mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
 3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
 
@@ -91,8 +91,6 @@ The following requirements should be met:
 Currently, fwupd relies on [shim](/index.php/Secure_Boot#shim "Secure Boot") to chainload the fwupd EFI binary on systems with [Secure Boot](/index.php/Secure_Boot "Secure Boot") enabled. For this to work, shim has to be installed correctly.
 
 #### Using your own keys
-
-**Note:** The following description is based on a future version of fwupd that is not yet released. See [[1]](https://github.com/hughsie/fwupd/issues/669).
 
 Alternatively, you have to manually sign the UEFI executable used to perform upgrades, which is located in `/usr/lib/fwupd/efi/fwupdx64.efi`. The signed UEFI executable is expected in `/usr/lib/fwupd/efi/fwupdx64.efi.signed`. Using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools), this can be achieved by running:
 
@@ -120,3 +118,5 @@ Depends = sbsigntools
 Make sure to replace `<keyfile>` and `<certfile>` with the corresponding paths of your keys.
 
 Finally, you have to change the line containing `RequireShimForSecureBoot` in `/etc/fwupd/uefi.conf` to `RequireShimForSecureBoot=false`.
+
+Check out [[1]](https://github.com/hughsie/fwupd/issues/669) for more information discussing this.

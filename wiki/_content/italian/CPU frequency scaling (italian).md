@@ -9,7 +9,11 @@ Articoli correlati
 
 CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chiamata *cpufreq*. Dalla versione del kernel 3.4 i moduli necessari sono caricati automaticamente e il governatore raccomandato [ondemand](#Gestori_della_variazione) è abilitato in maniera predefinita. Tuttavia gli strumenti a livello utente come [cpupower](https://www.archlinux.org/packages/?name=cpupower), [acpid](/index.php/Acpid_(Italiano) "Acpid (Italiano)") , [laptop-mode-tools](/index.php/Laptop_Mode_Tools_(Italiano) "Laptop Mode Tools (Italiano)") o le GUI fornite dagli ambienti desktop possono essere ancora utilizzati per la configurazione avanzata.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 tool userspace](#tool_userspace)
     *   [1.1 cpupower](#cpupower)
@@ -19,8 +23,8 @@ CPU frequency scaling è implementato nel kernel Linux, l'infrastruttura è chia
     *   [2.1 Impostare una frequenza Massima e Minima](#Impostare_una_frequenza_Massima_e_Minima)
 *   [3 Gestori della variazione](#Gestori_della_variazione)
     *   [3.1 Ottimizzare il governatore ondemand](#Ottimizzare_il_governatore_ondemand)
-        *   [3.1.1 Soglia di commutazione (threshold)](#Soglia_di_commutazione_.28threshold.29)
-        *   [3.1.2 Sampling rate (Frequenza di campionamento)](#Sampling_rate_.28Frequenza_di_campionamento.29)
+        *   [3.1.1 Soglia di commutazione (threshold)](#Soglia_di_commutazione_(threshold))
+        *   [3.1.2 Sampling rate (Frequenza di campionamento)](#Sampling_rate_(Frequenza_di_campionamento))
 *   [4 Interazione con gli eventi ACPI](#Interazione_con_gli_eventi_ACPI)
 *   [5 Concessione dei privilegi sotto Gnome](#Concessione_dei_privilegi_sotto_Gnome)
 *   [6 Risoluzione dei problemi](#Risoluzione_dei_problemi)
@@ -62,7 +66,7 @@ e verificare che la frequenza della CPU è inferiore al massimo.
 *   Dalla versione 3.4 del kernel, i moduli nativi della CPU sono caricati automaticamente.
 *   A partire dal kernel 3.9, il nuovo driver `pstate` per lo scaling di potenza viene usato automaticamente per le moderne CPU Intel al posto degli altri driver elencati sotto. Questo driver ha la priorità su tutti gli altri, e infatti è all'interno del kernel invece di essere un modulo da caricare. Questo driver è attualmente utilizzato automaticamente per tutti i tipi di CPU Sandy Bridge e Ivy Bridge. Se si verifica un problema durante l'utilizzo di questo driver, aggiungere `intel_pstate=disable` alla linea del kernel. É possibile utilizzare le solite utility in userpace con questo driver, ma non possono controllarne l'utilizzo.
 *   Anche il comportamento di P State, menzionato sopra, può essere influenzato con `/sys/devices/system/cpu/intel_pstate`, ad esempio, Intel Turbo Boost può essere disattivato con `# echo 1> /sys/devices/system/cpu/intel_pstate/no_turbo` per mantenere basse le temperature delle CPU.
-*   Un controllo supplementare per le CPU Intel moderne è disponibile con il [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) ( disponibile su AUR con il pacchetto [thermald](https://www.archlinux.org/packages/?name=thermald)), che controlla la temperatura in modo pro-attivo utilizzando i P-states, T-states, e il driver Intel power clamp.
+*   Un controllo supplementare per le CPU Intel moderne è disponibile con il [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) ( disponibile su AUR con il pacchetto [thermald](https://aur.archlinux.org/packages/thermald/)), che controlla la temperatura in modo pro-attivo utilizzando i P-states, T-states, e il driver Intel power clamp.
 
 *cpupower* necessita di moduli per conoscere i limiti della cpu nativa.
 
@@ -255,7 +259,7 @@ Il pacchetto [desktop-privileges](https://aur.archlinux.org/packages/desktop-pri
 
 *   Alcune applicazioni, come [ntop](/index.php/Ntop_(Italiano) "Ntop (Italiano)"), non rispondono bene alla variazione di frequenza automatica. Nel caso di ntop può causare difetti di segmentazione e un sacco di informazioni perse. Allo stesso modo il governatore `ondemand` non può cambiare la frequenza abbastanza rapidamente quando molti di pacchetti arrivano improvvisamente alla interfaccia di rete monitorata che non possono essere gestiti da la velocità del processore corrente.
 
-*   Alcune CPU possono soffrire di scarse prestazioni con le impostazioni predefinite del governatore `ondemand` (ad esempio i video in flash possono soffrire di rallentamenti, o scatti nelle animazioni delle finestre). Invece di disabilitare completamente il frequency scaling per risolvere questi problemi, l'aggressività dello variazione di frequenza può essere aumentata riducendo la variabile [sysctl](/index.php/Sysctl "Sysctl") *up_threshold* per ogni CPU. Si veda [Modifica della soglia (threshold) del governatore 'ondemand'](#Modifica_della_soglia_.28threshold.29_del_governatore_.27ondemand.27).
+*   Alcune CPU possono soffrire di scarse prestazioni con le impostazioni predefinite del governatore `ondemand` (ad esempio i video in flash possono soffrire di rallentamenti, o scatti nelle animazioni delle finestre). Invece di disabilitare completamente il frequency scaling per risolvere questi problemi, l'aggressività dello variazione di frequenza può essere aumentata riducendo la variabile [sysctl](/index.php/Sysctl "Sysctl") *up_threshold* per ogni CPU. Si veda [Modifica della soglia (threshold) del governatore 'ondemand'](#Modifica_della_soglia_(threshold)_del_governatore_'ondemand').
 
 *   A volte il governatore `ondemand` non può acceleratore alla frequenza massima, ma un gradino sotto. Questo può essere risolto impostando il valore max_freq ad uno leggermente superiore a quella massima reale. Per esempio, se la gamma di frequenza della CPU va da 2,00 GHz a 3,00 GHz, impostare max_freq a 3,01 GHz può essere una soluzione.
 

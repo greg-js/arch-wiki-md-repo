@@ -2,12 +2,16 @@
 
 **Pidgin** （以前的Gaim）是Linux平台上的一个即时信息客户端，它可以连接到许多流行的即时信息网络，比如Live Messenger, Yahoo, IRC, AIM等等。Pidgin的一个关键特性是它可以同时连接许多即时信息网络。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 拼写检查](#.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5)
-*   [3 修复声音](#.E4.BF.AE.E5.A4.8D.E5.A3.B0.E9.9F.B3)
-*   [4 浏览器错误](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.94.99.E8.AF.AF)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 拼写检查](#拼写检查)
+*   [3 修复声音](#修复声音)
+*   [4 浏览器错误](#浏览器错误)
 *   [5 QIP Encoding bug](#QIP_Encoding_bug)
 *   [6 ICQ](#ICQ)
 *   [7 IRC](#IRC)
@@ -19,7 +23,7 @@
     *   [11.2 Pidgin-Encryption](#Pidgin-Encryption)
     *   [11.3 Pidgin-GPG](#Pidgin-GPG)
 *   [12 Sametime protocol](#Sametime_protocol)
-*   [13 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
+*   [13 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP/Simple_protocol_for_Live_Communications_Server_2003/2005/2007)
 *   [14 Other packages](#Other_packages)
 *   [15 Skype plugin](#Skype_plugin)
 *   [16 Auto logout on suspend](#Auto_logout_on_suspend)
@@ -56,14 +60,14 @@ $ echo center | aspell -a
 如果你使用的是[ALSA](/index.php/ALSA "ALSA"):
 
 ```
-aplay %s
+aplay %s
 
 ```
 
 如果使用的是[OSS](/index.php/OSS "OSS"):
 
 ```
-ossplay %s
+ossplay %s
 
 ```
 
@@ -219,7 +223,7 @@ Previously it was required to rebuild Pidgin to remove the `--disable-meanwhile`
 
 ## SIP/Simple protocol for Live Communications Server 2003/2005/2007
 
-The [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) plugin is available in [official repositories](/index.php/Official_repositories "Official repositories").
+The [pidgin-sipe](https://aur.archlinux.org/packages/pidgin-sipe/) plugin is available in [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Other packages
 

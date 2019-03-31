@@ -524,7 +524,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **Agave** — Colorscheme designer tool for GNOME.
 
-	[https://web.archive.org/web/20170327063642/http://home.gna.org/colorscheme/](https://web.archive.org/web/20170327063642/http://home.gna.org/colorscheme/) || [agave](https://www.archlinux.org/packages/?name=agave)
+	[https://web.archive.org/web/20170327063642/http://home.gna.org/colorscheme/](https://web.archive.org/web/20170327063642/http://home.gna.org/colorscheme/) || [agave](https://aur.archlinux.org/packages/agave/)
 
 *   **Chameleon** — Simple color picker for X11 which outputs colors to stdout.
 
@@ -676,7 +676,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **[Muine](https://en.wikipedia.org/wiki/Muine "wikipedia:Muine")** — A music player written in C Sharp.
 
-	[https://muine.gooeylinux.org/](https://muine.gooeylinux.org/) || [muine](https://www.archlinux.org/packages/?name=muine)
+	[https://muine.gooeylinux.org/](https://muine.gooeylinux.org/) || [muine](https://aur.archlinux.org/packages/muine/)
 
 *   **Pantheon Music** — Simple, fast, and good looking music player. The official elementary music player.
 
@@ -709,6 +709,10 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 *   **Sayonara** — Small, clear and fast audio player for Linux written in C++, uses the Qt framework.
 
 	[https://sayonara-player.com/](https://sayonara-player.com/) || [sayonara-player](https://aur.archlinux.org/packages/sayonara-player/)
+
+*   **Strawberry** — Music player aimed at audio enthusiasts and music collectors.
+
+	[https://strawbs.org/](https://strawbs.org/) || [strawberry](https://www.archlinux.org/packages/?name=strawberry)
 
 ###### Phonon-based
 
@@ -1824,7 +1828,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 *   **vMovieDB** — Movie collection manager for the Gnome desktop.
 
-	[https://sourceforge.net/projects/vmoviedb/](https://sourceforge.net/projects/vmoviedb/) || [vmoviedb](https://www.archlinux.org/packages/?name=vmoviedb)
+	[https://sourceforge.net/projects/vmoviedb/](https://sourceforge.net/projects/vmoviedb/) || [vmoviedb](https://aur.archlinux.org/packages/vmoviedb/)
 
 ### Media servers
 

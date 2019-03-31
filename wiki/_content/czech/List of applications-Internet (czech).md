@@ -275,7 +275,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Multiplatformní IRC klient pro prostředí GNOME inspirovaný [Irssi](/index.php/Irssi "Irssi")
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 ### Softphone
 

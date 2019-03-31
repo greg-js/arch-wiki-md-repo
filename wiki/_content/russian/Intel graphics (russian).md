@@ -14,39 +14,43 @@
 
 **Примечание:** Основанные на PowerVR видеокарты [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600") серии) не поддерживаются свободными драйверами.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Конфигурация](#Конфигурация)
 *   [3 Kernel Mode Setting](#Kernel_Mode_Setting)
-*   [4 Опции модуля для энергосбережения](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BD.D0.B5.D1.80.D0.B3.D0.BE.D1.81.D0.B1.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-*   [5 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [5.1 Видео без тиринга (горизонтального разрыва)](#.D0.92.D0.B8.D0.B4.D0.B5.D0.BE_.D0.B1.D0.B5.D0.B7_.D1.82.D0.B8.D1.80.D0.B8.D0.BD.D0.B3.D0.B0_.28.D0.B3.D0.BE.D1.80.D0.B8.D0.B7.D0.BE.D0.BD.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B0.D0.B7.D1.80.D1.8B.D0.B2.D0.B0.29)
-    *   [5.2 Отключение вертикальной синхронизации (VSYNC)](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B5.D1.80.D1.82.D0.B8.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D0.BD.D1.85.D1.80.D0.BE.D0.BD.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D0.B8_.28VSYNC.29)
-    *   [5.3 Настройка режима масштабирования](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0_.D0.BC.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-    *   [5.4 Проблема с KMS: консоль ограничена в небольшую площадь](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_KMS:_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C_.D0.BE.D0.B3.D1.80.D0.B0.D0.BD.D0.B8.D1.87.D0.B5.D0.BD.D0.B0_.D0.B2_.D0.BD.D0.B5.D0.B1.D0.BE.D0.BB.D1.8C.D1.88.D1.83.D1.8E_.D0.BF.D0.BB.D0.BE.D1.89.D0.B0.D0.B4.D1.8C)
-    *   [5.5 Декодирование H.264 на GMA 4500](#.D0.94.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_H.264_.D0.BD.D0.B0_GMA_4500)
-    *   [5.6 Управление яркостью и гаммой](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D1.8C.D1.8E_.D0.B8_.D0.B3.D0.B0.D0.BC.D0.BC.D0.BE.D0.B9)
-*   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [6.1 Проблемы SNA](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_SNA)
-    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
-    *   [6.3 Пустой экран во время загрузки системы на этапе "Loading modules"](#.D0.9F.D1.83.D1.81.D1.82.D0.BE.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B2.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.BD.D0.B0_.D1.8D.D1.82.D0.B0.D0.BF.D0.B5_.22Loading_modules.22)
-    *   [6.4 X зависает/падает с драйверами intel](#X_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82.2F.D0.BF.D0.B0.D0.B4.D0.B0.D0.B5.D1.82_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0.D0.BC.D0.B8_intel)
-    *   [6.5 Добавление неопределённых разрешений](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D1.80.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [6.6 Проблема цвета](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.86.D0.B2.D0.B5.D1.82.D0.B0)
-    *   [6.7 Подсветка не регулируется](#.D0.9F.D0.BE.D0.B4.D1.81.D0.B2.D0.B5.D1.82.D0.BA.D0.B0_.D0.BD.D0.B5_.D1.80.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D1.83.D0.B5.D1.82.D1.81.D1.8F)
-    *   [6.8 Отключение сжатия буфера кадров](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.B1.D1.83.D1.84.D0.B5.D1.80.D0.B0_.D0.BA.D0.B0.D0.B4.D1.80.D0.BE.D0.B2)
-    *   [6.9 Искажение/Зависание в Chromium и Firefox](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2F.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_Chromium_.D0.B8_Firefox)
-    *   [6.10 Розовые и зелёные артефакты на видео или выводе Веб-камеры](#.D0.A0.D0.BE.D0.B7.D0.BE.D0.B2.D1.8B.D0.B5_.D0.B8_.D0.B7.D0.B5.D0.BB.D1.91.D0.BD.D1.8B.D0.B5_.D0.B0.D1.80.D1.82.D0.B5.D1.84.D0.B0.D0.BA.D1.82.D1.8B_.D0.BD.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.B8.D0.BB.D0.B8_.D0.B2.D1.8B.D0.B2.D0.BE.D0.B4.D0.B5_.D0.92.D0.B5.D0.B1-.D0.BA.D0.B0.D0.BC.D0.B5.D1.80.D1.8B)
-    *   [6.11 Ядро сбоит с ядрами 4.0+ на чипах Broadwell/Core-M](#.D0.AF.D0.B4.D1.80.D0.BE_.D1.81.D0.B1.D0.BE.D0.B8.D1.82_.D1.81_.D1.8F.D0.B4.D1.80.D0.B0.D0.BC.D0.B8_4.0.2B_.D0.BD.D0.B0_.D1.87.D0.B8.D0.BF.D0.B0.D1.85_Broadwell.2FCore-M)
-    *   [6.12 Драйвер не работает на чипах Intel Skylake](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.87.D0.B8.D0.BF.D0.B0.D1.85_Intel_Skylake)
-*   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [4 Опции модуля для энергосбережения](#Опции_модуля_для_энергосбережения)
+*   [5 Советы и рекомендации](#Советы_и_рекомендации)
+    *   [5.1 Видео без тиринга (горизонтального разрыва)](#Видео_без_тиринга_(горизонтального_разрыва))
+    *   [5.2 Отключение вертикальной синхронизации (VSYNC)](#Отключение_вертикальной_синхронизации_(VSYNC))
+    *   [5.3 Настройка режима масштабирования](#Настройка_режима_масштабирования)
+    *   [5.4 Проблема с KMS: консоль ограничена в небольшую площадь](#Проблема_с_KMS:_консоль_ограничена_в_небольшую_площадь)
+    *   [5.5 Декодирование H.264 на GMA 4500](#Декодирование_H.264_на_GMA_4500)
+    *   [5.6 Управление яркостью и гаммой](#Управление_яркостью_и_гаммой)
+*   [6 Решение проблем](#Решение_проблем)
+    *   [6.1 Проблемы SNA](#Проблемы_SNA)
+    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK+_applications_(missing_glyphs_after_suspend/resume))
+    *   [6.3 Пустой экран во время загрузки системы на этапе "Loading modules"](#Пустой_экран_во_время_загрузки_системы_на_этапе_"Loading_modules")
+    *   [6.4 X зависает/падает с драйверами intel](#X_зависает/падает_с_драйверами_intel)
+    *   [6.5 Добавление неопределённых разрешений](#Добавление_неопределённых_разрешений)
+    *   [6.6 Проблема цвета](#Проблема_цвета)
+    *   [6.7 Подсветка не регулируется](#Подсветка_не_регулируется)
+    *   [6.8 Отключение сжатия буфера кадров](#Отключение_сжатия_буфера_кадров)
+    *   [6.9 Искажение/Зависание в Chromium и Firefox](#Искажение/Зависание_в_Chromium_и_Firefox)
+    *   [6.10 Розовые и зелёные артефакты на видео или выводе Веб-камеры](#Розовые_и_зелёные_артефакты_на_видео_или_выводе_Веб-камеры)
+    *   [6.11 Ядро сбоит с ядрами 4.0+ на чипах Broadwell/Core-M](#Ядро_сбоит_с_ядрами_4.0+_на_чипах_Broadwell/Core-M)
+    *   [6.12 Драйвер не работает на чипах Intel Skylake](#Драйвер_не_работает_на_чипах_Intel_Skylake)
+*   [7 Смотрите также](#Смотрите_также)
 
 ## Установка
 
 Необходимое условие: [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
-[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2 "Pacman (Русский)") пакет [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Пакет предоставляет драйвер DDX для 2D ускорения и устанавливает пакет [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) как зависимость, который предоставляет драйвер DRI для 3D ускорения.
+[Установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пакет [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Пакет предоставляет драйвер DDX для 2D ускорения и устанавливает пакет [intel-dri](https://www.archlinux.org/packages/?name=intel-dri) как зависимость, который предоставляет драйвер DRI для 3D ускорения.
 
 Для поддержи 32-битного 3D ускорения на x86_64, установите [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) из репозитория [multilib](/index.php/Multilib "Multilib").
 
@@ -159,7 +163,7 @@ EndSection
 </device>
 ```
 
-Не используйте [driconf](https://www.archlinux.org/packages/?name=driconf) для создания этого файла, так как он выставит неправильное название драйвера.
+Не используйте [driconf](https://aur.archlinux.org/packages/driconf/) для создания этого файла, так как он выставит неправильное название драйвера.
 
 ### Настройка режима масштабирования
 
@@ -416,7 +420,7 @@ $ dmesg |tail
 
 ### Искажение/Зависание в Chromium и Firefox
 
-Если у вас проявляются искажения или зависания в Chromium и/или Firefox [поменяйте AccelMethod на "uxa"](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_SNA)
+Если у вас проявляются искажения или зависания в Chromium и/или Firefox [поменяйте AccelMethod на "uxa"](#Проблемы_SNA)
 
 Проблема с искажениями в **Chromium** в **Gnome-shell** на **sna** решается включением настройки "Использовать системные рамки и строку заголовка".
 

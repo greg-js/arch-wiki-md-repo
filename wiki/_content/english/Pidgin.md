@@ -99,7 +99,7 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 
 ### SIP/Simple protocol for Skype for Business/Office 365/Lync
 
-[Install](/index.php/Install "Install") the [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) package.
+[Install](/index.php/Install "Install") the [pidgin-sipe](https://aur.archlinux.org/packages/pidgin-sipe/) package.
 
 ### Skype plugin
 

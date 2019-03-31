@@ -165,7 +165,7 @@ To provide basic file sharing through SMB [start/enable](/index.php/Start/enable
 This creates the usershares directory in `/var/lib/samba`:
 
 ```
-# mkdir -p /var/lib/samba/usershares
+# mkdir /var/lib/samba/usershares
 
 ```
 

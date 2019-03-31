@@ -158,7 +158,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 *   **Openbox Themes** — Различные темы для Оконного менеджера Openbox.
 
-	[https://www.debian.org/](https://www.debian.org/) || [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes)
+	[https://www.debian.org/](https://www.debian.org/) || [openbox-themes](https://aur.archlinux.org/packages/openbox-themes/)
 
 *   **QtCurve** — Настраиваемый набор стилей виджетов для KDE и Gtk.
 

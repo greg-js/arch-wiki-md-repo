@@ -1,6 +1,10 @@
 dtach "is a tiny program that emulates the detach feature of screen, allowing you to run a program in an environment that is protected from the controlling terminal and attach to it later." [[1]](http://dtach.sourceforge.net/)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -12,7 +16,7 @@ dtach "is a tiny program that emulates the detach feature of screen, allowing yo
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dtach](https://www.archlinux.org/packages/?name=dtach) package.
+[Install](/index.php/Install "Install") the [dtach](https://aur.archlinux.org/packages/dtach/) package.
 
 ## Usage
 

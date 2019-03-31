@@ -399,7 +399,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE para el diseño de circuitos electrónicos y microcontroladores PIC y su simulación con un extenso diseñador de circuitos, con trazado automático y con simulación de todos los componentes electrónicos comunes y elementos lógicos.
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Aplicación de software gráfico de simulación y captura de esquemas de circuitos eléctricos. La simulación real se realiza por los motores [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") o [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package").
 

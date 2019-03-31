@@ -2,29 +2,33 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 
 本文档介绍如何安装PostgreSql。同时，也介绍了如何配置PostgreSql，使远程客户端能够操作之。在某些应用中，PostgreSQL可以代替MySQL作为LAMP网络栈的一部分。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装PostgreSQL](#.E5.AE.89.E8.A3.85PostgreSQL)
-*   [2 创建第一个数据库/用户](#.E5.88.9B.E5.BB.BA.E7.AC.AC.E4.B8.80.E4.B8.AA.E6.95.B0.E6.8D.AE.E5.BA.93.2F.E7.94.A8.E6.88.B7)
-*   [3 熟悉PostgreSQL](#.E7.86.9F.E6.82.89PostgreSQL)
-    *   [3.1 连接数据库shell](#.E8.BF.9E.E6.8E.A5.E6.95.B0.E6.8D.AE.E5.BA.93shell)
-*   [4 选择配置](#.E9.80.89.E6.8B.A9.E9.85.8D.E7.BD.AE)
-    *   [4.1 配置 PostgreSQL 被远程访问](#.E9.85.8D.E7.BD.AE_PostgreSQL_.E8.A2.AB.E8.BF.9C.E7.A8.8B.E8.AE.BF.E9.97.AE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装PostgreSQL](#安装PostgreSQL)
+*   [2 创建第一个数据库/用户](#创建第一个数据库/用户)
+*   [3 熟悉PostgreSQL](#熟悉PostgreSQL)
+    *   [3.1 连接数据库shell](#连接数据库shell)
+*   [4 选择配置](#选择配置)
+    *   [4.1 配置 PostgreSQL 被远程访问](#配置_PostgreSQL_被远程访问)
     *   [4.2 Configure PostgreSQL to work with PHP](#Configure_PostgreSQL_to_work_with_PHP)
-    *   [4.3 Change default data dir (optional)](#Change_default_data_dir_.28optional.29)
+    *   [4.3 Change default data dir (optional)](#Change_default_data_dir_(optional))
     *   [4.4 Change default encoding of new databases to UTF-8](#Change_default_encoding_of_new_databases_to_UTF-8)
-*   [5 管理工具](#.E7.AE.A1.E7.90.86.E5.B7.A5.E5.85.B7)
-*   [6 Postgresql升级配置](#Postgresql.E5.8D.87.E7.BA.A7.E9.85.8D.E7.BD.AE)
-    *   [6.1 快速指南](#.E5.BF.AB.E9.80.9F.E6.8C.87.E5.8D.97)
-    *   [6.2 详细说明](#.E8.AF.A6.E7.BB.86.E8.AF.B4.E6.98.8E)
+*   [5 管理工具](#管理工具)
+*   [6 Postgresql升级配置](#Postgresql升级配置)
+    *   [6.1 快速指南](#快速指南)
+    *   [6.2 详细说明](#详细说明)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
-    *   [7.2 空闲时防止磁盘写入](#.E7.A9.BA.E9.97.B2.E6.97.B6.E9.98.B2.E6.AD.A2.E7.A3.81.E7.9B.98.E5.86.99.E5.85.A5)
+    *   [7.2 空闲时防止磁盘写入](#空闲时防止磁盘写入)
 *   [8 See also](#See_also)
 
 ## 安装PostgreSQL
 
-[安装](/index.php/Pacman "Pacman") [postgresql](https://www.archlinux.org/packages/?name=postgresql)，并为新用户*postgres*[设置一个密码](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)") 。
+[安装](/index.php/Pacman "Pacman") [postgresql](https://www.archlinux.org/packages/?name=postgresql)，并为新用户*postgres*[设置一个密码](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#其它用户管理示例 "Users and groups (简体中文)") 。
 
 **注意:** 在本篇文章中需要以postgres用户运行的命令以`[postgres]$`作为前置符号。你可以以root用户执行`su - postgres`登陆postgres用户。如果你使用[sudo](/index.php/Sudo "Sudo")，可以以普通用户执行`sudo -i -u postgres`。
 
@@ -43,7 +47,7 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 
 ```
 
-**警告:** 如果数据库位于[Btrfs](/index.php/Btrfs "Btrfs")文件系统上，你应该在创建数据库前禁用数据库目录的[Copy-on-Write](/index.php/Btrfs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.86.99.E6.97.B6.E5.A4.8D.E5.88.B6_.28CoW.29 "Btrfs (简体中文)")
+**警告:** 如果数据库位于[Btrfs](/index.php/Btrfs "Btrfs")文件系统上，你应该在创建数据库前禁用数据库目录的[Copy-on-Write](/index.php/Btrfs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#写时复制_(CoW) "Btrfs (简体中文)")
 
 ## 创建第一个数据库/用户
 
@@ -141,7 +145,7 @@ host   all   all   *my_remote_client_ip_address*/32   md5
 
 如需更多帮助请查看[pg_hba.conf](http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)的文档。
 
-在完成编辑后你需要[重启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `postgresql.service`服务使你的配置生效。
+在完成编辑后你需要[重启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `postgresql.service`服务使你的配置生效。
 
 **注意:** PostgreSQL默认使用`5432`端口作为远程连接。确保打开这个端口并可以接受入口连接
 
@@ -282,7 +286,7 @@ returns
 blog      | postgres | UTF8      | C         | C     |
 postgres  | postgres | SQL_ASCII | C         | C     |
 template0 | postgres | SQL_ASCII | C         | C     | =c/postgres
-                                                     : postgres=CTc/postgres
+                                                     : postgres=CTc/postgres
 template1 | postgres | UTF8      | C         | C     |
 
 ```
@@ -295,7 +299,7 @@ template1 | postgres | UTF8      | C         | C     |
 
 *   **pgAdmin** — GUI-based administration tool for PostgreSQL.
 
-	[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3)
+	[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin3](https://aur.archlinux.org/packages/pgadmin3/)
 
 ## Postgresql升级配置
 

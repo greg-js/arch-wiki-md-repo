@@ -13,18 +13,7 @@ $ mkdir ~/chroot32
 
 ```
 
-Copy `/etc/pacman.conf` and `/etc/makepkg.conf` into this directory and specify 32-bit options in them:
-
-In `~/chroot32/pacman.conf`, set:
-
-```
-Architecture = i686
-
-```
-
-**Note:** Comment out any `[multilib]` repositories!
-
-In `~/chroot32/makepkg.conf`, set:
+Copy `/etc/makepkg.conf` into this directory and set 32-bit options in it:
 
 ```
 CARCH="i686"
@@ -34,16 +23,20 @@ CXXFLAGS="-march=i686 -mtune=generic -O2 -pipe"
 
 ```
 
+**Note:** Comment out any `[multilib]` repositories in `/etc/pacman.conf`!
+
 Then create the chroot:
 
 ```
-$ mkarchroot -C ~/chroot32/pacman.conf -M ~/chroot32/makepkg.conf ~/chroot32/root base-devel
+$ mkarchroot -M ~/chroot32/makepkg.conf ~/chroot32/root base-devel
 
 ```
 
 See [DeveloperWiki:Building in a clean chroot#Setting up a chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot#Setting_up_a_chroot "DeveloperWiki:Building in a clean chroot") for more details.
 
 ## Building in the chroot
+
+**Note:** Make sure your [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") specifies `arch=('i686')`.
 
 Specify this chroot to makechrootpkg to build i686 packages:
 

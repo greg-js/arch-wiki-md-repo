@@ -1,3 +1,8 @@
+Related articles
+
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
+*   [Bluez4](/index.php/Bluez4 "Bluez4")
+
 **翻译状态：** 本文是英文页面 [Bluetooth_headset](/index.php/Bluetooth_headset "Bluetooth headset") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&diff=0&oldid=396614)可以查看翻译后英文页面的改动。
 
 Arch Linux 现在默认支持 A2DP profile (Audio Sink)，可以实现远程音频播放功能。
@@ -6,20 +11,24 @@ Arch Linux 现在默认支持 A2DP profile (Audio Sink)，可以实现远程音�
 
 *   Bluez5 只能通过 [PulseAudio](/index.php/PulseAudio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PulseAudio (简体中文)") 来支持耳机的录音/播放，不支持 [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)")。如果你不想使用 PulseAudio，你需要从 AUR 安装老版本的 Bluez 来支持。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 通过 Bluez5/PulseAudio 支持耳机](#.E9.80.9A.E8.BF.87_Bluez5.2FPulseAudio_.E6.94.AF.E6.8C.81.E8.80.B3.E6.9C.BA)
-    *   [1.1 常见问题及解决方案](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88)
-        *   [1.1.1 已经选择音频配置，但耳机没有激活，不能重定向音频](#.E5.B7.B2.E7.BB.8F.E9.80.89.E6.8B.A9.E9.9F.B3.E9.A2.91.E9.85.8D.E7.BD.AE.EF.BC.8C.E4.BD.86.E8.80.B3.E6.9C.BA.E6.B2.A1.E6.9C.89.E6.BF.80.E6.B4.BB.EF.BC.8C.E4.B8.8D.E8.83.BD.E9.87.8D.E5.AE.9A.E5.90.91.E9.9F.B3.E9.A2.91)
-        *   [1.1.2 授权失败导致配对失败](#.E6.8E.88.E6.9D.83.E5.A4.B1.E8.B4.A5.E5.AF.BC.E8.87.B4.E9.85.8D.E5.AF.B9.E5.A4.B1.E8.B4.A5)
-        *   [1.1.3 配对成功, 但连接失败](#.E9.85.8D.E5.AF.B9.E6.88.90.E5.8A.9F.2C_.E4.BD.86.E8.BF.9E.E6.8E.A5.E5.A4.B1.E8.B4.A5)
-        *   [1.1.4 连接成功，但不能播放声音](#.E8.BF.9E.E6.8E.A5.E6.88.90.E5.8A.9F.EF.BC.8C.E4.BD.86.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE.E5.A3.B0.E9.9F.B3)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 通过 Bluez5/PulseAudio 支持耳机](#通过_Bluez5/PulseAudio_支持耳机)
+    *   [1.1 常见问题及解决方案](#常见问题及解决方案)
+        *   [1.1.1 已经选择音频配置，但耳机没有激活，不能重定向音频](#已经选择音频配置，但耳机没有激活，不能重定向音频)
+        *   [1.1.2 授权失败导致配对失败](#授权失败导致配对失败)
+        *   [1.1.3 配对成功, 但连接失败](#配对成功,_但连接失败)
+        *   [1.1.4 连接成功，但不能播放声音](#连接成功，但不能播放声音)
         *   [1.1.5 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
 *   [3 Legacy method: PulseAudio](#Legacy_method:_PulseAudio)
-*   [4 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA.2C_bluez5_and_PulseAudio_method)
-*   [5 在 HSV 和 A2DP 配置间切换](#.E5.9C.A8_HSV_.E5.92.8C_A2DP_.E9.85.8D.E7.BD.AE.E9.97.B4.E5.88.87.E6.8D.A2)
-    *   [5.1 PulseAudio下A2DP不能工作](#PulseAudio.E4.B8.8BA2DP.E4.B8.8D.E8.83.BD.E5.B7.A5.E4.BD.9C)
+*   [4 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA,_bluez5_and_PulseAudio_method)
+*   [5 在 HSV 和 A2DP 配置间切换](#在_HSV_和_A2DP_配置间切换)
+    *   [5.1 PulseAudio下A2DP不能工作](#PulseAudio下A2DP不能工作)
         *   [5.1.1 Socket Interface problem](#Socket_Interface_problem)
         *   [5.1.2 Gnome with GDM](#Gnome_with_GDM)
 *   [6 Tested headsets](#Tested_headsets)
@@ -27,7 +36,7 @@ Arch Linux 现在默认支持 A2DP profile (Audio Sink)，可以实现远程音�
 
 ## 通过 Bluez5/PulseAudio 支持耳机
 
-PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), [bluez-firmware](https://www.archlinux.org/packages/?name=bluez-firmware). 如果没有安装 [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth)，蓝牙设备在配对完成后，连接会失败，而且你不会得到任何有用的提示。
+PulseAudio 5.x 开始默认支持 A2DP。 确保这些包已经安装[Install](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), [bluez-firmware](https://aur.archlinux.org/packages/bluez-firmware/). 如果没有安装 [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth)，蓝牙设备在配对完成后，连接会失败，而且你不会得到任何有用的提示。
 
 启动bluetooth服务:
 
@@ -196,7 +205,7 @@ bluetoothd[487]: Access denied: org.bluez.Error.Rejected
  `/etc/udev/rules.d/10-local.rules` 
 ```
 # Set bluetooth power up
-ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
+ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
 ```
 
 #### 连接成功，但不能播放声音
@@ -242,7 +251,7 @@ bluez4相关，不翻译，直接参考英文版本[Bluetooth headset#Legacy met
 
 ## Legacy documentation: ALSA, bluez5 and PulseAudio method
 
-争议章节，不翻译，直接参考英文版本[Bluetooth headset#Legacy documentation: ALSA, bluez5 and PulseAudio method](/index.php/Bluetooth_headset#Legacy_documentation:_ALSA.2C_bluez5_and_PulseAudio_method "Bluetooth headset")
+争议章节，不翻译，直接参考英文版本[Bluetooth headset#Legacy documentation: ALSA, bluez5 and PulseAudio method](/index.php/Bluetooth_headset#Legacy_documentation:_ALSA,_bluez5_and_PulseAudio_method "Bluetooth headset")
 
 ## 在 HSV 和 A2DP 配置间切换
 
@@ -265,7 +274,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 **Note:** 下面的方法在 Gnome 3.16.2 和 PulseAudio 6.0 下已经验证过
 
-在GNOME和GDM下，如果PulseAudio切换到A2DP配置不能正常工作，你需要阻止GDM自己启动一个PulseAudio实例。参照[#连接成功，但不能播放声音](#.E8.BF.9E.E6.8E.A5.E6.88.90.E5.8A.9F.EF.BC.8C.E4.BD.86.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE.E5.A3.B0.E9.9F.B3)操作。
+在GNOME和GDM下，如果PulseAudio切换到A2DP配置不能正常工作，你需要阻止GDM自己启动一个PulseAudio实例。参照[#连接成功，但不能播放声音](#连接成功，但不能播放声音)操作。
 
 **Note:** 针对这个问题的讨论可以参考 [这里](https://bbs.archlinux.org/viewtopic.php?id=194006) 和 [这里](https://bbs.archlinux.org/viewtopic.php?id=196689)
 

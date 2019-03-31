@@ -4,7 +4,11 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
 
 Work on Synergy has stalled recently due to Symless (the company behind Synergy) halting further development of the the 1.x branch and concentrating on 2.x branch, which is primarily closed-source, configured through a hosted web interface and requires a paid subscription. A fork called [Barrier](https://github.com/debauchee/barrier) was created to continue development of the 1.x branch, containing many bug fixes and new features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Arch Linux](#Arch_Linux)
@@ -31,6 +35,7 @@ Work on Synergy has stalled recently due to Symless (the company behind Synergy)
     *   [6.5 Client is returning "failed to verify server certificate fingerprint"](#Client_is_returning_"failed_to_verify_server_certificate_fingerprint")
     *   [6.6 Scroll Lock LED does not light](#Scroll_Lock_LED_does_not_light)
     *   [6.7 Additional mouse buttons do not work in client](#Additional_mouse_buttons_do_not_work_in_client)
+    *   [6.8 mouse fixed in certain games](#mouse_fixed_in_certain_games)
 *   [7 External links](#External_links)
 
 ## Installation
@@ -68,7 +73,7 @@ In Synergy, the computer with keyboard and mouse you want to share is called the
 
 ### Arch Linux
 
-Synergy stores its configuration under `/etc/synergy.conf`, Barrier uses `/etc/barrier.conf` or `$HOME/.local/share/barrier/barrier.conf`. If the configuration file does not exist, you can use the provided GUI (started with `$ synergy` or `$ barrier`, or the desktop launcher) to create it visually. Alternatively you may create it by copying `/etc/synergy.conf.example` or `/usr/share/doc/barrier/barrier.conf.example`, whose comments should give you enough information for a basic configuration; if you need further reference or would like to use more advanced options not available from the GUI, read the guide mentioned above.
+Synergy stores its configuration under `/etc/synergy.conf`, Barrier uses `/etc/barrier.conf` or `$HOME/.local/share/barrier/.barrier.conf`. If the configuration file does not exist, you can use the provided GUI (started with `$ synergy` or `$ barrier`, or the desktop launcher) to create it visually. Alternatively you may create it by copying `/etc/synergy.conf.example` or `/usr/share/doc/barrier/barrier.conf.example`, whose comments should give you enough information for a basic configuration; if you need further reference or would like to use more advanced options not available from the GUI, read the guide mentioned above.
 
 **Tip:** Make sure the server port is not blocked. By default, synergy uses port 24800.
 
@@ -490,6 +495,14 @@ Then, move your cursor to the screen of the client with the issue. Click the non
 ```
 
 The `id=...` part will have the right number to use in `mousebutton(...)`
+
+### mouse fixed in certain games
+
+In some applications (like Overwatch or other games) the cursor gets trapped in the middle of the screen.
+
+According to [https://github.com/symless/synergy-core/issues/2631](https://github.com/symless/synergy-core/issues/2631) this is an issue that is known.
+
+Just set relative mouse movement in your settings and make sure to lock the screen.
 
 ## External links
 

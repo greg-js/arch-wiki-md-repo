@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System Specification](#System_Specification)
 *   [2 Installation](#Installation)
@@ -9,9 +13,9 @@
 *   [5 Graphics](#Graphics)
 *   [6 TouchScreen](#TouchScreen)
     *   [6.1 Screen Rotation](#Screen_Rotation)
-        *   [6.1.1 Rotate on button press (Gnome)](#Rotate_on_button_press_.28Gnome.29)
+        *   [6.1.1 Rotate on button press (Gnome)](#Rotate_on_button_press_(Gnome))
     *   [6.2 Multitouch](#Multitouch)
-*   [7 Accelerometer/Magenetometer](#Accelerometer.2FMagenetometer)
+*   [7 Accelerometer/Magenetometer](#Accelerometer/Magenetometer)
 *   [8 Sound](#Sound)
 *   [9 Webcam](#Webcam)
 *   [10 Accessories](#Accessories)
@@ -198,7 +202,7 @@ If you make a mistake, the backspace key works as expected.
 
 If you have installed the wacom driver, the stylus works fine.
 
-I use [xournal](https://www.archlinux.org/packages/?name=xournal) for writing notes, and found enabling, "Use XInput", "Eraser Tip" and "Pressure sensitivity", as well as setting "Button 3 Mapping" to "Eraser" gave the best, and expected results.
+I use [xournal](https://aur.archlinux.org/packages/xournal/) for writing notes, and found enabling, "Use XInput", "Eraser Tip" and "Pressure sensitivity", as well as setting "Button 3 Mapping" to "Eraser" gave the best, and expected results.
 
 The only issue I had was that I like to rest my hand while writing, which of course meant it was registering on the touch screen. Since the touch screen and stylus are independent, you can disable the touch screen with the command
 

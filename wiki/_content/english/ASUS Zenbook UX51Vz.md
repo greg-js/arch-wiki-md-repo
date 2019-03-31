@@ -2,7 +2,11 @@ This page contains instructions, tips, pointers, and links for installing and co
 
 See the page for its 13" variant [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A") that has mostly orthogonal information to those here (may be only partially applicable to UX51Vz)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Boot from USB medium](#Boot_from_USB_medium)
@@ -86,7 +90,7 @@ See [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook
 
 For automatic powersaving when on battery configure [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"). For manual power saving see [Power saving](/index.php/Power_saving "Power saving"). Also check out [Powertop](/index.php/Powertop "Powertop").
 
-The UX51Vz can run a little hot, this is especially true for the HiDPI variant (aka UX51VZH) because the discrete GPU is always on. Be sure to check out [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://www.archlinux.org/packages/?name=thermald) in the AUR), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. It can do wonders for temperature management while avoiding to spin up the fans.
+The UX51Vz can run a little hot, this is especially true for the HiDPI variant (aka UX51VZH) because the discrete GPU is always on. Be sure to check out [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/) in the AUR), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. It can do wonders for temperature management while avoiding to spin up the fans.
 
 ## Hardware and Modules
 

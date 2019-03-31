@@ -1086,7 +1086,7 @@ Pastebin服务经常用作引用文本或图片，特别是协作和故障排除
 
 *   **mu/mu4e** — 邮件索引器(mu)和emacs的客户端 (mu4e). Xapian基于快速搜索.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — 小巧但强力的基于文字的邮件客户端.
 
@@ -1314,7 +1314,7 @@ Pastebin服务经常用作引用文本或图片，特别是协作和故障排除
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — 跨平台的IRC客户端，支持Twitter和XMPP.
 
-	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — 功能丰富的email客户端，支持用IRC，XMPP和Twitter的即时通信.
 

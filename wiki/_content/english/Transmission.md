@@ -61,7 +61,7 @@ The commands for *transmission-cli* are:
 
 	*transmission-edit*: add, delete, or replace a tracker's announce URL.
 
-	*transmission-cli*: ([deprecated](https://github.com/transmission/transmission/commit/950387ab5a443629598f93c057f41150707866ab)) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
+	*transmission-cli*: ([deprecated in favor of transmission-remote](https://github.com/transmission/transmission/commit/950387ab5a443629598f93c057f41150707866ab)) starts a non-daemonized local instance of *transmission*, for manually downloading a torrent.
 
 	*tremc*: (requires [tremc-git](https://aur.archlinux.org/packages/tremc-git/)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) interface for the daemon, whether local or remote.
 

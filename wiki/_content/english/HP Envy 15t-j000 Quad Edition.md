@@ -10,13 +10,17 @@ The HP Envy 15t-j000 Quad Edition is a laptop released in 2013.
 | Card Reader | **Working** | rts5229 !!from 3.8, try rtsx_pci!! |
 | Fingerprint Reader | **Not Working** |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing Arch](#Installing_Arch)
 *   [2 Backlight Issue](#Backlight_Issue)
 *   [3 Battery and Power Management](#Battery_and_Power_Management)
 *   [4 Mouse and Trackpad](#Mouse_and_Trackpad)
-*   [5 Graphics, Video Card, and NVIDIA Optimus](#Graphics.2C_Video_Card.2C_and_NVIDIA_Optimus)
+*   [5 Graphics, Video Card, and NVIDIA Optimus](#Graphics,_Video_Card,_and_NVIDIA_Optimus)
 *   [6 Fingerprint Reader](#Fingerprint_Reader)
 *   [7 Wireless Networking](#Wireless_Networking)
 *   [8 Sound](#Sound)
@@ -49,7 +53,7 @@ The rated battery life for this laptop is 9hrs and with configuration [5.5 hrs i
 
 Install [acpi](https://www.archlinux.org/packages/?name=acpi).
 
-Install [thermald](https://www.archlinux.org/packages/?name=thermald)
+Install [thermald](https://aur.archlinux.org/packages/thermald/)
 
 ```
 # systemctl enable thermald.service

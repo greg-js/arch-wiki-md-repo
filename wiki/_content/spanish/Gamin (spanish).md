@@ -7,7 +7,7 @@ Gamin re-implementa la especificación [FAM](/index.php/FAM_(Espa%C3%B1ol) "FAM 
 
 ## Instalación
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gamin](https://www.archlinux.org/packages/?name=gamin).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gamin](https://aur.archlinux.org/packages/gamin/).
 
 ## Véase también
 

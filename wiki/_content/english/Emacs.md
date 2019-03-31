@@ -1,6 +1,10 @@
 [Emacs](https://en.wikipedia.org/wiki/Emacs "wikipedia:Emacs") is an extensible, customizable, self-documenting real-time display editor. At the core of Emacs lies an [Emacs Lisp](https://en.wikipedia.org/wiki/Emacs_Lisp "wikipedia:Emacs Lisp") interpreter, the language in which the majority of Emacs' built-in functionality and extensions are implemented. GNU Emacs uses GTK as its X toolkit, though it functions equally well within a CLI environment. The text-editing capabilities of Emacs are often compared to that of [vim](/index.php/Vim "Vim").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running Emacs](#Running_Emacs)
@@ -388,7 +392,7 @@ Custom variables are considered unsafe by default. If you try to open a file tha
 You can declare the variable as secure, thus removing the Emacs prompt for confirmation. You need to specify a predicate that any new value has to verify so that it can be considered safe.
 
 ```
-(defcustom my-compiler "gcc" "Some documentation" :safe 'stringp)
+(defcustom my-compiler "gcc" "Some documentation" :safe 'stringp)
 
 ```
 
@@ -506,11 +510,11 @@ Emacs's functionality can be extended with third-party packages. The built-in pa
 
 Third-party package archives can be added. The most widely used of these is [MELPA](https://melpa.org/).
 
-A number of popular extensions are available as packages in the `[community]` repository, and more still, via the [AUR](/index.php/AUR "AUR"). The name of such packages usually have a 'emacs-' prefix (for example, [emacs-lua-mode](https://www.archlinux.org/packages/?name=emacs-lua-mode)), though not always (for example, [auctex](https://www.archlinux.org/packages/?name=auctex)).
+A number of popular extensions are available as packages in the `[community]` repository, and more still, via the [AUR](/index.php/AUR "AUR"). The name of such packages usually have a 'emacs-' prefix (for example, [emacs-lua-mode](https://www.archlinux.org/packages/?name=emacs-lua-mode)), though not always (for example, [auctex](https://aur.archlinux.org/packages/auctex/)).
 
 **Tip:** Arch Linux Wiki contributors may be interested in the [Emacs Mediawiki](/index.php/Emacs_Mediawiki "Emacs Mediawiki") package.
 
-Some packages may require you to make changes to your configuration file in order to activate them so that their features are available during an Emacs session. For example, if you install [auctex](https://www.archlinux.org/packages/?name=auctex), you will need to add
+Some packages may require you to make changes to your configuration file in order to activate them so that their features are available during an Emacs session. For example, if you install [auctex](https://aur.archlinux.org/packages/auctex/), you will need to add
 
 ```
 (load "auctex.el" nil t t)
@@ -677,12 +681,12 @@ Because this will break other key combinations, put the following in your emacs 
  `~/.emacs` 
 ```
 (defadvice terminal-init-screen
-  ;; The advice is named `tmux', and is run before `terminal-init-screen' runs.
+  ;; The advice is named `tmux', and is run before `terminal-init-screen' runs.
   (before tmux activate)
-  ;; Docstring.  This describes the advice and is made available inside emacs;
-  ;; for example when doing C-h f terminal-init-screen RET
+  ;; Docstring.  This describes the advice and is made available inside emacs;
+  ;; for example when doing C-h f terminal-init-screen RET
   "Apply xterm keymap, allowing use of keys passed through tmux."
-  ;; This is the elisp code that is run before `terminal-init-screen'.
+  ;; This is the elisp code that is run before `terminal-init-screen'.
   (if (getenv "TMUX")
     (let ((map (copy-keymap xterm-function-map)))
     (set-keymap-parent map (keymap-parent input-decode-map))

@@ -9,7 +9,11 @@ Per un elenco completo dei modelli GPU-Intel e dei corrispondenti chipset e CPU,
 
 **Nota:** Le schede basate su chip PowerVR (serie [GMA 3600](/index.php/Intel_GMA3600 "Intel GMA3600")) non sono supportate dai driver opensource
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
 *   [2 Configurazione](#Configurazione)
@@ -154,7 +158,7 @@ Il driver Intel utilizza il [Triple Buffering](http://www.intel.com/support/grap
 </device>
 ```
 
-Non usare [driconf](https://www.archlinux.org/packages/?name=driconf) per creare questo file, poichè è pieno di bug e selezionerà il driver sbagliato.
+Non usare [driconf](https://aur.archlinux.org/packages/driconf/) per creare questo file, poichè è pieno di bug e selezionerà il driver sbagliato.
 
 ### Configurare lo scaling mode
 

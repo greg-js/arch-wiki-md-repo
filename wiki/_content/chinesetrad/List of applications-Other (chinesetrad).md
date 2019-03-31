@@ -61,7 +61,7 @@ See the main article: [Command shell](/index.php/Command_shell "Command shell").
 
 *   **dtach** — Program that emulates the detach feature of [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Full-screen window manager that multiplexes a physical terminal.
 
@@ -143,7 +143,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Full fledged dock application that makes opening common applications and managing windows easier and quicker.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
@@ -219,7 +219,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **Kupfer** — Convenient command and access tool for the GNOME desktop that can launch applications, open documents and access different types of objects and act on them.
 
@@ -433,7 +433,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -461,7 +461,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque "wikipedia:Tasque")** — Easy quick task management app written in C Sharp.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **TkRemind** — Sophisticated calendar and alarm program.
 

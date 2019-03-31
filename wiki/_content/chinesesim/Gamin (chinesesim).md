@@ -12,7 +12,7 @@ Gamin 用 [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") �
 
 ```
 
-安装 [gamin](https://www.archlinux.org/packages/?name=gamin) 软件包。
+安装 [gamin](https://aur.archlinux.org/packages/gamin/) 软件包。
 
 ## 外部链接
 

@@ -132,7 +132,7 @@ El controlador de intel utiliza [Triple Buffering](http://www.intel.com/support/
 </device>
 ```
 
-No utilice [driconf](https://www.archlinux.org/packages/?name=driconf) para crear este archivo, producirá un error y establecerá el controlador incorrecto.
+No utilice [driconf](https://aur.archlinux.org/packages/driconf/) para crear este archivo, producirá un error y establecerá el controlador incorrecto.
 
 ### Ajustar la modalidad de escalado
 
@@ -276,7 +276,7 @@ Efectue un [Downgrade](/index.php/Downgrading_packages_(Espa%C3%B1ol) "Downgradi
 
 ### Texturas en negro en videojuegos
 
-Si está experimentando texturas negras en los juegos de vídeo, la solución puede ser habilitar el soporte S3TC que permite la compresión de texturas. Se puede activar a través de [driconf](https://www.archlinux.org/packages/?name=driconf) o instalando [libtxc_dxtn](https://aur.archlinux.org/packages/libtxc_dxtn/) desde AUR.
+Si está experimentando texturas negras en los juegos de vídeo, la solución puede ser habilitar el soporte S3TC que permite la compresión de texturas. Se puede activar a través de [driconf](https://aur.archlinux.org/packages/driconf/) o instalando [libtxc_dxtn](https://aur.archlinux.org/packages/libtxc_dxtn/) desde AUR.
 
 Este «problema» se solucionará muy pronto en los [nuevos controladores](http://www.phoronix.com/scan.php?page=news_item&px=MTIwOTg)
 

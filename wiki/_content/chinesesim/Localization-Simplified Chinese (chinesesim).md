@@ -484,6 +484,7 @@ remote_charsets=gb2312
 
 ## 翻译软件
 
+*   [stardict](https://www.archlinux.org/packages/?name=stardict)星际译王。
 *   [sdcv](https://www.archlinux.org/packages/?name=sdcv)（命令行的星际译王）和[ydcv](https://www.archlinux.org/packages/?name=ydcv)命令行的有道词典。
 *   [youdao-dict](https://aur.archlinux.org/packages/youdao-dict/)：有道词典（图形界面），屏幕取词翻译。
 *   [goldendict](https://www.archlinux.org/packages/?name=goldendict)：默认都不带字典，可下载相应字典包（支持Babylon的词库格式.BGL，已经不再维护的StarDict的词库格式（.ifo/.dict/.idx/.syn），Dictd的词库格式（.index/.dict(.dz) ，ABBYY Lingvo 的词库格式（.dsl/.lsa/.dat），mdict的词库格式等等。可在互联网上下载这些词典的词库文件导入的goldendict使用（可能有版权问题）。

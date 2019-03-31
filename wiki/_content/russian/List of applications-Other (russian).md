@@ -69,7 +69,7 @@
 
 *   **dtach** — Программа, которая эмулирует возможность отделения консольной программы от терминала из [screen](/index.php/GNU_Screen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Screen (Русский)")
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Screen (Русский)")** — Полноэкранный оконный менеджер, "мультиплексирующий" физический терминал
 
@@ -175,7 +175,7 @@
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Полноценный док, позволяющий открывать приложения и управлять окнами легче и быстрее
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Легковесная панель рабочего стола, совместимая с NETWM
 
@@ -275,7 +275,7 @@
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Изначально разработанная для окружения GNOME утилита запуска приложений с большим количеством плагинов, вдохновленная [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)")
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **j4-dmenu-desktop** — Очень быстрая утилита запуска приложений *dmenu*
 
@@ -433,7 +433,7 @@
 
 *   **Hamster** — Приложение слежения за временем, помогающее вам узнавать, как много времени вы тратите в течение дня на различные виды деятельности
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Календарь и система планирования, часть группы пакетов [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
@@ -465,7 +465,7 @@
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Легкое и быстрое приложение управления своим временем, написанное на C Sharp
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **TkRemind** — Сложная программа календаря и сигнализации
 

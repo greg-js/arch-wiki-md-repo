@@ -91,6 +91,7 @@ Related articles
     *   [8.17 Turn off hostname sending](#Turn_off_hostname_sending)
     *   [8.18 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
     *   [8.19 nm-applet tray icons display wrongly](#nm-applet_tray_icons_display_wrongly)
+    *   [8.20 Unit dbus-org.freedesktop.resolve1.service not found](#Unit_dbus-org.freedesktop.resolve1.service_not_found)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -132,7 +133,7 @@ Support for other VPN types is based on a plug-in system. They are provided in t
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
-**Note:** To have fully functioning DNS resolution when using VPN, you should setup [split DNS](#DNS_caching_and_split_DNS).
+**Note:** To have fully functioning DNS resolution when using VPN, you should set up [split DNS](#DNS_caching_and_split_DNS).
 
 ## Usage
 
@@ -1094,6 +1095,29 @@ After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notif
 Currently the tray icons of nm-applet are drawn on top of one another, i.e. the icon displaying wireless strength might show on top of the icon indicating no wired connection. This is apparently a GTK3 bug/problem: [https://gitlab.gnome.org/GNOME/gtk/issues/1280](https://gitlab.gnome.org/GNOME/gtk/issues/1280) .
 
 A patched version of GTK3 exists in AUR, which apparently fixes the tray icon bug: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
+
+### Unit dbus-org.freedesktop.resolve1.service not found
+
+If `systemd-resolved.service` is not started, NetworkManager will try to start it using D-Bus and fail:
+
+```
+dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop.resolve1' unit='dbus-org.freedesktop.resolve1.service' requested by ':1.23' (uid=0 pid=1012 comm="/usr/bin/NetworkManager --no-daemon ")
+dbus-daemon[991]: [system] Activation via systemd failed for unit 'dbus-org.freedesktop.resolve1.service': Unit dbus-org.freedesktop.resolve1.service not found.
+dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop.resolve1' unit='dbus-org.freedesktop.resolve1.service' requested by ':1.23' (uid=0 pid=1012 comm="/usr/bin/NetworkManager --no-daemon ")
+
+```
+
+This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[7]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+
+This can be disabled with a configuration file in `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/no-systemd-resolved.conf` 
+```
+[main]
+systemd-resolved=false
+```
+
+See [FS#62138](https://bugs.archlinux.org/task/62138).
 
 ## See also
 

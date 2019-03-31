@@ -6,7 +6,11 @@ Artículos relacionados
 
 [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") es el proceso por el que se cambia el directorio root del disco aparente (y el actual proceso en marcha y sus descendientes) a otro directorio root. Al cambiar a otro directorio root no se puede acceder a los archivos y órdenes fuera de ese directorio. Este directorio se llama *jaula chroot*. El cambio de root se hace comúnmente para el mantenimiento del sistema, como puede ser volver a instalar el gestor de arranque o restablecer una contraseña olvidada.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requisitos](#Requisitos)
 *   [2 Montar las particiones](#Montar_las_particiones)
@@ -282,7 +286,7 @@ Esto puede proteger su sistema contra ataques desde Internet durante la navegaci
 # # in a shell outside the chroot: 
 # pacman -S xorg-server-xnest
 # # in a shell outside the chroot you can run this as *user*: 
-$ Xnest -ac -geometry 1024x716+0+0 :1
+$ Xnest -ac -geometry 1024x716+0+0 :1
 # # continue inside the chroot: 
 # pacman -S xterm
 # DISPLAY=:1

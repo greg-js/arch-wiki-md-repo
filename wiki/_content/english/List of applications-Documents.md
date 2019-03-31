@@ -212,7 +212,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **medit** — Programming and around-programming text editor.
 
-	[http://mooedit.sourceforge.net](http://mooedit.sourceforge.net) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net](http://mooedit.sourceforge.net) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Mousepad "wikipedia:Xfce")** — Fast text editor for the Xfce Desktop Environment.
 
@@ -252,7 +252,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Scribes** — Ultra minimalist text editor that combines simplicity with power.
 
-	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
+	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://aur.archlinux.org/packages/scribes/)
 
 *   **[Sublime Text](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Proprietary C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
 
@@ -486,7 +486,7 @@ See also [Wikipedia:Comparison of database tools](https://en.wikipedia.org/wiki/
 
 *   **GSQL** — Integrated database development tool for GNOME. Last release 2010.
 
-	[http://gsql.org/](http://gsql.org/) || [gsql](https://www.archlinux.org/packages/?name=gsql)
+	[http://gsql.org/](http://gsql.org/) || [gsql](https://aur.archlinux.org/packages/gsql/)
 
 *   **[Kexi](https://en.wikipedia.org/wiki/Kexi "wikipedia:Kexi")** — Visual database applications creator tool by KDE, designed to fill the gap between spreadsheets and database solutions requiring more sophisticated development.
 
@@ -684,7 +684,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTeX "wikipedia:AUCTeX")** — Together with RefTex, AUCTeX provices an extensible environment for writing and formatting TeX files in [Emacs](/index.php/Emacs "Emacs").
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[gedit](/index.php/Gedit "Gedit") LaTeX Plugin** — Add code-completion to gedit and allows for compiling LaTeX documents and managing BibTeX bibliographies.
 
@@ -1022,7 +1022,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Cherrytree** — Hierarchical note taking application, featuring rich text and syntax highlighting, storing data in a single xml or sqlite file.
 
-	[https://www.giuspen.com/cherrytree/](https://www.giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[https://www.giuspen.com/cherrytree/](https://www.giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **Elephant** — Notetaker with a classic interface.
 
@@ -1046,7 +1046,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **KeepNote** — Cross-platform GTK+ note-taking application with rich text formatting.
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **KJots** — Note taking application for KDE.
 
@@ -1160,11 +1160,11 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Xournal** — Application for notetaking, sketching and keeping a journal using a stylus. Capable of annotating existing PDF files as well.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 *   **Xournal++** — Notetaking software designed around a tablet. C++ rewrite of Xournal with PDF annotation support.
 
-	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp-git](https://aur.archlinux.org/packages/xournalpp-git/)
+	[https://github.com/xournalpp/xournalpp](https://github.com/xournalpp/xournalpp) || [xournalpp](https://www.archlinux.org/packages/?name=xournalpp)
 
 #### Diary
 
@@ -1198,7 +1198,7 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 
 *   **Labyrinth** — Lightweight mind-mapping tool, written in Python using GTK, with support for image import and drawing.
 
-	[https://github.com/labyrinth-team/labyrinth](https://github.com/labyrinth-team/labyrinth) || [labyrinth](https://www.archlinux.org/packages/?name=labyrinth)
+	[https://github.com/labyrinth-team/labyrinth](https://github.com/labyrinth-team/labyrinth) || [labyrinth](https://aur.archlinux.org/packages/labyrinth/)
 
 *   **Semantik** — Mind-mapping application for KDE.
 

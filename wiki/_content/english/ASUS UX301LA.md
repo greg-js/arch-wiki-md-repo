@@ -1,6 +1,10 @@
 This page contains information specific to the ASUS Zenbook UX301LA. Some of it may also be applicable to similar models, depending on the specific configuration. You might also want to look at [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook Prime UX31A").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Booting from USB](#Booting_from_USB)
@@ -103,7 +107,7 @@ lspci: (from UX301LA-DH71T)
 
 ## Heat
 
-As you have probably noticed, the UX301 family of laptops will reach 80° Celsius doing the most remedial of tasks, and upwards of 90° while watching videos. You may want to consider installing and configuring [thermald](https://www.archlinux.org/packages/?name=thermald) from the [AUR](/index.php/AUR "AUR").
+As you have probably noticed, the UX301 family of laptops will reach 80° Celsius doing the most remedial of tasks, and upwards of 90° while watching videos. You may want to consider installing and configuring [thermald](https://aur.archlinux.org/packages/thermald/) from the [AUR](/index.php/AUR "AUR").
 
 ## Helpful Links
 

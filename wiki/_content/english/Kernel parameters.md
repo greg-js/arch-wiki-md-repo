@@ -10,7 +10,7 @@ Not all parameters are always available. Most are associated with subsystems and
 
 Parameters either have the format `parameter` or `parameter=value`.
 
-**Note:** All kernel parameters are case-sensitive. Most of them are lower case, writing those in upper case does not work.
+**Note:** All kernel parameters are case-sensitive.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -37,7 +37,7 @@ Parameters either have the format `parameter` or `parameter=value`.
 *   You can check the parameters your system was booted up with by running `cat /proc/cmdline` and see if it includes your changes.
 *   The Arch Linux [installation medium](https://www.archlinux.org/download/) uses [Syslinux](/index.php/Syslinux "Syslinux") for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems, and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") for [UEFI](/index.php/UEFI "UEFI") systems.
 
-Kernel parameters can be set either temporarily by editing the boot menu when it shows up, or by modifying the boot loader's configuration file.
+Kernel parameters can be set either temporarily by editing the boot entry in the boot loader's boot selection menu, or by modifying the boot loader's configuration file.
 
 The following examples add the `quiet` and `splash` parameters to [Syslinux](/index.php/Syslinux "Syslinux"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), [GRUB](/index.php/GRUB "GRUB"), [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), [LILO](/index.php/LILO "LILO"), and [rEFInd](/index.php/REFInd "REFInd").
 
@@ -63,9 +63,10 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 	Press `Enter` to boot with these parameters.
 
-**Note:** If you have not set a value for menu timeout, you will need to hold `Space` while booting for the systemd-boot menu to appear.
+**Note:**
 
-**Note:** If you can't edit the parameters from the boot menu, you may need to edit `/boot/loader/loader.conf` and add "editor 1" to enable editing.
+*   If you have not set a value for menu timeout, you will need to hold `Space` while booting for the systemd-boot menu to appear.
+*   If you cannot edit the parameters from the boot menu, you may need to edit `/boot/loader/loader.conf` and add `editor 1` to enable editing.
 
 *   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) and add them to the `options` line:
 
@@ -173,7 +174,7 @@ This list is not comprehensive. For a complete list of all options, please see t
 | ro | Mount root device read-only on boot (default). |
 | rw | Mount root device read-write on boot. |
 | initrd= | Specify the location of the initial ramdisk. |
-| init= | Run specified binary instead of `/sbin/init` (symlinked to [systemd](/index.php/Systemd "Systemd") in Arch) as init process. |
+| init= | Run specified binary instead of `/sbin/init` as init process. The [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) package symlinks `/sbin/init` to `/usr/lib/systemd/systemd` to use [systemd](/index.php/Systemd "Systemd"). |
 | init=/bin/sh | Boot to shell. |
 | systemd.unit= | Boot to a [specified target](/index.php/Systemd#Targets "Systemd"). |
 | resume= | Specify a swap device to use when waking from [hibernation](/index.php/Hibernation "Hibernation"). |
@@ -185,7 +186,7 @@ This list is not comprehensive. For a complete list of all options, please see t
 | maxcpus= | Maximum number of processors that an SMP kernel will bring up during bootup. |
 | selinux= | Disable or enable SELinux at boot time. |
 | netdev= | Network devices parameters. |
-| video=<videosetting> | Override framebuffer video defaults. |
+| video= | Override framebuffer video defaults. |
 
  [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") uses `ro` as default value when neither `rw` or `ro` is set by the [boot loader](/index.php/Boot_loader "Boot loader"). Boot loaders may set the value to use, for example GRUB uses `rw` by default (see [FS#36275](https://bugs.archlinux.org/task/36275) as a reference).
 

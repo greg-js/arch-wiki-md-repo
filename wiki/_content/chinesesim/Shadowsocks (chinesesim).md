@@ -86,6 +86,8 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 **注意:** shadowsocks和shadowsocks-libev的systemd 系统单元使用相同的配置文件路径 （`/etc/shadowsocks`）
 
+**注意:** shadowsocks-libev没有`/etc/shadowsocks`文件夹，请自行创建
+
 Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`*conf-file*.json`（以`*conf-file*`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
 
 ```

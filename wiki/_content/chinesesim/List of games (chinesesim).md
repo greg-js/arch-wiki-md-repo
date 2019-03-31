@@ -87,7 +87,7 @@ Related articles
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — 3D game to guide a ball through a maze.
 
-	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
+	[http://neverball.org/](http://neverball.org/) || [neverball](https://aur.archlinux.org/packages/neverball/)
 
 *   **[Rune](https://en.wikipedia.org/wiki/Rune_(video_game) "wikipedia:Rune (video game)")** — 3rd person Adventure / Hack'n Slay using Unreal Engine. Runs great from box installation.
 
@@ -399,7 +399,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **gweled** — Eliminating tiles by joining them in groups of three.
 
-	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://www.archlinux.org/packages/?name=gweled)
+	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://aur.archlinux.org/packages/gweled/)
 
 *   **Hitori** — Small application written to allow one to play the eponymous puzzle game, which is similar in theme to more popular puzzles such as Sudoku.
 

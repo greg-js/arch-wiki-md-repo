@@ -4,7 +4,11 @@
 
 	*Pidgin - это простой в использовании свободный чат клиент, используемый миллионами. Подключение к AIM, MSN, Yahoo и другим чат сетям в одном флаконе.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Проверка правописания](#Проверка_правописания)
@@ -60,21 +64,21 @@ $ echo center | aspell -a
 После настройки [ALSA](/index.php/ALSA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ALSA (Русский)"):
 
 ```
-$ aplay %s
+$ aplay %s
 
 ```
 
 Если используется [OSS](/index.php/OSS "OSS"):
 
 ```
-$ ossplay %s
+$ ossplay %s
 
 ```
 
 И для [PulseAudio](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)"):
 
 ```
-$ paplay %s
+$ paplay %s
 
 ```
 
@@ -198,7 +202,7 @@ Pidgin-GPG прозрачно для вас шифрует разговоры, �
 
 ## SIP/Simple protocol for Live Communications Server 2003/2005/2007
 
-Установите плагин [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) из [официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории").
+Установите плагин [pidgin-sipe](https://aur.archlinux.org/packages/pidgin-sipe/) из [официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории").
 
 ## Другие пакеты
 

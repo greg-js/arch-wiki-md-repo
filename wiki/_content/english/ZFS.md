@@ -50,9 +50,11 @@ As a result:
         *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
 *   [6 Usage](#Usage)
     *   [6.1 Native encryption](#Native_encryption)
+        *   [6.1.1 Unlock at boot time](#Unlock_at_boot_time)
     *   [6.2 Scrub](#Scrub)
         *   [6.2.1 How often should I do this?](#How_often_should_I_do_this?)
-        *   [6.2.2 How do I do this?](#How_do_I_do_this?)
+        *   [6.2.2 Usage](#Usage_2)
+        *   [6.2.3 Start with a service or timer](#Start_with_a_service_or_timer)
     *   [6.3 Check zfs pool status](#Check_zfs_pool_status)
     *   [6.4 Destroy a storage pool](#Destroy_a_storage_pool)
     *   [6.5 Exporting a storage pool](#Exporting_a_storage_pool)
@@ -343,14 +345,21 @@ When running the git version of ZFS on Linux, make sure to also add `-o feature@
 
 Eventually a pool may fail to auto mount and you need to import to bring your pool back. Take care to avoid the most obvious solution.
 
-**Warning:** Do not run `zpool import zfsdata`! Always use `-d`.
+**Warning:** Do not run `zpool import *pool*`! This will import your pools using `/dev/sd?` which will lead to problems the next time you rearrange your drives. This may be as simple as rebooting with a USB drive left in the machine, which harkens back to a time when PCs would not boot when a floppy disk was left in a machine.
 
-This will import your pools using `/dev/sd?` which will lead to problems the next time you rearrange your drives. This may be as simple as rebooting with a USB drive left in the machine, which harkens back to a time when PCs would not boot when a floppy disk was left in a machine. Adapt one of the following commands to import your pool so that pool imports retain the persistence they were created with.
+Adapt one of the following commands to import your pool so that pool imports retain the persistence they were created with:
 
 ```
-# zpool import -d /dev/disk/by-id zfsdata
-# zpool import -d /dev/disk/by-partlabel zfsdata
-# zpool import -d /dev/disk/by-partuuid zfsdata
+# zpool import -d /dev/disk/by-id bigdata
+# zpool import -d /dev/disk/by-partlabel bigdata
+# zpool import -d /dev/disk/by-partuuid bigdata
+
+```
+
+Finally check the state of the pool:
+
+```
+# zpool status bigdata
 
 ```
 
@@ -358,9 +367,16 @@ This will import your pools using `/dev/sd?` which will lead to problems the nex
 
 ### General
 
-Many parameters are available for zfs file systems, you can view a full list with `zfs get all <pool>`. Two common ones to adjust are `atime` and `compression`.
+ZFS pools can be further adjusted using parameters, most commonly `atime` and `compression`.
 
-Atime is enabled by default but for most users, it represents superfluous writes to the zpool and it can be disabled using the zfs command:
+To retrieve the current pool parameter status:
+
+```
+# zfs get all <pool>
+
+```
+
+To disable access time (atime), which is enabled by default:
 
 ```
 # zfs set atime=off <pool>
@@ -370,21 +386,17 @@ Atime is enabled by default but for most users, it represents superfluous writes
 As an alternative to turning off atime completely, `relatime` is available. This brings the default ext4/XFS atime semantics to ZFS, where access time is only updated if the modified time or changed time changes, or if the existing access time has not been updated within the past 24 hours. It is a compromise between `atime=off` and `atime=on`. This property *only* takes effect if `atime` is `on`:
 
 ```
+# zfs set atime=on <pool>
 # zfs set relatime=on <pool>
 
 ```
 
-Compression is just that, transparent compression of data. ZFS supports a few different algorithms, presently lz4 is the default. **gzip** is also available for seldom-written yet highly-compressable data; consult the man page for more details. Enable compression using the zfs command:
+Compression is just that, transparent compression of data. ZFS supports a few different algorithms, presently lz4 is the default, *gzip* is also available for seldom-written yet highly-compressible data; consult the [OpenZFS Wiki](http://open-zfs.org/wiki/Performance_tuning#Compression) for more details.
+
+To enable compression:
 
 ```
 # zfs set compression=on <pool>
-
-```
-
-Other options for zfs can be displayed again, using the zfs command:
-
-```
-# zfs get all <pool>
 
 ```
 
@@ -553,37 +565,37 @@ You can also manually load the keys and then mount the encrypted dataset:
 
 ```
 
-When importing a pool that contains encrypted datasets: ZFS will by default not decrypt these datasets. To do this use `-l`
-
+**Note:** When importing a pool that contains encrypted datasets, ZFS will by default not decrypt these datasets. To do this use `-l`:
 ```
 # zpool import -l pool
 
 ```
 
-You can automate this at boot with a custom systemd unit. For example:
+#### Unlock at boot time
 
- `/etc/systemd/system/zfs-key@.service` 
+It is possible to automatically unlock a pool dataset on boot time by using a [systemd](/index.php/Systemd "Systemd") unit. For example create the following service to unlock any dataset of the pool named *tank*:
+
+ `/etc/systemd/system/zfskey-tank@.service` 
 ```
 [Unit]
-Description=Load storage encryption keys
-DefaultDependencies=no
-Before=systemd-user-sessions.service
+Description=Load pool encryption keys
+#Before=systemd-user-sessions.service
 Before=zfs-mount.service
 After=zfs-import.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/bash -c 'systemd-ask-password "Encrypted storage password (%i): " | /usr/bin/zfs load-key zpool/%i'
+ExecStart=/usr/bin/bash -c '/usr/bin/zfs load-key %j/%i
 
 [Install]
 WantedBy=zfs-mount.service
 
 ```
 
-and enable a service instance for each encrypted volume: `# systemctl enable zfs-key@dataset`. Make sure to change the name of the pool (zpool in the example) in the ExecStart= line if yours is different.
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") the service for each encrypted dataset, e.g. `# systemctl enable zfskey-tank@dataset`.
 
-The Before= reference to systemd-user-sessions.service ensures that systemd-ask-password is invoked before the local IO devices are handed over to the system UI
+**Note:** The `Before=systemd-user-sessions.service` ensures that systemd-ask-password is invoked before the local IO devices are handed over to the [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 ### Scrub
 
@@ -603,31 +615,50 @@ From the Oracle blog post [Disk Scrub - Why and When?](https://blogs.oracle.com/
 
 In the [ZFS Administration Guide](https://pthree.org/2012/12/11/zfs-administration-part-vi-scrub-and-resilver/) by Aaron Toponce, he advises to scrub consumer disks once a week.
 
-#### How do I do this?
+#### Usage
 
 ```
 # zpool scrub <pool>
 
 ```
 
-To do automatic scrubbing once a week, set the following line in the root crontab:
-
- `# crontab -e` 
-```
-...
-30 19 * * 5 zpool scrub <pool>
-...
-
-```
-
-Replace `<pool>` with the name of the ZFS pool.
-
-You can cancel a running scrub with the comand:
+To cancel a running scrub:
 
 ```
 # zpool scrub -s <pool>
 
 ```
+
+#### Start with a service or timer
+
+Using a [systemd](/index.php/Systemd "Systemd") timer/service it is possible to automatically scrub pools weekly:
+
+ `/etc/systemd/system/zfs-scrub@.timer` 
+```
+[Unit]
+Description=Weekly zpool scrub on %i
+
+[Timer]
+OnCalendar=weekly
+AccuracySec=1h
+Persistent=true
+
+[Install]
+WantedBy=multi-user.target
+```
+ `/etc/systemd/system/zfs-scrub@.service` 
+```
+[Unit]
+Description=zpool scrub on %i
+
+[Service]
+Nice=19
+IOSchedulingClass=idle
+KillSignal=SIGINT
+ExecStart=/usr/bin/zpool scrub %i
+```
+
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `zfs-scrub@*pool-to-scrub*.timer` unit for weekly scrubbing the specified zpool.
 
 ### Check zfs pool status
 

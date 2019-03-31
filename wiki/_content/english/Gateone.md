@@ -6,7 +6,11 @@ From [Gate One ✈ Web Terminal Emulator and SSH Client](http://liftoffsoftware.
 
 This guide covers Gate One setup behind [nginx](/index.php/Nginx "Nginx") as reverse proxy.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Optional dependencies](#Optional_dependencies)
@@ -30,7 +34,7 @@ Gate One is available in the [AUR](/index.php/AUR "AUR") via [gateone-git](https
 
 If you want to be able to upgrade (restart) Gate One without losing user's connected sessions you have to have dtach installed. This option is enabled by default in the configuration.
 
-	[dtach](https://www.archlinux.org/packages/?name=dtach)
+	[dtach](https://aur.archlinux.org/packages/dtach/)
 
 	emulates the detach feature of screen
 

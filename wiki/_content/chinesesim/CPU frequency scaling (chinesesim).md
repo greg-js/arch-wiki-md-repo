@@ -9,30 +9,34 @@ CPU 调频允许操作系统通过提高或降低 CPU 频率来达到省电目�
 
 Linux 内核具有 CPU 调频实现，该基础架构称为 *cpufreq*。从 3.4 内核开始，必要的模块都会自动加载，而且推荐的调频器 [ondemand governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling") 默认启用。但是，在进行高级配置时，仍然会用到其他用户空间工具，例如 [cpupower](#cpupower)，[acpid](/index.php/Acpid "Acpid")，[laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools")，或桌面环境所提供的图形化工具。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 用户空间工具](#.E7.94.A8.E6.88.B7.E7.A9.BA.E9.97.B4.E5.B7.A5.E5.85.B7)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 用户空间工具](#用户空间工具)
     *   [1.1 thermald](#thermald)
     *   [1.2 i7z](#i7z)
     *   [1.3 cpupower](#cpupower)
-*   [2 CPU 频率驱动程序](#CPU_.E9.A2.91.E7.8E.87.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F)
-    *   [2.1 设置最大和最小频率](#.E8.AE.BE.E7.BD.AE.E6.9C.80.E5.A4.A7.E5.92.8C.E6.9C.80.E5.B0.8F.E9.A2.91.E7.8E.87)
-*   [3 调整调速器](#.E8.B0.83.E6.95.B4.E8.B0.83.E9.80.9F.E5.99.A8)
-    *   [3.1 调节 ondemand 调速器](#.E8.B0.83.E8.8A.82_ondemand_.E8.B0.83.E9.80.9F.E5.99.A8)
-        *   [3.1.1 开关阙值](#.E5.BC.80.E5.85.B3.E9.98.99.E5.80.BC)
-        *   [3.1.2 采样率](#.E9.87.87.E6.A0.B7.E7.8E.87)
-        *   [3.1.3 保存设置](#.E4.BF.9D.E5.AD.98.E8.AE.BE.E7.BD.AE)
-*   [4 与ACPI事件交互](#.E4.B8.8EACPI.E4.BA.8B.E4.BB.B6.E4.BA.A4.E4.BA.92)
-*   [5 GNOME下的授权](#GNOME.E4.B8.8B.E7.9A.84.E6.8E.88.E6.9D.83)
-*   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [6.1 BIOS频率限制](#BIOS.E9.A2.91.E7.8E.87.E9.99.90.E5.88.B6)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+*   [2 CPU 频率驱动程序](#CPU_频率驱动程序)
+    *   [2.1 设置最大和最小频率](#设置最大和最小频率)
+*   [3 调整调速器](#调整调速器)
+    *   [3.1 调节 ondemand 调速器](#调节_ondemand_调速器)
+        *   [3.1.1 开关阙值](#开关阙值)
+        *   [3.1.2 采样率](#采样率)
+        *   [3.1.3 保存设置](#保存设置)
+*   [4 与ACPI事件交互](#与ACPI事件交互)
+*   [5 GNOME下的授权](#GNOME下的授权)
+*   [6 疑难解答](#疑难解答)
+    *   [6.1 BIOS频率限制](#BIOS频率限制)
+*   [7 参阅](#参阅)
 
 ## 用户空间工具
 
 ### thermald
 
-[thermald](https://www.archlinux.org/packages/?name=thermald) 是一个 Linux 守护进程，用于防止平台过热。此守护进程会监控平台温度，并采用可用的冷却方式来降低温度。
+[thermald](https://aur.archlinux.org/packages/thermald/) 是一个 Linux 守护进程，用于防止平台过热。此守护进程会监控平台温度，并采用可用的冷却方式来降低温度。
 
 默认情况下，在硬件采取激进的降温措施之前，它将利用现有的 CPU 数字温度传感器监控 CPU 温度，并保持 CPU 的温度处于可控范围。如果 sysfs 中存在表面温度传感器，那么它将让表面温度保持在 45℃ 以下。
 
@@ -58,7 +62,7 @@ Linux 内核具有 CPU 调频实现，该基础架构称为 *cpufreq*。从 3.4 
 *   原生 CPU 模块将会自动加载。
 *   对于现代 Intel CPU，将使用 `pstate` 功率驱动程序，而非下列其他驱动程序。此驱动程序的优先级高于其他驱动程序，并编入内核（而非编译为模块）。此驱动程序将自动用于 Sandy Bridge（以及更新的 CPU）。如果在使用这个驱动的时候遇到问题，建议您在 Grub 的内核参数中将其禁用（即修改 /etc/default/grub 文件，在 GRUB_CMDLINE_LINUX_DEFAULT= 后添加 `intel_pstate=disable`）。您可以使用与此驱动程序配套的用户空间工具，但这些工具**不受您的控制**。
 *   尽管上述 P State 行为会受到 `/sys/devices/system/cpu/intel_pstate` 影响，例如：可以通过 `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` 关闭 Intel 睿频加速，从而降低 CPU 的温度。
-*   对于现代 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如 [thermald](https://www.archlinux.org/packages/?name=thermald)），它们可以通过 P-state、T-state 或 Intel 节能驱动程序来主动控制系统温度。thermald 也适用于较老的 Intel CPU。如果最新版本的驱动程序不可用，那么守护进程会还原为 x86 MSR (Model Specific Register)，由 Linux“cpufreq 子系统”来控制系统冷却。
+*   对于现代 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如 [thermald](https://aur.archlinux.org/packages/thermald/)），它们可以通过 P-state、T-state 或 Intel 节能驱动程序来主动控制系统温度。thermald 也适用于较老的 Intel CPU。如果最新版本的驱动程序不可用，那么守护进程会还原为 x86 MSR (Model Specific Register)，由 Linux“cpufreq 子系统”来控制系统冷却。
 
 *cpupower* 需要相应模块来了解本地 CPU 的限制信息：
 
@@ -273,7 +277,7 @@ ResultActive=yes
 
 *   一些应用程序，如[ntop](/index.php/Ntop "Ntop")，对自动频率调整不能很好地响应。在ntop的案例中它可能导致分段错误和大量信息丢失，因为在大量网络数据包突然到达被监控的网络接口时，`on-demand`调速器不能迅速反应，以致当前处理速度满足不了处理这些数据包所需的速度。
 
-*   一些CPU在默认的`on-demand`调速器配置下可能受到比较严重的性能损失（例如flash视频不能平滑地播放，或窗口动画停顿）。为了解决这些问题，完全禁用掉频率调整不如采取更积极的措施——降低每个CPU的*up_threshold* [sysctl](/index.php/Sysctl "Sysctl")变量值。阅读[#修改on-demand调速器的阈值](#.E4.BF.AE.E6.94.B9on-demand.E8.B0.83.E9.80.9F.E5.99.A8.E7.9A.84.E9.98.88.E5.80.BC)章节以获得更多信息。
+*   一些CPU在默认的`on-demand`调速器配置下可能受到比较严重的性能损失（例如flash视频不能平滑地播放，或窗口动画停顿）。为了解决这些问题，完全禁用掉频率调整不如采取更积极的措施——降低每个CPU的*up_threshold* [sysctl](/index.php/Sysctl "Sysctl")变量值。阅读[#修改on-demand调速器的阈值](#修改on-demand调速器的阈值)章节以获得更多信息。
 
 *   有时on-demand调速器可能达不到最高频率而只能达到次级频率。这个问题可以通过把max_freq值设置得稍微高于最大频率的方式来解决。例如，如果CPU的频率范围是2.00 GHz到3.00 GHz，把max_freq设置为3.01 GHz就是一个不错的主意。
 

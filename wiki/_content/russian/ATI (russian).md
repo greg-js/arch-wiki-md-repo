@@ -4,7 +4,11 @@
 
 Если вы не знаете, какой драйвер выбрать, попробуйте для начала открытый. Он лучше поддерживается разработчиками, и с ним, как правило, меньше проблем. Для получение информации о поддержке видеокарт и технологий, смотрите страницу [матрица свойств](http://www.x.org/wiki/RadeonFeature).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Наименование видеокарт и чипов ATI/AMD](#Наименование_видеокарт_и_чипов_ATI/AMD)
 *   [2 Общий обзор](#Общий_обзор)
@@ -252,7 +256,7 @@ modinfo radeon
 
 ```
 
-Можно использовать очень хорошую утилиту [driconf](https://www.archlinux.org/packages/?name=driconf). Она позволит вам изменять некоторые настройки, такие как вертикальная синхронизация, анизотропная фильтрация, компрессия текстур и др. Используя эту утилиту также можно "запретить откат Низкоуровневых Коллизий" необходимый некоторым программам (например Google Earth).
+Можно использовать очень хорошую утилиту [driconf](https://aur.archlinux.org/packages/driconf/). Она позволит вам изменять некоторые настройки, такие как вертикальная синхронизация, анизотропная фильтрация, компрессия текстур и др. Используя эту утилиту также можно "запретить откат Низкоуровневых Коллизий" необходимый некоторым программам (например Google Earth).
 
 #### Включение PCI-E 2.0
 
@@ -547,7 +551,7 @@ $ aticonfig --help
    Examples:
      1\. Setting up fglrx for the first time.
           Single head :    aticonfig --initial --input=/etc/X11/xorg.conf
-          Dual head   :    aticonfig --initial=dual-head --screen-layout=above
+          Dual head   :    aticonfig --initial=dual-head --screen-layout=above
                            This command will generate a dual head configuration
                            file with the second screen located above the first
                            screen.

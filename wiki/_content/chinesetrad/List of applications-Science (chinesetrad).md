@@ -382,7 +382,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE for electronic and PIC microcontroller circuit design and simulation featuring an extensive circuit designer with autorouting and simulation of all common electronic components and logic elements.
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Graphical software application for schematic capture and simulation of electrical circuits. The actual simulation is done by the [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") or [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package") engines.
 

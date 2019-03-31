@@ -12,8 +12,9 @@
     *   [5.1 Multi-monitor](#Multi-monitor)
     *   [5.2 Avoid screen tearing on PRIME systems (Nvidia card + Intel integrated)](#Avoid_screen_tearing_on_PRIME_systems_(Nvidia_card_+_Intel_integrated))
     *   [5.3 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_(KWin))
-        *   [5.3.1 1\. GL threads](#1._GL_threads)
-        *   [5.3.2 2\. Use TripleBuffering](#2._Use_TripleBuffering)
+        *   [5.3.1 Legacy solutions](#Legacy_solutions)
+            *   [5.3.1.1 1\. GL threads](#1._GL_threads)
+            *   [5.3.1.2 2\. Use TripleBuffering](#2._Use_TripleBuffering)
 *   [6 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_"Could_not_insert_'nvidia':_No_such_device"_on_linux_>=4.8)
 *   [7 Poor performance after resuming from suspend](#Poor_performance_after_resuming_from_suspend)
 *   [8 CPU spikes with 400 series cards](#CPU_spikes_with_400_series_cards)
@@ -195,9 +196,20 @@ Output should read `PRIME Synchronization: 1`.
 
 ### Avoid screen tearing in KDE (KWin)
 
-At the moment there are two workarounds to try. Do **not** apply both workarounds because this may lead to high CPU load [[2]](https://bugs.kde.org/show_bug.cgi?id=322060).
+The problem is caused by incorrect assumption by the KDE devs about the behaviour of `glXSwapBuffers"` and should be fixed in **Plasma 5.16** [[2]](https://phabricator.kde.org/D19867). Until then the proper solution is to add:
 
-#### 1\. GL threads
+```
+export __GL_MaxFramesAllowed=1 
+
+```
+
+To either `/etc/profile` or `/etc/environment` or to the script that starts your X server. This also drastically reduces KDE's CPU usage under nvidia.
+
+#### Legacy solutions
+
+For posterity, these are the legacy workarounds. Do **not** apply both workarounds because this may lead to high CPU load [[3]](https://bugs.kde.org/show_bug.cgi?id=322060).
+
+##### 1\. GL threads
 
 Set GL threads to sleep by exporting `__GL_YIELD="USLEEP"` to just `kwin_x11`. Unlike setting up a global environment variable, this affects only KWin. It should also have the advantage over other workarounds, like forcing triple buffering or forcing composition pipeline in the driver, that it doesn't introduce additional stuttering when scrolling in Firefox or moving windows.
 
@@ -215,7 +227,7 @@ Flag the script as executable.
 
 The `sleep` argument helps to prevent issues when KWin is restarted/hanging after logging in, you might need to increase this time.
 
-#### 2\. Use TripleBuffering
+##### 2\. Use TripleBuffering
 
 Make sure `TripleBuffering` has been enabled for the driver, see [#Avoid screen tearing](#Avoid_screen_tearing).
 

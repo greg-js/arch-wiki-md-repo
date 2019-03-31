@@ -4,7 +4,11 @@ The benefit is that, for a regular port scan, it may appear as the service of th
 
 **Warning:** Port knocking should be used as part of a security strategy, not as the only protection. That would be a fragile [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"). In case of SSH protection, see [SSH keys](/index.php/SSH_keys "SSH keys") for a strong method that can be used along with port knocking. Further, do not use the port sequence used in this example for live configurations permanently.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Port knocking with a daemon helper](#Port_knocking_with_a_daemon_helper)
@@ -23,8 +27,8 @@ A session with port knocking may look like this:
 ```
 $ ssh username@hostname # No response (Ctrl+c to exit)
 ^C
-$ nmap -Pn --host_timeout 201 --max-retries 0  -p 1111 host #knocking port 1111
-$ nmap -Pn --host_timeout 201 --max-retries 0  -p 2222 host #knocking port 2222
+$ nmap -Pn --host-timeout 201 --max-retries 0  -p 1111 host #knocking port 1111
+$ nmap -Pn --host-timeout 201 --max-retries 0  -p 2222 host #knocking port 2222
 $ ssh user@host # Now logins are allowed
 user@host's password:
 
@@ -169,7 +173,7 @@ HOST=$1
 shift
 for ARG in "$@"
 do
-        nmap -Pn --host_timeout 100 --max-retries 0 -p $ARG $HOST
+        nmap -Pn --host-timeout 100 --max-retries 0 -p $ARG $HOST
 done
 ```
 

@@ -77,7 +77,7 @@
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Анализатор сетевых протоколов, позволяющий вам в интерактивном режиме следить за трафиком в компьютерной сети
 
-	[http://www.wireshark.org/](http://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
+	[https://www.wireshark.org/](https://www.wireshark.org/) || CLI: [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli), GUI: [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt)
 
 #### Обнаружение угроз и уязвимостей
 
@@ -161,7 +161,7 @@
 
 *   **cfv** — Крошечная утилита как для проверки, так и для создания файлов контрольных сумм. Поддерживает файлы *.sfv*, *.csv*, *.crc*, *.md5*, *md5sum*, *sha1sum*, *.torrent*, *par* и *.par2*
 
-	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
+	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://aur.archlinux.org/packages/cfv/)
 
 *   **GtkHash** — Утилита [GTK+](/index.php/GTK%2B "GTK+") для вычисления контрольных сумм
 

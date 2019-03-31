@@ -1,6 +1,10 @@
 [Mullvad](https://mullvad.net/en/) is a VPN service based in Sweden which uses [OpenVPN](/index.php/OpenVPN "OpenVPN") and [WireGuard](/index.php/WireGuard "WireGuard").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Manual configuration](#Manual_configuration)
@@ -9,7 +13,7 @@
 
 ## Installation
 
-The new [official GUI client](https://mullvad.net/download/) is available as [mullvad-vpn](https://aur.archlinux.org/packages/mullvad-vpn/) which replaces the older client [mullvad-old](https://aur.archlinux.org/packages/mullvad-old/).
+The new [official GUI client](https://mullvad.net/download/) is available as [mullvad-vpn](https://aur.archlinux.org/packages/mullvad-vpn/), the beta version is also available as [mullvad-vpn-bin-beta](https://aur.archlinux.org/packages/mullvad-vpn-bin-beta/) which adds support for [WireGuard](/index.php/WireGuard "WireGuard").
 
 After installation you will need to enable and start the [systemd](/index.php/Systemd "Systemd") service mullvad-daemon.
 

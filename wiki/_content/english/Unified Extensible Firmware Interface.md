@@ -21,7 +21,7 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
 *   [2 UEFI firmware bitness](#UEFI_firmware_bitness)
     *   [2.1 Checking the firmware bitness](#Checking_the_firmware_bitness)
         *   [2.1.1 From Linux](#From_Linux)
-        *   [2.1.2 From Mac OS](#From_Mac_OS)
+        *   [2.1.2 From macOS](#From_macOS)
         *   [2.1.3 From Microsoft Windows](#From_Microsoft_Windows)
 *   [3 Linux kernel config options for UEFI](#Linux_kernel_config_options_for_UEFI)
 *   [4 UEFI variables](#UEFI_variables)
@@ -87,7 +87,7 @@ $ cat /sys/firmware/efi/fw_platform_size
 
 It will return `64` for a 64-bit (x86_64) UEFI or `32` for a 32-bit (IA32) UEFI. If the file does not exist, then you have not booted in UEFI mode.
 
-#### From Mac OS
+#### From macOS
 
 Pre-2008 [Macs](/index.php/Mac "Mac") mostly have IA32 EFI firmware while >=2008 Macs have mostly x86_64 EFI. All Macs capable of running Mac OS X Snow Leopard 64-bit Kernel have x86_64 EFI 1.x firmware.
 
@@ -503,9 +503,9 @@ $ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file
 
 ### DUET for BIOS only systems
 
-DUET is a TianoCore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [https://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](https://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
+DUET was a TianoCore project that enabled chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [https://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](https://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) . However, as of November 2018, the DUET code has been removed from TianoCore git repository.
 
-You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
+You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitlab repos.
 
 ## Troubleshooting
 

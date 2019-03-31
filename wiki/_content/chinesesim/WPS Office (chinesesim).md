@@ -1,6 +1,10 @@
 [WPS Office for Linux](http://linux.wps.cn/) 是金山公司推出的、运行于 Linux 平台上的全功能办公软件。与 Microsoft Office 高度兼容，且更加尊重 Linux 用户特定的使用习惯，并自带方正字体集。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 提示与技巧](#提示与技巧)
@@ -81,7 +85,7 @@ WPS 默认的 UI 为 Qt，事实上其捆绑的 Qt 为 4.7.4，从而因为版�
 可以修改{{Ic|/usr/share/applications/wps-office-{wps,wpp,et}.desktop}}一劳永逸设定：
 
 ```
-Exec=/usr/bin/{wps,wpp,et} **-style gtk+** %f
+Exec=/usr/bin/{wps,wpp,et} **-style gtk+** %f
 
 ```
 

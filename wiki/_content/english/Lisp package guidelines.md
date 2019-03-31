@@ -6,7 +6,11 @@
 
 At the moment, there are relatively few [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language) packages available in the Arch repositories. This means that at some point or another, more will likely appear. It is useful, therefore, to figure out now, while there are few packages, how they should be packaged.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Directory structure and naming](#Directory_structure_and_naming)
 *   [2 ASDF](#ASDF)
@@ -83,9 +87,9 @@ where `$_lispdir` is `$pkgdir/usr/share/common-lisp`. By linking to a relative, 
 
 When possible, do not make packages specific to a single lisp implementation; try to be as cross-platform as the package itself will allow. If, however, the package is specifically designed for a single lisp implementation (i.e., the developers haven't gotten around to adding support for others yet, or the package's purpose is specifically to provide a capability that is built in to another lisp implementation), it is appropriate to make your Arch package lisp-specific.
 
-To avoid making packages implementation-specific, ideally all implementation packages (SBCL, cmucl, clisp) would be built with the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") field **common-lisp**. However, that's not the case (and that would likely cause problems for people who prefer to have multiple lisps at their fingertips). In the meantime, you could (a) not make your package depend on *any* lisp and include a statement in the package.install file telling folks to make sure they have a lisp installed (not ideal), or (b) Take direction from the *sbcl* PKGBUILD and include a conditional statement to figure out which lisp is needed (which is hackish and, again, far from ideal). Other ideas are welcome.
+If the package is implementation-independent, it should depend on **common-lisp**. If the package supports multiple but not all implementations, you could (a) not make your package depend on *any* lisp and include a statement in the package.install file telling folks to make sure they have a supported lisp installed (not ideal), or (b) Take direction from the *sbcl* PKGBUILD and include a conditional statement to figure out which lisp is needed (which is hackish and, again, far from ideal). Other ideas are welcome.
 
-Also note that if ASDF is needed to install/compile/load the package, things could potentially get awkward as far as dependencies go, since SBCL comes with asdf installed, clisp does not but there is an AUR package, and CMUCL may or may not have it (the author of this doc. knows next to nothing about CMUCL; sorry).
+Also note that if ASDF is needed to install/compile/load the package, things could potentially get awkward as far as dependencies go. SBCL and CMUCL come with asdf installed, but clisp does not (but there is an AUR package).
 
 People currently maintaining lisp-specific packages that do not need to be lisp-specific should consider doing at least one of the following:
 

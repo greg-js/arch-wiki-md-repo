@@ -28,7 +28,7 @@ The following applications can be used to browse or search for recent activity u
 
 *   **GNOME Activity Journal** — Browse a chronological log of your activities and easily find files, contacts, etc.
 
-	[https://launchpad.net/gnome-activity-journal](https://launchpad.net/gnome-activity-journal) || [gnome-activity-journal](https://www.archlinux.org/packages/?name=gnome-activity-journal)
+	[https://launchpad.net/gnome-activity-journal](https://launchpad.net/gnome-activity-journal) || [gnome-activity-journal](https://aur.archlinux.org/packages/gnome-activity-journal/)
 
 *   **Recent Events applet (Cairo-Dock plugin)** — Applet for [Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock") using Zeitgeist.
 

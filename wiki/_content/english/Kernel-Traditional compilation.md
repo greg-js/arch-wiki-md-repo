@@ -132,7 +132,7 @@ $ zcat /proc/config.gz > .config
 
 Otherwise, the default configuration can be found online in the [official Arch Linux kernel](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config?h=packages/linux) package.
 
-**Tip:** If you are upgrading kernels, some options may have changed or been removed. In this case, when running `make` under [#Compile the kernel](#Compile_the_kernel), you will be asked to provide answers to every configuration option that has changed between versions. To accept the defaults without being prompted, run `make olddefconfig`.
+**Tip:** If you are upgrading kernels, some options may have changed or been removed. In this case, when running `make` under [#Compilation](#Compilation), you will be asked to provide answers to every configuration option that has changed between versions. To accept the defaults without being prompted, run `make olddefconfig`.
 
 **Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version "CONFIG_LOCALVERSION" in the new `.config` or in the *General Setup > Local version - append to kernel release* option using one of the user interfaces listed under [#Advanced configuration](#Advanced_configuration). If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
 

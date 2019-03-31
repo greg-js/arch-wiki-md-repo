@@ -45,7 +45,10 @@ GUI is available as `firewall-config` which comes with [firewalld](https://www.a
 
 Configuration at run time can be changed using `firewall-cmd`.
 
-**Note:** Most changes will not persist through restart unless `--permanent` option is passed.
+**Note:** Most commands will only change run-time configuration and will not persist through restart. To make changes permanent there are two options:
+
+*   Use `--permanent` option. This will will **not** change run-time configuration until the firewall service is restarted or rules are reloaded with `--reload` command.
+*   Change the run-time configuration and make it permanent as described in [#Converting run-time configuration to permanent](#Converting_run-time_configuration_to_permanent)
 
 ### Zones
 

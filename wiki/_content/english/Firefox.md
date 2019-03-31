@@ -97,7 +97,7 @@ Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extension
 
 #### arch-firefox-search
 
-[Install](/index.php/Install "Install") the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
+[Install](/index.php/Install "Install") the [arch-firefox-search](https://aur.archlinux.org/packages/arch-firefox-search/) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
 
 ## Plugins
 
@@ -405,7 +405,7 @@ If you are using the Xorg Intel or Nouveau drivers and experience tearing video 
 
 ### Firefox WebRTC module cannot detect a microphone
 
-WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https://mozilla.github.io/webrtc-landing/gum_test.html) say that microphone cannot be found. Issue is reproducible for both ALSA or Pulseaudio setup. Firefox debug logs show the following error:
+WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https://mozilla.github.io/webrtc-landing/gum_test.html) say that microphone cannot be found. Issue is reproducible for both ALSA or PulseAudio setup. Firefox debug logs show the following error:
 
  `$ NSPR_LOG_MODULES=MediaManager:5,GetUserMedia:5 firefox` 
 ```
@@ -415,7 +415,7 @@ WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https:/
 
 You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
-This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting"), and Firefox does not recognise the virtual echo canceling source.
+This can also help if you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation "PulseAudio/Troubleshooting") and Firefox does not recognise the virtual echo canceling source.
 
 ## See also
 

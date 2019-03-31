@@ -15,47 +15,51 @@
 
 [这个页面](https://www.x.org/wiki/RadeonFeature/#index5h2)可以将市场名(例如 Radeon HD4330) 映射到芯片组名(例如 R700).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 载入](#.E8.BD.BD.E5.85.A5)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 早启动 KMS](#.E6.97.A9.E5.90.AF.E5.8A.A8_KMS)
-*   [4 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
-    *   [4.1 启动视频加速](#.E5.90.AF.E5.8A.A8.E8.A7.86.E9.A2.91.E5.8A.A0.E9.80.9F)
-    *   [4.2 驱动设置](#.E9.A9.B1.E5.8A.A8.E8.AE.BE.E7.BD.AE)
-    *   [4.3 内核参数](#.E5.86.85.E6.A0.B8.E5.8F.82.E6.95.B0)
-        *   [4.3.1 关闭 PCIE 2.0](#.E5.85.B3.E9.97.AD_PCIE_2.0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 载入](#载入)
+*   [3 配置](#配置)
+    *   [3.1 早启动 KMS](#早启动_KMS)
+*   [4 性能调整](#性能调整)
+    *   [4.1 启动视频加速](#启动视频加速)
+    *   [4.2 驱动设置](#驱动设置)
+    *   [4.3 内核参数](#内核参数)
+        *   [4.3.1 关闭 PCIE 2.0](#关闭_PCIE_2.0)
     *   [4.4 Gallium HUD](#Gallium_HUD)
-*   [5 混合交火](#.E6.B7.B7.E5.90.88.E4.BA.A4.E7.81.AB)
-*   [6 节能](#.E8.8A.82.E8.83.BD)
-    *   [6.1 动态电源管理](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
-        *   [6.1.1 命令行工具](#.E5.91.BD.E4.BB.A4.E8.A1.8C.E5.B7.A5.E5.85.B7)
-    *   [6.2 老方法](#.E8.80.81.E6.96.B9.E6.B3.95)
-        *   [6.2.1 动态频率调整](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-        *   [6.2.2 基于计划的频率调整](#.E5.9F.BA.E4.BA.8E.E8.AE.A1.E5.88.92.E7.9A.84.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-        *   [6.2.3 永久配置](#.E6.B0.B8.E4.B9.85.E9.85.8D.E7.BD.AE)
-        *   [6.2.4 图形化工具](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.B7.A5.E5.85.B7)
-    *   [6.3 其它](#.E5.85.B6.E5.AE.83)
-*   [7 风扇速度](#.E9.A3.8E.E6.89.87.E9.80.9F.E5.BA.A6)
-*   [8 TV输出](#TV.E8.BE.93.E5.87.BA)
-    *   [8.1 在KMS中强制TV输出](#.E5.9C.A8KMS.E4.B8.AD.E5.BC.BA.E5.88.B6TV.E8.BE.93.E5.87.BA)
-*   [9 HDMI 音频输出](#HDMI_.E9.9F.B3.E9.A2.91.E8.BE.93.E5.87.BA)
-*   [10 多显设置](#.E5.A4.9A.E6.98.BE.E8.AE.BE.E7.BD.AE)
-    *   [10.1 使用 RandR 扩展](#.E4.BD.BF.E7.94.A8_RandR_.E6.89.A9.E5.B1.95)
-    *   [10.2 独立的 X screen](#.E7.8B.AC.E7.AB.8B.E7.9A.84_X_screen)
-*   [11 关闭垂直同步刷新](#.E5.85.B3.E9.97.AD.E5.9E.82.E7.9B.B4.E5.90.8C.E6.AD.A5.E5.88.B7.E6.96.B0)
-*   [12 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [12.1 使用 EXA 时性能低](#.E4.BD.BF.E7.94.A8_EXA_.E6.97.B6.E6.80.A7.E8.83.BD.E4.BD.8E)
-    *   [12.2 添加没有被侦测到的分辨率](#.E6.B7.BB.E5.8A.A0.E6.B2.A1.E6.9C.89.E8.A2.AB.E4.BE.A6.E6.B5.8B.E5.88.B0.E7.9A.84.E5.88.86.E8.BE.A8.E7.8E.87)
-    *   [12.3 电视屏幕显示黑边](#.E7.94.B5.E8.A7.86.E5.B1.8F.E5.B9.95.E6.98.BE.E7.A4.BA.E9.BB.91.E8.BE.B9)
-    *   [12.4 KMS启用时,黑幕,没有控制台,但是 X 能够工作](#KMS.E5.90.AF.E7.94.A8.E6.97.B6.2C.E9.BB.91.E5.B9.95.2C.E6.B2.A1.E6.9C.89.E6.8E.A7.E5.88.B6.E5.8F.B0.2C.E4.BD.86.E6.98.AF_X_.E8.83.BD.E5.A4.9F.E5.B7.A5.E4.BD.9C)
-    *   [12.5 显示器旋转对光标起效却对窗口/内容不起效](#.E6.98.BE.E7.A4.BA.E5.99.A8.E6.97.8B.E8.BD.AC.E5.AF.B9.E5.85.89.E6.A0.87.E8.B5.B7.E6.95.88.E5.8D.B4.E5.AF.B9.E7.AA.97.E5.8F.A3.2F.E5.86.85.E5.AE.B9.E4.B8.8D.E8.B5.B7.E6.95.88)
-    *   [12.6 在ATI X1600 (RV530 series)上3D应用程序显示黑窗口](#.E5.9C.A8ATI_X1600_.28RV530_series.29.E4.B8.8A3D.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E6.98.BE.E7.A4.BA.E9.BB.91.E7.AA.97.E5.8F.A3)
-    *   [12.7 从休眠中唤醒后光标崩溃](#.E4.BB.8E.E4.BC.91.E7.9C.A0.E4.B8.AD.E5.94.A4.E9.86.92.E5.90.8E.E5.85.89.E6.A0.87.E5.B4.A9.E6.BA.83)
-    *   [12.8 多显示器模式下DisplayPort黑屏](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E6.A8.A1.E5.BC.8F.E4.B8.8BDisplayPort.E9.BB.91.E5.B1.8F)
-    *   [12.9 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
-    *   [12.10 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_.2F_UHD_.2F_4k_support_over_HDMI_for_older_Radeon_cards)
+*   [5 混合交火](#混合交火)
+*   [6 节能](#节能)
+    *   [6.1 动态电源管理](#动态电源管理)
+        *   [6.1.1 命令行工具](#命令行工具)
+    *   [6.2 老方法](#老方法)
+        *   [6.2.1 动态频率调整](#动态频率调整)
+        *   [6.2.2 基于计划的频率调整](#基于计划的频率调整)
+        *   [6.2.3 永久配置](#永久配置)
+        *   [6.2.4 图形化工具](#图形化工具)
+    *   [6.3 其它](#其它)
+*   [7 风扇速度](#风扇速度)
+*   [8 TV输出](#TV输出)
+    *   [8.1 在KMS中强制TV输出](#在KMS中强制TV输出)
+*   [9 HDMI 音频输出](#HDMI_音频输出)
+*   [10 多显设置](#多显设置)
+    *   [10.1 使用 RandR 扩展](#使用_RandR_扩展)
+    *   [10.2 独立的 X screen](#独立的_X_screen)
+*   [11 关闭垂直同步刷新](#关闭垂直同步刷新)
+*   [12 故障排除](#故障排除)
+    *   [12.1 使用 EXA 时性能低](#使用_EXA_时性能低)
+    *   [12.2 添加没有被侦测到的分辨率](#添加没有被侦测到的分辨率)
+    *   [12.3 电视屏幕显示黑边](#电视屏幕显示黑边)
+    *   [12.4 KMS启用时,黑幕,没有控制台,但是 X 能够工作](#KMS启用时,黑幕,没有控制台,但是_X_能够工作)
+    *   [12.5 显示器旋转对光标起效却对窗口/内容不起效](#显示器旋转对光标起效却对窗口/内容不起效)
+    *   [12.6 在ATI X1600 (RV530 series)上3D应用程序显示黑窗口](#在ATI_X1600_(RV530_series)上3D应用程序显示黑窗口)
+    *   [12.7 从休眠中唤醒后光标崩溃](#从休眠中唤醒后光标崩溃)
+    *   [12.8 多显示器模式下DisplayPort黑屏](#多显示器模式下DisplayPort黑屏)
+    *   [12.9 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and/or_Instability)
+    *   [12.10 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_/_UHD_/_4k_support_over_HDMI_for_older_Radeon_cards)
 
 ## 安装
 
@@ -66,7 +70,7 @@
 *   若需要x86_64下的32位支持,可以从 [multilib](/index.php/Multilib "Multilib") 安装 [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa).
 *   要使用 [Xorg](/index.php/Xorg "Xorg") 2D 加速 DDX 驱动，请安装软件包 [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati).
 
-[加速视频解码](#.E5.90.AF.E5.8A.A8.E8.A7.86.E9.A2.91.E5.8A.A0.E9.80.9F) 由 [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) 和 [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) 包提供支持。
+[加速视频解码](#启动视频加速) 由 [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) 和 [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) 包提供支持。
 
 ## 载入
 
@@ -95,7 +99,7 @@ EndSection
 
 ### 早启动 KMS
 
-**提示：** 若分辨率有问题,试试[强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BC.BA.E8.AE.BE.E6.A8.A1.E5.BC.8F.E5.92.8C_EDID "Kernel mode setting (简体中文)")也许可以解决.
+**提示：** 若分辨率有问题,试试[强设模式](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#强设模式和_EDID "Kernel mode setting (简体中文)")也许可以解决.
 
 现在 radeon 支持并需要[内核级显示模式设置](/index.php/Kernel_mode_setting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel mode setting (简体中文)") (KMS)。KMS 默认启用。
 
@@ -185,11 +189,11 @@ EndSection
 
 ```
 
-**提示：** [driconf](https://www.archlinux.org/packages/?name=driconf) 是一个可以修改诸多设置的小工具，如 vsync, anisotropic filtering, texture compression 等。它还有一些程序（比如Goole Earth）需要的"disable Low Impact fallback"功能。
+**提示：** [driconf](https://aur.archlinux.org/packages/driconf/) 是一个可以修改诸多设置的小工具，如 vsync, anisotropic filtering, texture compression 等。它还有一些程序（比如Goole Earth）需要的"disable Low Impact fallback"功能。
 
 ### 内核参数
 
-**提示：** 你也许想用 `systool` 来调试新的参数，参见[这里](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.A6.82.E8.A7.88 "Kernel modules (简体中文)")。
+**提示：** 你也许想用 `systool` 来调试新的参数，参见[这里](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#概览 "Kernel modules (简体中文)")。
 
 如果 **gartsize** 没有被自动检测到，请添加 `radeon.gartsize=32` 到 [内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")来手动定义它。
 
@@ -244,9 +248,9 @@ radeonsi 驱动支持激活一个HUD，来显示透明的图像及文字于正�
 
 三种方法可供选择:
 
-1.  [dpm](#.E5.8A.A8.E6.80.81.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)(3.13内核后默认启用)
-2.  [dynpm](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
-3.  [profile](#.E5.9F.BA.E4.BA.8E.E8.AE.A1.E5.88.92.E7.9A.84.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)
+1.  [dpm](#动态电源管理)(3.13内核后默认启用)
+2.  [dynpm](#动态频率调整)
+3.  [profile](#基于计划的频率调整)
 
 详见 [http://www.x.org/wiki/RadeonFeature/#index3h2](http://www.x.org/wiki/RadeonFeature/#index3h2) .
 
@@ -256,7 +260,7 @@ radeonsi 驱动支持激活一个HUD，来显示透明的图像及文字于正�
 
 **Tip:** DPM 可以支持 R6xx，但是在内核里默认没有启用，仅 R7xx 及之后的显卡才默认启用. 在内核参数中加入 `radeon.dpm=1` 可以启用 dpm.
 
-不像[dynpm](#.E5.8A.A8.E6.80.81.E9.A2.91.E7.8E.87.E8.B0.83.E6.95.B4)，“dpm"方式根据GPU负载情况动态调整时钟频率和电压，同时它会启用频率和电压门控.
+不像[dynpm](#动态频率调整)，“dpm"方式根据GPU负载情况动态调整时钟频率和电压，同时它会启用频率和电压门控.
 
 dpm有3种模式可选:
 
@@ -327,7 +331,7 @@ dpm有3种模式可选:
 
 #### 永久配置
 
-上述方法不是永久性的，系统重启后将丢失。为了让它一直有效，可以使用[udev](/index.php/Udev "Udev")规则, 例如设置基于计划的频率调整  :
+上述方法不是永久性的，系统重启后将丢失。为了让它一直有效，可以使用[udev](/index.php/Udev "Udev")规则, 例如设置基于计划的频率调整 :
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
 ```
@@ -385,7 +389,7 @@ Thermal sensors are implemented via external i2c chips or via the internal therm
 
 ```
 
-如果要让此成为永久设置，使用 [#永久配置](#.E6.B0.B8.E4.B9.85.E9.85.8D.E7.BD.AE)。
+如果要让此成为永久设置，使用 [#永久配置](#永久配置)。
 
 如果固定值不符合你的期望，还可以自定义为按一个温度/风扇速度曲线来调整，比如写一个脚本，来根据当前温度 (/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input) 设置风扇速度，最好还能设置为温度变化后延迟调整。这里有一个图形界面的工具：[radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/)。
 
@@ -489,9 +493,9 @@ HDMI 音频输出在 [xf86-video-ati](https://www.archlinux.org/packages/?name=x
 
 **注意:**
 
-*   如果在安装驱动后 HDMI 音频没有工作，请使用[这里](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#HDMI_.E8.BE.93.E5.87.BA.E6.97.A0.E6.95.88 "Advanced Linux Sound Architecture (简体中文)")提供的方法进行检测。
-*   如果在 PulseAudio 中声音出现问题，尝试设置 `tsched=0`（参见 [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting")）并确保 `rtkit` 守护进程正在运行。
-*   因为 HDA 兼容硬件的相似性，你的声卡可能使用相同的模块。请使用推荐的方式[改变默认声卡](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E5.A3.B0.E5.8D.A1 "Advanced Linux Sound Architecture (简体中文)")，比如修改 alsa 配置文件的 `defaults` 节点。
+*   如果在安装驱动后 HDMI 音频没有工作，请使用[这里](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#HDMI_输出无效 "Advanced Linux Sound Architecture (简体中文)")提供的方法进行检测。
+*   如果在 PulseAudio 中声音出现问题，尝试设置 `tsched=0`（参见 [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches,_skips_or_crackling "PulseAudio/Troubleshooting")）并确保 `rtkit` 守护进程正在运行。
+*   因为 HDA 兼容硬件的相似性，你的声卡可能使用相同的模块。请使用推荐的方式[改变默认声卡](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#设置默认声卡 "Advanced Linux Sound Architecture (简体中文)")，比如修改 alsa 配置文件的 `defaults` 节点。
 
 ## 多显设置
 
@@ -604,7 +608,7 @@ fbcon=map:0
 
 *   将 `pci=nomsi` 添加到你的启动器的 [内核参数](/index.php/Kernel_parameters "Kernel parameters").
 *   如果没用的话,试试用`noapic`代替`pci=nomsi`.
-*   如果还是没用,你可以试试`vblank_mode=0 glxgears` 或者 `vblank_mode=1 glxgears`,看看哪个对你有用. 然后安装[driconf](https://www.archlinux.org/packages/?name=driconf) , 在`~/.drirc`里设置此参数.
+*   如果还是没用,你可以试试`vblank_mode=0 glxgears` 或者 `vblank_mode=1 glxgears`,看看哪个对你有用. 然后安装[driconf](https://aur.archlinux.org/packages/driconf/) , 在`~/.drirc`里设置此参数.
 
 ### 从休眠中唤醒后光标崩溃
 

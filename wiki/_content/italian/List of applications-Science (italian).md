@@ -370,7 +370,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE per il disegno di circuiti elettronici e microcontrollori PIC e per la loro simulazione. Presenta un esteso archivio di circuiti con autorouting e simulazione dei più comuni componenti elettronici ed elementi logici.
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Software grafico per la rappresentazione schematica e la simulazione di circuiti elettrici. La simulazione è delegata al motore [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") o [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package").
 

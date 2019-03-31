@@ -30,6 +30,8 @@ From [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
     *   [3.6 Update a runtime or application](#Update_a_runtime_or_application)
     *   [3.7 Uninstall a runtime or application](#Uninstall_a_runtime_or_application)
     *   [3.8 Adding Flatpak .desktop files to your menu](#Adding_Flatpak_.desktop_files_to_your_menu)
+    *   [3.9 Viewing sandbox permissions of application](#Viewing_sandbox_permissions_of_application)
+    *   [3.10 Overriding sandbox permissions of applications](#Overriding_sandbox_permissions_of_applications)
 *   [4 Creating a custom base runtime](#Creating_a_custom_base_runtime)
     *   [4.1 Creating apps with pacman](#Creating_apps_with_pacman)
 *   [5 See also](#See_also)
@@ -164,6 +166,39 @@ Flatpak expects window managers to respect the XDG_DATA_DIRS environment variabl
 ```
 
 This is known to be necessary in Awesome.
+
+### Viewing sandbox permissions of application
+
+Flatpak applications come with predefined sandbox rules which defines the resources and file system paths the application is allowed to access. To view the specific application permissions do:
+
+```
+$ flatpak info --show-permissions *name*
+
+```
+
+The reference of the sandbox permission names can be found on [official flatpak documentation](https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html).
+
+### Overriding sandbox permissions of applications
+
+If you find the predefined permissions of the application too lax or too restrictive you can change to anything you want using `flatpak override` command. For example:
+
+```
+flatpak override --nofilesystem=home *name*
+
+```
+
+This will prevent the application access to your home folder.
+
+Every type of permission such as device, filesystem or socket has an command line option that allows that particular permission and a separated option that denies. For example, in case of device access `--device=*device_name*` allows access, `--nodevice=*device_name*` denies the permission to access device.
+
+For all permission types commands consult the manual page: [flatpak-override(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak-override.1)
+
+Permission overrides can be reset to defaults with command:
+
+```
+$ flatpak override --reset *name*
+
+```
 
 ## Creating a custom base runtime
 

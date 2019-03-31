@@ -47,7 +47,7 @@ It is recommended to verify the image signature before use, especially when down
 On a system with [GnuPG](/index.php/GnuPG "GnuPG") installed, do this by downloading the *PGP signature* (under *Checksums*) to the ISO directory, and [verifying](/index.php/GnuPG#Verify_a_signature "GnuPG") it with:
 
 ```
-$ gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
+$ gpg --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
 
 ```
 

@@ -468,7 +468,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **cfv** — Tiny utility to both test and create checksum files, support `.sfv`, `.csv`, `.crc`, `.md5`, `md5sum`, `sha1sum`, `.torrent`, `par`, and `.par2` files.
 
-	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
+	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://aur.archlinux.org/packages/cfv/)
 
 *   **GtkHash** — A GTK+ utility for computing message digests or checksums
 

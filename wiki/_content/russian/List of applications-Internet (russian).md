@@ -448,7 +448,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **mu/mu4e** — Индексатор электронной почты (mu) и клиент для emacs (mu4e). Основан на Xapian для быстрого поиска
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Небольшой, но очень мощный консольный почтовый клиент
 
@@ -728,7 +728,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Кроссплатформенный клиент IRC для окружения GNOME, вдохновленный [Irssi](/index.php/Irssi "Irssi")
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/ru:XChat "wikipedia:ru:XChat")** — Основанный на GTK клиент IRC, способный работать как в Linux, так и в Windows
 

@@ -335,7 +335,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Client IRC multi piattaforma per l'ambiente desktop GNOME ispirato ad Irssi.
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — Client IRC basato su GTK+ che può funzionare sia su Linux che su Windows.
 

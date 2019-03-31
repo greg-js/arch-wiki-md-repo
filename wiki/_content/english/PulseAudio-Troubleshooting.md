@@ -21,6 +21,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [1.12 No sound after resume from suspend](#No_sound_after_resume_from_suspend)
     *   [1.13 ALSA channels mute when headphones are plugged/unplugged improperly](#ALSA_channels_mute_when_headphones_are_plugged/unplugged_improperly)
     *   [1.14 Volume resets to 50% every few seconds](#Volume_resets_to_50%_every_few_seconds)
+    *   [1.15 Volume low/too quiet on analog headphones/speakers](#Volume_low/too_quiet_on_analog_headphones/speakers)
 *   [2 Microphone](#Microphone)
     *   [2.1 Microphone not detected by PulseAudio](#Microphone_not_detected_by_PulseAudio)
     *   [2.2 PulseAudio uses wrong microphone](#PulseAudio_uses_wrong_microphone)
@@ -289,6 +290,10 @@ $ hdajackretask
 Set "Not Connected" to everything but the ports you are using. It seems the other unused audio ports on the motherboard interfere with the used ones. Then if you want use the Boot Override to save this change between reboots. There is a possibility it is the Front Green Headphone that is causing the bug, if you need it override the Front Microphone to Headphone and the Front Green Headphone to "Not Connected" and use the Front Microphone port as your headphone port.
 
 More info about this problem: [[2]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/1585084).
+
+### Volume low/too quiet on analog headphones/speakers
+
+If you added the `ignore_dB=1` option earlier to the `load-module module-udev-detect` line in your `/etc/pulse/default.pa`, try removing it.
 
 ## Microphone
 

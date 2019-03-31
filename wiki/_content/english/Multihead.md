@@ -44,11 +44,11 @@ Related articles
 
 ## Historical background
 
-X Window System is the underlying graphical interface of most Unix/Linux computers providing a GUI. It was developed in 1984 at MIT. After about 35 years of development, tweaking and adding of new features and ideas, it is generally acknowledged to be a bit of a beast. It should be remembered that the common configuration at time of development was a single running X providing individual views to Xterminals in a [time-sharing](https://en.wikipedia.org/wiki/Time-sharing "wikipedia:Time-sharing") system. Nowadays the standard is X providing a single screen on a desktop or laptop.
+X Window System is the underlying graphical interface of most Unix/Linux computers providing a GUI. It was developed in 1984 at MIT. After about 35 years of development, tweaking and adding of new features and ideas, it is generally acknowledged to be a bit of a beast. It should be remembered that the common configuration at the time of development was a single running X providing individual views to Xterminals in a [time-sharing](https://en.wikipedia.org/wiki/Time-sharing "wikipedia:Time-sharing") system. Nowadays the standard is X providing a single screen on a desktop or laptop.
 
 **Note:** There is still a rare configuration often called [Zaphod display](/index.php/Xorg_multiseat "Xorg multiseat"), which allows multiple users of a single computer to each have an independent set of display, mouse, and keyboard, as though they were using separate computers, but at a lower per-seat cost.
 
-All of this means that there are many ways of achieving the same thing and many slightly different things that can meet the same purpose. In modern X versions sometimes you can get away with limited or no configuration. In the last few years the boast is that X is self configuring. Certainly the best practice rule of thumb is less configuration is better - that is *only configure what is wrong*.
+All of this means that there are many ways of achieving the same thing and many slightly different things that can meet the same purpose. In modern X versions sometimes you can get away with limited or no configuration. In the last few years, the boast is that X is self-configuring. Certainly, the best practice rule of thumb is less configuration is better - that is *only configure what is wrong*.
 
 ## Separate screens
 
@@ -56,7 +56,7 @@ This is the original way of configuring multiple monitors with X, and it has bee
 
 Normally the X display has a single identifier such as `:0` set in the `DISPLAY` environment variable, but in this configuration each screen has a different `$DISPLAY` value. The first screen is `:0.0`, the second is `:0.1` and so on.
 
-With this configuration it is not possible to move windows between screens, apart from a few special programs like GIMP and Emacs which have multi-screen support. For most programs you must change the `DISPLAY` environment variable when launching to have the program appear on another screen:
+With this configuration, it is not possible to move windows between screens, apart from a few special programs like GIMP and Emacs which have multi-screen support. For most programs you must change the `DISPLAY` environment variable when launching to have the program appear on another screen:
 
 ```
 # Launch a terminal on the second screen
@@ -64,7 +64,7 @@ $ DISPLAY=:0.1 urxvt &
 
 ```
 
-Alternatively if you have a terminal on each screen launching programs will inherit the `DISPLAY` value and appear on the same screen they were launched on. But moving an application between screens involves closing it and reopening it again on the other screen.
+Alternatively, if you have a terminal on each screen launching programs will inherit the `DISPLAY` value and appear on the same screen they were launched on. But moving an application between screens involves closing it and reopening it again on the other screen.
 
 Working this way does have certain advantages, such as windows popping up on one screen won't steal the focus away from you if you are working on another screen - each screen is quite independent.
 
@@ -121,7 +121,7 @@ $ xrandr --output VGA1 --mode 1024x768 --output HDMI1 --mode 1920x1080 --left-of
 
 #### Combine screens into virtual display
 
-Since randr version 1.5 it has been possible to combine monitors into one virtual display. This is an updated version of what was possible with Xinerama and works with open source drivers and does not require an xorg restart. Some desktop environments do not support this feature yet. [Openbox](/index.php/Openbox "Openbox") has been tested and works with this feature.
+Since randr version 1.5, it has been possible to combine monitors into one virtual display. This is an updated version of what was possible with Xinerama and works with open source drivers and does not require an Xorg restart. Some desktop environments do not support this feature yet. [Openbox](/index.php/Openbox "Openbox") has been tested and works with this feature.
 
 Get monitor list by doing `xrandr --listmonitors`
 
@@ -132,7 +132,7 @@ Get monitor list by doing `xrandr --listmonitors`
 
 ```
 
-Create virtual display `xrandr --setmonitor SomeName auto DiplayPort-4,DisplayPort-3,HDMI-A-0`. `auto` determines the size of the virtual display, setting this to auto will automatically create the correct size of the display array. Monitor order in this command does not matter and the monitors need to be rearranged correctly after or before this command is executed.
+Create virtual display `xrandr --setmonitor SomeName auto DisplayPort-4,DisplayPort-3,HDMI-A-0`. `auto` determines the size of the virtual display, setting this to auto will automatically create the correct size of the display array. Monitor order in this command does not matter and the monitors need to be rearranged correctly after or before this command is executed.
 
 For a more detailed explanation see [this page](http://www.straightrunning.com/tools/xrandr.html#sect3).
 
@@ -235,9 +235,9 @@ There are no negative coordinates, the setup's leftmost and highest possibly tar
 
 ## TwinView
 
-TwinView is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However if you only have two monitors and they are both connected to the same NVIDIA card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
+TwinView is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s extension which makes two monitors attached to a video card appear as a single screen. TwinView provides Xinerama extensions so that applications are aware there are two monitors connected, and thus it is incompatible with Xinerama. However, if you only have two monitors and they are both connected to the same NVIDIA card, there is little difference between TwinView and Xinerama (although in this situation TwinView may offer slightly better performance.)
 
-If you wish to attach more than two monitors or monitors attached to other video cards, you will need to use Xinerama instead of TwinView. Likewise as of April 2012, both monitors must be in the same orientation - you cannot have one in landscape and the other in portrait mode.
+If you wish to attach more than two monitors or monitors attached to other video cards, you will need to use Xinerama instead of TwinView. Likewise, as of April 2012, both monitors must be in the same orientation - you cannot have one in landscape and the other in portrait mode.
 
 In the past, TwinView was the only way to get OpenGL acceleration with NVIDIA cards while being able to drag windows between screens. However modern versions of the NVIDIA closed-source driver are able to provide OpenGL acceleration even when using Xinerama.
 
@@ -276,14 +276,14 @@ Section "Monitor"
   VertRefresh  60
   Option  "dpms"  "on"
 
-  # Modelines are probably unnecessary these days, but it does give you fine grained control
+  # Modelines are probably unnecessary these days, but it does give you fine-grained control
 
   # 1600x1200 @ 60.00 Hz (GTF) hsync: 74.52 kHz; pclk: 160.96 MHz
   Modeline "1600x1200"  160.96  1600 1704 1880 2160  1200 1201 1204 1242  -HSync +Vsync
 EndSection
 
 # Define a screen that uses the above monitor.  Note the Monitor value matches the above
-# Identifier value, and the Device value matches one of the video cards defined below
+# Identifier value and the Device value matches one of the video cards defined below
 # (the card and connector this monitor is actually plugged in to.)
 Section "Screen"
   Identifier   "DellPortraitLeft"
@@ -429,7 +429,7 @@ EndSection
 
 ```
 
-**Tip:** While it's easiest to just reuse the existing screen definitions, you can of course define new ones if you wish to have a different set of screen resolutions available.
+**Tip:** While it's easiest to just reuse the existing screen definitions, you can, of course, define new ones if you wish to have a different set of screen resolutions available.
 
 To use this new layout, launch the game via the `startx` script:
 

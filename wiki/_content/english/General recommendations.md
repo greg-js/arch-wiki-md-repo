@@ -148,7 +148,7 @@ Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the bo
 
 ### Microcode
 
-Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the *microcode* on startup. See [Microcode](/index.php/Microcode "Microcode") for details.
+Processors may have [faulty behaviour](https://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the *microcode* on startup. See [Microcode](/index.php/Microcode "Microcode") for details.
 
 ### Retaining boot messages
 
@@ -270,7 +270,7 @@ Owners of advanced or unusual mice may find that not all mouse buttons are recog
 
 ### Laptop touchpads
 
-Many laptops use [Synaptics](https://www.synaptics.com/) or [ALPS](http://www.alps.com/) "touchpad" pointing devices. For these, and several other touchpad models, you can use either the Synaptics input driver or libinput; see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") and [libinput](/index.php/Libinput "Libinput") for installation and configuration details.
+Many laptops use [Synaptics](https://www.synaptics.com/) or [ALPS](https://www.alps.com/) "touchpad" pointing devices. For these, and several other touchpad models, you can use either the Synaptics input driver or libinput; see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") and [libinput](/index.php/Libinput "Libinput") for installation and configuration details.
 
 ### TrackPoints
 

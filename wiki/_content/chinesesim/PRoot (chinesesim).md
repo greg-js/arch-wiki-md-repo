@@ -8,7 +8,7 @@ PRoot可以从[proot](https://aur.archlinux.org/packages/proot/)包安装。 *pa
 
 ## 用法
 
-安装完成之后, PRoot不需要root权限。 和chroot一样, 你必须为PRoot提供一个新目录作为新的根目录。 如果没有指定程序，PRoot默认将启动`/bin/sh`。 虚拟文件系统不需要手动挂载，因为PRoot会自动处理这个问题。
+安装完成之后, PRoot不需要root权限。 和chroot一样, 你必须为PRoot提供一个新目录作为新的根目录。 如果没有指定shell程序，PRoot默认将启动`/bin/sh`。 虚拟文件系统无需手动挂载，PRoot会自动处理这个问题。
 
 ```
 proot -r ~/mychroot/
@@ -28,6 +28,6 @@ proot -b /bin/bash:/bin/sh
 
 PRoot在内部使用qemu用户模式模拟器来允许程序在PRoot内运行，即使程序是为主机系统以外的体系结构编译的。
 
-## Security
+## 安全性
 
-Like chroot, PRoot provides only filesystem level isolation. Programs inside the PRoot "jail" share the same kernel, hardware, process space, and networking subsystem. chroot and PRoot are not designed to be substitutes for real [virtualization](/index.php/Virtualization "Virtualization") applications, such as hypervisors and paravirtualizers.
+与chroot一样，PRoot仅提供文件系统级隔离。 PRoot "jail" 中的程序共享相同的内核，硬件，进程空间和网络子系统。 chroot和PRoot并不是如同虚拟机管理程序或半虚拟化程序的，真正的虚拟化程序替代品。

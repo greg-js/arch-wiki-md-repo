@@ -43,7 +43,7 @@ You also should set up the following files correctly.
 
 You need to tell hadoop your JAVA_HOME in `/etc/hadoop/hadoop-env.sh` because it doesn't assume the location where it's installed to in Arch Linux by itself:
 
- `/etc/hadoop/hadoop-env.sh`  `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/` 
+ `/etc/hadoop/hadoop-env.sh`  `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre` 
 
 Check installation with:
 

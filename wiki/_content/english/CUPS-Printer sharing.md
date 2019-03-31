@@ -5,14 +5,18 @@ Related articles
 
 This article contains instruction on sharing printers between systems, be it between two GNU/Linux systems or between a GNU/Linux system and Microsoft Windows.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Creating class for multiple printers](#Creating_class_for_multiple_printers)
-*   [2 Between GNU/Linux systems](#Between_GNU.2FLinux_systems)
+*   [2 Between GNU/Linux systems](#Between_GNU/Linux_systems)
     *   [2.1 Using the web interface](#Using_the_web_interface)
     *   [2.2 Manual setup](#Manual_setup)
     *   [2.3 Enabling browsing](#Enabling_browsing)
-*   [3 Between GNU/Linux and Windows](#Between_GNU.2FLinux_and_Windows)
+*   [3 Between GNU/Linux and Windows](#Between_GNU/Linux_and_Windows)
     *   [3.1 Linux server - Windows client](#Linux_server_-_Windows_client)
         *   [3.1.1 Sharing via Bonjour](#Sharing_via_Bonjour)
         *   [3.1.2 Sharing via IPP](#Sharing_via_IPP)
@@ -72,7 +76,7 @@ Listen <hostname>:631
 
 There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](https://www.cups.org/doc/network.html) and [cupsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5).
 
-After making any modifications, [restart](/index.php/Restart "Restart") the `org.cups.cupsd` service.
+After making any modifications, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
 
 If CUPS is started using socket activation, create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `org.cups.cupsd.socket` so that socket activation also works for remote connections:
 
@@ -80,25 +84,23 @@ If CUPS is started using socket activation, create a [drop-in snippet](/index.ph
 ```
 [Socket]
 ListenStream=631
-
 ```
 
 ### Enabling browsing
 
 To enable browsing (shared printer discovery), [Avahi](/index.php/Avahi "Avahi") must be installed and running on the server. If you do not need printer discovery, Avahi is not required on either the server or the client.
 
-To enable browsing, either select *Share printers connected to this system* in the web interface, or manually turn on Browsing and set the BrowseAddress:
+To enable browsing, either select *Share printers connected to this system* in the web interface, or manually turn on Browsing:
 
  `/etc/cups/cupsd.conf` 
 ```
 ...
 Browsing On
-BrowseAddress 192.168.0.*:631
 ...
 
 ```
 
-and [restart](/index.php/Restart "Restart") the `org.cups.cupsd` service.
+and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
 
 Note that "browsing" at the print server is a different thing from "browsing" at a remote networked host. On the print server, `cupsd` provides the DNS-SD protocol support which the `avahi-daemon` broadcasts. The `cups-browsed` service is unnecessary on the print server, unless also broadcasting the old CUPS protocol, or the print server is also "browsing" for other networked printers. On the remote networked host, the `cups-browsed` service is *required* to "browse" for network broadcasts of print services, and running `cups-browsed` will also automatically start `cupsd`.
 
@@ -122,16 +124,16 @@ The [Internet Printing Protocol](https://en.wikipedia.org/wiki/Internet_Printing
 
 **Note:** You may have to add the Internet Printing Client to Windows (*Control Panel > Programs > Turn Windows features on or off > Print and Document Services*)
 
-First, configure the server as described in the section [#Between GNU/Linux systems](#Between_GNU.2FLinux_systems).
+First, configure the server as described in the section [#Between GNU/Linux systems](#Between_GNU/Linux_systems).
 
-On the Windows computer, go to *Control Panel > Devices and Printers* and choose 'Add a printer'. If on Windows 10, click "The printer that I want isn't listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
+On the Windows computer, go to *Control Panel > Devices and Printers* and choose 'Add a printer'. If on Windows 10, click "The printer that I want is not listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
 
 ```
 http://*hostname*:631/printers/*printer_name*
 
 ```
 
-(where *hostname* is the GNU/Linux server's hostname or IP address and *printer_name* is the name of the print queue being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my_fully_qualified_domain_name` in `/etc/cups/cupsd.conf` for this to work).
+(where *hostname* is the GNU/Linux server's hostname or IP address and *printer_name* is the name of the print queue being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my.fully.qualified.domain.name` in `/etc/cups/cupsd.conf` for this to work).
 
 **Note:**
 
@@ -149,20 +151,21 @@ To configure Samba on the Linux server, edit `/etc/samba/smb.conf` file to allow
  `/etc/samba/smb.conf` 
 ```
 [global]
-workgroup=Heroes
-server string=Arch Linux Print Server
-security=user
+workgroup = WORKGROUP
+server string = Arch Linux Print Server
+security = user
+printing = CUPS
 
 [printers]
-    comment=All Printers
-    path=/var/spool/samba
-    browseable=yes
+    comment = All Printers
+    path = /var/spool/samba
+    browseable = yes
     # to allow user 'guest account' to print.
-    guest ok=no
-    writable=no
-    printable=yes
-    create mode=0700
-    write list=@adm root yourusername
+    guest ok = no
+    writable = no
+    printable = yes
+    create mode = 0700
+    write list = root @adm @wheel *yourusername*
 ```
 
 That should be enough to share the printer, yet adding an individual printer entry may be desirable:
@@ -170,41 +173,30 @@ That should be enough to share the printer, yet adding an individual printer ent
  `/etc/samba/smb.conf` 
 ```
 [ML1250]
-    comment=Samsung ML-1250 Laser Printer
-    printer=ml1250
-    path=/var/spool/samba
-    printing=cups
-    printable=yes
-    printer admin=@admin root yourusername
-    user client driver=yes
+    comment = Samsung ML-1250 Laser Printer
+    printer = ml1250
+    path = /var/spool/samba
+    printing = cups
+    printable = yes
+    user client driver = yes
     # to allow user 'guest account' to print.
-    guest ok=no
-    writable=no
-    write list=@adm root yourusername
-    valid users=@adm root yourusername
+    guest ok = no
+    writable = no
+    write list = root @adm @wheel *yourusername*
+    valid users = root @adm @wheel *yourusername*
 ```
 
-Please note that this assumes configuration was made so that users must have a valid account to access the printer. To have a public printer, set *guest ok* to *yes*, and remove the *valid users* line. To add accounts, set up a regular GNU/Linux account and then set up a Samba password on the server. For instance:
+Please note that this assumes configuration was made so that users must have a valid account to access the printer. To have a public printer, set `guest ok` to `yes`, and remove the `valid users` line. To add accounts, set up a regular GNU/Linux account and then set up a Samba password on the server. See [Samba#User Management](/index.php/Samba#User_Management "Samba").
 
-```
-# useradd yourusername
-# smbpasswd -a yourusername
+After this, [restart](/index.php/Restart "Restart") `smb.service` and `nmb.service`.
 
-```
-
-After this, restart the Samba daemon.
-
-Obviously, there are a lot of tweaks and customizations that can be done with setting up a Samba print server, so it is advised to look at the Samba and CUPS documentation for more help. The `smb.conf.example` file also has some good samples that might warrant imitating.
+See Samba's documentation [Setting up Samba as a Print Server](https://wiki.samba.org/index.php/Setting_up_Samba_as_a_Print_Server) for more details.
 
 ### Windows server - Linux client
 
-**Warning:** Any special characters in the printer URIs need to be appropriately quoted, or, if your Windows printer name or user passwords have spaces, CUPS will throw a "lpadmin: Bad device-uri" error.
+**Warning:** Any special characters in the printer URIs need to be appropriately quoted, or, if your Windows printer name or user passwords have spaces, CUPS will throw a `lpadmin: Bad device-uri` error.
 
-For example: `smb://BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6`
-
-becomes:
-
-`smb://BEN-DESKTOP/HP%20Color%20LaserJet%20CP1510%20series%20PCL6`
+For example, `smb://BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6` becomes `smb://BEN-DESKTOP/HP%20Color%20LaserJet%20CP1510%20series%20PCL6`.
 
 This result string can be obtained by running the following command:
 
@@ -220,7 +212,7 @@ Windows 7, 8 and 10 have a built-in LPD server - using it will probably be the e
 Then the printer can be added in CUPS, choosing LPD protocol. The printer address will look like this:
 
 ```
-# lpd://windowspc/printersharename
+lpd://windowspc/printersharename
 
 ```
 
@@ -317,6 +309,7 @@ This will list every share available to a certain Windows username on the local 
 		\\REGULATOR-PC\print$         	Printer Drivers
 		\\REGULATOR-PC\G              	
 		\\REGULATOR-PC\EPSON Stylus CX8400 Series	EPSON Stylus CX8400 Series
+
 ```
 
 What is needed here is first part of the last line, the resource matching the printer description. So to print to the EPSON Stylus printer, one would enter:
@@ -330,7 +323,7 @@ as the URI into CUPS.
 
 ## Remote administration
 
-Once the server is set up as described in [#Between GNU/Linux systems](#Between_GNU.2FLinux_systems), it can also be configured so that it can be remotely administered. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [#Manual setup](#Manual_setup). Note that three levels of access can be granted:
+Once the server is set up as described in [#Between GNU/Linux systems](#Between_GNU/Linux_systems), it can also be configured so that it can be remotely administered. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [#Manual setup](#Manual_setup). Note that three levels of access can be granted:
 
 ```
 <Location />           #access to the server
@@ -377,10 +370,10 @@ Deny statements can also be used. For example, to give full access to all hosts 
 
 ```
 
-You might also need to add:
+You might also need to disable the HTTPS requirement, when using the default self-signed certificate generated by CUPS:
 
 ```
-DefaultEncryption Never
+DefaultEncryption IfRequested
 
 ```
 
@@ -406,13 +399,13 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 If you get a *getting printer information failed* message when you try to print from GTK applications, add this line to your `/etc/hosts`:
 
 ```
- # serverip 	some.name.org 	ServersHostname
+serverip 	some.name.org 	ServersHostname
 
 ```
 
 ### Permission errors on Windows
 
-Some users fixed 'NT_STATUS_ACCESS_DENIED' (Windows clients) errors by using a slightly different syntax:
+Some users fixed `NT_STATUS_ACCESS_DENIED` (Windows clients) errors by using a slightly different syntax:
 
 ```
 smb://workgroup/username:password@hostname/printer_name
@@ -421,4 +414,4 @@ smb://workgroup/username:password@hostname/printer_name
 
 ## Other operating systems
 
-More information on interfacing CUPS with other printing systems can be found in the CUPS manual, e.g. on [http://localhost:631/help/network.html](http://localhost:631/help/network.html)
+More information on interfacing CUPS with other printing systems can be found in the CUPS manual, e.g. on [http://localhost:631/help/network.html](http://localhost:631/help/network.html).

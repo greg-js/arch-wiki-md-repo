@@ -198,7 +198,7 @@ Por otra parte, también se puede hacer con una opción modprobe en `/etc/modpro
 
 **Para más información y otras opciones, lea la página de manual radeon y la página de módulos info**: [radeon(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/radeon.4), `modinfo radeon`.
 
-Un buena herramienta para probar es [driconf](https://www.archlinux.org/packages/?name=driconf). Esto le permitirá modificar varias configuraciones, como vsync, filtrado anisotrópico, compresión de texturas, etc. Con esta herramienta es posible deshabilitar «Low Impact fallback», necesario para algunos programas (por ejemplo, Google Earth).
+Un buena herramienta para probar es [driconf](https://aur.archlinux.org/packages/driconf/). Esto le permitirá modificar varias configuraciones, como vsync, filtrado anisotrópico, compresión de texturas, etc. Con esta herramienta es posible deshabilitar «Low Impact fallback», necesario para algunos programas (por ejemplo, Google Earth).
 
 ### Desactivar PCI-E 2.0
 

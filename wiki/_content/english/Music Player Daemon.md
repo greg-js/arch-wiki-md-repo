@@ -306,11 +306,11 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 *   **GMPC** — Gnome Music Player Client. GTK+ frontend for MPD. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
-	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
+	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://aur.archlinux.org/packages/gmpc/)
 
 *   **pymp'd** — A GTK+ front end client for the music playing daemon MPD.
 
-	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://www.archlinux.org/packages/?name=pympd)
+	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://aur.archlinux.org/packages/pympd/)
 
 *   **QMPDClient** — Qt4 GUI client.
 

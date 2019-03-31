@@ -1,13 +1,12 @@
 相关文章
 
 *   [Arch Boot Process (简体中文)](/index.php/Arch_Boot_Process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Boot Process (简体中文)")
-*   [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")
 
 **翻译状态：** 本文是英文页面 [Syslinux](/index.php/Syslinux "Syslinux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=471645)可以查看翻译后英文页面的改动。
 
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX")是一个优秀的启动加载器集合，可以从硬盘、光盘或通过 [PXE](/index.php/PXE "PXE") 的网络引导启动系统。支持的 [文件系统](/index.php/File_systems "File systems") 包括 [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4")和非压缩的单设备 [Btrfs](/index.php/Btrfs "Btrfs").
 
-**Warning:** Syslinux 6.03 中，有些文件系统的功能不被支持。例如 ext4 的启动卷不支持 "64bit"。详情请参考 [[1]](https://wiki.syslinux.org/wiki/index.php/Filesystem)。
+**Warning:** Syslinux 6.03 中，有些文件系统的功能不被支持。详情请参考 [[1]](https://wiki.syslinux.org/wiki/index.php/Filesystem)。
 
 **Note:** Syslinux 本身只能访问其所在分区上的数据，通过 [#Chainloading](#Chainloading) 可以绕过这个限制。
 
@@ -64,16 +63,16 @@
 
 **Note:**
 
-*   安装 [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) 之后自动脚本才能支持 [GPT](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table")。
-*   如果期待分区是 FAT，还需要安装 [mtools](https://www.archlinux.org/packages/?name=mtools).
+*   安装 [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) 之后才能支持 [GPT](/index.php/GPT "GPT")，参考[#Automatic install](#Automatic_install)部分。
+*   如果你的启动分区是 [FAT](/index.php/FAT "FAT")，还需要安装 [mtools](https://www.archlinux.org/packages/?name=mtools).
 
 相关的软件包安装完成之后，还需要将启动加载器代码写入磁盘的对应扇区位置。有自动脚本和手动安装两种方式。
 
 #### 自动完成安装
 
-**Note:** The `syslinux-install_update` script is Arch specific, and is not provided/supported by Syslinux upstream. Please direct any bug reports specific to the script to the Arch Bug Tracker and not upstream.
+**Note:** 脚本 `syslinux-install_update` 是Arch特有的, Syslinux上游不提供/支持。Please direct any bug reports specific to the script to the [Arch Bug Tracker](https://bugs.archlinux.org/) and not upstream.
 
-syslinux-install_update脚本将自动安装Syslinux, 复制COM32模块到`/boot/syslinux`, 设置启动标识，安装到MBR.可自动根据softraid处理MBR和 GPT磁盘。
+syslinux-install_update脚本将自动安装启动代码（一般是VBR）, 复制COM32模块到`/boot/syslinux`, 设置启动标识，安装到MBR.可自动根据softraid处理[MBR](/index.php/MBR "MBR")和 [GPT](/index.php/GPT "GPT")磁盘。
 
 2\. 确认`/boot`是否已经加载
 3\. 运行脚本`syslinux-install_update` ，参数使用 -i (安装) -a (设可启动标识) -m (安装到mbr)
@@ -89,31 +88,46 @@ syslinux-install_update脚本将自动安装Syslinux, 复制COM32模块到`/boot
 
 #### 手工完成安装
 
-**Note:** 若你不知你所使用的分区表是使用什么 (MBR or GPT), 默认一般使用的是MBR分区表。大部分情况下，GPT将使用整个磁盘创建一个特殊的MBR-类型的分区(type 0xEE) ，使用下面命令可显示：
-```
-# fdisk -l /dev/sda
+**Note:** 如果您尝试使用Live CD拯救已安装的系统，在执行这些命令之前请确保已经[chroot](/index.php/Chroot "Chroot")到系统. 如果没有先做chroot，您必须在所有文件（除了`/dev/`）路径之前添加挂载点。
+
+您计划安装Syslinux的启动分区必须包含FAT，ext2，ext3，ext4或Btrfs文件系统。您不必把它安装在文件系统的根目录上，比如把磁盘 `/dev/sda1` 挂在到 `/boot`。 举个例子, 可以在`syslinux`子目录里安装 Syslinux:
 
 ```
-
-或者可以这样：
-
-```
-# sgdisk -l /dev/sda
+ # mkdir /boot/syslinux
 
 ```
 
-若其非GPT磁盘，将显示 " GPT: not present".
-
-**Note:** If you are trying to rescue an installed system with a live CD, be sure to [chroot](/index.php/Change_root "Change root") into it before executing these commands. If you do not chroot first, you must prepend all file paths (not /dev/ paths) with the mount point.
-
-Make sure you have the *syslinux* package installed. Then install Syslinux onto your boot partition, which must contain a fat, ext2, ext3, ext4, or btrfs file system.
+如果您希望使用除基本引导提示之外的任何菜单或配置，请把`/usr/lib/syslinux/bios/`里的所有`.c32` 文件复制到 `/boot/syslinux/` . Do not symlink them.
 
 ```
-# mkdir /boot/syslinux
-# extlinux --install /boot/syslinux #run on a mounted directory (not /dev/sdXY)
-/boot/syslinux/ is device /dev/sda1
+ # cp /usr/lib/syslinux/bios/*.c32 /boot/syslinux/     
 
 ```
+
+安装bootloader. 对 挂载后的，格式是FAT, ext2/3/4, 或者 btrfs 的启动分区使用 *extlinux*:
+
+```
+# extlinux --install /boot/syslinux
+
+```
+
+或者, 对于一个**卸载**的，格式是FAT的启动分区使用*syslinux*:
+
+```
+ # syslinux --directory syslinux --install /dev/sda1
+
+```
+
+在此之后，继续安装适用于分区表的Syslinux引导代码：:
+
+*   `mbr.bin` will be installed for an [#MBR partition table](#MBR_partition_table), or
+*   `gptmbr.bin` will be installed for a [#GUID partition table](#GUID_partition_table)
+
+as described in the next sections. See [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") for further general information.
+
+**Tip:** If you are unsure of which partition table you are using (MBR or GPT), you can check using `blkid -s PTTYPE -o value /dev/sda`.
+
+**Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[2]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
 
 ##### MBR分区表
 
@@ -131,7 +145,7 @@ Make sure you have the *syslinux* package installed. Then install Syslinux onto 
 安装到主启动卷区:
 
 ```
-# dd bs=440 conv=notrunc count=1 if=/usr/lib/syslinux/bios/mbr.bin of=/dev/sda
+ # dd bs=440 count=1 conv=notrunc if=/usr/lib/syslinux/bios/mbr.bin of=/dev/sda
 
 ```
 
@@ -165,7 +179,13 @@ Verify:
 
 #### 重启
 
-如果此时重启，会有提示，以确认是自动启动还是给出一个启动菜单，此时需要创建一个配置文件。
+*   如果此时重启，会有提示，以确认是自动启动还是给出一个启动菜单，此时需要创建一个配置文件。
+*   如果你在另外一个跟文件夹（比如：在安装磁盘）通过chroot来安装SYSLINUX:
+
+```
+ # syslinux-install_update -i -a -m -c /mnt
+
+```
 
 ## UEFI 系统
 
@@ -183,15 +203,15 @@ Verify:
 
 ### UEFI Syslinux 的局限性
 
-*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=8](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
+*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report - [https://bugzilla.syslinux.org/show_bug.cgi?id=8](https://bugzilla.syslinux.org/show_bug.cgi?id=8)
 
-*   Using TAB to edit kernel parameters in UEFI Syslinux menu lead to garbaged display (text on top of one-another). Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=9](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
+*   Using TAB to edit kernel parameters in UEFI Syslinux menu lead to garbaged display (text on top of one-another). Bug report - [https://bugzilla.syslinux.org/show_bug.cgi?id=9](https://bugzilla.syslinux.org/show_bug.cgi?id=9)
 
-*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=17](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
+*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Bug report - [https://bugzilla.syslinux.org/show_bug.cgi?id=17](https://bugzilla.syslinux.org/show_bug.cgi?id=17)
 
-*   UEFI Syslinux may not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02\. Bug reports - [http://bugzilla.syslinux.org/show_bug.cgi?id=21](http://bugzilla.syslinux.org/show_bug.cgi?id=21) and [http://bugzilla.syslinux.org/show_bug.cgi?id=23](http://bugzilla.syslinux.org/show_bug.cgi?id=23)
+*   UEFI Syslinux may not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02\. Bug reports - [https://bugzilla.syslinux.org/show_bug.cgi?id=21](https://bugzilla.syslinux.org/show_bug.cgi?id=21) and [https://bugzilla.syslinux.org/show_bug.cgi?id=23](https://bugzilla.syslinux.org/show_bug.cgi?id=23)
 
-*   Memdisk is not available for UEFI. Bug report - [http://bugzilla.syslinux.org/show_bug.cgi?id=30](http://bugzilla.syslinux.org/show_bug.cgi?id=30)
+*   Memdisk is not available for UEFI. Bug report - [https://bugzilla.syslinux.org/show_bug.cgi?id=30](https://bugzilla.syslinux.org/show_bug.cgi?id=30)
 
 ### 安装
 
@@ -381,7 +401,7 @@ LABEL windows
 
 ```
 
-*hd0 3* is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one. For more details about chainloading, see [[2]](http://syslinux.zytor.com/wiki/index.php/Comboot/chain.c32).
+*hd0 3* is the third partition on the first BIOS drive - drives are counted from zero, but partitions are counted from one. For more details about chainloading, see [[3]](http://syslinux.zytor.com/wiki/index.php/Comboot/chain.c32).
 
 If you have [grub2](/index.php/Grub2 "Grub2") installed in your boot partition, you can chainload it by using:
 

@@ -77,7 +77,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
 Nextcloud requires several components:[[1]](https://docs.nextcloud.com/server/latest/admin_manual/installation/system_requirements.html#server)
 
 *   A web server: [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx")
-*   A database: [MariaDB](/index.php/MariaDB "MariaDB")/MySQL, [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [Oracle](/index.php/Oracle "Oracle")
+*   A database: [MariaDB](/index.php/MariaDB "MariaDB")/MySQL, [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [SQLite](/index.php/SQLite "SQLite") or [Oracle](/index.php/Oracle "Oracle")
 *   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP_setup)
 
 These will be configured in [#Setup](#Setup).
@@ -532,7 +532,7 @@ Download the official Nextcloud app from [Google Play](https://play.google.com/s
 
 To enable contacts and calendar sync (Android 4+):
 
-1.  download [DAVdroid](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
+1.  download [DAVx](https://www.davx5.com/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
 2.  Enable mod_rewrite.so in httpd.conf
 3.  create a new DAVdroid account in the *Account* settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; *DAVdroid* will find itself the right URLs)
 

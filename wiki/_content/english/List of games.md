@@ -99,7 +99,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Neverball](https://en.wikipedia.org/wiki/Neverball "wikipedia:Neverball")** — 3D game to guide a ball through a maze.
 
-	[http://neverball.org/](http://neverball.org/) || [neverball](https://www.archlinux.org/packages/?name=neverball)
+	[http://neverball.org/](http://neverball.org/) || [neverball](https://aur.archlinux.org/packages/neverball/)
 
 *   **[OpenLieroX](https://en.wikipedia.org/wiki/Liero#OpenLieroX "wikipedia:Liero")** — An extremely addictive realtime worms shoot-em-up backed by an active gamers community.
 
@@ -259,7 +259,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **KCheckers** — Qt-based checkers boardgame.
 
-	[http://qcheckers.sourceforge.net/](http://qcheckers.sourceforge.net/) || [kcheckers](https://www.archlinux.org/packages/?name=kcheckers)
+	[http://qcheckers.sourceforge.net/](http://qcheckers.sourceforge.net/) || [kcheckers](https://aur.archlinux.org/packages/kcheckers/)
 
 *   **KPatience** — A set of solitarire card games. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -275,7 +275,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Mah-Jong** — Chinese Classical mahjong (not solitaire) with network support
 
-	[http://mahjong.julianbradfield.org/](http://mahjong.julianbradfield.org/) || [mahjong](https://www.archlinux.org/packages/?name=mahjong)
+	[http://mahjong.julianbradfield.org/](http://mahjong.julianbradfield.org/) || [mahjong](https://aur.archlinux.org/packages/mahjong/)
 
 *   **nInvaders** — Ncurses based space invaders clone
 
@@ -495,7 +495,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **gweled** — Eliminating tiles by joining them in groups of three.
 
-	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://www.archlinux.org/packages/?name=gweled)
+	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://aur.archlinux.org/packages/gweled/)
 
 *   **Hitori** — Small application written to allow one to play the eponymous puzzle game, which is similar in theme to more popular puzzles such as Sudoku.
 
