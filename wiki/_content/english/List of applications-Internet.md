@@ -632,7 +632,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **[Streamripper](https://en.wikipedia.org/wiki/Streamripper "wikipedia:Streamripper")** — Records and splits streaming mp3 into tracks.
 
-	[http://streamripper.sourceforge.net/](http://streamripper.sourceforge.net/) || [streamripper](https://www.archlinux.org/packages/?name=streamripper)
+	[http://streamripper.sourceforge.net/](http://streamripper.sourceforge.net/) || [streamripper](https://aur.archlinux.org/packages/streamripper/)
 
 *   **You-Get** — Download media contents (videos, audios, images) from the Web.
 
@@ -808,7 +808,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **OneDrive** — Unofficial CLI for [OneDrive](https://onedrive.live.com/about/).
 
-	[https://github.com/abraunegg/onedrive/](https://github.com/abraunegg/onedrive/) || [onedrive-bin](https://aur.archlinux.org/packages/onedrive-bin/)
+	[https://github.com/skilion/onedrive](https://github.com/skilion/onedrive) || [onedrive](https://aur.archlinux.org/packages/onedrive/)
 
 *   **[ownCloud](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud") Desktop Client** — Desktop syncing client for ownCloud.
 
@@ -1228,7 +1228,7 @@ See also [Wikipedia:Mail retrieval agent](https://en.wikipedia.org/wiki/Mail_ret
 
 *   **[Fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail")** — A remote-mail retrieval utility.
 
-	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://www.archlinux.org/packages/?name=fetchmail)
+	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://aur.archlinux.org/packages/fetchmail/)
 
 *   **[getmail](/index.php/Getmail "Getmail")** — A POP3 mail retriever with reliable Maildir and command delivery.
 

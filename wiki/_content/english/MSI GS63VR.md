@@ -46,7 +46,7 @@ As of 2018, the patch is now part of the mainstream kernel. Intel driver (i915) 
 
 ## Installation
 
-Standard installation works per the [Installation guide](/index.php/Installation_guide "Installation guide") using [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") when the laptop is in UEFI mode.
+Standard installation works flawlessly per the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Drivers
 

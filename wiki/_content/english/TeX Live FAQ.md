@@ -3,7 +3,11 @@ Related articles
 *   [TeX Live](/index.php/TeX_Live "TeX Live")
 *   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tips and tricks](#Tips_and_tricks)
     *   [1.1 Bibliography / references](#Bibliography_/_references)
@@ -127,4 +131,4 @@ Last but not least: [PSTricks](http://tug.org/PSTricks/main.cgi/), which gives a
 
 ### Pictures with LaTeX labels - GUI
 
-The "grandfather" of vector editors - [xfig](https://www.archlinux.org/packages/?name=xfig) is able to produce some output relevant to TeX. I had relatively good experience with [ipe](http://ipe.otfried.org/) recently (saves EPS/PDF). [Inkscape](/index.php/Inkscape "Inkscape") is a good choice too.
+The "grandfather" of vector editors - [xfig](https://aur.archlinux.org/packages/xfig/) is able to produce some output relevant to TeX. I had relatively good experience with [ipe](http://ipe.otfried.org/) recently (saves EPS/PDF). [Inkscape](/index.php/Inkscape "Inkscape") is a good choice too.

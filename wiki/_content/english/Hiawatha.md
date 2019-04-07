@@ -225,6 +225,7 @@ After=network-online.target
 
 [Service]
 User=root
+WorkingDirectory=/tmp
 Type=oneshot
 ExecStart=/usr/bin/lefh renew restart
 ```

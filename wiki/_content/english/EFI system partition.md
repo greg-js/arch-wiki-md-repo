@@ -399,6 +399,15 @@ exit 0
 
 It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
 
+See [UEFI booting and RAID1](https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/) for a in-depth guide.
+
+The key part is to use `--metadata 1.0` in order to keep the RAID metadata at the end of the partition, otherwise the firmware will not be able to access it:
+
+```
+# mdadm --create --verbose --level=1 **--metadata=1.0** --raid-devices=2 /dev/md/ESP /dev/sda*X* /dev/sdb*Y*
+
+```
+
 ## See also
 
 *   [The EFI system partition and the default boot behavior](https://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/)

@@ -27,6 +27,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [3.5 Install supported compilers](#Install_supported_compilers)
     *   [3.6 Help browser](#Help_browser)
     *   [3.7 Garbled Interface](#Garbled_Interface)
+    *   [3.8 Serial port access](#Serial_port_access)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Static TLS errors](#Static_TLS_errors)
     *   [4.2 MATLAB crashes when displaying graphics](#MATLAB_crashes_when_displaying_graphics)
@@ -219,6 +220,21 @@ This is a persistent change and to reverse it use
 ```
 export J2D_D3D=false
 export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
+
+```
+
+### Serial port access
+
+Matlab uses a bundled rxtx library to access serial ports. The built-in version requires the user to have write access directly to /var/run which is no good idea. The easiest way to fix this properly is to install the [java-rxtx](https://www.archlinux.org/packages/?name=java-rxtx) package first. Follow the instructions shown while installing this package to get your user into the right groups. Then run the following commands to make Matlab use the system rxtx version:
+
+```
+cd {MATLAB}/java/jarext
+mv RXTXcomm.jar RXTXcomm.jar.off
+ln -s /usr/share/java/rxtx/RXTXcomm.jar .
+
+cd {MATLAB}/bin/glnx64
+mv librxtxSerial.so librxtxSerial.so.off
+ln -s /usr/lib/librxtxSerial.so .
 
 ```
 

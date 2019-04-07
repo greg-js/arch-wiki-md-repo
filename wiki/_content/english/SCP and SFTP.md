@@ -16,7 +16,7 @@ The [Secure copy (SCP)](https://en.wikipedia.org/wiki/Secure_copy "wikipedia:Sec
 *   [2 Secure file transfer protocol (SFTP) with a chroot jail](#Secure_file_transfer_protocol_(SFTP)_with_a_chroot_jail)
     *   [2.1 Setup the filesystem](#Setup_the_filesystem)
     *   [2.2 Create an unprivileged user](#Create_an_unprivileged_user)
-    *   [2.3 Setup openssh](#Setup_openssh)
+    *   [2.3 Setup OpenSSH](#Setup_OpenSSH)
 *   [3 Secure copy protocol (SCP)](#Secure_copy_protocol_(SCP))
     *   [3.1 Scponly](#Scponly)
         *   [3.1.1 Adding a chroot jail](#Adding_a_chroot_jail)
@@ -59,7 +59,7 @@ Create the share user and setup a good password:
 
 ```
 
-### Setup openssh
+### Setup OpenSSH
 
 Add the following to the end of `/etc/ssh/sshd_config` to enable the share and to enforce the restrictions:
 
@@ -72,14 +72,15 @@ Add the following to the end of `/etc/ssh/sshd_config` to enable the share and t
   AllowTcpForwarding no
   PasswordAuthentication yes
   ForceCommand internal-sftp
+
 ```
 
 [Restart](/index.php/Restart "Restart") `sshd.service` to re-read the config file.
 
 Test that in fact, the restrictions are enforced by attempting an ssh connection via the shell. The ssh server should return a polite notice of the setup:
 
+ `$ ssh foo@someserver.com` 
 ```
-$ ssh foo@someserver.com
 foo@someserver.com's password:
 This service allows sftp connections only.
 Connection to someserver.com closed.
@@ -88,9 +89,11 @@ Connection to someserver.com closed.
 
 ## Secure copy protocol (SCP)
 
-[Install](/index.php/Install "Install"), configure and [start](/index.php/Start "Start") [openssh](https://www.archlinux.org/packages/?name=openssh). It contains a *scp* command to transfer files. See [Secure Shell](/index.php/Secure_Shell "Secure Shell") for more information.
+[Install](/index.php/Install "Install"), configure and [start](/index.php/Start "Start") [OpenSSH](/index.php/OpenSSH "OpenSSH"). It contains the *scp* utility to transfer files.
 
 More features are available by installing additional packages, for example [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) described below.
+
+**Note:** The scp protocol is outdated, inflexible and not readily fixed. Its authors recommend the use of more modern protocols like sftp and rsync for file transfer instead.[[1]](https://lists.mindrot.org/pipermail/openssh-unix-dev/2019-March/037672.html)
 
 ### Scponly
 

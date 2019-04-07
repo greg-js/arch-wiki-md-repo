@@ -60,9 +60,10 @@ Note that certain font licenses may impose some legal limitations.
 *   [5 Font alias](#Font_alias)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 List all installed fonts](#List_all_installed_fonts)
-    *   [6.2 Lists installed fonts for a particular language](#Lists_installed_fonts_for_a_particular_language)
-    *   [6.3 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
-    *   [6.4 Application-specific font cache](#Application-specific_font_cache)
+    *   [6.2 List installed fonts for a particular language](#List_installed_fonts_for_a_particular_language)
+    *   [6.3 List installed fonts for a particular Unicode character](#List_installed_fonts_for_a_particular_Unicode_character)
+    *   [6.4 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
+    *   [6.5 Application-specific font cache](#Application-specific_font_cache)
 *   [7 See also](#See_also)
 
 ## Font formats
@@ -238,7 +239,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 *   [Dina](http://www.dcmembers.com/jibsen/download/61/) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 6pt, 8pt, 9pt, 10pt, monospaced, based on Proggy
 *   [Efont](http://openlab.jp/efont/unicode/) ([efont-unicode-bdf](https://aur.archlinux.org/packages/efont-unicode-bdf/)) – 10px, 12px, 14px, 16px, 24px, normal, bold and italic
 *   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/)) – 11px, 14px, normal and bold
-*   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
+*   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://aur.archlinux.org/packages/artwiz-fonts/))
 *   [ProFont](http://tobiasjung.name/profont/) ([ttf-profont-iix](https://aur.archlinux.org/packages/ttf-profont-iix/)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal
 *   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "wikipedia:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – has different variants
 *   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
@@ -313,9 +314,9 @@ Relevant websites:
 
 #### Unsorted
 
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Font collection from *dustismo.com*
+*   [ttf-cheapskate](https://aur.archlinux.org/packages/ttf-cheapskate/) - Font collection from *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
-*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
+*   [ttf-mph-2b-damase](https://aur.archlinux.org/packages/ttf-mph-2b-damase/) - Covers full plane 1 and several scripts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including Ubuntu, Inconsolata, Roboto, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
@@ -336,7 +337,7 @@ Relevant websites:
 
 #### Braille
 
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for *braille*
+*   [ttf-ubraille](https://aur.archlinux.org/packages/ttf-ubraille/) - Font containing Unicode symbols for *braille*
 
 #### Chinese, Japanese, Korean, Vietnamese
 
@@ -433,7 +434,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 #### Indic
 
-*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font for Bangla
+*   [ttf-freebanglafont](https://aur.archlinux.org/packages/ttf-freebanglafont/) - Font for Bangla
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont), provides the character [U+0CA0](http://www.fileformat.info/info/unicode/char/ca0/index.htm) "ಠ"
 *   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - Indic TrueType fonts from Fedora Project (containing Oriya Fonts and more)
 *   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - Devanagari TrueType fonts (contains 283 fonts)
@@ -471,7 +472,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 #### Tai–Kadai
 
-*   [fonts-tlwg](https://www.archlinux.org/packages/?name=fonts-tlwg) - Collection of scalable Thai fonts
+*   [fonts-tlwg](https://aur.archlinux.org/packages/fonts-tlwg/) - Collection of scalable Thai fonts
 *   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Lao TTF font (Phetsarath_OT)
 *   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Lao TTF fonts, both Unicode and non-Unicode for Windows
 
@@ -559,7 +560,7 @@ $ fc-list
 
 ```
 
-### Lists installed fonts for a particular language
+### List installed fonts for a particular language
 
 Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
 
@@ -574,9 +575,18 @@ Applications and browsers select and display fonts depending upon fontconfig pre
 
 ```
 
+### List installed fonts for a particular Unicode character
+
+To search for monospace fonts supporting a particular Unicode codepoint:
+
+```
+$ fc-match -s monospace:charset=1F4A9
+
+```
+
 ### Set terminal font on-the-fly
 
-For terminal emulators that use `Xresources`, fonts can be set by using escape sequences. Specifically, `echo -e "\033]710;$font\007"` to change the normal font (`*font` in `~/.Xresources`), and replace `710` with `711`, `712`, and `713` to change the `*boldFont`, `*italicFont`, and `*boldItalicFont`, respectively.
+For terminal emulators that use [X resources](/index.php/X_resources "X resources"), e.g. [xterm](/index.php/Xterm "Xterm") or [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode"), fonts can be set by using escape sequences. Specifically, `echo -e "\033]710;$font\007"` to change the normal font (`*font` in `~/.Xresources`), and replace `710` with `711`, `712`, and `713` to change the `*boldFont`, `*italicFont`, and `*boldItalicFont`, respectively.
 
 `$font` uses the same syntax as in `~/.Xresources` and can be anything the terminal emulator will support. (Example: `xft:dejavu sans mono:size=9`)
 

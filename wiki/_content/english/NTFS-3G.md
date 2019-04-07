@@ -21,12 +21,13 @@ Related articles
     *   [4.5 Allowing user to mount](#Allowing_user_to_mount)
 *   [5 Resizing NTFS partition](#Resizing_NTFS_partition)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 "Unsupported reparse point" errors](#"Unsupported_reparse_point"_errors)
+    *   [6.1 Compressed files](#Compressed_files)
     *   [6.2 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
     *   [6.3 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache,_refused_to_mount)
     *   [6.4 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
     *   [6.5 Mount failure](#Mount_failure)
-*   [7 See also](#See_also)
+*   [7 Beta features & releases](#Beta_features_&_releases)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -172,9 +173,14 @@ If you already have Arch Linux installed on your system and simply want to resiz
 
 ## Troubleshooting
 
-### "Unsupported reparse point" errors
+### Compressed files
 
-If you have a Windows 10 partition and are seeing broken symbolic links to 'unsupported reparse point' when trying to access some system files, then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/).
+If you have a Windows 10 partition and when accessing files/directories,
+
+1.  you see broken symbolic links to 'unsupported reparse point', *or*
+2.  you see the error message "cannot access <*filename*>: Input/output error" (in this case you see in /var/log/messages "Could not load plugin /usr/lib64/ntfs-3g/ntfs-plugin-80000017.so: Success")
+
+then install [ntfs-3g-system-compression](https://aur.archlinux.org/packages/ntfs-3g-system-compression/). This plugin handles compressed files.
 
 ### Damaged NTFS filesystems
 
@@ -234,6 +240,23 @@ As an alternative to above clean shutdown method, there is a way to completely d
 ### Mount failure
 
 If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. See [fstab#File system UUIDs](/index.php/Fstab#File_system_UUIDs "Fstab") for an example.
+
+## Beta features & releases
+
+There is a [web page](http://jp-andre.pagesperso-orange.fr/advanced-ntfs-3g.html) on "advanced features" (add-ons) [1], maintained by Jean-Pierre André, one of the ntfs-3g authors. That page also provides new versions, not yet incorporated to the official releases.
+
+Currently these add-ons support:
+
+*   System compression
+*   OneDrive
+*   Duplicated files
+
+In the page [1] there is a pointer to the "updated version" of the system compression plugin [mentioned above](#Compressed_files). In fact, the update is small; all updates are in:
+
+*   README.md
+*   configure.ac, with slight modification. See the attachment
+
+The web page [1] is surely written by J.-P. André. The page [NTFS-3G Advanced](https://www.tuxera.com/community/ntfs-3g-advanced/) in the official site in tuxera.com has a link to the [OpenIndiana page](http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html), which in turn links to [1].
 
 ## See also
 

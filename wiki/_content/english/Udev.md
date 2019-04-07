@@ -172,7 +172,7 @@ To mount removable drives, do not call `mount` from *udev* rules. This is ill-ad
 
 There are some options that work:
 
-*   Start a custom systemd service from the Udev rule; the systemd service can invoke a script which can start any number of long-running processes (like FUSE). An concise example which automatically mounts USB disks under `/media` is [udev-media-automount](https://github.com/Ferk/udev-media-automount). It was found to be fast and reliable. A variant of the same idea is explained in [this blog post](http://jasonwryan.com/blog/2014/01/20/udev/).
+*   Start a custom systemd service from the Udev rule; the systemd service can invoke a script which can start any number of long-running processes (like FUSE). A concise example which automatically mounts USB disks under `/media` is [udev-media-automount](https://github.com/Ferk/udev-media-automount). It was found to be fast and reliable. A variant of the same idea is explained in [this blog post](http://jasonwryan.com/blog/2014/01/20/udev/).
 
 *   Use `systemd-mount` instead of `mount` in your Udev rule. This is [recommended by systemd developers](https://github.com/systemd/systemd/issues/11982#issuecomment-472529566). For example this Udev rule should mount USB disks under "/media":
 

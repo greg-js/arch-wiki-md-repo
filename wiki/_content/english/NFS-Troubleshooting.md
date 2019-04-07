@@ -4,7 +4,11 @@ Related articles
 
 Dedicated article for common problems and solutions.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Server-side issues](#Server-side_issues)
     *   [1.1 exportfs: /etc/exports:2: syntax error: bad option list](#exportfs:_/etc/exports:2:_syntax_error:_bad_option_list)
@@ -87,7 +91,7 @@ Also make sure NFSv3 is enabled. *showmount* does **not** work with NFSv4-only s
 
 ### mount.nfs4: No such device
 
-Make the `nfsd` [kernel module](/index.php/Kernel_module "Kernel module") has been loaded.
+Make sure the `nfsd` [kernel module](/index.php/Kernel_module "Kernel module") has been loaded.
 
 ### mount.nfs4: Invalid argument
 

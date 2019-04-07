@@ -32,27 +32,27 @@
 
 ## 安装
 
-When using GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) is installed automatically as a part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group. Otherwise [install](/index.php/Install "Install") the [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) package. Install [libsecret](https://www.archlinux.org/packages/?name=libsecret) to allow applications to use your keyrings. [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) is deprecated, however, some applications may require it.
+如果使用的是GNOME, [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) 作为 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 组的一个包自动安装。在其他情况下，请[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) 包。安装[libsecret](https://www.archlinux.org/packages/?name=libsecret)来让应用程序使用 keyrings。不推荐安装[libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)，除非有一些应用程序一定要用它。
 
-Extra utilities related to GNOME keyring include:
+与GNOME keyring相关的其他工具包括：
 
-*   **secret-tool** — Access the GNOME keyring (and any other service implementing the [DBus Secret Service API](http://standards.freedesktop.org/secret-service/)) from the command line.
+*   **secret-tool** — 通过命令行访问GNOME keyring (以及其他任何实现了[DBus Secret Service API](http://standards.freedesktop.org/secret-service/)的服务) 。
 
 	[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
 
-*   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring. (uses the deprecated [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
+*   **gnome-keyring-query** — 提供一个用于从GNOME Keyring的密码库查询密码的命令行工具， 但是用的是不推荐的[libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)包。
 
 	|| [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)
 
-*   **gkeyring** — Query passwords from the command line. (uses the deprecated [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring))
+*   **gkeyring** — 从命令行查询密码，用的是不推荐的[libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring)包。
 
 	[https://github.com/kparal/gkeyring](https://github.com/kparal/gkeyring) || [gkeyring](https://aur.archlinux.org/packages/gkeyring/), [gkeyring-git](https://aur.archlinux.org/packages/gkeyring-git/)
 
 ## 用GUI管理
 
-You can manage the contents of GNOME Keyring using Seahorse. [Install](/index.php/Install "Install") it with the package [seahorse](https://www.archlinux.org/packages/?name=seahorse).
+你可以通过Seahorse来管理GNOME Keyring的内容。[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [seahorse](https://www.archlinux.org/packages/?name=seahorse) 包。
 
-It is possible to leave the GNOME keyring password blank or change it. In seahorse, in the "View" drop-down menu, select "By Keyring". On the Passwords tab, right click on "Passwords: login" and pick "Change password." Enter the old password and leave empty the new password. You will be warned about using unencrypted storage; continue by pushing "Use Unsafe Storage."
+留空或者更改GNOME keyring的密码是允许的。在seahorse里，在 "View" 下拉菜单里，选择 "By Keyring"。在Passwords标签页里，右键单击 "Passwords: login" 然后选择 "Change password." 输入旧密码然后留空新密码，你会收到警告说正在使用未加密的储存方式，如果确定请点击"Use Unsafe Storage."
 
 ## 在GNOME外部使用钥匙环
 

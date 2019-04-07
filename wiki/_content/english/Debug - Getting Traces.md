@@ -6,15 +6,20 @@ Related articles
 
 This article aims to help in creating a debugging Arch package and using it to provide trace and debug information for reporting software bugs to developers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Package names](#Package_names)
 *   [2 PKGBUILD](#PKGBUILD)
 *   [3 Compilation settings](#Compilation_settings)
     *   [3.1 General](#General)
-    *   [3.2 Qt4](#Qt4)
-    *   [3.3 Qt5](#Qt5)
-    *   [3.4 CMAKE (KDE) applications](#CMAKE_(KDE)_applications)
+    *   [3.2 Gtk3/glib2](#Gtk3/glib2)
+    *   [3.3 Qt4](#Qt4)
+    *   [3.4 Qt5](#Qt5)
+    *   [3.5 CMAKE (KDE) applications](#CMAKE_(KDE)_applications)
 *   [4 Building and installing the package](#Building_and_installing_the_package)
 *   [5 Getting the trace](#Getting_the_trace)
 *   [6 Conclusion](#Conclusion)
@@ -64,20 +69,20 @@ At this stage, you can modify the global configuration file of `makepkg` if you 
 As of pacman 4.1, `/etc/makepkg.conf` has debug compilation flags in `DEBUG_CFLAGS` and `DEBUG_CXXFLAGS`. To use them, enable the `debug` makepkg option, and disable `strip`.
 
 ```
-OPTIONS+=(debug !strip)
+OPTIONS+=(debug !strip)
 
 ```
 
-These settings will force compilation with debugging information and will disable the stripping of debug symbols from executables. To apply this setting to a single package, modify the PKGBUILD:
+These settings will force compilation with debug symbols and will disable their stripping from executables. To apply this setting to a single package, modify the PKGBUILD:
 
 ```
-options=(debug !strip)
+options=(debug !strip)
 
 ```
 
-Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debugging information will then be stripped from the main package and placed in a separate `*foo*-debug` package.
+Alternatively you can put the debug information in a separate package by enabling both `debug` and `strip`, debug symbols will then be stripped from the main package and placed, together with source files to aid in stepping through the debugger, in a separate `*foo*-debug` package.
 
-**Note:** It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbols files are installed under `/usr/lib/debug`. See the [GDB documentation](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) for more information about debug packages.
+**Note:** It is insufficient to simply install the newly compiled debug package, because the debugger will check that the file containing the debug symbols is from the same build as the associated library and executable. You must install both of the recompiled packages. In Arch, the debug symbol files are installed under `/usr/lib/debug`, and source files are installed under `/usr/src/debug`. See the [GDB documentation](https://sourceware.org/gdb/onlinedocs/gdb/Separate-Debug-Files.html) for more information about debug packages.
 
 Note that certain packages such as *glibc* are stripped regardless. Check the PKGBUILD for sections such as:
 
@@ -98,6 +103,10 @@ strip $STRIP_SHARED usr/lib/{libanl,libBrokenLocale,libcidn,libcrypt}-*.so \
 ```
 
 And remove them where appropriate.
+
+### Gtk3/glib2
+
+The [eschwartz](/index.php/Unofficial_user_repositories#eschwartz "Unofficial user repositories") repository contains pre-built Gtk3 and glib2 packages with detached debug symbol packages.
 
 ### Qt4
 

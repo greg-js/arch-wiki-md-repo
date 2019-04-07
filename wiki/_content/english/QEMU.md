@@ -60,72 +60,75 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
     *   [6.6 Shorthand configuration](#Shorthand_configuration)
-*   [7 Graphics](#Graphics)
+*   [7 Graphic card](#Graphic_card)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
-        *   [7.2.1 SPICE](#SPICE)
-            *   [7.2.1.1 Password authentication with SPICE](#Password_authentication_with_SPICE)
-            *   [7.2.1.2 TLS encryption](#TLS_encryption)
     *   [7.3 vmware](#vmware)
     *   [7.4 virtio](#virtio)
     *   [7.5 cirrus](#cirrus)
     *   [7.6 none](#none)
-    *   [7.7 vnc](#vnc)
-        *   [7.7.1 Basic password authentication](#Basic_password_authentication)
-*   [8 Audio](#Audio)
-    *   [8.1 Host](#Host)
-    *   [8.2 Guest](#Guest)
-*   [9 Installing virtio drivers](#Installing_virtio_drivers)
-    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_(Arch)_Linux_guest)
-    *   [9.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
-        *   [9.2.1 Block device drivers](#Block_device_drivers)
-            *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
-            *   [9.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
-        *   [9.2.2 Network drivers](#Network_drivers)
-        *   [9.2.3 Balloon driver](#Balloon_driver)
-    *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
-*   [10 QEMU monitor](#QEMU_monitor)
-    *   [10.1 Accessing the monitor console](#Accessing_the_monitor_console)
-    *   [10.2 Sending keyboard presses to the virtual machine using the monitor console](#Sending_keyboard_presses_to_the_virtual_machine_using_the_monitor_console)
-    *   [10.3 Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console)
-    *   [10.4 Running the virtual machine in immutable mode](#Running_the_virtual_machine_in_immutable_mode)
-    *   [10.5 Pause and power options via the monitor console](#Pause_and_power_options_via_the_monitor_console)
-    *   [10.6 Taking screenshots of the virtual machine](#Taking_screenshots_of_the_virtual_machine)
-*   [11 QEMU machine protocol](#QEMU_machine_protocol)
-    *   [11.1 Start QMP](#Start_QMP)
-    *   [11.2 Live merging of child image into parent image](#Live_merging_of_child_image_into_parent_image)
-    *   [11.3 Live creation of a new snapshot](#Live_creation_of_a_new_snapshot)
-*   [12 Tips and tricks](#Tips_and_tricks)
-    *   [12.1 Improve virtual machine performance](#Improve_virtual_machine_performance)
-    *   [12.2 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
-        *   [12.2.1 With libvirt](#With_libvirt)
-        *   [12.2.2 With systemd service](#With_systemd_service)
-    *   [12.3 Mouse integration](#Mouse_integration)
-    *   [12.4 Pass-through host USB device](#Pass-through_host_USB_device)
-    *   [12.5 USB redirection with SPICE](#USB_redirection_with_SPICE)
-    *   [12.6 Enabling KSM](#Enabling_KSM)
-    *   [12.7 Multi-monitor support](#Multi-monitor_support)
-    *   [12.8 Copy and paste](#Copy_and_paste)
-    *   [12.9 Windows-specific notes](#Windows-specific_notes)
-        *   [12.9.1 Fast startup](#Fast_startup)
-        *   [12.9.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
-    *   [12.10 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
-*   [13 Troubleshooting](#Troubleshooting)
-    *   [13.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
-    *   [13.2 No visible Cursor](#No_visible_Cursor)
-    *   [13.3 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
-    *   [13.4 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
-    *   [13.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [13.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [13.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
-    *   [13.8 libgfapi error message](#libgfapi_error_message)
-    *   [13.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-    *   [13.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
-    *   [13.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
-    *   [13.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
-    *   [13.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
-    *   [13.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
-*   [14 See also](#See_also)
+*   [8 SPICE](#SPICE)
+    *   [8.1 Enabling SPICE via the command line](#Enabling_SPICE_via_the_command_line)
+    *   [8.2 Connect to the guest with a SPICE client](#Connect_to_the_guest_with_a_SPICE_client)
+    *   [8.3 SPICE support on the guest](#SPICE_support_on_the_guest)
+    *   [8.4 Password authentication with SPICE](#Password_authentication_with_SPICE)
+    *   [8.5 TLS encrypted communication with SPICE](#TLS_encrypted_communication_with_SPICE)
+*   [9 VNC](#VNC)
+    *   [9.1 Basic password authentication](#Basic_password_authentication)
+*   [10 Audio](#Audio)
+    *   [10.1 Host](#Host)
+    *   [10.2 Guest](#Guest)
+*   [11 Installing virtio drivers](#Installing_virtio_drivers)
+    *   [11.1 Preparing an (Arch) Linux guest](#Preparing_an_(Arch)_Linux_guest)
+    *   [11.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
+        *   [11.2.1 Block device drivers](#Block_device_drivers)
+            *   [11.2.1.1 New Install of Windows](#New_Install_of_Windows)
+            *   [11.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
+        *   [11.2.2 Network drivers](#Network_drivers)
+        *   [11.2.3 Balloon driver](#Balloon_driver)
+    *   [11.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
+*   [12 QEMU monitor](#QEMU_monitor)
+    *   [12.1 Accessing the monitor console](#Accessing_the_monitor_console)
+    *   [12.2 Sending keyboard presses to the virtual machine using the monitor console](#Sending_keyboard_presses_to_the_virtual_machine_using_the_monitor_console)
+    *   [12.3 Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console)
+    *   [12.4 Running the virtual machine in immutable mode](#Running_the_virtual_machine_in_immutable_mode)
+    *   [12.5 Pause and power options via the monitor console](#Pause_and_power_options_via_the_monitor_console)
+    *   [12.6 Taking screenshots of the virtual machine](#Taking_screenshots_of_the_virtual_machine)
+*   [13 QEMU machine protocol](#QEMU_machine_protocol)
+    *   [13.1 Start QMP](#Start_QMP)
+    *   [13.2 Live merging of child image into parent image](#Live_merging_of_child_image_into_parent_image)
+    *   [13.3 Live creation of a new snapshot](#Live_creation_of_a_new_snapshot)
+*   [14 Tips and tricks](#Tips_and_tricks)
+    *   [14.1 Improve virtual machine performance](#Improve_virtual_machine_performance)
+    *   [14.2 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
+        *   [14.2.1 With libvirt](#With_libvirt)
+        *   [14.2.2 With systemd service](#With_systemd_service)
+    *   [14.3 Mouse integration](#Mouse_integration)
+    *   [14.4 Pass-through host USB device](#Pass-through_host_USB_device)
+    *   [14.5 USB redirection with SPICE](#USB_redirection_with_SPICE)
+    *   [14.6 Enabling KSM](#Enabling_KSM)
+    *   [14.7 Multi-monitor support](#Multi-monitor_support)
+    *   [14.8 Copy and paste](#Copy_and_paste)
+    *   [14.9 Windows-specific notes](#Windows-specific_notes)
+        *   [14.9.1 Fast startup](#Fast_startup)
+        *   [14.9.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+    *   [14.10 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
+*   [15 Troubleshooting](#Troubleshooting)
+    *   [15.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
+    *   [15.2 No visible Cursor](#No_visible_Cursor)
+    *   [15.3 Two different mouse cursors are visible](#Two_different_mouse_cursors_are_visible)
+    *   [15.4 Keyboard issues when using VNC](#Keyboard_issues_when_using_VNC)
+    *   [15.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [15.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [15.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl(KVM_CREATE_VM)_failed:_16_Device_or_resource_busy)
+    *   [15.8 libgfapi error message](#libgfapi_error_message)
+    *   [15.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [15.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [15.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
+    *   [15.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
+    *   [15.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
+    *   [15.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
+*   [16 See also](#See_also)
 
 ## Installation
 
@@ -1109,9 +1112,9 @@ Notice the lack of network IDs, and that the device was created with `model=...`
 
 See [QEMU networking documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#Network-options) for more information on parameters you can use.
 
-## Graphics
+## Graphic card
 
-QEMU can use the following different graphic outputs: `std`, `qxl`, `vmware`, `virtio`, `cirrus` and `none`.
+QEMU can emulate several types of VGA card. The card type is passed in the `-vga *type*` command line option and can be `std`, `qxl`, `vmware`, `virtio`, `cirrus` or `none`.
 
 ### std
 
@@ -1119,62 +1122,91 @@ With `-vga std` you can get a resolution of up to 2560 x 1600 pixels without req
 
 ### qxl
 
-QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga qxl` option and install drivers in the guest. You may want to use SPICE for improved graphical performance when using QXL.
+QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga qxl` option and install drivers in the guest. You may want to use [#SPICE](#SPICE) for improved graphical performance when using QXL.
 
 On Linux guests, the `qxl` and `bochs_drm` kernel modules must be loaded in order to gain a decent performance.
 
-#### SPICE
+### vmware
 
-The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way. SPICE can only be used when using QXL as the graphical output.
+Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
+
+### virtio
+
+`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests with [mesa](https://www.archlinux.org/packages/?name=mesa) (>=11.2) compiled with the option `gallium-drivers=virgl`.
+
+To enable 3D acceleration on the guest system select this vga with `-vga virtio` and enable the opengl context in the display device with `-display sdl,gl=on` or `-display gtk,gl=on` for the sdl and gtk display output respectively. Successful configuration can be confirmed looking at the kernel log in the guest:
+
+ `$ dmesg | grep drm ` 
+```
+[drm] pci: virtio-vga detected
+[drm] virgl 3d acceleration enabled
+
+```
+
+### cirrus
+
+The cirrus graphical adapter was the default [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). It [should not](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) be used on modern systems.
+
+### none
+
+This is like a PC that has no VGA card at all. You would not even be able to access it with the `-vnc` option. Also, this is different from the `-nographic` option which lets QEMU emulate a VGA card, but disables the SDL display.
+
+## SPICE
+
+The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way. SPICE can only be used when using [#qxl](#qxl) as the graphical output.
+
+### Enabling SPICE via the command line
 
 The following is example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
 ```
-$ qemu-system-x86_64 -vga qxl -spice port=5930,disable-ticketing -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
+$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -spice port=5930,disable-ticketing -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
 
 ```
 
 The parameters have the following meaning:
 
-1.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device,
-2.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
+1.  `-device virtio-serial-pci` adds a virtio-serial device
+2.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in the virtio-serial device,
+3.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
 
-**Tip:** Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
+**Tip:**
 
-One of the three methods below can be used to connect to the guest using a SPICE client:
+*   Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
+*   Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
 
-1.  [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is the recommended SPICE client by the protocol developers: `$ remote-viewer spice://127.0.0.1:5930` 
-2.  [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) can also be used: `$ spicy -h 127.0.0.1 -p 5930` 
-3.  Other [clients](http://www.spice-space.org/download.html), including for other platforms, are also available.
+ `$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing` 
 
-Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
+Then connect with `$ remote-viewer spice+unix:///tmp/vm_spice.socket` or with `$ spicy --uri="spice+unix:///tmp/vm_spice.socket"`.
 
-```
-$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing
+### Connect to the guest with a SPICE client
 
-```
+A SPICE client is necessary to connect to the guest. In Arch, the following clients are available:
 
-Then connect via:
+**virt-viewer** — is the recommended SPICE client by the protocol developers
 
-```
-$ remote-viewer spice+unix:///tmp/vm_spice.socket
+	run it with `$ remote-viewer spice://127.0.0.1:5930` || [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
 
-```
+**spice-gtk** — is a GTK+ client which can also be used
 
-or via:
+	run it with `$ spicy -h 127.0.0.1 -p 5930` || [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk)
 
-```
-$ spicy --uri="spice+unix:///tmp/vm_spice.socket"
+**Tip:** To connect to the guest through SSH tunelling, the following type of command can be used: `$ ssh -fL 5999:localhost:5930 *my.domain.org* sleep 10; spicy -h 127.0.0.1 -p 5999` 
 
-```
+This example connects *spicy* to the local port `5999` which is forwarded through SSH to the guest's SPICE server located at the address *my.domain.org*, port `5930`. Note the `-f` option that requests ssh to execute the command `sleep 10` in the background. This way, the ssh session runs while the client is active and auto-closes once the client ends.
 
-For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
+For clients that run on smartphone or on other platforms, refer to the *Other clients* section in [spice-space download](http://www.spice-space.org/download.html).
+
+### SPICE support on the guest
+
+For **Arch Linux guests**, for improved support for multiple monitors or clipboard sharing, the following packages should be installed:
 
 *   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more. [Enable](/index.php/Enable "Enable") `spice-vdagentd.service` after installation.
 *   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl): Xorg X11 qxl video driver
-*   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
 
-##### Password authentication with SPICE
+For guests under **other operating systems**, refer to the *Guest* section in [spice-space download](http://www.spice-space.org/download.html).
+
+### Password authentication with SPICE
 
 If you want to enable password authentication with SPICE you need to remove `disable-ticketing` from the `-spice` argument and instead add `password=*yourpassword*`. For example:
 
@@ -1185,7 +1217,7 @@ $ qemu-system-x86_64 -vga qxl -spice port=5900,password=*yourpassword* -device v
 
 Your SPICE client should now ask for the password to be able to connect to the SPICE server.
 
-##### TLS encryption
+### TLS encrypted communication with SPICE
 
 You can also configure TLS encryption for communicating with the SPICE server. First, you need to have a directory which contains the following files (the names must be exactly as indicated):
 
@@ -1215,34 +1247,9 @@ $ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="
 
 ```
 
-### vmware
+## VNC
 
-Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
-
-### virtio
-
-`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests with [mesa](https://www.archlinux.org/packages/?name=mesa) (>=11.2) compiled with the option `gallium-drivers=virgl`.
-
-To enable 3D acceleration on the guest system select this vga with `-vga virtio` and enable the opengl context in the display device with `-display sdl,gl=on` or `-display gtk,gl=on` for the sdl and gtk display output respectively. Successful configuration can be confirmed looking at the kernel log in the guest:
-
- `$ dmesg | grep drm ` 
-```
-[drm] pci: virtio-vga detected
-[drm] virgl 3d acceleration enabled
-
-```
-
-### cirrus
-
-The cirrus graphical adapter was the default [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). It [should not](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) be used on modern systems.
-
-### none
-
-This is like a PC that has no VGA card at all. You would not even be able to access it with the `-vnc` option. Also, this is different from the `-nographic` option which lets QEMU emulate a VGA card, but disables the SDL display.
-
-### vnc
-
-One can add the `-vnc :X` option to have QEMU redirect the VGA display to the VNC session. Substitute `X` for the number of the display (0 will then listen on 5900, 1 on 5901...).
+One can add the `-vnc :*X*` option to have QEMU redirect the VGA display to the VNC session. Substitute `*X*` for the number of the display (0 will then listen on 5900, 1 on 5901...).
 
 ```
 $ qemu-system-x86_64 -vnc :0
@@ -1253,7 +1260,7 @@ An example is also provided in the [#Starting QEMU virtual machines on boot](#St
 
 **Warning:** The default VNC server setup does not use any form of authentication. Any user can connect from any host.
 
-#### Basic password authentication
+### Basic password authentication
 
 An access password can be setup easily by using the `password` option. The password must be indicated in the QEMU monitor and connection is only possible once the password is provided.
 
@@ -1827,7 +1834,7 @@ The default VGA memory size for QXL devices is 16M (VRAM size is 64M). This is n
 
 ### Copy and paste
 
-To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically). See [#SPICE](#SPICE) for the necessary procedure to use QEMU with the SPICE protocol.
+One way to share the clipboard between the host and the guest is to enable the SPICE remote desktop protocol and access the client with a SPICE client. One needs to follow the steps described in [#SPICE](#SPICE). A guest run this way will support copy paste with the host.
 
 ### Windows-specific notes
 

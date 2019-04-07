@@ -346,7 +346,7 @@ The packages on the AUR are merely "build scripts", i.e. recipes to build binari
 
 ### How can I vote for packages in the AUR?
 
-Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) or [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
+Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/), [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/), or [aurvote-utils](https://aur.archlinux.org/packages/aurvote-utils/).
 
 Alternatively, if you have set up [ssh authentication](#Authentication) as above, you can directly vote from the command line using your ssh key. This means that you won't need to save or type in your AUR password.
 

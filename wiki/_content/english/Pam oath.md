@@ -1,6 +1,10 @@
 The [OATH Toolkit](http://www.nongnu.org/oath-toolkit/index.html) provides a two-step authentication procedure using one-time passcodes (OTP). It complies to two OTP method RFC standards ([HOTP](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm "w:HMAC-based One-time Password Algorithm"), [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm "w:Time-based One-time Password Algorithm")). The OTP generator applications are available for iOS, Android, Blackberry and other devices. Similar to [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator") the authentication mechanism integrates into the Linux [PAM](/index.php/PAM "PAM") system. This guide shows the installation and configuration of this mechanism.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Setting up the oath](#Setting_up_the_oath)
@@ -40,17 +44,25 @@ Make sure that the file can only be accessed by root:
 
 ## Setting up the PAM
 
-To enable oath for a specific service only, like ssh, you can edit the file /etc/pam.d/sshd and add at the beginning of the file the following line :
+To enable oath for a specific service only, like ssh, you can edit the file `/etc/pam.d/sshd` and add at the beginning of the file the following line:
 
 ```
  auth	  sufficient pam_oath.so usersfile=/etc/users.oath window=30 digits=6
 
 ```
 
-This will allow authentication if you just enter the right oath code. You can make it a requirement and let the rest of the pam stack be processed if you use the following line instead :
+This will allow authentication if you just enter the right oath code. You can make it a requirement and let the rest of the pam stack be processed if you use the following line instead:
 
 ```
  auth	  required pam_oath.so usersfile=/etc/users.oath window=30 digits=6
+
+```
+
+For ssh login to work make sure that both `ChallengeResponseAuthentication` and `UsePAM` options are enabled:
+
+```
+ ChallengeResponseAuthentication yes
+ UsePAM yes
 
 ```
 

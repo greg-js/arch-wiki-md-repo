@@ -54,13 +54,14 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [7.6 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
     *   [7.7 Seeing white page after login](#Seeing_white_page_after_login)
     *   [7.8 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [7.9 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload,_but_give_an_error_'Integrity_constraint_violation...')
-    *   [7.10 "Cannot write into apps directory"](#"Cannot_write_into_apps_directory")
-    *   [7.11 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
-    *   [7.12 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [7.13 "Reading from keychain failed with error: 'No keychain service available'"](#"Reading_from_keychain_failed_with_error:_'No_keychain_service_available'")
-    *   [7.14 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
-    *   [7.15 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_"Unable_to_load_dynamic_library_'mcrypt.so")
+    *   [7.9 GUI tray icon disappears, but client still running in the background](#GUI_tray_icon_disappears,_but_client_still_running_in_the_background)
+    *   [7.10 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload,_but_give_an_error_'Integrity_constraint_violation...')
+    *   [7.11 "Cannot write into apps directory"](#"Cannot_write_into_apps_directory")
+    *   [7.12 Installed apps get blocked because of MIME type error](#Installed_apps_get_blocked_because_of_MIME_type_error)
+    *   [7.13 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [7.14 "Reading from keychain failed with error: 'No keychain service available'"](#"Reading_from_keychain_failed_with_error:_'No_keychain_service_available'")
+    *   [7.15 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
+    *   [7.16 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_"Unable_to_load_dynamic_library_'mcrypt.so")
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
     *   [8.2 Docker](#Docker)
@@ -663,6 +664,18 @@ This should delete the relevant configuration from the table and add it again.
 ### GUI sync client fails to connect
 
 If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[5]](https://github.com/owncloud/mirall/issues/734)
+
+### GUI tray icon disappears, but client still running in the background
+
+After waking up from a suspended state, the Nextcloud client tray icon may disappear from the system tray. A workaround is to delay the startup of the client, as noted [here](https://github.com/nextcloud/desktop/issues/203#issuecomment-463957811). This can be done with the .desktop file, for example:
+
+ `.local/share/applications/nextcloud.desktop` 
+```
+...
+Exec=bash -c 'sleep 5 && nextcloud'
+...
+
+```
 
 ### Some files upload, but give an error 'Integrity constraint violation...'
 

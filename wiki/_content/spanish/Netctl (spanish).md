@@ -116,7 +116,7 @@ Esto creará y activará un servicio de [systemd](/index.php/Systemd_(Espa%C3%B1
 
 Primero [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") los paquetes necesarios:
 
-*   El paquete [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) es necesario para usar `netctl-auto@*interfaz*.service`.
+*   El paquete [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/) es necesario para usar `netctl-auto@*interfaz*.service`.
 *   El paquete [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) es necesario para usar `netctl-ifplugd@*interfaz*.service`.
 
 Ahora configure todos los perfiles que `netctl-auto@*interfaz*.service` o `netctl-ifplugd@*interfaz*.service` desea que inicien.

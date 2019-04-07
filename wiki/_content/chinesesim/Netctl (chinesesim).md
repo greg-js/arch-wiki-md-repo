@@ -9,7 +9,11 @@
 
 Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch Linux 网络管理方面的原生项目。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -123,7 +127,7 @@ netctl 的完整命令清单请参阅：[netctl(1)](http://jlk.fjfi.cvut.cz/arch
 
 #### 无线连接
 
-[安装](/index.php/Install "Install") [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) 包并[启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
+[安装](/index.php/Install "Install") [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/) 包并[启动/启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") `netctl-auto@*interface*.service` systemd 单元。当在不同网络覆盖区域间移动（漫游）时，*netctl* 配置文件将会自动启动/停止。
 
 *   *netctl-auto* 要求配置文件必须使用 `Security=wpa-configsection` 或 `Security=wpa` 配置项才能工作，不能使用 `Security=wpa-config` 配置项。
 

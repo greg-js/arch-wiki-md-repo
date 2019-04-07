@@ -384,14 +384,14 @@ Server = file:///mnt/repo/Packages
 
 ### Custom local repository
 
-Use the *repo-add* script included with *pacman* to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. To add a new package to the database, or to replace the old version of an existing package in the database, run:
+Use the *repo-add* script included with *pacman* to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. A package database is a tar file, optionally compressed. Valid extensions are *.db* or *.files* followed by an archive extension of *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz*, or *.tar.Z*. The file does not need to exist, but all parent directories must exist.
+
+To add a new package to the database, or to replace the old version of an existing package in the database, run:
 
 ```
 $ repo-add */path/to/repo.db.tar.gz /path/to/package-1.0-1-x86_64.pkg.tar.xz*
 
 ```
-
-**Note:** A package database is a tar file, optionally compressed. Valid extensions are *.db* or *.files* followed by an archive extension of *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz*, or *.tar.Z*. The file does not need to exist, but all parent directories must exist.
 
 The database and the packages do not need to be in the same directory when using *repo-add*, but keep in mind that when using *pacman* with that database, they should be together. Storing all the built packages to be included in the repository in one directory also allows to use shell glob expansion to add or update multiple packages at once:
 
@@ -401,6 +401,29 @@ $ repo-add */path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz*
 ```
 
 **Warning:** *repo-add* adds the entries into the database in the same order as passed on the command line. If multiple versions of the same package are involved, care must be taken to ensure that the correct version is added last. In particular, note that lexical order used by the shell depends on the locale and differs from the [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) ordering used by *pacman*.
+
+If you are looking to support multiple architectures then precautions should be taken to prevent errors from occurring. Each architecture should have its own directory tree:
+
+ `$ tree ~/customrepo/ | sed "s/$(uname -m)/<arch>/g"` 
+```
+/home/archie/customrepo/
+└── <arch>
+    ├── customrepo.db -> customrepo.db.tar.xz
+    ├── customrepo.db.tar.xz
+    ├── customrepo.files -> customrepo.files.tar.xz
+    ├── customrepo.files.tar.xz
+    └── personal-website-git-b99cce0-1-<arch>.pkg.tar.xz
+
+1 directory, 5 files
+
+```
+
+The *repo-add* executable checks if the package is appropriate. If this is not the case you will be running into error messages similar to this:
+
+```
+==> ERROR: '/home/archie/customrepo/<arch>/foo-<arch>.pkg.tar.xz' does not have a valid database archive extension.
+
+```
 
 *repo-remove* is used to remove packages from the package database, except that only package names are specified on the command line.
 

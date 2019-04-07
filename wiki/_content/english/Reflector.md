@@ -5,7 +5,11 @@ Related articles
 
 [Reflector](http://xyne.archlinux.ca/projects/reflector/) is a script which can retrieve the latest mirror list from the [MirrorStatus](https://www.archlinux.org/mirrors/status/) page, filter the most up-to-date mirrors, sort them by speed and overwrite the file `/etc/pacman.d/mirrorlist`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -62,7 +66,7 @@ Select the HTTPS mirrors synchronized within the last 12 hours and located in ei
 
 ### Pacman hook
 
-You can also create a [pacman hook](/index.php/Pacman_hook "Pacman hook") that will run *reflector* and remove the *.pacnew* file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
+You can create a [pacman hook](/index.php/Pacman_hook "Pacman hook") that will run *reflector* and remove the *.pacnew* file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
 
  `/etc/pacman.d/hooks/mirrorupgrade.hook` 
 ```
@@ -83,7 +87,7 @@ Make sure to substitute in your desired arguments for *reflector*.
 
 ### Systemd service
 
-This is an example of service unit that waits for the network to be up and online before running reflector:
+This is an example of a service unit that waits for the network to be up and online before running reflector:
 
  `/etc/systemd/system/reflector.service` 
 ```
@@ -106,7 +110,7 @@ RequiredBy=multi-user.target
 
 ### Systemd timer
 
-If you want to run `reflector.service` on a weekly basis, create an associated *.timer*:
+If you want to run `reflector.service` on a weekly basis, create an associated *.timer*. For example:
 
  `/etc/systemd/system/reflector.timer` 
 ```

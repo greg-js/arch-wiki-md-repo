@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-3-4**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=568937) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-04-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=570558) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -241,7 +241,7 @@ El [script Archfonts Python](https://github.com/ternstor/distrofonts) se puede u
 *   [Dina](http://www.dcmembers.com/jibsen/download/61/) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 6pt, 8pt, 9pt, 10pt, mono espaciado , basada en Proggy.
 *   [Efont](http://openlab.jp/efont/unicode/) ([efont-unicode-bdf](https://aur.archlinux.org/packages/efont-unicode-bdf/)) – 10px, 12px, 14px, 16px, 24px, normal, negrita y itálica.
 *   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/)) – 11px, 14px, normal y negrita.
-*   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts)).
+*   [Lime](http://artwizaleczapka.sourceforge.net/) ([artwiz-fonts](https://aur.archlinux.org/packages/artwiz-fonts/)).
 *   [ProFont](http://tobiasjung.name/profont/) ([ttf-profont-iix](https://aur.archlinux.org/packages/ttf-profont-iix/)) – 10px, 11px, 12px, 15px, 17px, 22px, 29px, normal.
 *   [Proggy](https://en.wikipedia.org/wiki/Proggy_programming_fonts "wikipedia:Proggy programming fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/)) – tiene diferentes variantes.
 *   [Tamsyn](http://www.fial.com/~scott/tamsyn-font/) ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font)).
@@ -316,9 +316,9 @@ Webs relevantes:
 
 #### Sin clasificación
 
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Coleccion de fuentes de *dustismo.com*.
+*   [ttf-cheapskate](https://aur.archlinux.org/packages/ttf-cheapskate/) - Coleccion de fuentes de *dustismo.com*.
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Fuente Junius que contiene casi todos los script y glifos medivales.
-*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Cubre el primer plano completo y muchos scripts.
+*   [ttf-mph-2b-damase](https://aur.archlinux.org/packages/ttf-mph-2b-damase/) - Cubre el primer plano completo y muchos scripts.
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - Conjuntos IBM Courier y Adobe Utopia del [tipo de letra PostScript](https://en.wikipedia.org/wiki/es:Tipo_de_letra_PostScript "wikipedia:es:Tipo de letra PostScript").
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta paquete para todas las fuentes de los repositorios oficiales.
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - una enorme colección de fuentes libres (incluye Ubuntu, Inconsolata, Roboto, etc.) - Nota: Su diálogo de fuentes puede ser muy grande ya que se añadirán más de cien fuentes.
@@ -339,7 +339,7 @@ Webs relevantes:
 
 #### Braille
 
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Fuente que contiene símbolos Unicode para el *braille*.
+*   [ttf-ubraille](https://aur.archlinux.org/packages/ttf-ubraille/) - Fuente que contiene símbolos Unicode para el *braille*.
 
 #### Chino, japonés, coreano, vietnamita
 
@@ -436,7 +436,7 @@ Casi todas las fuentes Unicode contienen el conjunto de caracteres griegos (poli
 
 #### Índico
 
-*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Fuente para bangla.
+*   [ttf-freebanglafont](https://aur.archlinux.org/packages/ttf-freebanglafont/) - Fuente para bangla.
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Colección de fuentes índicas OpenType (contiene ttf-freebanglafont), proporciona el carácter [U+0CA0](http://www.fileformat.info/info/unicode/char/ca0/index.htm) "ಠ".
 *   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - Fuentes índicas TrueType del proyecto Fedora (contiene Fuentes Oriya y más).
 *   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - Fuentes TrueType devanagaries (contiene 283 tipos de letra).
@@ -474,7 +474,7 @@ Casi todas las fuentes Unicode contienen el conjunto de caracteres griegos (poli
 
 #### Tai–Kadai
 
-*   [fonts-tlwg](https://www.archlinux.org/packages/?name=fonts-tlwg) - Colección de fuentes escalables tailandesas.
+*   [fonts-tlwg](https://aur.archlinux.org/packages/fonts-tlwg/) - Colección de fuentes escalables tailandesas.
 *   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Fuente TTF Lao (Phetsarath_OT)
 *   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Fuente TTF Lao, ambas Unicode y no-Unicode para Windows.
 
@@ -579,7 +579,7 @@ Las aplicaciones y navegadores selecciona y muestra fuentes dependiendo de la co
 
 ### Establecer la fuente del terminal sobre la marcha
 
-Para los emuladores de terminal que usan `Xresources`, las fuentes se pueden establecer utilizando secuencias de escape. Especificamente, `echo -e "\033]710;$font\007"` para cambier la fuente normal (`*font` en `~/.Xresources`), y reemplazarla `710` con `711`, `712`, y `713` para cambiar las fuentes `*boldFont`, `*italicFont`, y `*boldItalicFont`, respectivamente.
+Para los emuladores de terminal que usan [X resources](/index.php/X_resources "X resources"), p.ej. [xterm](/index.php/Xterm "Xterm") o [rxvt-unicode](/index.php/Rxvt-unicode_(Espa%C3%B1ol) "Rxvt-unicode (Español)"), las fuentes se pueden establecer utilizando secuencias de escape. Especificamente, `echo -e "\033]710;$font\007"` para cambier la fuente normal (`*font` en `~/.Xresources`), y reemplazarla `710` con `711`, `712`, y `713` para cambiar las fuentes `*boldFont`, `*italicFont`, y `*boldItalicFont`, respectivamente.
 
 ### Caché específico de fuente de una aplicación
 

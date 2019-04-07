@@ -765,8 +765,9 @@ That's it. Telnet is not available when `sshd` is running. Should `sshd` fail to
 
 Check these simple issues before you look any further.
 
-1.  The config directory `~/.ssh` and its contents should be accessible only by your user (check this on both the client and the server):
+1.  The config directory `~/.ssh`, its contents should be accessible only by the user (check this on both the client and the server), and the user's home folder should only be writable by the user:
     ```
+    $ chmod go-w ~
     $ chmod 700 ~/.ssh
     $ chmod 600 ~/.ssh/*
     $ chown -R $USER ~/.ssh

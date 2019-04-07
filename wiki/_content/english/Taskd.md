@@ -23,7 +23,7 @@
 
 ### Installation
 
-taskd is available in the AUR as [taskd](https://aur.archlinux.org/packages/taskd/) and [taskd-git](https://aur.archlinux.org/packages/taskd-git/).
+taskd is available in the AUR as [taskd](https://www.archlinux.org/packages/?name=taskd) and [taskd-git](https://aur.archlinux.org/packages/taskd-git/).
 
 ### Setup
 

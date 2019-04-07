@@ -49,6 +49,7 @@ This page was created to consolidate colorization of CLI outputs.
     *   [4.5 Enumerate supported colors](#Enumerate_supported_colors)
     *   [4.6 Enumerate terminal capabilities](#Enumerate_terminal_capabilities)
     *   [4.7 Color scheme scripts](#Color_scheme_scripts)
+    *   [4.8 True color support](#True_color_support)
 *   [5 See also](#See_also)
 
 ## Applications
@@ -392,6 +393,10 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 ### Libraries for colorizing an output
 
+*   **libtextstyle** — A C library for styling text output to terminals
+
+	[https://alpha.gnu.org/gnu/gettext/libtextstyle-0.8.tar.gz](https://alpha.gnu.org/gnu/gettext/libtextstyle-0.8.tar.gz) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **ruby-rainbow** — Rainbow is extension to ruby's String class adding support for colorizing text on ANSI terminal
 
 	[https://rubygems.org/gems/rainbow/](https://rubygems.org/gems/rainbow/) || [ruby-rainbow](https://www.archlinux.org/packages/?name=ruby-rainbow)
@@ -453,7 +458,7 @@ Re-login after installing *lesspipe* in order to activate it, or source `/etc/pr
 
 #### Make
 
-*   **colormake** — A simple wrapper around make to make it's output more readable.
+*   **colormake** — A simple wrapper around make to make its output more readable.
 
 	[http://bre.klaki.net/programs/colormake/](http://bre.klaki.net/programs/colormake/) || [colormake](https://aur.archlinux.org/packages/colormake/), [colormake-git](https://aur.archlinux.org/packages/colormake-git/)
 
@@ -651,6 +656,12 @@ ech		kcuf1		kIC		rmkx		xon
 ### Color scheme scripts
 
 See [[2]](https://paste.xinu.at/m-dAiJ/) for scripts which display a chart of your current terminal scheme.
+
+### True color support
+
+Some terminals support the full range of 16 million colors (RGB, each with 8 bit resolution): xterm, konsole, st, etc. The corresponding TERM values `xterm-direct`, `konsole-direct`, `st-direct`, etc. are supported starting with ncurses version 6.1 [[3]](http://lists.gnu.org/archive/html/bug-ncurses/2018-01/msg00045.html). For more info about terminal emulators and applications that support true color, see [[4]](https://gist.github.com/XVilka/8346728).
+
+Note that the Linux kernel supports the SGR escape sequences for true-color, but it is pointless to use it, because the driver maps the 24-bit color specifications to a 256-colors color map in the kernel (see the functions `rgb_foreground`, `rgb_background`). For this reason, there is no terminfo entry `linux-direct`.
 
 ## See also
 

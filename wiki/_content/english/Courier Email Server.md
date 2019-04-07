@@ -6,7 +6,11 @@ For testing purposes you should create your own email-account, e.g. www.gmx.de.
 
 For more complex setup see [Creating a Linux Mail Server (Postfix, Procmail, Fetchmail, SpamBayes, Courier-imap, Mutt, SquirrelMail)](http://www.hypexr.org/linux_mail_server.php)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Using fetchmail](#Using_fetchmail)
@@ -17,7 +21,7 @@ For more complex setup see [Creating a Linux Mail Server (Postfix, Procmail, Fet
 
 ## Installation
 
-[Install](/index.php/Install "Install") [fetchmail](https://www.archlinux.org/packages/?name=fetchmail), [procmail](https://www.archlinux.org/packages/?name=procmail), and [courier-imap](https://aur.archlinux.org/packages/courier-imap/).
+[Install](/index.php/Install "Install") [fetchmail](https://aur.archlinux.org/packages/fetchmail/), [procmail](https://www.archlinux.org/packages/?name=procmail), and [courier-imap](https://aur.archlinux.org/packages/courier-imap/).
 
 ### Using fetchmail
 
@@ -26,7 +30,7 @@ Just make .fetchmailrc in your home-directory and add the following lines:
 ```
 poll pop.gmx.de with proto POP3
  user "username" there with password "passwd" is "morphus" here
-mda "/usr/bin/procmail -d %s"
+mda "/usr/bin/procmail -d %s"
 
 ```
 

@@ -843,7 +843,7 @@ If you are planning to store the keyfile on an external device, you can also sim
 
 ```
 
-To deny any access for other users then `root`:
+To deny any access for other users than `root`:
 
 ```
 # chmod 600 /etc/mykeyfile

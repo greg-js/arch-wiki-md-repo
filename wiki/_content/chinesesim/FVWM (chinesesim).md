@@ -1,11 +1,15 @@
 FVWM是X窗口系统下非常强大的ICCCM-compliant多虚拟桌面窗口管理器. It requires some effort to learn to use it well, since it is almost entirely configured by editing configuration files with a text editor, but those who persist end up with a desktop environment that works exactly the way they want it to work. Although using FVWM does not require an knowlege of programming languages, it is possible to extend the power of FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM has a [Perl library](http://www.fvwm.org/documentation/perllib/) that makes creating FVWM modules in Perl possible and easy. Development is active, and support is excellent. And for those who wonder, FVWM means Feeble Virtual Window Manager.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装fvwm](#.E5.AE.89.E8.A3.85fvwm)
-*   [2 启动 FVWM](#.E5.90.AF.E5.8A.A8_FVWM)
-*   [3 改进 FVWM](#.E6.94.B9.E8.BF.9B_FVWM)
-*   [4 参考](#.E5.8F.82.E8.80.83)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装fvwm](#安装fvwm)
+*   [2 启动 FVWM](#启动_FVWM)
+*   [3 改进 FVWM](#改进_FVWM)
+*   [4 参考](#参考)
 
 ## 安装fvwm
 
@@ -40,7 +44,7 @@ When you start FVWM for the first time, you will get something that looks very b
 
 *   A page[[9]](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) in the [Internet Archive](http://archive.org/) is outdated, but seems to be the only significant online documentation for fvwm-patched.
 
-*   FVWM-Crystal, which is also in the Arch repositories as package [fvwm-crystal](https://www.archlinux.org/packages/?name=fvwm-crystal), is an add-on that makes FVWM much easier to configure, although the easier configuration allows much less flexibility than direct editing of configuration files.
+*   FVWM-Crystal, which is also in the Arch repositories as package [fvwm-crystal](https://aur.archlinux.org/packages/fvwm-crystal/), is an add-on that makes FVWM much easier to configure, although the easier configuration allows much less flexibility than direct editing of configuration files.
 
 *   [XdgMenu](/index.php/XdgMenu "XdgMenu") is a useful utility for generating menus.
 

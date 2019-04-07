@@ -1,5 +1,19 @@
 The Lenovo P52 is a quad or hex core Intel 8th generation Laptop.
 
+## Pre-Installation
+
+Arch on a Lenovo P52 is an amazing combination.
+
+**Before you begin:** There are some possible "BIOS BRICKING" settings. The settings are not directly related to installing Arch, but most Arch users will make configuration changes in the same areas where these settings can be modified. So I'm offering this warning here.
+
+Make sure to update your BIOS to **V1.17 or later** current is v1.24 as of March 2019\. Earlier versions of the BIOS may become inoperable if you select certain settings:
+
+1) Hybrid vs discrete graphics - [https://forums.lenovo.com/t5/ThinkPad-P-and-W-Series-Mobile/P52-won-t-start-after-change-to-only-discrete-graphic-card/m-p/4265065](https://forums.lenovo.com/t5/ThinkPad-P-and-W-Series-Mobile/P52-won-t-start-after-change-to-only-discrete-graphic-card/m-p/4265065)
+
+2) Thunderbolt 3 Support - [https://forums.lenovo.com/t5/ThinkPad-P-and-W-Series-Mobile/Lenovo-P52-bricked-by-selecting-BIOS-thunderbolt-support-for/td-p/4207538/page/12](https://forums.lenovo.com/t5/ThinkPad-P-and-W-Series-Mobile/Lenovo-P52-bricked-by-selecting-BIOS-thunderbolt-support-for/td-p/4207538/page/12)
+
+Note: You can update the BIOS using the bootable (CD) update option from Lenovo, or just update the BIOS using the pre-packaged Windows installation and software and then continue with Arch installation once the BIOS is updated.
+
 ## Installation
 
 Follow the [Beginner's guide](/index.php/Beginner%27s_guide "Beginner's guide") to install Arch.

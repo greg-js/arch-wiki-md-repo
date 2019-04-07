@@ -77,7 +77,7 @@ Related articles
 
 Users of the Tor network run an onion proxy on their machine. This software connects out to Tor, periodically negotiating a virtual circuit through the Tor network. Tor employs cryptography in a layered manner (hence the 'onion' analogy), ensuring perfect forward secrecy between routers. At the same time, the onion proxy software presents a SOCKS interface to its clients. SOCKS-aware applications may be pointed at Tor, which then multiplexes the traffic through a Tor virtual circuit.
 
-**Warning:** Tor by itself is *not* all you need to maintain your anonymity. There are several major pitfalls to watch out for (see: [Want Tor to really work?](https://www.torproject.org/download/download.html#warning)).
+**Warning:** Tor by itself is *not* all you need to maintain your anonymity. There are several major pitfalls to watch out for (see: [Want Tor to really work?](https://2019.www.torproject.org/download/download.html.en#Warning)).
 
 Through this process the onion proxy manages networking traffic for end-user anonymity. It keeps a user anonymous by encrypting traffic, sending it through other nodes of the Tor network, and decrypting it at the last node to receive your traffic before forwarding it to the server you specified. One trade off that has to be made for the anonymity Tor provides is that it can be considerably slower than a regular direct connection, due to the large amount of traffic re-routing. Additionally, although Tor provides protection against traffic analysis it cannot prevent traffic confirmation at the boundaries of the Tor network (i.e. the traffic entering and exiting the network).
 
@@ -418,7 +418,7 @@ See [#Running a Tor server](#Running_a_Tor_server).
 
 ## Usage
 
-Start/enable `tor.service` [using systemd](/index.php/Systemd#Using_units "Systemd"). Alternatively, launch it with `sudo -u tor /usr/bin/tor`.
+[Start/enable](/index.php/Start/enable "Start/enable") `tor.service`. Alternatively, launch it with `sudo -u tor /usr/bin/tor`.
 
 To use a program over tor, configure it to use `127.0.0.1` or localhost as a SOCKS5H proxy, with port `9050` (plain tor with standard settings). To check if Tor is functioning properly visit the [Tor](https://check.torproject.org/), [Harvard](http://serifos.eecs.harvard.edu/cgi-bin/ipaddr.pl?tor=1) or [Xenobite.eu](https://torcheck.xenobite.eu/) websites.
 

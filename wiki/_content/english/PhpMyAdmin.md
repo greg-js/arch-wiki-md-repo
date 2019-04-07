@@ -18,7 +18,7 @@
     *   [3.3 Enabling Configuration Storage](#Enabling_Configuration_Storage)
         *   [3.3.1 Setup database](#Setup_database)
         *   [3.3.2 Setup database user](#Setup_database_user)
-    *   [3.4 Enabling templates catching](#Enabling_templates_catching)
+    *   [3.4 Enabling template caching](#Enabling_template_caching)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -280,7 +280,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON phpmyadmin.* TO 'pma'@'localhost';
 
 Re-login to ensure the new features are activated.
 
-### Enabling templates catching
+### Enabling template caching
 
 Edit `/etc/webapps/phpmyadmin/config.inc.php` to add the line:
 

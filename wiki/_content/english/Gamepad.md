@@ -31,7 +31,8 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.4.2 Steam](#Steam)
     *   [7.5 PlayStation 3/4 controller](#PlayStation_3/4_controller)
         *   [7.5.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
-        *   [7.5.2 Using generic/clone controllers](#Using_generic/clone_controllers)
+        *   [7.5.2 Using Playstation 3 controllers with Steam](#Using_Playstation_3_controllers_with_Steam)
+        *   [7.5.3 Using generic/clone controllers](#Using_generic/clone_controllers)
     *   [7.6 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
         *   [7.6.1 iPEGA-9068 and 9087](#iPEGA-9068_and_9087)
     *   [7.7 Steam Controller](#Steam_Controller)
@@ -383,6 +384,25 @@ GNOME's Settings also provides a graphical interface to pair sixaxis controllers
 Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
 **Note:** If the controller does not connect, make sure the bluetooth interface is turned on and the controllers have been trusted. (See [Bluetooth](/index.php/Bluetooth "Bluetooth"))
+
+##### Using Playstation 3 controllers with Steam
+
+For Steam to recognize your controllers, it needs to be able to read their device file. The [steam](https://www.archlinux.org/packages/?name=steam) package sets up udev rules for lots of controllers, but not the PlayStation 3 controller (aka. DualShock 3 controller). You can add the rules yourself:
+
+ `/etc/udev/rules.d/99-dualshock-3.rules` 
+```
+# DualShock 3 controller, Bluetooth
+KERNEL=="hidraw*", KERNELS=="*054C:0268*", MODE="0660", TAG+="uaccess"
+
+# DualShock 3 controller, USB
+KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0268", MODE="0660", TAG+="uaccess"
+```
+
+Make sure your user is in the "input" group:
+
+`usermod -aG input yourusername`
+
+Reboot your system. Steam should now detect your PlayStation 3 controller.
 
 ##### Using generic/clone controllers
 

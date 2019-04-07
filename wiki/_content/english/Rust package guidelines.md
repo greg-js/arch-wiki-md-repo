@@ -57,11 +57,18 @@ Most Rust projects provide a simple way to run the testsuite.
 
 Rust builds binaries in `target/release` and can simply be installed to `/usr/bin`.
 
-**Note:** Some packages should install more files such as a man page.
-
 ```
  package() {
    install -Dm 755 target/release/${pkgname} -t "${pkgdir}/usr/bin"
+ }
+
+```
+
+Some packages should install more files such as a man page, so in that case it would be better to use `cargo`:
+
+```
+ package() {
+   cargo install --root "${pkgdir}"/usr
  }
 
 ```

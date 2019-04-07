@@ -7,7 +7,7 @@
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(8)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
 | <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(3)</small> |
-| <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(8) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
+| <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(9) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
 | <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(6)</small> |
 | <small>1.5.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
 | <small>1.6.</small> [Teams](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
@@ -15,14 +15,15 @@
 | <small>2.1.</small> [Console applications](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(0) (também em [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>2.2.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(Portugu%C3%AAs) "Category:Data compression and archiving (Português)") <small>(1)</small> |
 | <small>2.3.</small> [Dictionaries](/index.php/Category:Dictionaries_(Portugu%C3%AAs) "Category:Dictionaries (Português)") <small>(0)</small> |
-| <small>2.4.</small> [Emulation](/index.php/Category:Emulation_(Portugu%C3%AAs) "Category:Emulation (Português)") <small>(1)</small> |
+| <small>2.4.</small> [Emulation](/index.php/Category:Emulation_(Portugu%C3%AAs) "Category:Emulation (Português)") <small>(2)</small> |
 | <small>2.5.</small> [File managers](/index.php/Category:File_managers_(Portugu%C3%AAs) "Category:File managers (Português)") <small>(1)</small> |
-| <small>2.6.</small> [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)") <small>(0)</small> |
-| <small>2.6.1.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
-| <small>2.7.</small> [Escritório](/index.php/Category:Office_(Portugu%C3%AAs) "Category:Office (Português)") <small>(2)</small> |
-| <small>2.8.</small> [Search](/index.php/Category:Search_(Portugu%C3%AAs) "Category:Search (Português)") <small>(1)</small> |
-| <small>2.9.</small> [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
-| <small>2.9.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(Portugu%C3%AAs) "Category:Web admin interfaces (Português)") <small>(1)</small> |
+| <small>2.6.</small> [Gaming](/index.php/Category:Gaming_(Portugu%C3%AAs) "Category:Gaming (Português)") <small>(1)</small> |
+| <small>2.7.</small> [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)") <small>(0)</small> |
+| <small>2.7.1.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
+| <small>2.8.</small> [Escritório](/index.php/Category:Office_(Portugu%C3%AAs) "Category:Office (Português)") <small>(2)</small> |
+| <small>2.9.</small> [Search](/index.php/Category:Search_(Portugu%C3%AAs) "Category:Search (Português)") <small>(1)</small> |
+| <small>2.10.</small> [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
+| <small>2.10.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(Portugu%C3%AAs) "Category:Web admin interfaces (Português)") <small>(1)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(1)</small> |
 | <small>3.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(5) (também em [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)"))</small> |
 | <small>3.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(12)</small> |
@@ -79,7 +80,7 @@
 | <small>6.2.1.</small> [Gerenciadores de tela](/index.php/Category:Display_managers_(Portugu%C3%AAs) "Category:Display managers (Português)") <small>(3)</small> |
 | <small>6.2.2.</small> [GNOME](/index.php/Category:GNOME_(Portugu%C3%AAs) "Category:GNOME (Português)") <small>(2)</small> |
 | <small>6.3.</small> [File formats](/index.php/Category:File_formats_(Portugu%C3%AAs) "Category:File formats (Português)") <small>(1)</small> |
-| <small>6.4.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(8) (também em [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)"))</small> |
+| <small>6.4.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(9) (também em [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)"))</small> |
 | <small>6.5.</small> [Software companies](/index.php/Category:Software_companies_(Portugu%C3%AAs) "Category:Software companies (Português)") <small>(0)</small> |
 | <small>6.5.1.</small> [Oracle](/index.php/Category:Oracle_(Portugu%C3%AAs) "Category:Oracle (Português)") <small>(1)</small> |
 | <small>6.5.2.</small> [Red Hat](/index.php/Category:Red_Hat_(Portugu%C3%AAs) "Category:Red Hat (Português)") <small>(1)</small> |

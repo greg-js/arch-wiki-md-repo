@@ -72,6 +72,15 @@ $ qemu-system-x86_64 -enable-kvm -m 2G -kernel ipxe.lkrn
 
 The `ipxe.pxe` image is a PXE image. It can be chainloaded from an existing PXE environment. This allows configuring a DHCP server such that booting from the network will always boot into Arch Linux netboot.
 
+Alternatively, you can also chainload it from existing pxe loader such as pxelinux. This is a menu entry example:
+
+```
+LABEL arch_netboot_chain
+  COM32 chain.c32
+  APPEND file=ipxe.a56af4e6a9a9.pxe
+
+```
+
 ## UEFI
 
 The `ipxe.efi` image can be used to launch Arch Linux netboot in UEFI mode. Only 64-bit UEFI is supported. The `ipxe.efi` image can be added as a boot option via [efibootmgr](/index.php/Efibootmgr "Efibootmgr"), launched from a [boot manager](/index.php/Boot_manager "Boot manager"), like [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [rEFInd](/index.php/REFInd "REFInd"), or directly from the [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").

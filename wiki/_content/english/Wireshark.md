@@ -11,7 +11,10 @@
 *   [3 A few capturing techniques](#A_few_capturing_techniques)
     *   [3.1 Filtering TCP packets](#Filtering_TCP_packets)
     *   [3.2 Filtering UDP packets](#Filtering_UDP_packets)
-    *   [3.3 Filter packets to a specific IP Address](#Filter_packets_to_a_specific_IP_Address)
+    *   [3.3 Filter packets to a specific IP address](#Filter_packets_to_a_specific_IP_address)
+    *   [3.4 Exclude packets from a specific IP address](#Exclude_packets_from_a_specific_IP_address)
+    *   [3.5 Filter packets to LAN](#Filter_packets_to_LAN)
+    *   [3.6 Filter packets by port](#Filter_packets_by_port)
 
 ## Installation
 
@@ -21,7 +24,7 @@
 
 ## Capturing as normal user
 
-Do not run Wireshark as root, it is insecure. Wireshark has implemented privilege separation. [[1]](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Most_UNIXes)
+Do not run Wireshark as root, it is insecure. Wireshark has implemented privilege separation.[[1]](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Most_UNIXes)
 
 The [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [install script](/index.php/PKGBUILD#install "PKGBUILD") sets packet capturing [capabilities](/index.php/Capabilities "Capabilities") on the `/usr/bin/dumpcap` executable.
 
@@ -60,10 +63,34 @@ $ tshark -f "udp"
 
 ```
 
-### Filter packets to a specific IP Address
+### Filter packets to a specific IP address
 
 *   If you would like to see all the traffic going to a specific address, enter display filter `ip.dst == 1.2.3.4`, replacing `1.2.3.4` with the IP address the outgoing traffic is being sent to.
-
 *   If you would like to see all the incoming traffic for a specific address, enter display filter `ip.src == 1.2.3.4`, replacing `1.2.3.4` with the IP address the incoming traffic is being sent to.
-
 *   If you would like to see all the incoming and outgoing traffic for a specific address, enter display filter `ip.addr == 1.2.3.4`, replacing `1.2.3.4` with the relevant IP address.
+
+### Exclude packets from a specific IP address
+
+```
+ip.addr != 1.2.3.4
+
+```
+
+### Filter packets to LAN
+
+To only see LAN traffic, no internet traffic run
+
+```
+ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16
+
+```
+
+### Filter packets by port
+
+See all traffic on 2 ports or more:
+
+```
+tcp.port==80||tcp.port==3306
+tcp.port==80||tcp.port==3306||tcp.port==443
+
+```

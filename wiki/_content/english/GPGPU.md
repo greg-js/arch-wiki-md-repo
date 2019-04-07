@@ -54,7 +54,7 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 
 #### Intel
 
-*   [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/) or [compute-runtime-bin](https://aur.archlinux.org/packages/compute-runtime-bin/): a.k.a. the Neo OpenCL runtime, the open-source implementation for Intel HD Graphics GPU on Gen8 (Broadwell) and beyond.
+*   [intel-compute-runtime](https://www.archlinux.org/packages/?name=intel-compute-runtime): a.k.a. the Neo OpenCL runtime, the open-source implementation for Intel HD Graphics GPU on Gen8 (Broadwell) and beyond.
 *   [beignet](https://www.archlinux.org/packages/?name=beignet): the open-source implementation for Intel HD Graphics GPU on Gen7 (Ivy Bridge) and beyond, deprecated by Intel in favour of NEO OpenCL driver, remains recommended solution for legacy HW platforms (e.g. Ivy Bridge, Sandy Bridge, Haswell).
 *   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/): the proprietary implementation for Intel HD Graphics GPU on Gen7 (Ivy Bridge) and beyond, deprecated by Intel in favour of NEO OpenCL driver, remains recommended solution for legacy HW platforms (e.g. Ivy Bridge, Sandy Bridge, Haswell).
 *   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): the implementation for Intel Core and Xeon processors. It also supports non-Intel CPUs.
@@ -77,7 +77,7 @@ The available packages containing various OpenCL ICDs are:
 
 *   [ocl-icd](https://www.archlinux.org/packages/?name=ocl-icd): recommended, most up-to-date
 *   [libopencl](https://aur.archlinux.org/packages/libopencl/) by AMD. Provides OpenCL 2.0\. It is distributed by AMD under a restrictive license and therefore cannot be included into the official repositories.
-*   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) by Intel. Provides OpenCL 2.0, deprecated in favour of [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/).
+*   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) by Intel. Provides OpenCL 2.0, deprecated in favour of [intel-compute-runtime](https://aur.archlinux.org/packages/intel-compute-runtime/).
 
 **Note:** ICD Loader's vendor is mentioned only to identify each loader, it is otherwise completely irrelevant. ICD loaders are vendor-agnostic and may be used interchangeably (as long as they are implemented correctly).
 

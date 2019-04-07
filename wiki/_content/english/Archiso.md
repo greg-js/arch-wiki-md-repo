@@ -33,6 +33,7 @@ If you require a technical run-down of requirements and build steps only, have a
     *   [5.1 Documentation and tutorials](#Documentation_and_tutorials)
     *   [5.2 Example customization template](#Example_customization_template)
     *   [5.3 Creating a offline installation ISO](#Creating_a_offline_installation_ISO)
+    *   [5.4 Find a previous version of an ISO image](#Find_a_previous_version_of_an_ISO_image)
 
 ## Setup
 
@@ -74,23 +75,7 @@ Edit the lists of packages in `packages.x86_64` to indicate which packages are t
 
 #### Custom local repository
 
-For the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"), you could also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository"). If you are looking to support multiple architectures then precautions should be taken to prevent errors from occurring. Each architecture should have its own directory tree:
-
- `$ tree ~/customrepo/ | sed "s/$(uname -m)/<arch>/g"` 
-```
-/home/archie/customrepo/
-└── <arch>
-    ├── customrepo.db -> customrepo.db.tar.xz
-    ├── customrepo.db.tar.xz
-    ├── customrepo.files -> customrepo.files.tar.xz
-    ├── customrepo.files.tar.xz
-    └── personal-website-git-b99cce0-1-<arch>.pkg.tar.xz
-
-1 directory, 5 files
-
-```
-
-You can then add your repository by putting the following into `~/archlive/pacman.conf`, above the other repository entries (for top priority):
+For the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"), you could also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository"). You can then add your repository by putting the following into `~/archlive/pacman.conf`, above the other repository entries (for top priority):
 
  `~/archlive/pacman.conf` 
 ```
@@ -100,13 +85,6 @@ You can then add your repository by putting the following into `~/archlive/pacma
 SigLevel = Optional TrustAll
 Server = file:///home/**user**/customrepo/$arch
 ...
-```
-
-The *repo-add* executable checks if the package is appropriate. If this is not the case you will be running into error messages similar to this:
-
-```
-==> ERROR: '/home/archie/customrepo/<arch>/foo-<arch>.pkg.tar.xz' does not have a valid database archive extension.
-
 ```
 
 #### Preventing installation of packages belonging to base group
@@ -291,3 +269,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 ### Creating a offline installation ISO
 
 *   [Archiso offline](/index.php/Archiso_offline "Archiso offline")
+
+### Find a previous version of an ISO image
+
+*   [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")

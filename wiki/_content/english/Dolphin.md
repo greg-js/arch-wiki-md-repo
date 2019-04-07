@@ -31,7 +31,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [dolphin](https://www.archlinux.org/packages/?name=dolphin) package.
 
-For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). To enable the relevant plugin go to *Control > Configure Dolphin... > Services*.
+For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). To enable the relevant plugin go to *Settings > Configure Dolphin... > Services*.
 
 ### Compare files
 
@@ -50,7 +50,7 @@ The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packag
 *   [kde-thumbnailer-blender](https://aur.archlinux.org/packages/kde-thumbnailer-blender/): Blender application files
 *   [kde-thumbnailer-epub](https://aur.archlinux.org/packages/kde-thumbnailer-epub/): Electronic book files
 
-Enable preview showing of required file type in *Control > Configure Dolphin... > General > Previews*.
+Enable preview showing of required file type in *Settings > Configure Dolphin... > General > Previews*.
 
 ### View audio CDs
 

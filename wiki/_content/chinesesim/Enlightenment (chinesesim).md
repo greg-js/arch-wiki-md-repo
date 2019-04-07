@@ -4,38 +4,42 @@
 *   [显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器")
 *   [窗口管理器](/index.php/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8 "窗口管理器")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Enlightenment](#Enlightenment)
-    *   [1.1 安装](#.E5.AE.89.E8.A3.85)
-        *   [1.1.1 从 AUR 安装](#.E4.BB.8E_AUR_.E5.AE.89.E8.A3.85)
-    *   [1.2 启动 Enlightenment](#.E5.90.AF.E5.8A.A8_Enlightenment)
+    *   [1.1 安装](#安装)
+        *   [1.1.1 从 AUR 安装](#从_AUR_安装)
+    *   [1.2 启动 Enlightenment](#启动_Enlightenment)
         *   [1.2.1 Entrance](#Entrance)
-        *   [1.2.2 手动启动 Enlightenment](#.E6.89.8B.E5.8A.A8.E5.90.AF.E5.8A.A8_Enlightenment)
-    *   [1.3 配置](#.E9.85.8D.E7.BD.AE)
-        *   [1.3.1 网络](#.E7.BD.91.E7.BB.9C)
-        *   [1.3.2 Polkit 代理](#Polkit_.E4.BB.A3.E7.90.86)
-        *   [1.3.3 集成 GNOME 密钥环](#.E9.9B.86.E6.88.90_GNOME_.E5.AF.86.E9.92.A5.E7.8E.AF)
-        *   [1.3.4 系统托盘](#.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98)
-        *   [1.3.5 通知](#.E9.80.9A.E7.9F.A5)
-    *   [1.4 主题](#.E4.B8.BB.E9.A2.98)
-        *   [1.4.1 GTK+](#GTK.2B)
-    *   [1.5 模块和小部件](#.E6.A8.A1.E5.9D.97.E5.92.8C.E5.B0.8F.E9.83.A8.E4.BB.B6)
-        *   [1.5.1 "外部" 模块](#.22.E5.A4.96.E9.83.A8.22_.E6.A8.A1.E5.9D.97)
-    *   [1.6 默认键绑定](#.E9.BB.98.E8.AE.A4.E9.94.AE.E7.BB.91.E5.AE.9A)
-    *   [1.7 排错](#.E6.8E.92.E9.94.99)
-        *   [1.7.1 合成](#.E5.90.88.E6.88.90)
-        *   [1.7.2 字体看不清楚](#.E5.AD.97.E4.BD.93.E7.9C.8B.E4.B8.8D.E6.B8.85.E6.A5.9A)
-        *   [1.7.3 背光总是较暗](#.E8.83.8C.E5.85.89.E6.80.BB.E6.98.AF.E8.BE.83.E6.9A.97)
-        *   [1.7.4 光标主题不一致](#.E5.85.89.E6.A0.87.E4.B8.BB.E9.A2.98.E4.B8.8D.E4.B8.80.E8.87.B4)
-        *   [1.7.5 背景图片](#.E8.83.8C.E6.99.AF.E5.9B.BE.E7.89.87)
+        *   [1.2.2 手动启动 Enlightenment](#手动启动_Enlightenment)
+    *   [1.3 配置](#配置)
+        *   [1.3.1 网络](#网络)
+        *   [1.3.2 Polkit 代理](#Polkit_代理)
+        *   [1.3.3 集成 GNOME 密钥环](#集成_GNOME_密钥环)
+        *   [1.3.4 系统托盘](#系统托盘)
+        *   [1.3.5 通知](#通知)
+    *   [1.4 主题](#主题)
+        *   [1.4.1 GTK+](#GTK+)
+    *   [1.5 模块和小部件](#模块和小部件)
+        *   [1.5.1 "外部" 模块](#"外部"_模块)
+    *   [1.6 默认键绑定](#默认键绑定)
+    *   [1.7 排错](#排错)
+        *   [1.7.1 合成](#合成)
+        *   [1.7.2 字体看不清楚](#字体看不清楚)
+        *   [1.7.3 背光总是较暗](#背光总是较暗)
+        *   [1.7.4 光标主题不一致](#光标主题不一致)
+        *   [1.7.5 背景图片](#背景图片)
 *   [2 Enlightenment DR16](#Enlightenment_DR16)
-    *   [2.1 安装 E16](#.E5.AE.89.E8.A3.85_E16)
-    *   [2.2 基本设置](#.E5.9F.BA.E6.9C.AC.E8.AE.BE.E7.BD.AE)
-        *   [2.2.1 启动、重启、停止脚本](#.E5.90.AF.E5.8A.A8.E3.80.81.E9.87.8D.E5.90.AF.E3.80.81.E5.81.9C.E6.AD.A2.E8.84.9A.E6.9C.AC)
-        *   [2.2.2 合成器（Compositor）](#.E5.90.88.E6.88.90.E5.99.A8.EF.BC.88Compositor.EF.BC.89)
-*   [3 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
-*   [4 配置输入法](#.E9.85.8D.E7.BD.AE.E8.BE.93.E5.85.A5.E6.B3.95)
+    *   [2.1 安装 E16](#安装_E16)
+    *   [2.2 基本设置](#基本设置)
+        *   [2.2.1 启动、重启、停止脚本](#启动、重启、停止脚本)
+        *   [2.2.2 合成器（Compositor）](#合成器（Compositor）)
+*   [3 参考资料](#参考资料)
+*   [4 配置输入法](#配置输入法)
     *   [4.1 ibus](#ibus)
 
 ## Enlightenment
@@ -79,7 +83,7 @@
 
 **警告:** Entrance 为实验性版本，还不被 systemd 完全支持 ，请风险自担。
 
-Enlightenment 提供了一个名为 Entrance 的新显示管理器，由 [entrance-git](https://aur.archlinux.org/packages/entrance-git/) 提供。Entrance 十分精巧，它用 `/etc/entrance.conf` 管理配置。可以通过 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") 启用 `entrance.service` 服务来使用它。
+Enlightenment 提供了一个名为 Entrance 的新显示管理器，由 [entrance-git](https://aur.archlinux.org/packages/entrance-git/) 提供。Entrance 十分精巧，它用 `/etc/entrance.conf` 管理配置。可以通过 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)") 启用 `entrance.service` 服务来使用它。
 
 #### 手动启动 Enlightenment
 
@@ -120,11 +124,11 @@ Enlightenment 首选的网络管理器是 [ConnMan](/index.php/ConnMan "ConnMan"
 
 你也可以使用 [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) 来管理网络连接。参见 [NetworkManager (简体中文)](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)")。
 
-注意：这个小程序需要Appindicator支持才能在Enlightenment的[系统托盘](#.E7.B3.BB.E7.BB.9F.E6.89.98.E7.9B.98)中显示。可参考[NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager").作为使用该程序的一种选择，NetworkManager包含了CLI and TUI两种网络配置界面--参见[NetworkManager#命令行](/index.php/NetworkManager#.E5.91.BD.E4.BB.A4.E8.A1.8C "NetworkManager")。
+注意：这个小程序需要Appindicator支持才能在Enlightenment的[系统托盘](#系统托盘)中显示。可参考[NetworkManager#Appindicator](/index.php/NetworkManager#Appindicator "NetworkManager").作为使用该程序的一种选择，NetworkManager包含了CLI and TUI两种网络配置界面--参见[NetworkManager#命令行](/index.php/NetworkManager#命令行 "NetworkManager")。
 
 #### Polkit 代理
 
-Enlightenment 没有提供[图形化的 polkit 认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")。如果要执行某些需授权的操作（例如安装系统设备上的文件系统），你要安装一个认证代理并且使它自动启动。后者可以导航至***设置面板 > 应用 > 启动应用程序 > 系统***设置项并激活它。AUR 中提供了一个基于 EFL 的认证代理，名为 [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)。
+Enlightenment 没有提供[图形化的 polkit 认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#身份认证组件 "Polkit (简体中文)")。如果要执行某些需授权的操作（例如安装系统设备上的文件系统），你要安装一个认证代理并且使它自动启动。后者可以导航至***设置面板 > 应用 > 启动应用程序 > 系统***设置项并激活它。AUR 中提供了一个基于 EFL 的认证代理，名为 [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)。
 
 #### 集成 GNOME 密钥环
 
@@ -256,7 +260,7 @@ Enlightenment 的“通知”扩展模块提供了一个通知服务器。
 
 #### 光标主题不一致
 
-可能会发现桌面的光标主题与应用（如[Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")）中的光标主题不一样。 这是因为应用使用的是X光标主题，而Enlightenment有自己的光标主题设置。 为了前后一致, 你可以设置 Enlightenment总是使用X光标主题。 为了实现该目标, 打开 Enlightenment的 *Settings Panel* 然后点击 *Input*标签。之后点击 *Mouse* 选项。将其主题从*Enlightenment* 切换到 *X* 然后点击*OK*保存即可。 你应该可以发现光标主题在每一个地方都是一样的。 如果X光标主题并不总是一致的，可参考[光标主题](/index.php/Cursor_themes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#XDG_.E8.A7.84.E5.88.99 "Cursor themes (简体中文)")
+可能会发现桌面的光标主题与应用（如[Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")）中的光标主题不一样。 这是因为应用使用的是X光标主题，而Enlightenment有自己的光标主题设置。 为了前后一致, 你可以设置 Enlightenment总是使用X光标主题。 为了实现该目标, 打开 Enlightenment的 *Settings Panel* 然后点击 *Input*标签。之后点击 *Mouse* 选项。将其主题从*Enlightenment* 切换到 *X* 然后点击*OK*保存即可。 你应该可以发现光标主题在每一个地方都是一样的。 如果X光标主题并不总是一致的，可参考[光标主题](/index.php/Cursor_themes_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#XDG_规则 "Cursor themes (简体中文)")
 
 #### 背景图片
 
@@ -272,7 +276,7 @@ Enlightenment, 开发版 16 第一次发布于2000年,在2009年到达了 1.0版
 
 ### 安装 E16
 
-安装[enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16)包.
+安装[enlightenment16](https://aur.archlinux.org/packages/enlightenment16/)包.
 
 如需要深入的文档，可以参考`/usr/share/doc/e16/e16.html`. 在[e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1)中的手册，只给了一些启动选项。
 

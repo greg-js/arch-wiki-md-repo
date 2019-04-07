@@ -879,7 +879,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 
-`$ compinit -d $XDG_DATA_HOME/zsh/zcompdump-$ZSH_VERSION` [[155]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
+`$ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION` [[155]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
 
  |
 

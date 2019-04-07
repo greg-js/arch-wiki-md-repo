@@ -102,11 +102,11 @@ This article covers using both native IMAP sending and retrieval, and a setup de
 
 Optionally install external helper applications for an IMAP setup, such as [isync](/index.php/Isync "Isync"), [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP"), or [msmtp](/index.php/Msmtp "Msmtp").
 
-Or (if using POP3) [getmail](https://www.archlinux.org/packages/?name=getmail), [fetchmail](https://www.archlinux.org/packages/?name=fetchmail) or [fdm](https://www.archlinux.org/packages/?name=fdm) and [procmail](https://www.archlinux.org/packages/?name=procmail).
+Or (if using POP3) [getmail](https://www.archlinux.org/packages/?name=getmail), [fetchmail](https://aur.archlinux.org/packages/fetchmail/) or [fdm](https://www.archlinux.org/packages/?name=fdm) and [procmail](https://www.archlinux.org/packages/?name=procmail).
 
-**Note:**
+**Note:** About authentication setups:
 
-*   If you just need the authentication methods LOGIN and PLAIN, these are satisfied with the dependency [libsasl](https://www.archlinux.org/packages/?name=libsasl)
+*   If you just need the methods LOGIN and PLAIN, these are satisfied with the dependency [libsasl](https://www.archlinux.org/packages/?name=libsasl)
 *   If you want to (or have to) use CRAM-MD5, GSSAPI or DIGEST-MD5, install the package [cyrus-sasl-gssapi](https://www.archlinux.org/packages/?name=cyrus-sasl-gssapi)
 *   If you are using Gmail as your SMTP server, you may need to install the package [cyrus-sasl](https://www.archlinux.org/packages/?name=cyrus-sasl)
 

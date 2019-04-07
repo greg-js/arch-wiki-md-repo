@@ -168,7 +168,7 @@ You can safely ignore the following build failures:
 *   "Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!"
 *   Fuse components not found on the system.
 
-Enable `vmware-vmblock-fuse` systemd services (make sure you install the dependencies manually or use the `-s` flag):
+Enable `vmware-vmblock-fuse` systemd services (make sure you install the dependencies manually or use the `-s` flag). The `open-vm-tools` source code is need to checkout using [Arch Build System](/index.php/Arch_Build_System "Arch Build System").
 
 ```
  $ asp checkout open-vm-tools
@@ -191,6 +191,31 @@ Log in and start the VMware Tools:
 
 ```
 # /etc/init.d/rc6.d/K99vmware-tools start
+
+```
+
+Additionally, to auto start of `vmware-tools` on every boot, create a new file file `/etc/systemd/system/vmwaretools.service`:
+
+ `/etc/systemd/system/vmwaretools.service` 
+```
+[Unit]
+Description=VMWare Tools daemon
+
+[Service]
+ExecStart=/etc/init.d/vmware-tools start
+ExecStop=/etc/init.d/vmware-tools stop
+PIDFile=/var/lock/subsys/vmware
+TimeoutSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+And enable the new systemd service:
+
+```
+ # systemctl enable vmwaretools.service  
 
 ```
 
@@ -230,6 +255,13 @@ Now you can mount the folder:
 ```
 # mkdir <shared folders root directory>
 # vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_folder>* *<shared folders root directory>*
+
+```
+
+If you get the error message `fusermount: option allow_other only allowed if 'user_allow_other' is set in /etc/fuse.conf`, uncomment the follow line in file `/etc/fuse.conf`:
+
+```
+user_allow_other
 
 ```
 

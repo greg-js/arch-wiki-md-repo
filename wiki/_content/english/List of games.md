@@ -115,7 +115,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **XBill** — Kill all instances of a virus before it infects all computers with a malware resembling Microsoft Windows.
 
-	[http://www.xbill.org/](http://www.xbill.org/) || [xbill](https://www.archlinux.org/packages/?name=xbill)
+	[http://www.xbill.org/](http://www.xbill.org/) || [xbill](https://aur.archlinux.org/packages/xbill/)
 
 ## Arcade
 
@@ -605,7 +605,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **XMahjongg** — Mahjong solitaire for X.
 
-	[https://www.lcdf.org/xmahjongg/](https://www.lcdf.org/xmahjongg/) || [xmahjongg](https://www.archlinux.org/packages/?name=xmahjongg)
+	[https://www.lcdf.org/xmahjongg/](https://www.lcdf.org/xmahjongg/) || [xmahjongg](https://aur.archlinux.org/packages/xmahjongg/)
 
 *   **Xscorch** — Clone of the classic DOS game Scorched Earth.
 
@@ -970,7 +970,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Foobillard++](https://en.wikipedia.org/wiki/FooBillard "wikipedia:FooBillard")** — Successor to Foobillard, OpenGL billiard game for Linux.
 
-	[http://foobillardplus.sourceforge.net/](http://foobillardplus.sourceforge.net/) || [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B)
+	[http://foobillardplus.sourceforge.net/](http://foobillardplus.sourceforge.net/) || [foobillard++](https://aur.archlinux.org/packages/foobillard%2B%2B/)
 
 *   **[FreeSpace 2](https://en.wikipedia.org/wiki/FreeSpace_2 "wikipedia:FreeSpace 2")** — Open sourced space emulator.
 
@@ -1189,7 +1189,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 - [flightgear.org](http://www.flightgear.org/) | C/C++ | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [flightgear](https://aur.archlinux.org/packages/flightgear/)
 [flightgear-git](https://aur.archlinux.org/packages/flightgear-git/) | Open-source, multi-platform flight simulator. |
 | **[Foobillard++](https://en.wikipedia.org/wiki/Foobillard%2B%2B "w:Foobillard++")**
-- [foobillardplus.sourceforge.net](http://foobillardplus.sourceforge.net/) | C | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B) | Successor to Foobillard, OpenGL billiard game for Linux. |
+- [foobillardplus.sourceforge.net](http://foobillardplus.sourceforge.net/) | C | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [foobillard++](https://aur.archlinux.org/packages/foobillard%2B%2B/) | Successor to Foobillard, OpenGL billiard game for Linux. |
 | **[Freeciv](https://en.wikipedia.org/wiki/Freeciv "w:Freeciv")**
 - [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C/C++ | <abbr title="Turn-based strategy game">TBS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv) | Multiuser clone of the famous Microprose game of Civilization. Scripted using a Lua API. |
 | **[Freecol](https://en.wikipedia.org/wiki/Freecol "w:Freecol")**

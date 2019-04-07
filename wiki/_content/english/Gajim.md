@@ -24,7 +24,7 @@ To enable D-Bus remote control support, go to *Preferences > Advanced > Advanced
 
 ## Show/hide roster
 
-If you would like to be able to show/hide the roster using a script or your wm, you can use the following command from the terminal.
+(This no longer works. It seems that this command is depreciated.) If you would like to be able to show/hide the roster using a script or your wm, you can use the following command from the terminal.
 
 ```
 $ gajim-remote toggle_roster_appearance

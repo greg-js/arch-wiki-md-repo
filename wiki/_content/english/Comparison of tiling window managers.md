@@ -1,6 +1,10 @@
 This article provides an unbiased comparison of the most popular *tiling* [window managers](/index.php/Window_manager "Window manager") (as opposed to *floating* window managers).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Comparison table](#Comparison_table)
     *   [1.1 Management style](#Management_style)
@@ -26,6 +30,7 @@ The following table lists the most popular tiling window managers alongside nota
 | [herbstluftwm](/index.php/Herbstluftwm "Herbstluftwm") | C | Text | Manual | None | Yes | rows, columns | 1-pix borders | commands via herbstclient | Xlib and Glib | n regions, 9 workspaces visible in any region | Active |
 | [i3](/index.php/I3 "I3") | C | Text | Dynamic | i3bar | Yes (Layout is preserved) | text piped to i3bar (`i3status`/`conky` and others can be used) | External | tree, v-split, h-split, stacked, tabbed, max, can be nested infinitely | None, 1-pix or 2-pix, optional titlebars, can hide edge borders | commands via ipc (or i3-msg, which uses ipc) | XCB | n regions | Yes | Active |
 | [Ion3](/index.php/Ion3 "Ion3") | C | Lua | Manual | trayion | Yes | configurable | ? | h-tab, max | Abandoned |
+| LeftWM | Rust | toml (user settings) / Anything (themes) | Dynamic | None | Yes | Yes, many options through theme system | External | v-stack, columns, rows | Variable based on theme | supports `_NET_ACTIVE_WINDOW` and sending commands to a named pipe | Xlib | Workspaces and monitors are not tide. Many workspaces for monitor or many monitors for workspace | Yes | Active |
 | monsterwm | C | C (recompile) | Dynamic | None | Optional, but windows are lost | No, outputs information to stdout, which can easily be parsed and displayed by an external monitor or panel (`dzen2`, `conky`, etc) | External | h-stack, v-stack, grid, max | supports `_NET_ACTIVE_WINDOW`, so external control can be supplied by `xdotool` and similar tools | Xlib primary and XCB fork | n workspaces per monitor | Unknown |
 | [Musca](/index.php/Musca "Musca") | C | Text, own command set, C(recompile) | Manual | None | No, but allows running of musca commands on the fly | None | No | h-split, v-split, max | commands, hooks | Xlib | Abandoned |
 | [Notion](/index.php/Notion "Notion") | C, Lua | Lua, compatible with Ion3 configs | Manual | trayion, stalonetray | Yes | configurable | ? | h-tab, max | Configurable borders and titlebars/tabs | EWMH, arbitrary Lua scripts which have access to the rich internal API | Xlib | n workspaces on each monitor. Supports on-the-fly changes in topology | Active |

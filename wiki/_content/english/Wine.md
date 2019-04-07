@@ -360,7 +360,7 @@ $ WINEPREFIX=*your-prefix* setup_dxvk64
 
 Use `setup_dxvk32` for 32-bit applications.
 
-**Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine), [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
+**Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine) and [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) work out of the box.
 
 **Warning:** DXVK overrides the DirectX 10 and 11 DLLs, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
 

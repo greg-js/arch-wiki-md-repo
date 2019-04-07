@@ -63,6 +63,21 @@ deepin官方没有提供自定义触摸板手势，但我们可以通过修改�
 
 ```
 
+如果想要禁止某项手势，把Action设置为none。例如：
+
+```
+{
+       "Name": "tap",
+       "Direction": "none",
+       "Fingers": 3,
+       "Action": {
+           "Type": "built-in",
+           "Action": "none"
+       }
+   }
+
+```
+
 设置完后注销或重启使其生效
 
 ## 故障排除

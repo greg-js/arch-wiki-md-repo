@@ -60,7 +60,7 @@ You should have `ja_JP.UTF-8` enabled in `/etc/locale.gen`.
 The following [input method](/index.php/Input_method "Input method") (IM) engines are available for Japanese:
 
 | Back-end | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | [hime-git](https://aur.archlinux.org/packages/hime-git/) |
-| [Anthy](#Anthy) | [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy) | [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) | [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) | built-in | built-in | built-in |
+| [Anthy](#Anthy) | [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy) | [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) | [scim-anthy](https://aur.archlinux.org/packages/scim-anthy/) | built-in | built-in | built-in |
 | [libkkc](#libkkc) | [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc) | [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) | – | – | – | – |
 | [Mozc](/index.php/Mozc "Mozc") | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | – | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) | – | – |
 | [SKK](#SKK) | [fcitx-skk](https://www.archlinux.org/packages/?name=fcitx-skk) | [ibus-skk](https://www.archlinux.org/packages/?name=ibus-skk) | – | built-in | – | – |

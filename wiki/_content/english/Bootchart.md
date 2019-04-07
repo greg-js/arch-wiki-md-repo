@@ -2,7 +2,11 @@
 
 **Note:** Bootchart is now a part of systemd, see [Improve boot performance#Analyzing the boot process](/index.php/Improve_boot_performance#Analyzing_the_boot_process "Improve boot performance") for details. This page covers the original bootchart and bootchart2 (init daemon) before it was merged.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing Bootchart](#Installing_Bootchart)
 *   [2 Running Bootchart](#Running_Bootchart)
@@ -21,7 +25,7 @@
 
 ## Installing Bootchart
 
-Install the [bootchart](https://www.archlinux.org/packages/?name=bootchart) package.
+Install the [bootchart](https://aur.archlinux.org/packages/bootchart/) package.
 
 ## Running Bootchart
 

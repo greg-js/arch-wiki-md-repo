@@ -196,7 +196,7 @@ Output should read `PRIME Synchronization: 1`.
 
 ### Avoid screen tearing in KDE (KWin)
 
-The problem is caused by incorrect assumption by the KDE devs about the behaviour of `glXSwapBuffers"` and should be fixed in **Plasma 5.16** [[2]](https://phabricator.kde.org/D19867). Until then the proper solution is to add:
+The problem is caused by incorrect assumption by the KDE devs about the behaviour of `glXSwapBuffers` and should be fixed in **Plasma 5.16** [[2]](https://phabricator.kde.org/D19867). Additionally, [NVIDIA#DRM kernel mode setting](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA") may be required. Until then the proper solution is to add:
 
 ```
 export __GL_MaxFramesAllowed=1 

@@ -69,15 +69,12 @@ As soon as this step is completed, the sensor can be used under Linux. Check out
 
 After setting up the fingerprint sensor is complete, one can use it to login or authenticate for `sudo` or `su`(To use this, launch fprintd_enroll prior as root).
 
-For login edit `/etc/pam.d/login`
+For login, edit `/etc/pam.d/login` by adding `pam_fprintd.so` as *sufficient* to the top of the auth section:
 
-Add the following and comment out the other entrys
-
+ `/etc/pam.d/login` 
 ```
- auth required pam_env.so
- auth sufficient pam_fprintd.so
- auth sufficient pam_unix.so try_first_pass likeauth nullok
- auth required pam_deny.so
+**auth sufficient pam_fprintd.so**
+...
 
 ```
 

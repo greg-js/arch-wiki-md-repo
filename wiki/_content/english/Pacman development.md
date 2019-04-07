@@ -2,12 +2,17 @@ Interested in Pacman Development? This page should help you get started.
 
 Remember that if **you** think something belongs on this page, add it! The current pacman developers are not likely to know what people need to know and should be on this page.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 References and Links](#References_and_Links)
 *   [2 Developer Repositories](#Developer_Repositories)
     *   [2.1 Allan McRae](#Allan_McRae)
     *   [2.2 Andrew Gregory](#Andrew_Gregory)
+    *   [2.3 Eli Schwartz](#Eli_Schwartz)
 *   [3 Git Tips](#Git_Tips)
 
 ## References and Links
@@ -39,6 +44,11 @@ Clone: [https://projects.archlinux.org/git/users/allan/pacman.git](https://proje
 
 Web: [https://github.com/andrewgregory/pacman/](https://github.com/andrewgregory/pacman/)
 Clone: [https://github.com/andrewgregory/pacman.git](https://github.com/andrewgregory/pacman.git)
+
+### Eli Schwartz
+
+Web: [https://git.archlinux.org/users/eschwartz/pacman.git](https://git.archlinux.org/users/eschwartz/pacman.git)
+Clone: [git://git.archlinux.org/users/eschwartz/pacman.git](git://git.archlinux.org/users/eschwartz/pacman.git)
 
 ## Git Tips
 

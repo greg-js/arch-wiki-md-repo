@@ -266,7 +266,7 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 *   **Fyre** — Tool for producing computational artwork based on histograms of iterated chaotic functions.
 
-	[http://fyre.navi.cx/](http://fyre.navi.cx/) || [fyre](https://www.archlinux.org/packages/?name=fyre)
+	[http://fyre.navi.cx/](http://fyre.navi.cx/) || [fyre](https://aur.archlinux.org/packages/fyre/)
 
 *   **[G'MIC](https://en.wikipedia.org/wiki/G%27MIC "wikipedia:G'MIC")** — Full-featured open-source framework for image processing, providing several different user interfaces to convert/manipulate/filter/visualize generic image datasets, ranging from 1d scalar signals to 3d+t sequences of multi-spectral volumetric images, including 2d color images.
 
@@ -432,7 +432,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[Xfig](https://en.wikipedia.org/wiki/Xfig "wikipedia:Xfig")** — Interactive drawing tool.
 
-	[http://mcj.sourceforge.net/](http://mcj.sourceforge.net/) || [xfig](https://www.archlinux.org/packages/?name=xfig)
+	[http://mcj.sourceforge.net/](http://mcj.sourceforge.net/) || [xfig](https://aur.archlinux.org/packages/xfig/)
 
 #### Font editors
 
@@ -1338,7 +1338,7 @@ See also [PulseAudio#Front-ends](/index.php/PulseAudio#Front-ends "PulseAudio").
 
 *   **GNOME ALSA Mixer** — ALSA mixer for GNOME.
 
-	[https://launchpad.net/gnome-alsamixer](https://launchpad.net/gnome-alsamixer) || [gnome-alsamixer](https://www.archlinux.org/packages/?name=gnome-alsamixer)
+	[https://launchpad.net/gnome-alsamixer](https://launchpad.net/gnome-alsamixer) || [gnome-alsamixer](https://aur.archlinux.org/packages/gnome-alsamixer/)
 
 *   **GVolWheel** — Audio mixer which lets you control the volume through a tray icon.
 

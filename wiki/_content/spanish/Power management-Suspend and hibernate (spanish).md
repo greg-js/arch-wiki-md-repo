@@ -1,8 +1,11 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"), revisada por última vez el **2019-04-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Power_management/Suspend_and_hibernate&diff=0&oldid=568198) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
 *   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
-*   [Power management](/index.php/Power_management "Power management")
+*   [Power management (Español)](/index.php/Power_management_(Espa%C3%B1ol) "Power management (Español)")
 
 Actualmente hay tres métodos de suspensión disponibles: **suspender en RAM** (llamado solo **suspender**), **suspender en disco** (conocido como **hibernar**) y **suspensión híbrida** (a veces llamado **suspender a ambos**):
 
@@ -35,8 +38,8 @@ Hay varias interfaces de bajo nivel (backends) que proporcionan una funcionalida
     *   [4.2 Usuarios VAIO](#Usuarios_VAIO)
     *   [4.3 Suspender/hibernar no funciona o no es consistente](#Suspender/hibernar_no_funciona_o_no_es_consistente)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
-    *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
-    *   [4.6 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
+    *   [4.5 Despertar instantáneo desde la suspensión](#Despertar_instantáneo_desde_la_suspensión)
+    *   [4.6 El sistema no se apaga cuando hiberna](#El_sistema_no_se_apaga_cuando_hiberna)
 
 ## Interfaces de bajo nivel
 
@@ -159,13 +162,13 @@ Después de actualizar al kernel 4.15.3 puede fallar al reanudar con un cursor e
 
 Si [wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") está activado la tarjeta de red consumirá energía incluso si el ordenador está hibernado.
 
-### Instantaneous wakeups from suspend
+### Despertar instantáneo desde la suspensión
 
-For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
+Se informa que para algunos sistemas Intel Haswell con el chipset LynxPoint y LynxPoint-LP se despiertan de forma instantánea después de suspender. Estos enlazan de forma errónea a las implementaciones ACPI BIOS y como lo interpreta el modulo `xhci_hcd` durante el inicio. Como un trabajo por turnos los sistemas afectados y reportados se añaden a una lista negra (llamada `XHCI_SPURIOUS_WAKEUP`) en el núcleo caso por caso. [[2]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
-Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[3]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+Puede que se despierte de forma instantánea debido a un dispositivo USB que está conectado durante la suspensión y los disparadores ACPI para despertar el dispositivo se activan. Una solución viable para dichos sistemas es desactivar los disparadores para despertar el dispositivo si no están aún en la lista negra. A continuación un ejemplo para desactivar el despertar a través del USB. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
 
-To view the current configuration:
+Para ver la configuración actual:
 
  `$ cat /proc/acpi/wakeup` 
 ```
@@ -178,7 +181,7 @@ XHC       S3    *enabled  pci:0000:00:14.0
 
 ```
 
-The relevant devices are `EHC1`, `EHC2` and `XHC` (for USB 3.0). To toggle their state you have to echo the device name to the file as root.
+Los dispositivos relevantes son `EHC1`, `EHC2` y `XHC` (para USB 3.0). Para cambiar su estado tiene que repetir el nombre del dispositivo al archivo como root.
 
 ```
 # echo EHC1 > /proc/acpi/wakeup
@@ -187,9 +190,9 @@ The relevant devices are `EHC1`, `EHC2` and `XHC` (for USB 3.0). To toggle their
 
 ```
 
-This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [BBS thread](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
+Esto hará que la suspensión vuelva a funcionar otra vez. Sin embargo estos ajustes son temporales y debe de establecerlos en cada reinicio. Para automatizar eche un vistazo a [escribir archivos unitarios](/index.php/Systemd_(Espa%C3%B1ol)#Escribir_archivos_de_unidad "Systemd (Español)"). Vea el [hilo BBS](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) para una posible solución y más información.
 
-If you use `nouveau` driver, the reason of instantaneous wakeup may be a bug in that driver, which sometimes prevents graphics card from suspension. One possible workaround is unloading `nouveau` kernel module right before going to sleep and loading it back after wakeup. To do this, create the following script:
+Si utiliza el controlador `nouveau` la razón para el despertar instantáneo puede ocurrir por un error en el controlador que a veces previene que se suspenda la tarjeta gráfica. Una posible solución es no cargar el módulo del núcleo `nouveau` antes de suspender y cargarlo después de despertar. Para hacerlo cree el siguiente script:
 
  `/usr/lib/systemd/system-sleep/10-nouveau.sh` 
 ```
@@ -209,11 +212,11 @@ case $1/$2 in
 esac
 ```
 
-The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[4]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
+La primera línea echo desata nouveaufb del controlador del dispositivo de almacenamiento de fotogramas de la consola (fbcon). Normalmente es `vtcon1` como en este ejemplo, pero puede haber otro `vtcon*`. Vea `/sys/class/vtconsole/vtcon*/name` que uno de ellos es un "dispositivo de almacenamiento de fotogramas" [[4]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
 
-### System does not power off when hibernating
+### El sistema no se apaga cuando hiberna
 
-When you hibernate your system, the system should power off (after saving the state on the disk). Sometimes, you might see the power LED is still glowing. If that happens, it might be instructive to set the `HibernateMode` to `shutdown` in [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5):
+Cuando hiberna sus sistema el sistema se debe de apagar (después de guardar el estado en el disco). A veces puede que vea el LED de energía siga encendido. Si esto ocurre puede ser recomendable establecer el `HibernateMode` a `shutdown` en [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5):
 
  `/etc/systemd/sleep.conf.d/hibernatemode.conf` 
 ```
@@ -221,4 +224,4 @@ When you hibernate your system, the system should power off (after saving the st
 HibernateMode=shutdown
 ```
 
-With the above configuration, if every thing else is setup correctly, on invocation of a `systemctl hibernate` the machine will shutdown saving state to disk as it does so.
+Con la configuración de arriba, si todo lo demás está configurado correctamente, en la invocación a `systemctl hibernate` el sistema se apagará guardando el estado en el disco.

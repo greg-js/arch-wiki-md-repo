@@ -14,6 +14,8 @@
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE/Plasma)
     *   [4.2 Unable to move items to trash](#Unable_to_move_items_to_trash)
+    *   [4.3 Unable to debug C#](#Unable_to_debug_C#)
+    *   [4.4 Error from OmniSharp that MSBuild cannot be located](#Error_from_OmniSharp_that_MSBuild_cannot_be_located)
 
 ## Installation
 
@@ -70,7 +72,7 @@ Visual Studio Code uses DBus to pass the menu to Plasma, try installing [libdbus
 
 ### Unable to move items to trash
 
-By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is [deprecated and no longer exists](https://github.com/electron/electron/issues/15011), so the `ELECTRON_TRASH` environment variable must be used instead to specify which trash utility should be used.
+By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is [deprecated and no longer exists](https://github.com/electron/electron/issues/15011), so the `ELECTRON_TRASH` [environment variable](/index.php/Environment_variable "Environment variable") must be used instead to specify which trash utility should be used.
 
 For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
 
@@ -80,3 +82,35 @@ $ ELECTRON_TRASH=kioclient5 code
 ```
 
 At the time of writing, Electron supports `kioclient5`, `kioclient`, `trash-cli`, `gio` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).
+
+### Unable to debug C#
+
+If you want to debug C#[.NET](/index.php/.NET_Core ".NET Core") (using the [OmniSharp extension](http://www.omnisharp.net)) then you need to install the Microsoft branded release (from the AUR). This is apparently because the .NET Core debugger is only licensed to be used with official Microsoft products - see [https://github.com/OmniSharp/omnisharp-vscode/issues/1431#issuecomment-297578930](https://github.com/OmniSharp/omnisharp-vscode/issues/1431#issuecomment-297578930)
+
+Using the the open-source package, debugging fails fairly quietly. The debug console will just show the initial message and nothing more:
+
+```
+You may only use the Microsoft .NET Core Debugger (vsdbg) with
+Visual Studio Code, Visual Studio or Visual Studio for Mac software
+to help you develop and test your applications.
+```
+
+### Error from OmniSharp that MSBuild cannot be located
+
+It's noted in the [OmniSharp introduction](https://github.com/OmniSharp/omnisharp-roslyn#introduction) that Arch Linux users should install the [msbuild-stable](https://aur.archlinux.org/packages/msbuild-stable/) package. Without it, you might get an error like:
+
+ `OmniSharp Log` 
+```
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Registered MSBuild instance: StandAlone 15.0 - "~/.vscode/extensions/ms-vscode.csharp-1.18.0/.omnisharp/1.32.11/omnisharp/msbuild/15.0/Bin"
+            MSBuildExtensionsPath = /usr/lib/mono/xbuild
+            BypassFrameworkInstallChecks = true
+            CscToolPath = ~/.vscode/extensions/ms-vscode.csharp-1.18.0/.omnisharp/1.32.11/omnisharp/msbuild/15.0/Bin/Roslyn
+            CscToolExe = csc.exe
+            MSBuildToolsPath = ~/.vscode/extensions/ms-vscode.csharp-1.18.0/.omnisharp/1.32.11/omnisharp/msbuild/15.0/Bin
+            TargetFrameworkRootPath = /usr/lib/mono/xbuild-frameworks
+System.TypeLoadException: Could not load type of field 'OmniSharp.MSBuild.ProjectManager:_queue' (13) due to: Could not load file or assembly 'System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies.
+...
+```
+
+You might be able to build anyway (possibly depending whether you have [mono](https://www.archlinux.org/packages/?name=mono) installed too)

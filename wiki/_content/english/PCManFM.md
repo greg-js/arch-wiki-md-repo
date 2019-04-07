@@ -10,7 +10,11 @@ Related articles
 
 [PCManFM](https://wiki.lxde.org/en/PCManFM) is a free file manager application and the standard file manager of [LXDE](/index.php/LXDE "LXDE").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Desktop management](#Desktop_management)
@@ -24,6 +28,7 @@ Related articles
     *   [6.2 Set the terminal emulator](#Set_the_terminal_emulator)
     *   [6.3 Integrate an archiver](#Integrate_an_archiver)
     *   [6.4 Templates are accessible under *Create New...*](#Templates_are_accessible_under_Create_New...)
+    *   [6.5 Thumbnails](#Thumbnails)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Open With dialog window empty](#Open_With_dialog_window_empty)
     *   [7.2 No "Applications"](#No_"Applications")
@@ -121,7 +126,7 @@ PCManFM supports image thumbnails out of the box. However, in order to view thum
 ```
   [Thumbnailer Entry]
   TryExec=convert
-  Exec=convert %i[0] -thumbnail %s %o
+  Exec=convert %i[0] -thumbnail %s %o
   MimeType=application/pdf;application/x-pdf;image/pdf;
 
 ```
@@ -134,7 +139,7 @@ Following this example, you can specify custom thumbnailers by creating your own
 
 ### Set the terminal emulator
 
-You can configure what terminal emulator PCManFM should use for *Tools > Open Current Folder in Terminal* under *Edit > Preferences > Advanced* e.g. `bash -c 'pantheon-terminal --working-directory "$PWD"'`.
+You can configure what terminal emulator PCManFM should use for *Tools > Open Current Folder in Terminal* under *Edit > Preferences > Advanced*.
 
 ### Integrate an archiver
 
@@ -143,6 +148,10 @@ You can choose the integrated archiver under *Edit > Preferences > Advanced*. PC
 ### Templates are accessible under *Create New...*
 
 PCManFM adds the files in `~/Templates` as *Create New...* context menu items on startup.
+
+### Thumbnails
+
+Like some other file managers (e.g. [Nautilus](/index.php/Nautilus "Nautilus")) PCManFM will load previews of all images in a folder. To not abuse the HDD, keep the number of images in a folder to a hundred.
 
 ## Troubleshooting
 

@@ -82,7 +82,7 @@ To install it for Chromium, [install](/index.php/Install "Install") the [chromiu
 
 **Warning:** Disabling the rendering blacklist may cause unstable behavior, including crashes of the host. See the bug reports in `chrome://gpu` for details.
 
-To force GPU acceleration, [append](/index.php/Append "Append") the following flags to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"):
+By default Chromium on Linux doesn't use any GPU acceleration. To force GPU acceleration, [append](/index.php/Append "Append") the following flags to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"):
 
  `~/.config/chromium-flags.conf` 
 ```
@@ -97,7 +97,7 @@ Additionally the flag `--disable-gpu-driver-bug-workarounds` may need to be pass
 
 ### Hardware video acceleration
 
-Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") can be used with community made patches, packages are available in [AUR](/index.php/AUR "AUR") as [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) or [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
+Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") can be used with community made patches [[1]](https://bugs.chromium.org/p/chromium/issues/detail?id=463440#c65), packages are available in [AUR](/index.php/AUR "AUR") as [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) or [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
 
 Be sure to install correct VA-API driver for your video card and verify VA-API has been enabled and working correctly, see [Hardware video acceleration#Verifying VA-API](/index.php/Hardware_video_acceleration#Verifying_VA-API "Hardware video acceleration").
 

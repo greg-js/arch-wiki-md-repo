@@ -8,7 +8,11 @@ Documenta l'installazione e l'utilizzo dei Fonts su Arch Linux.
 
 **Nota:** Certi pacchetti font possono imporre *alcune* limitazioni legali.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Font formats](#Font_formats)
     *   [1.1 Altri formati](#Altri_formati)
@@ -249,7 +253,7 @@ Questa è una lista selettiva, ma riporta la maggior parte dei font reperibili s
 
 ### Braille
 
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font per simboli *braille*
+*   [ttf-ubraille](https://aur.archlinux.org/packages/ttf-ubraille/) - Font per simboli *braille*
 
 ### International users
 
@@ -295,7 +299,7 @@ Quasi tutti i font Unicode contengono il set di caratteri greci (polytonic inclu
 
 #### Indiano
 
-*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font per Bangla
+*   [ttf-freebanglafont](https://aur.archlinux.org/packages/ttf-freebanglafont/) - Font per Bangla
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Collezione di font OpenType indi (contiene ttf-freebanglafont)
 
 #### Khmer
@@ -351,7 +355,7 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 
 *   Default 8x16
 *   Dina ([dina-font](https://www.archlinux.org/packages/?name=dina-font))
-*   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
+*   Lime ([artwiz-fonts](https://aur.archlinux.org/packages/artwiz-fonts/))
 *   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
 *   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/))
 *   Tamsyn ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
@@ -409,10 +413,10 @@ Qui è visualizzabile una discreta lista di font suggeriti da Trevor Lowing: [ht
 
 **Nota:** La finestra di dialogo dove vengono mostrati i font, nelle singole applicazioni, diventerannò molto lunghe perchè questo pacchetto installa sul sistema più di cento nuovi font
 
-*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
+*   [ttf-mph-2b-damase](https://aur.archlinux.org/packages/ttf-mph-2b-damase/) - Covers full plane 1 and several scripts
 *   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) - Gentium, Charis, Doulos, Andika e Abyssinica da SIL *(AUR)*
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) - Font Xorg Luxi
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Collezione di font di *dustismo.com*
+*   [ttf-cheapskate](https://aur.archlinux.org/packages/ttf-cheapskate/) - Collezione di font di *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Caratteri junius contenenti una collezione di glifi medievali in alfabeto latino
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) — Set IBM Courier e Adobe Utopia per [Font PostScript](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 

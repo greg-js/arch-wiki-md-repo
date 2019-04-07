@@ -1,6 +1,18 @@
+Related articles
+
+*   [Network Configuration (Česky)](/index.php/Network_Configuration_(%C4%8Cesky) "Network Configuration (Česky)")
+*   [Wireless Setup (Česky)](/index.php/Wireless_Setup_(%C4%8Cesky) "Wireless Setup (Česky)")
+*   [NetworkManager (Česky)](/index.php/NetworkManager_(%C4%8Cesky) "NetworkManager (Česky)")
+*   [Wicd](/index.php/Wicd "Wicd")
+*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
+
 Netctl je aplikací vyvíjenou v rámci Arch Linuxu, která má za cíl nahradit původní *netcfg*. Netctl představuje budoucnost (a současnot) ve správě síťového nastavení v Arch Linuxu .
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalace](#Instalace)
 *   [2 Required reading](#Required_reading)
@@ -9,10 +21,10 @@ Netctl je aplikací vyvíjenou v rámci Arch Linuxu, která má za cíl nahradit
         *   [3.1.1 Just one profile](#Just_one_profile)
         *   [3.1.2 Multiple profiles](#Multiple_profiles)
     *   [3.2 Migrating from netcfg](#Migrating_from_netcfg)
-    *   [3.3 Passphrase obfuscation (256-bit PSK)](#Passphrase_obfuscation_.28256-bit_PSK.29)
+    *   [3.3 Passphrase obfuscation (256-bit PSK)](#Passphrase_obfuscation_(256-bit_PSK))
 *   [4 Support](#Support)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Replace 'netcfg current'](#Replace_.27netcfg_current.27)
+    *   [5.1 Replace 'netcfg current'](#Replace_'netcfg_current')
     *   [5.2 Eduroam](#Eduroam)
 
 ## Instalace
@@ -73,7 +85,7 @@ This will create and enable a [systemd](/index.php/Systemd "Systemd") service th
 
 #### Multiple profiles
 
-Whereas with `netcfg` there was `net-auto-wireless.service` and `net-auto-wired.service`, `netctl` uses `netctl-auto@*interface*.service` for wireless profiles, and `netctl-ifplugd@*interface*.service` for wired profiles. In order to make the `netctl-auto@*interface*.service` work for wireless interfaces, the package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) is required to be installed. In order to make the `netctl-ifplugd@*interface*.service` work for wired interfaces, the package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) is required to be installed. Configure `/etc/ifplugd/ifplugd.conf` accordingly. Automatic selection of a WPA-enabled profile by netctl-auto is not possible with option `Security=wpa-config`, please use `Security=wpa-configsection` instead.
+Whereas with `netcfg` there was `net-auto-wireless.service` and `net-auto-wired.service`, `netctl` uses `netctl-auto@*interface*.service` for wireless profiles, and `netctl-ifplugd@*interface*.service` for wired profiles. In order to make the `netctl-auto@*interface*.service` work for wireless interfaces, the package [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/) is required to be installed. In order to make the `netctl-ifplugd@*interface*.service` work for wired interfaces, the package [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) is required to be installed. Configure `/etc/ifplugd/ifplugd.conf` accordingly. Automatic selection of a WPA-enabled profile by netctl-auto is not possible with option `Security=wpa-config`, please use `Security=wpa-configsection` instead.
 
 To set preferred wired profile for auto-connecting specify `AutoWired=yes` in that profile. By default on failure [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) will pass to other DHCP wired profiles, then to static ones. If you don't want it to do so, set `ForceConnect=yes`.
 

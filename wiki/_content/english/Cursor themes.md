@@ -238,7 +238,7 @@ $ ln -s left_ptr left_ptr_watch
 
 ### Supplying missing cursors
 
-Some programs set their own custom curso`~/.Xresources`rs which you may want to override. A common example of this is rdesktop, which connects to a Microsoft Windows computer and uses the cursors obtained from the remote machine, which can often be difficult to see due to protocol limitations yielding poor conversion quality.
+Some programs set their own custom cursors `~/.Xresources` which you may want to override. A common example of this is rdesktop, which connects to a Microsoft Windows computer and uses the cursors obtained from the remote machine, which can often be difficult to see due to protocol limitations yielding poor conversion quality.
 
 This can be resolved by replacing these cursors with ones from the same (or another) cursor theme. In order to do this, the **hash** of the image must be obtained. This is done by setting the `XCURSOR_DISCOVER` environment variable prior to launching the application that sets these cursors:
 
@@ -276,7 +276,7 @@ The change will be visible as soon as the application is restarted. No special m
 
 #### rdesktop
 
-Here are some common Microsoft Windows cursors that rdesktop uses when connecting to a remote machine running Windows 7\. Unfortunately animated cursors are difficult to override as they are sent frame-by-frame, so one mapping will be needed for every frame!
+Here are some common Microsoft Windows cursors that rdesktop uses when connecting to a remote machine running Windows 7\. Unfortunately, animated cursors are difficult to override as they are sent frame-by-frame, so one mapping will be needed for every frame!
 
 ```
 $ ln -s /usr/share/icons/$THEME/cursors/xterm          ~/.icons/default/cursors/00000000017e000002fc000000000000

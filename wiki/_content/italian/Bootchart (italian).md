@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Installare bootchart](#Installare_bootchart)
@@ -8,8 +12,8 @@
         *   [3.1.2 Grub 2](#Grub_2)
         *   [3.1.3 Lilo](#Lilo)
     *   [3.2 impostazione rc.sysinit](#impostazione_rc.sysinit)
-        *   [3.2.1 Modificare /etc/rc.sysinit](#Modificare_.2Fetc.2Frc.sysinit)
-        *   [3.2.2 Fermare bootchartd dopo l'accesso](#Fermare_bootchartd_dopo_l.27accesso)
+        *   [3.2.1 Modificare /etc/rc.sysinit](#Modificare_/etc/rc.sysinit)
+        *   [3.2.2 Fermare bootchartd dopo l'accesso](#Fermare_bootchartd_dopo_l'accesso)
 *   [4 Generare un grafico](#Generare_un_grafico)
     *   [4.1 Risoluzione problemi](#Risoluzione_problemi)
     *   [4.2 Esempi di bootchart](#Esempi_di_bootchart)
@@ -22,7 +26,7 @@ Bootchart è un programma utilizzato per l'analisi dei processi d'avvio (ad esem
 
 # Installare bootchart
 
-[Installare](/index.php/Pacman "Pacman") [bootchart](https://www.archlinux.org/packages/?name=bootchart), pacchetto disponibile nel [repository ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+[Installare](/index.php/Pacman "Pacman") [bootchart](https://aur.archlinux.org/packages/bootchart/), pacchetto disponibile nel [repository ufficiale](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 # Eseguire Bootchart
 

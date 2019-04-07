@@ -79,6 +79,8 @@ It is also [recommended](http://www.howtogeek.com/192732/android-usb-connections
 
 **Note:** Don’t forget to turn on “USB Debugging” on your device. Go to *Settings -> Developer* options, then enable USB debugging. As of Android Jelly Bean 4.2 the Developer options are hidden by default. To enable them tap on *Settings -> About Phone -> Build Version* multiple times. Then you will be able to access the *Settings -> Developer* options.
 
+**Tip:** For some devices the remote doesn't work if "Stay awake" is disabled. If you have any problems, make sure to enable it by going to *Settings -> Developer* options, then enable "Stay awake"
+
 For more help see the [Unity documentation](http://docs.unity3d.com/Manual/UnityRemote5.html).
 
 ### Test

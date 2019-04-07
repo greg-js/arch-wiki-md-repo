@@ -1,28 +1,37 @@
+Related articles
+
+*   [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui")
+*   [Fprint](/index.php/Fprint "Fprint")
+
 ThinkFinger is a driver for the SGS Thomson Microelectronics fingerprint reader found in older IBM/Lenovo ThinkPads.
 
 ThinkWiki has a [list of various fingerprint readers](http://www.thinkwiki.org/wiki/Integrated_Fingerprint_Reader) found in ThinkPads. Newer models using different readers might not work with ThinkFinger.
 
 **Warning:** ThinkFinger-svn revisions above rev 72 require you to load the module `uinput`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 TF-Tool](#TF-Tool)
 *   [3 Pam](#Pam)
-    *   [3.1 /etc/pam.d/login](#.2Fetc.2Fpam.d.2Flogin)
-    *   [3.2 /etc/pam.d/su](#.2Fetc.2Fpam.d.2Fsu)
-    *   [3.3 /etc/pam.d/sudo](#.2Fetc.2Fpam.d.2Fsudo)
-    *   [3.4 /etc/pam.d/xscreensaver](#.2Fetc.2Fpam.d.2Fxscreensaver)
-    *   [3.5 /etc/pam.d/gdm](#.2Fetc.2Fpam.d.2Fgdm)
-    *   [3.6 /etc/pam.d/xdm](#.2Fetc.2Fpam.d.2Fxdm)
+    *   [3.1 /etc/pam.d/login](#/etc/pam.d/login)
+    *   [3.2 /etc/pam.d/su](#/etc/pam.d/su)
+    *   [3.3 /etc/pam.d/sudo](#/etc/pam.d/sudo)
+    *   [3.4 /etc/pam.d/xscreensaver](#/etc/pam.d/xscreensaver)
+    *   [3.5 /etc/pam.d/gdm](#/etc/pam.d/gdm)
+    *   [3.6 /etc/pam.d/xdm](#/etc/pam.d/xdm)
 *   [4 SLiM](#SLiM)
 *   [5 Alternative fingerprint reader software](#Alternative_fingerprint_reader_software)
 *   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [thinkfinger](https://www.archlinux.org/packages/?name=thinkfinger) package.
+[Install](/index.php/Install "Install") the [thinkfinger](https://aur.archlinux.org/packages/thinkfinger/) package.
 
 ## Configuration
 

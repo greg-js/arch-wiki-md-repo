@@ -1442,9 +1442,9 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 	[https://qrab.sourceforge.io/](https://qrab.sourceforge.io/) || [qrab](https://aur.archlinux.org/packages/qrab/)
 
-*   **Qreator** — Create your own QR codes.
+*   **Qreator** — Graphical utility for creating QR codes.
 
-	[http://davidplanella.org/project-showcase/qreator/](http://davidplanella.org/project-showcase/qreator/) || [qreator](https://aur.archlinux.org/packages/qreator/)
+	[https://davidplanella.org/qreator/](https://davidplanella.org/qreator/) || [qreator](https://www.archlinux.org/packages/?name=qreator)
 
 *   **QtQR** — QR Code generator and decoder.
 

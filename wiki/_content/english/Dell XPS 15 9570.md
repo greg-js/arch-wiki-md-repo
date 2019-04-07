@@ -133,10 +133,11 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]
 
 Some users reported that running Linux kernel 5.0.x can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[6]](https://bugs.archlinux.org/task/61964))
 
-Currently, it seems that there are two possible workarounds :
+Currently, it seems that there are three possible workarounds :
 
 *   [Downgrade](/index.php/Downgrading_packages "Downgrading packages") to Linux 4.20.13.
 *   Apply [Albert Astals Cid's patch](https://invent.kde.org/snippets/44) on Linux kernel 5.0.x (see [kernel Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")).
+*   Install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
 ## Wifi and Bluetooth
 

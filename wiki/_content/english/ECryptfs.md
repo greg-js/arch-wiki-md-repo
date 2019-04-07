@@ -293,6 +293,8 @@ $ ( stty -echo; printf "Passphrase: " 1>&2; read PASSWORD; stty echo; echo $PASS
 
 ```
 
+Do not use a passphrase with more than 64 characters as this will result in an error later when using `ecryptfs-insert-wrapped-passphrase-into-keyring`.
+
 Next, we can enter our passphrase to load the key into the keyring:
 
 ```

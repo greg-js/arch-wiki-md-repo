@@ -20,64 +20,63 @@ Related articles
     *   [1.1 移动网络支持](#移动网络支持)
     *   [1.2 VPN 支持](#VPN_支持)
     *   [1.3 PPPoE / DSL 支持](#PPPoE_/_DSL_支持)
-*   [2 前端](#前端)
-    *   [2.1 GNOME](#GNOME)
-    *   [2.2 KDE Plasma](#KDE_Plasma)
-    *   [2.3 nm-applet](#nm-applet)
-        *   [2.3.1 Appindicator](#Appindicator)
-    *   [2.4 命令行](#命令行)
-        *   [2.4.1 nmcli](#nmcli)
-        *   [2.4.2 nmtui](#nmtui)
-        *   [2.4.3 nmcli-dmenu](#nmcli-dmenu)
-*   [3 配置](#配置)
-    *   [3.1 启用 NetworkManager](#启用_NetworkManager)
-    *   [3.2 设置 PolicyKit 权限](#设置_PolicyKit_权限)
-    *   [3.3 使用 NetworkManager 调度网络服务](#使用_NetworkManager_调度网络服务)
-        *   [3.3.1 避免超时](#避免超时)
-        *   [3.3.2 启动 OpenNTPD](#启动_OpenNTPD)
-        *   [3.3.3 使用sshfs挂载远程文件夹](#使用sshfs挂载远程文件夹)
-        *   [3.3.4 使用 dispatcher 在网络连接建立后连接 vpn](#使用_dispatcher_在网络连接建立后连接_vpn)
-    *   [3.4 代理设置](#代理设置)
-    *   [3.5 禁用 NetworkManager](#禁用_NetworkManager)
-*   [4 测试](#测试)
-*   [5 常见问题](#常见问题)
-    *   [5.1 安全Wi-Fi网络不提示输入密码](#安全Wi-Fi网络不提示输入密码)
-    *   [5.2 PPTP 通道中无流量](#PPTP_通道中无流量)
-    *   [5.3 网络管理功能失效](#网络管理功能失效)
-    *   [5.4 定制resolv.conf](#定制resolv.conf)
-    *   [5.5 使用 resolv.conf.head 和 resolv.conf.tail](#使用_resolv.conf.head_和_resolv.conf.tail)
-    *   [5.6 在resolv.conf中保留改动](#在resolv.conf中保留改动)
-    *   [5.7 使用dhclient时的DHCP问题](#使用dhclient时的DHCP问题)
-    *   [5.8 主机名问题](#主机名问题)
-    *   [5.9 配置dhclient把主机名推送到DHCP服务器](#配置dhclient把主机名推送到DHCP服务器)
-    *   [5.10 配置NetworkManager使用一个特性的DHCP客户端](#配置NetworkManager使用一个特性的DHCP客户端)
-    *   [5.11 缺少默认路由 route](#缺少默认路由_route)
-    *   [5.12 没有探测到 3G 模块](#没有探测到_3G_模块)
-    *   [5.13 在笔记本上关闭WLAN](#在笔记本上关闭WLAN)
-    *   [5.14 静态 IP 设置 变成 DHCP](#静态_IP_设置_变成_DHCP)
-    *   [5.15 普通用户无法编辑链接](#普通用户无法编辑链接)
-    *   [5.16 删除隐蔽无线网络链接](#删除隐蔽无线网络链接)
-    *   [5.17 GNOME VPN失效问题](#GNOME_VPN失效问题)
-    *   [5.18 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [5.19 引导时自动连接到VPN不工作](#引导时自动连接到VPN不工作)
-    *   [5.20 dhcpd不断地拒绝租约](#dhcpd不断地拒绝租约)
-    *   [5.21 Systemd瓶颈](#Systemd瓶颈)
-    *   [5.22 网络(WiFi)经常有规律地断开](#网络(WiFi)经常有规律地断开)
-*   [6 提示与技巧](#提示与技巧)
-    *   [6.1 加密的Wi-Fi密码](#加密的Wi-Fi密码)
-    *   [6.2 通过Wi-Fi共享网络连接](#通过Wi-Fi共享网络连接)
-        *   [6.2.1 Ad-hoc](#Ad-hoc)
-        *   [6.2.2 Real AP](#Real_AP)
-    *   [6.3 通过Ethernet共享连接](#通过Ethernet共享连接)
-    *   [6.4 在cron任务（jobs）或脚本中检查网络是否连接](#在cron任务（jobs）或脚本中检查网络是否连接)
-    *   [6.5 登陆后自动解锁秘钥环](#登陆后自动解锁秘钥环)
-        *   [6.5.1 GNOME](#GNOME_2)
-        *   [6.5.2 SLiM 登录管理器](#SLiM_登录管理器)
-    *   [6.6 有密码认证的KDE and OpenConnect VPN](#有密码认证的KDE_and_OpenConnect_VPN)
-    *   [6.7 忽略特定设备](#忽略特定设备)
-    *   [6.8 启用DNS缓存](#启用DNS缓存)
-    *   [6.9 启用IPv6隐私扩展](#启用IPv6隐私扩展)
-*   [7 其它资源](#其它资源)
+*   [2 使用](#使用)
+    *   [2.1 nmcli 使用示例](#nmcli_使用示例)
+*   [3 前端](#前端)
+    *   [3.1 GNOME](#GNOME)
+    *   [3.2 KDE Plasma](#KDE_Plasma)
+    *   [3.3 nm-applet](#nm-applet)
+        *   [3.3.1 Appindicator](#Appindicator)
+    *   [3.4 nmcli-dmenu](#nmcli-dmenu)
+*   [4 配置](#配置)
+    *   [4.1 启用 NetworkManager](#启用_NetworkManager)
+    *   [4.2 设置 PolicyKit 权限](#设置_PolicyKit_权限)
+    *   [4.3 使用 NetworkManager 调度网络服务](#使用_NetworkManager_调度网络服务)
+        *   [4.3.1 避免超时](#避免超时)
+        *   [4.3.2 启动 OpenNTPD](#启动_OpenNTPD)
+        *   [4.3.3 使用sshfs挂载远程文件夹](#使用sshfs挂载远程文件夹)
+        *   [4.3.4 使用 dispatcher 在网络连接建立后连接 vpn](#使用_dispatcher_在网络连接建立后连接_vpn)
+    *   [4.4 代理设置](#代理设置)
+    *   [4.5 禁用 NetworkManager](#禁用_NetworkManager)
+*   [5 测试](#测试)
+*   [6 常见问题](#常见问题)
+    *   [6.1 安全Wi-Fi网络不提示输入密码](#安全Wi-Fi网络不提示输入密码)
+    *   [6.2 PPTP 通道中无流量](#PPTP_通道中无流量)
+    *   [6.3 网络管理功能失效](#网络管理功能失效)
+    *   [6.4 定制resolv.conf](#定制resolv.conf)
+    *   [6.5 使用 resolv.conf.head 和 resolv.conf.tail](#使用_resolv.conf.head_和_resolv.conf.tail)
+    *   [6.6 在resolv.conf中保留改动](#在resolv.conf中保留改动)
+    *   [6.7 使用dhclient时的DHCP问题](#使用dhclient时的DHCP问题)
+    *   [6.8 主机名问题](#主机名问题)
+    *   [6.9 配置dhclient把主机名推送到DHCP服务器](#配置dhclient把主机名推送到DHCP服务器)
+    *   [6.10 配置NetworkManager使用一个特性的DHCP客户端](#配置NetworkManager使用一个特性的DHCP客户端)
+    *   [6.11 缺少默认路由 route](#缺少默认路由_route)
+    *   [6.12 没有探测到 3G 模块](#没有探测到_3G_模块)
+    *   [6.13 在笔记本上关闭WLAN](#在笔记本上关闭WLAN)
+    *   [6.14 静态 IP 设置 变成 DHCP](#静态_IP_设置_变成_DHCP)
+    *   [6.15 普通用户无法编辑链接](#普通用户无法编辑链接)
+    *   [6.16 删除隐蔽无线网络链接](#删除隐蔽无线网络链接)
+    *   [6.17 GNOME VPN失效问题](#GNOME_VPN失效问题)
+    *   [6.18 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [6.19 引导时自动连接到VPN不工作](#引导时自动连接到VPN不工作)
+    *   [6.20 dhcpd不断地拒绝租约](#dhcpd不断地拒绝租约)
+    *   [6.21 Systemd瓶颈](#Systemd瓶颈)
+    *   [6.22 网络(WiFi)经常有规律地断开](#网络(WiFi)经常有规律地断开)
+*   [7 提示与技巧](#提示与技巧)
+    *   [7.1 加密的Wi-Fi密码](#加密的Wi-Fi密码)
+    *   [7.2 通过Wi-Fi共享网络连接](#通过Wi-Fi共享网络连接)
+        *   [7.2.1 Ad-hoc](#Ad-hoc)
+        *   [7.2.2 Real AP](#Real_AP)
+    *   [7.3 通过Ethernet共享连接](#通过Ethernet共享连接)
+    *   [7.4 在cron任务（jobs）或脚本中检查网络是否连接](#在cron任务（jobs）或脚本中检查网络是否连接)
+    *   [7.5 登陆后自动解锁秘钥环](#登陆后自动解锁秘钥环)
+        *   [7.5.1 GNOME](#GNOME_2)
+        *   [7.5.2 SLiM 登录管理器](#SLiM_登录管理器)
+    *   [7.6 有密码认证的KDE and OpenConnect VPN](#有密码认证的KDE_and_OpenConnect_VPN)
+    *   [7.7 忽略特定设备](#忽略特定设备)
+    *   [7.8 启用DNS缓存](#启用DNS缓存)
+    *   [7.9 启用IPv6隐私扩展](#启用IPv6隐私扩展)
+*   [8 其它资源](#其它资源)
 
 ## 安装
 
@@ -120,6 +119,75 @@ NetworkManager 对其他 VPN 的支持基于一个插件系统。请针对需要
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) 来获得对 PPPoE / DSL 连接的支持。使用`nm-connection-editor`并添加一个新的DSL/PPPoE连接。
 
+## 使用
+
+NetworkManager 自带了 [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) 和 [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
+
+### nmcli 使用示例
+
+显示附近的 wifi:
+
+```
+$ nmcli device wifi list
+
+```
+
+连接 wifi:
+
+```
+$ nmcli device wifi connect *SSID* password *password*
+
+```
+
+连接到隐藏的 wifi:
+
+```
+$ nmcli device wifi connect *SSID* password *password* hidden yes
+
+```
+
+通过 `wlan1` wifi 网卡(interface)连接 wifi:
+
+```
+$ nmcli device wifi connect *SSID* password *password* ifname wlan1 *profile_name*
+
+```
+
+断开一个网卡(interface)上的连接:
+
+```
+$ nmcli device disconnect ifname eth0
+
+```
+
+重新连接一个被标记为“已断开”的网卡：
+
+```
+$ nmcli connection up uuid *UUID*
+
+```
+
+显示一个所有连接过的网络的UUID的列表:
+
+```
+$ nmcli connection show
+
+```
+
+查看所有网络设备及其状态:
+
+```
+$ nmcli device
+
+```
+
+关掉 wifi:
+
+```
+$ nmcli radio wifi off
+
+```
+
 ## 前端
 
 为了配置和轻松使用网络管理器，大多数用户会希望安装一个托盘组件。图形前端往往显示在系统托盘（或通知区域），从而允许用户选择网络或者配置 NetworkManager。不同类型的桌面环境下有多种托盘插件。
@@ -130,17 +198,17 @@ NetworkManager 对其他 VPN 的支持基于一个插件系统。请针对需要
 
 ### KDE Plasma
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 软件包。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 软件包。然后通过 *面板的选项 > 添加部件 > 网络* 来把它添加到KDE的任务栏上。
 
 ### nm-applet
 
 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 是一个GTK3+前端小程序，工作在Xorg环境下，带有一个系统托盘。
 
-存储连接密码，安装并配置 [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")。
+为了存储连接密码，请安装并配置 [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")。
 
-注意对某个连接启用了勾选框选项 `对其他用户可用` 时，NetworkManager将密码明文存储，即使相应的文件只能被root访问（或者其他使用 `nm-applet` 的用户）。参照 [#加密的Wi-Fi密码](#加密的Wi-Fi密码)。
+请注意，如果对某个连接启用了 `对其他用户可用` 选项，NetworkManager就会将密码明文存储，虽然相应的文件只能被root或者其他使用 `nm-applet` 的用户访问。参照 [#加密的Wi-Fi密码](#加密的Wi-Fi密码)。
 
-在没有系统托盘的情况下运行 `nm-applet`，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或者 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。比如，你可以在自己的路径中添加这样的脚本：
+在没有系统托盘的情况下运行 `nm-applet`，可以使用 [trayer](https://www.archlinux.org/packages/?name=trayer) 或者 [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)。比如，你可以在自己的可执行文件路径中添加这样的脚本：
 
  `nmgui` 
 ```
@@ -151,59 +219,31 @@ killall nm-applet
 
 ```
 
-当关闭了 *stalonetray* 窗口，就也关闭了 `nm-applet`，所以当完成网络配置后就没有额外的内存消耗了。
+当关闭 *stalonetray* 窗口的时候，它会关闭 `nm-applet`，所以当你完成网络配置后它就不会再占用内存。
 
-此小程序可以显示一些事件的消息，比如连接或断开WiFi。为了显示这些消息，确保你已安装了一个消息服务器 - 参照 [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")。如果你在没有消息服务器的情况下使用，消息可能会出现在stdout/stderr，程序也有可能挂起。参照 [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313)。
+*nm-applet* 可以显示一些事件的消息，比如连接或断开WiFi。为了显示这些消息，确保你已安装了一个消息服务器 - 参照 [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")。如果你在没有消息服务器的情况下使用它，消息可能会出现在stdout/stderr中并可能导致程序卡住。参照 [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313)。
 
-为了在消息服务被禁用的情况下使用 `nm-applet`，用以下命令运行程序：
+为了在禁用消息提示的情况下使用 `nm-applet`，用以下命令运行程序：
 
 ```
 $ nm-applet --no-agent
 
 ```
 
-**Tip:** `nm-applet` 可能在 [自启动桌面文件](/index.php/Desktop_entries#Autostart "Desktop entries") 存在的情况下自动启动，例如修改Exec一行添加--no-agent选项：
-```
-Exec=nm-applet --no-agent
-
-```
+**Tip:** `nm-applet` 可能被 [自启动desktop文件](/index.php/XDG_Autostart "XDG Autostart") 自动启动，这种情况下要添加--no-agent选项请修改Exec那一行： `Exec=nm-applet --no-agent` 
 
 #### Appindicator
 
-Appindicator支持在 *nm-applet* 可用但没有被编译进官方软件包，详见 [FS#51740](https://bugs.archlinux.org/task/51740)。为了在Appindicator环境中使用nm-applet，将 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 替换成 [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) 并执行以下命令：
+*nm-applet* 是支持Appindicator的，但没有被编译进官方软件包，详见 [FS#51740](https://bugs.archlinux.org/task/51740)。为了在Appindicator环境中使用nm-applet，将 [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) 替换成 [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) 并执行以下命令：
 
 ```
 $ nm-applet --indicator
 
 ```
 
-### 命令行
+### nmcli-dmenu
 
-下列应用程序可能对于没有X时配置和管理网络有帮助。
-
-#### nmcli
-
-命令行前端*nmcli*包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
-
-对于使用信息，参考[nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1)。 例子:
-
-*   连接 WiFi 网络: `nmcli dev wifi connect <name> password <password>` 
-*   通过`wlan1`接口连接 WiFi 网络: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
-*   断开一个接口: `nmcli dev disconnect iface eth0` 
-*   重新连接一个标记为已断开的接口: `nmcli con up uuid <uuid>` 
-*   获得 UUID 列表: `nmcli con show` 
-*   查看网络设备及其状态列表: `nmcli dev` 
-*   关闭 WiFi: `nmcli r wifi off` 
-
-#### nmtui
-
-*nmtui* 是一个基于curses的图形化前端，包括在[networkmanager](https://www.archlinux.org/packages/?name=networkmanager)中。
-
-使用信息参见[nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1)。
-
-#### nmcli-dmenu
-
-[networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) 是一个通过 *dmenu* 而不是 `nm-applet` 来管理 NetworkManager 连接的脚本。它提供了所有必要的特性, 例如连接到已有的 WiFi 或有线网络, 连接到新的 WiFi 网络, 在需要的时候询问密码, 连接到已有的 VPN, 启用/停用网络连接, 运行 *nm-connection-editor* 的图形界面。
+[networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) 是一个通过 [dmenu](/index.php/Dmenu "Dmenu") 而不是 `nm-applet` 来管理 NetworkManager 连接的脚本。它提供了所有必要的功能, 例如连接到已有的 WiFi 或有线网络、连接到新的 WiFi 网络、在需要的时候询问密码、连接到已有的 VPN、启用/停用网络连接、运行图形界面 *nm-connection-editor* 等等。
 
 ## 配置
 
@@ -211,9 +251,11 @@ NetworkManager 需要做这么几步保证正常运行。确保你`/etc/hosts`�
 
 ### 启用 NetworkManager
 
-NetworkManager通过`NetworkManager.service`[控制](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)")。 NetworkManager 守护进程启动后，会自动连接到任何可用的已经配置的**系统连接**。**用户连接**或未配置的连接需要通过`nmcli`或桌面工具进行配置和连接。
+NetworkManager通过`NetworkManager.service`[systemd](/index.php/Systemd "Systemd")单元来[控制](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#使用单元 "Systemd (简体中文)")。 NetworkManager 守护进程启动后，会自动连接到任何可用的已经配置的**系统连接**。**用户连接**或未配置的连接需要通过`nmcli`或applet进行配置和连接。
 
-开机启用 NetworkManager：
+NetworkManager的全局配置文件位于`/etc/NetworkManager/NetworkManager.conf`。额外的配置文件可以放进`/etc/NetworkManager/conf.d/`文件夹。通常全局的默认配置不需要改动。
+
+开机自动启动 NetworkManager：
 
 ```
 # systemctl enable NetworkManager
@@ -226,10 +268,6 @@ NetworkManager通过`NetworkManager.service`[控制](/index.php/Systemd_(%E7%AE%
 # systemctl start NetworkManager
 
 ```
-
-NetworkManager在`/etc/NetworkManager/NetworkManager.conf`有一个全局的配置文件。通常全局的默认配置不需要改动。
-
-**Note:** 当[NetworkManager-dispatcher.service](#Network_services_with_NetworkManager_dispatcher)和[ModemManager.service](https://www.archlinux.org/packages/?name=modemmanager)没有被激活时，NetworkManager会向你的系统日至打印无意义的警告([FS#34971](https://bugs.archlinux.org/task/34971))，你可能需要将两者激活来抑制这些消息。
 
 ### 设置 PolicyKit 权限
 

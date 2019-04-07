@@ -33,7 +33,6 @@ iwd can work in standalone mode or in combination with comprehensive network man
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
     *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
-    *   [5.3 Network device name varies from boot to boot](#Network_device_name_varies_from_boot_to_boot)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -303,7 +302,7 @@ A low entropy pool can cause connection problems in particular noticeable after 
 
 ### Systemd unit fails on startup due to device not being available
 
-Some users have reported that the provided systemd unit does not wait for the wireless device to become available. [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803) Thus, the unit fails on startup. To fix this, one can create a systemd unit with the following content:
+Some users have reported that the provided systemd unit does not wait for the wireless device to become available. [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803) Unfortunately, if iwd is started before udev renaming is done, the network device will be blocked and renaming will fail. Thus, the unit fails on startup. To fix this, one can create a systemd unit with the following content:
 
  `/etc/systemd/system/iwd@.service` 
 ```
@@ -322,17 +321,15 @@ Restart=on-failure
 
 Then one can enable the `iwd@*device*.service` unit for the specific wireless *device*.
 
-See [FS#61367](https://bugs.archlinux.org/task/61367).
-
-### Network device name varies from boot to boot
-
-Since systemd 197, all network devices are renamed by systenmd/udevd on boot to have predictable names. [[3]](https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) Unfortunately, if iwd is started before renaming is done, the network device will be blocked and renaming will fail. This causes an annoying issue when a network device name varies from boot to boot. The solution is to set a proper dependency for iwd to run after systemd/udevd. [[4]](https://lists.01.org/pipermail/iwd/2019-March/005837.html)
+Alternatively, set a proper dependency for iwd to run after systemd/udevd by creating a [drop-in file](/index.php/Drop-in_file "Drop-in file") as follows: [[3]](https://lists.01.org/pipermail/iwd/2019-March/005837.html)
 
  `/etc/systemd/system/iwd.service.d/override.conf` 
 ```
 [Unit]
 After=systemd-udevd.service
 ```
+
+See [FS#61367](https://bugs.archlinux.org/task/61367).
 
 ## See also
 

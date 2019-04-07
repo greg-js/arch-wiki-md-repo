@@ -2,18 +2,22 @@
 
 **注意:** Bootchart 已经成为 systemd 的一部分，请参考 [Improve boot performance#Analyzing the boot process](/index.php/Improve_boot_performance#Analyzing_the_boot_process "Improve boot performance") 页面。本文介绍的是合并之前的老版本和bootchart2。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装Bootchart](#.E5.AE.89.E8.A3.85Bootchart)
-*   [2 运行Bootchart](#.E8.BF.90.E8.A1.8CBootchart)
-    *   [2.1 启动引导器设置](#.E5.90.AF.E5.8A.A8.E5.BC.95.E5.AF.BC.E5.99.A8.E8.AE.BE.E7.BD.AE)
-*   [3 生成分析结果图表](#.E7.94.9F.E6.88.90.E5.88.86.E6.9E.90.E7.BB.93.E6.9E.9C.E5.9B.BE.E8.A1.A8)
-    *   [3.1 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-*   [4 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装Bootchart](#安装Bootchart)
+*   [2 运行Bootchart](#运行Bootchart)
+    *   [2.1 启动引导器设置](#启动引导器设置)
+*   [3 生成分析结果图表](#生成分析结果图表)
+    *   [3.1 问题解决](#问题解决)
+*   [4 参考资料](#参考资料)
 
 ## 安装Bootchart
 
-安装 [bootchart](https://www.archlinux.org/packages/?name=bootchart)。
+安装 [bootchart](https://aur.archlinux.org/packages/bootchart/)。
 
 ## 运行Bootchart
 

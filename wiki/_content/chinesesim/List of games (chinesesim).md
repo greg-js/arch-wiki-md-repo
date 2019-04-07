@@ -501,7 +501,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **XMahjongg** — Mahjong solitaire for X.
 
-	[https://www.lcdf.org/xmahjongg/](https://www.lcdf.org/xmahjongg/) || [xmahjongg](https://www.archlinux.org/packages/?name=xmahjongg)
+	[https://www.lcdf.org/xmahjongg/](https://www.lcdf.org/xmahjongg/) || [xmahjongg](https://aur.archlinux.org/packages/xmahjongg/)
 
 *   **Xscorch** — Clone of the classic DOS game Scorched Earth.
 
@@ -947,7 +947,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Foobillard++](https://en.wikipedia.org/wiki/FooBillard "wikipedia:FooBillard")** — Successor to Foobillard, OpenGL billiard game for Linux.
 
-	[http://foobillardplus.sourceforge.net/](http://foobillardplus.sourceforge.net/) || [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B)
+	[http://foobillardplus.sourceforge.net/](http://foobillardplus.sourceforge.net/) || [foobillard++](https://aur.archlinux.org/packages/foobillard%2B%2B/)
 
 *   **[FreeSpace 2](https://en.wikipedia.org/wiki/FreeSpace_2 "wikipedia:FreeSpace 2")** — Open sourced space emulator.
 

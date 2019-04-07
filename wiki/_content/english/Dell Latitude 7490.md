@@ -150,6 +150,8 @@ Almost everything works:
 *   Screen backlight control
 *   Fn/Hotkeys, including Fn-lock
 *   Contact SmartCard reader
+*   Qualcomm Snapdragon X7 LTE Modem
+*   USB-C (connected to Android phone, was able to charge phone and read files)
 
 ## What doesn't work
 
@@ -159,9 +161,7 @@ Almost everything works:
 ## What was not tested
 
 *   Contactless SmartCard (probably works since it was detected by `pcsc_scan`
-*   USB-C
 *   USB-C power delivery
 *   DisplayPort Alternate Mode for USB-C
 *   Thunderbolt 3.0 (my SKU doesn't have this)
-*   Mobile broadband modem (my SKU doesn't have this)
 *   TPM 2.0 (There is an error in dmesg, `tpm tpm0: A TPM error (2314) occurred attempting the self test`)

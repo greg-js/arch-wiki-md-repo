@@ -13,7 +13,11 @@
 
 注意，某些字型的授權有訂定合理使用限制。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 字型格式](#字型格式)
     *   [1.1 常見副檔名](#常見副檔名)
@@ -189,7 +193,7 @@ $ for dir in /font/dir1/ /font/dir2/; do xset +fp $dir; done && xset fp rehash
 又或者，若字型被安裝在不同的子資料夾如 `/usr/share/fonts` ：
 
 ```
-$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
+$ for dir in * ; do if [  -d  "$dir"  ]; then cd "$dir";xset +fp "$PWD" ;mkfontscale; mkfontdir;cd .. ;fi; done && xset fp rehash
 
 ```
 
@@ -336,7 +340,7 @@ $ setfont
 
 ### 盲文點字
 
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - 包含 Unicode **盲文點字**符號的字型
+*   [ttf-ubraille](https://aur.archlinux.org/packages/ttf-ubraille/) - 包含 Unicode **盲文點字**符號的字型
 
 ### 表情符號(顏文字)
 
@@ -354,7 +358,7 @@ $ setfont
 應用程式與瀏覽器會根據 fontconfig 設定和 Unicode 文字可用的字型來選擇其顯示字型。用指令 `fc-list :lang="雙字母的語言代碼"` 列舉系統安裝了哪些可對應該語言的字型。例如，列舉已經安裝的阿拉伯文字型，以及支援阿拉伯字的字型：
 
  `$ fc-list -f '%{file}
-' :lang=ar` 
+' :lang=ar` 
 ```
 /usr/share/fonts/TTF/FreeMono.ttf
 /usr/share/fonts/TTF/DejaVuSansCondensed.ttf
@@ -461,7 +465,7 @@ $ setfont
 
 #### 印地文字
 
-*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - 孟加拉文字型
+*   [ttf-freebanglafont](https://aur.archlinux.org/packages/ttf-freebanglafont/) - 孟加拉文字型
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - 印地文 OpenType 字型集合 (包含 ttf-freebanglafont)
 
 	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
@@ -530,7 +534,7 @@ $ setfont
 *   Default 8x16
 *   Dina ([dina-font](https://www.archlinux.org/packages/?name=dina-font))
 *   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/))
-*   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
+*   Lime ([artwiz-fonts](https://aur.archlinux.org/packages/artwiz-fonts/))
 *   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
 *   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/))
 *   Tamsyn ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
@@ -583,11 +587,11 @@ $ setfont
 ### 未分類字型
 
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) — a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
-*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) — Covers full plane 1 and several scripts
+*   [ttf-mph-2b-damase](https://aur.archlinux.org/packages/ttf-mph-2b-damase/) — Covers full plane 1 and several scripts
 *   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) — Provides emoji and many many other symbols
 *   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) — Gentium, Charis, Doulos, Andika and Abyssinica from SIL
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) — X.Org Luxi fonts
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) — Font collection from *dustismo.com*
+*   [ttf-cheapskate](https://aur.archlinux.org/packages/ttf-cheapskate/) — Font collection from *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) — Junius font containing almost complete medieval latin script glyphs
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) — IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 

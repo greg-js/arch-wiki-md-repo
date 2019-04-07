@@ -19,6 +19,7 @@ Related articles
     *   [1.3 VPN support](#VPN_support)
 *   [2 Usage](#Usage)
     *   [2.1 nmcli examples](#nmcli_examples)
+    *   [2.2 Edit a connection](#Edit_a_connection)
 *   [3 Front-ends](#Front-ends)
     *   [3.1 GNOME](#GNOME)
     *   [3.2 KDE Plasma](#KDE_Plasma)
@@ -41,6 +42,8 @@ Related articles
         *   [4.7.3 Other methods](#Other_methods)
             *   [4.7.3.1 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
             *   [4.7.3.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
+                *   [4.7.3.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
+                *   [4.7.3.2.2 Setting custom DNS servers in a connection (connection file)](#Setting_custom_DNS_servers_in_a_connection_(connection_file))
 *   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
     *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
     *   [5.2 Dispatcher examples](#Dispatcher_examples)
@@ -203,6 +206,26 @@ Turn off wifi:
 $ nmcli radio wifi off
 
 ```
+
+### Edit a connection
+
+For a comprehensive list of settings, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5).
+
+You have three methods to configure a connection after it has been created:
+
+	nmcli interactive editor
+
+	`nmcli connection edit <connection-id>`, can be shortened to `nmcli c e`
+Usage is well documented from the editor.
+
+	nmcli CLI
+
+	`nmcli connection modify <connection-id> <setting.property value>`, can be shortened to `nmcli c mod`
+
+	File Edit
+
+	In `/etc/NetworkManager/system-connections`, modify the corresponding `<connection-id>.nmconnection` file .
+Don't forget to reload the configuration file with `nmcli connection reload`
 
 ## Front-ends
 
@@ -404,7 +427,17 @@ If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for your lo
 
 ##### Setting custom DNS servers in a connection
 
-With an already working caching DNS server, the DNS server address can be specified in NetworkManager's settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
+With an already working caching DNS server, the DNS server address can be specified in NetworkManager's connection settings.
+
+###### Setting custom DNS servers in a connection (GUI)
+
+Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
+
+###### Setting custom DNS servers in a connection (connection file)
+
+To setup DNS Servers per connection, you can use the `dns` field (and the associated `dns-search` and `dns-options`, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5)).
+
+If `method` is set to `auto`, you need to set `ignore-auto-dns` to `yes`.
 
 ## Network services with NetworkManager dispatcher
 

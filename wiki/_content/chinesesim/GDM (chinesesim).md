@@ -42,8 +42,8 @@
         *   [3.5.5 在登录列表中隐藏用户](#在登录列表中隐藏用户)
     *   [3.6 Setup default monitor settings](#Setup_default_monitor_settings)
     *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Failure to use proprietary NVIDIA driver](#Failure_to_use_proprietary_NVIDIA_driver)
+*   [4 已知问题](#已知问题)
+    *   [4.1 无法使用NVIDIA（英伟达）闭源驱动](#无法使用NVIDIA（英伟达）闭源驱动)
     *   [4.2 注销失败](#注销失败)
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 使用Xorg作为后端](#使用Xorg作为后端)
@@ -79,7 +79,7 @@ One might want to autostart certain commands, such as *xrandr* for instance, on 
 
 **Note:**
 
-*   Since GNOME 3.16, GNOME Shell themes are now stored as binary files (gresource).
+*   自GNOME 3.16开始，GNOME Shell主题被存储为二进制文件。 （gresource）
 *   This change will be overwritten on subsequent updates of [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
 
 Firstly, you need to extract the existing GNOME Shell theme to a folder in your home directory. You can do this using the following script:
@@ -499,9 +499,9 @@ For instance, to grant GDM the right to access the X server, use the following c
 
  `# xhost +SI:localuser:gdm` 
 
-## Troubleshooting
+## 已知问题
 
-### Failure to use proprietary NVIDIA driver
+### 无法使用NVIDIA（英伟达）闭源驱动
 
 GDM uses the [Wayland](/index.php/Wayland "Wayland") backend by default which conflicts with NVIDIA driver. Turning off the Wayland backend could enable proprietary NVIDIA driver.
 

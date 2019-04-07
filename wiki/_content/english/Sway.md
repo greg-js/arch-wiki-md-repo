@@ -255,13 +255,18 @@ bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 
 ### Application launchers
 
-i3-dmenu-desktop, [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), [dmenu](https://www.archlinux.org/packages/?name=dmenu), and [rofi](https://www.archlinux.org/packages/?name=rofi) all function relatively well in Sway, but all run under XWayland and suffer from the same issue where they can become unresponsive if the cursor is moved to a native Wayland window. Moving the cursor to an XWayland window and pressing Escape should fix the issue, and sometimes running `pkill` does too.
+i3-dmenu-desktop, [dmenu](https://www.archlinux.org/packages/?name=dmenu), and [rofi](https://www.archlinux.org/packages/?name=rofi) all function relatively well in Sway, but all run under XWayland and suffer from the same issue where they can become unresponsive if the cursor is moved to a native Wayland window. The reason for this issue is that Wayland clients/windows do not have access to input devices unless they have focus of the screen. The XWayland server is itself a client to the Wayland compositor, so one of its XWayland clients must have focus for it to access user input. However, once one of its clients has focus, it can gather input and make it available to all XWayland clients through the X11 protocol. Hence, moving the cursor to an XWayland window and pressing Escape should fix the issue, and sometimes running `pkill` does too.
 
-One alternative is [bemenu](https://www.archlinux.org/packages/?name=bemenu), which is a native Wayland dmenu replacement.
+[bemenu](https://www.archlinux.org/packages/?name=bemenu) is a native Wayland dmenu replacement which can optionally be combined with [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/) to provide a Wayland-native combination for launching desktop files (as i3-dmenu-desktop does):
 
-Or you can build your own with a floating terminal and fzf (Discussed in an [GitHub Issue](https://github.com/swaywm/sway/issues/1367)).
+```
+j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:DejaVu Sans Mono 12"' --term='termite'
 
-The reason for this issue is that Wayland clients/windows do not have access to input devices unless they have focus of the screen. The XWayland server is itself a client to the Wayland compositor, so one of its XWayland clients must have focus for it to access user input. However, once one of its clients has focus, it can gather input and make it available to all XWayland clients through the X11 protocol.
+```
+
+You may need to set `BEMENU_BACKEND` environment variable to "wayland" if you choose not to disable XWayland.
+
+You can also build your own with a floating terminal and fzf as discussed in a [GitHub issue](https://github.com/swaywm/sway/issues/1367).
 
 ### VirtualBox
 

@@ -19,7 +19,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
     *   [3.2 Enable display scaling](#Enable_display_scaling)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Synthesis segfaults](#Synthesis_segfaults)
-    *   [4.2 xsct segfault](#xsct_segfault)
+    *   [4.2 xsct, xsdb, xmd, and tclsh segfault](#xsct,_xsdb,_xmd,_and_tclsh_segfault)
     *   [4.3 Vivado HLS testbench error with GCC](#Vivado_HLS_testbench_error_with_GCC)
     *   [4.4 Vivado Crashes with Wayland](#Vivado_Crashes_with_Wayland)
 
@@ -174,23 +174,31 @@ See [https://forums.xilinx.com/t5/Synthesis/Vivado-crashes-on-Arch-Linux-when-pe
 
 You'll need to recompile glibc (just take the PKGBUILD from the abs) with `--disable-lock-elision`. Instead of patching the system libc in /usr/lib, copy the newly compiled `libpthread-2.25.so` and `libc-2.25.so` to `/opt/Xilinx/Vivado/2016.4/ids_lite/ISE/lib/lin64` Don't forget to repeat this when glibc gets upgraded.
 
-### xsct segfault
+### xsct, xsdb, xmd, and tclsh segfault
 
-xsct might crash with message:
-
-```
- Xilinx/SDK/2018.1/bin/xsct: line 141:  5611 Segmentation fault      (core dumped) "$RDI_BINROOT"/unwrapped/"$RDI_PLATFORM$RDI_OPT_EXT"/rlwrap -rc -f "$RDI_APPROOT"/scripts/xsdb/xsdb/cmdlist -H "$HOME"/.xsctcmdhistory "$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
+The Xilinx Vivado command-line tools xsct, xsdb, xmd, and tclsh may crash with a message similar to the following:
 
 ```
+Segmentation fault (core dumped) "$RDI_BINROOT"/unwrapped/"$RDI_PLATFORM$RDI_OPT_EXT"/rlwrap -rc -f "$RDI_APPROOT"/scripts/xsdb/xsdb/cmdlist -H "$HOME"/.xsctcmdhistory "$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
 
-This is a problem with the rlwrap version bundled with vivado, probably due the lack of legacy vsyscall emulation in Archlinux. To fix this issue either drop rlwrap altogether (losing history and autocompletion in xsct) or install [rlwrap](https://www.archlinux.org/packages/?name=rlwrap) from the official repo, and edit the corresponding line in the xsct startup script:
-
- `../Xilinx/SDK/2018.1/bin/xsct` 
 ```
-# Use rlwrap to invoke XSCT
-/usr/bin/rlwrap -rc -f "$RDI_APPROOT"/scripts/xsdb/xsdb/cmdlist -H "$HOME"/.xsctcmdhistory "$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
-# OR run xsct without rlwrap
-#"$RDI_BINROOT"/loader -exec rdi_xsct "${RDI_ARGS[@]}"
+
+This is a problem with the rlwrap version bundled with Vivado, probably due to the lack of legacy vsyscall emulation in Arch Linux. To fix this issue, either drop rlwrap altogether (losing command history and auto-completion), or install [rlwrap](https://www.archlinux.org/packages/?name=rlwrap) from the official repo and edit the path to the rlwrap binary in the affected command startup script(s) from:
+
+ `/opt/Xilinx/{Vivado,SDK}/YYYY.Q/bin/{xsct,xsdb,xmd,tclsh}` 
+```
+# Use rlwrap to invoke the tool
+"$RDI_BINROOT"/unwrapped/"$RDI_PLATFORM$RDI_OPT_EXT"/rlwrap ...
+```
+
+To the following:
+
+ `/opt/Xilinx/{Vivado,SDK}/YYYY.Q/bin/{xsct,xsdb,xmd,tclsh}` 
+```
+# Use rlwrap to invoke the tool
+/usr/bin/rlwrap ...
+# OR run the tool without rlwrap
+#"$RDI_BINROOT"/loader -exec rdi_{xsct,xsdb,xmd,tclsh} "${RDI_ARGS[@]}"
 ```
 
 ### Vivado HLS testbench error with GCC

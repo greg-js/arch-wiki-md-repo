@@ -630,7 +630,7 @@ Apache也支持 WSGI ，通过 [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")模块.
 
 *   **[Streamripper](https://en.wikipedia.org/wiki/Streamripper "wikipedia:Streamripper")** — 记录并将流MP3分到不同轨.
 
-	[http://streamripper.sourceforge.net/](http://streamripper.sourceforge.net/) || [streamripper](https://www.archlinux.org/packages/?name=streamripper)
+	[http://streamripper.sourceforge.net/](http://streamripper.sourceforge.net/) || [streamripper](https://aur.archlinux.org/packages/streamripper/)
 
 *   **You-Get** — 从web下载媒体内容 (视频, 音频, 图像).
 
@@ -1226,7 +1226,7 @@ Pastebin服务经常用作引用文本或图片，特别是协作和故障排除
 
 *   **[Fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail")** — 一个远程邮件检索工具.
 
-	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://www.archlinux.org/packages/?name=fetchmail)
+	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://aur.archlinux.org/packages/fetchmail/)
 
 *   **[getmail](/index.php/Getmail "Getmail")** — 一个POP3邮件检索器，带有可靠的Maildir和命令传递.
 

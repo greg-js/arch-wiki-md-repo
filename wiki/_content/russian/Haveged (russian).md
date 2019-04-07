@@ -45,7 +45,7 @@
 
 ## Виртуальные машины
 
-Как обсуждалось в [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines), качество энтропии, генерируемой haveged, может быть оспорено в виртуальной среде. Haveged полагается на инструкцию rdtsc, которая может быть виртуализирована, из-за чего понизится уровень энтропии. В некоторых гипервизорах присутствует возможность отключить виртуализацию rdtsc, что, в теории, позволит haveged более качественно генерировать энтропию.
+Как обсуждалось в [Is it appropriate to use haveged as a source of entropy on virtual machines?](http://security.stackexchange.com/questions/34523/is-it-appropriate-to-use-haveged-as-a-source-of-entropy-on-virtual-machines), качество энтропии, генерируемой haveged, может быть спорным в виртуальной среде. Haveged полагается на инструкцию rdtsc, которая может быть виртуализирована, из-за чего понизится уровень энтропии. В некоторых гипервизорах есть возможность отключить виртуализацию rdtsc, что, в теории, позволит haveged более качественно генерировать энтропию.
 
 Чтобы отключить виртуализацию инструкции rdtsc в VMware ESXi, добавьте параметр `monitor_control.virtual_rdtsc = "FALSE"` в конфигурационный файл .vmx виртуальной машины. VMware рекомендует использовать данный параметр в случаях измерений, для которых требуется надёжный источник реального времени в виртуальной машине. [[1]](http://www.vmware.com/files/pdf/Timekeeping-In-VirtualMachines.pdf)
 

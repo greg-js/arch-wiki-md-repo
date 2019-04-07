@@ -992,7 +992,7 @@ The packages listed below have been listed to aid newer users:
 
 *   Display Manager: [LXDM](/index.php/LXDM "LXDM") or [LightDM](/index.php/LightDM "LightDM")
 *   Audio: [ALSA](/index.php/ALSA "ALSA")
-*   Volume: [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) or [pnmixer](https://aur.archlinux.org/packages/pnmixer/) with [gnome-alsamixer](https://www.archlinux.org/packages/?name=gnome-alsamixer)
+*   Volume: [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) or [pnmixer](https://aur.archlinux.org/packages/pnmixer/) with [gnome-alsamixer](https://aur.archlinux.org/packages/gnome-alsamixer/)
 *   Network: [Network manager](/index.php/Network_manager "Network manager") with [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet)
 *   Panel: [Tint2](/index.php/Tint2 "Tint2") or [Tint2-svn](/index.php/Tint2#Application_Launchers_in_tint2-svn_.28AUR.29 "Tint2")
 *   Background: [Nitrogen](/index.php/Nitrogen "Nitrogen") or [Feh](/index.php/Feh "Feh")

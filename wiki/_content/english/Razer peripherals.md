@@ -197,7 +197,7 @@ Visit the [Troubleshooting page](https://github.com/openrazer/openrazer/wiki/Tro
 
 ## Razer keyboards
 
-There are currently two Python scripts available to enable macro keys under Linux:
+There are currently two Python scripts available to enable the extra M1 - M5 macro keys, that certain Razers have, under Linux: Note that this does not allow to assign any content to Macro keys, it merely will enable the sending of keycodes. For Razers without M1 -M5 extra keys there is no point using this tool.
 
 ### Blackwidow Control
 
@@ -219,13 +219,14 @@ $ blackwidowcontrol -i
 
 ```
 
-Then use the shortcut utility of your Desktop Enviroment to map the keys
+Then use the shortcut utility of your Desktop Enviroment to map the keys, i.e. to actually use the macro keys for something useful. For example, the "KDE global shortcuts" GUI (find it in system settings) can assign macros to a key on any keyboard, not just Razers.
 
 ### Blackwidow macro scripts
 
 #### Features
 
-*   Works with BlackWidow Ultimate and Stealth 2013 (unknown whether it works with other versions)
+*   Works with BlackWidow Ultimate and Stealth 2013 (unknown whether it works with other versions or keyboard models)
+*   adding the "021e" ID for Ornata Chroma makes the Game-mode feature (white "G" LED) work on Ornata Chroma as well.
 *   Uses Python 2
 *   Bundles scripts to create and execute macros
 

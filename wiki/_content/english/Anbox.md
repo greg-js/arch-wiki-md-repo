@@ -2,13 +2,15 @@ Anbox is a free and open-source compatibility layer that aims to allow mobile ap
 
 ## Installation
 
-[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image](https://aur.archlinux.org/packages/anbox-image/), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/).
+[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/).
 
-[Start/enable](/index.php/Start/enable "Start/enable") `systemd-resolved.service` and `systemd-networkd.service` for internet to work in apps.
+[Start/enable](/index.php/Start/enable "Start/enable") the following services:
 
-Start `anbox-container-manager.service`.
+*   `systemd-resolved.service` for internet to work in apps
+*   `systemd-networkd.service` for internet to work in apps
+*   `anbox-container-manager.service`
 
-[Edit](/index.php/Edit "Edit") `anbox-session-manager.service` to add the host driver:
+[Edit](/index.php/Edit "Edit") config file for anbox-session-manger:
 
  `/etc/systemd/user/anbox-session-manager.service.d/host_driver.conf` 
 ```
@@ -17,9 +19,19 @@ ExecStart=
 ExecStart=/usr/bin/anbox session-manager --gles-driver=host
 ```
 
-Finally start the user service:
+login in **normal** user to launch user service and enable network bridge:
 
 ```
 $ systemctl --user start anbox-session-manager.service
+$ anbox-bridge
+
+```
+
+Now, you can run the android applications on your desktop's launcher on **Other** category.
+
+If you want to use adb to debug, install [android-tools](https://www.archlinux.org/packages/?name=android-tools)
+
+```
+$ adb shell
 
 ```

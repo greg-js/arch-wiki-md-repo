@@ -201,7 +201,7 @@ A workaround is passing `proto=bare` to the `psmouse` module. However, this disa
 If you discover that disabling the touchpad in the BIOS disables the wrong buttons and/or that the trackpoint buttons work very unreliable a workaround is to pass `proto=imps` to the `psmouse` module.
 
 ```
-# rmmode psmouse; modprobe psmouse proto=imps
+# rmmod psmouse; modprobe psmouse proto=imps
 
 ```
 

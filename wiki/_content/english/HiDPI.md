@@ -602,3 +602,4 @@ After changing the font, it is often garbled and unreadable when changing to oth
 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
+*   [Mixed DPI and the X Window System](http://wok.oblomov.eu/tecnologia/mixed-dpi-x11/)

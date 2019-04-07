@@ -8,7 +8,11 @@ Related articles
 
 [msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Basic setup](#Basic_setup)
@@ -22,6 +26,7 @@ Related articles
     *   [7.1 Using msmtp offline](#Using_msmtp_offline)
     *   [7.2 Vim syntax highlighting](#Vim_syntax_highlighting)
     *   [7.3 Send mail with PHP using msmtp](#Send_mail_with_PHP_using_msmtp)
+    *   [7.4 Using XOAUTH2 Authentication for Gmail](#Using_XOAUTH2_Authentication_for_Gmail)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Issues with TLS](#Issues_with_TLS)
     *   [8.2 Server sent empty reply](#Server_sent_empty_reply)
@@ -249,6 +254,27 @@ mail("your@email.com", "Test email from PHP", "msmtp as sendmail for PHP");
 ?>
 
 ```
+
+### Using XOAUTH2 Authentication for Gmail
+
+msmtp currently does not support OAUTH2 authentication. To use XOAUTH2 authentication with Gmail (see [official information](https://developers.google.com/gmail/imap/xoauth2-protocol)), you can install the [msmtp-oauth2](https://aur.archlinux.org/packages/msmtp-oauth2/) package in AUR. The package did a small hack so that the plain authentication method will send the `AUTH XOAUTH2 password` instead of the `AUTH PLAIN ...`, effectively disabling plain authentication and enabling XOAUTH2\. An example config is as follows:
+
+```
+account gmail
+host smtp.gmail.com
+port 587
+from your@gmail_login_email
+tls on
+tls_starttls on
+tls_certcheck off
+auth plain
+user any_thing_here
+passwordeval "get-gmail-token"
+logfile ~/.msmtp.log
+
+```
+
+The `get-gmail-token` script can be found from the source files of the AUR package. See more information on [getmail link](https://www.bytereef.org/howto/oauth2/getmail.html) about how this works. And see [Gmail API quickstart](https://developers.google.com/gmail/api/quickstart/python) for instruction on registering a Gmail APP and authorizing it to access emails.
 
 ## Troubleshooting
 

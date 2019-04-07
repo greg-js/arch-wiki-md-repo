@@ -111,7 +111,7 @@ Consider [removing](/index.php/Removing "Removing") [linux](https://www.archlinu
 
 [Install](/index.php/Install "Install") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) (and eventually [dialog](https://www.archlinux.org/packages/?name=dialog) for `wifi-menu`) if you would like to connect to the Internet after installation.
 
-[Enable](/index.php/Enable "Enable") `upi_ug31xx.service` (from [me176c-battery](https://aur.archlinux.org/packages/me176c-battery/)) and `thermald-me176c.service` if you have chosen to install these packages.
+[Enable](/index.php/Enable "Enable") `upi_ug31xx.service` (from [me176c-battery](https://aur.archlinux.org/packages/me176c-battery/)) if you have chosen to install it.
 
 ### Boot loader configuration
 
@@ -197,7 +197,7 @@ If you have a case that closes magnetically and automatically wakes/puts the dev
 
 ## See also
 
-*   XDA-Developers Forum Thread (TODO)
+*   [XDA-Developers Forum Thread](https://forum.xda-developers.com/memo-pad-7/orig-development/linux-arch-linux-asus-memo-pad-7-me176x-t3917593)
 *   [Project Overview for ASUS MeMO Pad 7 (ME176C(X))](https://github.com/me176c-dev/me176c#readme)
 *   [archlinux-me176c](https://github.com/me176c-dev/archlinux-me176c) (source code for packages)
 *   [me176c-boot](https://github.com/me176c-dev/me176c-boot) (documentation, examples and source code)

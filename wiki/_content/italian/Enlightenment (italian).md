@@ -8,7 +8,11 @@ Tratto dalla [documentazione di Enlightenment](http://trac.enlightenment.org/e/w
 
 	*L'ambiente di lavoro Enlightenment fornisce un window manager efficiente e mozzafiato basato sul Enlightenment Foundation Libraries (EFL) insieme ad altri componenti del desktop essenziali, come un file manager, le icone del desktop e widget. Vanta un livello senza precedenti di capacità di eseguire temi grafici, pur essendo in grado di eseguirli con hardware più vecchio o su dispositivi embedded.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Enlightenment](#Enlightenment)
     *   [1.1 Installazione](#Installazione)
@@ -217,7 +221,7 @@ Il primo rilascio di sviluppo di Enlightenment DR16 è avvenuto nel 2000, e la v
 
 ### Installare E16
 
-Per installare [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
+Per installare [enlightenment16](https://aur.archlinux.org/packages/enlightenment16/).
 
 Enlightenment può risultare molto differente dagli altri gestori delle finestre, leggere `/usr/share/doc/e16/e16.html` dopo l'installazione per maggiori dettagli. La pagina manuale è [e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) ed analizza solo le opzioni di avvio.
 

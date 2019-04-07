@@ -38,7 +38,7 @@ The following [input methods](/index.php/Input_method "Input method") are availa
 
 *   [fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul) for [Fcitx](/index.php/Fcitx "Fcitx")
 *   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) for [IBus](/index.php/IBus "IBus")
-*   [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) for [SCIM](/index.php/SCIM "SCIM")
+*   [scim-hangul](https://aur.archlinux.org/packages/scim-hangul/) for [SCIM](/index.php/SCIM "SCIM")
 *   *uim-byeoru* of [uim](/index.php/Uim "Uim")
 *   [Nimf](/index.php/Nimf "Nimf")
 *   [#Nabi](#Nabi)
@@ -67,7 +67,7 @@ Once you restart the X session, nabi will autostart by default. The default Kore
 
 #### scim-hangul
 
-[Install](/index.php/Install "Install") [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul).
+[Install](/index.php/Install "Install") [scim-hangul](https://aur.archlinux.org/packages/scim-hangul/).
 
 Now add the following to the user's `.xinitrc`, `.xprofile`, or `.xsession`:
 

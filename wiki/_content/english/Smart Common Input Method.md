@@ -8,7 +8,11 @@ Its stated goals are to:
 *   Support as many input method protocols/interfaces as possible.
 *   Support as many operating systems as possible.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Input method engines](#Input_method_engines)
@@ -36,12 +40,12 @@ Its stated goals are to:
 Currently the SCIM project has a wide range of input methods (some may need other libraries), covering more than 30 languages, including (Simplified/Traditional) Chinese, Japanese, Korean and many European languages. These are some of the examples (more can be found [here](https://web.archive.org/web/20130318035826/http://www.scim-im.org/projects/imengines)):
 
 *   [scim-chewing](https://www.archlinux.org/packages/?name=scim-chewing) - Chinese
-*   [scim-pinyin](https://www.archlinux.org/packages/?name=scim-pinyin) - Chinese Smart PinYin .
-*   [scim-tables](https://www.archlinux.org/packages/?name=scim-tables) - Chinese WuBi or other tables based
-*   [scim-anthy](https://www.archlinux.org/packages/?name=scim-anthy) - Japanese
-*   [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) - Korean
+*   [scim-pinyin](https://aur.archlinux.org/packages/scim-pinyin/) - Chinese Smart PinYin .
+*   [scim-tables](https://aur.archlinux.org/packages/scim-tables/) - Chinese WuBi or other tables based
+*   [scim-anthy](https://aur.archlinux.org/packages/scim-anthy/) - Japanese
+*   [scim-hangul](https://aur.archlinux.org/packages/scim-hangul/) - Korean
 
-[uim](/index.php/Uim "Uim") can be used as an engine for SCIM by using [scim-uim](https://www.archlinux.org/packages/?name=scim-uim).
+[uim](/index.php/Uim "Uim") can be used as an engine for SCIM by using [scim-uim](https://aur.archlinux.org/packages/scim-uim/).
 
 ## Configuration
 

@@ -132,7 +132,7 @@ fi
 
 #### Automatically switch configurations with autorandr
 
-[autorandr](https://www.archlinux.org/packages/?name=autorandr) allows you to easily configure xrandr "profiles" that will activate automatically when you connect/disconnect displays. See the [homepage](https://github.com/phillipberndt/autorandr) for usage examples.
+[autorandr](https://www.archlinux.org/packages/?name=autorandr) allows you to easily configure xrandr "profiles" that will activate automatically when you connect/disconnect displays. [Start/enable](/index.php/Start/enable "Start/enable") `autorandr.service` for hooks, see the [homepage](https://github.com/phillipberndt/autorandr) for usage examples.
 
 #### Manage 2-monitors
 

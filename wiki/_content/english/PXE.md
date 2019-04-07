@@ -208,21 +208,21 @@ After the kernel loads, the Arch bootstrap image will copy the root filesystem v
 
 ### Existing PXE Server
 
-If you have an existing PXE server with a [PXELINUX](/index.php/PXELINUX "PXELINUX") system setup (e.g. a combination of DHCP and [TFTP](/index.php/TFTP "TFTP")), you can add the following menu items to your `pxelinux.cfg` file in order to boot Arch via your preferred method:
+If you have an existing PXE server with a [PXELINUX](/index.php/PXELINUX "PXELINUX") system setup (e.g. a combination of DHCP and [TFTP](/index.php/TFTP "TFTP")), you can add the following menu items to your `/tftpboot/pxelinux.cfg/default` file in order to boot Arch via your preferred method:
 
 ```
-LABEL 2
+LABEL archlinux
         MENU LABEL Arch Linux x86_64
         LINUX */path/to/extracted/Arch/ISO*/arch/boot/x86_64/vmlinuz
         INITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/amd_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
-        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/ ip=::
-        SYSAPPEND 2
+        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/
+        SYSAPPEND 3
         TEXT HELP
         Arch Linux 2018.09.01 x86_64
         ENDTEXT
 ```
 
-You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD. Adding the `ip=` instruction is necessary to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network. See [README.bootparams](https://git.archlinux.org/archiso.git/plain/docs/README.bootparams) for available boot parameters.
+You can replace `archiso_http_srv` with `archiso_nfs_srv` for NFS or `archiso_nbd_srv` for NBD (see usage examples in `arch/boot/syslinux/archiso_pxe.cfg` file resided on ArchLinux iso). Whichever method you choose, you must pass `ip=` parameter to instruct the kernel to bring up the network interface before it attempts to mount the installation medium over the network. Passing `BOOTIF=` is required when there are several wired interfaces on the client side and/or you want resolv.conf to be already configured inside booted archiso. You can use [sysappend mask](https://wiki.syslinux.org/wiki/index.php?title=Config#SYSAPPEND) 3 (which is 1+2) to pass these parameters automatically. For available boot parameters see [README.bootparams](https://git.archlinux.org/archiso.git/plain/docs/README.bootparams).
 
 ### Low memory systems
 

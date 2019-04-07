@@ -13,7 +13,11 @@ Subpages without an English counterpart:
 *   [ru:Localization/Russian](https://wiki.archlinux.org/index.php/Localization/Russian_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ru:Localization/Russian")
 *   [sk:Localization/Slovak](https://wiki.archlinux.org/index.php/Localization/Slovak_(Slovensk%C3%BD) "sk:Localization/Slovak")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Fonts](#Fonts)
 *   [2 Locale](#Locale)
@@ -88,7 +92,7 @@ See also [Wikipedia:List of input methods for Unix platforms](https://en.wikiped
 
 | Language | Back-end | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | Hime |
 | Vietnamese | [UniKey](http://www.unikey.org/linux.php) | [fcitx-unikey](https://www.archlinux.org/packages/?name=fcitx-unikey) | [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) | [scim-unikey](https://github.com/scim-im/scim-unikey) | - | - | - |
-| Others | [m17n-lib](https://www.archlinux.org/packages/?name=m17n-lib) | [fcitx-m17n](https://www.archlinux.org/packages/?name=fcitx-m17n) | [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) | [scim-m17n](https://www.archlinux.org/packages/?name=scim-m17n) | depends | ? | ? |
+| Others | [m17n-lib](https://www.archlinux.org/packages/?name=m17n-lib) | [fcitx-m17n](https://www.archlinux.org/packages/?name=fcitx-m17n) | [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) | [scim-m17n](https://aur.archlinux.org/packages/scim-m17n/) | depends | ? | ? |
 
 ### GTK IM-module
 

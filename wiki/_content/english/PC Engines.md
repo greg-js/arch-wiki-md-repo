@@ -65,13 +65,13 @@ linux boot/x86_64/vmlinuz archisobasedir=arch archisolabel=ARCH_201710 initrd=bo
 add the following **with a leading space**
 
 ```
- console=ttyS0,38400
+ console=ttyS0,115200
 
 ```
 
 and press "Enter"
 
-Now wait for about 30 seconds and you will get a colorful boot prompt
+Now exit picocom and reconnect with the first command again to switch to the higher baud rate of 115200. Finally wait for about 30 seconds and you will get a colorful boot prompt.
 
 ### Install the system
 
@@ -108,7 +108,7 @@ If using [Syslinux](/index.php/Syslinux "Syslinux"), make sure to provide a `con
 LABEL arch
     MENU LABEL Arch Linux
     LINUX ../vmlinuz-linux
-    APPEND root=UUID=1ef5a2eb-1908-4929-9b91-f6c4183695ac rw console=ttyS0,38400
+    APPEND root=UUID=1ef5a2eb-1908-4929-9b91-f6c4183695ac rw console=ttyS0,115200
     INITRD ../initramfs-linux.img
 ```
 

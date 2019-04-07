@@ -250,6 +250,8 @@ Or
 
 See these related articles and the article of the filesystem of interest for more information.
 
+**Tip:** File systems can also be mounted with *systemd-mount* instead of *mount*. If the mount point is not specified, the file system will be mounted at `/run/media/system/*device_identifier*/`. This allows to easily mount a file system without having to decide where to mount it. See [systemd-mount(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-mount.1) for usage and more details.
+
 ### List mounted file systems
 
 To list all mounted file systems, use [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8):
@@ -287,6 +289,7 @@ or
 ## See also
 
 *   [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5)
+*   [systemd-mount(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-mount.1)
 *   [Documentation of file systems supported by linux](https://www.kernel.org/doc/Documentation/filesystems/)
 *   [Wikipedia:File systems](https://en.wikipedia.org/wiki/File_systems "wikipedia:File systems")
 *   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")

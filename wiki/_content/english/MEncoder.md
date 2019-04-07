@@ -6,7 +6,11 @@ Related articles
 
 An overview of [MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder"), the video encoding/decoding tool provided by [MPlayer](/index.php/MPlayer "MPlayer") as part of the [mencoder](https://www.archlinux.org/packages/?name=mencoder) package.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Basics](#Basics)
 *   [2 Example](#Example)
@@ -14,17 +18,17 @@ An overview of [MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEnc
     *   [2.2 Ripping and encoding the audio](#Ripping_and_encoding_the_audio)
     *   [2.3 Making the final .mkv file](#Making_the_final_.mkv_file)
     *   [2.4 Encoding video mp4 for Nokia 5800 XM and Nokia N97](#Encoding_video_mp4_for_Nokia_5800_XM_and_Nokia_N97)
-    *   [2.5 Encoding a multi audio / multi language MKV video to an MP4 with different audio streams](#Encoding_a_multi_audio_.2F_multi_language_MKV_video_to_an_MP4_with_different_audio_streams)
+    *   [2.5 Encoding a multi audio / multi language MKV video to an MP4 with different audio streams](#Encoding_a_multi_audio_/_multi_language_MKV_video_to_an_MP4_with_different_audio_streams)
     *   [2.6 Adding SubRip subtitles to a file](#Adding_SubRip_subtitles_to_a_file)
-        *   [2.6.1 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29)
-        *   [2.6.2 Single-pass x264 (very high-quality)](#Single-pass_x264_.28very_high-quality.29)
-        *   [2.6.3 Two-pass xvid (very high-quality)](#Two-pass_xvid_.28very_high-quality.29)
-        *   [2.6.4 Three-pass lavc (very high-quality mpeg4)](#Three-pass_lavc_.28very_high-quality_mpeg4.29)
-        *   [2.6.5 Single-pass lavc (very high-quality mpeg-2)](#Single-pass_lavc_.28very_high-quality_mpeg-2.29)
+        *   [2.6.1 Two-pass x264 (very high-quality)](#Two-pass_x264_(very_high-quality))
+        *   [2.6.2 Single-pass x264 (very high-quality)](#Single-pass_x264_(very_high-quality))
+        *   [2.6.3 Two-pass xvid (very high-quality)](#Two-pass_xvid_(very_high-quality))
+        *   [2.6.4 Three-pass lavc (very high-quality mpeg4)](#Three-pass_lavc_(very_high-quality_mpeg4))
+        *   [2.6.5 Single-pass lavc (very high-quality mpeg-2)](#Single-pass_lavc_(very_high-quality_mpeg-2))
     *   [2.7 Adding VOBsub subtitles to a file](#Adding_VOBsub_subtitles_to_a_file)
-        *   [2.7.1 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29_2)
+        *   [2.7.1 Two-pass x264 (very high-quality)](#Two-pass_x264_(very_high-quality)_2)
         *   [2.7.2 Testing subtitle muxing results](#Testing_subtitle_muxing_results)
-            *   [2.7.2.1 Single-pass x264 (low quality)](#Single-pass_x264_.28low_quality.29)
+            *   [2.7.2.1 Single-pass x264 (low quality)](#Single-pass_x264_(low_quality))
     *   [2.8 mp2 vs. mp3lame vs. aac](#mp2_vs._mp3lame_vs._aac)
     *   [2.9 Encoding AVI videos in Windows and Mac readable formats](#Encoding_AVI_videos_in_Windows_and_Mac_readable_formats)
 *   [3 GUI frontends](#GUI_frontends)
@@ -317,7 +321,7 @@ The official MPlayer homepage has a comprehensive list of available front-ends [
 
 *   **OGMRip** — An application and a set of libraries for ripping and encoding DVD into AVI, OGM, MP4, or Matroska files using a wide variety of codecs. It relies on mplayer, mencoder, ogmtools, mkvtoolnix, mp4box, oggenc, lame, and faac to perform its tasks.
 
-	[http://ogmrip.sourceforge.net/](http://ogmrip.sourceforge.net/) || [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)
+	[http://ogmrip.sourceforge.net/](http://ogmrip.sourceforge.net/) || [ogmrip](https://aur.archlinux.org/packages/ogmrip/)
 
 *   **Hybrid** — A multi platform (Linux/macOS/Windows) Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an avi/mp4/m2ts/mkv/webm container, a BluRay or an AVCHD structure.
 

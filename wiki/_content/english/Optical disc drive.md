@@ -767,7 +767,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **OGMRip** — An application and a set of libraries for ripping and encoding DVD into AVI, OGM, MP4, or Matroska files using a wide variety of codecs. It relies on mplayer, mencoder, ogmtools, mkvtoolnix, mp4box, oggenc, lame, and faac to perform its tasks.
 
-	[http://ogmrip.sourceforge.net/](http://ogmrip.sourceforge.net/) || [ogmrip](https://www.archlinux.org/packages/?name=ogmrip)
+	[http://ogmrip.sourceforge.net/](http://ogmrip.sourceforge.net/) || [ogmrip](https://aur.archlinux.org/packages/ogmrip/)
 
 ### DVD-Audio
 

@@ -137,7 +137,7 @@ prompt walters
 
 See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and also the note in [#Startup/Shutdown files](#Startup/Shutdown_files) for details.
 
-The incantation `typeset -U path`, where the `-U` stands for unique, tells the shell that it should not add anything to `$PATH` if it's there already:
+The incantation `typeset -U path`, where the `-U` stands for unique, tells the shell that it should not add anything to `$PATH` if it is there already:
 
  `~/.zshenv` 
 ```
@@ -194,7 +194,57 @@ Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its
 
 ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
-See [ZshWiki: zle:bindkeys](http://zshwiki.org/home/zle/bindkeys) for instructions on keybinding setup.
+Add the following to your `~/.zshrc` to set up key bindings using key sequences from [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5):
+
+ `~/.zshrc` 
+```
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -g -A key
+
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+key[Insert]="${terminfo[kich1]}"
+key[Backspace]="${terminfo[kbs]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+key[Left]="${terminfo[kcub1]}"
+key[Right]="${terminfo[kcuf1]}"
+key[PageUp]="${terminfo[kpp]}"
+key[PageDown]="${terminfo[knp]}"
+key[ShiftTab]="${terminfo[kcbt]}"
+
+# setup key accordingly
+[[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"      beginning-of-line
+[[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"       end-of-line
+[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"    overwrite-mode
+[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}" backward-delete-char
+[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"    delete-char
+[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"        up-line-or-history
+[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"      down-line-or-history
+[[ -n "${key[Left]}"      ]] && bindkey -- "${key[Left]}"      backward-char
+[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"     forward-char
+[[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"    beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"  end-of-buffer-or-history
+[[ -n "${key[ShiftTab]}"  ]] && bindkey -- "${key[ShiftTab]}"  reverse-menu-complete
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start {
+		echoti smkx
+	}
+	function zle_application_mode_stop {
+		echoti rmkx
+	}
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
+```
+
+See [ZshWiki:Keybindings](http://zshwiki.org/home/keybindings/) for more information.
 
 ### History search
 
@@ -206,8 +256,8 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-[[ -n "$key[Up]"   ]] && bindkey -- "$key[Up]"   up-line-or-beginning-search
-[[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
+[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
+[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 ```
 
@@ -220,7 +270,7 @@ Zsh supports:
 *   left side prompts: `PS1` (or `PROMPT`), `PS2`, `PS3`, `PS4`.
 *   right side prompts: `RPS1` (or `RPROMPT`), `RPS2` (or `RPROMPT2`).
 
-See [Parameters Used By The Shell](http://zsh.sourceforge.net/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell) or [zshparam(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1) for their explanation.
+See [zshparam(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1#PARAMETERS_USED_BY_THE_SHELL) for their explanation.
 
 #### Prompt themes
 
@@ -290,11 +340,11 @@ If everything works, you can edit your `.zshrc` accordingly.
 
 For users who are dissatisfied with the prompt themes mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with prompt escapes.
 
-See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html) for a list of prompt variables and conditional substrings, or take a look at the [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) manpage.
+See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#EXPANSION_OF_PROMPT_SEQUENCES) for a list of prompt variables and conditional substrings.
 
 ##### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) or [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1) for prompt escapes to set foreground color, background color and other visual effects.
+Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Visual_effects) for prompt escapes to set foreground color, background color and other visual effects.
 
 [Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name. Most terminals support the following colors by name[[1]](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting):
 
@@ -435,7 +485,7 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session.
 
-See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) or [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1).
+See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1#REMEMBERING_RECENT_DIRECTORIES).
 
 ### Help command
 
@@ -598,7 +648,7 @@ My xterm title
 
 ```
 
-An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [Hook Functions](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions) or [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1).
+An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Hook_Functions).
 
 By using `print -P` you can take advantage of prompt escapes.
 

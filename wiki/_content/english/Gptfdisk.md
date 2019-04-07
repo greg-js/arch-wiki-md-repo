@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Gdisk](/index.php/Gdisk "Gdisk")
+*   [GPT fdisk](/index.php/GPT_fdisk "GPT fdisk")

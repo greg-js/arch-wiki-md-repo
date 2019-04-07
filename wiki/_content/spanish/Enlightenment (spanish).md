@@ -283,7 +283,7 @@ Enlightenment, Development Release 16 se lanzó por primera vez en el año 2000 
 
 ### Instalar E16
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [enlightenment16](https://www.archlinux.org/packages/?name=enlightenment16).
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [enlightenment16](https://aur.archlinux.org/packages/enlightenment16/).
 
 Véase `/usr/share/doc/e16/e16.html` para documentación más detallada. La página de manual está en [e16(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e16.1) y solo da opciones de arranque.
 

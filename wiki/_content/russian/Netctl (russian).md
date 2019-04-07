@@ -40,7 +40,7 @@
 
 | Функция | Пакет | Программа netctl
 (если есть) |
-| Автоматическое соединение с беспроводными сетями | [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) | `netctl-auto` |
+| Автоматическое соединение с беспроводными сетями | [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/) | `netctl-auto` |
 | Автоматическое проводное содинение | [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) | `netctl-ifplugd` |
 | WPA | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) |
 | DHCP | [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) или [dhclient](https://www.archlinux.org/packages/?name=dhclient) |
@@ -116,7 +116,7 @@
 
 Сначала [установите](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") необходимые пакеты:
 
-*   Пакет [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond) требуется для использования `netctl-auto@*interface*.service`
+*   Пакет [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/) требуется для использования `netctl-auto@*interface*.service`
 *   Пакет [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) требуется для использования `netctl-ifplugd@*interface*.service`
 
 Теперь создайте в каталоге `/etc/netctl` все профили, которые должны будут запускаться с помощью `netctl-auto@*interface*.service` и `netctl-ifplugd@*interface*.service`.

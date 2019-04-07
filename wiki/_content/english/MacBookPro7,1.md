@@ -7,7 +7,11 @@ Related articles
 
 This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro alongside a pre-existing OSX operating system. For general help on the installation procedure see the [Installation guide](/index.php/Installation_guide "Installation guide").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparation](#Preparation)
     *   [1.1 Install Boot Manager](#Install_Boot_Manager)
@@ -25,6 +29,7 @@ This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro a
 *   [4 Video](#Video)
     *   [4.1 Nouveau](#Nouveau)
     *   [4.2 Nvidia](#Nvidia)
+*   [5 Fan Control](#Fan_Control)
 
 ## Preparation
 
@@ -98,7 +103,7 @@ You should now be able to boot your mac in efi-mode via the kernel's efistub fea
 Booting your mac in csm- or legacy-mode provides a solution. To do so, we need a **hybrid mbr**, with at least one 'active/bootable' partition. See [here](http://www.rodsbooks.com/gdisk/hybrid.html) for more general information on how to setup a hybrid mbr. Simply boot in **efi-mode**, then assuming you have three partitions, the ESP partition, an osx and a linux partition you'll need to use gdisk to set things up.
 
 ```
-gdisk /dev/sda
+# gdisk /dev/sda
 
 ```
 
@@ -213,7 +218,7 @@ As usual, for more information on configuring and using gummiboot, see [gummiboo
 Otherwise, if you don't want to miss out the advantages of the nvidia driver, I suggest you to install [syslinux](/index.php/Syslinux "Syslinux") or also [GRUB](/index.php/GRUB "GRUB") for the CSM-Mode. We'll use syslinux because it's the simplest to setup, but others should also work. Install it via pacman, and then just execute
 
 ```
-syslinux-install_update -i -a -m
+# syslinux-install_update -i -a -m
 
 ```
 
@@ -237,7 +242,7 @@ Note that 'sda3' refers to the **gpt mapping**, 'vga=865' means 1280x800 framebu
 If booting fails, first try to use the initramfs-linux-fallback.img, as it includes more modules than your 'auto-detected' initramfs, and should allow the kernel to actually find your root partition. You'll then need to rebuild your regular initramfs. Rebuild it with
 
 ```
-mkinitcpio -p linux
+# mkinitcpio -p linux
 
 ```
 
@@ -259,7 +264,7 @@ The easiest way to see if you were successful, is to install the [NVIDIA](/index
 [Wireless Setup](/index.php/Wireless_Setup "Wireless Setup") provides instructions on how to identify your card, but if your MacBook Pro 7,1 is like mine then you'll head to [Broadcom Wireless](/index.php/Broadcom_wireless "Broadcom wireless") and use this command.
 
 ```
-$ lspci -vnn -d 14e4:
+# lspci -vnn -d 14e4:
 
 ```
 
@@ -269,7 +274,7 @@ I also recommend `netctl`.
 
 **Note:** Alternative solution for using b43:
 
-As of kernel version 3.17.1-2, Broadcom Wireless driver most likely won't work (ERROR @wl_cfg80211_scan :WLC_SCAN error (-22)). The only option seems to be loading the b43 driver in [PIO](https://en.wikipedia.org/wiki/Programmed_input/output "wikipedia:Programmed input/output") mode. To enable PIO mode, install driver by following the guide at [wireless.kernel.org](http://wireless.kernel.org/en/users/Drivers/b43), then load the b43 kernel module with pio=1 and qos=0 parameters. To make this happen at boot, create `b43-firmware.conf` file in `/etc/modprobe.d/` and add the following lines:
+As of kernel version 3.17.1-2, Broadcom Wireless driver most likely won't work (ERROR @wl_cfg80211_scan :WLC_SCAN error (-22)). The only option seems to be loading the b43 driver in [PIO](https://en.wikipedia.org/wiki/Programmed_input/output "wikipedia:Programmed input/output") mode. To enable PIO mode, install driver by following the guide at [wireless.kernel.org](http://wireless.kernel.org/en/users/Drivers/b43), then load the b43 kernel module with pio=1 and qos=0 parameters. To make this happen at boot, create `b43-firmware.conf` file in `/etc/modprobe.d/` and add the following lines:
 
  `b43-firmware.conf` 
 ```
@@ -301,5 +306,14 @@ Works out of the box, performance however is not that great and your system will
 The drivers work out of the box when booting the mac in csm- or legacy-mode. See [here](https://bbs.archlinux.org/viewtopic.php?id=162289) for some discussion on the topic.
 
 Running the drivers in **efi-mode** requires setting some PCI registers before the kernel modules get loaded, preferably using a udev hook or GRUB script. Otherwise, the screen just remains black when X starts. Follow these [instructions](http://askubuntu.com/questions/264247/proprietary-nvidia-drivers-with-efi-on-mac-to-prevent-overheating/613573#613573) in order to find the appropriate PCI device IDs for which to set the registers. This approach has been confirmed to work and is still being actively discussed inside the above mentioned [thread](https://bbs.archlinux.org/viewtopic.php?pid=1522950#p1522950).
+
+## Fan Control
+
+For controlling the fans I recommend using mbpfan from the AUR ([mbpfan-git](https://aur.archlinux.org/packages/mbpfan-git/)), reasons being is that from my experience fan control isn't very great on Arch Linux by default and fans always run really loud without this package! Once you install that from the AUR add it to startup!
+
+```
+# systemctl mbpfan.service
+
+```
 
 **To be continued..**

@@ -6,7 +6,11 @@ netcfg è utile a quegli utenti che cercano un mezzo semplice e robusto per gest
 
 **Nota:** Con la versione netcfg-2.8.9 si è interrotta la compatibilità con il file rc.conf. Gli utenti di netcfg dovranno configurare tutte le interfacce nel file `/etc/conf.d/netcfg` invece che in `/etc/rc.conf`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Preparazione](#Preparazione)
 *   [2 Installazione](#Installazione)
@@ -19,38 +23,38 @@ netcfg è utile a quegli utenti che cercano un mezzo semplice e robusto per gest
     *   [5.4 Supporto a systemd](#Supporto_a_systemd)
 *   [6 Suggerimenti utili](#Suggerimenti_utili)
     *   [6.1 Passare argomenti a iwconfig prima di connettersi](#Passare_argomenti_a_iwconfig_prima_di_connettersi)
-    *   [6.2 rfkill (abilita/disabilita il wireless)](#rfkill_.28abilita.2Fdisabilita_il_wireless.29)
-    *   [6.3 Eseguire comandi prima o dopo che l'interfaccia sia accesa o spenta](#Eseguire_comandi_prima_o_dopo_che_l.27interfaccia_sia_accesa_o_spenta)
+    *   [6.2 rfkill (abilita/disabilita il wireless)](#rfkill_(abilita/disabilita_il_wireless))
+    *   [6.3 Eseguire comandi prima o dopo che l'interfaccia sia accesa o spenta](#Eseguire_comandi_prima_o_dopo_che_l'interfaccia_sia_accesa_o_spenta)
     *   [6.4 Errore di connessione intermittente](#Errore_di_connessione_intermittente)
     *   [6.5 Configurazione tramite interfaccia](#Configurazione_tramite_interfaccia)
     *   [6.6 Output hooks](#Output_hooks)
-    *   [6.7 ArchAssitant (GUI)](#ArchAssitant_.28GUI.29)
-    *   [6.8 Netcfg Easy Wireless LAN (newlan)](#Netcfg_Easy_Wireless_LAN_.28newlan.29)
+    *   [6.7 ArchAssitant (GUI)](#ArchAssitant_(GUI))
+    *   [6.8 Netcfg Easy Wireless LAN (newlan)](#Netcfg_Easy_Wireless_LAN_(newlan))
     *   [6.9 wifi-select](#wifi-select)
     *   [6.10 Passaggio di argomenti a dhcpcd](#Passaggio_di_argomenti_a_dhcpcd)
         *   [6.10.1 Accelerare il DHCP mediante dhcpcd](#Accelerare_il_DHCP_mediante_dhcpcd)
     *   [6.11 Uso di dhclient al posto di dhcpcd](#Uso_di_dhclient_al_posto_di_dhcpcd)
-    *   [6.12 Configurare un bridge da usare con macchine virtuali (VMs)](#Configurare_un_bridge_da_usare_con_macchine_virtuali_.28VMs.29)
-    *   [6.13 Aggiungere più indirizzi IP ad un'interfaccia](#Aggiungere_pi.C3.B9_indirizzi_IP_ad_un.27interfaccia)
+    *   [6.12 Configurare un bridge da usare con macchine virtuali (VMs)](#Configurare_un_bridge_da_usare_con_macchine_virtuali_(VMs))
+    *   [6.13 Aggiungere più indirizzi IP ad un'interfaccia](#Aggiungere_più_indirizzi_IP_ad_un'interfaccia)
     *   [6.14 Aggiungere indirizzamenti statici](#Aggiungere_indirizzamenti_statici)
         *   [6.14.1 Tethering Bluetooth via *pand*](#Tethering_Bluetooth_via_pand)
 *   [7 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [7.1 Debugging](#Debugging)
     *   [7.2 Rete non disponibile](#Rete_non_disponibile)
     *   [7.3 Associazione wireless non riuscita](#Associazione_wireless_non_riuscita)
-    *   [7.4 Impossibile ottenere l'indirizzo IP con DHCP](#Impossibile_ottenere_l.27indirizzo_IP_con_DHCP)
-    *   [7.5 Connessione non valida, controllo ortografico o guardare gli esempi](#Connessione_non_valida.2C_controllo_ortografico_o_guardare_gli_esempi)
+    *   [7.4 Impossibile ottenere l'indirizzo IP con DHCP](#Impossibile_ottenere_l'indirizzo_IP_con_DHCP)
+    *   [7.5 Connessione non valida, controllo ortografico o guardare gli esempi](#Connessione_non_valida,_controllo_ortografico_o_guardare_gli_esempi)
     *   [7.6 Nessuna connessione](#Nessuna_connessione)
         *   [7.6.1 Carrier Timeout](#Carrier_Timeout)
         *   [7.6.2 Skip no carrier](#Skip_no_carrier)
     *   [7.7 Driver quirks](#Driver_quirks)
-    *   [7.8 Ralink legacy driver rt2500, rt2400 usando iwpriv](#Ralink_legacy_driver_rt2500.2C_rt2400_usando_iwpriv)
-    *   [7.9 Nel caso di: "/var/run/network//suspend/": No such file or directory](#Nel_caso_di:_.22.2Fvar.2Frun.2Fnetwork.2F.2Fsuspend.2F.22:_No_such_file_or_directory)
-    *   [7.10 Ancora non funziona, che cosa devo fare?](#Ancora_non_funziona.2C_che_cosa_devo_fare.3F)
+    *   [7.8 Ralink legacy driver rt2500, rt2400 usando iwpriv](#Ralink_legacy_driver_rt2500,_rt2400_usando_iwpriv)
+    *   [7.9 Nel caso di: "/var/run/network//suspend/": No such file or directory](#Nel_caso_di:_"/var/run/network//suspend/":_No_such_file_or_directory)
+    *   [7.10 Ancora non funziona, che cosa devo fare?](#Ancora_non_funziona,_che_cosa_devo_fare?)
 *   [8 Domande frequenti](#Domande_frequenti)
-    *   [8.1 Perchè netcfg non fa *(alcune cose)*?](#Perch.C3.A8_netcfg_non_fa_.28alcune_cose.29.3F)
-    *   [8.2 Perchè netcfg non si comporta in *questo* modo?](#Perch.C3.A8_netcfg_non_si_comporta_in_questo_modo.3F)
-    *   [8.3 Ho ancora bisogno di *(qualche cosa)* se sto utilizzando netcfg?](#Ho_ancora_bisogno_di_.28qualche_cosa.29_se_sto_utilizzando_netcfg.3F)
+    *   [8.1 Perchè netcfg non fa *(alcune cose)*?](#Perchè_netcfg_non_fa_(alcune_cose)?)
+    *   [8.2 Perchè netcfg non si comporta in *questo* modo?](#Perchè_netcfg_non_si_comporta_in_questo_modo?)
+    *   [8.3 Ho ancora bisogno di *(qualche cosa)* se sto utilizzando netcfg?](#Ho_ancora_bisogno_di_(qualche_cosa)_se_sto_utilizzando_netcfg?)
 *   [9 Resources](#Resources)
 
 ## Preparazione
@@ -68,7 +72,7 @@ Assicurarsi di avere l'ultima versione di netcfg installato. Le versioni più da
 
 ```
 
-Dalla versione 2.5.x, le dipendenze opzionali includono [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond), richiesto per il roaming automatico delle connessioni wireless, e [ifplugd](https://www.archlinux.org/packages/?name=ifplugd), richiesto per la configurazione automatica Ethernet. ([Ulteriori informazioni](https://www.archlinux.org/news/487/))
+Dalla versione 2.5.x, le dipendenze opzionali includono [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/), richiesto per il roaming automatico delle connessioni wireless, e [ifplugd](https://www.archlinux.org/packages/?name=ifplugd), richiesto per la configurazione automatica Ethernet. ([Ulteriori informazioni](https://www.archlinux.org/news/487/))
 
 ```
 # pacman -S wpa_actiond ifplugd
@@ -213,7 +217,7 @@ WIRELESS_INTERFACE="wlan0"
 
 È inoltre possibile definire una lista delle reti wireless che dovrebbe automaticamente connettersi con la variabile `AUTO_PROFILES` in `/etc/conf.d/netcfg`. Se `AUTO_PROFILES` non è settato, verrà tentata la connessione ad ogni rete wireless.
 
-È richiesto inoltre il pacchetto [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond). Si noti che i profili wpa-config non funzionano con net-auto-wireless. Convertirli perciò in WPA-configsection.
+È richiesto inoltre il pacchetto [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/). Si noti che i profili wpa-config non funzionano con net-auto-wireless. Convertirli perciò in WPA-configsection.
 
 ### net-auto-wired
 
@@ -398,7 +402,7 @@ WPA_DRIVER  - Di default è wext, può essere utile nl80211 per dispositivi mac8
 
 ```
 
-**Note:** `POST_UP`/`POST_DOWN` richiede il pacchetto [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond).
+**Note:** `POST_UP`/`POST_DOWN` richiede il pacchetto [wpa_actiond](https://aur.archlinux.org/packages/wpa_actiond/).
 
 ### Output hooks
 
@@ -657,7 +661,7 @@ Se si ottengono vari messaggi di debug simili ai seguenti (ricordando che il nom
 ```
  DEBUG: Loading profile eth0-dhcp
  DEBUG: Configuring interface eth0
- :: eth0-dhcp up
+ :: eth0-dhcp up
  DEBUG: status reported to profile_up as:
  DEBUG: Loading profile eth0-dhcp
  DEBUG: Configuring interface eth0

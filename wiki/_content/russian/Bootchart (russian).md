@@ -1,21 +1,29 @@
+Ссылки по теме
+
+*   [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Bootchart](/index.php/Bootchart "Bootchart"). Дата последней синхронизации: 29 февраля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Bootchart&diff=0&oldid=419232).
 
 **Примечание:** Bootchart является частью systemd. Эта статья описывает bootchart до того, как пакет стал непосредственной частью systemd.
 
 [Bootchart](https://meego.gitorious.org/meego-developer-tools/bootchart) это ручная утилита используемая для анализа и ускорения загрузки компьютера. Утилита содержит в себе bootchartd демона, который записывает и создаёт изображение. (на основе записей)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка Bootchart](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Bootchart)
-*   [2 Запуск Bootchart](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Bootchart)
-    *   [2.1 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-*   [3 Генерирование изображения](#.D0.93.D0.B5.D0.BD.D0.B5.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка Bootchart](#Установка_Bootchart)
+*   [2 Запуск Bootchart](#Запуск_Bootchart)
+    *   [2.1 Настройка](#Настройка)
+*   [3 Генерирование изображения](#Генерирование_изображения)
 *   [4 Bootchart2](#Bootchart2)
-*   [5 Полезные ссылки](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D1.81.D1.81.D1.8B.D0.BB.D0.BA.D0.B8)
+*   [5 Полезные ссылки](#Полезные_ссылки)
 
 ## Установка Bootchart
 
-Пакет [bootchart](https://www.archlinux.org/packages/?name=bootchart) находится в репозитории extra.
+Пакет [bootchart](https://aur.archlinux.org/packages/bootchart/) находится в репозитории extra.
 
 ## Запуск Bootchart
 

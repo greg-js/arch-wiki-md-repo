@@ -2,10 +2,9 @@
 
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
 *   [Vagrant](/index.php/Vagrant "Vagrant")
 
-[Docker](http://www.docker.io) — это утилита для упаковки, загрузки и запуска любых приложений через легковесный контейнер.
+[Docker](https://en.wikipedia.org/wiki/ru:Docker "wikipedia:ru:Docker") — утилита для упаковки, загрузки и запуска любых приложений в легковесных контейнерах.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -15,7 +14,7 @@
 
 *   [1 Установка](#Установка)
 *   [2 Настройка](#Настройка)
-    *   [2.1 Storage driver](#Storage_driver)
+    *   [2.1 Драйвер хранения](#Драйвер_хранения)
     *   [2.2 Remote API](#Remote_API)
         *   [2.2.1 Remote API с systemd](#Remote_API_с_systemd)
     *   [2.3 Конфигурация сокета демона](#Конфигурация_сокета_демона)
@@ -44,37 +43,35 @@
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [docker](https://www.archlinux.org/packages/?name=docker), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Для i686 установите [docker-git](https://aur.archlinux.org/packages/docker-git/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"). Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") службу `docker.service` и проверьте ее работу:
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [docker](https://www.archlinux.org/packages/?name=docker) или [docker-git](https://aur.archlinux.org/packages/docker-git/), версию для разработки. Затем [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") службу `docker.service` и проверьте ее работу:
 
 ```
  # docker info
 
 ```
 
-Обратите внимание, что запуск службы Docker может завершиться сбоем, если у вас есть активное VPN-соединение из-за конфликтов IP между VPN и сетевым мостом и оверлейной сетью Docker. Если это так, попробуйте отключить VPN перед запуском службы Docker. Вы можете переподключить VPN сразу после этого. [Вы также можете попытаться разрешить конфликт сетей.](https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker)
+Обратите внимание, что запуск службы Docker может завершиться сбоем, если имеется активное VPN-соединение. Это происходит из-за IP-конфликтов между сетевыми мостами и оверлейными сетями VPN и Docker. Если это так, попробуйте отключить VPN перед запуском службы Docker. Вы можете переподключить VPN сразу после этого. [Вы также можете попытаться разрешить конфликт сетей.](https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker)
 
-Если вы хотите иметь возможность запускать docker как обычный пользователь, добавьте его в `docker` [user group](/index.php/User_group "User group") и перелогиньтесь:
+Если требуется запуск Docker от имени обычного пользователя, добавьте его в [группу пользователей](/index.php/Users_and_groups_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Управление_группами "Users and groups (Русский)") `docker`:
 
 ```
 # gpasswd -a *user* docker
 
 ```
 
-**Важно:** Любой, кто добавлен в группу `docker`, имеет права, эквивалентные правам суперпользователя. Больше информации [здесь](https://github.com/docker/docker/issues/9976) и [здесь](https://docs.docker.com/engine/security/security/).
-
-**Примечание:** По состоянию на [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 *vsyscalls*, которые требуются определенными программами в контейнерах (такими как *apt-get*), по умолчанию отключены в конфигурации ядра. Чтобы включить их снова, добавьте`vsyscall=emulate` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Больше информации в [FS#57336](https://bugs.archlinux.org/task/57336).
+**Важно:** Каждый пользователь в группе `docker` имеет права, равноценные правам суперпользователя. Больше информации [здесь](https://github.com/docker/docker/issues/9976) и [здесь](https://docs.docker.com/engine/security/security/).
 
 ## Настройка
 
-### Storage driver
+### Драйвер хранения
 
-Docker storage driver (или graph driver) оказывает огромное влияние на производительность. Его задача - эффективно хранить слои изображений контейнеров, то есть, когда несколько изображений совместно используют слой, только один слой использует дисковое пространство. Совместимая опция `devicemapper` предлагает неоптимальную производительность, которая просто ужасна на вращающихся дисках. Кроме того, `devicemapper` не рекомендуется в производстве.
+Драйвер хранения Docker (storage driver или graph driver) значительно влияет на производительность. Его задача — эффективно хранить слои образов контейнеров, то есть когда несколько образов совместно используют слой, только один слой использует дисковое пространство. Совместимая опция `devicemapper` предлагает неоптимальную производительность, которая просто ужасна на вращающихся дисках. Кроме того, `devicemapper` не рекомендуется использовать в промышленной среде.
 
-Поскольку Arch linux поставляется с новым ядром Linux, нет смысла использовать опцию совместимости. Хороший, современный выбор - `overlay2`.
+Поскольку Arch Linux поставляется с новыми ядрами Linux, нет смысла использовать опцию совместимости. Хороший, современный выбор — `overlay2`.
 
-Чтобы увидеть текущий драйвер хранилища, запустите `# docker info | head`, современная установка Docker уже должна использовать `overlay2` по умолчанию.
+Выполните `# docker info | head`, чтобы увидеть текущий драйвер хранилища. Новые установки Docker уже должны использовать `overlay2` по умолчанию.
 
-Чтобы установить свой собственный драйвер хранилища, отредактируйте `/etc/docker/daemon.json` (создайте его, если он не существует):
+Отредактируйте файл `/etc/docker/daemon.json` (создайте его, если он не существует), чтобы изменить драйвер хранения:
 
  `/etc/docker/daemon.json` 
 ```
@@ -83,26 +80,26 @@ Docker storage driver (или graph driver) оказывает огромное 
 }
 ```
 
-После этого [restart](/index.php/Restart "Restart") докер.
+После чего [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") Docker.
 
-Дополнительную информацию о вариантах можно найти в [руководстве пользователя](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/). Для получения дополнительной информации о параметрах в `daemon.json` см. [dockerd документацию](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
+Дополнительную информацию о доступных опциях можно найти в [руководстве пользователя](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/). Также см. [документацию dockerd](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file) для получения информации о параметрах `daemon.json`.
 
 ### Remote API
 
-Чтобы открыть Remote API для порта `4243`, используйте:
+Используйте следующую команду, чтобы вручную открыть порт `4243` для Remote API:
 
 ```
 # /usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 ```
 
-`-H tcp://0.0.0.0:4243` часть для открытия Remote API.
+`-H tcp://0.0.0.0:4243` — часть для открытия Remote API.
 
-`-H unix:///var/run/docker.sock` часть для доступа к хост-машине через терминал.
+`-H unix:///var/run/docker.sock` — часть для доступа к хост-машине через терминал.
 
 #### Remote API с systemd
 
-Чтобы запустить удаленный API с помощью docker демона, создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержимым:
+Чтобы запустить Remote API с помощью демона Docker, создайте [Drop-in сниппет](/index.php/Drop-in_%D1%81%D0%BD%D0%B8%D0%BF%D0%BF%D0%B5%D1%82 "Drop-in сниппет") со следующим содержимым:
 
  `/etc/systemd/system/docker.service.d/override.conf` 
 ```
@@ -113,7 +110,7 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 ### Конфигурация сокета демона
 
-Демон docker по умолчанию прослушивает [Сокет домена Unix](https://en.wikipedia.org/wiki/Unix_domain_socket_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "wikipedia:Unix domain socket (Русский)"). Чтобы прослушивать определённый порт, создайте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") со следующим содержимым:
+Демон *docker* по умолчанию прослушивает [Unix-сокет](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BE%D0%BA%D0%B5%D1%82_%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD%D0%B0_Unix "wikipedia:ru:Сокет домена Unix"). Чтобы прослушивать определённый порт, создайте [Drop-in сниппет](/index.php/Drop-in_%D1%81%D0%BD%D0%B8%D0%BF%D0%BF%D0%B5%D1%82 "Drop-in сниппет") со следующим содержимым:
 
  `/etc/systemd/system/docker.socket.d/socket.conf` 
 ```
@@ -161,7 +158,7 @@ ENV https_proxy="https://192.168.1.1:3128"
 
 Если вы вручную конфигурируете свою сеть, используя [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") версии **220 или выше**, контейнеры, которые вы запускаете с помощью Docker, могут не иметь доступа к вашей сети. Начиная с версии 220, параметр переадресации для данной сети (`net.ipv4.conf.<Interface>.forwarding`) по умолчанию равен `off`. Этот параметр запрещает переадресацию IP. Он также конфликтует с Docker, который включает параметр `net.ipv4.conf.all.forwarding` внутри контейнера.
 
-Обходной путь - отредактировать файл `<interface>.network` в `/etc/systemd/network/`, добавив `IPForward=kernel` на хосте Docker:
+Обходной путь — отредактировать файл `<interface>.network` в `/etc/systemd/network/`, добавив `IPForward=kernel` на хосте Docker:
 
  `/etc/systemd/network/<interface>.network` 
 ```
@@ -179,13 +176,13 @@ IPForward=kernel
 
 Если вы запустили Docker образы, вам необходимо убедиться, что они полностью размонтированы. После этого вы можете переместить изображения из `/var/lib/docker` в целевой путь.
 
-Затем добавьте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") для `docker.service`, добавив параметр `--data-root` в `ExecStart`:
+Затем добавьте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") для `docker.service`, добавив параметр `-g` в `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd -g=*/path/to/new/location/docker* -H fd://
 ```
 
 ### Небезопасные реестры
@@ -422,7 +419,6 @@ ExecStart=/usr/bin/docker -d -e lxc
 
 ## Смотрите также
 
-*   [Official website](https://www.docker.com)
+*   [Официальный сайт](https://www.docker.com)
 *   [Arch Linux на docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
-*   [Arch Linux Docker Tutorial на linuxhint.com](https://linuxhint.com/arch-linux-docker-tutorial/)

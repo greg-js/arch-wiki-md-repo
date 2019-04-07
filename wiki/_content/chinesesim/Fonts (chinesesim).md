@@ -409,7 +409,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 ### 盲文点字
 
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - 包含 Unicode **盲文点字**符号的字体。
+*   [ttf-ubraille](https://aur.archlinux.org/packages/ttf-ubraille/) - 包含 Unicode **盲文点字**符号的字体。
 
 ### 数学和符号字体
 
@@ -553,7 +553,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 #### 印地文字
 
-*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - 孟加拉文字体
+*   [ttf-freebanglafont](https://aur.archlinux.org/packages/ttf-freebanglafont/) - 孟加拉文字体
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - 印地文 OpenType 字体集合 (包含 ttf-freebanglafont)
 
 	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
@@ -630,7 +630,7 @@ Slant 上的字体图片比较: [最好的编程字体是什么？](http://www.s
 *   Default 8x16
 *   Dina ([dina-font](https://www.archlinux.org/packages/?name=dina-font))
 *   [Gohu](http://font.gohu.org/) ([gohufont](https://aur.archlinux.org/packages/gohufont/))
-*   Lime ([artwiz-fonts](https://www.archlinux.org/packages/?name=artwiz-fonts))
+*   Lime ([artwiz-fonts](https://aur.archlinux.org/packages/artwiz-fonts/))
 *   [ProFont](https://en.wikipedia.org/wiki/ProFont "wikipedia:ProFont") ([profont](https://www.archlinux.org/packages/?name=profont))
 *   [Proggy Programming Fonts](https://en.wikipedia.org/wiki/Proggy_Programming_Fonts "wikipedia:Proggy Programming Fonts") ([proggyfonts](https://aur.archlinux.org/packages/proggyfonts/))
 *   Proggy opti cyrillic ([proggyopticyr-font](https://aur.archlinux.org/packages/proggyopticyr-font/))
@@ -686,11 +686,11 @@ Slant 上的字体图片比较: [最好的编程字体是什么？](http://www.s
 ### 未分类字体
 
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) 与 [ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) — 一个免费字体的大合集（囊括里 ubuntu、inconsolata、droid 等字体）-注意：如果安装这个包，您的系统内将添加 100 多个字体，这将会使您的字体对话框变得很长。[ttf-google-fonts-hg](https://aur.archlinux.org/packages/ttf-google-fonts-hg/) 会从上游网络字体项目中拖下整个 Mercurial 库。[ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)则会从 Git 中拖下一个更小，更精简的非官方库。*(AUR)*
-*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) — Covers full plane 1 and several scripts
+*   [ttf-mph-2b-damase](https://aur.archlinux.org/packages/ttf-mph-2b-damase/) — Covers full plane 1 and several scripts
 *   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) — 提供了绘文字及其它一些符号。
 *   [ttf-sil-fonts](https://aur.archlinux.org/packages/ttf-sil-fonts/) — STL 内的 Gentium, Charis, Doulos, Andika and Abyssinica *(AUR)*
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) — X.Org Luxi 字体
-*   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) — 从 *dustismo.com* 收集来的字体库
+*   [ttf-cheapskate](https://aur.archlinux.org/packages/ttf-cheapskate/) — 从 *dustismo.com* 收集来的字体库
 *   [ttf-isabella](https://aur.archlinux.org/packages/ttf-isabella/) — 一款书法字体，基于 1497 年的 *Isabella Breviary*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) — Junius 字体，几乎包括了所有中世纪的拉丁文字形
 *   arkpandorafonts [ttf-arkpandora](https://aur.archlinux.org/packages/ttf-arkpandora/) — Arial 与 Times New Roman 字体的一个替代字体 *(AUR)*

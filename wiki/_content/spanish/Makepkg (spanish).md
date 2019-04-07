@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [makepkg](/index.php/Makepkg "Makepkg"), revisada por última vez el **2019-2-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=566977) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [makepkg](/index.php/Makepkg "Makepkg"), revisada por última vez el **2019-04-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=569506) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -295,6 +295,8 @@ Esto muestra todos los paquetes instalados en el sistema con el empaquetador est
 $ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKAGER$" | cut -f1)
 
 ### Construir paquetes de 32-bit en un sistema de 64-bit
+
+**Advertencia:** Se han reportado errores cuando se utiliza este método para construir el paquete [linux](https://www.archlinux.org/packages/?name=linux). Se recomienda el método [chroot (en inglés)](/index.php/Building_in_a_32-bit_clean_chroot "Building in a 32-bit clean chroot").
 
 Primero, habilite el repositorio [multilib](/index.php/Multilib "Multilib") e [instala](/index.php/Instala "Instala") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
 

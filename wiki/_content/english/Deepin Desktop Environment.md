@@ -65,6 +65,21 @@ Deepin doesn't officially support customizing the gesture behaviors, but it is p
 
 ```
 
+If you want to disable specific gesture activity. Set "Action" be "none". For example:
+
+```
+{
+       "Name": "tap",
+       "Direction": "none",
+       "Fingers": 3,
+       "Action": {
+           "Type": "built-in",
+           "Action": "none"
+       }
+   }
+
+```
+
 Reboot or re-login after you edit the file.
 
 ### Changing default deepin sounds

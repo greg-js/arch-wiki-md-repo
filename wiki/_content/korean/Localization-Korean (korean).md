@@ -98,7 +98,7 @@ uim의 전역 설정을 마쳤다면, uim 설정창 왼쪽의 트리 메뉴에�
 
 ### scim-hangul
 
-[scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) 패키지를 설치하십시오.
+[scim-hangul](https://aur.archlinux.org/packages/scim-hangul/) 패키지를 설치하십시오.
 
 다음을 `.xintrc`, `.xprofile`, `.xsession` 파일에 추가하십시오.
 

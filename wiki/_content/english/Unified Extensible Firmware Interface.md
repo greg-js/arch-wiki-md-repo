@@ -283,9 +283,9 @@ Systems with Phoenix SecureCore Tiano UEFI firmware are known to have embedded U
 
 ### Important UEFI Shell commands
 
-UEFI Shell commands usually support `-b` option which makes output pause after each page. Run `help -b` to list available commands.
+UEFI Shell commands usually support `-b` option which makes output pause after each page. Run `help -b` to list available internal commands. Available commands are either built into the shell or discrete EFI applications.
 
-More info at [https://software.intel.com/en-us/articles/efi-shells-and-scripting/](https://software.intel.com/en-us/articles/efi-shells-and-scripting/)
+For more info see [Intel Scripting Guide 2008](https://software.intel.com/en-us/articles/efi-shells-and-scripting/) and [Intel "Course" 2011](https://software.intel.com/en-us/articles/uefi-shell).
 
 #### bcfg
 

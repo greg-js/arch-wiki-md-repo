@@ -9,7 +9,7 @@ This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
 | [Discrete Radeon RX Vega M GL Graphics](#Graphics) | Working |
 | [Wifi](#Wifi_and_Bluetooth) | Working |
 | [Bluetooth](#Wifi_and_Bluetooth) | Working |
-| [rfkill](#Wifi_and_Bluetooth) | Untested |
+| [rfkill](#Wifi_and_Bluetooth) | Working |
 | Audio | Working |
 | [Touchpad](#Touchpad) | Working |
 | Webcam | Working |
@@ -51,6 +51,8 @@ This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
 ## EFI Firmware Updates
 
 ## Fingerprint Reader
+
+As of writing, the fingerprint reader isn't currently supported. There is a collaborative effort on a reverse-engineered open-source driver [here](https://github.com/IDerr/Goodix92/). Also see this [room](https://gitter.im/Goodix92) if you're interested in helping.
 
 ## Troubleshooting
 

@@ -1,25 +1,22 @@
 Artículos relacionados
 
-*   [Power saving](/index.php/Power_saving "Power saving")
+*   [Power management/Suspender e hibernar](/index.php/Power_management/Suspend_and_hibernate_(Espa%C3%B1ol) "Power management/Suspend and hibernate (Español)")
 *   [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
-*   [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate")
+*   [CPU escala de frecuencia](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)")
+*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
+*   [Módulos del núcleo](/index.php/Kernel_module_(Espa%C3%B1ol) "Kernel module (Español)")
+*   [sysctl](/index.php/Sysctl "Sysctl")
+*   [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")
 
-El propósito de esta página es proporcionar información general sobre la administración de energía en Arch Linux. Como Arch Linux utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), como administrador del sistema, este artículo se centra en él.
+[Power management](https://en.wikipedia.org/wiki/es:Power_management "wikipedia:es:Power management") es una característica que apaga la alimentación o los interruptores del sistema para un menor consume de energía cuando está incactivo.
 
-Hay varios lugares donde se puede cambiar la configuración de administración de energía:
+En Arch Linux, la administración de energía consiste en dos partes principales:
 
-*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   Reglas [udevs](/index.php/Udev "Udev")
-
-También hay muchas herramientas de administración de energía:
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-*   [TLP](/index.php/TLP "TLP")
-*   [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)")
-
-**Nota:** Los ajustes relativos a la energía que se han establecido en un lugar/con alguna herramienta, pueden ser sobrescritos en otro lugar/con otras herramientas.
+1.  Configurar el kernel de Linux, que interactua con el hardware.
+    *   [Parámetros del nucleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)")
+    *   [Módulos del kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")
+    *   Reglas [udevs](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")
+2.  Las herramientas de configuración del espacio del usuario pueden interactuar con el núcleo y reaccionar a sus eventos. Muchas de estás herramientas le permiten también modificar la configuración del núcleo de una forma fácil. Vea [#Herramientas de espacio del usuario](#Herramientas_de_espacio_del_usuario) para las opciones.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -27,16 +24,85 @@ También hay muchas herramientas de administración de energía:
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Administración de energía con systemd](#Administración_de_energía_con_systemd)
-    *   [1.1 Eventos de ACPI](#Eventos_de_ACPI)
-    *   [1.2 Suspensión e hibernación](#Suspensión_e_hibernación)
-    *   [1.3 Sleep hooks](#Sleep_hooks)
-        *   [1.3.1 Archivos de servicios para suspender/reanudar](#Archivos_de_servicios_para_suspender/reanudar)
-        *   [1.3.2 Archivo de servicio combinando suspensión/reanudación](#Archivo_de_servicio_combinando_suspensión/reanudación)
-        *   [1.3.3 Hooks en /usr/lib/systemd/system-sleep](#Hooks_en_/usr/lib/systemd/system-sleep)
-*   [2 Solución de problemas](#Solución_de_problemas)
-    *   [2.1 Activar opciones de ahorro de energía RC6](#Activar_opciones_de_ahorro_de_energía_RC6)
-*   [3 Consulte también](#Consulte_también)
+*   [1 Herramientas de espacio del usuario](#Herramientas_de_espacio_del_usuario)
+    *   [1.1 Console](#Console)
+    *   [1.2 Graphical](#Graphical)
+*   [2 Administración de energía con systemd](#Administración_de_energía_con_systemd)
+    *   [2.1 Eventos de ACPI](#Eventos_de_ACPI)
+    *   [2.2 Suspensión e hibernación](#Suspensión_e_hibernación)
+    *   [2.3 Sleep hooks](#Sleep_hooks)
+        *   [2.3.1 Archivos de servicios para suspender/reanudar](#Archivos_de_servicios_para_suspender/reanudar)
+        *   [2.3.2 Archivo de servicio combinando suspensión/reanudación](#Archivo_de_servicio_combinando_suspensión/reanudación)
+        *   [2.3.3 Hooks en /usr/lib/systemd/system-sleep](#Hooks_en_/usr/lib/systemd/system-sleep)
+*   [3 Solución de problemas](#Solución_de_problemas)
+    *   [3.1 Activar opciones de ahorro de energía RC6](#Activar_opciones_de_ahorro_de_energía_RC6)
+*   [4 Consulte también](#Consulte_también)
+
+## Herramientas de espacio del usuario
+
+Using these tools can replace setting a lot of settings by hand. Only run **one** of these tools to avoid possible conflicts as they all work more or less similarly. Have a look at the [power management category](/index.php/Category:Power_management "Category:Power management") to get an overview on what power management options exist in Arch Linux.
+
+These are the more popular scripts and tools designed to help power saving:
+
+### Console
+
+*   **[acpid](/index.php/Acpid "Acpid")** — A daemon for delivering ACPI power management events with netlink support.
+
+	[http://sourceforge.net/projects/acpid2/](http://sourceforge.net/projects/acpid2/) || [acpid](https://www.archlinux.org/packages/?name=acpid)
+
+*   **[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")** — Utility to configure laptop power saving settings, considered by many to be the de facto utility for power saving though may take a bit of configuration.
+
+	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)
+
+*   **[powertop](/index.php/Powertop "Powertop")** — A tool to diagnose issues with power consumption and power management to help set power saving settings.
+
+	[https://01.org/powertop/](https://01.org/powertop/) || [powertop](https://www.archlinux.org/packages/?name=powertop)
+
+*   **[systemd](/index.php/Systemd "Systemd")** — A system and service manager.
+
+	[https://freedesktop.org/wiki/Software/systemd/](https://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
+*   **[TLP](/index.php/TLP "TLP")** — Advanced power management for Linux.
+
+	[http://linrunner.de/tlp](http://linrunner.de/tlp) || [tlp](https://www.archlinux.org/packages/?name=tlp)
+
+### Graphical
+
+*   **batterymon-clone** — Simple battery monitor tray icon.
+
+	[https://github.com/jareksed/batterymon-clone](https://github.com/jareksed/batterymon-clone) || [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/)
+
+*   **cbatticon** — Lightweight and fast battery icon that sits in your system tray.
+
+	[https://github.com/valr/cbatticon](https://github.com/valr/cbatticon) || [cbatticon](https://www.archlinux.org/packages/?name=cbatticon)
+
+*   **GNOME Power Statistics** — System power information and statistics for GNOME.
+
+	[https://gitlab.gnome.org/GNOME/gnome-power-manager](https://gitlab.gnome.org/GNOME/gnome-power-manager) || [gnome-power-manager](https://www.archlinux.org/packages/?name=gnome-power-manager)
+
+*   **KDE Power Devil** — Power management module for Plasma.
+
+	[https://userbase.kde.org/Power_Devil](https://userbase.kde.org/Power_Devil) || [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/)
+
+*   **LXQt Power Management** — Power management module for LXQt.
+
+	[https://github.com/lxqt/lxqt-powermanagement](https://github.com/lxqt/lxqt-powermanagement) || [lxqt-powermanagement](https://www.archlinux.org/packages/?name=lxqt-powermanagement)
+
+*   **MATE Power Management** — Power management tool for MATE.
+
+	[https://github.com/mate-desktop/mate-power-manager](https://github.com/mate-desktop/mate-power-manager) || [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager)
+
+*   **MATE Power Statistics** — System power information and statistics for MATE.
+
+	[https://github.com/mate-desktop/mate-power-manager](https://github.com/mate-desktop/mate-power-manager) || [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager)
+
+*   **Xfce Power Manager** — Power manager for Xfce.
+
+	[https://docs.xfce.org/xfce/xfce4-power-manager/start](https://docs.xfce.org/xfce/xfce4-power-manager/start) || [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager)
+
+*   **vattery** — Battery monitoring application written in Vala that will display the status of a laptop battery in a system tray.
+
+	[http://www.jezra.net/projects/vattery](http://www.jezra.net/projects/vattery) || [vattery](https://aur.archlinux.org/packages/vattery/)
 
 ## Administración de energía con systemd
 

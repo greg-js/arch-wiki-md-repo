@@ -728,7 +728,9 @@ The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Softw
 
 ### remacs
 
-**remacs** is a community-driven port of Emacs to Rust. Available as [remacs-git](https://aur.archlinux.org/packages/remacs-git/) in the [AUR](/index.php/AUR "AUR").
+**remacs** is a community-driven port of Emacs to Rust.
+
+[remacs](https://www.archlinux.org/packages/?name=remacs) is available in the [official repositories](/index.php/Official_repositories "Official repositories"). For development version try [remacs-git](https://aur.archlinux.org/packages/remacs-git/) in the [AUR](/index.php/AUR "AUR").
 
 ## See also
 

@@ -26,7 +26,7 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
     *   [1.7 GTK+](#GTK+)
 *   [2 Beep](#Beep)
     *   [2.1 Installation](#Installation)
-    *   [2.2 Access for non-root users](#Access_for_non-root_users)
+    *   [2.2 Run as non-root user](#Run_as_non-root_user)
     *   [2.3 Tips and Tricks](#Tips_and_Tricks)
 *   [3 See also](#See_also)
 
@@ -149,32 +149,14 @@ Beep is an advanced PC speaker beeping program. It is useful for situations wher
 
 You may also need to [unmute](#ALSA) the PC speaker in [ALSA](/index.php/ALSA "ALSA").
 
-### Access for non-root users
+### Run as non-root user
 
-**Warning:** All the following notes are vulnerable to root privilege escalation, as described in [[1]](https://www.debian.org/security/2018/dsa-4163), which has not been fixed upstream as of 2018-04-03\. It is strongly not recommended to allow beep to run without root authentication
-
-By default `beep` will fail if not run by the root. Other users may call it using [sudo](/index.php/Sudo "Sudo"). To let group `users` call `sudo beep` without a password (for example to use it in scripts), `/etc/sudoers` [should be edited](/index.php/Sudo#Using_visudo "Sudo"):
+Set up permissions for the pcspkr evdev device file:
 
 ```
-%users ALL=(ALL) NOPASSWD: /usr/bin/beep
+# usermod -aG input <username>
 
 ```
-
-or, to let only a single user do that:
-
-```
-username ALL=(ALL) NOPASSWD: /usr/bin/beep
-
-```
-
-Another way is setting the sticky bit on `/usr/bin/beep`:
-
-```
-# chmod 4755 /usr/bin/beep
-
-```
-
-Note however that this way **anyone** can execute `/usr/bin/beep` with root permissions. The change also creates a difference between local copy and the package, which will be reported by `pacman -Qkk`.
 
 ### Tips and Tricks
 

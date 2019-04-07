@@ -6,27 +6,31 @@ Mutt主要侧重于作为邮件用户代理（MUA），最初是为了查看邮�
 
 本文内容包括使用本地IMAP发送和检索邮件，设置如何使用[OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")或[getmail](/index.php/Getmail "Getmail")（POP3协议）来检索邮件，使用[procmail](/index.php/Procmail "Procmail")通过POP3协议过滤邮件，使用[msmtp](/index.php/Msmtp "Msmtp")发送邮件。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
     *   [1.1 NeoMutt](#NeoMutt)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
+*   [2 配置](#配置)
 *   [3 IMAP](#IMAP)
-    *   [3.1 内置IMAP](#.E5.86.85.E7.BD.AEIMAP)
+    *   [3.1 内置IMAP](#内置IMAP)
     *   [3.2 OfflineIMAP](#OfflineIMAP)
 *   [4 POP3](#POP3)
-    *   [4.1 内置POP3](#.E5.86.85.E7.BD.AEPOP3)
+    *   [4.1 内置POP3](#内置POP3)
     *   [4.2 getmail](#getmail)
 *   [5 Procmail](#Procmail)
 *   [6 SMTP](#SMTP)
-    *   [6.1 发送邮件](#.E5.8F.91.E9.80.81.E9.82.AE.E4.BB.B6)
-*   [7 其他](#.E5.85.B6.E4.BB.96)
-    *   [7.1 邮件签名](#.E9.82.AE.E4.BB.B6.E7.AD.BE.E5.90.8D)
-    *   [7.2 用Firefox查看URL链接](#.E7.94.A8Firefox.E6.9F.A5.E7.9C.8BURL.E9.93.BE.E6.8E.A5)
-    *   [7.3 Mutt 和 Vim](#Mutt_.E5.92.8C_Vim)
-    *   [7.4 一行命令发送邮件](#.E4.B8.80.E8.A1.8C.E5.91.BD.E4.BB.A4.E5.8F.91.E9.80.81.E9.82.AE.E4.BB.B6)
-    *   [7.5 附件的中文文件名显示乱码](#.E9.99.84.E4.BB.B6.E7.9A.84.E4.B8.AD.E6.96.87.E6.96.87.E4.BB.B6.E5.90.8D.E6.98.BE.E7.A4.BA.E4.B9.B1.E7.A0.81)
-    *   [7.6 编码问题](#.E7.BC.96.E7.A0.81.E9.97.AE.E9.A2.98)
+    *   [6.1 发送邮件](#发送邮件)
+*   [7 其他](#其他)
+    *   [7.1 邮件签名](#邮件签名)
+    *   [7.2 用Firefox查看URL链接](#用Firefox查看URL链接)
+    *   [7.3 Mutt 和 Vim](#Mutt_和_Vim)
+    *   [7.4 一行命令发送邮件](#一行命令发送邮件)
+    *   [7.5 附件的中文文件名显示乱码](#附件的中文文件名显示乱码)
+    *   [7.6 编码问题](#编码问题)
 
 ## 安装
 
@@ -34,7 +38,7 @@ Mutt主要侧重于作为邮件用户代理（MUA），最初是为了查看邮�
 
 可以考虑为IMAP程序安装外部帮助程序，例如 [isync](/index.php/Isync "Isync")，[OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") 或者 [msmtp](/index.php/Msmtp "Msmtp")。
 
-如果使用 POP3，安装 [getmail](https://www.archlinux.org/packages/?name=getmail)， [fetchmail](https://www.archlinux.org/packages/?name=fetchmail) 或者 [fdm](https://www.archlinux.org/packages/?name=fdm) 和 [procmail](https://www.archlinux.org/packages/?name=procmail)。
+如果使用 POP3，安装 [getmail](https://www.archlinux.org/packages/?name=getmail)， [fetchmail](https://aur.archlinux.org/packages/fetchmail/) 或者 [fdm](https://www.archlinux.org/packages/?name=fdm) 和 [procmail](https://www.archlinux.org/packages/?name=procmail)。
 
 **注意:**
 
@@ -274,7 +278,7 @@ pacman -S urlview
 
 ```
 REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
-COMMAND firefox %s 
+COMMAND firefox %s 
 
 ```
 
@@ -328,7 +332,7 @@ set rfc2047_parameters=yes
 如果中文Email有编码问题的话，可能是因为用GBK比用GB2312好。你可以用`iconv`来自动得兑换编码。先修改`mailcap`文件：
 
 ```
-text/plain; iconv -f gbk -t utf-8 %s; test=echo "%{charset}" | grep -ic "gb2312"; copiousoutput;
+text/plain; iconv -f gbk -t utf-8 %s; test=echo "%{charset}" | grep -ic "gb2312"; copiousoutput;
 
 ```
 
@@ -339,6 +343,6 @@ text/plain; iconv -f gbk -t utf-8 %s; test=echo "%{charset}" | grep -ic "gb2312
 也可以把`mailcap`的HTML部分修改以下，用`$(echo %{charset} | sed s/gb2312/gbk/I)`来代替`%{charset}`，比如说：
 
 ```
-text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) %s; nametemplate=%s.html; copiousoutput
+text/html; w3m -dump -I $(echo %{charset} | sed s/gb2312/gbk/I) %s; nametemplate=%s.html; copiousoutput
 
 ```
