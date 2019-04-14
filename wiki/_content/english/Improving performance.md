@@ -206,12 +206,12 @@ While some of the early algorithms have now been decommissioned, the official Li
     *   *Kyber*
     *   *BFQ*
 
-**Note:** The multi-queue scheduler framework and its related algorithms are still under development, the state of some issues can be seen in the [bfq forum](https://groups.google.com/forum/#!forum/bfq-iosched) and [FS#57496](https://bugs.archlinux.org/task/57496). In particular, users reported USB drives to stop working - [[1]](https://bbs.archlinux.org/viewtopic.php?id=234070)[[2]](https://bbs.archlinux.org/viewtopic.php?id=234363) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=236291).
-
 *   The **single-queue schedulers** are legacy schedulers, they can be activated at boot time as described in [#Changing I/O scheduler](#Changing_I/O_scheduler):
     *   [NOOP](https://en.wikipedia.org/wiki/NOOP_scheduler "w:NOOP scheduler") is the simplest scheduler, it inserts all incoming I/O requests into a simple FIFO queue and implements request merging. In this algorithm, there is no re-ordering of the request based on the sector number. Therefore it can be used if the ordering is dealt with at another layer, at the device level for example, or if it does not matter, for SSDs for instance.
     *   *Deadline*
     *   *CFQ*
+
+**Note:** Single-queue schedulers [were removed from kernel since Linux 5.0](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f382fb0bcef4c37dc049e9f6963e3baf204d815c).
 
 #### Changing I/O scheduler
 
@@ -274,7 +274,7 @@ When dealing with traditional rotational disks (HDD's) you may want to [lower or
 
 Avoiding unnecessary access to slow storage drives is good for performance and also increasing lifetime of the devices, although on modern hardware the difference in life expectancy is usually negligible.
 
-**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[4]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[1]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
 #### Show disk writes
 
@@ -311,7 +311,7 @@ The I/O priority of a background process can be reduced to the "Idle" level by s
 
 ```
 
-See [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[5]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
+See [ionice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ionice.1) and [[2]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
 
 ## CPU
 
@@ -504,7 +504,7 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](/index.php/Power_management#Disabling_NMI_watchdog "Power management").
 
-See [[6]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[7]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[8]](http://0pointer.de/blog/projects/watchdog.html), and [[9]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[3]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[4]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[5]](http://0pointer.de/blog/projects/watchdog.html), and [[6]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
 
 ## See also
 

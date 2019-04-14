@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2019-01-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=559842) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2019-04-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=565570) na versão em inglês.
 
 Artigos relacionados
 
@@ -346,6 +346,8 @@ Enter passphrase (echo disabled): *senha_fornecida*
 Added key with descriptor [f88747555a6115f5]
 
 ```
+
+**Atenção:** O início de sessão efetua o desbloqueio automático de diretórios de usuário criptografados por esse método ao usar o login do GDM ou do console.
 
 **Nota:** Por motivos de segurança, arquivos não criptografados não podem existir em um diretório criptografado. Como tal, tentar mover (`mv`) arquivos não criptografados para um diretório criptografado vai
 

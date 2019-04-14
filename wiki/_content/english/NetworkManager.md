@@ -33,17 +33,20 @@ Related articles
     *   [4.4 Proxy settings](#Proxy_settings)
     *   [4.5 Checking connectivity](#Checking_connectivity)
     *   [4.6 DHCP client](#DHCP_client)
-    *   [4.7 DNS caching and split DNS](#DNS_caching_and_split_DNS)
-        *   [4.7.1 dnsmasq](#dnsmasq)
-            *   [4.7.1.1 Custom configuration](#Custom_configuration)
-            *   [4.7.1.2 IPv6](#IPv6)
-            *   [4.7.1.3 DNSSEC](#DNSSEC)
-        *   [4.7.2 systemd-resolved](#systemd-resolved)
-        *   [4.7.3 Other methods](#Other_methods)
-            *   [4.7.3.1 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
-            *   [4.7.3.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
-                *   [4.7.3.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
-                *   [4.7.3.2.2 Setting custom DNS servers in a connection (connection file)](#Setting_custom_DNS_servers_in_a_connection_(connection_file))
+    *   [4.7 DNS management](#DNS_management)
+        *   [4.7.1 DNS caching and split DNS](#DNS_caching_and_split_DNS)
+            *   [4.7.1.1 dnsmasq](#dnsmasq)
+                *   [4.7.1.1.1 Custom configuration](#Custom_configuration)
+                *   [4.7.1.1.2 IPv6](#IPv6)
+                *   [4.7.1.1.3 DNSSEC](#DNSSEC)
+            *   [4.7.1.2 systemd-resolved](#systemd-resolved)
+            *   [4.7.1.3 DNS resolver with an openresolv subscriber](#DNS_resolver_with_an_openresolv_subscriber)
+        *   [4.7.2 Setting custom DNS servers in a connection](#Setting_custom_DNS_servers_in_a_connection)
+            *   [4.7.2.1 Setting custom DNS servers in a connection (GUI)](#Setting_custom_DNS_servers_in_a_connection_(GUI))
+            *   [4.7.2.2 Setting custom DNS servers in a connection (nmcli / connection file)](#Setting_custom_DNS_servers_in_a_connection_(nmcli_/_connection_file))
+        *   [4.7.3 /etc/resolv.conf](#/etc/resolv.conf)
+            *   [4.7.3.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
+            *   [4.7.3.2 Use openresolv](#Use_openresolv)
 *   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
     *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
     *   [5.2 Dispatcher examples](#Dispatcher_examples)
@@ -70,10 +73,7 @@ Related articles
     *   [7.9 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
     *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
     *   [7.11 Working with wired connections](#Working_with_wired_connections)
-    *   [7.12 /etc/resolv.conf](#/etc/resolv.conf)
-        *   [7.12.1 Unmanaged /etc/resolv.conf](#Unmanaged_/etc/resolv.conf)
-        *   [7.12.2 Use openresolv](#Use_openresolv)
-    *   [7.13 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
+    *   [7.12 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
     *   [8.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
@@ -132,7 +132,7 @@ Support for other VPN types is based on a plug-in system. They are provided in t
 *   [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
-*   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
+*   [network-manager-sstp](https://www.archlinux.org/packages/?name=network-manager-sstp)
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
@@ -215,17 +215,17 @@ You have three methods to configure a connection after it has been created:
 
 	nmcli interactive editor
 
-	`nmcli connection edit <connection-id>`, can be shortened to `nmcli c e`
+	`nmcli connection edit *connection-id*`.
 Usage is well documented from the editor.
 
-	nmcli CLI
+	nmcli command line interface
 
-	`nmcli connection modify <connection-id> <setting.property value>`, can be shortened to `nmcli c mod`
+	`nmcli connection modify *connection-id* *setting*.*property* *value*`. See [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) for usage.
 
-	File Edit
+	Connection file
 
-	In `/etc/NetworkManager/system-connections`, modify the corresponding `<connection-id>.nmconnection` file .
-Don't forget to reload the configuration file with `nmcli connection reload`
+	In `/etc/NetworkManager/system-connections/`, modify the corresponding `*connection-id*.nmconnection` file .
+Do not forget to reload the configuration file with `nmcli connection reload`
 
 ## Front-ends
 
@@ -358,11 +358,15 @@ To change the DHCP client backend, set the option `main.dhcp=*dhcp_client_name*`
 dhcp=dhclient
 ```
 
-### DNS caching and split DNS
+### DNS management
+
+NetworkManager's DNS management is described in the GNOME project's wiki page—[Projects/NetworkManager/DNS](https://wiki.gnome.org/Projects/NetworkManager/DNS).
+
+#### DNS caching and split DNS
 
 NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or Unbound via dnssec-trigger. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
 
-#### dnsmasq
+##### dnsmasq
 
 Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed. Then set `main.dns=dnsmasq` with a configuration file in `/etc/NetworkManager/conf.d/`:
 
@@ -376,7 +380,7 @@ Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkMan
 
 **Note:** You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq without using the systemd service and without reading the dnsmasq's default configuration file(s).
 
-##### Custom configuration
+###### Custom configuration
 
 Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
 
@@ -385,7 +389,7 @@ Custom configurations can be created for *dnsmasq* by creating configuration fil
 
 See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for all available options.
 
-##### IPv6
+###### IPv6
 
 Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `drill -6 [hostname]`) which would otherwise work. In order to resolve this, creating the following file will configure *dnsmasq* to also listen to the IPv6 loopback:
 
@@ -393,7 +397,7 @@ Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dril
 
 In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
 
-##### DNSSEC
+###### DNSSEC
 
 The dnsmasq instance started by NetworkManager by default will not validate [DNSSEC](/index.php/DNSSEC "DNSSEC") since it is started with the `--proxy-dnssec` option. It will trust whatever DNSSEC information it gets from the upstream DNS server.
 
@@ -405,7 +409,7 @@ conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
 ```
 
-#### systemd-resolved
+##### systemd-resolved
 
 NetworkManager can use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") as a DNS resolver and cache. Make sure that *systemd-resolved* is properly configured and that `systemd-resolved.service` is [started](/index.php/Started "Started") before using it.
 
@@ -419,25 +423,65 @@ You can enable it explicitly by setting `main.dns=systemd-resolved` with a confi
 dns=systemd-resolved
 ```
 
-#### Other methods
-
 ##### DNS resolver with an openresolv subscriber
 
 If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for your local [DNS resolver](/index.php/DNS_resolver "DNS resolver"), set up the subscriber and [configure NetworkManager to use openresolv](#Use_openresolv).
 
-##### Setting custom DNS servers in a connection
+Because NetworkManager advertises a single "interface" to *resolvconf*, it is not possible to implement split DNS between to NetworkManager connections. See [NetworkManager issue 153](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
 
-With an already working caching DNS server, the DNS server address can be specified in NetworkManager's connection settings.
+This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[5]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
 
-###### Setting custom DNS servers in a connection (GUI)
+#### Setting custom DNS servers in a connection
+
+##### Setting custom DNS servers in a connection (GUI)
 
 Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
-###### Setting custom DNS servers in a connection (connection file)
+##### Setting custom DNS servers in a connection (nmcli / connection file)
 
-To setup DNS Servers per connection, you can use the `dns` field (and the associated `dns-search` and `dns-options`, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5)).
+To setup DNS Servers per connection, you can use the `dns` field (and the associated `dns-search` and `dns-options`) in the [connection settings](#Edit_a_connection).
 
-If `method` is set to `auto`, you need to set `ignore-auto-dns` to `yes`.
+If `method` is set to `auto` (when you use DHCP), you need to set `ignore-auto-dns` to `yes`.
+
+#### /etc/resolv.conf
+
+By default `/etc/resolv.conf` is managed by *NetworkManager* unless it is a symlink.
+
+It can be configured to write it through [openresolv](#Use_openresolv) or to [not touch it at all](#Unmanaged_/etc/resolv.conf).
+
+Using openresolv allows NetworkManager to coexists with other *resolvconf* supporting software or, for example, to run a local DNS caching and split-DNS resolver for which openresolv has a [subscriber](/index.php/Openresolv#Subscribers "Openresolv").
+
+*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+
+**Note:**
+
+*   If NetworkManager is configured to use either [dnsmasq](#dnsmasq) or [systemd-resolved](#systemd-resolved), then the appropriate loopback addresses will be written to `/etc/resolv.conf`.
+*   The `resolv.conf` file NetworkManager writes or would write to `/etc/resolv.conf` can be found at `/run/NetworkManager/resolv.conf`.
+*   A `resolv.conf` file with the acquired name servers and search domains can be found at `/run/NetworkManager/no-stub-resolv.conf`.
+
+##### Unmanaged /etc/resolv.conf
+
+To stop NetworkManager from touching `/etc/resolv.conf`, set `main.dns=none` with a configuration file in `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=none
+```
+
+**Note:** See [#DNS caching and split DNS](#DNS_caching_and_split_DNS), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `main.dns=none`.
+
+After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
+
+##### Use openresolv
+
+To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set `main.rc-manager=resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/rc-manager.conf` 
+```
+[main]
+rc-manager=resolvconf
+```
 
 ## Network services with NetworkManager dispatcher
 
@@ -859,7 +903,7 @@ After you have put this in, [restart](/index.php/Restart "Restart") `NetworkMana
 
 ### Configuring MAC address randomization
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[6]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[7]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
@@ -901,46 +945,6 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
 By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring `no-auto-default` (see [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
 
 You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
-
-### /etc/resolv.conf
-
-By default `/etc/resolv.conf` is managed by *NetworkManager* unless it is a symlink.
-
-It can be configured to write it through [openresolv](#Use_openresolv) or to [not touch it at all](#Unmanaged_/etc/resolv.conf).
-
-Using openresolv allows NetworkManager to coexists with other *resolvconf* supporting software or, for example, to run a local DNS caching and split-DNS resolver for which openresolv has a [subscriber](/index.php/Openresolv#Subscribers "Openresolv").
-
-*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
-
-**Note:**
-
-*   If NetworkManager is configured to use either [dnsmasq](#dnsmasq) or [systemd-resolved](#systemd-resolved), then the apropriate loopback addresses will be written to `/etc/resolv.conf`.
-*   The `resolv.conf` file NetworkManager writes or would write to `/etc/resolv.conf` can be found at `/run/NetworkManager/resolv.conf`.
-*   A `resolv.conf` file with the acquired name servers and search domains can be found at `/run/NetworkManager/no-stub-resolv.conf`.
-
-#### Unmanaged /etc/resolv.conf
-
-To stop NetworkManager from touching `/etc/resolv.conf`, set `main.dns=none` with a configuration file in `/etc/NetworkManager/conf.d/`:
-
- `/etc/NetworkManager/conf.d/dns.conf` 
-```
-[main]
-dns=none
-```
-
-**Note:** See [#DNS caching and split DNS](#DNS_caching_and_split_DNS), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `main.dns=none`.
-
-After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
-
-#### Use openresolv
-
-To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set `main.rc-manager=resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
-
- `/etc/NetworkManager/conf.d/rc-manager.conf` 
-```
-[main]
-rc-manager=resolvconf
-```
 
 ### Using iwd as the Wi-Fi backend
 
@@ -1140,7 +1144,7 @@ dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop
 
 ```
 
-This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[7]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[8]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
 
 This can be disabled with a configuration file in `/etc/NetworkManager/conf.d/`:
 

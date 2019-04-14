@@ -1,14 +1,24 @@
+Ссылки по теме
+
+*   [Шрифты](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B "Шрифты")
+*   [Настройка шрифтов](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2 "Настройка шрифтов")
+*   [Java Runtime Environment Fonts (Русский)](/index.php/Java_Runtime_Environment_Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java Runtime Environment Fonts (Русский)")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts"). Дата последней синхронизации: 20 сентября 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Microsoft_fonts&diff=0&oldid=400901).
 
 Эта статья объясняет, как установить шрифты TrueType Microsoft и эмулировать рендеринг шрифтов Windows.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Использование шрифтов с раздела Windows](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_.D1.81_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_Windows)
-    *   [1.2 Текущие пакеты](#.D0.A2.D0.B5.D0.BA.D1.83.D1.89.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-    *   [1.3 Устаревшие пакеты](#.D0.A3.D1.81.D1.82.D0.B0.D1.80.D0.B5.D0.B2.D1.88.D0.B8.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
-*   [2 Полезные правила Fontconfig для шрифтов MS](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D0.B0_Fontconfig_.D0.B4.D0.BB.D1.8F_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2_MS)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+    *   [1.1 Использование шрифтов с раздела Windows](#Использование_шрифтов_с_раздела_Windows)
+    *   [1.2 Текущие пакеты](#Текущие_пакеты)
+    *   [1.3 Устаревшие пакеты](#Устаревшие_пакеты)
+*   [2 Полезные правила Fontconfig для шрифтов MS](#Полезные_правила_Fontconfig_для_шрифтов_MS)
 *   [3 Windows 7](#Windows_7)
 *   [4 Windows 8](#Windows_8)
 

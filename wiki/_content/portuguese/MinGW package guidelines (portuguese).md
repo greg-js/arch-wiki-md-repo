@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [MinGW package guidelines](/index.php/MinGW_package_guidelines "MinGW package guidelines"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&diff=0&oldid=561843) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [MinGW package guidelines](/index.php/MinGW_package_guidelines "MinGW package guidelines"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=MinGW_package_guidelines&diff=0&oldid=566477) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 

@@ -9,13 +9,17 @@
 
 本文介绍如何安装微软 TrueType 字体并模拟 Windows 渲染设置。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 从Windows使用字体](#.E4.BB.8EWindows.E4.BD.BF.E7.94.A8.E5.AD.97.E4.BD.93)
-    *   [1.2 当前软件包](#.E5.BD.93.E5.89.8D.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.3 旧程序包](#.E6.97.A7.E7.A8.8B.E5.BA.8F.E5.8C.85)
-*   [2 微软字体适用的 Fontconfig 规则](#.E5.BE.AE.E8.BD.AF.E5.AD.97.E4.BD.93.E9.80.82.E7.94.A8.E7.9A.84_Fontconfig_.E8.A7.84.E5.88.99)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 从Windows使用字体](#从Windows使用字体)
+    *   [1.2 当前软件包](#当前软件包)
+    *   [1.3 旧程序包](#旧程序包)
+*   [2 微软字体适用的 Fontconfig 规则](#微软字体适用的_Fontconfig_规则)
 *   [3 Windows 8](#Windows_8)
 
 ## 安装

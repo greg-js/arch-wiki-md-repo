@@ -148,6 +148,13 @@ nameserver 209.222.18.222
 nameserver 209.222.18.218
 ```
 
+Next regenerate resolvconf by typing:
+
+```
+# resolvconf -u
+
+```
+
 Finally make the file immutable so no other application can modify it
 
 ```

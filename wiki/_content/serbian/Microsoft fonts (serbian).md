@@ -1,9 +1,19 @@
+Related articles
+
+*   [Fonts](/index.php/Fonts "Fonts")
+*   [Font Configuration](/index.php/Font_Configuration "Font Configuration")
+*   [Java Fonts - Sun JRE](/index.php/Java_Fonts_-_Sun_JRE "Java Fonts - Sun JRE")
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Sadržani Fontovi](#Sadr.C5.BEani_Fontovi)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Sadržani Fontovi](#Sadržani_Fontovi)
 *   [2 Upustvo](#Upustvo)
     *   [2.1 Instalacija iz riznice](#Instalacija_iz_riznice)
-    *   [2.2 Ručno instaliranje](#Ru.C4.8Dno_instaliranje)
+    *   [2.2 Ručno instaliranje](#Ručno_instaliranje)
 *   [3 Sharp fonts resembling Windows](#Sharp_fonts_resembling_Windows)
 
 ## Sadržani Fontovi

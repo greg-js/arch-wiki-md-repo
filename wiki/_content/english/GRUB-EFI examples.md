@@ -2,7 +2,11 @@ It is well known that different motherboard manufactures implement UEFI differen
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Apple Macs](#Apple_Macs)
 *   [2 Asus](#Asus)
@@ -16,7 +20,7 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [4.1 PowerEdge T30](#PowerEdge_T30)
 *   [5 MSI](#MSI)
     *   [5.1 B250M PRO-VH](#B250M_PRO-VH)
-    *   [5.2 B250 PC MATE / H110I PRO](#B250_PC_MATE_.2F_H110I_PRO)
+    *   [5.2 B250 PC MATE / H110I PRO / Z370 GAMING PLUS](#B250_PC_MATE_/_H110I_PRO_/_Z370_GAMING_PLUS)
 *   [6 HP](#HP)
     *   [6.1 EliteBook 840 G1](#EliteBook_840_G1)
 *   [7 Intel](#Intel)
@@ -185,9 +189,9 @@ These MSI motherboards seem to want the EFI program to exist in a different loca
 
 ```
 
-### B250 PC MATE / H110I PRO
+### B250 PC MATE / H110I PRO / Z370 GAMING PLUS
 
-Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default.2Ffallback_boot_path "GRUB").
+Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default/fallback_boot_path "GRUB").
 
 **Note:** The procedures above probably also work for other MSI motherboards.
 
@@ -215,7 +219,7 @@ This board can run in BIOS or in EFI mode. BIOS mode requires an MBR partitioned
 
 The EFI system partition requires the file `\EFI\BOOT\BOOTx64.efi` to be present in order to boot, otherwise you will receive "Error 1962: No operating system found. Boot sequence will automatically repeat."
 
-Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default.2Ffallback_boot_path "GRUB").
+Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default/fallback_boot_path "GRUB").
 
 This is a workaround for what is likely a bug in the UEFI implementation.
 
@@ -230,4 +234,4 @@ This system whitelists UEFI boot entries. It will only boot from a entry called 
 
 ### X270 Thinkpad
 
-Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default.2Ffallback_boot_path "GRUB").
+Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default/fallback_boot_path "GRUB").

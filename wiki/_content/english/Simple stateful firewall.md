@@ -231,7 +231,7 @@ COMMIT
 This file can be generated and saved with:
 
 ```
-# iptables-save > /etc/iptables/iptables.rules
+# iptables-save -f /etc/iptables/iptables.rules
 
 ```
 
@@ -287,7 +287,7 @@ Port knocking is a method to externally open ports that, by default, the firewal
 
 ### Protection against spoofing attacks
 
-**Note:** `rp_filter` is currently set to `1` by default in `/usr/lib/sysctl.d/50-default.conf`, so the following step is not necessary.
+**Note:** `rp_filter` is currently set to `2` by default in `/usr/lib/sysctl.d/50-default.conf`, so the following step is not necessary.
 
 Blocking reserved local addresses incoming from the internet or local network is normally done through setting `rp_filter` (Reverse Path Filter) in sysctl to 1\. To do so, add the following line to your `/etc/sysctl.d/90-firewall.conf` file (see [sysctl](/index.php/Sysctl "Sysctl") for details) to enable source address verification which is built into Linux kernel itself. The verification by the kernel will handle spoofing better than individual iptables rules for each case.
 
@@ -488,8 +488,8 @@ The rule sets are now finished and should be saved to a file so that they can be
 Save the IPv4 and IPv6 rules with these commands:
 
 ```
-# iptables-save > /etc/iptables/iptables.rules
-# ip6tables-save > /etc/iptables/ip6tables.rules
+# iptables-save -f /etc/iptables/iptables.rules
+# ip6tables-save -f /etc/iptables/ip6tables.rules
 
 ```
 

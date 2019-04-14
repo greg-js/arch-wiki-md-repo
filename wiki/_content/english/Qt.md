@@ -112,6 +112,10 @@ The following styles are included in Qt5: *Fusion*, *Windows*. Others can be ins
 
 	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
 
+*   **Kvantum** — customizable SVG-based theme engine with a variety of built-in styles, including imitations of some popular GTK+ themes such as *Adapta*, *Arc*, *Ambiance*
+
+	[https://github.com/tsujan/Kvantum/tree/master/Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum) || [kvantum-qt5](https://www.archlinux.org/packages/?name=kvantum-qt5)
+
 ### Qt4
 
 Qt4 application will try to mimic the behavior of the desktop environment they are running on, unless they run into some problems or hard-coded settings.
@@ -140,7 +144,7 @@ The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, 
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
-	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4)
+	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/)
 
 *   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — KDE Oxygen style.
 

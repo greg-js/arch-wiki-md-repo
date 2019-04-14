@@ -10,7 +10,7 @@ Artigos relacionados
 *   [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais")
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
-*   [Aplicando patches no ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [Aplicação de patch no ABS](/index.php/Aplica%C3%A7%C3%A3o_de_patch_no_ABS "Aplicação de patch no ABS")
 
 O sistema de compilação do Arch *(Arch build system)* é um sistema *tipo portação* para compilar e empacotar software a partir do código-fonte. Enquanto o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") é a ferramenta especializada do Arch para gerenciamento de pacote binário (incluindo pacotes compilados com o ABS), ABS é uma coleção de ferramentas para compilar o fonte em pacotes `.pkg.tar.xz` instaláveis.
 

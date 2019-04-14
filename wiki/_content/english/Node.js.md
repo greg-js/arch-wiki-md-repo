@@ -60,7 +60,7 @@ Now using node v8.0.0 (npm v5.0.0)
 
 ```
 
-If you decide to use [nvm](https://aur.archlinux.org/packages/nvm/), previously it was suggested to use `nodejs-fake` package from AUR. Which is now [deleted](https://lists.archlinux.org/pipermail/aur-requests/2018-January/021828.html%7C). Suggested way to use `--assume-installed nodejs=<version>`, as per [pacman](https://www.archlinux.org/pacman/pacman.8.html#_transaction_options_apply_to_em_s_em_em_r_em_and_em_u_em%7C) manual.
+If you decide to use [nvm](https://aur.archlinux.org/packages/nvm/), previously it was suggested to use `nodejs-fake` package from AUR. Which is now [deleted](https://lists.archlinux.org/pipermail/aur-requests/2018-January/021828.html). Suggested way is to use `--assume-installed nodejs=<version>`, as per [pacman](https://www.archlinux.org/pacman/pacman.8.html#_transaction_options_apply_to_em_s_em_em_r_em_and_em_u_em) manual.
 
 ## Node Packaged Modules
 

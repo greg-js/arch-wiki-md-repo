@@ -29,6 +29,8 @@ Standard behavior of most operating systems is:
     *   [3.1 UTC in Windows](#UTC_in_Windows)
     *   [3.2 UTC in Ubuntu](#UTC_in_Ubuntu)
 *   [4 Time zone](#Time_zone)
+    *   [4.1 Setting based on geolocation](#Setting_based_on_geolocation)
+        *   [4.1.1 Update timezone every time NetworkManager connects to a network](#Update_timezone_every_time_NetworkManager_connects_to_a_network)
 *   [5 Time skew](#Time_skew)
 *   [6 Time synchronization](#Time_synchronization)
 *   [7 Per-user/session or temporary settings](#Per-user/session_or_temporary_settings)
@@ -216,9 +218,9 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 
 See [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5) and [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) for details.
 
-	Setting based on geolocation
+### Setting based on geolocation
 
-To set the timezone automatically based on the IP address location, one can use a geolocation API to retrieve the timezone, for example `$ curl [https://ipapi.co/timezone](https://ipapi.co/timezone)`, and pass the output to `timedatectl set-timezone` for automatic setting. Some geo-IP APIs that provide free or partly free services are listed below:
+To set the timezone automatically based on the IP address location, one can use a geolocation API to retrieve the timezone, for example `curl https://ipapi.co/timezone`, and pass the output to `timedatectl set-timezone` for automatic setting. Some geo-IP APIs that provide free or partly free services are listed below:
 
 *   [https://freegeoip.app](https://freegeoip.app)
 *   [https://ipapi.co/](https://ipapi.co/)
@@ -226,6 +228,21 @@ To set the timezone automatically based on the IP address location, one can use 
 *   [https://ipstack.com/](https://ipstack.com/)
 *   [https://timezoneapi.io/](https://timezoneapi.io/)
 *   [https://ipdata.co](https://ipdata.co)
+
+#### Update timezone every time NetworkManager connects to a network
+
+Create a [NetworkManager dispatcher script](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"):
+
+ `/etc/NetworkManager/dispatcher.d/09-timezone` 
+```
+#!/bin/sh
+case "$2" in
+    up)
+        timedatectl set-timezone "$(curl --fail [https://ipapi.co/timezone](https://ipapi.co/timezone))"
+    ;;
+esac
+
+```
 
 Alternatively, the tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address. This [comparison of the most popular IP geolocation apis](https://medium.com/@ipdata_co/what-is-the-best-commercial-ip-geolocation-api-d8195cda7027) may be helpful in deciding which API to use in production.
 

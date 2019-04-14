@@ -840,6 +840,7 @@ See [Midnight Commander#Broken shortcuts](/index.php/Midnight_Commander#Broken_s
 *   [Screen and tmux feature comparison](http://www.dayid.org/os/notes/tm.html)
 *   [powerline](https://github.com/Lokaltog/powerline), a dynamic statusbar for tmux
 *   [Plugins for tmux](https://github.com/tmux-plugins)
+*   [Oh My Tmux!](https://github.com/gpakosz/.tmux)
 
 **Tutorials**
 

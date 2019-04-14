@@ -28,9 +28,9 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 
 ## Installation
 
-[Install](/index.php/Install "Install") [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR"). After install be sure to run command **systemctl daemon-reload** or reboot before proceeding.
+[Install](/index.php/Install "Install") the [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) and [openswan](https://aur.archlinux.org/packages/openswan/) packages.
 
-Make sure that the openswan service is running with `systemctl start openswan.service`, or you may get an error message about a missing pluto_ctl `connect(pluto_ctl) failed: No such file or directory`.
+Now you can [start](/index.php/Start "Start") `openswan.service`. If it's not running you may get an error message about a missing pluto_ctl `connect(pluto_ctl) failed: No such file or directory`.
 
 Run `ipsec verify` to check your configuration and resolve possible issues before continuing.
 
@@ -44,12 +44,9 @@ Edit `/etc/ipsec.conf` to contain the following lines:
 config setup
      virtual_private=%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12
      nat_traversal=yes
-# default is auto, which will try netkey first
-     protostack=netkey
-# you can left "off" (default value) instead
-     oe=no
-# Replace eth0 with your network interface
-     plutoopts="--interface=eth0"
+     protostack=netkey            # default is auto, which will try netkey first
+     plutoopts="--interface=eth0" # Replace eth0 with your network interface
+
 conn L2TP-PSK
      authby=secret
      pfs=no
@@ -62,11 +59,9 @@ conn L2TP-PSK
      ikelifetime=8h
      keylife=1h
      type=transport
-# Replace %any below with your local IP address (private, behind NAT IP is okay as well)
-     left=%any
+     left=192.168.0.123           # Replace with your local IP address (private, behind NAT IP is okay as well)
      leftprotoport=17/1701
-# Replace IP address with your VPN server's IP
-     right=68.68.32.79
+     right=68.68.32.79            # Replace with your VPN server's IP
      rightprotoport=17/1701
 
 ```
@@ -76,16 +71,16 @@ This file contains the basic information to establish a secure IPsec tunnel to t
 Create the file `/etc/ipsec.secrets`: It should contain the following line:
 
 ```
-%any 68.68.32.79 : PSK "**your_pre_shared_key**"
+192.168.0.123 68.68.32.79 : PSK "**your_pre_shared_key**"
 
 ```
 
-Remember to replace the local (%any) and remote (68.68.32.79) IP addresses with the correct numbers for your location. The pre-shared key will be supplied by the VPN provider and will need to be placed in this file in cleartext form. You may find this file already exists and already have some data, try to back it up and create a new file only with your PSK if you'll see "Can't authenticate: no preshared key found for ..." when enabling connection in next section.
+Remember to replace the local (`192.168.0.123`) and remote (`68.68.32.79`) IP addresses with the correct numbers for your location. The pre-shared key will be supplied by the VPN provider and will need to be placed in this file in cleartext form. You may find this file already exists and already have some data, try to back it up and create a new file only with your PSK if you'll see "Can't authenticate: no preshared key found for ..." when enabling connection in next section.
 
 Add the connection, so it's available to use:
 
 ```
- $ ipsec auto --add L2TP-PSK
+# ipsec auto --add L2TP-PSK
 
 ```
 
@@ -93,7 +88,7 @@ At this point the IPsec configuration is complete and we can move on to the L2TP
 
 ### xl2tpd
 
-Edit `/etc/xl2tpd/xl2tpd.conf`: It should resemble the following:
+Edit `/etc/xl2tpd/xl2tpd.conf` so it has the following contents:
 
 ```
 [lac vpn-connection]
@@ -106,7 +101,7 @@ length bit = yes
 
 This file configures xl2tpd with the connection name, server IP address (which again, please remember to change to your servers address) and various options that will be passed to pppd once the tunnel is set up.
 
-Now modify `/etc/ppp/options.l2tpd.client`:
+Now create `/etc/ppp/options.l2tpd.client` with the following contents:
 
 ```
 ipcp-accept-local
@@ -129,21 +124,13 @@ password **your_password**
 
 Place your assigned username and password for the VPN server in this file. A lot of these options are for interoperability with Windows Server L2TP servers. If your VPN server uses PAP authentication, replace `require-mschap-v2` with `require-pap`.
 
-Create the control file for xl2tpd:
-
-```
-$ mkdir -p /var/run/xl2tpd
-$ touch /var/run/xl2tpd/l2tp-control
-
-```
-
 This concludes the configuration of the applicable software suites to connect to a L2TP/IPsec server. To start the connection do the following:
 
 ```
-$ systemctl start openswan
-$ systemctl start xl2tpd
-$ ipsec auto --up L2TP-PSK
-$ echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control
+# systemctl start openswan
+# systemctl start xl2tpd
+# ipsec auto --up L2TP-PSK
+# echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control
 
 ```
 
@@ -163,7 +150,7 @@ You should see a `pppX` device that represents the tunnel. Right now, nothing is
 This is as easy as adding a routing rule to your kernel table:
 
 ```
- # ip route add xxx.xxx.xxx.xxx via yyy.yyy.yyy.yyy dev pppX
+# ip route add xxx.xxx.xxx.xxx via yyy.yyy.yyy.yyy dev pppX
 
 ```
 
@@ -173,14 +160,17 @@ Note yyy.yyy.yyy.yyy is "peer ip" of your pppX device used to route traffic to t
 
 See example below for command to identify tunnel device name and peer ip and then add route. :
 
+ `$ ip address` 
 ```
-  [~]$ ip address
-  4: ppp0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1400 qdisc fq_codel state UNKNOWN group default qlen 3
-      link/ppp 
-      inet 10.192.168.40 **peer 192.0.2.1/32** scope global ppp0
-         valid_lft forever preferred_lft forever
+4: ppp0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1400 qdisc fq_codel state UNKNOWN group default qlen 3
+    link/ppp 
+    inet 10.192.168.40 **peer 192.0.2.1/32** scope global ppp0
+       valid_lft forever preferred_lft forever
 
-  [~]$ ip route add 192.168.3.0/24 via 192.0.2.1 dev ppp0
+```
+
+```
+# ip route add 192.168.3.0/24 via 192.0.2.1 dev ppp0
 
 ```
 
@@ -189,21 +179,21 @@ See example below for command to identify tunnel device name and peer ip and the
 This is a lot more complex, but all your traffic will travel through the tunnel. Start by adding a special route for the actual VPN server through your current gateway:
 
 ```
- # ip route add 68.68.32.79 via 192.168.1.1 dev eth0
+# ip route add 68.68.32.79 via 192.168.1.1 dev eth0
 
 ```
 
 This will ensure that once the default gateway is changed to the ppp interface that your network stack can still find the VPN server by routing around the tunnel. If you miss this step you will lose connectivity to the Internet and the tunnel will collapse. Now add a default route that routes to the PPP remote end:
 
 ```
- # ip route add default via yyy.yyy.yyy.yyy dev eth0
+# ip route add default via yyy.yyy.yyy.yyy dev eth0
 
 ```
 
 The remote PPP end can be discovered by following the step in the previous section. Now to ensure that ALL traffic is routing through the tunnel, delete the original default route:
 
 ```
- # ip route delete default via 192.168.1.1 dev eth0
+# ip route delete default via 192.168.1.1 dev eth0
 
 ```
 
@@ -249,47 +239,49 @@ This will cause the SonicWALL to default to the next authentication mechanism, n
 
 You can create some scripts either in your home directory or elsewhere(remember where you put them) to bring up the tunnel then shut it back down.
 
-First, a utility script to automatically discover PPP distant ends: getip.sh
+First, a utility script to automatically discover PPP distant ends:
 
+ `getip.sh` 
 ```
-  #!/bin/bash
+#!/bin/bash
 
-  /sbin/ifconfig $1 | grep "P-t-P" | gawk -F: '{print $2}' | gawk '{print $1}'
-
-```
-
-Next, the script to bring the tunnel up. This will replace the default route, so all traffic will pass via the tunnel: startvpn.sh
+ifconfig $1 | grep "P-t-P" | gawk -F: '{print $2}' | gawk '{print $1}'
 
 ```
 
-  #!/bin/bash
+Next, the script to bring the tunnel up. This will replace the default route, so all traffic will pass via the tunnel:
 
-  /etc/rc.d/openswan start
-  sleep 2                                                   #delay to ensure that IPsec is started before overlaying L2TP
-  /etc/rc.d/xl2tpd start
-  /usr/sbin/ipsec auto --up L2TP-PSK                        
-  /bin/echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control     
-  sleep 2                                                   #delay again to make that the PPP connection is up.
-  PPP_GW_ADD=`./getip.sh ppp0`
+ `startvpn.sh` 
+```
+#!/bin/bash
 
-  ip route add 68.68.32.79 via 192.168.1.1 dev eth0
-  ip route add default via $PPP_GW_ADD
-  ip route del default via 192.168.1.1
+systemctl start openswan
+sleep 2                                                   #delay to ensure that IPsec is started before overlaying L2TP
+systemctl start xl2tpd
+ipsec auto --up L2TP-PSK                        
+echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control     
+sleep 2                                                   #delay again to make that the PPP connection is up.
+PPP_GW_ADD=`./getip.sh ppp0`
+
+ip route add 68.68.32.79 via 192.168.1.1 dev eth0
+ip route add default via $PPP_GW_ADD
+ip route del default via 192.168.1.1
 
 ```
 
-Finally, the shutdown script, it simply reverses the process: stopvpn.sh
+Finally, the shutdown script, it simply reverses the process:
 
+ `stopvpn.sh` 
 ```
-  #!/bin/bash
+#!/bin/bash
 
-  /usr/sbin/ipsec auto --down L2TP-PSK
-  /bin/echo "d vpn-connection" > /var/run/xl2tpd/l2tp-control
-  /etc/rc.d/xl2tpd stop
-  /etc/rc.d/openswan stop
+ipsec auto --down L2TP-PSK
+echo "d vpn-connection" > /var/run/xl2tpd/l2tp-control
+systemctl stop xl2tpd
+systemctl stop openswan
 
-  ip route del 68.68.32.79 via 192.168.1.1 dev eth0
-  ip route add default via 192.168.1.1
+ip route del 68.68.32.79 via 192.168.1.1 dev eth0
+ip route add default via 192.168.1.1
 
 ```
 
@@ -308,14 +300,14 @@ VPN_ADDR=XXX
 IFACE=wlan0
 
 function getIP(){
-	/sbin/ip addr show $1 | grep "inet " | awk '{print $2}' | sed 's:/.*::'       
+	ip addr show $1 | grep "inet " | awk '{print $2}' | sed 's:/.*::'       
 }
 
 function getGateWay(){
-	/sbin/route -n | grep -m 1 "^0\.0\.0\.0" | awk '{print $2}'
+	route -n | grep -m 1 "^0\.0\.0\.0" | awk '{print $2}'
 }
 function getVPNGateWay(){
-	/sbin/route -n | grep -m 1 "$VPN_ADDR" | awk '{print $2}'
+	route -n | grep -m 1 "$VPN_ADDR" | awk '{print $2}'
 }
 
 GW_ADDR=$(getGateWay)  
@@ -333,12 +325,12 @@ function start(){
 	sed -i "s/left=.*$/left=$(getIP $IFACE)/g" /etc/ipsec.conf
 	sed -i "s/right=.*$/right=$VPN_ADDR/g" /etc/ipsec.conf
 	sed -i "s/^.*: PSK/$(getIP $IFACE) $VPN_ADDR : PSK/g" /etc/ipsec.secrets
-	/etc/rc.d/openswan start
+	systemctl start openswan
 	sleep 2    #delay to ensure that IPsec is started before overlaying L2TP
 
-	/etc/rc.d/xl2tpd start
-	/usr/sbin/ipsec auto --up L2TP-PSK                        
-	/bin/echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control     
+	systemctl start xl2tpd
+	ipsec auto --up L2TP-PSK                        
+	echo "c vpn-connection" > /var/run/xl2tpd/l2tp-control     
 	sleep 2    #delay again to make that the PPP connection is up.
 
 	route add $VPN_ADDR gw $GW_ADDR $IFACE
@@ -347,10 +339,10 @@ function start(){
 }
 
 function stop(){
-	/usr/sbin/ipsec auto --down L2TP-PSK
-	/bin/echo "d vpn-connection" > /var/run/xl2tpd/l2tp-control
-	/etc/rc.d/xl2tpd stop
-	/etc/rc.d/openswan stop
+	ipsec auto --down L2TP-PSK
+	echo "d vpn-connection" > /var/run/xl2tpd/l2tp-control
+	systemctl stop xl2tpd
+	systemctl stop openswan
 
 	VPN_GW=$(getVPNGateWay)
 	route delete $VPN_ADDR gw $VPN_GW $IFACE

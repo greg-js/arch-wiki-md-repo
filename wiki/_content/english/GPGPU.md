@@ -77,7 +77,7 @@ The available packages containing various OpenCL ICDs are:
 
 *   [ocl-icd](https://www.archlinux.org/packages/?name=ocl-icd): recommended, most up-to-date
 *   [libopencl](https://aur.archlinux.org/packages/libopencl/) by AMD. Provides OpenCL 2.0\. It is distributed by AMD under a restrictive license and therefore cannot be included into the official repositories.
-*   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) by Intel. Provides OpenCL 2.0, deprecated in favour of [intel-compute-runtime](https://aur.archlinux.org/packages/intel-compute-runtime/).
+*   [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) by Intel. Provides OpenCL 2.0, deprecated in favour of [intel-compute-runtime](https://www.archlinux.org/packages/?name=intel-compute-runtime).
 
 **Note:** ICD Loader's vendor is mentioned only to identify each loader, it is otherwise completely irrelevant. ICD loaders are vendor-agnostic and may be used interchangeably (as long as they are implemented correctly).
 
@@ -136,8 +136,6 @@ The kernel module and CUDA "driver" library are shipped in [nvidia](https://www.
 The [cuda](https://www.archlinux.org/packages/?name=cuda) package installs all components in the directory `/opt/cuda`. For compiling CUDA code, add `/opt/cuda/include` to your include path in the compiler instructions. For example this can be accomplished by adding `-I/opt/cuda/include` to the compiler flags/options. To use `nvcc`, a `gcc` wrapper provided by NVIDIA, just add `/opt/cuda/bin` to your path.
 
 To find whether the installation was successful and if cuda is up and running, you can compile the samples installed on `/opt/cuda/samples` (you can simply run `make` inside the directory, altough is a good practice to copy the `/opt/cuda/samples` directory to your home directory before compiling) and running the compiled examples. A nice way to check the installation is to run one of the examples, called `deviceQuery`.
-
-**Note:** CUDA 9.2 is not compatible with GCC 8 (see [FS#49272](https://bugs.archlinux.org/task/49272) for the history). Therefore the [cuda](https://www.archlinux.org/packages/?name=cuda) package depends on [gcc7](https://www.archlinux.org/packages/?name=gcc7) and creates symbolic links in `/opt/cuda/bin/` for the older version to be picked up by `nvcc`. You might also need to configure your build system to use the same GCC version for compiling host code. Check [the release notes](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#cuda-compiler-new-features) for a list of compilers supported as host compilers.
 
 ### Language bindings
 

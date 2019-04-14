@@ -7,7 +7,11 @@ Related articles
 
 [Docker](http://www.docker.io) 提供使用者包裝、搬移、執行任意程式作為一個輕量級容器。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安裝](#安裝)
 *   [2 設定](#設定)
@@ -139,7 +143,7 @@ ExecStart=/usr/bin/docker -d -e lxc
 用這個個指令來下載 x86_64 的映像檔。
 
 ```
-# docker pull base/archlinux
+# docker pull archlinux/base
 
 ```
 

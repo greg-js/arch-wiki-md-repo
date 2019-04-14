@@ -206,7 +206,7 @@ If you are using ReadyMedia to "broadcast" on a bridged device (such as an OpenV
 
 ```
 
-This should make the server visible to the clients *immediately*, but the change will be lost on reboot. If this works, you can make it a permanent change by using a systemd service file. Edit the file `/etc/systemd/system/multicas_snooping.service` with the following content:
+This should make the server visible to the clients *immediately*, but the change will be lost on reboot. If this works, you can make it a permanent change by using a systemd service file. Edit the file `/etc/systemd/system/multicast_snooping.service` with the following content:
 
 ```
 [Unit]

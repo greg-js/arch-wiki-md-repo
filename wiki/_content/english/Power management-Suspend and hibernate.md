@@ -8,7 +8,7 @@ Currently there are three methods of suspending available: **suspend to RAM** (u
 
 *   **Suspend to RAM** method cuts power to most parts of the machine aside from the RAM, which is required to restore the machine's state. Because of the large power savings, it is advisable for laptops to automatically enter this mode when the computer is running on batteries and the lid is closed (or the user is inactive for some time).
 
-*   **Suspend to disk** method saves the machine's state into [swap space](/index.php/Swap_space "Swap space") and completely powers off the machine. When the machine is powered on, the state is restored. Until then, there is zero power consumption.
+*   **Suspend to disk** method saves the machine's state into [swap space](/index.php/Swap_space "Swap space") and completely powers off the machine. When the machine is powered on, the state is restored. Until then, there is [zero](https://en.wikipedia.org/wiki/Standby_power "wikipedia:Standby power") power consumption.
 
 *   **Suspend to both** method saves the machine's state into swap space, but does not power off the machine. Instead, it invokes usual suspend to RAM. Therefore, if the battery is not depleted, the system can resume from RAM. If the battery is depleted, the system can be resumed from disk, which is much slower than resuming from RAM, but the machine's state has not been lost.
 

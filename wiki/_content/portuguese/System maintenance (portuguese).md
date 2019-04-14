@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=564809) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=571062) na versão em inglês.
 
 Artigos relacionados
 
@@ -65,7 +65,7 @@ Procure por erros nos arquivos de log localizados em `/var/log`, bem como erros 
 
 ```
 
-Veja [Systemd (Português)#Journal](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)") para mais informações.
+Veja [systemd/Journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)") para mais informações.
 
 Veja [Xorg (Português)#Troubleshooting](/index.php/Xorg_(Portugu%C3%AAs)#Troubleshooting "Xorg (Português)") para informações sobre onde e como o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") registra os erros.
 
@@ -77,7 +77,7 @@ Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd/Timer
 
 ### Arquivos de configuração
 
-Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles (Português)#Controle de versão](/index.php/Dotfiles_(Portugu%C3%AAs)#Controle_de_versão "Dotfiles (Português)") para mais.
+Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles (Português)#Rastreando dotfiles diretamente com Git](/index.php/Dotfiles_(Portugu%C3%AAs)#Rastreando_dotfiles_diretamente_com_Git "Dotfiles (Português)") para mais.
 
 ### Lista de pacotes instalados
 

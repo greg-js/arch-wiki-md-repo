@@ -180,7 +180,7 @@ Open `autorun.sh` in an editor and insert the following:
 #!/usr/bin/env bash
 
 function run {
-  if ! pgrep $1 ;
+  if ! pgrep -f $1 ;
   then
     $@&
   fi

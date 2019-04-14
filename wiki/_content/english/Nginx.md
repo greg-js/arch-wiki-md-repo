@@ -252,10 +252,16 @@ server {
 
 ```
 
-Append the following line at the end of the `http` block in `/etc/nginx/nginx.conf`:
+Append include `sites-enabled/*;` to the end of the `http` block:
 
+ `/etc/nginx/nginx.conf` 
 ```
-include sites-enabled/*;
+...
+http {
+    ...
+    include sites-enabled/*;
+}
+...
 
 ```
 

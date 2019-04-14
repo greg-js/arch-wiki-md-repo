@@ -17,6 +17,7 @@
     *   [5.2 'GLBCXX_3.X.XX' not found when using Bumblebee](#'GLBCXX_3.X.XX'_not_found_when_using_Bumblebee)
     *   [5.3 Game crashes immediately](#Game_crashes_immediately)
     *   [5.4 Version `CURL_OPENSSL_3` not found](#Version_`CURL_OPENSSL_3`_not_found)
+    *   [5.5 Steam webview/game browser not working in native runtime](#Steam_webview/game_browser_not_working_in_native_runtime)
 *   [6 Audio issues](#Audio_issues)
     *   [6.1 Configure PulseAudio](#Configure_PulseAudio)
     *   [6.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
@@ -196,6 +197,22 @@ $ ln -s /usr/lib32/libcurl-compat.so.4.4.0 "*LIBRARY*/steamapps/common/Nuclear T
 
 # Devil Daggers
 $ ln -s /usr/lib/libcurl-compat.so.4.4.0 *LIBRARY*/steamapps/common/devildaggers/lib64/libcurl.so.4
+
+```
+
+### Steam webview/game browser not working in native runtime
+
+Since the new Steam Friends UI update, the client webview isn't working correctly with the native-runtime.
+
+```
+./steamwebhelper: error while loading shared libraries: libpcre.so.3: cannot open shared object file: No such file or directory
+
+```
+
+It can be solved preloading glib libraries; Those don't require libpcre and selinux to work.
+
+```
+$ LD_PRELOAD="/usr/lib/libgio-2.0.so.0 /usr/lib/libglib-2.0.so.0" steam-native
 
 ```
 

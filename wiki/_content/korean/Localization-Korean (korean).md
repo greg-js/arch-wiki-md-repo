@@ -61,7 +61,7 @@
 
 	nimf
 
-	[nimf-git](https://aur.archlinux.org/packages/nimf-git/)는 예전에 개발되던 dasom의 수정본입니다.
+	[Nimf](/index.php/Nimf_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Nimf (한국어)")는 예전에 개발되던 dasom의 수정본입니다.
 
 자신이 사용할 입력기를 골랐다면, 입력기 설정 섹션으로 넘어가십시오.
 
@@ -100,7 +100,7 @@ uim의 전역 설정을 마쳤다면, uim 설정창 왼쪽의 트리 메뉴에�
 
 [scim-hangul](https://aur.archlinux.org/packages/scim-hangul/) 패키지를 설치하십시오.
 
-다음을 `.xintrc`, `.xprofile`, `.xsession` 파일에 추가하십시오.
+다음을 `.xinitrc`, `.xprofile`, `.xsession` 파일에 추가하십시오.
 
 ```
 export XMODIFIERS=@im=SCIM

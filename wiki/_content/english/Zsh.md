@@ -1,4 +1,4 @@
-[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful [shell](/index.php/Shell "Shell") that operates as both an interactive shell and as a scripting language interpreter. While being compatible with [Bash](/index.php/Bash "Bash") (not by default, only if issuing `emulate sh`), it offers advantages such as improved [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and [globbing](http://zsh.sourceforge.net/Doc/Release/Expansion.html).
+[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful [shell](/index.php/Shell "Shell") that operates as both an interactive shell and as a scripting language interpreter. While being compatible with the Bourne shell (not by default, only if issuing `emulate sh`), it offers advantages such as improved [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and [globbing](http://zsh.sourceforge.net/Doc/Release/Expansion.html).
 
 The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reasons to use Zsh.
 
@@ -40,6 +40,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [4.8 Bind key to ncurses application](#Bind_key_to_ncurses_application)
     *   [4.9 File manager key binds](#File_manager_key_binds)
     *   [4.10 xterm title](#xterm_title)
+        *   [4.10.1 Terminal emulator tab title](#Terminal_emulator_tab_title)
 *   [5 Uninstallation](#Uninstallation)
 *   [6 See also](#See_also)
 
@@ -265,16 +266,13 @@ By doing this, only the past commands matching the current line up to the curren
 
 ### Prompts
 
-Zsh supports:
-
-*   left side prompts: `PS1` (or `PROMPT`), `PS2`, `PS3`, `PS4`.
-*   right side prompts: `RPS1` (or `RPROMPT`), `RPS2` (or `RPROMPT2`).
-
-See [zshparam(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1#PARAMETERS_USED_BY_THE_SHELL) for their explanation.
+Zsh offers the options of using a prompt theme or, for users who are dissatisfied with the themes (or want to expand their usefulness), the possibility to build a custom prompt.
 
 #### Prompt themes
 
-There is a quick and easy way to set up a colored prompt in Zsh. Make sure that prompt theme system is set to autoload in `.zshrc`. This can be done by adding these lines to:
+Prompt themes are a quick and easy way to set up a colored prompt in Zsh. See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1#PROMPT_THEMES) for more information about them.
+
+To use a theme, make sure that prompt theme system is set to autoload in `.zshrc`. This can be done by adding these lines to:
 
  `~/.zshrc` 
 ```
@@ -338,48 +336,57 @@ If everything works, you can edit your `.zshrc` accordingly.
 
 #### Customized prompt
 
-For users who are dissatisfied with the prompt themes mentioned above (or want to expand their usefulness), Zsh offers the possibility to build a custom prompt. Zsh supports a left- and right-sided prompt additional to the single, left-sided prompt that is common to all shells. Customize it by using `PROMPT=` with prompt escapes.
+Additionally to a primary left-sided prompt `PS1` (`PROMPT`, `prompt`) that is common to all shells, Zsh also supports a right-sided prompt `RPS1` (`RPROMPT`). These two variables are the ones you will want to set to a custom value.
 
-See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#EXPANSION_OF_PROMPT_SEQUENCES) for a list of prompt variables and conditional substrings.
+Other special purpose prompts, such as `PS2` (`PROMPT2`), `PS3` (`PROMPT3`), `PS4` (`PROMPT4`), `RPS1` (`RPROMPT`), `RPS2` (`RPROMPT2`) and `SPROMPT`, are explained in [zshparam(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshparam.1#PARAMETERS_USED_BY_THE_SHELL).
+
+All prompts can be customized with prompt escapes. The available prompt escapes are listed in [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#EXPANSION_OF_PROMPT_SEQUENCES).
 
 ##### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Visual_effects) for prompt escapes to set foreground color, background color and other visual effects.
+Zsh sets colors differently than [Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization"), you do not need to use ANSI escape sequences. Zsh provides convenient prompt escapes to set the foreground color, background color and other visual effects; see [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Visual_effects) for a list of them.
 
-[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified by numeric color code or by name. Most terminals support the following colors by name[[1]](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting):
+[Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified using a decimal integer, the name of one of the eight most widely-supported colors or as a # followed by an RGB triplet in hexadecimal format. See the description of fg=colour in [zshzle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1#CHARACTER_HIGHLIGHTING) for more details.
 
-| Possible color values |
-| `black` or `0` | `red` or `1` |
-| `green` or `2` | `yellow` or `3` |
-| `blue` or `4` | `magenta` or `5` |
-| `cyan` or `6` | `white` or `7` |
+Most terminals support the following colors by name:
 
-See [xterm-256color chart](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) for color codes supported by terminal emulators compatible with xterm 256 colors.
+| Name | Number |
+| `black` | `0` |
+| `red` | `1` |
+| `green` | `2` |
+| `yellow` | `3` |
+| `blue` | `4` |
+| `magenta` | `5` |
+| `cyan` | `6` |
+| `white` | `7` |
 
-**Note:** Many terminal emulators display bold with a brighter color.
+Color numbers 0–255 for terminal emulators compatible with xterm 256 colors can be found in the [xterm-256color chart](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg).
 
-**Tip:** Prompt escapes can be tested with command `print -P *"prompt escapes"*`, for example:
-```
-$ print -P '%B%F{red}co%F{green}lo%F{blue}rs%f%b'
+With a correctly set TERM environment variable, the terminal's supported maximum number of colors can be found from the [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) database using `echoti colors`. In the case of 24-bit colors, also check the COLORTERM environment variable with `echo $COLORTERM`. If it returns `24bit` or `truecolor` then your terminal supports 16777216 (2) colors even if terminfo shows a smaller number.
 
-```
+**Note:**
+
+*   The colors 0–15 are may differ between terminal emulators and their used color schemes.
+*   Many terminal emulators display bold with a brighter color.
+
+**Tip:**
+
+*   Prompt escapes can be tested with command `print -P *"prompt escapes"*`, for example: `$ print -P '%B%F{red}co%F{green}lo%F{blue}rs%f%b'` 
+*   If you use 24-bit colors, you might want to load the `zsh/nearcolor` module in terminals that do not support them. E.g.: `[[ "$COLORTERM" == (24bit|truecolor) || "${terminfo[colors]}" -eq '16777216' ]] || zmodload zsh/nearcolor` See [zshmodules(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmodules.1#THE_ZSH%2FNEARCOLOR_MODULE) for details about the `zsh/nearcolor` module.
 
 ##### Example
 
 This is an example of a two-sided prompt:
 
 ```
-PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
 RPROMPT='[%F{yellow}%?%f]'
 
 ```
 
 And here is how it will be displayed:
 
-```
-username@host ~ %                                                         [0]
-
-```
+username@host ~ % [0]
 
 ### Sample .zshrc files
 
@@ -433,7 +440,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 ### The ttyctl command
 
-[[2]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
+The [ttyctl](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) command can be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
 
  `~/.zshrc` 
 ```
@@ -531,7 +538,7 @@ $ rehash
 
 ```
 
-This 'rehash' can be set to happen automatically.[[3]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
+This 'rehash' can be set to happen automatically.[[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
 
  `~/.zshrc` 
 ```
@@ -568,7 +575,7 @@ autoload -Uz add-zsh-hook
 rehash_precmd() {
   if [[ -a /var/cache/zsh/pacman ]]; then
     local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
-    if (( zsh_cache_time < paccache_time )); then
+    if (( zshcache_time < paccache_time )); then
       rehash
       zshcache_time="$paccache_time"
     fi
@@ -634,7 +641,7 @@ bindkey '^[[1;3D'      cdUndoKey
 
 If your terminal emulator supports it you can set its title from Zsh. This allows dynamically changing the the title to display relevant information about the shell state, for example showing the user name and current directory or the currently executing command.
 
-xterm title is set with [xterm escape sequences](https://www.tldp.org/HOWTO/Xterm-Title-3.html#ss3.1). For example:
+xterm title is set with the [xterm escape sequence](https://www.tldp.org/HOWTO/Xterm-Title-3.html#ss3.1) `\e]2;``\a`. For example:
 
 ```
 $ print -n '\e]2;My xterm title\a'
@@ -652,7 +659,10 @@ An simple way to have a dynamic title is to set the title in a hook functions `p
 
 By using `print -P` you can take advantage of prompt escapes.
 
-**Tip:** Title printing can be split up in multiple commands as long as they are sequential.
+**Tip:**
+
+*   Title printing can be split up in multiple commands as long as they are sequential.
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen") sends the xterm title to the hardstatus (`%h`). If you want to use Screen's [string escapes](https://www.gnu.org/software/screen/manual/html_node/String-Escapes.html) (e.g. for colors) you should set the hardstatus with the `\e_``\e\\` escape sequence. Otherwise, if string escapes are used in `\e]2;``\a`, the terminal emulator will get a garbled title due to it being incapable of interpreting them.
 
 **Note:**
 
@@ -664,12 +674,13 @@ By using `print -P` you can take advantage of prompt escapes.
 autoload -Uz add-zsh-hook
 
 function xterm_title_precmd () {
-	print -Pn '\e]2;%n@%m %1~\a'
+	print -Pn '\e]2;%n@%m %~\a'
+	[[ "$TERM" == 'screen'* ]] && print -Pn '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
 }
 
 function xterm_title_preexec () {
-	print -Pn '\e]2;%n@%m %1~ %# '
-	print -n "${(q)1}\a"
+	print -Pn '\e]2;%n@%m %~ %# ' && print -n "${(q)1}\a"
+	[[ "$TERM" == 'screen'* ]] && { print -Pn '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n "${(q)1}\e\\"; }
 }
 
 if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
@@ -678,6 +689,14 @@ if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
 fi
 
 ```
+
+#### Terminal emulator tab title
+
+Some terminal emulators and multiplexers support setting the title of the tab. The escape sequences depend on the terminal:
+
+| Terminal | Escape sequences | Description |
+| [GNU Screen](/index.php/GNU_Screen "GNU Screen") | `\ek``\e\\` | Screen's window title (`%t`). |
+| Konsole | `\e]30;``\a` | Konsole's tab title. |
 
 ## Uninstallation
 

@@ -66,6 +66,14 @@ For ssh login to work make sure that both `ChallengeResponseAuthentication` and 
 
 ```
 
+If you want to force OATH request-response even if there is a working public/private key authentication also add the following:
+
+```
+ AuthenticationMethods publickey,keyboard-interactive
+ PasswordAuthentication yes
+
+```
+
 ## Logging with an oath pass
 
 Run the following command if you are logging in and need the current oath pass :

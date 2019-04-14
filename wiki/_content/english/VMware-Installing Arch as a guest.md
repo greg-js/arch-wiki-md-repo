@@ -41,7 +41,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [6.5.3 Virtual Machine Settings](#Virtual_Machine_Settings)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Network slow on guest](#Network_slow_on_guest)
-    *   [7.2 File share problems with newer kernels](#File_share_problems_with_newer_kernels)
+    *   [7.2 File share problems with legacy vmhgfs module and newer kernels](#File_share_problems_with_legacy_vmhgfs_module_and_newer_kernels)
     *   [7.3 Sound problems](#Sound_problems)
     *   [7.4 Mouse problems](#Mouse_problems)
     *   [7.5 Boot problems](#Boot_problems)
@@ -52,6 +52,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [7.6.2 Potential solution 2](#Potential_solution_2)
         *   [7.6.3 Potential solution 3](#Potential_solution_3)
         *   [7.6.4 Potential solution 4](#Potential_solution_4)
+        *   [7.6.5 Potential solution 5](#Potential_solution_5)
     *   [7.7 Drag and drop, copy/paste](#Drag_and_drop,_copy/paste)
     *   [7.8 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
     *   [7.9 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
@@ -70,18 +71,13 @@ These drivers are only needed if you are running Arch Linux on a hypervisor like
 *   `vsock` - The Virtual Socket Protocol. It is similar to the TCP/IP socket protocol, allowing communication between Virtual Machines and hypervisor or host.
 *   `vmw_vsock_vmci_transport` - Implements a VMCI transport for Virtual Sockets.
 
-**Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables a few of these modules. Additional modules, such as `vmw_balloon`, may need to be added to your [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` list. For example: ` # cat /etc/mkinitcpio.conf` 
+**Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables a few of these modules. Additional modules, such as `vmw_balloon`, may need to be added to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` array. For example: `/etc/mkinitcpio.conf` 
 ```
 ...
-MODULES="... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ..."
+MODULES=(... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ...)
 ```
 
-Make sure to rebuild with:
-
-```
- # mkinitcpio -p linux
-
-```
+Make sure to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 Some modules, such as the legacy `vmhgfs` shared folder module, will require additional work to manually `compile` and systemd `enable` in order to function properly.
 
@@ -114,7 +110,7 @@ The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) pack
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If you want to use shared folders you also need to install the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package. [Start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `vmtoolsd.service` and `vmware-vmblock-fuse.service`.
+[Install](/index.php/Install "Install") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If you want to use the legacy `vmhgfs` shared folder module you also need to install the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package (the new `vmhgfs-fuse` driver is included in [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools)). [Start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `vmtoolsd.service` and `vmware-vmblock-fuse.service`.
 
 Try to install [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) manually if it does not work properly. To enable copy and paste between host and guest [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) is required.
 
@@ -355,19 +351,14 @@ Now you can mount the folder:
 
 Edit your `mkinitcpio.conf` like this:
 
- ` # cat /etc/mkinitcpio.conf` 
+ `/etc/mkinitcpio.conf` 
 ```
 ...
-MODULES="... vmhgfs"
+MODULES=(... vmhgfs)
 ...
 ```
 
-and then update your ramdisk:
-
-```
-# mkinitcpio -p linux
-
-```
+and then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ##### fstab
 
@@ -486,19 +477,14 @@ The SCSI adapter type `VMware Paravirtual` is available in the Virtual Machine s
 
 If you do not have these settings in your virtual machine configuration you can still use the paravirtual SCSI adapter like this: Make sure that the paravirtual SCSI adapter is included in your kernel image. For this you have to modify your `mkinitcpio.conf`
 
- ` cat /etc/mkinitcpio.conf` 
+ `/etc/mkinitcpio.conf` 
 ```
 ...
-MODULES="... vmw_pvscsi"
+MODULES=(... vmw_pvscsi)
 ...
 ```
 
-Rebuild your ramdisk:
-
-```
-# mkinitcpio -p linux
-
-```
+[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 Shutdown your virtual machine and change the SCSI adapter your `.vmx` to the following:
 
@@ -567,7 +553,7 @@ mainMem.partialLazyRestore = "FALSE"
 
 Arch Linux, as well as other Linux guests, may have slow network speeds while using NAT. To resolve this, switch the network type to **Bridged mode** in the guest settings on the host, changing the configuration file for the network on the guest where necessary. For more information on configuration, see [Network configuration](/index.php/Network_configuration "Network configuration"). If on a Windows host and it is not connecting properly despite correct guest configuration, open the **Virtual Network Editor** on the host as **Administrator** and press the **Restore defaults** button at the bottom left.
 
-### File share problems with newer kernels
+### File share problems with legacy vmhgfs module and newer kernels
 
 As the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package is no longer being updated, newer kernels are not patched correctly using it to be compatible with a host-guest file share. The [Github repository](https://github.com/davispuh/open-vm-tools-dkms) has some patch files that can be manually applied to restore functionality.
 
@@ -659,17 +645,21 @@ For some reason autofit requires packages **gtkmm** and **gtk2**, so you should 
 
 You may need to add the modules to mkinitcpio.conf.
 
- `/etc/mkinitcpio.conf`  `MODULES="vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmwgfx"` 
+ `/etc/mkinitcpio.conf`  `MODULES=(vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmwgfx)` 
 
-Do not forget to run:
-
- `# mkinitcpio -p linux` 
+Do not forget to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 #### Potential solution 4
 
 [Enable](/index.php/Enable "Enable") `vmtoolsd.service`.
 
 If this doesn't work, make sure you [restart](/index.php/Restart "Restart") the `vmtoolsd.service`.
+
+#### Potential solution 5
+
+If you are running [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland"), [install](/index.php/Install "Install") [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) ([FS#57473](https://bugs.archlinux.org/task/57473)).
+
+See [https://github.com/vmware/open-vm-tools/issues/22#issuecomment-362705505](https://github.com/vmware/open-vm-tools/issues/22#issuecomment-362705505).
 
 ### Drag and drop, copy/paste
 
@@ -698,4 +688,4 @@ Workstation 11 has a bug where vmware-hostd crashes if an Arch guest is running 
 
 Most likely, this should only happen to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the `vmhgfs` module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), the legacy filesystem driver would not be upgraded by using the command `pacman -Syu`. Therefor, [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) should be manually upgraded before the official repositories.
 
-If a shared folder is not mounted after a system upgrade, then remove the shared filesystem automount, upgrade [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), run `pacman -Syu`, and finally execute `mkinitcpio -p linux`. Don't forget to restore the filesystem automount.
+If a shared folder is not mounted after a system upgrade, then remove the shared filesystem automount, upgrade [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), run `pacman -Syu`, and finally [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs"). Don't forget to restore the filesystem automount.

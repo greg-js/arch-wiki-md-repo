@@ -27,7 +27,7 @@ This article details how to install and setup a Broadcom wireless network device
     *   [4.6 Suppressing console messages](#Suppressing_console_messages)
     *   [4.7 Device BCM43241 not detected](#Device_BCM43241_not_detected)
     *   [4.8 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
-    *   [4.9 No 5GHz for BCM4360 (14e4:43a0) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_devices)
+    *   [4.9 No 5GHz for BCM4360 (14e4:43a0) / BCM43602 (14e4:43ba) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_/_BCM43602_(14e4:43ba)_devices)
     *   [4.10 Device works intermittently](#Device_works_intermittently)
 
 ## History
@@ -176,9 +176,9 @@ This device will not display with either `lspci` nor `lsusb`; there is no known 
 
 If no other approaches help, install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), or use a [previous driver version](/index.php/Downgrading_packages "Downgrading packages").
 
-### No 5GHz for BCM4360 (14e4:43a0) devices
+### No 5GHz for BCM4360 (14e4:43a0) / BCM43602 (14e4:43ba) devices
 
-Issue appears to be linked to a [channel issue](https://askubuntu.com/questions/749420/wireless-lost-ability-to-use-5ghz-pce-ac68) at least in the United States. Changing the wireless channel to a lower channel number (like 40) seems to allow connection to 5GHz bands.
+Issue appears to be linked to a [channel issue](https://askubuntu.com/questions/749420/wireless-lost-ability-to-use-5ghz-pce-ac68). Changing the wireless channel to a lower channel number (like 40) seems to allow connection to 5GHz bands.
 
 ### Device works intermittently
 

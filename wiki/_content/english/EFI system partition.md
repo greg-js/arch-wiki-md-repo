@@ -112,7 +112,10 @@ The simplest scenarios for mounting EFI system partition are:
 *   [mount](/index.php/Mount "Mount") ESP to `/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which has a driver for your root file system (eg. [GRUB](/index.php/GRUB "GRUB"), [rEFInd](/index.php/REFInd "REFInd")).
 *   [mount](/index.php/Mount "Mount") ESP to `/boot`. This is the preferred method when directly booting a [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from UEFI.
 
-**Note:** The ESP will usually contain a directory called `EFI` at the root of it, thus when mounting ESP to `/boot` you may encounter a directory path such as `/boot/EFI`. Do not confuse this path with the previously popular (and possibly still used by other Linux distributions) ESP mountpoint `/boot/efi`.
+**Tip:**
+
+*   `/efi` is a replacement[[3]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) for the previously popular (and possibly still used by other Linux distributions) ESP mountpoint `/boot/efi`.
+*   The `/efi` directory is not available by default, you will need to first create it with [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) before mounting the ESP to it.
 
 ### Alternative mount points
 
@@ -397,7 +400,7 @@ exit 0
 
 ### ESP on RAID
 
-It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
+It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
 
 See [UEFI booting and RAID1](https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/) for a in-depth guide.
 

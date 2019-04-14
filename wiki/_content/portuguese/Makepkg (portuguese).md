@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=549263) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=569506) na versão em inglês.
 
 Artigos relacionados
 
@@ -13,7 +13,11 @@ Artigos relacionados
 
 O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages/?name=pacman).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuração](#Configuração)
     *   [1.1 Informação do empacotador](#Informação_do_empacotador)
@@ -34,13 +38,14 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
 *   [4 Solução de problemas](#Solução_de_problemas)
     *   [4.1 Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura](#Makepkg_algumas_vezes_falha_ao_assinar_um_pacote_sem_perguntar_pela_palavra-chave_de_assinatura)
     *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_CMAKE)
-    *   [4.3 CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS/CXXFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_QMAKE)
+    *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_QMAKE)
     *   [4.4 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diretório_de_instalação_para_pacotes_baseados_em_QMAKE)
     *   [4.5 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_contém_referência_para_$srcdir)
-    *   [4.6 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
-        *   [4.6.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
-        *   [4.6.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
-    *   [4.7 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
+    *   [4.6 ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?](#ERRO:_Uma_ou_mais_assinaturas_PGP_não_puderam_ser_verificadas!;_o_que_eu_devo_fazer?)
+    *   [4.7 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
+        *   [4.7.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
+        *   [4.7.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
+    *   [4.8 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
 *   [5 Veja também](#Veja_também)
 
 ## Configuração
@@ -243,7 +248,7 @@ COMPRESSGZ=(**pigz** -c -f -n)
 Isso mostra todos os pacotes instalados no sistema com o empacotador chamado *nome-empacotador*:
 
 ```
-$ expac "%n %p" | grep "*nome-empacotador*" | column -t
+$ expac "%n %p" | grep "*nome-empacotador*" | column -t
 
 ```
 
@@ -256,7 +261,7 @@ $ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKA
 
 ### Compilar pacotes 32 bits em um sistema 64 bits
 
-**Atenção:** Erros foram relatados ao usar esse método par compilar o pacote [linux](https://www.archlinux.org/packages/?name=linux). O [método de instalação](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system") é preferível e verificou-se que funciona para compilar os pacotes do kernel.
+**Atenção:** Erros foram relatados ao usar esse método par compilar o pacote [linux](https://www.archlinux.org/packages/?name=linux). O [chroot limpo](/index.php/Building_in_a_32-bit_clean_chroot "Building in a 32-bit clean chroot") é preferível.
 
 Primeiro, habilite o repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)") e [instale](/index.php/Instale "Instale") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
 
@@ -298,9 +303,9 @@ Para fazer o CMake usar as variáveis definidas no `makepkg.conf`, Basta não es
 
 Isso fará com que o cmake use um tipo de compilação de `None` , o que usa as variáveis de ambiente como `CFLAGS`, `CPPFLAGS`, etc.
 
-### CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE
+### CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE
 
-Qmake configura automaticamente a variável `CFLAGS` e `CXXFLAGS` de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [QMAKE_CFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags) e [QMAKE_CXXFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) ao qmake. Por exemplo:
+Qmake configura automaticamente a variável `CFLAGS`, `CXXFLAGS` e `LDFLAGS` de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [QMAKE_CFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags), [QMAKE_CXXFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) e [QMAKE_LFLAGS](https://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-lflags) ao qmake. Por exemplo:
 
  `PKGBUILD` 
 ```
@@ -308,10 +313,11 @@ Qmake configura automaticamente a variável `CFLAGS` e `CXXFLAGS` de acordo com 
 
 build() {
   cd "$srcdir/$_pkgname-$pkgver-src"
-  qmake-qt4 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
+  qmake-qt5 "$srcdir/$_pkgname-$pkgver-src/$_pkgname.pro" \
     PREFIX=/usr \
     QMAKE_CFLAGS="${CFLAGS}" \
-    QMAKE_CXXFLAGS="${CXXFLAGS}"
+    QMAKE_CXXFLAGS="${CXXFLAGS}" \
+    QMAKE_LFLAGS="${LDFLAGS}"
 
   make
 }
@@ -320,7 +326,7 @@ build() {
 
 ```
 
-Alternativamente, para uma configuração para todo sistema, você pode criar seu próprio `qmake.conf` e configurar a variável de ambiente [QMAKESPEC](http://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec).
+Alternativamente, para uma configuração para todo sistema, você pode criar seu próprio `qmake.conf` e configurar a variável de ambiente [QMAKESPEC](https://doc.qt.io/qt-5/qmake-environment-reference.html#qmakespec).
 
 ### Especificando diretório de instalação para pacotes baseados em QMAKE
 
@@ -362,6 +368,12 @@ Para identificar quais arquivos, execute o seguinte do diretório de compilaçã
 $ grep -R "$(pwd)/src" pkg/
 
 ```
+
+### ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?
+
+É muito provável que você não tenha as chaves públicas necessárias no seu chaveiro pessoal para verificar os arquivos baixados. Se um ou mais arquivos .sig forem baixados durante a criação do pacote, o [makepkg verificará automaticamente o(s) arquivo(s) correspondente(s) com a chave pública de seu signatário](#Verificação_de_assinatura). Se você não tiver a chave necessária no seu chaveiro pessoal, o *makepkg* não fará a verificação.
+
+A maneira recomendada para lidar com este problema é importar a chave pública requerida, ou [manualmente](/index.php/GnuPG#Import_a_public_key "GnuPG") ou [de um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Geralmente, você pode simplesmente encontrar a impressão digital das chaves públicas necessárias na seção [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
 
 ### Makepkg falha em baixar dependências quando por trás de um proxy
 

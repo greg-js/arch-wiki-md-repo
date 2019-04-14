@@ -3,11 +3,15 @@ Artículos relacionados
 *   [MPD/Tips and Tricks](/index.php/MPD/Tips_and_Tricks "MPD/Tips and Tricks")
 *   [MPD/Troubleshooting](/index.php/MPD/Troubleshooting "MPD/Troubleshooting")
 
-**MPD** (Music Player Daemon) es un reproductor de audio que maneja una arquitectura servidor-cliente. MPD se ejecuta en el fondo como un daemon, gestiona listas de reproducción y una base de datos, y hace uso de muy pocos recursos. Para hacer uso de una interfaz gráfica, es necesario un cliente adicional. Más información puede obtenerse en su [página web](http://www.musicpd.org/).
+**MPD** (Music Player Daemon) es un reproductor de audio que maneja una arquitectura servidor-cliente. MPD se ejecuta en el fondo como un demonio, gestiona listas de reproducción y una base de datos, y hace uso de muy pocos recursos. Para hacer uso de una interfaz gráfica, es necesario un cliente adicional. Más información puede obtenerse en su [página web](http://www.musicpd.org/).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Procedimiento de Instalación del Daemon](#Procedimiento_de_Instalación_del_Daemon)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Procedimiento de Instalación del demonio](#Procedimiento_de_Instalación_del_demonio)
 *   [2 Instrucciones de Configuración](#Instrucciones_de_Configuración)
     *   [2.1 Linea de Tiempo del Comportamiento Habitual de MPD](#Linea_de_Tiempo_del_Comportamiento_Habitual_de_MPD)
     *   [2.2 Correcta Configuración de Sonido](#Correcta_Configuración_de_Sonido)
@@ -15,7 +19,7 @@ Artículos relacionados
     *   [2.4 Configuración Por Usuario](#Configuración_Por_Usuario)
     *   [2.5 Configuración Multi-MPD](#Configuración_Multi-MPD)
 *   [3 Instalando Clientes para MPD](#Instalando_Clientes_para_MPD)
-*   [4 Extra stuff](#Extra_stuff)
+*   [4 Más Opciones](#Más_Opciones)
     *   [4.1 Envío de Canciones a Last.fm](#Envío_de_Canciones_a_Last.fm)
         *   [4.1.1 Mpdscribble](#Mpdscribble)
         *   [4.1.2 Sonata](#Sonata)
@@ -23,13 +27,13 @@ Artículos relacionados
         *   [4.1.4 Reproducción Desde Last.fm](#Reproducción_Desde_Last.fm)
             *   [4.1.4.1 Reproducción Nativa](#Reproducción_Nativa)
             *   [4.1.4.2 Reproducir Desde Last.fm con Lastfmproxy](#Reproducir_Desde_Last.fm_con_Lastfmproxy)
-    *   [4.2 Never play on start](#Never_play_on_start)
-        *   [4.2.1 Installing mpd from the AUR](#Installing_mpd_from_the_AUR)
-        *   [4.2.2 Method 1](#Method_1)
-            *   [4.2.2.1 Method 1.1](#Method_1.1)
-            *   [4.2.2.2 Method 1.2](#Method_1.2)
-        *   [4.2.3 Method 2](#Method_2)
-        *   [4.2.4 Method 3](#Method_3)
+    *   [4.2 No reanudar play al inicio](#No_reanudar_play_al_inicio)
+        *   [4.2.1 Instalar mpd desde el AUR](#Instalar_mpd_desde_el_AUR)
+        *   [4.2.2 Método 1](#Método_1)
+            *   [4.2.2.1 Método 1.1](#Método_1.1)
+            *   [4.2.2.2 Método 1.2](#Método_1.2)
+        *   [4.2.3 Método 2](#Método_2)
+        *   [4.2.4 Método 3](#Método_3)
     *   [4.3 MPD y Alsa](#MPD_y_Alsa)
         *   [4.3.1 Alto uso de CPU con Alsa](#Alto_uso_de_CPU_con_Alsa)
         *   [4.3.2 Ejemplo de Configuración: Salida con 44.1 KHz a una profundidad de 16 bit, con múltiples programas](#Ejemplo_de_Configuración:_Salida_con_44.1_KHz_a_una_profundidad_de_16_bit,_con_múltiples_programas)
@@ -54,7 +58,7 @@ Artículos relacionados
     *   [5.9 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_"mpd":_Operation_not_permitted)
 *   [6 External links](#External_links)
 
-## Procedimiento de Instalación del Daemon
+## Procedimiento de Instalación del demonio
 
 [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [mpd](https://www.archlinux.org/packages/?name=mpd), o la versión en desarrollo [mpd-git](https://aur.archlinux.org/packages/mpd-git/).
 
@@ -75,7 +79,7 @@ Recuerde que MPD cambia el usuario de root a aquel mencionado en el archivo `/et
 
 Para que la salido de audio funcione, asegúrese de haber configurado la tarjeta de sonido y el mixer correctamente. Vea [ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"). No olvide activar los canales requeridos en alsamixer, incrementar el volumen y guardar los cambios con alsactl store. Vea `~/.mpd/error` si aún no funciona.
 
-Asegúrese que su tarjeta pueda hacer mezclas por hardware (la mayoría de ellas pueden, incluidas aquellas integradas de la board), si no, esto podría traer problemas con múltiples reproducciones de sonido. Por ejemplo, Mplayer no podría reproducir sonido mientras el daemon se esté ejecutando, mostrando un mensaje de error indicando que el dispositivo se encuentra ocupado.
+Asegúrese que su tarjeta pueda hacer mezclas por hardware (la mayoría de ellas pueden, incluidas aquellas integradas de la board), si no, esto podría traer problemas con múltiples reproducciones de sonido. Por ejemplo, Mplayer no podría reproducir sonido mientras el demonio se esté ejecutando, mostrando un mensaje de error indicando que el dispositivo se encuentra ocupado.
 
 ### Configuracion General
 
@@ -137,7 +141,7 @@ MPD no necesita ser iniciado con permisos de root. La única razón por la cual 
 
 1.  Puede manejar un solo directorio ~/.mpd (o cualquier otro directorio bajo /home/usuario) para todos los archivos de configuración de MPD
 2.  No hay errores de lectura/escritura
-3.  llamado más flexible a MPD haciendo uso de `~/.xinitrc` en vez de incluir MPD en la sección de DAEMONS en `/etc/rc.conf`.
+3.  llamado más flexible a MPD haciendo uso de `~/.xinitrc` en vez de incluir MPD en la sección DAEMONS en `/etc/rc.conf`.
 
 Los siguientes pasos indican como iniciar MPD como un usuario normal. Debe realizar todos los pasos como usuario.
 **Note:** Este método no funcionará si múltiples usuarios desean acceder a MPD.
@@ -166,13 +170,13 @@ cp /usr/share/doc/mpd/mpdconf.example ~/.mpdconf
 
 *   Haga que MPD inicie al arranque de sesión (esto depende de su entorno de escritorio para su correcta configuracion).
 
-**Note:** no tiene que poner un "&" al final de la linea, dado que MPD automáticamente se daemonizará.
+**Nota:** No tiene que poner un "&" al final de la linea, dado que MPD automáticamente se iniciará como demonio.
 
-Finalmente, elimine MPD de la sección de DAEMONS en `/etc/rc.conf`, ya que no será ejecutado como root nunca más.
+Finalmente, elimine MPD de la sección DAEMONS en `/etc/rc.conf`, ya que no será ejecutado como root nunca más.
 
 ### Configuración Multi-MPD
 
-**Útil si desea ejecutar un servidor icecast, por ejemplo.** Si desea un segundo daemon MPD (ej., con una salida icecast para compartir su música a través de una red) que haga uso de la música y listas de reproducción del primero, simplemente copie el archivo de configuración anterior y cree uno nuevo (ej., `/home/username/.mpd/config-icecast`), y solo cambie los parámetros de log_file, error_file, pid_file, y state_file (ej., `mpd-icecast.log`, `mpd-icecast.error`, y demás); hacer uso de los mismos directorios de música y listas de reproducción asegurará que este segundo daemon MPD hará uso de la misma colección musical del primero (ej., crear y editar una lista de reproducción bajo el primer daemon afectará también al segundo daemon, de modo que no sea necesario crear la misma lista de nuevo para el segundo daemon). Finalmente, ejecute este segundo daemon por medio de su archivo `~/.xinitrc`. (Asegúrese de utilizar un numero de puerto diferente, para evitar conflictos con su primer daemon MPD).
+**Útil si desea ejecutar un servidor icecast, por ejemplo.** Si desea un segundo demonio MPD (ej., con una salida icecast para compartir su música a través de una red) que haga uso de la música y listas de reproducción del primero, simplemente copie el archivo de configuración anterior y cree uno nuevo (ej., `/home/username/.mpd/config-icecast`), y solo cambie los parámetros de log_file, error_file, pid_file, y state_file (ej., `mpd-icecast.log`, `mpd-icecast.error`, y demás); hacer uso de los mismos directorios de música y listas de reproducción asegurará que este segundo demonio MPD hará uso de la misma colección musical del primero (ej., crear y editar una lista de reproducción bajo el primer demonio afectará también al segundo demonio, de modo que no sea necesario crear la misma lista de nuevo para el segundo demonio). Finalmente, ejecute este segundo demonio por medio de su archivo `~/.xinitrc`. (Asegúrese de utilizar un numero de puerto diferente, para evitar conflictos con su primer demonio MPD).
 
 ## Instalando Clientes para MPD
 
@@ -201,7 +205,7 @@ Instálelos usando:
 
 ```
 
-## Extra stuff
+## Más Opciones
 
 ### Envío de Canciones a Last.fm
 
@@ -266,23 +270,23 @@ Lastfmproxy es un script escrito en python que permite reproducir música desde 
 
 Para iniciar `lastfmproxy` debe ir a `[http://localhost:1881/](http://localhost:1881/)` en su navegador. Para gregar una estacion a last.fm navegue desde `[http://localhost:1881/](http://localhost:1881/)` seguido por lastfm:// (por ejemplo: `[http://localhost:1881/lastfm://globaltags/punk](http://localhost:1881/lastfm://globaltags/punk)`). Vuelva a `[http://localhost:1881/](http://localhost:1881/)` y descargue el archivo m3u seleccionando el enlace de *Start Listening*. Sólo tiene que añadirlo a su biblioteca de música.
 
-### Never play on start
+### No reanudar play al inicio
 
-This feature has recently been added to mpd git by Martin Kellerman, see commits `b57330cf75bcb339e3f268f1019c63e40d305145` and `2fb40fe728ac07574808c40034fc0f3d2254d49d`. As of September 2011, this feature has not yet arrived in a mpd version in the official repositories. If support for this feature is still required, have a look at the following proposals.
+Esta opción ha sido recientemente añadida a mpd git por Martin Kellerman, ver commits `b57330cf75bcb339e3f268f1019c63e40d305145` y `2fb40fe728ac07574808c40034fc0f3d2254d49d`. Desde Septiembre 2011, esta opción todavía no ha llegado en una versión de mpd en los repositorios oficiales. Si se necesita soporte para esta función, compruebe las siguientes alternativas
 
-#### Installing mpd from the AUR
+#### Instalar mpd desde el AUR
 
-This is the best method currently available, but is only currently (as of April 2011) enabled in the git version. Install [mpd-git](https://aur.archlinux.org/packages/mpd-git/) from the [AUR](/index.php/AUR "AUR") and add `restore_paused "yes"` to your `mpd.conf` file.
+Este es el mejor método disponible actualmente, pero está actualmente (a Abril 2011) activado en la versión de git. Instala [mpd-git](https://aur.archlinux.org/packages/mpd-git/) desde el [AUR](/index.php/AUR "AUR") y añade `restore_paused "yes"` a tu archivo `mpd.conf`.
 
-If you have issues with connecting your client to [mpd-git](https://aur.archlinux.org/packages/mpd-git/), see [#Other issues when attempting to connect to mpd with a client](#Other_issues_when_attempting_to_connect_to_mpd_with_a_client).
+Si tienes problemas conectado tu cliente a [mpd-git](https://aur.archlinux.org/packages/mpd-git/), comprueba [#Other issues when attempting to connect to mpd with a client](#Other_issues_when_attempting_to_connect_to_mpd_with_a_client)
 
-#### Method 1
+#### Método 1
 
-If you do not want MPD to always play on your system start, but yet you want to preserve the other state information, add the following lines to your `/etc/rc.d/mpd` file:
+Si no quieres que MPD reanude la reproducción siempre al inicio del sistema, pero quieres preservar el resto de información del estado, añade las siguientes lineas a tu archivo `/etc/rc.d/mpd`:
 
-##### Method 1.1
+##### Método 1.1
 
-Simpler, working method (disables playing on startup of mpd daemon):
+Método simple y funcional (desactiva la reproducción automática al inicio del demonio mpd):
 
 ```
  start)
@@ -298,9 +302,9 @@ Simpler, working method (disables playing on startup of mpd daemon):
 
 ```
 
-##### Method 1.2
+##### Método 1.2
 
-This method was described here before Method 1.1 and is much more complicated:
+Este método ha sido descrito aquí anteriormente al Método 1.1, y es mucho mas complicado:
 
 ```
  *...*
@@ -332,26 +336,26 @@ This method was described here before Method 1.1 and is much more complicated:
 
 ```
 
-This will change the player status to "paused", if it was stopped while playing. Next, you want this file to be preserved, so MPD updates won't erase this edit. Add (or edit) this line to your `/etc/pacman.conf`:
+Esto cambiará el estado del reproductor a "paused", si fue interrumpido en reproducción. Después, necesitas que este archivo sea preservado, de forma que actualizaciones de MPD no borren la edición. Añade (o edita) esta linea a tu `/etc/pacman.conf`:
 
 ```
 NoUpgrade = etc/rc.d/mpd
 
 ```
 
-#### Method 2
+#### Método 2
 
-Another simpler method, would be to add mpd to your `[rc.conf](/index.php/Rc.conf "Rc.conf")` daemons array and add `mpc stop` or `mpc pause` to `/etc/rc.local.shutdown` and to `/etc/rc.local`. (Remember you must have mpc installed to use this method).
+Otro método más simple sería añadir mpd a tu array de demonios en `[rc.conf](/index.php/Rc.conf "Rc.conf")`, y añadir `mpc stop` o `mpc pause` a `/etc/rc.local.shutdown` y a `/etc/rc.local`. (Recuerda que necesitas mpc instalado para este método.
 
-Adding only the order in `/etc/rc.local` cannot assure that mpd will play absolutely nothing, since there may be a delay before the stop command is executed. On the other hand, if you only add the order to `/etc/rc.local.shutdown`, that will assure that mpd won't play at all, as long as you properly shutdown your system. Even though they are redundant, adding it to `/etc/rc.local` would serve as a safety for those, presumably, rare occasions when you do not shutdown the system properly.
+Añadir solo el comando en {ic|/etc/rc.local}} no puede garantizar que mpd no reproduzca nada, ya que puede haber una pausa antes de que el comando de pausa sea ejecutado. Por otra parte, si solo añades el comando a `/etc/rc.local.shutdown`, eso asegurará que mpd no reproducirá nada, siempre y cuando apagues correctamente tu sistema. A pesar de que sea redundante, añadirlo a `/etc/rc.local` serviría como una garantía para esas (supuestamente) raras ocaciones en las que no apagues el sistema correctamente.
 
-#### Method 3
+#### Método 3
 
-The general idea is to ask mdp to pause music when the user logs out, so that mdp will stick to the "pause" state after a reboot. Sending such command can be achieved using [mpc](https://www.archlinux.org/packages/?name=mpc), the command line interface to MPD.
+La idea general es pedirle a mpd que pause la música tras el log out del usuario, de forma que mpd mantendrá su estado de pausa tras un reinicio. Mandar tal señal puede ser logrado utilizando [mpc](https://www.archlinux.org/packages/?name=mpc), la interfaz de linea de comandos para MPD.
 
-GDM users can then add `/usr/bin/mpc pause` to `/etc/gdm/PostSession/Default` (be sure to add it before `exit 0`):
+Los usuarios de GDM pueden añadir `/usr/bin/mpc pause` a `/etc/gdm/PostSession/Default` (asegúrate de añadirlo antes de `exit 0`):
 
-Non-GDM users can use their own login manager's method to launch the line at logout.
+Los no usuarios de GDM pueden utilizar el método de su propio gestor de login para ejecutar la linea en el logout.
 
 ### MPD y Alsa
 

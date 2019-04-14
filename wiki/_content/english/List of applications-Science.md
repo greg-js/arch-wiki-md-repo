@@ -518,6 +518,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[https://github.com/dglent/meteo-qt](https://github.com/dglent/meteo-qt) || [meteo-qt](https://aur.archlinux.org/packages/meteo-qt/)
 
+*   **wttr** — A simple console application to check the weather, using data from [http://wttr.in](http://wttr.in)
+
+	[https://github.com/AmirrezaFiroozi/wttr](https://github.com/AmirrezaFiroozi/wttr) || [wttr](https://aur.archlinux.org/packages/wttr/)
+
 *   **Xfce Weather Panel Plugin** — Weather forecast plugin for the Xfce4 panel.
 
 	[https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin) || [xfce4-weather-plugin](https://www.archlinux.org/packages/?name=xfce4-weather-plugin)

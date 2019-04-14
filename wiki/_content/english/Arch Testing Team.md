@@ -10,6 +10,8 @@ If you are given a tester account, you should be able to log in into [archweb](h
 
 You may then test the listed packages locally and signing them off if they are correct by clicking on the *signoff* button for each package.
 
+**Tip:** You can simplify the process by signing off packages from the command line with [signoff(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signoff.1) from the [arch-signoff](https://www.archlinux.org/packages/?name=arch-signoff) package.
+
 ## Guidelines
 
 In order to test an arch package, keep the following aspects in mind:

@@ -1,10 +1,20 @@
+Related articles
+
+*   [Fonts](/index.php/Fonts "Fonts")
+*   [Font Configuration](/index.php/Font_Configuration "Font Configuration")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 التثبيت](#.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)
-    *   [1.1 الحزم الحالية](#.D8.A7.D9.84.D8.AD.D8.B2.D9.85_.D8.A7.D9.84.D8.AD.D8.A7.D9.84.D9.8A.D8.A9)
-    *   [1.2 الحزم التراثية](#.D8.A7.D9.84.D8.AD.D8.B2.D9.85_.D8.A7.D9.84.D8.AA.D8.B1.D8.A7.D8.AB.D9.8A.D8.A9)
-*   [2 الخطوط الحادّة تشبه ويندوز XP](#.D8.A7.D9.84.D8.AE.D8.B7.D9.88.D8.B7_.D8.A7.D9.84.D8.AD.D8.A7.D8.AF.D9.91.D8.A9_.D8.AA.D8.B4.D8.A8.D9.87_.D9.88.D9.8A.D9.86.D8.AF.D9.88.D8.B2_XP)
-*   [3 الخطوط الناعمة تشبه ويندوز 7](#.D8.A7.D9.84.D8.AE.D8.B7.D9.88.D8.B7_.D8.A7.D9.84.D9.86.D8.A7.D8.B9.D9.85.D8.A9_.D8.AA.D8.B4.D8.A8.D9.87_.D9.88.D9.8A.D9.86.D8.AF.D9.88.D8.B2_7)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 التثبيت](#التثبيت)
+    *   [1.1 الحزم الحالية](#الحزم_الحالية)
+    *   [1.2 الحزم التراثية](#الحزم_التراثية)
+*   [2 الخطوط الحادّة تشبه ويندوز XP](#الخطوط_الحادّة_تشبه_ويندوز_XP)
+*   [3 الخطوط الناعمة تشبه ويندوز 7](#الخطوط_الناعمة_تشبه_ويندوز_7)
 
 ## التثبيت
 

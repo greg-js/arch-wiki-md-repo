@@ -29,7 +29,8 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.5 Gestures](#Gestures)
         *   [3.5.1 libinput-gestures](#libinput-gestures)
         *   [3.5.2 fusuma](#fusuma)
-        *   [3.5.3 GnomeExtendedGestures](#GnomeExtendedGestures)
+        *   [3.5.3 Gebaar](#Gebaar)
+        *   [3.5.4 GnomeExtendedGestures](#GnomeExtendedGestures)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE's_Touchpad_KCM)
@@ -255,7 +256,7 @@ To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), ins
 
 [Fusuma](https://github.com/iberianpig/fusuma) is a multitouch gesture recognizer, written in [Ruby](/index.php/Ruby "Ruby"), which can be used as an alternative to libinput-gestures.
 
-Install the `fusuma` [Ruby gem](/index.php/Ruby#RubyGems "Ruby"):
+Install [xdotool](https://www.archlinux.org/packages/?name=xdotool) and the `fusuma` [Ruby gem](/index.php/Ruby#RubyGems "Ruby"):
 
 ```
 $ gem install fusuma
@@ -271,18 +272,18 @@ then in `~/.config/fusuma/config.yml` you can set something like:
 swipe:
   3: 
     left: 
-      shortcut: 'alt+Right'
+      command: 'xdotool key alt+Right'
     right: 
-      shortcut: 'alt+Left'
+      command: 'xdotool key alt+Left'
     up: 
-      shortcut: 'ctrl+shift+plus'
+      command: 'xdotool key ctrl+shift+plus'
     down: 
-      shortcut: 'ctrl+minus'
+      command: 'xdotool key ctrl+minus'
 pinch:
   in:
-    shortcut: 'ctrl+shift+plus'
+    command: 'xdotool key ctrl+shift+plus'
   out:
-    shortcut: 'ctrl+minus'
+    command: 'xdotool key ctrl+minus'
 
 threshold:
   swipe: 0.5
@@ -297,6 +298,10 @@ interval:
 The swipe threshold is important for not swiping back too many pages.
 
 Notice that the config is for three fingers swipe.
+
+#### Gebaar
+
+[Gebaar](https://github.com/Coffee2CodeNL/gebaar-libinput) is another gesture recognizer. Unlike Fusuma, it doesn't support pinching (support is planned in the future though) and threshholds, but in addition to swiping left, right, up and down with 3/4 fingers, it also supports diagonal swipes, which Fusuma does not.
 
 #### GnomeExtendedGestures
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-02-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=565116) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=569051) na versão em inglês.
 
 Artigos relacionados
 
@@ -439,7 +439,7 @@ Essa seção explica o propósito dos grupos essenciais do pacote [core/filesyst
 Usuários não *root* de estação de trabalho ou desktop frequentemente precisam ser adicionados a alguns dos grupos a seguir para permitir acesso a periféricos de hardware e facilitar administração de sistema:
 
 | Grupo | Arquivos afetados | Propósito |
-| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos (incluindo arquivos [journal](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)")). |
+| adm | Grupo administrativo, geralmente usado para fornecer acesso de leitura a logs protegidos (incluindo arquivos [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)")). |
 | ftp | `/srv/ftp/` | Acesso a arquivos servidos por servidores [FTP](https://en.wikipedia.org/wiki/pt:FTP "wikipedia:pt:FTP"). |
 | games | `/var/games` | Acesso a alguns softwares de jogos. |
 | http | `/srv/http/` | Acesso a arquivos servidos por servidores [HTTP](https://en.wikipedia.org/wiki/pt:HTTP "wikipedia:pt:HTTP"). |
@@ -449,7 +449,7 @@ Usuários não *root* de estação de trabalho ou desktop frequentemente precisa
 | systemd-journal | `/var/log/journal/*` | Pode ser usado para fornecer acesso somente leitura aos logs do systemd, como uma alternativa ao `adm` e ao `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Do contrário, apenas mensagens geradas pelo usuário são exibidas. |
 | users | Grupo padrão de usuários. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | Portas seriais RS-232 e dispositivos conectados a elas. |
-| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Pode ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). Também tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd_(Portugu%C3%AAs)#Journal "Systemd (Português)"). |
+| wheel | Grupo administrativo, comumente usado a dar privilégios para realizar ações administrativas. Pode ser usado para dar acesso aos utilitários [sudo](/index.php/Sudo "Sudo") e [su](/index.php/Su "Su") (nenhum deles usa-o por padrão, sendo configurável em `/etc/pam.d/su` e `/etc/pam.d/su-l`). Também tem acesso total de leitura aos arquivos de [journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)"). |
 
 ### Grupos de sistema
 
@@ -500,7 +500,7 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 
 ## Outras ferramentas relacionadas para esses banco de dados
 
-[getent(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.8) pode ser usado para ler um registro em particular.
+[getent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.1) pode ser usado para ler um registro em particular.
 
 ```
 % getent group tty

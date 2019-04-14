@@ -3,7 +3,7 @@ Related articles
 *   [Makepkg](/index.php/Makepkg "Makepkg")
 *   [Distcc](/index.php/Distcc "Distcc")
 
-[ccache](http://ccache.samba.org/) is a tool for the gcc compiler used to compile the same program over and over again with little downtime. While it may take a few seconds longer to compile a program the first time with *ccache*, subsequent compiles will be much, much faster.
+[ccache](https://ccache.dev/) is a tool for the gcc compiler used to compile the same program over and over again with little downtime. While it may take a few seconds longer to compile a program the first time with *ccache*, subsequent compiles will be much, much faster.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -43,7 +43,7 @@ See [ccache(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ccache.1) for details
 
 To enable *ccache* when using [makepkg](/index.php/Makepkg "Makepkg") edit `/etc/makepkg.conf`. In `BUILDENV` uncomment `ccache` (remove the exclamation mark) to enable caching. For example:
 
- `/etc/makepkg.conf`  `BUILDENV=(fakeroot !distcc color **ccache** check !sign)` 
+ `/etc/makepkg.conf`  `BUILDENV=(!distcc color **ccache** check !sign)` 
 
 ### Enable for command line
 
@@ -162,4 +162,4 @@ In the Gentoo Linux community, a source based distro, *ccache* has been notoriou
 
 ## See also
 
-*   [ccache manual](http://ccache.samba.org/manual.html)
+*   [ccache manual](https://ccache.dev/manual/latest.html)

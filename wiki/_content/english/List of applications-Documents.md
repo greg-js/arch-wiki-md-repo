@@ -408,6 +408,10 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
 
+*   **[WordGrinder](https://en.wikipedia.org/wiki/WordGrinder "wikipedia:WordGrinder")** — Word processor for the console.
+
+	[http://cowlark.com/wordgrinder/](http://cowlark.com/wordgrinder/) || [wordgrinder](https://aur.archlinux.org/packages/wordgrinder/)
+
 #### Presentations
 
 *   **[Calligra Stage](https://en.wikipedia.org/wiki/Calligra_Stage "wikipedia:Calligra Stage")** — Easy to use yet still flexible presentation application included in the Calligra Suite.

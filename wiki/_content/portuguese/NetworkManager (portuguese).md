@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=568992) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=570767) na versão em inglês.
 
 Related articles
 
@@ -21,6 +21,7 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [1.3 Suporte a VPN](#Suporte_a_VPN)
 *   [2 Uso](#Uso)
     *   [2.1 Exemplos de nmcli](#Exemplos_de_nmcli)
+    *   [2.2 Editar uma conexão](#Editar_uma_conexão)
 *   [3 Front-ends](#Front-ends)
     *   [3.1 GNOME](#GNOME)
     *   [3.2 KDE Plasma](#KDE_Plasma)
@@ -34,13 +35,20 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [4.4 Configurações de proxy](#Configurações_de_proxy)
     *   [4.5 Verificando conectividade](#Verificando_conectividade)
     *   [4.6 Cliente DHCP](#Cliente_DHCP)
-    *   [4.7 Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido)
-        *   [4.7.1 dnsmasq](#dnsmasq)
-            *   [4.7.1.1 Configuração personalizada](#Configuração_personalizada)
-            *   [4.7.1.2 IPv6](#IPv6)
-            *   [4.7.1.3 DNSSEC](#DNSSEC)
-        *   [4.7.2 systemd-resolved](#systemd-resolved)
-        *   [4.7.3 Outros métodos](#Outros_métodos)
+    *   [4.7 Gerenciamento de DNS](#Gerenciamento_de_DNS)
+        *   [4.7.1 Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido)
+            *   [4.7.1.1 dnsmasq](#dnsmasq)
+                *   [4.7.1.1.1 Configuração personalizada](#Configuração_personalizada)
+                *   [4.7.1.1.2 IPv6](#IPv6)
+                *   [4.7.1.1.3 DNSSEC](#DNSSEC)
+            *   [4.7.1.2 systemd-resolved](#systemd-resolved)
+            *   [4.7.1.3 Resolvedor de DNS com um assinante do openresolv](#Resolvedor_de_DNS_com_um_assinante_do_openresolv)
+        *   [4.7.2 Configurando servidores DNS personalizados em uma conexão](#Configurando_servidores_DNS_personalizados_em_uma_conexão)
+            *   [4.7.2.1 Configurando servidores DNS personalizados em uma conexão (GUI)](#Configurando_servidores_DNS_personalizados_em_uma_conexão_(GUI))
+            *   [4.7.2.2 Configurando servidores DNS personalizados em uma conexão (nmcli / arquivo de conexão)](#Configurando_servidores_DNS_personalizados_em_uma_conexão_(nmcli_/_arquivo_de_conexão))
+        *   [4.7.3 /etc/resolv.conf](#/etc/resolv.conf)
+            *   [4.7.3.1 /etc/resolv.conf não gerenciado](#/etc/resolv.conf_não_gerenciado)
+            *   [4.7.3.2 Usar openresolv](#Usar_openresolv)
 *   [5 Serviços de rede com o NetworkManager dispatcher](#Serviços_de_rede_com_o_NetworkManager_dispatcher)
     *   [5.1 Evitando o esgotamento de tempo limite do dispatcher](#Evitando_o_esgotamento_de_tempo_limite_do_dispatcher)
     *   [5.2 Exemplos de dispatcher](#Exemplos_de_dispatcher)
@@ -67,10 +75,7 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [7.9 Configurando aleatorização de endereço MAC](#Configurando_aleatorização_de_endereço_MAC)
     *   [7.10 Habilitar extensões de privacidade IPv6](#Habilitar_extensões_de_privacidade_IPv6)
     *   [7.11 Trabalhando com conexões cabeadas](#Trabalhando_com_conexões_cabeadas)
-    *   [7.12 resolv.conf](#resolv.conf)
-        *   [7.12.1 /etc/resolv.conf](#/etc/resolv.conf)
-        *   [7.12.2 Usar openresolv](#Usar_openresolv)
-    *   [7.13 Usando iwd como o backend de Wi-Fi](#Usando_iwd_como_o_backend_de_Wi-Fi)
+    *   [7.12 Usando iwd como o backend de Wi-Fi](#Usando_iwd_como_o_backend_de_Wi-Fi)
 *   [8 Solução de problemas](#Solução_de_problemas)
     *   [8.1 Nenhum prompt para senha de redes Wi-Fi seguras](#Nenhum_prompt_para_senha_de_redes_Wi-Fi_seguras)
     *   [8.2 Nenhum tráfego via túnel PPTP](#Nenhum_tráfego_via_túnel_PPTP)
@@ -91,7 +96,7 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [8.17 Desligar envido de hostname](#Desligar_envido_de_hostname)
     *   [8.18 nm-applet desaparece no i3wm](#nm-applet_desaparece_no_i3wm)
     *   [8.19 Ícones de bandeja do nm-applet exibidos incorretamente](#Ícones_de_bandeja_do_nm-applet_exibidos_incorretamente)
-    *   [8.20 Desabilitar NetworkManager ao usar dbus](#Desabilitar_NetworkManager_ao_usar_dbus)
+    *   [8.20 Unit dbus-org.freedesktop.resolve1.service não encontrado](#Unit_dbus-org.freedesktop.resolve1.service_não_encontrado)
 *   [9 Veja também](#Veja_também)
 
 ## Instalação
@@ -129,7 +134,7 @@ O suporte para outros tipos de VPN é baseado em um sistema de plug-in. Eles sã
 *   [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
-*   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
+*   [network-manager-sstp](https://www.archlinux.org/packages/?name=network-manager-sstp)
 
 **Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
@@ -204,6 +209,26 @@ $ nmcli radio wifi off
 
 ```
 
+### Editar uma conexão
+
+Para uma lista compreensiva de configurações, veja [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5).
+
+Você pode ter três métodos para configurar uma conexão após ela ter sido criada:
+
+	Editor interativo do nmcli
+
+	`nmcli connection edit *id-da-conexão*`.
+O uso está bem documentado no editor.
+
+	Interface de linha de comando do nmcli
+
+	`nmcli connection modify *id-da-conexão* *definição*.*propriedade* *valor*`. Veja [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) para seu uso.
+
+	Arquivo de conexão
+
+	Em `/etc/NetworkManager/system-connections/`, modifique o arquivo `*id-da-conexão*.nmconnection` correspondente.
+Não se esqueça de recarregar o arquivo de configuração com `nmcli connection reload`
+
 ## Front-ends
 
 Para configurar e ter acesso fácil ao NetworkManager, a maioria dos usuários desejará instalar um applet. Esse front-end da GUI geralmente reside na bandeja do sistema (ou na área de notificação) e permite a seleção de rede e a configuração do NetworkManager. Vários ambientes de área de trabalho possuem seu próprio applet. Caso contrário, você pode usar [#nm-applet](#nm-applet).
@@ -246,11 +271,7 @@ $ nm-applet --no-agent
 
 ```
 
-**Dica:** `nm-applet` pode ser iniciado automaticamente com um [arquivo desktop de inicialização automática](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)"), para adicionar a opção --no-agent, modifique a linha Exec, p.ex.,
-```
-Exec=nm-applet --no-agent
-
-```
+**Dica:** `nm-applet` pode ser iniciado automaticamente com um [arquivo desktop de inicialização automática](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)"), para adicionar a opção --no-agent, modifique a linha Exec, p.ex., `Exec=nm-applet --no-agent` 
 
 #### Appindicator
 
@@ -318,7 +339,7 @@ Veja também as [configurações de proxy](/index.php/Proxy_settings "Proxy sett
 
 ### Verificando conectividade
 
-NetworkManager pode tentar alcançar uma página na Internet ao conectar a uma rede. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) está configurado por padrão em `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` para verificar a conectividade com o archlinux.org. Para usar um servidor web diferente ou desabilitar a verificação de conectividade, crie `/etc/NetworkManager/conf.d/20-connectivity.conf`, veja "connectivity section" em [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+NetworkManager pode tentar alcançar uma página na Internet ao conectar a uma rede. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) está configurado por padrão em `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` para verificar a conectividade com o archlinux.org. Para usar um servidor web diferente ou desabilitar a verificação de conectividade, crie `/etc/NetworkManager/conf.d/20-connectivity.conf`, veja [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5#CONNECTIVITY_SECTION).
 
 Para aqueles por trás de um [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), o gerenciador de área de trabalhado pode abrir automaticamente uma janela pedindo por credenciais.
 
@@ -331,7 +352,7 @@ Por padrão, o NetworkManager usará seu cliente DHCP interno, baseado em system
 
 **Atenção:** NetworkManger não oferece suporte ao uso de dhcpcd para IPv6\. Veja [issue #5 do NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5).
 
-Para alterar o backend do cliente DHCP, defina a opção `dhcp=*dhcp_client_name*` na seção `[main]` do arquivo de configuração do NetworkManager. Por exemplo:
+Para alterar o backend do cliente DHCP, defina a opção `main.dhcp=*nome_cliente_dhcp*` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`. Por exemplo:
 
  `/etc/NetworkManager/conf.d/dhcp-client.conf` 
 ```
@@ -339,13 +360,17 @@ Para alterar o backend do cliente DHCP, defina a opção `dhcp=*dhcp_client_name
 dhcp=dhclient
 ```
 
-### Cache de DNS e DNS dividido
+### Gerenciamento de DNS
+
+O gerenciamento de DNS do NetworkManager é descrito na página wiki do projeto GNOME — [Projects/NetworkManager/DNS](https://wiki.gnome.org/Projects/NetworkManager/DNS).
+
+#### Cache de DNS e DNS dividido
 
 O NetworkManager possui um plugin para habilitar o cache DNS e DNS dividido usando [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), ou Unbound via dnssec-trigger. As vantagens dessa configuração são que as pesquisas de DNS serão armazenadas em cache, encurtando os tempos de resolução e as pesquisas de DNS dos hosts de VPN serão roteadas para os servidores DNS da VPN relevantes. Isso é especialmente útil se você estiver conectado a mais de uma VPN.
 
-#### dnsmasq
+##### dnsmasq
 
-Certifique-se que [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) está instalado. Então, crie `/etc/NetworkManager/conf.d/dns.conf` e adicione o seguinte a ele:
+Certifique-se que [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) está instalado. Então, defina `main.dns=dnsmasq` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/dns.conf` 
 ```
@@ -353,11 +378,11 @@ Certifique-se que [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) es
 dns=dnsmasq
 ```
 
-Agora, [reinicie](/index.php/Reinicie "Reinicie") `NetworkManager.service`. NetworkManager vai iniciar automaticamente o dnsmasq e adicionar `127.0.0.1` ao `/etc/resolv.conf`. Os servidores DNS atuais pode ser localizados no `/run/NetworkManager/resolv.conf`. Você pode verificar se dnsmasq está sendo usado fazendo a mesma procura DNS duas vezes com `drill example.com` e verificando o servidor e tempos de consulta.
+Agora, [reinicie](/index.php/Reinicie "Reinicie") `NetworkManager.service`. NetworkManager vai iniciar automaticamente o dnsmasq e adicionar `127.0.0.1` ao `/etc/resolv.conf`. Os servidores DNS originais podem ser localizados no `/run/NetworkManager/no-stub-resolv.conf`. Você pode verificar se dnsmasq está sendo usado fazendo a mesma procura DNS duas vezes com `drill example.com` e verificando o servidor e tempos de consulta.
 
-**Nota:** Você não precisa iniciar `dnsmasq.service` ou editar `/etc/dnsmasq.conf`. O NetworkManager iniciará o dnsmasq sozinho sem usar o serviço systemd e sem ler o(s) arquivo(s) de configuração padrão do dnsmasq.
+**Nota:** Você não precisa iniciar `dnsmasq.service` ou editar `/etc/dnsmasq.conf`. O NetworkManager iniciará o dnsmasq sem usar o serviço systemd e sem ler o(s) arquivo(s) de configuração padrão do dnsmasq.
 
-##### Configuração personalizada
+###### Configuração personalizada
 
 Configurações personalizadas podem ser criadas para o *dnsmasq* criando arquivos de configuração em `/etc/NetworkManager/dnsmasq.d/`. Por exemplo, para alterar o tamanho do cache DNS (armazenado na RAM):
 
@@ -366,7 +391,7 @@ Configurações personalizadas podem ser criadas para o *dnsmasq* criando arquiv
 
 Veja [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) para todas as opções disponíveis.
 
-##### IPv6
+###### IPv6
 
 Habilitar o `dnsmasq` no NetworkManager pode interromper as pesquisas de DNS somente do IPv6 (ou seja, `drill -6 [hostname`}) que, de outra forma, funcionariam. Para resolver isso, a criação do arquivo a seguir configurará o *dnsmasq* para também ouvir o loopback do IPv6:
 
@@ -374,11 +399,11 @@ Habilitar o `dnsmasq` no NetworkManager pode interromper as pesquisas de DNS som
 
 Além disso, o `dnsmasq` também não prioriza o DNS IPv6 upstream. Infelizmente, o NetworkManager não faz isso ([Bug do Ubuntu](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). Uma solução alternativa seria desabilitar o DNS IPv4 na configuração do NetworkManager, supondo que exista.
 
-##### DNSSEC
+###### DNSSEC
 
 A instância dnsmasq iniciada pelo NetworkManager por padrão não validará [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") desde que seja iniciada com a opção `--proxy-dnssec`. Ele irá confiar em qualquer informação DNSSEC obtida do servidor DNS upstream.
 
-Para que o dnsmasq valide corretamente o DNSSEC, crie o seguinte arquivo de configuração:
+Para que o dnsmasq valide corretamente o DNSSEC, quebrando assim a resolução de DNS com servidores de nomes que não suportam ele, crie o seguinte arquivo de configuração:
 
  `/etc/NetworkManager/dnsmasq.d/dnssec.conf` 
 ```
@@ -386,13 +411,13 @@ conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
 ```
 
-#### systemd-resolved
+##### systemd-resolved
 
 O NetworkManager pode usar o [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") como um resolvedor e cache de DNS. Certifique-se de que *systemd-resolved* esteja configurado corretamente e que `systemd-resolved.service` esteja [iniciado](/index.php/Iniciado "Iniciado") antes de usá-lo.
 
 systemd-resolved vai ser usado automaticamente se `/etc/resolv.conf` é um [link simbólico](/index.php/Systemd-resolved#DNS "Systemd-resolved") para `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` ou `/usr/lib/systemd/resolv.conf`.
 
-Você pode habilitá-lo explicitamente definindo a opção `dns=` no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
+Você pode habilitá-lo explicitamente definindo `main.dns=systemd-resolved` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/dns.conf` 
 ```
@@ -400,11 +425,65 @@ Você pode habilitá-lo explicitamente definindo a opção `dns=` no [NetworkMan
 dns=systemd-resolved
 ```
 
-#### Outros métodos
+##### Resolvedor de DNS com um assinante do openresolv
 
-**Dica:** Se [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") tem um assinante para o [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") local, defina o endereço de servidor local no `/etc/resolvconf.conf` e [configure o NetworkManager para usar openresolv](#Usar_openresolv).
+Se o [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") tem um assinante para seu [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") local, configure o assinante e [configure o NetworkManager para usar o openresolv](#Usar_openresolv).
 
-Com um servidor DNS em cache já em funcionamento, o endereço do servidor DNS pode ser especificado nas configurações do NetworkManager (geralmente clicando com o botão direito do mouse no miniaplicativo). A instalação dependerá do tipo de front-end usado; o processo geralmente envolve clicar com o botão direito do mouse no miniaplicativo, editar (ou criar) um perfil e, em seguida, escolher o tipo de DHCP como *Automático (especificar endereços)*. Os endereços DNS precisarão ser inseridos e geralmente estão neste formato: `127.0.0.1, *Servidor-DNS-um*, ...`.
+Porque o NetworkManager anuncia uma única "interface" para o *resolvconf*, não é possível implementar DNS dividido para conexões do NetworkManager. Veja [issue 153 do NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
+
+Isso pode ser parcialmente mitigado se você definir `private="*"` no `/etc/resolvconf.conf`[[4]](https://roy.marples.name/projects/openresolv/config). Quaisquer consultas por domínios que não estejam na lista de domínios de pesquisa não serão encaminhados. Elas serão tratadas conforme a configuração do resolvedor local. Por exemplo, encaminhadas para outro servidor DNS ou resolvidas recursivamente a partir da raiz do DNS.
+
+#### Configurando servidores DNS personalizados em uma conexão
+
+##### Configurando servidores DNS personalizados em uma conexão (GUI)
+
+A configuração vai depender do tipo de front-end usado; o processo geralmente envolve clicar com botão direito no miniaplicativo, editar (ou criar) um perfil e, então, escolher o tipo de DHCP como *Automático (especifique endereços)*. OS endereços DNS precisarão ser inseridos e são geralmente dessa formato: `127.0.0.1, *Servidor-DNS-um*, ...`.
+
+##### Configurando servidores DNS personalizados em uma conexão (nmcli / arquivo de conexão)
+
+Para configurar servidores DNS por conexão, você pode usar o campo `dns` (e os `dns-search` e `dns-options` associados) nas [configurações da conexão](#Editar_uma_conexão).
+
+Se `method` estiver definido para `auto` (quando você usa DHCP), você precisa definir `ignore-auto-dns` para `yes`.
+
+#### /etc/resolv.conf
+
+Por padrão, `/etc/resolv.conf` é gerenciado pelo *NetworkManager* a menos que ele seja um link simbólico.
+
+Ele pode ser configurado para escrever por meio do [openresolv](#Usar_openresolv) ou para [não tocar](#/etc/resolv.conf_não_gerenciado).
+
+O uso do openresolv permite que o NetworkManager coexista com outro software com suporte a *resolvconf* ou, por exemplo, para executar um cache DNS local e um resolvedor DNS dividido para o qual o openresolv tem um [assinante](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)").
+
+O *NetworkManager* também oferece hooks via os scripts dispatchers que podem ser usados para alterar o `/etc/resolv.conf` após as alterações de rede. Veja [#Serviços de rede com o NetworkManager dispatcher](#Serviços_de_rede_com_o_NetworkManager_dispatcher) e [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) para mais informações.
+
+**Nota:**
+
+*   Se o NetworkManager estiver configurado para usar [dnsmasq](#dnsmasq) ou [systemd-resolved](#systemd-resolved), os endereços loopback apropriados serão escritos em `/etc/resolv.conf`.
+*   O arquivo `resolv.conf` que o NetworkManager escreve, ou que escreveria em `/etc/resolv.conf`, pode ser encontrado em `/run/NetworkManager/resolv.conf`.
+*   Um arquivo `resolv.conf` com os servidores de nome obtidos e domínios de pesquisa podem ser encontrados em `/run/NetworkManager/no-stub-resolv.conf`.
+
+##### /etc/resolv.conf não gerenciado
+
+Para evitar que o NetworkManager toque no `/etc/resolv.conf`, defina `main.dns=none` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=none
+```
+
+**Nota:** Veja [#Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido), para configurar o NetworkManager usando outros backends de DNS, como [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") e [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), em vez de usar `main.dns=none`.
+
+Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
+
+##### Usar openresolv
+
+Para configurar o NetworkManager para usar [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)"), defina `main.rc-manager=resolvconf` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/rc-manager.conf` 
+```
+[main]
+rc-manager=resolvconf
+```
 
 ## Serviços de rede com o NetworkManager dispatcher
 
@@ -494,7 +573,7 @@ O script a seguir verificará se nos conectamos a uma rede específica e montamo
 # Todos os tipos de conexão do NetworkManager têm suporte: sem fio, VPN, com fio...
 if [ "$2" = "up" ]; then
   if [ "$CONNECTION_UUID" = "uuid" ]; then
-    mount /your/mount/point & 
+    mount /seu/ponto/de/montagem &
     # adicione mais compartilhamentos conforme necessário
   fi
 fi
@@ -618,7 +697,7 @@ A tentativa de se conectar com o script acima ainda pode falhar com `NetworkMana
 
 Se isso não funcionar sozinho, talvez seja necessário criar um `passwd-file` em um local seguro com as mesmas permissões e propriedade que o script do dispatcher, contendo o seguinte:
 
- `/path/to/passwd-file` 
+ `/caminho/para/arquivo-passwd` 
 ```
 vpn.secrets.password:SUA_SENHA
 
@@ -714,7 +793,7 @@ Se a opção foi selecionada anteriormente e você desmarcá-la, você pode ter 
 
 Você pode compartilhar sua conexão com a Internet (por exemplo, 3G ou com fio) com apenas alguns cliques. Você precisará de uma placa Wi-Fi (placas baseadas em Atheros AR9xx ou pelo menos AR5xx são provavelmente a melhor escolha). Por favor, note que um [firewall](/index.php/Firewall "Firewall") pode interferir no compartilhamento de internet.
 
-*   [Instale](/index.php/Instale "Instale") o pacote [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) para poder realmente compartilhar a conexão.
+[Instale](/index.php/Instale "Instale") o pacote [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) para poder realmente compartilhar a conexão.
 
 Crie a conexão compartilhada:
 
@@ -826,7 +905,7 @@ Depois de colocar isso, [reinicie](/index.php/Reinicie "Reinicie") o `NetworkMan
 
 ### Configurando aleatorização de endereço MAC
 
-**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
+**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[5]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
 
 A aleatorização de MAC pode ser usada para aumentar a privacidade, não revelando seu endereço MAC real à rede.
 
@@ -868,40 +947,6 @@ Veja [IPv6 (Português)#NetworkManager](/index.php/IPv6_(Portugu%C3%AAs)#Network
 Por padrão, o NetworkManager gera um perfil de conexão para cada conexão Ethernet com fio que encontrar. No momento em que gera a conexão, ele não sabe se haverá mais adaptadores Ethernet disponíveis. Por isso, ele chama a primeira conexão com fio "Conexão cabeada 1". Você pode evitar gerar essa conexão, configurando `no-auto-default` (consulte [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)) ou simplesmente excluindo-a. Em seguida, o NetworkManager se lembrará de não gerar uma conexão para essa interface novamente.
 
 Você também pode editar a conexão (e persistir no disco) ou excluí-la. O NetworkManager não irá gerar novamente uma nova conexão. Então, você pode mudar o nome para o que você quiser. Você pode usar algo como o *nm-connection-editor* para esta tarefa.
-
-### resolv.conf
-
-*NetworkManager* pode gerenciar `/etc/resolv.conf` por [conta própria](#/etc/resolv.conf) ou por meio de [openresolv](#Usar_openresolv).
-
-#### /etc/resolv.conf
-
-O *NetworkManager* sobrescreve o `/etc/resolv.conf` por padrão.
-
-Isso pode ser evitado definindo `dns=none` em um arquivo de configuração:
-
- `/etc/NetworkManager/conf.d/dns.conf` 
-```
-[main]
-dns=none
-```
-
-**Nota:** Veja [#Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido), para configurar o NetworkManager usando outros backends de DNS, como o [dnsmasq](/index.php/Dnsmasq "Dnsmasq") e o [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), em vez de usar `dns=none`.
-
-Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
-
-O *NetworkManager* também oferece "hooks" através de scripts chamados de "dispatchers" que podem ser usados para alterar o `/etc/resolv.conf` após as mudanças na rede. Consulte [#Serviços de rede com o NetworkManager dispatcher](#Serviços_de_rede_com_o_NetworkManager_dispatcher) e [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) para mais informações.
-
-#### Usar openresolv
-
-Para configurar o NetworkManager para usar o [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)"), defina a opção `rc-manager` para o `resolvconf` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
-
- `/etc/NetworkManager/conf.d/rc-manager.conf` 
-```
-[main]
-rc-manager=resolvconf
-```
-
-Outras opções estão disponíveis no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 ### Usando iwd como o backend de Wi-Fi
 
@@ -1090,9 +1135,28 @@ Atualmente, os ícones da área de notificação do nm-applet são desenhados un
 
 Uma versão corrigida do GTK3 existe no AUR, que aparentemente corrige o erro do ícone da área de notificação: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
 
-### Desabilitar NetworkManager ao usar dbus
+### Unit dbus-org.freedesktop.resolve1.service não encontrado
 
-Pode não ser óbvio, mas o serviço inicia automaticamente através de *dbus*. Para desativá-lo completamente, você pode aplicar [mask](/index.php/Mask_(Portugu%C3%AAs) "Mask (Português)") em `NetworkManager.service` e `NetworkManager-dispatcher.service`.
+Se `systemd-resolved.service` não tiver sido iniciado, NetworkManager vai tentar iniciá-lo usando D-Bus e vai falhar:
+
+```
+dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop.resolve1' unit='dbus-org.freedesktop.resolve1.service' requested by ':1.23' (uid=0 pid=1012 comm="/usr/bin/NetworkManager --no-daemon ")
+dbus-daemon[991]: [system] Activation via systemd failed for unit 'dbus-org.freedesktop.resolve1.service': Unit dbus-org.freedesktop.resolve1.service not found.
+dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop.resolve1' unit='dbus-org.freedesktop.resolve1.service' requested by ':1.23' (uid=0 pid=1012 comm="/usr/bin/NetworkManager --no-daemon ")
+
+```
+
+Isso é porque o NetworkManager vai tentar enviar informações DNS para [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") independentemente da configuração `main.dns=` no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[6]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+
+Isso pode ser desabilitado com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/no-systemd-resolved.conf` 
+```
+[main]
+systemd-resolved=false
+```
+
+Veja [FS#62138](https://bugs.archlinux.org/task/62138).
 
 ## Veja também
 

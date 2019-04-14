@@ -31,10 +31,11 @@ This article describes how to set up Apache and how to optionally integrate it w
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Apache Status and Logs](#Apache_Status_and_Logs)
     *   [4.2 Error: PID file /run/httpd/httpd.pid not readable (yet?) after start](#Error:_PID_file_/run/httpd/httpd.pid_not_readable_(yet?)_after_start)
-    *   [4.3 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM,_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
-    *   [4.4 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
-    *   [4.5 AH00072: make_sock: could not bind to address](#AH00072:_make_sock:_could_not_bind_to_address)
-    *   [4.6 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
+    *   [4.3 /run/httpd not being created at boot](#/run/httpd_not_being_created_at_boot)
+    *   [4.4 Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.](#Apache_is_running_a_threaded_MPM,_but_your_PHP_Module_is_not_compiled_to_be_threadsafe.)
+    *   [4.5 AH00534: httpd: Configuration error: No MPM loaded.](#AH00534:_httpd:_Configuration_error:_No_MPM_loaded.)
+    *   [4.6 AH00072: make_sock: could not bind to address](#AH00072:_make_sock:_could_not_bind_to_address)
+    *   [4.7 Changing the max_execution_time in php.ini has no effect](#Changing_the_max_execution_time_in_php.ini_has_no_effect)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -475,6 +476,16 @@ Apache logs can be found in `/var/log/httpd/`
 ### Error: PID file /run/httpd/httpd.pid not readable (yet?) after start
 
 Comment out the `unique_id_module` line in `httpd.conf`: `#LoadModule unique_id_module modules/mod_unique_id.so`
+
+### /run/httpd not being created at boot
+
+If `# systemd-tmpfiles --create` complains about "unsafe path transition", check ownership of your root directory.
+
+```
+ls -la /
+chown root:root /
+
+```
 
 ### Apache is running a threaded MPM, but your PHP Module is not compiled to be threadsafe.
 

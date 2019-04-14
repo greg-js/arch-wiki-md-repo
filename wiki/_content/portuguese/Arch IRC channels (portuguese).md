@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=557436) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=566394) na versão em inglês.
 
 Artigos relacionados
 
@@ -117,6 +117,7 @@ Discussões internacionais estão disponíveis nos seguintes canais, também loc
 | [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) | Discussão (Polonês) |
 | [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) | Discussão (Português) |
 | [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) | Discussão (Romano) |
+| [#archlinux-tg](ircs://chat.freenode.net/archlinux-tg) | Discussão (russo); ponte entre o IRC e grupo Telegram [Arch Linux RU](https://t.me/ArchLinuxChatRU) |
 | [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) | Discussão (Russo); também em **[irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru)** |
 | [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) | Discussão (Sérbio) |
 | [#archlinux-es](ircs://chat.freenode.net/archlinux-es) | Discussão (Espanhol) |

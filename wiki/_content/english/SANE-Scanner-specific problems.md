@@ -153,7 +153,7 @@ net {IP_OF_SCANNER}
 
 ```
 
-Upstream version of [iscan](https://www.archlinux.org/packages/?name=iscan) does not support 16bpc color depth scanning. Choosing any bit depth other than 8 makes iscan stop without warning, leaving the scanner stuck until restarted. To enable 16bpc scanning, iscan requires to be patched. Use [ABS](/index.php/ABS "ABS") and apply patch found in [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1835448#p1835448) to enable 16bpc depth mode.
+Upstream version of [iscan](https://www.archlinux.org/packages/?name=iscan) does not support 16bpc color depth scanning. Choosing any bit depth other than 8 makes iscan stop without warning, leaving the scanner stuck until restarted. To enable 16bpc scanning, iscan requires to be patched. Use [ABS](/index.php/ABS "ABS") and apply patch found in [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1841337#p1841337) to enable 16bpc depth mode.
 
 #### Image Scan v3
 

@@ -151,12 +151,23 @@ You may also need to [unmute](#ALSA) the PC speaker in [ALSA](/index.php/ALSA "A
 
 ### Run as non-root user
 
-Set up permissions for the pcspkr evdev device file:
+`beep` uses `/dev/input/by-path/platform-pcspkr-event-spkr` to control the PC speaker. To access it as a non-root user, one has to set the proper permissions. Create `/usr/lib/udev/rules.d/70-pcspkr-beep.rules` and add the following rule:
 
 ```
-# usermod -aG input <username>
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"
 
 ```
+
+That will allow any user, who is logged into the currently active virtual console session, to use the PC speaker.
+
+Alternatively, a new user group may be created (e.g. `beep`) with the corresponding rule to set the right permissions on the device file:
+
+```
+ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", GROUP="beep", MODE="0620"
+
+```
+
+With that solution any user in the `beep` group will be able to control the speaker.
 
 ### Tips and Tricks
 

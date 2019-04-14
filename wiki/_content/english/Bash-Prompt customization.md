@@ -323,7 +323,6 @@ Of course your window title string can include output from [embedding commands](
 *   [tput(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tput.1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)
     *   [Colours and Cursor Movement With tput](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html)
-*   [Nice Xresources color schemes collection](http://xcolors.net/)
 *   [Bash Prompt HOWTO](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html)
 *   [Giles Orr's collection of sample prompts](http://gilesorr.com/bashprompt/prompts/index.html)
 *   [Bash tips: Colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=563885) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=569743) na versão em inglês.
 
 Artigos relacionados
 
@@ -506,7 +506,7 @@ As configurações do *pacman* estão localizados em `/etc/pacman.conf`: este é
 
 ### Opções gerais
 
-Opções gerais estão na seção `[options]`. Leia [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) ou olhe no `pacman.conf` padrão para obter informações sobre o que pode ser feito aqui.
+Opções gerais estão na seção `[options]`. Leia [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5) ou olhe no `pacman.conf` padrão para obter informações sobre o que pode ser feito aqui.
 
 #### Comparando versões antes de atualizar
 
@@ -795,8 +795,8 @@ Ao concluir com êxito uma transação de pacote, o pacman executa as seguintes 
 3.  se hooks `PreTransaction` pré-existentes do pacman se aplicarem, eles serão executados
 4.  cada pacote é instalado/atualizado/removido por vez
     1.  se o pacote tiver um script de instalação, sua função `pre_install` é executada (ou `pre_upgrade` ou `pre_remove` no caso de um pacote atualizado ou removido)
-    2.  pacman exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido). Porém, alguns arquivos de configuração são [tratados de forma diferente](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave").
-    3.  pacman descompacta o pacote e despeja seus arquivos no sistema de arquivos (no caso de um pacote instalado ou atualizado)
+    2.  pacman exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido). Porém, arquivos que foram marcados como arquivos de configuração no pacote são mantidos (veja [Pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave")).
+    3.  pacman descompacta o pacote e despeja seus arquivos no sistema de arquivos (no caso de um pacote instalado ou atualizado). Arquivos que sobrescreveriam os arquivos de configuração mantidos, e modificados manualmente (veja a etapa anterior), são armazenados com um novo nome (.pacnew).
     4.  se o pacote tiver um script de instalação, sua função `post_install` será executada (ou `post_upgrade` ou `post_remove` no caso de um pacote atualizado ou removido)
 5.  se hooks do pacman `PostTransaction` que existem no final da transação se aplicarem, eles serão executados
 

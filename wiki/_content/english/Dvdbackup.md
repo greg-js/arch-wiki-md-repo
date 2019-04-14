@@ -5,7 +5,11 @@ Related articles
 
 There are several ways to backup DVD videos. The quickest and simplest is to [copy the ISO image](/index.php/Optical_disc_drive#Creating_an_ISO_image_from_a_CD.2C_DVD.2C_or_BD "Optical disc drive") as is. Many other methods are slow, and require several steps to accomplish. [dvdbackup](http://dvdbackup.sourceforge.net/) provides one of the simpler methods to rip a DVD (with some help from [dvdauthor](http://dvdauthor.sourceforge.net/)). It is elegant because it does not demux/remux/transcode/reformat the movie. This means the backup process is done in one step. But it can be tricked into copying much more than necessary by a DVD reporting incorrect size data.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Examining the DVD](#Examining_the_DVD)
@@ -143,7 +147,7 @@ $ dvdbackup -i /dev/dvd -o ~ -M
 
 ## Shrinking the DVD
 
-If the movie needs to fit on a 4.7 GB single layer dvd, *vamps* can be used to shrink it down to size. First, rip the main title and concatenate the vobs into one file.
+If the movie needs to fit on a 4.7 GB single layer dvd, [vamps](https://www.archlinux.org/packages/?name=vamps) can be used to shrink it down to size. First, rip the main title and concatenate the vobs into one file.
 
 ```
 $ dvdbackup -t 1 
@@ -166,7 +170,7 @@ $ vamps -E 1.15 -a 1 < movie.vob > movie.dvd5.vob
 
 ```
 
-Author the dvd:
+Author the dvd with [dvdauthor](https://www.archlinux.org/packages/?name=dvdauthor):
 
 ```
 $ dvdauthor -t -o ./author movie.dvd5.vob

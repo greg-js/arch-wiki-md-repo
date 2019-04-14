@@ -8,7 +8,8 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Hardware Details](#Hardware_Details)
+*   [1 Hardware Information](#Hardware_Information)
+    *   [1.1 Temperatures](#Temperatures)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Screen goes blank](#Screen_goes_blank)
 *   [3 Tunning](#Tunning)
@@ -20,9 +21,10 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
     *   [3.4 Fan Control](#Fan_Control)
     *   [3.5 Wifi](#Wifi)
     *   [3.6 Blacklisting unused module](#Blacklisting_unused_module)
-*   [4 Others](#Others)
+    *   [3.7 Disable Time Throttling STAPM](#Disable_Time_Throttling_STAPM)
+*   [4 Improve Colling](#Improve_Colling)
 
-## Hardware Details
+## Hardware Information
 
 lspci output:
 
@@ -70,6 +72,25 @@ Bus 001 Device 002: ID 0483:91d1 STMicroelectronics Sensor Hub
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+### Temperatures
+
+The following script will provide all temperatures.
+
+```
+#!/bin/bash
+echo Sensors
+sensors dell_smm-virtual-0
+echo CPU real speed
+cat /proc/cpuinfo | grep  MHz
+echo GPU real speed
+sudo cat /sys/kernel/debug/dri/0/amdgpu_pm_info | grep MHz
+echo SSD Temp
+sudo smartctl -a /dev/sda | grep Temperature
+
+```
+
+you will need smartools and lmsensors
 
 ## Troubleshooting
 
@@ -153,7 +174,20 @@ blacklist sp5100_tco
 
 This will prevent some warnings while booting.
 
-## Others
+### Disable Time Throttling STAPM
+
+Is you only want CPU/GPU temperature based throttling install [ryzenadj-git](https://aur.archlinux.org/packages/ryzenadj-git/) and run:
+
+```
+sudo ryzenadj --slow-time=0xffffffff --stapm-time=0xffffffff
+
+```
+
+You must run the code before running the high demand task, this setting bill be disabled after suspension.
+
+Please improve cooling before doing it.
+
+## Improve Colling
 
 This laptop gets super hot, in order to decrease temperature and perform long intensive tasks, you can perform the following hardware hacks (witch might void guarantee and i will not take any responsibility for breaking the laptop)
 
@@ -168,3 +202,5 @@ If you don't have a vertical drill, stick the grid into a 0.5cm wood, and put th
 3.- After doing 1 and 2 you can add a cooling base with a fan in the bottom and you should be able to play games with out burning the laptop.
 
 4.- If you made the holes you can make the laptop more quiet with [this NBFC settings](https://s3.us-east-2.amazonaws.com/danielfm123-public/proyects/dell+7375/Dell+Inspiron+7375+custom.xml)
+
+5.- Add thermal pads (same ones as most GPU RAM have) between CPU and case (not much).

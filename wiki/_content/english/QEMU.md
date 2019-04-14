@@ -1126,6 +1126,8 @@ QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga 
 
 On Linux guests, the `qxl` and `bochs_drm` kernel modules must be loaded in order to gain a decent performance.
 
+Default VGA memory size for QXL devices is 16M which is sufficient to drive resolutions approximately up to QHD (2560x1440). To enable higher resolutions, [increase vga_memmb](#Multi-monitor_support).
+
 ### vmware
 
 Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.

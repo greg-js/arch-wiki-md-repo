@@ -12,7 +12,7 @@ Um emulador é um programa que serve para replicar as funções de outra platafo
 
 	[https://citra-emu.org/](https://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
 
-*   **DeSmuME** — Emulador Nintendo DS.
+*   **DeSmuME** — Emulador de Nintendo DS.
 
 	[https://desmume.org/](https://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
 

@@ -8,7 +8,11 @@
 
 GNU/Linux 通过用户和用户组实现[访问控制](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —— 包括对文件访问、设备使用的控制。Linux 默认的访问控制机制相对简单直接，不过还有一些更加高级的机制，包括 [ACL](/index.php/ACL "ACL") 和 [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 概览](#概览)
 *   [2 权限与属主](#权限与属主)
@@ -74,17 +78,17 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 属主：
 
- `$ stat -c %U /media/sf_Shared/`  `root` 
+ `$ stat -c %U /media/sf_Shared/`  `root` 
 
 属组：
 
- `$ stat -c %G /media/sf_Shared/`  `vboxsf` 
+ `$ stat -c %G /media/sf_Shared/`  `vboxsf` 
 
 访问权限：
 
- `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
+ `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
 
-访问权限由三组字符组成，分别代表属主、属组、其他人的权限。例如，`-rw-r--r--`表示属组有读写权限、但无运行权限（`rw-`），属组用户和其他用户只有读取权限（`r--`）。又如，`drwxrwx---`表示文件属主和属组用户有读、写、执行权限（`rwx`），而禁止其他用户任何访问（`---`）。第一个字符”d“代表文件类型（目录）。
+访问权限由三组字符组成，分别代表属主、属组、其他人的权限。例如，`-rw-r--r--`表示属主有读写权限、但无运行权限（`rw-`），属组用户和其他用户只有读取权限（`r--`）。又如，`drwxrwx---`表示文件属主和属组用户有读、写、执行权限（`rwx`），而禁止其他用户任何访问（`---`）。第一个字符”d“代表文件类型（目录）。
 
 通过`find`命令查找属于某个用户或某个组的文件：
 

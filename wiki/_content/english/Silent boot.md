@@ -9,11 +9,12 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [1 Kernel parameters](#Kernel_parameters)
 *   [2 Remove console cursor blinking](#Remove_console_cursor_blinking)
 *   [3 sysctl](#sysctl)
-*   [4 startx](#startx)
-*   [5 fsck](#fsck)
-*   [6 Make GRUB silent](#Make_GRUB_silent)
-*   [7 Retaining the vendor logo from BIOS](#Retaining_the_vendor_logo_from_BIOS)
-    *   [7.1 Disabling deferred takeover](#Disabling_deferred_takeover)
+*   [4 agetty](#agetty)
+*   [5 startx](#startx)
+*   [6 fsck](#fsck)
+*   [7 Make GRUB silent](#Make_GRUB_silent)
+*   [8 Retaining the vendor logo from BIOS](#Retaining_the_vendor_logo_from_BIOS)
+    *   [8.1 Disabling deferred takeover](#Disabling_deferred_takeover)
 
 ## Kernel parameters
 
@@ -62,6 +63,17 @@ To recover the cursor in the TTY, run:
 To hide any kernel messages from the console, add or modify the `kernel.printk` line according to [[2]](http://unix.stackexchange.com/a/45525/27433):
 
  `/etc/sysctl.d/20-quiet-printk.conf`  `kernel.printk = 3 3 3 3` 
+
+## agetty
+
+To hide agetty printed issue and "login:" prompt line from the console[[3]](https://github.com/karelzak/util-linux/commit/933956cb499e12d0d0e5228b6de34ffa5c9a9e08), create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `getty@tty1.service`.
+
+ `/etc/systemd/system/getty@tty1.service.d/skip-prompt.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty **--skip-login** --nonewline --noissue --autologin *username* --noclear %I $TERM
+```
 
 ## startx
 

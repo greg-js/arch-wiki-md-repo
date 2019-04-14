@@ -41,7 +41,7 @@ You need at least one user on your fresh synapse server. You may create one as y
 
  `$ register_new_matrix_user -c /etc/synapse/homeserver.yaml [https://localhost:8448](https://localhost:8448)` 
 
-or using one of the [matrix clients](https://matrix.org/docs/projects/try-matrix-now.html)
+or using one of the [matrix clients](https://matrix.org/docs/projects/try-matrix-now.html), for example [riot-desktop](https://www.archlinux.org/packages/?name=riot-desktop), or the [purple-matrix-git](https://aur.archlinux.org/packages/purple-matrix-git/) plug-in for [libpurple](https://www.archlinux.org/packages/?name=libpurple).
 
 ## Spider Webcrawler
 

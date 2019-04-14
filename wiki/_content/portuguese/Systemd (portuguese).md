@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=564454) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=567759) na versão em inglês.
 
 Artigos relacionados
 
@@ -523,6 +523,7 @@ Para atrasar um serviço depois que a rede está ativa, inclua as seguintes depe
 O serviço de espera de rede do aplicativo específico que gerencia a rede também deve ser ativado para que `network-online.target` reflita adequadamente o status da rede.
 
 *   Para os que estão usando [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)"), [habilite](/index.php/Habilite "Habilite") `NetworkManager-wait-online.service`.
+*   No caso de [netctl](/index.php/Netctl "Netctl"), habilite o `netctl-wait-online.service`.
 *   Se estiver usando [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"), `systemd-networkd-wait-online.service` é, por padrão, habilitado automaticamente sempre que `systemd-networkd.service` foi habilitado; caso obtenha sucesso na verificação como `systemctl is-enabled systemd-networkd-wait-online.service`, nenhuma outra ação é necessária.
 
 Para explicações mais detalhadas, veja [Running services after the network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/) no wiki do systemd.
@@ -668,7 +669,7 @@ Se `journalctl -u foounit` não mostra nenhuma saída para um serviço de curta 
 
 Depois de usar o `systemd-analyze`, vários usuários notaram que o tempo de inicialização aumentou significativamente em comparação com o que costumava ser. Depois de usar `systemd-analyse blame`, o [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") está sendo relatado como tendo uma quantidade anormalmente grande de tempo para iniciar.
 
-O problema para alguns usuários foi devido a `/var/log/journal` se tornar muito grande. Isso pode ter outros impactos no desempenho, como `systemctl status` ou `journalctl`. Como tal, a solução é remover todos os arquivos dentro da pasta (idealmente fazendo um backup em algum lugar, pelo menos temporariamente) e, em seguida, definindo um limite de tamanho de arquivo de diário conforme descrito em [#Limite no tamanho do journal](#Limite_no_tamanho_do_journal).
+O problema para alguns usuários foi devido a `/var/log/journal` se tornar muito grande. Isso pode ter outros impactos no desempenho, como `systemctl status` ou `journalctl`. Como tal, a solução é remover todos os arquivos dentro da pasta (idealmente fazendo um backup em algum lugar, pelo menos temporariamente) e, em seguida, definindo um limite de tamanho de arquivo de diário conforme descrito em [systemd/Journal (Português)#Limite no tamanho do journal](/index.php/Systemd/Journal_(Portugu%C3%AAs)#Limite_no_tamanho_do_journal "Systemd/Journal (Português)").
 
 ### systemd-tmpfiles-setup.service não inicia na inicialização do sistema
 

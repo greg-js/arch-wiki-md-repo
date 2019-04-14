@@ -18,9 +18,8 @@ This article contains instruction on sharing printers between systems, be it bet
     *   [2.3 Enabling browsing](#Enabling_browsing)
 *   [3 Between GNU/Linux and Windows](#Between_GNU/Linux_and_Windows)
     *   [3.1 Linux server - Windows client](#Linux_server_-_Windows_client)
-        *   [3.1.1 Sharing via Bonjour](#Sharing_via_Bonjour)
-        *   [3.1.2 Sharing via IPP](#Sharing_via_IPP)
-        *   [3.1.3 Sharing via Samba](#Sharing_via_Samba)
+        *   [3.1.1 Sharing via IPP](#Sharing_via_IPP)
+        *   [3.1.2 Sharing via Samba](#Sharing_via_Samba)
     *   [3.2 Windows server - Linux client](#Windows_server_-_Linux_client)
         *   [3.2.1 Sharing via LPD](#Sharing_via_LPD)
         *   [3.2.2 Sharing via IPP](#Sharing_via_IPP_2)
@@ -110,13 +109,9 @@ The `org.cups.cupsd.service` service will be automatically started when a USB pr
 
 ### Linux server - Windows client
 
-Sharing to Windows clients can be achieved using [#Sharing via Bonjour](#Sharing_via_Bonjour), [#Sharing via IPP](#Sharing_via_IPP), or [#Sharing via Samba](#Sharing_via_Samba).
+Sharing to Windows clients can be achieved using [#Sharing via IPP](#Sharing_via_IPP), or [#Sharing via Samba](#Sharing_via_Samba).
 
 After setting up the server, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2' or 'Microsoft PS Class driver').
-
-#### Sharing via Bonjour
-
-[Bonjour Printing Services](https://support.apple.com/kb/dl999) allows Windows clients to easily connect to Unix print servers with [browsing enabled](#Enabling_browsing).
 
 #### Sharing via IPP
 
@@ -129,11 +124,11 @@ First, configure the server as described in the section [#Between GNU/Linux syst
 On the Windows computer, go to *Control Panel > Devices and Printers* and choose 'Add a printer'. If on Windows 10, click "The printer that I want is not listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
 
 ```
-http://*hostname*:631/printers/*printer_name*
+http://*hostname*:631/printers/*Printer_Name*
 
 ```
 
-(where *hostname* is the GNU/Linux server's hostname or IP address and *printer_name* is the name of the print queue being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my.fully.qualified.domain.name` in `/etc/cups/cupsd.conf` for this to work).
+Where *hostname* is the GNU/Linux server's hostname or IP address and *Printer_Name* is the name of the print queue being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my.fully.qualified.domain.name` in `/etc/cups/cupsd.conf` for this to work.
 
 **Note:**
 

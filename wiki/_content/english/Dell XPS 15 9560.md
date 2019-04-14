@@ -320,7 +320,7 @@ A discussion around this issue can be found [here](https://www.displaylink.org/f
 
 ## Firmware updates
 
-Firmware updates are provided by Dell and can be installed with [fwupdate](https://www.archlinux.org/packages/?name=fwupdate) or [fwupd](https://www.archlinux.org/packages/?name=fwupd). Available firmware versions can be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
+Firmware updates are provided by Dell and can be installed with [fwupdate](https://aur.archlinux.org/packages/fwupdate/) or [fwupd](https://www.archlinux.org/packages/?name=fwupd). Available firmware versions can be seen [here](https://secure-lvfs.rhcloud.com/lvfs/device/34578c72-11dc-4378-bc7f-b643866f598c).
 
 Alternatively, firmware updates can be installed by copying the MS-DOS executable firmware file to a FAT32-formatted USB key (or directly to your EFI boot partition) and booting into "BIOS Flash Update" from the Boot Menu.
 

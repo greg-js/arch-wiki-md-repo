@@ -54,6 +54,13 @@ upstream_recursive_servers:
 
 ```
 
+When you get warn log complaining wrong tls_pubkey_pinset, the tls_pubkey_pinset value may be wrong and the `value` of the `tls_pubkey_pinset` can be generated with:
+
+```
+$ echo | openssl s_client -connect *address_data:tls_port* 2>/dev/null | openssl x509 -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
+
+```
+
 **Note:** For further information on configuring Stubby see [Configuring Stubby](https://dnsprivacy.org/wiki/display/DP/Configuring+Stubby).
 
 ### Modify resolv.conf

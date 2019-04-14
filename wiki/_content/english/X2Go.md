@@ -1,6 +1,6 @@
-[X2Go](http://wiki.x2go.org) enables you to access a graphical desktop of a computer over the network. The protocol is tunneled through the [Secure Shell](/index.php/Secure_Shell "Secure Shell") protocol, so it is encrypted.
+[X2Go](http://wiki.x2go.org) enables to access a graphical desktop of a computer over the network. The protocol is tunneled through the [Secure Shell](/index.php/Secure_Shell "Secure Shell") protocol, so it is encrypted.
 
-**Note:** X2Go isn't compatible with all desktop environments. You can check [X2Go desktop environment compatibility](http://wiki.x2go.org/doku.php/doc:de-compat) first, especially if you want to shadow your current desktop.
+**Note:** X2Go is not compatible with all desktop environments. You can check [X2Go desktop environment compatibility](http://wiki.x2go.org/doku.php/doc:de-compat) first, especially if you want to shadow your current desktop.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,51 +9,44 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Server configuration](#Server_configuration)
+*   [2 Server side](#Server_side)
     *   [2.1 Configure Secure Shell daemon](#Configure_Secure_Shell_daemon)
-    *   [2.2 Load fuse kernel module](#Load_fuse_kernel_module)
+    *   [2.2 Check fuse kernel module is loaded](#Check_fuse_kernel_module_is_loaded)
     *   [2.3 Setup SQLite database](#Setup_SQLite_database)
     *   [2.4 Control published applications](#Control_published_applications)
     *   [2.5 Start X2Go server daemon](#Start_X2Go_server_daemon)
-*   [3 Desktop Shadowing](#Desktop_Shadowing)
-*   [4 Client configuration](#Client_configuration)
-    *   [4.1 Common mistakes](#Common_mistakes)
-    *   [4.2 Exchange data between client and server (desktop)](#Exchange_data_between_client_and_server_(desktop))
-    *   [4.3 To leave a session temporarily](#To_leave_a_session_temporarily)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
-    *   [5.2 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
-    *   [5.3 Local session blocks x2go session](#Local_session_blocks_x2go_session)
-    *   [5.4 Notification area disappeared](#Notification_area_disappeared)
-    *   [5.5 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_(Windows_Clients))
-    *   [5.6 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
-    *   [5.7 /bin/bash: No such file or directory when connect (or what ever shell you use)](#/bin/bash:_No_such_file_or_directory_when_connect_(or_what_ever_shell_you_use))
-*   [6 See also](#See_also)
+*   [3 Client side](#Client_side)
+    *   [3.1 Access the local desktop](#Access_the_local_desktop)
+    *   [3.2 Exchange data between client and server (desktop)](#Exchange_data_between_client_and_server_(desktop))
+    *   [3.3 Leave a session temporarily](#Leave_a_session_temporarily)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 The desktop environment does not start](#The_desktop_environment_does_not_start)
+        *   [4.1.1 Local session prevents X2Go new session](#Local_session_prevents_X2Go_new_session)
+        *   [4.1.2 Path issue](#Path_issue)
+    *   [4.2 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
+    *   [4.3 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
+    *   [4.4 Notification area disappeared](#Notification_area_disappeared)
+    *   [4.5 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_(Windows_Clients))
+    *   [4.6 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
+    *   [4.7 /bin/bash: No such file or directory when connect (or what ever shell you use)](#/bin/bash:_No_such_file_or_directory_when_connect_(or_what_ever_shell_you_use))
+*   [5 See also](#See_also)
 
 ## Installation
 
 Two parts are available in [official repositories](/index.php/Official_repositories "Official repositories"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
 
 *   [x2goserver](https://www.archlinux.org/packages/?name=x2goserver) - X2Go server
-*   [x2goclient](https://www.archlinux.org/packages/?name=x2goclient) - X2Go client based on Qt4
+*   [x2goclient](https://www.archlinux.org/packages/?name=x2goclient) - X2Go client based on Qt5
 
-## Server configuration
+## Server side
 
 ### Configure Secure Shell daemon
 
-X2Go uses [Secure Shell](/index.php/Secure_Shell "Secure Shell") in order to work, so you need to configure sshd daemon to allow X11 forwarding and then start it first. Follow the instructions at [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH") and [OpenSSH#Daemon management](/index.php/OpenSSH#Daemon_management "OpenSSH").
+X2Go uses [Secure Shell](/index.php/Secure_Shell "Secure Shell") in order to work, so you need to configure sshd daemon to allow X11 forwarding. Follow the instructions at [OpenSSH#X11 forwarding](/index.php/OpenSSH#X11_forwarding "OpenSSH") and [OpenSSH#Daemon management](/index.php/OpenSSH#Daemon_management "OpenSSH").
 
-If you are using other than POSIX (C) locale, you may want to add the following line to [configuration file](/index.php/OpenSSH#Server_usage "OpenSSH")
+### Check fuse kernel module is loaded
 
-```
-# Allow client to pass locale environment variables
-AcceptEnv LANG LC_*
-
-```
-
-### Load fuse kernel module
-
-In order for the server to be able to access files on the client computer you should load a `fuse` [kernel module](/index.php/Kernel_module "Kernel module").
+In order for the server to be able to access files on the client computer, the fuse module is needed. One can check that `lsmod | grep fuse` returns a match, otherwise load the `fuse` [kernel module](/index.php/Kernel_module "Kernel module").
 
 ### Setup SQLite database
 
@@ -72,53 +65,56 @@ See [[1]](https://wiki.x2go.org/doku.php/wiki:advanced:published-applications) f
 
 ### Start X2Go server daemon
 
-Now all you need to do is [start](/index.php/Start "Start") `x2goserver.service`.
+Now all you need to do is [start](/index.php/Start "Start") the system `x2goserver.service`.
 
-## Desktop Shadowing
+## Client side
 
-To gain access to the "local desktop" (as opposed to a unique session/desktop environment) you need to install [x2godesktopsharing](https://aur.archlinux.org/packages/x2godesktopsharing/) from the [AUR](/index.php/AUR "AUR"). Then, launch `x2godesktopsharing`.
-
-Note, you do not need x2godesktopsharing to access "local desktop" of user "foo" by user "foo". x2godesktopsharing is for accessing "foo"'s desktop by "foo2" user. Just choose "Connection to local desktop" in "session type" in x2goclient.
-
-## Client configuration
-
-Make sure you can open an SSH session from the client to the server:
-
-```
-$ ssh *username@host*
-
-```
-
-Then run X2Go client itself:
+Run *X2Go Client* on the client computer, the one that wants to access the server:
 
 ```
 $ x2goclient
 
 ```
 
+For the list of available options, see [x2goclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x2goclient.1).
+
+**Note:** Make sure the client computer can open a SSH session to the server by checking from the client that `ssh *username@host*` is successful.
+
 You can now create several sessions, which then appear on the right side and can be selected by a mouse click. Each entry consists of your username, hostname, IP, and port for SSH connection. Furthermore you can define several speed profiles (coming from modem up to LAN) and the desktop environment you want to start remotely.
 
-### Common mistakes
+### Access the local desktop
 
-Do not simply choose the defaults of KDE or Gnome, since the executables *startkde* and *startgnome* are usually not in the `$PATH` when logging in using SSH. Use full paths to *startkde* or *startgnome*. You can also start [openbox](/index.php/Openbox "Openbox") or another window manager.
+To access the local desktop, the one currently running on the server rather than a new one, one can choose the option "Connection to local desktop" in "session type" in the *X2Go Client* as long as the users match, if it is user *foo* accessing the session of user *foo*.
 
-You should be asked for your password for your user at the server now and after login you will see the X2Go logo for a short time, and the desktop.
+However to access the local desktop of a different user, one needs to install [x2godesktopsharing](https://aur.archlinux.org/packages/x2godesktopsharing/) and launch `x2godesktopsharing`.
 
 ### Exchange data between client and server (desktop)
 
 On the X2Go client (e.g. laptop) local directories could be shared. The server will use [fuse](/index.php/Fuse "Fuse") and [SSHFS](/index.php/SSHFS "SSHFS") to access this directory and mount it to a subdirectory media of your home directory on the server. This enables you to have access to laptop data on your server or to exchange files. It is also possible to mount these shares automatically at each session start.
 
-### To leave a session temporarily
+### Leave a session temporarily
 
 Another special feature of X2Go is the possibility of suspending a session. This means you can leave a session on one client and reopen it even from another client at the same point. This can be used to to start a session in the LAN and to reopen it later on a laptop. The session data are stored and administered in a [SQLite](/index.php/SQLite "SQLite") database on the server in the meanwhile. The state of the sessions is protocolled by a process named *x2gocleansessions*.
 
 ## Troubleshooting
 
+### The desktop environment does not start
+
+#### Local session prevents X2Go new session
+
+It happens that when a desktop session already runs locally and X2Go tries to start a new one, it fails. This is typically an issue related to *D-Bus*, see [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1350004) for details.
+
+If *D-Bus* fails to start, try using a *Custom desktop* command instead of the default session type. For the command, use the desktop starter as an option of `dbus-launch`, for example `dbus-launch startxfce4`. This is a way to launch a session bus instance, set the appropriate environment variables so that the new session can find the bus.
+
+#### Path issue
+
+It may be that the desktop environment's executable, *startkde*, *startgnome* or *startxfce4* is not in the `$PATH` when logging in using SSH. In this case, do not simply choose the defaults of KDE, Gnome or XFCE but use the full paths to the executable for example `/usr/bin/startxfce4`. You can also start [openbox](/index.php/Openbox "Openbox") or another window manager. You should be asked for your server's password and user name, now and after login you will see the X2Go logo for a short time, and the desktop.
+
 ### No selection screen in x2goclient
 
-A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes *ss* to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[2]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
+A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes *ss* to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[3]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
 
-See [[3]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1541035) for more information.
+See [[4]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1541035) for more information.
 
 ### Sessions do not logoff correctly
 
@@ -137,15 +133,9 @@ Here is a sample script for an XFCE session:
 
 ```
 
-### Local session blocks x2go session
-
-When you are logged in locally already, and when you try to log in with x2go, the session will terminate immediatelly.
-
-There is a dbus related problem, see [[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1350004) for details and workarounds.
-
 ### Notification area disappeared
 
-If you log in, but the notification area is missing, you can use exactly the same fix as for [#Local session blocks x2go session](#Local_session_blocks_x2go_session).
+If you log in, but the notification area is missing, you can use exactly the same fix as for [#Local session prevents X2Go new session](#Local_session_prevents_X2Go_new_session).
 
 ### Shared folders do not mount (Windows Clients)
 

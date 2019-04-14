@@ -1,3 +1,8 @@
+Related articles
+
+*   [Session lock](/index.php/Session_lock "Session lock")
+*   [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
+
 Slock, or the "Simple X display locker", is a display locker for [X](/index.php/X "X") that aims to be minimal, fast, and lightweight.[[1]](http://tools.suckless.org/slock/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

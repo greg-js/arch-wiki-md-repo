@@ -239,7 +239,7 @@ That is all there is to it. If you feel adventurous, make three failed login att
 
 ### Limit amount of processes
 
-On systems with many, or untrusted users, it is important to limit the number of processes each can run at once, therefore preventing [fork bombs](https://en.wikipedia.org/wiki/Fork_bomb "wikipedia:Fork bomb") and other denial of service attacks. `/etc/security/limits.conf` determines how many processes each user, or group can have open, and is empty (except for useful comments) by default. adding the following lines to this file will limit all users to 100 active processes, unless they use the `prlimit` command to explicitly raise their maximum to 200 for that session. These values can be changed according to the appropriate number of processes a user should have running, or the hardware of the box you are administrating.
+On systems with many, or untrusted users, it is important to limit the number of processes each can run at once, therefore preventing [fork bombs](https://en.wikipedia.org/wiki/Fork_bomb "wikipedia:Fork bomb") and other denial of service attacks. `/etc/security/limits.conf` determines how many processes each user, or group can have open, and is empty (except for useful comments) by default. Adding the following lines to this file will limit all users to 100 active processes, unless they use the `prlimit` command to explicitly raise their maximum to 200 for that session. These values can be changed according to the appropriate number of processes a user should have running, or the hardware of the box you are administrating.
 
 ```
 * soft nproc 100
@@ -247,7 +247,7 @@ On systems with many, or untrusted users, it is important to limit the number of
 
 ```
 
-The current number of threads for each user can be found with `ps --no-headers -Leo user | sort | uniq -c`. This may help with determining appropriate values for the limits.
+The current number of threads for each user can be found with `ps --no-headers -Leo user | sort | uniq --count`. This may help with determining appropriate values for the limits.
 
 ### Run Xorg rootless
 
@@ -297,7 +297,7 @@ Exporting `# EDITOR=nano visudo` is regarded as a severe security risk since eve
 
 #### Editing files using sudo
 
-Running a text editor as root can be a security vulnerability as many editors can run arbitrary shell commands or affect files other than the one you intend to edit. To avoid this, use `sudoedit filename` (equivalently, `sudo -e filename`) to edit files. This edits a copy of the file using your normal user privileges and then overwrites the original using sudo only after the editor is closed. You can change the editor this uses by setting the `SUDO_EDITOR` environment variable:
+Running a text editor as root can be a security vulnerability as many editors can run arbitrary shell commands or affect files other than the one you intend to edit. To avoid this, use `sudoedit filename` (equivalently, `sudo --edit filename`) to edit files. This edits a copy of the file using your normal user privileges and then overwrites the original using sudo only after the editor is closed. You can change the editor this uses by setting the `SUDO_EDITOR` environment variable:
 
 ```
 $ export SUDO_EDITOR=vim
@@ -308,7 +308,7 @@ Alternatively, use an editor like `rvim` which has restricted capabilities in or
 
 ### Restricting root login
 
-Once [sudo](/index.php/Sudo "Sudo") is properly configured, full root access can be heavily restricted or denied without losing much usability. To disable root, but still allowing to use [sudo](/index.php/Sudo "Sudo"), you can use `passwd -l root`.
+Once [sudo](/index.php/Sudo "Sudo") is properly configured, full root access can be heavily restricted or denied without losing much usability. To disable root, but still allowing to use [sudo](/index.php/Sudo "Sudo"), you can use `passwd --lock root`.
 
 #### Allow only certain users
 
@@ -334,7 +334,7 @@ Even if you do not wish to deny root login for local users, it is always good pr
 
 Pathname-based access control is a simple form of access control that offers permissions based on the path of a given file. The downside to this style of access control is that permissions are not carried with files if they are moved about the system. On the positive side, pathname-based MAC can be implemented on a much wider range of filesystems, unlike labels-based alternatives.
 
-*   [AppArmor](/index.php/AppArmor "AppArmor") is a [Canonical](https://en.wikipedia.org/wiki/Canonical "wikipedia:Canonical")-maintained MAC implementation seen as an "easier" alternative to SELinux.
+*   [AppArmor](/index.php/AppArmor "AppArmor") is a [Canonical](https://en.wikipedia.org/wiki/Canonical_(company) "wikipedia:Canonical (company)")-maintained MAC implementation seen as an "easier" alternative to SELinux.
 *   [Tomoyo](/index.php/Tomoyo "Tomoyo") is another simple, easy-to-use system offering mandatory access control. It is designed to be both simple in usage and in implementation, requiring very few dependencies.
 
 ### Labels MAC

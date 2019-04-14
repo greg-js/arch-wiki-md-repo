@@ -166,12 +166,16 @@ Use these instructions if you want a local server in a [LAN](https://en.wikipedi
 
 ### MySQL support
 
-The DDNet packages provide a server binary, but MySQL support is disabled. In order to enable MySQL support you have to edit the PKGBUILD:
+It is possible to use a MySQL or MariaDB instance to store races done in a DDNet Server. However, MySQL support is **not** enabled be default.
 
-1.  Add [mariadb](https://www.archlinux.org/packages/?name=mariadb), [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) and [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) to the [depends()](/index.php/PKGBUILD#depends "PKGBUILD") array.
-2.  Append `-DMYSQL=ON` to the *cmake* command-line.
+To enable MySQL support for [ddnet](https://aur.archlinux.org/packages/ddnet/) or [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/), simply set the variable `_enable_mysql` with the value `1` in their PKGBUILD, and the proper dependencies will be added and proper flags will be enabled.
 
-**Tip:** [MySQL](/index.php/MySQL "MySQL") wiki page provides some instructions post-initially. Make sure to check in there, to avoid problems.
+Case you are building DDNet by yourself, be sure to:
+
+*   install the build dependency [boost](https://www.archlinux.org/packages/?name=boost) and the runtime dependencies [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/);
+*   append `-DMYSQL=ON` to the *cmake* command-line.
+
+**Tip:** See [MariaDB](/index.php/MariaDB "MariaDB") for some post-installation instructions. Make sure to check in there, to avoid problems.
 
 ### Setting up a server
 
@@ -223,9 +227,9 @@ $ /usr/lib/ddnet/tools/confusables *string1* *string2*
 
 Compare *string1* with *string2* and report if they are "confusable", i.e. if the characters are "equal" and could cause confusion. For this to work, the characters with accents or other things around them are considered the "confusable" with the base character. Therefore, *aa* and *aá* are confusable (*á* was considered as *a*), while *aa* and *ab* are not.
 
-If they confusable, returns `not_confusable=0`, otherwise, returns `not_confusable=1`.
+If they are confusable, it returns `not_confusable=0`, otherwise, returns `not_confusable=1`.
 
-Available since DDnet version 10.3.5.
+Available since DDNet version 10.3.5.
 
 ### crapnet
 
@@ -409,7 +413,7 @@ See also "/build/ddnet/src/build/CMakeFiles/CMakeError.log".
 
 **Solution:**
 
-It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have [mariadb](https://www.archlinux.org/packages/?name=mariadb) package installed, but you are missing [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/).
+It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) package installed, but you are missing [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/).
 
 Either install [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) to build with MySQL support or remove `-DMYSQL=ON` (or set to off with `-DMYSQL=OFF`) to build without it.
 
@@ -437,7 +441,7 @@ make: *** [Makefile:152: all] Error 2
 
 **Solution:**
 
-It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have both [mariadb](https://www.archlinux.org/packages/?name=mariadb) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) packages installed, but [boost](https://www.archlinux.org/packages/?name=boost) is missing.
+It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have both [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) packages installed, but [boost](https://www.archlinux.org/packages/?name=boost) is missing.
 
 Either install [boost](https://www.archlinux.org/packages/?name=boost) to build with MySQL support or remove `-DMYSQL=ON` (or set to off with `-DMYSQL=OFF`) to build without it.
 

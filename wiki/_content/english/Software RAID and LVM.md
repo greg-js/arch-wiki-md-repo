@@ -7,7 +7,11 @@ Related articles
 
 This article will provide an example of how to install and configure Arch Linux with a software [RAID](/index.php/RAID "RAID") or Logical Volume Manager ([LVM](/index.php/LVM "LVM")). The combination of RAID and LVM provides numerous features with few caveats compared to just using RAID.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Swap space](#Swap_space)

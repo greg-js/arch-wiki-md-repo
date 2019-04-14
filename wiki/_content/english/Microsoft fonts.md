@@ -9,7 +9,11 @@ This article explains how to install TrueType Microsoft fonts and emulate Window
 
 **Tip:** See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") for alternatives.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Using fonts from a Windows partition](#Using_fonts_from_a_Windows_partition)

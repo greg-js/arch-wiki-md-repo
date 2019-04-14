@@ -286,6 +286,8 @@ rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*:UUID=*ZZZZ
 
 Replace `UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*` with the identifier of the device on which the keyfile is located. If the type of file system is different than your root file system, you must [include the kernel module for it in the initramfs](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
 
+**Warning:** `rd.luks.key` with a keyfile on another device does not fallback to passphrase if the device is not available. See [systemd issue 12194](https://github.com/systemd/systemd/issues/12194).
+
 #### Timeout
 
 There are two options that affect the timeout for entering the password during boot:

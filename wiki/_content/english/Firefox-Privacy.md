@@ -29,7 +29,8 @@ This article overviews how to configure Firefox to enhance security and privacy.
     *   [1.11 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
-*   [4 See also](#See_also)
+*   [4 Hardened user.js templates](#Hardened_user.js_templates)
+*   [5 See also](#See_also)
 
 ## Configuration
 
@@ -154,11 +155,17 @@ Several extensions, hidden to the user, are installed by default in `/usr/lib/fi
 
 See also [[3]](https://dxr.mozilla.org/mozilla-release/source/browser/extensions/) for a full list of system extensions including README files describing their functions.
 
+## Hardened user.js templates
+
+Several active projects maintain comprehensive hardened Firefox configurations in the form of a `user.js` config that can be dropped to Firefox profile directory:
+
+*   [pyllyukko/user.js](https://github.com/pyllyukko/user.js)
+*   [ghacksuserjs/ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js)
+*   [ffprofile.com](https://ffprofile.com/) ([github](https://github.com/allo-/firefox-profilemaker)) - online user.js generator. You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
+
 ## See also
 
 *   [privacytools.io Firefox Privacy Add-ons](https://www.privacytools.io/#addons)
 *   [prism-break.org Web Browser Addons](https://prism-break.org/en/categories/gnu-linux/#web-browser-addons)
 *   [MozillaWiki:Privacy/Privacy Task Force/firefox about config privacy tweeks](https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks "mozillawiki:Privacy/Privacy Task Force/firefox about config privacy tweeks") - a wiki page maintained by Mozilla with descriptions of privacy specific settings.
 *   [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
-*   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
-*   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation

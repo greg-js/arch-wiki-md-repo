@@ -445,6 +445,7 @@ Now edit `/etc/bumblebee/xorg.conf.nvidia` and add the following line to `Sectio
 Section "Device"
     ...
     BusID "PCI:11:00:0"
+    Option "AllowExternalGpus" "true"  # If the GPU is external
     ...
 EndSection
 

@@ -16,8 +16,6 @@ Related articles
 
 More details about LightDM's design can be found [here](http://www.freedesktop.org/wiki/Software/LightDM/Design).
 
-**Note:** The Wayland windowing system is not yet fully supported. Wayland sessions are listed, but LightDM runs on X11.
-
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -64,6 +62,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [6.7 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
     *   [6.8 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
     *   [6.9 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface.")
+    *   [6.10 Wayland session not working with duplicate GNOME entries in greeter](#Wayland_session_not_working_with_duplicate_GNOME_entries_in_greeter)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -80,11 +79,11 @@ The official repositories contain the following greeters:
 
 *   [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): this is the **default** greeter LightDM attempts to use when started unless configured to do otherwise.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin "Deepin") project.
+*   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 
 *   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK+ Based greeter that is preferred over the [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) by distro creators
-*   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 *   [lightdm-mini-greeter](https://aur.archlinux.org/packages/lightdm-mini-greeter/): A minimal, configurable, single-user greeter.
@@ -152,8 +151,6 @@ Some greeters have their own configuration files. For example:
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): `/etc/lightdm/lightdm-gtk-greeter.conf`
 
 [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): `/etc/lightdm/lightdm-webkit2-greeter.conf`
-
-[lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): `/etc/lightdm/lightdm-kde-greeter.conf`
 
 ### X session wrapper
 
@@ -502,6 +499,22 @@ Some LightDM themes try to access the user avatar located in HOME. If your HOME 
 There is a possibility that user and group lookups fail if you modified /etc/nsswitch.conf. That happens when:
 
 *   nsswitch.conf group: includes `ldap` without setting `nss_initgroups_ignoreusers ALLLOCAL` in `/etc/nslcd.conf`
+
+### Wayland session not working with duplicate GNOME entries in greeter
+
+*   Some greeters ([lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter) for example) don't support two sessions with the same name [[1]](https://github.com/CanonicalLtd/lightdm/issues/16). To check for duplicate entries:
+
+```
+ls -1 /usr/share/wayland-sessions /usr/share/xsessions
+
+```
+
+*   Rename the duplicate entry in /usr/share/xsessions. For example:
+
+```
+mv /usr/share/xsessions/gnome.desktop /usr/share/xsessions/gnome.desktop.disabled
+
+```
 
 ## See also
 

@@ -270,6 +270,8 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 #### Screen lockers
 
+See also [Session lock](/index.php/Session_lock "Session lock").
+
 **Warning:** Only *sflock*, *physlock*, *Cinnamon Screensaver*, *MATE Screensaver* and *GNOME Screensaver* are able to block tty access. See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg") on how to manually block tty access.
 
 *   **Cinnamon Screensaver** — Screen locker for the Cinnamon desktop.
@@ -358,7 +360,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **KeePassC** — Curses-based password manager compatible to KeePass v.1.x.
 
-	[https://k3research.outerhaven.de/keepassc/](https://k3research.outerhaven.de/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
+	[https://outerhaven.de/keepassc/](https://outerhaven.de/keepassc/) || [keepassc](https://aur.archlinux.org/packages/keepassc/)
 
 *   **[pass](/index.php/Pass "Pass")** — Simple console based password manager, using GnuPG encryption.
 
@@ -488,7 +490,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **RHash** — Utility for verifying hash sums (SFV, CRC, etc). Supports lots of algorithms.
 
-	[http://rhash.anz.ru/](http://rhash.anz.ru/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
+	[https://github.com/rhash/RHash/](https://github.com/rhash/RHash/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
 
 *   **MassHash** — A set of file hashing tools (both CLI and GTK+ GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
 

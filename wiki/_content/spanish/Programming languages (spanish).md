@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Programming languages](/index.php/Programming_languages "Programming languages"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=554155) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Programming languages](/index.php/Programming_languages "Programming languages"), revisada por última vez el **2019-04-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=570987) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Esta página intenta listar todos los [lenguajes de programación](https://en.wikipedia.org/wiki/es:Lenguaje_de_programaci%C3%B3n "wikipedia:es:Lenguaje de programación") con un compilador / intérprete empaquetado para Arch Linux.
 
@@ -13,7 +13,7 @@ Esta página intenta listar todos los [lenguajes de programación](https://en.wi
 *   [C#](https://en.wikipedia.org/wiki/es:C_Sharp "wikipedia:es:C Sharp") – [Mono](/index.php/Mono "Mono")
     *   [Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C") – [GCC](/index.php/GCC "GCC"), [Clang](/index.php/Clang "Clang")
     *   [Vala](https://en.wikipedia.org/wiki/es:Vala_(lenguaje_de_programaci%C3%B3n) – [vala](https://www.archlinux.org/packages/?name=vala)
-    *   [Zig](https://ziglang.org/) – [zig](https://aur.archlinux.org/packages/zig/)
+    *   [Zig](https://ziglang.org/) – [zig](https://www.archlinux.org/packages/?name=zig)
 *   [Crystal](/index.php/Crystal "Crystal")
 *   [D](/index.php/D "D")
 *   [Dart](https://en.wikipedia.org/wiki/es:Dart "wikipedia:es:Dart") – [dart](https://www.archlinux.org/packages/?name=dart)
@@ -51,9 +51,9 @@ Tenga en cuenta que algunos de los lenguajes mencionados anteriormente también 
     *   [Clojure](/index.php/Clojure_(Espa%C3%B1ol) "Clojure (Español)")
     *   [Common Lisp](/index.php/Common_Lisp "Common Lisp")
     *   [Emacs Lisp](/index.php/Emacs_Lisp_(Espa%C3%B1ol) "Emacs Lisp (Español)")
-    *   [Scheme](https://en.wikipedia.org/wiki/es:Scheme "wikipedia:es:Scheme") – [mit-scheme](https://www.archlinux.org/packages/?name=mit-scheme)
+    *   [Scheme](/index.php/Scheme "Scheme")
 *   [ML](https://en.wikipedia.org/wiki/es:ML_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:ML (lenguaje de programación)")
-    *   [Standard ML](https://en.wikipedia.org/wiki/es:Standard_ML "wikipedia:es:Standard ML") – [smlnj](https://www.archlinux.org/packages/?name=smlnj)
+    *   [Standard ML](https://en.wikipedia.org/wiki/es:Standard_ML "wikipedia:es:Standard ML") – [smlnj](https://www.archlinux.org/packages/?name=smlnj), [mlton](https://www.archlinux.org/packages/?name=mlton), [mosml](https://aur.archlinux.org/packages/mosml/), [smlsharp](https://aur.archlinux.org/packages/smlsharp/)
     *   [OCaml](https://en.wikipedia.org/wiki/es:OCaml "wikipedia:es:OCaml") – [ocaml](https://www.archlinux.org/packages/?name=ocaml)
 
 ## Lenguajes de intérprete de línea de órdenes

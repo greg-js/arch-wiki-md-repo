@@ -170,7 +170,7 @@ See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
 ### OCSP
 
-The [Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol "wikipedia:Online Certificate Status Protocol") (OCSP) is supported by [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") has its own mechanism[[2]](http://dev.chromium.org/Home/chromium-security/crlsets).
+The [Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol "wikipedia:Online Certificate Status Protocol") (OCSP) is supported by [Firefox](/index.php/Firefox "Firefox"). [Chromium](/index.php/Chromium "Chromium") has its own mechanism[[2]](http://dev.chromium.org/Home/chromium-security/crlsets).
 
 See also [ocsptool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ocsptool.1) by GnuTLS and [ocsp(1ssl)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ocsp.1ssl) by OpenSSL.
 

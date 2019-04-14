@@ -73,7 +73,7 @@
 | <small>4.3.1.1.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
 | <small>4.3.2.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(22) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.4.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>4.5.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(8) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
+| <small>4.5.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(9) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>4.5.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>4.5.2.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
@@ -152,7 +152,7 @@
 | <small>5.1.10.5.1.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
 | <small>5.1.10.6.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
 | <small>5.1.10.7.</small> [Groupware](/index.php/Category:Groupware "Category:Groupware") <small>(3)</small> |
-| <small>5.1.10.8.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(8) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+| <small>5.1.10.8.</small> [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>5.1.10.8.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>5.1.10.8.2.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>5.1.10.9.</small> [News aggregators](/index.php/Category:News_aggregators "Category:News aggregators") <small>(3)</small> |
@@ -307,7 +307,7 @@
 | <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
 | <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
-| <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(36)</small> |
+| <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(38)</small> |
 | <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
 | <small>6.21.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.21.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |
@@ -317,7 +317,7 @@
 | <small>6.21.4.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
 | <small>6.21.4.3.</small> [Transport Layer Security](/index.php/Category:Transport_Layer_Security "Category:Transport Layer Security") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>6.21.5.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>6.21.6.</small> [Intrusion detection](/index.php/Category:Intrusion_detection "Category:Intrusion detection") <small>(3)</small> |
+| <small>6.21.6.</small> [Intrusion detection](/index.php/Category:Intrusion_detection "Category:Intrusion detection") <small>(4)</small> |
 | <small>6.21.7.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.21.8.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.21.9.</small> [Sandboxing](/index.php/Category:Sandboxing "Category:Sandboxing") <small>(6)</small> |

@@ -140,7 +140,7 @@ Qt4 已经包含数种样式，例如 GTK+ 样式、Windows 样式、CDE 样式�
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
-	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4)
+	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/)
 
 *   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — KDE Oxygen style.
 

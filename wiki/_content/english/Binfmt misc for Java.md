@@ -28,7 +28,11 @@ as long as it's on the PATH.
 
 The information in this article is almost entirely taken from the files **binfmt_misc.txt** and **java.txt** in the **Documentation** sub-directory of the Linux kernel source tree.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setup](#Setup)
     *   [1.1 Mounting binfmt_misc](#Mounting_binfmt_misc)
@@ -65,7 +69,7 @@ Filetype registration on Arch is handled by **systemd-binfmt**.
 
 Binfmt registration lines can be placed in a file in `/etc/binfmt.d`.
 
-The contents of the line is explained in the **Documentation/binfmt_misc.txt** file.
+The contents of the line is explained in the **Documentation/admin-guide/binfmt-misc.rst** file.
 
 The following lines will create registration files for running Java binaries without having to explicitly call the java command (you still need to have it installed). The first two work by redirecting Java class and jar files to a set of 'wrapper' scripts described in the next section. The final entry runs Java applets in the usual way.
 
@@ -343,7 +347,7 @@ int main(int argc, char **argv)
 ", program);
 	classfile = fopen(argv[1], "rb");
 	if(!classfile)
-		error("%s: Error opening %s
+		error("%s: Error opening %s
 ", program, argv[1]);
 
 	if(fseek(classfile, 8, SEEK_SET))  /* skip magic and version numbers */
@@ -379,7 +383,7 @@ int main(int argc, char **argv)
 	for(i = 0; i < length; ++i)
 	{
 		u_int8_t x = read_8(classfile);
-		if((x & 0x80) || !x)
+		if((x & 0x80) || !x)
 		{
 			if((x & 0xE0) == 0xC0)
 			{

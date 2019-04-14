@@ -2,7 +2,7 @@ Related articles
 
 *   [List of applications/Documents#Vi-style text editors](/index.php/List_of_applications/Documents#Vi-style_text_editors "List of applications/Documents")
 
-[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a terminal text editor. It is an extended version of [vi](/index.php/Vi "Vi") with additional features, including syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
+[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) is a terminal text editor. It is an extended version of [vi](/index.php/Vi "Vi") with additional features, including syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, comparison of files (vimdiff), and tools with restricted capabilities such as rview and rvim.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

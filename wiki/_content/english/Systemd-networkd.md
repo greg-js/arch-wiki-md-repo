@@ -224,6 +224,7 @@ These files are aimed at setting network configuration variables, especially for
 *   `DNS=` to configure static [DNS](/index.php/DNS "DNS") addresses, may be specified more than once
 *   `Domains=` a list of domains to be resolved on this link
 *   `IPForward=` configures IP packet forwarding, takes either a boolean argument, `ipv4` or `ipv6`
+*   `IPv6PrivacyExtensions=` configures use of stateless temporary addresses that change over time, takes a boolean argument, `prefer-public` or `kernel`
 
 #### [Address]
 

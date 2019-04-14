@@ -70,7 +70,7 @@ To see if any programs are using port 53, run:
 
 ```
 
-If the output contains more than the first line of column names, you need to disable whatever service is using port 53\. One common culprit is `systemd-resolved.service`, but other network managers may have analogous components. You are ready to proceed once the above command outputs nothing more than the following line:
+If the output contains more than the first line of column names, you need to disable whatever service is using port 53\. One common culprit is `systemd-resolved.service`([NetworkManager#Unit dbus-org.freedesktop.resolve1.service not found](/index.php/NetworkManager#Unit_dbus-org.freedesktop.resolve1.service_not_found "NetworkManager")), but other network managers may have analogous components. You are ready to proceed once the above command outputs nothing more than the following line:
 
 ```
  Netid               State                 Recv-Q                Send-Q                                 Local Address:Port                                   Peer Address:Port

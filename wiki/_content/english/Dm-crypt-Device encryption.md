@@ -135,7 +135,7 @@ For comparison, one can specify the default options manually too:
 
 Defaults are compared with a cryptographically higher specification example in the table below, with accompanying comments:
 
-| Options | Cryptsetup 2.0.6 defaults | Example | Comment |
+| Options | Cryptsetup 2.1.0 defaults | Example | Comment |
 | --cipher
 
 -c
@@ -180,7 +180,7 @@ To create a *plain* mode mapping with cryptsetup's default parameters:
 
 Executing it will prompt for a password, which should have very high entropy. Below a comparison of default parameters with the example in [dm-crypt/Encrypting an entire system#Plain dm-crypt](/index.php/Dm-crypt/Encrypting_an_entire_system#Plain_dm-crypt "Dm-crypt/Encrypting an entire system")
 
-| Option | Cryptsetup 2.0.6 defaults | Example | Comment |
+| Option | Cryptsetup 2.1.0 defaults | Example | Comment |
 | --hash
 
 -h
@@ -196,11 +196,21 @@ Executing it will prompt for a password, which should have very high entropy. Be
 -s
 
  | `256` | `512` | The key size (in bits). The size will depend on the cipher being used and also the chainmode in use. Xts mode requires twice the key size of cbc. |
+| --size
+
+-b
+
+ | real size of target disk | `2048` (mapped device will be 512B×2048=1MiB) | Limit the maximum size of the device (in 512-byte sectors). |
 | --offset
 
 -o
 
- | `0` | `0` | The offset from the beginning of the target disk (in bytes) from which to start the mapping |
+ | `0` | `0` | The offset from the beginning of the target disk (in 512-byte sectors) from which to start the mapping. |
+| --skip
+
+-p
+
+ | `0` | `2048` (512B×2048=1MiB will be skipped) | The number of 512-byte sectors of encrypted data to skip at the beginning. |
 | --key-file
 
 -d

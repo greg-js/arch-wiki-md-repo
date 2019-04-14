@@ -169,7 +169,7 @@ KDE应用的大部分配置被储存在 `~/.config`。KDE 主要在**“系统�
 
 	Qt4
 
-请安装[breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4)，然后从 `qtconfig-qt4` 中挑选微风作为图形用户界面风格。
+请安装[breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/)，然后从 `qtconfig-qt4` 中挑选微风作为图形用户界面风格。
 
 	GTK+
 

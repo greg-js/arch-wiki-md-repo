@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=564909) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=570351) na versão em inglês.
 
 Artigos relacionados
 
@@ -17,7 +17,7 @@ O Arch User Repository (AUR) ou, em português, Repositório de Usuário do Arch
 
 Um bom número de novos pacotes que entram para os repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir com seus próprios pacotes (PKGBUILD e arquivos relacionados). A comunidade do AUR tem a capacidade de votar a favor os pacotes no AUR. Se um pacote se torna popular o bastante -- desde que tenha uma licença compatível e uma boa técnica de empacotamento -- ele pode ser colocado no repositório *community* (diretamente acessível pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
 
-**Atenção:** Os pacotes do AUR são conteúdo produzido por usuário. Qualquer uso dos arquivos fornecidos está por sua própria conta e risco.
+**Atenção:** Os pacotes do AUR são conteúdo produzido por usuário sem suporte oficial. Qualquer uso dos arquivos fornecidos está por sua própria conta e risco.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -41,6 +41,9 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
     *   [6.2 Publicando novo conteúdo de pacote](#Publicando_novo_conteúdo_de_pacote)
     *   [6.3 Mantendo pacotes](#Mantendo_pacotes)
     *   [6.4 Outras requisições](#Outras_requisições)
+        *   [6.4.1 Excluir](#Excluir)
+        *   [6.4.2 Mesclar](#Mesclar)
+        *   [6.4.3 Tornar órfão](#Tornar_órfão)
 *   [7 Tradução da interface web](#Tradução_da_interface_web)
 *   [8 Sintaxe de comentário](#Sintaxe_de_comentário)
 *   [9 FAQ](#FAQ)
@@ -108,7 +111,7 @@ Localize o pacote no AUR. Isso pode ser feito usando o campo de pesquisa no topo
 
 Há vários métodos para adquirir os arquivos de compilação:
 
-*   Clonar o repositório [git](/index.php/Git "Git") que está rotulado como o "Git Clone URL" em "Detalhes do pacote". Esse é o método preferível.
+*   Opção 1: Clonar o repositório [git](/index.php/Git "Git") que está rotulado como o "Git Clone URL" em "Detalhes do pacote". Esse é o método preferível.
 
 ```
 $ git clone https://aur.archlinux.org/*nome_pacote*.git
@@ -117,7 +120,7 @@ $ git clone https://aur.archlinux.org/*nome_pacote*.git
 
 	Uma vantagem deste método é que você pode facilmente obter atualizações para o pacote vi `git pull`.
 
-*   Baixar os arquivos de compilação com seu navegadores web clicando no link "Baixar snapshot" sob "Ações do Pacote", no canto direito da tela. Isso vai baixar um arquivo compactado, que deve ser extraído (preferivelmente em um diretório definido a parte para compilações do AUR)
+*   Opção 2: Baixar os arquivos de compilação com seu navegadores web clicando no link "Baixar snapshot" sob "Ações do Pacote", no canto direito da tela. Isso vai baixar um arquivo compactado, que deve ser extraído (preferivelmente em um diretório definido a parte para compilações do AUR)
 
 ```
 $ tar -xvf *nome_pacote*.tar.gz
@@ -255,7 +258,7 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
-**Nota:** O repositório não estará vazio, se `*pkgbase*` corresponde a um pacote [excluído](#Outras_requisições).
+**Nota:** O repositório não estará vazio, se `*pkgbase*` corresponde a um pacote [excluído](#Exclusão).
 
 Se você já tem um pacote, [inicialize-o](/index.php/Git#Getting_a_Git_repository "Git") como um repositório Git, se ainda não for um, e adicione um remoto do AUR:
 
@@ -272,25 +275,25 @@ Então, faça um [fetch](/index.php/Git#Using_remotes "Git") deste remoto para i
 
 **Atenção:** Seus commits terão como autor seu [nome e endereço de e-mail Git globais](/index.php/Git#Configuration "Git"). É muito difícil de alterar commits após você realizar o *push* ([FS#45425](https://bugs.archlinux.org/task/45425)). Se você deseja fazer o push para o AUR sob credenciais diferentes, você pode alterá-los por pacote com `git config user.name "..."` e `git config user.email "..."`.
 
-Ao lançar uma nova versão do software empacotado, atualize as variáveis [pkgver](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgver "PKGBUILD (Português)") ou [pkgrel](/index.php/PKGBUILD_(Portugu%C3%AAs)#pkgrel "PKGBUILD (Português)") para notificar todos os usuários que uma atualização é necessária. Não atualize esses valores se apenas pequenas alterações no [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), como a correção de um erro de digitação, estiverem sendo publicadas.
+Para enviar ou atualizar um pacote, [adicione](/index.php/Git#Staging_changes "Git") *pelo menos* o [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") e [.SRCINFO](/index.php/.SRCINFO ".SRCINFO"), e quaisquer arquivos novos ou modificados de [.install](/index.php/PKGBUILD_(Portugu%C3%AAs)#install "PKGBUILD (Português)"), [patches](/index.php/Aplica%C3%A7%C3%A3o_de_patch_em_pacotes "Aplicação de patch em pacotes") ououtros [arquivos fontes locais](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)"); [Faça commit](/index.php/Git#Committing_changes "Git") deles com uma mensagem de commit significativa e, finalmente, faça um [push](/index.php/Git#Push_to_a_repository "Git") das alterações para o AUR.
 
-Certifique-se de regerar o [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)") sempre que metadados do `PKGBUILD` forem alterados, tal como atualizações de `pkgver()`; do contrário, o AUR não vai mostrar os números de versão atualizados.
-
-Para enviar ou atualizar um pacote, [adicione](/index.php/Git#Staging_changes "Git") *pelo menos* o `PKGBUILD` e `.SRCINFO`, e quaisquer arquivos auxiliares novos ou modificados (como arquivos [*.install*](/index.php/PKGBUILD_(Portugu%C3%AAs)#install "PKGBUILD (Português)") ou [arquivos fontes locais](/index.php/PKGBUILD_(Portugu%C3%AAs)#source "PKGBUILD (Português)") como [patches](/index.php/Patching_packages "Patching packages")) à *staging area* com `git add`, faça commit deles para sua árvore local com uma mensagem de commit com `git commit`, faça [commit](/index.php/Git#Committing_changes "Git") com uma mensagem de commit significativa e, finalmente, faça um [push](/index.php/Git#Push_to_a_repository "Git") das alterações para o AUR.
+**Dica:** Para manter o diretório de trabalho e os commits o mais limpo possível, crie um [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) que exclua todos os arquivos e adicione forçadamente os arquivos conforme necessário.
 
 Por exemplo:
 
 ```
 $ makepkg --printsrcinfo > .SRCINFO
-$ git add PKGBUILD .SRCINFO
+$ git add -f PKGBUILD .SRCINFO
 $ git commit -m "*mensagem útil de commit*"
 $ git push
 
 ```
 
-**Nota:** Se o `.SRCINFO` foi incluído em seu primeiro commit, adicione-o realizando o [rebase com --root](https://git-scm.com/docs/git-rebase#git-rebase---root) ou [filtrando a árvore](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt), de forma que o AUR permita seu push inicial.
+**Nota:**
 
-**Dica:** Para manter o diretório de trabalho e os commits o mais limpo possível, crie um [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5) exclua todos os arquivos e adicione forçadamente os arquivos conforme necessário.
+*   Depois de modificar um pacote, exceto por pequenas alterações (como consertar um erro de digitação) que não exigirão a reinstalação do pacote, atualize sua [versão](/index.php/PKGBUILD#Version "PKGBUILD").
+*   Regere `.SRCINFO` após atualizar tais metadados do `PKGBUILD` para publicá-lo no AUR.
+*   Se o `.SRCINFO` foi adicionado antes do seu primeiro commit, adicione-o realizando o [rebase com --root](https://git-scm.com/docs/git-rebase#git-rebase---root) ou [filtrando a árvore](https://git-scm.com/docs/git-filter-branch#git-filter-branch---tree-filterltcommandgt), de forma que o AUR permita seu push inicial.
 
 ### Mantendo pacotes
 
@@ -301,15 +304,33 @@ $ git push
 
 ### Outras requisições
 
-Requisições para excluir, mesclar e tornar órfão podem ser criadas clicando no link "Enviar requisição" sob "Ações do pacote" no lado direito da janela. Isso automaticamente uma notificação de e-mail para o atual mantenedor de pacote e para a [lista de discussão aur-requests](https://mailman.archlinux.org/mailman/listinfo/aur-requests) para debate. [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") vão então aceitar ou rejeitar a requisição.
+Requisições para [excluir](#Excluir), [mesclar](#Mesclar) e [tornar órfão](#Tornar_órfão) podem ser criadas clicando no link "Enviar requisição" sob "Ações do pacote" no lado direito da janela. Isso vai enviar uma notificação de e-mail para o atual mantenedor e para a [lista de discussão aur-requests](https://mailman.archlinux.org/mailman/listinfo/aur-requests) para debate. Um [Trusted User](/index.php/Trusted_User_(Portugu%C3%AAs) "Trusted User (Português)") vai então aceitar ou rejeitar a requisição.
 
-*   Requisições para tornar órfão (*Orphan requests*, em inglês) serão concedidas somente após duas semanas se o atual mantenedor não apresentar resposta.
-*   Requisições para mesclar (*Merge requests*, em inglês) são para excluir o pacote base e transferir os votos e comentários para outro pacote base. O nome do pacote base para onde será mesclado deve ser informado. Note que isso tem nada haver com "git merge" ou com as "Merge Requests" do GitLab.
-*   Requisições para excluir (*Deletion requests*, em inglês) precisam das seguintes informações:
-    *   Uma nota curta explicando o motivo para exclusão. Note que um comentário em um pacote não necessariamente demonstra suficiente motivo do porquê um pacote deve ser excluído. Isso porque assim que um TU realiza a exclusão, o único lugar que vai manter a tal informação será o e-mail na lista de discussão do aur-requests.
-    *   Detalhes de suporte, como, por exemplo, quando um pacote é fornecido por outro pacote, se você é o mantenedor do pacote, ele foi renomeado e o dono original concordou, etc.
-    *   Requisições para excluir podem ser negadas, caso em que, se você for o mantenedor do pacote, você provavelmente será aconselhado a tornar órfão o pacote para permitir a adoção por outro empacotador.
-    *   Após um pacote ser excluído, seu repositório Git permanece disponível no AUR.
+#### Excluir
+
+**Dica:** Em inglês, esse tipo de requisição é comumente referido como *Deletion request*
+
+Você pode pedir para *não mais listar* um `*pkgbase*` do AUR. Uma nota curta explicando o motivo pelo qual a exclusão é necessária, bem como detalhes de suporte (como quando um pacote é fornecido por outro pacote, se você for o mantenedor, ele é renomeado e o proprietário original concordou, etc).
+
+**Nota:**
+
+*   Não é suficiente explicar porquê um pacote deve ser excluído apenas em seus comentários, pois assim que um TU realiza a exclusão, o único lugar que vai manter a tal informação será o e-mail na lista de discussão do aur-requests.
+*   Requisições para excluir podem ser negadas, caso em que, se você for o mantenedor, você provavelmente será aconselhado a tornar órfão o pacote para permitir a adoção por outro mantenedor.
+*   Após um pacote ser "excluído", seu repositório [git](/index.php/Git "Git") permanece disponível para [clonagem](#Obtendo_arquivos_de_compilação).
+
+#### Mesclar
+
+**Dica:** Em inglês, esse tipo de requisição é comumente referido como *Merge request*
+
+Você pode requisitar a exclusão de um `*pkgbase*` e transferência de seus votos e comentários para outro `*pkgbase*`. O nome do pacote alvo da mesclagem é necessário.
+
+**Nota:** Isso tem nada a ver com 'git merge' ou merge requests do GitLab.
+
+#### Tornar órfão
+
+**Dica:** Em inglês, esse tipo de requisição é comumente referido como *Orphan request*
+
+Você pode requisitar que um `*pkgbase*` se seja tornado órfão, ou seja, que o mantenedor atual perca esta posição. Essas requisições serão concedidas após duas semanas se o mantenedor atual não reagir.
 
 ## Tradução da interface web
 
@@ -331,7 +352,7 @@ Os pacotes no AUR são meramente "scripts de compilação", isto é, receitas pa
 
 ### Como posso votar em pacotes no AUR?
 
-Registe-se no [site do AUR](https://aur.archlinux.org/) para obter uma opção "Vote neste pacote" enquanto navega nos pacotes. Após se registrar, também é possível votar a partir da linha de comando com [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) ou [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
+Registe-se no [site do AUR](https://aur.archlinux.org/) para obter uma opção "Vote neste pacote" enquanto navega nos pacotes. Após se registrar, também é possível votar a partir da linha de comando com [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/), [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/) ou [aurvote-utils](https://aur.archlinux.org/packages/aurvote-utils/).
 
 Alternativamente, se você possui uma [autenticação ssh](#Autenticação) configurada como mencionado acima, você pode votar diretamente a partir da linha de comando usando sua chave ssh. Isso significa que você não precisará salvar ou digitar sua senha AUR.
 
@@ -370,9 +391,7 @@ Para verificar se o PKGBUILD está quebrado, ou seu sistema está configurado in
 
 ### ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?
 
-É muito provável que você não tenha as chaves públicas necessárias no seu chaveiro pessoal para verificar os arquivos baixados. Se um ou mais arquivos .sig forem baixados durante a criação do pacote, o [makepkg verificará automaticamente o(s) arquivo(s) correspondente(s) com a chave pública de seu signatário](/index.php/Makepkg_(Portugu%C3%AAs)#Verificação_de_assinatura "Makepkg (Português)"). Se você não tiver a chave necessária no seu chaveiro pessoal, o *makepkg* não fará a verificação.
-
-A maneira recomendada para lidar com este problema é importar a chave pública requerida, ou [manualmente](/index.php/GnuPG#Import_a_public_key "GnuPG") ou [de um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Geralmente, você pode simplesmente encontrar a impressão digital das chaves públicas necessárias na seção [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
+Veja [Makepkg (Português)#ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!](/index.php/Makepkg_(Portugu%C3%AAs)#ERRO:_Uma_ou_mais_assinaturas_PGP_não_puderam_ser_verificadas! "Makepkg (Português)").
 
 ### Como eu crio um PKGBUILD?
 

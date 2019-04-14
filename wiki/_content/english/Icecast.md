@@ -9,7 +9,11 @@ http://server:8000/mpd.ogg.m3u
 
 This refers to a mount point called "mpd".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setting up Icecast](#Setting_up_Icecast)
 *   [2 Icecast paths](#Icecast_paths)
@@ -20,7 +24,7 @@ This refers to a mount point called "mpd".
     *   [4.2 Step 2: Ensure Icecast is running](#Step_2:_Ensure_Icecast_is_running)
     *   [4.3 Step 3: Configure MPD to be an Icecast Source](#Step_3:_Configure_MPD_to_be_an_Icecast_Source)
     *   [4.4 Step 4: Running MPD with Icecast](#Step_4:_Running_MPD_with_Icecast)
-    *   [4.5 Step 5: Test / use the stream](#Step_5:_Test_.2F_use_the_stream)
+    *   [4.5 Step 5: Test / use the stream](#Step_5:_Test_/_use_the_stream)
     *   [4.6 mpd](#mpd)
     *   [4.7 Sonata](#Sonata)
     *   [4.8 MPlayer](#MPlayer)
@@ -48,7 +52,7 @@ $ cp -R /usr/share/icecast/web ~/icecast/
 
 ```
 
-Also, make sure that the <changeowner> section is commented out, as changing the owner of a process requires root privileges.
+Also, make sure that the <changeowner> section in the icecast configuration file is commented out, as changing the owner of a process requires root privileges.
 
 ## Running icecast
 

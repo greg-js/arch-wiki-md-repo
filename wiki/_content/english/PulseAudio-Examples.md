@@ -36,18 +36,21 @@ Related articles
     *   [9.2 The manual sink configuration method](#The_manual_sink_configuration_method)
     *   [9.3 The shell script method](#The_shell_script_method)
     *   [9.4 The PulseAudio kill method](#The_PulseAudio_kill_method)
-*   [10 PulseAudio through OSS](#PulseAudio_through_OSS)
-*   [11 PulseAudio from within a chroot](#PulseAudio_from_within_a_chroot)
-*   [12 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
-*   [13 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
-*   [14 Remap stereo to mono](#Remap_stereo_to_mono)
-*   [15 Remap left or right to mono](#Remap_left_or_right_to_mono)
-*   [16 Remap for broadcasting software](#Remap_for_broadcasting_software)
-*   [17 Swap left/right channels](#Swap_left/right_channels)
-    *   [17.1 Using default.pa](#Using_default.pa)
-*   [18 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
-*   [19 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
-*   [20 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
+*   [10 PulseAudio through JACK issues](#PulseAudio_through_JACK_issues)
+    *   [10.1 When JACK is started Firefox, Chrome and other apps stop playing video and audio](#When_JACK_is_started_Firefox,_Chrome_and_other_apps_stop_playing_video_and_audio)
+    *   [10.2 After I start JACK the sound from PulseAudio becomes distorted](#After_I_start_JACK_the_sound_from_PulseAudio_becomes_distorted)
+*   [11 PulseAudio through OSS](#PulseAudio_through_OSS)
+*   [12 PulseAudio from within a chroot](#PulseAudio_from_within_a_chroot)
+*   [13 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
+*   [14 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
+*   [15 Remap stereo to mono](#Remap_stereo_to_mono)
+*   [16 Remap left or right to mono](#Remap_left_or_right_to_mono)
+*   [17 Remap for broadcasting software](#Remap_for_broadcasting_software)
+*   [18 Swap left/right channels](#Swap_left/right_channels)
+    *   [18.1 Using default.pa](#Using_default.pa)
+*   [19 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
+*   [20 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
+*   [21 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
 
 ## Set default input source
 
@@ -676,6 +679,16 @@ chmod +x jack_startup jack_shutdown
 ```
 
 then with QjackCtl loaded, click on the *Setup* button and then the *Options* tab and tick both "Execute Script after Startup:" And "Execute Script on Shutdown:" and put either use the ... button or type the path to the scripts (assuming the scripts are in the home directory) `~/jack_startup` and `~/jack_shutdown` making sure to save the changes.
+
+## PulseAudio through JACK issues
+
+### When JACK is started Firefox, Chrome and other apps stop playing video and audio
+
+Firefox/Chrome/etc. is using PulseAudio soundcard sink instead of the JACK sink. Open `pavucontrol` and on the *Playback* tab switch all audiostreams from something like "Built-in Audio Analog Stereo" to something like "Jack sink (PulseAudio JACK Sink)".
+
+### After I start JACK the sound from PulseAudio becomes distorted
+
+In QjackCtl click *Setup* and on the *Settings* tab, *Parameters* subtab untick "Realtime". In addition, tweaking Sample Rate, Frames/Period and Period/Buffer may help. Look for latency in the bottom right corner, as you still want minimal latency for audio production. Also, I think Sample Rate should match one of the rates supported by your audio interface (`cat /proc/asound/cardN/codec\#M` and look for `rates`, there could be multiple occurrences).
 
 ## PulseAudio through OSS
 

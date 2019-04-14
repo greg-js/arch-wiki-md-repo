@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-02-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=565058) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=570352) na versão em inglês.
 
 Artigos relacionados
 
@@ -386,14 +386,16 @@ Server = file:///mnt/repo/Packages
 
 ### Repositório local personalizado
 
-Use o script *repo-add*, incluído no *pacman*, para gerar uma base de dados para um repositório pessoal. Use `repo-add --help` para obter mais detalhes sobre seu uso. Para adicionar um novo pacote à base de dados, ou para substituir a versão antiga de um pacote existente na base de dados, execute:
+Use o script *repo-add*, incluído no *pacman*, para gerar uma base de dados para um repositório pessoal. Use `repo-add --help` para obter mais detalhes sobre seu uso.
+
+Uma base de dados de pacote é um arquivo tar, opcionalmente comprimida. Extensões válidas são *.db* ou *.files* seguido por uma extensão de arquivamento de *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz* ou*.tar.Z*. O arquivo não precisa existir, mas todos os diretórios pais devem existir.
+
+Para adicionar um novo pacote à base de dados, ou para substituir a versão antiga de um pacote existente na base de dados, execute:
 
 ```
 $ repo-add */caminho/para/repo.db.tar.gz /caminho/para/pacote-1.0-1-x86_64.pkg.tar.xz*
 
 ```
-
-**Nota:** Uma base de dados de pacote é um arquivo tar, opcionalmente comprimida. Extensões válidas são *.db* ou *.files* seguido por uma extensão de arquivamento de *.tar*, *.tar.gz*, *.tar.bz2*, *.tar.xz* ou*.tar.Z*. O arquivo não precisa existir, mas todos os diretórios pais devem existir.
 
 A base de dados e os pacotes não precisam estar no diretório ao usar *repo-add*, mas tenha em mente que ao usar *pacman* com aquela base de dados, eles devem estar juntos. Armazenar todos os pacotes compilados para serem incluídos no repositório em um diretório também permite usar a expansão shell glob para adicionar ou atualizar vários pacotes ao mesmo tempo.
 
@@ -403,6 +405,29 @@ $ repo-add */caminho/para/repo.db.tar.gz /caminho/para/*.pkg.tar.xz*
 ```
 
 **Atenção:** *repo-add* adiciona as entradas na base de dados na mesma ordem que foi passada na linha de comando. Se várias versões do mesmo pacote estiverem envolvidas, deve-se ter cuidado para garantir que a versão correta seja adicionada por último. Em particular, observe que a ordem lexical usada pelo shell depende do locale e difere do pedido de [vercmp](https://www.archlinux.org/pacman/vercmp.8.html) usado pelo *pacman*.
+
+Se você deseja oferecer suporte a várias arquiteturas, deve-se tomar precauções para evitar erros. Cada arquitetura deve ter sua própria árvore de diretórios:
+
+ `$ tree ~/repopersonalizado/ | sed "s/$(uname -m)/<arch>/g"` 
+```
+/home/archie/repopersonalizado/
+└── <arch>
+    ├── repopersonalizado.db -> repopersonalizado.db.tar.xz
+    ├── repopersonalizado.db.tar.xz
+    ├── repopersonalizado.files -> repopersonalizado.files.tar.xz
+    ├── repopersonalizado.files.tar.xz
+    └── site-pessoal-git-b99cce0-1-<arch>.pkg.tar.xz
+
+1 directory, 5 files
+
+```
+
+O executável *repo-add* verifica se o pacote é apropriado. Se esse não for o caso, você encontrará mensagens de erro semelhantes a esta:
+
+```
+==> ERRO: '/home/archie/repopersonalizado/<arch>/foo-<arch>.pkg.tar.xz' não tem uma extensão válida para arquivo de base de dados.
+
+```
 
 *repo-remove* é usado para remover pacotes da base de dados de pacotes, exceto que somente nomes de pacotes são especificados na linha de comando.
 
@@ -431,19 +456,15 @@ $ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
 
 Você também poderia executar darkhttpd como um serviço systemd por conveniência. Basta adicionar esse servidor no topo de seu `/etc/pacman.d/mirrorlist` em máquinas clientes com `Server = http://meuespelho:8080`. Certifique-se de manter seu espelho atualizado.
 
-Se você já está executando um servidor web para alguma outra finalidade, você pode querer reutilizá-lo como seu servidor de repo local em vez de darkhttpd. Por exemplo, digamos que você já atende um site com [nginx](/index.php/Nginx "Nginx"), você pode adicionar um bloco de servidor nginx na porta 8080:
+Se você já está executando um servidor web para alguma outra finalidade, você pode querer reutilizá-lo como seu servidor de repo local em vez de darkhttpd. Por exemplo, se você já serve um site com [nginx](/index.php/Nginx "Nginx"), você pode adicionar um bloco de servidor nginx na porta 8080:
 
  `/etc/nginx/nginx.conf` 
 ```
-http {
-    # ... outras configs de servidor nginx aqui
-
-    server {
-        listen 8080;
-        root /var/cache/pacman/pkg;
-        server_name myarchrepo.localdomain;
-        try_files $uri $uri/;
-    }
+server {
+     listen 8080;
+     root /var/cache/pacman/pkg;
+     server_name meurepoarch.localdomain;
+     try_files $uri $uri/;
 }
 
 ```
@@ -497,32 +518,30 @@ Um exemplo de rascunho para um cliente, usando `uname -m` dentro de nome de comp
 
 #### Cache dinâmico de proxy reverso usando nginx
 
-[nginx](/index.php/Nginx "Nginx") pode ser usado para solicitações de proxy para espelhos oficiais de *upstream* e armazenar em cache os resultados para o disco local. Todas as solicitações subsequentes para esse arquivo serão atendidas diretamente do cache local, minimizando a quantidade de tráfego de internet necessária para atualizar um grande número de servidores com um esforço mínimo.
+[nginx](/index.php/Nginx "Nginx") pode ser usado para intermediar solicitações de pacotes para espelhos oficiais de *upstream* e armazenar em cache os resultados para o disco local. Todas as solicitações subsequentes para esse pacote serão atendidas diretamente do cache local, minimizando a quantidade de tráfego de internet necessária para atualizar um grande número de computadores.
 
-**Atenção:** Este método tem uma limitação. Você deve usar espelhos que usam o mesmo caminho relativo para o pacote de arquivos e você deve configurar seu cache para usar esse mesmo caminho. Neste exemplo, estamos usando espelhos que usam o caminho relativo `/archlinux/$repo/os/$arch` e a definição `Server` do nosso cache no `mirrorlist` está configurada similarmente.
+Neste exemplo, o servidor de cache será executado em `http://cache.domain.example:8080/` e armazenará os pacotes em `/srv/http/pacman-cache/`.
 
-Neste exemplo, vamos executar o servidor de cache em `http://cache.domain.example:8080/` e armazenar os pacotes em `/srv/http/pacman-cache/`.
-
-Crie o diretório para o cache e ajuste as permissões de forma que o nginx possa escrever os arquivos para ele:
+Instale o [nginx](/index.php/Nginx "Nginx") no computador que vai hospedar o cache. Crie o diretório para o cache e ajuste as permissões de forma que o nginx possa escrever os arquivos para ele:
 
 ```
- # mkdir /srv/http/pacman-cache
- # chown http:http /srv/http/pacman-cache
+# mkdir /srv/http/pacman-cache
+# chown http:http /srv/http/pacman-cache
 
 ```
 
-Em seguida, configure o nginx como o [cache dinâmico](https://gist.github.com/anonymous/97ec4148f643de925e433bed3dc7ee7d) (leia os comentários para uma explicação dos comandos).
+Use a [configuração de cache nginx do pacman](https://github.com/nastasie-octavian/nginx_pacman_cache_config/blob/87d4897b8fa37e70da4238d7074c639c041daf39/nginx.conf) como ponto de partida para `/etc/nginx/nginx.conf`. Verifique se a diretiva `resolver` funciona de acordo com suas necessidades. Nos blocos de servidores upstream, configure as diretivas `proxy_pass` com endereços de espelhos oficiais, veja exemplos no arquivo de configuração sobre o formato esperado. Quando estiver satisfeito com o arquivo de configuração, [inicie e habilite o nginx](/index.php/Nginx#Running "Nginx").
 
-Finalmente, atualize seus outros servidores Arch Linux para usar esse novo cache adicionando a seguinte linha ao arquivo `mirrorlist`:
+Para usar o cache, cada computador Arch Linux (incluindo o que está hospedando o cache) deve ter a seguinte linha no topo do arquivo `mirrorlist`:
 
  `/etc/pacman.d/mirrorlist` 
 ```
-Server = http://cache.domain.example:8080/archlinux/$repo/os/$arch
+Server = http://cache.domain.example:8080/$repo/os/$arch
 ...
 
 ```
 
-**Nota:** Você precisará criar um método para limpar pacotes antigos, pois esse diretório continuará a crescer ao longo do tempo. `paccache` (que é fornecido por [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) pode ser usado para automatizar isso usando os critérios de retenção de sua escolha. Por exemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` manterá as últimas 2 versões de pacotes no seu diretório de cache.
+**Nota:** Você precisará criar um método para limpar pacotes antigos, pois o diretório do cache continuará a crescer ao longo do tempo. `paccache` (que é fornecido por [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) pode ser usado para automatizar isso usando os critérios de retenção de sua escolha. Por exemplo, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` manterá as últimas 2 versões de pacotes no seu diretório de cache.
 
 #### Sincronizar cache de pacotes do pacman usando programas de sincronização
 

@@ -107,7 +107,7 @@ Example PKGBUILDs are located in `/usr/share/pacman/`. An explanation of possibl
 
 They contain *absolute* paths, which means you do not have to worry about your working directory if you use these variables properly.
 
-**Note:** *makepkg*, and thus the `build()` and `package()` functions, are intended to be non-interactive. Interactive utilities or scripts called in those functions may break *makepkg*, particularly if it is invoked with build-logging enabled (`-L`). (See [FS#13214](https://bugs.archlinux.org/task/13214).)
+**Note:** *makepkg*, and thus the `build()` and `package()` functions, are intended to be non-interactive. Interactive utilities or scripts called in those functions may break *makepkg*, particularly if it is invoked with build-logging enabled (`--log`). (See [FS#13214](https://bugs.archlinux.org/task/13214).)
 
 ### PKGBUILD functions
 
@@ -117,7 +117,7 @@ During the build, the functions are invoked in the order in which they are liste
 
 #### prepare()
 
-With this function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver()) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
+With this function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver()) and the build function. If extraction is skipped (`makepkg --noextract`), then `prepare()` is not run.
 
 **Note:** (From [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
 

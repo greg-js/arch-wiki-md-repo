@@ -450,8 +450,8 @@ X11 forwarding is a mechanism that allows graphical interfaces of X11 programs r
 
 *   [install](/index.php/Install "Install") the [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) and [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) packages
 *   in `/etc/ssh/ssh**d**_config`:
-    *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
     *   set `X11Forwarding` to *yes*
+    *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see [sshd_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd_config.5))
 *   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Daemon_management).
 
 ##### Client

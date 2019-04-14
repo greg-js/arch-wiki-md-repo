@@ -2,11 +2,16 @@ Related articles
 
 *   [DPMS](/index.php/DPMS "DPMS")
 *   [Xresources](/index.php/Xresources "Xresources")
+*   [Session lock](/index.php/Session_lock "Session lock")
 *   [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
 
 [XScreenSaver](https://www.jwz.org/xscreensaver/) is a screen saver and locker for the X Window System.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

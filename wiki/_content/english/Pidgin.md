@@ -9,12 +9,18 @@
 *   [1 Installation](#Installation)
 *   [2 Spellcheck](#Spellcheck)
 *   [3 Services](#Services)
-    *   [3.1 Facebook](#Facebook)
-    *   [3.2 IRC](#IRC)
-    *   [3.3 Sametime protocol](#Sametime_protocol)
-    *   [3.4 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP/Simple_protocol_for_Skype_for_Business/Office_365/Lync)
-    *   [3.5 Skype plugin](#Skype_plugin)
-    *   [3.6 Rocket.Chat plugin](#Rocket.Chat_plugin)
+    *   [3.1 AIM](#AIM)
+    *   [3.2 Discord plugin](#Discord_plugin)
+    *   [3.3 Facebook](#Facebook)
+    *   [3.4 ICQ](#ICQ)
+    *   [3.5 IRC](#IRC)
+    *   [3.6 Sametime protocol](#Sametime_protocol)
+    *   [3.7 SIP/Simple protocol for Skype for Business/Office 365/Lync](#SIP/Simple_protocol_for_Skype_for_Business/Office_365/Lync)
+    *   [3.8 Skype plugin](#Skype_plugin)
+    *   [3.9 Slack plugin](#Slack_plugin)
+    *   [3.10 Rocket.Chat plugin](#Rocket.Chat_plugin)
+    *   [3.11 Telegram plugin](#Telegram_plugin)
+    *   [3.12 XMPP](#XMPP)
 *   [4 Security](#Security)
 *   [5 Privacy](#Privacy)
     *   [5.1 Pidgin-OTR](#Pidgin-OTR)
@@ -49,11 +55,25 @@ The [aspell](https://www.archlinux.org/packages/?name=aspell) package will be in
 
 ## Services
 
+### AIM
+
+Pidgin has out-of-the-box support for AOL Instant Messenger (AIM). Although AIM has officially ceased, unofficial AIM-based servers like [AIM Phoenix](http://iwarg.ddns.net/aim/) operate and can be used on Pidgin by changing the server address in the AIM protocol account settings.
+
+### Discord plugin
+
+Install the [purple-discord-git](https://aur.archlinux.org/packages/purple-discord-git/) package.
+
+Then add a new account, select Discord as the protocol, enter your Discord login e-mail address and its password.
+
 ### Facebook
 
 [Install](/index.php/Install "Install") the [purple-facebook](https://www.archlinux.org/packages/?name=purple-facebook) package. (or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/))
 
 Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
+
+### ICQ
+
+Pidgin has out-of-the-box support for ICQ. Since December 2018, the old OSCAR protocol is no longer officially supported as it has been replaced by the newer WIM protocol. Currently, Pidgin only comes with the original OSCAR ICQ protocol. To make use of the new WIM protocol on ICQ, you should install the [purple-icyque-git](https://aur.archlinux.org/packages/purple-icyque-git/) plug-in.
 
 ### IRC
 
@@ -105,9 +125,23 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 
 Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [purple-skypeweb-git](https://aur.archlinux.org/packages/purple-skypeweb-git/) package.
 
+### Slack plugin
+
+Install the [slack-libpurple-git](https://aur.archlinux.org/packages/slack-libpurple-git/) package.
+
 ### Rocket.Chat plugin
 
 Install the [purple-rocketchat](https://aur.archlinux.org/packages/purple-rocketchat/) package.
+
+### Telegram plugin
+
+Install the [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) package.
+
+Enter your Telegram phone number when creating the account, after which you will receive an SMS text message with a confirmation code, which you'll have to enter to authorize your Telegram protocol account on Pidgin.
+
+### XMPP
+
+Pidgin has out-of-the-box support for the XMPP/Jabber chat protocol. Some additional plugins exist on the AUR for support of XMPP extensions such as OMEMO ([libpurple-lurch](https://aur.archlinux.org/packages/libpurple-lurch/)) or Message Carbons ([libpurple-carbons](https://aur.archlinux.org/packages/libpurple-carbons/)).
 
 ## Security
 
@@ -337,3 +371,4 @@ Select `Encoding: CP1251` (for Cyrillic).
 *   [Wikipedia:Pidgin_(software)](https://en.wikipedia.org/wiki/Pidgin_(software) "wikipedia:Pidgin (software)")
 *   [History import Kopete to Pidgin](http://lukav.com/wordpress/2008/03/30/history-import-kopete-to-pidgin)
 *   [Connecting to HipChat using Pidgin](https://confluence.atlassian.com/hipchatkb/connecting-to-hipchat-using-pidgin-751436267.html)
+*   [finch](https://www.archlinux.org/packages/?name=finch), a console based libpurple client, essentially Pidgin in a terminal

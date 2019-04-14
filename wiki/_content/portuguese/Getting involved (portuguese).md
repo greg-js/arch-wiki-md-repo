@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=562131) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=569432) na versão em inglês.
 
 Artigos relacionados
 
@@ -18,7 +18,8 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
 *   [1 Comunidade](#Comunidade)
     *   [1.1 Postagens nos fóruns](#Postagens_nos_fóruns)
     *   [1.2 Melhore esta wiki](#Melhore_esta_wiki)
-    *   [1.3 Ingresse nas salas de chat](#Ingresse_nas_salas_de_chat)
+    *   [1.3 Entre nas salas de chat](#Entre_nas_salas_de_chat)
+    *   [1.4 Entre nas listas de discussão](#Entre_nas_listas_de_discussão)
 *   [2 Empacotamento](#Empacotamento)
     *   [2.1 Relate pacotes instalados](#Relate_pacotes_instalados)
     *   [2.2 Corrija e relate](#Corrija_e_relate)
@@ -46,9 +47,13 @@ Uma das formas mais fáceis de participar e se envolver com o projeto é atravé
 
 A [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)") é uma documentação do Arch Linux mantida colaborativamente. Todos os usuários são incentivados a [contribuir](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs) "ArchWiki:Contributing (Português)").
 
-### Ingresse nas salas de chat
+### Entre nas salas de chat
 
 Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/Canais_IRC "Canais IRC"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/Canais_IRC#Outros_canais "Canais IRC") estão disponíveis para tópicos específicos.
+
+### Entre nas listas de discussão
+
+Participe da discussão em uma ou mais [listas de discussão](https://lists.archlinux.org/) públicas. Certifique-se de se manter dentro do assunto conforme fornecido na descrição da lista.
 
 ## Empacotamento
 

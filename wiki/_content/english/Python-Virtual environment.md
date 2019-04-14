@@ -191,7 +191,7 @@ After you have done your things, leave the virtual environment:
 
 All commands can be executed in the project folder, and pipenv will recognize the specific situation - whether a virtualenv exists in the directory, locating it, and running on the specific virtual interpreter when pipenv is executed.
 
-More information at [[1]](https://pipenv.readthedocs.io/en/latest/), [[2]](https://realpython.com/pipenv-guide/).
+More information at [[1]](https://pipenv.readthedocs.io/en/latest/), [[2]](https://realpython.com/pipenv-guide/), [[3]](https://docs.python-guide.org/dev/virtualenvs/#pipenv-virtual-environments).
 
 ## See also
 

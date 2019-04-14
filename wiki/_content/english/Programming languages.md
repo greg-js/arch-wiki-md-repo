@@ -10,7 +10,7 @@ This page attempts to list all [programming languages](https://en.wikipedia.org/
     *   [C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language) – [Mono](/index.php/Mono "Mono")
     *   [Objective-C](https://en.wikipedia.org/wiki/Objective-C "wikipedia:Objective-C") – [GCC](/index.php/GCC "GCC"), [Clang](/index.php/Clang "Clang")
     *   [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) – [vala](https://www.archlinux.org/packages/?name=vala)
-    *   [Zig](https://ziglang.org/) – [zig](https://aur.archlinux.org/packages/zig/)
+    *   [Zig](https://ziglang.org/) – [zig](https://www.archlinux.org/packages/?name=zig)
 *   [Crystal](/index.php/Crystal "Crystal")
 *   [D](/index.php/D "D")
 *   [Dart](https://en.wikipedia.org/wiki/Dart_(programming_language) – [dart](https://www.archlinux.org/packages/?name=dart)

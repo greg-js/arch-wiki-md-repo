@@ -15,6 +15,7 @@ Related articles
 *   [2 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK+)
     *   [2.1 Breeze](#Breeze)
     *   [2.2 Adwaita](#Adwaita)
+    *   [2.3 Kvantum](#Kvantum)
 *   [3 Theme engines](#Theme_engines)
     *   [3.1 QGtkStyle](#QGtkStyle)
     *   [3.2 QGnomePlatform](#QGnomePlatform)
@@ -52,7 +53,7 @@ There are widget style sets available for the purpose of integration, where buil
 
 ### Breeze
 
-Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK+ 2 and GTK+ 3.
+Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK+ 2 and GTK+ 3.
 
 Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
 
@@ -75,6 +76,10 @@ style=adwaita
 ```
 
 *   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=adwaita`. Alternatively, use [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package. For more detailed instructions, see [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
+
+### Kvantum
+
+Kvantum ([kvantum-qt5](https://www.archlinux.org/packages/?name=kvantum-qt5)) is customizable SVG-based theme engine for Qt5 that comes with a variety of built-in styles, including versions of some of popular GTK+ themes such as Adapta, Arc, Ambiance, Materia.
 
 ## Theme engines
 

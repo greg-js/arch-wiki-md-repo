@@ -8,7 +8,7 @@ Artigos relacionados
 *   [Criando pacotes para outras distribuições](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions")
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [Aplicação de patch no ABS](/index.php/Aplica%C3%A7%C3%A3o_de_patch_no_ABS "Aplicação de patch no ABS")
 *   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 *   [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
 *   [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")
@@ -117,7 +117,7 @@ Há cinco funções, listadas aqui na ordem em que elas são executadas. Com exc
 
 #### prepare()
 
-Com essa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Patching_in_ABS "Patching in ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
+Com essa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Aplica%C3%A7%C3%A3o_de_patch_no_ABS "Aplicação de patch no ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
 
 **Nota:** (De [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
