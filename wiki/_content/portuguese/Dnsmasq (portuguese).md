@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=561029) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=566939) na versão em inglês.
 
 Artigos relacionados
 
@@ -221,6 +221,12 @@ dhcp-option=3,0.0.0.0
 
 # Defina os servidores DNS para anunciar
 dhcp-option=6,0.0.0.0
+
+# Se seu servidor dnsmasq também fizer o roteamento de sua rede,
+# você pode usar a opção 121 para aplicar uma rota estática.
+# x.x.x.x é a LAN de destino, yy pe a notação CIDR (geralmente /24), 
+# e z.z.z.z é o host que vai fazer o roteamento.
+dhcp-option=121,x.x.x.x/yy,z.z.z.z
 
 # Intervalo dinâmico de IPs para disponibilizar ao computador e o tempo
 # de concessão. Idealmente, defina o tempo de concessão para 5m apenas

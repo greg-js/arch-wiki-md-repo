@@ -37,13 +37,17 @@ Desktop notifications are small, passive popup dialogs that notify the user of p
     *   [3.19 Nemerle](#Nemerle)
     *   [3.20 Pascal](#Pascal)
     *   [3.21 Perl](#Perl)
+        *   [3.21.1 Using libnotify](#Using_libnotify)
+        *   [3.21.2 Using direct D-Bus calls](#Using_direct_D-Bus_calls)
     *   [3.22 Python](#Python)
     *   [3.23 Ruby](#Ruby)
     *   [3.24 Rust](#Rust)
     *   [3.25 Scala](#Scala)
     *   [3.26 Vala](#Vala)
     *   [3.27 Visual Basic .NET](#Visual_Basic_.NET)
-*   [4 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Replace previous notification](#Replace_previous_notification)
+*   [5 See also](#See_also)
 
 ## Libnotify
 
@@ -570,19 +574,40 @@ end.
 
 ### Perl
 
+#### Using libnotify
+
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://www.archlinux.org/packages/?name=perl-glib-object-introspection)
 
  `hello_world.pl` 
 ```
 #!/usr/bin/perl
 use Glib::Object::Introspection;
-Glib::Object::Introspection->setup (
-	basename => 'Notify',
-	version => '0.7',
-	package => 'Notify');
+Glib::Object::Introspection->setup(basename => "Notify",
+                                   version => "0.7",
+                                   package => "Notify");
 Notify->init;
-my $hello = Notify::Notification->new("Hello world!", "This is an example notification.", "dialog-information");
+my $hello = Notify::Notification->new("Hello world!",
+                                      "This is an example notification.",
+                                      "dialog-information");
 $hello->show;
+```
+
+#### Using direct D-Bus calls
+
+*   Dependencies: [perl-dbus](https://www.archlinux.org/packages/?name=perl-dbus)
+
+ `hello_world.pl` 
+```
+#!/usr/bin/perl
+use Net::DBus;
+my $bus = Net::DBus->session;
+my $svc = $bus->get_service("org.freedesktop.Notifications");
+my $obj = $svc->get_object("/org/freedesktop/Notifications");
+my $id = $obj->Notify("myapp", 0,
+                      "dialog-information",
+                      "Hello world!",
+                      "This is an example notification.",
+                      [], {}, 0);
 ```
 
 ### Python
@@ -740,6 +765,24 @@ Public Class Hello
 		Hello.Show
 	End Sub
 End Class
+```
+
+## Tips and tricks
+
+### Replace previous notification
+
+Notifications can be replaced if their ID is known; if a new notification request specifies the same ID, it will always replace the old notification. (The libnotify bindings shown above handle this automatically.) Unfortunately notify-send does not report this ID, so alternative tools are required to do this on CLI. One capable CLI-tool is the [notify-send.py](https://github.com/phuhl/notify-send.py) python script, which provides notify-send syntax with additional ID-reporting and replacing capabilities.
+
+However, with *some* notification servers (such as Notify-OSD), you can use the `string:x-canonical-private-synchronous:` hint with notify-send to achieve the same result.
+
+For exemple, to get a notification displaying time:
+
+```
+while true; do
+  date=$(date)
+  notify-send "$date" -h string:x-canonical-private-synchronous:my-notification
+  sleep 1
+done
 ```
 
 ## See also

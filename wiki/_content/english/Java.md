@@ -346,7 +346,10 @@ If a Java application is not able to open a link to, for example, your web brows
 
 ### Error initializing QuantumRenderer: no suitable pipeline found
 
-Possible issues / solutions: - gtk2 is missing. Install [gtk2](https://www.archlinux.org/packages/?name=gtk2) - OpenJFX is missing. Install [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx)
+Possible issues / solutions:
+
+*   GTK2 is missing. Install [gtk2](https://www.archlinux.org/packages/?name=gtk2)
+*   OpenJFX is missing. Install [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx)
 
 ## Tips and tricks
 

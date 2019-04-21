@@ -1,12 +1,20 @@
+Related articles
+
+*   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
+
 Installation instructions for the Lenovo ThinkPad X120e. Should work for X121e too.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Video drivers](#Video_drivers)
 *   [2 Wireless](#Wireless)
 *   [3 Audio](#Audio)
 *   [4 Input](#Input)
-    *   [4.1 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_.28wheel_emulation.29)
+    *   [4.1 TrackPoint scrolling (wheel emulation)](#TrackPoint_scrolling_(wheel_emulation))
     *   [4.2 Disabling the TrackPad](#Disabling_the_TrackPad)
     *   [4.3 TrackPoint speed and sensitivity](#TrackPoint_speed_and_sensitivity)
 *   [5 Power saving](#Power_saving)
@@ -14,7 +22,6 @@ Installation instructions for the Lenovo ThinkPad X120e. Should work for X121e t
     *   [5.2 ATI video card powersaving](#ATI_video_card_powersaving)
     *   [5.3 CPU undervolting](#CPU_undervolting)
         *   [5.3.1 Using PHC](#Using_PHC)
-        *   [5.3.2 Using tpc](#Using_tpc)
     *   [5.4 Fan control](#Fan_control)
 *   [6 Suspend and hibernation](#Suspend_and_hibernation)
 *   [7 See also](#See_also)
@@ -104,28 +111,6 @@ The Fusion Processor can be undervolted with the PHC-K8 tool. See [PHC](/index.p
 "24 26 52" is what I have my E-350 set to. The three numbers represent 1600mhz, 1200mhz and 800mhz.
 
 **Warning:** The three values listed above are stable on MY processor. Due to variables during production, you're chip may be able to be undervolted more or LESS. Feel free to post the stable values that you reach to this wiki.
-
-#### Using tpc
-
-Another method for undervolting is [tpc](https://aur.archlinux.org/packages/tpc/). It is more intuitive then PHC tool and needs Kernelmodule *cpuid* and *msr*.
-
-Information output available cores and current frequencies and voltage:
-
-```
-# tpc -l
-
-```
-
-Example how to use:
-
-**Warning:** DO THIS AT YOUR OWN RISK!!!! DON'T USE THIS VALUES!!! Approach yourself to values whitch are working for you! This is just an example how to use tpc
-
-```
-# tpc -set core all pstate 2 frequency 825 vcore 0.825   
-# tpc -set core all pstate 1 frequency 1320 vcore 1.2250
-# tpc -set core all pstate 0 frequency 1650 vcore 1.3000
-
-```
 
 ### Fan control
 

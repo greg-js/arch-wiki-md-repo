@@ -30,12 +30,11 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [6.3 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
     *   [6.4 LibreOffice does not detect my certificates](#LibreOffice_does_not_detect_my_certificates)
     *   [6.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_(without_slideshow))
-    *   [6.6 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
-    *   [6.7 Media support](#Media_support)
-    *   [6.8 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
-    *   [6.9 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
-    *   [6.10 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze/Plasma_5_theme)
-    *   [6.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
+    *   [6.6 Media support](#Media_support)
+    *   [6.7 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
+    *   [6.8 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
+    *   [6.9 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze/Plasma_5_theme)
+    *   [6.10 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -58,14 +57,9 @@ Check the optional dependencies pacman displays. If you want to use LibreOffice 
 
 LibreOffice includes support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-Toolkit libraries are checked in the following order:
+LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`. Note that the `kde4` and `gtk` backends are [deprecated](https://wiki.documentfoundation.org/ReleaseNotes/6.2#Feature_removal_.2F_deprecation).
 
-```
-gtk3 > gtk > kde4 > generic
-
-```
-
-To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde4`, `SAL_USE_VCLPLUGIN=gtk` or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`; note that this has no effect using [LXDE](/index.php/LXDE "LXDE") desktop environment since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment.
+**Note:** When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment.
 
 However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
 
@@ -197,14 +191,6 @@ cp "$1" "${f}" && libreoffice "${f}" && rm -f "${f}"
 
 ```
 
-### Exit while pushing the save button
-
-Try either of the following workarounds:
-
-*   Delete the `~/.config/libreoffice` folder. It will erase all the settings linked to LibreOffice and so, LibreOffice will recreate them on the next launch.
-*   Go to menu Tools > Options > LibreOffice > General and check `Use LibreOffice dialogs`.
-*   The GTK3 integration provided by `libvclplug_gtk3lo.so` has been identified as the cause of this problem. [[1]](https://forums.opensuse.org/showthread.php/510439-LibreOffice-crashes-when-saving) See [#Theme](#Theme) to use a different VCL, such as `gtk`.
-
 ### Media support
 
 If embedded videos are just gray boxes, make sure to have installed the [GStreamer plugins](/index.php/GStreamer#Installation "GStreamer") required.
@@ -233,7 +219,7 @@ Just enable "Breeze Dark" or another readable icon style in *Tools > Options > L
 
 If that is not enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
 
-If this still does not work correctly, try using the `gen` interface instead. [[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)
+If this still does not work correctly, try using the `gen` interface instead. [[1]](https://bbs.archlinux.org/viewtopic.php?id=206813)
 
 ### AutoText expected default behaviour not functional in system locales other than en_US
 

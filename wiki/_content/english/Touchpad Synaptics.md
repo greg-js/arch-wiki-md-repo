@@ -8,7 +8,11 @@ This article details the installation and configuration process of the ***Synapt
 
 **Note:** If you want to configure touchpad via GNOME control center, you need to use the [libinput](/index.php/Libinput "Libinput") driver.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -44,8 +48,7 @@ This article details the installation and configuration process of the ***Synapt
     *   [4.2 xorg.conf.d/70-synaptics.conf does not seem to apply in MATE](#xorg.conf.d/70-synaptics.conf_does_not_seem_to_apply_in_MATE)
     *   [4.3 The touchpad is not working, Xorg.0.log shows "Query no Synaptics: 6003C8"](#The_touchpad_is_not_working,_Xorg.0.log_shows_"Query_no_Synaptics:_6003C8")
     *   [4.4 Touchpad detected as "PS/2 Generic Mouse" or "Logitech PS/2 mouse"](#Touchpad_detected_as_"PS/2_Generic_Mouse"_or_"Logitech_PS/2_mouse")
-        *   [4.4.1 Elantech touchpads](#Elantech_touchpads)
-        *   [4.4.2 Laptops with touchscreen & touchpad](#Laptops_with_touchscreen_&_touchpad)
+        *   [4.4.1 Laptops with touchscreen & touchpad](#Laptops_with_touchscreen_&_touchpad)
     *   [4.5 Non-functional Synaptics special abilities (multi-tap, scrolling, etc.)](#Non-functional_Synaptics_special_abilities_(multi-tap,_scrolling,_etc.))
         *   [4.5.1 No Multi-touch in some Elantech touchpads](#No_Multi-touch_in_some_Elantech_touchpads)
     *   [4.6 Cursor jump](#Cursor_jump)
@@ -546,8 +549,8 @@ Then have udev run this script when USB mices are plugged in or out, with these 
 
  `/etc/udev/rules.d/01-touchpad.rules` 
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", RUN+="/usr/bin/mouse-pnp-event-handler.sh add %k"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/mouse-pnp-event-handler.sh remove %k"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", RUN+="/usr/bin/mouse-pnp-event-handler.sh add %k"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/mouse-pnp-event-handler.sh remove %k"
 ```
 
 ### Buttonless touchpads (aka ClickPads)
@@ -707,10 +710,6 @@ related forum topics:
 ### Touchpad detected as "PS/2 Generic Mouse" or "Logitech PS/2 mouse"
 
 This can be caused by a number of issues;
-
-#### Elantech touchpads
-
-This can happen with some laptops with an Elantech touchpad, for example the ASUS x53s. In this situation you need [psmouse-alps-driver](https://aur.archlinux.org/packages/psmouse-alps-driver/) package from [AUR](/index.php/AUR "AUR").
 
 #### Laptops with touchscreen & touchpad
 

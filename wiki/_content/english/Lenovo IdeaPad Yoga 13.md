@@ -7,7 +7,11 @@ Sub-models options :
 | RAM | 4GB, 8GB |
 | SSD | 128 GB, 256 GB |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overall Status](#Overall_Status)
 *   [2 Display](#Display)
@@ -15,7 +19,7 @@ Sub-models options :
     *   [2.2 Touch Screen](#Touch_Screen)
 *   [3 Keyboard](#Keyboard)
 *   [4 Configaration](#Configaration)
-    *   [4.1 Wireless Fidelity](#Wireless_Fidelity)
+    *   [4.1 Wireless](#Wireless)
     *   [4.2 Bluetooth](#Bluetooth)
 *   [5 Hardware](#Hardware)
     *   [5.1 PCI devices](#PCI_devices)
@@ -81,9 +85,9 @@ Most media buttons work out of the box:
 
 ## Configaration
 
-### Wireless Fidelity
+### Wireless
 
-Internal Wi-Fi driver (r8723au) is working with a huge troubles with current kernel (3.17.6-1-ARCH). So to get wifi work, [blacklist](/index.php/Blacklist "Blacklist") r8723 module. Then you should install [dkms-8723au-git](https://aur.archlinux.org/packages/dkms-8723au-git/) package and insert 8723au module.
+See [Wireless network configuration#rtl8xxxu](/index.php/Wireless_network_configuration#rtl8xxxu "Wireless network configuration").
 
 ### Bluetooth
 

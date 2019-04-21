@@ -23,7 +23,7 @@ You can use one of following methods in order to use Telegram in Arch:
 
 ### Chat client plugins
 
-*   By using [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) packages, connection to Telegram through messenger softwares based on [libpurple](https://www.archlinux.org/packages/?name=libpurple) such as [Pidgin](/index.php/Pidgin "Pidgin") is provided.
+*   By using [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) packages, connection to Telegram through (graphical or command-line) messenger softwares based on [libpurple](https://www.archlinux.org/packages/?name=libpurple) such as [Pidgin](/index.php/Pidgin "Pidgin") is provided.
 *   Messaging apps that are using [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) such as [empathy](https://www.archlinux.org/packages/?name=empathy) (the default messenger for [GNOME](/index.php/GNOME "GNOME")) can make use of [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze) package, which provides possibility of using [libpurple](https://www.archlinux.org/packages/?name=libpurple) and thus [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) to connect Telegram.
 *   In the [KDE](/index.php/KDE "KDE") desktop environment using [telepathy-morse](https://www.archlinux.org/packages/?name=telepathy-morse) provides capability of connecting the default messenger to Telegram.
 
@@ -37,20 +37,23 @@ The [official app](https://desktop.telegram.org/):
 
 Third-party clients:
 
+*   [bettergram](https://aur.archlinux.org/packages/bettergram/)
+*   [kepka-git](https://aur.archlinux.org/packages/kepka-git/)
 *   [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) (current maintenance status unknown)
+*   [telegreat-git](https://aur.archlinux.org/packages/telegreat-git/)
 *   [volt](https://aur.archlinux.org/packages/volt/), multi-protocol IM client that has Telegram support
 
 ### Command-line clients
 
 *   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) provides command-line interface to connect and use Telegram. For more information about the program, visit the program page on [Github](https://github.com/vysheng/tg).
-
 *   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) is a command-line interface for Telegram based on [Ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") and needs [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) to run. For more information about the program, visit the program page on [Github](https://github.com/Nanoseb/ncTelegram).
+*   [python-telegram-send](https://aur.archlinux.org/packages/python-telegram-send/), not a full client but a command-line tool to directly send messages or files via Telegram.
 
 ### Web-based clients
 
 *   The official [Telegram Web](https://web.telegram.org).
-*   [franz](https://aur.archlinux.org/packages/franz/) is an open-source web-based application that can be used for web-based interface of various instant messaging software such as [Telegram](https://en.wikipedia.org/wiki/Telegram_(service) "wikipedia:Telegram (service)"), [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/Facebook "wikipedia:Facebook"), and more.
-*   [rambox-bin](https://aur.archlinux.org/packages/rambox-bin/) is an open source alternative to Franz. It offers all features of its closed source counterpart.
+*   [franz](https://aur.archlinux.org/packages/franz/) is an [open-source](https://github.com/meetfranz/franz) web-based application that can be used for web-based interface of various instant messaging software such as [Telegram](https://en.wikipedia.org/wiki/Telegram_(service) "wikipedia:Telegram (service)"), [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/Facebook "wikipedia:Facebook"), and more.
+*   [rambox-bin](https://aur.archlinux.org/packages/rambox-bin/) is an alternative to Franz, also open source. It offers all features of its counterpart.
 *   Use [Telegram Desktop](https://addons.mozilla.org/en-US/firefox/addon/telegram-desktop/) addons for [Firefox](/index.php/Firefox "Firefox"), to connect to Telegram in your browser via web interface.
 *   Use [Telegram Chrome app](https://telegram.org/dl/webogram/chromeapp) for [Chromium](/index.php/Chromium "Chromium"), to connect to Telegram in your browser via web interface.
 

@@ -2,7 +2,6 @@ Related articles
 
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
 *   [Vagrant](/index.php/Vagrant "Vagrant")
 
 **翻译状态：** 本文是英文页面 [Docker](/index.php/Docker "Docker") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-22，点击[这里](https://wiki.archlinux.org/index.php?title=Docker&diff=0&oldid=549067)可以查看翻译后英文页面的改动。
@@ -40,6 +39,7 @@ Related articles
     *   [6.3 初始化显卡驱动错误: devmapper](#初始化显卡驱动错误:_devmapper)
     *   [6.4 无法创建到某文件的路径: 设备没有多余的空间了](#无法创建到某文件的路径:_设备没有多余的空间了)
     *   [6.5 kernel 4.19.1下无效的跨设备链接](#kernel_4.19.1下无效的跨设备链接)
+    *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
 *   [7 查阅更多](#查阅更多)
 
 ## 安装
@@ -51,23 +51,21 @@ Related articles
 
 ```
 
-注意到如果你有启用的vpn连接的话开启docker服务可能会失败。这样的话，试下开启docker服务前断开vpn连接。之后你可以自行重连vpn。
+注意, 如果你有一个活动的 VPN 连接, 那么 docker 服务的启动可能失败, 因为 VPN 和 Docker 的网桥 IP 冲突以及网络覆盖. 如果发生了这种事, 尝试在启动 docker 服务之前断开 VPN 连接. 你可以在之后立刻重连 VPN. [You can also try to deconflict the networks.](https://stackoverflow.com/questions/45692255/how-make-openvpn-work-with-docker)
 
 如果你想以普通用户身份运行docker的话，添加你自己到 `docker` [user group](/index.php/User_group "User group").
 
 **警告:** 任何加入到 `docker` 组的用户都和root用户等价. 查阅更多信息可访问 [这里](https://github.com/docker/docker/issues/9976) 和 [这里](https://docs.docker.com/engine/security/security/).
 
-**注意:** 因为 [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 的*vsyscalls*, 这被容器里的特定程序需要 (比如 *apt-get*), 被内核配置默认关闭了. 要重新启用的话, 添加 `vsyscall=emulate`到 [Kernel parameters (简体中文)](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)"). 查阅更多信息到 [FS#57336](https://bugs.archlinux.org/task/57336).
-
 ## 配置
 
 ### 存储驱动程序
 
-docker存储驱动 (或者是显卡驱动) 对性能有巨大影响. 它的工作是高效存储容器图像层，也就是许多图像共享一个层时只有一个层使用磁盘空间。兼容选项, `devicemapper` 提供了次优性能, 这在旋转磁盘上是非常糟糕的. 例外, `devicemappper` 不建议在生产中使用.
+docker存储驱动 (或者是显卡驱动) 对性能有巨大影响. 它的工作是高效存储容器镜像层，也就是许多镜像共享一个层时只有一个层使用磁盘空间。作为兼容选项, `devicemapper` 提供了次优性能, 这在机械硬盘上是非常糟糕的. 例外, `devicemapper` 不建议在生产中使用.
 
-随着arch Linux发布新的内核，没有必要使用兼容选项了。一个好的现代的选择是 `overlay2`.
+随着arch Linux发布新的内核，没有必要使用兼容选项了。一个好的现代选择是 `overlay2`.
 
-想看现在的存储驱动, 运行 `# docker info | head`, 现代docker安装应该已经默认使用 `overlay2` 了.
+想看现在的存储驱动, 运行 `# docker info | head`; 现代docker安装应该已经默认使用 `overlay2` 了.
 
 想设置你自己的存储驱动选项, 编辑 `/etc/docker/daemon.json` (如果不存在就自己创建):
 
@@ -80,7 +78,7 @@ docker存储驱动 (或者是显卡驱动) 对性能有巨大影响. 它的工�
 
 然后, [restart](/index.php/Restart "Restart") docker.
 
-更多的选项信息能在 [用户指导](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)查阅. 更多的 `daemon.json` 选项查阅 [dockerd文献](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
+更多的选项信息能在 [用户指南](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)查阅. 更多的 `daemon.json` 选项查阅 [docker 文档](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
 
 ### 远程 API
 
@@ -176,7 +174,7 @@ IPForward=kernel
 
 如果你正在运行docker镜像，你必须确定镜像被完全解除挂载。一旦这个完成后，你就可以把镜像从 `/var/lib/docker` 移动到你的目标地点.
 
-然后为`docker.service`添加 [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet")，加入 `--data-root` 参数到 `ExecStart`:
+然后为`docker.service`添加 [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet")，加入 `-g` 参数到 `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
@@ -331,6 +329,8 @@ done
 
 Docker会自己启用IP转发，但是默认 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 会覆盖对应的sysctl设置. 在网络配置文件里设置 `IPForward=yes` . 查阅 [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") 获取细节.
 
+**Note:** 你可能需要在每次 [restart](/index.php/Restart "Restart") `systemd-networkd.service` 或者 `iptables.service` 之后手动重启 `docker.service`
+
 ### 默认的允许的进程/线程数太少
 
 如果你允许时得到下面的错误信息
@@ -388,7 +388,15 @@ dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid 
 
 ```
 
-降级到 4.18.x 直到 [这个问题](https://github.com/docker/for-linux/issues/480) 解决. 更多信息可查阅 [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+可以 添加 `overlay.metacopy=N` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") 或者降级到 4.18.x 直到 [这个 issue](https://github.com/docker/for-linux/issues/480) 被解决. 更多信息查看 [Arch forum](https://bbs.archlinux.org/viewtopic.php?id=241866).
+
+### CPUACCT missing in docker with Linux-ck
+
+In newer versions of [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) with 4.19, 4.20 seems general), a change to the MuQSS was made that disables the `CONFIG_CGROUP_CPUACCT` option from the kernel, which makes *some* usage of docker (`run` or `build`) to produce the following error:
+
+ `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
+
+This error does not seems to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
 
 ## 查阅更多
 

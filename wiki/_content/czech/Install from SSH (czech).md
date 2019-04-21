@@ -10,7 +10,7 @@ Tento článek má ukázat uživatelům, jak nainstalovat Arch vzdáleně prost�
 
 Nabootujte cílový počítač do živého prostředí Arch pomocí [Live CD/USB image](/index.php/Getting_and_installing_Arch "Getting and installing Arch"): uživatel bude přihlášen jako root.
 
-V tomto okamžiku nastavte síť na cílovém stroji, jak je například navrženo v [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide")
+V tomto okamžiku nastavte síť na cílovém stroji, jak je například navrženo v [Installation guide#Connect to the internet](/index.php/Installation_guide#Connect_to_the_internet "Installation guide")
 
 Zadruhé nastavte heslo pro root, které je potřebné pro připojení SSH, protože výchozí heslo pro root je prázdné:
 

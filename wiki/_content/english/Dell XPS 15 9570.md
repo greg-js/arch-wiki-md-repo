@@ -14,7 +14,7 @@
 | Webcam | Working |
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
-| [Power Management](#Power_Saving) | Buggy |
+| [Power Management](#Power_Management) | Working |
 | [EFI firmware updates](#EFI_firmware_updates) | Working |
 | [Fingerprint reader](#Fingerprint_reader) | Not working |
 
@@ -24,23 +24,28 @@
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Suspend](#Suspend)
-*   [2 Hibernate](#Hibernate)
+*   [1 UEFI](#UEFI)
+*   [2 Power Management](#Power_Management)
+    *   [2.1 Suspend](#Suspend)
+    *   [2.2 Hibernate](#Hibernate)
+    *   [2.3 Powertop](#Powertop)
 *   [3 Graphics](#Graphics)
-    *   [3.1 Optimus Nvidia](#Optimus_Nvidia)
-    *   [3.2 bbswitch](#bbswitch)
-    *   [3.3 nvidia-xrun](#nvidia-xrun)
-    *   [3.4 Troubleshoot](#Troubleshoot)
-        *   [3.4.1 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
-        *   [3.4.2 Built-in screen flickers or does not come on with Linux kernel 5.0.x](#Built-in_screen_flickers_or_does_not_come_on_with_Linux_kernel_5.0.x)
+    *   [3.1 kernel modules](#kernel_modules)
+    *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
+    *   [3.3 Troubleshooting](#Troubleshooting)
+        *   [3.3.1 xbacklight](#xbacklight)
+        *   [3.3.2 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
+        *   [3.3.3 Built-in screen flickers or does not come on with Linux kernel 5.0.x](#Built-in_screen_flickers_or_does_not_come_on_with_Linux_kernel_5.0.x)
 *   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
-    *   [4.1 Troubleshooting](#Troubleshooting)
+    *   [4.1 Troubleshooting](#Troubleshooting_2)
         *   [4.1.1 ath10k module crashes after suspend](#ath10k_module_crashes_after_suspend)
         *   [4.1.2 Bluetooth disappears (after suspend?)](#Bluetooth_disappears_(after_suspend?))
 *   [5 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
 *   [6 Thunderbolt docks](#Thunderbolt_docks)
     *   [6.1 TB16](#TB16)
 *   [7 EFI firmware updates](#EFI_firmware_updates)
+    *   [7.1 Fwupd](#Fwupd)
+    *   [7.2 UEFI](#UEFI_2)
 *   [8 Thermal management](#Thermal_management)
     *   [8.1 Diagnosis](#Diagnosis)
     *   [8.2 Undervolting](#Undervolting)
@@ -49,7 +54,19 @@
 *   [9 Tips and Tricks](#Tips_and_Tricks)
     *   [9.1 Systemd doesn't wait for Network](#Systemd_doesn't_wait_for_Network)
 
-## Suspend
+## UEFI
+
+Before installing it is necessary to modify some UEFI Settings. They can be accessed by pressing the F2 key repeatedly when booting.
+
+*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the change but [this can be fixed without a reinstallation](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
+*   Change Fastboot to "Thorough" in "POST Behaviour". This prevents intermittent boot failures.
+*   Disable secure boot to allow Linux to boot.
+
+Installation of Arch Linux can proceed normally. Refer to the [Installation guide](/index.php/Installation_guide "Installation guide") for more information.
+
+## Power Management
+
+### Suspend
 
 By default, the very inefficient s2idle suspend variant is incorrectly selected. This is probably due to the BIOS. The much more efficient deep variant should be selected instead:
 
@@ -64,17 +81,32 @@ By default, the very inefficient s2idle suspend variant is incorrectly selected.
 
 To make the change permanent add `mem_sleep_default=deep` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
+An easy way would be to add `mem_sleep_default=deep` to the `GRUB_CMDLINE_LINUX_DEFAULT` entry in /etc/default/grub:
+
+```
+ GRUB_CMDLINE_LINUX_DEFAULT="mem_sleep_default=deep"
+
+```
+
 Read more regarding the sleep variants on the kernel documentation [[1]](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html).
 
 **Warning:** Some users have reported a problem where the CPUs get stuck in a high power state after resuming from S3 (deep) suspension [[2]](https://www.reddit.com/r/Dell/comments/91313h/xps_15_9570_c_state_bug_after_s3_sleep_and_modern/).
 
-## Hibernate
+### Hibernate
 
 Works out of the Box see [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")
 
+### Powertop
+
+`powertop` is very efficient to manage power consumption. Run `powertop --auto-tune` and compare the Watt consumption variation (battery must be unplugged). `powertop --auto-tune` can be run at every boot.
+
 ## Graphics
 
-The nouveau module is known to cause kernel panics and freezes on this model. One way to mitigate this is by adding `nomodeset` to the kernel options, however it's best if you completely disable it.
+### kernel modules
+
+The nouveau module is known to cause kernel panics and freezes on Dell XPS 15 9570.
+
+One way to mitigate this would be by adding `nomodeset` to the kernel options. However it's better to completely disable it with the blacklist method (recommended):
 
  `/etc/modprobe.d/blacklist.conf` 
 ```
@@ -85,40 +117,180 @@ blacklist rivatv
 blacklist nv
 ```
 
-And make sure the discrete GPU powers off by default on boot.
+### [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+
+The optimus configuration is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. As the discret NVIDIA GPU card eats lots of power, we want to use the intergrated Intel card most of the time and activate/desactivate the NVIDIA GPU card only when required by a defined application.
+
+Regarding to this conversation [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641), an optimus configuration well working on the xps 15 9570 is:
+
+*   Install `nvidia`, `bumblebee`, `powertop` and `unigine-valley`
+
+```
+pacman -S nvidia
+pacman -S bumblebee
+pacman -S powertop
+yaourt -a unigine-valley # to test the NVIDIA GPU later
+```
+
+*   Make sure that `bbswitch` is uninstalled or at least disabled
+
+*   `bumblebee` configuration, in the `[driver-nvidia]` section
+
+ `/etc/bumblebee/bumblebee.conf` 
+```
+# *[driver-nvidia]* section
+Driver=nvidia
+PMMethod=none
+```
+
+*   Server X configuration for not auto adding gpu
+
+ `/etc/X11/xorg.conf.d/01-noautogpu.conf` 
+```
+Section "ServerFlags"
+	Option "AutoAddGPU" "off"
+EndSection
+```
+
+*   `ipmi` modules are loaded together with `nvidia` and block its unloading.
+
+	run:
+
+```
+ install ipmi_msghandler /usr/bin/false
+ install ipmi_devintf /usr/bin/false
+
+```
+
+	with:
+
+ `/etc/modprobe.d/disable-nvidia.conf`  `install nvidia /bin/false` 
+
+*   Finally add `nvidia` and `ipmi` in the modprobe.d blacklist to disable this functionality:
+
+ `/etc/modprobe.d/blacklist.conf` 
+```
+blacklist nouveau
+blacklist rivafb
+blacklist nvidiafb
+blacklist rivatv
+blacklist nv
+blacklist nvidia
+blacklist nvidia-drm
+blacklist nvidia-modeset
+blacklist nvidia-uvm
+blacklist ipmi_msghandler
+blacklist ipmi_devintf
+```
+
+*   Create 2 GPU management scripts for enabling and disabling discret NVIDIA graphical card [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641):
+
+ `enablegpu.sh` 
+```
+#!/bin/sh
+# allow to load nvidia module
+mv /etc/modprobe.d/disable-nvidia.conf /etc/modprobe.d/disable-nvidia.conf.disable
+
+# Remove NVIDIA card (currently in power/control = auto)
+echo -n 1 > /sys/bus/pci/devices/0000\:01\:00.0/remove
+sleep 1
+# change PCIe power control
+echo -n on > /sys/bus/pci/devices/0000\:00\:01.0/power/control
+sleep 1
+# rescan for NVIDIA card (defaults to power/control = on)
+echo -n 1 > /sys/bus/pci/rescan
+# someone said that modprobe nvidia is needed also to load nvidia, to check
+# modprobe nvidia
+```
+ `disablegpu.sh` 
+```
+#!/bin/sh
+
+modprobe -r nvidia_drm
+modprobe -r nvidia_uvm
+modprobe -r nvidia_modeset
+modprobe -r nvidia
+
+# Change NVIDIA card power control
+echo -n auto > /sys/bus/pci/devices/0000\:01\:00.0/power/control
+sleep 1
+# change PCIe power control
+echo -n auto > /sys/bus/pci/devices/0000\:00\:01.0/power/control
+sleep 1
+
+# Lock system form loading nvidia module
+mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modprobe.d/disable-nvidia.conf
+```
+
+*   Create service locking NVIDIA GPU on shutdown
+
+A service which locks GPU on shutdown / restart when it is not disabled by `disablegpu.sh` script is necessary. Otherwise, on next boot `nvidia` will be loaded together with `ipmi` modules (even if blacklisted with `install` command) and it won't be possible to unload them then.
+
+ `/etc/systemd/system/disable-nvidia-on-shutdown.service` 
+```
+[Unit]
+Description=Disables Nvidia GPU on OS shutdown
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/true
+ExecStop=/bin/bash -c "mv /etc/modprobe.d/lock-nvidia.conf.disable /etc/modprobe.d/lock-nvidia.conf || true"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+*   Reload systemd daemons and enable the `disable-nvidia-on-shutdown` service:
+
+```
+ sudo systemctl daemon-reload
+ sudo systemctl enable disable-nvidia-on-shutdown.service
+
+```
+
+*   Allow gpu to poweroff on boot
 
  `/etc/tmpfiles.d/nvidia_pm.conf`  `w /sys/bus/pci/devices/0000:01:00.0/power/control - - - - auto` 
 
-Integrated graphics works well out of the box.
+*   Finally check that everything is well configured:
 
-### Optimus Nvidia
+1.  Reboot and verify that nvidia is not loaded by running:
 
-Works but additional configuration is needed. (see *[[3]](https://github.com/Bumblebee-Project/bbswitch/issues/140#issuecomment-394180574))
+    	 `lsmod | grep nvidia` 
 
-*   Disable runtime PM:
-    *   If [TLP](/index.php/TLP "TLP") is installed, add the graphic card to **RUNTIME_PM_BLACKLIST**
-    *   If [laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools") is installed, add the graphic card to **AUTOSUSPEND_RUNTIME_DEVID_BLACKLIST** in **/etc/laptop-mode/conf.d/runtime-pm.conf**
-*   Uninstall or disable bbswitch
-*   Install bumblebee and set **PMMethod=none** in nvidia section
-*   Install [NVIDIA](/index.php/NVIDIA "NVIDIA") driver
-*   Reboot
+    	Should not return anything
 
-Note: This is just one configuration that worked. There are more configurations that might work just as well or even better. Sometimes nvidia driver can not be unloaded because some process is still using it.
+2.  Disconnect / unplug charger and verify the power consumption with powertop is around 5W on idle (Dell XPS 15 4570, powertop --auto-tune previously launched, FHD screen with no touchscreen)
+3.  Enable GPU by using the enablegpu.sh script
+4.  Check that the GPU is loaded by using:
 
-### bbswitch
+    	 `nvidia-smi` 
 
-Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[4]](https://bbs.archlinux.org/viewtopic.php?id=238389)).
+5.  If good, launch unigine-valley with optirun:
 
-### nvidia-xrun
+    	 `optirun unigine-valley` 
 
-The [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) package will not work because it relies on bbswitch, that is broken. The [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) package provides an alternative version that works with this card. After installing the package a service can be enabled to automatically bring the card down during boot:
+    	unigine-valley needs a GPU to work. Should activate the fans quickly.
+
+6.  Close all nvidia applications and disable gpu with the disablegpu.sh script
+7.  Check again power consumption, it should have gone back to a similar value as before
+
+### Troubleshooting
+
+#### xbacklight
+
+To get xbacklight working and not conflicting with NVIDIA optimus:
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+	Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+EndSection
 
 ```
- systemctl enable nvidia-xrun-pm
-
-```
-
-### Troubleshoot
 
 #### NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts
 
@@ -135,7 +307,7 @@ Some users reported that running Linux kernel 5.0.x can cause the screen to flic
 
 Currently, it seems that there are three possible workarounds :
 
-*   [Downgrade](/index.php/Downgrading_packages "Downgrading packages") to Linux 4.20.13.
+*   [Downgrade](/index.php/Downgrade "Downgrade") to Linux 4.20.13.
 *   Apply [Albert Astals Cid's patch](https://invent.kde.org/snippets/44) on Linux kernel 5.0.x (see [kernel Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")).
 *   Install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
@@ -284,7 +456,38 @@ TB16 works fine if either Thunderbolt security is disabled in the BIOS or using 
 
 ## EFI firmware updates
 
-This device is supported by [Fwupd](/index.php/Fwupd "Fwupd").
+They are 2 main ways to update efi firmware:
+
+*   through running linux session with [Fwupd](/index.php/Fwupd "Fwupd")
+*   through UEFI
+
+### [Fwupd](/index.php/Fwupd "Fwupd")
+
+```
+ pacman -S fwupd
+
+```
+
+Then, look at:
+
+```
+ sudo fwupdmgr get-updates
+ sudo fwupdmgr refresh
+ sudo fwupdmgr update
+
+```
+
+### UEFI
+
+Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-9560-laptop/drivers) as `XPS_15_9560_X.Y.Z.exe` files. In order to install:
+
+*   Download the desired firmware from section "Dell XPS 15 9560 System BIOS"
+*   Save it in `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation)
+*   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
+*   Choose "Bios Flash Update"
+*   Select the file previously saved, and start the process
+
+The process will take about five minutes, during which the system will have some reboots and push fans at maximum speed. Finally the system will reboot normally.
 
 ## Thermal management
 

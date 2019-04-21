@@ -150,7 +150,7 @@ Next, you need to create a file in the directory with the following content:
 
 Replace **filename** with the filename of your background image.
 
-**Note:** A few lines needs be removed from this file after upgrade to Gnome 3.32, see [Talk:GDM#](/index.php/Talk:GDM "Talk:GDM") discussion page.
+**Note:** A few lines needs be removed from this file after upgrade to Gnome 3.32, see [Talk:GDM](/index.php/Talk:GDM "Talk:GDM") discussion page.
 
 Now, open the `gnome-shell.css` file in the directory and change the `#lockDialogGroup` definition as follows:
 

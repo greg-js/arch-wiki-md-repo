@@ -11,15 +11,20 @@ The desktop version of ICQ (including on Windows and macOS) is open source (see 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-    *   [1.1 Graphical clients](#Graphical_clients)
-    *   [1.2 Command-line clients](#Command-line_clients)
-    *   [1.3 Web-based clients](#Web-based_clients)
+    *   [1.1 Chat client plugins](#Chat_client_plugins)
+    *   [1.2 Graphical clients](#Graphical_clients)
+    *   [1.3 Command-line clients](#Command-line_clients)
+    *   [1.4 Web-based clients](#Web-based_clients)
 
 ## Installation
 
 You can use one of following methods in order to use ICQ in Arch:
 
-(please note that ICQ's [OSCAR](http://en.wikipedia.org/wiki/OSCAR_protocol) protocol is depreciated and replaced by WIM - you should check if third-party clients support the new protocol instead of the old one. OSCAR still functions (as of March 2019) but it is highly recommended to make use of the new WIM instead):
+(please note that ICQ's [OSCAR](https://en.wikipedia.org/wiki/OSCAR_protocol "wikipedia:OSCAR protocol") protocol is depreciated and replaced by WIM - you should check if third-party clients support the new protocol instead of the old one. OSCAR still functions (as of March 2019) but it is highly recommended to make use of the new WIM instead):
+
+### Chat client plugins
+
+*   By using [bitlbee-libpurple](https://aur.archlinux.org/packages/bitlbee-libpurple/) for [bitlbee](https://www.archlinux.org/packages/?name=bitlbee), an IRC gateway to ICQ and other protocols
 
 ### Graphical clients
 
@@ -32,11 +37,10 @@ You can use one of following methods in order to use ICQ in Arch:
 
 ### Command-line clients
 
-*   [finch](https://www.archlinux.org/packages/?name=finch)
+*   [finch](https://www.archlinux.org/packages/?name=finch) (install [purple-icyque-git](https://aur.archlinux.org/packages/purple-icyque-git/) with it for the WIM protocol)
 *   [centerim](https://aur.archlinux.org/packages/centerim/)
 *   [ekg2](https://aur.archlinux.org/packages/ekg2/)
 *   [climm](https://aur.archlinux.org/packages/climm/)
-*   [bitlbee](https://www.archlinux.org/packages/?name=bitlbee), IRC gateway to ICQ and other protocols
 
 ### Web-based clients
 

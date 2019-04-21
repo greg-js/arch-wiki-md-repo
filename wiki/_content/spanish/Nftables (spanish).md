@@ -11,7 +11,11 @@ Consta de tres componentes principales: una implementación del kernel, la comun
 
 Para obtener más información también puede visitar la [página oficial de la wiki de nftables](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) .
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Utilización](#Utilización)

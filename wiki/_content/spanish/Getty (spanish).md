@@ -7,7 +7,11 @@ Artículos relacionados
 
 Un [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") es el nombre genérico de un programa que gestiona una línea de terminal y su terminal conectada. Su propósito es proteger el sistema del acceso no autorizado. En general, cada proceso getty se inicia mediante [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") y gestiona una sola línea de terminal.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Añadir consolas virtuales adicionales](#Añadir_consolas_virtuales_adicionales)
@@ -63,7 +67,7 @@ La configuración es diferente para las consolas virtuales y las serie. En la ma
 ```
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin *username* --noclear %I $TERM
+ExecStart=-/usr/bin/agetty --autologin *username* --noclear %I $TERM
 ```
 
 **Sugerencia:** La opción `Type=idle` que se encuentra en el `getty@.service` predeterminado retrasará el inicio del servicio hasta que todos los trabajos (solicitudes de cambio de estado a las unidades) se completen en orden para evitar contaminar el mensaje de inicio de sesión con mensajes de arranque. Cuando [inicie X automáticamente](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), puede ser útil iniciar `getty@tty1.service` inmediatamente añadiendo `Type=simple` en la [fragmento de entrada](/index.php/Drop-in_snippet_(Espa%C3%B1ol) "Drop-in snippet (Español)"). Tanto el sistema init como *startx* pueden ser [silenciados](/index.php/Silent_boot "Silent boot") para evitar el intercalado de sus mensajes durante el arranque.
@@ -78,7 +82,7 @@ Cree el siguiente archivo (y directorios principales):
 ```
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
+ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
 ```
 
 ### Consola Nspawn

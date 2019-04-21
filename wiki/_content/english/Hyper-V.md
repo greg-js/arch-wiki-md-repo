@@ -1,6 +1,10 @@
 Hyper-V is a hypervisor that is included with some versions of Microsoft Windows. It is capable of running an Arch Linux virtual machine. Hyper-V is generally oriented toward enterprise rather than desktop use, and doesn't provide as convenient and simple of an interface as consumer VM programs like [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Parallels](/index.php/Parallels "Parallels"), or [VMware](/index.php/VMware "VMware"). However more recent versions and builds of Windows 10 and Windows Server 2016 include easier configuration options and better compatibility for Arch Linux. Networking features such as NAT for internal switches, multiple NATs and port forwarding have been added without the need to set up Internet Connection Sharing (ICS). Generation 2 virtual machines also now work properly for Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Network configuration](#Network_configuration)
@@ -60,7 +64,7 @@ If using DHCP for the VM, the IP address will be assigned by the DHCP server in 
 
 #### Internal switch
 
-As of version 1803 ("Fall Creators Update"), Windows 10 has a NAT Switch built in (named "Default Switch") that gives you instant internet access after installing your virtual machine if you set it up to use DHCP, see [this Technet blog post](https://blogs.technet.microsoft.com/virtualization/2017/11/13/whats-new-in-hyper-v-for-windows-10-fall-creators-update/), so you don't need the instructions below to get a working NAT switch.
+As of version 1803 ("Fall Creators Update"), Windows 10 has a NAT Switch built in (named "Default Switch") that gives you instant internet access after installing your virtual machine if you set it up to use DHCP, see [this Technet blog post](https://techcommunity.microsoft.com/t5/Virtualization/What-s-new-in-Hyper-V-for-Windows-10-Fall-Creators-Update/ba-p/382399), so you don't need the instructions below to get a working NAT switch.
 
 To create an internal switch, follow the same steps as the external switch, however replace the relevant choices for 'internal switch'. Starting with Windows 10 Anniversary Update (Version 1607, OS Build 14393), native NAT support for internal switches was added to Hyper-V. For earlier versions, Internet Connection Sharing (ICS) can be used to enable network access for virtual machines on internal switches.
 

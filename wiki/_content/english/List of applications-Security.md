@@ -96,7 +96,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 *   **Net Activity Viewer** — Graphical network connections viewer, similar in functionality with Netstat.
 
-	[http://netactview.sourceforge.net/](http://netactview.sourceforge.net/) || [netactview](https://www.archlinux.org/packages/?name=netactview)
+	[http://netactview.sourceforge.net/](http://netactview.sourceforge.net/) || [netactview](https://aur.archlinux.org/packages/netactview/)
 
 *   **[netsniff-ng](https://en.wikipedia.org/wiki/netsniff-ng "wikipedia:netsniff-ng")** — High performance Linux network sniffer for packet inspection.
 

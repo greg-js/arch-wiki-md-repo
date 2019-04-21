@@ -226,7 +226,7 @@ If `/dev/video0` is unavailable and `lsusb` does not list the webcam, make sure 
 GS65 has the twin microphone, which is very cool to have for noise reduction and echo cancellation, as well as background sounds suppression via beamforming technique. To get the best of it add this line to `/etc/pulse/default.pa`:
 
 ```
-load-module module-echo-cancel use_master_format=1 aec_method='webrtc' aec_args='"beamforming=1 mic_geometry=-0.025,0,0,0.025,0,0"'
+load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="beamforming=1 mic_geometry=-0.025,0,0,0.025,0,0"
 set-default-source alsa_input.pci-0000_00_1f.3.analog-stereo.echo-cancel
 
 ```

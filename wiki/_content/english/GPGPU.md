@@ -22,11 +22,15 @@ GPGPU stands for [General-purpose computing on graphics processing units](https:
     *   [1.3 OpenCL Development](#OpenCL_Development)
     *   [1.4 Implementations](#Implementations)
         *   [1.4.1 Language bindings](#Language_bindings)
-*   [2 CUDA](#CUDA)
-    *   [2.1 Development](#Development)
-    *   [2.2 Language bindings](#Language_bindings_2)
-*   [3 List of GPGPU accelerated software](#List_of_GPGPU_accelerated_software)
-*   [4 Links and references](#Links_and_references)
+*   [2 SYCL](#SYCL)
+    *   [2.1 Implementations](#Implementations_2)
+    *   [2.2 Checking For SPIR Support](#Checking_For_SPIR_Support)
+    *   [2.3 SYCL Development](#SYCL_Development)
+*   [3 CUDA](#CUDA)
+    *   [3.1 Development](#Development)
+    *   [3.2 Language bindings](#Language_bindings_2)
+*   [4 List of GPGPU accelerated software](#List_of_GPGPU_accelerated_software)
+*   [5 Links and references](#Links_and_references)
 
 ## OpenCL
 
@@ -117,9 +121,58 @@ To find out all possible (known) properties of the OpenCL platform and devices a
 *   **[Rust](/index.php/Rust "Rust")**: [ocl](https://github.com/cogciprocate/ocl)
 *   **[Julia](/index.php/Julia "Julia")**: [OpenCL.jl](https://github.com/JuliaGPU/OpenCL.jl)
 
+## SYCL
+
+[SYCL](https://en.wikipedia.org/wiki/SYCL "wikipedia:SYCL") is another open and royalty-free standard by the Khronos Group that defines a single-source heterogeneous programming model for C++ on top of OpenCL 1.2.
+
+SYCL consists of a runtime part and a C++ device compiler. The device compiler may target any number and kind of accelerators. The runtime is required to fall back to a pure CPU code path in case no OpenCL implementation can be found.
+
+### Implementations
+
+*   [computecpp](https://aur.archlinux.org/packages/computecpp/) Codeplay's proprietary implementation of SYCL 1.2.1\. Can target SPIR, SPIR-V and experimentally PTX (NVIDIA) as device targets.
+*   [trisycl-git](https://aur.archlinux.org/packages/trisycl-git/): Open source implementation mainly driven by Xilinx.
+*   [hipsycl-cuda-git](https://aur.archlinux.org/packages/hipsycl-cuda-git/) and [hipsycl-rocm-git](https://aur.archlinux.org/packages/hipsycl-rocm-git/): Free implementation built over AMD's HIP instead of OpenCL. Is able to run on AMD and NVIDIA GPUs.
+
+### Checking For SPIR Support
+
+Most SYCL implementations are able to compile the accelerator code to [SPIR](https://en.wikipedia.org/wiki/Standard_Portable_Intermediate_Representation "wikipedia:Standard Portable Intermediate Representation") or [SPIR-V](https://en.wikipedia.org/wiki/Standard_Portable_Intermediate_Representation "wikipedia:Standard Portable Intermediate Representation"). Both are intermediate languages designed by Khronos that can be consumed by an OpenCL driver. To check whether SPIR or SPIR-V are supported [clinfo](https://www.archlinux.org/packages/?name=clinfo) can be used:
+
+ `$ clinfo | grep -i spir` 
+```
+Platform Extensions                             cl_khr_icd cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_byte_addressable_store cl_khr_depth_images cl_khr_3d_image_writes cl_intel_exec_by_local_thread cl_khr_spir cl_khr_fp64 cl_khr_image2d_from_buffer cl_intel_vec_len_hint 
+  IL version                                    SPIR-V_1.0
+  SPIR versions                                 1.2
+```
+
+ComputeCpp additionally ships with a tool that summarizes the relevant system information:
+
+ `$ computecpp_info` 
+```
+Device 0:
+
+  Device is supported                     : UNTESTED - Untested OS
+  CL_DEVICE_NAME                          : Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz
+  CL_DEVICE_VENDOR                        : Intel(R) Corporation
+  CL_DRIVER_VERSION                       : 18.1.0.0920
+  CL_DEVICE_TYPE                          : CL_DEVICE_TYPE_CPU 
+
+```
+
+Drivers known to at least partially support SPIR or SPIR-V include [intel-compute-runtime](https://www.archlinux.org/packages/?name=intel-compute-runtime), [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/), [pocl](https://aur.archlinux.org/packages/pocl/) and [amdgpu-pro-opencl](https://aur.archlinux.org/packages/amdgpu-pro-opencl/).
+
+### SYCL Development
+
+SYCL requires a working C++11 environment to be set up. There are a few open source libraries available:
+
+*   [ComputeCpp SDK](https://github.com/codeplaysoftware/computecpp-sdk/): Collection of code examples, [cmake](https://www.archlinux.org/packages/?name=cmake) integration for ComputeCpp
+*   [SYCL-DNN](https://github.com/codeplaysoftware/SYCL-DNN): Neural network performance primitives
+*   [SYCL-BLAS](https://github.com/codeplaysoftware/SYCL-BLAS): Linear algebra performance primitives
+*   [VisionCpp](https://github.com/codeplaysoftware/visioncpp): Computer Vision library
+*   [SYCL Parallel STL](https://github.com/KhronosGroup/SyclParallelSTL): GPU implementation of the C++17 parallel algorithms
+
 ## CUDA
 
-[CUDA](https://en.wikipedia.org/wiki/CUDA "wikipedia:CUDA") (Compute Unified Device Architecture) is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s proprietary, closed-source parallel computing architecture and framework. It requires a Nvidia GPU. It consists of several components:
+[CUDA](https://en.wikipedia.org/wiki/CUDA "wikipedia:CUDA") (Compute Unified Device Architecture) is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s proprietary, closed-source parallel computing architecture and framework. It requires a NVIDIA GPU. It consists of several components:
 
 *   required:
     *   proprietary Nvidia kernel module
@@ -165,12 +218,17 @@ To find whether the installation was successful and if cuda is up and running, y
 *   [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
+*   [tensorflow-cuda](https://www.archlinux.org/packages/?name=tensorflow-cuda) - Port of TensorFlow to CUDA
+*   [tensorflow-computecpp](https://aur.archlinux.org/packages/tensorflow-computecpp/) - Port of TensorFlow to SYCL
 
 ## Links and references
 
 *   [OpenCL official homepage](http://www.khronos.org/opencl/)
+*   [SYCL official homepage](https://www.khronos.org/sycl/)
+*   [SPIR official homepage](https://www.khronos.org/spir/)
 *   [CUDA official homepage](http://www.nvidia.com/object/cuda_home_new.html)
 *   [The ICD extension specification](http://www.khronos.org/registry/cl/extensions/khr/cl_khr_icd.txt)
 *   [AMD APP SDK homepage](http://developer.amd.com/appsdk)
 *   [CUDA Toolkit homepage](https://developer.nvidia.com/cuda-toolkit)
 *   [Intel SDK for OpenCL Applications homepage](https://software.intel.com/en-us/intel-opencl)
+*   [ComputeCpp official homepage](https://developer.codeplay.com/home/)

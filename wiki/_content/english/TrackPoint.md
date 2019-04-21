@@ -150,7 +150,7 @@ Reload udev's hwdb to apply the changes:
 To test the changes prior to restarting your compositor or X session, first find your device input node `/dev/input/eventX` using:
 
 ```
-# libinput-list-devices
+# libinput list-devices
 
 ```
 

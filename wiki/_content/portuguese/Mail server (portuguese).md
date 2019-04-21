@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2019-01-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=559498) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=568443) na versão em inglês.
 
 Um servidor de e-mail consiste em vários componentes. Um [agente de transferência de e-mail](https://en.wikipedia.org/wiki/pt:Mail_transfer_agent "wikipedia:pt:Mail transfer agent") (MTA) recebe e envia e-mails via [SMTP](https://en.wikipedia.org/wiki/pt:Simple_Mail_Transfer_Protocol "wikipedia:pt:Simple Mail Transfer Protocol"). E-mails recebidos e aceitos são então passados para um [agente de entrega de e-mail](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), que armazena o e-mail em uma caixa de correio (geralmente nos formatos [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") ou [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir")). Se você quiser que os usuários possam acessar remotamente seus e-mails usando [clientes de e-mail](/index.php/Email_client "Email client") (MUA), será necessário executar um servidor [POP3](https://en.wikipedia.org/wiki/pt:Post_Office_Protocol "wikipedia:pt:Post Office Protocol") e/ou [IMAP](https://en.wikipedia.org/wiki/pt:Internet_Message_Access_Protocol "wikipedia:pt:Internet Message Access Protocol").
 
@@ -66,7 +66,7 @@ Todos esses softwares, exceto o Sendmail, incluem um agente de entrega de e-mail
 
 	[https://dovecot.org/](https://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
 
-*   **[UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP")** — Um servidor IMAP/POP.
+*   **[UW IMAP](/index.php/UW_IMAP "UW IMAP")** — Um servidor IMAP/POP.
 
 	[https://www.washington.edu/imap/](https://www.washington.edu/imap/) || [imap](https://www.archlinux.org/packages/?name=imap)
 
@@ -79,6 +79,10 @@ Todos esses softwares, exceto o Sendmail, incluem um agente de entrega de e-mail
 *   **[Procmail](/index.php/Procmail "Procmail")** — Um programa para filtrar, classificar e armazenar email (não-mantido).
 
 	[http://www.procmail.org/](http://www.procmail.org/) || [procmail](https://www.archlinux.org/packages/?name=procmail)
+
+*   **Maildrop** — Um agente de transferência de e-mail/filtro de e-mail usado pelo Courier Mail Server.
+
+	[https://www.courier-mta.org/maildrop/](https://www.courier-mta.org/maildrop/) || [courier-maildrop](https://aur.archlinux.org/packages/courier-maildrop/)
 
 Veja também [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
 
@@ -93,7 +97,7 @@ Veja também [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/w
 | 143 | IMAP | STARTTLS |
 | 993 | IMAPS | TLS implícito |
 
-Observe que o TLS implícito é mais seguro do que o [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS "wikipedia:Opportunistic TLS"), porque o último é vulnerável a [ataques *man-in-the-middle*](https://en.wikipedia.org/wiki/pt:Ataque_man-in-the-middle "wikipedia:pt:Ataque man-in-the-middle"). Para mais informações, consulte [[1]](https://serverfault.com/questions/523804/is-starttls-less-safe-than-tls-ssl) e [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
+**Nota:** O TLS implícito é mais seguro do que o [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS "wikipedia:Opportunistic TLS"), porque o último é vulnerável a [ataques *man-in-the-middle*](https://en.wikipedia.org/wiki/pt:Ataque_man-in-the-middle "wikipedia:pt:Ataque man-in-the-middle"). Para mais informações, consulte [[1]](https://serverfault.com/questions/523804/is-starttls-less-safe-than-tls-ssl) e [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
 
 ## Registro MX
 

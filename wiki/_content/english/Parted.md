@@ -238,13 +238,13 @@ In the final example below, separate `/boot` (100 MiB), `/` (20 GiB), swap (4 Gi
 
 ### Resizing partitions
 
-**Warning:** Partitions that are being resized must be unmounted and not in use. If it cannot be done (e.g. the partition that mounts to `/`), use a live media/rescue system.
+**Warning:** ext2/3/4 partitions that are being resized must be unmounted and not in use. It is difficult and hazardous to try to edit the root filesystem on a running OS; use a live media/rescue system instead.
 
 **Note:**
 
 *   You can only move the end of the partition with `parted`.
 *   As of parted v4.2 *resizepart* may need the use of [#Interactive mode](#Interactive_mode).[[1]](https://bugs.launchpad.net/ubuntu/+source/parted/+bug/1270203)
-*   These instructions apply to partitions that have ext2, ext3 or ext4 filesystems.
+*   These instructions apply to partitions that have ext2, ext3, ext4, or btrfs filesystems.
 
 If you are growing a partition, you have to first resize the partition and then resize the filesystem on it, while for shrinking the filesystem must be resized before the partition to avoid data loss.
 
@@ -259,10 +259,17 @@ To grow a partition (in parted interactive mode):
 
 Where `*number*` is the number of the partition you are growing, and `*end*` is the new end of the partition (which needs to be larger than the old end).
 
-Then, to grow the filesystem on the partition:
+Then, to grow the (ext2/3/4) filesystem on the partition:
 
 ```
 # resize2fs /dev/*sdaX* *size*
+
+```
+
+Or to grow a Btrfs filesystem:
+
+```
+# btrfs filesystem resize /dev/*sdaX* *size*
 
 ```
 
@@ -270,10 +277,17 @@ Where `*sdaX*` stands for the partition you are growing, and `*size*` is the new
 
 #### Shrinking partitions
 
-To shrink the filesystem on the partition:
+To shrink an ext2/3/4 filesystem on the partition:
 
 ```
 # resize2fs /dev/*sdaX* *size*
+
+```
+
+To shrink a Btrfs filesystem:
+
+```
+# btrfs filesystem resize /dev/*sdaX* *size*
 
 ```
 

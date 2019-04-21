@@ -178,7 +178,7 @@ $SERVER["socket"] == ":80" {
 
 #### Password protecting a directory
 
-Note that this module requires [libmariadbclient](https://www.archlinux.org/packages/?name=libmariadbclient) to be installed. A passwd file which is lighttpd's equivalent to the system's `/etc/passwd` is needed for user authentication. The setup requires a specific format and md5sum hashed password but users can quickly and easily create an entry using the following as an example:
+Note that this module requires [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) to be installed. A passwd file which is lighttpd's equivalent to the system's `/etc/passwd` is needed for user authentication. The setup requires a specific format and md5sum hashed password but users can quickly and easily create an entry using the following as an example:
 
 ```
 $ user=foo

@@ -68,7 +68,7 @@ Some packages should install more files such as a man page, so in that case it w
 
 ```
  package() {
-   cargo install --root "${pkgdir}"/usr
+   cargo install --root "${pkgdir}"/usr --root "${srcdir}/${pkgname}-${pkgver}"
  }
 
 ```

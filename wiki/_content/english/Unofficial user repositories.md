@@ -602,8 +602,8 @@ Server = https://repo.nah.nz/$repo
 ### origincode
 
 *   **Maintainer:** [OriginCode](https://aur.archlinux.org/account/OriginCode)
-*   **Description:** A few staging or testing packages from [Unofficial_user_repositories#archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories"), and some daily use packages.
-*   **Key-ID:** 5D80C1CC
+*   **Description:** A few staging or testing packages from [#archlinuxcn](#archlinuxcn), and some daily use packages.
+*   **Key-ID:** 0A5BAD445D80C1CC & 62BF97502AE10D22
 
 ```
 [origincode]
@@ -805,7 +805,8 @@ Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$a
 
 ```
 [xyne-x86_64]
-Server = https://xyne.archlinux.ca/repos/xyne
+# Server = https://xyne.archlinux.ca/repos/xyne # It returns error 404 or 406 (varying). Use the line below:
+Server = http://xyne.archlinux.ca/bin/repo.php?file=
 
 ```
 

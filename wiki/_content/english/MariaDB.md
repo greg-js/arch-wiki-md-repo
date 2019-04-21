@@ -52,7 +52,7 @@ Related articles
 **Tip:**
 
 *   If the database (in `/var/lib/mysql`) resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") for the directory before creating any database.
-*   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
+*   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Databases](/index.php/ZFS#Databases "ZFS") before creating any database.
 
 Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards run the following command **before starting** the `mariadb.service`:
 
@@ -163,7 +163,7 @@ You will still be able to log in from the localhost.
 
 **Note:** Enabling this feature can make the client initialization longer.
 
-The MySQL client completion feature is disabled by default. To enable it system-wide edit `/etc/mysql/my.cnf`, and replace `no-auto-rehash` by `auto-rehash`. Completion will be enabled next time you run the MySQL client.
+The MySQL client completion feature is disabled by default. To enable it system-wide edit `/etc/mysql/my.cnf`, and replace `no-auto-rehash` by `auto-rehash` (or add if it doesn't exist). Note that this must be placed under `mysql` and not `mysqld`. Completion will be enabled next time you run the MySQL client.
 
 ### Using UTF8MB4
 
@@ -312,7 +312,7 @@ To upgrade from 10.1.x to 10.3.x:
 *   run `mysql_upgrade` (from the new package version) against the old still-running daemon. This will produce some error messages; however, the upgrade will succeed.
 *   restart the daemon, so the 10.3.x daemon runs.
 
-Alternatively, stop the (old) daemon, run the (new) daemon in safe mode, run `mysql_upgrade` against that, and then start the (new) daemon as described below in [troubleshooting](/index.php/MariaDB#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start "MariaDB").
+Alternatively, stop the (old) daemon, run the (new) daemon in safe mode, run `mysql_upgrade` against that, and then start the (new) daemon as described below in [troubleshooting](#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start).
 
 ### Checking, optimizing and repairing databases
 

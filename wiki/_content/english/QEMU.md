@@ -1461,7 +1461,7 @@ virtio_balloon_load="YES"
 Then modify your `/etc/fstab` by doing the following:
 
 ```
-sed -i bak "s/ada/vtbd/g" /etc/fstab
+sed -ibak "s/ada/vtbd/g" /etc/fstab
 
 ```
 

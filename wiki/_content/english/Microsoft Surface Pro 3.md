@@ -50,6 +50,8 @@ There are three types of boots in the Surface Pro 3 [explained here](http://www.
 
 **Note:** This will cause a red background before the logo when booting.
 
+**Warning:** If your drive is BitLocker encrypted, you might lose access to its data if you disable secure boot, even if you later re-enable it, **unless** you backup your recovery key or suspend the protection before disabling secure boot.
+
 Boot into the UEFI setup, and select *Secure Boot Control > Disable*. Now continue with the installation. See the [Microsoft steps](http://www.microsoft.com/surface/en-sg/support/warranty-service-and-recovery/how-to-use-the-bios-uefi) for more information.
 
 ### Boot with Secure Boot

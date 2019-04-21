@@ -35,6 +35,8 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 and reboot.
 
+Hehe :) Found my username via google :D -- [Erkexzcx](/index.php/User:Erkexzcx "User:Erkexzcx") ([talk](/index.php/User_talk:Erkexzcx "User talk:Erkexzcx")) 11:52, 15 April 2019 (UTC)
+
 ### Things pending to fix
 
 *   FN + F8, swaps display output.

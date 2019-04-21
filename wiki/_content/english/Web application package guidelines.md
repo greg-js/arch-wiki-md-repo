@@ -16,7 +16,7 @@ Refer to the [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sy
 
 ## Directory structure
 
-The layout follows the [FHS](/index.php/Frequently_asked_questions#Does_Arch_follow_the_Linux_Foundation's_Filesystem_Hierarchy_Standard_(FHS)? "Frequently asked questions").
+The layout follows the [FHS](/index.php/FHS "FHS").
 
 *   `/usr/share/webapps/*$pkgname*`: The application's *data directory* holds the files of the web application. Files are owned by `root` and are therefore readonly to the application user and group `*$pkgname*`.
 
@@ -26,7 +26,7 @@ The layout follows the [FHS](/index.php/Frequently_asked_questions#Does_Arch_fol
 
 *   `/run/*$pkgname*`: The *runtime directory* of the application (owned by the user and group `*$pkgname*`). It can be used for sockets (e.g. in setups facilitating [socket activation](/index.php/UWSGI#Socket_activation "UWSGI")).
 
-**Note:** According to the package guidelines on [directories](/index.php/Arch_package_guidelines#Directories "Arch package guidelines"), `/run` must not be contained in a package. Use [tmpfiles](/index.php/Systemd#Temporary_files "Systemd") to add the directory with matching permissions.
+**Note:** According to the package guidelines on [directories](/index.php/Arch_package_guidelines#Directories "Arch package guidelines"), `/run` must not be contained in a package. Use [tmpfiles](/index.php/Tmpfiles "Tmpfiles") to add the directory with matching permissions.
 
 *   `/var/cache/*$pkgname*`: The *cache directory* of the application (owned by the user and group `*$pkgname*`). It (or subfolders in it) is symlinked to the *data directory* for applications requiring writable cache directories.
 

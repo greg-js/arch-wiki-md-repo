@@ -77,7 +77,7 @@ Before installing any other OS (other than the default Windows 8/8.1) it is requ
 
 ### Video
 
-Works natively with [f86-video-amdgpu](https://www.archlinux.org/packages/?name=f86-video-amdgpu). However, you need to use kernel 4.17 or later.
+Works natively with [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu). However, you need to use kernel 4.17 or later.
 
 ### Touchpad
 

@@ -986,7 +986,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[openBVE](https://en.wikipedia.org/wiki/BVE_Trainsim#openBVE "wikipedia:BVE Trainsim")** — Free-as-in-freedom train simulator placed in the public domain.
 
-	[https://web.archive.org/web/odakyufan.zxq.net/openbve/](https://web.archive.org/web/odakyufan.zxq.net/openbve/) || [openbve](https://www.archlinux.org/packages/?name=openbve)
+	[https://openbve-project.net/](https://openbve-project.net/) || [openbve](https://www.archlinux.org/packages/?name=openbve)
 
 *   **[Oolite](https://en.wikipedia.org/wiki/Oolite_(video_game) "wikipedia:Oolite (video game)")** — 3D space trading and combat simulator in the spirit of Elite.
 

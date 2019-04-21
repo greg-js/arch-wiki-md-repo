@@ -104,9 +104,9 @@ It is a common mistake to think that MuQSS does not support *cgroups*. It does b
 
 ### Silencing psi: task underflow message
 
-New in MuQSS v0.185 is support for [PSI](https://lwn.net/Articles/763629/) which [CK is characterizing](http://ck-hack.blogspot.com/2018/12/linux-420-ck1-muqss-version-0185-for.html?showComment=1546576441759#c2919535897335602087) as "completely untested and probably broken."
+New in MuQSS v0.185 has support for [PSI](https://lwn.net/Articles/763629/) which [CK is characterizing](http://ck-hack.blogspot.com/2018/12/linux-420-ck1-muqss-version-0185-for.html?showComment=1546576441759#c2919535897335602087) as "completely untested and probably broken."
 
-In response to this, some users may notice [psi: task underflow!](https://bbs.archlinux.org/viewtopic.php?pid=1824594#p1824594) in dmesg/journalctl output. With the release of 4.20.0-3-ck1, is compiled in but disabled by default. Users wanting PSI enabled should boot with the following [Kernel_parameter] on their respective bootloader config: **psi=1**
+In response to this, some users may notice [psi: task underflow!](https://bbs.archlinux.org/viewtopic.php?pid=1824594#p1824594) in dmesg/journalctl output. With the release of 4.20.0-3-ck1, is compiled in but disabled by default. Users wanting PSI enabled should boot with the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") on their respective bootloader config: **psi=1**
 
 ### Running VirtualBox with Linux-ck
 

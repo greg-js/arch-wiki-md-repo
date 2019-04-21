@@ -41,10 +41,11 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 *   Following [#Installing the latest Arch Linux on any OpenVZ container provider](#Installing_the_latest_Arch_Linux_on_any_OpenVZ_container_provider) instructions, using rsync to synchronize Arch over the top of another distribution.
 
 | Provider | Arch Release | Virtualization | Locations | Notes |
+| [1984hosting.com](https://www.1984hosting.com/) | 2016.x | Xen | Iceland (IS) | [Hardware](https://www.1984hosting.com/product/vps/) will provide any image you request, has Arch in default image list. |
 | [4smart.cz](http://4smart.cz/) | 2013.08 | OpenVZ | Prague, CZ | (Czech language site only) when updating system make sure you use [tredaelli-systemd] in pacman.conf (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") |
 | [affinity.net.nz](https://www.affinity.net.nz/) | 2013.08.01 | KVM | Auckland, New Zealand (NZ) | IRC channel is #affinity on ircs.kiwicon.org |
 | [Atlantic.Net](https://www.atlantic.net/) | 2016.03.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click Arch Linux, ready in 30 seconds. It is also easy to update Arch to the current version because the pre-provisioned Arch image is relatively current. |
-| [BuyVM](https://buyvm.net/) | 2017.08.01 | KVM | Las Vegas, NV; Buffalo, NY; Luxembourg | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
+| [BuyVM](https://buyvm.net/) | 2017.08.01 | KVM | Buffalo, (US-NY); Las Vegas, (US-NV); Luxembourg, Germany (DE) | Cannot select Arch at purchase. Once purchased, use Stallion control panel to install Arch manually from ISO. |
 | [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | Bitcoin and other cryptocurrencies accepted. |
 | [Cherry Host](https://cherry.host) | Latest | KVM | Santee, US-CA | Must submit a support ticket to get Arch installed. |
 | [Contabo](https://contabo.com) | Latest | KVM | German | Only place to get 500 GB for 7€ - Decent speed. Other cheaps plans add snapshots, which is useful if you VPS runs a rolling release distro. |
@@ -53,7 +54,6 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [GigaTux](https://www.gigatux.com/virtual.php) | [2013.06.01](https://www.gigatux.com/distro/) | Xen | Chicago, US-IL; Frankfurt, DE; London, GB; San Jose, US-CA | Currently, when changing to the US$ currency, the page breaks and it is not possible to provision a server. |
 | [Host Virtual](https://www.hostvirtual.com/) | [2014.06.01](https://www.hostvirtual.com/os/linux-vps/archlinux-vps) | KVM | [Multiple International Locations](http://www.vr.org/cloud-locations/) | Appears to use KVM virtualization. Site lists "Xen based virtualization" and [features](http://www.vr.org/features/) lists ability to install from ISO. VPS plans are very expensive with an setup fee as well. |
 | [Hostigation](https://hostigation.com/) | [Latest](https://hostigation.com/?page=KVM) | OpenVZ, KVM | Charlotte, US-NC; Los Angeles, US-CA | Arch is **not** currently listed as a choice. |
-| [Kloud51](https://www.kloud51.com) | Unlisted | OpenVZ | US-CA, Canada | Presently, the website does not list any VPS plans. |
 | [Leapswitch Networks](https://leapswitch.com) | 2013.10.xx | OpenVZ/KVM | USA, India, Portugal, Spain, Ukraine, Germany | Arch Linux currently available in Control Panel for reinstall, not on order form. |
 | [Linevast.de](https://linevast.de) | Latest | OpenVZ, KVM | Germany | Arch Linux is possible on openvz and on KVM with the one click os installer. |
 | [Linode](https://www.linode.com) | [Latest](https://www.linode.com/distributions) | KVM | [Multiple US, London, Frankfurt, Tokyo, Singapore](https://www.linode.com/speedtest/) | Linode instances are configured to run Arch's kernel by default. Linode provides custom kernels which can be selected in the manager settings. There are also community-supported kernels in the AUR, such as [linux-linode](https://aur.archlinux.org/packages/linux-linode/). |
@@ -61,7 +61,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Netcup](https://www.netcup.de/) | 2012.11.xx | KVM | Germany (DE) | (German language site only) |
 | [MedHaHosting](https://www.medhahosting.com) | Latest | KVM | Buffalo, NY, USA; Atlanta, GA, USA; Chicago, IL, USA; Los Angeles, CA, USA | ArchLinux available on request. Many Linux and Windows hosting options. |
 | [OnePoundWebHosting](https://www.onepoundwebhosting.co.uk/) | 2014.01 | Xen PV, Xen HVM | United Kingdom (UK) | They are a registrar too. Unable to verify server locations. |
-| [OVH](https://www.ovh.com/us/vps/) | Latest | KVM | France, Canada |
+| [OVH](https://www.ovh.com/us/vps/) | Latest | KVM | Beauharnois, Canada (CA); Frankfurt, Germany (DE); Gravelines, Stratsbourg, France (FR); Warsaw, Poland (PL); London, United Kingdom (UK) |
 | [PacmanVPS](https://pacmanvps.com/) | 2014.01 | KVM | Canada (CA), Poland (PL) | Arch image is very old and PacmanVPS repos are broken. Not possible to update Arch. Site appears unmaintained. |
 | [Proplay](https://www.proplay.de/) | Latest | OpenVZ, KVM | Germany (DE) | (German language site only) |
 | [Rackspace Cloud](https://www.rackspace.com/cloud/servers) | 2013.6 | Xen | [Multiple international locations](https://www.rackspace.com/whyrackspace/network/datacenters/) | Billed per hour. Use their "next gen" VPSes (using the mycloud.rackspace.com panel); the Arch image on the first gen Rackspace VPSes is out of date. |
@@ -82,7 +82,6 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Vultr](https://www.vultr.com/) | Latest | KVM | [Multiple International locations](https://www.vultr.com/locations/) | When deploying a new server just select the Arch install ISO from Vultr ISO Library. Then just manually run through the standard [Arch installation guide](/index.php/Installation_guide "Installation guide"). |
 | [World4You](https://www.world4you.com/) | 2015.10.28 | OpenVZ | Austria (AT) | Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm) |
 | [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
-| [1984hosting.com](https://www.1984hosting.com/) | 2016.x | Xen | Iceland (IS) | [Hardware](https://www.1984hosting.com/product/vps/) will provide any image you request, has Arch in default image list. |
 | [ZeptoVM](https://www.zeptovm.com/) | Latest | KVM | St. Petersburg, RU; Khabarovsk, RU; Seoul, KR; Ashburn, US | Also provides local Archlinux mirror in some locations. |
 
 ## Installation

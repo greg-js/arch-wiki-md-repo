@@ -1,6 +1,6 @@
 [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp") is a mobile-first instant messaging service owned by Facebook, featuring end-to-end encryption. It requires an active cell phone number and data connection to operate.
 
-There is no official WhatsApp desktop client for Linux, and Facebook has strictly attempted to ban third-party clients and plugins using their protocol. As a result, we recommend people to avoid using the WhatsApp product altogether in favor of IM services with more openness, such as [XMPP](/index.php/XMPP "XMPP"), [Telegram](/index.php/Telegram "Telegram") or [ICQ](/index.php/ICQ "ICQ").
+There is no official WhatsApp desktop client for Linux, and Facebook has strictly attempted to ban third-party clients and plugins using their protocol. Due to this corporate behaviour, we recommend people to avoid using WhatsApp altogether in favor of IM services with more openness, such as [XMPP](/index.php/XMPP "XMPP"), [Telegram](/index.php/Telegram "Telegram") or [ICQ](/index.php/ICQ "ICQ").
 
 ## Installation
 

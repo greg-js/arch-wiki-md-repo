@@ -9,53 +9,57 @@
 
 	In computing, an optical disc drive (ODD) is a disk drive that uses laser light or electromagnetic waves within or near the visible light spectrum as part of the process of reading or writing data to or from optical discs. Some drives can only read from discs, but recent drives are commonly both readers and recorders, also called burners or writers. Compact discs, DVDs, and Blu-ray discs are common types of optical media which can be read and recorded by such drives. Optical drive is the generic name; drives are usually described as "CD" "DVD", or "Blu-ray", followed by "drive", "writer", etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 烧录](#.E7.83.A7.E5.BD.95)
-    *   [1.1 安装烧录工具](#.E5.AE.89.E8.A3.85.E7.83.A7.E5.BD.95.E5.B7.A5.E5.85.B7)
-    *   [1.2 从硬盘上已存在的文件创建ISO镜像](#.E4.BB.8E.E7.A1.AC.E7.9B.98.E4.B8.8A.E5.B7.B2.E5.AD.98.E5.9C.A8.E7.9A.84.E6.96.87.E4.BB.B6.E5.88.9B.E5.BB.BAISO.E9.95.9C.E5.83.8F)
-        *   [1.2.1 基本选项](#.E5.9F.BA.E6.9C.AC.E9.80.89.E9.A1.B9)
-        *   [1.2.2 移植点](#.E7.A7.BB.E6.A4.8D.E7.82.B9)
-    *   [1.3 挂载一个ISO映像](#.E6.8C.82.E8.BD.BD.E4.B8.80.E4.B8.AAISO.E6.98.A0.E5.83.8F)
-    *   [1.4 将img/ccd转换为ISO映像](#.E5.B0.86img.2Fccd.E8.BD.AC.E6.8D.A2.E4.B8.BAISO.E6.98.A0.E5.83.8F)
-    *   [1.5 获取你光驱的名字](#.E8.8E.B7.E5.8F.96.E4.BD.A0.E5.85.89.E9.A9.B1.E7.9A.84.E5.90.8D.E5.AD.97)
-    *   [1.6 读取CD/DVD的卷标](#.E8.AF.BB.E5.8F.96CD.2FDVD.E7.9A.84.E5.8D.B7.E6.A0.87)
-    *   [1.7 从CD，DVD或BD读取ISO映像](#.E4.BB.8ECD.EF.BC.8CDVD.E6.88.96BD.E8.AF.BB.E5.8F.96ISO.E6.98.A0.E5.83.8F)
-    *   [1.8 擦除CD-RW和DVD-RW](#.E6.93.A6.E9.99.A4CD-RW.E5.92.8CDVD-RW)
-    *   [1.9 格式化DVD-RW](#.E6.A0.BC.E5.BC.8F.E5.8C.96DVD-RW)
-    *   [1.10 格式化BD-RE和BD-R](#.E6.A0.BC.E5.BC.8F.E5.8C.96BD-RE.E5.92.8CBD-R)
-    *   [1.11 向CD，DVD或BD烧录ISO映像](#.E5.90.91CD.EF.BC.8CDVD.E6.88.96BD.E7.83.A7.E5.BD.95ISO.E6.98.A0.E5.83.8F)
-    *   [1.12 校验已烧录的ISO映像](#.E6.A0.A1.E9.AA.8C.E5.B7.B2.E7.83.A7.E5.BD.95.E7.9A.84ISO.E6.98.A0.E5.83.8F)
-    *   [1.13 ISO 9660和即时烧录](#ISO_9660.E5.92.8C.E5.8D.B3.E6.97.B6.E7.83.A7.E5.BD.95)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 烧录](#烧录)
+    *   [1.1 安装烧录工具](#安装烧录工具)
+    *   [1.2 从硬盘上已存在的文件创建ISO镜像](#从硬盘上已存在的文件创建ISO镜像)
+        *   [1.2.1 基本选项](#基本选项)
+        *   [1.2.2 移植点](#移植点)
+    *   [1.3 挂载一个ISO映像](#挂载一个ISO映像)
+    *   [1.4 将img/ccd转换为ISO映像](#将img/ccd转换为ISO映像)
+    *   [1.5 获取你光驱的名字](#获取你光驱的名字)
+    *   [1.6 读取CD/DVD的卷标](#读取CD/DVD的卷标)
+    *   [1.7 从CD，DVD或BD读取ISO映像](#从CD，DVD或BD读取ISO映像)
+    *   [1.8 擦除CD-RW和DVD-RW](#擦除CD-RW和DVD-RW)
+    *   [1.9 格式化DVD-RW](#格式化DVD-RW)
+    *   [1.10 格式化BD-RE和BD-R](#格式化BD-RE和BD-R)
+    *   [1.11 向CD，DVD或BD烧录ISO映像](#向CD，DVD或BD烧录ISO映像)
+    *   [1.12 校验已烧录的ISO映像](#校验已烧录的ISO映像)
+    *   [1.13 ISO 9660和即时烧录](#ISO_9660和即时烧录)
     *   [1.14 Multi-session](#Multi-session)
         *   [1.14.1 Multi-session by cdrecord](#Multi-session_by_cdrecord)
         *   [1.14.2 Multi-session by growisofs](#Multi-session_by_growisofs)
         *   [1.14.3 Multi-session by xorriso](#Multi-session_by_xorriso)
-    *   [1.15 BD缺陷管理](#BD.E7.BC.BA.E9.99.B7.E7.AE.A1.E7.90.86)
-    *   [1.16 烧录音频CD](#.E7.83.A7.E5.BD.95.E9.9F.B3.E9.A2.91CD)
-    *   [1.17 烧录BIN/CUE](#.E7.83.A7.E5.BD.95BIN.2FCUE)
-        *   [1.17.1 TOC/CUE/BIN for mixed-mode disks](#TOC.2FCUE.2FBIN_for_mixed-mode_disks)
+    *   [1.15 BD缺陷管理](#BD缺陷管理)
+    *   [1.16 烧录音频CD](#烧录音频CD)
+    *   [1.17 烧录BIN/CUE](#烧录BIN/CUE)
+        *   [1.17.1 TOC/CUE/BIN for mixed-mode disks](#TOC/CUE/BIN_for_mixed-mode_disks)
     *   [1.18 Burn backend problems](#Burn_backend_problems)
-    *   [1.19 用GUI程序烧录CD/DVD/BD](#.E7.94.A8GUI.E7.A8.8B.E5.BA.8F.E7.83.A7.E5.BD.95CD.2FDVD.2FBD)
-*   [2 回放](#.E5.9B.9E.E6.94.BE)
+    *   [1.19 用GUI程序烧录CD/DVD/BD](#用GUI程序烧录CD/DVD/BD)
+*   [2 回放](#回放)
     *   [2.1 CD](#CD)
     *   [2.2 DVD](#DVD)
 *   [3 Ripping](#Ripping)
     *   [3.1 CD](#CD_2)
     *   [3.2 DVD](#DVD_2)
         *   [3.2.1 dvd::rip](#dvd::rip)
-*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+*   [4 疑难解答](#疑难解答)
     *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
-    *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_.22..._could_not_open_the_disc_.2Fdev.2Fdvd.22)
-    *   [4.3 DVD设备噪音大](#DVD.E8.AE.BE.E5.A4.87.E5.99.AA.E9.9F.B3.E5.A4.A7)
-    *   [4.4 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_.28new_DVD-Drive.29)
-    *   [4.5 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip.2Fencode_a_DVD_to_my_hard_disk.21)
+    *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_"..._could_not_open_the_disc_/dev/dvd")
+    *   [4.3 DVD设备噪音大](#DVD设备噪音大)
+    *   [4.4 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_(new_DVD-Drive))
+    *   [4.5 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip/encode_a_DVD_to_my_hard_disk!)
     *   [4.6 GUI program log indicates problems with backend program](#GUI_program_log_indicates_problems_with_backend_program)
-        *   [4.6.1 Special case: medium error / write error](#Special_case:_medium_error_.2F_write_error)
+        *   [4.6.1 Special case: medium error / write error](#Special_case:_medium_error_/_write_error)
     *   [4.7 AHCI](#AHCI)
     *   [4.8 BD-R DL 50GB errors on trying to burn second layer](#BD-R_DL_50GB_errors_on_trying_to_burn_second_layer)
     *   [4.9 Disc tray autocloses](#Disc_tray_autocloses)
-*   [5 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
+*   [5 另请参阅](#另请参阅)
 
 ## 烧录
 
@@ -65,7 +69,7 @@
 
 ### 安装烧录工具
 
-如果你想使用有GUI的程序的话，请阅读 [#用GUI程序烧录CD/DVD/BD](#.E7.94.A8GUI.E7.A8.8B.E5.BA.8F.E7.83.A7.E5.BD.95CD.2FDVD.2FBD).
+如果你想使用有GUI的程序的话，请阅读 [#用GUI程序烧录CD/DVD/BD](#用GUI程序烧录CD/DVD/BD).
 
 列在这里的程序都是基于命令行的。他们是大多数免费光碟操作（CD, DVD和BD）GUI程序使用的后端。GUI用户可能会在故障处理或写烧录脚本时碰到它们。
 

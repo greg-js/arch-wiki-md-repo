@@ -27,7 +27,7 @@ For JIT compilation support [install](/index.php/Install "Install") the [luajit]
 
 ## Modules
 
-The [LuaRocks](https://luarocks.org/) package manager is available as [luarocks](https://www.archlinux.org/packages/?name=luarocks), [luarocks5.1](https://www.archlinux.org/packages/?name=luarocks5.1) and [luarocks5.2](https://www.archlinux.org/packages/?name=luarocks5.2).
+The [LuaRocks](https://luarocks.org/) package manager is available as [luarocks](https://www.archlinux.org/packages/?name=luarocks).
 
 Some modules are also available [in the official repositories](https://www.archlinux.org/packages/?&q=lua-).
 

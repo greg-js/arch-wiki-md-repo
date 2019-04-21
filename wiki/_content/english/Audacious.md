@@ -49,7 +49,7 @@ To add classic Winamp skins to Audacious, just copy them to either `~/.local/sha
 
 #### AMIDI-Plug (MIDI Player)
 
-To play MIDI and RMI files, it is required to install the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) package, and also install the sound font files, both [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats) and [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid). No further configuration is required on the fluidsynth package, but for additional functionality check the [FluidSynth](/index.php/FluidSynth "FluidSynth") instructions.
+To play MIDI and RMI files, it is required to install the [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth) package, and also install the sound font files, both [freepats-general-midi](https://www.archlinux.org/packages/?name=freepats-general-midi) and [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid). No further configuration is required on the fluidsynth package, but for additional functionality check the [FluidSynth](/index.php/FluidSynth "FluidSynth") instructions.
 
 Afterwards, the plugin will be enabled, and in the plugin configuration panel (File, Settings ..., Plugins pane, Input tab, select AMIDI-Plug (MIDI Player)) add the installed sound font files one at a time (Extension `.sf2`) to the SoundFont dialog, they are located at `/usr/share/soundfonts/`.
 

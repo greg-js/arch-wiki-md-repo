@@ -15,7 +15,11 @@ This 2018 global version is hardware updated: new CPU and GPU, as well as a fing
 
 The installation should be going without any problems, if you follow the following steps.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pre-Installation System Settings](#Pre-Installation_System_Settings)
 *   [2 Graphics Card Configuration](#Graphics_Card_Configuration)

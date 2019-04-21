@@ -470,7 +470,7 @@ $ nvidia-xconfig --sli=Mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DFP
 
 ### Driver persistence
 
-Nvidia has a daemon that is to be run at boot. See the [Driver Persistence](http://docs.nvidia.com/deploy/driver-persistence/index.html#persistence-daemon) section of the Nvidia documentation for more details.
+Nvidia has a daemon that can be optionally run at boot. In a standard single-GPU X desktop environment the persistence daemon is not actually needed and can actually create issues [[3]](https://devtalk.nvidia.com/default/topic/1044421/linux/nvidia-persistenced-causing-60-second-reboot-delays). See the [Driver Persistence](http://docs.nvidia.com/deploy/driver-persistence/index.html#persistence-daemon) section of the Nvidia documentation for more details.
 
 To start the persistence daemon at boot, [enable](/index.php/Enable "Enable") the `nvidia-persistenced.service`. For manual usage see the [upstream documentation](http://docs.nvidia.com/deploy/driver-persistence/index.html#usage).
 

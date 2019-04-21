@@ -1,13 +1,17 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=542513) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=570964) na versão em inglês.
 
 Artigos relacionados
 
 *   [Makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 *   [Distcc](/index.php/Distcc "Distcc")
 
-[ccache](http://ccache.samba.org/) é uma ferramenta para o compilador gcc usada para compilar o mesmo programa repetidas vezes com pouco tempo de inatividade. Enquanto pode levar alguns segundos mais para compilar um programa na primeira vez com o *ccache*, compilações subsequentes serão muito, muito mais rápidos.
+[ccache](https://ccache.dev/) é uma ferramenta para o compilador gcc usada para compilar o mesmo programa repetidas vezes com pouco tempo de inatividade. Enquanto pode levar alguns segundos mais para compilar um programa na primeira vez com o *ccache*, compilações subsequentes serão muito, muito mais rápidos.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Configuração](#Configuração)
@@ -41,13 +45,20 @@ Veja [ccache(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ccache.1) para detal
 
 Para habilitar o *ccache* ao usar [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), edite `/etc/makepkg.conf`. Em `BUILDENV`, descomente `ccache` (remova a marca de exclamação) para habilitar cache. Por exemplo:
 
- `/etc/makepkg.conf`  `BUILDENV=(fakeroot !distcc color **ccache** check !sign)` 
+ `/etc/makepkg.conf`  `BUILDENV=(!distcc color **ccache** check !sign)` 
 
 ### Habilitar para linha de comando
 
 Se você está compilando seu código a partir da linha de comando, e não compilando pacotes, então você ainda desejará usar *ccache* para ajudar a acelerar as coisas.
 
-Para isso, você precisará alterar seu `$PATH` para incluir os binários do *ccache* antes do caminho de seu compilador:
+Para isso, você pode prefixar cada comando de compilação com `ccache`.
+
+```
+$ ccache cc hello_world.c
+
+```
+
+Alternativamente, altere seu `$PATH` para incluir os binários do *ccache* antes do caminho de seu compilador:
 
 ```
 $ export PATH="/usr/lib/ccache/bin/:$PATH"
@@ -56,7 +67,7 @@ $ export PATH="/usr/lib/ccache/bin/:$PATH"
 
 Você pode querer definir essa linha como [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") para uso regular.
 
-**Nota:** Isso inevitavelmente habilitará *ccache* para *makepkg* da mesma forma que se fosse chamado com esse PATH.
+**Nota:** Tal exportação inevitavelmente habilitará *ccache* para *makepkg* da mesma forma que se fosse chamado com esse PATH.
 
 ### Habilitar com colorgcc
 
@@ -153,4 +164,4 @@ Na comunidade Gentoo Linux, uma distro baseada em fontes, *ccache* tem sido not�
 
 ## Veja também
 
-*   [manual do ccache](http://ccache.samba.org/manual.html)
+*   [manual do ccache](https://ccache.dev/manual/latest.html)

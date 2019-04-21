@@ -20,7 +20,7 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 
 **Note:** On hybrid graphics ([NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")/AMD Dynamic Switchable Graphics):
 
-*   Vulkan is not currently officially supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") [[1]](https://github.com/Bumblebee-Project/Bumblebee/issues/769) but does work with [primus-vk-git](https://aur.archlinux.org/packages/primus-vk-git/).
+*   Vulkan is not currently officially supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") [[1]](https://github.com/Bumblebee-Project/Bumblebee/issues/769) but does work with [primus_vk](https://www.archlinux.org/packages/?name=primus_vk) or [primus-vk-git](https://aur.archlinux.org/packages/primus-vk-git/).
 *   The Radeon Vulkan driver now supports [PRIME](/index.php/PRIME "PRIME") [[2]](http://www.phoronix.com/scan.php?page=news_item&px=RADV-PRIME-Lands).
 
 To run a Vulkan application, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package (and [lib32-vulkan-icd-loader](https://www.archlinux.org/packages/?name=lib32-vulkan-icd-loader) if you also want to run 32-bit applications), as well as the Vulkan drivers for your graphics card(s):

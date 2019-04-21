@@ -205,7 +205,7 @@ These files are aimed at setting network configuration variables, especially for
 #### [Match]
 
 *   `MACAddress=` a whitespace-separated list of hardware addresses
-*   `Name=` the device name
+*   `Name=` a white-space separated list of device names, which may contain globs (e.g. `en*`). By prefixing with `!`, the list can be inverted.
 *   `Host=` the machine hostname
 *   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
 
@@ -241,8 +241,9 @@ If `Destination` is not present in `[Route]` section this section is treated as 
 
 #### [DHCP]
 
-*   `Anonymize=` when true, the options sent to the DHCP server will follow the [RFC7844](https://tools.ietf.org/html/rfc7844) (Anonymity Profiles for DHCP Clients) to minimize disclosure of identifying information
-*   `UseDomains=` can sometimes fix local name resolving when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved")
+*   `Anonymize=` when true, the options sent to the DHCP server will follow the [RFC7844](https://tools.ietf.org/html/rfc7844) (Anonymity Profiles for DHCP Clients) to minimize disclosure of identifying information (default = `false`)
+*   `UseDNS=` controls whether the DNS servers advertised by the DHCP server are used (default = `true`)
+*   `UseDomains=` controls whether the domain name received from the DHCP server will be used as DNS search domain. If set to `route`, the domain name received from the DHCP server will be used for routing DNS queries only, but not for searching. This option can sometimes fix local name resolving when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") (default = `false`)
 
 ### netdev files
 

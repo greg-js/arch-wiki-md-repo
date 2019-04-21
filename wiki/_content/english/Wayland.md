@@ -51,7 +51,7 @@ For the GPU driver and Wayland compositor to be compatible they must support the
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
-| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME") |
+| EGLStreams | [NVIDIA](/index.php/NVIDIA "NVIDIA") | [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE") ([Plasma 5.16+](https://www.phoronix.com/scan.php?page=news_item&px=EGLStreams-Merged-KWin-5.16)) |
 
 ## Weston
 

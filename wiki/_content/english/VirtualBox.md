@@ -79,7 +79,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
     *   [5.27 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
-    *   [5.28 Black screen for guest in EFI mode](#Black_screen_for_guest_in_EFI_mode)
+    *   [5.28 Cannot launch VirtualBox on Wayland: Segmentation fault](#Cannot_launch_VirtualBox_on_Wayland:_Segmentation_fault)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Automounting does not work](#Automounting_does_not_work)
 *   [7 See also](#See_also)
@@ -179,8 +179,6 @@ Once the system and the boot loader are installed, VirtualBox will first attempt
 Do not bother with the VirtualBox Boot Manager (accessible with `F2` at boot), as it is buggy and incomplete. It does not store efivars set interactively. Therefore, EFI entries added to it manually in the firmware (accessed with `F12` at boot time) or with [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will persist after a reboot [but are lost when the VM is shut down](https://www.virtualbox.org/ticket/11177).
 
 See also [UEFI VirtualBox installation boot problems](https://bbs.archlinux.org/viewtopic.php?id=158003).
-
-**Note:** In UEFI mode you may experience a black screen, see [#Black screen for guest in EFI mode](#Black_screen_for_guest_in_EFI_mode) for a workaround.
 
 ### Install the Guest Additions
 
@@ -905,13 +903,23 @@ Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](h
 
 To deal with this problem, apply the patch set at [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Some fix to the patch set is required to make it work for version 5.2.16-2.
 
-### Black screen for guest in EFI mode
+### Cannot launch VirtualBox on Wayland: Segmentation fault
 
-When the guest is using UEFI in Virtualbox by following [#Installation in EFI mode](#Installation_in_EFI_mode), you will get a black screen during boot and after if the VM's Graphics Controller is set to VBoxSVGA.
+This problem is usually caused by Qt on Wayland, see [FS#58761](https://bugs.archlinux.org/task/58761).
 
-This is because you are experiencing [FS#61184](https://bugs.archlinux.org/task/61184).
+The best thing, not to affect the rest of Qt applications (which usually work well in Wayland), is to modify the VirtualBox [desktop entry](/index.php/Desktop_entry "Desktop entry"). Copy `/usr/share/applications/virtualbox.desktop` to `~/.local/share/applications/virtualbox.desktop` and change the lines starting with
 
-The workaround is to use VMSVGA (the default) or VBoxVGA as the graphics controller. Go to VM *Settings > Display'* and change the *Graphics Controller* to either *VMSVGA* or *VBoxVGA*.
+```
+Exec=VirtualBox ...
+
+```
+
+to
+
+```
+Exec=QT_QPA_PLATFORM= VirtualBox ...
+
+```
 
 ## Known issues
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-03-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=568871) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-04-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=569896) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -49,7 +49,7 @@ A mídia de instalação e suas assinaturas [GnuPG](/index.php/GnuPG "GnuPG") po
 Em um sistema com [GnuPG](/index.php/GnuPG "GnuPG") instalado, faça isso baixando a *assinatura PGP* (sob *Checksums*) para o diretório da ISO e [verificando-a](/index.php/GnuPG#Verify_a_signature "GnuPG") com:
 
 ```
-$ gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-*versão*-x86_64.iso.sig
+$ gpg --keyserver-options auto-key-retrieve --verify archlinux-*versão*-x86_64.iso.sig
 
 ```
 

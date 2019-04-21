@@ -1,6 +1,10 @@
 The Lenovo ThinkPad X200 is a high-quality laptop featuring a 12.1" widescreen WXGA display, an Intel Core 2 Duo processor (2.26 - 2.8GHz), an Intel Graphics Media Accelerator 4500MHD and up to 8GB of RAM whilst still maintaining impressive battery life.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Wireless](#Wireless)
@@ -14,11 +18,11 @@ The Lenovo ThinkPad X200 is a high-quality laptop featuring a 12.1" widescreen W
     *   [1.9 Screen rotation](#Screen_rotation)
     *   [1.10 Screen auto-rotation](#Screen_auto-rotation)
     *   [1.11 Power consumption and fan control](#Power_consumption_and_fan_control)
-    *   [1.12 Suspend to RAM / hibernate](#Suspend_to_RAM_.2F_hibernate)
+    *   [1.12 Suspend to RAM / hibernate](#Suspend_to_RAM_/_hibernate)
     *   [1.13 BIOS WiFi-Whitelist Removal](#BIOS_WiFi-Whitelist_Removal)
-    *   [1.14 Coreboot / Libreboot](#Coreboot_.2F_Libreboot)
+    *   [1.14 Coreboot / Libreboot](#Coreboot_/_Libreboot)
 *   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 failed to execute '/usr/sbin/inputattach'](#failed_to_execute_.27.2Fusr.2Fsbin.2Finputattach.27)
+    *   [2.1 failed to execute '/usr/sbin/inputattach'](#failed_to_execute_'/usr/sbin/inputattach')
     *   [2.2 System feels unresponsive](#System_feels_unresponsive)
     *   [2.3 Backlight fails to activate after system resume](#Backlight_fails_to_activate_after_system_resume)
     *   [2.4 PM device: Resume from hibernation error: Failed to restore -19](#PM_device:_Resume_from_hibernation_error:_Failed_to_restore_-19)
@@ -79,7 +83,7 @@ To save the calibration settings, create a config file at `/etc/X11/xorg.conf.d/
 Download [x200.icc](https://github.com/yuvadm/dotfiles/raw/x200s/.color/icc/x200.icc) and move it to `~/.color/icc`. Load the profile with [xcalib](https://aur.archlinux.org/packages/xcalib/) as follows:
 
 ```
-$ /usr/bin/xcalib -d :0 ~/.color/icc/x200.icc
+$ /usr/bin/xcalib -d :0 ~/.color/icc/x200.icc
 
 ```
 
@@ -210,7 +214,7 @@ This script may be executed during startup to further automate the screen rotati
 
 To set up an efficient power saving environment, install the [tlp](https://www.archlinux.org/packages/?name=tlp) package. A detailed guide how to implement a simplistic power saving environment based upon TLP can be found [here](http://www.robert.orzanna.de/simplistic-powersaving-with-systemd-service-files-and-udev-rules/).
 
-Fan-control software can be used to further reduce power consumption. The [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/) package from AUR provides a simplistic GTK GUI for setting up fan activation thresholds based upon the X200's multiple hardware sensors.
+Fan-control software can be used to further reduce power consumption.
 
 Investigate [Powertop](/index.php/Powertop "Powertop") and the [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/) package from AUR for more information on measuring actual power consumption.
 
@@ -279,12 +283,12 @@ case $1/$2 in
     echo "Going to $2..."
     modprobe -r tpm
     modprobe -r tpm_tis
-    ;;
+    ;;
   post/*)
     echo "Waking up from $2..."
     modprobe tpm
     modprobe tpm_tis
-    ;;
+    ;;
 esac
 
 ```

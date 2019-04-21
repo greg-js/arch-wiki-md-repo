@@ -90,7 +90,7 @@ UUID=*device_UUID* none swap defaults 0 0
 
 ```
 
-where the *device_UUID* is the [UUID](/index.php/UUID "UUID") of the swap space.
+where the `*device_UUID*` is the [UUID](/index.php/UUID "UUID") of the swap space.
 
 See [fstab](/index.php/Fstab "Fstab") for the file syntax.
 

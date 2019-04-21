@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=561612) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=571341) na versão em inglês.
 
 Artigos relacionados
 
@@ -33,14 +33,13 @@ Suporte para swap é fornecido pelo kernel Linux e utilitários de espaço de us
         *   [3.1.2 Remover arquivo swap](#Remover_arquivo_swap)
     *   [3.2 Automatizado](#Automatizado)
         *   [3.2.1 systemd-swap](#systemd-swap)
-*   [4 Swap com dispositivo USB](#Swap_com_dispositivo_USB)
-*   [5 Criptografia swap](#Criptografia_swap)
-*   [6 Desempenho](#Desempenho)
-    *   [6.1 Swappiness](#Swappiness)
-    *   [6.2 Pressão de cache VFS](#Pressão_de_cache_VFS)
-    *   [6.3 Prioridade](#Prioridade)
-    *   [6.4 Usando zswap ou zram](#Usando_zswap_ou_zram)
-    *   [6.5 Distribuição](#Distribuição)
+*   [4 Criptografia swap](#Criptografia_swap)
+*   [5 Desempenho](#Desempenho)
+    *   [5.1 Swappiness](#Swappiness)
+    *   [5.2 Pressão de cache VFS](#Pressão_de_cache_VFS)
+    *   [5.3 Prioridade](#Prioridade)
+    *   [5.4 Usando zswap ou zram](#Usando_zswap_ou_zram)
+    *   [5.5 Distribuição](#Distribuição)
 
 ## Espaço swap
 
@@ -86,21 +85,16 @@ Para habilitar o dispositivo para paginação:
 
 ```
 
-Para habilitar essa partição swap na inicialização, adicione uma entrada ao [fstab](/index.php/Fstab "Fstab"):
+Para habilitar essa partição swap na inicialização, adicione uma entrada ao `/etc/fstab`:
 
 ```
-UUID=<UUID> none swap defaults 0 0
-
-```
-
-sendo que <UUID> é obtido do comando:
-
-```
-lsblk -no UUID /dev/sd*xy*
+UUID=*UUID_dispositivo* none swap defaults 0 0
 
 ```
 
-**Dica:** UUIDs e LABELs devem ser favorecidos em relação ao uso dos nomes de dispositivos fornecidos pelo kernel, pois a ordem dos dispositivos pode mudar no futuro. Veja: [fstab](/index.php/Fstab "Fstab").
+sendo que `*UUID_dispositivo*` é o [UUID](/index.php/UUID "UUID") do espaço swap.
+
+Veja: [fstab](/index.php/Fstab "Fstab") para a sintaxe do arquivo
 
 **Nota:**
 
@@ -130,20 +124,30 @@ Como o swap é gerenciado pelo systemd, ele será ativado novamente na próxima 
 
 Como uma alternativa para criar uma partição inteira, um arquivo swap oferece a capacidade de variar seu tamanho em execução, e é mais facilmente removido completamente. Isto pode ser especialmente desejável se o espaço em disco for precioso (por exemplo, um SSD de tamanho modesto).
 
-**Atenção:** [Btrfs](/index.php/Btrfs "Btrfs") não tem suporte a arquivos swap. Não seguir este aviso pode resultar em corrupção do sistema de arquivos. Enquanto um arquivo swap pode ser usado no Btrfs quando montado através de um dispositivo de loop, isso resultará em desempenho swap severamente degradado.
+**Atenção:** [Btrfs](/index.php/Btrfs "Btrfs") no kernel Linux antes da versão 5.0 não tem suporte a arquivos swap. Não seguir este aviso pode resultar em corrupção do sistema de arquivos. Enquanto um arquivo swap pode ser usado no Btrfs quando montado através de um dispositivo de loop, isso resultará em desempenho swap severamente degradado.
 
 ### Manualmente
 
 #### Criação de arquivo swap
 
-Como root, use `fallocate` para criar um arquivo swap com o tamanho de sua escolha (M = [Mebibytes](https://en.wikipedia.org/wiki/pt:Mebibyte "wikipedia:pt:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/pt:Gibibyte "wikipedia:pt:Gibibyte")). Por exemplo, para criar um arquivo swap de 512 MiB:
+Para sistemas de arquivos "copy-on-write", como o [Btrfs](/index.php/Btrfs "Btrfs"), primeiro criar um arquivo de tamanho zero e defina o atributo `No_COW` nele com [chattr](/index.php/Chattr "Chattr"):
+
+```
+# truncate -s 0 /swapfile
+# chattr +C /swapfile
+
+```
+
+Veja [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs") para mais informações.
+
+Use `fallocate` para criar um arquivo swap com o tamanho de sua escolha (M = [Mebibytes](https://en.wikipedia.org/wiki/pt:Mebibyte "wikipedia:pt:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/pt:Gibibyte "wikipedia:pt:Gibibyte")). Por exemplo, para criar um arquivo swap de 512 MiB:
 
 ```
 # fallocate -l 512M /swapfile
 
 ```
 
-**Nota:** *fallocate* pode causar problemas com alguns sistemas de arquivos tal como [F2FS](/index.php/F2FS "F2FS") ou [XFS](/index.php/XFS "XFS").[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=1129205#c3) Como uma alternativa, usar *dd* é mais confiável, mas mais lento: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
+**Nota:** *fallocate* pode causar problemas com alguns sistemas de arquivos tal como [F2FS](/index.php/F2FS "F2FS").[[1]](https://github.com/karelzak/util-linux/issues/633) Como uma alternativa, usar *dd* é mais confiável, mas mais lento: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
 
 Defina as permissões certas (um arquivo swap legível por todos é uma imensa vulnerabilidade local)
 
@@ -181,7 +185,7 @@ Finalmente, edite o [fstab](/index.php/Fstab "Fstab") para adicionar uma entrada
 Para remover um arquivo swap, ele deve primeiro ser desligado:
 
 ```
-# swapoff -a
+# swapoff /swapfile
 # rm -f /swapfile
 
 ```
@@ -195,26 +199,6 @@ Por fim, remova a entrada relevante do `/etc/fstab`.
 [Instale](/index.php/Instale "Instale") o pacote [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap). Defina `swapfc_enabled=1` NA seção *Swap File Chunked* do `/etc/systemd/swap.conf`. [Inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") o serviço `systemd-swap`. Visite a página do [autor no GitHub](https://github.com/Nefelim4ag/systemd-swap) para mais informações e instalação da [configuração recomendada](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
 **Nota:** Se o journal fica mostrando o aviso a seguir `systemd-swap[..]: WARN: swapFC: ENOSPC` e nenhum arquivo swap está sendo criado, você precisa definir `swapfc_force_preallocated=1` no `/etc/systemd/swap.conf`.
-
-## Swap com dispositivo USB
-
-Graças à modularidade oferecida pelo Linux, podemos ter várias partições de troca espalhadas por diferentes dispositivos. Se você tiver um disco rígido muito completo, um dispositivo USB pode ser usado temporariamente como partição de troca. No entanto, esse método tem algumas desvantagens severas:
-
-*   Um dispositivo USB possivelmente é mais lento que um disco rígido
-*   A memória flash possui um número limitado de ciclos de gravação. Usá-lo como uma partição swap pode matá-lo rapidamente
-
-Para adicionar um dispositivo USB à swap, primeiro pegue uma unidade flash USB e particione-a para a swap, conforme descrito em [#Partição swap](#Partição_swap).
-
-Em seguida, abra `/etc/fstab` e adicione
-
-```
-pri=0
-
-```
-
-para as opções de montagem da entrada de swap *original* para que a partição swap USB tenha prioridade sobre a partição swap antiga.
-
-Esse guia vai funcionar para outras memórias tal como cartões SD, etc.
 
 ## Criptografia swap
 

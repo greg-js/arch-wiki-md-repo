@@ -62,7 +62,7 @@ Find the electron-builder configuration file (e.g. `electron-builder.json`) and 
 
 Packages that apply this: [rocketchat-desktop](https://aur.archlinux.org/packages/rocketchat-desktop/) [ubports-installer-git](https://aur.archlinux.org/packages/ubports-installer-git/)
 
-[electron-bilder configuration](https://www.electron.build/configuration/configuration)
+[electron-builder configuration](https://www.electron.build/configuration/configuration)
 
 ## Architecture
 

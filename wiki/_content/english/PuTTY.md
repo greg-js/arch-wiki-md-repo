@@ -32,11 +32,13 @@ The settings can be modified through the tabs on the left, however they will be 
 PuTTY uses its own format to store the private keys on the client side. To import a key that you had previously generated you need to use the `puttygen` command.
 
 ```
-$ puttygen keyname -o keyname.ppk
+$ puttygen *keyfile* -o *output-keyfile*.ppk
 
 ```
 
-If the key is protected with a passphrase you will be prompted to input it, but the key will still be protected afterwards in the output *.ppk* file.
+where `*keyfile*` is an existent private keyfile, and `*output-keyfile*.ppk` is the file that will receive the key.
+
+If the `*keyfile*` is protected with a passphrase you will be prompted to input it, but the key will still be protected afterwards in the `*output-keyfile*.ppk`.
 
 After that you can import it to make an SSH connection: *Connection > SSH > Auth > Private key file for authentication* and click on *Browse...* to add it.
 

@@ -4,7 +4,7 @@ Related articles
 *   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
 *   [GTK+](/index.php/GTK%2B "GTK+")
 
-[Qt](http://qt-project.org/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), or *moc*) together with several macros to enrich the language. Some of its more important features include:
+[Qt](https://www.qt.io/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](https://doc.qt.io/qt-5.12/moc.html), or *moc*) together with several macros to enrich the language. Some of its more important features include:
 
 *   Running on the major desktop platforms and some of the mobile platforms.
 *   Extensive internationalization support.
@@ -36,7 +36,7 @@ The Qt framework is the basis of the [KDE](/index.php/KDE "KDE") software commun
         *   [4.3.1 C++](#C++)
         *   [4.3.2 QML](#QML)
         *   [4.3.3 Python (PyQt)](#Python_(PyQt))
-        *   [4.3.4 Python (PySide)](#Python_(PySide))
+        *   [4.3.4 Python (PySide2)](#Python_(PySide2))
         *   [4.3.5 C#](#C#)
         *   [4.3.6 Ruby](#Ruby)
         *   [4.3.7 Perl](#Perl)
@@ -59,9 +59,7 @@ Two versions of Qt are currently available in the [official repositories](/index
 
 ## Default Qt toolkit
 
-Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications.
-
-By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
+By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can make the Qt binaries in `/usr/bin` (e.g. *qmake*), which point to the Qt5 versions by default (e.g. *qmake-qt5*), point to older versions of those tools (e.g. *qmake-qt4* or *qmake-qt3*) instead.
 
 **Warning:** [qtchooser](https://aur.archlinux.org/packages/qtchooser/) is now in conflict with [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can install it in /usr/local if you really need it, but it's not officially supported. See [FS#51308](https://bugs.archlinux.org/task/51308).
 
@@ -110,7 +108,7 @@ The following styles are included in Qt5: *Fusion*, *Windows*. Others can be ins
 
 *   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
 
-	[http://code.qt.io/cgit/qt/qtstyleplugins.git](http://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
+	[https://code.qt.io/cgit/qt/qtstyleplugins.git](https://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
 
 *   **Kvantum** — customizable SVG-based theme engine with a variety of built-in styles, including imitations of some popular GTK+ themes such as *Adapta*, *Arc*, *Ambiance*
 
@@ -146,10 +144,6 @@ The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, 
 
 	[https://cgit.kde.org/breeze.git](https://cgit.kde.org/breeze.git) || [breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/)
 
-*   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — KDE Oxygen style.
-
-	[https://cgit.kde.org/oxygen.git](https://cgit.kde.org/oxygen.git) || [oxygen-kde4](https://www.archlinux.org/packages/?name=oxygen-kde4)
-
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
 	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-qt4](https://www.archlinux.org/packages/?name=qtcurve-qt4)
@@ -169,7 +163,7 @@ $ qt_application -stylesheet *style.qss*
 
 ```
 
-For more information on Qt Style Sheets see the [official documentation](http://doc.qt.io/qt-5/stylesheet-reference.html) or other [tutorials](http://thesmithfam.org/blog/2009/09/10/qt-stylesheets-tutorial/). As an example Style Sheet see this [Dolphin modification](http://kde-apps.org/content/show.php/roxydoxy?content=125979).
+For more information on Qt Style Sheets see the [official documentation](https://doc.qt.io/qt-5/stylesheet-reference.html) or other [tutorials](http://thesmithfam.org/blog/2009/09/10/qt-stylesheets-tutorial/). As an example Style Sheet see this [Dolphin modification](http://kde-apps.org/content/show.php/roxydoxy?content=125979).
 
 ### GTK+ and Qt
 
@@ -198,12 +192,9 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 #### Android
 
-First of all, you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described below or build it yourself, you can find build instructions on Qt [wiki](http://wiki.qt.io/Android) page.
+First of all, you need an [Android SDK](/index.php/Android "Android") and NDK. Install SDK [android-sdk](https://aur.archlinux.org/packages/android-sdk/) (some tools have been removed) or [android-sdk-25.2.5](https://aur.archlinux.org/packages/android-sdk-25.2.5/) and NDK [android-ndk-10e](https://aur.archlinux.org/packages/android-ndk-10e/) from [AUR](/index.php/AUR "AUR") or using [Android Studio](/index.php/Android_Studio "Android Studio"). It is highly recommended to install NDK version [10e](https://developer.android.com/ndk/downloads/older_releases.html#ndk-10c-downloads) because of some [known issues](https://wiki.qt.io/Qt_for_Android_known_issues). Next you are going to need Qt 5 for Android. You can install it from [AUR](/index.php/AUR "AUR") as described below or build it yourself, you can find build instructions on Qt [wiki](https://wiki.qt.io/Android) page.
 
-*   [android-qt5-arm64-v8a](https://aur.archlinux.org/packages/android-qt5-arm64-v8a/) - arm64-v8a [ABI](https://developer.android.com/ndk/guides/abis.html)
-*   [android-qt5-armeabi](https://aur.archlinux.org/packages/android-qt5-armeabi/) - armeabi
 *   [android-armv7a-eabi-qt5](https://aur.archlinux.org/packages/android-armv7a-eabi-qt5/) - armeabi-v7a
-*   [android-qt5-mips](https://aur.archlinux.org/packages/android-qt5-mips/) - mips
 *   [android-x86-qt5](https://aur.archlinux.org/packages/android-x86-qt5/) - x86
 *   [android-x86-64-qt5](https://aur.archlinux.org/packages/android-x86-64-qt5/) - x86_64
 
@@ -215,43 +206,43 @@ The following are official Qt tools:
 
 *   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — A cross-platform IDE tailored for Qt that supports all of its features.
 
-	[http://doc.qt.io/qtcreator/](http://doc.qt.io/qtcreator/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
+	[https://doc.qt.io/qtcreator/](https://doc.qt.io/qtcreator/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
 *   **Qt Linguist** — A set of tools that speed the translation and internationalization of Qt applications.
 
-	[http://doc.qt.io/qt-5/qtlinguist-index.html](http://doc.qt.io/qt-5/qtlinguist-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtlinguist-index.html](https://doc.qt.io/qt-5/qtlinguist-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Assistant** — A configurable and redistributable documentation reader for Qt *qch* files.
 
-	[http://doc.qt.io/qt-5/qtassistant-index.html](http://doc.qt.io/qt-5/qtassistant-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtassistant-index.html](https://doc.qt.io/qt-5/qtassistant-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Designer** — A powerful cross-platform GUI layout and forms builder for Qt widgets.
 
-	[http://doc.qt.io/qt-5/qtdesigner-manual.html](http://doc.qt.io/qt-5/qtdesigner-manual.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtdesigner-manual.html](https://doc.qt.io/qt-5/qtdesigner-manual.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Quick Designer** — A visual editor for QML files which supports WYSIWYG. It allows you to rapidly design and build Qt Quick applications and components from scratch.
 
-	[http://doc.qt.io/qtcreator/creator-using-qt-quick-designer.html](http://doc.qt.io/qtcreator/creator-using-qt-quick-designer.html) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
+	[https://doc.qt.io/qtcreator/creator-using-qt-quick-designer.html](https://doc.qt.io/qtcreator/creator-using-qt-quick-designer.html) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
 *   **qmlscene** — A tool for loading QML documents that makes it easy to quickly develop and debug QML applications.
 
-	[http://doc.qt.io/qt-5/qtquick-qmlscene.html](http://doc.qt.io/qt-5/qtquick-qmlscene.html) || Qt 5: [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative), Qt 4 QML Viewer: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtquick-qmlscene.html](https://doc.qt.io/qt-5/qtquick-qmlscene.html) || Qt 5: [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative), Qt 4 QML Viewer: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **[qmake](https://en.wikipedia.org/wiki/Qmake "wikipedia:Qmake")** — A tool that helps simplify the build process for development project across different platforms, similar to [cmake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake"), but with fewer options and tailored for Qt applications.
 
-	[http://doc.qt.io/qt-5/qmake-manual.html](http://doc.qt.io/qt-5/qmake-manual.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qmake-manual.html](https://doc.qt.io/qt-5/qmake-manual.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **uic** — A tool that reads **.ui* XML files and generates the corresponding C++ files.
 
-	[http://doc.qt.io/qt-5/uic.html](http://doc.qt.io/qt-5/uic.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/uic.html](https://doc.qt.io/qt-5/uic.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **rcc** — A tool that is used to embed resources (such as pictures) into a Qt application during the build process. It works by generating a C++ source file containing data specified in a Qt resource (.qrc) file.
 
-	[http://doc.qt.io/qt-5/rcc.html](http://doc.qt.io/qt-5/rcc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/rcc.html](https://doc.qt.io/qt-5/rcc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **moc** — A tool that handles Qt's C++ extensions (the signals and slots mechanism, the run-time type information, and the dynamic property system, etc.).
 
-	[http://doc.qt.io/qt-5/moc.html](http://doc.qt.io/qt-5/moc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/moc.html](https://doc.qt.io/qt-5/moc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 ### Bindings
 
@@ -264,7 +255,7 @@ The following examples display a small 'Hello world!' message in a window.
 *   Package:
     *   [qt4](https://www.archlinux.org/packages/?name=qt4) - Version 4.x of the Qt toolkit.
     *   [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) - Version 5.x of the Qt toolkit.
-*   Website: [http://qt-project.org/](http://qt-project.org/)
+*   Website: [https://www.qt.io/developers/](https://www.qt.io/developers/)
 *   Build:
     *   The Qt4 version: `g++ $(pkg-config --cflags --libs QtGui) -o hello hello.cpp`
     *   The Qt5 version: `g++ $(pkg-config --cflags --libs Qt5Widgets) -fPIC -o hello hello.cpp`
@@ -289,12 +280,12 @@ int main(int argc, char **argv)
 #### QML
 
 *   Package: [qt4](https://www.archlinux.org/packages/?name=qt4) or [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative).
-*   Website: [http://qt-project.org/](http://qt-project.org/)
-*   Run with: `qmlviewer-qt4 hello.qml` or `qmlscene-qt5 hello.qml`
+*   Website: [https://doc.qt.io/qt-5/qtquick-qmlscene.html](https://doc.qt.io/qt-5/qtquick-qmlscene.html)
+*   Run with: `qmlscene hello.qml`
 
  `hello.qml` 
 ```
-import QtQuick 1.0
+import QtQuick 2.3
 
 Rectangle {
     id: page
@@ -312,33 +303,16 @@ Rectangle {
 
 ```
 
-**Note:** For version 5.x of the Qt toolkit, we need to import QtQuick 2.y.
+**Note:** For version 4.x of the Qt toolkit, we need `import QtQuick 1.0` and run with `qmlviewer-qt4 hello.qml`.
 
 #### Python (PyQt)
 
 *   Package:
-    *   [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/) - Python 3.x bindings for Qt 4
-    *   [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) - Python 2.x bindings for Qt 4
     *   [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5) - Python 3.x bindings for Qt 5
     *   [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) - Python 2.x bindings for Qt 5
 
-*   Website: [http://www.riverbankcomputing.co.uk/software/pyqt/intro](http://www.riverbankcomputing.co.uk/software/pyqt/intro)
+*   Website: [https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro)
 *   Run with: `python hello-pyqt.py` or `python2 hello-pyqt.py`.
-
- `hello-pyqt.py` 
-```
-import sys
-from PyQt4 import QtGui
-
-app = QtGui.QApplication(sys.argv)
-label = QtGui.QLabel("Hello world!")
-
-label.show()
-sys.exit(app.exec_())
-
-```
-
-The Qt 5.x version is slighly different:
 
  `hello-pyqt.py` 
 ```
@@ -353,19 +327,18 @@ sys.exit(app.exec_())
 
 ```
 
-#### Python (PySide)
+#### Python (PySide2)
 
 *   Package:
-    *   [python-pyside](https://aur.archlinux.org/packages/python-pyside/) - Python 3.x bindings
-    *   [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) - Python 2.x bindings
-*   Website: [http://www.pyside.org/](http://www.pyside.org/)
+    *   [pyside2](https://www.archlinux.org/packages/?name=pyside2) - Python 3.x bindings
+    *   [python2-pyside2](https://aur.archlinux.org/packages/python2-pyside2/) - Python 2.x bindings
+*   Website: [https://wiki.qt.io/Qt_for_Python](https://wiki.qt.io/Qt_for_Python)
 *   Run with: `python hello-pyside.py` or `python2 hello-pyside.py`
 
- `hello-pyside.py` 
+ `hello-pyside2.py` 
 ```
 import sys
-from PySide.QtCore import *
-from PySide.QtGui import *
+from PySide2.QtWidgets import QApplication, QLabel
 
 app = QApplication(sys.argv)
 label = QLabel("Hello world!")
@@ -487,7 +460,6 @@ then you are most likely using a Qt5 platform theme or style plugin which has no
 
 ## See also
 
-*   [Official Website](http://qt.io/)
-*   [Qt Documentation](http://doc.qt.io/)
-*   [Planet Qt](http://planet.qt.io/)
-*   [Qt Applications](http://qt-apps.org/)
+*   [Official Website](https://qt.io/)
+*   [Qt Documentation](https://doc.qt.io)
+*   [Planet Qt](https://planet.qt.io)

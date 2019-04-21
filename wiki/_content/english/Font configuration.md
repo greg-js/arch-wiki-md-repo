@@ -230,7 +230,7 @@ Cleartype subpixel rendering is covered by Microsoft patents and **disabled** by
 
 #### LCD filter
 
-When using Cleartype subpixel rendering, you should enable the LCD filter, which is designed to reduce colour fringing. This is described under [LCD filtering](https://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html) in the FreeType 2 API reference. Different options are described under [FT_LcdFilter](http://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html#FT_LcdFilter), and are illustrated by this [LCD filter test](http://www.spasche.net/files/lcdfiltering/) page.
+When using Cleartype subpixel rendering, you should enable the LCD filter, which is designed to reduce colour fringing. This is described under [LCD filtering](https://www.freetype.org/freetype2/docs/reference/ft2-lcd_rendering.html) in the FreeType 2 API reference. Different options are described under [FT_LcdFilter](https://www.freetype.org/freetype2/docs/reference/ft2-lcd_rendering.html#ft_lcdfilter), and are illustrated by this [LCD filter test](http://www.spasche.net/files/lcdfiltering/) page.
 
 The `lcddefault` filter will work for most users. Other filters are available that can be used in special situations: `lcdlight`; a lighter filter ideal for fonts that look too bold or fuzzy, `lcdlegacy`, the original Cairo filter; and `lcdnone` to disable it entirely.
 

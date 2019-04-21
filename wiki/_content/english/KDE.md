@@ -93,6 +93,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [6.6 KMail](#KMail)
         *   [6.6.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
         *   [6.6.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
+        *   [6.6.3 Authorization error for EWS account in KMail](#Authorization_error_for_EWS_account_in_KMail)
     *   [6.7 Networking](#Networking)
         *   [6.7.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [6.8 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
@@ -133,7 +134,7 @@ Plasma can be started either using a [display manager](/index.php/Display_manage
 *   Select *Plasma* to launch a new session in [Xorg](/index.php/Xorg "Xorg").
 *   [Install](/index.php/Install "Install") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) and select *Plasma (Wayland)* to launch a new session in [Wayland](/index.php/Wayland "Wayland").
 
-**Note:** The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver implementation for Wayland requires EGLStreams. KDE have not implemented EGLStreams in their Wayland [implementation](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not). The following workarounds are available:
+**Note:** The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver implementation for Wayland requires EGLStreams. KDE will support EGLStreams [starting with Plasma 5.16](https://www.phoronix.com/scan.php?page=news_item&px=EGLStreams-Merged-KWin-5.16). Until then, the following workarounds are available:
 
 *   Using the [Nouveau](/index.php/Nouveau "Nouveau") driver.
 *   Using the (default) Xorg session.
@@ -729,6 +730,15 @@ Now go back to the System Settings page and carefully add the necessary resource
 #### Empty IMAP inbox in KMail
 
 For some IMAP accounts KMail will show the inbox as a top-level container (so it will not be possible to read messages there) with all other folders of this account inside.[[8]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server-side subscriptions in the KMail account settings.
+
+#### Authorization error for EWS account in KMail
+
+While setting up EWS account in KMail, you may keep getting errors about failed authorization even for valid and fully working credentials. This is likely caused by broken communication between [KWallet](/index.php/KWallet "KWallet") and KMail. To workaround the issue set a passsword via qdbus:
+
+```
+$ qdbus org.freedesktop.Akonadi.Resource.akonadi_ews_resource_0 /Settings org.kde.Akonadi.Ews.Wallet.setPassword "XXX"
+
+```
 
 ### Networking
 

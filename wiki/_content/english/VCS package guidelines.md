@@ -247,5 +247,3 @@ prepare() {
 }
 
 ```
-
-The reason for doing it like that is explained in [[1]](http://sprunge.us/HKdJ?md).

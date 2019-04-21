@@ -146,6 +146,12 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 *   `Alt` + ``` (the key above `Tab` on US keyboard layouts): cycle windows of the application in the foreground
 *   `Alt` + `F2`, then enter `r` or `restart`: restart the shell in case of graphical shell problems (only in X/legacy mode, not in Wayland mode).
 
+**Tip:** To make `Alt` + `Tab` switch applications only in current workspace, you can set `current-workspace-only` to `true`
+```
+$ gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+```
+
 ## Legacy names
 
 **Note:** Some GNOME programs have undergone name changes where the application's name in documentation and about dialogs has been changed but the executable name has not. A few such applications are listed in the table below.
@@ -176,7 +182,7 @@ $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ```
 
-GNOME 3.24 however replaced the GNOME settings daemon with several separate settings plugins `/usr/lib/gnome-settings-daemon/gsd-*`. These plugins are now controlled via desktop files under `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). To run these plugins outside of a GNOME session you will now need to copy/edit the appropriate [desktop entries](/index.php/Desktop_entries "Desktop entries") to `~/.config/autostart`.
+GNOME 3.24 however replaced the GNOME settings daemon with several separate settings plugins `/usr/lib/gnome-settings-daemon/gsd-*` which were later moved to `/usr/lib/gsd-*`. These plugins are now controlled via desktop files under `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). To run these plugins outside of a GNOME session you will now need to copy/edit the appropriate [desktop entries](/index.php/Desktop_entries "Desktop entries") to `~/.config/autostart`.
 
 The configuration is usually performed user-specific, this section does not cover how to create configuration templates for multiple users.
 

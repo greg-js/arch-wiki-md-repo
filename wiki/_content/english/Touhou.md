@@ -60,7 +60,7 @@ NOTE: **.th08** is Imperishable Night's wineprefix folder, and **.th07** is Perf
 
 ### MIDI Music
 
-If you are using the trial edition, they only include MIDI files. To play them, you will also need to install Timidity++ ([timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B)) along with some soundfonts ([timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats)).
+If you are using the trial edition, they only include MIDI files. To play them, you will also need to install Timidity++ ([timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B)) along with some soundfonts ([freepats-general-midi](https://www.archlinux.org/packages/?name=freepats-general-midi)).
 
 Now add the following lines to Timidity++ configuration file:
 

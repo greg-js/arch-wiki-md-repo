@@ -91,7 +91,7 @@ Make sure to create the new tmpdir and verify CrashPlan's user has access to it.
 
 ### Restore stuck preparing
 
-If a restore gets stuck at «Preparing», it may be due to a permission restriction on `/tmp` that causes communication between the restore tool and backup engine to fail. This can be caused by the sysctl variable `fs.protected_fifos` restricting the engine (running as `root`) from connecting to a named pipe owned by the desktop user contained in `/tmp` (similar to [tmpfs#Opening_symlinks_in_tmpfs_as_root_fails](/index.php/Tmpfs#Opening_symlinks_in_tmpfs_as_root_fails "Tmpfs")).
+If a restore gets stuck at «Preparing», it may be due to a permission restriction on `/tmp` that causes communication between the restore tool and backup engine to fail. This can be caused by the sysctl variable `fs.protected_fifos` restricting the engine (running as `root`) from connecting to a named pipe owned by the desktop user contained in `/tmp` (similar to [tmpfs#Opening symlinks in tmpfs as root fails](/index.php/Tmpfs#Opening_symlinks_in_tmpfs_as_root_fails "Tmpfs")).
 
 The protection can be disabled to permit the restore to occur with
 

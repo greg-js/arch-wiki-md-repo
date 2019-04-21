@@ -1,10 +1,14 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=547937) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=566913) na versão em inglês.
 
 A intenção desta página é desmistificar os termos comumente usados pela comunidade do Arch Linux. Sinta-se à vontade para adicionar ou modificar quaisquer termos, mas por favor use a opção de editar da opção específica. Se você decidir adicionar algum termo, por favor adicione-o em ordem alfabética.
 
 **Nota:** Ao traduzir este artigo, foram mantidos em inglês (original) os termos apresentados nos títulos das seções, para facilitar quem encontrou esses termos em algum tipo de conversa ou tópico de fórum em inglês e busca saber do que se trata. Porém, a tradução de cada termo é apresentada dentro da respectiva seção.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ABS](#ABS)
 *   [2 Arch Linux](#Arch_Linux)
@@ -64,7 +68,7 @@ O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linu
 
 ## AUR
 
-O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem que você compile um pacote da fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, instale-o via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado e organizado para compartilhar novos pacotes da comunidade ajudando a acelerar a inclusão de pacotes populares para o [repositório community](/index.php?title=Reposit%C3%B3rio_community_(Portugu%C3%AAs)&action=edit&redlink=1 "Repositório community (Português) (page does not exist)"). Esse documento explica como usuários podem acessar e utilizar o AUR.
+O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem que você compile um pacote da fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, instale-o via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado e organizado para compartilhar novos pacotes da comunidade ajudando a acelerar a inclusão de pacotes populares para o [repositório community](/index.php?title=Reposit%C3%B3rio_community_(Portugu%C3%AAs)&action=edit&redlink=1 "Repositório community (Português) (page does not exist)").
 
 Um bom número de novos pacotes que entram nos repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir suas próprias compilações de pacote (PKGBUILD e arquivos relacionados). A comunidade do AUR possui a habilidade de votar a favor ou contra pacotes no AUR. Se um pacote se torna popular o suficiente — desde que tenha uma licença compatível e uma boa técnica de empacotamento — ele pode ser inserido no repositório *community* (diretamente acessível por [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
 
@@ -90,7 +94,7 @@ Veja [Repositório local personalizado](/index.php/Reposit%C3%B3rio_local_person
 
 ## Developer
 
-Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/people/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin.
+Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/people/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin, que, por sua vez, só é superado por tacos.
 
 ## extra/[extra]
 

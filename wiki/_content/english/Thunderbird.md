@@ -76,9 +76,9 @@ A version overview, both past and future, can be read on [MozillaWiki:Releases](
 
 	[https://github.com/gyunaev/birdtray](https://github.com/gyunaev/birdtray) || [birdtray](https://aur.archlinux.org/packages/birdtray/)
 
-*   **FireTray** — Adds a customizable system tray icon for Thunderbird
+*   **FireTray** — Adds a customizable system tray icon for Thunderbird. For Thunderbird 60+ you may use the github version by installing from file.
 
-	[FireTray AMO](https://addons.thunderbird.net/de/thunderbird/addon/firetray/) ||
+	[FireTray AMO](https://addons.thunderbird.net/de/thunderbird/addon/firetray/) || [github version](https://github.com/Ximi1970/FireTray/releases)
 
 *   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — A calendar extension that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support. Lightning now ships with Thunderbird, but due to differing release schedules it may have issues in Thunderbird testing releases. See [Mozilla support forum post](https://support.mozilla.org/en-US/questions/1211583). Also see [Lightning Release Schedule](https://developer.mozilla.org/en-US/docs/Mozilla/Calendar/Calendar_Versions).
 

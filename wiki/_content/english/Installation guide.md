@@ -107,11 +107,11 @@ If the directory does not exist, the system may be booted in [BIOS](https://en.w
 
 To set up a network connection, go through the following steps:
 
-1.  Ensure your [network interface](/index.php/Network_configuration#Network_interfaces "Network configuration") is listed and enabled, for example with [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+1.  Ensure your [network interface](/index.php/Network_interface "Network interface") is listed and enabled, for example with [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
 2.  Connect to the network. Plug in the Ethernet cable or [connect to the wireless LAN](/index.php/Wireless_network_configuration "Wireless network configuration").
 3.  Configure your network connection:
     *   [Static IP address](/index.php/Network_configuration#Static_IP_address "Network configuration")
-    *   Dynamic IP address: use [DHCP](/index.php/Network_configuration#DHCP "Network configuration").
+    *   Dynamic IP address: use [DHCP](/index.php/DHCP "DHCP").
 
     **Note:** The installation image enables [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot.
 

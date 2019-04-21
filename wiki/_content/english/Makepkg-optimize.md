@@ -26,7 +26,7 @@ Related articles
 
 ## Installation
 
-Install [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) and, to make optimizations available, install their backends: [openmp](https://www.archlinux.org/packages/?name=openmp), [upx](https://www.archlinux.org/packages/?name=upx), [optipng](https://www.archlinux.org/packages/?name=optipng), and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
+Install [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) and, to make optimizations available, install their backends: [openmp](https://www.archlinux.org/packages/?name=openmp), [upx](https://www.archlinux.org/packages/?name=upx), [optipng](https://www.archlinux.org/packages/?name=optipng), and [svgo](https://aur.archlinux.org/packages/svgo/).
 
 ### Configuration
 
@@ -64,13 +64,13 @@ $ arch-nspawn "$CHROOT"/root pacman -S openmp upx optipng
 
 ```
 
-Then [download](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository") and [build](/index.php/DeveloperWiki:Building_in_a_clean_chroot#Building_in_the_chroot "DeveloperWiki:Building in a clean chroot") [pacman-git](https://aur.archlinux.org/packages/pacman-git/), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
+Then [download](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository") and [build](/index.php/DeveloperWiki:Building_in_a_clean_chroot#Building_in_the_chroot "DeveloperWiki:Building in a clean chroot") [pacman-git](https://aur.archlinux.org/packages/pacman-git/), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) and [svgo](https://aur.archlinux.org/packages/svgo/).
 
 To install them in the base chroot, copy their package files into it and install them, e.g.:
 
 ```
-# cp nodejs-svgo-1.1.1-1-any.pkg.tar.xz "$CHROOT"/root/root/
-$ arch-nspawn "$CHROOT"/root pacman -U /root/nodejs-svgo-1.1.1-1-any.pkg.tar.xz
+# cp svgo-1.2.2-2-any.pkg.tar.xz "$CHROOT"/root/root/
+$ arch-nspawn "$CHROOT"/root pacman -U /root/svgo-1.2.2-2-any.pkg.tar.xz
 
 ```
 

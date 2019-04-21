@@ -1,6 +1,10 @@
 This article covers installing, using and training [waifu2x](https://github.com/nagadomi/waifu2x), image super-resolution for anime-style art using deep convolutional neural networks.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -98,7 +102,7 @@ Install:
 
 It is recommended to install below *optional* [cuDNN](https://developer.nvidia.com/cudnn) library and bindings package. With them you can enable cuDNN backend for training, which have a significant speed up.
 
-You need to manually downlaod a cudnn binary pack from [NVIDIA cuDNN site](https://developer.nvidia.com/cudnn) during installing [cudnn](https://www.archlinux.org/packages/?name=cudnn).
+You need to manually download a cudnn binary pack from [NVIDIA cuDNN site](https://developer.nvidia.com/cudnn) during installing [cudnn](https://www.archlinux.org/packages/?name=cudnn).
 
 *   (optional)[cudnn](https://www.archlinux.org/packages/?name=cudnn)
 *   (optional)[torch7-cudnn-git](https://aur.archlinux.org/packages/torch7-cudnn-git/):

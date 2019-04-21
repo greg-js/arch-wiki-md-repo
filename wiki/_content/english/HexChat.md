@@ -1,6 +1,10 @@
 [HexChat](http://hexchat.github.io/) is a multi-platform IRC client for [GTK+](/index.php/GTK%2B "GTK+").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -42,7 +46,7 @@ To use the new Notifications and messaging tray, activate the following options 
 
 To fully enable spell-check, you need to install the correct dictionary besides [enchant](https://www.archlinux.org/packages/?name=enchant). Find your correct dictionary by [searching](/index.php/Pacman#Querying_package_databases "Pacman") for [hunspell](https://www.archlinux.org/packages/?name=hunspell).
 
-For English this is [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en). Restart HexChat after installation.
+For English this is [hunspell-en_AU](https://www.archlinux.org/packages/?name=hunspell-en_AU), [hunspell-en_CA](https://www.archlinux.org/packages/?name=hunspell-en_CA), [hunspell-en_GB](https://www.archlinux.org/packages/?name=hunspell-en_GB), or [hunspell-en_US](https://www.archlinux.org/packages/?name=hunspell-en_US). Restart HexChat after installation.
 
 ### Missing tray icon
 

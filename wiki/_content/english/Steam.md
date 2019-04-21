@@ -8,6 +8,8 @@ Related articles
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
+**Warning:** Steam native is currently broken on Arch Linux. For reference, see [FS#62095](https://bugs.archlinux.org/task/62095)
+
 **Note:** Steam for Linux only supports Ubuntu LTS.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus, do not turn to Valve for support for issues with Steam on Arch Linux.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

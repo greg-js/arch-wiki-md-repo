@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=564976) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=571436) na versão em inglês.
 
 Artigos relacionados
 
@@ -122,7 +122,7 @@ Também é importante usar palavras-chaves com sabedoria para aumentar as chance
 
 ### arch
 
-Um vetor de arquiteturas nas quais o PKGBUILD deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas `x86_64`, mas outros projetos podem oferecer suporte a outras arquiteturas. Por exemplo, [Arch Linux 32](https://archlinux32.org/) fornece suporte a `i686` [Arch Linux ARM](http://archlinuxarm.org/) forence suporte a `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat) e `aarch64` (armv8 64bit).
+Um vetor de arquiteturas nas quais o PKGBUILD deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas `x86_64`, mas outros projetos podem oferecer suporte a outras arquiteturas. Por exemplo, [Arch Linux 32](https://archlinux32.org/) fornece suporte a `i686` [Arch Linux ARM](http://archlinuxarm.org/) forence suporte a `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat) e `aarch64` (armv8 64-bit).
 
 Há dois tipos de valores que o vetor pode usar:
 
@@ -246,7 +246,7 @@ No entanto, há uma exceção a essa regra. Definir pacotes conflitantes em toda
 
 ### replaces
 
-Um vetor de pacotes obsoletos que são substituídos pelo pacote, como, por exemplo, [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) usa `replaces=('wireshark')`. Ao sincronizar, o *pacman* vai imediatamente substituir um pacote instalado ao encontrar outro pelo `replaces` correspondente nos repositórios. Se estiver fornecendo uma versão alternativa de um pacote já existente ou enviando para o [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), use os vetores `conflicts` e `provides`, que são avaliados apenas ao instalar o pacote conflitante.
+Um vetor de pacotes obsoletos que são substituídos pelo pacote, como, por exemplo, [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt)}} usa `replaces=('wireshark')`. Ao sincronizar, o *pacman* vai imediatamente substituir um pacote instalado ao encontrar outro pelo `replaces` correspondente nos repositórios. Se estiver fornecendo uma versão alternativa de um pacote já existente ou enviando para o [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), use os vetores `conflicts` e `provides`, que são avaliados apenas ao instalar o pacote conflitante.
 
 ## Outros
 

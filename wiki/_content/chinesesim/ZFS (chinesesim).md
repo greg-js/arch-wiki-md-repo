@@ -17,10 +17,14 @@ ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)�
 *   ZFSonLinux 项目必须紧跟Kernel的发行与Arch维护者共同推出更新。
 *   大部分情况下，ZFSonLinux的发行并不能与Kernel同步，因而可能无法及时升级最新的Kernel。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 通用](#.E9.80.9A.E7.94.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 通用](#通用)
     *   [1.2 Root on ZFS](#Root_on_ZFS)
     *   [1.3 DKMS](#DKMS)
 *   [2 Experimenting with ZFS](#Experimenting_with_ZFS)
@@ -35,7 +39,7 @@ ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)�
     *   [5.1 General](#General)
     *   [5.2 SSD Caching](#SSD_Caching)
     *   [5.3 Database](#Database)
-    *   [5.4 /tmp](#.2Ftmp)
+    *   [5.4 /tmp](#/tmp)
     *   [5.5 ZVOLs](#ZVOLs)
         *   [5.5.1 RAIDZ and Advanced Format physical disks](#RAIDZ_and_Advanced_Format_physical_disks)
 *   [6 Usage](#Usage)
@@ -54,7 +58,7 @@ ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)�
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
     *   [7.4 No hostid found](#No_hostid_found)
-    *   [7.5 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+    *   [7.5 On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_"pool_may_be_in_use_from_other_system")
         *   [7.5.1 Unexported pool](#Unexported_pool)
         *   [7.5.2 Incorrect hostid](#Incorrect_hostid)
     *   [7.6 Devices have different sector alignment](#Devices_have_different_sector_alignment)
@@ -530,7 +534,7 @@ To find the name of the pool, see [#Check zfs pool status](#Check_zfs_pool_statu
 
 If a storage pool is to be used on another system, it will first need to be exported. It is also necessary to export a pool if it has been imported from the archiso as the hostid is different in the archiso as it is in the booted system. The zpool command will refuse to import any storage pools that have not been exported. It is possible to force the import with the `-f` argument, but this is considered bad form.
 
-Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_.22pool_may_be_in_use_from_other_system.22)
+Any attempts made to import an un-exported storage pool will result in an error stating the storage pool is in use by another system. This error can be produced at boot time abruptly abandoning the system in the busybox console and requiring an archiso to do an emergency repair by either exporting the pool, or adding the `zfs_force=1` to the kernel boot parameters (which is not ideal). See [#On boot the zfs pool does not mount stating: "pool may be in use from other system"](#On_boot_the_zfs_pool_does_not_mount_stating:_"pool_may_be_in_use_from_other_system")
 
 To export a pool,
 

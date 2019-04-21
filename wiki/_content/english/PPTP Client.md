@@ -6,7 +6,11 @@ pptpclient is a program implementing the Microsoft PPTP protocol. As such, it ca
 
 **Warning:** The PPTP protocol is inherently insecure. See [http://poptop.sourceforge.net/dox/protocol-security.phtml](http://poptop.sourceforge.net/dox/protocol-security.phtml) for details.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configure](#Configure)
@@ -19,8 +23,8 @@ pptpclient is a program implementing the Microsoft PPTP protocol. As such, it ca
     *   [3.1 Routing](#Routing)
         *   [3.1.1 Split Tunneling](#Split_Tunneling)
         *   [3.1.2 Route All Traffic](#Route_All_Traffic)
-        *   [3.1.3 Route All Traffic by /etc/ppp/ip-up.d](#Route_All_Traffic_by_.2Fetc.2Fppp.2Fip-up.d)
-        *   [3.1.4 Split Tunneling based on port by /etc/ppp/ip-up.d](#Split_Tunneling_based_on_port_by_.2Fetc.2Fppp.2Fip-up.d)
+        *   [3.1.3 Route All Traffic by /etc/ppp/ip-up.d](#Route_All_Traffic_by_/etc/ppp/ip-up.d)
+        *   [3.1.4 Split Tunneling based on port by /etc/ppp/ip-up.d](#Split_Tunneling_based_on_port_by_/etc/ppp/ip-up.d)
 *   [4 Disconnect](#Disconnect)
 *   [5 Making A VPN Daemon and Connecting On Boot](#Making_A_VPN_Daemon_and_Connecting_On_Boot)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -307,19 +311,22 @@ esac
 
 ## Troubleshooting
 
-If client connections keep timing out, make sure that GRE is allowed through the client firewall. For iptables, the necessary command is:
+If client connections keep timing out with "LCP: timeout sending Config-Requests", make sure that GRE is allowed through the client firewall. For iptables, the necessary command is:
 
 ```
-# iptables -A INPUT -p 47 -j ACCEPT
+iptables -A INPUT -p 47 -j ACCEPT
 
 ```
 
-If your client is timing out with "LCP: timeout sending Config-Requests", then you might not have the proper modules loaded:
+Alternatively, if you only want to allow PPTP traffic that corresponds to a connection request coming from your local machine, you can use the conntrack PPTP helper:
 
 ```
-# modprobe nf_conntrack_pptp nf_conntrack_proto_gre
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT 
+iptables -t raw -A OUTPUT -p tcp --dport 1723 -j CT --helper pptp
 
 ```
+
+The second line should autoload the `nf_conntrack_pptp` and `nf_conntrack_proto_gre` kernel modules, which are needed for this.
 
 If you get “EAP: unknown authentication type 26; Naking”, open /etc/ppp/options.pptp and commented out the lines **refuse-chap** and **refuse-mschap** and add the options file entry to the tunnel file like this:
 

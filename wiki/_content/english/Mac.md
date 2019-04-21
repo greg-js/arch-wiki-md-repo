@@ -724,14 +724,14 @@ One workaround is to add
 
 to the kernel parameters in your bootloader, thereby telling the firmware that the system is not compatible with macOS [[4]](https://www.kernel.org/doc/Documentation/acpi/osi.txt). This should disable the TB adapter (at least on older Macs), and thus reduce power consumption greatly, but will probably come with side-effects (e.g. no Thunderbolt, maybe others?).
 
-It is also possible to [blacklist](https://wiki.archlinux.org/index.php/Kernel_module#Blacklisting) the thunderbolt module and then putting the controllers to sleep with
+It is also possible to [blacklist](/index.php/Blacklist "Blacklist") the thunderbolt module and then putting the controllers to sleep with
 
 ```
    echo auto > /sys/bus/pci/devices/0000:07:00.0/power/control
 
 ```
 
-Check the correct device number with lspci. This can also be [automated](https://wiki.archlinux.org/index.php/Systemd#Temporary_files). This method reduces power consumption slightly, but still consumes 0.9 W more than the previous method on a Macbook Air 2013.
+Check the correct device number with lspci. This can also be [automated](/index.php/Systemd#Temporary_files "Systemd"). This method reduces power consumption slightly, but still consumes 0.9 W more than the previous method on a Macbook Air 2013.
 
 #### Suspend and Hibernate
 

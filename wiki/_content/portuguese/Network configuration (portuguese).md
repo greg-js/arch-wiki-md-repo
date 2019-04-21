@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-01-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=561085) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=569731) na versão em inglês.
 
 Artigos relacionados
 
@@ -335,10 +335,12 @@ O módulo [Name Service Switch](/index.php/Name_Service_Switch_(Portugu%C3%AAs) 
 
 Alguns clientes, porém, podem depender de `/etc/hosts`, veja [[4]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
 
-Para configurar o arquivo hosts, adicione a seguinte linha ao `/etc/hosts`:
+Para configurar o arquivo hosts, adicione as seguintes linhas ao `/etc/hosts`:
 
 ```
-127.0.1.1	*meuhostname*.dominiolocal	*meuhostname*
+127.0.0.1        localhost.localdomain         localhost
+::1              localhost.localdomain         localhost
+127.0.1.1        *meuhostname*.localdomain        *meuhostname*
 
 ```
 
@@ -348,8 +350,9 @@ Como um resultado, o sistema resolve ambas entradas:
 
  `$ getent hosts` 
 ```
-127.0.0.1       localhost
-127.0.1.1       *meuhostname*.dominiolocal *meuhostname*
+127.0.0.1       localhost.localdomain localhost
+127.0.0.1       localhost.localdomain localhost
+127.0.1.1       *meuhostname*.localdomain *meuhostname*
 
 ```
 

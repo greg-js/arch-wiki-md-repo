@@ -13,7 +13,7 @@
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
 *   [Официальные репозитории#gnome-unstable](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8#gnome-unstable "Официальные репозитории")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 28 марта 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=569299).
+**Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 21 апреля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=571712).
 
 [GNOME](https://en.wikipedia.org/wiki/ru:GNOME "wikipedia:ru:GNOME") (произностися как /(ɡ)noʊm/) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
@@ -148,6 +148,12 @@ fi
 *   `Alt` + ``` (клавиша выше `Tab` на раскладке клавиатуры США): переключение между окнами активного приложения
 *   `Alt` + `F2`, затем введите `r` или `restart`: перезапуск оболочки ввиду графических проблем (только для режима X/legacy. Не доступно для Wayland).
 
+**Совет:** Чтобы комбинация клавиш `Alt` + `Tab` переключала приложения только в текущем рабочем месте вы можете установить опцию `current-workspace-only` в значение `true`
+```
+$ gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+```
+
 ## Устаревшие названия
 
 **Примечание:** Имя некоторых приложений GNOME в документации, диалоговых окнах изменилось, но исполняемый файл остался тот же. Несколько таких приложений перечислено в таблице ниже.
@@ -178,7 +184,7 @@ $ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
 
 ```
 
-Однако в GNOME 3.24 сервис GNOME settings был заменён несколькими отдельными плагинами настроек: `/usr/lib/gnome-settings-daemon/gsd-*`. Эти плагины теперь контролируются через `.desktop` файлы, которые находятся в каталоге `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Для того, чтобы запустить эти плагины вне сессии GNOME вам необходимо скопировать соответствующие [ярлыки приложений](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") в каталог `~/.config/autostart`.
+Однако в GNOME 3.24 сервис GNOME settings был заменён несколькими отдельными плагинами настроек: `/usr/lib/gnome-settings-daemon/gsd-*`, которые позже переместили в `/usr/lib/gsd-*`. Эти плагины теперь контролируются через `.desktop` файлы, которые находятся в каталоге `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Для того, чтобы запустить эти плагины вне сессии GNOME вам необходимо скопировать соответствующие [ярлыки приложений](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") в каталог `~/.config/autostart`.
 
 Конфигурация обычно производится отдельно для каждого пользователя и остальная часть этого раздела не приводит примеры того, как создать конфигурацию для нескольких пользователей одновременно.
 

@@ -55,7 +55,7 @@ jasondclinton also notes that the official NVM updates are often far behind Inte
 
 Issues such as the USB bus (and all connected devices) failing when plugging/unplugging devices are improved by following all the instructions above (notably, Thunderbolt Security, "Dell Type-C Dock configuration options" and firmware updates). Read the firmware updates section carefully: not all updates are possible via Linux.
 
-Some devices behave differently in the dock vs directly on laptop's USB ports, e.g. Microsoft's keyboard receiver is erratically put to sleep. You can wake them up in [powertop](/index.php/Powertop "Powertop") or see [Power_management#USB_autosuspend](/index.php/Power_management#USB_autosuspend "Power management") on how to blacklist particular devices.
+Some devices behave differently in the dock vs directly on laptop's USB ports, e.g. Microsoft's keyboard receiver is erratically put to sleep. You can wake them up in [powertop](/index.php/Powertop "Powertop") or see [Power management#USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management") on how to blacklist particular devices.
 
 ## External Links
 

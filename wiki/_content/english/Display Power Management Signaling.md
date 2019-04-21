@@ -1,6 +1,10 @@
 **[DPMS](https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling "wikipedia:VESA Display Power Management Signaling")** (Display Power Management Signaling) enables power saving behaviour of monitors when the computer is not in use. The time of inactivity before the monitor enters into a given saving power level, standby, suspend or off, can be set as described in [DPMSSetTimeouts(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/DPMSSetTimeouts.3). Note that some monitors make no difference between various DPMS modes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setting up DPMS in X](#Setting_up_DPMS_in_X)
 *   [2 Disabling DPMS](#Disabling_DPMS)

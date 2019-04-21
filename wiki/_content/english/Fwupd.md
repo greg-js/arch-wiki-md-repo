@@ -17,8 +17,9 @@ Supported devices are listed [here](https://fwupd.org/lvfs/devicelist) and [more
     *   [1.1 Graphical front-ends](#Graphical_front-ends)
 *   [2 Usage](#Usage)
 *   [3 Setup for UEFI BIOS upgrade](#Setup_for_UEFI_BIOS_upgrade)
-    *   [3.1 Secure Boot](#Secure_Boot)
-        *   [3.1.1 Using your own keys](#Using_your_own_keys)
+    *   [3.1 Copy Fwupd to ESP](#Copy_Fwupd_to_ESP)
+    *   [3.2 Secure Boot](#Secure_Boot)
+        *   [3.2.1 Using your own keys](#Using_your_own_keys)
 
 ## Installation
 
@@ -84,7 +85,30 @@ The following requirements should be met:
 
 1.  Make sure you are booted in [UEFI](/index.php/UEFI "UEFI") mode, it will not work in legacy boot mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
+3.  Mount your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this section.
+
+### Copy Fwupd to ESP
+
+The fwupd files are not copied over to the ESP when fwupd is installed or upgraded so we need to do this manually.
+
+ `cp -a /usr/lib/fwupd/efi/fwupdx64.efi *esp*/efi/` 
+
+It might be desirable to automate this using a pacman hook so that on future fwupd installs/updates it will do so automatically:
+
+ `/etc/pacman.d/hooks/fwupd-to-esp.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = File
+Target = usr/lib/fwupd/efi/fwupdx64.efi
+
+[Action]
+When = PostTransaction
+Exec = /usr/bin/cp -a /usr/lib/fwupd/efi/fwupdx64.efi *esp*/efi/
+```
+
+You can now `$ fwupd refresh` and `$ fwupd update`. It will ask to reboot and should now automatically reboot into the firmware updater.
 
 ### Secure Boot
 

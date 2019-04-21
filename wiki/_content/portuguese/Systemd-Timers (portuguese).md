@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=567404) na versão em inglês.
+
 Artigos relacionados
 
 *   [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")
@@ -144,46 +146,46 @@ Mais informações estão disponíveis em [systemd.time(7)](https://jlk.fjfi.cvu
 
 ## Units .timer transientes
 
-One can use `systemd-run` to create transient `.timer` units. That is, one can set a command to run at a specified time without having a service file. For example the following command touches a file after 30 seconds:
+Pode-se usar `systemd-run` para criar unidades `.timer` transitórias. Ou seja, é possível definir um comando para ser executado em um horário especificado sem ter um arquivo de serviço. Por exemplo, o seguinte comando toca um arquivo após 30 segundos:
 
 ```
 # systemd-run --on-active=30 /bin/touch /tmp/foo
 
 ```
 
-One can also specify a pre-existing service file that does not have a timer file. For example, the following starts the systemd unit named `*someunit*.service` after 12.5 hours have elapsed:
+Também é possível especificar um arquivo de serviço pré-existente que não tenha um arquivo de cronômetro. Por exemplo, o seguinte inicia a unit systemd denominada `*algumaunit*.service` após 12,5 horas:
 
 ```
-# systemd-run --on-active="12h 30m" --unit *someunit*.service
+# systemd-run --on-active="12h 30m" --unit *algumaunit*.service
 
 ```
 
-See [systemd-run(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-run.1) for more information and examples.
+Veja [systemd-run(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-run.1) para mais informações e exemplos.
 
 ## Como um substituto do cron
 
-Although [cron](/index.php/Cron "Cron") is arguably the most well-known job scheduler, *systemd* timers can be an alternative.
+Embora o [cron](/index.php/Cron "Cron") seja indiscutivelmente o agendador de tarefas mais conhecido, os temporizadores *systemd* podem ser uma alternativa.
 
 ### Benefícios
 
-The main benefits of using timers come from each job having its own *systemd* service. Some of these benefits are:
+Os principais benefícios do uso de timers vêm de cada job ter seu próprio serviço *systemd*. Alguns desses benefícios são:
 
-*   Jobs can be easily started independently of their timers. This simplifies debugging.
-*   Each job can be configured to run in a specific environment (see [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5)).
-*   Jobs can be attached to [cgroups](/index.php/Cgroups "Cgroups").
-*   Jobs can be set up to depend on other *systemd* units.
-*   Jobs are logged in the *systemd* journal for easy debugging.
+*   Os trabalhos podem ser facilmente iniciados independentemente de seus timers. Isso simplifica a depuração.
+*   Cada trabalho pode ser configurado para ser executado em um ambiente específico (consulte [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5)).
+*   Os trabalhos podem ser anexados a [cgroups](/index.php/Cgroups "Cgroups").
+*   Os trabalhos podem ser configurados para depender de outras units *systemd*.
+*   Os trabalhos são registrados no diário *systemd* para facilitar a depuração.
 
 ### Ressalvas
 
-Some things that are easy to do with cron are difficult to do with timer units alone:
+Algumas coisas que são fáceis de fazer com o cron são difíceis de fazer apenas com units de timers:
 
-*   Creation: to set up a timed job with *systemd* you need to create two files and run `systemctl` commands, compared to adding a single line to a crontab.
-*   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up a similar functionality using `OnFailure=`.
+*   Criação: para configurar um trabalho com timer com *systemd*, você precisa criar dois arquivos e executar comandos `systemctl`, em comparação com a adição de uma única linha a um crontab.
+*   E-mails: não há um equivalente interno ao `MAILTO` do cron para enviar e-mails em caso de falha no trabalho. Veja a próxima seção para um exemplo de configuração de uma funcionalidade similar usando `OnFailure=`.
 
 ### MAILTO
 
-You can set up systemd to send an e-mail when a unit fails. Cron sends mail to `MAILTO` if the job outputs to stdout or stderr, but many jobs are setup to only output on error. First you need two files: an executable for sending the mail and a *.service* for starting the executable. For this example, the executable is just a shell script using `sendmail`, which is in packages that provide `smtp-forwarder`.
+Você pode configurar o systemd para enviar um e-mail quando uma unit falhar. Cron envia um e-mail para `MAILTO` se o trabalho é gerado para stdout ou stderr, mas muitos trabalhos são configurados para serem emitidos somente com erro. Primeiro você precisa de dois arquivos: um executável para enviar o e-mail e um *.service* para iniciar o executável. Para este exemplo, o executável é apenas um script de shell usando `sendmail`, que está em pacotes que fornecem `smtp-forwarder`.
 
  `/usr/local/bin/systemd-email` 
 ```
@@ -200,44 +202,44 @@ $(systemctl status --full "$2")
 ERRMAIL
 ```
 
-Whatever executable you use, it should probably take at least two arguments as this shell script does: the address to send to and the unit file to get the status of. The *.service* we create will pass these arguments:
+Seja qual for o executável que você usa, ele provavelmente deve ter pelo menos dois argumentos, como o script de shell: o endereço para enviar e o arquivo de unit para obter o status. O *.service* que criamos passará esses argumentos:
 
- `/etc/systemd/system/status-email-*user*@.service` 
+ `/etc/systemd/system/status-email-*usuário*@.service` 
 ```
 [Unit]
-Description=status email for %i to *user*
+Description=e-mail de estado de %i para *usuário*
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email *address* %i
+ExecStart=/usr/local/bin/systemd-email *endereço* %i
 User=nobody
 Group=systemd-journal
 ```
 
-Where `*user*` is the user being emailed and `*address*` is that user's email address. Although the recipient is hard-coded, the unit file to report on is passed as an instance parameter, so this one service can send email for many other units. At this point you can [start](/index.php/Start "Start") `status-email-*user*@dbus.service` to verify that you can receive the emails.
+sendo `*usuário*` o usuário que está sendo enviado por e-mail e o `*endereço*` o endereço de e-mail desse usuário. Embora o destinatário esteja embutido em código, o arquivo unit a ser relatado é passado como um parâmetro de instância, portanto, esse serviço pode enviar emails para muitas outras units. Neste ponto, você pode [iniciar](/index.php/Inicia "Inicia") `status-email-*usuário*@dbus.service` para verificar se você pode receber os e-mails.
 
-Then simply [edit](/index.php/Edit "Edit") the service you want emails for and add `OnFailure=status-email-*user*@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
+Em seguida, basta [editar](/index.php/Editar "Editar") o serviço para o qual você deseja receber e-mails `OnFailure=status-email-*usuário*@%n.service` para o `[Unit]` seção. `%n` passa o nome da unit para o modelo.
 
-**Note:**
+**Nota:**
 
-*   If you set up SSMTP security according to [SSMTP#Security](/index.php/SSMTP#Security "SSMTP") the user `nobody` will not have access to `/etc/ssmtp/ssmtp.conf`, and the `systemctl start status-email-*user*@dbus.service` command will fail. One solution is to use `root` as the User in the `status-email-*user*@.service` unit.
-*   If you try to use `mail -s somelogs *address*` in your email script, `mail` will fork and systemd will kill the mail process when it sees your script exit. Make the mail non-forking by doing `mail -Ssendwait -s somelogs *address*`.
+*   Se você configurar a segurança do SSMTP de acordo com [SSMTP#Security](/index.php/SSMTP#Security "SSMTP"), o usuário `nobody` não terá acesso a `/etc/ssmtp/ssmtp.conf` e o comando `systemctl start status-email-*usuário*@dbus.service` falhará. Uma solução é usar `root` como o usuário da unit `status-email-*usuário*@.service`.
+*   Se você tentar usar o `mail -s algunslogs *endereço*` no seu script de e-mail, `mail` fará um *fork* e o systemd eliminará o processo de e-mail quando vir sua saída de script. Certifique-se que o e-mail não faça um "fork" fazendo `mail -Ssendwait -s algunslogs *endereços*`.
 
 ### Usando um crontab
 
-Several of the caveats can be worked around by installing a package that parses a traditional crontab to configure the timers. [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/) and [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) are two such packages. These can provide the missing `MAILTO` feature.
+Várias das ressalvas podem ser contornadas instalando um pacote que analisa um crontab tradicional para configurar os timers. [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/) e [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/) são dois desses pacotes. Eles podem fornecer o recurso `MAILTO` ausente.
 
-Also, like with crontabs, a unified view of all scheduled jobs can be obtained with `systemctl`. See [#Management](#Management).
+Além disso, assim como no crontabs, uma visão unificada de todos os trabalhos agendados pode ser obtida com `systemctl`. Veja [#Gerenciamento](#Gerenciamento).
 
 ## Veja também
 
 *   [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5)
-*   [Fedora Project wiki page](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) on *systemd* calendar timers
-*   [Gentoo wiki section](https://wiki.gentoo.org/wiki/Systemd#Timer_services) on *systemd* timer services
-*   **systemd-cron-next** — tool to generate timers/services from crontab and anacrontab files
+*   [Página wiki do Projeto Fedora](https://fedoraproject.org/wiki/Features/SystemdCalendarTimers) sobre timers de calendário do *systemd*
+*   [Seção no wiki do Gentoo](https://wiki.gentoo.org/wiki/Systemd#Timer_services) sobre serviços de timer do *systemd*
+*   **systemd-cron-next** — Ferramenta para gerar timers/serviços a partir de arquivos crontab e anacrontab
 
 	[https://github.com/systemd-cron/systemd-cron-next](https://github.com/systemd-cron/systemd-cron-next) || [systemd-cron-next](https://aur.archlinux.org/packages/systemd-cron-next/)
 
-*   **systemd-cron** — provides systemd units to run cron scripts; using *systemd-crontab-generator* to convert crontabs
+*   **systemd-cron** — Fornece units de systemd para executar scripts do cron; usando *systemd-crontab-generator* para converter crontabs
 
 	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)

@@ -65,14 +65,14 @@ npm run packager
 
 npm unfortunately creates references to the source dir and the pkg dir. This is [a known issue in NPM](https://github.com/npm/npm/issues/12110), and actually considered a feature. However, you may remove those references manually since they are not used in any way.
 
-All dependencies will contain a reference to `$pkgdir`, in the `_where` attribute. You can usually remove those attributes with some `sed` magic as follows:
+All dependencies will contain a reference to `$pkgdir`, in the `_where` attribute. You can usually remove those attributes with some *sed* magic as follows:
 
 ```
  find "$pkgdir" -name package.json -print0 | xargs -0 sed -i '/_where/d'
 
 ```
 
-Your main package will have some other references too. The easiest way to remove those is to remove all underscored properties, but that is not as easy with `sed`. Instead, you can use [jq](https://www.archlinux.org/packages/?name=jq) for similar results as follows:
+Your main package will have some other references too. The easiest way to remove those is to remove all underscored properties, but that is not as easy with *sed*. Instead, you can use [jq](https://www.archlinux.org/packages/?name=jq) for similar results as follows:
 
 ```
 local tmppackage="$(mktemp)"

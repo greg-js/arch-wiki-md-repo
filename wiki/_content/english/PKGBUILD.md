@@ -120,7 +120,7 @@ Also it is important to use keywords wisely to increase the chances of appearing
 
 ### arch
 
-An array of architectures that the PKGBUILD is intended to build and work on. Arch officially supports only `x86_64`, but other projects may support other architectures. For example, [Arch Linux 32](https://archlinux32.org/) provides support for `i686` and [Arch Linux ARM](http://archlinuxarm.org/) provides support for `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat), and `aarch64` (armv8 64bit).
+An array of architectures that the PKGBUILD is intended to build and work on. Arch officially supports only `x86_64`, but other projects may support other architectures. For example, [Arch Linux 32](https://archlinux32.org/) provides support for `i686` and [Arch Linux ARM](http://archlinuxarm.org/) provides support for `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat), and `aarch64` (armv8 64-bit).
 
 There are two types of values the array can use:
 
@@ -244,7 +244,7 @@ This is why, in this context, if your package `provides` a feature and another p
 
 ### replaces
 
-An array of obsolete packages that are replaced by the package, e.g. [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) uses `replaces=('wireshark')`. When syncing, *pacman* will immediately replace an installed package upon encountering another package with the matching `replaces` in the repositories. If providing an alternate version of an already existing package or uploading to the AUR, use the `conflicts` and `provides` arrays, which are only evaluated when actually installing the conflicting package.
+An array of obsolete packages that are replaced by the package, e.g. [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) uses `replaces=('wireshark')`. When syncing, *pacman* will immediately replace an installed package upon encountering another package with the matching `replaces` in the repositories. If providing an alternate version of an already existing package or uploading to the AUR, use the `conflicts` and `provides` arrays, which are only evaluated when actually installing the conflicting package.
 
 ## Others
 

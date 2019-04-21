@@ -417,6 +417,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 1000Cxi |
 | LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), or [AirPrint](/index.php/CUPS#CUPS "CUPS"). |
 | LaserJet Pro MFP M126nw | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) |
+| LaserJet Pro MFP M281fdw | [hplip](https://www.archlinux.org/packages/?name=hplip) |
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/Foomatic "Foomatic"). |
 | Printer | Driver/filter | Notes |
 

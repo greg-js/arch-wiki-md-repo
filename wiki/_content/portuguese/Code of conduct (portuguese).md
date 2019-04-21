@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=557872) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=568270) na versão em inglês.
 
 A comunidade Arch é uma comunidade técnica cujo propósito compartilhado é oferecer suporte e melhoria do Arch Linux.
 
@@ -213,7 +213,7 @@ Este processo consiste em responde um tópico existente com um outro assunto dif
 
 #### Política da caixa de lixo (*marked for deletion*)
 
-Quaisquer tópicos que estão trancados/fechados por conterem informação já documentada na Wiki ou por inconsistência com as políticas do fórum e filosofias do Arch poderão ir para o caixote de lixo(Dust/troll-bin). Após um período de cinco dias, tópicos lá depositados serão deletados. O Moderador responsável irá claramente marcar tais tópicos como "Binned" ou "For deletion".
+Quaisquer tópicos que estão trancados/fechados por conterem informação já documentada na Wiki ou por inconsistência com as políticas do fórum e filosofias do Arch poderão ir para o caixote de lixo(Dust/troll-bin). Após um período de cinco dias, tópicos lá depositados serão elegíveis para exclusão a critério da equipe. O Moderador responsável irá claramente marcar tais tópicos como "Binned" ou "For deletion".
 
 ### Listas de discussão
 

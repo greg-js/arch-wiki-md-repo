@@ -1,8 +1,12 @@
-**Status de tradução:** Esse artigo é uma tradução de [ClamAV](/index.php/ClamAV "ClamAV"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=ClamAV&diff=0&oldid=539450) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [ClamAV](/index.php/ClamAV "ClamAV"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=ClamAV&diff=0&oldid=569887) na versão em inglês.
 
 [Clam AntiVirus](https://www.clamav.net) é uma caixa de ferramentas de antivírus, código aberto (GPL), para UNIX. Ele fornece uma série de utilitários, incluindo um daemon multi-threaded flexível e escalável, um scanner de linha de comando e uma ferramenta avançada para atualizações automáticas de banco de dados. Como o uso principal do ClamAV é em servidores de arquivos/e-mails para desktops Windows, ele principalmente detecta vírus e malwares do Windows com suas assinaturas embutidas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Atualizando o banco de dados](#Atualizando_o_banco_de_dados)
@@ -20,6 +24,8 @@
     *   [9.3 Erro: Can't create temporary directory](#Erro:_Can't_create_temporary_directory)
 *   [10 Dicas e truques](#Dicas_e_truques)
     *   [10.1 Executar em múltiplas threads](#Executar_em_múltiplas_threads)
+    *   [10.2 = Usando clamscan](#=_Usando_clamscan)
+        *   [10.2.1 Usando clamdscan](#Usando_clamdscan)
 *   [11 Veja também](#Veja_também)
 
 ## Instalação
@@ -312,25 +318,29 @@ sendo *UID* e *GID* o informado na dica acima
 
 ### Executar em múltiplas threads
 
-Ao varrer um arquivo ou diretório a partir da linha de comando usando `clamscan` ou `clamdscan`, apenas uma única thread de CPU é usada para varrer os arquivos um a um. Isso pode servir nos casos em que você não quer que o seu computador fique lento enquanto a verificação está em andamento, mas se você quiser digitalizar rapidamente uma pasta grande ou uma unidade USB, você pode querer usar todas as CPUs disponíveis para acelerar o processo.
+### = Usando clamscan
 
-`clamscan` é projetado para funcionar em uma única thread, então você precisaria usar alguma coisa como `xargs` para executar a varredura em paralelo:
+Ao varrer um arquivo ou diretório a partir da linha de comando usando `clamscan`, apenas uma única thread de CPU é usada. Isso pode servir em casos em que o tempo não é crítico ou você não deseja que o computador fique lento. Se houver necessidade de varrer rapidamente uma pasta grande ou uma unidade USB, convém usar todas as CPUs disponíveis para acelerar o processo.
+
+`clamscan` é projetado para funcionar em uma única thread, então você pode usar `xargs` para executar a varredura em paralelo:
 
 ```
-$ find /home/archie -type f -print | xargs -P 2 clamscan
+$ find /home/archie -type f -print | xargs -P $(nproc) clamscan
 
 ```
 
-Neste exemplo, o parâmetro `-P` para `xargs` executa `clamscan` em até 2 processos por vez. Se você tiver mais CPUs disponíveis, ajuste esse parâmetro de acordo. As opções `--max-lines` e `--max-args` permitirão um controle ainda melhor do envio em lote da carga de trabalho entre as threads.
+Neste exemplo, o parâmetro `-P` para `xargs` executa `clamscan` na quantidade de processos igual à de CPUs relatada por `nproc` por vez. As opções `--max-lines` e `--max-args` permitirão um controle ainda melhor do envio em lote da carga de trabalho entre as threads.
 
 Use a seguinte versão se os nomes de arquivos puderem conter espaços ou outros caracteres especiais (como fazem frequentemente as unidades USB e ex-Windows):
 
 ```
-$ find /home/archie -type f -print0 | xargs -0 -P 2 clamscan
+$ find /home/archie -type f -print0 | xargs -0 -P $(nproc) clamscan
 
 ```
 
-`clamdscan` usa o daemon `clamd` para realizar a varredura. Você precisa iniciar o daemon `clamd` primeiro (veja [#Iniciando o daemon](#Iniciando_o_daemon)) e então executar o seguinte comando:
+#### Usando clamdscan
+
+Se você já tiver o daemon `clamd` em execução, `clamdscan` pode ser usado (veja [#Iniciando o daemon](#Iniciando_o_daemon)):
 
 ```
 $ clamdscan --multiscan --fdpass /home/archie

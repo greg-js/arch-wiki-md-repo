@@ -169,28 +169,7 @@ There is also [Magick Rotation](https://launchpad.net/magick-rotation/), which i
 
 ### Enable SSD TRIM
 
-The built in 128 GB and 256 GB mSATA SSDs included with the Helix all support SSD TRIM functions.
-
-Follow the [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives") instructions to enable trim. For example, one could use **fstrim** and set it up weekly like so:
-
-```
-# systemctl enable fstrim.timer
-# systemctl start fstrim.timer
-
-```
-
-If using `fstrim.timer`, you can check the history of when the timer was run with:
-
-```
-$ journalctl -u fstrim.service
--- Logs begin at Thu 2016-01-07 15:55:34 EST, end at Mon 2016-02-01 15:28:22 EST. --
-Jan 25 00:48:58 kodiak systemd[1]: Starting Discard unused blocks...
-Jan 25 00:49:00 kodiak systemd[1]: Started Discard unused blocks.
--- Reboot --
-Feb 01 00:07:13 kodiak systemd[1]: Starting Discard unused blocks...
-Feb 01 00:07:19 kodiak systemd[1]: Started Discard unused blocks.
-
-```
+The built in 128 GB and 256 GB mSATA SSDs included with the Helix all support SSD TRIM functions. See [Solid state drive#TRIM](/index.php/Solid_state_drive#TRIM "Solid state drive").
 
 ## BIOS/Firmware Updates
 

@@ -12,20 +12,20 @@ Related articles
 
 *   [1 General](#General)
 *   [2 Debian](#Debian)
-    *   [2.1 Tips and Tricks](#Tips_and_Tricks)
+    *   [2.1 Tips and Tricks about Debian](#Tips_and_Tricks_about_Debian)
         *   [2.1.1 Override dependency handling](#Override_dependency_handling)
         *   [2.1.2 Set up a chroot](#Set_up_a_chroot)
-    *   [2.2 See also](#See_also)
+    *   [2.2 See also about Debian](#See_also_about_Debian)
 *   [3 Fedora](#Fedora)
-    *   [3.1 See also](#See_also_2)
+    *   [3.1 See also about Fedora](#See_also_about_Fedora)
 *   [4 openSUSE](#openSUSE)
-    *   [4.1 Creating Arch Packages in OBS with OSC](#Creating_Arch_Packages_in_OBS_with_OSC)
-        *   [4.1.1 Creating a Package](#Creating_a_Package)
-        *   [4.1.2 Managing a Package](#Managing_a_Package)
-        *   [4.1.3 Tips and tricks](#Tips_and_tricks_2)
+    *   [4.1 Creating Arch packages in OBS with OSC](#Creating_Arch_packages_in_OBS_with_OSC)
+        *   [4.1.1 Creating a package](#Creating_a_package)
+        *   [4.1.2 Managing a package](#Managing_a_package)
+        *   [4.1.3 Tips and tricks about openSUSE](#Tips_and_tricks_about_openSUSE)
         *   [4.1.4 ca-certificates-utils package problem](#ca-certificates-utils_package_problem)
-        *   [4.1.5 See also](#See_also_3)
-*   [5 See also](#See_also_4)
+        *   [4.1.5 See also about openSUSE](#See_also_about_openSUSE)
+*   [5 See also](#See_also)
 
 ## General
 
@@ -84,7 +84,7 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
 
-### Tips and Tricks
+### Tips and Tricks about Debian
 
 #### Override dependency handling
 
@@ -136,7 +136,7 @@ $ dpkg-buildpackage -d -us -uc -S
 
 ```
 
-### See also
+### See also about Debian
 
 *   [Debian Policy](https://www.debian.org/doc/debian-policy/)
 *   [New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/)
@@ -152,22 +152,21 @@ $ dpkg-buildpackage -d -us -uc -S
 
 *   **mock** — Takes Source RPMs and builds RPMs from them in a chroot
 
-	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock](https://aur.archlinux.org/packages/mock/)
+	[https://github.com/rpm-software-management/mock/wiki](https://github.com/rpm-software-management/mock/wiki) || [mock](https://aur.archlinux.org/packages/mock/)
 
-### See also
+### See also about Fedora
 
-*   [Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock)
 *   [Copr](https://copr.fedoraproject.org/)
 
 ## openSUSE
 
 The [Open Build Service (OBS)](http://openbuildservice.org/) is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It supports at least .deb, .rpm and Arch packages.
 
-### Creating Arch Packages in OBS with OSC
+### Creating Arch packages in OBS with OSC
 
 **Note:** For building, you must upload your PKGBUILD file as well as the source files (by uploading or letting OBS download the files). OBS uses virtual machines without networking support and cannot download any file.
 
-#### Creating a Package
+#### Creating a package
 
 1.  Create an account in [[1]](https://build.opensuse.org/)
 2.  [Install](/index.php/Install "Install") the [osc](https://aur.archlinux.org/packages/osc/) package. Upstream documentation is available [here](http://en.opensuse.org/openSUSE:OSC).
@@ -177,7 +176,7 @@ The [Open Build Service (OBS)](http://openbuildservice.org/) is a generic system
 6.  Switch to a clean working directory then checkout the project you've just created: `osc co home:foo:bar/ham`.
 7.  Now cd into it: `cd home:foo:bar/ham`.
 
-#### Managing a Package
+#### Managing a package
 
 Now it is time to decide how we will manage our project. There are two practical ways to do this:
 
@@ -230,7 +229,7 @@ Here is an example for [gimp-git](https://aur.archlinux.org/packages/gimp-git/):
 
 Now, after a while, OBS will begin building your package.
 
-#### Tips and tricks
+#### Tips and tricks about openSUSE
 
 *   To see the build progress of your package, cd into its working directory, then: `osc results`.
 *   There are two repositories, Arch_Core and Arch_Extra. You'll probably want Arch_Extra, since it is more complete. [community] isn't currently available there as of this edit, so if your project has any dependencies in [community], you should include them (manually) in your (sub)project too.
@@ -245,7 +244,7 @@ Prefer: ca-certificates-utils ca-certificates
 
 ```
 
-#### See also
+#### See also about openSUSE
 
 *   Example repo: [arch-deepin](https://build.opensuse.org/project/show/home:metakcahura:arch-deepin)
 *   [openSUSE packaging guidelines](http://en.opensuse.org/openSUSE:Packaging_guidelines)

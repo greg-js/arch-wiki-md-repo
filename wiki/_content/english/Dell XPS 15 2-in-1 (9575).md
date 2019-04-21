@@ -42,6 +42,10 @@ This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
 
 ## Graphics
 
+The AMD Vega M is compeltely functionnal and is usable OOB by using DRI_PRIME=1 [command].
+
+See [PRIME](/index.php/PRIME "PRIME") to get more information.
+
 ## Wifi and Bluetooth
 
 ## Audio

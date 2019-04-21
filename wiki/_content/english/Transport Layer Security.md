@@ -142,7 +142,7 @@ See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
 *   **dehydrated** — ACME client, written in Bash.
 
-	[https://github.com/lukas2511/dehydrated](https://github.com/lukas2511/dehydrated) || [dehydrated](https://aur.archlinux.org/packages/dehydrated/), [dehydrated-git](https://aur.archlinux.org/packages/dehydrated-git/)
+	[https://github.com/lukas2511/dehydrated](https://github.com/lukas2511/dehydrated) || [dehydrated](https://www.archlinux.org/packages/?name=dehydrated), [dehydrated-git](https://aur.archlinux.org/packages/dehydrated-git/)
 
 *   **getssl** — ACME client, written in Bash.
 

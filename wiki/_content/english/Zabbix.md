@@ -19,8 +19,9 @@
     *   [2.3 Starting](#Starting_2)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Debugging a Zabbix agent](#Debugging_a_Zabbix_agent)
-    *   [3.2 Monitor ArchLinux system updates](#Monitor_ArchLinux_system_updates)
+    *   [3.2 Monitor Arch Linux system updates](#Monitor_Arch_Linux_system_updates)
 *   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Error "Specified key was too long; max key length is 767 bytes"](#Error_"Specified_key_was_too_long;_max_key_length_is_767_bytes")
 *   [5 See also](#See_also)
 
 ## Server setup
@@ -137,9 +138,9 @@ $ zabbix_get -s *host* -k hdd.smart[sda,Temperature_Celsius]
 
 ```
 
-### Monitor ArchLinux system updates
+### Monitor Arch Linux system updates
 
-Here is an approach on how to monitor your ArchLinux clients for available system update using a custom `UserParameter`:
+Here is an approach on how to monitor your Arch Linux clients for available system update using a custom `UserParameter`:
 
  `/etc/zabbix/zabbix_agentd.conf`  `Include=/etc/zabbix/zabbix_agentd.conf.d/*.conf`  `/etc/zabbix/zabbix_agentd.conf.d/archlinuxupdates.conf`  `UserParameter=archlinuxupdates,checkupdates | wc -l` 
 
@@ -147,7 +148,9 @@ You have to restart `zabbix-agentd` to apply the new configuration. The keyword 
 
 ## Troubleshooting
 
-While importing the databases, you might get an eror "Specified key was too long; max key length is 767 bytes". In order to solve this, you will have to change the codepage configuration for your MariaDB database: [MySQL#Using UTF8MB4](/index.php/MySQL#Using_UTF8MB4 "MySQL").
+### Error "Specified key was too long; max key length is 767 bytes"
+
+While importing the databases, you might get this error message. In order to solve this, you will have to change the code page configuration for your MariaDB database: [MariaDB#Using UTF8MB4](/index.php/MariaDB#Using_UTF8MB4 "MariaDB").
 
 ## See also
 

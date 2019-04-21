@@ -50,6 +50,7 @@ Related articles
     *   [5.3 Additional blocklists](#Additional_blocklists)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Data loss on reboot](#Data_loss_on_reboot)
+    *   [6.2 Failed to start Pi-hole FTLDNS engine](#Failed_to_start_Pi-hole_FTLDNS_engine)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -393,6 +394,10 @@ Systems without a [RTC](/index.php/RTC "RTC") such as some ARM devices will like
 For devices lacking a [RTC](/index.php/RTC "RTC"): A hacky work-around for this is to use [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd") against `pihole-FTL.service` wherein a delay is built in calling `/usr/bin/sleep x` in a `ExecStartPre` statement. Note that the value of "x" in the sleep time depends on how long your specific hardware takes to establish the time sync.
 
 [Issue#11008](https://github.com/systemd/systemd/issues/11008) against systemd-timesyncd is currently preventing the use of the *time-sync.target* to automate this.
+
+### Failed to start Pi-hole FTLDNS engine
+
+It might be that `systemd-resolved.service` already occupied port 53, which is required for `pihole-FTL.service`. To resolve this, [disable](/index.php/Disable "Disable") `systemd-resolved.service` and [restart](/index.php/Restart "Restart") `pihole-FTL.service`.
 
 ## See also
 

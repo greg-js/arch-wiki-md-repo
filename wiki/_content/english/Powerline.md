@@ -62,6 +62,8 @@ powerline-daemon -q
 
 ```
 
+**Note:** If you are using **oh-my-zsh**, you should delete or comment out the `ZSH_THEME="*oh-my-zsh theme*"` line in your **~/.zshrc**.
+
 ### Tmux
 
 **Note:** Watch out for interfering styles in .tmux.conf (i.e. window-status-format)

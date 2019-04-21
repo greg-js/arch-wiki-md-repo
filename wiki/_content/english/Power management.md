@@ -516,7 +516,7 @@ See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/
 
 [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") can be a useful feature, but if you are not making use of it then it is simply draining extra power waiting for a magic packet while in suspend. You can adapt the [Wake-on-LAN#udev](/index.php/Wake-on-LAN#udev "Wake-on-LAN") rule to disable the feature for all ethernet interfaces. To enable powersaving with [iw](https://www.archlinux.org/packages/?name=iw) on all wireless interfaces:
 
- `/etc/udev/rules.d/**81**-wifi-powersave.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wlp*", RUN+="/usr/bin/iw dev $name set power_save on"` 
+ `/etc/udev/rules.d/**81**-wifi-powersave.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", RUN+="/usr/bin/iw dev $name set power_save on"` 
 
 The name of the configuration file is important. With the use of [persistent device names](/index.php/Network_configuration#Change_interface_name "Network configuration") in systemd, the above network rule, named lexicographically **after** `80-net-setup-link.rules`, is applied after the device is renamed with a persistent name e.g. `wlan0` renamed `wlp3s0`. Be aware that the `RUN` command is executed after all rules have been processed and must anyway use the persistent name, available in `$name` for the matched device.
 

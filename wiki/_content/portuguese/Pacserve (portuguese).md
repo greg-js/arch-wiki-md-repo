@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Pacserve](/index.php/Pacserve "Pacserve"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacserve&diff=0&oldid=567147) na versão em inglês.
+
 [Pacserve](http://xyne.archlinux.ca/projects/pacserve/) permite compartilhar facilmente pacotes do *pacman* entre computadores. Isso é muito útil se você tiver uma conexão lenta com a Internet, com várias máquinas funcionando com o Arch Linux.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

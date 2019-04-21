@@ -259,7 +259,7 @@ You can even setup LUKS on it if you want using e.g. cryptsetup. Referencing the
 
 ```
 
-8\. Install the system as per the [Installation Guide](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide") as normal except this:
+8\. Install the system as per the [Installation Guide](/index.php/Installation_guide#Connect_to_the_internet "Installation guide") as normal except this:
 
 Before you edit `/etc/mkinitcpio.conf` and run `mkinitcpio -p linux`:
 

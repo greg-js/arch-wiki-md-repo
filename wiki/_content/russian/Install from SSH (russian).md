@@ -10,7 +10,7 @@
 
 Загрузите целевую машину в живую среду Arch с помощью образа [Live CD/USB image](/index.php/Getting_and_installing_Arch "Getting and installing Arch"): это запустит пользователя root.
 
-На этом этапе настройте сеть на целевом компьютере, как показано, например, в [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide").
+На этом этапе настройте сеть на целевом компьютере, как показано, например, в [Installation guide#Connect to the internet](/index.php/Installation_guide#Connect_to_the_internet "Installation guide").
 
 Во-вторых, настройте пароль root, который необходим для подключения SSH, так как он по умолчанию пуст:
 

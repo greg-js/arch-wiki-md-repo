@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=560668) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=568013) na versão em inglês.
 
 Artigos relacionados
 

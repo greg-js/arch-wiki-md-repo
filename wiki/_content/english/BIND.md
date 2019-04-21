@@ -21,11 +21,12 @@ Related articles
     *   [3.2 Configuring master server](#Configuring_master_server)
 *   [4 Allow recursion](#Allow_recursion)
 *   [5 Configuring BIND to serve DNSSEC signed zones](#Configuring_BIND_to_serve_DNSSEC_signed_zones)
+    *   [5.1 See also](#See_also)
 *   [6 Automatically listen on new interfaces](#Automatically_listen_on_new_interfaces)
 *   [7 Running BIND in a chrooted environment](#Running_BIND_in_a_chrooted_environment)
     *   [7.1 Creating the Jail House](#Creating_the_Jail_House)
     *   [7.2 Service File](#Service_File)
-*   [8 See also](#See_also)
+*   [8 See also](#See_also_2)
 
 ## Installation
 
@@ -132,6 +133,50 @@ allow-recursion { 192.168.0.0/24; 127.0.0.1; };
 ```
 
 ## Configuring BIND to serve DNSSEC signed zones
+
+To enable DNSSEC support you need to add "dnssec-enable yes;" to /etc/named.conf "options" block. Do not forget to check that "edns" is not disabled.
+
+On master DNS server:
+
+*   generate KSK and ZSK keys:
+
+```
+ $ dnssec-keygen -a NSEC3RSASHA1 -b 2048 -n ZONE example.com
+ $ dnssec-keygen -f KSK -a NSEC3RSASHA1 -b 4096 -n ZONE example.com
+
+```
+
+*   change zone configuration:
+
+```
+ zone "example.com" {
+       type master;
+       allow-transfer { ... };
+       auto-dnssec maintain;
+       inline-signing yes;
+       key-directory "master/";
+       file "master/example.com.zone";
+ };
+
+```
+
+Now bind will sign zone automatically. (This example assumes that all required files are in /var/named/master/)
+
+Then you should pass DS records (from dsset-example.com. file) to parent zone owner probably using your registrar website. It glues parent zone with your KSK.
+
+KSK (and corresponding DS records) should be changed rarely because of it needs manual intervention, ZSK can be changed more often because of this key is usually shorter to be faster in signature checking.
+
+You can schedule old ZSK key expiration and generate new one using:
+
+```
+ $ dnssec-settime -I +172800 -D +345600 Kexample.com.+000+111111.key
+ $ dnssec-keygen -S Kexample.com.+000+111111.key -i 152800
+
+```
+
+Bind should automatically use new ZSK key at appropriate time.
+
+### See also
 
 *   [DNSSEC](http://www.dnssec.net/practical-documents)
 *   [a BIND configuration template](http://www.cymru.com/Documents/secure-bind-template.html)

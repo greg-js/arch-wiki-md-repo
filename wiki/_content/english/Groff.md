@@ -6,7 +6,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Groff_(software) "wikiped
 
 	**Groff (GNU troff)** is a typesetting system that reads plain text mixed with formatting commands and produces formatted output.
 
-Output may be [PostScript](/index.php/PostScript "PostScript") or PDF, html, or ASCII/UTF8 for display at the terminal. Formatting commands may be either low-level typesetting requests (“primitives”) or macros from a supplied set. Users may also write their own macros. All three may be combined. Using groff may be a solid alternative to [TeX_Live](/index.php/TeX_Live "TeX Live") due to small size and native language.
+Output may be [PostScript](/index.php/PostScript "PostScript") or PDF, html, or ASCII/UTF8 for display at the terminal. Formatting commands may be either low-level typesetting requests (“primitives”) or macros from a supplied set. Users may also write their own macros. All three may be combined. Using groff may be a solid alternative to [TeX Live](/index.php/TeX_Live "TeX Live") due to small size and native language.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

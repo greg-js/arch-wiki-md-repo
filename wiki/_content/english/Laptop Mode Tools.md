@@ -11,7 +11,11 @@ Related articles
 
 Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"), LMT provides most users with a complete notebook power management suite.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -23,7 +27,7 @@ Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/ind
         *   [2.3.2 USB autosuspend](#USB_autosuspend)
     *   [2.4 Display and graphics](#Display_and_graphics)
         *   [2.4.1 LCD brightness](#LCD_brightness)
-            *   [2.4.1.1 ThinkPad T40/T42](#ThinkPad_T40.2FT42)
+            *   [2.4.1.1 ThinkPad T40/T42](#ThinkPad_T40/T42)
             *   [2.4.1.2 ThinkPad T60](#ThinkPad_T60)
         *   [2.4.2 Terminal blanking](#Terminal_blanking)
     *   [2.5 Networking](#Networking)
@@ -317,7 +321,7 @@ I have experienced issues with bluetooth not working if I boot up with battery, 
 
 ### USB Mouse sleeping after 5 seconds when on battery
 
-First find the ID of you device (it sould look like `046d:c534`):
+First find the ID of you device (it should look like `046d:c534`):
 
 ```
 $ lsusb

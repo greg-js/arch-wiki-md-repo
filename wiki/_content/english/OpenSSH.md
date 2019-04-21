@@ -586,7 +586,7 @@ ssh -R 2222:localhost:22 -N user2@relay
 
 ```
 
-Which can also be automated with a startup script, systemd service or [autossh](https://www.archlinux.org/packages/?name=autossh).
+Which can also be automated with a startup script, systemd service or [autossh](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels).
 
 At the client side the connection is established with:
 
@@ -628,7 +628,14 @@ However, it is likely that port 443 is already in use by a web server serving HT
 
 There are several [client configuration](#Configuration) options which can speed up connections either globally or for specific hosts. See [ssh_config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh_config.5) for full descriptions of these options.
 
-*   You can make all sessions to the same host share a single connection using these options:
+*   *Use a faster cipher*: on modern CPUs with AESNI instructions, `aes128-gcm@openssh.com` and `aes256-gcm@openssh.com` should offer significantly better performance over openssh's default preferred cipher, usually `chacha20-poly1305@openssh.com`. Cipher can be selected `-c` flag. For a permanent effect, put `Ciphers` option in your ~/.ssh/config with ciphers in new preferred order, e.g.:
+
+    	 `Ciphers aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr` 
+
+*   *Enable or disable compression*: compression can increase speed on slow connections, it is enabled with the `Compression yes` option or the `-C` flag. However the compression algorithm used is the relatively slow [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) which becomes the bottleneck on fast networks. In order to speed up the connection one should use the `Compression no` option on local or fast networks.
+
+*   *Connection sharing*: you can make all sessions to the same host share a single connection using these options:
+
     ```
     ControlMaster auto
     ControlPersist yes
@@ -642,8 +649,6 @@ There are several [client configuration](#Configuration) options which can speed
     *   `no` to close the connection immediately after the last client disconnects,
     *   a time in seconds,
     *   `yes` to wait forever, the connection will never be closed automatically.
-
-*   Compression can increase speed on slow connections, it is enabled with the `Compression yes` option or the `-C` flag. However the compression algorithm used is the relatively slow [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) which becomes the bottleneck on fast networks. In order to speed up the connection one should use the `Compression no` option on local or fast networks.
 
 *   Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
 
@@ -732,7 +737,7 @@ ExecStart=/usr/bin/autossh -M 0 -NL 2222:localhost:2222 -o TCPKeepAlive=yes foo@
 WantedBy=multi-user.target
 ```
 
-Here `AUTOSSH_GATETIME=0` is an environment variable specifying how long ssh must be up before autossh considers it a successful connection, setting it to 0 autossh also ignores the first run failure of ssh. This may be useful when running autossh at boot. Other environment variables are available on the manpage. Of course, you can make this unit more complex if necessary (see the systemd documentation for details), and obviously you can use your own options for autossh, but note that the `-f` implying `AUTOSSH_GATETIME=0` does not work with systemd.
+Here `AUTOSSH_GATETIME=0` is an environment variable specifying how long ssh must be up before autossh considers it a successful connection, setting it to 0 autossh also ignores the first run failure of ssh. This may be useful when running autossh at boot. Other environment variables are available at [autossh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/autossh.1). Of course, you can make this unit more complex if necessary (see the systemd documentation for details), and obviously you can use your own options for autossh, but note that the `-f` implying `AUTOSSH_GATETIME=0` does not work with systemd.
 
 Remember to [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") the service afterwards.
 
@@ -981,5 +986,5 @@ If you are experiencing excessively long daemon startup times after reboots (e.g
 ## See also
 
 *   [Defending against brute force ssh attacks](http://www.la-samhna.de/library/brutessh.html)
-*   [OpenSSH key management, Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) and [Part 2](http://www.ibm.com/developerworks/library/l-keyc2) on IBM developerWorks
+*   OpenSSH key management: [Part 1](http://www.ibm.com/developerworks/library/l-keyc/index.html) on IBM developerWorks, [Part 2](https://www.funtoo.org/OpenSSH_Key_Management,_Part_2), [Part 3](https://www.funtoo.org/OpenSSH_Key_Management,_Part_3) on funtoo.org
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)

@@ -10,7 +10,11 @@ Related articles
 
 Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Updating](#Updating)
@@ -77,11 +81,11 @@ The following section lists packages that, whilst not required for the Unity she
 | Functionality | Package(s) |
 | Notifications | [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) |
 | Screen locking | *gnome-screensaver-ubuntu* |
-| Online accounts | [signon-keyring-extension](https://aur.archlinux.org/packages/signon-keyring-extension/), [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
+| Online accounts | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
 | SSH | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) |
-| HUD & menubar integration | [appmenu-qt4](https://www.archlinux.org/packages/?name=appmenu-qt4), [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/), [thunderbird-ubuntu](https://aur.archlinux.org/packages/thunderbird-ubuntu/) |
+| HUD & menubar integration | [appmenu-qt4](https://www.archlinux.org/packages/?name=appmenu-qt4) |
 | File and Folder lens | *zeitgeist-ubuntu* |
-| Configuration | [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool), *unity-tweak-tool* |
+| Configuration | [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), *unity-tweak-tool* |
 | Pidgin integration | *pidgin-indicator* |
 
 ## Tips and tricks

@@ -1,6 +1,10 @@
 Not to be confused with [MSI GS63VR](/index.php/MSI_GS63VR "MSI GS63VR")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Compatibility](#Compatibility)
@@ -39,8 +43,8 @@ Not tested : plugging an external microphone, audio through HDMI.
 | WiFi | Yes |
 | Bluetooth | Yes |
 | HDMI display | Partially | Only works if the dedicated GPU is powered on. You either have to run the whole X session on the NVidia card with proprietary drivers, or use [Reverse PRIME](/index.php/PRIME#Reverse_PRIME "PRIME") with the **nouveau** driver, or use [intel-virtual-output](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"). The last two solutions have not been tested. |
-| DisplayPort | Not tested |
-| USB-C | Not tested |
+| DisplayPort | Partially | Only works if the dedicated GPU is powered on. You either have to run the whole X session on the NVidia card with proprietary drivers, or use [Reverse PRIME](/index.php/PRIME#Reverse_PRIME "PRIME") with the **nouveau** driver, or use [intel-virtual-output](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"). The last two solutions have not been tested. |
+| USB-C | Yes | Tested with USB-C adapter Dell DA-200 (Ethernet OK; USB 3.0 OK; VGA not tested; HDMI not tested) |
 | Dedicated GPU | Yes |
 | GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. Once the fix has been applied, **bumblebee** and **PRIME** both work. |
 | Screen backlighting control | Yes |

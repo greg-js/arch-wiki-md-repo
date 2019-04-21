@@ -44,7 +44,7 @@ Sometimes [opensc](https://www.archlinux.org/packages/?name=opensc) can struggle
 
 1\. Go to: [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
 
-2\. Download certs: *"Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.3"* (ZIP Download)
+2\. Download certs: *"Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.5"* (ZIP Download)
 
 3\. Unzip the DoD PKI zip
 
@@ -62,19 +62,19 @@ Navigate to *Edit -> Preference -> Advanced -> Certificates -> Security Devices*
 
 Install the certificates from the mentioned zip-file in *this* order, by going to *Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import* (make sure to at-least check the box for "Trust this CA to identify websites"):
 
-**Note:** As of the 5.3 version of the certificate zip
+**Note:** As of the 5.5 version of the certificate zip
 
-1\. Certificates_PKCS7_v5.3_DoD.der.p7b
+1\. Certificates_PKCS7_v5.5_DoD.der.p7b
 
-2\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_2.der.p7b
+2\. Certificates_PKCS7_v5.5_DoD_DoD_Root_CA_2.der.p7b
 
-3\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_3.der.p7b
+3\. Certificates_PKCS7_v5.5_DoD_DoD_Root_CA_3.der.p7b
 
-4\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_4.der.p7b
+4\. Certificates_PKCS7_v5.5_DoD_DoD_Root_CA_4.der.p7b
 
-5\. Certificates_PKCS7_v5.3_DoD_DoD_Root_CA_5.der.p7b
+5\. Certificates_PKCS7_v5.5_DoD_DoD_Root_CA_5.der.p7b
 
-6\. Certificates_PKCS7_v5.3_DoD.pem.p7b
+6\. Certificates_PKCS7_v5.5_DoD.pem.p7b
 
 ### Chromium/Google Chrome
 

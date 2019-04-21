@@ -47,6 +47,7 @@ You can use the following website to get your device's coordinates along with a 
 ## List
 
 ```
+38.0952573,-122.267495 "Digital2112Man" # Vallejo, California, USA
 50.013632, 14.449492 "voioo" # Prague, Czechia
 38.950479,-77.418164 "trentonknight" # Herndon, VA
 12.9382632,77.6260124 "saifikhan" # Bangalore, Karnataka, India
@@ -1089,7 +1090,7 @@ You can use the following website to get your device's coordinates along with a 
 47.197523, 7.698578  "thatfatnerdfromnextdoor" # Herzogenbuchsee, Switzerland
 -43.590414, 172.380892 "grawlinson" # Christchurch, New Zealand
 36.718911, -4.427087 "AlonsoLP" # Málaga, Spain
-45.792781, 4.858832 "MiniKochi" # Lyon, France
+43.600978, 1.443286 "MiniKochi" # Toulouse, France
 40.054784,-74.2006784 "cozypjsam" # Lakewood, NJ, USA
 42.815365, -1.659304 "tuxpain" # Pamplona, Spain
 40.954970, 17.297039 "max.bra" # Monopoli, Italy

@@ -2,7 +2,11 @@ The X201 Tablet is a quad core convertable laptop produced by Lenovo. See [Think
 
 Follow the [Installation guide](/index.php/Installation_guide "Installation guide") or [Beginner's Guide](/index.php/Beginner%27s_Guide "Beginner's Guide") to get a base install working.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 LCD](#LCD)
     *   [1.1 Driver](#Driver)
@@ -31,11 +35,7 @@ The driver it uses is the [xf86-video-intel](https://www.archlinux.org/packages/
 
 ### Wacom serial panel
 
-To get basic support, install [linuxconsole](https://www.archlinux.org/packages/?name=linuxconsole) and [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) and run
-
- `inputattach -w8001 /dev/ttyS0` 
-
-To handle it at boot, install [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/).
+See [Wacom tablet](/index.php/Wacom_tablet "Wacom tablet").
 
 ### Rotation
 

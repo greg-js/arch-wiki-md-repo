@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VCS_package_guidelines&diff=0&oldid=552476) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines"). Data da última tradução: 2019-04-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VCS_package_guidelines&diff=0&oldid=569912) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -8,7 +8,11 @@
 
 [Sistema de controle de versões](https://en.wikipedia.org/wiki/pt:Sistema_de_controle_de_vers%C3%B5es "wikipedia:pt:Sistema de controle de versões") pode ser usado para obter o códifo fonte para tanto pacotes versionados estaticamente quanto a última versão (*trunk*) de um ramo de desenvolvimento. Esse artigo cobre ambos casos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Protótipos](#Protótipos)
 *   [2 Diretrizes](#Diretrizes)
@@ -28,7 +32,7 @@ Use apenas os protótipos de PKGBUILD fornecidos pelo pacote [pacman](https://ww
 
 ## Diretrizes
 
-*   Adicione um sufixo a `pkgname` com `-cvs`, `-svn`, `-hg`, `-darcs`, `-bzr`, `-git` etc. a menos que o pacote obtenha uma versão especifíca.
+*   Adicione um sufixo a `pkgname` com `-cvs`, `-svn`, `-hg`, `-darcs`, `-bzr`, `-git` etc. a menos que o pacote obtenha uma versão específica.
 
 *   Se o pacote resultante for diferente depois de alterar as dependências, URL, fontes, etc., aumentar o `pkgrel` é obrigatório. Tocar no `pkgver` não é.
 
@@ -65,7 +69,7 @@ source=('[pasta::][vcs+]url[#fragmento]')
 Um exemplo de vetor fonte de Git:
 
 ```
-source=('nome_projeto::git+http://url_projeto#branch=ramo_projeto')
+source=('nome_projeto::git+https://url_projeto#branch=ramo_projeto')
 
 ```
 
@@ -245,3 +249,5 @@ prepare() {
 }
 
 ```
+
+O motivo para fazer dessa forma é explicado em [[1]](http://sprunge.us/HKdJ?md).

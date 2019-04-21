@@ -312,7 +312,7 @@ Running the drivers in **efi-mode** requires setting some PCI registers before t
 For controlling the fans I recommend using mbpfan from the AUR ([mbpfan-git](https://aur.archlinux.org/packages/mbpfan-git/)), reasons being is that from my experience fan control isn't very great on Arch Linux by default and fans always run really loud without this package! Once you install that from the AUR add it to startup!
 
 ```
-# systemctl mbpfan.service
+# systemctl enable mbpfan.service
 
 ```
 

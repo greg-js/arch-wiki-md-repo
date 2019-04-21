@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=561475) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=568394) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -45,17 +45,19 @@ As URLs de download vinculadas do site do PyPI incluem um hash imprevisível que
 
 	Pacote fonte
 
-	`https://files.pythonhosted.org/packages/source/${_name::1}/${_name}/${_name}-${pkgver}.tar.gz`
+	`https://files.pythonhosted.org/packages/source/${_name::1}/$_name/$_name-$pkgver.tar.gz`
 
-	Pacote wheel bilingual (compatível com Python 2 e Python 3)
+	Pacote wheel Python puro
 
-	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/$_name-$pkgver-py2.py3-none-any.whl`
+	`https://files.pythonhosted.org/packages/py2.py3/${_name::1}/$_name/${_name/-/_}-$pkgver-py2.py3-none-any.whl` (Bilíngue compatível com Python 2 e Python 3):`https://files.pythonhosted.org/packages/py3/${_name::1}/$_name/${_name/-/_}-$pkgver-py3-none-any.whl` (Python 3 apenas)
+
+	Note que o nome da distribuição pode conter traços, enquanto sua representação em um nome de arquivo wheel não pode (eles são convertidos em sublinhados).
 
 	Pacote wheel específico para arquitetura
 
-	neste exemplo para `source_x86_64=('...')`. Também `_py=py36` pode ser usado para não repetir a versão do python:
+	neste exemplo para `source_x86_64=('...')`. Também `_py=py37` pode ser usado para não repetir a versão do python:
 
-	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/$_name-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
+	`https://files.pythonhosted.org/packages/$_py/${_name::1}/$_name/{_name/-/_}-$pkgver-$_py-${_py}m-manylinux1_x86_64.whl`
 
 Note que uma variável personalizada `**$_name**` é usada em vez de `pkgname` já que nomes de pacotes python são geralmente prefixados com `python-`. Essa variável pode ser definida genericamente da seguinte forma:
 
@@ -142,7 +144,7 @@ build() {
 }
 
 package_python-foo() {
-    depends=("python2")
+    depends=("python")
     cd "$srcdir/foo-$pkgver"
     python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
 }

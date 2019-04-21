@@ -27,9 +27,10 @@ This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.
     *   [4.1 Create new table](#Create_new_table)
     *   [4.2 Create partitions](#Create_partitions)
     *   [4.3 Write changes to disk](#Write_changes_to_disk)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Sort partitions](#Sort_partitions)
-*   [6 See also](#See_also)
+*   [5 Moving partitions](#Moving_partitions)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Sort partitions](#Sort_partitions)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -126,6 +127,19 @@ Repeat this procedure until you have the partitions you desire.
 ### Write changes to disk
 
 Write the table to disk and exit via the `w` command.
+
+## Moving partitions
+
+**Warning:** Partitions can only be moved while offline. Because moving a partition requires the whole partition to be rewritten on disk, it is a slow and potentially hazardous operation. Backups are strongly recommended! According to the *sfdisk* man page, "this operation is risky and not atomic."
+
+In order to move a partition, you need to have free space available where the partition will be moved. If necessary, you can make room by shrinking your partitions and the filesystems on them. See [Parted#Shrinking partitions](/index.php/Parted#Shrinking_partitions "Parted"). To relocate a partition:
+
+```
+# echo '+*sectors*,' | sfdisk --move-data *device* -N *number*
+
+```
+
+Where `*sectors*` is the number of sectors to move the partition (the `*+*` indicates moving it forward), `*device*` is the device that holds the partition, and `*number*` is the partition number. Note that if you add a new partition in the middle or at the beginning of your disk, you will likely want to renumber the partitions. See [#Sort partitions](#Sort_partitions) or the "extra functionality" mode of *fdisk*.
 
 ## Tips and tricks
 

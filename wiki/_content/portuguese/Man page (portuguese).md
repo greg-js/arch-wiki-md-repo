@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=564584) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=568922) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,18 +19,21 @@ Apesar de seu escopo, páginas man são projetadas para serem documentos autocon
 *   [1 Acessando páginas man](#Acessando_páginas_man)
 *   [2 Formato](#Formato)
 *   [3 Pesquisando por manuais](#Pesquisando_por_manuais)
-*   [4 Largura de página](#Largura_de_página)
-*   [5 Lendo páginas man locais](#Lendo_páginas_man_locais)
-    *   [5.1 Aplicativos de visualização](#Aplicativos_de_visualização)
-    *   [5.2 Conversão para HTML](#Conversão_para_HTML)
-        *   [5.2.1 mandoc](#mandoc)
-        *   [5.2.2 man2html](#man2html)
-        *   [5.2.3 man -H](#man_-H)
-        *   [5.2.4 roffit](#roffit)
-    *   [5.3 Conversão para PDF](#Conversão_para_PDF)
-*   [6 Páginas man online](#Páginas_man_online)
-*   [7 Páginas man notáveis](#Páginas_man_notáveis)
-*   [8 Veja também](#Veja_também)
+    *   [3.1 Compilando o cache de manuais com mandb](#Compilando_o_cache_de_manuais_com_mandb)
+    *   [3.2 Pesquisando por expressões nos manuais](#Pesquisando_por_expressões_nos_manuais)
+*   [4 Obtendo descrições de uma linha com whatis](#Obtendo_descrições_de_uma_linha_com_whatis)
+*   [5 Largura de página](#Largura_de_página)
+*   [6 Lendo páginas man locais](#Lendo_páginas_man_locais)
+    *   [6.1 Aplicativos de visualização](#Aplicativos_de_visualização)
+    *   [6.2 Conversão para HTML](#Conversão_para_HTML)
+        *   [6.2.1 mandoc](#mandoc)
+        *   [6.2.2 man2html](#man2html)
+        *   [6.2.3 man -H](#man_-H)
+        *   [6.2.4 roffit](#roffit)
+    *   [6.3 Conversão para PDF](#Conversão_para_PDF)
+*   [7 Páginas man online](#Páginas_man_online)
+*   [8 Páginas man notáveis](#Páginas_man_notáveis)
+*   [9 Veja também](#Veja_também)
 
 ## Acessando páginas man
 
@@ -52,15 +55,6 @@ $ man 5 passwd
 
 para ler a página man sobre `/etc/passwd`, em vez do utilitário `passwd`.
 
-Descrições de uma linha podem ser exibidas usando o comando `whatis`. Por exemplo, para uma descrição breve das seções de página man sobre `ls`, digite:
-
- `$ whatis ls` 
-```
-ls (1p)              - list directory contents
-ls (1)               - list directory contents
-
-```
-
 ## Formato
 
 Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a navegá-las. Veja a seção intitulada "Sections within a manual page" em [man-pages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/man-pages.7).
@@ -69,6 +63,8 @@ Todas as páginas man seguem um formato razoavelmente padronizado, o que ajuda a
 
 Apesar do utilitário `man` permitir que usuários exibam páginas man, e pesquisem seu conteúdo via *less*, um problema surge quando não se sabe o nome exato da página de manual desejada em primeiro lugar! Por sorte, as opções `-k` ou `--apropos` podem ser usadas para pesquisar pelas descrições de página de manual por ocorrências de uma palavra-chave dada.
 
+### Compilando o cache de manuais com mandb
+
 O recurso de pesquisa é fornecido por um cache dedicado, do contrário todas as pesquisa retornariam resultado *nada apropriado*. Por padrão, manutenção daquele cache é lidado por `man-db.service`, o qual periodicamente é ativado por `man-db.timer`. Você pode manualmente (re)gerar o cache ou atualizá-lo executando:
 
 ```
@@ -76,7 +72,9 @@ O recurso de pesquisa é fornecido por um cache dedicado, do contrário todas as
 
 ```
 
-Agora, você pode começar sua pesquisa. Por exemplo, para pesquisar por páginas man relacionadas a "password":
+### Pesquisando por expressões nos manuais
+
+Por exemplo, para pesquisar por páginas man relacionadas a "password":
 
 ```
 $ man -k password
@@ -103,6 +101,17 @@ Se você deseja fazer uma pesquisa mais profunda correspondendo palavras-chave e
 
 ```
 $ man -K password
+
+```
+
+## Obtendo descrições de uma linha com whatis
+
+Descrições de uma linha podem ser exibidas usando o comando `whatis`. Por exemplo, para uma descrição breve das seções de página man sobre `ls`, digite:
+
+ `$ whatis ls` 
+```
+ls (1p)              - list directory contents
+ls (1)               - list directory contents
 
 ```
 
@@ -218,7 +227,7 @@ Há vários bancos de dado online de páginas man, incluindo:
 *   [Páginas man do DragonFlyBSD](https://leaf.dragonflybsd.org/cgi/web-man)
 *   [Páginas man do FreeBSD](https://www.freebsd.org/cgi/man.cgi)
 *   [Páginas man do NetBSD](http://netbsd.gw.com/cgi-bin/man-cgi)
-*   [Páginas man do OpenBSD](https://www.openbsd.org/cgi-bin/man.cgi)
+*   [Páginas man do OpenBSD](https://man.openbsd.org)
 *   [Páginas man do Mac OS X](https://developer.apple.com/documentation/Darwin/Reference/ManPages/index.html)
 *   [Manual do Plan 9 — Volume 1](http://man.cat-v.org/plan_9/)
 *   [Manual do Inferno — Volume 1](http://man.cat-v.org/inferno/)

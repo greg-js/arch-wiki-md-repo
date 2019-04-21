@@ -98,7 +98,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad A485 | 2018.12 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Touch Pad/Trackpoint (yes), Webcam (yes) | bluetooth does not work when activating [aptop Mode Tools](/index.php?title=Aptop_Mode_Tools&action=edit&redlink=1 "Aptop Mode Tools (page does not exist)") `runtime-pm` module |
+| Lenovo ThinkPad A485 | 2018.12 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Touch Pad/Trackpoint (yes), Webcam (yes) | bluetooth does not work when activating [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") `runtime-pm` module |
 
 #### P series
 
@@ -335,7 +335,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 
 *   ClickPad: the whole trackpad clicks, and disabling the trackpad using older versions of synclient makes the trackpoint essentially unusable. This has been resolved in newer versions of [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
     *   See [this article](http://who-t.blogspot.com.au/2014/03/xorg-synaptics-support-for-lenovo-t440.html) and [previous version](http://who-t.blogspot.com.au/2013/12/lenovo-t440-touchpad-button.html).
-    *   Install [xf86-input-synlx40](https://aur.archlinux.org/packages/xf86-input-synlx40/) and [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/) for alternative drivers.
+    *   Install [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/) for alternative drivers.
 *   Audio:
     *   HDMI audio is the default audio output device. Consult the [ALSA](/index.php/ALSA "ALSA") page for details on changing the default.
     *   As the X100e/Mini10, it's possible to mute the headset and speaker outputs separately to the master. Muting the speaker output improves bass output on the headset port.

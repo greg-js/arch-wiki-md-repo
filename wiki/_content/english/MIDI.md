@@ -126,7 +126,7 @@ $ aplaymidi -p 29:0 midi_file.mid
 
 #### DeaDBeeF
 
-You can play MIDI files in [deadbeef](https://www.archlinux.org/packages/?name=deadbeef) player after installing and configuring *freepats.cfg* which is provided by [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats). See [how to configure freepats.](/index.php/Timidity#Freepats "Timidity") You can also change the *freepats.cfg* file location in DeaDBeeF by going to *Edit > Preferences > Plugins > WildMidi Player > Configure*.
+You can play MIDI files in [deadbeef](https://www.archlinux.org/packages/?name=deadbeef) player after installing and configuring *freepats.cfg* which is provided by [freepats-general-midi](https://www.archlinux.org/packages/?name=freepats-general-midi). See [Timidity#Freepats](/index.php/Timidity#Freepats "Timidity"). You can also change the *freepats.cfg* file location in DeaDBeeF by going to *Edit > Preferences > Plugins > WildMidi Player > Configure*.
 
 #### GStreamer-based players
 

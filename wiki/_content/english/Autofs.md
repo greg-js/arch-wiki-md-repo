@@ -131,11 +131,11 @@ To mount a NFS share on server_name called /srv/shared_dir to another computer n
 Add the following to `/etc/autofs/auto.master`:
 
 ```
-/media/[my_server] /etc/autofs/auto.[my_server] --timeout=60 --ghost
+/media/[my_server] /etc/autofs/auto.[my_server] --timeout 60 --browse
 
 ```
 
-where `--timeout` defines how many seconds to wait before the file system is unmounted. The `--ghost` option creates empty folders for each mount-point in the file in order to prevent timeouts, if a network share cannot be contacted.
+where `--timeout` defines how many seconds to wait before the file system is unmounted. The `--browse` option creates empty folders for each mount-point in the file in order to prevent timeouts, if a network share cannot be contacted.
 
 Next create a file `/etc/autofs/auto.[my_server]`
 

@@ -39,7 +39,7 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
 
 By default, it monitors CPU temperature using available CPU digital temperature sensors and maintains CPU temperature under control, before HW takes aggressive correction action. If there is a skin temperature sensor in thermal sysfs, then it tries to keep skin temperature under 45C.
 
-The associated systemd unit is `thermald.service`, which should be [started and enabled](/index.php/Systemd#Using_units "Systemd").
+The associated systemd unit is `thermald.service`, which should be [started](/index.php/Start "Start") and [enabled](/index.php/Enable "Enable").
 
 ### i7z
 
@@ -65,7 +65,7 @@ The configuration file for *cpupower* is located in `/etc/default/cpupower`. Thi
 | Module | Description |
 | intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (Sandy Bridge and newer) processors. |
 | acpi-cpufreq | CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports the Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module). |
-| speedstep-lib | CPUFreq driver for Intel SpeedStep-enabled processors (mostly Atoms and older Pentiums (< 3)) |
+| speedstep-lib | CPUFreq driver for Intel SpeedStep-enabled processors (mostly Atoms and older Pentiums (before III)) |
 | powernow-k8 | CPUFreq driver for K8/K10 Athlon 64/Opteron/Phenom processors. Since Linux 3.7 'acpi-cpufreq' will automatically be used for more modern CPUs from this family. |
 | pcc-cpufreq | This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some ProLiant servers. |
 | p4-clockmod | CPUFreq driver for Intel Pentium 4/Xeon/Celeron processors which lowers the CPU temperature by skipping clocks. (You probably want to use a SpeedStep driver instead.) |
@@ -88,7 +88,7 @@ $ cpupower frequency-info
 
 In rare cases, it may be necessary to manually set maximum and minimum frequencies.
 
-To set the maximum clock frequency (*clock_freq* is a clock frequency with units: GHz, MHz):
+To set the maximum clock frequency (`*clock_freq*` is a clock frequency with units: GHz, MHz):
 
 ```
 # cpupower frequency-set -u *clock_freq*
@@ -154,6 +154,8 @@ Alternatively, you can activate a governor on every available CPU manually:
 
 ```
 
+where `*governor*` is the name of the governor, mentioned in the above table, that you want to activate.
+
 **Tip:** To monitor cpu speed in real time, run:
 ```
 $ watch grep \"cpu MHz\" /proc/cpuinfo
@@ -200,15 +202,11 @@ To set the value, run:
 
 #### Make changes permanent
 
-To have the desired scaling enabled at boot, [kernel module options](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
+To have the desired scaling enabled at boot, [kernel module options](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
 
 For example, to set the scaling governor of the CPU core `0` to performance while the scaling driver is `acpi_cpufreq`, create the following udev rule:
 
- `/etc/udev/rules.d/50-scaling-governor.rules` 
-```
-SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+=" /bin/sh -c ' echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor ' "
-
-```
+ `/etc/udev/rules.d/50-scaling-governor.rules`  `SUBSYSTEM=="module", ACTION=="add", KERNEL=="acpi_cpufreq", RUN+="/bin/sh -c 'echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor'"` 
 
 To have the rule already applied in the *initramfs*, follow the example at [udev#Debug output](/index.php/Udev#Debug_output "Udev").
 

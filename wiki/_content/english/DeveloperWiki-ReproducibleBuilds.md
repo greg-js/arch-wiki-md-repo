@@ -51,93 +51,62 @@ If you are interested in the code which runs the continuous reproducing environm
 
 ## Reproducible Build Arch Update 09-12-2018
 
-As Bernhard did a wonderful writeup for the rpm ecosystem ahead of the Paris summit, we thought we should attempt the same thing. We have summarized the work Arch Linux has done towards reproducible builds the past year(s). Hopefully it will be somewhat interesting! Feel free to ask if there are any questions.
+Posted to the [*rb-general*](https://www.mail-archive.com/rb-general@lists.reproducible-builds.org/msg00104.html) mailing list:
 
-1\. Pacman 2\. BUILDINFO 3\. The repro tool 4\. Reproducible Builds environment 5\. Packaging
-
-### Pacman
-
-Support for SOURCE_DATE_EPOCH was added to makepkg in May of 2017 [1]. makepkg is the tool used to create packages from PKGBUILD files. After some testing it was later discovered that we also needed to make sure that files inside packages need to have the correct time, as build artifacts sometimes embed the timestamps [2]. In May 2018 we released pacman 5.1.0 which included support for reproducible builds.
-
-[1]: [https://git.archlinux.org/pacman.git/commit/?id=d30878763ce1b5be453b563f2729d7333242e79b](https://git.archlinux.org/pacman.git/commit/?id=d30878763ce1b5be453b563f2729d7333242e79b) [2]: [https://git.archlinux.org/pacman.git/commit/?id=4dae3fde17d663bf39a17978c2ee365696a54fb0](https://git.archlinux.org/pacman.git/commit/?id=4dae3fde17d663bf39a17978c2ee365696a54fb0)
-
-### BUILDINFO
-
-Recording of build information in a .BUILDINFO file was added to pacman in 2015[1].
-
-The intial file included:
-
-```
-   - builddir
-   - pkgbuild_sha256sum
-   - buildenv (makepkg configuration option which affects the build 
-
-```
-
-environment)
-
-```
-   - options (options which affect packaging, removing debug symbols, 
-
-```
-
-staticlibs, etc.)
-
-```
-   - installed
-
-```
-
-The initial file was expanded in 2017 with the following fields[2]:
-
-```
-   - format (version of buildinfo file format)
-   - pkgname
-   - pkgbase
-   - pkgver
-   - packager
-   - builddate
-
-```
-
-In 2018 a man page was written which describes the BUILDINFO file [3].
-
-During development of tools to reproduce packages, we discovered the BUILDINFO file was lacking the architecture information of installed packages. As Arch Linux produces packages with different architectures, such as 'x86_64' and 'any', we had to guess the architecture of the package when fetching from our archive. This was subsequently fixed. [4]
-
-[1]: [https://git.archlinux.org/pacman.git/commit/?id=137ea39fa11c321a9c33000ff1b5c6cc3c59b47d](https://git.archlinux.org/pacman.git/commit/?id=137ea39fa11c321a9c33000ff1b5c6cc3c59b47d) [2]: [https://git.archlinux.org/pacman.git/commit/?id=c44c649a5280189ea28a54b82e60fc38279fed23](https://git.archlinux.org/pacman.git/commit/?id=c44c649a5280189ea28a54b82e60fc38279fed23) [3]: [https://git.archlinux.org/pacman.git/commit/?id=a7dbe4635b4af9b5bd927ec0e7a211d1f6c1b0f2](https://git.archlinux.org/pacman.git/commit/?id=a7dbe4635b4af9b5bd927ec0e7a211d1f6c1b0f2) [4]: [https://git.archlinux.org/pacman.git/commit/?id=f173f6d0da3793952691416d80441b46af12fc94](https://git.archlinux.org/pacman.git/commit/?id=f173f6d0da3793952691416d80441b46af12fc94)
-
-### The repro tool
-
-repro is a tool to aid in verification of Arch Linux packages. It creates a chroot, fetches the correct PKGBUILD and installs the needed dependencies as described by a BUILDINFO file.
-
-The tool has the following goals:
-
-```
-   - Easily auditable
-   - Distribution independent
-   - Do not duplicate features from other tools, like reprotest[2].
-
-```
-
-This helps us in making it easier for users, or other interested parties, to audit Arch packages in the future. It is currently very much a work in progress, however it is capable of reproducing archive packages in its current state.
-
-[1]: [https://github.com/archlinux/archlinux-repro](https://github.com/archlinux/archlinux-repro) [2]: [https://salsa.debian.org/reproducible-builds/reprotest](https://salsa.debian.org/reproducible-builds/reprotest)
-
-### Reproducible Builds environment
-
-The continuous reproducing environment has been continuously improved by Holger and numerous others. It now uses a database to render the HTML pages which allows showing the reproducibility status. We have also donated some servers which where sponsored by Private Internet Access to help reproduce packages.
-
-[https://tests.reproducible-builds.org/archlinux/archlinux.html](https://tests.reproducible-builds.org/archlinux/archlinux.html)
-
-### Packaging
-
-As for packaging, Arch tries to be as vanilla as possible and therefore does not patch packages specifically for reproducible builds and tries to upstream the found issues instead. There are some issues with the actual packaging which made packages reproducible, for example convert was used in PKGBUILDs to convert images to a different format mostly for for desktop files. Imagemagick's convert by default is not reproducible since it embeds dates in the converted files, this was fixed in our PKGBUILDs. [1]
-
-Another issue was found using the repro tool with our SVN propsets making it unreproducible, the propsets are now removed from our PKGBUILDs - also due to not being useful anymore. [2]
-
-Apart from these issues, numerous 404 sources have been fixed (since Arch does not mirror the upstream source tarballs) and fixed FTBS packages, especially for the [core] repository.
-
-[1]: [https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/bt747](https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/bt747) [2]: [https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25744.html](https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25744.html)
+> As Bernhard did a wonderful writeup for the rpm ecosystem ahead of the Paris
+> 
+> summit, we thought we should attempt the same thing. We have summarized the work Arch Linux has done towards reproducible builds the past year(s). Hopefully it will be somewhat interesting! Feel free to ask if there are any questions.
+> 
+> 1\. Pacman 2\. BUILDINFO 3\. The repro tool 4\. Reproducible Builds environment 5\. Packaging
+> 
+> ### Pacman
+> 
+> Support for SOURCE_DATE_EPOCH was added to makepkg in May of 2017 [1]. makepkg is the tool used to create packages from PKGBUILD files. After some testing it was later discovered that we also needed to make sure that files inside packages need to have the correct time, as build artifacts sometimes embed the timestamps [2]. In May 2018 we released pacman 5.1.0 which included support for reproducible builds.
+> 
+> [1]: [https://git.archlinux.org/pacman.git/commit/?id=d30878763ce1b5be453b563f2729d7333242e79b](https://git.archlinux.org/pacman.git/commit/?id=d30878763ce1b5be453b563f2729d7333242e79b) [2]: [https://git.archlinux.org/pacman.git/commit/?id=4dae3fde17d663bf39a17978c2ee365696a54fb0](https://git.archlinux.org/pacman.git/commit/?id=4dae3fde17d663bf39a17978c2ee365696a54fb0)
+> 
+> ### BUILDINFO
+> 
+> Recording of build information in a .BUILDINFO file was added to pacman in 2015[1].
+> 
+> The intial file included: - builddir - pkgbuild_sha256sum - buildenv (makepkg configuration option which affects the build environment) - options (options which affect packaging, removing debug symbols, staticlibs, etc.) - installed
+> 
+> The initial file was expanded in 2017 with the following fields[2]: - format (version of buildinfo file format) - pkgname - pkgbase - pkgver - packager - builddate
+> 
+> In 2018 a man page was written which describes the BUILDINFO file [3].
+> 
+> During development of tools to reproduce packages, we discovered the BUILDINFO file was lacking the architecture information of installed packages. As Arch Linux produces packages with different architectures, such as 'x86_64' and 'any', we had to guess the architecture of the package when fetching from our archive. This was subsequently fixed. [4]
+> 
+> [1]: [https://git.archlinux.org/pacman.git/commit/?id=137ea39fa11c321a9c33000ff1b5c6cc3c59b47d](https://git.archlinux.org/pacman.git/commit/?id=137ea39fa11c321a9c33000ff1b5c6cc3c59b47d) [2]: [https://git.archlinux.org/pacman.git/commit/?id=c44c649a5280189ea28a54b82e60fc38279fed23](https://git.archlinux.org/pacman.git/commit/?id=c44c649a5280189ea28a54b82e60fc38279fed23) [3]: [https://git.archlinux.org/pacman.git/commit/?id=a7dbe4635b4af9b5bd927ec0e7a211d1f6c1b0f2](https://git.archlinux.org/pacman.git/commit/?id=a7dbe4635b4af9b5bd927ec0e7a211d1f6c1b0f2) [4]: [https://git.archlinux.org/pacman.git/commit/?id=f173f6d0da3793952691416d80441b46af12fc94](https://git.archlinux.org/pacman.git/commit/?id=f173f6d0da3793952691416d80441b46af12fc94)
+> 
+> ### The repro tool
+> 
+> repro is a tool to aid in verification of Arch Linux packages. It creates a chroot, fetches the correct PKGBUILD and installs the needed dependencies as described by a BUILDINFO file.
+> 
+> The tool has the following goals: - Easily auditable - Distribution independent - Do not duplicate features from other tools, like reprotest[2].
+> 
+> This helps us in making it easier for users, or other interested parties, to audit Arch packages in the future. It is currently very much a work in progress, however it is capable of reproducing archive packages in its current state.
+> 
+> [1]: [https://github.com/archlinux/archlinux-repro](https://github.com/archlinux/archlinux-repro) [2]: [https://salsa.debian.org/reproducible-builds/reprotest](https://salsa.debian.org/reproducible-builds/reprotest)
+> 
+> ### Reproducible Builds environment
+> 
+> The continuous reproducing environment has been continuously improved by Holger and numerous others. It now uses a database to render the HTML pages which allows showing the reproducibility status. We have also donated some servers which where sponsored by Private Internet Access to help reproduce packages.
+> 
+> [https://tests.reproducible-builds.org/archlinux/archlinux.html](https://tests.reproducible-builds.org/archlinux/archlinux.html)
+> 
+> ### Packaging
+> 
+> As for packaging, Arch tries to be as vanilla as possible and therefore does not patch packages specifically for reproducible builds and tries to upstream the found issues instead. There are some issues with the actual packaging which made packages reproducible, for example convert was used in PKGBUILDs to convert images to a different format mostly for for desktop files. Imagemagick's convert by default is not reproducible since it embeds dates in the converted files, this was fixed in our PKGBUILDs. [1]
+> 
+> Another issue was found using the repro tool with our SVN propsets making it unreproducible, the propsets are now removed from our PKGBUILDs - also due to not being useful anymore. [2]
+> 
+> Apart from these issues, numerous 404 sources have been fixed (since Arch does not mirror the upstream source tarballs) and fixed FTBS packages, especially for the [core] repository.
+> 
+> [1]: [https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/bt747](https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/bt747)
+> 
+> [2]: [https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25744.html](https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25744.html)
+> — {{{2}}}
 
 ## Agenda meeting 10-01-2018
 

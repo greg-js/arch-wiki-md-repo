@@ -288,32 +288,23 @@ $ ffmpeg -i foo.mpg -vf subtitles=foo.ssa out.mpg
 
 ### Volume gain
 
-Change the audio volume in multiples of 256 where **256 = 100%** (normal) volume. Additional values such as 400 are also valid options.
+Volume gain can be modified through `ffmpeg`'s filter function. Fist select the audio stream by using: `-af` or `-filter:a`, then select the `volume` filter, and then the number that you want to change the stream by.
+
+**Example**:
 
 ```
--vol 256  = 100%
--vol 512  = 200%
--vol 768  = 300%
--vol 1024 = 400%
--vol 2048 = 800%
+$ ffmpeg -i input.flac -af volume=3.0 ouput.flac
 
-```
-
-To double the volume **(512 = 200%)** of an [MP3](https://en.wikipedia.org/wiki/Mp3 "wikipedia:Mp3") file:
-
-```
-$ ffmpeg -i *file*.mp3 -vol 512 *louder_file*.mp3
+   # -af colume=0.5   Half volume gain
+   # -af volume=1.0   Unchanged volume gain
+   # -af volume=2.0   Double volume gain
 
 ```
 
-To quadruple the volume **(1024 = 400%)** of an [Ogg](https://en.wikipedia.org/wiki/Ogg "wikipedia:Ogg") file:
+**Note:**
 
-```
-$ ffmpeg -i *file*.ogg -vol 1024 *louder_file*.ogg
-
-```
-
-Note that gain metadata is only written to the output file. Unlike mp3gain or ogggain, the source sound file is untouched.
+*   Doubling a file's volume gain, is not the same thing as doubling its volume. You will have to experiment to find the right volume.
+*   ffmpeg writes changes into an output file. So, unlike mp3gain or ogggain, the source file will be left unchanged.
 
 ### Extracting audio
 

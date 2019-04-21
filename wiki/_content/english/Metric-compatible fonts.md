@@ -5,7 +5,11 @@ Related articles
 
 **Metric-compatible fonts** are fonts that match the metrics (i.e. glyph dimensions) of another font (often generics such as Helvetica, Times or Courier). Due to their matching metrics, replacing a font with a [metric-compatible](https://en.wikipedia.org/wiki/metric-compatible "wikipedia:metric-compatible") alternative does not change the formatting of the document or a web page. Such fonts are often developed for FOSS systems to display pages correctly.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 List of metric-compatible fonts](#List_of_metric-compatible_fonts)
 *   [2 Generic Families](#Generic_Families)
@@ -32,9 +36,9 @@ Related articles
 In the following table, commonly-specified families are shown in **bold**. This table is roughly based on [fontconfig](/index.php/Fontconfig "Fontconfig")'s [<tt>30-metric-aliases.conf</tt>](https://cgit.freedesktop.org/fontconfig/tree/conf.d/30-metric-aliases.conf) and Wikipedia pages for individual fonts.
 
 <caption>"Core fonts for the web" compatibilities</caption>
-| [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice |
-| **Helvetica** | Nimbus Sans, A030 | TeX Gyre Heros | FreeSans | MS Sans Serif (Helv) | **Arial** | Liberation Sans | Arimo | Albany |
-| **Times** | Nimbus Roman | TeX Gyre Termes | FreeSerif | MS Serif (Tms Rmn) | **Times New Roman** | Liberation Serif | Tinos | Thorndale |
+| [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice |
+| **Helvetica** | Nimbus Sans, A030 | TeX Gyre Heros | FreeSans | **Arial** | Liberation Sans | Arimo | Albany |
+| **Times** | Nimbus Roman | TeX Gyre Termes | FreeSerif | **Times New Roman** | Liberation Serif | Tinos | Thorndale |
 | **Courier** | Nimbus Mono | TeX Gyre Cursor | FreeMono | **Courier New** | Liberation Mono | Cousine | Cumberland |
 | **Helvetica Condensed** | Nimbus Sans Narrow | TeX Gyre Heros Cn | **Arial Narrow** | Liberation Sans Narrow |
  **Georgia** | Gelasio |
@@ -78,37 +82,39 @@ In the following table, commonly-specified families are shown in **bold**. This 
 
 The PostScript language defines [35 core fonts](https://en.wikipedia.org/wiki/PostScript_fonts#Core_Font_Set "wikipedia:PostScript fonts") in PostScript 2\. URW released open-source versions/clones of these 35 fonts for [w:ghostscript](https://en.wikipedia.org/wiki/ghostscript "w:ghostscript"), available as [gsfonts](https://www.archlinux.org/packages/?name=gsfonts). Projects including GUST's [TeX Gyre](#TeX_Gyre) and [GNU FreeFont](#GNU_FreeFont) release enhanced versions of these fonts.
 
-PostScript 3 defines an additional 101 fonts, many of which are made available by URW under the AFPL in [GhostPDL](https://ghostscript.com/doc/pcl/urwfonts/). The AFPL bars commercial use. Many of the dual font names are caused by [a batch update](http://git.ghostscript.com/?p=ghostpdl.git;a=commit;h=6f1da3c990ab7de4c3218bf8beff21f19449b284).
+PostScript 3 defines an additional 101 fonts, many of which are made available by URW under the [AFPL](https://en.wikipedia.org/wiki/Aladdin_Free_Public_License "wikipedia:Aladdin Free Public License") in [GhostPDL](https://ghostscript.com/doc/pcl/urwfonts/). The AFPL bars commercial use. Many of the dual font names are caused by [a batch update](http://git.ghostscript.com/?p=ghostpdl.git;a=commit;h=6f1da3c990ab7de4c3218bf8beff21f19449b284).
 
 #### Garamond
 
-URW's Garamond No.8 only provides one optical size (8pt). You may use [EB Garamond](http://www.georgduffner.at/ebgaramond/) for more OpenType features, including the 12pt size.
+URW's Garamond No.8 only provides one optical size (8pt). You may use [EB Garamond](https://en.wikipedia.org/wiki/EB_Garamond "wikipedia:EB Garamond") for more OpenType features, including the 12pt size.
 
 ### Microsoft
 
 Microsoft bundles a number of fonts with Microsoft Windows and Microsoft Office. While some of these fonts are just a cheaper version (or look-alike) of corresponding PostScript families, Cambria and Calibri (default font since MS Office 2007) are independent from other families. Microsoft used to provide many core fonts in its [Core fonts for the Web](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web "wikipedia:Core fonts for the Web") project. Although this project is later unavailable on Microsoft's site, the license terms that allow these fonts to be distributed from third-party sites make packages like [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) possible. See also [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
 
+Prior to the introduction to Arial and Times New Roman, Microsoft used two bitmap fonts called Helv and Tms Rmn in Windows 1.0, each being unlicensed imitations of better-known fonts already covered here. They were later renamed [MS Sans Serif](https://en.wikipedia.org/wiki/MS_Sans_Serif "wikipedia:MS Sans Serif") and [MS Serif](https://en.wikipedia.org/wiki/MS_Serif "wikipedia:MS Serif") starting with Windows 3.1, and MS Sans Serif was eventually vectorized into "Microsoft Sans Serif." Documents using these fonts are rare, but user interfaces that use Microsoft Sans Serif can occasionally be found in [Mono](/index.php/Mono "Mono") libgdiplus applications. It is generally safe to assume these fonts are metric-compatible with Helvetica and Times when trying to replace them.
+
 ## Metric-compatible font projects
 
 ### TeX Gyre
 
-[TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre/) is a remake and extension of 35 base PostScript fonts distributed with Ghostscript ver. 4.00\. The project provides TeX support and also the cross-platform OpenType format of the fonts. A related project, [TeX Gyre Math](http://www.gust.org.pl/projects/e-foundry/tg-math), provides corresponding mathematical OpenType fonts.
+[TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre/) ([tex-gyre-fonts](https://www.archlinux.org/packages/?name=tex-gyre-fonts)) is a remake and extension of the 35 base PostScript fonts distributed with Ghostscript 4.00\. The project provides TeX support and also the cross-platform OpenType format of the fonts. A related project, [TeX Gyre Math](http://www.gust.org.pl/projects/e-foundry/tg-math), provides corresponding mathematical OpenType fonts.
 
 ### GNU FreeFont
 
-[GNU FreeFont](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") is an outline family intended to cover as much of the UCS charset as possible. Most of the Latin characters [are from](https://www.gnu.org/software/freefont/sources/) [URW](#PostScript) fonts. This set of fonts is released under GPL v3+ + FE.
+[GNU FreeFont](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) is an outline family intended to cover as much of the UCS charset as possible. Most of the Latin characters [are from](https://www.gnu.org/software/freefont/sources/) [URW](#PostScript) (Nimbus) fonts. This set of fonts is released under GPL v3+ + FE.
 
 ### Liberation
 
 [Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") provides four families Liberation Sans, Liberation Serif, and Liberation Mono, intended to be metric-compatible with common Microsoft Windows fonts. Since version 2.0.0, this set of fonts is released under SIL OFL, and is based on [#Chrome OS](#Chrome_OS) core fonts. They are available as [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation).
 
-Older, GPL-licensed versions of this font is based on Ascender Corporation's fonts, which is licensed by Red Hat, Inc. These versions of Liberation also includes Liberation Sans Narrow, which corresponds to Arial Narrow.
+Older, GPL-licensed versions of this font is based on Ascender Corporation's fonts, which is licensed by Red Hat, Inc. These versions of Liberation also includes Liberation Sans Narrow, which corresponds to Arial Narrow. This one font is available as [ttf-liberation-sans-narrow](https://aur.archlinux.org/packages/ttf-liberation-sans-narrow/).
 
 ### Google
 
 Google provides a high number of [fonts](https://www.google.com/fonts), including different metric-compatible font families.
 
-[Gelasio](http://sorkintype.com/fonts.html#gel), the Google alternative for Georgia, can be found on [FontLibrary](https://fontlibrary.org/en/font/gelasio) under SIL OFL.
+[Gelasio](http://sorkintype.com/fonts.html#gel) ([ttf-gelasio-ib](https://aur.archlinux.org/packages/ttf-gelasio-ib/)), the Google alternative for Georgia, can be found on [FontLibrary](https://fontlibrary.org/en/font/gelasio) under SIL OFL.
 
 #### Chrome OS
 
@@ -118,13 +124,13 @@ Since glyph mappings from [Symbol](https://en.wikipedia.org/wiki/Symbol_(typefac
 
 #### Noto
 
-[Google's Noto Fonts](https://www.google.com/get/noto/) are available via [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts). They are licensed under SIL OFL. Noto Fonts are designed to supplement glyph coverage for Roboto, the standard typeface for Android, and are vertically (i.e. same line height for the same font size) metric-compatible with Roboto.
+[Google's Noto Fonts](https://www.google.com/get/noto/) are available via [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts). They are licensed under SIL OFL. Noto Fonts are designed to supplement glyph coverage for Roboto ([ttf-roboto](https://www.archlinux.org/packages/?name=ttf-roboto)), the standard typeface for Android, and are vertically (i.e. same line height for the same font size) metric-compatible with Roboto.
 
 ### Other metric-compatible fonts
 
 #### Selawik
 
-[Selawik](https://github.com/Microsoft/Selawik) is an open source replacement for Microsoft's [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") by Microsoft. Unfortunately it does not match Segoe UI's kerning parameters yet.
+[Selawik](https://github.com/Microsoft/Selawik) ([ttf-selawik](https://aur.archlinux.org/packages/ttf-selawik/)) is an open source replacement for Microsoft's [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") by Microsoft. Unfortunately it does not match Segoe UI's kerning parameters yet.
 
 #### Wine Tahoma
 

@@ -588,6 +588,10 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 	[http://furius.ca/xxdiff/](http://furius.ca/xxdiff/) || [xxdiff](https://aur.archlinux.org/packages/xxdiff/)
 
+*   **ydiff** — A Python wrapper to get highlighted output from GNU diff's output or vcs-tracked file/dirs, in either unfied or side-by-side view.
+
+	[https://github.com/ymattw/ydiff](https://github.com/ymattw/ydiff) || [ydiff](https://aur.archlinux.org/packages/ydiff/)
+
 [Vim](/index.php/Vim "Vim") and [Emacs](/index.php/Emacs "Emacs") provide merge functionality with [vimdiff](/index.php/Vim#Merging_files "Vim") and `ediff`.
 
 #### Batch renamers

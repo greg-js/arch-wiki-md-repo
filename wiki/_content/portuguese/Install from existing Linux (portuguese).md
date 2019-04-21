@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=545306) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=567412) na versão em inglês.
 
 Artigos relacionados
 
@@ -101,7 +101,7 @@ A maneira manual é apresentada nas seguintes subseções. A ideia é fazer o [p
 
 O [Pacman](https://git.archlinux.org/pacman.git/) pode ser compilado na maioria das distribuições Linux e usado diretamente no sistema hospedeiro para inicializar o Arch Linux. O [arch-install-scripts](https://git.archlinux.org/arch-install-scripts.git/about/) deve ser executado sem problemas diretamente dos fontes baixados em qualquer distribuição recente.
 
-Algumas distribuições fornecem um pacote pacman em seus repositórios oficiais, que podem ser usados para essa finalidade. Em junho de 2018, o Gentoo e o Fedora são conhecidos por fazer isso. O Fedora também fornece o *arch-install-scripts*.
+Algumas distribuições fornecem um pacote para o *pacman* e/ou *arch-install-scripts* em seus repositórios oficiais, que podem ser usados para essa finalidade. Até fevereiro de 2019, o Gentoo é conhecido por fornecer o pacote *pacman*, e o Alpine Linux e o Fedora são conhecidos por fornecer *pacman* e *arch-install-scripts*.
 
 ### Criando um chroot
 

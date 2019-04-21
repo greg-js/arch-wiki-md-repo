@@ -136,7 +136,7 @@ If you prefer working from terminal, below there are some other options to choos
 
 ### Arduino-CMake
 
-Using [arduino-cmake](https://github.com/arduino-cmake/arduino-cmake) and [CMake](http://www.cmake.org/cmake/resources/software.html) you can build Arduino firmware from the command line using multiple build systems. CMake lets you generate the build system that fits your needs, using the tools you like. It can generate any type of build system, from simple Makefiles, to complete projects for Eclipse, Visual Studio, XCode, etc.
+Using [Arduino-CMake-NG](https://github.com/arduino-cmake/Arduino-CMake-NG) and [CMake](http://www.cmake.org/cmake/resources/software.html) you can build Arduino firmware from the command line using multiple build systems. CMake lets you generate the build system that fits your needs, using the tools you like. It can generate any type of build system, from simple Makefiles, to complete projects for Eclipse, Visual Studio, XCode, etc.
 
 Requirements: [cmake](https://www.archlinux.org/packages/?name=cmake), [arduino](https://www.archlinux.org/packages/?name=arduino), [avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc), [avr-binutils](https://www.archlinux.org/packages/?name=avr-binutils), [avr-libc](https://www.archlinux.org/packages/?name=avr-libc), [avrdude](https://www.archlinux.org/packages/?name=avrdude).
 

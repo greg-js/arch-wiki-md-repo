@@ -24,7 +24,8 @@ X server can only be used with integrated graphics or discrete Nvidia graphics, 
 
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia)
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
-*   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/), [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/), or [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) if bbswitch doesn't support your hardware (see [[1]](https://bbs.archlinux.org/viewtopic.php?id=238389))
+*   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/), [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/),
+    *   or [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) if bbswitch doesn't support your hardware (see [[1]](https://bbs.archlinux.org/viewtopic.php?id=238389))
 *   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) if only for running applications，because running some applications (such as Steam) directly with *nvidia-xrun* does not work well, using a window manager like [openbox](/index.php/Openbox "Openbox") will work better.
 
 ## Configuration

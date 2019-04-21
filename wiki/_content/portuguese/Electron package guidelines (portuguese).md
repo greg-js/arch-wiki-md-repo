@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Electron package guidelines](/index.php/Electron_package_guidelines "Electron package guidelines"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Electron_package_guidelines&diff=0&oldid=563123) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Electron package guidelines](/index.php/Electron_package_guidelines "Electron package guidelines"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Electron_package_guidelines&diff=0&oldid=571335) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -16,6 +16,7 @@ Este documento abrange padrões e diretrizes para escrever [PKGBUILDs](/index.ph
 
 *   [1 Usando o electron do sistema](#Usando_o_electron_do_sistema)
     *   [1.1 Construindo extensões compiladas com o electron do sistema](#Construindo_extensões_compiladas_com_o_electron_do_sistema)
+    *   [1.2 Usando electron-builder com electron do sistema](#Usando_electron-builder_com_electron_do_sistema)
 *   [2 Arquitetura](#Arquitetura)
 *   [3 Estrutura de diretórios](#Estrutura_de_diretórios)
 
@@ -38,7 +39,7 @@ Alguns aplicativos de electron compilaram extensões nativas vinculadas ao *runt
 Alternativamente, você pode remover a dependência de electron do `package.json` e definir as variáveis de ambiente corretas antes de executar o npm:
 
 ```
-export npm_config_target=$(cat /usr/lib/electron/version | tail -c +2)
+export npm_config_target=$(tail -c +2 /usr/lib/electron/version)
 export npm_config_arch=x64
 export npm_config_target_arch=x64
 export npm_config_disturl=[https://atom.io/download/electron](https://atom.io/download/electron)
@@ -51,6 +52,19 @@ HOME="$srcdir/.electron-gyp" npm install
 Configure `HOME` para um caminho dentro do `$srcdir` para que o processo de compilação não coloque nenhum arquivo em seu diretório real `HOME`. Certifique-se de ajustar o caminho para todos os comandos adicionais que fazem uso do cache `.electron-gyp`.
 
 (mais detalhes [aqui](https://electronjs.org/docs/tutorial/using-native-node-modules)).
+
+### Usando electron-builder com electron do sistema
+
+Muitos projetos usam o **electron-builder** para compilar e empacotar o arquivo JavaScript e os binários Electron. Por padrão, o electron-builder baixa toda a versão de electron definida no arquivo de gerenciamento de pacotes (por exemplo, `package.json`). Isso pode não ser desejado se você quiser usar o electron do sistema e economizar a largura de banda, já que você vai jogar fora os binários de electron de qualquer maneira. O electron-builder fornece as configurações `electronDist` e `electronVersion`, para especificar um caminho personalizado de Electron e a versão para a qual o aplicativo é empacotado, respectivamente.
+
+Encontre o arquivo de configuração do electron-builder (por exemplo, `electron-builder.json`) e adicione as seguintes configurações:
+
+*   `electronDist` com `/usr/lib/electron` para [electron](https://www.archlinux.org/packages/?name=electron) ou `/usr/lib/electron2` para [electron2](https://www.archlinux.org/packages/?name=electron2)
+*   `electronVersion` com o conteúdo de `/usr/lib/electron/version` sem o `v` no início
+
+Pacotes que aplicam isso: [rocketchat-desktop](https://aur.archlinux.org/packages/rocketchat-desktop/) [ubports-installer-git](https://aur.archlinux.org/packages/ubports-installer-git/)
+
+[Configuração do electron-builder](https://www.electron.build/configuration/configuration)
 
 ## Arquitetura
 

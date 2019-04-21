@@ -10,9 +10,14 @@
 
 本页解释了如何配置 **有线** 网络连接。如果你需要设置 **无线** 网络，参见[无线配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")页面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 检查连接](#检查连接)
+    *   [1.1 Ping](#Ping)
 *   [2 设置计算机名](#设置计算机名)
 *   [3 设备驱动程序](#设备驱动程序)
     *   [3.1 检测驱动状态](#检测驱动状态)
@@ -66,29 +71,36 @@
 
 ## 检查连接
 
-基本的安装过程已经创建了正确的网络配置。通过[ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8)检查：
+若要排查网络连接问题，go through the following conditions and ensure that you meet them：
 
- `$ ping -c 3 www.google.com` 
+1.  你的[网络接口](#Network_interfaces)可见并已启用。
+2.  你已连接到网络。网线已接好或者已经[连接到无线局域网](/index.php/Wireless_network_configuration "Wireless network configuration")。
+3.  你的网络接口获得了一个[IP 地址](#IP_addresses)。
+4.  你的[路由表](#Routing_table)设置正确。
+5.  你可以 [ping](#Ping) 通一个本地 IP 地址（例如你的默认网关）。
+6.  你可以 [ping](#Ping) 通一个公网 IP 地址（例如 `8.8.8.8`）。
+7.  [检查是否能解析域名](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names")（例如 `archlinux.org`）。
+
+**提示：** `8.8.8.8` 是谷歌的 DNS 服务器。
+
+### Ping
+
+[ping](https://en.wikipedia.org/wiki/Ping_(networking_utility) 用于测试你是否可连接到某个主机。
+
+ `$ ping www.example.com` 
 ```
-PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
-64 bytes from 74.125.224.146: icmp_req=1 ttl=50 time=437 ms
-
+PING www.example.com (93.184.216.34): 56(84) data bytes
+64 bytes from 93.184.216.34: icmp_seq=0 ttl=56 time=11.632 ms
+64 bytes from 93.184.216.34: icmp_seq=1 ttl=56 time=11.726 ms
+64 bytes from 93.184.216.34: icmp_seq=2 ttl=56 time=10.683 ms
+...
 ```
 
-成功时会收到类似上面的 64 bytes 信息，按 `Control-C` 可以停止ping.
+如上所示，Ping 命令对每个收到的回应都会显示一行信息。详细的解释请阅读 [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) 手册。注意，计算机可以配置为不响应 ICMP 回应请求。[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
 
-**提示：** 参数 `-c 3` 表示执行命令 `ping` 3次 。 参见 [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8)。
+如果没有收到回应，原因可能与你的默认网关配置或者你的网络接入服务商（ISP）有关。你可以运行 [traceroute](/index.php/Traceroute "Traceroute") 以进一步诊断到对端主机的路由。
 
-如果上面的命令说 unknown hosts，意思是你的机器无法进行域名解析。这可能和你的服务提供商或者你的路由器/网关有关。你可以尝试 ping `8.8.8.8` 来验证你的电脑是否能访问 Internet。它是 Google 的主 DNS 服务器，因此它可以视为可信的，通常不会被过滤系统或代理屏蔽。
-
- `$ ping -c 3 8.8.8.8` 
-```
-PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_req=1 ttl=53 time=52.9 ms
-
-```
-
-如果可以 ping `8.8.8.8` 但是不能 ping `www.google.com`, 参考 [resolv.conf](/index.php/Resolv.conf "Resolv.conf") 检查 DNS 配置。还需要查下 `/etc/nsswitch.conf` 中的 `hosts` 行。如果不能 ping 通，请检查网线问题。
+**注意:** 如果你运行 ping 命令时收到一条类似 `ping: icmp open socket: Operation not permitted` 之类的报错信息，请尝试重新安装 [iputils](https://www.archlinux.org/packages/?name=iputils) 软件包。
 
 ## 设置计算机名
 
@@ -429,7 +441,7 @@ PING myhostname (192.168.1.2) 56(84) bytes of data.
 64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
 ```
 
-如果希望其他机器通过主机名访问到这台机器，可以手动修改 `/etc/hosts` 文件或通过一个服务解析此主机名。使用 systemd 时，主机名解析可以通过 `myhostname` nss 模块提供。但是并不是所有的网络服务都被支持 (例如: [[1]](https://bbs.archlinux.org/viewtopic.php?id=176761), [[2]](https://bbs.archlinux.org/viewtopic.php?id=186967))，或者其它客户端使用不同的操作系统解析主机名，这个也无法被 systemd 支持。
+如果希望其他机器通过主机名访问到这台机器，可以手动修改 `/etc/hosts` 文件或通过一个服务解析此主机名。使用 systemd 时，主机名解析可以通过 `myhostname` nss 模块提供。但是并不是所有的网络服务都被支持 (例如: [[2]](https://bbs.archlinux.org/viewtopic.php?id=176761), [[3]](https://bbs.archlinux.org/viewtopic.php?id=186967))，或者其它客户端使用不同的操作系统解析主机名，这个也无法被 systemd 支持。
 
 第一个解决方法是修改 `/etc/hosts`:
 

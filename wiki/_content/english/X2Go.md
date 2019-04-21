@@ -108,7 +108,7 @@ If *D-Bus* fails to start, try using a *Custom desktop* command instead of the d
 
 #### Path issue
 
-It may be that the desktop environment's executable, *startkde*, *startgnome* or *startxfce4* is not in the `$PATH` when logging in using SSH. In this case, do not simply choose the defaults of KDE, Gnome or XFCE but use the full paths to the executable for example `/usr/bin/startxfce4`. You can also start [openbox](/index.php/Openbox "Openbox") or another window manager. You should be asked for your server's password and user name, now and after login you will see the X2Go logo for a short time, and the desktop.
+It may be that the desktop environment's executable, *startkde*, *startgnome* or *startxfce4* is not in the `$PATH` when logging in using SSH. In this case, do not simply choose the defaults of KDE, Gnome or XFCE but use the full paths to the executable, for example `/usr/bin/startxfce4`. You can also start [openbox](/index.php/Openbox "Openbox") or another window manager. You should be asked for your server's password and user name, now and after login you will see the X2Go logo for a short time, and the desktop.
 
 ### No selection screen in x2goclient
 

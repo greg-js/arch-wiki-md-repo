@@ -28,7 +28,7 @@
 | [bolt](https://www.archlinux.org/packages/?name=bolt) | Thunderbolt 3 |
 | [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) | Digitiser/Pen support |
 | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | For external GPU |
-| [compute-runtime](https://aur.archlinux.org/packages/compute-runtime/) | For OpenCL CPU support |
+| [intel-compute-runtime](https://www.archlinux.org/packages/?name=intel-compute-runtime) | For OpenCL CPU support |
 
 ## Suspend
 

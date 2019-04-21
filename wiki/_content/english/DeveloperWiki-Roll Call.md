@@ -122,6 +122,7 @@
 *   Christian Hesse
 *   Christian Rebischke
     *   Security team
+*   Daurnimator
 *   David Runge
     *   Packaging (mainly pro-audio)
 *   Eli Schwartz

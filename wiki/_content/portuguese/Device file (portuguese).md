@@ -1,4 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [Device file](/index.php/Device_file "Device file"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Device_file&diff=0&oldid=564483) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Device file](/index.php/Device_file "Device file"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Device_file&diff=0&oldid=569734) na versão em inglês.
+
+Artigos relacionados
+
+*   [Nomenclatura de dispositivo de bloco persistente](/index.php/Persistent_block_device_naming "Persistent block device naming")
 
 From [Wikipédia](https://en.wikipedia.org/wiki/pt:Arquivos_de_dispositivo "wikipedia:pt:Arquivos de dispositivo"):
 
@@ -15,8 +19,14 @@ No Arch Linux, os nós de dispositivo são gerenciados pelo [udev](/index.php/Ud
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Dispositivos de bloco](#Dispositivos_de_bloco)
-    *   [1.1 lsblk](#lsblk)
-    *   [1.2 wipefs](#wipefs)
+    *   [1.1 Nomes de dispositivos de bloco](#Nomes_de_dispositivos_de_bloco)
+        *   [1.1.1 SCSI](#SCSI)
+        *   [1.1.2 NVME](#NVME)
+        *   [1.1.3 MMC](#MMC)
+        *   [1.1.4 Unidade de disco óptico SCSI](#Unidade_de_disco_óptico_SCSI)
+    *   [1.2 Utilitários](#Utilitários)
+        *   [1.2.1 lsblk](#lsblk)
+        *   [1.2.2 wipefs](#wipefs)
 *   [2 Pseudodispositivos](#Pseudodispositivos)
 *   [3 Veja também](#Veja_também)
 
@@ -24,11 +34,62 @@ No Arch Linux, os nós de dispositivo são gerenciados pelo [udev](/index.php/Ud
 
 [Dispositivos de bloco](https://en.wikipedia.org/wiki/pt:Arquivo_de_dispositivo#Dispositivos_de_bloco "wikipedia:pt:Arquivo de dispositivo") fornecem acesso por buffer a dispositivos de hardware e permitem a leitura e escrita de qualquer tamanho e alinhamento.
 
-O início do nome do dispositivo especifica o tipo de dispositivo de bloco. A maioria dos dispositivos de armazenamento modernos (por exemplo, discos rígidos, [SSDs](/index.php/SSD "SSD") e unidades flash USB) são reconhecidos como discos [SCSI](https://en.wikipedia.org/wiki/pt:SCSI "wikipedia:pt:SCSI") (`sd`). O tipo é seguido por uma letra minúscula a partir de `a` para o primeiro dispositivo (`sda`), `b` para o segundo dispositivo (`sdb`), e assim por diante. [Partições](/index.php/Partition "Partition") *existentes* em cada dispositivo serão listadas com um número a partir de `1` para a primeira partição (`sda1`), `2` para a segunda (`sda2`) e assim por diante. Outros tipos de dispositivos de bloco comuns incluem, por exemplo, `mmcblk` para cartões de memória e `nvme` para dispositivos [NVMe](/index.php/NVMe "NVMe").
+### Nomes de dispositivos de bloco
 
-Veja também [Nomenclatura dispositivo bloco persistente](/index.php/Persistent_block_device_naming "Persistent block device naming").
+O início do nome do dispositivo especifica o subsistema de driver usado do kernel para operar o dispositivo de bloco.
 
-### lsblk
+**Atenção:** Os descritores de nomes do kernel para dispositivos de bloco não são [persistentes](/index.php/Persistent_block_device_naming "Persistent block device naming") e podem alterar cada inicialização, eles não devem ser usados em arquivos de configuração.
+
+#### SCSI
+
+Dispositivos de armazenamento, como discos rígidos, [SSDs](/index.php/SSD "SSD") e unidades flash, que possuem suporte a conexões de [comando SCSI](https://en.wikipedia.org/wiki/SCSI_command "wikipedia:SCSI command") ([SCSI](https://en.wikipedia.org/wiki/pt:SCSI "wikipedia:pt:SCSI"), [SAS](https://en.wikipedia.org/wiki/pt:Serial_Attached_SCSI "wikipedia:pt:Serial Attached SCSI"), [UASP](https://en.wikipedia.org/wiki/USB_Attached_SCSI "wikipedia:USB Attached SCSI")), ATA ([PATA](https://en.wikipedia.org/wiki/pt:Parallel_ATA "wikipedia:pt:Parallel ATA"), [SATA](https://en.wikipedia.org/wiki/pt:Serial_ATA "wikipedia:pt:Serial ATA")) ou [armazenamento em unidade USB](https://en.wikipedia.org/wiki/USB_mass_storage_device_class "wikipedia:USB mass storage device class") são tratadas pelo subsistema de driver SCSI do kernel. Todas elas compartilham o mesmo esquema de nome.
+
+O nome desses dispositivos começa com `sd`. Ele é então seguido por uma letra minúscula começando de `a` para o primeiro dispositivo descoberto (`sda`), `b` para o segundo dispositivo descoberto (`sdb`) e assim por diante. As [partições](/index.php/Partition "Partition") existentes em cada dispositivo serão listadas com o número que lhes é atribuído na tabela de partições, por exemplo, `sda1` para a partição `1`, `sda2` para partição `2` e assim por diante.
+
+Resumo:
+
+*   `/dev/sda` - dispositivo `a`, o primeiro dispositivo descoberto.
+*   `/dev/sda1` - partição `1` no dispositivo `a`.
+*   `/dev/sde` - dispositivo `e`, o quinto dispositivo descoberto.
+*   `/dev/sde7` - partition `7` on device `e`.
+
+#### NVME
+
+O nome dos dispositivos de armazenamento, como [SSDs](/index.php/SSD "SSD"), que estão conectados via [NVM Express](/index.php/NVM_Express "NVM Express") (NVMe) começa com `nvme`. É então seguido por um número iniciando em `0` para o controlador do dispositivo, `nvme0` para o primeiro controlador NVMe descoberto, `nvme1` para o segundo, e assim por diante. A próxima é a letra "n" e um número iniciando em `1` expressando o dispositivo em um controlador, ou seja, `nvme0n1` para o primeiro dispositivo descoberto no primeiro controlador descoberto, `nvme0n2` para o segundo dispositivo descoberto no primeiro controlador descoberto e assim por diante. As [partições](/index.php/Partition "Partition") existentes em cada dispositivo serão listadas com a letra "p" e o número que lhes é atribuído na tabela de partições. Por exemplo, `nvme0n1p` para a partição com o número `1` no primeiro dispositivo descoberto no primeiro controlador descoberto, `nvme0n1p2` para a partição `2`, e assim por diante.
+
+Resumo:
+
+*   `/dev/nvme0n1` - dispositivo `1` no controlador `0`, o primeiro dispositivo descoberto no primeiro controlador descoberto.
+*   `/dev/nvme0n1p1` - partição `1` no dispositivo `1` no controlador `0`.
+*   `/dev/nvme2n5` - dispositivo `5` no controlador `2`, o quinto dispositivo descoberto no terceiro controlador descoberto.
+*   `/dev/nvme2n5p7` - partição `7` no dispositivo `5` no controlador `2`.
+
+#### MMC
+
+[Cartões SD](https://en.wikipedia.org/wiki/pt:Cart%C3%A3o_SD "wikipedia:pt:Cartão SD"), [cartões MMC](https://en.wikipedia.org/wiki/pt:MultiMediaCard "wikipedia:pt:MultiMediaCard") e [dispositivos de armazenamento eMMC](https://en.wikipedia.org/wiki/pt:MultiMediaCard#eMMC "wikipedia:pt:MultiMediaCard") são manipulados pelo driver `mmc` do kernel e o nome desses dispositivos começa com `mmcblk`. É então seguido por um número iniciando em `0` para o dispositivo, ou seja, `mmcblk0` para o primeiro dispositivo descoberto, `mmcblk1` para o segundo dispositivo descoberto e assim por diante. As [partições](/index.php/Partition "Partition") existentes em cada dispositivo serão listadas com a letra "p" e o número que lhes é atribuído na tabela de partições. A partição com o número `1` na tabela de partições seria `mmcblk0p1`, a partição com o número `2` seria `mmcblk0p2`, e assim por diante.
+
+Resumo:
+
+*   `/dev/mmcblk0` - dispositivo `0`, o primeiro dispositivo descoberto.
+*   `/dev/mmcblk0p1` - partição `1` no dispositivo `0`.
+*   `/dev/mmcblk4` - dispositivo `4`, o quinto dispositivo descoberto.
+*   `/dev/mmcblk4p7` - partição `7` no dispositivo `4`.
+
+#### Unidade de disco óptico SCSI
+
+O nome de [unidades de disco óptico](/index.php/Optical_disc_drive "Optical disc drive") (ODDs), que estão conectadas usando uma das interfaces suportadas pelo subsistema de driver [SCSI](#SCSI), começa com `sr`. O nome é então seguido por um número iniciando em `0` para o dispositivo, isto é, `sr0` para o primeiro dispositivo descoberto, `sr1` para o segundo dispositivo descoberto e assim por diante.
+
+[Udev](/index.php/Udev "Udev") também fornece `/dev/cdrom` que é um link simbólico para `/dev/sr0`. O nome sempre será `cdrom` independentemente do tipo de disco suportado ou a mídia inserida.
+
+Resumo:
+
+*   `/dev/sr0` - unidade de disco óptico `0`, a primeira unidade de disco óptico descoberta.
+*   `/dev/sr4` - unidade de disco óptico `4`, a quinta unidade de disco óptico descoberta.
+*   `/dev/cdrom` - um link simbólico para `/dev/sr0`.
+
+### Utilitários
+
+#### lsblk
 
 O pacote [util-linux](https://www.archlinux.org/packages/?name=util-linux) fornece o utilitário [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) para listar dispositivos de blocos, por exemplo:
 
@@ -44,7 +105,7 @@ sda
 
 No exemplo acima, apenas um dispositivo está disponível (`sda`), e esse dispositivo tem três partições (`sda1` para `sda3`), cada uma com um diferente [sistema de arquivos](/index.php/File_system "File system").
 
-### wipefs
+#### wipefs
 
 *wipefs* pode listar ou apagar [sistema de arquivo](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") ou [tabela de partição](/index.php/Partition "Partition") assinaturas (strings mágicas) do dispositivo especificado para tornar as assinaturas invisíveis para [libblkid(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libblkid.3). Ele não apaga os sistemas de arquivos nem quaisquer outros dados do dispositivo.
 

@@ -70,7 +70,7 @@ The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 UEF
 
 An x86_64 UEFI firmware does not include support for launching 32-bit EFI applications (unlike x86_64 Linux and Windows versions which include such support). Therefore the EFI application must be compiled for that specific firmware processor bitness/architecture.
 
-**Note:** The official ISO does not support booting on 32-bit (IA32) UEFI systems, see [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for available workarounds.
+**Note:** The official ISO does not support booting on 32-bit (IA32) UEFI systems, see [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for available workarounds. The installed system will require using a boot loader that supports IA32 UEFI, for example, [GRUB](/index.php/GRUB "GRUB") with the `i386-efi` target.
 
 ### Checking the firmware bitness
 
@@ -470,6 +470,8 @@ menuentry "Arch Linux archiso x86_64 UEFI USB" {
     initrd /arch/boot/intel_ucode.img /arch/boot/x86_64/archiso.img
 }
 ```
+
+Durring installation, in the [boot loader installation step](/index.php/Installation_guide#Boot_loader "Installation guide"), [install GRUB](/index.php/GRUB#Installation_2 "GRUB") using the option `--target=i386-efi`.
 
 ## Testing UEFI in systems without native support
 

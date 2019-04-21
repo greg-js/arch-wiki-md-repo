@@ -8,17 +8,17 @@ Additionally, Jami has a clean separation between daemon and user interface. The
 
 Jami is currently packaged in [community], with some third-party clients in AUR. You can choose between several versions:
 
-*   official Gnome client, weekly/monthly snapshot: [ring-gnome](https://www.archlinux.org/packages/?name=ring-gnome)
+*   official Gnome client, weekly/monthly snapshot: [jami-gnome](https://www.archlinux.org/packages/?name=jami-gnome)
 *   unofficial KDE client, stable version: [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
 *   Gnome client, latest git version: [ring-gnome-git](https://aur.archlinux.org/packages/ring-gnome-git/)
 *   KDE client, latest git version: [ring-kde-git](https://aur.archlinux.org/packages/ring-kde-git/)
 
 ## Usage
 
-You can use the desktop launcher provided by your desktop environment, or run the `ring.cx` command as user:
+You can use the `jami` command as user:
 
 ```
-$ ring.cx
+$ jami
 
 ```
 

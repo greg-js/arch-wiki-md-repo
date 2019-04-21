@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2019-01-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=558317) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2019-04-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=570851) na versão em inglês.
 
 Artigos relacionados
 
@@ -89,7 +89,7 @@ Esse é um bom momento para se certificar o programa está funcionando corretame
 
 ## Criação de um PKGBUILD
 
-Quando `makepkg` é executado, ele procura por um arquivo `PKGBUILD` no diretório de trabalho atual. Se localizar um, ele baixa o código-fonte do software e compilá-lo de acordo com as instruções especificadas no arquivo `PKGBUILD`. As instruções devem ser completamente interpretáveis pelo shell [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash"). Após concluir com sucesso, os binários resultantes e metadados do pacote, isto é, informações de versão e dependências do pacote, são empacotados em um arquivo de pacote `pkgname.pkg.tar.xz`. O pacote recém-criado que pode ser instalado usando `makepkg --install` que vai chamar o pacman em plano de fundo, ou diretamente usando `pacman -U *pkgname.pkg.tar.xz*`.
+Quando `makepkg` é executado, ele procura por um arquivo `PKGBUILD` no diretório de trabalho atual. Se localizar um, ele baixa o código-fonte do software e compilá-o de acordo com as instruções especificadas no arquivo `PKGBUILD`. As instruções devem ser completamente interpretáveis pelo shell [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash"). Após concluir com sucesso, os binários resultantes e metadados do pacote, isto é, informações de versão e dependências do pacote, são empacotados em um arquivo de pacote `pkgname.pkg.tar.xz`. O pacote recém-criado que pode ser instalado usando `makepkg --install` que vai chamar o pacman em plano de fundo, ou diretamente usando `pacman -U *pkgname.pkg.tar.xz*`.
 
 Para começar a compilar um novo pacote, primeiro crie um novo diretório para o pacote e mude o diretório atual para esse novo. Então, um arquivo `PKGBUILD` precisa ser criado: um protótipo de PKGBUILD localizado em `/usr/share/pacman/` pode ser usado ou você pode começar `PKGBUILD` a partir de outro pacote. A última opção pode ser uma boa escolha, se um pacote similar já existir.
 
@@ -109,15 +109,17 @@ Exemplos de PKGBUILDs estão localizados em `/usr/share/pacman/`. Uma explicaç�
 
 Eles contêm caminhos *absolutos*, o que significa que você não tem que se preocupar com seu diretório de trabalho, se você usar essas variáveis adequadamente.
 
-**Nota:** *makepkg*, e portanto as funções `build()` e `package()`, são feitas para serem não interativas. Utilitários interativos ou scripts chamados naquelas funções podem quebrar o *makepkg*, principalmente se for invocada com registro de log de compilação habilitado (`-L`). (Veja [FS#13214](https://bugs.archlinux.org/task/13214).)
+**Nota:** *makepkg*, e portanto as funções `build()` e `package()`, são feitas para serem não interativas. Utilitários interativos ou scripts chamados naquelas funções podem quebrar o *makepkg*, principalmente se for invocada com registro de log de compilação habilitado (`--log`). (Veja [FS#13214](https://bugs.archlinux.org/task/13214).)
 
 ### Funções do PKGBUILD
 
-Há cinco funções, listadas aqui na ordem em que elas são executadas. Com exceção da quinta função, `package()`, a qual é exigida em todo PKGBUILD, se uma função não existir ela é simplesmente ignorada.
+Ao compilar um pacote, o `makepkg` invocará as cinco funções seguintes se elas tiverem sido definidas no PKGBUILD. A função `package()` é exigida em todo PKGBUILD e sempre será invocada. Se alguma das outras funções não estiver definida, o `makepkg` simplesmente ignorará a invocação dessa função.
+
+Durante a compilação, as funções são invocadas na ordem na qual elas são listadas abaixo.
 
 #### prepare()
 
-Com essa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Aplica%C3%A7%C3%A3o_de_patch_no_ABS "Aplicação de patch no ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg -e`), então `prepare()` não é executada.
+Com essa função, comandos que são usados para preparar fontes para compilação são executados, tal como [patching](/index.php/Aplica%C3%A7%C3%A3o_de_patch_no_ABS "Aplicação de patch no ABS"). Essa função é executada após a extração do pacote, antes do [pkgver()](#pkgver()) e a função de compilação. Se a extração for ignorada (`makepkg --noextract`), então `prepare()` não é executada.
 
 **Nota:** (De [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5)) A função é executada no modo `bash -e`, o que significa que qualquer comando que sair com um status não-zero fará com que a função saia.
 
@@ -131,7 +133,7 @@ Isso é particularmente útil se você estiver [fazendo pacote git/svn/hg/etc.](
 
 #### build()
 
-Agora você precisa implementar a função `build()` no arquivo `PKGBUILD`. Essa função usa comandos comuns de shell com sintaxe [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash") para compilar automaticamnete o software e criar um diretório `pkg` para instalar o software. Isso permite que o *makepkg* empacote arquivos sem ter que examinar seu sistema de arquivos.
+Agora você precisa implementar a função `build()` no arquivo `PKGBUILD`. Essa função usa comandos comuns de shell com sintaxe [Bash](https://en.wikipedia.org/wiki/pt:Bash "wikipedia:pt:Bash") para compilar automaticamente o software e criar um diretório chamado `pkg` para instalar o software. Isso permite que o *makepkg* empacote arquivos sem ter que examinar seu sistema de arquivos.
 
 A primeira etapa na função `build()` é alterar para o diretório criado ao descompactar o tarball fonte. *makepkg* vai alterar o diretório atual para `$srcdir` antes de executar a função `build()`. Por tanto, na maioria dos casos, como sugerido no `/usr/share/pacman/PKGBUILD.proto`, o primeiro comando se parece com isso:
 

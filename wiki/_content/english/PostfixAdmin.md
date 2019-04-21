@@ -17,7 +17,7 @@
 
 ## Installation
 
-To use PostfixAdmin, you need a working [web server](/index.php/Web_server "Web server") setup. You can either choose a web server, that can serve the web application directly (such as [Apache](/index.php/Apache "Apache")), or a setup in which a web server (e.g [Nginx](/index.php/Nginx "Nginx")) forwards requests to an application server (e.g. [uwsgi](/index.php/Uwsgi "Uwsgi") or [php-fpm](https://www.archlinux.org/packages/?name=php-fpm)).
+To use PostfixAdmin, you need a working [web server](/index.php/Web_server "Web server") setup. You can either choose a web server, that can serve the web application directly (such as [Apache](/index.php/Apache "Apache")), or a setup in which a web server (e.g [Nginx](/index.php/Nginx "Nginx")) forwards requests to an application server (e.g. [UWSGI](/index.php/UWSGI "UWSGI") or [php-fpm](https://www.archlinux.org/packages/?name=php-fpm)).
 
 For IMAP functionality, refer to [PHP#IMAP](/index.php/PHP#IMAP "PHP").
 

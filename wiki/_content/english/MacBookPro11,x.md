@@ -34,13 +34,14 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
     *   [6.8 Touchpad](#Touchpad)
         *   [6.8.1 Ctrl-Click as Right-Click](#Ctrl-Click_as_Right-Click)
         *   [6.8.2 input-mtrack](#input-mtrack)
-    *   [6.9 Keyboard backlight](#Keyboard_backlight)
-    *   [6.10 Screen backlight](#Screen_backlight)
-    *   [6.11 Suspend](#Suspend)
-    *   [6.12 Powersave](#Powersave)
-    *   [6.13 SD Card Reader](#SD_Card_Reader)
-    *   [6.14 Repurpose the power key](#Repurpose_the_power_key)
-    *   [6.15 Web cam](#Web_cam)
+    *   [6.9 Swap Opt and Command Key](#Swap_Opt_and_Command_Key)
+    *   [6.10 Keyboard backlight](#Keyboard_backlight)
+    *   [6.11 Screen backlight](#Screen_backlight)
+    *   [6.12 Suspend](#Suspend)
+    *   [6.13 Powersave](#Powersave)
+    *   [6.14 SD Card Reader](#SD_Card_Reader)
+    *   [6.15 Repurpose the power key](#Repurpose_the_power_key)
+    *   [6.16 Web cam](#Web_cam)
 *   [7 What does not work](#What_does_not_work)
     *   [7.1 General](#General)
     *   [7.2 Wi-Fi](#Wi-Fi)
@@ -358,6 +359,22 @@ Section "InputClass"
     Option          "VertScrollDelta" "-111"
     Option          "HorizScrollDelta" "-111"
 EndSection
+
+```
+
+### Swap Opt and Command Key
+
+Swapping opt and cmd is supported by the hid_apple module:
+
+```
+$ echo 1 | sudo tee /sys/module/hid_apple/parameters/swap_opt_cmd
+
+```
+
+To make the change permanent add the option to /etc/modprobe.d/hid_apple.conf and rebuild initramfs.
+
+```
+$ echo options hid_apple swap_opt_cmd=1 | sudo tee -a /etc/modprobe.d/hid_apple.conf
 
 ```
 

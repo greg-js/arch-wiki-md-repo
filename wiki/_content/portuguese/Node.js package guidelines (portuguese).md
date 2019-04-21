@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Node.js package guidelines](/index.php/Node.js_package_guidelines "Node.js package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Node.js_package_guidelines&diff=0&oldid=553099) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Node.js package guidelines](/index.php/Node.js_package_guidelines "Node.js package guidelines"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Node.js_package_guidelines&diff=0&oldid=571344) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -8,7 +8,11 @@
 
 Esse documento cobre padrões e diretrizes de escrita [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para pacotes [Node.js](/index.php/Node.js "Node.js").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nomenclatura de pacote](#Nomenclatura_de_pacote)
 *   [2 Usando npm](#Usando_npm)
@@ -63,14 +67,14 @@ npm run packager
 
 Infelizmente, o npm cria referências ao diretório de origem e ao diretório pkg. Este é [um problema conhecido no NPM](https://github.com/npm/npm/issues/12110) e, na verdade, considerado um recurso. No entanto, você pode remover essas referências manualmente, pois elas não são usadas de forma alguma.
 
-Todas as dependências conterão uma referência a `$pkgdir`, no atributo `_where`. Você pode geralmente remover esses atributos com alguma magia do sed da seguinte forma:
+Todas as dependências conterão uma referência a `$pkgdir`, no atributo `_where`. Você pode geralmente remover esses atributos com alguma magia do *sed* da seguinte forma:
 
 ```
  find "$pkgdir" -name package.json -print0 | xargs -0 sed -i '/_where/d'
 
 ```
 
-Seu pacote principal também terá outras referências. A maneira mais fácil de removê-los é remover todas as propriedades sublinhadas, mas isso não é tão fácil com o sed. Em vez disso, você pode usar [jq](https://www.archlinux.org/packages/?name=jq) para obter resultados semelhantes, como segue:
+Seu pacote principal também terá outras referências. A maneira mais fácil de removê-los é remover todas as propriedades sublinhadas, mas isso não é tão fácil com o *sed*. Em vez disso, você pode usar [jq](https://www.archlinux.org/packages/?name=jq) para obter resultados semelhantes, como segue:
 
 ```
 local tmppackage="$(mktemp)"

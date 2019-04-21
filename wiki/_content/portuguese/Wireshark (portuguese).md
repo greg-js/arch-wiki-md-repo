@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=548767) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=570364) na versão em inglês.
 
 O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de código aberto. Ele é usado para solucionar de problemas de rede, análise, desenvolvimento de software e protocolo de comunicação e educação.
 
@@ -14,12 +14,15 @@ O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de
     *   [3.1 Filtrando pacotes TCP](#Filtrando_pacotes_TCP)
     *   [3.2 Filtrando pacotes UDP](#Filtrando_pacotes_UDP)
     *   [3.3 Filtrar pacotes para um endereço IP específico](#Filtrar_pacotes_para_um_endereço_IP_específico)
+    *   [3.4 Excluir pacotes de um endereço IP específico](#Excluir_pacotes_de_um_endereço_IP_específico)
+    *   [3.5 Filtrar pacotes para LAN](#Filtrar_pacotes_para_LAN)
+    *   [3.6 Filtrar pacotes por porta](#Filtrar_pacotes_por_porta)
 
 ## Instalação
 
 [Instale](/index.php/Instale "Instale") o pacote [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) para a GUI do Wireshark ou [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) para apenas a CLI `tshark`.
 
-Para a interface GTK+ obsoleta, instale o pacote [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk). Note que esse pacote será removido no futuro (Wireshark 3.0).
+**Nota:** A interface GTK+ obsoleta foi removida no Wireshark 3.0.
 
 ## Capturando como um usuário normal
 
@@ -65,7 +68,31 @@ $ tshark -f "udp"
 ### Filtrar pacotes para um endereço IP específico
 
 *   Se você quiser ver todo o tráfego indo para um endereço específico, digite o filtro de exibição `ip.dst == 1.2.3.4`, substituindo `1.2.3.4` pelo endereço IP ao qual o tráfego de saída está sendo enviado.
-
 *   Se você quiser ver todo o tráfego de entrada para um endereço específico, digite o filtro de exibição `ip.src == 1.2.3.4`, substituindo `1.2.3.4` pelo endereço IP ao qual o tráfego de entrada está sendo enviado.
-
 *   Se você quiser ver todo o tráfego de entrada ou saída para um endereço específico, digite o filtro de exibição `ip.addr == 1.2.3.4`, substituindo `1.2.3.4` pelo endereço IP relevante.
+
+### Excluir pacotes de um endereço IP específico
+
+```
+ip.addr != 1.2.3.4
+
+```
+
+### Filtrar pacotes para LAN
+
+Para ver apenas tráfego de LAN, nenhum tráfego de internet, execute
+
+```
+ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16
+
+```
+
+### Filtrar pacotes por porta
+
+Veja todo tráfego em 2 portas ou mais:
+
+```
+tcp.port==80||tcp.port==3306
+tcp.port==80||tcp.port==3306||tcp.port==443
+
+```

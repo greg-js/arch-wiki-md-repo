@@ -38,6 +38,7 @@ Related articles
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
     *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
     *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
+    *   [6.7 Docker-machine fails to create virtual machines using the virtualbox driver](#Docker-machine_fails_to_create_virtual_machines_using_the_virtualbox_driver)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -395,6 +396,17 @@ In newer versions of [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienc
  `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
 
 This error does not seems to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
+
+### Docker-machine fails to create virtual machines using the virtualbox driver
+
+In case docker-machine fails to create the VM's using the virtualbox driver, with the following:
+
+```
+VBoxManage: error: VBoxNetAdpCtl: Error while adding new interface: failed to open /dev/vboxnetctl: No such file or directory
+
+```
+
+Simply reload the virtualbox via CLI with `vboxreload`.
 
 ## See also
 

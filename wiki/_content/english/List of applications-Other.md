@@ -590,7 +590,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 *   **Gespeaker** — GTK+ frontend for espeak. It allows you to play a text in many languages with settings for voice, pitch, volume and speed.
 
-	[https://muflone.com/jekyll/gespeaker/english/](https://muflone.com/jekyll/gespeaker/english/) || [gespeaker](https://www.archlinux.org/packages/?name=gespeaker)
+	[https://muflone.com/jekyll/gespeaker/english/](https://muflone.com/jekyll/gespeaker/english/) || [gespeaker](https://aur.archlinux.org/packages/gespeaker/)
 
 *   **KMouth** — Speech synthesizer frontend which enables persons that cannot speak to let their computer speak.
 

@@ -31,7 +31,7 @@ TiMidity++ is a [software synthesizer](https://en.wikipedia.org/wiki/software_sy
 
 You should also install a [SoundFont](https://en.wikipedia.org/wiki/SoundFont "wikipedia:SoundFont") to be able to produce sound. Here is a list of SoundFonts:
 
-*   [timidity-freepats](https://www.archlinux.org/packages/?name=timidity-freepats)
+*   [freepats-general-midi](https://www.archlinux.org/packages/?name=freepats-general-midi)
 *   [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid)
 
 ## Configuration

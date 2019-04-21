@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-01-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=564388) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=569807) na versão em inglês.
 
 Artigos relacionados
 
@@ -44,6 +44,7 @@ Clientes [DHCP](/index.php/DHCP "DHCP") autônomos:
 
 Clientes [VPN](/index.php/VPN "VPN"):
 
+*   [OpenConnect](/index.php/OpenConnect_(Portugu%C3%AAs) "OpenConnect (Português)")
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
 *   [strongSwan](/index.php/StrongSwan "StrongSwan")
 *   [WireGuard](/index.php/WireGuard "WireGuard")

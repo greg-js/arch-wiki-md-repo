@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-03-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=565307) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=570756) na versão em inglês.
 
 Artigos relacionados
 
@@ -29,7 +29,7 @@ Este artigo detalha como instalar e configurar um dispositivo de rede sem fio Br
     *   [4.6 Suprimindo mensagens de console](#Suprimindo_mensagens_de_console)
     *   [4.7 Dispositivo BCM43241 não detectado](#Dispositivo_BCM43241_não_detectado)
     *   [4.8 Conexão está instável com alguns roteadores](#Conexão_está_instável_com_alguns_roteadores)
-    *   [4.9 Nenhum 5GHz para dispositivos BCM4360 (14e4:43a0)](#Nenhum_5GHz_para_dispositivos_BCM4360_(14e4:43a0))
+    *   [4.9 Nenhum 5GHz para dispositivos BCM4360 (14e4:43a0) / BCM43602 (14e4:43ba)](#Nenhum_5GHz_para_dispositivos_BCM4360_(14e4:43a0)_/_BCM43602_(14e4:43ba))
     *   [4.10 Dispositivo funciona de forma intermitente](#Dispositivo_funciona_de_forma_intermitente)
 
 ## Histórico
@@ -71,7 +71,7 @@ O kernel contém dois drivers código abertos embutidos: **brcmfmac** para FullM
 
 Dois drivers de código aberto de engenharia reversa são integrados ao kernel: **b43** e **b43legacy**. O b43 possui suporte aos chipsets Broadcom mais recentes, enquanto o driver b43legacy possui suporte apenas aos primeiros chipsets BCM4301 e BCM4306 rev.2\. Para evitar a detecção errônea do chipset da sua placa WiFi, coloque na [lista negra](/index.php/Blacklist "Blacklist") o driver não utilizado.
 
-Ambos os drivers exigem que o firmware não livre funcione. Instale [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) ou [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/).
+Ambos os drivers exigem que o firmware não livre funcione. Instale [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) ou [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/).
 
 **Note:**
 
@@ -178,7 +178,7 @@ Este dispositivo não será exibido com `lspci` nem `lsusb`; ainda não há solu
 
 Se nenhum outra abordagem ajudar, instale [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) ou use uma [versão anterior](/index.php/Fazendo_downgrade_de_pacotes "Fazendo downgrade de pacotes").
 
-### Nenhum 5GHz para dispositivos BCM4360 (14e4:43a0)
+### Nenhum 5GHz para dispositivos BCM4360 (14e4:43a0) / BCM43602 (14e4:43ba)
 
 O problema parece estar vinculado a um [problema de canal](https://askubuntu.com/questions/749420/wireless-lost-ability-to-use-5ghz-pce-ac68), pelo menos nos Estados Unidos. Alterar o canal sem fio para um número de canal inferior (como 40) parece permitir a conexão a bandas de 5GHz.
 

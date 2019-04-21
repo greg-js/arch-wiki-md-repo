@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=566274) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=570504) na versão em inglês.
 
 Artigos relacionados
 
@@ -132,7 +132,7 @@ Por vezes chamados de "espelhos" *(mirrors)*. Visite o artigo [Espelhos](/index.
 
 *Ports* é um sistema inicialmente usado pelas distribuições BSD consistindo em scripts de compilação que residem em uma árvore de diretório no sistema local. Basicamente, cada *port* contém um script dentro de um diretório intuitivamente nomeado pelo aplicativo terceiro instalável.
 
-O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que gera pacotes que são gerenciáveis de forma limpa pelo *pacman*.
+O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software: *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que gera pacotes que são gerenciáveis de forma limpa pelo *pacman*.
 
 Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos a recompilação com *makepkg*.
 
@@ -150,7 +150,7 @@ Hardware deve ser detectado automaticamente pelo [udev](/index.php/Udev "Udev") 
 
 ### Microcódigo
 
-Processadores podem ter [comportamento falho](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), o que o kernel pode corrigir atualizando o *microcódigo* na inicialização. Veja [Microcódigo](/index.php/Microcode "Microcode") para detalhes.
+Processadores podem ter [comportamento falho](https://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), o que o kernel pode corrigir atualizando o *microcódigo* na inicialização. Veja [Microcódigo](/index.php/Microcode "Microcode") para detalhes.
 
 ### Retendo mensagens de inicialização
 
@@ -272,7 +272,7 @@ Proprietários de mouses avançados ou incomuns podem descobrir que nem todos os
 
 ### Touchpads de laptop
 
-Muitos laptops usam dispositivos de ponteiro "touchpad" [Synaptics](https://www.synaptics.com/) ou [ALPS](http://www.alps.com/). Para esses e vários outros modelos de touchpad você pode usar o driver de entrada do Synaptics ou do libinput; veja [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") ou [libinput](/index.php/Libinput "Libinput") para detalhes de instalação e configuração.
+Muitos laptops usam dispositivos de ponteiro "touchpad" [Synaptics](https://www.synaptics.com/) ou [ALPS](https://www.alps.com/). Para esses e vários outros modelos de touchpad você pode usar o driver de entrada do Synaptics ou do libinput; veja [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") ou [libinput](/index.php/Libinput "Libinput") para detalhes de instalação e configuração.
 
 ### TrackPoints
 

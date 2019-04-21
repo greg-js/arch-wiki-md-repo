@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=563340) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=571041) na versão em inglês.
 
 Artigos relacionados
 
@@ -190,7 +190,7 @@ Agora, copie o arquivo de imagem ISO para o dispositivo. O comando `dd` é simil
 
 ```
 
-Note que `disk*X*` aqui não deve incluir o sufixo `s1` ou, do contrário, o dispositivo USB só será inicializável no modo UEFI e não no legado. Após a conclusão, o macOS reclamar "O disco que você inseriu não podia ser lido por este computador". Selecione 'Ignorar'. O dispositivo USB será inicializável.
+Esse comando será executado sem qualquer mensagem de saída. Para ver o progresso, envie SIGINFO pressionando `Ctrl+t`. Note que `disk*X*` aqui não deve incluir o sufixo `s1` ou, do contrário, o dispositivo USB só será inicializável no modo UEFI e não no legado. Após a conclusão, o macOS reclamar "O disco que você inseriu não podia ser lido por este computador". Selecione 'Ignorar'. O dispositivo USB será inicializável.
 
 ### Usando formatação manual
 
@@ -200,10 +200,9 @@ Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas
 
 **Nota:** Aqui, denotaremos a partição de destino como `/dev/sd**Xn**`. Em qualquer um dos seguintes comandos, ajuste **X** e **n** de acordo com o seu sistema.
 
-*   Certifique-se que o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) está instalado no sistema.
-
-*   Se ainda não tiver feito, crie a tabela de partição e/ou a partição no dispositivo antes de continuar. A partição `/dev/sd**Xn**` deve ser formatada para [FAT32](/index.php/FAT32 "FAT32").
-*   Monte a imagem ISO, monte o sistema de arquivos FAT32 localizado no dispositivo flash USB e copie o conteúdo da imagem ISO para ele. Em seguida, desmonte a imagem ISO, mas mantenha a partição FAT32 montada (isso será usado em etapas subsequentes). Por exemplo:
+*   Se ainda não tiver feito, crie uma [tabela de partição](/index.php/Partition_table "Partition table") em `/dev/sd**X**`.
+*   Se ainda não tiver feito, crie uma partição no dispositivo. A partição `/dev/sd**Xn**` deve ser formatada para [FAT32](/index.php/FAT32 "FAT32").
+*   Monte a imagem ISO, monte o sistema de arquivos FAT32 localizado no dispositivo flash USB e copie o conteúdo da imagem ISO para ele. Em seguida, desmonte a imagem ISO, mas mantenha a partição FAT32 montada (isso pode usado em etapas subsequentes). Por exemplo:
 
 ```
 # mkdir -p /mnt/{iso,usb}
@@ -215,11 +214,11 @@ Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas
 
 ```
 
-Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar, é necessário informar a partição a ser inicializada. Por padrão, o rótulo `ARCH_*AAAAMM*` (com o ano e mês de lançamento apropriado) é usado. Assim, o rótulo da partição precisa ser definido de acordo, por exemplo, usando *gparted*. Alternativamente, você pode mudar este comportamento alterando as linhas terminadas por `archisolabel=ARCH_*AAAAMM*` no arquivo `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (para inicialização de BIOS), e em `/mnt/usb/loader/entries/archiso-x86_64.conf` (para inicialização com UEFI). Para usar um UUID, substitua as porções de linhas com `archiso*dispositivo*=/dev/disk/by-uuid/**SEU-UUID**`. O UUID pode ser recuperado com `blkid -o *valor* -s UUID /dev/sd**Xn**`.
+Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar, é necessário informar a partição a ser inicializada. Por padrão, o rótulo `ARCH_*AAAAMM*` (com o ano e mês de lançamento apropriado) é usado. Assim, o [rótulo do sistema de arquivos](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") precisa ser definido de acordo, por exemplo, usando *gparted*. Alternativamente, você pode mudar este comportamento alterando as linhas terminadas por `archisolabel=ARCH_*AAAAMM*` no arquivo `/mnt/usb/arch/boot/syslinux/archiso_sys.cfg` (para inicialização de BIOS), e em `/mnt/usb/loader/entries/archiso-x86_64.conf` (para inicialização com UEFI). Para usar um UUID, substitua as porções de linhas com `archiso*dispositivo*=/dev/disk/by-uuid/**SEU-UUID**`. O UUID pode ser recuperado com `blkid -o *valor* -s UUID /dev/sd**Xn**`.
 
 **Atenção:** A incompatibilidade de rótulos ou o UUID errado impede a inicialização da mídia criada.
 
-O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o completamente nessa pasta seguindo [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux").
+Os arquivos de inicialização legada do Syslinux são estão pré-instalados em `/mnt/usb/arch/boot/syslinux`. Se você quiser ser capaz de inicializar seu pendrive USB no modo legado, instale o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) e siga as instruções em [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux").
 
 #### No Windows
 

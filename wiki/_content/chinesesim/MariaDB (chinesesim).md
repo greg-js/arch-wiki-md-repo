@@ -44,7 +44,7 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 **Tip:**
 
 *   如果数据库 (位于 `/var/lib/mysql`) 运行在[Btrfs](/index.php/Btrfs "Btrfs")分区之上, 你应当在创建数据库之前禁用 [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") 特性。
-*   如果数据库运行在 [ZFS](/index.php/ZFS "ZFS") 分区之上, 你应该在创建数据库之前参阅 [ZFS#Database](/index.php/ZFS#Database "ZFS") 。
+*   如果数据库运行在 [ZFS](/index.php/ZFS "ZFS") 分区之上, 你应该在创建数据库之前参阅 [ZFS#Databases](/index.php/ZFS#Databases "ZFS") 。
 
 安装Mariadb软件包之后，你必须运行下面这条命令：
 

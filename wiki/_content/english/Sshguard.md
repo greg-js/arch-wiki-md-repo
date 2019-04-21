@@ -53,7 +53,7 @@ You must configure one of the following firewalls to be used with sshguard in or
 sshguard can work with [firewalld](/index.php/Firewalld "Firewalld"). Make sure you have firewalld enabled, configured and setup first. To make sshguard write to your zone of preference, issue the following commands:
 
 ```
-# firewallctl zone "<zone name>" --permanent add rich-rule "rule source ipset=sshguard4 drop"
+# firewall-cmd --permanent --zone=public --add-rich-rule="rule source ipset=sshguard4 drop"
 
 ```
 

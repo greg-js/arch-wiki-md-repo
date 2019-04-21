@@ -38,6 +38,7 @@
     *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
     *   [6.5 Неверная ссылка между устройствами в ядре 4.19.1](#Неверная_ссылка_между_устройствами_в_ядре_4.19.1)
     *   [6.6 Отсутствие CPUACCT в docker с Linux-ck](#Отсутствие_CPUACCT_в_docker_с_Linux-ck)
+    *   [6.7 Docker-machine не может создать виртуальные машины с драйвером virtualbox](#Docker-machine_не_может_создать_виртуальные_машины_с_драйвером_virtualbox)
 *   [7 Docker 0.9.0 — 1.2.x и LXC](#Docker_0.9.0_—_1.2.x_и_LXC)
 *   [8 Смотрите также](#Смотрите_также)
 
@@ -401,6 +402,17 @@ dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid 
  `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
 
 Эта ошибка, похоже, не влияет на демон docker, только на контейнеры. Читайте больше в [Linux-ck#CPUACCT отсутствует в docker](/index.php/Linux-ck#CPUACCT_отсутствует_в_docker "Linux-ck").
+
+### Docker-machine не может создать виртуальные машины с драйвером virtualbox
+
+Если docker-machine не может создать виртуальные машины с драйвером virtualbox и отображает следующую ошибку:
+
+```
+VBoxManage: error: VBoxNetAdpCtl: Error while adding new interface: failed to open /dev/vboxnetctl: No such file or directory
+
+```
+
+Перезагрузите virtualbox из командной строки с помощью команды `vboxreload`.
 
 ## Docker 0.9.0 — 1.2.x и LXC
 

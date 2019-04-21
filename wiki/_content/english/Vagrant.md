@@ -11,7 +11,11 @@ Vagrant has a concept of 'providers', which map to the virtualisation engine and
 
 Vagrant uses a mostly declarative `Vagrantfile` to define virtualised machines. A single Vagrantfile can define multiple machines.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Plugins](#Plugins)
@@ -96,11 +100,11 @@ Vagrant.configure("2") do |config|
     config.vm.define "main" do |config|
         config.vm.box = 'http://bit.ly/vagrant-lxc-wheezy64-2013-10-23'
 
-        config.vm.provider :lxc do |lxc|
+        config.vm.provider :lxc do |lxc|
             lxc.customize 'cgroup.memory.limit_in_bytes', '512M'
         end
 
-        config.vm.provision :shell do |shell|
+        config.vm.provision :shell do |shell|
             shell.path = 'provision.sh'
         end
     end
@@ -126,7 +130,7 @@ Please see and follow [the complete installation guide for Arch Linux](https://g
 
 ## Provisioning
 
-*Provisioners* allow you to automatically install software, alter and automate configurations as part of the vagrant up process. The two most common provisioners are [puppet](https://www.archlinux.org/packages/?name=puppet) from [official repositories](/index.php/Official_repositories "Official repositories") and [chef](https://aur.archlinux.org/packages/chef/) from the [AUR](/index.php/AUR "AUR") Arch User Repository.
+*Provisioners* allow you to automatically install software, alter and automate configurations as part of the vagrant up process. The most common provisioner is [puppet](https://www.archlinux.org/packages/?name=puppet).
 
 ## Base Boxes for Vagrant
 
@@ -150,7 +154,7 @@ Here is a list of places to get all sorts of vagrant base boxes for different pu
 *   [Vagrant Ubuntu Cloud Images](http://cloud-images.ubuntu.com/vagrant/)
     It has been there since Jan, 2013\. For some reason Canonical has NOT officially promoted it yet, may be still in beta. Remember these are vanilla images, NOT very useful without Chef or Puppet.
 
-*   [packer-arch project on Github](https://github.com/elasticdog/packer-arch) provides configuration files to build light Arch Linux Vagrant images from the official iso image, using [packer-io](https://www.archlinux.org/packages/?name=packer-io).
+*   [packer-arch project on Github](https://github.com/elasticdog/packer-arch) provides configuration files to build light Arch Linux Vagrant images from the official iso image, using [packer](https://www.archlinux.org/packages/?name=packer).
 
 ## Troubleshooting
 

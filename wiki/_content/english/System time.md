@@ -27,6 +27,7 @@ Standard behavior of most operating systems is:
     *   [2.2 Set system clock](#Set_system_clock)
 *   [3 Time standard](#Time_standard)
     *   [3.1 UTC in Windows](#UTC_in_Windows)
+        *   [3.1.1 Historical notes](#Historical_notes)
     *   [3.2 UTC in Ubuntu](#UTC_in_Ubuntu)
 *   [4 Time zone](#Time_zone)
     *   [4.1 Setting based on geolocation](#Setting_based_on_geolocation)
@@ -130,11 +131,9 @@ Later, the system clock is set again from the hardware clock by systemd, depende
 
 ### UTC in Windows
 
-**Warning:** This method uses functionality that is buggy in old Windows versions (pre-7) and Microsoft recommends not to use it. See [[1]](https://support.microsoft.com/en-us/kb/2687252) for details. Another bug exists on Windows before Vista SP2 that resets the clock to *localtime* after resuming from the suspend/hibernation state. For *even older* versions of Windows, you might want to read [http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html) - the functionality was not even documented nor officially supported then. For these operating systems, it is recommended to use *localtime*. If you are using newer versions of Windows, you may safely disregard this warning.
+To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") it is recommended to configure Windows to use UTC, rather than Linux to use localtime. (Windows by default uses localtime: See [this](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx).)
 
-One reason users often set the RTC in localtime is to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") ([which uses localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). However, Windows is able to deal with the RTC being in UTC with a simple registry fix. It is recommended to configure Windows to use UTC, rather than Linux to use localtime.
-
-Using `regedit`, add a `DWORD` value with hexadecimal value `1` to the registry:
+It can be done by a simple registry fix: Open `regedit` and add a `DWORD` value for *32-bit* Windows, or `QWORD` for *64-bit* one, with hexadecimal value `1` to the registry:
 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
@@ -148,6 +147,8 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 
 ```
 
+(Replace `DWORD` with `QWORD` for 64-bit Windows.)
+
 Alternatively, create a `*.reg` file (on the desktop) with the following content and double-click it to import it into registry:
 
 ```
@@ -158,7 +159,7 @@ Windows Registry Editor Version 5.00
 
 ```
 
-**Note:** If the above appears to have no effect, and a 64-bit variant of Windows is being used, using a `QWORD` value instead of a `DWORD` value may resolve the issue.
+(Replace `dword` with `qword` for 64-bit Windows.)
 
 Should Windows ask to update the clock due to DST changes, let it. It will leave the clock in UTC as expected, only correcting the displayed time.
 
@@ -170,6 +171,16 @@ If you are having issues with the offset of the time, try reinstalling [tzdata](
 # timedatectl set-timezone America/Los_Angeles
 
 ```
+
+#### Historical notes
+
+For *really old* Windows, the above method fails, due to Windows bugs. More precisely,
+
+*   Before Vista SP2, there is a bug that resets the clock to *localtime* after resuming from the suspend/hibernation state.
+*   For XP and older, there's a bug related to the daylight saving time. See [[1]](https://support.microsoft.com/en-us/kb/2687252) for details.
+*   For *even older* versions of Windows, you might want to read [http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html) - the functionality was not even documented nor officially supported then.
+
+For these operating systems, it is recommended to use *localtime*.
 
 ### UTC in Ubuntu
 

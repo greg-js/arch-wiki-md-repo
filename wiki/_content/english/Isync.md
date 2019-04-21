@@ -16,6 +16,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Automatic synchronization](#Automatic_synchronization)
         *   [4.1.1 Integration with notmuch or mu4e](#Integration_with_notmuch_or_mu4e)
+        *   [4.1.2 Using Path and/or Inbox on NTFS partitions](#Using_Path_and/or_Inbox_on_NTFS_partitions)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSL error](#SSL_error)
         *   [5.1.1 Step #1: Get the certificates](#Step_#1:_Get_the_certificates)
@@ -185,6 +186,12 @@ ExecStartPost=/usr/bin/notmuch new
 You can also index `mu` by changing the `ExecStartPost` line to `ExecStartPost=/usr/bin/mu index`, or to `ExecStartPost=/usr/bin/emacsclient -e '(mu4e-update-index)'` if you are running emacsclient and would like to index `mu4e`.
 
 This modification assumes that you have already setup notmuch or mu/mu4e for your user. If the ExecStart command does not execute successfully, the ExecStartPost command will not execute, so be aware of this!
+
+#### Using Path and/or Inbox on NTFS partitions
+
+Since ntfs partitions will not accept ; in a filename, you need to change your InfoDelimiter and your FieldDelimiter to something else, you can achieve this by globaly (outside any store or channel configuration) changing the later, like below:
+
+ `~/.mbsyncrc`  `FieldDelimiter -` 
 
 ## Troubleshooting
 

@@ -142,7 +142,7 @@ For games that require exceptional amount of mouse skill, adjusting the [mouse p
 
 ### Mouse focus in GNOME
 
-The 'sloppy' and 'mouse' window-focusing modes in [GNOME](/index.php/GNOME "GNOME") are known to cause issues with a variety of games, causing a 'click-through' effect. Users can remedy this problem by switching the focus mode to 'click' (with a tool such as [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), playing in a different desktop environment, or spawing their game in a separate X-session.
+The 'sloppy' and 'mouse' window-focusing modes in [GNOME](/index.php/GNOME "GNOME") are known to cause issues with a variety of games, causing a 'click-through' effect. Users can remedy this problem by switching the focus mode to 'click' (with a tool such as [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), playing in a different desktop environment, or spawing their game in a separate X-session.
 
 ### Binaural Audio with OpenAL
 
@@ -216,7 +216,7 @@ If your system is currently configured to properly insert its own cpu frequency 
 
 Also there are other services where users have reported success getting it to work under Linux (via [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton):
 
-*   [PS Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) — Play PS4, PS3 and PS2 games on PC. Alternatively, you can use emulators (see [Video_game_platform_emulators](/index.php/Video_game_platform_emulators "Video game platform emulators")).
+*   [PS Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) — Play PS4, PS3 and PS2 games on PC. Alternatively, you can use emulators (see [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators")).
 *   [PLAYKEY](https://playkey.net/) — Yet another cloud gaming service.
 
 ## Improving performance

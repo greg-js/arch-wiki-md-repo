@@ -6,7 +6,7 @@ This article is intended to show users how to install Arch remotely via an [SSH]
 
 Boot the target machine into a live Arch environment via the [Live CD/USB image](/index.php/Getting_and_installing_Arch "Getting and installing Arch"): this will log the user in as root.
 
-At this point, setup the network on the target machine as for example suggested in [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide").
+At this point, setup the network on the target machine as for example suggested in [Installation guide#Connect to the internet](/index.php/Installation_guide#Connect_to_the_internet "Installation guide").
 
 Secondly, setup a root password which is needed for an SSH connection, since the default Arch password for root is empty:
 

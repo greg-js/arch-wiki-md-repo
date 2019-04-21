@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [KDE package guidelines](/index.php/KDE_package_guidelines "KDE package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&diff=0&oldid=553068) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [KDE package guidelines](/index.php/KDE_package_guidelines "KDE package guidelines"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&diff=0&oldid=569678) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -55,6 +55,13 @@ Cada pacote deve definir a variável `CMAKE_INSTALL_PREFIX`, mas também temos q
 
 ```
 -DCMAKE_INSTALL_PREFIX=$(kde4-config --prefix)
+
+```
+
+ou para KDE 5:
+
+```
+-DCMAKE_INSTALL_PREFIX=$(kf5-config --prefix)
 
 ```
 
@@ -143,6 +150,6 @@ Os pacotes de temas de plasma devem ser nomeados `plasma5-themes-*nome_do_tema*`
 
 ## Instalação de arquivos de ícones e .desktop
 
-Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman"). Evite usar comando de instalação para esses tipos de arquivos em um `.install`, pois resultaria em desnecessária execução duplicada.
+Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman"). Evite usar comando de instalação para esses tipos de arquivos em arquivos `.install`, pois resultaria em desnecessária execução duplicada.
 
 O pacote [qt4](https://www.archlinux.org/packages/?name=qt4) já depende de [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) e [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), então se seu pacote depender do [qt4](https://www.archlinux.org/packages/?name=qt4), nenhuma outra ação deve ser necessária (isto é, desnecessário adicionar esses pacotes ao vetor de `depends`).

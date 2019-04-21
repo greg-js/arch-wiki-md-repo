@@ -22,8 +22,9 @@ This hardware is substantially different from the [Lenovo ThinkPad Helix 1st Gen
     *   [1.3 Workaround for no wifi connection on resume](#Workaround_for_no_wifi_connection_on_resume)
 *   [2 Sensors](#Sensors)
 *   [3 Touch Screen](#Touch_Screen)
-*   [4 Graphics](#Graphics)
-*   [5 Unresolved Issues](#Unresolved_Issues)
+*   [4 Touch Pad and Pointing Stick](#Touch_Pad_and_Pointing_Stick)
+*   [5 Graphics](#Graphics)
+*   [6 Unresolved Issues](#Unresolved_Issues)
 
 ## Suspend & Resume
 
@@ -98,6 +99,18 @@ $ xset "Wacom HID 501D Finger touch" Gesture off
 ```
 
 To make it permanent, copy `/usr/share/X11/xorg.conf.d/70-wacom.conf` to `/etc/X11/xorg.conf.d/70-wacom.conf` and edit it so the input entries all contain `Option "Gesture" "Off"`.
+
+## Touch Pad and Pointing Stick
+
+After detaching and attaching a Pro Keyboard the mouse stops working in gnome. Probably there is a sync problem. Attempt to load psmouse with "proto=imps" option. To do that, add this line to your `/etc/modprobe.d/modprobe.conf`:
+
+ `/etc/modprobe.d/modprobe.conf`  `options psmouse proto=imps` 
+
+You can test this before making it permanent by:
+
+$ modprobe -r psmouse
+
+$ modprobe psmouse proto=imps
 
 ## Graphics
 

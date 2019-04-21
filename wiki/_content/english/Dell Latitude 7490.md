@@ -152,6 +152,9 @@ Almost everything works:
 *   Contact SmartCard reader
 *   Qualcomm Snapdragon X7 LTE Modem
 *   USB-C (connected to Android phone, was able to charge phone and read files)
+*   USB-C power delivery
+*   USB-C Display port with D6000 docking station (triple screen with dual 4k works) + power delivery
+*   Thunderbolt 3.0 (shows up in gnome-settings, works with Dell TB16 dock (Ethernet, DisplayPort @120hz, USB, power delivery, etc))
 
 ## What doesn't work
 
@@ -161,7 +164,5 @@ Almost everything works:
 ## What was not tested
 
 *   Contactless SmartCard (probably works since it was detected by `pcsc_scan`
-*   USB-C power delivery
 *   DisplayPort Alternate Mode for USB-C
-*   Thunderbolt 3.0 (my SKU doesn't have this)
 *   TPM 2.0 (There is an error in dmesg, `tpm tpm0: A TPM error (2314) occurred attempting the self test`)

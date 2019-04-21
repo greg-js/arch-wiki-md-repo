@@ -391,7 +391,7 @@ Para verificar se o PKGBUILD está quebrado, ou seu sistema está configurado in
 
 ### ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?
 
-Veja [Makepkg (Português)#ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!](/index.php/Makepkg_(Portugu%C3%AAs)#ERRO:_Uma_ou_mais_assinaturas_PGP_não_puderam_ser_verificadas! "Makepkg (Português)").
+Veja [Makepkg (Português)#ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?](/index.php/Makepkg_(Portugu%C3%AAs)#ERRO:_Uma_ou_mais_assinaturas_PGP_não_puderam_ser_verificadas!;_o_que_eu_devo_fazer? "Makepkg (Português)").
 
 ### Como eu crio um PKGBUILD?
 

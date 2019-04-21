@@ -10,7 +10,11 @@ Según [Wikipedia](https://en.wikipedia.org/wiki/es:Unidad_de_disco_%C3%B3ptico 
 
 	*En informática, una unidad de disco óptico es una unidad de disco que usa una luz láser u ondas electromagnéticas cercanas al espectro de la luz como parte del proceso de lectura o escritura de datos desde un archivo a discos ópticos. Algunas unidades solo pueden leer discos, pero las unidades más recientes usualmente son tanto lectoras como grabadoras. Para referirse a las unidades con ambas capacidades se suele usar el término lectograbadora. Los discos compactos (CD), DVD (Disco versátil digital) , y Blu-ray Disc (también conocido como Blu-ray o BD) son los tipos de soportes ópticos más comunes que pueden ser leídos y grabados por estas unidades.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Grabación](#Grabación)
     *   [1.1 Instalar utilidades de grabación](#Instalar_utilidades_de_grabación)

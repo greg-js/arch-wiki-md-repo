@@ -10,6 +10,8 @@ Related articles
 
 [Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) is a [command-line shell](/index.php/Command-line_shell "Command-line shell")/programming language by the [GNU Project](/index.php/GNU_Project "GNU Project"). Its name is a homaging reference to its predecessor, the long-deprecated Bourne shell. Bash can be run on most UNIX-like operating systems, including GNU/Linux.
 
+Bash is the default command-line shell on Arch Linux.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents

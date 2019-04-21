@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=561791) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=571338) na versão em inglês.
 
 Artigos relacionados
 
@@ -31,13 +31,15 @@ Arch Linux oferece suporte oficial às versões de código aberto [OpenJDK](http
 *   [4 Pré-requisitos de pacote para ter suporte a archlinux-java](#Pré-requisitos_de_pacote_para_ter_suporte_a_archlinux-java)
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 MySQL](#MySQL)
-    *   [5.2 Personificar outro gerenciador de janela](#Personificar_outro_gerenciador_de_janela)
-    *   [5.3 Fontes ilegíveis](#Fontes_ilegíveis)
-    *   [5.4 Faltando texto em alguns aplicativos](#Faltando_texto_em_alguns_aplicativos)
-    *   [5.5 Aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente)
-    *   [5.6 Sistema congela ao depurar aplicativos JavaFX](#Sistema_congela_ao_depurar_aplicativos_JavaFX)
-    *   [5.7 Construtor MediaPlayer do JavaFX lança uma exceção](#Construtor_MediaPlayer_do_JavaFX_lança_uma_exceção)
-    *   [5.8 Aplicativos Java não podem abrir links externos](#Aplicativos_Java_não_podem_abrir_links_externos)
+    *   [5.2 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [5.3 Personificar outro gerenciador de janela](#Personificar_outro_gerenciador_de_janela)
+    *   [5.4 Fontes ilegíveis](#Fontes_ilegíveis)
+    *   [5.5 Faltando texto em alguns aplicativos](#Faltando_texto_em_alguns_aplicativos)
+    *   [5.6 Aplicações sem redimensionamento com o WM, menus fechando imediatamente](#Aplicações_sem_redimensionamento_com_o_WM,_menus_fechando_imediatamente)
+    *   [5.7 Sistema congela ao depurar aplicativos JavaFX](#Sistema_congela_ao_depurar_aplicativos_JavaFX)
+    *   [5.8 Construtor MediaPlayer do JavaFX lança uma exceção](#Construtor_MediaPlayer_do_JavaFX_lança_uma_exceção)
+    *   [5.9 Aplicativos Java não podem abrir links externos](#Aplicativos_Java_não_podem_abrir_links_externos)
+    *   [5.10 Erro ao inicializar QuantumRenderer: no suitable pipeline found](#Erro_ao_inicializar_QuantumRenderer:_no_suitable_pipeline_found)
 *   [6 Dicas e truques](#Dicas_e_truques)
     *   [6.1 Melhor renderização de fonte](#Melhor_renderização_de_fonte)
     *   [6.2 Silenciar mensagem 'Picked up _JAVA_OPTIONS' na linha de comando](#Silenciar_mensagem_'Picked_up_JAVA_OPTIONS'_na_linha_de_comando)
@@ -270,6 +272,10 @@ Note também que:
 
 Devido ao fato de que os drivers JDBC costumam usar a porta no URL para estabelecer uma conexão com o banco de dados, ele é considerado "remoto" (ou seja, o MySQL não escuta a porta de acordo com suas configurações padrão), apesar do fato de que eles estão possivelmente executando no mesmo host. Assim, para usar JDBC e MySQL, você deve habilitar o acesso remoto ao MySQL, seguindo as instruções em [MariaDB#Grant remote access](/index.php/MariaDB#Grant_remote_access "MariaDB").
 
+### IntelliJ IDEA
+
+Se você enfrentou o erro `The selected directory is not a valid home for JDK` com o caminho java sdk do sistema, você tem que instalar um novo jdk em octopi ou com pacman, então selecione o novo java sdk como JDK do IntelliJ IDEA.
+
 ### Personificar outro gerenciador de janela
 
 Você pode usar o [wmname](https://www.archlinux.org/packages/?name=wmname) do [suckless.org](https://tools.suckless.org/x/wmname) para fazer a JVM acreditar que você está executando em um gerenciador de janela diferente. Isso pode resolver um problema de renderização das GUIs Java ocorrendo em gerenciadores de janela, como o [Awesome](/index.php/Awesome "Awesome"), [Dwm](/index.php/Dwm "Dwm") ou [Ratpoison](/index.php/Ratpoison "Ratpoison").
@@ -339,6 +345,13 @@ Veja [https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediapla
 ### Aplicativos Java não podem abrir links externos
 
 Se um aplicativo Java não for capaz de abrir um link para, por exemplo seu navegador web, instale [gvfs](https://www.archlinux.org/packages/?name=gvfs). Isso é necessário pelo método Desktop.Action.BROWSE. Veja [[3]](https://bugs.launchpad.net/ubuntu/+source/openjdk-8/+bug/1574879/comments/2)
+
+### Erro ao inicializar QuantumRenderer: no suitable pipeline found
+
+Possíveis problemas / soluções:
+
+*   GTK2 está em falta. Instale [gtk2](https://www.archlinux.org/packages/?name=gtk2)
+*   OpenJFX está em falta. Instale [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx)
 
 ## Dicas e truques
 
@@ -417,4 +430,4 @@ Não configurar isso pode resultar em programa javas não serem desenhados corre
 
 ## Veja também
 
-*   [Introdução à Programação Usando o Java](https://math.hws.edu/javanotes/)
+*   [Introdução à Programação Usando o Java](https://math.hws.edu/javanotes8/)

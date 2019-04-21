@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-01-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=564116) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=568092) na versão em inglês.
 
 Artigos relacionados
 

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System Specification](#System_Specification)
 *   [2 Wired Ethernet](#Wired_Ethernet)
@@ -32,8 +36,6 @@ The Broadcom BCM4313 card requires the [broadcom-wl](https://www.archlinux.org/p
 
 Intel Corporation WiMAX/WiFi Link 6050 Series works out of the box (2.6.34).
 
-For WiMAX requires the kernel 2.6.35, [i2400m-firmware](https://aur.archlinux.org/packages.php?ID=39403), [libeap](https://aur.archlinux.org/packages/libeap/), [wimax-tools](https://aur.archlinux.org/packages/wimax-tools/) and [wimax-network-service](https://aur.archlinux.org/packages/wimax-network-service/) which is available in the AUR.
-
 ## Graphics
 
 *   So far I have not been able to get keyboard/touchpad to work with or without xorg.conf
@@ -63,11 +65,11 @@ lsinput (if you have input-utils installed) will give you something like this
 ```
 /dev/input/event12
   bustype : BUS_ISA
-  vendor  : 0x0
+  vendor  : 0x0
   product : 0x0
   version : 0
-  name    : "iaps"
-  phys    : "isa702/input0"
+  name    : "iaps"
+  phys    : "isa702/input0"
   bits ev : EV_SYN EV_ABS
 
 ```
