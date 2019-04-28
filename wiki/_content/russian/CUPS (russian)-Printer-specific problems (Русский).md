@@ -312,7 +312,7 @@ E515dw
 
 ## Epson
 
-[epson-inkjet-printer-escpr](https://www.archlinux.org/packages/?name=epson-inkjet-printer-escpr) и [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) - это набор драйверов для струйных принтеров Epson Inkjet (ESC/P-R) для Linux..
+[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) и [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) - это набор драйверов для струйных принтеров Epson Inkjet (ESC/P-R) для Linux..
 
 | Принтер | Драйвер/фильтр | Примечание |
 | AcuLaser CX11(NF) | [epson-alcx11-filter](https://aur.archlinux.org/packages/epson-alcx11-filter/) |
@@ -320,16 +320,16 @@ E515dw
 | EP-50V | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | EP-879A |
 | EP-880A |
-| ET-2700 | [epson-inkjet-printer-escpr](https://www.archlinux.org/packages/?name=epson-inkjet-printer-escpr) |
+| ET-2700 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | ET-2750 |
 | ET-3700 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | ET-3750 |
 | ET-4750 |
-| EW-M571T | [epson-inkjet-printer-escpr](https://www.archlinux.org/packages/?name=epson-inkjet-printer-escpr) |
+| EW-M571T | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | EW-M670FT | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L380 | [epson-inkjet-printer-201601w](https://aur.archlinux.org/packages/epson-inkjet-printer-201601w/) |
 | L382 |
-| L4150 | [epson-inkjet-printer-escpr](https://www.archlinux.org/packages/?name=epson-inkjet-printer-escpr) |
+| L4150 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | L4160 |
 | L6160 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | L6170 |
@@ -355,7 +355,7 @@ E515dw
 | WF-7710 |
 | WF-7720 |
 | WF-C869R |
-| XP-446 | [epson-inkjet-printer-escpr](https://www.archlinux.org/packages/?name=epson-inkjet-printer-escpr) |
+| XP-446 | [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) |
 | XP-5100 | [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) |
 | XP-6000 |
 | XP-8500 |

@@ -55,10 +55,6 @@ ConnMan comes with the [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)
 
-*   **connman-notify** — Connman event notification client
-
-	[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)
-
 *   **ConnMan-UI** — GTK3 client applet.
 
 	[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)
@@ -74,10 +70,6 @@ ConnMan comes with the [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 *   **LXQt-Connman-Applet** — LXQt desktop panel applet.
 
 	[https://github.com/lxqt/lxqt-connman-applet](https://github.com/lxqt/lxqt-connman-applet) || [lxqt-connman-applet](https://aur.archlinux.org/packages/lxqt-connman-applet/)
-
-*   **qconnman-ui** — Qt management interface used on O.S. Systems products
-
-	[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)
 
 *   **connman-gtk** — GTK client.
 

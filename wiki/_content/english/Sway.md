@@ -8,38 +8,27 @@
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Status](#Status)
-*   [2 Installation](#Installation)
-*   [3 Starting](#Starting)
-    *   [3.1 From a TTY](#From_a_TTY)
-    *   [3.2 From a display manager](#From_a_display_manager)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Keymap](#Keymap)
-    *   [4.2 Statusbar](#Statusbar)
-    *   [4.3 Wallpaper](#Wallpaper)
-    *   [4.4 Input devices](#Input_devices)
-    *   [4.5 HiDPI](#HiDPI)
-    *   [4.6 Custom keybindings](#Custom_keybindings)
-    *   [4.7 Xresources](#Xresources)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Autostart on login](#Autostart_on_login)
-    *   [5.2 Backlight toggle](#Backlight_toggle)
-    *   [5.3 Screen capture](#Screen_capture)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Application launchers](#Application_launchers)
-    *   [6.2 VirtualBox](#VirtualBox)
-    *   [6.3 Sway socket not detected](#Sway_socket_not_detected)
-    *   [6.4 Incorrect monitor resolution](#Incorrect_monitor_resolution)
-*   [7 See also](#See_also)
-
-## Status
-
-Sway is 100% compatible with i3, aside from several features that only make sense with X11\. A detailed accounting of completed features can be found at the following links:
-
-*   [i3 feature support](https://github.com/SirCmpwn/sway/issues/2#issue-99897933)
-*   [IPC feature support](https://github.com/SirCmpwn/sway/issues/98)
-*   [i3bar compatibility](https://github.com/SirCmpwn/sway/issues/343)
-*   [Airblader fork features](https://github.com/SirCmpwn/sway/issues/307)
+*   [1 Installation](#Installation)
+*   [2 Starting](#Starting)
+    *   [2.1 From a TTY](#From_a_TTY)
+    *   [2.2 From a display manager](#From_a_display_manager)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Keymap](#Keymap)
+    *   [3.2 Statusbar](#Statusbar)
+    *   [3.3 Wallpaper](#Wallpaper)
+    *   [3.4 Input devices](#Input_devices)
+    *   [3.5 HiDPI](#HiDPI)
+    *   [3.6 Custom keybindings](#Custom_keybindings)
+    *   [3.7 Xresources](#Xresources)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Autostart on login](#Autostart_on_login)
+    *   [4.2 Backlight toggle](#Backlight_toggle)
+    *   [4.3 Screen capture](#Screen_capture)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Application launchers](#Application_launchers)
+    *   [5.2 VirtualBox](#VirtualBox)
+    *   [5.3 Sway socket not detected](#Sway_socket_not_detected)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -108,6 +97,8 @@ general {
 
 In both examples, the system-wide installed configuration files has been copied over to the user directory and then modified.
 
+If you want a Polybar like status bar for wayland [waybar](https://www.archlinux.org/packages/?name=waybar) is the better choice.
+
 ### Wallpaper
 
 This line, which can be appended at the end of your sway configuration, sets a background image on all displays (output matches all with name `"*"`):
@@ -136,7 +127,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 Where as the device identifier can be queried with:
 
 ```
-swaymsg -t get_inputs
+$ swaymsg -t get_inputs
 
 ```
 
@@ -156,7 +147,7 @@ output <name> scale <factor>
 You can find your display name with the following command:
 
 ```
-swaymsg -t get_outputs
+$ swaymsg -t get_outputs
 
 ```
 
@@ -175,7 +166,7 @@ swaymsg -t get_outputs
 
 ```
 
-To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
+To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/) or [light](https://www.archlinux.org/packages/?name=light). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
 
 ### Xresources
 
@@ -219,33 +210,34 @@ Capturing the screen can be done using [grim](https://www.archlinux.org/packages
 Take a screenshot of the whole screen:
 
 ```
-grim screenshot.png
+$ grim screenshot.png
 
 ```
 
 Take a screenshot of a part of the screen:
 
 ```
-grim -g "$(slurp)" screenshot.png
+$ grim -g "$(slurp)" screenshot.png
 
 ```
 
 Capture a video of the whole screen:
 
 ```
-wf-recorder -o recording.mp4
+$ wf-recorder -o recording.mp4
 
 ```
 
 Capture a video of a part of the screen:
 
 ```
-wf-recorder -g "$(slurp)"
+$ wf-recorder -g "$(slurp)"
 
 ```
 
 Example of usage with [grim](https://www.archlinux.org/packages/?name=grim), [slurp](https://www.archlinux.org/packages/?name=slurp) and [wl-clipboard](https://www.archlinux.org/packages/?name=wl-clipboard), screenshot directly with Print button to clipboard.
 
+ `~/.config/sway/config` 
 ```
 bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 
@@ -300,12 +292,6 @@ $ export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 ```
 
 To avoid this error, run the command outside of a multiplexer.
-
-### Incorrect monitor resolution
-
-Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The compositor [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
-
-You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries (see [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
 
 ## See also
 

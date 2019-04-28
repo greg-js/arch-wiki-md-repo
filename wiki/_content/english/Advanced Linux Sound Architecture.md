@@ -11,7 +11,11 @@ The [Advanced Linux Sound Architecture](https://en.wikipedia.org/wiki/Advanced_L
 
 Besides the sound device drivers, ALSA also bundles a user space driven library for application developers. They can then use those ALSA drivers for high level API development. This enables direct (kernel) interaction with sound devices through ALSA libraries.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 User privileges](#User_privileges)
@@ -296,7 +300,7 @@ key.!subkeyN valueN;
 
 Using override operation mode, when done correctly, is usually safe, however one should bear in mind, that there might be other necessary keys in a node for proper functioning.
 
-**Warning:** Overriding pcm node itself will most definitely make alsa unusable, since every plugin definition will be deleted. Therefore **do not use !pcm.key** unless you are making a configuration from scratch.
+**Warning:** Overriding pcm node itself will most definitely make alsa unusable, since every plugin definition will be deleted. Therefore **do not use !pcm.key** unless you are making a configuration from scratch.
 
 ##### An example of setting default device using "defaults" node
 
@@ -617,34 +621,6 @@ pcm.plugequal {
 pcm.!default {
     type plug;
     slave.pcm plugequal;
-}
-```
-
-If you have a x86_64-system and are using [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) the sound in flash will not work with the above configuration. The configuration below enables sound in flash, but you have to specify the sound card manually in the line `pcm "hw:0,0"` (use `aplay -l` to list the available sound card and relative card and device number):
-
- `/etc/asound.conf` 
-```
-pcm.dmixer {
-    type dmix
-    ipc_key 2048
-    slave {
-        pcm "hw:0,0"
-        buffer_size 16384
-    }
-}
-
-ctl.equal {
-    type equal;
-}
-
-pcm.equalizer {
-    type equal
-    slave.pcm "plug:dmixer"
-}
-
-pcm.!default {
-    type plug
-    slave.pcm equalizer
 }
 ```
 

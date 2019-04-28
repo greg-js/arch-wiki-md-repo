@@ -10,6 +10,7 @@
 *   [2 Configuration](#Configuration)
 *   [3 Hosting](#Hosting)
     *   [3.1 Apache](#Apache)
+    *   [3.2 Nginx](#Nginx)
 *   [4 Setup](#Setup)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Configuration not found](#Configuration_not_found)
@@ -72,8 +73,8 @@ Create an Apache configuration file:
 
  `/etc/httpd/conf/extra/httpd-postfixadmin.conf` 
 ```
-Alias /postfixadmin "/usr/share/webapps/postfixAdmin/public"
-<Directory "/usr/share/webapps/postfixAdmin/public">
+Alias /postfixadmin "/usr/share/webapps/postfixadmin/public"
+<Directory "/usr/share/webapps/postfixadmin/public">
     DirectoryIndex index.html index.php
     AllowOverride All
     Options FollowSymlinks
@@ -98,6 +99,48 @@ Now, include httpd-postfixadmin.conf to `/etc/httpd/conf/httpd.conf`:
 Include conf/extra/httpd-postfixadmin.conf
 
 ```
+
+### Nginx
+
+Keep im mind that this is a minimal example without TLS encryption. Accessing postfixadmin from anywhere else than the machine running it will expose passwords and user data.
+
+Install [nginx](https://www.archlinux.org/packages/?name=nginx), [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [php-imap](https://www.archlinux.org/packages/?name=php-imap). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx").
+
+You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`
+
+Create nginx config file
+
+ `/etc/nginx/sites-available/postfixadmin.conf` 
+```
+    server {
+      listen 8081;
+      server_name postfixadmin;
+      root            /usr/share/webapps/postfixadmin/public/;
+      index           index.php;
+      charset         utf-8;
+
+      access_log /var/log/nginx/postfixadmin-access.log;
+      error_log /var/log/nginx/postfixadmin-error.log;
+
+      location / {
+        try_files $uri $uri/ index.php;
+      }
+
+      location ~* \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        include       fastcgi_params;
+        fastcgi_pass  unix:/run/php-fpm/php-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_buffer_size 16k;
+        fastcgi_buffers 4 16k;
+      }
+    }
+
+```
+
+Enable the config as described [here](/index.php/Nginx#Managing_server_entries "Nginx").
 
 ## Setup
 

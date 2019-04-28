@@ -19,7 +19,6 @@ This page attempts to list all [programming languages](https://en.wikipedia.org/
 *   [Go](/index.php/Go "Go") – [go](https://www.archlinux.org/packages/?name=go), [GCC](/index.php/GCC "GCC")
 *   [Java](/index.php/Java "Java")
     *   [Groovy](https://en.wikipedia.org/wiki/Apache_Groovy "wikipedia:Apache Groovy") – [groovy](https://www.archlinux.org/packages/?name=groovy)
-    *   [Scala](/index.php/Scala "Scala")
 *   [JavaScript](https://en.wikipedia.org/wiki/JavaScript "wikipedia:JavaScript") – [rhino](https://www.archlinux.org/packages/?name=rhino), [spidermonkey](https://aur.archlinux.org/packages/spidermonkey/), [v8](https://aur.archlinux.org/packages/v8/)
     *   [Node.js](/index.php/Node.js "Node.js")
 *   [Julia](/index.php/Julia "Julia")
@@ -34,6 +33,7 @@ This page attempts to list all [programming languages](https://en.wikipedia.org/
 *   [R](/index.php/R "R")
 *   [Ruby](/index.php/Ruby "Ruby")
 *   [Rust](/index.php/Rust "Rust")
+*   [Scala](/index.php/Scala "Scala")
 *   [Swift](https://en.wikipedia.org/wiki/Swift_(programming_language) – [swift](https://aur.archlinux.org/packages/swift/), [swift-bin](https://aur.archlinux.org/packages/swift-bin/)
 *   [Tcl](https://en.wikipedia.org/wiki/Tcl "wikipedia:Tcl") – [tcl](https://www.archlinux.org/packages/?name=tcl)
 

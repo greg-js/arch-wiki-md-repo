@@ -36,43 +36,42 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.15 coderkun-aur-audio](#coderkun-aur-audio)
     *   [2.16 devkitpro](#devkitpro)
     *   [2.17 disastrousaur](#disastrousaur)
-    *   [2.18 disastrousarm](#disastrousarm)
-    *   [2.19 eatabrick](#eatabrick)
-    *   [2.20 eschwartz](#eschwartz)
-    *   [2.21 ffy00](#ffy00)
-    *   [2.22 fusion809](#fusion809)
-    *   [2.23 gnome-devel](#gnome-devel)
-    *   [2.24 herecura](#herecura)
-    *   [2.25 holo](#holo)
-    *   [2.26 ivasilev](#ivasilev)
-    *   [2.27 jlk](#jlk)
-    *   [2.28 linux-macbook](#linux-macbook)
-    *   [2.29 llvm-svn](#llvm-svn)
-    *   [2.30 markzz](#markzz)
-    *   [2.31 maximbaz](#maximbaz)
-    *   [2.32 me176c](#me176c)
-    *   [2.33 miffe](#miffe)
-    *   [2.34 mikelpint](#mikelpint)
-    *   [2.35 Minerva W Science](#Minerva_W_Science)
-    *   [2.36 mobile](#mobile)
-    *   [2.37 nah](#nah)
-    *   [2.38 origincode](#origincode)
-    *   [2.39 pkgbuilder](#pkgbuilder)
-    *   [2.40 post-factum kernels](#post-factum_kernels)
-    *   [2.41 QOwnNotes](#QOwnNotes)
-    *   [2.42 qt-debug](#qt-debug)
-    *   [2.43 quarry](#quarry)
-    *   [2.44 repo-ck](#repo-ck)
-    *   [2.45 seblu](#seblu)
-    *   [2.46 seiichiro](#seiichiro)
-    *   [2.47 sergej-repo](#sergej-repo)
-    *   [2.48 siosm-aur](#siosm-aur)
-    *   [2.49 sublime-text](#sublime-text)
-    *   [2.50 subtitlecomposer](#subtitlecomposer)
-    *   [2.51 trinity](#trinity)
-    *   [2.52 ungoo](#ungoo)
-    *   [2.53 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.54 xyne-x86_64](#xyne-x86_64)
+    *   [2.18 eatabrick](#eatabrick)
+    *   [2.19 eschwartz](#eschwartz)
+    *   [2.20 ffy00](#ffy00)
+    *   [2.21 fusion809](#fusion809)
+    *   [2.22 gnome-devel](#gnome-devel)
+    *   [2.23 herecura](#herecura)
+    *   [2.24 holo](#holo)
+    *   [2.25 ivasilev](#ivasilev)
+    *   [2.26 jlk](#jlk)
+    *   [2.27 linux-macbook](#linux-macbook)
+    *   [2.28 llvm-svn](#llvm-svn)
+    *   [2.29 markzz](#markzz)
+    *   [2.30 maximbaz](#maximbaz)
+    *   [2.31 me176c](#me176c)
+    *   [2.32 miffe](#miffe)
+    *   [2.33 mikelpint](#mikelpint)
+    *   [2.34 Minerva W Science](#Minerva_W_Science)
+    *   [2.35 mobile](#mobile)
+    *   [2.36 nah](#nah)
+    *   [2.37 origincode](#origincode)
+    *   [2.38 pkgbuilder](#pkgbuilder)
+    *   [2.39 post-factum kernels](#post-factum_kernels)
+    *   [2.40 QOwnNotes](#QOwnNotes)
+    *   [2.41 qt-debug](#qt-debug)
+    *   [2.42 quarry](#quarry)
+    *   [2.43 repo-ck](#repo-ck)
+    *   [2.44 seblu](#seblu)
+    *   [2.45 seiichiro](#seiichiro)
+    *   [2.46 sergej-repo](#sergej-repo)
+    *   [2.47 siosm-aur](#siosm-aur)
+    *   [2.48 sublime-text](#sublime-text)
+    *   [2.49 subtitlecomposer](#subtitlecomposer)
+    *   [2.50 trinity](#trinity)
+    *   [2.51 ungoo](#ungoo)
+    *   [2.52 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.53 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -338,22 +337,10 @@ Server = https://downloads.devkitpro.org/packages/linux
 *   **Key-ID:** CBAE582A876533FD
 *   **Keyfile:** [https://mirror.repohost.de/disastrousaur.key](https://mirror.repohost.de/disastrousaur.key)
 
+**Warning:** disastrousaur and disastrousarm are undergoing restructuring (e.g. support for the aarch64 architecture and more). The repository itself will be available again under the disastrousaur name in the next week. Please make sure you have the URL changed accordingly as shown below. Sorry for causing any inconvenience.
+
 ```
 [disastrousaur]
-Server = https://mirror.repohost.de/$repo
-
-```
-
-### disastrousarm
-
-*   **Maintainer:** [TheGoliath](https://aur.archlinux.org/account/TheGoliath)
-*   **Description:** Tries to maintain a wide package range as the disastrousaur repository. This repository may be merged with disastrousaur in the future. Only for the ARM (currently aarch64) architecture. More architectures may follow soon.
-*   **Upstream page:** [https://mirror.repohost.de/disastrousarm](https://mirror.repohost.de/disastrousarm)
-*   **Key-ID:** CBAE582A876533FD
-*   **Keyfile:** [https://mirror.repohost.de/disastrousaur.key (uses the same key as the disastrousaur)](https://mirror.repohost.de/disastrousaur.key)
-
-```
-[disastrousarm]
 Server = https://mirror.repohost.de/$repo/$arch
 
 ```

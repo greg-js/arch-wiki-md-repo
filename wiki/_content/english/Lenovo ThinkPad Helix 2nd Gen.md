@@ -20,11 +20,14 @@ This hardware is substantially different from the [Lenovo ThinkPad Helix 1st Gen
     *   [1.1 Enable suspend-to-idle (freeze/s2idle)](#Enable_suspend-to-idle_(freeze/s2idle))
     *   [1.2 Disable embedded-controller wake-ups](#Disable_embedded-controller_wake-ups)
     *   [1.3 Workaround for no wifi connection on resume](#Workaround_for_no_wifi_connection_on_resume)
-*   [2 Sensors](#Sensors)
-*   [3 Touch Screen](#Touch_Screen)
-*   [4 Touch Pad and Pointing Stick](#Touch_Pad_and_Pointing_Stick)
-*   [5 Graphics](#Graphics)
-*   [6 Unresolved Issues](#Unresolved_Issues)
+*   [2 ACPI CPU load and Battery Power](#ACPI_CPU_load_and_Battery_Power)
+*   [3 Sensors](#Sensors)
+*   [4 Touch Screen](#Touch_Screen)
+*   [5 Touch Pad and Pointing Stick](#Touch_Pad_and_Pointing_Stick)
+*   [6 Graphics](#Graphics)
+*   [7 Softare](#Softare)
+    *   [7.1 Firefox](#Firefox)
+*   [8 Unresolved Issues](#Unresolved_Issues)
 
 ## Suspend & Resume
 
@@ -83,6 +86,10 @@ ExecStart=/usr/bin/bash -c "lsmod iwlmvm iwlwifi"
 WantedBy=suspend.target
 ```
 
+## ACPI CPU load and Battery Power
+
+Many ACPI Interrupt - Events are triggered on older Kernels making CPU load up to 80% of one Kernel => Battery goes empty within 3 hours. With me this problem was fixed when upgrading to Kernel 5.1rc1\. Powertop estimates over 7 hours with a pro keyboard attached. Use tlp package for further improvements.
+
 ## Sensors
 
 In order to use the sensors (particularly the accelerometer and the ambient light sensor) in [GNOME](/index.php/GNOME "GNOME"), you should install the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package. There is presumably a quirk with this sensor hardware. The effect is that `iio-sensor-proxy` loads too early, requiring the service to be restarted before the sensors can be read properly. To fix this, edit the systemd unit so that it starts after GDM (`After=gdm.service`; see [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd")).
@@ -115,6 +122,12 @@ $ modprobe psmouse proto=imps
 ## Graphics
 
 Install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) for graphics acceleration.
+
+## Softare
+
+### Firefox
+
+Touch Screen Scrolling can be activated by the ScrollAnywhere firefox Plugin
 
 ## Unresolved Issues
 

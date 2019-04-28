@@ -65,7 +65,7 @@ $ conky --config=~/.conky.conf
 
 ```
 
-Additional example configuration files are available at [this page](https://github.com/brndnmtthws/conky/wiki/User-Configs).
+Additional example configuration files are available at [this page](https://github.com/brndnmtthws/conky/wiki/Configs).
 
 When editing your config file while conky is running, conky will update with the new changes every time you write to the file.
 

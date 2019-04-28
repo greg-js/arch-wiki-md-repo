@@ -4,24 +4,28 @@ Why not to use a pppd wrapper (like wvdial or similar)?. I particularly switched
 
 You may be reading this page by the same reason it was written for: you may have finally concluded that the lesser the layers, the less likely the troubles.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites and tested hardware](#Prerequisites_and_tested_hardware)
 *   [2 Configuration](#Configuration)
-    *   [2.1 /etc/ppp/options-mobile](#.2Fetc.2Fppp.2Foptions-mobile)
-    *   [2.2 /etc/ppp/peers](#.2Fetc.2Fppp.2Fpeers)
-    *   [2.3 /etc/ppp/chatscripts](#.2Fetc.2Fppp.2Fchatscripts)
+    *   [2.1 /etc/ppp/options-mobile](#/etc/ppp/options-mobile)
+    *   [2.2 /etc/ppp/peers](#/etc/ppp/peers)
+    *   [2.3 /etc/ppp/chatscripts](#/etc/ppp/chatscripts)
     *   [2.4 Easy wizard configuration](#Easy_wizard_configuration)
 *   [3 Start the pppd](#Start_the_pppd)
 *   [4 Patch for modem availability after booting](#Patch_for_modem_availability_after_booting)
     *   [4.1 netcfg hook](#netcfg_hook)
     *   [4.2 network hook](#network_hook)
 *   [5 Troubleshooting](#Troubleshooting)
-*   [6 AT^SYSCFG Huawei command reference](#AT.5ESYSCFG_Huawei_command_reference)
+*   [6 AT^SYSCFG Huawei command reference](#AT^SYSCFG_Huawei_command_reference)
 *   [7 Huawei unsolicited report command reference](#Huawei_unsolicited_report_command_reference)
-    *   [7.1 ^SRVST](#.5ESRVST)
-    *   [7.2 ^MODE](#.5EMODE)
-    *   [7.3 ^RSSI](#.5ERSSI)
+    *   [7.1 ^SRVST](#^SRVST)
+    *   [7.2 ^MODE](#^MODE)
+    *   [7.3 ^RSSI](#^RSSI)
 *   [8 Automatic PPP](#Automatic_PPP)
 *   [9 Operator selection](#Operator_selection)
     *   [9.1 Listing](#Listing)
@@ -56,8 +60,6 @@ In this computer there are 2 devices available: a internal 3G modem (**ttyUSB0**
 To enable some modems you may need the [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) package (see the [USB 3G Modem](/index.php/USB_3G_Modem "USB 3G Modem") wiki for more information).
 
 ## Configuration
-
-The following files are also available as [netcfg-ppp-mobile-git](https://aur.archlinux.org/packages/netcfg-ppp-mobile-git/) in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### /etc/ppp/options-mobile
 

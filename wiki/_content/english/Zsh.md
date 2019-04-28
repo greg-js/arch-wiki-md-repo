@@ -548,7 +548,7 @@ zstyle ':completion:*' rehash true
 
 #### On-demand rehash
 
-As above, however [pacman](/index.php/Pacman "Pacman") can be configured with [hooks](/index.php/Pacman#Hooks "Pacman") to automatically request a `rehash`, which does not incur the performance penalty of constant rehashing as above. To enable this, create the `/etc/pacman.d/hooks` directory, and a `/var/cache/pacman` directory, then create a hook file:
+As above, however [pacman](/index.php/Pacman "Pacman") can be configured with [hooks](/index.php/Pacman#Hooks "Pacman") to automatically request a `rehash`, which does not incur the performance penalty of constant rehashing as above. To enable this, create the `/etc/pacman.d/hooks` directory, and a `/var/cache/zsh` directory, then create a hook file:
 
  `/etc/pacman.d/hooks/zsh.hook` 
 ```

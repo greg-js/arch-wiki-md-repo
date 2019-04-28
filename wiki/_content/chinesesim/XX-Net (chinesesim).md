@@ -1,15 +1,19 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 下载链接：](#.E4.B8.8B.E8.BD.BD.E9.93.BE.E6.8E.A5.EF.BC.9A)
-*   [2 主要特性](#.E4.B8.BB.E8.A6.81.E7.89.B9.E6.80.A7)
-*   [3 XX-Net不是匿名工具](#XX-Net.E4.B8.8D.E6.98.AF.E5.8C.BF.E5.90.8D.E5.B7.A5.E5.85.B7)
-*   [4 平台支持情况](#.E5.B9.B3.E5.8F.B0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5)
-*   [5 链接](#.E9.93.BE.E6.8E.A5)
-*   [6 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
-*   [7 感谢](#.E6.84.9F.E8.B0.A2)
-*   [8 如何帮助项目](#.E5.A6.82.E4.BD.95.E5.B8.AE.E5.8A.A9.E9.A1.B9.E7.9B.AE)
-*   [9 附图](#.E9.99.84.E5.9B.BE)
-*   [10 集成XX-Net的项目](#.E9.9B.86.E6.88.90XX-Net.E7.9A.84.E9.A1.B9.E7.9B.AE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 下载链接：](#下载链接：)
+*   [2 主要特性](#主要特性)
+*   [3 XX-Net不是匿名工具](#XX-Net不是匿名工具)
+*   [4 平台支持情况](#平台支持情况)
+*   [5 链接](#链接)
+*   [6 使用方法](#使用方法)
+*   [7 感谢](#感谢)
+*   [8 如何帮助项目](#如何帮助项目)
+*   [9 附图](#附图)
+*   [10 集成XX-Net的项目](#集成XX-Net的项目)
 
 ## 下载链接：
 
@@ -55,6 +59,10 @@
 *   [https://github.com/XX-net/XX-Net/wiki/中文文档](https://github.com/XX-net/XX-Net/wiki/中文文档) 中文文档
 *   [https://github.com/XX-net/XX-Net/wiki/English-Home-Page](https://github.com/XX-net/XX-Net/wiki/English-Home-Page) English
 *   [https://github.com/XX-net/XX-Net/wiki/Persian-home-page](https://github.com/XX-net/XX-Net/wiki/Persian-home-page) Persian
+
+安装xx-net需要有judy依赖。judy在安装时需要automake，autoconfig，但并未作为依赖由pacman安装，需要手动下载。
+
+如需要自动启动，可按照github中wiki所说安装supervisor，同时xx-net的安装时产生supervisor的配置文件和服务文件，但该服务名称为supervisord，位于/usr/lib/systemdsystem/supervisord.service
 
 ## 感谢
 

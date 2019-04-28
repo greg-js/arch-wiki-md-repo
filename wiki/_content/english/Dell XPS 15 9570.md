@@ -35,7 +35,7 @@
     *   [3.3 Troubleshooting](#Troubleshooting)
         *   [3.3.1 xbacklight](#xbacklight)
         *   [3.3.2 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
-        *   [3.3.3 Built-in screen flickers or does not come on with Linux kernel 5.0.x](#Built-in_screen_flickers_or_does_not_come_on_with_Linux_kernel_5.0.x)
+        *   [3.3.3 Built-in screen flickers or does not come on with Linux kernel 5.0.0 - 5.0.7](#Built-in_screen_flickers_or_does_not_come_on_with_Linux_kernel_5.0.0_-_5.0.7)
 *   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
     *   [4.1 Troubleshooting](#Troubleshooting_2)
         *   [4.1.1 ath10k module crashes after suspend](#ath10k_module_crashes_after_suspend)
@@ -154,15 +154,15 @@ EndSection
 
 *   `ipmi` modules are loaded together with `nvidia` and block its unloading.
 
-	run:
+	create:
 
+ `/etc/modprobe.d/disable-ipmi.conf` 
 ```
- install ipmi_msghandler /usr/bin/false
- install ipmi_devintf /usr/bin/false
-
+  install ipmi_msghandler /usr/bin/false
+  install ipmi_devintf /usr/bin/false
 ```
 
-	with:
+	and:
 
  `/etc/modprobe.d/disable-nvidia.conf`  `install nvidia /bin/false` 
 
@@ -235,7 +235,7 @@ Description=Disables Nvidia GPU on OS shutdown
 Type=oneshot
 RemainAfterExit=true
 ExecStart=/bin/true
-ExecStop=/bin/bash -c "mv /etc/modprobe.d/lock-nvidia.conf.disable /etc/modprobe.d/lock-nvidia.conf || true"
+ExecStop=/bin/bash -c "mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modprobe.d/disable-nvidia.conf || true"
 
 [Install]
 WantedBy=multi-user.target
@@ -301,15 +301,16 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]
 
 ```
 
-#### Built-in screen flickers or does not come on with Linux kernel 5.0.x
+#### Built-in screen flickers or does not come on with Linux kernel 5.0.0 - 5.0.7
 
-Some users reported that running Linux kernel 5.0.x can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[6]](https://bugs.archlinux.org/task/61964))
+Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[6]](https://bugs.archlinux.org/task/61964))
 
 Currently, it seems that there are three possible workarounds :
 
 *   [Downgrade](/index.php/Downgrade "Downgrade") to Linux 4.20.13.
 *   Apply [Albert Astals Cid's patch](https://invent.kde.org/snippets/44) on Linux kernel 5.0.x (see [kernel Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")).
 *   Install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
+*   upgrade to Linux 5.0.8 or higher
 
 ## Wifi and Bluetooth
 

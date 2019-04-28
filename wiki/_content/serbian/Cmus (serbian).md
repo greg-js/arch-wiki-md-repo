@@ -1,23 +1,27 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Opis](#Opis)
 *   [2 Instalacija](#Instalacija)
-*   [3 Korišćenje](#Kori.C5.A1.C4.87enje)
+*   [3 Korišćenje](#Korišćenje)
     *   [3.1 Pokretanje Cmusa](#Pokretanje_Cmusa)
     *   [3.2 Dodavanje Muzike](#Dodavanje_Muzike)
-    *   [3.3 Puštanje Numera](#Pu.C5.A1tanje_Numera)
+    *   [3.3 Puštanje Numera](#Puštanje_Numera)
     *   [3.4 Tasteri](#Tasteri)
 *   [4 Tabovi](#Tabovi)
-    *   [4.1 Tab biblioteke (1)](#Tab_biblioteke_.281.29)
-    *   [4.2 Tab sortirane biblioteke (2)](#Tab_sortirane_biblioteke_.282.29)
-    *   [4.3 Tab plejliste (3)](#Tab_plejliste_.283.29)
-    *   [4.4 Tab redosleda puštanja (4)](#Tab_redosleda_pu.C5.A1tanja_.284.29)
-    *   [4.5 Pregledač (5)](#Pregleda.C4.8D_.285.29)
-    *   [4.6 Tab filtera (6)](#Tab_filtera_.286.29)
-    *   [4.7 Tab podešavanja (7)](#Tab_pode.C5.A1avanja_.287.29)
-*   [5 Mogućnosti](#Mogu.C4.87nosti)
+    *   [4.1 Tab biblioteke (1)](#Tab_biblioteke_(1))
+    *   [4.2 Tab sortirane biblioteke (2)](#Tab_sortirane_biblioteke_(2))
+    *   [4.3 Tab plejliste (3)](#Tab_plejliste_(3))
+    *   [4.4 Tab redosleda puštanja (4)](#Tab_redosleda_puštanja_(4))
+    *   [4.5 Pregledač (5)](#Pregledač_(5))
+    *   [4.6 Tab filtera (6)](#Tab_filtera_(6))
+    *   [4.7 Tab podešavanja (7)](#Tab_podešavanja_(7))
+*   [5 Mogućnosti](#Mogućnosti)
     *   [5.1 Pluginovi](#Pluginovi)
-    *   [5.2 Puštanje muzike](#Pu.C5.A1tanje_muzike)
+    *   [5.2 Puštanje muzike](#Puštanje_muzike)
     *   [5.3 Interfejs](#Interfejs)
     *   [5.4 Ostalo](#Ostalo)
 *   [6 Linkovi](#Linkovi)
@@ -134,7 +138,7 @@ Prikazuje listu tastera sa ili bez komande i opcije. Skidate komandu sa određen
 
 	Biranje boja po vašoj želji
 
-	Dinamički tasteri. Možete tasteru dodeliti bilo koju komandu, :seek +1m na primer
+	Dinamički tasteri. Možete tasteru dodeliti bilo koju komandu, :seek +1m na primer
 
 	Vi / less stil pretraživanja
 

@@ -146,7 +146,7 @@ ZFS is considered a "zero administration" filesystem by its creators; therefore,
 
 For ZFS to live by its "zero administration" namesake, the zfs daemon must be loaded at startup. A benefit to this is that it is not necessary to mount the zpool in `/etc/fstab`; the zfs daemon can import and mount zfs pools automatically. The daemon mounts the zfs pools reading the file `/etc/zfs/zpool.cache`.
 
-For each pool you want automatically mounted by the zfs daemon execute:
+For each [imported pool](#Importing_a_pool_created_by_id) you want automatically mounted by the zfs daemon execute:
 
 ```
 # zpool set cachefile=/etc/zfs/zpool.cache <pool>
@@ -361,10 +361,16 @@ Adapt one of the following commands to import your pool so that pool imports ret
 
 ```
 
+**Note:** Use the `-l` flag when importing a pool that contains [encrypted datasets keys](#Native_encryption):
+```
+# zpool import -l -d /dev/disk/by-id bigdata
+
+```
+
 Finally check the state of the pool:
 
 ```
-# zpool status bigdata
+# zpool status -v bigdata
 
 ```
 
@@ -402,6 +408,13 @@ To enable compression:
 
 ```
 # zfs set compression=on <pool>
+
+```
+
+**Note:** To reset a property of a pool and/or dataset to it's default state, use `zfs inherit`:
+```
+# zfs inherit -rS atime <pool>
+# zfs inherit -rS atime <pool>/<dataset>
 
 ```
 
@@ -564,15 +577,9 @@ See [ZFS on Linux issue #1807 for details](https://github.com/zfsonlinux/zfs/iss
 
 ### I/O Scheduler
 
-Because ZFS has its own I/O scheduler, [Changing the Linux I/O Scheduler](/index.php/Improving_performance#Changing_I/O_scheduler "Improving performance") to none can improve performance with ZFS. ZFS will try to do this automatically on whole-disk vdevs if the [zfs_vdev_scheduler](https://github.com/zfsonlinux/zfs/wiki/ZFS-on-Linux-Module-Parameters#zfs_vdev_scheduler) option is set. This will not happen automatically if vdevs are on partition, because this may reduce performance for non-zfs partitions on the same disk. To set disks containing ZFS partitions to the none i/o scheduler you can add a [udev](/index.php/Udev "Udev") rule like the following:
+When the pool is imported, for whole disk vdevs, the block device I/O scheduler is set to `zfs_vdev_scheduler` [[3]](https://github.com/zfsonlinux/zfs/wiki/ZFS-on-Linux-Module-Parameters#zfs_vdev_scheduler). The most common schedulers are: *noop*, *cfq*, *bfq*, and *deadline*.
 
-```
-# cat /etc/udev/rules.d/99-zfs.ioschedulers.rules
-
-# set scheduler for disks with zfs partitions
-KERNEL=="sd[a-z]|mmcblk[0-9]*|nvme[0-9]*", ENV{ID_FS_TYPE}=="zfs_member", ATTR{queue/scheduler}="none"
-
-```
+In some cases, the scheduler is not changeable using this method. Known schedulers that cannot be changed are: *scsi_mq* and *none*. In these cases, the scheduler is unchanged and an error message can be reported to logs. [Manually setting](/index.php/Improving_performance#Changing_I/O_scheduler "Improving performance") one of the common schedulers used by `zfs_vdev_scheduler` can result in more consistent performance.
 
 ## Creating datasets
 
@@ -600,7 +607,10 @@ The following keyformats are supported: `passphrase`, `raw`, `hex`.
 
 One can also specify/increase the default iterations of PBKDF2 when using `passphrase` with `-o pbkdf2iters <n>`, although it may increase the decryption time.
 
-**Note:** Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Despite the fact that version 0.7 has been released, this feature is still not enabled in the stable version as of 0.7.3, so a development build still needs to be used.
+**Note:**
+
+*   Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Despite the fact that version 0.7 has been released, this feature is still not enabled in the stable version as of 0.7.3, so a development build still needs to be used.
+*   To import a pool with keys, one needs to specify the `-l` flag, without this flag encrypted datasets will be left unavailable until the keys are loaded. See [#Importing a pool created by id](#Importing_a_pool_created_by_id).
 
 To create a dataset including native encryption with a passphrase, use:
 
@@ -631,7 +641,7 @@ To change the key location:
 
 ```
 
-You can also manually load the keys and then mount the encrypted dataset:
+You can also manually load the keys by using one of the following commands:
 
 ```
 # zfs load-key <nameofzpool>/<nameofdataset> # load key for a specific dataset
@@ -640,9 +650,10 @@ You can also manually load the keys and then mount the encrypted dataset:
 
 ```
 
-**Note:** When importing a pool that contains encrypted datasets, ZFS will by default not decrypt these datasets. To do this use `-l`:
+To mount the created encrypted dataset:
+
 ```
-# zpool import -l pool
+# zfs mount <nameofzpool>/<nameofdataset>
 
 ```
 
@@ -734,9 +745,9 @@ To use [ACL](/index.php/ACL "ACL") on a ZFS pool:
 
 ```
 
-Setting `xattr` is recommended for performance reasons [[3]](https://github.com/zfsonlinux/zfs/issues/170#issuecomment-27348094).
+Setting `xattr` is recommended for performance reasons [[4]](https://github.com/zfsonlinux/zfs/issues/170#issuecomment-27348094).
 
-It may be preferable to enable ACL on the zpool instead. Setting `aclinherit=passthrough` may be wanted as the default mode is `restricted` [[4]](https://docs.oracle.com/cd/E19120-01/open.solaris/817-2271/gbaaz/index.html):
+It may be preferable to enable ACL on the zpool instead. Setting `aclinherit=passthrough` may be wanted as the default mode is `restricted` [[5]](https://docs.oracle.com/cd/E19120-01/open.solaris/817-2271/gbaaz/index.html):
 
 ```
 # zfs set aclinherit=passthrough <nameofzpool>
@@ -1078,29 +1089,44 @@ ZFS has support for creating shares by SMB or [NFS](/index.php/NFS "NFS").
 
 #### NFS
 
-When sharing from zfs there is no need to edit the `/etc/exports` file. For sharing with NFS make sure to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the services `nfs-server.service` and `zfs-share.service`.
+Make sure [NFS](/index.php/NFS "NFS") has been installed/configured, note there is no need to edit the `/etc/exports` file. For sharing over NFS the services `nfs-server.service` and `zfs-share.service` should be [started](/index.php/Start "Start").
 
-Next, to enable sharing over NFS, available to the whole network:
+To make a pool available on the network:
+
+```
+# zfs set sharenfs=on <nameofzpool>
+
+```
+
+To make a dataset available on the network:
 
 ```
 # zfs set sharenfs=on <nameofzpool>/<nameofdataset>
 
 ```
 
-To enable read/write access for a specific ip-range:
+To enable read/write access for a specific ip-range(s):
 
 ```
-# zfs set sharenfs="rw=@192.168.11.0/24 <nameofzpool>/<nameofdataset>
+# zfs set sharenfs="rw=@192.168.1.100/24,rw=@10.0.0.0/24" <nameofzpool>/<nameofdataset>
 
 ```
 
-To check if the dataset is shared succesfully:
+To check if the dataset is exported successful:
 
  `# showmount -e `hostname`` 
 ```
 Export list for hostname:
-/dataset 192.168.11.0/24
+/path/of/dataset 192.168.1.100/24
 
+```
+
+To view the current loaded exports state in more detail, use:
+
+ `# exportfs -v` 
+```
+/path/of/dataset
+    192.168.1.100/24(sync,wdelay,hide,no_subtree_check,mountpoint,sec=sys,rw,secure,no_root_squash,no_all_squash)
 ```
 
 #### SMB

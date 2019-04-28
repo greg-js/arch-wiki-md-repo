@@ -50,7 +50,7 @@ The [ASUS MeMO Pad 7 (ME176C)](https://www.asus.com/Tablets/ASUS_MeMO_Pad_7_ME17
 
 ## Overview
 
-[archlinux-me176c](https://github.com/me176c-dev/archlinux-me176c) contains a few additional packages that simplify installation and provide additional functionality. For example, [linux-me176c](https://aur.archlinux.org/packages/linux-me176c/) provides battery/charger drivers that are not available in [linux](https://www.archlinux.org/packages/?name=linux).
+[archlinux-me176c](https://github.com/me176c-dev/archlinux-me176c) contains a few additional packages that simplify installation and provide additional functionality.
 
 ## Installation
 
@@ -72,7 +72,7 @@ The tablet can boot using [UEFI](/index.php/UEFI "UEFI") from the internal stora
 
 ### Boot the live environment
 
-The default Arch Linux ISO does not contain the packages from [archlinux-me176c](https://github.com/me176c-dev/archlinux-me176c). Therefore, WiFi is not working out of the box. For convenience there are custom ISO provided in the [archlinux-me176c releases](https://github.com/me176c-dev/archlinux-me176c/releases). They do not differ from the default except that they run with [linux-me176c](https://aur.archlinux.org/packages/linux-me176c/) and have all me176c packages installed. Look for the latest "archiso" release and download it, then follow [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") to flash it to your USB flash drive.
+The default Arch Linux ISO does not contain the packages from [archlinux-me176c](https://github.com/me176c-dev/archlinux-me176c). Therefore, WiFi is not working out of the box. For convenience there are custom ISO provided in the [archlinux-me176c releases](https://github.com/me176c-dev/archlinux-me176c/releases). They do not differ from the default except that they run with *linux-me176c* and have all me176c packages installed. Look for the latest "archiso" release and download it, then follow [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") to flash it to your USB flash drive.
 
 Connect the USB keyboard and the USB flash drive to the USB hub, enable the external power supply and connect it to the tablet while it is powered off. Keep pressing `F2` to enter the UEFI setup. There is no need to change anything. Navigate to the `Save & Exit` tab and use `Boot Override` to boot from the USB flash drive.
 
@@ -107,7 +107,7 @@ After installation, but before rebooting, configure the [ME176C unofficial user 
 
 ```
 
-Consider [removing](/index.php/Removing "Removing") [linux](https://www.archlinux.org/packages/?name=linux) as it is not needed when using [linux-me176c](https://aur.archlinux.org/packages/linux-me176c/) and will only take up precious space.
+Consider [removing](/index.php/Removing "Removing") [linux](https://www.archlinux.org/packages/?name=linux) as it is not needed when using *linux-me176c* and will only take up space.
 
 [Install](/index.php/Install "Install") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) (and eventually [dialog](https://www.archlinux.org/packages/?name=dialog) for `wifi-menu`) if you would like to connect to the Internet after installation.
 
@@ -138,7 +138,7 @@ options  root=PARTUUID=... rw
 
 **Tip:** All me176c packages are available in the `me176c` package group, so you can install all of them with: `pacman -S me176c`
 
-*   [linux-me176c](https://aur.archlinux.org/packages/linux-me176c/) is a fork of [linux](https://www.archlinux.org/packages/?name=linux) with additional patches and battery/charging drivers ported from the stock kernel.
+*   *linux-me176c* is a fork of [linux](https://www.archlinux.org/packages/?name=linux) with additional patches and battery/charging drivers ported from the stock kernel.
 *   [me176c-acpi](https://aur.archlinux.org/packages/me176c-acpi/) contains a patched [ACPI DSDT](/index.php/DSDT "DSDT") that is necessary for Touchscreen, Bluetooth, Battery/Charging and other functionality. Installs additional initrd `/acpi-me176c.img`.
 *   [me176c-firmware](https://aur.archlinux.org/packages/me176c-firmware/) contains additional WiFi/Bluetooth firmware from the stock ROM.
 *   [me176c-factory](https://aur.archlinux.org/packages/me176c-factory/) loads the WiFi/Bluetooth MAC address from the `factory` partition and provides [udev](/index.php/Udev "Udev") rules/[systemd](/index.php/Systemd "Systemd") units to automatically apply them while booting.

@@ -25,6 +25,7 @@ Notes for the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-ump
             *   [3.2.4.4 Right Click Emulation](#Right_Click_Emulation_2)
             *   [3.2.4.5 SDDM](#SDDM)
             *   [3.2.4.6 Touchscreen Gestures](#Touchscreen_Gestures)
+            *   [3.2.4.7 Making use of 半/全 key on Pocket 2](#Making_use_of_半/全_key_on_Pocket_2)
         *   [3.2.5 Fan](#Fan)
         *   [3.2.6 Power Saving](#Power_Saving)
         *   [3.2.7 PulseAudio](#PulseAudio)
@@ -228,6 +229,27 @@ Set the permissions on `/etc/X11/xinit/xinitrc.d/01_touchegg`
 # chmod 0755 /etc/X11/xinit/xinitrc.d/01_touchegg
 
 ```
+
+##### Making use of 半/全 key on Pocket 2
+
+Out of the box the `半/全` key is configured to send the ``` symbol and keycode 49, making it a duplicated of a regular ``/~` key. In order to be able to map it to something more useful go to the [GPD2 Firmware](https://www.gpd.hk/gpdp2firmware) and download "GPD Pocket 2 Keyboard Firmware (Japan)". This must be flashed with the Windows 10 OS supplied with the device. It is advised to have a USB mouse, since the keyboard and mouse will be disabled during the update.
+
+After the update is done `半/全` will send keycode 49 and ``` symbol, while the dedicated ``/~` key will send keycode 132\. In order to fix this create a file `~/.Xmodmap`
+
+ `~/.Xmodmap` 
+```
+keycode  132 = grave asciitilde
+keycode  49  = XF86Launch1 NoSymbol
+```
+
+Test it immediately
+
+```
+$ xmodmap ~/.Xmodmap
+
+```
+
+For more information read [xmodmap](/index.php/Xmodmap "Xmodmap")
 
 #### Fan
 

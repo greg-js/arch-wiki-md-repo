@@ -856,7 +856,7 @@ There are several tools for benchmarking a RAID. The most notable improvement is
 
 [bonnie++](https://www.archlinux.org/packages/?name=bonnie%2B%2B) tests database type access to one or more files, and creation, reading, and deleting of small files which can simulate the usage of programs such as Squid, INN, or Maildir format e-mail. The enclosed [ZCAV](http://www.coker.com.au/bonnie++/zcav/) program tests the performance of different zones of a hard drive without writing any data to the disk.
 
-`hdparm` should **NOT** be used to benchmark a RAID, because it provides very inconsistent results.
+`hdparm` should **not** be used to benchmark a RAID, because it provides very inconsistent results.
 
 ## See also
 

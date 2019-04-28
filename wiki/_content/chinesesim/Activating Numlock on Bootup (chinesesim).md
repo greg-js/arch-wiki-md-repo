@@ -1,6 +1,10 @@
 **翻译状态：** 本文是英文页面 [Activating_Numlock_on_Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=486330)可以查看翻译后英文页面的改动。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 控制台](#控制台)
     *   [1.1 使用单独服务](#使用单独服务)

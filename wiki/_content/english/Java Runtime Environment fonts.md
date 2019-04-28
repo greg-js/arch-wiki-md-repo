@@ -16,17 +16,24 @@ TrueType fonts appear to be the best supported format for use with Java.
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Anti-aliasing](#Anti-aliasing)
-    *   [1.1 Basic settings](#Basic_settings)
-    *   [1.2 OpenJDK patch](#OpenJDK_patch)
+    *   [1.1 Running an xsettings daemon](#Running_an_xsettings_daemon)
+    *   [1.2 Overriding the automatically picked up settings](#Overriding_the_automatically_picked_up_settings)
+    *   [1.3 OpenJDK patch](#OpenJDK_patch)
 *   [2 Font selection](#Font_selection)
     *   [2.1 TrueType fonts](#TrueType_fonts)
     *   [2.2 Fixing Mojibake (For JRE8)](#Fixing_Mojibake_(For_JRE8))
 
 ## Anti-aliasing
 
-### Basic settings
+[Anti-aliasing](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") of fonts is available with Oracle Java 1.6 and OpenJDK on Linux.
 
-[Anti-aliasing](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") of fonts is available with Oracle Java 1.6 and OpenJDK on Linux. To do this system-wide, add the following line to `/etc/environment`:
+### Running an xsettings daemon
+
+Java tries to get the system defaults through xsettings. On [GNOME](/index.php/GNOME "GNOME") you don't have to do anything, `gnome-settings-daemon` is already running. Otherwise [xsettingsd](https://www.archlinux.org/packages/?name=xsettingsd) is a lightweight alternative.
+
+### Overriding the automatically picked up settings
+
+If you don't want to run an xsettings daemon, or the fonts still look ugly, there is also a system property to set anti-aliasing. To do this system-wide, add the following line to `/etc/environment`:
 
 ```
 _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=*setting'*

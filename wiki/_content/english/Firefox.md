@@ -27,11 +27,13 @@ Related articles
     *   [4.3 KDE/GNOME integration](#KDE/GNOME_integration)
     *   [4.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Dark themes](#Dark_themes)
-    *   [5.2 Screenshot of webpage](#Screenshot_of_webpage)
-    *   [5.3 Window manager rules](#Window_manager_rules)
-        *   [5.3.1 Profiles](#Profiles)
-    *   [5.4 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
+    *   [5.1 Wayland](#Wayland)
+    *   [5.2 Dark themes](#Dark_themes)
+    *   [5.3 Screenshot of webpage](#Screenshot_of_webpage)
+    *   [5.4 Window manager rules](#Window_manager_rules)
+        *   [5.4.1 Profiles](#Profiles)
+    *   [5.5 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
+    *   [5.6 New tabs position](#New_tabs_position)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
     *   [6.2 Font troubleshooting](#Font_troubleshooting)
@@ -207,8 +209,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 *   To make the left mouse button warp the scrollbar instead of the middle one on KDE, go to *System Settings > Application Style > GNOME/GTK Application Style* and choose 'Jump to the mouse cursor position' in the 'On left-clicking the scroll bar' option.
 *   To use the KDE file selection and print dialogs in Firefox 64 or newer:
     1.  Install [xdg-desktop-portal](https://www.archlinux.org/packages/?name=xdg-desktop-portal) and [xdg-desktop-portal-kde](https://www.archlinux.org/packages/?name=xdg-desktop-portal-kde),
-    2.  Copy the Firefox [desktop entry](/index.php/Desktop_entry "Desktop entry") `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop`,
-    3.  Edit `~/.local/share/applications/firefox.desktop` and add `GTK_USE_PORTAL=1` to all `Exec` lines before the actual command. E.g.: `Exec=GTK_USE_PORTAL=1 /usr/lib/firefox/firefox %u`.
+    2.  [Edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `GTK_USE_PORTAL=1` to all `Exec` lines.
 *   For integration with [KDE](/index.php/KDE "KDE") mime type system and file dialog, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 *   Extensions/add-ons may provide additional integration, such as:
     *   Browser integration in [Plasma](/index.php/Plasma "Plasma"): requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the [Plasma Integration add-on](https://addons.mozilla.org/firefox/addon/plasma-integration/).
@@ -249,6 +250,10 @@ If you have troubles on machines with varying performance, try modifying the `mo
 
 For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks"), for privacy related enhancements see [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy").
 
+### Wayland
+
+In order to start Firefox as a native Wayland application set the [environment variable](/index.php/Environment_variable "Environment variable") `MOZ_ENABLE_WAYLAND=1`. For example, [edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `MOZ_ENABLE_WAYLAND=1` to all `Exec` lines.
+
 ### Dark themes
 
 If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") for more information.
@@ -287,6 +292,10 @@ $ firefox [--new-instance] -P *profile_name* --class=*class_name*
 ### Touchscreen gestures and pixel-perfect trackpad scrolling
 
 To enable touch gestures (like scrolling and pinch-to-zoom) and one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
+
+### New tabs position
+
+To control where new tabs appears (relative or absolute), use `browser.tabs.insertAfterCurrent` and `browser.tabs.insertRelatedAfterCurrent`. See [[3]](https://support.mozilla.org/en/questions/1229062) for more informations.
 
 ## Troubleshooting
 
@@ -373,7 +382,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### JavaScript context menu does not appear on some sites
 
@@ -389,13 +398,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[4]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[5]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[6]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[7]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

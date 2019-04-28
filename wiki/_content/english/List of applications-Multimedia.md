@@ -186,6 +186,10 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://spiegl.de/qiv/](http://spiegl.de/qiv/) || [qiv](https://www.archlinux.org/packages/?name=qiv)
 
+*   **qView** — Qt image viewer designed with minimalism and usability in mind.
+
+	[https://intvhq.com/qview/](https://intvhq.com/qview/) || [qview](https://aur.archlinux.org/packages/qview/)
+
 *   **Ristretto** — Fast and lightweight image viewer for the Xfce desktop environment.
 
 	[http://docs.xfce.org/apps/ristretto/start](http://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
@@ -293,6 +297,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 *   **optipng** — Lossless PNG compressor.
 
 	[http://optipng.sourceforge.net/](http://optipng.sourceforge.net/) || [optipng](https://www.archlinux.org/packages/?name=optipng)
+
+*   **zopflipng** — Highly efficient PNG optimisation tool using Google's zopfli library
+
+	[https://github.com/google/zopfli](https://github.com/google/zopfli) || [zopflipng-git](https://aur.archlinux.org/packages/zopflipng-git/)
 
 #### Raster graphics editors
 

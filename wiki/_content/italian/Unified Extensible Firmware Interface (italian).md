@@ -2,7 +2,11 @@ L'**Unified Extensible Firmware Interface** (UEFI in breve) è un nuovo firmware
 
 **Nota:** Salvo specificare esplicitamente EFI 1.x i termini EFI e UEFI sono attualmente usati entrambi per indicare il firmware UEFI 2.0\. Le istruzioni contenute in questa guida sono generali e non specifiche per Mac, se non specificato esplicitamente. Molti passaggi potrebbero essere differenti su un Mac, in quanto l'implementazione Apple di EFI è un mix tra EFI 1.x e UEFI 2.0\. SI tratta quindi di un firmware non conferme agli standard UEFI.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Avviare un SO usando il BIOS](#Avviare_un_SO_usando_il_BIOS)
     *   [1.1 Avvio multiplo con BIOS](#Avvio_multiplo_con_BIOS)
@@ -260,7 +264,7 @@ Due scelte:
 
 ## UEFI Shell
 
-La UEFI Shell è una shell/terminale per il firmware essa avvia le applicazioni uefi che includono i boot-loader uefi. Oltre a questo la shell può anche essere utilizzata per ottenere altre informazioni riguardo al sistema o il firmware come la mappatura della memoria (memmap), modificare le variabili del boot manager (bcfg), eseguire programmi di partizionamento (diskpart), caricare driver uefi, modificare file di testo (edit), hexedit eccetera.
+La UEFI Shell è una shell/terminale per il firmware. Essa avvia le applicazioni uefi che includono i boot-loader UEFI. Oltre a questo la shell può anche essere utilizzata per ottenere altre informazioni riguardo al sistema o il firmware come la mappatura della memoria (memmap), modificare le variabili del boot manager (bcfg), eseguire programmi di partizionamento (diskpart), caricare driver uefi, modificare file di testo (edit), hexedit eccetera.
 
 ### Collegamenti per il download di UEFI Shell
 

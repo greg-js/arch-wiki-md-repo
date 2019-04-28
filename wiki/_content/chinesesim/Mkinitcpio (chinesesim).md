@@ -45,7 +45,7 @@ Related articles
     *   [4.6 /usr 放到单独分区](#/usr_放到单独分区)
 *   [5 疑难解答](#疑难解答)
     *   [5.1 解压缩镜像](#解压缩镜像)
-    *   [5.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
+    *   [5.2 重新压缩解压之后修改过的镜像](#重新压缩解压之后修改过的镜像)
     *   [5.3 "/dev must be mounted" when it already is](#"/dev_must_be_mounted"_when_it_already_is)
     *   [5.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
     *   [5.5 Standard rescue procedures](#Standard_rescue_procedures)
@@ -421,9 +421,9 @@ $ lsinitcpio -a /boot/initramfs-linux.img
 
 ```
 
-### Recompressing a modified extracted image
+### 重新压缩解压之后修改过的镜像
 
-After extracting an image as explained above, after modifying it, you can find the command necessary to recompress it. Edit `/usr/bin/mkinitcpio` and change the line as shown below (line 531 in mkinitcpio v20-1.)
+在按照上面的方法解压了一个镜像并且进行了修改之后，你可以通过以下的方法得到重新压缩它所需要的命令。按照下面的例子修改 `/usr/bin/mkinitcpio` 中的这一行 (line 531 in mkinitcpio v20-1.)：
 
 ```
 #MKINITCPIO_PROCESS_PRESET=1 "$0" "${preset_cmd[@]}"
@@ -431,7 +431,7 @@ MKINITCPIO_PROCESS_PRESET=1 /usr/bin/bash -x "$0" "${preset_cmd[@]}"
 
 ```
 
-Then running `mkinitcpio` with its usual options (typically `mkinitcpio -p linux`), toward the last 20 lines or so you will see something like:
+然后用常见的参数运行 `mkinitcpio` (一般来说是 `mkinitcpio -p linux`), 大约在最后的20行你会看见类似下面的一些输出:
 
 ```
 + find -mindepth 1 -printf '%P\0'
@@ -441,14 +441,14 @@ Then running `mkinitcpio` with its usual options (typically `mkinitcpio -p linux
 
 ```
 
-Which corresponds to the command you need to run, which may be:
+它们代表你所需要运行的命令，比如像这样:
 
 ```
 # find -mindepth 1 -printf '%P\0' | LANG=C bsdcpio -0 -o -H newc --quiet | gzip > /boot/initramfs-linux.img
 
 ```
 
-**Warning:** It's a good idea to rename the automatically generated /boot/initramfs-linux.img before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
+**Warning:** 建议在运行上面的命令产生一个新的`/boot/initramfs-linux.img`之前把现有的镜像重命名作为备份，以便情况不妙时有后悔药吃。如果因为失误导致系统无法启动，你需要用fallback镜像或者boot CD启动，然后运行mkinitcpio来overwrite掉之前做的更改，又或者你自己修好它然后重新压缩镜像。
 
 ### "/dev must be mounted" when it already is
 

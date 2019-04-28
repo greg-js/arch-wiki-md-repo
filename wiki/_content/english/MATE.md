@@ -25,9 +25,9 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [3.1 Accessibility](#Accessibility)
     *   [3.2 Notifications](#Notifications)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Enabling compositing](#Enabling_compositing)
-    *   [4.2 Enabling new window centering](#Enabling_new_window_centering)
-    *   [4.3 Enabling window snapping](#Enabling_window_snapping)
+    *   [4.1 Disabling compositing](#Disabling_compositing)
+    *   [4.2 Disabling new window centering](#Disabling_new_window_centering)
+    *   [4.3 Disabling window snapping](#Disabling_window_snapping)
     *   [4.4 Undecorating maximized windows](#Undecorating_maximized_windows)
     *   [4.5 Show or hide desktop icons](#Show_or_hide_desktop_icons)
         *   [4.5.1 Hide all desktop icons](#Hide_all_desktop_icons)
@@ -51,6 +51,8 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [5.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
     *   [5.7 Logout/shutdown delayed by at-spi-registryd](#Logout/shutdown_delayed_by_at-spi-registryd)
     *   [5.8 Caja's text file preview](#Caja's_text_file_preview)
+    *   [5.9 GTK+ 2 applications seem to ignore default MATE themes](#GTK+_2_applications_seem_to_ignore_default_MATE_themes)
+    *   [5.10 Speaker test does not work](#Speaker_test_does_not_work)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -169,36 +171,36 @@ See [Backlight#Kernel command-line options](/index.php/Backlight#Kernel_command-
 
 ## Tips and tricks
 
-### Enabling compositing
+### Disabling compositing
 
-Compositing is not enabled by default. To enable it navigate to run *System > Preferences > Look and Feel > Windows > General* and click the tick box alongside *Enable software compositing window manager*. Alternatively, you can run the following from the terminal:
-
-```
-$ gsettings set org.mate.Marco.general compositing-manager true
+Compositing is enabled by default. To disable it, navigate to *Look and Feel > Windows > General* in the System Preferences and tick the box alongside *Enable software compositing window manager*. Alternatively, you can run the following from the terminal:
 
 ```
-
-### Enabling new window centering
-
-By default, new windows are placed in the top-left corner. To center new windows on creation navigate to run *System > Preferences > Windows > Placement* and click the tick box alongside *Center new windows*. Alternatively, you can run the following from the terminal:
-
-```
-$ gsettings set org.mate.Marco.general center-new-windows true
+$ gsettings set org.mate.Marco.general compositing-manager false
 
 ```
 
-### Enabling window snapping
+### Disabling new window centering
 
-Window snapping is not be enabled by default, to enable it navigate to run *System > Preferences > Windows > Placement* and click the tick box alongside *Enable side by side tiling*. Alternatively, you can run the following from the terminal:
+By default, new windows are placed in the center. To disable centering new windows, navigate to run *Windows > Placement* in the System Preferences and tick the box alongside *Center new windows*. Alternatively, you can run the following from the terminal:
 
 ```
-$ gsettings set org.mate.Marco.general allow-tiling true
+$ gsettings set org.mate.Marco.general center-new-windows false
+
+```
+
+### Disabling window snapping
+
+Window snapping is enabled by default. To disable it, navigate to run *Windows > Placement* in the System Preferences and tick the box alongside *Enable window tiling*. Alternatively, you can run the following from the terminal:
+
+```
+$ gsettings set org.mate.Marco.general allow-tiling false
 
 ```
 
 ### Undecorating maximized windows
 
-Hiding the decorations of maximized windows is possible with the [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/) tool: After installing it, navigate to *System > Preferences > Look and Feel > MATE Tweak > Windows* and enable *Undecorate maximized windows* in the *Window Behaviour* section.
+Hiding the decorations of maximized windows is possible with the [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/) tool: After installing it, navigate to *Look and Feel > MATE Tweak > Windows* in the System Preferences and enable *Undecorate maximized windows* in the *Window Behaviour* section.
 
 **Tip:** If this option is grayed out and unavailable, try installing the [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group.
 
@@ -269,7 +271,7 @@ $ gsettings set org.mate.session.required-components windowmanager *wm-name*
 
 	Using MATE session autostart
 
-You can autostart a window manager of your choice using *mate-session-properties*. This means that the autostarted window manager will replace the default window manager at login. Navigate to *System* -> *Preferences* -> *Startup Applications*. In the dialog click *Add.* The command should take the syntax `*wm-name* --replace`.
+You can autostart a window manager of your choice using *mate-session-properties*. This means that the autostarted window manager will replace the default window manager at login. Navigate to *Startup Applications* in the System Preferences. In the dialog click *Add.* The command should take the syntax `*wm-name* --replace`.
 
 ### Prevent Caja from managing the desktop
 
@@ -451,6 +453,14 @@ When logging out or shutting down, you may find that you are presented with an *
 ### Caja's text file preview
 
 Since the migration to GTK+3 this feature is not working.[[4]](https://github.com/mate-desktop/caja/issues/1047)
+
+### GTK+ 2 applications seem to ignore default MATE themes
+
+Themes that come with [mate-themes](https://www.archlinux.org/packages/?name=mate-themes) need optional dependencies [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines) and [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) for GTK+ 2 themes to function properly.
+
+### Speaker test does not work
+
+For [PulseAudio](/index.php/PulseAudio "PulseAudio") backend, [install](/index.php/Install "Install") [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)'s optional dependency [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse).
 
 ## See also
 

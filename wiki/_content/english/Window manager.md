@@ -282,7 +282,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[spectrwm](/index.php/Spectrwm "Spectrwm")** — Small dynamic tiling window manager for X11, largely inspired by xmonad and dwm. It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and is configured with a text file. It was written by hackers for hackers and it strives to be small, compact and fast. It has a built-in status bar fed from a user-defined script.
 
-	[https://github.com/conformal/spectrwm/wiki](https://github.com/conformal/spectrwm/wiki) || [spectrwm](https://www.archlinux.org/packages/?name=spectrwm)
+	[https://github.com/conformal/spectrwm/](https://github.com/conformal/spectrwm/) || [spectrwm](https://www.archlinux.org/packages/?name=spectrwm)
 
 *   **[Qtile](/index.php/Qtile "Qtile")** — Full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
 

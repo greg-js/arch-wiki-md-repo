@@ -145,7 +145,7 @@ aptitude install | zypper verify | revdep-rebuild |
 | Updates package(s) with local packages and uses the installation sources to resolve dependencies | pacman -U | dnf upgrade | debi | emerge |
 | Add a local package to the local package cache mostly for debugging purposes. | cp $filename /var/cache/pacman/pkg/ | apt-cache add | n/a | cp $filename /usr/portage/distfiles |
 | Extract a package | tar -Jxvf | rpm2cpio | cpio -vid | dpkg-deb -x | rpm2cpio | cpio -vid | tar -jxvf |
-| Install/Remove packages to satisfy build-dependencies. Uses information in the source package. | automatic | dnf builddep | apt-get build-dep | zypper si -d | emerge -o |
+| Install/Remove packages to satisfy build-dependencies. Uses information in the source package. | Use [ABS](/index.php/ABS "ABS") && makepkg -seoc | dnf builddep | apt-get build-dep | zypper si -d | emerge -o |
 | Display the source package to the given package name(s) | dnf repoquery -s | apt-cache showsrc | n/a |
 | Downloads the corresponding source package(s) to the given package name(s) | Use [ABS](/index.php/ABS "ABS") && makepkg -o | dnf download --source | apt-get source / debcheckout | zypper source-install | emerge --fetchonly |
 | Build a package | makepkg -s | rpmbuild -ba (normal)

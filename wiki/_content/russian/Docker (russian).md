@@ -397,11 +397,11 @@ dpkg: error: error creating new backup file '/var/lib/dpkg/status-old': Invalid 
 
 ### Отсутствие CPUACCT в docker с Linux-ck
 
-В новых версиях [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienced](https://aur.archlinux.org/packages/linux-ck#comment-677316) кажется общей проблемой в версиях 4.19, 4.20), было сделано изменение в MuQSS, которое отключает опцию в ядре `CONFIG_CGROUP_CPUACCT`, что делает «некоторое» использование docker (`run` или `build`) вызывающим следующую ошибку:
+В новых версиях [Linux-ck (Русский)](/index.php/Linux-ck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Linux-ck (Русский)") ([замечено](https://aur.archlinux.org/packages/linux-ck#comment-677316) в версиях 4.19 и 4.20), было сделано изменение в MuQSS, отключающее опцию `CONFIG_CGROUP_CPUACCT` в ядре, что вызывает следующую ошибку при использовании некоторых команд docker (`run` или `build`):
 
  `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
 
-Эта ошибка, похоже, не влияет на демон docker, только на контейнеры. Читайте больше в [Linux-ck#CPUACCT отсутствует в docker](/index.php/Linux-ck#CPUACCT_отсутствует_в_docker "Linux-ck").
+Похоже, что эта ошибка не влияет на демон docker, а только на контейнеры. См. раздел [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck") для получения более подробной информации.
 
 ### Docker-machine не может создать виртуальные машины с драйвером virtualbox
 

@@ -8,7 +8,11 @@ In early 2013, Hong Jen Yee "PCMan" started porting [LXDE](/index.php/LXDE "LXDE
 
 The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses Razor-qt and LXDE components. While development is mainly focused on LXQt, the GTK+ 2 version of LXDE will see continued development.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting the desktop](#Starting_the_desktop)
@@ -40,6 +44,7 @@ For additional functionality, you may wish to install the following:
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
 *   A screen locker, if needed. For example, [slock](/index.php/Slock "Slock") or [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under *LXQt > Preferences > LXQt Settings > Session Settings > Lock screen before suspending/hibernating* checkbox.
+*   If you haven't yet, install xorg.
 
 **Tip:** LXQt uses *xdg-screensaver* from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) for screen locking which only works with XScreenSaver and [xautolock](https://www.archlinux.org/packages/?name=xautolock) in LXQt session. You can use it or another screen locker by itself. For example, with *slock* you can follow [Slock#Lock on suspend](/index.php/Slock#Lock_on_suspend "Slock") as well as install patched [xdg-utils-slock](https://aur.archlinux.org/packages/xdg-utils-slock/) to obtain feelings expected by LXQt
 
@@ -89,7 +94,7 @@ lxqt-config-session
 
 ```
 
-From this window, click on *AutoStart* on the left side. Here you can add a new application to either the global autostart (launched in all sessions implementing the [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") specification) or your local autostart (labled LXQt Autostart) (See [issue 746](https://github.com/lxde/lxqt/issues/746) for a bug related to this option). For each item you add, `lxqt-config-session` will create a Desktop entry (*.desktop* file) in the appropriate [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") directory.
+From this window, click on *AutoStart* on the left side. Here you can add a new application to either the global autostart (launched in all sessions implementing the [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") specification) or your local autostart (labelled LXQt Autostart) (See [issue 746](https://github.com/lxde/lxqt/issues/746) for a bug related to this option). For each item you add, `lxqt-config-session` will create a Desktop entry (*.desktop* file) in the appropriate [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") directory.
 
 The distinction between "Global Autostart" and "LXQt Autostart" does not depend on the directory in which the corresponding *.desktop* file is located, but rather on the `OnlyShowIn` setting. If it is `OnlyShowIn=true`, it is considered an "LXQt Autostart". Furthermore, if `X-LXQt-Module=true`, the item is not shown in `lxqt-config-session`.
 

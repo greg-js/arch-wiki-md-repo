@@ -69,7 +69,7 @@ The last point (triggering a lock from an event) is the trickiest, because you c
 
 #### Inactivity
 
-You can trigger a lock on inactivity using [systemd](#Inactivity_2), [DPMS](/index.php/DPMS "DPMS") (see [xss-lock](#xss-lock) or [xautolock](#xautolock)
+You can trigger a lock on inactivity using [systemd](#Inactivity_2), [DPMS](/index.php/DPMS "DPMS") (see [xss-lock](#xss-lock)) or [xautolock](#xautolock)
 
 #### Suspend / Hibernate
 
@@ -130,7 +130,7 @@ To configure DPMS signaling timeout:
 
 DPMS signaling can also be configured in `/etc/X11/xorg.conf.d/` in the `Monitor` section.
 
-Using DPMS signaling, you can set a second timer, for exemple to notify the user or to dim the screen. For exemple (from [xss-lock(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xss-lock.5):
+Using DPMS signaling, you can set a second timer, for exemple to notify the user or to dim the screen. For exemple (from [xss-lock(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xss-lock.1)):
 
 ```
 # Dim the screen after three minutes of inactivity, lock the screen two minutes later using i3lock:
@@ -170,7 +170,7 @@ Using `loginctl lock-session`, or the `lock` action in [logind.conf(5)](https://
 
 #### Inactivity
 
-In [logind.con(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logind.con.5), you can configure the `IdleAction` to `lock`. This will trigger a DBUS notification, that will have to be processed (for exemple by xsslock) to lock the session.
+In [logind.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5), you can configure the `IdleAction` to `lock`. This will trigger a DBUS notification, that will have to be processed (for exemple by xsslock) to lock the session.
 
 Note that this is for a global system (so this is not ideal for a multi user environment).
 

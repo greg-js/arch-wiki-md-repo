@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Console](#Console)
     *   [1.1 Using a separate service](#Using_a_separate_service)
@@ -70,7 +74,7 @@ To disable the num-lock activation hint displaying on the login screen, [edit](/
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
+ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
 
 ```
 

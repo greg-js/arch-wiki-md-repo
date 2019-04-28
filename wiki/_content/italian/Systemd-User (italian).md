@@ -6,12 +6,16 @@ Related articles
 
 [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)") offre agli utenti la possibilità di gestire i servizi sotto il controllo dell'utente tramite una istanza di systemd per singolo utente, che consente agli stessi di avviare, fermare, abilitare e disabilitare le proprie unità. Questa caratteristica è utile per demoni e altre operazioni automatiche come lo scaricamento della posta. È inoltre possibile, con alcune modifiche, avviare Xorg e il window manager in uso direttamente tramite i servizi utente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Come funziona](#Come_funziona)
 *   [2 Configurazione di base](#Configurazione_di_base)
     *   [2.1 D-Bus](#D-Bus)
-    *   [2.2 Variabili d'ambiente](#Variabili_d.27ambiente)
+    *   [2.2 Variabili d'ambiente](#Variabili_d'ambiente)
         *   [2.2.1 DISPLAY e XAUTHORITY](#DISPLAY_e_XAUTHORITY)
         *   [2.2.2 PATH](#PATH)
     *   [2.3 Avvio automatico delle istanze utente di systemd](#Avvio_automatico_delle_istanze_utente_di_systemd)
@@ -22,7 +26,7 @@ Related articles
     *   [4.1 Esempio](#Esempio)
     *   [4.2 Esempio con variabili](#Esempio_con_variabili)
     *   [4.3 Nota per applicazioni X11](#Nota_per_applicazioni_X11)
-*   [5 Esempi d'uso](#Esempi_d.27uso)
+*   [5 Esempi d'uso](#Esempi_d'uso)
     *   [5.1 Multiplexer di terminale persistente](#Multiplexer_di_terminale_persistente)
     *   [5.2 Window manager](#Window_manager)
 *   [6 Riferimenti](#Riferimenti)
@@ -225,7 +229,7 @@ WantedBy=default.target
 
 ```
 
-Come specificato in [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), la variabile `%h` viene sostituita con la home directory dell'utente che esegue il servizio. Vi sono altre variabili disponibili, spiegate in dettaglio nelle pagine di manuale di [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)").
+Come specificato in [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), la variabile `%h` viene sostituita con la home directory dell'utente che esegue il servizio. Vi sono altre variabili disponibili, spiegate in dettaglio nelle pagine di manuale di [systemd](/index.php/Systemd_(Italiano) "Systemd (Italiano)").
 
 ### Nota per applicazioni X11
 

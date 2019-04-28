@@ -14,7 +14,7 @@
 
 ## AUR installation
 
-[Install](/index.php/Install "Install") [ghost](https://aur.archlinux.org/packages/ghost/), and modify `/etc/webapps/ghost/config.js`. Then [start](/index.php/Start "Start") `ghost.service`. If you are happy with it, [enable](/index.php/Enable "Enable") it for automatic start when the system boots.
+[Install](/index.php/Install "Install") [ghost-web](https://aur.archlinux.org/packages/ghost-web/), and modify `/etc/webapps/ghost/config.js`. Then [start](/index.php/Start "Start") `ghost.service`. If you are happy with it, [enable](/index.php/Enable "Enable") it for automatic start when the system boots.
 
 Visit [http://127.0.0.1:2368/ghost](http://127.0.0.1:2368/ghost) for final configuration.
 
@@ -49,7 +49,7 @@ $ mkdir -p /srv/http/example.org
 
 Now [start](/index.php/Start "Start") the `nginx.service`.
 
-Install [Ghost](https://aur.archlinux.org/packages/Ghost/) or grab the latest version of Ghost from Ghost.org, install it manually and change into the extraction directory::
+Install [ghost-web](https://aur.archlinux.org/packages/ghost-web/) or grab the latest version of Ghost from Ghost.org, install it manually and change into the extraction directory::
 
 ```
 $ curl -L [https://ghost.org/zip/ghost-latest.zip](https://ghost.org/zip/ghost-latest.zip) -o ghost.zip

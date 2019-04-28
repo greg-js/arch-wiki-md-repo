@@ -904,7 +904,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[rofi](/index.php/Rofi "Rofi")** — Popup window switcher roughly based on superswitcher, requiring only xlib and pango.
 
-	[http://davedavenport.github.io/rofi/](http://davedavenport.github.io/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
+	[https://github.com/davatorium/rofi/](https://github.com/davatorium/rofi/) || [rofi](https://www.archlinux.org/packages/?name=rofi)
 
 *   **slingshot** — Application launcher has a clear look, part of [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 

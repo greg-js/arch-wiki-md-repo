@@ -155,3 +155,4 @@ While importing the databases, you might get this error message. In order to sol
 ## See also
 
 *   [Official manual](https://www.zabbix.com/documentation/)
+*   [Zabbix Share](https://share.zabbix.com/) – Zabbix templates, modules & more

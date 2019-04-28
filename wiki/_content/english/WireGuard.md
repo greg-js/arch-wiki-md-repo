@@ -41,11 +41,11 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package and the appropriate kernel module:
-
-*   [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) for the default [linux](https://www.archlinux.org/packages/?name=linux) kernel.
-*   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
-*   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
+1.  [Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+2.  Install the appropriate kernel module:
+    *   [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) for the default [linux](https://www.archlinux.org/packages/?name=linux) kernel.
+    *   [wireguard-lts](https://www.archlinux.org/packages/?name=wireguard-lts) for the LTS [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
+    *   [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) for the DKMS variant for other [kernels](/index.php/Kernel "Kernel").
 
 **Tip:** [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for setting up Wireguard interfaces since version 237\. See [#Using systemd-networkd](#Using_systemd-networkd) for details.
 
@@ -363,7 +363,15 @@ No `PostDown` key is necessary as *systemd-resolved* automatically revert all pa
 
 ### Using systemd-networkd
 
-[Systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for WireGuard protocols and therefore does not require the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has native support for WireGuard protocols and therefore does not require the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+
+In order to prevent leak of private keys, it is recommended to set the permissions of the *.netdev* file:
+
+```
+# chown root:systemd-network /etc/systemd/network/99-*.netdev
+# chmod 0640 /etc/systemd/network/99-*.netdev
+
+```
 
 #### Server
 

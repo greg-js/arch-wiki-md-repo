@@ -72,11 +72,12 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 To enable HiDPI, *Settings > Devices > Displays*，or use gsettings:
 
 ```
+$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', <2>}]"
 $ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 ```
 
-**Note:** `scaling-factor` only allows whole numbers to be set. 1 = 100%, 2 = 200%, etc...
+**Note:** GNOME only allows integer scaling numbers to be set. 1 = 100%, 2 = 200%, etc.
 
 #### Fractional Scaling
 

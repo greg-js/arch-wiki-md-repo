@@ -130,7 +130,7 @@ Softwares desenvolvidos pela comunidade com foco no Arch.
 
 	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
 
-	Projteados relacionados ao Arch de um Trusted User.
+	Projetados relacionados ao Arch de um Trusted User.
 
 ## FAQ
 

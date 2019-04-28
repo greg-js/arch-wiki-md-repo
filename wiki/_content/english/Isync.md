@@ -415,6 +415,8 @@ If you move an email to a new folder using an email client, and mbsync causes th
 
 For example, without this setting, moving an old email from Inbox to Archive using mu4e and then syncing to fastmail with mbsync will cause the email to appear in Archive but with the date of the sync.
 
+mbsync uses mtime of email message when uploading from maildir to imap server. You can use [fix_maildir_mail_mtime.py](https://gist.github.com/artizirk/877ce9d30159323aac037e2a2af74509) script to set mtime from email header.
+
 ## External links
 
 *   [Home page](http://isync.sourceforge.net/)

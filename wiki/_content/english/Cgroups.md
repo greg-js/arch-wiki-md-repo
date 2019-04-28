@@ -13,9 +13,13 @@ Control groups can be used in multiple ways:
 *   Using the `cgm` client (part of the [cgmanager](https://www.archlinux.org/packages/?name=cgmanager) package).
 *   Via tools like `cgcreate`, `cgexec` and `cgclassify` (part of the [libcgroup](https://aur.archlinux.org/packages/libcgroup/) package).
 *   the "rules engine daemon", to automatically move certain users/groups/commands to groups (`/etc/cgrules.conf` and `/usr/lib/systemd/system/cgconfig.service`) (part of the [libcgroup](https://aur.archlinux.org/packages/libcgroup/) package).
-*   through other software such as [Linux Containers](/index.php/Linux_Containers "Linux Containers") (LXC) virtualization, tools like [playpen](https://www.archlinux.org/packages/?name=playpen) or systemd.
+*   through other software such as [Linux Containers](/index.php/Linux_Containers "Linux Containers") (LXC) virtualization or systemd.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Managing resource groups with systemd](#Managing_resource_groups_with_systemd)

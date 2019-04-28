@@ -20,7 +20,7 @@
 
 *pacman* написан на языке C и использует формат пакетов *.pkg.tar.xz*.
 
-**Совет:** Официальный пакет [pacman](https://www.archlinux.org/packages/?name=pacman) включает в себя много дополнительных полезных инструментов, таких как **makepkg**, **pactree**, **vercmp** и [checkupdates](#Частичные_обновления_не_поддерживаются). Выполните `pacman -Ql pacman | grep bin`, чтобы увидеть полный список.
+**Совет:** Официальный пакет [pacman](https://www.archlinux.org/packages/?name=pacman) содержит дополнительные полезные инструменты, такие как **makepkg** и **vercmp**. Другие полезные инструменты, такие как **pactree** и [checkupdates](#Частичные_обновления_не_поддерживаются) могут быть найдены в пакете [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib). Выполните `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'`, чтобы увидеть полный список.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

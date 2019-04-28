@@ -16,6 +16,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [6 Default fonts](#Default_fonts)
     *   [6.1 Japanese](#Japanese)
     *   [6.2 Chinese](#Chinese)
+    *   [6.3 Chinese in Noto Fonts](#Chinese_in_Noto_Fonts)
 *   [7 Alternate stylistic sets for fonts](#Alternate_stylistic_sets_for_fonts)
 *   [8 See also](#See_also)
 
@@ -413,6 +414,146 @@ or
 
 ```
 
+### Chinese in Noto Fonts
+
+Apply Noto Fonts, while replace Microsoft Fonts with WenQuanYi Micro Hei
+
+```
+~/.config/fontconfig/fonts.conf
+or
+/etc/fonts/local.conf
+```
+
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match target="font">
+        <edit name="embeddedbitmap" mode="assign">
+            <bool>false</bool>
+        </edit>
+    </match>
+    <match>
+        <test qual="any" name="family">
+            <string>serif</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>Noto Serif</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>sans-serif</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>monospace</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>Noto Sans Mono</string>
+        </edit>
+    </match>
+    <match>
+        <test name="lang" compare="contains">
+            <string>zh</string>
+        </test>
+        <test name="family">
+            <string>serif</string>
+        </test>
+        <edit name="family" mode="prepend">
+            <string>Noto Serif CJK SC</string>
+        </edit>
+    </match>
+    <match>
+        <test name="lang" compare="contains">
+            <string>zh</string>
+        </test>
+        <test name="family">
+            <string>sans-serif</string>
+        </test>
+        <edit name="family" mode="prepend">
+            <string>Noto Sans CJK SC</string>
+        </edit>
+    </match>
+    <match>
+        <test name="lang" compare="contains">
+            <string>zh</string>
+        </test>
+        <test name="family">
+            <string>monospace</string>
+        </test>
+        <edit name="family" mode="prepend">
+            <string>Noto Sans Mono CJK SC</string>
+        </edit>
+    </match>
+
+    <!--WenQuanYi Zen Hei -> WenQuanYi Micro Hei -->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>WenQuanYi Zen Hei</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>WenQuanYi Zen Hei Lite</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei Lite</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>WenQuanYi Zen Hei Mono</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei Mono</string>
+        </edit>
+    </match>
+
+    <!--Microsoft YaHei, SimHei, SimSun -> WenQuanYi Micro Hei -->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>Microsoft YaHei</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>SimHei</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>SimSun</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>SimSun-18030</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>WenQuanYi Micro Hei</string>
+        </edit>
+    </match>
+</fontconfig>
+
+```
+
 ## Alternate stylistic sets for fonts
 
 Certain fonts come with alternate stylistic sets for characters through an OpenType feature. Generally these stylistic sets are named `ss0x` and contain small changes to individual characters. This shows how to change the default dotted zero to a slashed zero for the monospace version of [ttf-ibm-plex](https://www.archlinux.org/packages/?name=ttf-ibm-plex).
@@ -442,3 +583,4 @@ See [What are "Stylistic Sets?"](https://www.typography.com/faq/question.php?faq
 ## See also
 
 *   [Gentoo forums](http://forums.gentoo.org/viewtopic-p-7273876.html#7273876)
+*   [Ubuntu Wiki](https://wiki.ubuntu.com/BetterCJKSupportSpecification/FontConfig)

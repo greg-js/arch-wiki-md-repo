@@ -29,6 +29,8 @@
     *   Archweb (but fairly inactive on this front)
 *   Dave Reisner
     *   Packaging
+*   David Runge
+    *   Packaging (pro-audio, webapps)
 *   Eric Bélanger
 *   Evangelos Foutras
     *   Packaging (Xfce, LLVM/Clang)

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 6 января 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=560982).
+**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 25 апреля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=571899).
 
 Эта статья – попытка создать список всех [языков программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F "wikipedia:ru:Список языков программирования"), для которых поставляется компилятор или интерпретатор в Arch Linux.
 
@@ -21,7 +21,6 @@
 *   [Go (Русский)](/index.php/Go_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Go (Русский)") – [go](https://www.archlinux.org/packages/?name=go), [GCC](/index.php/GCC "GCC")
 *   [Java (Русский)](/index.php/Java_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java (Русский)")
     *   [Groovy](https://en.wikipedia.org/wiki/ru:Groovy "wikipedia:ru:Groovy") – [groovy](https://www.archlinux.org/packages/?name=groovy)
-    *   [Scala](/index.php/Scala "Scala")
 *   [JavaScript](https://en.wikipedia.org/wiki/ru:JavaScript "wikipedia:ru:JavaScript") – [rhino](https://www.archlinux.org/packages/?name=rhino), [spidermonkey](https://aur.archlinux.org/packages/spidermonkey/), [v8](https://aur.archlinux.org/packages/v8/)
     *   [Node.js](/index.php/Node.js "Node.js")
 *   [Julia](/index.php/Julia "Julia")
@@ -36,6 +35,7 @@
 *   [R](/index.php/R "R")
 *   [Ruby](/index.php/Ruby "Ruby")
 *   [Rust (Русский)](/index.php/Rust_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rust (Русский)")
+*   [Scala](/index.php/Scala "Scala")
 *   [Swift](https://en.wikipedia.org/wiki/ru:Swift_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) – [swift](https://aur.archlinux.org/packages/swift/), [swift-bin](https://aur.archlinux.org/packages/swift-bin/)
 *   [Tcl](https://en.wikipedia.org/wiki/ru:Tcl "wikipedia:ru:Tcl") – [tcl](https://www.archlinux.org/packages/?name=tcl)
 

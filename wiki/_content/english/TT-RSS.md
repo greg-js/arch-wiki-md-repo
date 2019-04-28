@@ -10,6 +10,8 @@
     *   [1.1 Set up php and database](#Set_up_php_and_database)
     *   [1.2 Pacman hook](#Pacman_hook)
     *   [1.3 Set up an update daemon](#Set_up_an_update_daemon)
+    *   [1.4 Known issues](#Known_issues)
+        *   [1.4.1 Integrity constraint violation: 1062 Duplicate entry '1' for key 'ttrss_feeds_feed_url_owner_uid_key'](#Integrity_constraint_violation:_1062_Duplicate_entry_'1'_for_key_'ttrss_feeds_feed_url_owner_uid_key')
 
 ## Installation
 
@@ -130,3 +132,17 @@ $ systemctl status tt-rss
 ```
 
 to check that it's running fine.
+
+### Known issues
+
+#### Integrity constraint violation: 1062 Duplicate entry '1' for key 'ttrss_feeds_feed_url_owner_uid_key'
+
+If you update tt-rss database to schema 137 you might see the error *Duplicate entry '1' for key 'ttrss_feeds_feed_url_owner_uid_key'*. To fix the issue please start database shell, e.g.:
+
+```
+$ mysql -u ttrss -p
+$ use tt-rss;
+
+```
+
+And then run [query from official forum](https://discourse.tt-rss.org/t/potential-problems-when-upgrading-to-schema-137/2122) that drops duplicated database entries.

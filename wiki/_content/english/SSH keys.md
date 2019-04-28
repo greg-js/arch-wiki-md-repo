@@ -470,7 +470,7 @@ Doing it this way works well with [the above method on using *ssh-agent* as a wr
 
 #### Theming
 
-The appearance of the *x11-ssh-askpass* dialog can be customized by setting its associated [X resources](/index.php/X_resources "X resources"). The *x11-ssh-askpass* [home page](http://www.jmknoble.net/software/x11-ssh-askpass/) presents some [example themes](http://www.jmknoble.net/software/x11-ssh-askpass/screenshots.html). See the *x11-ssh-askpass* manual page for full details.
+The appearance of the *x11-ssh-askpass* dialog can be customized by setting its associated [X resources](/index.php/X_resources "X resources"). Some examples are the .ad files at [https://github.com/sigmavirus24/x11-ssh-askpass](https://github.com/sigmavirus24/x11-ssh-askpass). See [x11-ssh-askpass(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x11-ssh-askpass.1) for full details.
 
 #### Alternative passphrase dialogs
 
@@ -499,7 +499,7 @@ $ ln -s ../id_rsa
 
 Edit the `/etc/pam.d/login` configuration file to include the text highlighted in bold in the example below. The order in which these lines appear is significiant and can affect login behavior.
 
-**Warning:** Misconfiguring PAM can leave the system in a state where all users become locked out. Before making any changes, you should have an understanding of how PAM configuration works as well as a backup means of accessing the PAM configuration files, such as an Arch Live CD, in case you become locked out and need to revert any changes. An IBM developerWorks [article](http://www.ibm.com/developerworks/linux/library/l-pam/index.html) is available which explains PAM configuration in further detail.
+**Warning:** Misconfiguring PAM can leave the system in a state where all users become locked out. Before making any changes, you should have an understanding of how PAM configuration works as well as a backup means of accessing the PAM configuration files, such as an Arch Live CD, in case you become locked out and need to revert any changes. An IBM developerWorks [article](https://developer.ibm.com/tutorials/l-pam/) is available which explains PAM configuration in further detail.
  `/etc/pam.d/login` 
 ```
 #%PAM-1.0
@@ -517,7 +517,7 @@ In the above example, login authentication initially proceeds as it normally wou
 
 If you use another means of logging in, such as an X11 display manager like [SLiM](/index.php/SLiM "SLiM") or [XDM](/index.php/XDM "XDM") and you would like it to provide similar functionality, you must edit its associated PAM configuration file in a similar fashion. Packages providing support for PAM typically place a default configuration file in the `/etc/pam.d/` directory.
 
-Further details on how to use pam_ssh and a list of its options can be found in the pam_ssh man page.
+Further details on how to use pam_ssh and a list of its options can be found in the pam_ssh(8) man page.
 
 #### Using a different password to unlock the SSH key
 
@@ -545,7 +545,7 @@ session   optional  pam_permit.so
 **session   optional  pam_ssh.so**
 ```
 
-For an explanation, see [here](http://unix.stackexchange.com/a/239486/863).
+For an explanation, see [[10]](http://unix.stackexchange.com/a/239486/863).
 
 #### Known issues with pam_ssh
 

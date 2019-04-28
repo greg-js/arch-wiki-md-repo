@@ -1,9 +1,13 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 TTY (Teletype) Консоль 1-6](#TTY_.28Teletype.29_.D0.9A.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C_1-6)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 TTY (Teletype) Консоль 1-6](#TTY_(Teletype)_Консоль_1-6)
 *   [2 X.org](#X.org)
     *   [2.1 KDM](#KDM)
-    *   [2.2 Пользователям KDE](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F.D0.BC_KDE)
+    *   [2.2 Пользователям KDE](#Пользователям_KDE)
     *   [2.3 GDM](#GDM)
     *   [2.4 SLiM](#SLiM)
 

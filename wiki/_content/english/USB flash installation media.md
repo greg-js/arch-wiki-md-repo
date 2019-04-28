@@ -19,6 +19,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
         *   [1.1.1 In GNU/Linux](#In_GNU/Linux)
             *   [1.1.1.1 Using dd](#Using_dd)
             *   [1.1.1.2 Using etcher](#Using_etcher)
+            *   [1.1.1.3 Using Kindd](#Using_Kindd)
         *   [1.1.2 In Windows](#In_Windows)
             *   [1.1.2.1 Using Rufus](#Using_Rufus)
             *   [1.1.2.2 Using USBwriter](#Using_USBwriter)
@@ -71,6 +72,10 @@ See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more informatio
 ##### Using etcher
 
 [Etcher](https://etcher.io/) is a OS image flasher built with node.js and Electron, capable of flashing an SDCard or USB drive. It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly. There are 6 related packages in the AUR.
+
+##### Using Kindd
+
+[Kindd](https://github.com/LinArcX/Kindd) is a Qt based graphical frontend for dd. It is available as [kindd-git](https://aur.archlinux.org/packages/kindd-git/).
 
 #### In Windows
 

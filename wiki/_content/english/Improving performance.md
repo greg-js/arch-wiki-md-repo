@@ -51,6 +51,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [3.5.2 cgroups](#cgroups)
         *   [3.5.3 Cpulimit](#Cpulimit)
     *   [3.6 irqbalance](#irqbalance)
+    *   [3.7 Turn off CPU exploit mitigations](#Turn_off_CPU_exploit_mitigations)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg configuration](#Xorg_configuration)
     *   [4.2 Mesa configuration](#Mesa_configuration)
@@ -122,7 +123,7 @@ More Examples
 
 Note also that if you have a 2 USB ports on the front of your machine, and 4 USB ports on the back, and you have 4 disks, it would probably be fastest to put 2 on front/2 on back or 3 on back/1 on front. This is because internally the front ports are likely a separate Root Hub than the back, meaning you can send twice as much data by using both than just 1\. Use the following commands to determine the various paths on your machine.
 
- `USB Device Tree`  `$ lsusb -tv`  `PCI Device Tree`  `$ lspci -tv` 
+ `USB Device Tree`  `$ lsusb -t`  `PCI Device Tree`  `$ lspci -tv` 
 
 ### Partitioning
 
@@ -359,6 +360,19 @@ $ cpulimit -l 50 -p 5081
 ### irqbalance
 
 The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance) is distribute hardware interrupts across processors on a multiprocessor system in order to increase performance. It can be [controlled](/index.php/Systemd#Using_units "Systemd") by the provided `irqbalance.service`.
+
+### Turn off CPU exploit mitigations
+
+Turning off CPU exploit mitigations against Spectre/Meltdown improves performance at the cost of security, see [phoronix.com](https://phoronix.com/scan.php?page=news_item&px=Linux-Improve-CPU-Spec-Switches), which can be acceptable for isolated linux systems.
+
+To turn off most of the mitigations, add the following arguments to the kernel commandline.
+
+```
+$ pti=off nospectre_v1 nospectre_v2 l1tf=off nospec_store_bypass_disable
+
+```
+
+**Warning:** Do not apply this setting without considering the vulnerabilities it opens up.
 
 ## Graphics
 

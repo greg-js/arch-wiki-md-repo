@@ -43,7 +43,7 @@ Before you begin, [install](/index.php/Install "Install") the [archiso](https://
 
 Archiso comes with two "profiles": *releng* and *baseline*.
 
-*   If you wish to create a fully customized live version of Arch Linux, pre-installed with all your favorite programs and configurations, use *releng*.
+*   If you wish to create a fully customized live version of Arch Linux, pre-installed with all your favorite programs and configurations, use *releng*. This profile is also used for building an official Arch Linux ISO.
 *   If you just want to create the most basic live medium, with no pre-installed packages and a minimalistic configuration, use *baseline*.
 
 Now, copy the profile of your choice to a directory (*archlive* in the example below) where you can make adjustments and build it. Execute the following, replacing `**profile**` with either `releng` or `baseline`.
@@ -54,7 +54,7 @@ Now, copy the profile of your choice to a directory (*archlive* in the example b
 ```
 
 *   If you are using the `releng` profile to make a fully customized image, then you can proceed onto [#Configure the live medium](#Configure_the_live_medium).
-*   If you are using the `baseline` profile to create a bare image, then you will not be needing to do any customization and can proceed onto [#Build the ISO](#Build_the_ISO).
+*   If you are using the `baseline` profile to create a bare image or using `releng` to replicate an official ISO, then you will not be needing to do any customization and can proceed onto [#Build the ISO](#Build_the_ISO).
 
 ## Configure the live medium
 

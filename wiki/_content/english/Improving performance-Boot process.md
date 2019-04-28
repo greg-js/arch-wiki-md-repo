@@ -8,7 +8,11 @@ Related articles
 
 Improving the boot performance of a system can provide reduced boot wait times and a means to learn more about how certain system files and scripts interact with one another. This article attempts to aggregate methods on how to improve the boot performance of an Arch Linux system.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Analyzing the boot process](#Analyzing_the_boot_process)
     *   [1.1 Using systemd-analyze](#Using_systemd-analyze)
@@ -50,7 +54,7 @@ $ systemd-analyze critical-chain
 
 ```
 
-You can also create an SVG file which describes your boot process graphically, similiar to [Bootchart](/index.php/Bootchart "Bootchart"):
+You can also create an SVG file which describes your boot process graphically, similar to [Bootchart](/index.php/Bootchart "Bootchart"):
 
 ```
 $ systemd-analyze plot > plot.svg

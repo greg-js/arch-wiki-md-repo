@@ -10,7 +10,11 @@ From the project [home page](http://zim-wiki.org/):
 *   Draft blog entries and emails
 *   Do brainstorming
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -48,7 +52,7 @@ Zim provides a lot of useful plugins where many of them are not enabled by defau
 
 #### Spell checker
 
-The requirements for the Spell Checker plugin are as follows: [gtkspell](https://www.archlinux.org/packages/?name=gtkspell), [python2-gtkspellcheck](https://www.archlinux.org/packages/?name=python2-gtkspellcheck) and [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
+The requirements for the Spell Checker plugin are as follows: [gtkspell](https://www.archlinux.org/packages/?name=gtkspell), [python2-gtkspellcheck](https://aur.archlinux.org/packages/python2-gtkspellcheck/) and [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
 
 Change `aspell-en` to your desired language support. Now you can configure the Spell Checker and define the default language, in my case `en_GB`.
 

@@ -82,6 +82,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Vultr](https://www.vultr.com/) | Latest | KVM | [Multiple International locations](https://www.vultr.com/locations/) | When deploying a new server just select the Arch install ISO from Vultr ISO Library. Then just manually run through the standard [Arch installation guide](/index.php/Installation_guide "Installation guide"). |
 | [World4You](https://www.world4you.com/) | 2015.10.28 | OpenVZ | Austria (AT) | Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm) |
 | [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
+| [ZappieHost](https://zappiehost.com/) | Latest | LXC | Auckland, New Zealand (NZ) | Hosted on redundant SSDs. Kernel 4.X using LXC |
 | [ZeptoVM](https://www.zeptovm.com/) | Latest | KVM | St. Petersburg, RU; Khabarovsk, RU; Seoul, KR; Ashburn, US | Also provides local Archlinux mirror in some locations. |
 
 ## Installation

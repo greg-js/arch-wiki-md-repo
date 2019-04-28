@@ -1,6 +1,6 @@
 [Bcache](https://bcache.evilpiepirate.org/) (block cache) allows one to use an SSD as a read/write cache (in writeback mode) or read cache (writethrough or writearound) for another blockdevice (generally a rotating HDD or array). This article will show how to install arch using Bcache as the root partition. For an intro to bcache itself, see [the bcache homepage](http://bcache.evilpiepirate.org/). Be sure to read and reference [the bcache manual](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt). Bcache is in the mainline kernel since 3.10\. The kernel on the arch install disk includes the bcache module since 2013.08.01.
 
-An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO"). Another alternative - [btier-dkms](https://aur.archlinux.org/packages/btier-dkms/).
+An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO").
 
 Bcache needs the backing device to be formatted as a bcache block device. In most cases, [blocks to-bcache](https://github.com/g2p/blocks) can do an in-place conversion.
 
@@ -18,8 +18,6 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
 
 *   [1 Setting up a bcache device on an existing system](#Setting_up_a_bcache_device_on_an_existing_system)
     *   [1.1 Bcache management](#Bcache_management)
-    *   [1.2 Converting existing disks](#Converting_existing_disks)
-        *   [1.2.1 Troubleshooting](#Troubleshooting)
 *   [2 Installation to a bcache device](#Installation_to_a_bcache_device)
 *   [3 Accessing from the install disk](#Accessing_from_the_install_disk)
 *   [4 Configuring](#Configuring)
@@ -28,7 +26,7 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
         *   [5.1.1 Example of growing](#Example_of_growing)
         *   [5.1.2 Example of shrinking](#Example_of_shrinking)
             *   [5.1.2.1 Force flush of cache to backing device](#Force_flush_of_cache_to_backing_device)
-*   [6 Troubleshooting](#Troubleshooting_2)
+*   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 /dev/bcache device does not exist on bootup](#/dev/bcache_device_does_not_exist_on_bootup)
     *   [6.2 /sys/fs/bcache/ does not exist](#/sys/fs/bcache/_does_not_exist)
 *   [7 See also](#See_also)
@@ -143,40 +141,6 @@ In the above example, the *writethrough* mode is enabled.
    # echo 1 > /sys/fs/bcache/<cache-set-uuid>/stop
 
 ```
-
-### Converting existing disks
-
-**Warning:**
-
-*   it is widely recommended to use Bcache underneath any other block layer.
-*   the **blocks** package is broken with Python3\. Please visit [this thread](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=769737) for a workaround, or use [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv").
-*   when on top of a **LVM2** layer, the *discard* mount option may not be handled well.
-
-With `blocks`, you can add a Bcache layer on a device with an existing filesystem or layer (normal partition, LUKS partition, logical volume).
-
-First, install the [blocks-git](https://aur.archlinux.org/packages/blocks-git/) package from [AUR](/index.php/AUR "AUR").
-
-*blocks* needs to add the **bcache** metadata at the start of the targeted partition, here `/dev/sdz4`; to be able to do so, it will resize the partition just before the targeted one (`/dev/sdz3`) to make necessary room, typically 2048 bits (2k). It will ask for your passphrase if the partition(`/dev/sdz3`) is an LUKS partition. Then it will recreate another partition with the start just lower of 2048 bits and run *make-bcache*, so you do not need to run it yourself.
-
-```
-   # blocks to-bcache /dev/sdz4
-
-```
-
-You can check that everything is ok by running:
-
-```
-   # bcache-super-show /dev/sdz4
-
-```
-
-which should output metadata about the new backing **bcache** device
-
-You can proceed to create the caching device and attach it to the backing device.
-
-#### Troubleshooting
-
-If `blocks` complains about *overlapping metadata* when running `blocks to-bcache`, you will need to shrink by 100Mb the partition you want to cache and create a new 100Mb free partition.
 
 ## Installation to a bcache device
 

@@ -25,9 +25,8 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
         *   [1.1.3 Configuration](#Configuration)
         *   [1.1.4 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
         *   [1.1.5 Playing DRM-protected content](#Playing_DRM-protected_content)
-    *   [1.2 Shumway](#Shumway)
-    *   [1.3 Gnash](#Gnash)
-    *   [1.4 Lightspark](#Lightspark)
+    *   [1.2 Gnash](#Gnash)
+    *   [1.3 Lightspark](#Lightspark)
 *   [2 PDF viewer](#PDF_viewer)
     *   [2.1 PDF.js](#PDF.js)
     *   [2.2 External PDF viewers](#External_PDF_viewers)
@@ -115,10 +114,6 @@ Fixing this issue only works for the NPAPI plugin and this issue can be fixed vi
 #### Playing DRM-protected content
 
 See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
-
-### Shumway
-
-[Shumway](http://mozilla.github.io/shumway/) is a [discontinued](https://github.com/mozilla/shumway/issues/2420) HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. The plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/) or with [firefox-extension-shumway](https://aur.archlinux.org/packages/firefox-extension-shumway/).
 
 ### Gnash
 

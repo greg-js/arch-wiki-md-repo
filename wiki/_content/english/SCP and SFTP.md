@@ -18,8 +18,11 @@ The [Secure copy (SCP)](https://en.wikipedia.org/wiki/Secure_copy "wikipedia:Sec
     *   [2.2 Create an unprivileged user](#Create_an_unprivileged_user)
     *   [2.3 Setup OpenSSH](#Setup_OpenSSH)
 *   [3 Secure copy protocol (SCP)](#Secure_copy_protocol_(SCP))
-    *   [3.1 Scponly](#Scponly)
-        *   [3.1.1 Adding a chroot jail](#Adding_a_chroot_jail)
+    *   [3.1 General Usage](#General_Usage)
+        *   [3.1.1 Linux to Linux](#Linux_to_Linux)
+        *   [3.1.2 Linux to Windows](#Linux_to_Windows)
+    *   [3.2 Scponly](#Scponly)
+        *   [3.2.1 Adding a chroot jail](#Adding_a_chroot_jail)
 
 ## Secure file transfer protocol (SFTP)
 
@@ -94,6 +97,49 @@ Connection to someserver.com closed.
 More features are available by installing additional packages, for example [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) described below.
 
 **Note:** The scp protocol is outdated, inflexible and not readily fixed. Its authors recommend the use of more modern protocols like sftp and rsync for file transfer instead.[[1]](https://lists.mindrot.org/pipermail/openssh-unix-dev/2019-March/037672.html)
+
+### General Usage
+
+#### Linux to Linux
+
+Copy file from a remote host to local host SCP example:
+
+```
+$ scp username@from_host:file.txt /local/directory/
+
+```
+
+Copy file from local host to a remote host SCP example:
+
+```
+$ scp file.txt username@to_host:/remote/directory/
+
+```
+
+Copy directory from a remote host to local host SCP example:
+
+```
+$ scp -r username@from_host:/remote/directory/  /local/directory/
+
+```
+
+Copy directory from local host to a remote hos SCP example:
+
+```
+$ scp -r /local/directory/ username@to_host:/remote/directory/
+
+```
+
+Copy file from remote host to remote host SCP example:
+
+```
+$ scp username@from_host:/remote/directory/file.txt username@to_host:/remote/directory/
+
+```
+
+#### Linux to Windows
+
+Use a Windows program such as [WinSCP](https://winscp.net/eng/download.php)
 
 ### Scponly
 

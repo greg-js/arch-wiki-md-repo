@@ -15,7 +15,7 @@ Related articles
     *   [2.2 SDK packages](#SDK_packages)
         *   [2.2.1 Android Emulator](#Android_Emulator)
         *   [2.2.2 Other SDK packages in the AUR](#Other_SDK_packages_in_the_AUR)
-        *   [2.2.3 Making /opt/android-sdk group-owned](#Making_/opt/android-sdk_group-owned)
+        *   [2.2.3 Making /opt/android-sdk group-writeable](#Making_/opt/android-sdk_group-writeable)
     *   [2.3 Other IDEs](#Other_IDEs)
         *   [2.3.1 Netbeans](#Netbeans)
         *   [2.3.2 Eclipse](#Eclipse)
@@ -106,40 +106,28 @@ To run the Android Emulator you need an Intel or ARM System Image. You can insta
 
 The [Android Support Library](https://developer.android.com/topic/libraries/support-library/) is now available online from [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven). You can also install it offline through the `extras;android;m2repository` SDK package (also available as [android-support-repository](https://aur.archlinux.org/packages/android-support-repository/)).
 
-#### Making /opt/android-sdk group-owned
+#### Making /opt/android-sdk group-writeable
 
-The AUR packages install the SDK in `/opt/android-sdk/`. This directory has root [permissions](/index.php/Permissions "Permissions"), so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
-
-```
-# groupadd sdkusers
+The AUR packages install the SDK in `/opt/android-sdk/`. This directory has root [permissions](/index.php/Permissions "Permissions"), so keep in mind to run sdk manager as root. If you intend to use it as a regular user, create the Android sdk users group, add your user.
 
 ```
-
-Add your user into this group:
-
-```
-# gpasswd -a <user> sdkusers
+# groupadd android-sdk
+# gpasswd -a <user> android-sdk
 
 ```
 
-Change folder's group.
+Set an access control list to let members of the newly created group write into the android-sdk folder. As running sdkmanager can also create new files, set the ACL as default ACL. the X in the default group entry means "allow execution if executable by the owner (or anyone else)"
 
 ```
-# chown -R :sdkusers /opt/android-sdk/
-
-```
-
-Change permissions of the folder so the user that was just added to the group will be able to write in it:
-
-```
-# chmod -R g+w /opt/android-sdk/
+# setfacl -R -m g:android-sdk:rwx /opt/android-sdk
+# setfacl -d -m g:android-sdk:rwX /opt/android-sdk  
 
 ```
 
 Re-login or as <user> log your terminal in to the newly created group:
 
 ```
-$ newgrp sdkusers
+$ newgrp android-sdk
 
 ```
 

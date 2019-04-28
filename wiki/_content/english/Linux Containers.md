@@ -138,13 +138,13 @@ root:100000:65536
 
 LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lxc.container.conf.5)). A bridge device on the host is required for most types of virtual networking.
 
-LXC comes with its own NAT Bridge (lxcbr0).
+LXC comes with its own NAT bridge (lxcbr0).
 
 **Note:** A NAT bridge is a standalone bridge with a private network that is not bridged to the host eth0 or a physical network. It exists as a private subnet in the host.
 
-**Tip:** This is quite useful when WIFI is the only option. There have been various attempts of creating Bridges on WIFI without much success.
+**Tip:** This is quite useful when Wi-Fi is the only option. There have been various attempts of creating bridges on Wi-Fi, but without much success.
 
-To use LXC's NAT Bridge you need to create its configuration file:
+To use LXC's NAT bridge you need to create its configuration file:
 
  `/etc/default/lxc-net` 
 ```
@@ -180,7 +180,7 @@ LXC_DHCP_MAX="253"
 #LXC_DOMAIN="lxc"
 ```
 
-**Tip:** Make sure the bridges ip-range does not interfere with your local network.
+**Tip:** Make sure the bridge's IP range does not interfere with your local network.
 
 Then we need to modify the LXC container template so our containers use our bridge:
 

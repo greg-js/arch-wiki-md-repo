@@ -6,7 +6,11 @@ Artículos relacionados
 
 [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") ofrece a los usuarios la capacidad de ejecutar una instancia de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") para gestionar la sesión y los servicios. Esto permite a los usuarios iniciar, detener, habilitar y deshabilitar las unidades que se encuentren dentro de ciertas carpetas cuando systemd se ejecuta por el usuario. Esto es conveniente para los demonios y otros servicios que normalmente se ejecutan como un usuario diferente a root o un usuario especial, como por ejemplo [mpd](/index.php/Mpd "Mpd")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuración desde systemd 206](#Configuración_desde_systemd_206)
     *   [1.1 D-Bus](#D-Bus)
@@ -305,7 +309,7 @@ El siguiente es un ejemplo de una versión de usuario de `sickbeard.service`, qu
 Description=SickBeard Daemon
 
 [Service]
-ExecStart=/usr/bin/env python2 /opt/sickbeard/SickBeard.py --config %h/.sickbeard/config.ini --datadir %h/.sickbeard
+ExecStart=/usr/bin/env python2 /opt/sickbeard/SickBeard.py --config %h/.sickbeard/config.ini --datadir %h/.sickbeard
 
 [Install]
 WantedBy=default.target
@@ -353,7 +357,7 @@ WantedBy=mystuff.target
 A continuación, se puede ejecutar con:
 
 ```
-systemctl --user {start|enable} x-app@your-desired-display.service # <= :0 in most cases
+systemctl --user {start|enable} x-app@your-desired-display.service # <= :0 in most cases
 
 ```
 

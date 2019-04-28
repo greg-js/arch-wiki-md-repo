@@ -27,7 +27,7 @@
 
 ## 글꼴
 
-한글 입력을 사용하기 위해서는 한글 글꼴이 설치되어 있어야 합니다. [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) 패키지를 [AUR](/index.php/AUR "AUR")에서 설치하십시오. 터미널 등에서 사용할 수 있는 고정폭 글꼴이 필요하다면 AUR에서 [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) 패키지를 설치하십시오. 옛한글을 읽고 입력하기 원한다면, [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) 혹은 [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) 패키지를 사용하십시오.
+한글 입력 및 출력을 위해서는 한글 글꼴이 설치되어 있어야 합니다. 공식저장소의 [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts)과 [adobe-source-han-serif-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-kr-fonts)를 설치하십시오. 나눔글꼴의 경우 공식저장소에서 지원하지 않고 있으므로 필요 시 [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) 패키지를 [AUR](/index.php/AUR "AUR")에서 설치하십시오. 터미널 등에서 사용할 수 있는 고정폭 글꼴이 필요하다면 AUR에서 [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) 패키지를 설치하십시오. 옛한글을 읽고 입력하기 원한다면, [ttf-unfonts-core-ibx](https://aur.archlinux.org/packages/ttf-unfonts-core-ibx/) 혹은 [ttf-kopubworld](https://aur.archlinux.org/packages/ttf-kopubworld/)/[otf-kopubworld](https://aur.archlinux.org/packages/otf-kopubworld/) 패키지를 사용하십시오.
 
 다른 한글 폰트는 [Fonts#Korean](/index.php/Fonts#Korean "Fonts")에서 확인할 수 있습니다.
 

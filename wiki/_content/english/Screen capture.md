@@ -54,9 +54,9 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[https://gitlab.gnome.org/GNOME/gnome-screenshot/](https://gitlab.gnome.org/GNOME/gnome-screenshot/) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
 
-*   **grim** — Grab images from a Wayland compositor. It currently works on [Sway](/index.php/Sway "Sway") 1.0 alpha.
+*   **grim** — Grab images from a Wayland compositor.
 
-	[https://github.com/emersion/grim](https://github.com/emersion/grim) || [grim-git](https://aur.archlinux.org/packages/grim-git/)
+	[https://github.com/emersion/grim](https://github.com/emersion/grim) || [grim](https://www.archlinux.org/packages/?name=grim)
 
 *   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
 
@@ -74,7 +74,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
 
-*   **maim** — Simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
+*   **maim** — Simple command line utility that takes screenshots. It is meant to replace scrot and performs better than scrot in many ways.
 
 	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
 
@@ -132,7 +132,7 @@ $ scrot -t 20 -d 5
 
 ```
 
-The above command saves a dated `.png` file, along with a thumbnail (20% of original), for Web posting. It provides a 5 second delay before capturing in this instance.
+The above command saves a dated *.png* file, along with a thumbnail (20% of original), for Web posting. It provides a 5 second delay before capturing in this instance.
 
 You can also use standard date and time formatting when saving to a file. e.g.,
 
@@ -149,7 +149,7 @@ See [scrot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scrot.1) for more info
 
 #### escrotum
 
-[escrotum-git](https://aur.archlinux.org/packages/escrotum-git/) screen capture using pygtk, inspired by scrot
+[escrotum-git](https://aur.archlinux.org/packages/escrotum-git/) screen capture using PyGTK, inspired by scrot
 
 Created because scrot has glitches when selection mode is used with refreshing windows.
 
@@ -159,7 +159,7 @@ Because the command line interface its almost the same as scrot, can be used as 
 
 [maim](https://www.archlinux.org/packages/?name=maim) is aimed to be an improved scrot.
 
-Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot.
+Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop) for regions. It is meant to overcome shortcomings of scrot.
 
 ### Desktop environment specific
 
@@ -167,7 +167,7 @@ Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop
 
 If you use [KDE](/index.php/KDE "KDE"), you might want to use `Spectacle`.
 
-Spectacle is provided by the [spectacle](https://www.archlinux.org/packages/?name=spectacle).
+Spectacle is provided by the [spectacle](https://www.archlinux.org/packages/?name=spectacle) package.
 
 #### Xfce Screenshooter
 
@@ -179,11 +179,11 @@ If you want to skip the Screenshot prompt, type `$ xfce4-screenshooter -h` in te
 
 #### GNOME
 
-[GNOME](/index.php/GNOME "GNOME") users can press `Prnt Scr` or *Apps > Accessories > Take Screenshot*. You may need to install [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot).
+[GNOME](/index.php/GNOME "GNOME") users can press `PrintScreen` or *Apps > Accessories > Take Screenshot*. You may need to install [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot).
 
 #### Cinnamon
 
-The default installation of [Cinnamon](/index.php/Cinnamon "Cinnamon") does not provide a screenshot utility. Installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will enable screenshots through the *Menu > Accessories > Screenshot* or by pressing `Prnt Scr`.
+The default installation of [Cinnamon](/index.php/Cinnamon "Cinnamon") does not provide a screenshot utility. Installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will enable screenshots through the *Menu > Accessories > Screenshot* or by pressing `PrintScreen`.
 
 #### Other desktop environments or window managers
 
@@ -194,7 +194,7 @@ $ import -window root ~/Pictures/$(date '+%Y%m%d-%H%M%S').png
 
 ```
 
-Adding the above command to the `Prnt Scr` key to Compiz allows to take the screenshot to the Pictures folder according to date and time. Notice that the `rc.xml` file in Openbox does not understand commas; so, in order to bind that command to the `Prnt Scr` key in Openbox, you need to add the following to the keyboard section of your `rc.xml` file:
+Adding the above command to the `PrintScreen` key to Compiz allows to take the screenshot to the Pictures folder according to date and time. Notice that the `rc.xml` file in Openbox does not understand commas; so, in order to bind that command to the `PrintScreen` key in Openbox, you need to add the following to the keyboard section of your `rc.xml` file:
 
  `rc.xml` 
 ```
@@ -322,7 +322,7 @@ Install a [framebuffer](/index.php/Framebuffer "Framebuffer") and use [fbgrab](h
 
 ### Virtual console
 
-If you merely want to capture the text in the console and not an actual image, you can use `setterm`, which is part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. The following command will dump the textual contents of virtual console 1 to a file screen.dump in the current directory:
+If you merely want to capture the text in the console and not an actual image, you can use `setterm`, which is part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. The following command will dump the textual contents of virtual console 1 to a file `screen.dump` in the current directory:
 
 ```
 # setterm -dump 1 -file screen.dump

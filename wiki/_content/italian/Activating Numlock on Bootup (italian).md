@@ -1,6 +1,10 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 TTY (Teletype) Console 1-6](#TTY_.28Teletype.29_Console_1-6)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 TTY (Teletype) Console 1-6](#TTY_(Teletype)_Console_1-6)
 *   [2 X.org](#X.org)
     *   [2.1 KDM](#KDM)
     *   [2.2 KDE4](#KDE4)

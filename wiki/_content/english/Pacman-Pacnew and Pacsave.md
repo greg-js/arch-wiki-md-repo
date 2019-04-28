@@ -12,7 +12,7 @@ When *pacman* removes a package that has a configuration file, it normally creat
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
 *   [4 Locating .pac* files](#Locating_.pac*_files)
-*   [5 Managing .pacnew files](#Managing_.pacnew_files)
+*   [5 Managing .pac* files](#Managing_.pac*_files)
     *   [5.1 pacdiff](#pacdiff)
     *   [5.2 Third-party utilities](#Third-party_utilities)
 *   [6 See also](#See_also)
@@ -86,13 +86,13 @@ Pacman does not deal with *.pacnew* files automatically: you must maintain these
 
 *   To search within `/etc` where most global configurations are stored: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` or to search within the entire disk replacing `/etc` by `/` in the command above.
 *   If installed, [locate](/index.php/Locate "Locate") can also be used. First re-index the database: `# updatedb` Then run: `$ locate --existing --regex "\.pac(new|save)$"` 
-*   Use pacman's log to find them: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of the files currently in the filesystem nor the ones that have already been removed; the above command will list all *.pac** files that have ever existed on your system. In order to only get the 10 most recent *.pac** files, pipe the result to `tail`.
+*   Use pacman's log to find them: `$ grep --extended-regexp "\.pac(new|save)" /var/log/pacman.log` Note that the log does not keep track of the files currently in the filesystem nor the ones that have already been removed; the above command will list all *.pac** files that have ever existed on your system. In order to only get the 10 most recent *.pac** files, pipe the result to `tail`.
 
-## Managing .pacnew files
+## Managing .pac* files
 
 ### pacdiff
 
-[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) provides the simple *pacdiff* tool for managing pacnew/pacsave files. It will search all *.pacnew* and *.pacsave* files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=*your_editor* pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") for other common comparison tools.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) provides the simple *pacdiff* tool for managing *.pac** files. It will search all *.pacnew* and *.pacsave* files and ask for any actions on them. It uses [vimdiff](/index.php/Vim#Merging_files "Vim") by default, but you may specify a different tool with `DIFFPROG=*your_editor* pacdiff`. See [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") for other common comparison tools.
 
 ### Third-party utilities
 
@@ -104,7 +104,7 @@ You can use one of the following tools:
 
 	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
 
-*   **etc-update** — Arch port of Gentoo's *etc-update* utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
+*   **etc-update** — *Gentoo*'s utility, compatible with other distributions including Arch. It provides a simple CLI to view, merge and interactively edit changes. Trivial changes, such as comments, can be merged automatically.
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 

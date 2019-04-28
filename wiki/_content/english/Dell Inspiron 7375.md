@@ -22,7 +22,7 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
     *   [3.5 Wifi](#Wifi)
     *   [3.6 Blacklisting unused module](#Blacklisting_unused_module)
     *   [3.7 Disable Time Throttling STAPM](#Disable_Time_Throttling_STAPM)
-*   [4 Improve Colling](#Improve_Colling)
+*   [4 Improve Cooling](#Improve_Cooling)
 
 ## Hardware Information
 
@@ -131,6 +131,8 @@ The upgrade to kernel 4.20 since raven support if there is problem try [linux-am
 
 If you want bleeding edge features and power saving try [linux-amd-staging-drm-next-git](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git/) with [linux-amd-staging-drm-next-git-headers](https://aur.archlinux.org/packages/linux-amd-staging-drm-next-git-headers/), but keep idle=nomwait since still causes hangups.
 
+You can also use kernel 5.1 without kernel parameters without hangups or bugs, you will just have to ignore the startup warning messages.
+
 ### Power Saving Modes
 
 #### plugged
@@ -187,7 +189,7 @@ You must run the code before running the high demand task, this setting bill be 
 
 Please improve cooling before doing it.
 
-## Improve Colling
+## Improve Cooling
 
 This laptop gets super hot, in order to decrease temperature and perform long intensive tasks, you can perform the following hardware hacks (witch might void guarantee and i will not take any responsibility for breaking the laptop)
 

@@ -2,7 +2,11 @@ This article is about the Nintendo Wii Remote Linux kernel driver. This driver i
 
 **Note:** The XWiimote tools are still experimental. Connecting and managing your Wii Remote works well and there is a driver to use the Wii Remote as X11 input, but extended features may still be missing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
     *   [1.1 hid-wiimote kernel module](#hid-wiimote_kernel_module)
@@ -29,7 +33,7 @@ The most important software required is [Bluetooth](/index.php/Bluetooth "Blueto
 
 **NOTE:** The most recent BlueZ package in Arch Linux includes the wiimote plugin. If you are using an older version please see [Troubleshooting BlueZ](#BlueZ_does_not_include_the_wiimote_plugin).
 
-The user-space utilities are available in [AUR](/index.php/AUR "AUR") [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/) package; there is also a git-package [xwiimote-tools-git](https://aur.archlinux.org/packages/xwiimote-tools-git/) if you want the most recent development revision.
+The user-space utilities are available in [AUR](/index.php/AUR "AUR") [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/) package.
 
 The kernel driver (module `hid-wiimote`) is part of upstream Linux since version 3.1 and it's ever since already included in Arch Linux kernel. However, the module could need to be loaded:
 

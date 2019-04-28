@@ -6,7 +6,11 @@ General netbook installation hints can be found also in [ASUS Eee PC 701](/index
 
 Also see the pages on the [Acer Aspire One model AOD250-1613 (Android + XP version)](/index.php/Acer_AOD250-1613 "Acer AOD250-1613") and the [Acer Aspire One model AO722-BZ454](/index.php/Acer_AO722-BZ454 "Acer AO722-BZ454").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Before you begin](#Before_you_begin)
     *   [1.1 A list of choices to be made during installation](#A_list_of_choices_to_be_made_during_installation)
@@ -754,39 +758,19 @@ Letting the BIOS regulate the cpu fan results in a noisy monster of a netbook. Y
 
 The acerhdf kernel module regulates the fan in a performant and secure way.
 
-From kernel 2.6.31 on the acerhdf module is provided inside the kernel tree. Therefore it comes precompiled with the linux, linux-one and linux-one-dev packages. If you use a kernel version <= 2.6.30 there is a package in AUR called [acerhdf](https://aur.archlinux.org/packages/acerhdf/), which you will have to build and install.
-
-Up to acerhdf version 0.5.18:
+From kernel 2.6.31 on the acerhdf module is provided inside the kernel tree. Therefore it comes precompiled with the linux, linux-one and linux-one-dev packages.
 
 ```
- options acerhdf verbose=0 fanon=67 fanoff=62 interval=10 kernelmode=1
-
-```
-
-Since version 0.5.19:
-
-```
- options acerhdf verbose=0 fanon=67000 fanoff=62000 interval=10 kernelmode=1
+options acerhdf verbose=0 fanon=67000 fanoff=62000 interval=10 kernelmode=1
 
 ```
 
 Or, to make the fan be more active and cool the AAO more, but make more noise:
 
-Up to acerhdf version 0.5.18:
+```
+options acerhdf verbose=0 fanon=62000 fanoff=52000 interval=10 kernelmode=1
 
 ```
- options acerhdf verbose=0 fanon=62 fanoff=52 interval=10 kernelmode=1
-
-```
-
-Since version 0.5.19:
-
-```
- options acerhdf verbose=0 fanon=62000 fanoff=52000 interval=10 kernelmode=1
-
-```
-
-Make sure you do not use the configuration for >=0.5.19 on <=0.5.18, as the computer will go warm.
 
 The module option "kernelmode=1" automatically activates acerhdf's function.
 

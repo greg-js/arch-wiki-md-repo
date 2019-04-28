@@ -4,7 +4,11 @@ From [sabnzbd.org](http://sabnzbd.org/):
 
 	It's totally free, incredibly easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 SSL Support](#SSL_Support)
@@ -44,6 +48,25 @@ Further configuration can be done from within the UI (adding additional servers,
 Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide the `sabnzbd.service` [systemd](/index.php/Systemd "Systemd") unit, create the [user](/index.php/User "User") and [user group](/index.php/User_group "User group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
 
 Add users to the `sabnzbd` [user group](/index.php/User_group "User group") to allow access to SABnzbd files.
+
+An alternative is to create an user [systemd](/index.php/Systemd "Systemd") service, e.g. `sabnzbd@.service`:
+
+ `/etc/systemd/system/sabnzbd@.service` 
+```
+[Unit]
+Description=SABnzbd binary newsreader
+After=network.target
+
+[Service]
+User=%i
+Group=%i
+ExecStart=/opt/sabnzbd/SABnzbd.py -l0 -f /home/%i/.sabnzbd.ini
+
+[Install]
+WantedBy=multi-user.target
+```
+
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `sabnzbd@*myuser*` to run SABnzbd under the preferred user.
 
 ### Starting SABnzbd as user
 

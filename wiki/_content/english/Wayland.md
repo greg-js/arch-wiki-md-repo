@@ -30,18 +30,18 @@ Related articles
     *   [3.5 GLFW](#GLFW)
     *   [3.6 GLEW](#GLEW)
     *   [3.7 EFL](#EFL)
-*   [4 Compositors](#Compositors)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Gamma](#Gamma)
-    *   [5.2 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [5.4 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1,_Weston_on_tty2)
-    *   [5.5 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
-    *   [5.6 Screen recording](#Screen_recording)
-    *   [5.7 Remote display](#Remote_display)
-    *   [5.8 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
-        *   [5.8.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
-*   [6 See also](#See_also)
+*   [4 Display managers](#Display_managers)
+*   [5 Compositors](#Compositors)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Gamma](#Gamma)
+    *   [6.2 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [6.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
+    *   [6.4 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
+    *   [6.5 Screen recording](#Screen_recording)
+    *   [6.6 Remote display](#Remote_display)
+    *   [6.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
+        *   [6.7.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
+*   [7 See also](#See_also)
 
 ## Requirements
 
@@ -357,6 +357,15 @@ To use GLEW with the Wayland backend, install the [glew-wayland](https://www.arc
 
 EFL has complete Wayland support. To run a EFL application on Wayland, see Wayland [project page](http://wayland.freedesktop.org/efl.html).
 
+## Display managers
+
+Below listed display managers which supports running Wayland compositors. The Type column indicates whether the display manager supports running on Wayland or not.
+
+| Name | Type | Description |
+| GDM | Runs on Wayland | [GNOME](/index.php/GNOME "GNOME") display manager. |
+| LightDM | Runs on X11 | Cross-desktop display manager. |
+| SDDM | Runs on X11 | QML-based display manager. |
+
 ## Compositors
 
 | Name | Type | Description |
@@ -410,10 +419,6 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 ### Slow motion, graphical glitches, and crashes
 
 Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
-
-### GNOME Wayland on tty1, Weston on tty2
-
-(20170106) apps started on GNOME with WAYLAND_DISPLAY set to weston make it not respond any more ([Wayland issue 99489](https://bugs.freedesktop.org/show_bug.cgi?id=99489))
 
 ### Electron based applications / VS Code
 

@@ -1,7 +1,7 @@
 | **Device** | **Status** | **Modules** |
 | Intel | Working | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) |
 | Ethernet | Working | tg3 |
-| Wireless | Working | wl |
+| Wireless | Working | wl or b43 |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) |
 | Fingerprint | Working | [fprintd](https://www.archlinux.org/packages/?name=fprintd) |
@@ -72,7 +72,7 @@ PC speaker capability is included. See [PC speaker](/index.php/PC_speaker "PC sp
 
 ### Wireless
 
-It has been reported to have Broadcom BCM43228, which can be confirmed as seen below:
+It has been reported to come with the chip Broadcom BCM43228 embedded in a Dell Wireless 1540 802.11 A/N Dual Band, High Speed Wi-Fi Half Mini-card, which can be confirmed by running the following:
 
 ```
  $ lspci | grep Broadcom | grep -v Ethernet
@@ -80,9 +80,9 @@ It has been reported to have Broadcom BCM43228, which can be confirmed as seen b
 
 ```
 
-This network card requires the open source b43 together with blob firmware [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), or the proprietary wl module via [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
+The driver to be used must be either the open source b43 together with blob firmware [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), or the proprietary wl module via [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms).
 
-See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more info.
+See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") and [Dell Wireless 1540 on WikiDevi](https://wikidevi.com/wiki/Dell_Wireless_1540_(DW1540)) for more info.
 
 ## Troubleshooting
 
@@ -137,7 +137,7 @@ OTHER    : microcode dcdbas led-class mac_hid lpc_ich mei-me mei mmc_core sdhci-
 
 ```
 
-lspci output:
+*lspci* output:
 
 ```
 00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor DRAM Controller (rev 09)
@@ -162,7 +162,7 @@ lspci output:
 
 ```
 
-lsusb output:
+*lsusb* output:
 
 ```
 Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub

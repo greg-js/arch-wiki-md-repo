@@ -59,6 +59,8 @@ The best way to detect the boot mode of Windows is to do the following[[1]](http
 
 In general, Windows forces type of partitioning depending on the firmware mode used, i.e. if Windows is booted in UEFI mode, it can be installed only to a GPT disk. If the Windows is booted in Legacy BIOS mode, it can be installed only to a MBR disk. This is a limitation enforced by Windows installer, and as of April 2014 there is no officially (Microsoft) supported way of installing Windows in UEFI/MBR or BIOS/GPT configuration. Thus Windows only supports either UEFI/GPT boot or BIOS/MBR configuration.
 
+**Tip:** Windows 10 version 1703 and newer supports converting from BIOS/MBR to UEFI/GPT using [MBR2GPT.EXE](https://docs.microsoft.com/en-us/windows/deployment/mbr-to-gpt).
+
 Such a limitation is not enforced by the Linux kernel, but can depend on which [boot loader](/index.php/Boot_loader "Boot loader") is used and/or how the boot loader is configured. The Windows limitation should be considered if the user wishes to boot Windows and Linux from the same disk, since installation procedure of boot loader depends on the firmware type and disk [partitioning](/index.php/Partitioning "Partitioning") configuration. In case where Windows and Linux dual boot from the same disk, it is advisable to follow the method used by Windows, ie. either go for UEFI/GPT boot or BIOS/MBR boot. See [http://support.microsoft.com/kb/2581408](http://support.microsoft.com/kb/2581408) for more information.
 
 ### Install media limitations

@@ -145,6 +145,12 @@ Packages can be installed from within `R` using the `**install.packages(c("pkgna
 
 `Error: .onLoad failed in loadNamespace() for 'tcltk', details (...)`
 
+*   Alternatively, you can disable graphical pop-ups like this by running [[2]](https://stackoverflow.com/q/7430452/1358308):
+
+`> options(menu.graphics=FALSE)`
+
+to make this change more permanent add the above line to your Rprofile.
+
 Within your `R` session, run this command to check that your user library exists and is set correctly:
 
  `> Sys.getenv("R_LIBS_USER")`  `[1] "/path/to/directory/R/packages"` 

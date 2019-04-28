@@ -11,7 +11,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 
 	Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management and has a large and comprehensive standard library.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Python 3](#Python_3)
@@ -23,7 +27,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Alternative shells](#Alternative_shells)
     *   [4.2 Virtual environment](#Virtual_environment)
-    *   [4.3 Tab completion in Python2 shell](#Tab_completion_in_Python2_shell)
+    *   [4.3 Tab completion in Python shell](#Tab_completion_in_Python_shell)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
 *   [6 See also](#See_also)
@@ -203,9 +207,9 @@ Python provides tools to create isolated environments in which you can install p
 
 See [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for details.
 
-### Tab completion in Python2 shell
+### Tab completion in Python shell
 
-Since Python 3.4 [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default, for Python 2 you can manually enable it by adding the following lines to a file referenced by the `PYTHONSTARTUP` environment variable: [[1]](https://algorithmicallyrandom.blogspot.co.at/2009/09/tab-completion-in-python-shell-how-to.html)
+Since Python 3.4 [tab completion](https://docs.python.org/3/tutorial/interactive.html) is enabled by default, for Python 2 you can manually enable it by adding the following lines to a file referenced by the `PYTHONSTARTUP` environment variable: [[1]](https://docs.python.org/2/library/rlcompleter.html)
 
 ```
 import rlcompleter
@@ -213,6 +217,8 @@ import readline
 readline.parse_and_bind("tab: complete")
 
 ```
+
+Note that readline completer will only complete names in the global namespace. You can rely on [python-jedi](https://www.archlinux.org/packages/?name=python-jedi) and/or [python2-jedi](https://www.archlinux.org/packages/?name=python2-jedi) for a more richer tab completion experience [[2]](https://jedi.readthedocs.io/en/latest/docs/usage.html#tab-completion-in-the-python-shell).
 
 ## Troubleshooting
 

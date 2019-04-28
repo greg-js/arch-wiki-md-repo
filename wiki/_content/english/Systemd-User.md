@@ -102,7 +102,7 @@ systemctl --user import-environment PATH
 
 ```
 
-Note that this will not affect systemd services started before `~/.bash_profile` is sourced.
+Note that this will not affect systemd services started before PATH is imported.
 
 #### pam_environment
 

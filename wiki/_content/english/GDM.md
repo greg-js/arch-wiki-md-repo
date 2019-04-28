@@ -106,18 +106,11 @@ Next, you need to create a file in the directory with the following content:
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/gnome/shell/theme">
-    <file>calendar-arrow-left.svg</file>
-    <file>calendar-arrow-right.svg</file>
     <file>calendar-today.svg</file>
-    <file>checkbox.svg</file>
     <file>checkbox-focused.svg</file>
-    <file>checkbox-off.svg</file>
     <file>checkbox-off-focused.svg</file>
-    <file>close-window.svg</file>
-    <file>close-window-active.svg</file>
-    <file>close-window-hover.svg</file>
-    <file>corner-ripple-ltr.png</file>
-    <file>corner-ripple-rtl.png</file>
+    <file>checkbox-off.svg</file>
+    <file>checkbox.svg</file>
     <file>dash-placeholder.svg</file>
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
@@ -125,32 +118,24 @@ Next, you need to create a file in the directory with the following content:
     <file>key-enter.svg</file>
     <file>key-hide.svg</file>
     <file>key-layout.svg</file>
-    <file>key-shift.svg</file>
     <file>key-shift-latched-uppercase.svg</file>
+    <file>key-shift.svg</file>
     <file>key-shift-uppercase.svg</file>
     <file>noise-texture.png</file>
     <file>**filename**</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
     <file>pad-osd.css</file>
-    <file>page-indicator-active.svg</file>
-    <file>page-indicator-checked.svg</file>
-    <file>page-indicator-hover.svg</file>
-    <file>page-indicator-inactive.svg</file>
     <file>process-working.svg</file>
     <file>toggle-off-hc.svg</file>
     <file>toggle-off-intl.svg</file>
-    <file>toggle-off-us.svg</file>
     <file>toggle-on-hc.svg</file>
     <file>toggle-on-intl.svg</file>
-    <file>toggle-on-us.svg</file>
   </gresource>
 </gresources>
 ```
 
 Replace **filename** with the filename of your background image.
-
-**Note:** A few lines needs be removed from this file after upgrade to Gnome 3.32, see [Talk:GDM](/index.php/Talk:GDM "Talk:GDM") discussion page.
 
 Now, open the `gnome-shell.css` file in the directory and change the `#lockDialogGroup` definition as follows:
 

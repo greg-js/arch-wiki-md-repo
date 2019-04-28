@@ -41,7 +41,7 @@ Multiple tools are available to help create audiobook files.
 	m4baker usage is straightforward and detailed on the [project wiki](http://code.google.com/p/m4baker/w/list) — its usage will not be covered here.
 
 *   [faac](https://www.archlinux.org/packages/?name=faac) — open source AAC encoder
-*   [neroaacenc](https://aur.archlinux.org/packages/neroaacenc/) — proprietary AAC encoder
+*   [neroaacenc-bin](https://aur.archlinux.org/packages/neroaacenc-bin/) — proprietary AAC encoder
 *   [gpac](https://www.archlinux.org/packages/?name=gpac) — multimedia framework for manipulating MPEG-4 media
 *   [lame](https://www.archlinux.org/packages/?name=lame) — MP3 encoder and decoder
 

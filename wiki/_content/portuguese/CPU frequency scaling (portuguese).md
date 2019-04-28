@@ -214,9 +214,9 @@ Para ter a regra já aplicada no *initramfs*, siga o exemplo em [udev#Debug outp
 
 ## Interação com eventos da ACPI
 
-Users may configure scaling governors to switch automatically based on different ACPI events such as connecting the AC adapter or closing a laptop lid. A quick example is given below, however it may be worth reading full article on [acpid](/index.php/Acpid "Acpid").
+Os usuários podem configurar os governadores de escala para alternar automaticamente com base em diferentes eventos ACPI, como conectar o adaptador AC ou fechar uma tampa do laptop. Um exemplo rápido é dado abaixo, no entanto, pode valer a pena ler o artigo completo sobre [acpid](/index.php/Acpid "Acpid").
 
-Events are defined in `/etc/acpi/handler.sh`. If the [acpid](https://www.archlinux.org/packages/?name=acpid) package is installed, the file should already exist and be executable. For example, to change the scaling governor from `performance` to `conservative` when the AC adapter is disconnected and change it back if reconnected:
+Eventos são definidos em `/etc/acpi/handler.sh`. Se o pacote [acpid](https://www.archlinux.org/packages/?name=acpid) estiver instalado, o arquivo já deverá existir e ser executável. Por exemplo, para alterar o governador de escala de `performance` para `conservative` quando o adaptador de CA for desconectado e alterá-lo de volta, se reconectar:
 
  `/etc/acpi/handler.sh` 
 ```
@@ -227,7 +227,7 @@ ac_adapter)
         AC*)
             case "$4" in
                 00000000)
-                    echo "conservative" >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor    
+                    echo "conservative" >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
                     echo -n $minspeed >$setspeed
                     #/etc/laptop-mode/laptop-mode start
                 ;;
@@ -248,23 +248,23 @@ ac_adapter)
 
 ## Concessão de privilégios no GNOME
 
-**Note:** systemd introduced logind which handles consolekit and policykit actions. The following code below does not work. With logind, simply edit in the file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` the <defaults> elements according to your needs and the polkit manual [[3]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
+**Nota:** systemd introduziu o logind que lida com ações consolekit e policykit. O código a seguir não funciona. Com logind, basta editar no arquivo `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` os elementos <defaults> conforme a suas necessidades e o manual do polkit [[3]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
 
-[GNOME](/index.php/GNOME "GNOME") has a nice applet to change the governor on the fly. To use it without the need to enter the root password, simply create following file:
+[GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem um miniaplicativo legal para mudar o governador na hora. Para usá-lo sem a necessidade de inserir a senha de root, basta criar o seguinte arquivo:
 
  `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla` 
 ```
 [org.gnome.cpufreqselector]
-Identity=unix-user:*user*
+Identity=unix-user:*usuário*
 Action=org.gnome.cpufreqselector
 ResultAny=no
 ResultInactive=no
 ResultActive=yes
 ```
 
-Where the word *user* is replaced with the username of interest.
+sendo `*usuário*` o nome de usuário interessado.
 
-The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [user group](/index.php/User_group "User group") to change the governor.
+O pacote [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") contém um arquivo `.pkla` para autorizar todos os usuários do [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `power` para alterar o governador.
 
 ## Solução de problemas
 

@@ -37,7 +37,7 @@ The repositories contain a number of optional PAM packages, the [#Configuration 
 
 ## Configuration
 
-A number of `/etc` paths are relevant for PAM, execute `pacman -Ql pam |grep /etc` to see the default configuration files created. They relate to either [#Security parameters](#Security_parameters) for the modules, or the [#PAM base-stack](#PAM_base-stack) configuration.
+A number of `/etc` paths are relevant for PAM, execute `pacman --query --list pam | grep /etc` to see the default configuration files created. They relate to either [#Security parameters](#Security_parameters) for the modules, or the [#PAM base-stack](#PAM_base-stack) configuration.
 
 ### Security parameters
 
@@ -66,7 +66,7 @@ Consequently, the choice of the configuration file in the stack matters. For the
 
 Like the example of `sshd`, any **pam-aware** application is required to install its policy to `/etc/pam.d` in order to integrate and rely on the PAM stack appropriately. If an application fails to do it, the `/etc/pam.d/other` default policy to deny and log a warning is applied.
 
-**Tip:** PAM is dynamically linked at runtime. For example: `$ ldd /usr/bin/login |grep pam` 
+**Tip:** PAM is dynamically linked at runtime. For example: `$ ldd /usr/bin/login | grep pam` 
 ```
 libpam.so.0 => /usr/lib/libpam.so.0 (0x000003d8c32d6000)
 libpam_misc.so.0 => /usr/lib/libpam_misc.so.0 (0x000003d8c30d2000)
@@ -93,14 +93,14 @@ auth      optional  pam_permit.so
 
 From [pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8): "The authentication component `pam_unix.so` performs the task of checking the users credentials (password). The default action of this module is to not permit the user access to a service if their official password is blank. " - the latter being what `pam_permit.so` is used for. Simply swapping the control values `required` and `optional` for both lines is enough to disable password authentication, i.e. any user may logon without providing a password.
 
-Second, as the contrary example, per default configuration creating the following file:
+Second, as the contrary example, per default configuration of `pam_nologin.so` at /etc/pam.d/login, creating the following file:
 
 ```
 # touch /etc/nologin 
 
 ```
 
-results in that no user other than root may login (if root logins are allowed, another default for Arch Linux). To allow logins again, remove the file from the console you created it with.
+results in that no user other than root may login (if root logins are allowed, another default for Arch Linux). To allow logins again, remove the file. Possibly, from the console you created it with.
 
 With that as background, see [#PAM stack and module configuration](#PAM_stack_and_module_configuration) for particular use-case configuration.
 
@@ -152,7 +152,7 @@ PAM modules from the [Official repositories](/index.php/Official_repositories "O
 
 *   [Active Directory Integration#Configuring PAM](/index.php/Active_Directory_Integration#Configuring_PAM "Active Directory Integration")
 
-	uses `pam_winbind.so` and `pam_krb5.so` to let users authenticate via Active Directory (LDAP, [Kerberos](/index.php/Kerberos "Kerberos")) services.
+	uses `pam_winbind.so` and `pam_krb5.so` to let users authenticate via Active Directory ([LDAP](/index.php/LDAP "LDAP"), [Kerberos](/index.php/Kerberos "Kerberos")) services.
 
 *   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") with its [LDAP authentication#NSS and PAM](/index.php/LDAP_authentication#NSS_and_PAM "LDAP authentication") section
 
@@ -215,4 +215,4 @@ Note the AUR features a keyword tag for [PAM](https://aur.archlinux.org/packages
 ## See also
 
 *   [linux-pam.org](http://www.linux-pam.org/) - The project homepage
-*   [Understanding and configuring PAM](https://www.ibm.com/developerworks/linux/library/l-pam/index.html) - An introductory article
+*   [Understanding and configuring PAM](https://developer.ibm.com/tutorials/l-pam/) - An introductory article

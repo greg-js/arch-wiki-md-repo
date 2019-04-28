@@ -1,6 +1,10 @@
 [davfs2](http://savannah.nongnu.org/projects/davfs2) is a Linux file system driver that allows to [mount](/index.php/Mount "Mount") a [WebDAV](/index.php/WebDAV "WebDAV") resource. WebDAV is an extension to HTTP/1.1 that allows remote collaborative authoring of Web resources.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing davfs2](#Installing_davfs2)
 *   [2 Mount WebDAV-resource](#Mount_WebDAV-resource)
@@ -11,7 +15,8 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Storing credentials](#Storing_credentials)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Creating/copying files not possible and/or freezes](#Creating.2Fcopying_files_not_possible_and.2For_freezes)
+    *   [4.1 Creating/copying files not possible and/or freezes](#Creating/copying_files_not_possible_and/or_freezes)
+    *   [4.2 Password in secrets file](#Password_in_secrets_file)
 *   [5 See also](#See_also)
 
 ## Installing davfs2
@@ -91,7 +96,7 @@ To define how the webdav resource should be mounted into the filesystem, [append
 
  `/etc/fstab`  `https://*webdav.example/path* /mnt/*webdav* davfs rw,user,uid=*username*,noauto 0 0` 
 
-where *username* is the owner of the mounted file system. It may be a numeric ID or a user name and only *root* can mount a uid different from the mounting user.
+where *username* is the owner of the mounted file system. It may be a numeric ID or a user name and only *root* can mount a uid different from the mounting user. `_netdev` mount option could be used to automount network drives.
 
 ## Tips and tricks
 
@@ -121,6 +126,10 @@ $ chmod 600 ~/.davfs2/secrets
 ### Creating/copying files not possible and/or freezes
 
 If creating/copying files is not possible and/or freezes occur, edit the [configuration file](#Mount_WebDAV-resource) to use `use_locks 0` as option. Default for this parameter is `1` which locks files on the server when they are opened for writing.
+
+### Password in secrets file
+
+Be careful for special characters in passwords such as \ and ". Escape them with \.
 
 ## See also
 

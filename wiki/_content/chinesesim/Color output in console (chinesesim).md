@@ -7,7 +7,11 @@
 
 This page was created to consolidate colorization of CLI outputs.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 diff](#diff)
 *   [2 grep](#grep)
@@ -549,7 +553,7 @@ See also:
 Prints all 256 colors across the screen.
 
 ```
-$ (x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)
+$ (x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)
 
 ```
 

@@ -274,15 +274,15 @@ Add a rule for each share:
 
  `/etc/fstab` 
 ```
-.host:/*<shared_folder>* */home/user1/shares* fuse.vmhgfs-fuse nofail 0 0
+.host:/*<shared_folder>* *<shared folders root directory>* fuse.vmhgfs-fuse nofail,allow_other 0 0
 
 ```
 
 Create and mount the Shared Folders:
 
 ```
-# mkdir /home/user1/shares
-# mount /home/user1/shares
+# mkdir *<shared folders root directory>*
+# mount *<shared folders root directory>*
 
 ```
 

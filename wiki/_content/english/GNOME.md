@@ -146,7 +146,7 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 *   `Alt` + ``` (the key above `Tab` on US keyboard layouts): cycle windows of the application in the foreground
 *   `Alt` + `F2`, then enter `r` or `restart`: restart the shell in case of graphical shell problems (only in X/legacy mode, not in Wayland mode).
 
-**Tip:** To make `Alt` + `Tab` switch applications only in current workspace, you can set `current-workspace-only` to `true`
+**Tip:** To make `Alt+Tab` switch applications only in current workspace, you can set `current-workspace-only` to `true`:
 ```
 $ gsettings set org.gnome.shell.app-switcher current-workspace-only true
 

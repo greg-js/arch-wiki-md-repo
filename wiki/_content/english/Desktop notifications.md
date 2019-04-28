@@ -582,31 +582,31 @@ end.
 ```
 #!/usr/bin/perl
 use Glib::Object::Introspection;
-Glib::Object::Introspection->setup(basename => "Notify",
-                                   version => "0.7",
-                                   package => "Notify");
+Glib::Object::Introspection->setup(basename => 'Notify',
+                                   version => '0.7',
+                                   package => 'Notify');
 Notify->init;
-my $hello = Notify::Notification->new("Hello world!",
-                                      "This is an example notification.",
-                                      "dialog-information");
+my $hello = Notify::Notification->new('Hello world!',
+                                      'This is an example notification.',
+                                      'dialog-information');
 $hello->show;
 ```
 
 #### Using direct D-Bus calls
 
-*   Dependencies: [perl-dbus](https://www.archlinux.org/packages/?name=perl-dbus)
+*   Dependencies: [perl-net-dbus](https://www.archlinux.org/packages/?name=perl-net-dbus)
 
  `hello_world.pl` 
 ```
 #!/usr/bin/perl
 use Net::DBus;
 my $bus = Net::DBus->session;
-my $svc = $bus->get_service("org.freedesktop.Notifications");
-my $obj = $svc->get_object("/org/freedesktop/Notifications");
-my $id = $obj->Notify("myapp", 0,
-                      "dialog-information",
-                      "Hello world!",
-                      "This is an example notification.",
+my $svc = $bus->get_service('org.freedesktop.Notifications');
+my $obj = $svc->get_object('/org/freedesktop/Notifications');
+my $id = $obj->Notify('myapp', 0,
+                      'dialog-information',
+                      'Hello world!',
+                      'This is an example notification.',
                       [], {}, 0);
 ```
 

@@ -114,6 +114,7 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Homepage: [http://archlinux-br.org/](http://archlinux-br.org/)
 *   Forum: [http://forum.archlinux-br.org/](http://forum.archlinux-br.org/)
+*   Telegram group: [https://t.me/archlinuxbr](https://t.me/archlinuxbr)
 *   Wiki: [Main page (Português)](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)")
 
 ## Russian

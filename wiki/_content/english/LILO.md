@@ -2,9 +2,13 @@ Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 
-The *LI*nux *LO*ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out thanks to the advent of [GRUB](/index.php/GRUB "GRUB"), an alternative boot loader offering easier configuration and less chance of rendering systems unbootable. As of January 2016, [LILO is no longer actively developed](https://lists.alioth.debian.org/pipermail/lilo-devel/2015-December/000083.html).
+The *LI*nux *LO*ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out. As of January 2016, [LILO is no longer actively developed](https://lists.alioth.debian.org/pipermail/lilo-devel/2015-December/000083.html).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

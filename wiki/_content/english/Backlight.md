@@ -184,6 +184,7 @@ The utilities in the following table can be used to control screen brightness. A
 | brightnessctl | Yes | No | C | MIT | Binary is setuid unless otherwise configured. | [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/) | [https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) |
 | Calise | No | Yes | Python2 | GPL-3.0 | - | [calise](https://aur.archlinux.org/packages/calise/) | [http://calise.sourceforge.net](http://calise.sourceforge.net) |
 | Clight | Yes | Yes | C | GPL-3.0-or-later | Manages screen temperature and smoothly dims brightness after a timeout. Turns webcam into an ambient light sensor. | [clight](https://aur.archlinux.org/packages/clight/) | [https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) |
+| macbook-lighter | Yes | Yes | Bash,Perl | GPL | Macbook screen/keyboard backlight CLI and auto-adjust on ambient light. | [macbook-lighter](https://aur.archlinux.org/packages/macbook-lighter/) | [https://github.com/harttle/macbook-lighter](https://github.com/harttle/macbook-lighter) |
 | enlighten | No | No | C | GPL-3.0-or-later | - | [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/) | [https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) |
 | illum | No | No | C | AGPL-3.0 | Reacts to key presses. | [illum-git](https://aur.archlinux.org/packages/illum-git/) | [https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) |
 | Light | Yes | No | C | GPL-3.0-only | Binary is setuid unless otherwise configured. | [light](https://www.archlinux.org/packages/?name=light) | [https://haikarainen.github.io/light](https://haikarainen.github.io/light) |
@@ -266,7 +267,7 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 
 ## Color correction
 
-*   **Clight** — User daemon utility that aims to fully manage your display. It can manage the screen temperature depending on the current time of the day, just like redshift does. It tries to use [geoclue2](https://www.archlinux.org/packages/?name=geoclue2) to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.
+*   **Clight** — User daemon utility that aims to fully manage your display. It can manage the screen temperature depending on the current time of the day, just like redshift does. It tries to use [geoclue](https://www.archlinux.org/packages/?name=geoclue) to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.
 
 	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
 

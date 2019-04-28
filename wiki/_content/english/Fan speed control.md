@@ -7,7 +7,7 @@ Related articles
 
 Fan control can bring various benefits to your system, such as quieter working system and power saving by completely stopping fans on low CPU load.
 
-**Warning:** Configuring or completely stopping fans on high system load might result in permanently damaged hardware. You have been warned!
+**Warning:** Configuring or completely stopping fans on high system load might result in permanently damaged hardware.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -33,7 +33,6 @@ Fan control can bring various benefits to your system, such as quieter working s
 *   [5 ThinkPad laptops](#ThinkPad_laptops)
     *   [5.1 Installation](#Installation_3)
     *   [5.2 Running](#Running)
-    *   [5.3 Old packages which have gone missing](#Old_packages_which_have_gone_missing)
 *   [6 Asus laptops](#Asus_laptops)
     *   [6.1 Kernel modules overview](#Kernel_modules_overview)
     *   [6.2 asus-nb-wmi](#asus-nb-wmi)
@@ -41,8 +40,9 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [6.4 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
 *   [7 AMDGPU sysfs fan control](#AMDGPU_sysfs_fan_control)
     *   [7.1 Configuration of manual control](#Configuration_of_manual_control)
-    *   [7.2 fancurve script](#fancurve_script)
-        *   [7.2.1 Setting up fancurve script](#Setting_up_fancurve_script)
+    *   [7.2 amdgpu-fan](#amdgpu-fan)
+    *   [7.3 fancurve script](#fancurve_script)
+        *   [7.3.1 Setting up fancurve script](#Setting_up_fancurve_script)
 
 ## Overview
 
@@ -389,16 +389,6 @@ and see how it reacts to the load level of whatever other programs you have runn
 
 When you have it configured correctly, [start/enable](/index.php/Start/enable "Start/enable") `thinkfan.service`.
 
-### Old packages which have gone missing
-
-[tpfand](https://aur.archlinux.org/packages/tpfand/) and a version that does not require [HAL](/index.php/HAL "HAL") [tpfand-no-hal](https://aur.archlinux.org/packages/tpfand-no-hal/) are not actively developed anymore, and no longer available. An additional GTK+ frontend was provided in the [tpfan-admin](https://aur.archlinux.org/packages/tpfan-admin/) package in the [AUR](/index.php/AUR "AUR") which enables the monitoring of temperatures as well as the graphical adjustment of trigger points.
-
-Due to tpfand not beeing actively developed anymore, there was a fork called tpfanco (which in fact uses the same names for the executables as tpfand): [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/).
-
-The configuration file for tpfand (same for tpfanco) was `/etc/tpfand.conf`.
-
-Additionally, the [tpfand-profiles](https://aur.archlinux.org/packages/tpfand-profiles/) package in the [AUR](/index.php/AUR "AUR") provided the latest fan profiles for various thinkpad models.
-
 ## Asus laptops
 
 This topic will cover drivers configuration on Asus laptops **for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)**.
@@ -513,6 +503,32 @@ To reset to automatic fan control, run
 ```
 
 **Warning:** Resetting fan speed to auto may not work due to a driver bug and instead a restart of the driver may be required as a workaround.
+
+### amdgpu-fan
+
+The [amdgpu-fan](https://aur.archlinux.org/packages/amdgpu-fan/) package is an automated fan controller for AMDGPU-enabled video cards written in Python. It uses a "speed-matrix" to match the frequency of the fans with the temperature of the GPU, for example:
+
+```
+speed_matrix:  # -[temp(*C), speed(0-100%)]
+- [0, 0]
+- [40, 30]
+- [60, 50]
+- [80, 100]
+```
+
+Once the package can be installed, it can be run as a service, so you can either run it for the current session:
+
+```
+# systemctl start amdgpu-fan.service
+
+```
+
+or executed at boot
+
+```
+# systemctl enable amdgpu-fan.service
+
+```
 
 ### fancurve script
 

@@ -1110,5 +1110,6 @@ You can use the following website to get your device's coordinates along with a 
 50.093967, 18.546516 "tluszcz" # Rybnik, Poland
 41.931970,-74.018433,"Big Ben's Web Hosting", #Kingston, New York, USA
 -12.158883, -76.992975 "Otreblan" # Lima, Peru
+41.634328, 25.377823 "Salif Mehmed" # Kardjali, Bulgaria
 
 ```

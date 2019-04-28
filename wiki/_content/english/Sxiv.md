@@ -4,7 +4,11 @@ Related articles
 
 [sxiv](https://github.com/muennich/sxiv), Simple [X](/index.php/X "X") Image Viewer is a lightweight and scriptable image viewer written in C.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -65,14 +69,16 @@ $ mkdir ~/.trash
 
 ### Browse through images in directory after opening a single file
 
-Place [this script](https://github.com/ranger/ranger/blob/master/examples/rifle_sxiv.sh) in `/usr/local/bin` and call it like this:
+`sxiv`'s developer was requested a few times to make his program browse all images in a directory of the filename given as argument (see [[1]](https://github.com/muennich/sxiv/issues/352) and [[2]](https://github.com/muennich/sxiv/issues/105)). There is a fork that features the desired behaviour: [https://github.com/doronbehar/sxiv](https://github.com/doronbehar/sxiv)
+
+Alternatively, you can use the official version of [sxiv](https://www.archlinux.org/packages/?name=sxiv) and place [this script](https://github.com/ranger/ranger/blob/master/examples/rifle_sxiv.sh) in `/usr/local/bin` and call it like this:
 
 ```
 $ *scriptname* a_single_image.jpg
 
 ```
 
-Alternatively you can also install the script as a package from the AUR: [sxiv-rifle](https://aur.archlinux.org/packages/sxiv-rifle/).
+Or install this script as a package from the AUR: [sxiv-rifle](https://aur.archlinux.org/packages/sxiv-rifle/).
 
 As indicated in the comments of the script, it may be used to have this behavior when opening images from within [ranger](/index.php/Ranger "Ranger").
 

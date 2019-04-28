@@ -395,7 +395,7 @@ In newer versions of [Linux-ck](/index.php/Linux-ck "Linux-ck") ([some experienc
 
  `$ docker run --rm hello-world`  `docker: Error response from daemon: unable to find "cpuacct" in controller set: unknown.` 
 
-This error does not seems to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
+This error does not seem to affect the docker daemon, just containers. Read more on [Linux-ck#CPUACCT missing in docker](/index.php/Linux-ck#CPUACCT_missing_in_docker "Linux-ck").
 
 ### Docker-machine fails to create virtual machines using the virtualbox driver
 

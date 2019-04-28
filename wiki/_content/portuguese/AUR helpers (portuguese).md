@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-03-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=568435) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-04-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=569732) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -77,8 +77,6 @@ de shell | Especificidade |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Não | [Não](https://github.com/Kwpolska/pkgbuilder/issues/36) | Sim | Sim | Sim | [Parcial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` para interfacear o *pacman* |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Não | Sim | Sim | Não | Não | Não | – | [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local") |
 | [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | [Não](https://github.com/vn971/rua/issues/21) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), inspeção de `.pkg.tar`, [somente compilação](https://github.com/vn971/rua/issues/13) |
-| [burgaur](https://aur.archlinux.org/packages/burgaur/)
-<small>([descontinuado](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Não | Não | Não | Não | Não | Não | – | Wrapper para *cower* |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([descontinuado](https://github.com/floft/spinach))</small> | Bash | [Sim](https://github.com/floft/spinach/commit/5455747) | Não | Não | Não | Não | Não | – | – |
 
@@ -99,10 +97,6 @@ de shell | Especificidade |
 | [aurman](https://aur.archlinux.org/packages/aurman/)
 <small>([descontinuado](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Sim | Sim | Sim | Sim | [Não](https://github.com/polygamma/aurman/issues/259) | Sim | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
 [--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | bash, fish | interação em lote 1/2, obtém chaves PGP |
-| [wrapaur](https://aur.archlinux.org/packages/wrapaur/)
-<small>(descontinuado)</small> | Bash | Sim | Não | Sim | Não | Não | Não | – | – | – |
-| [yaourt](https://aur.archlinux.org/packages/yaourt/)
-<small>([descontinuado](https://github.com/archlinuxfr/yaourt/issues/382#issuecomment-437461631))</small> | Bash/C | [Não](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Opcional | Opcional | Não | [Não](https://github.com/archlinuxfr/yaourt/issues/186) | [Não](https://github.com/archlinuxfr/yaourt/issues/85) | [-Sy](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | bash, fish, zsh | [compilação não-limpa](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html), interação em lote (1) |
 
 ## Gráficos
 

@@ -82,9 +82,7 @@ For manual installation, you have to create the folder `~/.local/share/midori/sc
 
 ### Flash plugin
 
-To get the Flash plugin working in Midori you can install the [midori-flash](https://aur.archlinux.org/packages/midori-flash/) package.
-
-Alternatively, install the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your `.bashrc`, `.xprofile`, or corresponding shell configuration file.
+Install the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the main repository, and add `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` to your `.bashrc`, `.xprofile`, or corresponding shell configuration file.
 
 #### Pepper Flash
 

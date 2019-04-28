@@ -5,7 +5,11 @@ Related articles
 
 This article describes how to set up root filesystem LVM snapshot creation during system start. Such snapshots can be used for [full system backups](/index.php/Full_system_backup_with_tar "Full system backup with tar") with minimal downtime or testing system updates with the option to revert them.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Setup](#Setup)
@@ -84,7 +88,7 @@ During backup you can continue to use your system normally, since all changes to
 
 ### Revert updates
 
-An other use for LVM snapshots is testing and reverting of updates. In this case create a snapshot for the system in a known good state and perform updates or changes afterwards.
+Another use for LVM snapshots is testing and reverting of updates. In this case create a snapshot for the system in a known good state and perform updates or changes afterwards.
 
 If you want to permantly stick to the updates just drop the snapshot with `# lvremove`. If you want to revert to the snapshotted state issue a `# lvconvert --merge` for the snapshot. During the next restart of the system (use the default target) the snapshot is merged back into your regular volume. All changes to the volume happened after the snapshot are undone.
 

@@ -32,7 +32,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.2.1 Manual mounting](#Manual_mounting)
         *   [2.2.2 Mount using /etc/fstab](#Mount_using_/etc/fstab)
         *   [2.2.3 Mount using /etc/fstab with systemd](#Mount_using_/etc/fstab_with_systemd)
-        *   [2.2.4 Mount using autofs](#Mount_using_autofs)
+        *   [2.2.4 As systemd unit](#As_systemd_unit)
+        *   [2.2.5 Mount using autofs](#Mount_using_autofs)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Performance tuning](#Performance_tuning)
     *   [3.2 Automatic mount handling](#Automatic_mount_handling)
@@ -95,7 +96,7 @@ Add directories to be shared and limit them to a range of addresses via a CIDR o
 It should be noted that modifying `/etc/exports` while the server is running will require a re-export for changes to take effect:
 
 ```
-# exportfs -rav
+# exportfs -arv
 
 ```
 
@@ -118,7 +119,7 @@ For more information about all available options see [exports(5)](https://jlk.fj
 
 **Warning:** A hard dependency of serving NFS (`rpc-gssd.service`) will wait until the [random number generator](/index.php/Random_number_generator "Random number generator") pool is sufficiently initialized possibly delaying the boot process. This is particularly prevalent on headless servers. It is *highly* recommended to populate the entropy pool using a utility such as [Rng-tools](/index.php/Rng-tools "Rng-tools") (if [TPM](/index.php/TPM "TPM") is supported) or [Haveged](/index.php/Haveged "Haveged") in these scenarios.
 
-If exporting ZFS shares, also start and enable `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot.
+**Note:** If exporting ZFS shares, also [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot. See [ZFS#NFS](/index.php/ZFS#NFS "ZFS").
 
 #### Miscellaneous
 
@@ -288,14 +289,14 @@ If mount fails try including the server's export root (required for Debian/RHEL/
 
 Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always on, and the NFS shares are available whenever the client boots up. Edit `/etc/fstab` file, and add an appropriate line reflecting the setup. Again, the server's NFS export root is omitted.
 
- `/etc/fstab`  `servername:/music   /mountpoint/on/client   nfs   defaults,rsize=32768,wsize=32768,timeo=900,retrans=5,_netdev	0 0` 
+ `/etc/fstab`  `servername:/music   /mountpoint/on/client   nfs   defaults,timeo=900,retrans=5,_netdev	0 0` 
 **Note:** Consult [nfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) and [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more mount options.
 
 Some additional mount options to consider:
 
 	rsize and wsize
 
-	The `rsize` value is the number of bytes used when reading from the server. The `wsize` value is the number of bytes used when writing to the server. The default for both is 1024, but using higher values such as 8192 can improve throughput. This is not universal. It is recommended to test after making this change, see [#Performance tuning](#Performance_tuning).
+	The `rsize` value is the number of bytes used when reading from the server. The `wsize` value is the number of bytes used when writing to the server. By default, if these options are not specified, the client and server negotiate the largest values they can both support (see [nfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nfs.5) for details). After changing these values, it is recommended to test the performance (see [#Performance tuning](#Performance_tuning)).
 
 	soft or hard
 
@@ -334,6 +335,44 @@ One might have to reboot the client to make systemd aware of the changes to fsta
 *   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. Also try to add the `x-systemd.requires=network-online.target` mount option if shutdown takes too long.
 *   Using mount options as `noatime`, `nodiratime`, `noac`, `nocto` may be used to increase NFS performance.
 
+#### As systemd unit
+
+Create a new `.mount` file inside `/etc/systemd/system`, e.g. `mnt-myshare.mount`. See [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
+
+**Note:** Make sure the filename corresponds to the mountpoint you want to use. E.g. the unit name `mnt-myshare.mount` can only be used if are going to mount the share under `/mnt/myshare`. Otherwise the following error might occur: `systemd[1]: mnt-myshare.mount: Where= setting does not match unit name. Refusing.`.
+
+`What=` path to share
+
+`Where=` path to mount the share
+
+`Options=` share mounting options
+
+**Note:**
+
+*   Network mount units automatically acquire `After` dependencies on *remote-fs-pre.target*, *network.target* and *network-online.target*, and gain a `Before` dependency on *remote-fs.target* unless `nofail` mount option is set. Towards the latter a `Wants` unit is added as well.
+*   [Append](/index.php/Append "Append") `noauto` to `Options` preventing automatically mount during boot (unless it is pulled in by some other unit).
+*   If you want to use a hostname for the server you want to share (instead of an IP address), add `nss-lookup.target` to `After` and `Wants`. This might avoid mount errors at boot time that do not arise when testing the unit.
+
+ `/etc/systemd/system/mnt-myshare.mount` 
+```
+[Unit]
+Description=Mount Share at boot
+
+[Mount]
+What=172.16.24.192:/mnt/myshare
+Where=/mnt/myshare
+Options=x-systemd.automount,noatime
+Type=nfs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target
+```
+
+**Tip:** In case of an unreachable system, [append](/index.php/Append "Append") `ForceUnmount=true` to `[Mount]`, allowing the share to be (force-)unmounted.
+
+To use `mnt-myshare.mount`, [start](/index.php/Start "Start") the unit and [enable](/index.php/Enable "Enable") it to run on system boot.
+
 #### Mount using autofs
 
 Using [autofs](/index.php/Autofs "Autofs") is useful when multiple machines want to connect via NFS; they could both be clients as well as servers. The reason this method is preferable over the earlier one is that if the server is switched off, the client will not throw errors about being unable to find NFS shares. See [autofs#NFS network mounts](/index.php/Autofs#NFS_network_mounts "Autofs") for details.
@@ -355,7 +394,7 @@ It may be necessary to tune the `rsize` and `wsize` mount options to meet the re
 In recent linux kernels (>2.6.18) the size of I/O operations allowed by the NFS server (default max block size) varies depending on RAM size, with a maximum of 1M (1048576 bytes), the max block size of the server will be used even if nfs clients requires bigger `rsize` and `wsize`. See [https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/5.8_Technical_Notes/Known_Issues-kernel.html) It is possible to change the default max block size allowed by the server by writing to the `/proc/fs/nfsd/max_block_size` before starting *nfsd*. For example, the following command restores the previous default iosize of 32k:
 
 ```
-# echo 32767 > /proc/fs/nfsd/max_block_size
+# echo 32768 > /proc/fs/nfsd/max_block_size
 
 ```
 
@@ -382,8 +421,8 @@ Make sure that the NFS mount points are correctly indicated in [fstab](/index.ph
 
  `/etc/fstab` 
 ```
-lithium:/mnt/data           /mnt/data	        nfs noauto,noatime,rsize=32768,wsize=32768 0 0
-lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime,rsize=32768,wsize=32768 0 0
+lithium:/mnt/data           /mnt/data	        nfs noauto,noatime 0 0
+lithium:/var/cache/pacman   /var/cache/pacman	nfs noauto,noatime 0 0
 ```
 
 **Note:**

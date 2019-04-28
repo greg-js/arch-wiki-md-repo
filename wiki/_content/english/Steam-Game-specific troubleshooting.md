@@ -291,9 +291,10 @@
     *   [5.133 Transmissions: Element 120](#Transmissions:_Element_120)
         *   [5.133.1 Troubleshooting](#Troubleshooting)
     *   [5.134 Trine 2](#Trine_2)
-        *   [5.134.1 Colors](#Colors)
-        *   [5.134.2 Sound](#Sound)
-        *   [5.134.3 Resolution](#Resolution)
+        *   [5.134.1 Fullscreen](#Fullscreen)
+        *   [5.134.2 Colors](#Colors)
+        *   [5.134.3 Sound](#Sound)
+        *   [5.134.4 Resolution](#Resolution)
     *   [5.135 Tropico 5](#Tropico_5)
         *   [5.135.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
     *   [5.136 Unity of Command](#Unity_of_Command)
@@ -2386,6 +2387,10 @@ Dependencies:
 
 *   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 *   [lib32-libwrap](https://www.archlinux.org/packages/?name=lib32-libwrap)
+
+#### Fullscreen
+
+Game crashes if started in fullscreen mode, but starts in windowed mode. After start the window can be set to fullscreen (borderless window) if your window manager supports this. [steam forum](https://steamcommunity.com/app/35720/discussions/0/1735463620079681092/)
 
 #### Colors
 

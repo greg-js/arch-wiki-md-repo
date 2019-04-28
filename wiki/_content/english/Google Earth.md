@@ -28,7 +28,6 @@ There are multiple Google Earth versions available in the [AUR](/index.php/AUR "
 
 *   [google-earth-pro](https://aur.archlinux.org/packages/google-earth-pro/) - Latest version (still freeware)
 *   [google-earth](https://aur.archlinux.org/packages/google-earth/) - Semi-legacy version
-*   [google-earth6](https://aur.archlinux.org/packages/google-earth6/) - Legacy version (often more stable)
 
 ## Troubleshooting
 
@@ -90,8 +89,6 @@ $ rm -f ~/.googleearth/Cache/cookies ~/.googleearth/instance-running-lock
 
 There have been numerous reports [[1]](http://productforums.google.com/d/msg/earth/548PQIT8bKI/rbpVsbMawwIJ) [[2]](http://productforums.google.com/forum/#!msg/earth/_h4t6SpY_II/6O_DTry49pgJ) [[3]](http://productforums.google.com/d/msg/earth/tZfKSs2AaZc/r_rBDl5djIMJ) on this in the [Google Earth forums](https://productforums.google.com/forum/#!categories/earth/linux) with varying solutions.
 
-If setting the `_attempt_fix` variable on top of the [google-earth](https://aur.archlinux.org/packages/google-earth/) [PKGBUILD](https://aur.archlinux.org/packages/go/google-earth/PKGBUILD) does not help, fall back to [google-earth6](https://aur.archlinux.org/packages/google-earth6/).
-
 ### Graphical corruption
 
 Either refer to the [#Corrupt settings](#Corrupt_settings) section above or disable texture compression in *Tools > Options... > 3D View > Compress*.
@@ -104,8 +101,6 @@ Taken from the changelog of [7.0.3](https://support.google.com/earth/bin/answer.
 Imagery now displays for Linux users running specific families of Intel GPUs.
 
 ```
-
-The solution is to use the legacy [google-earth6](https://aur.archlinux.org/packages/google-earth6/).
 
 ### Excessive memory use
 

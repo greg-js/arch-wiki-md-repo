@@ -431,27 +431,6 @@ Once you have the *.hcd* file, copy it into `/lib/firmware/brcm/BCM.hcd` - this 
 
 ```
 
-In some cases (with older kernels?), you have to flash the *.hcd* file with the *brcm_patchram_plus* utility, provided by [brcm_patchram_plus-git](https://aur.archlinux.org/packages/brcm_patchram_plus-git/). First, make sure in *dmesg* that the device is recognized by *btusb* as a bluetooth device. Then, run the following (replace *04ca 2006* with your vendor product pair):
-
-```
-# echo '04ca 2006' > /sys/bus/usb/drivers/btusb/new_id
-
-```
-
-Turn on the device:
-
-```
-# hciconfig hci0 up
-
-```
-
-Flash the firmware:
-
-```
-# brcm_patchram_plus_usb --patchram fw-04ca_2006.hcd hci0
-
-```
-
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
 ### Intel combined wifi and bluetooth cards

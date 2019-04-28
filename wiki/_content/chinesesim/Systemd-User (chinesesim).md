@@ -8,22 +8,26 @@ Related articles
 
 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 会给每个用户生成一个systemd实例，用户可以在这个实例下管理服务，启动、停止、启用以及禁用他们自己的单元。 这个能力大大方便了那些通常在特定用户下运行的守护进程和服务，比如 [mpd](/index.php/Mpd "Mpd"), 还有像拉取邮件等需要自动执行的任务。 在某些场景下，它甚至可以在指定用户下运行xorg以及整个窗口管理系统。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 工作原理](#.E5.B7.A5.E4.BD.9C.E5.8E.9F.E7.90.86)
-*   [2 基础设置](#.E5.9F.BA.E7.A1.80.E8.AE.BE.E7.BD.AE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 工作原理](#工作原理)
+*   [2 基础设置](#基础设置)
     *   [2.1 D-Bus](#D-Bus)
-    *   [2.2 环境变量](#.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-        *   [2.2.1 DISPLAY和XAUTHORITY](#DISPLAY.E5.92.8CXAUTHORITY)
+    *   [2.2 环境变量](#环境变量)
+        *   [2.2.1 DISPLAY和XAUTHORITY](#DISPLAY和XAUTHORITY)
         *   [2.2.2 PATH](#PATH)
-    *   [2.3 随系统自动启动systemd用户实例](#.E9.9A.8F.E7.B3.BB.E7.BB.9F.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8systemd.E7.94.A8.E6.88.B7.E5.AE.9E.E4.BE.8B)
+    *   [2.3 随系统自动启动systemd用户实例](#随系统自动启动systemd用户实例)
 *   [3 Xorg and systemd](#Xorg_and_systemd)
     *   [3.1 Automatic login into Xorg without display manager](#Automatic_login_into_Xorg_without_display_manager)
     *   [3.2 Xorg as a systemd user service](#Xorg_as_a_systemd_user_service)
-*   [4 开发用户单元](#.E5.BC.80.E5.8F.91.E7.94.A8.E6.88.B7.E5.8D.95.E5.85.83)
-    *   [4.1 例子](#.E4.BE.8B.E5.AD.90)
-    *   [4.2 使用变量的例子](#.E4.BD.BF.E7.94.A8.E5.8F.98.E9.87.8F.E7.9A.84.E4.BE.8B.E5.AD.90)
-    *   [4.3 X应用程序须知](#X.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E9.A1.BB.E7.9F.A5)
+*   [4 开发用户单元](#开发用户单元)
+    *   [4.1 例子](#例子)
+    *   [4.2 使用变量的例子](#使用变量的例子)
+    *   [4.3 X应用程序须知](#X应用程序须知)
 *   [5 Some use cases](#Some_use_cases)
     *   [5.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
     *   [5.2 Window manager](#Window_manager)
@@ -31,7 +35,7 @@ Related articles
 
 ## 工作原理
 
-从systemd 226版本开始，`/etc/pam.d/system-login`默认配置中的`pam_systemd`模块会在用户首次登陆的时候, 自动运行一个 `systemd --user` 实例。 只要用户还有会话存在，这个进程就不会退出；用户所有会话退出时，进程将会被销毁。当 [#随系统自动启动systemd用户实例](#.E9.9A.8F.E7.B3.BB.E7.BB.9F.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8systemd.E7.94.A8.E6.88.B7.E5.AE.9E.E4.BE.8B) 启用时, 这个用户实例将在系统启动时加载，并且不会被销毁。systemd用户实例负责管理用户服务，用户服务可以使用systemd提供的各种便捷机制来运行守护进程或自动化任务，如socket激活、定时器、依赖体系以及通过cgroup限制进程等。
+从systemd 226版本开始，`/etc/pam.d/system-login`默认配置中的`pam_systemd`模块会在用户首次登陆的时候, 自动运行一个 `systemd --user` 实例。 只要用户还有会话存在，这个进程就不会退出；用户所有会话退出时，进程将会被销毁。当 [#随系统自动启动systemd用户实例](#随系统自动启动systemd用户实例) 启用时, 这个用户实例将在系统启动时加载，并且不会被销毁。systemd用户实例负责管理用户服务，用户服务可以使用systemd提供的各种便捷机制来运行守护进程或自动化任务，如socket激活、定时器、依赖体系以及通过cgroup限制进程等。
 
 和系统单元类似，用户单元可以在以下目录找到(按优先级从低到高排序）：
 
@@ -232,11 +236,11 @@ WantedBy=default.target
 
 ```
 
-在[systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5)的SPECIFIERS章节中，详细介绍了各种变量, `%h` 指示符将使用运行该服务的用户的主目录替代。更多的变量参考 [systemd](/index.php/Systemd "Systemd") 的 manpages。
+在[systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5)的SPECIFIERS章节中，详细介绍了各种变量, `%h` 指示符将使用运行该服务的用户的主目录替代。更多的变量参考 [systemd](/index.php/Systemd "Systemd") 的 manpages。
 
 ### X应用程序须知
 
-大多数X应用运行都需要 `DISPLAY` 变量。如何让所有systemd用户实例看到这个环境变量，参考 [#DISPLAY和XAUTHORITY](#DISPLAY.E5.92.8CXAUTHORITY)。
+大多数X应用运行都需要 `DISPLAY` 变量。如何让所有systemd用户实例看到这个环境变量，参考 [#DISPLAY和XAUTHORITY](#DISPLAY和XAUTHORITY)。
 
 ## Some use cases
 

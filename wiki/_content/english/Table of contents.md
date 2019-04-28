@@ -26,7 +26,7 @@
 | <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(4)</small> |
 | <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
 | <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
-| <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
+| <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(11)</small> |
 | <small>3.4.</small> [Digital imaging](/index.php/Category:Digital_imaging "Category:Digital imaging") <small>(6)</small> |
 | <small>3.5.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
 | <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(31)</small> |
@@ -119,7 +119,7 @@
 | <small>4.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
 | <small>4.16.</small> [Voice over IP](/index.php/Category:Voice_over_IP "Category:Voice over IP") <small>(7)</small> |
 | <small>4.17.</small> [Web](/index.php/Category:Web "Category:Web") <small>(4)</small> |
-| <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
+| <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(34) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>4.17.1.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
 | <small>4.17.1.2.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System"))</small> |
 | <small>4.17.1.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
@@ -136,7 +136,7 @@
 | <small>5.1.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(12)</small> |
 | <small>5.1.3.</small> [Console applications](/index.php/Category:Console_applications "Category:Console applications") <small>(19) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
 | <small>5.1.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(7)</small> |
-| <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(14)</small> |
+| <small>5.1.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(15)</small> |
 | <small>5.1.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(4)</small> |
 | <small>5.1.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(3)</small> |
 | <small>5.1.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |
@@ -181,7 +181,7 @@
 | <small>5.1.17.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Monitoring](/index.php/Category:Monitoring "Category:Monitoring"))</small> |
 | <small>5.1.18.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
 | <small>5.1.19.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(16) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>5.1.20.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(34) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>5.1.20.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
 | <small>5.1.20.2.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System"))</small> |
 | <small>5.1.20.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |

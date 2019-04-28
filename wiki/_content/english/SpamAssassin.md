@@ -42,6 +42,7 @@ Create the following service, which will run these commands:
 ```
 [Unit]
 Description=spamassassin housekeeping stuff
+After=network.target
 
 [Service]
 #User=spamd

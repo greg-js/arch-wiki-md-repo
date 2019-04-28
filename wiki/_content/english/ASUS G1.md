@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Configuration](#Configuration)
@@ -10,9 +14,7 @@
     *   [2.5 Webcam](#Webcam)
     *   [2.6 Bluetooth](#Bluetooth)
     *   [2.7 Pointer](#Pointer)
-    *   [2.8 Leds & ACPI upgrade](#Leds_.26_ACPI_upgrade)
-    *   [2.9 OLED Display](#OLED_Display)
-        *   [2.9.1 Function Keys](#Function_Keys)
+    *   [2.8 Leds & ACPI upgrade](#Leds_&_ACPI_upgrade)
 
 ## Hardware
 
@@ -142,24 +144,3 @@ echo 1 > /sys/class/leds/asus:gaming/brightness
 ```
 
 Enjoy your leds!
-
-### OLED Display
-
-There is a package in AUR named asusoled.
-
-kernel < 2.6.23: It needs turning off usbhid (rmmod usbhid) or patching the kernel: [asus-lcm.diff](http://kharg.LKSnet.org/asus-lcm.diff)
-
-kernel >= 2.6.23: works out of a box
-
-There is also a separate kernel driver based on asusoled: [Asus_OLED](http://lapsus.berlios.de/asus_oled.html). It works without patching usbhid or removing asus_laptop. Just load it before the usbhid module gets loaded and it will work (< 2.6.23, in new kernels works out of a box). It contains a small Qt utility, which can be used as a drop-in replacement for asusoled, and has some additional features.
-
-You may simply want to display a digital clock with the date in the asusoled area. To do this :
-
-1.  install [asus_oled-clock-svn](https://aur.archlinux.org/packages/asus_oled-clock-svn/) from the [AUR](/index.php/AUR "AUR").
-2.  add 'asusoled-clock' in the daemons array of your rc.conf
-
-There are also some interesting utilities available to control and utilize the OLED display over here: [https://bitbucket.org/SysGhost/asus-oled-command-line-utility.git](https://bitbucket.org/SysGhost/asus-oled-command-line-utility.git)
-
-#### Function Keys
-
-WiP -- Use Lapsus

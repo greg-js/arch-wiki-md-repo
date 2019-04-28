@@ -86,8 +86,6 @@ Many games grab the keyboard, noticeably preventing you from switching windows (
 
 Some SDL games (e.g. Guacamelee) let you disable grabbing by pressing `Ctrl-g`.
 
-To disable keyboard grabbing at X11 level, install the [libx11-nokeyboardgrab](https://aur.archlinux.org/packages/libx11-nokeyboardgrab/) package.
-
 **Note:** SDL is known to sometimes not be able to grab the input system. In such a case, it may succeed in grabbing it after a few seconds of waiting.
 
 ### Starting games in a separate X server
