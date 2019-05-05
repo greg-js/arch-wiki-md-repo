@@ -2,15 +2,19 @@ Tento článek pojednává o provozování VirtualBoxu v Archu, možná vás bud
 
 [VirtualBox](http://www.virtualbox.org) je emulátor virtuálního PC jako [VMware](/index.php/VMware "VMware"). Obsahuje plno vlastností integrovaných ve vmware, stejně jako své vlastní. Je v neustálém vývoji a nové vlastnosti postupně přibývají. Verze 2.2 například přinesla podporu 3D OpenGL akcelerace pro hostované Linux a Solaris systémy. Má přehledné grafické uživatelské rozhraní (Qt a/nebo SDL) a je možné jej obsluhovat přes příkazovou řádku. VirtualBox umožňuje běh iTunes jako v sučasnosti v podstatě jedinou možnost, jak synchronizovat iPod Touch nebo iPhone s verzí 3.0 nebo vyšší.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Instalace](#Instalace)
-*   [2 Spuštění VirtualBoxu](#Spu.C5.A1t.C4.9Bn.C3.AD_VirtualBoxu)
-*   [3 Nastavení](#Nastaven.C3.AD)
-    *   [3.1 Nastavení sítě](#Nastaven.C3.AD_s.C3.ADt.C4.9B)
+*   [2 Spuštění VirtualBoxu](#Spuštění_VirtualBoxu)
+*   [3 Nastavení](#Nastavení)
+    *   [3.1 Nastavení sítě](#Nastavení_sítě)
         *   [3.1.1 NAT](#NAT)
-        *   [3.1.2 Síťový most](#S.C3.AD.C5.A5ov.C3.BD_most)
-    *   [3.2 Přídavky pro hosta](#P.C5.99.C3.ADdavky_pro_hosta)
+        *   [3.1.2 Síťový most](#Síťový_most)
+    *   [3.2 Přídavky pro hosta](#Přídavky_pro_hosta)
         *   [3.2.1 Host s Arch Linuxem](#Host_s_Arch_Linuxem)
         *   [3.2.2 Windows guests](#Windows_guests)
     *   [3.3 Keyboard and mouse between the host and the guest](#Keyboard_and_mouse_between_the_host_and_the_guest)
@@ -21,7 +25,7 @@ Tento článek pojednává o provozování VirtualBoxu v Archu, možná vás bud
     *   [3.8 Setting up CD-ROM for the guest](#Setting_up_CD-ROM_for_the_guest)
     *   [3.9 Enabling D3D acceleration in Windows guests](#Enabling_D3D_acceleration_in_Windows_guests)
 *   [4 Virtualized OS setup](#Virtualized_OS_setup)
-    *   [4.1 Test a liveCD/DVD](#Test_a_liveCD.2FDVD)
+    *   [4.1 Test a liveCD/DVD](#Test_a_liveCD/DVD)
 *   [5 Maintenance](#Maintenance)
     *   [5.1 Rebuild the vboxdrv module](#Rebuild_the_vboxdrv_module)
     *   [5.2 Compact a disk image](#Compact_a_disk_image)
@@ -32,7 +36,7 @@ Tento článek pojednává o provozování VirtualBoxu v Archu, možná vás bud
     *   [6.2 Converting from VMware images](#Converting_from_VMware_images)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Getting Web-cams and other USB devices to detect](#Getting_Web-cams_and_other_USB_devices_to_detect)
-    *   [7.2 Sending a CTRL+ALT+F1 to the Guest](#Sending_a_CTRL.2BALT.2BF1_to_the_Guest)
+    *   [7.2 Sending a CTRL+ALT+F1 to the Guest](#Sending_a_CTRL+ALT+F1_to_the_Guest)
     *   [7.3 Starting VMs at system boot on headless servers](#Starting_VMs_at_system_boot_on_headless_servers)
     *   [7.4 Guest managament daemon](#Guest_managament_daemon)
     *   [7.5 Accessing server on VM from host](#Accessing_server_on_VM_from_host)
@@ -58,7 +62,7 @@ Instalace základního balíčku:
 
 ```
 
-Volitelně je možné nainstalovat [qt4](https://www.archlinux.org/packages/?name=qt4) pro možnost využívat GUI:
+Volitelně je možné nainstalovat [qt4](https://aur.archlinux.org/packages/qt4/) pro možnost využívat GUI:
 
 ```
 # pacman -S qt4
@@ -106,7 +110,7 @@ $ VirtualBox
 
 ### Nastavení sítě
 
-Virtuální počítače ve Virtualboxu mohou být do sítě připojeny různými metodami; zejména pomocí [#NAT](#NAT) a [#Síťový most](#S.C3.AD.C5.A5ov.C3.BD_most). Právě [#NAT](#NAT) je nejjednodušší možností a je výchozí pro nově vytvořené virtuální stroje.
+Virtuální počítače ve Virtualboxu mohou být do sítě připojeny různými metodami; zejména pomocí [#NAT](#NAT) a [#Síťový most](#Síťový_most). Právě [#NAT](#NAT) je nejjednodušší možností a je výchozí pro nově vytvořené virtuální stroje.
 
 [Manuál VirtualBoxu](http://www.virtualbox.org/manual/UserManual.html) popisuje možnosti síťování. Ty jsou právě tam přesně popsány a jsou platné pro většinu operačních systémů.
 

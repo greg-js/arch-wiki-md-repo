@@ -6,7 +6,7 @@ There are several ways to achieve this on Linux:
 *   [Video Decode and Presentation API for Unix](https://www.freedesktop.org/wiki/Software/VDPAU/) (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA. VDPAU has not been updated since September 2015.
 *   [NVDECODE/NVENCODE](https://developer.nvidia.com/nvidia-video-codec-sdk) - proprietary APIs for hardware video acceleration used by NVIDIA Fermi, Kepler, Maxwell and Pascal generation GPUs.
 
-For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
+For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive overview of driver and application support see [#Comparison tables](#Comparison_tables).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -72,7 +72,7 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
 To get VA-API support when device driver provides none:
 
 *   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) – VDPAU backend for VA-API.
-*   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – VDPAU backend for VA-API, patched to work with Chromium.
+*   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – VDPAU backend for VA-API, patched to work with [Chromium](/index.php/Chromium "Chromium").
 *   [XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") backend for VA-API is provided by proprietary [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver.
 
 To get VDPAU support when device driver provides none:
@@ -281,7 +281,7 @@ Hybrid: Haswell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and new
 except Broxton/Apollo Lake | No | No | No |
 | H.264/MPEG-4 AVC | Sandy Bridge and newer | Broadwell and newer | Radeon HD 7000 and newer |
 | H.265/HEVC 8bit | Skylake and newer | Skylake and newer | Radeon 400 and newer |
-| H.265/HEVC 10bit | Kaby Lake and newer | Cannonlake and newer | Raven Ridge and newer |
+| H.265/HEVC 10bit | Kaby Lake and newer | Kaby Lake and newer | Raven Ridge and newer |
 | VP8 | Cherryview/Braswell and newer
 Hybrid: Haswell to Skylake | No |
 | VP9 8bit | Kaby Lake and newer | Icelake and newer |
@@ -337,7 +337,7 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 | [FFmpeg](/index.php/FFmpeg "FFmpeg") | Yes | Yes | Yes | Yes | Yes | [FFmpeg#Hardware video acceleration](/index.php/FFmpeg#Hardware_video_acceleration "FFmpeg") |
 | [GStreamer](/index.php/GStreamer "GStreamer") | Yes | Yes | Yes | Yes | Yes | [GStreamer#Hardware video acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer") |
 | [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | – | – | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
-| [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | – | – | [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv") |
+| [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | – | – | [mpv#Hardware video acceleration](/index.php/Mpv#Hardware_video_acceleration "Mpv") |
 | [VLC media player](/index.php/VLC_media_player "VLC media player") | Yes | Yes | No | – | – | [VLC media player#Hardware video acceleration](/index.php/VLC_media_player#Hardware_video_acceleration "VLC media player") |
 | [MPlayer](/index.php/MPlayer "MPlayer") | Yes | Yes | No | – | – | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
 | [Flash](/index.php/Flash "Flash") | No | Yes | No | – | – | [Browser plugins#Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") |

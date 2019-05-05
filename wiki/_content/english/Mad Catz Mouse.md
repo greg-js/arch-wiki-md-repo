@@ -11,8 +11,9 @@ Mad Catz produces a series of gaming mice, for example the Saitek Cyborg R.A.T.3
 *   [3 The Disable Button Solution](#The_Disable_Button_Solution)
 *   [4 RAT7 or RAT9 Partial Fix](#RAT7_or_RAT9_Partial_Fix)
 *   [5 Manual Button Mapping Fix](#Manual_Button_Mapping_Fix)
-*   [6 R.A.T. configuration software](#R.A.T._configuration_software)
-*   [7 See also](#See_also)
+*   [6 Use extra mouse buttons with Wine/Games](#Use_extra_mouse_buttons_with_Wine/Games)
+*   [7 R.A.T. configuration software](#R.A.T._configuration_software)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -208,6 +209,46 @@ EndSection
 To work correctly, it is important to that you identify the correct "ButtonMapping" and "MatchProduct" for your specific mouse.
 
 For any any modifications to xorg.conf take effect, X must be restarted.
+
+## Use extra mouse buttons with Wine/Games
+
+Install [evrouter](https://aur.archlinux.org/packages/evrouter/) and add your user to `input` group and relogin to activate changes.
+
+```
+# gpasswd -a <user> input
+
+```
+
+Edit the evrouter config file and change the `eventX` number to the event number teh mouse uses with
+
+```
+$ evrouter --dump /dev/input/event*}}.
+
+```
+
+Then assign any hotkeys to any mouse button. Preferably use not often used keystrokes to not interfere with others already used as in the example `Right Shift + F-key`.
+
+ `~/.evrouterrc` 
+```
+# 10
+"Mad Catz Mad Catz M.M.O.7 Mouse" "/dev/input/event9" none key/277 "XKey/Shift_R+F1"
+# 11
+"Mad Catz Mad Catz M.M.O.7 Mouse" "/dev/input/event9" none key/278 "XKey/Shift_R+F2"
+```
+
+Start with:
+
+```
+$ evrouter /dev/input/event*
+
+```
+
+Stop with:
+
+```
+$ evrouter -q && rm -f /tmp/.evrouter*
+
+```
 
 ## R.A.T. configuration software
 

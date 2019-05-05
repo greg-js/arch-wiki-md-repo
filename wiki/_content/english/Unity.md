@@ -83,7 +83,7 @@ The following section lists packages that, whilst not required for the Unity she
 | Screen locking | *gnome-screensaver-ubuntu* |
 | Online accounts | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) |
 | SSH | [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) |
-| HUD & menubar integration | [appmenu-qt4](https://www.archlinux.org/packages/?name=appmenu-qt4) |
+| HUD & menubar integration | [appmenu-qt4](https://aur.archlinux.org/packages/appmenu-qt4/) |
 | File and Folder lens | *zeitgeist-ubuntu* |
 | Configuration | [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), *unity-tweak-tool* |
 | Pidgin integration | *pidgin-indicator* |

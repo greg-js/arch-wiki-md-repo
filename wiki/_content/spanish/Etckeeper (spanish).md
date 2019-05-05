@@ -1,12 +1,12 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Etckeeper](/index.php/Etckeeper "Etckeeper"), revisada por última vez el **2018-10-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Etckeeper&diff=0&oldid=548963) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Etckeeper](/index.php/Etckeeper "Etckeeper"), revisada por última vez el **2019-05-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Etckeeper&diff=0&oldid=572399) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [Git](/index.php/Git_(Espa%C3%B1ol) "Git (Español)")
 *   [Cron](/index.php/Cron "Cron")
 
-[Etckeeper](http://etckeeper.branchable.com/) le permite mantener `/etc` bajo el control de versiones.
+[Etckeeper](http://etckeeper.branchable.com/) es una colección de herramientas para realizar un seguimiento de `/etc/` en un repositorio ([Git](/index.php/Git_(Espa%C3%B1ol) "Git (Español)"), [Mercurial](/index.php/Mercurial "Mercurial"), [Bazaar](/index.php/Bazaar_(Espa%C3%B1ol) "Bazaar (Español)") o [Darcs](/index.php/Darcs "Darcs") son ​​compatibles). Un [hook de pacman](/index.php/Pacman_hook "Pacman hook") confirma automáticamente los cambios antes de realizar un seguimiento de la actualización del sistema y de los permisos de los archivos, cuyo control de versión normalmente no admite, pero es importante para archivos como [/etc/shadow](/index.php//etc/shadow "/etc/shadow").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -44,6 +44,13 @@ Después de la configuración, el repositorio de la ruta `/etc` debe inicializar
 
 ```
 
+Y realice una primera confirmación para realizar un seguimiento de los cambios, este es un paso necesario para que etckeeper pueda trabajar automáticamente:
+
+```
+# etckeeper commit "first commit"
+
+```
+
 A partir de la versión 1.18.3-1 de *etckeeper*, los [hooks de pacman](/index.php/Pacman_(Espa%C3%B1ol)#Hooks "Pacman (Español)") de antes y después de la instalación se ejecutan automáticamente en la instalación, actualización y eliminación de paquetes. Ya no es necesario un [#Script contenedor](#Script_contenedor) manual.
 
 Para rastrear otros cambios en la ruta `/etc`, debe confirmar los cambios manualmente (véase la página de manual [etckeeper(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/etckeeper.8) para las órdenes) o utilice una de las soluciones de interrupción siguientes.
@@ -68,7 +75,36 @@ Véase [cron#Cronie](/index.php/Cron#Cronie "Cron"), [cron](/index.php/Cron "Cro
 
 ### Incron
 
+**Nota:** Esta sección se aplica solo a la versión 5.10 de incron.
+
 Para crear confirmaciones automáticamente en **cada** modificación de los archivos dentro de `/etc/`, utilice [incron](https://www.archlinux.org/packages/?name=incron). Este utiliza la señalización nativa del sistema de archivos a través de [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7).
+
+Después de instalar incron e inicializar etckeeper, añada root a los usuarios autorizados para ejecutar los scripts de incron:
+
+```
+# echo root | sudo tee -a /etc/incron.allow
+
+```
+
+Luego edite incrontab con:
+
+```
+# sudo incrontab -e
+
+```
+
+Añada en el texto:
+
+```
+# /etc IN_MODIFY,IN_NO_LOOP /bin/etckeeper commit "[mensaje]"
+
+```
+
+*IN_NO_LOOP* es un indicador que espera a que finalice la confirmación antes de ejecutar la siguiente orden, y evita un bucle infinito.
+
+Donde *[mensaje]* podría ser algo así como `"modificado $#"` donde $# es un comodín incrontab especial expandido al nombre del archivo modificado.
+
+Tenga en cuenta que Incron no es capaz de ver subdirectorios. Solo los archivos dentro de la ruta serán monitorizados. Si necesita que se supervisen los subdirectorios, debe darles su propia entrada. Sin embargo, los *commits* cuando se modifican los archivos de nivel superior seguirán confirmando todos los cambios.
 
 Véase: [[1]](http://inotify.aiken.cz/?section=incron&page=doc&lang=en), [[2]](https://linux.die.net/man/8/incrond)
 

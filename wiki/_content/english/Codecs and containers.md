@@ -231,7 +231,7 @@ See also [Wikipedia:Comparison of video container formats](https://en.wikipedia.
 
 From [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
-	GStreamer is a library for constructing graphs of media-handling components. The applications supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.
+	GStreamer is a library for constructing graphs of media-handling components. The applications it supports range from simple Ogg/Vorbis playback, audio/video streaming to complex audio (mixing) and video (non-linear editing) processing.
 
 Simply, GStreamer is a *backend* or *framework* utilized by many media applications. See [GStreamer](/index.php/GStreamer "GStreamer") article.
 
@@ -261,4 +261,4 @@ They can also be found in the [codecs](https://aur.archlinux.org/packages/codecs
 
 ### No H264, mpg4 or Musepack (.mpc) in Totem Player
 
-If you see the "The H264 plugin is missing" warning with Totem media player, just install the Gstreamer libav library to fix it install [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
+If you see the "The H264 plugin is missing" warning with Totem media player, [install](/index.php/Install "Install") [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).

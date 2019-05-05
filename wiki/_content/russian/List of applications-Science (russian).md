@@ -139,7 +139,7 @@
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Программа в стиле Matlab, поддерживающая многие ее функции, не требующая интерфейса к внешнему коду C, C++ и Fortran, поддерживающая параллельную распределенную разработку алгоритма (через MPI) и возможности 3D-визуализации
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — Тулкит для разработки программного обеспечения, предлагающий блоки обработки сигналов для реализации радиовещания на программном уровне
 

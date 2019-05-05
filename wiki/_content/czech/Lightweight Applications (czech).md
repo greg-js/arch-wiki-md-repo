@@ -48,7 +48,7 @@ Poskytuje seznam odlehčeného softwaru pro ty, kteří si přejí používat pr
 
 [Pragha](http://pragha.wikispaces.com/) je GTK+ hudební správce, který se vývojově oddělil od programu Consonance Music Manager.
 
-[qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient) je Qt4 mpd klient.
+[qmpdclient](https://aur.archlinux.org/packages/qmpdclient/) je Qt4 mpd klient.
 
 [Sonata](http://sonata.berlios.de/) je elegantní GTK+ hudební klient pro [mpd](/index.php/Mpd "Mpd").
 

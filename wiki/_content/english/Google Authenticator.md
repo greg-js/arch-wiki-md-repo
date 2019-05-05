@@ -17,7 +17,8 @@ For the reverse operation (generating codes compatible with Google Authenticator
 *   [6 Storage location](#Storage_location)
 *   [7 Desktop logins](#Desktop_logins)
 *   [8 Code generation](#Code_generation)
-    *   [8.1 Command line](#Command_line)
+    *   [8.1 Code Managers](#Code_Managers)
+    *   [8.2 Command line](#Command_line)
 
 ## Installation
 
@@ -189,6 +190,10 @@ The Google Authenticator PAM plugin can also be used for console logins and with
 ## Code generation
 
 If you have Google Authenticator configured with other systems, then losing your device can prevent you from being able to log in to those systems. Having additional ways to generate the codes can be helpful.
+
+### Code Managers
+
+A script that enables the display, generation, storage and management of google authenticator codes is available from the AUR ([gashell](https://aur.archlinux.org/packages/gashell/)).
 
 ### Command line
 

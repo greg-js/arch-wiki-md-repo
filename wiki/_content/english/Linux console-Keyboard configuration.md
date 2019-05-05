@@ -196,7 +196,7 @@ keycode 58 = Control
 In order to make use of the personal keymap, it must be loaded with *loadkeys*:
 
 ```
-$ loadkeys /usr/local/share/kbd/keymaps/personal.map
+# loadkeys /usr/local/share/kbd/keymaps/personal.map
 
 ```
 

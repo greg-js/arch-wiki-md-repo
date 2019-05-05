@@ -12,7 +12,11 @@
 
 На основе фреймворка Qt развивается сообщество и программное обеспечение [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Qt лежит в основе других важных проприетарных и открытых программных проектов, таких как [VLC](/index.php/VLC "VLC"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), [Opera](/index.php/Opera "Opera"), [Mathematica](/index.php/Mathematica "Mathematica"), [Skype](/index.php/Skype "Skype") и многих других.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Выбор набора Qt по умолчанию](#Выбор_набора_Qt_по_умолчанию)
@@ -46,7 +50,7 @@
 В настоящее время две версии Qt доступны в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"). Они могут быть [установлены](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") со следующими пакетами:
 
 *   **Qt 5.x** входит в пакет [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), документация — [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc).
-*   **Qt 4.x** предоставляется пакетом [qt4](https://www.archlinux.org/packages/?name=qt4), документация — [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/).
+*   **Qt 4.x** предоставляется пакетом [qt4](https://aur.archlinux.org/packages/qt4/), документация — [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/).
 *   **Qt 3.x** можно установить из [AUR](/index.php/AUR "AUR") с пакетом [qt3](https://aur.archlinux.org/packages/qt3/), документация — [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/).
 
 **Важно:** Пакеты Qt больше не помещают исполняемые файлы утилит вроде *qmake* в `/usr/bin`. Вместо этого создаются символические ссылки с суффиксом версии, например `qmake-qt5`, `qmake-qt4`, `qmake-qt3`. Это может вызвать проблемы со сборкой проектов для Qt версий 3 и 4\. Как установить исполняемые файлы в `/usr/bin` показано в разделе [#Выбор набора Qt по умолчанию](#Выбор_набора_Qt_по_умолчанию).
@@ -159,15 +163,15 @@ Qt поддерживает большинство доступных сегод
 
 *   **Qt Linguist** — Набор инструментов для упрощения перевода и интернационализации приложений Qt.
 
-	[http://qt-project.org/doc/qt-4.8/linguist-manual.html](http://qt-project.org/doc/qt-4.8/linguist-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://qt-project.org/doc/qt-4.8/linguist-manual.html](http://qt-project.org/doc/qt-4.8/linguist-manual.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **Qt Assistant** — Справочная система для чтения документации по Qt.
 
-	[http://qt-project.org/doc/qt-4.8/assistant-manual.html](http://qt-project.org/doc/qt-4.8/assistant-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://qt-project.org/doc/qt-4.8/assistant-manual.html](http://qt-project.org/doc/qt-4.8/assistant-manual.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **Qt Designer** — Инструмент для разметки графического интерфейса приложений Qt и создания форм для виджетов.
 
-	[http://qt-project.org/doc/qt-4.8/designer-manual.html](http://qt-project.org/doc/qt-4.8/designer-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://qt-project.org/doc/qt-4.8/designer-manual.html](http://qt-project.org/doc/qt-4.8/designer-manual.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **Qt Quick Designer** — Визуальный редактор файлов QML, поддерживающий режим WYSIWYG. Он позволяет с нуля проектировать и разрабатывать приложения и компоненты Qt Quick.
 
@@ -175,23 +179,23 @@ Qt поддерживает большинство доступных сегод
 
 *   **QML Viewer** — Инструмент для быстрой разработки и отладки приложений QML.
 
-	[http://qt-project.org/doc/qt-4.8/qmlviewer.html](http://qt-project.org/doc/qt-4.8/qmlviewer.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://qt-project.org/doc/qt-4.8/qmlviewer.html](http://qt-project.org/doc/qt-4.8/qmlviewer.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **[qmake](https://en.wikipedia.org/wiki/Qmake "wikipedia:Qmake")** — Средство автоматизации процесса сборки приложений Qt на различных платформах, похожее на [cmake](https://en.wikipedia.org/wiki/ru:CMake "wikipedia:ru:CMake"), но с меньшим количеством опции и ориентированное на приложения Qt.
 
-	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **uic** — Генератор кода C++ на основе *.ui*-файлов.
 
-	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **rcc** — Инструмент для упаковки ресурсов (например, изображений) в приложение при сборке. По сути генерирует код на C++, содержащий данные, указанные в файле ресурсов (*.qrc*).
 
-	[http://qt-project.org/doc/qt-4.8/rcc.html](http://qt-project.org/doc/qt-4.8/rcc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://qt-project.org/doc/qt-4.8/rcc.html](http://qt-project.org/doc/qt-4.8/rcc.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **moc** — Препроцессор исходных файлов, обрабатывающий расширения Qt для C++ (например, директивы механизма сигналов и слотов, RTTI, аннотации).
 
-	[http://doc.qt.digia.com/4.7-snapshot/moc.html](http://doc.qt.digia.com/4.7-snapshot/moc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[http://doc.qt.digia.com/4.7-snapshot/moc.html](http://doc.qt.digia.com/4.7-snapshot/moc.html) || [qt4](https://aur.archlinux.org/packages/qt4/)
 
 ### Другие языки программирования
 
@@ -201,8 +205,8 @@ Qt имеет привязки ко многим популярным языка
 
 #### C++
 
-*   Пакет: [qt4](https://www.archlinux.org/packages/?name=qt4)
-    *   [qt4](https://www.archlinux.org/packages/?name=qt4) — версия 4.x
+*   Пакет: [qt4](https://aur.archlinux.org/packages/qt4/)
+    *   [qt4](https://aur.archlinux.org/packages/qt4/) — версия 4.x
     *   [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) — версия 5.x
 *   Сайт: [http://qt-project.org/](http://qt-project.org/)
 *   Команда сборки:
@@ -228,7 +232,7 @@ int main(int argc, char **argv)
 
 #### QML
 
-*   Пакет: [qt4](https://www.archlinux.org/packages/?name=qt4) или [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative).
+*   Пакет: [qt4](https://aur.archlinux.org/packages/qt4/) или [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative).
 *   Сайт: [http://qt-project.org/](http://qt-project.org/)
 *   Команда запуска: `qmlviewer-qt4 hello.qml`
 

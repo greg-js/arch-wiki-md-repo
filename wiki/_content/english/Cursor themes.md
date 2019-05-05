@@ -310,7 +310,7 @@ If you have conflicting cursors then it might be because a different cursor has 
 
 If you are trying to change cursor size via `~/.Xresources` in your `~/.xinitrc` and it doesn't work, make sure that xrandr runs before loading `~/.Xresources`.
 
-Make sure your `~/.Xresources` looks similar to the following
+Make sure your `~/.xinitrc` looks similar to the following
 
  `~/.xinitrc` 
 ```

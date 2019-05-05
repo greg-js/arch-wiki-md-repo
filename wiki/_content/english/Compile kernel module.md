@@ -7,13 +7,19 @@ Sometimes you may wish to compile Linux's [Kernel module](/index.php/Kernel_modu
 
 **Note:** You can only replace existing module if it is compiled as module (M) and not builtin (y) into kernel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Build environment](#Build_environment)
 *   [2 Source configuration](#Source_configuration)
 *   [3 Module compilation](#Module_compilation)
-*   [4 Module installation](#Module_installation)
-*   [5 See also](#See_also)
+*   [4 out-of-tree module compilation](#out-of-tree_module_compilation)
+*   [5 Module installation](#Module_installation)
+*   [6 possible errors](#possible_errors)
+*   [7 See also](#See_also)
 
 ## Build environment
 
@@ -93,6 +99,25 @@ $ make M=fs/btrfs
 
 ```
 
+## out-of-tree module compilation
+
+get the official source code of the current running linux kernel as described in [Kernel/Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System"):
+
+```
+$ cd && mkdir build
+$ asp update linux
+$ asp checkout linux
+
+```
+
+then point to the checked out source when compiling the module:
+
+```
+$ cd build/mymod
+$ make -C ~/build/linux/trunk/src/archlinux-linux M=$PWD modules
+
+```
+
 ## Module installation
 
 Now after successful compilation you just need to gzip and copy it over for your current kernel.
@@ -123,6 +148,25 @@ If you are compiling a module for early boot (e.g. updated module) which is copi
 
 ```
 # mkinitcpio -p linux
+
+```
+
+## possible errors
+
+If EXTRAVERSION is not set correctly the following errors may occur
+
+```
+# insmod mymod.ko
+insmod: ERROR: could not insert module mymod.ko: Invalid module format
+# modprobe mymod
+modprobe: ERROR: could not insert 'mymod': Exec format error
+
+```
+
+adding force-vermagic makes it ignore the version mismatch
+
+```
+modprobe mymod --force-vermagic
 
 ```
 

@@ -21,19 +21,19 @@ There are two versions of the format: *KeePass 1.x (Classic)* and *KeePass 2.x*
 
 ## Installation
 
-There are three major implementations of KeePass, which are all available in the official repositories:
+There are three major implementations of KeePass, two are available in the official repositories:
 
 *   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — A cross-platform password manager that has autotype and clipboard support when respectively `xdotool` and `xsel` are installed. It lets you import [many formats](https://keepass.info/help/base/importexport.html) and has [many plugins](https://keepass.info/plugins.html).
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — Started as a Linux port of KeePass. [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) uses the KeePass 2.x format, but can import 1.x databases. It also lets you import PwManager and KWallet XML databases. It does not support plugins. [[1]](https://www.keepassx.org/faq).
-
-	[https://www.keepassx.org/](https://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
-
 *   **[KeePassXC](https://en.wikipedia.org/wiki/KeePassXC "wikipedia:KeePassXC")** — Fork of KeePassX that aims to incorporate stalled pull requests, that are not being incorporated into KeePassX.
 
 	[https://keepassxc.org](https://keepassxc.org) || [keepassxc](https://www.archlinux.org/packages/?name=keepassxc)
+
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — Started as a Linux port of KeePass. [keepassx2](https://aur.archlinux.org/packages/keepassx2/) uses the KeePass 2.x format, but can import 1.x databases. It also lets you import PwManager and KWallet XML databases. It does not support plugins. [[1]](https://www.keepassx.org/faq).
+
+	[https://www.keepassx.org/](https://www.keepassx.org/) || [keepassx](https://aur.archlinux.org/packages/keepassx/) [keepassx2](https://aur.archlinux.org/packages/keepassx2/)
 
 Other lesser-known alternatives can be found in the AUR:
 

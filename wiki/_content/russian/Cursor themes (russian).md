@@ -1,6 +1,6 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Дата последней синхронизации: 18 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Cursor_themes&diff=0&oldid=529067).
+**Состояние перевода:** На этой странице представлен перевод статьи [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Дата последней синхронизации: 5 мая 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Cursor_themes&diff=0&oldid=572226).
 
-Дисплейный сервер сопровождается *темой курсора*, которая помогает в различных аспектах навигации и манипуляции GUI. Тема курсора уже включена в сервер, но другие также могут быть установлены.
+Дисплейный сервер сопровождается *темой курсора*, которая помогает в различных аспектах навигации и манипуляции GUI. Тема курсора уже включена в сервер, но другие темы также могут быть установлены.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -28,6 +28,7 @@
         *   [3.2.1 rdesktop](#rdesktop)
     *   [3.3 Изменение стандартного курсора X сервера](#Изменение_стандартного_курсора_X_сервера)
     *   [3.4 .Xdefaults](#.Xdefaults)
+    *   [3.5 Размер курсора не изменяется при загрузке](#Размер_курсора_не_изменяется_при_загрузке)
 *   [4 Смотрите также](#Смотрите_также)
 
 ## Установка
@@ -38,8 +39,8 @@
 
 Пакеты доступны в:
 
-*   [Официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") - [поиск "xcursor-"](https://www.archlinux.org/packages/?sort=&q=xcursor-&maintainer=&last_update=&flagged=&limit=50).
-*   [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") — [поиск "cursor"](https://aur.archlinux.org/packages.php?O=0&L=0&C=17&K=cursor&SeB=nd&SB=n&SO=a&PP=50&do_Search=Go).
+*   [Официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") - ["xcursor-"](https://www.archlinux.org/packages/?sort=&q=xcursor-&maintainer=&last_update=&flagged=&limit=50).
+*   [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") — ["cursor"](https://aur.archlinux.org/packages.php?O=0&L=0&C=17&K=cursor&SeB=nd&SB=n&SO=a&PP=50&do_Search=Go).
 
 ### Вручную
 
@@ -49,12 +50,13 @@
 
 *   [GNOME Look](https://www.gnome-look.org/browse/cat/107/ord/latest/)
 *   [Customize.org](http://www.customize.org/list/xcursors)
-*   [Deviant Art](http://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
+*   [Deviant Art](https://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
+*   [Open Desktop](https://www.opendesktop.org/browse/cat/107/)
 
 Чтобы установить тему для *конкретного пользователя*, распакуйте ее в `~/.icons/`:
 
 ```
-$ bsdtar xvf foobar-cursor-theme.tar.gz --directory ~/.icons
+$ tar xvf foobar-cursor-theme.tar.gz -C ~/.icons
 
 ```
 
@@ -69,7 +71,7 @@ find /usr/share/icons ~/.icons -type d -name "cursors"
 
 ```
 
-Если пакет включает в себя файл `index.theme`, проверьте, есть ли линия «Inherits» внутри. Если есть, то проверьте, существует ли такая же тема в системе (переименуйте, если необходимо).
+Если пакет включает в себя файл `index.theme`, проверьте, есть ли линия «Inherits» внутри. Если есть, то проверьте, существует ли указанная тема в системе (переименуйте, если необходимо).
 
 ## Настройка
 
@@ -79,7 +81,7 @@ find /usr/share/icons ~/.icons -type d -name "cursors"
 
 Этот метод применим к [X11](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") и [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
 
-Для настройки для *конкретного пользователя* используйте `~/.icons/default/index.theme`; для *общесистемной* конфигурации, используйте `/usr/share/icons/default/index.theme`.
+Настройка для *конкретного пользователя* производится посредством `~/.icons/default/index.theme`; для *общесистемной* конфигурации используйте `/usr/share/icons/default/index.theme`.
 
 Опция `Inherits` в разделе `[icon theme]` должна быть установлена на имя каталога темы `*имя_темы*`, например `xcursor-breeze-snow`:
 
@@ -105,7 +107,7 @@ gtk-cursor-theme-name=*имя_темы*
 
 ### Среда рабочего стола
 
-[Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") используют [протокол XSETTINGS](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html), обычно реализуемый через демон настроек. Несмотря на возможность изменения темы на лету, в некоторых приложения она остается неизменной. Чтобы изменить тему вручную, смотрите [#Спецификацию XDG](#Спецификация_XDG).
+[Среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") используют [протокол XSETTINGS](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html), обычно реализуемый через демон настроек. Несмотря на возможность изменения темы на лету, в некоторых приложениях это не работает. Чтобы изменить тему вручную, смотрите [#Спецификацию XDG](#Спецификация_XDG).
 
 #### GNOME
 
@@ -225,8 +227,6 @@ $ ln -s left_ptr_watch 08e8e1c95fe2fc01f976f1e063a24ccd
 
 ```
 
-If the above does not solve the problem, look in /usr/share/icons/whiteglass/cursors for additional cursors your theme may be missing, and create links for these as well.
-
 Если вышеуказанные действия не помогают, посмотрите в `/usr/share/icons/whiteglass/cursors`, чтобы увидеть, каких курсоров не хватает в теме, и добавить ссылки на них.
 
 **Совет:** Также вы можете удалять ненужные курсоры. Например, удаление курсора "watch":
@@ -240,9 +240,9 @@ $ ln -s left_ptr left_ptr_watch
 
 ### Замена недостающих курсоров
 
-Некоторые программы устанавливают свои курсоры, которые вы, возможно, захотите переопределить. Типичным примером этого является программа rdesktop, которая подключается к компьютеру с Microsoft Windows и использует курсоры, полученные от удаленной машины, которые часто трудно увидеть из-за ограничений протокола, который обеспечивает плохое качество преобразования.
+Некоторые программы устанавливают свои курсоры `~/.Xresources`, которые вы, возможно, захотите переопределить. Типичным примером этого является программа rdesktop, которая подключается к компьютеру с Microsoft Windows и использует курсоры, полученные от удаленной машины, которые часто трудно увидеть из-за ограничений протокола, который обеспечивает плохое качество преобразования.
 
-Проблему можно решить заменив эти курсоры, курсорами из этой же темы (или другой). Чтобы сделать это, необходимо получить **хэш** изображения. Это делается путем установки переменной окружения `XCURSOR_DISCOVER` и запуском требуемого приложения:
+Проблему можно решить, заменив эти курсоры курсорами из этой же темы (или другой). Чтобы сделать это, необходимо получить **хэш** изображения. Это делается путем установки переменной окружения `XCURSOR_DISCOVER` и запуском требуемого приложения:
 
 ```
 $ XCURSOR_DISCOVER=1 rdesktop ...
@@ -308,6 +308,20 @@ $ xsetroot -cursor_name left_ptr
 
 Если у вас есть конфликтующие курсоры, это может быть вызвано тем, что другой курсор был определен в файле `~/.Xdefaults`.
 
+### Размер курсора не изменяется при загрузке
+
+Если вы хотите изменить размер курсора через `~/.Xresources` в `~/.xinitrc`, и он не изменяется, то проверьте, что xrandr запускатеся перед загрузкой `~/.Xresources`
+
+`~/.xinitrc` должен выглядеть примерно следующим образом:
+
+ `~/.xinitrc` 
+```
+xrandr &&
+...
+xrdb --merge ~/.Xresources &&
+exec wm
+```
+
 ## Смотрите также
 
-*   [man Xcursor](http://www.x.org/releases/current/doc/man/man3/Xcursor.3.xhtml) - больше информации о курсорах в X (поддерживаемые директории, форматы, совместимость и т.д.).
+*   [Xcursor(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xcursor.3) - больше информации о курсорах в X (поддерживаемые директории, форматы, совместимость и т.д.).

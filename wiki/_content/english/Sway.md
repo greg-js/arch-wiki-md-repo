@@ -20,6 +20,7 @@
     *   [3.5 HiDPI](#HiDPI)
     *   [3.6 Custom keybindings](#Custom_keybindings)
     *   [3.7 Xresources](#Xresources)
+    *   [3.8 Run programs natively under Wayland (without Xwayland support)](#Run_programs_natively_under_Wayland_(without_Xwayland_support))
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart on login](#Autostart_on_login)
     *   [4.2 Backlight toggle](#Backlight_toggle)
@@ -28,6 +29,7 @@
     *   [5.1 Application launchers](#Application_launchers)
     *   [5.2 VirtualBox](#VirtualBox)
     *   [5.3 Sway socket not detected](#Sway_socket_not_detected)
+    *   [5.4 Unable to retrieve socket path](#Unable_to_retrieve_socket_path)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -97,7 +99,7 @@ general {
 
 In both examples, the system-wide installed configuration files has been copied over to the user directory and then modified.
 
-If you want a Polybar like status bar for wayland [waybar](https://www.archlinux.org/packages/?name=waybar) is the better choice.
+**Tip:** [waybar](https://www.archlinux.org/packages/?name=waybar) is a native Wayland alternative to [i3status](https://www.archlinux.org/packages/?name=i3status).
 
 ### Wallpaper
 
@@ -171,6 +173,20 @@ To control brightness you can use [brightnessctl](https://aur.archlinux.org/pack
 ### Xresources
 
 Copy `~/.Xresources` to `~/.Xdefaults` to use them in Sway.
+
+### Run programs natively under Wayland (without Xwayland support)
+
+First, be sure the toolkit or library of every program that is and will be installed [support Wayland](/index.php/Wayland#GUI_libraries "Wayland"). Then append the following line to your sway configuration file to disable Xwayland support:
+
+ `~/.config/sway/config` 
+```
+xwayland disable
+
+```
+
+**Note:** Some programs, like [Firefox](/index.php/Firefox#Wayland "Firefox"), [bemenu](/index.php/Sway#Application_launchers "Sway") or [Qt5](/index.php/Wayland#Qt_5 "Wayland") based programs, also need specific environment variables set for them to run natively under Wayland.
+
+**Note:** In a fresh Sway install, you need to change the default menu and terminal applications because they depend on Xwayland.
 
 ## Tips and tricks
 
@@ -293,9 +309,21 @@ $ export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
 
 To avoid this error, run the command outside of a multiplexer.
 
+### Unable to retrieve socket path
+
+Requesting messages from `swaymsg -t` on a tty may return the following message:
+
+```
+Unable to retrieve socket path
+
+```
+
+`SWAYSOCK` environment variable is set after launching Sway, therefore a workaround to this error is to request `swaymsg -t [message]` in a terminal inside Sway.
+
 ## See also
 
 *   [GitHub project](https://github.com/SirCmpwn/sway)
+*   [Sway official wiki](https://github.com/swaywm/sway/wiki)
 *   [sr.ht git page](https://git.sr.ht/~sircmpwn/sway)
 *   [Website](https://swaywm.org)
 *   [Announcing the release of sway 1.0](https://drewdevault.com/2019/03/11/Sway-1.0-released.html)

@@ -418,7 +418,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **KeePassX** — Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
-	[https://www.keepassx.org/](https://www.keepassx.org/) || version 1: [keepassx](https://www.archlinux.org/packages/?name=keepassx), version 2: [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
+	[https://www.keepassx.org/](https://www.keepassx.org/) || version 1: [keepassx](https://aur.archlinux.org/packages/keepassx/), version 2: [keepassx2](https://aur.archlinux.org/packages/keepassx2/)
 
 *   **KeePassXC** — Community fork of KeePassX with more active development. Compatible with KeePass v.1.x (import only) and KeePass v.2.x.
 

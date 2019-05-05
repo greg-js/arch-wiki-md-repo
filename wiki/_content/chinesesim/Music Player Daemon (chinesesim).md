@@ -302,7 +302,7 @@ Rasi 创建了一个脚本，该脚本可以创建合适的目录结构、配置
 
 *   **QmpdClient** — 用 Qt 4.x 写的图形客户端。
 
-	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
+	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://aur.archlinux.org/packages/qmpdclient/)
 
 *   **Sonata** — 一个用 Python 写的客户端，非常优雅。
 

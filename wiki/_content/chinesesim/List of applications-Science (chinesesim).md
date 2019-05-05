@@ -149,7 +149,7 @@
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — 类[MATLAB](/index.php/MATLAB "MATLAB")程序，支持相当数量的Matlab函数，同时拥有编程友好(codeless)的C, C++, Fortran语言接口，以及对分布式并行算法开发和3D可视化功能的支持。
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — 软件开发套件，提供信号处理模块以协助开发程序。
 

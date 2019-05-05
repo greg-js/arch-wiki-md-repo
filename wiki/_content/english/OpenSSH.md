@@ -56,6 +56,7 @@ OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the 
     *   [4.11 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
         *   [4.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
     *   [4.12 Alternative service should SSH daemon fail](#Alternative_service_should_SSH_daemon_fail)
+    *   [4.13 Terminal background color based on host](#Terminal_background_color_based_on_host)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Checklist](#Checklist)
     *   [5.2 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
@@ -763,6 +764,12 @@ OnFailure=telnet.socket
 ```
 
 That's it. Telnet is not available when `sshd` is running. Should `sshd` fail to start, a telnet session can be opened for recovery.
+
+### Terminal background color based on host
+
+To better distinguish when you are on different hosts, you can set a [different background color based on the kind of host](https://bryangilbert.com/post/etc/term/dynamic-ssh-terminal-background-colors/).
+
+This solution works, but is not universal (ZSH only).
 
 ## Troubleshooting
 

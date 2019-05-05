@@ -335,7 +335,7 @@ For a second MPD (e.g., with icecast output to share music over the network) usi
 
 *   **QmpdClient** — GUI написанный под Qt 4.x
 
-	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
+	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://aur.archlinux.org/packages/qmpdclient/)
 
 *   **Sonata** — Элегантный Python GTK+ клиент
 

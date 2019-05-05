@@ -249,7 +249,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [KDE](/index.php/KDE "KDE") 4 | [Qt](/index.php/Qt "Qt") 4/5
-[qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
+[qt4](https://aur.archlinux.org/packages/qt4/) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) | [Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_4#Desktop "wikipedia:KDE Plasma 4")
 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) | [Konsole](http://konsole.kde.org/)
 [konsole](https://www.archlinux.org/packages/?name=konsole) | [Dolphin](http://dolphin.kde.org/)
@@ -261,7 +261,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [konqueror](https://www.archlinux.org/packages/?name=konqueror) | [KDM](/index.php/KDM "KDM")
 [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) |
 | [KDE Plasma](/index.php/KDE "KDE") 5 | [Qt](/index.php/Qt "Qt") 4/5
-[qt4](https://www.archlinux.org/packages/?name=qt4) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
+[qt4](https://aur.archlinux.org/packages/qt4/) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
 [kwin](https://www.archlinux.org/packages/?name=kwin) | [Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_5#Desktop "wikipedia:KDE Plasma 5")
 [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) | [Konsole](http://konsole.kde.org/)
 [konsole](https://www.archlinux.org/packages/?name=konsole) | [Dolphin](http://dolphin.kde.org/)

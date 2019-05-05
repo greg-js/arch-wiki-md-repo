@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-04-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=569732) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-05-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=572323) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -158,14 +158,22 @@ de shell | Especificidade |
 
 	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
 
+*   **aur-talk** — Buscar e exibir comentários AUR.
+
+	[https://github.com/GermainZ/aur-talk](https://github.com/GermainZ/aur-talk) || [aur-talk-git](https://aur.archlinux.org/packages/aur-talk-git/)
+
+*   **aurvote-utils** — Um conjunto de utilitários para gerenciar os votos do AUR.
+
+	[https://github.com/jadenPete/aurvote-utils](https://github.com/jadenPete/aurvote-utils) || [aurvote-utils](https://aur.archlinux.org/packages/aurvote-utils/)
+
 *   **haskell-aur** — Biblioteca Haskell para acessar a interface RPC do Aurweb
 
 	[https://hackage.haskell.org/package/aur](https://hackage.haskell.org/package/aur) || [haskell-aur](https://aur.archlinux.org/packages/haskell-aur/)
 
-*   **python3-aur** — Módulos Python 3 e utilitários auxiliares para acessar as informações de pacote do AUR e automatizar as interações do AUR.
-
-	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
-
 *   **package-query** — Ferramenta para consultar [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) e o AUR.
 
 	[https://github.com/archlinuxfr/package-query](https://github.com/archlinuxfr/package-query) || [package-query](https://aur.archlinux.org/packages/package-query/)
+
+*   **python3-aur** — Módulos Python 3 e utilitários auxiliares para acessar as informações de pacote do AUR e automatizar as interações do AUR.
+
+	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)

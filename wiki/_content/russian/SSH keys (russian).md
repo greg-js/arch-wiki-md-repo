@@ -595,7 +595,7 @@ ssh-askpass*background: #000000
 Существуют другие программы, предоставляющие диалоговые окна для ввода пароля, которые могут быть использованы вместо *x11-ssh-askpass*. В этом списке указаны некоторые из доступных решений:
 
 *   [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) доступна в официальных репозиториях. Зависит от пакета [kdelibs](https://aur.archlinux.org/packages/kdelibs/) и подходит для тех, кто использует окружение [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
-*   [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) зависит от библиотек [qt4](https://www.archlinux.org/packages/?name=qt4) и доступна в официальных репозиториях
+*   [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) зависит от библиотек [qt4](https://aur.archlinux.org/packages/qt4/) и доступна в официальных репозиториях
 
 ### pam_ssh
 

@@ -24,7 +24,7 @@ iwd can work in standalone mode or in combination with comprehensive network man
 *   [3 WPA Enterprise](#WPA_Enterprise)
     *   [3.1 EAP-PWD](#EAP-PWD)
     *   [3.2 EAP-PEAP](#EAP-PEAP)
-    *   [3.3 TLS Based EAP Methods](#TLS_Based_EAP_Methods)
+    *   [3.3 TLS Based EAP Methods on older kernels](#TLS_Based_EAP_Methods_on_older_kernels)
     *   [3.4 Other cases](#Other_cases)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
@@ -179,9 +179,9 @@ Autoconnect=true
 
 **Tip:** If you are planning on using *eduroam* and you are affiliated with a US-based institution, your CA is likely `Addtrust External CA Root`, as your institution probably issues certificates through Internet2's InCommon. However, you should always refer to your organization's help desk if in doubt.
 
-### TLS Based EAP Methods
+### TLS Based EAP Methods on older kernels
 
-Until Linux kernel v4.20, to connect to EAP-TLS, EAP-TTLS, and EAP-PEAP, the kernel has to be patched. Edit the PKGBUILD for the kernel and add the following sources
+Linux kernels older than v4.20 (e.g. [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)) have to be patched to connect to EAP-TLS, EAP-TTLS, and EAP-PEAP. Edit the PKGBUILD for the kernel and add the following sources
 
  `PKGBUILD` 
 ```

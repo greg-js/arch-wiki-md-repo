@@ -220,7 +220,7 @@ $ gpg --search-keys *user-id*
 
 ```
 
-To import a key from a key server :
+To import a key from a key server:
 
 ```
 $ gpg --recv-keys *key-id*
@@ -233,23 +233,6 @@ $ gpg --recv-keys *key-id*
 *   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[4]](https://lkml.org/lkml/2016/8/15/445)
 
 **Tip:**
-
-*   For example, to solve the PGP signature error using *makepkg*, the `gpg.conf` file can be : `~/.gnupg/gpg.conf` 
-
-```
-keyserver-options auto-key-retrieve
-auto-key-locate hkp://pool.sks-keyservers.net
-```
-
-Then in a terminal, import the key and trust it (once suitably verified [[5]](http://allanmcrae.com/2015/01/two-pgp-keyrings-for-package-management-in-arch-linux/)):
-
-```
-$ gpg --recv-keys *key-id*
-$ gpg --lsign *key-id*
-
-```
-
-The explaination of the configuration is hereafter.
 
 *   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed, but this can be considered a **privacy violation**; see "web bug" in [gpg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg.1).
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
@@ -665,7 +648,7 @@ pinentry-mode loopback
 
 ```
 
-**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[6]](https://bugs.g10code.com/gnupg/issue1772)
+**Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[5]](https://bugs.g10code.com/gnupg/issue1772)
 
 ### SSH agent
 
@@ -693,7 +676,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 ```
 
-**Note:** The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[7]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
+**Note:** The test involving the `gnupg_SSH_AUTH_SOCK_by` variable is for the case where the agent is started as `gpg-agent --daemon /bin/sh`, in which case the shell inherits the `SSH_AUTH_SOCK` variable from the parent, *gpg-agent* [[6]](http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob;f=agent/gpg-agent.c;hb=7bca3be65e510eda40572327b87922834ebe07eb#l1307).
 
 #### Configure pinentry to use the correct TTY
 

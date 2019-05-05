@@ -14,7 +14,7 @@ An environment variable is a named object that contains data used by one or more
 *   [2 Defining variables](#Defining_variables)
     *   [2.1 Globally](#Globally)
     *   [2.2 Per user](#Per_user)
-        *   [2.2.1 Graphical applications](#Graphical_applications)
+        *   [2.2.1 Graphical environment](#Graphical_environment)
     *   [2.3 Per session](#Per_session)
 *   [3 Examples](#Examples)
     *   [3.1 Default programs](#Default_programs)
@@ -88,7 +88,7 @@ export PATH="${PATH}:/home/my_user/bin"
 
 To update the variable, re-login or *source* the file: `$ source ~/.bash_profile`.
 
-#### Graphical applications
+#### Graphical environment
 
 Environment variables for [Xorg](/index.php/Xorg "Xorg") applications can be set in [xinitrc](/index.php/Xinitrc "Xinitrc"), or in [xprofile](/index.php/Xprofile "Xprofile") when using a [display manager](/index.php/Display_manager "Display manager"), for example:
 
@@ -98,13 +98,17 @@ export PATH="${PATH}:~/scripts"
 export GUIVAR=value
 ```
 
-Applications running on [Wayland](/index.php/Wayland "Wayland") may use [systemd](/index.php/Systemd/User#Environment_variables "Systemd/User") user environment variables instead, as Wayland does not initiate any Xorg related files:
+Applications running on [Wayland](/index.php/Wayland "Wayland") may use [systemd user environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User") instead, as Wayland does not initiate any Xorg related files:
 
  `~/.config/environment.d/envvars.conf` 
 ```
 PATH=$PATH:~/scripts
 GUIVAR=value
 ```
+
+To set environment variables only for a specific application instead of the whole session, edit the application's *.desktop* file. See [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") for instructions.
+
+**Tip:** [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") supports executing shell scripts at login and even before launching Plasma, they can be used to set environment variables. See [KDE#Autostart](/index.php/KDE#Autostart "KDE").
 
 ### Per session
 

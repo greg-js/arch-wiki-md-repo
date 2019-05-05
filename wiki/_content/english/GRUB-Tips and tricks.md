@@ -377,6 +377,10 @@ Adding `--unrestricted` to a menu entry will allow any user to boot the OS while
 
  `/boot/grub/grub.cfg`  `menuentry 'Arch Linux' --unrestricted --class arch --class gnu-linux --class os ...` 
 
+In order to make Linux entries `--unrestricted`, the `CLASS` variable in the beginning of `/etc/grub.d/10_linux` can be modified.
+
+ `/etc/grub.d/10_linux`  `CLASS="--class gnu-linux --class gnu --class os --unrestricted"` 
+
 ## Hide GRUB unless the Shift key is held down
 
 In order to achieve the fastest possible boot, instead of having GRUB wait for a timeout, it is possible for GRUB to hide the menu, unless the `Shift` key is held down during GRUB's start-up.

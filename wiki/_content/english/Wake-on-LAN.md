@@ -193,7 +193,7 @@ Applications that are able to send magic packets for Wake-on-LAN:
 
 	[https://muflone.com/gwakeonlan/english/](https://muflone.com/gwakeonlan/english/) || [gwakeonlan](https://www.archlinux.org/packages/?name=gwakeonlan)
 
-*   **wol** — Implements Wake-on-LAN functionality in a small program. It wakes up hardware that is Magic Packet compliant.
+*   **wol** — Implements Wake-on-LAN functionality in a small program. It wakes up hardware that is Magic Packet compliant. Note: This application will need the port changed to 9 from the default(40000) using the -p argument/flag.
 
 	[https://sourceforge.net/projects/wake-on-lan/](https://sourceforge.net/projects/wake-on-lan/) || [wol](https://www.archlinux.org/packages/?name=wol)
 

@@ -133,7 +133,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Programa como Matlab que soportta muchas de sus funciones y cuenta con una interfaz sin código externo basada en C, C+ + y Fortran, desarrollo de algoritmos paralelos y distribuidos (a través de MPI), y capacidades de visualización 3D.
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[Octave](/index.php/Octave "Octave")** — Lenguaje similar a [MATLAB](/index.php/MATLAB "MATLAB") e interfaz para cálculos numéricos.
 

@@ -130,7 +130,7 @@ The following setup has the disadvantage of having to insert an additional passp
 To format the encrypted container for the swap partition, create a keyslot for a user-memorizable passphrase.
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/<device>
+# cryptsetup luksFormat /dev/<device>
 
 ```
 
@@ -252,6 +252,8 @@ The `resume_offset` of the swap-file points to the start (extent zero) of the fi
 # filefrag -v /swapfile | awk '{if($1=="0:"){print $4}}'
 
 ```
+
+Note: if swap file location on the filesystem is changed for some reason, the offset should be recalculated.
 
 Add the `resume` hook to your `etc/mkinitcpio.conf` file and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") afterward:
 

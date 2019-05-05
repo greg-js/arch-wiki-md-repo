@@ -25,7 +25,7 @@ Related articles
     *   [3.2 KDE Plasma](#KDE_Plasma)
     *   [3.3 nm-applet](#nm-applet)
         *   [3.3.1 Appindicator](#Appindicator)
-    *   [3.4 nmcli-dmenu](#nmcli-dmenu)
+    *   [3.4 networkmanager-dmenu](#networkmanager-dmenu)
 *   [4 Configuration](#Configuration)
     *   [4.1 Enable NetworkManager](#Enable_NetworkManager)
     *   [4.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
@@ -280,9 +280,9 @@ $ nm-applet --indicator
 
 ```
 
-### nmcli-dmenu
+### networkmanager-dmenu
 
-Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) which is a small script to manage NetworkManager connections with [dmenu](/index.php/Dmenu "Dmenu") instead of `nm-applet`. It provides all essential features such as connect to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch *nm-connection-editor* GUI.
+Alternatively there is [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) which is a small script to manage NetworkManager connections with [dmenu](/index.php/Dmenu "Dmenu") or [rofi](/index.php/Rofi "Rofi") instead of `nm-applet`. It provides all essential features such as connection to existing NetworkManager wifi or wired connections, connect to new wifi connections, requests passphrase if required, connect to existing VPN connections, enable/disable networking, launch *nm-connection-editor* GUI, connect to Bluetooth networks.
 
 ## Configuration
 

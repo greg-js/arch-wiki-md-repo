@@ -253,7 +253,7 @@
 
 *   **KeePassX** — Приложение для людей с экстремально высокими требованиями к безопасности управления персональными данными
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx)
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://aur.archlinux.org/packages/keepassx/)
 
 *   **MyPasswords** — То, что вам нужно для управления вашими паролями, включая пароли от онлайн-аккаунтов, банковских аккаунтов и т.д.
 

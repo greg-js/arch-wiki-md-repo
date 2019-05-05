@@ -6,7 +6,11 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
 
 **Warning:** Changing drive's default parameters can freeze the system or even irreversibly damage the drive.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -79,6 +83,7 @@ smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.10.13-1-ARCH] (local build)
 Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
 
 Device is in STANDBY mode, exit(2)
+
 ```
 
 ### Persistent configuration using udev rule
@@ -91,7 +96,7 @@ Because a disk device can be assigned randomly to a changing `/dev/sd*X*`, the d
 
 Systems with multiple hard drives can apply the rule in a flexible way according to some criteria. For example, to apply power-saving settings to all rotational drives (hard disk with rotational head, excluding in particular [solid state drives](/index.php/Solid_state_drive "Solid state drive")), use the following rule:
 
- `/etc/udev/rules.d/69-hdparm.rules`  `ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"` 
+ `/etc/udev/rules.d/69-hdparm.rules`  `ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 /dev/%k"` 
 
 ### Putting a drive to sleep directly after boot
 
@@ -140,14 +145,14 @@ the leading `-i 0` parameter indicates that hd-idle is disabled on other drives.
 *Western Digital Green* hard drives have a special *idle3* timer which controls how long the drive waits before positioning its heads in their park position and entering a low power consumption state. The factory default is aggressively set to 8 seconds, which can result in thousands of head load/unload cycles in a short period of time and eventually premature failure, not to mention the performance impact of the drive often having to wake-up before doing routine I/O. Western Digital issued a [statement](http://wdc.custhelp.com/app/answers/detail/a_id/5357), claiming that Linux is not optimized for low power storage devices and advising to reduce logging frequency. There are different ways to amend the *idle3* state:
 
 1.  Western Digital supplies a DOS utility *wdidle3.exe* for [download](https://support.wdc.com/downloads.aspx?p=113) for tweaking this setting. This utility is designed to upgrade only the firmware of the following hard drives: WD1000FYPS, WD7500AYPS, WD7501AYPS but is known to be able to change the *idle3* timer of other Green models as well.
-2.  hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at least a few drives.
+2.  hdparm features a reverse-engineered implementation behind the `-J` flag, which is not as complete as the original official program, even though it seems to work on at least a few drives. A setting of 30 seconds is recommended for Linux use. Specify a value of zero (0) to disable the WD idle3 timer completely (NOT RECOMMENDED!): `# hdparm -J 30 --please-destroy-my-drive /dev/sda` See [#Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule) to automatically use this parameter on supported hard drives.
 3.  Another unofficial utility is provided by the [idle3-tools](https://www.archlinux.org/packages/?name=idle3-tools) package. A raw `*idle3*` value is passed as a parameter of the *idle3ctl* command. The correspondence between this value and the timeout in seconds is provided in the bottom table within [idle3ctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/idle3ctl.8). The following command sets the timer to 5 min: `# idle3ctl -s 138 /dev/sdc` this one completely disables the timer: `# idle3ctl -d /dev/sdc` 
 
 **Note:**
 
 *   A full power cycle is required for any change to take effect regardless of which program above is used. It means the drive needs to be powered OFF and then ON, a simple reboot does not suffice.
 *   Some Western Digital Green drives are also known to have a different interpretation of hparm's standby timeout parameter, `-S 1` resulting in a 10 min timer rather than 5 sec.
-*   The power consumption of a Green drive is typically around 5.3W during read/write, 4.7W in idle mode and 0.7W in standby mode
+*   The power consumption of a Green drive is typically around 5.3W during read/write, 4.7W in idle mode and 0.7W in standby mode.
 
 ## Troubleshooting
 

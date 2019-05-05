@@ -29,7 +29,7 @@ tt-rss is installed into `/usr/share/webapps/tt-rss/`; you'll need to make this 
 
 	 `# ln -s /usr/share/webapps/tt-rss /usr/share/nginx/html/tt-rss` 
 
-You will need to recursively chown {ic|/usr/share/webapps/tt-rss}} to http:http.
+You will need to recursively chown `/usr/share/webapps/tt-rss` to http:http.
 
 ### Set up php and database
 

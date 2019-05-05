@@ -342,7 +342,7 @@ shopt -s checkwinsize
 *   [BashGuide on Greg's Wiki](http://mywiki.wooledge.org/BashGuide)
 *   [BashFAQ on Greg's Wiki](http://mywiki.wooledge.org/BashFAQ)
 *   [Bash Hackers Wiki](http://wiki.bash-hackers.org/doku.php)
-*   [Advanced Bash Scripting Guide](http://tldp.org/LDP/abs/html/)
+*   [Advanced Bash Scripting Guide](http://tldp.org/LDP/abs/html/) или его [перевод на OpenNET](https://www.opennet.ru/docs/RUS/bash_scripting_guide/)
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)
 
 ### Сообщество

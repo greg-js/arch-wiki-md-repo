@@ -169,7 +169,7 @@ Xorg 可以通过 `/etc/X11/xorg.conf` 或 `/etc/xorg.conf` 和位于 `/etc/X11/
 
 执行后会在 `/root/` 生成 `xorg.conf.new` 文件。
 
-**Tip:** 如果以及运行了 X 服务器，请使用不同的 display，例如 `Xorg :2 -configure`.
+**Tip:** 如果已经运行了 X 服务器，请使用不同的 display，例如 `Xorg :2 -configure`.
 
 显卡的专有驱动可能也提供了自动配置 Xorg 的工具，详情请参考 [NVIDIA](/index.php/NVIDIA "NVIDIA") 或 [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")。
 

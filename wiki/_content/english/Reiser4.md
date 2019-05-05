@@ -40,7 +40,7 @@ More information about the features, plugins, design and mkfs or mount options i
 
 ## Important Notes
 
-*   Reiser4 requires a patched kernel.
+*   Reiser4 requires a patched kernel. A custom [Linux-ck](/index.php/Linux-ck "Linux-ck") based kernel with Reiser4 patches is available as [linux-ck-reiser4](https://aur.archlinux.org/packages/linux-ck-reiser4/)
 *   It consumes a little more CPU than other filesystems (just like [Btrfs](/index.php/Btrfs "Btrfs")). To avoid having issues on laptops using [TLP](/index.php/TLP "TLP") for power saving, it is recommended to disable the options for **SATA Link** power saving in **/etc/default/tlp** (again, as with [Btrfs](/index.php/Btrfs "Btrfs")).
 *   Even [LILO](/index.php/LILO "LILO") as the only bootloader officially supporting Reiser4 seems to have issues with it when `/boot` is formatted as Reiser4
 *   It is still not included in the official Linux kernel, but patches for **Linux-5.x** is already available.

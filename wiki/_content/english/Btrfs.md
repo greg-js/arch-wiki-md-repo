@@ -310,7 +310,7 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 **Note:** The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
 
-**Warning:** Linux kernels before v5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btfrs can lead to file system corruption if using kernels before v5.0.
+**Warning:** Linux kernels before v5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btrfs can lead to file system corruption if using kernels before v5.0.
 
 ### Displaying used/free space
 

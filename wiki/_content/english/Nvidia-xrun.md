@@ -26,7 +26,7 @@ X server can only be used with integrated graphics or discrete Nvidia graphics, 
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/), [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/),
     *   or [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) if bbswitch doesn't support your hardware (see [[1]](https://bbs.archlinux.org/viewtopic.php?id=238389))
-*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) if only for running applications，because running some applications (such as Steam) directly with *nvidia-xrun* does not work well, using a window manager like [openbox](/index.php/Openbox "Openbox") will work better.
+*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) or [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) if only for running applications，because running some applications (such as Steam) directly with *nvidia-xrun* does not work well, using a window manager like [openbox](/index.php/Openbox "Openbox") or [Xfce](/index.php/Xfce "Xfce") will work better.
 
 ## Configuration
 
@@ -66,10 +66,16 @@ EndSection
 
 ### Automatically run window manager
 
-For convenience you can create an `~/.nvidia-xinitrc` file with your favourite window manager:
+For convenience you can create an `~/.nvidia-xinitrc` file with your favourite window manager.
 
 ```
-openbox-session
+if [ $# -gt 0 ]; then
+  $*
+else
+  openbox-session
+  # Alternatively, you can also use xfce4:
+  # xfce4-session
+fi
 
 ```
 

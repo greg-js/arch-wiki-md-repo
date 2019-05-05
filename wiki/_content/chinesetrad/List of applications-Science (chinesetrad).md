@@ -128,7 +128,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Matlab-like program that supports many of its functions and features a codeless interface to external C, C++, and Fortran code, further parallel distributed algorithm development (via MPI), and 3D visualization capabilities.
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[Octave](/index.php/Octave "Octave")** — [MATLAB](/index.php/MATLAB "MATLAB")-like language and interface for numerical computations.
 

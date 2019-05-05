@@ -8,7 +8,11 @@
 
 Эта страница содержит краткие инструкции для загрузчиков, доступных в Arch. Для подробной информации смотрите соответствующую страницу для нужного вам загрузчика.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Загрузчики поддерживающие BIOS и UEFI](#Загрузчики_поддерживающие_BIOS_и_UEFI)
     *   [1.1 GRUB](#GRUB)

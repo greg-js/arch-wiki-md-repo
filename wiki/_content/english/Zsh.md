@@ -366,7 +366,7 @@ With a correctly set TERM environment variable, the terminal's supported maximum
 
 **Note:**
 
-*   The colors 0–15 are may differ between terminal emulators and their used color schemes.
+*   The colors 0–15 may differ between terminal emulators and their used color schemes.
 *   Many terminal emulators display bold with a brighter color.
 
 **Tip:**

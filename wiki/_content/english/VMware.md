@@ -284,6 +284,8 @@ Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowB
 
 The config file where you can set this setting is `~/.vmware/preferences`.
 
+**Note:** You might need to add the `mks.gl.allowBlacklistedDrivers = "TRUE"` inside the `.vmx` file for the specific virtual machine as well, for 3D acceleration with `intel` drivers to be enabled.
+
 ### System speedup tricks
 
 See also [Improving performance](/index.php/Improving_performance "Improving performance").

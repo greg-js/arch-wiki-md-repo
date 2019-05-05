@@ -57,7 +57,7 @@
 | <small>5.4.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(2)</small> |
 | <small>5.4.1.</small> [Instant messaging](/index.php/Category:Instant_messaging_(Portugu%C3%AAs) "Category:Instant messaging (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>5.4.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(3)</small> |
-| <small>5.4.3.</small> [Web browser](/index.php/Category:Web_browser_(Portugu%C3%AAs) "Category:Web browser (Português)") <small>(1)</small> |
+| <small>5.4.3.</small> [Web browser](/index.php/Category:Web_browser_(Portugu%C3%AAs) "Category:Web browser (Português)") <small>(3)</small> |
 | <small>5.5.</small> [Network Configuration](/index.php/Category:Network_Configuration_(Portugu%C3%AAs) "Category:Network Configuration (Português)") <small>(1)</small> |
 | <small>5.6.</small> [Network configuration](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)") <small>(2)</small> |
 | <small>5.6.1.</small> [Network managers](/index.php/Category:Network_managers_(Portugu%C3%AAs) "Category:Network managers (Português)") <small>(2)</small> |
@@ -83,7 +83,7 @@
 | <small>6.1.2.2.</small> [Shell builtins](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>6.1.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |
 | <small>6.1.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators_(Portugu%C3%AAs) "Category:Terminal emulators (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"), [Emulation](/index.php/Category:Emulation_(Portugu%C3%AAs) "Category:Emulation (Português)"))</small> |
-| <small>6.2.</small> [Ambientes Desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)") <small>(1)</small> |
+| <small>6.2.</small> [Ambientes Desktop](/index.php/Category:Desktop_environments_(Portugu%C3%AAs) "Category:Desktop environments (Português)") <small>(2)</small> |
 | <small>6.2.1.</small> [Gerenciadores de tela](/index.php/Category:Display_managers_(Portugu%C3%AAs) "Category:Display managers (Português)") <small>(3)</small> |
 | <small>6.2.2.</small> [GNOME](/index.php/Category:GNOME_(Portugu%C3%AAs) "Category:GNOME (Português)") <small>(2)</small> |
 | <small>6.3.</small> [File formats](/index.php/Category:File_formats_(Portugu%C3%AAs) "Category:File formats (Português)") <small>(1)</small> |

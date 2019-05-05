@@ -6,11 +6,15 @@ It takes an image of the current window or workspace, prepares it for better res
 
 2\. The Macro executor: this is a window where you can choose to *Run*, *Unload*, *Load* or *Save* the current stored macros and preclicks. You also can skip running a macro by pressing the *cancel* button. (See [#Macros and the preclick concept](#Macros_and_the_preclick_concept)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)
-*   [3 Using](#Using)
+*   [3 Usage](#Usage)
     *   [3.1 View Modes](#View_Modes)
     *   [3.2 OCR Language](#OCR_Language)
     *   [3.3 OCR Options](#OCR_Options)
@@ -38,7 +42,7 @@ Basically, this should work in any desktop environment.
 
 In Gnome you can do this via the *Gnome Control Center* in the *Keyboard* window under the *Shortcuts* tab.
 
-## Using
+## Usage
 
 Just press the assigned shortcut. With no parameters, OCRdesktop will recognize just the current window and present it in a caret enabled text area.
 

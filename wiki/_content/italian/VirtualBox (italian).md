@@ -2,12 +2,16 @@ Questo articolo descrive l'esecuzione di [VirtualBox](https://en.wikipedia.org/w
 
 [VirtualBox](http://www.virtualbox.org) è un emulatore di macchine virtuali simile a [VMware](/index.php/VMware "VMware"), ne possiede la maggior parte delle caratteristiche e in più ne aggiunge di nuove. E' costantemente in sviluppo e vengono aggiunte continuamente nuove funzionalità. Ad esempio la versione 2.2 ha introdotto il supporto all'accelerazione grafica 3D OpenGL sia per le macchine guest Linux che Solaris. Dispone di un'ottima GUI (QT o SDL) e di strumenti a linea di comando per la gestione delle macchine virtuali. Sono consentite anche operazioni senza un'uscita video (headless).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Installare le estensioni per VirtualBox](#Installare_le_estensioni_per_VirtualBox)
 *   [2 Avviare VirtualBox](#Avviare_VirtualBox)
-    *   [2.1 Risolvere l'impossibilità di eseguire rc.d setup vboxdrv](#Risolvere_l.27impossibilit.C3.A0_di_eseguire_rc.d_setup_vboxdrv)
+    *   [2.1 Risolvere l'impossibilità di eseguire rc.d setup vboxdrv](#Risolvere_l'impossibilità_di_eseguire_rc.d_setup_vboxdrv)
 *   [3 Configurazione](#Configurazione)
     *   [3.1 Rete](#Rete)
         *   [3.1.1 NAT](#NAT)
@@ -18,12 +22,12 @@ Questo articolo descrive l'esecuzione di [VirtualBox](https://en.wikipedia.org/w
     *   [3.3 Tastiera e mouse tra host e guest](#Tastiera_e_mouse_tra_host_e_guest)
     *   [3.4 Usare la risoluzione massima del sistema host nel sistema guest](#Usare_la_risoluzione_massima_del_sistema_host_nel_sistema_guest)
     *   [3.5 Condividere le cartelle tra host e guest](#Condividere_le_cartelle_tra_host_e_guest)
-    *   [3.6 Far funzionare l'audio nella macchina guest](#Far_funzionare_l.27audio_nella_macchina_guest)
+    *   [3.6 Far funzionare l'audio nella macchina guest](#Far_funzionare_l'audio_nella_macchina_guest)
     *   [3.7 Impostare la RAM e la memoria video nella macchina guest](#Impostare_la_RAM_e_la_memoria_video_nella_macchina_guest)
     *   [3.8 Impostare il CD-ROM nella macchina guest](#Impostare_il_CD-ROM_nella_macchina_guest)
-    *   [3.9 Abilitare l'accelerazione D3D nelle macchine guest Windows](#Abilitare_l.27accelerazione_D3D_nelle_macchine_guest_Windows)
+    *   [3.9 Abilitare l'accelerazione D3D nelle macchine guest Windows](#Abilitare_l'accelerazione_D3D_nelle_macchine_guest_Windows)
 *   [4 Configurazione di un OS virtualizzato](#Configurazione_di_un_OS_virtualizzato)
-    *   [4.1 Test di un CD/DVD live](#Test_di_un_CD.2FDVD_live)
+    *   [4.1 Test di un CD/DVD live](#Test_di_un_CD/DVD_live)
 *   [5 Manutenzione](#Manutenzione)
     *   [5.1 Ricompilare il modulo vboxdrv](#Ricompilare_il_modulo_vboxdrv)
     *   [5.2 Compattare un hard disk virtuale](#Compattare_un_hard_disk_virtuale)
@@ -31,15 +35,15 @@ Questo articolo descrive l'esecuzione di [VirtualBox](https://en.wikipedia.org/w
         *   [5.2.2 Windows Guests](#Windows_Guests_2)
     *   [5.3 Aumentare le dimensioni di un hard disk virtuale in un ambiente guest Windows](#Aumentare_le_dimensioni_di_un_hard_disk_virtuale_in_un_ambiente_guest_Windows)
     *   [5.4 Windows XP e telefoni Nokia](#Windows_XP_e_telefoni_Nokia)
-*   [6 Migrare da un'altra VM](#Migrare_da_un.27altra_VM)
+*   [6 Migrare da un'altra VM](#Migrare_da_un'altra_VM)
     *   [6.1 Convertire immagini QEMU](#Convertire_immagini_QEMU)
     *   [6.2 Convertire da immagini VMware](#Convertire_da_immagini_VMware)
-*   [7 Tips & Tricks](#Tips_.26_Tricks)
-    *   [7.1 Rendere possibile l'individuazione di Web-Cam e altre periferiche USB](#Rendere_possibile_l.27individuazione_di_Web-Cam_e_altre_periferiche_USB)
-    *   [7.2 Inviare CTRL+ALT+F1 alla macchina guest](#Inviare_CTRL.2BALT.2BF1_alla_macchina_guest)
-    *   [7.3 Avviare la VM all'avvio del sistema in un server senza uscita video (headless)](#Avviare_la_VM_all.27avvio_del_sistema_in_un_server_senza_uscita_video_.28headless.29)
+*   [7 Tips & Tricks](#Tips_&_Tricks)
+    *   [7.1 Rendere possibile l'individuazione di Web-Cam e altre periferiche USB](#Rendere_possibile_l'individuazione_di_Web-Cam_e_altre_periferiche_USB)
+    *   [7.2 Inviare CTRL+ALT+F1 alla macchina guest](#Inviare_CTRL+ALT+F1_alla_macchina_guest)
+    *   [7.3 Avviare la VM all'avvio del sistema in un server senza uscita video (headless)](#Avviare_la_VM_all'avvio_del_sistema_in_un_server_senza_uscita_video_(headless))
     *   [7.4 Demone gestione guest](#Demone_gestione_guest)
-    *   [7.5 Accedere a un server su una VM dall'host](#Accedere_a_un_server_su_una_VM_dall.27host)
+    *   [7.5 Accedere a un server su una VM dall'host](#Accedere_a_un_server_su_una_VM_dall'host)
     *   [7.6 DAEMON Tools](#DAEMON_Tools)
     *   [7.7 Usare VirtualBox su una memoria USB](#Usare_VirtualBox_su_una_memoria_USB)
     *   [7.8 phpVirtualBox](#phpVirtualBox)
@@ -60,7 +64,7 @@ Installare il pacchetto base:
 
 ```
 
-Per usufruire dell'interfaccia grafica installare anche il pacchetto [qt4](https://www.archlinux.org/packages/?name=qt4):
+Per usufruire dell'interfaccia grafica installare anche il pacchetto [qt4](https://aur.archlinux.org/packages/qt4/):
 
 ```
 # pacman -S qt4

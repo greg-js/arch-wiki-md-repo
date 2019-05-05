@@ -17,11 +17,11 @@ NordVPN is a personal virtual private network service provider. NordVPN is based
 
 ## Create Account
 
-In order to use NordVPN. You must create your own NordVPN Account from Official NordVPN Website. [http://nordvpn.com](http://nordvpn.com)
+In order to use NordVPN, you must create your own account on the official NordVPN website. [http://nordvpn.com](http://nordvpn.com)
 
 There are different payment options to choose.
 
-You can also try a Free Trial before purchase a payment fee. [https://free.nordvpn.com/trial/](https://free.nordvpn.com/trial/)
+You can also try a free trial before purchasing a payment plan. [https://free.nordvpn.com/trial/](https://free.nordvpn.com/trial/)
 
 ## Installation
 

@@ -14,8 +14,9 @@ From [sabnzbd.org](http://sabnzbd.org/):
     *   [1.1 SSL Support](#SSL_Support)
     *   [1.2 Archive unpacking](#Archive_unpacking)
 *   [2 Usage](#Usage)
-    *   [2.1 Using systemd](#Using_systemd)
+    *   [2.1 Global usage](#Global_usage)
     *   [2.2 Starting SABnzbd as user](#Starting_SABnzbd_as_user)
+        *   [2.2.1 Using systemd](#Using_systemd)
     *   [2.3 Stopping SABnzbd](#Stopping_SABnzbd)
     *   [2.4 Accessing the web-interface](#Accessing_the_web-interface)
 *   [3 See also](#See_also)
@@ -39,15 +40,32 @@ From [sabnzbd.org](http://sabnzbd.org/):
 
 SABnzbd is able to run globally (settings apply to all users) and locally (per user settings). The way of setting up SABnzbd depends on the way it is intended to be used. A local configuration may prove more useful on a desktop system when used by several people simultaneously.
 
+**Note:** Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide the `sabnzbd.service` [systemd](/index.php/Systemd "Systemd") unit, create the [user](/index.php/User "User") and [user group](/index.php/User_group "User group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
+
 If SABnzbd is started for the first time, the webinterface will present a setup wizard for configuring UI language and a single news server.
 
 Further configuration can be done from within the UI (adding additional servers, setting folder paths etc.) or by editing `sabnzbd.ini`.
 
-### Using systemd
+### Global usage
 
-Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide the `sabnzbd.service` [systemd](/index.php/Systemd "Systemd") unit, create the [user](/index.php/User "User") and [user group](/index.php/User_group "User group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
+[Start/enable](/index.php/Start/enable "Start/enable") `sabnzbd.service`.
 
-Add users to the `sabnzbd` [user group](/index.php/User_group "User group") to allow access to SABnzbd files.
+Add users to the `sabnzbd` [user group](/index.php/User_group "User group") to allow read/write access to SABnzbd files.
+
+### Starting SABnzbd as user
+
+Running `sabnzbd`, without any further configuration, results in two processes owned by the launching user: `/usr/bin/sabnzbd` and `/opt/sabnzbd/SABnzbd.py -f /home/**user**/.sabnzbd.ini`.
+
+Append the `-d` parameter to start SABnzbd as [daemon](/index.php/Daemon "Daemon"):
+
+```
+$ sabnzbd -d
+
+```
+
+Use `~/sabnzbd.ini/sabnzbd.ini` for configuration.
+
+#### Using systemd
 
 An alternative is to create an user [systemd](/index.php/Systemd "Systemd") service, e.g. `sabnzbd@.service`:
 
@@ -66,20 +84,7 @@ ExecStart=/opt/sabnzbd/SABnzbd.py -l0 -f /home/%i/.sabnzbd.ini
 WantedBy=multi-user.target
 ```
 
-[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `sabnzbd@*myuser*` to run SABnzbd under the preferred user.
-
-### Starting SABnzbd as user
-
-Running `$ sabnzbd`, without any further configuration, results in two processes owned by the launching user: `/usr/bin/sabnzbd` and `/opt/sabnzbd/SABnzbd.py -f /home/**user**/.sabnzbd.ini`.
-
-Append the `-d` parameter to start SABnzbd as [daemon](/index.php/Daemon "Daemon"):
-
-```
-$ sabnzbd -d
-
-```
-
-Use `~/sabnzbd.ini/sabnzbd.ini` for configuration.
+[Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `sabnzbd@*myuser*.service` to run SABnzbd under the preferred user.
 
 ### Stopping SABnzbd
 
@@ -94,12 +99,12 @@ $ curl "http(s)://host:port/sabnzbd/api?mode=shutdown&apikey=API-key"
 
 ### Accessing the web-interface
 
+After starting SABnzbd, access the web-interface by browsing to [http://127.0.0.1:8080](http://127.0.0.1:8080).
+
 **Tip:**
 
 *   SABnzbd can only be accessed on the running computer. Change `host = 127.0.0.1` in `/opt/sabnzbd/sabnzbd.ini` to `host = 0.0.0.0` (or the host IP-address) to allow access from another computer.
 *   SABnzbd listens on port `8080`. Change `port = 8080` in `sabnzbd.ini` to the preferred port.
-
-After starting SABnzbd, access the web-interface by browsing to [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ## See also
 

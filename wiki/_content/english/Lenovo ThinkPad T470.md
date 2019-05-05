@@ -42,7 +42,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.56. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program.
+As of writing, the current BIOS version is 1.57. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program.
 
 If you are using a UEFI boot scheme, this is probably the easiest and most officially supported way to keep all the firmware programs updated.
 **Note:** Users have observed a BIOS requirement of "UEFI/Legacy Boot" set to "UEFI Only" and enable Windows UEFI Firmware Update under UEFI BIOS Update Options when using [fwupd](/index.php/Fwupd "Fwupd").

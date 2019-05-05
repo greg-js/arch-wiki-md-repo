@@ -10,7 +10,11 @@ According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 **Note:** GROMACS should not be used as a [black box](https://en.wikipedia.org/wiki/black_box "wikipedia:black box"). The user is strongly encouraged to read and study the scientific papers related to the methods and force fields that are employed by GROMACS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

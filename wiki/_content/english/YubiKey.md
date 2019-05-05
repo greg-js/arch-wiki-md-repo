@@ -473,7 +473,7 @@ For a native open-source implementation of KeePass have a look at:
 
 #### keepassx2
 
-[keepassx2](https://www.archlinux.org/packages/?name=keepassx2) ([see keepassx.org](https://keepassx.org/)) a keepass QT FOSS reimplementation, extremely stable and available for Windows, MacOSX and Linux.
+[keepassx2](https://aur.archlinux.org/packages/keepassx2/) ([see keepassx.org](https://keepassx.org/)) a keepass QT FOSS reimplementation, extremely stable and available for Windows, MacOSX and Linux.
 
 #### KeePassXC
 

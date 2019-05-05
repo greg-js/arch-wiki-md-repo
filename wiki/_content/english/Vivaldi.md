@@ -1,6 +1,10 @@
 [Vivaldi](http://vivaldi.com/) is a new web browser from former [Opera](/index.php/Opera "Opera") founder & team members, based on [Chromium](/index.php/Chromium "Chromium") and focused on personalization aspects.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Extensions](#Extensions)

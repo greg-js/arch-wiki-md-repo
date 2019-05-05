@@ -6,7 +6,11 @@ Related articles
 
 [mpv](http://mpv.io/) 是一个基于 [MPlayer](/index.php/MPlayer "MPlayer") 和 MPlayer2 的多媒体播放器。 它支持多种视频文件格式、音频和视频编解码器和字幕类型。 在[这里](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst)可以找到mpv播放器与上述播放器之间的区别的综合列表（可能不是完全统计）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 前端](#前端)

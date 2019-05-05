@@ -1,7 +1,7 @@
 **Estado de la traducción**
 Este artículo es una traducción de [Amarok](/index.php/Amarok "Amarok"), revisada por última vez el **2019-02-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Amarok&diff=0&oldid=567112) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-[Amarok](https://amarok.kde.org/) es un reproductor y organizador de música para Linux con una interfaz [Qt](/index.php?title=Qt_(Espa%C3%B1ol)&action=edit&redlink=1 "Qt (Español) (page does not exist)") intuitiva que se integra muy bien con [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)").
+[Amarok](https://amarok.kde.org/) es un reproductor y organizador de música para Linux con una interfaz [Qt](/index.php/Qt "Qt") intuitiva que se integra muy bien con [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

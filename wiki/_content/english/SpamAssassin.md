@@ -50,10 +50,10 @@ After=network.target
 Type=oneshot
 
 # remove --allowplugins, if you do not want plugin updates from SA.
-ExecStart=/bin/sh -c '/usr/bin/vendor_perl/sa-update --allowplugins && {\
- /usr/bin/vendor_perl/sa-compile --quiet;\
- /usr/bin/systemctl -q --no-block try-restart spamassassin.service; }'
+ExecStart=sudo -u spamd /usr/bin/vendor_perl/sa-update --allowplugins
 SuccessExitStatus=1
+ExecStart=sudo -u spamd /usr/bin/vendor_perl/sa-compile
+ExecStart=/usr/bin/systemctl -q --no-block try-restart spamassassin.service
 
 # uncomment the following ExecStart line to train SA's bayes filter
 # and specify the path to the mailbox that contains spam email(s)

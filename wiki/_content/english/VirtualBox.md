@@ -43,6 +43,7 @@ In order to integrate functions of the host system to the guests, including shar
         *   [3.2.1 QCOW](#QCOW)
     *   [3.3 Mount virtual disks](#Mount_virtual_disks)
         *   [3.3.1 VDI](#VDI)
+        *   [3.3.2 VHD](#VHD)
     *   [3.4 Compact virtual disks](#Compact_virtual_disks)
     *   [3.5 Increase virtual disks](#Increase_virtual_disks)
         *   [3.5.1 General procedure](#General_procedure)
@@ -265,11 +266,16 @@ After the rather big installation step dealing with VirtualBox kernel modules, n
 All of these features can be enabled independently with their dedicated flags:
 
 ```
-$ VBoxClient --clipboard --draganddrop --seamless --display --checkhostversion
+$ VBoxClient --clipboard
+$ VBoxClient --draganddrop
+$ VBoxClient --seamless
+$ VBoxClient --display
+$ VBoxClient --checkhostversion
+$ VBoxClient --vmsvga-x11
 
 ```
 
-As a shortcut, the `VBoxClient-all` bash script enables all of these features.
+Notice that `VBoxClient` can only be called with one flag at a time, each call spawning a dedicated service process. As a shortcut, the `VBoxClient-all` bash script enables all of these features.
 
 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) installs `/etc/xdg/autostart/vboxclient.desktop` that launches `VBoxClient-all` on logon. If your [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") does not support [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"), you will need to set up autostarting yourself, see [Autostarting#On desktop environment startup](/index.php/Autostarting#On_desktop_environment_startup "Autostarting") and [Autostarting#On window manager startup](/index.php/Autostarting#On_window_manager_startup "Autostarting") for more details.
 
@@ -483,6 +489,25 @@ Alternately you can use [qemu](https://www.archlinux.org/packages/?name=qemu)'s 
 ```
 
 If the partition nodes are not propagated try using `partprobe /dev/nbd0`; otherwise, a VDI partition can be mapped directly to a node by: `qemu-nbd -P 1 -c /dev/nbd0 <storage.vdi>`.
+
+#### VHD
+
+Like VDI, VHD images can be mounted with [QEMU](/index.php/QEMU "QEMU")'s nbd module:
+
+```
+# modprobe nbd
+# qemu-nbd -c /dev/nbd0 *storage*.vhd
+# mount /dev/nbd0p1 /mnt
+
+```
+
+To unmount:
+
+```
+# umount /mnt
+# qemu-nbd -d /dev/nbd0
+
+```
 
 ### Compact virtual disks
 
@@ -907,7 +932,7 @@ To deal with this problem, apply the patch set at [FS#49752#comment152254](https
 
 This problem is usually caused by Qt on Wayland, see [FS#58761](https://bugs.archlinux.org/task/58761).
 
-The best thing, not to affect the rest of Qt applications (which usually work well in Wayland), is to modify the VirtualBox [desktop entry](/index.php/Desktop_entry "Desktop entry"). Copy `/usr/share/applications/virtualbox.desktop` to `~/.local/share/applications/virtualbox.desktop` and change the lines starting with
+The best thing, not to affect the rest of Qt applications (which usually work well in Wayland), is to unset the `QT_QPA_PLATFORM` [environment variable](/index.php/Environment_variable "Environment variable") in the VirtualBox's [desktop entry](/index.php/Desktop_entry "Desktop entry"). Follow the instructions in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and change the lines starting with
 
 ```
 Exec=VirtualBox ...
@@ -917,7 +942,7 @@ Exec=VirtualBox ...
 to
 
 ```
-Exec=QT_QPA_PLATFORM= VirtualBox ...
+Exec=env -u QT_QPA_PLATFORM VirtualBox ...
 
 ```
 

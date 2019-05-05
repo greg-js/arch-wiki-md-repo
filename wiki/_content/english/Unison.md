@@ -1,6 +1,10 @@
 [Unison](https://www.cis.upenn.edu/~bcpierce/unison/) is a bidirectional file synchronization tool that runs on Unix-like operating systems (including Linux, macOS, and Solaris) and Windows. It allows two replicas of a collection of files and directories to be stored on different hosts (or different disks on the same host), modified separately, and then brought up to date by propagating the changes in each replica to the other.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -171,6 +175,6 @@ When syncing configuration files which would vary (e.g., due to endemic applicat
 *   [Official website](https://www.cis.upenn.edu/~bcpierce/unison/)
 *   [User Manual and Reference Guide](https://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html)
 *   [Yahoo! user group](http://tech.groups.yahoo.com/group/unison-users)
-*   *[Liberation through data replication](http://www.pgbovine.net/unison_guide.htm)* by Philip Guo
-*   *[Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm)* by Philip Guo
-*   *[Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison)* on TWiki
+*   [Liberation through data replication](http://www.pgbovine.net/unison_guide.htm) by Philip Guo
+*   [Setting up Unison for your mom](http://www.pgbovine.net/unison-for-your-mom.htm) by Philip Guo
+*   [Replication using Unison](http://twiki.org/cgi-bin/view/Codev/ReplicationUsingUnison) on TWiki

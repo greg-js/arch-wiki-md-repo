@@ -1770,7 +1770,7 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 *   **v4l2ucp** — Universal control panel for V4L2 devices.
 
-	[http://v4l2ucp.sourceforge.net/](http://v4l2ucp.sourceforge.net/) || [v4l2ucp](https://www.archlinux.org/packages/?name=v4l2ucp)
+	[http://v4l2ucp.sourceforge.net/](http://v4l2ucp.sourceforge.net/) || [v4l2ucp](https://aur.archlinux.org/packages/v4l2ucp/)
 
 *   **v4l-utils** — Provides a series of utilities for media devices.
 

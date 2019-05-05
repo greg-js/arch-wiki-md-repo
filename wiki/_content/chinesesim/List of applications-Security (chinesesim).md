@@ -342,7 +342,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **KeePassX** — Free and open source Qt-based password manager (uses KeePass 1.x databases for storage).
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx)
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://aur.archlinux.org/packages/keepassx/)
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 

@@ -47,31 +47,32 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.26 jlk](#jlk)
     *   [2.27 linux-macbook](#linux-macbook)
     *   [2.28 llvm-svn](#llvm-svn)
-    *   [2.29 markzz](#markzz)
-    *   [2.30 maximbaz](#maximbaz)
-    *   [2.31 me176c](#me176c)
-    *   [2.32 miffe](#miffe)
-    *   [2.33 mikelpint](#mikelpint)
-    *   [2.34 Minerva W Science](#Minerva_W_Science)
-    *   [2.35 mobile](#mobile)
-    *   [2.36 nah](#nah)
-    *   [2.37 origincode](#origincode)
-    *   [2.38 pkgbuilder](#pkgbuilder)
-    *   [2.39 post-factum kernels](#post-factum_kernels)
-    *   [2.40 QOwnNotes](#QOwnNotes)
-    *   [2.41 qt-debug](#qt-debug)
-    *   [2.42 quarry](#quarry)
-    *   [2.43 repo-ck](#repo-ck)
-    *   [2.44 seblu](#seblu)
-    *   [2.45 seiichiro](#seiichiro)
-    *   [2.46 sergej-repo](#sergej-repo)
-    *   [2.47 siosm-aur](#siosm-aur)
-    *   [2.48 sublime-text](#sublime-text)
-    *   [2.49 subtitlecomposer](#subtitlecomposer)
-    *   [2.50 trinity](#trinity)
-    *   [2.51 ungoo](#ungoo)
-    *   [2.52 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.53 xyne-x86_64](#xyne-x86_64)
+    *   [2.29 lmrepo](#lmrepo)
+    *   [2.30 markzz](#markzz)
+    *   [2.31 maximbaz](#maximbaz)
+    *   [2.32 me176c](#me176c)
+    *   [2.33 miffe](#miffe)
+    *   [2.34 mikelpint](#mikelpint)
+    *   [2.35 Minerva W Science](#Minerva_W_Science)
+    *   [2.36 mobile](#mobile)
+    *   [2.37 nah](#nah)
+    *   [2.38 origincode](#origincode)
+    *   [2.39 pkgbuilder](#pkgbuilder)
+    *   [2.40 post-factum kernels](#post-factum_kernels)
+    *   [2.41 QOwnNotes](#QOwnNotes)
+    *   [2.42 qt-debug](#qt-debug)
+    *   [2.43 quarry](#quarry)
+    *   [2.44 repo-ck](#repo-ck)
+    *   [2.45 seblu](#seblu)
+    *   [2.46 seiichiro](#seiichiro)
+    *   [2.47 sergej-repo](#sergej-repo)
+    *   [2.48 siosm-aur](#siosm-aur)
+    *   [2.49 sublime-text](#sublime-text)
+    *   [2.50 subtitlecomposer](#subtitlecomposer)
+    *   [2.51 trinity](#trinity)
+    *   [2.52 ungoo](#ungoo)
+    *   [2.53 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.54 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -87,10 +88,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.12 jkanetwork](#jkanetwork)
     *   [3.13 mesa-git](#mesa-git)
     *   [3.14 minzord](#minzord)
-    *   [3.15 ownstuff](#ownstuff)
-    *   [3.16 pantheon](#pantheon)
-    *   [3.17 pietma](#pietma)
-    *   [3.18 pnsft-pur](#pnsft-pur)
+    *   [3.15 oracle](#oracle)
+    *   [3.16 ownstuff](#ownstuff)
+    *   [3.17 pantheon](#pantheon)
+    *   [3.18 pietma](#pietma)
+    *   [3.19 pnsft-pur](#pnsft-pur)
 
 ## Adding your repository to this page
 
@@ -483,6 +485,18 @@ Server = http://libpcap.net/repo/linux-macbook
 ```
 [llvm-svn]
 Server = https://repos.uni-plovdiv.net/archlinux/$repo/$arch
+
+```
+
+### lmrepo
+
+*   **Maintainer:** [Łukasz Moskała](https://lukaszmoskala.pl)
+*   **Description:** AUR packages that I find usefull, including [openrazer](https://aur.archlinux.org/packages/openrazer-meta)
+*   **Key-ID:** [0x226981382B7115B2DF696B43C1F0BCD7CB0353DA](http://pool.sks-keyservers.net/pks/lookup?search=0x226981382B7115B2DF696B43C1F0BCD7CB0353DA&fingerprint=on&op=index), fingerprint `2269 8138 2B71 15B2 DF69 6B43 C1F0 BCD7 CB03 53DA`
+
+```
+[lmrepo]
+Server = http://arch.lukaszmoskala.pl
 
 ```
 
@@ -961,6 +975,18 @@ Server = https://pkgbuild.com/~lcarlier/$repo/$arch
 ```
 [minzord]
 Server = https://minzordos.000webhostapp.com/Repo/
+
+```
+
+### oracle
+
+*   **Maintainer:** [User:Malvineous](/index.php/User:Malvineous "User:Malvineous")
+*   **Description:** [Oracle Database client](/index.php/Oracle_Database_client "Oracle Database client") and associated tools, built from AUR packages and hosted on AWS S3 using [Makefile scripts](https://github.com/Malvineous/archlinux-pacman-repo).
+*   **Conditions:** By using this repository you agree to the [Oracle Technology Network Development and Distribution License Terms for Instant Client](http://www.oracle.com/technetwork/licenses/instant-client-lic-152016.html).
+
+```
+[oracle]
+Server = http://linux.shikadi.net/arch/$repo/$arch/
 
 ```
 

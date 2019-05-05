@@ -243,7 +243,7 @@ An entry should now exist for `/dev/mapper/enc`.
 
 This section shows how to employ the options for creating new encrypted blockdevices and accessing them manually.
 
-**Warning:** GRUB does not support LUKS2 headers. Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Encrypted_/boot "GRUB"), specify `luks1` for the type parameter on encrypted boot partitions.
+**Warning:** GRUB does not support LUKS2 headers; see [GRUB bug #55093](https://savannah.gnu.org/bugs/?55093). Therefore, if you plan to [unlock an encrypted boot partition with GRUB](/index.php/GRUB#Encrypted_/boot "GRUB"), specify `--type luks1` on encrypted devices that GRUB will need to access.
 
 ### Encrypting devices with LUKS mode
 
@@ -252,7 +252,7 @@ This section shows how to employ the options for creating new encrypted blockdev
 In order to setup a partition as an encrypted LUKS partition execute:
 
 ```
-# cryptsetup luksFormat --type luks2 *device*
+# cryptsetup luksFormat *device*
 
 ```
 
@@ -272,7 +272,7 @@ You will note that the dump not only shows the cipher header information, but al
 The following example will create an encrypted root partition on `/dev/sda1` using the default AES cipher in XTS mode with an effective 256-bit encryption
 
 ```
-# cryptsetup -s 512 luksFormat --type luks2 /dev/sda1
+# cryptsetup -s 512 luksFormat /dev/sda1
 
 ```
 
@@ -281,7 +281,7 @@ The following example will create an encrypted root partition on `/dev/sda1` usi
 When creating a new LUKS encrypted partition, a keyfile may be associated with the partition on its creation using:
 
 ```
-# cryptsetup luksFormat --type luks2 *device* */path/to/mykeyfile*
+# cryptsetup luksFormat *device* */path/to/mykeyfile*
 
 ```
 

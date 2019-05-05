@@ -125,6 +125,13 @@ Then we generate the new configuration with:
 
 The above command has to be run every time you change `slapd.conf`. Check if everything succeeded. Ignore message "bdb_monitor_db_open: monitoring disabled; configure monitor database to enable".
 
+**Note:** If this doesn't work, try doing this first.
+```
+# slapadd -l /dev/null -f /etc/openldap/slapd.conf
+
+```
+This will initialize the database with no entries.
+
 **Note:** Berkeley DB (BDB) should no longer be used. The mdb backend to slapd(8) is the recommended primary backend for a normal slapd database. It uses OpenLDAP's own Lightning Memory-Mapped Database (LMDB) library to store data and is intended to replace the Berkeley DB backend. The official OpenLDAP package in [core] defaults to mdb.
 
 **Note:** Index the directory after you populate it. You should stop slapd before doing this.

@@ -65,6 +65,7 @@
         *   [5.26.2 Game crashes seconds after loading a map](#Game_crashes_seconds_after_loading_a_map)
         *   [5.26.3 Game crashes after intro video with "Unable to load texture (LoadingBaseGame.dds)"](#Game_crashes_after_intro_video_with_"Unable_to_load_texture_(LoadingBaseGame.dds)")
         *   [5.26.4 Game crashes on startup with an error in libpulsecommon-12.0.so"](#Game_crashes_on_startup_with_an_error_in_libpulsecommon-12.0.so")
+        *   [5.26.5 Steam Overlay not working](#Steam_Overlay_not_working)
     *   [5.27 Civilization: Beyond earth](#Civilization:_Beyond_earth)
         *   [5.27.1 Segfault after a few minutes](#Segfault_after_a_few_minutes)
     *   [5.28 Civilization VI](#Civilization_VI)
@@ -772,6 +773,17 @@ The solution is either to install the game on a case-insensitive file system lik
 #### Game crashes on startup with an error in libpulsecommon-12.0.so"
 
 Run the game with `LD_PRELOAD=/usr/lib32/libopenal.so.1 %command%`
+
+#### Steam Overlay not working
+
+If the Steam Overlay doesn't show up simply add
+
+```
+LD_PRELOAD='/home/USERNAME/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' %command%
+
+```
+
+to the launch options in the properties of the game in Steam.
 
 ### Civilization: Beyond earth
 

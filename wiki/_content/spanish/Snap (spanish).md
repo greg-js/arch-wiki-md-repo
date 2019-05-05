@@ -3,7 +3,7 @@ Este artículo es una traducción de [Snap](/index.php/Snap "Snap"), revisada po
 
 Artículos relacionados
 
-*   [Flatpak](/index.php/Flatpak "Flatpak")
+*   [Flatpak](/index.php/Flatpak_(Espa%C3%B1ol) "Flatpak (Español)")
 *   [AppArmor](/index.php/AppArmor "AppArmor")
 
 [Snap](https://snapcraft.io/) es un sistema de despliegue y manejo de paquetes. Los paquetes son llamados 'snaps' y la herramienta para usarlos es 'snapd', la cual funciona en una amplia gama de distribuciones Linux y permite, por lo tanto, el despliege ascendente de software agnóstico a la distribución. Snap fue originalmente diseñado y desarrollado por Canonical.

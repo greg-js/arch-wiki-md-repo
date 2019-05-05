@@ -68,8 +68,8 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [8.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
     *   [8.4 Defining Background Jobs](#Defining_Background_Jobs)
         *   [8.4.1 Manual install](#Manual_install)
-        *   [8.4.2 AUR package](#AUR_package)
-        *   [8.4.3 Activate timer](#Activate_timer)
+        *   [8.4.2 Activate timer](#Activate_timer)
+        *   [8.4.3 AUR package](#AUR_package)
     *   [8.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
 *   [9 See also](#See_also)
 
@@ -940,10 +940,6 @@ WantedBy=timers.target
 
 ```
 
-#### AUR package
-
-Install [nextcloud-systemd-timers](https://aur.archlinux.org/packages/nextcloud-systemd-timers/).
-
 #### Activate timer
 
 [Start/enable](/index.php/Start/enable "Start/enable") `nextcloudcron.timer`.
@@ -952,6 +948,25 @@ Confirm that it is running by running
 
 ```
 # systemctl list-timers
+
+```
+
+#### AUR package
+
+Install [nextcloud-systemd-timers](https://aur.archlinux.org/packages/nextcloud-systemd-timers/).
+
+Provided services can be checked with:
+
+```
+$ pacman -Ql nextcloud-systemd-timers
+
+```
+
+For instance, to run the `cron.php` script every 15 minutes:
+
+```
+# systemctl start nextcloud-cron.timer
+# systemctl enable nextcloud-cron.timer
 
 ```
 

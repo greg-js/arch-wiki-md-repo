@@ -1,6 +1,10 @@
 The [irssi-otr](http://irssi-otr.tuxfamily.org/) module adds [Off-the-Record Messaging](http://www.cypherpunks.ca/otr/) support to [irssi](/index.php/Irssi "Irssi").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Usage](#Usage)

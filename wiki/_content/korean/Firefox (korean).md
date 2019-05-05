@@ -1,33 +1,42 @@
+관련 항목
+
+*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
+*   [Firefox Tweaks](/index.php/Firefox_Tweaks "Firefox Tweaks")
+
 [파이어폭스](http://www.firefox.com)는 [모질라](http://www.mozilla.com)에서 만든 인기 오픈 소스 그래픽 웹브라우저이다.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 설치](#.EC.84.A4.EC.B9.98)
-*   [2 애드온](#.EC.95.A0.EB.93.9C.EC.98.A8)
-*   [3 플러그인](#.ED.94.8C.EB.9F.AC.EA.B7.B8.EC.9D.B8)
-    *   [3.1 GNOME 연결](#GNOME_.EC.97.B0.EA.B2.B0)
-    *   [3.2 철자 검사용 사전](#.EC.B2.A0.EC.9E.90_.EA.B2.80.EC.82.AC.EC.9A.A9_.EC.82.AC.EC.A0.84)
-    *   [3.3 파이어폭스 검색 엔진 추가](#.ED.8C.8C.EC.9D.B4.EC.96.B4.ED.8F.AD.EC.8A.A4_.EA.B2.80.EC.83.89_.EC.97.94.EC.A7.84_.EC.B6.94.EA.B0.80)
-        *   [3.3.1 아치 파이어폭스 검색](#.EC.95.84.EC.B9.98_.ED.8C.8C.EC.9D.B4.EC.96.B4.ED.8F.AD.EC.8A.A4_.EA.B2.80.EC.83.89)
-*   [4 파이어폭스 관련 프로젝트](#.ED.8C.8C.EC.9D.B4.EC.96.B4.ED.8F.AD.EC.8A.A4_.EA.B4.80.EB.A0.A8_.ED.94.84.EB.A1.9C.EC.A0.9D.ED.8A.B8)
-    *   [4.1 파이어폭스 파생 브라우저](#.ED.8C.8C.EC.9D.B4.EC.96.B4.ED.8F.AD.EC.8A.A4_.ED.8C.8C.EC.83.9D_.EB.B8.8C.EB.9D.BC.EC.9A.B0.EC.A0.80)
-    *   [4.2 KDE 통합을 강화한 파이어폭스](#KDE_.ED.86.B5.ED.95.A9.EC.9D.84_.EA.B0.95.ED.99.94.ED.95.9C_.ED.8C.8C.EC.9D.B4.EC.96.B4.ED.8F.AD.EC.8A.A4)
-*   [5 문제 해결](#.EB.AC.B8.EC.A0.9C_.ED.95.B4.EA.B2.B0)
-    *   [5.1 Firefox 4 메뉴 단추](#Firefox_4_.EB.A9.94.EB.89.B4_.EB.8B.A8.EC.B6.94)
-    *   [5.2 폴더 열기 문제(KDE)](#.ED.8F.B4.EB.8D.94_.EC.97.B4.EA.B8.B0_.EB.AC.B8.EC.A0.9C.28KDE.29)
-    *   [5.3 ~/Desktop를 계속해서 만들 때](#.7E.2FDesktop.EB.A5.BC_.EA.B3.84.EC.86.8D.ED.95.B4.EC.84.9C_.EB.A7.8C.EB.93.A4_.EB.95.8C)
-    *   [5.4 플러그인이 팝업을 허용하지 못하게 하기](#.ED.94.8C.EB.9F.AC.EA.B7.B8.EC.9D.B8.EC.9D.B4_.ED.8C.9D.EC.97.85.EC.9D.84_.ED.97.88.EC.9A.A9.ED.95.98.EC.A7.80_.EB.AA.BB.ED.95.98.EA.B2.8C_.ED.95.98.EA.B8.B0)
-    *   [5.5 마우스 가운데 클릭 오류](#.EB.A7.88.EC.9A.B0.EC.8A.A4_.EA.B0.80.EC.9A.B4.EB.8D.B0_.ED.81.B4.EB.A6.AD_.EC.98.A4.EB.A5.98)
-    *   [5.6 백스페이스로 '뒤로가기' 단추 기능이 안 될 때](#.EB.B0.B1.EC.8A.A4.ED.8E.98.EC.9D.B4.EC.8A.A4.EB.A1.9C_.27.EB.92.A4.EB.A1.9C.EA.B0.80.EA.B8.B0.27_.EB.8B.A8.EC.B6.94_.EA.B8.B0.EB.8A.A5.EC.9D.B4_.EC.95.88_.EB.90.A0_.EB.95.8C)
-    *   [5.7 로그인 정보를 기억하지 못할 때](#.EB.A1.9C.EA.B7.B8.EC.9D.B8_.EC.A0.95.EB.B3.B4.EB.A5.BC_.EA.B8.B0.EC.96.B5.ED.95.98.EC.A7.80_.EB.AA.BB.ED.95.A0_.EB.95.8C)
-    *   [5.8 어두운 Gtk 테마를 사용할 때 웹사이트나 입력 필드 문제](#.EC.96.B4.EB.91.90.EC.9A.B4_Gtk_.ED.85.8C.EB.A7.88.EB.A5.BC_.EC.82.AC.EC.9A.A9.ED.95.A0_.EB.95.8C_.EC.9B.B9.EC.82.AC.EC.9D.B4.ED.8A.B8.EB.82.98_.EC.9E.85.EB.A0.A5_.ED.95.84.EB.93.9C_.EB.AC.B8.EC.A0.9C)
-    *   [5.9 파일 연결 문제](#.ED.8C.8C.EC.9D.BC_.EC.97.B0.EA.B2.B0_.EB.AC.B8.EC.A0.9C)
-    *   [5.10 "I'm Feeling Lucky" 모드](#.22I.27m_Feeling_Lucky.22_.EB.AA.A8.EB.93.9C)
-    *   [5.11 "Do you want Firefox to save your tabs for the next time it starts?" 대화 상자가 나타나지 않을 때](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_.EB.8C.80.ED.99.94_.EC.83.81.EC.9E.90.EA.B0.80_.EB.82.98.ED.83.80.EB.82.98.EC.A7.80_.EC.95.8A.EC.9D.84_.EB.95.8C)
-    *   [5.12 엔비디아 GPU 시스템에서 스크롤링 시에 CPU 사용률이 높아지고 느려질 때](#.EC.97.94.EB.B9.84.EB.94.94.EC.95.84_GPU_.EC.8B.9C.EC.8A.A4.ED.85.9C.EC.97.90.EC.84.9C_.EC.8A.A4.ED.81.AC.EB.A1.A4.EB.A7.81_.EC.8B.9C.EC.97.90_CPU_.EC.82.AC.EC.9A.A9.EB.A5.A0.EC.9D.B4_.EB.86.92.EC.95.84.EC.A7.80.EA.B3.A0_.EB.8A.90.EB.A0.A4.EC.A7.88_.EB.95.8C)
-    *   [5.13 일부 웹페이지에서 글자가 보기 싫게 나타날 때](#.EC.9D.BC.EB.B6.80_.EC.9B.B9.ED.8E.98.EC.9D.B4.EC.A7.80.EC.97.90.EC.84.9C_.EA.B8.80.EC.9E.90.EA.B0.80_.EB.B3.B4.EA.B8.B0_.EC.8B.AB.EA.B2.8C_.EB.82.98.ED.83.80.EB.82.A0_.EB.95.8C)
-    *   [5.14 파이어폭스 13으로 업그레이드한 후 메뉴가 뜨지 않을 때](#.ED.8C.8C.EC.9D.B4.EC.96.B4.ED.8F.AD.EC.8A.A4_13.EC.9C.BC.EB.A1.9C_.EC.97.85.EA.B7.B8.EB.A0.88.EC.9D.B4.EB.93.9C.ED.95.9C_.ED.9B.84_.EB.A9.94.EB.89.B4.EA.B0.80_.EB.9C.A8.EC.A7.80_.EC.95.8A.EC.9D.84_.EB.95.8C)
-*   [6 같이 보기](#.EA.B0.99.EC.9D.B4_.EB.B3.B4.EA.B8.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 설치](#설치)
+*   [2 애드온](#애드온)
+*   [3 플러그인](#플러그인)
+    *   [3.1 GNOME 연결](#GNOME_연결)
+    *   [3.2 철자 검사용 사전](#철자_검사용_사전)
+    *   [3.3 파이어폭스 검색 엔진 추가](#파이어폭스_검색_엔진_추가)
+        *   [3.3.1 아치 파이어폭스 검색](#아치_파이어폭스_검색)
+*   [4 파이어폭스 관련 프로젝트](#파이어폭스_관련_프로젝트)
+    *   [4.1 파이어폭스 파생 브라우저](#파이어폭스_파생_브라우저)
+    *   [4.2 KDE 통합을 강화한 파이어폭스](#KDE_통합을_강화한_파이어폭스)
+*   [5 문제 해결](#문제_해결)
+    *   [5.1 Firefox 4 메뉴 단추](#Firefox_4_메뉴_단추)
+    *   [5.2 폴더 열기 문제(KDE)](#폴더_열기_문제(KDE))
+    *   [5.3 ~/Desktop를 계속해서 만들 때](#~/Desktop를_계속해서_만들_때)
+    *   [5.4 플러그인이 팝업을 허용하지 못하게 하기](#플러그인이_팝업을_허용하지_못하게_하기)
+    *   [5.5 마우스 가운데 클릭 오류](#마우스_가운데_클릭_오류)
+    *   [5.6 백스페이스로 '뒤로가기' 단추 기능이 안 될 때](#백스페이스로_'뒤로가기'_단추_기능이_안_될_때)
+    *   [5.7 로그인 정보를 기억하지 못할 때](#로그인_정보를_기억하지_못할_때)
+    *   [5.8 어두운 Gtk 테마를 사용할 때 웹사이트나 입력 필드 문제](#어두운_Gtk_테마를_사용할_때_웹사이트나_입력_필드_문제)
+    *   [5.9 파일 연결 문제](#파일_연결_문제)
+    *   [5.10 "I'm Feeling Lucky" 모드](#"I'm_Feeling_Lucky"_모드)
+    *   [5.11 "Do you want Firefox to save your tabs for the next time it starts?" 대화 상자가 나타나지 않을 때](#"Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts?"_대화_상자가_나타나지_않을_때)
+    *   [5.12 엔비디아 GPU 시스템에서 스크롤링 시에 CPU 사용률이 높아지고 느려질 때](#엔비디아_GPU_시스템에서_스크롤링_시에_CPU_사용률이_높아지고_느려질_때)
+    *   [5.13 일부 웹페이지에서 글자가 보기 싫게 나타날 때](#일부_웹페이지에서_글자가_보기_싫게_나타날_때)
+    *   [5.14 파이어폭스 13으로 업그레이드한 후 메뉴가 뜨지 않을 때](#파이어폭스_13으로_업그레이드한_후_메뉴가_뜨지_않을_때)
+*   [6 같이 보기](#같이_보기)
 
 ## 설치
 

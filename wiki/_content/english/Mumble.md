@@ -21,6 +21,8 @@ This page goes over installation and configuration of both the client portion of
         *   [2.2.3 Startup](#Startup)
         *   [2.2.4 SSL/TLS](#SSL/TLS)
         *   [2.2.5 SuperUser](#SuperUser)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Push-to-talk on Wayland](#Push-to-talk_on_Wayland)
 
 ## Client
 
@@ -85,3 +87,9 @@ To set the SuperUser password, use the following command.
 # murmurd -ini /etc/murmur.ini -supw PASSWORD
 
 ```
+
+## Troubleshooting
+
+### Push-to-talk on Wayland
+
+Currently with [Wayland](/index.php/Wayland "Wayland")/[Gnome](/index.php/Gnome "Gnome"), push-to-talk won't work without window being in focus.. Not allowing clients to sniff on the input when they do not have focus is a feature in [Wayland](/index.php/Wayland "Wayland"), and it will be kept that way. A proposal for patch exists at their source [repository](https://github.com/mumble-voip/mumble/issues/3243?_pjax=%23js-repo-pjax-container).

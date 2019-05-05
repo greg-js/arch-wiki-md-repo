@@ -17,6 +17,7 @@ Related articles
 
 *   [1 General setup](#General_setup)
     *   [1.1 Veracrypt volumes](#Veracrypt_volumes)
+    *   [1.2 F2FS encryption](#F2FS_encryption)
 *   [2 Login manager configuration](#Login_manager_configuration)
     *   [2.1 SLiM](#SLiM)
 
@@ -67,6 +68,27 @@ pam_mount doesn't support Veracrypt volumes natively, but there is a [workaround
 ```
 
 If you also have LUKS volumes, you can use a different *fstype* for Veracrypt volume instead of `crypt` with `cryptmount/cryptumount`, for example `ncpfs` with `ncpmount/ncpumount`. Just make sure you don't use NCP filesystem.
+
+### F2FS encryption
+
+There is a trick to make pam_mount add a F2FS decryption key to your session keyring. The salt you chose when encrypting directory(es) with f2fscrypt needs to match the one in `/etc/security/pam_mount.conf.xml` (0x1111 in below example) and passphrase needs to match the user's login password. This example assumes you're not mounting FUSE filesystems with pam_mount. If you do, choose a different `<*mount>` tag pairs instead of `<fusemount>` and `<fuseumount>`, like `<ncpmount>/<ncpumount>`.
+
+ `/etc/security/pam_mount.conf.xml` 
+```
+<fusemount>f2fscrypt add_key -S 0x1111</fusemount>
+<fuseumount>f2fscrypt new_session</fuseumount>
+<volume noroot="1" ssh="0" fstype="fuse" path="/tmp/not-a-real-path-0" mountpoint="/tmp/not-a-real-path-1"/>
+```
+
+`<volume>` doesn't do anything except trigger the commands in `<fusemount>` and `<fuseumount>` After login you can verify that your session keyring has a F2FS decryption key:
+
+ `$ keyctl show` 
+```
+Session Keyring
+ 910133222 --alswrv   1000   100  keyring: _ses
+ 301049775 --alswrv   1000 65534   \_ keyring: _uid.1000
+ 013481035 --alsw-v   1000   100   \_ logon: f2fs:2e64cf4a5bafcd7
+```
 
 ## Login manager configuration
 

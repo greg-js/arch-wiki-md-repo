@@ -1230,7 +1230,7 @@ See also [Wikipedia:Mail retrieval agent](https://en.wikipedia.org/wiki/Mail_ret
 
 	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://aur.archlinux.org/packages/fetchmail/)
 
-*   **[getmail](/index.php/Getmail "Getmail")** — A POP3 mail retriever with reliable Maildir and command delivery.
+*   **[getmail](/index.php/Getmail "Getmail")** — A POP3/IMAP4 mail retriever with reliable Maildir and command delivery.
 
 	[http://pyropus.ca/software/getmail/](http://pyropus.ca/software/getmail/) || [getmail](https://www.archlinux.org/packages/?name=getmail)
 
@@ -2085,6 +2085,10 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 *   **Hexo** — Fast, simple and powerful blog framework.
 
 	[https://hexo.io/](https://hexo.io/) || [nodejs-hexo-cli](https://aur.archlinux.org/packages/nodejs-hexo-cli/)
+
+*   **Hugo** — Hugo is a static HTML and CSS website generator written in Go. It is optimized for speed, ease of use, and configurability.
+
+	[https://gohugo.io/](https://gohugo.io/) || [hugo](https://www.archlinux.org/packages/?name=hugo)
 
 *   **[Jekyll](/index.php/Jekyll "Jekyll")** — Static blog engine, written in Ruby, which supports Markdown, textile and other formats.
 

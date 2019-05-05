@@ -10,7 +10,11 @@
 
 Για να μπορεί να ενσωματώνει λειτουργίες του συστήματος βάσης (host) στο φιλοξενούμενο σύστημα (guest), στις οποίες συμπεριλαμβάνονται κοινοί φάκελοι και κοινό πρόχειρο (clipboard), επιτάχυνση γραφικών (video acceleration) και αδιάλειπτη λειτουργία ενσωμάτωσης παραθύρων (seamless window integration mode), διατίθεται το πακέτο guest additions για κάποια εικονικά λειτουργικά συστήματα.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Εγκατάσταση στον υπολογιστή βάσης](#Εγκατάσταση_στον_υπολογιστή_βάσης)
     *   [1.1 Host με επεξεργασμένο (custom) πυρήνα](#Host_με_επεξεργασμένο_(custom)_πυρήνα)
@@ -57,7 +61,7 @@
 
 Το πακέτο [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules), που περιέχει τα προ-μεταγλωττισμένα αρθρώματα για τον κοινό πυρήνα του archlinux, θα πρέπει να έχει εγκατασταθεί μαζί με τη σουίτα. Αν χρησιμοποιείτε τον πυρήνα [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), θα πρέπει να εγκαταστήσετε μόνοι σας το πακέτο [virtualbox-host-modules-lts](https://aur.archlinux.org/packages/virtualbox-host-modules-lts/). Για επεξεργασμένους (custom) πυρήνες, διαβάστε [παρακάτω](#Hosts_running_a_custom_kernel).
 
-Προκειμένου να χρησιμοποιήσετε την διεπαφή γραφικού περιβάλλοντος, που βασίζεται στην πλατφόρμα [Qt](/index.php/Qt "Qt") (εντολή `VirtualBox`), θα χρειαστεί να εγκαταστήσετε επίσης το πακέτο [qt4](https://www.archlinux.org/packages/?name=qt4). Κάτι τέτοιο δεν χρειάζεται για το απλούστερο γραφικό περιβάλλον SDL (εντολή `VBoxSDL`) ούτε για την εντολή `VBoxHeadless`.
+Προκειμένου να χρησιμοποιήσετε την διεπαφή γραφικού περιβάλλοντος, που βασίζεται στην πλατφόρμα [Qt](/index.php/Qt "Qt") (εντολή `VirtualBox`), θα χρειαστεί να εγκαταστήσετε επίσης το πακέτο [qt4](https://aur.archlinux.org/packages/qt4/). Κάτι τέτοιο δεν χρειάζεται για το απλούστερο γραφικό περιβάλλον SDL (εντολή `VBoxSDL`) ούτε για την εντολή `VBoxHeadless`.
 
 ### Host με επεξεργασμένο (custom) πυρήνα
 

@@ -24,20 +24,21 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [3.2 Key generation](#Key_generation_2)
     *   [3.3 Server config](#Server_config)
     *   [3.4 Client config](#Client_config)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
-    *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
-        *   [4.2.1 Using resolvconf](#Using_resolvconf)
-        *   [4.2.2 Using dnsmasq](#Using_dnsmasq)
-        *   [4.2.3 Using systemd-resolved](#Using_systemd-resolved)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Using systemd-networkd](#Using_systemd-networkd)
-        *   [5.1.1 Server](#Server_2)
-        *   [5.1.2 Client foo](#Client_foo)
-        *   [5.1.3 Client bar](#Client_bar)
-    *   [5.2 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
-    *   [5.3 Endpoint with changing IP](#Endpoint_with_changing_IP)
-*   [6 See also](#See_also)
+*   [4 Testing the tunnel](#Testing_the_tunnel)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Routes are periodically reset](#Routes_are_periodically_reset)
+    *   [5.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
+        *   [5.2.1 Using resolvconf](#Using_resolvconf)
+        *   [5.2.2 Using dnsmasq](#Using_dnsmasq)
+        *   [5.2.3 Using systemd-resolved](#Using_systemd-resolved)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Using systemd-networkd](#Using_systemd-networkd)
+        *   [6.1.1 Server](#Server_2)
+        *   [6.1.2 Client foo](#Client_foo)
+        *   [6.1.3 Client bar](#Client_bar)
+    *   [6.2 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
+    *   [6.3 Endpoint with changing IP](#Endpoint_with_changing_IP)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -131,7 +132,7 @@ Invoking the [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8) command wi
 As an example, when Peer A has been configured we are able to see its identity and its associated peers:
 
 ```
- peer-a$ wg
+ peer-a # wg
  interface: wg0
    public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
    private key: (hidden)
@@ -146,7 +147,7 @@ As an example, when Peer A has been configured we are able to see its identity a
 At this point one could reach the end of the tunnel:
 
 ```
- peer-a$ ping 10.0.0.2
+ peer-a $ ping 10.0.0.2
 
 ```
 
@@ -171,7 +172,7 @@ PrivateKey = [CLIENT PRIVATE KEY]
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
 AllowedIPs = 10.0.0.0/24, 10.123.45.0/24, 1234:4567:89ab::/48
-Endpoint = [SERVER ENDPOINT]:51820
+Endpoint = [SERVER ENDPOINT]:48574
 PersistentKeepalive = 25
 ```
 
@@ -191,7 +192,7 @@ PrivateKey = [CLIENT PRIVATE KEY]
 PublicKey = [SERVER PUBLIC KEY]
 PresharedKey = [PRE SHARED KEY]
 AllowedIPs = 10.0.0.0/24
-Endpoint = [SERVER ENDPOINT]:51820
+Endpoint = [SERVER ENDPOINT]:48574
 PersistentKeepalive = 25
 ```
  `/etc/systemd/network/30-wg0.network` 
@@ -308,6 +309,44 @@ Using the catch-all `AllowedIPs = 0.0.0.0/0, ::/0` will forward all IPv4 (`0.0.
 **Tip:** If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to share the config with the client:
 ```
 $ qrencode -t ansiutf8 < foo.conf
+
+```
+
+## Testing the tunnel
+
+Once a tunnel has been established, one can use [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat)}} to send traffic through it to test out throughput, CPU usage, etc. On one side of the tunnel, run `nc` in listen mode and on the other side, pipe some data from `/dev/zero` into `nc` in sending mode.
+
+In the example below, port 2222 is used for the traffic (be sure to allow traffic on port 2222 if using a firewall).
+
+On one side of the tunnel listen for traffic:
+
+```
+$ nc -vvlnp 2222
+
+```
+
+On the other side of the tunnel, send some traffic:
+
+```
+$ dd if=/dev/zero bs=1024K count=1024 | nc -v 10.0.0.203 2222
+
+```
+
+Status can be monitored using `wg` directly.
+
+```
+# wg
+interface: wg0
+  public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
+  private key: (hidden)
+  listening port: 51820
+
+peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
+  preshared key: (hidden)
+  endpoint: 192.168.1.216:53207
+  allowed ips: 10.0.0.0/0
+  latest handshake: 1 minutes, 17 seconds ago
+  transfer: 56.43 GiB received, 1.06 TiB sent
 
 ```
 
@@ -520,7 +559,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh "\$i"; done'
+ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/examples/reresolve-dns/reresolve-dns.sh "$i"; done'
 ```
 
 Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `wireguard_reresolve-dns.timer`

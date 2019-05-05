@@ -110,11 +110,10 @@ The `-s` parameter will download any additional dependencies used by recent kern
 
 After running *makepkg*, you can have a look at the `linux.install` file. You will see that some variables have changed.
 
-Now, you only have to install the package as usual. Best practice is to install kernel headers first as they will be needed (e.g. to install the [nvidia](/index.php/NVIDIA#Custom_kernel "NVIDIA") driver) for the custom kernel later.
+Now, you only have to install the packages as usual. Best practice is to install both packages together as they might be both needed (e.g. DKMS.)
 
 ```
-# pacman -U *kernel-headers_package*
-# pacman -U *kernel_package*
+# pacman -U *kernel-headers_package* *kernel_package*
 
 ```
 

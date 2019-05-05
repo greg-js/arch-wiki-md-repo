@@ -9,9 +9,8 @@
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
     *   [1.1 Configure display manager](#Configure_display_manager)
 *   [2 Using the KDE Wallet to store ssh key passphrases](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases)
-*   [3 KDE Wallet for Firefox](#KDE_Wallet_for_Firefox)
-*   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
-*   [5 See also](#See_also)
+*   [3 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
+*   [4 See also](#See_also)
 
 ## Unlock KDE Wallet automatically on login
 
@@ -82,7 +81,15 @@ ssh-add $HOME/.ssh/key1 $HOME/.ssh/key2 $HOME/.ssh/key3 </dev/null
 
 ```
 
-You also have to set the `SSH_ASKPASS` [environment variable](/index.php/Environment_variable "Environment variable") to `ksshaskpass`.
+You also have to set the `SSH_ASKPASS` [environment variable](/index.php/Environment_variable "Environment variable") to `ksshaskpass`. For example, create the following [autostart script file](/index.php/KDE#Autostart "KDE") and mark it [executable](/index.php/Executable "Executable"):
+
+ `~/.config/plasma-workspace/env/ssh-askpass.sh` 
+```
+#!/bin/sh
+
+SSH_ASKPASS='/usr/bin/ksshaskpass'
+export SSH_ASKPASS
+```
 
 It will ask for your password and unlock your SSH keys. Upon restart your SSH keys should be unlocked once you give your kwallet password.
 
@@ -94,12 +101,6 @@ $ ssh-add /path/to/new/key </dev/null
 ```
 
 and append the key to the list of keys in `~/.config/autostart-scripts/ssh-add.sh` as explained above to have it unlocked upon providing the kwallet password.
-
-## KDE Wallet for Firefox
-
-**Note:** As of Firefox 57 this addon is not supported anymore. Use [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) (supported until August 2018) if wanting to use this addon.
-
-There is an unofficial [Firefox](/index.php/Firefox "Firefox") addon for [KDE5 Wallet](https://addons.mozilla.org/addon/kde5-wallet-password-integrati/) integration.
 
 ## KDE Wallet for Chrome and Chromium
 

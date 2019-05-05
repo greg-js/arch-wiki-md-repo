@@ -7,7 +7,11 @@ Artículos relacionados
 
 *wpa_supplicant* es el componente IEEE 802.1X/WPA utilizado por las estaciones cliente. Implementa las negociaciones entre la clave y un WPA Authenticator, y contola el roaming y la asociación/autenticación IEEE 802.11 del controlador wland.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalación](#Instalación)
 *   [2 Configuración](#Configuración)
@@ -21,7 +25,7 @@ Artículos relacionados
 
 Instale el paquete [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-También tiene la posibilidad de instalar el paquete [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) que proporciona *wpa_gui*; es un fronted gráfico para *wpa_supplicant* que usa las herramientas [qt4](https://www.archlinux.org/packages/?name=qt4).
+También tiene la posibilidad de instalar el paquete [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) que proporciona *wpa_gui*; es un fronted gráfico para *wpa_supplicant* que usa las herramientas [qt4](https://aur.archlinux.org/packages/qt4/).
 
 ## Configuración
 

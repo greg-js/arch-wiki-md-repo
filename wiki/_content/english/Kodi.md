@@ -7,6 +7,9 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 Kodi for X11](#Kodi_for_X11)
+    *   [1.2 Kodi for GBM](#Kodi_for_GBM)
+    *   [1.3 Kodi for Wayland](#Kodi_for_Wayland)
 *   [2 Running](#Running)
 *   [3 Running standalone](#Running_standalone)
     *   [3.1 kodi-standalone service](#kodi-standalone_service)
@@ -47,13 +50,35 @@
 
 ## Installation
 
-The official stable release can be [installed](/index.php/Install "Install") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-devel](https://aur.archlinux.org/packages/kodi-devel/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
+Kodi is available with support for several composers including [Xorg](/index.php/Xorg "Xorg"), [Wayland](/index.php/Wayland "Wayland"), and [GBM](https://en.wikipedia.org/wiki/Mesa_(computer_graphics)#Generic_Buffer_Management provided by [kodi](https://www.archlinux.org/packages/?name=kodi), [kodi-wayland](https://www.archlinux.org/packages/?name=kodi-wayland), and [kodi-gbm](https://www.archlinux.org/packages/?name=kodi-gbm) respectively. Which package to install depends on corresponding hardware support and intended use-case. In general, if the hardware supports OpenGL, either [kodi](https://www.archlinux.org/packages/?name=kodi) or [kodi-gbm](https://www.archlinux.org/packages/?name=kodi-gbm) are both good choices. See the list of features that GMB/OpenGL lacks below to help make the decision. It is recommended for users to test the various options particularly if the hardware on which Kodi is running is limited. For example, the X11 composer may offer CPU/GPU efficiency gains vs the GBM composer.
+
+Alternatively, recent alpha, beta, or RC builds are available from [kodi-devel](https://aur.archlinux.org/packages/kodi-devel/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
 
 All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
+### Kodi for X11
+
+[kodi](https://www.archlinux.org/packages/?name=kodi) which will pull in a few [Xorg](/index.php/Xorg "Xorg")/X11 dependencies offers the most compatibility for x86 hardware. It can run within a [desktop environment](/index.php/Desktop_environment "Desktop environment") or in standalone mode (see [#Running standalone](#Running_standalone)).
+
+### Kodi for GBM
+
+[kodi-gbm](https://www.archlinux.org/packages/?name=kodi-gbm) may be a good choice for standalone operations since it runs Kodi directly on the GPU without the X11 layer. Setups like this will be unable to launch other graphical applications. There are some other features lacking compared to [kodi](https://www.archlinux.org/packages/?name=kodi) (X11) including:
+
+*   Decreased software decoding performance due to a lack of PBO support in GLES.
+*   Decreased high quality upscaling and upspacing performance due to missing PBOs.
+*   In general, shaders for GLES are behind those for OpenGL.
+*   No support for HDR, meaning wrong colors will be renders with GLES.
+*   GBM has no accurate timing for a/v sync like X11 or Wayland do.
+
+See [Kodi issue 14876](https://github.com/xbmc/xbmc/issues/14876) for more details.
+
+### Kodi for Wayland
+
+Users may want to select [kodi-wayland](https://www.archlinux.org/packages/?name=kodi-wayland) if running on a system with a Wayland desktop already installed. Known limitations include having the resolution and frame rate set in the compositor rather than in kodi's GUI making this package less suitable for standalone operation. Otherwise, it is on-par with [kodi](https://www.archlinux.org/packages/?name=kodi) (X11) in terms of features.
+
 ## Running
 
-The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies methods to run for two different use cases:
+There are two general use cases:
 
 1.  `/usr/bin/kodi` is meant to be run by any user on an on-demand basis. Use it like any other program on the system.
 2.  `/usr/bin/kodi-standalone` is meant to be run as the only graphical application, for example on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC "wikipedia:Home theater PC"). See [#Running standalone](#Running_standalone) for more information.
@@ -69,9 +94,9 @@ Using standalone mode is advantageous for several reasons:
 
 ### kodi-standalone service
 
-The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and automatically creates the unprivileged user to run Kodi in standalone mode. Although the correct [driver](/index.php/Xorg#Driver_installation "Xorg") is an assumed dependency, no extra Xorg packages are needed.
+The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` (for X11) and `kodi-gbm.service` (for GBM) and automatically creates and provisions the unprivileged user to run Kodi in standalone mode. The correct video driver and optionally [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") is an assumed dependency.
 
-[Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
+[Start](/index.php/Start "Start") `kodi.service` or `kodi-gbm.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
 
 **Note:**
 
@@ -249,7 +274,7 @@ Several things are needed for this to work:
 *   Network exposed media (via protocols that Kodi can read, e.g. NFS or Samba).
 *   A [MariaDB](/index.php/MariaDB "MariaDB") server.
 
-**Warning:** When sharing a database, ALL clients need to be on the same major version of Kodi due to versioned requirements of the database schema. Refer to [this](https://kodi.wiki/view/Databases#Database_Versions) table for a list of database versions.
+**Warning:** When sharing a database, ALL clients need to be on the same major version of Kodi due to versioned requirements of the database schema. Refer to [database version table](https://kodi.wiki/view/Databases#Database_Versions) for a list of database versions.
 
 **Note:** The following guide is only an example of one configuration and is not meant to be limiting but illustrative. Key steps are shown but a detailed discussion is not offered.
 
@@ -402,7 +427,7 @@ Play some video content and enjoy the ability to adjust the speed using the keys
 
 ### Hardware video acceleration
 
-Enable and configure [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to speed up playback performance.
+Enable and configure [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to speed up playback performance.
 
 Restart Kodi and enable the hardware backend(s) in Playback under Settings.
 

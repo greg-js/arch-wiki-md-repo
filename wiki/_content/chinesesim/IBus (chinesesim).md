@@ -6,22 +6,26 @@
 
 [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus 和 [UIM](/index.php/UIM "UIM") 类似。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 输入法引擎](#.E8.BE.93.E5.85.A5.E6.B3.95.E5.BC.95.E6.93.8E)
-    *   [1.2 初始安装](#.E5.88.9D.E5.A7.8B.E5.AE.89.E8.A3.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 输入法引擎](#输入法引擎)
+    *   [1.2 初始安装](#初始安装)
     *   [1.3 GNOME](#GNOME)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 小贴士及技巧](#.E5.B0.8F.E8.B4.B4.E5.A3.AB.E5.8F.8A.E6.8A.80.E5.B7.A7)
-    *   [3.1 使用拼音](#.E4.BD.BF.E7.94.A8.E6.8B.BC.E9.9F.B3)
-*   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+*   [2 配置](#配置)
+*   [3 小贴士及技巧](#小贴士及技巧)
+    *   [3.1 使用拼音](#使用拼音)
+*   [4 疑难解答](#疑难解答)
     *   [4.1 Kimpanel](#Kimpanel)
     *   [4.2 rxvt-unicode](#rxvt-unicode)
-    *   [4.3 GTK 应用程序](#GTK_.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [4.4 中文输入](#.E4.B8.AD.E6.96.87.E8.BE.93.E5.85.A5)
+    *   [4.3 GTK 应用程序](#GTK_应用程序)
+    *   [4.4 中文输入](#中文输入)
     *   [4.5 LibreOffice](#LibreOffice)
-    *   [4.6 修改 Gnome-shell 中 ibus 候选框的字体和字号](#.E4.BF.AE.E6.94.B9_Gnome-shell_.E4.B8.AD_ibus_.E5.80.99.E9.80.89.E6.A1.86.E7.9A.84.E5.AD.97.E4.BD.93.E5.92.8C.E5.AD.97.E5.8F.B7)
+    *   [4.6 修改 Gnome-shell 中 ibus 候选框的字体和字号](#修改_Gnome-shell_中_ibus_候选框的字体和字号)
 
 ## 安装
 
@@ -32,7 +36,7 @@
 
 ```
 
-此外，为了启动[ibus](https://www.archlinux.org/packages/?name=ibus)的Qt应用程序支持, 安装[ibus-qt](https://www.archlinux.org/packages/?name=ibus-qt)软件库：
+此外，为了启动[ibus](https://www.archlinux.org/packages/?name=ibus)的Qt应用程序支持, 安装[ibus-qt](https://aur.archlinux.org/packages/ibus-qt/)软件库：
 
 ```
 # pacman -S ibus-qt 

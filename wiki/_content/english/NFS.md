@@ -10,7 +10,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 *   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
 *   Unlike [Samba](/index.php/Samba "Samba"), NFS does not have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
-*   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. [#Enable NFSv4 idmapping](#Enable_NFSv4_idmapping) or overrule the UID/GID manually by using `anonuid`/`anongid` together with `all_squash` in `/etc/exports`.
+*   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. [Enable NFSv4 idmapping](#Enabling_NFSv4_idmapping) or overrule the UID/GID manually by using `anonuid`/`anongid` together with `all_squash` in `/etc/exports`.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -22,12 +22,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 *   [2 Configuration](#Configuration)
     *   [2.1 Server](#Server)
         *   [2.1.1 Starting the server](#Starting_the_server)
-        *   [2.1.2 Miscellaneous](#Miscellaneous)
-            *   [2.1.2.1 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces/IPs)
-            *   [2.1.2.2 Enable NFSv4 idmapping](#Enable_NFSv4_idmapping)
-            *   [2.1.2.3 Static ports for NFSv3](#Static_ports_for_NFSv3)
-            *   [2.1.2.4 NFSv2 compatibility](#NFSv2_compatibility)
-            *   [2.1.2.5 Firewall configuration](#Firewall_configuration)
+        *   [2.1.2 Restricting NFS to interfaces/IPs](#Restricting_NFS_to_interfaces/IPs)
+        *   [2.1.3 Firewall configuration](#Firewall_configuration)
+        *   [2.1.4 Enabling NFSv4 idmapping](#Enabling_NFSv4_idmapping)
+        *   [2.1.5 Static ports for NFSv3](#Static_ports_for_NFSv3)
+        *   [2.1.6 NFSv2 compatibility](#NFSv2_compatibility)
     *   [2.2 Client](#Client)
         *   [2.2.1 Manual mounting](#Manual_mounting)
         *   [2.2.2 Mount using /etc/fstab](#Mount_using_/etc/fstab)
@@ -121,9 +120,7 @@ For more information about all available options see [exports(5)](https://jlk.fj
 
 **Note:** If exporting ZFS shares, also [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot. See [ZFS#NFS](/index.php/ZFS#NFS "ZFS").
 
-#### Miscellaneous
-
-##### Restricting NFS to interfaces/IPs
+#### Restricting NFS to interfaces/IPs
 
 By default, starting `nfs-server.service` will listen for connections on all network interfaces, regardless of `/etc/exports`. This can be changed by defining which IPs and/or hostnames to listen on.
 
@@ -137,58 +134,7 @@ host=192.168.1.123
 
 [Restart](/index.php/Restart "Restart") `nfs-server.service` to apply the changes immediately.
 
-##### Enable NFSv4 idmapping
-
-**Note:**
-
-*   NFSv4 idmapping needs to be enabled on **both** the client and server.
-*   Another option is to make sure the user and group IDs (UID and GID) match on both the client and server.
-
-The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
-
-Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
-
-```
-# echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
-
-```
-
-Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, i.e.:
-
- `/etc/modprobe.d/nfsd.conf` 
-```
-options nfs nfs4_disable_idmapping=0
-options nfsd nfs4_disable_idmapping=0
-```
-
-To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.conf` on **both** the server and the client:
-
- `/etc/idmapd.conf` 
-```
-# The following should be set to the local NFSv4 domain name
-# The default is the host's DNS domain name.
-Domain = *domain.tld*
-```
-
-##### Static ports for NFSv3
-
-Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/sysconfig/nfs` to set `STATDARGS`:
-
- `/etc/sysconfig/nfs`  `STATDARGS="-p 32765 -o 32766 -T 32803"` 
-
-The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/sysconfig/nfs` to set `RPCMOUNTDARGS`:
-
- `/etc/sysconfig/nfs`  `RPCMOUNTDARGS="-p 20048"` 
-
-After making these changes, several services need to be restarted; the first writes the configuration options out to `/run/sysconfig/nfs-utils` (see `/usr/lib/systemd/scripts/nfs-utils_env.sh`), the second restarts `rpc.statd` with the new ports, the last reloads `lockd` (kernel module) with the new ports. [Restart](/index.php/Restart "Restart") these services now: `nfs-config`, `rpcbind`, `rpc-statd`, and `nfs-server`.
-
-After the restarts, use `rpcinfo -p` on the server to examine the static ports are as expected. Using `rpcinfo -p <server IP>` from the client should reveal the exact same static ports.
-
-##### NFSv2 compatibility
-
-Users needing to support clients using NFSv2 (for example U-Boot), should set `RPCNFSDARGS="-V 2"` in `/etc/sysconfig/nfs`.
-
-##### Firewall configuration
+#### Firewall configuration
 
 To enable access through a [firewall](/index.php/Firewall "Firewall"), TCP and UDP ports `111`, `2049`, and `20048` may need to be opened when using the default configuration; use `rpcinfo -p` to examine the exact ports in use on the server:
 
@@ -248,6 +194,57 @@ If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the
 ```
 
 To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
+
+#### Enabling NFSv4 idmapping
+
+**Note:**
+
+*   NFSv4 idmapping needs to be enabled on **both** the client and server.
+*   Another option is to make sure the user and group IDs (UID and GID) match on both the client and server.
+
+The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
+
+Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
+
+```
+# echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
+
+```
+
+Set as [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules") to make this change permanent, i.e.:
+
+ `/etc/modprobe.d/nfsd.conf` 
+```
+options nfs nfs4_disable_idmapping=0
+options nfsd nfs4_disable_idmapping=0
+```
+
+To fully use *idmapping*, make sure the domain is configured in `/etc/idmapd.conf` on **both** the server and the client:
+
+ `/etc/idmapd.conf` 
+```
+# The following should be set to the local NFSv4 domain name
+# The default is the host's DNS domain name.
+Domain = *domain.tld*
+```
+
+#### Static ports for NFSv3
+
+Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/sysconfig/nfs` to set `STATDARGS`:
+
+ `/etc/sysconfig/nfs`  `STATDARGS="-p 32765 -o 32766 -T 32803"` 
+
+The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/sysconfig/nfs` to set `RPCMOUNTDARGS`:
+
+ `/etc/sysconfig/nfs`  `RPCMOUNTDARGS="-p 20048"` 
+
+After making these changes, several services need to be restarted; the first writes the configuration options out to `/run/sysconfig/nfs-utils` (see `/usr/lib/systemd/scripts/nfs-utils_env.sh`), the second restarts `rpc.statd` with the new ports, the last reloads `lockd` (kernel module) with the new ports. [Restart](/index.php/Restart "Restart") these services now: `nfs-config`, `rpcbind`, `rpc-statd`, and `nfs-server`.
+
+After the restarts, use `rpcinfo -p` on the server to examine the static ports are as expected. Using `rpcinfo -p <server IP>` from the client should reveal the exact same static ports.
+
+#### NFSv2 compatibility
+
+Users needing to support clients using NFSv2 (for example U-Boot), should set `RPCNFSDARGS="-V 2"` in `/etc/sysconfig/nfs`.
 
 ### Client
 

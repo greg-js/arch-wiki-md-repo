@@ -333,3 +333,5 @@ If you experience freezes and kernel crashes during a GPU intensive task with th
 ### Cursor corruption
 
 If you experience issues with the mouse cursor sometimes not rendering properly, set `Option "SWCursor" "True"` in the `"Device"` section of the `/etc/X11/xorg.conf.d/20-amdgpu.conf` configuration file.
+
+If you are using `xrandr` for scaling and the cursor is flickering or disappearing, you may be able to fix it by setting the `TearFree` property: `xrandr --output HDMI-A-0 --set TearFree on`.

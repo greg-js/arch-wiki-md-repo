@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Why](#Why)
@@ -10,6 +14,8 @@
         *   [4.2.1 Pre-install required packages](#Pre-install_required_packages)
         *   [4.2.2 Passing arguments to makepkg](#Passing_arguments_to_makepkg)
 *   [5 Handling major rebuilds](#Handling_major_rebuilds)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Build in tmpfs](#Build_in_tmpfs)
 
 ## Introduction
 
@@ -149,3 +155,16 @@ And build all following packages using:
 ```
 
 Running namcap (the -n argument) implies installing the package in the chroot. *-build also does this by default.
+
+## Tips and tricks
+
+### Build in tmpfs
+
+If the system has enough RAM, it is possible to specify a [tmpfs](/index.php/Tmpfs "Tmpfs") for the [devtools](https://www.archlinux.org/packages/?name=devtools) build scripts.
+
+```
+# mkdir -p /mnt/chroots/arch
+# mount -t tmpfs -o defaults,size=20G /mnt/chroots/arch
+# extra-x86_64-build -c -r /mnt/chroots/arch
+
+```

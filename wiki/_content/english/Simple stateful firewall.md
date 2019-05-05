@@ -332,7 +332,7 @@ More information is in the iptables man page, or reading the docs and examples o
 **Note:**
 
 *   This opens you up to a form of [DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack "wikipedia:Denial-of-service attack"). An attack can send packets with spoofed IPs and get them blocked from connecting to your services.
-*   This trick may block a legitimate IP address if some packets from this address to the destination port are regarded as INVALID by module conntrack. To avoid blacklisting, a turnaround is to allow all packets directed to that particular destination port.
+*   This trick may block a legitimate IP address if some packets from this address to the destination port are regarded as INVALID by module conntrack. To avoid blacklisting, a workaround is to allow all packets directed to that particular destination port.
 
 Port scans are used by attackers to identify open ports on your computer. This allows them to identify and fingerprint your running services and possibly launch exploits against them.
 

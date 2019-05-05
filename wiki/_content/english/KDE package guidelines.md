@@ -83,7 +83,7 @@ Please specify the build type; this makes it really simple to rebuild a package 
 
 ### KDE4
 
-On systems where both [qt4](https://www.archlinux.org/packages/?name=qt4) and [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) are installed, `qmake` refers to the 5.x version, so force cmake to use Qt4 this way:
+On systems where both [qt4](https://aur.archlinux.org/packages/qt4/) and [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) are installed, `qmake` refers to the 5.x version, so force cmake to use Qt4 this way:
 
 ```
  export QT_SELECT=4
@@ -150,4 +150,4 @@ Plasma themes packages should be named `plasma5-themes-*themename*` so that they
 
 Some [KDE](/index.php/KDE "KDE") software provide icons in the hicolor icon theme and `.desktop` files, which must be installed via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks"). Refrain from using installation command for these type of files in a `.install`, as it would result in unnecessary double execution of them.
 
-The [qt4](https://www.archlinux.org/packages/?name=qt4) package already depends on [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) and [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), so if your package depends [qt4](https://www.archlinux.org/packages/?name=qt4), no other action should be needed (i.e. no need to add these packages to `depends` array).
+The [qt4](https://aur.archlinux.org/packages/qt4/) package already depends on [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) and [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), so if your package depends [qt4](https://aur.archlinux.org/packages/qt4/), no other action should be needed (i.e. no need to add these packages to `depends` array).

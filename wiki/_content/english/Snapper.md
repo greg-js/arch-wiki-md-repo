@@ -307,7 +307,7 @@ The following packages use `btrfs send` and `btrfs receive` to send backups incr
 
 ### Suggested filesystem layout
 
-**Note:** The following layout is intended *not* to be used with `snapper rollback`, but is intended to mitigate inherit problems with restoring `/` with that command. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=194491).
+**Note:** The following layout is intended *not* to be used with `snapper rollback`, but is intended to mitigate inherent problems with restoring `/` with that command. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=194491).
 
 Here is a suggested file system layout for easily restoring your `/` to a previous snapshot:
 

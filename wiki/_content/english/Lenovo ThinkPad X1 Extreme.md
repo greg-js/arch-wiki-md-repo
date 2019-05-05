@@ -44,15 +44,15 @@ Despite not being strictly required for an Arch Linux install, a BIOS update is 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The latest version, v1.19, is highly recommended, and can be installed by running `fwupdmgr install [https://download.lenovo.com/pccbbs/mobiles/n2eet37w.cab](https://download.lenovo.com/pccbbs/mobiles/n2eet37w.cab)` as root. This will download the firmware directly from Lenovo. The firmware updates are digitally signed, so there is no additional risk caused by the direct download.
+The latest version, v1.21, is highly recommended, and can be installed by running `fwupdmgr install [https://download.lenovo.com/pccbbs/mobiles/n2eet39w.cab](https://download.lenovo.com/pccbbs/mobiles/n2eet39w.cab)` as root. This will download the firmware directly from Lenovo. The firmware updates are digitally signed, so there is no additional risk caused by the direct download.
 
-The latest version available on the LVFS as of early March 2019 is v1.17 (listed as 0.1.17). While that version resolves all known critical (read: hard bricking) issues, it still contains multiple bugs, particularly related to power management and early boot, that are fixed in the later versions, so v1.19 should be preferred when possible.
+The latest version available on the LVFS as of early March 2019 is v1.17 (listed as 0.1.17). While that version resolves all known critical (read: hard bricking) issues, it still contains multiple security vulnerabilities ([see README](https://download.lenovo.com/pccbbs/mobiles/n2eet39w.txt)) and bugs, particularly related to power management and early boot, that are fixed in the later versions, so v1.21 should be preferred when possible.
 
 All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ### Hybrid graphics
 
-Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). The HDMI port is wired to the Nvidia chip, see [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
 Nvidia-only mode works fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
 

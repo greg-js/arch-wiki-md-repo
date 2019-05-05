@@ -4,7 +4,11 @@
 
 [mpv](http://mpv.io/) — мультимедийный плеер, основанный на [mplayer](http://www.mplayerhq.hu/design7/news.html) и mplayer2\. Плеер поддерживает обширный набор видеоформатов, аудио- и видеокодеков и форматов субтитров. Всеобъемлющий (однако не исчерпывающий) список различий между *mpv* и вышеупомянутыми плеерами доступен [тут](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Графические оболочки](#Графические_оболочки)

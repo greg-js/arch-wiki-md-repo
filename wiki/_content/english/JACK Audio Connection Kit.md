@@ -163,7 +163,7 @@ jack_control dps period 64
 
 ```
 
-Sets JACK to use 64 periods per frame. Lower is less latency, but the setting in this script gives 2.67 ms latency, which is nicely low without putting too much stress on the particular hardware this example was built for. If a USB sound system were in use it might be good to try 32\. Anything less than 3-4 ms should be fine for realtime synthesis and/or FX, 5 ms is the smallest a human being can detect. QjackCtl will tell you how you are doing; at no-load, which means no clients attached, you will want a max of 3-5% CPU usage, and if you cannot get that without xruns (the red numbers which mean the system cannot keep up with the demands), you will have to improve your hardware.
+Sets JACK to use 64 frames per period. Lower is less latency, but the setting in this script gives 2.67 ms latency, which is nicely low without putting too much stress on the particular hardware this example was built for. If a USB sound system were in use it might be good to try 32\. Anything less than 3-4 ms should be fine for realtime synthesis and/or FX, 5 ms is the smallest a human being can detect. QjackCtl will tell you how you are doing; at no-load, which means no clients attached, you will want a max of 3-5% CPU usage, and if you cannot get that without xruns (the red numbers which mean the system cannot keep up with the demands), you will have to improve your hardware.
 
 ```
 sleep 10

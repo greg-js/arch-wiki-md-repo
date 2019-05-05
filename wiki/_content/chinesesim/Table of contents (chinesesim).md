@@ -115,7 +115,7 @@
 | <small>6.18.</small> [无线网络](/index.php/Category:Wireless_networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wireless networking (简体中文)") <small>(8)</small> |
 | <small>7.</small> [软件](/index.php/Category:Software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software (简体中文)") <small>(4)</small> |
 | <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(27)</small> |
-| <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(9)</small> |
+| <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(8)</small> |
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
 | <small>7.1.3.</small> [Init](/index.php/Category:Init_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Init (简体中文)") <small>(1)</small> |
 | <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(6)</small> |
@@ -130,7 +130,7 @@
 | <small>7.6.5.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
 | <small>7.6.6.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
 | <small>7.6.7.</small> [Xfce](/index.php/Category:Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xfce (简体中文)") <small>(1)</small> |
-| <small>7.7.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(26)</small> |
+| <small>7.7.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(27)</small> |
 | <small>7.7.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(1) (同时还属于 [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)"))</small> |
 | <small>7.7.2.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage virtualization (简体中文)") <small>(1)</small> |
 | <small>7.8.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(20)</small> |

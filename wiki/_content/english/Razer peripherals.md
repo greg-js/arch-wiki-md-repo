@@ -181,7 +181,7 @@ color=1:GlowingLogo:FFFFFF
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) package. (**Note:** You may need to install [python-notify2](https://aur.archlinux.org/packages/python-notify2/) prior to installing openrazer-meta) Don't forget to add your current user to the group `plugdev` with the command `sudo gpasswd -a $USER plugdev` and logging out and back in.
+[Install](/index.php/Install "Install") the [openrazer-meta](https://aur.archlinux.org/packages/openrazer-meta/) package. Don't forget to add your current user to the group `plugdev` with the command `sudo gpasswd -a $USER plugdev` and logging out and back in.
 
 ### How to use
 

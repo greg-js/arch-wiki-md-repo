@@ -29,15 +29,15 @@ Related articles
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 SVP 4 Linux (SmoothVideoProject)](#SVP_4_Linux_(SmoothVideoProject))
 *   [5 Tips and Tricks](#Tips_and_Tricks)
-    *   [5.1 Hardware decoding](#Hardware_decoding)
+    *   [5.1 Hardware video acceleration](#Hardware_video_acceleration)
     *   [5.2 Save position on quit](#Save_position_on_quit)
     *   [5.3 Volume is too low](#Volume_is_too_low)
     *   [5.4 Play a DVD](#Play_a_DVD)
     *   [5.5 Quickly cycle between aspect ratios](#Quickly_cycle_between_aspect_ratios)
     *   [5.6 Ignoring aspect ratio](#Ignoring_aspect_ratio)
     *   [5.7 Draw to the root window](#Draw_to_the_root_window)
-    *   [5.8 Always show GUI](#Always_show_GUI)
-    *   [5.9 Hide GUI for video files](#Hide_GUI_for_video_files)
+    *   [5.8 Always show application window](#Always_show_application_window)
+    *   [5.9 Disable video output](#Disable_video_output)
     *   [5.10 Restoring old OSC](#Restoring_old_OSC)
     *   [5.11 Use as a browser plugin](#Use_as_a_browser_plugin)
     *   [5.12 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
@@ -49,10 +49,9 @@ Related articles
     *   [6.1 General debugging](#General_debugging)
     *   [6.2 Fix jerky playback and tearing](#Fix_jerky_playback_and_tearing)
     *   [6.3 Problems with window compositors](#Problems_with_window_compositors)
-    *   [6.4 Video acceleration fails on (X)Wayland](#Video_acceleration_fails_on_(X)Wayland)
-    *   [6.5 No volume bar, cannot change volume](#No_volume_bar,_cannot_change_volume)
-    *   [6.6 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_(Wayland))
-    *   [6.7 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [6.4 No volume bar, cannot change volume](#No_volume_bar,_cannot_change_volume)
+    *   [6.5 GNOME Blank screen (Wayland)](#GNOME_Blank_screen_(Wayland))
+    *   [6.6 Use mpv with a compositor](#Use_mpv_with_a_compositor)
 
 ## Installation
 
@@ -273,21 +272,13 @@ Either way, hardware decoding is discouraged by *mpv* developers and is not like
 
 ## Tips and Tricks
 
-### Hardware decoding
+### Hardware video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Warning:** Hardware decoding is known to sometimes cause problems and as such it is considered "[usually a bad idea unless absolutely needed](https://github.com/mpv-player/mpv/commit/dbef5b737e2f994f02923c8214cba368b663a655)" by the developers. For that reason and because it typically offers very similar performance to software decoding it is disabled by default. Moreover, depending on the video card, drivers installed, and file being decoded hardware decoding may perform differently or may not even be used at all leading to inconsistent behavior that can be difficult to debug.
+Hardware accelerated video decoding is available via `--hwdec=*API*` option. For list of all supported APIs and other required options see [relevant manual section](https://mpv.io/manual/stable/#options-hwdec).
 
-**Note:** The main difference between hardware decoding and software decoding is that in software decoding the file will be decompressed and then moved onto the video card whereas with hardware decoding it will be moved to the video card first and then decompressed. In either case, video *playback* will still be hardware accelerated via the video card.
-
-Unlike *mplayer* and *mplayer2*, *mpv* has both [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support built-in. To enable it, run *mpv* with the `--hwdec=*method*` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
-
-The default video output driver, `gpu`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
-
-**Tip:** Custom GPU context can be using the `gpu-context` option and may used to overrule auto-detect. E.g. to use X11/EGL set `gpu-context=x11egl`. See [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) for more information.
-
-Even with hardware decoding enabled, it will only be used for [some codecs](https://mpv.io/manual/stable/#options-hwdec-codecs) by default. In order to use hardware decoding with all codecs set `hwdec-codecs=all`. It is also possible to specify an exact list of codecs for which you want hardware decoding to be used (provided it has been enabled) by setting `--hwdec-codecs=h264,mpeg2video`.
+For [Wayland](/index.php/Wayland "Wayland") use `--gpu-context=wayland` option. For list of other available GPU APIs see [manual](https://mpv.io/manual/stable/#options-gpu-context).
 
 ### Save position on quit
 
@@ -327,13 +318,13 @@ You can ignore aspect ratio using `--keepaspect=*no*`. To make option permanent,
 
 Run *mpv* with `--wid=0`. *mpv* will draw to the window with a window ID of 0.
 
-### Always show GUI
+### Always show application window
 
-It may be useful to always show the GUI window, even for audio files, especially when *mpv* is not started from terminal. This can be done by using `--force-window` option.
+To show application window even for audio files when launching mpv from command line use `--force-window` option.
 
-### Hide GUI for video files
+### Disable video output
 
-It may be useful to hide the GUI window for video files. This can be done by using `--no-video` option.
+To disable video output when launching from command line use `--vid=no` option, or its alias, `--no-video`.
 
 ### Restoring old OSC
 
@@ -446,10 +437,6 @@ vd-lavc-threads=<threads>
 Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make *mpv* also disable window compositing when playing in windowed mode (if supported by the compositor).
 
 With KWin compositing and hardware decoding, you may also want to set `x11-bypass-compositor=no` to keep compositing enabled in fullscreen, since reanabling compositing after leaving fullscreen may introduce stutter for a period of time.
-
-### Video acceleration fails on (X)Wayland
-
-To make *mpv* (force) the usage of the [Wayland](/index.php/Wayland "Wayland") compositor, one may need to set the `--gpu-context=wayland` option. See [[3]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### No volume bar, cannot change volume
 

@@ -343,6 +343,7 @@ WantedBy=default.target
 To start the service for your user:
 
 ```
+$ systemctl --user daemon-reload
 $ systemctl --user start synergyc
 
 ```

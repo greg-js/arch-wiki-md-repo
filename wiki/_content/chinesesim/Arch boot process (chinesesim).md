@@ -14,7 +14,11 @@
 
 为了启动 Arch Linux，一个与 Linux 兼容的 [启动引导器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")，比如 [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") 或者 [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 必须事先被安装到[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")或者 [GUID 分区表](/index.php/GUID_Partition_Table_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GUID Partition Table (简体中文)")。启动引导程序负责在初始化启动进程之前，加载好内核和 [initial ramdisk](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")。具体过程因 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 和 [UEFI](/index.php/UEFI "UEFI") 系统而异，细节在正文中给出。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 固件种类](#固件种类)
     *   [1.1 BIOS](#BIOS)
@@ -24,6 +28,7 @@
     *   [2.2 UEFI](#UEFI_2)
     *   [2.3 UEFI 的多重引导](#UEFI_的多重引导)
 *   [3 启动加载器](#启动加载器)
+    *   [3.1 功能比较](#功能比较)
 *   [4 内核](#内核)
 *   [5 initramfs](#initramfs)
 *   [6 Init 流程](#Init_流程)
@@ -79,7 +84,32 @@ UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支�
 
 ## 启动加载器
 
-启动加载器是 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 或 [UEFI](/index.php/UEFI "UEFI") 启动的第一个程序。负责使用正确的[内核](/index.php/Kernel_parameters "Kernel parameters")加载设备模块, 并[启动初始 RMA](/index.php/Mkinitcpio "Mkinitcpio")。
+启动加载器是 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 或 [UEFI](/index.php/UEFI "UEFI") 启动的第一个程序。它负责使用正确的[内核参数](/index.php/Kernel_parameters "Kernel parameters")加载内核, 并根据配置文件加载[初始化 RAM disk](/index.php/Mkinitcpio "Mkinitcpio")。
+
+**Note:** 加载 [Microcode](/index.php/Microcode "Microcode") 补丁要求对启动加载器的配置进行调整。[[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
+
+### 功能比较
+
+**Note:**
+
+*   只需要启动加载器兼容内核和initramfs所处的位置（`/boot`）的文件系统兼容即可。
+*   因为GPT是UEFI规范的一部分，所以所有的UEFI启动加载器都支持GPT磁盘。在BIOS上使用GPT磁盘是可行的，要么根据[Hybrid MBR](https://www.rodsbooks.com/gdisk/hybrid.html)使用 "hybrid booting"，要么使用新的 [GPT-only](http://repo.or.cz/syslinux.git/blob/HEAD:/doc/gpt.txt) 协议。但是这个协议可能在某些BIOS实现上出问题，参考 [rodsbooks](http://www.rodsbooks.com/gdisk/bios.html#bios)。
+*   在文件系统支持中提到的“加密”是[filesystem级别加密](https://en.wikipedia.org/wiki/Filesystem-level_encryption "wikipedia:Filesystem-level encryption")，和[block级别加密](/index.php/Dm-crypt "Dm-crypt")没有任何关系。
+
+| Name | Firmware | [Partition table](/index.php/Partition_table "Partition table") | Multi-boot | [File systems](/index.php/File_systems "File systems") | Notes |
+| BIOS | [UEFI](/index.php/UEFI "UEFI") | [MBR](/index.php/MBR "MBR") | [GPT](/index.php/GPT "GPT") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4 "Ext4") | ReiserFS | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
+| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Yes | Yes | Yes | – | – | – | – | ESP only | – | 内核会变成一个 EFI executable 来被 [UEFI](/index.php/UEFI "UEFI") 固件或者其他启动加载器加载。 |
+| [Clover](/index.php/Clover "Clover") | 模拟 UEFI | Yes | Yes | Yes | Yes | No | 不支持加密 | No | Yes | No | 修改版的 rEFIt，用来运行[黑苹果](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh")。 |
+| [GRUB](/index.php/GRUB "GRUB") | Yes | Yes | Yes | Yes | Yes | 不支持 zstd 压缩 | Yes | Yes | Yes | Yes | 在 BIOS/GPT 配置下需要一个 [BIOS启动分区](/index.php/BIOS_boot_partition "BIOS boot partition")。
+支持RAID, LUKS1 和 LVM (但是不支持thin provisioned volumes)。 |
+| [rEFInd](/index.php/REFInd "REFInd") | No | Yes | Yes | Yes | Yes | 不支持加密和 zstd 压缩 | 不支持加密 | 不支持 tail-packing 功能 | Yes | No | 支持自动寻找内核和确定内核参数而不需要手动配置。 |
+| [Syslinux](/index.php/Syslinux "Syslinux") | Yes | [有限支持](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | Yes | Yes | [有限支持](/index.php/Syslinux#Chainloading "Syslinux") | 不支持: 跨设备卷、压缩、加密 | 不支持加密 | No | Yes | 仅限MBR；不支持 sparse inodes | 不支持某些 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)") 功能 [[2]](https://wiki.syslinux.org/wiki/index.php?title=Filesystem)
+启动加载器只能够访问它所处的文件系统。[[3]](https://bugzilla.syslinux.org/show_bug.cgi?id=33) |
+| [systemd-boot](/index.php/Systemd-boot "Systemd-boot") | No | Yes | [仅限手动安装](https://github.com/systemd/systemd/issues/1125) | Yes | Yes | No | No | No | ESP only | No | [ESP](/index.php/ESP "ESP")以外的分区上的binaries它都启动不了. |
+| [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Yes | No | Yes | No | Yes | No | No | Yes | Yes | v4 only | [停止开发](https://www.gnu.org/software/grub/grub-legacy.html) in favor of [GRUB](/index.php/GRUB "GRUB"). |
+| [LILO](/index.php/LILO "LILO") | Yes | No | Yes | No | Yes | No | 不支持加密 | Yes | Yes | [Yes](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [停止开发](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) 因为某些局限性 (e.g. with Btrfs, GPT, RAID). |
+
+See also [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders").
 
 ## 内核
 

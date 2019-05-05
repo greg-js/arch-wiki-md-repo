@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Follow Package Guidelines](#Follow_Package_Guidelines)
 *   [2 Preparation and Setup](#Preparation_and_Setup)
@@ -108,6 +112,9 @@ For further details please take a look at the head of the script, it provides so
 
 ```
   cd svn-community
+  # update a specific package
+  svn update <package_name>
+  # update all packages
   svn update
 
 ```
@@ -120,6 +127,7 @@ This step is only required when adding a new package to the repository for the f
   cd svn-community
   mkdir -p new-package/{repos,trunk}
   cd new-package
+  cp /usr/share/pacman/PKGBUILD.proto trunk/PKGBUILD
   $EDITOR trunk/PKGBUILD
   svn add .
   svn commit
@@ -135,14 +143,14 @@ This step is only required when adding a new package to the repository for the f
 
 ### Change and build
 
+It is **mandatory** to build your package using a clean [chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). To ensure this, build with the scripts provided by devtools (i.e. `extra-x86_64-build` for [extra](/index.php/Official_repositories#extra "Official repositories") and [community](/index.php/Official_repositories#community "Official repositories"), `multilib-build` for [multilib](/index.php/Official_repositories#multilib "Official repositories"), `multilib-staging-build` for [multilib-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), `multilib-testing-build` for [multilib-testing](/index.php/Official_repositories#multilib-testing "Official repositories"), `staging-x86_64-build` for [staging](/index.php/Official_repositories#Staging_repositories "Official repositories") and [community-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), `testing-x86_64-build` for [testing](/index.php/Official_repositories#testing "Official repositories") and [community-testing](/index.php/Official_repositories#community-testing "Official repositories")).
+
 ```
   cd some-package/trunk/
   $EDITOR PKGBUILD
   extra-x86_64-build
 
 ```
-
-It is **mandatory** to build your package using a clean [chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
 
 Or, if you are using the [ch](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#ch "DeveloperWiki:HOWTO Be A Packager") helper, simply do:
 
@@ -157,6 +165,8 @@ Or, if you are using the [ch](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#ch "D
 
 ### Run namcap on both PKGBUILD and Package
 
+**Note:** This is automatically done, when using the devtools build scripts.
+
 ```
   namcap PKGBUILD
   namcap some-package-1.0-1-x86_64.pkg.tar.xz
@@ -165,7 +175,14 @@ Or, if you are using the [ch](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#ch "D
 
 ### Run checkpkg on the Package
 
-Run in the directory with your freshly built package to get a file list diff compared with the package version currently in the repos. This can be skipped when adding a new package to the repository for the first time (e.g. by importing it from [AUR](/index.php/AUR "AUR") to *community*).
+Run in the directory with your freshly built package to get a file list diff compared with the package version currently in the repos.
+
+```
+   checkpkg
+
+```
+
+**Note:** This can be skipped when adding a new package to the repository for the first time (e.g. by importing it from [AUR](/index.php/AUR "AUR") to [community](/index.php/Official_repositories#community "Official repositories")).
 
 ### Use devtools to sign, upload and commit
 
@@ -185,7 +202,7 @@ in the `some-package/trunk/` directory and check the output carefully. If, for e
 
 Make sure to **never** add the binary packages, makepkg logs, etc. to the repository!
 
-When you're ready to proceed, you can run the devtools script to sign, upload and commit your work. This is repo dependent. For *extra* you use `extrapkg`, `communitypkg` for *community*, etc.
+When you're ready to proceed, you can run the devtools scripts to sign, upload and commit your work (i.e. `communitypkg` for [community](/index.php/Official_repositories#community "Official repositories"), `community-stagingpkg` for [community-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), `community-testingpkg` for [community-testing](/index.php/Official_repositories#community-testing "Official repositories"), `extrapkg` for [extra](/index.php/Official_repositories#extra "Official repositories"), `gnome-unstablepkg` for [gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories"), `kde-unstablepkg` for [kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories"), `multilibpkg` for [multilib](/index.php/Official_repositories#multilib "Official repositories"), `multilib-stagingpkg` for [multilib-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), `multilib-testingpkg` for [multilib-testing](/index.php/Official_repositories#multilib-testing "Official repositories"), `stagingpkg` for [staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), `testingpkg` for [testing](/index.php/Official_repositories#testing "Official repositories")), e.g.:
 
 ```
   extrapkg "update to 1.2.3, add post_upgrade hook to fix permissions"
@@ -194,18 +211,20 @@ When you're ready to proceed, you can run the devtools script to sign, upload an
 
 Please try to write concise commit messages. If the package is simply an upstream change, that is fine, but if anything more complex changes, please inform us by writing an appropriate commit message.
 
+This will upload the package and its signature to their repository specific location in your user's `~/staging` directory on `repos.archlinux.org`.
+
 ### Update the Repository
 
-Using `db-update` will find new packages for any repository.
+Using `db-update` will find new packages for a set of repositories, depending on which is being called.
 
-For example:
+To release uploaded packages to [core](/index.php/Official_repositories#core "Official repositories"), [extra](/index.php/Official_repositories#extra "Official repositories"), [gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories"), [kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories"), [staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), or [testing](/index.php/Official_repositories#testing "Official repositories") use:
 
 ```
   ssh repos.archlinux.org "/packages/db-update"
 
 ```
 
-or:
+To release uploaded packages to [community](/index.php/Official_repositories#community "Official repositories"), [community-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), [community-testing](/index.php/Official_repositories#community-testing "Official repositories"), [multilib](/index.php/Official_repositories#multilib "Official repositories"), [multilib-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), or [multilib-testing](/index.php/Official_repositories#multilib-testing "Official repositories") use:
 
 ```
   ssh repos.archlinux.org "/community/db-update"
@@ -216,19 +235,44 @@ or:
 
 ### Removing a Package
 
+Using `db-remove` will remove a package from a specific binary repository.
+
+To remove a package from [core](/index.php/Official_repositories#core "Official repositories"), [extra](/index.php/Official_repositories#extra "Official repositories"), [gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories"), [kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories"), [staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), or [testing](/index.php/Official_repositories#testing "Official repositories") use:
+
 ```
-  ssh repos.archlinux.org "/packages/db-remove repo-name arch packagename"
+  ssh repos.archlinux.org "/packages/db-remove <repo> <arch> <package_name>"
 
 ```
 
-i.e.:
+e.g.
 
 ```
   ssh repos.archlinux.org "/packages/db-remove core x86_64 openssh"
 
 ```
 
-And if you want to really kill the package, you will need to `svn rm` the entire package directory after the above steps and commit the deletion.
+To remove a package from [community](/index.php/Official_repositories#community "Official repositories"), [community-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), [community-testing](/index.php/Official_repositories#community-testing "Official repositories"), [multilib](/index.php/Official_repositories#multilib "Official repositories"), [multilib-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), or [multilib-testing](/index.php/Official_repositories#multilib-testing "Official repositories") use:
+
+```
+  ssh repos.archlinux.org "/community/db-remove <repo> <arch> <package_name>"
+
+```
+
+e.g.
+
+```
+  ssh repos.archlinux.org "/community/db-remove community x86_64 jack2"
+
+```
+
+If removing the package from the repositories altogether, it is encouraged to remove the entire package directory from version control as well.
+
+```
+   svn update <package_name>
+   svn rm --force <package_name>
+   svn commit <package_name> -m "Deleting <package_name> because of reason."
+
+```
 
 Sometime the previous command yields:
 
@@ -246,19 +290,37 @@ You can remotely remove it with:
 
 ### Moving a package between repos
 
+Using `db-move` will move a package between two binary repositories.
+
+To move a package somewhere between [core](/index.php/Official_repositories#core "Official repositories"), [extra](/index.php/Official_repositories#extra "Official repositories"), [gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories"), [kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories"), [staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), or [testing](/index.php/Official_repositories#testing "Official repositories") use:
+
 ```
-  ssh repos.archlinux.org "/packages/db-move fromrepo torepo packagename"
+  ssh repos.archlinux.org "/packages/db-move <from_repo> <to_repo> <package_name>"
 
 ```
 
-i.e.:
+e.g.:
 
 ```
   ssh repos.archlinux.org "/packages/db-move testing core openssh"
 
 ```
 
-Alternatively, the move from testing is so common we have helper scripts:
+To move a package somewhere between [community](/index.php/Official_repositories#community "Official repositories"), [community-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), [community-testing](/index.php/Official_repositories#community-testing "Official repositories"), [multilib](/index.php/Official_repositories#multilib "Official repositories"), [multilib-staging](/index.php/Official_repositories#Staging_repositories "Official repositories"), or [multilib-testing](/index.php/Official_repositories#multilib-testing "Official repositories") use:
+
+```
+  ssh repos.archlinux.org "/community/db-move <from_repo> <to_repo> <package_name>"
+
+```
+
+e.g.:
+
+```
+  ssh repos.archlinux.org "/community/db-move community-testing community jack2"
+
+```
+
+Alternatively, the move from testing is so common, that there are helper scripts:
 
 ```
   /packages/testing2x openssh bzip2 coreutils
@@ -267,6 +329,15 @@ Alternatively, the move from testing is so common we have helper scripts:
 ```
 
 These scripts only work if the packages on the commandline are either in *core* or *extra*. If a package is only in testing, you have to use *testing2core*, *testing2core64*, *testing2extra* or *testing2extra64*.
+
+For the special case of moving a binary package and its version controlled [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") (and potentially additional files) between [community](/index.php/Official_repositories#community "Official repositories") and [extra](/index.php/Official_repositories#extra "Official repositories") (either direction), there are the two devtools helper scripts `community2extra` and `extra2community`.
+
+E.g. to move a a package from [community](/index.php/Official_repositories#community "Official repositories") to [extra](/index.php/Official_repositories#extra "Official repositories"), use:
+
+```
+   community2extra <package_name>
+
+```
 
 ### "Tagging" releases
 

@@ -170,7 +170,7 @@ Managing a wireless connection requires a basic set of tools. Either use a [netw
 | [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No | Yes |
 | [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | No | Yes | Yes | No | Yes |
 | [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Yes | Yes | Yes | Yes | Yes |
-| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | No | Yes | Yes | Yes | No |
+| [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | No | Yes | Yes | Yes | Yes |
 
 1.  Deprecated.
 

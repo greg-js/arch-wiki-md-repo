@@ -150,18 +150,26 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 
 ## Other
 
-*   **aur.rs** — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface")
+*   **aur.rs** — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
 
 	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
+
+*   **aur-talk** — Fetch and display AUR comments.
+
+	[https://github.com/GermainZ/aur-talk](https://github.com/GermainZ/aur-talk) || [aur-talk-git](https://aur.archlinux.org/packages/aur-talk-git/)
+
+*   **aurvote-utils** — A set of utilities for managing AUR votes.
+
+	[https://github.com/jadenPete/aurvote-utils](https://github.com/jadenPete/aurvote-utils) || [aurvote-utils](https://aur.archlinux.org/packages/aurvote-utils/)
 
 *   **haskell-aur** — Haskell library for accessing Aurweb RPC interface.
 
 	[https://hackage.haskell.org/package/aur](https://hackage.haskell.org/package/aur) || [haskell-aur](https://aur.archlinux.org/packages/haskell-aur/)
 
-*   **python3-aur** — Python 3 modules and helper utilities for accessing AUR package information and automating AUR interactions.
-
-	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
-
 *   **package-query** — Tool for querying [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) and the AUR.
 
 	[https://github.com/archlinuxfr/package-query](https://github.com/archlinuxfr/package-query) || [package-query](https://aur.archlinux.org/packages/package-query/)
+
+*   **python3-aur** — Python 3 modules and helper utilities for accessing AUR package information and automating AUR interactions.
+
+	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)

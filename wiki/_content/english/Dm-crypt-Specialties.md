@@ -381,7 +381,7 @@ When manually unlocking devices on the console use `--allow-discards`.
 With LUKS2 you can set `allow-discards` as a default flag for a device by opening it once with the option `--persistent`:
 
 ```
-# cryptsetup --allow-discards --persistent open --type luks2 /dev/sdaX root
+# cryptsetup --allow-discards --persistent open /dev/sdaX root
 
 ```
 
@@ -513,11 +513,11 @@ See [dm-crypt/Device encryption#Encryption options for LUKS mode](/index.php/Dm-
 
 ```
 # dd if=/dev/zero of=header.img bs=16M count=1
-# cryptsetup luksFormat --type luks2 /dev/sdX --align-payload 32768 --header header.img
+# cryptsetup luksFormat /dev/sdX --offset 32768 --header header.img
 
 ```
 
-**Tip:** When using option `--header`, `--align-payload` allows specifying the start of encrypted data on a device. By reserving a space at the beginning of device you have the option of later [reattaching the LUKS header](/index.php/Dm-crypt/Device_encryption#Restore_using_cryptsetup "Dm-crypt/Device encryption"). See [cryptsetup(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for values supported by `--align-payload`.
+**Tip:** The `--offset` option allows specifying the start of encrypted data on a device. By reserving a space at the beginning of device you have the option of later [reattaching the LUKS header](/index.php/Dm-crypt/Device_encryption#Restore_using_cryptsetup "Dm-crypt/Device encryption"). The value is specified in 512-byte sectors, see [cryptsetup(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup.8) for more details.
 
 Open the container:
 
@@ -667,8 +667,8 @@ Now you should have `lukskey` opened in a loop device (underneath `/dev/loop1`),
 #### The main drive
 
 ```
-# truncate -s 2M /mnt/header.img
-# cryptsetup --key-file=/dev/mapper/lukskey --keyfile-offset=*offset* --keyfile-size=*size* luksFormat /dev/sda --align-payload 4096 --header /mnt/header.img
+# truncate -s 16M /mnt/header.img
+# cryptsetup --key-file=/dev/mapper/lukskey --keyfile-offset=*offset* --keyfile-size=*size* luksFormat /dev/sda --offset 32768 --header /mnt/header.img
 
 ```
 

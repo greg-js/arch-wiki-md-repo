@@ -227,11 +227,11 @@ BytesInSector=512
 By using the starting address of the partition on the device by defining it in the `seek=` option
 
 ```
-# dd if=*data_source* of=/dev/sd"X" bs=${BytesInSector} count=${End} seek=${Start} status=progress
+# dd if=*data_source* of=/dev/sd"X" bs=${BytesInSector} count=${End - Start} seek=${Start} status=progress
 
 ```
 
-By using the partitions name
+By using the partitions size (in logical sectors)
 
 ```
 LogicalSectors=3839709184

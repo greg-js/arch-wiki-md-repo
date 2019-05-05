@@ -9,7 +9,11 @@ Budgie è l'interfaccia grafica di default di Solus OS, scritta da zero. Oltre a
 
 In questo momento Budgie è in sviluppo, quindi potresti trovare bug e nuove funzionalità verranno aggiunge in seguito.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installare Budgie](#Installare_Budgie)
     *   [1.1 Avviare Budgie](#Avviare_Budgie)

@@ -37,7 +37,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [6.4.2 External server as time source](#External_server_as_time_source)
     *   [6.5 Performance Tips](#Performance_Tips)
         *   [6.5.1 Paravirtual SCSI adapter](#Paravirtual_SCSI_adapter)
-        *   [6.5.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
+        *   [6.5.2 Paravirtual Network Adapter](#Paravirtual_Network_Adapter)
         *   [6.5.3 Virtual Machine Settings](#Virtual_Machine_Settings)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Network slow on guest](#Network_slow_on_guest)
@@ -59,6 +59,14 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 
 ## In-kernel drivers
 
+**Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables some of these modules. If any of them is not auto-detected (check by running `lsmod | grep *modulename*` ) and if you require it, you can add the module to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` array. For example: `/etc/mkinitcpio.conf` 
+```
+...
+MODULES=(... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ...)
+```
+
+Make sure to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+
 *   `vmw_balloon` - The physical memory management driver. It acts like a "balloon" that can be inflated to reclaim physical pages by reserving them in the guest and invalidating them in the monitor, freeing up the underlying machine pages so they can be allocated to other guests. It can also be deflated to allow the guest to use more physical memory. Deallocated Virtual Machine memory can be reused in the host without terminating the guest.
 *   `vmw_pvscsi` - For VMware's Paravirtual SCSI (PVSCSI) HBA.
 *   `vmw_vmci` - The Virtual Machine Communication Interface. It enables high-speed communication between host and guest in a virtual environment via the VMCI virtual device.
@@ -66,18 +74,10 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 *   `vmxnet3` - For VMware's vmxnet3 virtual ethernet NIC.
 *   a fuse-based hgfs implementation has been added to `open-vm-tools` 10.0+ and is supported from kernel version 4.0+.
 
-These drivers are only needed if you are running Arch Linux on a hypervisor like [VMware vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor). Client-server applications can write to the VMCI Sock (vsock) interface to make use of the VMCI virtual device, when communicating between virtual machines.
+The following drivers are only needed if you are running Arch Linux on a hypervisor like [VMware vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor). Client-server applications can write to the VMCI Sock (vsock) interface to make use of the VMCI virtual device, when communicating between virtual machines.
 
 *   `vsock` - The Virtual Socket Protocol. It is similar to the TCP/IP socket protocol, allowing communication between Virtual Machines and hypervisor or host.
 *   `vmw_vsock_vmci_transport` - Implements a VMCI transport for Virtual Sockets.
-
-**Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables a few of these modules. Additional modules, such as `vmw_balloon`, may need to be added to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` array. For example: `/etc/mkinitcpio.conf` 
-```
-...
-MODULES=(... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ...)
-```
-
-Make sure to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 Some modules, such as the legacy `vmhgfs` shared folder module, will require additional work to manually `compile` and systemd `enable` in order to function properly.
 
@@ -493,7 +493,7 @@ scsi0.virtualDev = "pvscsi"
 
 ```
 
-#### Paravirtual Network Adapater
+#### Paravirtual Network Adapter
 
 VMware offers [multiple network adapters](http://kb.vmware.com/kb/1001805) for the guest OS. The default adapter used is usually the `e1000` adapter, which emulates an Intel 82545EM Gigabit Ethernet NIC. This Intel adapter is generally compatible with the built-in drivers across most operating systems, include Arch.
 

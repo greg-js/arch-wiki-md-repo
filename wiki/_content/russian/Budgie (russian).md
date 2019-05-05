@@ -11,7 +11,11 @@ Budgie написанный с нуля рабочий стол, который 
 
 Сейчас Budgie находится в стадии разработки, так что могут появляться ошибки и добавляться новые возможности.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
     *   [1.1 Запуск](#Запуск)

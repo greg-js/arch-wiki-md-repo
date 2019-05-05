@@ -279,7 +279,7 @@ Arch User Repository 的指南位于:
 *   #archlinux-cn-game，讨论各种游戏和邀请联机的分支频道。
 *   #archlinux-cn-bot，IRC 和 Telegram 机器人制作、交流和测试用频道。
 
-处于曾经遭受过来自 IRC 的大量 spam 攻击，建议通过 freenode 的 NickServ 服务注册一个用户名并进行验证。 未验证的用户可能会被重定向至 #archlinux-cn-unregistered 频道。
+由于曾经遭受过来自 IRC 的大量 spam 攻击，建议通过 freenode 的 NickServ 服务注册一个用户名并进行验证。 未验证的用户可能会被重定向至 #archlinux-cn-unregistered 频道。
 
 这里是 freenode 提供的昵称注册指南： [https://freenode.net/kb/answer/registration](https://freenode.net/kb/answer/registration)
 

@@ -314,7 +314,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 *   **QMPDClient** — Qt4 GUI client.
 
-	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
+	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://aur.archlinux.org/packages/qmpdclient/)
 
 *   **Quimup** — Simple Qt5 frontend for MPD written in C++.
 

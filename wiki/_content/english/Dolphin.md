@@ -17,7 +17,7 @@ Related articles
     *   [1.2 File previews](#File_previews)
     *   [1.3 View audio CDs](#View_audio_CDs)
 *   [2 Usage](#Usage)
-    *   [2.1 Open Terminal](#Open_Terminal)
+    *   [2.1 Open terminal](#Open_terminal)
     *   [2.2 KIO Slaves](#KIO_Slaves)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Device names shown as "X GiB Harddrive"](#Device_names_shown_as_"X_GiB_Harddrive")
@@ -58,9 +58,11 @@ Support for audio CDs is provided by the kio extension [audiocd-kio](https://www
 
 ## Usage
 
-### Open Terminal
+### Open terminal
 
 Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packages/?name=konsole) by default. To change the default terminal emulator, run `kcmshell5 componentchooser` and select *Terminal Emulator > Use a different terminal program*.
+
+Some users will not have the module installed. Instead, the default terminal can be changed by modifying the kdeglobals configuration `~/.config/kdeglobals`, and adding `TerminalApplication=*terminalname*` under the `[General]` tab. Note, it is likely that this method will not make the internal Dolphin terminal window (opened with `F4`) use the terminal specified in the kdeglobals configuration.
 
 ### KIO Slaves
 

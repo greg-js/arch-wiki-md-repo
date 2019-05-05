@@ -4,7 +4,11 @@ Related articles
 
 The [umask](https://en.wikipedia.org/wiki/umask "wikipedia:umask") utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because *umask* affects the current shell execution environment, it is usually implemented as built-in command of a shell.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Meaning of the mode mask](#Meaning_of_the_mode_mask)
 *   [2 Display the current mask value](#Display_the_current_mask_value)
@@ -64,11 +68,11 @@ When the `-S` option, standardized by POSIX, is used, the mask will be displayed
 
 ## Set the mask value
 
-**Note:** Umask values can be set on a case-by-case basis. For example, desktop users may find the restricted permissions on their home folder (`chmod 700`, as applied by `useradd -m`) sufficient, as they make all files within unaccessible to other users. Should this not be practical (for example when using [Apache](/index.php/Apache "Apache")), and public files are stored amongst private ones, then consider restricting the umask instead.
+**Note:** Umask values can be set on a case-by-case basis. For example, desktop users may find the restricted permissions on their home folder sufficient (`useradd -m` creates the directory with `700` permission by default), as they make all files within unaccessible to other users. Should this not be practical (for example when using [Apache](/index.php/Apache "Apache")), and public files are stored amongst private ones, then consider restricting the umask instead.
 
 You can set the umask value through the *umask* command. The string specifying the mode mask follows the same syntactic rules as the mode argument of [chmod](/index.php/Chmod "Chmod") (see the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) for details).
 
-System-wide umask value can be set in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bash.bashrc`. Most Linux distributions, including Arch [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) set a default value of `022`. You can also set umask with `pam_umask.so` but it may be overridden by `/etc/profile` or similar.
+System-wide umask value can be set in `/etc/profile` or in the default [shell](/index.php/Shell "Shell") configuration files, e.g. `/etc/bash.bashrc`. Most Linux distributions, including Arch, set a umask default value of `022` (see [/etc/profile](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem)). One can also set umask with `pam_umask.so` but it may be overridden by `/etc/profile` or similar.
 
 If you need to set a different value, you can either directly edit such file, thus affecting all users, or call `umask` from your shell's user configuration file, e.g. `~/.bashrc` to only change your umask, however these changes will only take effect after the next login. To change your umask during your current session only, simply run `umask` and type your desired value. For example, running `umask 077` will give you read and write permissions for new files, and read, write and execute permissions for new folders.
 

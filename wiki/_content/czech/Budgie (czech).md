@@ -9,12 +9,16 @@ Budgie je výchozím pracovním prostředím operačního systému Solus. Kromě
 
 V tuto chvíli je prostředí Budgie intenzivně vyvíjeno, takže se můžete setkat s menšími chybami spolu s tím, jak jsou přidávány nové funkce v průběhu vývoje.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Instalace](#Instalace)
-    *   [1.1 Spuštění](#Spu.C5.A1t.C4.9Bn.C3.AD)
-*   [2 Práce s prostředím](#Pr.C3.A1ce_s_prost.C5.99ed.C3.ADm)
-*   [3 Více informací](#V.C3.ADce_informac.C3.AD)
+    *   [1.1 Spuštění](#Spuštění)
+*   [2 Práce s prostředím](#Práce_s_prostředím)
+*   [3 Více informací](#Více_informací)
 
 ## Instalace
 

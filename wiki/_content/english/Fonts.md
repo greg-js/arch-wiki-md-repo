@@ -276,7 +276,7 @@ For more monospaced fonts see [#Bitmap](#Bitmap) and [#Families](#Families).
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
 *   Fantasque Sans Mono ([ttf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=ttf-fantasque-sans-mono), [otf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=otf-fantasque-sans-mono))
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – designed for Firefox OS
-*   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
+*   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - an open source monospaced font, used as the default in KDE Plasma
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspired by Consolas
 *   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
@@ -298,7 +298,7 @@ Relevant websites:
 #### Sans-serif
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
-*   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
+*   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – designed for user interfaces
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – free substitute for Times New Roman
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 major variations: normal, narrow, and caption - Unicode: Latin, Cyrillic
@@ -308,7 +308,7 @@ Relevant websites:
 #### Serif
 
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/))
-*   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
+*   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 

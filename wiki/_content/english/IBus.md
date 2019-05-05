@@ -37,8 +37,6 @@
 
 Install the [ibus](https://www.archlinux.org/packages/?name=ibus) package.
 
-Additionally, to smooth the typing experience of IBus for Qt applications, please install the [ibus-qt](https://www.archlinux.org/packages/?name=ibus-qt) library which provides IM modules to replace XIM protocol.
-
 ### Input method engines
 
 You will need at least one input method, corresponding to the language you wish to type. Available input methods include:
@@ -97,15 +95,6 @@ export QT_IM_MODULE=ibus
 *   You can also try adding `ibus-daemon -drx` after the `export ...` lines in `~/.bashrc`.
 
 You will then see a configuration screen; you can access this screen whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
-
-If IBus does not work in Qt/KDE applications, ensure that the *ibus-qt* library is installed and define IBus as the default IME in the Qt configuration editor:
-
-```
-$ qtconfig-qt4
-
-```
-
-In *Interface > Default Input Method*, select *ibus* instead of *xim*.
 
 ### GNOME
 

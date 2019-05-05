@@ -29,17 +29,17 @@ En Arch Linux, la administración de energía consiste en dos partes principales
     *   [1.2 Gráficos](#Gráficos)
 *   [2 Administración de energía con systemd](#Administración_de_energía_con_systemd)
     *   [2.1 Eventos de ACPI](#Eventos_de_ACPI)
-        *   [2.1.1 Power managers](#Power_managers)
+        *   [2.1.1 Administradores de energía](#Administradores_de_energía)
         *   [2.1.2 xss-lock](#xss-lock)
     *   [2.2 Suspensión e hibernación](#Suspensión_e_hibernación)
-        *   [2.2.1 Hybrid-sleep on suspend or hibernation request](#Hybrid-sleep_on_suspend_or_hibernation_request)
+        *   [2.2.1 Suspensión híbrida en suspensión o en hibernación](#Suspensión_híbrida_en_suspensión_o_en_hibernación)
     *   [2.3 Sleep hooks](#Sleep_hooks)
         *   [2.3.1 Archivos de servicios para suspender/reanudar](#Archivos_de_servicios_para_suspender/reanudar)
         *   [2.3.2 Archivo de servicio combinando suspensión/reanudación](#Archivo_de_servicio_combinando_suspensión/reanudación)
         *   [2.3.3 Hooks en /usr/lib/systemd/system-sleep](#Hooks_en_/usr/lib/systemd/system-sleep)
-    *   [2.4 Troubleshooting](#Troubleshooting)
-        *   [2.4.1 Delayed lid switch action](#Delayed_lid_switch_action)
-        *   [2.4.2 Suspend from corresponding laptop Fn key not working](#Suspend_from_corresponding_laptop_Fn_key_not_working)
+    *   [2.4 Solución de problemas](#Solución_de_problemas)
+        *   [2.4.1 Acción retardada del interruptor de la tapa](#Acción_retardada_del_interruptor_de_la_tapa)
+        *   [2.4.2 La suspensión desde la tecla Fn correspondiente del portátil no funciona](#La_suspensión_desde_la_tecla_Fn_correspondiente_del_portátil_no_funciona)
 *   [3 Power saving](#Power_saving)
     *   [3.1 Processors with HWP (Hardware P-state) support](#Processors_with_HWP_(Hardware_P-state)_support)
     *   [3.2 Audio](#Audio)
@@ -150,17 +150,17 @@ Para aplicar cualquier cambio [reinicie](/index.php/Systemd_(Espa%C3%B1ol)#Utili
 
 **Nota:** *Systemd* no puede manejar los eventos de AC y de Batería que realiza ACPI, así que sigue siendo necesario el uso de [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") u otras herramientas similares a [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
 
-#### Power managers
+#### Administradores de energía
 
-Some [desktop environments](/index.php/Desktop_environment "Desktop environment") include power managers which [inhibit](http://www.freedesktop.org/wiki/Software/systemd/inhibit/) (temporarily turn off) some or all of the *systemd* ACPI settings. If such a power manager is running, then the actions for ACPI events can be configured in the power manager alone. Changes to `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` need be made only if you wish to configure behaviour for a particular event that is not inhibited by the power manager.
+Algunos [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") incluyen administradores de energía que [inhiben](http://www.freedesktop.org/wiki/Software/systemd/inhibit/) (desactiva temporalmente) algunos o todos los ajustes ACPI de *systemd*. Si hay algún administrador de energía ejecutándose las acciones ACPI solo se pueden configurar en el administrador de energía. Los cambios en `/etc/systemd/logind.conf` o `/etc/systemd/logind.conf.d/*.conf` solo se necesitan hacer solo si desea configurar algún evento particular que no inhibe el administrador de energía.
 
-Note that if the power manager does not inhibit *systemd* for the appropriate events you can end up with a situation where *systemd* suspends your system and then when the system is woken up the other power manager suspends it again. As of December 2016, the power managers of [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce") and [MATE](/index.php/MATE "MATE") issue the necessary *inhibited* commands. If the *inhibited* commands are not being issued, such as when using [acpid](/index.php/Acpid "Acpid") or others to handle ACPI events, set the `Handle` options to `ignore`. See also [systemd-inhibit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-inhibit.1).
+Tenga en cuenta que el administrador de energía no inhibe *systemd* en los eventos apropiados en los que pueden terminar con una situación en la que *systemd* suspenda su sistema y después de que systemd lo despierte el otro administrador de energía vuelva a suspender el equipo. En diciembre de 2016 los administradores de energía como [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"), [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)") y [MATE](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)") solucionan los comandos necesarios *inhibidos*. Si los comandos *inhibidos* no se han solucionado, como cuando se utiliza [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") o otros administradores de eventos ACPI, establezca la opción `Handle` a `ignore`. Vea también [systemd-inhibit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-inhibit.1).
 
 #### xss-lock
 
-[xss-lock](https://www.archlinux.org/packages/?name=xss-lock) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). *xss-lock* also reacts to [DPMS](/index.php/DPMS "DPMS") events and runs or kills the locker in response.
+[xss-lock](https://www.archlinux.org/packages/?name=xss-lock) Funciona con los eventos de systemd `suspend`, `hibernate`, `lock-session`, y `unlock-session` con las acciones apropiadas (ejecutar el bloqueador y espera al usuario para desbloquearse o terminar el bloqueador). *xss-lock* también reacciona a los eventos [DPMS](/index.php/DPMS "DPMS") y ejecuta o termina el bloqueador en respuesta.
 
-Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for example
+Inicie xss-lock en su [archivo de inicio en el arranque](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)") así:
 
 ```
 xss-lock -- i3lock -n -i *background_image.png* &
@@ -169,17 +169,22 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### Suspensión e hibernación
 
-*systemd* proporciona órdenes para suspender en RAM, hibernar y una suspensión hibrida usando le funcionalidad de suspensión/reanudación nativa del kernel. También existen mecanismos para agregar hooks para personalizar las acciones de pre y post-suspensión.
+*Systemd* proporciona órdenes para suspender en RAM, hibernar y una suspensión hibrida usando le funcionalidad de suspensión/reanudación nativa del kernel. También existen mecanismos para agregar hooks para personalizar las acciones de pre y post-suspensión.
 
-**Nota:** *systemd* también puede utilizar otros [backends](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") (como por ejemplo [Uswsusp](/index.php/Uswsusp "Uswsusp") o [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")), en conjunción con el banckend por defecto del *kernel*, con el fin de poner el ordenador a dormir o hibernar. Véase [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") para obtener un ejemplo.
+`systemctl suspend` debería funcionar tras su instalación, sin embargo, para que `systemctl hibernate` pueda trabajar en su sistema debe seguir las instrucciones de [hibernar](/index.php/Power_management/Suspend_and_hibernate_(Espa%C3%B1ol)#Hibernar "Power management/Suspend and hibernate (Español)").
 
-`systemctl suspend` debería funcionar tras su instalación, sin embargo, para que `systemctl hibernate` pueda trabajar en su sistema debe seguir las instrucciones de [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
+Aquí hay dos modos de combinar la suspensión y la hibernación:
 
-#### Hybrid-sleep on suspend or hibernation request
+*   `systemctl hybrid-sleep` suspende el sistema en RAM y en disco, así cuando el sistema se quede completamente sin energía no se perderán los datos. Este modo se llama también [suspensión híbrida](/index.php/Power_management/Suspend_and_hibernate_(Espa%C3%B1ol) "Power management/Suspend and hibernate (Español)").
+*   `systemctl suspend-then-hibernate` inicialmente suspende el sistema en RAM y si no se interrumpe en el periodo de tiempo especificado en `HibernateDelaySec` en [systemd-sleep.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.conf.5) el sistema se despertará utilizando una alarma RTC y se hibernará.
 
-It is possible to configure systemd to always do a *hybrid-sleep* even on a *suspend* or *hibernation* request.
+**Nota:** *Systemd* también puede utilizar otros [backends](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") (como por ejemplo [Uswsusp](/index.php/Uswsusp "Uswsusp")), en conjunción con el banckend por defecto del *kernel*, con el fin de poner el ordenador a dormir o hibernar. Véase [Uswsusp con systemd](/index.php/Uswsusp#With_systemd "Uswsusp") para obtener un ejemplo.
 
-The default *suspend* and *hibernation* action can be configured in the `/etc/systemd/sleep.conf` file. To set both actions to *hybrid-sleep*:
+#### Suspensión híbrida en suspensión o en hibernación
+
+Es posible configurar systemd para que siempre haga una *suspensión híbrida* cuando se realice una petición de *suspensión* o *hibernación*.
+
+La acción por defecto de *suspender* e *hibernar* se pueden configurar en el archivo `/etc/systemd/sleep.conf`. Para establecer ambas acciones a *suspensión híbrida*:
 
  `/etc/systemd/sleep.conf` 
 ```
@@ -192,13 +197,13 @@ HibernateMode=suspend
 HibernateState=disk
 ```
 
-See the [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) manual page for details and the [linux kernel documentation on power states](https://www.kernel.org/doc/html/latest/admin-guide/pm/sleep-states.html#basic-sysfs-interfaces-for-system-suspend-and-hibernation).
+Vea la página [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) del manual para más detalles y la [documentación de los estados de energía del kernel linux](https://www.kernel.org/doc/html/latest/admin-guide/pm/sleep-states.html#basic-sysfs-interfaces-for-system-suspend-and-hibernation).
 
 ### Sleep hooks
 
 #### Archivos de servicios para suspender/reanudar
 
-Los archivos de servicios pueden ser asociados a suspend.target, hibernate.target y sleep.target para ejecutar acciones antes o después de suspender/hibernar. Deben crearse archivos separados para las acciones del usuario y las acciones de root/sistema. Para activar los archivos de servicios del usuario, ejecute: `# systemctl enable suspend@<usuario> && systemctl enable resume@<usuario>`. Ejemplos:
+Los archivos de servicios pueden ser asociados a *suspend.target*, *hibernate.target*, *sleep.target*, *hybrid-sleep.target* y *suspend-then-hibernate.target* para ejecutar acciones antes o después de suspender/hibernar. Deben crearse archivos separados para las acciones del usuario y las acciones de root/sistema. [Active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") los servicios `suspend@*user*` y `resume@*user*` para que se inicien en el arranque. Ejemplos:
 
  `/etc/systemd/system/suspend@.service` 
 ```
@@ -232,7 +237,9 @@ ExecStart=/usr/bin/mysql -e 'slave start'
 WantedBy=suspend.target
 ```
 
-Para las acciones de root/sistema (se activa con `# systemctl enable root-suspend`):
+**Nota:** Los bloqueadores de pantalla puede que vuelvan antes de que la pantalla se halla "bloqueado" y puede retomar la suspensión. Añadir un pequeño tiempo via `ExecStartPost=/usr/bin/sleep 1` ayida a prevenir esto.
+
+Para las acciones de root/sistema ([active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `root-resume` y los servicios `root-suspend` para iniciarlos en el arranque):
 
  `/etc/systemd/system/root-suspend.service` 
 ```
@@ -263,13 +270,13 @@ WantedBy=sleep.target
 
 Unos consejos útiles acerca de estos archivos de servicio (más información en [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
-*   Si está presente `Type=OneShot`, entonces puede utilizar múltiples líneas `ExecStart=`. De lo contrario, solo está permitida una línea ExecStart. No obstante, puede agregar más órdenes con `ExecStartPre` o mediante la separación de las órdenes con un punto y coma (véase el primer ejemplo de arriba —fíjese en los espacios en blanco antes y después del punto y coma... ¡estos son necesarios!—).
+*   Si está presente `Type=OneShot`, entonces puede utilizar múltiples líneas `ExecStart=`. De lo contrario, solo está permitida una línea ExecStart. No obstante, puede agregar más órdenes con `ExecStartPre` o mediante la separación de las órdenes con un punto y coma (véase el primer ejemplo de arriba; fíjese en los espacios en blanco antes y después del punto y coma... ¡estos son necesarios!).
 *   Una orden con un prefijo `-` causará un código de salida distinto de cero que será ignorado y la orden será tratada como cumplida.
-*   El mejor método para encontrar errores a fin de solucionar problemas con estos archivos de servicios es, por supuesto, con `journalctl`.
+*   El mejor método para encontrar errores a fin de solucionar problemas con estos archivos de servicios es, por supuesto, con [journalctl](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)").
 
 #### Archivo de servicio combinando suspensión/reanudación
 
-Con el archivo de servicio que combina suspender/reanudar, un solo hook puede hacer todo el trabajo para las diferentes fases (sleep/resume) y para diferentes objetivos (suspend/hibernate/hybrid-sleep).
+Con el archivo de servicio que combina suspender/reanudar, un solo hook puede hacer todo el trabajo para las diferentes fases (dormir/continuar) y para diferentes objetivos (suspender/hibernar/suspensión híbrida).
 
 He aquí un ejemplo y su explicación:
 
@@ -290,27 +297,27 @@ ExecStop=-/usr/share/wicd/daemon/autoconnect.py
 WantedBy=sleep.target
 ```
 
-*   `RemainAfterExit=yes`: Después de iniciado, el servicio se mantiene siempre activo hasta que se detenga explícitamente.
-*   `StopWhenUnneeded=yes`: Cuando se activa, el servicio se detendrá después de que se detenga sleep.target.
-*   Debido a que sleep.target es apartado por suspend.target, hibernate.target y hybrid-sleep.target y sleep.target son en sí mismo un servicio StopWhenUnneeded, lo que nos garantiza que el hook iniciará/detendrá correctamente las diferentes tareas.
+*   `RemainAfterExit=yes`: Después de que se inicie el servicio se mantendrá siempre activo hasta que se detenga explícitamente.
+*   `StopWhenUnneeded=yes`: Cuando se active, el servicio se detendrá si ningún servicio activo lo requiere. En este caso el servicio se detendrá después de que se detenga *sleep.target*.
+*   Debido a que *sleep.target* es apartado por *suspend.target*, *hibernate.target* y *hybrid-sleep.target* y debido a que *sleep.target* es en sí mismo un servicio *StopWhenUnneeded* garantiza que el hook iniciará/detendrá correctamente las diferentes tareas.
 
 #### Hooks en /usr/lib/systemd/system-sleep
 
-**systemd** iniciará todos los archivos ejecutables ubicados en `/usr/lib/systemd/system-sleep/`, y pasará dos argumentos a cada uno de ellos:
+**Systemd** iniciará todos los archivos ejecutables ubicados en `/usr/lib/systemd/system-sleep/`, y pasará dos argumentos a cada uno de ellos:
 
 *   Argument 1: o bien `pre` o `post`, dependiendo de si la máquina se está durmiendo o despertando.
-*   Argument 2: `suspend`, `hibernate` o `hybrid-sleep`, ependiendo de lo que se ha invocado.
+*   Argument 2: `suspend`, `hibernate` o `hybrid-sleep`, dependiendo de lo que se ha invocado.
 
-systemd ejecutará estos scripts en paralelo y no uno tras el otro.
+*Systemd* ejecutará estos scripts en paralelo y no uno tras el otro.
 
-Las salidas de cualquier script personalizado se registrarán por `systemd-suspend.service`, `systemd-hibernate.service` o `systemd-hybrid-sleep.service`. Se pueden ver las salidas en el [journal](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)") de systemd:
-
-```
-# journalctl -b -u systemd-suspend
+Las salidas de cualquier script personalizado se registrarán por *systemd-suspend.service*, *systemd-hibernate.service* o *systemd-hybrid-sleep.service*. Se pueden ver las salidas en el [journal](/index.php/Systemd_(Espa%C3%B1ol)#Journal "Systemd (Español)") de systemd:
 
 ```
+# journalctl -b -u systemd-suspend.service
 
-**Nota:** Tenga en cuenta que también puede utilizar `sleep.target`, `suspend.target`, `hibernate.target` o `hybrid-sleep.target` para conectar la unidad al estado de suspensión, en lugar de utilizar scripts personalizados.
+```
+
+**Nota:** Tenga en cuenta que también puede utilizar *sleep.target*, *suspend.target*, *hibernate.target* o *hybrid-sleep.target* para conectar la unidad al estado de suspensión, en lugar de utilizar scripts personalizados.
 
 He aquí un ejemplo de script de sleep personalizado:
 
@@ -336,11 +343,11 @@ No debemos olvidarnos de hacer el script ejecutable:
 
 Véanse [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.special.7) y [systemd-sleep(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.8) para obtener más información.
 
-### Troubleshooting
+### Solución de problemas
 
-#### Delayed lid switch action
+#### Acción retardada del interruptor de la tapa
 
-When performing lid switches in short succession, *logind* will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
+Al hacer cambios en la tapa muy rápido, *logind* retarda la acción de suspender hasta 90s para detectar posibles muelles. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) Este retardo se hizo configurable en systemd v220: [[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
 
  `/etc/systemd/logind.conf` 
 ```
@@ -349,16 +356,16 @@ HoldoffTimeoutSec=30s
 ...
 ```
 
-#### Suspend from corresponding laptop Fn key not working
+#### La suspensión desde la tecla Fn correspondiente del portátil no funciona
 
-If, regardless of the setting in logind.conf, the sleep button does not work (pressing it does not even produce a message in syslog), then logind is probably not watching the keyboard device. [[3]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Do:
+Si, independientemente de la configuración de logind.conf, el botón dormir no funciona (presionándolo no produce ningún mensaje en syslog) logind probablemente no vea el dispositivo de teclado. [[3]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Realice:
 
 ```
 # journalctl --grep="Watching system buttons"
 
 ```
 
-You might see something like this:
+Debería ver algo como esto:
 
 ```
 May 25 21:28:19 vmarch.lan systemd-logind[210]: Watching system buttons on /dev/input/event2 (Power Button)
@@ -367,7 +374,7 @@ May 25 21:28:19 vmarch.lan systemd-logind[210]: Watching system buttons on /dev/
 
 ```
 
-Notice no keyboard device. Now obtain ATTRS{name} for the parent keyboard device [[4]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
+Note que no hay ningún dispositivo teclado. Ahora obtenga el nombre ATTRS del dispositivo de teclado [[4]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
 
  `# udevadm info -a /dev/input/by-path/*-kbd` 
 ```
@@ -377,7 +384,7 @@ KERNEL=="event0"
 ATTRS{name}=="AT Translated Set 2 keyboard"
 ```
 
-Now write a custom udev rule to add the "power-switch" tag:
+Ahora escriba una regla personalizada udev para añadir la etiqueta "power-switch":
 
  `/etc/udev/rules.d/70-power-switch-my.rules` 
 ```
@@ -387,7 +394,7 @@ LABEL="power_switch_my_end"
 
 ```
 
-Restart services and reload rules:
+Reinicie los servicios y recargue las reglas:
 
 ```
 # systemctl restart systemd-udevd.service
@@ -396,7 +403,7 @@ Restart services and reload rules:
 
 ```
 
-Now you should see `Watching system buttons on /dev/input/event0` in syslog.
+Ahora debe ver `Watching system buttons on /dev/input/event0` en syslog.
 
 ## Power saving
 

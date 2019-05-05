@@ -54,7 +54,7 @@ The Qt framework is the basis of the [KDE](/index.php/KDE "KDE") software commun
 Two versions of Qt are currently available in the [official repositories](/index.php/Official_repositories "Official repositories"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
 
 *   **Qt 5.x** is available in the [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) package, with documentation in the [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc) package.
-*   **Qt 4.x** is available in the [qt4](https://www.archlinux.org/packages/?name=qt4) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/) package.
+*   **Qt 4.x** is available in the [qt4](https://aur.archlinux.org/packages/qt4/) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/) package.
 *   **Qt 3.x** is available from the AUR in the [qt3](https://aur.archlinux.org/packages/qt3/) package, with documentation on AUR in the [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/) package.
 
 ## Default Qt toolkit
@@ -122,7 +122,7 @@ Qt4 application will try to mimic the behavior of the desktop environment they a
 *   In Cinnamon, GNOME, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Windows.
 
-For those who want to change the look and feel of Qt4 applications, the *Qt Configuration* (*qtconfig-qt4*) GUI tool is provided by the [qt4](https://www.archlinux.org/packages/?name=qt4) package. It offers a simple interface to configure the appearance of Qt4 applications including style, colors, fonts and some further options.
+For those who want to change the look and feel of Qt4 applications, the *Qt Configuration* (*qtconfig-qt4*) GUI tool is provided by the [qt4](https://aur.archlinux.org/packages/qt4/) package. It offers a simple interface to configure the appearance of Qt4 applications including style, colors, fonts and some further options.
 
 **Note:** If you use *GTK+* style, then color and font settings will be ignored, and inherited from GTK+ 2.
 
@@ -210,15 +210,15 @@ The following are official Qt tools:
 
 *   **Qt Linguist** — A set of tools that speed the translation and internationalization of Qt applications.
 
-	[https://doc.qt.io/qt-5/qtlinguist-index.html](https://doc.qt.io/qt-5/qtlinguist-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtlinguist-index.html](https://doc.qt.io/qt-5/qtlinguist-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **Qt Assistant** — A configurable and redistributable documentation reader for Qt *qch* files.
 
-	[https://doc.qt.io/qt-5/qtassistant-index.html](https://doc.qt.io/qt-5/qtassistant-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtassistant-index.html](https://doc.qt.io/qt-5/qtassistant-index.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **Qt Designer** — A powerful cross-platform GUI layout and forms builder for Qt widgets.
 
-	[https://doc.qt.io/qt-5/qtdesigner-manual.html](https://doc.qt.io/qt-5/qtdesigner-manual.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtdesigner-manual.html](https://doc.qt.io/qt-5/qtdesigner-manual.html) || Qt 5: [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **Qt Quick Designer** — A visual editor for QML files which supports WYSIWYG. It allows you to rapidly design and build Qt Quick applications and components from scratch.
 
@@ -226,23 +226,23 @@ The following are official Qt tools:
 
 *   **qmlscene** — A tool for loading QML documents that makes it easy to quickly develop and debug QML applications.
 
-	[https://doc.qt.io/qt-5/qtquick-qmlscene.html](https://doc.qt.io/qt-5/qtquick-qmlscene.html) || Qt 5: [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative), Qt 4 QML Viewer: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qtquick-qmlscene.html](https://doc.qt.io/qt-5/qtquick-qmlscene.html) || Qt 5: [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative), Qt 4 QML Viewer: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **[qmake](https://en.wikipedia.org/wiki/Qmake "wikipedia:Qmake")** — A tool that helps simplify the build process for development project across different platforms, similar to [cmake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake"), but with fewer options and tailored for Qt applications.
 
-	[https://doc.qt.io/qt-5/qmake-manual.html](https://doc.qt.io/qt-5/qmake-manual.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/qmake-manual.html](https://doc.qt.io/qt-5/qmake-manual.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **uic** — A tool that reads **.ui* XML files and generates the corresponding C++ files.
 
-	[https://doc.qt.io/qt-5/uic.html](https://doc.qt.io/qt-5/uic.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/uic.html](https://doc.qt.io/qt-5/uic.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **rcc** — A tool that is used to embed resources (such as pictures) into a Qt application during the build process. It works by generating a C++ source file containing data specified in a Qt resource (.qrc) file.
 
-	[https://doc.qt.io/qt-5/rcc.html](https://doc.qt.io/qt-5/rcc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/rcc.html](https://doc.qt.io/qt-5/rcc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 *   **moc** — A tool that handles Qt's C++ extensions (the signals and slots mechanism, the run-time type information, and the dynamic property system, etc.).
 
-	[https://doc.qt.io/qt-5/moc.html](https://doc.qt.io/qt-5/moc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://www.archlinux.org/packages/?name=qt4)
+	[https://doc.qt.io/qt-5/moc.html](https://doc.qt.io/qt-5/moc.html) || Qt 5: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), Qt 4: [qt4](https://aur.archlinux.org/packages/qt4/)
 
 ### Bindings
 
@@ -252,13 +252,9 @@ The following examples display a small 'Hello world!' message in a window.
 
 #### C++
 
-*   Package:
-    *   [qt4](https://www.archlinux.org/packages/?name=qt4) - Version 4.x of the Qt toolkit.
-    *   [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) - Version 5.x of the Qt toolkit.
+*   Package: [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)
 *   Website: [https://www.qt.io/developers/](https://www.qt.io/developers/)
-*   Build:
-    *   The Qt4 version: `g++ $(pkg-config --cflags --libs QtGui) -o hello hello.cpp`
-    *   The Qt5 version: `g++ $(pkg-config --cflags --libs Qt5Widgets) -fPIC -o hello hello.cpp`
+*   Build: `g++ $(pkg-config --cflags --libs Qt5Widgets) -fPIC -o hello hello.cpp`
 *   Run with: `./hello`
 
  `hello.cpp` 
@@ -279,7 +275,7 @@ int main(int argc, char **argv)
 
 #### QML
 
-*   Package: [qt4](https://www.archlinux.org/packages/?name=qt4) or [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative).
+*   Package: [qt5-declarative](https://www.archlinux.org/packages/?name=qt5-declarative).
 *   Website: [https://doc.qt.io/qt-5/qtquick-qmlscene.html](https://doc.qt.io/qt-5/qtquick-qmlscene.html)
 *   Run with: `qmlscene hello.qml`
 
@@ -303,13 +299,11 @@ Rectangle {
 
 ```
 
-**Note:** For version 4.x of the Qt toolkit, we need `import QtQuick 1.0` and run with `qmlviewer-qt4 hello.qml`.
-
 #### Python (PyQt)
 
 *   Package:
-    *   [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5) - Python 3.x bindings for Qt 5
-    *   [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) - Python 2.x bindings for Qt 5
+    *   [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5) - Python 3 bindings
+    *   [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) - Python 2 bindings
 
 *   Website: [https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro)
 *   Run with: `python hello-pyqt.py` or `python2 hello-pyqt.py`.
@@ -330,8 +324,8 @@ sys.exit(app.exec_())
 #### Python (PySide2)
 
 *   Package:
-    *   [pyside2](https://www.archlinux.org/packages/?name=pyside2) - Python 3.x bindings
-    *   [python2-pyside2](https://aur.archlinux.org/packages/python2-pyside2/) - Python 2.x bindings
+    *   [pyside2](https://www.archlinux.org/packages/?name=pyside2) - Python 3 bindings
+    *   [python2-pyside2](https://aur.archlinux.org/packages/python2-pyside2/) - Python 2 bindings
 *   Website: [https://wiki.qt.io/Qt_for_Python](https://wiki.qt.io/Qt_for_Python)
 *   Run with: `python hello-pyside.py` or `python2 hello-pyside.py`
 

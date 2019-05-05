@@ -5,7 +5,11 @@ Related articles
 
 Before encrypting a drive, it is recommended to perform a secure erase of the disk by overwriting the entire drive with random data. To prevent cryptographic attacks or unwanted [file recovery](/index.php/File_recovery "File recovery"), this data is ideally indistinguishable from data later written by dm-crypt. For a more comprehensive discussion see [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Secure erasure of the hard disk drive](#Secure_erasure_of_the_hard_disk_drive)
     *   [1.1 Generic methods](#Generic_methods)
@@ -17,7 +21,7 @@ Before encrypting a drive, it is recommended to perform a secure erase of the di
     *   [2.1 Physical partitions](#Physical_partitions)
     *   [2.2 Stacked block devices](#Stacked_block_devices)
     *   [2.3 Btrfs subvolumes](#Btrfs_subvolumes)
-    *   [2.4 Boot partition (GRUB)](#Boot_partition_.28GRUB.29)
+    *   [2.4 Boot partition (GRUB)](#Boot_partition_(GRUB))
 
 ## Secure erasure of the hard disk drive
 
@@ -130,7 +134,7 @@ When wiping the header with random data everything left on the device is encrypt
 
 This section only applies when encrypting an entire system. After the drive(s) has/have been securely overwritten, a proper partitioning scheme will have to be accurately chosen, taking into account the requirements of dm-crypt, and the effects that the various choices will have on the management of the resulting system.
 
-It is important to note from now that in [almost](#Boot_partition_.28GRUB.29) every case there has to be a separate partition for `/boot` that must remain unencrypted, because the bootloader needs to access the `/boot` directory where it will load the initramfs/encryption modules needed to load the rest of the system (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for details). If this raises security concerns, see [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+It is important to note from now that in [almost](#Boot_partition_(GRUB)) every case there has to be a separate partition for `/boot` that must remain unencrypted, because the bootloader needs to access the `/boot` directory where it will load the initramfs/encryption modules needed to load the rest of the system (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for details). If this raises security concerns, see [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
 Another important factor to take into account is how the swap area and system suspension will be handled, see [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
@@ -147,8 +151,8 @@ If more flexibility is needed, though, dm-crypt can coexist with other stacked b
 
 ### Btrfs subvolumes
 
-[Btrfs](/index.php/Btrfs "Btrfs")'s built-in [subvolumes feature](/index.php/Btrfs#Subvolumes "Btrfs") can be used with dm-crypt, fully replacing the need for LVM if no other file systems are required. However note that swap files are [not supported](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) by brtrfs, so an [encrypted swap](/index.php/Encrypted_swap "Encrypted swap") partition is necessary if [swap](/index.php/Swap "Swap") is desired. See also [Dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
+[Btrfs](/index.php/Btrfs "Btrfs")'s built-in [subvolumes feature](/index.php/Btrfs#Subvolumes "Btrfs") can be used with dm-crypt, fully replacing the need for LVM if no other file systems are required. However note that swap files were [not supported](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) by brtrfs before Linux 5.0, so an [encrypted swap](/index.php/Encrypted_swap "Encrypted swap") partition is necessary if [swap](/index.php/Swap "Swap") is desired on Linux <5.0 (e.g. [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). See also [Dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
 
 ### Boot partition (GRUB)
 
-See [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_.28GRUB.29 "Dm-crypt/Encrypting an entire system").
+See [dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system#Encrypted_boot_partition_(GRUB) "Dm-crypt/Encrypting an entire system").

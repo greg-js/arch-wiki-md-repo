@@ -157,7 +157,7 @@ Package temperature above threshold, cpu clock throttled (total events = 971)
 
 ```
 
-This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370 (and should work well with other Skylake or newer laptops).
+This can be resolved using [throttled](https://aur.archlinux.org/packages/throttled/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370 (and should work well with other Skylake or newer laptops).
 
 ## Thermal Modes / Fan profiles
 

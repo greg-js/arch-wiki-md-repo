@@ -50,29 +50,14 @@ $ vagrant plugin install vagrant-vbguest vagrant-share
 
 ### vagrant-libvirt
 
-This plugin adds a libvirt provider to Vagrant. The gcc and make packages must be installed before this plugin can be installed, and [libvirt](/index.php/Libvirt "Libvirt") and related packages (e.g. [QEMU](/index.php/QEMU "QEMU")) must be installed and configured before using the libvirt provider.
+This plugin adds a [libvirt](/index.php/Libvirt "Libvirt") provider to Vagrant. [libvirt](/index.php/Libvirt "Libvirt") and related packages (e.g. [QEMU](/index.php/QEMU "QEMU")) must be installed and configured before using the provider.
 
-As of July 2018 (Vagrant version 2.1.2-1), Vagrant plugin (also the pacman package `pkgconfig`) `pkg-config` needs to be installed before installing `vagrant-libvirt` plugin, otherwise plugin compilation fails.
-
-As of November 2017 (Vagrant version 2.0.1-1) the workarounds described below are not needed. Install the plugin normally with
+To install the plugin, make sure [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is installed and `libvirtd.service` has been [started](/index.php/Started "Started"). Then run
 
 ```
 $ vagrant plugin install vagrant-libvirt
 
 ```
-
-As of September 2016 (Vagrant version 1.8.5), a normal installation of this plugin fails on Arch Linux. The plugin can be successfully installed with this workaround:
-
-```
-$ CONFIGURE_ARGS='with-ldflags=-L/opt/vagrant/embedded/lib with-libvirt-include=/usr/include/libvirt with-libvirt-lib=/usr/lib' \
-  GEM_HOME=~/.vagrant.d/gems GEM_PATH=$GEM_HOME:/opt/vagrant/embedded/gems PATH=/opt/vagrant/embedded/bin:$PATH \
-  vagrant plugin install vagrant-libvirt
-
-```
-
-A normal `vagrant up` fails with `incompatible library version` due to [bug #541](https://github.com/vagrant-libvirt/vagrant-libvirt/issues/541). As a workaround, create and run [[1]](https://gist.github.com/j883376/d90933620c7ed14daa4e0963e005377f).
-
-As of June 2017 (Vagrant version 1.9.5-1), a normal installation of this plugin fails, and the workaround presented for version 1.8.5 doesn't work on Arch Linux. [error and workaround_for_version_1.9.5-1](https://gist.github.com/j883376/d90933620c7ed14daa4e0963e005377f#gistcomment-2115266) Downgrading vagrant-substrate fixes this issue.
 
 Once the plugin is installed the `libvirt` provider will be available:
 

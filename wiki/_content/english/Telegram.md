@@ -41,7 +41,6 @@ Third-party clients:
 *   [kepka-git](https://aur.archlinux.org/packages/kepka-git/)
 *   [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) (current maintenance status unknown)
 *   [telegreat-git](https://aur.archlinux.org/packages/telegreat-git/)
-*   [volt](https://aur.archlinux.org/packages/volt/), multi-protocol IM client that has Telegram support
 
 ### Command-line clients
 

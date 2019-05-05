@@ -1,6 +1,10 @@
 **xrdp** is a daemon that supports Microsoft's [Remote Desktop Protocol](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol "wikipedia:Remote Desktop Protocol") (RDP). It uses Xvnc, X11rdp or xorgxrdp as a backend.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Autoboot at startup](#Autoboot_at_startup)
@@ -40,7 +44,7 @@ You may need to install [xorg-xrdb](https://www.archlinux.org/packages/?name=xor
 
 ### Running with Vino (Gnome VNC-Server for root session)
 
-Enable the server to be seen via vino-preferences. Since vino defaults to port : 5900 for connections, we will edit the xrdp configuration file to understand this. Append the the vino session to xrdp's configuration file (/etc/xrdp/xrdp.ini) with the following code :
+Enable the server to be seen via vino-preferences. Since vino defaults to port : 5900 for connections, we will edit the xrdp configuration file to understand this. Append the vino session to xrdp's configuration file (/etc/xrdp/xrdp.ini) with the following code :
 
 ```
 # echo "

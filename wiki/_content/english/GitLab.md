@@ -573,14 +573,14 @@ rake setup                                    # GITLAB | Setup gitlab db
 Create a backup of the gitlab system:
 
 ```
-# sudo -u gitlab -H rake RAILS_ENV=production gitlab:backup:create
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake RAILS_ENV=production gitlab:backup:create"
 
 ```
 
-Restore the previously created backup file `/home/gitlab/gitlab/tmp/backups/20130125_11h35_1359131740_gitlab_backup.tar`:
+Restore the previously created backup file `/var/lib/gitlab/backups/1556571328_2019_04_29_11.10.2_gitlab_backup.tar`:
 
 ```
-# sudo -u gitlab -H rake RAILS_ENV=production gitlab:backup:restore BACKUP=/home/gitlab/gitlab/tmp/backups/20130125_11h35_1359131740
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle-2.5 exec rake RAILS_ENV=production gitlab:backup:restore BACKUP=1556571328_2019_04_29_11.10.2"
 
 ```
 

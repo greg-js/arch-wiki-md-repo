@@ -230,7 +230,7 @@ Then create the needed partitions, at least one for `/` (e.g. `/dev/sda2`) and `
 The following commands create and mount the encrypted root partition. They correspond to the procedure described in detail in [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system") (which, despite the title, *can* be applied to root partitions, as long as [mkinitcpio](#Configuring_mkinitcpio) and the [boot loader](#Configuring_the_boot_loader) are correctly configured). If you want to use particular non-default encryption options (e.g. cipher, key length), see the [encryption options](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption") before executing the first command:
 
 ```
-# cryptsetup -y -v luksFormat --type luks2 /dev/sda2
+# cryptsetup -y -v luksFormat /dev/sda2
 # cryptsetup open /dev/sda2 cryptroot
 # mkfs.ext4 /dev/mapper/cryptroot
 # mount /dev/mapper/cryptroot /mnt
@@ -348,7 +348,7 @@ Create a partition which will later contain the encrypted container.
 Create the LUKS encrypted container at the "system" partition. Enter the chosen password twice.
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/sda1
+# cryptsetup luksFormat /dev/sda1
 
 ```
 
@@ -522,7 +522,7 @@ Randomise `/dev/sda2` according to [dm-crypt/Drive preparation#dm-crypt wipe on 
 ```
 
 ```
-# cryptsetup luksFormat --type luks2 /dev/MyVolGroup/cryptroot
+# cryptsetup luksFormat /dev/MyVolGroup/cryptroot
 # cryptsetup open /dev/MyVolGroup/cryptroot root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
@@ -612,7 +612,7 @@ Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, ea
 The logical volume is encrypted with it:
 
 ```
-# cryptsetup luksFormat --type luks2 -v /dev/MyVolGroup/crypthome /etc/luks-keys/home
+# cryptsetup luksFormat -v /dev/MyVolGroup/crypthome /etc/luks-keys/home
 # cryptsetup -d /etc/luks-keys/home open /dev/MyVolGroup/crypthome home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
@@ -739,7 +739,7 @@ Set up encryption for `/dev/md/root`:
 And repeat for the HDD:
 
 ```
-# cryptsetup -y -v luksFormat --type luks2 /dev/sdc1
+# cryptsetup -y -v luksFormat /dev/sdc1
 # cryptsetup open /dev/sdc1 cryptdata
 # mkfs.ext4 /dev/mapper/cryptdata
 # mkdir /mnt/data

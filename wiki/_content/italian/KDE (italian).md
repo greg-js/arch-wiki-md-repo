@@ -14,7 +14,11 @@ Tratto da [KDE - KDE Software Compilation](http://www.kde.org/community/whatiskd
 
 Il progetto KDE fornisce a monte un ottimo [UserBase wiki](http://userbase.kde.org/Welcome_to_KDE_UserBase/it), dove gli utenti possono ottenere informazioni dettagliate sulla maggior parte delle applicazioni integrate in KDE.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Plasma Desktop](#Plasma_Desktop)
@@ -194,7 +198,7 @@ Installare Kmix ([kmix](https://www.archlinux.org/packages/?name=kmix)) dai repo
 
 ##### Aggiunta di un menu globale sul desktop
 
-Installare [appmenu-qt4](https://www.archlinux.org/packages/?name=appmenu-qt4) dai repository ufficiali e [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) e [appmenu-QT5](https://aur.archlinux.org/packages/appmenu-QT5/) da AUR al fine di completare i preliminari per avere sempre un menu globale stile Mac OS X. Per far in modo che Firefox e LibreOffice utilizzino il menu globale, installare [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) e [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) da AUR.
+Installare [appmenu-qt4](https://aur.archlinux.org/packages/appmenu-qt4/) dai repository ufficiali e [appmenu-gtk](https://aur.archlinux.org/packages/appmenu-gtk/) e [appmenu-QT5](https://aur.archlinux.org/packages/appmenu-QT5/) da AUR al fine di completare i preliminari per avere sempre un menu globale stile Mac OS X. Per far in modo che Firefox e LibreOffice utilizzino il menu globale, installare [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) e [libreoffice-extension-menubar](https://aur.archlinux.org/packages/libreoffice-extension-menubar/) da AUR.
 
 **Attenzione:** [firefox-extension-globalmenu](https://aur.archlinux.org/packages/firefox-extension-globalmenu/) è stato deprecato a partire da Firefox 25 e non c'è altro metodo consigliato per ottenere il menu globale. Tuttavia, vi è un pacchetto di patch, [firefox-ubuntu](https://aur.archlinux.org/packages/firefox-ubuntu/). Disponibile su AUR che ha la patch di Canonical per ottenere il menu globale di lavorare con la versione attuale di Firefox (al momento della scrittura)
 

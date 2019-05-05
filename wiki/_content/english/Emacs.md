@@ -41,10 +41,6 @@
     *   [7.11 Shift + Arrow keys not working in emacs within tmux](#Shift_+_Arrow_keys_not_working_in_emacs_within_tmux)
     *   [7.12 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
 *   [8 Alternatives](#Alternatives)
-    *   [8.1 mg](#mg)
-    *   [8.2 zile](#zile)
-    *   [8.3 uemacs](#uemacs)
-    *   [8.4 remacs](#remacs)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -706,31 +702,21 @@ To force Emacs to maximize completely in KDE, click the Emacs icon in the title 
 
 There are numerous "smaller" implementations of Emacs. GNU/Emacs is probably the most popular. Some lightweight Emacs compatible alternatives will be listed here:
 
-### mg
+*   **mg** — Lightweight implementation of Emacs written in C. Note that it does not support UTF-8.
 
-**mg** (originally called MicroGnuEmacs) is a lightweight implementation of Emacs written in C.
+	[http://homepage.boetes.org/software/mg/](http://homepage.boetes.org/software/mg/) || [mg](https://www.archlinux.org/packages/?name=mg)
 
-[mg](https://www.archlinux.org/packages/?name=mg) is available in the [official repositories](/index.php/Official_repositories "Official repositories") and it is also possible to download its source from its upstream [page](http://homepage.boetes.org/software/mg/). Beware **mg** has no UTF-8 support.
+*   **Zile** — "Zile Is Lossy Emacs", a lightweight clone written to be as similar as possible to Emacs. Zile has no UTF-8 support.
 
-### zile
+	[https://www.gnu.org/software/zile/](https://www.gnu.org/software/zile/) || [zile](https://www.archlinux.org/packages/?name=zile)
 
-According to the official web [page](https://www.gnu.org/software/zile/) "GNU Zile is a lightweight Emacs clone. **Zile** is short for "Zile Is Lossy Emacs". Zile has been written to be as similar as possible to Emacs; every Emacs user should feel at home.". Zile has no UTF-8 support.
+*   **uemacs** — A "Micro-emacs" version customized by Linus Torvalds.
 
-[zile](https://www.archlinux.org/packages/?name=zile) can be found in the official repositories.
+	[https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git](https://git.kernel.org/pub/scm/editors/uemacs/uemacs.git) || [uemacs-git](https://aur.archlinux.org/packages/uemacs-git/)
 
-The latest upstream tarballs can be found in official GNU [mirrors](http://ftp.sh.cvut.cz/MIRRORS/gnu/pub/gnu/zile/).
+*   **remacs** — Community-driven port of Emacs to Rust.
 
-### uemacs
-
-**uemacs** is a "Micro-emacs" version customized by Linus Torvalds . Available as [uemacs-git](https://aur.archlinux.org/packages/uemacs-git/) in the [AUR](/index.php/AUR "AUR").
-
-The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/).
-
-### remacs
-
-**remacs** is a community-driven port of Emacs to Rust.
-
-[remacs](https://www.archlinux.org/packages/?name=remacs) is available in the [official repositories](/index.php/Official_repositories "Official repositories"). For development version try [remacs-git](https://aur.archlinux.org/packages/remacs-git/) in the [AUR](/index.php/AUR "AUR").
+	[https://github.com/remacs/remacs](https://github.com/remacs/remacs) || [remacs](https://www.archlinux.org/packages/?name=remacs)
 
 ## See also
 

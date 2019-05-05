@@ -85,7 +85,7 @@ Por favor, especifique o tipo de compilação; Isso torna realmente simples reco
 
 ### KDE4
 
-Em sistemas onde ambos [qt4](https://www.archlinux.org/packages/?name=qt4) e [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) estão instalados, o *qmake* refere-se à versão 5.x, então force o *cmake* a usar o Qt4 desta maneira:
+Em sistemas onde ambos [qt4](https://aur.archlinux.org/packages/qt4/) e [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) estão instalados, o *qmake* refere-se à versão 5.x, então force o *cmake* a usar o Qt4 desta maneira:
 
 ```
  export QT_SELECT=4
@@ -152,4 +152,4 @@ Os pacotes de temas de plasma devem ser nomeados `plasma5-themes-*nome_do_tema*`
 
 Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman"). Evite usar comando de instalação para esses tipos de arquivos em arquivos `.install`, pois resultaria em desnecessária execução duplicada.
 
-O pacote [qt4](https://www.archlinux.org/packages/?name=qt4) já depende de [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) e [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), então se seu pacote depender do [qt4](https://www.archlinux.org/packages/?name=qt4), nenhuma outra ação deve ser necessária (isto é, desnecessário adicionar esses pacotes ao vetor de `depends`).
+O pacote [qt4](https://aur.archlinux.org/packages/qt4/) já depende de [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) e [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), então se seu pacote depender do [qt4](https://aur.archlinux.org/packages/qt4/), nenhuma outra ação deve ser necessária (isto é, desnecessário adicionar esses pacotes ao vetor de `depends`).

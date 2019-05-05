@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"). Data da última tradução: 2019-04-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=572120) na versão em inglês.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents

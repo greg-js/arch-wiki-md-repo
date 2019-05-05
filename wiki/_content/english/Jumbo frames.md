@@ -13,7 +13,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Jumbo_frame "wikipedia:Jumbo fram
 
 Using a larger MTU value (jumbo frames) can significantly speed up your network transfers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Notes on jumbo frames](#Notes_on_jumbo_frames)
     *   [1.1 Some drivers will prevent lower C-states](#Some_drivers_will_prevent_lower_C-states)
@@ -23,7 +27,6 @@ Using a larger MTU value (jumbo frames) can significantly speed up your network 
     *   [3.2 Netctl](#Netctl)
 *   [4 Examples](#Examples)
     *   [4.1 Example LAN Architecture using Jumbo Frames](#Example_LAN_Architecture_using_Jumbo_Frames)
-*   [5 See also](#See_also)
 
 ## Notes on jumbo frames
 
@@ -160,7 +163,3 @@ PC3 (JF Enabled)
 In the above example, all the PCs have NICs set to use JFs and are all connected to a Gigabit Ethernet switch that can also use JFs. The switch is in turn connected via the uplink port to a router that **cannot** use jumbo frames which is in turn connected to a cable modem which also **cannot** use jumbo frames.
 
 Contrary to what some web sites state, this setup works 100% fine. Transfers inside the JF portion on the network (i.e. behind the switch) are very fast. Transfers to the WAN (the Internet) from PCs behind the switch are just as fast as a PC without JFs enabled connected either directly to the cable modem, or to the router.
-
-## See also
-
-*   [Gigabit Ethernet Jumbo Frames - And why you should care](http://sd.wareonearth.com/~phil/jumbo.html)

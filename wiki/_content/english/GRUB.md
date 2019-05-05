@@ -137,7 +137,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 
 **Note:**
 
-*   UEFI firmwares are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the turnarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
+*   UEFI firmwares are not implemented consistently across manufacturers. The procedure described below is intended to work on a wide range of UEFI systems but those experiencing problems despite applying this method are encouraged to share detailed information, and if possible the workarounds found, for their hardware-specific case. A [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") article has been provided for such cases.
 *   The section assumes you are installing GRUB for x86_64 systems. For IA32 (32-bit) UEFI systems (not to be confused with 32-bit CPUs), replace `x86_64-efi` with `i386-efi` where appropriate.
 
 First, [install](/index.php/Install "Install") the packages [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr): *GRUB* is the bootloader while *efibootmgr* is used by the GRUB installation script to write boot entries to NVRAM.
@@ -768,7 +768,7 @@ This error may occur when you try installing GRUB in a VMware container. Read mo
 
 #### Common installation errors
 
-*   If you have a problem when running *grub-install* with *sysfs* or *procfs* and it says you must run `modprobe efivars`, try [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
+*   If you have a problem when running *grub-install* with *sysfs* or *procfs* and it says you must run `modprobe efivarfs`, try [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
 *   Without `--target` or `--directory` option, grub-install cannot determine for which firmware to install. In such cases `grub-install` will print `source_dir does not exist. Please specify --target or --directory`.
 *   If after running grub-install you are told your partition does not look like an EFI partition then the partition is most likely not `Fat32`.
 

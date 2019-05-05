@@ -33,7 +33,8 @@
     *   [6.2 Consistent naming of Arduino devices](#Consistent_naming_of_Arduino_devices)
     *   [6.3 Error opening serial port](#Error_opening_serial_port)
     *   [6.4 Working with Uno/Mega2560](#Working_with_Uno/Mega2560)
-    *   [6.5 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM,_menus_immediately_closing)
+    *   [6.5 Not recognizing USB port with Mega2560 cheap Chinese clones](#Not_recognizing_USB_port_with_Mega2560_cheap_Chinese_clones)
+    *   [6.6 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM,_menus_immediately_closing)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -66,7 +67,7 @@ You might need to install [perl-archive-zip](https://www.archlinux.org/packages/
 
 ### Accessing serial
 
-The arduino board communicates with the computer via a serial connection or a serial-over-USB connection, so the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files such as `/dev/ttyUSB0` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. Also, if you are planning to use the default Java IDE, add your user to the lock group for `/var/lock/lockdev` access. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for details.
+The arduino board communicates with the computer via a serial connection or a serial-over-USB connection, so the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files such as `/dev/ttyUSB0` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. Also, if you are planning to use the default Java IDE, add your user to the `lock` group for `/var/lock/lockdev` access. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for details.
 
 Before uploading to the Arduino, be sure to set the correct serial port, board, and processor from the Tools menu.
 
@@ -302,6 +303,10 @@ The 8U2 firmware may need an update to ease serial communications. See [[1]](htt
 
 You can perform a general function test of the Uno by putting it in loopback mode and typing characters into the arduino serial monitor at 115200 baud. It should echo the characters back to you. To put it in loopback, short pins 0 -> 1 on the digital side and either hold the reset button or short the GND -> RESET pins while you type.
 
+### Not recognizing USB port with Mega2560 cheap Chinese clones
+
+Try installing its driver: [i2c-ch341-dkms](https://aur.archlinux.org/packages/i2c-ch341-dkms/).
+
 ### Application not resizing with WM, menus immediately closing
 
 see [Java#Applications not resizing with WM, menus immediately closing](/index.php/Java#Applications_not_resizing_with_WM,_menus_immediately_closing "Java")
@@ -312,3 +317,4 @@ see [Java#Applications not resizing with WM, menus immediately closing](/index.p
 *   [https://bbs.archlinux.org/viewtopic.php?pid=295312](https://bbs.archlinux.org/viewtopic.php?pid=295312)
 *   [https://bbs.archlinux.org/viewtopic.php?pid=981348](https://bbs.archlinux.org/viewtopic.php?pid=981348)
 *   [http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/](http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/)
+*   [https://www.reddit.com/r/archlinux/comments/8j53dq/how_do_i_install_ch340_chip_drivers_on_arch/](https://www.reddit.com/r/archlinux/comments/8j53dq/how_do_i_install_ch340_chip_drivers_on_arch/)

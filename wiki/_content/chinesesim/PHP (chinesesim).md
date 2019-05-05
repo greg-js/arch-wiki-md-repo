@@ -108,7 +108,7 @@ $ pacman -Ss php-
 
 **Tip:** 不要编辑`/etc/php/php.ini`，扩展的启停可在 `/etc/php/conf.d` 中设置，如： (e.g. `/etc/php/conf.d/gd.ini`)
 
-要安装 PHP 的扩展，可以在 AUR 中搜索 php-* 或 php56-*, 例如 [php-imagick](https://aur.archlinux.org/packages/php-imagick/), [php-redis](https://aur.archlinux.org/packages/php-redis/) [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)。
+要安装 PHP 的扩展，可以在 AUR 中搜索 php-* 或 php56-*, 例如 [php-imagick](https://www.archlinux.org/packages/?name=php-imagick), [php-redis](https://aur.archlinux.org/packages/php-redis/) [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)。
 
 ### gd
 

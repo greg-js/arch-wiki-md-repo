@@ -2,7 +2,11 @@
 
 AIDE only does file integrity checks. It does not check for rootkits or parse logfiles for suspicious activity, like some other [HIDS](/index.php/List_of_applications/Security#Threat_and_vulnerability_detection "List of applications/Security") (such as OSSEC) do. For these features, you can use an additional HIDS ([see here](http://www.la-samhna.de/library/scanners.html) for a possibly biased comparison), or use standalone rootkit scanners (rkhunter, chkrootkit) and log monitoring solutions ([logwatch](/index.php/Logwatch "Logwatch"), logcheck).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -13,11 +17,11 @@ AIDE only does file integrity checks. It does not check for rootkits or parse lo
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [aide](https://www.archlinux.org/packages/?name=aide) package.
+You can [install](/index.php/Install "Install") the [aide](https://www.archlinux.org/packages/?name=aide) package, or you can instead install [aide-selinux](https://aur.archlinux.org/packages/aide-selinux/) if you want to use it in a system with [SELinux](/index.php/SELinux "SELinux") and [Audit_framework](/index.php/Audit_framework "Audit framework") enabled.
 
 ## Configuration
 
-The default config file at `/etc/aide.conf` has pretty sane defaults and is heavily commented. If you want to change the rules, see `man aide.conf` and the [AIDE Manual](http://aide.sourceforge.net/stable/manual.html) for documentation.
+The default config file at `/etc/aide.conf` has pretty sane defaults and is heavily commented. If you want to change the rules, see `man aide.conf` and the [AIDE Manual](https://aide.github.io/doc/) for documentation.
 
 ## Usage
 

@@ -215,13 +215,12 @@ Before=sleep.target
 User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop
+ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop
 ExecStart=/usr/bin/sflock
 ExecStartPost=/usr/bin/sleep 1
 
 [Install]
 WantedBy=sleep.target
-
 ```
  `/etc/systemd/system/resume@.service` 
 ```
@@ -236,7 +235,6 @@ ExecStart=/usr/local/bin/ssh-connect.sh
 
 [Install]
 WantedBy=suspend.target
-
 ```
 
 **Note:** As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep 1` helps prevent this.
@@ -255,7 +253,6 @@ ExecStart=-/usr/bin/pkill sshfs
 
 [Install]
 WantedBy=sleep.target
-
 ```
  `/etc/systemd/system/root-resume.service` 
 ```
@@ -269,10 +266,9 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 
 [Install]
 WantedBy=suspend.target
-
 ```
 
-A couple of handy hints about these service files (more in [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
+**Tip:** A couple of handy hints about these service files (more in [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   If `Type=oneshot` then you can use multiple `ExecStart=` lines. Otherwise only one `ExecStart` line is allowed. You can add more commands with either `ExecStartPre` or by separating commands with a semicolon (see the first example above; note the spaces before and after the semicolon, as they are *required*).
 *   A command prefixed with `-` will cause a non-zero exit status to be ignored and treated as a successful command.
@@ -315,7 +311,7 @@ WantedBy=sleep.target
 
 *systemd* will run these scripts concurrently and not one after another.
 
-The output of any custom script will be logged by *systemd-suspend.service*, *systemd-hibernate.service* or *systemd-hybrid-sleep.service*. You can see its output in *systemd*'s [journal](/index.php/Systemd#Journal "Systemd"):
+The output of any custom script will be logged by *systemd-suspend.service*, *systemd-hibernate.service* or *systemd-hybrid-sleep.service*. You can see its output in *systemd*'s [journalctl](/index.php/Journalctl "Journalctl"):
 
 ```
 # journalctl -b -u systemd-suspend.service

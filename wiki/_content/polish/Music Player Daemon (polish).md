@@ -363,7 +363,7 @@ Do obsługi MPD potrzebny jest oddzielny klient. Zobacz listę klientów na [mpd
 
 *   **QmpdClient** — Klient napisany przy użyciu Qt 4.x
 
-	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
+	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://aur.archlinux.org/packages/qmpdclient/)
 
 *   **Sonata** — Elegancki program napisany w Python i GTK+
 

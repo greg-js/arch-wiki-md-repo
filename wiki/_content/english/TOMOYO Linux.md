@@ -6,7 +6,11 @@ The security goal of TOMOYO Linux is to provide "MAC that covers practical requi
 
 **Tip:** The [TOMOYO Linux 2.x](#TOMOYO_Linux_2.x) will eventually come closer to reaching feature parity with the 1.x branch, but for those wanting an easy start the 2.x branch is easy to install. The [TOMOYO Linux 1.x](#TOMOYO_Linux_1.x) branch is for those wanting the greatest security, while [AKARI](#AKARI) is somewhere in between.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Branches of development](#Branches_of_development)
@@ -73,7 +77,7 @@ The policy files are saved in the `/etc/css/` directory and can be edited by run
 
 ### Limitations of AKARI
 
-AKARI has the advantage of not requiring kernel recompilation. If using the TOMOYO Linux project purely for system analysis, then AKARI is the easiest method of achieving this. If using the TOMOYO Linux project for system restriction, it is a minimal effort way to gain most of the functionality of the TOMOYO Linux 1.x branch. However, there are a few limitations that must be considered:
+If using the TOMOYO Linux project purely for system analysis, then AKARI is the easiest method of achieving this. If using the TOMOYO Linux project for system restriction, it is a minimal effort way to gain most of the functionality of the TOMOYO Linux 1.x branch. However, there are a few limitations that must be considered:
 
 *   It depends on the kernel version and configuration provided by the distribution:
 
@@ -92,8 +96,6 @@ CONFIG_SECURITY_NETWORK=y [optional: for providing network restriction]
 *   Looking up per-task variables is slower as they are managed outside "struct task_struct" in order to keep KABI unchanged. However, this should not be noticeable for the typical end-user as performance decrease by pathname based permission checking is dominant
 
 This [table](http://akari.sourceforge.jp/comparison.html) provides a comprehensive comparison of AKARI with the TOMOYO Linux 1.x and 2.x branches.
-
-**Note:** The Arch Linux kernel from 2.6.36 onwards provides all of the configuration options required for full functionality.
 
 ### Installation
 
@@ -133,22 +135,9 @@ The implementation of TOMOYO Linux 2.x into the Linux mainline kernel is not yet
 
 ### Installation
 
-TOMOYO Linux 2.x is part of the Linux mainline kernel and requires the following kernel configuration:
+**Note:** TOMOYO support in the official [linux](https://www.archlinux.org/packages/?name=linux) package has been reintroduced as of version 5.0.7-arch1
 
-```
-CONFIG_SECURITY=y
-CONFIG_SECURITYFS=y
-CONFIG_SECURITY_NETWORK=y [disabled in the Arch Linux kernel]
-CONFIG_SECURITY_PATH=y
-CONFIG_SECURITY_TOMOYO=y [disabled in the Arch Linux kernel]
-
-```
-
-**Note:** [FS#42910](https://bugs.archlinux.org/task/42910) has been opened requesting that TOMOYO be enabled in the [linux](https://www.archlinux.org/packages/?name=linux) package again, and the [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package would follow that lead.
-
-If the kernel supports TOMOYO Linux 2.x, then only the userspace tools (from AUR [tomoyo-tools](https://aur.archlinux.org/packages/tomoyo-tools/)) need to be installed.
-
-For kernel versions between 2.6.30 and 2.6.35, tomoyo-tools 2.2.x should be installed. A package is available on the [AUR](https://aur.archlinux.org/packages.php?ID=42272)
+TOMOYO requires the userspace tools (from AUR [tomoyo-tools](https://aur.archlinux.org/packages/tomoyo-tools/)) be installed.
 
 ### Activation
 

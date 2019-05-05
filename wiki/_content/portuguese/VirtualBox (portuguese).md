@@ -1,6 +1,10 @@
 [VirtualBox](http://www.virtualbox.org) é um poderoso emulador de PC virtual x86 e AMD64/Intel64 assim como [VMware](/index.php/VMware "VMware"). É ativamente desenvolvido com lançamentos frequentes e tem uma lista sempre crescente de funcionalidades, sistemas operacionais convidados e plataformas onde pode ser executado.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
     *   [1.1 Extension Pack](#Extension_Pack)
@@ -27,7 +31,7 @@
 
 ## Instalação
 
-O VirtualBox, lincenciado sob GPL, pode ser [instalado](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") com o pacote [virtualbox](https://www.archlinux.org/packages/?name=virtualbox), encontrado nos [repositórios oficiais](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)"). O pacote [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules), que contém os módulos pré-compilados para o kernel Arch Linux estoque, deve ser instalado com ele. Se você estiver usando kernel [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) deve também instalar [virtualbox-host-modules-lts](https://aur.archlinux.org/packages/virtualbox-host-modules-lts/). Para utilizar a interface gráfica, baseada em [Qt](/index.php/Qt "Qt"), você também precisará instalar o pacote [qt4](https://www.archlinux.org/packages/?name=qt4).
+O VirtualBox, lincenciado sob GPL, pode ser [instalado](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") com o pacote [virtualbox](https://www.archlinux.org/packages/?name=virtualbox), encontrado nos [repositórios oficiais](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)"). O pacote [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules), que contém os módulos pré-compilados para o kernel Arch Linux estoque, deve ser instalado com ele. Se você estiver usando kernel [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) deve também instalar [virtualbox-host-modules-lts](https://aur.archlinux.org/packages/virtualbox-host-modules-lts/). Para utilizar a interface gráfica, baseada em [Qt](/index.php/Qt "Qt"), você também precisará instalar o pacote [qt4](https://aur.archlinux.org/packages/qt4/).
 
 ```
 # pacman -S virtualbox

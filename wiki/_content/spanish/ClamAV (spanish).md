@@ -1,16 +1,20 @@
 [Clam AntiVirus](http://www.clamav.net) es una suite de antivirus de código abierto (GPL) para UNIX. Proporciona una serie de utilidades que incluyen un demonio multiproceso flexible y escalable, un escáner de línea de comandos y una herramienta avanzada para la actualización automática de las bases de las definiciones de virus. Dado que ClamAV viene usado principalmente en servidores de archivos/correos para escritorios Windows, el mismo detecta, sobretodo, virus y malware de Windows.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Configuración](#Configuraci.C3.B3n)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalación](#Instalación)
+*   [2 Configuración](#Configuración)
 *   [3 Iniciar el demonio](#Iniciar_el_demonio)
 *   [4 Actualizar las bases de datos](#Actualizar_las_bases_de_datos)
 *   [5 Escanear en busca de virus](#Escanear_en_busca_de_virus)
-*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+*   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 Error: Clamd was NOT notified](#Error:_Clamd_was_NOT_notified)
     *   [6.2 Error: No supported database files found](#Error:_No_supported_database_files_found)
-    *   [6.3 Error: Can't create temporary directory](#Error:_Can.27t_create_temporary_directory)
+    *   [6.3 Error: Can't create temporary directory](#Error:_Can't_create_temporary_directory)
 
 ## Instalación
 
@@ -24,7 +28,7 @@ Ya sea que vaya a utilizar clamav como un demonio o como un simple analizador de
 
 ## Iniciar el demonio
 
-El servicio se llama `clamd.service`. Léase [Daemons](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") para más información sobre cómo iniciarlo y cómo activarlo en el arranque.
+El servicio se llama `clamav-daemon.service`. Léase [Daemons](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") para más información sobre cómo iniciarlo y cómo activarlo en el arranque.
 
 Cambie también las opciones de inicio de `no` a `yes`:
 
@@ -61,6 +65,8 @@ Los archivos de las bases de datos se guardan en:
 /var/lib/clamav/main.cvd
 
 ```
+
+Puede iniciar/habilitar el demonio `clamav-freshclam.service` para mantener las bases de datos actualizadas.
 
 ## Escanear en busca de virus
 
