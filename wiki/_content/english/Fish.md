@@ -228,7 +228,7 @@ end
 
 ```
 
-More explanations about the parameters can be found in the [fish-shell git](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_git_prompt.fish). Alternatively, the [Informative Git Prompt](http://mariuszs.github.io/blog/2013/informative_git_prompt.html) has now been built into fish and can be activated from fish_config if so desired.
+However, this is now deprecated, see [fish-shell git](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_git_prompt.fish). Alternatively, the [Informative Git Prompt](http://mariuszs.github.io/blog/2013/informative_git_prompt.html) has now been built into fish and can be activated from fish_config if so desired.
 
 ### Color the hostname in the prompt in SSH
 

@@ -12,7 +12,11 @@ From [Ceph.com](https://ceph.com/):
 
 The official documentation [states](http://ceph.com/docs/master/install/#deploy-a-cluster-manually) "the manual procedure is primarily for exemplary purposes for those developing deployment scripts with Chef, Juju, Puppet, etc.".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Terminology](#Terminology)
 *   [2 Installation](#Installation)
@@ -53,7 +57,7 @@ Before a storage cluster can operate, the monitors for that cluster must be boot
 
 The upstream Ceph documentation is well-written and kept updated with the latest releases.
 
-To boostrap a storage cluster, follow the steps documented in the [official manual deployment guide](http://ceph.com/docs/master/install/manual-deployment/#monitor-bootstrapping).
+To boostrap a storage cluster, follow the steps documented in the [official manual deployment guide](http://docs.ceph.com/docs/master/install/manual-deployment/#monitor-bootstrapping).
 
 ### Starting a monitor
 

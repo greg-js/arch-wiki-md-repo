@@ -186,7 +186,7 @@ You can find a detailed list of all available modules at [Pulseaudio Loadable Mo
 
 ### Configuration files
 
-PulseAudio will first look for configuration files in the home directory `~/.config/pulse`, then system-wide `/etc/pulse`.
+PulseAudio will first look for configuration files in the home directory `~/.config/pulse`, and if they are not found, the system-wide configuration from `/etc/pulse` will be applied.
 
 **Tip:**
 

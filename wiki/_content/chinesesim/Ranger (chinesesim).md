@@ -5,32 +5,36 @@ Related articles
 
 **翻译状态：** 本文是英文页面 [Ranger](/index.php/Ranger "Ranger") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-24，点击[这里](https://wiki.archlinux.org/index.php?title=Ranger&diff=0&oldid=494276)可以查看翻译后英文页面的改动。
 
-[ranger](http://ranger.nongnu.org/) 是一个基于文本的文件管理器，以 Python 编写。不同层级的目录分别在一个面板的三列中进行展示. 可以通过快捷键, 书签, 鼠标以及历史命令在它们之间移动. 当选中文件或目录时, 会自动显示文件或目录的内容.
+[ranger](https://ranger.github.io/) 是一个基于文本的文件管理器，以 Python 编写。不同层级的目录分别在一个面板的三列中进行展示. 可以通过快捷键, 书签, 鼠标以及历史命令在它们之间移动. 当选中文件或目录时, 会自动显示文件或目录的内容.
 
 主要特性有: vi 风格的快捷键, 书签, 选择, 标签, 选项卡, 命令历史, 创建符号链接的能力, 多种终端模式, 以及任务视图. ranger 可以定制命令和快捷键，包括绑定到外部脚本。最接近的竞争者是 [Vifm](/index.php/Vifm "Vifm")， 它有 2 个面板以及 vi 风格的快捷键，但是总体特性相对较少。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 用法](#.E7.94.A8.E6.B3.95)
-*   [3 定制](#.E5.AE.9A.E5.88.B6)
-    *   [3.1 命令定义](#.E5.91.BD.E4.BB.A4.E5.AE.9A.E4.B9.89)
-    *   [3.2 配色方案](#.E9.85.8D.E8.89.B2.E6.96.B9.E6.A1.88)
-    *   [3.3 文件关联](#.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 存档相关](#.E5.AD.98.E6.A1.A3.E7.9B.B8.E5.85.B3)
-        *   [4.1.1 解压缩](#.E8.A7.A3.E5.8E.8B.E7.BC.A9)
-        *   [4.1.2 压缩](#.E5.8E.8B.E7.BC.A9)
-    *   [4.2 外部驱动](#.E5.A4.96.E9.83.A8.E9.A9.B1.E5.8A.A8)
-    *   [4.3 镜像挂载](#.E9.95.9C.E5.83.8F.E6.8C.82.E8.BD.BD)
-    *   [4.4 在当前目录打开新标签](#.E5.9C.A8.E5.BD.93.E5.89.8D.E7.9B.AE.E5.BD.95.E6.89.93.E5.BC.80.E6.96.B0.E6.A0.87.E7.AD.BE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 用法](#用法)
+*   [3 定制](#定制)
+    *   [3.1 命令定义](#命令定义)
+    *   [3.2 配色方案](#配色方案)
+    *   [3.3 文件关联](#文件关联)
+*   [4 提示与技巧](#提示与技巧)
+    *   [4.1 存档相关](#存档相关)
+        *   [4.1.1 解压缩](#解压缩)
+        *   [4.1.2 压缩](#压缩)
+    *   [4.2 外部驱动](#外部驱动)
+    *   [4.3 镜像挂载](#镜像挂载)
+    *   [4.4 在当前目录打开新标签](#在当前目录打开新标签)
     *   [4.5 Shell tips](#Shell_tips)
-        *   [4.5.1 目录同步](#.E7.9B.AE.E5.BD.95.E5.90.8C.E6.AD.A5)
+        *   [4.5.1 目录同步](#目录同步)
         *   [4.5.2 Start a shell from ranger](#Start_a_shell_from_ranger)
-        *   [4.5.3 避免在 ranger 启动的 shell 内创建新的 ranger](#.E9.81.BF.E5.85.8D.E5.9C.A8_ranger_.E5.90.AF.E5.8A.A8.E7.9A.84_shell_.E5.86.85.E5.88.9B.E5.BB.BA.E6.96.B0.E7.9A.84_ranger)
+        *   [4.5.3 避免在 ranger 启动的 shell 内创建新的 ranger](#避免在_ranger_启动的_shell_内创建新的_ranger)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
-*   [6 参见](#.E5.8F.82.E8.A7.81)
+*   [6 参见](#参见)
 
 ## 安装
 
@@ -67,7 +71,7 @@ from ranger.api.commands import *
 如果想添加一个把文件移动到目录 `~/.Trash/` 的快捷键 `DD`, 把以下这一行添加到 `~/.config/ranger/rc.conf`:
 
 ```
-map DD shell mv -t /home/${USER}/.Trash %s
+map DD shell mv -t /home/${USER}/.Trash %s
 
 ```
 
@@ -359,7 +363,7 @@ Now you can change your shell binding for ranger:
 
  `rc.conf` 
 ```
-map S shell shellcd %d
+map S shell shellcd %d
 
 ```
 

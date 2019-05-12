@@ -63,7 +63,7 @@ $ export PATH="/usr/lib/ccache/bin/:$PATH"
 
 ```
 
-You may want to set this line as [environment variable](/index.php/Environment_variable "Environment variable") for regular usage.
+You may want to set this line as an [environment variable](/index.php/Environment_variable "Environment variable") for regular usage.
 
 **Note:** Such export will inevitably enable *ccache* for *makepkg* as well if invoked with this PATH.
 

@@ -8,7 +8,7 @@ Makale kategorilerini listelemek için [İçindekiler](/index.php/Table_of_conte
 
 	Bir Arch Linux sisteminden beklenecekleri açıklayan Arch Linux incelemesi
 
-	[Sık sorulan sorular](/index.php/Frequently_asked_questions "Frequently asked questions")
+	[Sık sorulan sorular](/index.php/Frequently_asked_questions_(T%C3%BCrk%C3%A7e) "Frequently asked questions (Türkçe)")
 
 	Dağıtım hakkında dikkate değer sorular ve bilgiler.
 
@@ -48,18 +48,18 @@ Makale kategorilerini listelemek için [İçindekiler](/index.php/Table_of_conte
 
 ## Wiki etkileşimleri
 
-	[Yardım:Okuma](/index.php/Help:Reading "Help:Reading")
+	[Yardım:Okuma](/index.php/Help:Reading_(T%C3%BCrk%C3%A7e) "Help:Reading (Türkçe)")
 
 	Makalelerdeki tarifleri anlamakta güçlük çekenler için açıklamaları bulun.
 
-	[Yardım:Arama](/index.php/Help:Searching "Help:Searching")
+	[Yardım:Arama](/index.php?title=Help:Searching_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Help:Searching (Türkçe) (page does not exist)")
 
 	Sayfanın üst kısmındaki arama kutusunu kullanmayı deneyin.
 
-	[ArchWiki:Katkı](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
+	[ArchWiki:Katkı](/index.php?title=ArchWiki:Contributing_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "ArchWiki:Contributing (Türkçe) (page does not exist)")
 
-	Wiki'ye katkıta bulunacaklar için başlangıç noktası.
+	Vikiye katkıta bulunacaklar için başlangıç noktası.
 
-	[Yardım:Düzenleme](/index.php/Help:Editing "Help:Editing")
+	[Yardım:Düzenleme](/index.php?title=Help:Editing_(T%C3%BCrk%C3%A7e)&action=edit&redlink=1 "Help:Editing (Türkçe) (page does not exist)")
 
-	Makaleleri düzenlemek ve wiki yazı sözdizimi üzerine yönergeler.
+	Makaleleri düzenlemek ve viki yazı sözdizimi üzerine yönergeler.

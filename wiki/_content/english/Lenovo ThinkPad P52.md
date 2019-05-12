@@ -1,5 +1,34 @@
 The Lenovo P52 is a quad or hex core Intel 8th generation Laptop.
 
+| **Device/Functionality** | **Status** |
+| [Suspend](#Suspend_and_Hibernate) | Working |
+| [Hibernate](#Suspend_and_Hibernate) | Working |
+| [Integrated Graphics](#Graphics) | Modify |
+| [Discrete Nvidia Graphics](#Graphics) | Modify |
+| [Wifi](#Wifi_and_Bluetooth) | Working |
+| [Bluetooth](#Wifi_and_Bluetooth) | Working |
+| [rfkill](#Wifi_and_Bluetooth) | Working |
+| Audio | Working |
+| [Touchpad](#Touchpad) | Working |
+| Webcam | Working |
+| Card Reader | Working |
+| Function/Multimedia Keys | Working |
+| [Power Management](#Power_Saving) | Working |
+| [EFI firmware updates](#UEFI) | Working |
+| [Fingerprint reader](#Fingerprint_reader) | Not working |
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Pre-Installation](#Pre-Installation)
+*   [2 Installation](#Installation)
+*   [3 lspci](#lspci)
+*   [4 Graphics](#Graphics)
+    *   [4.1 Proprietary driver with bumblebee](#Proprietary_driver_with_bumblebee)
+
 ## Pre-Installation
 
 Arch on a Lenovo P52 is an amazing combination.
@@ -64,3 +93,109 @@ Bus 001 Device 007: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+## Graphics
+
+This laptop has its external display ports [directly wired to the NVIDIA chip](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip). In loose terms this means that the dedicated GPU must be enabled in order for external displays to be used. Luckily, it is possible to do dynamic switching between the integrated and dedicated graphics, but this is only possible by using the Intel DDX driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) as opposed to modesetting.
+
+The laptop can be used in one of two modes: Hybrid Graphics, or Dedicated Graphics only.
+
+In order to use the integrated Intel UHD 630 GPU (as part of Hybrid Graphics) you need to add the `i915` module to your `initramfs` by adding it as a module in your [mkinitcpio](https://wiki.archlinux.org/index.php/Mkinitcpio#MODULES). This is done by setting the following on `/etc/mkinitcpio.conf`:
+
+```
+   MODULES=(i915)
+
+```
+
+Failure to add the above will leave you stuck when trying to load the `initramfs` and your system won't be able to boot.
+
+It might be possible to make do without the module above by using the `Dedicated Graphics` only (this can be done by changing the setting in UEFI).
+
+### Proprietary driver with bumblebee
+
+With this setup the integrated GPU is used by default but some applications can be rendered on the discrete GPU with the `optirun` or `primusrun` launchers. See [Bumblebee](/index.php/Bumblebee "Bumblebee") for detailed instructions. The lack of proper v-sync support means that with this method applications rendered on the discrete GPU exhibit tearing. There is also some overhead introduced as a result of moving data inefficiently between the discrete and integrated GPUs, but the Nvidia GPU performs much better than it does with Nouveau.
+
+To get this working you'll need `bumblebee`, `bbswitch`, `nvidia` and `xf86-video-intel`.
+
+Then set the following configuration files.
+
+`/etc/X11/xorg.conf.d/intel.conf`:
+
+```
+Section "ServerLayout"
+    Identifier     "Layout0"
+    Screen      0  "intel"
+    Inactive       "nvidia"
+EndSection
+
+Section "Monitor"
+    Identifier     "Monitor0"
+    Option         "DPMS"
+EndSection
+
+Section "Device"
+    Identifier     "nvidia"
+    Driver         "dummy"
+    BusID          "PCI:1:0:0"
+EndSection
+
+Section "Screen"
+    Identifier     "nvidia"
+    Device         "nvidia"
+EndSection
+
+Section "Screen"
+    Identifier     "intel"
+    Device         "intel"
+    Monitor        "Monitor0"
+EndSection
+
+Section "Device"
+    Identifier  "intel"
+    Driver      "intel"
+    Option      "TearFree" "true"
+    Option      "DRI" "3"
+    BusId       "PCI:0:2:0"
+EndSection
+
+```
+
+`/etc/bumblebee/xorg.conf.nvidia` (you probably already have one of these so adjust/add as needed - the dummy device at the end is essential!!):
+
+```
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "false"
+    Option      "AutoAddGPU" "false"
+
+    # Inventions
+    Screen      0 "nvidia"
+    Inactive    "intel"
+EndSection
+
+Section "Device"
+    Identifier  "DiscreteNvidia"
+    Driver      "nvidia"
+    VendorName  "NVIDIA Corporation"
+    BusID "PCI:1:0:0"
+    Option "ProbeAllGpus" "false"
+
+    Option "NoLogo" "true"
+    Option "UseEDID" "true"
+    Option "AllowEmptyInitialConfiguration"
+EndSection
+
+Section "Device"
+    Identifier "intel"
+    Driver "dummy"
+    BusID "PCI:0:2:0"
+EndSection
+
+Section "Screen"
+    Identifier "nvidia"
+    Device "nvidia"
+EndSection
+
+```
+
+At this stage, restart your machine. Then you should be able to run applications on the GPU as you normally would with `optirun`, e.g., `optirun glxgears`. If you want to use the external displays you need to keep your GPU on by running an app on `optirun` and then running `intel-virtual-output -f` (this will stay running and binds the external display ports to virtual outputs that you can use). At this stage you should be able to see and use the external ports.

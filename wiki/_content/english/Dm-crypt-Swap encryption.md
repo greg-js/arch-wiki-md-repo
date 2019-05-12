@@ -253,7 +253,9 @@ The `resume_offset` of the swap-file points to the start (extent zero) of the fi
 
 ```
 
-Note: if swap file location on the filesystem is changed for some reason, the offset should be recalculated.
+**Warning:** This method does not work on btrfs because filegfrag returns virtual rather than physical offset. Systemd (systemctl hibernate) relies on FIEMAP which also does not work.
+
+As a workaround see [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=202803). Note: if swap file location on the filesystem is changed for some reason, the offset should be recalculated.
 
 Add the `resume` hook to your `etc/mkinitcpio.conf` file and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") afterward:
 

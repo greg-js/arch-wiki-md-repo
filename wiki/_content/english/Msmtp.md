@@ -6,7 +6,7 @@ Related articles
 *   [S-nail](/index.php/S-nail "S-nail")
 *   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
 
-[msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
+[msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](/index.php/Sendmail "Sendmail") compatibility.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

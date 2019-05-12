@@ -480,9 +480,9 @@ Then, look at:
 
 ### UEFI
 
-Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-9560-laptop/drivers) as `XPS_15_9560_X.Y.Z.exe` files. In order to install:
+Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-9570-laptop/drivers) as `XPS_15_9570_X.Y.Z.exe` files. In order to install:
 
-*   Download the desired firmware from section "Dell XPS 15 9560 System BIOS"
+*   Download the desired firmware from section "Dell XPS 15 9570 System BIOS"
 *   Save it in `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation)
 *   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
 *   Choose "Bios Flash Update"

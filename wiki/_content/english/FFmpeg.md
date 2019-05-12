@@ -243,7 +243,7 @@ Subtitles embedded in container files, such as MPEG-2 and Matroska, can be extra
 
 *   Inspect a file to determine if it contains a subtitle stream:
 
- `$ ffprobe foo.mkv` 
+ `$ ffprobe -hide_banner foo.mkv` 
 ```
 ...
 Stream #0:0(und): Video: h264 (High), yuv420p, 1920x800 [SAR 1:1 DAR 12:5], 23.98 fps, 23.98 tbr, 1k tbn, 47.95 tbc (default)

@@ -344,7 +344,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Crusta** — Blazingly fast full feature web browser with unique features.
 
-	[http://crustabrowser.com/](http://crustabrowser.com/) || [crusta](https://aur.archlinux.org/packages/crusta/)
+	[https://github.com/Crusta/CrustaBrowser/](https://github.com/Crusta/CrustaBrowser/) || [crusta](https://aur.archlinux.org/packages/crusta/)
 
 *   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — Colorful Web browser.
 

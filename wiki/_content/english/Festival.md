@@ -2,7 +2,11 @@
 
 Festival offers a general framework for building speech synthesis systems as well as including examples of various modules. As a whole it offers full text to speech through a number APIs: from shell level, though a Scheme command interpreter, as a C++ library, from Java, and an Emacs interface. Festival is multi-lingual (currently British English, American English, Italian, Czech and Spanish, with other languages available in prototype.)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Using German IMS festival extension with mbrola](#Using_German_IMS_festival_extension_with_mbrola)
@@ -12,10 +16,10 @@ Festival offers a general framework for building speech synthesis systems as wel
         *   [2.2.1 HTS compatibility patches](#HTS_compatibility_patches)
         *   [2.2.2 Manual Voice Installs](#Manual_Voice_Installs)
 *   [3 Usage](#Usage)
-    *   [3.1 Interactive mode (testing voices etc.)](#Interactive_mode_.28testing_voices_etc..29)
+    *   [3.1 Interactive mode (testing voices etc.)](#Interactive_mode_(testing_voices_etc.))
     *   [3.2 Example script](#Example_script)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Can't open /dev/dsp](#Can.27t_open_.2Fdev.2Fdsp)
+    *   [4.1 Can't open /dev/dsp](#Can't_open_/dev/dsp)
     *   [4.2 Alsa playing at wrong speed](#Alsa_playing_at_wrong_speed)
     *   [4.3 aplay Command not found](#aplay_Command_not_found)
 *   [5 See also](#See_also)
@@ -105,7 +109,7 @@ For ALSA, use these lines instead ([source](http://ubuntuforums.org/showpost.php
 
 Arch splits the set of official voices into [festival-english](https://www.archlinux.org/packages/?name=festival-english) and [festival-us](https://www.archlinux.org/packages/?name=festival-us). [The AUR](https://aur.archlinux.org/packages/?K=festival) has some others, in various states of maintenance which may or may not be currently working.
 
-To see what voices you currently have installed and what your default is, go into the Festival shell (which is a scheme REPL):
+To see what voices you currently have installed and what your default is, go into the Festival shell (which is a scheme REPL) and type the following (some space added for clarity):
 
 ```
    $ festival
@@ -122,14 +126,12 @@ To see what voices you currently have installed and what your default is, go int
                  2001-2008  Tokyo Institute of Technology
    All rights reserved.
    For details type `(festival_warranty)'
+
    festival> voice_default 
-   voice_cmu_us_slt_arctic_hts          ;;<-- THIS IS THE VOICE FESTIVAL SPEAKS WITH
+   voice_cmu_us_slt_arctic_hts          ;;<-- THIS IS THE VOICE FESTIVAL SPEAKS WITH
+
    festival> default-voice-priority-list 
-
-```
-
-```
-   (kal_diphone                         ;;<-- THIS IS THE HARD-CODED LIST OF VOICES FESTIVAL CAME PRE-AWARE OF
+   (kal_diphone                         ;;<-- THIS IS THE HARD-CODED LIST OF VOICES FESTIVAL CAME PRE-AWARE OF
     cmu_us_bdl_arctic_hts
     cmu_us_jmk_arctic_hts
     cmu_us_slt_arctic_hts
@@ -144,13 +146,16 @@ To see what voices you currently have installed and what your default is, go int
     gsw_diphone
     el_diphone)
 
-   festival> (voice_                    ;;<-- PRESS TAB HERE TO SEE WHAT VOICES FESTIVAL HAS AVAILABLE
+   festival> (voice_                    ;;<-- PRESS TAB HERE TO SEE WHAT VOICES FESTIVAL HAS AVAILABLE
    voice_cmu_us_slt_arctic_hts     voice_kal_diphone               voice_nitech_us_slt_arctic_hts  voice_reset
    voice_default                   voice_nitech_us_clb_arctic_hts  voice_rab_diphone
+
    festival> (voice_cmu_us_slt_arctic_hts) 
    cmu_us_slt_arctic_hts
+
    festival> (SayText "Arch makes me happy")
    #<Utterance 0x7fb5b8c423b0>
+
    festival> 
 
 ```

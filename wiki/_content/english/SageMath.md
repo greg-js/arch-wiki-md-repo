@@ -15,7 +15,11 @@ SageMath provides support for the following:
 *   An **interactive shell** using [IPython](https://en.wikipedia.org/wiki/IPython "wikipedia:IPython").
 *   Access to **Python modules** such as [PIL](https://en.wikipedia.org/wiki/Python_Imaging_Library "wikipedia:Python Imaging Library"), [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy "wikipedia:SQLAlchemy"), etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -33,7 +37,7 @@ SageMath provides support for the following:
 
 *   [sagemath](https://www.archlinux.org/packages/?name=sagemath) contains the command-line version;
 *   [sagemath-doc](https://www.archlinux.org/packages/?name=sagemath-doc) for HTML documentation and inline help from the command line.
-*   [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook) includes the browser-based notebook interface.
+*   [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter) includes a kernel for the Jupyter notebook interface.
 
 **Note:** Most of the [standard Sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") of the [sagemath](https://www.archlinux.org/packages/?name=sagemath) package or in [AUR](/index.php/AUR "AUR"), therefore they have to be installed additionally as normal Arch packages in order to take advantage of their features. Note that there is no need to install them with `sage -i`, in fact this command will not work if you installed SageMath with pacman.
 
@@ -67,7 +71,7 @@ SageMath opens the plot in an external application.
 
 **Note:** The SageMath Flask notebook is deprecated in favour of the Jupyter notebook. The Jupyter notebook is recommended for all new worksheets. You can use the [sage-notebook-exporter](https://www.archlinux.org/packages/?name=sage-notebook-exporter) application to convert your Flask notebooks to Jupyter
 
-A better suited interface for advanced usage in SageMath is the Notebook. To start the Notebook server from the command-line, execute:
+A better suited interface for advanced usage in SageMath is the Notebook ([sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook)). To start the Notebook server from the command-line, execute:
 
 ```
 $ sage -n

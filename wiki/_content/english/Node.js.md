@@ -38,7 +38,9 @@ source /usr/share/nvm/init-nvm.sh
 
 ```
 
-Or this if you want to use a custom nvm directory:
+Keep in mind that by default, if you're not running as `root`, you'll run into issues with pretty much any `nvm` command as it will be trying to install Node versions and packages on system-level directories. This is not default behavior if you install `nvm` via the script provided by the developers, where Node is kept in `$HOME/.nvm`.
+
+To emulate this default behavior, you can specify a custom nvm directory:
 
 ```
 # Set up Node Version Manager

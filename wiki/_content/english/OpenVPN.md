@@ -42,8 +42,9 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [6.4 Gnome configuration](#Gnome_configuration)
 *   [7 Routing client traffic through the server](#Routing_client_traffic_through_the_server)
     *   [7.1 Firewall configuration](#Firewall_configuration)
-        *   [7.1.1 ufw](#ufw)
-        *   [7.1.2 iptables](#iptables)
+        *   [7.1.1 firewalld](#firewalld)
+        *   [7.1.2 ufw](#ufw)
+        *   [7.1.3 iptables](#iptables)
     *   [7.2 Prevent leaks if VPN goes down](#Prevent_leaks_if_VPN_goes_down)
         *   [7.2.1 ufw](#ufw_2)
         *   [7.2.2 vpnfailsafe](#vpnfailsafe)
@@ -162,14 +163,14 @@ group nobody
 
 #### Hardening the server
 
-If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and (optionally) limiting the set of enabled TLS ciphers to the newer ciphers.
+If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and (optionally) limiting the set of enabled TLS ciphers to the newer ciphers. Starting from OpenVPN 2.4, the server and the client will automatically negotiate AES-256-GCM in TLS mode.
 
 Add the following to `/etc/openvpn/server/server.conf`:
 
  `/etc/openvpn/server/server.conf` 
 ```
 .
-cipher AES-256-CBC
+cipher AES-256-GCM
 auth SHA512
 tls-version-min 1.2
 tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
@@ -365,7 +366,7 @@ mtu-test
 
 #### Connect to the server via IPv6
 
-In order to enable Dual Stack for OpenVPN, change `proto udp` to `proto udp6` in both server.conf and client.conf. Afterwards both IPv4 and IPv6 are enabled.
+Starting from OpenVPN 2.4, OpenVPN will try both IPv6 and IPv4 when just using `udp/tcp-client/tcp-server`. To enforce only IPv4-only, you need to use `udp4`, `tcp4-client` or `tcp4-server`; and similar to enforce IPv6-only with `udp6/tcp6-client/tcp6-server`. On older OpenVPN versions, use `udp6/tcp6-client/tcp6-server` to enable IPv6 support.
 
 #### Provide IPv6 inside the tunnel
 
@@ -435,9 +436,11 @@ To connect to an OpenVPN server through Gnome's built-in network configuration d
 By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
 
 ```
-push "redirect-gateway def1 bypass-dhcp"
+push "redirect-gateway def1 bypass-dhcp ipv6"
 
 ```
+
+If you are running an IPv4-only server, drop the `ipv6` option.
 
 Use the `push "route <address pool> <subnet>"` option to allow clients reaching other subnets/devices behind the server:
 
@@ -462,6 +465,30 @@ After setting up the configuration file, [enable packet forwarding](/index.php/I
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
 ### Firewall configuration
+
+#### firewalld
+
+If you use the default port 1194, enable the `openvpn` service. Otherwise, create a new service with a different port.
+
+```
+# firewall-cmd --zone=public --add-service openvpn
+
+```
+
+Now add routing rules:
+
+```
+# firewall-cmd --zone=FedoraServer --add-masquerade
+# firewall-cmd --zone=FedoraServer --direct --passthrough ipv4 -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+
+```
+
+Make these changes permanent:
+
+```
+# firewall-cmd --runtime-to-permanent
+
+```
 
 #### ufw
 

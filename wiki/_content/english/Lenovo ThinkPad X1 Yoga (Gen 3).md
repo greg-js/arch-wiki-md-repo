@@ -56,11 +56,13 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
         *   [2.2.2 Generate the override [2]](#Generate_the_override_[2])
         *   [2.2.3 Load the override on boot [3]](#Load_the_override_on_boot_[3])
         *   [2.2.4 Verify that S3 is working (See Verifying S3)](#Verify_that_S3_is_working_(See_Verifying_S3))
-    *   [2.3 Enabling S2idle](#Enabling_S2idle)
+    *   [2.3 Fix touchscreen after resume](#Fix_touchscreen_after_resume)
+    *   [2.4 Enabling S2idle](#Enabling_S2idle)
 *   [3 Tablet Functions](#Tablet_Functions)
     *   [3.1 Stylus](#Stylus)
     *   [3.2 Screen Rotation](#Screen_Rotation)
-        *   [3.2.1 With Screen Rotator](#With_Screen_Rotator)
+        *   [3.2.1 Automatic Screen Rotation in Gnome](#Automatic_Screen_Rotation_in_Gnome)
+        *   [3.2.2 With Screen Rotator](#With_Screen_Rotator)
 
 ## BIOS
 
@@ -208,6 +210,40 @@ You should now see something like this:
 
 ```
 
+### Fix touchscreen after resume
+
+When the above fix is applied to allow S3 suspend, the touchscreen will not work upon resume from sleep. This fix was pulled from: [Lenovo Linux Forums](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1Y3-Touchscreen-not-working-after-resume-on-Linux/td-p/4021200)
+
+The touchscreen functionality can be restored by freezing system (s2idle):
+
+create a unit file:
+
+```
+ /etc/systemd/system/wake_wacom_hack.service 
+
+```
+
+with content:
+
+```
+ [Unit]
+ Description= s2idle fo 1 second after resume
+ After=suspend.target
+ [Service]
+ Type=oneshot
+ ExecStart=/usr/sbin/rtcwake -m freeze -s 1
+[Install]
+ WantedBy=suspend.target
+
+```
+
+enable in standard waycreate a unit file:
+
+```
+ sudo systemctl enable wake_wacom_hack.service
+
+```
+
 ### Enabling S2idle
 
 **Note:** Since [kernel version 4.18](https://patchwork.kernel.org/patch/10550647/) acpi.ec_no_wakeup=1 is set by default
@@ -266,6 +302,17 @@ To register the "eraser" as a right click use:
 ```
 
 ### Screen Rotation
+
+#### Automatic Screen Rotation in Gnome
+
+The iio-sensor-proxy package provides automatic screen rotation for me in Gnome. The package is available in the community repo
+
+```
+sudo pacman -S iio-sensor-proxy 
+
+```
+
+No configuration was needed for my machine.
 
 #### With Screen Rotator
 

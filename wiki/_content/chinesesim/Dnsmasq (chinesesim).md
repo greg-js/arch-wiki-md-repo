@@ -2,28 +2,36 @@
 
 [Dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) 提供 DNS 缓存和 DHCP 服务功能。作为域名解析服务器(DNS)，dnsmasq可以通过缓存 DNS 请求来提高对访问过的网址的连接速度。作为DHCP 服务器，[dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 可以用于为局域网电脑分配内网ip地址和提供路由。DNS和DHCP两个功能可以同时或分别单独实现。dnsmasq轻量且易配置，适用于个人用户或少于50台主机的网络。此外它还自带了一个 [PXE](/index.php/PXE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PXE (简体中文)") 服务器。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 DNS 缓存设置](#DNS_.E7.BC.93.E5.AD.98.E8.AE.BE.E7.BD.AE)
-    *   [3.1 DNS 地址文件](#DNS_.E5.9C.B0.E5.9D.80.E6.96.87.E4.BB.B6)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+*   [3 DNS 缓存设置](#DNS_缓存设置)
+    *   [3.1 DNS 地址文件](#DNS_地址文件)
         *   [3.1.1 resolv.conf](#resolv.conf)
-            *   [3.1.1.1 三个以上域名服务器](#.E4.B8.89.E4.B8.AA.E4.BB.A5.E4.B8.8A.E5.9F.9F.E5.90.8D.E6.9C.8D.E5.8A.A1.E5.99.A8)
-        *   [3.1.2 使用dhcpcd](#.E4.BD.BF.E7.94.A8dhcpcd)
-        *   [3.1.3 使用dhclient](#.E4.BD.BF.E7.94.A8dhclient)
-    *   [3.2 使用NetworkManager](#.E4.BD.BF.E7.94.A8NetworkManager)
+            *   [3.1.1.1 三个以上域名服务器](#三个以上域名服务器)
+        *   [3.1.2 使用dhcpcd](#使用dhcpcd)
+        *   [3.1.3 使用dhclient](#使用dhclient)
+    *   [3.2 使用NetworkManager](#使用NetworkManager)
         *   [3.2.1 IPv6](#IPv6)
-        *   [3.2.2 其他方式](#.E5.85.B6.E4.BB.96.E6.96.B9.E5.BC.8F)
-*   [4 DHCP 服务器设置](#DHCP_.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.AE.BE.E7.BD.AE)
-*   [5 启动守护进程](#.E5.90.AF.E5.8A.A8.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
-*   [6 测试](#.E6.B5.8B.E8.AF.95)
-    *   [6.1 DNS 缓存](#DNS_.E7.BC.93.E5.AD.98)
-    *   [6.2 DHCP 服务器](#DHCP_.E6.9C.8D.E5.8A.A1.E5.99.A8)
-*   [7 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [7.1 避免 OpenDNS 重定向 Google 请求](#.E9.81.BF.E5.85.8D_OpenDNS_.E9.87.8D.E5.AE.9A.E5.90.91_Google_.E8.AF.B7.E6.B1.82)
-    *   [7.2 查看租约](#.E6.9F.A5.E7.9C.8B.E7.A7.9F.E7.BA.A6)
-    *   [7.3 添加自定义域](#.E6.B7.BB.E5.8A.A0.E8.87.AA.E5.AE.9A.E4.B9.89.E5.9F.9F)
+        *   [3.2.2 其他方式](#其他方式)
+*   [4 DHCP 服务器设置](#DHCP_服务器设置)
+*   [5 启动守护进程](#启动守护进程)
+*   [6 测试](#测试)
+    *   [6.1 DNS 缓存](#DNS_缓存)
+    *   [6.2 DHCP 服务器](#DHCP_服务器)
+*   [7 小技巧](#小技巧)
+    *   [7.1 阻止 OpenDNS 重定向 Google 请求](#阻止_OpenDNS_重定向_Google_请求)
+    *   [7.2 查看租约](#查看租约)
+    *   [7.3 添加自定义域](#添加自定义域)
+    *   [7.4 Override addresses](#Override_addresses)
+    *   [7.5 多个 Dnsmasq](#多个_Dnsmasq)
+        *   [7.5.1 静态](#静态)
+        *   [7.5.2 动态](#动态)
 
 ## 安装
 
@@ -198,21 +206,21 @@ dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
 设置为开机启动：
 
 ```
-# systemctl enable dnsmasq
+# systemctl enable dnsmasq.service
 
 ```
 
-立即启动 dnsmashq：
+立即启动 dnsmasq：
 
 ```
-# systemctl start dnsmasq
+# systemctl start dnsmasq.service
 
 ```
 
 查看dnsmasq是否启动正常，查看系统日志：
 
 ```
-# journalctl -u dnsmasq
+# journalctl -u dnsmasq.service
 
 ```
 
@@ -222,7 +230,7 @@ dhcp-host=aa:bb:cc:dd:ee:ff,192.168.111.50
 
 ### DNS 缓存
 
-要测试查询速度，请访问一个 dnsmasq 启动后没有访问过的网站，执行 (`dig` (位于 [dnsutils](https://www.archlinux.org/packages/?name=dnsutils) 软件包):
+要测试查询速度，请访问一个 dnsmasq 启动后没有访问过的网站，执行 (`dig` (位于 [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) 软件包):
 
 ```
 $ dig archlinux.org | grep "Query time"
@@ -237,16 +245,18 @@ $ dig archlinux.org | grep "Query time"
 
 ## 小技巧
 
-### 避免 OpenDNS 重定向 Google 请求
+### 阻止 OpenDNS 重定向 Google 请求
 
 要避免 OpenDNS 重定向所有 Google 请求到他们自己的搜索服务器，添加以下内容到 `/etc/dnsmasq.conf`：
 
 ```
-server=/www.google.com/X.X.X.X
+server=/www.google.com/<ISP DNS IP>
 
 ```
 
-用你的 ISP 的 DNS 服务器/路由器的 IP 替代 X.X.X.X 。
+用你的互联网服务供应商（ISP）的 DNS 服务器/路由器的 IP 替换 <ISP DNS IP> 。
+
+**Note:** 因为众所周知的原因，ISP的DNS服务器可能会污染或劫持Google的DNS [[1]](https://github.com/lifetyper/FreeRouter/wiki/3-DNS%E6%B1%A1%E6%9F%93%E4%B8%8E%E5%BA%94%E5%AF%B9)，请自行搜索解决办法。
 
 ### 查看租约
 
@@ -274,4 +284,38 @@ expand-hosts
 
 ```
 
-如果没有这个设置，你必须域添加到/ etc/ hosts中的条目。
+如果没有这个设置，你必须将域添加到 `/etc/hosts` 中。
+
+### Override addresses
+
+In some cases, such as when operating a captive portal, it can be useful to resolve specific domains names to a hard-coded set of addresses. This is done with the `address` config:
+
+```
+address=/example.com/1.2.3.4
+
+```
+
+Furthermore, it's possible to return a specific address for all domain names that are not answered from `/etc/hosts` or DHCP by using a special wildcard:
+
+```
+address=/#/1.2.3.4
+
+```
+
+### 多个 Dnsmasq
+
+#### 静态
+
+要让每个 interface 有独立的 dnsmasq，用 `interface` 和 `bind-interface` 选项来实现。
+
+#### 动态
+
+像下面这样可以指定排除某个 interface，而其他的 interface 将会拥有各自的 dnsmasq。
+
+```
+except-interface=lo
+bind-dynamic
+
+```
+
+**Note:** [libvirt](/index.php/Libvirt "Libvirt") 默认就是这样做的。

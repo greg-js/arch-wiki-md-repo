@@ -155,7 +155,7 @@ After upgrading you may now have packages that are no longer needed or that are 
 
 Use `pacman -Qtd` to check for packages that were installed as a dependency but now, no other packages depend on them. If an orphaned package is still needed, it is recommended to change the [installation reason](/index.php/Installation_reason "Installation reason") to explicit. Otherwise, if the package is no longer needed, it can be removed.
 
-Additionally, some packages may no longer be in the remote repositories, but they still may be on your local system. To list all foreign packages use `pacman -Qm`. Note that this list will include packages that have been installed manually (e.g., from the [AUR](/index.php/AUR "AUR")).
+Additionally, some packages may no longer be in the remote repositories, but they still may be on your local system. To list all foreign packages use `pacman -Qm`. Note that this list will include packages that have been installed manually (e.g., from the [AUR](/index.php/AUR "AUR")). To exclude packages that are (still) available on the AUR, use the [ancient-packages](https://aur.archlinux.org/packages/ancient-packages/) tool.
 
 ## Use the package manager to install software
 

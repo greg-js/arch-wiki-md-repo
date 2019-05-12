@@ -255,7 +255,7 @@ Install [libcec](https://www.archlinux.org/packages/?name=libcec).
 When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for instructions on how to add users to groups.
 
 *   Add all users that will use Kodi to the `uucp` and `lock` [user groups](/index.php/User_group "User group").
-*   If [running kodi-standalone](#Running_standalone), add the user `kodi` to the `uucp` and `lock` [user groups](/index.php/User_group "User group").
+*   Users of [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) do not need to take any action as group membership is handled automatically upon installation.
 
 **Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
 

@@ -31,6 +31,7 @@
         *   [1.6.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
         *   [1.6.2 Biochemistry](#Biochemistry)
         *   [1.6.3 Image manipulation](#Image_manipulation)
+        *   [1.6.4 DICOM viewers and volume rendering](#DICOM_viewers_and_volume_rendering)
     *   [1.7 Engineering](#Engineering)
         *   [1.7.1 Computer-aided design](#Computer-aided_design)
         *   [1.7.2 Electronics](#Electronics)
@@ -625,6 +626,28 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 *   **[Fiji](https://en.wikipedia.org/wiki/FIJI_(software) "wikipedia:FIJI (software)")** — ImageJ distribution (and soon ImageJ2) with a lot of plugins organized into a coherent menu structure.
 
 	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
+
+#### [DICOM](https://en.wikipedia.org/wiki/DICOM "wikipedia:DICOM") viewers and volume rendering
+
+*   **aeskulap** — Simple DICOM data viewer
+
+	[http://www.nongnu.org/aeskulap/](http://www.nongnu.org/aeskulap/) || [aeskulap](https://aur.archlinux.org/packages/aeskulap/)
+
+*   **weasis** — Multipurpose DICOM viewer with a highly modular architecture
+
+	[https://nroduit.github.io/en/](https://nroduit.github.io/en/) || [weasis-bin](https://aur.archlinux.org/packages/weasis-bin/)
+
+*   **aliza** — Open 2D, 3D and 4D images in DICOM, MetaIO, Nifti, Nrrd and other formats, meshes in DICOM, VTK, STL and OBJ formats
+
+	[https://www.aliza-dicom-viewer.com/](https://www.aliza-dicom-viewer.com/) || [aliza](https://aur.archlinux.org/packages/aliza/)
+
+*   **[Ginkgo CADx](https://en.wikipedia.org/wiki/Ginkgo_CADx "wikipedia:Ginkgo CADx")** — Advanced DICOM viewer and dicomizer. Continuation of the now abandoned free version developed by MetaEmotion
+
+	[https://github.com/gerddie/ginkgocadx](https://github.com/gerddie/ginkgocadx) || [ginkgo-cadx](https://aur.archlinux.org/packages/ginkgo-cadx/)
+
+*   **[3DSlicer](https://en.wikipedia.org/wiki/3DSlicer "wikipedia:3DSlicer")** — Comprehensive [MRI](https://en.wikipedia.org/wiki/Magnetic_resonance_imaging "wikipedia:Magnetic resonance imaging"), [CT](https://en.wikipedia.org/wiki/CT_scan "wikipedia:CT scan"), [LSCM microscopy](https://en.wikipedia.org/wiki/Laser_scanning_confocal_microscopy "wikipedia:Laser scanning confocal microscopy") volume processing, segmentation and 3D-reconstruction
+
+	[https://www.slicer.org/](https://www.slicer.org/) || [3dslicer](https://aur.archlinux.org/packages/3dslicer/)
 
 ### Engineering
 

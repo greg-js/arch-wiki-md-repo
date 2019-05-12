@@ -44,6 +44,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [4.5 GDM freezes with systemd](#GDM_freezes_with_systemd)
     *   [4.6 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
     *   [4.7 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_(GNOME_3.28))
+    *   [4.8 GDM ignore Wayland and use X.Org by default](#GDM_ignore_Wayland_and_use_X.Org_by_default)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -569,6 +570,10 @@ Or to simply disable auto-suspend (also run the command with `ac` replaced with 
 $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 
 ```
+
+### GDM ignore Wayland and use X.Org by default
+
+Wayland require KMS running in order to work, and on some machines the GDM process start earlier than KMS, resulting in GMD unable to see Wayland and working only with X.Org, you can solve this problem [starting KMS earlier](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## See also
 

@@ -12,7 +12,11 @@ Linux 中有多种方式可以实现视频加速:
 *   **[视频加速API (Video Acceleration API, 缩写为VA-API)](http://www.freedesktop.org/wiki/Software/vaapi)** 是一套提供视频硬件编解码的开源库和标准。
 *   **[Unix视频解码及演示 API （Video Decode and Presentation API for Unix，缩写为VDPAU）](http://http.download.nvidia.com/XFree86/vdpau/doxygen/html/)**是一个开源的库，它使得部分的视频解码和视频后期处理任务转移到GPU硬件上。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 支持的硬件](#支持的硬件)
     *   [1.1 VA-API](#VA-API)

@@ -2,7 +2,7 @@ Anbox is a free and open-source compatibility layer that aims to allow mobile ap
 
 ## Installation
 
-[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/).
+[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image](https://aur.archlinux.org/packages/anbox-image/) (or [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/) if you want to include Google's Apps and houdini), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/).
 
 [Start/enable](/index.php/Start/enable "Start/enable") the following services:
 

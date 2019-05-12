@@ -4,7 +4,11 @@ Related articles
 
 This article shows how to create a slim, minimal initramfs for a system with a specific, known and static hardware configuration. The procedure is expounded from [Optimizing Bootup With mkinitcpio](http://blog.falconindy.com/articles/optmizing-bootup-with-mkinitcpio.html) by Falconindy (Dave Reisner).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Udev requirement](#Udev_requirement)
 *   [2 Editing .preset files](#Editing_.preset_files)
@@ -29,7 +33,7 @@ If you need `udev`, your minimization efforts will most likely be in vain. You m
 
 In Falconidy's tutorial, he edits `/etc/mkinitcpio.conf` and runs `mkinitcpio -g` to create the test initramfs image, leaving the known-good initramfs images on the system untouched. However, if you blindly run `mkinitcpio -P` afterwards, even the `fallback` image will be stripped down.
 
-A safer way to prepare for taking the creation of the initramfs files into your own hands is to modify the `.preset` files in `/etc/mkinitcpio.d`. The following example configuration will supplant `default` with the minimal initfamfs image and create a new `normal` image that is built The Arch Way. If things go wrong, you can rely on the `normal` or `fallback` images. When you are finished, you can drop the `normal_*` lines from the config and remove the `initramfs-linux*-normal.img` files.
+A safer way to prepare for taking the creation of the initramfs files into your own hands is to modify the `.preset` files in `/etc/mkinitcpio.d`. The following example configuration will supplant `default` with the minimal initramfs image and create a new `normal` image that is built The Arch Way. If things go wrong, you can rely on the `normal` or `fallback` images. When you are finished, you can drop the `normal_*` lines from the config and remove the `initramfs-linux*-normal.img` files.
 
 ```
 ...

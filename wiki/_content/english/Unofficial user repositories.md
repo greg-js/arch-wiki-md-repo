@@ -45,34 +45,33 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.24 holo](#holo)
     *   [2.25 ivasilev](#ivasilev)
     *   [2.26 jlk](#jlk)
-    *   [2.27 linux-macbook](#linux-macbook)
-    *   [2.28 llvm-svn](#llvm-svn)
-    *   [2.29 lmrepo](#lmrepo)
-    *   [2.30 markzz](#markzz)
-    *   [2.31 maximbaz](#maximbaz)
-    *   [2.32 me176c](#me176c)
-    *   [2.33 miffe](#miffe)
-    *   [2.34 mikelpint](#mikelpint)
-    *   [2.35 Minerva W Science](#Minerva_W_Science)
-    *   [2.36 mobile](#mobile)
-    *   [2.37 nah](#nah)
-    *   [2.38 origincode](#origincode)
-    *   [2.39 pkgbuilder](#pkgbuilder)
-    *   [2.40 post-factum kernels](#post-factum_kernels)
-    *   [2.41 QOwnNotes](#QOwnNotes)
-    *   [2.42 qt-debug](#qt-debug)
-    *   [2.43 quarry](#quarry)
-    *   [2.44 repo-ck](#repo-ck)
-    *   [2.45 seblu](#seblu)
-    *   [2.46 seiichiro](#seiichiro)
-    *   [2.47 sergej-repo](#sergej-repo)
-    *   [2.48 siosm-aur](#siosm-aur)
-    *   [2.49 sublime-text](#sublime-text)
-    *   [2.50 subtitlecomposer](#subtitlecomposer)
-    *   [2.51 trinity](#trinity)
-    *   [2.52 ungoo](#ungoo)
-    *   [2.53 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.54 xyne-x86_64](#xyne-x86_64)
+    *   [2.27 llvm-svn](#llvm-svn)
+    *   [2.28 lmrepo](#lmrepo)
+    *   [2.29 markzz](#markzz)
+    *   [2.30 maximbaz](#maximbaz)
+    *   [2.31 me176c](#me176c)
+    *   [2.32 miffe](#miffe)
+    *   [2.33 mikelpint](#mikelpint)
+    *   [2.34 Minerva W Science](#Minerva_W_Science)
+    *   [2.35 mobile](#mobile)
+    *   [2.36 nah](#nah)
+    *   [2.37 origincode](#origincode)
+    *   [2.38 pkgbuilder](#pkgbuilder)
+    *   [2.39 post-factum kernels](#post-factum_kernels)
+    *   [2.40 QOwnNotes](#QOwnNotes)
+    *   [2.41 qt-debug](#qt-debug)
+    *   [2.42 quarry](#quarry)
+    *   [2.43 repo-ck](#repo-ck)
+    *   [2.44 seblu](#seblu)
+    *   [2.45 seiichiro](#seiichiro)
+    *   [2.46 sergej-repo](#sergej-repo)
+    *   [2.47 siosm-aur](#siosm-aur)
+    *   [2.48 sublime-text](#sublime-text)
+    *   [2.49 subtitlecomposer](#subtitlecomposer)
+    *   [2.50 trinity](#trinity)
+    *   [2.51 ungoo](#ungoo)
+    *   [2.52 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.53 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -460,19 +459,6 @@ Server = https://ivasilev.net/pacman/$arch
 ```
 [jlk]
 Server = https://jlk.fjfi.cvut.cz/arch/repo
-
-```
-
-### linux-macbook
-
-*   **Maintainer:** [Tony Lambiris](https://aur.archlinux.org/account/m3thodic)
-*   **Description:** AUR builds for the linux-macbook kernel by its developer, m3thodic
-*   **Upstream page:** [https://aur.archlinux.org/pkgbase/linux-macbook/](https://aur.archlinux.org/pkgbase/linux-macbook/)
-*   **Key-ID:** A55A1B6C098962D84AE9B57016A33C9959A40DED
-
-```
-[linux-macbook]
-Server = http://libpcap.net/repo/linux-macbook
 
 ```
 

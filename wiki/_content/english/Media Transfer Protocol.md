@@ -222,9 +222,9 @@ Bus **002** Device **018**: ID **04b7**:**88a9** Compal Electronics, Inc.
 
 To see detected device with enabled MTP
 
-Use *gvfs-mount*:
+Use *gio mount*:
 
- `gvfs-mount -li | grep -e ^Volume -e activation_root` 
+ `gio mount -li | grep -e ^Volume -e activation_root` 
 ```
 Volume(0): MT65xx Android Phone
   activation_root=mtp://[usb:**002**,**018**]/
@@ -247,11 +247,11 @@ Bus 002 Device 018: ID 04b7:88a9 Compal Electronics, Inc.
 To mount all available connected MTP devices use inline script
 
 ```
-gvfs-mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gvfs-mount "$2)}'
+gio mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gio mount "$2)}'
 
 ```
 
-To mount or dismount from a command with gvfs-mtp use Bus and Device numbers, e.g. to mount `gvfs-mount mtp://[usb:001,007]/` and to unmount `gvfs-mount -u mtp://[usb:001,007]/`. The mounted device will be available in a directory that begins with *mtp:host=* and is located under */run/user/$UID/gvfs/*.
+To mount or dismount from a command with gvfs-mtp use Bus and Device numbers, e.g. to mount `gio mount mtp://[usb:001,007]/` and to unmount `gio mount -u mtp://[usb:001,007]/`. The mounted device will be available in a directory that begins with *mtp:host=* and is located under */run/user/$UID/gvfs/*.
 
 Disable automount of MTP devises with gvfs you will need to change value *true* to *false* for variable *AutoMount* that is located in `/usr/share/gvfs/mounts/mtp.mount`.
 
@@ -281,7 +281,7 @@ Reload the udev rules.
 
 ```
 
-The file managers with support for [gvfs](/index.php/Gvfs "Gvfs") will be able to show MTP devices and mount them if supported by [#libmtp](#libmtp) but if has no support and cannot be opened then change settings in the phone to PTP and install [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) for having access at least to the photos, command line mounting of PTP is a little similar to mounting of the MTP devices: `gvfs-mount gphoto2://[usb:002,019]/`.
+The file managers with support for [gvfs](/index.php/Gvfs "Gvfs") will be able to show MTP devices and mount them if supported by [#libmtp](#libmtp) but if has no support and cannot be opened then change settings in the phone to PTP and install [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) for having access at least to the photos, command line mounting of PTP is a little similar to mounting of the MTP devices: `gio mount gphoto2://[usb:002,019]/`.
 
 **Note:** If you getting limited access to the device and cannot use standard commands from command line such as e.g. `cp`,`ls` then look for [gvfs](/index.php/Gvfs "Gvfs") own alternatives, `ls -1 /usr/bin/gvfs-*`.
 

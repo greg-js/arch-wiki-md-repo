@@ -21,8 +21,6 @@ In order to use NordVPN, you must create your own account on the official NordVP
 
 There are different payment options to choose.
 
-You can also try a free trial before purchasing a payment plan. [https://free.nordvpn.com/trial/](https://free.nordvpn.com/trial/)
-
 ## Installation
 
 NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/), available in the [AUR](/index.php/AUR "AUR").

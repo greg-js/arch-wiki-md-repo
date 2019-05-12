@@ -465,7 +465,7 @@ $ virsh edit *domain*
 
 A [decent overview of libvirt networking](https://jamielinux.com/docs/libvirt-networking-handbook/).
 
-By default, when the `libvirtd` systemd service is started, a NAT bridge is created called *default* to allow external network connectivity (IPv4-only). For other network connectivity needs, four network types exist that can be created to connect a domain to:
+Four network types exist that can be created to connect a domain to:
 
 *   bridge — a virtual device; shares data directly with a physical interface. Use this if the host has *static* networking, it does not need to connect other domains, the domain requires full inbound and outbound trafficking, and the domain is running on a *system*-level. See [Network bridge](/index.php/Network_bridge "Network bridge") on how to add a bridge additional to the default one. After creation, it needs to be specified in the respective guest's `.xml` configuration file.
 *   network — a virtual network; has ability to share with other domains. Use a virtual network if the host has *dynamic* networking (e.g. NetworkManager), or using wireless.

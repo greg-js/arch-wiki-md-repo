@@ -34,15 +34,16 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [6.7 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
     *   [6.8 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
     *   [6.9 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze/Plasma_5_theme)
-    *   [6.10 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
+    *   [6.10 LibreOffice Math formula editor unreadable with dark theme](#LibreOffice_Math_formula_editor_unreadable_with_dark_theme)
+    *   [6.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
 *   [7 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") one of the following packages:
 
-*   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements.
-*   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) is the maintenance branch.
+*   [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) is the stable maintenance branch, for conservative user.
+*   [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) is the feature branch, with new program enhancements for early adopter or power user.
 
 **Note:**
 
@@ -220,6 +221,14 @@ Just enable "Breeze Dark" or another readable icon style in *Tools > Options > L
 If that is not enough, ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
 
 If this still does not work correctly, try using the `gen` interface instead. [[1]](https://bbs.archlinux.org/viewtopic.php?id=206813)
+
+### LibreOffice Math formula editor unreadable with dark theme
+
+Text in formula editor is also unreadable if a dark theme is in use. There is an ongoing [bug report](https://bugs.documentfoundation.org/show_bug.cgi?id=90297).
+
+Some have had success with overriding text color in LibreOffice preferences, but that changes text color everywhere, such as the document itself, which is still white.
+
+Only workaround known is to override the theme to a light one (e.g. `GTK_THEME=Adwaita:light`).
 
 ### AutoText expected default behaviour not functional in system locales other than en_US
 

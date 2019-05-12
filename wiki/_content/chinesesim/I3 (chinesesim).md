@@ -14,57 +14,73 @@ Related articles
 
 i3 的既定目标包括清晰可读的文档，完善的多显示器支持，基于树形结构的窗口管理，提供 [vim](/index.php/Vim "Vim") 式的多种操作模式。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 安装](#安装)
-    *   [1.1 从显示管理器启动](#从显示管理器启动)
-    *   [1.2 从 xinitrc 启动](#从_xinitrc_启动)
-*   [2 使用](#使用)
-*   [3 键盘映射](#键盘映射)
-    *   [3.1 容器](#容器)
-    *   [3.2 程序启动器](#程序启动器)
-*   [4 设置](#设置)
-    *   [4.1 配置助手和可选键盘布局](#配置助手和可选键盘布局)
-    *   [4.2 颜色主题](#颜色主题)
-    *   [4.3 i3bar](#i3bar)
-    *   [4.4 i3bar可选方案](#i3bar可选方案)
-    *   [4.5 i3status](#i3status)
-        *   [4.5.1 i3status可选方案](#i3status可选方案)
-        *   [4.5.2 i3status 包装器](#i3status_包装器)
-        *   [4.5.3 状态栏中的图标字体](#状态栏中的图标字体)
-    *   [4.6 在窗口之间快速跳转](#在窗口之间快速跳转)
-    *   [4.7 i3status](#i3status_2)
-        *   [4.7.1 添加温度状态](#添加温度状态)
-    *   [4.8 修改工作区的名称](#修改工作区的名称)
-    *   [4.9 让程序启动时，只出现在指定工作区](#让程序启动时，只出现在指定工作区)
-    *   [4.10 标签式或层叠式的网络浏览器](#标签式或层叠式的网络浏览器)
-    *   [4.11 虚拟终端](#虚拟终端)
-    *   [4.12 便笺本](#便笺本)
-    *   [4.13 主题与配色方案](#主题与配色方案)
-    *   [4.14 关机，重启和锁屏](#关机，重启和锁屏)
-    *   [4.15 屏幕保护器及电源管理](#屏幕保护器及电源管理)
-    *   [4.16 网速显示](#网速显示)
-*   [5 疑难排除](#疑难排除)
-    *   [5.1 普遍问题](#普遍问题)
-    *   [5.2 i3 信息栏上的某些按钮不能用](#i3_信息栏上的某些按钮不能用)
-    *   [5.3 平铺的终端窗口中出现折行错乱](#平铺的终端窗口中出现折行错乱)
-    *   [5.4 鼠标指针总处于忙碌状态](#鼠标指针总处于忙碌状态)
-    *   [5.5 绑定快捷键不起作用](#绑定快捷键不起作用)
-    *   [5.6 画面撕裂现象](#画面撕裂现象)
-    *   [5.7 看不到系统托盘图标](#看不到系统托盘图标)
-*   [6 参见](#参见)
+*   [2 启动](#启动)
+    *   [2.1 从显示管理器启动](#从显示管理器启动)
+    *   [2.2 从 xinitrc 启动](#从_xinitrc_启动)
+*   [3 使用](#使用)
+*   [4 键盘映射](#键盘映射)
+    *   [4.1 容器](#容器)
+    *   [4.2 程序启动器](#程序启动器)
+*   [5 设置](#设置)
+    *   [5.1 配置助手和可选键盘布局](#配置助手和可选键盘布局)
+    *   [5.2 颜色主题](#颜色主题)
+    *   [5.3 i3bar](#i3bar)
+    *   [5.4 i3bar可选方案](#i3bar可选方案)
+    *   [5.5 i3status](#i3status)
+        *   [5.5.1 i3status可选方案](#i3status可选方案)
+        *   [5.5.2 i3status 包装器](#i3status_包装器)
+        *   [5.5.3 状态栏中的图标字体](#状态栏中的图标字体)
+    *   [5.6 在窗口之间快速跳转](#在窗口之间快速跳转)
+    *   [5.7 i3status](#i3status_2)
+        *   [5.7.1 添加温度状态](#添加温度状态)
+    *   [5.8 修改工作区的名称](#修改工作区的名称)
+    *   [5.9 让程序启动时，只出现在指定工作区](#让程序启动时，只出现在指定工作区)
+    *   [5.10 标签式或层叠式的网络浏览器](#标签式或层叠式的网络浏览器)
+    *   [5.11 虚拟终端](#虚拟终端)
+    *   [5.12 便笺本](#便笺本)
+    *   [5.13 主题与配色方案](#主题与配色方案)
+    *   [5.14 关机，重启和锁屏](#关机，重启和锁屏)
+    *   [5.15 屏幕保护器及电源管理](#屏幕保护器及电源管理)
+    *   [5.16 网速显示](#网速显示)
+*   [6 疑难排除](#疑难排除)
+    *   [6.1 通用](#通用)
+    *   [6.2 i3 信息栏上的某些按钮不能用](#i3_信息栏上的某些按钮不能用)
+    *   [6.3 平铺的终端窗口中出现折行错乱](#平铺的终端窗口中出现折行错乱)
+    *   [6.4 鼠标指针总处于忙碌状态](#鼠标指针总处于忙碌状态)
+    *   [6.5 绑定快捷键不起作用](#绑定快捷键不起作用)
+    *   [6.6 画面撕裂现象](#画面撕裂现象)
+    *   [6.7 看不到系统托盘图标](#看不到系统托盘图标)
+    *   [6.8 Spotify 的默认工作区](#Spotify_的默认工作区)
+*   [7 参见](#参见)
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [i3](https://www.archlinux.org/groups/x86_64/i3/) [软件包组](/index.php/Pacman#Installing_package_groups "Pacman")，这个组里包含了：
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 或者 [i3](https://www.archlinux.org/groups/x86_64/i3/) [软件包组](/index.php/Pacman#Installing_package_groups "Pacman")，后者里包含了：
 
 *   [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)：窗口管理器
-*   [i3status](https://www.archlinux.org/packages/?name=i3status) 和 [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)：这两个软件都可以通过管道向 i3bar 输送系统状态消息
-*   [i3lock](https://www.archlinux.org/packages/?name=i3lock) 则专于锁屏
+*   [i3status](https://www.archlinux.org/packages/?name=i3status) 和 [i3blocks](https://www.archlinux.org/packages/?name=i3blocks)：这两个软件都可以通过[stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29 "wikipedia:Standard streams")向 i3bar 输送系统状态消息
+*   [i3lock](https://www.archlinux.org/packages/?name=i3lock) ：锁屏
+
+**Note:** [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 与 [i3-gaps](https://www.archlinux.org/packages/?name=i3-gaps) 冲突，默认安装的是 [i3-gaps](https://www.archlinux.org/packages/?name=i3-gaps) （原始*i3*加上窗口间间隔和别的功能）。
+
+打了补丁的各种版本的i3可以在[AUR](/index.php/AUR "AUR")里找到：
+
+*   **i3-wm-iconpatch** — 窗口图标支持
+
+	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3-wm-iconpatch](https://aur.archlinux.org/packages/i3-wm-iconpatch/)
+
+## 启动
 
 ### 从显示管理器启动
 
-[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包自带了 `i3.desktop`，可以支持将 i3 作为 [Xsession](/index.php/Xsession "Xsession") 启动。`i3-with-shmlog.desktop` 这个入口则附加了日志功能（对于调试很有用）。[i3-gnome](https://aur.archlinux.org/packages/i3-gnome/) 软件包则把 `i3-wm` 集成到了 [GNOME](/index.php/GNOME "GNOME") 中去。
+[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包自带了 `i3.desktop`，可以支持将 i3 作为 [Xsession](/index.php/Xsession "Xsession") 启动。`i3-with-shmlog.desktop` 这个入口则附加了日志功能（对于调试很有用）。[i3-gnome](https://aur.archlinux.org/packages/i3-gnome/)和[i3-gnome-git](https://aur.archlinux.org/packages/i3-gnome-git/) 软件包则把 `i3-wm` 集成到了 [GNOME](/index.php/GNOME "GNOME") 中去。
 
 ### 从 xinitrc 启动
 
@@ -300,7 +316,7 @@ $ cp /etc/i3status.conf ~/.i3status.conf
 ```
 order += "cpu_temperature 0"
 cpu_temperature 0 {
-        format = "T: %degrees °C"
+        format = "T: %degrees °C"
     max_threshold = 65
         path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
@@ -553,29 +569,31 @@ xss-lock -- i3lock -i *background_image* &
 
 ## 疑难排除
 
-### 普遍问题
+### 通用
 
-很多时候，你遇到的 bug 在开发中的版本就被修复了。可以从 AUR 上的 [i3-git](https://aur.archlinux.org/packages/i3-git/) 与 [i3status-git](https://aur.archlinux.org/packages/i3status-git/) 编译安装最新的开发版。上游（即 i3 项目开发者）希望你能用开发版再试试看能否重现问题 [[2]](http://i3wm.org/docs/debugging.html) 延伸阅读：[Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
+很多时候，你遇到的 bug 在开发版中被修复了。可以从 AUR 上的 [i3-git](https://aur.archlinux.org/packages/i3-git/) 与 [i3status-git](https://aur.archlinux.org/packages/i3status-git/) 编译安装最新的开发版。上游（即 i3 项目开发者）希望你能用开发版再试试看能否重现问题 [[2]](http://i3wm.org/docs/debugging.html) 延伸阅读：[Debug - Getting Traces#General](/index.php/Debug_-_Getting_Traces#General "Debug - Getting Traces").
 
 ### i3 信息栏上的某些按钮不能用
 
-举例：`i3-nagbar` 上的“Edit Config”按钮是要调用 `i3-sensible-terminal` 命令的。这就需要你的[终端模拟器](#虚拟终端)能够被i3识别。
+举例：`i3-nagbar` 上的“Edit Config”按钮是要调用 `i3-sensible-terminal` 命令的。这就需要你的[终端模拟器](#虚拟终端)能够被*i3*识别。
 
 ### 平铺的终端窗口中出现折行错乱
 
-从 v4.3 版本起，i3 会无视平铺窗口的扩大提示（size increment hints）[[3]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html)。这就带来了折行错乱等问题。平铺之前尝试先把窗口改成浮动状态，可以绕过这个问题。
+从 v4.3 版本起，*i3* 会无视平铺窗口的扩大提示（size increment hints）[[3]](https://www.mail-archive.com/i3-discuss@i3.zekjur.net/msg00709.html)。这就带来了折行错乱等问题。平铺之前尝试先把窗口改成浮动状态，可以绕过这个问题。
 
 ### 鼠标指针总处于忙碌状态
 
-当启动了某些并不支持启动提醒的某脚本或程序时，鼠标指针会逗留在忙碌状态六十秒以上。
+当启动了某些并不支持启动提醒的脚本或程序时，鼠标指针会逗留在忙碌状态六十秒左右。
 
-为排除此现象，凡是 `exec` 命令都均加 `--no-startup-id` 后缀，比如：
+为排除此现象，凡是 `exec` 命令都加 `--no-startup-id` 后缀，比如：
 
 ```
 exec --no-startup-id ~/script
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 ```
+
+为了在全局禁用这个鼠标动画，查看：[Cursor themes#Create links to missing cursors](/index.php/Cursor_themes#Create_links_to_missing_cursors "Cursor themes")。
 
 ### 绑定快捷键不起作用
 
@@ -589,11 +607,21 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s
 
 ### 画面撕裂现象
 
-因为 i3 的[双倍缓冲实现得不到位](https://github.com/i3/i3/issues/661)，会出现画面撕裂或闪烁。安装并配置好 [compton](/index.php/Compton_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compton (简体中文)") 可以解决这一问题。[[5]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
+因为 *i3* 的[双倍缓冲实现得不到位](https://github.com/i3/i3/issues/661)，会出现画面撕裂或闪烁。安装并配置好 [compton](/index.php/Compton_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Compton (简体中文)") 可以解决这一问题。[[5]](https://faq.i3wm.org/question/3279/do-i-need-a-composite-manager-compton.1#post-id-3282)
 
 ### 看不到系统托盘图标
 
-为了让 `tray_output primary` 这一行配置生效，有时需要用 *xrandr* 来指定一个主显示输出。你也可以试试按照 [[6]](https://i3wm.org/docs/userguide.html#_tray_output) 显式地指定一个具体的输出，或者干脆删掉这行配置。[[7]](https://github.com/i3/i3/issues/1144) 关于显示输出的细节可以参看 [Xrandr](/index.php/Xrandr "Xrandr") 页面. 自从 i3 4.12 版本起，由 i3-config-wizard 生成的默认配置已经不再包含这行配置了。
+为了让 `tray_output primary` 这一行配置生效，有时需要用 *xrandr* 来指定一个主显示输出。你可以试试按照 [tray_output](https://i3wm.org/docs/userguide.html#_tray_output) 显式地指定一个具体的输出，或者干脆删掉这行配置[[6]](https://github.com/i3/i3/issues/1144)。 关于显示输出的细节可以参看 [Xrandr](/index.php/Xrandr "Xrandr") 页面. 自从 i3 4.12 版本起，由 i3-config-wizard 生成的默认配置已经不再包含这行配置了。
+
+### Spotify 的默认工作区
+
+普通的 `assign` 是不行的，要用 `for_window`，例如：
+
+ `~/.config/i3/config` 
+```
+...
+for_window [class="Spotify"] move to workspace $ws10
+```
 
 ## 参见
 

@@ -17,7 +17,7 @@ AIDE only does file integrity checks. It does not check for rootkits or parse lo
 
 ## Installation
 
-You can [install](/index.php/Install "Install") the [aide](https://www.archlinux.org/packages/?name=aide) package, or you can instead install [aide-selinux](https://aur.archlinux.org/packages/aide-selinux/) if you want to use it in a system with [SELinux](/index.php/SELinux "SELinux") and [Audit_framework](/index.php/Audit_framework "Audit framework") enabled.
+You can [install](/index.php/Install "Install") the [aide](https://www.archlinux.org/packages/?name=aide) package, or you can instead install [aide-selinux](https://aur.archlinux.org/packages/aide-selinux/) if you want to use it in a system with [SELinux](/index.php/SELinux "SELinux") and [Audit framework](/index.php/Audit_framework "Audit framework") enabled.
 
 ## Configuration
 

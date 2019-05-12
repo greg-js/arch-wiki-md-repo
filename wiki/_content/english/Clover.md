@@ -61,10 +61,6 @@ For details please reference [their wiki](http://clover-wiki.zetam.org/Home), fo
          </dict>
       </array>
    </dict>
-   <key>ScreenResolution</key>
-   <string>2560x1080</string>
-   <key>Theme</key>
-   <string>bootcamp</string>
 </dict>
 
 ```

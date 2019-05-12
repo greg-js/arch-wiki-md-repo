@@ -213,7 +213,7 @@ Screen rotator has no configuration, it will automatically detect orientation ch
 
 ## Tablet mode
 
-If your laptop-tablet convertible has 2 accelerometers, you can try to use [https://github.com/alesguzik/linux_detect_tablet_mode](https://github.com/alesguzik/linux_detect_tablet_mode) to configure laptop and tablet modes (e.g. enable/disable keyboard/touchpad/trackpoint, start/kill on-screen keyboard etc.)
+You can use [https://github.com/alesguzik/linux_detect_tablet_mode](https://github.com/alesguzik/linux_detect_tablet_mode) to configure laptop and tablet modes (e.g. enable/disable keyboard/touchpad/trackpoint, start/kill on-screen keyboard etc.)
 
 ## Desktop Environments / Window Managers
 

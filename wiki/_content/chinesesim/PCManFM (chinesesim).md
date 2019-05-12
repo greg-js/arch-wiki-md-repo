@@ -8,87 +8,99 @@ Related articles
 *   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 *   [Nemo](/index.php/Nemo "Nemo")
 
-**翻译状态：** 本文是英文页面 [PCManFM](/index.php/PCManFM "PCManFM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-11-07，点击[这里](https://wiki.archlinux.org/index.php?title=PCManFM&diff=0&oldid=495212)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PCManFM](/index.php/PCManFM "PCManFM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-05-06，点击[这里](https://wiki.archlinux.org/index.php?title=PCManFM&diff=0&oldid=570432)可以查看翻译后英文页面的改动。
 
 [PCManFM](https://wiki.lxde.org/en/PCManFM) 是一个开源的文件管理器，并且是 [LXDE](/index.php/LXDE "LXDE")的默认文件管理器。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 桌面管理](#.E6.A1.8C.E9.9D.A2.E7.AE.A1.E7.90.86)
-    *   [2.1 桌面首选项](#.E6.A1.8C.E9.9D.A2.E9.A6.96.E9.80.89.E9.A1.B9)
-    *   [2.2 新建图标](#.E6.96.B0.E5.BB.BA.E5.9B.BE.E6.A0.87)
-*   [3 守护进程模式](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E6.A8.A1.E5.BC.8F)
-*   [4 开机自启](#.E5.BC.80.E6.9C.BA.E8.87.AA.E5.90.AF)
-*   [5 额外特色与功能](#.E9.A2.9D.E5.A4.96.E7.89.B9.E8.89.B2.E4.B8.8E.E5.8A.9F.E8.83.BD)
-*   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [6.1 为其他文件生成缩略图](#.E4.B8.BA.E5.85.B6.E4.BB.96.E6.96.87.E4.BB.B6.E7.94.9F.E6.88.90.E7.BC.A9.E7.95.A5.E5.9B.BE)
-    *   [6.2 设置终端模拟器](#.E8.AE.BE.E7.BD.AE.E7.BB.88.E7.AB.AF.E6.A8.A1.E6.8B.9F.E5.99.A8)
-    *   [6.3 集成归档管理器](#.E9.9B.86.E6.88.90.E5.BD.92.E6.A1.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [6.4 创建模板](#.E5.88.9B.E5.BB.BA.E6.A8.A1.E6.9D.BF)
-*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 启动窗口空白](#.E5.90.AF.E5.8A.A8.E7.AA.97.E5.8F.A3.E7.A9.BA.E7.99.BD)
-    *   [7.2 无 "Applications"](#.E6.97.A0_.22Applications.22)
-    *   [7.3 无图标](#.E6.97.A0.E5.9B.BE.E6.A0.87)
-    *   [7.4 无 "上一/下一 文件夹"](#.E6.97.A0_.22.E4.B8.8A.E4.B8.80.2F.E4.B8.8B.E4.B8.80_.E6.96.87.E4.BB.B6.E5.A4.B9.22)
-    *   [7.5 --desktop parameter not working or crashing X-server](#--desktop_parameter_not_working_or_crashing_X-server)
-    *   [7.6 终端模拟器的高级配置无法保存](#.E7.BB.88.E7.AB.AF.E6.A8.A1.E6.8B.9F.E5.99.A8.E7.9A.84.E9.AB.98.E7.BA.A7.E9.85.8D.E7.BD.AE.E6.97.A0.E6.B3.95.E4.BF.9D.E5.AD.98)
-    *   [7.7 Make PCManFM remember your preferred Sort Files settings](#Make_PCManFM_remember_your_preferred_Sort_Files_settings)
-    *   [7.8 挂载驱动时候提醒"Not authorized"](#.E6.8C.82.E8.BD.BD.E9.A9.B1.E5.8A.A8.E6.97.B6.E5.80.99.E6.8F.90.E9.86.92.22Not_authorized.22)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 桌面管理](#桌面管理)
+    *   [2.1 桌面首选项](#桌面首选项)
+    *   [2.2 新建图标](#新建图标)
+*   [3 守护进程模式](#守护进程模式)
+*   [4 开机自启](#开机自启)
+*   [5 其他特性和功能](#其他特性和功能)
+*   [6 提示与技巧](#提示与技巧)
+    *   [6.1 为其他文件生成缩略图](#为其他文件生成缩略图)
+    *   [6.2 设置终端模拟器](#设置终端模拟器)
+    *   [6.3 集成压缩包管理器](#集成压缩包管理器)
+    *   [6.4 “创建新的...”模板](#“创建新的...”模板)
+*   [7 故障排除](#故障排除)
+    *   [7.1 启动窗口空白](#启动窗口空白)
+    *   [7.2 没有 "Applications"](#没有_"Applications")
+    *   [7.3 无图标](#无图标)
+    *   [7.4 鼠标按钮不能触发 "上一/下一 文件夹" 功能](#鼠标按钮不能触发_"上一/下一_文件夹"_功能)
+    *   [7.5 --desktop 参数不生效或使X-server崩溃](#--desktop_参数不生效或使X-server崩溃)
+    *   [7.6 终端模拟器的高级配置没有保存](#终端模拟器的高级配置没有保存)
+    *   [7.7 记住文件排序设置](#记住文件排序设置)
+    *   [7.8 挂载设备时候提醒 "Not authorized"](#挂载设备时候提醒_"Not_authorized")
     *   [7.9 Operation not supported](#Operation_not_supported)
 
 ## 安装
 
-从仓库中选择 [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")，如果想安装gtk3版本，选择 [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3)；如果想安装开发版，选择 [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/)。 推荐安装[gvfs](https://www.archlinux.org/packages/?name=gvfs)以提供回收站功能；推荐安装 [udisks](/index.php/Udisks "Udisks") 实现远程文件系统的挂载支持。
+有以下版本可供选择[安装](/index.php/%E5%AE%89%E8%A3%85 "安装")：
 
-如果你想安装[Qt](/index.php/Qt "Qt")版本，可以选择 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) 或 [pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/).
+*   [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
+*   [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3)：gtk3版本
+*   [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/)：开发版
+*   [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt)或[pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/)：[QT](/index.php/QT "QT")版本
+
+可选组件：
+
+*   [gvfs](https://www.archlinux.org/packages/?name=gvfs)：提供回收站功能
+*   [udisks](/index.php/Udisks "Udisks")：远程文件系统的挂载支持
 
 ## 桌面管理
 
-使用如下命令，能够使用PCManFM进行桌面管理，比设置壁纸，桌面图标等：
+如果要用PCManFM进行桌面管理，比如设置壁纸和桌面图标，使用这个命令：
 
 ```
 pcmanfm --desktop
 
 ```
 
-原生的桌面管理菜单会被PCManFM提供的桌面管理菜单所替换。但是，只需要在桌面右击，选择 `桌面偏好设置`，在 `高级`选项卡中选择 `右击时选择窗口管理器提供的菜单`，即可还原。或者在命令行中输入：
+原生的桌面管理菜单会被PCManFM提供的桌面管理菜单所替换。
+
+如果要还原，只需要在桌面右击，选择 `桌面偏好设置`(`Desktop preferences`)，在 `高级`(`Desktop`)选项卡中选择 `右击时选择窗口管理器提供的菜单`(`Right click shows WM menu`)。或者在命令行中输入：
 
 ```
 pcmanfm --desktop-off
 
 ```
 
-即可关闭
-
 ### 桌面首选项
 
-如果你使用的是原生的桌面管理器，只要输入下面命令就能进入修改桌面配置
+如果你使用的是窗口管理器提供的原生桌面菜单，只要输入下面命令就能进入修改桌面配置：
 
 ```
 $ pcmanfm --desktop-pref
 
 ```
 
-可以考虑把这句命令添加快捷键等方式，以方便使用。
+可以考虑把这句命令绑定快捷键或绑定到原生桌面菜单以方便使用。
 
 ### 新建图标
 
-User content such as text files, documents, images and so forth can be dragged and dropped directly onto the desktop. To create shortcuts for applications it will be necessary to copy their `.desktop` files to the `~/Desktop` directory itself. Do not drag and drop the files there as they will be moved completely. The syntax of the command to do so is:
+文本文档、图片等用户文件可以直接拖放到桌面上。至于应用程序快捷方式，需要把它们的`.desktop`文件**复制**到`~/Desktop`文件夹；不能拖放`.desktop`文件，否则就会是移动而不是复制，这会导致这个应用从应用启动器中消失。如果用命令行就应该是这样：
 
 ```
 cp /usr/share/applications/<name of application>.desktop ~/Desktop
 
 ```
 
-For example - where installed - to create a desktop shortcut for [lxterminal](https://www.archlinux.org/packages/?name=lxterminal), the following command would be used:
+例如，下面的命令为 [lxterminal](https://www.archlinux.org/packages/?name=lxterminal) 创建了一个桌面快捷方式：
 
 ```
 cp /usr/share/applications/lxterminal.desktop ~/Desktop
 
 ```
 
-For those who used the [XDG user directories](/index.php/XDG_user_directories "XDG user directories") program to create their `$HOME` directories no further configuration will be required.
+使用 [XDG user directories](/index.php/XDG_user_directories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XDG user directories (简体中文)") 程序创建 `$HOME` 目录的用户不需要再做其他配置。
 
 ## 守护进程模式
 
@@ -99,57 +111,63 @@ pcmanfm -d
 
 ```
 
-如果自动挂载失败，请参见 [udisks](/index.php/Udisks "Udisks").
+如果自动挂载失败，请参见 [udisks](/index.php/Udisks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udisks (简体中文)").
 
 ## 开机自启
 
-How PCManFM may be autostarted as a [daemon](/index.php/Daemon "Daemon") process or to manage the desktop for a standalone [window manager](/index.php/Window_manager "Window manager") will depend on the window manager itself. For example, to enable management of the desktop for [Openbox](/index.php/Openbox "Openbox"), the following command would be added to the `~/.config/openbox/autostart` file:
+PCManFM如何作为[daemon](/index.php/Daemon "Daemon")进程自动启动或为一个独立的[window manager](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")管理桌面取决于窗口管理器本身。
+
+例如，如果要它为 [Openbox](/index.php/Openbox "Openbox") 管理桌面，要把下面的命令加入到 `~/.config/openbox/autostart` 文件：
 
 ```
 pcmanfm --desktop &
 
 ```
 
-Review the relevant wiki article and/or official home page for a particular installed or intended window manager. Should a window manager not provide an autostart file, PCManFM may be alternatively autostarted by editing one or both of the following files:
+对于特定的窗口管理器，请查看相关的维基文档或者官方主页来了解详情。如果该窗口管理器没有提供 autostart 文件，则可以编辑以下的文件来自动启动 PCManFM：
 
-*   [xinitrc](/index.php/Xinitrc "Xinitrc"): When using the [SLiM](/index.php/SLiM "SLiM") [display manager](/index.php/Display_manager "Display manager") or [Startx](/index.php/Startx "Startx") command
-*   [xprofile](/index.php/Xprofile "Xprofile"): When using a display manager such as [LXDM](/index.php/LXDM "LXDM") or [LightDM](/index.php/LightDM "LightDM")
+*   [xinitrc](/index.php/Xinitrc "Xinitrc"): 如果使用的是 [SLiM](/index.php/SLiM "SLiM") [display manager](/index.php/Display_manager "Display manager") 或者 [Startx](/index.php/Startx "Startx") 命令
+*   [xprofile](/index.php/Xprofile "Xprofile"): 如果使用的是诸如 [LXDM](/index.php/LXDM "LXDM") 、 [LightDM](/index.php/LightDM "LightDM")之类的 [display manager](/index.php/Display_manager "Display manager")
 
-## 额外特色与功能
+## 其他特性和功能
 
-Less experienced users should be aware that a file manager alone - especially when installed in a standalone [Window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox") - will not provide the features and functionality users of full desktop environments such as [Xfce](/index.php/Xfce "Xfce") and [KDE](/index.php/KDE "KDE") will be accustomed to. Review the [file manager functionality](/index.php/File_manager_functionality "File manager functionality") article for further information.
+新手用户应该意识到，PCManFM只是一个文件管理器，它并不会像 [Xfce](/index.php/Xfce "Xfce") 和 [KDE](/index.php/KDE "KDE") 这种完整的 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)") 一样提供众多特性和功能。阅读 [file manager functionality](/index.php/File_manager_functionality "File manager functionality") 来了解文件管理器应该做什么的信息。
 
 ## 提示与技巧
 
 ### 为其他文件生成缩略图
 
-PCManFM supports image thumbnails out of the box. However, in order to view thumbnails of other file types, PCManFM uses the information provided in the files located at `/usr/share/thumbnailers`. The packages which provide a thumbnailer usually add the corresponding *.thumbnail* file at `/usr/share/thumbnailers`. For example, in order to get thumbnails for OpenDocument files, you may install [libgsf](https://www.archlinux.org/packages/?name=libgsf) from the official repositories. For video files' thumbnails, the package [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) is required. For PDF files, you may install [evince](https://www.archlinux.org/packages/?name=evince) from the official repositories, which provides `evince-thumbnailer` and the corresponding file at `/usr/share/thumbnailers`. However, if you prefer not to install `evince`, you can also replicate the functionality of `evince-thumbnailer` using [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)'s `convert` command. This is accomplished by creating a new file with the *.thumbnailer* extension (e.g.: `imagemagick-pdf.thumbnailer`) at `/usr/share/thumbnailers` with the following content:
+PCManFM 对图片文件可以自动生成缩略图。对于其他文件类型，PCManFM 使用 `/usr/share/thumbnailers` 文件夹里的文件所提供的信息来产生缩略图。提供缩略图生成器(thumbnailers)的软件包通常会在 `/usr/share/thumbnailers` 自动添加 *.thumbnailer* 文件。例如：
 
+*   [libgsf](https://www.archlinux.org/packages/?name=libgsf)：提供OpenDocument文件的thumbnailer
+*   [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer)：视频文件的
+*   [evince](https://www.archlinux.org/packages/?name=evince)：PDF文件的
+
+**Tip:** 如果你不喜欢 `evince`，可以用 [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) 的 `convert` 命令来生成PDF文件的缩略图，需要在 `/usr/share/thumbnailers` 创建一个 *.thumbnailer* 后缀名的文件，内容如下： `/usr/share/thumbnailers/imagemagick-pdf.thumbnailer` 
 ```
-  [Thumbnailer Entry]
-  TryExec=convert
-  Exec=convert %i[0] -thumbnail %s %o
-  MimeType=application/pdf;application/x-pdf;image/pdf;
-
+[Thumbnailer Entry]
+TryExec=convert
+Exec=convert %i[0] -thumbnail %s %o
+MimeType=application/pdf;application/x-pdf;image/pdf;
 ```
 
-**Note:** The *[0]* next to the input file is specified so that `convert` only generates a thumbnail of the first page. This is a `convert`-specific syntax and has nothing to do with the syntax of the thumbnailers' files.
+**Note:** *Exec* 里的 *[0]* 是为了让 `convert` 按照 PDF 的第一页生成缩略图。这是 `convert` 接受的参数，和 *.thumbnailer* 文件的语法没有任何关系。
 
-Following this example, you can specify custom thumbnailers by creating your own *.thumbnail* files. Keep in mind that `%i` refers to the input file (the file which will have its thumbnail made), `%o` to the output file (the thumbnail image) and `%s` to the size of the thumbnail. These parameters will be automatically substituted with the corresponding data and passed to the thumbnailer program by PCManFM.
+同理，你可以创建其他的 *.thumbnailer* 文件来给某种文件生成缩略图。基本的语法是：`%i` 指需要生成缩略图的文件， `%o` 指生成的缩略图文件，`%s`指缩略图的大小。这三个参数会在传递给缩略图生成器之前被替换成相应的数据。
 
-**Tip:** If you only get thumbnails of certain files and not of all the files of the same type try increasing the maximum file size of the files that get a thumbnail at *Edit > Preferences > Display*.
+**Tip:** 如果只有同类型的文件只有一部分生成了缩略图，你可能需要调整可以有缩略图的文件的最大大小，在 *Edit > Preferences > Display* 里调整。
 
 ### 设置终端模拟器
 
-You can configure what terminal emulator PCManFM should use for *Tools > Open Current Folder in Terminal* under *Edit > Preferences > Advanced* e.g. `bash -c 'pantheon-terminal --working-directory "$PWD"'`.
+在 *Edit > Preferences > Advanced* 里面的 *Tools > Open Current Folder in Terminal*，你可以配置 PCManFM 调用的终端模拟器。
 
-### 集成归档管理器
+### 集成压缩包管理器
 
-可以在*编辑 > 偏好设置 > 高级* 中设置集成的归档管理器。目前 PCManFM 支持 [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) (或者 [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) 和 [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)。
+可以在 *Edit > Preferences > Advanced* 中设置集成的压缩包管理器。目前 PCManFM 支持 [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) (或者 [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) 和 [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)。
 
-### 创建模板
+### “创建新的...”模板
 
-模板文件保存在 `~/Templates` ，点击*文件>新建...*可以选择相应的模板
+模板文件保存在 `~/Templates` ，点击*文件>新建...*可以选择相应的模板。默认的模板是“创建文件夹”和“创建空白文件”。
 
 ## 故障排除
 
@@ -163,83 +181,81 @@ export XDG_CURRENT_DESKTOP=LXDE
 
 ```
 
-### 无 "Applications"
+### 没有 "Applications"
 
-You can try this method: Delete all files in the `$HOME/.cache/menus` directory, and run PCManFM again.
+删掉 `$HOME/.cache/menus` 文件夹里的东西，然后重新运行 PCManFM。
 
-PCManFM requires the environment variable *XDG_MENU_PREFIX* to be set. The value of the variable should match the beginning of a file present in the `/etc/xdg/menus/` directory. E.g. you can set the value in your `.xinitrc` file with the line:
+*XDG_MENU_PREFIX* 这个环境变量需要设置好，它的值应该和 `/etc/xdg/menus/` 目录里的文件的文件名的开头部分匹配。可以通过 `.xinitrc` 文件设置这个环境变量，例如：
 
 ```
 export XDG_MENU_PREFIX="lxde-"
 
 ```
 
-See these threads for more informations: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1110903), and especially this post from the Linux Mint forums: [[2]](http://forums.linuxmint.com/viewtopic.php?f=175&t=53986#p501920)
+参考[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1110903) 以及Linux Mint论坛的[[2]](http://forums.linuxmint.com/viewtopic.php?f=175&t=53986#p501920)（特别推荐）
 
 ### 无图标
 
-If you are using a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment") and you have no icons for folders and files, specify a GTK+ icon theme.
+如果你用的是 [window manager](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 而不是 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，而文件夹和文件没有图标，你需要指定 GTK+ 图标主题。
 
-If you have e.g. [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) installed, edit `~/.gtkrc-2.0` **or** `/etc/gtk-2.0/gtkrc` and add the following line:
+例如，你安装了 [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons)，在 `~/.gtkrc-2.0` **或者** `/etc/gtk-2.0/gtkrc` 里添加这一行：
 
 ```
 gtk-icon-theme-name = "oxygen"
 
 ```
 
-**Note:** All instances of PCManFM have to be restarted for changes to apply!
+**Note:** 重启 PCManFM 才能生效。
 
-Else, use an different one (*gnome*, *hicolor*, and *locolor* do not work). To list all installed icon themes:
+设置成还没有安装的图标主题是没用的。用下面这个命令查看安装了的图标主题：
 
 ```
 $ ls ~/.icons/ /usr/share/icons/
 
 ```
 
-If none of them is suitable, install one. To list all installable icon packages:
+如果看着都不爽，那就用这个命令查看所有可以安装的图标主题，选一个来安装：
 
 ```
 $ pacman -Ss icon-theme
 
 ```
 
-**Tip:** For an alternative GUI solution, install [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) and apply an icon theme from there.
+**Tip:** 如果想要有个图形界面，安装 [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) 并用它来设置图标主题。
 
-### 无 "上一/下一 文件夹"
+### 鼠标按钮不能触发 "上一/下一 文件夹" 功能
 
-A method to fix this is with [Xbindkeys](/index.php/Xbindkeys "Xbindkeys").
+用 [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") 来搞定这个功能。
 
-Install [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xvkbd](https://aur.archlinux.org/packages/xvkbd/) and edit `~/.xbindkeysrc` to contain the following:
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys)、[xvkbd](https://aur.archlinux.org/packages/xvkbd/)，在 `~/.xbindkeysrc` 里添加以下内容：
 
+ `~/.xbindkeysrc` 
 ```
 # Sample .xbindkeysrc for a G9x mouse.
 "/usr/bin/xvkbd -text '\[Alt_L]\[Left]'"
  b:8
 "/usr/bin/xvkbd -text '\[Alt_L]\[Right]'"
  b:9
-
 ```
 
-Actual button codes can be obtained with package [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev).
+按键代码可以通过 [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) 获取。
 
-Add:
+最后在 `~/.xinitrc` 里添加以下内容来在登录时触发 *xbindkeys*。
 
 ```
 xbindkeys &
 
 ```
 
-to your `~/.xinitrc` to execute xbindkeys on log-in.
+### --desktop 参数不生效或使X-server崩溃
 
-### --desktop parameter not working or crashing X-server
+确保你有 `~/.config/pcmanfm` 文件夹的所有权和写权限。
 
-Make sure you have ownership and write permissions on `~/.config/pcmanfm`.
+通过使用 `--desktop-pref` 参数或者修改 `~/.config/pcmanfm/default/pcmanfm.config` 来设置桌面壁纸来解决问题。
 
-Setting the wallpaper either by using the `--desktop-pref` parameter or editing `~/.config/pcmanfm/default/pcmanfm.config` solves the problem.
+### 终端模拟器的高级配置没有保存
 
-### 终端模拟器的高级配置无法保存
-
-Make sure you have rights on libfm configuration file:
+请设置 libfm 配置文件的权限：
 
 ```
 $ chmod -R 755 ~/.config/libfm
@@ -247,32 +263,32 @@ $ chmod 644 ~/.config/libfm/libfm.conf
 
 ```
 
-### Make PCManFM remember your preferred Sort Files settings
+### 记住文件排序设置
 
-You can use *View > Sort Files* to change the order in which PCManFM lists the files, but PCManFM won't remember that the next time you start it. To make it remember, go to *Edit > Preferences* and close. That will write your current sort_type and sort_by values into `~/.config/pcmanfm/LXDE/pcmanfm.conf`.
+在 *View > Sort Files* 里可以设置文件排序，但是如果要让 PCManFM 记住这个设置，需要打开 *Edit > Preferences* 然后再关掉，这样会让当前的sort_type 和 sort_by 的值写入 `~/.config/pcmanfm/LXDE/pcmanfm.conf` 文件。
 
-### 挂载驱动时候提醒"Not authorized"
+### 挂载设备时候提醒 "Not authorized"
 
-Make this [polkit](/index.php/Polkit "Polkit") rule in `/etc/polkit-1/rules.d/00-mount-internal.rules`:
+在 `/etc/polkit-1/rules.d/00-mount-internal.rules` 文件里添加这个 [polkit](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Polkit (简体中文)") 规则：
 
+ `/etc/polkit-1/rules.d/00-mount-internal.rules` 
 ```
 polkit.addRule(function(action, subject) {
-   if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" &&
-      subject.local && subject.active && subject.isInGroup("storage")))
-      {
-         return polkit.Result.YES;
-      }
-});
-
+    if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" &&
+       subject.local && subject.active && subject.isInGroup("storage")))
+       {
+          return polkit.Result.YES;
+       }
+ });
 ```
 
-And add your user to storage group:
+并且把你的用户添加到 `storage` 用户组里：
 
 ```
-# usermod -aG storage username
+# usermod -aG storage *username*
 
 ```
 
 ### Operation not supported
 
-See the General troubleshooting article on [Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
+参见 [会话权限](/index.php/General_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#会话权限 "General troubleshooting (简体中文)").

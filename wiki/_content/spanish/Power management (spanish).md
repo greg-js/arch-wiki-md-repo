@@ -40,18 +40,18 @@ En Arch Linux, la administración de energía consiste en dos partes principales
     *   [2.4 Solución de problemas](#Solución_de_problemas)
         *   [2.4.1 Acción retardada del interruptor de la tapa](#Acción_retardada_del_interruptor_de_la_tapa)
         *   [2.4.2 La suspensión desde la tecla Fn correspondiente del portátil no funciona](#La_suspensión_desde_la_tecla_Fn_correspondiente_del_portátil_no_funciona)
-*   [3 Power saving](#Power_saving)
-    *   [3.1 Processors with HWP (Hardware P-state) support](#Processors_with_HWP_(Hardware_P-state)_support)
+*   [3 Ahorrar energía](#Ahorrar_energía)
+    *   [3.1 Procesadores con soporte HWP (Hardware P-state)](#Procesadores_con_soporte_HWP_(Hardware_P-state))
     *   [3.2 Audio](#Audio)
-    *   [3.3 Backlight](#Backlight)
+    *   [3.3 Retroiluminación](#Retroiluminación)
     *   [3.4 Bluetooth](#Bluetooth)
-    *   [3.5 Web camera](#Web_camera)
-    *   [3.6 Kernel parameters](#Kernel_parameters)
-        *   [3.6.1 Disabling NMI watchdog](#Disabling_NMI_watchdog)
-        *   [3.6.2 Writeback Time](#Writeback_Time)
-        *   [3.6.3 Laptop Mode](#Laptop_Mode)
-    *   [3.7 Network interfaces](#Network_interfaces)
-        *   [3.7.1 Intel wireless cards (iwlwifi)](#Intel_wireless_cards_(iwlwifi))
+    *   [3.5 Cámara web](#Cámara_web)
+    *   [3.6 Parámetros Kernel](#Parámetros_Kernel)
+        *   [3.6.1 Desactivar NMI watchdog](#Desactivar_NMI_watchdog)
+        *   [3.6.2 Tiempo de reescritura](#Tiempo_de_reescritura)
+        *   [3.6.3 Modo portátil](#Modo_portátil)
+    *   [3.7 Interfaces de red](#Interfaces_de_red)
+        *   [3.7.1 Tarjetas inalámbricas Intel (iwlwifi)](#Tarjetas_inalámbricas_Intel_(iwlwifi))
     *   [3.8 Bus power management](#Bus_power_management)
         *   [3.8.1 Active State Power Management](#Active_State_Power_Management)
         *   [3.8.2 PCI Runtime Power Management](#PCI_Runtime_Power_Management)
@@ -215,7 +215,7 @@ Before=sleep.target
 User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop ; /usr/bin/mysql -e 'slave stop'
+ExecStartPre= -/usr/bin/pkill -u %u unison ; /usr/local/bin/music.sh stop ; /usr/bin/mysql -e 'slave stop'
 ExecStart=/usr/bin/sflock
 
 [Install]
@@ -237,7 +237,7 @@ ExecStart=/usr/bin/mysql -e 'slave start'
 WantedBy=suspend.target
 ```
 
-**Nota:** Los bloqueadores de pantalla puede que vuelvan antes de que la pantalla se halla "bloqueado" y puede retomar la suspensión. Añadir un pequeño tiempo via `ExecStartPost=/usr/bin/sleep 1` ayida a prevenir esto.
+**Nota:** Los bloqueadores de pantalla puede que vuelvan antes de que la pantalla se halla "bloqueado" y puede retomar la suspensión. Añadir un pequeño tiempo via `ExecStartPost=/usr/bin/sleep 1` ayuda a prevenir esto.
 
 Para las acciones de root/sistema ([active](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `root-resume` y los servicios `root-suspend` para iniciarlos en el arranque):
 
@@ -268,7 +268,7 @@ ExecStart=-/usr/bin/pkill -9 sshfs
 WantedBy=sleep.target
 ```
 
-Unos consejos útiles acerca de estos archivos de servicio (más información en [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
+**Sugerencia:** Unos consejos útiles acerca de estos archivos de servicio (más información en [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
 
 *   Si está presente `Type=OneShot`, entonces puede utilizar múltiples líneas `ExecStart=`. De lo contrario, solo está permitida una línea ExecStart. No obstante, puede agregar más órdenes con `ExecStartPre` o mediante la separación de las órdenes con un punto y coma (véase el primer ejemplo de arriba; fíjese en los espacios en blanco antes y después del punto y coma... ¡estos son necesarios!).
 *   Una orden con un prefijo `-` causará un código de salida distinto de cero que será ignorado y la orden será tratada como cumplida.
@@ -405,21 +405,21 @@ Reinicie los servicios y recargue las reglas:
 
 Ahora debe ver `Watching system buttons on /dev/input/event0` en syslog.
 
-## Power saving
+## Ahorrar energía
 
-**Note:** See [Laptop#Power management](/index.php/Laptop#Power_management "Laptop") for power management specific to laptops, such as battery monitoring.
+**Nota:** Vea la [configuración de ordenadores portátiles](/index.php/Laptop_(Espa%C3%B1ol)#Configuración_de_ordenadores_portátiles "Laptop (Español)") para administraciones específicas de energía para portátiles como el monitoreo de la batería.
 
-This section is a reference for creating custom scripts and power saving settings such as by udev rules. Make sure that the settings are not managed by some [other utility](#Userspace_tools) to avoid conflicts.
+Esta sección es una referencia para crear scripts personalizados y ajustar el ahorro energético mediante las reglas udev. Asegurese de que no están administradas por alguna [otra herramienta](#Herramientas_de_espacio_del_usuario) para evitar conflictos.
 
-Almost all of the features listed here are worth using whether or not the computer is on AC or battery power. Most have negligible performance impact and are just not enabled by default because of commonly broken hardware/drivers. Reducing power usage means reducing heat, which can even lead to higher performance on a modern Intel or AMD CPU, thanks to [dynamic overclocking](https://en.wikipedia.org/wiki/Intel_Turbo_Boost "wikipedia:Intel Turbo Boost").
+Casi todas las características que se listan aquí serán útiles dependiendo de si el ordenador está conectado a corriente o a la batería. Muchas tiene un impacto considerable en el rendimiento y no están habilitadas por defecto porque normalmente causan problemas con los controladores/hardware. Reducir el uso de energía significa reducir el calor con el que se puede conseguir un mayor rendimiento en un CPU Intel o AMD moderno gracias al [overclocking dinámico](https://en.wikipedia.org/wiki/es:Intel_Turbo_Boost "wikipedia:es:Intel Turbo Boost").
 
-### Processors with HWP (Hardware P-state) support
+### Procesadores con soporte HWP (Hardware P-state)
 
-The available energy preferences of a HWP supported processor are `default performance balance_performance balance_power power`.
+Las preferencias disponibles para la energía de un procesador que soporta HWP son `default performance balance_performance balance_power power`.
 
-This can be validated by `$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_performance_available_preferences`
+Esto se puede comprobar con `$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_performance_available_preferences`
 
-To conserve more energy, you can config by creating the following file:
+Para conservar más energía puede configurarlo creando la siguiente línea:
 
  `/etc/tmpfiles.d/energy_performance_preference.conf` 
 ```
@@ -427,44 +427,44 @@ w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - 
 
 ```
 
-See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
+Vea las páginas de manual [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) y [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) para más detalles.
 
 ### Audio
 
-By default, audio power saving is turned off by most drivers. It can be enabled by setting the `power_save` parameter; a time (in seconds) to go into idle mode. To idle the audio card after one second, create the following file for Intel soundcards.
+Por defecto el ahorro de energía de audio está apagado por muchos controladores. Se puede activar ajustando el parámetro `power_save`: tiempo (en segundos) para cambiar al modo en reposo. Para dejar en reposo la tarjeta de sonido después de un segundo crea la siguiente línea para las tarjetas de sonido Intel.
 
  `/etc/modprobe.d/audio_powersave.conf`  `options snd_hda_intel power_save=1` 
 
-Alternatively, use the following for ac97:
+Alternativamente, utilice la siguiente para ac97:
 
 ```
 options snd_ac97_codec power_save=1
 
 ```
 
-**Note:**
+**Nota:**
 
-*   To retrieve the manufacturer and the corresponding kernel driver which is used for your sound card, run `lspci -k`.
-*   Toggling the audio card's power state can cause a popping sound or noticeable latency on some broken hardware.
+*   Para recuperar el fabricante y el controlador correspondiente del núcleo que se está utilizando en su tarjeta de sonido ejecute `lspci -k`.
+*   Cambiar el estado de energía de las tarjetas de sonido puede causar que suene un estallido o una latencia notable en algún dispositivo roto.
 
-It is also possible to further reduce the audio power requirements by disabling the HDMI audio output, which can done by [blacklisting](/index.php/Blacklisting "Blacklisting") the appropriate kernel modules (e.g. `snd_hda_codec_hdmi` in case of Intel hardware).
+Es posible reducir los requerimientos de energía de audio desactivando la salida de audio HDMI que se puede hacer añadiendo en la [lista negra](/index.php/Kernel_module_(Espa%C3%B1ol)#Lista_negra "Kernel module (Español)") los módulos del núcleo apropiados (por ejemplo en caso de dispositivos Intel `snd_hda_codec_hdmi`).
 
-### Backlight
+### Retroiluminación
 
-See [Backlight](/index.php/Backlight "Backlight").
+Vea [retroiluminación](/index.php/Backlight "Backlight").
 
 ### Bluetooth
 
-To disable bluetooth completely, [blacklist](/index.php/Blacklist "Blacklist") the `btusb` and `bluetooth` modules.
+Para desactivar completamente el bluetooth añada en la [lista negra](/index.php/Kernel_module_(Espa%C3%B1ol)#Lista_negra "Kernel module (Español)") los módulos `btusb` y `bluetooth`.
 
-To turn off bluetooth only temporarily, use *rfkill*:
+Para apagar el bluetooth temporalmente utilice *rfkill*:
 
 ```
 # rfkill block bluetooth
 
 ```
 
-Or with udev rule:
+O con una regla udev:
 
  `/etc/udev/rules.d/50-bluetooth.rules` 
 ```
@@ -473,50 +473,50 @@ SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
 
 ```
 
-### Web camera
+### Cámara web
 
-If you will not use integrated web camera then [blacklist](/index.php/Blacklist "Blacklist") the `uvcvideo` module.
+Si no va a utilizar la cámara web integrada añada en la [lista negra](/index.php/Kernel_module_(Espa%C3%B1ol)#Lista_negra "Kernel module (Español)") el módulo `uvcvideo`.
 
-### Kernel parameters
+### Parámetros Kernel
 
-This section uses configs in `/etc/sysctl.d/`, which is *"a drop-in directory for kernel sysctl parameters."* See [The New Configuration Files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) for more information.
+Esta sección utiliza las configuraciones en `/etc/sysctl.d/` que es *"un directorio para los parámetros de sysctl del kernel."* Vea [Los nuevos archivos de configuración](http://0pointer.de/blog/projects/the-new-configuration-files) y más especificamente [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) para más información.
 
-#### Disabling NMI watchdog
+#### Desactivar NMI watchdog
 
-The [NMI](https://en.wikipedia.org/wiki/Non-maskable_interrupt "wikipedia:Non-maskable interrupt") watchdog is a debugging feature to catch hardware hangs that cause a kernel panic. On some systems it can generate a lot of interrupts, causing a noticeable increase in power usage:
+El watchdog [NMI](https://en.wikipedia.org/wiki/es:Interrupci%C3%B3n_no_enmascarable "wikipedia:es:Interrupción no enmascarable") es una característica de desarrollador que captura los cuelgues que causan el kernel panic. En algunos sistemas puede generar muchas interrupciones causando un aumento del uso energético:
 
  `/etc/sysctl.d/disable_watchdog.conf`  `kernel.nmi_watchdog = 0` 
 
-or add `nmi_watchdog=0` to the [kernel line](/index.php/Kernel_line "Kernel line") to disable it completely from early boot.
+o añada `nmi_watchdog=0` al [parámetro kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") para desactivarlo completamente desde el principio del arranque.
 
-#### Writeback Time
+#### Tiempo de reescritura
 
-Increasing the virtual memory dirty writeback time helps to aggregate disk I/O together, thus reducing spanned disk writes, and increasing power saving. To set the value to 60 seconds (default is 5 seconds):
+Aumentando el tiempo de reescritura de la sucia memoria virtual ayuda a agregar discos I/O juntos reduciendo así las escrituras en disco distribuidas y aumentando el ahorro energético. Para establecer este valor en 60 segundos (por defecto está en 5 segundos):
 
  `/etc/sysctl.d/dirty.conf`  `vm.dirty_writeback_centisecs = 6000` 
 
-To do the same for journal commits on supported filesystems (e.g. ext4, btrfs...), use `commit=60` as a option in [fstab](/index.php/Fstab "Fstab").
+Para hacer lo mismo con las actualizaciones de journal en los sistemas de ficheros soportados (p.ej. ext4, btrfs...) utilice `commit=60` como una opción en [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)").
 
-Note that this value is modified as a side effect of the Laptop Mode setting below. See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for other parameters affecting I/O performance and power saving.
+Note que modificando este valor tiene un efecto secundario de la configuración del modo portátil descrito a continuación. Vea también [memoria virtual](/index.php/Sysctl#Virtual_memory "Sysctl") para otros parámetros que afectan al rendimiento I/O y ahorran energía.
 
-#### Laptop Mode
+#### Modo portátil
 
-See the [kernel documentation](https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt) on the laptop mode 'knob.' *"A sensible value for the knob is 5 seconds."*
+Vea la [documentación del kernel](https://www.kernel.org/doc/Documentation/laptops/laptop-mode.txt) en el modo portatil 'knob.' *"Un valor sensible para knob es 5 segundos."*
 
  `/etc/sysctl.d/laptop.conf`  `vm.laptop_mode = 5` 
-**Note:** This setting is mainly relevant to spinning-disk drives.
+**Nota:** Estos ajustes son relevantes para los controladores de discos giratorios.
 
-### Network interfaces
+### Interfaces de red
 
-[Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") can be a useful feature, but if you are not making use of it then it is simply draining extra power waiting for a magic packet while in suspend. You can adapt the [Wake-on-LAN#udev](/index.php/Wake-on-LAN#udev "Wake-on-LAN") rule to disable the feature for all ethernet interfaces. To enable powersaving with [iw](https://www.archlinux.org/packages/?name=iw) on all wireless interfaces:
+[Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") Puede ser una característica útil pero si no va hacer uso de ella es simplemente un consumo extra de energía esperando un paquete mágico mientras está en suspensión. Puede adaptar la regla [udev](/index.php/Wake-on-LAN#udev "Wake-on-LAN") para deactivar la característica para todas las interfaces de red. Para activar el ahorro de energía con [iw](https://www.archlinux.org/packages/?name=iw) en todas las interfaces inalámbricas:
 
  `/etc/udev/rules.d/**81**-wifi-powersave.rules`  `ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", RUN+="/usr/bin/iw dev $name set power_save on"` 
 
-The name of the configuration file is important. With the use of [persistent device names](/index.php/Network_configuration#Change_interface_name "Network configuration") in systemd, the above network rule, named lexicographically **after** `80-net-setup-link.rules`, is applied after the device is renamed with a persistent name e.g. `wlan0` renamed `wlp3s0`. Be aware that the `RUN` command is executed after all rules have been processed and must anyway use the persistent name, available in `$name` for the matched device.
+El nombre del archivo de configuración es importante. Con el uso de [nombres fijos de dispositivos](/index.php/Network_configuration_(Espa%C3%B1ol)#Cambiar_el_nombre_de_dispositivo "Network configuration (Español)"), en systemd la regla de red de arriba, nombrado léxico-gráficamente **después** `80-net-setup-link.rules`, se aplica después de que el servicio se renombre con un nombre fijo p.ej `wlan0` renombrada a `wlp3s0`. Tenga en cuenta que el comando `RUN` se ejecuta después de que todas las reglas se hayan procesado y tienen que utilizar de cualquier forma el nombre fijo disponible en `$name` para el dispositivo emparejado.
 
-#### Intel wireless cards (iwlwifi)
+#### Tarjetas inalámbricas Intel (iwlwifi)
 
-Additional power saving functions of Intel wireless cards with `iwlwifi` driver can be enabled by passing the correct parameters to the kernel module. Making it persistent can be achieved by adding the line below to `/etc/modprobe.d/iwlwifi.conf` file:
+Se pueden activar funciones adicionales de ahorro de energía de las tarjetas inalámbricas Intel con el controlador `iwlwifi` pasando los parámetros correctos al módulo kernel. Para hacerlo permanente se puede guardad añadiendo la línea de debajo al archivo `/etc/modprobe.d/iwlwifi.conf` file:
 
 ```
 options iwlwifi power_save=1 d0i3_disable=0 uapsd_disable=0
@@ -524,7 +524,7 @@ options iwldvm force_cam=0
 
 ```
 
-Keep in mind that these power saving options are experimental and can cause an unstable system.
+Tenga en mente que estas opciones de ahorro de energía son experimentales y pueden causar inestabilidades en el sistema.
 
 ### Bus power management
 

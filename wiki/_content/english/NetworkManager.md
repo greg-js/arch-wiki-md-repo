@@ -451,6 +451,8 @@ It can be configured to write it through [openresolv](#Use_openresolv) or to [no
 
 Using openresolv allows NetworkManager to coexists with other *resolvconf* supporting software or, for example, to run a local DNS caching and split-DNS resolver for which openresolv has a [subscriber](/index.php/Openresolv#Subscribers "Openresolv").
 
+**Note:** Split DNS is [not yet fully supported](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153) when using NetworkManager with openresolv.
+
 *NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
 
 **Note:**

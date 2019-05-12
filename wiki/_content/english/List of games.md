@@ -637,6 +637,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://seehuhn.de/pages/moon-buggy/](http://seehuhn.de/pages/moon-buggy/) || [moon-buggy](https://aur.archlinux.org/packages/moon-buggy/)
 
+*   **RVGL** — Rewrite of Re-Volt, popular 3D RC car racing game from 1999 with an active online community.
+
+	[https://rvgl.re-volt.io/](https://rvgl.re-volt.io/) || [rvgl-bin](https://aur.archlinux.org/packages/rvgl-bin/), [all content packs in AUR](https://aur.archlinux.org/packages/?O=0&K=rvgl-)
+
 *   **Speed Dreams** — Fork of Torcs, aiming to implement exciting new features as well as improving realism.
 
 	[http://speed-dreams.org/](http://speed-dreams.org/) || [speed-dreams-svn](https://aur.archlinux.org/packages/speed-dreams-svn/)

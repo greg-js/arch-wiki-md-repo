@@ -24,13 +24,9 @@ Most probably your webcam will work out of the box. Permissions to access video 
 
 ## Loading
 
-Identify the name of your webcam (using, for example, `lsusb`) and find a proper driver. See [Webcam devices](https://www.linuxtv.org/wiki/index.php/Webcam_devices) for the details about drivers.
+Most recent webcams are UVC (*USB Video Class*) compliant and are supported by the generic *uvcvideo* kernel driver module. To check that your webcam is recognized, run *dmesg* just after you plug the webcam in. You should see something like this:
 
-Add your webcam's [kernel module](/index.php/Kernel_module "Kernel module") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
-
-If your webcam is USB, the kernel *should* automatically load the proper driver. If this is the case, check dmesg after you plug your webcam in. You should see something like this:
-
- `$ dmesg|tail` 
+ `$ dmesg | tail` 
 ```
 sn9c102: V4L2 driver for SN9C10x PC Camera Controllers v1:1.24a
 usb 1-1: SN9C10[12] PC Camera Controller detected (vid/pid 0x0C45/0x600D)
@@ -39,12 +35,17 @@ usb 1-1: Initialization succeeded
 usb 1-1: V4L2 device registered as /dev/video0
 usb 1-1: Optional device control through 'sysfs' interface ready
 usbcore: registered new driver sn9c102
-
 ```
+
+Some pre-UVC webcams are also supported via the *gspca* kernel driver module. See the [gspca devices](https://www.linuxtv.org/wiki/index.php/Gspca_devices) for a non-exhaustive list of supported devices under this framework.
+
+Otherwise, if your webcam is not supported by the kernel drivers, identify the name of your webcam (using, for example `lsusb`) and look for an adequate driver. See [webcam devices](https://www.linuxtv.org/wiki/index.php/Webcam_devices) for information and resources about webcams. Find a driver compatible with your webcam and add the corresponding [kernel module](/index.php/Kernel_module "Kernel module") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
+
+**Note:** The Linux kernel to userspace API used to control webcams is *Video4Linux2*, **v4l2** for short. It means that all applications which support v4l2 will work with the kernel's drivers which are v4l2.
 
 ## Configuration
 
-If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use **Qt V4L2 Test Bench** (*qv4l2*), available in the package [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications.
+If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use *Qt V4L2 Test Bench*. To run it, [install](/index.php/Install "Install") [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils) and launch `qv4l2`, and it will present you a list of configurable settings. Changing these settings will affect all applications.
 
 ## Applications
 
@@ -52,7 +53,7 @@ See also [List of applications/Multimedia#Webcam](/index.php/List_of_application
 
 ### xawtv
 
-This is a basic v4l device viewer, and although it is intended for use with TV tuner cards, it works well with webcams. It will display what your webcam sees in a window. Install it ([xawtv](https://www.archlinux.org/packages/?name=xawtv)) and run it with:
+This is a basic *Video4Linux2* device viewer, and although it is intended for use with TV tuner cards, it works well with webcams. It will display what your webcam sees in a window. [Install](/index.php/Install "Install") [xawtv](https://www.archlinux.org/packages/?name=xawtv) and run it with:
 
 ```
 $ xawtv -c /dev/video0
@@ -133,7 +134,7 @@ $ mpv av://v4l2:/dev/video0
 To use MJPEG as the pixelformat instead of the default (in many cases YUYV), you can do the following:
 
 ```
-$ mpv --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg /dev/video0
+$ mpv --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg av://v4l2:/dev/video0
 
 ```
 

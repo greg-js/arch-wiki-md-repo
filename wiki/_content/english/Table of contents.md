@@ -320,7 +320,7 @@
 | <small>6.21.6.</small> [Intrusion detection](/index.php/Category:Intrusion_detection "Category:Intrusion detection") <small>(4)</small> |
 | <small>6.21.7.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.21.8.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
-| <small>6.21.9.</small> [Sandboxing](/index.php/Category:Sandboxing "Category:Sandboxing") <small>(6)</small> |
+| <small>6.21.9.</small> [Sandboxing](/index.php/Category:Sandboxing "Category:Sandboxing") <small>(7)</small> |
 | <small>6.21.10.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>6.21.11.</small> [Security testing](/index.php/Category:Security_testing "Category:Security testing") <small>(3)</small> |
 | <small>6.21.12.</small> [Surveillance](/index.php/Category:Surveillance "Category:Surveillance") <small>(3)</small> |
@@ -330,5 +330,5 @@
 | <small>6.22.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization "Category:Cloud synchronization") <small>(3)</small> |
 | <small>6.22.2.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.23.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(19)</small> |
-| <small>6.24.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(26)</small> |
+| <small>6.24.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(27)</small> |
 | <small>6.24.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |

@@ -82,9 +82,11 @@ Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_
 
 **Warning:** The safety of the settings mentioned in this section is still being investigated. The firmware limits the temperature to 80C maximum, even with the correct DPTF policy applied. This may or may not be a bug. Please don't use these settings unless you're confident you know what you're doing or the behavior is validated more.
 
-A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H. Similar to other modern Thinkpad laptops, this can be worked around by using [throttled](https://aur.archlinux.org/packages/throttled/) (previously known as [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/)) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the same CPU to run at 3100 MHz with the temperature of 95C.
+A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H.
 
-See the [throttled homepage](https://github.com/erpalma/throttled) for more info about the temporary fix; a [proper solution](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/thermal/intel/int340x_thermal/int3400_thermal.c?id=16fc8eca1975358111dbd7ce65e4ce42d1a848fb) will be available in Linux 5.1, but may require firmware fixes as well.
+It should be possible to modify those settings by [applying the correct DPTF policy](https://lkml.org/lkml/2018/10/10/328), however, as of BIOS 1.21, the policies seem to be ignored by the firmware.
+
+This can be worked around by using [throttled](https://aur.archlinux.org/packages/throttled/) (previously known as [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/)) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
 
 ### CPU undervolting
 
@@ -94,10 +96,7 @@ Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Unde
 
 As of March 2019, the following commonly used kernel parameters are known to work:
 
-*   `i915.enable_psr=1` - enables panel self-refresh on Intel graphics, likely power savings; will be enabled by default starting with Linux 5.1
-*   `i915.fastboot=1` - skips mode setting on startup, prevents flickering on compatible boot loaders (rEFInd, GRUB2 with resolution set, etc.); will be enabled by default starting with Linux 5.1
 *   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations
-*   `acpi_osi=Linux` - resolves issue where the system can hang for minutes on restart/shutdown
 
 ## Specifications
 

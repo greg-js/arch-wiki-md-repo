@@ -33,7 +33,7 @@ Make sure the PHP [mysql](/index.php/PHP#MySQL/MariaDB "PHP") extension(s) have 
 
 Optionally you can enable `extension=bz2` and `extension=zip` for compression support.
 
-**Note:** If `open_basedir` has been set, make sure to include `/etc/webapps` to `open_basedir` in `/etc/php/php.ini`.
+**Note:** If `open_basedir` has been set, make sure to include `/usr/share/webapps` & `/etc/webapps` to `open_basedir` in `/etc/php/php.ini`. See [PHP#Configuration](/index.php/PHP#Configuration "PHP")
 
 ### Apache
 

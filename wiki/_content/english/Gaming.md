@@ -14,63 +14,64 @@ This page contains information about running games and related system configurat
 
 *   [1 Game environments](#Game_environments)
 *   [2 Getting games](#Getting_games)
-    *   [2.1 Digital distribution](#Digital_distribution)
 *   [3 Running games](#Running_games)
     *   [3.1 Multi-screen setups](#Multi-screen_setups)
     *   [3.2 Keyboard grabbing](#Keyboard_grabbing)
     *   [3.3 Starting games in a separate X server](#Starting_games_in_a_separate_X_server)
     *   [3.4 Adjusting mouse detections](#Adjusting_mouse_detections)
-    *   [3.5 Mouse focus in GNOME](#Mouse_focus_in_GNOME)
-    *   [3.6 Binaural Audio with OpenAL](#Binaural_Audio_with_OpenAL)
-    *   [3.7 Tuning PulseAudio](#Tuning_PulseAudio)
-        *   [3.7.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
-        *   [3.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
-        *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse's_buffering)
-    *   [3.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
+    *   [3.5 Binaural Audio with OpenAL](#Binaural_Audio_with_OpenAL)
+    *   [3.6 Tuning PulseAudio](#Tuning_PulseAudio)
+        *   [3.6.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
+        *   [3.6.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
+        *   [3.6.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse's_buffering)
+    *   [3.7 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
 *   [4 Remote gaming](#Remote_gaming)
 *   [5 Improving performance](#Improving_performance)
-    *   [5.1 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
-        *   [5.1.1 Policies](#Policies)
-        *   [5.1.2 Nice levels](#Nice_levels)
-        *   [5.1.3 Core affinity](#Core_affinity)
-        *   [5.1.4 General case](#General_case)
-        *   [5.1.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
+    *   [5.1 Utilities](#Utilities)
+    *   [5.2 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
+        *   [5.2.1 Policies](#Policies)
+        *   [5.2.2 Nice levels](#Nice_levels)
+        *   [5.2.3 Core affinity](#Core_affinity)
+        *   [5.2.4 General case](#General_case)
+        *   [5.2.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 
 ## Game environments
 
 Different environments exist to play games in Linux:
 
 *   Native – games written for Linux.
-*   Web – games running in a web browser
-    *   HTML5 games use canvas and WebGL technologies and work in all modern browsers
+*   Web – games running in a web browser.
+    *   HTML5 games use canvas and WebGL technologies and work in all modern browsers.
     *   [Flash](/index.php/Flash "Flash")-based – you need to install the plugin to play.
-*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems. See [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators") for more details.
-    *   [Wine](/index.php/Wine "Wine") – allows running of some Windows games, as well as a large amount of Windows software. Performance in Wine varies, the additional CPU overhead will cause slowdown in some games while in some cases games may run faster. Consult [Wine AppDB](http://appdb.winehq.org/) for game-specific compatibility information.
-    *   [Crossover Games](http://www.codeweavers.com/) – members of the Codeweavers team are prime supporters of Wine. Using Crossover Games makes the installation & setting up of some games easier, more reliable & even possible, when compared to using other methods. Crossover is a paid commercial product, which also provides a [forum](http://www.codeweavers.com/support/forums/) where the developers are very much involved in the community.
-    *   [DOSBox](/index.php/DOSBox "DOSBox") is a minimal virtual machine which runs a full DOS-compatible environment. It can be used to run classic DOS titles.
-    *   [scummvm](https://www.archlinux.org/packages/?name=scummvm) is an all-in-one engine reimplementation of many classic point-and-click adventure games. A full list of compatible titles can be found on the [ScummVM website](http://scummvm.org).
-    *   Similar to ScummVM, engine reimplementations and ports exist for specific titles, such as Doom.
-*   Virtual machines can be used to install compatible operating systems (such as Windows). [VirtualBox](/index.php/VirtualBox "VirtualBox") has good 3D support. As an extension of this, if you have compatible hardware you can consider VGA passthrough to a Windows KVM guest, keyword is ["virtual function I/O" (VFIO)](https://www.kernel.org/doc/Documentation/vfio.txt), or [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF").
+*   [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators") – required for running software designed for other architectures and systems.
+*   [Wine](/index.php/Wine "Wine") – Windows compatibility layer, allows to run Windows applications on Unix-like operating systems.
+*   [Virtual machines](/index.php/Virtual_machine "Virtual machine") – can be used to install compatible operating systems (such as Windows). [VirtualBox](/index.php/VirtualBox "VirtualBox") has good 3D support. As an extension of this, if you have compatible hardware you can consider VGA passthrough to a Windows KVM guest, keyword is ["virtual function I/O" (VFIO)](https://www.kernel.org/doc/Documentation/vfio.txt), or [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF").
 
 ## Getting games
 
-A good number are available in the [official repositories](/index.php/Official_repositories "Official repositories") / the [AUR](/index.php/AUR "AUR"), see [List of games](/index.php/List_of_games "List of games").
-
-### Digital distribution
-
 Just because games are available for Linux doesn't mean that they are native, they might be pre-packaged with Wine or DOSBox.
+
+For list of games packaged for Arch in [official repositories](/index.php/Official_repositories "Official repositories") / the [AUR](/index.php/AUR "AUR") see [List of games](/index.php/List_of_games "List of games").
+
+*   **Flathub** — Central [Flatpak](/index.php/Flatpak "Flatpak") repository, has small but growing game section.
+
+	[https://flathub.org/apps/category/Game](https://flathub.org/apps/category/Game) || [flatpak](https://www.archlinux.org/packages/?name=flatpak), [discover](https://www.archlinux.org/packages/?name=discover), [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+
+*   **[GOG.com](https://en.wikipedia.org/wiki/GOG.com "wikipedia:GOG.com")** — DRM-free game store.
+
+	[https://www.gog.com](https://www.gog.com) || [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/)
+
+*   **[itch.io](https://en.wikipedia.org/wiki/itch.io "wikipedia:itch.io")** — Indie game store.
+
+	[https://itch.io](https://itch.io) || [itch](https://aur.archlinux.org/packages/itch/)
+
+*   **[Lutris](https://en.wikipedia.org/wiki/Lutris "wikipedia:Lutris")** — Open gaming platform for Linux. Gets games from GOG, Steam, Battle.net, Origin, Uplay and many other sources.
+
+	[https://lutris.net](https://lutris.net) || [lutris](https://www.archlinux.org/packages/?name=lutris)
 
 *   **[Steam](/index.php/Steam "Steam")** — Digital distribution and communications platform developed by Valve.
 
 	[https://store.steampowered.com](https://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
-
-*   **[itch.io](https://en.wikipedia.org/wiki/itch.io "wikipedia:itch.io")** — Indie game store.
-
-	[https://itch.io/](https://itch.io/) || [itch](https://aur.archlinux.org/packages/itch/)
-
-*   [GOG.com](https://www.gog.com/games/linux)
-    *   GOG.com officially only supports Ubuntu and Linux Mint.
-    *   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) package can be used to download GOG titles from the command line.
 
 ## Running games
 
@@ -138,10 +139,6 @@ $ ~/game.sh xonotic-glx
 
 For games that require exceptional amount of mouse skill, adjusting the [mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate") can help improve accuracy.
 
-### Mouse focus in GNOME
-
-The 'sloppy' and 'mouse' window-focusing modes in [GNOME](/index.php/GNOME "GNOME") are known to cause issues with a variety of games, causing a 'click-through' effect. Users can remedy this problem by switching the focus mode to 'click' (with a tool such as [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), playing in a different desktop environment, or spawing their game in a separate X-session.
-
 ### Binaural Audio with OpenAL
 
 For games using [OpenAL](https://en.wikipedia.org/wiki/OpenAL "wikipedia:OpenAL"), if you use headphones you may get much better positional audio using OpenAL's [HRTF](https://en.wikipedia.org/wiki/Head-related_transfer_function "wikipedia:Head-related transfer function") filters. To enable, run the following command:
@@ -203,23 +200,29 @@ If your system is currently configured to properly insert its own cpu frequency 
 
 [Cloud gaming](https://en.wikipedia.org/wiki/Cloud_gaming "wikipedia:Cloud gaming") has gained a lot of popularity in the last few years, because of low client-side hardware requirements. The only important thing is stable internet connection (over the ethernet cable or 5 GHz WiFi recommended) with a minimum speed of 5–10 Mbit/s (depending on the video quality and framerate).
 
-*   [Steam In-Home](/index.php/Steam#In-home_streaming "Steam") — Remotely play games on the LAN from host machine. Some users managed to get it working over the VPN.
-*   [Parsec](https://ui.parsecgaming.com/) — Remotely play games either from your Windows host machine or rented (within an app) Windows cloud machine. It prioritizes direct connection to the host (great for VPN connections) and if it's not available, then connects via Parsec's servers. Can be installed as [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/).
-*   [LiquidSky](https://liquidsky.com/) — Remotely play games from rented (within an app) Windows cloud machine. Can be installed as [liquidsky](https://aur.archlinux.org/packages/liquidsky/).
-*   [Shadow](https://shadow.tech/) — Remotely play games from rented (within an app) Windows cloud machine. Can be installed as [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/).
-*   [Vortex](https://vortex.gg/) — Remotely play games from their servers. No installation or configuration is required. Works in browser.
-*   [Rainway](https://rainway.com/) — Remotely play games from your Windows host machine. Works in browser (Linux client is coming at around 2019 Q3).
-*   [Moonlight](https://moonlight-stream.org/) — Remotely play games from your Windows host machine with Nvidia GPU. Can be installed as [moonlight](https://aur.archlinux.org/packages/moonlight/).
-*   [Dixper](https://dixper.gg/) — Remotely play games from your Windows host machine. Works in browser.
+**Note:** Most of the services that work in browser usually mean to be only compatible with [google-chrome](https://aur.archlinux.org/packages/google-chrome/).
 
-Also there are other services where users have reported success getting it to work under Linux (via [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton):
-
-*   [PS Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) — Play PS4, PS3 and PS2 games on PC. Alternatively, you can use emulators (see [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators")).
-*   [PLAYKEY](https://playkey.net/) — Yet another cloud gaming service.
+| Service | Installer | In browser client | Use your own host | Offers host renting | Full desktop support | Controller support | Remarks |
+| [Dixper](https://dixper.gg/) | – | Yes | Windows-only | ? | ? | ? | – |
+| [LiquidSky](https://liquidsky.com/) | [liquidsky](https://aur.archlinux.org/packages/liquidsky/) | No | No | Yes | Yes | Yes | – |
+| [Moonlight](https://moonlight-stream.org/) | [moonlight](https://aur.archlinux.org/packages/moonlight/) | No | Windows-only | No | No | ? | This is only a client. Host machine needs GeForce experience installed. |
+| [Parsec](https://ui.parsecgaming.com/) | [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | Yes (experimental) | Windows-only | Yes | Yes | Yes | – |
+| [Playkey](https://playkey.net/) | [playkey-linux](https://aur.archlinux.org/packages/playkey-linux/) | ? | ? | ? | ? | ? | – |
+| [PlayStation Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) | Runs under [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton | No | No | – | No | Yes | Play PS4, PS3 and PS2 games on PC. Alternatively, you can use [emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). |
+| [Rainway](https://rainway.com/) | Coming in 2019 Q3 | Yes | Windows-only | No | Yes | ? | – |
+| [Shadow](https://shadow.tech/) | [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/) | ? | ? | ? | ? | ? | – |
+| [Steam In-Home](/index.php/Steam#In-home_streaming "Steam") | Part of [steam](https://www.archlinux.org/packages/?name=steam) | No | Yes | No | No | Yes | LAN connections only |
+| [Vortex](https://vortex.gg/) | – | Yes | No | – | No | ? | – |
 
 ## Improving performance
 
 See also main article: [Improving performance](/index.php/Improving_performance "Improving performance"). For Wine programs, see [Wine#Performance](/index.php/Wine#Performance "Wine").
+
+### Utilities
+
+*   **GameMode** — Daemon/lib combo for Linux that allows games to request a set of optimisations be temporarily applied to the host OS.
+
+	[https://github.com/FeralInteractive/gamemode](https://github.com/FeralInteractive/gamemode) || [gamemode](https://aur.archlinux.org/packages/gamemode/), [lib32-gamemode](https://aur.archlinux.org/packages/lib32-gamemode/)
 
 ### Improving frame rates and responsiveness with scheduling policies
 

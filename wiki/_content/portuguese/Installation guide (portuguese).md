@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-04-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=569896) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-05-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=571705) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -16,13 +16,14 @@ Arch Linux deve funcionar em qualquer máquina compatível com [x86_64](https://
     *   [1.1 Verificar a assinatura](#Verificar_a_assinatura)
     *   [1.2 Inicializar o ambiente live](#Inicializar_o_ambiente_live)
     *   [1.3 Definir o layout do teclado](#Definir_o_layout_do_teclado)
-    *   [1.4 Verificar o modo de inicialização](#Verificar_o_modo_de_inicialização)
-    *   [1.5 Conectar à internet](#Conectar_à_internet)
-    *   [1.6 Atualizar o relógio do sistema](#Atualizar_o_relógio_do_sistema)
-    *   [1.7 Partição dos discos](#Partição_dos_discos)
-        *   [1.7.1 Exemplos de layouts](#Exemplos_de_layouts)
-    *   [1.8 Formatar as partições](#Formatar_as_partições)
-    *   [1.9 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
+    *   [1.4 Definir o idioma do ambiente live](#Definir_o_idioma_do_ambiente_live)
+    *   [1.5 Verificar o modo de inicialização](#Verificar_o_modo_de_inicialização)
+    *   [1.6 Conectar à internet](#Conectar_à_internet)
+    *   [1.7 Atualizar o relógio do sistema](#Atualizar_o_relógio_do_sistema)
+    *   [1.8 Partição dos discos](#Partição_dos_discos)
+        *   [1.8.1 Exemplos de layouts](#Exemplos_de_layouts)
+    *   [1.9 Formatar as partições](#Formatar_as_partições)
+    *   [1.10 Montar os sistemas de arquivos](#Montar_os_sistemas_de_arquivos)
 *   [2 Instalação](#Instalação)
     *   [2.1 Selecionar os espelhos](#Selecionar_os_espelhos)
     *   [2.2 Instalar os pacotes base](#Instalar_os_pacotes_base)
@@ -94,6 +95,26 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://
 
 [Fontes de console](/index.php/Fontes_de_console "Fontes de console") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
+### Definir o idioma do ambiente live
+
+**Nota:** Isso se aplica **apenas** ao ambiente live. A definição do idioma do sistema instalado é explicado em [#Localização](#Localização)
+
+O ambiente *live* vem em inglês (locale `en_US.UTF-8`) por padrão, mas você pode alterá-lo para executar as etapas de instalação usando o idioma desejado.
+
+Descomente `pt_BR.UTF-8 UTF-8` e qualquer outro locale desejado em `/etc/locale.gen` e gere-os com:
+
+```
+ # locale-gen
+
+```
+
+Então, exporte a variável `LANG` acrescentando o idioma e codificação desejados. Por exemplo, para pt_BR seria:
+
+```
+ # export LANG=pt_BR.UTF-8
+
+```
+
 ### Verificar o modo de inicialização
 
 Se o modo UEFI estiver disponível em uma placa-mãe [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") vai [inicializar](/index.php/Inicializar "Inicializar") o Arch Linux adequadamente via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para verificar isso, liste o diretório [efivars](/index.php/UEFI#UEFI_variables "UEFI"):
@@ -109,11 +130,11 @@ Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](htt
 
 Para configurar uma conexão de rede, siga as etapas abaixo:
 
-1.  Certifique-se que sua [interface de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interfaces_de_rede "Configuração de rede") esteja listada e ativada, por exemplo, com [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+1.  Certifique-se que sua [interface de rede](/index.php/Interface_de_rede "Interface de rede") esteja listada e ativada, por exemplo, com [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
 2.  Conecte-se à rede. Conecte o cabo Ethernet ou [conecte a uma rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
 3.  Configure sua conexão de rede:
     *   [Endereço IP estático](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endereço_IP_estático "Configuração de rede")
-    *   Endereço IP dinâmico: use [DHCP](/index.php/Configura%C3%A7%C3%A3o_de_rede#DHCP "Configuração de rede").
+    *   Endereço IP dinâmico: use [DHCP](/index.php/DHCP "DHCP").
 
     **Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede com fio](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
 
@@ -256,7 +277,7 @@ Defina o [fuso horário](/index.php/Time_zone "Time zone"):
 Por exemplo, para definir para o fuso horário de Brasília (*BRT* ou *BRST*), execute:
 
 ```
-# ln -s /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+# ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 
 ```
 
@@ -271,14 +292,14 @@ Esse comando presume que o relógio de hardware está definido para [UTC](https:
 
 ### Localização
 
-Descomente `pt_BR.UTF-8 UTF-8` e qualquer outro [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") em `/etc/locale.gen`, e gere-as com:
+Descomente `pt_BR.UTF-8 UTF-8` e qualquer outro [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") em `/etc/locale.gen`, e gere-os com:
 
 ```
 # locale-gen
 
 ```
 
-Crie o arquivo {man|5|locale.conf}} e defina a [variável](/index.php/Vari%C3%A1vel "Variável") `LANG` adequadamente:
+Crie o arquivo [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) e defina a [variável](/index.php/Vari%C3%A1vel "Variável") `LANG` adequadamente:
 
  `/etc/locale.conf`  `LANG=*pt_BR.UTF-8*` 
 

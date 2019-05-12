@@ -44,13 +44,13 @@ fi
 
 Execute `chmod +x /etc/pam_cryptsetup.sh` to make it executable.
 
-Now edit `/etc/fstab` to mount the unlocked device using [systemd.automount](/index.php/Fstab#Automount_with_systemd "Fstab"):
+Now add your partition to `/etc/fstab`:
 
  `/etc/fstab` 
 ```
 ...
 
-/dev/mapper/home-*YOURNAME*  /home/*YOURNAME*     ext4            rw,noatime,noauto,x-systemd.automount 0 2
+/dev/mapper/home-*YOURNAME*  /home/*YOURNAME*     ext4            rw,noatime,noauto 0 2
 
 ...
 ```

@@ -1,6 +1,10 @@
 [PowerDNS](https://www.powerdns.com/) is a DNS server, written in C++ and licensed under the GPL. PowerDNS features a large number of different backends ranging from simple [BIND](/index.php/BIND "BIND") style zonefiles to relational databases and load balancing/failover algorithms.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Backends](#Backends)
@@ -72,7 +76,7 @@ You could also use localhost instead of 127.0.0.1, but this causes PowerDNS to u
 
 ## Startup
 
-[Start/enable](/index.php/Start/enable "Start/enable") the `powerdns` service.
+[Start/enable](/index.php/Start/enable "Start/enable") `pdns.service`.
 
 ## See also
 

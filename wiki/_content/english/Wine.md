@@ -14,6 +14,7 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 Third-party applications](#Third-party_applications)
 *   [2 Configuration](#Configuration)
     *   [2.1 WINEPREFIX](#WINEPREFIX)
     *   [2.2 WINEARCH](#WINEARCH)
@@ -49,14 +50,45 @@ Related articles
     *   [4.13 Prevent installing Mono/Gecko](#Prevent_installing_Mono/Gecko)
     *   [4.14 Vulkan](#Vulkan)
     *   [4.15 Remove Wine file bindings](#Remove_Wine_file_bindings)
-*   [5 Third-party applications](#Third-party_applications)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Installation
 
 Wine can be installed by enabling the [multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features that have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
 
 Consider installing [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
+
+### Third-party applications
+
+These have their own communities and websites, and are **not supported** by greater Wine community. See [Wine Wiki](https://wiki.winehq.org/Third_Party_Applications) for more details.
+
+*   **[CrossOver](/index.php/CrossOver "CrossOver")** — Paid, commercialized version of Wine which provides more comprehensive end-user support.
+
+	[https://www.codeweavers.com](https://www.codeweavers.com) || [crossover](https://aur.archlinux.org/packages/crossover/)
+
+*   **exe-thumbnailer** — Generates thumbnails for Windows executable files (.exe, .lnk, .msi, and .dll).
+
+	[https://github.com/exe-thumbnailer/exe-thumbnailer](https://github.com/exe-thumbnailer/exe-thumbnailer) || [exe-thumbnailer](https://aur.archlinux.org/packages/exe-thumbnailer/)
+
+*   **[Lutris](https://en.wikipedia.org/wiki/Lutris "wikipedia:Lutris")** — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.
+
+	[https://lutris.net](https://lutris.net) || [lutris](https://www.archlinux.org/packages/?name=lutris)
+
+*   **[PlayOnLinux](https://en.wikipedia.org/wiki/PlayOnLinux "wikipedia:PlayOnLinux")** — Graphical prefix manager for Wine. Contains scripts to assist with program installation and configuration.
+
+	[https://www.playonlinux.com](https://www.playonlinux.com) || [playonlinux](https://www.archlinux.org/packages/?name=playonlinux)
+
+*   **Proton** — Compatibility tool made for [Steam](/index.php/Steam "Steam") based on Wine and additional components. See [ProtonDB](https://www.protondb.com/) for compatibility list.
+
+	[https://github.com/ValveSoftware/Proton](https://github.com/ValveSoftware/Proton) || [proton](https://aur.archlinux.org/packages/proton/)
+
+*   **PyWinery** — Simple graphical prefix manager for Wine.
+
+	[https://github.com/ergoithz/pywinery](https://github.com/ergoithz/pywinery) || [pywinery](https://aur.archlinux.org/packages/pywinery/)
+
+*   **Q4Wine** — Graphical prefix manager for Wine. Can export [Qt](/index.php/Qt "Qt") themes into the Wine configuration for better integration.
+
+	[https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/) || [q4wine](https://aur.archlinux.org/packages/q4wine/)
 
 ## Configuration
 
@@ -538,34 +570,6 @@ NoExtract = usr/lib/binfmt.d/wine.conf
 NoExtract = usr/share/applications/wine.desktop
 
 ```
-
-## Third-party applications
-
-These have their own communities and websites, and are **not supported** by greater Wine community. See [Wine Wiki](https://wiki.winehq.org/Third_Party_Applications) for more details.
-
-*   **[CrossOver](/index.php/CrossOver "CrossOver")** — Paid, commercialized version of Wine which provides more comprehensive end-user support.
-
-	[crossover](https://aur.archlinux.org/packages/crossover/) || [https://www.codeweavers.com/](https://www.codeweavers.com/)
-
-*   **exe-thumbnailer** — Generates thumbnails for Windows executable files (.exe, .lnk, .msi, and .dll).
-
-	[exe-thumbnailer](https://aur.archlinux.org/packages/exe-thumbnailer/) || [https://github.com/exe-thumbnailer/exe-thumbnailer](https://github.com/exe-thumbnailer/exe-thumbnailer)
-
-*   **Lutris** — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.
-
-	[lutris](https://www.archlinux.org/packages/?name=lutris) || [https://lutris.net/](https://lutris.net/)
-
-*   **PlayOnLinux** — Graphical prefix manager for Wine. Contains scripts to assist with program installation and configuration.
-
-	[playonlinux](https://www.archlinux.org/packages/?name=playonlinux) || [https://www.playonlinux.com/](https://www.playonlinux.com/)
-
-*   **PyWinery** — Simple graphical prefix manager for Wine.
-
-	[pywinery](https://aur.archlinux.org/packages/pywinery/) || [https://github.com/ergoithz/pywinery](https://github.com/ergoithz/pywinery)
-
-*   **Q4Wine** — Graphical prefix manager for Wine. Can export [Qt](/index.php/Qt "Qt") themes into the Wine configuration for better integration.
-
-	[q4wine](https://aur.archlinux.org/packages/q4wine/) || [https://sourceforge.net/projects/q4wine/](https://sourceforge.net/projects/q4wine/)
 
 ## See also
 

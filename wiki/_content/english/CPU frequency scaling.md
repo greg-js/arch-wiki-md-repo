@@ -202,7 +202,13 @@ To set the value, run:
 
 #### Make changes permanent
 
-To have the desired scaling enabled at boot, [kernel module options](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods. However, in some cases there might be race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd"). [udev](/index.php/Udev "Udev") is doing better.
+To have the desired scaling enabled at boot, [kernel module options](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules") and [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") are regular methods.
+
+For example, changing the up_threshold to 10:
+
+ `/etc/tmpfiles.d/ondemand.conf`  `w- /sys/devices/system/cpu/cpufreq/ondemand/up_threshold - - - - 10` 
+
+However, in some cases race conditions, as noted in [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") may exist and one can use [udev](/index.php/Udev "Udev") to avoid them.
 
 For example, to set the scaling governor of the CPU core `0` to performance while the scaling driver is `acpi_cpufreq`, create the following udev rule:
 

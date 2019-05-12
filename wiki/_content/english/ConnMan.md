@@ -446,7 +446,7 @@ connmand[473]: wlp2s0 {del} route 82.165.8.211 gw 10.20.30.4 scope 0 <UNIVERSE>
 
 ```
 
-It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[6]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits. This behaviour can be prevented by adding the following to `/etc/connman/main.conf`:
+It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[6]](https://01.org/jira/browse/CM-657) See the [Connman README](https://git.kernel.org/pub/scm/network/connman/connman.git/tree/README#n388) for more information on why and what - apart from the connecting IP - it transmits. This behaviour can be prevented by adding the following to `/etc/connman/main.conf`:
 
 ```
 [General]

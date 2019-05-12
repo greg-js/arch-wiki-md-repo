@@ -42,7 +42,7 @@ Related articles
 
 ## Installation
 
-Install [deluge](https://www.archlinux.org/packages/?name=deluge). GTK+ client also needs [pygtk](https://www.archlinux.org/packages/?name=pygtk) package to run.
+[Install](/index.php/Install "Install") [deluge](https://www.archlinux.org/packages/?name=deluge). GTK+ client also needs [pygtk](https://www.archlinux.org/packages/?name=pygtk) package to run.
 
 ## Daemon
 

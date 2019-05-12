@@ -27,6 +27,7 @@ The HP Envy X360 15-bq102ng was released in 2017\. It has a Ryzen Mobile 5 2500u
 *   [8 Hard Drive](#Hard_Drive)
 *   [9 Dual Boot](#Dual_Boot)
 *   [10 Freezes](#Freezes)
+*   [11 Unable to boot on linux >= 4.20](#Unable_to_boot_on_linux_>=_4.20)
 
 ## Installing Arch
 
@@ -67,3 +68,11 @@ Not tested, but there shouldn't any difficulties.
 ## Freezes
 
 On some devices the Laptop freezes randomly (e.g. when surfing on Youtube). A workaround is to set these kernel-options: idle=nomwait rcu_nocbs=0-7
+
+## Unable to boot on linux >= 4.20
+
+This is caused by a firmware bug that is yet to be fixed. The only solution is to delete /usr/lib/firmware/amdgpu/raven_dmcu.bin and rebuilding the linux boot image (sudo mkinitcpio -p linux)
+
+(thanks to Jay Fitzpatrick for discovering this)
+
+OpenCL will not work with this solution and any OpenCL application will crash the system. Otherwise works perfectly fine. [https://bugs.freedesktop.org/show_bug.cgi?id=109206](https://bugs.freedesktop.org/show_bug.cgi?id=109206)

@@ -54,7 +54,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Cross-desktop display manager, can use various front-ends written in any toolkit.
 
-	[https://www.freedesktop.org/wiki/Software/LightDM/](https://www.freedesktop.org/wiki/Software/LightDM/) || [lightdm](https://www.archlinux.org/packages/?name=lightdm)
+	[https://github.com/CanonicalLtd/lightdm/](https://github.com/CanonicalLtd/lightdm/) || [lightdm](https://www.archlinux.org/packages/?name=lightdm)
 
 *   **[LXDM](/index.php/LXDM "LXDM")** — [LXDE](/index.php/LXDE "LXDE") display manager. Can be used independent of the LXDE desktop environment.
 

@@ -72,6 +72,8 @@ Options:
 
 Additional options you might consider:
 
+	`-b *number*`: specify the block size of the hard disk which can significantly improve testing time. (`# tune2fs -l *partition*`)
+
 	`-p *number*`: run through the extensive four pass test *number* of sequent iterations
 
 	`-o */path/to/output-file*`: print bad sectors to *output-file* instead of stdout

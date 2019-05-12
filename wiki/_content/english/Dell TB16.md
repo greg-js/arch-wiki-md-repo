@@ -19,8 +19,10 @@ Dell's [TB16](https://www.dell.com/en-us/shop/dell-business-thunderbolt-dock-tb1
 
 You shoulder either:
 
-*   Disable Thunderbolt security in the BIOS
+*   Disable Thunderbolt security in the BIOS (recommended)
 *   Use [boltctl](/index.php/Thunderbolt#User_device_authorization "Thunderbolt") to temporarily authorize or permanently enroll the *dock* ***and*** *cable*.
+
+Thunderbolt security "works" but may result in random instability, particularly system freezes on resume. It's suggested to ensure your system is completely stable before enabling this.
 
 ### Dell Type-C Dock Configuration
 

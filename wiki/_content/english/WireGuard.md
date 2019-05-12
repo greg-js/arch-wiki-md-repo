@@ -314,7 +314,7 @@ $ qrencode -t ansiutf8 < foo.conf
 
 ## Testing the tunnel
 
-Once a tunnel has been established, one can use [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat)}} to send traffic through it to test out throughput, CPU usage, etc. On one side of the tunnel, run `nc` in listen mode and on the other side, pipe some data from `/dev/zero` into `nc` in sending mode.
+Once a tunnel has been established, one can use [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) to send traffic through it to test out throughput, CPU usage, etc. On one side of the tunnel, run `nc` in listen mode and on the other side, pipe some data from `/dev/zero` into `nc` in sending mode.
 
 In the example below, port 2222 is used for the traffic (be sure to allow traffic on port 2222 if using a firewall).
 

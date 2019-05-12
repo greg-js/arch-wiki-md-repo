@@ -219,7 +219,7 @@ class compress(Command):
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
 
-    def tab(self):
+    def tab(self, tabnum):
         """ Complete with current folder name """
 
         extension = ['.zip', '.tar.gz', '.rar', '.7z']

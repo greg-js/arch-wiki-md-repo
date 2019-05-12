@@ -1,6 +1,10 @@
 [NZBGet](https://nzbget.net/) is an Usenet-client written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuring NZBGet](#Configuring_NZBGet)
@@ -32,7 +36,7 @@ Update the configuration before starting NZBGet:
 ```
 ..
 WebDir=/usr/share/nzbget/webui
-ScriptDir=${WebDir}/scripts
+ScriptDir=/usr/share/nzbget/scripts
 LockFile=/var/lib/nzbget/nzbget.lock
 ConfigTemplate=/usr/share/nzbget/nzbget.conf
 DaemonUsername=nzbget
@@ -118,8 +122,8 @@ Group=nzbget
 Type=forking
 PIDFile=/var/lib/nzbget/nzbget.lock
 ExecStart=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -D
-ExecStop=/usr/bin/nzbget -Q
-ExecReload=/usr/bin/nzbget -O
+ExecStop=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -Q
+ExecReload=/usr/bin/nzbget -c /var/lib/nzbget/.nzbget -O
 KillMode=process
 Restart=on-failure
 

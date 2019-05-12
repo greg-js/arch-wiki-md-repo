@@ -1163,7 +1163,7 @@ Since `/boot` resides on the LUKS1 encrypted `/`, [GRUB](/index.php/GRUB "GRUB")
 
 Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partition is shown.
 
-**Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition, because this may result in data loss. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
+**Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition on Linux kernels before v5.0, because this may result in data loss. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
 
 ```
 +----------------------+----------------------+----------------------+

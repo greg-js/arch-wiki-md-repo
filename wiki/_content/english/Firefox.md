@@ -35,7 +35,7 @@ Related articles
     *   [5.5 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
     *   [5.6 New tabs position](#New_tabs_position)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Firefox disables all extensions due to Mozilla not renewing their certificates](#Firefox_disables_all_extensions_due_to_Mozilla_not_renewing_their_certificates)
+    *   [6.1 All Firefox extensions disabled (May 2019)](#All_Firefox_extensions_disabled_(May_2019))
     *   [6.2 Firefox startup takes very long](#Firefox_startup_takes_very_long)
     *   [6.3 Font troubleshooting](#Font_troubleshooting)
     *   [6.4 Setting an email client](#Setting_an_email_client)
@@ -85,8 +85,6 @@ Other alternatives include:
 A number of language packs are available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox) and [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
 
 ## Add-ons
-
-**Warning:** [Mozilla allowed some certificates to expire](https://discourse.mozilla.org/t/certificate-issue-causing-add-ons-to-be-disabled-or-fail-to-install/39047), which lead to all extensions being disabled after 2019-05-04 00:00 UTC. Until they fix their certificates, you can re-enable the extensions using the workaround from [#Firefox disables all extensions due to Mozilla not renewing their certificates](#Firefox_disables_all_extensions_due_to_Mozilla_not_renewing_their_certificates).
 
 Firefox is well known for its large library of add-ons which can be used to add new features or modify the behavior of existing features. Firefox's "Add-ons Manager" is used to manage installed add-ons or find new ones.
 
@@ -302,41 +300,13 @@ To control where new tabs appears (relative or absolute), use `browser.tabs.inse
 
 ## Troubleshooting
 
-### Firefox disables all extensions due to Mozilla not renewing their certificates
+### All Firefox extensions disabled (May 2019)
 
-See [Firefox Bug 1548973](https://bugzilla.mozilla.org/show_bug.cgi?id=1548973) for details.
+**Warning:** **Do not** delete and re-install your addons to try and fix the issue, as you will lose your addons' data.
 
-Until a fix is out, you can temporarily re-enable all extensions by opening `about:config`, setting `devtools.chrome.enabled` to `true`, opening the JS dev console by pressing `Ctrl+Shift+J` and executing the following code in the console[[4]](https://www.reddit.com/r/firefox/comments/bkhtv8/heres_whats_going_on_with_your_addons_being/emgyh3l/):
+Between 3–5 May 2019, all Firefox addons (web extensions, themes, search engines, and language packs) were mistakenly marked as **Legacy addons**, and could not be enabled. The [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1548973) was caused by an expired intermediate certificate.
 
-```
-// Re-enable *all* extensions
-
-    async function set_addons_as_signed() {
-        Components.utils.import("resource://gre/modules/addons/XPIDatabase.jsm");
-        Components.utils.import("resource://gre/modules/AddonManager.jsm");
-        let addons = await XPIDatabase.getAddonList(a => true);
-
-        for (let addon of addons) {
-            // The add-on might have vanished, we'll catch that on the next startup
-            if (!addon._sourceBundle.exists())
-                continue;
-
-            if( addon.signedState != AddonManager.SIGNEDSTATE_UNKNOWN )
-                continue;
-
-            addon.signedState = AddonManager.SIGNEDSTATE_NOT_REQUIRED;
-            AddonManagerPrivate.callAddonListeners("onPropertyChanged",
-                                                    addon.wrapper,
-                                                    ["signedState"]);
-
-            await XPIDatabase.updateAddonDisabledState(addon);
-
-        }
-        XPIDatabase.saveChanges();
-    }
-
-    set_addons_as_signed();
-```
+For most users, the issue has been fixed in Firefox 66.0.4 and Firefox ESR 60.6.2\. The addons should be automatically re-enabled as soon as the patched version of Firefox is installed. Certain users, such as those who have set a Master Password, might require extra steps. Please see Firefox's [official support page](https://support.mozilla.org/en-US/kb/add-ons-disabled-or-fail-to-install-firefox) for more information.
 
 ### Firefox startup takes very long
 
@@ -421,7 +391,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### JavaScript context menu does not appear on some sites
 
@@ -437,13 +407,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

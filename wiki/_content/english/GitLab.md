@@ -458,7 +458,7 @@ upstream gitlab-workhorse {
 server {
   listen 80;
   #listen 443 ssl; # uncomment to enable ssl
-  server_name example.com
+  server_name example.com;
 
   #ssl_certificate ssl/example.com.crt;
   #ssl_certificate_key ssl/example.com.key;

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [pkgstats](/index.php/Pkgstats "Pkgstats"). Data da última tradução: 2019-05-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pkgstats&diff=0&oldid=511582) na versão em inglês.
+
 pkgstats envia uma lista de todos os pacotes instalados, [módulos de kernel](https://www.archlinux.org/news/pkgstats-now-collects-modules-usage/), a arquitetura e o *mirror* que você está usando para o projeto do Arch Linux. Essa informação é anônima e não pode ser usada para identificar o usuário, porém vai ajudar os desenvolvedores do Arch a priorizar seus esforços ([código-fonte](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/pkgstats)).
 
 ## Instalação

@@ -4,8 +4,6 @@ Related articles
 
 Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio playback with the default installation.
 
-**Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). If you do not want to use PulseAudio, you have to use [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), as ALSA plugin.
-
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -28,27 +26,27 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.4.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired,_but_is_not_recognized_by_device)
         *   [1.4.9 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
         *   [1.4.10 Apple Airpods have low volume](#Apple_Airpods_have_low_volume)
-*   [2 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA,_bluez5_and_PulseAudio_method)
-    *   [2.1 Install Software Packages](#Install_Software_Packages)
-        *   [2.1.1 Install ALSA and associated libraries](#Install_ALSA_and_associated_libraries)
-        *   [2.1.2 Install Bluez5](#Install_Bluez5)
-        *   [2.1.3 Install Audacious](#Install_Audacious)
-    *   [2.2 Procedure](#Procedure)
-        *   [2.2.1 Miscellaneous configuration files](#Miscellaneous_configuration_files)
-            *   [2.2.1.1 ALSA /etc/asound.conf](#ALSA_/etc/asound.conf)
-            *   [2.2.1.2 /etc/dbus-1/system.d/bluetooth.conf](#/etc/dbus-1/system.d/bluetooth.conf)
-            *   [2.2.1.3 Tested applications](#Tested_applications)
-*   [3 Switch between HSP/HFP and A2DP setting](#Switch_between_HSP/HFP_and_A2DP_setting)
-    *   [3.1 A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
-        *   [3.1.1 Socket interface problem](#Socket_interface_problem)
-        *   [3.1.2 A2DP sink profile is unavailable](#A2DP_sink_profile_is_unavailable)
-        *   [3.1.3 Gnome with GDM](#Gnome_with_GDM)
-*   [4 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5/bluez-alsa)
+*   [2 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5/bluez-alsa)
+*   [3 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA,_bluez5_and_PulseAudio_method)
+    *   [3.1 Install Software Packages](#Install_Software_Packages)
+        *   [3.1.1 Install ALSA and associated libraries](#Install_ALSA_and_associated_libraries)
+        *   [3.1.2 Install Bluez5](#Install_Bluez5)
+        *   [3.1.3 Install Audacious](#Install_Audacious)
+    *   [3.2 Procedure](#Procedure)
+        *   [3.2.1 Miscellaneous configuration files](#Miscellaneous_configuration_files)
+            *   [3.2.1.1 ALSA /etc/asound.conf](#ALSA_/etc/asound.conf)
+            *   [3.2.1.2 /etc/dbus-1/system.d/bluetooth.conf](#/etc/dbus-1/system.d/bluetooth.conf)
+            *   [3.2.1.3 Tested applications](#Tested_applications)
+*   [4 Switch between HSP/HFP and A2DP setting](#Switch_between_HSP/HFP_and_A2DP_setting)
+    *   [4.1 A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
+        *   [4.1.1 Socket interface problem](#Socket_interface_problem)
+        *   [4.1.2 A2DP sink profile is unavailable](#A2DP_sink_profile_is_unavailable)
+        *   [4.1.3 Gnome with GDM](#Gnome_with_GDM)
 *   [5 See also](#See_also)
 
 ## Headset via Bluez5/PulseAudio
 
-PulseAudio 5.x supports A2DP per default. Make sure the following packages are [installed](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Without [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) you will not be able to connect after the next pairing and you will not get any usable error messages.
+[Install](/index.php/Install "Install") [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) providing the `bluetoothctl` utility.
 
 **Note:** Before continuing, ensure that the bluetooth device is not blocked by [rfkill](/index.php/Rfkill "Rfkill").
 
@@ -389,6 +387,37 @@ Finally [restart](/index.php/Restart "Restart") `bluetooth.service`, [reload](/i
 
 Reconnect your headset.
 
+## Headset via Bluez5/bluez-alsa
+
+**Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). This approach should be used only if you cannot or do not want to use PulseAudio.
+
+First of all ensure your headset is correctly paired and connected to the system, this implies the same steps that using PulseAudio, for example using `bluetoothctl`.
+
+Install [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), start and possibly enable the `bluealsa` service.
+
+Finally to let the `bluealsa` work your user must be part of the `audio` group.
+
+You can now test if everything works fine, replace your MAC as necessary:
+
+```
+$ aplay -D bluealsa:HCI=hci0,DEV=00:1D:43:6D:03:26,PROFILE=a2dp ./testme.wav
+
+```
+
+If it does you can set up HCI, DEV, and PROFILE as default. Add the following lines:
+
+ `.asoundrc` 
+```
+defaults.bluealsa {
+    interface "hci0"
+    device "00:1D:43:6D:03:26"
+    profile "a2dp"
+}
+
+```
+
+You can now use the device bluealsa to reach your headset. You can also use `alsamixer` to setup the volumes, as `alsamixer -D bluealsa`.
+
 ## Legacy documentation: ALSA, bluez5 and PulseAudio method
 
 [ALSA](/index.php/ALSA "ALSA"), [bluez5](/index.php/Bluez "Bluez"), and [PulseAudio](/index.php/PulseAudio "PulseAudio") work together to allow a wireless [Bluetooth](/index.php/Bluetooth "Bluetooth") headset to play audio. The following method works with a Lenovo T61p laptop and SoundBot SB220 wireless bluetooth headset. The required software stack is extensive and failure to include all components can produce errors which are difficult to understand. The following list of software packages might not be the minimum required set and needs to be examined more closely.
@@ -704,37 +733,6 @@ $ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 *   Restart, and check that there is no Pulseaudio process for the `gdm` user.
 
 Further discussion about this problem and alternative fixes can be found [here](https://bbs.archlinux.org/viewtopic.php?id=194006) and [here](https://bbs.archlinux.org/viewtopic.php?id=196689).
-
-## Headset via Bluez5/bluez-alsa
-
-This approach should be used only if you cannot or do not want to use PulseAudio that is the status quo.
-
-First of all ensure your headset is correctly paired and connected to the system, this implies the same steps that using PulseAudio, for example using `bluetoothctl`.
-
-Install [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), start and possibly enable the `bluealsa` service.
-
-Finally to let the `bluealsa` work your user must be part of the `audio` group.
-
-You can now test if everything works fine, replace your MAC as necessary:
-
-```
-$ aplay -D bluealsa:HCI=hci0,DEV=00:1D:43:6D:03:26,PROFILE=a2dp ./testme.wav
-
-```
-
-If it does you can set up HCI, DEV, and PROFILE as default. Add the following lines:
-
- `.asoundrc` 
-```
-defaults.bluealsa {
-    interface "hci0"
-    device "00:1D:43:6D:03:26"
-    profile "a2dp"
-}
-
-```
-
-You can now use the device bluealsa to reach your headset. You can also use `alsamixer` to setup the volumes, as `alsamixer -D bluealsa`.
 
 ## See also
 

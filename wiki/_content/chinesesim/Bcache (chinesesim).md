@@ -16,7 +16,7 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 在现存的系统上配置一个bcache设备](#在现存的系统上配置一个bcache设备)
+*   [1 在现存的系统上配置bcache设备](#在现存的系统上配置bcache设备)
     *   [1.1 管理 Bcache](#管理_Bcache)
 *   [2 将系统安装到一个 bcache 设备](#将系统安装到一个_bcache_设备)
 *   [3 从安装盘访问bcache分区](#从安装盘访问bcache分区)
@@ -31,114 +31,125 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
     *   [6.2 /sys/fs/bcache/ 不存在](#/sys/fs/bcache/_不存在)
 *   [7 参考资料](#参考资料)
 
-## 在现存的系统上配置一个bcache设备
+## 在现存的系统上配置bcache设备
 
-**Warning:** make-bcache **will not** import an existing drive or partition – it will reformat it. If you want to use an existing data partition as backing device, see [#Converting existing disks](#Converting_existing_disks).
+**警告:** make-bcache **不会** 导入(import)一个现存的设备或分区——它会格式化它。请务必做好数据备份。
 
-1\. [Install](/index.php/Install "Install") the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from [AUR](/index.php/AUR "AUR").
+1\. 从 [AUR](/index.php/AUR "AUR") [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/)。
 
-2\. Create a backing device (This will typically be your mechanical drive). The backing device can be a whole device, a partition or any other standard block device. This will create /dev/bcache0
-
-```
-   # make-bcache -B /dev/sdx1
+2\. 创建一个后端设备（通常来说这是你的机械硬盘）。后端设备可以是整个设备、一个分区或者其他任何的block设备。这将会创建/dev/bcache0：
 
 ```
-
-3\. Create a cache device (This will typically be your SSD). The cache device can be a whole device, a partition or any other standard block device
-
-```
-   # make-bcache -C /dev/sdy2
+# make-bcache -B /dev/sdx1
 
 ```
 
-In this example the default block and bucket sizes of 512B and 128kB are used. The block size should match the backing devices sector size which will usually be either 512 or 4k. The bucket size should match the erase block size of the caching device with the intent of reducing write amplification. For example, using a HDD with 4k sectors and an SSD with an erase block size of 2MB this command would look like
+3\. 创建一个缓存设备（这通常是你的固态硬盘）。缓存设备可以是整个设备、一个分区或者其他任何的block设备：
 
 ```
-   # make-bcache --block 4k --bucket 2M -C /dev/sdy2
-
-```
-
-4\. Register the cache device against your backing device. To find its *cache set UUID*, run `# bcache-super-show /dev/sdy2 | grep cset.uuid` and then add it to the bcache device initially. Udev rules will take care of this on reboot and will only need to be done once.
-
-```
-   # echo **cset.uuid** > /sys/block/bcache0/bcache/attach
+# make-bcache -C /dev/sdy2
 
 ```
 
-5\. Change your cache mode (if you want to cache writes as well as reads):
+在这个例子里，默认的block大小是512B、bucket大小是128kB。block的大小应该与后端设备的sector大小匹配（通常是512或者4k）。bucket的大小应该与缓存设备的擦除block大小匹配（以减少写入放大）。例如，如果是一个4k sector的HDD和一个擦除block大小是2MB的SSD搭配，命令就应该是这样的：
 
 ```
-   # echo writeback > /sys/block/bcache0/bcache/cache_mode
+# make-bcache --block 4k --bucket 2M -C /dev/sdy2
 
 ```
 
-6\. If you want to have this partition available during the initcpio (i.e. you require it at some point in the boot process) you need to add 'bcache' to your modules array in /etc/mkinitcpio.conf as well as adding the 'bcache' hook in your list between block and filesystems. You must then rebuild the initramfs image. This is typically done with
+4\. 把缓存设备注册到后端设备。为了找到它的*cache set UUID*，运行`# bcache-super-show /dev/sdy2 | grep cset.uuid`然后把它添加到bcache设备。Udev规则会在以后的重启阶段自动搞定这个，因此你只需要执行一次这个命令：
 
 ```
-   # mkinitcpio -p linux
+# echo **cset.uuid** > /sys/block/bcache0/bcache/attach
+
+```
+
+5\. 更改你的缓存模式（如果你想要同时缓存读和写）：
+
+```
+# echo writeback > /sys/block/bcache0/bcache/cache_mode
+
+```
+
+6\. 如果你需要让这个分区在initcpio的时候就已经可以使用（即，在系统启动过程中需要用到它），你需要把'bcache'添加到`/etc/mkinitcpio.conf`文件里：
+
+ `/etc/mkinitcpio.conf` 
+```
+...
+MODULES=(... **bcache**)
+...
+HOOKS=(... block ... **bcache** ... filesystems ...)
+...
+```
+
+然后请重新生成initramfs镜像：
+
+```
+# mkinitcpio -p linux
 
 ```
 
 ### 管理 Bcache
 
-1\. Check that everything has been correctly setup
+1\. 确认所有的东西都已经正确地配置了：
 
 ```
-   # cat /sys/block/bcache0/bcache/state
+# cat /sys/block/bcache0/bcache/state
 
 ```
 
-The output can be:
+输出的内容有以下可能：
 
-*   **no cache**: this means you have not attached a caching device to your backing bcache device
-*   **clean**: this means everything is ok. The cache is clean.
-*   **dirty**: this means everything is setup fine and that you have enabled *writeback* and that the cache is dirty.
-*   **inconsistent**: you are in trouble because the backing device is not in sync with the caching device
+*   **no cache**: 这代表你还没有绑定缓存设备到你的后端设备上
+*   **clean**: 这代表一切正常，缓存是clean的
+*   **dirty**: 这代表一切正常，缓存模式被设置成了*writeback*，缓存是dirty的
+*   **inconsistent**: 这代表问题很大，后端设备与缓存设备没有同步
 
-You can have a `/dev/bcache0` device associated with a backing device with no caching device attached. This means that all I/O (read/write) are passed directly to the backing device (pass-through mode)
+使用一个没有缓存设备的 `/dev/bcache0` 的话所有的IO都会直接在后端设备上执行，等于pass-through模式。
 
-2\. See what caching mode is in use
+2\. 查看正在使用的缓存模式：
 
 ```
-# cat /sys/block/bcache0/bcache/cache_mode 
+# cat /sys/block/bcache0/bcache/cache_mode
 [writethrough] writeback writearound none
 
 ```
 
-In the above example, the *writethrough* mode is enabled.
+在这个示例中，输出显示当前使用的是*writethrough*模式。
 
-3\. Show info about a bcached device:
-
-```
-   # bcache-super-show /dev/sdXY
+3\. 显示bcached设备的信息：
 
 ```
-
-4\. Stop the backing device:
-
-```
-   # echo 1 > /sys/block/sdX/sdX[Y]/bcache/stop
+# bcache-super-show /dev/sdXY
 
 ```
 
-5\. Detach a caching device:
+4\. 停止后端设备：
 
 ```
-   # echo 1 > /sys/block/sdX/sdX[Y]/bcache/detach
-
-```
-
-6\. Safely remove the cache device
-
-```
-   # echo <cache-set-uuid> > /sys/block/bcache0/bcache/detach
+# echo 1 > /sys/block/sdX/sdX[Y]/bcache/stop
 
 ```
 
-7\. Release attached devices
+5\. 让缓存设备脱机：
 
 ```
-   # echo 1 > /sys/fs/bcache/<cache-set-uuid>/stop
+# echo 1 > /sys/block/sdX/sdX[Y]/bcache/detach
+
+```
+
+6\. 安全移除缓存设备：
+
+```
+# echo <cache-set-uuid> > /sys/block/bcache0/bcache/detach
+
+```
+
+7\. 释放已连接的设备：
+
+```
+# echo 1 > /sys/fs/bcache/<cache-set-uuid>/stop
 
 ```
 
@@ -254,17 +265,24 @@ Now, `/dev/bcache*` should be present, and you can carry on mounting, reformatti
 
 ## 配置
 
-There are many options that can be configured (such as cache mode, cache flush interval, sequential write heuristic, etc.) This is currently done by writing to files in `/sys`. See the [bcache user documentation](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt).
+可以配置的选项有很多，比如缓存模式、缓存写入时间间隔、启发式顺序写入等。通过写入 `/sys/block/bcache[0-9]/bcache` 目录中的对应文件可以进行相应的配置，详情查看 [bcache user documentation](https://evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt)。
 
-Changing the cache mode is done by echoing one of 'writethrough', 'writeback', 'writearound' or 'none' to /sys/block/bcache[0-9]/bcache/cache_mode.
-
-Note that some changes to /sys are temporary, and will revert back after a reboot (It seems that at least cache_mode does not need this workaround). To set custom configurations at boot create a .conf file in `/etc/tmpfile.d`. To set, in a persistent fashion, the sequential cutoff for bcache0 to 1 MB and write back you could create a file `/etc/tmpfile.d/my-bcache.conf` with the contents
+例如，改变缓存模式通过以下命令实现：
 
 ```
-  w /sys/block/bcache0/bcache/sequential_cutoff - - - - 1M
-  w /sys/block/bcache0/bcache/cache_mode        - - - - writeback
+echo 'writethrough' > /sys/block/bcache[0-9]/bcache/cache
 
 ```
+
+可以把 'writethrough' 换成 'writeback', 'writearound' 或者 'none' 中的任意一个。
+
+**Note:** 写入 /sys 的设置有些是临时的，重启之后就会失效（缓存模式的更改不会失效）。如果要“模拟”永久更改，在 `/etc/tmpfile.d` 目录中创建包含类似下面的内容的 *.conf* 文件： `/etc/tmpfile.d/my-bcache.conf` 
+```
+w /sys/block/bcache0/bcache/sequential_cutoff - - - - 1M
+w /sys/block/bcache0/bcache/cache_mode        - - - - writeback
+```
+
+在这个例子中该文件会在系统启动时把 sequential cutoff 设置为1M、cache mode 设置为 writeback。
 
 ## 高级操作
 
@@ -439,7 +457,7 @@ The `/dev/bcache0` device will now exist. Type exit and continue booting. You mi
 
 ### /sys/fs/bcache/ 不存在
 
-The kernel you booted is not bcache enabled, or you the bcache [module is not loaded](/index.php/Kernel_module#Manual_module_handling "Kernel module")
+当前尝试启动的内核不支持bcache或者bcache[内核模块未加载](/index.php/Kernel_module#Manual_module_handling "Kernel module")。
 
 ## 参考资料
 

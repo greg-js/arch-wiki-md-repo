@@ -23,7 +23,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security 
 
 ## Implementations
 
-There are four TLS implementations available in the [official repositories](/index.php/Official_repositories "Official repositories"). OpenSSL is the only one part of the [base group](/index.php/Base_group "Base group") (albeit indirectly).
+There are four TLS implementations available in the [official repositories](/index.php/Official_repositories "Official repositories"). OpenSSL and GnuTLS might already be installed on your system as they are required by many packages in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 *   **[OpenSSL](/index.php/OpenSSL "OpenSSL")** — A robust, commercial-grade, and full-featured toolkit for the TLS and SSL protocols; also a general-purpose cryptography library.
 

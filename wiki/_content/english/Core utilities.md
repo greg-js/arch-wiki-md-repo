@@ -128,6 +128,10 @@ While [diffutils](https://www.archlinux.org/packages/?name=diffutils) does not p
 
 	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 
+*   **icdiff** — A colorized diff tool written in Python. "Improved color diff" is meant to supplement normal diff use.
+
+	[https://github.com/jeffkaufman/icdiff](https://github.com/jeffkaufman/icdiff) || [icdiff](https://aur.archlinux.org/packages/icdiff/),[icdiff-git](https://aur.archlinux.org/packages/icdiff-git/)
+
 See also [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 
 ### grep alternatives

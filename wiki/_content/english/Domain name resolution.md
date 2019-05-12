@@ -23,6 +23,7 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 *   [6 Third-party DNS services](#Third-party_DNS_services)
 *   [7 DNS servers](#DNS_servers)
     *   [7.1 Authoritative-only servers](#Authoritative-only_servers)
+    *   [7.2 Conditional forwarding](#Conditional_forwarding)
 *   [8 See also](#See_also)
 
 ## Name Service Switch
@@ -186,6 +187,16 @@ balancing |
 | [Knot DNS](https://www.knot-dns.cz/) | [knot](https://www.archlinux.org/packages/?name=knot) | Yes | [Yes](https://www.knot-dns.cz/docs/2.7/singlehtml/#geoip-geography-based-responses) |
 | [NSD](/index.php/NSD "NSD") | [nsd](https://www.archlinux.org/packages/?name=nsd) | No | No |
 | [PowerDNS](https://www.powerdns.com/auth.html) | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Yes | Yes |
+
+### Conditional forwarding
+
+It is possible to use specific DNS resolvers when querying specific domain names. This is particularly useful when connecting to a VPN, so that queries to the VPN network are resolved by the VPN's DNS, while queries to the internet will still be resolved by your standard DNS resolver. It can also be used on local networks.
+
+To implement it, you need to use a [local resolver](#DNS_servers) because glibc does not support it.
+
+In a dynamic environment (laptops and to some extents desktops), you need to configure your resolver based on the network(s) you are connected to. The best way to do that is to use [openresolv](/index.php/Openresolv "Openresolv") because it supports [multiple subscribers](/index.php/Openresolv#Subscribers "Openresolv"). Some [Network Manager](/index.php/Network_manager#Network_managers "Network manager") supports it, either through OpenResolv, or by configuring the resolver directly.
+
+**Note:** Although you could use other conditions for forwarding (for exemple source IP), "conditional forwarding" appears to be the name used for the "domain queried" condition.
 
 ## See also
 

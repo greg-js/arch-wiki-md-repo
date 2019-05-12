@@ -264,3 +264,4 @@ See [File manager functionality#Troubleshooting](/index.php/File_manager_functio
 *   [Thunar](https://docs.xfce.org/xfce/thunar/start) project page
 *   [Thunar Volume Manager](https://goodies.xfce.org/projects/thunar-plugins/thunar-volman) project page
 *   This [list](https://goodies.xfce.org/projects/thunar-plugins/start) of plugins
+*   Several settings, like showing the full path in the title, are available through `xfconf-query`. See [this list](https://docs.xfce.org/xfce/thunar/hidden-settings) for more details.

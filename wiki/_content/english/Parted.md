@@ -262,18 +262,18 @@ Where `*number*` is the number of the partition you are growing, and `*end*` is 
 Then, to grow the (ext2/3/4) filesystem on the partition:
 
 ```
-# resize2fs /dev/*sdaX* *size*
+# resize2fs /dev/*sdaX* *[size]*
 
 ```
 
 Or to grow a Btrfs filesystem:
 
 ```
-# btrfs filesystem resize /dev/*sdaX* *size*
+# btrfs filesystem resize /dev/*sdaX* *[size]*
 
 ```
 
-Where `*sdaX*` stands for the partition you are growing, and `*size*` is the new size of the partition.
+Where `*sdaX*` stands for the partition you are growing, and `*[size]*` is the new size of the partition. Note that `*[size]*` is optional, leave it off to fill the remaining space on the partition.
 
 #### Shrinking partitions
 

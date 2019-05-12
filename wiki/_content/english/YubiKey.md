@@ -104,6 +104,8 @@ There are several packages available:
 
 	[https://developers.yubico.com/yubikey-manager/](https://developers.yubico.com/yubikey-manager/) || [yubikey-manager](https://www.archlinux.org/packages/?name=yubikey-manager), [yubikey-manager-qt](https://www.archlinux.org/packages/?name=yubikey-manager-qt)
 
+Note: After you install the yubikey-manager ( which can be called by ykman in cli ), you need to enable pcscd.service to get it running
+
 *   **Yubikey Personalization** — Library and tool to configure slot features over the OTP USB connection. Has optional GUI.
 
 	[https://developers.yubico.com/yubikey-personalization/](https://developers.yubico.com/yubikey-personalization/) || [yubikey-personalization](https://www.archlinux.org/packages/?name=yubikey-personalization), [yubikey-personalization-gui](https://www.archlinux.org/packages/?name=yubikey-personalization-gui)

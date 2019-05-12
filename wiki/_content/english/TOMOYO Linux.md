@@ -24,8 +24,9 @@ The security goal of TOMOYO Linux is to provide "MAC that covers practical requi
     *   [5.1 Limitations of TOMOYO Linux 2.x](#Limitations_of_TOMOYO_Linux_2.x)
     *   [5.2 Installation](#Installation_2)
     *   [5.3 Activation](#Activation)
-    *   [5.4 Initializing configuration](#Initializing_configuration_3)
-    *   [5.5 Log daemon](#Log_daemon)
+    *   [5.4 Disabling](#Disabling)
+    *   [5.5 Initializing configuration](#Initializing_configuration_3)
+    *   [5.6 Log daemon](#Log_daemon)
 *   [6 Usage](#Usage)
 *   [7 References](#References)
 *   [8 See also](#See_also)
@@ -55,7 +56,7 @@ This [table](http://tomoyo.sourceforge.jp/wiki-e/?WhatIs#comparison) provides a 
 
 Implementing TOMOYO Linux 1.x using a kernel patched with ccs-patch provides the full functionality obtainable from the TOMOYO Linux project. However, implementation of this branch requires the most hurdles to be overcome, as the kernel must be patched with [ccs-patch](http://sourceforge.jp/projects/tomoyo/) and subsequently recompiled.
 
-Both *linux-ccs* and the userspace tools must be installed. A package for [linux-ccs](https://aur.archlinux.org/packages.php?ID=51669) and a package for [ccs-tools](https://aur.archlinux.org/packages.php?ID=42606) are available on the AUR.
+Both a patched kernel and the userspace tools must be installed. A package for [ccs-tools](https://aur.archlinux.org/packages/ccs-tools/) is available on the AUR.
 
 ### Initializing configuration
 
@@ -135,15 +136,48 @@ The implementation of TOMOYO Linux 2.x into the Linux mainline kernel is not yet
 
 ### Installation
 
-**Note:** TOMOYO support in the official [linux](https://www.archlinux.org/packages/?name=linux) package has been reintroduced as of version 5.0.7-arch1
+**Note:** TOMOYO support in the official [linux](https://www.archlinux.org/packages/?name=linux) package has been reintroduced as of version 5.0.7-arch1.
 
-TOMOYO requires the userspace tools (from AUR [tomoyo-tools](https://aur.archlinux.org/packages/tomoyo-tools/)) be installed.
+For custom kernels make sure that the following kernel options are set:
+
+```
+CONFIG_SECURITY=y
+CONFIG_SECURITYFS=y
+CONFIG_SECURITY_NETWORK=y
+CONFIG_SECURITY_PATH=y
+CONFIG_SECURITY_TOMOYO=y
+
+```
+
+	For kernels 5.1 and above
+
+	TOMOYO requires the 2.6 branch of the userspace tools to be installed (from AUR [tomoyo-tools](https://aur.archlinux.org/packages/tomoyo-tools/)).
+
+	For kernels 3.4 to 5.0
+
+	TOMOYO requires the 2.5 branch of the userspace tools to be installed (from AUR [tomoyo-tools-25](https://aur.archlinux.org/packages/tomoyo-tools-25/)).
+
+**Note:** The 2.5.x and 2.6.x branches of tomoyo-tools are not compatible. Using the wrong version may render your system unbootable.
 
 ### Activation
 
-If all ok, append **security=tomoyo TOMOYO_trigger=/usr/lib/systemd/systemd** to parameter GRUB_CMDLINE_LINUX_DEFAULT in `/etc/default/grub`:
+TOMOYO Linux supports "TOMOYO_trigger" kernel boot option.
 
- `GRUB_CMDLINE_LINUX_DEFAULT="quiet security=tomoyo TOMOYO_trigger=/usr/lib/systemd/systemd"` 
+Edit GRUB_CMDLINE_LINUX_DEFAULT in `/etc/default/grub`:
+
+*   For kernels 5.1 and above, append **TOMOYO_trigger=/usr/lib/systemd/systemd**:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet TOMOYO_trigger=/usr/lib/systemd/systemd"
+
+```
+
+*   For kernels 3.2 to 5.0, append **security=tomoyo TOMOYO_trigger=/usr/lib/systemd/systemd**:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet security=tomoyo TOMOYO_trigger=/usr/lib/systemd/systemd"
+
+```
 
 After, recompile `grub.cfg`:
 
@@ -152,19 +186,38 @@ After, recompile `grub.cfg`:
 
 ```
 
-So, TOMOYO will load all saved policies from `/etc/tomoyo/policy/current` when `/usr/lib/systemd/systemd` executes.
+so, TOMOYO will load all saved policies from `/etc/tomoyo/policy/current` when `/usr/lib/systemd/systemd` executes.
 
-Next, check whether the activation was successful. You should have the following lines (or similar) in your dmesg output:
+Next, check whether the activation was successful.
+
+*   For kernels 5.1 and above, check the content of `/sys/kernel/security/lsm`.
+
+If the output contains *tomoyo*, the kernel was booted with TOMOYO Linux enabled.
 
 ```
- $ dmesg |grep -A 1 -B 1 TOMOYO
- [    0.003375] Security Framework initialized
- [    0.003387] TOMOYO Linux initialized
- [    0.003396] AppArmor: AppArmor disabled by boot time parameter
- --
- [    6.829798] Calling /usr/bin/tomoyo-init to load policy. Please wait.
- [    6.833709] TOMOYO: 2.5.0
- [    6.833712] Mandatory Access Control activated.
+$ cat /sys/kernel/security/lsm
+capability,yama,loadpin,safesetid,selinux,tomoyo
+
+```
+
+If the output does not contain *tomoyo*, the kernel was booted with TOMOYO Linux disabled. If this is the case, reboot the kernel with *lsm* kernel boot option (with *tomoyo* appended to the content of `/sys/kernel/security/lsm`).
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet lsm=capability,yama,loadpin,safesetid,selinux,tomoyo TOMOYO_trigger=/usr/lib/systemd/systemd"
+
+```
+
+*   For kernels 3.2 to 5.0, you should have the following lines (or similar) in your dmesg output:
+
+```
+$ dmesg |grep -A 1 -B 1 TOMOYO
+[    0.003375] Security Framework initialized
+[    0.003387] TOMOYO Linux initialized
+[    0.003396] AppArmor: AppArmor disabled by boot time parameter
+--
+[    6.829798] Calling /usr/bin/tomoyo-init to load policy. Please wait.
+[    6.833709] TOMOYO: 2.5.0
+[    6.833712] Mandatory Access Control activated.
 
 ```
 
@@ -190,6 +243,22 @@ You can enable/disable it with systemctl:
 
 ```
 # systemctl enable tomoyo-savepolicy.service
+
+```
+
+### Disabling
+
+*   For kernels 5.1 and above use the *lsm* kernel boot option (with *tomoyo* removed from the content of `/sys/kernel/security/lsm`):
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet lsm=capability,yama,loadpin,safesetid,selinux"
+
+```
+
+*   For kernels 3.2 to 5.0 change **security=tomoyo** to **security=none**:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet security=none"
 
 ```
 

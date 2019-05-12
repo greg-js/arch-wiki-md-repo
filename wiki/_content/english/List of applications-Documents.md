@@ -434,6 +434,10 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[https://github.com/Philip-Scott/Spice-up](https://github.com/Philip-Scott/Spice-up) || [spice-up](https://aur.archlinux.org/packages/spice-up/)
 
+*   **sent** — Simple plaintext presentation tool.
+
+	[https://git.suckless.org/sent/](https://git.suckless.org/sent/) || [sent](https://aur.archlinux.org/packages/sent/)
+
 #### Spreadsheets
 
 See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org/wiki/Comparison_of_spreadsheet_software "wikipedia:Comparison of spreadsheet software").

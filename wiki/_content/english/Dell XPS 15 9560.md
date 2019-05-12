@@ -57,8 +57,9 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 *   [8 Fingerprint reader](#Fingerprint_reader)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 xorg freezes at startup](#xorg_freezes_at_startup)
-    *   [9.2 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
-    *   [9.3 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
+    *   [9.2 Audio / headphones](#Audio_/_headphones)
+    *   [9.3 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
+    *   [9.4 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
 *   [10 External links](#External_links)
 
 ## UEFI
@@ -335,6 +336,12 @@ There is also some people working on drivers for various other related readers. 
 ### xorg freezes at startup
 
 If Xorg freezes as soon as it starts, even before printing any logs, and you are trying to use the Intel card with the nvidia one disabled, you need to add kernel parameter `acpi_rev_override=1` as explained in [#Disable discrete GPU](#Disable_discrete_GPU) above.
+
+### Audio / headphones
+
+If audio output through the headphone jack suddenly stops working and restarting the computer doesn't help, try suspending/resuming it. It may be necessary to unplug headphones before suspending and then plug them in after the computer fully wakes up (based off of [this](https://askubuntu.com/a/934816/953358) AskUbuntu answer and my experience on Arch).
+
+If audio volume is low through the speakers/headphones, you may need to reboot into Windows and increase the volume in Windows. Then reboot into Linux and your speakers/headphones should be louder...
 
 ### PCIe Bus Error in system logs
 

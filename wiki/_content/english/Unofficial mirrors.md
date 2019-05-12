@@ -39,6 +39,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 ## Chile
 
 *   [http://ip62.inf.utfsm.cl/](http://ip62.inf.utfsm.cl/) *UTFSM #62*
+*   [https://mirror.ufro.cl/archlinux/](https://mirror.ufro.cl/archlinux/) - *Universidad de La Frontera*
 
 ## China
 

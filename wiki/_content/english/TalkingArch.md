@@ -58,7 +58,7 @@ This process is now fairly straightforward. Just grab and install the talkingarc
 
 ## Further Resources
 
-TalkingArch has an IRC channel at #talkingarch on irc.talkabout.cf. Feel free to drop in and talk to the maintainers or anyone else in the channel. You may also reach the maintainers by e-mail at support [at] talkingarch [dot] tk.
+TalkingArch has an IRC channel at #talkingarch on irc.talkabout.cf. Feel free to drop in and talk to the maintainers or anyone else in the channel. You may also reach the maintainers by [email](mailto:support@talkingarch.tk).
 
 ## Disclaimer
 

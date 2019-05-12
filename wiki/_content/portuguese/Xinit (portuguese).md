@@ -41,10 +41,7 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 ### xinitrc
 
-```
 O `~/.xinitrc` é útil para executar programas dependendo do X e definir variáveis de ambiente na inicialização do servidor X. Se ele estiver presente no diretório home de um usuário, *startx* e *xinit* o executa. Do contrário, *startx* executará o `/etc/X11/xinit/xinitrc` padrão.
-
-```
 
 **Nota:** *Xinit* possui seu próprio comportamento padrão em vez de executar o arquivo. Veja [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) para detalhes.
 

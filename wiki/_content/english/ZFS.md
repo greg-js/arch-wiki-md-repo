@@ -483,10 +483,21 @@ ExecStart=/usr/bin/zpool scrub %i
 
 ### Destroy a storage pool
 
-ZFS makes it easy to destroy a mounted storage pool, removing all metadata about the ZFS device. This command destroys any data contained in the pool:
+ZFS makes it easy to destroy a mounted storage pool, removing all metadata about the ZFS device.
+
+**Warning:** This command destroys **any data** containing in the pool and/or dataset.
+
+To destroy the pool:
 
 ```
 # zpool destroy <pool>
+
+```
+
+To destroy a dataset:
+
+```
+# zpool destroy <pool>/<dataset>
 
 ```
 

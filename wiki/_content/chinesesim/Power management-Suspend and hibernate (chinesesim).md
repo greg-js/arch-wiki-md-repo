@@ -19,6 +19,7 @@
     *   [2.1 开启休眠](#开启休眠)
         *   [2.1.1 划分合适大小的swap分区](#划分合适大小的swap分区)
         *   [2.1.2 在bootloader 中增加resume内核参数](#在bootloader_中增加resume内核参数)
+            *   [2.1.2.1 使用swap file休眠](#使用swap_file休眠)
         *   [2.1.3 配置 initramfs的resume钩子](#配置_initramfs的resume钩子)
     *   [2.2 设置低电量休眠](#设置低电量休眠)
     *   [2.3 设置盖上笔记本盖子或按下电源键休眠](#设置盖上笔记本盖子或按下电源键休眠)
@@ -83,6 +84,24 @@ GRUB_CMDLINE_LINUX_DEFAULT=”quiet intel_pstate=enable”
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_pstate=enable resume=/dev/sda3"
 
 ```
+
+##### 使用swap file休眠
+
+可以使用 swap file 代替 swap 分区，除了添加`resume`参数外，还需要需要添加额外的内核参数`resume_offset=*swap_file_offset*`。 `*swap_file_offset*`的值可以通过运行`filefrag -v *swap_file*`获得，该命令输出的表格第一行中的`physical_offset` 值即为`*swap_file_offset*`：
+
+ `# filefrag -v /swapfile` 
+```
+Filesystem type is: ef53
+File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
+ ext:     logical_offset:        physical_offset: length:   expected: flags:
+   0:        0..       0:      38912..     38912:      1:            
+   1:        1..   22527:      38913..     61439:  22527:             unwritten
+   2:    22528..   53247:     899072..    929791:  30720:      61440: unwritten
+...
+
+```
+
+在上面的表格中，`*swap_file_offset*`的值就是`38912`。
 
 2\. 更新 grub 配置：
 

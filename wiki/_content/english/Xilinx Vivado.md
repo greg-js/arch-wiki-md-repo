@@ -35,6 +35,13 @@ SDK 2018.3 (potentially also other versions) needs gtk2 library. You may need to
 
 ## Installation
 
+On some Tiling Window Managers (confirmed DWM and XMonad), you may need to set this environment variable before launching xsetup (otherwise the installation GUI will not render).
+
+```
+ $ export _JAVA_AWT_WM_NONREPARENTING=1
+
+```
+
 You must install the main package, and it is also recommended to install the latest update patch.
 
 ### Vivado and SDK

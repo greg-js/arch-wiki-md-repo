@@ -32,8 +32,9 @@ Related articles
     *   [6.1 Connecting to an OSX system](#Connecting_to_an_OSX_system)
     *   [6.2 Connecting to non-X environments on a Raspberry Pi (Arch ARM)](#Connecting_to_non-X_environments_on_a_Raspberry_Pi_(Arch_ARM))
     *   [6.3 Recommended security settings](#Recommended_security_settings)
-    *   [6.4 Toggling Fullscreen](#Toggling_Fullscreen)
-    *   [6.5 Changing password](#Changing_password)
+    *   [6.4 Starting X (startx) with vncserver](#Starting_X_(startx)_with_vncserver)
+    *   [6.5 Toggling Fullscreen](#Toggling_Fullscreen)
+    *   [6.6 Changing password](#Changing_password)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Unable to type '<' character](#Unable_to_type_'<'_character)
     *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
@@ -377,6 +378,10 @@ Issuing x509 certificates is beyond the scope of this guide. However, [Let's Enc
 $ vncviewer 10.1.10.2 -X509CA */path/to/cert.pem*
 
 ```
+
+### Starting X (startx) with vncserver
+
+Users invoking `startx` to load the DE, should note that the default `~/.vnc/xstartup` will launch an X session with `twm` as the desktop ignoring the setting at the end of `~/.vnc/xstartup`. Instead of specifying the desktop at the end of `~/.vnc/xstartup`, `source` `.xinitrc` (with full path).
 
 ### Toggling Fullscreen
 

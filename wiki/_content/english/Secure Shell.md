@@ -34,3 +34,4 @@ See [Security#SSH](/index.php/Security#SSH "Security").
 *   [Terminal multiplexers](/index.php/Terminal_multiplexer "Terminal multiplexer") (often used over SSH)
 *   [Wikipedia:Comparison of SSH clients](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients "wikipedia:Comparison of SSH clients")
 *   [Wikipedia:Comparison of SSH servers](https://en.wikipedia.org/wiki/Comparison_of_SSH_servers "wikipedia:Comparison of SSH servers")
+*   [SSH Key Fingerprint formats](https://blog.webernetz.net/ssh-key-fingerprints/)

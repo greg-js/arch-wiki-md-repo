@@ -84,7 +84,6 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Unsafe flags | Shell completion | Specificity |
 | [aura](https://aur.archlinux.org/packages/aura/) | Haskell | No | [Partial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [No](https://github.com/aurapm/aura/pull/346) | [Yes](https://github.com/aurapm/aura/commit/7848e983) | No | [No](https://github.com/aurapm/aura/issues/353) | – | bash, zsh | – |
 | [pacaur](https://aur.archlinux.org/packages/pacaur/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | [--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | bash, zsh | batch interaction 2 |
-| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/) | Bash | No | No | No | No | No | No | – | – | – |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Yes | [Yes](https://github.com/kitsunyan/pakku/commit/396e9f4) | Yes | Yes | Yes | Yes | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | bash, zsh | fetch PGP keys |
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | batch interaction 1/2, [dynamic users](http://0pointer.net/blog/dynamic-users-with-systemd.html) |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Yes | Yes | [Yes](https://github.com/trizen/trizen/commit/6fb0cc9) | [Yes](https://github.com/trizen/trizen/commit/7ab7ee5f) | Yes | [Partial](https://github.com/trizen/trizen/issues/46) | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e) | bash, fish, zsh | – |
@@ -93,6 +92,8 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 | [aurman](https://aur.archlinux.org/packages/aurman/)
 <small>([discontinued](https://github.com/polygamma/aurman#stopped-development-for-public-use))</small> | Python | Yes | Yes | Yes | Yes | [No](https://github.com/polygamma/aurman/issues/259) | Yes | [-Sy*](https://github.com/polygamma/aurman/commit/6c02ba3)
 [--ask*](https://github.com/polygamma/aurman#make-use-of-the-undocumented---ask-flag-of-pacman) | bash, fish | batch interaction 1/2, fetch PGP keys |
+| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/)
+<small>(discontinued)</small> | Bash | No | No | No | No | No | No | – | – | – |
 
 ## Graphical
 

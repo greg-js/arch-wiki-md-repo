@@ -52,7 +52,7 @@ The following requirements must be fulfilled in order to run Steam on Arch Linux
 
 ### SteamCMD
 
-[Install](/index.php/Install "Install") [steamcmd](https://aur.archlinux.org/packages/steamcmd/) for the command-line version of the [Steam](https://developer.valvesoftware.com/wiki/SteamCMD).
+Install [steamcmd](https://aur.archlinux.org/packages/steamcmd/) for the command-line version of [Steam](https://developer.valvesoftware.com/wiki/SteamCMD).
 
 ### Alternative Flatpak installation
 
