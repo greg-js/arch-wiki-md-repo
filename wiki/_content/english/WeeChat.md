@@ -300,6 +300,7 @@ After=network.target
 
 [Service]
 Type=forking
+RemainAfterExit=yes
 ExecStart=/usr/bin/tmux -L weechat new -d -s weechat weechat
 ExecStop=/usr/bin/tmux -L weechat kill-session -t weechat
 

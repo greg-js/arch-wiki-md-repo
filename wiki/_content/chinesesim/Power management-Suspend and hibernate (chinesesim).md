@@ -87,7 +87,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_pstate=enable resume=/dev/sda3"
 
 ##### 使用swap file休眠
 
-可以使用 swap file 代替 swap 分区，除了添加`resume`参数外，还需要需要添加额外的内核参数`resume_offset=*swap_file_offset*`。 `*swap_file_offset*`的值可以通过运行`filefrag -v *swap_file*`获得，该命令输出的表格第一行中的`physical_offset` 值即为`*swap_file_offset*`：
+可以使用 swap file 代替 swap 分区，除了添加`resume`参数外，还需要添加额外的内核参数`resume_offset=*swap_file_offset*`。 `*swap_file_offset*`的值可以通过运行`filefrag -v *swap_file*`获得，该命令输出的表格第一行中的`physical_offset` 值即为`*swap_file_offset*`：
 
  `# filefrag -v /swapfile` 
 ```

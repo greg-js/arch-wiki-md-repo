@@ -129,7 +129,7 @@ Las distribuciones basadas en Arch tienen sus propios foros de soporte y los usu
 
 #### Temas personales/fuera de tono
 
-Las discusiones fuera de tono y las quejas no son bien vistas y pueden cerrarse cuando sean descubiertas. Los mensajes de este tipo son mucho más adecuados para un blog u otro espacio web personal, y no es tolerado en la comunidad de Arch. Vea también [Respete otros sistemas operativos y proyectos]].
+Las discusiones fuera de tono y las quejas no son bien vistas y pueden cerrarse cuando sean descubiertas. Los mensajes de este tipo son mucho más adecuados para un blog u otro espacio web personal, y no es tolerado en la comunidad de Arch. Vea también [#Respete otros sistemas operativos y proyectos](#Respete_otros_sistemas_operativos_y_proyectos).
 
 #### Evite la controversia/temas polémicos
 

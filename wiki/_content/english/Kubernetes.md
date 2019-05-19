@@ -62,7 +62,7 @@ Don't worry for the not yet existing files in the arguments. They will be create
 
 Then, run
 
- `# kubeadm init --advertise-address=192.168.122.1 --pod-network-cidr=192.168.123.0/24` 
+ `# kubeadm init --apiserver-advertise-address=192.168.122.1 --pod-network-cidr=192.168.123.0/24` 
 
 It will show the progress of initialization and stuck later, complaining about something like
 

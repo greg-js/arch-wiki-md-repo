@@ -18,9 +18,10 @@ Most probably your webcam will work out of the box. Permissions to access video 
     *   [3.5 FFmpeg](#FFmpeg)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 V4L1 support](#V4L1_support)
-    *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
-    *   [4.3 Skype](#Skype)
-    *   [4.4 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
+    *   [4.2 xawtv with nvidia card](#xawtv_with_nvidia_card)
+    *   [4.3 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio/Cinema)
+    *   [4.4 Skype](#Skype)
+    *   [4.5 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
 
 ## Loading
 
@@ -39,9 +40,9 @@ usbcore: registered new driver sn9c102
 
 Some pre-UVC webcams are also supported via the *gspca* kernel driver module. See the [gspca devices](https://www.linuxtv.org/wiki/index.php/Gspca_devices) for a non-exhaustive list of supported devices under this framework.
 
-Otherwise, if your webcam is not supported by the kernel drivers, identify the name of your webcam (using, for example `lsusb`) and look for an adequate driver. See [webcam devices](https://www.linuxtv.org/wiki/index.php/Webcam_devices) for information and resources about webcams. Find a driver compatible with your webcam and add the corresponding [kernel module](/index.php/Kernel_module "Kernel module") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
+Otherwise, if your webcam is not supported by the kernel's drivers, an external driver is necessary. The first step is to identify the name of the webcam, using for example `lsusb`. Then you can check [webcam devices](https://www.linuxtv.org/wiki/index.php/Webcam_devices) for information and resources about webcams. Once you find a driver compatible with the webcam, you have to add the corresponding [kernel module](/index.php/Kernel_module "Kernel module") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
 
-**Note:** The Linux kernel to userspace API used to control webcams is *Video4Linux2*, **v4l2** for short. It means that all applications which support v4l2 will work with the kernel's drivers which are v4l2.
+**Note:** The Linux kernel to userspace API used to control webcams is named *Video4Linux2*, **v4l2** for short. All applications which support v4l2 will work with the kernel's drivers.
 
 ## Configuration
 
@@ -53,30 +54,16 @@ See also [List of applications/Multimedia#Webcam](/index.php/List_of_application
 
 ### xawtv
 
-This is a basic *Video4Linux2* device viewer, and although it is intended for use with TV tuner cards, it works well with webcams. It will display what your webcam sees in a window. [Install](/index.php/Install "Install") [xawtv](https://www.archlinux.org/packages/?name=xawtv) and run it with:
+This is a basic *Video4Linux2* device viewer, and although it is intended for use with TV tuner cards, it works well with webcams. It will display what your webcam sees in a window.
+
+[Install](/index.php/Install "Install") [xawtv](https://www.archlinux.org/packages/?name=xawtv) and run it with:
 
 ```
 $ xawtv -c /dev/video0
 
 ```
 
-If you are using an nVidia graphic card, and you get an error like
-
-```
-X Error of failed request:  XF86DGANoDirectVideoMode
- Major opcode of failed request:  139 (XFree86-DGA)
- Minor opcode of failed request:  1 (XF86DGAGetVideoLL)
- Serial number of failed request:  69
- Current serial number in output stream:  69
-
-```
-
-you should instead run it as:
-
-```
-$ xawtv -nodga
-
-```
+In case of error see [#xawtv with nvidia card](#xawtv_with_nvidia_card).
 
 ### VLC
 
@@ -87,22 +74,22 @@ $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
 
 ```
 
-This will make VLC mirror your webcam. To take stills, simply choose 'Snapshot' in the 'Video' menu. To record the stream, you add a `--sout` argument, e.g.
+This will make VLC mirror your webcam.
+
+*   To take stills, simply choose *Snapshot* in the *Video* menu.
+*   To record the stream, add a `--sout` argument to the command line, e.g.
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" \ 
-  --sout "#transcode{vcodec=mp1v,vb=1024,scale=1,acodec=mpga,ab=192,channels=2}:duplicate{dst=std{access=file,mux=mpeg1,dst=/tmp/test.mpg}}"
-
-```
-
-(Obviously a bit overkill with regard to the bit rates but it is fine for testing purposes.) Notice that this will not produce a mirror on the display - in order to see what you are recording, you would need to add the display as a destination to the argument:
-
-```
-... :duplicate{dst=display,dst=std{access= ....
+$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2" --sout "#transcode{vcodec=mp1v,vb=1024,scale=1,acodec=mpga,ab=192,channels=2}:duplicate{dst=std{access=file,mux=mpeg1,dst=/tmp/test.mpg}}"
 
 ```
 
-(Though this can tax older hardware somewhat...)
+(Obviously a bit overkill with regard to the bit rates but it is fine for testing purposes). Note that by default this will not display the video, in order to see what you are recording, you need to add the display as a destination to the argument (note that it will slow down the operation):
+
+```
+... :duplicate{**dst=display**,dst=std{access= ....
+
+```
 
 ### MPlayer
 
@@ -113,7 +100,7 @@ $ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 
 
 ```
 
-From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as **shotXXXX.png**. If you want to record continuous video:
+From here you have to press `s` to take the snapshot. The snapshot will be saved in the current folder as `shotXXXX.png`. If you want to record video continuous:
 
 ```
 $ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceaudio:adevice=/dev/dsp -ovc lavc -oac mp3lame -lameopts cbr:br=64:mode=3 -o *filename*.avi
@@ -124,14 +111,16 @@ Press `Ctrl+c` to end the recording.
 
 ### mpv
 
-To use [mpv](/index.php/Mpv "Mpv") to take snapshots from your webcam run this command from the terminal:
+To use [mpv](/index.php/Mpv "Mpv") to take snapshots from your webcam, run this command from the terminal:
 
 ```
 $ mpv av://v4l2:/dev/video0
 
 ```
 
-To use MJPEG as the pixelformat instead of the default (in many cases YUYV), you can do the following:
+From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as `mpv-shot*NNNN*.jpg`.
+
+To use MJPEG as the pixelformat instead of the default, which in most cases is YUYV, you can run the following instead:
 
 ```
 $ mpv --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg av://v4l2:/dev/video0
@@ -139,8 +128,6 @@ $ mpv --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg
 ```
 
 In some cases this can lead to drastic improvements in quality and performance (5FPS -> 30FPS for example).
-
-From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as `mpv-shot*NNNN*.jpg`.
 
 ### FFmpeg
 
@@ -168,13 +155,24 @@ LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so application
 
 ```
 
-**Tip:** You also might want to put a line like the following into `/etc/profile` or [xprofile](/index.php/Xprofile "Xprofile") so you do not have to type that long command all the time: `export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so` 
-
-or
-
- `export LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so` 
+**Tip:** You also might want to put a line like the following into `/etc/profile` or [xprofile](/index.php/Xprofile "Xprofile") so you do not have to type that long command all the time: `export LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so` or `export LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so`
 
 For 32-bit [multilib](/index.php/Multilib "Multilib") applications, install the [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) package and replace `/usr/lib/libv4l/` by `/usr/lib32/libv4l/` in the above commands.
+
+### xawtv with nvidia card
+
+If you are using an nvidia graphic card, and get an error like
+
+```
+X Error of failed request:  XF86DGANoDirectVideoMode
+ Major opcode of failed request:  139 (XFree86-DGA)
+ Minor opcode of failed request:  1 (XF86DGAGetVideoLL)
+ Serial number of failed request:  69
+ Current serial number in output stream:  69
+
+```
+
+you should instead run it as `$ xawtv -nodga`
 
 ### Microsoft Lifecam Studio/Cinema
 

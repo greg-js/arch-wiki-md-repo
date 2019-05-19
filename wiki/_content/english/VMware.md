@@ -55,6 +55,7 @@ You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMw
         *   [5.9.1 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
         *   [5.9.2 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_"[...]timeTracker_user.c:234_bugNr=148722")
         *   [5.9.3 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+        *   [5.9.4 Strange mouse wheel behavior on Guest](#Strange_mouse_wheel_behavior_on_Guest)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -166,6 +167,25 @@ After=vmware.service
 ExecStart=/usr/bin/vmware-usbarbitrator
 ExecStop=/usr/bin/vmware-usbarbitrator --kill
 RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Add this service to enable networking:
+
+ `/etc/systemd/system/vmware-networks-server.service` 
+```
+[Unit]
+Description=VMware Networks
+Wants=vmware-networks-configuration.service
+After=vmware-networks-configuration.service
+
+[Service]
+Type=forking
+ExecStartPre=-/sbin/modprobe vmnet
+ExecStart=/usr/bin/vmware-networks --start
+ExecStop=/usr/bin/vmware-networks --stop
 
 [Install]
 WantedBy=multi-user.target
@@ -619,6 +639,10 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 #### Networking on Guests not available after system restart
 
 This is likely due to the `vmnet` module not being loaded [[2]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
+
+#### Strange mouse wheel behavior on Guest
+
+This is related to the current Xorg keyboard layout on Host system. Keep primary layout (e.g., English) selected on Host while working on Guest.
 
 ## Uninstallation
 

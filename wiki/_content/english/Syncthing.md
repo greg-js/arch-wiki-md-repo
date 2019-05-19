@@ -19,6 +19,7 @@ Related articles
         *   [2.2.2 User service](#User_service)
     *   [2.3 Syncthing-GTK](#Syncthing-GTK)
     *   [2.4 Web-GUI](#Web-GUI)
+    *   [2.5 Syncthing Tray](#Syncthing_Tray)
 *   [3 Configuration](#Configuration)
     *   [3.1 Local network setup](#Local_network_setup)
     *   [3.2 Using inotify](#Using_inotify)
@@ -37,7 +38,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
 
-Syncthing provides a [#Web-GUI](#Web-GUI) for control and monitoring. A GUI wrapper, [#Syncthing-GTK](#Syncthing-GTK), provided in a separate package also exists.
+Syncthing provides a [#Web-GUI](#Web-GUI) for control and monitoring. [GUI wrappers](https://docs.syncthing.net/users/contrib.html#gui-wrappers) like [#Syncthing-GTK](#Syncthing-GTK) and [#Syncthing Tray](#Syncthing_Tray) (provided in separate packages) also exist.
 
 ## Running Syncthing
 
@@ -72,6 +73,12 @@ Running Syncthing as a *systemd user* service ensures that Syncthing only starts
 Syncthing provides a web interface accessible by default on [http://localhost:8384](http://localhost:8384).
 
 **Tip:** To access the GUI remotely, see the [FAQ](https://docs.syncthing.net/users/faq.html#how-do-i-access-the-web-gui-from-another-computer).
+
+### Syncthing Tray
+
+[syncthingtray](https://aur.archlinux.org/packages/syncthingtray/) complements the Web-GUI by providing a Qt-based system tray icon and desktop notifications. There exists a desktop environment neutral version and a plasmoid for [Plasma](/index.php/Plasma "Plasma") 5\. It also provides integration with systemd and the [Dolphin](/index.php/Dolphin "Dolphin") file manager.
+
+The packages also comes with the syncthingctl utility which allows to interact with Syncthing from the command line.
 
 ## Configuration
 

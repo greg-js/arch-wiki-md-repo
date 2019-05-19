@@ -204,10 +204,10 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 The NFSv4 protocol represents the local system's UID and GID values on the wire as strings of the form `user@domain`. The process of translating from UID to string and string to UID is referred to as *ID mapping* [[1]](http://man7.org/linux/man-pages/man5/nfsidmap.5.html).
 
-Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
+Even though idmapd may be running, it may not be fully enabled. If `/sys/module/nfs/parameters/nfs4_disable_idmapping` returns `Y` on a client/server, enable it by:
 
 ```
-# echo "N" | tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
+# echo "N" | tee /sys/module/nfs/parameters/nfs4_disable_idmapping
 
 ```
 

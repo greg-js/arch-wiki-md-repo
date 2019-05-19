@@ -222,13 +222,13 @@ session   optional  pam_permit.so
 
 Then edit both `/etc/pam.d/su` and `/etc/pam.d/su-l` identically. The `su-l` file is used when the user runs `su --login`.
 
-Make `pam_ldap.so` sufficient at the top of each section, and add `use_first_pass` to `pam_unix` in the *auth* section.
+Make `pam_ldap.so` sufficient at the top of each section but below `pam_rootok`, and add `use_first_pass` to `pam_unix` in the *auth* section.
 
  `/etc/pam.d/su` 
 ```
 #%PAM-1.0
-**auth      sufficient    pam_ldap.so**
 auth      sufficient    pam_rootok.so
+**auth      sufficient    pam_ldap.so**
 # Uncomment the following line to implicitly trust users in the "wheel" group.
 #auth     sufficient    pam_wheel.so trust use_uid
 # Uncomment the following line to require a user to be in the "wheel" group.

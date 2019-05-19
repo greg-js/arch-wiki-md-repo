@@ -1,11 +1,15 @@
 Tato stránka popisuje, jak nainstalovat, nastavit a používat **lm_sensors**, pomocí kterého můžeš monitorovat teplotu CPU, základní desky a rychlost větráčků.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Instalace lm_sensors](#Instalace_lm_sensors)
-*   [2 Nastavování lm_sensors](#Nastavov.C3.A1n.C3.AD_lm_sensors)
-*   [3 čtení hodnot SPD z paměťových modulů](#.C4.8Dten.C3.AD_hodnot_SPD_z_pam.C4.9B.C5.A5ov.C3.BDch_modul.C5.AF)
-*   [4 Používání lm_sensors](#Pou.C5.BE.C3.ADv.C3.A1n.C3.AD_lm_sensors)
+*   [2 Nastavování lm_sensors](#Nastavování_lm_sensors)
+*   [3 čtení hodnot SPD z paměťových modulů](#čtení_hodnot_SPD_z_paměťových_modulů)
+*   [4 Používání lm_sensors](#Používání_lm_sensors)
 
 ### Instalace lm_sensors
 

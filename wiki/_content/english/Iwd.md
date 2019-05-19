@@ -136,7 +136,7 @@ To list networks you have connected to previously:
 To forget a known network:
 
 ```
-[iwd]# known-networks forget *SSID*
+[iwd]# known-networks *SSID* forget
 
 ```
 
@@ -151,7 +151,7 @@ For connecting to a EAP-PWD protected enterprice access point you need to create
 [Security]
 EAP-Method=PWD
 EAP-Identity=*your_enterprise_email*
-EAP-PWD-Password=*your_password*
+EAP-Password=*your_password*
 
 [Settings]
 Autoconnect=True

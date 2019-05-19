@@ -389,34 +389,32 @@ Reconnect your headset.
 
 ## Headset via Bluez5/bluez-alsa
 
-**Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). This approach should be used only if you cannot or do not want to use PulseAudio.
+**Note:** Bluez5 has dropped direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio") only. Follow the instructions below if you cannot or do not want to use PulseAudio.
 
-First of all ensure your headset is correctly paired and connected to the system, this implies the same steps that using PulseAudio, for example using `bluetoothctl`.
+First, ensure that your headset is correctly paired and connected to the system (see for example `bluetoothctl`).
 
-Install [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), start and possibly enable the `bluealsa` service.
+Then, install [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), start (and enable) the `bluealsa` service, and add your user to the `audio` group.
 
-Finally to let the `bluealsa` work your user must be part of the `audio` group.
-
-You can now test if everything works fine, replace your MAC as necessary:
+Run the following command to check if everything is working as intended (replace MAC and FILE below):
 
 ```
-$ aplay -D bluealsa:HCI=hci0,DEV=00:1D:43:6D:03:26,PROFILE=a2dp ./testme.wav
+$ aplay -D bluealsa:HCI=hci0,DEV=MAC,PROFILE=a2dp FILE.wav
 
 ```
 
-If it does you can set up HCI, DEV, and PROFILE as default. Add the following lines:
+Finally, add the following lines to your .asoundrc:
 
  `.asoundrc` 
 ```
 defaults.bluealsa {
     interface "hci0"
-    device "00:1D:43:6D:03:26"
+    device "MAC"
     profile "a2dp"
 }
 
 ```
 
-You can now use the device bluealsa to reach your headset. You can also use `alsamixer` to setup the volumes, as `alsamixer -D bluealsa`.
+You can now use the bluealsa device to reach your headset. Volume management is conducted normally via `alsamixer`.
 
 ## Legacy documentation: ALSA, bluez5 and PulseAudio method
 

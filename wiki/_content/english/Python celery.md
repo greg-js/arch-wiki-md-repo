@@ -2,7 +2,11 @@ Quoting authors of the [project](http://www.celeryproject.org/):
 
 	Celery is "an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well. (...) Tasks can execute asynchronously (in the background) or synchronously (wait until ready)."
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -33,9 +37,11 @@ Quoting [Celery documentation](http://docs.celeryproject.org/en/latest/getting-s
 
 ### Celery
 
-For configuration files the directory `/etc/celery/` needs to be created. An example configuration file is provided within [Celery documentation](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#example-configuration).
+For configuration files, the directory `/etc/celery/` needs to be created with a configuration file named `*app*.conf` where *app* is the name of your application. An example configuration file is provided within [Celery documentation](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#example-configuration).
 
-[Start/enable](/index.php/Start/enable "Start/enable") the `celery@*celery*.service`.
+[Start/enable](/index.php/Start/enable "Start/enable") the `celery@*app*.service`.
+
+To run celery in a virtualenv, make a copy of `celery@.service` in `/etc/systemd/system` so you can customize it, and change the paths of the celery binary to the copy in your virtualenv.
 
 ### RabbitMQ
 

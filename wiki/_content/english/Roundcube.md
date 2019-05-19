@@ -41,8 +41,10 @@ Here's an example on how you could setup a database for Roundcube with [MariaDB]
 
  `$ mysql -u root -p` 
 ```
-CREATE DATABASE roundcubemail;
-GRANT ALL PRIVILEGES ON roundcubemail.* TO 'roundcube'@'localhost' IDENTIFIED BY 'password';
+CREATE DATABASE `**roundcubemail**` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
+CREATE USER `**roundcube**`@'localhost' IDENTIFIED BY '**password'**;
+GRANT ALL PRIVILEGES ON `**roundcubemail**`.* TO `**roundcube**`@`localhost`;
+\q
 
 ```
 

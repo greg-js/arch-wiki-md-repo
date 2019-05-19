@@ -2,6 +2,7 @@ Related articles
 
 *   [Cgroups](/index.php/Cgroups "Cgroups")
 *   [Docker](/index.php/Docker "Docker")
+*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
 
 [Buildah](https://buildah.io/) is a tool that facilitates building [Open Container Initiative](https://www.opencontainers.org/) (OCI) container images. The Buildah package provides a command line tool that can be used to:
 
@@ -22,16 +23,16 @@ The most widely known alternative for building containers is [docker](/index.php
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Setup](#Setup)
-    *   [1.1 Required software](#Required_software)
-        *   [1.1.1 Enable support to build unprivileged containers (optional)](#Enable_support_to_build_unprivileged_containers_(optional))
-*   [2 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Enable support to build unprivileged containers (optional)](#Enable_support_to_build_unprivileged_containers_(optional))
+*   [3 See also](#See_also)
 
-## Setup
+## Installation
 
-### Required software
+[Install](/index.php/Install "Install") the [buildah](https://www.archlinux.org/packages/?name=buildah) package or, for the development version, the [buildah-git](https://aur.archlinux.org/packages/buildah-git/) package.
 
-Installing [buildah](https://www.archlinux.org/packages/?name=buildah) will allow the host system to build privileged containers.
+## Configuration
 
 #### Enable support to build unprivileged containers (optional)
 

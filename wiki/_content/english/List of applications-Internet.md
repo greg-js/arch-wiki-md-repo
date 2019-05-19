@@ -1540,7 +1540,7 @@ See also [Matrix](/index.php/Matrix "Matrix").
 
 *   **nheko** — Desktop client for the Matrix protocol.
 
-	[https://github.com/Nheko-Reborn/nheko](https://github.com/Nheko-Reborn/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/)
+	[https://github.com/Nheko-Reborn/nheko](https://github.com/Nheko-Reborn/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/), [nheko-git](https://aur.archlinux.org/packages/nheko-git/)
 
 *   **Quaternion** — Qt5-based IM client for the Matrix protocol.
 
@@ -1888,7 +1888,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") News** — RSS/Atom feed reader for Nextcloud.
 
-	[https://github.com/nextcloud/news](https://github.com/nextcloud/news) || [nextcloud-app-news](https://aur.archlinux.org/packages/nextcloud-app-news/)
+	[https://github.com/nextcloud/news](https://github.com/nextcloud/news) || [nextcloud-app-news](https://www.archlinux.org/packages/?name=nextcloud-app-news)
 
 *   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
 

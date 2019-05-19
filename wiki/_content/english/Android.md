@@ -221,7 +221,7 @@ $ cd ~/android
 The Android build process expects `python` to be python2\. Create a python2 virtual environment and activate it:
 
 ```
-$ virtualenv2 venv
+$ virtualenv2 --system-site-packages venv
 $ source venv/bin/activate
 
 ```
@@ -229,7 +229,8 @@ $ source venv/bin/activate
 **Note:**
 
 *   This activation is only active for the current terminal session. The virtual env will be kept in the `venv` folder.
-*   During build you may receive error pertaining to missing python modules. A quick and dirty fix is to symlink /usr/lib/python2.7/* to ~/android/venv/lib/python2.7/ (Change ~/android to reflect your build directory if different than above).
+*   Passing "--system-site-packages" to virtualenv2 points your virtual environment to your installed python2.7 modules. This should give you all python modules you need for the build, assuming you've installed the required dependencies such as python2-mako.
+*   If during the build you still receive errors pertaining to missing python modules a quick and dirty fix might be to symlink /usr/lib/python2.7/* to ~/android/venv/lib/python2.7/ (Change ~/android to reflect your build directory if different than above).
 
 Example:
 

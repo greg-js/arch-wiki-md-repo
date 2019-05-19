@@ -378,7 +378,7 @@ $ pti=off nospectre_v1 nospectre_v2 l1tf=off nospec_store_bypass_disable
 
 ### Xorg configuration
 
-Graphics performance may depend on the settings in [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5); see the [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI") and [Intel](/index.php/Intel "Intel") articles. Improper settings may stop Xorg from working, so caution is advised.
+Graphics performance may depend on the settings in [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5); see the [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI"), [AMDGPU](/index.php/AMDGPU "AMDGPU") and [Intel](/index.php/Intel "Intel") articles. Improper settings may stop Xorg from working, so caution is advised.
 
 ### Mesa configuration
 

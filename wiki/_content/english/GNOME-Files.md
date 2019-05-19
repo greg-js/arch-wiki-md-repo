@@ -87,6 +87,8 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 Files is simple to configure graphically, but not all options are available in the preferences menu. More options are available with *dconf-editor* under `org.gnome.nautilus`.
 
+**Note:** If you are using Files outside of the GNOME desktop environment, you have to make sure that `/usr/lib/gsd-xsettings` is running, otherwise the dconf settings are not applied in Files.
+
 ### Desktop Icons
 
 See [GNOME#Icons on the Desktop](/index.php/GNOME#Icons_on_the_Desktop "GNOME").

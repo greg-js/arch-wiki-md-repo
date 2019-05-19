@@ -60,7 +60,7 @@ The quickest way to find out what modules you need is to reboot your system with
 Once your system reboots, run the following command to see what modules you need:
 
 ```
-lsmod | awk 'NF==3{print $1}{}'
+lsmod | awk 'NF==3{print $1}'
 
 ```
 

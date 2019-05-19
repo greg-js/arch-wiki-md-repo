@@ -63,7 +63,7 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [7.15 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
     *   [7.16 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_"Unable_to_load_dynamic_library_'mcrypt.so")
 *   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
+    *   [8.1 Running NextCloud in a subdirectory](#Running_NextCloud_in_a_subdirectory)
     *   [8.2 Docker](#Docker)
     *   [8.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
     *   [8.4 Defining Background Jobs](#Defining_Background_Jobs)
@@ -800,27 +800,29 @@ To fix the error about mcrypt in Nextcloud logs, a version of this extension com
 
 ## Tips and tricks
 
-### Running ownCloud in a subdirectory
+### Running NextCloud in a subdirectory
 
-By including the default `owncloud.conf` in `httpd.conf`, ownCloud will take control of port 80 and your localhost domain.
+By including the default `nextcloud.conf` in `httpd.conf`, nextCloud will take control of port 80 and your localhost domain.
 
-If you would like to have ownCloud run in a subdirectory, then edit the `/etc/httpd/conf/extra/owncloud.conf` you included and comment out the `<VirtualHost *:80> ... </VirtualHost>` part of the include file.
+If you would like to have nextCloud run in a subdirectory, then
 
-You can use the following nginx config when using owncloud with uwsgi:
+For apache,edit the `/etc/httpd/conf/extra/nextcloud.conf` you included and comment out the `<VirtualHost *:80> ... </VirtualHost>` part of the include file.
 
- `/etc/nginx/conf.d/owncloud.conf` 
+For nginx, you can use the following config when using nextcloud with uwsgi:
+
+ `/etc/nginx/conf.d/nextcloud.conf` 
 ```
 location = /.well-known/carddav {
-  return 301 $scheme://$host/owncloud/remote.php/dav;
+  return 301 $scheme://$host/nextcloud/remote.php/dav;
 }
 
 location = /.well-known/caldav {
-  return 301 $scheme://$host/owncloud/remote.php/dav;
+  return 301 $scheme://$host/nextcloud/remote.php/dav;
 }
 
 location /.well-known/acme-challenge { }
 
-location ^~ /owncloud {
+location ^~ /nextcloud {
 
   root /usr/share/webapps;
 
@@ -835,24 +837,24 @@ location ^~ /owncloud {
   # This module is currently not supported.
   #pagespeed off;
 
-  location /owncloud {
-    rewrite ^ /owncloud/index.php$uri;
+  location /nextcloud {
+    rewrite ^ /nextcloud/index.php$uri;
   }
 
-  location ~ ^/owncloud/(?:build|tests|config|lib|3rdparty|templates|data)/ {
+  location ~ ^/nextcloud/(?:build|tests|config|lib|3rdparty|templates|data)/ {
     deny all;
   }
 
-  location ~ ^/owncloud/(?:\.|autotest|occ|issue|indie|db_|console) {
+  location ~ ^/nextcloud/(?:\.|autotest|occ|issue|indie|db_|console) {
     deny all;
   }
 
-  location ~ ^/owncloud/(?:updater|ocs-provider)(?:$|/) {
+  location ~ ^/nextcloud/(?:updater|ocs-provider)(?:$|/) {
     try_files $uri/ =404;
     index index.php;
   }
 
-  location ~ ^/owncloud/(?:index|remote|public|cron|core/ajax/update|status|ocs/v[12]|updater/.+|ocs-provider/.+|core/templates/40[34])\.php(?:$|/) {
+  location ~ ^/nextcloud/(?:index|remote|public|cron|core/ajax/update|status|ocs/v[12]|updater/.+|ocs-provider/.+|core/templates/40[34])\.php(?:$|/) {
     include uwsgi_params;
     uwsgi_modifier1 14;
     # Avoid duplicate headers confusing OC checks
@@ -866,7 +868,7 @@ location ^~ /owncloud {
   # Adding the cache control header for js and css files
   # Make sure it is BELOW the PHP block
   location ~* \.(?:css|js) {
-    try_files $uri /owncloud/index.php$uri$is_args$args;
+    try_files $uri /nextcloud/index.php$uri$is_args$args;
     add_header Cache-Control "public, max-age=7200";
     # Add headers to serve security related headers  (It is intended
     # to have those duplicated to the ones above)
@@ -885,7 +887,7 @@ location ^~ /owncloud {
   }
 
   location ~* \.(?:svg|gif|png|html|ttf|woff|ico|jpg|jpeg) {
-    try_files $uri /owncloud/index.php$uri$is_args$args;
+    try_files $uri /nextcloud/index.php$uri$is_args$args;
     # Optional: Do not log access to other assets
     access_log off;
   }

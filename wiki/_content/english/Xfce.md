@@ -362,7 +362,7 @@ To enable a sound theme:
 
 [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) provides a panel applet which has support for keyboard volume control and volume notifications. As an alternative, you can install [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/), which also provides keybinding and notification control, but without an icon sitting in the panel. This is handy, for example, when using [pasystray](https://www.archlinux.org/packages/?name=pasystray) at the same time for a finer control.
 
-Alternatively, [xfce4-mixer](https://git.xfce.org/apps/xfce4-mixer/) also provides a panel applet and keyboard shortcuts which supports Alsa as well. Note however, that it is based on a feature of GStreamer 0.10 which has been abandoned in 1.0.
+Alternatively, [xfce4-mixer](https://aur.archlinux.org/packages/xfce4-mixer/) also provides a panel applet and keyboard shortcuts which supports Alsa as well. Note however, that it is based on a feature of GStreamer 0.10 which has been abandoned in 1.0.
 
 For non desktop environment specific alternatives, see [List of applications/Multimedia#Volume control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
 

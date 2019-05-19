@@ -66,6 +66,6 @@ Since the database is stored on the root filesystem, attackers can easily modify
 
 ## See also
 
-*   [AIDE manual](http://aide.sourceforge.net/stable/manual.html)
+*   [AIDE manual](https://aide.github.io/doc/)
 *   [Gentoo Docs - Intrusion detection](https://wiki.gentoo.org/wiki/Security_Handbook?part=1&chap=13#doc_chap1)
-*   [Samhain Labs - file integrity checkers](http://www.la-samhna.de/library/scanners.html)
+*   [Samhain Labs - file integrity checkers](https://www.la-samhna.de/library/scanners.html)

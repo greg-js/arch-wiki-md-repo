@@ -92,6 +92,8 @@ Using standalone mode is advantageous for several reasons:
 
 **Warning:** Select **only one** of the methods listed below.
 
+**Warning:** Users of Arch ARM should not attempt to configure any of the options presented below as the kodi packages for Arch ARM ship with `kodi.service` to allow standalone operation on these platforms.
+
 ### kodi-standalone service
 
 The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` (for X11) and `kodi-gbm.service` (for GBM) and automatically creates and provisions the unprivileged user to run Kodi in standalone mode. The correct video driver and optionally [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") is an assumed dependency.

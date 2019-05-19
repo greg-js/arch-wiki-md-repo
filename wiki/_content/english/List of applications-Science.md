@@ -433,7 +433,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://gpredict.oz9aec.net/](http://gpredict.oz9aec.net/) || [gpredict](https://aur.archlinux.org/packages/gpredict/)
 
-*   **GPSBabel** — Reads, writes, and manipulates GPS waypoints in a variety of formats.
+*   **GPSBabel** — Reads, writes, and manipulates GPS waypoints, tracks, routes in a variety of formats.
 
 	[https://www.gpsbabel.org/](https://www.gpsbabel.org/) || [gpsbabel](https://www.archlinux.org/packages/?name=gpsbabel)
 
@@ -465,7 +465,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://www.gvsig.com/en](http://www.gvsig.com/en) || [gvsig-desktop-bin](https://aur.archlinux.org/packages/gvsig-desktop-bin/)
 
-*   **JOSM** — An editor for OpenStreetMap written in Java.
+*   **JOSM** — Main editor for OpenStreetMap written in Java.
 
 	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
 
@@ -488,6 +488,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **OffRoad** — Offline vector map display ported from OsmAnd.
 
 	[https://sourceforge.net/projects/offroadosm/](https://sourceforge.net/projects/offroadosm/) || [offroad](https://www.archlinux.org/packages/?name=offroad)
+
+*   **OpenOrienteering Mapper** — Orienteering mapmaking program.
+
+	[https://www.openorienteering.org/apps/mapper/](https://www.openorienteering.org/apps/mapper/) || [openorienteering-mapper](https://aur.archlinux.org/packages/openorienteering-mapper/)
 
 *   **QMapShack** — Plan your next outdoor trip.
 

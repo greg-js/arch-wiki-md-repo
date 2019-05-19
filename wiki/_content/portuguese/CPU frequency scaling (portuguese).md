@@ -6,7 +6,7 @@ Artigos relacionados
 
 A escala de frequência da CPU permite que o sistema operacional aumente ou diminua a frequência da CPU para economizar energia. Frequências de CPU podem ser escalonadas automaticamente dependendo da carga do sistema, em resposta a eventos ACPI, ou manualmente por programas espaço do usuário.
 
-O escalonamento de frequência da CPU é implementado no kernel do Linux, a infraestrutura é chamada de *cpufreq*. Desde o kernel 3.4, os módulos necessários são carregados automaticamente e o [governador ondemand](#Gerenciadores_de_escalonamento) recomendado é ativado por padrão. No entanto, as ferramentas de espaço do usuário, como [cpower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") ou ferramentas GUI fornecidas para o seu ambiente de área de trabalho, ainda podem ser usadas para configuração avançada.
+O escalonamento de frequência da CPU é implementado no kernel do Linux, a infraestrutura é chamada de *cpufreq*. Desde o kernel 3.4, os módulos necessários são carregados automaticamente e o [governador ondemand](#Gerenciadores_de_escalonamento) recomendado é ativado por padrão. No entanto, as ferramentas de espaço do usuário, como [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") ou ferramentas GUI fornecidas para o seu ambiente de área de trabalho, ainda podem ser usadas para configuração avançada.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

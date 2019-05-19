@@ -245,7 +245,7 @@ server {
 }
 ```
 
-Update the `[server]` section of `app.ini`:
+Update the `[server]` and `[cookie]` section of `app.ini`:
 
  `/etc/gitea/app.ini` 
 ```
@@ -255,11 +255,12 @@ DOMAIN                     = git.domain.tld
 ROOT_URL                   = [https://git.domain.tld](https://git.domain.tld)
 HTTP_ADDR                  = /run/gitea/gitea.socket
 LOCAL_ROOT_URL             =
+
+[session]
+COOKIE_SECURE              = true
 ```
 
 **Note:** You do not need to activate any SSL certificate options in `/etc/gitea/app.ini`.
-
-Finally update the *cookie* section - set `COOKIE_SECURE` to `true`.
 
 ## Troubleshooting
 

@@ -472,7 +472,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 #### Trash management
 
-*   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
+*   **trash-cli** — A command-line interface implementing [FreeDesktop.org's Trash specification](https://specifications.freedesktop.org/trash-spec/trashspec-latest.html).
 
 	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
 

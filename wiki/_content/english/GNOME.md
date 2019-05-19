@@ -175,12 +175,7 @@ The GNOME System Settings panel (*gnome-control-center*) and GNOME applications 
 
 You can directly access the dconf database using the `gsettings` or `dconf` command line tools. This also allows you to configure settings not exposed by the user interfaces.
 
-Up until GNOME 3.24 settings were applied by the GNOME settings daemon, which could be run outside of a GNOME session using:
-
-```
-$ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
-
-```
+Up until GNOME 3.24 settings were applied by the GNOME settings daemon (located at `/usr/lib/gnome-settings-daemon/gnome-settings-daemon`), which could be run outside of a GNOME session.
 
 GNOME 3.24 however replaced the GNOME settings daemon with several separate settings plugins `/usr/lib/gnome-settings-daemon/gsd-*` which were later moved to `/usr/lib/gsd-*`. These plugins are now controlled via desktop files under `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). To run these plugins outside of a GNOME session you will now need to copy/edit the appropriate [desktop entries](/index.php/Desktop_entries "Desktop entries") to `~/.config/autostart`.
 

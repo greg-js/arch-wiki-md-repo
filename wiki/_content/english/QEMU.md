@@ -128,6 +128,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [15.12 "System Thread Exception Not Handled" when booting a Windows VM](#"System_Thread_Exception_Not_Handled"_when_booting_a_Windows_VM)
     *   [15.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
     *   [15.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
+    *   [15.15 High interrupt latency and microstuttering](#High_interrupt_latency_and_microstuttering)
 *   [16 See also](#See_also)
 
 ## Installation
@@ -2000,6 +2001,10 @@ Cases where adding this option might help:
 This may be caused by insufficient available entropy in the VM. Consider allowing the guest to access the hosts's entropy pool by adding a [VirtIO RNG device](https://wiki.qemu.org/Features/VirtIORNG) to the VM, or by installing an entropy generating daemon such as [Haveged](/index.php/Haveged "Haveged").
 
 Anecdotally, OpenSSH takes a while to start accepting connections under insufficient entropy, without the logs revealing why.
+
+### High interrupt latency and microstuttering
+
+This problem manifests itself as small pauses (stutters) and is particularly noticeable in graphics-intensive applications, such as games. One of the causes is CPU power saving features, which are controlled by [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Change this to `performance` for all processor cores.
 
 ## See also
 

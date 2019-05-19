@@ -8,10 +8,8 @@ Related articles
 
 Install the [tmuxp](https://www.archlinux.org/packages/?name=tmuxp) package.
 
-*tmuxp* can also be installed via [pip](https://pip.pypa.io) like this:
-
 ```
-$ pip install --user tmuxp
+$ pacman -S tmuxp
 
 ```
 

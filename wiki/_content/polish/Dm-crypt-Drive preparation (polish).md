@@ -1,18 +1,22 @@
 Przed zaszyfrowaniem dysku zaleca się bezpieczne wymazanie dysku poprzez nadpisanie całego dysku losowymi danymi. Aby zapobiec atakom kryptograficznym lub niepożądanemu [odzyskiwaniu plików](/index.php/File_recovery "File recovery"), dane te są idealnie nie do odróżnienia od danych później napisanych przez dm-crypt. Aby uzyskać bardziej wyczerpującą dyskusję zobacz [Disk encryption (Polski)#Przygotowanie dysku](/index.php/Disk_encryption_(Polski)#Przygotowanie_dysku "Disk encryption (Polski)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Bezpieczne usuwanie danych z dysku twardego](#Bezpieczne_usuwanie_danych_z_dysku_twardego)
-    *   [1.1 Metody ogólne](#Metody_og.C3.B3lne)
+    *   [1.1 Metody ogólne](#Metody_ogólne)
     *   [1.2 Metody specyficzne dla dm-crypt](#Metody_specyficzne_dla_dm-crypt)
-        *   [1.2.1 dm-crypt wymazuje pusty dysk lub partycję](#dm-crypt_wymazuje_pusty_dysk_lub_partycj.C4.99)
-        *   [1.2.2 dm-crypt czyści po instalacji wolne miejsce](#dm-crypt_czy.C5.9Bci_po_instalacji_wolne_miejsce)
-        *   [1.2.3 Wytrzyj nagłówek LUKS](#Wytrzyj_nag.C5.82.C3.B3wek_LUKS)
+        *   [1.2.1 dm-crypt wymazuje pusty dysk lub partycję](#dm-crypt_wymazuje_pusty_dysk_lub_partycję)
+        *   [1.2.2 dm-crypt czyści po instalacji wolne miejsce](#dm-crypt_czyści_po_instalacji_wolne_miejsce)
+        *   [1.2.3 Wytrzyj nagłówek LUKS](#Wytrzyj_nagłówek_LUKS)
 *   [2 Partycjonowanie](#Partycjonowanie)
     *   [2.1 Partycje fizyczne](#Partycje_fizyczne)
-    *   [2.2 Ułożone urządzenia blokowe](#U.C5.82o.C5.BCone_urz.C4.85dzenia_blokowe)
+    *   [2.2 Ułożone urządzenia blokowe](#Ułożone_urządzenia_blokowe)
     *   [2.3 Btrfs subvolumes](#Btrfs_subvolumes)
-    *   [2.4 Boot partition (GRUB)](#Boot_partition_.28GRUB.29)
+    *   [2.4 Boot partition (GRUB)](#Boot_partition_(GRUB))
 
 ## Bezpieczne usuwanie danych z dysku twardego
 
@@ -124,7 +128,7 @@ Podczas wycierania nagłówka losowymi danymi wszystko, co pozostało na urządz
 
 Ta sekcja ma zastosowanie tylko podczas szyfrowania całego systemu. Po tym, jak napęd został (i) bezpiecznie nadpisany, właściwy schemat partycjonowania będzie musiał zostać dokładnie wybrany, biorąc pod uwagę wymagania dm-crypt oraz efekty, jakie różne wybory będą miały na zarządzanie systemem wynikowym.
 
-Ważne jest, aby od razu zauważyć, że w [prawie](#Boot_partition_.28GRUB.29) każdym przypadku musi istnieć osobna partycja dla / boot, która musi pozostać niezaszyfrowana, ponieważ bootloader musi uzyskać dostęp do katalogu / boot, gdzie załaduje moduły initramfs / encryption potrzebne do załadowania reszta systemu (szczegóły patrz [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")). Jeśli to podniesie obawy dotyczące bezpieczeństwa, patrz
+Ważne jest, aby od razu zauważyć, że w [prawie](#Boot_partition_(GRUB)) każdym przypadku musi istnieć osobna partycja dla / boot, która musi pozostać niezaszyfrowana, ponieważ bootloader musi uzyskać dostęp do katalogu / boot, gdzie załaduje moduły initramfs / encryption potrzebne do załadowania reszta systemu (szczegóły patrz [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")). Jeśli to podniesie obawy dotyczące bezpieczeństwa, patrz
 
 Kolejnym ważnym czynnikiem, który należy wziąć pod uwagę, jest sposób obsługi obszaru wymiany i zawieszenia systemu, patrz [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
@@ -145,4 +149,4 @@ Wbudowana funkcja [podpolumn Btrfs](/index.php/Btrfs#Subvolumes "Btrfs") może b
 
 ### Boot partition (GRUB)
 
-Zobacz [dm-crypt/Encrypting an entire system (Polski)#Szyfrowana partycja rozruchowa (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Szyfrowana_partycja_rozruchowa_.28GRUB.29 "Dm-crypt/Encrypting an entire system (Polski)").
+Zobacz [dm-crypt/Encrypting an entire system (Polski)#Szyfrowana partycja rozruchowa (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Polski)#Szyfrowana_partycja_rozruchowa_(GRUB) "Dm-crypt/Encrypting an entire system (Polski)").

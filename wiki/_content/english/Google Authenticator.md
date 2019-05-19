@@ -193,7 +193,7 @@ If you have Google Authenticator configured with other systems, then losing your
 
 ### Code Managers
 
-A script that enables the display, generation, storage and management of google authenticator codes is available from the AUR ([gashell](https://aur.archlinux.org/packages/gashell/)).
+A script that enables the display, generation, storage and management of google authenticator codes is available from the AUR ([gashell](https://aur.archlinux.org/packages/gashell/)). Alternatively there is also auther ([auther-git](https://aur.archlinux.org/packages/auther-git/)).
 
 ### Command line
 

@@ -12,7 +12,7 @@
     *   [1.3 Boot the system](#Boot_the_system)
     *   [1.4 Install the system](#Install_the_system)
     *   [1.5 LED Control](#LED_Control)
-        *   [1.5.1 Load Modules](#Load_Modules)
+        *   [1.5.1 Module Handling](#Module_Handling)
         *   [1.5.2 Example Configuration](#Example_Configuration)
         *   [1.5.3 Persist Configuration](#Persist_Configuration)
 
@@ -118,18 +118,20 @@ Remember to remove the SD card or USB flash drive after you finished your setup.
 
 ### LED Control
 
-Newer (as of 2019) kernels include both the `leds_apu` ([4.15+](https://github.com/torvalds/linux/commit/3faee9423ce07186fc9dcec2981d4eb8af8872bb)) and the `ledtrig_netdev` ([4.16+](https://github.com/torvalds/linux/commit/50081e437872e68300750068754f21d0faac5d86)) [kernel modules](/index.php/Kernel_module "Kernel module"). This enables control of the APU's 3 front LEDs through the following sysfs entries:
+As of kernel [5.1](https://github.com/torvalds/linux/commit/f8eb0235f65989fc5521c40c78d1261e7f25cdbe) the `pcengines-apuv2` driver can be used on top of the generic gpio [kernel modules](/index.php/Kernel_module "Kernel module"): `amd-fch-gpio` and `leds-gpio` and in conjunction with the `ledtrig_netdev` ([4.16+](https://github.com/torvalds/linux/commit/50081e437872e68300750068754f21d0faac5d86)) module to control the APU's 3 front LEDs through the following sysfs entries:
 
 ```
-/sys/class/leds/apu2:green:1
-/sys/class/leds/apu2:green:2
-/sys/class/leds/apu2:green:3
+/sys/class/leds/apu:green:1
+/sys/class/leds/apu:green:2
+/sys/class/leds/apu:green:3
 
 ```
 
-#### Load Modules
+**Note:** 4.14 < kernel < 5.1 users can use the [leds_apu](https://github.com/torvalds/linux/commit/3faee9423ce07186fc9dcec2981d4eb8af8872bb) driver instead. The sysfs entries are `../leds/apu2:green:*` in this case.
 
-The `leds_apu` driver should automatically load on boot, but you may need to [manually load](/index.php/Kernel_module#Manual_module_handling "Kernel module") `ledtrig_netdev`.
+#### Module Handling
+
+The required drivers should automatically load on boot, but you may need to [manually load](/index.php/Kernel_module#Manual_module_handling "Kernel module") `ledtrig_netdev`. You may also want to [blacklist](/index.php/Kernel_module#Blacklisting "Kernel module") `leds_apu`.
 
 #### Example Configuration
 
@@ -145,27 +147,21 @@ LED3: local network (br0) traffic indicator
 To enable this setup:
 
 ```
-echo "netdev" > /sys/class/leds/apu2:green:2/trigger
-echo "wan0" > /sys/class/leds/apu2:green:2/device_name
-echo "1" > /sys/class/leds/apu2:green:2/tx
-echo "1" > /sys/class/leds/apu2:green:2/rx
-echo "netdev" > /sys/class/leds/apu2:green:3/trigger
-echo "br0" > /sys/class/leds/apu2:green:3/device_name
-echo "1" > /sys/class/leds/apu2:green:3/tx
-echo "1" > /sys/class/leds/apu2:green:3/rx
+echo "1" > /sys/class/leds/apu:green:1/brightness
+echo "netdev" > /sys/class/leds/apu:green:2/trigger
+echo "wan0" > /sys/class/leds/apu:green:2/device_name
+echo "1" > /sys/class/leds/apu:green:2/tx
+echo "1" > /sys/class/leds/apu:green:2/rx
+echo "netdev" > /sys/class/leds/apu:green:3/trigger
+echo "br0" > /sys/class/leds/apu:green:3/device_name
+echo "1" > /sys/class/leds/apu:green:3/tx
+echo "1" > /sys/class/leds/apu:green:3/rx
 
 ```
 
 **Note:** Writing to the `trigger` sysfs entry must be done first as this is what enables the `device_name`, `tx` `rx` entries.
 
-`/sys/class/leds/apu2:green:1` is likely enabled on boot automatically but if not it can be set as follows:
-
-```
-echo "1" > /sys/class/leds/apu2:green:1/brightness
-
-```
-
-**Tip:** View triggers supported by the currently loaded modules: `cat /sys/class/leds/apu2:green:1/trigger`.
+**Tip:** View triggers supported by the currently loaded modules: `cat /sys/class/leds/apu:green:1/trigger`.
 
 **Tip:** Additional trigger modules are available here: `/lib/modules/$(uname -r)/kernel/drivers/leds/trigger`.
 
@@ -175,12 +171,13 @@ Systemd [automatic module loading](/index.php/Kernel_module#Automatic_module_loa
 
  `/etc/modules-load.d/ledtrig-netdev.conf`  `ledtrig_netdev`  `/etc/tmpfiles.d/leds.conf` 
 ```
-w /sys/class/leds/apu2:green:2/trigger - - - - netdev
-w /sys/class/leds/apu2:green:2/device_name - - - - wan0
-w /sys/class/leds/apu2:green:2/tx - - - - 1
-w /sys/class/leds/apu2:green:2/rx - - - - 1
-w /sys/class/leds/apu2:green:3/trigger - - - - netdev
-w /sys/class/leds/apu2:green:3/device_name - - - - br0
-w /sys/class/leds/apu2:green:3/tx - - - - 1
-w /sys/class/leds/apu2:green:3/rx - - - - 1
+w /sys/class/leds/apu:green:1/brightness - - - - 1
+w /sys/class/leds/apu:green:2/trigger - - - - netdev
+w /sys/class/leds/apu:green:2/device_name - - - - wan0
+w /sys/class/leds/apu:green:2/tx - - - - 1
+w /sys/class/leds/apu:green:2/rx - - - - 1
+w /sys/class/leds/apu:green:3/trigger - - - - netdev
+w /sys/class/leds/apu:green:3/device_name - - - - br0
+w /sys/class/leds/apu:green:3/tx - - - - 1
+w /sys/class/leds/apu:green:3/rx - - - - 1
 ```

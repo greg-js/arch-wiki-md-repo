@@ -574,7 +574,7 @@ A perl script to create this jail is available at [jail.pl gist](https://gist.gi
 
 nginx needs `/dev/null`, `/dev/random`, and `/dev/urandom`. To install these in the chroot create the `/dev/` directory and add the devices with *mknod*. Avoid mounting all of `/dev/` to ensure that, even if the chroot is compromised, an attacker must break out of the chroot to access important devices like `/dev/sda1`.
 
-**Tip:** Be sure that `/srv/http` is mounted without no-dev option
+**Tip:** Be sure that `/srv/http` is mounted without nodev option
 
 **Tip:** See [mknod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mknod.1) and `ls -l /dev/{null,random,urandom}` to better understand the *mknod* options.
 

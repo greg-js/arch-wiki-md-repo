@@ -12,7 +12,6 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
-    *   [2.1 Autostart](#Autostart)
 *   [3 Configuration](#Configuration)
     *   [3.1 Menus](#Menus)
         *   [3.1.1 Automatic menu generation](#Automatic_menu_generation)
@@ -25,11 +24,12 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
         *   [3.2.2 Set the keyboard layout with Fluxbox](#Set_the_keyboard_layout_with_Fluxbox)
     *   [3.3 Workspaces](#Workspaces)
     *   [3.4 Tabbing and grouping](#Tabbing_and_grouping)
-    *   [3.5 Wallpaper](#Wallpaper)
-        *   [3.5.1 Swapping multiple backgrounds easily](#Swapping_multiple_backgrounds_easily)
-        *   [3.5.2 Using feh with Fluxbox](#Using_feh_with_Fluxbox)
-    *   [3.6 Theming](#Theming)
-    *   [3.7 The Slit](#The_Slit)
+    *   [3.5 Autostart](#Autostart)
+    *   [3.6 Wallpaper](#Wallpaper)
+        *   [3.6.1 Swapping multiple backgrounds easily](#Swapping_multiple_backgrounds_easily)
+        *   [3.6.2 Using feh with Fluxbox](#Using_feh_with_Fluxbox)
+    *   [3.7 Theming](#Theming)
+    *   [3.8 The Slit](#The_Slit)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -39,10 +39,6 @@ Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X
 ## Starting
 
 Run `startfluxbox` with [xinit](/index.php/Xinit "Xinit").
-
-### Autostart
-
-Fluxbox provides functionality to autostart applications. The `~/.fluxbox/startup` file is a script for autostarting applications as well as starting Fluxbox itself. The `#` symbol denotes a comment. Make sure that any lines starting applications come before the call to start Fluxbox itself. Otherwise, these lines will not be reached until Fluxbox itself terminates.
 
 ## Configuration
 
@@ -176,6 +172,10 @@ Fluxbox defaults to having four workspaces. These are accessible using the `Ctrl
 ### Tabbing and grouping
 
 With at least two windows visible on your desktop use `Ctrl+left click` on the upper window tab of one window and drag it into the other open window. The two windows will now be grouped together with window tabs in the upper window tab bar. You may now perform a window operation that will affect the entire window "group". To reverse the tabbing use `Ctrl+left click` on a tab and drag it to an empty space on the desktop.
+
+### Autostart
+
+Fluxbox provides functionality to autostart applications. The `~/.fluxbox/startup` file is a script for autostarting applications as well as starting Fluxbox itself. The `#` symbol denotes a comment. Make sure that any lines starting applications come before the call to start Fluxbox itself. Otherwise, these lines will not be reached until Fluxbox itself terminates.
 
 ### Wallpaper
 

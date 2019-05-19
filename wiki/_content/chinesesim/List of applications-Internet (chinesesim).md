@@ -1534,7 +1534,7 @@ See also [Matrix](/index.php/Matrix "Matrix").
 
 *   **nheko** — Desktop client for the Matrix protocol.
 
-	[https://github.com/mujx/nheko](https://github.com/mujx/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/)
+	[https://github.com/Nheko-Reborn/nheko](https://github.com/Nheko-Reborn/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/), [nheko-git](https://aur.archlinux.org/packages/nheko-git/)
 
 *   **Quaternion** — Qt5-based IM client for the Matrix protocol.
 

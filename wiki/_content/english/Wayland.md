@@ -135,7 +135,7 @@ Following is an example configuration file. See [weston.ini(5)](https://jlk.fjfi
 xwayland=true
 
 [libinput]
-enable_tap=true
+enable-tap=true
 
 [shell]
 #background-image=/usr/share/backgrounds/gnome/Aqua.jpg

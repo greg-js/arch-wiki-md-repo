@@ -3,15 +3,19 @@
 *   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
 *   [Removing System Encryption](/index.php/Removing_System_Encryption "Removing System Encryption")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 常見方法](#.E5.B8.B8.E8.A6.8B.E6.96.B9.E6.B3.95)
-*   [2 裝置的準備](#.E8.A3.9D.E7.BD.AE.E7.9A.84.E6.BA.96.E5.82.99)
-*   [3 加密裝置](#.E5.8A.A0.E5.AF.86.E8.A3.9D.E7.BD.AE)
-*   [4 系統配置](#.E7.B3.BB.E7.B5.B1.E9.85.8D.E7.BD.AE)
-*   [5 置換裝置的加密](#.E7.BD.AE.E6.8F.9B.E8.A3.9D.E7.BD.AE.E7.9A.84.E5.8A.A0.E5.AF.86)
-*   [6 特色](#.E7.89.B9.E8.89.B2)
-*   [7 另外參見](#.E5.8F.A6.E5.A4.96.E5.8F.83.E8.A6.8B)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 常見方法](#常見方法)
+*   [2 裝置的準備](#裝置的準備)
+*   [3 加密裝置](#加密裝置)
+*   [4 系統配置](#系統配置)
+*   [5 置換裝置的加密](#置換裝置的加密)
+*   [6 特色](#特色)
+*   [7 另外參見](#另外參見)
 
 ## 常見方法
 
@@ -23,7 +27,7 @@
 
 ## 裝置的準備
 
-[Dm-crypt/裝置的準備](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") 詳細說明許多操作，像是 [安全地抹除裝置資料](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation") 和 在使用 *dm-crypt* 操作分割區的具體要點。
+[/準備裝置](/index.php/Dm-crypt/%E6%BA%96%E5%82%99%E8%A3%9D%E7%BD%AE_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Dm-crypt/準備裝置 (正體中文)") 詳細說明許多操作，像是 [安全地抹除裝置資料](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation") 和 在使用 *dm-crypt* 操作分割區的具體要點。
 
 ## 加密裝置
 
@@ -39,7 +43,7 @@
 
 ## 特色
 
-[Dm-crypt/特色](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") 說明一些特殊操作，像是 [確保開機引導分區未被加密](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties")、[使用 GPG 或 OpenSSL 加密金鑰檔](/index.php/Dm-crypt/Specialties#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties")、一個 [透過網路開機及解密](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties") 的方法、[設定SSD的 discard/TRIM 參數](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") 以及處理 [加密勾子（hook）及多硬碟](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties")。
+[Dm-crypt/特色](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") 說明一些特殊操作，像是 [確保開機引導分區未被加密](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties")、[使用 GPG 或 OpenSSL 加密金鑰檔](/index.php/Dm-crypt/Specialties#Using_GPG,_LUKS,_or_OpenSSL_Encrypted_Keyfiles "Dm-crypt/Specialties")、一個 [透過網路開機及解密](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties") 的方法、[設定SSD的 discard/TRIM 參數](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") 以及處理 [加密勾子（hook）及多硬碟](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties")。
 
 ## 另外參見
 

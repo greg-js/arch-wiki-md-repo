@@ -1,4 +1,4 @@
-This document describes how to install the [Network UPS Tools (NUT)](http://networkupstools.org/). Network UPS Tools is compatible with thousands models of UPS. You can check the [Hardware Compatibility List](http://networkupstools.org/stable-hcl.html) to see if your UPS is supported.
+This document describes how to install the [Network UPS Tools (NUT)](https://networkupstools.org/). Network UPS Tools is compatible with thousands models of UPS. You can check the [Hardware Compatibility List](https://networkupstools.org/stable-hcl.html) to see if your UPS is supported.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -26,13 +26,13 @@ NUT has 3 daemons associated with it:
 *   A server (upsd) which uses the driver to report out the status of the UPS.
 *   A monitoring daemon (upsmon) which monitors the upsd server and takes action based on information it receives.
 
-The idea is that if you have multiple systems connected to the UPS, one can communicate the status of the UPS over the network and the others can monitor that status by running their own upsmon services. NUT has [extensive documentation on the configuration](http://networkupstools.org/docs/user-manual.chunked/ar01s06.html#_configuring_and_using) however this is going to walk through a simple setup of a USB UPS and the associated server and monitor all in one system (common desktop configuration).
+The idea is that if you have multiple systems connected to the UPS, one can communicate the status of the UPS over the network and the others can monitor that status by running their own upsmon services. NUT has [extensive documentation on the configuration](https://networkupstools.org/docs/user-manual.chunked/ar01s06.html#_configuring_and_using) however this is going to walk through a simple setup of a USB UPS and the associated server and monitor all in one system (common desktop configuration).
 
 ### Driver configuration
 
-The configuration here will depend on the type of UPS you have. Consult the previously mentioned Hardware Compatibility List to find what driver will likely work for your UPS. You can run the tool [nut-scanner(8)](http://networkupstools.org/docs/man/nut-scanner.html) which will detect NUT-compatible devices attached to your system.
+The configuration here will depend on the type of UPS you have. Consult the previously mentioned Hardware Compatibility List to find what driver will likely work for your UPS. You can run the tool [nut-scanner(8)](https://networkupstools.org/docs/man/nut-scanner.html) which will detect NUT-compatible devices attached to your system.
 
-For many UPS connected by USB, use the [usbhid-ups(8)](http://networkupstools.org/docs/man/usbhid-ups.html) driver. For UPS with serial port, use `port=/dev/ttySX`, where X is the number of serial port (Example:/dev/ttyS1). For UPS with USB port, use `port=auto`.
+For many UPS connected by USB, use the [usbhid-ups(8)](https://networkupstools.org/docs/man/usbhid-ups.html) driver. For UPS with serial port, use `port=/dev/ttySX`, where X is the number of serial port (Example:/dev/ttyS1). For UPS with USB port, use `port=auto`.
 
  `/etc/ups/ups.conf` 
 ```
@@ -43,7 +43,7 @@ For many UPS connected by USB, use the [usbhid-ups(8)](http://networkupstools.or
 
 ```
 
-You can name the UPS device whatever you like. [ups.conf(5)](http://networkupstools.org/docs/man/ups.conf.html)
+You can name the UPS device whatever you like. [ups.conf(5)](https://networkupstools.org/docs/man/ups.conf.html)
 
 Start the driver as root with `upsdrvctl start`. If there's no errors, you should see a message like this one for the driver `usbhid-ups`:
 
@@ -95,9 +95,9 @@ After this is done, reload and retrigger udev rules by issuing this command:
 
 ### upsd configuration
 
-By default upsd listens only on localhost and this is fine for our purpose. Though it is not necessary for following this guide, you can configure upsd beyond the defaults by editing `/etc/ups/upsd.conf`. See [upsd.conf(5)](http://networkupstools.org/docs/man/upsd.conf.html).
+By default upsd listens only on localhost and this is fine for our purpose. Though it is not necessary for following this guide, you can configure upsd beyond the defaults by editing `/etc/ups/upsd.conf`. See [upsd.conf(5)](https://networkupstools.org/docs/man/upsd.conf.html).
 
-You will need to add a user for a monitor to connect to the server and issue commands. See [upsd.users(5)](http://networkupstools.org/docs/man/upsd.users.html).
+You will need to add a user for a monitor to connect to the server and issue commands. See [upsd.users(5)](https://networkupstools.org/docs/man/upsd.users.html).
 
  `/etc/ups/upsd.users` 
 ```
@@ -169,7 +169,7 @@ MONITOR *upsname*@localhost 1 *upsduser* *password* master
 
 Here *upsname* is the name of the UPS, and *upsduser* and *password* is the user and its password you set in `/etc/ups/upsd.user`.
 
-You can also configure what alerts are sent, where they are sent, what action is taken when the battery is low, and more. See [upsmon.conf(5)](http://networkupstools.org/docs/man/upsmon.conf.html).
+You can also configure what alerts are sent, where they are sent, what action is taken when the battery is low, and more. See [upsmon.conf(5)](https://networkupstools.org/docs/man/upsmon.conf.html).
 
 Then [start/enable](/index.php/Start/enable "Start/enable") `nut-monitor.service`.
 
@@ -177,8 +177,6 @@ Your logs should show upsmon starting and monitoring the UPS.
 
 ## NUT-Monitor
 
-[NUT-Monitor](http://networkupstools.org/projects.html#_a_href_http_www_lestat_st_en_informatique_projets_nut_monitor_nut_monitor_a) is a graphical user interface to monitor and manage devices connected to the Network UPS Tools server.
+[NUT-Monitor](https://networkupstools.org/projects.html#_a_href_http_www_lestat_st_en_informatique_projets_nut_monitor_nut_monitor_a) is a graphical user interface to monitor and manage devices connected to the Network UPS Tools server.
 
 You can [install](/index.php/Install "Install") nut-monitor with the [nut-monitor](https://aur.archlinux.org/packages/nut-monitor/) package.
-
-NUT-Monitor requires [pygtk](https://www.archlinux.org/packages/?name=pygtk) from [Python](/index.php/Python "Python").

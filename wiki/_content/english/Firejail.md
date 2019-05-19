@@ -15,8 +15,9 @@ Related articles
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Using Firejail by default](#Using_Firejail_by_default)
-    *   [3.2 Enable AppArmor support](#Enable_AppArmor_support)
-    *   [3.3 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
+    *   [3.2 Use With hardened_malloc](#Use_With_hardened_malloc)
+    *   [3.3 Enable AppArmor support](#Enable_AppArmor_support)
+    *   [3.4 Verifying Firejail is being used](#Verifying_Firejail_is_being_used)
 *   [4 Creating custom profiles](#Creating_custom_profiles)
     *   [4.1 Whitelists and Blacklists](#Whitelists_and_Blacklists)
     *   [4.2 Profile writing](#Profile_writing)
@@ -148,6 +149,14 @@ To manually map individual applications execute:
 
 **Warning:** Upstream provides profiles for `gpg` and `gpg-agent`. If gpg is symlinked with the supplied profile, pacman will be unable to update [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring).
 
+### Use With hardened_malloc
+
+[hardened-malloc-git](https://aur.archlinux.org/packages/hardened-malloc-git/) is a hardened implementiation of glibc's malloc() allocator, originally written for Android but extended for use on the desktop. While not integrated into glibc yet, it can be used selectively with LD_PRELOAD. The proper way to launch an application within firejail using hardened_malloc is demonstrated below. To make it permanent, you'd need to create your own entry in /usr/local/bin for the desired application.
+
+ `firejail --env=LD_PRELOAD='/usr/lib/libhardened_malloc.so' /usr/bin/firefox` 
+
+The various environment variables and settings that can be used to tune hardened_malloc can be found on it's [github page](https://github.com/GrapheneOS/hardened_malloc).
+
 ### Enable AppArmor support
 
 There are a number of ways to enable [AppArmor](/index.php/AppArmor "AppArmor") confinement on top of a Firejail security profile:
@@ -181,7 +190,7 @@ Whitelists are restrictive:
 
 The basic process is:
 
-1.  Copy the default profile (which uses blacklists) to your work folder and give it a unique name:
+1.  Copy the default profile (which uses blacklists) to your work folder and give it a unique name
 2.  Change the line `include /etc/firejail/default.local` to `include /etc/firejail/ProfileName.local`
 3.  Gradually comment/uncomment the various options while checking at each stage that the application runs inside the new sandbox
 4.  Desirable options not available in the copied default profile can be found by consulting the manual

@@ -366,7 +366,7 @@ mtu-test
 
 #### Connect to the server via IPv6
 
-Starting from OpenVPN 2.4, OpenVPN will try both IPv6 and IPv4 when just using `udp/tcp-client/tcp-server`. To enforce only IPv4-only, you need to use `udp4`, `tcp4-client` or `tcp4-server`; and similar to enforce IPv6-only with `udp6/tcp6-client/tcp6-server`. On older OpenVPN versions, use `udp6/tcp6-client/tcp6-server` to enable IPv6 support.
+Starting from OpenVPN 2.4, OpenVPN will use `AF_INET` defined by the OS when just using `proto udp` or `proto tcp`, which in most cases will be IPv4 only. To use both IPv4 and IPv6, use `proto udp4/udp6` or `proto tcp4/tcp6`. To enforce only IPv4-only, you need to use `proto udp4` or `proto tcp4`; and similar to enforce IPv6-only with `proto udp6` or `proto tcp6`. On older OpenVPN versions, use `proto udp6` or `proto tcp6` instead to enable dual stack support.
 
 #### Provide IPv6 inside the tunnel
 
@@ -374,6 +374,8 @@ In order to provide IPv6 inside the tunnel, have an IPv6 prefix routed to the Op
 
 *   Many ISPs only provide dynamically changing IPv6 prefixes. OpenVPN does not support prefix changes, so change the server.conf every time the prefix is changed (Maybe can be automated with a script).
 *   ULA addresses are not routed to the Internet, and setting up NAT is not as straightforward as with IPv4\. This means one cannot route the entire traffic over the tunnel. Those wanting to connect two sites via IPv6, without the need to connect to the Internet over the tunnel, may want to use the ULA addresses for ease.
+
+Alternatively, if you have no access to these mentioned methods, an NDP proxy should work. See [this StackExchange post](https://unix.stackexchange.com/questions/136211/routing-public-ipv6-traffic-through-openvpn-tunnel).
 
 After having received a prefix (a /64 is recommended), append the following to the server.conf:
 
@@ -475,11 +477,10 @@ If you use the default port 1194, enable the `openvpn` service. Otherwise, creat
 
 ```
 
-Now add routing rules:
+Now add masquerade to the zone:
 
 ```
 # firewall-cmd --zone=FedoraServer --add-masquerade
-# firewall-cmd --zone=FedoraServer --direct --passthrough ipv4 -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 

@@ -205,6 +205,8 @@ Setup of the client is identical to [#Client](#Client) except, one needs to modi
 1.  `/etc/conf.d/distcc`: example on an armv7h machine: `DISTCC_ARGS="--allow 127.0.0.1 --allow 192.168.10.0/24 --port 3635`
 2.  `/etc/makepkg.conf`: example on an armv7h machine: `DISTCC_HOSTS="192.168.10.2/5:3635 192.168.10.3/5:3635"`
 
+Alternatively, the [distccd-arch-arm](https://aur.archlinux.org/packages/distccd-arch-arm/) package will provide the needed systemd service files to enable distccd compilation.
+
 ### Additional toolchains
 
 *   [EmbToolkit](https://embtoolkit.org/): Tool for creating cross compilation tool chain; supports ARM and MIPS architectures; supports building of an LLVM based tool chain

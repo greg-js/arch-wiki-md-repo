@@ -135,7 +135,7 @@ Section "Screen"
     Identifier     "Screen0"
     Device         "Device0"
     Monitor        "Monitor0"
-    Option         "metamodes" "nvidia-auto-select +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+    Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
     Option         "AllowIndirectGLXProtocol" "off"
     Option         "TripleBuffer" "on"
 EndSection

@@ -281,9 +281,10 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 ### Изменение переменных среды
 
-Отредактируйте команду `Exec`, добавив `env`, например:
+Отредактируйте команду `Exec`, добавив *env*, чтобы задать [переменные окружения](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F "Переменные окружения"). Например:
 
  `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+**Совет:** Предпочтительно скопировать файл *.desktop* в директорию `~/.local/share/applications/` вместо изменения его в `/usr/share/applications/`.
 
 ## Смотрите также
 

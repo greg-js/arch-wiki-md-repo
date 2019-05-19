@@ -2,7 +2,11 @@ A frequent problem in command line programs is that keys like Home and End do no
 
 First you should check the common culprits that can affect the behavior of many programs.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 TERM](#TERM)
 *   [2 Readline](#Readline)
@@ -165,6 +169,7 @@ In short, use the terminfo database to set the correct keybind.
 ```
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
+bindkey "${terminfo[kdch1]}" delete-char
 ```
 
 See [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh") and [ZshWiki:zle:bindkeys](http://zshwiki.org/home/zle/bindkeys#reading_terminfo) for more complete information.

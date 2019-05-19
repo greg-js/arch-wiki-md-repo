@@ -7,7 +7,7 @@
 *   [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)")
 *   [Opera](/index.php/Opera "Opera")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 25 апреля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=571929).
+**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 16 мая 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=572730).
 
 [Firefox](https://www.mozilla.org/ru/firefox/) — популярный графический веб-браузер с открытым исходным кодом, разрабатываемый [Mozilla](https://www.mozilla.org/ru/).
 
@@ -35,23 +35,25 @@
     *   [5.4 Правила оконного менеджера](#Правила_оконного_менеджера)
         *   [5.4.1 Профили](#Профили)
     *   [5.5 Сенсорные жесты и точная прокрутка на тачпаде](#Сенсорные_жесты_и_точная_прокрутка_на_тачпаде)
+    *   [5.6 Расположение новых вкладок](#Расположение_новых_вкладок)
 *   [6 Решение проблем](#Решение_проблем)
-    *   [6.1 Запуск Firefox занимает много времени](#Запуск_Firefox_занимает_много_времени)
-    *   [6.2 Исправление шрифтов](#Исправление_шрифтов)
-    *   [6.3 Выбор клиента электронной почты](#Выбор_клиента_электронной_почты)
-    *   [6.4 Ассоциации файлов](#Ассоциации_файлов)
-    *   [6.5 Firefox самопроизвольно создаёт директорию ~/Desktop](#Firefox_самопроизвольно_создаёт_директорию_~/Desktop)
-    *   [6.6 Плагины и блокирование всплывающих окон](#Плагины_и_блокирование_всплывающих_окон)
-    *   [6.7 Поведение при нажатии средней кнопки мыши](#Поведение_при_нажатии_средней_кнопки_мыши)
-    *   [6.8 Клавиша Backspace не выполняет функцию "Назад"](#Клавиша_Backspace_не_выполняет_функцию_"Назад")
-    *   [6.9 Firefox не запоминает авторизацию на сайте](#Firefox_не_запоминает_авторизацию_на_сайте)
-    *   [6.10 Не появляется запрос на сохранение открытых вкладок](#Не_появляется_запрос_на_сохранение_открытых_вкладок)
-    *   [6.11 Firefox обнаруживает неправильную версию плагина](#Firefox_обнаруживает_неправильную_версию_плагина)
-    *   [6.12 Контекстное меню JavaScript не отображается на некоторых сайтах](#Контекстное_меню_JavaScript_не_отображается_на_некоторых_сайтах)
-    *   [6.13 Firefox не запоминает язык проверки орфографии по умолчанию](#Firefox_не_запоминает_язык_проверки_орфографии_по_умолчанию)
-    *   [6.14 Не отображаются некоторые символы MathML](#Не_отображаются_некоторые_символы_MathML)
-    *   [6.15 Разрыв изображения в полноэкранном режиме](#Разрыв_изображения_в_полноэкранном_режиме)
-    *   [6.16 WebRTC-модуль Firefox не обнаруживает микрофон](#WebRTC-модуль_Firefox_не_обнаруживает_микрофон)
+    *   [6.1 Отключены все расширения Firefox (май 2019)](#Отключены_все_расширения_Firefox_(май_2019))
+    *   [6.2 Запуск Firefox занимает много времени](#Запуск_Firefox_занимает_много_времени)
+    *   [6.3 Исправление шрифтов](#Исправление_шрифтов)
+    *   [6.4 Выбор клиента электронной почты](#Выбор_клиента_электронной_почты)
+    *   [6.5 Ассоциации файлов](#Ассоциации_файлов)
+    *   [6.6 Firefox самопроизвольно создаёт директорию ~/Desktop](#Firefox_самопроизвольно_создаёт_директорию_~/Desktop)
+    *   [6.7 Плагины и блокирование всплывающих окон](#Плагины_и_блокирование_всплывающих_окон)
+    *   [6.8 Поведение при нажатии средней кнопки мыши](#Поведение_при_нажатии_средней_кнопки_мыши)
+    *   [6.9 Клавиша Backspace не выполняет функцию "Назад"](#Клавиша_Backspace_не_выполняет_функцию_"Назад")
+    *   [6.10 Firefox не запоминает авторизацию на сайте](#Firefox_не_запоминает_авторизацию_на_сайте)
+    *   [6.11 Не появляется запрос на сохранение открытых вкладок](#Не_появляется_запрос_на_сохранение_открытых_вкладок)
+    *   [6.12 Firefox обнаруживает неправильную версию плагина](#Firefox_обнаруживает_неправильную_версию_плагина)
+    *   [6.13 Контекстное меню JavaScript не отображается на некоторых сайтах](#Контекстное_меню_JavaScript_не_отображается_на_некоторых_сайтах)
+    *   [6.14 Firefox не запоминает язык проверки орфографии по умолчанию](#Firefox_не_запоминает_язык_проверки_орфографии_по_умолчанию)
+    *   [6.15 Не отображаются некоторые символы MathML](#Не_отображаются_некоторые_символы_MathML)
+    *   [6.16 Разрыв изображения в полноэкранном режиме](#Разрыв_изображения_в_полноэкранном_режиме)
+    *   [6.17 WebRTC-модуль Firefox не обнаруживает микрофон](#WebRTC-модуль_Firefox_не_обнаруживает_микрофон)
 *   [7 Смотрите также](#Смотрите_также)
 
 ## Установка
@@ -210,8 +212,7 @@ security.sandbox.content.write_path_whitelist
 *   Чтобы полоса прокрутки перемещалась в указанное положение по нажатию левой кнопки мыши (вместо средней в KDE), перейдите в *Параметры системы > Оформление приложений > Стиль программ GNOME/GTK+* и в опции 'При нажатии левой кнопкой мыши на полосе прокрутки' выберите 'Проматывать страницу в соответствии с положением курсора'.
 *   Чтобы использовать диалоги выбора файлов и печати KDE в Firefox 64 или новее, воспользуйтесь следующей инструкцией:
     1.  Установите [xdg-desktop-portal](https://www.archlinux.org/packages/?name=xdg-desktop-portal) и [xdg-desktop-portal-kde](https://www.archlinux.org/packages/?name=xdg-desktop-portal-kde),
-    2.  Скопируйте [ярлык](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop entries (Русский)") Firefox `/usr/share/applications/firefox.desktop` в `~/.local/share/applications/firefox.desktop`,
-    3.  Отредактируйте `~/.local/share/applications/firefox.desktop`, добавив `GTK_USE_PORTAL=1` перед самой командой во всех строках `Exec`. Например: `Exec=GTK_USE_PORTAL=1 /usr/lib/firefox/firefox %u`.
+    2.  [Отредактируйте файл .desktop](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Изменение_переменных_среды "Desktop entries (Русский)"), добавив `GTK_USE_PORTAL=1` во всех строках `Exec`.
 *   Для интеграции с системой MIME-типов [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") и диалогом выбора файлов можно воспользоваться [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/), сборкой Firefox с патчами от OpenSUSE.
 *   Также существуют расширения для дополнительной интеграции, например:
     *   Интеграция браузера с [Plasma (Русский)](/index.php/Plasma_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Plasma (Русский)"). Необходимо установить [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) и [дополнение Plasma Integration](https://addons.mozilla.org/ru/firefox/addon/plasma-integration/).
@@ -254,12 +255,7 @@ user_pref("toolkit.scrollbox.verticalScrollDistance", 2);
 
 ### Wayland
 
-Запустите Firefox со следующей переменной, чтобы оно исполнялось в качестве нативного Wayland-приложения:
-
-```
-$ MOZ_ENABLE_WAYLAND=1 firefox
-
-```
+Задайте [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `MOZ_ENABLE_WAYLAND=1`, чтобы запускать Firefox в качестве нативного Wayland-приложения. Например, [отредактируйте файл .desktop](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Изменение_переменных_среды "Desktop entries (Русский)"), добавив `MOZ_ENABLE_WAYLAND=1` во всех строках `Exec`.
 
 ### Тёмные темы
 
@@ -300,7 +296,19 @@ $ firefox [--new-instance] -P *profile_name* --class=*class_name*
 
 Задайте [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `MOZ_USE_XINPUT2=1` перед запуском Firefox для включения сенсорных жестов (например, прокрутки и масштабирования) и ("один в один") точной прокрутки на тачпаде (что заметно в GTK3-приложениях, например, Nautilus).
 
+### Расположение новых вкладок
+
+Используйте параметры `browser.tabs.insertAfterCurrent` и `browser.tabs.insertRelatedAfterCurrent`, чтобы настроить расположение новых вкладок (относительное или абсолютное). См. [[3]](https://support.mozilla.org/en/questions/1229062) для получения более подробной информации.
+
 ## Решение проблем
+
+### Отключены все расширения Firefox (май 2019)
+
+**Важно:** **Не** удаляйте или переустанавливайте дополнения, чтобы попытаться решить проблему, так как удалятся все их данные.
+
+Все дополнения Firefox (расширения, темы, поисковые движки и языковые пакеты) были ошибочно помечены **устаревшими** и не могли быть включены между 3–5 мая 2019\. [Баг](https://bugzilla.mozilla.org/show_bug.cgi?id=1548973) был вызван просроченным промежуточным сертификатом.
+
+Для большинства пользователей проблема была исправлена в Firefox 66.0.4 и Firefox ESR 60.6.2\. Дополнения должны автоматически включиться при установке новой версии Firefox с патчем. Некоторым же пользователям, например, использующим мастер-пароль, требуется несколько дополнительных шагов. См. [официальную страницу поддержки](https://support.mozilla.org/ru/kb/dopolneniya-otklyucheny-ili-ih-nevozmozhno-ustanov) Firefox для получения более подробной информации.
 
 ### Запуск Firefox занимает много времени
 
@@ -385,7 +393,7 @@ C официального сайта [поддержки Mozilla](https://suppo
 
 Если вы обновили плагин в то время, когда Firefox был запущен, то в файл будет записана неправильная информация. При следующем запуске Firefox покажет сообщение `Firefox has prevented the outdated plugin "XXXX" from running on ...` во время воспроизведения контента соответствующим плагином, что часто случается с официальным [плагином Adobe Flash Player](/index.php/Browser_plugins_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Adobe_Flash_Player "Browser plugins (Русский)").
 
-Решение состоит в удалении файла `pluginreg.dat` из директории профиля. Firefox автоматически пересоздаст данный файл при следующем закрытии. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+Решение состоит в удалении файла `pluginreg.dat` из директории профиля. Firefox автоматически пересоздаст данный файл при следующем закрытии. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Контекстное меню JavaScript не отображается на некоторых сайтах
 
@@ -401,13 +409,13 @@ C официального сайта [поддержки Mozilla](https://suppo
 
 Если установлены только системные словари [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox может не запоминать язык по умолчанию. Это исправляется установкой хотя бы одного [словаря](https://addons.mozilla.org/firefox/language-tools/) в виде Firefox-плагина. Также после этого появится вкладка **Словари** в **Дополнениях**.
 
-Связанные вопросы на **StackExchange**: [[4]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[5]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[6]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Связанные вопросы на **StackExchange**: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Соответствующие отчёты об ошибках: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Не отображаются некоторые символы MathML
 
-Необходимо установить шрифты Latin Modern Math и STIX (см. страницу MDN: [[7]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)) для корректного отображения MathML.
+Необходимо установить шрифты Latin Modern Math и STIX (см. страницу MDN: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)) для корректного отображения MathML.
 
 В Arch Linux данные шрифты содержатся в пакетах [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **и** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), но недоступны fontconfig по умолчанию. См. [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") для получения более подробной информации. Также можно попробовать другие [математические шрифты](/index.php/Fonts#Math "Fonts").
 

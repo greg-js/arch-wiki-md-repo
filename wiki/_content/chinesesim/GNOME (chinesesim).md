@@ -21,7 +21,11 @@
 
 [GNOME](https://www.gnome.org/)（读音是 *gah-nohm* 或 *nohm*）是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")。它是由 [GNOME 项目](https://en.wikipedia.org/wiki/zh:GNOME%E8%A8%88%E5%8A%83 而不是 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 进行显示。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 GNOME 会话](#GNOME_会话)
@@ -64,6 +68,7 @@
             *   [6.2.7.1 配置合上盖子时的行为](#配置合上盖子时的行为)
             *   [6.2.7.2 修改电池电量严重不足时的行为](#修改电池电量严重不足时的行为)
         *   [6.2.8 通过应用文件夹整理应用](#通过应用文件夹整理应用)
+    *   [6.3 使用其他的 window manager](#使用其他的_window_manager)
 *   [7 参见](#参见)
 
 ## 安装
@@ -258,6 +263,10 @@ Tracker数据库可以通过"tracker-sparql“命令查询。更多信息请访�
 
 ### 高级设置
 
+As noted above, many configuration options such as changing the [GTK+](/index.php/GTK%2B "GTK+") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweaks ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), a convenient graphical tool which exposes many of these settings.
+
+GNOME settings (which are stored in the DConf database) can also be configured using the [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (a graphical DConf configuration tool) or the [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) command line tool. The GNOME Tweaks does not do anything else in the background of the GUI; note though that you will not find all settings described in the following sections in it.
+
 #### 外观
 
 ##### GTK+主题和图标主题
@@ -345,7 +354,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 *   [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/)。它改变窗口管理器的默认设置以在应用最大化或平铺至一边时自动在传统（无顶栏）的应用中隐藏标题栏。
 
-*   [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [maximus](https://aur.archlinux.org/packages/maximus/)。启动该应用，在终端中输入"maximus"。运行时，守护进程将自动最大化窗口。它将关闭最大化窗口的装饰并在其取消最大化时重启装饰。如果您不想要所有窗口启动时最大化，那么运行`maximus - m`。注意，该应用只对窗口管理器装饰的应用有效； 使用自己装饰的应用比如[GNOME Files](/index.php/GNOME_Files "GNOME Files")最大化时不会被关闭装饰。
+*   [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-shell-extension-no-title-bar-git](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar-git/) 或者 [gnome-shell-extension-no-title-bar](https://aur.archlinux.org/packages/gnome-shell-extension-no-title-bar/)，最大化的窗口的标题栏将与活动栏整合以节省空间。
 
 ##### GNOME Shell主题
 
@@ -392,30 +401,22 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 #### 扩展
 
-**注意:** GNOME Shell browser 插件可以让用户从[extensions.gnome.org](https://extensions.gnome.org)安装扩展，支持 [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)") 和 [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")，要在 Google Chrome/Chromium, Opera 和 Vivaldi 中使用，需要安装 [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
+在 [extensions.gnome.org](https://extensions.gnome.org) 里可以找到扩展。只要把屏幕做上方的按钮按成 **ON** 然后点击弹出窗口里的 **Install** 就能够安装并启用那个插件了。已经安装的扩展可以在 [extensions.gnome.org/local](https://extensions.gnome.org/local/) 里查看，而且还能看到哪个能够升级。用 [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) 也可以开关某个扩展。
 
-GNOME Shell 可以使用第三方扩展来定制。这些扩展提供了一些额外的功能，如：提供一个可以一直显示的 Dock、更换 Shell 的主题，等等。
+**注意:** [GNOME/Web](/index.php/GNOME/Web "GNOME/Web") 可以直接安装 [extensions.gnome.org](https://extensions.gnome.org) 里的扩展，对于其他的浏览器，就要先安装 [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) ，然后还要安装对应的浏览器插件。
 
-名为 [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) 的软件包提供了一组由 The GNOME Project 维护，被当做 GNOME 计划的一部分的扩展，其中许多扩展被用在了 GNOME Classic 会话环境中。（最新版本的扩展你可以用他的代码 snapshot）[列表在这里](https://www.archlinux.org/packages/?sort=&q=gnome-shell-extension&maintainer=&last_update=&flagged=&limit=50)
+GNOME Shell 的插件自定义可以是限定于某个用户的，也可以是全局的。用 [pacman](/index.php/Pacman "Pacman") 安装的扩展是全局的，而且会随着系统更新而更新。
+
+[gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) 提供了包含在 GNOME project 里的（即有官方支持的）插件包，其中包含的插件有很多都会被 GNOME Classic session 使用。如果想要一个任务栏但是又不想用 GNOME Classic session，那就可以用 *Window list* 扩展。
+
+用以下命令可以查看现在启用了的扩展：
 
 ```
- $ pacman -Ss gnome-shell-extension
+$ gsettings get org.gnome.shell enabled-extensions
 
 ```
 
-另外，有许多扩展被收集并托管在了[extensions.gnome.org](https://extensions.gnome.org) 上。你可以在浏览器中浏览扩展列表，并轻松地一键点击来安装、管理、启用扩展。你可以在 [这里](https://extensions.gnome.org/about/)找到有关插件的更多信息。
-
-你也可以在 [AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-extension&do_Search=Go)里面找到一些有用的扩展。当然，它们大多也可以在 [extensions.gnome.org](https://extensions.gnome.org) 找到。一些值得一提的是：
-
-*   [gnome-shell-extension-lockkeys-git](https://aur.archlinux.org/packages/gnome-shell-extension-lockkeys-git/) 一个指示 NumLock/CapsLock 激活情况的扩展。
-*   [gnome-shell-extension-weather-git](https://aur.archlinux.org/packages/gnome-shell-extension-weather-git/) 一个可以显示天气通知的扩展。
-*   [gnome-shell-extension-nohotcorner-git](https://aur.archlinux.org/packages/gnome-shell-extension-nohotcorner-git/) 一个禁用“Hot Corner”功能的拓展。
-*   [gnome-shell-extension-insensitive-message-tray-git](https://aur.archlinux.org/packages/gnome-shell-extension-insensitive-message-tray-git/) 使鼠标在屏幕底部激活信息托盘的行为变迟钝的拓展。
-*   [Alternative Status Menu](https://extensions.gnome.org/extension/5/alternative-status-menu/) 让你的用户菜单里显示休眠和关机的扩展。
-
-另外，想要在屏幕底部显示一个任务栏，但又不想使用 GNOME Classic 的用户可以考虑使用 Window list 扩展 (由 [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) 提供).
-
-在安装完一个扩展之后可能需要[重启 GNOME shell](#重启_GNOME_shell)  。故障排除信息参照[安装扩展导致GNOME停止工作](#安装扩展导致GNOME停止工作)。
+更多信息可以参考：[[4]](https://extensions.gnome.org/about/)。
 
 #### 输入法
 
@@ -431,11 +432,13 @@ GNOME可以设置窗体标题，界面（应用），文档及等宽字体。查
 
 #### 自启动应用程序
 
-要登录自启某些应用程序, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`. [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) 支持管理 autostart-entries。
+GNOME 实现了 [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart")。
 
-**提示：** 如果Tweaks中自启动应用选项下加号按钮为灰色不可用，尝试在终端下通过 `gnome-tweak-tool`命令启动Tweaks。详情访问 [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+[gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) 程序可以用来管理自启动项。安装后按下 Super 键，搜索 Tweaks即可打开。
 
-**注意:** "gnome-session-properties"对话框可以通过[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) 添加
+**提示：** 如果Tweaks中自启动应用选项下加号按钮为灰色不可用，尝试在终端下通过 `gnome-tweak-tool`命令启动Tweaks。详情访问 [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631)。
+
+**注意:** 已经弃用的 "gnome-session-properties" 对话框可以通过[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) 添加。
 
 #### 电源
 
@@ -471,7 +474,7 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 ##### 配置合上盖子时的行为
 
-GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖子”这一 ACPI 事件发生后采取默认行动。[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) 若想要**阻止** *systemd* 的默认行为，打开 Tweak Tool，在“电源”标签页下选择“合上盖子后不待机”的选项。此选项意味着在盖子合上后，系统将不会默认待机，而是不采取任何措施。如果选择了此选项，一个自启动项目`~/.config/autostart/ignore-lid-switch-tweak.desktop`将会被创建，用于阻止*systemd*的默认行为。
+GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖子”这一 ACPI 事件发生后采取默认行动。[[6]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) 若想要**阻止** *systemd* 的默认行为，打开 Tweak Tool，在“电源”标签页下选择“合上盖子后不待机”的选项。此选项意味着在盖子合上后，系统将不会默认待机，而是不采取任何措施。如果选择了此选项，一个自启动项目`~/.config/autostart/ignore-lid-switch-tweak.desktop`将会被创建，用于阻止*systemd*的默认行为。
 
 如果你在合上盖子后既不希望系统待机，也不希望系统不动于衷，你首先要确保你并没有打开上述的选项，然后再配置*systemd*的`HandleLidSwitch=*默认行为*`选项，详见[Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management")中的说明。
 
@@ -529,6 +532,10 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 ```
 
 详情参考[app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in.in).
+
+### 使用其他的 window manager
+
+GNOME Shell 不支持更改 [window manager](/index.php/Window_manager "Window manager"), 但是 [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") 提供使用 Metacity 和 [Compiz](/index.php/Compiz "Compiz") 的session。此外，可以通过 [自定义 GNOME sessions](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") 来使用别的组件。
 
 ## 参见
 

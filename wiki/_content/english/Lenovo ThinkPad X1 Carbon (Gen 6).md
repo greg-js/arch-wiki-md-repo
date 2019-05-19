@@ -65,29 +65,30 @@ ThinkPad X1 Carbon 6th
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
 *   [4 Audio crackling](#Audio_crackling)
-*   [5 Wireless WAN / LTE](#Wireless_WAN_/_LTE)
-    *   [5.1 WWAN/LTE GUI](#WWAN/LTE_GUI)
-*   [6 Configuration](#Configuration)
-    *   [6.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
-    *   [6.2 Special buttons](#Special_buttons)
-    *   [6.3 Bind special keys](#Bind_special_keys)
-    *   [6.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
-    *   [6.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
-*   [7 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
-    *   [7.1 GNOME Wayland not available](#GNOME_Wayland_not_available)
-*   [8 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [9 Thunderbolt dock](#Thunderbolt_dock)
-    *   [9.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
-        *   [9.1.1 Bios settings](#Bios_settings)
-        *   [9.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
-    *   [9.2 Lenovo dock](#Lenovo_dock)
-*   [10 Full-disk encryption](#Full-disk_encryption)
-    *   [10.1 LUKS: Ramdisk module](#LUKS:_Ramdisk_module)
-    *   [10.2 OPAL: Hardware based full-disk encryption](#OPAL:_Hardware_based_full-disk_encryption)
-*   [11 Tools](#Tools)
-    *   [11.1 Diagnostics](#Diagnostics)
-*   [12 References](#References)
-*   [13 Additional resources](#Additional_resources)
+*   [5 Built-in speakers low volume workaround](#Built-in_speakers_low_volume_workaround)
+*   [6 Wireless WAN / LTE](#Wireless_WAN_/_LTE)
+    *   [6.1 WWAN/LTE GUI](#WWAN/LTE_GUI)
+*   [7 Configuration](#Configuration)
+    *   [7.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
+    *   [7.2 Special buttons](#Special_buttons)
+    *   [7.3 Bind special keys](#Bind_special_keys)
+    *   [7.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
+    *   [7.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+*   [8 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
+    *   [8.1 GNOME Wayland not available](#GNOME_Wayland_not_available)
+*   [9 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [10 Thunderbolt dock](#Thunderbolt_dock)
+    *   [10.1 Plugable USB-C Mini Docking Station with 85W Power Delivery UD-CAM](#Plugable_USB-C_Mini_Docking_Station_with_85W_Power_Delivery_UD-CAM)
+        *   [10.1.1 Bios settings](#Bios_settings)
+        *   [10.1.2 TLP blacklisting devices from USB autosuspend](#TLP_blacklisting_devices_from_USB_autosuspend)
+    *   [10.2 Lenovo dock](#Lenovo_dock)
+*   [11 Full-disk encryption](#Full-disk_encryption)
+    *   [11.1 LUKS: Ramdisk module](#LUKS:_Ramdisk_module)
+    *   [11.2 OPAL: Hardware based full-disk encryption](#OPAL:_Hardware_based_full-disk_encryption)
+*   [12 Tools](#Tools)
+    *   [12.1 Diagnostics](#Diagnostics)
+*   [13 References](#References)
+*   [14 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -181,6 +182,12 @@ sudo hda-verb /dev/snd/hwC0D0 0x1d SET_PIN_WIDGET_CONTROL 0x0
 ```
 
 There is also a kernel patch for this issue, which can be found [here](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1805079).
+
+## Built-in speakers low volume workaround
+
+If your ThinkPad X1 Carbon (Gen 6) built-in speakers are limited to a maximum of about 20% volume even though the volume is set at 100%, try adding the following parameter to the snd_hda_intel module by editing /etc/modprobe.d/alsa-base.conf and adding the following line:
+
+options snd-hda-intel model=nofixup
 
 ## Wireless WAN / LTE
 

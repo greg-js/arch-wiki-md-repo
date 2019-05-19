@@ -1,6 +1,10 @@
 [tint2](https://gitlab.com/o9000/tint2) is a simple, unobtrusive and light [panel](/index.php/Panel "Panel") for [Xorg](/index.php/Xorg "Xorg"). It can be configured to include a system tray, a task list, a battery monitor and more. Its look is configurable and it only has few dependencies, making it ideal for window managers like [Openbox](/index.php/Openbox "Openbox"), that do not come with a panel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -13,9 +17,11 @@
     *   [3.3 i3](#i3)
     *   [3.4 Multiple panels](#Multiple_panels)
 *   [4 Enabling transparency](#Enabling_transparency)
-    *   [4.1 Fullscreen/Overlay](#Fullscreen/Overlay)
-    *   [4.2 Third party extensions](#Third_party_extensions)
-*   [5 See also](#See_also)
+    *   [4.1 Fake transparency](#Fake_transparency)
+    *   [4.2 Real transparency](#Real_transparency)
+*   [5 Fullscreen/Overlay](#Fullscreen/Overlay)
+*   [6 Third party extensions](#Third_party_extensions)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -167,22 +173,38 @@ tint2 -c <path_to_second_config_file>
 
 ## Enabling transparency
 
-To make *tint2* look its best, some form of compositing may be required. To use compositing with Openbox see [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg"). A restart of *tint2* may be required to enable transparency.
+*tint2* supports both fake and real transparency. Which one is used is regulated by the `disable_transparency` option in the `tint2rc` configuration file.
 
-If [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") is used solely to provide *tint2* with transparency effects it can be run at boot by adding the following to `~/.config/openbox/autostart`:
+If you want to completely disable transparency you need to use `disable_transparency = 1` and set the panel background opacity to 100\. Eg:
 
 ```
-# Launch Xcomppmgr and tint2 with openbox
-if which tint2 >/dev/null 2>&1; then
-  (sleep 2 && xcompmgr) &
-  (sleep 2 && tint2) &
-fi
+ background_color = #000000 100
 
 ```
 
-See [Openbox](/index.php/Openbox "Openbox") for other (better) ways to make Xcompmgr run at startup.
+### Fake transparency
 
-### Fullscreen/Overlay
+For fake transparency you need to set `disable_transparency = 1`.
+
+Fake transparency captures a portion of the desktop background and uses that as the panel background. Because of that it is important to set the background image before *tint2* is activated. A startup script example for [Openbox](/index.php/Openbox "Openbox") could be (using [Feh](/index.php/Feh "Feh") for the background):
+
+```
+...
+feh --randomize --no-fehbg --bg-fill ~/Pictures/wallpapers/
+(sleep 1 && tint2) &
+...
+
+```
+
+### Real transparency
+
+For real transparency you need to activate a compositor like [Compton](/index.php/Compton "Compton") first and set `disable_transparency = 0`.
+
+The opacity is regulated by the second parameter of the `background_color` property in the *tint2* [configuration file](https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md#backgrounds-and-borders).
+
+If you are making changes on the fly, you may need to restart *tint2* for the transparency to take effect.
+
+## Fullscreen/Overlay
 
 To force *tint2* to stay on top of the application (overlay), you need to set the panel_layer option appropriately. This can be helpful when you switch from a fullscreen window to a normal application using Alt-Tab. There is a discussion on this at [Crunchbang Forum](http://crunchbang.org/forums/viewtopic.php?pid=70048)
 
@@ -193,9 +215,9 @@ To force *tint2* to stay on top of the application (overlay), you need to set th
 
 ```
 
-### Third party extensions
+## Third party extensions
 
-It is also possible to extend *tint2* with other applications. To add third party extensions, check the "Pages" section in the Official Wiki link below.
+It is also possible to extend *tint2* with other applications. To add third party extensions, check the [Applets](https://gitlab.com/o9000/tint2/wikis/ThirdPartyApplets) section of official Wiki.
 
 ## See also
 

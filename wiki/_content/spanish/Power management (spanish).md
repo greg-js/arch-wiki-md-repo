@@ -52,11 +52,11 @@ En Arch Linux, la administración de energía consiste en dos partes principales
         *   [3.6.3 Modo portátil](#Modo_portátil)
     *   [3.7 Interfaces de red](#Interfaces_de_red)
         *   [3.7.1 Tarjetas inalámbricas Intel (iwlwifi)](#Tarjetas_inalámbricas_Intel_(iwlwifi))
-    *   [3.8 Bus power management](#Bus_power_management)
-        *   [3.8.1 Active State Power Management](#Active_State_Power_Management)
-        *   [3.8.2 PCI Runtime Power Management](#PCI_Runtime_Power_Management)
-        *   [3.8.3 USB autosuspend](#USB_autosuspend)
-        *   [3.8.4 SATA Active Link Power Management](#SATA_Active_Link_Power_Management)
+    *   [3.8 Administración de energía bus](#Administración_de_energía_bus)
+        *   [3.8.1 Administración de energía en estado activo](#Administración_de_energía_en_estado_activo)
+        *   [3.8.2 Administración de energía PCI en tiempo de ejecución](#Administración_de_energía_PCI_en_tiempo_de_ejecución)
+        *   [3.8.3 Auto suspensión USB](#Auto_suspensión_USB)
+        *   [3.8.4 Administración de energía de enlace activo SATA](#Administración_de_energía_de_enlace_activo_SATA)
     *   [3.9 Hard disk drive](#Hard_disk_drive)
     *   [3.10 CD-ROM or DVD drive](#CD-ROM_or_DVD_drive)
 *   [4 Tools and scripts](#Tools_and_scripts)
@@ -526,40 +526,40 @@ options iwldvm force_cam=0
 
 Tenga en mente que estas opciones de ahorro de energía son experimentales y pueden causar inestabilidades en el sistema.
 
-### Bus power management
+### Administración de energía bus
 
-#### Active State Power Management
+#### Administración de energía en estado activo
 
-If the computer is believed not to support [ASPM](https://en.wikipedia.org/wiki/Active_State_Power_Management "wikipedia:Active State Power Management") it will be disabled on boot:
+Si cree que el ordenador no soporta [ASPM](https://en.wikipedia.org/wiki/Active_State_Power_Management "wikipedia:Active State Power Management") se desactivará en el aranque:
 
 ```
 # lspci -vv | grep 'ASPM.*abled;'
 
 ```
 
-ASPM is handled by the BIOS, if ASPM is disabled it will be because [ref](http://wireless.kernel.org/en/users/Documentation/ASPM):
+ASPM lo maneja la BIOS. Si ASPM está desactivado puede ser [porque](http://wireless.kernel.org/en/users/Documentation/ASPM):
 
-1.  The BIOS disabled it for some reason (for conflicts?).
-2.  PCIE requires ASPM but L0s are optional (so L0s might be disabled and only L1 enabled).
-3.  The BIOS might not have been programmed for it.
-4.  The BIOS is buggy.
+1.  La BIOS lo ha desactivado por alguna razón (¿Por conflictos?).
+2.  La PCIE requiere ASPM pero L0s es opcional (puede que L0s esté desactivado y solo esté activado L1).
+3.  La BIOS aún no ha sido programada para ello.
+4.  La BIOS esta defectuosa.
 
-If believing the computer has support for ASPM it can be forced on for the kernel to handle with the `pcie_aspm=force` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+Si cree que el ordenador tiene soporte para ASPM se puede forzar al kernel que se encargue con el [parámetro kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `pcie_aspm=force`.
 
-**Warning:**
+**Advertencia:**
 
-*   Forcing on ASPM can cause a freeze/panic, so make sure you have a way to undo the option if it does not work.
-*   On systems that do not support it forcing on ASPM can even increase power consumption.
-*   This forces ASPM in kernel while it can still remain disabled in hardware and not work. To check whether this is the case the `dmesg | grep ASPM` command can be used and if that is the case, hardware-specific Wiki article should be consulted.
+*   Forzar ASPM puede causar un congelamiento/error fatal. Así que asegurese que tiene alguna forma de deshacer la opción si no funciona.
+*   En los sistemas que no soportan forzar ASPM pueden incrementar el consumo de energía.
+*   Esto fuerza ASPM en el kernel mientras puede estar desactivado en el hardware y no funcione. Para comprobar si este es el caso se puede utilizar el comando `dmesg | grep ASPM` y si es el caso se debe consultar el artículo Wiki específico del hardware.
 
-To adjust to `powersave` do (the following command will not work unless enabled):
+Para ajustar el `powersave` ejecute (el siguiente comando no funcionara a no ser que este activado):
 
 ```
 # echo powersave > /sys/module/pcie_aspm/parameters/policy
 
 ```
 
-By default it looks like this:
+Por defecto se mostrara como esto:
 
  `$ cat /sys/module/pcie_aspm/parameters/policy` 
 ```
@@ -567,24 +567,24 @@ By default it looks like this:
 
 ```
 
-#### PCI Runtime Power Management
+#### Administración de energía PCI en tiempo de ejecución
 
  `/etc/udev/rules.d/pci_pm.rules`  `SUBSYSTEM=="pci", ATTR{power/control}="auto"` 
 
-The rule above powers all unused devices down, but some devices will not wake up again. To allow runtime power management only for devices that are known to work, use simple matching against vendor and device IDs (use `lspci -nn` to get these values):
+La regla de arriba apaga todos los dispositivos no utilizados pero algunos dispositivos no se despertarán. Para permitir la administración de energía PCI en tiempo de ejecución que sabe que funcionan utilice simplemente la combinación de vendedor y el ID del dispositivo (utilice `lspci -nn` para obtener estos valores):
 
  `/etc/udev/rules.d/pci_pm.rules` 
 ```
-# whitelist for pci autosuspend
+# Lista blanca para la auto suspensión pci
 SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}="auto"
 
 ```
 
-Alternatively, to blacklist devices that are not working with PCI runtime power management and enable it for all other devices:
+Alternativamente para poner en la lista negra los dispositivos que no funcionan con la administración de energía PCI en tiempo de ejecución y activarlo para todos los demás dispositivos:
 
  `/etc/udev/rules.d/pci_pm.rules` 
 ```
-# blacklist for pci runtime power management
+# Lista negra para la administración de energía PCI en tiempo de ejecución
 SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}="on", GOTO="pci_pm_end"
 
 SUBSYSTEM=="pci", ATTR{power/control}="auto"
@@ -592,11 +592,11 @@ LABEL="pci_pm_end"
 
 ```
 
-#### USB autosuspend
+#### Auto suspensión USB
 
-The Linux kernel can automatically suspend USB devices when they are not in use. This can sometimes save quite a bit of power, however some USB devices are not compatible with USB power saving and start to misbehave (common for USB mice/keyboards). [udev](/index.php/Udev "Udev") rules based on whitelist or blacklist filtering can help to mitigate the problem.
+El kernel Linux puede suspender automáticamente los dispositivos USB cuando no se utilizan. Esto ocasionalmente puede ahorrar un poco de energía. Sin embargo algunos dispositivos USB no son compatibles con el ahorro de energía USB y se inicia con un mal comportamiento (normalmente con ratones y teclados). Las reglas [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") basadas en la lista blanca o lista negra puede ayudar a mitigar el problema.
 
-The most simple and likely useless example is enabling autosuspend for all USB devices:
+Lo más simple y seguramente inservible es habilitar la auto suspensión para todos los dispositivos USB:
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
 ```
@@ -604,20 +604,20 @@ ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="aut
 
 ```
 
-To allow autosuspend only for devices that are known to work, use simple matching against vendor and product IDs (use *lsusb* to get these values):
+Para permitir auto suspender solo los dispositivos que sabe que van a funcionar simplemente utilice la combinación entre vendedor y el ID del producto (utilice *lsusb* para obtener estos valores):
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
 ```
-# whitelist for usb autosuspend
+# Lista blanca auto suspensión usb
 ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", ATTR{power/control}="auto"
 
 ```
 
-Alternatively, to blacklist devices that are not working with USB autosuspend and enable it for all other devices:
+Alternativamente para poner en la lista negra los dispositivos que no funcionan con la auto suspensión USB y activarlo para el resto de dispositivos:
 
  `/etc/udev/rules.d/50-usb_power_save.rules` 
 ```
-# blacklist for usb autosuspend
+# Lista negra auto suspensión usb
 ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9205", GOTO="power_usb_rules_end"
 
 ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
@@ -625,7 +625,7 @@ LABEL="power_usb_rules_end"
 
 ```
 
-The default autosuspend idle delay time is controlled by the `autosuspend` parameter of the `usbcore` [kernel module](/index.php/Kernel_module "Kernel module"). To set the delay to 5 seconds instead of the default 2 seconds:
+El tiempo de retardo por defecto en la auto suspensión se controla con el parámetro `autosuspend` del [módulo kernel](/index.php/Kernel_module_(Espa%C3%B1ol) "Kernel module (Español)") `usbcore`. Para establecer el retardo a 5 segundos en vez de los 2 segundos por defecto:
 
  `/etc/modprobe.d/usb-autosuspend.conf` 
 ```
@@ -633,32 +633,32 @@ options usbcore autosuspend=5
 
 ```
 
-Similarly to `power/control`, the delay time can be fine-tuned per device by setting the `power/autosuspend` attribute.
+De forma similar para `power/control` el tiempo de retardo puede personalizarse para cada dispositivo ajustando el atributo `power/autosuspend`.
 
-See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/usb/power-management.txt) for more information on USB power management.
+Vea la [documentación kernel de Linux](https://www.kernel.org/doc/Documentation/usb/power-management.txt) para más información sobre la administración de energía USB.
 
-#### SATA Active Link Power Management
+#### Administración de energía de enlace activo SATA
 
-**Warning:** SATA Active Link Power Management can lead to data loss on some devices. Do not enable this setting unless you have frequent backups.
+**Advertencia:** La administración de energía de enlace activo SATA puede ocasionar pérdida de datos en algunos dispositivos. No active estos ajustes a no haya ser que realice copias de seguridad frecuentemente.
 
-Since Linux 4.15 there is a [new setting](https://hansdegoede.livejournal.com/18412.html) called `med_power_with_dipm` that matches the behaviour of Windows IRST driver settings and should not cause data loss with recent SSD/HDD drives. The power saving can be significant, ranging [from 1.0 to 1.5 Watts (when idle)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b). It will become a default setting for Intel based laptops in Linux 4.16 [[5]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b).
+Desde Linux 4.15 hay un [nuevo ajuste](https://hansdegoede.livejournal.com/18412.html) llamado `med_power_with_dipm` que marca el comportamiento de los ajustes del controlador Windows IRST y no debería causar pérdida de datos en discos SSD/HDD recientes. El ahorro de energía puede ser insignificante, entre [1.0 a 1.5 Vatios (en reposo)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b). Será un ajuste por defecto en los portátiles basados en Intel en Linux 4.16 [[5]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b).
 
-The current setting can be read from `/sys/class/scsi_host/host*/link_power_management_policy` as follows:
+Los ajustes actuales se pueden leer desde `/sys/class/scsi_host/host*/link_power_management_policy` como sigue:
 
 ```
 # cat /sys/class/scsi_host/host*/link_power_management_policy
 
 ```
 
-<caption>Available ALPM settings</caption>
-| Setting | Description | Power saving |
-| max_performance | current default | None |
-| medium_power | - | ~1.0 Watts |
-| med_power_with_dipm | recommended setting | ~1.5 Watts |
-| min_power | **WARNING: possible data loss** | ~1.5 Watts |
+<caption>Ajustes ALPM disponibles</caption>
+| Ajuste | Descripción | Ahorro energético |
+| max_performance | Actualmente por defecto | Ninguno |
+| medium_power | - | ~1.0 Vatios |
+| med_power_with_dipm | Ajuste recomendado | ~1.5 Vatios |
+| min_power | **ADVERTENCIA: Posible pérdida de datos** | ~1.5 Vatios |
 
  `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="med_power_with_dipm"` 
-**Note:** This adds latency when accessing a drive that has been idle, so it is one of the few settings that may be worth toggling based on whether you are on AC power.
+**Nota:** Esto añade latencia cuando se accede al disco desde que este estaba en reposo, por tanto, es una de las pocas configuraciones que pueden valer la pena alternar en función de si está conectado a la alimentación de CA o no.
 
 ### Hard disk drive
 

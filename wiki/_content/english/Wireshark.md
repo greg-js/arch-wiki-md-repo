@@ -7,7 +7,7 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Capturing as normal user](#Capturing_as_normal_user)
+*   [2 Capturing privileges](#Capturing_privileges)
 *   [3 A few capturing techniques](#A_few_capturing_techniques)
     *   [3.1 Filtering TCP packets](#Filtering_TCP_packets)
     *   [3.2 Filtering UDP packets](#Filtering_UDP_packets)
@@ -22,22 +22,13 @@
 
 **Note:** The deprecated GTK+ interface has been removed in Wireshark 3.0.
 
-## Capturing as normal user
+## Capturing privileges
 
-Do not run Wireshark as root, it is insecure. Wireshark has implemented privilege separation.[[1]](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Most_UNIXes)
+Do not run Wireshark as root, it is insecure. Wireshark has implemented privilege separation [[1]](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Most_UNIXes).
 
 The [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [install script](/index.php/PKGBUILD#install "PKGBUILD") sets packet capturing [capabilities](/index.php/Capabilities "Capabilities") on the `/usr/bin/dumpcap` executable.
 
-`/usr/bin/dumpcap` can only be executed by root and members of the `wireshark` group.
-
-Therefore to use Wireshark as a normal user you just have to add your user to the `wireshark` [user group](/index.php/User_group "User group"):
-
-```
-# gpasswd -a *username* wireshark
-
-```
-
-Re-login to apply the change.
+`/usr/bin/dumpcap` can only be executed by root and members of the `wireshark` group, therefore to use Wireshark as a normal user you have to add your user to the `wireshark` [user group](/index.php/User_group "User group") (see [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups")).
 
 ## A few capturing techniques
 

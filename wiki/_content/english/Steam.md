@@ -21,6 +21,7 @@ Related articles
 *   [1 Installation](#Installation)
     *   [1.1 SteamCMD](#SteamCMD)
     *   [1.2 Alternative Flatpak installation](#Alternative_Flatpak_installation)
+        *   [1.2.1 Asian Font Problems with Flatpak](#Asian_Font_Problems_with_Flatpak)
 *   [2 Directory structure](#Directory_structure)
     *   [2.1 Library folders](#Library_folders)
 *   [3 Usage](#Usage)
@@ -71,6 +72,25 @@ By default Steam won't be able to access your home directory, you can run the fo
 
 ```
 flatpak override com.valvesoftware.Steam --filesystem=$HOME
+
+```
+
+#### Asian Font Problems with Flatpak
+
+If you are having problem getting Asian fonts to show in game, it's because org.freedesktop.Platform does not include it. First try mounting your local font :
+
+```
+flatpak run --filesystems=~/.local/share/fonts --filesystem=~/.config/fontconfig  com.valvesoftware.Steam
+
+```
+
+If that doesn't work, consider this hack: make the fonts available by directly copying the font files into org.freedesktop.Platform's directories, e.g.
+
+```
+# replace ? with your version and hash
+/var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/?/?/files/etc/fonts/conf.avail
+/var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/?/?/files/etc/fonts/conf.d 
+/var/lib/flatpak/runtime/org.freedesktop.Platform/x86_64/?/?/files/share/fonts
 
 ```
 

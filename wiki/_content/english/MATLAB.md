@@ -34,19 +34,20 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [4.3 Blank/grey UI when using WM (non-reparenting window manager)](#Blank/grey_UI_when_using_WM_(non-reparenting_window_manager))
     *   [4.4 Garbled or invisible text](#Garbled_or_invisible_text)
     *   [4.5 Corrupted text and fonts in menus and fields](#Corrupted_text_and_fonts_in_menus_and_fields)
-    *   [4.6 Installation](#Installation_2)
-    *   [4.7 Install-time library errors](#Install-time_library_errors)
-    *   [4.8 Resolving start warnings/errors](#Resolving_start_warnings/errors)
-    *   [4.9 Segmentation fault on startup](#Segmentation_fault_on_startup)
-    *   [4.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
-    *   [4.11 Addon manager not working](#Addon_manager_not_working)
-    *   [4.12 Live Script Errors](#Live_Script_Errors)
-    *   [4.13 Using webcam/video device](#Using_webcam/video_device)
-    *   [4.14 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
-    *   [4.15 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
-    *   [4.16 Not starting - licensing error](#Not_starting_-_licensing_error)
-    *   [4.17 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_"Failure_loading_desktop_class"_on_startup)
-    *   [4.18 Unable to type in text fields of interfaces based on MATLABWindow](#Unable_to_type_in_text_fields_of_interfaces_based_on_MATLABWindow)
+    *   [4.6 Installation dependencies missing](#Installation_dependencies_missing)
+    *   [4.7 Installation error: archive is not a ZIP archive](#Installation_error:_archive_is_not_a_ZIP_archive)
+    *   [4.8 Install-time library errors](#Install-time_library_errors)
+    *   [4.9 Resolving start warnings/errors](#Resolving_start_warnings/errors)
+    *   [4.10 Segmentation fault on startup](#Segmentation_fault_on_startup)
+    *   [4.11 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
+    *   [4.12 Addon manager not working](#Addon_manager_not_working)
+    *   [4.13 Live Script Errors](#Live_Script_Errors)
+    *   [4.14 Using webcam/video device](#Using_webcam/video_device)
+    *   [4.15 MATLAB hangs for several minutes when closing Help Browser](#MATLAB_hangs_for_several_minutes_when_closing_Help_Browser)
+    *   [4.16 Some dropdown menus cannot be selected](#Some_dropdown_menus_cannot_be_selected)
+    *   [4.17 Not starting - licensing error](#Not_starting_-_licensing_error)
+    *   [4.18 MATLAB crashes with "Failure loading desktop class" on startup](#MATLAB_crashes_with_"Failure_loading_desktop_class"_on_startup)
+    *   [4.19 Unable to type in text fields of interfaces based on MATLABWindow](#Unable_to_type_in_text_fields_of_interfaces_based_on_MATLABWindow)
 *   [5 Matlab in a systemd-nspawn](#Matlab_in_a_systemd-nspawn)
 
 ## Overview
@@ -329,9 +330,23 @@ export J2D_D3D=false
 
 If you notice that the menus or the input fields are corrupted or not appearing correctly then you can try to activate the *"**Use antialiasing to smooth desktop fonts**"* option in Matlab preferences, it seems to solve the problem. Go to ***Preferences -> Matlab -> Fonts*** and activate it. You will need to restart Matlab in order to take affect.
 
-### Installation
+### Installation dependencies missing
 
-As one installs Matlab, it might complain that it cannot find a package, for the most part just look at the package name and then install it with [Pacman](/index.php/Pacman "Pacman"), or in the case of x86_64 there are some libraries only in [AUR](/index.php/AUR "AUR").
+Matlab might complain that it cannot find a package. Look at the package name and install it with [Pacman](/index.php/Pacman "Pacman"), or in the case of x86_64 there are some libraries only in [AUR](/index.php/AUR "AUR"). [matlab](https://aur.archlinux.org/packages/matlab/) and [matlab-dummy](https://aur.archlinux.org/packages/matlab-dummy/) packages contain a list of up-to-date dependencies for the newest Matlab version.
+
+### Installation error: archive is not a ZIP archive
+
+During the installation you can get:
+
+```
+The following error was detected while installing *package_name*: archive is not a ZIP archive 
+Would you like to retry installing *package_name*? If you press No, the installer will exit without completing the installation. More information can be found at /tmp/mathworks_root.log
+
+```
+
+Matlab downloads all packages to `/tmp/` directory which resides in RAM and is maximum size of half of available memory. In this case it is not enough for installation files and Matlab 2019a installer will warn you about this. If it did not, or if you ignored the warning, you will have got the above error.
+
+You can either [resize tmpfs](/index.php/Tmpfs#Examples "Tmpfs") (3,5 GB is not enough, 6 GB works), or remove packages from base install and add them later with built-in Matlab add-on installer.
 
 ### Install-time library errors
 

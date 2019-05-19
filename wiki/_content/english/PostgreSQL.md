@@ -68,7 +68,7 @@ Where `-D` is the default location where the database cluster must be stored (se
 Note that by default, the locale and the encoding for the database cluster are derived from your current environment (using [$LANG](/index.php/Locale#LANG:_default_locale "Locale") value). [[1]](https://www.postgresql.org/docs/current/static/locale.html) However, depending on your settings and use cases this might not be what you want, and you can override the defaults using:
 
 *   `--locale *locale*`, where *locale* is to be chosen amongst the ones defined in the file `/etc/locale.conf` (plus `POSIX` and `C` that are also accepted);
-*   `-E *enconding*` for the encoding (which must match the chosen locale);
+*   `-E *encoding*` for the encoding (which must match the chosen locale);
 
 Example: `[postgres]$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'` 
 

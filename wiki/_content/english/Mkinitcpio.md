@@ -273,6 +273,8 @@ See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [mkinitcpio
 
 ### Using RAID
 
+**Note:** `mdadm` is deprecated. If using it you will see `==> WARNING: Hook 'mdadm' is deprecated. Replace it with 'mdadm_udev' in your config` when doing an upgrade.
+
 First, add the `mdadm_udev` or `mdadm` hook to the `HOOKS` array and any required RAID modules (e.g. raid456, ext4) to the `MODULES` array in `/etc/mkinitcpio.conf`.
 
 Using the `mdadm` hook, you no longer need to configure your RAID array in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). The `mdadm` hook will either use your `/etc/mdadm.conf` file or automatically detect the array(s) during the init phase of boot.
@@ -447,6 +449,6 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD), search for "What is rootfs?"
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/initrd.rst?id=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
-*   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "w:dracut (software)")** — A cross-distribution initramfs generation tool.
+*   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "wikipedia:dracut (software)")** — A cross-distribution initramfs generation tool.
 
-	[https://dracut.wiki.kernel.org/](https://dracut.wiki.kernel.org/) || [dracut](https://aur.archlinux.org/packages/dracut/)
+	[https://dracut.wiki.kernel.org/](https://dracut.wiki.kernel.org/) || [dracut](https://www.archlinux.org/packages/?name=dracut)

@@ -134,7 +134,6 @@ CookieAuthentication 1
 CookieAuthFile /var/lib/tor/control_auth_cookie
 CookieAuthFileGroupReadable 1
 DataDirectoryGroupReadable 1
-CacheDirectoryGroupReadable 1 # workaround for tor bug #26913
 
 ```
 

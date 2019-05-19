@@ -4,7 +4,11 @@ Related articles
 
 This article links to various methods to launch scripts or applications automatically when some particular event is taking place.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 On bootup / shutdown](#On_bootup_/_shutdown)
 *   [2 On user login / logout](#On_user_login_/_logout)
@@ -76,3 +80,4 @@ If the [window manager](/index.php/Window_manager "Window manager") has an artic
 *   [Fluxbox#Autostart](/index.php/Fluxbox#Autostart "Fluxbox")
 *   [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox")
 *   [Awesome#Autostart](/index.php/Awesome#Autostart "Awesome")
+*   [i3#Autostart](/index.php/I3#Autostart "I3")

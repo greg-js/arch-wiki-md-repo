@@ -15,7 +15,7 @@ Related articles
 
 *   [1 安装](#安装)
     *   [1.1 只对Thinkpad有用的功能](#只对Thinkpad有用的功能)
-*   [2 = 图形界面](#=_图形界面)
+*   [2 图形界面](#图形界面)
 *   [3 配置](#配置)
     *   [3.1 Btrfs](#Btrfs)
     *   [3.2 Bumblebee及NVIDIA驱动](#Bumblebee及NVIDIA驱动)
@@ -44,7 +44,7 @@ Related articles
 
 使用[threshy](https://aur.archlinux.org/packages/threshy/)及其Qt图形界面[threshy-gui](https://aur.archlinux.org/packages/threshy-gui/)可在不使用Root权限的情况下用D-Bus控制电池充电阈值。
 
-## = 图形界面
+## 图形界面
 
 [tlpui-git](https://aur.archlinux.org/packages/tlpui-git/)是用Python和GTK编写的TLP的图形界面。该软件还处于测试阶段。
 

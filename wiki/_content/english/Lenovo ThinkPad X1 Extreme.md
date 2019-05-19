@@ -52,7 +52,40 @@ All information on this page generally assumes the latest BIOS unless explicitly
 
 ### Hybrid graphics
 
-Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. After installing bumblebee, the HDMI port works after modifying the following files, rebooting, and running `intel-virtual-output -f`. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+    Identifier "intelgpu0"
+    Driver "intel"
+EndSection
+
+```
+ `/etc/bumblebee/xorg.conf.nvidia` 
+```
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "true"
+    Option      "AutoAddGPU" "false"
+EndSection
+
+Section "Device"
+    Identifier  "DiscreteNvidia"
+    Driver      "nvidia"
+    VendorName  "NVIDIA Corporation"
+    Option "ProbeAllGpus" "false"
+    Option "NoLogo" "true"
+    Option "UseEDID" "true"
+    Option "AllowEmptyInitialConfiguration"
+EndSection
+
+Section "Screen"
+    Identifier "Screen0"
+    Device "DiscreteNVidia"
+EndSection
+
+```
 
 Nvidia-only mode works fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
 

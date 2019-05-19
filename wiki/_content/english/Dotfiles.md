@@ -97,6 +97,7 @@ If you are uncomfortable with [Git](/index.php/Git "Git"), you may want to use o
 
 | Author | Shell (Shell framework) | WM / DE | Editor | Terminal | Multiplexer | Audio | Monitor | Mail | IRC |
 | [alfunx](https://github.com/alfunx/.dotfiles) | zsh | awesome | vim | kitty | tmux | ncmpcpp/mpd | htop/lain | thunderbird |
+| [peterzuger](https://gitlab.com/peterzuger/dotfiles) | zsh | i3-gaps | emacs | rxvt-unicode | screen | moc | htop |
 | [Ambrevar](https://gitlab.com/Ambrevar/dotfiles) | Eshell | EXWM | Emacs | Emacs (Eshell) | Emacs TRAMP + dtach | EMMS | conky/dzen | mu4e | Circe |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | st | tmux | i3status | The Lounge |
 | [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | mutt | irssi |

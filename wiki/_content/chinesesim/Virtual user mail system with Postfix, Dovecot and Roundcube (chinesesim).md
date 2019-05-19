@@ -729,7 +729,7 @@ In the above example, user `admin@example.com` has access to, and can do anythin
 
 ### Fighting Spam
 
-As an alternative to SpamAssassin, consider [rspamd](https://aur.archlinux.org/packages/rspamd/). Out of the box, it delivers an amazing amount of spam reduction, greylisting, etc and includes a nifty webui. See also [[1]](https://thomas-leister.de/en/mailserver-debian-stretch/).
+As an alternative to SpamAssassin, consider [rspamd](https://www.archlinux.org/packages/?name=rspamd). Out of the box, it delivers an amazing amount of spam reduction, greylisting, etc and includes a nifty webui. See also [[1]](https://thomas-leister.de/en/mailserver-debian-stretch/).
 
 ## Sidenotes
 

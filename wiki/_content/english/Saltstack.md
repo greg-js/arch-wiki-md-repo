@@ -21,6 +21,7 @@ From [docs.saltstack.com](http://docs.saltstack.com/):
     *   [4.1 Salt Environments](#Salt_Environments)
     *   [4.2 Creating a State](#Creating_a_State)
     *   [4.3 The top file](#The_top_file)
+    *   [4.4 Scheduling Tasks](#Scheduling_Tasks)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -185,6 +186,27 @@ web01:
 ```
 
 When **state.apply** is ran, the top file is read, and the states are applied to the correct servers. IE: nettools on all servers, samba on fs01, apache on web01.
+
+### Scheduling Tasks
+
+[Install](/index.php/Install "Install") [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) on the master and any minions that will be using the scheduler and restart the salt-minion service on that server. Remember, you can easily install [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) and restart the salt-minion service on all minions using a state or a salt '*' command.
+
+Assume samba.sls, stored in /srv/salt, needs to be run every Monday on fs01\. This can be accomplished by placing the following into a state file and running it.
+
+```
+ configure_samba_daily:
+   schedule.present:
+     - function: state.sls
+     - job_args:
+       - samba
+     - when:
+       - Monday 5:00am
+
+```
+
+A point to note. In the config file above, specifying state.sls for the function is how you specify job_args is receiving a state called samba. Do NOT try substituting state.sls with samba.sls or any other sls file. Function simply tells the scheduler how to treat jobs_args.
+
+For more details on configuring schedules, see [https://docs.saltstack.com/en/latest/ref/states/all/salt.states.schedule.html](https://docs.saltstack.com/en/latest/ref/states/all/salt.states.schedule.html)
 
 ## See also
 

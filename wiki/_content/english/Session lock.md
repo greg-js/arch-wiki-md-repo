@@ -53,7 +53,7 @@ You can lock a session using different methods:
     *   from a desktop icon
     *   using hot corners
     *   from a menu (mouse or keyboard driven)
-*   from a [shorcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts")
+*   from a [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts")
 *   from an event:
     *   inactivity
     *   another action (suspend, hibernate, ...)

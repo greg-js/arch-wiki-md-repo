@@ -83,7 +83,7 @@ To get VDPAU support when device driver provides none:
 
 Your system may work perfectly out-of-the-box without needing any configuration. Therefore it is a good idea to start with this section to see that it is the case.
 
-**Tip:** [mpv](/index.php/Mpv#Hardware_decoding "Mpv") is great for testing hardware acceleration in practice.
+**Tip:** [mpv](/index.php/Mpv#Hardware_video_acceleration "Mpv") is great for testing hardware acceleration in practice.
 
 ### Verifying VA-API
 

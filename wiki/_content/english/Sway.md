@@ -76,7 +76,7 @@ The keymap can also be configured using environment variables (`XKB_DEFAULT_LAYO
 
 ### Statusbar
 
-Installing the program [i3status](https://www.archlinux.org/packages/?name=i3status) is an easy way to get a practical, default statusbar. All one has to do is add following snippet at the end of your sway config:
+Installing the program [i3status](https://www.archlinux.org/packages/?name=i3status) is an easy way to get a practical, default statusline. All one has to do is add following snippet at the end of your sway config:
 
  `~/.config/sway/config` 
 ```
@@ -99,7 +99,7 @@ general {
 
 In both examples, the system-wide installed configuration files has been copied over to the user directory and then modified.
 
-**Tip:** [waybar](https://www.archlinux.org/packages/?name=waybar) is a native Wayland alternative to [i3status](https://www.archlinux.org/packages/?name=i3status).
+**Tip:** [waybar](https://www.archlinux.org/packages/?name=waybar) is an alternative to the bar included with sway (swaybar).
 
 ### Wallpaper
 

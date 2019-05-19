@@ -6,7 +6,11 @@
 
 本篇很大部分參考了 [Arch Linux Localization (简体中文)](/index.php/Arch_Linux_Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux Localization (简体中文)")。雖然本地化的流程是相似的，但是正體中文化所需要的軟體和設定檔仍和簡體中文化有所不同，故有此篇文章的產生。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 基本中文語系環境](#基本中文語系環境)
     *   [1.1 locale 設置](#locale_設置)
@@ -17,12 +21,11 @@
     *   [1.3 中文輸入法](#中文輸入法)
 *   [2 終端機的中文化](#終端機的中文化)
 *   [3 軟體的中文化](#軟體的中文化)
-    *   [3.1 桌面環境](#桌面環境)
-    *   [3.2 Firefox](#Firefox)
-    *   [3.3 LibreOffice](#LibreOffice)
-    *   [3.4 Calligra (原 KOffice)](#Calligra_(原_KOffice))
-    *   [3.5 PDF 閱讀器](#PDF_閱讀器)
-    *   [3.6 Vim](#Vim)
+    *   [3.1 Firefox](#Firefox)
+    *   [3.2 LibreOffice](#LibreOffice)
+    *   [3.3 Calligra (原 KOffice)](#Calligra_(原_KOffice))
+    *   [3.4 PDF 閱讀器](#PDF_閱讀器)
+    *   [3.5 Vim](#Vim)
 *   [4 其他中文化問題](#其他中文化問題)
     *   [4.1 MS Windows 底下的中文檔案名亂碼](#MS_Windows_底下的中文檔案名亂碼)
 
@@ -58,7 +61,7 @@ zh_TW.Big5
 
 #### 啟動中文 locale
 
-在 Arch Linux 中，透過設置 `/etc/rc.conf` 文件，來設置語系環境。
+在 Arch Linux 中，透過設置 `/etc/locale.conf` 文件，來設置語系環境。
 
 ```
 LOCALE=en_US.UTF-8
@@ -121,12 +124,6 @@ gcin &
 ## 終端機的中文化
 
 ## 軟體的中文化
-
-### 桌面環境
-
-除了 KDE 以外，其他的桌面環境，已經包括對中文語系環境的支持。對於 KDE 的使用者，如果需要正體中文，請安裝 [kde-l10n-zh_tw](https://www.archlinux.org/packages/?name=kde-l10n-zh_tw)，如果需要簡體中文，請安裝 [kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn)。
-
-**注意:** LXDE 目前只有正體中文支持
 
 ### Firefox
 

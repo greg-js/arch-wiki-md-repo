@@ -51,6 +51,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
     *   [7.4 Failed to connect to Gitaly](#Failed_to_connect_to_Gitaly)
     *   [7.5 Failed to connect via SSH](#Failed_to_connect_via_SSH)
+    *   [7.6 CSS or Styles issue](#CSS_or_Styles_issue)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -677,6 +678,31 @@ If git operations (-T, pull, clone, etc.) fails using ssh try changing the shell
 
 ```
 # usermod -s /usr/share/webapps/gitlab-shell/bin/gitlab-shell-ruby gitlab
+
+```
+
+### CSS or Styles issue
+
+If you have any issues with styles and ccs not working, you may try to edit
+
+```
+/usr/share/webapps/gitlab/config/environments/production.rb 
+
+```
+
+and change
+
+```
+# Disable Rails's static asset server (Apache or nginx will already do this)
+config.serve_static_files = false
+
+```
+
+to
+
+```
+# Disable Rails's static asset server (Apache or nginx will already do this)
+config.serve_static_files = true
 
 ```
 

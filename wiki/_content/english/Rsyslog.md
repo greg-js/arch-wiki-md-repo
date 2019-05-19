@@ -2,7 +2,7 @@ Related articles
 
 *   [syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 
-[rsyslog](https://www.rsyslog.com) is a [syslog](https://en.wikipedia.org/wiki/syslog "w:syslog") implementation that offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
+[rsyslog](https://www.rsyslog.com) is a [syslog](https://en.wikipedia.org/wiki/syslog "w:syslog") implementation that offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). It can be configured to receive log entries from [systemd's journal](/index.php/Systemd/Journal "Systemd/Journal") in order to process or filter them before quickly writing them to disk or sending them over network.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -88,7 +88,7 @@ ForwardToSyslog=yes
 
 ```
 
-The [rsyslog](https://aur.archlinux.org/packages/rsyslog/) doesn't create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
+The [rsyslog](https://aur.archlinux.org/packages/rsyslog/) does not create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
 
 Log output can be fine tuned in `/etc/rsyslog.conf`. The daemon uses Facility levels (see below) to determine what gets put where. For example:
 
@@ -161,7 +161,7 @@ As defined in [RFC 5424](https://tools.ietf.org/html/rfc5424), there are eight s
 
 ### journald with rsyslog for kernel messages
 
-Since the syslog component of systemd, journald, does not flush its logs to disk during normal operation, these logs will be gone when the machine is shut down abnormally (power loss, kernel lock-ups, ...). In the case of kernel lock-ups, it is pretty important to have some kernel logs for debugging. Until journald gains a configuration option for flushing kernel logs, rsyslog can be used in conjunction with journald.
+Since the syslog component of systemd, journald, does not flush its logs to disk during normal operation, these logs will be gone when the machine is shut down abnormally (power loss, kernel lock-ups, ...). In the case of kernel lock-ups, it can be important to have some kernel logs for debugging. Until journald gains a configuration option for flushing kernel logs, rsyslog can be used in conjunction with journald.
 
 Summary of requirements:
 
@@ -174,12 +174,12 @@ Installation and configuration steps:
 
 1.  Install [rsyslog](https://aur.archlinux.org/packages/rsyslog/).
 2.  Edit `/etc/logrotate.d/rsyslog` and add `/var/log/kernel.log` to the list of logs. Without this modification, the kernel log would grow indefinitely.
-3.  Edit `/etc/rsyslog.conf` and comment everything except for `$ModLoad imklog`. I also kept `$ModLoad immark` to have a heart-beat logged.
+3.  Edit `/etc/rsyslog.conf` and comment everything except for `$ModLoad imklog`. If a heart-beat (repeated confirmation that the log is alive) is preferred, `$ModLoad immark` should remain uncommented as well.
 4.  Add the next line to the same configuration file:
 
     	 `kern.*     /var/log/kernel.log;RSYSLOG_TraditionalFileFormat` 
 
-    	The `kern.*` part catches all messages originating from the kernel. `;RSYSLOG_TraditionalFileFormat` is used here to use a less verbose date format. By default, a date format like `2013-03-09T19:29:33.103897+01:00` is used. Since the kernel log contains a precision already (printk time) and the actual log time is irrelevant, I prefer something like `Mar 9 19:29:13`.
+    	The `kern.*` part catches all messages originating from the kernel. `;RSYSLOG_TraditionalFileFormat` is used here to use a less verbose date format. By default, a date format like `2013-03-09T19:29:33.103897+01:00` is used. Since the kernel log contains a precision already (printk time) and the actual log time is irrelevant, a format like `Mar 9 19:29:13` might be preferred.
 
 5.  Since rsyslog should operate completely separated from systemd, remove the option that shares a socket with systemd:
 

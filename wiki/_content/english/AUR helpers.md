@@ -6,11 +6,9 @@ AUR helpers automate certain usage of the [Arch User Repository](/index.php/Arch
 
 [Pacman](/index.php/Pacman "Pacman") only handles updates for pre-built packages in its repositories. AUR packages are redistributed in form of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") and need an AUR helper to automate the re-build process. However, keep in mind that a rebuild of package may be required when its shared library dependencies are updated, not only when the package itself is updated.
 
-Since AUR helpers are unsupported, they are not present in the [official repositories](/index.php/Official_repositories "Official repositories").
-
 ## Legend
 
-The [#Comparison table](#Comparison_table) columns have the following meaning:
+The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 
 	File review
 
@@ -53,7 +51,7 @@ The [#Comparison table](#Comparison_table) columns have the following meaning:
 
 **Note:** *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
 
-## Comparison table
+## Comparison tables
 
 ### Search and download
 

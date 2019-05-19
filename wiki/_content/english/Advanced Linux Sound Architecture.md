@@ -936,11 +936,11 @@ Before doing this, all processes using the ALSA driver (such as [Pulseaudio](/in
 On some modern laptops you may have a combined 3.5mm headset jack, instead of two separated ones, which may not be correctly detected by default. To make ALSA correctly detect plug-in status on your 3.5mm jack, you could put the following line into your `/etc/modprobe.d/alsa-base.conf` :
 
 ```
-# options snd_hda_intel index=0 model=[YOUR_MODEL_SETTING]
+options snd_hda_intel index=0 model=[YOUR_MODEL_SETTING]
 
 ```
 
-For complete list of options put in `[YOUR_MODEL_SETTING]`, see [HD-Audio-Models.txt](http://git.alsa-project.org/?p=alsa-kernel.git;a=blob;f=Documentation/sound/alsa/HD-Audio-Models.txt;hb=HEAD). Tested with Gigabyte Aero15 2017 (P65 Model), with ALC255 and set model to `dell-headset-multi`.
+For complete list of options to put in `[YOUR_MODEL_SETTING]`, see [HD-Audio-Models.txt](http://git.alsa-project.org/?p=alsa-kernel.git;a=blob;f=Documentation/sound/alsa/HD-Audio-Models.txt;hb=HEAD). Tested with Gigabyte Aero15 2017 (P65 Model), with ALC255 and set model to `dell-headset-multi`.
 
 ## See also
 

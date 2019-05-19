@@ -5,7 +5,11 @@ Related articles
 
 **Powertop** is a tool provided by Intel to enable various powersaving modes in userspace, kernel and hardware. It is possible to monitor processes and show which of them are utilizing the CPU and wake it from its Idle-States, allowing to identify applications with particular high power demands.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -40,6 +44,7 @@ There are two ways to automatically apply the suggested settings:
 Description=Powertop tunings
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/powertop --auto-tune
 RemainAfterExit=true
 

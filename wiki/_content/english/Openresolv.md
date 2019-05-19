@@ -4,6 +4,11 @@ Related articles
 
 [Openresolv](https://roy.marples.name/projects/openresolv) is a [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") implementation, i.e. a [resolv.conf](/index.php/Resolv.conf "Resolv.conf") management framework.
 
+Although openresolv is most known for allowing multiple applications to modify `/etc/resolv.conf`, it is currently the only standard way to implement:
+
+*   dynamic control of a DNS resolver (other than glibc),
+*   dynamic [conditional forwarding](/index.php/Resolv.conf#Conditional_forwarding "Resolv.conf").
+
 **Tip:** An alternative implementation is [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf"), but it can only be used with [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -38,7 +43,7 @@ Stand-alone [DHCP](/index.php/DHCP "DHCP") clients:
 [Network managers](/index.php/Network_manager "Network manager"):
 
 *   [netctl](/index.php/Netctl "Netctl") (used by default)
-*   [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager")
+*   [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager") (limited to a single interface)
 
 [VPN](/index.php/VPN "VPN") clients:
 

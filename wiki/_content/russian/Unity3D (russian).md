@@ -8,7 +8,11 @@
 
 **Примечание:** Редактор для Linux в настоящее время является экспериментальным. Пожалуйста, сообщайте обо всех ошибках на [форуме Unity](http://forum.unity3d.com/forums/linux-editor-support-feedback-experimental.93/)!
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
 *   [2 Android Remote](#Android_Remote)

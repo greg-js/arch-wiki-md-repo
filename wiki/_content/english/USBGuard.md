@@ -32,11 +32,11 @@ For an in-depth documentation of configuration see the very well commented confi
 
 USBGuard has a core daemon, a CLI, a Qt GUI, a DBUS interface and an API via libusbguard.
 
+**Warning:** Make sure to actually configure the daemon before starting/enabling it or all USB devices will immediately be blocked!
+
 If you want to use the Qt GUI or another program communicating via DBUS, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard-dbus.service`.
 
 If you only want to communicate via API (with the CLI tool or another software using libusbguard) [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `usbguard.service`.
-
-**Warning:** Make sure to actually configure the daemon before starting/enabling it or all USB devices will immediately be blocked!
 
 The CLI is available via `usbguard`.
 

@@ -76,10 +76,12 @@ Alternatively, you can also chainload it from existing pxe loader such as pxelin
 
 ```
 LABEL arch_netboot_chain
-  COM32 chain.c32
-  APPEND file=ipxe.a56af4e6a9a9.pxe
+  COM32 pxechn.c32
+  APPEND ipxe.a56af4e6a9a9.pxe
 
 ```
+
+For this example to work you must have pxechn.c32 copied to the directory where your pxelinux.0 resides.
 
 ## UEFI
 

@@ -266,6 +266,13 @@ $ ffmpeg -i foo.mkv foo.ssa
 
 ```
 
+Add `-c:s srt` to save subtitles in desirable format, e.g. [SubRip](https://en.wikipedia.org/wiki/SubRip "wikipedia:SubRip"):
+
+```
+$ ffmpeg -i foo.mkv -c:s srt foo.srt
+
+```
+
 When dealing with multiple subtitles, you may need to specify the stream that needs to be extracted using the `-map <key>:<stream>` parameter:
 
 ```

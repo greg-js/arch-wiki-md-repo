@@ -23,7 +23,7 @@ Related articles
         *   [1.2.2 Creating a share](#Creating_a_share)
         *   [1.2.3 Starting services](#Starting_services)
     *   [1.3 Advanced Configuration](#Advanced_Configuration)
-        *   [1.3.1 Enable usershares](#Enable_usershares)
+        *   [1.3.1 Enable Usershares](#Enable_Usershares)
         *   [1.3.2 Set and forcing permissions](#Set_and_forcing_permissions)
         *   [1.3.3 Restrict protocols for better security](#Restrict_protocols_for_better_security)
         *   [1.3.4 Use native SMB transport encryption](#Use_native_SMB_transport_encryption)
@@ -156,36 +156,20 @@ To provide basic file sharing through SMB [start/enable](/index.php/Start/enable
 
 ### Advanced Configuration
 
-#### Enable usershares
+#### Enable Usershares
 
 **Note:** This is an optional feature. Skip this section if you do not need it.
 
-"Usershares" is a feature that gives non-root users the capability to add, modify, and delete their own share definitions.
-
-This creates the usershares directory in `/var/lib/samba`:
+[Usershares](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) is a feature that gives non-root users the capability to add, modify, and delete their own share definitions.
 
 ```
+# # create directory:
 # mkdir /var/lib/samba/usershares
-
-```
-
-This creates the group sambashare:
-
-```
+# # create group:
 # groupadd -r sambashare
-
-```
-
-This changes the owner of the directory to root and the group to sambashare:
-
-```
+# # change the owner of the directory to 'root' and the group to 'sambashare':
 # chown root:sambashare /var/lib/samba/usershares
-
-```
-
-This changes the permissions of the usershares directory so that users in the group sambashare can read, write and execute files:
-
-```
+# # change the permissions of the 'usershares' directory so that users in the group 'sambashare' can read, write and execute files:
 # chmod 1770 /var/lib/samba/usershares
 
 ```
@@ -199,10 +183,9 @@ Set the following parameters in the `smb.conf` configuration file:
   usershare max shares = 100
   usershare allow guests = yes
   usershare owner only = yes
-  ...
 ```
 
-Add your user to the *sambashare* group. Replace `*your_username*` with the name of your user:
+Add the user to the *sambashare* group. Replace `*your_username*` with the name of your user:
 
 ```
 # gpasswd sambashare -a *your_username*
@@ -211,7 +194,21 @@ Add your user to the *sambashare* group. Replace `*your_username*` with the name
 
 [Restart](/index.php/Restart "Restart") `smb.service` and `nmb.service` services.
 
-Log out and log back in. You should now be able to configure your samba share using GUI. For example, in [Thunar](/index.php/Thunar "Thunar") you can right click on any directory and share it on the network. If you want to share paths inside your home directory you must make it listable for the group others.
+Log out and log back in.
+
+If you want to share paths inside your home directory you must make it accessible for the group *others*.
+
+In the GUI, for example in [Thunar](/index.php/Thunar "Thunar"), you can right click on any directory and share it on the network.
+
+In the CLI, use one of the following commands, replacing italic *sharename*, *user*, ... :
+
+```
+# net usershare add *sharename* *abspath* [*comment*] [*user*:{R|D|F}] [guest_ok={y|n}]
+# net usershare delete *sharename*
+# net usershare list *wildcard-sharename*
+# net usershare info *wildcard-sharename*
+
+```
 
 #### Set and forcing permissions
 

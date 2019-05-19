@@ -188,7 +188,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **qView** — Qt image viewer designed with minimalism and usability in mind.
 
-	[https://intvhq.com/qview/](https://intvhq.com/qview/) || [qview](https://aur.archlinux.org/packages/qview/)
+	[https://interversehq.com/qview/](https://interversehq.com/qview/) || [qview](https://aur.archlinux.org/packages/qview/)
 
 *   **Ristretto** — Fast and lightweight image viewer for the Xfce desktop environment.
 
@@ -1826,7 +1826,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[https://www.kvibes.de/en/mediaelch/](https://www.kvibes.de/en/mediaelch/) || [mediaelch](https://www.archlinux.org/packages/?name=mediaelch)
 
-*   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
+*   **[Tellico](https://en.wikipedia.org/wiki/Tellico_(software) "wikipedia:Tellico (software)")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
 

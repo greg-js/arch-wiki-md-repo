@@ -414,9 +414,43 @@ If no target displays are parsed on the commandline, *intel-virtual-output* will
 
 When run in a terminal, *intel-virtual-output* will daemonize itself unless the `-f` switch is used. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
 
-If *intel-virtual-output* does not detect displays, see [[4]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configuration to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
+If *intel-virtual-output* does not detect displays, or if a `no VIRTUAL outputs on ":0"` message is obtained, then try editing the following two files as follows (and rebooting):
 
-**Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `Option "UseEDID" "false"` and `Option "AutoAddDevices" "false"` to `"true"`, and comment `Option "ConnectedMonitor"`. If you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"                            # This file doesn't exist by default
+    Identifier "intelgpu0"
+    Driver "intel"
+EndSection
+
+```
+ `/etc/bumblebee/xorg.conf.nvidia` 
+```
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "true"     # Bumblebee defaults to false
+    Option      "AutoAddGPU" "false"
+EndSection
+
+Section "Device"
+    Identifier  "DiscreteNvidia"
+    Driver      "nvidia"
+    VendorName  "NVIDIA Corporation"
+    Option "ProbeAllGpus" "false"
+    Option "NoLogo" "true"
+    Option "UseEDID" "true"                 # Bumblebee defaults to false
+    Option "AllowEmptyInitialConfiguration" # Add this line
+#   Option "UseDisplayDevice" "none"        # Remove or comment out this line
+EndSection
+
+Section "Screen"                            # Add this section
+    Identifier "Screen0"
+    Device "DiscreteNVidia"
+EndSection
+
+```
+
+See [[4]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configurations to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
 
 If you don't want to use intel-virtual-output, another option is to configure Bumblebee to leave the discrete GPU on and directly configure X to use both the screens, as it will be able to detect them.
 

@@ -94,7 +94,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [wild](https://aur.archlinux.org/packages.php?K=wild&SeB=m) | [Dan Printzell](/index.php/User:Vild "User:Vild") | [arch@vild.io](mailto:arch@vild.io) |
 | [Xyne](https://aur.archlinux.org/packages.php?K=Xyne&SeB=m) | Xyne | ca . archlinux @ xyne, in reverse order |
 | [xyproto](https://aur.archlinux.org/packages.php?K=xyproto&SeB=m) | Alexander F. Rødseth | xyproto@archlinux.org |
-| [yan12125](https://aur.archlinux.org/packages.php?K=yan12125&SeB=m) | Chih-Hsuan Yen | yan12125@gmail.com |
+| [yan12125](https://aur.archlinux.org/packages.php?K=yan12125&SeB=m) | [Chih-Hsuan Yen](/index.php/User:Yan12125 "User:Yan12125") | yan12125@gmail.com |
 | [zorun](https://aur.archlinux.org/packages.php?K=zorun&SeB=m) | Baptiste Jonglez | archlinux bitsofnetworks org |
 
 ## Inactive Trusted Users

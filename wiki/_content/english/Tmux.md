@@ -308,7 +308,7 @@ bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 Note that it may be necessary to unbind the previous window shortcut with `unbind p` for the latter to work.
 
-[xclip](https://www.archlinux.org/packages/?name=xclip) could also be used for this purpose. Unlike xsel, it works better when printing a raw bitstream that does not fit the current locale. Nevertheless, it is neater to use xsel because xclip does not close `STDOUT` after it has read from the tmux buffer. As such, tmux does not know that the copy task has completed, and continues to wait for xclip to terminate, thereby rendering tmux unresponsive. A workaround is to redirect {{ic|STDOUT} to `/dev/null`:
+[xclip](https://www.archlinux.org/packages/?name=xclip) could also be used for this purpose. Unlike xsel, it works better when printing a raw bitstream that does not fit the current locale. Nevertheless, it is neater to use xsel because xclip does not close `STDOUT` after it has read from the tmux buffer. As such, tmux does not know that the copy task has completed, and continues to wait for xclip to terminate, thereby rendering tmux unresponsive. A workaround is to redirect `STDOUT` to `/dev/null`:
 
 ```
 # Vim style

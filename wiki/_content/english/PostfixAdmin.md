@@ -65,7 +65,12 @@ $CONF['dovecotpw'] = "/usr/sbin/doveadm pw";
 
 ## Hosting
 
-**Note:** PostfixAdmin needs to be run as its own user and group (i.e. `postfixadmin`). It's using `/etc/webapps/postfixadmin`, `/var/lib/postfixadmin` and `/run/postfixadmin` for configurations, template caches and (potentially) sockets (respectively)!
+**Note:** PostfixAdmin needs to be run as its own user and group (i.e. `postfixadmin`). It's using `/etc/webapps/postfixadmin`, `/var/lib/postfixadmin` and `/run/postfixadmin` for configurations, template caches and (potentially) sockets (respectively)! As such, granting the webserver user permission to read, write and execute the config files may be needed. To do so, follow the instruction here [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") in section: Granting execution permissions for private files to a web server. An example is provided here:
+
+```
+ #setfacl -m "u:http:rwx" /etc/webapps/postfixadmin/config.inc.php
+
+```
 
 ### Apache
 

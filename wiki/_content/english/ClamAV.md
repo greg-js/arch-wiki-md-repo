@@ -39,6 +39,8 @@ Update the virus definitions with:
 
 ```
 
+If you are behind a proxy, edit /etc/clamav/freshclam.conf and update HTTPProxyServer, HTTPProxyPort, HTTPProxyUsername and HTTPProxyPassword.
+
 The database files are saved in:
 
 ```
