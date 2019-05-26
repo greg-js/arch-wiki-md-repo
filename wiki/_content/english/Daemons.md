@@ -123,8 +123,8 @@ shadow.service
  soundmodem | soundmodem.service | Multiplatform Soundcard Packet Radio Modem |
 | [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | e-mail spam filtering service. |
 | [OpenSSH](/index.php/OpenSSH "OpenSSH") | sshd | sshd.service | OpenSSH (secure shell) daemon. |
- stunnel | stunnel.service | Allows encrypting arbitrary TCP connections inside SSL. |
- svnserve | svnserve.service | Subversion server. |
+| [stunnel](https://www.archlinux.org/packages/?name=stunnel) | stunnel | stunnel.service | Allows encrypting arbitrary TCP connections inside SSL. |
+| [subversion](/index.php/Subversion "Subversion") | svnserve | svnserve.service | Subversion server. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | System logger next generation. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Software synthesizer for MIDI. |
 | [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |

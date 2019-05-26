@@ -1,0 +1,1 @@
+The Lenovo ThinkPad T430 is a durable, business-style laptop that was made in 2012 with a mobile Intel i3, i5, or i7 CPU, and Intel Graphics. Some models have an NVIDIA NVS 5400M GPU w/[NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")™ Technology. You can view more information about the laptop at [ThinkWiki](https://www.thinkwiki.org/wiki/Category:T430).

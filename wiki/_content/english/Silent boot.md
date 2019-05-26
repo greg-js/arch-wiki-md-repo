@@ -1,3 +1,7 @@
+Related articles
+
+*   [Plymouth](/index.php/Plymouth "Plymouth")
+
 This page is for those who prefer to limit the verbosity of their system to a strict minimum, either for aesthetics or other reasons. Following this guide will remove all text from the bootup process. [Video demonstration](http://www.youtube.com/watch?v=tuqhsqrhXk0)
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

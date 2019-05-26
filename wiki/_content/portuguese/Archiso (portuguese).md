@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=565315) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiso](/index.php/Archiso "Archiso"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=571877) na versão em inglês.
 
 Artigos relacionados
 
@@ -35,6 +35,7 @@ Se você precisar de um detalhamento técnico dos requisitos e das etapas de cri
     *   [5.1 Documentação e tutoriais](#Documentação_e_tutoriais)
     *   [5.2 Exemplo de modelo para personalização](#Exemplo_de_modelo_para_personalização)
     *   [5.3 Criando uma ISO de instalação offline](#Criando_uma_ISO_de_instalação_offline)
+    *   [5.4 Encontrar uma versão anterior de uma imagem ISO](#Encontrar_uma_versão_anterior_de_uma_imagem_ISO)
 
 ## Configuração
 
@@ -44,7 +45,7 @@ Antes de começar, [instale](/index.php/Instale "Instale") o pacote [archiso](ht
 
 O Archiso vem com dois "perfis": *releng* e *baseline*.
 
-*   Se você deseja criar uma versão live totalmente personalizada do Arch Linux, pré-instalada com todos os seus programas e configurações favoritos, use *releng*.
+*   Se você deseja criar uma versão live totalmente personalizada do Arch Linux, pré-instalada com todos os seus programas e configurações favoritos, use *releng*. Esse perfil também é usado para compilar ISO oficiais do Arch Linux.
 
 *   Se você quer apenas criar a mídia *live* mais básica, sem pacotes pré-instalados e uma configuração minimalista, use *baseline*.
 
@@ -57,7 +58,7 @@ Agora copie o perfil de sua escolha para um diretório (*archlive*, no exemplo a
 
 *   Se você estiver usando o perfil `releng` para criar uma imagem totalmente personalizada, poderá prosseguir para [#Configurar a mídia live](#Configurar_a_mídia_live).
 
-*   Se você estiver usando o perfil `baseline` para criar uma imagem simples, não precisará fazer nenhuma personalização e prosseguir para [#Compilando a ISO](#Compilando_a_ISO).
+*   Se você estiver usando o perfil `baseline` para criar uma imagem simples ou `releng` para replicar uma ISO oficial, não precisará fazer nenhuma personalização e prosseguir para [#Compilando a ISO](#Compilando_a_ISO).
 
 ## Configurar a mídia live
 
@@ -78,21 +79,7 @@ Edite as listas de pacotes em `packages.x86_64` para indicar quais pacotes estã
 
 #### Repositório local personalizado
 
-Para o propósito de preparar pacotes ou pacotes personalizados a partir de [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") / [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)"), você também pode [criar um repositório local personalizado](/index.php/Reposit%C3%B3rio_local_personalizado "Repositório local personalizado"). Se você deseja oferecer suporte a várias arquiteturas, deve-se tomar precauções para evitar erros. Cada arquitetura deve ter sua própria árvore de diretórios:
-
- `$ tree ~/customrepo/ | sed "s/$(uname -m)/<arch>/g"` 
-```
-/home/archie/customrepo/
-└── <arch>
-    ├── customrepo.db -> customrepo.db.tar.xz
-    ├── customrepo.db.tar.xz
-    ├── customrepo.files -> customrepo.files.tar.xz
-    ├── customrepo.files.tar.xz
-    └── personal-website-git-b99cce0-1-<arch>.pkg.tar.xz
-
-1 directory, 5 files
-
-```
+Para o propósito de preparar pacotes ou pacotes personalizados a partir de [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") / [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)"), você também pode [criar um repositório local personalizado](/index.php/Reposit%C3%B3rio_local_personalizado "Repositório local personalizado").
 
 Você pode então adicionar seu repositório colocando o seguinte em `~/archlive/pacman.conf`, acima das outras entradas do repositório (para prioridade máxima):
 
@@ -104,13 +91,6 @@ Você pode então adicionar seu repositório colocando o seguinte em `~/archlive
 SigLevel = Optional TrustAll
 Server = file:///home/**usuário**/customrepo/$arch
 ...
-```
-
-O executável *repo-add* verifica se o pacote é apropriado. Se esse não for o caso, você encontrará mensagens de erro semelhantes a esta:
-
-```
-==> ERRO: '/home/archie/customrepo/<arch>/foo-<arch>.pkg.tar.xz' não tem uma extensão válida para arquivo de base de dados.
-
 ```
 
 #### Impedindo a instalação de pacotes pertencentes ao grupo base
@@ -230,16 +210,9 @@ Ou remova-o completamente para desativar o login automático.
 
 ## Compilando a ISO
 
-Agora você está pronto para transformar seus arquivos no .iso que você pode gravar em CD ou USB:
+Agora você está pronto para transformar seus arquivos no .iso que você pode gravar em CD ou USB.
 
-Primeiro, crie o diretório `out/` (opcional, build.sh o criará se não existir),
-
-```
-# mkdir ~/archlive/out/
-
-```
-
-então, dentro de `~/archlive`, execute:
+Dentro de `~/archlive`, execute:
 
 ```
 # ./build.sh -v
@@ -302,3 +275,7 @@ Veja o artigo [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Gu
 ### Criando uma ISO de instalação offline
 
 *   [Archiso offline](/index.php/Archiso_offline_(Portugu%C3%AAs) "Archiso offline (Português)")
+
+### Encontrar uma versão anterior de uma imagem ISO
+
+*   [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linux Archive (Português)")

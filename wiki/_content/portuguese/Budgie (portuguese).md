@@ -5,7 +5,7 @@ Artigos relacionados
 *   [Window manager (Português)](/index.php/Window_manager_(Portugu%C3%AAs) "Window manager (Português)")
 *   [GTK+ (Português)](/index.php/GTK%2B_(Portugu%C3%AAs) "GTK+ (Português)")
 
-**Status de tradução:** Esse artigo é uma tradução de [Budgie](/index.php/Budgie "Budgie"). Data da última tradução: 2019-05-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=572246) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Budgie](/index.php/Budgie "Budgie"). Data da última tradução: 2019-05-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=573640) na versão em inglês.
 
 O Budgie é o desktop padrão do Solus Operating System, escrito do zero. Além de um design mais moderno, o Budgie pode emular a aparência da área de trabalho do GNOME 2.
 
@@ -66,5 +66,5 @@ gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'clo
 
 *   [Wikipedia:Budgie (desktop environment)](https://en.wikipedia.org/wiki/Budgie_(desktop_environment) "wikipedia:Budgie (desktop environment)")
 *   [Site oficial do Budgie Desktop](https://budgie-desktop.org/)
-*   [Repositório git oficial para o desenvolvimento do Solus](https://git.solus-project.com/)
+*   [Repositório git oficial para o desenvolvimento do Solus](https://github.com/solus-project/)
 *   [Status dos projetos do Solus](https://build.solus-project.com/)

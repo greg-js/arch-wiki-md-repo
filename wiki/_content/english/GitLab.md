@@ -44,7 +44,8 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 *   [6 Useful Tips](#Useful_Tips)
     *   [6.1 Hidden options](#Hidden_options)
     *   [6.2 Backup and restore](#Backup_and_restore)
-    *   [6.3 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
+    *   [6.3 Enable Fast SSH Key Lookup](#Enable_Fast_SSH_Key_Lookup)
+    *   [6.4 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_(gravatar_not_using_https))
     *   [7.2 Errors after updating](#Errors_after_updating)
@@ -142,14 +143,20 @@ In order to provide sufficient performance you will need a cache database. [Inst
 
 *   Add the `gitlab` user to the `redis` [user group](/index.php/User_group "User group").
 
-*   Update the configuration files:
+*   Update this configuration file:
 
  `/etc/webapps/gitlab/resque.yml` 
 ```
-development: unix:/run/redis/redis.sock
-test: unix:/run/redis/redis.sock
-production: unix:/run/redis/redis.sock
+development:
+  url: unix:/run/redis/redis.sock
+test:
+  url: unix:/run/redis/redis.sock
+production:
+  url: unix:/run/redis/redis.sock
 ```
+
+*   Append to this configuration file:
+
  `/etc/webapps/gitlab-shell/config.yml` 
 ```
 # Redis settings used for pushing commit notices to gitlab
@@ -165,7 +172,7 @@ redis:
 
 ### Database backend
 
-A database backend will be required before Gitlab can be run. GitLab [recommends](https://docs.gitlab.com/ce/install/installation.html#6-database) to use PostgreSQL.
+A database backend will be required before Gitlab can be run. GitLab [recommends](https://docs.gitlab.com/ce/install/installation.html#6-database) to use [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 #### PostgreSQL
 
@@ -586,6 +593,29 @@ Restore the previously created backup file `/var/lib/gitlab/backups/1556571328_2
 ```
 
 **Note:** Backup folder is set in `config/gitlab.yml`. GitLab backup and restore is documented [here](https://github.com/gitlabhq/gitlabhq/blob/master/doc/raketasks/backup_restore.md).
+
+### Enable Fast SSH Key Lookup
+
+Enable Fast SSH Key Lookup as explained in this page: [https://docs.gitlab.com/ee/administration/operations/fast_ssh_key_lookup.html](https://docs.gitlab.com/ee/administration/operations/fast_ssh_key_lookup.html)
+
+In short, edit /etc/ssh/sshd_config.
+
+Revert all changes done following this wiki ( or revert sshd_config from the pacman package ) and only add:
+
+```
+AuthorizedKeysCommand /var/lib/gitlab/gitlab-shell/bin/gitlab-shell-authorized-keys-check gitlab %u %k
+AuthorizedKeysCommandUser gitlab
+
+```
+
+Restart sshd service:
+
+```
+systemctl restart sshd
+
+```
+
+This also helps if you are adding ssh keys by the web interface, but authorized_keys on the server is not being edited.
 
 ### Sending mails from Gitlab via SMTP
 

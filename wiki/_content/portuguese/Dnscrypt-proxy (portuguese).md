@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnscrypt-proxy&diff=0&oldid=561489) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnscrypt-proxy&diff=0&oldid=570918) na versão em inglês.
 
 Artigos relacionados
 
@@ -72,7 +72,7 @@ Para ver se algum programa está usando a porta 53, execute:
 
 ```
 
-Se a saída contiver mais do que a primeira linha de nomes de coluna, será necessário desabilitar qualquer serviço que esteja usando a porta 53\. Um culpado comum é `systemd-resolved.service`, mas outros gerentes de rede podem ter componentes análogos. Você está pronto para prosseguir, uma vez que o comando acima não produz nada além da seguinte linha:
+Se a saída contiver mais do que a primeira linha de nomes de coluna, será necessário desabilitar qualquer serviço que esteja usando a porta 53\. Um culpado comum é `systemd-resolved.service`([NetworkManager (Português)#Unit dbus-org.freedesktop.resolve1.service não encontrado](/index.php/NetworkManager_(Portugu%C3%AAs)#Unit_dbus-org.freedesktop.resolve1.service_não_encontrado "NetworkManager (Português)")), mas outros gerentes de rede podem ter componentes análogos. Você está pronto para prosseguir, uma vez que o comando acima não produz nada além da seguinte linha:
 
 ```
  Netid               State                 Recv-Q                Send-Q                                 Local Address:Port                                   Peer Address:Port

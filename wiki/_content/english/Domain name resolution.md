@@ -56,7 +56,7 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 
 [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5) lists nameservers together with some configuration options. Nameservers listed first are tried first, up to three nameservers may be listed. Lines starting with a number sign (`#`) are ignored.
 
-**Note:** The glibc resolver does not cache queries. To improve query lookup time you can set up a caching resolver. See [#DNS servers](#DNS_servers) for more information.
+**Note:** The glibc resolver does not cache queries. To improve query lookup time you can set up a caching resolver. Glibc resolver also can not validate DNSSEC. A DNSSEC capable validator resolver is required for that one. See [#DNS servers](#DNS_servers) for more information.
 
 ### Overwriting of /etc/resolv.conf
 
@@ -102,7 +102,7 @@ domain example.com
 
 ```
 
-That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.
+That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the [drill](#Lookup_utilities) command still requires the fully qualified domain names in order to perform lookups.
 
 ## Lookup utilities
 
@@ -169,7 +169,7 @@ over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTT
 | [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | No | No | No | Yes | No | Server | No | Resolver | No |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | No | No | Yes | Yes | [Yes](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Resolver and [limited server](https://github.com/systemd/systemd/issues/4621#issuecomment-260050033) | No | Insecure resolver | [No](https://github.com/systemd/systemd/issues/8639) |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Partial | No | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | [No](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | No |
-| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | [No](https://kb.isc.org/docs/aa-01386) | No |
+| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Yes | Yes | Yes | Yes | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | [Server](https://kb.isc.org/docs/aa-01386) (using [stunnel](https://www.archlinux.org/packages/?name=stunnel)) | No |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Yes | Yes | Yes | Yes | No | Yes | No | Yes | [Server](https://knot-resolver.readthedocs.io/en/stable/modules.html#dns-over-http-doh) |
 | [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Yes | Yes | Yes | No | No | Yes | No | No | No |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Yes | Yes | Permanent | No | [Yes](/index.php/Openresolv#Subscribers "Openresolv") | Yes | No | No | No |
@@ -195,9 +195,9 @@ It is possible to use specific DNS resolvers when querying specific domain names
 
 To implement it, you need to use a [local resolver](#DNS_servers) because glibc does not support it.
 
-In a dynamic environment (laptops and to some extents desktops), you need to configure your resolver based on the network(s) you are connected to. The best way to do that is to use [openresolv](/index.php/Openresolv "Openresolv") because it supports [multiple subscribers](/index.php/Openresolv#Subscribers "Openresolv"). Some [Network Manager](/index.php/Network_manager#Network_managers "Network manager") supports it, either through OpenResolv, or by configuring the resolver directly.
+In a dynamic environment (laptops and to some extents desktops), you need to configure your resolver based on the network(s) you are connected to. The best way to do that is to use [openresolv](/index.php/Openresolv "Openresolv") because it supports [multiple subscribers](/index.php/Openresolv#Subscribers "Openresolv"). Some [network managers](/index.php/Network_manager "Network manager") support it, either through openresolv, or by configuring the resolver directly.
 
-**Note:** Although you could use other conditions for forwarding (for exemple source IP), "conditional forwarding" appears to be the name used for the "domain queried" condition.
+**Note:** Although you could use other conditions for forwarding (for example, source IP address), "conditional forwarding" appears to be the name used for the "domain queried" condition.
 
 ## See also
 

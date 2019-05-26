@@ -13,7 +13,7 @@ This page is about the Dell XPS 15 9575, also known as the Dell XPS 15 2-in-1.
 | Audio | Working |
 | [Touchpad](#Touchpad) | Working |
 | Webcam | Working |
-| Card Reader | Untested |
+| Card Reader | Working |
 | Function/Multimedia Keys | Working |
 | [Power Management](#Power_Management) | Working |
 | [EFI Firmware Updates](#EFI_Firmware_Updates) | Working |

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Czym jest ABS?](#Czym_jest_ABS?)
 *   [2 Dlaczego warto korzystać z ABS?](#Dlaczego_warto_korzystać_z_ABS?)
@@ -10,7 +14,11 @@
 
 ## Czym jest ABS?
 
-ABS to skrót od Arch Build System. Jest to coś na kształt portów. Porty to pomysł realizowany głównie w systemach rodziny *BSD. Jest to hierarchiczny zbiór plików ułatwiający ściąganie, rozpakowywanie, nakładanie łat, kompilację i instalację programów. ABS jest czymś na kształt portów, ponieważ zamiast instalować, buduje pakiet binarny. Taki plik może być potem zainstalowany lub usunięty programem [Pacman](/index.php/Pacman_(Polski) "Pacman (Polski)"). W ABS znajdują się tylko PKGBUILDy oficjalnie tworzone przez programistów Archa. Istnieje też zbiór PKGBUILDów tworzonych przez społeczność i nazywa się [Arch User Repository](/index.php/Arch_User_Repository_(Polski) "Arch User Repository (Polski)"). Znajomość ABS nie jest niezbędna przy korzystaniu z systemu Arch Linux, jednak w wielu przypadkach może być bardzo przydatna.
+ABS to skrót od Arch Build System. Jest to system tworzenia pakietów i kompilowania oprogramowania z kodu źródłowego. Podczas gdy [Pacman](/index.php/Pacman_(Polski) "Pacman (Polski)") jest narzędziem Archa do zarządzania binarnymi pakietami (także tymi zbudowanymi przy użyciu ABS), ABS to system narzędzi służących do kompilowania kodu do instalowalnych pakietów `.pkg.tar.xz` .
+
+Koncept podobny do systemu portów (*ports-like* system). Porty to pomysł realizowany głównie w systemach rodziny *BSD. Jest to hierarchiczny zbiór plików ułatwiający ściąganie, rozpakowywanie, nakładanie łat, kompilację i instalację programów. Port to po prostu katalog na dysku użytkownika, nazwany tak jak instalowany program, zawierający pliki i instrukcje potrzebne do zbudowania programu ze źródła.
+
+ABS jest czymś na kształt portów, ponieważ zamiast instalować, buduje pakiet binarny. Wywołanie komendy `makepkg` w katalogu, w którym znajduje się plik [PKGBUILD](/index.php/PKGBUILD_(Polski) "PKGBUILD (Polski)"), kompiluje oprogramowanie i tworzy pakiet. Taki plik może być potem zainstalowany lub usunięty programem Pacman. W ABS znajdują się tylko PKGBUILDy oficjalnie tworzone przez programistów Archa. Istnieje też zbiór PKGBUILDów tworzonych przez społeczność i nazywa się [Arch User Repository](/index.php/Arch_User_Repository_(Polski) "Arch User Repository (Polski)"). Znajomość ABS nie jest niezbędna przy korzystaniu z systemu Arch Linux, jednak w wielu przypadkach może być bardzo przydatna.
 
 ## Dlaczego warto korzystać z ABS?
 
@@ -38,7 +46,7 @@ Aby zacząć używać ABS, musisz najpierw zainstalować pakiety:
 Edytujemy plik `/etc/abs.conf` i wybieramy repozytoria ("!" oznacza niekorzystanie z danego repozytorium):
 
 ```
-REPOS=(core extra community !testing)
+REPOS=(core extra community !testing)
 
 ```
 

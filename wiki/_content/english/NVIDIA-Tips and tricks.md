@@ -221,15 +221,15 @@ Option "Coolbits" "4"
 Place the following line in your [xinitrc](/index.php/Xinitrc "Xinitrc") file to adjust the fan when you launch Xorg. Replace `*n*` with the fan speed percentage you want to set.
 
 ```
-nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
+nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=*n*"
 
 ```
 
 You can also configure a second GPU by incrementing the GPU and fan number.
 
 ```
-nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*" \
-                -a "[gpu:1]/GPUFanControlState=1" -a  [fan:1]/GPUCurrentFanSpeed=*n*" &
+nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=*n*" \
+                -a "[gpu:1]/GPUFanControlState=1" -a  [fan:1]/GPUTargetFanSpeed=*n*" &
 
 ```
 
@@ -238,13 +238,13 @@ If you use a login manager such as [GDM](/index.php/GDM "GDM") or [SDDM](/index.
 ```
 [Desktop Entry]
 Type=Application
-Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed=*n*"
+Exec=nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=*n*"
 X-GNOME-Autostart-enabled=true
 Name=nvidia-fan-speed
 
 ```
 
-**Note:** Since the drivers version 349.16, `GPUCurrentFanSpeed` has to be replaced with `GPUTargetFanSpeed`.[[1]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
+**Note:** Before driver version 349.16, `GPUCurrentFanSpeed` was used instead of `GPUTargetFanSpeed`.[[1]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
 
 To make it possible to adjust the fanspeed of more than one graphics card, run:
 
@@ -253,6 +253,8 @@ $ nvidia-xconfig --enable-all-gpus
 $ nvidia-xconfig --cool-bits=4
 
 ```
+
+**Note:** On some laptops (including the ThinkPad [X1 Extreme](https://devtalk.nvidia.com/default/topic/1052110/linux/can-t-control-gtx-1050-ti-max-q-fan-on-thinkpad-x1-extreme-laptop/post/5340658/#5340658) and [P51/P52](https://devtalk.nvidia.com/default/topic/1048624/linux/how-to-set-gpu-fan-speed/post/5321818/#5321818)), there are two fans, but neither are controlled by nvidia.
 
 ## Manual configuration
 

@@ -102,6 +102,8 @@ In order to use Bumblebee, it is necessary to add your regular *user* to the `bu
 
 Also [enable](/index.php/Enable "Enable") `bumblebeed.service`. Reboot your system and follow [#Usage](#Usage).
 
+**Note:** The [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) package will install a kernel module blacklist file that prevents the `nvidia-drm` module from loading on boot. Remember to uninstall this if you later switch away to other solutions.
+
 ## Usage
 
 ### Test

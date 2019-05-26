@@ -89,6 +89,14 @@ An emulator is a program which serves to replicate the functions of another plat
 
 	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
 
+*   **XQEMU** — An original Xbox emulator.
+
+	[https://xqemu.com/](https://xqemu.com/) || [xqemu-git](https://aur.archlinux.org/packages/xqemu-git/)
+
+*   **Yuzu** — An experimental open-source Nintendo Switch emulator/debugger
+
+	[https://github.com/yuzu-emu/yuzu/](https://github.com/yuzu-emu/yuzu/) || [yuzu-git](https://aur.archlinux.org/packages/yuzu-git/)
+
 *   **ZSNES** — Highly compatible Super Nintendo emulator.
 
 	[http://www.zsnes.com/](http://www.zsnes.com/) || [zsnes](https://www.archlinux.org/packages/?name=zsnes)

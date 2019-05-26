@@ -1,6 +1,8 @@
+**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=573846) na versão em inglês.
+
 Artigos relacionados
 
-*   [Fan speed control](/index.php/Fan_speed_control "Fan speed control")
+*   [Controle da velocidade do cooler](/index.php/Fan_speed_control "Fan speed control")
 *   [hddtemp](/index.php/Hddtemp "Hddtemp")
 *   [monitorix](/index.php/Monitorix "Monitorix")
 
@@ -28,8 +30,9 @@ Artigos relacionados
 *   [6 Solução de problemas](#Solução_de_problemas)
     *   [6.1 Módulo K10Temp](#Módulo_K10Temp)
     *   [6.2 Placas-mãe Asus Z97/Z170](#Placas-mãe_Asus_Z97/Z170)
-    *   [6.3 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
-    *   [6.4 Problemas na tela do laptop após a execução de sensors-detect](#Problemas_na_tela_do_laptop_após_a_execução_de_sensors-detect)
+    *   [6.3 Placas-mãe Gigabyte B250](#Placas-mãe_Gigabyte_B250)
+    *   [6.4 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
+    *   [6.5 Problemas na tela do laptop após a execução de sensors-detect](#Problemas_na_tela_do_laptop_após_a_execução_de_sensors-detect)
 
 ## Instalação
 
@@ -94,7 +97,7 @@ Unloading cpuid... OK
 
 ## Execução de sensors
 
-Example running `sensors`:
+Exemplo de execução do `sensors`:
 
  `$ sensors` 
 ```
@@ -114,16 +117,16 @@ temp2:        +37.4°C  (low  = -40.0°C, high = +70.0°C)
 
 ### Lendo valores SPD de módulos de memória (opcional)
 
-To read the SPD timing values from memory modules, install the [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools) package. Once installed, load the `eeprom` [kernel module](/index.php/Kernel_module "Kernel module").
+Para ler os valores de tempo de SPD de módulos de memória, instale o pacote [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools). Uma vez instalado, carregue [módulo de kernel](/index.php/Kernel_module "Kernel module") `eeprom`.
 
 ```
 # modprobe eeprom
 
 ```
 
-Finally, view memory information with `decode-dimms`.
+Finalmente, veja informações de memória com `decode-dimms`.
 
-Here is partial output from one machine:
+Aqui está uma saída parcial de uma máquina:
 
  `# decode-dimms` 
 ```
@@ -193,63 +196,63 @@ Part Number                                     OCZ3G1600LV2G
 
 ### Front-ends gráficos
 
-There are a variety of front-ends for sensors data.
+Há uma variedade de front-ends para dados de sensores.
 
-*   **psensor** — GTK+ application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
+*   **psensor** — Aplicativo GTK+ para monitorar sensores de hardware, incluindo temperaturas e velocidades do cooler. Monitora placa-mãe e CPU (usando lm-sensors), Nvidia GPUs (usando XNVCtrl) e harddisks (usando [hddtemp](/index.php/Hddtemp "Hddtemp") ou libatasmart).
 
 	[https://wpitchoune.net/psensor/](https://wpitchoune.net/psensor/) || [psensor](https://www.archlinux.org/packages/?name=psensor)
 
-*   **xsensors** — X11 interface to lm_sensors.
+*   **xsensors** — Interface X11 para o lm_sensors.
 
 	[http://linuxhardware.org/xsensors/](http://linuxhardware.org/xsensors/) || [xsensors](https://www.archlinux.org/packages/?name=xsensors)
 
-For specific [Desktop environments](/index.php/Desktop_environments "Desktop environments"):
+Para [Ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") específicos:
 
-*   **Freon (GNOME Shell extension)** — Extension for displaying CPU temperature, disk temperature, video card temperature , voltage and fan RPM in [GNOME](/index.php/GNOME "GNOME") Shell.
+*   **Freon (Extensão do GNOME Shell)** — Extensão para exibir temperatura de CPU, temperatura do disco, temperatura da placa de vídeo, voltagem e RPM do cooler no [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") Shell.
 
 	[https://github.com/UshakovVasilii/gnome-shell-extension-freon](https://github.com/UshakovVasilii/gnome-shell-extension-freon) || [gnome-shell-extension-freon](https://aur.archlinux.org/packages/gnome-shell-extension-freon/)
 
-*   **GNOME Sensors Applet** — Applet for the [GNOME](/index.php/GNOME "GNOME") Panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings.
+*   **GNOME Sensors Applet** — Miniaplicativo para o painel do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") para exibir leituras dos sensores do hardware, incluindo leituras de temperatura de CPU, velocidades de coolers e voltagem.
 
 	[http://sensors-applet.sourceforge.net/](http://sensors-applet.sourceforge.net/) || [sensors-applet](https://www.archlinux.org/packages/?name=sensors-applet)
 
-*   **lm-sensors (LXPanel plugin)** — Monitor temperature/voltages/fan speeds in [LXDE](/index.php/LXDE "LXDE") through lm-sensors.
+*   **lm-sensors (plugin de LXPanel)** — Monitora temperatura/voltagens/velocidades de cooler no [LXDE](/index.php/LXDE "LXDE") por meio de lm-sensors.
 
 	[http://danamlund.dk/sensors_lxpanel_plugin/](http://danamlund.dk/sensors_lxpanel_plugin/) || [sensors-lxpanel-plugin](https://aur.archlinux.org/packages/sensors-lxpanel-plugin/)
 
-*   **MATE Sensors Applet** — Display readings from hardware sensors in your [MATE](/index.php/MATE "MATE") panel.
+*   **MATE Sensors Applet** — Exibe leituras de sensores de hardware no seu painel do [MATE](/index.php/MATE "MATE").
 
 	[https://github.com/mate-desktop/mate-sensors-applet](https://github.com/mate-desktop/mate-sensors-applet) || [mate-sensors-applet](https://www.archlinux.org/packages/?name=mate-sensors-applet)
 
-*   **Sensors (Xfce4 panel plugin)** — Hardware sensors plugin for the [Xfce](/index.php/Xfce "Xfce") panel.
+*   **Sensors (Plugin do painel do Xfce4)** — Plugin de sensores de hardware para o painel do [Xfce](/index.php/Xfce "Xfce").
 
 	[http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin) || [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin)
 
-*   **Thermal Monitor (Plasma 5 applet)** — [KDE](/index.php/KDE "KDE") Plasma applet for monitoring CPU, GPU and other available temperature sensors.
+*   **Thermal Monitor (Miniaplicativo do Plasma 5)** — Miniaplicativo do Plasma para [KDE](/index.php/KDE "KDE") para monitoramento de CPU, GPU e outros sensores de temperatura disponíveis.
 
 	[https://github.com/kotelnik/plasma-applet-thermal-monitor](https://github.com/kotelnik/plasma-applet-thermal-monitor) || [plasma5-applets-thermal-monitor-git](https://aur.archlinux.org/packages/plasma5-applets-thermal-monitor-git/)
 
 ### sensord
 
-There is an optional daemon called sensord (included with the [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) package) which can log data to a round robin database (rrd) and later visualize graphically. See the sensord man page for details.
+Existe um daemon opcional chamado *sensord* (incluído no pacote [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)) que pode registrar dados em um banco de dados round robin (rrd) e depois visualizar graficamente. Veja a página man [sensord(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sensord.8) para detalhes.
 
 ## Dicas e truques
 
 ### Ajustando valores
 
-In some cases, the data displayed might be incorrect or users may wish to rename the output. Use cases include:
+Em alguns casos, os dados exibidos podem estar incorretos ou os usuários podem desejar renomear a saída. Casos de uso incluem:
 
-*   Incorrect temperature values due to a wrong offset (i.e. temps are reported 20 °C higher then actual).
-*   Users wish to rename the output of some sensors.
-*   The cores might be displayed in an incorrect order.
+*   Valores incorretos de temperatura devido a um deslocamento incorreto (isto é, os tempos são relatados 20°C mais altos do que os reais).
+*   Usuários desejam renomear a saída de alguns sensores.
+*   Os *cores* podem ser exibidos em uma ordem incorreta.
 
-All of the above (and more) can be adjusted by overriding the package provides settings in `/etc/sensors3.conf` by creating `/etc/sensors.d/foo` wherein any number of tweaks will override the default values. It is recommended to rename 'foo' to the motherboard brand and model but this naming nomenclature is optional.
+Todos os itens acima (e mais) podem ser ajustados sobrepondo as configurações do pacote em `/etc/sensors3.conf` criando `/etc/sensors.d/*foo*` em que qualquer número de os ajustes substituirão os valores padrão. Recomenda-se renomear 'foo' para a marca e modelo da placa-mãe, mas esta nomenclatura de nomenclatura é opcional.
 
-**Note:** Do not edit /etc/sensors3.conf directly since package updates will overwrite any changes thus losing them.
+**Nota:** Não edite `/etc/sensors3.conf` diretamente, já que atualizações de pacotes vão sobrescrever quaisquer alterações, consequentemente perdendo-as.
 
 #### Exemplo 1\. Ajustante posições de temperatura
 
-This is a real example on a Zotac ION-ITX-A-U motherboard. The coretemp values are off by 20 °C (too high) and are adjusted down to Intel specs.
+Este é um exemplo real de uma placa-mãe Zotac ION-ITX-A-U. Os valores de coretemp estão desativados em 20°C (muito alto) e são ajustados de acordo com as especificações da Intel.
 
  `$ sensors` 
 ```
@@ -261,7 +264,7 @@ Core 1:       +55.0°C  (crit = +125.0°C)
 
 ```
 
-Run `sensors` with the `-u` switch to see what options are available for each physical chip (raw mode):
+Execute `sensors` com a opção `-u` para ver quais opções estão disponíveis para cada chip físico (modo "raw"):
 
  `$ sensors -u` 
 ```
@@ -279,7 +282,7 @@ Core 1:
 
 ```
 
-Create the following file overriding the default values:
+Crie o seguinte arquivo substituindo os valores padrão:
 
  `/etc/sensors.d/Zotac-IONITX-A-U` 
 ```
@@ -292,7 +295,7 @@ chip "coretemp-isa-0000"
 
 ```
 
-Now invoking `sensors` shows the adjust values:
+Agora, chamar `sensors` mostra os valores ajustados:
 
  `$ sensors` 
 ```
@@ -306,7 +309,7 @@ Core 1:       +35.0°C  (crit = +105.0°C)
 
 #### Exemplo 2\. Renomeando rótulos
 
-This is a real example on an Asus A7M266\. The user wishes more verbose names for the temperature labels 'temp1' and 'temp2':
+Este é um exemplo real em um Asus A7M266\. O usuário deseja nomes mais detalhados para os rótulos de temperatura "temp1" e "temp2":
 
  `$ sensors` 
 ```
@@ -319,7 +322,7 @@ temp2:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 
 ```
 
-Create the following file to override the default values:
+Crie o seguinte arquivo para substituir os valores padrão:
 
  `/etc/sensors.d/Asus_A7M266` 
 ```
@@ -329,7 +332,7 @@ chip "as99127f-*"
 
 ```
 
-Now invoking `sensors` shows the adjust values:
+Agora, chamar `sensors` mostra os valores ajustados:
 
  `$ sensors` 
 ```
@@ -344,7 +347,7 @@ CPU0 Temp:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 
 #### Exemplo 3\. Renumerando núcleos para sistemas com várias CPUs
 
-This is a real example on an HP Z600 workstation with dual Xeons. The actual numbering of physical cores is incorrect: numbered 0, 1, 9, 10 which is repeated into the second CPU. Most users expect the core temperatures to report out in sequential order, i.e. 0,1,2,3,4,5,6,7.
+Este é um exemplo real de uma estação de trabalho HP Z600 com Xeons duplos. A numeração real dos núcleos físicos está incorreta: numerada 0, 1, 9, 10, que é repetida na segunda CPU. A maioria dos usuários espera que as temperaturas do núcleo relatem em ordem sequencial, ou seja, 0,1,2,3,4,5,6,7.
 
  `$ sensors` 
 ```
@@ -365,7 +368,7 @@ Core 10:      +61.0°C  (high = +85.0°C, crit = +95.0°C)
 
 ```
 
-Again, run `sensors` with the `-u` switch to see what options are available for each physical chip:
+Agora, execute `sensors` com a opção `-u` para ver quais opções estão disponíveis para cada chip físico:
 
  `$ sensors -u coretemp-isa-0000` 
 ```
@@ -417,7 +420,7 @@ Core 10:
 
 ```
 
-Create the following file overriding the default values:
+Crie o seguinte arquivo substituindo os valores padrão:
 
  `/etc/sensors.d/HP_Z600` 
 ```
@@ -434,7 +437,7 @@ chip "coretemp-isa-0004"
   label temp12 "Core 7"
 ```
 
-Now invoking `sensors` shows the adjust values:
+Agora, chamar `sensors` mostra os valores ajustados:
 
  `$ sensors` 
 ```
@@ -457,7 +460,7 @@ Core7:        +60.0°C  (high = +85.0°C, crit = +95.0°C)
 
 ### Implantação automática de lm_sensors
 
-Users wishing to deploy lm_sensors on multiple machines can use the following to accept the defaults to all questions:
+Os usuários que desejam implantar lm_sensors em várias máquinas podem usar o seguinte para aceitar os valores padrão para todas as perguntas:
 
 ```
 # sensors-detect --auto
@@ -468,13 +471,13 @@ Users wishing to deploy lm_sensors on multiple machines can use the following to
 
 ### Módulo K10Temp
 
-Some K10 processors have issues with their temperature sensor. From the kernel documentation (`linux-<version>/Documentation/hwmon/k10temp`):
+Alguns processadores K10 têm problemas com seu sensor de temperatura. Da documentação do kernel (`linux-<version>/Documentation/hwmon/k10temp`):
 
-	*All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter.*
+	*Todos esses processadores possuem um sensor, mas para o soquete F ou AM2+, o sensor pode retornar valores inconsistentes (errata 319). O driver se recusará a carregar nessas revisões, a menos que os usuários especifiquem o parâmetro do módulo `force=1`.*
 
-	*Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter.*
+	*Devido a razões técnicas, o driver pode detectar apenas o tipo de soquete da placa-mãe, não os recursos reais do processador. Portanto, os usuários de um processador AM3 em uma placa-mãe AM2+ podem usar com segurança o parâmetro `force=1`.*
 
-On affected machines the module will report "unreliable CPU thermal sensor; monitoring disabled". Users which to force it can:
+Em máquinas afetadas, o módulo relatará "unreliable CPU thermal sensor; monitoring disabled". Usuários que desejam forçá-lo podem:
 
 ```
 # rmmod k10temp
@@ -482,50 +485,58 @@ On affected machines the module will report "unreliable CPU thermal sensor; moni
 
 ```
 
-Confirm that the sensor is in fact valid and reliable. If it is, can edit `/etc/modprobe.d/k10temp.conf` and add:
+Confirme se o sensor é de fato válido e confiável. Se estiver, pode editar `/etc/modprobe.d/k10temp.conf` e adicionar:
 
 ```
 options k10temp force=1
 
 ```
 
-This will allow the module to load at boot.
+Isso vai permitir o módulo para carregar na inicialização.
 
 ### Placas-mãe Asus Z97/Z170
 
-With some recent Asus motherboards, fan and voltage sensor access may require the NCT6775 module:
+Com algumas placas-mãe recentes da Asus, o acesso ao ventilador e ao sensor de tensão pode exigir o módulo NCT6775:
 
 ```
  # modprobe nct6775
 
 ```
 
-and add to the kernel boot parameters:
+e adicione-o aos parâmetros do kernel de inicialização:
 
 ```
  acpi_enforce_resources=lax
 
 ```
 
+### Placas-mãe Gigabyte B250
+
+Algumas placa-mãe da Gigabyte usam o chip ITE IT8686E, ao qual o driver it87 do kernel não dá suporte, até maio de 2019 [[1]](https://www.kernel.org/doc/Documentation/hwmon/it87).
+
+Porém, há suporte na versão do upstream do driver de kernel [[2]](https://github.com/bbqlinux/it87/blob/master/it87.c#L24).
+
+A variante dkms está contida em [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/).
+
 ### Gigabyte GA-J1900N-D3V
 
-The motherboard use the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[1]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[2]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[3]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
+Essa placa-mãe usa o chip ITE IT8620E (útil também para ler voltagens, temperatura da placa principal, velocidade do cooler). Até outubro de 2014, lm_sensors não tem suporte de driver para o chip ITE IT8620E [[3]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[4]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). Os desenvolvedores do lm_sensors tinham um relatório de que o chip é um pouco compatível com o IT8728F para a parte de monitoramento de hardware. No entanto, a partir de agosto de 2016, [[5]](https://www.kernel.org/doc/Documentation/hwmon/it87) lista o IT8620E como suportado.
 
-You can load the module at runtime with modprobe:
+Você pode carregar o módulo em tempo de execução com modprobe:
 
 ```
 $ modprobe it87 force_id=0x8728
 
 ```
 
-Or you can [load the modules](/index.php/Kernel_modules "Kernel modules") during boot process by creating the following two files:
+Ou você pode [carregar os módulos](/index.php/Kernel_modules "Kernel modules") durante o processo de inicialização criando os seguintes arquivos:
 
  `/etc/modules-load.d/it87.conf`  `it87`  `/etc/modprobe.d/it87.conf`  `options it87 force_id=0x8603` 
 
-Once the module is loaded you can use the *sensors* tool to probe the chip.
+Quando o módulo estiver carregado, você pode usar a ferramenta *sensores* para testar o chip.
 
-Now you can also use [fancontrol](/index.php/Fancontrol "Fancontrol") to control the speedsteps of your case fan.
+Você também pode usar [fancontrol](/index.php/Fancontrol "Fancontrol") para controlar os "speedsteps" de do cooler do gabinete.
 
 ### Problemas na tela do laptop após a execução de sensors-detect
 
-This is caused by lm-sensors messing with the Vcom values of the screen while probing for sensors. It has been discussed and solved at the forums already: [https://bbs.archlinux.org/viewtopic.php?id=193048](https://bbs.archlinux.org/viewtopic.php?id=193048) However, make sure to read through the thread carefully before running any of the suggested commands.
+Isso é causado por lm_sensors mexendo nos valores Vcom da tela enquanto sondam sensores. Já foi discutido e resolvido nos fóruns: [https://bbs.archlinux.org/viewtopic.php?id=193048](https://bbs.archlinux.org/viewtopic.php?id=193048) No entanto, certifique-se de ler o tópico cuidadosamente antes de executar qualquer um dos comandos sugeridos.

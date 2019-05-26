@@ -299,10 +299,10 @@ Vim 8 added the possibility to load third-party plugins natively. It is possible
 
 A plugin manager installs and manages Vim plugins in a similar way independent of which platform on you are running Vim. It is a plugin that acts as a package manager for other Vim plugins.
 
-*   [Vundle](https://github.com/gmarik/Vundle.vim) is currently the most popular plugin manager for Vim.
-*   [Vim-plug](https://github.com/junegunn/vim-plug) is a minimalist Vim plugin manager with many features like on-demand plugin loading and parallel updating.
-*   [pathogen.vim](https://github.com/tpope/vim-pathogen) is a simple plugin for managing Vim's runtimepath.
-*   [Dein.vim](https://github.com/Shougo/dein.vim) is a plugin manager replacing [NeoBundle](https://github.com/Shougo/neobundle.vim), available as [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
+*   [Vundle](https://github.com/gmarik/Vundle.vim) is currently the most popular plugin manager for Vim, available as [vundle](https://aur.archlinux.org/packages/vundle/) or [vundle-git](https://aur.archlinux.org/packages/vundle-git/).
+*   [Vim-plug](https://github.com/junegunn/vim-plug) is a minimalist Vim plugin manager with many features like on-demand plugin loading and parallel updating, available as [vim-plug](https://aur.archlinux.org/packages/vim-plug/) or [vim-plug-git](https://aur.archlinux.org/packages/vim-plug-git/).
+*   [pathogen.vim](https://github.com/tpope/vim-pathogen) is a simple plugin for managing Vim's runtimepath, available as [vim-pathogen](https://aur.archlinux.org/packages/vim-pathogen/) or [vim-pathogen-git](https://aur.archlinux.org/packages/vim-pathogen-git/).
+*   [Dein.vim](https://github.com/Shougo/dein.vim) is a plugin manager replacing [NeoBundle](https://github.com/Shougo/neobundle.vim), available as [vim-dein](https://aur.archlinux.org/packages/vim-dein/) or [vim-dein-git](https://aur.archlinux.org/packages/vim-dein-git/).
 
 #### From Arch repositories
 

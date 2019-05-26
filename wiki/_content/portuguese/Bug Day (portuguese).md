@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Bug Day](/index.php/Bug_Day "Bug Day"). Data da última tradução: 2019-01-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bug_Day&diff=0&oldid=562791) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Bug Day](/index.php/Bug_Day "Bug Day"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Bug_Day&diff=0&oldid=564277) na versão em inglês.
 
 Bug Day é um dia dedicado a aumentar a conscientização sobre o nosso transbordante [rastreador de erros](https://bugs.archlinux.org/) (*bugs*). O objetivo do dia é envolver a comunidade na tentativa de nos ajudar a eliminar tantos bugs quanto possível.
 

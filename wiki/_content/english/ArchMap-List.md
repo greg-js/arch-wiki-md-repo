@@ -1112,5 +1112,7 @@ You can use the following website to get your device's coordinates along with a 
 -12.158883, -76.992975 "Otreblan" # Lima, Peru
 41.634328, 25.377823 "Salif Mehmed" # Kardjali, Bulgaria
 43.8521180,-66.1128320 "smuise" # Yarmouth, Nova Scotia, Canada
+14.627708, -90.580859 "betoSolares" # Guatemala City, Guatemala
+51.601860, 7.137573 "Scrumplex" # Herten, NRW, Germany
 
 ```

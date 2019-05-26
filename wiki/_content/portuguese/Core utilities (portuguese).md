@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-04-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=564435) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=573702) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,6 +19,9 @@ A maioria das interfaces de linha de comando está principalmente documentada em
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Essenciais](#Essenciais)
+    *   [1.1 Prevenindo perda de dados](#Prevenindo_perda_de_dados)
+    *   [1.2 Melhoria de cp e mv](#Melhoria_de_cp_e_mv)
+    *   [1.3 rm para a lixeira](#rm_para_a_lixeira)
 *   [2 Não essenciais](#Não_essenciais)
 *   [3 Alternativas](#Alternativas)
     *   [3.1 Alternativas ao find](#Alternativas_ao_find)
@@ -34,8 +37,8 @@ A tabela a seguir lista alguns utilitários importantes com os quais os usuário
 
 | Pacote | Utilitário | Descrição | Documentação | Alternativas |
 | embutido no shell | cd | muda o diretório | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
-| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista o diretório | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
-| cat | concatena para stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista o diretório | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [lsd](https://www.archlinux.org/packages/?name=lsd), [tree](https://www.archlinux.org/packages/?name=tree) |
+| cat | concatena para stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1), [bat](https://www.archlinux.org/packages/?name=bat) |
 | mkdir | cria diretório | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html) |
 | rmdir | remove diretório vazio | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rmdir-invocation.html) |
 | rm | remove arquivos ou diretórios | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html) | [shred](/index.php/Shred "Shred") |
@@ -63,7 +66,17 @@ A tabela a seguir lista alguns utilitários importantes com os quais os usuário
 | ps | mostra informações sobre processos | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) | [top(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/top.1), [htop](https://www.archlinux.org/packages/?name=htop) |
 | free | exibe a quantidade de memória livre e usada | [free(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/free.1) |
 
+### Prevenindo perda de dados
+
 Os redirecionamentos rm, mv, cp e shell excluem ou sobrescrevem arquivos sem perguntar. Todos os rm, mv e cp possuem suporte ao sinalizador `-i` para avisar o usuário antes de cada remoção/sobrescrita. Alguns usuários gostam de ativar o sinalizador `-i` por padrão usando [aliases](/index.php/Alias "Alias"). Essas configurações de shell, no entanto, são perigosas porque você se acostuma a elas, resultando em perda de dados em potencial quando você usa outro sistema ou usuário que não as possui. A melhor maneira de evitar a perda de dados é fazer [backups](/index.php/Backup_(Portugu%C3%AAs) "Backup (Português)").
+
+### Melhoria de cp e mv
+
+O uso de [rsync como uma alternativa a cp/mv](/index.php/Rsync#As_a_cp/mv_alternative "Rsync") permite retomar uma transferência com falha, mostrar o status da transferência, pular arquivos já existentes e certificar-se da integridade dos arquivos de destino usando somas de verificação.
+
+### rm para a lixeira
+
+Veja [Gerenciamento de lixo](/index.php/Trash_management "Trash management")
 
 ## Não essenciais
 
@@ -126,6 +139,10 @@ Enquanto [diffutils](https://www.archlinux.org/packages/?name=diffutils) não of
 *   **cwdiff** — Um interfaceador do GNU wdiff que coloriza a saída.
 
 	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
+
+*   **icdiff** — Uma ferramenta diff colorida escrita em Python. "Improved color diff" serve para complementar o uso normal do diff.
+
+	[https://github.com/jeffkaufman/icdiff](https://github.com/jeffkaufman/icdiff) || [icdiff](https://aur.archlinux.org/packages/icdiff/),[icdiff-git](https://aur.archlinux.org/packages/icdiff-git/)
 
 Veja também [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 

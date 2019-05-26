@@ -366,7 +366,7 @@ mtu-test
 
 #### Connect to the server via IPv6
 
-Starting from OpenVPN 2.4, OpenVPN will use `AF_INET` defined by the OS when just using `proto udp` or `proto tcp`, which in most cases will be IPv4 only. To use both IPv4 and IPv6, use `proto udp4/udp6` or `proto tcp4/tcp6`. To enforce only IPv4-only, you need to use `proto udp4` or `proto tcp4`; and similar to enforce IPv6-only with `proto udp6` or `proto tcp6`. On older OpenVPN versions, use `proto udp6` or `proto tcp6` instead to enable dual stack support.
+Starting from OpenVPN 2.4, OpenVPN will use `AF_INET` defined by the OS when just using `proto udp` or `proto tcp`, which in most cases will be IPv4 only. To use both IPv4 and IPv6, use `proto udp6` or `proto tcp6`. To enforce only IPv4-only, you need to use `proto udp4` or `proto tcp4`. On older OpenVPN versions, one server instance can only support either IPv4 or IPv6.
 
 #### Provide IPv6 inside the tunnel
 

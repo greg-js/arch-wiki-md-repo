@@ -24,7 +24,7 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 | Stylus | Yes | x86-input-wacom, libwacom |
 | Camera | Yes | uvcvideo |
 | Fingerprint Reader | No² | ? |
-| [Power management](/index.php/Power_management "Power management") | Partial³ | ? |
+| [Power management](/index.php/Power_management "Power management") | Yes | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
@@ -33,7 +33,6 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
 2.  [The Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
-3.  S3 suspend requires BIOS modification - see section on [suspend issues](#Suspend_issues).
 
  |
 
@@ -51,13 +50,14 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
         *   [1.3.2 Manual](#Manual)
 *   [2 Suspend issues](#Suspend_issues)
     *   [2.1 Verifying S3](#Verifying_S3)
-    *   [2.2 Enabling S3](#Enabling_S3)
-        *   [2.2.1 Bios settings [1]](#Bios_settings_[1])
-        *   [2.2.2 Generate the override [2]](#Generate_the_override_[2])
-        *   [2.2.3 Load the override on boot [3]](#Load_the_override_on_boot_[3])
-        *   [2.2.4 Verify that S3 is working (See Verifying S3)](#Verify_that_S3_is_working_(See_Verifying_S3))
-    *   [2.3 Fix touchscreen after resume](#Fix_touchscreen_after_resume)
-    *   [2.4 Enabling S2idle](#Enabling_S2idle)
+    *   [2.2 Enabling S3 (with BIOS version 1.33 and after)](#Enabling_S3_(with_BIOS_version_1.33_and_after))
+    *   [2.3 Enabling S3 (before BIOS version 1.33)](#Enabling_S3_(before_BIOS_version_1.33))
+        *   [2.3.1 Bios settings [1]](#Bios_settings_[1])
+        *   [2.3.2 Generate the override [2]](#Generate_the_override_[2])
+        *   [2.3.3 Load the override on boot [3]](#Load_the_override_on_boot_[3])
+        *   [2.3.4 Verify that S3 is working (See Verifying S3)](#Verify_that_S3_is_working_(See_Verifying_S3))
+    *   [2.4 Fix touchscreen after resume](#Fix_touchscreen_after_resume)
+    *   [2.5 Enabling S2idle](#Enabling_S2idle)
 *   [3 Tablet Functions](#Tablet_Functions)
     *   [3.1 Stylus](#Stylus)
     *   [3.2 Screen Rotation](#Screen_Rotation)
@@ -88,7 +88,7 @@ The ThinkPad X1 Yoga supports setting a custom splash image at the earliest boot
 
 ## Suspend issues
 
-The 3rd Generation X1 Yoga supports S0i3 (also known as Windows Modern Standby), but not S3 by default. Missing S3 also causes hybrid-suspend to go directly to hibernate. Lenovo included a BIOS option to enable S3 fro BIOS 1.30 onward for the [Lenovo ThinkPad X1 Carbon (Gen 6)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6) "Lenovo ThinkPad X1 Carbon (Gen 6)"), but there is no equivalent option for the X1 Yoga as of BIOS version 1.27 (2018-10-21).
+In the past 3rd Generation X1 Yoga supports S0i3 (also known as Windows Modern Standby), but not S3 by default. This changed as of May, 17, 2019\. Lenovo included a BIOS option to enable S3 from BIOS 1.33 onward.
 
 ### Verifying S3
 
@@ -101,7 +101,44 @@ To check whether S3 is recognized and usable by Linux, run:
 
 and check for `S3` in the list.
 
-### Enabling S3
+### Enabling S3 (with BIOS version 1.33 and after)
+
+Since of May 17, 2019, Lenovo released firmware 1.33, which let you enable legacy S3 sleep in UEFI/BIOS. You can find the option in ThinkPad Setup: Config -> Power and disable the option "Optimized Sleep State for Modern Standby".
+
+Optimized Sleep State for Modern Standby:
+
+*   Disabled: "legacy" S3 sleep
+*   Enabled: modern standby
+
+By setting this option to "Disabled", a warning will appear. The warning describes that a reinstallation of your OS might be mandatory. I accepted that and both Windows and Linux worked fine for me. You can do this step also when the patch below already is loaded on boot. Afterwards, I recommend you to remove or comment out that patch with a "#" character in front of the line. That line might look like this: "initrd /acpi_override".
+
+If you're using systemd-boot your `/boot/loader/entries/arch.conf` might look like this: title Arch Linux ACPI
+
+```
+ linux	/vmlinuz-linux
+ initrd /intel-ucode.img
+ initrd /initramfs-linux.img
+ options root=/dev/nvme0n1p2 rw i915.enable_guc=3 mem_sleep_default=deep
+
+```
+
+Just these two options are additionally needed: "i915.enable_guc=3 mem_sleep_default=deep"
+
+Reboot and verify whether S3 is working by running:
+
+```
+ dmesg | grep -i "acpi: (supports"
+
+```
+
+You should now see something like this:
+
+```
+ [    0.230796] ACPI: (supports S0 S3 S4 S5)
+
+```
+
+### Enabling S3 (before BIOS version 1.33)
 
 There is an automated script called x1carbon2018s3 by [fiji-flo](https://github.com/fiji-flo) that was originally intended for use for the X1 Carbon 6th Gen ([source](https://github.com/fiji-flo/x1carbon2018s3)). The script and documentation were updated and maintained by [lsmith77](https://github.com/lsmith77) to adapt it for the X1 Yoga 3rd Gen. The latest known version is in a fork by [ryankhart](https://github.com/ryankhart) currently awaiting a pull request.
 

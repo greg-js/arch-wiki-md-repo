@@ -1,6 +1,10 @@
 QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国最流行的 IM 软件。本页面列出了 Linux 下使用 QQ 的各种解决方案。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 虚拟机](#虚拟机)
 *   [2 Wine](#Wine)
@@ -11,21 +15,17 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
     *   [2.5 手动 Wine 方案](#手动_Wine_方案)
         *   [2.5.1 QQ 轻聊版](#QQ_轻聊版)
         *   [2.5.2 TIM](#TIM)
-*   [3 基于 SmartQQ](#基于_SmartQQ)
-    *   [3.1 SmartQQ](#SmartQQ)
-    *   [3.2 weechat-webqq](#weechat-webqq)
-    *   [3.3 SmartIM](#SmartIM)
-*   [4 提示与技巧](#提示与技巧)
-    *   [4.1 HiDPI 支持](#HiDPI_支持)
-    *   [4.2 平铺式窗口管理器下的配置](#平铺式窗口管理器下的配置)
-        *   [4.2.1 Awesome](#Awesome)
-        *   [4.2.2 i3](#i3)
-*   [5 疑难解答](#疑难解答)
-    *   [5.1 字体配置](#字体配置)
-    *   [5.2 文件被占用](#文件被占用)
-    *   [5.3 xfce4(xfwm4)下无法输入表情](#xfce4(xfwm4)下无法输入表情)
-    *   [5.4 在非中文 locale 下无法输入中文](#在非中文_locale_下无法输入中文)
-*   [6 参阅](#参阅)
+*   [3 提示与技巧](#提示与技巧)
+    *   [3.1 HiDPI 支持](#HiDPI_支持)
+    *   [3.2 平铺式窗口管理器下的配置](#平铺式窗口管理器下的配置)
+        *   [3.2.1 Awesome](#Awesome)
+        *   [3.2.2 i3](#i3)
+*   [4 疑难解答](#疑难解答)
+    *   [4.1 字体配置](#字体配置)
+    *   [4.2 文件被占用](#文件被占用)
+    *   [4.3 xfce4(xfwm4)下无法输入表情](#xfce4(xfwm4)下无法输入表情)
+    *   [4.4 在非中文 locale 下无法输入中文](#在非中文_locale_下无法输入中文)
+*   [5 参阅](#参阅)
 
 ## 虚拟机
 
@@ -152,26 +152,6 @@ Type=Application
 Categories=Network;
 ```
 将 `tim.desktop` 移动到`~/.local/share/applications`或`/usr/share/applications`文件夹下即可。
-
-## 基于 SmartQQ
-
-### SmartQQ
-
-[SmartQQ](http://w.qq.com/) 是腾讯推出的网页端 QQ，它高度模仿微信风格，功能欠完善，高度依赖网络环境，而且需要通过手机客户端扫描二维码登录。
-
-### weechat-webqq
-
-**提示：** 也可选择其它支持IRC协议的聊天客户端。
-
-在 [WeeChat](/index.php/WeeChat "WeeChat") 可使用的 QQ 插件脚本，使用 perl语言开发的 [Mojo-Webqq](https://github.com/sjdy521/Mojo-Webqq)库，基于 smartqq 协议。 源码脚本可访问 [weechat-webqq](https://github.com/wxg4net/weechat-webqq) 获取。
-
-### SmartIM
-
-[SmartIM](https://github.com/Jamling/SmartIM) 是一个用java写的，包含简单的IM API封装的小程序，支持SmartQQ、微信。不过遗憾的是仍然需要扫描二维码。
-
-不支持图片，视频，表情和语音，不过支持依赖第三方服务器的文件传输。
-
-只需将jar包下载下来，并安装[OpenJDK](/index.php/Java#Officially_supported_packages "Java")，就可以在终端通过“java -jar”的方式直接运行了。
 
 ## 提示与技巧
 

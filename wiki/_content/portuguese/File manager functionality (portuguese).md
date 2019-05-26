@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=551262) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=569937) na versão em inglês.
 
 Artigos relacionados
 
@@ -57,8 +57,6 @@ Particularmente, quando usando - ou pretendendo usar - um ambiente leve, deve-se
 ### Montando
 
 *   O sistema de arquivos virtual do GNOME ([gvfs](https://www.archlinux.org/packages/?name=gvfs)) fornece funcionalidade de montagem e lixo. O GVFS usa [udisks2](https://www.archlinux.org/packages/?name=udisks2) para funcionalidade de montagem e é a solução recomendada para a maioria dos gerenciadores de arquivos.
-
-**Dica:** Para alguns gerenciadores de arquivos, pode ser útil ter o pacote [gamin](https://aur.archlinux.org/packages/gamin/) instalado. [Gamin](/index.php/Gamin_(Portugu%C3%AAs) "Gamin (Português)") é um sistema de monitoramento de arquivos e diretórios.
 
 Pastas usadas pelo GVFS:
 

@@ -44,6 +44,7 @@ Related articles
     *   [5.4 GPT fdisk (gdisk)](#GPT_fdisk_(gdisk))
     *   [5.5 iPXE](#iPXE)
     *   [5.6 fwupdate](#fwupdate)
+    *   [5.7 Poweroff or reboot](#Poweroff_or_reboot)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
 *   [7 Troubleshooting](#Troubleshooting)
@@ -452,6 +453,10 @@ Copy the `fwupx64.efi` binary and firmware file to `*esp*/EFI/tools/`:
 # cp /usr/lib/fwupd/efi/fwupdx64.efi *esp*/EFI/tools/
 
 ```
+
+### Poweroff or reboot
+
+rEFInd reportedly have poweroff and reboot menu entries built in. Since this list of tools is the most extensive of its kind in this wiki, users of UEFI shell, or other UEFI boot managers, such as [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), might be interested in [powerofforreboot.efi](https://aur.archlinux.org/packages/powerofforreboot.efi/).
 
 ## Tips and tricks
 

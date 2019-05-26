@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-05-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=572323) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-05-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=573630) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -8,11 +8,9 @@ Os auxiliares do AUR automatizam certos usos do [Arch User Repository](/index.ph
 
 [Pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") só lida com atualizações para pacotes pré-compilados em seus repositórios. Pacotes do AUR são redistribuídos na forma de [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e precisam de um auxiliar do AUR para automatizar o processo de recompilação. No entanto, lembre-se de que uma recompilação de um pacote pode ser necessária quando as suas dependências de bibliotecas compartilhadas forem atualizadas, e não apenas o pacote em si é atualizado.
 
-Como não há suporte aos auxiliares do AUR, eles não estão presentes nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
-
 ## Legenda
 
-As colunas da [#Tabela de comparação](#Tabela_de_comparação) têm o seguinte significado:
+As colunas da [#Tabelas de comparação](#Tabelas_de_comparação) têm o seguinte significado:
 
 	Revisão de arquivo
 
@@ -55,7 +53,7 @@ As colunas da [#Tabela de comparação](#Tabela_de_comparação) têm o seguinte
 
 **Nota:** *Opcional* significa que um recurso está disponível, mas apenas por meio de um argumento de linha de comando ou opção de configuração. *Parcial* significa que um recurso não está totalmente implementado, ou que ela parcialmente desvia do critério dado.
 
-## Tabela de comparação
+## Tabelas de comparação
 
 ### Pesquisa e download
 
@@ -88,7 +86,6 @@ de shell | Especificidade |
 de shell | Especificidade |
 | [aura](https://aur.archlinux.org/packages/aura/) | Haskell | Não | [Parcial](https://github.com/aurapm/aura/blob/89bf702/aura/src/Aura/Pkgbuild/Records.hs) | [Não](https://github.com/aurapm/aura/pull/346) | [Sim](https://github.com/aurapm/aura/commit/7848e983) | Não | [Não](https://github.com/aurapm/aura/issues/353) | – | bash, zsh | – |
 | [pacaur](https://aur.archlinux.org/packages/pacaur/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | [--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | bash, zsh | interação em lote 2 |
-| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/) | Bash | Não | Não | Não | Não | Não | Não | – | – | – |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Sim | [Sim](https://github.com/kitsunyan/pakku/commit/396e9f4) | Sim | Sim | Sim | Sim | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | bash, zsh | obtém chaves PGP |
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Sim | Sim | Sim | Sim | Sim | Sim | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | interação em lote 1/2, [usuários dinâmicos](http://0pointer.net/blog/dynamic-users-with-systemd.html) |
 | [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Sim | Sim | [Sim](https://github.com/trizen/trizen/commit/6fb0cc9) | [Sim](https://github.com/trizen/trizen/commit/7ab7ee5f) | Sim | [Parcial](https://github.com/trizen/trizen/issues/46) | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e)}} | bash, fish, zsh | – |
@@ -158,7 +155,7 @@ de shell | Especificidade |
 
 	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
 
-*   **aur-talk** — Buscar e exibir comentários AUR.
+*   **aur-talk** — Busca e exibe comentários do AUR.
 
 	[https://github.com/GermainZ/aur-talk](https://github.com/GermainZ/aur-talk) || [aur-talk-git](https://aur.archlinux.org/packages/aur-talk-git/)
 

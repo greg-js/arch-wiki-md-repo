@@ -161,4 +161,4 @@ Enable the `bluetooth.service`. This service is not enabled by default.
 
 ## Bug reporting
 
-Any upstream or Arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). All Deepin developers will see the bug reports and solve them as soon as possible.
+Any upstream or Arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). All the Deepin developers will see the bug reports and solve them as soon as possible.

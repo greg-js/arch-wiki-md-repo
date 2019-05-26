@@ -26,9 +26,10 @@ This article details how to install and setup a Broadcom wireless network device
     *   [4.5 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
     *   [4.6 Suppressing console messages](#Suppressing_console_messages)
     *   [4.7 Device BCM43241 not detected](#Device_BCM43241_not_detected)
-    *   [4.8 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
-    *   [4.9 No 5GHz for BCM4360 (14e4:43a0) / BCM43602 (14e4:43ba) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_/_BCM43602_(14e4:43ba)_devices)
-    *   [4.10 Device works intermittently](#Device_works_intermittently)
+    *   [4.8 Device BCM4352 not detected](#Device_BCM4352_not_detected)
+    *   [4.9 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
+    *   [4.10 No 5GHz for BCM4360 (14e4:43a0) / BCM43602 (14e4:43ba) devices](#No_5GHz_for_BCM4360_(14e4:43a0)_/_BCM43602_(14e4:43ba)_devices)
+    *   [4.11 Device works intermittently](#Device_works_intermittently)
 
 ## History
 
@@ -133,9 +134,7 @@ To work in monitor mode, use this newly created network interface.
 
 ### Device inaccessible after kernel upgrade
 
-Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). It should be blackisted if using a **b43** driver.
-
-If you are using [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl), uninstall and reinstall it after upgrading your kernel or switch to [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) package.
+Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). It should be blackisted if using a **b43** driver. Use If you are using [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl), uninstall and reinstall it after upgrading your kernel or switch to [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) package.
 
 ### Device with broadcom-wl driver not working/showing
 
@@ -166,11 +165,21 @@ enabled, active
 
 ```
 
-To disable those messages, increase the loglevel of printk messages that get through to the console - see [Silent boot#sysctl](/index.php/Silent_boot#sysctl "Silent boot").
+To disable thos`wl` e messages, increase the loglevel of printk messages that get through to the console - see [Silent boot#sysctl](/index.php/Silent_boot#sysctl "Silent boot").
 
 ### Device BCM43241 not detected
 
 This device will not display with either `lspci` nor `lsusb`; there is no known solution yet. Please remove this section when resolved.
+
+### Device BCM4352 not detected
+
+Unload bcma, use broadcom-wl driver.
+
+```
+rmmod bcma
+modprobe wl
+
+```
 
 ### Connection is unstable with some routers
 

@@ -7,7 +7,11 @@ Related articles
 
 [Irssi](https://irssi.org/) is a modular, ncurses based [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -19,6 +23,7 @@ Related articles
         *   [3.3.1 Client certificates](#Client_certificates)
     *   [3.4 Automatic logging](#Automatic_logging)
     *   [3.5 Hide joins, parts, and quits](#Hide_joins,_parts,_and_quits)
+    *   [3.6 Mouse scrolling](#Mouse_scrolling)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 HTTP Proxy](#HTTP_Proxy)
     *   [4.2 irssi with nicklist in tmux](#irssi_with_nicklist_in_tmux)
@@ -196,6 +201,23 @@ In order to ignore showing of joining, leaving and quiting of users for all chan
 
 See [smartfilter](https://github.com/lifeforms/irssi-smartfilter) to restrict join messages to active users.
 
+### Mouse scrolling
+
+To enable the mouse, type the following in irssi:
+
+```
+ /run scriptassist
+ /script install mouse.pl
+
+```
+
+To permanently enable it at startup:
+
+```
+ /script autorun mouse.pl
+
+```
+
 ## Tips and tricks
 
 ### HTTP Proxy
@@ -207,8 +229,8 @@ To use *irssi* behind a HTTP proxy, the following commands are required:
 /SET proxy_address <Proxy host address>
 /SET proxy_port <Proxy port>
 /SET -clear proxy_string
-/SET proxy_string_after conn %s %d
-/EVAL SET proxy_string CONNECT %s:%d HTTP/1.0
+/SET proxy_string_after conn %s %d
+/EVAL SET proxy_string CONNECT %s:%d HTTP/1.0
 
 
 ```

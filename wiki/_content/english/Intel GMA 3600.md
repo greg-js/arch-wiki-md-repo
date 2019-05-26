@@ -5,7 +5,7 @@ Related articles
 
 The **Intel GMA 3600** series is a family of integrated video adapters based on the PowerVR SGX 545 graphics core. It is used in [Intel Cedarview](https://ark.intel.com/products/codename/37505/Cedarview) CPUs (Atom D2500, D2550, D2700, N2600 and N2800).
 
-The Linux kernel has support since version 3.5.
+The Linux kernel has support since version 3.5, but since version 4.15 the relevant kernel driver, uvesafb, has not been included in the Archlinux kernel so using the DKMS version of the driver is necessary. See [uvesafb](/index.php/Uvesafb "Uvesafb") for more information.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -87,3 +87,4 @@ mpv vd-lavc-threads=4 -fs myvideo.avi
 *   [https://www.change.org/en-GB/petitions/intel-listen-to-the-community-and-develop-gma3600-drivers-for-linux](https://www.change.org/en-GB/petitions/intel-listen-to-the-community-and-develop-gma3600-drivers-for-linux)
 *   [http://ubuntuforums.org/showthread.php?t=1953734](http://ubuntuforums.org/showthread.php?t=1953734)
 *   [http://communities.intel.com/message/158477](http://communities.intel.com/message/158477)
+*   [https://bbs.archlinux.org/viewtopic.php?id=144445](https://bbs.archlinux.org/viewtopic.php?id=144445)

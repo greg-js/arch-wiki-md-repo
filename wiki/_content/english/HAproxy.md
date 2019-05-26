@@ -1,6 +1,10 @@
 [HAProxy](https://www.haproxy.org/) is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers quite a number of the world's most visited ones. Over the years it has become the de-facto standard opensource load balancer, is now shipped with most mainstream Linux distributions, and is often deployed by default in cloud platforms.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
@@ -79,7 +83,7 @@ If a large number of backends are declared with the `check` option, HAProxy will
 
 #### Logging with systemd
 
-To configure HAproxy to use systemd `/dev/log` compatibility socket add the following to your configuration file under the `global` section
+To configure HAproxy to use systemd `/dev/log` compatibility socket add the following to your configuration file under the `global` section. Note that this option WON'T work if you have a `chroot` option in your global configuration
 
 ```
 log /dev/log local0 info
@@ -91,14 +95,14 @@ log /dev/log local0 info
 In order to use haproxy as a TLS terminator you have to set inside your `frontend` section
 
 ```
-bind :80
-bind :443 ssl crt <path-to-combined-cert>
+bind :80
+bind :443 ssl crt <path-to-combined-cert>
 
 ```
 
 **Note:** To generate the cert you can run `cat <certificate-full-chain> <certificate-private-key> > <combined-cert>`
 
-**Tip:** To add support for HTTP/2 add `alpn h2,http/1.1` at the end of the `bind :443` line
+**Tip:** To add support for HTTP/2 add `alpn h2,http/1.1` at the end of the `bind :443` line
 
 ##### Redirecting HTTP to HTTPS
 

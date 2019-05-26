@@ -75,7 +75,7 @@ See [Domain name resolution#Lookup utilities](/index.php/Domain_name_resolution#
 
 Check specifically that the server being used is `::1` or `127.0.0.1` after making permanent changes to [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
 
-You will also need to setup *unbound* such that it is [#Forwarding queries](#Forwarding_queries) to the DNS servers of your choice.
+You can now setup *unbound* such that it is [#Forwarding queries](#Forwarding_queries), perhaps all queries, to the DNS servers of your choice.
 
 ### Root hints
 
@@ -90,7 +90,7 @@ root-hints: root.hints
 
 Then, put a *root hints* file into the *unbound* configuration directory. The simplest way to do this is to run the command:
 
- `# curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache` 
+ `# curl --output /etc/unbound/root.hints https://www.internic.net/domain/named.cache` 
 
 It is a good idea to update `root.hints` every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by using [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). See [#Roothints systemd timer](#Roothints_systemd_timer) for an example.
 

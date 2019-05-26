@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=569299) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=573174) na versão em inglês.
 
 Artigos relacionados
 
@@ -148,6 +148,12 @@ Para aprender como usar o GNOME Shell efetivamente, leia a [folha de dicas do GN
 *   `Alt` + ``` (a tecla logo acima de `Tab` nos teclados americanos): alterna entre janelas do aplicativo em primeiro plano
 *   `Alt` + `F2`, e depois insira `r` ou `restart`: reinicia o shell no caso de problemas no shell gráfico (apenas no modo X/legado, não no modo Wayland).
 
+**Dica:** Para fazer o `Alt+Tab` alternar aplicativos apenas no espaço de trabalho atual, você pode definir `current-workspace-only` para `true`:
+```
+$ gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+```
+
 ## Nomes legados
 
 **Nota:** Alguns programas do GNOME sofreram alteração de nomes, casos em que o nome do aplicativo na documentação e diálogos de "sobre" foram alterados, mas o nome do executável não foi. Alguns poucos aplicativos estão listados na tabela abaixo.
@@ -171,14 +177,9 @@ O painel Configurações do sistema do GNOME (*gnome-control-center*) e os aplic
 
 Você pode acessar diretamente o banco de dados dconf usando as ferramentas de linha de comando `gsettings` ou `dconf`. Isso também permite que você alterar as configurações não expostas pelas interfaces de usuário.
 
-Até o GNOME 3.24, as configurações eram aplicadas por um daemon de configurações do GNOME, os quais poderiam estar fora de uma sessão do GNOME usando:
+Até o GNOME 3.24, as configurações eram aplicadas por um daemon de configurações do GNOME (localizado em `/usr/lib/gnome-settings-daemon/gnome-settings-daemon`), o qual poderia ser executado fora de uma sessão do GNOME.
 
-```
-$ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
-
-```
-
-GNOME 3.24, porém, substituiu o daemon de configurações do GNOME com diversos outros plug-ins `/usr/lib/gnome-settings-daemon/gsd-*` separados. Esses plug-ins são agora controlados via arquivos desktop sob `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Para executar esses plug-ins fora de uma sessão do GNOME, você agora precisará copiar/editar as [entradas desktop](/index.php/Desktop_entries "Desktop entries") apropriadas para `~/.config/autostart`.
+GNOME 3.24, porém, substituiu o daemon de configurações do GNOME com diversos outros plug-ins `/usr/lib/gnome-settings-daemon/gsd-*` separados, os quais posteriormente foram movidos para `/usr/lib/gsd-*`. Esses plug-ins são agora controlados via arquivos desktop sob `/etc/xdg/autostart` (org.gnome.SettingsDaemon.*.desktop). Para executar esses plug-ins fora de uma sessão do GNOME, você agora precisará copiar/editar as [entradas desktop](/index.php/Desktop_entries "Desktop entries") apropriadas para `~/.config/autostart`.
 
 A configuração geralmente é realizada para cada usuário, essa seção não cobre o como criar modelos de configuração para múltiplos usuários.
 

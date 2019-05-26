@@ -46,7 +46,7 @@
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
  <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(60)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(95)</small> |
+ <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(96)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
  <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
  <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -235,7 +235,7 @@
  <small>5.8.9.</small> [Suckless](/index.php/Category:Suckless "Category:Suckless") <small>(5)</small> |
 | <small>1.</small> [System administration](/index.php/Category:System_administration_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:System administration (Українська)") <small>(0)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(22)</small> |
  <small>6.1.</small> [Backup](/index.php/Category:Backup "Category:Backup") <small>(12)</small> |
- <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
+ <small>6.2.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(28)</small> |
  <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
  <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
  <small>6.2.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
@@ -272,7 +272,7 @@
  <small>6.7.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
  <small>6.7.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
  <small>6.8.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
- <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(49)</small> |
+ <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(50)</small> |
  <small>6.9.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
  <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
  <small>6.9.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |
@@ -305,7 +305,7 @@
  <small>6.17.1.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
- <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
+ <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
  <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
  <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(38)</small> |
  <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |

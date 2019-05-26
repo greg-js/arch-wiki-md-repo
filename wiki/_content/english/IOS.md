@@ -49,17 +49,17 @@ Make sure that you have the fuse module loaded by doing `modprobe fuse`, assumin
 Plug in the device and follow the following steps
 
 ```
-#usbmuxd -f -v
-idevice_id -l
-ideviceinfo
-ideviceinstaller -l
+# usbmuxd -f -v
+# idevice_id -l
+# ideviceinfo
+# ideviceinstaller -l
 
 ```
 
 The last command will provide the information regarding mounting with Fuse. For example to mount VLC installed on the device one can use the command:
 
 ```
-#ifuse --documents org.videolan.vlc-ios <mountpoint>
+# ifuse --documents org.videolan.vlc-ios <mountpoint>
 
 ```
 

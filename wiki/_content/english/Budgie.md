@@ -64,5 +64,5 @@ It is possible to use an alternative [window manager](/index.php/Window_manager 
 
 *   [Wikipedia:Budgie (desktop environment)](https://en.wikipedia.org/wiki/Budgie_(desktop_environment) "wikipedia:Budgie (desktop environment)")
 *   [Official Budgie Desktop website](https://budgie-desktop.org/)
-*   [Official git repositories for Solus development](https://git.solus-project.com/)
+*   [Official git repositories for Solus development](https://github.com/solus-project/)
 *   [Build status for Solus projects](https://build.solus-project.com/)

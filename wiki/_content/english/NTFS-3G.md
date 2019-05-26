@@ -26,6 +26,7 @@ Related articles
     *   [6.3 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache,_refused_to_mount)
     *   [6.4 Deleting Windows hibernate metadata](#Deleting_Windows_hibernate_metadata)
     *   [6.5 Mount failure](#Mount_failure)
+    *   [6.6 Windows mount failure](#Windows_mount_failure)
 *   [7 Beta features & releases](#Beta_features_&_releases)
 *   [8 See also](#See_also)
 
@@ -228,7 +229,7 @@ You can check the current settings on *Control Panel > Hardware and Sound > Powe
 
 ### Deleting Windows hibernate metadata
 
-As an alternative to above clean shutdown method, there is a way to completely destroy NTFS metadata that was saved after hibernating. This method is only feasible if you're not able or unwilling to boot into Windows and shut it down completely. This is by placing **remove_hiberfile** option when you're mounting your NTFS file system using ntfs-3g.
+As an alternative to above clean shutdown method, there is a way to completely destroy NTFS metadata that was saved after hibernating. This method is only feasible if you are not able or unwilling to boot into Windows and shut it down completely. This is by placing **remove_hiberfile** option when you are mounting your NTFS file system using ntfs-3g.
 
 ```
 # mount -t ntfs-3g -o remove_hiberfile /dev/*your_NTFS_partition* */mount/point*
@@ -240,6 +241,10 @@ As an alternative to above clean shutdown method, there is a way to completely d
 ### Mount failure
 
 If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. See [fstab#File system UUIDs](/index.php/Fstab#File_system_UUIDs "Fstab") for an example.
+
+### Windows mount failure
+
+Windows will not recognize a NTFS partition that does not have a corresponding partition type. A common pitfall when creating an NTFS partition to work with Windows is forgetting to set the partition type as NTFS. See [fdisk](/index.php/Fdisk "Fdisk") or one of the [partitioning tools](/index.php/Partitioning_tools "Partitioning tools").
 
 ## Beta features & releases
 

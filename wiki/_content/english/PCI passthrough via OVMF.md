@@ -67,21 +67,22 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [8.4.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#"Error_43:_Driver_failed_to_load"_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [10.2 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#"BAR_3:_cannot_reserve_[mem]"_error_in_dmesg_after_starting_VM)
-    *   [10.3 UEFI (OVMF) compatibility in VBIOS](#UEFI_(OVMF)_compatibility_in_VBIOS)
-    *   [10.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-    *   [10.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-    *   [10.6 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
-    *   [10.7 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
-    *   [10.8 VM only uses one core](#VM_only_uses_one_core)
-    *   [10.9 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
-    *   [10.10 virt-manager has permission issues](#virt-manager_has_permission_issues)
-    *   [10.11 Host lockup after VM shutdown](#Host_lockup_after_VM_shutdown)
-    *   [10.12 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
-    *   [10.13 Cannot boot after upgrading ovmf](#Cannot_boot_after_upgrading_ovmf)
-    *   [10.14 QEMU via cli pulseaudio stuttering/delay](#QEMU_via_cli_pulseaudio_stuttering/delay)
-    *   [10.15 Bluescreen at boot since Windows 10 1803](#Bluescreen_at_boot_since_Windows_10_1803)
+    *   [10.1 QEMU 4.0: Unable to load graphics drivers/BSOD after driver install using Q35](#QEMU_4.0:_Unable_to_load_graphics_drivers/BSOD_after_driver_install_using_Q35)
+    *   [10.2 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#"Error_43:_Driver_failed_to_load"_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [10.3 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#"BAR_3:_cannot_reserve_[mem]"_error_in_dmesg_after_starting_VM)
+    *   [10.4 UEFI (OVMF) compatibility in VBIOS](#UEFI_(OVMF)_compatibility_in_VBIOS)
+    *   [10.5 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+    *   [10.6 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+    *   [10.7 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
+    *   [10.8 Chromium ignores integrated graphics for acceleration](#Chromium_ignores_integrated_graphics_for_acceleration)
+    *   [10.9 VM only uses one core](#VM_only_uses_one_core)
+    *   [10.10 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
+    *   [10.11 virt-manager has permission issues](#virt-manager_has_permission_issues)
+    *   [10.12 Host lockup after VM shutdown](#Host_lockup_after_VM_shutdown)
+    *   [10.13 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
+    *   [10.14 Cannot boot after upgrading ovmf](#Cannot_boot_after_upgrading_ovmf)
+    *   [10.15 QEMU via cli pulseaudio stuttering/delay](#QEMU_via_cli_pulseaudio_stuttering/delay)
+    *   [10.16 Bluescreen at boot since Windows 10 1803](#Bluescreen_at_boot_since_Windows_10_1803)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -831,7 +832,7 @@ WantedBy=multi-user.target
 
 Currently Windows would not notify users about a new IVSHMEM device, it would silently install a dummy driver. To actually enable the device you have to go into device manager and update the driver for the device under the "System Devices" node for **"PCI standard RAM Controller"**. Download a signed driver [from issue 217](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/217), as it is not yet available elsewhere.
 
-Once the driver is installed you must download a matching [looking-glass-host](https://github.com/gnif/LookingGlass/releases) that matches the client you installed from AUR and start it on your guest. Currently **04/01/2019** the A12 release does not work with the client in AUR so use an older release. In order to run it you would also need to install Microsoft Visual C++ Redistributable from [Microsoft](https://www.visualstudio.com/downloads/) It is also possible to make it start automatically on VM boot by editing the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` registry and adding a path to the downloaded executable.
+Once the driver is installed you must download a matching [looking-glass-host](https://github.com/gnif/LookingGlass/releases) that matches the client you installed from AUR and start it on your guest. In order to run it you would also need to install Microsoft Visual C++ Redistributable from [Microsoft](https://www.visualstudio.com/downloads/) It is also possible to make it start automatically on VM boot by editing the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` registry and adding a path to the downloaded executable.
 
 #### Getting a client
 
@@ -1173,6 +1174,10 @@ We encourage those who successfully build their system from this resource to hel
 ## Troubleshooting
 
 If your issue is not mentioned below, you may want to browse [QEMU#Troubleshooting](/index.php/QEMU#Troubleshooting "QEMU").
+
+### QEMU 4.0: Unable to load graphics drivers/BSOD after driver install using Q35
+
+Starting with QEMU 4.0 the q35 machine type changes the default `kernel_irqchip` from `off` to `split` which breaks some guest devices, such as nVidia graphics (the driver fails to load / black screen / code 43). Switch to full KVM mode instead with `<ioapic driver='kvm'/>` under libvirts `<features>` tag or `kernel_irqchip=on` in the `-machine` qemu arg.
 
 ### "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs
 

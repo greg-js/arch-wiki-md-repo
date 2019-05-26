@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines"). Data da última tradução: 2019-04-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VCS_package_guidelines&diff=0&oldid=569912) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VCS package guidelines](/index.php/VCS_package_guidelines "VCS package guidelines"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VCS_package_guidelines&diff=0&oldid=571574) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -249,5 +249,3 @@ prepare() {
 }
 
 ```
-
-O motivo para fazer dessa forma é explicado em [[1]](http://sprunge.us/HKdJ?md).

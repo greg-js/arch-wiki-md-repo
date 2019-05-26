@@ -184,7 +184,7 @@ The `/boot` directory contains the kernel and ramdisk images as well as the boot
 *   A separate `/boot` partition is only needed if your [boot loader](/index.php/Boot_loader "Boot loader") cannot access your root filesystem. For example, if the boot loader does not have a filesystem driver for it, or if `/` is on software [RAID](/index.php/RAID "RAID"), a [encrypted volume](/index.php/Dm-crypt "Dm-crypt") or a [LVM](/index.php/LVM "LVM") volume.
 *   If booting using an UEFI [boot loader](/index.php/Boot_loader "Boot loader") that does not have drivers for other file systems it is recommended to mount the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") to `/boot`. See [EFI system partition#Mount the partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") for more information.
 
-A suggested size for `/boot` is 200 MiB unless you are using [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as `/boot`, in which case 550 MiB is recommended.
+A suggested size for `/boot` is 200 MiB unless you are using [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as `/boot`, in which case at least 260 MiB is recommended.
 
 #### /home
 
@@ -223,7 +223,7 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 #### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2.E2.80.9333.29 "wikipedia:GUID Partition Table") | Suggested size |
-| `/boot` or `/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
+| `/boot` or `/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23–32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |

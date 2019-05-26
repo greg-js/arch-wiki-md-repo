@@ -174,6 +174,10 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://photoqt.org/](http://photoqt.org/) || [photoqt](https://aur.archlinux.org/packages/photoqt/)
 
+*   **pix** — Image viewer and browser based on gthumb. X-Apps Project.
+
+	[https://github.com/linuxmint/pix](https://github.com/linuxmint/pix) || [pix](https://aur.archlinux.org/packages/pix/)
+
 *   **pqiv** — GTK 3 based command-line image viewer with a minimal UI supporting images in compressed archives, rewrite of qiv.
 
 	[https://github.com/phillipberndt/pqiv/](https://github.com/phillipberndt/pqiv/) || [pqiv](https://aur.archlinux.org/packages/pqiv/)

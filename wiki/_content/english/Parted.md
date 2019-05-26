@@ -174,10 +174,10 @@ The following command will be used to flag the partition that contains the `/boo
 
 In every instance, a special bootable [EFI system partition](/index.php/EFI_system_partition "EFI system partition") is required.
 
-If creating a new EFI System Partition, use the following commands (the recommended size is 550 MiB):
+If creating a new EFI System Partition, use the following commands (the recommended size is at least 260 MiB):
 
 ```
-(parted) mkpart primary fat32 1MiB 551MiB
+(parted) mkpart primary fat32 1MiB 261MiB
 (parted) set 1 esp on
 
 ```
@@ -185,14 +185,14 @@ If creating a new EFI System Partition, use the following commands (the recommen
 The remaining partition scheme is entirely up to you. For one other partition using 100% of remaining space:
 
 ```
-(parted) mkpart primary ext4 551MiB 100%
+(parted) mkpart primary ext4 261MiB 100%
 
 ```
 
 For separate `/` (20 GiB) and `/home` (all remaining space) partitions:
 
 ```
-(parted) mkpart primary ext4 551MiB 20.5GiB
+(parted) mkpart primary ext4 261MiB 20.5GiB
 (parted) mkpart primary ext4 20.5GiB 100%
 
 ```
@@ -200,7 +200,7 @@ For separate `/` (20 GiB) and `/home` (all remaining space) partitions:
 And for separate `/` (20 GiB), swap (4 GiB), and `/home` (all remaining space) partitions:
 
 ```
-(parted) mkpart primary ext4 551MiB 20.5GiB
+(parted) mkpart primary ext4 261MiB 20.5GiB
 (parted) mkpart primary linux-swap 20.5GiB 24.5GiB
 (parted) mkpart primary ext4 24.5GiB 100%
 

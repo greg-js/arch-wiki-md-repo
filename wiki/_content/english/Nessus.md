@@ -1,6 +1,10 @@
 [Nessus](https://en.wikipedia.org/wiki/Nessus_(software) is a proprietary [vulnerability scanner](https://en.wikipedia.org/wiki/Vulnerability_scanner "wikipedia:Vulnerability scanner") available free of charge for personal use. There are [over 40,000 plugins](http://www.tenable.com/plugins/) covering a large range of both local and remote flaws.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Post-installation setup](#Post-installation_setup)
@@ -10,9 +14,11 @@
 
 ## Installation
 
+**Note:** As of May 2019, you have to follow the instructions from the AUR comments to install the [nessus](https://aur.archlinux.org/packages/nessus/) package.
+
 [Install](/index.php/Install "Install") the [nessus](https://aur.archlinux.org/packages/nessus/) package.
 
-**Note:** As of April 26, 2016, it is no longer required to agree and download the Nessus rpm. A script will run and download the rpm from the Nessus site automatically. If it appears that nothing is happening, please be patient as the script runs wget silently. The installation will proceed after the rpm is downloaded.
+**Note:** As of May 2019, this note is no longer valid: "As of April 26, 2016, it is no longer required to agree and download the Nessus rpm. A script will run and download the rpm from the Nessus site automatically. If it appears that nothing is happening, please be patient as the script runs wget silently. The installation will proceed after the rpm is downloaded".
 
 ## Post-installation setup
 

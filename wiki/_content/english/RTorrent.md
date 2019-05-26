@@ -16,15 +16,16 @@
 *   [3 Key bindings](#Key_bindings)
     *   [3.1 Redundant mapping](#Redundant_mapping)
 *   [4 Additional tips](#Additional_tips)
-    *   [4.1 Systemd services using tmux or screen](#Systemd_services_using_tmux_or_screen)
-        *   [4.1.1 With screen](#With_screen)
-        *   [4.1.2 with tmux](#with_tmux)
-    *   [4.2 systemd service file with dtach](#systemd_service_file_with_dtach)
-    *   [4.3 Pre-allocation](#Pre-allocation)
-    *   [4.4 Manage completed files](#Manage_completed_files)
-        *   [4.4.1 Notification with Google Mail](#Notification_with_Google_Mail)
-    *   [4.5 UI Tricks](#UI_Tricks)
-    *   [4.6 Manually adding trackers to torrents](#Manually_adding_trackers_to_torrents)
+    *   [4.1 Systemd service as a daemon for a user](#Systemd_service_as_a_daemon_for_a_user)
+    *   [4.2 Systemd services using tmux or screen](#Systemd_services_using_tmux_or_screen)
+        *   [4.2.1 With screen](#With_screen)
+        *   [4.2.2 with tmux](#with_tmux)
+    *   [4.3 systemd service file with dtach](#systemd_service_file_with_dtach)
+    *   [4.4 Pre-allocation](#Pre-allocation)
+    *   [4.5 Manage completed files](#Manage_completed_files)
+        *   [4.5.1 Notification with Google Mail](#Notification_with_Google_Mail)
+    *   [4.6 UI Tricks](#UI_Tricks)
+    *   [4.7 Manually adding trackers to torrents](#Manually_adding_trackers_to_torrents)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 CA certificates](#CA_certificates)
     *   [5.2 Locked directories](#Locked_directories)
@@ -201,6 +202,57 @@ To remove the mappings, change the terminal characteristics to undefine the afor
 To remove these mappings automatically at startup you may add the two preceding commands to your `~/.bashrc` file.
 
 ## Additional tips
+
+### Systemd service as a daemon for a user
+
+This unit will allow multiple users, or a single user to run rtorrent as a daemon.
+
+Replace **user** with the user who will run rtorrent. To start at boot time:
+
+```
+# systemctl enable rtorrent@user
+
+```
+
+Start manually:
+
+```
+# systemctl start rtorrent@user
+
+```
+
+Stop:
+
+```
+# systemctl stop rtorrent@user
+
+```
+
+Create the following file:
+
+ `/etc/systemd/system/rtorrent@.service` 
+```
+[Unit]
+Description=rTorrent for %I
+After=network.target
+
+[Service]
+Type=simple
+User=%I
+Group=%I
+KillMode=none
+WorkingDirectory=/home/%I
+# Modify the next line to the absolute path for rtorrent.lock, for example
+ExecStartPre=-/bin/rm -f /home/%I/.session/rtorrent.lock
+ExecStart=/usr/bin/rtorrent -o system.daemon.set=true
+ExecStop=/bin/kill -9 $MAINPID
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+
+```
 
 ### Systemd services using tmux or screen
 
@@ -769,6 +821,15 @@ How to use:
 
 ```
 $ magnet2torrent -m <magnet link> -o [torrent file]
+
+```
+
+Or use [aria2](https://www.archlinux.org/packages/?name=aria2) and [xclip](https://www.archlinux.org/packages/?name=xclip), to process magnet links from clipboard:
+
+```
+$ d=$(xdg-user-dir DOWNLOAD)
+$ c=$(xclip -o -selection clipboard | grep ^magnet)
+$ aria2c -d "$d" --input-file <( echo "$c" ) --bt-metadata-only=true --bt-save-metadata=true
 
 ```
 

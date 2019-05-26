@@ -28,8 +28,9 @@ Related articles
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 K10Temp module](#K10Temp_module)
     *   [6.2 Asus Z97/Z170 motherboards](#Asus_Z97/Z170_motherboards)
-    *   [6.3 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
-    *   [6.4 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
+    *   [6.3 Gigabyte B250 motherboards](#Gigabyte_B250_motherboards)
+    *   [6.4 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
+    *   [6.5 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
 
 ## Installation
 
@@ -231,7 +232,7 @@ For specific [Desktop environments](/index.php/Desktop_environments "Desktop env
 
 ### sensord
 
-There is an optional daemon called sensord (included with the [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) package) which can log data to a round robin database (rrd) and later visualize graphically. See the sensord man page for details.
+There is an optional daemon called *sensord* (included with the [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) package) which can log data to a round robin database (rrd) and later visualize graphically. See the [sensord(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sensord.8) man page for details.
 
 ## Tips and tricks
 
@@ -243,9 +244,9 @@ In some cases, the data displayed might be incorrect or users may wish to rename
 *   Users wish to rename the output of some sensors.
 *   The cores might be displayed in an incorrect order.
 
-All of the above (and more) can be adjusted by overriding the package provides settings in `/etc/sensors3.conf` by creating `/etc/sensors.d/foo` wherein any number of tweaks will override the default values. It is recommended to rename 'foo' to the motherboard brand and model but this naming nomenclature is optional.
+All of the above (and more) can be adjusted by overriding the package provides settings in `/etc/sensors3.conf` by creating `/etc/sensors.d/*foo*` wherein any number of tweaks will override the default values. It is recommended to rename 'foo' to the motherboard brand and model but this naming nomenclature is optional.
 
-**Note:** Do not edit /etc/sensors3.conf directly since package updates will overwrite any changes thus losing them.
+**Note:** Do not edit `/etc/sensors3.conf` directly since package updates will overwrite any changes thus losing them.
 
 #### Example 1\. Adjusting temperature offsets
 
@@ -507,9 +508,13 @@ and add to the kernel boot parameters:
 
 ```
 
+### Gigabyte B250 motherboards
+
+Some Gigabyte motherboards use the ITE IT8686E chip, which is not supported by the it87 kernel driver, as of May 2019 [[1]](https://www.kernel.org/doc/Documentation/hwmon/it87). However, it is supported by the upstream version of the kernel driver [[2]](https://github.com/bbqlinux/it87/blob/master/it87.c#L24). The dkms variant is contained in [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/).
+
 ### Gigabyte GA-J1900N-D3V
 
-The motherboard use the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[1]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[2]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[3]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
+This motherboard uses the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[3]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[4]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[5]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
 
 You can load the module at runtime with modprobe:
 

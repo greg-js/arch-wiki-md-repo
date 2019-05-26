@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Localization](/index.php/Localization "Localization"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Localization&diff=0&oldid=548881) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Localization](/index.php/Localization "Localization"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Localization&diff=0&oldid=570576) na versão em inglês.
 
 Este é o artigo principal sobre [localização](https://en.wikipedia.org/wiki/pt:Internacionaliza%C3%A7%C3%A3o_(inform%C3%A1tica) (muitas vezes também conhecido como l10n). Destina-se a oferecer orientação, bem como reticulação de outros artigos relevantes, para personalizar as configurações de uma instalação do Arch Linux para trabalhar com qualquer idioma suportado.
 

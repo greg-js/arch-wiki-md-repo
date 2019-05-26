@@ -2,6 +2,7 @@
 | Video | Working | i915 |
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | bluetooth |
+| Mobile broadband | Not working | ? Intel XMM 7560 |
 | Audio | Partially Working | snd_hda_intel |
 | Touchpad | Working | ? |
 | Touchscreen | Working | hid_multitouch |
@@ -35,12 +36,13 @@ This article covers specific configuration of this laptop. Currently based on ex
     *   [3.6 Hp "sureview" privacy screen](#Hp_"sureview"_privacy_screen)
     *   [3.7 USB-C HDMI-out / dualscreen](#USB-C_HDMI-out_/_dualscreen)
     *   [3.8 Bluetooth](#Bluetooth)
-    *   [3.9 ACPI Errors](#ACPI_Errors)
-    *   [3.10 Pen input](#Pen_input)
-    *   [3.11 Tablet mode](#Tablet_mode)
-    *   [3.12 IR Camera Login](#IR_Camera_Login)
-    *   [3.13 Battery optimizations](#Battery_optimizations)
-    *   [3.14 Sensors](#Sensors)
+    *   [3.9 Mobile Broadband](#Mobile_Broadband)
+    *   [3.10 ACPI Errors](#ACPI_Errors)
+    *   [3.11 Pen input](#Pen_input)
+    *   [3.12 Tablet mode](#Tablet_mode)
+    *   [3.13 IR Camera Login](#IR_Camera_Login)
+    *   [3.14 Battery optimizations](#Battery_optimizations)
+    *   [3.15 Sensors](#Sensors)
 
 ## Hardware Info
 
@@ -149,6 +151,18 @@ Works out of the box with a generic USB-C to HDMI adapter
 ### Bluetooth
 
 Works out of the box.
+
+### Mobile Broadband
+
+Some configurations include the [Intel XMM 7560](https://www.intel.com/content/www/us/en/wireless-products/mobile-communications/xmm-7560-brief.html) 4G LTE modem, an updated version of [the 7360 with no Linux kernel driver](https://superuser.com/a/1337418).
+
+`lspci` lists the module as:
+
+```
+01:00.0 Wireless controller [0d40]: Intel Corporation Device [8086:7560] (rev 01)
+	Subsystem: Hewlett-Packard Company Device [103c:8507]
+
+```
 
 ### ACPI Errors
 

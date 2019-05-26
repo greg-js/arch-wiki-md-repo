@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-04-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=569674) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=573789) na versão em inglês.
 
 Artigos relacionados
 
@@ -25,6 +25,7 @@ Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "w
 *   [6 Serviços DNS de terceiros](#Serviços_DNS_de_terceiros)
 *   [7 Servidores DNS](#Servidores_DNS)
     *   [7.1 Servidores apenas autoritativos](#Servidores_apenas_autoritativos)
+    *   [7.2 Encaminhamento condicional](#Encaminhamento_condicional)
 *   [8 Veja também](#Veja_também)
 
 ## Name Service Switch
@@ -59,7 +60,7 @@ O resolvedor do glibc lê `/etc/resolv.conf` para toda resolução para determin
 
 Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, até os três servidores podem ser listados. Linhas iniciando com um cerquilha (`#`) são ignoradas.
 
-**Nota:** O resolvedor do glibc não faz cache de consultas. Para melhorar tempo de consulta, você pode configurar um resolvedor em cache. Veja [#Servidores DNS](#Servidores_DNS) para mais informações.
+**Nota:** O resolvedor do glibc não faz cache de consultas. Para melhorar tempo de consulta, você pode configurar um resolvedor em cache. O resolvedor do glibc também não consegue validar DNSSEC. Um resolvedor com capacidade de validar DNSSEC é necessário para ele. Veja [#Servidores DNS](#Servidores_DNS) para mais informações.
 
 ### Sobrescrita do /etc/resolv.conf
 
@@ -105,7 +106,7 @@ domain exemplo.com.br
 
 ```
 
-Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exemplo.com.brm` como simplesmente `maquinaprincipal1` ao usar o comando *ssh*, mas o comando *drill* ainda requer os nomes de domínio totalmente qualificados para realizar pesquisas.
+Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exemplo.com.br` como simplesmente `maquinaprincipal1` ao usar o comando *ssh*, mas o comando [drill](#Utilitários_de_pesquisa) ainda requer os nomes de domínio totalmente qualificados para realizar pesquisas.
 
 ## Utilitários de pesquisa
 
@@ -162,21 +163,22 @@ Existem vários [serviços DNS de terceiros](https://en.wikipedia.org/wiki/Publi
 
 Os servidores [DNS](/index.php/DNS_(Portugu%C3%AAs) "DNS (Português)") podem ser [autoritativos](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server") e [recursivos](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server"). Se eles não forem, eles são chamados de ***stub resolvers*** e simplesmente encaminham todas as consultas para outro servidor de nomes recursivo. Os *stub resolvers* são normalmente usados para introduzir o cache de DNS no host ou na rede local. Observe que o mesmo também pode ser obtido com um servidor de nomes completo. Esta seção compara os servidores DNS disponíveis, para uma comparação mais detalhada, consulte o [Wikipedia:Comparison of DNS server software](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software "wikipedia:Comparison of DNS server software").
 
-| Nome | Pacote | [Autoritativo](https://en.wikipedia.org/wiki/Authoritative_name_server | [Valida](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions")
-[DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") | [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") | [DNS
+| Nome | Pacote | Capacidades | [resolvconf](/index.php/Resolvconf_(Portugu%C3%AAs) "Resolvconf (Português)") | Protocolos suportados |
+| [Autoritativo](https://en.wikipedia.org/wiki/Authoritative_name_server "wikipedia:Authoritative name server") | [Recursivo](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") | [Cache](https://en.wikipedia.org/wiki/Name_server#Caching_name_server "wikipedia:Name server") | [Valida](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions")
+[DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") | [DNS](https://en.wikipedia.org/wiki/pt:Sistema_de_Nomes_de_Dom%C3%ADnio "wikipedia:pt:Sistema de Nomes de Domínio") | [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") | [DNS
 por TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") | [DNS
 por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | Não | Não | Sim | Não | Não | Não | Resolvedor | Não | Resolvedor |
-| [Rescached](/index.php/Rescached "Rescached") | [rescached-git](https://aur.archlinux.org/packages/rescached-git/) | Não | Não | Sim | [Sim](https://github.com/shuLhan/rescached-go#integration-with-openresolv) | Não | Não | Não | Limitado |
-| [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | Não | Não | Não | Não | Sim | Não | Resolvedor | Não |
-| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | Não | Não | Sim | [Sim](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Sim | Não | Resolvedor inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
-| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Parcial | Não | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
-| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [Não](https://kb.isc.org/docs/aa-01386) | Não |
-| [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Sim | Sim | Sim | Não | Sim | Não | Sim | [Não](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
-| [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Sim | Sim | Sim | Não | Não | Não | Não | Não |
-| [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Sim | Sim | Permanente | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Não | Não | Não | Não |
-| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | Sim | [Não](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Sim | Não | Não | Não |
-| [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Servidor | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | [dnscrypt-proxy](https://www.archlinux.org/packages/?name=dnscrypt-proxy) | Não | Não | Sim | Não | Não | Servidor | Resolvedor | Não | Resolvedor |
+| [Rescached](/index.php/Rescached "Rescached") | [rescached-git](https://aur.archlinux.org/packages/rescached-git/) | Não | Não | Sim | Não | [Sim](https://github.com/shuLhan/rescached-go#integration-with-openresolv) | Sim | Não | Não | Limitado |
+| [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | Não | Não | Não | Sim | Não | Servidor | Não | Resolvedor | Não |
+| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | Não | Não | Sim | Sim | [Sim](/index.php/Systemd-resolvconf "Systemd-resolvconf") | [servidor limitado](https://github.com/systemd/systemd/issues/4621#issuecomment-260050033) e resolvedor | Não | Resolvedor inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
+| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Parcial | Não | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
+| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [Não](https://kb.isc.org/docs/aa-01386) | Não |
+| [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Sim | Sim | Sim | Sim | Não | Sim | Não | Sim | [Servidor](https://knot-resolver.readthedocs.io/en/stable/modules.html#dns-over-http-doh) |
+| [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Sim | Sim | Sim | Não | Não | Sim | Não | Não | Não |
+| [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Sim | Sim | Permanente | Não | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | Não | Não |
+| [PowerDNS Recursor](https://www.powerdns.com/recursor.html) | [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Sim | Sim | Sim | Sim | [Não](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Sim | Não | Não | Não |
+| [Unbound](/index.php/Unbound "Unbound") | [unbound](https://www.archlinux.org/packages/?name=unbound) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Servidor | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
 1.  Só encaminha usando DNS por HTTPS quando Rescached em si é consultado usando DNS por HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
 2.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que como o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".*[[4]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.[[5]](https://github.com/systemd/systemd/issues/10755)
@@ -190,6 +192,16 @@ geográfico |
 | [Knot DNS](https://www.knot-dns.cz/) | [knot](https://www.archlinux.org/packages/?name=knot) | Sim | [Sim](https://www.knot-dns.cz/docs/2.7/singlehtml/#geoip-geography-based-responses) |
 | [NSD](/index.php/NSD "NSD") | [nsd](https://www.archlinux.org/packages/?name=nsd) | Não | Não |
 | [PowerDNS](https://www.powerdns.com/auth.html) | [powerdns](https://www.archlinux.org/packages/?name=powerdns) | Sim | Sim |
+
+### Encaminhamento condicional
+
+É possível usar resolvedores de DNS específicos ao consultar nomes de domínio específicos. Isso é particularmente útil ao se conectar a uma VPN, para que as consultas à rede VPN sejam resolvidas pelo DNS da VPN, enquanto as consultas à Internet ainda serão resolvidas pelo seu resolvedor DNS padrão. Também pode ser usado em redes locais.
+
+Para implementá-lo, você precisa usar um [resolvedor local](#Servidores_DNS) porque o glibc não oferece suporte a isso.
+
+Em um ambiente dinâmico (laptops e algumas extensões de desktops), você precisa configurar seu resolvedor com base na(s) rede(s) à(s) qual(is) você está conectado. A melhor maneira de fazer isso é usar [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") porque ele possui suporte a [vários assinantes](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)"). Alguns [gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede") possuem suporte, seja através do OpenResolv, ou configurando o resolvedor diretamente.
+
+**Nota:** Embora você possa usar outras condições para encaminhamento (por exemplo, IP de origem), "encaminhamento condicional" parece ser o nome usado para a condição "domínio consultado".
 
 ## Veja também
 

@@ -112,7 +112,7 @@ You must include either the `udev` hook or the `btrfs` hook in `/etc/mkinitcpio.
 **Note:**
 
 *   It is possible to add devices to a multiple-device filesystem later on. See the [Btrfs wiki article](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information.
-*   Devices can be of different sizes. However, if one drive in RAID configurations is bigger then all the others, this extra space will not be used.
+*   Devices can be of different sizes. However, if one drive in a RAID configuration is bigger than the others, this extra space will not be used.
 *   Some [boot loaders](/index.php/Boot_loader "Boot loader") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
 
 See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.

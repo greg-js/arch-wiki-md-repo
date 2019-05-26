@@ -30,6 +30,8 @@
 
 **Tip:** [Install](/index.php/Install "Install") [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) to get the fonts and icons for the RetroArch GUI. You need to edit RetroArch's [#Configuration](#Configuration) to load them.
 
+**Tip:** [Install](/index.php/Install "Install") [retroarch-standalone-service](https://aur.archlinux.org/packages/retroarch-standalone-service/) to get system user, systemd.service and retroarch configuration for standalone game-box. Just enable retroarch-standalone.service after all.
+
 ## Usage
 
 RetroArch relies on separate libraries, called "cores", for most of its functionality. These can be downloaded per-user within RetroArch itself (via the [libretro Buildbot](https://buildbot.libretro.com/)) or you can [install](/index.php/Install "Install") them system-wide via [Community](https://www.archlinux.org/groups/x86_64/libretro/) or [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro).

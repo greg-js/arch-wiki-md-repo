@@ -45,7 +45,7 @@ Jeżeli chcesz, żeby tekst w lemonbarze był aktualizowany przez skrypt, musisz
 
 Specjalny kolor `-` wskazuje na kolor domyślny (który jest ustawiany za pomocą opcji linii komend, domyślnie jest to biały tekst z czarnym tłem).
 
-| Command | Meaning |
+| Komenda | Znaczenie |
 | `%{F*kolor*}` | Użyj *kolor* jako kolor czcionki/pierwszoplanowy |
 | `%{B*kolor*}` | Użyj *kolor* jako kolor tła |
 | `%{U*kolor*}` | Użyj *kolor* jako kolor pod/nadkreślenia tekstu |
@@ -54,7 +54,7 @@ Specjalny kolor `-` wskazuje na kolor domyślny (który jest ustawiany za pomoc�
 
 `lemonbar` wspiera wyrównanie tekstu. Używa poniższych komend aby to osiągnąć.
 
-| Command | Meaning |
+| Komenda | Znaczenie |
 | `%{l}` | Wyrównuje tekst to lewej |
 | `%{c}` | Centruje tekst |
 | `%{r}` | Wyrównuje tekst do prawej |

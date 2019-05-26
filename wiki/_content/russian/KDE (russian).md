@@ -11,7 +11,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 20 апреля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=571667).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 25 мая 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=573502).
 
 KDE — проект, состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
@@ -131,7 +131,7 @@ KDE активно поддерживает вики-ресурс [UserBase](htt
 
 ## Запуск Plasma
 
-**Примечание:** Несмотря на то, что KDE Plasma можно запустить используя [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), на данный момент, в Plasma 5.13, отсутствуют некоторые функции и есть известные проблемы. Для получения информации об актуальных проблемах смотрите статью [Plasma 5.13 Errata](https://community.kde.org/Plasma/5.13_Errata#Wayland) и [доску Plasma on Wayland](https://phabricator.kde.org/project/board/99/) с текущим состоянием разработки. Используйте [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") для наиболее полных возможностей и стабильной работы.
+**Примечание:** Несмотря на то, что KDE Plasma можно запустить используя [Wayland (Русский)](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), на данный момент отсутствуют некоторые функции и есть известные проблемы. Для получения информации об актуальных проблемах смотрите статью [Wayland Showstoppers](https://community.kde.org/Plasma/Wayland_Showstoppers) и [доску Plasma on Wayland](https://phabricator.kde.org/project/board/99/) с текущим состоянием разработки. Используйте [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") для получения наиболее полных возможностей и стабильной работы.
 
 KDE Plasma можно запустить с помощью [экранного менеджера](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)") или консоли.
 
@@ -503,7 +503,7 @@ Name=/home/*username*/.local/share/akonadi/akonadi.db
 *   Подключение по Wi-Fi: нет нужды в проводах или Bluetooth.
 *   Шифрование RSA: ваши данные в безопасности.
 
-Вам нужно будет установить KDE Connect как на компьютере (пакет [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)), так и на Android-смартфоне (приложение из [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) или [F-Droid](https://f-droid.org/packages/org.kde.kdeconnect_tp/)).
+Вам нужно будет установить KDE Connect как на компьютере (пакет [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)), так и на Android-смартфоне (приложение из [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) или [F-Droid](https://f-droid.org/packages/org.kde.kdeconnect_tp/)). Обратите внимание, что для доступа к файловой системе смартфона требуется также [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [sshfs](https://www.archlinux.org/packages/?name=sshfs) и дать соответствующее разрешение на доступ к ФС при запуске Android-приложения.
 
 KDE Connect можно использовать и с другими средами рабочего стола. Для тех, которые используют AppIndicators (например, Unity) [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") также пакет [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/). Для пользователей GNOME, лучшей интеграции можно достичь установкой [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) вместо [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect).
 

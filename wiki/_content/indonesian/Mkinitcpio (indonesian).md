@@ -521,4 +521,4 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
 *   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "w:dracut (software)")** — A cross-distribution initramfs generation tool.
 
-	[https://dracut.wiki.kernel.org/](https://dracut.wiki.kernel.org/) || [dracut](https://aur.archlinux.org/packages/dracut/)
+	[https://dracut.wiki.kernel.org/](https://dracut.wiki.kernel.org/) || [dracut](https://www.archlinux.org/packages/?name=dracut)

@@ -20,7 +20,9 @@
 | <small>2.5.</small> [File managers](/index.php/Category:File_managers_(Portugu%C3%AAs) "Category:File managers (Português)") <small>(1)</small> |
 | <small>2.6.</small> [Gaming](/index.php/Category:Gaming_(Portugu%C3%AAs) "Category:Gaming (Português)") <small>(1)</small> |
 | <small>2.7.</small> [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)") <small>(0)</small> |
-| <small>2.7.1.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
+| <small>2.7.1.</small> [Audio](/index.php/Category:Audio_(Portugu%C3%AAs) "Category:Audio (Português)") <small>(0)</small> |
+| <small>2.7.1.1.</small> [Music](/index.php/Category:Music_(Portugu%C3%AAs) "Category:Music (Português)") <small>(1)</small> |
+| <small>2.7.2.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
 | <small>2.8.</small> [Escritório](/index.php/Category:Office_(Portugu%C3%AAs) "Category:Office (Português)") <small>(2)</small> |
 | <small>2.9.</small> [Search](/index.php/Category:Search_(Portugu%C3%AAs) "Category:Search (Português)") <small>(1)</small> |
 | <small>2.10.</small> [System monitors](/index.php/Category:System_monitors_(Portugu%C3%AAs) "Category:System monitors (Português)") <small>(1) (também em [Monitoring](/index.php/Category:Monitoring_(Portugu%C3%AAs) "Category:Monitoring (Português)"))</small> |
@@ -119,7 +121,7 @@
 | <small>7.5.1.3.</small> [Web server](/index.php/Category:Web_server_(Portugu%C3%AAs) "Category:Web server (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
 | <small>7.6.</small> [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)") <small>(1)</small> |
 | <small>7.6.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
-| <small>7.7.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(5)</small> |
+| <small>7.7.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(4)</small> |
 | <small>7.8.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(2)</small> |
 | <small>7.9.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(4)</small> |
 | <small>7.9.1.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |

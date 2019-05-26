@@ -37,11 +37,12 @@ Related articles
     *   [4.5 libao](#libao)
 *   [5 Audio post-processing](#Audio_post-processing)
     *   [5.1 PulseEffects](#PulseEffects)
-    *   [5.2 PulseAudio Equalizer](#PulseAudio_Equalizer)
-        *   [5.2.1 Load equalizer sink and dbus-protocol module](#Load_equalizer_sink_and_dbus-protocol_module)
-        *   [5.2.2 GUI front-end](#GUI_front-end)
-        *   [5.2.3 Load equalizer and dbus module on every boot](#Load_equalizer_and_dbus_module_on_every_boot)
-    *   [5.3 Other equalizers](#Other_equalizers)
+    *   [5.2 Equalization](#Equalization)
+        *   [5.2.1 LADSPA module](#LADSPA_module)
+        *   [5.2.2 Integrated module](#Integrated_module)
+    *   [5.3 Dynamic Range Compression](#Dynamic_Range_Compression)
+        *   [5.3.1 Steve Harris plugin](#Steve_Harris_plugin)
+        *   [5.3.2 Calf plugin](#Calf_plugin)
 *   [6 Applications](#Applications)
     *   [6.1 QEMU](#QEMU)
     *   [6.2 AlsaMixer.app](#AlsaMixer.app)
@@ -200,7 +201,6 @@ This is the main configuration file to configure the daemon itself. It defines b
 
 **Note:** PulseAudio does not perform tilde expansion on paths in this file. Use absolute paths for any files.
 
-<caption>Notable configuration options</caption>
 | Option | Description |<caption></caption>
 | daemonize | Controls whether the server will daemonize itself and return. Set to `no` when debugging so you can see the debugging information on the terminal. |<caption></caption>
 | resample-method | Which resampler to use when audio with incompatible sample rates needs to be passed between modules (e.g. playback of 96kHz audio on hardware which only supports 48kHz). The available resamplers can be listed with `$ pulseaudio --dump-resample-methods`. Choose the best tradeoff between CPU usage and audio quality for the present use-case.
@@ -444,13 +444,21 @@ PulseEffects is a GTK advanced utility for applying audio effects to application
 
 Effects for applications output are limiter, auto gain, expander, compressor, multiband compressor, equalizer, bass enhancer, exciter, crystalizer, reverberation, crossfeed, filter (lowpass, highpass, bandpass and bandreject modes), stereo tools, loudness, maximizer, pitch, gate, multiband gate, deesser and convolver. Effects applicable to input streams are gate, multiband gate, WebRTC, limiter, compressor, multiband compressor, equalizer, reverberation, pitch, filter (lowpass, highpass, bandpass and bandreject modes) and deesser.
 
-### PulseAudio Equalizer
+### Equalization
+
+If you want to use a different equalizer rather that the one integrated in [#PulseEffects](#PulseEffects), there are the following options.
+
+#### LADSPA module
+
+Install [pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa), an equalizer based on LADSPA [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins). Launch `pulseaudio-equalizer-gtk` GUI and tweak the parameters to match your expectations.
+
+#### Integrated module
+
+PulseAudio has an integrated 10-band equalizer system. In order to use it, install [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer) and read the following instructions.
 
 **Warning:** PulseAudio equalizer module is considered [unstable and might be removed from PulseAudio](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html).
 
-PulseAudio has an integrated 10-band equalizer system. In order to use the equalizer, install [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer) and read the following sections.
-
-#### Load equalizer sink and dbus-protocol module
+Load the equalizer sink and dbus-protocol module
 
 ```
 $ pactl load-module module-equalizer-sink
@@ -458,20 +466,11 @@ $ pactl load-module module-dbus-protocol
 
 ```
 
-#### GUI front-end
-
-In order to start the GUI, run:
-
-```
-$ qpaeq
-
-```
+To start the GUI, run `qpaeq`.
 
 **Note:** If qpaeq has no effect, install [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) and change "ALSA Playback on" to "FFT based equalizer on ..." while the media player is running.
 
-#### Load equalizer and dbus module on every boot
-
-Edit the `/etc/pulse/default.pa` or `~/.config/pulse/default.pa` file with your favorite editor and append the following lines:
+To load the equalizer and dbus module on every boot, edit the `/etc/pulse/default.pa` or `~/.config/pulse/default.pa` file with your favorite editor and append the following lines:
 
 ```
 ### Load the integrated PulseAudio equalizer and D-Bus module
@@ -482,9 +481,70 @@ load-module module-dbus-protocol
 
 **Note:** The equalizer sink needs to be loaded after the master sink is already available.
 
-### Other equalizers
+### Dynamic Range Compression
 
-[pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa), based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins), is an alternative to [#PulseAudio Equalizer](#PulseAudio_Equalizer).
+[Dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression) can be done with [#PulseEffects](#PulseEffects). Anyway PulseEffects might introduce much overhead and latency to audio stream, so if you only need a compression effect and a minor load on the system, other options are available using a [module-ladspa-sink](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index47h3).
+
+#### Steve Harris plugin
+
+Steve Harris LADSPA is a set of plugins containing various compression modules. Install [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins) and edit the configuration as the following
+
+ `~/.config/pulse/default.pa` 
+```
+.include /etc/pulse/default.pa
+
+ set-default-sink your_card_sink_name
+
+ load-module module-ladspa-sink sink_name=shw_sc4 sink_master=your_card_sink_name plugin=sc4_1882 label=sc4 control=,,,,,,,,
+ set-default-sink shw_sc4
+```
+
+You have to specify your card sink name, get it from `pacmd list-sinks`. In order to apply the changes, stop and restart Pulseaudio. The above configuration has empty control options using the default values.
+
+To tweak the module with custom control parameters, fill them respecting the right order.
+
+| Control option | Description |<caption></caption>
+| RMS/peak (0/1) | The blanace between the RMS and peak envelope followers. RMS is generally better for subtle, musical compression and peak is better for heavier, fast compression and percussion. |<caption></caption>
+| Attack time (ms) | The attack time in milliseconds. |<caption></caption>
+| Release time (ms) | The release time in milliseconds. |<caption></caption>
+| Threshold level (dB) | The point at which the compressor will start to kick in. |<caption></caption>
+| Ratio (1:n) | The gain reduction ratio used when the signal level exceeds the threshold. 1 means no compression; higher values stronger compression. |<caption></caption>
+| Knee radius (dB) | The distance from the threshold where the knee curve starts. |<caption></caption>
+| Makeup gain (dB) | Controls the gain of the makeup input signal in dB's. |<caption></caption>
+| Amplitude (dB) | The level of the input signal, in decibels. |<caption></caption>
+| Gain reduction (dB) | The degree of gain reduction applied to the input signal, in decibels. |
+
+Other plugins can be found in [Steve Harris' LADSPA Plugin Documentation](http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html).
+
+#### Calf plugin
+
+For a more professional compressor, you can use the one developed by [Calf Studio Gear](https://calf-studio-gear.org/). Install [calf-ladspa](https://aur.archlinux.org/packages/calf-ladspa/) and edit the configuration as the following
+
+ `~/.config/pulse/default.pa` 
+```
+.include /etc/pulse/default.pa
+
+ set-default-sink your_card_sink_name
+
+ load-module module-ladspa-sink sink_name=calf_comp_x2 sink_master=your_card_sink_name plugin=veal label=Compressor control=,,,,,,,,,,
+ set-default-sink calf_comp_x2
+```
+
+The plugin has 11 control options. If you want to insert custom values, read the following table and do not forget to specify them in the right order.
+
+| Control option | Default | Min | Max | Type | Info |<caption></caption>
+| Bypass | 0 | 0 | 1 | Bool |<caption></caption>
+| Level in | 1 | 0.015625 | 64 | Float db |<caption></caption>
+| Threshold | 0.125 | 0.000976563 | 1 | Float dbFs | For example, to set -18 db, the right value is 10^(-18/20) = 0.158 |<caption></caption>
+| Ratio | 2 | 1 | 20 | Float |<caption></caption>
+| Attack | 20 | 0.01 | 2000 | Float ms |<caption></caption>
+| Release | 250 | 0.01 | 2000 | Float ms |<caption></caption>
+| Makeup | 1 | 1 | 64 | Float db |<caption></caption>
+| Knee | 2.828427125 | 1 | 8 | Float db |<caption></caption>
+| RMS/Peak | 0 | 0 | 1 | Bool | 0 = RMS; 1 = Peak |<caption></caption>
+| Stereo Link | 0 | 0 | 1 | Bool | 0 = Average; 1 = Max |<caption></caption>
+| Mix | 1 | 0 | 1 | Float | Percentage |<caption></caption>
+| To understand the meaning of every single option, read the [Calf Compressor Documentation](https://calf-studio-gear.org/doc/Compressor.html). |
 
 ## Applications
 

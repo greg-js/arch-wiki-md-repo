@@ -20,11 +20,12 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
     *   [1.1 Preventing data loss](#Preventing_data_loss)
 *   [2 Nonessentials](#Nonessentials)
 *   [3 Alternatives](#Alternatives)
-    *   [3.1 find alternatives](#find_alternatives)
-    *   [3.2 diff alternatives](#diff_alternatives)
-    *   [3.3 grep alternatives](#grep_alternatives)
-        *   [3.3.1 Code searchers](#Code_searchers)
-        *   [3.3.2 Interactive filters](#Interactive_filters)
+    *   [3.1 cp alternatives](#cp_alternatives)
+    *   [3.2 find alternatives](#find_alternatives)
+    *   [3.3 diff alternatives](#diff_alternatives)
+    *   [3.4 grep alternatives](#grep_alternatives)
+        *   [3.4.1 Code searchers](#Code_searchers)
+        *   [3.4.2 Interactive filters](#Interactive_filters)
 *   [4 See also](#See_also)
 
 ## Essentials
@@ -33,8 +34,8 @@ The following table lists some important utilities which Arch Linux users should
 
 | Package | Utility | Description | Documentation | Alternatives |
 | shell built-ins | cd | change directory | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
-| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | list directory | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
-| cat | concatenate files to stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | list directory | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [lsd](https://www.archlinux.org/packages/?name=lsd), [tree](https://www.archlinux.org/packages/?name=tree) |
+| cat | concatenate files to stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1), [bat](https://www.archlinux.org/packages/?name=bat) |
 | mkdir | make directory | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html) |
 | rmdir | remove empty directory | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rmdir-invocation.html) |
 | rm | remove files or directories | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html) | [shred](/index.php/Shred "Shred") |
@@ -94,6 +95,10 @@ The [moreutils](https://www.archlinux.org/packages/?name=moreutils) package prov
 ## Alternatives
 
 Alternatives to the core utilities in the [base](https://www.archlinux.org/groups/x86_64/base/) group are [BusyBox](/index.php/BusyBox "BusyBox"), the [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) and [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+
+### cp alternatives
+
+Using [rsync#As a cp/mv alternative](/index.php/Rsync#As_a_cp/mv_alternative "Rsync") allows you to resume a failed transfer, to show the transfer status, to skip already existing files and to make sure of the destination files integrity using checksums.
 
 ### find alternatives
 

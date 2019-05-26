@@ -34,7 +34,7 @@ Related articles
     *   [4.5 Checking connectivity](#Checking_connectivity)
     *   [4.6 DHCP client](#DHCP_client)
     *   [4.7 DNS management](#DNS_management)
-        *   [4.7.1 DNS caching and split DNS](#DNS_caching_and_split_DNS)
+        *   [4.7.1 DNS caching and conditional forwarding](#DNS_caching_and_conditional_forwarding)
             *   [4.7.1.1 dnsmasq](#dnsmasq)
                 *   [4.7.1.1.1 Custom configuration](#Custom_configuration)
                 *   [4.7.1.1.2 IPv6](#IPv6)
@@ -136,7 +136,7 @@ Support for other VPN types is based on a plug-in system. They are provided in t
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
-**Note:** To have fully functioning DNS resolution when using VPN, you should set up [split DNS](#DNS_caching_and_split_DNS).
+**Note:** To have fully functioning DNS resolution when using VPN, you should set up [conditional forwarding](#DNS_caching_and_conditional_forwarding).
 
 ## Usage
 
@@ -362,9 +362,9 @@ dhcp=dhclient
 
 NetworkManager's DNS management is described in the GNOME project's wiki page—[Projects/NetworkManager/DNS](https://wiki.gnome.org/Projects/NetworkManager/DNS).
 
-#### DNS caching and split DNS
+#### DNS caching and conditional forwarding
 
-NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or Unbound via dnssec-trigger. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
+NetworkManager has a plugin to enable DNS caching and conditional forwarding ([previously](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/143) called "split DNS" in NetworkManager's documentation) using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or Unbound via dnssec-trigger. The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
 
 ##### dnsmasq
 
@@ -427,7 +427,7 @@ dns=systemd-resolved
 
 If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for your local [DNS resolver](/index.php/DNS_resolver "DNS resolver"), set up the subscriber and [configure NetworkManager to use openresolv](#Use_openresolv).
 
-Because NetworkManager advertises a single "interface" to *resolvconf*, it is not possible to implement split DNS between to NetworkManager connections. See [NetworkManager issue 153](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
+Because NetworkManager advertises a single "interface" to *resolvconf*, it is not possible to implement conditional forwarding between to NetworkManager connections. See [NetworkManager issue 153](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
 
 This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[5]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
 
@@ -451,7 +451,7 @@ It can be configured to write it through [openresolv](#Use_openresolv) or to [no
 
 Using openresolv allows NetworkManager to coexists with other *resolvconf* supporting software or, for example, to run a local DNS caching and split-DNS resolver for which openresolv has a [subscriber](/index.php/Openresolv#Subscribers "Openresolv").
 
-**Note:** Split DNS is [not yet fully supported](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153) when using NetworkManager with openresolv.
+**Note:** Conditional forwarding is [not yet fully supported](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153) when using NetworkManager with openresolv.
 
 *NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
 
@@ -471,7 +471,7 @@ To stop NetworkManager from touching `/etc/resolv.conf`, set `main.dns=none` wit
 dns=none
 ```
 
-**Note:** See [#DNS caching and split DNS](#DNS_caching_and_split_DNS), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `main.dns=none`.
+**Note:** See [#DNS caching and conditional forwarding](#DNS_caching_and_conditional_forwarding), to configure NetworkManager using other DNS backends like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), instead of using `main.dns=none`.
 
 After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
 

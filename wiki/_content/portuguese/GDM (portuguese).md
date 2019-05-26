@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-01-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=563466) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=573816) na versão em inglês.
 
 Artigos relacionados
 
@@ -46,6 +46,7 @@ Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenc
     *   [4.5 GDM congela com o systemd](#GDM_congela_com_o_systemd)
     *   [4.6 Remoção incompleta do gdm](#Remoção_incompleta_do_gdm)
     *   [4.7 Suspensão automática do GDM (GNOME 3.28)](#Suspensão_automática_do_GDM_(GNOME_3.28))
+    *   [4.8 GDM ignora Wayland e usa X.Org por padrão](#GDM_ignora_Wayland_e_usa_X.Org_por_padrão)
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
@@ -108,18 +109,11 @@ Em seguida, você precisa criar um arquivo no diretório com o seguinte conteúd
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/gnome/shell/theme">
-    <file>calendar-arrow-left.svg</file>
-    <file>calendar-arrow-right.svg</file>
     <file>calendar-today.svg</file>
-    <file>checkbox.svg</file>
     <file>checkbox-focused.svg</file>
-    <file>checkbox-off.svg</file>
     <file>checkbox-off-focused.svg</file>
-    <file>close-window.svg</file>
-    <file>close-window-active.svg</file>
-    <file>close-window-hover.svg</file>
-    <file>corner-ripple-ltr.png</file>
-    <file>corner-ripple-rtl.png</file>
+    <file>checkbox-off.svg</file>
+    <file>checkbox.svg</file>
     <file>dash-placeholder.svg</file>
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
@@ -127,25 +121,19 @@ Em seguida, você precisa criar um arquivo no diretório com o seguinte conteúd
     <file>key-enter.svg</file>
     <file>key-hide.svg</file>
     <file>key-layout.svg</file>
-    <file>key-shift.svg</file>
     <file>key-shift-latched-uppercase.svg</file>
+    <file>key-shift.svg</file>
     <file>key-shift-uppercase.svg</file>
     <file>noise-texture.png</file>
     <file>**nome-do-arquivo**</file>
     <file>no-events.svg</file>
     <file>no-notifications.svg</file>
     <file>pad-osd.css</file>
-    <file>page-indicator-active.svg</file>
-    <file>page-indicator-checked.svg</file>
-    <file>page-indicator-hover.svg</file>
-    <file>page-indicator-inactive.svg</file>
     <file>process-working.svg</file>
     <file>toggle-off-hc.svg</file>
     <file>toggle-off-intl.svg</file>
-    <file>toggle-off-us.svg</file>
     <file>toggle-on-hc.svg</file>
     <file>toggle-on-intl.svg</file>
-    <file>toggle-on-us.svg</file>
   </gresource>
 </gresources>
 ```
@@ -584,6 +572,10 @@ Ou simplesmente desabilitar a suspensão automática (também execute o comando 
 $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 
 ```
+
+### GDM ignora Wayland e usa X.Org por padrão
+
+Wayland requer Kernel Mode Setting (KMS) em execução para funcionar, e em algumas máquinas o processo GDM inicia mais cedo que KMS, resultando em GDM ser incapaz de ver Wayland e trabalhando apenas com X.Org, você pode resolver este problema [iniciando o KMS mais cedo](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## Veja também
 

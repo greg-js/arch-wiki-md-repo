@@ -1,3 +1,7 @@
+Related articles
+
+*   [Silent boot](/index.php/Silent_boot "Silent boot")
+
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) is a project from Fedora providing a flicker-free graphical boot process. It relies on [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) to set the native resolution of the display as early as possible, then provides an eye-candy splash screen leading all the way up to the login manager.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

@@ -191,7 +191,7 @@ Display dimming: works
 Webcam: works
 Card reader: not tested | Can't set mute-key led light. |
 | HP ENVY 13-ad140ng | 2017.12 | Intel UHD Graphics 620 | *hdajackretask* should be used to enable the top speaker *0x14* override to *Internal Speaker*, *0x17* override to *Internal Speaker Back* | Not present | Intel Wireless 7265 | Yes | not tested | No modem installed | Webcam: works | Can't set mute-key led light. |
-| HP ProBook 450 G5 | 2018.03 | Intel Core i5-8250u, Intel HD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | not tested | ACPI: works
+| HP ProBook 450 G5 | 2018.03 | Intel Core i5-8250u, Intel HD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: not tested
 Battery: works

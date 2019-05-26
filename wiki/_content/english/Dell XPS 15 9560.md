@@ -208,7 +208,7 @@ It is a good idea to install a tool to tune common settings to save power. See [
 
 ### Disable/autosuspend of touchscreen
 
-Disabling the touchscreen can be done in the UEFI settings and results in significant power savings. If touchscreen is required it can be placed into autosuspend by [TLP](/index.php/TLP "TLP") by adding `04f3:24a1` to `USB_WHITELIST` in tlp config file. This will leave touchscreen enabled for usage and will consume much less battery.
+Disabling the touchscreen can be done in the UEFI settings and results in significant power savings. If touchscreen is required it can be placed into autosuspend by [TLP](/index.php/TLP "TLP") by adding `04f3:24a1` to `USB_WHITELIST` in tlp config file. The `USB_AUTOSUSPEND` must be set to 1 for this to have an effect. This will leave touchscreen enabled for usage and will consume much less battery.
 
 ### Enable NVME APST
 

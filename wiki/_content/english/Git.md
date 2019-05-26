@@ -218,9 +218,10 @@ $ git log -p *(-N)*
 
 ### Undoing things
 
-*   `git reset` - reset current HEAD to the specified state, see [git-reset(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-reset.1)
+*   `git reset` - reset current HEAD to the specified state. `git revert` - revert some existing commits. These, along with few others, are further explained at [undoing-changes](https://www.atlassian.com/git/tutorials/undoing-changes).
+*   For more complex modifications of history, such as `git commit --amend` and `git rebase` see, for example, [rewriting-history](https://www.atlassian.com/git/tutorials/rewriting-history).
 
-*   `git checkout` - to restore working tree files, see [git-checkout(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-checkout.1)
+It is highly advised no to use such rewrites for commits that were collaborated with other users. Or, at the very least, highly coordinate it in advance.
 
 ### Branching
 

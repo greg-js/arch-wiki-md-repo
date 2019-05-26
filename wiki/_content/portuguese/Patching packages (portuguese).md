@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Patching packages](/index.php/Patching_packages "Patching packages"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Patching_packages&diff=0&oldid=571094) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Patching packages](/index.php/Patching_packages "Patching packages"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Patching_packages&diff=0&oldid=571240) na versão em inglês.
 
 Artigos relacionados
 

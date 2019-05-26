@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team"). Data da última tradução: 2018-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Testing_Team&diff=0&oldid=552746) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Testing_Team&diff=0&oldid=571119) na versão em inglês.
 
 O Equipe de Teste do Arch é um grupo dentro da comunidade Arch responsável por garantir que os pacotes enviados para os repositórios [*testing*](/index.php/Testing_(Portugu%C3%AAs) "Testing (Português)") estejam funcionais. Isto inclui, certificar-se que o pacote é instalado corretamente, que não causa quebra com pacotes dos quais ele depende, entre outros.
 
@@ -11,6 +11,8 @@ Você pode se candidatar a se tornar um testador oficial do Arch entrando em con
 Se você receber uma conta do testador, poderá fazer login no [archweb](https://www.archlinux.org/devel) e ver uma aba de *signoffs*. A aba *signoffs* conterá uma lista de pacotes que estão atualmente nos repositórios de testes e precisam de pelo menos duas *assinaturas* (isto é, um carimbo confirmando a correção de um pacote).
 
 Você pode então testar os pacotes listados localmente e assiná-los se estiverem corretos, clicando no botão *signoff* de cada pacote.
+
+**Dica:** Você pode simplificar o processo assinando pacotes a partir da linha de comando com [signoff(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/signoff.1) do pacote [arch-signoff](https://www.archlinux.org/packages/?name=arch-signoff).
 
 ## Diretrizes
 

@@ -36,6 +36,7 @@
         *   [3.3.1 xbacklight](#xbacklight)
         *   [3.3.2 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
         *   [3.3.3 Built-in screen flickers or does not come on with Linux kernel 5.0.0 - 5.0.7](#Built-in_screen_flickers_or_does_not_come_on_with_Linux_kernel_5.0.0_-_5.0.7)
+        *   [3.3.4 Lock-ups when resuming from suspend with nvidia module](#Lock-ups_when_resuming_from_suspend_with_nvidia_module)
 *   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
     *   [4.1 Troubleshooting](#Troubleshooting_2)
         *   [4.1.1 ath10k module crashes after suspend](#ath10k_module_crashes_after_suspend)
@@ -311,6 +312,27 @@ Currently, it seems that there are three possible workarounds :
 *   Apply [Albert Astals Cid's patch](https://invent.kde.org/snippets/44) on Linux kernel 5.0.x (see [kernel Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System")).
 *   Install [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 *   upgrade to Linux 5.0.8 or higher
+
+#### Lock-ups when resuming from suspend with nvidia module
+
+If your system locks up every time you resume from suspend with the following two lines in dmesg:
+
+```
+   [   42.447364] pci 0000:01:00.0: Refused to change power state, currently in D3
+   [   46.896493] pci 0000:01:00.0: Refused to change power state, currently in D3
+
+```
+
+you need to do the following:
+
+Into /etc/default/grub
+
+```
+   GRUB_CMDLINE_LINUX="nouveau.blacklist=0 acpi_osi=! acpi_osi=\"Windows 2015\" acpi_backlight=vendor mem_sleep_default=deep"
+
+```
+
+This solved the lock-ups for me. (internal nvidia bug number: 2589324, [dell resolution](https://www.dell.com/community/XPS/XPS-15-9570-with-Ubuntu-18-04-1-not-resuming-after-suspend/m-p/7305094#M28897))
 
 ## Wifi and Bluetooth
 

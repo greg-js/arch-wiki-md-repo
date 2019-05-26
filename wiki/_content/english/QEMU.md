@@ -33,15 +33,16 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [5.1 Network](#Network)
     *   [5.2 QEMU's port forwarding](#QEMU's_port_forwarding)
     *   [5.3 QEMU's built-in SMB server](#QEMU's_built-in_SMB_server)
-    *   [5.4 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
-        *   [5.4.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
-        *   [5.4.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
-        *   [5.4.3 With kpartx](#With_kpartx)
-    *   [5.5 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
-    *   [5.6 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
-        *   [5.6.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
-        *   [5.6.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
-            *   [5.6.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
+    *   [5.4 Using filesystem passthrough and VirtFS/9p](#Using_filesystem_passthrough_and_VirtFS/9p)
+    *   [5.5 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
+        *   [5.5.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
+        *   [5.5.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
+        *   [5.5.3 With kpartx](#With_kpartx)
+    *   [5.6 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
+    *   [5.7 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
+        *   [5.7.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
+        *   [5.7.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
+            *   [5.7.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
 *   [6 Networking](#Networking)
     *   [6.1 Link-level address caveat](#Link-level_address_caveat)
     *   [6.2 User-mode networking](#User-mode_networking)
@@ -358,6 +359,15 @@ Then, in the guest, you will be able to access the shared directory on the host 
 *   If you are using sharing options multiple times like `-net user,smb=*shared_dir_path1* -net user,smb=*shared_dir_path2*` or `-net user,smb=*shared_dir_path1*,smb=*shared_dir_path2*` then it will share only the last defined one.
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
 *   If you cannot access the shared folder and the guest system is Windows 10 Enterprise or Education or Windows Server 2016, [enable guest access](https://support.microsoft.com/en-us/help/4046019).
+
+### Using filesystem passthrough and VirtFS/9p
+
+See the QEMU documentation here: [link](https://wiki.qemu.org/Documentation/9psetup) If you want to mount the partition automatically at guest boot, add the following line to `/etc/fstab`:
+
+```
+test_mount /mount/point            9p             trans=virtio    0       0
+
+```
 
 ### Mounting a partition inside a raw disk image
 

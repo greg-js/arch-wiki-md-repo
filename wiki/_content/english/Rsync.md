@@ -13,7 +13,7 @@ Related articles
 
 *   [1 Installation](#Installation)
     *   [1.1 Front-ends](#Front-ends)
-*   [2 As a cp alternative](#As_a_cp_alternative)
+*   [2 As cp/mv alternative](#As_cp/mv_alternative)
     *   [2.1 Trailing slash caveat](#Trailing_slash_caveat)
 *   [3 As a backup utility](#As_a_backup_utility)
     *   [3.1 Automated backup](#Automated_backup)
@@ -54,9 +54,9 @@ Related articles
 
 Other tools using rsync are [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) and [osync](https://aur.archlinux.org/packages/osync/).
 
-## As a cp alternative
+## As cp/mv alternative
 
-rsync can be used as an advanced alternative for the `cp` command, especially for copying larger files:
+rsync can be used as an advanced alternative for the `cp` or `mv` command, especially for copying larger files:
 
 ```
 $ rsync -P source destination
@@ -84,6 +84,17 @@ $ rsync host:source destination
 Network file transfers use the [SSH](/index.php/SSH "SSH") protocol by default and `host` can be a real hostname or a predefined profile/alias from `.ssh/config`.
 
 Whether transferring files locally or remotely, rsync first creates a file-list containing information (by default, it is the file size and last modification timestamp) which will then be used to determine if a file needs to be constructed. For each file to be constructed, a weak and strong checksum is found for all blocks such that each block is of length **S** bytes, non-overlapping, and has an offset which is divisible by **S**. Using this information a large file can be constructed using rsync without having to transfer the entire file. For a more detailed practical explanation and detailed mathematical explanation refer to [how rsync works](https://rsync.samba.org/how-rsync-works.html) and [the rsync algorithm](https://rsync.samba.org/tech_report/tech_report.html), respectively.
+
+To use sane defaults quickly, you could use some aliases:
+
+```
+function cpr() {
+  rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1 "$@"
+} 
+function mvr() {
+  rsync --archive -hh --partial --info=stats1 --info=progress2 --modify-window=1 --remove-source-files "$@"
+}
+```
 
 **Note:** The use of the term *checksum* is **not** interchangeable with the behavior of the `--checksum` option. The `--checksum` option affects the file skip heuristic used prior to any file being transferred. Independent of `--checksum`, a *checksum* is always used for the block-based file construction which is how rynsc transfers a file.
 

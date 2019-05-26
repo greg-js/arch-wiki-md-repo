@@ -66,6 +66,8 @@ Third-party clients:
 *   [Arch Linux: Recent package updates](https://t.me/archlinux_updates) - Channel with recent package updates in Arch Linux repositories.
 *   [Arch Linux News](https://t.me/archlinuxnews) - Channel with latest news from Arch web site *(not updated)*.
 *   [Planet Arch](https://t.me/archplanet) - Channel with latest posts from Planet Arch web site *(not updated)*.
+*   [Archlinux.fr News](https://t.me/archlinuxfr) - Channel with latest posts from Archlinux.fr forums and other stuff about Arch Linux.
+*   [Archlinux.fr Chat](https://t.me/archlinux_FR) - Unofficial group for discussing everything about Arch Linux for french users.
 
 ### Unread messages counter for Telegram Desktop
 

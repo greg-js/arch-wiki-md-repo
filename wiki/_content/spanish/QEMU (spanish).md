@@ -5,7 +5,7 @@ Artículos relacionados
 
 De acuerdo con [la wiki de QEMU](http://wiki.qemu.org/Main_Page), "QEMU es un emulador genérico y de código abierto de máquinas virtuales."
 
-Cuando se utiliza como un emulador de máquina, QEMU pede correr sistemas operativos y programas hechos para una máquina en particular (por ej. una placa ARM) en una máquina diferente (e.j. tu PC x86). Usando la traducción dinámica, se consigue un rendimiento muy bueno.
+Cuando se utiliza como un emulador de máquina, QEMU puede correr sistemas operativos y programas hechos para una máquina en particular (por ej. una placa ARM) en una máquina diferente (e.j. tu PC x86). Usando la traducción dinámica, se consigue un rendimiento muy bueno.
 
 QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php/KVM "KVM") para utilizar las extensiones del procesador para la virtualización. Cuando se utiliza como virtualizador, QEMU alcanza un performance cercano a el rendimiento nativo ejecutando el código de invitado directamente en el CPU host.
 

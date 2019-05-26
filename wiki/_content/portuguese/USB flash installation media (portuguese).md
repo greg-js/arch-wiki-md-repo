@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=571041) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=571973) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,6 +21,7 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
         *   [1.1.1 No GNU/Linux](#No_GNU/Linux)
             *   [1.1.1.1 Usando dd](#Usando_dd)
             *   [1.1.1.2 Usando etcher](#Usando_etcher)
+            *   [1.1.1.3 Usando Kindd](#Usando_Kindd)
         *   [1.1.2 No Windows](#No_Windows)
             *   [1.1.2.1 Usando Rufus](#Usando_Rufus)
             *   [1.1.2.2 Usando USBwriter](#Usando_USBwriter)
@@ -73,6 +74,10 @@ Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informa�
 ##### Usando etcher
 
 [Etcher](https://etcher.io/) é um aplicador de imagem do sistema operacional criado com node.js e Electron, capaz que o *flashing* de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos e garante que todos os bytes de dados foram escritos corretamente e muito mais. Há 6 pacotes relacionados no AUR.
+
+##### Usando Kindd
+
+[Kindd](https://github.com/LinArcX/Kindd) é um frontend gráfico baseado no Qt para dd. Está disponível como [kindd-git](https://aur.archlinux.org/packages/kindd-git/).
 
 #### No Windows
 

@@ -10,11 +10,13 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Plugins](#Plugins)
         *   [2.1.1 Nginx](#Nginx)
-            *   [2.1.1.1 Managing server blocks](#Managing_server_blocks)
+            *   [2.1.1.1 Managing Nginx server blocks](#Managing_Nginx_server_blocks)
+        *   [2.1.2 Apache](#Apache)
+            *   [2.1.2.1 Managing Apache virtual hosts](#Managing_Apache_virtual_hosts)
     *   [2.2 Webroot](#Webroot)
         *   [2.2.1 Mapping ACME-challenge requests](#Mapping_ACME-challenge_requests)
             *   [2.2.1.1 nginx](#nginx_2)
-            *   [2.2.1.2 Apache](#Apache)
+            *   [2.2.1.2 Apache](#Apache_2)
         *   [2.2.2 Obtain certificate(s)](#Obtain_certificate(s))
     *   [2.3 Manual](#Manual)
 *   [3 Advanced Configuration](#Advanced_Configuration)
@@ -40,11 +42,13 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 
 ### Plugins
 
-**Warning:** Configuration files may be rewritten when using a plugin. Creating a **backup** first is recommended.
+**Warning:** Configuration files may be rewritten to add settings and paths for certbot certificates when using a plugin. Creating a **backup** first is recommended.
 
 #### Nginx
 
-The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx") [server-blocks](/index.php/Nginx#Server_blocks "Nginx"):
+The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx"). This plugin will try to detect the configuration setup for each domain. The plugin adds extra configuration recommended for security, settings for certificate use, and paths to certbot certificates. See [certbot#Managing_Nginx_server_blocks](/index.php/Certbot#Managing_Nginx_server_blocks "Certbot") for examples.
+
+First time setup of [server-blocks](/index.php/Nginx#Server_blocks "Nginx"):
 
 ```
 # certbot --nginx
@@ -65,9 +69,9 @@ To change certificates without modifying nginx config files:
 
 ```
 
-See [Nginx on Arch Linux](https://certbot.eff.org/#arch-nginx) for more information and [#Automatic renewal](#Automatic_renewal) to keep installed certificates valid.
+See [Certbot-Nginx on Arch Linux](https://certbot.eff.org/#arch-nginx) for more information and [#Automatic renewal](#Automatic_renewal) to keep installed certificates valid.
 
-##### Managing server blocks
+##### Managing Nginx server blocks
 
 The following example may be used in each [server-blocks](/index.php/Nginx#Server_blocks "Nginx") when managing these files manually:
 
@@ -103,6 +107,62 @@ server {
 }
 
 ```
+
+#### Apache
+
+The plugin [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) provides an automatic configuration for [apache](/index.php/Apache_HTTP_Server "Apache HTTP Server"). This plugin will try to detect the configuration setup for each domain. The plugin adds extra configuration recommended for security, settings for certificate use, and paths to certbot certificates. See [certbot#Managing_Apache_virtual_hosts](/index.php/Certbot#Managing_Apache_virtual_hosts "Certbot") for examples.
+
+First time setup of [virtual hosts](/index.php/Apache_HTTP_Server#Virtual_hosts "Apache HTTP Server"):
+
+```
+# certbot --apache
+
+```
+
+To renew certificates:
+
+```
+# certbot renew
+
+```
+
+To change certificates without modifying apache config files:
+
+```
+# certbot --apache certonly
+
+```
+
+See [Certbot-Apache on Arch Linux](https://certbot.eff.org/#arch-apache) for more information and [#Automatic renewal](#Automatic_renewal) to keep installed certificates valid.
+
+##### Managing Apache virtual hosts
+
+The following example may be used in each [virtual hosts](/index.php/Apache_HTTP_Server#Virtual_hosts "Apache HTTP Server") when managing these files manually:
+
+ `/etc/httpd/conf/extra/001-certbot.conf` 
+```
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateFile /etc/letsencrypt/live/'domain'/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/'domain'/privkey.pem
+
+</VirtualHost>
+</IfModule>
+```
+ `/etc/httpd/conf/httpd.conf` 
+```
+  <IfModule mod_ssl.c>
+  Listen 443
+  </IfModule>
+
+  Include conf/extra/001-certbot.conf
+  ..
+
+```
+
+See [apache#TLS](/index.php/Apache#TLS "Apache") for more information.
 
 ### Webroot
 

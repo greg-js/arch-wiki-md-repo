@@ -128,11 +128,12 @@ As an alternative to creating an entire partition, a swap file offers the abilit
 
 #### Swap file creation
 
-For copy-on-write file systems like [Btrfs](/index.php/Btrfs "Btrfs"), first create a zero length file and set the `No_COW` attribute on it with [chattr](/index.php/Chattr "Chattr"):
+For copy-on-write file systems like [Btrfs](/index.php/Btrfs "Btrfs"), first create a zero length file, set the `No_COW` attribute on it with [chattr](/index.php/Chattr "Chattr"), and make sure compression is disabled:
 
 ```
 # truncate -s 0 /swapfile
 # chattr +C /swapfile
+# btrfs property set /swapfile compression none
 
 ```
 

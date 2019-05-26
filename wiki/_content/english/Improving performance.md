@@ -121,7 +121,7 @@ More Examples
 2.  Using an external enclosure to house the disk over USB/Firewire
 3.  Turn the device into a network storage device by connecting over tcp/ip
 
-Note also that if you have a 2 USB ports on the front of your machine, and 4 USB ports on the back, and you have 4 disks, it would probably be fastest to put 2 on front/2 on back or 3 on back/1 on front. This is because internally the front ports are likely a separate Root Hub than the back, meaning you can send twice as much data by using both than just 1\. Use the following commands to determine the various paths on your machine.
+Note also that if you have a 2 USB ports on the front of your machine, and 4 USB ports on the back, and you have 4 disks, it would probably be fastest to put 2 on front/2 on back than 3 on back/1 on front. This is because internally the front ports are likely a separate Root Hub than the back, meaning you can send twice as much data by using both than just 1\. Use the following commands to determine the various paths on your machine.
 
  `USB Device Tree`  `$ lsusb -t`  `PCI Device Tree`  `$ lspci -tv` 
 
@@ -368,7 +368,7 @@ Turning off CPU exploit mitigations against Spectre/Meltdown improves performanc
 To turn off most of the mitigations, add the following arguments to the kernel commandline.
 
 ```
-$ pti=off nospectre_v1 nospectre_v2 l1tf=off nospec_store_bypass_disable
+pti=off spectre_v2=off l1tf=off nospec_store_bypass_disable
 
 ```
 

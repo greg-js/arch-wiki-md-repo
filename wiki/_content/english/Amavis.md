@@ -34,7 +34,7 @@ In this setup it is assumed that you are using [ClamAV](/index.php/ClamAV "ClamA
 
 If your hostname is not a FQDN, you must set `$myhostname` and `$mydomain` accordingly in `/etc/amavisd/amavisd.conf`.
 
-You can enable [ClamAV](/index.php/ClamAV "ClamAV") support by commenting out the following lines (do not forget to put the same `clamd.sock` as in `/etc/clamav/clamd.sock`):
+You can enable [ClamAV](/index.php/ClamAV "ClamAV") support by commenting out the following lines (do not forget to put the same `clamd.sock` as in `/etc/clamav/clamd.conf`):
 
 ```
 # ### http://www.clamav.net/
@@ -69,7 +69,7 @@ After that, add `clamav` user to `amavis` group to avoid permission problems:
 
 Finally restart the services:
 
-*   [restart](/index.php/Restart "Restart") `clamd.service`.
+*   [restart](/index.php/Restart "Restart") `clamav-daemon.service`.
 *   [start](/index.php/Start "Start") `amavisd.service` and possibly [enable](/index.php/Enable "Enable") it.
 
 Check for errors with these commands:

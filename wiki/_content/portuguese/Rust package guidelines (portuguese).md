@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Rust package guidelines](/index.php/Rust_package_guidelines "Rust package guidelines"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Rust_package_guidelines&diff=0&oldid=563745) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Rust package guidelines](/index.php/Rust_package_guidelines "Rust package guidelines"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Rust_package_guidelines&diff=0&oldid=571223) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
@@ -59,11 +59,18 @@ A maioria dos projetos Rust fornecem uma forma simples de executar o conjunto de
 
 O Rust compila binários em `target/release` e pode simplesmente ser instalado em `/usr/bin`.
 
-**Nota:** Alguns pacotes podem instalar mais arquivos, como uma página man.
-
 ```
  package() {
    install -Dm 755 target/release/${pkgname} -t "${pkgdir}/usr/bin"
+ }
+
+```
+
+Alguns pacotes podem instalar mais arquivos, como uma página man, caso em que pode ser melhor usar `cargo`:
+
+```
+ package() {
+   cargo install --root "${pkgdir}"/usr --root "${srcdir}/${pkgname}-${pkgver}"
  }
 
 ```

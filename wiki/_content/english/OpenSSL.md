@@ -19,7 +19,8 @@ Related articles
     *   [3.1 Generate an RSA private key](#Generate_an_RSA_private_key)
     *   [3.2 Generate a certificate signing request](#Generate_a_certificate_signing_request)
     *   [3.3 Generate a self-signed certificate](#Generate_a_self-signed_certificate)
-    *   [3.4 Generate Diffie–Hellman parameters](#Generate_Diffie–Hellman_parameters)
+    *   [3.4 Generate a self-signed certificate with private key in a single command](#Generate_a_self-signed_certificate_with_private_key_in_a_single_command)
+    *   [3.5 Generate Diffie–Hellman parameters](#Generate_Diffie–Hellman_parameters)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "bad decrypt" while decrypting](#"bad_decrypt"_while_decrypting)
 *   [5 See also](#See_also)
@@ -78,6 +79,15 @@ $ openssl req -new -sha256 -key *private_key* -out *filename*
 
 ```
 $ openssl req -key *private_key* -x509 -new -days *days* -out *filename*
+
+```
+
+### Generate a self-signed certificate with private key in a single command
+
+You can combine the above command in OpenSSL into a single command which might be convenient in some cases:
+
+```
+ $ openssl req -x509 -newkey rsa:4096 -days *days* -keyout *key_filename* -out *cert_filename*
 
 ```
 

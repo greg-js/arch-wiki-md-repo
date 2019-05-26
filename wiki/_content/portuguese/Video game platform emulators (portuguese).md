@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). Data da última tradução: 2019-04-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Video_game_platform_emulators&diff=0&oldid=570647) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Video_game_platform_emulators&diff=0&oldid=573718) na versão em inglês.
 
 Um emulador é um programa que serve para replicar as funções de outra plataforma ou sistema, de modo a permitir que aplicativos e jogos sejam executados em ambientes para os quais não foram programados.
 
@@ -90,6 +90,14 @@ Um emulador é um programa que serve para replicar as funções de outra platafo
 *   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Emulador de Game Boy com Game Boy Advance, Game Boy Color e suporte a Super Game Boy.
 
 	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
+
+*   **XQEMU** — Um emulafor de Xbox original.
+
+	[http://xqemu.org/](http://xqemu.org/) || [xqemu-git](https://aur.archlinux.org/packages/xqemu-git/)
+
+*   **Yuzu** — Um emulador de código-aberto experimental de Nitendo Switch
+
+	[https://github.com/yuzu-emu/yuzu/](https://github.com/yuzu-emu/yuzu/) || [yuzu-git](https://aur.archlinux.org/packages/yuzu-git/)
 
 *   **ZSNES** — Emulador de Super Nitendo(SNES) altamente compatível.
 

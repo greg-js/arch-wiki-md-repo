@@ -69,11 +69,11 @@ A good number of new packages that enter the official repositories start in the 
 
 ## Getting started
 
-Users can search and download `PKGBUILD`s from the [AUR Web Interface](https://aur.archlinux.org). These `PKGBUILD`s can be built into installable packages using [makepkg](/index.php/Makepkg "Makepkg"), then installed using pacman.
+Users can search and download `PKGBUILD`s from the [AUR Web Interface](https://aur.archlinux.org). These `PKGBUILD`s can be built into installable packages using *makepkg*, then installed using *pacman*.
 
 *   Ensure the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group is installed in full (`pacman -S --needed base-devel`).
 *   Glance over the [#FAQ](#FAQ) for answers to the most common questions.
-*   You may wish to adjust `/etc/makepkg.conf` to optimize for your processor prior to building packages from the AUR. A significant improvement in compile times can be realized on systems with multi-core processors by adjusting the MAKEFLAGS variable. Users can also enable hardware-specific optimizations in GCC via the CFLAGS variable. See [makepkg](/index.php/Makepkg "Makepkg") for more information.
+*   You may wish to adjust `/etc/makepkg.conf` to optimize for your processor prior to building packages from the AUR. A significant improvement in compile times can be realized on systems with multi-core processors by adjusting the `MAKEFLAGS` variable. Users can also enable hardware-specific optimizations in [GCC](/index.php/GCC "GCC") via the `CFLAGS` variable. See [makepkg](/index.php/Makepkg "Makepkg") for more information.
 
 It is also possible to interact with the AUR through SSH: type `ssh aur@aur.archlinux.org help` for a list of available commands.
 
@@ -97,7 +97,7 @@ Installing packages from the AUR is a relatively simple process. Essentially:
 2.  Verify that the `PKGBUILD` and accompanying files are not malicious or untrustworthy.
 3.  Run `makepkg -si` in the directory where the files are saved. This will download the code, resolve the dependencies with [pacman](/index.php/Pacman "Pacman"), compile it, package it, and install the package.
 
-**Note:** The AUR is unsupported, so any packages you install are *your responsibility* to update, not pacman's. If packages in the official repositories are updated, you will need to rebuild any AUR packages that depend on those libraries.
+**Note:** It is *your responsibility* to track AUR package updates; *pacman* only tracks [binary repositories](/index.php/Pacman#Repositories_and_mirrors "Pacman"). When packages in the official repositories are updated, you will need to rebuild any AUR packages that depend on them.
 
 ### Prerequisites
 
@@ -167,7 +167,7 @@ $ makepkg -si
 ```
 
 *   `-s`/`--syncdeps` automatically resolves and installs any dependencies with [pacman](/index.php/Pacman "Pacman") before building. If the package depends on other AUR packages, you will need to manually install them first.
-*   `-i`/`--install` installs the package if it is built successfully. Alternatively the built package can be installed with `pacman -U *package*.pkg.tar.xz`.
+*   `-i`/`--install` installs the package if it is built successfully. Alternatively the built package can be installed with `pacman -U *package_name*.pkg.tar.xz`.
 
 Other useful flags are
 
@@ -194,14 +194,14 @@ Comments allow users to provide suggestions or respond to updates and maintainer
 
 ### Voting for packages
 
-One of the easiest activities for **all** Arch users is to browse the AUR and vote for their favourite packages. All packages are eligible for adoption by a TU for inclusion in the [community repository](/index.php/Community_repository "Community repository"), and the vote count is one of the considerations in that [process](#Promoting_packages_to_the_comunity_repository); it is in everyone's interest to vote!
+One of the easiest activities for **all** Arch users is to browse the AUR and vote for their favourite packages. All packages are eligible for adoption by a TU for inclusion in the [community repository](/index.php/Community_repository "Community repository"), and the vote count is one of the considerations in that [process](#Promoting_packages_to_the_community_repository); it is in everyone's interest to vote!
 
 While logged in, on the AUR page for a package you may click "Vote for this package" under "Package Actions" on the right. It is also possible to vote from the commandline with [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/), [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/), or [aurvote-utils](https://aur.archlinux.org/packages/aurvote-utils/).
 
 Alternatively, if you have set up [ssh authentication](#Authentication), you can directly vote from the command line using your ssh key and avoid having to save or type in your AUR password.
 
 ```
-ssh aur@aur.archlinux.org vote <PACKAGE_NAME>
+ssh aur@aur.archlinux.org vote *package_name*
 
 ```
 
@@ -215,7 +215,7 @@ While logged in, on the AUR page for a package you may click "Flag package as ou
 
 **Note:** Please see [Talk:Arch User Repository#Scope of the AUR4 section](https://wiki.archlinux.org/index.php?title=Talk:Arch_User_Repository&oldid=484964#Scope_of_the_AUR4_section) before making changes to this section.
 
-Users can **share** `PKGBUILD`s using the Arch User Repository. It does not contain any binary packages but allows users to upload `PKGBUILD`s that can be downloaded by others. These `PKGBUILD`s are completely unofficial and have not been thoroughly vetted, so they should be used at your own risk.
+Users can share `PKGBUILD`s using the Arch User Repository. It does not contain any binary packages but allows users to upload `PKGBUILD`s that can be downloaded by others. These `PKGBUILD`s are completely unofficial and have not been thoroughly vetted, so they should be used at your own risk.
 
 ### Submitting packages
 
@@ -233,7 +233,7 @@ When submitting a package to the AUR, observe the following rules:
 
 	The only exception to this is for packages with *extra* features enabled and/or patches in comparison to the official ones, in which case `*pkgbase*` should be different to express that. For example, a package for GNU screen containing the sidebar patch could be named `screen-sidebar`. Additionally the `provides=('screen')` array should be used in order to avoid conflicts with the official package.
 
-*   **Check the AUR** if the package **already exists**. If it is currently maintained, changes can be submitted in a comment for the maintainer's attention. If it is unmaintained or the maintainer is unresponsive, the package can be adopted and updated as required. Do not create duplicate packages.
+*   Do not create duplicate packages. [Check the AUR](#Getting_started) if the package already exists. If it is currently maintained, changes can be submitted in a comment for the maintainer's attention. If it is unmaintained or the maintainer is unresponsive, the package can be adopted and updated as required.
 
 *   Make sure the package you want to upload is **useful**. Will anyone else want to use this package? Is it extremely specialized? If more than a few people would find this package useful, it is appropriate for submission.
 
@@ -243,7 +243,7 @@ When submitting a package to the AUR, observe the following rules:
 
 *   Submitting binaries *should be avoided* if the sources are available. The AUR should not contain binary tarballs created by makepkg, nor should it contain their filelists. Consult the [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines#Package_naming "Nonfree applications package guidelines") regarding packages that redistribute prebuilt [deliverables](https://en.wikipedia.org/wiki/Deliverable "wikipedia:Deliverable") and the [Java package guidelines](/index.php/Java_package_guidelines#Java_packaging_on_Arch_Linux "Java package guidelines") regarding packages that redistribute java binaries.
 
-*   Please add a **comment line** to the top of the `PKGBUILD` file which contains information about the current **maintainers** and previous **contributors**, respecting the following format. Remember to disguise your email to protect against spam. Additional or unneeded lines are facultative.
+*   Add a [comment line](http://man7.org/linux/man-pages/man1/bash.1.html#COMMENTS) to the top of the `PKGBUILD` file which contains information about the current **maintainers** and previous **contributors**, respecting the following format. Remember to disguise your email to protect against spam. Additional or unneeded lines are facultative.
 
 	If you are assuming the role of maintainer for an existing `PKGBUILD`, add your name to the top like this
 
@@ -252,7 +252,7 @@ When submitting a package to the AUR, observe the following rules:
 
 ```
 
-	If there were previous maintainers, put them as contributors. The same applies for the original submitter if this is not you. If you are a co-maintainer, add the names of the other current maintainers as well.
+	If there were previous maintainers, list them as contributors. The same applies for the original submitter if this is not you. If you are a co-maintainer, add the names of the other current maintainers as well.
 
 ```
 # Maintainer: Your name <address at domain dot tld>
@@ -335,7 +335,7 @@ $ git push
 *   Check for feedback and comments from other users and try to incorporate any improvements they suggest; consider it a learning process!
 *   Please do not leave a comment containing the version number every time you update the package. This keeps the comment section usable for valuable content mentioned above.
 *   Please do not just submit and forget about packages! It is the maintainer's job to maintain the package by checking for updates and improving the `PKGBUILD`.
-*   If you do not want to continue to maintain the package for some reason, `disown` the package using the AUR web interface and/or post a message to the AUR Mailing List. If all maintainers of an AUR package disown it, it will become an ["orphaned"](https://aur.archlinux.org/packages/?SB=n&do_Orphans=Orphans) package.
+*   If you do not want to continue to maintain the package for some reason, disown the package by clicking "Disown package" under "Package Actions" on the right of its AUR page and/or post a message to the AUR Mailing List. If all maintainers of an AUR package disown it, it will become an ["orphaned"](https://aur.archlinux.org/packages/?SB=n&do_Orphans=Orphans) package.
 
 ### Other requests
 
@@ -383,13 +383,13 @@ If you are having trouble building a package, read its [PKGBUILD](/index.php/PKG
 
 To avoid problems caused by your particular system configuration, build packages in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). If the build process still fails in a clean chroot, the issue is probably with the `PKGBUILD`.
 
-See [Creating packages#Checking package sanity](/index.php/Creating_packages#Checking_package_sanity "Creating packages") about using `namcap` to debug packages. If you would like to have a `PKGBUILD` reviewed, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members, or the [Creating & Modifying Packages forum](https://bbs.archlinux.org/viewforum.php?id=4). You could also seek help in the [IRC channel](/index.php/IRC_channel "IRC channel") [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) on [Freenode](https://freenode.net/).
+See [Creating packages#Checking package sanity](/index.php/Creating_packages#Checking_package_sanity "Creating packages") about using *namcap* to debug packages. If you would like to have a `PKGBUILD` reviewed, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members, or the [Creating & Modifying Packages forum](https://bbs.archlinux.org/viewforum.php?id=4). You could also seek help in the [IRC channel](/index.php/IRC_channel "IRC channel") [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) on [Freenode](https://freenode.net/).
 
 Avoid common pitfalls:
 
 1.  Ensure your build environment is up-to-date by [upgrading](/index.php/Pacman#Upgrading_packages "Pacman") before building anything.
 2.  Ensure you have both [base](https://www.archlinux.org/groups/x86_64/base/) and [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups installed.
-3.  Use the `-s` option with `makepkg` to check and install all the dependencies needed before starting the build process.
+3.  Use the `-s` option with *makepkg* to check and install all the dependencies needed before starting the build process.
 4.  Try the default [makepkg configuration](https://git.archlinux.org/svntogit/packages.git/tree/trunk/makepkg.conf?h=packages/pacman).
 5.  See [Makepkg#Troubleshooting](/index.php/Makepkg#Troubleshooting "Makepkg") for common issues.
 
@@ -451,7 +451,7 @@ See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times
 
 ### What is the difference between foo and foo-git packages?
 
-Many AUR packages come in "stable" release and "unstable" development versions. Development packages usually have a [suffix](/index.php/VCS_package_guidelines#Guidelines "VCS package guidelines") denoting their [Version Control System](/index.php/Version_Control_System "Version Control System") and are not intended for regular use, but may offer new features or bugfixes. Because these packages only download the latest available source when you execute `makepkg`, their `pkgver()` in the AUR does not reflect upstream changes. Likewise, these packages cannot perform an authenticity checksum on any [VCS source](/index.php/VCS_package_guidelines#VCS_sources "VCS package guidelines").
+Many AUR packages come in "stable" release and "unstable" development versions. Development packages usually have a [suffix](/index.php/VCS_package_guidelines#Guidelines "VCS package guidelines") denoting their [Version Control System](/index.php/Version_Control_System "Version Control System") and are not intended for regular use, but may offer new features or bugfixes. Because these packages only download the latest available source when you execute *makepkg*, their `pkgver` in the AUR does not reflect upstream changes. Likewise, these packages cannot perform an authenticity checksum on any [VCS source](/index.php/VCS_package_guidelines#VCS_sources "VCS package guidelines").
 
 See also [System maintenance#Use proven software packages](/index.php/System_maintenance#Use_proven_software_packages "System maintenance").
 
@@ -475,7 +475,7 @@ $ comm -23 <(pacman -Qqm | sort) <(curl [https://aur.archlinux.org/packages.gz](
 ### How can I obtain a list of all AUR packages?
 
 *   [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz)
-*   Use `aurpkglist` from [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+*   Use *aurpkglist* from [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
 
 ## See also
 

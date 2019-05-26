@@ -1,6 +1,10 @@
 [fzf](https://github.com/junegunn/fzf) is a general-purpose command-line fuzzy finder.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -9,6 +13,8 @@
         *   [2.1.2 zsh](#zsh)
         *   [2.1.3 fish](#fish)
     *   [2.2 Vim](#Vim)
+*   [3 Arch specific fzf uses](#Arch_specific_fzf_uses)
+    *   [3.1 Pacman](#Pacman)
 
 ## Installation
 
@@ -59,3 +65,14 @@ fzf completion in fish can be enabled with custom functions: [https://github.com
 ### Vim
 
 The basic [Vim](/index.php/Vim "Vim") plugin is already included within the package and installed to Vim's global plugin directory. Thus, you don't need to add anything to your `.vimrc` to be able to use it. It only provides the FZF command, though. There is an additional Vim plugin made by the author of fzf that defines some convenience functions, see [https://github.com/junegunn/fzf.vim](https://github.com/junegunn/fzf.vim).
+
+## Arch specific fzf uses
+
+### Pacman
+
+Try this to fuzzy-search through all available packages, with package info shown in a preview window:
+
+```
+pacman -Sl | cut -d' ' -f2 | fzf -m --preview 'pacman -Si {1}'
+
+```

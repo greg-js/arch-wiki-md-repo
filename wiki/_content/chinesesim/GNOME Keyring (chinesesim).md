@@ -15,11 +15,11 @@
         *   [3.1.1 自动登陆](#自动登陆)
         *   [3.1.2 控制台登陆](#控制台登陆)
             *   [3.1.2.1 用PAM的方法](#用PAM的方法)
-            *   [3.1.2.2 用xinitrc的方法](#用xinitrc的方法)
-    *   [3.2 有可视化管理软件的情况下](#有可视化管理软件的情况下)
-*   [4 SSH钥匙](#SSH钥匙)
+            *   [3.1.2.2 用xinitrc启动](#用xinitrc启动)
+    *   [3.2 使用显示管理器](#使用显示管理器)
+*   [4 SSH密钥](#SSH密钥)
     *   [4.1 Start SSH and Secrets components of keyring daemon](#Start_SSH_and_Secrets_components_of_keyring_daemon)
-    *   [4.2 禁止钥匙环的守护进程组件](#禁止钥匙环的守护进程组件)
+    *   [4.2 禁用钥匙环的守护进程组件](#禁用钥匙环的守护进程组件)
 *   [5 提示与小技巧](#提示与小技巧)
     *   [5.1 软件中的插件](#软件中的插件)
     *   [5.2 去除密码](#去除密码)
@@ -27,7 +27,7 @@
     *   [5.4 GnuPG的插件](#GnuPG的插件)
 *   [6 故障排除](#故障排除)
     *   [6.1 密码没被记住](#密码没被记住)
-    *   [6.2 重置钥匙环](#重置钥匙环)
+    *   [6.2 重置密钥环](#重置密钥环)
 *   [7 参见](#参见)
 
 ## 安装
@@ -60,19 +60,17 @@
 
 #### 自动登陆
 
-If you are using automatic login, then you can disable the keyring manager by setting a blank password on the login keyring.
+如果你在用自动登陆，则需要把 login keyring 的密码设成空。
 
-**Note:** The passwords are stored unencrypted in this case.
+**注意:** 所有密码会明文保存。
 
 #### 控制台登陆
 
-When using console-based login, the keyring daemon can be started by either [PAM](/index.php/PAM "PAM") or [xinitrc](/index.php/Xinitrc "Xinitrc"). PAM can also unlock the keyring automatically at login.
+用控制台（tty）登陆的时候，可以用 [PAM](/index.php/PAM "PAM") 或 [xinitrc](/index.php/Xinitrc "Xinitrc") 启动密钥环守护进程。如果用 PAM 的话它会在登陆时自动解锁密钥环。
 
 ##### 用PAM的方法
 
-Start the gnome-keyring-daemon from `/etc/pam.d/login`:
-
-Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `session optional pam_gnome_keyring.so auto_start` at the end of the `session` section.
+编辑 `/etc/pam.d/login` 文件，在 `auth` 部分的末尾添加 `auth optional pam_gnome_keyring.so`，在 `session` 末尾添加 `session optional pam_gnome_keyring.so auto_start`。
 
  `/etc/pam.d/login` 
 ```
@@ -81,15 +79,15 @@ Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `s
 auth       required     pam_securetty.so
 auth       requisite    pam_nologin.so
 auth       include      system-local-login
-auth       optional     pam_gnome_keyring.so
+**auth       optional     pam_gnome_keyring.so**
 account    include      system-local-login
 session    include      system-local-login
-session    optional     pam_gnome_keyring.so auto_start
+**session    optional     pam_gnome_keyring.so auto_start**
 ```
 
-For [SDDM](/index.php/SDDM "SDDM"), edit instead the configuration file `/etc/pam.d/sddm`.
+如果用的是 [SDDM](/index.php/SDDM "SDDM"), 编辑 `/etc/pam.d/sddm`.
 
-Next, for [GDM](/index.php/GDM "GDM"), add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
+对 [GDM](/index.php/GDM "GDM"), 在 `/etc/pam.d/passwd` 文件的最后添加 `password optional pam_gnome_keyring.so`：
 
  `/etc/pam.d/passwd` 
 ```
@@ -98,28 +96,27 @@ Next, for [GDM](/index.php/GDM "GDM"), add `password optional pam_gnome_keyring.
 #password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
 #password	required	pam_unix.so sha512 shadow use_authtok
 password	required	pam_unix.so sha512 shadow nullok
-password	optional	pam_gnome_keyring.so
+**password	optional	pam_gnome_keyring.so**
 ```
 
-**Note:**
+**注意:**
 
-*   To use automatic unlocking, the same password for the user account and the keyring have to be set.
-*   You will still need the code in `~/.xinitrc` below in order to export the environment variables required.
+*   为了自动解锁，密钥环的密码需要和帐户登录密码一样。
+*   依然需要按下面的章节的指示用 `~/.xinitrc` 设置环境变量。
 
-##### 用xinitrc的方法
+##### 用xinitrc启动
 
-Start the gnome-keyring-daemon from [xinitrc](/index.php/Xinitrc "Xinitrc"):
+把下面的代码添加到 `~/.xinitrc` 里：
 
  `~/.xinitrc` 
 ```
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
-
 ```
 
-See [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") for use in Xfce.
+如果用的是 Xfce，参考 [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce")。
 
-If using [i3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error:
+如果用 [i3](/index.php/I3 "I3") 而且 ssh 没有弹出输入密码的提示框而且报错：
 
 ```
 sign_and_send_pubkey: signing failed: agent refused operation
@@ -127,7 +124,7 @@ Permission denied (publickey).
 
 ```
 
-then you need to add the DISPLAY environment variable to dbus-daemon via the .xinitrc:
+那你需要在 `~/.xinitrc` 里添加下面的代码来给 dbus-daemon 设置 DISPLAY 环境变量：
 
  `~/.xinitrc` 
 ```
@@ -137,23 +134,22 @@ export SSH_AUTH_SOCK
 
 ...
 exec i3
-
 ```
 
-**Note:** If you use a different location for `~/.Xauthority` (`XAUTHORITY`) then you will have to also include this environment variable in the aforementioned `dbus-update-activation-environment` command.
+**注意:** 如果你的 `.Xauthority` 不在默认位置 `~/.Xauthority`，那你还得在 `dbus-update-activation-environment` 的 `DISPLAY` 后面添上 `XAUTHORITY`。
 
-### 有可视化管理软件的情况下
+### 使用显示管理器
 
-When using a display manager, the keyring works out of the box for most cases. The following display managers automatically unlock the keyring once you log in:
+如果用显示管理器（display manager），基本上不需要进行配置。下面这些显示管理器会在登录时自动解锁密钥环：
 
-*   [GDM](/index.php/GDM "GDM")
-*   [LightDM](/index.php/LightDM "LightDM")
-*   [LXDM](/index.php/LXDM "LXDM")
-*   [SDDM](/index.php/SDDM "SDDM")
+*   [GDM (简体中文)](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)")
+*   [LightDM (简体中文)](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LightDM (简体中文)")
+*   [LXDM (简体中文)](/index.php/LXDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDM (简体中文)")
+*   [SDDM (简体中文)](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)")
 
-For GDM and LightDM, note the keyring [must be](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) named *login* to be automatically unlocked.
+对于 GDM 和 LightDM, 密钥环 [必须](https://wiki.gnome.org/Projects/GnomeKeyring/Pam) 被命名为 *login* 来实现自动解锁。
 
-To enable the keyring for applications run through the terminal, such as SSH, add the following to your `~/.bash_profile`, `~/.zshenv`, or similar:
+如果要让在终端运行的程序也能访问密钥环（比如SSH），请添加下面的内容到 `~/.bash_profile`、`~/.zshenv`或者类似的环境变量声明文件里:
 
  `~/.bash_profile` 
 ```
@@ -163,9 +159,9 @@ if [ -n "$DESKTOP_SESSION" ];then
 fi
 ```
 
-## SSH钥匙
+## SSH密钥
 
-To add your SSH key:
+添加密钥:
 
 ```
 $ ssh-add ~/.ssh/id_rsa
@@ -173,34 +169,34 @@ Enter passphrase for /home/mith/.ssh/id_rsa:
 
 ```
 
-To list automatically loaded keys:
+列出自动加载的密钥:
 
 ```
 $ ssh-add -L
 
 ```
 
-To disable all keys:
+禁用全部密钥:
 
 ```
 $ ssh-add -D
 
 ```
 
-Now when you connect to a server, the key will be found and a dialog will popup asking you for the passphrase. It has an option to automatically unlock the key when you log in. If you check this, you will not need to enter your passphrase again!
+导入密钥之后，ssh连接远程服务器的时候，会弹出一个对话框要你输入这个密钥的密码。如果你勾上登录时自动解锁密钥，那以后ssh用密钥的时候就不需要再输密码。
 
-Alternatively, to permanently save the a passphrase in the keyring, use ssh-askpass from package [seahorse](https://www.archlinux.org/packages/?name=seahorse):
-
-```
-/usr/lib/seahorse/ssh-askpass my_key
+或者如果要永久储存密码到密钥环里的话，用 [seahorse](https://www.archlinux.org/packages/?name=seahorse) 提供的 `ssh-askpass` 命令：
 
 ```
+/usr/lib/seahorse/ssh-askpass *my_key*
 
-**Note:** You have to have the corresponding `.pub` file in the same directory as the private key (`~/.ssh/id_rsa.pub` in the example). Also, make sure that the public key is the file name of the private key plus `.pub` (for example, `my_key.pub`).
+```
+
+**注意:** 你需要把对应的 `.pub` （公钥文件）放到和私钥相同的目录里 (例子里公钥是`~/.ssh/id_rsa.pub`)，而且公钥文件的全名应该是私钥文件的名字加上扩展名 `.pub`。
 
 ### Start SSH and Secrets components of keyring daemon
 
-If you are starting Gnome Keyring with a display manager or the Pam method described above and you are NOT using Gnome, Unity or Mate as your desktop you may find that the SSH and Secrets components are not being started automatically. You can fix this by copying the desktop files gnome-keyring-ssh.desktop and gnome-keyring-secrets.desktop from /etc/xdg/autostart/ to ~/.config/autostart/ and deleting the OnlyShowIn line.
+如果你用显示管理器或者PAM启动了 Gnome Keyring 但是你的桌面不是 Gnome, Unity or Mate，SSH 和 Secrets 组件可能不会自动启动。所以你需要把 `gnome-keyring-ssh.desktop` 和 `gnome-keyring-secrets.desktop` 从 `/etc/xdg/autostart/` 里复制到 `~/.config/autostart/`，而且删除文件里面的 `OnlyShowIn`。下面是例子
 
 ```
 $ cp /etc/xdg/autostart/{gnome-keyring-secrets.desktop,gnome-keyring-ssh.desktop} ~/.config/autostart/
@@ -209,11 +205,11 @@ $ sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
 
 ```
 
-### 禁止钥匙环的守护进程组件
+### 禁用钥匙环的守护进程组件
 
-If you wish to run an alternative SSH agent (e.g. [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys") or [gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG"), you need to disable the `ssh` component of GNOME Keyring. To do so in an account-local way, copy `/etc/xdg/autostart/gnome-keyring-ssh.desktop` to `~/.config/autostart` and then append the line `Hidden=true` to the copied file. Then log out.
+如果你想要用别的 SSH 客户端，比如[ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys")、[gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG")，你需要禁用 GNOME Keyring的 `ssh` 组件。如果只想对某个用户做这种更改，复制 `/etc/xdg/autostart/gnome-keyring-ssh.desktop` 到 `~/.config/autostart` 然后往 `~/.config/autostart/gnome-keyring-ssh.desktop`里面添加 `Hidden=true`。然后重新登录。
 
-**Note:** In case you use [GNOME](/index.php/GNOME "GNOME") 3.24 or older on [Wayland](/index.php/Wayland "Wayland"), gnome-shell will overwrite `SSH_AUTH_SOCK` to point to gnome-keyring regardless if it is running or not. To prevent this, you need to set the environment variable GSM_SKIP_SSH_AGENT_WORKAROUND before gnome-shell is started. One way to do this is to add the line `GSM_SKIP_SSH_AGENT_WORKAROUND DEFAULT=1` to `~/.pam_environment`.
+**注意:** 如果你用的是基于 [Wayland](/index.php/Wayland "Wayland") 的 [GNOME](/index.php/GNOME "GNOME") 3.24 或者更老的版本，gnome-shell 会让 `SSH_AUTH_SOCK` 指向 gnome-keyring（无论它有没有运行）。为了阻止这个，你需要在 gnome-shell 启动之前设置 `GSM_SKIP_SSH_AGENT_WORKAROUND` 环境变量，比如把 `GSM_SKIP_SSH_AGENT_WORKAROUND DEFAULT=1` 添加到 `~/.pam_environment`。
 
 ## 提示与小技巧
 
@@ -228,34 +224,30 @@ gnome-keyring-daemon -r -d
 
 ```
 
-This command starts gnome-keyring-daemon, shutting down previously running instances.
+这个命令会启动新的 gnome keyring 守护进程并把之前运行的 gnome keyring 都关掉。
 
 ### Git的插件
 
-The GNOME keyring is useful in conjuction with [Git](/index.php/Git "Git") when you are pushing over HTTPS.
+如果你用 HTTPS 来 push [Git](/index.php/Git "Git")，GNOME keyring 很有用。
 
-[Install](/index.php/Install "Install") the [libsecret](https://www.archlinux.org/packages/?name=libsecret) package.
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [libsecret](https://www.archlinux.org/packages/?name=libsecret)。
 
-Set Git up to use the helper:
+配置 Git 使用 gnome kerying：
 
 ```
 $ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 ```
 
-Next time you do a *git push*, you are asked to unlock your keyring, if not unlocked already.
+下一次 *git push* 的时候如果你没有解锁密钥环，它会提示你解锁。
 
 ### GnuPG的插件
 
-Several applications which use GnuPG require a `pinentry-program` to be set. Set the following to use Gnome 3 pinentry for Gnome Keyring to manage passphrase prompts.
+某些使用 GnuPG 的程序要求指定 `pinentry-program`。 在 `~/.gnupg/gpg-agent.conf` 里添加以下内容来让 Gnome 3 pinentry for Gnome Keyring 去管理密码弹窗（passphrase prompts）。
 
- `~/.gnupg/gpg-agent.conf` 
-```
-pinentry-program /usr/bin/pinentry-gnome3
+ `~/.gnupg/gpg-agent.conf`  `pinentry-program /usr/bin/pinentry-gnome3` 
 
-```
-
-Another option is to [force loopback for GPG](/index.php/GnuPG#Unattended_passphrase "GnuPG") which should allow the passphrase to be entered in the application.
+或者可以使用 [force loopback for GPG](/index.php/GnuPG#Unattended_passphrase "GnuPG") 来实现在应用内输入密码。
 
 ## 故障排除
 
@@ -265,11 +257,13 @@ Another option is to [force loopback for GPG](/index.php/GnuPG#Unattended_passph
 
 确保 [seahorse](https://www.archlinux.org/packages/?name=seahorse) 包已经 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")了, 打开它 (系统设置中的"密码和密钥") 并且选中“视图” > “根据钥匙环”。 如果在左边的一竖排中没看到钥匙环 (一个锁一样的图标)， 打开“文件” > “新建” > “密码钥匙环”，然后取一个名字，你可能会被要求输入一个密码。如果你没有给钥匙环密码，钥匙环将会自动解锁，即使使用自动登陆，密码也不会被安全保存。最后，右键你创建的钥匙环并选择“设为默认”。
 
-### 重置钥匙环
+### 重置密钥环
 
-If you get the error "The password you use to login to your computer no longer matches that of your login keyring", you can simply reset your gnome keyring.
+如果报错 "The password you use to login to your computer no longer matches that of your login keyring", 你可能要重置密钥环。
 
-Remove "login.keyring" and "user.keystore" from */home/{username}/.local/share/keyrings/*. After removing the files, simply log out and log in again. Obviously, this will remove your saved keys.
+**警告:** 密钥环里的所有密码都会丢失。
+
+删掉 `~/.local/share/keyrings/` 里的 "login.keyring" and "user.keystore"，然后重新登录。
 
 ## 参见
 

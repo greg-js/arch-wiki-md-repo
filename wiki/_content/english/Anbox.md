@@ -2,30 +2,25 @@ Anbox is a free and open-source compatibility layer that aims to allow mobile ap
 
 ## Installation
 
-[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image](https://aur.archlinux.org/packages/anbox-image/) (or [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/) if you want to include Google's Apps and houdini), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/).
+[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image](https://aur.archlinux.org/packages/anbox-image/) (or [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/) if you want to include Google's Apps and houdini), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/))
+
+On recent ^5.1 kernels you need to apply a patch [[1]](https://aur.archlinux.org/pkgbase/anbox-git/#comment-694481) to the PKGBUILD of [anbox-module-dkms-git](https://aur.archlinux.org/packages/anbox-module-dkms-git/) in order to successfully compile the required binder module.
 
 [Start/enable](/index.php/Start/enable "Start/enable") the following services:
 
-*   `systemd-resolved.service` for internet to work in apps
-*   `systemd-networkd.service` for internet to work in apps
 *   `anbox-container-manager.service`
 
-[Edit](/index.php/Edit "Edit") config file for anbox-session-manger:
-
- `/etc/systemd/user/anbox-session-manager.service.d/host_driver.conf` 
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/anbox session-manager --gles-driver=host
-```
-
-login in **normal** user to launch user service and enable network bridge:
+If you don't want to reboot your computer to enable the required DKMS modules, you can load them manually:
 
 ```
-$ systemctl --user start anbox-session-manager.service
-$ anbox-bridge
+$ sudo modprobe ashmem_linux
+$ sudo modprobe binder_linux
 
 ```
+
+## Usage
+
+You must execute `anbox-bridge` every time before starting `anbox` in order to get network working in anbox.
 
 Now, you can run the android applications on your desktop's launcher on **Other** category.
 

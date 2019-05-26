@@ -19,28 +19,28 @@ This page lists OS distributions which are derived from Arch Linux **either in w
 
 *   [1 Active](#Active)
 *   [2 Inactive](#Inactive)
-    *   [2.1 2017](#2017)
-    *   [2.2 2016](#2016)
-    *   [2.3 2015](#2015)
-    *   [2.4 2014](#2014)
-    *   [2.5 2013](#2013)
-    *   [2.6 2012](#2012)
-    *   [2.7 2011](#2011)
-    *   [2.8 2010](#2010)
-    *   [2.9 2009](#2009)
-    *   [2.10 2008](#2008)
-    *   [2.11 2007](#2007)
-    *   [2.12 2006](#2006)
-    *   [2.13 2004](#2004)
+    *   [2.1 2019](#2019)
+    *   [2.2 2018](#2018)
+    *   [2.3 2017](#2017)
+    *   [2.4 2016](#2016)
+    *   [2.5 2015](#2015)
+    *   [2.6 2014](#2014)
+    *   [2.7 2013](#2013)
+    *   [2.8 2012](#2012)
+    *   [2.9 2011](#2011)
+    *   [2.10 2010](#2010)
+    *   [2.11 2009](#2009)
+    *   [2.12 2008](#2008)
+    *   [2.13 2007](#2007)
+    *   [2.14 2006](#2006)
+    *   [2.15 2004](#2004)
 *   [3 See also](#See_also)
 
 ## Active
 
 Asterisk indicates the year of first public release based on Arch Linux.
 
-*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
-*   [Anarchy Linux](https://anarchy-linux.org/) 
-*   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [Anarchy Linux](https://github.com/deadhead420/anarchy-linux) 
 *   [ArchBang](https://sourceforge.net/projects/archbang/) 
 *   [ArchEX](https://sourceforge.net/projects/archex/) 
 *   [Arch Hurd](https://archhurd.org/) 
@@ -70,18 +70,25 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/) 
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/) 
 *   [Obarun](https://web.obarun.org/) 
-*   [PacBSD](https://www.pacbsd.org/) 
 *   [Parabola](https://www.parabola.nu/) 
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/) 
 *   [RaspArch](https://sourceforge.net/projects/rasparch/) 
 *   [SwagArch](https://swagarch.gitlab.io/) 
 *   [TalkingArch](https://talkingarch.tk/) 
-*   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
 *   [UBOS](http://ubos.net/) 
 
 ## Inactive
 
 These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
+
+### 2019
+
+*   [Antergos](https://sourceforge.net/projects/antergos/) 
+
+### 2018
+
+*   [Alfheim Linux](https://sourceforge.net/projects/alfheim-linux/) 
+*   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 
 
 ### 2017
 
@@ -92,6 +99,7 @@ These distributions are no longer developed, but show some of the history surrou
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)
+*   [PacBSD](https://www.pacbsd.org/) 
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](http://nurunner.mkxt.net/index2.html)
 *   [Sonar](https://distrowatch.com/table.php?distribution=sonar) 

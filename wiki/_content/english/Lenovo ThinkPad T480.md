@@ -28,10 +28,11 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [2 Suspend / Hibernation](#Suspend_/_Hibernation)
 *   [3 TrackPoint and Touchpad](#TrackPoint_and_Touchpad)
 *   [4 Power management/Throttling issues](#Power_management/Throttling_issues)
-*   [5 UEFI and GRUB](#UEFI_and_GRUB)
-*   [6 Screen backlight](#Screen_backlight)
-*   [7 Encryption and keyboard](#Encryption_and_keyboard)
-*   [8 Special buttons](#Special_buttons)
+*   [5 UEFI/Firmware Updates](#UEFI/Firmware_Updates)
+*   [6 UEFI and GRUB](#UEFI_and_GRUB)
+*   [7 Screen backlight](#Screen_backlight)
+*   [8 Encryption and keyboard](#Encryption_and_keyboard)
+*   [9 Special buttons](#Special_buttons)
 
 ## Hardware
 
@@ -112,6 +113,14 @@ See
 *   X1 Carbon Gen 6 [Power management/Throttling issues](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
 *   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix "Lenovo ThinkPad T480s")
 *   [https://github.com/erpalma/throttled](https://github.com/erpalma/throttled)
+
+## UEFI/Firmware Updates
+
+Lenovo provides firmware updates for this device through the *Linux Vendor Firmware Service* (LVFS).
+
+Available updates and changelogs can be found on the [LVFS website](https://fwupd.org/lvfs/search?value=Thinkpad+T480). These include security patches for the Intel Management Engine and the system firmware.
+
+The updates can be installed using [fwupd](/index.php/Fwupd "Fwupd").
 
 ## UEFI and GRUB
 

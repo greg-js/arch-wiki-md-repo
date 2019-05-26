@@ -169,7 +169,7 @@ Option "DRI" "3"
 
 ### Variable refresh rate
 
-Variable refresh rate (also known as FreeSync) allows the monitor to adjust its refresh rate to the output signal. This allows for games to eliminate screen tearing less usual vsync downsides such as stuttering:
+Variable refresh rate (also known as FreeSync) allows the monitor to adjust its refresh rate to the output signal. This allows for games to eliminate screen tearing with less of the usual downsides of vsync (such as stuttering):
 
 ```
 Option "VariableRefresh" "true"

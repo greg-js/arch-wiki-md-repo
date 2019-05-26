@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=561011) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=570958) na versão em inglês.
 
 Artigos relacionados
 

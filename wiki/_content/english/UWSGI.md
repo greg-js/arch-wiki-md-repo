@@ -19,7 +19,8 @@ There are alternatives written in Python such as [gunicorn](https://www.archlinu
 *   [3 Running uWSGI](#Running_uWSGI)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Socket activation](#Socket_activation)
-    *   [4.2 Hardening uWSGI](#Hardening_uWSGI)
+    *   [4.2 Hardening uWSGI service](#Hardening_uWSGI_service)
+    *   [4.3 Accessibility of uWSGI socket](#Accessibility_of_uWSGI_socket)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Apache httpd](#Apache_httpd)
         *   [5.1.1 AH00957: uwsgi: attempt to connect to 127.0.0.1:0 (*) failed](#AH00957:_uwsgi:_attempt_to_connect_to_127.0.0.1:0_(*)_failed)
@@ -278,7 +279,7 @@ WantedBy=multi-user.target
 
 This will allow for proper socket activation with kill-after-idle functionality.
 
-### Hardening uWSGI
+### Hardening uWSGI service
 
 Web applications are exposed to the wild and depending on their quality and the security of their underlying languages, some are more dangerous to run, than others. A good way to start dealing with possible unsafe web applications is to jail them. [systemd](/index.php/Systemd "Systemd") has some functionality, that can be put to use. Have a look at the following example (and for further information see [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5) and [[4]](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)):
 
@@ -313,6 +314,27 @@ WantedBy=multi-user.target
 
 *   Using `NoNewPrivileges=yes` does not work with [Mailman](/index.php/Mailman "Mailman")'s cgi frontend! Remove this setting, if you want to use it in conjunction with it.
 *   If you want to harden your uWSGI app further, the use of namespaces is advisable. You can get a first glance on that topic in the [uWSGI namespaces documentation](http://uwsgi-docs.readthedocs.io/en/latest/Namespaces.html).
+
+### Accessibility of uWSGI socket
+
+The default (per application) socket unit (`uwsgi@.socket`) in [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) allows read and write access to any user on the system. However, systemd allows for a more finely granulated access management (see [systemd.socket(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.socket.5)), with which the access to a unix socket can be made more restrictive.
+
+By creating it below a webapp specific directory below `/run` (needs to be created using [tmpfiles](/index.php/Tmpfiles "Tmpfiles") beforehand - for reference see [Web_application_package_guidelines](/index.php/Web_application_package_guidelines "Web application package guidelines")) and modifying its [group](/index.php/Group "Group") and file [permissions](/index.php/Permissions "Permissions"), the socket is only accessible to [root](/index.php/Root "Root") and the [web server](/index.php/Web_server "Web server") and allows the web application to run as its own user:
+
+ `/etc/systemd/system/uwsgi-secure@.socket` 
+```
+[Unit]
+Description=Socket for uWSGI %I
+
+[Socket]
+ListenStream=/run/%I/%I.sock
+SocketGroup=http
+SocketMode=0660
+
+[Install]
+WantedBy=sockets.target
+
+```
 
 ## Troubleshooting
 

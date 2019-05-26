@@ -15,8 +15,7 @@ X server can only be used with integrated graphics or discrete Nvidia graphics, 
     *   [2.3 Use bbswitch to manage nvidia](#Use_bbswitch_to_manage_nvidia)
 *   [3 Usage](#Usage)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 General issues](#General_issues)
-    *   [4.2 Issues with Nvidia after removing Bumblebee](#Issues_with_Nvidia_after_removing_Bumblebee)
+    *   [4.1 NVIDIA GPU fails to switch off or is set to be default](#NVIDIA_GPU_fails_to_switch_off_or_is_set_to_be_default)
 
 ## Installation
 
@@ -26,7 +25,7 @@ X server can only be used with integrated graphics or discrete Nvidia graphics, 
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/), [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/),
     *   or [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) if bbswitch doesn't support your hardware (see [[1]](https://bbs.archlinux.org/viewtopic.php?id=238389))
-*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) or [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) if only for running applications，because running some applications (such as Steam) directly with *nvidia-xrun* does not work well, using a window manager like [openbox](/index.php/Openbox "Openbox") or [Xfce](/index.php/Xfce "Xfce") will work better.
+*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) or [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session)，because running apps directly with `nvidia-xrun <application>` does not work well.
 
 ## Configuration
 
@@ -41,7 +40,7 @@ Find your display device bus id:
 
 ```
 
-It might return something similar to **`01:00.0`**. Then create a script (for example `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf`) to set the proper bus id:
+It might return something similar to **`01:00.0`**. Then create a file (for example `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf`) to set the proper bus id:
 
  `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` 
 ```
@@ -129,11 +128,7 @@ If above does not work, [switch](/index.php/Keyboard_shortcuts#Xorg_and_Wayland 
 
 ## Troubleshooting
 
-### General issues
-
-Running apps directly with `nvidia-xrun <application>` does not work well. Use window manager like [openbox](https://www.archlinux.org/packages/?name=openbox) and run apps from it.
-
-### Issues with Nvidia after removing Bumblebee
+### NVIDIA GPU fails to switch off or is set to be default
 
 See [#Use bbswitch to manage nvidia](#Use_bbswitch_to_manage_nvidia).
 
@@ -144,8 +139,7 @@ If Nvidia GPU still fails to switch off, or is somehow set to be default wheneve
 blacklist nvidia
 blacklist nvidia-drm
 blacklist nvidia-modeset
-blacklist nvidia-uv
-blacklist nvidia_uvm
+blacklist nvidia-uvm
 blacklist nouveau
 
 ```

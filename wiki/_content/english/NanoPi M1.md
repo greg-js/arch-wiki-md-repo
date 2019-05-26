@@ -1,10 +1,14 @@
 The NanoPi M1 is a small, arm-based computer. It contains an Allwinner H3 processor and either 512 or 1024 MB of RAM. This article is strongly based on Orange Pi.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Create the base system](#Create_the_base_system)
     *   [1.1 Create development environment](#Create_development_environment)
-    *   [1.2 Partition, format and mount SD card](#Partition.2C_format_and_mount_SD_card)
+    *   [1.2 Partition, format and mount SD card](#Partition,_format_and_mount_SD_card)
     *   [1.3 Install ArchLinuxArm RootFS](#Install_ArchLinuxArm_RootFS)
     *   [1.4 Configure U-Boot](#Configure_U-Boot)
     *   [1.5 Unmount the SD Card](#Unmount_the_SD_Card)
@@ -12,6 +16,8 @@ The NanoPi M1 is a small, arm-based computer. It contains an Allwinner H3 proces
 *   [2 Configure the base system](#Configure_the_base_system)
     *   [2.1 Boot the NanoPi](#Boot_the_NanoPi)
     *   [2.2 Configure Linux](#Configure_Linux)
+    *   [2.3 Open Source Mali driver (lima)](#Open_Source_Mali_driver_(lima))
+    *   [2.4 Mali Binary driver](#Mali_Binary_driver)
 
 ## Create the base system
 
@@ -95,17 +101,17 @@ Compile it and write it to the SD-card using the package [uboot-tools](https://w
 
 ### Install U-Boot
 
-The upstream U-Boot repository has no graphics support as of May 2017. Clone U-Boot from the jernejsk git repository:
+Install [swig](https://www.archlinux.org/packages/?name=swig) package. Clone U-Boot from the offical git repository:
 
 ```
-$ git clone --depth 1 [https://github.com/jernejsk/u-boot.git](https://github.com/jernejsk/u-boot.git)
+$ git clone [http://git.denx.de/u-boot.git](http://git.denx.de/u-boot.git)
 
 ```
 
-There is a bug in the U-Boot code for Arch. Correct this with:
+Checkout to latest stable tag e.g.: v2019.04
 
 ```
-$ sed -i -e 's/\#\!\/usr\/bin\/env\ python/\#\!\/usr\/bin\/env\ python2/g' tools/binman/binman
+$ git checkout tags/v2019.04
 
 ```
 
@@ -113,7 +119,7 @@ The NanoPi shares many similarities with the OrangePi PC, so use this as the tar
 
 ```
 $ cd u-boot
-$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- orangepi_pc_defconfig
+$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- nanopi_m1_defconfig
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
 
 ```
@@ -151,6 +157,17 @@ You must install the base-devel group as well as Git in order to continue. Do th
 # pacman -Syu base-devel git
 
 ```
+
+### Open Source Mali driver (lima)
+
+Since linux 5.2 lima drm driver was merged in the mainline kernel.
+
+```
+# pacman -Syu linux-armv7-rc
+
+```
+
+### Mali Binary driver
 
 Now you should download and install the drivers for the Mali graphics card inside the SoC.
 

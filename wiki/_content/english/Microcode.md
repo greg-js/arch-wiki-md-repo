@@ -140,7 +140,7 @@ LABEL arch
 
 **Warning:** The merged image must be recreated after each kernel update!
 
-**Note:** The order is important. The original image `initramfs-linux.img` must be concatenated **on top** of the `*cpu_manufacturer*-ucode.img` image.
+**Note:** The order is important. The original image `initramfs-linux.img` must be placed **after** `*cpu_manufacturer*-ucode.img` in the resulting image.
 
 To merge both images into one image named `initramfs-merged.img`, the following command can be used:
 

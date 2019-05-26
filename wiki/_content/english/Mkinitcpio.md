@@ -4,6 +4,7 @@ Related articles
 *   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
 *   [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
+*   [dracut](/index.php/Dracut "Dracut")
 
 [mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/) is a Bash script used to create an [initial ramdisk](https://en.wikipedia.org/wiki/Initial_ramdisk "wikipedia:Initial ramdisk") environment. From the [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) man page:
 
@@ -59,7 +60,12 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the PRESETS directive of the *.preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for [linux](https://www.archlinux.org/packages/?name=linux) contain `PRESETS=('default' 'fallback')`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the PRESETS directive of the *.preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for [linux](https://www.archlinux.org/packages/?name=linux) contain `PRESETS=('default' 'fallback')`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, the following will (re-)generate the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package:
+
+```
+# mkinitcpio -p linux
+
+```
 
 An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `-P`/`--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
 
@@ -449,6 +455,3 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 *   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD), search for "What is rootfs?"
 *   Linux Kernel documentation on [initrd](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/admin-guide/initrd.rst?id=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
-*   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "wikipedia:dracut (software)")** — A cross-distribution initramfs generation tool.
-
-	[https://dracut.wiki.kernel.org/](https://dracut.wiki.kernel.org/) || [dracut](https://www.archlinux.org/packages/?name=dracut)

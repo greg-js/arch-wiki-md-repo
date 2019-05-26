@@ -10,6 +10,7 @@ Thunderbolt 3 works out of the box with recent Linux kernel versions [[1]](https
 *   [2 User device authorization](#User_device_authorization)
     *   [2.1 Graphical front-ends](#Graphical_front-ends)
     *   [2.2 Automatically connect any device](#Automatically_connect_any_device)
+    *   [2.3 Forcing power](#Forcing_power)
 *   [3 See also](#See_also)
 
 ## Obtain firmware updates
@@ -42,6 +43,21 @@ The security level is normally configured at firmware level; it's recommended to
 Users who just want to connect any device without any sort of manual work can create a [udev](/index.php/Udev "Udev") as in `99-removable.rules`:
 
  `/etc/udev/rules.d/99-removable.rules`  `ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"` 
+
+### Forcing power
+
+Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[4]](https://www.kernel.org/doc/html/v5.1/admin-guide/thunderbolt.html).
+
+Forcing power may especially be useful when a connected device loses connection or the controller that switches itself off.
+
+To force the power to be on/off, write 1 or 0 to this attribute, e.g. to force power:
+
+```
+# echo 1 > /sys/bus/wmi/devices/86CCFD48-205E-4A77-9C48-2021CBEDE341/force_power
+
+```
+
+**Note:** It is not possible to query the current `force_power` state.
 
 ## See also
 

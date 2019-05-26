@@ -2,7 +2,7 @@ To prevent accidental deletion of files, you can use a trash can. To ensure comp
 
 **Note:** Some applications can use a trash can per filesystem (see the specification)
 
-**Warning:** When deleting a file on another filesystem, usage of a trash can might lead to a copy between filesystems, leading to some latency
+**Warning:** When deleting files on another filesystem, usage of a trash can induce some latency because the files will be transferred between filesystems. In this case, you might want to use a implementation that create a trash folder per filesystem (See `Trash directories` in the specification).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -21,6 +21,18 @@ To prevent accidental deletion of files, you can use a trash can. To ensure comp
 *   **trash-cli** — A command-line interface implementing [FreeDesktop.org's Trash specification](https://specifications.freedesktop.org/trash-spec/trashspec-latest.html).
 
 	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
+
+*   **bashtrash** — Freedesktop-complient trashcan implemented in bash script
+
+	[https://github.com/robrwo/bashtrash/blob/master/trash](https://github.com/robrwo/bashtrash/blob/master/trash) || [bashtrash](https://aur.archlinux.org/packages/bashtrash/)
+
+*   **trashman** — A Python trash manager
+
+	[https://github.com/Kwpolska/trashman](https://github.com/Kwpolska/trashman) || [trashman](https://aur.archlinux.org/packages/trashman/)
+
+*   **rmtrash** — trash-put made compatible to GNUs rm and rmdir
+
+	[https://github.com/PhrozenByte/rmtrash](https://github.com/PhrozenByte/rmtrash) || [rmtrash](https://aur.archlinux.org/packages/rmtrash/)
 
 ## Trash space usage management
 

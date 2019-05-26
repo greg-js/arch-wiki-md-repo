@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")
+*   [Laptop/Lenovo#IdeaPad](/index.php/Laptop/Lenovo#IdeaPad "Laptop/Lenovo")

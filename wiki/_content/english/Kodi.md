@@ -32,13 +32,14 @@
     *   [6.2 Speedup video playback (synchronized audio and video) up to 1.5x](#Speedup_video_playback_(synchronized_audio_and_video)_up_to_1.5x)
     *   [6.3 CLI for kodi](#CLI_for_kodi)
     *   [6.4 Hardware video acceleration](#Hardware_video_acceleration)
-    *   [6.5 Adjusting CD/DVD drive speed](#Adjusting_CD/DVD_drive_speed)
-    *   [6.6 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [6.7 Using ALSA](#Using_ALSA)
-    *   [6.8 Audio Passthrough](#Audio_Passthrough)
-        *   [6.8.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
-    *   [6.9 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-    *   [6.10 USB DAC not working](#USB_DAC_not_working)
+    *   [6.5 UPnP and DLNA](#UPnP_and_DLNA)
+    *   [6.6 Adjusting CD/DVD drive speed](#Adjusting_CD/DVD_drive_speed)
+    *   [6.7 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [6.8 Using ALSA](#Using_ALSA)
+    *   [6.9 Audio Passthrough](#Audio_Passthrough)
+        *   [6.9.1 Fix for delayed startup on wifi](#Fix_for_delayed_startup_on_wifi)
+    *   [6.10 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+    *   [6.11 USB DAC not working](#USB_DAC_not_working)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Accessing Kodi logs](#Accessing_Kodi_logs)
     *   [7.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -432,6 +433,10 @@ Play some video content and enjoy the ability to adjust the speed using the keys
 Enable and configure [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to speed up playback performance.
 
 Restart Kodi and enable the hardware backend(s) in Playback under Settings.
+
+### UPnP and DLNA
+
+Go to *Settings > Services > UPnP/DLNA* and toggle *Enable UPnP support*.
 
 ### Adjusting CD/DVD drive speed
 

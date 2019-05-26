@@ -297,6 +297,20 @@ Delete all images by ID:
 
 ```
 
+Delete all images, containers, volumes, and networks that are not associated with a container (dangling):
+
+```
+# docker system prune
+
+```
+
+To additionally remove any stopped containers and all unused images (not just dangling ones), add the -a flag to the command:
+
+```
+# docker system prune -a
+
+```
+
 Delete all Docker data (purge directory):
 
 ```

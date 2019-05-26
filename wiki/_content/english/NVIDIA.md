@@ -446,7 +446,7 @@ Another method that may either work alone or in conjunction with those mentioned
 
 #### Mosaic mode
 
-Mosaic mode is the only way to use more than 2 monitors across multiple graphics cards with compositing. Your window manager may or may not recognize the distinction between each monitor.
+Mosaic mode is the only way to use more than 2 monitors across multiple graphics cards with compositing. Your window manager may or may not recognize the distinction between each monitor. Mosaic mode requires a valid SLI configuration. Even if using Base mode without SLI, the GPUs must still be SLI capable/compatible.
 
 ##### Base Mosaic
 

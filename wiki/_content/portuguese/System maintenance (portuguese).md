@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=571062) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=572894) na versão em inglês.
 
 Artigos relacionados
 
@@ -157,7 +157,7 @@ Após a atualização, você pode agora ter pacotes que não são mais necessár
 
 Use `pacman -Qtd` para verificar se os pacotes foram instalados como uma dependência, mas agora, nenhum outro pacote depende deles. Se um pacote órfão ainda for necessário, é recomendável alterar o [motivo de instalação](/index.php/Motivo_de_instala%C3%A7%C3%A3o "Motivo de instalação") para explícito. Caso contrário, se o pacote não for mais necessário, ele pode ser removido.
 
-Além disso, alguns pacotes podem não estar nos repositórios remotos, mas eles ainda podem estar no seu sistema local. Para listar todos os pacotes externos use `pacman -Qm`. Observe que esta lista incluirá pacotes que foram instalados manualmente (p. ex., a partir do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")).
+Além disso, alguns pacotes podem não estar nos repositórios remotos, mas eles ainda podem estar no seu sistema local. Para listar todos os pacotes externos use `pacman -Qm`. Observe que esta lista incluirá pacotes que foram instalados manualmente (p. ex., a partir do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")). Para excluir pacotes que (ainda) estão disponíveis no AUR, use a ferramenta [ancient-packages](https://aur.archlinux.org/packages/ancient-packages/).
 
 ## Use o gerenciador de pacotes para instalar softwares
 
@@ -227,7 +227,7 @@ Links simbólicos antigos e quebrados podem estar soltos no seu sistema; você d
 Para listar rapidamente todos os links simbólicos em seu sistema, use:
 
 ```
-# find -xtype l -print
+# find / -xtype l -print
 
 ```
 

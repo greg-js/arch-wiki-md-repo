@@ -125,6 +125,14 @@ Most file systems support setting the label upon file system creation, see the [
 
 	`cryptsetup config --label="*new label*" /dev/*XXX*` using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup)
 
+The label of a device can be obtained by `lsblk`:
+
+ `$ lsblk -rno LABEL /dev/sda2` 
+```
+System
+
+```
+
 **Note:**
 
 *   The file system must not be mounted to change its label. For the root file system this can be accomplished by booting from another volume.
@@ -145,6 +153,14 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 b411dc99-f0a0-4c87-9e05-184977be8539 -> .
 lrwxrwxrwx 1 root root 10 May 27 23:31 CBB6-24F2 -> ../../sda1
 lrwxrwxrwx 1 root root 10 May 27 23:31 f9fe0b69-a280-415d-a03a-a32752370dee -> ../../sda4
 lrwxrwxrwx 1 root root 10 May 27 23:31 F4CA-5D75 -> ../../mmcblk0p1
+
+```
+
+The UUID of a device can be obtained by `blkid`:
+
+ `$ blkid -s UUID -o value /dev/sda1` 
+```
+CBB6-24F2
 
 ```
 
@@ -212,6 +228,14 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 Swap -> ../../sda4
 
 ```
 
+The partition label of a device can be obtained by `blkid`:
+
+ `$ blkid -s PARTLABEL -o value /dev/sda1` 
+```
+EFI system partition
+
+```
+
 **Note:**
 
 *   GPT partition labels also have to be different to avoid conflicts. To change your partition label, you can use [gdisk](/index.php/Gdisk "Gdisk") or the ncurses-based version [cgdisk](/index.php/Cgdisk "Cgdisk"). Both are available from the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package. See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools "Partitioning").
@@ -236,6 +260,14 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ```
 
+The partition UUID of a device can be obtained by `blkid`:
+
+ `$ blkid -s PARTUUID -o value /dev/sda1` 
+```
+d0d0d110-0a71-4ed6-936a-304969ea36af
+
+```
+
 ### Static device names with Udev
 
 See [udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
@@ -257,35 +289,35 @@ To use persistent names in the [boot manager (boot loader)](/index.php/Boot_load
 
 The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
 
-Persistent device naming using label and the `LABEL=` format, in this example `System` is the LABEL of the root file system.
+Persistent device naming [using label](#by-label) and the `LABEL=` format, in this example `System` is the LABEL of the root file system.
 
 ```
 root=LABEL=System
 
 ```
 
-Persistent device naming using UUID and the `UUID=` format, in this example `0a3407de-014b-458b-b5c1-848e92a327a3` is the UUID of the root file system.
+Persistent device naming [using UUID](#by-uuid) and the `UUID=` format, in this example `0a3407de-014b-458b-b5c1-848e92a327a3` is the UUID of the root file system.
 
 ```
 root=UUID=0a3407de-014b-458b-b5c1-848e92a327a3
 
 ```
 
-Persistent device naming using disk id and the `/dev` path format, in this example `wwn-0x60015ee0000b237f-part2` is the id of the root partition.
+Persistent device naming using [disk id](#by-id_and_by-path) and the `/dev` path format, in this example `wwn-0x60015ee0000b237f-part2` is the id of the root partition.
 
 ```
 root=/dev/disk/by-id/wwn-0x60015ee0000b237f-part2
 
 ```
 
-Persistent device naming using GPT partition UUID and the `PARTUUID=` format, in this example `98a81274-10f7-40db-872a-03df048df366` is the PARTUUID of the root partition.
+Persistent device naming [using GPT partition UUID](#by-partuuid) and the `PARTUUID=` format, in this example `98a81274-10f7-40db-872a-03df048df366` is the PARTUUID of the root partition.
 
 ```
 root=PARTUUID=98a81274-10f7-40db-872a-03df048df366
 
 ```
 
-Persistent device naming using GPT partition label and the `PARTLABEL=` format, in this example `GNU/Linux` is the PARTLABEL of the root partition.
+Persistent device naming [using GPT partition label](#by-partlabel) and the `PARTLABEL=` format, in this example `GNU/Linux` is the PARTLABEL of the root partition.
 
 ```
 root="PARTLABEL=GNU/Linux"

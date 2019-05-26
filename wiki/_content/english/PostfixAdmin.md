@@ -10,7 +10,10 @@
 *   [2 Configuration](#Configuration)
 *   [3 Hosting](#Hosting)
     *   [3.1 Apache](#Apache)
+        *   [3.1.1 php-fpm](#php-fpm)
     *   [3.2 Nginx](#Nginx)
+        *   [3.2.1 php-fpm](#php-fpm_2)
+        *   [3.2.2 uWSGI](#uWSGI)
 *   [4 Setup](#Setup)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Configuration not found](#Configuration_not_found)
@@ -23,6 +26,8 @@ To use PostfixAdmin, you need a working [web server](/index.php/Web_server "Web 
 For IMAP functionality, refer to [PHP#IMAP](/index.php/PHP#IMAP "PHP").
 
 Next, [install](/index.php/Install "Install") [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin).
+
+**Note:** Postfixadmin should only be accessed over [TLS](/index.php/TLS "TLS") (unless accessed directly from the machine running it), as it otherwise exposes passwords and user data.
 
 ## Configuration
 
@@ -65,22 +70,26 @@ $CONF['dovecotpw'] = "/usr/sbin/doveadm pw";
 
 ## Hosting
 
-**Note:** PostfixAdmin needs to be run as its own user and group (i.e. `postfixadmin`). It's using `/etc/webapps/postfixadmin`, `/var/lib/postfixadmin` and `/run/postfixadmin` for configurations, template caches and (potentially) sockets (respectively)! As such, granting the webserver user permission to read, write and execute the config files may be needed. To do so, follow the instruction here [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") in section: Granting execution permissions for private files to a web server. An example is provided here:
-
-```
- #setfacl -m "u:http:rwx" /etc/webapps/postfixadmin/config.inc.php
-
-```
+**Note:** PostfixAdmin needs to be run as its own user and group (i.e. `postfixadmin`). It's using `/etc/webapps/postfixadmin`, `/var/lib/postfixadmin` and `/run/postfixadmin` for configurations, template caches and (potentially) sockets (respectively)!
 
 ### Apache
 
-Create an Apache configuration file:
+The [apache](/index.php/Apache "Apache") [web server](/index.php/Web_server "Web server") can serve dynamic web applications with the help of modules, such as [mod_proxy_fcgi](https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html) or [mod_proxy_uwsgi](https://httpd.apache.org/docs/current/mod/mod_proxy_uwsgi.html).
 
- `/etc/httpd/conf/extra/httpd-postfixadmin.conf` 
+#### php-fpm
+
+[Install](/index.php/Install "Install") and configure [apache](/index.php/Apache "Apache") with [php-fpm](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server"). Use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`.
+
+Include the following configuration in your [apache](/index.php/Apache "Apache") configuration (i.e. `/etc/httpd/conf/httpd.conf`) and [restart](/index.php/Systemd#Using_units "Systemd") the [web server](/index.php/Web_server "Web server"):
+
+ `/etc/httpd/conf/postfixadmin.conf` 
 ```
 Alias /postfixadmin "/usr/share/webapps/postfixadmin/public"
 <Directory "/usr/share/webapps/postfixadmin/public">
     DirectoryIndex index.html index.php
+    <FilesMatch \.php$>
+        SetHandler "proxy:unix:/run/postfixadmin/postfixadmin.sock|fcgi://localhost/"
+    </FilesMatch>
     AllowOverride All
     Options FollowSymlinks
     Require all granted
@@ -88,7 +97,7 @@ Alias /postfixadmin "/usr/share/webapps/postfixadmin/public"
 
 ```
 
-To only allow localhost access to postfixadmin (for heightened security), add this to the previous <Directory> directive:
+To only allow localhost access to postfixadmin (for heightened security), add this to the previous `<Directory>` directive:
 
 ```
    Order Deny,Allow
@@ -97,32 +106,30 @@ To only allow localhost access to postfixadmin (for heightened security), add th
 
 ```
 
-Now, include httpd-postfixadmin.conf to `/etc/httpd/conf/httpd.conf`:
-
-```
-# PostfixAdmin configuration
-Include conf/extra/httpd-postfixadmin.conf
-
-```
-
 ### Nginx
 
-Keep im mind that this is a minimal example without TLS encryption. Accessing postfixadmin from anywhere else than the machine running it will expose passwords and user data.
+[Nginx](/index.php/Nginx "Nginx") can proxy application servers such as [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [uWSGI](/index.php/UWSGI "UWSGI"), that run a dynamic web application. The following examples describe a folder based setup over a non-default port (for simplicity).
 
-Install [nginx](https://www.archlinux.org/packages/?name=nginx), [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [php-imap](https://www.archlinux.org/packages/?name=php-imap). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx").
+**Note:** For server entry management in [nginx](/index.php/Nginx "Nginx") have a look at [Nginx#Managing_server_entries](/index.php/Nginx#Managing_server_entries "Nginx").
 
-You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`
+**Note:** Postfixadmin ships a configuration for [uWSGI](/index.php/UWSGI "UWSGI").
 
-Create nginx config file
+#### php-fpm
+
+[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [php-imap](https://www.archlinux.org/packages/?name=php-imap). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx") and use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`.
+
+You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`.
+
+Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [restart](/index.php/Systemd#Using_units "Systemd") it.
 
  `/etc/nginx/sites-available/postfixadmin.conf` 
 ```
     server {
       listen 8081;
       server_name postfixadmin;
-      root            /usr/share/webapps/postfixadmin/public/;
-      index           index.php;
-      charset         utf-8;
+      root /usr/share/webapps/postfixadmin/public/;
+      index index.php;
+      charset utf-8;
 
       access_log /var/log/nginx/postfixadmin-access.log;
       error_log /var/log/nginx/postfixadmin-error.log;
@@ -133,8 +140,8 @@ Create nginx config file
 
       location ~* \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        include       fastcgi_params;
-        fastcgi_pass  unix:/run/php-fpm/php-fpm.sock;
+        include fastcgi_params;
+        fastcgi_pass unix:/run/postfixadmin/postfixadmin.sock;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -145,7 +152,37 @@ Create nginx config file
 
 ```
 
-Enable the config as described [here](/index.php/Nginx#Managing_server_entries "Nginx").
+#### uWSGI
+
+[Install](/index.php/Install "Install") [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php), create a per-application socket for [uWSGI](/index.php/UWSGI "UWSGI") (see [UWSGI#Accessibility_of_uWSGI_socket](/index.php/UWSGI#Accessibility_of_uWSGI_socket "UWSGI") for reference) and [activate](/index.php/Systemd#Using_units "Systemd") the `postfixadmin@uwsgi-secure.socket` unit.
+
+Add the following configuration for nginx and [restart](/index.php/Systemd#Using_units "Systemd") [nginx](/index.php/Nginx "Nginx").
+
+ `/etc/nginx/sites-available/postfixadmin.conf` 
+```
+    server {
+      listen 8081;
+      server_name postfixadmin;
+      root /usr/share/webapps/postfixadmin/public/;
+      index index.php;
+      charset utf-8;
+
+      access_log /var/log/nginx/postfixadmin-access.log;
+      error_log /var/log/nginx/postfixadmin-error.log;
+
+      location / {
+        try_files $uri $uri/ index.php;
+      }
+
+      # pass all .php or .php/path urls to uWSGI
+      location ~ ^(.+\.php)(.*)$ {
+        include uwsgi_params;
+        uwsgi_modifier1 14;
+        uwsgi_pass unix:/run/postfixadmin/postfixadmin.sock;
+      }
+    }
+
+```
 
 ## Setup
 

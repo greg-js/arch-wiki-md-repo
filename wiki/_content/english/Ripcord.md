@@ -36,7 +36,7 @@ The Ripcord AppImage bundles its own copy of required libraries, which are also 
 
 Proceed as follows:
 
-*   Install packages [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [qt5-multimedia](https://www.archlinux.org/packages/?name=qt5-multimedia), [qt5-svg](https://www.archlinux.org/packages/?name=qt5-svg), [qt5-websockets](https://www.archlinux.org/packages/?name=qt5-websockets) and [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras) (more may be necessary, if so please amend this list).
+*   Install packages [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [qt5-imageformats](https://www.archlinux.org/packages/?name=qt5-imageformats), [qt5-multimedia](https://www.archlinux.org/packages/?name=qt5-multimedia), [qt5-svg](https://www.archlinux.org/packages/?name=qt5-svg), [qt5-websockets](https://www.archlinux.org/packages/?name=qt5-websockets) and [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras) (more may be necessary, if so please amend this list).
 *   Reach directory `/usr/lib/ripcord` or, if you'd rather not touch managed files, download the AppImage, run it with `--appimage-extract` and cd to `squashfs-root`.
 *   Wipe or better move to a backup location the contents of the `lib` folder you find there.
 *   cd into `lib` and `ln -s /usr/lib/libsodium.so libsodium.so.18`.

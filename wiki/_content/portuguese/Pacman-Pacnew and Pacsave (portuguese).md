@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&diff=0&oldid=565433) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Pacnew_and_Pacsave&diff=0&oldid=571860) na versão em inglês.
 
 Quando o *pacman* remove um pacote que tem um arquivo de configuração, ele normalmente cria uma cópia backup daquele arquivo de configuração e anexa *.pacsave* ao nome do arquivo. Da mesma forma, quando o *pacman* atualiza um pacote que inclui um novo arquivo de configuração pelo mantenedor, comparando-o com a configuração atualmente instalada, ele salva um arquivo *.pacnew* com a nova configuração. O *pacman* fornece um aviso quando esses arquivos são escritos.
 
@@ -14,7 +14,7 @@ Quando o *pacman* remove um pacote que tem um arquivo de configuração, ele nor
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
 *   [4 Localizando arquivos .pac*](#Localizando_arquivos_.pac*)
-*   [5 Gerenciando arquivos .pacnew](#Gerenciando_arquivos_.pacnew)
+*   [5 Gerenciando arquivos .pac*](#Gerenciando_arquivos_.pac*)
     *   [5.1 pacdiff](#pacdiff)
     *   [5.2 Utilitários de terceiros](#Utilitários_de_terceiros)
 *   [6 Veja também](#Veja_também)
@@ -88,13 +88,13 @@ O pacman não lida com arquivos *.pacnew* automaticamente: você deve mantê-los
 
 *   Para procurar no `/etc`, onde a maioria das configurações globais estão armazenadas: `$ find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null` ou pesquisar em todo o disco substituindo `/etc` por `/` no comando anterior.
 *   Se instalado, [locate](/index.php/Locate_(Portugu%C3%AAs) "Locate (Português)") também pode ser usado. Primeiro reindexe a base de dados: `# updatedb` . Então, execute: `$ locate --existing --regex "\.pac(new|save)$"` 
-*   Use o log do pacman para localizá-los: `$ grep --extended-regexp "pac(new|save)" /var/log/pacman.log` Note que o log não mantém rastro dos arquivos atualmente no sistema de arquivos nem daqueles que já foram removidos; o comando acima vai listar todos os arquivos *.pac** que já existiram em seu sistema. Para apenas obter os 10 mais recentes arquivos *.pac**, faça um *pipe* do resultado para `tail`.
+*   Use o log do pacman para localizá-los: `$ grep --extended-regexp "\.pac(new|save)" /var/log/pacman.log` Note que o log não mantém rastro dos arquivos atualmente no sistema de arquivos nem daqueles que já foram removidos; o comando acima vai listar todos os arquivos *.pac** que já existiram em seu sistema. Para apenas obter os 10 mais recentes arquivos *.pac**, faça um *pipe* do resultado para `tail`.
 
-## Gerenciando arquivos .pacnew
+## Gerenciando arquivos .pac*
 
 ### pacdiff
 
-[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) fornece *pacdiff*, uma ferramenta simples para gerenciar arquivos pacnew/pacsave. Com isso, pode-se vai pesquisar por todos os arquivos *.pacnew* e *.pacsave* e pedir por quaisquer ações neles. Ele usa [vimdiff](/index.php/Vim#Merging_files "Vim") por padrão, mas você pode especificar uma ferramenta diferente com `DIFFPROG=*seu_editor* pacdiff`. Veja [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") para outras ferramentas de comparação comum.
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) fornece *pacdiff*, uma ferramenta simples para gerenciar arquivos pac*. Com isso, pode-se vai pesquisar por todos os arquivos *.pacnew* e *.pacsave* e pedir por quaisquer ações neles. Ele usa [vimdiff](/index.php/Vim#Merging_files "Vim") por padrão, mas você pode especificar uma ferramenta diferente com `DIFFPROG=*seu_editor* pacdiff`. Veja [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities") para outras ferramentas de comparação comum.
 
 ### Utilitários de terceiros
 
@@ -106,7 +106,7 @@ Você pode usar uma das seguintes ferramentas:
 
 	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
 
-*   **etc-update** — Port pelo Arch do utilitário do Gentoo *etc-update*, fornecendo uma CLI simples para ver, mesclar e editar interativamente alterações. Alterações triviais (como comentários) podem ser mesclados automaticamente.
+*   **etc-update** — Utilitário do *Gentoo* compatível com outras distribuições, incluindo o Arch. Ele fornece uma CLI simples para ver, mesclar e editar interativamente alterações. Alterações triviais, como comentários, podem ser mescladas automaticamente.
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 

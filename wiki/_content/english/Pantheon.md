@@ -158,7 +158,7 @@ Wingpanel does not come with any indicators; they must be installed separately.
 
 At the minimum, you'll probably want to install:
 
-*   [slingshot-launcher](https://aur.archlinux.org/packages/slingshot-launcher/) or [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Applications menu and "Run" dialog
+*   [pantheon-applications-menu](https://aur.archlinux.org/packages/pantheon-applications-menu/) or [pantheon-applications-menu-git](https://aur.archlinux.org/packages/pantheon-applications-menu-git/): Applications menu and "Run" dialog
 *   [wingpanel-indicator-datetime](https://aur.archlinux.org/packages/wingpanel-indicator-datetime/) or [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/): Clock and calendar widget
 *   [wingpanel-indicator-session](https://aur.archlinux.org/packages/wingpanel-indicator-session/) or [wingpanel-indicator-session-git](https://aur.archlinux.org/packages/wingpanel-indicator-session-git/): User and session menu (Switch user, Logout, Shutdown, etc.)
 

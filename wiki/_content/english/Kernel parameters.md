@@ -82,7 +82,7 @@ For more information on configuring systemd-boot, see the [systemd-boot](/index.
 
 	Press `Ctrl+x` to boot with these parameters.
 
-*   To make the change persistent after reboot, while you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, the best practice is to:
+*   To make the change persistent after reboot, you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, but the best practice is to:
 
 	Edit `/etc/default/grub` and append your kernel options to the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
@@ -169,7 +169,7 @@ The `-n` option skips adding the mount to `/etc/mtab`, so it will work even if r
 This list is not comprehensive. For a complete list of all options, please see the [kernel documentation](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt).
 
 | parameter | Description |
-| root= | Root filesystem. |
+| root= | Root filesystem. See [init/do_mounts.c](https://github.com/torvalds/linux/blob/f49aa1de98363b6c5fba4637678d6b0ba3d18065/init/do_mounts.c#L191-L219) for supported device name formats. |
 | rootflags= | Root filesystem mount options. |
 | ro | Mount root device read-only on boot (default). |
 | rw | Mount root device read-write on boot. |

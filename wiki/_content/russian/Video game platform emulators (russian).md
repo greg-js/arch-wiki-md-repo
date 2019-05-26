@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). Дата последней синхронизации: 5 апреля 201‎9\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Video_game_platform_emulators&diff=0&oldid=569309).
+**Состояние перевода:** На этой странице представлен перевод статьи [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). Дата последней синхронизации: 25 мая 201‎9\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Video_game_platform_emulators&diff=0&oldid=573974).
 
 Эмулятор – это программа, повторяющая функции другой платформы или системы для запуска приложений и игр в окружении, для которого они изначально не создавались.
 
@@ -90,6 +90,14 @@
 *   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Эмулятор Game Boy с поддержкой Game Boy Advance, Game Boy Color и Super Game Boy.
 
 	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
+
+*   **XQEMU** — Оригинальный эмулятор Xbox.
+
+	[https://xqemu.com/](https://xqemu.com/) || [xqemu-git](https://aur.archlinux.org/packages/xqemu-git/)
+
+*   **Yuzu** — Экспериментальный свободный эмулятор и отладчик Nintendo Switch.
+
+	[https://github.com/yuzu-emu/yuzu/](https://github.com/yuzu-emu/yuzu/) || [yuzu-git](https://aur.archlinux.org/packages/yuzu-git/)
 
 *   **ZSNES** — Высокосовместимый эмулятор Super Nintendo.
 

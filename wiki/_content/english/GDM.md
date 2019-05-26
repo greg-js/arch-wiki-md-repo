@@ -573,7 +573,7 @@ $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power 
 
 ### GDM ignore Wayland and use X.Org by default
 
-Wayland require KMS running in order to work, and on some machines the GDM process start earlier than KMS, resulting in GMD unable to see Wayland and working only with X.Org, you can solve this problem [starting KMS earlier](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
+Wayland require Kernel Mode Setting (KMS) running in order to work, and on some machines the GDM process start earlier than KMS, resulting in GDM unable to see Wayland and working only with X.Org, you can solve this problem [starting KMS earlier](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## See also
 
