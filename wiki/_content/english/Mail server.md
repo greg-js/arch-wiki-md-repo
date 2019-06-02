@@ -152,7 +152,7 @@ There are several handy web sites that can help you test DNS records, deliverabi
 
 *   [https://mxtoolbox.com/](https://mxtoolbox.com/)
 *   [http://ismyemailworking.com/](http://ismyemailworking.com/)
-*   [https://www.mail-tester.com/](https://www.mail-tester.com/)
+*   [https://www.mail-tester.com/](https://www.mail-tester.com/) (3 free tries only!)
 *   [https://www.checktls.com/](https://www.checktls.com/)
 *   [https://pingability.com/zoneinfo.jsp](https://pingability.com/zoneinfo.jsp)
 

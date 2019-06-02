@@ -30,7 +30,7 @@ The modes currently supported on Linux are:
 *   `secure` - User authorization is required, but the device is then remembered and does not require re-authorization. In BIOS settings this is typically called *One time saved key*.
 *   `dponly` - DisplayPort functionality only, no other devices are allowed. In BIOS settings this is typically called *Display Port Only*.
 
-The security level is normally configured at firmware level; it's recommended to set it to at least `secure`.
+The security level is normally configured at firmware level; it is recommended to set it to at least `secure`.
 
 **Tip:** User-space solutions are available such as [bolt](https://www.archlinux.org/packages/?name=bolt) or [tbt](https://aur.archlinux.org/packages/tbt/) to authorize devices.
 
@@ -40,13 +40,13 @@ The security level is normally configured at firmware level; it's recommended to
 
 ### Automatically connect any device
 
-Users who just want to connect any device without any sort of manual work can create a [udev](/index.php/Udev "Udev") as in `99-removable.rules`:
+Users who just want to connect any device without any sort of manual work can create a [udev rule](/index.php/Udev#About_udev_rules "Udev") as in `99-removable.rules`:
 
  `/etc/udev/rules.d/99-removable.rules`  `ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"` 
 
 ### Forcing power
 
-Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[4]](https://www.kernel.org/doc/html/v5.1/admin-guide/thunderbolt.html).
+Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[4]](https://www.kernel.org/doc/html/v5.1/admin-guide/thunderbolt.html#forcing-power).
 
 Forcing power may especially be useful when a connected device loses connection or the controller that switches itself off.
 

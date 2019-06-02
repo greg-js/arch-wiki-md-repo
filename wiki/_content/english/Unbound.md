@@ -79,7 +79,7 @@ You can now setup *unbound* such that it is [#Forwarding queries](#Forwarding_qu
 
 ### Root hints
 
-For querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints, but it is good practice to use a root-hints file since the builtin hints may become outdated.
+For recursively querying a host that is not cached as an address, the resolver needs to start at the top of the server tree and query the root servers, to know where to go for the top level domain for the address being queried. Unbound comes with default builtin hints. Therefore, if the package is updated regularly, no manual intervention is required. Otherwise, it is good practice to use a root-hints file since the builtin hints may become outdated.
 
 First point *unbound* to the `root.hints` file:
 
@@ -92,17 +92,17 @@ Then, put a *root hints* file into the *unbound* configuration directory. The si
 
  `# curl --output /etc/unbound/root.hints https://www.internic.net/domain/named.cache` 
 
-It is a good idea to update `root.hints` every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by using [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). See [#Roothints systemd timer](#Roothints_systemd_timer) for an example.
+When actually using this file, and not the builtin hints, it is a good idea to update `root.hints` every six months or so in order to make sure the list of root servers is up to date. This can be done manually or by using [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). See [#Roothints systemd timer](#Roothints_systemd_timer) for an example.
 
 ### DNSSEC validation
 
-To use [DNSSEC](/index.php/DNSSEC "DNSSEC") validation, point *unbound* to the server trust anchor file by adding the following setting under `server:`:
+To use [DNSSEC](/index.php/DNSSEC "DNSSEC") validation, the following setting for the server trust anchor should be under `server:`:
 
- `/etc/unbound/unbound.conf`  `trust-anchor-file: trusted-key.key` 
+ `/etc/unbound/unbound.conf`  `  trust-anchor-file: trusted-key.key` 
 
-`/etc/unbound/trusted-key.key` is copied from `/etc/trusted-key.key`, which is provided by the [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors) dependency, whose [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") generates the file with [unbound-anchor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-anchor.8).
+This setting is done by default[[1]](https://git.archlinux.org/svntogit/community.git/commit/trunk/conf?h=packages/unbound&id=79f1ebebd72b53d3b597f6dc48b84f3d76dd9a0c). `/etc/unbound/trusted-key.key` is copied from `/etc/trusted-key.key`, which is provided by the [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors) dependency, whose [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") generates the file with [unbound-anchor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unbound-anchor.8).
 
-Also make sure that if general [#Forwarding queries](#Forwarding_queries) have been set to DNS servers that do not support DNSSEC, then comment them out; otherwise, DNS queries will fail. DNSSEC validation will only be done if the DNS server being queried supports it.
+DNSSEC validation will only be done if the DNS server being queried supports it. If general [#Forwarding queries](#Forwarding_queries) have been set to DNS servers that do not support DNSSEC, their answers, whatever they are, should be considered insecure since no DNSSEC validation could be preformed.
 
 **Note:** Including DNSSEC checking significantly increases DNS lookup times for initial lookups before the address is cached.
 

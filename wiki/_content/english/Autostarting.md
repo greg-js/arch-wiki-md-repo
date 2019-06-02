@@ -63,7 +63,7 @@ See [Command-line shell#Configuration files](/index.php/Command-line_shell#Confi
 
 ## On desktop environment startup
 
-Most [desktop environment](/index.php/Desktop_environment "Desktop environment") implement [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
+Most [desktop environments](/index.php/Desktop_environment "Desktop environment") implement [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
 If the desktop environments has an article, see its *Autostart* section.
 
@@ -74,6 +74,8 @@ If the desktop environments has an article, see its *Autostart* section.
 *   [LXQt#Autostart](/index.php/LXQt#Autostart "LXQt")
 
 ## On window manager startup
+
+Many [window managers](/index.php/Window_manager "Window manager") implement [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
 If the [window manager](/index.php/Window_manager "Window manager") has an article, see its *Autostart* section.
 

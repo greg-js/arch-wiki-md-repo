@@ -21,6 +21,7 @@ From [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
 *   [2 Managing repositories](#Managing_repositories)
     *   [2.1 Add a repository](#Add_a_repository)
     *   [2.2 Delete a repository](#Delete_a_repository)
+    *   [2.3 List repositories](#List_repositories)
 *   [3 Managing runtimes and applications](#Managing_runtimes_and_applications)
     *   [3.1 Search for a remote runtime or application](#Search_for_a_remote_runtime_or_application)
     *   [3.2 List all available runtimes and applications](#List_all_available_runtimes_and_applications)
@@ -72,6 +73,15 @@ $ flatpak remote-delete *name*
 ```
 
 where *name* is the name of the remote repository to be deleted.
+
+### List repositories
+
+To list all the added repositories do:
+
+```
+$ flatpak remotes
+
+```
 
 ## Managing runtimes and applications
 

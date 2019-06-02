@@ -48,7 +48,7 @@ Related articles
     *   [3.3 fbrokendesktop](#fbrokendesktop)
 *   [4 提示与技巧](#提示与技巧)
     *   [4.1 从终端启动程序](#从终端启动程序)
-    *   [4.2 隐藏桌面配置项](#隐藏桌面配置项)
+    *   [4.2 隐藏窗口启动](#隐藏窗口启动)
     *   [4.3 修改环境变量](#修改环境变量)
 *   [5 参阅](#参阅)
 
@@ -251,7 +251,7 @@ $ fbrokendesktop /usr/share/apps/kdm/sessions/icewm.desktop
 
 安装软件包 [dex](https://www.archlinux.org/packages/?name=dex)，并运行 `dex */path/to/application.desktop*`.
 
-### 隐藏桌面配置项
+### 隐藏窗口启动
 
 首先，将桌面配置项复制到 `~/.local/share/applications`，避免修改被后续升级覆盖。
 

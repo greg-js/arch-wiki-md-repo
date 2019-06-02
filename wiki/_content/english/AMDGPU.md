@@ -16,9 +16,10 @@ Related articles
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
     *   [2.1 Enable Southern Islands (SI) and Sea Islands (CIK) support](#Enable_Southern_Islands_(SI)_and_Sea_Islands_(CIK)_support)
-        *   [2.1.1 Set required module parameters](#Set_required_module_parameters)
-            *   [2.1.1.1 Set module parameters in kernel command line](#Set_module_parameters_in_kernel_command_line)
-            *   [2.1.1.2 Set module parameters in modprobe.d](#Set_module_parameters_in_modprobe.d)
+        *   [2.1.1 Specify the correct module order](#Specify_the_correct_module_order)
+        *   [2.1.2 Set required module parameters](#Set_required_module_parameters)
+            *   [2.1.2.1 Set module parameters in kernel command line](#Set_module_parameters_in_kernel_command_line)
+            *   [2.1.2.2 Set module parameters in modprobe.d](#Set_module_parameters_in_modprobe.d)
     *   [2.2 AMDGPU PRO](#AMDGPU_PRO)
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
@@ -61,39 +62,37 @@ Support for [accelerated video decoding](#Video_acceleration) is provided by [li
 
 The [linux](https://www.archlinux.org/packages/?name=linux) package enables AMDGPU support for cards of the Southern Islands (SI) and Sea Islands (CIK). When building or compiling a [kernel](/index.php/Kernel "Kernel"), `CONFIG_DRM_AMDGPU_SI=Y` and/or `CONFIG_DRM_AMDGPU_CIK=Y` should be be set in the config.
 
-Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon](/index.php/Radeon "Radeon") driver may be used instead of the AMDGPU driver.
+#### Specify the correct module order
 
-To make sure the `amdgpu` is loaded first use the following [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES=(amdgpu radeon)`.
+Even when AMDGPU support for SI/CIK has been enabled by the kernel, the [radeon](/index.php/Radeon "Radeon") driver may be loaded before the `amdgpu` driver.
+
+Make sure `amdgpu` has been set as first module in the [Mkinitcpio#MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array, e.g. `MODULES=(amdgpu radeon)`.
 
 #### Set required module parameters
 
-The parameters of both `amdgpu` and `radeon` modules are `cik_support=` and `si_support=`. They can be set as a kernel parameter or in a configuration file for *modprobe* in [modprobe.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modprobe.d.5).
+The [module parameters](/index.php/Module_parameters "Module parameters") of both `amdgpu` and `radeon` modules are `cik_support=` and `si_support=`.
+
+They need to be set as kernel parameters or in a *modprobe* configuration file, and depend on the cards GCN version.
+
+**Tip:** [dmesg](/index.php/Dmesg "Dmesg") may indicate the correct kernel parameter to use: `[..] amdgpu 0000:01:00.0: Use radeon.cik_support=0 amdgpu.cik_support=1 to override`.
 
 ##### Set module parameters in kernel command line
 
-To enable full support for SI/CIK when using the `amdgpu`, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent the `radeon` module from being used [[1]](http://www.phoronix.com/scan.php?page=article&item=linux-413-gcn101&num=1):
-
- `$ dmesg` 
-```
-[..] amdgpu 0000:01:00.0: CIK support provided by radeon.
-[..] amdgpu 0000:01:00.0: Use radeon.cik_support=0 amdgpu.cik_support=1 to override.
-```
-
-The flags depend on the cards GCN version:
+Set one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 *   Southern Islands (SI): `radeon.si_support=0 amdgpu.si_support=1`
 *   Sea Islands (CIK): `radeon.cik_support=0 amdgpu.cik_support=1`
 
 ##### Set module parameters in modprobe.d
 
-Create the following configuration files for *modprobe* in `/etc/modprobe.d/`. See [modprobe.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modprobe.d.5) for the file syntax.
+Create the configuration [modprobe](/index.php/Modprobe "Modprobe") files in `/etc/modprobe.d/`, see [modprobe.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modprobe.d.5) for syntax details.
 
-For Southern Islands (SI) add the lines with option `si_support=`, for Sea Islands (CIK) add those with option `cik_support=`.
+For Southern Islands (SI) use option `si_support=1`, for Sea Islands (CIK) use option `cik_support=1`, e.g.:
 
  `/etc/modprobe.d/amdgpu.conf` 
 ```
 options amdgpu si_support=1
-options amdgpu cik_support=1
+options amdgpu cik_support=0
 ```
  `/etc/modprobe.d/radeon.conf` 
 ```
@@ -101,7 +100,7 @@ options radeon si_support=0
 options radeon cik_support=0
 ```
 
-Make sure `modconf` is in the the HOOKS array in `/etc/mkinitcpio.conf` and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+Make sure `modconf` is in the the `HOOKS` array in `/etc/mkinitcpio.conf` and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ### AMDGPU PRO
 
@@ -314,21 +313,21 @@ EndSection
 
 ### Screen artifacts and frequency problem
 
-[Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") may cause screen artifacts to appear when displaying to monitors at higher frequencies (120+Hz) due to issues in the way GPU clock speeds are managed[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868)[[3]](https://bugs.freedesktop.org/show_bug.cgi?id=102646).
+[Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") may cause screen artifacts to appear when displaying to monitors at higher frequencies (120+Hz) due to issues in the way GPU clock speeds are managed[[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96868)[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=102646).
 
-A workaround [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
+A workaround [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
-There is also a GUI solution [[5]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+There is also a GUI solution [[4]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
 
 ### R9 390 series Poor Performance and/or Instability
 
-If you experience issues [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the use of amdgpu driver instead of radeon.
+If you experience issues [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the use of amdgpu driver instead of radeon.
 
 If it still does not work, try disabling DPM, by setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to: `radeon.cik_support=0 radeon.si_support=0 amdgpu.cik_support=1 amdgpu.si_support=1`
 
 ### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
 
-If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amdgpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
+If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amdgpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
 
 ### Cursor corruption
 

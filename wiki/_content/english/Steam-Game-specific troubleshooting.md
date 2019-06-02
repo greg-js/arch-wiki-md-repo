@@ -296,6 +296,7 @@
         *   [5.134.2 Colors](#Colors)
         *   [5.134.3 Sound](#Sound)
         *   [5.134.4 Resolution](#Resolution)
+        *   [5.134.5 Crash on start in libX11.so.6.3.0](#Crash_on_start_in_libX11.so.6.3.0)
     *   [5.135 Tropico 5](#Tropico_5)
         *   [5.135.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
     *   [5.136 Unity of Command](#Unity_of_Command)
@@ -2422,6 +2423,15 @@ frequency=48000
 #### Resolution
 
 If the game resolution is wrong when using a dual monitor setup and you can't see the whole window edit `~/.frozenbyte/Trine2/options.txt` and change the options `ForceFullscreenWidth` and `ForceFullscreenHeight` to the resolution of your monitor on which you want to play the game.
+
+#### Crash on start in libX11.so.6.3.0
+
+gdb may report a crash in XGetICValues(), probably due to a bug in SDL1.3; fortunately SDL2.0 is compatible with trine 2, so just force it and see if it works by modifying the steam launch options (or by script/commandline if using the drm free version).
+
+```
+LD_PRELOAD="/usr/lib32/libSDL2.so"  %command%
+
+```
 
 ### Tropico 5
 

@@ -84,7 +84,7 @@ See [https://docs.mongodb.com/manual/reference/configuration-options/](https://d
 
 To create a MongoDB user account with administrator access [[4]](https://docs.mongodb.com/manual/tutorial/enable-authentication/):
 
- `$ mongodb` 
+ `$ mongo` 
 ```
 use admin
 db.createUser(

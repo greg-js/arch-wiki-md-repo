@@ -1,28 +1,36 @@
 See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipedia:Arch Linux") and [Arch Linux on DistroWatch](http://distrowatch.com/table.php?distribution=arch).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 2018](#2018)
-*   [2 2017](#2017)
-*   [3 2016](#2016)
-*   [4 2015](#2015)
-*   [5 2014](#2014)
-*   [6 2013](#2013)
-*   [7 2012](#2012)
-*   [8 2011](#2011)
-*   [9 2010](#2010)
-*   [10 2009](#2009)
-*   [11 2008](#2008)
-*   [12 2007](#2007)
-*   [13 2006](#2006)
-*   [14 2005](#2005)
-*   [15 2004](#2004)
-*   [16 2003](#2003)
-*   [17 2002](#2002)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 2019](#2019)
+*   [2 2018](#2018)
+*   [3 2017](#2017)
+*   [4 2016](#2016)
+*   [5 2015](#2015)
+*   [6 2014](#2014)
+*   [7 2013](#2013)
+*   [8 2012](#2012)
+*   [9 2011](#2011)
+*   [10 2010](#2010)
+*   [11 2009](#2009)
+*   [12 2008](#2008)
+*   [13 2007](#2007)
+*   [14 2006](#2006)
+*   [15 2005](#2005)
+*   [16 2004](#2004)
+*   [17 2003](#2003)
+*   [18 2002](#2002)
+
+## 2019
+
+*   [BTW, I Installed Arch](https://chooselinux.show/10) (first 19 minutes of the podcast) Jason Evangelho and Joe Ressington - chooselinux.show 2019-05-30
 
 ## 2018
 
-*   [Best Linux distros 2018: the finest open source operating systems around](http://www.itpro.co.uk/operating-systems/28025/best-linux-distros-2018-the-finest-open-source-operating-systems-around) Clare Hopping, Bobby Hellard - itpro.co.uk 2018-10-22
 *   [10 Reasons to Install an Arch Linux-Based OS on Your PC](https://www.makeuseof.com/tag/reasons-install-arch-linux/) Bertel King, Jr. - makeuseof.com 2018-04-02
 
 ## 2017

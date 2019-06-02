@@ -908,3 +908,4 @@ To support clients that do not support tls-crypt, replace `tls-crypt ta.key` wit
 ## See also
 
 *   [Wikipedia:OpenVPN](https://en.wikipedia.org/wiki/OpenVPN "wikipedia:OpenVPN")
+*   [Securing Network](https://www.infosecwriters.com/text_resources/pdf/securing_communication.pdf) Communication with one of Stunnel, OpenSSH, OpenVPN

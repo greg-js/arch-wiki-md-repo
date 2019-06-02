@@ -1,5 +1,3 @@
-**提示：** 由于shadowsocks多为中文用户使用，该中文页面大量内容领先于英文页面。
-
 [Shadowsocks](https://github.com/clowwindy/shadowsocks/)是一个轻量级[socks5](https://en.wikipedia.org/wiki/SOCKS_(protocol)#SOCKS5 "wikipedia:SOCKS (protocol)")代理，最初用 Python 编写。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
@@ -11,7 +9,7 @@
 *   [1 安装](#安装)
 *   [2 配置](#配置)
     *   [2.1 客户端](#客户端)
-        *   [2.1.1 命令行](#命令行)
+        *   [2.1.1 通过命令行](#通过命令行)
         *   [2.1.2 以守护进程形式运行客户端](#以守护进程形式运行客户端)
         *   [2.1.3 图形界面客户端](#图形界面客户端)
         *   [2.1.4 配置代理](#配置代理)
@@ -26,7 +24,7 @@
 
 ## 安装
 
-可[安装](/index.php/Install "Install") [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev) 或者 [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)。
+[安装](/index.php/Install "Install") [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)(c++) 或者 [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)(Python)。
 
 ## 配置
 
@@ -66,43 +64,34 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 ### 客户端
 
-#### 命令行
+**警告:** [udns](https://www.archlinux.org/packages/?name=udns)包用作DNS的存根解析程序。为了防止客户端应用程序（如浏览器）的DNS请求泄漏，必须使用其他应用程序。例如，客户端上的[privoxy](/index.php/Privoxy "Privoxy")或完整的DNS解析程序。[[1]](https://github.com/shadowsocks/shadowsocks-libev/issues/1542) [[2]](https://github.com/shadowsocks/shadowsocks-libev/issues/1641)
 
-运行 `ss-local` 启动客户端；若需指定配置文件的位置：
+#### 通过命令行
 
- `# ss-local -c /etc/shadowsocks/config.json` 
-**注意:** 有用户报告无法成功在运行时加载`config.json`
-，或可尝试手动运行： `# ss-local -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法*` 
+使用`ss-local` 命令启动客户端。 启动客户端时使用`/etc/shadowsocks/config.json`配置文件:
 
-配合nohup和&可以使之后台运行，关闭终端也不影响：
+```
+$ ss-local -c /etc/shadowsocks/config.json
 
- `#nohup ss-local -s *服务器地址* -p *服务器端口* -l *本地端端口* -k *密码* -m *加密方法* &` 
+```
 
-增加 `-v` 参数获取详细log信息
+同样的，也在命令中可以指定一个配置文件：
 
-* * *
+```
+$ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method*
+
+```
+
+查看详细日志，使用`-v` 命令:
+
+```
+$ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m *encryption_method* -v
+
+```
 
 #### 以守护进程形式运行客户端
 
-**注意:** shadowsocks和shadowsocks-libev的systemd 系统单元使用相同的配置文件路径 （`/etc/shadowsocks`）
-
-**注意:** shadowsocks-libev没有`/etc/shadowsocks`文件夹，请自行创建
-
-Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`*conf-file*.json`（以`*conf-file*`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
-
-```
-# systemctl start shadowsocks@foo
-
-```
-
-若需开机自启动：
-
-```
-# systemctl enable shadowsocks@foo
-
-```
-
-**提示：** 可用`journalctl -u shadowsocks@foo`来查询日志；
+Shadowsocks客户端可以使用`shadowsocks@.service`控制。 例如，[start]]和[enable](/index.php/Enable "Enable")配置文件`/etc/shadowsocks/config.json`, 可使用[`shadowsocks-libev@config.service`服务。
 
 #### 图形界面客户端
 
@@ -294,7 +283,7 @@ AEAD加密:
 
 **注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
 
-加密类别列表参见[[1]](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)。 并且可以使用[[2]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)脚本来比较和找出在你机器上运行最快的加密方法。
+加密类别列表参见[[3]](https://github.com/shadowsocks/shadowsocks/wiki/Encryption)。 并且可以使用[[4]](https://github.com/shadowsocks/shadowsocks-libev/blob/0437e05aa8ec7f36f1eeb8c366dfd2b2b3b0288b/scripts/iperf.sh)脚本来比较和找出在你机器上运行最快的加密方法。
 
 #### 性能优化
 

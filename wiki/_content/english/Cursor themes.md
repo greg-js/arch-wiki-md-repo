@@ -316,7 +316,7 @@ Make sure your `~/.xinitrc` looks similar to the following
 ```
 xrandr &&
 ...
-xrdb --merge ~/.Xresources &&
+xrdb -merge ~/.Xresources &&
 exec wm
 ```
 

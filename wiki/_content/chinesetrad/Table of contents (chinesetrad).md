@@ -45,6 +45,7 @@
 | <small>6.4.</small> [美觀裝飾](/index.php/Category:Eye_candy_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Eye candy (正體中文)") <small>(0)</small> |
 | <small>6.4.1.</small> [字型](/index.php/Category:Fonts_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Fonts (正體中文)") <small>(1)</small> |
 | <small>6.5.</small> [檔案系統](/index.php/Category:File_systems_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:File systems (正體中文)") <small>(5)</small> |
+| <small>6.5.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Disk encryption (正體中文)") <small>(1) (還在 [Encryption](/index.php/Category:Encryption_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Encryption (正體中文)"))</small> |
 | <small>6.6.</small> [國際化](/index.php/Category:Internationalization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internationalization (正體中文)") <small>(3)</small> |
 | <small>6.6.1.</small> [Localization](/index.php/Category:Localization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Localization (正體中文)") <small>(1)</small> |
 | <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Kernel (正體中文)") <small>(1)</small> |
@@ -52,6 +53,7 @@
 | <small>6.9.</small> [軟體包管理](/index.php/Category:Package_management_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package management (正體中文)") <small>(6)</small> |
 | <small>6.10.</small> [安全性](/index.php/Category:Security_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Security (正體中文)") <small>(1)</small> |
 | <small>6.10.1.</small> [Encryption](/index.php/Category:Encryption_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Encryption (正體中文)") <small>(3)</small> |
+| <small>6.10.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Disk encryption (正體中文)") <small>(1) (還在 [檔案系統](/index.php/Category:File_systems_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:File systems (正體中文)"))</small> |
 | <small>6.11.</small> [系統恢復](/index.php/Category:System_recovery_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:System recovery (正體中文)") <small>(3)</small> |
 | <small>6.12.</small> [虛擬化](/index.php/Category:Virtualization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Virtualization (正體中文)") <small>(3)</small> |
 | <small>6.13.</small> [X 伺服器](/index.php/Category:X_server_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:X server (正體中文)") <small>(5)</small> |

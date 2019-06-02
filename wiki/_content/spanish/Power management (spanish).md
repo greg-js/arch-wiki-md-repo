@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Power management](/index.php/Power_management "Power management"), revisada por última vez el **2019-05-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Power_management&diff=0&oldid=572520) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Power management/Suspender e hibernar](/index.php/Power_management/Suspend_and_hibernate_(Espa%C3%B1ol) "Power management/Suspend and hibernate (Español)")
@@ -57,12 +60,12 @@ En Arch Linux, la administración de energía consiste en dos partes principales
         *   [3.8.2 Administración de energía PCI en tiempo de ejecución](#Administración_de_energía_PCI_en_tiempo_de_ejecución)
         *   [3.8.3 Auto suspensión USB](#Auto_suspensión_USB)
         *   [3.8.4 Administración de energía de enlace activo SATA](#Administración_de_energía_de_enlace_activo_SATA)
-    *   [3.9 Hard disk drive](#Hard_disk_drive)
-    *   [3.10 CD-ROM or DVD drive](#CD-ROM_or_DVD_drive)
-*   [4 Tools and scripts](#Tools_and_scripts)
-    *   [4.1 Using a script and an udev rule](#Using_a_script_and_an_udev_rule)
-    *   [4.2 Print power settings](#Print_power_settings)
-*   [5 See also](#See_also)
+    *   [3.9 Controlador de disco duro](#Controlador_de_disco_duro)
+    *   [3.10 Controlador CD-ROM o DVD](#Controlador_CD-ROM_o_DVD)
+*   [4 Herramientas y scripts](#Herramientas_y_scripts)
+    *   [4.1 Utilizar un script y una regla udev](#Utilizar_un_script_y_una_regla_udev)
+    *   [4.2 Ajustes de energía de la impresora](#Ajustes_de_energía_de_la_impresora)
+*   [5 Vea también](#Vea_también)
 
 ## Herramientas de espacio del usuario
 
@@ -660,23 +663,23 @@ Los ajustes actuales se pueden leer desde `/sys/class/scsi_host/host*/link_power
  `/etc/udev/rules.d/hd_power_save.rules`  `ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{link_power_management_policy}="med_power_with_dipm"` 
 **Nota:** Esto añade latencia cuando se accede al disco desde que este estaba en reposo, por tanto, es una de las pocas configuraciones que pueden valer la pena alternar en función de si está conectado a la alimentación de CA o no.
 
-### Hard disk drive
+### Controlador de disco duro
 
-See [hdparm#Power management configuration](/index.php/Hdparm#Power_management_configuration "Hdparm") for drive parameters that can be set.
+Vea [Configuración energética hd](/index.php/Hdparm#Power_management_configuration "Hdparm") para más información sobre los parámentros que se pueden establecer.
 
-Power saving is not effective when too many programs are frequently writing to the disk. Tracking all programs, and how and when they write to disk is the way to limit disk usage. Use [iotop](https://www.archlinux.org/packages/?name=iotop) to see which programs use the disk frequently. See [Improving performance#Storage devices](/index.php/Improving_performance#Storage_devices "Improving performance") for other tips.
+El ahorro energético no es efectivo cuando varios programas están escribiendo en el disco duro. Siga todos los programas y como y cuando escriben en el disco para poder limitar el uso del disco. Utilice [iotop](https://www.archlinux.org/packages/?name=iotop) para ver qué programas utilizan el disco frecuentemente. Vea [mejorar el rendimiento de dispositivos de almacenamiento](/index.php/Improving_performance_(Espa%C3%B1ol)#Dispositivos_de_almacenamiento "Improving performance (Español)") para otros consejos.
 
-Also little things like setting the [noatime](/index.php/Fstab#atime_options "Fstab") option can help. If enough RAM is available, consider disabling or limiting [swappiness](/index.php/Swappiness "Swappiness") as it has the possibility to limit a good number of disk writes.
+También detalles como ajustar la opción [noatime](/index.php/Fstab_(Espa%C3%B1ol)#Opciones_atime "Fstab (Español)") puede ayudar. Si hay suficiente RAM disponible considere limitar o deshabilitar [swappiness](/index.php/Swap_(Espa%C3%B1ol)#Swappiness "Swap (Español)") limitando posiblemente un gran número de escrituras a disco.
 
-### CD-ROM or DVD drive
+### Controlador CD-ROM o DVD
 
-See [Udisks#Devices do not remain unmounted (udisks)](/index.php/Udisks#Devices_do_not_remain_unmounted_(udisks) "Udisks").
+Vea [dispositivos que no permanecen desmontados (udisks)](/index.php/Udisks#Devices_do_not_remain_unmounted_(udisks) "Udisks").
 
-## Tools and scripts
+## Herramientas y scripts
 
-### Using a script and an udev rule
+### Utilizar un script y una regla udev
 
-Since systemd users can suspend and hibernate through `systemctl suspend` or `systemctl hibernate` and handle acpi events with `/etc/systemd/logind.conf`, it might be interesting to remove *pm-utils* and [acpid](/index.php/Acpid "Acpid"). There is just one thing systemd cannot do (as of systemd-204): power management depending on whether the system is running on AC or battery. To fill this gap, you can create a single [udev](/index.php/Udev "Udev") rule that runs a script when the AC adapter is plugged and unplugged:
+Desde que los usuarios de systemd pueden suspender o hibernar a través de `systemctl suspend` o `systemctl hibernate` y encargarse de los eventos acpi con `/etc/systemd/logind.conf` puede ser interesante eliminar *pm-utils* y [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)"). Solo hay una cosa que systemd no puede hacer (a partir de systemd-204): administrar la energía dependiendo su el sistema está ejecutando con AC o con batería. Para solventar esto puede crear una regla [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") simple que ejecute un script cuando el adaptador AC se conecte y desconecte:
 
  `/etc/udev/rules.d/powersave.rules` 
 ```
@@ -685,28 +688,28 @@ SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/path/to/your/script false"
 
 ```
 
-**Note:** You can use the same script that *pm-powersave* uses. You just have to make it executable and place it somewhere else (for example `/usr/local/bin/`).
+**Nota:** Puede utilizar el mismo script que utiliza *pm-powersave*. Solo lo tiene que hacer ejecutable y colocarlo en algún lugar (como por ejemplo `/usr/local/bin/`).
 
-Examples of powersave scripts:
+Ejemplo de un script de powersave:
 
-*   [ftw](https://github.com/supplantr/ftw), package: [ftw-git](https://aur.archlinux.org/packages/ftw-git/)
+*   [ftw](https://github.com/supplantr/ftw), paquete: [ftw-git](https://aur.archlinux.org/packages/ftw-git/)
 *   [powersave](https://github.com/Unia/powersave)
-*   [throttle](https://github.com/quequotion/pantheon-bzr-qq/blob/master/EXTRAS/indicator-powersave/throttle), from [indicator-powersave](https://aur.archlinux.org/packages/indicator-powersave/)
+*   [throttle](https://github.com/quequotion/pantheon-bzr-qq/blob/master/EXTRAS/indicator-powersave/throttle), de [indicator-powersave](https://aur.archlinux.org/packages/indicator-powersave/)
 
-The above udev rule should work as expected, but if your power settings are not updated after a suspend or hibernate cycle, you should add a script in `/usr/lib/systemd/system-sleep/` with the following contents:
+Las reglas udev de arriba suelen funcionar como se esperan pero su sus ajustes de energía no se actualizan después de suspender o hibernar debe añadir un script en `/usr/lib/systemd/system-sleep/` con el siguiente contenido:
 
  `/usr/lib/systemd/system-sleep/00powersave` 
 ```
 #!/bin/sh
 
 case $1 in
-    pre) /path/to/your/script false ;;
+    pre) /ruta/a/su/script false ;;
     post)       
 	if cat /sys/class/power_supply/AC0/online | grep 0 > /dev/null 2>&1
 	then
-    		/path/to/your/script true	
+    		/ruta/a/su/script true	
 	else
-    		/path/to/your/script false
+    		/ruta/a/su/script false
 	fi
     ;;
 esac
@@ -714,13 +717,13 @@ exit 0
 
 ```
 
-Do not forget to make it executable!
+¡No olvide hacerlo ejecutable!
 
-**Note:** Be aware that AC0 may be different for your laptop, change it if that is the case.
+**Nota:** Tenga en cuenta que AC0 puede ser diferente en su portátil, cámbielo si ese es el caso.
 
-### Print power settings
+### Ajustes de energía de la impresora
 
-This script prints power settings and a variety of other properties for USB and PCI devices. Note that root permissions are needed to see all settings.
+Este script ajusta la administra energéticamente la impresora y otras propiedades para los dispositivos PCI y USB. Note que se necesitan permisos root para ver todos los ajustes.
 
 ```
 #!/bin/bash
@@ -759,7 +762,7 @@ done
 
 ```
 
-## See also
+## Vea también
 
-*   [ThinkWiki:How to reduce power consumption](http://www.thinkwiki.org/wiki/How_to_reduce_power_consumption)
-*   [How to get longer battery life on Linux](http://ivanvojtko.blogspot.sk/2016/04/how-to-get-longer-battery-life-on-linux.html)
+*   [ThinkWiki:Como reducir el consumo energético (en inglés)](http://www.thinkwiki.org/wiki/How_to_reduce_power_consumption).
+*   [Como tener una mayor duración de la batería en Linux (en inglés)](http://ivanvojtko.blogspot.sk/2016/04/how-to-get-longer-battery-life-on-linux.html).

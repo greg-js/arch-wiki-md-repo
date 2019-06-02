@@ -32,11 +32,11 @@ This article describes how to use persistent names for your [block devices](/ind
 
 There are four different schemes for persistent naming: [by-label](#by-label), [by-uuid](#by-uuid), [by-id and by-path](#by-id_and_by-path). For those using disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), two additional schemes can be used [by-partlabel](#by-partlabel) and [by-partuuid](#by-partuuid). You can also use [static device names by using Udev](#Static_device_names_with_Udev).
 
-The directories in `/dev/disk/` are created and destroyed dynamically, depending on whether you there are devices in them.
+The directories in `/dev/disk/` are created and destroyed dynamically, depending on whether there are devices in them.
 
 **Note:** Beware that [Disk cloning](/index.php/Disk_cloning "Disk cloning") creates two different disks with the same name.
 
-The following sections describes what the different persistent naming methods are and how they are used.
+The following sections describe what the different persistent naming methods are and how they are used.
 
 The [lsblk](/index.php/Lsblk "Lsblk") command can be used for viewing graphically the first persistent schemes:
 

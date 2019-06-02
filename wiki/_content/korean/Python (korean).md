@@ -10,14 +10,18 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ko:%ED%8C%8C%EC%9D%B4%EC%8D%AC "w
 
 	*파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 설치](#.EC.84.A4.EC.B9.98)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 설치](#설치)
     *   [1.1 Python 3](#Python_3)
     *   [1.2 Python 2](#Python_2)
-*   [2 Python 명령행에서 자동완성 사용하기](#Python_.EB.AA.85.EB.A0.B9.ED.96.89.EC.97.90.EC.84.9C_.EC.9E.90.EB.8F.99.EC.99.84.EC.84.B1_.EC.82.AC.EC.9A.A9.ED.95.98.EA.B8.B0)
-*   [3 오래된 버전들](#.EC.98.A4.EB.9E.98.EB.90.9C_.EB.B2.84.EC.A0.84.EB.93.A4)
-*   [4 팁과 트릭들](#.ED.8C.81.EA.B3.BC_.ED.8A.B8.EB.A6.AD.EB.93.A4)
+*   [2 Python 명령행에서 자동완성 사용하기](#Python_명령행에서_자동완성_사용하기)
+*   [3 오래된 버전들](#오래된_버전들)
+*   [4 팁과 트릭들](#팁과_트릭들)
 *   [5 See also](#See_also)
 
 ## 설치

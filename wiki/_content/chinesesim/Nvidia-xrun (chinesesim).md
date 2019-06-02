@@ -2,15 +2,19 @@
 
 [nvidia-xrun](https://github.com/Witko/nvidia-xrun)是一个实用的独立显卡与独立的NVIDIA图形完全性能。[bumblebee](/index.php/Bumblebee "Bumblebee")目前的状态提供了非常糟糕的表现，nvidia-xrun这个解决方案提供了一个更复杂的程序，拥有更好的GPU利用效率。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
-    *   [2.1 设置nvidia的bus id](#.E8.AE.BE.E7.BD.AEnvidia.E7.9A.84bus_id)
-    *   [2.2 自动y运行窗口管理器](#.E8.87.AA.E5.8A.A8y.E8.BF.90.E8.A1.8C.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.3 使用bbswitch在管理nvidia显卡](#.E4.BD.BF.E7.94.A8bbswitch.E5.9C.A8.E7.AE.A1.E7.90.86nvidia.E6.98.BE.E5.8D.A1)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-*   [4 问题](#.E9.97.AE.E9.A2.98)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 配置](#配置)
+    *   [2.1 设置nvidia的bus id](#设置nvidia的bus_id)
+    *   [2.2 自动y运行窗口管理器](#自动y运行窗口管理器)
+    *   [2.3 使用bbswitch在管理nvidia显卡](#使用bbswitch在管理nvidia显卡)
+*   [3 使用](#使用)
+*   [4 问题](#问题)
 
 ## 安装
 

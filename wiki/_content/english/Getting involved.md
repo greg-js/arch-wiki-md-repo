@@ -110,15 +110,15 @@ Arch-specific groups that you can engage in.
 
 	The ArchMap project creates a map of Arch Linux users all over the world.
 
-	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
+	[Arch Linux Subreddit](https://www.reddit.com/r/archlinux/)
 
-	Place for reddit users to discuss Arch related issues.
+	Place for Reddit users to discuss Arch related issues.
 
 	[International communities](/index.php/International_communities "International communities")
 
 	Local communities and meet-up places for users.
 
-	[Arch Women](http://archwomen.org/)
+	[Arch Women](https://archwomen.org/)
 
 	Group with the intention of resolving possible hurdles for female Arch users ([forum thread](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
@@ -126,7 +126,7 @@ Arch-specific groups that you can engage in.
 
 Community-developed software that focuses on Arch Linux.
 
-	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
+	[Xyne's Arch Linux Projects](https://xyne.archlinux.ca/projects/)
 
 	A trusted user's arch-related projects.
 

@@ -24,6 +24,7 @@ De [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
 *   [2 Administrando repositorios](#Administrando_repositorios)
     *   [2.1 Añadir un repositorio](#Añadir_un_repositorio)
     *   [2.2 Eliminar un repositorio](#Eliminar_un_repositorio)
+    *   [2.3 Listar repositorios](#Listar_repositorios)
 *   [3 Administrando tiempos de ejecución y aplicaciones](#Administrando_tiempos_de_ejecución_y_aplicaciones)
     *   [3.1 Búsqueda de un tiempo de ejecución o aplicación remota](#Búsqueda_de_un_tiempo_de_ejecución_o_aplicación_remota)
     *   [3.2 Listar todos los tiempos de ejecución y aplicaciones disponibles](#Listar_todos_los_tiempos_de_ejecución_y_aplicaciones_disponibles)
@@ -33,6 +34,8 @@ De [flatpak(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak.1):
     *   [3.6 Actualizar un tiempo de ejecución o aplicación](#Actualizar_un_tiempo_de_ejecución_o_aplicación)
     *   [3.7 Desinstalar un tiempo de ejecución o aplicación](#Desinstalar_un_tiempo_de_ejecución_o_aplicación)
     *   [3.8 Añadiendo archivos .desktop de Flatpak a su menú](#Añadiendo_archivos_.desktop_de_Flatpak_a_su_menú)
+    *   [3.9 Visualizando permisos de aislamiento de aplicación](#Visualizando_permisos_de_aislamiento_de_aplicación)
+    *   [3.10 Anulando permisos de aislamiento de aplicaciones](#Anulando_permisos_de_aislamiento_de_aplicaciones)
 *   [4 Creación de un tiempo de ejecución base personalizado](#Creación_de_un_tiempo_de_ejecución_base_personalizado)
     *   [4.1 Creación de aplicaciones con pacman](#Creación_de_aplicaciones_con_pacman)
 *   [5 Véase también](#Véase_también)
@@ -72,7 +75,16 @@ $ flatpak remote-delete *nombre*
 
 ```
 
-Donde *nombre* es el nombre del ropositorio remoto a eliminar.
+Donde *nombre* es el nombre del repositorio remoto a eliminar.
+
+### Listar repositorios
+
+Para listar todos los repositorios agregados haga:
+
+```
+$ flatpak remotes
+
+```
 
 ## Administrando tiempos de ejecución y aplicaciones
 
@@ -167,6 +179,41 @@ Flatpak espera que los manejadores de ventana respeten la variable de entorno XD
 ```
 
 Es sabido que ésto es necesario en Awesome.
+
+### Visualizando permisos de aislamiento de aplicación
+
+Las aplicaciones Flatpak vienen con reglas de aislamiento predefinidas que definen los recursos y rutas del sistema de archivos que la aplicación tiene permitido acceder. Para ver los permisos específicos de aplicación haga:
+
+```
+$ flatpak info --show-permissions *nombre*
+
+```
+
+La referencia de los nombres de permisos de aislamiento puede encontrase en la [documentación oficial flatpak](https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html).
+
+### Anulando permisos de aislamiento de aplicaciones
+
+Si encuentra que los permisos predefinidos de la aplicación son demasiado laxos o demasiado restrictivos puede cambiar cualquier cosa que desee usando la órden `flatpak override`.
+
+Por ejemplo:
+
+```
+flatpak override --nofilesystem=home *nombre*
+
+```
+
+Ésto evitará el acceso de la aplicación a su carpeta de inicio.
+
+Cada tipo de permiso como dipositivo, sistema de archivo o socket tiene una opción de línea de órden que permite ése permiso en particular y una opción separada que lo niega. Por ejemplo, en caso de acceso a dipositivo `--device=*device_name*` permite el acceso, `--nodevice=*device_name*` niega el permiso para acceder al dispositivo.
+
+Para todos los comandos de tipos de permisos consulte la página del manual: [flatpak-override(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak-override.1)
+
+Las anulaciones de permisos se pueden restablecer a los valores predeterminados con la órden:
+
+```
+$ flatpak override --reset *nombre*
+
+```
 
 ## Creación de un tiempo de ejecución base personalizado
 

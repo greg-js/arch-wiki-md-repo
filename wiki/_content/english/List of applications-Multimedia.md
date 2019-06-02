@@ -824,6 +824,10 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://lesbonscomptes.com/upplay/](https://lesbonscomptes.com/upplay/) || [upplay](https://aur.archlinux.org/packages/upplay/)
 
+*   **ArchSimian** — Graphical Qt-based playlist creator that mines data from the user's MediaMonkey database.
+
+	[https://github.com/Harpo3/archsimian](https://github.com/Harpo3/archsimian) || [archsimian-git](https://aur.archlinux.org/packages/archsimian-git/)
+
 #### Audio tag editors
 
 ##### Console

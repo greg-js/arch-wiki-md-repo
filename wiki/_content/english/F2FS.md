@@ -16,8 +16,10 @@ An FTL is found in all flash memory with a SCSI/SATA/PCIe/NVMe interface [[1]](h
 *   [2 Mounting a F2FS file system](#Mounting_a_F2FS_file_system)
 *   [3 Grow an F2FS file system](#Grow_an_F2FS_file_system)
 *   [4 Checking and repair](#Checking_and_repair)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
+*   [5 Known issues](#Known_issues)
+    *   [5.1 Long running fsck delays boot](#Long_running_fsck_delays_boot)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
 
 ## Creating a F2FS file system
 
@@ -70,6 +72,12 @@ where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](http
 ## Checking and repair
 
 Checking and repairs to f2fs file systems are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
+
+## Known issues
+
+### Long running fsck delays boot
+
+If the kernel version has changed between boots, the *fsck.f2fs* utility will perform a full file system check which will take longer to finish.[[3]](https://bbs.archlinux.org/viewtopic.php?id=245702)
 
 ## Troubleshooting
 

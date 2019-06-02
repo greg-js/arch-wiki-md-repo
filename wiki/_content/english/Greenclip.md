@@ -15,6 +15,7 @@ After=display-manager.service
 [Service]
 ExecStart=/usr/bin/greenclip daemon
 Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=default.target

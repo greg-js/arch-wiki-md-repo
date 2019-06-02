@@ -1,6 +1,10 @@
 [Anki](http://ankisrs.net/) is a [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition "wikipedia:Spaced repetition") system (SRS), a program which allows you to create, manage and review [flashcards](https://en.wikipedia.org/wiki/Flashcard "wikipedia:Flashcard"). Anki is very flexible and also allows the creation of templates. Apps for Android and iOS as well as a web interface can be used to interact with the user's flashcard database. Anki supports [addons](https://ankiweb.net/shared/addons/), written in [python](/index.php/Python "Python").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Flashcards](#Flashcards)
@@ -8,6 +12,7 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Kanji stroke support](#Kanji_stroke_support)
     *   [3.2 Asian language support](#Asian_language_support)
+    *   [3.3 Self-hosted sync server](#Self-hosted_sync_server)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -43,6 +48,10 @@ If you prefer to use version 1.2, [install](/index.php/Install "Install") the [a
 Launch Anki, and inside Anki use *File > Download > Shared Plugin* to download and install the "Japanese Support" plugin, restart.
 
 After creating a new deck, you need to select "Japanese" as the deck model in "deck properties" to have Japanese support. Make sure that the Japanese Support plugin is installed, otherwise you cannot select "Japanese" as the model.
+
+### Self-hosted sync server
+
+AnkiWeb is a proprietary service. If you prefer a self-hosted free (as in freedom) alternative, you can use [anki-sync-server](https://github.com/tsudoko/anki-sync-server). One tutorial how to set it up is available [here](http://genedan.com/no-127-ankisyncd-a-custom-sync-server-for-anki-2-1/).
 
 ## See also
 

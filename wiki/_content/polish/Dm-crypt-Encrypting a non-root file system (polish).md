@@ -1,6 +1,10 @@
 Poniżej przedstawiono przykłady szyfrowania wtórnego, tj. Innego niż root, systemu plików z dm-crypt.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
 *   [2 Partycja](#Partycja)

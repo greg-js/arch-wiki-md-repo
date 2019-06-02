@@ -365,12 +365,14 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 Turning off CPU exploit mitigations against Spectre/Meltdown improves performance at the cost of security, see [phoronix.com](https://phoronix.com/scan.php?page=news_item&px=Linux-Improve-CPU-Spec-Switches), which can be acceptable for isolated linux systems.
 
-To turn off most of the mitigations, add the following arguments to the kernel commandline.
+To turn off most of the mitigations, add the following argument to the kernel commandline.
 
 ```
-pti=off spectre_v2=off l1tf=off nospec_store_bypass_disable
+mitigations=off
 
 ```
+
+The explanations of all the switches it toggles are given at [kernel.org](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
 
 **Warning:** Do not apply this setting without considering the vulnerabilities it opens up.
 
@@ -394,7 +396,7 @@ The performance of the Mesa drivers can be configured via [drirc](https://dri.fr
 
 ### Overclocking
 
-As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI) and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
+As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (old AMD/ATI cards), [rocm-smi](https://aur.archlinux.org/packages/rocm-smi/) (recent AMD cards), [nvclock](https://aur.archlinux.org/packages/nvclock/) (old NVIDIA - up to Geforce 9), and [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) for recent NVIDIA cards.
 
 See [AMDGPU#Overclocking](/index.php/AMDGPU#Overclocking "AMDGPU") or [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks").
 
@@ -485,7 +487,7 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 *   Kernel networking: see [Sysctl#Improving performance](/index.php/Sysctl#Improving_performance "Sysctl")
 *   NIC: see [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
-*   DNS: consider using a caching DNS resolver, see [Domain name resolution#Resolvers](/index.php/Domain_name_resolution#Resolvers "Domain name resolution")
+*   DNS: consider using a caching DNS resolver, see [Domain name resolution#DNS servers](/index.php/Domain_name_resolution#DNS_servers "Domain name resolution")
 *   Samba: see [Samba#Improve throughput](/index.php/Samba#Improve_throughput "Samba")
 
 ## Watchdogs

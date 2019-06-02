@@ -116,9 +116,23 @@ To only allow localhost access to postfixadmin (for heightened security), add th
 
 #### php-fpm
 
-[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [php-imap](https://www.archlinux.org/packages/?name=php-imap). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx") and use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`.
+[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [php-imap](https://www.archlinux.org/packages/?name=php-imap). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx") and use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`. This can be achieved by adding the following lines.
 
-You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`.
+```
+/etc/php/php-fpm.d/www.conf
+
+ [postfixadmin]
+ user = postfixadmin
+ group = postfixadmin
+ listen = /run/php-fpm/postfixadmin.sock
+ listen.owner = http
+ listen.group = http
+ pm = ondemand
+ pm.max_children = 4
+
+```
+
+You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`. Make sure you also add `/var/cache/postfixadmin` to [open_basedir](/index.php?title=Ic&action=edit&redlink=1 "Ic (page does not exist)") in your php.ini. Restart [php-fpm](/index.php?title=Php-fpm&action=edit&redlink=1 "Php-fpm (page does not exist)") for all these to take effect.
 
 Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [restart](/index.php/Systemd#Using_units "Systemd") it.
 

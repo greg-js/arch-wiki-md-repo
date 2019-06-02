@@ -191,16 +191,17 @@ Display dimming: works
 Webcam: works
 Card reader: not tested | Can't set mute-key led light. |
 | HP ENVY 13-ad140ng | 2017.12 | Intel UHD Graphics 620 | *hdajackretask* should be used to enable the top speaker *0x14* override to *Internal Speaker*, *0x17* override to *Internal Speaker Back* | Not present | Intel Wireless 7265 | Yes | not tested | No modem installed | Webcam: works | Can't set mute-key led light. |
-| HP ProBook 450 G5 | 2018.03 | Intel Core i5-8250u, Intel HD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | Yes | ACPI: works
+| HP ProBook 450 G5 | 2018.03 | Intel Core i7-8550u, Intel HD Graphics 620 (*i915*); NVIDIA GeForce MX130 (2 GB DDR5 dedicated) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
-Suspend to Disk: not tested
+Suspend to Disk: works
 Battery: works
 Display dimming: works
-CPU frequency scaling: works | Not present | Hot keys: Works
-Webcam: Works
-Card reader: not tested
-Fingerprint scanner: not tested
-Keyboard backlit: works | Secure boot works with GRUB, coexists with Windows Pro. Windows partition is accessible disabling Bitlocker. (installed from Archiso) -- |
+CPU frequency scaling: works | Not present | Hot keys: works
+Webcam: works
+Card reader: works
+Fingerprint scanner: works with [libfprint-vfs_proprietary-git](https://aur.archlinux.org/packages/libfprint-vfs_proprietary-git/) and [fprintd-vfs_proprietary](https://aur.archlinux.org/packages/fprintd-vfs_proprietary/), following the [Fprint](/index.php/Fprint "Fprint") tutorial
+Keyboard backlit: works
+ | Secure boot works with GRUB, coexists with Windows Pro. Windows partition is accessible disabling Bitlocker. (installed from Archiso) -- |
 | HP ProBook 450 G6 | 2019.03 | Intel Core i5-8265U, UHD Graphics 620 (Whiskey Lake) - works out of the box; NVIDIA GeForce MX130 (2 GB DDR5 dedicated) - untested | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 8265/8275\. Driver: *iwlwifi* | Works. | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: not tested

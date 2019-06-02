@@ -114,7 +114,7 @@
 | <small>6.17.</small> [网页服务器](/index.php/Category:Web_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web server (简体中文)") <small>(8)</small> |
 | <small>6.18.</small> [无线网络](/index.php/Category:Wireless_networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wireless networking (简体中文)") <small>(8)</small> |
 | <small>7.</small> [软件](/index.php/Category:Software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software (简体中文)") <small>(4)</small> |
-| <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(27)</small> |
+| <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(26)</small> |
 | <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(8)</small> |
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
 | <small>7.1.3.</small> [Init](/index.php/Category:Init_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Init (简体中文)") <small>(1)</small> |
@@ -140,7 +140,7 @@
 | <small>7.10.2.</small> [GNU](/index.php/Category:GNU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:GNU (简体中文)") <small>(1)</small> |
 | <small>7.11.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(27)</small> |
 | <small>7.11.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xorg commands (简体中文)") <small>(2) (同时还属于 [Commands](/index.php/Category:Commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Commands (简体中文)"))</small> |
-| <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(6)</small> |
+| <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(7)</small> |
 | <small>8.1.</small> [Backup](/index.php/Category:Backup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Backup (简体中文)") <small>(2)</small> |
 | <small>8.2.</small> [Command-line](/index.php/Category:Command-line_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command-line (简体中文)") <small>(3) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |
 | <small>8.2.1.</small> [Commands](/index.php/Category:Commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Commands (简体中文)") <small>(0)</small> |

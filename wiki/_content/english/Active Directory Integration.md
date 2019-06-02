@@ -63,6 +63,7 @@ Active Directory uses [Lightweight Directory Access Protocol (LDAP)](https://en.
     *   [8.1 Nice to know](#Nice_to_know)
 *   [9 See also](#See_also)
     *   [9.1 Commercial Solutions](#Commercial_Solutions)
+    *   [9.2 OpenSource version](#OpenSource_version)
 
 ## Terminology
 
@@ -877,3 +878,8 @@ The file 'username.keytab' is not machinespecific and can therefore be copied ar
 
 *   Centrify
 *   Likewise
+
+### OpenSource version
+
+*   [PowerBroker Identity Services Open](https://github.com/BeyondTrust/pbis-open/): formerly Likewise acquired by BeyondTrust
+*   [Centrify Express for Linux](https://www.centrify.com/express/linux/)

@@ -225,7 +225,7 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Note:** The icon theme name is the name defined in the theme's index file, *not* the name of its directory.
+**Note:** The icon theme name is the name of its directory, *not* the name property in its `index.theme`.
 
 ### Dark theme variant
 

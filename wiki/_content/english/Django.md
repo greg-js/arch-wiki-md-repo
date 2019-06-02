@@ -36,7 +36,7 @@ $ django-admin startproject mysite
 
 This will create a *mysite* directory in your current directory. It will also create a *manage.py* script, which will let you interact with your project.
 
-More information you will find in the [official Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/) and [Django documentation](https://docs.djangoproject.com/en/).
+More information you will find in the [official Django tutorial](https://docs.djangoproject.com/en/2.2/intro/tutorial01/) and [Django documentation](https://docs.djangoproject.com/en/).
 
 ## See also
 

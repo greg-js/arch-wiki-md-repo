@@ -10,6 +10,7 @@
 *   [2 Usage](#Usage)
     *   [2.1 Standalone mode](#Standalone_mode)
     *   [2.2 ALSA daemon mode](#ALSA_daemon_mode)
+    *   [2.3 SDL_Mixer](#SDL_Mixer)
 *   [3 How to convert MIDI to MP3/OGG](#How_to_convert_MIDI_to_MP3/OGG)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Conflicting with PulseAudio](#Conflicting_with_PulseAudio)
@@ -68,6 +69,15 @@ An example of usage for this is aplaymidi:
 
 ```
 $ aplaymidi -p128:0 example.midi
+
+```
+
+### SDL_Mixer
+
+To use fluidsynth with programs that use SDL_Mixer, you need to specify the soundfont as:
+
+```
+ $ SDL_SOUNDFONTS=/usr/share/soundfonts/FluidR3_GM.sf2 ./program
 
 ```
 

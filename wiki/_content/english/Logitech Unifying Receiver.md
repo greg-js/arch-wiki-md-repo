@@ -1,6 +1,6 @@
 The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless receiver that can connect up to six compatible wireless mice and keyboards to your computer. The input device that comes with the receiver is already paired with it and should work out of the box through plug and play. Logitech officially supports pairing of additional devices just through their Windows and macOS software. Pairing and unpairing on Linux is supported by a number of tools, listed below.
 
-[ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](http://pwr.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys.
+[ltunify](https://lekensteyn.nl/logitech-unifying.html) is a command-line C program that can perform pairing, unpairing and listing of devices. [Solaar](http://pwr.github.io/Solaar/) is a graphical Python program that integrates in your system tray and allows you to configure additional features of your input device such as swapping the functionality of Fn keys. [libratbag](https://github.com/libratbag/libratbag) is a configurable mice daemon that allows you to configure your devices, it has a GTK+ based graphical frontend app, [piper](https://github.com/libratbag/piper).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,7 +12,8 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 *   [2 Usage](#Usage)
     *   [2.1 ltunify](#ltunify)
     *   [2.2 Solaar](#Solaar)
-    *   [2.3 pairingtool](#pairingtool)
+    *   [2.3 libratbag](#libratbag)
+    *   [2.4 pairingtool](#pairingtool)
 *   [3 Known Problems](#Known_Problems)
     *   [3.1 Wrong device (pairing tool only)](#Wrong_device_(pairing_tool_only))
     *   [3.2 Keyboard layout via xorg.conf](#Keyboard_layout_via_xorg.conf)
@@ -25,6 +26,7 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 
 Several solutions are available:
 
+*   [libratbag](https://www.archlinux.org/packages/?name=libratbag)/[piper](https://www.archlinux.org/packages/?name=piper)
 *   [pairing_tool](https://aur.archlinux.org/packages/pairing_tool/)
 
 The following packages use the `plugdev` [user group](/index.php/User_group "User group"), create it if it does not exist, and add users to this group to avoid the need of running these as root:
@@ -43,7 +45,7 @@ and then replug reciever. After that you will not need root permissions.
 
 ## Usage
 
-pairingtool can only be used for pairing and does not provide feedback, it also needs to know the device name for pairing. ltunify and Solaar can detect the receiver automatically.
+pairingtool can only be used for pairing and does not provide feedback, it also needs to know the device name for pairing. ltunify, Solaar and libratbag can detect the receiver automatically.
 
 ### ltunify
 
@@ -79,6 +81,10 @@ $ solaar-cli show
 ```
 
 To disable autostart of Solaar, remove `/etc/xdg/autostart/solaar.desktop`.
+
+### libratbag
+
+Currently, piper isn't able to pair/manage devices for unifying receivers but libratbag does include a `lur-command` command line tool that is able to do this.
 
 ### pairingtool
 

@@ -19,6 +19,7 @@
 *   [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) is not compatible with [GnuPG](/index.php/GnuPG "GnuPG") keys, the KDE Wallet must use the standard `blowfish` encryption.
 *   The chosen KWallet password must be the same as the current [user](/index.php/User "User") password.
 *   The wallet cannot be unlocked when using autologin.
+*   The wallet cannot be unlocked when using a fingerprint reader to login
 *   The wallet must be named `kdewallet` (default name). It does not unlock any other wallet(s).
 *   If using [KDE](/index.php/KDE "KDE"), one may want to disable *Close when last application stops using it* in KDE Wallet settings to prevent the wallet from being closed after each usage ([WiFi](/index.php/WiFi "WiFi")-passphrase unlock, etc.).
 *   It may be needed to remove the default created wallet first, thus removing all stored entries.

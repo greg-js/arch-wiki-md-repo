@@ -112,16 +112,12 @@ connect 'chat -t60 \"\" ATZ OK ATX3 OK ATDT<NUMBER> CONNECT'
 
 ```
 
-Replace `/dev/*DEVICE*` with your modem device. For comparison with another operating system device, take a good look at the next table,
+Replace `/dev/*DEVICE*` with your modem device. For comparison with another operating system device, see the following table:
 
-```
-Windows        GNU/Linux
- COM1   -->   /dev/ttyS0
- COM2   -->   /dev/ttyS1
- COM3   -->   /dev/ttyS2
- ...
-
-```
+| Windows | GNU/Linux |
+| COM1 | /dev/ttyS0 |
+| COM2 | /dev/ttyS1 |
+| COM3 | /dev/ttyS2 |
 
 Edit to point device to your modem device, to use your dial-up account username, and to dial your ISP's number after the ATDT. You can disable call waiting using ATDT 70,15555555 (in North America, anyway). You may also wish to edit the dialer commands; [search](http://www.google.com) for information on how to do this. If your ISP uses [CHAP](https://en.wikipedia.org/wiki/Challenge-Handshake_Authentication_Protocol "wikipedia:Challenge-Handshake Authentication Protocol"), then the next file is `chap-secrets`.
 
@@ -137,8 +133,8 @@ Edit to point device to your modem device, to use your dial-up account username,
 If you wish to connect as user, you can use [sudo](https://www.archlinux.org/packages/?name=sudo). Configure sudo to call the above commands for your user, and you can use the following aliases in your `~/.bashrc` (or `/etc/bash.bashrc` for system-wide availability):
 
 ```
-alias dial='sudo /usr/sbin/pppd /dev/modem'
-alias hang='sudo /usr/bin/killall pppd'
+alias dial='sudo pppd /dev/modem'
+alias hang='sudo killall pppd'
 
 ```
 

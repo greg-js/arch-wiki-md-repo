@@ -371,6 +371,8 @@ acpi_osi=
 
 ```
 
+Also make sure you are not using fastboot mode (i915.fastboot kernel parameter), it is [known](https://www.phoronix.com/forums/forum/software/mobile-linux/1066447-arch-linux-users-with-intel-graphics-can-begin-enjoying-a-flicker-free-boot) for breaking backlight controls.
+
 ### Corruption/Unresponsiveness in Chromium and Firefox
 
 If you experience corruption, unresponsiveness, lags or slow performance in Chromium and/or Firefox:

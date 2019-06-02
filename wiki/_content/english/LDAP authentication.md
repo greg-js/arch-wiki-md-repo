@@ -73,7 +73,7 @@ access to *
 
 ### Populate LDAP Tree with Base Data
 
-Create a temporarily file called `base.ldif` with the following text.
+Create a temporary file called `base.ldif` with the following text.
 
  `base.ldif` 
 ```
@@ -106,7 +106,7 @@ objectClass: organizationalUnit
 
 ```
 
-Add it to your OpenLDAP Tree:
+Add it to your OpenLDAP tree:
 
 ```
 $ ldapadd -D "cn=Manager,dc=example,dc=org" -W -f base.ldif

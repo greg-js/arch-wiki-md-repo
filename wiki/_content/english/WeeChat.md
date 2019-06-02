@@ -308,7 +308,7 @@ ExecStop=/usr/bin/tmux -L weechat kill-session -t weechat
 WantedBy=default.target
 ```
 
-Once the service is in place all you need to do is enable it with `systemctl --user enable weechat`
+You need to enable service with `systemctl --user enable weechat` also according to systemd you need to enable `loginctl enable-linger` because your systemd can kill your tmux processes after logout from your ssh session: [https://www.freedesktop.org/software/systemd/man/loginctl.html#enable-linger%20USER%E2%80%A6](https://www.freedesktop.org/software/systemd/man/loginctl.html#enable-linger%20USER%E2%80%A6)
 
 From there you can start the service and connect to the tmux session in order to configure the weechat relay plugin.
 

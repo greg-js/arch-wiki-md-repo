@@ -20,6 +20,9 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
     *   [1.3 cpupower](#cpupower)
 *   [2 CPU frequency driver](#CPU_frequency_driver)
     *   [2.1 Setting maximum and minimum frequencies](#Setting_maximum_and_minimum_frequencies)
+    *   [2.2 Disabling Turbo Boost](#Disabling_Turbo_Boost)
+        *   [2.2.1 intel_pstate](#intel_pstate)
+        *   [2.2.2 acpi-cpufreq](#acpi-cpufreq)
 *   [3 Scaling governors](#Scaling_governors)
     *   [3.1 Tuning the ondemand governor](#Tuning_the_ondemand_governor)
         *   [3.1.1 Switching threshold](#Switching_threshold)
@@ -113,6 +116,22 @@ To set the CPU to run at a specified frequency:
 
 *   To adjust for only a single CPU core, append `-c *core_number*`.
 *   The governor, maximum and minimum frequencies can be set in `/etc/default/cpupower`.
+
+### Disabling Turbo Boost
+
+#### intel_pstate
+
+```
+# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+
+```
+
+#### acpi-cpufreq
+
+```
+# echo 0 > /sys/devices/system/cpu/cpufreq/boost
+
+```
 
 ## Scaling governors
 
@@ -312,3 +331,4 @@ options processor ignore_ppc=1
 
 *   [Linux CPUFreq - kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt)
 *   [Comprehensive explanation of pstate](http://www.reddit.com/r/linux/comments/1hdogn/acpi_cpufreq_or_intel_pstates/)
+*   [Processor boosting control](https://www.kernel.org/doc/Documentation/cpu-freq/boost.txt)

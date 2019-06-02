@@ -21,13 +21,13 @@
 
 這部分主要介紹使用 *dm-crypt* 對系統或某個掛載點進行加密。即您必須熟系在不同狀況下需要使用不同的加密方法。這裡有些跨連結的子頁面可以參考。
 
-如果您想要加密的是非根目錄，像是[分割區](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system")或是[Loop 裝置](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system")，請參閱[Dm-crypt/加密非root檔案系統](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system")。
+如果您想要加密的是非根目錄，像是[分割區](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#分割區 "Dm-crypt/Encrypting a non-root file system (正體中文)")或是[loop 裝置](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#Loop_裝置 "Dm-crypt/Encrypting a non-root file system (正體中文)")，請參閱 [加密非root檔案系統](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Dm-crypt/Encrypting a non-root file system (正體中文)")。
 
-如果您想要加密的是整個系統，特別是跟目錄，請參閱[Dm-crypt/加密整個系統](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system")。許多方法可以適用，包含利用 *dm-crypt* 配合 *LUKS* 擴充功能，*plan* 模式加密及*LVM*。
+如果您想要加密的是整個系統，特別是跟目錄，請參閱 [Dm-crypt/加密整個系統](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system")。許多方法可以適用，包含利用 *dm-crypt* 配合 *LUKS* 擴充功能，*plan* 模式加密及 *LVM*。
 
 ## 裝置的準備
 
-[/準備裝置](/index.php/Dm-crypt/%E6%BA%96%E5%82%99%E8%A3%9D%E7%BD%AE_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Dm-crypt/準備裝置 (正體中文)") 詳細說明許多操作，像是 [安全地抹除裝置資料](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation") 和 在使用 *dm-crypt* 操作分割區的具體要點。
+[準備裝置](/index.php/Dm-crypt/Drive_preparation_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Dm-crypt/Drive preparation (正體中文)") 詳細說明許多操作，像是 [安全地抹除裝置資料](/index.php/Dm-crypt/Drive_preparation_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#安全地覆寫硬碟 "Dm-crypt/Drive preparation (正體中文)") 和使用 *dm-crypt* 操作分割區的具體要點。
 
 ## 加密裝置
 

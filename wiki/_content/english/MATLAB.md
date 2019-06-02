@@ -84,22 +84,21 @@ Start `matlab` with:
 
 In order for icons to appear correctly `StartupWMClass` needs to be set in the desktop entry. To find it out start MATLAB, run `xprop | grep WM_CLASS` and select the MATLAB window.
 
-Example desktop entry:
+Example desktop entry (replace **R2019a** with your MATLAB version):
 
- `matlab.desktop` 
+ `/usr/share/applications/matlab.desktop` 
 ```
 [Desktop Entry]
-Version=2018a
+Version=**R2019a**
 Type=Application
 Terminal=false
 MimeType=text/x-matlab
-Exec=matlab -desktop -nosplash
+Exec=/usr/local/MATLAB/**R2019a**/bin/matlab -desktop
 Name=MATLAB
 Icon=matlab
 Categories=Development;Math;Science
 Comment=Scientific computing environment
 StartupNotify=true
-
 ```
 
 If one need to set environment variable, one could prepend `env` in `Exec`, for example, to system's libfreetype:

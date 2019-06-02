@@ -12,7 +12,7 @@
 *   [umask](/index.php/Umask "Umask")
 *   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
 
-**翻译状态：** 本文是英文页面 [File_Systems](/index.php/File_Systems "File Systems") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=File_Systems&diff=0&oldid=448724)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [File_Systems](/index.php/File_Systems "File Systems") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-04-19，点击[这里](https://wiki.archlinux.org/index.php?title=File_Systems&diff=0&oldid=571607)可以查看翻译后英文页面的改动。
 
 根据 [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
@@ -34,8 +34,8 @@
     *   [1.5 集群文件系统](#集群文件系统)
 *   [2 查看现有文件系统](#查看现有文件系统)
 *   [3 创建文件系统](#创建文件系统)
-*   [4 Mount a file system](#Mount_a_file_system)
-    *   [4.1 List mounted file systems](#List_mounted_file_systems)
+*   [4 挂载文件系统](#挂载文件系统)
+    *   [4.1 列出挂载的文件系统](#列出挂载的文件系统)
     *   [4.2 卸载文件系统](#卸载文件系统)
 *   [5 参阅](#参阅)
 
@@ -165,12 +165,14 @@ sdb
 
 ## 创建文件系统
 
-首先，确认系统的安装位置，可以创建在一个分区上、逻辑容器如[LVM](/index.php/LVM "LVM")，[RAID](/index.php/RAID "RAID")，或者 [dm-crypt](/index.php/Dm-crypt "Dm-crypt") 上或普通文件上(参考 [Wikipedia:Loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device"))。这里描述创建在分区上的情况。
+文件系统可以创建在一个分区上、逻辑容器如 [LVM](/index.php/LVM "LVM")，[RAID](/index.php/RAID "RAID")，或者 [dm-crypt](/index.php/Dm-crypt "Dm-crypt") 上或普通文件上(参考 [Loop设备](https://en.wikipedia.org/wiki/zh:Loop_device "w:zh:Loop device"))。这里描述创建在分区上的情况。
+
+**注意:** 文件系统可以直接写入到设备上，这样的设备叫做 *superfloppy* 或者 [无分区磁盘](/index.php/Partitioning#Partitionless_disk "Partitioning")。这样做会带来一些约束，特别是用它来 [启动](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch boot process (简体中文)") 系统。
 
 **警告:**
 
 *   创建新文件系统之后，之前存放在该分区的数据会丢失且通常无法找回。**请备份所有要保留的数据**.
-*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") must contain a [FAT32](/index.php/FAT32 "FAT32") (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Boot_loader "Boot loader").
+*   某个分区用来干什么通常会限制能用什么文件系统，比如 [EFI分区](/index.php/EFI_system_partition "EFI system partition") 就只能用 `mkfs.vfat` 创建的 [FAT32](/index.php/FAT32 "FAT32")，而包含 `/boot` 的分区的文件系统要考虑 [boot loader](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#启动加载器 "Arch boot process (简体中文)") 是否支持。
 
 创建文件系统之前，目标分区必须处于未挂载状态。如果你要格式化的分区包含了一个已挂载的文件系统，在 [lsblk](/index.php/Lsblk "Lsblk") 命令的 *MOUNTPOINT* 列中可以看到它。
 
@@ -191,28 +193,30 @@ sda
 
 ```
 
-使用一下命令来创建一个 *fstype* 文件系统：
+查看挂载了的所有文件系统，参考[#列出挂载的文件系统](#列出挂载的文件系统)。
+
+用 [mkfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.8) 创建新的文件系统，类型参见[#文件系统类型](#文件系统类型)。如果安装了其他特殊的工具，按照它们的说明来做。比如，以下命令在 `/dev/sda1` 上创建了一个 [ext4](/index.php/Ext4 "Ext4") 文件系统：
 
 ```
-# mkfs.*fstype* /dev/*partition*
+# mkfs.ext4 /dev/sda1
 
 ```
 
-此外，你可以使用 `mkfs`。这是 `mkfs.*fstype*` 工具的统一入口。
+此外，你可以使用 `mkfs`。这是 `mkfs.*fstype*` 工具的统一入口。上面的命令等价于：
 
 ```
-# mkfs -t ext4 /dev/*partition*
+# mkfs -t ext4 /dev/sda1
 
 ```
 
 **Tip:**
 
-*   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e2label* can be used to change the label on an existing file system.
-*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") filesystem's size can be increased, but it cannot reduced. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "w:Comparison of file systems") and the respective file system documentation for details.
+*   用 `mkfs.ext4` 的时候可以用 `-L` 选项来给文件系统设置一个 [标签](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming")。`e2label` 用来对已经存在的文件系统改标签。
+*   文件系统在创建之后是有条件地 *改变大小*（resized）的。比如 [XFS](/index.php/XFS "XFS") 可以扩容，但是不能缩小。参考 [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "w:Comparison of file systems")。
 
-The new file system can now be mounted to a directory of choice.
+创建完成之后新的文件系统就可以挂载到某个目录了。
 
-## Mount a file system
+## 挂载文件系统
 
 To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). This example mounts `/dev/sda1` to `/mnt`.
 
@@ -249,23 +253,23 @@ Or
 
 See these related articles and the article of the filesystem of interest for more information.
 
-### List mounted file systems
+### 列出挂载的文件系统
 
-To list all mounted file systems, use [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8):
+用 [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8) :
 
 ```
 $ findmnt
 
 ```
 
-*findmnt* takes a variety of arguments which can filter the output and show additional information. For example, it can take a device or mount point as an argument to show only information on what is specified:
+*findmnt* 支持很多参数，可以利用它们来筛选输出或者获得更多信息。比如把某个挂载点或者设备作为参数，它就会只输出这个下面挂载了什么。
 
 ```
 $ findmnt /dev/sda1
 
 ```
 
-*findmnt* gathers information from `/etc/fstab`, `/etc/mtab`, and `/proc/self/mounts`.
+*findmnt* 从 `/etc/fstab`、`/etc/mtab` 和 `/proc/self/mounts` 文件里收集信息。
 
 ### 卸载文件系统
 

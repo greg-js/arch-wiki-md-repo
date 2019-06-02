@@ -7,7 +7,7 @@ Related articles
 
 **Warning:** A pastebin should not be used for sharing confidential or private information.
 
-**Warning:** Since 2019-03-08 the [official instance is no longer available](https://github.com/ptpb/pb/issues/246).
+**Note:** Since 2019-03-08 the [official instance is no longer available](https://github.com/ptpb/pb/issues/246).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

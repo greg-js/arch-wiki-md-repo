@@ -329,6 +329,14 @@ Alternatively, set a proper dependency for iwd to run after systemd/udevd by cre
 After=systemd-udevd.service
 ```
 
+If systemd-networkd is used, since both systemd-udevd/networkd play relatively well together, and both are involved, it is reasonable to start iwd after both of them:
+
+ `/etc/systemd/system/iwd.service.d/override.conf` 
+```
+[Unit]
+After=systemd-udevd.service systemd-networkd.service
+```
+
 See [FS#61367](https://bugs.archlinux.org/task/61367).
 
 ## See also

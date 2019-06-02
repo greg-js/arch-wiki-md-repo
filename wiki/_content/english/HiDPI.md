@@ -32,6 +32,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [5.1 GRUB](#GRUB)
         *   [5.1.1 Lower the framebuffer resolution](#Lower_the_framebuffer_resolution)
         *   [5.1.2 Change GRUB font size](#Change_GRUB_font_size)
+    *   [5.2 systemd-boot](#systemd-boot)
 *   [6 Applications](#Applications)
     *   [6.1 Atom](#Atom)
     *   [6.2 Browsers](#Browsers)
@@ -317,6 +318,12 @@ GRUB_FONT="/boot/grubfont.pf2"
 ```
 
 Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
+
+### systemd-boot
+
+Adding the following line and running `bootctl update` increases font-size in the systemd-boot menu:
+
+ `/boot/loader/loader.conf`  `console-mode 1` 
 
 ## Applications
 

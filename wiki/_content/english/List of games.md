@@ -23,17 +23,18 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   [8 Platformer](#Platformer)
 *   [9 Puzzle](#Puzzle)
 *   [10 Racing](#Racing)
-*   [11 Rogue-like](#Rogue-like)
-*   [12 Role-playing games (RPG)](#Role-playing_games_(RPG))
-*   [13 Shooters (FPS, third person)](#Shooters_(FPS,_third_person))
-*   [14 Simulation](#Simulation)
-*   [15 Strategy](#Strategy)
-    *   [15.1 Real-time](#Real-time)
-    *   [15.2 Turn-based](#Turn-based)
-*   [16 Tycoon/management games](#Tycoon/management_games)
-*   [17 Visual novels](#Visual_novels)
-*   [18 Comparison table](#Comparison_table)
-*   [19 See also](#See_also)
+*   [11 Rhythm](#Rhythm)
+*   [12 Rogue-like](#Rogue-like)
+*   [13 Role-playing games (RPG)](#Role-playing_games_(RPG))
+*   [14 Shooters (FPS, third person)](#Shooters_(FPS,_third_person))
+*   [15 Simulation](#Simulation)
+*   [16 Strategy](#Strategy)
+    *   [16.1 Real-time](#Real-time)
+    *   [16.2 Turn-based](#Turn-based)
+*   [17 Tycoon/management games](#Tycoon/management_games)
+*   [18 Visual novels](#Visual_novels)
+*   [19 Comparison table](#Comparison_table)
+*   [20 See also](#See_also)
 
 ## Action and adventure
 
@@ -210,10 +211,6 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   **Streets of Rage Remake** — A remake of the classic Streets of Rage 1, 2 and 3 by Sega.
 
 	[http://sorr.forumotion.net/](http://sorr.forumotion.net/) || [streetsofrageremake](https://aur.archlinux.org/packages/streetsofrageremake/)
-
-*   **opsu!** — An open source Java client for the rhythm game osu!.
-
-	[https://itdelatrisu.github.io/opsu/](https://itdelatrisu.github.io/opsu/) || [opsu](https://aur.archlinux.org/packages/opsu/)
 
 *   **[Teeworlds](https://en.wikipedia.org/wiki/Teeworlds "wikipedia:Teeworlds")** — Fast-paced 2D multiplayer shooter
 
@@ -673,6 +670,20 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://xmoto.tuxfamily.org/](https://xmoto.tuxfamily.org/) || [xmoto](https://aur.archlinux.org/packages/xmoto/)
 
+## Rhythm
+
+*   **[osu!](https://en.wikipedia.org/wiki/Osu! "wikipedia:Osu!")** — A free-to-win rhythm game with four game modes: osu!standard, a circle clicking simulator; osu!taiko, a drumming emulator; osu!catch, a fruit salad catcher; and osu!mania, a key smashing synthesizer.
+
+	[https://osu.ppy.sh/](https://osu.ppy.sh/) || [osu](https://aur.archlinux.org/packages/osu/)
+
+*   **opsu!** — An open source Java client for the rhythm game osu!.
+
+	[https://itdelatrisu.github.io/opsu/](https://itdelatrisu.github.io/opsu/) || [opsu](https://aur.archlinux.org/packages/opsu/)
+
+*   **[Stepmania](https://en.wikipedia.org/wiki/Stepmania "wikipedia:Stepmania")** — Advanced dance simulation game.
+
+	[http://www.stepmania.com/](http://www.stepmania.com/) || [stepmania](https://aur.archlinux.org/packages/stepmania/)
+
 ## Rogue-like
 
 See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.org/wiki/Chronology_of_roguelike_video_games "wikipedia:Chronology of roguelike video games").
@@ -1003,10 +1014,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **Pydance** — Python Dance Dance Revolution style game.
 
 	[https://icculus.org/pyddr/](https://icculus.org/pyddr/) || [pydance](https://aur.archlinux.org/packages/pydance/)
-
-*   **[Stepmania](https://en.wikipedia.org/wiki/Stepmania "wikipedia:Stepmania")** — Advanced dance simulation game.
-
-	[http://www.stepmania.com/](http://www.stepmania.com/) || [stepmania](https://aur.archlinux.org/packages/stepmania/)
 
 *   **Terasology** — Open source voxel world.
 

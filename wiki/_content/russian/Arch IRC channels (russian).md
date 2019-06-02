@@ -3,7 +3,7 @@
 *   [IRC channel](/index.php/IRC_channel "IRC channel")
 *   [International communities](/index.php/International_communities "International communities")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [IRC Channels](/index.php/IRC_Channels "IRC Channels"). Дата последней синхронизации: 2015-09-30\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=IRC_Channels&diff=0&oldid=398212).
+**Состояние перевода:** На этой странице представлен перевод статьи [Arch IRC channels](/index.php/Arch_IRC_channels "Arch IRC channels"). Дата последней синхронизации: 2015-09-30\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Arch_IRC_channels&diff=0&oldid=398212).
 
 Размер нашего сообщества привёл к созданию нескольких IRC каналов. Чтобы получить список всех каналов на freenode, которые содержат "archlinux" в своём названии, используйте команду `/query alis list *archlinux*`.
 

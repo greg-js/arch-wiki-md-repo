@@ -90,6 +90,12 @@ This package has the advantage that the various Rust executables live in `/usr/b
 
 **Note:** The [rustup](https://www.archlinux.org/packages/?name=rustup) package does **not** install a toolchain by default. It provides instead symlinks between `/usr/bin/rustup` to the common binaries such as `/usr/bin/rustc` and `/usr/bin/cargo`. As stated above, The user still needs to install a toolchain manually, for these Rust commands to do anything.
 
+In order to install the toolchain, you need to tell rustup which version to use: `stable` or `nightly`.
+
+Example:
+
+ `$ rustup default stable` 
+
 #### Usage
 
 You might need to manually install a toolchain, e.g. `stable`, `beta`, `nightly` or `1.23.0`. You also need to do this if you want to use/test another toolchain.

@@ -389,7 +389,7 @@ Catalyst does not support xorg-server 1.18
 
 ```
 [xorg117]
-Server = http://mirror.hactar.xyz/Vi0L0/xorg117/$arch
+Server = http://167.86.114.169/arch/xorg117/$arch
 
 ```
 
@@ -399,7 +399,7 @@ Catalyst < 15.7 does not support xorg-server 1.17
 
 ```
 [xorg116]
-Server = http://mirror.hactar.xyz/Vi0L0/xorg116/$arch
+Server = http://167.86.114.169/arch/xorg116/$arch
 
 ```
 
@@ -409,7 +409,7 @@ Catalyst < 14.9 does not support xorg-server 1.16
 
 ```
 [xorg115]
-Server = http://mirror.hactar.xyz/Vi0L0/xorg115/$arch
+Server = http://167.86.114.169/arch/xorg115/$arch
 
 ```
 
@@ -419,7 +419,7 @@ Catalyst < 14.1 does not support xorg-server 1.15.
 
 ```
 [xorg114]
-Server = http://mirror.hactar.xyz/Vi0L0/xorg114/$arch
+Server = http://167.86.114.169/arch/xorg114/$arch
 
 ```
 
@@ -429,7 +429,7 @@ Catalyst < 13.6 does not support xorg-server 1.14.
 
 ```
 [xorg113]
-Server = http://mirror.hactar.xyz/Vi0L0/xorg113/$arch
+Server = http://167.86.114.169/arch/xorg113/$arch
 
 ```
 
@@ -439,7 +439,7 @@ Catalyst < 12.10 and Catalyst Legacy do not support xorg-server 1.13.
 
 ```
 [xorg112]
-Server = http://mirror.hactar.xyz/Vi0L0/xorg112/$arch
+Server = http://167.86.114.169/arch/xorg112/$arch
 
 ```
 

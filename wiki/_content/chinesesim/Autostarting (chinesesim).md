@@ -1,95 +1,87 @@
-**翻译状态：** 本文是英文页面 [Autostarting](/index.php/Autostarting "Autostarting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-09，点击[这里](https://wiki.archlinux.org/index.php?title=Autostarting&diff=0&oldid=484303)可以查看翻译后英文页面的改动。
+Related articles
 
-文本介绍如何在某个事件发生时，自动运行应用程序，例如在启动、关机、shell 登录或退出时，自动执行程序。
+*   [Daemons (简体中文)](/index.php/Daemons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Daemons (简体中文)")
+
+**翻译状态：** 本文是英文页面 [Autostarting](/index.php/Autostarting "Autostarting") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=Autostarting&diff=0&oldid=574197)可以查看翻译后英文页面的改动。
+
+本文介绍在某个特定事件发生时（如启动、关机）如何自动执行脚本或应用的方法。
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 守护进程](#守护进程)
-    *   [1.1 Systemd](#Systemd)
-*   [2 Cron](#Cron)
-*   [3 文件系统变更](#文件系统变更)
-*   [4 Shells](#Shells)
-    *   [4.1 /etc/profile](#/etc/profile)
-*   [5 图形程序](#图形程序)
-    *   [5.1 X 会话启动](#X_会话启动)
-    *   [5.2 Desktop entries](#Desktop_entries)
-    *   [5.3 GNOME](#GNOME)
-    *   [5.4 KDE Plasma](#KDE_Plasma)
-    *   [5.5 Xfce](#Xfce)
-    *   [5.6 LXDE](#LXDE)
-    *   [5.7 LXQt](#LXQt)
-    *   [5.8 Fluxbox](#Fluxbox)
-    *   [5.9 Openbox](#Openbox)
-    *   [5.10 Awesome](#Awesome)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-## 守护进程
+*   [1 开关机](#开关机)
+*   [2 登录登出](#登录登出)
+*   [3 插入拔出设备](#插入拔出设备)
+*   [4 计时事件](#计时事件)
+*   [5 文件系统事件](#文件系统事件)
+*   [6 shell登录登出](#shell登录登出)
+*   [7 Xorg](#Xorg)
+*   [8 桌面环境](#桌面环境)
+*   [9 窗口管理启动](#窗口管理启动)
 
-可以将程序或脚本以 [守护进程](/index.php/Daemon "Daemon") 方式启动。
+## 开关机
 
-### Systemd
+用 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 服务。
 
-*systemd* 现在是默认的 init 框架，*systemd* 启动的服务位于 `/etc/systemd/system/` 下的子目录. 可以用 `systemctl` 自动启用服务。更多信息请参考 [systemd](/index.php/Systemd "Systemd"). 要针对某个用户启动脚本，请参考 [systemd/User](/index.php/Systemd/User "Systemd/User").
+## 登录登出
 
-## Cron
+用 [systemd/User (简体中文)](/index.php/Systemd/User_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/User (简体中文)") 服务。
 
-可以用 [Cron](/index.php/Cron "Cron") 自动启动非图形程序。
+## 插入拔出设备
 
-## 文件系统变更
+用 [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)")
 
-[inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) 可以在收到文件系统变更的 [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") 事件时执行命令和脚本，示例请参考 [这里](https://techarena51.com/index.php/inotify-tools-example/).
+## 计时事件
 
-类似的工具还包括 [incron](https://www.archlinux.org/packages/?name=incron) 和 [fswatch](https://aur.archlinux.org/packages/fswatch/).
+在特定时间、日期、场合执行脚本或应用：
 
-## Shells
+*   [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)")
+*   [Cron (简体中文)](/index.php/Cron_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Cron (简体中文)")
 
-使用 shell 启动文件目录可以在登录时自动执行脚本，请阅读所用 shell 的文档和对应的 ArchWiki 页面，例如 [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") 或 [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
+只执行一次:
 
-参阅： [Wikipedia:Unix shell#Configuration files for shells](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files_for_shells "wikipedia:Unix shell").
+*   [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)")
+*   [at](https://www.archlinux.org/packages/?name=at)
 
-### /etc/profile
+## 文件系统事件
 
-在登录时，所有 Bourne 兼容的 shell 都会加载 `/etc/profile`, 此文件会加载 `/etc/profile.d/` 目录下的所有可读 `*.sh` 文件，这些文件不需要设置解析器，也不需要可执行权限，通常用来设置环境变量和应用程序相关的设置。
+用 [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") 事件监视器:
 
-## 图形程序
+*   [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools), see [inotifywait(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotifywait.1)
+*   [Incron](/index.php/Incron "Incron")
+*   [fswatch](https://aur.archlinux.org/packages/fswatch/)
 
-可以在登录 [窗口管理器](/index.php/Window_manager "Window manager") 或 [桌面环境](/index.php/Desktop_environment "Desktop environment") 时自动执行程序。
+## shell登录登出
 
-### X 会话启动
+参考 [Command-line shell#Configuration files (简体中文)](/index.php/Command-line_shell#Configuration_files_(简体中文) "Command-line shell")。
 
-请参阅 [xinitrc](/index.php/Xinitrc "Xinitrc") 和 [xprofile](/index.php/Xprofile "Xprofile").
+## Xorg
 
-### Desktop entries
+*   [xinitrc (简体中文)](/index.php/Xinitrc_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinitrc (简体中文)") if you are starting [Xorg (简体中文)](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") manually with [xinit (简体中文)](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)").
+*   [xprofile (简体中文)](/index.php/Xprofile_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xprofile (简体中文)") if you are using a [display manager (简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)").
 
-请参阅 [Desktop entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries").
+## 桌面环境
 
-### GNOME
+大多数 [desktop environment (简体中文)](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)") 依赖 [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
-请参阅 [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
+查看与自动启动相关的信息。
 
-### KDE Plasma
+*   [GNOME#Autostart (简体中文)](/index.php/GNOME#Autostart_(简体中文) "GNOME")
+*   [KDE#Autostart (简体中文)](/index.php/KDE#Autostart_(简体中文) "KDE")
+*   [Xfce#Autostart (简体中文)](/index.php/Xfce#Autostart_(简体中文) "Xfce")
+*   [LXDE#Autostart (简体中文)](/index.php/LXDE#Autostart_(简体中文) "LXDE")
+*   [LXQt#Autostart (简体中文)](/index.php/LXQt#Autostart_(简体中文) "LXQt")
 
-请参阅 [KDE#Autostarting applications](/index.php/KDE#Autostarting_applications "KDE").
+## 窗口管理启动
 
-### Xfce
+许多[window manager (简体中文)](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 依赖 [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
-请参阅 [Xfce#Startup applications](/index.php/Xfce#Startup_applications "Xfce").
+查看与窗口管理有关的信息。
 
-### LXDE
-
-请参阅 [LXDE#Autostart](/index.php/LXDE#Autostart "LXDE").
-
-### LXQt
-
-请参阅 [LXQt#Autostarting applications](/index.php/LXQt#Autostarting_applications "LXQt").
-
-### Fluxbox
-
-请参阅 [Fluxbox#Autostart programs](/index.php/Fluxbox#Autostart_programs "Fluxbox").
-
-### Openbox
-
-请参阅 [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox").
-
-### Awesome
-
-请参阅 [Awesome#Autorun programs](/index.php/Awesome#Autorun_programs "Awesome").
+*   [Fluxbox#Autostart (简体中文)](/index.php/Fluxbox#Autostart_(简体中文) "Fluxbox")
+*   [Openbox#Autostart (简体中文)](/index.php/Openbox#Autostart_(简体中文) "Openbox")
+*   [Awesome#Autostart (简体中文)](/index.php/Awesome#Autostart_(简体中文) "Awesome")
+*   [i3#Autostart (简体中文)](/index.php/I3#Autostart_(简体中文) "I3")

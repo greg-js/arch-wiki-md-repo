@@ -142,7 +142,8 @@ install CD version
 | [Lenovo ThinkPad T470](/index.php/Lenovo_ThinkPad_T470 "Lenovo ThinkPad T470") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T470s](/index.php/Lenovo_ThinkPad_T470s "Lenovo ThinkPad T470s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
-| [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; Thunderbolt 3 (USB-C) | For [video h/w acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") install [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) and ensure to enable acceleration in `about:flags`. Check everything is working in `about:gpu`. |
+| [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
+| [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | ? | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -286,6 +287,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo Legion Y520 | 2018.11.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested December 2018 / Linux 4.19.12\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
+| Lenovo Legion Y520 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 (Yes) | Tested June 2019 / Linux 5.1.5\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Some CPU throttling is possible. See: [[1]](https://unix.stackexchange.com/questions/491944/cpu-temperatures-in-linux-throttling-or-wrong-reading) |
 
 ## Special Notes (*):
 
@@ -312,7 +314,7 @@ With packages [linux](https://www.archlinux.org/packages/?name=linux) 4.6.1-2 an
 
 When you install an SSD in the place of the plate HDD drive and you want to have your HDD still inside the laptop, it is possible to install it in the place of the optical drive in a special "HDD caddy". The optical drive is of 9 mm height, but a 9,5 mm caddy (ultra slim) fits in the slot. A caddy with a SATA interface is needed. It is difficult to separate the front bezel from the original optical drive (and opening its case does not help, but brings a danger of making a mess in the opening mechanism; the only option is just to pull the bezel using a bit of force, but you risk breaking the latches).
 
-While the HDD installed instead of the optical drive operates flawlessly in Windows, it was not going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[1]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
+While the HDD installed instead of the optical drive operates flawlessly in Windows, it was not going to work out of the box in Linux, at least in one case. The kernel tries to establish a connection with the disk, but fails to do it (*SATA link down* entry in /var/log/messages). The solution is to force a 1.5 Gbps transfer speed (instead of 6 Gbps) by adding a *libata.force=* kernel parameter. See [[2]](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for details.
 
 ### Lenovo K450e
 
@@ -368,7 +370,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 ### Lenovo S21e-20
 
 *   Tested with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) 802.11 wireless driver
-*   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)). The current 4.3 kernel includes these patches. You will also need to install the xf86_64-input-synaptics package([[2]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
+*   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)). The current 4.3 kernel includes these patches. You will also need to install the xf86_64-input-synaptics package([[3]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
 
 #### tpacpi-bat
 

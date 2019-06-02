@@ -53,7 +53,7 @@ All information on this page generally assumes the latest BIOS unless explicitly
 
 ### Hybrid graphics
 
-Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. and can be used from an X server running on the iGPU using `intel-virtual-output -f`. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. After installing bumblebee, the HDMI port works after modifying the following files, rebooting, and executing `intel-virtual-output -f` from an X server running on the iGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
@@ -96,7 +96,7 @@ Thunderbolt works out of the box (tested with ThinkPad Thunderbolt 3 Dock); see 
 
 ### Fan control
 
-The fan on the right side of the laptop can be controlled by [thinkpad_acpi](https://wiki.archlinux.org/index.php/Fan_speed_control#ThinkPad_laptops). It seems that the fan on the left side can't be controlled yet; see [this nvidia forum post](https://devtalk.nvidia.com/default/topic/1052110/linux/can-t-control-gtx-1050-ti-max-q-fan-on-thinkpad-x1-extreme-laptop/post/5340658/#5340658). If noise is an issue, the fan on the left can be turned off manually by unplugging it, or the dust mesh can be removed [[1]](https://www.reddit.com/r/thinkpad/comments/acesmt/x1_extremes_jet_engine_noise_reduced_after_mesh/).
+The fan on the right side of the laptop can be controlled by [thinkpad_acpi](https://wiki.archlinux.org/index.php/Fan_speed_control#ThinkPad_laptops). It seems that the fan on the left side can't be controlled yet; see [this Nvidia forum post](https://devtalk.nvidia.com/default/topic/1052110/linux/can-t-control-gtx-1050-ti-max-q-fan-on-thinkpad-x1-extreme-laptop/post/5340658/#5340658). If noise is an issue, the fan can be turned off manually by unplugging it from the motherboard, or [the dust mesh can be removed](https://www.reddit.com/r/thinkpad/comments/acesmt/x1_extremes_jet_engine_noise_reduced_after_mesh/).
 
 ### Other hardware
 

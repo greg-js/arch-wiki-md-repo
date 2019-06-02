@@ -130,7 +130,7 @@ Since glyph mappings from [Symbol](https://en.wikipedia.org/wiki/Symbol_(typefac
 
 #### Selawik
 
-[Selawik](https://github.com/Microsoft/Selawik) ([ttf-selawik](https://aur.archlinux.org/packages/ttf-selawik/)) is an open source replacement for Microsoft's [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") by Microsoft. Unfortunately it does not match Segoe UI's kerning parameters yet.
+[Selawik](https://github.com/Microsoft/Selawik) ([ttf-selawik](https://aur.archlinux.org/packages/ttf-selawik/)) is Microsoft's open-source alternative to its [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") font. Unfortunately it does not match Segoe UI's kerning parameters. It was developed for use in the WinJS framework, which is now abandoned.
 
 #### Wine Tahoma
 

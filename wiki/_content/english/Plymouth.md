@@ -105,6 +105,8 @@ Plymouth comes with a selection of themes:
 7.  *(**Text**: "Text mode theme with tricolor progress bar")*
 8.  *(**Details**: "Verbose fallback theme")*
 
+Development version of Plymouth ([plymouth-git](https://aur.archlinux.org/packages/plymouth-git/)) also comes with the **BGRT** theme, which is a variation of Spinner that keeps the OEM logo if available.
+
 In addition you can install other themes from [AUR](/index.php/AUR "AUR"), just have a look at the "Required by"-Array on [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
 All currently installed themes can be listed by using this command:

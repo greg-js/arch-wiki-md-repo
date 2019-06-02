@@ -68,6 +68,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [4.10 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
     *   [4.11 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
     *   [4.12 Fido U2F authentication](#Fido_U2F_authentication)
+    *   [4.13 Get ALSA working back](#Get_ALSA_working_back)
 *   [5 See also](#See_also)
 
 ## Performance
@@ -362,7 +363,9 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 
 #### Unreadable input fields with dark GTK+ themes
 
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
+When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background, or black text on dark background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
+
+Otherwise, if the previous modification didn't solve the issue, it is possible to launch Firefox with a light GTK theme by adding a new string in `about:config` named `widget.content.gtk-theme-override` and setting it to a light theme like `Breeze:light` or `Adwaita:light`.
 
 ##### Override input field color with CSS
 
@@ -460,13 +463,11 @@ Mozilla's recommendation for increasing the mousewheel scroll speed is to:
 
 *   Set `mousewheel.default.delta_multiplier_y` between `200` and `500` (default: `100`)
 
-Alternatively you can install the [SmoothWheel add-on](http://smoothwheel.mozdev.org/).
-
 ### Pixel-perfect trackpad scrolling
 
 To enable one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
 
-If scrolling is undesirably jerky, try enabling Firefox's "Smooth Scrolling" option in Preferences > Advanced.
+If scrolling is undesirably jerky, try enabling Firefox's "Use smooth scrolling" option in Preferences > General > Browsing.
 
 ### Enable touchscreen gestures
 
@@ -640,6 +641,14 @@ Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for 
 Firefox supports the Fido U2F authentication protocol. However, it is disabled by default. To enable it set `security.webauth.u2f` to `true` in `about:config`.
 
 **Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
+
+### Get ALSA working back
+
+As long as Arch keeps building Firefox with *ac_add_options --enable-alsa*, then one can make Firefox allow ioctl syscalls, blocked by default by Firefox sandboxing, and required by ALSA setting `security.sandbox.content.syscall_whitelist` in `about:config`, to the right ioctl syscall number, which is *16* for x86-64 and *54* for x86-32\. See:
+
+[[5]](https://www.linuxquestions.org/questions/slackware-14/firefox-in-current-alsa-sound-4175622116) [[6]](https://codelab.wordpress.com/2017/12/11/firefox-drops-alsa-apulse-to-the-rescue) [[7]](https://www.bleepingcomputer.com/news/security/firefox-57-brings-better-sandboxing-on-linux)
+
+No need for apulse if built as done so far.
 
 ## See also
 

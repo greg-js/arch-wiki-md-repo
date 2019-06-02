@@ -52,6 +52,7 @@ Related articles
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Mount services at boot fail](#Mount_services_at_boot_fail)
     *   [5.2 systemd-resolve not searching the local domain](#systemd-resolve_not_searching_the_local_domain)
+    *   [5.3 Connected second PC unable to use bridged LAN](#Connected_second_PC_unable_to_use_bridged_LAN)
 *   [6 See also](#See_also)
 
 ## Basic usage
@@ -579,6 +580,19 @@ Possible workarounds:
 *   Switch to using fully-qualified domain names
 *   Use `/etc/hosts` to resolve hostnames
 *   Fall back to using glibc's `dns` instead of using systemd's `resolve`
+
+### Connected second PC unable to use bridged LAN
+
+First PC have two LAN. Second PC have one LAN and connected to first PC. Lets go second PC to give all access to LAN after bridged interface:
+
+```
+   # sysctl net.bridge.bridge-nf-filter-pppoe-tagged=0
+   # sysctl net.bridge.bridge-nf-filter-vlan-tagged=0
+   # sysctl net.bridge.bridge-nf-call-ip6tables=0
+   # sysctl net.bridge.bridge-nf-call-iptables=0
+   # sysctl net.bridge.bridge-nf-call-arptables=0
+
+```
 
 ## See also
 

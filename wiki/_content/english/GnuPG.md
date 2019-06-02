@@ -213,6 +213,8 @@ $ gpg --send-keys *key-id*
 
 **Warning:** Once a key has been submitted to a keyserver, it cannot be deleted from the server.[[3]](https://pgp.mit.edu/faq.html)
 
+**Tip:** You can access your *key-id* by `$ gpg --list-secret-keys --keyid-format=LONG <email>`. The *key-id* is the hash-key provided in the sec line.
+
 To find out details of a key on the keyserver, without importing it, do:
 
 ```

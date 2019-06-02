@@ -70,7 +70,7 @@ In case of error see [#xawtv with nvidia card](#xawtv_with_nvidia_card).
 [VLC](/index.php/VLC "VLC") can also be used to view and record your webcam. In VLC's "Media" menu, open the 'Capture Device...' dialog and enter the video and audio device files. Or from the command line, do:
 
 ```
-$ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"
+$ vlc v4l2:// :input-slave=alsa:// :v4l-vdev="/dev/video0"
 
 ```
 

@@ -1114,5 +1114,6 @@ You can use the following website to get your device's coordinates along with a 
 43.8521180,-66.1128320 "smuise" # Yarmouth, Nova Scotia, Canada
 14.627708, -90.580859 "betoSolares" # Guatemala City, Guatemala
 51.601860, 7.137573 "Scrumplex" # Herten, NRW, Germany
+51.338977, -0.008085 "curl pipe sudo bash" # London, UK
 
 ```

@@ -42,7 +42,9 @@ X сервер работает либо с интегрированным, ли
 
 ```
 
-Вывод будет похож на **`01:00.0`**. После чего создайте файл, например, `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf`, для установки правильного ID шины:
+Выход будет аналогичен этому примеру: **`01:00.0`**.
+
+После чего создайте файл, например, `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf`, для установки правильного ID шины:
 
  `/etc/X11/nvidia-xorg.conf.d/30-nvidia.conf` 
 ```
@@ -120,7 +122,7 @@ $ nvidia-xrun
 
 ```
 
-Подробнее о bbswitch смотрите в [Bumblebee-Project/bbswitch](https://github.com/Bumblebee-Project/bbswitch).
+Подробнее о `bbswitch` смотрите в [Bumblebee-Project/bbswitch](https://github.com/Bumblebee-Project/bbswitch).
 
 ## Использование
 

@@ -10,10 +10,13 @@
     *   [2.2 Instalacja pakietów](#Instalacja_pakietów)
     *   [2.3 Usuwanie pakietów](#Usuwanie_pakietów)
     *   [2.4 Zapytania do bazy danych](#Zapytania_do_bazy_danych)
-    *   [2.5 Czyszczenie cache](#Czyszczenie_cache)
-    *   [2.6 Downgrade pakietów](#Downgrade_pakietów)
-        *   [2.6.1 ARM](#ARM)
-    *   [2.7 Inne użycie](#Inne_użycie)
+    *   [2.5 Powód instalacji pakietu](#Powód_instalacji_pakietu)
+    *   [2.6 Czyszczenie cache](#Czyszczenie_cache)
+    *   [2.7 Downgrade pakietów](#Downgrade_pakietów)
+        *   [2.7.1 Archiwa Archa](#Archiwa_Archa)
+            *   [2.7.1.1 Arch Linux Archive](#Arch_Linux_Archive)
+            *   [2.7.1.2 Arch Linux Historical Archive](#Arch_Linux_Historical_Archive)
+    *   [2.8 Inne użycie](#Inne_użycie)
 *   [3 Konfiguracja Pacmana](#Konfiguracja_Pacmana)
     *   [3.1 Podstawowe opcje](#Podstawowe_opcje)
     *   [3.2 Repozytoria](#Repozytoria)
@@ -29,7 +32,7 @@ Menedżer pakietów Pacman to jedna z wyróżniających cech Arch Linuksa. Łąc
 
 Pacman pozwala na utrzymanie aktualności systemu przez synchronizację listy pakietów z głównym serwerem, powodując tym samym, że utrzymanie systemu dla znającego się na bezpieczeństwie administratora jest trywialne. Poza tym pozwala na ściągnięcie/zainstalowanie kompletnego pakietu z zależnościami prostym poleceniem.
 
-Pacman jest zarówno menedżerem pakietów binarnych, jak i źródłowych. To połączenie pomysłów z Gentoo, Debiana i Slackware, stworzone, by być jednym z najbardziej rozbudowanych menedżerów pakietów, który jednocześnie pozostaje łatwy w użyciu. Pacman potrafi pobierać, instalować i uaktualniać pakiety ze zdalnych oraz lokalnych repozytoriów, z pełną obsługą zależności. Ponad to ma łatwe do opanowania narzędzia do tworzenia własnych pakietów. Napisany w C, wykorzystujący format [tar](https://pl.wikipedia.org/wiki/Tar_(informatyka)).
+Pacman jest zarówno menedżerem pakietów binarnych, jak i źródłowych. To połączenie pomysłów z Gentoo, Debiana i Slackware, stworzone, by być jednym z najbardziej rozbudowanych menedżerów pakietów, który jednocześnie pozostaje łatwy w użyciu. Pacman potrafi pobierać, instalować i uaktualniać pakiety ze zdalnych oraz lokalnych repozytoriów, z pełną obsługą zależności. Ponadto ma łatwe do opanowania narzędzia do tworzenia własnych pakietów. Napisany w C, wykorzystujący format [tar](https://pl.wikipedia.org/wiki/Tar_(informatyka)).
 
 ## Użycie
 
@@ -165,6 +168,32 @@ Aby sprawdzić, które pakiety przestały być zależnościami innych (tzw. sier
 
 ```
 
+### Powód instalacji pakietu
+
+Baza danych pacmana dzieli zainstalowane pakiety wg powodu/przyczyny (*reason*), dla jakiego zostały zainstalowane:
+
+*   **explicite zainstalowane** (*explicitly-installed*): pakiety, które bezpośrednio zostały zainstalowane komendą `pacman -S` albo `-U`;
+*   **zależności**: pakiety, które chociaż nie zostały bezpośrednio zainstalowane ww. komendą, to zostały implicite zainstalowane, bo były wymagane przez inny pakiet, który był instalowany bezpośrednio.
+
+Jeżeli chcemy explicite instalowany pakiet zainstalować jako pakiet zależny, możemy wymusić to komendą:
+
+```
+ # pacman -S --asdeps *nazwa_pakietu*
+
+```
+
+**Tip:** Instalowanie opcjonalnych dependencji z użyciem `-–asdeps` skutkuje tym, że w sytuacji, gdy będziemy usuwać osierocone pakiety, pacman usunie też takie pozostawione opcjonalne zależności.
+
+W czasie reinstalacji pakietu, domyślnie powód instalacji pakietu pozostaje niezmieniony. Listę explicite zainstalowanych pakietów możemy zobaczyć stosując `pacman -Qe`, listę pakietów oznaczonych jako zależności: `pacman -Qd`. Zmiana ustawień celu instalacji jest możliwa po zastosowaniu:
+
+```
+ # pacman -D –-asdeps *nazwa_pakietu*
+ # pacman -D --asexplicit *nazwa_pakietu*
+
+```
+
+**Note:** Odradza się używanie `–-asdeps` i `–-asexplicit` razem z upgradem, np. `pacman -Syu *nazwa_pakietu* -–asdeps`. To zmieni ustawienia powodu nie tylko dla instalowanego pakietu, ale także dla tych upgradowanych.
+
 ### Czyszczenie cache
 
 Pacman przechowuje ściągnięte pakiety w katalogu `/var/cache/pacman/pkg` i nie usuwa automatycznie odinstalowanych wersji. Dzięki temu można:
@@ -198,8 +227,6 @@ Tak czy inaczej, musisz pamiętać o kilku sprawach:
 *   Po drugie, musisz sprawdzić, czy potrzebne pliki zostały usunięte z systemu i jeśli tak, czy możesz je pobrać z innego źródła. Repozytoria Archa są aktualizowane bez pozostawiania poprzednich wersji.
 *   Po trzecie, musisz być ostrożny ze zmianami w plikach konfiguracyjnych oraz skryptami. Na chwilę obecną będziemy polegać na Pacmanie, dopóki nie będziemy musieli ominąć pewnych zabezpieczeń, włącznie z nadpisywaniem plików.
 
-Wiedz, że te problemy są jednymi z najważniejszych punktów na liście do zrobienia Deweloperów Pacmana. Koncepcja Arch Rolback Machine będzie rozwijana i wciąż czekamy na włączenie tego mechanizmu do menedżera pakietów. Kiedy to nastąpi, całość będzie zautomatyzowana, lecz do tej pory, kieruj się poniższymi instrukcjami.
-
 Pierwsze miejsce, do którego powinieneś się udać w poszukiwaniu poprzedniej wersji pakietu jest `/var/cache/pacman/pkg` na Twoim komputerze i sprawdzenie, czy został tam zachowany. Warunek jest tylko jeden - jeżeli nie wyczyściłeś pamięci podręcznej Pacmana (`pacman -Scc`). Jeśli go znalazłeś, zainstaluj go za pomocąpolecenia:
 
 ```
@@ -216,11 +243,7 @@ Upewnij się, że jest to starsza wersja, a nie ta obecna w systemie. Polecenie 
 
 Jednak, prawdopodobnie wpłynie to negatywnie na stabilność systemu.
 
-Jeśli nie znalazłeś starszej wersji w swoim systemie, sprawdź nieaktualne serwery. Możesz sprawdzić konkretnie które to są ze [strony monitorującej stan serwerów](https://www.archlinux.de/?page=MirrorStatus;orderby=syncdelay;sort=1). Możesz także sprawdzić jeden z poniższych (Stan na dzień 2 czerwca 2010 roku.)
-
-*   [mirrors.sohu.com](http://mirrors.sohu.com/archlinux/)
-*   [archlinux.umflint.edu](http://archlinux.umflint.edu/)
-*   [schlunix.org](http://schlunix.org/?page_id=11)
+Sprawdź nieaktualne serwery. Możesz sprawdzić konkretnie które to są ze [strony monitorującej stan serwerów](https://www.archlinux.de/?page=MirrorStatus;orderby=syncdelay;sort=1).
 
 Gdy już poosiadasz wybraną wersję pakietu, możesz już usunąć najnowszą wersję pakietu X za pomocą polecenia
 
@@ -236,35 +259,21 @@ a następnie zainstalać starszą paczkę używając polecenia:
 
 ```
 
-#### ARM
+#### Archiwa Archa
 
-[Arch Rollback Machine](http://arm.konnichi.com/) (ARM) przechowuje stare wersje pakietów na bieżąco od listopada 2009 roku. Działa również na zasadzie repozytorium, lecz z podawaniem konkretnej daty. Jeśli jesteś ciekaw, czy znajdziesz tam odpowiednią wersję programów, możesz użyć [wyszukiwarki](http://arm.konnichi.com/search/).
+Jeżeli nie znalazłeś starszej wersji pakietu w systemie, możesz skorzystać z dostępnych archiwów.
 
-Budowa nie powinna nikomu sprawić problemu:
+##### Arch Linux Archive
 
-```
-Server=[http://arm.konnichi.com/rok/miesiąc/dzień/repozytorium/os/architektura-procesora](http://arm.konnichi.com/rok/miesiąc/dzień/repozytorium/os/architektura-procesora)
+[Arch Linux Archive (ALA)](https://archive.archlinux.org/), znane wcześniej pod nazwą Arch Linux Rollback Machine (ARM), przechowuje oficjalne snapshoty repozytoriów, obrazy iso i pliki tarball. Może zostać wykorzystane do:
 
-```
+*   Downgrade do poprzedniej wersji pakietu (np. kiedy najnowsza nie działa poprawnie);
+*   Odtworzenia wszystkich pakietów w stanie z pewnego konkretnego momentu (np. kiedy system nie działa, chcę wrócić do stanu sprzed dwóch miesięcy);
+*   Znalezienie poprzedniej wersji obrazu ISO.
 
-*   repozytorium - core/extra/community/testing/community-testing
-*   architektura-procesora - i686/x86_64
+##### Arch Linux Historical Archive
 
-Kiedy już przygotujesz odpowiedni wpis, umieść go w odpowiedniej sekcji pliku `/etc/pacman.conf`, na przykład:
-
- `/etc/pacman.conf` 
-```
-[core]
-Server=[http://arm.konnichi.com/2010/04/28/core/os/x86_64](http://arm.konnichi.com/2010/04/28/core/os/x86_64)
-Include = /etc/pacman.d/mirrorlist
-```
-
-Wpis musi być koniecznie umiejscowiony między nazwą repozytorium, a zewnętrzną listą serwerów lustrzanych. Następnie zsynchronizuj bazę dostępnych pakietów za pomocą ponizszego polecenia i zdezaktualizuj wybrany pakiet.
-
-```
-# pacman -Syyu
-
-```
+Co jakiś czas stare pakiety są usuwane z bieżącego archiwum ALA i przesuwane do [dedykowanego archiwum w serwisie archive.org](https://archive.org/details/archlinuxarchive).
 
 **Rekompilacja pakietu**
 
@@ -285,13 +294,6 @@ Instalowanie pakietu, który jest na dysku (już pobrany):
 
 ```
 # pacman -U /ścieżka/do/pakietu/nazwa_pakietu.pkg.tar.gz
-
-```
-
-Czyszczenie pamięci podręcznej pacmana (`/var/cache/pacman/pkg`):
-
-```
-# pacman -Scc
 
 ```
 

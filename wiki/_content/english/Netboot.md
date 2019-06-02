@@ -1,5 +1,7 @@
 Netboot images are small (< 1 MiB) images that can be used to download the latest Arch Linux release on the fly upon system boot. It is unnecessary to update the netboot image, the newest release will be available automatically. Netboot images can be downloaded from the [Arch Linux website](https://www.archlinux.org/releng/netboot/).
 
+**Note:** You need sufficient memory (probably 1.5GiB or even more) to store and run the live system, otherwise you may get kernel panic on boot.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents

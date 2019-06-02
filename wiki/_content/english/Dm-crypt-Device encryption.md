@@ -145,7 +145,7 @@ Defaults are compared with a cryptographically higher specification example in t
 
 -s
 
- | `256` | `512` | By default a 256 bit key-size is used. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so to use AES-256 instead of AES-128 you have to set the XTS key-size to `512`. |
+ | `256` (`512` for XTS) | `512` | By default a 512 bit key-size is used for XTS ciphers. Note however that [XTS splits the supplied key in half](https://en.wikipedia.org/wiki/Disk_encryption_theory#XEX-based_tweaked-codebook_mode_with_ciphertext_stealing_.28XTS.29 "wikipedia:Disk encryption theory"), so this results in AES-256 being used. |
 | --hash
 
 -h

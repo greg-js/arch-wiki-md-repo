@@ -51,6 +51,14 @@ The command `xsetwacom list devices` should now list some devices. If it does no
 
 The [kcm-wacomtablet](https://www.archlinux.org/packages/?name=kcm-wacomtablet) package provides a [KDE](/index.php/KDE "KDE") graphical user interface for tablet configuration and supports tablet-specific profiles and hotplugging.
 
+Support for the following Wacom tablets is provided via [tuhi-git](https://aur.archlinux.org/packages/tuhi-git/):
+
+*   Bamboo Spark
+*   Bamboo Slate
+*   Intuos Pro Paper
+
+Consult README for the details of initial configuration. For setups with more than one monitor you'll probably want to fix aspect ratio using `Coordinate Transformation Matrix` as described at [dual and multimonitor set up](https://github.com/linuxwacom/xf86-input-wacom/wiki/Dual-and-Multi-Monitor-Set-Up).
+
 ## Configuration
 
 The Xorg driver can be temporarily configured with `xsetwacom`, see [xsetwacom(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xsetwacom.1). Changes are lost after X server restarts or replugging your tablet.

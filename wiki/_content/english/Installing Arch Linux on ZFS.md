@@ -445,9 +445,7 @@ to your kernel options, which forces the import of the pool.
 
 ## Native encryption
 
-**Warning:** Encryption does not exist in a stable release, yet. So do this at you own risk, since it might break.
-
-To use native ZFS encryption, you will need a recent enough zfs package like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) 0.7.0.r26 or newer and embed it into the archiso. Then just follow the normal procedure shown before with the exception that you add the following parameters when creating the dataset:
+To use native ZFS encryption, you will need a recent enough zfs package like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) 0.7.0.r26 or newer, or [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) 0.8.0 or newer, and embed it into the archiso. Then just follow the normal procedure shown before with the exception that you add the following parameters when creating the dataset:
 
 ```
 # zfs create -o encryption=on -o keyformat=passphrase -o mountpoint=none zroot/ROOT

@@ -34,6 +34,8 @@ As a result:
 *   [2 Experimenting with ZFS](#Experimenting_with_ZFS)
 *   [3 Configuration](#Configuration)
     *   [3.1 Automatic Start](#Automatic_Start)
+        *   [3.1.1 Using zfs-mount.service](#Using_zfs-mount.service)
+        *   [3.1.2 Using zfs-mount-generator](#Using_zfs-mount-generator)
 *   [4 Creating a storage pool](#Creating_a_storage_pool)
     *   [4.1 Identify disks](#Identify_disks)
         *   [4.1.1 Using GPT labels](#Using_GPT_labels)
@@ -144,46 +146,57 @@ ZFS is considered a "zero administration" filesystem by its creators; therefore,
 
 ### Automatic Start
 
-For ZFS to live by its "zero administration" namesake, the zfs daemon must be loaded at startup. A benefit to this is that it is not necessary to mount the zpool in `/etc/fstab`; the zfs daemon can import and mount zfs pools automatically. The daemon mounts the zfs pools reading the file `/etc/zfs/zpool.cache`.
+For ZFS to live by its "zero administration" namesake, `zfs-import-cache.service` must be enabled to import the pools and `zfs-mount.service` must be enabled to mount the filesystems available in the pools. A benefit to this is that it is not necessary to mount ZFS filesystems in `/etc/fstab`. `zfs-import-cache.service` imports the zfs pools reading the file `/etc/zfs/zpool.cache`.
 
-For each [imported pool](#Importing_a_pool_created_by_id) you want automatically mounted by the zfs daemon execute:
+For each [imported pool](#Importing_a_pool_created_by_id) you want automatically imported by `zfs-import-cache.service` execute:
 
 ```
 # zpool set cachefile=/etc/zfs/zpool.cache <pool>
 
 ```
 
-Enable the service so it is automatically started at boot time:
-
-```
-# systemctl enable zfs.target
-
-```
-
-To manually start the daemon:
-
-```
-# systemctl start zfs.target
-
-```
-
 **Note:** Beginning with ZOL version 0.6.5.8 the ZFS service unit files have been changed so that you need to explicitly enable any ZFS services you want to run. See [https://github.com/archzfs/archzfs/issues/72](https://github.com/archzfs/archzfs/issues/72) for more information.
 
-In order to mount zfs pools automatically on boot you need to enable the following services and targets:
+Enable the relevant service and target so the pools are automatically imported at boot time:
 
 ```
 # systemctl enable zfs-import-cache
-# systemctl enable zfs-mount
 # systemctl enable zfs-import.target
 
 ```
 
-or, as explained on [the GitHub issue](https://github.com/archzfs/archzfs/issues/72), use the [systemd preset file](https://www.freedesktop.org/software/systemd/man/systemd.preset.html):
+To mount the ZFS filesystems, you have 2 choices:
+
+*   Enable the [zfs-mount.service](#Using_zfs-mount.service)
+*   Using [zfs-mount-generator](#Using_zfs-mount-generator)
+
+#### Using zfs-mount.service
+
+In order to mount ZFS filesystems automatically on boot you need to enable the following services and targets:
 
 ```
-# systemctl preset $(tail -n +2 /usr/lib/systemd/system-preset/50-zfs.preset | cut -d ' ' -f 2)
+# systemctl enable zfs-mount
+# systemctl enable zfs.target
 
 ```
+
+#### Using zfs-mount-generator
+
+You can also use the zfs-mount-generator to create systemd mount units for your ZFS filesystems at boot. systemd will automatically mount the filesystems based on the mount units without having to use the `zfs-mount.service`. To do that, you need to:
+
+1.  Create the `/etc/zfs/zfs-list.cache` directory.
+2.  Enable the ZFS Event Daemon(ZED) script (called a ZEDLET) required to create a list of mountable ZFS filesystems. `# ln -s /usr/lib/zfs-0.8.0/zfs/zed.d/history_event-zfs-list-cacher.sh /etc/zfs/zed.d` 
+3.  Enable and start the ZFS Event Daemon. This service is responsible for running the script in the previous step.
+    ```
+    # systemctl enable zfs-zed.service
+    # systemctl enable zfs.target
+    # systemctl start zfs-zed.service
+    ```
+
+4.  You need to create an empty file named after your pool in `/etc/zfs/zfs-list.cache`. The ZEDLET will only update the list of filesystems if the file for the pool already exists. `# touch /etc/zfs/zfs-list.cache/<pool-name>` 
+5.  Check the contents of `/etc/zfs/zfs-list.cache/<pool-name>`. If it is empty, make sure that the `zfs-zed.service` is running and just change the canmount property of any of your ZFS filesystem by running: `zfs set canmount=off zroot/fs1` This change causes ZFS to raise an event which is captured by ZED, which in turn runs the ZEDLET to update the file in `/etc/zfs/zfs-list.cache`. If the file in `/etc/zfs/zfs-list.cache` is updated, you can set the `canmount` property of the filesystem back by running: `zfs set canmount=on zroot/fs1` 
+
+You need to add a file in `/etc/zfs/zfs-list.cache` for each ZFS pool in your system. Make sure the pools are imported by enabling `zfs-import-cache.service` and `zfs-import.target` as [explained above](#Automatic_Start).
 
 ## Creating a storage pool
 
@@ -620,7 +633,7 @@ One can also specify/increase the default iterations of PBKDF2 when using `passp
 
 **Note:**
 
-*   Native ZFS encryption has been made available in 0.7.0.r26 or newer provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Despite the fact that version 0.7 has been released, this feature is still not enabled in the stable version as of 0.7.3, so a development build still needs to be used.
+*   Native ZFS encryption has been made available in the stable 0.8.0 release or newer. Previously it was only available in development versions provided by packages like [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/), [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) or other development builds. Users who were only using the development versions for the native encryption, may now switch to the stable releases if they wish.
 *   To import a pool with keys, one needs to specify the `-l` flag, without this flag encrypted datasets will be left unavailable until the keys are loaded. See [#Importing a pool created by id](#Importing_a_pool_created_by_id).
 
 To create a dataset including native encryption with a passphrase, use:

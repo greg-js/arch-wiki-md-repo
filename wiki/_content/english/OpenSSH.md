@@ -659,8 +659,6 @@ There are several [client configuration](#Configuration) options which can speed
 
 Please refer to the [SSHFS](/index.php/SSHFS "SSHFS") article to mount a SSH-accessible remote system to a local folder, so you will be able to do any operation on the mounted files with any tool (copy, rename, edit with vim, etc.). *sshfs* is generally preferred over *shfs*, the latter has not been updated since 2004.
 
-**Tip:** There is a package [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) that can be used to run autosshfs automatically at login.
-
 ### Keep alive
 
 By default, the SSH session automatically logs out if it has been idle for a certain time. To keep the session up, the client can send a keep-alive signal to the server if no data has been received for some time, or symmetrically the server can send messages at regular intervals if it has not heard from the client.

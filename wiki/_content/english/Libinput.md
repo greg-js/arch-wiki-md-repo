@@ -33,8 +33,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
         *   [3.5.4 GnomeExtendedGestures](#GnomeExtendedGestures)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
-    *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE's_Touchpad_KCM)
-    *   [4.3 Touchpad not detected at all](#Touchpad_not_detected_at_all)
+    *   [4.2 Touchpad not detected at all](#Touchpad_not_detected_at_all)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -166,8 +165,7 @@ There are different GUI tools:
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
-    *   Keyboard, mouse and controller devices can be configured from System Settings. Default touchpad module is still based on the old synaptics driver and will not work for libinput configuration.
-    *   [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/) is an old KDE configuration module for all input devices supported by libinput. It works for touchpad configuration but options are not restored at the next startup. See [KDE Bug 402882](https://bugs.kde.org/show_bug.cgi?id=402882).
+    *   Keyboard, mouse and controller devices can be configured from System Settings.
 
 ## Tips and tricks
 
@@ -331,13 +329,6 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 $ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 
 ```
-
-### Touchpad settings not taking effect in KDE's Touchpad KCM
-
-KDE touchpad configuration module does not have libinput support for [Xorg](/index.php/Xorg "Xorg"). Even Xorg configuration section related to touchpad device under `/etc/X11/xorg.conf.d/` does not work because default options are overwritten when Plasma session is started. Until full support is provided, some workarounds are:
-
-*   installing [kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/), but changed options are lost at the next startup;
-*   setting the options manually with `xinput set-prop` and saving needed commands in a bash script located in `~/.config/autostart-scripts/` to apply non-default options at Plasma startup.
 
 ### Touchpad not detected at all
 

@@ -257,7 +257,7 @@ Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
 
 ```
 [catalyst]
-Server = https://mirror.hactar.xyz/Vi0L0/catalyst/$arch
+Server = https://167.86.114.169/arch/catalyst/$arch
 
 ```
 
@@ -269,7 +269,7 @@ Server = https://mirror.hactar.xyz/Vi0L0/catalyst/$arch
 
 ```
 [catalyst-hd234k]
-Server = https://mirror.hactar.xyz/Vi0L0/catalyst-hd234k/$arch
+Server = https://167.86.114.169/arch/catalyst-hd234k/$arch
 
 ```
 

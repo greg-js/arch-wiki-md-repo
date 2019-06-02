@@ -29,7 +29,7 @@ Though Fontconfig is used often in modern Unix and Unix-like operating systems, 
     *   [2.5 Subpixel rendering](#Subpixel_rendering)
         *   [2.5.1 LCD filter](#LCD_filter)
         *   [2.5.2 Advanced LCD filter specification](#Advanced_LCD_filter_specification)
-    *   [2.6 Disable auto-hinter for bold fonts](#Disable_auto-hinter_for_bold_fonts)
+    *   [2.6 Custom settings for certain fonts or font styles](#Custom_settings_for_certain_fonts_or_font_styles)
     *   [2.7 Replace or set default fonts](#Replace_or_set_default_fonts)
     *   [2.8 Whitelisting and blacklisting fonts](#Whitelisting_and_blacklisting_fonts)
     *   [2.9 Disable bitmap fonts](#Disable_bitmap_fonts)
@@ -277,7 +277,7 @@ $ makepkg -e
 
 Reboot or restart X. The lcddefault filter should now render fonts differently.
 
-### Disable auto-hinter for bold fonts
+### Custom settings for certain fonts or font styles
 
 The auto-hinter uses sophisticated methods for font rendering, but often makes bold fonts too wide. Fortunately, a solution can be turning off the autohinter for bold fonts while leaving it on for the rest:
 
@@ -288,6 +288,22 @@ The auto-hinter uses sophisticated methods for font rendering, but often makes b
         <const>medium</const>
     </test>
     <edit name="autohint" mode="assign">
+        <bool>false</bool>
+    </edit>
+</match>
+...
+
+```
+
+Some fonts may not look good with BCI hinting. It can be disabled for just those fonts:
+
+```
+...
+<match target="font">
+    <test name="family" qual="any">
+        <string>My Font</string>
+    </test>
+    <edit name="hinting" mode="assign">
         <bool>false</bool>
     </edit>
 </match>

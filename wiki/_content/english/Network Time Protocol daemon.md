@@ -251,7 +251,7 @@ remote           refid            st t when poll reach   delay   offset  jitter
 
 **Tip:** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
 
-**Note:** *ntpd* expects that your GPS device is called e.g. `/dev/gps0`. If your GPS device is connected via USB, it may appear as `/dev/ttyUSB0` instead, and you may have to create a symlink `ln -s /dev/ttyUSB0 /dev/gps0` and run *gpsd* on that linked `/dev/gps0` so that the `GPSD_JSON` line appears as expected.
+**Note:** *ntpd* expects that your GPS device is called e.g. `/dev/gps0`. If your GPS device is connected via USB, it may appear as `/dev/ttyUSB0` instead, and you may have to create a symlink `ln -s /dev/ttyUSB0 /dev/gps0` and run *gpsd* on that linked `/dev/gps0` so that the `GPSD_JSON` line appears as expected. *gpsd* should be run with the `-n` flag on the `GPSD_OPTIONS` line and use `/dev/gps0` on the `DEVICES` line in the `/etc/default/gpsd` config file.
 
 ### Running in a chroot
 

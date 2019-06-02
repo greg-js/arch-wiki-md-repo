@@ -110,7 +110,7 @@
 | <small>4.12.8.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(16) (also in [Streaming](/index.php/Category:Streaming "Category:Streaming"), [Web](/index.php/Category:Web "Category:Web"))</small> |
 | <small>4.12.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>4.12.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
-| <small>4.13.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(8)</small> |
+| <small>4.13.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(9)</small> |
 | <small>4.13.1.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(13) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.13.1.1.</small> [Home theater](/index.php/Category:Home_theater "Category:Home theater") <small>(4)</small> |
 | <small>4.13.2.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(16) (also in [Servers](/index.php/Category:Servers "Category:Servers"), [Web](/index.php/Category:Web "Category:Web"))</small> |

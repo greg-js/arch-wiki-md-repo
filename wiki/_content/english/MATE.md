@@ -53,6 +53,7 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [5.8 Caja's text file preview](#Caja's_text_file_preview)
     *   [5.9 GTK+ 2 applications seem to ignore default MATE themes](#GTK+_2_applications_seem_to_ignore_default_MATE_themes)
     *   [5.10 Speaker test does not work](#Speaker_test_does_not_work)
+    *   [5.11 Extra decoration on CSD applications](#Extra_decoration_on_CSD_applications)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -461,6 +462,12 @@ Themes that come with [mate-themes](https://www.archlinux.org/packages/?name=mat
 ### Speaker test does not work
 
 For [PulseAudio](/index.php/PulseAudio "PulseAudio") backend, [install](/index.php/Install "Install") [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)'s optional dependency [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse).
+
+### Extra decoration on CSD applications
+
+An extra decoration can appear on CSD applications (Firefox, Visual Studio Code...) when they are unmaximized.[[5]](https://github.com/mate-desktop/mate-netbook/issues/14)
+
+Uninstalling the package [mate-netbook](https://www.archlinux.org/packages/?name=mate-netbook) solves the issue.
 
 ## See also
 

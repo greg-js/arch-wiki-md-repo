@@ -53,6 +53,16 @@ UserID                  opendkim
 
 ```
 
+*   Socket address is the one specified in `/etc/postfix/main.cf`. This is what `/etc/postfix/main.cf` should contain:
+
+```
+# For use by dkim milter
+smtpd_milters = inet:localhost:8891
+non_smtpd_milters = $smtpd_milters
+milter_default_action = accept
+
+```
+
 *   To generate a secret signing key, you need to specify the domain used to send mails and a selector which is used to refer to the key. You may choose anything you like, see the RFC for details, but alpha-numeric strings should be OK:
 
 ```

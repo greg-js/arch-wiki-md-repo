@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), revisada por última vez el **2019-1-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=562094) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), revisada por última vez el **2019-05-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=569667) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -9,7 +9,7 @@ Artículos relacionados
 
 *dhcpcd* es un cliente DHCP y DHCPv6\. Actualmente es el cliente DHCP de código abierto que más características tiene, vea su [página](https://roy.marples.name/projects/dhcpcd) para una lista completa de características.
 
-**Nota:** *dhcpcd* (DHCP **client** daemon) no es lo mismo que [dhcpd](/index.php/Dhcpd "Dhcpd") (DHCP **(server)** daemon).
+**Nota:** *dhcpcd* de Roy Marples (DHCP **client** daemon) no es lo mismo que [dhcpd](/index.php/Dhcpd "Dhcpd") de Internet Systems Consortium (DHCP **(server)** daemon).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -29,8 +29,8 @@ Artículos relacionados
 *   [5 Consejos y trucos](#Consejos_y_trucos)
     *   [5.1 Acelerar DHCP deshabilitando la exploración ARP](#Acelerar_DHCP_deshabilitando_la_exploración_ARP)
     *   [5.2 Quitar el arrendamiento antiguo de DHCP](#Quitar_el_arrendamiento_antiguo_de_DHCP)
-    *   [5.3 Diferentes IPs cuando se multi-bootea](#Diferentes_IPs_cuando_se_multi-bootea)
-    *   [5.4 resolv.conf](#resolv.conf)
+    *   [5.3 Diferentes IPs cuando se hace un arranque múltiple](#Diferentes_IPs_cuando_se_hace_un_arranque_múltiple)
+    *   [5.4 /etc/resolv.conf](#/etc/resolv.conf)
 *   [6 Solución de problemas](#Solución_de_problemas)
     *   [6.1 ID del cliente](#ID_del_cliente)
     *   [6.2 Comprobar un problema de DHCP soltando primero la IP](#Comprobar_un_problema_de_DHCP_soltando_primero_la_IP)
@@ -154,7 +154,7 @@ fallback static_eth0
 
 ### 10-wpa_supplicant
 
-Activar este hook creando un enlace simbólico (para asegurarse de que siempre se utilice la versión actual, incluso despues de actualizaciones):
+Activar este hook creando un enlace simbólico que asegura que siempre se utilice la versión actual, incluso después de actualizaciones:
 
 ```
 # ln -s /usr/share/dhcpcd/hooks/10-wpa_supplicant /usr/lib/dhcpcd/dhcpcd-hooks/
@@ -178,9 +178,9 @@ por defecto, y en ese orden, pero se puede configurar un parche personalizado a�
 
 **Nota:** El hook se para cuando encuentra el primer archivo de configuración, por lo tanto ha de tenerlo en cuenta si usted tiene bastantes archivos de configuración *wpa_supplicant*, de otra forma puede que al final *dhcpcd* utilice el archivo incorrecto.
 
-Si *wpa_supplicant* maneja conexiones inalámbricas por si mismo, el hook puede crear eventos de conexiones no deseadas. Por ejemplo, si para *wpa_supplicant* el hook puede iniciar la interfaz otra vez. Incluso si utiliza [netctl-auto (en inglés)](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* se inicia automáticamente con `/run/network/wpa_supplicant_*interface*.conf` por la configuración, por lo tanto iniciarlo otra vez desde el hook no es necesario y puede causar errores en el booteo al analizar el archivo `/etc/wpa_supplicant/wpa_supplicant.conf`, que solo contiene valores ficticios en la versión por defecto.
+Si *wpa_supplicant* maneja conexiones inalámbricas por si mismo, el hook puede crear eventos de conexiones no deseadas. Por ejemplo, si para *wpa_supplicant* el hook puede iniciar la interfaz otra vez. Incluso si utiliza [netctl-auto (en inglés)](/index.php/Netctl#Special_systemd_units "Netctl"), *wpa_supplicant* se inicia automáticamente con `/run/network/wpa_supplicant_*interface*.conf` por la configuración, por lo tanto iniciarlo otra vez desde el hook no es necesario y puede causar errores en el arranque al analizar el archivo `/etc/wpa_supplicant/wpa_supplicant.conf`, que solo contiene valores ficticios en la versión por defecto.
 
-Para desactivar el hook, añade `nohook wpa_supplicant` en `dhcpcd.conf`.
+Para desactivar el hook elimine el link simbólico que añadiste o añade `nohook wpa_supplicant` en `dhcpcd.conf`.
 
 ## Consejos y trucos
 
@@ -203,9 +203,9 @@ Si el servidor DHCP aún le asigna la misma dirección IP, puede deberse a que e
 
 Tenga en cuenta que el DUID está destinado a ser un identificador persistente sobre los reinicios e interfaces. Si estás transfiriendo el sistema a un nuevo ordenador, preservar este archivo debería hacer que el ordenador se parezca al antiguo.
 
-### Diferentes IPs cuando se multi-bootea
+### Diferentes IPs cuando se hace un arranque múltiple
 
-Si está dualbooteando Arch y OS X o Windows y quiere que cada uno reciba direcciones IP distintas, puedes ejercer control sobre el arrendamiento de IPs especificando un DUID diferente para cada sistema operativo.
+Si está haciendo un arraque dual Arch y OS X o Windows y quiere que cada uno reciba direcciones IP distintas, puedes ejercer control sobre el arrendamiento de IPs especificando un DUID diferente para cada sistema operativo.
 
 En Windows (en XP) el DUID debería estar guardado en
 
@@ -220,11 +220,11 @@ En OS X es directamente accesible en `Network\adapter\dhcp preferences panel`.
 
 Si está utilizando un servidor [dnsmasq](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") DHCP, los DUIDs diferentes pueden utilizar las reglas apropiadas `dhcp-host=` en su cpnfiguración.
 
-### resolv.conf
+### /etc/resolv.conf
 
-*dhcpcd'* por defecto sobrescribe [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+Si [resolvconf](/index.php/Resolvconf "Resolvconf") está disponible en la información DNS se enviará a él, si no *dhcpcd* sobrescribirá automáticamente `/etc/resolv.conf`.
 
-Se puede parar añadiendo lo siguiente a la última sección de `/etc/dhcpcd.conf`:
+La sobreescritura de `/etc/resolv.conf` se puede parar desactivando el hook `/usr/lib/dhcpcd/dhcpcd-hooks/20-resolv.conf`. Para hacerlo añada lo siguiente a la última sección de `/etc/dhcpcd.conf`:
 
 ```
 nohook resolv.conf
@@ -246,6 +246,8 @@ Por ejemplo, para establecer el servidor DNS de Google:
 static domain_name_servers=8.8.8.8 8.8.4.4
 
 ```
+
+**Sugerencia:** Cuando utilice [openresolv](/index.php/Openresolv "Openresolv") los servidores DNS se pueden configurar en `/etc/resolvconf.conf`. De esta forma no se sobrescribirán por cualquier software que soporte *resolvconf*.
 
 ## Solución de problemas
 
@@ -302,7 +304,7 @@ en `/etc/dhcpcd.conf`. Esto no debería causarle problemas a no ser que tenga m�
 
 ### dhcpcd y interfaces de red con systemd
 
-`dhcpcd.service` puede [activarse](/index.php?title=Activarse&action=edit&redlink=1 "Activarse (page does not exist)") sin especificar una interfaz. Esto puede, sin embargo, crear una condición en el booteo intentando aplicar un nombre predictivo de la interfaz de red con *system-udev*:
+`dhcpcd.service` puede [activarse](/index.php?title=Activarse&action=edit&redlink=1 "Activarse (page does not exist)") sin especificar una interfaz. Esto puede, sin embargo, crear una condición en el arranque intentando aplicar un nombre predictivo de la interfaz de red con *system-udev*:
 
 ```
 error changing net interface name wlan0 to wlp4s0: Device or resource busy" 

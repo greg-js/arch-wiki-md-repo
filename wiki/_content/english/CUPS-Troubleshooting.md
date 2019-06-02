@@ -148,6 +148,8 @@ Even if CUPS can detect networked printers, you may still end up with an "Unable
 
 This problem may also arise when you have a firewall. You may need to disable your firewall or set the right rules. Using system-config-printer to detect network printers will do that automatically.
 
+Similarly, being connected to a VPN may also cause CUPS to be unable to locate the printer. Disabling any VPN connections temporarily for printing can help fixing it.
+
 ### Old CUPS server
 
 As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround is to append the `version=1.1` option documented at [[1]](https://www.cups.org/doc/network.html#TABLE2) to the URI.

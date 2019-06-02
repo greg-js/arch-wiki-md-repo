@@ -9,8 +9,7 @@ One can think of the key-based authentication in terms similar to that of how [S
 **Note:**
 
 *   The process outlined below requires users to securely transfer private key files to/from machines. For the purposes of this guide, using scp is shown, but readers may employ alternative methods as well. Since the Arch default is to deny the root user over ssh, using scp requires transferring ownership of the files to be exported to a non-root user called *foo* throughout the guide.
-*   Avoid generating keys on devices without a good entropy source. See [[1]](https://community.openvpn.net/openvpn/wiki/GettingStartedwithOVPN#Configuringencryption).
-*   Due to a [bug](https://github.com/OpenVPN/easy-rsa/issues/119), the `vars` file is not sourced if it is not specified explicitly.
+*   Avoid generating keys on devices without a good entropy source. See [[1]](https://community.openvpn.net/openvpn/wiki/GettingStartedwithOVPN#Configuringencryption). Sometimes, [cryptographically secure pseudorandom number generators](/index.php/Random_number_generation#Alternatives "Random number generation") can be used.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

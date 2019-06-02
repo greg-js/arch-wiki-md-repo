@@ -265,9 +265,9 @@ When the hardware clock is set with `hwclock`, a new drift value is calculated i
 
 **Note:** If the hwclock has been set again less than 24 hours after a previous set, the drift is not recalculated as `hwclock` considers the elapsed time period too short to accurately calculate the drift.
 
-If the hardware clock keeps losing or gaining time in large increments, it is possible that an invalid drift has been recorded (but only applicable, if the hwclock daemon is running). This can happen if you have set the hardware clock time incorrectly or your [time standard](#Time_standard) is not synchronized with a Windows or macOS install. The drift value can be removed by removing the file `/etc/adjtime`, then set the correct hardware clock and system clock time, and check if your time standard is correct.
+If the hardware clock keeps losing or gaining time in large increments, it is possible that an invalid drift has been recorded (but only applicable, if the hwclock daemon is running). This can happen if you have set the hardware clock time incorrectly or your [time standard](#Time_standard) is not synchronized with a Windows or macOS install. The drift value can be removed by first removing the file `/etc/adjtime`, then setting the correct hardware clock and system clock time. You should then check if your time standard is correct.
 
-**Note:** If wish to make use of the drift value stored in `/etc/adjtime` even when using systemd, (i.e. perhaps you cannot or do not want to use NTP), you need to call `hwclock --adjust` on a regular basis, perhaps by creating a [cron](/index.php/Cron "Cron") job.
+**Note:** If you wish to make use of the drift value stored in `/etc/adjtime` even when using systemd, (e.g. you cannot or do not want to use NTP), you must call `hwclock --adjust` on a regular basis, perhaps by creating a [cron](/index.php/Cron "Cron") job.
 
 The software clock is very accurate but like most clocks is not perfectly accurate and will drift as well. Though rarely, the system clock can lose accuracy if the kernel skips interrupts. There are some tools to improve software clock accuracy:
 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-04-06**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=570558) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-05-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=573815) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -64,8 +64,9 @@ Note que ciertas licencias de fuentes pueden imponer ciertas limitaciones legale
 *   [6 Consejos y trucos](#Consejos_y_trucos)
     *   [6.1 Listar todas las fuentes instaladas](#Listar_todas_las_fuentes_instaladas)
     *   [6.2 Listar las fuentes instaladas de un lenguaje particular](#Listar_las_fuentes_instaladas_de_un_lenguaje_particular)
-    *   [6.3 Establecer la fuente del terminal sobre la marcha](#Establecer_la_fuente_del_terminal_sobre_la_marcha)
-    *   [6.4 Caché específico de fuente de una aplicación](#Caché_específico_de_fuente_de_una_aplicación)
+    *   [6.3 Listar las fuentes instaladas de un caracter Unicode particular](#Listar_las_fuentes_instaladas_de_un_caracter_Unicode_particular)
+    *   [6.4 Establecer la fuente del terminal sobre la marcha](#Establecer_la_fuente_del_terminal_sobre_la_marcha)
+    *   [6.5 Caché específico de fuente de una aplicación](#Caché_específico_de_fuente_de_una_aplicación)
 *   [7 Vea también](#Vea_también)
 
 ## Formatos de fuente
@@ -278,11 +279,12 @@ Para más fuentes mono espaciada vea [#Bitmap](#Bitmap) y [#Familias](#Familias)
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)).
 *   Fantasque Sans Mono ([ttf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=ttf-fantasque-sans-mono), [otf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=otf-fantasque-sans-mono)).
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – diseñado para Firefox OS.
-*   [FreeMono](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode
+*   [Fira Code](https://github.com/tonsky/FiraCode) ([ttf-fira-code](https://www.archlinux.org/packages/?name=ttf-fira-code), [otf-fira-code](https://www.archlinux.org/packages/?name=otf-fira-code)) – con ligaduras de programación.
+*   [FreeMono](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - fuente mono espaciada de código abierto, utilizada por defecto en KDE Plasma.
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), incluida en [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspirado por Consolas.
 *   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - añade algunas modificaciones familiares para el programador.
-*   [Iosevka](https://be5invis.github.io/Iosevka/) ([ttf-iosevka](https://aur.archlinux.org/packages/ttf-iosevka/)) – Iosevka es un esbelto tipo de letra monospace sans-serif y slab-serif inspirado por Pragmata Pro, M+ y PF DIN Mono, diseñado para ser la fuente ideal para programar.
+*   [Iosevka](https://be5invis.github.io/Iosevka/) ([ttf-iosevka](https://aur.archlinux.org/packages/ttf-iosevka/)) – Un esbelto tipo de letra sans-serif y slab-serif inspirado por Pragmata Pro, M+ y PF DIN Mono, diseñado para ser la fuente ideal para programar. Soporta ligaduras de programación y alrededor de 2000 glifos latinos, griegos, cirílicos, fonéticos y PowerLine.
 *   [Lucida Typewriter](https://en.wikipedia.org/wiki/Lucida_Typewriter "wikipedia:Lucida Typewriter") (incluida en el paquete [jre](https://aur.archlinux.org/packages/jre/)).
 *   [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface) (derivado: [ttf-meslo](https://aur.archlinux.org/packages/ttf-meslo/)) - fuente mono espaciada por defecto de OS X.
 *   [Monaco](https://en.wikipedia.org/wiki/es:Monaco_(tipograf%C3%ADa) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - fuente propietaria diseñada por Apple para OS X.
@@ -300,7 +302,7 @@ Webs relevantes:
 #### Sans-serif
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/)).
-*   [FreeSans](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode.
+*   [FreeSans](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
 *   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – diseñada para las interfaces de usuario.
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – sustituto libre para Times New Roman.
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - tres pricipales variantes: normal, estrecho, y subtítulo - Unicode: latín, cirílico.
@@ -310,7 +312,7 @@ Webs relevantes:
 #### Serif
 
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/)).
-*   [FreeSerif](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) - Unicode.
+*   [FreeSerif](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
 *   [Gentium](https://en.wikipedia.org/wiki/es:Gentium "wikipedia:es:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: latín, griego cirílico, hebreo.
 *   [Linux Libertine](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: latín, griego cirílico, hebreo.
 
@@ -574,6 +576,15 @@ Las aplicaciones y navegadores selecciona y muestra fuentes dependiendo de la co
 /usr/share/fonts/truetype/custom/DroidKufi-Bold.ttf
 /usr/share/fonts/TTF/DejaVuSansMono.ttf
 /usr/share/fonts/TTF/FreeSerif.ttf
+
+```
+
+### Listar las fuentes instaladas de un caracter Unicode particular
+
+Para buscar fuentes monoespaciadas que soporten un punto de código en particular:
+
+```
+$ fc-match -s monospace:charset=1F4A9
 
 ```
 

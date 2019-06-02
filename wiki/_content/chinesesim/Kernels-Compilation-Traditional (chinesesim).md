@@ -4,7 +4,11 @@
 
 另外你可以选择用 [ABS 工具](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)") 建立并安装你的内核；参见 [用ABS工具编译内核](/index.php/Kernels/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels/Arch Build System (简体中文)")。使用已有的 [linux](https://www.archlinux.org/packages/?name=linux) PKGBUILD 文件可以自动化大多数过程并生成一个软件包，然而，一些 Arch 使用者更喜欢用**传统**方法。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 准备](#准备)
     *   [1.1 安装核心软件包](#安装核心软件包)
@@ -143,7 +147,7 @@ $ make localmodconfig
 
 ### 编译内核
 
-编译时间将从15分钟到超过一小时不等。这很大程度依赖于选择了多少选项/模块和处理器性能。详情参考 [Makeflags](/index.php/Makepkg#MAKEFLAGS "Makepkg")。`.config` 配置好之后，在内核目录允许：
+编译时间将从15分钟到超过一小时不等。这很大程度依赖于选择了多少选项/模块和处理器性能。详情参考 [Makeflags](/index.php/Makepkg#MAKEFLAGS "Makepkg")。`.config` 配置好之后，在内核目录运行：
 
 ```
 $ make

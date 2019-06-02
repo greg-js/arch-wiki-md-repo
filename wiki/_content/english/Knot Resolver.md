@@ -46,5 +46,5 @@ Note that a default configuration of dnsmasq will clash with the default configu
 
 ## See also
 
-*   kresd.systemd(7)
+*   [kresd.systemd(7)](https://www.mankier.com/7/kresd.systemd)
 *   [Knot Resolver documentation](https://knot-resolver.readthedocs.io/en/stable/daemon.html)

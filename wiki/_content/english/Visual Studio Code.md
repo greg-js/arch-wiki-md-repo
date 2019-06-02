@@ -24,6 +24,7 @@ The following packages provide VSCode:
 *   [code](https://www.archlinux.org/packages/?name=code) (open-source release)
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) (Microsoft-branded release)
 *   [code-git](https://aur.archlinux.org/packages/code-git/) (in-development open-source version)
+*   [vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/) (another open-source version with a community-driven default configuration)
 
 ## Usage
 

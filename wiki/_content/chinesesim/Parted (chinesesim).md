@@ -171,7 +171,7 @@ Ignore/Cancel?
 
 ```
 
-表示分区没 [对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#分区对齐 "Partitioning (简体中文)")，请按照 [分区对齐](#分区对齐) 进行修正。
+表示分区没对齐，请参照[分区对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#分区对齐 "Partitioning (简体中文)")进行修正。
 
 下面命令设置 `/boot` 为启动目录：
 

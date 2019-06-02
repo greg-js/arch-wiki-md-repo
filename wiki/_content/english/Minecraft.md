@@ -26,6 +26,7 @@
     *   [5.1 Minecraft server on ARM devices](#Minecraft_server_on_ARM_devices)
     *   [5.2 Minecraft client and Wayland support](#Minecraft_client_and_Wayland_support)
     *   [5.3 Minecraft client or server does not start](#Minecraft_client_or_server_does_not_start)
+    *   [5.4 Broken fonts with MinecraftForge](#Broken_fonts_with_MinecraftForge)
 *   [6 See also](#See_also)
 
 ## Client
@@ -149,6 +150,12 @@ Wayland and other window managers are currently not supported with Minecraft, as
 It might be the problem with [Java](/index.php/Java "Java") version. Java version 8 is guaranteed to work well in all cases.
 
 Both Minecraft server and the actual game work perfectly fine with the latest version of [Java](/index.php/Java "Java"), such as [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk), but the Minecraft game launcher (and possibly all other mods) might only work with the [Java](/index.php/Java "Java") version 8.
+
+### Broken fonts with MinecraftForge
+
+Force Unicode fonts from the language menu.
+
+Since you can't read any of the menu options: in the main menu, choose the bottom-left most button is Options, second-from-the-bottom on the left side is the Language Button. From there, the Force Unicode Font button is on the bottom, on the left side.
 
 ## See also
 

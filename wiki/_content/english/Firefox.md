@@ -27,13 +27,14 @@ Related articles
     *   [4.3 KDE/GNOME integration](#KDE/GNOME_integration)
     *   [4.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Wayland](#Wayland)
-    *   [5.2 Dark themes](#Dark_themes)
-    *   [5.3 Screenshot of webpage](#Screenshot_of_webpage)
-    *   [5.4 Window manager rules](#Window_manager_rules)
-        *   [5.4.1 Profiles](#Profiles)
-    *   [5.5 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
-    *   [5.6 New tabs position](#New_tabs_position)
+    *   [5.1 Dark themes](#Dark_themes)
+    *   [5.2 New tabs position](#New_tabs_position)
+    *   [5.3 RAM limit](#RAM_limit)
+    *   [5.4 Screenshot of webpage](#Screenshot_of_webpage)
+    *   [5.5 Wayland](#Wayland)
+    *   [5.6 Window manager rules](#Window_manager_rules)
+        *   [5.6.1 Profiles](#Profiles)
+    *   [5.7 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 All Firefox extensions disabled (May 2019)](#All_Firefox_extensions_disabled_(May_2019))
     *   [6.2 Firefox startup takes very long](#Firefox_startup_takes_very_long)
@@ -251,24 +252,32 @@ If you have troubles on machines with varying performance, try modifying the `mo
 
 For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks"), for privacy related enhancements see [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy").
 
-### Wayland
-
-In order to start Firefox as a native Wayland application set the [environment variable](/index.php/Environment_variable "Environment variable") `MOZ_ENABLE_WAYLAND=1`. For example, [edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `MOZ_ENABLE_WAYLAND=1` to all `Exec` lines.
-
 ### Dark themes
 
 If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") for more information.
 
+### New tabs position
+
+To control where new tabs appears (relative or absolute), use `browser.tabs.insertAfterCurrent` and `browser.tabs.insertRelatedAfterCurrent`. See [[1]](https://support.mozilla.org/en/questions/1229062) for more informations.
+
+### RAM limit
+
+To prevent pages from abusing memory (and possible OOM), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
+
 ### Screenshot of webpage
 
-You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[1]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
+You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[2]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
 
 **Note:**
 
-*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[2]](https://github.com/mozilla-services/screenshots/issues/3503)
+*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[3]](https://github.com/mozilla-services/screenshots/issues/3503)
 *   If [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy") is enabled, to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
 
 As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` or `Ctrl+Shift+i` (you might need to enable the button first in the *Developer Tools Settings > Available Toolbox Buttons > Take a screenshot of the entire page*).
+
+### Wayland
+
+In order to start Firefox as a native Wayland application set the [environment variable](/index.php/Environment_variable "Environment variable") `MOZ_ENABLE_WAYLAND=1`. For example, [edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `MOZ_ENABLE_WAYLAND=1` to all `Exec` lines.
 
 ### Window manager rules
 
@@ -293,10 +302,6 @@ $ firefox [--new-instance] -P *profile_name* --class=*class_name*
 ### Touchscreen gestures and pixel-perfect trackpad scrolling
 
 To enable touch gestures (like scrolling and pinch-to-zoom) and one-to-one trackpad scrolling (as can be witnessed with GTK3 applications like Nautilus), set the `MOZ_USE_XINPUT2=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting Firefox.
-
-### New tabs position
-
-To control where new tabs appears (relative or absolute), use `browser.tabs.insertAfterCurrent` and `browser.tabs.insertRelatedAfterCurrent`. See [[3]](https://support.mozilla.org/en/questions/1229062) for more informations.
 
 ## Troubleshooting
 

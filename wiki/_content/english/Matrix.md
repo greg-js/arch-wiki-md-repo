@@ -21,6 +21,7 @@ The reference server implementation **Synapse** is available in the community re
 After installation, a configuration file needs to be generated. It should be readable by the *synapse* user:
 
 ```
+$ cd /etc/synapse
 $ sudo -u synapse python /usr/lib/python3.7/site-packages/synapse/app/homeserver.py \
   --server-name my.domain.name \
   --config-path /etc/synapse/homeserver.yaml \

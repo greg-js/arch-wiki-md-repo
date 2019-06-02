@@ -264,6 +264,8 @@ The workaround is to add `pcie_port_pm=off` to your [kernel parameters](/index.p
 
 If you are getting poor performance after resuming from suspend, you need to register the nvidia kernel module with the ACPI subsystem. This can be done by [loading](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `nvidia` module with the `NVreg_RegisterForACPIEvents=1 NVreg_EnableMSI=1` options.
 
+This also seems to fix issues with corruption to the desktop background on resume with GNOME.
+
 ## CPU spikes with 400 series cards
 
 If you are experiencing intermittent CPU spikes with a 400 series card, it may be caused by PowerMizer constantly changing the GPU's clock frequency. Switching PowerMizer's setting from Adaptive to Performance, add the following to the `Device` section of your Xorg configuration:

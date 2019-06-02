@@ -22,7 +22,7 @@ You shoulder either:
 *   Disable Thunderbolt security in the BIOS (recommended)
 *   Use [boltctl](/index.php/Thunderbolt#User_device_authorization "Thunderbolt") to temporarily authorize or permanently enroll the *dock* ***and*** *cable*.
 
-Thunderbolt security "works" but may result in random instability, particularly system freezes on resume. It's suggested to ensure your system is completely stable before enabling this.
+Thunderbolt security "works" but may result in random instability, particularly system freezes on resume, and USB HID devices (mouse, keyboard) behaving erratically. It's suggested to ensure your system is completely stable before enabling this.
 
 ### Dell Type-C Dock Configuration
 
@@ -55,9 +55,9 @@ jasondclinton also notes that the official NVM updates are often far behind Inte
 
 ## Troubleshooting
 
-Issues such as the USB bus (and all connected devices) failing when plugging/unplugging devices are improved by following all the instructions above (notably, Thunderbolt Security, "Dell Type-C Dock configuration options" and firmware updates). Read the firmware updates section carefully: not all updates are possible via Linux.
+Issues such as the USB bus (and all connected devices) failing when plugging/unplugging devices are improved by following all the instructions above (notably, *disabling* Thunderbolt Security, "Dell Type-C Dock configuration options" and firmware updates). Read the firmware updates section carefully: not all updates are possible via Linux.
 
-Some devices behave differently in the dock vs directly on laptop's USB ports, e.g. Microsoft's keyboard receiver is erratically put to sleep. You can wake them up in [powertop](/index.php/Powertop "Powertop") or see [Power management#USB autosuspend](/index.php/Power_management#USB_autosuspend "Power management") on how to blacklist particular devices.
+Some devices behave differently in the dock vs directly on laptop's USB ports, e.g. Microsoft's keyboard receiver is erratically put to sleep, or gets stuck repeating a particular key. The un-intuitive fix for this is to disable Thunderbolt security (see note about this above).
 
 ## External Links
 

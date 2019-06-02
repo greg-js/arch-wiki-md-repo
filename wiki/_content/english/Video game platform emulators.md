@@ -83,7 +83,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **Snes9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
 
-	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x](https://www.archlinux.org/packages/?name=snes9x)
+	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x-gtk](https://www.archlinux.org/packages/?name=snes9x-gtk)
 
 *   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Game Boy emulator with Game Boy Advance, Game Boy Color, and Super Game Boy support.
 

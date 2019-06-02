@@ -24,7 +24,9 @@
 
 ## Configuration
 
-Nvim's user-specific configuration file is located in `~/.config/nvim/init.vim` Nvim is compatible with most of Vim's options, however there are options specific to Nvim. For a complete list of Nvim options, see Neovim's [help file](https://neovim.io/doc/user/options.html).
+Nvim's user-specific configuration file is located at `$XDG_CONFIG_HOME/nvim/init.vim`, by default `~/.config/nvim/init.vim`. The global configuration file is loaded from `$XDG_CONFIG_DIRS/nvim/sysinit.vim` (by default `/etc/xdg/nvim/sysinit.vim`) if it exists, or if it does not, from `/usr/share/nvim/sysinit.vim` which should not be user-edited. [[1]](https://github.com/neovim/neovim/blob/master/runtime/doc/starting.txt#L437) By default, the former global configuration file does not exist. If you create the former file, you may wish to have it source the latter if you still want the functionality it provides, which is allowing pacman-installed vim packages to work with Nvim.
+
+Nvim is compatible with most of Vim's options, however there are options specific to Nvim. For a complete list of Nvim options, see Neovim's [help file](https://neovim.io/doc/user/options.html).
 
 Nvim's data directory is located in `~/.local/share/nvim/` and contains swap for open files, the [ShaDa](https://neovim.io/doc/user/starting.html#shada) (Shared Data) file, and the site directory for plugins.
 

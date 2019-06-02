@@ -61,7 +61,7 @@
 | <small>3.15.1.</small> [Disco óptico](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
 | <small>3.16.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(3) (también en [Television](/index.php/Category:Television_(Espa%C3%B1ol) "Category:Television (Español)"))</small> |
 | <small>4.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(10)</small> |
-| <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(0)</small> |
+| <small>4.1.</small> [Servicios de directorio](/index.php/Category:Directory_services_(Espa%C3%B1ol) "Category:Directory services (Español)") <small>(1)</small> |
 | <small>4.1.1.</small> [Sistema de nombres de dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6) (también en [Protocolos](/index.php/Category:Protocols_(Espa%C3%B1ol) "Category:Protocols (Español)"), [Servidores](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>4.2.</small> [Computación distribuída](/index.php/Category:Distributed_computing_(Espa%C3%B1ol) "Category:Distributed computing (Español)") <small>(1)</small> |
 | <small>4.3.</small> [Correo electrónico](/index.php/Category:Email_(Espa%C3%B1ol) "Category:Email (Español)") <small>(1)</small> |
