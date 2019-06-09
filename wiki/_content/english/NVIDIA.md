@@ -66,11 +66,10 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
 *   For GeForce 400/500 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) or [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts) package.
-*   For GeForce 8/9, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package.
 
-*   For even older cards (released in 2006 or earlier), have a look at [#Unsupported drivers](#Unsupported_drivers).
+*   For even older cards (released in 2010 or earlier), have a look at [#Unsupported drivers](#Unsupported_drivers).
 
-4\. For 32-bit application support, also install the corresponding *lib32* nvidia package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils)).
+4\. For 32-bit application support, also install the corresponding *lib32* nvidia package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils)).
 
 5\. Reboot. The [nvidia](https://www.archlinux.org/packages/?name=nvidia) package contains a file which blacklists the *nouveau* module, so rebooting is necessary.
 
@@ -78,10 +77,11 @@ Once the driver has been installed, continue to [#Configuration](#Configuration)
 
 ### Unsupported drivers
 
-If you have a GeForce 7 series card or older (released in 2006 or earlier), Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [Nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
+If you have a GeForce 300 series card or older (released in 2010 or earlier), Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [Nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
 
 However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade [Xorg](/index.php/Xorg "Xorg"):
 
+*   For GeForce 8/9, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx], [install](/index.php/Install "Install") the [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/) package. (supports the latest Xorg but has [issues](https://lists.archlinux.org/pipermail/arch-dev-public/2019-May/029568.html) with Linux 5.0+)
 *   For GeForce 6/7 series cards [NV4x and NV6x], [install](/index.php/Install "Install") the [nvidia-304xx-dkms](https://aur.archlinux.org/packages/nvidia-304xx-dkms/) package. Last supported Xorg version is 1.19.
 *   For GeForce 5 FX series cards [NV30-NV36], install the [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/) package. Last supported Xorg version is 1.15.
 *   For GeForce 2/3/4 MX/Ti series cards [NV11, NV17-NV28], install the [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/) package. Last supported Xorg version is 1.12.
@@ -90,7 +90,7 @@ However, Nvidia's legacy drivers are still available and might provide better 3D
 
 If you are using a custom kernel, compilation of the Nvidia kernel modules can be automated with [DKMS](/index.php/DKMS "DKMS").
 
-Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-390xx-dkms](https://www.archlinux.org/packages/?name=nvidia-390xx-dkms) or [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [pacman hook](/index.php/Pacman_hook "Pacman hook").
+Install the [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) package (or a specific branch such as [nvidia-390xx-dkms](https://www.archlinux.org/packages/?name=nvidia-390xx-dkms)). The Nvidia module will be rebuilt after every Nvidia or kernel update thanks to the DKMS [pacman hook](/index.php/Pacman_hook "Pacman hook").
 
 ### DRM kernel mode setting
 

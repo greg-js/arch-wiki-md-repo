@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Zsh](/index.php/Zsh "Zsh") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-17，点击[这里](https://wiki.archlinux.org/index.php?title=Zsh&diff=0&oldid=386240)可以查看翻译后英文页面的改动。
 
-[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 [Bash](/index.php/Bash "Bash") 的同时 (默认不兼容，除非设置成 `emulate sh`) 还有提供了很多改进，例如：
+[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) 是一款功能强大的终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 [Bash](/index.php/Bash "Bash") 的同时 (默认不兼容，除非设置成 `emulate sh`) 还有提供了很多改进，例如：
 
 *   更高效
 *   更好的自动补全
@@ -10,38 +10,42 @@
 
 Zsh [常见问题解答](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) 中提供了更多使用 Zsh 的理由。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 初始化配置文件](#.E5.88.9D.E5.A7.8B.E5.8C.96.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [1.2 将 Zsh 作为默认终端](#.E5.B0.86_Zsh_.E4.BD.9C.E4.B8.BA.E9.BB.98.E8.AE.A4.E7.BB.88.E7.AB.AF)
-*   [2 配置文件介绍](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E4.BB.8B.E7.BB.8D)
-    *   [2.1 全局配置文件](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-*   [3 配置 Zsh](#.E9.85.8D.E7.BD.AE_Zsh)
-    *   [3.1 简单的 .zshrc](#.E7.AE.80.E5.8D.95.E7.9A.84_.zshrc)
-    *   [3.2 配置 $PATH](#.E9.85.8D.E7.BD.AE_.24PATH)
-    *   [3.3 命令补全](#.E5.91.BD.E4.BB.A4.E8.A1.A5.E5.85.A8)
-    *   [3.4 "command not found" 钩子](#.22command_not_found.22_.E9.92.A9.E5.AD.90)
-    *   [3.5 消除历史记录中的重复条目](#.E6.B6.88.E9.99.A4.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95.E4.B8.AD.E7.9A.84.E9.87.8D.E5.A4.8D.E6.9D.A1.E7.9B.AE)
-    *   [3.6 ttyctl 命令](#ttyctl_.E5.91.BD.E4.BB.A4)
-    *   [3.7 快捷键绑定](#.E5.BF.AB.E6.8D.B7.E9.94.AE.E7.BB.91.E5.AE.9A)
-        *   [3.7.1 ncurses 应用的快捷键绑定](#ncurses_.E5.BA.94.E7.94.A8.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE.E7.BB.91.E5.AE.9A)
-        *   [3.7.2 另一种方法](#.E5.8F.A6.E4.B8.80.E7.A7.8D.E6.96.B9.E6.B3.95)
-        *   [3.7.3 文件管理器的快捷键绑定](#.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E7.9A.84.E5.BF.AB.E6.8D.B7.E9.94.AE.E7.BB.91.E5.AE.9A)
-    *   [3.8 查找历史记录](#.E6.9F.A5.E6.89.BE.E5.8E.86.E5.8F.B2.E8.AE.B0.E5.BD.95)
-    *   [3.9 命令提示符](#.E5.91.BD.E4.BB.A4.E6.8F.90.E7.A4.BA.E7.AC.A6)
-    *   [3.10 自定义命令提示符](#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.91.BD.E4.BB.A4.E6.8F.90.E7.A4.BA.E7.AC.A6)
-        *   [3.10.1 彩色](#.E5.BD.A9.E8.89.B2)
-        *   [3.10.2 示例](#.E7.A4.BA.E4.BE.8B)
-    *   [3.11 目录栈（dirstack）](#.E7.9B.AE.E5.BD.95.E6.A0.88.EF.BC.88dirstack.EF.BC.89)
-    *   [3.12 帮助命令](#.E5.B8.AE.E5.8A.A9.E5.91.BD.E4.BB.A4)
-    *   [3.13 仿 Fish 命令高亮](#.E4.BB.BF_Fish_.E5.91.BD.E4.BB.A4.E9.AB.98.E4.BA.AE)
-    *   [3.14 .zshrc 样例](#.zshrc_.E6.A0.B7.E4.BE.8B)
-    *   [3.15 配置框架](#.E9.85.8D.E7.BD.AE.E6.A1.86.E6.9E.B6)
-    *   [3.16 自启动程序](#.E8.87.AA.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
-    *   [3.17 刷新自动补全](#.E5.88.B7.E6.96.B0.E8.87.AA.E5.8A.A8.E8.A1.A5.E5.85.A8)
-*   [4 卸载](#.E5.8D.B8.E8.BD.BD)
-*   [5 另请参见](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E8.A7.81)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 初始化配置文件](#初始化配置文件)
+    *   [1.2 将 Zsh 作为默认终端](#将_Zsh_作为默认终端)
+*   [2 配置文件介绍](#配置文件介绍)
+    *   [2.1 全局配置文件](#全局配置文件)
+*   [3 配置 Zsh](#配置_Zsh)
+    *   [3.1 简单的 .zshrc](#简单的_.zshrc)
+    *   [3.2 配置 $PATH](#配置_$PATH)
+    *   [3.3 命令补全](#命令补全)
+    *   [3.4 "command not found" 钩子](#"command_not_found"_钩子)
+    *   [3.5 消除历史记录中的重复条目](#消除历史记录中的重复条目)
+    *   [3.6 ttyctl 命令](#ttyctl_命令)
+    *   [3.7 快捷键绑定](#快捷键绑定)
+        *   [3.7.1 ncurses 应用的快捷键绑定](#ncurses_应用的快捷键绑定)
+        *   [3.7.2 另一种方法](#另一种方法)
+        *   [3.7.3 文件管理器的快捷键绑定](#文件管理器的快捷键绑定)
+    *   [3.8 查找历史记录](#查找历史记录)
+    *   [3.9 命令提示符](#命令提示符)
+    *   [3.10 自定义命令提示符](#自定义命令提示符)
+        *   [3.10.1 彩色](#彩色)
+        *   [3.10.2 示例](#示例)
+    *   [3.11 目录栈（dirstack）](#目录栈（dirstack）)
+    *   [3.12 帮助命令](#帮助命令)
+    *   [3.13 仿 Fish 命令高亮](#仿_Fish_命令高亮)
+    *   [3.14 .zshrc 样例](#.zshrc_样例)
+    *   [3.15 配置框架](#配置框架)
+    *   [3.16 自启动程序](#自启动程序)
+    *   [3.17 刷新自动补全](#刷新自动补全)
+*   [4 卸载](#卸载)
+*   [5 另请参见](#另请参见)
 
 ## 安装
 
@@ -82,7 +86,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 	`/etc/zsh/zshenv`
 
-	该文件应该包含用来设置[PATH 环境变量](#Configuring_.24PATH)以及其他一些[环境变量](/index.php/Environment_variables "Environment variables")的命令；不应该包含那些可以产生输出结果或者假设终端已经附着到 tty 上的命令。
+	该文件应该包含用来设置[PATH 环境变量](#Configuring_$PATH)以及其他一些[环境变量](/index.php/Environment_variables "Environment variables")的命令；不应该包含那些可以产生输出结果或者假设终端已经附着到 tty 上的命令。
 
 	`~/.zshenv`
 
@@ -90,7 +94,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 	`/etc/zsh/zprofile`
 
-	这是一个全局的配置文件，在用户登录的时候加载。一般是用来在登录的时候执行一些命令。请注意，在 Arch Linux 里该文件默认包含[一行配置](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh)，用来加载 `/etc/profile` 文件，详见 [#全局配置文件](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)。
+	这是一个全局的配置文件，在用户登录的时候加载。一般是用来在登录的时候执行一些命令。请注意，在 Arch Linux 里该文件默认包含[一行配置](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh)，用来加载 `/etc/profile` 文件，详见 [#全局配置文件](#全局配置文件)。
 
 	`/etc/profile`
 
@@ -126,7 +130,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 **注意:**
 
-*   在 Arch 源中的 [zsh](https://www.archlinux.org/packages/?name=zsh) 所使用的文件路径和 Zsh 的 man 手册中默认的不同（详见 [#全局配置文件](#.E5.85.A8.E5.B1.80.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)）
+*   在 Arch 源中的 [zsh](https://www.archlinux.org/packages/?name=zsh) 所使用的文件路径和 Zsh 的 man 手册中默认的不同（详见 [#全局配置文件](#全局配置文件)）
 *   `/etc/profile` 不是 Zsh 常规启动配置文件的一部分，但是 Arch 源中的 [zsh](https://www.archlinux.org/packages/?name=zsh) 会在 `/etc/zsh/zprofile` 里面加载它。用户应该注意 `/etc/profile` 里面设置的 `$PATH` 环境变量会覆盖掉 `~/.zshenv` 里面配置的任何 `$PATH`。为了防止这一点，请在 `~/.zshrc` 当中设置 `$PATH`（不推荐替换掉 `/etc/zsh/zprofile` 里面的[默认配置](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh)，因为这样会破坏其他提供了 `/etc/profile.d` 的软件包和 Zsh 的联动关系）
 
 ### 全局配置文件
@@ -328,11 +332,11 @@ Zsh 设置彩色提示符的方法和 [Bash](/index.php/Color_Bash_Prompt "Color
 `$fg[color]` 会设置文本的颜色（红，绿，蓝，等等。默认是和之前的文本颜色保持一致）
 
 | 命令 | 描述 |
-| `%F{color} [...] %f` | 和前面介绍的 $fg 是一样的，但是更简洁。还可以在 F 前面添加数字。 |
+| `%F{color} [...] %f` | 和前面介绍的 $fg 是一样的，但是更简洁。还可以在 F 前面添加数字。 |
 | `$fg_no_bold[color]` | 设置文本为非粗体同时设定文本颜色 |
 | `$fg_bold[color]` | 设置文本为粗体同时设定文本颜色 |
 | `$reset_color` | 重置文本颜色（改为默认颜色）。不会重置粗体设定。使用 `%b` 来重置粗体设定。可以使用 `%f` 来简化配置。 |
-| `%K{color} [...] %k` | 设置背景颜色。和非粗体文本颜色一样。任何单一数字前缀会设置背景为黑色。 |
+| `%K{color} [...] %k` | 设置背景颜色。和非粗体文本颜色一样。任何单一数字前缀会设置背景为黑色。 |
 
 | Possible color values |
 | 黑 `black` or `0` | 红 `red` or `1` |

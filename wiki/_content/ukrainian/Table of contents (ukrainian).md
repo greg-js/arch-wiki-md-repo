@@ -10,13 +10,13 @@
  <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
  <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
  <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
- <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(35)</small> |
+ <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
  <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(6) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
  <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
  <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
  <small>2.3.</small> [Integrated development environments](/index.php/Category:Integrated_development_environments "Category:Integrated development environments") <small>(4)</small> |
  <small>2.4.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
- <small>2.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(25)</small> |
+ <small>2.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(26)</small> |
  <small>2.5.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"))</small> |
  <small>2.5.2.</small> [Lisp dialects](/index.php/Category:Lisp_dialects "Category:Lisp dialects") <small>(4)</small> |
  <small>2.6.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(16) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
@@ -46,7 +46,7 @@
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
  <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(60)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(96)</small> |
+ <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(97)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
  <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
  <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -142,7 +142,7 @@
  <small>5.1.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |
  <small>5.1.7.1.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Command-line](/index.php/Category:Command-line "Category:Command-line"))</small> |
  <small>5.1.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
- <small>5.1.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(38)</small> |
+ <small>5.1.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(39)</small> |
  <small>5.1.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(10)</small> |
  <small>5.1.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
  <small>5.1.10.2.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -273,7 +273,7 @@
  <small>6.7.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
  <small>6.8.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(5) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.9.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(50)</small> |
- <small>6.9.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
+ <small>6.9.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(17) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
  <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
  <small>6.9.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |
  <small>6.10.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org "Category:Freedesktop.org") <small>(7)</small> |
@@ -313,8 +313,8 @@
  <small>6.21.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |
  <small>6.21.4.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(6)</small> |
  <small>6.21.4.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
- <small>6.21.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(8)</small> |
- <small>6.21.4.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
+ <small>6.21.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(7)</small> |
+ <small>6.21.4.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(17) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
  <small>6.21.4.3.</small> [Transport Layer Security](/index.php/Category:Transport_Layer_Security "Category:Transport Layer Security") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>6.21.5.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>6.21.6.</small> [Intrusion detection](/index.php/Category:Intrusion_detection "Category:Intrusion detection") <small>(4)</small> |

@@ -218,40 +218,38 @@ sda
 
 ## 挂载文件系统
 
-To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). This example mounts `/dev/sda1` to `/mnt`.
+如果要手动挂载一个设备上的文件系统到某个目录，用 [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)。下面这个例子把 `/dev/sda1` 挂载到 `/mnt`：
 
 ```
 # mount /dev/sda1 /mnt
 
 ```
 
-This attaches the filesystem on `/dev/sda1` at the directory `/mnt`, making the contents of the filesystem visible. Any data that existed at `/mnt` before this action is made invisible until the device is unmounted.
+挂载之后，在 `/mnt` 下面就能看见 `/dev/sda1` 里面的内容。挂载之前 `/mnt` 文件夹里的内容在挂载之后将会变得不可见，直到 unmount 掉 `/dev/sda1`。
 
-[fstab](/index.php/Fstab "Fstab") contains information on how devices should be automatically mounted if present. See the [fstab](/index.php/Fstab "Fstab") article for more information on how to modify this behavior.
+[fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)") 描述了如果某个设备存在的话系统应该怎么自动挂载它。如果要修改 `/etc/fstab`，请阅读 [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")。
 
-If a device is specified in `/etc/fstab` and only the device or mount point is given on the command line, that information will be used in mounting. For example, if `/etc/fstab` contains a line indicating that `/dev/sda1` should be mounted to `/mnt`, then the following will automatically mount the device to that location:
+如果 `/etc/fstab` 里描述了一个设备的挂载参数，而用 `mount` 时只给了设备名字或者挂载点，*fstab* 里的参数就会自动补上。比如，`/etc/fstab` 里指示 `/dev/sda1` 应该挂载到 `/mnt`，那下面的命令就会把 `/dev/sda1` 挂载到 `/mnt`，即使你没有显式指明：
 
 ```
 # mount /dev/sda1
 
 ```
 
-Or
+或者
 
 ```
 # mount /mnt
 
 ```
 
-*mount* contains several options, many of which depend on the file system specified. The options can be changed, either by:
+*mount* 接受很多参数，这些参数依赖于文件系统是否支持。要改变这些参数的话，可以通过以下形式：
 
-*   using flags on the command line with *mount*
-*   editing [fstab](/index.php/Fstab "Fstab")
-*   creating [udev](/index.php/Udev "Udev") rules
-*   [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System")
-*   or using filesystem-specific mount scripts (located at `/usr/bin/mount.*`).
-
-See these related articles and the article of the filesystem of interest for more information.
+*   `mount ... ... **-o** *options*`
+*   修改 [fstab](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")
+*   创建 [udev 规则](/index.php/Udev#Mounting_drives_in_rules "Udev")
+*   使用针对不同文件系统的 mount 脚本（`/usr/bin/mount.*`）
+*   [自己编译内核](/index.php/Kernels/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernels/Arch Build System (简体中文)")
 
 ### 列出挂载的文件系统
 

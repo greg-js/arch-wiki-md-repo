@@ -28,7 +28,7 @@
 *   [15 Black screen on systems with Intel integrated GPU](#Black_screen_on_systems_with_Intel_integrated_GPU)
 *   [16 No audio over HDMI](#No_audio_over_HDMI)
 *   [17 Black screen on systems with VIA integrated GPU](#Black_screen_on_systems_with_VIA_integrated_GPU)
-*   [18 X fails with "no screens found" with Intel iGPU](#X_fails_with_"no_screens_found"_with_Intel_iGPU)
+*   [18 X fails with "no screens found" when using Multiple GPUs](#X_fails_with_"no_screens_found"_when_using_Multiple_GPUs)
 *   [19 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot,_but_otherwise_starts_fine)
 *   [20 xrandr BadMatch](#xrandr_BadMatch)
 *   [21 Override EDID](#Override_EDID)
@@ -174,9 +174,7 @@ To draw on the laptop panel, the Nvidia card writes to memory used by the Intel 
 
 Create `/etc/modprobe.d/nvidia-drm-modeset.conf` file and add this line:
 
- `/etc/modprobe.d/nvidia-drm-modeset.conf`  `options nvidia_XXX_drm modeset=1` 
-
-Where XXX is your driver version, eg. 412.
+ `/etc/modprobe.d/nvidia-drm-modeset.conf`  `options nvidia-drm modeset=1` 
 
 Link this config file in your `/etc/mkinitcpio.conf` file, under the `#FILES` comment:
 
@@ -441,9 +439,9 @@ install viafb /usr/bin/false
 
 ```
 
-## X fails with "no screens found" with Intel iGPU
+## X fails with "no screens found" when using Multiple GPUs
 
-Like above, if you have an Intel CPU with an integrated GPU and X fails to start with
+In situations where you might have multiple GPUs on a system and X fails to start with:
 
 ```
 [ 76.633] (EE) No devices detected.
@@ -452,7 +450,7 @@ Like above, if you have an Intel CPU with an integrated GPU and X fails to start
 
 ```
 
-then you need to add your discrete card's BusID to your X configuration. Find it:
+then you need to add your discrete card's BusID to your X configuration. This can happen on systems with an Intel CPU and an integrated GPU or if you have more than one Nvidia card connected. Find your BusID:
 
  `# lspci | grep VGA` 
 ```
@@ -474,9 +472,11 @@ EndSection
 
 ```
 
-Note how `01:00.0` is written as `1:0:0`.
+**Note:** BusID formatting is important!
 
-**Note:** lspci output is in hex format, but in config files the BusID's are in decimal format.
+In the example above `01:00.0` is stripped to be written as `1:0:0`, however come conversions can be more complicated. `lspci` output is in hex format, but in config files the BusID's are in decimal format! This means that in cases where the BusID is greater than 10 you will need to convert it to decimal!
+
+ie: `5e:00.0` from lspci becomes `PCI:94:0:0`.
 
 ## Xorg fails during boot, but otherwise starts fine
 

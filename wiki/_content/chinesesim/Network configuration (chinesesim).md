@@ -40,6 +40,8 @@
         *   [5.2.3 dhcpcd](#dhcpcd_2)
         *   [5.2.4 手动指定](#手动指定)
         *   [5.2.5 计算地址](#计算地址)
+    *   [5.3 IP 地址](#IP_地址)
+    *   [5.4 路由表](#路由表)
 *   [6 更多设置](#更多设置)
     *   [6.1 笔记本电脑使用 Ifplugd](#笔记本电脑使用_Ifplugd)
     *   [6.2 绑定和链路聚合](#绑定和链路聚合)
@@ -73,10 +75,10 @@
 
 若要排查网络连接问题，go through the following conditions and ensure that you meet them：
 
-1.  你的[网络接口](#Network_interfaces)可见并已启用。
+1.  你的[网络接口](#网络接口)可见并已启用。
 2.  你已连接到网络。网线已接好或者已经[连接到无线局域网](/index.php/Wireless_network_configuration "Wireless network configuration")。
-3.  你的网络接口获得了一个[IP 地址](#IP_addresses)。
-4.  你的[路由表](#Routing_table)设置正确。
+3.  你的网络接口获得了一个[IP 地址](#IP_地址)。
+4.  你的[路由表](#路由表)设置正确。
 5.  你可以 [ping](#Ping) 通一个本地 IP 地址（例如你的默认网关）。
 6.  你可以 [ping](#Ping) 通一个公网 IP 地址（例如 `8.8.8.8`）。
 7.  [检查是否能解析域名](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names")（例如 `archlinux.org`）。
@@ -378,6 +380,76 @@ HostMin:   10.66.66.1
 HostMax:   10.66.66.2
 Broadcast: 10.66.66.3
 Hosts/Net: 2                     Class A, Private Internet
+
+```
+
+### IP 地址
+
+[IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") are managed using [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
+
+List IP addresses:
+
+```
+$ ip address show
+
+```
+
+Add an IP address to an interface:
+
+```
+# ip address add *address/prefix_len* broadcast + dev *interface*
+
+```
+
+	Note that:
+
+*   the address is given in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing") to also supply a [subnet mask](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")
+*   `+` is a special symbol that makes `ip` derive the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address") from the IP address and the subnet mask
+
+**Note:** Make sure manually assigned IP addresses do not conflict with DHCP assigned ones.
+
+Delete an IP address from an interface:
+
+```
+$ ip address del *address/prefix_len* dev *interface*
+
+```
+
+Delete all addresses matching a criteria, e.g. of a specific interface:
+
+```
+$ ip address flush dev *interface*
+
+```
+
+**Tip:** IP addresses can be calculated with [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)).
+
+### 路由表
+
+The [routing table](https://en.wikipedia.org/wiki/Routing_table "wikipedia:Routing table") is used to determine if you can reach an IP address directly or what gateway (router) you should use. If no other route matches the IP address, the [default gateway](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway") is used.
+
+The routing table is managed using [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8).
+
+*PREFIX* is either a CIDR notation or `default` for the default gateway.
+
+List routes:
+
+```
+$ ip route show
+
+```
+
+Add a route:
+
+```
+# ip route add *PREFIX* via *address* dev *interface*
+
+```
+
+Delete a route:
+
+```
+# ip route del *PREFIX* via *address* dev *interface*
 
 ```
 

@@ -6,9 +6,9 @@ Related articles
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
 *   [Fan speed control](/index.php/Fan_speed_control "Fan speed control")
 
-Undervolting is a process through which voltage to computer processors and components is decreased dynamically on run-time. It is a process within dynamic voltage scaling that enables conserving electric voltage to reduce energy consumption and heat produced by computing components without affecting their performance.
+Undervolting is a process where voltage to CPU is reduced in order to reduce its energy consumption and heat without affecting performance. Note that most desktop motherboards allow tweaking CPU voltage settings in BIOS as well.
 
-**Warning:** Misconfiguration of CPU voltage and/or temperatures might result in permanently damaged hardware. You have been warned!
+**Warning:** Misconfiguration of CPU voltage settings might result in permanently damaged hardware. You have been warned!
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

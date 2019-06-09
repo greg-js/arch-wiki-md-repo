@@ -90,7 +90,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 A VGA Passthrough relies on a number of technologies that are not ubiquitous as of today and might not be available on your hardware. You will not be able to do this on your machine unless the following requirements are met :
 
 *   Your CPU must support hardware virtualization (for kvm) and IOMMU (for the passthrough itself)
-    *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](https://ark.intel.com/Search/FeatureFilter?productType=processors&VTD=true)
+    *   [List of compatible Intel CPUs (Intel VT-x and Intel VT-d)](https://ark.intel.com/Search/FeatureFilter?productType=873&0_VTD=True)
     *   All AMD CPUs from the Bulldozer generation and up (including Zen) should be compatible.
         *   CPUs from the K10 generation (2007) do not have an IOMMU, so you **need** to have a motherboard with a [890FX](https://support.amd.com/TechDocs/43403.pdf#page=18) or [990FX](https://support.amd.com/TechDocs/48691.pdf#page=21) chipset to make it work, as those have their own IOMMU.
 *   Your motherboard must also support IOMMU
@@ -122,7 +122,7 @@ You should also append the `iommu=pt` parameter. This will prevent Linux from to
 
 After rebooting, check dmesg to confirm that IOMMU has been correctly enabled:
 
- `dmesg | grep -e DMAR -e IOMMU` 
+ `dmesg | grep -i -e DMAR -e IOMMU` 
 ```
 [    0.000000] ACPI: DMAR 0x00000000BDCB1CB0 0000B8 (v01 INTEL  BDW      00000001 INTL 00000001)
 [    0.000000] Intel-IOMMU: enabled
@@ -796,37 +796,18 @@ For example, in case of 1920x1080
 
 The result must be **rounded up** to the nearest power of two, and since 17.82 is bigger than 16 we should choose 32.
 
-Next create a script to create a shared memory file.
+Next create a configuration file to create the shared memory file on boot
 
- `/usr/local/bin/looking-glass-init.sh` 
-```
-#!/bin/sh
-
-touch /dev/shm/looking-glass
-chown **user**:kvm /dev/shm/looking-glass
-chmod 660 /dev/shm/looking-glass
-```
+ `/etc/tmpfiles.d/10-looking-glass.conf`  `f	/dev/shm/looking-glass	0660	**user**	kvm	-` 
 
 Replace user with your username.
 
-Remember to make the script [executable](/index.php/Executable "Executable").
+Ask systemd-tmpfiles to create the shared memory file now without waiting to next boot
 
-Create a [systemd](/index.php/Systemd "Systemd") unit to execute this script during boot
-
- `/etc/systemd/system/looking-glass-init.service` 
 ```
-[Unit]
-Description=Create shared memory for looking glass
+# systemd-tmpfiles --create /etc/tmpfiles.d/10-looking-glass.conf
 
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/looking-glass-init.sh
-
-[Install]
-WantedBy=multi-user.target
 ```
-
-[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `looking-glass-init.service`
 
 #### Installing the IVSHMEM Host to Windows guest
 
@@ -914,7 +895,7 @@ Replace `$HOST_IP` with the Host [IP Address](/index.php/Network_configuration#I
 
 **Warning:** This method is insecure if somebody has access to your VM, since they could open the file and read your password. It is advisable to use [SSH keys](/index.php/SSH_keys "SSH keys") instead!
 
-You may also want to execute the script files using key binds. On Windows one option is [Autohotkey](https://autohotkey.com/), and on the Host [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Because of the need to run the scripts as root, you may also need to use [Polkit](/index.php/Polkit "Polkit") which can be used to authenticate specific executables as able to run as root without needing a password.
+You may also want to execute the script files using key binds. On Windows one option is [Autohotkey](https://autohotkey.com/), and on the Host [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Because of the need to run the scripts as root, you may also need to use [Polkit](/index.php/Polkit "Polkit") or [Sudo](/index.php/Sudo "Sudo") which can both be used to authenticate specific executables as able to run as root without needing a password.
 
 ### Bypassing the IOMMU groups (ACS override patch)
 
@@ -1186,7 +1167,7 @@ Starting with QEMU 4.0 the q35 machine type changes the default `kernel_irqchip`
 *   This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers.
 *   This may also fix problems under linux guests.
 
-Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '1234567890ab') as opposed to longer or shorter strings.
+Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration.
 
  `$ virsh edit [vmname]` 
 ```

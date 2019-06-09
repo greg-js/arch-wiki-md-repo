@@ -1,4 +1,4 @@
-Related articles
+Ссылки по теме
 
 *   [Часто задаваемые вопросы](/index.php/%D0%A7%D0%B0%D1%81%D1%82%D0%BE_%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B "Часто задаваемые вопросы")
 *   [ArchWiki:Внесение вклада](/index.php/ArchWiki:%D0%92%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0 "ArchWiki:Внесение вклада")
@@ -49,7 +49,7 @@ Related articles
 
 ### Присоединяйтесь к чатам
 
-Вы можете помогать другим пользователям решать проблемы в [IRC-канале](/index.php/Arch_IRC_channels_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch IRC channels (Русский)"). Однако очень важно сперва прочитать [кодекс поведения](/index.php/Code_of_conduct#IRC "Code of conduct"). Для обсуждения отдельных тем существуют специальные [IRC-каналы](/index.php/IRC_channel#Other_channels "IRC channel").
+Вы можете помогать другим пользователям решать проблемы в [IRC-канале](/index.php/Arch_IRC_channels_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch IRC channels (Русский)"). Однако очень важно сперва прочитать [кодекс поведения](/index.php/Code_of_conduct#IRC "Code of conduct"). Для обсуждения отдельных тем существуют специальные [IRC-каналы](/index.php/Arch_IRC_channels_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Другие_каналы "Arch IRC channels (Русский)").
 
 ### Подписывайтесь на списки рассылок
 

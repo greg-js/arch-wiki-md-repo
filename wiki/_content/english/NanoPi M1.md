@@ -1,3 +1,5 @@
+**Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
+
 The NanoPi M1 is a small, arm-based computer. It contains an Allwinner H3 processor and either 512 or 1024 MB of RAM. This article is strongly based on Orange Pi.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

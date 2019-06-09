@@ -26,6 +26,7 @@
     *   [5.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
     *   [5.12 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA's_proprietary_drivers)
     *   [5.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
+    *   [5.14 Slock after suspend](#Slock_after_suspend)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -320,6 +321,8 @@ Note that `URxvt` is the Xorg class name of your terminal. Change this if you us
 
 See [[6]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
 
+**Warning:** With i3 and kitty as terminal, doing this will currently (as of 04\. June 19) freeze all hidden (tabbed) instances of kitty when you reload i3: [[7]](https://github.com/kovidgoyal/kitty/issues/1681)
+
 ### Unable to change the background color with xsetroot
 
 Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://www.archlinux.org/packages/?name=hsetroot) to set the background color:
@@ -329,7 +332,7 @@ $ hsetroot -solid '#000000'
 
 ```
 
-See [[7]](https://github.com/chjj/compton/issues/162) for more information.
+See [[8]](https://github.com/chjj/compton/issues/162) for more information.
 
 ### Screentearing with NVIDIA's proprietary drivers
 
@@ -343,6 +346,15 @@ vsync = "opengl"
 ### Lag with Nvidia proprietary drivers and FullCompositionPipeline
 
 See [#Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver).
+
+### Slock after suspend
+
+When using a systemd service to trigger slock on a suspend or hibernate action, one may find the screen unlocked for a few seconds after resume. To prevent, disable window fading:
+
+```
+$ compton --no-fading-openclose
+
+```
 
 ## See also
 

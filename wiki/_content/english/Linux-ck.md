@@ -25,6 +25,7 @@ Related articles
         *   [5.2.1 Use the unofficial repo (recommended if Linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_(recommended_if_Linux-ck_is_installed_from_Repo-ck))
         *   [5.2.2 DKMS](#DKMS)
     *   [5.3 CPUACCT missing in docker](#CPUACCT_missing_in_docker)
+        *   [5.3.1 Fixing missed cgroups](#Fixing_missed_cgroups)
     *   [5.4 Downgrading](#Downgrading)
     *   [5.5 Forum support](#Forum_support)
 *   [6 See also](#See_also)
@@ -155,6 +156,10 @@ This error does not seems to affect the docker daemon, just containers. This is 
 ```
 
 You can check more information [in the forums](https://bbs.archlinux.org/viewtopic.php?pid=1825773#p1825773) or in [ck's blog](https://ck-hack.blogspot.com/2018/12/linux-420-ck1-muqss-version-0185-for.html?showComment=1547195122462#c1770603367031092645).
+
+#### Fixing missed cgroups
+
+To fix the *missing cgroups* error, update your [containerd](https://www.archlinux.org/packages/?name=containerd) to version 1.2.5 or above. See [this PR](https://github.com/containerd/cgroups/pull/77) for more details.
 
 ### Downgrading
 

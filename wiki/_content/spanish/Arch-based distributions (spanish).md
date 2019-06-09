@@ -12,7 +12,11 @@ Artículos relacionados
 
 Esta página enumera las distribuciones que se derivan de Arch Linux **en su totalidad o en parte**, para ayudar a hacer cumplir la [política de marca registrada de Arch Linux](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Aunque pretende ser lo más completo posible, no es una lista exhaustiva. Se prefieren los enlaces al proyecto SourceForge para simplificar el mantenimiento.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Activas](#Activas)
 *   [2 Inactivas](#Inactivas)
@@ -70,6 +74,7 @@ El asterisco indica el año de la primera versión pública basada en Arch Linux
 *   [Parabola](https://www.parabola.nu/) 
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/) 
 *   [RaspArch](https://sourceforge.net/projects/rasparch/) 
+*   [Reborn OS](https://rebornos.org/) 
 *   [SwagArch](https://swagarch.gitlab.io/) 
 *   [TalkingArch](https://talkingarch.tk/) 
 *   [TeLiSc OS](https://sourceforge.net/projects/telisc-os/) 

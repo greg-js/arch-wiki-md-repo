@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2019-01-23**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=563317) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2019-06-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=571705) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)"). En particular, los ejemplos de código pueden contener marcadores de posición (resaltados en `*cursiva*`) que deberán reemplazarse manualmente.
+Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema «*live*» arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)"). En particular, los ejemplos de código pueden contener marcadores de posición (resaltados en `*cursiva*`) que deberán reemplazarse manualmente.
 
-Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki (Español)](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas, con enlaces para ambos a lo largo de esta guía. Para obtener ayuda interactiva, el [IRC channel (Español)](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
+Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki (Español)](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas, con enlaces para ambos a lo largo de esta guía. Para obtener ayuda interactiva, dispone de los [Arch IRC channels (Español)](/index.php/Arch_IRC_channels_(Espa%C3%B1ol) "Arch IRC channels (Español)") y los [foros](https://bbs.archlinux.org/).
 
-Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
+Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a internet funcional.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -50,11 +50,11 @@ Se recomienda verificar la firma de la imagen antes de usarla, especialmente cua
 En un sistema con [GnuPG (Español)](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") instalado, realice esta operación descargando la *firma PGP* (bajo *Checksums*) en el directorio de la imagen ISO, y [verifíquela](/index.php/GnuPG#Verify_a_signature "GnuPG") con la siguiente orden:
 
 ```
-$ gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
+$ gpg --keyserver-options auto-key-retrieve --verify archlinux-*version*-x86_64.iso.sig
 
 ```
 
-También, desde una instalación existente de Arch Linux, puede hacer:
+También, desde una instalación existente de Arch Linux, puede escribir:
 
 ```
 $ pacman-key -v archlinux-*version*-x86_64.iso.sig
@@ -63,7 +63,7 @@ $ pacman-key -v archlinux-*version*-x86_64.iso.sig
 
 **Nota:**
 
-*   La firma en sí podría manipularse si se descarga desde un sitio réplica, en lugar de hacerlo desde [archlinux.org](https://archlinux.org/download/) como se recomendó antes. En este caso, asegúrese de que la clave pública, que se utiliza para decodificar la firma, esté firmada por otra clave de confianza. La orden `gpg` emitirá la huella digital de la clave pública.
+*   La firma en sí podría manipularse si se descarga desde un sitio de réplica, en lugar de hacerlo desde [archlinux.org](https://archlinux.org/download/) como se recomendó antes. En este caso, asegúrese de que la clave pública, que se utiliza para decodificar la firma, esté firmada por otra clave de confianza. La orden `gpg` emitirá la huella digital de la clave pública.
 *   Otro método para verificar la autenticidad de la firma es asegurarse de que la huella digital de la clave pública sea idéntica a la huella digital de la del [desarrollador de Arch Linux](https://www.archlinux.org/people/developers/) que firmó el archivo ISO. Consulte [Wikipedia:es:Criptografía asimétrica](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa_asim%C3%A9trica "wikipedia:es:Criptografía asimétrica") para obtener más información sobre el proceso de clave pública para autenticar claves.
 
 ### Arrancar el entorno live
@@ -75,7 +75,7 @@ El entorno live se puede iniciar desde una [unidad flash USB](/index.php/USB_fla
 *   Consulte [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) para obtener una lista de los [parámetros de arranque](/index.php/Kernel_parameters_(Espa%C3%B1ol)#Configuración "Kernel parameters (Español)"), y [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para obtener una lista de los paquetes incluidos (en la imagen).
 *   Iniciará sesión en la primera [consola virtual](https://en.wikipedia.org/wiki/es:Consola_Virtual "wikipedia:es:Consola Virtual") como usuario root, y se le presentará un intérprete de línea de órdens [Zsh (Español)](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)").
 
-Para cambiar a una consola diferente, por ejemplo, para ver esta guía con el navegador web [ELinks](/index.php/ELinks "ELinks") junto a la instalación, use el [atajo del teclado](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*` . Para [editar](/index.php/Help:Reading_(Espa%C3%B1ol)#Adjuntar,_añadir,_crear,_editar "Help:Reading (Español)") los archivos de configuración, dispone de los editores [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)"), [vi](https://en.wikipedia.org/wiki/es:Vi "wikipedia:es:Vi") y [vim](/index.php/Vim#Usage "Vim").
+Para cambiar a una consola diferente —por ejemplo, para ver esta guía con el navegador web [ELinks](/index.php/ELinks "ELinks") junto a la instalación—, utilice el [atajo del teclado](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*` . Para [editar](/index.php/Help:Reading_(Espa%C3%B1ol)#Adjuntar,_añadir,_crear,_editar "Help:Reading (Español)") los archivos de configuración, dispone de los editores [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)"), [vi](https://en.wikipedia.org/wiki/es:Vi "wikipedia:es:Vi") y [vim](/index.php/Vim#Usage "Vim").
 
 ### Definir la distribución del teclado en el entorno live
 
@@ -108,14 +108,17 @@ Si no existe el directorio, el sistema se iniciará en modo [BIOS](https://en.wi
 
 ### Conectarse a Internet
 
-El servicio de Internet a través del demonio [dhcpcd (Español)](/index.php/Dhcpcd_(Espa%C3%B1ol) "Dhcpcd (Español)") está [activado](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) en el arranque para los dispositivos **cableados**. Compruebe que su conexión se ha establecido, utilizando la herramienta [ping](https://en.wikipedia.org/wiki/es:Ping "wikipedia:es:Ping"):
+Para configurar una conexión de red, siga los siguientes pasos:
 
-```
-# ping archlinux.org
+1.  Asegúrese de que su [interfaz de red](/index.php/Network_interface "Network interface") está en la lista y activada, por ejemplo con la orden [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+2.  Conéctese a la red. Enchufe el cable Ethernet o [conéctese a una LAN inalámbrica](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)").
+3.  Configure su conexión de red:
+    *   [Dirección IP estátic](/index.php/Network_configuration#Static_IP_address "Network configuration").
+    *   Dirección IP dinámica: utilice [DHCP](/index.php/DHCP "DHCP").
 
-```
+    **Nota:** la imagen de la instalación activa en el arranque [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*nombredelainterfaz*.service`) para [los dispositivos de red cableados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules).
 
-Si no hay disponible una conexión, [detenga](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@*interfaz*` donde `*interfaz*` puede ser [autocompletado con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Proceda a configurar la red como se describe en [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
+4.  La conexión se puede verificar con la utilidad [ping](https://en.wikipedia.org/wiki/ping "w:ping"): `# ping archlinux.org` 
 
 ### Actualizar el reloj del sistema
 
@@ -148,57 +151,52 @@ Si desea crear dispositivos de bloques apilados —*stacked block devices*— pa
 
 #### Esquemas de ejemplo
 
-| BIOS con [MBR](/index.php/MBR "MBR") o GPT |
+| BIOS con [MBR](/index.php/MBR "MBR") |
 | Punto de montaje | Partición | [Tipo de partición](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Tamaño sugerido |
- /dev/sd*X*1 | [BIOS boot partition (Español)](/index.php/BIOS_boot_partition_(Espa%C3%B1ol) "BIOS boot partition (Español)") | 1 MiB |
-| `/mnt` | /dev/sd*X*2 | Linux | Resto del dispositivo |
-| [SWAP] | /dev/sd*X*3 | Linux [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") | Más de 512 MiB |
+| `/mnt` | `/dev/sd*X*1` | Linux | Resto del dispositivo |
+| [SWAP] | `/dev/sd*X*2` | Linux swap | Más de 512 MiB |
 | UEFI con [GPT](/index.php/GPT "GPT") |
-| Punto de montaje | Partición | [Tipo de partición (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Tamaño sugerido |
-| `/mnt/boot` o `/mnt/efi` | /dev/sd*X*1 | [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") | 260–512 MiB |
-| `/mnt` | /dev/sd*X*2 | Linux | Resto del dispositivo |
-| [SWAP] | /dev/sd*X*3 | Linux [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") | Más de 512 MiB |
+| Punto de montaje | Partición | [Tipo de partición](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Tamaño sugerido |
+| `/mnt/boot` o `/mnt/efi` | `/dev/sd*X*1` | [EFI system partition](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") | 256–512 MiB |
+| `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Resto del dispositivo |
+| [SWAP] | `/dev/sd*X*3` | Linux swap | Más de 512 MiB |
+
+Véase también [Partitioning (Español)#Esquemas de particionado](/index.php/Partitioning_(Espa%C3%B1ol)#Esquemas_de_particionado "Partitioning (Español)").
 
 **Nota:**
 
-*   Utilice [fdisk (Español)](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)") o [parted](/index.php/Parted "Parted") para modificar las tablas de partición, por ejemplo, `fdisk /dev/sd*X*`.
+*   Utilice [fdisk (Español)](/index.php/Fdisk_(Espa%C3%B1ol) "Fdisk (Español)") o [parted](/index.php/Parted "Parted") para modificar la tabla de particionado, por ejemplo, `fdisk /dev/sd*X*`.
 *   El espacio [de intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") se puede configurar en un [archivo de intercambio](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)") para los sistemas de archivos que lo admitan.
 
 ### Formatear las particiones
 
-Una vez se han creado las particiones, cada una de ellas debe formatearse con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") adecuado. Por ejemplo, para formatear la partición raíz situada en `/dev//sd*X*2` con `*ext4*`, ejecute:
+Una vez se han creado las particiones, cada una de ellas debe formatearse con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") adecuado. Por ejemplo, si la partición raíz está en `/dev/sd*X*1` y se ha pensado en `*ext4*` como su sistema de archivos, ejecute:
 
 ```
-# mkfs.*ext4* /dev/sd*X*2
-
-```
-
-Si creó una partición para el espacio de intercambio *(swap)* (por ejemplo `/dev/*sda3*`), formatéela con *mkswap* e iníciela con *swapon*:
-
-```
-# mkswap /dev/sd*X*3
-# swapon /dev/sd*X*3
+# mkfs.*ext4* /dev/sd*X1*
 
 ```
 
-Consulte [Crear un sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") para más detalles.
+Si creó una partición para el espacio de intercambio *(swap)*, formatéela con *mkswap*:
+
+```
+# mkswap /dev/sd*X2*
+# swapon /dev/sd*X2*
+
+```
+
+Consulte cómo [crear un sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") para más detalles.
 
 ### Montar los sistemas de archivos
 
 El siguiente paso es [montar](/index.php/Mount "Mount") el sistema de archivos de la partición raíz —root— en `/mnt`, por ejemplo:
 
 ```
-# mount /dev/sd*X*2 /mnt
+# mount /dev/sd*X1* /mnt
 
 ```
 
-Cuando sea necesario, cree puntos de montaje y monte las particiones correspondientes, por ejemplo:
-
-```
-# mkdir /mnt/efi
-# mount /dev/sd*X*1 /mnt/efi
-
-```
+Cree los puntos de montaje restantes (como `/mnt/efi`) y monte las particiones correspondientes en ellos.
 
 Los sistemas de archivos montados, así como el espacio de intercambio, serán posteriormente detectados por [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in).
 
@@ -236,7 +234,7 @@ Genere un archivo [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Esp
 
 ```
 
-Compruebe el archivo resultante e `/mnt/etc/fstab` después, y modifíquelo en caso de errores.
+Compruebe el archivo resultante en `/mnt/etc/fstab` después, y modifíquelo en caso de errores.
 
 ### Chroot
 
@@ -274,7 +272,7 @@ Descomente el [locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Espa
 
 ```
 
-Defina la [variable](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `LANG` en [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) según su caso, por ejemplo:
+Cree el archivo [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5), y defina la [variable](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `LANG` en [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) según su caso, por ejemplo:
 
  `/etc/locale.conf`  `LANG=*es_ES.UTF-8*` 
 
@@ -310,7 +308,7 @@ Si el sistema tiene una dirección IP permanente, se debe usar dicha dirección,
 
 Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se ejecuta durante la instalación del paquete [linux](https://www.archlinux.org/packages/?name=linux) con *pacstrap*.
 
-Para [LVM](/index.php/LVM_(Espa%C3%B1ol)#Configurar_mkinitcpio "LVM (Español)"), [cifrar el sistema](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") o [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) y regenere la imagen initramfs:
+Para [LVM](/index.php/LVM_(Espa%C3%B1ol)#Configurar_mkinitcpio "LVM (Español)"), [cifrado del sistema](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") o [RAID](/index.php/RAID#Configure_mkinitcpio "RAID"), modifique [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) y regenere la imagen initramfs:
 
 ```
 # mkinitcpio -p linux
@@ -330,7 +328,7 @@ Establezca la [contraseña](/index.php/Users_and_groups_(Espa%C3%B1ol)#Base_de_d
 
 Consulte [Arch boot process (Español)#Gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") para obtener una lista de cargadores de arranque compatibles con Linux.
 
-**Nota:** Si tiene una CPU Intel o AMD, active las actualizaciones de [microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)").
+**Nota:** si tiene una CPU Intel o AMD, active las actualizaciones de [microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)").
 
 ## Reiniciar
 

@@ -12,7 +12,7 @@ This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.
 
 **Note:** *fdisk* supports [GPT](/index.php/GPT "GPT") since [util-linux](https://www.archlinux.org/packages/?name=util-linux) 2.23\. [[1]](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/commit/?id=766d5156c43b784700d28d1c1141008b2bf35ed7) Alternatively, [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) may be used; see [gdisk](/index.php/Gdisk "Gdisk") for more information.
 
-**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) can be used.
+**Tip:** For basic partitioning functionality with a [curses](https://en.wikipedia.org/wiki/curses_(programming_library) "wikipedia:curses (programming library)")-based user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) can be used.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -34,7 +34,7 @@ This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.
 
 ## Installation
 
-To use *fdisk* and its associated utilities, the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package, which is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group is required.
+To use *fdisk* and its associated utilities, the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package, which is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, is required.
 
 ## List partitions
 

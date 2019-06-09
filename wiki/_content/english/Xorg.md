@@ -10,11 +10,11 @@ Related articles
 *   [xinit](/index.php/Xinit "Xinit")
 *   [xrandr](/index.php/Xrandr "Xrandr")
 
-From [http://www.x.org/wiki/](http://www.x.org/wiki/):
+From [https://www.x.org/wiki/](https://www.x.org/wiki/):
 
 	The X.Org project provides an open source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System"). The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
 
-**Xorg** (commonly referred as simply **X**) is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
+**Xorg** (commonly referred as simply **X**) is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](https://www.x.org/wiki/) for more details.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -110,12 +110,10 @@ In order for video acceleration to work, and often to expose all the modes that 
 | Brand | Type | Driver | OpenGL | OpenGL ([multilib](/index.php/Multilib "Multilib")) | Documentation |
 | AMD / ATI | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI](/index.php/ATI "ATI") |
-| Proprietary | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
 | Intel | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
 | NVIDIA | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
 | [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) | [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils) | [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) |
-| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
 **Note:**
 
@@ -155,7 +153,7 @@ Xorg uses a configuration file called `xorg.conf` and files ending in the suffix
 
 The `/etc/X11/xorg.conf.d/` directory stores host-specific configuration. You are free to add configuration files there, but they must have a `.conf` suffix: the files are read in ASCII order, and by convention their names start with `*XX*-` (two digits and a hyphen, so that for example 10 is read before 20). These files are parsed by the X server upon startup and are treated like part of the traditional `xorg.conf` configuration file. Note that on conflicting configuration, the file read *last* will be processed. For that reason the most generic configuration files should be ordered first by name. The configuration entries in the `xorg.conf` file are processed at the end.
 
-For option examples to set, see also the [fedora wiki](http://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
+For option examples to set, see also the [Fedora wiki](https://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
 
 ### Using xorg.conf
 
@@ -367,7 +365,7 @@ See [Execute commands after X start](/index.php/Execute_commands_after_X_start "
 
 ##### Proprietary NVIDIA driver
 
-DPI can be set manually if you only plan to use one resolution ([DPI calculator](http://pxcalc.com/)):
+DPI can be set manually if you only plan to use one resolution ([DPI calculator](https://www.pxcalc.com/)):
 
 ```
 Section "Monitor"
@@ -414,11 +412,11 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 *   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
 
-	[http://cgit.freedesktop.org/xorg/app/xcompmgr/](http://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
+	[https://cgit.freedesktop.org/xorg/app/xcompmgr/](https://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
 
 *   **Unagi** — Modular compositing manager which aims written in C and based on XCB
 
-	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
+	[https://projects.mini-dweeb.org/projects/unagi](https://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
 
 ## Tips and tricks
 
@@ -671,7 +669,7 @@ Make some free space on the relevant filesystem and X will start.
 Xorg may run with standard user privileges with the help of [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), see [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) and [FS#41257](https://bugs.archlinux.org/task/41257). The requirements for this are:
 
 *   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
-*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
+*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](https://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
 
 If you do not fit these requirements, re-enable root rights in `/etc/X11/Xwrapper.config`:
 

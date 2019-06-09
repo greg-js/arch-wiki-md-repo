@@ -28,8 +28,8 @@ Related articles
     *   [4.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Dark themes](#Dark_themes)
-    *   [5.2 New tabs position](#New_tabs_position)
-    *   [5.3 RAM limit](#RAM_limit)
+    *   [5.2 Memory limit](#Memory_limit)
+    *   [5.3 New tabs position](#New_tabs_position)
     *   [5.4 Screenshot of webpage](#Screenshot_of_webpage)
     *   [5.5 Wayland](#Wayland)
     *   [5.6 Window manager rules](#Window_manager_rules)
@@ -256,13 +256,15 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") for more information.
 
+### Memory limit
+
+To prevent pages from abusing memory (and possible OOM), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
+
+Decreasing [swappiness](/index.php/Swappiness "Swappiness") may also help.
+
 ### New tabs position
 
 To control where new tabs appears (relative or absolute), use `browser.tabs.insertAfterCurrent` and `browser.tabs.insertRelatedAfterCurrent`. See [[1]](https://support.mozilla.org/en/questions/1229062) for more informations.
-
-### RAM limit
-
-To prevent pages from abusing memory (and possible OOM), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
 
 ### Screenshot of webpage
 

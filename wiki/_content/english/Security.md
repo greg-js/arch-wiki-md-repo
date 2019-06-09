@@ -53,6 +53,7 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [8.5 ptrace scope](#ptrace_scope)
         *   [8.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
     *   [8.6 hidepid](#hidepid)
+    *   [8.7 Restricting module loading](#Restricting_module_loading)
 *   [9 Sandboxing applications](#Sandboxing_applications)
     *   [9.1 Firejail](#Firejail)
     *   [9.2 bubblewrap](#bubblewrap)
@@ -163,13 +164,13 @@ You can refer to the [pam_cracklib(8)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) ([hardened-malloc-git](https://aur.archlinux.org/packages/hardened-malloc-git/)) is a hardened replacement for glibc's malloc(). The project was originally developed for integration into Android's Bionic and musl by Daniel Micay, of GrapheneOS, but he has also built in support for standard Linux distributions on the x86_64 architecture.
 
-While hardened_malloc is not yet integrated into glibc (assistance and pull requests welcome) it can be used easily with LD_PRELOAD. In testing so far, it only causes issues with a handful of applications if enabled globally in /etc/ld.so.preload - Xorg fails to start, and man fails to work properly unless it's seccomp environment flag is disabled. Between these, and because hardened_malloc is arguably less efficient and more complex than the standard malloc, it is suggested that one use it for more at risk applications, such as those that face the internet. It can also be used as a complement to sandboxed applications inside [Firejail](/index.php/Firejail "Firejail").
+While hardened_malloc is not yet integrated into glibc (assistance and pull requests welcome) it can be used easily with LD_PRELOAD. In testing so far, it only causes issues with a handful of applications if enabled globally in /etc/ld.so.preload - Xorg fails to start, and man fails to work properly unless its seccomp environment flag is disabled. Between these, and because hardened_malloc is arguably less efficient and more complex than the standard malloc, it is suggested that one use it for more at risk applications, such as those that face the internet. It can also be used as a complement to sandboxed applications inside [Firejail](/index.php/Firejail "Firejail").
 
 To try it out in a standalone manner, use the hardened-malloc-preload wrapper script, or manually start an application with the proper preload value:
 
  `LD_PRELOAD="/usr/lib/libhardened_malloc.so" /usr/bin/firefox` 
 
-Proper usage with Firejail can be found on it's wiki page, and some configurable environment variables available for hardened_malloc can be found on the github repo.
+Proper usage with Firejail can be found on its wiki page, and some configurable environment variables available for hardened_malloc can be found on the github repo.
 
 ## Storage
 
@@ -518,6 +519,10 @@ For user sessions to work correctly, an exception needs to be added for *systemd
 [Service]
 SupplementaryGroups=proc
 ```
+
+### Restricting module loading
+
+The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kernel modules build as part of the [Linux](https://www.archlinux.org/packages/?name=Linux) package. This allows the kernel to restrict modules to be only loaded when they are signed with a valid key, in practical terms this means that all out of tree modules compiled locally or provides by packages such as [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) cannot be loaded. Restricting loading kernel modules can be done by adding `module.sig_enforce=1` to the kernel command line, further documentation can be found [here](https://www.kernel.org/doc/html/v5.2-rc3/admin-guide/module-signing.html).
 
 ## Sandboxing applications
 

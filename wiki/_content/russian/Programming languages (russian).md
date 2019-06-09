@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 25 апреля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=571899).
+**Состояние перевода:** На этой странице представлен перевод статьи [Programming languages](/index.php/Programming_languages "Programming languages"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=574554).
 
 Эта статья – попытка создать список всех [языков программирования](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F "wikipedia:ru:Список языков программирования"), для которых поставляется компилятор или интерпретатор в Arch Linux.
 
@@ -6,6 +6,7 @@
 *   [Ada](https://en.wikipedia.org/wiki/ru:%D0%90%D0%B4%D0%B0_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F) – [GCC](/index.php/GCC "GCC")
 *   [AWK (Русский)](/index.php/AWK_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AWK (Русский)")
 *   [BASIC](https://en.wikipedia.org/wiki/ru:%D0%91%D0%B5%D0%B9%D1%81%D0%B8%D0%BA "wikipedia:ru:Бейсик") – [freebasic](https://www.archlinux.org/packages/?name=freebasic)
+    *   [AMOS2](/index.php/AMOS2 "AMOS2")
     *   [Gambas](/index.php/Gambas "Gambas")
 *   [C](/index.php/C "C") – [GCC](/index.php/GCC "GCC"), [Clang](/index.php/Clang "Clang")
     *   [C++](/index.php/C%2B%2B "C++") – [GCC](/index.php/GCC "GCC"), [Clang](/index.php/Clang "Clang")

@@ -938,7 +938,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://nosignal.fi/ecasound/](https://nosignal.fi/ecasound/) || [ecasound](https://www.archlinux.org/packages/?name=ecasound)
 
-*   **fre:ac** — Audio converter and CD ripper with support for various popular formats and encoders.
+*   **[free:ac](https://en.wikipedia.org/wiki/Fre:ac "wikipedia:Fre:ac")** — Audio converter and CD ripper with support for various popular formats and encoders.
 
 	[https://freac.org/](https://freac.org/) || [freac](https://aur.archlinux.org/packages/freac/)
 

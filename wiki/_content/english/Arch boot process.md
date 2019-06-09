@@ -80,13 +80,13 @@ If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot proc
 
 ### Multibooting in UEFI
 
-Since each OS or vendor can maintain its own files within the EFI system partition without affecting the other, multi-booting using UEFI is just a matter of launching a different EFI application corresponding to the particular OS's boot loader. This removes the need for relying on chainloading mechanisms of one [boot loader](#Boot_loader) to load another OS.
+Since each OS or vendor can maintain its own files within the EFI system partition without affecting the other, multi-booting using UEFI is just a matter of launching a different EFI application corresponding to the particular operating system's boot loader. This removes the need for relying on chainloading mechanisms of one [boot loader](#Boot_loader) to load another OS.
 
 See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
 ## Boot loader
 
-The boot loader is the first piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on config files.
+A boot loader is a piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used if one wants to be able to edit kernel parameters before booting.
 
 **Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -110,6 +110,8 @@ The boot loader can only access the file system it is installed to.[[3]](https:/
 | [systemd-boot](/index.php/Systemd-boot "Systemd-boot") | No | Yes | [Manual install only](https://github.com/systemd/systemd/issues/1125) | Yes | Yes | No | No | No | ESP only | No | Cannot launch binaries from partitions other than [ESP](/index.php/ESP "ESP"). |
 | [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Yes | No | Yes | No | Yes | No | No | Yes | Yes | v4 only | [Discontinued](https://www.gnu.org/software/grub/grub-legacy.html) in favor of [GRUB](/index.php/GRUB "GRUB"). |
 | [LILO](/index.php/LILO "LILO") | Yes | No | Yes | No | Yes | No | without encryption | Yes | Yes | [Yes](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Discontinued](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) due to limitations (e.g. with Btrfs, GPT, RAID). |
+
+1.  A [boot manager](https://www.rodsbooks.com/efi-bootloaders/principles.html). It can only launch other EFI applications, for example, Linux kernel images built with `CONFIG_EFI_STUB=y` and Windows `bootmgfw.efi`.
 
 See also [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders").
 
@@ -137,6 +139,8 @@ At the final stage of early userspace, the real root is mounted, and then replac
 
 A [display manager](/index.php/Display_manager "Display manager") can be configured to replace the getty login prompt on a tty.
 
+In order to automatically initialize a display manager after booting, it is necessary to manually enable the service unit through [systemd](/index.php/Systemd "Systemd"). For more information on enabling and starting service units, see [systemd#Using units](/index.php/Systemd#Using_units "Systemd").
+
 ## Login
 
 The *login* program begins a session for the user by setting environment variables and starting the user's shell, based on `/etc/passwd`.
@@ -149,7 +153,7 @@ Once the user's [shell](/index.php/Shell "Shell") is started, it will typically 
 
 ## GUI, xinit or wayland
 
-[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, xinit, startx, the shell, and login will terminate in that order, returning to getty.
+[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, xinit, startx, the shell, and login will terminate in that order, returning to [getty](#Getty).
 
 ## See also
 

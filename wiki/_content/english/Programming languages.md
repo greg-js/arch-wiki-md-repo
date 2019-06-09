@@ -4,6 +4,7 @@ This page attempts to list all [programming languages](https://en.wikipedia.org/
 *   [Ada](https://en.wikipedia.org/wiki/Ada_(programming_language) – [GCC](/index.php/GCC "GCC")
 *   [AWK](/index.php/AWK "AWK")
 *   [BASIC](https://en.wikipedia.org/wiki/BASIC "wikipedia:BASIC") – [freebasic](https://www.archlinux.org/packages/?name=freebasic)
+    *   [AMOS2](/index.php/AMOS2 "AMOS2")
     *   [Gambas](/index.php/Gambas "Gambas")
 *   [C](/index.php/C "C") – [GCC](/index.php/GCC "GCC"), [Clang](/index.php/Clang "Clang")
     *   [C++](/index.php/C%2B%2B "C++") – [GCC](/index.php/GCC "GCC"), [Clang](/index.php/Clang "Clang")

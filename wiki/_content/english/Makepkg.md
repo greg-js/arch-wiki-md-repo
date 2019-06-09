@@ -263,7 +263,7 @@ $ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKA
 
 ### Build 32-bit packages on a 64-bit system
 
-**Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package. The [clean chroot](/index.php/Building_in_a_32-bit_clean_chroot "Building in a 32-bit clean chroot") method is preferred.
+**Warning:** Errors have been reported when using this method to build the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
 First, enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
 

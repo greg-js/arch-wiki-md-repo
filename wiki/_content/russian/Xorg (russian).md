@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 22 декабря 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=559991).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=574618).
 
 Ссылки по теме
 
@@ -12,11 +12,11 @@
 *   [xinitrc (Русский)](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)")
 *   [xrandr (Русский)](/index.php/Xrandr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xrandr (Русский)")
 
-C [http://www.x.org/wiki/](http://www.x.org/wiki/):
+C [https://www.x.org/wiki/](https://www.x.org/wiki/):
 
 	Проект X.Org представляет свободную реализацию [оконной системы X](https://en.wikipedia.org/wiki/ru:X.Org_Server "w:ru:X.Org Server") с открытым исходным кодом. Разработка осуществляется X.Org Foundation, которая является образовательной некоммерческой организацией, совместно с сообществом freedesktop.org.
 
-**Xorg** (обычно называемый просто **X**) очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Для более подробной информации смотрите статью [Xorg](https://en.wikipedia.org/wiki/ru:X.Org_Server "w:ru:X.Org Server") в Википедии или посетите [веб-сайт Xorg](http://www.x.org/wiki/).
+**Xorg** (обычно называемый просто **X**) очень популярен среди пользователей Linux, что привело к тому, что большинство приложений с графическим интерфейсом используют X11, из-за этого Xorg доступен в большинстве дистрибутивов. Для более подробной информации смотрите статью [Xorg](https://en.wikipedia.org/wiki/ru:X.Org_Server "w:ru:X.Org Server") в Википедии или посетите [веб-сайт Xorg](https://www.x.org/wiki/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -45,7 +45,7 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [5.3 Размер дисплея/DPI](#Размер_дисплея/DPI)
         *   [5.3.1 Настройка DPI вручную](#Настройка_DPI_вручную)
             *   [5.3.1.1 Проприетарный драйвер NVIDIA](#Проприетарный_драйвер_NVIDIA)
-            *   [5.3.1.2 Настройка DPI вручную. Предостережение](#Настройка_DPI_вручную._Предостережение)
+            *   [5.3.1.2 Предостережение о ручной настройке DPI](#Предостережение_о_ручной_настройке_DPI)
     *   [5.4 Управление питанием дисплея](#Управление_питанием_дисплея)
 *   [6 Композит](#Композит)
     *   [6.1 Список композитных менеджеров](#Список_композитных_менеджеров)
@@ -62,7 +62,7 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [8.2 Черный экран, протокол не указан.., Ресурс временно недоступен для всех или некоторых пользователей](#Черный_экран,_протокол_не_указан..,_Ресурс_временно_недоступен_для_всех_или_некоторых_пользователей)
     *   [8.3 DRI с картами Matrox перестает работать](#DRI_с_картами_Matrox_перестает_работать)
     *   [8.4 Проблемы с режимом Фреймбуфер](#Проблемы_с_режимом_Фреймбуфер)
-    *   [8.5 Программа требует "шрифт '(null)'"](#Программа_требует_"шрифт_'(null)'")
+    *   [8.5 Программа требует "font '(null)'"](#Программа_требует_"font_'(null)'")
     *   [8.6 Восстановление: отключение Xorg перед входом в GUI](#Восстановление:_отключение_Xorg_перед_входом_в_GUI)
     *   [8.7 Клиент X запускается с ошибкой "su"](#Клиент_X_запускается_с_ошибкой_"su")
     *   [8.8 Не удалось запустить X: Ошибка инициализация клавиатуры](#Не_удалось_запустить_X:_Ошибка_инициализация_клавиатуры)
@@ -112,12 +112,10 @@ Xorg автоматически ищет установленные драйве
 | Бренд | Тип | Драйвер | OpenGL | OpenGL ([multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)")) | Документация |
 | AMD / ATI | Свободный | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") |
 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") |
-| Проприетарный | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst (Русский)](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMD Catalyst (Русский)") |
 | Intel | Свободный | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") |
 | NVIDIA | Свободный | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)") |
 | Проприетарный | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") |
 | [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) | [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils) | [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) |
-| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
 **Примечание:**
 
@@ -157,7 +155,7 @@ Xorg можно настроить через `xorg.conf` и через файл
 
 Каталог `/etc/X11/xorg.conf.d/` хранит конфигурацию, специфичную для хоста (вашего компьютера). Вы можете свободно добавлять конфигурационные файлы сюда, но они обязательно должны оканчиваться на `.conf`: файлы читаются в кодировке ASCII и по соглашению их имена должны начинаться с `*XX*-` (две цифры и дефис, так, например, файл, начинающийся на 10, читается раньше 20). Эти файлы анализируются x-сервером при запуске и рассматриваются как часть традиционного конфигурационного файла `xorg.conf`. Обратите внимание, что при конфликтующей настройке *последний* прочитанный файл будет обработан. Поэтому наиболее общие файлы конфигурации должны быть упорядочены по имени. Конфигурационные записи в `xorg.conf` обрабатываются в конце.
 
-Смотрите примеры настройки на [вики fedora](http://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
+Смотрите примеры настройки на [вики Fedora](https://fedoraproject.org/wiki/Input_device_configuration#xorg.conf.d).
 
 ### Через файл xorg.conf
 
@@ -252,6 +250,7 @@ Section "Screen"
         SubSection "Display"
         EndSubSection
 EndSection
+
 ```
 
 ### Несколько мониторов
@@ -267,7 +266,7 @@ EndSection
 
 #### Более одной видеокарты
 
-Вы должны определить нужный драйвер для использования и ввести ID шины (BusID) нужной видеокарты.
+Вы должны определить нужный драйвер для использования и ввести ID шины (bus ID) нужной видеокарты.
 
 ```
 Section "Device"
@@ -292,15 +291,15 @@ EndSection
 
 ```
 
-ID шины здесь 1:0:0.
+ID шины здесь: 1:0:0.
 
 ### Размер дисплея/DPI
 
 DPI оконной системы X устанавливается следующими способами:
 
-1.  Параметр командной строки -dpi имеет наивысший приоритет.
-2.  Если он не используется, параметр DisplaySize в файле конфигурации X используется для получения DPI, учитывая разрешение экрана.
-3.  Если параметр DisplaySize не задан, значения размера монитора используются из [DDC](https://en.wikipedia.org/wiki/ru:Display_Data_Channel "w:ru:Display Data Channel") для получения DPI с учетом разрешения экрана.
+1.  Параметр командной строки `-dpi` имеет наивысший приоритет.
+2.  Если он не используется, параметр `DisplaySize` в файле конфигурации X используется для получения DPI, учитывая разрешение экрана.
+3.  Если параметр `DisplaySize` не задан, значения размера монитора используются из [DDC](https://en.wikipedia.org/wiki/ru:Display_Data_Channel "w:ru:Display Data Channel") для получения DPI с учетом разрешения экрана.
 4.  Если DDC не определяет размер, по умолчанию используется 75 DPI.
 
 Чтобы получить правильные точки на дюйм (DPI), разрешение дисплея должно быть распознано или установлено. Наличие правильного DPI особенно необходимо, когда требуются точные детали (например, рендеринг шрифтов). Ранее производители пытались создать стандарт для 96 DPI (монитор с диагональю размером 10,3 дюйма был бы 800x600, 13,2-дюймовый монитор - 1024x768). Сейчас DPI экраном отличаются и могут быть не равными по горизонтали и по вертикали. Например, 19-дюймовый широкоэкранный ЖК-дисплей с разрешением 1440x900 может иметь DPI 89х87\. Чтобы установить DPI, сервер Xorg пытается автоматически определить физическое разрешение вашего монитора с помощью видеокарты с DDC. ~~Когда Xorg знает физическое разрешение экрана, он сможет установить правильный DPI в зависимости от размера этого разрешения.~~
@@ -368,7 +367,7 @@ $ xrandr --dpi 144
 
 ##### Проприетарный драйвер NVIDIA
 
-DPI можно установить вручную, если вы планируете использовать только одно разрешение экрана ([калькулятор DPI](http://pxcalc.com/)):
+DPI можно установить вручную, если планируется использование только одного разрешения экрана ([калькулятор DPI](https://www.pxcalc.com/)):
 
 ```
 Section "Monitor"
@@ -386,7 +385,7 @@ Option              "DPI" "96 x 96"
 
 ```
 
-##### Настройка DPI вручную. Предостережение
+##### Предостережение о ручной настройке DPI
 
 GTK очень часто переопределяет DPI сервера через опциональный файл Xresource `Xft.dpi`. Чтобы выяснить происходит ли это у вас, введите:
 
@@ -395,7 +394,7 @@ $ xrdb -query | grep dpi
 
 ```
 
-Начиная с версии GTK 3.16, если эта переменная явно не задана, GTK устанавливает ее в 96\. Чтобы приложения GTK работали с DPI сервера, вам может потребоваться явно установить Xft.dpi на то же значение, что и сервер. С помощью файла ресурсов Xft.dpi некоторые среды рабочего стола опционально приводят DPI к определенному значению в личных настройках. Среди них KDE и TDE.
+Начиная с версии GTK 3.16, если эта переменная явно не задана, GTK задаёт ей значение 96\. Чтобы приложения GTK работали с DPI сервера, потребуется явно задать Xft.dpi то же значение, что и у сервера. Также некоторые среды рабочего стола опционально приводят DPI к определенному значению в своих настройках с помощью файла ресурсов Xft.dpi. Среди них [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") и [TDE](/index.php/TDE "TDE").
 
 ### Управление питанием дисплея
 
@@ -415,11 +414,11 @@ $ xrdb -query | grep dpi
 
 *   **[Xcompmgr](/index.php/Xcompmgr_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xcompmgr (Русский)")** — Композитный оконный менеджер
 
-	[http://cgit.freedesktop.org/xorg/app/xcompmgr/](http://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
+	[https://cgit.freedesktop.org/xorg/app/xcompmgr/](https://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
 
 *   **Unagi** — Модульный композитный менеджер, написанный на Си и основанный на XCB
 
-	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
+	[https://projects.mini-dweeb.org/projects/unagi](https://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
 
 ## Советы и рекомендации
 
@@ -435,7 +434,7 @@ $ xrdb -query | grep dpi
 | xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Да | Да | [Очень забагованный](https://github.com/jordansissel/xdotool/issues) и находится в неактивной разработке, например: имеет сломанный CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
 | xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Да | Нет | Виртуальная клавиатура для Xorg, также имеет параметр `-text` для отправки символов. |
 
-Также посмотрите [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
+См. также [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") и [обзор средств автоматизации X](https://venam.nixers.net/blog/unix/2019/01/07/win-automation.html).
 
 ### Вложенная X-сессия
 
@@ -528,6 +527,7 @@ kill -9 $pid
 Section "ServerFlags"
     Option "DontVTSwitch" "True"
 EndSection
+
 ```
 
 ### Запрет пользователю закрывать, перезапускать X
@@ -538,13 +538,14 @@ EndSection
 Section "ServerFlags"
     Option "DontZap"      "True"
 EndSection
+
 ```
 
 ## Решение проблем
 
 ### Общее
 
-Если произошла какая-то проблема с X, посмотрите лог (журнал), хранящийся в `/var/log/` или для пользователей без рут-доступа в `~/.local/share/xorg/` (по умолчанию с версии 1.16). Пользователям [GDM](/index.php/GDM "GDM") следует проверить журнал [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+Если произошла какая-то проблема с X, посмотрите лог (журнал), хранящийся в `/var/log/` или для пользователей без рут-доступа в `~/.local/share/xorg/` (по умолчанию с версии 1.16). Пользователям [GDM](/index.php/GDM "GDM") следует проверить [журнал systemd](/index.php/%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB_systemd "Журнал systemd"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
 Файлы журналов имеют следующий вид `Xorg.n.log`, где `n` - номер монитора. Для одного пользовательского компьютера с настройками по умолчанию имя нужного журнала обычно `Xorg.0.log`, но для остальных оно может отличаться. Чтобы убедиться, что выбранный вами файл правильный, посмотрите временную отметку запуска сеанса X сервера и из какой консоли он был запущен. Например:
 
@@ -555,7 +556,6 @@ EndSection
 ```
 
 *   При посмотре журнала будьте внимательны к строкам начинающим с `(EE)`, которые обозначают ошибки, и к строкам - `(WW)`, которые предупреждают об возможных других проблемах.
-
 *   Если файл `.xinitrc` *пустой* в `$HOME`, то его необходимо или удалить, или изменить для правильной загрузки X. Не сделав этого, вы получите пустой экран, а в журнале возможно `Xorg.0.log` не будет ошибок. Просто удалив его, у вас будет запускаться стандартное окружение X.
 *   Если экран становиться черным, вы все еще можете попытаться переключиться на другую виртуальную консоль (например, `Ctrl+Alt+F2`), и слепо войти в систему как root. Чтобы сделать это, введите `root` (нажмите `Enter` после ввода), а потом введите пароль суперпользователя (root) (снова нажмите `Enter` после ввода).
 
@@ -606,9 +606,9 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 
 [Удалите](/index.php/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D0%B5 "Удалите") пакет [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev).
 
-### Программа требует "шрифт '(null)'"
+### Программа требует "font '(null)'"
 
-*   Сообщение об ошибке: "*unable to load font `(null)'.*"
+Сообщение об ошибке: `unable to load font `(null)'`.
 
 Некоторые программы работают только с растровыми шрифтами. Имеется два крупных пакета с растровыми шрифтами [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) и [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi). Вам не нужны оба; одного будет достаточно. Чтобы выяснить какой будет лучше в вашем случае, попробуйте утилиту `xdpyinfo` из пакета [xorg-xdpyinfo](https://www.archlinux.org/packages/?name=xorg-xdpyinfo) таким образом:
 
@@ -617,7 +617,7 @@ $ xdpyinfo | grep resolution
 
 ```
 
-и используйте шрифт тот, у которого dpi ближе к показанному значению.
+и используйте тот шрифт, у которого dpi ближе к показанному значению.
 
 ### Восстановление: отключение Xorg перед входом в GUI
 
@@ -671,7 +671,7 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 Xorg может запускаться со стандартными привилегиями пользователя через [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), для получения дополнительной информации смотрите [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) и [FS#41257](https://bugs.archlinux.org/task/41257). Для этого необходимо:
 
 *   Запустить X через [xinit](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"); экранный менеджер не поддерживается
-*   [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"); реализации в проприетарных драйверах монитора не допускает [автообнаружение](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222), поэтому необходимо вручную настроить `needs_root_rights = no` в `/etc/X11/Xwrapper.config`.
+*   [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"); реализации в проприетарных драйверах монитора не допускает [автообнаружение](https://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222), поэтому необходимо вручную настроить `needs_root_rights = no` в `/etc/X11/Xwrapper.config`.
 
 Если вам не удовлетворяют эти требования, повторно включите права суперпользователя в `/etc/X11/Xwrapper.config`:
 

@@ -296,7 +296,7 @@ $ . /etc/makepkg.conf; grep -xvFf <(pacman -Qqm) <(expac "%n\t%p" | grep "$PACKA
 
 ### Construir paquetes de 32-bit en un sistema de 64-bit
 
-**Advertencia:** Se han reportado errores cuando se utiliza este método para construir el paquete [linux](https://www.archlinux.org/packages/?name=linux). Se recomienda el método [chroot (en inglés)](/index.php/Building_in_a_32-bit_clean_chroot "Building in a 32-bit clean chroot").
+**Advertencia:** Se han reportado errores cuando se utiliza este método para construir el paquete [linux](https://www.archlinux.org/packages/?name=linux).
 
 Primero, habilite el repositorio [multilib](/index.php/Multilib "Multilib") e [instala](/index.php/Instala "Instala") [multilib-devel](https://www.archlinux.org/groups/x86_64/multilib-devel/).
 

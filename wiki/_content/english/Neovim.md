@@ -22,6 +22,8 @@
 
 [Install](/index.php/Install "Install") the [neovim](https://www.archlinux.org/packages/?name=neovim) package.
 
+**Note:** With neovim, some of its features are delegated to external "providers". For Python providers, use [python-pynvim](https://aur.archlinux.org/packages/python-pynvim/).
+
 ## Configuration
 
 Nvim's user-specific configuration file is located at `$XDG_CONFIG_HOME/nvim/init.vim`, by default `~/.config/nvim/init.vim`. The global configuration file is loaded from `$XDG_CONFIG_DIRS/nvim/sysinit.vim` (by default `/etc/xdg/nvim/sysinit.vim`) if it exists, or if it does not, from `/usr/share/nvim/sysinit.vim` which should not be user-edited. [[1]](https://github.com/neovim/neovim/blob/master/runtime/doc/starting.txt#L437) By default, the former global configuration file does not exist. If you create the former file, you may wish to have it source the latter if you still want the functionality it provides, which is allowing pacman-installed vim packages to work with Nvim.

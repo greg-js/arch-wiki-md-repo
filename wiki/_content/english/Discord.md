@@ -21,7 +21,7 @@ You can use one of following methods in order to use Discord in Arch:
 
 The [official app](https://discordapp.com/):
 
-*   [discord](https://aur.archlinux.org/packages/discord/), built by Arch Linux
+*   [discord](https://aur.archlinux.org/packages/discord/)
 
 Third-party clients:
 

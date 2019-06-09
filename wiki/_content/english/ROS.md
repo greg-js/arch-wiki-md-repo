@@ -14,7 +14,7 @@
         *   [3.1.1 CLion](#CLion)
 *   [4 catkin build](#catkin_build)
 *   [5 Rebuild when shared libraries are updated](#Rebuild_when_shared_libraries_are_updated)
-*   [6 Ros 2](#Ros_2)
+*   [6 ROS 2](#ROS_2)
     *   [6.1 Building from source](#Building_from_source)
     *   [6.2 Usage Examples](#Usage_Examples)
 
@@ -82,13 +82,13 @@ When you update a library that ROS depends on (e.g. Boost), all packages that li
 
 (Note that the script requires [pyalpm](https://www.archlinux.org/packages/?name=pyalpm) to be installed.)
 
-## Ros 2
+## ROS 2
 
 ### Building from source
 
 Build instructions are available at [https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/](https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/).
 
-Install build dependencies: [wget](https://www.archlinux.org/packages/?name=wget), [python](https://www.archlinux.org/packages/?name=python), [python-yaml](https://www.archlinux.org/packages/?name=python-yaml), [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [git](https://www.archlinux.org/packages/?name=git), [cmake](https://www.archlinux.org/packages/?name=cmake), [asio](https://www.archlinux.org/packages/?name=asio), [tinyxml](https://www.archlinux.org/packages/?name=tinyxml), [tinyxml2](https://www.archlinux.org/packages/?name=tinyxml2), [eigen](https://www.archlinux.org/packages/?name=eigen), [libxaw](https://www.archlinux.org/packages/?name=libxaw), [glu](https://www.archlinux.org/packages/?name=glu), [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [opencv](https://www.archlinux.org/packages/?name=opencv), [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/), [python-empy](https://aur.archlinux.org/packages/python-empy/).
+Install build dependencies: [wget](https://www.archlinux.org/packages/?name=wget), [python](https://www.archlinux.org/packages/?name=python), [python-yaml](https://www.archlinux.org/packages/?name=python-yaml), [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [sip](https://www.archlinux.org/packages/?name=sip), [python-sip](https://www.archlinux.org/packages/?name=python-sip), [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5), [git](https://www.archlinux.org/packages/?name=git), [cmake](https://www.archlinux.org/packages/?name=cmake), [asio](https://www.archlinux.org/packages/?name=asio), [tinyxml](https://www.archlinux.org/packages/?name=tinyxml), [tinyxml2](https://www.archlinux.org/packages/?name=tinyxml2), [eigen](https://www.archlinux.org/packages/?name=eigen), [libxaw](https://www.archlinux.org/packages/?name=libxaw), [glu](https://www.archlinux.org/packages/?name=glu), [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [opencv](https://www.archlinux.org/packages/?name=opencv), [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/), [python-empy](https://aur.archlinux.org/packages/python-empy/), [log4cxx](https://aur.archlinux.org/packages/log4cxx/).
 
 Fetch the sources:
 
@@ -114,7 +114,7 @@ Now you can build the workspace:
 
 ```
 $ cd ~/ros2_ws
-$ src/ament/ament_tools/scripts/ament.py build --symlink-install
+$ colcon build --symlink-install
 
 ```
 

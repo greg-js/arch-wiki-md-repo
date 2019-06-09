@@ -5,23 +5,27 @@ Related articles
 
 Современные Linux системы способны удовлетворить любые ваши (полу-)профессиональные аудио потребности. При использовании хорошего аппаратного обеспечения и надлежащей конфигурации можно добиться временной задержки от 5 мс до 1 мс.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
-    *   [1.1 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-        *   [1.1.1 Контрольный перечень](#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BF.D0.B5.D1.80.D0.B5.D1.87.D0.B5.D0.BD.D1.8C)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Начало работы](#Начало_работы)
+    *   [1.1 Настройка системы](#Настройка_системы)
+        *   [1.1.1 Контрольный перечень](#Контрольный_перечень)
     *   [1.2 JACK](#JACK)
         *   [1.2.1 FireWire](#FireWire)
         *   [1.2.2 Jack Flash](#Jack_Flash)
         *   [1.2.3 Quickscan JACK script](#Quickscan_JACK_script)
         *   [1.2.4 Desktop Effects vs JACK](#Desktop_Effects_vs_JACK)
-        *   [1.2.5 Общий пример](#.D0.9E.D0.B1.D1.89.D0.B8.D0.B9_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D1.80)
+        *   [1.2.5 Общий пример](#Общий_пример)
 *   [2 Realtime Kernel](#Realtime_Kernel)
     *   [2.1 AUR](#AUR)
 *   [3 MIDI](#MIDI)
-*   [4 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-*   [5 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-*   [6 Аппаратное обеспечение](#.D0.90.D0.BF.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.B5_.D0.BE.D0.B1.D0.B5.D1.81.D0.BF.D0.B5.D1.87.D0.B5.D0.BD.D0.B8.D0.B5)
+*   [4 Переменные окружения](#Переменные_окружения)
+*   [5 Советы и хитрости](#Советы_и_хитрости)
+*   [6 Аппаратное обеспечение](#Аппаратное_обеспечение)
     *   [6.1 M-Audio Delta 1010](#M-Audio_Delta_1010)
     *   [6.2 M-Audio Fast Track Pro](#M-Audio_Fast_Track_Pro)
     *   [6.3 PreSonus Firepod](#PreSonus_Firepod)
@@ -29,9 +33,9 @@ Related articles
     *   [6.5 Tascam US-122](#Tascam_US-122)
     *   [6.6 RME Babyface](#RME_Babyface)
 *   [7 Restricted Software](#Restricted_Software)
-    *   [7.1 Steinberg's SDKs](#Steinberg.27s_SDKs)
+    *   [7.1 Steinberg's SDKs](#Steinberg's_SDKs)
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
-*   [9 Linux и Arch Linux Pro Audio в новостях](#Linux_.D0.B8_Arch_Linux_Pro_Audio_.D0.B2_.D0.BD.D0.BE.D0.B2.D0.BE.D1.81.D1.82.D1.8F.D1.85)
+*   [9 Linux и Arch Linux Pro Audio в новостях](#Linux_и_Arch_Linux_Pro_Audio_в_новостях)
 *   [10 Mailing list](#Mailing_list)
 
 ## Начало работы
@@ -67,19 +71,19 @@ Related articles
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
 
-Смотрите также [List of applications (Русский)#Аудиосистемы](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D1.83.D0.B4.D0.B8.D0.BE.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B "List of applications (Русский)"), [List of applications (Русский)#Редакторы аудио](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80.D1.8B_.D0.B0.D1.83.D0.B4.D0.B8.D0.BE "List of applications (Русский)"), и [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio).
+Смотрите также [List of applications (Русский)#Аудиосистемы](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Аудиосистемы "List of applications (Русский)"), [List of applications (Русский)#Редакторы аудио](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Редакторы_аудио "List of applications (Русский)"), и [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio).
 
 ### Настройка системы
 
 Могут оказаться полезными следующие часто используемые настройки системы:
 
-*   Добавление себя в [группу](/index.php/Users_and_groups_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.93.D1.80.D1.83.D0.BF.D0.BF.D1.8B "Users and groups (Русский)") *audio*.
+*   Добавление себя в [группу](/index.php/Users_and_groups_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Группы "Users and groups (Русский)") *audio*.
 *   Добавление [параметра ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)") `threadirqs`.
 *   Установка ядра [linux-rt](https://aur.archlinux.org/packages/linux-rt/).
 *   Настройка регулятора [cpufreq](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU frequency scaling (Русский)") на *performance* (производительность).
 *   Добавление параметра *noatime* в [fstab](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (смотрите [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
 
-Настройка в реальном времени в основном автоматизирована. Нет больше необходимости вносить правки в файлы вроде `/etc/security/limits.conf` для получения доступа реального времени. Тем не менее, если вам необходимо изменить настройки, смотрите `/etc/security/limits.d/99-audio.conf` и `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (эти файлы поставляются с пакетами [jack](https://www.archlinux.org/packages/?name=jack) или [jack2](https://www.archlinux.org/packages/?name=jack2)). Дополнительно, вы можете захотеть увеличить максимально запрашиваемую частоту прерывания RTC (по умолчанию 64 Hz), запустив [следующее при загрузке системы](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
+Настройка в реальном времени в основном автоматизирована. Нет больше необходимости вносить правки в файлы вроде `/etc/security/limits.conf` для получения доступа реального времени. Тем не менее, если вам необходимо изменить настройки, смотрите `/etc/security/limits.d/99-audio.conf` и `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (эти файлы поставляются с пакетами [jack](https://www.archlinux.org/packages/?name=jack) или [jack2](https://www.archlinux.org/packages/?name=jack2)). Дополнительно, вы можете захотеть увеличить максимально запрашиваемую частоту прерывания RTC (по умолчанию 64 Hz), запустив [следующее при загрузке системы](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process? "Systemd FAQ"):
 
 ```
 echo 2048 > /sys/class/rtc/rtc0/max_user_freq
@@ -332,7 +336,7 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 
 *   Отключите WiFi и закройте все приложения, нетребующиеся для записи, такие как браузер. Многие отмечали, что отключение WiFi сказывается на производительности JACK.
 
-*   Известно, что некоторое USB аудио аппаратное обеспечение не работает с портами USB 3, попробуйте вместо этого использовать порты USB 2/1\.
+*   Известно, что некоторое USB аудио аппаратное обеспечение не работает с портами USB 3, попробуйте вместо этого использовать порты USB 2/1.
 
 *   Могут случаться ошибки IRQ, что создаёт проблемы. Пример, видео аппаратное обеспечение, резервирующее шину, приводящее к ненужным прерываниям в системном пути ввода-вывода. Смотрите обсуждение в [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). Если вы используете ядро реального времени или свежее ядро, вы можете использовать [rtirq](https://www.archlinux.org/packages/?name=rtirq) для настройки приоритетов обработки потоков IRQ.
 
@@ -512,7 +516,7 @@ Volume levels are hardware and routing can be done through QjackCtl, even with m
 ***Данные настройки неприменимы для US-122L***
 
 1.  Требуемые пакеты: [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) [fxload](https://aur.archlinux.org/packages/fxload/)
-2.  Правила udev: создайте следующий файл правил, затем перезагрузите правила udev, [Udev (Русский)#Загрузка новых правил](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB "Udev (Русский)")
+2.  Правила udev: создайте следующий файл правил, затем перезагрузите правила udev, [Udev (Русский)#Загрузка новых правил](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Загрузка_новых_правил "Udev (Русский)")
 
  `/etc/udev/rules.d/51-tascam-us-122.rules` 
 ```

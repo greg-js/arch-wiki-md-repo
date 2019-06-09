@@ -6,7 +6,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dy
 
 For RFC2136 there is [nsupdate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsupdate.1) from [bind-tools](https://www.archlinux.org/packages/?name=bind-tools). For dynamic DNS services there are several packages available, see [#Update clients](#Update_clients).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Router](#Router)
 *   [2 Update clients](#Update_clients)
@@ -19,7 +23,7 @@ For RFC2136 there is [nsupdate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ns
 
 ## Router
 
-If the device needing DDNS sits behind a router, you should first check if the router itself can update any DDNS services. Although the selection of services may be limited, there are several advantages to using the router: it will probably be easier to set up, will require little to no maintenance, and will have no downtime (if the router is down you won't have Internet anyway).
+If the device needing DDNS sits behind a router, you should first check if the router itself can update any DDNS services. Although the selection of services may be limited, there are several advantages to using the router: it will probably be easier to set up, will require little to no maintenance, and will have no downtime (if the router is down you will not have Internet anyway).
 
 ## Update clients
 
@@ -63,6 +67,13 @@ Note that some dynamic DNS providers do not require a dedicated client and can b
 
 After installing, edit the default config `/etc/ddclient/ddclient.conf` to set up your DDNS provider (it includes many examples). Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `ddclient.service`.
 
+The configuration can be tested by running `ddclient` with the `-noquiet` and `-debug` options:
+
+```
+# ddclient -daemon=0 -noquiet -debug
+
+```
+
 Some of the compatible services are listed below, but you can also check the [examples](http://sourceforge.net/p/ddclient/code/HEAD/tree/trunk/sample-etc_ddclient.conf) and [protocols](http://sourceforge.net/p/ddclient/wiki/protocols/) for more.
 
 <caption>ddclient compatible services</caption>
@@ -81,13 +92,22 @@ Some of the compatible services are listed below, but you can also check the [ex
 
 #### Use an external website to determine IP address
 
-If ddclient is unable to detect your IP address, you can configure ddclient to fetch your IP from an external webpage such as [whatismyip.org](http://whatismyip.org/). Add somewhere in the config file:
+If ddclient is unable to detect your IP address, you can configure ddclient to fetch your IP from an external webpage such as [checkip.dyndns.org](http://checkip.dyndns.org/). This address is used by default when `use=web` is specified. It is also recommended to increase the check interval to avoid frequent requests to the IP check service:
 
  `/etc/ddclient/ddclient.conf` 
 ```
-# use whatismyip.org to determine IP address
+daemon=900
+# obtain IP address from web status page
 use=web
-web=whatismyip.org
+```
+
+An alternative IP check service can be specified with the `web` key:
+
+ `/etc/ddclient/ddclient.conf` 
+```
+daemon=900
+# obtain IP address from web status page
+use=web, web=myonlineportal.net/checkip
 ```
 
 #### Starting ddclient after networking is up

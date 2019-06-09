@@ -58,7 +58,7 @@ These shells can all be linked from `/usr/bin/sh`. When [Bash](/index.php/Bash "
 
 	[https://elvish.io](https://elvish.io) || [elvish](https://aur.archlinux.org/packages/elvish/)
 
-*   **[fish](/index.php/Fish "Fish")** — Smart and user-friendly command line shell. Fish performs full-color command line syntax highlighting, as well as highlighting and completion for commands and their arguments, file existence, and history. It supports complete-as-you-type for history and commands. Fish is able to parse the system's man pages in order to determine valid arguments for commands, allowing it to highlight and complete commands. Easy last-command revision can be done using `Alt+Up`. The fish daemon (fishd) facilitates synchronized history across all instances of fish, as well as universal and persistent environment variables.
+*   **[fish](/index.php/Fish "Fish")** — Smart and user-friendly command line shell. Fish performs full-color command line syntax highlighting, as well as highlighting and completion for commands and their arguments, file existence, and history. It supports complete-as-you-type for history and commands. Fish is able to parse the system's man pages in order to determine valid arguments for commands, allowing it to highlight and complete commands. Easy last-command revision can be done using `Alt+Up`. The fish daemon (fishd) facilitates synchronized history across all instances of fish, as well as universal and persistent environment variables. Additionally, fish features significantly simplified programming syntax and control flow (similar to ruby). For more information, see the [tutorial](http://fishshell.com/docs/current/tutorial).
 
 	[http://fishshell.com/](http://fishshell.com/) || [fish](https://www.archlinux.org/packages/?name=fish)
 
@@ -104,11 +104,13 @@ where *full-path-to-shell* is the full path as given by `chsh -l`.
 
 If you now log out and log in again, you will be greeted by the other shell.
 
+**Tip:** chsh uses `/etc/shells` as reference. If a recently installed shell is not present on the list, it can be manually added to this file.
+
 ## Configuration files
 
 To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
-See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
+See also [configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 
 ### /etc/profile
 

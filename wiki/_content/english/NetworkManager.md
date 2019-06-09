@@ -123,7 +123,7 @@ NetworkManager since version 1.16 has native support for [WireGuard](/index.php/
 Support for other VPN types is based on a plug-in system. They are provided in the following packages:
 
 *   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) for [OpenConnect](/index.php/OpenConnect "OpenConnect")
-*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) for [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [networkmanager-openvpn](/index.php/Networkmanager-openvpn "Networkmanager-openvpn") for [OpenVPN](/index.php/OpenVPN "OpenVPN")
 *   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) for [PPTP Client](/index.php/PPTP_Client "PPTP Client")
 *   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) for [Vpnc](/index.php/Vpnc "Vpnc")
 *   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan) for [strongSwan](/index.php/StrongSwan "StrongSwan")

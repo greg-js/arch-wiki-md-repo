@@ -4,7 +4,11 @@ Related articles
 
 A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [systemd](/index.php/Systemd "Systemd") and manages a single terminal line.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Add additional virtual consoles](#Add_additional_virtual_consoles)
@@ -60,10 +64,12 @@ Configuration differs for virtual versus serial consoles. In most cases, you wan
 ```
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin *username* --noclear %I $TERM
+ExecStart=-/usr/bin/agetty --autologin *username* --noclear %I $TERM
 ```
 
 **Tip:** The option `Type=idle` found in the default `getty@.service` will delay the service startup until all jobs (state change requests to units) are completed in order to avoid polluting the login prompt with boot-up messages. When [starting X automatically](/index.php/Start_X_at_login "Start X at login"), it may be useful to start `getty@tty1.service` immediately by adding `Type=simple` into the [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet"). Both the init system and *startx* can be [silenced](/index.php/Silent_boot "Silent boot") to avoid the interleaving of their messages during boot-up.
+
+If you don't want full automatic login, but also don't want to type your username, you can replace `--autologin *username*` with `--skip-login --login-options *username*`.
 
 If you want to use a *tty* other than *tty1*, see [systemd FAQ](/index.php/Systemd_FAQ#How_do_I_change_the_default_number_of_gettys.3F "Systemd FAQ").
 
@@ -75,7 +81,7 @@ Create the following file (and leading directories):
 ```
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
+ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
 ```
 
 ### Nspawn console

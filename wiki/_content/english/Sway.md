@@ -30,6 +30,7 @@
     *   [5.2 VirtualBox](#VirtualBox)
     *   [5.3 Sway socket not detected](#Sway_socket_not_detected)
     *   [5.4 Unable to retrieve socket path](#Unable_to_retrieve_socket_path)
+    *   [5.5 Keybindings and keyboard layouts](#Keybindings_and_keyboard_layouts)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -64,7 +65,7 @@ By default, sway starts with the US QWERTY keymap. To configure per-input:
 
  `~/.config/sway/config` 
 ```
- input * xkb_layout us,de,ru"
+ input * xkb_layout "us,de,ru"
  input * xkb_variant "colemak,,typewriter"
  input * xkb_options "grp:win_space_toggle"
  input "MANUFACTURER1 Keyboard" xkb_model "pc101"
@@ -105,11 +106,13 @@ In both examples, the system-wide installed configuration files has been copied 
 
 ### Wallpaper
 
+Since release 1.1.1 the wallpaper part of the SwayWM project was moved to [swaybg](https://www.archlinux.org/packages/?name=swaybg), which is needed in order to run the output command.
+
 This line, which can be appended at the end of your sway configuration, sets a background image on all displays (output matches all with name `"*"`):
 
  `~/.config/sway/config` 
 ```
- output "*" background /home/onny/pictures/fredwang_norway.jpg fill
+ output "*" bg /home/onny/pictures/fredwang_norway.jpg fill
 
 ```
 
@@ -321,6 +324,22 @@ Unable to retrieve socket path
 ```
 
 `SWAYSOCK` environment variable is set after launching Sway, therefore a workaround to this error is to request `swaymsg -t [message]` in a terminal inside Sway.
+
+### Keybindings and keyboard layouts
+
+By default, if you are using more than one keyboard layout, e.g. `input * xkb_layout "us,ru"`, bindings may become broken when you switch on some secondary layout.
+
+Thanks to [https://github.com/swaywm/sway/pull/3058](https://github.com/swaywm/sway/pull/3058), all you need is to add `--to-code` key to sensitive `bindsym` lines like this:
+
+```
+bindsym --to-code {
+  $mod+$left focus left
+  $mod+$down focus down
+  $mod+$up focus up
+  $mod+$right focus right
+}
+
+```
 
 ## See also
 

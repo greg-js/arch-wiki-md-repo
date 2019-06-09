@@ -36,6 +36,7 @@ From [Wikipedia:udev](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
     *   [4.8 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
     *   [4.9 Triggering events](#Triggering_events)
     *   [4.10 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
+    *   [4.11 Spawning long-running processes](#Spawning_long-running_processes)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Blacklisting modules](#Blacklisting_modules)
     *   [5.2 Debug output](#Debug_output)
@@ -375,6 +376,10 @@ Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNA
 3) Load/reload the new *udev* rule (see above) and test it by unplugging the power supply to the laptop.
 
 **Tip:** See also [xpub](https://aur.archlinux.org/packages/xpub/) as a method for getting the user's display environment variables and exporting the last into *udev* rules via `IMPORT` key.
+
+### Spawning long-running processes
+
+Programs started by udev will block further events from that device, and any tasks spawned from a udev rule will be killed after event handling is completed. If you need to spawn a long-running process with udev, you can use [at](https://www.archlinux.org/packages/?name=at) (e.g. `your_command | at now`, or `batch`), or create a [systemd](/index.php/Systemd "Systemd") unit [which can be triggered directly from a udev rule](http://blog.fraggod.net/2012/06/16/proper-ish-way-to-start-long-running-systemd-service-on-udev-event-device-hotplug.html).
 
 ## Troubleshooting
 

@@ -2,7 +2,11 @@ Questo documento vuole essere una guida per l'installazione di [Arch Linux](/ind
 
 Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man page](/index.php/Man_page "Man page") e le rispettive pagine [ArchWiki](/index.php/ArchWiki:About_(Italiano) "ArchWiki:About (Italiano)") che normalmente verranno linkate di volta in volta nella guida. Per un aiuto piu` interattivo si possono sfruttare i [canali IRC](/index.php/IRC_channel "IRC channel"), il [forum internazionale](https://bbs.archlinux.org/) e il [forum italiano](https://www.archlinux.it/forum/).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prima dell'installazione](#Prima_dell'installazione)
     *   [1.1 Impostare il corretto layout della tastiera](#Impostare_il_corretto_layout_della_tastiera)
@@ -210,9 +214,9 @@ Settare la [variabile](/index.php/Variable "Variable") `LANG` in [locale.conf(5)
 
  `/etc/locale.conf`  `LANG=*it_IT.UTF-8*` 
 
-Se si e` [settato un layout della tastiera](#Impostare_il_corretto_layout_della_tastiera), rendere persistente questa modifica in [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+Se si è [settato un layout della tastiera](#Impostare_il_corretto_layout_della_tastiera), rendere persistente questa modifica in [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
- `/etc/vconsole.conf`  `KEYMAP=*us'*` 
+ `/etc/vconsole.conf`  `KEYMAP=*it*` 
 
 ### Hostname
 

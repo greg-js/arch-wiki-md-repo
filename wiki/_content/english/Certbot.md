@@ -42,11 +42,11 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 
 ### Plugins
 
-**Warning:** Configuration files may be rewritten to add settings and paths for certbot certificates when using a plugin. Creating a **backup** first is recommended.
+**Warning:** Configuration files may be rewritten to add settings and paths for Certbot certificates when using a plugin. Creating a **backup** first is recommended.
 
 #### Nginx
 
-The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx"). This plugin will try to detect the configuration setup for each domain. The plugin adds extra configuration recommended for security, settings for certificate use, and paths to certbot certificates. See [certbot#Managing_Nginx_server_blocks](/index.php/Certbot#Managing_Nginx_server_blocks "Certbot") for examples.
+The plugin [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) provides an automatic configuration for [nginx](/index.php/Nginx "Nginx"). This plugin will try to detect the configuration setup for each domain. The plugin adds extra configuration recommended for security, settings for certificate use, and paths to Certbot certificates. See [#Managing Nginx server blocks](#Managing_Nginx_server_blocks) for examples.
 
 First time setup of [server-blocks](/index.php/Nginx#Server_blocks "Nginx"):
 
@@ -73,7 +73,7 @@ See [Certbot-Nginx on Arch Linux](https://certbot.eff.org/#arch-nginx) for more 
 
 ##### Managing Nginx server blocks
 
-The following example may be used in each [server-blocks](/index.php/Nginx#Server_blocks "Nginx") when managing these files manually:
+The following example may be used in all [server blocks](/index.php/Nginx#Server_blocks "Nginx") when managing these files manually:
 
  `/etc/nginx/sites-available/example` 
 ```
@@ -110,7 +110,7 @@ server {
 
 #### Apache
 
-The plugin [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) provides an automatic configuration for [apache](/index.php/Apache_HTTP_Server "Apache HTTP Server"). This plugin will try to detect the configuration setup for each domain. The plugin adds extra configuration recommended for security, settings for certificate use, and paths to certbot certificates. See [certbot#Managing_Apache_virtual_hosts](/index.php/Certbot#Managing_Apache_virtual_hosts "Certbot") for examples.
+The plugin [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) provides an automatic configuration for the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). This plugin will try to detect the configuration setup for each domain. The plugin adds extra configuration recommended for security, settings for certificate use, and paths to Certbot certificates. See [#Managing Apache virtual hosts](#Managing_Apache_virtual_hosts) for examples.
 
 First time setup of [virtual hosts](/index.php/Apache_HTTP_Server#Virtual_hosts "Apache HTTP Server"):
 
@@ -137,7 +137,7 @@ See [Certbot-Apache on Arch Linux](https://certbot.eff.org/#arch-apache) for mor
 
 ##### Managing Apache virtual hosts
 
-The following example may be used in each [virtual hosts](/index.php/Apache_HTTP_Server#Virtual_hosts "Apache HTTP Server") when managing these files manually:
+The following example may be used in all [virtual hosts](/index.php/Apache_HTTP_Server#Virtual_hosts "Apache HTTP Server") when managing these files manually:
 
  `/etc/httpd/conf/extra/001-certbot.conf` 
 ```
@@ -162,7 +162,7 @@ SSLCertificateKeyFile /etc/letsencrypt/live/'domain'/privkey.pem
 
 ```
 
-See [apache#TLS](/index.php/Apache#TLS "Apache") for more information.
+See [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for more information.
 
 ### Webroot
 

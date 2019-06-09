@@ -1,6 +1,10 @@
 PRIME is a technology used to manage hybrid graphics found on recent laptops ([Optimus for NVIDIA](/index.php/NVIDIA_Optimus "NVIDIA Optimus"), AMD Dynamic Switchable Graphics for Radeon). **PRIME GPU offloading** and **Reverse PRIME** is an attempt to support muxless hybrid graphics in the Linux kernel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Open-source drivers](#Open-source_drivers)
@@ -10,11 +14,11 @@ PRIME is a technology used to manage hybrid graphics found on recent laptops ([O
     *   [3.1 Discrete card as primary GPU](#Discrete_card_as_primary_GPU)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 XRandR specifies only 1 output provider](#XRandR_specifies_only_1_output_provider)
-    *   [4.2 When an application is rendered with the discrete card, it only renders a black screen](#When_an_application_is_rendered_with_the_discrete_card.2C_it_only_renders_a_black_screen)
+    *   [4.2 When an application is rendered with the discrete card, it only renders a black screen](#When_an_application_is_rendered_with_the_discrete_card,_it_only_renders_a_black_screen)
         *   [4.2.1 Black screen with GL-based compositors](#Black_screen_with_GL-based_compositors)
-    *   [4.3 Kernel crash/oops when using PRIME and switching windows/workspaces](#Kernel_crash.2Foops_when_using_PRIME_and_switching_windows.2Fworkspaces)
-    *   [4.4 Glitches/Ghosting synchronization problem on second monitor when using reverse PRIME](#Glitches.2FGhosting_synchronization_problem_on_second_monitor_when_using_reverse_PRIME)
-    *   [4.5 Error "radeon: Failed to allocate virtual address for buffer:" when launching GL application](#Error_.22radeon:_Failed_to_allocate_virtual_address_for_buffer:.22_when_launching_GL_application)
+    *   [4.3 Kernel crash/oops when using PRIME and switching windows/workspaces](#Kernel_crash/oops_when_using_PRIME_and_switching_windows/workspaces)
+    *   [4.4 Glitches/Ghosting synchronization problem on second monitor when using reverse PRIME](#Glitches/Ghosting_synchronization_problem_on_second_monitor_when_using_reverse_PRIME)
+    *   [4.5 Error "radeon: Failed to allocate virtual address for buffer:" when launching GL application](#Error_"radeon:_Failed_to_allocate_virtual_address_for_buffer:"_when_launching_GL_application)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -167,6 +171,26 @@ The discrete card's outputs should be available now in xrandr.
 Delete/move /etc/X11/xorg.conf file and any other files relating to GPUs in /etc/X11/xorg.conf.d/. Restart the X server after this change.
 
 If the video driver is blacklisted in `/etc/modprobe.d/`, load the module and restart X. This may be the case if you use the bbswitch module for Nvidia GPUs.
+
+Another possible problem is that Xorg might try to automatically assign monitors to your second GPU. Check the logs:
+
+ `$ grep "No modes" ~/.local/share/xorg/Xorg.0.log` 
+```
+AMDGPU(0): No modes.
+
+```
+
+To solve this add the ServerLayout section with inactive device to your xorg.conf:
+
+ `/etc/X11/xorg.conf` 
+```
+Section "ServerLayout"
+  Identifier     "X.org Configured"
+  Screen      0  "Screen0" 0 0 # Screen for your primary GPU
+  Inactive       "Card1"       # Device for your second GPU
+EndSection
+
+```
 
 ### When an application is rendered with the discrete card, it only renders a black screen
 

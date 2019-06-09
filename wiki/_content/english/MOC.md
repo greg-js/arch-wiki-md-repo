@@ -162,6 +162,8 @@ Run *mocp* to start the server and interface. Some useful default shortcuts (pre
 | Detach MOC from the server | `q` |
 | Quit | ``Shift+q`` |
 
+**Tip:** To not wait for detach (as it sometimes takes a moment), `Ctrl+z` can be used instead.
+
 To shut down the server, run the `mocp -x` command.
 
 ## Scrobbling

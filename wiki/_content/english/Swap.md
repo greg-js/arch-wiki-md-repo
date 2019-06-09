@@ -122,7 +122,10 @@ Since swap is managed by systemd, it will be activated again on the next system 
 
 As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
 
-**Warning:** [Btrfs](/index.php/Btrfs "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+**Warning:**
+
+*   [Btrfs](/index.php/Btrfs "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+*   For kernels 5.0+ Btrfs does not support swap files on file systems that span multiple devices. See [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) and [Arch forums discussion](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
 
 ### Manually
 
@@ -148,7 +151,7 @@ Use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes]
 
 **Note:** *fallocate* may cause problems with some file systems such as [F2FS](/index.php/F2FS "F2FS").[[1]](https://github.com/karelzak/util-linux/issues/633) As an alternative, using *dd* is more reliable, but slower: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
 
-Set the right permissions (a world-readable swap file is a huge local vulnerability)
+Set the right permissions (a world-readable swap file is a huge local vulnerability):
 
 ```
 # chmod 600 /swapfile
@@ -169,13 +172,15 @@ Activate the swap file:
 
 ```
 
-Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap file:
+Finally, edit the fstab configuration to add an entry for the swap file:
 
  `/etc/fstab` 
 ```
 /swapfile none swap defaults 0 0
 
 ```
+
+For additional information, see [fstab#Usage](/index.php/Fstab#Usage "Fstab").
 
 **Note:** The swap file must be specified by its location on the file system not by its UUID or LABEL.
 

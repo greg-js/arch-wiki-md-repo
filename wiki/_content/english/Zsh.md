@@ -96,6 +96,7 @@ When starting Zsh, it will source the following files in this order by default:
 *   `/etc/zsh/zprofile` Used for executing commands at start, will be sourced when starting as a ***login shell***. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`.
     *   `/etc/profile` This file should be sourced by all Bourne-compatible shells upon login: it sets up `$PATH` and other environment variables and application-specific (`/etc/profile.d/*.sh`) settings upon login.
 *   `$ZDOTDIR/.zprofile` Used for executing user's commands at start, will be sourced when starting as a ***login shell***.
+    *   `$HOME/.profile` is **not** sourced by zsh.
 *   `/etc/zsh/zshrc` Used for setting interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
 *   `$ZDOTDIR/.zshrc` Used for setting user's interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
 *   `/etc/zsh/zlogin` Used for executing commands at ending of initial progress, will be sourced when starting as a ***login shell***.
@@ -103,11 +104,7 @@ When starting Zsh, it will source the following files in this order by default:
 *   `$ZDOTDIR/.zlogout` Will be sourced when a ***login shell*** **exits**.
 *   `/etc/zsh/zlogout` Will be sourced when a ***login shell*** **exits**.
 
-**Note:**
-
-*   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
-
-*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please [set the $PATH variable](#Configuring_$PATH) in `$ZDOTDIR/.zprofile`.
+**Note:** The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
 
 **Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something else, otherwise it will break the integrity of other packages which provide some scripts in `/etc/profile.d/`.
 

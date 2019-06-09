@@ -39,7 +39,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), [firejail-git](https://aur.archlinux.org/packages/firejail-git/) or the [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/) package. A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
+[Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), or the [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package. A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
 
 **Note:** For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Arch Linux kernels see [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security"). [Firejail can use it even if it is disabled](https://github.com/netblue30/firejail/issues/1842#issuecomment-376642039).
 
@@ -47,7 +47,7 @@ Related articles
 
 ### Apparmor integration
 
-Since 0.9.42, [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/), has supported more direct integration with Apparmor through a generic apparmor profile. During installation, the profile, `firejail-default`, is placed in `/etc/apparmor.d` directory, and needs to be loaded into the kernel by running the following command as root:
+Since 0.9.60-1, [firejail](https://www.archlinux.org/packages/?name=firejail), has supported more direct integration with Apparmor through a generic apparmor profile. During installation, the profile, `firejail-default`, is placed in `/etc/apparmor.d` directory, and needs to be loaded into the kernel by running the following command as root:
 
 ```
 # apparmor_parser -r /etc/apparmor.d/firejail-default

@@ -402,6 +402,13 @@ $ gpg2 --homedir "$XDG_DATA_HOME"/gnupg`
 
  |
 | [Google Earth](/index.php/Google_Earth "Google Earth") | `~/.googleearth` | Some paths can be changed with the `KMLPath` and `CachePath` options in `~/.config/Google/GoogleEarthPlus.conf` |
+| [gopass](https://www.archlinux.org/packages/?name=gopass) | `~/.password-store` | Override settings in `~/.config/gopass/config.yml`: `~/.config/gopass/config.yml` 
+```
+root:
+path: gpgcli-gitcli-fs+file:///home/<userid>/.config/password-store
+
+```
+ |
 | [GQ LDAP client](https://sourceforge.net/projects/gqclient) | 
 
 `~/.gq
@@ -594,7 +601,7 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 | [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") | `~/.gem` | 
 
 `$ export GEM_HOME="$XDG_DATA_HOME"/gem
-$ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem`
+$ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem` Make sure to remove `gem: --user-install` from `/etc/gemrc`
 
  |
 | [Rust#Rustup](/index.php/Rust#Rustup "Rust") | `~/.rustup` | [[107]](https://github.com/rust-lang-nursery/rustup.rs/issues/247) | `$ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup` |

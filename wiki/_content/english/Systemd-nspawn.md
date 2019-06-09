@@ -49,6 +49,8 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
     *   [5.3 execv(...) failed: Permission denied](#execv(...)_failed:_Permission_denied)
+    *   [5.4 Reboot not working](#Reboot_not_working)
+    *   [5.5 Mounting a NFS share inside the container](#Mounting_a_NFS_share_inside_the_container)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -462,6 +464,18 @@ execv(/usr/lib/systemd/systemd, /lib/systemd/systemd, /sbin/init) failed: Permis
 ```
 
 even though the permissions of the files in question (i.e. `/lib/systemd/systemd`) are correct, this can be the result of having mounted the file system on which the container is stored as non-root user. For example, if you mount your disk manually with an entry in [fstab](/index.php/Fstab "Fstab") that has the options `noauto,user,...`, *systemd-nspawn* will not allow executing the files even if they are owned by root.
+
+### Reboot not working
+
+When trying to reboot the container via machinectl or within the container, the container does not reboot.
+
+Workaround: edit `/usr/lib/systemd/system/systemd-nspawn@.service` and remove `--keep-unit`
+
+Reference: [https://github.com/systemd/systemd/issues/2809](https://github.com/systemd/systemd/issues/2809)
+
+### Mounting a NFS share inside the container
+
+Not possible at this time (June 2019).
 
 ## See also
 

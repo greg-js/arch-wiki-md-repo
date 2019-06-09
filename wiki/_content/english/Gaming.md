@@ -210,7 +210,7 @@ If your system is currently configured to properly insert its own cpu frequency 
 | [Playkey](https://playkey.net/) | [playkey-linux](https://aur.archlinux.org/packages/playkey-linux/) | ? | ? | ? | ? | ? | – |
 | [PlayStation Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) | Runs under [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton | No | No | – | No | Yes | Play PS4, PS3 and PS2 games on PC. Alternatively, you can use [emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). |
 | [Rainway](https://rainway.com/) | Coming in 2019 Q3 | Yes | Windows-only | No | Yes | ? | – |
-| [Shadow](https://shadow.tech/) | [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/) | ? | ? | ? | ? | ? | – |
+| [Shadow](https://shadow.tech/) | [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/) | No | No | Yes | Yes | Yes | Controller support is dependent on USB over IP, and currently AVC only as HEVC isn't supported |
 | [Steam In-Home](/index.php/Steam#In-home_streaming "Steam") | Part of [steam](https://www.archlinux.org/packages/?name=steam) | No | Yes | No | No | Yes | LAN connections only |
 | [Vortex](https://vortex.gg/) | – | Yes | No | – | No | ? | – |
 
@@ -250,7 +250,7 @@ bit.trip.runner -F -p 15
 
 #### Nice levels
 
-Secondly, the nice level sets which tasks are processed first, in ascending order. A nice level of -4 is reccommended for most multimedia tasks, including games:
+Secondly, the nice level sets which tasks are processed first, in ascending order. A nice level of -4 is recommended for most multimedia tasks, including games:
 
 ```
 bit.trip.runner -n -4
@@ -259,7 +259,7 @@ bit.trip.runner -n -4
 
 #### Core affinity
 
-There is some confusion in development as to whether the driver should be multithreading, or the program. In any case where they both attempt it, it causes drops in framerate and crashes. Examples of this include a number of modern games, and any Wine program which is running with [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language "wikipedia:OpenGL Shading Language") enabled. To select a single core and allow only the driver to handle this process, simply use the `-a 0x*#*` flag, where *#* is the core number, e.g.:
+There is some confusion in development as to whether the driver should be multithreading, or the program. Allowing both the driver and program to simultaneously multithread can result in significant performance reductions, such as framerate loss and increased risk of crashes. Examples of this include a number of modern games, and any Wine program which is running with [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language "wikipedia:OpenGL Shading Language") enabled. To select a single core and allow only the driver to handle this process, simply use the `-a 0x*#*` flag, where *#* is the core number, e.g.:
 
 ```
 bit.trip.runner -a 0x1
@@ -292,7 +292,7 @@ etc.
 
 #### Optimus, and other helping programs
 
-As a general rule, any other process which the game requires to operate should be reniced to a level above that of the game itself. Strangely, Wine has a problem known as *reverse scheduling*, it can often have benefits when the more important processes are set to a higher nice level. Wineserver also seems unconditionally to benefit from `SCHED_FIFO`, since rarely consumes the whole CPU and needs higher prioritization when possible.
+As a general rule, any other process which the game requires to operate should be reniced to a level above that of the game itself. Strangely, Wine has a problem known as *reverse scheduling*, it can often have benefits when the more important processes are set to a higher nice level. Wineserver also seems unconditionally to benefit from `SCHED_FIFO`, since it rarely consumes the whole CPU and needs higher prioritization when possible.
 
 ```
 optirun -I -n -5

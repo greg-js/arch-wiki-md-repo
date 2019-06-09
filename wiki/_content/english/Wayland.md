@@ -435,7 +435,8 @@ Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorde
 
 ### Remote display
 
-*   (20180401) mutter has now remote desktop enabled at compile time, see [https://wiki.gnome.org/Projects/Mutter/RemoteDesktop](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
+*   (20190503) [wlroots](https://www.archlinux.org/packages/?name=wlroots) (used by [sway](/index.php/Sway "Sway")) offers an RDP backend since version 0.6 [[4]](https://github.com/swaywm/wlroots/blob/master/docs/env_vars.md).
+*   (20180401) mutter has now remote desktop enabled at compile time, see [[5]](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
 *   (20161229) there was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package does not have it enabled.
 
 ### Input grabbing in games, remote desktop and VM windows
@@ -469,7 +470,7 @@ Supporting widget toolkits:
 #### wlroots input inhibitor protocol
 
 [Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's `Compositor shortcuts inhibit` protocol.
-Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[4]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[5]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
+Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[6]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[7]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
 No widget toolkit or application is known to support this protocol.
 
 ## See also

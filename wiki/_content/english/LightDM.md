@@ -172,7 +172,7 @@ If you have shell variables that are important for your display (such as Gtk or 
 
 The script runs [Xkbmap](/index.php/Xkbmap "Xkbmap") with arguments provided in files `/etc/X11/Xkbmap`, `~/.Xkbmap`. If those files are not found, it runs [xmodmap](/index.php/Xmodmap "Xmodmap") with `/etc/X11/Xmodmap`, `~/.Xmodmap`. If using xkbmap, the files are parsed using cat. The following example works
 
- `~/.xprofile`  `-model pc105 -layout us,us,tr -variant ,dvorak,f -option grp:caps_toggle` 
+ `~/.Xmodmap`  `-model pc105 -layout us,us,tr -variant ,dvorak,f -option grp:caps_toggle` 
 
 ### Changing background images/colors
 

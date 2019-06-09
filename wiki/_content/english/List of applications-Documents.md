@@ -1228,6 +1228,10 @@ See also [Wikipedia:List of concept- and mind-mapping software](https://en.wikip
 
 	[http://www.xmind.net](http://www.xmind.net) || [xmind](https://aur.archlinux.org/packages/xmind/)
 
+*   **MindMaster** — commercial mindmap and brainstorm software with modern UI and beautiful template.It also provides online mindmap service and cross-platform sharing.
+
+	[https://www.edrawsoft.com/mindmaster/](https://www.edrawsoft.com/mindmaster/) || [mindmaster](https://aur.archlinux.org/packages/mindmaster/)
+
 #### Sticky notes
 
 *   **GloboNote** — Easy to use desktop note taking application. You can use it to create sticky notes, to-do lists, personal journals, reminders and other notes all in one application.

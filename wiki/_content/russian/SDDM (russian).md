@@ -205,7 +205,7 @@ SDDM использует сканер отпечатков пальцев с п
 
 ### Долгая загрузка перед отображением экрана приветствия SDDM
 
-Низкий уровень энтропии в системе может стать причиной долгой загрузки SDDM ([Отчет об ошибке](https://github.com/sddm/sddm/issues/1036)). Смотрите статью [Random number generation](/index.php/Random_number_generation "Random number generation") для идей по повышению уровня энтропии.
+Низкий уровень энтропии в системе может стать причиной долгой загрузки SDDM ([Отчет об ошибке](https://github.com/sddm/sddm/issues/1036)). Смотрите статью [Random number generation](/index.php/Random_number_generation "Random number generation") для получения информации о повышении уровня энтропии.
 
 ### Зависания после входа
 

@@ -180,7 +180,7 @@ class extracthere(Command):
         else:
             descr = "extracting files from: " + os.path.basename(one_file.dirname)
         obj = CommandLoader(args=['aunpack'] + au_flags \
-                + [f.path for f in copied_files], descr=descr)
+                + [f.path for f in copied_files], descr=descr, read=True)
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
@@ -214,7 +214,7 @@ class compress(Command):
 
         descr = "compressing files in: " + os.path.basename(parts[1])
         obj = CommandLoader(args=['apack'] + au_flags + \
-                [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr)
+                [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr, read=True)
 
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)

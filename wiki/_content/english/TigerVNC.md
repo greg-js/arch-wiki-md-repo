@@ -19,8 +19,9 @@ Related articles
         *   [2.2.1 User mode](#User_mode)
         *   [2.2.2 System mode](#System_mode)
         *   [2.2.3 Multi-user mode](#Multi-user_mode)
-*   [3 Running vncserver to directly control the local display](#Running_vncserver_to_directly_control_the_local_display)
-    *   [3.1 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
+*   [3 Running x0vncserver to directly control the local display](#Running_x0vncserver_to_directly_control_the_local_display)
+    *   [3.1 Starting x0vncserver via xprofile](#Starting_x0vncserver_via_xprofile)
+    *   [3.2 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
 *   [4 Connecting to vncserver](#Connecting_to_vncserver)
     *   [4.1 Passwordless authentication](#Passwordless_authentication)
     *   [4.2 Example GUI-based clients](#Example_GUI-based_clients)
@@ -49,14 +50,16 @@ Related articles
 
 Two VNC servers are available with TigerVNC:
 
-1.  *Xvnc* is the default and recommended server for TigerVNC. It is both a VNC server and an X server with a virtual framebuffer. This means it is similar to the standard X server but has a virtual screen rather than a physical one. The virtual server runs in parallel with the physical X server should one be running. See [Xvnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xvnc.1) for the manual. *vncserver* is a wrapper script which eases the starting of *Xvnc*, see [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1).
-2.  *x0vncserver* provides direct control of the local X session(s) which are running on the physical monitor. It continuously polls the X display which is a simple but inefficient implementation. See [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1) for the manual.
+1.  *Xvnc* is the default and recommended server for TigerVNC. It is both a VNC server and an X server with a virtual framebuffer. This means it is similar to the standard X server but has a virtual screen rather than a physical one. The virtual server runs in parallel with the physical X server should one be running. *vncserver* is a wrapper script which eases the starting of *Xvnc*. See [#Running vncserver for virtual (headless) sessions](#Running_vncserver_for_virtual_(headless)_sessions) for more information.
+2.  *x0vncserver* provides direct control of the local X session(s) which are running on the physical monitor. It continuously polls the X display which is a simple but inefficient implementation. See [#Running x0vncserver to directly control the local display](#Running_x0vncserver_to_directly_control_the_local_display) for more information.
+
+TigerVNC also provides *vncviewer* which is a client viewer for VNC.
 
 ## Running vncserver for virtual (headless) sessions
 
 ### Create environment, config, and password files
 
-The first time *vncserver* is run, it creates its initial environment, config, and user password file. These will be stored in `~/.vnc` which will be created if not present.
+The first time *vncserver* is run, it creates its initial environment, config, and user password file. These will be stored in `~/.vnc` which will be created if not present. See [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1) for the complete manual.
 
  `$ vncserver` 
 ```
@@ -65,15 +68,15 @@ You will require a password to access your desktops.
 Password:
 Verify:
 
-New 'mars:1 (facade)' desktop is mars:1
+New 'mycomputer:1 (theusername)' desktop is mycomputer:1
 
 Creating default startup script /home/theusername/.vnc/xstartup
 Starting applications specified in /home/theusername/.vnc/xstartup
-Log file is /home/theusername/.vnc/mars:1.log
+Log file is /home/theusername/.vnc/mycomputer:1.log
 
 ```
 
-Note the `:1` trailing the hostname. This indicates the TCP port number on which the virtual vncserver is running. In this case, `:1` is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in `:2` as above.
+Note the `:1` trailing the hostname in the output messages of the script. This indicates the TCP port number on which the virtual VNC server is running. In this case, `:1` is actually TCP port 5901 (5900+1). Running `vncserver` a second time will create a second instance running on the next highest, free port, i.e 5902 (5900+2) which shall end in `:2` as above.
 
 **Note:** Linux systems can have as many VNC servers as memory allows, all of which will be running in parallel to each other.
 
@@ -81,6 +84,13 @@ To shutdown the just created VNC server, use the `-kill` switch:
 
 ```
 $ vncserver -kill :1
+
+```
+
+If at any stage one needs to change the previously defined password, the *vncpasswd* tool can be called:
+
+```
+$ vncpasswd
 
 ```
 
@@ -120,17 +130,17 @@ alwaysshared
 
 ### Starting and stopping vncserver via systemd
 
-*Systemd* can manage the vncserver via a service in one of two modes using either a user or system service. Both are presented below.
+*Systemd* can manage the vncserver by either running it in system or in user mode. Both ways are presented below.
 
 #### User mode
 
-[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service `vncserver@:1.service` in [Systemd/User](/index.php/Systemd/User "Systemd/User") mode, i.e. with the `--user` parameter.
+The user mode is the most straightforward way to run the VNC server as a service. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `vncserver@:1.service` in [Systemd/User](/index.php/Systemd/User "Systemd/User") mode, i.e. with the `--user` parameter. The `:1` option can be replaced by another display number, it is the increment over 5900 the VNC server listens to. In the previous example, one connects to the server through port 5901.
 
 **Note:** The vncserver will get killed when the user logs off the machine, see [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User") for related configuration.
 
 #### System mode
 
-Create `/etc/systemd/system/vncserver@*:1*.service`, where `:1` is the 5900 port increment (5900 + 1) to which the VNC server will be listening for connections (e.g `vncserver@:5.service` means the server will be listening to port 5905). Edit the service unit by defining the user (`User=`) to run the server, and the desired [Vncserver](/index.php/Vncserver "Vncserver") options.
+Create `/etc/systemd/system/vncserver@*:1*.service`. As in user mode above, `:1` is the port increment over 5900 to which the VNC server will be listening for connections (e.g `vncserver@:5.service` means the server will be listening to port 5905). Edit the service unit by defining the user (`User=`) to run the server, and the desired *vncserver* options.
 
  `/etc/systemd/system/vncserver@*:1*.service` 
 ```
@@ -198,9 +208,9 @@ If the VNC server is exposed to the internet, add the `-localhost` option to `Xv
 vncconfig -nowin &
 ```
 
-## Running vncserver to directly control the local display
+## Running x0vncserver to directly control the local display
 
-As mentioned in [#Installation](#Installation), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
+As mentioned in [#Installation](#Installation), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. After defining a session password using the *vncpasswd* tool, invoke the server like so:
 
 ```
 $ x0vncserver -rfbauth ~/.vnc/passwd
@@ -209,11 +219,21 @@ $ x0vncserver -rfbauth ~/.vnc/passwd
 
 For more information, see [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1).
 
-**Tip:** Another option is to use the [x11vnc](/index.php/X11vnc "X11vnc") VNC server which also provides direct control of the current X session, note that *x11vnc* requires *root* privilege to initiate the access.
+**Tip:** An alternative is to use the [x11vnc](/index.php/X11vnc "X11vnc") VNC server which also provides direct control of the current X session, note that *x11vnc* requires *root* privilege to initiate the access.
+
+### Starting x0vncserver via xprofile
+
+A simple way to start *x0vncserver* is adding a line in one of the [xprofile](/index.php/Xprofile "Xprofile") files such as:
+
+ `~/.xprofile` 
+```
+...
+x0vncserver -rfbauth ~/.vnc/passwd &
+```
 
 ### Starting and stopping x0vncserver via systemd
 
-In order to have a VNC Server running x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, create a systemd unit as follows replacing the user and the options with the desired ones:
+In order to have a VNC Server running *x0vncserver*, which is the easiest way for most users to quickly have remote access to the current desktop, create a systemd unit as follows replacing the user and the options with the desired ones:
 
  `~/.config/systemd/user/x0vncserver.service` 
 ```
@@ -224,7 +244,7 @@ Description=Remote desktop service (VNC)
 Type=simple
 # wait for Xorg started by ${USER}
 ExecStartPre=/bin/sh -c 'while ! pgrep -U "$USER" Xorg; do sleep 2; done'
-ExecStart=/usr/bin/x0vncserver -rfbauth /home/${USER}/.vnc/passwd
+ExecStart=/usr/bin/x0vncserver -rfbauth %h/.vnc/passwd
 # or login with your username & password
 #ExecStart=/usr/bin/x0vncserver -PAMService=login -PlainUsers=${USER} -SecurityTypes=TLSPlain
 
@@ -242,7 +262,9 @@ WantedBy=default.target
 
 ## Connecting to vncserver
 
-**Warning:** It is ill-advised to connect insecurely to a vncserver outside of a trusted LAN. Note that TigerVNC is encrypted by default unless it is specifically instructed otherwise by setting `SecurityTypes` to a non-secure option, although this lacks identity verification and will not prevent man-in-the-middle attack during the connection setup. *X509Vnc* is the recommended option for a secure connection.
+**Warning:** The default's TigerVNC security method is not secure, it lacks identity verification and will not prevent man-in-the-middle attack during the connection setup. Make sure you understand the security settings of your server and do not connect insecurely to a vncserver outside of a trusted LAN.
+
+**Note:** By default, TigerVNC uses the *TLSVnc* authentication/encryption method unless specifically instructed via the `SecurityTypes` parameter. With *TLSVnc*, there is standard VNC authentication and traffic is encrypted with GNUTLS but the identity of the server is not verified. TigerVNC supports alternative security schemes such as *X509Vnc* that combines standard VNC authentication with GNUTLS encryption and server identification, this is the recommended mode for a secure connection. When `SecurityTypes` on the server is set to a non-encrypted option as high-priority (such as *None*, *VncAuth*, *Plain*, *TLSNone*, *TLSPlain*, *X509None*, *X509Plain*); which is ill-advised, then it is not possible to use encryption. When running *vncviewer*, it is safer to explicitly set `SecurityTypes` and not accept any unencrypted traffic. Any other mode is to be used only when [#Accessing vncserver via SSH tunnels](#Accessing_vncserver_via_SSH_tunnels).
 
 Any number of clients can connect to a vncserver. A simple example is given below where vncserver is running on 10.1.10.2 port 5901, or :1 in shorthand notation:
 
@@ -281,50 +303,54 @@ $ vncviewer
 
 For servers offering SSH connection, an advantage of this method is that it is not necessary to open any other port than the already opened SSH port to the outside, since the VNC traffic is tunneled through the SSH port.
 
-**Note:** TigerVNC uses *TLSVnc* encryption by default, unless specifically instructed via the `SecurityTypes` parameter. Authentication and traffic is encrypted, but there is no identity verification. TigerVNC supports alternative encryption schemes such as *X509Vnc* that allows the client to verify the identity of the server. When `SecurityTypes` on the server is set to a non-secure option as high-priority (such as *None*, *VncAuth*, *Plain*, *TLSNone*, *TLSPlain*, *X509None*, *X509Plain*); which is ill-advised, then it is not possible to use encryption. In that case, one can tunnel over SSH. When running *vncviewer*, it is safer to explicitly set `SecurityTypes` and not accept any unencrypted traffic.
-
 ### On the server
 
-On the server side, *vncserver* must be run. It is recommended to use the `-localhost` switch when running *vncserver* this way since it allows connections from the localhost only and by analogy, only from users ssh'ed and authenticated on the box. For example run a command such as:
+On the server side, *vncserver* or *x0vncserver* must be run.
+
+When running *vncserver*, it is recommended to use the `-localhost` switch way since it allows connections from the localhost only and by analogy, only from users ssh'ed and authenticated on the box. For example run a command such as:
 
 ```
 $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 **-localhost** :1
 
 ```
 
+For *x0vncserver*, this `-localhost` switch is not available but a workaround is to use the `-HostsFile` option and create the below file that will be provided as a parameter:
+
+ `~/.vnc/hostsfile` 
+```
++127.0.0.1
++::1
+-
+```
+
+It will only accept connection from localhost in IPv4 or IPv6 address standard.
+
+The corresponding command is:
+
+```
+$ x0vncserver -HostsFile ~/.vnc/hostsfile -SecurityTypes none
+
+```
+
 ### On the client
 
-The VNC server has been setup on the remote machine to only accept local connections. Now, the client must open a secure shell with the remote machine (10.1.10.2 in this example) and create a tunnel from the client port 5901 to the remote server 5901 port. For more details on this feature, see [OpenSSH#Forwarding other ports](/index.php/OpenSSH#Forwarding_other_ports "OpenSSH") and [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1).
+The VNC server has been setup on the remote machine to only accept local connections. Now, the client must open a secure shell with the remote machine (10.1.10.2 in this example) and create a tunnel from the client port, for instance 9901, to the remote server 5901 port. For more details on this feature, see [OpenSSH#Forwarding other ports](/index.php/OpenSSH#Forwarding_other_ports "OpenSSH") and [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1).
 
 ```
-$ ssh 10.1.10.2 -L 5901:localhost:5901
-
-```
-
-Note that the port number on the server and the one on the client do not need to match. For example to forward the client port 8900 to the server port 5901:
-
-```
-$ ssh 10.1.10.2 -L 8900:localhost:5901
+$ ssh 10.1.10.2 -L 9901:localhost:5901
 
 ```
 
 Once connected via SSH, leave this shell window open since it is acting as the secured tunnel with the server. Alternatively, directly run SSH in the background using the `-f` option. On the client side, to connect via this encrypted tunnel, point the *vncviewer* to the forwarded client port on the localhost.
 
-In the matched ports scenario, using the local port 5901 which is forwarded to the same port 5901 on the server:
-
 ```
-$ vncviewer localhost:5901
+$ vncviewer localhost:9901
 
 ```
 
-If port numbers are different, for example if the local port 8900 has been forwarded to the server port 5901, connect locally to 8900:
+What happens in practice is that the vncviewer connects locally to port 9901 which is tunneled to the server's localhost port 5901\. The connection is established to the right port within the secure shell.
 
-```
-$ vncviewer localhost:8900
-
-```
-
-What happens in practice is that the vncviewer connects locally to port 8900 which is tunneled to the server's localhost port 5901\. The connection is established to the right port within the secure shell.
+**Tip:** It is possible, with a one-liner, to keep the port forwarding active during the connection and close it right after: `$ ssh -fL 9901:localhost:5901 10.1.10.2 sleep 10; vncviewer localhost:9901` What it does is that the `-f` switch will make ssh go in the background, it will still be alive executing `sleep 10`. vncviewer is then executed and ssh remains open in the background as long as vncviewer makes use of the tunnel. ssh will close once the tunnel is dropped which is the wanted behavior.
 
 ### Connecting to a vncserver from Android devices over SSH
 

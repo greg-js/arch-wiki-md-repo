@@ -286,7 +286,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo Legion Y520 | 2018.11.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested December 2018 / Linux 4.19.12\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
+| Lenovo Legion Y520 | 2019.06.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested June 2019 / Linux 5.1.7\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
 | Lenovo Legion Y520 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 (Yes) | Tested June 2019 / Linux 5.1.5\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Some CPU throttling is possible. See: [[1]](https://unix.stackexchange.com/questions/491944/cpu-temperatures-in-linux-throttling-or-wrong-reading) |
 
 ## Special Notes (*):

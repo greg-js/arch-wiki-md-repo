@@ -1,4 +1,4 @@
-Related articles
+Ссылки по теме
 
 *   [PHC (Русский)](/index.php/PHC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PHC (Русский)")
 *   [CPU frequency scaling (Русский)](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU frequency scaling (Русский)")
@@ -6,11 +6,11 @@ Related articles
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
 *   [Fan speed control (Русский)](/index.php/Fan_speed_control_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fan speed control (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 28 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=567556).
+**Состояние перевода:** На этой странице представлен перевод статьи [Undervolting CPU](/index.php/Undervolting_CPU "Undervolting CPU"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Undervolting_CPU&diff=0&oldid=574612).
 
-Понижение напряжения (даунвольтинг/андервольтинг) — это динамический процесс снижения напряжения процессора и других компонентов во время их работы. Он позволяет динамически масштабировать напряжение устройств для снижения энергопотребления, уменьшения тепловыделения и экономии заряда батареи, не влияя на их производительность.
+Понижение напряжения ("даунвольтинг" или "андервольтинг") — процесс, который позволяет уменьшить энергопотребление и тепловыделение, не влияя на производительность системы. Обратите внимание, что в большинстве материнских плат ПК настроить напряжение процессора можно также и в BIOS.
 
-**Важно:** Неправильная настройка напряжения и/или температуры процессора могут вызвать полный отказ оборудования. Вас предупредили!
+**Важно:** Неправильная настройка напряжения процессора может вызвать полный отказ оборудования. Вас предупредили!
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -28,19 +28,19 @@ Related articles
 
 ## Описание
 
-*   [PHC (Русский)](/index.php/PHC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PHC (Русский)") — утилита для андервольтинга некоторых старых поколений процессоров Intel и AMD. **Не** совместимо с [драйвером управления частотой процессора](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Драйвер_управления_частотой_процессора "CPU frequency scaling (Русский)") `intel_pstate`.
-*   [#intel-undervolt](#intel-undervolt) — утилита для андервольтинга процессоров Intel Haswell и выше с помощью MSR. Совместима с `intel_pstate`.
-*   [#amdctl](#amdctl) — утилита для андервольтинга процессоров AMD K10 и выше.
+*   [PHC (Русский)](/index.php/PHC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PHC (Русский)") — утилита для уменьшения напряжения некоторых старых поколений процессоров Intel и AMD. **Не** совместимо с [драйвером управления частотой процессора](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Драйвер_управления_частотой_процессора "CPU frequency scaling (Русский)") `intel_pstate`.
+*   [#intel-undervolt](#intel-undervolt) — утилита для уменьшения напряжения процессоров Intel Haswell и выше с помощью MSR. Совместима с `intel_pstate`.
+*   [#amdctl](#amdctl) — утилита для уменьшения напряжения процессоров AMD K10 и выше.
 
 ## Утилиты
 
 ### intel-undervolt
 
-[Intel-undervolt](https://github.com/kitsunyan/intel-undervolt) — утилита, основанная на данной [статье](https://github.com/mihic/linux-intel-undervolt) для андервольтинга процессоров Intel Haswell и выше, используя [MSR](https://en.wikipedia.org/wiki/ru:%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D1%8B%D0%B5_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D1%8B "wikipedia:ru:Моделезависимые регистры") и регистры MCHBAR. Кроме того, она позволяет изменять лимиты мощности и температуры.
+[Intel-undervolt](https://github.com/kitsunyan/intel-undervolt) — утилита, основанная на данной [статье](https://github.com/mihic/linux-intel-undervolt) для уменьшения напряжения процессоров Intel Haswell и выше, используя [MSR](https://en.wikipedia.org/wiki/ru:%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D1%8B%D0%B5_%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D1%8B "wikipedia:ru:Моделезависимые регистры") и регистры MCHBAR. Кроме того, она позволяет изменять лимиты мощности и температуры.
 
 #### Установка
 
-Данная утилита может быть установлена с помощью пакета [intel-undervolt](https://aur.archlinux.org/packages/intel-undervolt/) из AUR.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [intel-undervolt](https://aur.archlinux.org/packages/intel-undervolt/).
 
 #### Настройка и использование
 
@@ -51,7 +51,7 @@ Related articles
 
 ```
 
-Теперь отредактируйте конфигурационный файл `/etc/intel-undervolt.conf`. Пример конфигурационного файла с даунвольтингом кэша процессора на -100mV:
+Теперь отредактируйте конфигурационный файл `/etc/intel-undervolt.conf`. Пример конфигурационного файла с уменьшением напряжения кэша процессора на -100mV:
 
 **Примечание:** Судя по всему, значения 'CPU' и 'GPU' не имеют никакого эффекта (во всяком случае, на ноутбуке [ASUS Zenbook UX430UQ](/index.php/ASUS_Zenbook_UX430UQ "ASUS Zenbook UX430UQ")).
  `/etc/intel-undervolt.conf` 
@@ -73,7 +73,7 @@ apply 4 'Analog I/O' 0
 
 ```
 
-Выводом будет *Success*, если настройка была применена. Вы можете дважды проверить *текущую* конфигурацию, используя следующую команду:
+Если настройка была применена, утилита выведет *Success*. Вы можете дважды проверить *текущую* конфигурацию, используя следующую команду:
 
 ```
 # intel-undervolt read
@@ -88,4 +88,4 @@ apply 4 'Analog I/O' 0
 
 #### Установка
 
-Данная утилита может быть установлена с помощью пакета [amdctl-git](https://aur.archlinux.org/packages/amdctl-git/) из AUR.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [amdctl-git](https://aur.archlinux.org/packages/amdctl-git/).

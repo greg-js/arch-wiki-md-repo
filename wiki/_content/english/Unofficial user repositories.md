@@ -686,7 +686,7 @@ See [/Repo-ck](/index.php/Unofficial_user_repositories/Repo-ck "Unofficial user 
 ### seblu
 
 *   **Maintainer:** [Sébastien Luttringer](https://www.archlinux.org/people/developers/#seblu)
-*   **Description:** All seblu useful pre-built packages, some homemade (linux-seblu-meta, virtualbox-ext-oracle, spotify, masterpdfeditor, yaourt, zfs-dkms, etc).
+*   **Description:** All seblu useful pre-built packages, some homemade (linux-seblu-meta, zfs-dkms, spotify, masterpdfeditor, etc).
 *   **Key-ID:** Not required, as maintainer is a Developer
 
 ```

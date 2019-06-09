@@ -8,7 +8,7 @@ Related articles
 *   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 *   [WireGuard](/index.php/WireGuard "WireGuard")
 
-[Pi-hole](https://pi-hole.net/) is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole "wikipedia:DNS sinkhole") that compiles a blocklist of domains known to host advertisements and malware from multiple third-party sources. Pi-hole uses [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to seamlessly drop any and all requests for domains in its blocklist. Running it effectively deploys network-wide ad-blocking without the need to configure individual clients. The package comes with a web and a CLI interface.
+[Pi-hole](https://pi-hole.net/) project is a [DNS sinkhole](https://en.wikipedia.org/wiki/DNS_sinkhole "wikipedia:DNS sinkhole") that compiles a blocklist of domains from multiple third-party sources. Pi-hole uses [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) ([dnsmasq](/index.php/Dnsmasq "Dnsmasq") fork) to seamlessly drop any and all requests for domains in its blocklist. Running it effectively deploys network-wide ad-blocking without the need to configure individual clients. The package comes with an optional web and a CLI interfaces.
 
 **Note:** Pi-hole on Arch Linux is not officially supported by the Pi-hole project.
 
@@ -25,32 +25,34 @@ Related articles
         *   [2.2.1 FTL](#FTL)
         *   [2.2.2 Web interface](#Web_interface)
             *   [2.2.2.1 Set-up PHP](#Set-up_PHP)
-            *   [2.2.2.2 Set-up web server](#Set-up_web_server)
-                *   [2.2.2.2.1 Lighttpd](#Lighttpd)
-                *   [2.2.2.2.2 Nginx](#Nginx)
-            *   [2.2.2.3 Protect with password](#Protect_with_password)
+            *   [2.2.2.2 Set-up lighttpd](#Set-up_lighttpd)
         *   [2.2.3 Update hosts file](#Update_hosts_file)
     *   [2.3 Making devices use Pi-hole](#Making_devices_use_Pi-hole)
 *   [3 Pi-hole standalone](#Pi-hole_standalone)
     *   [3.1 Installation](#Installation_2)
     *   [3.2 Configuration](#Configuration_2)
-        *   [3.2.1 FTL](#FTL_2)
-        *   [3.2.2 Configuring host name resolution](#Configuring_host_name_resolution)
-            *   [3.2.2.1 Manually](#Manually)
-            *   [3.2.2.2 Openresolve](#Openresolve)
-*   [4 Using Pi-hole](#Using_Pi-hole)
-    *   [4.1 Pi-hole DNS management](#Pi-hole_DNS_management)
-    *   [4.2 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
-    *   [4.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
+        *   [3.2.1 Timer](#Timer)
+        *   [3.2.2 FTL](#FTL_2)
+    *   [3.3 Usage](#Usage)
+*   [4 Usage](#Usage_2)
+    *   [4.1 Using web interface](#Using_web_interface)
+    *   [4.2 Using CLI](#Using_CLI)
+        *   [4.2.1 Pi-hole DNS management](#Pi-hole_DNS_management)
+        *   [4.2.2 Forced update of ad-serving domains list](#Forced_update_of_ad-serving_domains_list)
+        *   [4.2.3 Temporarily disable Pi-hole](#Temporarily_disable_Pi-hole)
 *   [5 Tips & Tricks](#Tips_&_Tricks)
-    *   [5.1 Cloudflared DNS service](#Cloudflared_DNS_service)
-    *   [5.2 Use with VPN server](#Use_with_VPN_server)
-        *   [5.2.1 OpenVPN](#OpenVPN)
-        *   [5.2.2 WireGuard](#WireGuard)
-    *   [5.3 Additional blocklists](#Additional_blocklists)
+    *   [5.1 Password-protected web interface](#Password-protected_web_interface)
+    *   [5.2 Cloudflared DOH](#Cloudflared_DOH)
+    *   [5.3 Minimise disk writes](#Minimise_disk_writes)
+    *   [5.4 Use with VPN server](#Use_with_VPN_server)
+        *   [5.4.1 OpenVPN](#OpenVPN)
+        *   [5.4.2 WireGuard](#WireGuard)
+    *   [5.5 Nginx instead of Lighttpd](#Nginx_instead_of_Lighttpd)
+    *   [5.6 Additional blocklists](#Additional_blocklists)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Data loss on reboot](#Data_loss_on_reboot)
     *   [6.2 Failed to start Pi-hole FTLDNS engine](#Failed_to_start_Pi-hole_FTLDNS_engine)
+    *   [6.3 DNSMasq package conflict](#DNSMasq_package_conflict)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -70,18 +72,12 @@ There are 2 versions of Pi-Hole available for Arch Linux:
 
 #### FTL
 
-The [Pi-hole FTL engine](https://github.com/pi-hole/FTL) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) is a dependency of the Pi-hole main project.
-
-FTL is a DNS resolver/forwarder and a database-like wrapper/API that provides long-term storage of requests which users can query through the "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
+It is a DNS resolver/forwarder and a database-like wrapper/API that provides long-term storage of requests which users can query through the "long-term data" section of the WebGUI. Data are collected and stored in two places:
 
 1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
 2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
 
-`pihole-FTL.service` is statically enabled; re/start it. See the [official documentation](https://docs.pi-hole.net/ftldns/configfile/) to configure FTL.
-
-**Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least `60.0` to minimize writes to the database.
-
-**Note:** Since Pi-hole-FTL 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files, just ensure that `conf-dir=/etc/dnsmasq.d/,*.conf` in the original `/etc/dnsmasq.conf` is not commented out.
+`pihole-FTL.service` is statically enabled; re/start it. For FTL configuration, see [upstream documentation](https://docs.pi-hole.net/ftldns/configfile/).
 
 #### Web interface
 
@@ -121,11 +117,9 @@ For security reasons, one can optionally populate the [PHP open_basedir](/index.
 
 ```
 
-##### Set-up web server
+##### Set-up lighttpd
 
-Example config files that work out-of-the-box are provided for both [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [nginx](https://www.archlinux.org/packages/?name=nginx). Other web servers can also be used, but are currently unsupported.
-
-###### Lighttpd
+**Tip:** You can use Nginx web server instead. See [#Nginx_instead_of_Lighttpd](#Nginx_instead_of_Lighttpd).
 
 [Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
@@ -137,49 +131,6 @@ Copy the package provided default config for Pi-hole:
 ```
 
 [Enable](/index.php/Enable "Enable") `lighttpd.service` and re/start it.
-
-###### Nginx
-
-[Install](/index.php/Install "Install") [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
-
-Edit `/etc/php/php-fpm.d/www.conf` and change the listen directive to the following:
-
-```
-listen = 127.0.0.1:9000  
-
-```
-
-Modify `/etc/nginx/nginx.conf` to contain the following in the **http** section:
-
-```
-gzip            on;
-gzip_min_length 1000;
-gzip_proxied    expired no-cache no-store private auth;
-gzip_types      text/plain application/xml application/json application/javascript application/octet-stream text/css;
-include /etc/nginx/conf.d/*.conf;
-
-```
-
-Copy the package provided default config for Pi-hole:
-
-```
-# mkdir /etc/nginx/conf.d
-# cp /usr/share/pihole/configs/nginx.example.conf /etc/nginx/conf.d/pihole.conf
-
-```
-
-[Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
-
-##### Protect with password
-
-Optionally, you might want to password-protect the Pi-hole web interface. Run the following command and enter your password:
-
-```
-pihole -a -p
-
-```
-
-To disable the password protection, set a blank password.
 
 #### Update hosts file
 
@@ -204,69 +155,41 @@ To use Pi-Hole, make sure that your devices use Pi-Hole's IP address as their on
 
 More information about making other devices use Pi-Hole can be found at [upstream documentation](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi-hole-as-their-dns-server/245).
 
+**Tip:** Pi-Hole hosting device can also make use of Pi-Hole. Just change DNS settings to only IP address `127.0.0.1`.
+
 ## Pi-hole standalone
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package. The Pi-hole standalone package install a statically enabled timer (and relative service) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it. You need to manually start `pi-hole-gravity.timer` or simply reboot after your configuration is finished.
+[Install](/index.php/Install "Install") the [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) package.
 
 ### Configuration
 
+#### Timer
+
+The Pi-hole standalone package install a statically enabled timer (and relative service) will weekly update Pi-hole blacklisted servers list. If you do not like default timer timings (from upstrem project) you can, of course, [edit](/index.php/Edit "Edit") it or preventing from being executed by [masking](/index.php/Systemd#Using_units "Systemd") it. You need to manually start `pi-hole-gravity.timer` or simply reboot after your configuration is finished.
+
 #### FTL
 
-Pi-hole-standalone now uses FTL as hostnames resolver. Since Pi-hole 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files.
+See [#FTL](#FTL).
 
-Ensure that the following line in `/etc/dnsmasq.conf` is uncommented:
+### Usage
 
-```
-conf-dir=/etc/dnsmasq.d/,*.conf
+Change the computer's network settings so the only DNS server in use is `127.0.0.1`.
 
-```
+## Usage
 
-If you do not have `/etc/dnsmasq.conf` file at all, you can use the example conf file within the package (`/usr/share/pihole/configs/dnsmasq.example.conf`) that will work out of box.
+Both standalone and server versions can be controlled via CLI, but only server version can be controlled via web interface.
 
-`pihole-FTL.service` is statically enabled; re/start it.
+**Note:** Web interface is so powerful that you don't need CLI at all.
 
-#### Configuring host name resolution
+### Using web interface
 
-The Pi-hole standalone package to work properly requires that a unique DNS is set on your machine. That DNS address need to be your machine itself. This can be done in several ways.
+Go to [pi.hole](http://pi.hole/admin/) or `<Pi-Hole IP address>/admin/` to access web interface.
 
-##### Manually
+### Using CLI
 
-If no service on your machine automatically handles the `/etc/resolv.conf` file, you can easily edit it to insert the following **unique** item `nameserver`:
-
- `/etc/resolv.conf` 
-```
-[...]
-nameserver 127.0.0.1
-
-```
-
-**Note:** No other `nameserver` items need to be present in the config file.
-
-##### Openresolve
-
-It is likely that is the [openresolv](https://www.archlinux.org/packages/?name=openresolv) service to handle `/etc/resolv.conf` if you use a network connection manager such as [netctl](/index.php/Netctl "Netctl") or [NetworkManager](/index.php/NetworkManager "NetworkManager"). If it is your case, you must force [openresolv](https://www.archlinux.org/packages/?name=openresolv) to use **localhost** as name server.
-Edit `/etc/resolvconf.conf` to uncomment the name_servers line:
-
- `/etc/resolvconf.conf` 
-```
-[...]
-name_servers=127.0.0.1
-```
-
-and update resolvconf:
-
-```
-# resolvconf -u
-
-```
-
-## Using Pi-hole
-
-As previously mentioned, Pi-hole offers the ability to be configured and used both through the command line and through its web interface (server package only).
-
-### Pi-hole DNS management
+#### Pi-hole DNS management
 
 By default Pi-hole uses the Google DNS server. You can change which DNS servers Pi-hole uses with:
 
@@ -277,9 +200,7 @@ $ pihole -a setdns *server*
 
 You can specify multiple DNS servers by separating their addresses with commas.
 
-For server package only, you can manage this via web interface ([http://pi.hole](http://pi.hole)) going to *Settings* and adding desired DNS servers in *Upstream DNS Servers* section. *Save* to apply changes.
-
-### Forced update of ad-serving domains list
+#### Forced update of ad-serving domains list
 
 If you need to update the blocked domain list, on the machine running Pi-hole you can execute
 
@@ -288,11 +209,9 @@ $ pihole -g
 
 ```
 
-or, server package only, via web interface ([http://pi.hole](http://pi.hole)) go to *Tools/Update Lists* and execute *Update Lists*.
+#### Temporarily disable Pi-hole
 
-### Temporarily disable Pi-hole
-
-Pi-hole can be easily paused through its web interface ([http://pi.hole](http://pi.hole)): go to *Disable* and choose the suspension option that best suits your case. It is possible via CLI too by executing
+Pi-hole can be paused via CLI by executing:
 
 ```
 $ pihole disable [time]
@@ -313,11 +232,20 @@ $ pihole enable
 
 ```
 
-or, via web interface, clicking on *Enable*.
-
 ## Tips & Tricks
 
-### Cloudflared DNS service
+### Password-protected web interface
+
+You might want to password-protect the Pi-hole web interface. Run the following command and enter your password:
+
+```
+pihole -a -p
+
+```
+
+To disable the password protection, set a blank password.
+
+### Cloudflared DOH
 
 Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
 
@@ -331,11 +259,31 @@ proxy-dns-upstream:
  - https://2606:4700:4700::1001/dns-query
 proxy-dns-port: 5053
 proxy-dns-address: 0.0.0.0
-logfile: /var/log/cloudflared.log
 
 ```
 
 Then [start and enable](/index.php/Start/enable "Start/enable") `cloudflared@cloudflared.service`. Now you can use `127.0.0.1#5053` as a DNS server in Pi-Hole.
+
+### Minimise disk writes
+
+If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (SD card, SSD etc..) it is recommended to uncomment the `DBINTERVAL` value and change it to at least `60.0` to minimize writes to the database:
+
+ `/etc/pihole/pihole-FTL.conf` 
+```
+
+...
+
+## Database Interval
+## How often do we store queries in FTL's database -minutes-?
+## See: https://docs.pi-hole.net/ftldns/database/
+## Options: number of minutes
+DBINTERVAL=60.0
+
+...
+
+```
+
+After changes have been performed, [restart](/index.php/Restart "Restart") `pihole-FTL.service`.
 
 ### Use with VPN server
 
@@ -371,6 +319,40 @@ DNS = *Pi-Hole-IP*
 
 See more information in [WireGuard#Client config](/index.php/WireGuard#Client_config "WireGuard").
 
+### Nginx instead of Lighttpd
+
+This is [unofficial, community-supported configuration](https://docs.pi-hole.net/guides/nginx-configuration/). Make sure that PHP is set-up (see [#Set-up_PHP](#Set-up_PHP)) and lighttpd server is inactive.
+
+[Install](/index.php/Install "Install") [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
+
+Edit `/etc/php/php-fpm.d/www.conf` and change the listen directive to the following:
+
+```
+listen = 127.0.0.1:9000  
+
+```
+
+Modify `/etc/nginx/nginx.conf` to contain the following in the **http** section:
+
+```
+gzip            on;
+gzip_min_length 1000;
+gzip_proxied    expired no-cache no-store private auth;
+gzip_types      text/plain application/xml application/json application/javascript application/octet-stream text/css;
+include /etc/nginx/conf.d/*.conf;
+
+```
+
+Copy the package provided default config for Pi-hole:
+
+```
+# mkdir /etc/nginx/conf.d
+# cp /usr/share/pihole/configs/nginx.example.conf /etc/nginx/conf.d/pihole.conf
+
+```
+
+[Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
+
 ### Additional blocklists
 
 Pi-Hole was intended to block ads, but it can also be used to block other unwanted content:
@@ -398,6 +380,10 @@ For devices lacking a [RTC](/index.php/RTC "RTC"): A hacky work-around for this 
 ### Failed to start Pi-hole FTLDNS engine
 
 It might be that `systemd-resolved.service` already occupied port 53, which is required for `pihole-FTL.service`. To resolve this, [disable](/index.php/Disable "Disable") `systemd-resolved.service` and [restart](/index.php/Restart "Restart") `pihole-FTL.service`.
+
+### DNSMasq package conflict
+
+Since Pi-hole-FTL 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files, just ensure that `conf-dir=/etc/dnsmasq.d/,*.conf` in the original `/etc/dnsmasq.conf` is not commented out.
 
 ## See also
 

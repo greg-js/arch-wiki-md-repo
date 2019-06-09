@@ -19,7 +19,7 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
     *   [1.2 Additional step, Wi-Fi Driver (RTL8189ES/ETV)](#Additional_step,_Wi-Fi_Driver_(RTL8189ES/ETV))
 *   [2 Orange Pi PC2](#Orange_Pi_PC2)
     *   [2.1 UBoot](#UBoot)
-    *   [2.2 Kernel](#Kernel)
+    *   [2.2 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card_2)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -95,7 +95,7 @@ The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc]
 ```
 $ git clone [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
 $ cd u-boot
-$ git checkout tags/v2018.07
+$ git checkout tags/v2019.04
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- orangepi_one_defconfig
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
 
@@ -179,50 +179,20 @@ Follow general installation instruction above. Differences:
 # make CROSS_COMPILE=aarch64-linux-gnu- PLAT=sun50i_a64 DEBUG=1 -j4 bl31
 # cp build/sun50i_a64/debug/bl31.bin ../u-boot/
 # cd ../u-boot
-# git checkout v2018.11
+# git checkout tags/v2019.04
 # make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- -j4 orangepi_pc2_defconfig
 # make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- -j4
 # dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=8k seek=1
 
 ```
 
-### Kernel
+### Install basesystem to a SD card
 
 For AARCH64 you'll need another rootfs
 
 ```
 # wget [http://archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz)
 # bsdtar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C mnt/
-
-```
-
-You need to compile your own kernel. Download latest mainline release from:
-
-```
-[https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/)
-
-```
-
-or fetch this kernel repository with new patches already included:
-
-```
-git clone [https://github.com/megous/linux.git](https://github.com/megous/linux.git)
-
-```
-
-```
-# cd linux
-
-```
-
-Here is a basic config file to start with:
-
-```
-# wget [https://github.com/armbian/build/raw/master/config/kernel/linux-sunxi-next.config](https://github.com/armbian/build/raw/master/config/kernel/linux-sunxi-next.config) -O .config
-# make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j4
-# make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=/mnt  -j4 modules_install
-# cp arch/arm64/boot/Image /mnt/boot
-# cp arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dtb /mnt/boot/dtbs/allwinner/sun50i-h5-orangepi-pc2.dtb
 
 ```
 

@@ -4,7 +4,11 @@ Related articles
 
 [dmenu](http://tools.suckless.org/dmenu) is a fast and lightweight dynamic menu for X. It reads arbitrary text from stdin, and creates a menu with one item for each line. The user can then select an item, through the arrow keys or typing a part of the name, and the line is printed to stdout. dmenu_run is a wrapper that ships with the dmenu distribution that allows its use as an application launcher.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -16,6 +20,7 @@ Related articles
     *   [3.1 No locale support](#No_locale_support)
     *   [3.2 Missing menu entries](#Missing_menu_entries)
     *   [3.3 Environmental Variables](#Environmental_Variables)
+    *   [3.4 Current window loses focus](#Current_window_loses_focus)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -101,6 +106,10 @@ Note that there will most likely be only one cache file, depending on if `$XDG_C
 ### Environmental Variables
 
 Environmental variables needed for applications should instead be added to `/etc/environment`.
+
+### Current window loses focus
+
+A [bug](https://git.suckless.org/dmenu/commit/db6093f6ec1bb884f7540f2512935b5254750b30.html) in dmenu 4.9 causes the current window to lose focus when dmenu is opened and to not regain focus when it is closed. It can also happen that a newly launched program is does not gain focus. You can fix this by downgrading to dmenu 4.8\. See [this](https://github.com/i3/i3/issues/3528) ticket for a discussion.
 
 ## See also
 

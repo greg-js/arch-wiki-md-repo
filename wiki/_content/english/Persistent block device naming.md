@@ -67,7 +67,7 @@ For those using [GPT](/index.php/GPT "GPT"), use the `blkid` command instead. Th
 
 ### by-label
 
-Almost every [filesystem](/index.php/Filesystem "Filesystem") type can have a label. All your volumes that have one are listed in the `/dev/disk/by-label` directory.
+Almost every [file system type](/index.php/File_systems#Types_of_file_systems "File systems") can have a label. All your volumes that have one are listed in the `/dev/disk/by-label` directory.
 
  `$ ls -l /dev/disk/by-label` 
 ```

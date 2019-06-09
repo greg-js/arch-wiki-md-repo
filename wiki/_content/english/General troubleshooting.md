@@ -284,8 +284,9 @@ You will need a root shell to make changes to the system so the panic no longer 
 **Tip:** See `Documentation/admin-guide/kernel-parameters.txt` in the Linux kernel source tree for all parameters.
 
 *   As a last resort, boot with the **Arch Linux Installation CD** and mount the root filesystem on `/mnt` then execute `# arch-chroot /mnt`.
+*   Disable the service or program that is causing the panic, roll-back a faulty update, or fix a configuration problem.
 
-Disable the service or program that is causing the panic, roll-back a faulty update, or fix a configuration problem.
+**Tip:** It may be necessary to generate a new [initial ramdisk](https://en.wikipedia.org/wiki/Initial_ramdisk "wikipedia:Initial ramdisk") image if the original became corrupted. This can occur when a kernel update is interrupted. For creating a new one, see [mkinitcpio](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 
 ## Package management
 
@@ -293,7 +294,16 @@ See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for gen
 
 ### Fixing a broken system
 
-If you performed a [partial upgrade](/index.php/Partial_upgrade "Partial upgrade"), and the system is broken enough that you are unable to run *pacman*, [boot using a monthly Arch ISO from a USB flash drive, an optical disc or a network with PXE](/index.php/Installation_guide#Pre-installation "Installation guide"). (Don't follow any of the rest of the installation guide.)
+If you performed a [partial upgrade](/index.php/Partial_upgrade "Partial upgrade") that broke things, try updating all packages, and if successful, possibly reboot:
+
+```
+# pacman -Syu
+
+```
+
+If you usually boot into a GUI and that's failing, perhaps you can press `Ctrl+Alt+F1` through `Ctrl+Alt+F6` and get to a working tty to run *pacman* through.
+
+If the system is broken enough that you are unable to run *pacman*, [boot using a monthly Arch ISO from a USB flash drive, an optical disc or a network with PXE](/index.php/Installation_guide#Pre-installation "Installation guide"). (Don't follow any of the rest of the installation guide.)
 
 Mount your root filesystem:
 

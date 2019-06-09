@@ -177,31 +177,24 @@ Press 'w' to write the table to disk and reboot.
 
 ### Bootloader
 
-The next important thing is the bootloader, which acts as the bridge from refind to your kernel. Based on the Mode you use to install arch, either **EFI** or **CSM**, you can choose a bootloader of your choice. But for now, We provide you with information about **Syslinux** and **Gummiboot**, because these are the two we tested successfully for now.
+The next important thing is the bootloader, which acts as the bridge from refind to your kernel. Based on the Mode you use to install arch, either **EFI** or **CSM**, you can choose a bootloader of your choice. But for now, We provide you with information about **Syslinux** and **Systemd-boot**, because these are the two we tested successfully for now.
 
 In both cases I assume that you managed to mount the EFI partition mentioned above to */boot/* already.
 
-Grub is the one bootloader, which can handle both the EFI and the CSM mode. But because it's mighty, it also can be complex and the configuration are far-reaching. I recommending you, unless you want to configure the smallest detail in the bootloader for an **un**forgetting adventure during a booting, to use gummiboot (EFI-only) or syslinux (CSM-only), because both are really easy to setup.
+Grub is the one bootloader, which can handle both the EFI and the CSM mode. But because it's mighty, it also can be complex and the configuration are far-reaching. I recommending you, unless you want to configure the smallest detail in the bootloader for an **un**forgetting adventure during a booting, to use systemd-boot (EFI-only) or syslinux (CSM-only), because both are really easy to setup.
 
 #### EFI-Mode
 
-If you do not need the power and its powersaving feature of the nvidia driver, then you should install [gummiboot](/index.php/Gummiboot "Gummiboot") or [GRUB](/index.php/GRUB "GRUB"), because these bootloaders are the one which actually works fine with EFI.
+If you do not need the power and its powersaving feature of the nvidia driver, then you should install [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [GRUB](/index.php/GRUB "GRUB"), because these bootloaders are the one which actually works fine with EFI.
 
-Here, let's do it with gummiboot:
-
-```
-# pacman -S gummiboot
+Here, let's do it with [systemd-boot](/index.php/Systemd-boot "Systemd-boot"): Next install systemd-boot:
 
 ```
-
-After installing the package, it needs to be configured, so run the installer of gummiboot:
-
-```
-# gummiboot install
+# bootctl --path=esp install
 
 ```
 
-Then you need to create a config file for gummiboot and add an entry for the arch booting. The **sdaX** means that you have to replace it with your root partition, in this case it may be **/dev/sda3**.
+Then you need to create a config file for systemd-boot and add an entry for the arch booting. The **sdaX** means that you have to replace it with your root partition, in this case it may be **/dev/sda3**.
 
  `# nano /boot/loader/entries/arch.conf` 
 ```
@@ -211,7 +204,7 @@ initrd         /initramfs-linux.img
 options        root=**/dev/sdaX** rw
 ```
 
-As usual, for more information on configuring and using gummiboot, see [gummiboot](/index.php/Gummiboot "Gummiboot").
+As usual, for more information on configuring and using systemd-boot, see [Systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 #### CSM-Mode or BIOS-compatibility
 

@@ -38,7 +38,7 @@ A good number of new packages that enter the official repositories start in the 
     *   [5.1 Submitting packages](#Submitting_packages)
         *   [5.1.1 Rules of submission](#Rules_of_submission)
         *   [5.1.2 Authentication](#Authentication)
-        *   [5.1.3 Creating package repositories](#Creating_package_repositories)
+        *   [5.1.3 Creating or adopting package repositories](#Creating_or_adopting_package_repositories)
         *   [5.1.4 Publishing new package content](#Publishing_new_package_content)
     *   [5.2 Maintaining packages](#Maintaining_packages)
     *   [5.3 Other requests](#Other_requests)
@@ -52,7 +52,7 @@ A good number of new packages that enter the official repositories start in the 
     *   [8.1 What is the AUR?](#What_is_the_AUR?)
     *   [8.2 What kind of packages are permitted on the AUR?](#What_kind_of_packages_are_permitted_on_the_AUR?)
     *   [8.3 How can I vote for packages in the AUR?](#How_can_I_vote_for_packages_in_the_AUR?)
-    *   [8.4 What is a Trusted User / TU?](#What_is_a_Trusted_User_/_TU?)
+    *   [8.4 What is a Trusted User (TU)?](#What_is_a_Trusted_User_(TU)?)
     *   [8.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository?)
     *   [8.6 Foo in the AUR is outdated; what should I do?](#Foo_in_the_AUR_is_outdated;_what_should_I_do?)
     *   [8.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg;_what_should_I_do?)
@@ -111,28 +111,28 @@ Next choose an appropriate build directory. A build directory is simply a direct
 
 Locate the package in the AUR. This is done using the search field at the top of the [AUR home page](https://aur.archlinux.org/). Clicking the application's name in the search list brings up an information page on the package. Read through the description to confirm that this is the desired package, note when the package was last updated, and read any comments.
 
-There are several methods for acquiring the build files:
+There are several methods for acquiring the build files for a package:
 
-*   Option 1: Clone the [git](/index.php/Git "Git") repository that is labelled as the "Git Clone URL" in the "Package Details". This is the preferred method.
+*   Via [git](/index.php/Git "Git"): This is the preferred method. Clone the repository labelled "Git Clone URL" in the "Package Details" on its AUR page:
 
 ```
 $ git clone https://aur.archlinux.org/*package_name*.git
 
 ```
 
-	An advantage of this method is that you can easily get updates to the package via `git pull`.
+**Note:** An advantage of this method is that you can easily get updates to the package via `git pull`.
 
-*   Option 2: Download the build files with your web browser by clicking the "Download snapshot" link under "Package Actions" on the right hand side. This will download a compressed file, which must be extracted (preferably in a directory set aside for AUR builds)
-
-```
-$ tar -xvf *package_name*.tar.gz
-
-```
-
-*   Similarly, you can download a tarball from the terminal (and extract it):
+*   Download a snapshot: Either by clicking the "Download snapshot" link under "Package Actions" on the right hand side of its AUR page, or from the terminal:
 
 ```
 $ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*package_name*.tar.gz
+
+```
+
+	The snapshot file is compressed, and must be extracted (preferably in a directory set aside for AUR builds):
+
+```
+$ tar -xvf *package_name*.tar.gz
 
 ```
 
@@ -239,7 +239,9 @@ When submitting a package to the AUR, observe the following rules:
 
 	The AUR and official repositories are intended for packages which install generally software and software-related content, including one or more of the following: executable(s); config file(s); online or offline documentation for specific software or the Arch Linux distribution as a whole; media intended to be used directly by software.
 
-*   Do not use `replaces` in an AUR `PKGBUILD` unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an **alternate version of an already existing package**, use `conflicts` (and `provides` if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching `replaces` anywhere in its repositories; `conflicts`, on the other hand, is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
+*   Do not use `replaces` unless the package has been renamed or deprecates another, for example when *Ethereal* became *Wireshark*. If the package is an alternate version of an existing package, use `conflicts` (and `provides` when the offending package has dependents).
+
+**Note:** [replaces](/index.php/PKGBUILD#replaces "PKGBUILD") forces *pacman* to install the replacement package as an upgrade of the offending package, while [conflicts](/index.php/PKGBUILD#conflicts "PKGBUILD") tells *pacman* to remove the offending package only if the conflicting package is to be installed.
 
 *   Submitting binaries *should be avoided* if the sources are available. The AUR should not contain binary tarballs created by makepkg, nor should it contain their filelists. Consult the [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines#Package_naming "Nonfree applications package guidelines") regarding packages that redistribute prebuilt [deliverables](https://en.wikipedia.org/wiki/Deliverable "wikipedia:Deliverable") and the [Java package guidelines](/index.php/Java_package_guidelines#Java_packaging_on_Arch_Linux "Java package guidelines") regarding packages that redistribute java binaries.
 
@@ -282,9 +284,9 @@ $ ssh-keygen -f ~/.ssh/aur
 
 **Tip:** You can add multiple public keys to your profile by separating them with a newline in the input field.
 
-#### Creating package repositories
+#### Creating or adopting package repositories
 
-If you are [creating a new package](/index.php/Creating_packages "Creating packages") from scratch, establish a local Git repository and an AUR remote by [cloning](/index.php/Git#Getting_a_Git_repository "Git") the intended [pkgbase](/index.php/PKGBUILD#pkgbase "PKGBUILD"). If the package does not yet exist, the following warning is expected:
+If you are [creating a new package](/index.php/Creating_packages "Creating packages") from scratch, or adopting an orphaned package, establish a local Git repository and an AUR remote by [cloning](/index.php/Git#Getting_a_Git_repository "Git") the intended [pkgbase](/index.php/PKGBUILD#pkgbase "PKGBUILD"). If the package does not yet exist, the following warning is expected:
 
  `$ git clone ssh://aur@aur.archlinux.org/*pkgbase*.git` 
 ```
@@ -333,9 +335,11 @@ $ git push
 ### Maintaining packages
 
 *   Check for feedback and comments from other users and try to incorporate any improvements they suggest; consider it a learning process!
-*   Please do not leave a comment containing the version number every time you update the package. This keeps the comment section usable for valuable content mentioned above.
-*   Please do not just submit and forget about packages! It is the maintainer's job to maintain the package by checking for updates and improving the `PKGBUILD`.
+*   Do not leave a comment containing the version number every time you update the package. This keeps the comment section usable for valuable content mentioned above.
+*   Do not just submit and forget about packages! It is the maintainer's job to maintain the package by checking for updates and improving the `PKGBUILD`.
+*   Additional maintainers can be added to or removed from a package by clicking "Manage Co-Maintainers" under "Package Actions" on the right of its AUR page and editing the list.
 *   If you do not want to continue to maintain the package for some reason, disown the package by clicking "Disown package" under "Package Actions" on the right of its AUR page and/or post a message to the AUR Mailing List. If all maintainers of an AUR package disown it, it will become an ["orphaned"](https://aur.archlinux.org/packages/?SB=n&do_Orphans=Orphans) package.
+*   Orphaned packges can be adopted by clicking on the "Adopt Package" link under "Package Actions" on the right of its AUR page. This will allow you to [push](#Publishing_new_package_content) changes to its git repository.
 
 ### Other requests
 
@@ -381,9 +385,11 @@ See also [Rules for Packages Entering the community Repo](/index.php/AUR_Trusted
 
 If you are having trouble building a package, read its [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and the comments on its AUR page. It is possible that a `PKGBUILD` is broken for everyone. If you cannot figure it out on your own, report it to the maintainer (e.g. by [posting the errors you are getting in the comments on the AUR page](#Commenting_on_packages)). You may also seek help in the [AUR Issues, Discussion & PKGBUILD Requests forum](https://bbs.archlinux.org/viewforum.php?id=38).
 
-To avoid problems caused by your particular system configuration, build packages in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). If the build process still fails in a clean chroot, the issue is probably with the `PKGBUILD`.
+*   To avoid problems caused by your particular system configuration, build packages in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). If the build process still fails in a clean chroot, the issue is probably with the `PKGBUILD`.
 
-See [Creating packages#Checking package sanity](/index.php/Creating_packages#Checking_package_sanity "Creating packages") about using *namcap* to debug packages. If you would like to have a `PKGBUILD` reviewed, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members, or the [Creating & Modifying Packages forum](https://bbs.archlinux.org/viewforum.php?id=4). You could also seek help in the [IRC channel](/index.php/IRC_channel "IRC channel") [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) on [Freenode](https://freenode.net/).
+*   See [Creating packages#Checking package sanity](/index.php/Creating_packages#Checking_package_sanity "Creating packages") about using *namcap* to debug packages.
+
+*   If you would like to have a `PKGBUILD` reviewed, post it on the [aur-general mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) to get feedback from the TUs and fellow AUR members, or the [Creating & Modifying Packages forum](https://bbs.archlinux.org/viewforum.php?id=4). You could also seek help in the [IRC channel](/index.php/IRC_channel "IRC channel") [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) on [Freenode](https://freenode.net/).
 
 Avoid common pitfalls:
 
@@ -411,9 +417,9 @@ For most cases, everything is permitted, subject to the [#Rules of submission](#
 
 See [#Voting for packages](#Voting_for_packages).
 
-### What is a Trusted User / TU?
+### What is a Trusted User (TU)?
 
-A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), in short TU, is a person who is chosen to oversee AUR and the [community repository](/index.php/Community_repository "Community repository"). They are the ones who maintain popular `PKGBUILD`s in *community*, and overall keep the AUR running.
+The [Trusted Users](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") are people chosen to oversee the AUR and maintain `PKGBUILD`s in the [community repository](/index.php/Community_repository "Community repository").
 
 ### What is the difference between the Arch User Repository and the community repository?
 

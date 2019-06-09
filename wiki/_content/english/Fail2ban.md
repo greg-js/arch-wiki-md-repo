@@ -149,7 +149,7 @@ ignoreip  = 127.0.0.1/8
 
 Currently, Fail2ban must be run as *root*. Therefore, you may wish to consider hardening the process with [systemd](/index.php/Systemd "Systemd").
 
-Create a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") configuration file for `fail2ban.service`:
+[Create](/index.php/Create "Create") a [drop-in](/index.php/Systemd#Drop-in_files "Systemd") configuration file for `fail2ban.service`:
 
  `/etc/systemd/system/fail2ban.service.d/override.conf` 
 ```
@@ -170,7 +170,7 @@ The `CapabilityBoundingSet` parameters `CAP_DAC_READ_SEARCH` will allow Fail2ban
 
 By using `ProtectSystem=strict` the [filesystem](/index.php/Filesystem "Filesystem") hierarchy will only be read-only, `ReadWritePaths` allows Fail2ban to have write access on required paths.
 
-[Create](/index.php/Create "Create") `/etc/fail2ban/fail2ban.local` with the correct `logtarget` path:
+Create `/etc/fail2ban/fail2ban.local` with the correct `logtarget` path:
 
  `/etc/fail2ban/fail2ban.local` 
 ```
@@ -178,6 +178,8 @@ By using `ProtectSystem=strict` the [filesystem](/index.php/Filesystem "Filesyst
 logtarget = /var/log/fail2ban/fail2ban.log
 
 ```
+
+Create the `/var/log/fail2ban` directory as root.
 
 Finally, [reload systemd daemon](/index.php/Systemd#Using_units "Systemd") to apply the changes of the unit and [restart](/index.php/Restart "Restart") `fail2ban.service`.
 

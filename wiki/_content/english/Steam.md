@@ -28,15 +28,16 @@ Related articles
 *   [4 Launch options](#Launch_options)
     *   [4.1 Examples](#Examples)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
-    *   [5.2 Steam skins](#Steam_skins)
-        *   [5.2.1 Creating skins](#Creating_skins)
-    *   [5.3 Changing the Steam notification position](#Changing_the_Steam_notification_position)
-        *   [5.3.1 Use a skin](#Use_a_skin)
-        *   [5.3.2 Live patching](#Live_patching)
-    *   [5.4 In-home streaming](#In-home_streaming)
-        *   [5.4.1 Different subnets](#Different_subnets)
-    *   [5.5 Steam Controller](#Steam_Controller)
+    *   [5.1 Proton Steam-Play](#Proton_Steam-Play)
+    *   [5.2 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [5.3 Steam skins](#Steam_skins)
+        *   [5.3.1 Creating skins](#Creating_skins)
+    *   [5.4 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [5.4.1 Use a skin](#Use_a_skin)
+        *   [5.4.2 Live patching](#Live_patching)
+    *   [5.5 In-home streaming](#In-home_streaming)
+        *   [5.5.1 Different subnets](#Different_subnets)
+    *   [5.6 Steam Controller](#Steam_Controller)
 *   [6 Troubleshooting](#Troubleshooting)
 *   [7 See also](#See_also)
 
@@ -130,6 +131,14 @@ By default Steam simply appends your option string to the launch command. To set
 *   completely different command: `othercommand # %command%`
 
 ## Tips and tricks
+
+### Proton Steam-Play
+
+Valve developed a compatibility tool for Steam Play based on Wine and additional components. It allows you to launch many Windows games (see [compatibility list](https://www.protondb.com/)).
+
+It's open-source and avaliable on [Github](https://github.com/ValveSoftware/Proton/). You can also install it from AUR with [proton](https://aur.archlinux.org/packages/proton/) or [proton-git](https://aur.archlinux.org/packages/proton-git/).
+
+Proton need to be enabled on Steam client : `Steam > Settings > Steam Play`
 
 ### Big Picture Mode without a window manager
 

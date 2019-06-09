@@ -79,9 +79,9 @@ Or you can use GUI tool to tweak the options. Comment `make olddefconfig` in the
 
 ### Generate new checksums
 
-[Install](/index.php/Install "Install") the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package.
+[#Changing prepare()](#Changing_prepare()) suggests a possible modification to `$_srcname/.config`. Since this path is not where downloading the package files ended, its checksum was not checked by makepkg (which actually checked `$_srcname/../../config`).
 
-As we modified config, we need to generate new checksums by running:
+If you replaced the downloaded `config` with another config file before running makepkg, [Install](/index.php/Install "Install") the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package. Which will generate new checksums by running:
 
 ```
 $ updpkgsums

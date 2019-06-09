@@ -53,7 +53,8 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [3.3 GNU Parted](#GNU_Parted)
 *   [4 Partition alignment](#Partition_alignment)
 *   [5 GPT kernel support](#GPT_kernel_support)
-*   [6 See also](#See_also)
+*   [6 Tricking old BIOS into booting from GPT](#Tricking_old_BIOS_into_booting_from_GPT)
+*   [7 See also](#See_also)
 
 ## Partition table
 
@@ -106,7 +107,7 @@ Some points to consider when choosing:
 
 *   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, the MBR scheme is required.
 *   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") mode instead of BIOS, the GPT scheme is required.
-*   If you are installing on older hardware, especially on old laptops, consider choosing MBR because its BIOS might not support GPT.
+*   If you are installing on older hardware, especially on old laptops, consider choosing MBR because its BIOS might not support GPT (but [see below](#Tricking_old_BIOS_into_booting_from_GPT) how to fix it).
 *   If you are partitioning a disk of 2 TiB or larger, you need to use GPT.
 *   It is recommended to always use GPT for [UEFI](/index.php/UEFI "UEFI") boot, as some UEFI implementations do not support booting to the MBR while in UEFI mode.
 *   If none of the above apply, choose freely between GPT and MBR. Since GPT is more modern, it is recommended in this case.
@@ -276,7 +277,7 @@ partitionmanager |
 
 *   [fdisk](/index.php/Fdisk "Fdisk") ([util-linux](https://www.archlinux.org/packages/?name=util-linux))
     *   [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) – Dialog-driven program for creation and manipulation of partition tables.
-    *   [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) – Curses-based variant of fdisk.
+    *   [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) – [Curses](https://en.wikipedia.org/wiki/curses_(programming_library) "wikipedia:curses (programming library)")-based variant of fdisk.
     *   [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) – Scriptable variant of fdisk.
 
 ### GPT fdisk
@@ -317,6 +318,36 @@ For certain drives [Advanced Format](/index.php/Advanced_Format "Advanced Format
 ## GPT kernel support
 
 The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in all Arch's [officially supported kernels](/index.php/Kernels#Officially_supported_kernels "Kernels"). In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
+
+## Tricking old BIOS into booting from GPT
+
+Some old BIOSes (from before year 2010) attempt to parse the boot sector and refuse to boot it if it does not contain a bootable MBR partition. This is a problem if one wants to use GPT on this disk, because, from the BIOS viewpoint, it contains only one, non-bootable, MBR partition of type `ee` (i.e., the protective MBR partition). One can mark the protective MBR entry as bootable using `fdisk -t mbr /dev/sda`, and it will work on some BIOSes. However, the UEFI specification prohibits the protective MBR partition entry from being bootable, and UEFI-based boards do care about this, even in the legacy boot mode. So, this matters if one wants to create a GPT-based USB flash drive that is supposed to boot both on modern UEFI-based boards and also on old BIOSes that insist on finding a bootable MBR partition. It is not possible to solve this problem using traditional tools such as [fdisk](/index.php/Fdisk "Fdisk") or [gdisk](/index.php/Gdisk "Gdisk"), but it is possible to create a fake MBR partition entry suitable for both kinds of BIOSes manually as a sequence of bytes.
+
+The command below will overwrite the second MBR partition slot and add a bootable partition there of type 0 (i.e. unused), covering only the first sector of the device. It will not interfere with the GPT or with the first MBR partition entry which normally contains a protective MBR partition.
+
+```
+# printf '\200\0\0\0\0\0\0\0\0\0\0\0\001\0\0\0' | dd of=/dev/sda bs=1 seek=462
+
+```
+
+The end result will look like this:
+
+ `# fdisk -t mbr -l /dev/sda` 
+```
+Disk /dev/sda: 232.9 GiB, 250059350016 bytes, 488397168 sectors
+Disk model: ST3250820AS     
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
+
+Device     Boot Start       End   Sectors   Size Id Type
+/dev/sda1           1 488397167 488397167 232.9G ee GPT
+/dev/sda2  *        0         0         1   512B  0 Empty
+
+Partition table entries are not in disk order.
+```
 
 ## See also
 

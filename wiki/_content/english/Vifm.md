@@ -30,6 +30,7 @@ If you use [vi](/index.php/Vi "Vi"), Vifm gives you complete keyboard control ov
     *   [4.1 Useful key mappings](#Useful_key_mappings)
     *   [4.2 Non-vim Users](#Non-vim_Users)
     *   [4.3 Total size of selected files](#Total_size_of_selected_files)
+    *   [4.4 Use output of external program in status line](#Use_output_of_external_program_in_status_line)
 
 ## Installation
 
@@ -272,3 +273,14 @@ To get the total size of selected files change %s to %E in `~/.vifm/vifmrc`, lik
 set statusline="  %t%= %A %10u:%-7g %15E %20d  "
 
 ```
+
+### Use output of external program in status line
+
+Here's a status line that calls [lsattr](/index.php/File_permissions_and_attributes#chattr_and_lsattr "File permissions and attributes"), passing it the name of the file currently under the cursor:
+
+```
+set statusline="%{system('lsattr -l ' . expand('%c'))}"
+
+```
+
+For more, see [expression syntax](https://vifm.info/manual.shtml#Expression%20syntax) and available [functions](https://vifm.info/manual.shtml#Functions).

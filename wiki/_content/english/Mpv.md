@@ -258,7 +258,7 @@ $ mpv --profile=svp video.mkv
 
 ```
 
-or set `profile=svp` in the top-level portion of the *mpv* [config](#Profiles).
+or set `profile=svp` in the top-level portion of the *mpv* [configuration](#Custom_profiles).
 
 If you want to use hardware decoding then you must use a copy-back decoder since normal decoders are not compatible with Vapoursynth (choose a `hwdec` option that ends in `-copy`). For instance:
 

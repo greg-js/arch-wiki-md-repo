@@ -6,6 +6,8 @@ Related articles
 
 *x11vnc* does not create an extra display (or X desktop) for remote control. Instead, it shows in real time the existing X11 display, unlike *Xvnc*, part of [TigerVNC](/index.php/TigerVNC "TigerVNC"), which is an alternatives VNC server available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
+Also note that x11vnc is not shipped with a client viewer. Any VNC viewer should do the job and be compatible with the x11vnc server while not necessarily using all its functionalities. TigerVNC's *vncviewer* is a recommended client.
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -27,6 +29,8 @@ Related articles
     *   [1.5 Accessing](#Accessing)
 *   [2 SSH Tunnel](#SSH_Tunnel)
 *   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Screensaver problem](#Screensaver_problem)
+    *   [3.2 IPv6 port different from IPv4 port](#IPv6_port_different_from_IPv4_port)
 *   [4 See also](#See_also)
 
 ## Setting up x11vnc
@@ -131,20 +135,16 @@ Embedding this into a systemd .service file will require a trick to evaluate the
 
 ### Setting a password
 
-```
-$ mkdir ~/.x11vnc
-$ x11vnc -storepasswd *password* ~/.x11vnc/passwd
+Running:
 
 ```
-
-To connect using the stored password use the `-rfbauth` argument and point to the passwd file you created, like so:
-
-```
-$ x11vnc -display :0 -rfbauth ~/.x11vnc/passwd 
+$ x11vnc -usepw
 
 ```
 
-Your viewer should prompt for a password when connecting.
+uses the password found in `~/.vnc/passwd`, where the password is obscured with a fixed key in a VNC compatible format, or alternatively in `~/.vnc/passwdfile`, where the first line of the file contains the password. If none of these files can be located, it prompts the user for a password which is saved in `~/.vnc/passwd` and is used right away.
+
+The VNC viewer should then prompt for a password when connecting.
 
 ### Running constantly
 
@@ -205,7 +205,7 @@ $ ln -sv $(dirname $(xauth info | awk '/Authority file/{print $3}')) ~/.Xauthori
 
 ```
 
-then try above [tunneling](#SSH_Tunnel) example and it should work fine. Further if you want this to be automatically done each time [Xorg](/index.php/Xorg "Xorg") is restarted, create the [Xprofile](/index.php/Xprofile "Xprofile") file & make is executable as below
+then try above [tunneling](#SSH_Tunnel) example and it should work fine. Further if you want this to be automatically done each time [Xorg](/index.php/Xorg "Xorg") is restarted, create the [xprofile](/index.php/Xprofile "Xprofile") file & make is executable as below
 
 ```
 $ ln -sf $(dirname $(xauth info | awk '/Authority file/{print $3}')) ~/.Xauthority
@@ -232,9 +232,18 @@ $ x11vnc -noxdamage -many -display :0 -auth /var/run/gdm/$(sudo ls /var/run/gdm 
 
 Please update if this works / not works for any other [display manager](/index.php/Display_manager "Display manager") or [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
-4\. Screensaver problem
+### Screensaver problem
 
-If screensaver starts every 1-2 second, start x11vnc with -nodpms key.
+If screensaver starts every 1-2 second, start x11vnc with `-nodpms` key.
+
+### IPv6 port different from IPv4 port
+
+If the server listens to an IPv6 port different from the port as defined by the `-rfbport`, also use the `-rfbportv6` option to force the IPv6 listening port. For example:
+
+```
+$ x11vnc -usepw -display :0 -rfbport 5908 -rfbportv6 5908
+
+```
 
 ## See also
 

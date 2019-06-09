@@ -1,6 +1,6 @@
-[Let’s Encrypt](https://letsencrypt.org/) бесплатный, автоматизированный, открытый центр сертификации использующий [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") протокол.
+**Состояние перевода:** На этой странице представлен перевод статьи [Certbot](/index.php/Certbot "Certbot"). Дата последней синхронизации: 3 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Certbot&diff=0&oldid=573839).
 
-Официальный клиент называется 'Certbot', который позволяет запрашивать действительные сертификаты X.509 прямо из командной строки. Минимальный клиент с ручным созданием CSR доступен в [acme-tiny](https://www.archlinux.org/packages/?name=acme-tiny), клиенты, подходящие для скриптов, - это [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/) и [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/).
+[Certbot](https://github.com/certbot/certbot) — [ACME](/index.php/ACME "ACME")-клиент от [Фонда Электронных Рубежей](https://www.eff.org/), написанный на Python и обеспечивающий такие удобства, как автоматическая настройка веб-сервера и встроенный веб-сервер для вызова HTTP. Certbot рекомендован [Let's Encrypt](https://letsencrypt.org/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,195 +9,180 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
-*   [2 Конфигурация](#Конфигурация)
-    *   [2.1 Webroot](#Webroot)
-        *   [2.1.1 Получить сертификат(ы)](#Получить_сертификат(ы))
-    *   [2.2 Вручную](#Вручную)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Плагины](#Плагины)
+        *   [2.1.1 Nginx](#Nginx)
+            *   [2.1.1.1 Управление блоками server в Nginx](#Управление_блоками_server_в_Nginx)
+        *   [2.1.2 Apache](#Apache)
+            *   [2.1.2.1 Управление виртуальными хостами Apache](#Управление_виртуальными_хостами_Apache)
+    *   [2.2 Webroot](#Webroot)
+        *   [2.2.1 Mapping ACME-challenge requests](#Mapping_ACME-challenge_requests)
+            *   [2.2.1.1 nginx](#nginx_2)
+            *   [2.2.1.2 Apache](#Apache_2)
+        *   [2.2.2 Получить сертификат(ы)](#Получить_сертификат(ы))
+    *   [2.3 Вручную](#Вручную)
 *   [3 Расширенная настройка](#Расширенная_настройка)
-    *   [3.1 Конфигурация веб-сервера](#Конфигурация_веб-сервера)
-        *   [3.1.1 nginx](#nginx)
-    *   [3.2 Несколько доменов](#Несколько_доменов)
-        *   [3.2.1 nginx](#nginx_2)
-        *   [3.2.2 Apache](#Apache)
-    *   [3.3 Автоматическое обновление](#Автоматическое_обновление)
-        *   [3.3.1 systemd](#systemd)
-            *   [3.3.1.1 Альтернативные услуги](#Альтернативные_услуги)
-                *   [3.3.1.1.1 nginx](#nginx_3)
-                *   [3.3.1.1.2 Apache](#Apache_2)
+    *   [3.1 Автоматическое обновление](#Автоматическое_обновление)
+        *   [3.1.1 systemd](#systemd)
+    *   [3.2 Автоматическое обновление wildcard-сертификатов](#Автоматическое_обновление_wildcard-сертификатов)
+        *   [3.2.1 Настройка BIND для rfc2136](#Настройка_BIND_для_rfc2136)
+        *   [3.2.2 Настройка certbot для rfc2136](#Настройка_certbot_для_rfc2136)
 *   [4 Смотрите также](#Смотрите_также)
 
 ## Установка
 
-[Установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пакет [certbot](https://www.archlinux.org/packages/?name=certbot).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [certbot](https://www.archlinux.org/packages/?name=certbot).
 
-Плагины доступны для автоматической настройки и установки выданных сертификатов на веб-серверах:
+Также доступны плагины для автоматической настройки и установки выданных сертификатов на веб-серверах:
 
-*   Экспериментальный плагин для [Nginx](/index.php/Nginx "Nginx") предоставляется пакетом [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx).
-*   Автоматическая установка с использованием [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") включена через пакет [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache).
+*   Плагин для [nginx](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nginx (Русский)") предоставляется пакетом [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx).
+*   Плагин для [Apache HTTP Server](/index.php/Apache_HTTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Apache HTTP Server (Русский)") предоставляется пакетом [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache).
 
-## Конфигурация
+## Настройка
 
-Для получения дополнительной информации об создании и использовании сертификатов обращайтесь в документацию [Certbot documentation](https://certbot.eff.org/docs/)
+Обратитесь к [документации Certbot](https://certbot.eff.org/docs/) для получения дополнительной информации о создании и использовании сертификатов.
 
-### Webroot
+### Плагины
 
-**Примечание:**
+**Важно:** Файлы конфигурации могут быть переписаны для добавления настроек и путей сертификатов Certbot при использовании плагина. Рекомендуется заблаговременно сделать **резервную копию**.
 
-*   Метод Webroot требует HTTP на порт 80 для проверки Certbot.
-    *   Чтобы Certbot проверял использование HTTPS на порту 443, вместо Webroot следует использовать плагин Nginx (--nginx) или Apache ( --apache) (--webroot).
-*   Имя сервера должно соответствовать имени соответствующего DNS.
-*   На хосте могут потребоваться разрешения, чтобы разрешить доступ для чтения к `[http://domain.tld/.well-known](http://domain.tld/.well-known)`.
+#### Nginx
 
-При использовании метода webroot клиент Certbot отправляет запрос вызова внутри `/path/to/domain.tld/html/.well-known/acme-challenge/` который используется для проверки.
+Плагин [certbot-nginx](https://www.archlinux.org/packages/?name=certbot-nginx) предоставляет автоматическую настройку [Nginx (Русский)](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nginx (Русский)"). Он пытается найти конфигурацию каждого домена, а также добавляет рекомендованные для безопасности параметры, настройки использования сертификатов и пути к сертификатам Certbot. См. примеры в разделе [#Управление блоками server в Nginx](#Управление_блоками_server_в_Nginx).
 
-Использование этого метода рекомендуется для ручной установки; Он предлагает автоматическое обновление и упрощение управления сертификатами.
+Первоначальная настройка [блоков server](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Блоки_server "Nginx (Русский)"):
 
-**Совет:** Следующая первоначальная конфигурация сервера [nginx server](/index.php/Nginx#Server_blocks "Nginx") может оказаться полезной для получения первого сертификата: `/etc/nginx/servers-available/domain.tld` 
 ```
-
-server {
-  listen 80;
-  listen [::]:80;
-  server_name domain.tld;
-  root /usr/share/nginx/html;
-  location / {
-    index index.htm index.html;
-  }
-}
-
-# ACME challenge
-location ^~ /.well-known {
-  allow all;
-  auth_basic off;
-  alias /var/lib/letsencrypt/.well-known/;
-  default_type "text/plain";
-  try_files $uri =404;
-}
+# certbot --nginx
 
 ```
 
-#### Получить сертификат(ы)
-
-Запросить сертификат для `domain.tld` для `/var/lib/letsencrypt/` как общедоступный путь:
-
-```
-# certbot certonly --email **email@example.com** --webroot -w **/var/lib/letsencrypt/** -d **domain.tld**
-
-```
-
-Чтобы добавить (дополнительный) домен(ы), включите все зарегистрированные домены, используемые в текущей настройке:
-
-```
-# certbot certonly --email **email@example.com** --webroot -w **/var/lib/letsencrypt/** -d **domain.tld,sub.domain.tld**
-
-```
-
-Чтобы обновить (все) текущий сертификат (ы):
+Обновить сертификаты:
 
 ```
 # certbot renew
 
 ```
 
-Смотрите [#Автоматическое обновление](#Автоматическое_обновление) как альтернативный вариант
-
-### Вручную
-
-**Note:**
-
-*   Запускаемый веб-сервер должен быть временно остановлен.
-*   Автоматическое обновление недоступно при выполнении ручной установки, см. [#Webroot](#Webroot).
-
-Если для вашего веб-сервера нет плагина, используйте следующую команду:
+Изменить сертификаты без изменения файлов конфигурации nginx:
 
 ```
-# certbot certonly --manual
+# certbot --nginx certonly
 
 ```
 
-Если вы предпочитаете использовать DNS-запрос (запись TXT), используйте:
+См. статью [Certbot-Nginx on Arch Linux](https://certbot.eff.org/#arch-nginx) для получения дополнительной информации и раздел [#Автоматическое обновление](#Автоматическое_обновление).
 
+##### Управление блоками server в Nginx
+
+Следующий пример можно использовать в каждом [блоке server](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Блоки_server "Nginx (Русский)") при управлении этими файлами вручную:
+
+ `/etc/nginx/sites-available/example` 
 ```
-# certbot certonly --manual --preferred-challenges dns
-
-```
-
-Это автоматически проверяет ваш домен и создает закрытый ключ и пару сертификатов. Они будут размещены в `/etc/letsencrypt/live/*your.domain*/`.
-
-Затем вы можете вручную настроить веб-сервер для использования ключа и сертификата в этом каталоге.
-
-**Note:** Запуск этой команды несколько раз приведет к созданию нескольких наборов файлов в в `/etc/letsencrypt/live/*your.domain*/` с произвольным числом в конце, поэтому позаботьтесь о том, чтобы переименовать их в этом каталоге или в файле конфигурации веб-сервера.
-
-## Расширенная настройка
-
-### Конфигурация веб-сервера
-
-Вместо использования плагинов для автоматической настройки может быть предпочтительнее включить SSL для сервера вручную.
-
-**Tip:**
-
-*   Mozilla имеет полезную статью [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS), которая включает в себя [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) чтобы создать более безопасную конфигурацию.
-*   [Cipherli.st](https://cipherli.st) обеспечивает надежные примеры внедрения SSL и руководство для большинства современных веб-серверов.
-
-#### nginx
-
-Пример сервера `domain.tld` с использованием подписанного SSL-сертификата Let's Encrypt:
-
- `/etc/nginx/servers-available/domain.tld` 
-```
-
-# redirect to https
-server {
-  listen 80;
-  listen [::]:80;
-  server_name domain.tld;
-  return 301 https://$host$request_uri;
-}
-
 server {
   listen 443 ssl http2;
-  listen [::]:443 ssl http2;
-  ssl_certificate /etc/letsencrypt/live/domain.tld/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/domain.tld/privkey.pem;
-  ssl_trusted_certificate /etc/letsencrypt/live/domain.tld/chain.pem;
-  ssl_session_timeout 1d;
-  ssl_session_cache shared:SSL:50m;
-  ssl_session_tickets off;
-  ssl_prefer_server_ciphers on;
-  add_header Strict-Transport-Security max-age=15768000;
-  ssl_stapling on;
-  ssl_stapling_verify on;
-  server_name domain.tld;
+  listen [::]:443 ssl http2; # Cлушать IPv6
+  ssl_certificate /etc/letsencrypt/live/*домен*/fullchain.pem; # Управляется Certbot'ом
+  ssl_certificate_key /etc/letsencrypt/live/*домен*/privkey.pem; # Управляется Certbot'ом
+  include /etc/letsencrypt/options-ssl-nginx.conf;
   ..
 }
+```
 
-# A subdomain uses the same SSL-certifcate:
+См. раздел [Nginx (Русский)#TLS/SSL](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#TLS/SSL "Nginx (Русский)") для получения более подробной информации.
+
+Также можно создать отдельный конфигурационный файл и включать его в каждый блок server:
+
+ `/etc/nginx/conf/001-certbot.conf` 
+```
+ssl_certificate /etc/letsencrypt/live/*домен*/fullchain.pem; # Управляется Certbot'ом
+ssl_certificate_key /etc/letsencrypt/live/*домен*/privkey.pem; # Управляется Certbot'ом
+include /etc/letsencrypt/options-ssl-nginx.conf;
+```
+ `/etc/nginx/sites-available/example` 
+```
 server {
   listen 443 ssl http2;
-  listen [::]:443 ssl http2;
-  ssl_certificate /etc/letsencrypt/live/domain.tld/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/domain.tld/privkey.pem;
-  ssl_trusted_certificate /etc/letsencrypt/live/domain.tld/chain.pem;
+  listen [::]:443 ssl http2; # Слушать IPv6
+  include conf/001-certbot.conf;
   ..
-  server_name sub.domain.tld;
-  ..
-}
-
-# ACME challenge
-location ^~ /.well-known {
-  allow all;
-  alias /var/lib/letsencrypt/.well-known/;
-  default_type "text/plain";
-  try_files $uri =404;
 }
 
 ```
 
-### Несколько доменов
+#### Apache
+
+Плагин [certbot-apache](https://www.archlinux.org/packages/?name=certbot-apache) предоставляет автоматическую настройку [Apache HTTP Server (Русский)](/index.php/Apache_HTTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Apache HTTP Server (Русский)"). Он пытается найти конфигурацию каждого домена, а также добавляет рекомендованные для безопасности параметры, настройки использования сертификатов и пути к сертификатам Certbot. См. примеры в разделе [#Управление виртуальными хостами Apache](#Управление_виртуальными_хостами_Apache).
+
+Первоначальная настройка [виртуальных хостов](/index.php/Apache_HTTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Виртуальные_хосты "Apache HTTP Server (Русский)"):
+
+```
+# certbot --apache
+
+```
+
+Обновить сертификаты:
+
+```
+# certbot renew
+
+```
+
+Изменить сертификаты без изменения файлов конфигурации apache:
+
+```
+# certbot --apache certonly
+
+```
+
+См. статью [Certbot-Apache on Arch Linux](https://certbot.eff.org/#arch-apache) для получения дополнительной информации и раздел [#Автоматическое обновление](#Автоматическое_обновление).
+
+##### Управление виртуальными хостами Apache
+
+Следующий пример можно использовать в каждом [виртуальном хосте](/index.php/Apache_HTTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Виртуальные_хосты "Apache HTTP Server (Русский)") при управлении этими файлами вручную:
+
+ `/etc/httpd/conf/extra/001-certbot.conf` 
+```
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateFile /etc/letsencrypt/live/*домен*/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/*домен*/privkey.pem
+
+</VirtualHost>
+</IfModule>
+```
+ `/etc/httpd/conf/httpd.conf` 
+```
+  <IfModule mod_ssl.c>
+  Listen 443
+  </IfModule>
+
+  Include conf/extra/001-certbot.conf
+  ..
+
+```
+
+См. раздел [Apache HTTP Server (Русский)#TLS/SSL](/index.php/Apache_HTTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#TLS/SSL "Apache HTTP Server (Русский)") для получения более подробной информации.
+
+### Webroot
+
+**Примечание:**
+
+*   Метод Webroot требует HTTP на порт 80 для проверки Certbot.
+*   Имя сервера должно соответствовать имени соответствующего DNS.
+*   На хосте могут потребоваться разрешения, чтобы разрешить доступ для чтения к `[http://domain.tld/.well-known](http://domain.tld/.well-known)`.
+
+При использовании метода webroot клиент Certbot размещает ответ на вызов (challenge response) по адресу `/путь/к/domain.tld/html/.well-known/acme-challenge/` который используется для проверки.
+
+Использование этого метода более рекомендовано, чем полностью ручная установка (метод manual), так как он допускает автоматическое обновление сертификатов и упрощает управление ими. Однако использование [плагинов](#Плагины) может быть более предпочтительным, так как они обеспечивают полностью автоматическую настройку и установку.
+
+#### Mapping ACME-challenge requests
 
 Управление может быть упрощено путем сопоставления всех HTTP-запросов для `/.well-known/acme-challenge/` в одну папку, например. `/var/lib/letsencrypt`.
 
-Затем путь должен быть доступен для записи клиенту Let's Encrypt и веб-серверу (например, [nginx](/index.php/Nginx "Nginx") или [Apache](/index.php/Apache "Apache"), запущенному под пользователем *http*):
+Этот каталог должен быть доступен для записи клиенту Certbot и веб-серверу ([nginx](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nginx (Русский)") или [apache](/index.php/Apache_HTTP_Server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Apache HTTP Server (Русский)"), запущенными под пользователем *http*):
 
 ```
 # mkdir -p /var/lib/letsencrypt/.well-known
@@ -206,23 +191,23 @@ location ^~ /.well-known {
 
 ```
 
-#### nginx
+##### nginx
 
-Создайте файл, содержащий блок местоположения, и включите его внутри блока сервера:
+Создайте файл с блоком `location` и включите (include) его в блок `server`:
 
  `/etc/nginx/conf.d/letsencrypt.conf` 
 ```
 
-location ^~ /.well-known {
+location ^~ /.well-known/acme-challenge/ {
   allow all;
-  alias /var/lib/letsencrypt/.well-known/;
+  root /var/lib/letsencrypt/;
   default_type "text/plain";
   try_files $uri =404;
 }
 
 ```
 
-Пример конфигурации сервера:
+Пример настройки блока `server`:
 
  `/etc/nginx/servers-available/domain.conf` 
 ```
@@ -234,7 +219,7 @@ server {
 
 ```
 
-#### Apache
+##### Apache
 
 Создайте файл `/etc/httpd/conf/extra/httpd-acme.conf`:
 
@@ -257,6 +242,57 @@ Include conf/extra/httpd-acme.conf
 
 ```
 
+#### Получить сертификат(ы)
+
+Запросить сертификат для `domain.tld` для `/var/lib/letsencrypt/` как общедоступный путь:
+
+```
+# certbot certonly --email **email@example.com** --webroot -w **/var/lib/letsencrypt/** -d **domain.tld**
+
+```
+
+Чтобы добавить (под)домен(ы), включите все зарегистрированные домены, используемые в текущей настройке:
+
+```
+# certbot certonly --email **email@example.com** --webroot -w **/var/lib/letsencrypt/** -d **domain.tld,sub.domain.tld**
+
+```
+
+Чтобы обновить (все) текущий сертификат (ы):
+
+```
+# certbot renew
+
+```
+
+Смотрите [#Автоматическое обновление](#Автоматическое_обновление) как альтернативный вариант
+
+### Вручную
+
+**Примечание:** Автоматическое обновление недоступно при выполнении ручной установки, см. [#Webroot](#Webroot).
+
+Если для вашего веб-сервера нет плагина, используйте следующую команду:
+
+```
+# certbot certonly --manual
+
+```
+
+Если вы предпочитаете использовать DNS-запрос (запись TXT), используйте:
+
+```
+# certbot certonly --manual --preferred-challenges dns
+
+```
+
+Это автоматически проверяет ваш домен и создает закрытый ключ и пару сертификатов. Они будут размещены в `/etc/letsencrypt/archive/*ваш.домен*/`, а в каталоге `/etc/letsencrypt/live/*ваш.домен*/` будут созданы символические ссылки на них.
+
+Затем вы можете вручную настроить веб-сервер для использования ключа и сертификата из каталога с символическими ссылками.
+
+**Примечание:** Запуск этой команды несколько раз приведет к созданию нескольких наборов файлов в `/etc/letsencrypt/live/*your.domain*/` с произвольным числом в конце. При этом Certbot автоматически обновляет символические ссылки в каталоге `/etc/letsencrypt/live/*your.domain*/`, чтобы они ссылались на самые свежие сертификаты, так что при использовании этих символических ссылок вам не нужно менять конфигурацию веб-сервера, чтобы использовать обновлённые сертификаты.
+
+## Расширенная настройка
+
 ### Автоматическое обновление
 
 #### systemd
@@ -273,14 +309,11 @@ Type=oneshot
 ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 ```
 
-Вероятно, вы захотите, чтобы ваш веб-сервер перезагружал сертификаты после каждого обновления. Добавте одну из этих строк в файл `certbot.service`:
+Если вы не используете плагин для управления веб-сервером, то его нужно будет перезагрузить вручную, чтобы применить обновлённые сертификаты. Это можно сделать добавлением `--deploy-hook "systemctl reload nginx.service"` к команде `ExecStart` [[1]](https://certbot.eff.org/docs/using.html#renewing-certificates). (Разумеется, используйте `httpd.service` вместо `nginx.service` если нужно.)
 
-*   Apache: `ExecStartPost=/bin/systemctl reload httpd.service`
-*   nginx: `ExecStartPost=/bin/systemctl reload nginx.service`
+**Примечание:** Перед добавлением [timer](/index.php/Systemd/Timers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Timers (Русский)"), убедитесь, что служба работает правильно и ничего не пытается запрашивать у пользователя. Имейте в виду, что для завершения работы службы может потребоваться до 480 секунд из-за задержки, добавленной в [v0.29.0](https://github.com/certbot/certbot/blob/master/CHANGELOG.md#0290---2018-12-05).
 
-**Примечание:** Перед добавлением [timer](/index.php/Systemd/Timers "Systemd/Timers") убедитесь, что служба работает правильно и ничего не пытается запросить.
-
-Добавьте таймер для проверки продления сертификата дважды в день и включите рандомизированную задержку, чтобы все запросы на продление были равномерно распределены в течение дня, чтобы облегчить загрузку сервера Let's Encrypt [[1]](https://certbot.eff.org/#arch-nginx):
+Добавьте таймер для проверки продления сертификата дважды в день и включите рандомизированную задержку, чтобы все запросы на продление были равномерно распределены в течение дня, чтобы облегчить загрузку сервера Let's Encrypt [[2]](https://certbot.eff.org/#arch-nginx):
 
  `/etc/systemd/system/certbot.timer` 
 ```
@@ -296,37 +329,74 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-[enable](/index.php/Enable "Enable") и [start](/index.php/Start "Start") `certbot.timer`.
+[Включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") `certbot.timer`.
 
-##### Альтернативные услуги
+### Автоматическое обновление wildcard-сертификатов
 
-При использовании автономного метода, перед выполнением запроса на обновление, вы должны остановить свой веб-сервер и запустить веб-сервер, когда работа Certbot будет завершена. Certbot предоставляет hooks для автоматического остановки и перезапуска веб-сервера.
+Процесс довольно прост. Для выпуска wildcard-сертификата нужно выполнить DNS challenge request, [using the ACMEv2 protocol](https://community.letsencrypt.org/t/acme-v2-and-wildcard-certificate-support-is-live/55579).
 
-###### nginx
+В то время как выпуск wildcard-сертификата вручную прост, его не так просто автоматизировать. DNS challenge представляет собой запись TXT, предоставленную клиентом certbot, которую необходимо установить вручную в DNS.
 
- `/etc/systemd/system/certbot.service` 
+Вам нужно будет обновлять DNS при каждом обновлении сертификатов. Чтобы не делать это вручную, вы можете использовать [rfc2136](https://tools.ietf.org/html/rfc2136), для которого в certbot есть плагин, упакованный в [certbot-dns-rfc2136](https://www.archlinux.org/packages/?name=certbot-dns-rfc2136). Вам также необходимо настроить DNS-сервер, чтобы разрешить динамическое обновление записей TXT.
+
+#### Настройка BIND для rfc2136
+
+Generate a TSIG secret key:
+
 ```
-[Unit]
-Description=Let's Encrypt renewal
+$ tsig-keygen -a HMAC-SHA512 **example-key**
 
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/certbot renew --post-hook "/usr/bin/systemctl restart nginx.service" --agree-tos
 ```
 
-###### Apache
+and add it in the configuration file:
 
- `/etc/systemd/system/certbot.service` 
+ `/etc/named.conf` 
 ```
-[Unit]
-Description=Let's Encrypt renewal
+...
+zone "**domain.ltd**" IN {
+        ...
+        // this is for certbot
+        update-policy {
+                grant **example-key** name _acme-challenge.**domain.ltd**. txt;
+        };
+        ...
+};
 
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.service" --post-hook "/usr/bin/systemctl start httpd.service" --quiet --agree-tos
+key "**example-key**" {
+        algorithm hmac-sha512;
+        secret "**a_secret_key**";
+};
+...
 ```
+
+[Restart](/index.php/Restart "Restart") `named.service`.
+
+#### Настройка certbot для rfc2136
+
+Create a configuration file for the rfc2136 plugin.
+
+ `/etc/letsencrypt/rfc2136.ini` 
+```
+dns_rfc2136_server = **IP.ADD.RE.SS**
+dns_rfc2136_name = **example-key**
+dns_rfc2136_secret = **INSERT_KEY_WITHOUT_QUOTES**
+dns_rfc2136_algorithm = HMAC-SHA512
+```
+
+Since the file contains a copy of the secret key, secure it with [chmod](/index.php/Chmod "Chmod") by removing the group and others permissions.
+
+Test what we did:
+
+```
+# certbot certonly --dns-rfc2136 --force-renewal --dns-rfc2136-credentials /etc/letsencrypt/rfc2136.ini --server [https://acme-v02.api.letsencrypt.org/directory](https://acme-v02.api.letsencrypt.org/directory) --email **example@domain.ltd** --agree-tos --no-eff-email -d '**domain.ltd'** -d '***.domain.ltd'**
+
+```
+
+If you pass the validation successfully and receive certificates, then you are good to go with automating certbot. Otherwise, something went wrong and you need to debug your setup. It basically boils down to running `certbot renew` from now on, see [#Automatic renewal](#Automatic_renewal).
 
 ## Смотрите также
 
-*   [EFF's Certbot documentation](https://certbot.eff.org/)
-*   [List of ACME clients](https://letsencrypt.org/docs/client-options/)
+*   [Transport Layer Security#ACME clients](/index.php/Transport_Layer_Security#ACME_clients "Transport Layer Security")
+*   [Статья на Википедии](https://en.wikipedia.org/wiki/ru:Let%E2%80%99s_Encrypt "wikipedia:ru:Let’s Encrypt")
+*   [Документация Certbot от EFF](https://certbot.eff.org/)
+*   [Список ACME-клиентов](https://letsencrypt.org/docs/client-options/)

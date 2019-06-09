@@ -32,6 +32,8 @@
     *   [5.3 Event failed: bad return code](#Event_failed:_bad_return_code)
 *   [6 Web interface](#Web_interface)
     *   [6.1 XMLRPC interface](#XMLRPC_interface)
+        *   [6.1.1 Unix Socket](#Unix_Socket)
+        *   [6.1.2 SCGI Port](#SCGI_Port)
     *   [6.2 Saving magnet links as torrent files in watch folder](#Saving_magnet_links_as_torrent_files_in_watch_folder)
 *   [7 Magnet to Torrent](#Magnet_to_Torrent)
 *   [8 rtorrent-ps](#rtorrent-ps)
@@ -758,18 +760,24 @@ There are numerous web interfaces and front ends for rTorrent including:
 
 ### XMLRPC interface
 
-If you want to use rtorrent with some web interfaces (e.g. rutorrent) you need to add the following line to the configuration file:
+#### Unix Socket
+
+If you want to use rtorrent with some web interfaces (e.g. rutorrent) you need to add the following line to the configuration file, replacing **user** with the user who runs rtorrent:
 
 ```
-scgi_port = localhost:5000
+scgi_local = /home/user/rpc.socket
+execute.nothrow = chmod,777,/home/user/rpc.socket
 
 ```
 
 For more information see: [Using XMLRPC with rtorrent](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)
 
-**Note:** **SECURITY HINT**
+#### SCGI Port
 
-Using TCP allows **any** *local* user to **execute arbitrary commands** as the user owning the rTorrent process. Use UNIX domain sockets for sane opsec, by way of setting UNIX permissions on the socket file.
+```
+scgi_port = localhost:5000
+
+```
 
 ### Saving magnet links as torrent files in watch folder
 

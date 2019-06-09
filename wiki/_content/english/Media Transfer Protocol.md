@@ -23,10 +23,11 @@ The [Media Transfer Protocol](https://en.wikipedia.org/wiki/Media_Transfer_Proto
 *   [5 File manager integration](#File_manager_integration)
     *   [5.1 gvfs-mtp](#gvfs-mtp)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 jmtpfs: Input/output error upon first access](#jmtpfs:_Input/output_error_upon_first_access)
-    *   [6.2 kio-mtp: cannot use "Open with File Manager" action](#kio-mtp:_cannot_use_"Open_with_File_Manager"_action)
-    *   [6.3 kio-mtp being called simultaneously by different services](#kio-mtp_being_called_simultaneously_by_different_services)
-    *   [6.4 Android File Transfer: connect failed: no MTP device found](#Android_File_Transfer:_connect_failed:_no_MTP_device_found)
+    *   [6.1 libmtp (gvfs-mtp): filemanager (nautilus, pcmanfm, vifm and etc) hangs on accessing DCIM/Camera of Android device](#libmtp_(gvfs-mtp):_filemanager_(nautilus,_pcmanfm,_vifm_and_etc)_hangs_on_accessing_DCIM/Camera_of_Android_device)
+    *   [6.2 jmtpfs: Input/output error upon first access](#jmtpfs:_Input/output_error_upon_first_access)
+    *   [6.3 kio-mtp: cannot use "Open with File Manager" action](#kio-mtp:_cannot_use_"Open_with_File_Manager"_action)
+    *   [6.4 kio-mtp being called simultaneously by different services](#kio-mtp_being_called_simultaneously_by_different_services)
+    *   [6.5 Android File Transfer: connect failed: no MTP device found](#Android_File_Transfer:_connect_failed:_no_MTP_device_found)
 
 ## Connecting
 
@@ -151,7 +152,7 @@ $ sudo aft-mtp-mount ~/my-device
 
 If you want album art to be displayed, it must be named `albumart.xxx` and placed first in the destination folder. Then copy other files. Also, note that fuse could be 7-8 times slower than ui/cli file transfer.
 
-If you want to browse the folder as a non-root user, pass `-o allow-other` to `aft-mtp-mount`. Note that you will first need to uncomment `user_allow_other` in `/etc/fuse.conf`.
+If you want to browse the folder as a non-root user, pass `-o allow_other` to `aft-mtp-mount`. Note that you will first need to uncomment `user_allow_other` in `/etc/fuse.conf`.
 
 	Qt user interface
 
@@ -257,7 +258,7 @@ Disable automount of MTP devises with gvfs you will need to change value *true* 
 
 **Note:** The file managers can have own options for automount. On start they checking for all available mountable devices.
 
-If your device isn't showing up in the file manager then [#libmtp](#libmtp) is missing a native support and is not currently available in the list of the [supported devices](https://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h). If you will try to mount by using command line you may also get an error
+If your device is not showing up in the file manager then [#libmtp](#libmtp) is missing a native support and is not currently available in the list of the [supported devices](https://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h). If you will try to mount by using command line you may also get an error
 
 ```
 Device 0 (VID=*XXXX* and PID=*XXXX*) is UNKNOWN.
@@ -286,6 +287,18 @@ The file managers with support for [gvfs](/index.php/Gvfs "Gvfs") will be able t
 **Note:** If you getting limited access to the device and cannot use standard commands from command line such as e.g. `cp`,`ls` then look for [gvfs](/index.php/Gvfs "Gvfs") own alternatives, `ls -1 /usr/bin/gvfs-*`.
 
 ## Troubleshooting
+
+### libmtp (gvfs-mtp): filemanager (nautilus, pcmanfm, vifm and etc) hangs on accessing DCIM/Camera of Android device
+
+Symptoms: everything works fine till moment of entering DCIM/Camera directory. In this case filemanager freezes and even in command line you cannot run even `ls` on that directory.
+
+Possible and very probable reason is the bug of libmtp.
+
+It seems that it is caused by file with name like `20180915_180351(0).jpg`. Samsung phones for example like to create files with such names.
+
+There are several tickets ([one](https://sourceforge.net/p/libmtp/bugs/1830/), [two](https://sourceforge.net/p/libmtp/bugs/1808/) and etc) and questions ([one](https://askubuntu.com/questions/995383/nautilus-hangs-on-accessing-dcim-camera-on-android), [two](https://askubuntu.com/questions/1030736/cant-open-photos-stored-on-android-system-from-ubuntu/1148034#1148034)) about it.
+
+So possible workaround is to use different mtp option (like [go-mtpfs](#go-mtpfs) for example) for such directories or somehow change file naming policy of your phone camera (or switch to another camera app like [Open Camera](https://opencamera.sourceforge.io/) for example).
 
 ### jmtpfs: Input/output error upon first access
 

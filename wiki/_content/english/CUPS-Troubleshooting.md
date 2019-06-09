@@ -232,7 +232,7 @@ The Linux kernel automatically suspends USB devices when there is driver support
 
 Check the permissions of the printer USB device. Get the bus and device number from `lsusb`:
 
- ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <PRINTERID>:<VENDOR> Hewlett-Packard DeskJet D1360` 
+ ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <VENDOR>:<PRINTERID> Hewlett-Packard DeskJet D1360` 
 
 Check the ownership by looking in devfs:
 

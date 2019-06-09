@@ -318,21 +318,31 @@ Create pool with ashift=12 and single raidz vdev:
 
 **Note:** This section frequently goes out of date with updates to GRUB and ZFS. Consult the manual pages for the most up-to-date information.
 
-By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is not suitable for all the features of ZFSonLinux 0.7.1, and must have unsupported features disabled.
+By default, *zpool create* enables all features on a pool. If `/boot` resides on ZFS when using [GRUB](/index.php/GRUB "GRUB") you must only enable features supported by GRUB otherwise GRUB will not be able to read the pool. GRUB 2.02 supports the read-write features `lz4_compress`, `hole_birth`, `embedded_data`, `extensible_dataset`, and `large_blocks`; this is not suitable for all the features of ZFSonLinux 0.8.0, and must have unsupported features disabled. We can explicitly name features to enable with the `-d` argument to `zpool create`, which disables all features by default.
 
-You can create a pool with the incompatible features disabled:
-
-```
-# zpool create -o feature@multi_vdev_crash_dump=disabled \
-               -o feature@large_dnode=disabled           \
-               -o feature@sha512=disabled                \
-               -o feature@skein=disabled                 \
-               -o feature@edonr=disabled                 \
-               $POOL_NAME $VDEVS
+You can create a pool with only the compatible features enabled:
 
 ```
+# zpool create -d -o feature@allocation_classes=enabled \
+                  -o feature@async_destroy=enabled      \
+                  -o feature@bookmarks=enabled          \
+                  -o feature@embedded_data=enabled      \
+                  -o feature@empty_bpobj=enabled        \
+                  -o feature@enabled_txg=enabled        \
+                  -o feature@extensible_dataset=enabled \
+                  -o feature@filesystem_limits=enabled  \
+                  -o feature@hole_birth=enabled         \
+                  -o feature@large_blocks=enabled       \
+                  -o feature@lz4_compress=enabled       \
+                  -o feature@project_quota=enabled      \
+                  -o feature@resilver_defer=enabled     \
+                  -o feature@spacemap_histogram=enabled \
+                  -o feature@spacemap_v2=enabled        \
+                  -o feature@userobj_accounting=enabled \
+                  -o feature@zpool_checkpoint=enabled   \
+                  $POOL_NAME $VDEVS
 
-When running the git version of ZFS on Linux, make sure to also add `-o feature@encryption=disabled`.
+```
 
 ### Verifying pool status
 

@@ -118,7 +118,7 @@ See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for
 
 #### UEFI Shell
 
-Some UEFI implementations make it difficult to modify the NVRAM successfully using efibootmgr. If efibootmgr cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2 (i.e., from the Arch Linux live iso).
+Some UEFI implementations make it difficult to modify the NVRAM successfully using efibootmgr. If efibootmgr cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2 (i.e., from the [Arch Linux live iso](https://www.archlinux.org/download/)).
 
 First, find out the device number where your [ESP](/index.php/ESP "ESP") resides by using:
 

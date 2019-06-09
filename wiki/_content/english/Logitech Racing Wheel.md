@@ -1,10 +1,15 @@
 This article describes how to set up a Logitech Formula Force GP Racing Wheel with Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
     *   [1.1 Identifying](#Identifying)
-    *   [1.2 Testing](#Testing)
+    *   [1.2 Checking input device](#Checking_input_device)
+    *   [1.3 Testing](#Testing)
 *   [2 Configuration](#Configuration)
 *   [3 References](#References)
 
@@ -26,6 +31,8 @@ Bus 005 Device 006: ID 046d:c293 Logitech, Inc. WingMan Formula Force GP
 
 ```
 
+### Checking input device
+
 ```
 $ cat /proc/bus/input/devices
 I: Bus=0003 Vendor=046d Product=c293 Version=0100
@@ -41,6 +48,8 @@ B: MSC=10
 B: FF=1 40000 0 0
 
 ```
+
+If you don't see your Logitech listed as an input device, you need to install usb_modeswitch package.
 
 ### Testing
 

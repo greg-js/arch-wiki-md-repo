@@ -28,6 +28,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 ## 2019
 
 *   [BTW, I Installed Arch](https://chooselinux.show/10) (first 19 minutes of the podcast) Jason Evangelho and Joe Ressington - chooselinux.show 2019-05-30
+*   [How to Conquer Your Fear of Arch Linux](https://www.linuxinsider.com/story/85983.html/) Jonathan Terrasi - linuxinsider.com 2019-04-28
 
 ## 2018
 
@@ -102,135 +103,74 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 ## 2009
 
 *   [[1]](http://www.vgrc.net/2009/11/a-few-days-with-arch-linux.html) Dennis Wyman - Zangaroa Blog 2009-11-13
-
 *   [Arch Linux 2009.08 Benchmarks](http://www.phoronix.com/scan.php?page=article&item=arch_200908_benchmarks&num=1) Michael Larabel - Phoronix.com 2009-08-14
-
 *   [Arch Linux: The Simple, Flexible (and Fast!) Distro](http://www.linux-mag.com/cache/7469/1.html) Chris Smart - Linux-Mag.com 2009-08-12
-
 *   [Arch Linux Magazine](https://www.archlinux.org/news/458/) Eduardo Romero, Editor 2009-08
-
 *   [Open Source Watershed: Watching Software Flow Downstream (PDF Document)](http://tannewt.org/slides/shawcroft-oscon_presentation.pdf) Scott Shawcroft - OSWatershed.org 2009-07-20
-
 *   Arch User Magazine - Issue #3 - Daniel Griffiths, Editor 2009-06
-
 *   [Why people resort to Arch Linux](http://www.lazytechguy.com/2009/05/why-people-resort-to-arch-linux.html) LazyTechGuy.com 2009-05-19
-
 *   Arch Linux - Syahrizal - OpenSourceReview.com 2009-05-11
-
 *   [Best Linux distros for power users, gamers, newbies, and more](http://www.techradar.com/news/software/operating-systems/best-linux-distros-for-power-users-gamers-newbies-and-more-596697?artc_pg=4) TechRadar.com 2009-05-10
-
 *   Arch User Magazine - Issue #2 - Daniel Griffiths, Editor 2009-05
-
 *   Arch Linux 2009.02 - Maurice Lawles - TechieMoe.com 2009-04-28
-
 *   [Distro Review - Arch Linux 2009.02](http://danlynch.org/blog/2009/04/arch/) Dan Lynch - DanLynch.org 2009-04-14
-
 *   Arch User Magazine - Issue #1 - Daniel Griffiths, Editor 2009-04
-
 *   [Arch Linux Review](http://www.go2linux.org/arch-linux-review) ggarron - Go2Linux.org 2009-03-21
-
 *   [Arch Linux - a distro collector's pick](http://polishlinux.org/linux/arch-linux-a-distro-collectors-pick/) Adam M. - PolishLinux.org 2009-03-16
-
 *   [Archlinux the best way to K.I.S.S.](http://bigbrovar.wordpress.com/2009/03/16/archlinux-the-best-way-to-kiss/) Bigbrovar.WordPress.com 2009-03-16
-
 *   [Linux Review 11: Arch Linux](http://linux-exploration.blogspot.com/2009/03/linux-review-11-arch-linux.html) Open_N0DE - Linux-Exploration.BlogSpot.com 03-15-2009
-
 *   [Installing Arch Linux Part 1 (YouTube Video)](http://www.youtube.com/watch?v=BIVcF5t1kZw) silvernode - YouTube.com 2009-03-10
-
 *   [Installing Arch Linux Part 2 (YouTube Video)](http://www.youtube.com/watch?v=7l-IZe733a0) silvernode - YouTube.com 2009-03-10
-
 *   [Installing Arch Linux Part 3 (YouTube Video)](http://www.youtube.com/watch?v=zmB3VVA9EGI) silvernode - YouTube.com 2009-03-10
-
 *   [Arch Linux Revolts Against ATI Catalyst Driver](http://www.phoronix.com/scan.php?page=news_item&px=NzEwMg) Michael Larabel - Phoronix.com 2009-03-01
-
 *   [Arch User Magazine - Issue #1-Preview (PDF Document)](http://archuser.com/downloads/Arch%20User%20Magazine%20-%20Issue%201%20(Preview)) Daniel Griffiths, Editor 2009-03
-
 *   [Arch Linux 2009.02 Review](http://www.reviewlinux.com/?m=show&id=11648) Josh Goode - ReviewLinux.com 2009-02-19
-
 *   [Distribution Release: Arch Linux 2009.02](http://distrowatch.com/?newsid=05336) DistroWatch.com 2009-02-17
-
 *   [Arch Linux in review](http://distrowatch.com/weekly.php?issue=20090119#feature) DistroWatch Weekly - Issue 286 2009-01-19
-
 *   [A Weekend With Arch](http://ostatic.com/blog/a-weekend-with-arch) Kristin Shoemaker - Ostatic.com 2009-01-11
-
 *   [Arch Linux – a distribution for enthusiasts](http://amca01.wordpress.com/2009/01/10/arch-linux-a-distribution-for-enthusiasts/) amca01 - WordPress.com 2009-01-10
-
 *   [Arch Linux: First Impressions](http://zuttobenkyou.wordpress.com/2009/01/08/arch-linux-first-impressions/) Shinobu - Zuttobenkyou.WordPress.com 2009-01-08
 
 ## 2008
 
 *   [Review: Arch Linux - A sleek, fast Linux distribution](http://linuxhelp.blogspot.com/2008/12/review-arch-linux-sleek-fast-linux.html) Ravi - LinuxHelp.BlogSpot.com 2008-12-12
-
 *   [Arch Linux - a review](http://evilgold.baywords.com/?p=516) EvilGold - EvilGold.BayWords.com 2008-10-27
-
 *   [Life on the cutting edge - ArchLinux](http://thesmallerbang.wordpress.com/2008/10/10/life-on-the-cutting-edge-archlinux/) Gautham - TheSmallerBang.WordPress.com 2008-10-10
-
 *   [Arch Linux Installation Walkthrough (YouTube Video)](http://www.youtube.com/watch?v=UV0krka1hn4) linuxandfriends - YouTube.com 2008-09-30
-
 *   [Live DVD for Linux Games](http://www.linuxhaxor.net/2008/09/28/live-dvd-for-linux-games/) Paves - LinuxHaxor.net 2009-09-28
-
 *   [Checking Out Arch Linux](http://www.brighthub.com/computing/linux/reviews/7804.aspx) MD Weems - BrightHub.com 2008-09-20
-
 *   [A Quick Review of Arch Linux](http://linuxbasement.com/content/a-quick-review-arch-linux) yoyoned - LinuxBasement.com 2008-08-23
-
 *   [A Simple Linux Review](http://42gems.com/?p=149) chi - 42Gems.com 2008-08-21
-
 *   [Arch Linux installation guide (Google Video)](http://video.google.co.uk/videoplay?docid=6213347420565640601) miggols99 - video.google.co.uk 2009-07-27
-
 *   [Arch Linux for the DIY Linux user](http://www.linux.com/feature/141550) Mayank Sharma - Linux.com 2008-07-16
-
 *   Linux guru? then switch to Arch Linux! - Anthony Williams - AnthonyWilliams.com 2008-07-13
-
 *   [Arch Linux 2008.06: Overlord](http://celettu.wordpress.com/2008/06/25/arch-linux-200806-overlord/) Celettu's Weblog - Celettu.WordPress.com 2008-06-25
-
 *   [Distribution Release: Arch Linux 2008.06](http://distrowatch.com/?newsid=04963) DistroWatch.com 2008-06-24
-
 *   [Arch Linux Review](http://forum.notebookreview.com/showthread.php?t=246608) blackbird - Forum.NotebookReview.com 2008-05-04
-
 *   [Arch Linux: Popular KISS distro](http://www.hardware.no/artikler/aaron_griffin_english/49507/1) Robin Heggelund Hansen - Hardware.no 2008-03-25
-
 *   [Arch: Pros Only, But Not Bad](http://distrogue.blogspot.com/2008/01/arch-pros-only-but-not-bad.html) DJ Gentoo - Distrogue.BlogSpot.com 2008-01-26
-
 *   [PLANETOSS: Arch Linux - Is this really a geek's distro?](http://planetoss.com/detail.php?id=7) vasanth - PlanetOSS.com 2008-01-17
-
 *   [A Stable Arch Branch?](http://kmandla.wordpress.com/2008/01/05/a-stable-arch-branch/) K. Mandla - KMandla.WordPress.com 2008-01-05
 
 ## 2007
 
 *   [The Linux Link Tech Show](http://www.tllts.org/rsspage.php) - Interview with Aaron Griffin, lead developer of Arch Linux Episode #223 12-12-07
-
 *   [Arch Linux, really impressive. Even when virtualized.](http://tuxtoday.wordpress.com/2007/11/14/arch-linux-really-impressive-even-when-virtualized/) TuxToday.WordPress.com 2007-11-14
-
 *   [Arch 2007.08-2 Review](http://simplyjat.blogspot.com/2007/11/arch-200708-2-review.html) OpenReview - SimplyJat.BlogSpot.com 2007-11-14
-
 *   [Arch Linux Tools: AUR](http://polishlinux.org/linux/arch/archlinux-tools-aur/) mikrobart - PolishLinux.org 2007-11-04
-
 *   [Arch Linux Tools: pacman](http://polishlinux.org/linux/arch/archlinux-tools-pacman/) mikrobart - PolishLInux.org 2007-10-26
-
 *   [Distribution Release: Arch Linux 2007.08-2](http://distrowatch.com/?newsid=04513) DistroWatch.com 2007-10-07
-
 *   [Arch Linux Review](http://www.dvd-guides.com/content/view/212/104/) DVD-Guides.com 2007-09-13
-
 *   [Distribution Release: Arch Linux 2007.08](http://distrowatch.com/?newsid=04394) DistroWatch.com 2007-08-05
-
 *   Linux Reality: Podcast Episode 70 - Arch Linux Episode #70 2007-07-11
-
 *   [Arch Linux: An Observational Review](http://rohrbakn.blogspot.com/2007/06/arch-linux-observational-review.html) Rohrbakn - Rohrbakn.BlogSpot.com 2007-06-22
-
 *   [Ten Things I Love About ArchLinux](http://www.urbanpuddle.com/articles/2007/05/31/ten-things-i-love-about-archlinux) Vince Wadhwani - UrbanPuddle.com 2007-05-31
-
 *   [ArchLinux - smooth and cuddly](http://polishlinux.org/linux/arch/archlinux-smooth-and-cuddly/) riklaumin - PolishLinux.org 2007-05-04
-
 *   [Distribution Release: Arch Linux 2007-05](http://distrowatch.com/?newsid=04235) DistroWatch.com 2007-05-17
-
 *   [Fallen Under the Spell of Arch Voodoo](http://www.tuxmachines.org/node/15527) srlinuxx - TuxMachines.org 2007-04-20
-
 *   [Distribution Release: Arch Linux 0.8](http://distrowatch.com/?newsid=04143) DistroWatch.com 2007-04-01
-
 *   [ArchLinux, The Distro I wish I had found sooner.](http://usalug.org/phpBB2/viewtopic.php?t=10256) crouse - USALug.org 2007-01-10
-
 *   [archLinux mini review](http://alt.awesometrousers.net/articles/2007-01-03-archlinux-mini-review.html) eliot - AwesomeTrousers.net 2007-01-03
-
 *   [Interview with Judd Vinet, founder of Arch Linux](http://www.ossblog.it/post/1728/intervista-a-judd-vinet-fondatore-del-progetto-archlinux) OSSBlog.it 2007-01-02
 
 ## 2006

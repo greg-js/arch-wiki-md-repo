@@ -4,7 +4,11 @@ From [the official website](https://www.passwordstore.org/):
 
 pass is a simple password manager for the command line. Pass is a shell script that makes use of existing tools like [GnuPG](/index.php/GnuPG "GnuPG"), [tree](https://www.archlinux.org/packages/?name=tree) and [Git](/index.php/Git "Git").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
@@ -89,6 +93,8 @@ $ passmenu
 ```
 
 Then selecting an entry will copy its password to the clipboard. See [dmenu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dmenu.1) for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
+
+**Note:** If using passmenu causes the current window to [lose focus](https://wiki.archlinux.org/index.php/Dmenu#Current_window_loses_focus), downgrade dmenu to 4.8
 
 ## Migrating to pass
 

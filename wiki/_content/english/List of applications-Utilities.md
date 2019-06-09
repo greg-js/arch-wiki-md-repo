@@ -33,23 +33,25 @@
         *   [1.2.8 Full-text searching](#Full-text_searching)
             *   [1.2.8.1 Full-text indexers](#Full-text_indexers)
     *   [1.3 Development](#Development)
-        *   [1.3.1 Version control systems](#Version_control_systems)
-        *   [1.3.2 Build automation](#Build_automation)
-        *   [1.3.3 Integrated development environments](#Integrated_development_environments)
-            *   [1.3.3.1 Java IDEs](#Java_IDEs)
-            *   [1.3.3.2 Python IDEs](#Python_IDEs)
-            *   [1.3.3.3 Educational IDEs](#Educational_IDEs)
-        *   [1.3.4 Debuggers](#Debuggers)
-        *   [1.3.5 Lexing and parsing](#Lexing_and_parsing)
-        *   [1.3.6 GUI builders](#GUI_builders)
-        *   [1.3.7 Hex editors](#Hex_editors)
-        *   [1.3.8 JSON tools](#JSON_tools)
-        *   [1.3.9 Literate programming](#Literate_programming)
-        *   [1.3.10 UML modelers](#UML_modelers)
-        *   [1.3.11 API documentation browsers](#API_documentation_browsers)
-        *   [1.3.12 Issue tracking systems](#Issue_tracking_systems)
-        *   [1.3.13 Code review](#Code_review)
-        *   [1.3.14 Game development](#Game_development)
+        *   [1.3.1 Code forges](#Code_forges)
+            *   [1.3.1.1 Code forge clients](#Code_forge_clients)
+        *   [1.3.2 Version control systems](#Version_control_systems)
+        *   [1.3.3 Build automation](#Build_automation)
+        *   [1.3.4 Integrated development environments](#Integrated_development_environments)
+            *   [1.3.4.1 Java IDEs](#Java_IDEs)
+            *   [1.3.4.2 Python IDEs](#Python_IDEs)
+            *   [1.3.4.3 Educational IDEs](#Educational_IDEs)
+        *   [1.3.5 Debuggers](#Debuggers)
+        *   [1.3.6 Lexing and parsing](#Lexing_and_parsing)
+        *   [1.3.7 GUI builders](#GUI_builders)
+        *   [1.3.8 Hex editors](#Hex_editors)
+        *   [1.3.9 JSON tools](#JSON_tools)
+        *   [1.3.10 Literate programming](#Literate_programming)
+        *   [1.3.11 UML modelers](#UML_modelers)
+        *   [1.3.12 API documentation browsers](#API_documentation_browsers)
+        *   [1.3.13 Issue tracking systems](#Issue_tracking_systems)
+        *   [1.3.14 Code review](#Code_review)
+        *   [1.3.15 Game development](#Game_development)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 On-screen keyboards](#On-screen_keyboards)
@@ -695,6 +697,34 @@ These programs index your files to allow for quick searching.
 	[https://launchpad.net/zeitgeist-project](https://launchpad.net/zeitgeist-project) || [zeitgeist](https://www.archlinux.org/packages/?name=zeitgeist)
 
 ### Development
+
+#### Code forges
+
+*   **[Gitlab](/index.php/Gitlab "Gitlab")** — Project management and code hosting application.
+
+	[https://gitlab.com/gitlab-org/gitlab-ce](https://gitlab.com/gitlab-org/gitlab-ce) || [gitlab](https://www.archlinux.org/packages/?name=gitlab)
+
+*   **[Gitea](/index.php/Gitea "Gitea")** — Painless self-hosted Git service. Community managed fork of Gogs.
+
+	[https://gitea.io](https://gitea.io) || [gitea](https://www.archlinux.org/packages/?name=gitea)
+
+##### Code forge clients
+
+*   **git-open** — Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+
+	[https://github.com/paulirish/git-open](https://github.com/paulirish/git-open) || [git-open](https://aur.archlinux.org/packages/git-open/)
+
+*   **hub** — cli interface for Github.
+
+	[https://hub.github.com](https://hub.github.com) || [hub](https://www.archlinux.org/packages/?name=hub)
+
+*   **lab** — A hub-like tool for GitLab
+
+	[https://zaquestion.github.io/lab/](https://zaquestion.github.io/lab/) || [lab-bin](https://aur.archlinux.org/packages/lab-bin/)
+
+*   **snippet** — A terminal based interface to create a new GitLab snippet
+
+	[https://gitlab.com/zj/snippet](https://gitlab.com/zj/snippet) || [snippet](https://aur.archlinux.org/packages/snippet/)
 
 #### Version control systems
 

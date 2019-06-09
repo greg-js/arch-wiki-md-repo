@@ -56,8 +56,6 @@ static char *termname = "st-256color";
 
 *st* will set the `TERM` variable with the value of `termname`.
 
-**Note:** If you experience trouble with *st*, you can try to set `termname` to `xterm` or `xterm-256color`. Alternatively symlink *xterm* to *st* in your local bin for compatibility.
-
 ### Font
 
 Edit the following line as you prefer:

@@ -9,7 +9,11 @@ It is lightweight, highly extensible, and is designed to look similar to uTorren
 
 **Warning:** **SECURITY** The config snippets given on this page are **insecure** (specifically using unprotected /RPC2 mounts). It needs an in-depth review, and fixing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -114,13 +118,19 @@ ln -s /usr/share/webapps/rutorrent/ /usr/share/nginx/html/rutorrent
 
 *   Enable the rTorrent XMLRPC interface: [rTorrent#XMLRPC interface](/index.php/RTorrent#XMLRPC_interface "RTorrent")
 
-*   Add following location to your nginx configuration:
+*   Edit the following location to your rutorrent configuration at `/etc/webapps/rutorrent/conf/config.php` where **rtorrentuser** is the user running rutorrent:
 
 ```
-           location /RPC2 {
-               include scgi_params;
-               scgi_pass localhost:5000;
-           }
+$scgi_port = 0;
+$scgi_host = "unix:///home/rtorrentuser/rpc.socket";
+
+```
+
+Note: A multi-user setup will need user specific configuration files under `/usr/share/webapps/rutorrent/conf/users` for each user's socket location. Create a folder with the user's name, then create a config.php, for example:
+
+```
+/usr/share/webapps/rutorrent/conf/users/rtorrentuser/config.php
+/usr/share/webapps/rutorrent/conf/users/anotheruser/config.php
 
 ```
 
@@ -289,9 +299,11 @@ We will download rutorrent to lighttpd http directory.
 
 ```
    # cd /srv/http
-   # wget http://dl.bintray.com/novik65/generic/rutorrent-3.6.tar.gz
-   # tar xvfx rutorrent-3.6.tar.gz
-   # rm rutorrent-3.6.tar.gz
+   # wget https://github.com/Novik/ruTorrent/archive/v3.9.tar.gz
+   # tar xvfx rutorrent-3.9.tar.gz
+   # mv ruTorrent-3.9/ rutorrent/
+   # chown -R http rutorrent/
+   # rm rutorrent-3.9.tar.gz
 
 ```
 

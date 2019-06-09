@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Fail2ban](/index.php/Fail2ban "Fail2ban"). Дата последней синхронизации: 30 мая 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Fail2ban&diff=0&oldid=574274).
+**Состояние перевода:** На этой странице представлен перевод статьи [Fail2ban](/index.php/Fail2ban "Fail2ban"). Дата последней синхронизации: 6 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Fail2ban&diff=0&oldid=574713).
 
 [Fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page) сканирует лог-файлы (например, `/var/log/httpd/error_log`) и блокирует IP-адреса, которые ведут себя слишком подозрительно, к примеру, делая слишком много попыток входа с неверным паролем, пытаясь найти уязвимости и т.д. Обычно Fail2ban используется для обновления правил с целью блокировки IP-адресов на определённое время, но также можно настроить и другие действия, например, отправку письма по электронной почте.
 
@@ -146,7 +146,7 @@ ignoreip  = 127.0.0.1/8
 
 На данный момент Fail2ban должен запускаться от имени *суперпользователя*, следовательно, можно дополнительно защитить службу с помощью [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)").
 
-Создайте конфигурационный [drop-in файл](/index.php/Drop-in_%D1%84%D0%B0%D0%B9%D0%BB "Drop-in файл") для службы `fail2ban.service`:
+[Создайте](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%B9%D1%82%D0%B5 "Создайте") конфигурационный [drop-in файл](/index.php/Drop-in_%D1%84%D0%B0%D0%B9%D0%BB "Drop-in файл") для службы `fail2ban.service`:
 
  `/etc/systemd/system/fail2ban.service.d/override.conf` 
 ```
@@ -167,7 +167,7 @@ CapabilityBoundingSet=CAP_AUDIT_READ CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_R
 
 При использовании параметра `ProtectSystem=strict` иерархия [файловой системы](/index.php/File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "File systems (Русский)") будет доступна только для чтения, а `ReadWritePaths` позволит Fail2ban также и записывать в необходимых директориях.
 
-[Создайте](/index.php/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%B9%D1%82%D0%B5 "Создайте") файл `/etc/fail2ban/fail2ban.local` с корректным путём `logtarget`:
+Создайте файл `/etc/fail2ban/fail2ban.local` с корректным путём `logtarget`:
 
  `/etc/fail2ban/fail2ban.local` 
 ```
@@ -175,6 +175,8 @@ CapabilityBoundingSet=CAP_AUDIT_READ CAP_DAC_READ_SEARCH CAP_NET_ADMIN CAP_NET_R
 logtarget = /var/log/fail2ban/fail2ban.log
 
 ```
+
+Также создайте директорию `/var/log/fail2ban` от имени суперпользователя.
 
 После чего [перезагрузите systemd](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%B8%D1%82%D0%B5_systemd "Перезагрузите systemd"), чтобы применить изменения файлов юнитов, и [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") службу `fail2ban.service`.
 
