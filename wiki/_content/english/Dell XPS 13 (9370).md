@@ -76,22 +76,6 @@ If you have the 4K (3840x2160) model, also check out [HiDPI](/index.php/HiDPI "H
 
 Note that the `enable_psr=1` kernel parameter appears not to work properly, at least on the touchscreen model.
 
-For me the system seems to freeze sometime which is due to enable_psr=1, you can either disable enable_psr=0 where you will loose battery life but get no freezes, or enable_psr=2 where you save battery life like enable_psr=1 but without any freezes. enable_psr=1 maximizes batterylife but for me gives the system freezes, hopefully this will get fixed in the future.
-
-To do so with sudo create a file /etc/modprobe.d/1915.conf:
-
-```
- options i915 enable_psr=2
-
-```
-
-Some other options that save battery life are:
-
-```
- options i915 enable_psr=2 enable_rc6=7 enable_fbc=1 semaphores=1 lvds_downclock=1 enable_guc_loading=1 enable_guc_submission=1
-
-```
-
 ## Webcam
 
 [Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).

@@ -24,7 +24,7 @@ See the following [guide](https://dev.cancel.fm/wiki?name=Custom_Themes). The di
 
 There is a bug with some emoji fonts (known: [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/), [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji)) which generates rendering glitches, currently not fixed. Emoji fonts known to behave well include [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) and [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/), so it is recommended to use one of them. Please note that some dialogs in the application always use system fonts, so it is sufficient to rely on the mentioned font in one's fontconfig to experience the bug.
 
-Some users have reported that [using system libraries](/index.php/Ripcord#using_system_libraries "Ripcord") solves the issue.
+Some users have reported that [using system libraries](#Using_system_libraries) solves the issue.
 
 For further updates and information, see the relevant [ticket](https://dev.cancel.fm/tktview?name=d2dc78360c) on the issue tracker.
 
@@ -45,4 +45,4 @@ Proceed as follows:
 
 ## IME
 
-If you need to use an [input method](/index.php/Localization#Input_methods "Localization") framework, [IBus](/index.php/IBus "IBus") is known to behave well out of the box, while [Fcitx](/index.php/Fcitx "Fcitx") seems to require using [using system libraries](/index.php/Ripcord#using_system_libraries "Ripcord").
+If you need to use an [input method](/index.php/Input_method "Input method") framework, [IBus](/index.php/IBus "IBus") is known to behave well out of the box, while [Fcitx](/index.php/Fcitx "Fcitx") seems to require using [using system libraries](#Using_system_libraries).

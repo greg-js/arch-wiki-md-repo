@@ -700,7 +700,7 @@ These programs index your files to allow for quick searching.
 
 #### Code forges
 
-*   **[Gitlab](/index.php/Gitlab "Gitlab")** — Project management and code hosting application.
+*   **[GitLab](/index.php/GitLab "GitLab")** — Project management and code hosting application.
 
 	[https://gitlab.com/gitlab-org/gitlab-ce](https://gitlab.com/gitlab-org/gitlab-ce) || [gitlab](https://www.archlinux.org/packages/?name=gitlab)
 

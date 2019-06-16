@@ -30,9 +30,9 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [2.9 Adjust modifier bits](#Adjust_modifier_bits)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Upgrade database on updates](#Upgrade_database_on_updates)
-*   [5 Advanced Configuration](#Advanced_Configuration)
+*   [5 Advanced configuration](#Advanced_configuration)
     *   [5.1 Basic SSH](#Basic_SSH)
-    *   [5.2 Custom SSH Connection](#Custom_SSH_Connection)
+    *   [5.2 Custom SSH connection](#Custom_SSH_connection)
     *   [5.3 HTTPS/SSL](#HTTPS/SSL)
         *   [5.3.1 Change GitLab configs](#Change_GitLab_configs)
         *   [5.3.2 Let's Encrypt](#Let's_Encrypt)
@@ -41,10 +41,10 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [5.4.2 Nginx](#Nginx)
         *   [5.4.3 Apache](#Apache)
     *   [5.5 Gitlab-workhorse](#Gitlab-workhorse)
-*   [6 Useful Tips](#Useful_Tips)
+*   [6 Useful tips](#Useful_tips)
     *   [6.1 Hidden options](#Hidden_options)
     *   [6.2 Backup and restore](#Backup_and_restore)
-    *   [6.3 Enable Fast SSH Key Lookup](#Enable_Fast_SSH_Key_Lookup)
+    *   [6.3 Enable fast SSH key lookup](#Enable_fast_SSH_key_lookup)
     *   [6.4 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_(gravatar_not_using_https))
@@ -52,12 +52,12 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
     *   [7.4 Failed to connect to Gitaly](#Failed_to_connect_to_Gitaly)
     *   [7.5 Failed to connect via SSH](#Failed_to_connect_via_SSH)
-    *   [7.6 CSS or Styles issue](#CSS_or_Styles_issue)
+    *   [7.6 CSS or styles issue](#CSS_or_styles_issue)
 *   [8 See also](#See_also)
 
 ## Installation
 
-**Note:** This article covers installing and configuring GitLab without HTTPS at first. If needed, see [#Advanced Configuration](#Advanced_Configuration) to set up SSL.
+**Note:** This article covers installing and configuring GitLab without HTTPS at first. If needed, see [#Advanced configuration](#Advanced_configuration) to set up SSL.
 
 GitLab requires [Redis](/index.php/Redis "Redis") and a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
@@ -88,7 +88,7 @@ Edit `/etc/webapps/gitlab/gitlab.yml` and setup at least the following parameter
 
 **Hostname:** In the `gitlab:` section set `host:` - replacing `localhost` to `yourdomain.com` (**note:** no '[http://'](http://') or trailing slash) - into your fully qualified domain name.
 
-**Port:** `port:` can be confusing. This is not the port that the gitlab server (unicorn) runs on; it's the port that users will initially access through in their browser. Basically, if you intend for users to visit 'yourdomain.com' in their browser, without appending a port number to the domain name, leave `port:` as `80`. If you intend your users to type something like 'yourdomain.com:3425' into their browsers, then you'd set `port:` to `3425`. You will also have to **configure your webserver** to listen on that port.
+**Port:** `port:` can be confusing. This is not the port that the gitlab server (unicorn) runs on; it's the port that users will initially access through in their browser. Basically, if you intend for users to visit 'yourdomain.com' in their browser, without appending a port number to the domain name, leave `port:` as `80`. If you intend your users to type something like 'yourdomain.com:3425' into their browsers, then you would set `port:` to `3425`. You will also have to **configure your webserver** to listen on that port.
 
 **Timezone (optional):** The `time_zone:` parameter is optional, but may be useful to force the zone of GitLab applications.
 
@@ -333,7 +333,7 @@ Finally run the following commands to check your installation:
 
 ### Adjust modifier bits
 
-(The gitlab check won't pass if the user and group ownership isn't configured properly)
+(The gitlab check will not pass if the user and group ownership is not configured properly)
 
 ```
 # chmod -R ug+rwX,o-rwx /var/lib/gitlab/repositories/
@@ -352,7 +352,7 @@ Now test your GitLab instance by visiting [http://localhost:8080](http://localho
 
 ```
 username: root
-password: You'll be prompted to create one on your first visit.
+password: You will be prompted to create one on your first visit.
 
 ```
 
@@ -375,7 +375,7 @@ Afterwards, restart gitlab-related services:
 
 ```
 
-## Advanced Configuration
+## Advanced configuration
 
 ### Basic SSH
 
@@ -406,7 +406,7 @@ $ ssh -T **gitlab**@*YOUR_SERVER*
 
 ```
 
-### Custom SSH Connection
+### Custom SSH connection
 
 If you are running SSH on a non-standard port, you must change the GitLab user's SSH config:
 
@@ -447,7 +447,7 @@ RewriteCond   %{REQUEST_URI}  !/\.well-known/.*
 
 If you want to integrate Gitlab into a running web server instead of using its build-in http server Unicorn, then follow these instructions.
 
-##### Node.js
+#### Node.js
 
 You can easily set up an http proxy on port 443 to proxy traffic to the GitLab application on port 8080 using http-master for Node.js. After you have created your domain's OpenSSL keys and have gotten you CA certificate (or self signed it), then go to [https://github.com/CodeCharmLtd/http-master](https://github.com/CodeCharmLtd/http-master) to learn how easy it is to proxy requests to GitLab using HTTPS. http-master is built on top of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy).
 
@@ -512,7 +512,7 @@ For the SSL configuration see [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Se
 
 Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this. [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) should now be preferred over `gitlab-unicorn` according to the GitLab team: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
 
-**Note:** Unicorn is still needed so don't disable or stop `gitlab-unicorn.service`.
+**Note:** Unicorn is still needed so do not disable or stop `gitlab-unicorn.service`.
 
 By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `/run/gitlab/gitlab-workhorse.socket`. You can [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` to make it listen on an address, for example `-listenAddr 127.0.0.1:8181`. If listening on an address you also need to set the network type to `-listenNetwork tcp`
 
@@ -531,7 +531,7 @@ upstream gitlab {
 }
 ```
 
-## Useful Tips
+## Useful tips
 
 ### Hidden options
 
@@ -594,13 +594,13 @@ Restore the previously created backup file `/var/lib/gitlab/backups/1556571328_2
 
 **Note:** Backup folder is set in `config/gitlab.yml`. GitLab backup and restore is documented [here](https://github.com/gitlabhq/gitlabhq/blob/master/doc/raketasks/backup_restore.md).
 
-### Enable Fast SSH Key Lookup
+### Enable fast SSH key lookup
 
 Enable Fast SSH Key Lookup as explained in this page: [https://docs.gitlab.com/ee/administration/operations/fast_ssh_key_lookup.html](https://docs.gitlab.com/ee/administration/operations/fast_ssh_key_lookup.html)
 
-In short, edit /etc/ssh/sshd_config.
+In short, edit `/etc/ssh/sshd_config`.
 
-Revert all changes done following this wiki ( or revert sshd_config from the pacman package ) and only add:
+Revert all changes done following this wiki (or revert `sshd_config` from the [openssh](https://www.archlinux.org/packages/?name=openssh) package) and only add:
 
 ```
 AuthorizedKeysCommand /var/lib/gitlab/gitlab-shell/bin/gitlab-shell-authorized-keys-check gitlab %u %k
@@ -608,14 +608,7 @@ AuthorizedKeysCommandUser gitlab
 
 ```
 
-Restart sshd service:
-
-```
-systemctl restart sshd
-
-```
-
-This also helps if you are adding ssh keys by the web interface, but authorized_keys on the server is not being edited.
+Finally [restart](/index.php/Restart "Restart") the `sshd.service`.
 
 ### Sending mails from Gitlab via SMTP
 
@@ -695,7 +688,7 @@ If a custom repository storage directory is set in `/home`, disable the `Protect
 
 ### Failed to connect to Gitaly
 
-Sometimes, the Gitaly service won't get started, leaving GitLab unable to connect to Gitaly. The solution is simple:
+Sometimes, the Gitaly service will not get started, leaving GitLab unable to connect to Gitaly. The solution is simple:
 
 ```
 # systemctl start gitlab-gitaly
@@ -711,9 +704,9 @@ If git operations (-T, pull, clone, etc.) fails using ssh try changing the shell
 
 ```
 
-### CSS or Styles issue
+### CSS or styles issue
 
-If you have any issues with styles and ccs not working, you may try to edit
+If you have any issues with styles and CSS not working, you may try to edit
 
 ```
 /usr/share/webapps/gitlab/config/environments/production.rb 

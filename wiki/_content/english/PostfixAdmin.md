@@ -80,7 +80,7 @@ The [apache](/index.php/Apache "Apache") [web server](/index.php/Web_server "Web
 
 [Install](/index.php/Install "Install") and configure [apache](/index.php/Apache "Apache") with [php-fpm](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server"). Use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`.
 
-Include the following configuration in your [apache](/index.php/Apache "Apache") configuration (i.e. `/etc/httpd/conf/httpd.conf`) and [restart](/index.php/Systemd#Using_units "Systemd") the [web server](/index.php/Web_server "Web server"):
+Include the following configuration in your [apache](/index.php/Apache "Apache") configuration (i.e. `/etc/httpd/conf/httpd.conf`) and [restart](/index.php/Restart "Restart") the [web server](/index.php/Web_server "Web server"):
 
  `/etc/httpd/conf/postfixadmin.conf` 
 ```
@@ -110,7 +110,7 @@ To only allow localhost access to postfixadmin (for heightened security), add th
 
 [Nginx](/index.php/Nginx "Nginx") can proxy application servers such as [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [uWSGI](/index.php/UWSGI "UWSGI"), that run a dynamic web application. The following examples describe a folder based setup over a non-default port (for simplicity).
 
-**Note:** For server entry management in [nginx](/index.php/Nginx "Nginx") have a look at [Nginx#Managing_server_entries](/index.php/Nginx#Managing_server_entries "Nginx").
+**Note:** For server entry management in [nginx](/index.php/Nginx "Nginx") have a look at [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx").
 
 **Note:** Postfixadmin ships a configuration for [uWSGI](/index.php/UWSGI "UWSGI").
 
@@ -134,7 +134,7 @@ To only allow localhost access to postfixadmin (for heightened security), add th
 
 You will need to at least activate the `imap` and `mysqli` extensions in `/etc/php/php.ini`. Make sure you also add `/var/cache/postfixadmin` to [open_basedir](/index.php?title=Ic&action=edit&redlink=1 "Ic (page does not exist)") in your php.ini. Restart [php-fpm](/index.php?title=Php-fpm&action=edit&redlink=1 "Php-fpm (page does not exist)") for all these to take effect.
 
-Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [restart](/index.php/Systemd#Using_units "Systemd") it.
+Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [restart](/index.php/Restart "Restart") it.
 
  `/etc/nginx/sites-available/postfixadmin.conf` 
 ```
@@ -168,9 +168,9 @@ Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [resta
 
 #### uWSGI
 
-[Install](/index.php/Install "Install") [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php), create a per-application socket for [uWSGI](/index.php/UWSGI "UWSGI") (see [UWSGI#Accessibility_of_uWSGI_socket](/index.php/UWSGI#Accessibility_of_uWSGI_socket "UWSGI") for reference) and [activate](/index.php/Systemd#Using_units "Systemd") the `postfixadmin@uwsgi-secure.socket` unit.
+[Install](/index.php/Install "Install") [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php), create a per-application socket for [uWSGI](/index.php/UWSGI "UWSGI") (see [UWSGI#Accessibility of uWSGI socket](/index.php/UWSGI#Accessibility_of_uWSGI_socket "UWSGI") for reference) and [activate](/index.php/Systemd#Using_units "Systemd") the `postfixadmin@uwsgi-secure.socket` unit.
 
-Add the following configuration for nginx and [restart](/index.php/Systemd#Using_units "Systemd") [nginx](/index.php/Nginx "Nginx").
+Add the following configuration for nginx and [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Nginx").
 
  `/etc/nginx/sites-available/postfixadmin.conf` 
 ```

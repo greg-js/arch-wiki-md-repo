@@ -39,6 +39,7 @@ Related articles
     *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
     *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
     *   [6.7 Docker-machine fails to create virtual machines using the virtualbox driver](#Docker-machine_fails_to_create_virtual_machines_using_the_virtualbox_driver)
+    *   [6.8 Starting Docker breaks KVM bridged networking](#Starting_Docker_breaks_KVM_bridged_networking)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -342,7 +343,10 @@ done
 
 Docker enables IP forwarding by itself, but by default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") overrides the respective sysctl setting. Set `IPForward=yes` in the network profile. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
 
-**Note:** You may need to [restart](/index.php/Restart "Restart") `docker.service` each time you [restart](/index.php/Restart "Restart") `systemd-networkd.service` or `iptables.service`
+**Note:**
+
+*   You may need to [restart](/index.php/Restart "Restart") `docker.service` each time you [restart](/index.php/Restart "Restart") `systemd-networkd.service` or `iptables.service`.
+*   Also be aware that [nftables](/index.php/Nftables "Nftables") may block docker connections by default. Use `nft list ruleset` to check for blocking rules. `nft flush chain inet filter forward` removes all forwarding rules temporarily. Edit `/etc/nftables.conf` to make changes permanent. Remember to [restart](/index.php/Restart "Restart") `nftables.service` to reload rules from the config file.
 
 ### Default number of allowed processes/threads too low
 
@@ -421,6 +425,17 @@ VBoxManage: error: VBoxNetAdpCtl: Error while adding new interface: failed to op
 ```
 
 Simply reload the virtualbox via CLI with `vboxreload`.
+
+### Starting Docker breaks KVM bridged networking
+
+This is a [known issue](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=865975). You can use the following workaround:
+
+ `/etc/docker/daemon.json` 
+```
+{
+  "iptables": false
+}
+```
 
 ## See also
 

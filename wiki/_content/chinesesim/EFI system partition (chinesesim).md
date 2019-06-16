@@ -1,5 +1,3 @@
-**翻译状态：** 本文是英文页面 [EFI_System_Partition](/index.php/EFI_System_Partition "EFI System Partition") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-31，点击[这里](https://wiki.archlinux.org/index.php?title=EFI_System_Partition&diff=0&oldid=441553)可以查看翻译后英文页面的改动。
-
 [EFI 系统分区](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition")(也称为 ESP 或者 EFISYS)是一个 FAT32 格式的物理分区 (在硬盘主分区表上，而不是 LVM 或软件 RAID 等等) ，从这里 [UEFI](/index.php/UEFI "UEFI") 固件启动 UEFI 引导器和应用程序。
 
 它与操作系统无关而是作为 EFI 固件要启动的引导器和应用程序的存储空间，是 UEFI 启动所必须。
@@ -8,7 +6,11 @@
 
 **Warning:** 如果在 UEFI/GPT 系统上配置 [双启动](/index.php/Dual_boot_with_Windows "Dual boot with Windows")，请不要重新格式化 UEFI 分区，因为已有的分区上包含 Windows 启动需要的 *.efi* 文件。不需要重新创建分区，只需要 [#挂载分区](#挂载分区).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 创建分区](#创建分区)
     *   [1.1 GPT 磁盘分区](#GPT_磁盘分区)

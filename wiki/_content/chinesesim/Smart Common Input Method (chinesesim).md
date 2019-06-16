@@ -1,4 +1,4 @@
-**注意:** SCIM 已经 "不被开发者维护", 而 IBus 被 Red Hat 积极开发。Arch 用户安装软件时应该考虑用 [IBus](/index.php/IBus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IBus (简体中文)") 或 [UIM](/index.php/UIM "UIM") 而不是 [SCIM](/index.php/SCIM "SCIM")。
+**注意:** SCIM 已经 "不被开发者维护", 而 IBus 被 Red Hat 积极开发。Arch 用户安装软件时应该考虑用 [IBus](/index.php/IBus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IBus (简体中文)") 或 [Uim](/index.php/Uim "Uim") 而不是 [SCIM](/index.php/SCIM "SCIM")。
 
 Su Zhe (或 James Su)在为TurboLinux工作的时候，于2001年发起了SCIM项目，该项目的目标是：
 
@@ -19,25 +19,29 @@ SCIM具有以下特性：
 *   具有特性丰富的图形化面板
 *   统一的配置框架
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装SCIM](#.E5.AE.89.E8.A3.85SCIM)
-    *   [1.1 安装输入法引擎](#.E5.AE.89.E8.A3.85.E8.BE.93.E5.85.A5.E6.B3.95.E5.BC.95.E6.93.8E)
-    *   [1.2 安装 SCIM-BRIDGE](#.E5.AE.89.E8.A3.85_SCIM-BRIDGE)
-*   [2 配置SCIM](#.E9.85.8D.E7.BD.AESCIM)
-    *   [2.1 使用kdm/gdm时自动启动scim](#.E4.BD.BF.E7.94.A8kdm.2Fgdm.E6.97.B6.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8scim)
-    *   [2.2 环境变量](#.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
-        *   [2.2.1 GNOME, XFCE, LXDE 用户](#GNOME.2C_XFCE.2C_LXDE_.E7.94.A8.E6.88.B7)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装SCIM](#安装SCIM)
+    *   [1.1 安装输入法引擎](#安装输入法引擎)
+    *   [1.2 安装 SCIM-BRIDGE](#安装_SCIM-BRIDGE)
+*   [2 配置SCIM](#配置SCIM)
+    *   [2.1 使用kdm/gdm时自动启动scim](#使用kdm/gdm时自动启动scim)
+    *   [2.2 环境变量](#环境变量)
+        *   [2.2.1 GNOME, XFCE, LXDE 用户](#GNOME,_XFCE,_LXDE_用户)
         *   [2.2.2 KDE3](#KDE3)
         *   [2.2.3 GTK](#GTK)
-    *   [2.3 Locale 相关的文件](#Locale_.E7.9B.B8.E5.85.B3.E7.9A.84.E6.96.87.E4.BB.B6)
-        *   [2.3.1 更多关于 locale 的疑难解答](#.E6.9B.B4.E5.A4.9A.E5.85.B3.E4.BA.8E_locale_.E7.9A.84.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [2.4 执行 SCIM](#.E6.89.A7.E8.A1.8C_SCIM)
+    *   [2.3 Locale 相关的文件](#Locale_相关的文件)
+        *   [2.3.1 更多关于 locale 的疑难解答](#更多关于_locale_的疑难解答)
+    *   [2.4 执行 SCIM](#执行_SCIM)
         *   [2.4.1 GNOME](#GNOME)
         *   [2.4.2 KDE](#KDE)
-*   [3 已知问题](#.E5.B7.B2.E7.9F.A5.E9.97.AE.E9.A2.98)
-    *   [3.1 LWJGL (Lightweight Java Game Library) losing keyboard focus](#LWJGL_.28Lightweight_Java_Game_Library.29_losing_keyboard_focus)
-*   [4 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
+*   [3 已知问题](#已知问题)
+    *   [3.1 LWJGL (Lightweight Java Game Library) losing keyboard focus](#LWJGL_(Lightweight_Java_Game_Library)_losing_keyboard_focus)
+*   [4 外部链接](#外部链接)
 
 ## 安装SCIM
 

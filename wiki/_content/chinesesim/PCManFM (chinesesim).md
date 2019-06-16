@@ -48,7 +48,7 @@ Related articles
 *   [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
 *   [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3)：gtk3版本
 *   [pcmanfm-git](https://aur.archlinux.org/packages/pcmanfm-git/)：开发版
-*   [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt)或[pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/)：[QT](/index.php/QT "QT")版本
+*   [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt)或[pcmanfm-qt-git](https://aur.archlinux.org/packages/pcmanfm-qt-git/)：[Qt](/index.php/Qt "Qt")版本
 
 可选组件：
 

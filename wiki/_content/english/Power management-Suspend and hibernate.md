@@ -96,7 +96,7 @@ The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot
 
 **Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
-Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
+Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`. Note that the `resume` keyword should still point to the partition where your swapfile resides as described above.
 
 The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_file*`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
 

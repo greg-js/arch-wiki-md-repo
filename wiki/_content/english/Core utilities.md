@@ -65,7 +65,7 @@ The following table lists some important utilities which Arch Linux users should
 
 ### Preventing data loss
 
-rm, mv, cp and shell redirections happily delete or overwrite files without asking. rm, mv and cp all support the `-i` flag to prompt the user before every removal / overwrite. Some users like to enable the `-i` flag by default using [aliases](/index.php/Alias "Alias"). Such shell settings are however dangerous because you get used to them, resulting in potential data loss when you use another system or user that does not have them. The best way to prevent data loss is to do [backups](/index.php/Backup "Backup").
+`rm`, `mv`, `cp` and shell redirections happily delete or overwrite files without asking. `rm`, `mv`, and `cp` all support the `-i` flag to prompt the user before every removal / overwrite. Some users like to enable the `-i` flag by default using [aliases](/index.php/Alias "Alias"). Relying upon these shell options can be dangerous, because you get used to them, resulting in potential data loss when you use another system or user that does not have them. The best way to prevent data loss is to create [backups](/index.php/Backup "Backup").
 
 ## Nonessentials
 
@@ -98,7 +98,7 @@ Alternatives to the core utilities in the [base](https://www.archlinux.org/group
 
 ### cp alternatives
 
-Using [rsync#As a cp/mv alternative](/index.php/Rsync#As_a_cp/mv_alternative "Rsync") allows you to resume a failed transfer, to show the transfer status, to skip already existing files and to make sure of the destination files integrity using checksums.
+Using [rsync#As cp/mv alternative](/index.php/Rsync#As_cp/mv_alternative "Rsync") allows you to resume a failed transfer, to show the transfer status, to skip already existing files and to make sure of the destination files integrity using checksums.
 
 ### find alternatives
 

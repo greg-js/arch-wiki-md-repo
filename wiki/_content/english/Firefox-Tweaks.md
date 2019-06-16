@@ -323,17 +323,7 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 #### Hide window border and title bar
 
-Install the [Hide Caption Titlebar Plus](https://addons.mozilla.org/firefox/addon/hide-caption-titlebar-plus-sma/) extension and set the following settings (leaving other settings to default):
-
-| Option | Value |
-| Show Custom Caption/TitleBar | Never |
-| Activate custom borders and corner resizers | Deactivate |
-| Enable Customizable Buttons (min,max,close) | Using a Glass-like window background |
-| Custom Minimize, Max, Close Buttons | Auto. Current theme's skin (fixed position) |
-| Drag Fx window using Tab-bar background | Enable |
-| Alternative hide-titlebar feature | Use |
-
-The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/classicthemerestorer/) provides more tweaking options to get the best result (e.g. set tab height to 28px, enable/disable toolbars/buttons, etc.).
+Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it.
 
 #### Auto-hide Bookmarks Toolbar
 
@@ -555,7 +545,9 @@ The next time you open a magnet link, you will be prompted with a *Launch Applic
 
 ### Prevent accidental closing
 
-The [Disable Ctrl-Q Shortcut](https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/) extension can be installed to prevent unwanted closing of the browser.
+The [Disable Ctrl-Q and Cmd-Q](https://addons.mozilla.org/firefox/addon/disable-ctrl-q-and-cmd-q/) extension can be installed to prevent unwanted closing of the browser.
+
+**Note:** This extension no longer works on Linux due to a bug in Firefox.
 
 An alternative is to add a rule in your window manager configuration file. For example in [Openbox](/index.php/Openbox "Openbox") add:
 

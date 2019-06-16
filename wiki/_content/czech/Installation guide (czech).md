@@ -2,7 +2,11 @@ Tato stránka vás provede procesem instalace [Arch Linuxu](/index.php/Arch_Linu
 
 Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (Česky)") je výborným zdrojem dokumentace, řešení problémů hledejte nejdříve zde. Pokud nemůžete nalézt řešení problému, jsou vám k dispozici [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") kanál ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) a [fórum](https://bbs.archlinux.org/). Určitě také pročtěte manuálové stránky jakéhokoli příkazu, který vám není povědomý; manuálové stránky se obvykle prohlíží příkazem `man *command*`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Před instalací](#Před_instalací)
     *   [1.1 UEFI](#UEFI)
@@ -328,7 +332,7 @@ Aby fungovala akcelerace a často aby se zpřístupnila všechna rozlišení, kt
 | Intel | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
 | NVIDIA | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
-| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
+| [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) | [nvidia-340xx-utils](https://aur.archlinux.org/packages/nvidia-340xx-utils/) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
 ### Display server
 

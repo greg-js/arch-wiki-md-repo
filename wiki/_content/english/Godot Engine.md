@@ -1,6 +1,10 @@
 [Godot Engine](http://godotengine.org) is an open-source game engine .
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Legacy version](#Legacy_version)
@@ -24,7 +28,7 @@ If you want to use C# as a scripting language, install the mono version [godot-m
 
 ### Export templates
 
-To be able to export your project, you will need prebuilt binaries. If using the Git version, you will need to compile them yourself as described separately for each platform on [the wiki](http://docs.godotengine.org/en/stable/development/compiling/introduction_to_the_buildsystem.html#export-templates). If you're using the stable version, you can install the export templates provided by Godot. Install them by clicking on the engine settings icon in the top right corner, and then press "Install export templates" and provide the downloaded templates.
+To be able to export your project, you will need prebuilt binaries. If using the Git version, you will need to compile them yourself as described separately for each platform on [the wiki](http://docs.godotengine.org/en/stable/development/compiling/introduction_to_the_buildsystem.html#export-templates) or use [godot-export-templates-git](https://aur.archlinux.org/packages/godot-export-templates-git/). If you're using the stable version, you can install the export templates provided by Godot. Install them by clicking on the engine settings icon in the top right corner, and then press "Install export templates" and provide the downloaded templates.
 
 ## See also
 

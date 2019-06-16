@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 8 мая 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=572334).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 13 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=575200).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -62,14 +62,16 @@
 
 ### Ресурсы в Telegram про Arch Linux
 
-*   [archlinux_ru](https://t.me/archlinux_ru) — неофициальная группа русскоговорящего сообщества Arch Linux.
 *   [Arch Linux RU](https://t.me/ArchLinuxChatRU) — неофициальная группа сообщества Arch Linux в СНГ.
-*   [Arch Linux](https://t.me/archlinuxgroup) — неофициальная группа для обсуждения всего о Arch Linux (на английском).
+*   [archlinux_ru](https://t.me/archlinux_ru) — неофициальная группа русскоговорящего сообщества Arch Linux.
+*   [Arch Linux](https://t.me/archlinuxgroup) — неофициальная группа для обсуждения всего об Arch Linux (на английском).
 *   [ArchWikiBot](https://t.me/archewikibot) — встроенный бот для поиска в ArchWiki.
 *   [Planet Arch Linux & News](https://t.me/planetarch) — канал с последними публикациями Planet Arch и новостями с сайта Arch Linux.
 *   [Arch Linux: Recent package updates](https://t.me/archlinux_updates) — канал с последними обновлениями пакетов в репозиториях Arch Linux.
 *   [Arch Linux News](https://t.me/archlinuxnews) — канал с последними новостями с официального сайта Arch Linux (*не обновляется*).
 *   [Planet Arch](https://t.me/archplanet) — канал с последними публикациями с сайта Planet Arch *(не обновляется)*.
+*   [Archlinux.fr News](https://t.me/archlinuxfr) — канал с последними записями на форумах Archlinux.fr, а также другой информацией об Arch Linux.
+*   [Archlinux.fr Chat](https://t.me/archlinux_FR) — неофициальная группа для обсуждения всего об Arch Linux (на французском).
 
 ### Счётчик непрочитанных сообщений для Telegram Desktop
 

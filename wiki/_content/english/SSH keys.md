@@ -570,7 +570,7 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 *   Supports both PuTTY and OpenSSH private key formats.
 *   Works with native SSH agent on Linux/Mac and with PuTTY on Windows.
 
-See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://www.archlinux.org/packages/?name=keepass-plugin-keeagent) package.
+See [KeePass#Plugin Installation in KeePass](/index.php/KeePass#Plugin_Installation_in_KeePass "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://www.archlinux.org/packages/?name=keepass-plugin-keeagent) package.
 
 This agent can be used directly, by matching KeeAgent socket: `KeePass -> Tools -> Options -> KeeAgent -> Agent mode socket file -> %XDG_RUNTIME_DIR%/keeagent.socket`- and environment variable: `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"'/keeagent.socket'`.
 
@@ -603,9 +603,7 @@ $ chmod 600 ~/.ssh/authorized_keys
 *   If that does not solve the problem you may try temporarily setting `StrictModes` to `no` in `/etc/ssh/sshd_config`. If authentication with `StrictModes off` is successful, it is likely an issue with file permissions persists.
 
 *   Make sure keys in `~/.ssh/authorized_keys` are entered correctly and only use one single line.
-
 *   Make sure the remote machine supports the type of keys you are using: some servers do not support ECDSA keys, try using RSA or DSA keys instead, see [#Generating an SSH key pair](#Generating_an_SSH_key_pair).
-
 *   You may want to use debug mode and monitor the output while connecting:
 
 ```

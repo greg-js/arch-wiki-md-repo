@@ -17,7 +17,11 @@ Partition tables are created and modified using one of many [#Partitioning tools
 
 Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") before data can be written to it.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Partition table](#Partition_table)
     *   [1.1 Master Boot Record](#Master_Boot_Record)

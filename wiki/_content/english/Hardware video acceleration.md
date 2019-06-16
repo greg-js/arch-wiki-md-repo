@@ -344,7 +344,8 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 | [Chromium](/index.php/Chromium "Chromium") | Yes | No | No | – | – | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
 | [Firefox](/index.php/Firefox "Firefox") | No | No | No | – | – | [Bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
 
-*   Not supported officially by developers.
+*   NVDECODE/NVENCODE is [disabled in the Arch package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45).
+*   Not supported officially by developers, alternative packages available.
 *   VDPAU is supported only by NPAPI plugin. PPAPI plugin to NPAPI browser experimental adapter is available that provides partial VA-API and VDPAU acceleration.
 
 **Tip:** To reduce CPU usage while watching YouTube where VP8/VP9 hardware decoding is not available use h264ify extension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal).

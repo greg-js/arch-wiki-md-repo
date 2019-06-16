@@ -126,13 +126,11 @@ GNOME может быть запущен как графически, испол
 Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
+if [[ -z $DISPLAY && $(tty) == /dev/tty1 && ( -z $XDG_SESSION_TYPE || $XDG_SESSION_TYPE == tty )]]; then
   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
-
-Если это не работает, попробуйте изменить `[[ -z $XDG_SESSION_TYPE ]]` на `[[ $XDG_SESSION_TYPE = tty ]]`.
 
 ### Приложения GNOME в Wayland
 

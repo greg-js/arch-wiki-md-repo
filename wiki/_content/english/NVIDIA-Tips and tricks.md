@@ -408,7 +408,7 @@ The *Coolbits* value is the sum of its component bits in the binary numeral syst
 
 To enable multiple features, add the *Coolbits* values together. For example, to enable overclocking and overvoltage of Fermi cores, set `Option "Coolbits" "24"`.
 
-The documentation of *Coolbits* can be found in `/usr/share/doc/nvidia/html/xconfigoptions.html`. Driver version 346.16 documentation on *Coolbits* can be found online [here](http://download.nvidia.com/XFree86/Linux-x86_64/430.14/README/xconfigoptions.html#Coolbits).
+The documentation of *Coolbits* can be found in `/usr/share/doc/nvidia/html/xconfigoptions.html` and [here](http://download.nvidia.com/XFree86/Linux-x86_64/430.14/README/xconfigoptions.html#Coolbits).
 
 **Note:** An alternative is to edit and reflash the GPU BIOS either under DOS (preferred), or within a Win32 environment by way of [nvflash](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,127/orderby,2/page,1/) and [NiBiTor 6.0](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,135/orderby,2/page,1/). The advantage of BIOS flashing is that not only can voltage limits be raised, but stability is generally improved over software overclocking methods such as Coolbits. [Fermi BIOS modification tutorial](http://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html)
 

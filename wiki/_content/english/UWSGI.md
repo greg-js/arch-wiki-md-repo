@@ -319,7 +319,7 @@ WantedBy=multi-user.target
 
 The default (per application) socket unit (`uwsgi@.socket`) in [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) allows read and write access to any user on the system. However, systemd allows for a more finely granulated access management (see [systemd.socket(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.socket.5)), with which the access to a unix socket can be made more restrictive.
 
-By creating it below a webapp specific directory below `/run` (needs to be created using [tmpfiles](/index.php/Tmpfiles "Tmpfiles") beforehand - for reference see [Web_application_package_guidelines](/index.php/Web_application_package_guidelines "Web application package guidelines")) and modifying its [group](/index.php/Group "Group") and file [permissions](/index.php/Permissions "Permissions"), the socket is only accessible to [root](/index.php/Root "Root") and the [web server](/index.php/Web_server "Web server") and allows the web application to run as its own user:
+By creating it below a webapp specific directory below `/run` (needs to be created using [tmpfiles](/index.php/Tmpfiles "Tmpfiles") beforehand - for reference see [Web application package guidelines](/index.php/Web_application_package_guidelines "Web application package guidelines")) and modifying its [group](/index.php/Group "Group") and file [permissions](/index.php/Permissions "Permissions"), the socket is only accessible to [root](/index.php/Root "Root") and the [web server](/index.php/Web_server "Web server") and allows the web application to run as its own user:
 
  `/etc/systemd/system/uwsgi-secure@.socket` 
 ```

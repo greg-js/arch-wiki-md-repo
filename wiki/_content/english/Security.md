@@ -522,7 +522,7 @@ SupplementaryGroups=proc
 
 ### Restricting module loading
 
-The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kernel modules build as part of the [Linux](https://www.archlinux.org/packages/?name=Linux) package. This allows the kernel to restrict modules to be only loaded when they are signed with a valid key, in practical terms this means that all out of tree modules compiled locally or provides by packages such as [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) cannot be loaded. Restricting loading kernel modules can be done by adding `module.sig_enforce=1` to the kernel command line, further documentation can be found [here](https://www.kernel.org/doc/html/v5.2-rc3/admin-guide/module-signing.html).
+The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kernel modules build as part of the [linux](https://www.archlinux.org/packages/?name=linux) package. This allows the kernel to restrict modules to be only loaded when they are signed with a valid key, in practical terms this means that all out of tree modules compiled locally or provides by packages such as [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) cannot be loaded. Restricting loading kernel modules can be done by adding `module.sig_enforce=1` to the kernel command line, further documentation can be found [here](https://www.kernel.org/doc/html/v5.2-rc3/admin-guide/module-signing.html).
 
 ## Sandboxing applications
 

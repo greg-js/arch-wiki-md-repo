@@ -296,7 +296,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **Docker** — Aplicación dock que actúa como bandeja del sistema.
 
-	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker](https://www.archlinux.org/packages/?name=docker)
+	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker-tray](https://aur.archlinux.org/packages/docker-tray/)
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Aplicación dock propiamente dicha que abre las aplicaciones más comunes y las ventanas de forma más fácil y rápida.
 

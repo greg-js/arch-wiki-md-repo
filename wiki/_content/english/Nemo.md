@@ -19,7 +19,7 @@ Related articles
 *   [2 Configuration](#Configuration)
     *   [2.1 Set Nemo as default file browser](#Set_Nemo_as_default_file_browser)
     *   [2.2 Show / hide desktop icons](#Show_/_hide_desktop_icons)
-    *   [2.3 Change application for "Open in terminal" context menu entry](#Change_application_for_"Open_in_terminal"_context_menu_entry)
+    *   [2.3 Change the default terminal emulator for Nemo](#Change_the_default_terminal_emulator_for_Nemo)
     *   [2.4 Set keyboard shortcut for "Open in terminal"](#Set_keyboard_shortcut_for_"Open_in_terminal")
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Nemo Actions](#Nemo_Actions)
@@ -93,14 +93,31 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 This fixes the console warning `WARNING **: Can not determine workarea, guessing at layout` for tiling window managers (such as i3).
 
-### Change application for "Open in terminal" context menu entry
+### Change the default terminal emulator for Nemo
 
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) is set as the default, if it is not installed this feature will not work.
+[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) is set as the default, if it is not installed, neither the "Open in terminal" context menu entry feature will not work, nor shell scripts or terminal applications won't run from Nemo.
 
-Alternatively, change the default setting with *gsettings* to the preferred terminal application.
+You can change the default setting with `gsettings` to the preferred terminal application.
 
 ```
 $ gsettings set org.cinnamon.desktop.default-applications.terminal exec <terminal-name>
+
+```
+
+To be able to run shell scripts from Nemo, make sure you set up the proper argument for the preferred terminal application (the default is `-x` for [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)).
+
+```
+$ gsettings set org.cinnamon.desktop.default-applications.terminal exec-arg <argument>
+
+```
+
+**Tip:**
+
+To use [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) as the default terminal emulator, use the following:
+
+```
+$ gsettings set org.cinnamon.desktop.default-applications.terminal exec urxvt
+$ gsettings set org.cinnamon.desktop.default-applications.terminal exec-arg -e
 
 ```
 

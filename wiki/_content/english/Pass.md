@@ -94,7 +94,7 @@ $ passmenu
 
 Then selecting an entry will copy its password to the clipboard. See [dmenu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dmenu.1) for customization options such as case-insensitivity. You may want to set this to a systemwide keybinding in order to easily access passwords from any application.
 
-**Note:** If using passmenu causes the current window to [lose focus](https://wiki.archlinux.org/index.php/Dmenu#Current_window_loses_focus), downgrade dmenu to 4.8
+**Note:** If using passmenu causes the current window to [lose focus](/index.php/Dmenu#Current_window_loses_focus "Dmenu"), downgrade dmenu to 4.8
 
 ## Migrating to pass
 

@@ -2,7 +2,11 @@ Ez a dokumentum végigvezet az [Arch Linux](/index.php/Arch_Linux_(Magyar) "Arch
 
 A közösség által karbantartott [Arch wiki](/index.php/Main_page "Main page") egy kiváló forrás, és probléma esetén ehhez javasolt fordulni. Az [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") csatorna ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), és a [fórumok](https://bbs.archlinux.org/) szintén rendelkezésre állnak, ha a válasz nem található meg máshol. Szintén javasolt megnézni a `man` oldalait bármely, általad nem ismert parancsnak; ez általában a `man *parancs*` paranccsal hívható elő.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Letöltés](#Letöltés)
 *   [2 Telepítés](#Telepítés)

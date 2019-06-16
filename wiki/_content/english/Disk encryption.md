@@ -179,7 +179,7 @@ with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.
 | Support for automatic unmounting in case of inactivity | ? | ? | ? | ? | ? | ✔ | ? |
 | Security features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs |
 | Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Twofish, Serpernt, Camellia, Kuznyechik | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, and any other ciphers available on the system | AES |
-| Integrity | none | none | none | none | none | none (default mode)
+| Integrity | none | optional in LUKS2 | none | none | none | none (default mode)
 HMAC (paranoia mode) | GCM |
 | Support for salting | ? | ✔
 (with LUKS) | ✔ | ✔ | ✔ | ? | ✔ |

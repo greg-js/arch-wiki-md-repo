@@ -73,6 +73,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.52 ungoo](#ungoo)
     *   [2.53 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [2.54 xyne-x86_64](#xyne-x86_64)
+    *   [2.55 home-thaodan](#home-thaodan)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -84,15 +85,14 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.8 craftdestiny](#craftdestiny)
     *   [3.9 dx37essentials](#dx37essentials)
     *   [3.10 heftig](#heftig)
-    *   [3.11 home-thaodan](#home-thaodan)
-    *   [3.12 jkanetwork](#jkanetwork)
-    *   [3.13 mesa-git](#mesa-git)
-    *   [3.14 minzord](#minzord)
-    *   [3.15 oracle](#oracle)
-    *   [3.16 ownstuff](#ownstuff)
-    *   [3.17 pantheon](#pantheon)
-    *   [3.18 pietma](#pietma)
-    *   [3.19 pnsft-pur](#pnsft-pur)
+    *   [3.11 jkanetwork](#jkanetwork)
+    *   [3.12 mesa-git](#mesa-git)
+    *   [3.13 minzord](#minzord)
+    *   [3.14 oracle](#oracle)
+    *   [3.15 ownstuff](#ownstuff)
+    *   [3.16 pantheon](#pantheon)
+    *   [3.17 pietma](#pietma)
+    *   [3.18 pnsft-pur](#pnsft-pur)
 
 ## Adding your repository to this page
 
@@ -810,6 +810,20 @@ Server = http://xyne.archlinux.ca/bin/repo.php?file=
 
 ```
 
+### home-thaodan
+
+*   **Maintainer**: [Thaodan](https://aur.archlinux.org/account/Thaodan)
+*   **Upstream page**: [https://gitlab.com/Thaodan/linux-pf](https://gitlab.com/Thaodan/linux-pf)
+*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by pf-kernel fork developer, Thaodan
+*   **Gitlab Project**: [https://gitlab.com/Thaodan/repo-home-thaodan-repo](https://gitlab.com/Thaodan/repo-home-thaodan-repo)
+*   **Key-ID:**: BBFE2FD421597395E4FC8C8DF6C85FEE79D661A4
+
+```
+[home-thaodan]
+Server = https://thaodan.de/public/archlinux/home-thaodan/$arch
+
+```
+
 ## Unsigned
 
 **Note:** Users will need to add the following to these entries: `SigLevel = PackageOptional`
@@ -930,18 +944,6 @@ Server = https://pkgbuild.com/~heftig/repo/$arch
 
 ```
 
-### home-thaodan
-
-*   **Maintainer**: [Thaodan](https://aur.archlinux.org/account/Thaodan)
-*   **Upstream page**: [https://gitlab.com/Thaodan/linux-pf](https://gitlab.com/Thaodan/linux-pf)
-*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by pf-kernel fork developer, Thaodan
-
-```
-[home-thaodan]
-Server = https://thaodan.de/home/bidar/home-thaodan/$arch
-
-```
-
 ### jkanetwork
 
 *   **Maintainer:** kprkpr <kevin01010 at gmail dot com>
@@ -992,7 +994,7 @@ Server = http://linux.shikadi.net/arch/$repo/$arch/
 ### ownstuff
 
 *   **Maintainer:** [Martchus](https://aur.archlinux.org/account/Martchus)
-*   **Description:** A lot of packages from the AUR, e.g. a great number of mingw-w64 packages, fonts, tools like [Tag Editor](https://aur.archlinux.org/packages/tageditor), [Syncthing Tray](https://aur.archlinux.org/packages/syncthingtray) and [Subtitle Composer](https://aur.archlinux.org/packages/subtitlecomposer)
+*   **Description:** A lot of packages from the AUR, e.g. a great number of mingw-w64 packages, fonts, Perl modules, tools like [tageditor](https://aur.archlinux.org/packages/tageditor/), [syncthingtray](https://aur.archlinux.org/packages/syncthingtray/), [subtitlecomposer](https://aur.archlinux.org/packages/subtitlecomposer/) and [qmplay2](https://aur.archlinux.org/packages/qmplay2/)
 *   **Upstream page**: [https://github.com/Martchus/PKGBUILDs](https://github.com/Martchus/PKGBUILDs) (sources beside the AUR) and [https://martchus.no-ip.biz/repoindex](https://martchus.no-ip.biz/repoindex) (package browser/search)
 
 ```
@@ -1005,6 +1007,8 @@ Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
 
 ```
+
+**Note:** The testing repository is supposed to be used together with the official testing repositories.
 
 ### pantheon
 

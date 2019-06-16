@@ -131,7 +131,7 @@ As of kernel [5.1](https://github.com/torvalds/linux/commit/f8eb0235f65989fc5521
 
 #### Module Handling
 
-The required drivers should automatically load on boot, but you may need to [manually load](/index.php/Kernel_module#Manual_module_handling "Kernel module") `ledtrig_netdev`. You may also want to [blacklist](/index.php/Kernel_module#Blacklisting "Kernel module") `leds_apu`.
+The required drivers should automatically load on boot, but you may need to [manually load](/index.php/Kernel_module#Manual_module_handling "Kernel module") `ledtrig_netdev`. You may also want to [blacklist](/index.php/Blacklist "Blacklist") `leds_apu`.
 
 #### Example Configuration
 

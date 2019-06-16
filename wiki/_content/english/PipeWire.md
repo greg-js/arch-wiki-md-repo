@@ -1,14 +1,12 @@
-From [pipewire.org](http://pipewire.org):
+[PipeWire](http://pipewire.org) is a rather new multimedia framework by GNOME based on GStreamer. The main developer is Christian FK Schaller.
 
-	PipeWire is a project that aims to greatly improve handling of audio and video under Linux. It aims to support the usecases currently handled by both [PulseAudio](/index.php/PulseAudio "PulseAudio") and [Jack](/index.php/Jack "Jack") and at the same time provide same level of powerful handling of Video input and output. It also introduces a security model that makes interacting with audio and video devices from containerized applications easy, with supporting [Flatpak](/index.php/Flatpak "Flatpak") applications being the primary goal. Alongside [Wayland](/index.php/Wayland "Wayland") and [Flatpak](/index.php/Flatpak "Flatpak") we expect PipeWire to provide a core building block for the future of Linux application development. Features include:
+Because PipeWire supports containers like [Flatpak](/index.php/Flatpak "Flatpak") it doesn't rely on the [user groups](/index.php/User_group "User group") *audio* and *video*, but rather uses a complex PolKit-like security model asking Flatpak or Wayland for permission to record screen or audio.
 
-*   Capture and playback of audio and video with minimal latency.
-*   Real-time Multimedia processing on audio and video.
-*   Multiprocess architecture to let applications share multimedia content.
-*   GStreamer plugins for easy use and integration in current applications.
-*   Sandboxed applications support. See Flatpak for more info.
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

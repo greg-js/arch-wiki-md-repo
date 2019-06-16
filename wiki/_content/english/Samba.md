@@ -119,7 +119,7 @@ Depending on the [server role](https://www.samba.org/samba/docs/man/manpages-3/s
 
 If you want the new user only to be allowed to remotely access the file server shares through Samba, you can restrict other login options：
 
-*   disabling shell - `usermod --shell /usr/bin/nologin --lock *username*`
+*   disabling shell - `usermod --shell /usr/bin/nologin --lock *samba_user*`
 *   disabling SSH logons - edit `/etc/ssh/sshd_conf`, change option `AllowUsers`
 
 Also see [Security](/index.php/Security "Security") for hardening your system.
@@ -924,7 +924,7 @@ It means that while you are sharing a folder from *Dolphin* (file manager) and e
 
 ```
 
-To fix it, enable usershare as described in [#Enable usershares](#Enable_usershares).
+To fix it, enable usershare as described in [#Enable Usershares](#Enable_Usershares).
 
 ### "Browsing" network fails with "Failed to retrieve share list from server"
 
@@ -1037,7 +1037,7 @@ The latter approach (using catia or fruit) has the drawback of filtering files w
 
 This section presupposes:
 
-1.  Usershares are configured following [previous section](#Enable_usershares)
+1.  Usershares are configured following [previous section](#Enable_Usershares)
 2.  A shared folder has been created as a non-root user from GUI
 3.  Guests access has been set to shared folder during creation
 4.  Samba service has been restarted at least once since last `/etc/samba/smb.conf` file modification

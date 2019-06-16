@@ -48,7 +48,7 @@ If you don't install the [virtualbox-sdk](https://www.archlinux.org/packages/?na
 
 The official GNS3 VM should be used to increase performance. Go to [GNS3 Github](https://github.com/GNS3/gns3-gui/releases\) and download the VirtualBox version of the GNS3 VM with the exact same version number as your GNS3 version. Unzip and import the VM in VirtualBox.
 
-To create a network connection between the GNS3 VM and the host OS a host-only network must be configured. In *VirtualBox > Preferences > Network*, set up a host-only network. In most cases, it will be called `vboxnet0` or similar. Note the IP address dedicated to the interface in the GUI. For some reason, VirtualBox does not assign the IP to the interface, nor does it enable it. Therefore, this must be performed manually in the terminal. See [Network configuration#Routing table](/index.php/Network_configuration#Routing_table "Network configuration") for more information on assigning IP addresses.
+To create a network connection between the GNS3 VM and the host OS a host-only network must be configured. In *File > Host Network Manager*, set up a host-only network. In most cases, it will be called `vboxnet0` or similar. Note the IP address dedicated to the interface in the GUI. For some reason, VirtualBox does not assign the IP to the interface, nor does it enable it. Therefore, this must be performed manually in the terminal. See [Network configuration#Routing table](/index.php/Network_configuration#Routing_table "Network configuration") for more information on assigning IP addresses.
 
 ```
 # ip addr add *IP_address*/*subnet_mask* dev vboxnet0

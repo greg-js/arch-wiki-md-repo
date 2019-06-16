@@ -364,7 +364,7 @@ To list all installed LXC containers:
 
 Systemd can be used to [start](/index.php/Start "Start") and to [stop](/index.php/Stop "Stop") LXCs via `lxc@CONTAINER_NAME.service`. [Enable](/index.php/Enable "Enable") `lxc@CONTAINER_NAME.service` to have it start when the host system boots.
 
-**Warning:** See [FS#61078](https://bugs.archlinux.org/task/61078) wherein this service unit is currently broken as shipped and will require a [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd") modification to work properly.
+**Warning:** See [FS#61078](https://bugs.archlinux.org/task/61078) wherein this service unit is currently broken as shipped and will require a [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd") modification to work properly.
 
 Users can also start/stop LXCs without systemd. Start a container:
 

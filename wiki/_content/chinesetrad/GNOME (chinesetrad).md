@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 GNOME是什麼?](#GNOME是什麼?)
 *   [2 如何安裝GNOME桌面](#如何安裝GNOME桌面)
@@ -199,7 +203,7 @@ GNOME可以透過[display manager](/index.php/Display_manager "Display manager")
 **Tip:** 搜尋一些程式的常用名稱在GNOME shell的搜尋欄中將會成功回傳結果. 例如, 搜尋 *nautilus* 將顯示 *Files*.
 
 | 現在名 | 常用名 |
-| [Files](/index.php/Files "Files") | Nautilus |
+| [Files](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
 | [Web](/index.php/GNOME_Web "GNOME Web") | Epiphany |
 | Videos | Totem |
 | Main Menu | Alacarte |
@@ -600,7 +604,7 @@ Use the *Main Menu* application (provided by the [alacarte](https://www.archlinu
 
 ### Screencast recording
 
-GNOME features built-in screencast recording with the **Ctrl** + **Shift** + **Alt** + **R** key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the Videos directory. In order to use the screencast feature the gst plugins need to be installed.
+GNOME features built-in screencast recording with the **Ctrl** + **Shift** + **Alt** + **R** key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the Videos directory. In order to use the screencast feature the gst plugins need to be installed.
 
 ### Screenshot
 

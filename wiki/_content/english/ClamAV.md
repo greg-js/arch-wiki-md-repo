@@ -103,7 +103,7 @@ To change any default settings, refer and modify `/etc/clamav-unofficial-sigs/us
 
 #### MalwarePatrol database
 
-If you would like to use the MalwarePatrol database, sign up for an account at [https://www.malwarepatrol.net/](https://www.malwarepatrol.net/).
+If you would like to use the MalwarePatrol database, sign up for an account at [https://www.malwarepatrol.net/free-guard-upgrade-option](https://www.malwarepatrol.net/free-guard-upgrade-option).
 
 In `/etc/clamav-unofficial-sigs/user.conf`, change the following to enable this functionality:
 
@@ -215,20 +215,19 @@ Next, create the file `/etc/clamav/detected.sh` and add the following. This allo
 
  `/etc/clamav/detected.sh` 
 ```
-#!/bin/bash
+#!/usr/bin/bash
 PATH=/usr/bin
-
 alert="Signature detected: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
 
 # Send the alert to systemd logger if exist, othewise to /var/log
 if [[ -z $(command -v systemd-cat) ]]; then
-	echo "$(date) - $alert" >> /var/log/clamav/infected.log
+        echo "$(date) - $alert" >> /var/log/clamav/detections.log
 else
-	# as "emerg", this could cause your DE to show a visual alert. Happen in Plasma. but the next visual alert is much nicer
-	echo "$alert" | /usr/bin/systemd-cat -t clamav -p emerg
+        # This could cause your DE to show a visual alert. Happens in Plasma, but the next visual alert is much nicer.
+        echo "$alert" | /usr/bin/systemd-cat -t clamav -p emerg
 fi
 
-#send an alrt to all graphical user
+# Send an alert to all graphical users.
 XUSERS=($(who|awk '{print $1$NF}'|sort -u))
 
 for XUSER in $XUSERS; do

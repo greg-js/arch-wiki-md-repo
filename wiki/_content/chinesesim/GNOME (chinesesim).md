@@ -154,7 +154,7 @@ fi
 **提示：** 在搜索栏中搜索应用的遗留名称将成功找到对应的应用，例如搜索 *nautilus* 将返还 *文件*。
 
 | 当前 | 遗留 |
-| [文件](/index.php/Files "Files") | Nautilus |
+| [文件](/index.php/GNOME/Files "GNOME/Files") | Nautilus |
 | [Web](/index.php/GNOME/Web "GNOME/Web") | Epiphany |
 | 视频 | Totem |
 | 主菜单 | Alacarte |
@@ -379,7 +379,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 ##### 桌面图标
 
-GNOME 3.28之前，桌面图标通过[Files](/index.php/Files "Files")在桌面上绘制一个透明的带图标的窗口实现。在GNOME 3.28中，该功能被移除，桌面图标不再在GNOME上可用。可能的方案包括使用[Nemo](/index.php/Nemo "Nemo")（GNOME File的一个分支，目前仍支持桌面图标）或安装[gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/)插件以部分复刻GNOME 3.26以下支持的桌面图标功能。更多信息请访问[Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633)。
+GNOME 3.28之前，桌面图标通过[Files](/index.php/GNOME/Files "GNOME/Files")在桌面上绘制一个透明的带图标的窗口实现。在GNOME 3.28中，该功能被移除，桌面图标不再在GNOME上可用。可能的方案包括使用[Nemo](/index.php/Nemo "Nemo")（GNOME File的一个分支，目前仍支持桌面图标）或安装[gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/)插件以部分复刻GNOME 3.26以下支持的桌面图标功能。更多信息请访问[Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633)。
 
 ##### 锁屏和背景
 

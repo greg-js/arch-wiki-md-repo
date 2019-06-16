@@ -6,7 +6,7 @@
 
 The two components Galera cluster comprised of are Galera plugin itself and a patched version of MySQL server which connect using wsrep API.
 
-Install the [galera](https://www.archlinux.org/packages/?name=galera) package.
+Install the [galera](https://www.archlinux.org/packages/?name=galera) package. Also you will need rsync and lsof packages for rsync method.
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mysqld.service` daemon.
 

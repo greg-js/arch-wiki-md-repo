@@ -1515,7 +1515,7 @@ echo 1 > /sys/module/kvm/parameters/ignore_msrs
 To make it permanently you can create a modprobe file `kvm.conf`:
 
 ```
-options kvm.ignore_msrs=1
+options kvm ignore_msrs=1
 
 ```
 

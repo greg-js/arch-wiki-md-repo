@@ -70,9 +70,9 @@ The basic [Vim](/index.php/Vim "Vim") plugin is already included within the pack
 
 ### Pacman
 
-Try this to fuzzy-search through all available packages, with package info shown in a preview window:
+Try this to fuzzy-search through all available packages, with package info shown in a preview window, and then install selected packages:
 
 ```
-pacman -Sl | cut -d' ' -f2 | fzf -m --preview 'pacman -Si {1}'
+pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -r sudo pacman -S
 
 ```

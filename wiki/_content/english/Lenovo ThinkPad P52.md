@@ -96,11 +96,11 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Graphics
 
-This laptop has its external display ports [directly wired to the NVIDIA chip](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip). In loose terms this means that the dedicated GPU must be enabled in order for external displays to be used. Luckily, it is possible to do dynamic switching between the integrated and dedicated graphics, but this is only possible by using the Intel DDX driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) as opposed to modesetting.
+This laptop has its external display ports [directly wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee"). In loose terms this means that the dedicated GPU must be enabled in order for external displays to be used. Luckily, it is possible to do dynamic switching between the integrated and dedicated graphics, but this is only possible by using the Intel DDX driver [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) as opposed to modesetting.
 
 The laptop can be used in one of two modes: Hybrid Graphics, or Dedicated Graphics only.
 
-In order to use the integrated Intel UHD 630 GPU (as part of Hybrid Graphics) you need to add the `i915` module to your `initramfs` by adding it as a module in your [mkinitcpio](https://wiki.archlinux.org/index.php/Mkinitcpio#MODULES). This is done by setting the following on `/etc/mkinitcpio.conf`:
+In order to use the integrated Intel UHD 630 GPU (as part of Hybrid Graphics) you need to add the `i915` module to your `initramfs` by adding it as a module in your [mkinitcpio](/index.php/Mkinitcpio#MODULES "Mkinitcpio"). This is done by setting the following on `/etc/mkinitcpio.conf`:
 
 ```
    MODULES=(i915)

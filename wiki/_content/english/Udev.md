@@ -322,7 +322,7 @@ Then, find where the device is connected to using:
 
 Now create the rule to change the `power/wakeup` attribute of both the device and the USB controller it is connected to whenever it is added:
 
- `/etc/udev/rules.d/50-wake-on-device.rules`  `ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTRS{idVendor}=="**046d**", ATTRS{idProduct}=="**c52b**", ATTR{power/wakeup}="enabled", ATTR{driver/**1-1.1.1.4**/power/wakeup}="enabled"` 
+ `/etc/udev/rules.d/50-wake-on-device.rules`  `ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="**046d**", ATTRS{idProduct}=="**c52b**", ATTR{power/wakeup}="enabled", ATTR{driver/**1-1.1.1.4**/power/wakeup}="enabled"` 
 
 ### Triggering events
 

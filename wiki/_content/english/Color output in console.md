@@ -127,6 +127,10 @@ Some programs provide an option to disable the interactive tty detection:
 
 In case that the program does not provide any similar option, it is possible to trick the program into thinking its *stdout* is an interactive terminal with the following utilities:
 
+*   **ColorThis** — Force colored output of a program by running it within a (group of) pty, support forwarding stdin.
+
+	[https://github.com/Sasasu/ColorThis](https://github.com/Sasasu/ColorThis) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
 *   **stdoutisatty** — A small program which catches the `isatty` function call.
 
 	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)
@@ -395,7 +399,7 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 *   **libtextstyle** — A C library for styling text output to terminals
 
-	[https://alpha.gnu.org/gnu/gettext/libtextstyle-0.8.tar.gz](https://alpha.gnu.org/gnu/gettext/libtextstyle-0.8.tar.gz) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://ftp.gnu.org/gnu/gettext/gettext-0.20.1.tar.gz](https://ftp.gnu.org/gnu/gettext/gettext-0.20.1.tar.gz) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **ruby-rainbow** — Rainbow is extension to ruby's String class adding support for colorizing text on ANSI terminal
 

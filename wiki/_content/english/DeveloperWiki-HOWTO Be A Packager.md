@@ -19,8 +19,9 @@
     *   [3.4 Change and build](#Change_and_build)
     *   [3.5 Run namcap on both PKGBUILD and Package](#Run_namcap_on_both_PKGBUILD_and_Package)
     *   [3.6 Run checkpkg on the Package](#Run_checkpkg_on_the_Package)
-    *   [3.7 Use devtools to sign, upload and commit](#Use_devtools_to_sign,_upload_and_commit)
-    *   [3.8 Update the Repository](#Update_the_Repository)
+    *   [3.7 Run sogrep on identified soname change](#Run_sogrep_on_identified_soname_change)
+    *   [3.8 Use devtools to sign, upload and commit](#Use_devtools_to_sign,_upload_and_commit)
+    *   [3.9 Update the Repository](#Update_the_Repository)
 *   [4 Other Operations](#Other_Operations)
     *   [4.1 Removing a Package](#Removing_a_Package)
     *   [4.2 Moving a package between repos](#Moving_a_package_between_repos)
@@ -183,6 +184,21 @@ Run in the directory with your freshly built package to get a file list diff com
 ```
 
 **Note:** This can be skipped when adding a new package to the repository for the first time (e.g. by importing it from [AUR](/index.php/AUR "AUR") to [community](/index.php/Official_repositories#community "Official repositories")).
+
+### Run sogrep on identified soname change
+
+If [checkpkg](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#Run_checkpkg_on_the_Package "DeveloperWiki:HOWTO Be A Packager") identified a shared object name (aka. soname) change in `package`'s library `package.so`, it is **required** to rebuild packages directly depending on it.
+
+To identify which packages rely on a given library in `package` in a repository (e.g. `extra` or `community`), use sogrep (see [sogrep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sogrep.1)).
+
+```
+   sogrep <repository> package.so
+
+```
+
+Build `package` for its respective [staging](/index.php/Official_repositories#Staging_repositories "Official repositories") environment (by following the remaining steps in [The Workflow](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#The_Workflow "DeveloperWiki:HOWTO Be A Packager")) and create a [TODO](https://www.archlinux.org/todo/) with the identified dependants, so their maintainers can rebuild them against the new version of `package`.
+
+**Note:** First sync with [trusted users](https://www.archlinux.org/people/trusted-users/) and/ or [developers](https://www.archlinux.org/people/developers/), if any packages currently in the [staging](/index.php/Official_repositories#Staging_repositories "Official repositories") environment block the rebuilds against `package`.
 
 ### Use devtools to sign, upload and commit
 

@@ -101,11 +101,7 @@ Here you will find some hints on volume issues and why you may not hear anything
 
 ### Auto-Mute Mode
 
-Auto-Mute Mode may be enabled. It can be disabled using `alsamixer`.
-
-See [http://superuser.com/questions/431079/how-to-disable-auto-mute-mode](http://superuser.com/questions/431079/how-to-disable-auto-mute-mode) for more.
-
-To save your current settings as the default options, run `alsactl store` as root.
+*Auto-Mute Mode* is a configurable setting from `amixer`. For more information, see [ALSA#Disabling auto mute on startup](/index.php/ALSA#Disabling_auto_mute_on_startup "ALSA").
 
 ### Muted audio device
 

@@ -123,6 +123,7 @@ editor   no
 **Tip:**
 
 *   `default` and `timeout` can be changed in the boot menu itself and changes will be stored as EFI variables, overriding these options.
+*   `bootctl set-default ""` can be used to clear the EFI variable overriding the `default` option.
 *   A basic loader configuration file is located at `/usr/share/systemd/bootctl/loader.conf`.
 
 ### Adding loaders

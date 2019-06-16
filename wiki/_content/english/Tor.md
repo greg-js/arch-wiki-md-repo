@@ -193,7 +193,7 @@ the bash history commands prevent your clear-text password from being written to
 
 #### Open Tor ControlSocket
 
-If some program needs access to your Tor ControlSocket, as in Unix Domain Socket, add to your `torrc`
+If some program needs access to your Tor ControlSocket, as in Unix Domain Socket, add the following to your `torrc`:
 
 ```
 ControlSocket /var/lib/tor/control_socket
@@ -203,30 +203,30 @@ CacheDirectoryGroupReadable 1 # workaround for tor bug #26913
 
 ```
 
-and add the user, who will run the program, to the `tor` group
+Add the user who will run the program to the `tor` group:
 
 ```
 # usermod -a -G tor user
 
 ```
 
-reload your group settings with
+Reload the group settings:
 
 ```
 $ newgrp tor
 
 ```
 
-restart tor
+Restart tor
 
 ```
 # systemctl restart tor
 
 ```
 
-and run your program.
+and relaunch the program.
 
-this
+To verify the status of the control sockets:
 
 ```
 # stat -c%a /var/lib/tor /var/lib/tor/control_socket
@@ -364,7 +364,7 @@ Create directory if it does not exist:
 
 ```
 
-**Note:** Symlinks for `nspawn` are currently broken (as of 2016-02-04; see [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001)), and will give you a "too many levels of symlinks" error. As a (possibly insecure) workaround, simply pacstrap your install to the container directory instead.
+**Note:** Symlinks for `nspawn` are currently broken (as of 2016-02-04; see [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001)), and will throw a "too many levels of symlinks" error. As a (possibly insecure) workaround, simply pacstrap the install to the container directory instead.
 
 Symlink to register the container on the host, as per [Systemd-nspawn#Enable container on boot](/index.php/Systemd-nspawn#Enable_container_on_boot "Systemd-nspawn"):
 
@@ -401,7 +401,12 @@ Setup [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") accordi
 
 ### Container configuration
 
-`# machinectl login tor-exit` login to the container, see [Systemd-nspawn#machinectl](/index.php/Systemd-nspawn#machinectl "Systemd-nspawn").
+Login to the container (see [Systemd-nspawn#machinectl](/index.php/Systemd-nspawn#machinectl "Systemd-nspawn")):
+
+```
+# machinectl login tor-exit 
+
+```
 
 `# mv /srv/container/tor-exit/etc/securetty /srv/container/tor-exit/etc/securetty.bak` if you get the error described in [Systemd-nspawn#Troubleshooting](/index.php/Systemd-nspawn#Troubleshooting "Systemd-nspawn").
 

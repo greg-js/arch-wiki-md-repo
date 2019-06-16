@@ -27,13 +27,11 @@ NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/
 
 ## Systemd
 
-In order to use NordVPN. You must [enable](/index.php/Enable "Enable") `nordvpnd` and `nordvpnsd` services.
+In order to use NordVPN. You must [enable](/index.php/Enable "Enable") `nordvpnd` service.
 
 ```
 $ sudo systemctl enable nordvpnd.service
-$ sudo systemctl enable nordvpnsd.service
 $ sudo systemctl start nordvpnd.service
-$ sudo systemctl start nordvpnsd
 
 ```
 

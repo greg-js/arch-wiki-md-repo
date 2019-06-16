@@ -7,7 +7,11 @@
 
 **[Video Decode and Presentation API for Unix](http://http.download.nvidia.com/XFree86/vdpau/doxygen/html/)** — открытая библиотека и API для выполнения задач декодирования и постобработки видео на аппаратных ускорителях.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Поддерживаемые видеокарты](#Поддерживаемые_видеокарты)
     *   [1.1 Поддерживаемые форматы](#Поддерживаемые_форматы)
@@ -28,7 +32,7 @@
 *   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 серии и новее поддерживаются пакетом [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), вместе с пакетом [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/). Он использует драйвер [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) для Radeon HD 5000 серии и новее, и [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) для Radeon HD 4000 серии.
 
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 400 серии и новее поддерживаются пакетом [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
-    *   GeForce 8/9 и GeForce 100-300 серии и новее поддерживаются пакетом [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils).
+    *   GeForce 8/9 и GeForce 100-300 серии и новее поддерживаются пакетом [nvidia-340xx-utils](https://aur.archlinux.org/packages/nvidia-340xx-utils/).
 
 ### Поддерживаемые форматы
 

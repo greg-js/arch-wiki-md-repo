@@ -29,20 +29,21 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 *   [4 Running virtualized system](#Running_virtualized_system)
     *   [4.1 Enabling KVM](#Enabling_KVM)
     *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_(Intel_VT-d/AMD-Vi)_support)
-*   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
+*   [5 Sharing data between host and guest](#Sharing_data_between_host_and_guest)
     *   [5.1 Network](#Network)
     *   [5.2 QEMU's port forwarding](#QEMU's_port_forwarding)
     *   [5.3 QEMU's built-in SMB server](#QEMU's_built-in_SMB_server)
-    *   [5.4 Using filesystem passthrough and VirtFS/9p](#Using_filesystem_passthrough_and_VirtFS/9p)
-    *   [5.5 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
-        *   [5.5.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
-        *   [5.5.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
-        *   [5.5.3 With kpartx](#With_kpartx)
-    *   [5.6 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
-    *   [5.7 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
-        *   [5.7.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
-        *   [5.7.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
-            *   [5.7.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
+    *   [5.4 Using filesystem passthrough and VirtFS](#Using_filesystem_passthrough_and_VirtFS)
+    *   [5.5 Mounting a partition of the guest on the host](#Mounting_a_partition_of_the_guest_on_the_host)
+        *   [5.5.1 Mounting a partition from a raw image](#Mounting_a_partition_from_a_raw_image)
+            *   [5.5.1.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
+            *   [5.5.1.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
+            *   [5.5.1.3 With kpartx](#With_kpartx)
+        *   [5.5.2 Mounting a partition from a qcow2 image](#Mounting_a_partition_from_a_qcow2_image)
+    *   [5.6 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
+        *   [5.6.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
+        *   [5.6.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
+            *   [5.6.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
 *   [6 Networking](#Networking)
     *   [6.1 Link-level address caveat](#Link-level_address_caveat)
     *   [6.2 User-mode networking](#User-mode_networking)
@@ -313,7 +314,7 @@ $ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** 
 
 **Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Isolating_the_GPU "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
 
-## Moving data between host and guest OS
+## Sharing data between host and guest
 
 ### Network
 
@@ -360,22 +361,23 @@ Then, in the guest, you will be able to access the shared directory on the host 
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
 *   If you cannot access the shared folder and the guest system is Windows 10 Enterprise or Education or Windows Server 2016, [enable guest access](https://support.microsoft.com/en-us/help/4046019).
 
-### Using filesystem passthrough and VirtFS/9p
+### Using filesystem passthrough and VirtFS
 
-See the QEMU documentation here: [link](https://wiki.qemu.org/Documentation/9psetup) If you want to mount the partition automatically at guest boot, add the following line to `/etc/fstab`:
+See the [QEMU documentation](https://wiki.qemu.org/Documentation/9psetup).
 
-```
-test_mount /mount/point            9p             trans=virtio    0       0
+### Mounting a partition of the guest on the host
 
-```
+It can be useful to mount a drive image under the host system, it can be a way to transfer files in and out of the guest. This should be done when the virtual machine is not running.
 
-### Mounting a partition inside a raw disk image
-
-When the virtual machine is not running, it is possible to mount partitions that are inside a raw disk image file by setting them up as loopback devices. This does not work with disk images in special formats, such as qcow2, although those can be mounted using `qemu-nbd`.
+The procedure to mount the drive on the host depends on the type of qemu image, *raw* or *qcow2*. We detail thereafter the steps to mount a drive in the two formats in [#Mounting a partition from a raw image](#Mounting_a_partition_from_a_raw_image) and [#Mounting a partition from a qcow2 image](#Mounting_a_partition_from_a_qcow2_image). For the full docummentation see [QEMU/Mounting an image on the host](http://en.wikibooks.org/wiki/QEMU/Images#Mounting_an_image_on_the_host).
 
 **Warning:** You must make sure to unmount the partitions before running the virtual machine again. Otherwise, data corruption is very likely to occur.
 
-#### With manually specifying byte offset
+#### Mounting a partition from a raw image
+
+It is possible to mount partitions that are inside a raw disk image file by setting them up as loopback devices.
+
+##### With manually specifying byte offset
 
 One way to mount a disk image partition is to mount the disk image at a certain offset using a command like the following:
 
@@ -388,7 +390,7 @@ The `offset=32256` option is actually passed to the `losetup` program to set up 
 
 Depending on your disk image, the needed partition may not start at offset 32256\. Run `fdisk -l *disk_image*` to see the partitions in the image. fdisk gives the start and end offsets in 512-byte sectors, so multiply by 512 to get the correct offset to pass to `mount`.
 
-#### With loop module autodetecting partitions
+##### With loop module autodetecting partitions
 
 The Linux loop driver actually supports partitions in loopback devices, but it is disabled by default. To enable it, do the following:
 
@@ -413,7 +415,7 @@ Then, if the device created was `/dev/loop0`, additional devices `/dev/loop0pX` 
 
 To mount the disk image with *udisksctl*, see [Udisks#Mount loop devices](/index.php/Udisks#Mount_loop_devices "Udisks").
 
-#### With kpartx
+##### With kpartx
 
 **kpartx** from the [multipath-tools](https://www.archlinux.org/packages/?name=multipath-tools) package can read a partition table on a device and create a new device for each partition. For example:
 
@@ -424,9 +426,58 @@ To mount the disk image with *udisksctl*, see [Udisks#Mount loop devices](/index
 
 This will setup the loopback device and create the necessary partition(s) device(s) in `/dev/mapper/`.
 
-### Mounting a partition inside a qcow2 image
+#### Mounting a partition from a qcow2 image
 
-You may mount a partition inside a qcow2 image using `qemu-nbd`. See [Wikibooks](http://en.wikibooks.org/wiki/QEMU/Images#Mounting_an_image_on_the_host).
+We will use `qemu-nbd`, which lets use the NBD (*network block device*) protocol to share the disk image.
+
+First, we need the *nbd* module loaded:
+
+```
+# modprobe nbd max_part=16
+
+```
+
+Then, we can share the disk and create the device entries:
+
+```
+# qemu-nbd -c /dev/nbd0 */path/to/image.qcow2*
+
+```
+
+Discover the partitions:
+
+```
+# partprobe /dev/nbd0
+
+```
+
+*fdisk* can be used to get information regarding the different partitions in *nbd0*:
+
+ `# fdisk -l /dev/nbd0` 
+```
+Disk /dev/nbd0: 25.2 GiB, 27074281472 bytes, 52879456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xa6a4d542
+
+Device      Boot   Start      End  Sectors  Size Id Type
+/dev/nbd0p1 *       2048  1026047  1024000  500M  7 HPFS/NTFS/exFAT
+/dev/nbd0p2      1026048 52877311 51851264 24.7G  7 HPFS/NTFS/exFAT
+```
+
+Then mount any partition of the drive image, for example the partition 2:
+
+```
+# mount /dev/nbd0**p2** *mountpoint*
+
+```
+
+After the usage, it is important to unmount the image and reverse previous steps, i.e. unmount the partition and disconnect the nbd device:
+
+1.  umount *mountpoint*
+2.  qemu-nbd -d /dev/nbd0
 
 ### Using any real partition as the single primary partition of a hard disk image
 
@@ -1774,20 +1825,23 @@ If that does not work, try using `-vga qxl` parameter, also look at the instruct
 
 ### Pass-through host USB device
 
-To access physical USB device connected to host from VM, you can use the option: `-usbdevice host:*vendor_id*:*product_id*`.
+It is possible to access the physical device connected to a USB port of the host from the guest. The first step is to identify where the device is connected, this can be found running the `lsusb` command. For example:
 
-You can find `vendor_id` and `product_id` of your device with `lsusb` command.
-
-Since the default I440FX chipset emulated by qemu feature a single UHCI controller (USB 1), the `-usbdevice` option will try to attach your physical device to it. In some cases this may cause issues with newer devices. A possible solution is to emulate the [ICH9](http://wiki.qemu.org/Features/Q35) chipset, which offer an EHCI controller supporting up to 12 devices, using the option `-machine type=q35`.
-
-A less invasive solution is to emulate an EHCI (USB 2) or XHCI (USB 3) controller with the option `-device usb-ehci,id=ehci` or `-device nec-usb-xhci,id=xhci` respectively and then attach your physical device to it with the option `-device usb-host,..` as follows:
-
+ `lsusb` 
 ```
--device usb-host,bus=**controller_id**.0,vendorid=0x**vendor_id**,productid=0x**product_id**
+...
+Bus **003** Device **007**: ID **0781**:**5406** SanDisk Corp. Cruzer Micro U3
 
 ```
 
-You can also add the `...,port=*<n>*` setting to the previous option to specify in which physical port of the virtual controller you want to attach your device, useful in the case you want to add multiple usb devices to the VM.
+The outputs in bold above will be useful to identify respectively the *host_bus* and *host_addr* or the *vendor_id* and *product_id*.
+
+In qemu, the idea is to emulate an EHCI (USB 2) or XHCI (USB 3) controller with the option `-device usb-ehci,id=ehci` or `-device nec-usb-xhci,id=xhci` respectively and then attach the physical device to it with the option `-device usb-host,..`. We will say that *controler_id* is either `ehci` or `xhci`.
+
+Then, there are two ways to connect to the USB of the host with qemu:
+
+1.  Identify the device and connect to it on any bus and address it is attached to on the host, the generic syntax is: `-device usb-host,bus=*controller_id*.0,vendorid=0x*vendor_id*,productid=0x*product_id*` Applied to device used in the example above, it becomes: `-device usb-ehci,id=ehci -device usb-host,bus=ehci.0,vendorid=0x**0781**,productid=0x**5406**` One can also add the `...,port=*port_number*` setting to the previous option to specify in which physical port of the virtual controller the device should be attached, useful in the case one want to add multiple usb devices to the VM.
+2.  Attach whatever is connected to a given USB bus and address, the syntax is: `-device usb-host,bus=*controller_id*.0,hostbus=*host_bus*,host_addr=*host_addr*` Applied to the bus and the address in the example above, it becomes: `-device usb-ehci,id=ehci -device usb-host,bus=ehci.0,hostbus=**3**,hostaddr=**7**` 
 
 **Note:** If you encounter permission errors when running QEMU, see [udev#About udev rules](/index.php/Udev#About_udev_rules "Udev") for information on how to set permissions of the device.
 
@@ -1802,13 +1856,12 @@ We need to add one EHCI/UHCI controller per available USB redirection slot desir
 -device ich9-usb-uhci1,masterbus=usb.0,firstport=0,multifunction=on \
 -device ich9-usb-uhci2,masterbus=usb.0,firstport=2 \
 -device ich9-usb-uhci3,masterbus=usb.0,firstport=4 \
--chardev spicevmc,name=usbredir,id=usbredirchardev1 \
--device usb-redir,chardev=usbredirchardev1,id=usbredirdev1 \
--chardev spicevmc,name=usbredir,id=usbredirchardev2 \
--device usb-redir,chardev=usbredirchardev2,id=usbredirdev2 \
--chardev spicevmc,name=usbredir,id=usbredirchardev3 \
--device usb-redir,chardev=usbredirchardev3,id=usbredirdev3
+-chardev spicevmc,name=usbredir,id=usbredirchardev1 -device usb-redir,chardev=usbredirchardev1,id=usbredirdev1 \
+-chardev spicevmc,name=usbredir,id=usbredirchardev2 -device usb-redir,chardev=usbredirchardev2,id=usbredirdev2 \
+-chardev spicevmc,name=usbredir,id=usbredirchardev3 -device usb-redir,chardev=usbredirchardev3,id=usbredirdev3
 ```
+
+See [SPICE/usbredir](https://www.spice-space.org/usbredir.html) for more information.
 
 Both `spicy` from [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
 

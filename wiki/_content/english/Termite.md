@@ -54,7 +54,7 @@ font = Droid Sans Mono 8
 
 ### Colors
 
-Colors consist of either a 24-bit hex value (e.g. `#4a32b1`), or an rgba vector (e.g. `rgba(16, 32, 64, 0.5)`). Valid properties for colors are `foreground`, `foreground_bold`, `foreground_dim`, `background`, `cursor`, and `colorN` (where N is an integer from zero through 254; used to assign a 24-bit color value to terminal colorN).
+Colors consist of either a 24-bit hex value (e.g. `#4a32b1`), or an rgba vector (e.g. `rgba(16, 32, 64, 0.5)`). Valid properties for colors are `foreground`, `foreground_bold`, `foreground_dim`, `background`, `cursor`, `cursor_foreground`, and `colorN` (where N is an integer from zero through 254; used to assign a 24-bit color value to terminal colorN).
 
 An amazing collection of termite color schemes can be found here: [https://github.com/khamer/base16-termite/tree/master/themes](https://github.com/khamer/base16-termite/tree/master/themes)
 

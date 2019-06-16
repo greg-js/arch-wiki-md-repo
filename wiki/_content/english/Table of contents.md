@@ -1,5 +1,5 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(17)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(18)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
 | <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(11)</small> |
@@ -78,7 +78,7 @@
 | <small>4.5.2.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.6.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>4.7.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(9)</small> |
-| <small>4.7.1.</small> [Network managers](/index.php/Category:Network_managers "Category:Network managers") <small>(7)</small> |
+| <small>4.7.1.</small> [Network managers](/index.php/Category:Network_managers "Category:Network managers") <small>(8)</small> |
 | <small>4.8.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Monitoring](/index.php/Category:Monitoring "Category:Monitoring"))</small> |
 | <small>4.9.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(11)</small> |
 | <small>4.10.</small> [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer") <small>(3)</small> |
@@ -305,7 +305,7 @@
 | <small>6.17.1.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
-| <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
+| <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(33)</small> |
 | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(38)</small> |
 | <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |

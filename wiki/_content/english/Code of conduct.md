@@ -231,10 +231,7 @@ Plain text is the Unix and email standard. HTML is unnecessary and, for those us
 
 ### AUR
 
-Guidelines for the [Arch User Repository](https://aur.archlinux.org/) can be found here:
-
-*   [AUR#Rules of submission](/index.php/AUR#Rules_of_submission "AUR")
-*   [AUR#Other requests](/index.php/AUR#Other_requests "AUR")
+Guidelines for the [Arch User Repository](https://aur.archlinux.org/) can be found at [AUR submission guidelines](/index.php/AUR_submission_guidelines "AUR submission guidelines").
 
 ### IRC
 

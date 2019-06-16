@@ -2,7 +2,11 @@
 
 คุณสามารถขอความช่วยเหลือจากวิกิหรืออ่าน [man page](/index.php/Man_page "Man page") ของโปรแกรมต่าง ๆ; ดูที่ [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) สำหรับภาพโดยรวมในการตั้งค่า และสำหรับความช่วยเหลือเชิงโต้ตอบ คุณสามารถใช้ [ช่อง IRC](/index.php/IRC_channel "IRC channel") และ [กระดานข่าว](https://bbs.archlinux.org/) ได้
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ก่อนเริ่มติดตั้ง](#ก่อนเริ่มติดตั้ง)
     *   [1.1 ตั้งค่าเลย์เอาต์ของคีย์บอร์ด](#ตั้งค่าเลย์เอาต์ของคีย์บอร์ด)

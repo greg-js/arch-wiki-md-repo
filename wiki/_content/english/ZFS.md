@@ -706,7 +706,7 @@ After=zfs-import.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/bash -c '/usr/bin/zfs load-key %j/%i
+ExecStart=/usr/bin/bash -c '/usr/bin/zfs load-key %j/%i'
 
 [Install]
 WantedBy=zfs-mount.service
@@ -1185,7 +1185,7 @@ Create and set permissions on the user directory as root
 
 ### Encryption in ZFS using dm-crypt
 
-The stable release version of ZFS on Linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
+The stable release version of ZFS on Linux used not to support encryption directly (now it's available, see [#Native encryption](#Native_encryption)), but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction, it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
 
 dm-crypt, possibly via LUKS, creates devices in `/dev/mapper` and their name is fixed. So you just need to change `zpool create` commands to point to that names. The idea is configuring the system to create the `/dev/mapper` block devices and import the zpools from there. Since zpools can be created in multiple devices (raid, mirroring, striping, ...), it is important all the devices are encrypted otherwise the protection might be partially lost.
 

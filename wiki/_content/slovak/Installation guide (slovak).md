@@ -5,7 +5,11 @@ Related articles
 *   [Install from SSH](/index.php/Install_from_SSH "Install from SSH")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Úvod](#Úvod)
     *   [1.1 Predstavenie](#Predstavenie)

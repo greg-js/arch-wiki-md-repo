@@ -60,7 +60,6 @@ The following are EFL-based applications, most in an early stage of development 
 
 *   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire text editor
 *   [edi](https://aur.archlinux.org/packages/edi/) – An EFL based IDE
-*   [elbow-git](https://aur.archlinux.org/packages/elbow-git/) – Elbow web browser
 *   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance photo browser
 *   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) music player
 *   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
@@ -71,9 +70,8 @@ The following are EFL-based applications, most in an early stage of development 
 *   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler on-screen ruler and measurement tools
 *   [efbb-git](https://aur.archlinux.org/packages/efbb-git/) – Escape from Booty Bay angry birds style game
 *   [elemines-git](https://aur.archlinux.org/packages/elemines-git/) – [Elemines](http://elemines.sourceforge.net/) minesweeper style game
-*   [espionage-git](https://aur.archlinux.org/packages/espionage-git/) – Espionage D-Bus inspector
-*   [ev-git](https://aur.archlinux.org/packages/ev-git/) – ev simple picture viewer
 *   [rage](https://aur.archlinux.org/packages/rage/) and [rage-git](https://aur.archlinux.org/packages/rage-git/) – Rage video player
+*   [terminology-git](https://aur.archlinux.org/packages/terminology-git/) – Current git master for [terminology](https://www.archlinux.org/packages/?name=terminology)
 
 ### Starting Enlightenment
 
@@ -97,7 +95,7 @@ exec enlightenment_start
 
 After that Enlightenment can be launched by typing `startx`. See [xinitrc](/index.php/Xinitrc "Xinitrc") for details.
 
-To try the experimental [Wayland](/index.php/Wayland "Wayland") compositor, enter `enlightenment_start` in a [tty](/index.php/Tty "Tty").
+To try the experimental [Wayland](/index.php/Wayland "Wayland") compositor, enter `enlightenment_start` in a [tty](/index.php/Tty "Tty"). You will probably want to install [efl-git](https://aur.archlinux.org/packages/efl-git/) and [enlightenment-git](https://aur.archlinux.org/packages/enlightenment-git/) for this as it's still experimental, yet relatively complete.
 
 ### Configuration
 
@@ -109,7 +107,7 @@ Enlightenment has a sophisticated configuration system that can be accessed from
 
 Enlightenment's preferred network manager is [ConnMan](/index.php/ConnMan "ConnMan") which can be installed from the [connman](https://www.archlinux.org/packages/?name=connman) package. Follow the instructions on [ConnMan](/index.php/ConnMan "ConnMan") to do the configuration.
 
-For extended configuration, you may also install Econnman (available in AUR as [econnman](https://aur.archlinux.org/packages/econnman/) or [econnman-git](https://aur.archlinux.org/packages/econnman-git/)) and its associated dependencies.
+For extended configuration, you may also install Econnman (available in AUR as [econnman](https://aur.archlinux.org/packages/econnman/) or [econnman-git](https://aur.archlinux.org/packages/econnman-git/)) and its associated dependencies. This is not required for general functionality though.
 
 **Adding the ConnMan Gadget to the Shelf**
 
@@ -256,11 +254,11 @@ When the configuration needs to be reset and the settings windows can no longer 
 
 If fonts are too small and your screen is unreadable, be sure the right font packages are installed. [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera) are valid candidates.
 
-You can set scaling under *Settings > Settings Panel > Look > Scaling*.
+You also should consider just increasing the scaling size under the Scaling. You can set scaling under *Settings > Settings Panel > Look > Scaling*.
 
 #### Backlight always dimmed
 
-You may find that Enlightenment routinely dims the backlight to 30% on logout and will only restore it to 100% when you log into another Enlightenment session. This is especially problematic when using another desktop environment alongside Enlightenment as the backlight will not automatically be restored to its normal level when using that desktop environment. To fix this issue, open the Enlightenment *Settings Panel* and, under the *Look* tab, click on the *Composite* option. Tick the *Don't fade backlight* box and click *OK*.
+You may find that Enlightenment routinely dims the backlight to 0% on logout and will only restore it to 100% when you log into another Enlightenment session. Enlightenment assumes that whatever comes after it will set the backlight to whatever it prefers, if anything as this is what Enlightenment does at start. This is especially problematic when using another desktop environment alongside Enlightenment that cannot control backlight as the backlight will not automatically be restored to its normal level when using that desktop environment. To fix this issue, open the Enlightenment *Settings Panel* and, under the *Look* tab, click on the *Composite* option. Tick the *Don't fade backlight* box and click *OK*.
 
 #### Inconsistent cursor theme
 
@@ -268,11 +266,11 @@ You may find that the cursor theme for the desktop is different to the one used 
 
 #### Background images
 
-You have to copy the desired wallpapers into `~/.e/e/backgrounds/`
+You can just select wallpapers in the wallpaper settings dialog and import any image with the provided settings dialog, or you can put desired wallpapers into `~/.e/e/backgrounds/`
 
-MMB or RMB anywhere on the desktop will give access to the settings, select `/Desktop/Backgrounds/`
+LMB anywhere on the desktop will give access to the settings, select `/Desktop/Backgrounds/`
 
-Any new image copied in the `~/.e/e/backgrounds/` folder will get the list of available backgrounds auto-updated. Select desired wallpaper from drop-down menu. Inside the appropriate tabs in the global settings, you can adjust things like tiling of the background image, filling screen and such.
+Any new image copied in the `~/.e/e/backgrounds/` folder will get the list of available backgrounds auto-updated. You can drop animated gifs and even mp4 and other video files in here and use them as wallpapers if you want. Select desired wallpaper from drop-down menu. Inside the appropriate tabs in the global settings, you can adjust things like tiling of the background image, filling screen and such.
 
 ## Enlightenment DR16
 

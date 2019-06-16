@@ -4,7 +4,11 @@ Dėl detalesnių instrukcijų, žiūrėti atitinkamus [ArchWiki](/index.php/Arch
 
 Arch Linux turėtų veikti bet kokioje [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") architektūros mašinoje turinčioje bent 512 MB RAM. Pradinis diegimas su paketais iš [base](https://www.archlinux.org/groups/x86_64/base/) grupės turėtų užimti mažiau nei 800 MB disko vietos. Kadangi diegimo procese reikia gauti paketų iš nuotolinės saugyklos, šiame vadove daroma prielaida kad yra vikiantis interneto ryšys.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prieš diegimą](#Prieš_diegimą)
     *   [1.1 Nustatykite klaviatūros išdėstymą](#Nustatykite_klaviatūros_išdėstymą)

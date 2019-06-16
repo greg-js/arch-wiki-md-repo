@@ -3,13 +3,13 @@ Related articles
 *   [GnuPG](/index.php/GnuPG "GnuPG")
 *   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
 
-To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. The current Master Signing Keys are found [here](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up *pacman-key*. So the web of trust links the user's key to the Master Keys.
+To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. The current Master Signing Keys are found [here](https://www.archlinux.org/master-keys/). At least three, of these Master Signing Keys, are used to sign the Developer's and Trusted User's own keys. They are then used to sign their packages. Each user also has a unique PGP key, which is generated when you configure *pacman-key*. It is this web of trust that links the user's key to the Master Keys.
 
 Examples of webs of trust:
 
-*   **Custom packages**: You made the package yourself and signed it with your own key.
-*   **Unofficial packages**: A developer made the package and signed it. You used your key to sign that developer's key.
-*   **Official packages**: A developer made the package and signed it. The developer's key was signed by the Arch Linux master keys. You used your key to sign the master keys, and you trust them to vouch for developers.
+*   **Custom packages**: Packages you made and signed with your own key.
+*   **Unofficial packages**: Packages made and signed by a developer. You then used your key to sign that developer's key.
+*   **Official packages**: Packages made and signed by a developer. The developer's key was signed by the Arch Linux master keys. You used your key to sign the master keys, and you trust them to vouch for developers.
 
 **Note:** The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using *pacman-key*), this port is required for communication.
 
@@ -40,15 +40,15 @@ Examples of webs of trust:
 
 ### Configuring pacman
 
-The `SigLevel` option in `/etc/pacman.conf` determines how much trust is required to install a package. For a detailed explanation of `SigLevel` see the [pacman.conf man page](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) and the comments in the file itself. Signature checking may be set globally or per repository. If `SigLevel` is set globally in the `[options]` section to require all packages to be signed, then packages you build will also need to be signed using *makepkg*.
+The `SigLevel` option in `/etc/pacman.conf` determines the level of trust required to install a package. For a detailed explanation of `SigLevel` see the [pacman.conf man page](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) and the file comments. One can set signature checking globally or per repository. If `SigLevel` is set globally in the `[options]` section, all packages will then require signing. Any packages you build will then need to be signed using *makepkg*.
 
 **Note:** Although all official packages are now signed, as of November 2018 signing of the databases is a [work in progress](https://bbs.archlinux.org/viewtopic.php?id=242258). If `Required` is set then `DatabaseOptional` should also be set.
 
-A default configuration can be used to only install packages that are signed by trusted keys:
+The default configuration will only support the installation of packages signed by trusted keys:
 
  `/etc/pacman.conf`  `SigLevel = Required DatabaseOptional` 
 
-This is because `TrustedOnly` is a default compiled-in *pacman* parameter. So above leads to the same result as a global option of:
+`TrustedOnly` is a default compiled-in *pacman* parameter. The default configuration is identical to using the global option of:
 
 ```
 SigLevel = Required DatabaseOptional TrustedOnly
@@ -70,16 +70,16 @@ explicitly adds signature checking for the packages of the repository, but does 
 
 ### Initializing the keyring
 
-To set up the *pacman* keyring use:
+To initialize the *pacman* keyring run:
 
 ```
 # pacman-key --init
 
 ```
 
-For this initialization, [entropy](https://en.wikipedia.org/wiki/Entropy_(computing) is required. Moving your mouse around, pressing random characters at the keyboard or running some disk-based activity (for example in another console running `ls -R /` or `find / -name foo` or `dd if=/dev/sda8 of=/dev/tty7`) should generate entropy. If your system does not already have sufficient entropy, this step may take hours; if you actively generate entropy, it will complete much more quickly.
+Initializing the keyring requires [entropy](https://en.wikipedia.org/wiki/Entropy_(computing) "wikipedia:Entropy (computing)"). To generate entropy, move your mouse around, press random characters on the keyboard, or run some disk-based activity (for example in another console running `ls -R /` or `find / -name foo` or `dd if=/dev/sda8 of=/dev/tty7`). If your system does not already have sufficient entropy, this step may take hours; if you are actively generate entropy, it will complete much more quickly.
 
-The randomness created is used to set up a keyring (`/etc/pacman.d/gnupg`) and the GPG signing key of your system.
+The randomness created is used to initialize the keyring (`/etc/pacman.d/gnupg`) and the GPG signing key of your system.
 
 **Note:** If you need to run `pacman-key --init` on computer that does not generate much entropy (e.g. a headless server), key generation may take a very long time. To generate pseudo-entropy, install either [haveged](/index.php/Haveged "Haveged") or [rng-tools](/index.php/Rng-tools "Rng-tools") on the target machine and start the corresponding service before running `pacman-key --init`.
 

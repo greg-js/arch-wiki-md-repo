@@ -64,7 +64,7 @@ If running OpenVAS in a virtual machine or any other system having a low entropy
 
 [Install](/index.php/Install "Install") the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) package group from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-This group provides the [openvas-cli](https://www.archlinux.org/packages/?name=openvas-cli) command-line `omp` interface and [greenbone-security-assistant](https://www.archlinux.org/packages/?name=greenbone-security-assistant) web interface via the `gsad` daemon along with other OpenVAS dependencies.
+This group provides the [openvas-cli](https://aur.archlinux.org/packages/openvas-cli/) command-line `omp` interface and [greenbone-security-assistant](https://www.archlinux.org/packages/?name=greenbone-security-assistant) web interface via the `gsad` daemon along with other OpenVAS dependencies.
 
 ## Initial setup
 

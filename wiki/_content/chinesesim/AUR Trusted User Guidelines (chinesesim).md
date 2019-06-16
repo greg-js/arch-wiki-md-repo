@@ -8,7 +8,11 @@
 
 TU们依靠[TU bylaws](https://aur.archlinux.org/trusted-user/TUbylaws.html)来管理社区。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 新 TU 的 TODO 列表](#新_TU_的_TODO_列表)
 *   [2 TU 和 [unsupported]](#TU_和_[unsupported])

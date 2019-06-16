@@ -47,6 +47,7 @@ Related articles
     *   [5.7 Poweroff or reboot](#Poweroff_or_reboot)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
+    *   [6.2 Setting efifb resolution](#Setting_efifb_resolution)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Btrfs subvolume support](#Btrfs_subvolume_support)
         *   [7.1.1 Auto detection](#Auto_detection)
@@ -471,6 +472,23 @@ Shell> map -r
 ```
 
 Now you can access your file system from UEFI shell.
+
+### Setting efifb resolution
+
+If the resolution in `refind.conf` is set to an incorrect value, on all systems except Apple [Macs](/index.php/Mac "Mac") rEFInd will display a list of supported resolutions. For Apple Macs it will silently use the default resolution.
+
+To determine framebuffer resolutions supported by [efifb](https://www.kernel.org/doc/Documentation/fb/efifb.txt), copy `/usr/share/gnu-efi/apps/x86_64/modelist.efi` from [gnu-efi-libs](https://www.archlinux.org/packages/?name=gnu-efi-libs) to the root of [ESP](/index.php/ESP "ESP"). Enter the [UEFI shell](/index.php/UEFI_shell "UEFI shell") and run `modelist.efi`.
+
+ `Shell> FS0:\modelist.efi` 
+```
+GOP reports MaxMode 3
+ 0: 640x480 BGRR pitch 640
+*1: 800x600 BGRR pitch 800
+ 2: 1024x768 BGRR pitch 1024
+
+```
+
+Set one in `refind.conf`. Reboot and check if settings has been applied with `dmesg | grep efifb`.
 
 ## Troubleshooting
 

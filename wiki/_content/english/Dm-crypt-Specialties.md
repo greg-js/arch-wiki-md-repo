@@ -210,6 +210,7 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
 **Note:**
 
 *   Keep in mind to use kernel device names for the network interface (e.g. `eth0`) and not [udev's](/index.php/Udev "Udev") ones (e.g. `enp1s0`), as those will not work.
+*   By default, Predictable Network Interface Names are activated and **change** the kernel device name during late boot. Use dmesg and look what your Network kernel module does to find the original name (e.g. `eth0`)
 *   It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 
 ### Remote unlocking (hooks: systemd, systemd-tool)
@@ -246,6 +247,8 @@ Another package combination providing remote logins to the initcpio is [mkinitcp
 
 1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine).
     **Note:** `tinyssh` only supports [Ed25519](/index.php/SSH_keys#Ed25519 "SSH keys") and [ECDSA](/index.php/SSH_keys#ECDSA "SSH keys") key types. If you chose to use [mkinitcpio-tinyssh](https://www.archlinux.org/packages/?name=mkinitcpio-tinyssh), you need to create/use one of these.
+
+    **Note:** `mkinitcpio-dropbear` in version 0.0.3-5 is not compatible with the current dropbear implementation that removed dss. See [Github](https://github.com/grazzolini/mkinitcpio-dropbear/issues/8) for details and a fix.
 
 2.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file.
     **Tip:** This method can later be used to add other SSH public keys as needed; In the case of simply copying the content of the remote's `~/.ssh/authorized_keys`, be sure to verify that it only contains keys you intend to be using to unlock the remote machine. When adding additional keys, regenerate your initrd as well using `mkinitcpio`. See also [OpenSSH#Protection](/index.php/OpenSSH#Protection "OpenSSH").

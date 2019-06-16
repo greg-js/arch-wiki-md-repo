@@ -1,4 +1,4 @@
-[SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method") is an [input method](/index.php/Input_method "Input method") framework developed by Su Zhe (or James Su) around 2001, similar to [IBus](/index.php/IBus "IBus") or [UIM](/index.php/UIM "UIM").
+[SCIM](https://en.wikipedia.org/wiki/Smart_Common_Input_Method "wikipedia:Smart Common Input Method") is an [input method](/index.php/Input_method "Input method") framework developed by Su Zhe (or James Su) around 2001, similar to [IBus](/index.php/IBus "IBus") or [Uim](/index.php/Uim "Uim").
 
 Its stated goals are to:
 

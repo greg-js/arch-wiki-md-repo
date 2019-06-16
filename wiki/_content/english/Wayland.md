@@ -371,9 +371,9 @@ Below listed display managers which supports running Wayland compositors. The Ty
 | Name | Type | Description |
 | GNOME | Stacking | See [GNOME#Starting](/index.php/GNOME#Starting "GNOME"). |
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
-| Enlightenment | Stacking | [More Info](https://www.enlightenment.org/about-wayland) |
+| Enlightenment | Stacking and tiling | [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
-| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandonned tiling WM for Wayland. |
+| Orbment | Tiling | [orbment](https://github.com/Buttef/orbment) (previously loliwm) is an abandonned tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |

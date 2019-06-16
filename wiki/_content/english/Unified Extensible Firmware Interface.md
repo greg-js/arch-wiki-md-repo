@@ -267,7 +267,7 @@ You can download a BSD licensed UEFI Shell from Intel's TianoCore UDK/EDK2 proje
 
 *   [AUR](/index.php/AUR "AUR") package [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) (recommended) - provides x86_64 Shell for x86_64 (64-bit) UEFI and IA32 Shell for IA32 (32-bit) UEFI - compiled directly from latest TianoCore EDK2 source.
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
-*   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/edk2-stable201903/ShellBinPkg) (the binary packages have been removed from the tree as of April 2019, but according to [this thread](https://lists.01.org/pipermail/edk2-devel/2019-April/thread.html#38524) they will be be made available elsewhere in future).
+*   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/releases/latest/download/ShellBinPkg.zip) (the binary package was moved from its original location in the source tree to the GitHub release assets, as laid out [here](https://lists.01.org/pipermail/edk2-devel/2019-April/thread.html#38524)).
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/UDK2018/EdkShellBinPkg) (not updated anymore upstream as of Jan 10, 2014).
 *   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://drive.google.com/uc?export=download&id=1OBXYj6MEs7VAZbYnjD9FxOYcZYIQoq36) - from Clover EFI bootloader.
 

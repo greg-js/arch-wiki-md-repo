@@ -7,7 +7,7 @@
 *   [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)")
 *   [Opera](/index.php/Opera "Opera")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 5 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=574454).
+**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 13 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=575213).
 
 [Firefox](https://www.mozilla.org/ru/firefox/) — популярный графический веб-браузер с открытым исходным кодом, разрабатываемый [Mozilla](https://www.mozilla.org/ru/).
 
@@ -414,7 +414,7 @@ C официального сайта [поддержки Mozilla](https://suppo
 2.  Задайте параметру `spellchecker.dictionary` необходимый язык, например, `en_GB`.
 3.  Заметьте, что в случае со словарями, установленными с помощью плагинов Firefox, следует указывать `en-GB`, а в случае со словарями [hunspell](https://www.archlinux.org/packages/?name=hunspell) — `en_GB`.
 
-Если установлены только системные словари [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox может не запоминать язык по умолчанию. Это исправляется установкой хотя бы одного [словаря](https://addons.mozilla.org/firefox/language-tools/) в виде Firefox-плагина. Также после этого появится вкладка **Словари** в **Дополнениях**.
+Firefox может не запоминать язык по умолчанию, если установлены только системные словари [hunspell](https://www.archlinux.org/packages/?name=hunspell). Это исправляется установкой хотя бы одного [словаря](https://addons.mozilla.org/firefox/language-tools/) в виде Firefox-плагина. Также после этого появится вкладка **Словари** в **Дополнениях**. Кроме того, может потребоваться изменить порядок предпочитаемых языков для отображения веб-страниц в `about:preferences#general`, чтобы язык проверки орфографии по умолчанию соответствовал языку словаря из дополнения.
 
 Связанные вопросы на **StackExchange**: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 

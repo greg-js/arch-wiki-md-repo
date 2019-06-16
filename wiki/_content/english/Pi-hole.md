@@ -119,7 +119,7 @@ For security reasons, one can optionally populate the [PHP open_basedir](/index.
 
 ##### Set-up lighttpd
 
-**Tip:** You can use Nginx web server instead. See [#Nginx_instead_of_Lighttpd](#Nginx_instead_of_Lighttpd).
+**Tip:** You can use Nginx web server instead. See [#Nginx instead of Lighttpd](#Nginx_instead_of_Lighttpd).
 
 [Install](/index.php/Install "Install") [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 
@@ -321,7 +321,7 @@ See more information in [WireGuard#Client config](/index.php/WireGuard#Client_co
 
 ### Nginx instead of Lighttpd
 
-This is [unofficial, community-supported configuration](https://docs.pi-hole.net/guides/nginx-configuration/). Make sure that PHP is set-up (see [#Set-up_PHP](#Set-up_PHP)) and lighttpd server is inactive.
+This is [unofficial, community-supported configuration](https://docs.pi-hole.net/guides/nginx-configuration/). Make sure that PHP is set-up (see [#Set-up PHP](#Set-up_PHP)) and lighttpd server is inactive.
 
 [Install](/index.php/Install "Install") [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) and [php-fpm](https://www.archlinux.org/packages/?name=php-fpm).
 

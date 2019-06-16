@@ -10,7 +10,8 @@
     *   [1.1 Input method engines](#Input_method_engines)
         *   [1.1.1 Chinese](#Chinese)
         *   [1.1.2 Japanese](#Japanese)
-        *   [1.1.3 Others](#Others)
+        *   [1.1.3 Vietnamese](#Vietnamese)
+        *   [1.1.4 Others](#Others)
     *   [1.2 Initial setup](#Initial_setup)
     *   [1.3 GNOME](#GNOME)
     *   [1.4 KDE](#KDE)
@@ -28,6 +29,8 @@
     *   [4.5 Chinese input](#Chinese_input)
     *   [4.6 LibreOffice](#LibreOffice)
     *   [4.7 Non US keyboards](#Non_US_keyboards)
+    *   [4.8 Use xinitrc to export](#Use_xinitrc_to_export)
+    *   [4.9 Rescue from an iBus crash](#Rescue_from_an_iBus_crash)
 *   [5 ibus-m17n](#ibus-m17n)
     *   [5.1 English international AltGr](#English_international_AltGr)
     *   [5.2 Trouble with Japanese](#Trouble_with_Japanese)
@@ -39,7 +42,7 @@ Install the [ibus](https://www.archlinux.org/packages/?name=ibus) package.
 
 ### Input method engines
 
-You will need at least one input method, corresponding to the language you wish to type. Available input methods include:
+At least one input method is required, corresponding to the language desired. Available input methods include:
 
 #### Chinese
 
@@ -54,10 +57,16 @@ You will need at least one input method, corresponding to the language you wish 
 *   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
 *   [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) - Japanese IME, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
 
+#### Vietnamese
+
+*   [ibus-bogo](https://aur.archlinux.org/packages/ibus-bogo/) - Vietnamese IME, based on Bogo.
+*   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters.
+
+There are several other vietnamese IME with [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) and Viqr with [ibus-table](https://www.archlinux.org/packages/?name=ibus-table), support VIQR, VNI, VPS, VISCII, BK HCM1, BK HCM2.
+
 #### Others
 
 *   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) - Korean IME, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
-*   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters.
 *   [ibus-table](https://www.archlinux.org/packages/?name=ibus-table) - IME that accommodates table-based IMs.
 *   [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) - M17n IME which allows input of many languages using the input methods from [m17n-db](https://www.archlinux.org/packages/?name=m17n-db).
 *   [ibus-kmfl](https://aur.archlinux.org/packages/ibus-kmfl/) - Linux port of [Keyman](https://keyman.com/) input method for Windows which supports over 1,000 languages, such as complex scripts, languages of minorities, and IPA symbols. Only part of them is available in KMFL as it can work with uncompiled layout description only (*.kmn files).
@@ -73,7 +82,7 @@ Others packages are also available in the [AUR](/index.php/AUR "AUR").
 
 ### Initial setup
 
-Now, run `$ ibus-setup` (as the user who will use IBus). It will start the daemon and give you this message:
+Now, run `$ ibus-setup`. The daemon will be initialized and provide the following message:
 
 ```
 IBus has been started! If you cannot use IBus, please add below lines in `~/.bashrc`, and relogin your desktop.
@@ -85,20 +94,20 @@ export QT_IM_MODULE=ibus
 
 **Note:**
 
-*   Although IBus uses a daemon, it is not the sort of daemon managed by *systemd*: it runs as an ordinary user and will be started for you when you login.
+*   Although IBus uses a daemon, it is not the sort of daemon managed by *systemd*: it runs as an ordinary user and will be started upon login.
 *   If, however, IBus is **not** autostarted upon login, then move the “export …” lines above to either
     *   `~/.xprofile` instead and append this line to the same file: `ibus-daemon -drx`, **or**
     *   `~/.xinitrc` and append this line to the same file: `ibus-daemon -drx`.
 
-	Which works best, depends on your [Window manager](/index.php/Window_manager "Window manager"), see also [xprofile](/index.php/Xprofile "Xprofile") and [xinitrc](/index.php/Xinitrc "Xinitrc").
+	The most viable option depends on the active [Window manager](/index.php/Window_manager "Window manager"), see also [xprofile](/index.php/Xprofile "Xprofile") and [xinitrc](/index.php/Xinitrc "Xinitrc").
 
-*   You can also try adding `ibus-daemon -drx` after the `export ...` lines in `~/.bashrc`.
+*   Another potential option is adding `ibus-daemon -drx` after the `export ...` lines in `~/.bashrc`.
 
-You will then see a configuration screen; you can access this screen whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
+Next, a configuration screen will appear. It can be accessed whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
 
 ### GNOME
 
-[GNOME](/index.php/GNOME "GNOME") integrates with IBus[[1]](https://help.gnome.org/misc/release-notes/3.6/i18n-ibus.html.en), so you should only need to install the package specific to your language. To enable input in your language, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
+[GNOME](/index.php/GNOME "GNOME") integrates with IBus[[1]](https://help.gnome.org/misc/release-notes/3.6/i18n-ibus.html.en), so it should only be necessary to install the package specific to the language being utilized. To enable input, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
 
 ### KDE
 
@@ -273,6 +282,37 @@ If [Ibus does not let you write in a given language](https://code.google.com/p/i
 Each input method specifies its desired input layout in an XML configuration file in `/usr/share/ibus/component/<method_name>.xml`. Setting the `<layout>` tag to the desired value will make the ibus use that layout. With the special value `default`, ibus will use whatever is the default layout configured on the system.
 
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.
+
+### Use xinitrc to export
+
+If you still can't get it to work, try to place these lines in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc").
+
+```
+ export GTK_IM_MODULE=ibus
+ export XMODIFIERS=@im=ibus
+ export QT_IM_MODULE=ibus
+
+```
+
+This was tested in [Awesome](/index.php/Awesome "Awesome"), without login manager.
+
+### Rescue from an iBus crash
+
+Since around fall 2018, iBus is less stable and sometimes crash. To relaunch it without killing the session:
+
+*   If the keyboard is not in latin input method, go to a terminal (ctrl+alt+F2), login with the same user and type
+*   ibus-daemon -r &
+
+Go back in the X11 session (ctrl+alt+f7), and type the exact same sentence in a terminal.
+
+*   If the keyboard is in a latin input method, launch a terminal and type :
+
+```
+ibus-terminal -r &
+
+```
+
+**The ending '&' is very important, else it will broke input when you stop it.**
 
 ## ibus-m17n
 

@@ -30,4 +30,4 @@ Seems to work out of the box
 
 **GPU**
 
-Install the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) package from pacman.
+Install the [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) package from pacman.

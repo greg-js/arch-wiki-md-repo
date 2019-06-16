@@ -12,13 +12,13 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Running vncserver for virtual (headless) sessions](#Running_vncserver_for_virtual_(headless)_sessions)
-    *   [2.1 Create environment, config, and password files](#Create_environment,_config,_and_password_files)
-        *   [2.1.1 Edit the environment file](#Edit_the_environment_file)
+    *   [2.1 Create password, startup and config files](#Create_password,_startup_and_config_files)
+        *   [2.1.1 Edit the startup script](#Edit_the_startup_script)
         *   [2.1.2 Edit the optional config file](#Edit_the_optional_config_file)
     *   [2.2 Starting and stopping vncserver via systemd](#Starting_and_stopping_vncserver_via_systemd)
         *   [2.2.1 User mode](#User_mode)
         *   [2.2.2 System mode](#System_mode)
-        *   [2.2.3 Multi-user mode](#Multi-user_mode)
+        *   [2.2.3 On demand multi-user mode](#On_demand_multi-user_mode)
 *   [3 Running x0vncserver to directly control the local display](#Running_x0vncserver_to_directly_control_the_local_display)
     *   [3.1 Starting x0vncserver via xprofile](#Starting_x0vncserver_via_xprofile)
     *   [3.2 Starting and stopping x0vncserver via systemd](#Starting_and_stopping_x0vncserver_via_systemd)
@@ -35,7 +35,6 @@ Related articles
     *   [6.3 Recommended security settings](#Recommended_security_settings)
     *   [6.4 Starting X (startx) with vncserver](#Starting_X_(startx)_with_vncserver)
     *   [6.5 Toggling Fullscreen](#Toggling_Fullscreen)
-    *   [6.6 Changing password](#Changing_password)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Unable to type '<' character](#Unable_to_type_'<'_character)
     *   [7.2 Black rectangle instead of window](#Black_rectangle_instead_of_window)
@@ -57,7 +56,7 @@ TigerVNC also provides *vncviewer* which is a client viewer for VNC.
 
 ## Running vncserver for virtual (headless) sessions
 
-### Create environment, config, and password files
+### Create password, startup and config files
 
 The first time *vncserver* is run, it creates its initial environment, config, and user password file. These will be stored in `~/.vnc` which will be created if not present. See [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1) for the complete manual.
 
@@ -94,11 +93,13 @@ $ vncpasswd
 
 ```
 
-#### Edit the environment file
+See [vncpasswd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncpasswd.1) for more information.
+
+#### Edit the startup script
 
 The `~/.vnc/xstartup` script is sourced by *vncserver* for creating the virtual X session and it must be adapted to one's needs. It functions like an [.xinitrc](/index.php/.xinitrc ".xinitrc") file. In this script, users are expected to start a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), see: [General recommendations#Desktop environments](/index.php/General_recommendations#Desktop_environments "General recommendations").
 
-For example, to start [Xfce](/index.php/Xfce "Xfce") the following script can be used, note it also requires that a [D-Bus](/index.php/D-Bus "D-Bus") session is launched.
+For example, to start [Xfce](/index.php/Xfce "Xfce"), the following script can be used:
 
  `~/.vnc/xstartup` 
 ```
@@ -108,7 +109,7 @@ unset DBUS_SESSION_BUS_ADDRESS
 exec startxfce4
 ```
 
-**Note:** The instruction `unset DBUS_SESSION_BUS_ADDRESS` clears the variable and forces `startxfce4` to initiate a new bus for the VNC session. If *D-Bus* fails to start, try using `exec dbus-launch startxfce4` instead to launch the bus manually, note that this latter way of starting *D-Bus* is deprecated.
+**Note:** The instruction `unset DBUS_SESSION_BUS_ADDRESS` clears the variable and forces `startxfce4` to initiate a new bus for the VNC session. If [D-Bus](/index.php/D-Bus "D-Bus") fails to start, try using `exec dbus-launch startxfce4` instead to launch the bus manually, note that this latter way of starting *D-Bus* is deprecated.
 
 To start [GNOME](/index.php/GNOME "GNOME"), replace `exec startxfce4` by `exec dbus-launch gnome-session` in the example above.
 
@@ -116,7 +117,9 @@ Make sure `~/.vnc/xstartup` has a execute permission.
 
 #### Edit the optional config file
 
-TigerVNC supports parsing `vncserver` options in the file `~/.vnc/config` rather than through the command line. The format is one option per line. An example is provided below:
+*vncserver* supports parsing parameters through the command line, or in the file `~/.vnc/config`. The format of the config file is one option per line, option names are case-insensitive and commenting with `#` is supported. The parameters can be either *vncserver* specific or can be parameters that are passed to *Xvnc*, see [vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncserver.1) or [Xvnc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xvnc.1) for the full list of available options.
+
+An example is provided below:
 
  `~/.vnc/config` 
 ```
@@ -161,14 +164,9 @@ ExecStop=/usr/bin/vncserver -kill %i
 WantedBy=multi-user.target
 ```
 
-**Note:**
-
-*   Users of the[Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server may require [D-Bus](/index.php/D-Bus "D-Bus") starting before the VNC server. Just add `ExecStartPre=/usr/bin/dbus-launch` entry in `[Service]` section of unit file.
-*   Do not run this service if the local area network is untrusted.
-
 [Start](/index.php/Start "Start") `vncserver@*:1*.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
 
-#### Multi-user mode
+#### On demand multi-user mode
 
 One can use *systemd* socket activation in combination with [XDMCP](/index.php/XDMCP "XDMCP") to automatically spawn VNC servers for each user who attempts to login, so there is no need to set up one server/port per user. This setup uses the display manager to authenticate users and login, so there is no need for VNC passwords. The downside is that users cannot leave a session running on the server and reconnect to it later.
 
@@ -219,7 +217,7 @@ $ x0vncserver -rfbauth ~/.vnc/passwd
 
 For more information, see [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/x0vncserver.1).
 
-**Tip:** An alternative is to use the [x11vnc](/index.php/X11vnc "X11vnc") VNC server which also provides direct control of the current X session, note that *x11vnc* requires *root* privilege to initiate the access.
+**Note:** *x0vncserver* is an inefficient VNC server which continuously polls any X display, allowing it to be controlled via VNC. It is intended mainly as a demonstration of a simple VNC server. [x11vnc](/index.php/X11vnc "X11vnc") is an alternative more advanced VNC server which also provides direct control of the current X session.
 
 ### Starting x0vncserver via xprofile
 
@@ -253,12 +251,6 @@ WantedBy=default.target
 ```
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service `x0vncserver.service` in [Systemd/User](/index.php/Systemd/User "Systemd/User") mode, i.e. with the `--user` parameter.
-
-**Note:**
-
-*   This unit will only be useful if the user in the unit is currently running a X session.
-*   Do not run this service if the local area network is untrusted.
-*   Refer to the man page for more detail.
 
 ## Connecting to vncserver
 
@@ -411,11 +403,7 @@ Users invoking `startx` to load the DE, should note that the default `~/.vnc/xst
 
 ### Toggling Fullscreen
 
-This can be done through vncclient's Menu. By default, vncclient's Menu Key is F8.
-
-### Changing password
-
-Use the tool [vncpasswd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vncpasswd.1) to change or set the password used to access VNC desktops.
+This can be done through vnc client's Menu. By default, vnc client's Menu Key is F8.
 
 ## Troubleshooting
 

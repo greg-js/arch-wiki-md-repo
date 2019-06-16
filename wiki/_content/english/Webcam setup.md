@@ -10,6 +10,8 @@ Most probably your webcam will work out of the box. Permissions to access video 
 
 *   [1 Loading](#Loading)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Command Line](#Command_Line)
+    *   [2.2 Persisting configuration changes](#Persisting_configuration_changes)
 *   [3 Applications](#Applications)
     *   [3.1 xawtv](#xawtv)
     *   [3.2 VLC](#VLC)
@@ -47,6 +49,32 @@ Otherwise, if your webcam is not supported by the kernel's drivers, an external 
 ## Configuration
 
 If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use *Qt V4L2 Test Bench*. To run it, [install](/index.php/Install "Install") [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils) and launch `qv4l2`, and it will present you a list of configurable settings. Changing these settings will affect all applications.
+
+### Command Line
+
+[v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils) also installs an equivalent command line tool, `v4l2-ctl`. To list all video devices:
+
+```
+$ v4l2-ctl --list-devices
+
+```
+
+To list the configurable settings of a video device:
+
+```
+$ v4l2-ctl -d /dev/video0 --list-ctrls
+
+```
+
+### Persisting configuration changes
+
+Configuration made via V4L2 does not persist after the webcam is disconnected and reconnected. It's possible to use `v4l2-ctl` with [Udev](/index.php/Udev "Udev") rules in order to set some configuration each time a particular camera is connected.
+
+For example, to set a default zoom setting on a particular Logitech webcam each time it is connected, add a [udev rule](/index.php/Udev#udev_rule_example "Udev") like this:
+
+ `/etc/udev/rules.d/99-logitech-default-zoom.rules`  `SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTRS{product}=="HD Pro Webcam C920", ATTRS{serial}=="BBBBFFFF", RUN="/usr/bin/v4l2-ctl -d $devnode --set-ctrl=zoom_absolute=170"` 
+
+To find udev attributes like the product name and serial, see [Udev#List the attributes of a device](/index.php/Udev#List_the_attributes_of_a_device "Udev"). It also possible to [set a static name for a video device](/index.php/Udev#Setting_static_device_names "Udev")).
 
 ## Applications
 

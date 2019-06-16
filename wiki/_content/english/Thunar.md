@@ -41,7 +41,7 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package. It is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group, so if you are running [Xfce](/index.php/Xfce "Xfce"), you probably already have Thunar installed.
+[Install](/index.php/Install "Install") the [thunar](https://www.archlinux.org/packages/?name=thunar) package. Thunar is part of the [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/) group and the default file manager of the [xfce](/index.php/Xfce "Xfce") desktop environment.
 
 ### Plugins and addons
 
@@ -57,7 +57,7 @@ From the project [home page](https://docs.xfce.org/xfce/thunar/start):
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
-*   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Enable_usershares "Samba").
+*   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Enable_Usershares "Samba").
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 
@@ -85,7 +85,7 @@ While Thunar supports automatic mounting and unmounting of removable media ([gvf
 
 Thunar Volume Manager can be installed from the package [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman) in the official repositories.
 
-**Tip:** To let Thunar handle automatic mounting, one must launch thunar in daemon mode. [#Starting in daemon mode](#Starting_in_daemon_mode)
+**Tip:** To let Thunar handle automatic mounting, one must launch thunar in [daemon mode](#Starting_in_daemon_mode).
 
 ### Configuration
 

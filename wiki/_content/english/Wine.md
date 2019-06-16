@@ -243,7 +243,7 @@ When a Windows application installer creates a shortcut Wine creates a `.desktop
 
 #### Creating menu entries for Wine utilities
 
-By default, installation of Wine does not create desktop menus/icons for the software which comes with Wine (e.g. for *winecfg*, *winebrowser*, etc). These instructions will add entries for these applications.
+By default, installation of Wine does not create desktop menus/icons for the software which comes with Wine (e.g. for *winecfg*, *winebrowser*, etc). This can be achieved by installing [wine-installer](https://aur.archlinux.org/packages/wine-installer/) meta-package, otherwise these instructions will add entries for these applications.
 
 First, install a Windows program using Wine to create the base menu. After the base menu is created, you can create the following files in `~/.local/share/applications/wine/`:
 

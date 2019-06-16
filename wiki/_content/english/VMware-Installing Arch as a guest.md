@@ -59,7 +59,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 
 ## In-kernel drivers
 
-**Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables some of these modules. If any of them is not auto-detected (check by running `lsmod | grep *modulename*` ) and if you require it, you can add the module to your [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` array. For example: `/etc/mkinitcpio.conf` 
+**Note:** Arch's [Udev](/index.php/Udev "Udev") auto-detects and enables some of these modules. If any of them is not auto-detected (check by running `lsmod | grep *modulename*` ) and if it is required, the module can be added to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `MODULES` array. For example: `/etc/mkinitcpio.conf` 
 ```
 ...
 MODULES=(... vmw_balloon vmw_pvscsi vsock vmw_vsock_vmci_transport ...)
@@ -85,15 +85,15 @@ Some modules, such as the legacy `vmhgfs` shared folder module, will require add
 
 In 2007, VMware released large partitions of the [VMware Tools](http://kb.vmware.com/kb/340) under the LGPL as [Open-VM-Tools](http://sourceforge.net/projects/open-vm-tools/). The official Tools are not available [separately](http://packages.vmware.com/tools/esx/latest/repos/index.html) for Arch Linux.
 
-Originally, VMware Tools provided the best drivers for network and storage, combined with the functionality for other features such as time synchronization. However, for quite a while now the drivers for the network/SCSI adapter are part of the Linux kernel.
+Originally, VMware Tools provided the best drivers for network and storage, combined with the functionality for other features such as time synchronization. However, now the drivers for the network/SCSI adapter are part of the Linux kernel.
 
-The official VMware Tools used to have the advantage of being able to use the Unity mode feature, but as of VMWare Workstation 12, Unity mode for Linux guests has been removed due to lack of use and developer difficulties in maintaining the feature. See the answer in [this thread](https://communities.vmware.com/thread/518735).
+The official VMware Tools also had the advantage of being able to use the Unity mode feature, but as of VMWare Workstation 12, Unity mode for Linux guests has been removed due to lack of use and developer difficulties in maintaining the feature. See [this thread](https://communities.vmware.com/thread/518735).
 
 ## Open-VM-Tools
 
 ### Utilities
 
-The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) package comes namely with the following utilities:
+The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) package comes with the following utilities:
 
 *   `vmtoolsd` - Service responsible for the Virtual Machine status report.
 *   `vmware-checkvm` - Tool to check whether a program is running in the guest.
@@ -110,7 +110,7 @@ The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) pack
 
 ### Installation
 
-[Install](/index.php/Install "Install") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If you want to use the legacy `vmhgfs` shared folder module you also need to install the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package (the new `vmhgfs-fuse` driver is included in [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools)). [Start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `vmtoolsd.service` and `vmware-vmblock-fuse.service`.
+[Install](/index.php/Install "Install") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If the legacy `vmhgfs` shared folder module is desired, the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package must be installed (the new `vmhgfs-fuse` driver is included in [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools)). [Start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `vmtoolsd.service` and `vmware-vmblock-fuse.service`.
 
 Try to install [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) manually if it does not work properly. To enable copy and paste between host and guest [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) is required.
 
@@ -158,13 +158,13 @@ And started:
 
 ```
 
-You can safely ignore the following build failures:
+The following build failures can safely be ignored:
 
 *   VMNEXT 3 virtual network card
 *   "Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!"
 *   Fuse components not found on the system.
 
-Enable `vmware-vmblock-fuse` systemd services (make sure you install the dependencies manually or use the `-s` flag). The `open-vm-tools` source code is need to checkout using [Arch Build System](/index.php/Arch_Build_System "Arch Build System").
+Enable `vmware-vmblock-fuse` systemd services (make sure the dependencies are manually installed, or that the `-s` flag) used. The `open-vm-tools` source code should be checked out using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System").
 
 ```
  $ asp checkout open-vm-tools
@@ -190,7 +190,7 @@ Log in and start the VMware Tools:
 
 ```
 
-Additionally, to auto start of `vmware-tools` on every boot, create a new file file `/etc/systemd/system/vmwaretools.service`:
+Additionally, to auto start `vmware-tools` on boot, create a new file `/etc/systemd/system/vmwaretools.service`:
 
  `/etc/systemd/system/vmwaretools.service` 
 ```
@@ -215,7 +215,7 @@ And enable the new systemd service:
 
 ```
 
-**Tip:** There is also a [project](https://github.com/rasa/vmware-tools-patches) in GitHub trying to automate all this.
+**Tip:** There is also a [project](https://github.com/rasa/vmware-tools-patches) in GitHub trying to automate these steps.
 
 ## Xorg configuration
 
@@ -223,7 +223,7 @@ And enable the new systemd service:
 
 Install the dependencies: [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse), [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware), and [mesa](https://www.archlinux.org/packages/?name=mesa).
 
-If booting into a `graphical target` you are almost done. `/etc/xdg/autostart/vmware-user.desktop` will get started which will setup most of the things needed to work with the Virtual Machine.
+These packages should be all that are required to get started with booting into a `graphical target`: . `/etc/xdg/autostart/vmware-user.desktop` will get started which will set up most of what is needed to work with the Virtual Machine.
 
 However, if booting into `multi-user.target` or using an uncommon setup (e.g. multiple monitors), then `vmtoolsd.service` needs to be [enabled](/index.php/Enable "Enable"). In addition to this, edit:
 
@@ -239,14 +239,14 @@ to give permission for loading drivers.
 
 Share a folder by selecting *Edit virtual machine settings > Options > Shared Folders > Always enabled*, and creating a new share.
 
-You should be able to see the shared folders with:
+The shared folders should be visible with:
 
 ```
 $ vmware-hgfsclient
 
 ```
 
-Now you can mount the folder:
+Now the folder can be mounted:
 
 ```
 # mkdir <shared folders root directory>
@@ -254,7 +254,7 @@ Now you can mount the folder:
 
 ```
 
-If you get the error message `fusermount: option allow_other only allowed if 'user_allow_other' is set in /etc/fuse.conf`, uncomment the follow line in file `/etc/fuse.conf`:
+If the error message `fusermount: option allow_other only allowed if 'user_allow_other' is set in /etc/fuse.conf` is displayed, uncomment the following line in `/etc/fuse.conf`:
 
 ```
 user_allow_other
@@ -308,7 +308,7 @@ ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount .host:/*<shared_fo
 WantedBy=multi-user.target
 ```
 
-Make sure the `*<shared folders root directory>*` folder exists on your system. If this folder does not exist then you have to create it as the systemd service depends on it:
+Ensure the `*<shared folders root directory>*` folder exists on the system. If this folder does not exist then it must be created, as the systemd service depends on it:
 
 ```
 # mkdir -p *<shared folders root directory>*
@@ -317,7 +317,7 @@ Make sure the `*<shared folders root directory>*` folder exists on your system. 
 
 [Enable](/index.php/Enable "Enable") the `<shared folders root directory>-<shared_folder>.service` mount target.
 
-If you want to mount all shared folders automatically then omit *<shared_folder>*.
+If all shared folders should be mounted automatically then omit *<shared_folder>*.
 
 ### Legacy Shared Folders with vmhgfs module
 
@@ -325,21 +325,21 @@ If you want to mount all shared folders automatically then omit *<shared_folder>
 
 Share a folder by selecting *Edit virtual machine settings > Options > Shared Folders > Always enabled*, and creating a new share.
 
-Make sure the `vmhgfs` driver is loaded:
+Ensure the `vmhgfs` driver is loaded:
 
 ```
 # modprobe vmhgfs
 
 ```
 
-You should be able to see the shared folders with:
+The shared folders should be viewable with:
 
 ```
 $ vmware-hgfsclient
 
 ```
 
-Now you can mount the folder:
+Now the folder can be mounted:
 
 ```
 # mkdir /home/user1/shares
@@ -349,7 +349,7 @@ Now you can mount the folder:
 
 #### Enable at boot
 
-Edit your `mkinitcpio.conf` like this:
+Edit `mkinitcpio.conf` thusly:
 
  `/etc/mkinitcpio.conf` 
 ```
@@ -380,7 +380,7 @@ Create and mount the Shared Folders:
 
 ##### Systemd
 
-For shared folders to be working you need to have loaded the `vmhgfs` driver. Simply create the following `.service`s:
+For shared folders to work the `vmhgfs` driver must be loaded. Create the following `.service`s:
 
  `/etc/systemd/system/*<shared folders root directory>*-*<shared_folder>*.mount` 
 ```
@@ -412,7 +412,7 @@ Where=*<shared folders root directory>*/*<shared_folder>*
 WantedBy=multi-user.target
 ```
 
-Make sure the `*<shared folders root directory>*` folder exists on your system. If this folder does not exist then you have to create it as the systemd scripts depend on it:
+Ensure the `*<shared folders root directory>*` folder exists on the system. If this folder does not exist then it must be created, as the systemd scripts depend on it:
 
 ```
 # mkdir -p *<shared folders root directory>*
@@ -421,11 +421,11 @@ Make sure the `*<shared folders root directory>*` folder exists on your system. 
 
 [Enable](/index.php/Enable "Enable") the `mnt-hgfs.automount` mount target.
 
-If you want to mount all shared folders automatically then omit *<shared_folder>*.
+If all shared folders should be mounted automatically then omit *<shared_folder>*.
 
 #### Prune mlocate DB
 
-When using [mlocate](/index.php/Mlocate "Mlocate"), it is useless to index the shared directories in the `locate DB`. Therefore, add the directories to `PRUNEPATHS` in `/etc/updatedb`.
+When using [mlocate](/index.php/Mlocate "Mlocate"), it is pointless to index the shared directories in the `locate DB`. Therefore, add the directories to `PRUNEPATHS` in `/etc/updatedb`.
 
 ### 3D Acceleration
 
@@ -437,11 +437,11 @@ If not selected at guest creation time, 3D Acceleration can be enabled in: *Edit
 
 It is possible to update OpenGL and GLSL with new kernel modules, overriding Arch-controlled versions.
 
-At the time of this writing, OpenGL 3.3 and GLSL 3.30 can be supported. See [https://bbs.archlinux.org/viewtopic.php?id=202713](https://bbs.archlinux.org/viewtopic.php?id=202713) for more details.
+Currently, OpenGL 3.3 and GLSL 3.30 can be supported. See [https://bbs.archlinux.org/viewtopic.php?id=202713](https://bbs.archlinux.org/viewtopic.php?id=202713) for more details.
 
 ### Time synchronization
 
-Configuring time synchronization in a Virtual Machine is important; fluctuations are bound to occur more easily in a guest, compared to a physical host. This is mostly due to the CPU being shared by more than one guest.
+Configuring time synchronization in a Virtual Machine is important; fluctuations are bound to occur more easily in a guest VM. This is mostly due to the CPU being shared by more than one guest.
 
 There are 2 options to set up time synchronization: the host or an external source.
 
@@ -467,7 +467,7 @@ See [NTP](/index.php/NTP "NTP").
 
 ### Performance Tips
 
-You can try the followings tips to improve the performance of your virtual machine.
+To improve the performance of your virtual machine, try the following tips:
 
 #### Paravirtual SCSI adapter
 
@@ -475,7 +475,7 @@ You can try the followings tips to improve the performance of your virtual machi
 
 The SCSI adapter type `VMware Paravirtual` is available in the Virtual Machine settings.
 
-If you do not have these settings in your virtual machine configuration you can still use the paravirtual SCSI adapter like this: Make sure that the paravirtual SCSI adapter is included in your kernel image. For this you have to modify your `mkinitcpio.conf`
+If these settings are not in the virtual machine's configuration, the paravirtual SCSI adapter can still be enabled. Ensure that the paravirtual SCSI adapter is included in the kernel image by modifying the `mkinitcpio.conf`:
 
  `/etc/mkinitcpio.conf` 
 ```
@@ -486,7 +486,7 @@ MODULES=(... vmw_pvscsi)
 
 [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
-Shutdown your virtual machine and change the SCSI adapter your `.vmx` to the following:
+Shut down the virtual machine and change the SCSI adapter: set the `.vmx` to the following:
 
 ```
 scsi0.virtualDev = "pvscsi"
@@ -495,18 +495,18 @@ scsi0.virtualDev = "pvscsi"
 
 #### Paravirtual Network Adapter
 
-VMware offers [multiple network adapters](http://kb.vmware.com/kb/1001805) for the guest OS. The default adapter used is usually the `e1000` adapter, which emulates an Intel 82545EM Gigabit Ethernet NIC. This Intel adapter is generally compatible with the built-in drivers across most operating systems, include Arch.
+VMware offers [multiple network adapters](http://kb.vmware.com/kb/1001805) for the guest OS. The default adapter used is usually the `e1000` adapter, which emulates an Intel 82545EM Gigabit Ethernet NIC. This Intel adapter is generally compatible with the built-in drivers across most operating systems, including Arch.
 
-For [much more performance and additional features](http://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/) (such as multiqueue support), the VMware native `vmxnet3` network adapter can be used.
+For [more performance and additional features](http://rickardnobel.se/vmxnet3-vs-e1000e-and-e1000-part-1/) (such as multiqueue support), the VMware native `vmxnet3` network adapter can be used.
 
-Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected, check by running `lsmod | grep vmxnet3` to see if it is loaded), shutdown and change the network adapter type in your *.vmx* file to the following:
+Arch has the `vmxnet3` kernel module available with a default install. Once enabled in [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (or if it is auto-detected; check by running `lsmod | grep vmxnet3` to see if it is loaded), shut down and change the network adapter type in the *.vmx* file to the following:
 
 ```
 ethernet0.virtualDev = "vmxnet3"
 
 ```
 
-After changing network adapters, you will need to update your network and [dhcpcd](/index.php/Dhcpcd "Dhcpcd") settings to use the new adapter name and mac address.
+After changing network adapters, the network and [dhcpcd](/index.php/Dhcpcd "Dhcpcd") settings will need to be updated to use the new adapter name and MAC address.
 
 ```
 # dhcpcd *new_interface_name*
@@ -514,11 +514,11 @@ After changing network adapters, you will need to update your network and [dhcpc
 
 ```
 
-You can get the new interface name by running `ip link`
+The new interface name can be obtained by running `ip link`.
 
 #### Virtual Machine Settings
 
-These settings could help improve the responsiveness of your virtual machine by reducing disk I/O at the expense of using more host memory. [Vmware's KB1008885](http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1008885) provides the following optimizations:
+These settings could help improve the responsiveness of the virtual machine by reducing disk I/O, at the expense of using more host memory. [Vmware's KB1008885](http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1008885) provides the following optimizations:
 
 ```
 mainMem.useNamedFile = "FALSE"
@@ -529,13 +529,13 @@ sched.mem.pshare.enable = "FALSE"
 
 ```
 
-*   **mainMem.useNamedFile**: This will only work for Windows hosts and you can use this parameter if you experience high disk activity on shutting down the virtual machine. This will prevent VMware from creating a *.vmem* file. Use *mainmem.backing = "swap"* on Linux hosts instead.
+*   **mainMem.useNamedFile**: This will only work for Windows hosts and this parameter can be used if high disk activity is experienced upon shutting down the virtual machine. This will prevent VMware from creating a *.vmem* file. Use *mainmem.backing = "swap"* on Linux hosts instead.
 *   **MemTrimRate**: This setting prevents that memory which was released by the guest is released on the host also.
-*   **prefvmx.useRecommendedLockedMemSize**: Unfortunately there does not seem to exist a proper explanation for this setting. This setting seems to prevent the host system from swapping parts of the guest memory.
-*   **MemAllowAutoScaleDown**: Prevents that VMware adjusts the memory size of the virtual machine in case it cannot allocate enough memory.
-*   **sched.mem.pshare.enable**: If several virtual machines are running simultaneously VMware will try to locate identical pages and share these between the virtual machines. This can be very I/O intensive.
+*   **prefvmx.useRecommendedLockedMemSize**: Unfortunately there does not seem to exist a proper explanation for this setting; it seems to prevent the host system from swapping parts of the guest memory.
+*   **MemAllowAutoScaleDown**: Prevents VMware from adjusting the memory size of the virtual machine if it cannot allocate enough memory.
+*   **sched.mem.pshare.enable**: If several virtual machines are running simultaneously, VMware will try to locate identical pages and share these between the virtual machines. This can be very I/O intensive.
 
-The following settings could also be set in the configuration dialog of VMware Workstation(*Edit -> Preferences... -> Memory/Priority*).
+The following settings can also be set in the configuration dialog of VMware Workstation(*Edit -> Preferences... -> Memory/Priority*).
 
 ```
 prefvmx.minVmMemPct = "100"
@@ -544,8 +544,8 @@ mainMem.partialLazyRestore = "FALSE"
 
 ```
 
-*   **prefvmx.minVmMemPct**: Sets amount of RAM in percent which should be reserved by the virtual machine on the host system. If you set this to a lower value it is possible to assign the virtual machine more memory than available in the host system. Be careful though in this case as this will most likely lead to excessive hard drive usage. If you have enough RAM then leave this value at 100.
-*   **mainMem.partialLazySave** and **mainMem.partialLazyRestore**: These two parameters will prevent the virtual machine from creating partial snapshots for suspends. When you use these parameters and you suspend your virtual machine it will take a little bit longer, but there should be less hard disk activity from VMware trying to store this information.
+*   **prefvmx.minVmMemPct**: Sets amount of RAM in percent which should be reserved by the virtual machine on the host system. If this is set to a lower value it is possible to assign the virtual machine more memory than is available in the host system. Be careful though, as in this case it will most likely lead to excessive hard drive usage. If enough RAM is on the host system, this value should be left at 100.
+*   **mainMem.partialLazySave** and **mainMem.partialLazyRestore**: These two parameters will prevent the virtual machine from creating partial snapshots for suspends. When these parameters are used, virtual machine suspension will take slightly longer, but there should be less hard disk activity from VMware trying to store this information.
 
 ## Troubleshooting
 
@@ -557,11 +557,11 @@ Arch Linux, as well as other Linux guests, may have slow network speeds while us
 
 As the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package is no longer being updated, newer kernels are not patched correctly using it to be compatible with a host-guest file share. The [Github repository](https://github.com/davispuh/open-vm-tools-dkms) has some patch files that can be manually applied to restore functionality.
 
-It is also recommended you check the AUR comment section for this package.
+It is also recommended that the AUR comment section be checked for this package.
 
 ### Sound problems
 
-If unacceptably loud and annoying sounds occur, then it may be related to the [PC speaker](/index.php/PC_speaker "PC speaker"). The issue may be resolved by globally disabling the PC speaker within the guest image:
+If unacceptably loud or annoying sounds occur, then it may be related to the [PC speaker](/index.php/PC_speaker "PC speaker"). The issue may be resolved by disabling the PC speaker within the guest image:
 
 ```
  # echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
@@ -570,18 +570,18 @@ If unacceptably loud and annoying sounds occur, then it may be related to the [P
 
 ### Mouse problems
 
-The following problems may occur with mouse:
+The following problems may occur with the mouse:
 
-*   The automatic grab/ungrab feature will not automatically grab input when cursor enters the window
+*   The automatic grab/ungrab feature does not automatically grab input when the cursor enters the window
 *   Missing buttons
 *   Input lag
 *   Clicks are not registered in some applications
 *   Mouse cursor jumps when entering/leaving virtual machine
 *   Mouse position jumps to where it left the guest VM
 
-You can try to [uninstall](/index.php/Uninstall "Uninstall") the [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) package. [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) should be sufficient for handling mouse and keyboard inputs.
+These may be fixed by [uninstalling](/index.php/Uninstall "Uninstall") the [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) package. [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) should be sufficient for handling mouse and keyboard inputs.
 
-You can try to add these settings to your `.vmx` configuration file ([Mouse position jumps to where it left the guest VM](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)):
+Adding settings to the `.vmx` configuration file may help ([Mouse position jumps to where it left the guest VM](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)):
 
  `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx` 
 ```
@@ -589,9 +589,9 @@ mouse.vusb.enable = "TRUE"
 mouse.vusb.useBasicMouse = "FALSE"
 ```
 
-VMware also attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
+VMware also attempts to automatically optimize the mouse for gaming. If problems are experienced, disabling the optimization is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
 
-Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `60-libinput.conf` may be needed:
+Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `60-libinput.conf` may be required:
 
  `/usr/share/X11/xorg.conf.d/60-libinput.conf` 
 ```
@@ -608,7 +608,7 @@ Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg5393
 
 #### Slow boot time
 
-You may see the following errors if VMWare's memory hot-add feature is enabled.
+The following errors may be displayed if VMWare's memory hot-add feature is enabled:
 
 *   add_memory failed
 *   acpi_memory_enable_device() error
@@ -629,21 +629,19 @@ TimeoutStopSec=1
 
 ### Window resolution autofit problems
 
-Autofit means that when you resize the VMWare window in the host, ArchLinux should automatically follow and readjust its resolution to fit the new size of the host window.
+"Autofit" means that when the VMWare window's size is adjusted in the host, ArchLinux in the guest should automatically follow and readjust its resolution to fit the new size of the host window.
 
 #### Potential solution 1
 
-Make sure you have enabled autofit.
-
-For VMware Worksation you can find the setting in: *View -> Autosize -> Autofit Guest*
+Ensure autofit is enabled. For VMware Workstation the setting can be found in: *View -> Autosize -> Autofit Guest*
 
 #### Potential solution 2
 
-For some reason autofit requires packages **gtkmm** and **gtk2**, so you should check that you have them installed. If you don't have X windows installed or you are using a non GTK-based desktop environment such as KDE, you might have to install them manually.
+For some reason, autofit requires the packages **gtkmm** and **gtk2**, so ensure they are installed. If X windows is not installed or a non–GTK-based desktop environment (such as KDE) is being used, the might have to be installed independently.
 
 #### Potential solution 3
 
-You may need to add the modules to mkinitcpio.conf.
+The relevant modules may have to be added to mkinitcpio.conf:
 
  `/etc/mkinitcpio.conf`  `MODULES=(vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmwgfx)` 
 
@@ -653,23 +651,23 @@ Do not forget to [regenerate the initramfs](/index.php/Regenerate_the_initramfs 
 
 [Enable](/index.php/Enable "Enable") `vmtoolsd.service`.
 
-If this doesn't work, make sure you [restart](/index.php/Restart "Restart") the `vmtoolsd.service`.
+If this doesn't work, ensure the `vmtoolsd.service` is [restarted](/index.php/Restart "Restart").
 
 #### Potential solution 5
 
-If you are running [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland"), [install](/index.php/Install "Install") [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) ([FS#57473](https://bugs.archlinux.org/task/57473)).
+If [GNOME](/index.php/GNOME "GNOME") is running on [Wayland](/index.php/Wayland "Wayland"), [install](/index.php/Install "Install") [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) ([FS#57473](https://bugs.archlinux.org/task/57473)).
 
-See [https://github.com/vmware/open-vm-tools/issues/22#issuecomment-362705505](https://github.com/vmware/open-vm-tools/issues/22#issuecomment-362705505).
+See [[1]](https://github.com/vmware/open-vm-tools/issues/22#issuecomment-362705505).
 
 ### Drag and drop, copy/paste
 
-**Tip:** There is an unspecified relationship between it and *gtkmm3* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
+**Tip:** There is an unspecified relationship between these features and *gtkmm3* that causes them to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
 
-The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) packages to be installed in order to work.
+The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) packages to be installed.
 
 Make the command `vmware-user` run after [X11](/index.php/X11 "X11") by either:
 
-*   Ensuring `etc/xdg/autostart/vmware-user.desktop` exists, and if not, run:
+*   Ensuring `etc/xdg/autostart/vmware-user.desktop` exists, and if not, running:
 
 ```
 # cp /etc/vmware-tools/vmware-user.desktop /etc/xdg/autostart/vmware-user.desktop
@@ -678,7 +676,7 @@ Make the command `vmware-user` run after [X11](/index.php/X11 "X11") by either:
 
 OR
 
-*   Add `vmware-user` to [Xinitrc](/index.php/Xinitrc "Xinitrc")
+*   Add `vmware-user` to [Xinitrc](/index.php/Xinitrc "Xinitrc").
 
 ### Problems when running as a shared VM on Workstation 11
 
@@ -686,6 +684,6 @@ Workstation 11 has a bug where vmware-hostd crashes if an Arch guest is running 
 
 ### Shared folder not mounted after system upgrade
 
-Most likely, this should only happen to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the `vmhgfs` module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), the legacy filesystem driver would not be upgraded by using the command `pacman -Syu`. Therefor, [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) should be manually upgraded before the official repositories.
+Most likely, this should only happen to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the `vmhgfs` module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), the legacy filesystem driver would not be upgraded by using the command `pacman -Syu`. Therefore, [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) should be manually upgraded before the official repositories.
 
 If a shared folder is not mounted after a system upgrade, then remove the shared filesystem automount, upgrade [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/), run `pacman -Syu`, and finally [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs"). Don't forget to restore the filesystem automount.

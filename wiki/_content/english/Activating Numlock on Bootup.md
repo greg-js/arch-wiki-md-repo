@@ -160,6 +160,8 @@ In the file `~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml`, make sur
 
 ```
 
+**Note:** If the file does not exist then open Settings > Keyboard, then check and uncheck the `Restore num lock state on startup`. This will create the `keyboards.xml` file.
+
 ### SDDM
 
 In the file `/etc/sddm.conf`, under the `[General]` section, set *Numlock* value to *on* :

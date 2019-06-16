@@ -232,7 +232,7 @@ The compose key works with any of the thousands of valid Unicode characters, inc
 
 However, GTK does not use [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") by default and therefore does not follow `~/.XCompose` keys. This can be fixed by forcing GTK to use XIM by adding `export GTK_IM_MODULE=xim` and/or `export XMODIFIERS="@im=none"` to `~/.xprofile`.
 
-**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus"), etc. See [Localization#Input methods](/index.php/Localization#Input_methods "Localization") for details.
+**Tip:** XIM is very old, you might have better luck with other input methods: [SCIM](/index.php/SCIM "SCIM"), [Uim](/index.php/Uim "Uim"), [IBus](/index.php/IBus "IBus"), etc. See [Localization#Input methods](/index.php/Localization#Input_methods "Localization") for details.
 
 **Note:** XIM will prevent insertion of Unicode characters with the `Ctrl+Shift+u` combination.
 

@@ -124,13 +124,11 @@ Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XD
 To start on login to tty1, add the following to your `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
+if [[ -z $DISPLAY && $(tty) == /dev/tty1 && ( -z $XDG_SESSION_TYPE || $XDG_SESSION_TYPE == tty )]]; then
   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
-
-In case it does not work as expected, you may try to change `[[ -z $XDG_SESSION_TYPE ]]` to `[[ $XDG_SESSION_TYPE = tty ]]`.
 
 ### GNOME applications in Wayland
 
@@ -414,7 +412,7 @@ The [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) allows
 
 ##### Icons on the Desktop
 
-Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/Files "Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/), which replicates the desktop icon functionality available in GNOME 3.26 and prior, but with some minor differences. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
+Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/GNOME/Files "GNOME/Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/), which replicates the desktop icon functionality available in GNOME 3.26 and prior, but with some minor differences. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
 
 ##### Lock screen and background
 

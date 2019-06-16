@@ -82,7 +82,7 @@ KeePass is by default installed at `/usr/share/keepass/`. Copy `plugin.plgx` to 
 
 The developers provide the browser extension on
 
-*   [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/) (for [Firefox](/index.php/Firefox "Firefox") and [Tor Browser](/index.php/Tor "Tor")) and
+*   [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/) (for [Firefox](/index.php/Firefox "Firefox") and [Tor Browser](/index.php/Tor_Browser "Tor Browser")) and
 *   in the [chrome web store](https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk) (for [Chromium](/index.php/Chromium "Chromium"), [Google Chrome](/index.php/Google_Chrome "Google Chrome"), [Vivaldi](/index.php/Vivaldi "Vivaldi") and [Brave](/index.php/List_of_applications/Internet#Privacy-focused_chromium_spin-offs "List of applications/Internet"))
 
 The [source code and an explanation how it works](https://github.com/keepassxreboot/keepassxc-browser) can be found on GitHub, the KeePassXC developers provide a [configuration guide](https://keepassxc.org/docs/keepassxc-browser-migration/) on their website.
@@ -105,7 +105,7 @@ The KeePassHTTP protocol uses a proprietary crypto protocol and is vulnerable to
 
 Due to these problems, KeePassHTTP should **never** be used remotely.
 
-KeePassHTTP is available as plugin for KeePass. KeePassHTTP is not supported anymore in KeePassXC since version 2.4.0, [keepassxc-browser](#keepassxc-browser) is a secure replacement. KeePass users can use [KeePassRPC](#KeePassRPC_/_Kee) as more secure alternative.
+KeePassHTTP is available as plugin for KeePass. KeePassHTTP is not supported anymore in KeePassXC since version 2.4.0, [keepassxc-browser](#keepassxc-browser_for_KeepassXC) is a secure replacement. KeePass users can use [KeePassRPC](#KeePassRPC_/_Kee) as more secure alternative.
 
 The Plugin can be found on [GitHub](https://github.com/pfn/keepasshttp) and in the AUR ([keepass-plugin-http](https://aur.archlinux.org/packages/keepass-plugin-http/), [keepass-plugin-http-git](https://aur.archlinux.org/packages/keepass-plugin-http-git/)). The KeePassHTTP GitHub repository has not seen any commits since 2017, the security flaws are known since 2016.
 

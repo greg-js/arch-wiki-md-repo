@@ -4,7 +4,11 @@ Related articles
 
 If you ever tried to set up a touchscreen device in linux, you might have noticed that it's either working out of the box (besides some calibration) or is very tedious, especially when it is not supported by the kernel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
 *   [2 Available X11 drivers](#Available_X11_drivers)
@@ -12,6 +16,7 @@ If you ever tried to set up a touchscreen device in linux, you might have notice
     *   [3.1 Calibration](#Calibration)
 *   [4 Using a touchscreen in a multi-head setup](#Using_a_touchscreen_in_a_multi-head_setup)
 *   [5 Touchegg](#Touchegg)
+*   [6 Firefox](#Firefox)
 
 ## Introduction
 
@@ -110,3 +115,7 @@ You can automate this by putting these commands in your `~/.xinitrc` or similar.
 ## Touchegg
 
 [Touchegg](/index.php/Touchegg "Touchegg") is a multitouch gesture program, that runs as a user in the background, recognizes gestures, and translates them to more conventional events such as mouse wheel movements, so that you can for example use two fingers to scroll. But it also interferes with applications or window managers which already do their own gesture recognition. If you have both a touchpad and a touchscreen, and if the touchpad driver (such as synaptics or libinput) has been configured not to recognize gestures itself, but to pass through the multi-touch events, then Touchegg will recognize gestures on both: this cannot be configured. In fact it does a better job of recognizing gestures than either the synaptics or libinput touchpad drivers; but on the touchscreen, it's generally better for applications to respond to touch in their own unique ways. Some Qt and GTK applications do that, but they will not be able to if you have Touchegg "eating" the touch events. So, Touchegg is useful when you are running mainly legacy applications which do not make their own use of touch events.
+
+## Firefox
+
+See [Firefox/Tweaks#Enable touchscreen gestures](/index.php/Firefox/Tweaks#Enable_touchscreen_gestures "Firefox/Tweaks").

@@ -28,7 +28,10 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [5 Configuration](#Configuration)
     *   [5.1 Smartcard Reader](#Smartcard_Reader)
     *   [5.2 Fingerprint reader](#Fingerprint_reader)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Fan does not spin down after suspend-resume](#Fan_does_not_spin_down_after_suspend-resume)
+*   [7 BIOS/UEFI update](#BIOS/UEFI_update)
+*   [8 See also](#See_also)
 
 ## firmware (e.g. bios and peripherals)
 
@@ -43,8 +46,6 @@ Installation with modern media puts you on Kernel 4.10.10-1, however [this note]
 As advised in [Intel graphics#Enable early KMS](/index.php/Intel_graphics#Enable_early_KMS "Intel graphics") and [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") you can add i915 to your modules.
 
 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") with Kaby Lake seems to work fine via va-api.
-
-On [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) via [wayland](/index.php/Wayland "Wayland"), suspend-resume results in the fan holding at 100% without ever spinning down. Alternatively if you use [xorg](/index.php/Xorg "Xorg") this doesn't seem to happen. Upgrading BIOS/UEFI seems to solve the issue.
 
 ## mobile broadband
 
@@ -123,6 +124,21 @@ Add the following and comment out the other entrys
 Do the same for sudo with `/etc/pam.d/sudo` or su with `/etc/pam.d/su`
 
 For more information visit [libfprint](https://github.com/3v1n0/libfprint) and adapt for the vfs0097 package.
+
+## Troubleshooting
+
+### Fan does not spin down after suspend-resume
+
+On [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) via [wayland](/index.php/Wayland "Wayland"), suspend-resume results in the fan holding at 100% without ever spinning down. Alternatively if you use [xorg](/index.php/Xorg "Xorg") this doesn't seem to happen. This issue has been resolved in BIOS/UEFI version 1.20.
+
+## BIOS/UEFI update
+
+In order to update the BIOS/UEFI using a USB key, follow this procedure (based on [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1480844#c64)):
+
+1.  Install [geteltorito](https://aur.archlinux.org/packages/geteltorito/)
+2.  Download ISO "BIOS Update (Bootable CD)" from [[3]](https://pcsupport.lenovo.com/at/en/products/LAPTOPS-AND-NETBOOKS/THINKPAD-T-SERIES-LAPTOPS/THINKPAD-T470S/downloads/DS120418)
+3.  `geteltorito.pl -o bios.img n1wur26w.iso`
+4.  {{ic|sudo dd if=bios.img of=<USB key> bs=1M
 
 ## See also
 

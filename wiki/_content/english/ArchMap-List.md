@@ -47,6 +47,7 @@ You can use the following website to get your device's coordinates along with a 
 ## List
 
 ```
+37.325739,-80.704.67 "Dlwilson88" # Pearisburg, Virginia, USA
 38.0952573,-122.267495 "Digital2112Man" # Vallejo, California, USA
 50.013632, 14.449492 "voioo" # Prague, Czechia
 38.950479,-77.418164 "trentonknight" # Herndon, VA

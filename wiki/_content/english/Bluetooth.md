@@ -39,6 +39,7 @@ Related articles
     *   [6.12 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
     *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
     *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+    *   [6.15 Interference between Headphones and Mouse](#Interference_between_Headphones_and_Mouse)
 
 ## Installation
 
@@ -495,3 +496,13 @@ In another terminal:
 ```
 
 Wait until your device shows up, then Ctrl+C hcitool. bluetoothctl should now see your device and pair normally.
+
+### Interference between Headphones and Mouse
+
+If you experience audio stuttering while using a bluetooth mouse and keyboard simultaneously, you can try the following as referenced in #23 [https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/424215](https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/424215)
+
+```
+# hciconfig hci0 lm ACCEPT,MASTER
+# hciconfig hci0 lp HOLD,SNIFF,PARK
+
+```

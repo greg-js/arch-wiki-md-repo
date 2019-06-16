@@ -2,7 +2,11 @@
 
 [ويكي آرتش](/index.php/Main_page_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Main page (العربية)") الذي يشرف عليه المجتمع هو مورد ممتاز ويجب مراجعته للمشاكل أولًا. قناة [آي‌آر‌سي](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux) )، و[المنتديات](https://bbs.archlinux.org/) متوفّران أيضًا للإجابة إن لم تحصل عليها من أي مكان آخر. أيضًا، تأكّد من مراجعة صفحات `man` لأي أمر تجده غريب، يمكن تنفيذ ذلك بسهولة عبر `man *الأمر*`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 التنزيل](#التنزيل)
 *   [2 التثبيت](#التثبيت)

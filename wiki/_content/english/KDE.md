@@ -75,6 +75,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [6.2 Configuration related](#Configuration_related)
         *   [6.2.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
         *   [6.2.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
+        *   [6.2.3 Volume control, notifications or multimedia keys do not work](#Volume_control,_notifications_or_multimedia_keys_do_not_work)
     *   [6.3 Graphical problems](#Graphical_problems)
         *   [6.3.1 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
         *   [6.3.2 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
@@ -265,7 +266,7 @@ You can also configure printers in *System Settings > Printers*. To use this met
 
 If you want to have access to Windows services, install [Samba](/index.php/Samba "Samba") (package [samba](https://www.archlinux.org/packages/?name=samba)).
 
-The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Enable usershares](/index.php/Samba#Enable_usershares "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
+The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Enable Usershares](/index.php/Samba#Enable_Usershares "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
 
 **Tip:** Use `*` (asterisk) for both username and password when accessing a Windows share without authentication in Dolphin's prompt.
 
@@ -509,6 +510,7 @@ The component chooser settings in Plasma does not allow changing the window mana
 And then make it executable :
 
  `$ chmod +x ~/.config/plasma-workspace/env/set_window_manager.sh` 
+**Note:** When using i3 window manager with Plasma, it may be necessary to manually set dialogs to open in floating mode in order for them to correctly appear. For more information, see [I3#Correct handling of floating dialogs](/index.php/I3#Correct_handling_of_floating_dialogs "I3").
 
 #### KDE/Openbox session
 
@@ -614,6 +616,10 @@ Optionally, empty the `~/.cache/` folder contents, however, this will also clear
 $ rm -rf ~/.cache/*
 
 ```
+
+#### Volume control, notifications or multimedia keys do not work
+
+Hiding certain items in the System Tray settings (e.g. Audio Volume, Media Player or Notifications) also disables related features. Hiding the *Audio Volume* disables volume control keys, *Media Player* disables multimedia keys (rewind, stop, pause) and hiding *Notifications* disables showing notifications.
 
 ### Graphical problems
 

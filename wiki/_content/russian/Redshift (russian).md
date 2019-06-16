@@ -6,24 +6,28 @@ Redshift регулирует цветовую температуру экран
 
 Проект разрабатывается на [GitHub](https://github.com/jonls/redshift).
 
-**Примечание:** На данный момент Redshift [работает только](https://github.com/jonls/redshift/issues/55) в среде [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"), а [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)") не поддерживается. Смотрите [#Для пользователей Wayland](#.D0.94.D0.BB.D1.8F_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_Wayland).
+**Примечание:** На данный момент Redshift [работает только](https://github.com/jonls/redshift/issues/55) в среде [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"), а [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)") не поддерживается. Смотрите [#Для пользователей Wayland](#Для_пользователей_Wayland).
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Окружение рабочего стола](#.D0.9E.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
-    *   [1.2 Автозапуск](#.D0.90.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
-*   [2 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [2.1 Быстрый запуск](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D1.8B.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
-    *   [2.2 Автоматическое определение расположения основываясь на GPS](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BE.D1.81.D0.BD.D0.BE.D0.B2.D1.8B.D0.B2.D0.B0.D1.8F.D1.81.D1.8C_.D0.BD.D0.B0_GPS)
-    *   [2.3 Ручная настройка](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+    *   [1.1 Окружение рабочего стола](#Окружение_рабочего_стола)
+    *   [1.2 Автозапуск](#Автозапуск)
+*   [2 Конфигурация](#Конфигурация)
+    *   [2.1 Быстрый запуск](#Быстрый_запуск)
+    *   [2.2 Автоматическое определение расположения основываясь на GPS](#Автоматическое_определение_расположения_основываясь_на_GPS)
+    *   [2.3 Ручная настройка](#Ручная_настройка)
     *   [2.4 Use real screen brightness](#Use_real_screen_brightness)
-*   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [3.1 redshift-gtk не запускается](#redshift-gtk_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F)
+*   [3 Решение проблем](#Решение_проблем)
+    *   [3.1 redshift-gtk не запускается](#redshift-gtk_не_запускается)
     *   [3.2 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
-    *   [3.3 Способ автозапуска redshift в i3](#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.D0.B0.D0.B2.D1.82.D0.BE.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_redshift_.D0.B2_i3)
-    *   [3.4 Для пользователей Wayland](#.D0.94.D0.BB.D1.8F_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_Wayland)
-*   [4 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [3.3 Способ автозапуска redshift в i3](#Способ_автозапуска_redshift_в_i3)
+    *   [3.4 Для пользователей Wayland](#Для_пользователей_Wayland)
+*   [4 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -39,9 +43,9 @@ Redshift регулирует цветовую температуру экран
 
 *   Вызов в скрипте `/etc/X11/xinit/xinitrc.d/`.
 *   Активируя правым кликом значок системного трея redshift-gtk или plasma5-applets-redshift-control, выбрав 'Autostart'.
-*   Используя один из двух предоставленных файлов [юнитов службы systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)"): `/usr/lib/systemd/user/redshift.service` или `/usr/lib/systemd/user/redshift-gtk.service`. Будьте осторожны: служба должна запускаться в пользовательском режиме, смотрите [основные настройки](/index.php/Systemd/User_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D1.81.D0.BD.D0.BE.D0.B2.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8 "Systemd/User (Русский)"). Переменная окружения `DISPLAY` должна быть установлена. Смотрите [DISPLAY и XAUTHORITY](/index.php/Systemd/User_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DISPLAY_.D0.B8_XAUTHORITY "Systemd/User (Русский)").
+*   Используя один из двух предоставленных файлов [юнитов службы systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Использование_юнитов "Systemd (Русский)"): `/usr/lib/systemd/user/redshift.service` или `/usr/lib/systemd/user/redshift-gtk.service`. Будьте осторожны: служба должна запускаться в пользовательском режиме, смотрите [основные настройки](/index.php/Systemd/User_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Основные_настройки "Systemd/User (Русский)"). Переменная окружения `DISPLAY` должна быть установлена. Смотрите [DISPLAY и XAUTHORITY](/index.php/Systemd/User_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DISPLAY_и_XAUTHORITY "Systemd/User (Русский)").
 
-**Примечание:** Файлы юнитов redshift содержат `Restart=always`, тем самым служба будет бесконечно перезагружаться (смотрите [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5))
+**Примечание:** Файлы юнитов redshift содержат `Restart=always`, тем самым служба будет бесконечно перезагружаться (смотрите [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5))
 
 ## Конфигурация
 

@@ -4,7 +4,11 @@ From the project [home page](https://github.com/google/mozc):
 
 (In short, Mozc does not have equivalent conversion quality to Google Japanese Input).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -25,12 +29,12 @@ From the project [home page](https://github.com/google/mozc):
 
 ## Installation
 
-Depending on your target setup, there are several available Mozc packages to choose from. Firstly, you will likely need to install both the Mozc core package and an integration for the Input Method Framework of your choice (such as [Fcitx](/index.php/Fcitx "Fcitx"), [IBus](/index.php/IBus "IBus"), or [uim](/index.php/UIM "UIM")), though some Fcitx packages come bundled with the core. Secondly, there exist some unofficial dictionaries: The **UT** (discontinued) and **UT2** dictionaries, which are combined from several sources with hit numbers coming from Google/Yahoo and Wikipedia, respectively, and the **NEologd UT** dictionary based on the mecab-ipadic-NEologd Neologism dictionary.
+Depending on your target setup, there are several available Mozc packages to choose from. Firstly, you will likely need to install both the Mozc core package and an integration for the Input Method Framework of your choice (such as [Fcitx](/index.php/Fcitx "Fcitx"), [IBus](/index.php/IBus "IBus"), or [Uim](/index.php/Uim "Uim")), though some Fcitx packages come bundled with the core. Secondly, there exist some unofficial dictionaries: The **UT** (discontinued) and **UT2** dictionaries, which are combined from several sources with hit numbers coming from Google/Yahoo and Wikipedia, respectively, and the **NEologd UT** dictionary based on the mecab-ipadic-NEologd Neologism dictionary.
 
 The following table shows the packages corresponding to certain combinations of the components and dictionaries; colored cells indicate split packages. Some of the packages are also available from the [pnsft-pur](/index.php/Unofficial_user_repository#pnsft-pur "Unofficial user repository") repository.
 
 <caption>IMF integration packages</caption>
-| Dictionary | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [Emacs](/index.php/Emacs "Emacs") | [uim](/index.php/UIM "UIM") |
+| Dictionary | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [Emacs](/index.php/Emacs "Emacs") | [Uim](/index.php/Uim "Uim") |
 | Official | [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc) | [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) | [emacs-mozc](https://aur.archlinux.org/packages/emacs-mozc/) | [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) |
 | [UT](http://www.geocities.jp/ep3797/mozc-ut.html) | [fcitx-mozc-ut](https://aur.archlinux.org/packages/fcitx-mozc-ut/) |
 | [UT2](http://www.geocities.jp/ep3797/mozc-ut2.html) | [fcitx-mozc-ut2](https://aur.archlinux.org/packages/fcitx-mozc-ut2/) | [ibus-mozc-ut2](https://aur.archlinux.org/packages/ibus-mozc-ut2/) | [emacs-mozc-ut2](https://aur.archlinux.org/packages/emacs-mozc-ut2/) | [uim-mozc-ut2](https://aur.archlinux.org/packages/uim-mozc-ut2/) |
@@ -67,7 +71,7 @@ You can switch input method by `Alt+Shift_L` (by IBus default).
 
 ### uim
 
-*See also [UIM](/index.php/UIM "UIM") for uim configuration.*
+*See also [Uim](/index.php/Uim "Uim") for uim configuration.*
 
 Configure uim preferences by running:
 
@@ -103,7 +107,7 @@ In the *Input Method* tab, click on the plus sign and choose Mozc from the list 
 You can use mozc.el (mozc-mode) to input Japanese via LEIM (Library of Emacs Input Method). To use mozc-mode, write the following into your `.emacs.d/init.el` or some other file for Emacs customizing:
 
 ```
-(require 'mozc)  ; or (load-file "/path/to/mozc.el")
+(require 'mozc)  ; or (load-file "/path/to/mozc.el")
 (setq default-input-method "japanese-mozc")
 
 ```

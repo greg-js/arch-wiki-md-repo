@@ -46,7 +46,7 @@ alias catkin_make="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INC
 Another way is to use [python-catkin_tools](https://aur.archlinux.org/packages/python-catkin_tools/) and to configure it by running the following command in your Catkin workspace.
 
 ```
-catkin config --cmake-args -DPYTHON_EXECUTABLE=/usr/bin/python
+catkin config --cmake-args -DPYTHON_EXECUTABLE=/usr/bin/python2
 
 ```
 
@@ -118,7 +118,7 @@ $ colcon build --symlink-install
 
 ```
 
-Read [https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source](https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source) regarding Ros 1 / Ros 2 interoperability.
+Read [https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source](https://github.com/ros2/ros1_bridge/blob/master/README.md#build-the-bridge-from-source) regarding ROS 1 / ROS 2 interoperability.
 
 ### Usage Examples
 
@@ -185,7 +185,7 @@ $ ros2 topic list
 
 ```
 
-Ros 2's version of rviz is
+ROS 2's version of rviz is
 
 ```
 $ rviz2

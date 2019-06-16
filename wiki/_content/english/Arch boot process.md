@@ -50,6 +50,8 @@ The UEFI specification mandates support for the [FAT12, FAT16, and FAT32](/index
 
 UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers, [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface"), etc. These applications are usually stored as files in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Each vendor can store its files in the EFI system partition under the `/EFI/*vendor_name*` folder. The applications can be launched by adding a boot entry to the NVRAM or from the UEFI shell.
 
+The UEFI specification has support for legacy BIOS booting with its [CSM (Compatibility Support Module)](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#CSM_booting "wikipedia:Unified Extensible Firmware Interface"). If CSM is enabled in the UEFI, the UEFI will generate CSM boot entries for all drives. If a CSM boot entry is chosen to be booted from, the UEFI's CSM will attempt to boot from the drive's MBR.
+
 ## System initialization
 
 ### Under BIOS
@@ -86,7 +88,7 @@ See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot w
 
 ## Boot loader
 
-A boot loader is a piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used if one wants to be able to edit kernel parameters before booting.
+A boot loader is a piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used for the purpose of editing kernel parameters before booting.
 
 **Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 

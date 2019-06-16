@@ -7,7 +7,11 @@ Related articles
 
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) provides a daemon *udisksd*, that implements D-Bus interfaces used to query and manipulate storage devices, and a command-line tool *udisksctl*, used to query and use the daemon.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -24,6 +28,7 @@ Related articles
     *   [5.1 Hidden devices (udisks2)](#Hidden_devices_(udisks2))
     *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_(udisks))
     *   [5.3 Broken standby timer (udisks2)](#Broken_standby_timer_(udisks2))
+    *   [5.4 NTFS mount failing](#NTFS_mount_failing)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -182,7 +187,7 @@ For example, to set standby timeout to 240 (20 minutes) for a drive, add the fol
 StandbyTimeout=240
 ```
 
-To obtain the DriveId for your drive, use `$ udevadm info --query=all --name=/dev/*sdx* | grep ID_SERIAL`
+To obtain the DriveId for your drive, use `$ udevadm info --query=all --name=/dev/*sdx* | grep ID_SERIAL | sed "s/_/-/g"`
 
 Alternatively, use a GUI utility to manage the configuration file, such as [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility).
 
@@ -228,6 +233,24 @@ The udisks daemon polls [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") data fr
 However, Standby timeout applied by udisks2 seems to be unaffected. To set standby timeout via udisks, see [#Apply ATA settings (udisks2)](#Apply_ATA_settings_(udisks2)).
 
 Other possible workarounds could be setting the timeout below the polling interval (10 minutes) or forcing a manaul spindown using `hdparm -y /dev/*sdx*`.
+
+### NTFS mount failing
+
+If mounting a ntfs partition fails with the error:
+
+```
+Error mounting /dev/sdXY at [...]: wrong fs type, bad option, bad superblock on /dev/sdXY, missing codepage or helper program, or other error
+
+```
+
+and in the kernel log with `journalctl`/`dmesg`:
+
+```
+ntfs: (device sdXY): parse_options(): Unrecognized mount option windows_names.
+
+```
+
+Then the problem is that udisks is trying to use the kernel ntfs driver, which doesn't understand this (default) mount option. For this to work the optional dependency [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") must be installed.
 
 ## See also
 

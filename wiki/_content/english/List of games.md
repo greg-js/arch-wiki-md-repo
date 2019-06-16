@@ -1049,7 +1049,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[FTL: Faster Than Light](https://en.wikipedia.org/wiki/FTL:_Faster_Than_Light "wikipedia:FTL: Faster Than Light")** — Popular rogue-like space-sim released to positive reception in 2012.
 
-	[http://www.ftlgame.com/](http://www.ftlgame.com/) || [ftl](https://aur.archlinux.org/packages/ftl/)
+	[https://subsetgames.com/ftl.html](https://subsetgames.com/ftl.html) || [ftl](https://aur.archlinux.org/packages/ftl/)
 
 *   **Globulation 2** — Multiplayer RTS with some "economic" elements minimizing the amount of micromanagement.
 

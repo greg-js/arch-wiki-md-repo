@@ -12,7 +12,11 @@
 
 为了实现某些主体-客体系统间的整合功能，例如共享目录与剪贴板、显卡加速渲染、无缝窗口整合，VirtualBox 需要在某些系统中安装客体机插件（Guest Addition）。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 在 Arch 里安装 VirtualBox](#在_Arch_里安装_VirtualBox)
     *   [1.1 安装基本软件包](#安装基本软件包)

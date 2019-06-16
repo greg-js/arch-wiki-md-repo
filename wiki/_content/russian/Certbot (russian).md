@@ -392,7 +392,7 @@ Test what we did:
 
 ```
 
-If you pass the validation successfully and receive certificates, then you are good to go with automating certbot. Otherwise, something went wrong and you need to debug your setup. It basically boils down to running `certbot renew` from now on, see [#Automatic renewal](#Automatic_renewal).
+If you pass the validation successfully and receive certificates, then you are good to go with automating certbot. Otherwise, something went wrong and you need to debug your setup. It basically boils down to running `certbot renew` from now on, see [#Автоматическое обновление](#Автоматическое_обновление).
 
 ## Смотрите также
 

@@ -112,7 +112,7 @@ Queste istruzioni sono per gli utenti che usano il pacchetto stock [linux](https
 *   Esiste anche [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), compilata da Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
 *   Per schede serie 400-500 e 605,610,620 e (610-635)M degli anni 2010-2011, [installa](/index.php/Install "Install") il pacchetto [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) o [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts).
-*   Per schede GeForce 8/9, ION e serie 100-300 [NV5x, NV8x, NV9x and NVAx] degli anni 2006-2010, [installa](/index.php/Install "Install") il pacchetto [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) o [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts).
+*   Per schede GeForce 8/9, ION e serie 100-300 [NV5x, NV8x, NV9x and NVAx] degli anni 2006-2010, [installa](/index.php/Install "Install") il pacchetto [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) o [nvidia-340xx-lts](https://aur.archlinux.org/packages/nvidia-340xx-lts/).
 
 *   Per schede ancora più vecchie (2006 o precedenti), controlla [#Unsupported drivers](#Unsupported_drivers).
 

@@ -65,7 +65,7 @@ Linux 中有多种方式可以实现视频加速:
 *   [AMD](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AMD Catalyst (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)、位于[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")的[libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/)软件包两者为 Radeon HD 4000 系列或更新的GPU提供支持。在 Radeon HD 5000 系列或者更新的GPU上请使用 [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) 驱动；在 Radeon HD 4000 系列上 使用 [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) 作为驱动程序。
 
 *   [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)"): 位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的[nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils)软件包为 GeForce 400 系列或更新的GPU提供支持。
-*   GeForce 8/9 和 GeForce 100-300 系列由 [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) 软件包支持。
+*   GeForce 8/9 和 GeForce 100-300 系列由 [nvidia-340xx-utils](https://aur.archlinux.org/packages/nvidia-340xx-utils/) 软件包支持。
 
 ## 支持的格式
 

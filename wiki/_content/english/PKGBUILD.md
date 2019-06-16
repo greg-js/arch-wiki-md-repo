@@ -8,17 +8,17 @@ Related articles
 *   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
 *   [makepkg](/index.php/Makepkg "Makepkg")
 
-This article discusses variables definable by the maintainer in a PKGBUILD. For information on the PKGBUILD functions and creating packages in general, refer to [Creating packages](/index.php/Creating_packages "Creating packages"). Also read [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
+This article discusses variables definable by the maintainer in a `PKGBUILD`. For information on the `PKGBUILD` functions and creating packages in general, refer to [Creating packages](/index.php/Creating_packages "Creating packages"). Also read [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
-A PKGBUILD is a shell script containing the build information required by [Arch Linux](/index.php/Arch_Linux "Arch Linux") packages.
+A `PKGBUILD` is a shell script containing the build information required by [Arch Linux](/index.php/Arch_Linux "Arch Linux") packages.
 
 Packages in Arch Linux are built using the [makepkg](/index.php/Makepkg "Makepkg") utility. When *makepkg* is run, it searches for a `PKGBUILD` file in the current directory and follows the instructions therein to either compile or otherwise acquire the files to build a package archive (`*pkgname*.pkg.tar.xz`). The resulting package contains binary files and installation instructions, readily installable with [pacman](/index.php/Pacman "Pacman").
 
-Mandatory variables are `pkgname`, `pkgver`, `pkgrel`, and `arch`. `license` is not strictly necessary to build a package, but is recommended for any PKGBUILDs shared with others, as *makepkg* will produce a warning if not present.
+Mandatory variables are `pkgname`, `pkgver`, `pkgrel`, and `arch`. `license` is not strictly necessary to build a package, but is recommended for any `PKGBUILD`s shared with others, as *makepkg* will produce a warning if not present.
 
-It is a common practice to define the variables in the PKGBUILD in same order as given here. However, this is not mandatory, as long as correct [Bash](/index.php/Bash "Bash") syntax is used.
+It is a common practice to define the variables in the `PKGBUILD` in same order as given here. However, this is not mandatory, as long as correct [Bash](/index.php/Bash "Bash") syntax is used.
 
-**Tip:** Use [namcap](/index.php/Namcap "Namcap") to check PKGBUILDs for common packaging mistakes.
+**Tip:** Use [namcap](/index.php/Namcap "Namcap") to check `PKGBUILD`s for common packaging mistakes.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -68,32 +68,32 @@ It is a common practice to define the variables in the PKGBUILD in same order as
 
 ### pkgbase
 
-When building regular packages, this variable should not be explicitly declared in the PKGBUILD: its value defaults to that of [#pkgname](#pkgname).
+When building regular packages, this variable should not be explicitly declared in the `PKGBUILD`: its value defaults to that of [#pkgname](#pkgname).
 
 When building a [split package](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5#PACKAGE_SPLITTING), this variable can be used to explicitly specify the name to be used to refer to the group of packages in the output of *makepkg* and in the naming of source-only tarballs. The value is not allowed to begin with a hyphen. If not specified, the value will default to the first element in the `pkgname` array.
 
-All options and directives for split packages default to the global values given in the PKGBUILD. Nevertheless, the following ones can be overridden within each split package’s packaging function: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install), and [#changelog](#changelog).
+All options and directives for split packages default to the global values given in the `PKGBUILD`. Nevertheless, the following ones can be overridden within each split package’s packaging function: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install), and [#changelog](#changelog).
 
 ### pkgname
 
-Either the name of the package, e.g. `pkgname='foo'`, or, for split packages, an array of names, e.g. `pkgname=('foo' 'bar')`. Package names should only consist of lowercase alphanumerics and the following characters: `@._+-` (at symbol, dot, underscore, plus, hyphen). Names are not allowed to start with hyphens or dots. For the sake of consistency, `pkgname` should match the name of the source tarball of the software: for instance, if the software is in `foobar-2.5.tar.gz`, use `pkgname=foobar`. The name of the directory containing the PKGBUILD should also match the `pkgname`.
+Either the name of the package, e.g. `pkgname='foo'`, or, for split packages, an array of names, e.g. `pkgname=('foo' 'bar')`. Package names should only consist of lowercase alphanumerics and the following characters: `@._+-` (at symbol, dot, underscore, plus, hyphen). Names are not allowed to start with hyphens or dots. For the sake of consistency, `pkgname` should match the name of the source tarball of the software: for instance, if the software is in `foobar-2.5.tar.gz`, use `pkgname=foobar`. The name of the directory containing the `PKGBUILD` should also match the `pkgname`.
 
 ## Version
 
 ### pkgver
 
-The version of the package. This should be the same as the version published by the author of the upstream software. It can contain letters, numbers, periods and underscores, but **not** a hyphen (`-`). If the author of the software uses one, replace it with an underscore (`_`). If the `pkgver` variable is used later in the PKGBUILD, then the underscore can easily be substituted for a hyphen, e.g. `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
+The version of the package. This should be the same as the version published by the author of the upstream software. It can contain letters, numbers, periods and underscores, but **not** a hyphen (`-`). If the author of the software uses one, replace it with an underscore (`_`). If the `pkgver` variable is used later in the `PKGBUILD`, then the underscore can easily be substituted for a hyphen, e.g. `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
 
 **Note:** If upstream uses a timestamp versioning such as `30102014`, ensure to use the reversed date, i.e. `20141030` ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") format). Otherwise it will not appear as a newer version.
 
 **Tip:**
 
 *   The ordering of uncommon values can be tested with [vercmp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vercmp.8), which is provided by the [pacman](/index.php/Pacman "Pacman") package.
-*   [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the PKGBUILD. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver()_function "VCS package guidelines") for details.
+*   [makepkg](/index.php/Makepkg "Makepkg") can automatically [update](http://allanmcrae.com/2013/04/pacman-4-1-released/) this variable by defining a `pkgver()` function in the `PKGBUILD`. See [VCS package guidelines#The pkgver() function](/index.php/VCS_package_guidelines#The_pkgver()_function "VCS package guidelines") for details.
 
 ### pkgrel
 
-The release number. This is usually a positive integer number that allows to differentiate between consecutive builds of the same version of a package. As fixes and additional features are added to the PKGBUILD that influence the resulting package, the `pkgrel` should be incremented by 1\. When a new version of the software is released, this value must be reset to 1\. In exceptional cases other formats can be found in use, such as *major.minor*.
+The release number. This is usually a positive integer number that allows to differentiate between consecutive builds of the same version of a package. As fixes and additional features are added to the `PKGBUILD` that influence the resulting package, the `pkgrel` should be incremented by 1\. When a new version of the software is released, this value must be reset to 1\. In exceptional cases other formats can be found in use, such as *major.minor*.
 
 ### epoch
 
@@ -120,13 +120,13 @@ Also it is important to use keywords wisely to increase the chances of appearing
 
 ### arch
 
-An array of architectures that the PKGBUILD is intended to build and work on. Arch officially supports only `x86_64`, but other projects may support other architectures. For example, [Arch Linux 32](https://archlinux32.org/) provides support for `i686` and [Arch Linux ARM](http://archlinuxarm.org/) provides support for `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat), and `aarch64` (armv8 64-bit).
+An array of architectures that the `PKGBUILD` is intended to build and work on. Arch officially supports only `x86_64`, but other projects may support other architectures. For example, [Arch Linux 32](https://archlinux32.org/) provides support for `i686` and [Arch Linux ARM](http://archlinuxarm.org/) provides support for `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat), and `aarch64` (armv8 64-bit).
 
 There are two types of values the array can use:
 
 *   `arch=('any')` is a magic value that, used on its own, indicates the package can be built once on any architecture, and once built, is architecture-independent in its compiled state (shell scripts, fonts, themes, many types of extensions, etc.).
 
-*   `arch=('x86_64')` with one or more architectures indicates the package can be compiled for any of the specified architectures, but is architecture-specific once compiled. For these packages, specify all architectures that the PKGBUILD officially supports. For official repository and AUR packages, this means *x86_64*. Optionally, AUR packages may choose to additionally support other known working architectures.
+*   `arch=('x86_64')` with one or more architectures indicates the package can be compiled for any of the specified architectures, but is architecture-specific once compiled. For these packages, specify all architectures that the `PKGBUILD` officially supports. For official repository and AUR packages, this means *x86_64*. Optionally, AUR packages may choose to additionally support other known working architectures.
 
 The target architecture can be accessed with the variable `$CARCH` during a build.
 
@@ -312,7 +312,7 @@ Files can also be supplied in the same directory where the `PKGBUILD` is located
 
 ### noextract
 
-An array of files listed under `source`, which should not be extracted from their archive format by *makepkg*. This can be used with archives that cannot be handled by `/usr/bin/bsdtar` or those that need to be installed as-is. If an alternative unarchiving tool is used (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), it should be added in the `makedepends` array and the first line of the [prepare()](/index.php/Creating_packages#prepare() "Creating packages") function should extract the source archive manually; for example:
+An array of files listed under `source`, which should not be extracted from their archive format by [makepkg](/index.php/Makepkg "Makepkg"). This can be used with archives that cannot be handled by `/usr/bin/bsdtar` or those that need to be installed as-is. If an alternative unarchiving tool is used (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), it should be added in the `makedepends` array and the first line of the [prepare()](/index.php/Creating_packages#prepare() "Creating packages") function should extract the source archive manually; for example:
 
 ```
 prepare() {
@@ -357,7 +357,7 @@ The checksum type and values should always be those provided by upstream, such a
 
 **Note:** Additionally, when upstream makes [digital signatures](https://en.wikipedia.org/wiki/Digital_signature "w:Digital signature") available, the signature files should be added to the [source](#source) array and the PGP key fingerprint to the [validpgpkeys](#validpgpkeys) array. This allows authentication of the files at build time.
 
-The values for these variables can be auto-generated by [makepkg](/index.php/Makepkg "Makepkg")'s `-g`/`--geninteg` option, then commonly appended with `makepkg -g >> PKGBUILD`. The `updpkgsums` command from [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) is able to update the variables wherever they are in the PKGBUILD. Both tools will use the variable that is already set in the PKGBUILD, or fall back to `md5sums` if none is set.
+The values for these variables can be auto-generated by [makepkg](/index.php/Makepkg "Makepkg")'s `-g`/`--geninteg` option, then commonly appended with `makepkg -g >> PKGBUILD`. The `updpkgsums` command from [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) is able to update the variables wherever they are in the `PKGBUILD`. Both tools will use the variable that is already set in the `PKGBUILD`, or fall back to `md5sums` if none is set.
 
 The file integrity checks to use can be set up with the `INTEGRITY_CHECK` option in `/etc/makepkg.conf`. See [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 

@@ -292,13 +292,20 @@ According to the [Debian Wiki](http://wiki.debian.org/MacBookPro) the MacBook Pr
 
 ### Nouveau
 
-Works out of the box, performance however is not that great and your system will get quite *hot* when running nouveau.
+Works out of the box, performance however is not that great and your system will get quite *hot* when running nouveau. Will cause issues in electron based applications! Fix by adding --disable-gpu to the .shortcut!
 
 ### Nvidia
 
 The drivers work out of the box when booting the mac in csm- or legacy-mode. See [here](https://bbs.archlinux.org/viewtopic.php?id=162289) for some discussion on the topic.
 
-Running the drivers in **efi-mode** requires setting some PCI registers before the kernel modules get loaded, preferably using a udev hook or GRUB script. Otherwise, the screen just remains black when X starts. Follow these [instructions](http://askubuntu.com/questions/264247/proprietary-nvidia-drivers-with-efi-on-mac-to-prevent-overheating/613573#613573) in order to find the appropriate PCI device IDs for which to set the registers. This approach has been confirmed to work and is still being actively discussed inside the above mentioned [thread](https://bbs.archlinux.org/viewtopic.php?pid=1522950#p1522950).
+Running the drivers in **efi-mode** requires setting some PCI registers before the kernel modules get loaded, preferably using a udev hook or GRUB script. Otherwise, the screen just remains black when X starts. Follow these [instructions](http://askubuntu.com/questions/264247/proprietary-nvidia-drivers-with-efi-on-mac-to-prevent-overheating/613573#613573) in order to find the appropriate PCI device IDs for which to set the registers. This approach has been confirmed to work and is still being actively discussed inside the above mentioned [thread](https://bbs.archlinux.org/viewtopic.php?pid=1522950#p1522950). The latest NVIDIA drivers are no longer supported for this MacBook's GPU you will instead need to use these ones [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/)! Once installed create a config by running the command:
+
+```
+# nvidia-xconfig
+
+```
+
+That will automatically generate a config for xorg (/etc/X11/xorg.conf). After that's done you will need to fix the fonts in your current DE/Window manager settings or by editing the xorg config!
 
 ## Fan Control
 

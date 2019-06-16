@@ -6,15 +6,15 @@
 | Audio | Partially Working | snd_hda_intel |
 | Touchpad | Working | ? |
 | Touchscreen | Working | hid_multitouch |
-| Pen input | Working with quirks | ? |
+| Pen input | Working | ? |
 | Webcam | working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
 | Wireless Switch | Working | ? |
 | Function/Multimedia Keys | Working | ? |
-| Suspend/Resume | Partially Working (no deep sleep, only S2Idle) | ? |
+| Suspend/Resume | Partially Working (patched kernel needed) | ? |
 | Fingerprint sensor | Not working | ? synaptic 06cb:00bb |
 
-This article covers specific configuration of this laptop. Currently based on experience with Xfce4, running on X.org.
+This article covers specific configuration of this laptop. Currently based on experience with Xfce4 and with Awesome, running on X.org.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -38,10 +38,10 @@ This article covers specific configuration of this laptop. Currently based on ex
     *   [3.8 Bluetooth](#Bluetooth)
     *   [3.9 Mobile Broadband](#Mobile_Broadband)
     *   [3.10 ACPI Errors](#ACPI_Errors)
-    *   [3.11 Pen input](#Pen_input)
-    *   [3.12 Tablet mode](#Tablet_mode)
-    *   [3.13 IR Camera Login](#IR_Camera_Login)
-    *   [3.14 Battery optimizations](#Battery_optimizations)
+    *   [3.11 Tablet mode](#Tablet_mode)
+    *   [3.12 IR Camera Login](#IR_Camera_Login)
+    *   [3.13 Battery optimizations](#Battery_optimizations)
+    *   [3.14 Suspend issues](#Suspend_issues)
     *   [3.15 Sensors](#Sensors)
 
 ## Hardware Info
@@ -134,7 +134,21 @@ All the media keys works. The mute button does not light up though.
 
 ### Auto Rotation
 
-Installing screen-rotator and iio-sensor-proxy: works out of the box on older kernels. Seems broken in 4.12+
+Installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and this script [[1]](https://gist.github.com/Migacz85/3f544933ce5add438555ba7cd33f0413) autorotation works out of the box. In the script you have to change the line
+
+```
+TOUCHPAD="ELAN Touchscreen"
+
+```
+
+by
+
+```
+PEN="ELAN2514:00 04F3:280E Pen (0)"
+
+```
+
+and change everywhere the word TOUCHPAD by the word PEN. Indeed, the touchpad do not need to be remaped, since it is deactivated when the screen is rotated, however the PEN is.
 
 ### Dual boot
 
@@ -323,10 +337,6 @@ Many ACPI errors are logged on boot:
 
 ```
 
-### Pen input
-
-Working, but seems like using the pen disable the touchscreen. more testing needed.
-
 ### Tablet mode
 
 Keyboard is automatically deactivated when screen is rotated to tent or tablet mode. Screen-rotator works great. Using Onboard for onscreen keyboard works also, but xfce4 does not allow Onboard to come automatically when editing text ( Onboard uses the Gnome accessibility, so if you are a Gnome user, you should be fine ).
@@ -337,9 +347,15 @@ Works with [Howdy](/index.php/Howdy "Howdy") configured to use /dev/video2 and t
 
 ### Battery optimizations
 
-tlp installed, no customisations: around 8-12h of browsing / sysadmin work, depending on the tasks.
+tlp installed, no customisations: around 8-12h of browsing / sysadmin work, depending on the tasks. (Please, see next section, since tlp messes up with suspend).
 
 Powertop display a constant mW consumption of 570 mW ( probably wrong ). There is a setting in the BIOS to allow reporting via ACPI of the battery remaining time. It is disabled by default => to investigate.
+
+### Suspend issues
+
+This model only supports the S0ix, and so only S0 (s2idle) sleep mode is activated. Since this device use a Hynix SSD, it is affected by a bug [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875), resulting in 4-5% battery drain per hour during suspend. A patch set is available, but will not be merged [[3]](https://lore.kernel.org/patchwork/patch/1007283/). In any case, you can install the patched kernel from AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/). The battery drain during suspend should drop to 1-2% per hour.
+
+As it is mentioned by Intel [[4]](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), TLP may not work, and so it should not be used with S0ix.
 
 ### Sensors
 

@@ -26,7 +26,7 @@ ABS is a similar concept. ABS is made up of a directory tree that can be checked
     *   [1.1 SVN tree](#SVN_tree)
 *   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS?)
 *   [3 How to use ABS](#How_to_use_ABS)
-    *   [3.1 Retrieve PKGBUILD source using Svn](#Retrieve_PKGBUILD_source_using_Svn)
+    *   [3.1 Retrieve PKGBUILD source using SVN](#Retrieve_PKGBUILD_source_using_SVN)
         *   [3.1.1 Prerequisites](#Prerequisites)
         *   [3.1.2 Non-recursive checkout](#Non-recursive_checkout)
         *   [3.1.3 Checkout a package](#Checkout_a_package)
@@ -101,9 +101,9 @@ ABS is not necessary to use Arch Linux, but it is useful for automating certain 
 
 ## How to use ABS
 
-To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a certain package from source, you can either use [Svn](/index.php/Svn "Svn") or a [Git](/index.php/Git "Git")-based approach using the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories. In the following, the svn-based method as well as the [git-based method](#Retrieve_PKGBUILD_source_using_Git) is described.
+To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a certain package from source, you can either use [SVN](/index.php/SVN "SVN") or a [Git](/index.php/Git "Git")-based approach using the [asp](https://www.archlinux.org/packages/?name=asp) package which is a thin wrapper around the svntogit repositories. In the following, the svn-based method as well as the [git-based method](#Retrieve_PKGBUILD_source_using_Git) are described.
 
-### Retrieve PKGBUILD source using Svn
+### Retrieve PKGBUILD source using SVN
 
 #### Prerequisites
 

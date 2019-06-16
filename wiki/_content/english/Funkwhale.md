@@ -32,6 +32,7 @@ Instances can be federated with the ActivityPub protocol.
     *   [2.5 Configure Redis](#Configure_Redis)
 *   [3 Initialization](#Initialization)
     *   [3.1 Setup](#Setup)
+        *   [3.1.1 Log in as funkwhale user](#Log_in_as_funkwhale_user)
     *   [3.2 Database setup](#Database_setup)
 *   [4 Version upgrade](#Version_upgrade)
 *   [5 Usage](#Usage)
@@ -160,6 +161,8 @@ $ chown -R funkwhale:funkwhale /srv/funkwhale/config
 
 The `FUNKWHALE_HOSTNAME` variable should correspond to the hostname in `/etc/hosts`. `DJANGO_ALLOWED_HOSTS` needs also to match the address where the funkwhale instance will be reached. You should generate a unique `DJANGO_SECRET_KEY` and change the paths accordingly to your installation.
 
+#### Log in as funkwhale user
+
 The next commands should be run as the `funkwhale` user. Create sub-folders for api files and to store the music,
 
  `$ sudo -u funkwhale -H bash` 
@@ -196,7 +199,7 @@ You also need to collect the static files for the webapp,
 
 ## Version upgrade
 
-All the command should be entered as `funkwhale` user. [Stop](/index.php/Stop "Stop") the `funkwhale.service` before upgrading.
+All the command should be entered as `funkwhale` [user](#Log_in_as_funkwhale_user). [Stop](/index.php/Stop "Stop") the `funkwhale.service` before upgrading.
 
 The static files have to be collected again,
 
@@ -211,6 +214,8 @@ Then apply database migrations,
 [funkwhale]$ python /usr/share/webapps/funkwhale/api/manage.py migrate
 
 ```
+
+**Warning:** Check that the apache or nginx configuration file did not change before restarting the service. Consult the official documentation for incompatible changes.
 
 The `funkwhale.service` can be [started](/index.php/Started "Started") again.
 

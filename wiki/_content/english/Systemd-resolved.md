@@ -108,6 +108,8 @@ By default [DNSSEC](/index.php/DNSSEC "DNSSEC") validation will only be enabled 
 DNSSEC=true
 ```
 
+**Tip:** If your DNS server does not support DNSSEC and you experience problems with the default allow-downgrade mode (e.g. [systemd issue 10579](https://github.com/systemd/systemd/issues/10579)), you can explicitly disable systemd-resolved's DNSSEC support by setting `DNSSEC=false`.
+
 Test DNSSEC validation by querying a domain with a invalid signature:
 
  `$ resolvectl query sigfail.verteiltesysteme.net` 

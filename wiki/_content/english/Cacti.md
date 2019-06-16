@@ -6,120 +6,64 @@
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Server setup](#Server_setup)
-*   [2 Cacti setup](#Cacti_setup)
-    *   [2.1 Apache](#Apache)
-    *   [2.2 Nginx](#Nginx)
-*   [3 MySQL setup](#MySQL_setup)
-*   [4 Spine](#Spine)
-*   [5 Systemd](#Systemd)
-*   [6 Web configuration](#Web_configuration)
-*   [7 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 PHP](#PHP)
+    *   [2.2 SNMP](#SNMP)
+    *   [2.3 MySQL](#MySQL)
+*   [3 Hosting](#Hosting)
+    *   [3.1 Apache](#Apache)
+        *   [3.1.1 php-fpm](#php-fpm)
+    *   [3.2 Nginx](#Nginx)
+        *   [3.2.1 php-fpm](#php-fpm_2)
+        *   [3.2.2 uWSGI](#uWSGI)
+*   [4 Setup](#Setup)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Spine](#Spine)
+    *   [5.2 Systemd](#Systemd)
+*   [6 See also](#See_also)
 
-## Server setup
+## Installation
 
-This article assumes that you already have a working [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP) server. Alternatively, when using Nginx instead of Apache, it is assumed you have a php proxy such as [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) running as well.
+To use cacti, you need a working [web server](/index.php/Web_server "Web server") (e.g. [Nginx](/index.php/Nginx "Nginx") or [Apache](/index.php/Apache "Apache")) setup, that forwards requests to an application server (e.g. [uWSGI](/index.php/UWSGI "UWSGI") or [php-fpm](https://www.archlinux.org/packages/?name=php-fpm)).
 
-## Cacti setup
+Next, [install](/index.php/Install "Install") [cacti](https://www.archlinux.org/packages/?name=cacti) and configure [MariaDB](/index.php/MariaDB "MariaDB"), if a local MySQL server will be used.
 
-[Install](/index.php/Install "Install") the [cacti](https://www.archlinux.org/packages/?name=cacti), [php-snmp](https://www.archlinux.org/packages/?name=php-snmp) and [net-snmp](https://www.archlinux.org/packages/?name=net-snmp) packages. Ensure LAMP services (`httpd.service`, `mysqld.service`) are [started](/index.php/Start "Start") and [enabled](/index.php/Enable "Enable"). If it is necessary for Cacti to monitor the machine that it is running on, configure [snmpd](/index.php/Snmpd "Snmpd").
+**Note:** Cacti should only be accessed over [TLS](/index.php/TLS "TLS") (unless accessed directly from the machine running it), as it otherwise exposes passwords and user data.
 
-Cacti uses PHP, an SQL database (MySQL or MariaDB) and SNMP, so enable the required PHP modules:
+## Configuration
+
+To serve cacti top level instead of under `/cacti/` (i.e. [https://example.tld/](https://example.tld/) instead of [https://example.tld/cacti/](https://example.tld/cacti/)) use the `$url_path` configuration option:
+
+ `/etc/webapps/cacti/config.php`  `$url_path = '/';` 
+
+### PHP
+
+**Note:** Due to an unresolved upstream issue, cacti is unable to stay in its own [PHP](/index.php/PHP "PHP") environment [[1]](https://github.com/Cacti/cacti/issues/2643). Required [PHP](/index.php/PHP "PHP") modules have to be activated in the system's global `/etc/php/php.ini`.
+
+Cacti requires the following [PHP extensions](/index.php/PHP#Extensions "PHP") to be enabled:
 
  `/etc/php/php.ini` 
 ```
+extension=gd
+extension=gettext
+extension=gmp
+extension=ldap
 extension=mysqli
-extension=sockets
 extension=pdo_mysql
 extension=snmp
+extension=sockets
 ```
 
-PHP scripts are, by default, permitted only to open files in specific directories. Configure (or comment out) `open_basedir` in `/etc/php/php.ini`. When misconfigured, errors such as `PHP Warning: include(): open_basedir restriction in effect.` will appear in the webserver log file. Don’t forget to add `/etc/webapps` (or `/etc/webapps/cacti` if you prefer), `/var/log/cacti` and `/var/lib/cacti/rra` to `open_basedir`.
+Cacti needs certain directories and executables in [PHP](/index.php/PHP "PHP")'s `open_basedir` [[2]](https://www.php.net/manual/en/ini.core.php#ini.open-basedir) to function properly: `/tmp/:/usr/share/webapps/cacti:/etc/webapps/cacti:/var/cache/cacti:/var/lib/cacti:/var/log/cacti:/proc/meminfo:/usr/bin/rrdtool:/usr/bin/snmpget:/usr/bin/snmpwalk:/usr/bin/snmpbulkwalk:/usr/bin/snmpgetnext:/usr/bin/snmptrap:/usr/bin/sendmail:/usr/bin/php:/usr/bin/spine:/usr/share/fonts/TTF/`.
 
-In order to display dates and times in the correct timezone, configure `date.timezone` in `/etc/php/php.ini`. Values are in `*Continent*/*City*` notation, for example `America/New_York`, `Asia/Tokyo`.
+Cacti requires `date.timezone` to be set in `/etc/php/php.ini`. Check upstream documentation [[3]](https://www.php.net/manual/en/datetime.configuration.php#ini.date.timezone) and [time zone](/index.php/Time_zone "Time zone") for reference.
 
-### Apache
+### SNMP
 
-Configure Apache to point to Cacti by adding the following in a `/etc/httpd/conf/extra/cacti.conf` (or in a vhost's config file):
+If it is necessary for cacti to monitor the machine that it is running on, configure [snmpd](/index.php/Snmpd "Snmpd").
 
-```
-Alias /cacti /usr/share/webapps/cacti
-<Directory /usr/share/webapps/cacti>
-  # PHP options
-  AddType application/x-httpd-php .php
-  <IfModule dir_module>
-    DirectoryIndex index.php
-  </IfModule>
-
-  Require all granted
-  Options +FollowSymLinks
-  AllowOverride All
-
-  # The following may be useful.
-  #<IfModule mod_php5.c>
-  #  php_flag magic_quotes_gpc Off
-  #  php_flag short_open_tag On
-  #  php_flag register_globals Off
-  #  php_flag register_argc_argv On
-  #  php_flag track_vars On
-  #  # This setting is necessary for some locales.
-  #  php_value mbstring.func_overload 0
-  #  php_value include_path .
-  #</IfModule>
-</Directory>
-
-```
-
-If the Cacti configuration is in a separate file, remember to add `Include conf/extra/cacti.conf` to `/etc/httpd/conf/httpd.conf`.
-
-The file `/usr/share/webapps/cacti/.htaccess` also controls access. Configure or remove it.
-
-### Nginx
-
-When using [Nginx](/index.php/Nginx "Nginx"), the following configuration snippet works for a subdomain:
-
-```
-server {
-   listen 80;
-   server_name cacti.acme.com;
-   return 301 https://$server_name$request_uri;
-}
-
-server {
-   listen 443 ssl;
-   server_name cacti.acme.com;
-   root /usr/share/webapps/cacti;
-
-   index index.php;
-   charset utf-8;
-
-   location ~ \.php?$ {
-       include /etc/nginx/fastcgi_params;
-       fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
-       fastcgi_index index.php;
-       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-   }
-
-   access_log /var/log/nginx/cacti.access.log main;
-   error_log /var/log/nginx/cacti.error.log warn;
-
-   include ssl.conf;
-}
-
-```
-
-Edit the following parameter:
-
- `/usr/share/webapps/cacti/include/config.php`  `$url_path = '/';` 
-
-Cacti needs to have permission to write its gathered data and log messages to disk:
-
-```
-# chown -R http:http /usr/share/webapps/cacti/{rra,log}
-
-```
-
-## MySQL setup
+### MySQL
 
 Cacti needs its own database in which to store its data, and a database user account to access the database.
 
@@ -141,17 +85,155 @@ Alternatively, use [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to achieve t
 *   Import the file `/usr/share/webapps/cacti/cacti.sql` into the `cactidb` database.
 *   Create a user `cactiuser`, and grant this user privileges to access the `cactidb` database.
 
-Add the database access details to `/usr/share/webapps/cacti/include/config.php`:
+Add the database details:
 
+ `/etc/webapps/cacti/config.php` 
 ```
 $database_type = "mysql";
 $database_default = "cactidb";
 $database_username = "cactiuser";
 $database_password = "some_password";
+```
+
+## Hosting
+
+**Note:** Cacti needs to be run as its own user and group (i.e. `cacti`). It's using `/etc/webapps/cacti`, `/var/lib/cacti`, `/var/log/cacti` and `/run/cacti` for configurations, caches, logs and (potentially) sockets (respectively)!
+
+### Apache
+
+The [apache](/index.php/Apache "Apache") [web server](/index.php/Web_server "Web server") can serve dynamic web applications with the help of modules, such as [mod_proxy_fcgi](https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html) or [mod_proxy_uwsgi](https://httpd.apache.org/docs/current/mod/mod_proxy_uwsgi.html).
+
+#### php-fpm
+
+[Install](/index.php/Install "Install") and configure [apache](/index.php/Apache "Apache") with [php-fpm](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server"). Use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `cacti`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/cacti`.
+
+Include the following configuration in your [apache](/index.php/Apache "Apache") configuration (i.e. `/etc/httpd/conf/httpd.conf`) and [restart](/index.php/Restart "Restart") the [web server](/index.php/Web_server "Web server"):
+
+ `/etc/httpd/conf/cacti.conf` 
+```
+Alias /cacti "/usr/share/webapps/cacti"
+<Directory "/usr/share/webapps/cacti">
+    DirectoryIndex index.html index.php
+    <FilesMatch \.php$>
+        SetHandler "proxy:unix:/run/cacti/cacti.sock|fcgi://localhost/"
+    </FilesMatch>
+    AllowOverride All
+    Options FollowSymlinks
+    Require all granted
+</Directory>
 
 ```
 
-## Spine
+The file `/usr/share/webapps/cacti/.htaccess` also controls access. Configure or remove it.
+
+### Nginx
+
+[Nginx](/index.php/Nginx "Nginx") can proxy application servers such as [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [uWSGI](/index.php/UWSGI "UWSGI"), that run a dynamic web application. The following examples describe a folder based setup over a non-default port (for simplicity).
+
+**Tip:** For server entry management in [nginx](/index.php/Nginx "Nginx") have a look at [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx").
+
+**Note:** Postfixadmin ships a configuration for [uWSGI](/index.php/UWSGI "UWSGI").
+
+#### php-fpm
+
+[Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx") and use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `cacti`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/cacti`. This can be achieved by adding the following lines to the php-fpm configuration and [restarting](/index.php/Systemd#Using_units "Systemd") it.
+
+ `/etc/php/php-fpm.d/www.conf` 
+```
+
+[cacti]
+user = cacti
+group = cacti
+listen = /run/cacti/cacti.sock
+listen.owner = http
+listen.group = http
+pm = ondemand
+pm.max_children = 4
+
+```
+
+Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [restart](/index.php/Restart "Restart") it.
+
+ `/etc/nginx/sites-available/cacti.conf` 
+```
+server {
+  listen 8081;
+  server_name cacti;
+  root /usr/share/webapps/cacti/;
+  index index.php;
+  charset utf-8;
+
+  access_log /var/log/nginx/cacti-access.log;
+  error_log /var/log/nginx/cacti-error.log;
+
+  location / {
+    try_files $uri $uri/ index.php;
+  }
+
+  location ~* \.php$ {
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    include fastcgi_params;
+    fastcgi_pass unix:/run/cacti/cacti.sock;
+    fastcgi_index index.php;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_buffer_size 16k;
+    fastcgi_buffers 4 16k;
+  }
+}
+
+```
+
+#### uWSGI
+
+[Install](/index.php/Install "Install") [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php), create a per-application socket for [uWSGI](/index.php/UWSGI "UWSGI") (see [UWSGI#Accessibility of uWSGI socket](/index.php/UWSGI#Accessibility_of_uWSGI_socket "UWSGI") for reference) and [activate](/index.php/Systemd#Using_units "Systemd") the `cacti@uwsgi-secure.socket` unit.
+
+Add the following configuration for nginx and [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Nginx").
+
+ `/etc/nginx/sites-available/cacti.conf` 
+```
+    server {
+      listen 8081;
+      server_name cacti;
+      root /usr/share/webapps/cacti/;
+      index index.php;
+      charset utf-8;
+
+      access_log /var/log/nginx/cacti-access.log;
+      error_log /var/log/nginx/cacti-error.log;
+
+      location / {
+        try_files $uri $uri/ index.php;
+      }
+
+      # pass all .php or .php/path urls to uWSGI
+      location ~ ^(.+\.php)(.*)$ {
+        include uwsgi_params;
+        uwsgi_modifier1 14;
+        uwsgi_pass unix:/run/cacti/cacti.sock;
+      }
+    }
+
+```
+
+## Setup
+
+Open a browser and go to http://your_server/cacti/. You should be welcomed with the cacti installer.
+
+*   Login with username "admin" and password "admin".
+*   Change the password as requested, click *Save*.
+*   Follow the remaining install steps and recommendations.
+*   (Optional) If you chose to install spine, follow these instructions to set it up.
+    *   Click on *Settings*, on the left panel of the Console tab.
+    *   Select the *Poller* tab.
+    *   Change Poller Type to spine.
+    *   Adjust any other settings on the page as desired, then click *Save*.
+    *   Select the *Paths* tab.
+    *   Set Spine Poller File Path to `/usr/bin/spine` and click *Save*.
+
+## Tips and tricks
+
+### Spine
 
 Optionally, install [cacti-spine](https://aur.archlinux.org/packages/cacti-spine/), a faster poller for cacti, from the [AUR](/index.php/AUR "AUR"). configure it with database access details:
 
@@ -162,7 +244,9 @@ DB_Pass some_password
 
 ```
 
-## Systemd
+### Systemd
+
+**Tip:** The configuration for [uWSGI](/index.php/UWSGI "UWSGI") integrates a cron based approach, that makes a separate systemd unit not necessary.
 
 Cacti uses a poller to collect data, so create a [Systemd](/index.php/Systemd "Systemd") service to run `poller.php`, and a timer to run the service every 5 minutes:
 
@@ -172,7 +256,7 @@ Cacti uses a poller to collect data, so create a [Systemd](/index.php/Systemd "S
 Description=Cacti Poller
 
 [Service]
-User=http
+User=cacti
 Type=simple
 ExecStart=/usr/bin/php /usr/share/webapps/cacti/poller.php
 
@@ -202,24 +286,6 @@ Sep 27 15:50:00 hoom php[4072]: OK u:0.00 s:0.01 r:0.40
 Sep 27 15:50:01 hoom php[4072]: 09/27/2015 03:50:01 PM - SYSTEM STATS: Time:0.6176 Method:cmd.php Processes:1 Threads:N/A Hosts:5 HostsPerProcess:5 DataSources:169 RRDsProcessed:15
 
 ```
-
-## Web configuration
-
-Open a browser and go to http://your_server/cacti/. You should be welcomed with the cacti installer.
-
-*   Click *Next*
-*   Select *New Install* and click *Next*
-*   Ensure that all paths are ok. You need to specify versions of RRDTool and NET-SNMP. Get RRDTool Utility Version using `rrdtool -v`, and `net-snmp-config --version` for NET-SNMP. Click *Finish*.
-    *   If any paths are invalid, you will need to figure out why. Check the apache error logs for hints.
-*   Login with username "admin" and password "admin".
-*   Change the password as requested, click *Save*.
-*   (Optional) If you chose to install spine, follow these instructions to set it up.
-    *   Click on *Settings*, on the left panel of the Console tab.
-    *   Select the *Poller* tab.
-    *   Change Poller Type to spine.
-    *   Adjust any other settings on the page as desired, then click *Save*.
-    *   Select the *Paths* tab.
-    *   Set Spine Poller File Path to `/usr/bin/spine` and click *Save*.
 
 ## See also
 

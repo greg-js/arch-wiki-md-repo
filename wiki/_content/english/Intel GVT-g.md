@@ -265,3 +265,4 @@ If that is the case, you may want to check upstream for support plans. For examp
 *   [Official GVT-g Setup Guide](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide)
 *   [Official GVT-g DMA-BUF User Guide](https://github.com/intel/gvt-linux/wiki/Dma_Buf_User_Guide).
 *   [Running Windows via QEMU/KVM and Intel GVT-g](https://www.reddit.com/r/VFIO/comments/8h352p/guide_running_windows_via_qemukvm_and_intel_gvtg/)
+*   [Blog post about using GVT](https://blog.bepbep.co/posts/gvt/)

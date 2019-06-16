@@ -11,46 +11,47 @@ Related articles
 
 *   [1 Set default input source](#Set_default_input_source)
 *   [2 Set the default output source](#Set_the_default_output_source)
-*   [3 Simultaneous HDMI and analog output](#Simultaneous_HDMI_and_analog_output)
-*   [4 HDMI output configuration](#HDMI_output_configuration)
-    *   [4.1 Finding HDMI output](#Finding_HDMI_output)
-    *   [4.2 Testing for the correct card](#Testing_for_the_correct_card)
-    *   [4.3 Manually configuring PulseAudio to detect the Nvidia HDMI](#Manually_configuring_PulseAudio_to_detect_the_Nvidia_HDMI)
-    *   [4.4 Automatically switch audio to HDMI](#Automatically_switch_audio_to_HDMI)
-*   [5 Surround sound systems](#Surround_sound_systems)
-    *   [5.1 Splitting front/rear](#Splitting_front/rear)
-    *   [5.2 Splitting 7.1 into 5.1+2.0](#Splitting_7.1_into_5.1+2.0)
-    *   [5.3 Disabling LFE remixing](#Disabling_LFE_remixing)
-    *   [5.4 Binaural Headphones](#Binaural_Headphones)
-*   [6 PulseAudio over network](#PulseAudio_over_network)
-    *   [6.1 TCP support (networked sound)](#TCP_support_(networked_sound))
-    *   [6.2 TCP support with anonymous clients](#TCP_support_with_anonymous_clients)
-    *   [6.3 Zeroconf (Avahi) publishing](#Zeroconf_(Avahi)_publishing)
-    *   [6.4 Selecting the Server](#Selecting_the_Server)
-    *   [6.5 Switching the PulseAudio server used by local X clients](#Switching_the_PulseAudio_server_used_by_local_X_clients)
-    *   [6.6 When everything else seems to fail](#When_everything_else_seems_to_fail)
-*   [7 ALSA monitor source](#ALSA_monitor_source)
-*   [8 Monitor specific output](#Monitor_specific_output)
-*   [9 PulseAudio through JACK](#PulseAudio_through_JACK)
-    *   [9.1 The KXStudio method](#The_KXStudio_method)
-    *   [9.2 The manual sink configuration method](#The_manual_sink_configuration_method)
-    *   [9.3 The shell script method](#The_shell_script_method)
-    *   [9.4 The PulseAudio kill method](#The_PulseAudio_kill_method)
-*   [10 PulseAudio through JACK issues](#PulseAudio_through_JACK_issues)
-    *   [10.1 When JACK is started Firefox, Chrome and other apps stop playing video and audio](#When_JACK_is_started_Firefox,_Chrome_and_other_apps_stop_playing_video_and_audio)
-    *   [10.2 After I start JACK the sound from PulseAudio becomes distorted](#After_I_start_JACK_the_sound_from_PulseAudio_becomes_distorted)
-*   [11 PulseAudio through OSS](#PulseAudio_through_OSS)
-*   [12 PulseAudio from within a chroot](#PulseAudio_from_within_a_chroot)
-*   [13 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
-*   [14 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
-*   [15 Remap stereo to mono](#Remap_stereo_to_mono)
-*   [16 Remap left or right to mono](#Remap_left_or_right_to_mono)
-*   [17 Remap for broadcasting software](#Remap_for_broadcasting_software)
-*   [18 Swap left/right channels](#Swap_left/right_channels)
-    *   [18.1 Using default.pa](#Using_default.pa)
-*   [19 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
-*   [20 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
-*   [21 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
+*   [3 Independent analog and digital outputs on the same card](#Independent_analog_and_digital_outputs_on_the_same_card)
+*   [4 Simultaneous HDMI and analog output](#Simultaneous_HDMI_and_analog_output)
+*   [5 HDMI output configuration](#HDMI_output_configuration)
+    *   [5.1 Finding HDMI output](#Finding_HDMI_output)
+    *   [5.2 Testing for the correct card](#Testing_for_the_correct_card)
+    *   [5.3 Manually configuring PulseAudio to detect the Nvidia HDMI](#Manually_configuring_PulseAudio_to_detect_the_Nvidia_HDMI)
+    *   [5.4 Automatically switch audio to HDMI](#Automatically_switch_audio_to_HDMI)
+*   [6 Surround sound systems](#Surround_sound_systems)
+    *   [6.1 Splitting front/rear](#Splitting_front/rear)
+    *   [6.2 Splitting 7.1 into 5.1+2.0](#Splitting_7.1_into_5.1+2.0)
+    *   [6.3 Disabling LFE remixing](#Disabling_LFE_remixing)
+    *   [6.4 Binaural Headphones](#Binaural_Headphones)
+*   [7 PulseAudio over network](#PulseAudio_over_network)
+    *   [7.1 TCP support (networked sound)](#TCP_support_(networked_sound))
+    *   [7.2 TCP support with anonymous clients](#TCP_support_with_anonymous_clients)
+    *   [7.3 Zeroconf (Avahi) publishing](#Zeroconf_(Avahi)_publishing)
+    *   [7.4 Selecting the Server](#Selecting_the_Server)
+    *   [7.5 Switching the PulseAudio server used by local X clients](#Switching_the_PulseAudio_server_used_by_local_X_clients)
+    *   [7.6 When everything else seems to fail](#When_everything_else_seems_to_fail)
+*   [8 ALSA monitor source](#ALSA_monitor_source)
+*   [9 Monitor specific output](#Monitor_specific_output)
+*   [10 PulseAudio through JACK](#PulseAudio_through_JACK)
+    *   [10.1 The KXStudio method](#The_KXStudio_method)
+    *   [10.2 The manual sink configuration method](#The_manual_sink_configuration_method)
+    *   [10.3 The shell script method](#The_shell_script_method)
+    *   [10.4 The PulseAudio kill method](#The_PulseAudio_kill_method)
+*   [11 PulseAudio through JACK issues](#PulseAudio_through_JACK_issues)
+    *   [11.1 When JACK is started Firefox, Chrome and other apps stop playing video and audio](#When_JACK_is_started_Firefox,_Chrome_and_other_apps_stop_playing_video_and_audio)
+    *   [11.2 After I start JACK the sound from PulseAudio becomes distorted](#After_I_start_JACK_the_sound_from_PulseAudio_becomes_distorted)
+*   [12 PulseAudio through OSS](#PulseAudio_through_OSS)
+*   [13 PulseAudio from within a chroot](#PulseAudio_from_within_a_chroot)
+*   [14 Disabling automatic spawning of PulseAudio server](#Disabling_automatic_spawning_of_PulseAudio_server)
+*   [15 Disabling pulseaudio daemon altogether](#Disabling_pulseaudio_daemon_altogether)
+*   [16 Remap stereo to mono](#Remap_stereo_to_mono)
+*   [17 Remap left or right to mono](#Remap_left_or_right_to_mono)
+*   [18 Remap for broadcasting software](#Remap_for_broadcasting_software)
+*   [19 Swap left/right channels](#Swap_left/right_channels)
+    *   [19.1 Using default.pa](#Using_default.pa)
+*   [20 PulseAudio as a minimal unintrusive dumb pipe to ALSA](#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA)
+*   [21 Having both speakers and headphones plugged in and switching in software on-the-fly](#Having_both_speakers_and_headphones_plugged_in_and_switching_in_software_on-the-fly)
+*   [22 Allowing multiple users to use PulseAudio at the same time](#Allowing_multiple_users_to_use_PulseAudio_at_the_same_time)
 
 ## Set default input source
 
@@ -127,6 +128,90 @@ When done then you can logout/login or restart PulseAudio manually for these cha
 *   To avoid unnecessary overriding of 100% normal volume it is better to use alternative utilities for managing of sound. See the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=124513) for more information.
 
 **Tip:** The default sink can be referred as `@DEFAULT_SINK@` in commands, for example: `$ pactl set-sink-volume @DEFAULT_SINK@ +5%`.
+
+## Independent analog and digital outputs on the same card
+
+Sound cards may have both analog and digital (iec958) outputs. Pulseaudio does not generate combined profiles by default, you can choose either digital or analog profiles.
+
+The easiest way to make both outputs available is to add a combined profile to the end of default profile configuration file:
+
+ `/usr/share/pulseaudio/alsa-mixer/profile-sets/default.conf` 
+```
+...
+
+# Profile must be a '+' separated list of relevant mappings configured above
+[Profile output:analog-stereo+output:iec958-stereo+input:analog-stereo]
+# Human readable description
+description = Analog and digital stereo output and analog stereo intput
+output-mappings = analog-stereo iec958-stereo
+input-mappings = analog-stereo
+
+```
+
+This way a defined profile is added to the end of the list of available profiles.
+
+Although this works, pulseaudio has a nasty habit of falling back to auto-generated profiles, so you may eventually need to set your card back to the combined profile. The best way to overcome this is by writing a custom config with disabled `auto-profiles`. Copy `default.conf` to `custom-profile.conf`, and edit it to suit your needs (this example is for stereo output/input):
+
+ `/usr/share/pulseaudio/alsa-mixer/profile-sets/custom-profile.conf` 
+```
+
+[General]
+auto-profiles = no # disable  profile auto-generation
+# Leave only relevant mappings:
+[Mapping analog-stereo]
+device-strings = front:%f
+channel-map = left,right
+paths-output = analog-output analog-output-lineout analog-output-speaker analog-output-headphones analog-output-headphones-2
+paths-input = analog-input-front-mic analog-input-rear-mic analog-input-internal-mic analog-input-dock-mic analog-input analog-input-mic analog-input-linein analog-input-aux analog-input-video analog-input-tvtuner analog-input-fm analog-input-mic-line analog-input-headphone-mic analog-input-headset-mic
+priority = 15
+
+[Mapping iec958-stereo]
+device-strings = iec958:%f
+channel-map = left,right
+paths-input = iec958-stereo-input
+paths-output = iec958-stereo-output
+priority = 5
+
+[Profile output:analog-stereo+output:iec958-stereo+input:analog-stereo]
+description = Analog and digital stereo output and analog stereo intput
+output-mappings = analog-stereo iec958-stereo
+input-mappings = analog-stereo
+skip-probe=yes # since you know what your sound card has, there is no need for checking which sinks are available
+
+```
+
+Now that you have your custom profile you need to tell pulseaudio to use it. This can be done by defining an [udev rule](/index.php/Udev#About_udev_rules "Udev"):
+
+First get relevant information about your sound card:
+
+```
+$ pactl list cards
+
+Card #0
+        Name: alsa_card.pci-0000_00_1b.0
+--- snip ----
+        Properties:
+--- snip ---
+                device.vendor.id = "8086" # This is a 'vendor' attribute for udev rule
+                device.product.id = "1c20" # This is a 'device' attribute for udev rule
+```
+
+Now create a config file:
+
+ `/usr/lib/udev/rules.d/91-pulseaudio-custom.rules` 
+```
+
+SUBSYSTEM!="sound", GOTO="pulseaudio_end"
+ACTION!="change", GOTO="pulseaudio_end"
+KERNEL!="card*", GOTO="pulseaudio_end"
+
+SUBSYSTEMS=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0x1c20", ENV{PULSE_PROFILE_SET}="custom-profile.conf"
+
+LABEL="pulseaudio_end"
+
+```
+
+Now tell udev to reload sound subsystem `# udevadm trigger -ssound` and restart pulseaudio. Your sound card should now use only the defined profile and have both analog and digital outputs available.
 
 ## Simultaneous HDMI and analog output
 

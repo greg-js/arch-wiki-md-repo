@@ -66,16 +66,16 @@ where *TEMPERATURE* is the desired color temperature (between `1000` and `25000`
 
 ### Autostart
 
-There are several options to have redshift automatically started:
+There are several options to have Redshift automatically started:
 
 *   By right-clicking the system tray icon and selecting *Autostart* when *redshift-gtk* or *plasma5-applets-redshift-control* is already launched.
-*   By placing a Redshift [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart/` or by adding `redshift` to your window manager or desktop environment's [Autostarting](/index.php/Autostarting "Autostarting") method.
-*   By using [Systemd/User](/index.php/Systemd/User "Systemd/User"). Two services are provided: `redshift.service` and `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
+*   By placing a Redshift [desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart/` or by adding `redshift` to your window manager or desktop environment's [autostarting](/index.php/Autostarting "Autostarting") method.
+*   By using [systemd/User](/index.php/Systemd/User "Systemd/User"). Two services are provided: `redshift.service` and `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
 
 **Note:**
 
 *   The Redshift service files contain `Restart=always` so they will restart infinitely. See [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
-*   When using a systemd user service, [Xorg](/index.php/Xorg "Xorg") must be started before execution of the service, which is not the case without a [Display Manager](/index.php/Display_Manager "Display Manager"). Otherwise you will get `RANDR Query Version' returned error -1` and `Initialization of randr failed`.
+*   When using a systemd user service, [Xorg](/index.php/Xorg "Xorg") must be started before execution of the service, which is not the case without a [display manager](/index.php/Display_manager "Display manager"). Otherwise you will get `RANDR Query Version' returned error -1` and `Initialization of randr failed`.
 
 ## Configuration
 

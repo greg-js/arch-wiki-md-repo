@@ -72,7 +72,7 @@ Os redirecionamentos rm, mv, cp e shell excluem ou sobrescrevem arquivos sem per
 
 ### Melhoria de cp e mv
 
-O uso de [rsync como uma alternativa a cp/mv](/index.php/Rsync#As_a_cp/mv_alternative "Rsync") permite retomar uma transferência com falha, mostrar o status da transferência, pular arquivos já existentes e certificar-se da integridade dos arquivos de destino usando somas de verificação.
+O uso de [rsync como uma alternativa a cp/mv](/index.php/Rsync#As_cp/mv_alternative "Rsync") permite retomar uma transferência com falha, mostrar o status da transferência, pular arquivos já existentes e certificar-se da integridade dos arquivos de destino usando somas de verificação.
 
 ### rm para a lixeira
 

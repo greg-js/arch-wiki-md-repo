@@ -288,7 +288,7 @@ to
 
 ### Alienware 15 R3
 
-Xorg freezes when starting with discrete graphics card OFF
+Xorg freezes when starting with discrete graphics card OFF.
 
 For fix: Add
 
@@ -298,3 +298,5 @@ For fix: Add
 ```
 
 to Kernel options.
+
+When booting mine did not freeze. However when trying to enable a second monitor, running xrandr, or anything related to low level display functionality it would. This fix makes multi-monitor work.

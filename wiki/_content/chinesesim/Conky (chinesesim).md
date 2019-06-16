@@ -74,7 +74,7 @@ $ usermod -aG log username
 
 ```
 
-将 `username` 加入 `log group`. 现在 `username` can read log files, and you will be able to redirect log messages with conky on your desktop.
+将 `username` 加入 `log group`. 现在 `username` 便可以读取日志文件了，您将能够在桌面上使用conky来重定向日志文件。
 
 *   如果conky并没有显现应有的效果 -- 比如 minimum_size -- 您需查看是否是因清空了 `/etc/conky/conky.conf`中的内容，或是因注释相关字段所造成。
 

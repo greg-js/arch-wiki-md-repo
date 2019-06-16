@@ -54,15 +54,16 @@ Besides the sound device drivers, ALSA also bundles a user space driven library 
     *   [5.2 Downmixing](#Downmixing)
 *   [6 Dmix](#Dmix)
 *   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Hot-plugging a USB sound card](#Hot-plugging_a_USB_sound_card)
-    *   [7.2 Simultaneous output](#Simultaneous_output)
-    *   [7.3 Keyboard volume control](#Keyboard_volume_control)
-    *   [7.4 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
-    *   [7.5 Debugging ALSA](#Debugging_ALSA)
-        *   [7.5.1 Retrieving the driver state](#Retrieving_the_driver_state)
-        *   [7.5.2 Reconfiguring input/output ports](#Reconfiguring_input/output_ports)
-        *   [7.5.3 Resetting codecs](#Resetting_codecs)
-    *   [7.6 Correctly detect microphone plugged in a 4-pin 3.5mm (TRRS) jack](#Correctly_detect_microphone_plugged_in_a_4-pin_3.5mm_(TRRS)_jack)
+    *   [7.1 Disabling auto mute on startup](#Disabling_auto_mute_on_startup)
+    *   [7.2 Hot-plugging a USB sound card](#Hot-plugging_a_USB_sound_card)
+    *   [7.3 Simultaneous output](#Simultaneous_output)
+    *   [7.4 Keyboard volume control](#Keyboard_volume_control)
+    *   [7.5 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
+    *   [7.6 Debugging ALSA](#Debugging_ALSA)
+        *   [7.6.1 Retrieving the driver state](#Retrieving_the_driver_state)
+        *   [7.6.2 Reconfiguring input/output ports](#Reconfiguring_input/output_ports)
+        *   [7.6.3 Resetting codecs](#Resetting_codecs)
+    *   [7.7 Correctly detect microphone plugged in a 4-pin 3.5mm (TRRS) jack](#Correctly_detect_microphone_plugged_in_a_4-pin_3.5mm_(TRRS)_jack)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -824,6 +825,22 @@ pcm.dsp {
 ```
 
 ## Tips and tricks
+
+### Disabling auto mute on startup
+
+*Auto-Mute Mode* can be configured on startup with `amixer`. For example, to disable it:
+
+```
+# amixer -c 0 sset "Auto-Mute Mode" Disabled
+
+```
+
+Alternatively, the graphical interface can be utilized through `alsamixer`. In order to save any modifications, use:
+
+```
+# alsactl store
+
+```
 
 ### Hot-plugging a USB sound card
 

@@ -55,7 +55,7 @@ mmcblk0
 
 For those using [GPT](/index.php/GPT "GPT"), use the `blkid` command instead. The latter is more convenient for scripts, but more difficult to read.
 
- `$ blkid` 
+ `# blkid` 
 ```
 /dev/sda1: UUID="CBB6-24F2" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="d0d0d110-0a71-4ed6-936a-304969ea36af" 
 /dev/sda2: LABEL="System" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/Linux" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
@@ -127,7 +127,7 @@ Most file systems support setting the label upon file system creation, see the [
 
 The label of a device can be obtained by `lsblk`:
 
- `$ lsblk -rno LABEL /dev/sda2` 
+ `$ lsblk -drno LABEL /dev/sda2` 
 ```
 System
 
@@ -158,7 +158,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 F4CA-5D75 -> ../../mmcblk0p1
 
 The UUID of a device can be obtained by `blkid`:
 
- `$ blkid -s UUID -o value /dev/sda1` 
+ `# blkid -s UUID -o value /dev/sda1` 
 ```
 CBB6-24F2
 
@@ -230,7 +230,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 Swap -> ../../sda4
 
 The partition label of a device can be obtained by `blkid`:
 
- `$ blkid -s PARTLABEL -o value /dev/sda1` 
+ `# blkid -s PARTLABEL -o value /dev/sda1` 
 ```
 EFI system partition
 
@@ -262,7 +262,7 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 The partition UUID of a device can be obtained by `blkid`:
 
- `$ blkid -s PARTUUID -o value /dev/sda1` 
+ `# blkid -s PARTUUID -o value /dev/sda1` 
 ```
 d0d0d110-0a71-4ed6-936a-304969ea36af
 

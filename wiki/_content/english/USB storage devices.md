@@ -6,7 +6,11 @@ This document describes how to use the popular USB memory sticks with Linux. How
 
 If you have an up-to-date system with the standard Arch kernel and a modern [Desktop environment](/index.php/Desktop_environment "Desktop environment") your device should just show up on your desktop, with no need to open a console.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Auto-mounting with udisks](#Auto-mounting_with_udisks)
 *   [2 Manual mounting](#Manual_mounting)
@@ -19,6 +23,7 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
         *   [2.3.4 Mount tools](#Mount_tools)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No USB storage devices are acknowledged by the system](#No_USB_storage_devices_are_acknowledged_by_the_system)
+    *   [3.2 USB device detected but not mountable](#USB_device_detected_but_not_mountable)
 
 ## Auto-mounting with udisks
 
@@ -93,3 +98,7 @@ Multiple [mount tools](/index.php/List_of_applications/Utilities#Mount_tools "Li
 ### No USB storage devices are acknowledged by the system
 
 If you have connected your USB storage device to the computer and it is not listed in `lsblk` or `dmesg`, ensure that your BIOS has both XCHI Handoff and EHCI Handoff enabled.
+
+### USB device detected but not mountable
+
+If you recently upgraded you kernel, the modules for USB storage for your currently running kernel were removed and replaced with modules for the newly installed kernel. These modules will not be loaded until you reboot and run the new kernel.

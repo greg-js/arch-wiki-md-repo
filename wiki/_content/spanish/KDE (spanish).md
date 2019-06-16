@@ -264,7 +264,7 @@ También puede configurar impresoras en *Preferencias del sistema > Impresoras*.
 
 Si desea tener acceso a los servicios de Windows, instale [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") (paquete [samba](https://www.archlinux.org/packages/?name=samba)).
 
-La funcionalidad de compartir con Dolphin requiere el paquete [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) y los recursos compartidos, que el stock `smb.conf` no los tiene habilitados. Las instrucciones para agregarlos se encuentran en [Samba#Habilitar los recursos compartidos](/index.php/Samba#Enable_usershares "Samba"), después de lo cual la compartición en Dolphin debería funcionar sin necesidad de configuración después de reiniciar Samba.
+La funcionalidad de compartir con Dolphin requiere el paquete [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) y los recursos compartidos, que el stock `smb.conf` no los tiene habilitados. Las instrucciones para agregarlos se encuentran en [Samba#Habilitar los recursos compartidos](/index.php/Samba#Enable_Usershares "Samba"), después de lo cual la compartición en Dolphin debería funcionar sin necesidad de configuración después de reiniciar Samba.
 
 **Sugerencia:** Utilice `*` (asterisco) tanto para el nombre de usuario como para la contraseña cuando acceda a un recurso compartido de Windows sin autenticación en la pantalla de solicitud de Dolphin.
 

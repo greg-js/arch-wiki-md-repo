@@ -2,7 +2,11 @@
 
 자세한 사항은 여기 안내서에서 링크로 제공하는 해당 [아치위키](/index.php/ArchWiki:About "ArchWiki:About") 항목이나 각 프로그램의 [man page](/index.php/Man_page "Man page")를 보십시오. 대화나 질문으로 다른 사용자에게서 도움을 받으려면 [IRC 채널](/index.php/IRC_channel "IRC channel")이나 [포럼](https://bbs.archlinux.org/)을 이용하십시오.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 설치에 앞서 할 일](#설치에_앞서_할_일)
     *   [1.1 키보드 레이아웃 설정](#키보드_레이아웃_설정)

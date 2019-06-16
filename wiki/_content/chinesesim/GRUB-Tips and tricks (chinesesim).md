@@ -1,4 +1,4 @@
-See [GRUB](/index.php/GRUB "GRUB") for the main article.
+**翻译状态：** 本文是英文页面 [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-12，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB%2FTips+and+tricks&diff=0&oldid=573028)可以查看翻译后英文页面的改动。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -7,46 +7,48 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 其它安装方式](#其它安装方式)
-    *   [1.1 安装到U盘](#安装到U盘)
+    *   [1.1 安装到 U 盘](#安装到_U_盘)
         *   [1.1.1 BIOS](#BIOS)
         *   [1.1.2 EFI](#EFI)
     *   [1.2 安装到分区上或者无分区磁盘上](#安装到分区上或者无分区磁盘上)
-    *   [1.3 只生成core.img](#只生成core.img)
+    *   [1.3 只生成 core.img](#只生成_core.img)
 *   [2 图形化配置工具](#图形化配置工具)
 *   [3 视觉配置](#视觉配置)
     *   [3.1 设置帧缓冲分辨率](#设置帧缓冲分辨率)
-        *   [3.1.1 设定帧缓冲的分辨率](#设定帧缓冲的分辨率)
-    *   [3.2 915resolution hack](#915resolution_hack)
+    *   [3.2 915resolution 破解](#915resolution_破解)
     *   [3.3 背景图像和点阵字体](#背景图像和点阵字体)
-    *   [3.4 Theme](#Theme)
+    *   [3.4 主题](#主题)
     *   [3.5 菜单颜色](#菜单颜色)
     *   [3.6 隐藏菜单](#隐藏菜单)
-    *   [3.7 禁用framebuffer](#禁用framebuffer)
-*   [4 Booting ISO9660 image file directly via GRUB](#Booting_ISO9660_image_file_directly_via_GRUB)
+    *   [3.7 禁用 framebuffer](#禁用_framebuffer)
+*   [4 通过 GRUB 直接启动 ISO9660 映像文件](#通过_GRUB_直接启动_ISO9660_映像文件)
 *   [5 持久块设备命名法](#持久块设备命名法)
 *   [6 使用卷标](#使用卷标)
 *   [7 用密码保护 GRUB 菜单](#用密码保护_GRUB_菜单)
-*   [8 启动时隐藏GRUB界面,除非按着SHIFT键](#启动时隐藏GRUB界面,除非按着SHIFT键)
-*   [9 使用 UUID 和基础脚本](#使用_UUID_和基础脚本)
-*   [10 手动创建 grub.cfg](#手动创建_grub.cfg)
-*   [11 Multiple entries](#Multiple_entries)
-    *   [11.1 Disable submenu](#Disable_submenu)
-    *   [11.2 调用之前的启动项](#调用之前的启动项)
-    *   [11.3 Changing the default menu entry](#Changing_the_default_menu_entry)
-    *   [11.4 设定下次启动的启动项(一次性,非持久)](#设定下次启动的启动项(一次性,非持久))
-*   [12 UEFI 延伸阅读](#UEFI_延伸阅读)
-    *   [12.1 其他方法](#其他方法)
-    *   [12.2 在固件启动管理器中创建GRUB条目](#在固件启动管理器中创建GRUB条目)
-    *   [12.3 创建GRUB Standalone模式的UEFI应用程序](#创建GRUB_Standalone模式的UEFI应用程序)
-    *   [12.4 Technical information](#Technical_information)
+    *   [7.1 只针对编辑 GRUB 和控制台选项进行密码保护](#只针对编辑_GRUB_和控制台选项进行密码保护)
+*   [8 在没有按着 SHIFT 键时隐藏 GRUB 界面](#在没有按着_SHIFT_键时隐藏_GRUB_界面)
+*   [9 将 UUID 和基础脚本结合使用](#将_UUID_和基础脚本结合使用)
+*   [10 多个启动条目](#多个启动条目)
+    *   [10.1 取消子菜单](#取消子菜单)
+    *   [10.2 调用之前的启动条目](#调用之前的启动条目)
+    *   [10.3 修改默认菜单条目](#修改默认菜单条目)
+    *   [10.4 自动启动非默认启动条目（仅一次）](#自动启动非默认启动条目（仅一次）)
+*   [11 演奏一曲](#演奏一曲)
+*   [12 为早期启动手动配置核心映像](#为早期启动手动配置核心映像)
+*   [13 UEFI 延伸阅读](#UEFI_延伸阅读)
+    *   [13.1 另一种安装方法](#另一种安装方法)
+    *   [13.2 UEFI 固件解决方案](#UEFI_固件解决方案)
+    *   [13.3 在固件启动管理器中创建 GRUB 条目](#在固件启动管理器中创建_GRUB_条目)
+    *   [13.4 独立的 GRUB](#独立的_GRUB)
+    *   [13.5 技术信息](#技术信息)
 
 ## 其它安装方式
 
-### 安装到U盘
+### 安装到 U 盘
 
 #### BIOS
 
-假设 U盘的第一个分区是 FAT32，其分区是/dev/sdy1
+假设 U 盘的第一个分区是 FAT32格式，其分区是/dev/sdy1
 
 ```
 # mkdir -p /mnt/usb
@@ -56,7 +58,7 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
 
 ```
 
-可以选择将配置备份到 `grub.cfg`:
+可以选择将配置备份到 `grub.cfg`：
 
 ```
 # mkdir -p /mnt/usb/etc/default
@@ -72,13 +74,13 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
 
 #### EFI
 
-To have grub write its EFI image to `/boot/efi/EFI/BOOT/BOOTX64.efi`, which the boot firmware will be able to find without any UEFI boot entry, use `--removable` when you run `grub-install`.
+在你运行 `grub-install` 的时候使用 `--removable` 选项，就可以让 GRUB 把它的 EFI 映像写入到 `/boot/efi/EFI/BOOT/BOOTX64.efi`，这样启动固件就可以在没有 UEFI 启动条目的的情况下找到。
 
 ### 安装到分区上或者无分区磁盘上
 
-**警告:** GRUB **不推荐**将其安装到分区启动扇区或者无分区磁盘上(Grub Legacy和syslinux相反).这种安装方式不安全,当升级时可能会损坏. Arch开发人员也不支持这种方式
+**警告:** GRUB **极不推荐** 将其安装到分区启动扇区或者无分区磁盘上（Grub Legacy 和 syslinux 相反）。这种安装方式不安全，当升级时可能会损坏。Arch 开发人员也 **不支持** 这种方式.
 
-下面的命令将会将 GRUB 安装到分区扇区或者无分区磁盘上,下面例子中 `/dev/sdaX` 用作 `/boot`
+下面的命令将会将 GRUB 安装到分区扇区或者无分区磁盘（也称作超级软盘），或者安装到软盘上。下面例子中以 `/dev/sdaX` 作为 `/boot` 分区。
 
 ```
 # chattr -i /boot/grub/i386-pc/core.img
@@ -87,38 +89,41 @@ To have grub write its EFI image to `/boot/efi/EFI/BOOT/BOOTX64.efi`, which the 
 
 ```
 
-*   使用 `--target=i386-pc` 参数时，仅安装 BIOS 系统. 推荐一直标明这点以防混淆.
-*   不应使用`--grub-setup=/bin/true`(这个选项的效果类似于只生成`core.img`)
-*   `grub-install`会生成以下警告, 请了解这个方式有可能出现的问题。
+**注意:**
+
+*   `/dev/sdaX` 仅用作示例。
+*   `--target=i386-pc` 令 `grub-install` 仅为 BIOS 系统安装。建议总是使用这个选项来排除 grub-install 命令中的模糊性。
+
+你应该使用 `--force` 选项来启用对 blocklists（块列表）的支持，而不应该使用 `--grub-setup=/bin/true`，后者类似于单纯地生成 `core.img`。
+
+`grub-install` 会生成以下警告，来提醒你哪里有可能出现问题。
 
 ```
 /sbin/grub-setup: warn: Attempting to install GRUB to a partitionless disk or to a partition. This is a BAD idea.
-/sbin/grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists. 
+/sbin/grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists.
                         However, blocklists are UNRELIABLE and their use is discouraged.
 
 ```
 
-*   必须使用`--force`选项来启用对 blocklists (块列表)的支持。否则会出现以下错误,并且不会将启动代码安装到启动扇区上:
+不使用 `--force` 选项则可能会出现以下错误，并且 `grub-setup` 不会将启动代码安装到启动扇区上：
 
 ```
 /sbin/grub-setup: error: will not proceed with blocklists
 
 ```
 
-而指定了`--force`,会出现:
+而指定了 `--force`，会出现：
 
 ```
 Installation finished. No error reported.
 
 ```
 
-`grub-setup` 默认不允许这种情况的原因是,在分区或者无分区磁盘上,`grub`依赖于嵌入分区引导扇区的块列表(blocklists)来定位`/boot/grub/i386-pc/core.img`和`/boot/grub`.而`core.img`在分区上的扇区位置很有可能随着分区文件系统的更改而变化(复制文件,删除文件等).详情请参考https://bugzilla.redhat.com/show_bug.cgi?id=728742 和 [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
+`grub-setup` 默认不启用这个选项，是因为在分区或者无分区磁盘上，`grub` 依赖于嵌入分区引导扇区的块列表 (blocklists) 来定位 `/boot/grub/i386-pc/core.img` 和前缀目录 `/boot/grub`。而 `core.img` 在分区上的扇区位置很有可能随着分区文件系统的更改而变化（复制文件，删除文件等）。详情请参考 [https://bugzilla.redhat.com/show_bug.cgi?id=728742](https://bugzilla.redhat.com/show_bug.cgi?id=728742) 和 [https://bugzilla.redhat.com/show_bug.cgi?id=730915](https://bugzilla.redhat.com/show_bug.cgi?id=730915).
 
-临时解决方案是给`/boot/grub/i386-pc/core.img`文件加"不可变"(immutable)标志.这样 `core.img` 文件的位置就不会变。只有当将`grub`安装到分区启动扇区或者无分区磁盘上时才需要给core.img加"不可变"标志.
+临时解决方案是给 `/boot/grub/i386-pc/core.img` 文件加“不可变”(immutable) 标志（按照上面提过的，使用 `chattr` 命令）。这样 `core.img` 文件的位置就不会变。只有当将 GRUB 安装到分区启动扇区或者无分区磁盘上时才需要给 `/boot/grub/i386-pc/core.img` 加上“不可变”标志，在安装到 MBR 或者单纯地生成 `core.img` 而不嵌入到其他引导扇区里的时候，就不用添加（正如上面所述）。
 
-执行`grub-install`并不会生成GRUB配置文件,请移至[#生成主配置文件](#生成主配置文件)一节
-
-即使没有报错，生成的 `grub.cfg` 文件并不会包含正确的 UUID。参考 [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604.要解决这个问题：)
+然而即使没有报错，生成的 `grub.cfg` 文件也不会包含正确的 UUID。参考 [https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604](https://bbs.archlinux.org/viewtopic.php?pid=1294604#p1294604) 。 要解决这个问题，使用如下命令：
 
 ```
 # mount /dev/sdxY /mnt        #Your root partition.
@@ -129,46 +134,45 @@ Installation finished. No error reported.
 
 ```
 
-### 只生成core.img
+### 只生成 core.img
 
-通过添加`--grub-setup=/bin/true`选项,`grub-install`命令会填充`/boot/grub`文件夹并生成`/boot/grub/i386-pc/core.img`,但是不会将grub启动引导代码嵌入到MBR,post-MBR gap和分区引导扇区中, 以 `/dev/sda` 磁盘为例：
+通过添加 `--grub-setup=/bin/true` 选项，`grub-install` 命令会填充 `/boot/grub` 文件夹并生成 `/boot/grub/i386-pc/core.img`，但是 **不会** 将 GRUB 启动引导代码嵌入到 MBR、MBR 后部区域或者分区引导扇区中。
 
 ```
 # grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda
 
 ```
 
-**Note:** `--target=i386-pc`指示`grub-install`是为使用BIOS的系统安装. 推荐一直标明这点以防混淆.
+**注意:**
 
-生成后, Grub Legacy 或者 syslinux 就可以通过链式加载 GRUB 的`core.img`来间接加载Linux内核或者多启动内核了.参阅[Syslinux#Chainloading](/index.php/Syslinux#Chainloading "Syslinux")。
+*   `/dev/sda` 仅是示例。
+*   `--target=i386-pc` 令 `grub-install` 仅为 BIOS 系统安装。建议总是使用这个选项来排除 grub-install 命令中的模糊性。
+
+生成后，Grub Legacy 或者 syslinux 就可以通过链式加载 GRUB 的 `core.img` 来间接加载 Linux 内核或者多启动内核了。参阅[Syslinux (简体中文)#Chainloading](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Chainloading "Syslinux (简体中文)")。
 
 ## 图形化配置工具
 
-*   **grub-customizer** — 定制bootloader(GRUB or BURG)
+可以安装下列软件包：
+
+*   **grub-customizer** — GRUB 或者 BURG 的 GTK+ 定制器
 
 	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://www.archlinux.org/packages/?name=grub-customizer)
 
-*   **grub2-editor** — KDE4上配置GRUB的控制模组
+*   **grub2-editor-frameworks** — grub2-editor 的非官方 KF5 port
 
-	[http://kde-apps.org/content/show.php?content=139643](http://kde-apps.org/content/show.php?content=139643) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
+	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)
 
-*   **kcm-grub2** — 可以管理大部分常用GRUB配置的kcm模组
-
-	[http://kde-apps.org/content/show.php?content=137886](http://kde-apps.org/content/show.php?content=137886) || [kcm-grub2](https://aur.archlinux.org/packages/kcm-grub2/)
-
-*   **startupmanager** — GRUB Legacy, GRUB, Usplash and Splashy的图形化配置工具([abandonned](https://launchpad.net/startup-manager/+announcement/8300))
+*   **startupmanager** — 用来修改 GRUB Legacy, GRUB, Usplash 和 Splashy 设置的图形应用 ([已被废止](https://launchpad.net/startup-manager/+announcement/8300))
 
 	[http://sourceforge.net/projects/startup-manager/](http://sourceforge.net/projects/startup-manager/) || [startupmanager](https://aur.archlinux.org/packages/startupmanager/)
 
 ## 视觉配置
 
-在GRUB的默认情况中是可以改变菜单外观的。如果你没有初始化，请务必初始化 GRUB 图形终端，带视频模式的gfxmode和gfxterm。你可以在 [GRUB#"No suitable mode found" error](/index.php/GRUB#"No_suitable_mode_found"_error "GRUB")的到这部分内容。此视频模式由GRUB通过“ gfxpayload '传递给Linux内核，为了有效果，任何视觉配置需要这种模式。
+GRUB 默认支持改变菜单外观。如果你没有初始化，请务必以视频模式 gfxmode 初始化 GRUB 图形终端 gfxterm，你可以在 [GRUB (简体中文)#"No suitable mode found" 错误](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#"No_suitable_mode_found"_错误 "GRUB (简体中文)")一节找到这部分内容。此视频模式由 GRUB 通过 gfxpayload 传递给 Linux 内核，任何视觉配置都需要这种模式才能够有效果。
 
 ### 设置帧缓冲分辨率
 
-#### 设定帧缓冲的分辨率
-
-GRUB既可以为自己,也可以为内核设定帧缓冲.现在已经不使用老的`vga=`配置了.推荐方法是在`/etc/default/grub`进行如下编辑:
+GRUB 既可以为自己，也可以为内核设定帧缓冲。现在已经不使用老的 `vga=` 配置了，推荐方法是在 `/etc/default/grub` 文件中按照下面的例子编辑，来设定宽度（像素）x高度（像素）x[颜色深度](https://en.wikipedia.org/wiki/color_depth "wikipedia:color depth")：
 
 ```
 GRUB_GFXMODE=1024x768x32
@@ -176,29 +180,21 @@ GRUB_GFXPAYLOAD_LINUX=keep
 
 ```
 
-运行以下命令使配置生效:
+可以指定多种分辨率，包括默认的 `auto`，所以建议你编辑成这个样：`GRUB_GFXMODE=<心仪的分辨率>,<后备分辨率比如 1024x768>,auto`。更多信息请见 [GRUB gfxmode 文档](https://www.gnu.org/software/grub/manual/grub/html_node/gfxmode.html)。 [gfxpayload](https://www.gnu.org/software/grub/manual/html_node/gfxpayload.html#gfxpayload) 属性可以确保内核也保持该分辨率。
 
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
+**注意:**
 
-```
+*   只有显卡通过 [VESA BIOS 拓展](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions")支持的模式才能用。要查看所支持的模式列表，安装 [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) 然后以 root 权限运行 `hwinfo --framebuffer`。或者进入 GRUB 命令行运行 `videoinfo` 命令。
+*   早期版本的 [NVIDIA](/index.php/NVIDIA "NVIDIA") 专有驱动（使用显卡 GeForce GTX 970，驱动 nvidia 370 进行了测试）支持的 `GRUB_GFXMODE` 格式为 `*<宽>*x*<高>*-*<色深>*`（例如 `1920x1200-24`，而不是 `1920x1200x24`）。这应该不会影响新的显卡和驱动。使用比较新的驱动的 Pascal 显卡（以 GeForce GTX 1060 显卡和 nvidia 381.22 驱动测试）没法使用上文建议的格式，而且会引发严重的问题，包括但不限于系统崩溃以及 hard lock。当前的驱动和显卡最好使用标准的 `*<width>*x*<height>*x*<depth>*` 格式来配置 `GRUB_GFXMODE`。
+*   确保在修改完后运行 `grub-mkconfig -o /boot/grub/grub.cfg`。
 
-`gfxpayload`属性会确保内核也保持这个分辨率
+这种方法不管用的话，可以试试老的 `vga=` 方法。将它添加到 `/etc/default/grub` 文件中的 `"GRUB_CMDLINE_LINUX_DEFAULT="` 一行就行了。比如 `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` 可以将系统的分辨率设定为 `1024x768`。
 
-**Note:**
+### 915resolution 破解
 
-*   如果示例不起作用,请尝试用`vbemode="0x105"`代替`gfxmode="1024x768x32"`.请使用适合你屏幕的分辨率.
-*   可以通过`# hwinfo --framebuffer`命令来显示所有可以使用的分辨率模式(hwinfo在[community](/index.php/Community_repository "Community repository")里),在GRUB命令行下,可以使用`vbeinfo` 命令
+有些时候,Intel 显卡无法通过 `# hwinfo --framebuffer` 或 `vbeinfo` 显示你需要的分辨率。这种情况下，你可以使用 `915resolution` 破解。这种破解会临时性的修改显卡 BIOS 来添加所需的分辨率。详情请参考[915resolution 主页](http://915resolution.mango-lang.org/)。这个包可以在这里找到：[915resolution](https://aur.archlinux.org/packages/915resolution/)
 
-这种方法不管用的话,可以试试老的`vga=`方法.将它添加到`"GRUB_CMDLINE_LINUX_DEFAULT="`里面就行了,比如 `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` 这会将系统的分辨率设定为1024*768
-
-可以选择以下分辨率中的一种:`640×480`, `800×600`, `1024×768`, `1280×1024`, `1600×1200`, `1920×1200`
-
-### 915resolution hack
-
-有些时候,Intel显卡无法通过`# hwinfo --framebuffer` 或`vbeinfo`显示你需要的分辨率.这种情况下,你可以使用`915resolution hack`.915resolution hack会临时性的修改显卡BIOS来添加所需的分辨率.详情请参考[915resolution's home page](http://915resolution.mango-lang.org/)
-
-首先,找一个你想要替代的视频模式.例如在GRUB命令行模式下运行:
+首先，找一个你想要修改的视频模式。为此需要在 GRUB 命令行模式下运行：
 
  `sh:grub> 915resolution -l` 
 ```
@@ -209,34 +205,28 @@ Intel 800/900 Series VBIOS Hack : version 0.5.3
 
 ```
 
-然后,使用`1440x900` 分辨率覆盖`Mode 30`
+然后，使用 `1440x900` 分辨率覆盖 `Mode 30`：
 
  `/etc/grub.d/00_header` 
 ```
 [...]
-**915resolution 30 1440 900  # Inserted line**
+**915resolution 30 1440 900  # 添加这行**
 set gfxmode=${GRUB_GFXMODE}
 [...]
 
 ```
 
-最后,设置`GRUB_GFXMODE`,重新生成GRUB配置文件,重启并测试是否生效:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-# reboot
-
-```
+最后按照之前描述的方式设置 `GRUB_GFXMODE`，再重新生成 GRUB 配置文件，重启并测试是否生效。
 
 ### 背景图像和点阵字体
 
-GRUB原生支持设置背景图像和点阵字体(以pf2格式).[grub](https://www.archlinux.org/packages/?name=grub)包含unifont字体,名为`unicode.pf2`.(也有可能只包含名为`ascii.pf2`的ASCII字符字体)
+GRUB 原生支持设置背景图像和 `pf2` 格式的点阵字体。[grub](https://www.archlinux.org/packages/?name=grub) 包中包含了 unifont 字体，名为`unicode.pf2`，（也有可能只包含名为 `ascii.pf2` 的ASCII字符字体）。
 
-GRUB支持的图像格式有tga,png,jpeg.所支持的最大图像分辨率跟硬件有关.
+在载入正确的模块之后，GRUB 支持的图像格式有 tga, png 和 jpeg。所支持的最大图像分辨率跟硬件有关。
 
-Make sure you have set up the proper [framebuffer resolution](#Setting_the_framebuffer_resolution). 请确保你已经设定了合适的[帧缓冲分辨率](#设定帧缓冲的分辨率)
+请确保你已经设定了合适的[帧缓冲分辨率](#设置帧缓冲分辨率)。
 
-编辑`/etc/default/grub`:
+按如下方式编辑 `/etc/default/grub`：
 
 ```
 GRUB_BACKGROUND="/boot/grub/myimage"
@@ -245,28 +235,22 @@ GRUB_FONT="/path/to/font.pf2"
 
 ```
 
-**Note:** 如果你将GRUB安装在单独的分区上, `/boot/grub/myimage` 应该改为 `/grub/myimage`.
+**注意:** 如果你将 GRUB 安装在单独的分区上，`grub.cfg` 文件中会自动将 `/boot/grub/myimage` 改成 `/grub/myimage`。
 
-重新生成配置文件:
+需要[重新生成](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#生成主配置文件 "GRUB (简体中文)") `grub.cfg` 来让修改起作用。如果成功添加了背景图片，用户会在运行命令的终端中看到 `"Found background image..."`。如果句话没有出现，你设定的图像信息可能没有成功添加进 `grub.cfg` 文件。
 
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
+如果图像没有正确显示，执行如下检查：
 
-```
+*   在 `/etc/default/grub` 文件中，图像的路径和名字要正确
+*   图像的大小和格式要合适 (tga, png, 8-bit jpg)
+*   图像需要以 RGB 模式存储，而且没有索引
+*   `/etc/default/grub` 文件里面开启了 console 模式
+*   需要执行 `grub-mkconfig` 命令以将图像信息写入 `/boot/grub/grub.cfg` 文件
+*   `grub-mkconfig` 脚本不会对 `grub.cfg` 文件中所写的文件名添加引号，所以要确保这些名字里没有空格
 
-如果成功的添加了背景图片,那么用户会在命令行中看到`"Found background image..."`. 如果没有看到`"Found background image..."`,图像信息就可能没有嵌入`grub.cfg`中了.
+### 主题
 
-如果图像没有正确显示,执行如下检查:
-
-*   在`/etc/default/grub`里,图像的路径和名字是否正确
-*   图像的大小和格式是否合适(tga,png,8-bit jpg)
-*   图像是不是以RGB模式存储,是不是没有索引
-*   `/etc/default/grub`里面是不是没有开启console模式
-*   是否执行`grub-mkconfig`以重新生成配置文件
-
-### Theme
-
-下面的例子将展示如何使用GRUB包重的starfield主题:
+下面的例子将展示如何使用 GRUB 包里面的 Starfield 主题：
 
 编辑 `/etc/default/grub`
 
@@ -275,20 +259,15 @@ GRUB_THEME="/usr/share/grub/themes/starfield/theme.txt"
 
 ```
 
-重生成配置:
+需要[重新生成](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#生成主配置文件 "GRUB (简体中文)") `grub.cfg` 来让修改起作用。如果配置成功的话，在重生成配置过程中，会在终端里出现 `Found theme: /usr/share/grub/themes/starfield/theme.txt`。
 
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-配置成功的话,在重生成配置过程中,会出现`Found theme: /usr/share/grub/themes/starfield/theme.txt`.使用主题就不会使用之前的背景图像
+一旦使用了主题，你设置的背景图像通常就不起作用了。
 
 ### 菜单颜色
 
-GRUB支持设置菜单颜色.可使用的颜色能从[the GRUB Manual](https://www.gnu.org/software/grub/manual/html_node/Theme-file-format.html)里面找到.示例如下:
+GRUB 支持设置菜单颜色。可使用的颜色能从 [GRUB 手册](https://www.gnu.org/software/grub/manual/html_node/Theme-file-format.html)里面找到。示例如下：
 
-编辑`/etc/default/grub`:
+编辑 `/etc/default/grub`：
 
 ```
 GRUB_COLOR_NORMAL="light-blue/black"
@@ -296,97 +275,67 @@ GRUB_COLOR_HIGHLIGHT="light-cyan/blue"
 
 ```
 
-重建配置档:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
 ### 隐藏菜单
 
-GRUB特性之一就是支持隐藏/跳过目录,同时支持按`Esc`来打断隐藏/跳过.同时还支持设置是否显示timeout计时器 下面的例子设置5s钟内没有按Esc键就启动默认的启动项,并且在屏幕上显示倒计时:
+GRUB 特性之一就是支持隐藏/跳过菜单，可以在需要的时候按 `Esc` 来取消隐藏/跳过。同时还支持设置是否显示 timeout 计时器。
 
-编辑`/etc/default/grub`:
-
-```
-GRUB_HIDDEN_TIMEOUT=5
-GRUB_HIDDEN_TIMEOUT_QUIET=false
+按照你的想法来编辑 `/etc/default/grub`。添加下面的几行可以启动这个功能，其中计时器被设定为 5 秒钟，而且可以被用户看到：
 
 ```
-
-重建配置档:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
+GRUB_TIMEOUT=5
+GRUB_TIMEOUT_STYLE='countdown'
 
 ```
 
-### 禁用framebuffer
+GRUB_TIMEOUT 是设置显示菜单前等待几秒。
 
-使用NVIDIA私有驱动的用户可能希望禁用GRUB的framebuffer,因为会导致驱动错误.
+### 禁用 framebuffer
 
-在`/etc/default/grub`中添加(如果已经有背注释掉的这行,就取消注释):
+使用 NVIDIA 私有驱动的用户可能希望禁用 GRUB 的 framebuffer，因为它会导致驱动错误。
+
+要禁用 framebuffer，只要在 `/etc/default/grub` 中取消下面这行的注释：
 
 ```
 GRUB_TERMINAL_OUTPUT=console
 
 ```
 
-重建配置档:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-如果你想保留GRUB的framebuffer,解决方法是在GRUB载入内核前进入文字模式.可以通过在`/etc/default/grub`设置如下:
+如果你想保留 GRUB 的 framebuffer，解决方法是在 GRUB 载入内核前进入文字模式。可以通过在 `/etc/default/grub` 中进行如下修改：
 
 ```
 GRUB_GFXPAYLOAD_LINUX=text
 
 ```
 
-然后重建配置档.
+## 通过 GRUB 直接启动 ISO9660 映像文件
 
-## Booting ISO9660 image file directly via GRUB
-
-GRUB supports booting from ISO images directly via loopback devices, see [Multiboot USB drive#Using GRUB and loopback devices](/index.php/Multiboot_USB_drive#Using_GRUB_and_loopback_devices "Multiboot USB drive") for examples.
+GRUB 支持通过 loopback 设备直接从 ISO 映像启动，例如参考 [Multiboot USB drive#Using GRUB and loopback devices](/index.php/Multiboot_USB_drive#Using_GRUB_and_loopback_devices "Multiboot USB drive")。
 
 ## 持久块设备命名法
 
-[持久块设备命名法](/index.php/Persistent_block_device_naming "Persistent block device naming")(Persistent block device naming)的一个目的是使用全局的UUID来区分分区,而不是用老的`/dev/sd*`表示法.好处显而易见.
+为[块设备持久命名](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)") (Persistent block device naming) 的一种方式是使用全局的 UUID 来区分分区，而不是用老的 `/dev/sd*` 表示法。其好处在上面链接中已详述。
 
-GRUB默认使用持久块设备命名法
+GRUB 默认就使用文件系统的 UUID 来为块设备持久命名。
 
-**Note:** 每次文件系统调整过后,就需要用新的UUID来更新`/boot/grub.cfg`.通过Live-CD调整分区和文件系统后要特别注意这点
+**注意:** 每次相关的文件系统调整后，就需要在 `/etc/default/grub` 中使用新的 UUID，然后更新`/boot/grub.cfg`。通过 Live-CD 调整分区和文件系统后要特别注意这点。
 
-是否使用UUID由`/etc/default/grub`里的这个选项控制:
-
-```
-# GRUB_DISABLE_LINUX_UUID=true
+是否使用 UUID 由 `/etc/default/grub` 里的这个选项控制：
 
 ```
-
-无论如何,变更配置后请重建配置档:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
+GRUB_DISABLE_LINUX_UUID=true
 
 ```
 
 ## 使用卷标
 
-GRUB支持以卷标识别文件系统(通过`search`命令的`--label参数`).
-
-首先,给文件系统设置一个卷标:
+通过使用 `search` 命令的 `--label`参数，可以使用卷标，即附加在文件系统上方便人阅读的字符串。首先，给文件系统设置一个卷标：
 
 ```
-# tune2fs -L *LABEL* *PARTITION*
+# tune2fs -L *卷标* *分区*
 
 ```
 
-然后在启动项中使用这个卷标:
+然后使用这个卷标添加启动条目。例如这样：
 
 ```
 menuentry "Arch Linux, session texte" {
@@ -399,7 +348,9 @@ menuentry "Arch Linux, session texte" {
 
 ## 用密码保护 GRUB 菜单
 
-如果你想禁止其他人改变启动参数或者使用GRUB命令行,可以给GRUB配置添加用户名/密码. 运行 `grub-mkpasswd-pbkdf2`,输入密码:
+**警告:** 如果有人能对你的机器进行物理上的访问，而且可以使用 Live USB 或磁盘启动（例如 BIOS 允许从外接磁盘启动），而 `/boot` 又处于一个没有加密的分区上面，那他就可以非常简单地通过编辑 GRUB 设置文件来绕过下面的这些。参考[GRUB (简体中文)#/boot 加密](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#/boot_加密 "GRUB (简体中文)")和[Security (简体中文)#磁盘加密](/index.php/Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#磁盘加密 "Security (简体中文)")。
+
+如果你想禁止其他人改变启动参数或者使用 GRUB 命令行，可以给 GRUB 的配置文件关联一个用户名/密码。只需 运行 `grub-mkpasswd-pbkdf2`，输入密码然后确认：
 
  `grub-mkpasswd-pbkdf2` 
 ```
@@ -408,144 +359,54 @@ Your PBKDF2 is grub.pbkdf2.sha512.10000.C8ABD3E93C4DFC83138B0C7A3D719BC650E62343
 
 ```
 
-然后将下面的内容添加到`/etc/grub.d/00_header`:
+然后将下面的内容添加到 `/etc/grub.d/40_custom`：
 
- `/etc/grub.d/00_header` 
+ `/etc/grub.d/40_custom` 
 ```
-cat << EOF
-
-set superusers="**username**"
-password_pbkdf2 **username** **<password>**
-
-EOF
-
+set superusers="**用户名**"
+password_pbkdf2 **用户名** **<密码>**
 ```
 
-**Note:** 不能直接将
+这里的 `<密码>` 是由 `grub-mkpasswd_pbkdf2` 所生成的那个字符串。
 
-set superusers="**username**" password_pbkdf2 **username** **<password>** 添加到/etc/grub.d/00_header中去,而必须使用上述方法.否则会报错 password_pbkdf2: not found
+然后重新生成主配置文件，现在你的 GRUB 命令行、启动参数和所有的启动条目都得到保护了。
 
-`<password>`是`grub-mkpasswd_pbkdf2`生成的那个加密过后密码.
+可以参考 [GRUB 手册](https://www.gnu.org/software/grub/manual/grub.html#Security)中的 "Security" 部分来将设置放宽或者针对多用户进行更复杂的定制。
 
-然后重建配置档.其他用户没有密码就不能变更GRUB配置或者使用GRUB命令行了.
+### 只针对编辑 GRUB 和控制台选项进行密码保护
 
-可以参考[the GRUB manual](https://www.gnu.org/software/grub/manual/grub.html#Security)中的"Security"部分来进行更多的客制化安全设定
+对一个菜单条目添加 `--unrestricted` 选项将会允许所有的用户启动这个操作系统，但却不能修改这个条目，也不能进入 GRUB 命令行控制台。 只有超级用户或者由 `--user` 开关指定的用户才能修改这个菜单条目。
 
-## 启动时隐藏GRUB界面,除非按着SHIFT键
+ `/boot/grub/grub.cfg`  `menuentry 'Arch Linux' --unrestricted --class arch --class gnu-linux --class os ...` 
 
-为了获取更快的启动速度,而不用等GRUB倒计时,可以命令GRUB在启动时隐藏目录,除非SHIFT被按着. 将如下行添加到`/etc/default/grub`:
+要给 Linux 启动条目添加 `--unrestricted`，可以修改 `/etc/grub.d/10_linux` 文件开头的 `CLASS` 变量。
+
+ `/etc/grub.d/10_linux`  `CLASS="--class gnu-linux --class gnu --class os --unrestricted"` 
+
+## 在没有按着 SHIFT 键时隐藏 GRUB 界面
+
+为了获取更快的启动速度，而不用等 GRUB 倒计时，可以命令 GRUB 在启动时隐藏目录，仅在 `Shift` 被按住的时候才显示。
+
+将如下行添加到`/etc/default/grub`来启动这个功能：
 
 ```
  GRUB_FORCE_HIDDEN_MENU="true"
 
 ```
- `/etc/grub.d/31_hold_shift` 
+
+然后创建连接里的文件[[1]](https://gist.githubusercontent.com/anonymous/8eb2019db2e278ba99be/raw/257f15100fd46aeeb8e33a7629b209d0a14b9975/gistfile1.sh)，给它可执行权限，然后重新生成主配置文件：
+
 ```
-#! /bin/sh
-set -e
-
-# grub-mkconfig helper script.
-# Copyright (C) 2006,2007,2008,2009  Free Software Foundation, Inc.
-#
-# GRUB is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# GRUB is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with GRUB.  If not, see <http://www.gnu.org/licenses/>.
-
-prefix="/usr"
-exec_prefix="${prefix}"
-datarootdir="${prefix}/share"
-
-export TEXTDOMAIN=grub
-export TEXTDOMAINDIR="${datarootdir}/locale"
-source "${datarootdir}/grub/grub-mkconfig_lib"
-
-found_other_os=
-
-make_timeout () {
-
-  if [ "x${GRUB_FORCE_HIDDEN_MENU}" = "xtrue" ] ; then 
-    if [ "x${1}" != "x" ] ; then
-      if [ "x${GRUB_HIDDEN_TIMEOUT_QUIET}" = "xtrue" ] ; then
-    verbose=
-      else
-    verbose=" --verbose"
-      fi
-
-      if [ "x${1}" = "x0" ] ; then
-    cat <<EOF
-if [ "x\${timeout}" != "x-1" ]; then
-  if keystatus; then
-    if keystatus --shift; then
-      set timeout=-1
-    else
-      set timeout=0
-    fi
-  else
-    if sleep$verbose --interruptible 3 ; then
-      set timeout=0
-    fi
-  fi
-fi
-EOF
-      else
-    cat << EOF
-if [ "x\${timeout}" != "x-1" ]; then
-  if sleep$verbose --interruptible ${GRUB_HIDDEN_TIMEOUT} ; then
-    set timeout=0
-  fi
-fi
-EOF
-      fi
-    fi
-  fi
-}
-
-adjust_timeout () {
-  if [ "x$GRUB_BUTTON_CMOS_ADDRESS" != "x" ]; then
-    cat <<EOF
-if cmostest $GRUB_BUTTON_CMOS_ADDRESS ; then
-EOF
-    make_timeout "${GRUB_HIDDEN_TIMEOUT_BUTTON}" "${GRUB_TIMEOUT_BUTTON}"
-    echo else
-    make_timeout "${GRUB_HIDDEN_TIMEOUT}" "${GRUB_TIMEOUT}"
-    echo fi
-  else
-    make_timeout "${GRUB_HIDDEN_TIMEOUT}" "${GRUB_TIMEOUT}"
-  fi
-}
-
-  adjust_timeout
-
-    cat <<EOF
-if [ "x\${timeout}" != "x-1" ]; then
-  if keystatus; then
-    if keystatus --shift; then
-      set timeout=-1
-    else
-      set timeout=0
-    fi
-  else
-    if sleep$verbose --interruptible 3 ; then
-      set timeout=0
-    fi
-  fi
-fi
-EOF
+# chmod a+x /etc/grub.d/31_hold_shift
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 
-## 使用 UUID 和基础脚本
+**注意:** 这个设置使用 keystatus 来检测按键事件，所以可能在某些机器上不能用。
 
-如果你想要使用UUID来避免不可靠的BIOS设备命名或者正在研究GRUB语法,这里有个使用UUID的示例性的启动项配置脚本.如果你想要将其移植到自己的系统上,只需要修改UUID就行了.这个例子假设系统的boot和root文件系统是在不同的分区上.如果你还有其他分区,请做相应修改.
+## 将 UUID 和基础脚本结合使用
+
+如果你想要使用 UUID 来避免不可靠的 BIOS 设备命名或者正在研究 GRUB 语法，这里有个使用了 UUID 的启动菜单项，和一个让 GRUB 使用你系统中正确的磁盘分区的小脚本。如果你想要将其移植到自己的系统上，只需要把 UUID 改成你的系统上的就行了。这个例子假设系统的 boot 和 root 文件系统是在不同的分区上，如果你还有其他分区，请相应地修改 GRUB 设置。
 
 ```
 menuentry "Arch Linux 64" {
@@ -574,171 +435,186 @@ menuentry "Arch Linux 64" {
 
 ```
 
-## 手动创建 grub.cfg
+## 多个启动条目
 
-**Warning:** *不推荐*编辑这个文件.这个文件由`grub-mkconfig`生成,最好编辑`/etc/default/grub`和`/etc/grub.d`文件夹下的脚本以实现修改.
+### 取消子菜单
 
-基本的GRUB配置文件使用如下选项:
-
-*   `(hd*X*,*Y*)` 是*X*磁盘的*Y*分区,分区从1开始计数,磁盘从0开始计数.
-*   `set default=*N*`设定用户选择超时时间过后的默认启动项
-*   `set timeout=*M*`设定用户选择超时时间(秒).
-*   `menuentry "title" {entry options}`设置一个名为`title`的启动项
-*   `set root=(hd*X*,*Y*)`设定启动分区(kernel和GRUB模组所在磁盘),/boot没被要求独占一个分区,有可能就是root分区下的一个文件夹
-
-示例配置如下:
-
- `/boot/grub/grub.cfg` 
-```
-# Config file for GRUB - The GNU GRand Unified Bootloader
-# /boot/grub/grub.cfg
-
-# DEVICE NAME CONVERSIONS
-#
-#  Linux           Grub
-# -------------------------
-#  /dev/fd0        (fd0)
-#  /dev/sda        (hd0)
-#  /dev/sdb2       (hd1,2)
-#  /dev/sda3       (hd0,3)
-#
-
-# Timeout for menu
-set timeout=5
-
-# Set default boot entry as Entry 0
-set default=0
-
-# (0) Arch Linux
-menuentry "Arch Linux" {
-  set root=(hd0,1)
-  linux /vmlinuz-linux root=/dev/sda3 ro
-  initrd /initramfs-linux.img
-}
-
-## (1) Windows
-#menuentry "Windows" {
-#  set root=(hd0,3)
-#  chainloader +1
-#}
-
-```
-
-## Multiple entries
-
-### Disable submenu
-
-If you have multiple kernels installed, say linux and linux-lts, by default `grub-mkconfig` groups them in a submenu. If you do not like this behaviour you can go back to one single menu by adding the following line to `/etc/default/grub`:
+如果你安装了多个内核，比如说 linux 和 linux-lts，那么 `grub-mkconfig` 默认会把他们分成一组建立一个子菜单。如果你不想这样，可以在 `/etc/default/grub` 文件里添加下面这行来回到仅有一个菜单的情形：
 
 ```
  GRUB_DISABLE_SUBMENU=y
 
 ```
 
-### 调用之前的启动项
+### 调用之前的启动条目
 
-GRUB能够记住你当前使用的启动项并且在下次启动时将其作为默认项.当你使用多个内核或操作系统时,这个特性很有用. 编辑`/etc/default/grub`中的`GRUB_DEFAULT`选项:
+GRUB 能够记住你最近一次使用的启动项，并且在下次启动时将其作为默认项。当你使用多个内核或操作系统时（比如当前的 Arch 和一个用来做后备选项的 LTS 内核），这个特性很有用。要开启这个功能，编辑 `/etc/default/grub` 中的 `GRUB_DEFAULT` 选项：
 
 ```
 GRUB_DEFAULT=saved
 
 ```
 
-上面的命令会告诉GRUB使用记住的启动项为默认启动项. 将下面的行添加到`/etc/default/grub`会让GRUB记住当前的启动项:
+上面的命令会告诉 GRUB 使用记住的启动项为默认启动项。要想让 GRUB 记住当前选择的启动项，将下面的行添加到 `/etc/default/grub`：
 
 ```
 GRUB_SAVEDEFAULT=true
 
 ```
 
-**Note:** 手动添加启动项到`/etc/grub.d/40_custom`或`/boot/grub/custom.cfg`中,比如Windows启动项,需要添加`savedefault`
+仅当 /boot 不是 btrfs 文件系统的时候才能用，因为 GRUB 没法对 btrfs 进行写入操作。但它会生成一个容易误导人的错误信息："sparse file not allowed. Press any key to continue."
 
-### Changing the default menu entry
+**注意:** 手动添加启动项到 `/etc/grub.d/40_custom` 或 `/boot/grub/custom.cfg`中，比如添加 Windows 启动项，需要先添加`savedefault`选项。
 
-可以通过修改`/etc/default/grub`中的`GRUB_DEFAULT`值来改变默认启动项
+### 修改默认菜单条目
 
-```
-GRUB_DEFAULT=0
+可以通过修改 `/etc/default/grub` 中的 `GRUB_DEFAULT` 值来改变默认启动项：
 
-```
-
-GRUB启动项序号从0开始计数.0代表第一个启动项.
-
-除了使用启动项序号,也可以使用启动项名:
+使用菜单标题：
 
 ```
-GRUB_DEFAULT='Arch Linux, with Linux core repo kernel'
+GRUB_DEFAULT='Advanced options for Arch Linux>Arch Linux, with Linux linux'
 
 ```
 
-### 设定下次启动的启动项(一次性,非持久)
+使用数字编号：
 
-命令`grub-reboot`可以设置下次启动时启动哪个启动项而不必修改配置文件或者在启动时手动选择.这个设置是一次性的,即不会改变GRUB的默认启动项.
+```
+ GRUB_DEFAULT="1>2"
 
-**Note:** 需要在`/etc/default/grub`中设定 `GRUB_DEFAULT=saved`,然后重建配置档.在手动生成的 `grub.cfg`中, 使用 `set default="${saved_entry}"`.
+```
+
+GRUB 启动项序号从 0 开始计数，0 代表第一个启动项，也是上述选项的默认值，1 表示第二个启动项，以此类推。主菜单和子菜单项之间用 `>` 隔开。
+
+上面的例子启动的是主菜单项 'Advanced options for Arch Linux' 下子菜单的第三项。
+
+### 自动启动非默认启动条目（仅一次）
+
+如果你想在下一次启动的时候启动一个非默认的启动项，命令 `grub-reboot` 非常有用。当系统下一次启动时，GRUB 会自动载入这个命令后的第一个参数所指的那个启动项，而以后再次启动时，GRUB 会回到正常状态加载默认条目。这样就不用修改配置文件或者在启动时进行手动选择了。
+
+**注意:** 这个功能需要在 `/etc/default/grub` 中设定 `GRUB_DEFAULT=saved`，然后重新生成`grub.cfg`；或者在手动生成的 `grub.cfg` 中, 使用 `set default="${saved_entry}"`。
+
+## 演奏一曲
+
+通过修改 `GRUB_INIT_TUNE` 变量，你可以在启动时让 PC-speaker 演奏曲子。比如要演奏柏辽兹《幻想交响曲》“妖魔夜宴”乐章片段（大管部分），你可以添加下面的设置：
+
+`GRUB_INIT_TUNE="312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5"`
+
+更多相关信息可以查看 `info grub -n play`。
+
+## 为早期启动手动配置核心映像
+
+如果你需要用一个特殊的键盘布局，或者要让 GRUB 环境访问 `/boot` 的配置步骤太过复杂，导致 GRUB 没法自动配置，你可以自己生成一个核心映像。在 UEFI 系统上，核心映像就是在启动时需要被固件载入的 `grubx64.efi` 文件。自己建立一个核心映像，就可以嵌入在早期启动过程中需要用到的所有模块，以及用来引导 GRUB 配置脚本。
+
+首先，假设在一个 UEFI 系统中，我们需要在早期启动过程中载入 `dvorak` 键盘布局，以输入 `/boot` 加密分区的密码。
+
+从生成的 `/boot/grub/grub.cfg` 文件中查看需要使用哪些模块来挂载加密的 `/boot` 分区。例如在你的 `menuentry` 一项中你应该看到类似下面的内容：
+
+```
+insmod diskfilter cryptodisk luks gcry_rijndael gcry_rijndael gcry_sha256
+insmod ext2
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+```
+
+把这些模块都记下来，他们都应该被包含到核心映像里面。现在把你的键盘布局打包，它应该作为一个 memdisk 来嵌入到核心映像里：
+
+```
+# grub-kbdcomp -o dvorak.gkb dvorak
+# tar cf memdisk.tar dvorak.gkb
+
+```
+
+现在创建需要在 GRUB 核心映像中使用的配置文件。这和正常的 GRUB 配置文件的格式是一样的，但只需要简单几行来载入 `/boot` 分区里的主配置文件就可以了：
+
+ `early-grub.cfg` 
+```
+set root=(memdisk)
+set prefix=($root)/
+
+terminal_input at_keyboard
+keymap /dvorak.gkb
+
+cryptomount -u 1234abcdef1234abcdef1234abcdef
+set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
+set prefix=($root)/grub
+
+configfile grub.cfg
+```
+
+最后，生成核心映像，列出在 `grub.cfg` 文件中所需要的所有模块，再加上 `early-grub.cfg` 脚本中所使用的模块。上例中需要的模块有 `memdisk`, `tar`, `at_keyboard`, `keylayouts` 和 `configfile`。
+
+```
+# grub-mkimage -c early-grub.cfg -o grubx64.efi -O x86_64-efi -m memdisk.tar diskfilter cryptodisk luks gcry_rijndael gcry_sha256 ext2 memdisk tar at_keyboard keylayouts configfile
+
+```
+
+生成的 EFI 核心映像可以和由 `grub-install` 所自动生成的一样使用，把它放在你的 EFI 分区，然后使用 `efibootmgr` 来启用它，或者依照你的系统固件来适当地进行配置。
 
 ## UEFI 延伸阅读
 
-下面是关于通过 UEFI 安装 Arch 的相关信息。
+下面是关于通过 UEFI 安装 Arch 的其他相关信息。
 
-### 其他方法
+### 另一种安装方法
 
-通常，不管 EFI 系统分区是否挂载，GRUB 都会将所有文件放到 `/boot`。
+通常，不管 EFI 系统分区挂载到哪，GRUB 都会将所有文件包括配置文件放到 `/boot`。
 
-如果你想将所有的文件放在 ESP 中,请给grub-install命令添加 `--boot-directory=*esp*` 选项:
+如果你想将所有的文件放在 EFI 系统分区中，请给 grub-install 命令添加 `--boot-directory=*esp*` 选项：
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub --boot-directory=*esp* --debug
 
 ```
 
-这个命令会将 GRUB 文件放在 {{ic|*esp*/grub} 而不是 `/boot/grub` 中. 使用这个方法, 请确保 grub-mkconfig 设置了正确的目录:
+这个命令会将 GRUB 文件放在 {{ic|*esp*/grub} 而不是 `/boot/grub` 中。使用这个方法，请确保 grub-mkconfig 将配置文件放在与上面一样的目录里：
 
 ```
 # grub-mkconfig -o *esp*/grub/grub.cfg
 
 ```
 
-配置档是一样的.
+其他的配置是完全一样的。
 
-### 在固件启动管理器中创建GRUB条目
+### UEFI 固件解决方案
 
-`grub-install`会自动尝试在启动管理器中创建GRUB条目.如果没有成功,请参考,里面有关于使用`efibootmgr`创建启动目录条目的介绍.一般来说,这个问题都是因为你没有以UEFI模式启动CD/USB造成的.请参考[UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+一些 UEFI 固件要求可启动 *.efi* 文件叫一个特定的名字而且放在一个特定的位置中： `*esp*/EFI/boot/bootx64.efi`（其中 `*esp*` 是 UEFI 分区挂载点）。这时如果不能满足这些条件，就会不能启动。好在这对那些没有这些要求的固件没有影响。
 
-### 创建GRUB Standalone模式的UEFI应用程序
-
-可以建立一个`grubx64_standalone.efi`,这个应用将所有的模组嵌入自身的memdisk中,所以就不需要使用单独的目录来存放GRUB UEFI模组和其他相关文件了,使用[grub](https://www.archlinux.org/packages/?name=grub)包里的`grub-mkstandalone`可以实现这个功能.
-
-最简单的的方法就是使用`grub-mkstandalone`,不过,我们还可以指定嵌入哪些模组:
+要满足要求，首先创建必要的目录，然后通过如下方式复制 `.efi` 并重新命名：
 
 ```
-# grub-mkstandalone --directory="/usr/lib/grub/x86_64-efi/" --format="x86_64-efi" --compression="xz" \
---output="$esp/EFI/grub/grubx64_standalone.efi" <你想嵌入的模组>
+# mkdir *esp*/EFI/boot
+# cp *esp*/EFI/grub_uefi/grubx64.efi *esp*/EFI/boot/bootx64.efi
 
 ```
 
-`grubx64_standalone.efi`文件要求将`grub.cfg`放置到`(memdisk)/boot/grub`中,而这个memdisk是嵌入到EFI应用当中的.`grub-mkstandlone`脚本允许传递将要嵌入memdisk的文件列表.(上面命令里的"<你想嵌入的模组>")
+### 在固件启动管理器中创建 GRUB 条目
 
-如果你的`grub.cfg`的路径是`/home/user/Desktop/grub.cfg`,那么需要创建一个临时的`/home/user/Desktop/boot/grub/`目录,然后将grub.cfg复制到其中并进入这个目录并运行:
+`grub-install` 会自动尝试在启动管理器中创建 GRUB 条目。如果没有成功，请参考 [Unified Extensible Firmware Interface (简体中文)#efibootmgr](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#efibootmgr "Unified Extensible Firmware Interface (简体中文)")，里面有如何使用 `efibootmgr` 创建启动目录条目的介绍。一般来说，这个问题都是因为你没有以 UEFI 模式启动 CD/USB 造成的。请参考 [Unified Extensible Firmware Interface (简体中文)#从 ISO 创建 UEFI 可启动 USB](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#从_ISO_创建_UEFI_可启动_USB "Unified Extensible Firmware Interface (简体中文)")。
+
+### 独立的 GRUB
+
+本节假设你要为 x86_64 系统 (x86_64-efi) 创建一个独立的 GRUB。至于 32 位 (IA32) EFI 系统，适当地将 `x86_64-efi` 修改成 `i386-efi` 就可以了。
+
+你可以建立一个 `grubx64_standalone.efi` 应用，这个 UEFI 应用将所有的模组嵌入应用内部的一个 tar 包中，所以就不需要使用单独的目录来存放 GRUB UEFI 模组和其他相关文件了。使用 [grub](https://www.archlinux.org/packages/?name=grub) 包里的 `grub-mkstandalone` 命令按照下面的方法操作来实现这个功能：
 
 ```
-# grub-mkstandalone --directory="/usr/lib/grub/x86_64-efi/" --format="x86_64-efi" --compression="xz" \
---output="$esp/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg"
+# echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
+# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg=/tmp/grub.cfg" -v
 
 ```
 
-进入`/home/user/Desktop/boot/grub/`但是传递`boot/grub/grub.cfg`参数(请注意是`boot/`而不是`/boot/`)的原因是`grub-mkstandalone`会自动将boot/grub/grub.cfg处理为`/(memdisk)/boot/grub/grub.cfg`
+然后把 GRUB 配置文件复制到 `*esp*/EFI/grub/grub.cfg`，再使用 [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#efibootmgr "Unified Extensible Firmware Interface (简体中文)") 为 `*esp*/EFI/grub/grubx64_standalone.efi` 创建一个 UEFI 启动管理器条目。
 
-如果你传递`/home/user/Desktop/grub.cfg`,那么处理后的结果会是`(memdisk)/home/user/Desktop/grub.cfg`.如果传递`/home/user/Desktop/boot/grub/grub.cfg`,那么结果就是`(memdisk)/home/user/Desktop/boot/grub/grub.cfg`.所以需要进入`/home/user/Desktop/boot/grub/`并传递`boot/grub/grub.cfg`参数,因为这样才能生成`grub.efi`需要的`(memdisk)/boot/grub/grub.cfg`.
+**注意:** 要让 `${cmdpath}` 功能正常工作，`--modules="part_gpt part_msdos"` 选项（包含引号）是必要的。
 
-如果需要为`$esp/EFI/arch_grub/grubx64_standalone.efi`创建一个UEFI启动器条目,使用`efibootmgr`.[#Create GRUB entry in the Firmware Boot Manager](#Create_GRUB_entry_in_the_Firmware_Boot_Manager)里有介绍
+**警告:** 如果你在填写 `${cmdpath}` 的时候漏掉一个斜杠（比如把 `(hd1,msdos2)/EFI/Boot` 写成 `(hd1,msdos2)EFI/Boot`），你就会发现 `grub.cfg` 文件没法读取，然后被迫进入 GRUB 命令行中。如果出现这样的问题，检查 `${cmdpath}` 设置成了什么 (`echo ${cmdpath}` )，然后手工载入配置文件（例如 `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`）。
 
-### Technical information
+### 技术信息
 
-The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
+GRUB EFI 文件总是要配置文件放在 `${prefix}/grub.cfg`。当然在独立的 GRUB EFI 文件中，`${prefix}` 位于一个 tar 包的内部，嵌入在 GRUB EFI 文件自身之中（在 GRUB 环境中，这被称作 `(memdisk)`）。这个 tar 包包含了所有在正常的 GRUB EFI 下存储在 `/boot/grub` 中的文件。
 
-Due to this embedding of `/boot/grub` contents inside the standalone image itself, it does not rely on actual (external) `/boot/grub` for anything. Thus in case of standalone GRUB EFI file `${prefix}==(memdisk)/boot/grub` and the standalone GRUB EFI file reads expects the config file to be at `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`.
+因为将 `/boot/grub` 中的内容嵌入到了独立映像的内部，它就不再对任何实际的（外部的） `/boot/grub` 有任何依赖了。因此在独立 GRUB EFI 文件的情形下 `${prefix}==(memdisk)/boot/grub`，而且独立的 GRUB EFI 文件认为其配置文件存放于 `${prefix}/grub.cfg==(memdisk)/boot/grub/grub.cfg`。
 
-Hence to make sure the standalone GRUB EFI file reads the external `grub.cfg` located in the same directory as the EFI file (inside the GRUB environment, it is denoted by `${cmdpath}` ), we create a simple `/tmp/grub.cfg` which instructs GRUB to use `${cmdpath}/grub.cfg` as its config (`configfile ${cmdpath}/grub.cfg` command in `(memdisk)/boot/grub/grub.cfg`). We then instruct grub-mkstandalone to copy this `/tmp/grub.cfg` file to `${prefix}/grub.cfg` (which is actually `(memdisk)/boot/grub/grub.cfg`) using the option `"boot/grub/grub.cfg=/tmp/grub.cfg"`.
+因此要让独立的 GRUB EFI 文件读取存储在与 EFI 文件相同目录（在 GRUB 环境中用 `${cmdpath}` 表示）下的外部 `grub.cfg` 时，我们创建一个简单的 `/tmp/grub.cfg` 来让 GRUB 使用 `${cmdpath}/grub.cfg` 来做其配置文件。（在 `(memdisk)/boot/grub/grub.cfg` 中使用 `configfile ${cmdpath}/grub.cfg` 命令。）然后我们给 grub-mkstandalone 添加 `"boot/grub/grub.cfg=/tmp/grub.cfg"` 选项，把这个 `/tmp/grub.cfg` 文件复制到 `${prefix}/grub.cfg`（事实上就是 `(memdisk)/boot/grub/grub.cfg`）。
 
-This way, the standalone GRUB EFI file and actual `grub.cfg` can be stored in any directory inside the EFI System Partition (as long as they are in the same directory), thus making them portable.
+这样，独立的 GRUB EFI 文件和这个 `grub.cfg` 可以存放在 EFI 系统分区中的任何一个目录里，只有它们处在同一个目录中就可以。这样它们就变得可移植了。

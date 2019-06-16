@@ -2,7 +2,11 @@
 
 Το [Arch wiki](/index.php/Main_page "Main page") το οποίο διατηρείται από την κοινότητα είναι μία πολύ καλή πηγή και θα πρέπει να είναι το πρώτο που συμβουλεύεστε. Το κανάλι στο [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), και τα [forums](https://bbs.archlinux.org/) είναι επίσης διαθέσιμα αν η απάντηση δεν μπορεί να βρεθεί αλλού. Επίσης, καλό είναι να βλέπετε και τις `man` σελίδες για όποια εντολή δεν ξέρετε καλά· αυτό μπορεί να γίνει καλώντας την `man *εντολή*`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Λήψη](#Λήψη)
 *   [2 Γλώσσα πληκτρολογίου](#Γλώσσα_πληκτρολογίου)

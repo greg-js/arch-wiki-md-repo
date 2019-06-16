@@ -99,7 +99,7 @@ A instalação de pacotes do AUR é um processo relativamente simples. Essencial
 2.  Certifique-se de que o `PKGBUILD` e os arquivos que o acompanham não são maliciosos ou duvidosos.
 3.  Execute `makepkg -si` no diretório onde os arquivos foram salvos. Isso vai baixar o código, resolver as dependências com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), compilá-lo, empacotá-lo e instalar o pacote.
 
-**Nota:** É *sua responsabilidade* acompanhar atualizações de pacotes no AUR; o *pacman* só acompanha [repositórios de binários](/index.php/Pacman_(Portugu%C3%AAs)#repositórios_e_espelhos "Pacman (Português)"). Quando pacotes nos repositórios oficiais são atualizados, você precisará recompilar quaisquer pacotes do AUR que dependam deles.
+**Nota:** É *sua responsabilidade* acompanhar atualizações de pacotes no AUR; o *pacman* só acompanha [repositórios de binários](/index.php/Pacman_(Portugu%C3%AAs)#Repositórios_e_espelhos "Pacman (Português)"). Quando pacotes nos repositórios oficiais são atualizados, você precisará recompilar quaisquer pacotes do AUR que dependam deles.
 
 ### Pré-requisitos
 
@@ -423,7 +423,7 @@ Um [(Trusted User)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR
 
 ### Qual é a diferença entre o Arch User Repository e repositório [community]?
 
-Os pacotes AUR são mantidos pelos membros da comunidade e fornecidos em formato fonte, enquanto os pacotes no [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community") são mantidos pelos [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") e fornecidos em formato binário pré-compilado. Veja [#Promovendo pacotes para o repositório community](#Promovendo_pacotes_para_o_repositório_community) para mais informações.
+Os pacotes AUR são mantidos pelos membros da comunidade e fornecidos em formato fonte, enquanto os pacotes no [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community") são mantidos pelos [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") e fornecidos em formato binário pré-compilado. Veja [#Promovendo pacotes ao repositório community](#Promovendo_pacotes_ao_repositório_community) para mais informações.
 
 ### Foo no AUR está desatualizado; o que devo fazer?
 
@@ -449,7 +449,7 @@ Há vários canais disponíveis para você enviar seu pacote para revisão; veja
 
 ### Como que faz para um PKGBUILD ir para o repositório *community*?
 
-Veja [#Promovendo pacotes para o repositório community](#Promovendo_pacotes_para_o_repositório_community).
+Veja [#Promovendo pacotes ao repositório community](#Promovendo_pacotes_ao_repositório_community).
 
 ### Como o posso agilizar processo de repetidas compilações?
 

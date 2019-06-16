@@ -40,11 +40,10 @@ Related articles
     *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
     *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
     *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_$srcdir)
-    *   [4.6 ERROR: One or more PGP signatures could not be verified!](#ERROR:_One_or_more_PGP_signatures_could_not_be_verified!)
-    *   [4.7 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
-        *   [4.7.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
-        *   [4.7.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer's_env_keep)
-    *   [4.8 Makepkg fails, but make succeeds](#Makepkg_fails,_but_make_succeeds)
+    *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
+        *   [4.6.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
+        *   [4.6.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer's_env_keep)
+    *   [4.7 Makepkg fails, but make succeeds](#Makepkg_fails,_but_make_succeeds)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -370,12 +369,6 @@ To identify which files, run the following from the *makepkg* build directory:
 $ grep -R "$(pwd)/src" pkg/
 
 ```
-
-### ERROR: One or more PGP signatures could not be verified!
-
-Most likely you do not have the required public key(s) in you personal keyring to verify downloaded files. If one or more .sig files are downloaded while building the package, [makepkg will automatically verify corresponding file(s) with the public key of its signer](#Signature_checking). If you do not have the required key in your personal keyring, *makepkg* will fail to do the verification.
-
-The recommended way to deal with this problem is to import the required public key, either [manually](/index.php/GnuPG#Import_a_public_key "GnuPG") or [from a key server](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Often, you can simply find the fingerprint of the needed public key(s) in the [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") section of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
 ### Makepkg fails to download dependencies when behind proxy
 

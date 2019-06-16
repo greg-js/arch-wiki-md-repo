@@ -1,4 +1,4 @@
-[Telegram](https://en.wikipedia.org/wiki/Telegram_(service) is a cloud-based cross-platform instant messaging service with optional end-to-end encryption. Account creation requires a phone number.
+[Telegram](https://en.wikipedia.org/wiki/Telegram_(software) is a cloud-based cross-platform instant messaging service with optional end-to-end encryption. Account creation requires a phone number.
 
 The official clients are open-source but the code for recent versions is not always immediately published. The server-side code is proprietary.
 

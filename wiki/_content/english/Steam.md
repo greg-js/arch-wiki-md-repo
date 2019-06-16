@@ -35,7 +35,7 @@ Related articles
     *   [5.4 Changing the Steam notification position](#Changing_the_Steam_notification_position)
         *   [5.4.1 Use a skin](#Use_a_skin)
         *   [5.4.2 Live patching](#Live_patching)
-    *   [5.5 In-home streaming](#In-home_streaming)
+    *   [5.5 Steam Remote Play](#Steam_Remote_Play)
         *   [5.5.1 Different subnets](#Different_subnets)
     *   [5.6 Steam Controller](#Steam_Controller)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -223,11 +223,13 @@ And the [#Launch options](#Launch_options) should be something like:
 
 ```
 
-### In-home streaming
+### Steam Remote Play
 
-Steam has built-in support for [in-home streaming](http://store.steampowered.com/streaming/).
+**Note:** Steam In-Home Streaming [has became Steam Remote Play](https://store.steampowered.com/news/51761/).
 
-See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless in-home streaming server on Linux.
+Steam has built-in support for [remote play](http://store.steampowered.com/streaming/).
+
+See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless streaming server on Linux.
 
 #### Different subnets
 

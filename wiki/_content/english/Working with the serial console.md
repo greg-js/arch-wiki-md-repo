@@ -6,12 +6,16 @@ A basic environment for this scenario is two machines connected using a serial c
 
 The configuration instructions below will enable GRUB menu selection, boot messages, and terminal forwarding to the serial console.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Configuration](#Configuration)
     *   [1.1 Configure console access on the target machine](#Configure_console_access_on_the_target_machine)
         *   [1.1.1 GRUB2 and systemd](#GRUB2_and_systemd)
-            *   [1.1.1.1 Without GRUB2, systemd only](#Without_GRUB2.2C_systemd_only)
+            *   [1.1.1.1 Without GRUB2, systemd only](#Without_GRUB2,_systemd_only)
         *   [1.1.2 GRUB v1 and No systemd](#GRUB_v1_and_No_systemd)
 *   [2 Making Connections](#Making_Connections)
     *   [2.1 Connect using a terminal emulator program](#Connect_using_a_terminal_emulator_program)
@@ -21,7 +25,7 @@ The configuration instructions below will enable GRUB menu selection, boot messa
             *   [2.1.1.3 picocom](#picocom)
             *   [2.1.1.4 Screen](#Screen)
             *   [2.1.1.5 Serialclient](#Serialclient)
-        *   [2.1.2 And, for Windows](#And.2C_for_Windows)
+        *   [2.1.2 And, for Windows](#And,_for_Windows)
         *   [2.1.3 Graphical front-ends](#Graphical_front-ends)
 *   [3 Installing Arch Linux using the serial console](#Installing_Arch_Linux_using_the_serial_console)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -189,21 +193,21 @@ See its manual for detailed usage.
 
 ##### Screen
 
-[screen](https://www.archlinux.org/packages/?name=screen) is able to connect to a serial port. It will connect at 9600 baud by default:
+[GNU Screen](/index.php/GNU_Screen "GNU Screen") is able to connect to a serial port. It will connect at 9600 baud by default:
 
 ```
 $ screen /dev/ttyS0
 
 ```
 
-A different baud rate (e.g. 115200) may be specified on the commmand line.
+A different baud rate (e.g. 115200) may be specified on the command line.
 
 ```
 screen /dev/ttyS0 115200
 
 ```
 
-To end the session, press `Ctrl+a` followed by `k`.
+To end the session, press `Ctrl+a` followed by `K`. Alternatively, press `Ctrl+a`, type `:quit` and confirm it by pressing `Enter`.
 
 ##### Serialclient
 

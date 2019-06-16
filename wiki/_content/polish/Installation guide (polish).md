@@ -2,7 +2,11 @@ Ten dokument jest przewodnikiem do instalacji [Arch Linuxa](/index.php/Arch_Linu
 
 Dla dokładniejszych instrukcji, zobacz odpowiednie artykuły [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") lub [strony podręcznika](/index.php/Man_page "Man page") poszczególnych programów, oba podlinkowane w tym przewodniku. Zobacz stronę podręcznika [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) dla ogólny opis konfiguracji. Dla interaktywnej pomocy, dostępne jest [forum](https://bbs.archlinux.org/) oraz [kanał IRC](/index.php/IRC_channel "IRC channel").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Przed instalacją](#Przed_instalacją)
     *   [1.1 Układ klawiatury](#Układ_klawiatury)

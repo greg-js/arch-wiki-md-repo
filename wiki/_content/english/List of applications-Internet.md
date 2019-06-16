@@ -248,7 +248,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 #### Console
 
-*   **[ELinks](/index.php/ELinks "ELinks")** — Advanced and well-established feature-rich text mode web browser with mouse wheel scroll support (Links fork, barely supported since 2009).
+*   **[ELinks](/index.php/ELinks "ELinks")** — Advanced and well-established feature-rich text mode web browser with mouse wheel scroll support (links fork, barely supported since 2009).
 
 	[http://elinks.or.cz/](http://elinks.or.cz/) || [elinks](https://www.archlinux.org/packages/?name=elinks)
 

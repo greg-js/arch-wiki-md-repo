@@ -65,7 +65,7 @@ For list of games packaged for Arch in [official repositories](/index.php/Offici
 
 	[https://itch.io](https://itch.io) || [itch](https://aur.archlinux.org/packages/itch/)
 
-*   **[Lutris](https://en.wikipedia.org/wiki/Lutris "wikipedia:Lutris")** — Open gaming platform for Linux. Gets games from GOG, Steam, Battle.net, Origin, Uplay and many other sources.
+*   **[Lutris](https://en.wikipedia.org/wiki/Lutris "wikipedia:Lutris")** — Open gaming platform for Linux. Gets games from GOG, Steam, Battle.net, Origin, Uplay and many other sources. Lutris utilizes various [runners](https://lutris.net/runners) to launch the games with fully customizable configuration options.
 
 	[https://lutris.net](https://lutris.net) || [lutris](https://www.archlinux.org/packages/?name=lutris)
 
@@ -211,7 +211,7 @@ If your system is currently configured to properly insert its own cpu frequency 
 | [PlayStation Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) | Runs under [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton | No | No | – | No | Yes | Play PS4, PS3 and PS2 games on PC. Alternatively, you can use [emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). |
 | [Rainway](https://rainway.com/) | Coming in 2019 Q3 | Yes | Windows-only | No | Yes | ? | – |
 | [Shadow](https://shadow.tech/) | [shadow-beta](https://aur.archlinux.org/packages/shadow-beta/) | No | No | Yes | Yes | Yes | Controller support is dependent on USB over IP, and currently AVC only as HEVC isn't supported |
-| [Steam In-Home](/index.php/Steam#In-home_streaming "Steam") | Part of [steam](https://www.archlinux.org/packages/?name=steam) | No | Yes | No | No | Yes | LAN connections only |
+| [Steam Remote Play](/index.php/Steam#Steam_Remote_Play "Steam") | Part of [steam](https://www.archlinux.org/packages/?name=steam) | No | Yes | No | No | Yes | – |
 | [Vortex](https://vortex.gg/) | – | Yes | No | – | No | ? | – |
 
 ## Improving performance

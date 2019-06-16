@@ -483,7 +483,7 @@ load-module module-dbus-protocol
 
 ### Dynamic Range Compression
 
-[Dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression) can be done with [#PulseEffects](#PulseEffects). Anyway PulseEffects might introduce much overhead and latency to audio stream, so if you only need a compression effect and a minor load on the system, other options are available using a [module-ladspa-sink](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index47h3).
+[Dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") can be done with [#PulseEffects](#PulseEffects). Anyway PulseEffects might introduce much overhead and latency to audio stream, so if you only need a compression effect and a minor load on the system, other options are available using a [module-ladspa-sink](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index47h3).
 
 #### Steve Harris plugin
 

@@ -196,6 +196,7 @@ They all follow the same rules:
 *   To override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
 *   The `*` wildcard can be used in `VALUE` (e.g `en*` will match any Ethernet device), a boolean can be simple written as `yes` or `no`.
 *   Following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
+*   Systemd accepts the values `1, true, yes, on` for a true boolean, and the values `0, false, no, off` for a false boolean
 
 ### network files
 
@@ -218,14 +219,15 @@ These files are aimed at setting network configuration variables, especially for
 
 #### [Network]
 
-*   `DHCP=` enables the DHCP client, accepts `yes`, `no`, `ipv4`, `ipv6`
-*   `DHCPServer=` enables the DHCP server
-*   `MulticastDNS=` accepts a boolean or `resolve`, enables [multicast DNS](https://tools.ietf.org/html/rfc6762) support
-*   `DNSSEC=` a boolean or `allow-downgrade`
-*   `DNS=` to configure static [DNS](/index.php/DNS "DNS") addresses, may be specified more than once
-*   `Domains=` a list of domains to be resolved on this link
-*   `IPForward=` configures IP packet forwarding, takes either a boolean argument, `ipv4` or `ipv6`
-*   `IPv6PrivacyExtensions=` configures use of stateless temporary addresses that change over time, takes a boolean argument, `prefer-public` or `kernel`
+| Parameter | Description | Accepted Values | Default Value |
+| `DHCP=` | Controls DHCPv4 and/or DHCPv6 client support. | boolean, `ipv4`, `ipv6` | `false` |
+| `DHCPServer=` | If enabled, a DHCPv4 server will be started. | boolean | `false` |
+| `MulticastDNS=` | Enables [multicast DNS](https://tools.ietf.org/html/rfc6762) support. When set to `resolve`, only resolution is enabled, but not host or service registration and announcement. | boolean, `resolve` | `false` |
+| `DNSSEC=` | Controls DNSSEC DNS validation support on the link. When set to `allow-downgrade`, compatibility with non-DNSSEC capable networks is increased, by automatically turning off DNSSEC in this case. | boolean, `allow-downgrade` | `false` |
+| `DNS=` | Configure static [DNS](/index.php/DNS "DNS") addresses. May be specified more than once. | [`inet_pton`](http://man7.org/linux/man-pages/man3/inet_pton.3.html) |
+| `Domains=` | A list of domains which should be resolved using the DNS servers on this link. [more information](https://www.freedesktop.org/software/systemd/man/systemd.network.html#Domains=) | domain name, optionally prefixed with a tilde (`~`) |
+| `IPForward=` | If enabled, incoming packets on any network interface will be forwarded to any other interfaces according to the routing table. | boolean, `ipv4`, `ipv6` | `false` |
+| `IPv6PrivacyExtensions=` | Configures use of stateless temporary addresses that change over time (see [RFC 4941](https://tools.ietf.org/html/rfc4941)). When `prefer-public`, enables the privacy extensions, but prefers public addresses over temporary addresses. When `kernel`, the kernel's default setting will be left in place. | boolean, `prefer-public`, `kernel` | `false` |
 
 #### [Address]
 
@@ -242,9 +244,10 @@ If `Destination` is not present in `[Route]` section this section is treated as 
 
 #### [DHCP]
 
-*   `Anonymize=` when true, the options sent to the DHCP server will follow the [RFC7844](https://tools.ietf.org/html/rfc7844) (Anonymity Profiles for DHCP Clients) to minimize disclosure of identifying information (default = `false`)
-*   `UseDNS=` controls whether the DNS servers advertised by the DHCP server are used (default = `true`)
-*   `UseDomains=` controls whether the domain name received from the DHCP server will be used as DNS search domain. If set to `route`, the domain name received from the DHCP server will be used for routing DNS queries only, but not for searching. This option can sometimes fix local name resolving when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") (default = `false`)
+| Parameter | Description | Accepted Values | Default Value |
+| `UseDNS=` | controls whether the DNS servers advertised by the DHCP server are used | boolean | `true` |
+| `Anonymize=` | when true, the options sent to the DHCP server will follow the [RFC7844](https://tools.ietf.org/html/rfc7844) (Anonymity Profiles for DHCP Clients) to minimize disclosure of identifying information | boolean | `false` |
+| `UseDomains=` | controls whether the domain name received from the DHCP server will be used as DNS search domain. If set to `route`, the domain name received from the DHCP server will be used for routing DNS queries only, but not for searching. This option can sometimes fix local name resolving when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | boolean, `route` | `false` |
 
 ### netdev files
 
@@ -586,11 +589,11 @@ Possible workarounds:
 First PC have two LAN. Second PC have one LAN and connected to first PC. Lets go second PC to give all access to LAN after bridged interface:
 
 ```
-   # sysctl net.bridge.bridge-nf-filter-pppoe-tagged=0
-   # sysctl net.bridge.bridge-nf-filter-vlan-tagged=0
-   # sysctl net.bridge.bridge-nf-call-ip6tables=0
-   # sysctl net.bridge.bridge-nf-call-iptables=0
-   # sysctl net.bridge.bridge-nf-call-arptables=0
+# sysctl net.bridge.bridge-nf-filter-pppoe-tagged=0
+# sysctl net.bridge.bridge-nf-filter-vlan-tagged=0
+# sysctl net.bridge.bridge-nf-call-ip6tables=0
+# sysctl net.bridge.bridge-nf-call-iptables=0
+# sysctl net.bridge.bridge-nf-call-arptables=0
 
 ```
 

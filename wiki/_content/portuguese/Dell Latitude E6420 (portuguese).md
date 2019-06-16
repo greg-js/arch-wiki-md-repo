@@ -30,4 +30,4 @@ Parece funcionar sem necessidade de configuração.
 
 **GPU**
 
-Instale o pacote [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) pelo pacman.
+Instale o pacote [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) pelo pacman.

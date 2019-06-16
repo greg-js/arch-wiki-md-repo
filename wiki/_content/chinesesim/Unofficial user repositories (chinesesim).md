@@ -1,17 +1,26 @@
+相关文章
+
+*   [pacman-key (简体中文)](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman-key (简体中文)")
+*   [Official Repositories (简体中文)](/index.php/Official_Repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official Repositories (简体中文)")
+
 **翻译状态：** 本文是英文页面 [Unofficial_user_repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-08-14，点击[这里](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&diff=0&oldid=330211)可以查看翻译后英文页面的改动。
 
 这篇文章列出了由社区创建的自由共享二进制软件包的软件仓库，其中很多的包都是由[AUR](/index.php/AUR "AUR")中可以找到的PKGBUILD文件预编译打包而成。
 
 **警告:** 无论Arch Linux的开发者还是授信用户都不会对这些软件仓库做任何的测试与验证。需要每一个用户自己决定是否信任这些软件仓库的维护者，并且对软件源维护者做出的任何决定导致的后果负责。
 
-想要使用这些软件仓库，你需要把他们添加到 `/etc/pacman.conf`，详情请看 [pacman (简体中文)#软件仓库](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93 "Pacman (简体中文)")。如果一个软件仓库进行了签名，你必须要在本地签署这些key，详见[Pacman-key (简体中文)#导入非官方密钥](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AF.BC.E5.85.A5.E9.9D.9E.E5.AE.98.E6.96.B9.E5.AF.86.E9.92.A5 "Pacman-key (简体中文)")。
+想要使用这些软件仓库，你需要把他们添加到 `/etc/pacman.conf`，详情请看 [pacman (简体中文)#软件仓库](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#软件仓库 "Pacman (简体中文)")。如果一个软件仓库进行了签名，你必须要在本地签署这些key，详见[Pacman-key (简体中文)#导入非官方密钥](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#导入非官方密钥 "Pacman-key (简体中文)")。
 
-如果你想自己建立一个软件仓库，请看 [pacman tips (简体中文)#自建本地仓库](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.BB.BA.E6.9C.AC.E5.9C.B0.E4.BB.93.E5.BA.93 "Pacman tips (简体中文)").
+如果你想自己建立一个软件仓库，请看 [pacman tips (简体中文)#自建本地仓库](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#自建本地仓库 "Pacman tips (简体中文)").
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
-*   [1 加入你自己的仓库](#.E5.8A.A0.E5.85.A5.E4.BD.A0.E8.87.AA.E5.B7.B1.E7.9A.84.E4.BB.93.E5.BA.93)
-*   [2 [archlinuxcn]](#.5Barchlinuxcn.5D)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 加入你自己的仓库](#加入你自己的仓库)
+*   [2 [archlinuxcn]](#[archlinuxcn])
 *   [3 Any](#Any)
     *   [3.1 Signed](#Signed)
         *   [3.1.1 bioinformatics-any](#bioinformatics-any)
@@ -93,16 +102,15 @@
         *   [6.2.3 brtln](#brtln)
         *   [6.2.4 hawaii](#hawaii)
         *   [6.2.5 kps](#kps)
-        *   [6.2.6 miusystem](#miusystem)
-        *   [6.2.7 pnsft-pur](#pnsft-pur)
-        *   [6.2.8 mingw-w64](#mingw-w64)
-        *   [6.2.9 rightscale](#rightscale)
-        *   [6.2.10 seiichiro](#seiichiro)
-        *   [6.2.11 studioidefix](#studioidefix_2)
-        *   [6.2.12 zen](#zen)
-        *   [6.2.13 mazdlc](#mazdlc)
-        *   [6.2.14 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
-        *   [6.2.15 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
+        *   [6.2.6 pnsft-pur](#pnsft-pur)
+        *   [6.2.7 mingw-w64](#mingw-w64)
+        *   [6.2.8 rightscale](#rightscale)
+        *   [6.2.9 seiichiro](#seiichiro)
+        *   [6.2.10 studioidefix](#studioidefix_2)
+        *   [6.2.11 zen](#zen)
+        *   [6.2.12 mazdlc](#mazdlc)
+        *   [6.2.13 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
+        *   [6.2.14 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
 *   [7 armv6h only](#armv6h_only)
     *   [7.1 Unsigned](#Unsigned_5)
         *   [7.1.1 arch-fook-armv6h](#arch-fook-armv6h)
@@ -1011,17 +1019,6 @@ Server = http://archive.maui-project.org/archlinux/$repo/os/$arch
 ```
 [kps]
 Server = http://kps.bplaced.net/repo/$arch
-
-```
-
-#### miusystem
-
-*   **维护者** Theodore Keloglou <theodore.keloglou@gmail.com>
-*   **描述：** Packages that I use and might interest others
-
-```
-[miusystem]
-Server = https://miusystem.com/archlinux-repo
 
 ```
 

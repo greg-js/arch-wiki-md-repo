@@ -59,7 +59,7 @@ Related articles
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
-*   **Thunar Shares Plugin** — Плагин, который позволяет быстро открыть общий доступ к папке из Thunar, используя Samba. Не требует права суперпользователя. Также смотрите [как настроить направления](/index.php/Samba#Enable_usershares "Samba").
+*   **Thunar Shares Plugin** — Плагин, который позволяет быстро открыть общий доступ к папке из Thunar, используя Samba. Не требует права суперпользователя. Также смотрите [как настроить направления](/index.php/Samba#Enable_Usershares "Samba").
 
 	[https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](https://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 

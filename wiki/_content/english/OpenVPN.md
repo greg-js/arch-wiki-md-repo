@@ -725,7 +725,11 @@ plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client
 
 ### Update resolv-conf script
 
+**Note:** Using [update-systemd-resolved script](#Update_systemd-resolved_script) is recommended by update-resolv-conf author.
+
 The [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script is available as an alternative to packaged scripts. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made [executable](/index.php/Executable "Executable").
+
+If you prefer a package, there is [openvpn-update-resolv-conf-git](https://aur.archlinux.org/packages/openvpn-update-resolv-conf-git/) that does above for you. You still need to do the following.
 
 Once the script is installed add lines like the following into the OpenVPN client configuration file:
 
@@ -744,9 +748,11 @@ Now, when launching the OpenVPN connection, `resolv.conf` should be updated acco
 
 ### Update systemd-resolved script
 
-Since [systemd](/index.php/Systemd "Systemd") 229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if using `resolve` instead of `dns` in `/etc/nsswitch.conf`. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
+**Note:** Since [systemd](/index.php/Systemd "Systemd") 229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if using `resolve` instead of `dns` in `/etc/nsswitch.conf`.
 
-Copy the script into `/etc/openvpn` and mark as [executable](/index.php/Executable "Executable"), or [install](/index.php/Install "Install") [openvpn-update-systemd-resolved](https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/), and [append](/index.php/Append "Append") the following lines into the OpenVPN client configuration file:
+The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
+
+Copy the script into `/etc/openvpn/scripts` and mark as [executable](/index.php/Executable "Executable") (or [install](/index.php/Install "Install") [openvpn-update-systemd-resolved](https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/)) and [append](/index.php/Append "Append") the following lines into the OpenVPN client configuration file:
 
  `/etc/openvpn/client/client.conf` 
 ```
@@ -760,6 +766,8 @@ down /etc/openvpn/scripts/update-systemd-resolved
 down-pre
 
 ```
+
+Make sure that the [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") service is configured and running.
 
 ### Override DNS servers using NetworkManager
 
@@ -908,4 +916,4 @@ To support clients that do not support tls-crypt, replace `tls-crypt ta.key` wit
 ## See also
 
 *   [Wikipedia:OpenVPN](https://en.wikipedia.org/wiki/OpenVPN "wikipedia:OpenVPN")
-*   [Securing Network](https://www.infosecwriters.com/text_resources/pdf/securing_communication.pdf) Communication with one of Stunnel, OpenSSH, OpenVPN
+*   [Securing Network Communication with Stunnel, OpenSSH, and OpenVPN](https://www.infosecwriters.com/text_resources/pdf/securing_communication.pdf) (PDF)

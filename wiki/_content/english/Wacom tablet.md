@@ -37,6 +37,7 @@
             *   [4.3.1.2 Serial devices](#Serial_devices)
         *   [4.3.2 Static setup](#Static_setup)
         *   [4.3.3 Xorg configuration](#Xorg_configuration)
+    *   [4.4 Mouse Moving Erratically due to Proximity Sensor](#Mouse_Moving_Erratically_due_to_Proximity_Sensor)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -639,6 +640,10 @@ to
 InputDevice    "Mouse1" "CorePointer"
 
 ```
+
+### Mouse Moving Erratically due to Proximity Sensor
+
+You can disable the mouse jumping due to a proximity sensor detecting a non-existing stylus. You can find your device with xinput --list, and after seeing the Stylus, disable it with: xinput disable "Your Device Name". This only works if you are not currently using a stylus.
 
 ## See also
 

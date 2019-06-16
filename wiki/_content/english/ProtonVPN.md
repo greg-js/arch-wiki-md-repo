@@ -1,10 +1,10 @@
 Related articles
 
-*   [openvpn](/index.php/Openvpn "Openvpn")
+*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
 
 [ProtonVPN](https://www.protonvpn.com) is a VPN provider that utilizes the OpenVPN protocol.
 
-In order to use this tutorial, one must have a protonvpn account.
+In order to use this tutorial, one must have a ProtonVPN account.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,60 +12,43 @@ In order to use this tutorial, one must have a protonvpn account.
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Walkthrough](#Walkthrough)
-    *   [1.1 Saving OpenVPN Authentication](#Saving_OpenVPN_Authentication)
-    *   [1.2 Enable VPN on Boot](#Enable_VPN_on_Boot)
-*   [2 Use ProtonVPN-cli](#Use_ProtonVPN-cli)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Saving OpenVPN authentication](#Saving_OpenVPN_authentication)
+    *   [3.2 Enable VPN on boot](#Enable_VPN_on_boot)
+*   [4 protonvpn-cli](#protonvpn-cli)
+    *   [4.1 Installation](#Installation_2)
+    *   [4.2 Usage](#Usage_2)
 
-## Walkthrough
+## Installation
 
-[Install](/index.php/Install "Install") [openvpn](https://www.archlinux.org/packages/?name=openvpn).
+[Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package.
+
+## Usage
 
 Log into ProtonVPN and download one or more OpenVPN configuration files.
 
-Copy the *.ovpn files into `/etc/openvpn/client/`
+Copy the *.ovpn client configuration files into `/etc/openvpn/client/` and make backup of original.
 
-Pick the corresponding **.ovpn** that will be used (ca.protonvpn.com.tcp443.ovpn is used as an example)
+Follow [these steps](/index.php/OpenVPN#Update_systemd-resolved_script "OpenVPN") to make sure, that all your network traffic uses VPN. If you use systemd older than 229, follow [these steps](/index.php/OpenVPN#Update_resolv-conf_script "OpenVPN").
 
-Copy the file with a new extension (this is just so you keep the original ovpn file intact)
-
-```
-# cp /etc/openvpn/client/ca.protonvpn.com.tcp443.ovpn /etc/openvpn/client/protonvpn.conf
+Connect to the VPN:
 
 ```
-
-Install the [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made executable with [chmod](/index.php/Chmod "Chmod"). There is also an AUR package: [openvpn-update-resolv-conf-git](https://aur.archlinux.org/packages/openvpn-update-resolv-conf-git/) which will take care of the script installation for you. This script ensures that all traffic to/from the internet goes through the VPN and protects you against DNS leaks.
-
-```
-# chmod 755 /etc/openvpn/update-resolv-conf
-
-```
-
-Modify the **.conf** file to use the update-resolv-conf.sh script.
-
- `/etc/openvpn/client/protonvpn.conf` 
-```
-script-security 2
-up /etc/openvpn/update-resolv-conf
-down /etc/openvpn/update-resolv-conf
-down-pre
-
-```
-
-Start your VPN:
-
-```
-# openvpn /etc/openvpn/client/protonvpn.conf
+# openvpn /etc/openvpn/client/client_config_file.ovpn
 
 ```
 
 Press `Ctrl+C` to close the VPN connection.
 
-### Saving OpenVPN Authentication
+## Tips and tricks
+
+### Saving OpenVPN authentication
 
 If you get tired of punching in your username and password, you may save your OpenVPN credentials in a separate file and read them automatically.
 
- `/etc/openvpn/client/protonvpn.conf` 
+ `/etc/openvpn/client/client_config_file.ovpn` 
 ```
 auth-user-pass /etc/openvpn/client/login.conf
 
@@ -77,10 +60,63 @@ openvpn_password
 
 ```
 
-### Enable VPN on Boot
+### Enable VPN on boot
 
 For systemd service configuration, see [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
-## Use ProtonVPN-cli
+## protonvpn-cli
 
-ProtonVPN supplies a utility to access the VPN. Details can be found on [their website](https://protonvpn.com/support/linux-vpn-tool/) and the GitHub repository can be found [here](https://github.com/ProtonVPN/protonvpn-cli). This package can be installed directly from [AUR](https://aur.archlinux.org/packages/protonvpn-cli/).
+ProtonVPN supplies a utility to access the VPN. Details can be found on the [official website](https://protonvpn.com/support/linux-vpn-tool/) and the [GitHub repository](https://github.com/ProtonVPN/protonvpn-cli).
+
+### Installation
+
+[Install](/index.php/Install "Install") the [protonvpn-cli](https://aur.archlinux.org/packages/protonvpn-cli/) package.
+
+### Usage
+
+Initialize the client:
+
+```
+# protonvpn-cli -init
+
+```
+
+Enter your OpenVPN username and password, which have to be configured on the [ProtonVPN Settings](https://account.protonvpn.com/settings) page. For example:
+
+```
+Enter OpenVPN username: ProtonVPN.user
+Enter OpenVPN password:
+
+```
+
+After entering the credentials, you have to select your subscription plan. For example, select the Free plan:
+
+```
+[.]ProtonVPN Plans:
+1) Free
+2) Basic
+3) Plus
+4) Visionary
+Enter Your ProtonVPN plan ID: 1
+
+```
+
+Now you can connect to the VPN:
+
+```
+# protonvpn-cli -connect
+
+```
+
+You should see detailed country list with all available servers. Select preferred server and click OK.
+
+Then select UDP or TCP protocol and click OK again.
+
+If connection was successful, you will see following output:
+
+```
+Connecting...
+Connected!
+New IP: X.X.X.X
+
+```

@@ -46,7 +46,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
     *   [4.8 Use temporary Btrfs snapshot of container](#Use_temporary_Btrfs_snapshot_of_container)
     *   [4.9 Run docker in systemd-nspawn](#Run_docker_in_systemd-nspawn)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 root login fails](#root_login_fails)
+    *   [5.1 Root login fails](#Root_login_fails)
     *   [5.2 Unable to upgrade some packages on the container](#Unable_to_upgrade_some_packages_on_the_container)
     *   [5.3 execv(...) failed: Permission denied](#execv(...)_failed:_Permission_denied)
     *   [5.4 Reboot not working](#Reboot_not_working)
@@ -322,10 +322,7 @@ See [systemd-networkd#Usage with containers](/index.php/Systemd-networkd#Usage_w
 
 To make it easier to connect to a container from the host, you can enable local DNS resolution for container names. In `/etc/nsswitch.conf`, add `mymachines` to the `hosts:` section, e.g.
 
-```
-hosts: files mymachines dns myhostname
-
-```
+ `/etc/nsswitch.conf`  `hosts: files mymachines dns myhostname` 
 
 Then, any DNS lookup for hostname `foo` on the host will first consult `/etc/hosts`, then the names of local containers, then upstream DNS etc.
 
@@ -431,7 +428,7 @@ This grants all capabilities to the container, whitelists two system calls `add_
 
 ## Troubleshooting
 
-### root login fails
+### Root login fails
 
 If you get the following error when you try to login (i.e. using `machinectl login <name>`):
 

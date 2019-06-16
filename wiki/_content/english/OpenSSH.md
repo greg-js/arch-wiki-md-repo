@@ -57,6 +57,9 @@ OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the 
         *   [4.11.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
     *   [4.12 Alternative service should SSH daemon fail](#Alternative_service_should_SSH_daemon_fail)
     *   [4.13 Terminal background color based on host](#Terminal_background_color_based_on_host)
+    *   [4.14 Network specific configuration](#Network_specific_configuration)
+    *   [4.15 Private networks hostkeys verification](#Private_networks_hostkeys_verification)
+    *   [4.16 Run command at login](#Run_command_at_login)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Checklist](#Checklist)
     *   [5.2 Connection refused or timeout problem](#Connection_refused_or_timeout_problem)
@@ -396,15 +399,13 @@ It is nice to add the verbose (`-v`) flag, because then you can verify that it i
 
 #### Step 2: configure your browser (or other programs)
 
-The above step is useful only in combination with a web browser or another program that uses this newly created SOCKS tunnel. Since SSH currently supports both SOCKS4 and SOCKS5, you can use either of them.
+The above step is useful only in combination with a web browser or another program that uses this newly created SOCKS tunnel. Since SSH currently supports both SOCKS v4 and SOCKS v5, you can use either of them.
 
-*   For Firefox: *Preferences > General > Network Proxy > Manual proxy*, and enter `localhost` in the *SOCKS host* text field, and the port number in the next text field (`4711` in the example above).
+*   For Firefox: At *Preferences > General* navigates to the bottom of the page and click *Settings...*, which is to the right of the Network Settings title. Next, within the new semi window, check the *Manual proxy configuration* option and enter `localhost` in the *SOCKS host* text field, and the port number in the *Port* text field (`4711` in the example above) next to it.
 
-Firefox does not automatically make DNS requests through the socks tunnel. This potential privacy concern can be mitigated by the following steps:
+	Firefox does not automatically make DNS requests through the socks tunnel. This potential privacy concern can be mitigated by scrolling further down, checking in the *Proxy DNS when using SOCKS v5*. Obviously, this will only work if you chooses SOCKS v5 rather then v4.
 
-1.  Type `about:config` into the Firefox location bar
-2.  Set `network.proxy.socks_remote_dns` to `true`
-3.  Restart Firefox
+	Restart Firefox to activate these settings.
 
 *   For Chromium: You can set the SOCKS settings as environment variables or as command line options. I recommend to add one of the following functions to your `.bashrc`:
 
@@ -523,7 +524,7 @@ For running X applications as other user on the SSH server you need to `xauth ad
 
 In addition to SSH's built-in support for X11, it can also be used to securely tunnel any TCP connection, by use of local forwarding or remote forwarding.
 
-Local forwarding opens a port on the local machine, connections to which will be forwarded to the remote host and from there on to a given destination. Very often, the forwarding destination will be the same as the remote host, thus providing a secure shell and, e.g. a secure VNC connection, to the same machine. Local forwarding is accomplished by means of the `-L` switch and it is accompanying forwarding specification in the form of `<tunnel port>:<destination address>:<destination port>`.
+Local forwarding opens a port on the local machine, connections to which will be forwarded to the remote host and from there on to a given destination. Very often, the forwarding destination will be the same as the remote host, thus providing a secure shell and, e.g. a secure [VNC](/index.php/VNC "VNC") connection, to the same machine. Local forwarding is accomplished by means of the `-L` switch and it is accompanying forwarding specification in the form of `<tunnel port>:<destination address>:<destination port>`.
 
 Thus:
 
@@ -541,7 +542,7 @@ $ ssh -L 2000:192.168.0.100:6001 192.168.0.100
 
 ```
 
-will allow connections to `localhost:2000` which will be transparently sent to the remote host on port 6001\. The preceding example is useful for VNC connections using the vncserver utility--part of the tightvnc package--which, though very useful, is explicit about its lack of security.
+will allow connections to `localhost:2000` which will be transparently sent to the remote host on port 6001\. The preceding example is useful for VNC connections using the vncserver utility--part of the [tightvnc](/index.php/Tightvnc "Tightvnc") package--which, though very useful, is explicit about its lack of security.
 
 Remote forwarding allows the remote host to connect to an arbitrary host via the SSH tunnel and the local machine, providing a functional reversal of local forwarding, and is useful for situations where, e.g., the remote host has limited connectivity due to firewalling. It is enabled with the `-R` switch and a forwarding specification in the form of `<tunnel port>:<destination address>:<destination port>`.
 
@@ -687,7 +688,7 @@ ExecStart=/usr/bin/ssh -F %h/.ssh/config -N myserver
 
 ```
 
-Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the user service. See [#Keep alive](#Keep_alive) for how to prevent the tunnel from timing out. If you wish to start the tunnel on boot, you will need to rewrite the unit as a system service.
+Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the [Systemd/User](/index.php/Systemd/User "Systemd/User") service. See [#Keep alive](#Keep_alive) for how to prevent the tunnel from timing out. If you wish to start the tunnel on boot, you might want to [rewrite the unit](/index.php/Systemd#Writing_unit_files "Systemd") as a system service.
 
 ### Autossh - automatically restarts SSH sessions and tunnels
 
@@ -768,6 +769,65 @@ That's it. Telnet is not available when `sshd` is running. Should `sshd` fail to
 To better distinguish when you are on different hosts, you can set a [different background color based on the kind of host](https://bryangilbert.com/post/etc/term/dynamic-ssh-terminal-background-colors/).
 
 This solution works, but is not universal (ZSH only).
+
+### Network specific configuration
+
+You can use host configuration specific to the network you are connected to using a `Match exec`.
+
+For example, when using nmcli, and the connection is configured (manually or through DHCP) to use a search-domain:
+
+```
+Match exec "nmcli | grep domains: | grep example.com"
+  CanonicalDomains example.com
+  # Should you use a different username on this network
+  #User username
+  # Use a different known_hosts file (for private network or synchronisation)
+  #UserKnownHostsFile <network>_known_hosts
+```
+
+### Private networks hostkeys verification
+
+Because different servers on different networks are likely to share a common private IP address, you might want to handle them differently.
+
+The best solution is to use the [#Network specific configuration](#Network_specific_configuration) to use a different `UserKnownHostsFile` depending on the network you are on. The second solution, best used as default when you are working on new/prototype networks, would be to simply ignore hostkeys for private networks:
+
+```
+Host 10.* 192.168.*.* 172.31.* 172.30.* 172.2?.* 172.1?.*
+    # Disable HostKey verification
+    # Trust HostKey automatically
+    StrictHostKeyChecking no
+    # Do not save the HostKey
+    UserKnownHostsFile=/dev/null
+    # Do not display: "Warning: Permanently Added ..."
+    LogLevel Error
+```
+
+**Warning:** In a production environment, make sure to either use the hostname to access the host and/or to use network specific known_hosts files.
+
+### Run command at login
+
+If you are using an interactive session, there are multiple ways to execute a command on login:
+
+*   use the `authorized_keys` file on the remote host (see `AUTHORIZED_KEYS FILE FORMAT` in [sshd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd.8))
+*   use `~/.ssh/rc` on the remote host if the server has enabled the `PermitUserRC` option
+*   use your shell config file on the remote host, e.g. `.bashrc`
+
+*   use a combination of `RemoteCommand` and `RequestTTY` (`-t`)
+
+For example, to automatically show your host's distribution on login:
+
+```
+$ ssh -t *host* "cat /etc/os-release | grep '^NAME'; bash"
+
+```
+
+Or using your config file:
+
+```
+RemoteCommand cat /etc/os-release | grep '^NAME'; bash
+RequestTTY yes
+
+```
 
 ## Troubleshooting
 
@@ -986,7 +1046,7 @@ The `reliability` (`0x04`) type-of-service should resolve the issue, as well as 
 
 ### Slow daemon startup after reboot
 
-If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[9]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
+If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[8]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
 
 ## See also
 

@@ -248,7 +248,7 @@ include "%L"
 
 Однако GTK не использует [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") по умолчанию и поэтому не следует за клавишами `~/.XCompose`. Это можно устранить, заставив GTK использовать XIM, добавлением `export GTK_IM_MODULE=xim` и/или `export XMODIFIERS="@im=none"` в `~/.xprofile`.
 
-**Совет:** XIM очень старый, вам может повезти с другими методами ввода: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus") и т.д. Для получения дополнительной информации смотрите [Localization#Input methods](/index.php/Localization#Input_methods "Localization").
+**Совет:** XIM очень старый, вам может повезти с другими методами ввода: [SCIM](/index.php/SCIM "SCIM"), [Uim](/index.php/Uim "Uim"), [IBus](/index.php/IBus "IBus") и т.д. Для получения дополнительной информации смотрите [Localization#Input methods](/index.php/Localization#Input_methods "Localization").
 
 **Примечание:** XIM предотвратит вставку символов Unicode с комбинацией `Ctrl+Shift+u`.
 

@@ -86,7 +86,7 @@ If you do not know your country code, enter the following to get a list of codes
 
 ```
 
-Note that country code is optional is some cases (see `man w_scan` for details). More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also *w_scan'*s [man page](http://dev.man-online.org/man2/w_scan/) and [documentation](http://linuxtv.org/wiki/index.php/W_scan).
+Note that country code is optional is some cases (see [w_scan(1)](http://dev.man-online.org/man2/w_scan/) for details). More advanced scanning options can be found under [DVB-S#Scanning channels](/index.php/DVB-S#Scanning_channels "DVB-S"). See also *w_scan'*s [w_scan(1)](http://dev.man-online.org/man2/w_scan/) and [wscan's documentation on LinuxTVWiki](http://linuxtv.org/wiki/index.php/W_scan).
 
 When `w_scan` fails to find all expected channels you could try `w_scan2`. It is a fork of the original *w_scan* and can be found on [GitHub](https://github.com/stefantalpalaru/w_scan2).
 
@@ -122,7 +122,7 @@ $ vlc dvb://frequency=543000000 :program=3
 
 ### MPlayer / mpv
 
-For DVB streaming, [MPlayer](/index.php/MPlayer "MPlayer") (or [mpv](/index.php/Mpv "Mpv")) requires a channels configuration file at `~/.mplayer/channels.conf`. Follow [#Scanning](#Scanning) for instructions on how to generate it, but make sure to use the `-M` flag to generate the proper format for MPlayer, if you're using `w_scan`:
+For DVB streaming, [MPlayer](/index.php/MPlayer "MPlayer") (or [mpv](/index.php/Mpv "Mpv")) requires a channels configuration file at `~/.mplayer/channels.conf`. Follow [#Scanning](#Scanning) for instructions on how to generate it, but make sure to use the `-M` flag to generate the proper format for MPlayer, if you are using `w_scan`:
 
 ```
 $ w_scan -ft -c [country_code] -M > ~/.mplayer/channels.conf
@@ -205,7 +205,6 @@ $ tzap -r "CHANNEL NAME"
 which, if setup correctly should yield an output similar to:
 
 ```
-$ tzap -r "CHANNEL NAME"
 using '/dev/dvb/adapter0/frontend0' and '/dev/dvb/adapter0/demux0'
 reading channels from file '/home/user/.tzap/channels.conf'
 Version: 5.10  	 FE_CAN { DVB-T }

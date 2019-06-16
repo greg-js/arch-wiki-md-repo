@@ -631,7 +631,7 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
 
-#### [DICOM](https://en.wikipedia.org/wiki/DICOM "wikipedia:DICOM") viewers and volume rendering
+#### DICOM viewers and volume rendering
 
 *   **aeskulap** — Simple DICOM data viewer
 

@@ -39,28 +39,34 @@ MySQL是一个广泛使用的多线程多用户式数据库。具体特性请参
 
 ## 安装
 
-Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman "Pacman")位于[官方软件源](/index.php/Official_repositories "Official repositories")的[mariadb](https://www.archlinux.org/packages/?name=mariadb)、[libmariadbclient](https://www.archlinux.org/packages/?name=libmariadbclient) 和 [mariadb-clients](https://www.archlinux.org/packages/?name=mariadb-clients) 软件包。 其它实现有 [percona-server](https://www.archlinux.org/packages/?name=percona-server) 和 Oracle [mysql](https://aur.archlinux.org/packages/mysql/)。
+Archlinux 选择的 MySQL [默认实现](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) 被称为 [MariaDB](https://mariadb.com/)。
+
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [mariadb](https://www.archlinux.org/packages/?name=mariadb)、[mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs)。
+
+其它实现有 [percona-server](https://www.archlinux.org/packages/?name=percona-server) 和 Oracle [mysql](https://aur.archlinux.org/packages/mysql/)。
 
 **Tip:**
 
-*   如果数据库 (位于 `/var/lib/mysql`) 运行在[Btrfs](/index.php/Btrfs "Btrfs")分区之上, 你应当在创建数据库之前禁用 [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") 特性。
+*   如果数据库 (位于 `/var/lib/mysql`) 运行在 [Btrfs](/index.php/Btrfs "Btrfs") 分区之上, 你应当在创建数据库之前禁用 [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_(CoW) "Btrfs") 特性。
 *   如果数据库运行在 [ZFS](/index.php/ZFS "ZFS") 分区之上, 你应该在创建数据库之前参阅 [ZFS#Databases](/index.php/ZFS#Databases "ZFS") 。
 
-安装Mariadb软件包之后，你必须运行下面这条命令：
+安装 [mariadb](https://www.archlinux.org/packages/?name=mariadb) 软件包之后，你必须在启动 `mariadb.service` **之前**运行下面这条命令：
 
 ```
 # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 ```
 
-启动 `mariadb` [守护进程](/index.php/Daemon "Daemon")，运行安装脚本，然后重新启动守护进程：
+**注意:** 出于安全考虑，systemd 的 .service 文件设置了 `ProtectHome=true` 来禁止 MariaDB 访问 `/home`、`/root` 和 `/run/user` 目录内的文件。`datadir` 必须要放在以上文件夹之外，并且由 `mysql` 用户和用户组 [所有](/index.php/Chown "Chown")。 如果要改变这个设置，你可以根据以下链接创建一个替代的 service 文件：[[1]](https://mariadb.com/kb/en/mariadb/systemd/)
 
-**Tip:** 如果数据目录使用的不是 `/var/lib/mysql`，需要 [编辑](/index.php/Systemd#Editing_provided_units "Systemd") `mariadb.service` 文件并将目录设置到 `ExecStart` 行.
+然后 [enable](/index.php/Enable "Enable") 或者 [start](/index.php/Start "Start") `mariadb.service`。
+
+**提示：** 如果数据目录使用的不是 `/var/lib/mysql`，需要在 `/etc/mysql/my.cnf` 文件的 `[mysqld]` 部分设置 `datadir=<数据目录>`
+
+用下面这个命令启动数据库级别的安全配置助手，来配置一些必要的安全选项：
 
 ```
-# systemctl start mariadb
 # mysql_secure_installation
-# systemctl restart mariadb
 
 ```
 
@@ -77,7 +83,7 @@ Archlinux 选择的 MySQL 实现被称为 MariaDB。 [安装](/index.php/Pacman 
 
 ### 由 Oracle MySQL 升级到 MariaDB
 
-想要切换的用户需要安装 [mariadb](https://www.archlinux.org/packages/?name=mariadb)，[libmariadbclient](https://www.archlinux.org/packages/?name=libmariadbclient) 以及 [mariadb-clients](https://www.archlinux.org/packages/?name=mariadb-clients)，然后执行 `mysql_upgrade` 来迁移系统：
+想要切换的用户需要安装 [mariadb](https://www.archlinux.org/packages/?name=mariadb) 和 [mariadb-clients](https://www.archlinux.org/packages/?name=mariadb-clients)，然后执行 `mysql_upgrade` 来迁移系统：
 
 ```
 # systemctl stop mysqld

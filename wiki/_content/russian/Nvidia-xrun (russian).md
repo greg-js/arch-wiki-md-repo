@@ -144,4 +144,4 @@ blacklist nouveau
 
 ```
 
-Убедитесь, что DRM Kernel Mode Setting отключен. См. [NVIDIA_(Русский)#DRM_kernel_mode_setting](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DRM_kernel_mode_setting "NVIDIA (Русский)") и [Kernel_mode_setting_(Русский)](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)") для получения более подробной информации.
+Убедитесь, что DRM Kernel Mode Setting отключен. См. [NVIDIA (Русский)#DRM kernel mode setting](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#DRM_kernel_mode_setting "NVIDIA (Русский)") и [Kernel mode setting (Русский)](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)") для получения более подробной информации.

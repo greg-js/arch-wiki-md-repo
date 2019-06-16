@@ -87,7 +87,7 @@
 
 **注意:** 假如您是使用最新的显卡，如果以上两个驱动安装后都不能正常工作，您也许需要使用[nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)和[nvidia-utils-beta](https://aur.archlinux.org/packages/nvidia-utils-beta/)，他们引入了一些新的特性。
 
-*   GeForce 8000/9000、ION 以及 100-300（NV5x, NV8x, NV9x and NVAx）等2006-2010的显卡型号，安装[nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) 或者 [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) 。
+*   GeForce 8000/9000、ION 以及 100-300（NV5x, NV8x, NV9x and NVAx）等2006-2010的显卡型号，安装[nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) 或者 [nvidia-340xx-lts](https://aur.archlinux.org/packages/nvidia-340xx-lts/) 。
 
 *   FGeForce 6000/7000 （NV4x and NV6x）等2004-2006的显卡型号，安装[nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) 或[nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) 。
 

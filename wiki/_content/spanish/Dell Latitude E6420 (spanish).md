@@ -31,4 +31,4 @@ Parece funcionar sin necesidad de configuración.
 
 **GPU**
 
-[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) desde [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) desde [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").

@@ -294,6 +294,8 @@ Do not forget to make the above scripts executable.
 
 Workarounds have been created, see for example [dropbox-fix2](https://aur.archlinux.org/packages/dropbox-fix2/). These workarounds are based on substituting the filesystem detection functions by the use of LD_PRELOAD.
 
+It is also possible to create an ext4 formatted [sparse file](/index.php/Sparse_file "Sparse file") within a non-ext4 filesystem. It can then be mounted to the desired location for the Dropbox folder. On btrfs systems, it's recommended to [disable copy-on-write](/index.php/Btrfs#Disabling_CoW "Btrfs").
+
 ### Dropbox keeps saying Downloading files
 
 But in fact now files are synced with your box. This problem is likely to appear when your Dropbox folder is located on a NTFS partition whose mount path contains spaces, or permissions are not set for that partition. See more in the [forums](https://bbs.archlinux.org/viewtopic.php?id=153368). To resolve the problem pay attention to your entry in `/etc/fstab`. Avoid spaces in the mount path and set write permissions with the "default_permissions" option:

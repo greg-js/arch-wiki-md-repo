@@ -254,7 +254,7 @@ $ optirun -b primus wine windows program.exe
 
 ### Xlib: extension "GLX" missing on display ":0.0"
 
-Если вы установили видеодрайвер с сайта NVidia, то попробуйте проделать следующее
+Если вы установили видеодрайвер с сайта NVIDIA, то проделайте следующее:
 
 1\. Удалите драйвер:
 
@@ -263,14 +263,14 @@ $ optirun -b primus wine windows program.exe
 
 ```
 
-2\. Удалите сгенерированный xorg.conf:
+2\. Удалите сгенерированный NVIDIA конфигурационный файл Xorg:
 
 ```
 # rm /etc/X11/xorg.conf
 
 ```
 
-3\. Переустановите корректный видеодрайвер: [#Использование драйвера Nvidia](#Использование_драйвера_Nvidia)
+3\. Установите корректный видеодрайвер — см. раздел [#Установка](#Установка).
 
 ### [ERROR]Cannot access secondary GPU: No devices detected
 
