@@ -18,6 +18,7 @@
     *   [5.3 Game crashes immediately](#Game_crashes_immediately)
     *   [5.4 Version `CURL_OPENSSL_3` not found](#Version_`CURL_OPENSSL_3`_not_found)
     *   [5.5 Steam webview/game browser not working in native runtime](#Steam_webview/game_browser_not_working_in_native_runtime)
+    *   [5.6 Cannot connect to the steam network](#Cannot_connect_to_the_steam_network)
 *   [6 Audio issues](#Audio_issues)
     *   [6.1 Configure PulseAudio](#Configure_PulseAudio)
     *   [6.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
@@ -216,6 +217,12 @@ $ LD_PRELOAD="/usr/lib/libgio-2.0.so.0 /usr/lib/libglib-2.0.so.0" steam-native
 
 ```
 
+### Cannot connect to the steam network
+
+This is known to be caused by a low-level network bug in the linux kernel. Luckily this problem has been fixed in 5.1.14 which at the time of writing this section (23/06/19), is currently in testing and can be updated to via the testing repo and an up-to-date mirror.
+
+See also [[1]](https://github.com/ValveSoftware/steam-for-linux/issues/6326).
+
 ## Audio issues
 
 If the sections below do not address the issue, using the [#Steam native runtime](#Steam_native_runtime) might help.
@@ -304,7 +311,7 @@ This error can also occur because of Steam runtime issues and may be fixed follo
 
 ### Unusually slow download speed
 
-If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[1]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
+If your Steam apps (games, software…) download speed through the client is unusually slow, but browsing the Steam store and streaming videos is unaffected, installing a DNS cache program, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq") can help [[2]](https://steamcommunity.com/app/221410/discussions/2/616189106498372437/).
 
 ### "Needs to be online" error
 
@@ -474,7 +481,7 @@ This can be fixed, by forcing the game to use a version of OpenGL it actually ne
 
 ### 2K games do not run on XFS partitions
 
-If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[3]](https://bbs.archlinux.org/viewtopic.php?id=185222)
+If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS") partitions, then the game may not start or run properly due to how the game loads files as it starts. [[4]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
 ### Steam controller not being detected correctly
 

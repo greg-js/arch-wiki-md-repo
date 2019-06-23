@@ -36,7 +36,7 @@ You need to install the [grilo](https://www.archlinux.org/packages/?name=grilo) 
 
 ### How to activate the Cover Art plugin
 
-If you want to use the cover art plugin, but are unable to do so, you need to install [gnome-python](https://www.archlinux.org/packages/?name=gnome-python).
+If you want to use the cover art plugin, but are unable to do so, you need to install [gnome-python](https://aur.archlinux.org/packages/gnome-python/).
 
 After you do that, restart Rhythmbox.
 

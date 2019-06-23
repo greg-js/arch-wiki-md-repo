@@ -140,6 +140,7 @@
     *   [5.58 FTL: Faster than Light](#FTL:_Faster_than_Light)
         *   [5.58.1 Compatibility](#Compatibility)
         *   [5.58.2 Problems with open-source video driver](#Problems_with_open-source_video_driver)
+        *   [5.58.3 Artifacts when launching, Problems with openGL](#Artifacts_when_launching,_Problems_with_openGL)
     *   [5.59 Game Dev Tycoon](#Game_Dev_Tycoon)
         *   [5.59.1 Game does not start](#Game_does_not_start_5)
     *   [5.60 Garry's Mod](#Garry's_Mod)
@@ -1399,6 +1400,10 @@ The Steam overlay in FTL does not function as it is not a 3D accelerated game. B
 #### Problems with open-source video driver
 
 FTL may fail to run if you are using an opensource driver for your video card. There are two solutions: install a proprietary video driver or delete (rename if you are unsure) the library "libstdc++.so.6" inside `*GAME*/data/amd64/lib`. This is if you are using a 64bit system. In case you are using a 32bit system you have to remove (rename) the same library located into `*GAME*/data/x86/lib`.
+
+#### Artifacts when launching, Problems with openGL
+
+Using the open source drivers, ATI for radeon cards, the game can display artifacts on screen. Run the game with `MESA_GL_VERSION_OVERRIDE=3.0 %command%`
 
 ### Game Dev Tycoon
 

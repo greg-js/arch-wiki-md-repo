@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=560110) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=572872) na versão em inglês.
 
 Artigos relacionados
 
@@ -36,3 +36,5 @@ Veja [Security#SSH](/index.php/Security#SSH "Security").
 *   [Multiplexadores de terminal](/index.php/Terminal_multiplexer "Terminal multiplexer") (geralmente usados por SSH)
 *   [Wikipedia:Comparison of SSH clients](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients "wikipedia:Comparison of SSH clients")
 *   [Wikipedia:Comparison of SSH servers](https://en.wikipedia.org/wiki/Comparison_of_SSH_servers "wikipedia:Comparison of SSH servers")
+
+*   [Formatos de impressão digital de chave SSH](https://blog.webernetz.net/ssh-key-fingerprints/)

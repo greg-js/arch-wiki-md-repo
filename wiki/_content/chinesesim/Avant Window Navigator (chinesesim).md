@@ -44,7 +44,7 @@
 | media-control | [banshee](https://aur.archlinux.org/packages/banshee/) |
 | media-player | [gstreamer0.10-python](https://aur.archlinux.org/packages/gstreamer0.10-python/) |
 | mail | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
-| slickswitcher | [python2-wnck](https://www.archlinux.org/packages/?name=python2-wnck) | [python2-gconf](https://www.archlinux.org/packages/?name=python2-gconf) |
+| slickswitcher | [python2-wnck](https://aur.archlinux.org/packages/python2-wnck/) | [python2-gconf](https://aur.archlinux.org/packages/python2-gconf/) |
 | stacks | [python2-libgnome](https://www.archlinux.org/packages/?name=python2-libgnome) [python2-gnomedesktop](https://www.archlinux.org/packages/?name=python2-gnomedesktop) |
 | thinkhdaps | [python2-pyinotify](https://www.archlinux.org/packages/?name=python2-pyinotify) |
 | tomboy-applet | [tomboy](https://www.archlinux.org/packages/?name=tomboy) |

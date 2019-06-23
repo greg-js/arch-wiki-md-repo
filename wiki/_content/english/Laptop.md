@@ -6,7 +6,11 @@ To gain an overview of the reported/achieved Linux hardware compatibility of a p
 
 If there are laptop model specific instructions, the respective article is crosslinked in the first column of the vendor subpages. In case the model is not listed in the vendor table, existing instructions of similar models via the [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") vendor subcategory may help.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Power management](#Power_management)
     *   [1.1 Battery state](#Battery_state)

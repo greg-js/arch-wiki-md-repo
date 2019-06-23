@@ -1,4 +1,4 @@
-[WPS Office for Linux](https://www.wps.com/linux) is an efficient,stable and compatible alternative for microsoft office with modern UI which supports cross-device file transfer,cloud backup.The suite contains writer,presentation and spreadsheet
+[WPS Office for Linux](https://www.wps.com/linux) is an efficient, stable and compatible alternative for Microsoft Office with a modern UI which supports cross-device file transfer and cloud backup. The suite contains Writer, Presentation and Spreadsheets.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

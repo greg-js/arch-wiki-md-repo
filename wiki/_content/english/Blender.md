@@ -47,7 +47,7 @@ RenderMan is a Linux compatible proprietary rendering plugin that is free for us
 
 ### Pro-Render
 
-[Pro-Render](https://pro.radeon.com/en/software/prorender/blender/) is an open source Blender rendering plugin from AMD that will allow any machine using an OpenCL 1.2 compatible AMD GPU the ability to create realistic GPU renders, allowing for faster work compared to the CPU.
+[Pro-Render](https://www.amd.com/en/technologies/radeon-prorender-blender) is an open source Blender rendering plugin from AMD that will allow any machine using an OpenCL 1.2 compatible AMD GPU the ability to create realistic GPU renders, allowing for faster work compared to the CPU.
 
 ### Blend4Web
 

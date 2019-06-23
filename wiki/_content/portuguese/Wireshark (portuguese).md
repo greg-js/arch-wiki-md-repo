@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=570364) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=573341) na versão em inglês.
 
 O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de código aberto. Ele é usado para solucionar de problemas de rede, análise, desenvolvimento de software e protocolo de comunicação e educação.
 
@@ -9,7 +9,7 @@ O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
-*   [2 Capturando como um usuário normal](#Capturando_como_um_usuário_normal)
+*   [2 Privilégios de captura](#Privilégios_de_captura)
 *   [3 Algumas técnicas de captura](#Algumas_técnicas_de_captura)
     *   [3.1 Filtrando pacotes TCP](#Filtrando_pacotes_TCP)
     *   [3.2 Filtrando pacotes UDP](#Filtrando_pacotes_UDP)
@@ -24,22 +24,13 @@ O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de
 
 **Nota:** A interface GTK+ obsoleta foi removida no Wireshark 3.0.
 
-## Capturando como um usuário normal
+## Privilégios de captura
 
 Não execute Wireshark como *root*, é inseguro. O Wireshark implementou a separação de privilégios.[[1]](https://wiki.wireshark.org/CaptureSetup/CapturePrivileges#Most_UNIXes)
 
 O [script de instalação](/index.php/PKGBUILD_(Portugu%C3%AAs)#install "PKGBUILD (Português)") do [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) define as [capacidades](/index.php/Capabilities "Capabilities") de captura de pacotes no executável `/usr/bin/dumpcap`.
 
-`/usr/bin/dumpcap` só pode ser executado como *root* e membros do grupo `wireshark`.
-
-Então, para usar Wireshark como um usuário normal, você só precisa adicionar seu usuário ao [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `wireshark`:
-
-```
- # gpasswd -a *nome-de-usuário* wireshark
-
-```
-
-Faça login novamente para aplicar a alteração.
+`/usr/bin/dumpcap` só pode ser executado como *root* e membros do grupo `wireshark`, de forma que, para usar Wireshark como um usuário normal, você precisa adicionar seu usuário ao [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `wireshark` (Veja [Usuários e grupos#Gerenciamento de grupo](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_grupo "Usuários e grupos")).
 
 ## Algumas técnicas de captura
 

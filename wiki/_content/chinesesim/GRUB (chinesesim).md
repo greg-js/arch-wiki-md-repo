@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-11，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=574118)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-17，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=575787)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -113,25 +113,25 @@ BIOS/[GPT](/index.php/GPT "GPT")配置中，必须使用 [BIOS 启动分区](htt
 [安装](/index.php/Install "Install") 软件包 [grub](https://www.archlinux.org/packages/?name=grub)。如果之前安装过 [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/)，安装完成后 [grub](https://www.archlinux.org/packages/?name=grub) 会取代它。然后运行
 
 ```
-# grub-install --target=i386-pc /dev/sd**X**
+# grub-install --target=i386-pc /dev/sd*X*
 
 ```
 
-其中 `/dev/sd**X**` 是要安装 GRUB 的磁盘，比如磁盘 `/dev/sda`，而 **不是** 分区 `/dev/sda1`。
+其中 `/dev/sd*X*` 是要安装 GRUB 的磁盘，比如磁盘 `/dev/sda`，而 **不是** 分区 `/dev/sda1`。
 
-现在你需要 [#生成主配置文件](#生成主配置文件)。
+现在你需要 [生成主配置文件](#生成主配置文件)。
 
 如果你的 `/boot` 使用了 [LVM](/index.php/LVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LVM (简体中文)")（逻辑分卷管理器），GRUB 可以安装到多个物理磁盘上。
 
 **提示：** 对于安装 GRUB 的其他方式，例如安装到一个U盘上，可以参考 [GRUB/Tips and tricks (简体中文)#其它安装方式](/index.php/GRUB/Tips_and_tricks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#其它安装方式 "GRUB/Tips and tricks (简体中文)")。
 
-*grub-install* 命令的详细信息请参考 [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) 和 [GRUB 手册](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation)。
+`grub-install` 命令的详细信息请参考 [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) 和 [GRUB 手册](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation)。
 
 ## UEFI 系统
 
 **注意:**
 
-*   建议阅读并理解[统一可扩展固件界面 (UEFI)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")，[Partitioning (简体中文)#GUID 分区表](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID_分区表 "Partitioning (简体中文)") and [Arch boot process (简体中文)#UEFI](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI "Arch boot process (简体中文)")这几个页面。
+*   建议阅读并理解[统一可扩展固件界面 (UEFI)](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")，[Partitioning (简体中文)#GUID 分区表](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID_分区表 "Partitioning (简体中文)") 和 [Arch boot process (简体中文)#UEFI](/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI "Arch boot process (简体中文)")这几个页面。
 *   使用UEFI安装时，一定要让安装介质以UEFI模式启动，否则 *efibootmgr* 将无法添加 GRUB UEFI 启动项。 但即使在 BIOS 模式工作时，安装到[后备启动路径](#缺省/后备启动路径)仍然可行，因为这一过程用不到 NVRAM。
 *   要从一个磁盘上使用 UEFI 模式启动，磁盘上必须要先有一个 EFI 分区。按照 [EFI system partition#Check for an existing partition](/index.php/EFI_system_partition#Check_for_an_existing_partition "EFI system partition") 上说的来查看你是否已经有一个 EFI 分区，如若没有，就创建一个。
 

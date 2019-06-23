@@ -11,10 +11,11 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Vulkan Hardware Database](#Vulkan_Hardware_Database)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Error - vulkan: No DRI3 support](#Error_-_vulkan:_No_DRI3_support)
-    *   [3.2 Nvidia - vulkan is not working and can not initialize](#Nvidia_-_vulkan_is_not_working_and_can_not_initialize)
+*   [2 Verification](#Verification)
+*   [3 Vulkan Hardware Database](#Vulkan_Hardware_Database)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Error - vulkan: No DRI3 support](#Error_-_vulkan:_No_DRI3_support)
+    *   [4.2 Nvidia - vulkan is not working and can not initialize](#Nvidia_-_vulkan_is_not_working_and_can_not_initialize)
 
 ## Installation
 
@@ -27,7 +28,10 @@ To run a Vulkan application, you will need to [install](/index.php/Install "Inst
 
 *   [Intel](/index.php/Intel "Intel"): [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"): [nvidia](https://www.archlinux.org/packages/?name=nvidia)
-*   AMD: [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) ([radeon](/index.php/Radeon "Radeon"), [AMDGPU](/index.php/AMDGPU "AMDGPU") [[3]](https://www.phoronix.com/scan.php?page=news_item&px=RADV-Vulkan-CTS-Conformant)) or [amdgpu-pro-vulkan](https://aur.archlinux.org/packages/amdgpu-pro-vulkan/) ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO")) or [amdvlk-git](https://aur.archlinux.org/packages/amdvlk-git/)
+*   [AMD](/index.php/AMDGPU "AMDGPU"): there are three implementations, which could be installed simultaneously:
+    *   [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) - RADV (part of Mesa project)
+    *   [amdvlk](https://aur.archlinux.org/packages/amdvlk/) - AMDVLK Open (maintained by AMD)
+    *   [vulkan-amdgpu-pro](https://aur.archlinux.org/packages/vulkan-amdgpu-pro/) - AMDVLK Closed (maintained by AMD)
 
 Other drivers may be installed manually instead:
 
@@ -35,6 +39,15 @@ Other drivers may be installed manually instead:
 *   Adreno: [https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu](https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu)
 
 For Vulkan application development, [install](/index.php/Install "Install") [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and optionally [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers) and [vulkan-tools](https://www.archlinux.org/packages/?name=vulkan-tools) (you can find the vulkaninfo tool in here).
+
+## Verification
+
+To see which Vulkan implementations are currently installed on your system, use the following command:
+
+```
+$ ls /usr/share/vulkan/icd.d/
+
+```
 
 ## Vulkan Hardware Database
 

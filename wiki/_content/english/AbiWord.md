@@ -17,7 +17,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [abiword](https://www.archlinux.org/packages/?name=abiword) package. You may want to install dictionaries if you want spell check, which can be provided by the [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) package for English.
+[Install](/index.php/Install "Install") the [abiword](https://www.archlinux.org/packages/?name=abiword) package.
+
+AbiWord can use multiple spell checking dictionaries, see [Language checking](/index.php/Language_checking "Language checking").
 
 To fix tiny cursor and misaligned text issues, install either [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) and [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont).
 
@@ -59,9 +61,4 @@ In order to set keybindings, edit `~/.config/abiword/profile` and, inside the `A
 
 ## LaTeX fonts
 
-The package [abiword](https://www.archlinux.org/packages/?name=abiword) comes with a function which allows user to insert LaTeX codes in a document. To display mathematics symbols properly, one needs to download [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz) and save it to the directory `/usr/share/fonts`. To install the font, extract the tarball and then run the following:
-
-```
-# fc-cache -fv
-
-```
+The package [abiword](https://www.archlinux.org/packages/?name=abiword) comes with a function which allows user to insert LaTeX codes in a document. To display mathematics symbols properly, [install](/index.php/Install "Install") [ttf-latex-xft-fonts](https://aur.archlinux.org/packages/ttf-latex-xft-fonts/).

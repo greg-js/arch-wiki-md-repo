@@ -34,45 +34,43 @@ It is written in [Bash](/index.php/Bash "Bash"), to allow for portability, and c
 
 ### Initial setup
 
-Prior to running RKH for the first time, You will need to update the *file properties database*:
+Prior to running rkhunter for the first time, update the *file properties database*:
 
 ```
-$ sudo rkhunter --propupd
+# rkhunter --propupd
 
 ```
 
 ### Important files
 
-The main configuration file is located at: `/etc/rkhunter.conf`
+The main configuration file is located at `/etc/rkhunter.conf`.
 
-By default, RKH places logs at: `/var/log/rkhunter.log`
+By default, a log of the last system check will be placed at `/var/log/rkhunter.log`.
 
 ## Usage
 
-See [rkhunter(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rkhunter.8) for a full list of options.
-
-**Note:** By default, *RKH* requires root privileges to run.
+See [rkhunter(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rkhunter.8) for full details.
 
 ### Basic commands
 
-*   Update file properties database:
+To update the file properties database:
 
 ```
-$ rkhunter --propupd
-
-```
-
-*   Run system check:
-
-```
-$ rkhunter -c, --check
+# rkhunter --propupd
 
 ```
 
-*   Update RKH after modifying the configuration file:
+To run a system check:
 
 ```
-$ rkhunter -C, --config-check
+# rkhunter --check
+
+```
+
+To validate the configuration file(s):
+
+```
+# rkhunter --config-check
 
 ```
 
@@ -80,7 +78,7 @@ $ rkhunter -C, --config-check
 
 ### False positives
 
-Out of the box, RKH will throw up some false warnings during the file properties check. This is because, a few of the core utilities have been replaced by scripts. These warnings can be muted through white-listing.
+Out of the box, Rootkit Hunter will throw up some false warnings during the file properties check. This is because, a few of the core utilities have been replaced by scripts. These warnings can be muted through white-listing.
 
  `/etc/rkhunter.conf` 
 ```
@@ -93,8 +91,8 @@ SCRIPTWHITELIST=/usr/bin/ldd
 
 ### External documentation
 
-*   [RKH Homepage](http://rkhunter.sourceforge.net/)
-*   [RKH README](https://sourceforge.net/p/rkhunter/rkh_code/ci/master/tree/files/README)
+*   [Rootkit Hunter Homepage](http://rkhunter.sourceforge.net/)
+*   [Rootkit Hunter README](https://sourceforge.net/p/rkhunter/rkh_code/ci/master/tree/files/README)
 
 ### Related Wikipedia pages
 

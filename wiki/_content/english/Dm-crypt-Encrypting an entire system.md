@@ -327,10 +327,9 @@ The disk layout in this example is:
 
 **Note:** While using the `encrypt` hook this method does not allow you to span the logical volumes over multiple disks; either use the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") or see [dm-crypt/Specialties#Modifying the encrypt hook for multiple partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
 
-**Tip:** Three variants of this setup:
+**Tip:** Two variants of this setup:
 
 *   Instructions at [dm-crypt/Specialties#Encrypted system using a detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") use this setup with a detached LUKS header on a USB device to achieve a two factor authentication with it.
-*   Instructions at [Pavel Kogan's blog](https://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
 *   Instructions at [dm-crypt/Specialties#Encrypted /boot and a detached LUKS header on USB](/index.php/Dm-crypt/Specialties#Encrypted_/boot_and_a_detached_LUKS_header_on_USB "Dm-crypt/Specialties") use this setup with a detached LUKS header, encrypted `/boot` partition, and encrypted keyfile all on a USB device.
 
 ### Preparing the disk
@@ -1159,7 +1158,7 @@ The following example creates a full system encryption with LUKS1 using [Btrfs](
 
 If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda1` and is mounted at `/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
 
-Since `/boot` resides on the LUKS1 encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[3]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
+Since `/boot` resides on the LUKS1 encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod).
 
 Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partition is shown.
 

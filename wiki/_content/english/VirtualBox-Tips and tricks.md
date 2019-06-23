@@ -1,5 +1,3 @@
-See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
-
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
@@ -44,6 +42,7 @@ See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
         *   [11.2.2 Attach virtual disk images to the VM](#Attach_virtual_disk_images_to_the_VM)
     *   [11.3 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
     *   [11.4 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
+*   [12 Set guest starting resolution](#Set_guest_starting_resolution)
 
 ## Import/export VirtualBox virtual machines from/to other hypervisors
 
@@ -603,3 +602,14 @@ In order to boot the virtual machine in UEFI mode, a dedicated virtual disk for 
 ### Set up a separate ESP in VirtualBox
 
 ### Configure the virtual UEFI firmware to use the Windows bootloader
+
+## Set guest starting resolution
+
+You can change the BIOS/UEFI booting resolution using `VBoxManage` tool. For example:
+
+```
+$ VBoxManage setextradata "Your Virtual Machine Name" "VBoxInternal2/EfiGraphicsResolution" "2560x1440"
+
+```
+
+Recommended resolutions are 1280x720, 1920x1080, 2048x1080, 2560x1440, 3840x2160, 1280x800, 1280x1024, 1440x900, 1600x900.

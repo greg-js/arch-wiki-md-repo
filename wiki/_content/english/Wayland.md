@@ -431,7 +431,7 @@ $ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
 
 ### Screen recording
 
-Currently only [green-recorder](https://aur.archlinux.org/packages/green-recorder/) supports screen recording on Wayland (requires a GNOME session).
+[green-recorder](https://aur.archlinux.org/packages/green-recorder/) and [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) support screen recording on Wayland using GNOME screencast feature.
 
 ### Remote display
 

@@ -68,6 +68,9 @@ Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Piny
 *   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), 即著名中文输入法 [Rime IME](/index.php/Rime_IME "Rime IME")的 Fcitx 版本。但它不支持 Fcitx 本身的 [#特殊符号](#特殊符号) 和 [#快速输入](#快速输入) 功能，自定义设置请参见[官方](http://rime.im)，
 *   [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin), Google 拼音输入法 for Android.
 *   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), 搜狗输入法for linux—支持全拼、简拼、模糊音、云输入、皮肤、中英混输入。[官方网址](http://pinyin.sogou.com/linux/)
+
+也可以通过添加[archlinuxcn源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/)后用pacman安装。
+
 *   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) 可以提供云拼音输入的支持，支持 Fcitx 下的所有拼音输入法，Fcitx-rime 除外。
 *   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) 为 Fcitx 添加 chewing (繁体中文注音) 输入引擎支持。依赖 [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](https://en.wikipedia.org/wiki/Cangjie_input_method "wikipedia:Cangjie input method"), [Zhengma](https://en.wikipedia.org/wiki/Zhengma_method "wikipedia:Zhengma method"), [Boshiamy](https://en.wikipedia.org/wiki/Boshiamy_method "wikipedia:Boshiamy method") support.

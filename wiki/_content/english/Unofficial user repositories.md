@@ -760,9 +760,9 @@ Server = https://smoothware.net/$repo/$arch
 
 ### trinity
 
-*   **Maintainer:** Michael Manley <mmanley@nasutek.com>
+*   **Maintainer:** Michael J. Manley <mmanley@ntge.net>
 *   **Description:** [Trinity](/index.php/Trinity "Trinity") Desktop Environment
-*   **Key-ID:** 65A4AC99
+*   **Key-ID:** 5F710C1E
 
 ```
 [trinity]

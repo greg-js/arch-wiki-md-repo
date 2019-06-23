@@ -258,7 +258,7 @@ Esto le proporcionará un menú bastante completo. Ahora puede modificar el arch
 
 ### Obmenu
 
-Obmenu es un editor gráfico para el menu de Openbox. Para todos aquellos que no les gusta mucho enredar con el codigo fuente XML. ésta es probablemente la mejor opción para usted. Se instala mediante el paquete [obmenu](https://www.archlinux.org/packages/?name=obmenu), disponible en los [repositorios oficiales.](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
+Obmenu es un editor gráfico para el menu de Openbox. Para todos aquellos que no les gusta mucho enredar con el codigo fuente XML. ésta es probablemente la mejor opción para usted. Se instala mediante el paquete [obmenu](https://aur.archlinux.org/packages/obmenu/), disponible en los [repositorios oficiales.](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 
 Una vez instalado, tan sólo debe ejecutar `obmenu` y añadir o quitar las aplicaciones que se desee.
 

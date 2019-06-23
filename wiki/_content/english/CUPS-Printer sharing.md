@@ -36,7 +36,7 @@ This article contains instruction on sharing printers between systems, be it bet
 
 ## Creating class for multiple printers
 
-'Class' in CUPS have meaning of a group. When you have multiple printers connected to single CUPS server you may want them to be balanced (printing jobs are automatically queued to different printers). This is also give an advantage that users on remote machine dealing with single 'printer'. Which is especially useful when one printer from class must be taken for repair, you just exclude it from class, yet for end users nothing have changed, printing jobs queued to another printer by CUPS server. Creating and managing classes can be done from CUPS Web GUI
+In CUPS, a class is a group of printers which appears to clients as a single printer. When a client selects to print to the class, CUPS selects any printer in the group to accept the print job. This may be especially useful when one printer from the class must be removed. If it is excluded from the class, end users will not notice any change because the print job will be queued to another printer in the class. Creating and managing classes can be done from CUPS Web GUI.
 
 ## Between GNU/Linux systems
 

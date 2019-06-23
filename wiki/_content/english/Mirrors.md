@@ -156,7 +156,14 @@ Another popular alternative is the following tool:
 
 ## Troubleshooting
 
-In the unlikely scenario that you are without any configured mirrors and `pacman-mirrorlist` is not installed, run the following command:
+In case you encounter the following error:
+
+```
+error: config file /etc/pacman.d/mirrorlist could not be read: No such file or directory
+
+```
+
+Get the mirrorlist directly from the website:
 
 ```
 # curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/

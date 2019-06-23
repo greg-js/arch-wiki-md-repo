@@ -26,8 +26,9 @@ The game works in a client–server model, where the user plays using a Client w
 *   [3 Configuration](#Configuration)
     *   [3.1 File and directory for user settings](#File_and_directory_for_user_settings)
 *   [4 Server](#Server)
-    *   [4.1 MySQL support](#MySQL_support)
-    *   [4.2 Setting up a server](#Setting_up_a_server)
+    *   [4.1 Server via systemd service](#Server_via_systemd_service)
+    *   [4.2 MySQL support](#MySQL_support)
+    *   [4.3 Running a server with ddnet-maps-git](#Running_a_server_with_ddnet-maps-git)
 *   [5 Extra tools](#Extra_tools)
     *   [5.1 config_retrieve](#config_retrieve)
     *   [5.2 config_store](#config_store)
@@ -160,44 +161,48 @@ The subdirectory `downloadedmaps/` will store maps downloaded in runtime by DDNe
 
 ## Server
 
-**Note:** These instructions are **not** required for playing DDNet; see [#Play](#Play).
+Although a local DDNet server is not required for playing DDNet (See [#Play](#Play)), one may want to run it for playing without Internet connection, want to avoid high latency ("ping" in the game interface) of servers on the Internet, simply want to test features, etc.
 
-Use these instructions if you want a local server in a [LAN](https://en.wikipedia.org/wiki/Local_area_network "w:Local area network") to play with friends, or due to high latency of Internet servers, or for testing.
+For more info, see [Server features](https://ddnet.tw/server/), [Server settings](https://ddnet.tw/settingscommands/#server-settings), [Server commands](https://ddnet.tw/settingscommands/#server-commands), and much more in [DDNet Forums](https://forum.ddnet.tw/).
+
+### Server via systemd service
+
+DDNet packages provide the `ddnet-server.service` [systemd](/index.php/Systemd "Systemd") unit file for ease [start](/index.php/Start "Start"), [stop](/index.php/Stop "Stop") etc. the server instance.
+
+This unit file runs the server instance as sysuser `ddnet` from its home folder `/var/lib/ddnet/` as working directory, having log messages available in `/var/lib/ddnet/autoexec_server.log` file and via [systemd journal](/index.php/Systemd_journal "Systemd journal") command-line `journactl -u ddnet-server`.
 
 ### MySQL support
 
-It is possible to use a MySQL or MariaDB instance to store races done in a DDNet Server. However, MySQL support is **not** enabled be default.
+DDNet provide MySQL support to store records achieved in the server, however it is **not** enabled by default.
 
-To enable MySQL support for [ddnet](https://aur.archlinux.org/packages/ddnet/) or [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/), simply set the variable `_enable_mysql` with the value `1` in their PKGBUILD, and the proper dependencies will be added and proper flags will be enabled.
+To enable MySQL support when using [ddnet](https://aur.archlinux.org/packages/ddnet/) or [ddnet-git](https://aur.archlinux.org/packages/ddnet-git/), simply edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") by setting the variable `_enable_mysql` to `1`, and the proper dependencies will be added and proper flags will be enabled.
 
 Case you are building DDNet by yourself, be sure to:
 
-*   install the build dependency [boost](https://www.archlinux.org/packages/?name=boost) and the runtime dependencies [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/);
+*   install the buildtime dependency [boost](https://www.archlinux.org/packages/?name=boost) and the runtime dependencies [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) and [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/);
 *   append `-DMYSQL=ON` to the *cmake* command-line.
 
-**Tip:** See [MariaDB](/index.php/MariaDB "MariaDB") for some post-installation instructions. Make sure to check in there, to avoid problems.
+**Tip:** Make sure to check [MariaDB](/index.php/MariaDB "MariaDB") for some post-installation instructions to avoid problems.
 
-### Setting up a server
+### Running a server with ddnet-maps-git
 
-In order to have a server, you need DDNet installed, config file(s) and maps.
+[ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/) provides maps and server configs that allows running a server without further configuration. To have the server up:
 
-**1- Easy method:**
+1.  [Install](/index.php/Install "Install") [ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/)
+2.  [Start/enable](/index.php/Start/enable "Start/enable") `ddnet-server.service`
 
-1.  install the package [ddnet-maps-git](https://aur.archlinux.org/packages/ddnet-maps-git/)
-2.  start a server instance using the `.desktop` file provided in the package (e.g. in GNOME, search for "ddnet server" in its Activities Overview), or by running the command `$ DDNet-Server` 
-
-The server instance should be available and visible for a Client in the LAN servers tab.
+Your local server instance should now be available and visible in the "LAN" tab of the DDNet Client.
 
 ## Extra tools
 
-This section list and describe some tools that, while most might not need them, could be useful for e.g. mappers. Some of these tools are developed by the DDNet development team, but other tools were inherited from Teeworlds when forking its source code in the beginning.
+This section lists and describes some tools that, while most might not need them, could be useful for e.g. mappers. Some of these tools are developed by the DDNet development team, but other tools were inherited from Teeworlds when forking its source code in the beginning.
 
-The tools below are provided in `/usr/lib/ddnet/tools/` by the DDNet packages.
+The tools below are provided in `/usr/lib/ddnet/` by the DDNet packages.
 
 ### config_retrieve
 
 ```
-$ /usr/lib/ddnet/tools/config_retrieve *mapfile.map*
+$ /usr/lib/ddnet/config_retrieve *mapfile.map*
 
 ```
 
@@ -208,7 +213,7 @@ Available since DDNet version 9.0.
 ### config_store
 
 ```
-$ /usr/lib/ddnet/tools/config_store *mapfile.map*
+$ /usr/lib/ddnet/config_store *mapfile.map*
 
 ```
 
@@ -221,7 +226,7 @@ Available since DDNet version 9.0.
 ### confusables
 
 ```
-$ /usr/lib/ddnet/tools/confusables *string1* *string2*
+$ /usr/lib/ddnet/confusables *string1* *string2*
 
 ```
 
@@ -234,7 +239,7 @@ Available since DDNet version 10.3.5.
 ### crapnet
 
 ```
-$ /usr/lib/ddnet/tools/crapnet
+$ /usr/lib/ddnet/crapnet
 
 ```
 
@@ -243,7 +248,7 @@ Tests connection by setting a client–server connection locally and running pin
 ### dilate
 
 ```
-$ /usr/lib/ddnet/tools/dilate *imagefile1* [*imagefile2* ... ]
+$ /usr/lib/ddnet/dilate *imagefile1* [*imagefile2* ... ]
 
 ```
 
@@ -254,7 +259,7 @@ It is a graphical tool, mainly useful for mappers. It takes care of transparent 
 ### dummy_map
 
 ```
-$ /usr/lib/ddnet/tools/dummy_map
+$ /usr/lib/ddnet/dummy_map
 
 ```
 
@@ -263,7 +268,7 @@ Creates a dummy, small empty map to be used to start a server. See [[3]](https:/
 ### fake_server
 
 ```
-$ /usr/lib/ddnet/tools/fake_server
+$ /usr/lib/ddnet/fake_server
 
 ```
 
@@ -272,7 +277,7 @@ Creates a fake server for testing.
 ### map_diff
 
 ```
-$ /usr/lib/ddnet/tools/map_diff *mapfile1.map* *mapfile2.map*
+$ /usr/lib/ddnet/map_diff *mapfile1.map* *mapfile2.map*
 
 ```
 
@@ -288,7 +293,7 @@ If there is no difference between maps, returns 0; otherwise, returns 1.
 ### map_extract
 
 ```
-$ /usr/lib/ddnet/tools/map_extract *mapfile.map* [*directory*]
+$ /usr/lib/ddnet/map_extract *mapfile.map* [*directory*]
 
 ```
 
@@ -297,7 +302,7 @@ Extracts content from *mapfile.map* into *directory*. If optional argument *dire
 ### map_replace_image
 
 ```
-$ /usr/lib/ddnet/tools/map_replace_image *mapfile1.map* *mapfile2.map* *imagename* *imagefile*
+$ /usr/lib/ddnet/map_replace_image *mapfile1.map* *mapfile2.map* *imagename* *imagefile*
 
 ```
 
@@ -311,7 +316,7 @@ Replaces the image *imagename* currently inside the map filename *mapfile1.map* 
 ### map_resave
 
 ```
-$ /usr/lib/ddnet/tools/map_resave *mapfile.map* *imagefile*
+$ /usr/lib/ddnet/map_resave *mapfile.map* *imagefile*
 
 ```
 
@@ -322,7 +327,7 @@ The error status 255 is returned if 1) a number of arguments different from 2 is
 ### packetgen
 
 ```
-$ /usr/lib/ddnet/tools/packetgen
+$ /usr/lib/ddnet/packetgen
 
 ```
 
@@ -331,7 +336,7 @@ Generates packets to localhost in default port (8303) to test communication with
 ### tileset_borderadd
 
 ```
-$ /usr/lib/ddnet/tools/tileset_borderadd *tileset1* [*tileset2* ...]
+$ /usr/lib/ddnet/tileset_borderadd *tileset1* [*tileset2* ...]
 
 ```
 
@@ -342,7 +347,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### tileset_borderfix
 
 ```
-$ /usr/lib/ddnet/tools/tileset_borderfix tileset1 [tileset2 ...]
+$ /usr/lib/ddnet/tileset_borderfix tileset1 [tileset2 ...]
 
 ```
 
@@ -353,7 +358,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### tileset_borderrem
 
 ```
-$ /usr/lib/ddnet/tools/tileset_borderrem tileset1 [tileset2 ...]
+$ /usr/lib/ddnet/tileset_borderrem tileset1 [tileset2 ...]
 
 ```
 
@@ -364,7 +369,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### tileset_borderset
 
 ```
-$ /usr/lib/ddnet/tools/tileset_borderset tileset1 [tileset2 ...]
+$ /usr/lib/ddnet/tileset_borderset tileset1 [tileset2 ...]
 
 ```
 
@@ -375,7 +380,7 @@ Returns 255 with a usage message if less than 1 argument is provided, returns 1 
 ### uuid
 
 ```
-$ /usr/lib/ddnet/tools/uuid *name*
+$ /usr/lib/ddnet/uuid *name*
 
 ```
 
@@ -413,7 +418,7 @@ See also "/build/ddnet/src/build/CMakeFiles/CMakeError.log".
 
 **Solution:**
 
-It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) package installed, but you are missing [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/).
+It means your *cmake* command-line has the `-DMYSQL=ON` flag set, you have [mariadb-libs](https://www.archlinux.org/packages/?name=mariadb-libs) package installed, but [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) is missing.
 
 Either install [mysql-connector-c++](https://aur.archlinux.org/packages/mysql-connector-c%2B%2B/) to build with MySQL support or remove `-DMYSQL=ON` (or set to off with `-DMYSQL=OFF`) to build without it.
 
@@ -449,6 +454,7 @@ Either install [boost](https://www.archlinux.org/packages/?name=boost) to build 
 
 *   [DDNet official website](https://ddnet.tw/)
 *   [DDNet Forum](https://forum.ddnet.tw/)
+*   [DDNet Wiki](https://web.archive.org/web/20170607070936/https://wiki.ddnet.tw/Main_Page) - via Wayback Machine (might have deprecated info)
 *   [DDNet source code repository](https://github.com/ddnet/ddnet)
 *   [The History of DDNet](https://forum.ddnet.tw/viewtopic.php?f=3&t=1824)
 *   [Tutorials and other useful links](https://forum.ddnet.tw/viewtopic.php?f=35&t=2420)

@@ -722,6 +722,7 @@ An alternative is to load all possible keys:
 ```
 [Unit]
 Description=Load encryption keys
+DefaultDependencies=no
 Before=zfs-mount.service
 After=zfs-import.target
 

@@ -1,10 +1,15 @@
-**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=569807) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=573121) na versão em inglês.
 
 Artigos relacionados
 
 *   [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf")
 
 [Openresolv](https://roy.marples.name/projects/openresolv) é uma implementação de [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf"), isto é, framework de gerenciamento de [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
+
+Apesar do openresolv ser mais conhecido por permitir que vários aplicativos modifiquem o `/etc/resolv.conf`, ele atualmente é a única forma padrão de implementar:
+
+*   controle dinâmico de um resolvedor DNS (além do glibc),
+*   [encaminhamento condicional](/index.php/Resolv.conf_(Portugu%C3%AAs)#Encaminhamento_condicional "Resolv.conf (Português)") dinâmico.
 
 **Dica:** Uma implementação alternativa é o [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf"), mas ele só pode ser usado com [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
 
@@ -33,14 +38,14 @@ A execução de `resolvconf -u` vai gerar `/etc/resolv.conf`.
 
 ## Usuários
 
-Clientes [DHCP](/index.php/DHCP "DHCP") autônomos:
+Clientes [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)") autônomos:
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") tem um *hook* que usa *resolvconf* se ele estiver instalado.
 
 [Gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede"):
 
 *   [netctl](/index.php/Netctl "Netctl") (usado por padrão)
-*   [NetworkManager (Português)#Usar openresolv](/index.php/NetworkManager_(Portugu%C3%AAs)#Usar_openresolv "NetworkManager (Português)")
+*   [NetworkManager (Português)#Usar openresolv](/index.php/NetworkManager_(Portugu%C3%AAs)#Usar_openresolv "NetworkManager (Português)") (limitado a uma única interface)
 
 Clientes [VPN](/index.php/VPN "VPN"):
 

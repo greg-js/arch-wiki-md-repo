@@ -435,14 +435,32 @@ To connect to an OpenVPN server through Gnome's built-in network configuration d
 
 ## Routing client traffic through the server
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
+Without further configuration only traffic directly to and from the OpenVPN server's IP passes through the VPN. To have other traffic, like web traffic pass through the VPN, correspondent routes must be added. You can either add routes in the client's configuration or configure the server to push these routes to the client.
+
+To redirect traffic to and from a subnet of the server, add `push "route <address pool> <subnet>"` right before the `remote <address> <port> udp/tcp`, like:
+
+```
+route 192.168.1.0 255.255.255.0
+
+```
+
+To redirect all traffic including Internet traffic to the server, add the following in the client's configuration:
+
+```
+redirect-gateway def1 bypass-dhcp ipv6
+
+```
+
+If you are running an IPv4-only server, drop the `ipv6` option. If you are going IPv6-only, use `redirect-gateway ipv6 !ipv4`.
+
+To make the server push routes, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp ipv6"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
 
 ```
 push "redirect-gateway def1 bypass-dhcp ipv6"
 
 ```
 
-If you are running an IPv4-only server, drop the `ipv6` option.
+If you are running an IPv4-only server, drop the `ipv6` option. If you are going IPv6-only, use `push "redirect-gateway ipv6 !ipv4"`
 
 Use the `push "route <address pool> <subnet>"` option to allow clients reaching other subnets/devices behind the server:
 

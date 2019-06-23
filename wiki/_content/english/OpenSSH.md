@@ -817,14 +817,14 @@ If you are using an interactive session, there are multiple ways to execute a co
 For example, to automatically show your host's distribution on login:
 
 ```
-$ ssh -t *host* "cat /etc/os-release | grep '^NAME'; bash"
+$ ssh -t *host* "grep '^NAME' /etc/os-release; bash"
 
 ```
 
 Or using your config file:
 
 ```
-RemoteCommand cat /etc/os-release | grep '^NAME'; bash
+RemoteCommand grep '^NAME' /etc/os-release; bash
 RequestTTY yes
 
 ```

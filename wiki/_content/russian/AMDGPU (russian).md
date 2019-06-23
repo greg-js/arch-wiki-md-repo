@@ -10,7 +10,11 @@ Related articles
 
 Владельцы неподдерживаемых видеокарт AMD/ATI могут использовать драйвера [Radeon (с открытым кодом)](/index.php/ATI "ATI") или [Catalyst (проприетарный драйвер от AMD)](/index.php/AMD_Catalyst "AMD Catalyst").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Выбор правильного драйвера](#Выбор_правильного_драйвера)
 *   [2 Установка](#Установка)

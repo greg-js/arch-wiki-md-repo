@@ -95,7 +95,7 @@
 
 **注意:** nvidia {-173xx,-96xx}-utils 包会跟 libgl 冲突，所以安装的时候，如果 pacman 询问您移除 libgl 并且因为依赖无法移除，您可以使用 `# pacman -Rdd libgl` 移除 libgl。
 
-4\. 在64位的操作系统上，假如您想32位的程序发挥好nvidia-utils的优势，还必须启用[multilib](/index.php/Multilib "Multilib")源来安装lib32的包(例如[lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) 或者 [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils))。
+4\. 在64位的操作系统上，假如您想32位的程序发挥好nvidia-utils的优势，还必须启用[multilib](/index.php/Multilib "Multilib")源来安装lib32的包(例如[lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils), [lib32-nvidia-340xx-utils](https://aur.archlinux.org/packages/lib32-nvidia-340xx-utils/) 或者 [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils))。
 
 5\. **重新启动您的计算机**， 以使得nouveau加入模块的黑名单生效。
 

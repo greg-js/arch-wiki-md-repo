@@ -91,7 +91,7 @@ Before installing Bumblebee, check your BIOS and activate Optimus (older laptops
 For 32-bit application support, enable the [multilib](/index.php/Multilib "Multilib") repository and install:
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - A render/display bridge for 32 bit applications.
-*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) (match the version of the regular NVIDIA driver).
+*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://aur.archlinux.org/packages/lib32-nvidia-340xx-utils/) (match the version of the regular NVIDIA driver).
 
 In order to use Bumblebee, it is necessary to add your regular *user* to the `bumblebee` group:
 

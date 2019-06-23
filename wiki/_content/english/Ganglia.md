@@ -4,7 +4,11 @@ Ganglia is available as the [ganglia](https://aur.archlinux.org/packages/ganglia
 
 The [Ganglia Wiki](http://sourceforge.net/apps/trac/ganglia) contains all the information you need to get started with Ganglia.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Ganglia Web Interface](#Ganglia_Web_Interface)
     *   [1.1 Nginx with php-fpm](#Nginx_with_php-fpm)

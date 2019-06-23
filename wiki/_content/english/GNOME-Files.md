@@ -30,6 +30,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
     *   [3.3 Music files metadata in list view](#Music_files_metadata_in_list_view)
     *   [3.4 Hiding files](#Hiding_files)
     *   [3.5 Open current directory in Tilix](#Open_current_directory_in_Tilix)
+    *   [3.6 Add a Folder to Bookmarks](#Add_a_Folder_to_Bookmarks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Files is no longer the default file manager](#Files_is_no_longer_the_default_file_manager)
     *   [4.2 Freezes for a few seconds after every copy operation](#Freezes_for_a_few_seconds_after_every_copy_operation)
@@ -170,6 +171,10 @@ GNOME Files additionally hides files when their names are listed in a `.hidden` 
 ### Open current directory in Tilix
 
 If you're using [tilix](https://www.archlinux.org/packages/?name=tilix) terminal you can easily add "Open in Tilix" option to the context menu of GNOME Files by installing its optional dependency [python-nautilus](https://www.archlinux.org/packages/?name=python-nautilus).
+
+### Add a Folder to Bookmarks
+
+To add a folder to your Bookmarks, simply press CTRL+D when you have the folder opened in Nautilus. Note that the list of bookmarks is shared with other Gnome-based graphical file managers (e.g. Nemo), so a folder added or removed from one will affect the bookmarks seen in the other.
 
 ## Troubleshooting
 

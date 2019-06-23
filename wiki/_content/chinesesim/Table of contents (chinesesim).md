@@ -99,6 +99,7 @@
 | <small>6.5.5.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>6.6.</small> [邮件服务器](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(3)</small> |
 | <small>6.7.</small> [网络配置](/index.php/Category:Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network configuration (简体中文)") <small>(3)</small> |
+| <small>6.7.1.</small> [Network managers](/index.php/Category:Network_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network managers (简体中文)") <small>(1)</small> |
 | <small>6.8.</small> [网络监控](/index.php/Category:Network_monitoring_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network monitoring (简体中文)") <small>(1)</small> |
 | <small>6.9.</small> [网络共享](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(5)</small> |
 | <small>6.10.</small> [Protocols](/index.php/Category:Protocols_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Protocols (简体中文)") <small>(0)</small> |
@@ -162,7 +163,7 @@
 | <small>8.11.1.</small> [Audio](/index.php/Category:Audio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio (简体中文)") <small>(1)</small> |
 | <small>8.11.2.</small> [Video](/index.php/Category:Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Video (简体中文)") <small>(1)</small> |
 | <small>8.12.</small> [脚本](/index.php/Category:Scripts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Scripts (简体中文)") <small>(2)</small> |
-| <small>8.13.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(19)</small> |
+| <small>8.13.</small> [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)") <small>(20)</small> |
 | <small>8.13.1.</small> [加密](/index.php/Category:Encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Encryption (简体中文)") <small>(3)</small> |
 | <small>8.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Disk encryption (简体中文)") <small>(1) (同时还属于 [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)"))</small> |
 | <small>8.13.2.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
@@ -170,6 +171,6 @@
 | <small>8.13.4.</small> [Sandboxing](/index.php/Category:Sandboxing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sandboxing (简体中文)") <small>(1)</small> |
 | <small>8.13.5.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.14.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(13)</small> |
-| <small>8.15.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(9)</small> |
+| <small>8.15.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(10)</small> |
 | <small>8.15.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(3)</small> |
 | <small>9.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |

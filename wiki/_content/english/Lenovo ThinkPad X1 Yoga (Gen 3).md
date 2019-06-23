@@ -52,10 +52,7 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
     *   [2.1 Verifying S3](#Verifying_S3)
     *   [2.2 Enabling S3 (with BIOS version 1.33 and after)](#Enabling_S3_(with_BIOS_version_1.33_and_after))
     *   [2.3 Enabling S3 (before BIOS version 1.33)](#Enabling_S3_(before_BIOS_version_1.33))
-        *   [2.3.1 Bios settings [1]](#Bios_settings_[1])
-        *   [2.3.2 Generate the override [2]](#Generate_the_override_[2])
-        *   [2.3.3 Load the override on boot [3]](#Load_the_override_on_boot_[3])
-        *   [2.3.4 Verify that S3 is working (See Verifying S3)](#Verify_that_S3_is_working_(See_Verifying_S3))
+        *   [2.3.1 Manual method](#Manual_method)
     *   [2.4 Fix touchscreen after resume](#Fix_touchscreen_after_resume)
     *   [2.5 Enabling S2idle](#Enabling_S2idle)
 *   [3 Tablet Functions](#Tablet_Functions)
@@ -110,19 +107,7 @@ Optimized Sleep State for Modern Standby:
 *   Disabled: "legacy" S3 sleep
 *   Enabled: modern standby
 
-By setting this option to "Disabled", a warning will appear. The warning describes that a reinstallation of your OS might be mandatory. I accepted that and both Windows and Linux worked fine for me. You can do this step also when the patch below already is loaded on boot. Afterwards, I recommend you to remove or comment out that patch with a "#" character in front of the line. That line might look like this: "initrd /acpi_override".
-
-If you're using systemd-boot your `/boot/loader/entries/arch.conf` might look like this: title Arch Linux ACPI
-
-```
- linux	/vmlinuz-linux
- initrd /intel-ucode.img
- initrd /initramfs-linux.img
- options root=/dev/nvme0n1p2 rw i915.enable_guc=3 mem_sleep_default=deep
-
-```
-
-Just these two options are additionally needed: "i915.enable_guc=3 mem_sleep_default=deep"
+By setting this option to "Disabled", a warning will appear. The warning describes that a reinstallation of your OS might be mandatory. Accept the warning and both Windows and Linux should work fine. You can do this step even if you already installed a patch to enable s3 sleep. After disabling the optimized sleep state in the bios, and if you did the method to enable s3 sleep before the 1.33 bios update, it is best to remove `**GRUB_EARLY_INITRD_LINUX_CUSTOM="/acpi_override"**` in your /etc/default/grub (if you placed that there before), and regenerate the grub cfg using `sudo update-grub`. Don't forget to remove the acpi_override file as well.
 
 Reboot and verify whether S3 is working by running:
 
@@ -140,7 +125,7 @@ You should now see something like this:
 
 ### Enabling S3 (before BIOS version 1.33)
 
-There is an automated script called x1carbon2018s3 by [fiji-flo](https://github.com/fiji-flo) that was originally intended for use for the X1 Carbon 6th Gen ([source](https://github.com/fiji-flo/x1carbon2018s3)). The script and documentation were updated and maintained by [lsmith77](https://github.com/lsmith77) to adapt it for the X1 Yoga 3rd Gen. The latest known version is in a fork by [ryankhart](https://github.com/ryankhart) currently awaiting a pull request.
+There is an automated script called x1carbon2018s3 by [fiji-flo](https://github.com/fiji-flo) that was originally intended for use for the X1 Carbon 6th Gen ([source](https://github.com/fiji-flo/x1carbon2018s3)). The script and documentation were updated and maintained by [lsmith77](https://github.com/lsmith77) to adapt it for the X1 Yoga 3rd Gen. The latest known version is in a fork by [ryankhart](https://github.com/ryankhart) currently awaiting a pull request. These scripts are recommended for debian-based distributions because of the script including debian-based bash commands.
 
 (Optional) To check out this script and its history, visit these GitHub repositories:
 
@@ -148,102 +133,85 @@ There is an automated script called x1carbon2018s3 by [fiji-flo](https://github.
     *   [https://github.com/lsmith77/x1carbon2018s3](https://github.com/lsmith77/x1carbon2018s3)
         *   [https://github.com/ryankhart/x1carbon2018s3](https://github.com/ryankhart/x1carbon2018s3)
 
-**Note:** Be aware, that this may cause the touch screen and stylus to fail to wake up from suspend.
+#### Manual method
 
-#### Bios settings [[1]](https://github.com/ryankhart/x1carbon2018s3#bios-settings)
+The manual method can be used in any distribution of Linux. Below is a modified version of [the source instructions](https://gist.github.com/javanna/38d019a373085e1ba0c784597bc7ec73/) because some things are hard to understand.
 
-Ensure that Boot Mode is set to `Quick` and not `Diagnostic`
+1\. Reboot, enter BIOS/UEFI. Go to Config - Thunderbolt (TM) 3 - set Thunderbolt BIOS Assist Mode to Enabled. Set also Security - Secure Boot to Disabled.
 
-Set `Thunderbolt BIOS Assist Mode` to Enabled (via Config → Thunderbolt 3).
+2\. Install iasl (Intel's compiler/decompiler for ACPI machine language) and cpio iasl in Ubuntu and possibly other distributions probably do not have the latest release for it to fully work. To make sure you have the latest version, download the [source code](https://acpica.org/downloads/) and make install iasl. cpio can be installed normally with your distribution's package manager
 
-Run:
+3\. Get a dump of ACPI DSDT table: `cat /sys/firmware/acpi/tables/DSDT > dsdt.aml`
 
-```
- dmesg | grep -A3 'DSDT ACPI'
+4\. Decompile the dump, which will generate a .dsl source based on the .aml ACPI machine language dump: `iasl -d dsdt.aml`
 
-```
+5\. Download the [patch]([http://kernel.dk/acpi.patch](http://kernel.dk/acpi.patch)) and apply it against dsdt.dsl: `patch --verbose < acpi.patch`
 
-If you see all three of the following lines:
-
-```
- [    0.000000] ACPI: DSDT ACPI table found in initrd [kernel/firmware/acpi/dsdt.aml][0x2338b]
- [    0.000000] Lockdown: ACPI table override is restricted; see man kernel_lockdown.7
- [    0.000000] ACPI: kernel is locked down, ignoring table override
+Hunk 2 failed for me, I manually looked for the following in dsdt.dsl:
 
 ```
-
-rather than just the first line, disable `Secure Boot`
-
-#### Generate the override [[2]](https://github.com/ryankhart/x1carbon2018s3#generating-the-override)
-
-**Note:** The following GitHub repository is a fork of a fork. If any of the parent repositories get updated in the future consider updating all links to this repository
-
-```
- git clone [https://github.com/ryankhart/x1carbon2018s3.git](https://github.com/ryankhart/x1carbon2018s3.git)
- cd x1carbon2018s3/
- chmod +x generate_and_apply_patch.sh
- ./generate_and_apply_patch.sh
+   Name (SS1, 0x00)
+   Name (SS2, 0x00)
+   Name (SS3, One)
+   One
+   Name (SS4, One)
+   One
 
 ```
 
-#### Load the override on boot [[3]](https://github.com/ryankhart/x1carbon2018s3#loading-the-override-on-boot)
-
-Edit your boot loader configuration and add /acpi_override to the initrd line. To ensure S3 is used as sleep default add mem_sleep_default=deep to you kernel parameters.
-
-If you're using systemd-boot your `/boot/loader/entries/arch.conf` might look like this:
+and replaced it with the following (removing the two "One" lines):
 
 ```
- title	Arch Linux ACPI
- linux	/vmlinuz-linux
- initrd /intel-ucode.img
- initrd /acpi_override
- initrd /initramfs-linux.img
- options root=/dev/nvme0n1p2 rw i915.enable_guc=3 mem_sleep_default=deep
+   Name (SS1, 0x00)
+   Name (SS2, 0x00)
+   Name (SS3, One)
+   Name (SS4, One)
 
 ```
 
-If you're using grub edit `/etc/default/grub` and add the following:
+6\. Recompile your patched version of the .dsl source: `iasl -ve -tc dsdt.dsl`
+
+7\. Create a CPIO archive with the correct structure, which GRUB can load on boot. We name the final image acpi_override and copy it into /boot/:
 
 ```
- GRUB_EARLY_INITRD_LINUX_CUSTOM=acpi_override
- GRUB_CMDLINE_LINUX_DEFAULT="quiet mem_sleep_default=deep"
-
-```
-
-Then run:
-
-```
- sudo update-grub
+ mkdir -p kernel/firmware/acpi
+ cp dsdt.aml kernel/firmware/acpi
+ find kernel | cpio -H newc --create > acpi_override
+ cp acpi_override /boot
 
 ```
 
-To verify the setting has been applied correctly run:
+8\. GRUB needs to boot the kernel with a parameter setting the deep sleep state as default. Edit `/etc/default/grub` and add the following:
 
 ```
- sudo cat /boot/grub/grub.cfg | grep initrd
-
-```
-
-You should see:
-
-```
- initrd  /boot/intel-ucode.img /boot/acpi_override /boot/initramfs-4.19-x86_64.img
+ `GRUB_CMDLINE_LINUX_DEFAULT="mem_sleep_default=deep"`
+ `GRUB_EARLY_INITRD_LINUX_CUSTOM="/boot/acpi_override"`
 
 ```
 
-#### Verify that S3 is working [(See Verifying S3)](#Verifying_S3)
+9\. Regenerate the GRUB configuration: `sudo update-grub`
 
-Reboot and verify whether S3 is working by running:
+**If the second line of the previous step does not generate the grub to make the initrd lines look like "initrd /boot/acpi_override" in the beginning, then follow the next steps as normal. If it does generate those lines, skip to step 11**
 
-```
- dmesg | grep -i "acpi: (supports"
-
-```
-
-You should now see something like this:
+10\. Tell GRUB to load the new DSDT table on boot in its configuration file usually located in `/boot/grub/grub.cfg`. Find the relevant GRUB menu entry and add the new image `/boot/acpi_override` to the initrd lines for the images that you want the s3 sleep to work in:
 
 ```
- [    0.230796] ACPI: (supports S0 S3 S4 S5)
+ Before:
+ initrd /initramfs-4.17.4-200.fc28.x86_64.img
+
+ After:
+ initrd **/boot/acpi_override** /initramfs-4.17.4-200.fc28.x86_64.img
+
+```
+
+11\. Reboot and enjoy having a laptop running Linux again... close the lid and the battery does not get drained in a few hours, also the battery no longer stays warm in sleep mode. To verify that things are working:
+
+```
+ dmesg | grep ACPI | grep supports
+ #[    0.195933] ACPI: (supports S0 S3 S4 S5)
+
+  cat /sys/power/mem_sleep
+ #s2idle [deep]
 
 ```
 

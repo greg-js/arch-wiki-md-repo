@@ -9,7 +9,7 @@ From [Wikipedia:Nextcloud](https://en.wikipedia.org/wiki/Nextcloud "wikipedia:Ne
 
 	Nextcloud is a suite of client-server software for creating and using file hosting services. It is functionally similar to Dropbox, although Nextcloud is free and open-source, allowing anyone to install and operate it on a private server. In contrast to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of applications.
 
-Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia:Nextcloud#Differences from ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud "wikipedia:Nextcloud").
+Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia:Nextcloud#Differences to ownCloud](https://en.wikipedia.org/wiki/Nextcloud#Differences_to_ownCloud "wikipedia:Nextcloud").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

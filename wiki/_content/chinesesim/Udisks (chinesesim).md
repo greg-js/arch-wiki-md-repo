@@ -9,7 +9,11 @@ Related articles
 
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) 提供了 *udisksd* 守护进程，它实现了用于查询和管理存储设备的 D-Bus 接口；还提供了一个命令行工具 *udisksctl*，用于查询和使用该守护进程。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -33,7 +37,7 @@ Related articles
 
 有两个版本的 *udisks*，分别称为 [udisks](https://aur.archlinux.org/packages/udisks/) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。为了集中精力开发*udisks2*，*udisks* 的开发已终止 。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 [udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) 和 [udisks-daemon()](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks-daemon.)）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) 和 [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8)。
+(*udisks2*的) [udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) 和 (*udisks*的) `udisks-daemon` 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。可以通过 [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) 和 udisks(1) 以命令行方式分别进行管控。
 
 ## 配置
 

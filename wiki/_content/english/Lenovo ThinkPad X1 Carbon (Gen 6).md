@@ -189,6 +189,8 @@ If your ThinkPad X1 Carbon (Gen 6) built-in speakers are limited to a maximum of
 
 options snd-hda-intel model=nofixup
 
+**Note:** This stops the LEDs on the mute and mic-mute buttons from working.
+
 ## Wireless WAN / LTE
 
 ThinkPad X1 Carbon (Gen 6) is exclusively shipped with a Fibocom L850-GL LTE modem, which is not supported under Linux and Lenovo doesn't seem to care about it.

@@ -4,7 +4,7 @@ Related articles
 
 [ProtonVPN](https://www.protonvpn.com) is a VPN provider that utilizes the OpenVPN protocol.
 
-In order to use this tutorial, one must have a ProtonVPN account.
+Every solution requires a ProtonVPN account and the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,26 +12,30 @@ In order to use this tutorial, one must have a ProtonVPN account.
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Saving OpenVPN authentication](#Saving_OpenVPN_authentication)
-    *   [3.2 Enable VPN on boot](#Enable_VPN_on_boot)
-*   [4 protonvpn-cli](#protonvpn-cli)
-    *   [4.1 Installation](#Installation_2)
-    *   [4.2 Usage](#Usage_2)
+*   [1 OpenVPN command-line interface](#OpenVPN_command-line_interface)
+    *   [1.1 Setup](#Setup)
+    *   [1.2 Usage](#Usage)
+    *   [1.3 Tips and tricks](#Tips_and_tricks)
+        *   [1.3.1 Saving OpenVPN authentication](#Saving_OpenVPN_authentication)
+        *   [1.3.2 Enable VPN on boot](#Enable_VPN_on_boot)
+*   [2 protonvpn-cli](#protonvpn-cli)
+    *   [2.1 Setup](#Setup_2)
+    *   [2.2 Usage](#Usage_2)
+*   [3 Graphical interface](#Graphical_interface)
 
-## Installation
+## OpenVPN command-line interface
 
-[Install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package.
+VPN connection can be run manually with interface provided by the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package.
 
-## Usage
+### Setup
 
-Log into ProtonVPN and download one or more OpenVPN configuration files.
+Download one or more OpenVPN configuration files from [ProtonVPN Downloads page](https://account.protonvpn.com/downloads).
 
 Copy the *.ovpn client configuration files into `/etc/openvpn/client/` and make backup of original.
 
 Follow [these steps](/index.php/OpenVPN#Update_systemd-resolved_script "OpenVPN") to make sure, that all your network traffic uses VPN. If you use systemd older than 229, follow [these steps](/index.php/OpenVPN#Update_resolv-conf_script "OpenVPN").
+
+### Usage
 
 Connect to the VPN:
 
@@ -40,13 +44,15 @@ Connect to the VPN:
 
 ```
 
+Provide **OpenVPN / IKEv2 Username** from the [ProtonVPN Account page](https://account.protonvpn.com/settings).
+
 Press `Ctrl+C` to close the VPN connection.
 
-## Tips and tricks
+### Tips and tricks
 
-### Saving OpenVPN authentication
+#### Saving OpenVPN authentication
 
-If you get tired of punching in your username and password, you may save your OpenVPN credentials in a separate file and read them automatically.
+OpenVPN credentials can be saved in a separate file and read automatically:
 
  `/etc/openvpn/client/client_config_file.ovpn` 
 ```
@@ -60,7 +66,7 @@ openvpn_password
 
 ```
 
-### Enable VPN on boot
+#### Enable VPN on boot
 
 For systemd service configuration, see [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
@@ -68,11 +74,9 @@ For systemd service configuration, see [OpenVPN#systemd service configuration](/
 
 ProtonVPN supplies a utility to access the VPN. Details can be found on the [official website](https://protonvpn.com/support/linux-vpn-tool/) and the [GitHub repository](https://github.com/ProtonVPN/protonvpn-cli).
 
-### Installation
+### Setup
 
 [Install](/index.php/Install "Install") the [protonvpn-cli](https://aur.archlinux.org/packages/protonvpn-cli/) package.
-
-### Usage
 
 Initialize the client:
 
@@ -81,7 +85,7 @@ Initialize the client:
 
 ```
 
-Enter your OpenVPN username and password, which have to be configured on the [ProtonVPN Settings](https://account.protonvpn.com/settings) page. For example:
+Enter your **ProtonVPN Login** username and password, which have to be configured on the [ProtonVPN Settings](https://account.protonvpn.com/settings) page. For example:
 
 ```
 Enter OpenVPN username: ProtonVPN.user
@@ -101,7 +105,9 @@ Enter Your ProtonVPN plan ID: 1
 
 ```
 
-Now you can connect to the VPN:
+### Usage
+
+Connect to the VPN:
 
 ```
 # protonvpn-cli -connect
@@ -120,3 +126,9 @@ Connected!
 New IP: X.X.X.X
 
 ```
+
+## Graphical interface
+
+Graphical interface for setting up OpenVPN connection may be provided by your [desktop environment](/index.php/Desktop_environment "Desktop environment"). Search in connection settings. Otherwise, [NetworkManager#Installation](/index.php/NetworkManager#Installation "NetworkManager"), [NetworkManager#VPN_support](/index.php/NetworkManager#VPN_support "NetworkManager") and [NetworkManager#Front-ends](/index.php/NetworkManager#Front-ends "NetworkManager") provide useful information.
+
+**Note:** You still need to follow [#Setup](#Setup).

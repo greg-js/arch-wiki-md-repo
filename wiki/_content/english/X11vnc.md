@@ -238,10 +238,17 @@ If screensaver starts every 1-2 second, start x11vnc with `-nodpms` key.
 
 ### IPv6 port different from IPv4 port
 
-If the server listens to an IPv6 port different from the port as defined by the `-rfbport`, also use the `-rfbportv6` option to force the IPv6 listening port. For example:
+The default behavior for the command:
 
 ```
-$ x11vnc -usepw -display :0 -rfbport 5908 -rfbportv6 5908
+$ x11vnc -display :0 -rfbport 5908
+
+```
+
+is for the server to listen to TCP port 5908 and TCP6 port 59**00**. For the server to listen to the same TCP6 port, also use the `-rfbportv6` option to force the IPv6 listening port. For example:
+
+```
+$ x11vnc -display :0 -rfbport 5908 -rfbportv6 5908
 
 ```
 

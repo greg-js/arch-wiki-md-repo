@@ -103,6 +103,8 @@ Note : NVMe SSD should not be issued discards :[Solid state drive/NVMe#Discard
 
 The Wifi adapter contains a Qualcomm Atheros QCA6174 module. It should work out of the box with the `ath10k_pci` driver in recent [linux](https://www.archlinux.org/packages/?name=linux) kernels.
 
+For any Wifi issues [here](https://www.dell.com/support/article/at/de/atdhs1/sln309066/killer-wireless-firmware-update-guide-for-ubuntu-systems) is a guideline provided by Dell to install the latest Killer wireless drivers.
+
 ## Bluetooth
 
 The Bluetooth adapter sometimes becomes unavailable after waking up from suspend and can even stay deactivated and invisible after a warm reboot. End of October 2018 [a kernel patch was announced by Dell](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-9370-no-bluetooth-after-suspend/m-p/6204559#M8744). However the issue appears to remain unresolved for at least some users.
@@ -230,13 +232,7 @@ Also all three Type-C ports support DisplayPort alternate mode. It is taken care
 *   [Dell Type-C to VGA adapter](https://www.dell.com/en-us/shop/dell-adapter-usb-c-to-vga/apd/470-abnc/pc-accessories) (tested with 1080p at 60 Hz)
 *   [Dell Type-C to HDMI adapter](https://www.dell.com/en-us/work/shop/dell-adapter-usb-c-to-hdmi/apd/470-abmz/pc-accessories) (tested with 1080p and 4K, both work at 60 Hz)
 *   [Moshi USB-C to HDMI Adapter](https://www.moshi.com/en/product/usb-c-to-hdmi-adapter/silver) (tested with 1080p and 4K, both work at 60 Hz)
-*   [Cable Matters model 201048 USB-C Multiport](https://www.amazon.com/gp/product/B01M0K0DL2) Works with XPS BIOS version 1.8.0\. (HDMI had issues under version 1.6.3.) (tested with Dell U2415 monitor at 1920x1200, keyboard and microphone on USB, Dell 45W adapter on USB-C power pass thru.
-
-```
-Antergos 19.1, Linux kernel 4.20.)
-
-```
-
+*   [Cable Matters model 201048 USB-C Multiport](https://www.amazon.com/gp/product/B01M0K0DL2) Works with XPS BIOS version 1.8.0\. (HDMI had issues under version 1.6.3.) (tested with Dell U2415 monitor at 1920x1200, keyboard and microphone on USB, Dell 45W adapter on USB-C power pass thru. Antergos 19.1, Linux kernel 4.20) On boot, I get warning that it is only supplying 40W, not 45W, but the battery still charges.
 *   [Thinkvision P24h](https://www.lenovo.com/gb/en/accessories-and-monitors/monitors/professional/P24h-10-23-8inch-Monitor-HDMI/p/61AEGAT3UK) USB, power delivery, video work.
 
 ## Fingerprint reader

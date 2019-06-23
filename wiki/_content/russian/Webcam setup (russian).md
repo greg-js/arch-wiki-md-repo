@@ -1,6 +1,10 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Определение устройства](#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Определение устройства](#Определение_устройства)
     *   [1.1 pwc](#pwc)
     *   [1.2 qc-usb](#qc-usb)
     *   [1.3 qc-usb-messenger](#qc-usb-messenger)
@@ -10,8 +14,8 @@
     *   [1.7 stv680](#stv680)
     *   [1.8 linux-uvc](#linux-uvc)
     *   [1.9 ov51x-jpeg](#ov51x-jpeg)
-    *   [1.10 r5u870 (Ricoh)](#r5u870_.28Ricoh.29)
-    *   [1.11 stk11xx (Syntek)](#stk11xx_.28Syntek.29)
+    *   [1.10 r5u870 (Ricoh)](#r5u870_(Ricoh))
+    *   [1.11 stk11xx (Syntek)](#stk11xx_(Syntek))
 
 # Определение устройства
 
@@ -88,6 +92,7 @@
 *   Logitech Quickcam Pro 5000
 *   Logitech Quickcam Pro 9000
 *   Logitech Quickcam Orbit MP
+*   Logitech, Inc. Webcam C270 (ID 046d:0825)
 *   Microdia Pavilion Webcam (on MSI PR200)
 
 Полный список устройств с поддержкой UVC [здесь](http://linux-uvc.berlios.de/).

@@ -78,6 +78,7 @@ Related articles
     *   [5.15 Windows 8/10 not found](#Windows_8/10_not_found)
     *   [5.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
     *   [5.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
+    *   [5.18 Grub rescue and encrypted boot](#Grub_rescue_and_encrypted_boot)
 *   [6 See also](#See_also)
 
 ## BIOS systems
@@ -111,19 +112,19 @@ Usually the post-MBR gap (after the 512 byte [MBR](/index.php/MBR "MBR") region 
 [Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. (It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/) if that is already installed.) Then do:
 
 ```
-# grub-install --target=i386-pc /dev/sd**X**
+# grub-install --target=i386-pc /dev/sd*X*
 
 ```
 
-where `/dev/sd**X**` is the disk where GRUB is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
+where `/dev/sd*X*` is the disk where GRUB is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
 
-Now you must [#Generate the main configuration file](#Generate_the_main_configuration_file).
+Now you must [generate the main configuration file](#Generate_the_main_configuration_file).
 
 If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on multiple physical disks.
 
 **Tip:** See [GRUB/Tips and tricks#Alternative installation methods](/index.php/GRUB/Tips_and_tricks#Alternative_installation_methods "GRUB/Tips and tricks") for other ways to install GRUB, such as to a USB stick.
 
-See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [GRUB Manual](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the *grub-install* command.
+See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8) and [GRUB Manual](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation) for more details on the `grub-install` command.
 
 ## UEFI systems
 
@@ -907,6 +908,21 @@ You may need to provide `/run/lvm/` access to the chroot environment using:
 ```
 
 See [FS#61040](https://bugs.archlinux.org/task/61040) and [workaround](https://bbs.archlinux.org/viewtopic.php?pid=1820949#p1820949).
+
+### Grub rescue and encrypted boot
+
+When using an encrypted boot, and you fail to input a correct password, you will be dropped in grub-rescue prompt.
+
+This grub-rescue prompt has limited capabilities. Use the following commands to complete the boot:
+
+```
+grub rescue> cryptomount <partition>
+grub rescue> insmod normal
+grub rescue> normal
+
+```
+
+See [this blog post](https://blog.stigok.com/2017/12/30/decrypt-and-mount-luks-disk-from-grub-rescue-mode.html) for a better description.
 
 ## See also
 

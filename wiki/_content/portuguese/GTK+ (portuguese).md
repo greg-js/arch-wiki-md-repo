@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GTK+](/index.php/GTK%2B "GTK+"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=569350) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GTK+](/index.php/GTK%2B "GTK+"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=575892) na versão em inglês.
 
 Artigos relacionados
 
@@ -227,7 +227,7 @@ gtk-theme-name = Adwaita
 gtk-font-name = DejaVu Sans 11
 ```
 
-**Nota:** O nome do tema do ícone é o nome definido no arquivo de índice do tema, *não* o nome de seu diretório.
+**Nota:** O nome do tema do ícone é o nome de seu diretório, *não* a propriedade de nome em seu `index.theme`.
 
 ### Variante escura de tema
 
@@ -376,7 +376,7 @@ gtk-primary-button-warps-slider = false
 
 ### Desabilitar barras de rolagem de sobreposição
 
-Desde o GTK+ 3.15, as barras de rolagem de sobreposição são ativadas por padrão, o que significa que as barras de rolagem serão mostradas apenas ao passar o mouse nas aplicações do GTK+ 3\. Esse comportamento pode ser revertido pela configuração da seguinte variável de ambiente: `GTK_OVERLAY_SCROLLING=0`. Veja [Variáveis de ambiente#Aplicativos gráficos](/index.php/Vari%C3%A1veis_de_ambiente#Aplicativos_gráficos "Variáveis de ambiente").
+Desde o GTK+ 3.15, as barras de rolagem de sobreposição são ativadas por padrão, o que significa que as barras de rolagem serão mostradas apenas ao passar o mouse nas aplicações do GTK+ 3\. Esse comportamento pode ser revertido pela configuração da seguinte variável de ambiente: `GTK_OVERLAY_SCROLLING=0`. Veja [Variáveis de ambiente#Ambiente gráfico](/index.php/Vari%C3%A1veis_de_ambiente#Ambiente_gráfico "Variáveis de ambiente").
 
 O GTK+ 4 deixará de dar suporte a `GTK_OVERLAY_SCROLLING`. Ele já foi [retirado](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) do ramo mestre. A partir do GTK+ 4, a natureza de sobreposição das barras de rolagem é parte do kit de ferramentas. A alternância geral foi removida para impedir que os desenvolvedores quebrem aplicativos que não foram testados com ambas as combinações. Para permitir que os desenvolvedores de aplicativos decidam como devem ser seus aplicativos, o kit de ferramentas fornece um mecanismo para desativar ou adicionar uma configuração aos usuários. A função [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-set-overlay-scrolling) pode ser usada para ativar/desativar a sobreposição de rolagem em uma base *por aplicativo*. Os desenvolvedores de aplicativos podem, opcionalmente, usar o [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) para ter uma configuração de usuário vinculada à propriedade.
 

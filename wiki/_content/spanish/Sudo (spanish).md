@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [sudo](/index.php/Sudo "Sudo"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=559971) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [sudo](/index.php/Sudo "Sudo"), revisada por última vez el **2019-06-17**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=575830) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -35,6 +35,7 @@ Sudo también se puede usar para ejecutar comandos como otros usuarios; además,
     *   [4.6 Ejemplo de protección con sudo](#Ejemplo_de_protección_con_sudo)
     *   [4.7 Configurar sudo mediante archivos complementarios en /etc/sudoers.d](#Configurar_sudo_mediante_archivos_complementarios_en_/etc/sudoers.d)
     *   [4.8 Edición de archivos](#Edición_de_archivos)
+    *   [4.9 Activar insultos](#Activar_insultos)
 *   [5 Solución de problemas](#Solución_de_problemas)
     *   [5.1 Problemas de TTY con SSH](#Problemas_de_TTY_con_SSH)
     *   [5.2 Umask permisiva](#Umask_permisiva)
@@ -406,6 +407,14 @@ Tenga en cuenta que puede configurar el editor para cualquier programa, por lo q
 $ SUDO_EDITOR=meld sudo -e /etc/*file*{,.pacnew*}*
 
 ```
+
+### Activar insultos
+
+Los usuarios pueden activar el huevo de Pascua de insultos en sudo añadiendo la siguiente línea en el archivo sudoers con `visudo`.
+
+Al introducir una contraseña incorrecta se reemplazará el mensaje `Inténtelo de nuevo.` por insultos en tono de humor.
+
+ `/etc/sudoers`  `Defaults insults` 
 
 ## Solución de problemas
 

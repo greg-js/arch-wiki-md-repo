@@ -119,7 +119,7 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 *   An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland").
 *   Wayland with the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM makes [Qt](/index.php/Qt "Qt") applications like [VLC](/index.php/VLC "VLC"), calibre, or SMPlayer use Wayland.
+Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM makes [Qt](/index.php/Qt "Qt") applications like [VLC](/index.php/VLC "VLC"), calibre, or SMPlayer use Wayland. In addition to the QT_QPA_PLATFORM variable, you must also install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package. To add support for other graphics libraries, see [Wayland#GUI_libraries](/index.php/Wayland#GUI_libraries "Wayland").
 
 To start on login to tty1, add the following to your `.bash_profile`:
 

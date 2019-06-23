@@ -1,4 +1,4 @@
-pkgstats sends a list of all installed packages, [kernel modules](https://www.archlinux.org/news/pkgstats-now-collects-modules-usage/), the architecture and the mirror you are using to the Arch Linux project. This information is anonymous and cannot be used to identify the user, but it will help Arch developers prioritize their efforts ([source code](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/pkgstats)).
+pkgstats sends a list of all installed packages, the architecture and the mirror you are using to the Arch Linux project. This information is anonymous and cannot be used to identify the user, but it will help Arch developers prioritize their efforts ([source code](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/pkgstats)).
 
 ## Installation
 
@@ -14,6 +14,6 @@ If you do not want to wait for a reboot cycle, you can manually [start](/index.p
 
 ## Results and reference
 
-Statistics are available at [https://www.archlinux.de/?page=Statistics](https://www.archlinux.de/?page=Statistics).
+Statistics and documentation are available at [https://pkgstats.archlinux.de/](https://pkgstats.archlinux.de/).
 
 The following open source project allows you to get the statistics data as JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper), as well as a web front end to compare the data is available: [https://trycatchchris.co.uk/archpackagecompare/](https://trycatchchris.co.uk/archpackagecompare/comparePackage/gnome-terminal/lxterminal/rxvt/rxvt-unicode/st/terminator/termite/xterm). You can read the official [forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431) for more info.

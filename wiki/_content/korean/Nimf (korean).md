@@ -7,9 +7,13 @@ Related articles
 *   [UIM](/index.php/UIM "UIM")
 *   [Fcitx](/index.php/Fcitx "Fcitx")
 
-[님프(Nimf)](https://gitlab.com/hodong/nimf)는 다국어 [입력기](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") 프레임워크 이며, [다솜](/index.php/Dasom "Dasom")의 후속 프로젝트 입니다.
+[님프(Nimf)](https://nimf-i18n.gitlab.io/)는 다국어 [입력기](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") 프레임워크 이며, [다솜](/index.php/Dasom "Dasom")의 후속 프로젝트 입니다.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 설치](#설치)
     *   [1.1 입력기 엔진](#입력기_엔진)

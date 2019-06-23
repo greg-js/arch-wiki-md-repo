@@ -204,6 +204,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[http://www.squid-cache.org/](http://www.squid-cache.org/) || [squid](https://www.archlinux.org/packages/?name=squid)
 
+*   **[Stunnel](/index.php/Stunnel "Stunnel")** — A server and client to add and remove TLS encryption to TCP data flow.
+
+	[https://www.stunnel.org/](https://www.stunnel.org/) || [stunnel](https://www.archlinux.org/packages/?name=stunnel)
+
 *   **Tinyproxy** — Lightweight HTTP/HTTPS proxy daemon.
 
 	[https://tinyproxy.github.io/](https://tinyproxy.github.io/) || [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy)
@@ -1912,7 +1916,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 #### Podcast clients
 
-Some media players are also able to act as podcast client: [Amarok](/index.php/Amarok "Amarok"), [Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)"), Cantata, [Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)"), Goggles Music Manager, [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox"), [VLC media player](/index.php/VLC_media_player "VLC media player").
+Some media players are also able to act as podcast client: [Amarok](/index.php/Amarok "Amarok"), [Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)"), Cantata, [Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)"), Goggles Music Manager, [Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox"), [VLC media player](/index.php/VLC_media_player "VLC media player"). [git-annex](https://en.wikipedia.org/wiki/git-annex "wikipedia:git-annex") can also [function as podcatcher](https://git-annex.branchable.com/tips/downloading_podcasts/).
 
 See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_podcatchers "wikipedia:List of podcatchers").
 

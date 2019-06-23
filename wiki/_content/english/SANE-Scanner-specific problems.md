@@ -16,6 +16,7 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
     *   [3.4 xsane crashes](#xsane_crashes)
 *   [4 Canon](#Canon)
     *   [4.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer/scanners)
+    *   [4.2 CanoScan LiDE 200 and black stripe in the middle of the scanned image](#CanoScan_LiDE_200_and_black_stripe_in_the_middle_of_the_scanned_image)
 *   [5 Epson](#Epson)
     *   [5.1 Driver-Backends](#Driver-Backends)
         *   [5.1.1 Image Scan! for Linux](#Image_Scan!_for_Linux)
@@ -133,6 +134,10 @@ Find out your printer/scanner's IP address, and add it on a new line to `/etc/sa
 Sane should now find your device. For more details refer to [sane-pixma(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sane-pixma.5).
 
 Alternative: for some Canon Pixma all-in-one printer/scanners, which are not detected over network, can be used [scangearmp2](https://aur.archlinux.org/packages/scangearmp2/) package from AUR.
+
+### CanoScan LiDE 200 and black stripe in the middle of the scanned image
+
+Bug affects [sane](https://www.archlinux.org/packages/?name=sane) 1.0.26, 1.0.27 and related to the GENESYS backend [1](https://bbs.archlinux.org/viewtopic.php?id=233725), [2](https://bugs.launchpad.net/prj20071101/+bug/1731459). Install [sane-git](https://aur.archlinux.org/packages/sane-git/) and run `scanimage --clear-calibration`. On next scan image will be clear.
 
 ## Epson
 

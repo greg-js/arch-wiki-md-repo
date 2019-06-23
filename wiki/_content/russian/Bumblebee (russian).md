@@ -67,7 +67,7 @@ Bumblebee реализует технологию Optimus в два шага:
 Также включите репозиторий [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)") для поддержки 32-битных приложений и установите:
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) — виртуальный дисплей для рендеринга в 32-битных приложениях.
-*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) или [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) (должен соответствовать версии обычного драйвера NVIDIA).
+*   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) или [lib32-nvidia-340xx-utils](https://aur.archlinux.org/packages/lib32-nvidia-340xx-utils/) (должен соответствовать версии обычного драйвера NVIDIA).
 
 Чтобы использовать Bumblebee, необходимо добавить обычного *пользователя* в группу `bumblebee`:
 

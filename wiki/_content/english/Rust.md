@@ -269,7 +269,12 @@ $ rustup component add clippy-preview
 
 #### Kate
 
-Kate support for Rust can be obtained via the official [kate](https://github.com/rust-lang/kate-config) plugin. It is installed by default by the [kate](https://www.archlinux.org/packages/?name=kate) package, require the installation of [rust-racer](https://www.archlinux.org/packages/?name=rust-racer) and manual activation.
+Kate support for Rust is installed by default by the [kate](https://www.archlinux.org/packages/?name=kate) package, but also requires extra configurations. First, install the package [rust-racer](https://www.archlinux.org/packages/?name=rust-racer) Second, get the Rust source:
+
+*   With rustup: `rustup component add rust-src`
+*   or From the AUR: [rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/), in this case you must set the `RUST_SRC_PATH` environment var.
+
+Third, configure Kate by clicking Settings -> Configure Kate, then navigate to Application -> Plugins, then tick the 'Rust code completion', then you will see Application -> Rust code completion in the left sidebar, navigation to it, and assign 'Rust source tree location' to `$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src` if you install the Rust source with rustup.
 
 ## See also
 

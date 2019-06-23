@@ -30,8 +30,8 @@ That is, the resulting permissions `R` are the result of [bitwise conjunction](h
 
 **Note:**
 
-*   Linux does not allow a file to be created with execution permissions, in fact the default creation permissions are `777` for directories, but only `666` for files.
-*   On Linux, only the file permission bits of the mask are used - see [umask(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). The *suid*, *sgid* and *sticky* bits of the mask are ignored.
+*   Linux does not allow a file to be created with execution permissions, the default creation permissions are `777` for directories and only `666` for files.
+*   Under Linux, only the file permission bits of the mask are used - see [umask(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). The *suid*, *sgid* and *sticky* bits of the mask are ignored.
 
 For example, let us assume that the file-creation mode mask is `027`. Here the bitwise representation of each digit represents:
 

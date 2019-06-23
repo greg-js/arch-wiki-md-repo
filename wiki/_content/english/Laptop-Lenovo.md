@@ -45,6 +45,7 @@ Related articles
         *   [3.9.1 tpacpi-bat](#tpacpi-bat)
         *   [3.9.2 ThinkPad Edge E420s Delay with Space Bar](#ThinkPad_Edge_E420s_Delay_with_Space_Bar)
     *   [3.10 Lenovo IdeaPad Y700](#Lenovo_IdeaPad_Y700)
+    *   [3.11 Lenovo IdeaPad V330-14ARR](#Lenovo_IdeaPad_V330-14ARR)
 *   [4 See also](#See_also)
 
 ## IBM/Lenovo
@@ -76,7 +77,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
-| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
+| Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. Bluetooth doesn't work until a suspend/resume cycle occurs. |
 
 #### L series
 
@@ -279,6 +280,7 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo V110-15ISK | ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
 | Lenovo V330-15IKB | 2018.10.01 | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | Fingerprint (No, no driver exists for the Validity/Synaptics 06cb:0081 Fingerprint Reader), Touchpad (Yes), Webcam (Yes) |
+| Lenovo V330-14ARR | 2019.06.15 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD-Card Reader (Yes) HDMI Out (Yes), USB 3.0 (Yes), Touchpad (Yes), Webcam (Yes) | DOS installable BIOS available* |
 
 ### Y series
 
@@ -286,7 +288,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo Legion Y520 | 2019.06.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested June 2019 / Linux 5.1.7\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
+| Lenovo Legion Y520 | 2019.06.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested June 2019 / Linux 5.1.9\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
 | Lenovo Legion Y520 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 (Yes) | Tested June 2019 / Linux 5.1.5\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Some CPU throttling is possible [[1]](https://unix.stackexchange.com/questions/491944/cpu-temperatures-in-linux-throttling-or-wrong-reading). Fan control does not seem to work [[2]](https://unix.stackexchange.com/questions/523899/laptop-fan-always-says-its-running-at-8-rpm) |
 
 ## Special Notes (*):
@@ -386,6 +388,10 @@ Solution: Update BIOS (at least 1.08).
 
 *   The subwoofer does not work out of the box.
     *   Updating to Kernel 4.15 or later seems to fix the subwoofer.
+
+### Lenovo IdeaPad V330-14ARR
+
+*   Lenovo only provide BIOS updates as a WinX64 package. The 3.05 release has been extracted and can be installed in DOS using H2OFFT-D.EXE and is available [online](https://drive.google.com/drive/folders/1IgwALJ_LLHY1nRbl3naNJU1QQ7l33Vrv?usp=sharing).
 
 ## See also
 

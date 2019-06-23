@@ -26,9 +26,10 @@ According to the [official website](https://www.gnupg.org/):
     *   [3.4 Export your public key](#Export_your_public_key)
     *   [3.5 Import a public key](#Import_a_public_key)
     *   [3.6 Use a keyserver](#Use_a_keyserver)
-    *   [3.7 Encrypt and decrypt](#Encrypt_and_decrypt)
-        *   [3.7.1 Asymmetric](#Asymmetric)
-        *   [3.7.2 Symmetric](#Symmetric)
+    *   [3.7 Web Key Directory](#Web_Key_Directory)
+    *   [3.8 Encrypt and decrypt](#Encrypt_and_decrypt)
+        *   [3.8.1 Asymmetric](#Asymmetric)
+        *   [3.8.2 Symmetric](#Symmetric)
 *   [4 Key maintenance](#Key_maintenance)
     *   [4.1 Backup your private key](#Backup_your_private_key)
     *   [4.2 Edit your key](#Edit_your_key)
@@ -176,7 +177,7 @@ $ gpg --list-secret-keys
 
 ### Export your public key
 
-gpg's main usage is to ensure confidentiality of exchanged messages via public-key cryptography. With it each user distributes the public key of their keyring, which can be be used by others to encrypt messages to the user. The private key must *always* be kept private, otherwise confidentiality is broken. See [w:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "w:Public-key cryptography") for examples about the message exchange.
+gpg's main usage is to ensure confidentiality of exchanged messages via public-key cryptography. With it each user distributes the public key of their keyring, which can be used by others to encrypt messages to the user. The private key must *always* be kept private, otherwise confidentiality is broken. See [w:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "w:Public-key cryptography") for examples about the message exchange.
 
 So, in order for others to send encrypted messages to you, they need your public key.
 
@@ -243,6 +244,23 @@ $ gpg --recv-keys *key-id*
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") with [Tor#Torsocks](/index.php/Tor#Torsocks "Tor"). Or using the `--use-tor` command line option. See this [GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 *   You can connect to a keyserver using a proxy by setting the `http_proxy` [environment variable](/index.php/Environment_variable "Environment variable") and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmngr.conf`, overriding the `http_proxy` environment variable. [Restart](/index.php/Restart "Restart") the `dirmngr.service` [user service](/index.php/Systemd/User "Systemd/User") for the changes to take effect.
 *   If you wish to import a key ID to install a specific Arch Linux package, see [pacman/Package signing#Managing the keyring](/index.php/Pacman/Package_signing#Managing_the_keyring "Pacman/Package signing") and [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg").
+
+The most common keyservers:
+
+*   [SKS Keyserver Pool](https://sks-keyservers.net): federated, no verification, keys cannot be deleted.
+*   [Mailvelope Keyserver](https://keys.mailvelope.com): central, verification of email IDs, keys can be deleted.
+*   [keys.openpgp.org](https://keys.openpgp.org): central, verification of email IDs, keys can be deleted, no third-party signatures (i.e. no Web of Trust support).
+
+### Web Key Directory
+
+The Web Key Service (WKS) protocol is a new [standard](https://datatracker.ietf.org/doc/draft-koch-openpgp-webkey-service/) for key distribution, where the email domain provides its own key server called [Web Key Directory (WKD)](https://wiki.gnupg.org/WKD). When encrypting to an email address (e.g. `user@example.com`), GnuPG (>=2.1.16) will query the domain (`example.com`) via HTTPS for the public OpenPGP key if it’s not already in the local keyring. Note that the option `auto-key-locate` must contain `wkd` (which is the default).
+
+```
+# gpg --recipient *user@example.org* --auto-key-locate local,wkd --encrypt *doc*
+
+```
+
+See the [GnuPG Wiki](https://wiki.gnupg.org/WKD#Implementations) for a list of email providers that support WKD. If you control the domain of your email address yourself, you can follow [this guide](https://wiki.gnupg.org/WKDHosting) to enable WKD for your domain. To check if your key can be found in the WKD you can use [this webinterface](https://metacode.biz/openpgp/web-key-directory).
 
 ### Encrypt and decrypt
 

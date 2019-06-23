@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [umask](/index.php/Umask "Umask"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=549386) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [umask](/index.php/Umask "Umask"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=572529) na versão em inglês.
 
 Artigos relacionados
 
@@ -6,7 +6,11 @@ Artigos relacionados
 
 O utilitário [umask](https://en.wikipedia.org/wiki/pt:umask "wikipedia:pt:umask") é usado para controlar a máscara de modo de criação de arquivo, o qual determinar o valor inicial dos bits de permissão de arquivo para arquivos recém-criados. O seguinte comportamento deste utilitário é padronizado pelo [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX") e descrito no [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Porque o *umask* afeta o ambiente de execução do shell atual, é geralmente implementado como um comando incorporado de um shell.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Significado da máscara de modo](#Significado_da_máscara_de_modo)
 *   [2 Exibir o valor atual da máscara](#Exibir_o_valor_atual_da_máscara)
@@ -66,11 +70,11 @@ Quando a opção `-S`, padronizada pelo POSIX, é usada, a máscara será exibid
 
 ## Definir o valor da máscara
 
-**Nota:** Os valores umask podem ser definidos caso a caso. Por exemplo, os usuários de desktop achar as permissões restritas em sua pasta *home* (`chmod 700`, conforme aplicado por `useradd -m`) suficiente, pois elas tornam todos os arquivos inacessíveis para outros usuários. Isso não seria prático (por exemplo, ao usar o [Apache](/index.php/Apache "Apache")) e os arquivos públicos são armazenados entre os particulares, então, em vez disso, considere restringir o umask.
+**Nota:** Os valores umask podem ser definidos caso a caso. Por exemplo, os usuários de desktop achar as permissões restritas em sua pasta *home* suficiente (`useradd -m` cria o diretório com permissão `700` por padrão), pois elas tornam todos os arquivos inacessíveis para outros usuários. Isso não seria prático (por exemplo, ao usar o [Apache](/index.php/Apache "Apache")) e os arquivos públicos são armazenados entre os particulares, então, em vez disso, considere restringir o umask.
 
 Você pode definir o valor de umask através do comando *umask*. A string que especifica a máscara de modo segue as mesmas regras sintáticas que o argumento de modo de [chmod](/index.php/Chmod_(Portugu%C3%AAs) "Chmod (Português)") (consulte o [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) para mais detalhes).
 
-O valor de umask do sistema pode ser definido em `/etc/profile` ou nos arquivos de configuração padrão do [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"), por exemplo, `/etc/bash.bashrc`. A maioria das distribuições Linux, incluindo o Arch [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem) definem um valor padrão de `022`. Você também pode configurar umask com `pam_umask.so`, mas este pode ser substituído por `/etc/profile` ou similar.
+O valor de umask do sistema pode ser definido em `/etc/profile` ou nos arquivos de configuração padrão do [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"), por exemplo, `/etc/bash.bashrc`. A maioria das distribuições Linux, incluindo o Arch, define um valor padrão de umask de `022` (veja [/etc/profile](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/profile?h=packages/filesystem)). É possível também configurar umask com `pam_umask.so`, mas este pode ser substituído por `/etc/profile` ou similar.
 
 Se você precisa definir um valor diferente, você pode editar diretamente esse arquivo, afetando todos os usuários, ou executar `umask` a partir do arquivo de configuração do usuário do seu shell (ex.: `~/.bashrc`) para alterar apenas seu umask, porém essas mudanças só terão efeito após o próximo login. Para alterar seu umask apenas durante a sessão atual, basta executar `umask` e digitar o valor desejado. Por exemplo, executar `umask 077` lhe dará permissões de leitura e escrita para novos arquivos e permissões de leitura, escrita e execução para novas pastas.
 

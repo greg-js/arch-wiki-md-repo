@@ -322,9 +322,10 @@ include: "/etc/unbound/resolvconf.conf"
 为了使本地机器之外的、本地网络外部的默认转发区域使用指定的服务器，请在配置文件中添加一个名字是`.`的转发区域。在这个例子里，所有的请求都被转发到谷歌的DNS服务器：
 
 ```
- forward-zone:
- forward-addr: 8.8.8.8
- forward-addr: 8.8.4.4
+forward-zone:
+  name: "."
+  forward-addr: 8.8.8.8
+  forward-addr: 8.8.4.4
 
 ```
 

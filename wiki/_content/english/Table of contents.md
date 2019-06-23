@@ -10,8 +10,8 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
-| <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(6) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
+| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
+| <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
 | <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
 | <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
 | <small>2.3.</small> [Integrated development environments](/index.php/Category:Integrated_development_environments "Category:Integrated development environments") <small>(4)</small> |
@@ -92,7 +92,7 @@
 | <small>4.11.4.1.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.11.5.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(15) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"))</small> |
 | <small>4.11.6.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Servers](/index.php/Category:Servers "Category:Servers"), [Synchronization](/index.php/Category:Synchronization "Category:Synchronization"))</small> |
-| <small>4.11.7.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
+| <small>4.11.7.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(20) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>4.11.8.</small> [Transport Layer Security](/index.php/Category:Transport_Layer_Security "Category:Transport Layer Security") <small>(5) (also in [Cryptography](/index.php/Category:Cryptography "Category:Cryptography"))</small> |
 | <small>4.11.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>4.11.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
@@ -173,7 +173,7 @@
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(11)</small> |
-| <small>5.1.14.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>5.1.14.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>5.1.14.2.</small> [Numerical analysis](/index.php/Category:Numerical_analysis "Category:Numerical analysis") <small>(5)</small> |
 | <small>5.1.14.3.</small> [Volunteer computing](/index.php/Category:Volunteer_computing "Category:Volunteer computing") <small>(2) (also in [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing"))</small> |
 | <small>5.1.15.</small> [Search](/index.php/Category:Search "Category:Search") <small>(5)</small> |
@@ -321,7 +321,7 @@
 | <small>6.21.7.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>6.21.8.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.21.9.</small> [Sandboxing](/index.php/Category:Sandboxing "Category:Sandboxing") <small>(7)</small> |
-| <small>6.21.10.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(19) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
+| <small>6.21.10.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(20) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
 | <small>6.21.11.</small> [Security testing](/index.php/Category:Security_testing "Category:Security testing") <small>(3)</small> |
 | <small>6.21.12.</small> [Surveillance](/index.php/Category:Surveillance "Category:Surveillance") <small>(3)</small> |
 | <small>6.21.13.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
@@ -330,5 +330,5 @@
 | <small>6.22.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization "Category:Cloud synchronization") <small>(3)</small> |
 | <small>6.22.2.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.23.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(19)</small> |
-| <small>6.24.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(27)</small> |
+| <small>6.24.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(28)</small> |
 | <small>6.24.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |

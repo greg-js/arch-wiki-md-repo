@@ -11,7 +11,7 @@
     *   [2.1 手動掛載與卸載](#手動掛載與卸載)
     *   [2.2 自動解鎖及掛載](#自動解鎖及掛載)
         *   [2.2.1 在開機時](#在開機時)
-        *   [2.2.2 在使用者當入時](#在使用者當入時)
+        *   [2.2.2 在使用者登入時](#在使用者登入時)
 *   [3 Loop 裝置](#Loop_裝置)
     *   [3.1 不使用 losetup](#不使用_losetup)
     *   [3.2 使用 losetup](#使用_losetup)
@@ -90,7 +90,7 @@
 
 請參閱 [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") 及 [Dm-crypt/System configuration#Mounting at boot time](/index.php/Dm-crypt/System_configuration#Mounting_at_boot_time "Dm-crypt/System configuration") 查看設定範例。
 
-#### 在使用者當入時
+#### 在使用者登入時
 
 使用 *pam_exec* 可以在使用者登入之時解鎖 (*cryptsetup open*) 分割區：這推薦用於各使用者擁有自己獨立加密的 `/home` 分割區。請參閱 [dm-crypt/Mounting at login](/index.php/Dm-crypt/Mounting_at_login "Dm-crypt/Mounting at login")。
 

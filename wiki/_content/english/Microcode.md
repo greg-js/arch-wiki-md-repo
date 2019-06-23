@@ -105,7 +105,7 @@ objcopy ... --add-section .initrd=my_new_initrd
 
 ### rEFInd
 
-Edit boot options in `/boot/refind_linux.conf` as per the following example:
+Edit boot options in `/boot/refind_linux.conf` and add `initrd=/boot/*cpu_manufacturer*-ucode.img` (or `initrd=/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as the first initramfs. For example:
 
 ```
 "Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img** initrd=/boot/initramfs-%v.img"

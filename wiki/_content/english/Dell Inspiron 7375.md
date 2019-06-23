@@ -157,9 +157,7 @@ once you have kernel 4.20, this setup plus tlp will give you the same battery ti
 
 ### Fan Control
 
-I'm having good results tuning with [nbfc](https://aur.archlinux.org/packages/nbfc/) I made a config based on Dell Inspiron 7348 avivable on [my nbfc fork](https://github.com/danielfm123/nbfc/blob/master/Configs/Dell%20Inspiron%207375.xml) witch has more than the default 2 levels of speed in bios.
-
-Ill pull request upon more testing
+I'm having good results tuning with [nbfc](https://aur.archlinux.org/packages/nbfc/) I made a config based on Dell Inspiron 7348 and is avivable on the official [nbfc](https://aur.archlinux.org/packages/nbfc/)
 
 ### Wifi
 

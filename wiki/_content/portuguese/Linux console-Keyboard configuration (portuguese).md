@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=560841) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=575299) na versão em inglês.
 
 Artigos relacionados
 
@@ -198,7 +198,7 @@ keycode 58 = Control
 Para fazer uso do mapa de teclado pessoal, ele deve ser carregado com *loadkeys*:
 
 ```
-$ loadkeys /usr/local/share/kbd/keymaps/personal.map
+# loadkeys /usr/local/share/kbd/keymaps/personal.map
 
 ```
 

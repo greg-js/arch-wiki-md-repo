@@ -206,7 +206,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 *   **PDF Mix Tool** — Qt front-end for [PoDoFo](#Libraries), written in C++, supports splitting, merging, rotating and mixing PDF files.
 
-	[https://scarpetta.eu/pdfmixtool/](https://scarpetta.eu/pdfmixtool/) || [pdfmixtool](https://aur.archlinux.org/packages/pdfmixtool/)
+	[https://scarpetta.eu/pdfmixtool/](https://scarpetta.eu/pdfmixtool/) || [pdfmixtool](https://www.archlinux.org/packages/?name=pdfmixtool)
 
 *   **PDF Mod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
@@ -215,6 +215,14 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 *   **PDFsam** — Open source application, written in Java, supports merging, splitting and rotating.
 
 	[https://pdfsam.org/](https://pdfsam.org/) || [pdfsam](https://www.archlinux.org/packages/?name=pdfsam)
+
+*   **PDF Slicer** — Simple application to extract, merge, rotate and reorder pages of PDF documents.
+
+	[https://junrrein.github.io/pdfslicer/](https://junrrein.github.io/pdfslicer/) || [pdfslicer](https://aur.archlinux.org/packages/pdfslicer/)
+
+*   **PDF Tricks** — Simple, efficient application for small manipulations in PDF files using Ghostscript.
+
+	[https://github.com/muriloventuroso/pdftricks](https://github.com/muriloventuroso/pdftricks) || [pdftricks](https://www.archlinux.org/packages/?name=pdftricks)
 
 ### Cropping tools
 

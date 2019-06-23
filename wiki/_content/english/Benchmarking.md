@@ -18,18 +18,16 @@ Many tools can be used to determine system performance, the following provides a
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Standalone tools](#Standalone_tools)
-    *   [1.1 glxgears](#glxgears)
-    *   [1.2 UnixBench](#UnixBench)
-    *   [1.3 interbench](#interbench)
-    *   [1.4 ttcp](#ttcp)
-    *   [1.5 iperf](#iperf)
-    *   [1.6 time](#time)
-    *   [1.7 hdparm](#hdparm)
-    *   [1.8 Unigine Engine](#Unigine_Engine)
-    *   [1.9 gnome-disks](#gnome-disks)
-    *   [1.10 systemd-analyze](#systemd-analyze)
-    *   [1.11 dd](#dd)
-    *   [1.12 dcfldd](#dcfldd)
+    *   [1.1 UnixBench](#UnixBench)
+    *   [1.2 interbench](#interbench)
+    *   [1.3 ttcp](#ttcp)
+    *   [1.4 iperf](#iperf)
+    *   [1.5 time](#time)
+    *   [1.6 hdparm](#hdparm)
+    *   [1.7 gnome-disks](#gnome-disks)
+    *   [1.8 systemd-analyze](#systemd-analyze)
+    *   [1.9 dd](#dd)
+    *   [1.10 dcfldd](#dcfldd)
 *   [2 Software suites](#Software_suites)
     *   [2.1 Bonnie++](#Bonnie++)
     *   [2.2 IOzone](#IOzone)
@@ -37,15 +35,17 @@ Many tools can be used to determine system performance, the following provides a
     *   [2.4 Phoronix Test Suite](#Phoronix_Test_Suite)
     *   [2.5 S](#S)
 *   [3 Flash media](#Flash_media)
-*   [4 See also](#See_also)
+*   [4 Graphics](#Graphics)
+    *   [4.1 Basemark GPU](#Basemark_GPU)
+    *   [4.2 GFXBench](#GFXBench)
+    *   [4.3 glmark2](#glmark2)
+    *   [4.4 glxgears](#glxgears)
+    *   [4.5 GpuTest](#GpuTest)
+    *   [4.6 Unigine Engine](#Unigine_Engine)
+    *   [4.7 vkmark](#vkmark)
+*   [5 See also](#See_also)
 
 ## Standalone tools
-
-### glxgears
-
-glxgears is a popular OpenGL test that renders a very simple OpenGL performance and outputs the frame rate. Though glxgears can be useful as a test of direct rendering capabilities of the graphics driver, it is an outdated tool that is not representative of the current state of GNU/Linux graphics and overall OpenGL possibilities. glxgears only tests a small segment of the OpenGL capabilities that might be used in a game. Performance increases noted in glxgears will not necessarily be realized in any given game. See [here](http://wiki.cchtml.com/index.php/Glxgears_is_not_a_Benchmark) for more information.
-
-glxgears can be installed via the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) and [lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos) (for [multilib](/index.php/Multilib "Multilib")) packages.
 
 ### UnixBench
 
@@ -107,30 +107,6 @@ Timing buffered disk reads:  x MB in  y seconds = z MB/sec
 ```
 
 **Note:** One should run the above command 2-3 times and manually average the results for an accurate evaluation of read speed per the hdparm man page.
-
-### Unigine Engine
-
-[Unigine corp.](http://www.unigine.com/) has produced several modern OpenGL benchmarks based on their graphics engine with features such as:
-
-*   Per-pixel dynamic lighting
-*   Normal & parallax occlusion mapping
-*   64-bit HDR rendering
-*   Volumetric fog and light
-*   Powerful particle systems: fire, smoke, explosions
-*   Extensible set of shaders (GLSL / HLSL)
-*   Post-processing: depth of field, refraction, glow, blurring, color correction and much more.
-
-Unigine benchmarks have found recent usage by those looking to overclock their systems. Heaven especially has been used for initial stability testing of overclocks.
-
-These benchmarks can be found in the [AUR](/index.php/AUR "AUR") (see links below).
-
-See also:
-
-*   [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)
-*   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)
-*   [unigine-sanctuary](https://aur.archlinux.org/packages/unigine-sanctuary/)
-*   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/)
-*   [unigine-superposition](https://aur.archlinux.org/packages/unigine-superposition/)
 
 ### gnome-disks
 
@@ -286,6 +262,70 @@ $ iozone -e -I -a -s 10M -r 4k -i 0 -i 1 -i 2
 
 *   Test values are reported in KB/s.
 *   For performance charts on SD cards and other flash media, see for example [Tom's Hardware](http://www.tomshardware.com/charts/memory-cards,39.html).
+
+## Graphics
+
+### Basemark GPU
+
+[Basemark GPU](https://www.basemark.com/products/basemark-gpu/) is an evaluation tool to analyze and measure graphics API (OpenGL 4.5, OpenGL ES 3.1, Vulkan and Microsoft DirectX 12) performance across mobile and desktop platforms. Basemark GPU targets both Desktop and Mobile platforms by providing both High Quality and Medium Quality modes. The High-Quality mode addresses cutting-edge Desktop workloads while the Medium Quality mode addresses equivalent Mobile workloads.
+
+[Known issue](https://www.basemark.com/products/basemark-gpu/faq/) 10th December 2018: Linux launcher has a bug and – on some systems – it does not show Vulkan support.
+
+Basemark GPU is available in [basemark](https://aur.archlinux.org/packages/basemark/) package.
+
+### GFXBench
+
+[GFXBench](https://gfxbench.com/benchmark.jsp) is a high-end graphics benchmark that measures mobile and desktop performance with next-gen graphics features across all platforms. As a true cross-API benchmark, GFXBench supports all the industry-standard and vendor-specific APIs including OpenGL, OpenGL ES, Vulkan, Metal, DirectX/Direct3D and DX12.
+
+Vulkan API tests are currently under development and are only available for their corporate partners.
+
+GFXBench is available in [gfxbench](https://aur.archlinux.org/packages/gfxbench/) package.
+
+### glmark2
+
+[glmark2](https://github.com/glmark2/glmark2) is an OpenGL 2.0 and ES 2.0 benchmark.
+
+glmark2 is available in [glmark2](https://aur.archlinux.org/packages/glmark2/) package.
+
+### glxgears
+
+glxgears is a popular OpenGL test that renders a very simple OpenGL performance and outputs the frame rate. Though glxgears can be useful as a test of direct rendering capabilities of the graphics driver, it is an outdated tool that is not representative of the current state of GNU/Linux graphics and overall OpenGL possibilities. glxgears only tests a small segment of the OpenGL capabilities that might be used in a game. Performance increases noted in glxgears will not necessarily be realized in any given game. See [here](http://wiki.cchtml.com/index.php/Glxgears_is_not_a_Benchmark) for more information.
+
+glxgears can be installed via the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) and [lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos) (for [multilib](/index.php/Multilib "Multilib")) packages.
+
+### GpuTest
+
+[GpuTest](https://www.geeks3d.com/gputest/) is a cross-platform (Windows, Linux and Max OS X) GPU stress test and OpenGL benchmark. GpuTest comes with several GPU tests including some popular ones from Windows'world (FurMark or TessMark).
+
+GpuTest is available in [gputest](https://aur.archlinux.org/packages/gputest/) package.
+
+### Unigine Engine
+
+[Unigine corp.](http://www.unigine.com/) has produced several modern OpenGL benchmarks based on their graphics engine with features such as:
+
+*   Per-pixel dynamic lighting
+*   Normal & parallax occlusion mapping
+*   64-bit HDR rendering
+*   Volumetric fog and light
+*   Powerful particle systems: fire, smoke, explosions
+*   Extensible set of shaders (GLSL / HLSL)
+*   Post-processing: depth of field, refraction, glow, blurring, color correction and much more.
+
+Unigine benchmarks have found recent usage by those looking to overclock their systems. Heaven especially has been used for initial stability testing of overclocks.
+
+These benchmarks can be found in [AUR](/index.php/AUR "AUR"):
+
+*   [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)
+*   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)
+*   [unigine-sanctuary](https://aur.archlinux.org/packages/unigine-sanctuary/)
+*   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/)
+*   [unigine-superposition](https://aur.archlinux.org/packages/unigine-superposition/)
+
+### vkmark
+
+[vkmark](https://github.com/vkmark/vkmark) is an extensible Vulkan benchmarking suite with targeted, configurable scenes.
+
+vkmark is available in [vkmark-git](https://aur.archlinux.org/packages/vkmark-git/) package.
 
 ## See also
 

@@ -194,7 +194,7 @@ $ import -window root ~/Pictures/$(date '+%Y%m%d-%H%M%S').png
 
 ```
 
-Adding the above command to the `PrintScreen` key to Compiz allows to take the screenshot to the Pictures folder according to date and time. Notice that the `rc.xml` file in Openbox does not understand commas; so, in order to bind that command to the `PrintScreen` key in Openbox, you need to add the following to the keyboard section of your `rc.xml` file:
+Note that `import` is part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package. Adding the above command to the `PrintScreen` key to Compiz allows to take the screenshot to the Pictures folder according to date and time. Notice that the `rc.xml` file in Openbox does not understand commas; so, in order to bind that command to the `PrintScreen` key in Openbox, you need to add the following to the keyboard section of your `rc.xml` file:
 
  `rc.xml` 
 ```
@@ -263,6 +263,8 @@ Screencast utilities allow you to create a video of your desktop or individual w
 *   **[OBS](https://en.wikipedia.org/wiki/Open_Broadcaster_Software "wikipedia:Open Broadcaster Software")** — Video recording and live streaming application.
 
 	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
+
+*   [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) – plugin for GNOME screencast feature, supports Wayland.
 
 *   **[Peek](https://en.wikipedia.org/wiki/Peek_(software) "wikipedia:Peek (software)")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
 

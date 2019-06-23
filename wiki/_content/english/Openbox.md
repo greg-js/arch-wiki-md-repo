@@ -330,13 +330,13 @@ $ mmaker -vf OpenBox3
 
 ```
 
-Once a new `~/.config/openbox/menu.xml` file has been generated it may then be manually edited, or configured using a GUI menu editor, such as [obmenu](https://www.archlinux.org/packages/?name=obmenu).
+Once a new `~/.config/openbox/menu.xml` file has been generated it may then be manually edited, or configured using a GUI menu editor, such as [obmenu](https://aur.archlinux.org/packages/obmenu/).
 
 #### obmenu
 
 **Warning:** `obm-xdg` - a pipe menu to generate a list of [GTK+](/index.php/GTK%2B "GTK+") and [GNOME](/index.php/GNOME "GNOME") applications - is also provided with obmenu. However, it has long-running bugs whereby it may produce an invalid output, or even not function at all. Consequently it has been omitted from discussion.
 
-[obmenu](https://www.archlinux.org/packages/?name=obmenu) is a "user-friendly" GUI application to edit `~/.config/openbox/menu.xml`, without the need to code in `xml`.
+[obmenu](https://aur.archlinux.org/packages/obmenu/) is a "user-friendly" GUI application to edit `~/.config/openbox/menu.xml`, without the need to code in `xml`.
 
 #### xdg-menu
 

@@ -155,3 +155,8 @@ USB:
 
  | USB drive detection took some work (looking in the BIOS, disabling secure boot). Installation was not successful on the first try. In order to boot I enabled secureboot, cleared trusted bootloaders at secureboot settings, saved, rebooted, entered BIOS, added GRUB as trusted UEFI file, saved, rebooted, entered BIOS, disabled secureboot. Grub will appear in the boot order list even if secureboot is disabled. Must be done at each firmware update. |
 | Acer Aspire E5-553-T337 | 2018.08.07 | Perfectly OK,Amd radeon R5 | OK | OK | OK | OK | OK | OK | OK | Everything works fine.no complaints |
+| Acer Aspire 3 A315-41-R09T | 2019.03.01 | Vega 8: Works out-of-the-box with open source drivers. | Intel HDA; OK. | Works OK with r8168 module installed. | QCA9377, OK. | OK | Suspend to RAM: OK < /br>Suspend to disk: OK< /br>CPU Frequency Scaling: OK | Not present | Webcam: Yes
+Hotkeys: OK
+Synaptic Touchpad: OK (supports libinput-gestures)
+HDMI: OK
+Microphone: OK | Everything works fine, but you have to stick to a modern kernel. Also, it's important to add ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2 as a kernel parameter on grub (or whatever boot loader of your choice), because it otherwise works erratically and gets stuck either on boot or at shutdown. To properly install Arch Linux, it's a good idea to use noapic as boot parameter, it will run smoothly. Don't use it later, though, as it will disable the I2C touchpad and some other relevant stuff. |

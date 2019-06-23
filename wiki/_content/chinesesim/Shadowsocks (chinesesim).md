@@ -91,7 +91,39 @@ $ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m
 
 #### 以守护进程形式运行客户端
 
-Shadowsocks客户端可以使用`shadowsocks@.service`控制。 例如，[start]]和[enable](/index.php/Enable "Enable")配置文件`/etc/shadowsocks/config.json`, 可使用[`shadowsocks-libev@config.service`服务。
+**注意:** shadowsocks和shadowsocks-libev的systemd系统单元使用相同的配置文件路径 （`/etc/shadowsocks`）。若没有`/etc/shadowsocks`文件夹，请自行创建。
+
+Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`*conf-file*.json`（以`*conf-file*`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
+
+启动shadowsocks：
+
+```
+# systemctl start shadowsocks@foo
+
+```
+
+开机自启动shadowsocks：
+
+```
+# systemctl enable shadowsocks@foo
+
+```
+
+启动shadowsocks-libev：
+
+```
+# systemctl start shadowsocks-libev@foo
+
+```
+
+开机自启动shadowsocks-libev：
+
+```
+# systemctl enable shadowsocks-libev@foo
+
+```
+
+**提示：** 可用`journalctl -u shadowsocks@foo`来查询日志；
 
 #### 图形界面客户端
 

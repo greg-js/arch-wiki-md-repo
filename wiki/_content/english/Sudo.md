@@ -32,6 +32,7 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
     *   [4.6 Harden with Sudo Example](#Harden_with_Sudo_Example)
     *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_/etc/sudoers.d)
     *   [4.8 Editing files](#Editing_files)
+    *   [4.9 Enable insults](#Enable_insults)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSH TTY Problems](#SSH_TTY_Problems)
     *   [5.2 Permissive umask](#Permissive_umask)
@@ -406,6 +407,14 @@ Note that you can set the editor to any program, so for example one can use [mel
 $ SUDO_EDITOR=meld sudo -e /etc/*file*{,.pacnew*}*
 
 ```
+
+### Enable insults
+
+Users can enable insults easter egg in sudo by adding the following line in sudoers file with `visudo`.
+
+Upon entering an incorrect password this will replace `Sorry, try again.` message with humorous insults.
+
+ `/etc/sudoers`  `Defaults insults` 
 
 ## Troubleshooting
 

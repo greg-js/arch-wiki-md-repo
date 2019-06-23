@@ -55,11 +55,11 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 The below commands demonstrate how to setup a basic tunnel between two peers with the following settings:
 
  Peer A | Peer B |
-| External IP address | 10.10.10.1/24 | 10.10.10.2/24 |
+| External IP address | 198.51.100.101 | 203.0.113.102 |
 | Internal IP address | 10.0.0.1/24 | 10.0.0.2/24 |
 | Wireguard listening port | UDP/48574 | UDP/39814 |
 
-The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) commands below and will be shared internally within the new WireGuard network using [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8). The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
+The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 203.0.113.102`, and vice versa. The internal addresses will be new addresses created by the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) commands below and will be shared internally within the new WireGuard network using [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8). The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
 
 ### Key generation
 
@@ -105,7 +105,7 @@ This peer will listen on UDP port 48574 and will accept connection from peer B b
 # ip link add dev wg0 type wireguard
 # ip addr add 10.0.0.1/24 dev wg0
 # wg set wg0 listen-port 48574 private-key ./privatekey
-# wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
+# wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 203.0.113.102:39814
 # ip link set wg0 up
 
 ```
@@ -120,7 +120,7 @@ As with peer A, whereas the wireguard daemon is listening on the UDP port 39814 
 # ip link add dev wg0 type wireguard
 # ip addr add 10.0.0.2/24 dev wg0
 # wg set wg0 listen-port 39814 private-key ./privatekey
-# wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
+# wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 198.51.100.101:48574
 # ip link set wg0 up
 
 ```
@@ -139,7 +139,7 @@ As an example, when Peer A has been configured we are able to see its identity a
    listening port: 48574
 
  peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
-   endpoint: 10.10.10.2:39814
+   endpoint: 203.0.113.102:39814
    allowed ips: 10.0.0.2/32
 
 ```

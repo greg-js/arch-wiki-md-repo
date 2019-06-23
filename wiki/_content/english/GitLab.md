@@ -464,8 +464,10 @@ upstream gitlab-workhorse {
 }
 
 server {
-  listen 80;
-  #listen 443 ssl; # uncomment to enable ssl
+  listen 80;                  # IPv4 HTTP
+  #listen 443 ssl http2;      # uncomment to enable IPv4 HTTPS + HTTP/2
+  #listen [::]:80;            # uncomment to enable IPv6 HTTP
+  #listen [::]:443 ssl http2; # uncomment to enable IPv6 HTTPS + HTTP/2
   server_name example.com;
 
   #ssl_certificate ssl/example.com.crt;
@@ -706,26 +708,19 @@ If git operations (-T, pull, clone, etc.) fails using ssh try changing the shell
 
 ### CSS or styles issue
 
-If you have any issues with styles and CSS not working, you may try to edit
-
-```
-/usr/share/webapps/gitlab/config/environments/production.rb 
-
-```
-
-and change
+If you have any issues with styles and CSS not working, you may try to edit `/usr/share/webapps/gitlab/config/environments/production.rb` and change:
 
 ```
 # Disable Rails's static asset server (Apache or nginx will already do this)
-config.serve_static_files = false
+config.public_file_server = false
 
 ```
 
-to
+to:
 
 ```
 # Disable Rails's static asset server (Apache or nginx will already do this)
-config.serve_static_files = true
+config.public_file_server = true
 
 ```
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-05-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=573630) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=575874) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -74,7 +74,7 @@ de shell | Especificidade |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Sim | Não | Sim | Sim | Sim | Sim | bash, zsh | `bb-wrapper` para interfacear o *pacman*, gerenciamento de confiança |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Não | [Não](https://github.com/Kwpolska/pkgbuilder/issues/36) | Sim | Sim | Sim | [Parcial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` para interfacear o *pacman* |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Não | Sim | Sim | Não | Não | Não | – | [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local") |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | [Não](https://github.com/vn971/rua/issues/21) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), inspeção de `.pkg.tar`, [somente compilação](https://github.com/vn971/rua/issues/13) |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | [Não](https://github.com/vn971/rua/issues/21) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), inspeção de `.pkg.tar` |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([descontinuado](https://github.com/floft/spinach))</small> | Bash | [Sim](https://github.com/floft/spinach/commit/5455747) | Não | Não | Não | Não | Não | – | – |
 
@@ -88,7 +88,7 @@ de shell | Especificidade |
 | [pacaur](https://aur.archlinux.org/packages/pacaur/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | [--ask](https://github.com/rmarquis/pacaur/commit/12707cc) | bash, zsh | interação em lote 2 |
 | [pakku](https://aur.archlinux.org/packages/pakku/) | Nim | Sim | [Sim](https://github.com/kitsunyan/pakku/commit/396e9f4) | Sim | Sim | Sim | Sim | [-Sy](https://github.com/kitsunyan/pakku/wiki/Native-Pacman-Explanation) | bash, zsh | obtém chaves PGP |
 | [pikaur](https://aur.archlinux.org/packages/pikaur/) | Python | Sim | Sim | Sim | Sim | Sim | Sim | [-Sy](https://github.com/actionless/pikaur#pikaur) | bash, fish, zsh | interação em lote 1/2, [usuários dinâmicos](http://0pointer.net/blog/dynamic-users-with-systemd.html) |
-| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Sim | Sim | [Sim](https://github.com/trizen/trizen/commit/6fb0cc9) | [Sim](https://github.com/trizen/trizen/commit/7ab7ee5f) | Sim | [Parcial](https://github.com/trizen/trizen/issues/46) | [-Ud*](https://github.com/trizen/trizen/commit/9e7b40e)}} | bash, fish, zsh | – |
+| [trizen](https://aur.archlinux.org/packages/trizen/) | Perl | Sim | Sim | [Sim](https://github.com/trizen/trizen/commit/6fb0cc9) | [Sim](https://github.com/trizen/trizen/commit/7ab7ee5f) | Sim | [Parcial](https://github.com/trizen/trizen/issues/46) | – | bash, fish, zsh | – |
 | [yay](https://aur.archlinux.org/packages/yay/) | Go | Sim | [Sim](https://github.com/Jguer/yay/pull/447) | [Sim](https://github.com/Jguer/yay/pull/297) | Sim | [Sim](https://github.com/Jguer/yay/pull/866) | Sim | [-Sy*](https://github.com/Jguer/yay/commit/3bdb534)
 [--ask*](https://github.com/Jguer/yay/commit/ea5a94e) | bash, fish, zsh | interação em lote 1/2, obtém chaves PGP |
 | [aurman](https://aur.archlinux.org/packages/aurman/)

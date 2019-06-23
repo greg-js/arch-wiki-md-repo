@@ -365,7 +365,7 @@ Pi-Hole was intended to block ads, but it can also be used to block other unwant
 
 **Note:** Pi-Hole blocklists must contain **domains**. Some blocklists might contain IP addresses of 127.0.0.1 and domain combination - this format is accepted by Pi-Hole.
 
-There are many websites providing these blocklists, like [this](https://hosts-file.net/?s=Download) or [this](https://firebog.net/).
+There are many sources providing these blocklists. Some examples: [hosts-file.net](https://hosts-file.net/?s=Download), [firebog.net](https://firebog.net/) and [dbl.oisd.nl](https://www.reddit.com/comments/bppug1).
 
 ## Troubleshooting
 

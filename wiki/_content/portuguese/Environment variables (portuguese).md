@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=565980) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=572515) na versão em inglês.
 
 Artigos relacionados
 
@@ -16,7 +16,7 @@ Uma variável de ambiente é um objeto nomeado que contém dados usados por um o
 *   [2 Definindo variáveis](#Definindo_variáveis)
     *   [2.1 Globalmente](#Globalmente)
     *   [2.2 Por usuário](#Por_usuário)
-        *   [2.2.1 Aplicativos gráficos](#Aplicativos_gráficos)
+        *   [2.2.1 Ambiente gráfico](#Ambiente_gráfico)
     *   [2.3 Por sessão](#Por_sessão)
 *   [3 Exemplos](#Exemplos)
     *   [3.1 Programas padrão](#Programas_padrão)
@@ -91,7 +91,7 @@ export PATH="${PATH}:/home/meu_usuário/bin"
 
 Para atualizar a variável, autentique-se novamente ou use *source* para recarregar o arquivo: `$ source ~/.bash_profile`.
 
-#### Aplicativos gráficos
+#### Ambiente gráfico
 
 Variáveis de ambiente para aplicativos do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") podem ser definidos em [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)"), ou em [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)") ao usar um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), por exemplo:
 
@@ -101,13 +101,17 @@ export PATH="${PATH}:~/scripts"
 export GUIVAR=value
 ```
 
-Aplicativos que usam [Wayland](/index.php/Wayland "Wayland") pode usar variáveis de ambiente de usuário [systemd](/index.php/Systemd/User#Environment_variables "Systemd/User"), pois o Wayland não inicia qualquer arquivo relacionado ao Xorg:
+Aplicativos que usam [Wayland](/index.php/Wayland "Wayland") pode usar [variáveis de ambiente de usuário systemd](/index.php/Systemd/User#Environment_variables "Systemd/User"), pois o Wayland não inicia qualquer arquivo relacionado ao Xorg:
 
  `~/.config/environment.d/envvars.conf` 
 ```
 PATH=$PATH:~/scripts
 GUIVAR=value
 ```
+
+Para definir variáveis de ambiente apenas para um aplicativo específico em vez de toda a sessão, edite o arquivo *.desktop* do aplicativo. Veja [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") para instruções.
+
+**Dica:** [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") possui suporte a execução de shell scripts no login e mesmo após iniciar o Plasma, eles podem ser usados para definir variáveis de ambiente. Veja [KDE#Autostart](/index.php/KDE#Autostart "KDE").
 
 ### Por sessão
 

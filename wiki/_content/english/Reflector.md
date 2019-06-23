@@ -145,7 +145,6 @@ SORT=rate
 PROTOCOL1='-p http'
 PROTOCOL2='-p https'
 PROTOCOL3='-p ftp'
-PROTOCOL4='-p rsync'
 ```
 
 Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.

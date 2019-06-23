@@ -97,7 +97,7 @@ Add the following text:
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/hddtemp --daemon --foreground /dev/disk/by-id/wwn-0x60015ee0000b237f /dev/sdb
+ExecStart=/usr/bin/hddtemp --daemon --foreground /dev/disk/by-id/wwn-0x60015ee0000b237f /dev/sdb --listen=127.0.0.1
 ```
 
 Change the device names to the ones you want to monitor.

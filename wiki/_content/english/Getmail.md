@@ -1,6 +1,10 @@
 [getmail](https://en.wikipedia.org/wiki/getmail "wikipedia:getmail") is a mail retriever designed to allow you to get your mail from one or more mail accounts on various mail servers to your local machine for reading with a minimum of fuss. *getmail* is designed to be secure, flexible, reliable, and easy-to-use. *getmail* is designed to replace other mail retrievers such as [fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -37,7 +41,7 @@ path = ~/mail/
 
 You can tweak this to your POP3 service's specification.
 
-To store the password in a keyring instead of in plain text in the configuration file, setup [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and install the [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring) package. Then, delete the `password` entry from `getmailrc`, and run
+To store the password in a keyring instead of in plain text in the configuration file, setup [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and install the [python2-gnomekeyring](https://aur.archlinux.org/packages/python2-gnomekeyring/) package. Then, delete the `password` entry from `getmailrc`, and run
 
 ```
  getmail --store-password-in-gnome-keyring

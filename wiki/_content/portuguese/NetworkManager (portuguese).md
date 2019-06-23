@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=570767) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=574864) na versão em inglês.
 
 Related articles
 
@@ -27,7 +27,7 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [3.2 KDE Plasma](#KDE_Plasma)
     *   [3.3 nm-applet](#nm-applet)
         *   [3.3.1 Appindicator](#Appindicator)
-    *   [3.4 nmcli-dmenu](#nmcli-dmenu)
+    *   [3.4 networkmanager-dmenu](#networkmanager-dmenu)
 *   [4 Configuração](#Configuração)
     *   [4.1 Habilitar NetworkManager](#Habilitar_NetworkManager)
     *   [4.2 Habilitar NetworkManager Wait Online](#Habilitar_NetworkManager_Wait_Online)
@@ -36,7 +36,7 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
     *   [4.5 Verificando conectividade](#Verificando_conectividade)
     *   [4.6 Cliente DHCP](#Cliente_DHCP)
     *   [4.7 Gerenciamento de DNS](#Gerenciamento_de_DNS)
-        *   [4.7.1 Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido)
+        *   [4.7.1 Cache de DNS e encaminhamento condicional](#Cache_de_DNS_e_encaminhamento_condicional)
             *   [4.7.1.1 dnsmasq](#dnsmasq)
                 *   [4.7.1.1.1 Configuração personalizada](#Configuração_personalizada)
                 *   [4.7.1.1.2 IPv6](#IPv6)
@@ -125,7 +125,7 @@ O NetworkManager desde a versão 1.16 tem suporte nativo ao [WireGuard](/index.p
 O suporte para outros tipos de VPN é baseado em um sistema de plug-in. Eles são fornecidos nos seguintes pacotes:
 
 *   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) para [OpenConnect](/index.php/OpenConnect_(Portugu%C3%AAs) "OpenConnect (Português)")
-*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) para [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [networkmanager-openvpn](/index.php/Networkmanager-openvpn "Networkmanager-openvpn") para [OpenVPN](/index.php/OpenVPN "OpenVPN")
 *   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) para [PPTP Client](/index.php/PPTP_Client "PPTP Client")
 *   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) para [Vpnc](/index.php/Vpnc "Vpnc")
 *   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan) para [strongSwan](/index.php/StrongSwan "StrongSwan")
@@ -138,7 +138,7 @@ O suporte para outros tipos de VPN é baseado em um sistema de plug-in. Eles sã
 
 **Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
-**Nota:** Pra ter uma resolução de DNS totalmente funcional ao usar VPN, você deve configurar [DNS dividido](#Cache_de_DNS_e_DNS_dividido).
+**Nota:** Pra ter uma resolução de DNS totalmente funcional ao usar VPN, você deve configurar [encaminhamento condicional](#Cache_de_DNS_e_encaminhamento_condicional).
 
 ## Uso
 
@@ -282,9 +282,9 @@ $ nm-applet --indicator
 
 ```
 
-### nmcli-dmenu
+### networkmanager-dmenu
 
-Como alternativa, existe o [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/), que é um pequeno script para gerenciar as conexões do NetworkManager com o [dmenu](/index.php/Dmenu "Dmenu") em vez do `nm-applet`. Ele fornece todos os recursos essenciais, como conexão com conexões Wi-Fi ou com fio existentes do NetworkManager, conexão a novas conexões Wi-Fi, solicitações de senha, se necessário, conexão VPN existente, habilitação/desabilitação de rede e inicialização da interface gráfica *nm-connection-editor*.
+Como alternativa, existe o [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/), que é um pequeno script para gerenciar as conexões do NetworkManager com o [dmenu](/index.php/Dmenu "Dmenu") ou [rofi](/index.php/Rofi "Rofi") em vez do `nm-applet`. Ele fornece todos os recursos essenciais, como conexão com conexões Wi-Fi ou com fio existentes do NetworkManager, conexão a novas conexões Wi-Fi, solicitações de senha, se necessário, conexão VPN existente, habilitação/desabilitação de rede e inicialização da interface gráfica *nm-connection-editor*, conexão a redes Bluetooth.
 
 ## Configuração
 
@@ -364,9 +364,9 @@ dhcp=dhclient
 
 O gerenciamento de DNS do NetworkManager é descrito na página wiki do projeto GNOME — [Projects/NetworkManager/DNS](https://wiki.gnome.org/Projects/NetworkManager/DNS).
 
-#### Cache de DNS e DNS dividido
+#### Cache de DNS e encaminhamento condicional
 
-O NetworkManager possui um plugin para habilitar o cache DNS e DNS dividido usando [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), ou Unbound via dnssec-trigger. As vantagens dessa configuração são que as pesquisas de DNS serão armazenadas em cache, encurtando os tempos de resolução e as pesquisas de DNS dos hosts de VPN serão roteadas para os servidores DNS da VPN relevantes. Isso é especialmente útil se você estiver conectado a mais de uma VPN.
+O NetworkManager possui um plugin para habilitar o cache DNS e encaminhamento condicional ([anteriormente](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/143) chamado "DNS dividido" na documentação do NetworkManager) usando [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), ou Unbound via dnssec-trigger. As vantagens dessa configuração são que as pesquisas de DNS serão armazenadas em cache, encurtando os tempos de resolução e as pesquisas de DNS dos hosts de VPN serão roteadas para os servidores DNS da VPN relevantes. Isso é especialmente útil se você estiver conectado a mais de uma VPN.
 
 ##### dnsmasq
 
@@ -429,7 +429,7 @@ dns=systemd-resolved
 
 Se o [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") tem um assinante para seu [resolvedor de DNS](/index.php/Resolvedor_de_DNS "Resolvedor de DNS") local, configure o assinante e [configure o NetworkManager para usar o openresolv](#Usar_openresolv).
 
-Porque o NetworkManager anuncia uma única "interface" para o *resolvconf*, não é possível implementar DNS dividido para conexões do NetworkManager. Veja [issue 153 do NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
+Porque o NetworkManager anuncia uma única "interface" para o *resolvconf*, não é possível implementar encaminhamento condicional para conexões do NetworkManager. Veja [issue 153 do NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
 
 Isso pode ser parcialmente mitigado se você definir `private="*"` no `/etc/resolvconf.conf`[[4]](https://roy.marples.name/projects/openresolv/config). Quaisquer consultas por domínios que não estejam na lista de domínios de pesquisa não serão encaminhados. Elas serão tratadas conforme a configuração do resolvedor local. Por exemplo, encaminhadas para outro servidor DNS ou resolvidas recursivamente a partir da raiz do DNS.
 
@@ -453,6 +453,8 @@ Ele pode ser configurado para escrever por meio do [openresolv](#Usar_openresolv
 
 O uso do openresolv permite que o NetworkManager coexista com outro software com suporte a *resolvconf* ou, por exemplo, para executar um cache DNS local e um resolvedor DNS dividido para o qual o openresolv tem um [assinante](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)").
 
+**Nota:** Encaminhamento condicional [ainda não possui suporte completo](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153) ao usar NetworkManager com openresolv.
+
 O *NetworkManager* também oferece hooks via os scripts dispatchers que podem ser usados para alterar o `/etc/resolv.conf` após as alterações de rede. Veja [#Serviços de rede com o NetworkManager dispatcher](#Serviços_de_rede_com_o_NetworkManager_dispatcher) e [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) para mais informações.
 
 **Nota:**
@@ -471,7 +473,7 @@ Para evitar que o NetworkManager toque no `/etc/resolv.conf`, defina `main.dns=n
 dns=none
 ```
 
-**Nota:** Veja [#Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido), para configurar o NetworkManager usando outros backends de DNS, como [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") e [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), em vez de usar `main.dns=none`.
+**Nota:** Veja [#Cache de DNS e encaminhamento condicional](#Cache_de_DNS_e_encaminhamento_condicional), para configurar o NetworkManager usando outros backends de DNS, como [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") e [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), em vez de usar `main.dns=none`.
 
 Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
 

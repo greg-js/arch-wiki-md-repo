@@ -74,15 +74,13 @@ mount -i -t vfat -oiocharset=utf8,fmask=0000,dmask=0000 "$@"
 
 To write on a FAT32 partition, you must make a few changes to the [fstab](/index.php/Fstab "Fstab") file.
 
- `/etc/fstab`  `/dev/sd*xY*    /mnt/some_folder  vfat   **user**,rw,umask=000              0  0` 
+ `/etc/fstab`  `/dev/sd*xY*    /mnt/some_folder  vfat   **user**,rw` 
 
-The `user` flag means that any user (even non-root) can mount and unmount the partition `/dev/sd*X*`. `rw` gives read-write access; `umask` option removes selected rights - for example `umask=111` remove executable rights. The problem is that this entry removes executable rights from directories too, so we must correct it by `dmask=000`. See also [Umask](/index.php/Umask "Umask").
-
-Without these options, all files will be executable. You can use the option `showexec` instead of the umask and dmask options, which shows all Windows executables (com, exe, bat) in executable colours.
+The `user` option means that any user (even non-root) can mount and unmount the partition `/dev/sd*X*`. `rw` gives read-write access.
 
 For example, if your FAT32 partition is on `/dev/sda9`, and you wish to mount it to `/mnt/fat32`, then you would use:
 
- `/etc/fstab`  `/dev/sda9    /mnt/fat32        vfat   **user**,rw,umask=111,dmask=000    0  0` 
+ `/etc/fstab`  `/dev/sda9    /mnt/fat32        vfat   **user**,rw` 
 
 Now, any user can mount it with:
 
@@ -97,6 +95,8 @@ And unmount it with:
 $ umount /mnt/fat32
 
 ```
+
+Note that FAT does not support Linux file permissions. Each file will also appear to be executable. You may want to use the `showexec` option to only mark Windows executables (com, exe, bat) as executable. See [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) for more options.
 
 ## Detecting FAT type
 

@@ -24,7 +24,11 @@ Pacman 以 C 語言撰寫，使用 `.pkg.tar.xz` 軟體包格式。
 
 **提示：** 官方的 [pacman](https://www.archlinux.org/packages/?name=pacman) 已提供了不少好用工具 (如 **makepkg**, **pactree**, **vercmp** 以及更多)：執行 `pacman -Ql pacman | grep bin` 可查看完整清單。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 設定](#設定)
     *   [1.1 一般選項](#一般選項)
@@ -414,7 +418,7 @@ $ whoneeds **軟體包名稱**
 
 ```
 
-**提示：** 除了使用 `-Sc` 和 `-Scc` 這兩個選項以外，也可以考慮使用 [pacman](https://www.archlinux.org/packages/?name=pacman) 下的 `paccache`。此工具提供更多樣的控制，像是要刪除什麼軟體包快取、或刪除多少軟體包快取。執行 `paccache -h` 可獲得更多指示。
+**提示：** 除了使用 `-Sc` 和 `-Scc` 這兩個選項以外，也可以考慮使用 [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) 下的 `paccache`。此工具提供更多樣的控制，像是要刪除什麼軟體包快取、或刪除多少軟體包快取。執行 `paccache -h` 可獲得更多指示。
 
 ### 不支援部分升級
 

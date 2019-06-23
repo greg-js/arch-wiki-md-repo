@@ -25,6 +25,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
     *   [4.5 External XFS Journal](#External_XFS_Journal)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Root file system quota](#Root_file_system_quota)
+    *   [5.2 xfs_scrub_all fails if user "nobody" can not access the mountpoint](#xfs_scrub_all_fails_if_user_"nobody"_can_not_access_the_mountpoint)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -163,6 +164,19 @@ To reserve an external journal with a specified size when you create an XFS file
 XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
 
 **Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), this article [http://inai.de/linux/adm_quota](http://inai.de/linux/adm_quota) may be worth reading.
+
+### xfs_scrub_all fails if user "nobody" can not access the mountpoint
+
+When running `xfs_scrub_all`, it will launch `xfs_scrub@.service` for each mounted XFS file system. The service is run as user `nobody`, so if `nobody` can not navigate to the directory, it will fail with the error:
+
+```
+xfs_scrub@*mountpoint*.service: Changing to the requested working directory failed: Permission denied
+xfs_scrub@*mountpoint*.service: Failed at step CHDIR spawning /usr/bin/xfs_scrub: Permission denied
+xfs_scrub@*mountpoint*.service: Main process exited, code=exited, status=200/CHDIR
+
+```
+
+To allow the service to run, change the [permissions](/index.php/Permissions "Permissions") of the mountpoint so that user `nobody` has execute permissions.
 
 ## See also
 

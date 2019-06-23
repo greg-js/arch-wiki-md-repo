@@ -42,7 +42,8 @@ Related articles
     *   [7.1 Official](#Official)
     *   [7.2 Tutorials](#Tutorials)
         *   [7.2.1 Videos](#Videos)
-        *   [7.2.2 Games](#Games)
+        *   [7.2.2 Cheat sheets](#Cheat_sheets)
+        *   [7.2.3 Games](#Games)
     *   [7.3 Configuration](#Configuration_2)
         *   [7.3.1 Colors](#Colors)
 
@@ -409,6 +410,11 @@ nnoremap <C-l> :TlistToggle<CR>
 
 *   [Vimcasts](http://vimcasts.org/) — screencasts in *.ogg* format.
 *   [Vim Tutorial Videos](http://derekwyatt.org/vim/tutorials/) — covering the basics up to advanced topics.
+
+#### Cheat sheets
+
+*   [https://devhints.io/vim](https://devhints.io/vim)
+*   [https://vim.rtorr.com/](https://vim.rtorr.com/) - A mobile friendly Vim cheat sheet - [Sources](https://github.com/rtorr/vim-cheat-sheet)
 
 #### Games
 

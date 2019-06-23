@@ -37,10 +37,12 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [4.6 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
     *   [4.7 Persistent rehash](#Persistent_rehash)
         *   [4.7.1 On-demand rehash](#On-demand_rehash)
+        *   [4.7.2 Alternative on-demand rehash using SIGUSR1](#Alternative_on-demand_rehash_using_SIGUSR1)
     *   [4.8 Bind key to ncurses application](#Bind_key_to_ncurses_application)
     *   [4.9 File manager key binds](#File_manager_key_binds)
     *   [4.10 xterm title](#xterm_title)
         *   [4.10.1 Terminal emulator tab title](#Terminal_emulator_tab_title)
+    *   [4.11 Shell environment detection](#Shell_environment_detection)
 *   [5 Uninstallation](#Uninstallation)
 *   [6 See also](#See_also)
 
@@ -585,6 +587,39 @@ add-zsh-hook -Uz precmd rehash_precmd
 
 If the `precmd` hook is triggered before `/var/cache/zsh/pacman` is updated, completion may not work until a new prompt is initiated. Running an empty command, e.g. pressing `enter`, should be sufficient.
 
+#### Alternative on-demand rehash using SIGUSR1
+
+As above, however the hook file looks like this:
+
+ `/etc/pacman.d/hooks/zsh-rehash.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Depends = zsh
+Depends = procps-ng
+When = PostTransaction
+Exec = /usr/bin/pkill zsh --signal=USR1
+```
+
+**Warning:** This sends SIGUSR1 to all running `zsh` instances. Note that the default behavior for SIGUSR1 is terminate so when you first configure this all running `zsh` instances of all users (including login shells) will terminate if they have not sourced the trap below.
+ `~/.zshrc` 
+```
+catch_signal_usr1() {
+  trap catch_signal_usr1 USR1
+  rehash
+}
+trap catch_signal_usr1 USR1
+
+```
+
+This method will instantly `rehash` all `zsh` instances, removing the need to press enter to trigger `precmd`.
+
 ### Bind key to ncurses application
 
 Bind a ncurses application to a keystroke, but it will not accept interaction. Use `BUFFER` variable to make it work. The following example lets users open ncmpcpp using `Alt+\`:
@@ -694,6 +729,10 @@ Some terminal emulators and multiplexers support setting the title of the tab. T
 | Terminal | Escape sequences | Description |
 | [GNU Screen](/index.php/GNU_Screen "GNU Screen") | `\ek``\e\\` | Screen's window title (`%t`). |
 | Konsole | `\e]30;``\a` | Konsole's tab title. |
+
+### Shell environment detection
+
+See [a repository about shell environment detection](https://gitlab.com/jdorel-documentation/shell-environment-detection) for tests to detect the shell environment. This includes login/interactive shell, Xorg session, TTY and SSH session.
 
 ## Uninstallation
 

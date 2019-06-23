@@ -100,9 +100,11 @@ To finalise the preparation, ensure that the kernel tree is absolutely clean; do
 
 ```
 $ cd linux-4.8.6/
-$ make clean && make mrproper
+$ make mrproper
 
 ```
+
+**Note:** The `mrproper` Make target depends on the `clean` target, and thus, it is not necessary to execute both. See [[1]](https://unix.stackexchange.com/q/387640) for reference.
 
 ## Configuration
 
@@ -176,7 +178,7 @@ Running `$ lspci -k #` from liveCD lists names of kernel modules in use. Most im
 
 ## Compilation
 
-**Tip:** If you want to have [gcc](https://www.archlinux.org/packages/?name=gcc) optimize for your processor's instruction sets, edit `arch/x86/Makefile` (both for 32 and 64 bits, see [[1]](https://lkml.org/lkml/2007/7/20/447)) within the kernel source directory:
+**Tip:** If you want to have [gcc](https://www.archlinux.org/packages/?name=gcc) optimize for your processor's instruction sets, edit `arch/x86/Makefile` (both for 32 and 64 bits, see [[2]](https://lkml.org/lkml/2007/7/20/447)) within the kernel source directory:
 
 *   Look for `CONFIG_MK8,CONFIG_MPSC,CONFIG_MCORE2,CONFIG_MATOM,CONFIG_GENERIC_CPU` that you have chosen in `Processor type and features > Processor Family`
 *   Change the call cc-options flag from `-march=native` to the one that you have selected in Processor Family, e.g. `cflags-$(CONFIG_MK8) += $(call cc-option,-march=native)`. This is probably the best way to compile with `-march=native` as it works.

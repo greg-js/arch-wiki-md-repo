@@ -188,6 +188,6 @@ import XMonad.Util.Paste
 
 ## See also
 
-*   [The Linux Magic System Request Key - Kernel documentation](https://www.kernel.org/doc/Documentation/sysrq.txt)
+*   [The Linux Magic System Request Key - Kernel documentation](https://www.kernel.org/doc/html/v4.11/admin-guide/sysrq.html)
 *   [Linux Newbie Administrator Guide - Shortcuts and Commands](http://lnag.sourceforge.net/lnag_html/node5.html)
 *   [The Linux keyboard and console HOWTO](http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html)

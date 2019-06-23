@@ -1,4 +1,8 @@
-**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2019-01-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=562218) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=574389) na versão em inglês.
+
+Artigos relacionados
+
+*   [Inicialização silenciosa](/index.php/Silent_boot "Silent boot")
 
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) é um projeto da Fedora que consiste em proporcionar um processo de inicialização gráfico sem cintilação. Baseia-se no [modo de configuração do kernel](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) para definir uma resolução nativa da tela assim que possível, fornecendo então uma tela de boas vindas atrativa, até chegar no gerenciador de login.
 
@@ -59,7 +63,7 @@ Neste caso poderá ser necessário utilizar [plymouth-git](https://aur.archlinux
 
 ### Linha de comando do kernel
 
-Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash loglevel=3 rd.udev.log-priority=3 vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
+Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
 
 Recompile a sua imagem initrd (veja o artigo [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais detalhes), por exemplo:
 
@@ -102,6 +106,8 @@ Plymouth vem com uma vasta seleção de temas:
 6.  **Spinfinity**: "Tema simples que apresenta um símbolo rodando infinitamente no centro da tela"
 7.  *(**Text**: "Tema com uma barra tricolor apresentando o progresso através de texto")*
 8.  *(**Details**: "Tema em modo texto reserva")*
+
+A versão de desenvolvimento do Plymouth ([plymouth-git](https://aur.archlinux.org/packages/plymouth-git/)) também vem com o tema **BGRT**, que é uma variação do Spinner que mantém o logo OEM se disponível.
 
 Adicionalmente, pode-se instalar outros temas do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), bastando olhar no vetor "Necessário para" em [plymouth](https://aur.archlinux.org/packages/plymouth/)
 

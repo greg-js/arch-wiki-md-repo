@@ -47,9 +47,10 @@ To **execute** programs that use OpenCL, a compatible hardware runtime needs to 
 #### AMD/ATI
 
 *   [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa): free runtime for [AMDGPU](/index.php/AMDGPU "AMDGPU") and [Radeon](/index.php/Radeon "Radeon")
-*   [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/): proprietary standalone runtime for [AMDGPU](/index.php/AMDGPU "AMDGPU")
+*   [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/): proprietary standalone runtime for [AMDGPU](/index.php/AMDGPU "AMDGPU") (pal and legacy stacks in a single package)
 *   [rocm-opencl-runtime](https://aur.archlinux.org/packages/rocm-opencl-runtime/): Part of AMD's fully open-source ROCm GPU compute stack, which supports GFX8 and later cards(Fiji, Polaris, Vega)
-*   [amdgpu-pro-opencl](https://aur.archlinux.org/packages/amdgpu-pro-opencl/): proprietary runtime for [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO")
+*   [opencl-amdgpu-pro-orca](https://aur.archlinux.org/packages/opencl-amdgpu-pro-orca/): proprietary runtime for [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") (supports legacy products older than Vega 10)
+*   [opencl-amdgpu-pro-pal](https://aur.archlinux.org/packages/opencl-amdgpu-pro-pal/): proprietary runtime for [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") (supports Vega 10 and later products)
 *   [opencl-catalyst](https://aur.archlinux.org/packages/opencl-catalyst/): AMD proprietary runtime, soon to be deprecated in favor of [AMDGPU](/index.php/AMDGPU "AMDGPU")
 *   [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/): AMD CPU runtime
 

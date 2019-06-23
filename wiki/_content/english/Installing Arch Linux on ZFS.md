@@ -269,6 +269,7 @@ When using systemd in the initrd, you need to install [mkinitcpio-sd-zfs](https:
 **Note:**
 
 *   If you are using a separate dataset for `/usr` and have followed the instructions below, you must make sure you have the `usr` hook enabled after `zfs`, or your system will not boot.
+*   When you generate the initramfs, the `zpool.cache` is copied into the initrd. If you didn't generate it before, or needed to regenerate it, remember to regenerate the initramfs again.
 
 *   [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 

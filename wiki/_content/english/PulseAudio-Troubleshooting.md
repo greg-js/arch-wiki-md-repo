@@ -15,7 +15,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [1.6 Per-application volumes change when the Master volume is adjusted](#Per-application_volumes_change_when_the_Master_volume_is_adjusted)
     *   [1.7 Volume gets louder every time a new application is started](#Volume_gets_louder_every_time_a_new_application_is_started)
     *   [1.8 Sound output is only mono on M-Audio Audiophile 2496 sound card](#Sound_output_is_only_mono_on_M-Audio_Audiophile_2496_sound_card)
-    *   [1.9 No sound below a volume cutoff](#No_sound_below_a_volume_cutoff)
+    *   [1.9 No sound below a volume cutoff or Clipping on a particular output device](#No_sound_below_a_volume_cutoff_or_Clipping_on_a_particular_output_device)
     *   [1.10 Low volume for internal microphone](#Low_volume_for_internal_microphone)
     *   [1.11 Clients alter master output volume (a.k.a. volume jumps to 100% after running application)](#Clients_alter_master_output_volume_(a.k.a._volume_jumps_to_100%_after_running_application))
     *   [1.12 No sound after resume from suspend](#No_sound_after_resume_from_suspend)
@@ -190,11 +190,11 @@ set-default-sink delta_out
 set-default-source delta_in
 ```
 
-### No sound below a volume cutoff
+### No sound below a volume cutoff or Clipping on a particular output device
 
 Known issue (will not fix): [https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/223133](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/223133)
 
-If sound does not play when PulseAudio's volume is set below a certain level, try setting `ignore_dB=1` in `/etc/pulse/default.pa`:
+If sound does not play when PulseAudio's volume is set below a certain level, or if you hear clipping on output even at low volume (including bluetooth devices), try setting `ignore_dB=1` in `/etc/pulse/default.pa`:
 
  `/etc/pulse/default.pa`  `load-module module-udev-detect ignore_dB=1` 
 

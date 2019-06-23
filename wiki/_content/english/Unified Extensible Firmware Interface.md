@@ -513,6 +513,8 @@ You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourc
 
 ### Windows 7 will not boot in UEFI mode
 
+**Note:** Windows 7 can boot in pure UEFI class 3 without CSM support, though installation requires CSM.
+
 If you have installed Windows to a different hard disk with GPT partitioning and still have a MBR partitioned hard disk in your computer, then it is possible that the firmware (UEFI) is starting its CSM support (for booting MBR partitions) and therefore Windows will not boot. To solve this merge your MBR hard disk to GPT partitioning or disable the SATA port where the MBR hard disk is plugged in or unplug the SATA connector from this hard disk.
 
 Mainboards with this kind of problem:

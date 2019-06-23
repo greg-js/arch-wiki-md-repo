@@ -1,6 +1,10 @@
-[Notion](http://notion.sourceforge.net/) is a tiling, tabbed [window manager](/index.php/Window_manager "Window manager") for X.
+[Notion](https://notionwm.net/) is a tiling, tabbed [window manager](/index.php/Window_manager "Window manager") for X.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
@@ -44,6 +48,6 @@ Notion can be configured using Lua. To get started, copy `/etc/notion/cfg_notion
 
 ## See also
 
-*   [http://notion.sourceforge.net/](http://notion.sourceforge.net/) - Notion website
+*   [http://notionwm.net/](http://notionwm.net/) - Notion website
 *   [http://notion.sourceforge.net/notionconf/](http://notion.sourceforge.net/notionconf/) - Configuring and Extending Notion using Lua
-*   [https://sourceforge.net/projects/notion/](https://sourceforge.net/projects/notion/) - Notion Wiki
+*   [https://github.com/raboof/notion/](https://github.com/raboof/notion/) - Notion GitHub

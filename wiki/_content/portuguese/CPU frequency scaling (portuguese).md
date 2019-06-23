@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=574145) na versão em inglês.
+
 Artigos relacionados
 
 *   [Economia de energia](/index.php/Power_saving "Power saving")
@@ -6,7 +8,7 @@ Artigos relacionados
 
 A escala de frequência da CPU permite que o sistema operacional aumente ou diminua a frequência da CPU para economizar energia. Frequências de CPU podem ser escalonadas automaticamente dependendo da carga do sistema, em resposta a eventos ACPI, ou manualmente por programas espaço do usuário.
 
-O escalonamento de frequência da CPU é implementado no kernel do Linux, a infraestrutura é chamada de *cpufreq*. Desde o kernel 3.4, os módulos necessários são carregados automaticamente e o [governador ondemand](#Gerenciadores_de_escalonamento) recomendado é ativado por padrão. No entanto, as ferramentas de espaço do usuário, como [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") ou ferramentas GUI fornecidas para o seu ambiente de área de trabalho, ainda podem ser usadas para configuração avançada.
+O escalonamento de frequência da CPU é implementado no kernel do Linux, a infraestrutura é chamada de *cpufreq*. Desde o kernel 3.4, os módulos necessários são carregados automaticamente e o [regulador ondemand](#Escalonando_reguladores) recomendado é ativado por padrão. No entanto, as ferramentas de espaço do usuário, como [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") ou ferramentas GUI fornecidas para o seu ambiente de área de trabalho, ainda podem ser usadas para configuração avançada.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,8 +22,11 @@ O escalonamento de frequência da CPU é implementado no kernel do Linux, a infr
     *   [1.3 cpupower](#cpupower)
 *   [2 Drivers de frequência de CPU](#Drivers_de_frequência_de_CPU)
     *   [2.1 Configurando frequências máxima e mínima](#Configurando_frequências_máxima_e_mínima)
-*   [3 Escalonando governadores](#Escalonando_governadores)
-    *   [3.1 Ajustando o governador ondemand](#Ajustando_o_governador_ondemand)
+    *   [2.2 Desabilitando Turbo Boost](#Desabilitando_Turbo_Boost)
+        *   [2.2.1 intel_pstate](#intel_pstate)
+        *   [2.2.2 acpi-cpufreq](#acpi-cpufreq)
+*   [3 Escalonando reguladores](#Escalonando_reguladores)
+    *   [3.1 Ajustando o regulador ondemand](#Ajustando_o_regulador_ondemand)
         *   [3.1.1 Trocando o limite](#Trocando_o_limite)
         *   [3.1.2 Taxa de amostragem](#Taxa_de_amostragem)
         *   [3.1.3 Tornar as alterações permanentes](#Tornar_as_alterações_permanentes)
@@ -112,13 +117,26 @@ Para definir a CPU para executar em uma frequência especificada:
 **Nota:**
 
 *   Para ajustar apenas para um único core de CPU, acrescente `-c *número_do_core*`.
-*   As frequências máxima e mínima do governador podem ser definidas em `/etc/default/cpupower`.
+*   As frequências máxima e mínima do regulador podem ser definidas em `/etc/default/cpupower`.
 
-## Escalonando governadores
+### Desabilitando Turbo Boost
 
-Os governadores (veja a tabela abaixo) são esquemas de energia para a CPU. Apenas um pode estar ativo de cada vez. Para detalhes, veja a [documentação do kernel](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) na fonte do kernel.
+#### intel_pstate
 
-| Governador | Descrição |
+```
+# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+
+```
+
+#### acpi-cpufreq
+
+1.  echo 0 > /sys/devices/system/cpu/cpufreq/boost
+
+## Escalonando reguladores
+
+Os reguladores (veja a tabela abaixo) são esquemas de energia para a CPU. Apenas um pode estar ativo de cada vez. Para detalhes, veja a [documentação do kernel](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) na fonte do kernel.
+
+| Regulador | Descrição |
 | performance | Executa a CPU na frequência máxima. |
 | powersave | Executa a CPU na frequência mínima. |
 | userspace | Execute a CPU nas frequências especificadas pelo usuário. |
@@ -126,35 +144,35 @@ Os governadores (veja a tabela abaixo) são esquemas de energia para a CPU. Apen
 | conservative | Escalona a frequência dinamicamente conforme a carga atual. Escalona a frequência de forma mais gradual que o "ondemand". |
 | schedutil | Seleção de frequência da CPU controlada pelo agendador [[1]](http://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
 
-Dependendo do driver de escalonamento, um dos governadores serão carregados por padrão:
+Dependendo do driver de escalonamento, um dos reguladores serão carregados por padrão:
 
 *   `ondemand` para CPUs AMD e Intel mais antigos.
 *   `powersave` para CPUs Intel mais novas usando o driver `intel_pstate` (Sandy Bridge e mais novas).
 
-**Nota:** O driver `intel_pstate` possui suporte apenas aos governadores de desempenho e de economia de energia, mas ambos fornecem escalonamento dinâmico. O governador de desempenho [deve oferecer melhor funcionalidade de economia de energia do que o antigo controlador "ondemand"](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
+**Nota:** O driver `intel_pstate` possui suporte apenas aos reguladores de desempenho e de economia de energia, mas ambos fornecem escalonamento dinâmico. O regulador de desempenho [deve oferecer melhor funcionalidade de economia de energia do que o antigo controlador "ondemand"](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
 
-**Atenção:** Use as ferramentas de monitoramento da CPU (para temperaturas, voltagens, etc.) ao alterar o governador padrão.
+**Atenção:** Use as ferramentas de monitoramento da CPU (para temperaturas, voltagens, etc.) ao alterar o regulador padrão.
 
-Para ativar um governador em particular, execute:
+Para ativar um regulador em particular, execute:
 
 ```
-# cpupower frequency-set -g *governador*
+# cpupower frequency-set -g *regulador*
 
 ```
 
 **Nota:**
 
 *   Para ajustar apenas para um único core de CPU, acrescente `-c *número_do_core*` ao comando acima.
-*   A ativação de um governador requer que um [módulo de kernel](/index.php/Kernel_module "Kernel module") específico (chamado `cpufreq_*governador*`) esteja carregado. Desde o kernel 3.4, esses módulos são carregados automaticamente.
+*   A ativação de um regulador requer que um [módulo de kernel](/index.php/Kernel_module "Kernel module") específico (chamado `cpufreq_*regulador*`) esteja carregado. Desde o kernel 3.4, esses módulos são carregados automaticamente.
 
-Alternativamente, você pode ativar um governador a cada CPU disponível manualmente com:
-
-```
-# echo *governador* > /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+Alternativamente, você pode ativar um regulador a cada CPU disponível manualmente com:
 
 ```
+# echo *regulador* > /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
-sendo `*governador*` o nome do governador, relacionado na tabela acima, que você deseja ativar.
+```
+
+sendo `*regulador*` o nome do regulador, relacionado na tabela acima, que você deseja ativar.
 
 **Dica:** Para monitorar a velocidade de CPU em tempo real, execute:
 ```
@@ -162,7 +180,7 @@ $ watch grep \"cpu MHz\" /proc/cpuinfo
 
 ```
 
-### Ajustando o governador ondemand
+### Ajustando o regulador ondemand
 
 Veja a [documentação do kernel](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) para detalhes.
 
@@ -171,14 +189,14 @@ Veja a [documentação do kernel](https://www.kernel.org/doc/Documentation/cpu-f
 Para definir o limite *(threshold)* para avançar para outra frequência:
 
 ```
-# echo -n *percentagem* > /sys/devices/system/cpu/cpufreq/<governador>/up_threshold
+# echo -n *percentagem* > /sys/devices/system/cpu/cpufreq/<regulador>/up_threshold
 
 ```
 
 Para definir o limite para retroceder para outra frequência:
 
 ```
-# echo -n *percentagem* > /sys/devices/system/cpu/cpufreq/<governador>/down_threshold
+# echo -n *percentagem* > /sys/devices/system/cpu/cpufreq/<regulador>/down_threshold
 
 ```
 
@@ -202,7 +220,13 @@ Para definir o valor, execute:
 
 #### Tornar as alterações permanentes
 
-Para que o escalonamento desejado seja habilitado na inicialização, [opções de módulo do kernel](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules") e [systemd (Português)#Arquivos temporários](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)") são métodos regulares. No entanto, em alguns casos, pode haver condições de corrida, conforme observado em [systemd (Português)#Arquivos temporários](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)"). [udev](/index.php/Udev "Udev") está indo melhor.
+Para que o escalonamento desejado seja habilitado na inicialização, [opções de módulo do kernel](/index.php/Kernel_modules#Using_files_in_/etc/modprobe.d/ "Kernel modules") e [systemd (Português)#Arquivos temporários](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)") são métodos regulares.
+
+Por exemplo, alterar o up_threshold para 10:
+
+ `/etc/tmpfiles.d/ondemand.conf`  `w- /sys/devices/system/cpu/cpufreq/ondemand/up_threshold - - - - 10` 
+
+No entanto, em alguns casos, pode haver condições de corrida, conforme observado em [systemd (Português)#Arquivos temporários](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_temporários "Systemd (Português)"), podem existir e é possível usar o [udev](/index.php/Udev "Udev") para evitá-los.
 
 Por exemplo, para configurar o controlador de escala do núcleo da CPU `0` para desempenho enquanto o driver de escala for `acpi_cpufreq`, crie a seguinte regra de udev:
 
@@ -214,9 +238,9 @@ Para ter a regra já aplicada no *initramfs*, siga o exemplo em [udev#Debug outp
 
 ## Interação com eventos da ACPI
 
-Os usuários podem configurar os governadores de escala para alternar automaticamente com base em diferentes eventos ACPI, como conectar o adaptador AC ou fechar uma tampa do laptop. Um exemplo rápido é dado abaixo, no entanto, pode valer a pena ler o artigo completo sobre [acpid](/index.php/Acpid "Acpid").
+Os usuários podem configurar os reguladores de escala para alternar automaticamente com base em diferentes eventos ACPI, como conectar o adaptador AC ou fechar uma tampa do laptop. Um exemplo rápido é dado abaixo, no entanto, pode valer a pena ler o artigo completo sobre [acpid](/index.php/Acpid "Acpid").
 
-Eventos são definidos em `/etc/acpi/handler.sh`. Se o pacote [acpid](https://www.archlinux.org/packages/?name=acpid) estiver instalado, o arquivo já deverá existir e ser executável. Por exemplo, para alterar o governador de escala de `performance` para `conservative` quando o adaptador de CA for desconectado e alterá-lo de volta, se reconectar:
+Eventos são definidos em `/etc/acpi/handler.sh`. Se o pacote [acpid](https://www.archlinux.org/packages/?name=acpid) estiver instalado, o arquivo já deverá existir e ser executável. Por exemplo, para alterar o regulador de escala de `performance` para `conservative` quando o adaptador de CA for desconectado e alterá-lo de volta, se reconectar:
 
  `/etc/acpi/handler.sh` 
 ```
@@ -250,7 +274,7 @@ ac_adapter)
 
 **Nota:** systemd introduziu o logind que lida com ações consolekit e policykit. O código a seguir não funciona. Com logind, basta editar no arquivo `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` os elementos <defaults> conforme a suas necessidades e o manual do polkit [[3]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
 
-[GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem um miniaplicativo legal para mudar o governador na hora. Para usá-lo sem a necessidade de inserir a senha de root, basta criar o seguinte arquivo:
+[GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem um miniaplicativo legal para mudar o regulador na hora. Para usá-lo sem a necessidade de inserir a senha de root, basta criar o seguinte arquivo:
 
  `/var/lib/polkit-1/localauthority/50-local.d/org.gnome.cpufreqselector.pkla` 
 ```
@@ -264,45 +288,46 @@ ResultActive=yes
 
 sendo `*usuário*` o nome de usuário interessado.
 
-O pacote [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") contém um arquivo `.pkla` para autorizar todos os usuários do [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `power` para alterar o governador.
+O pacote [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") contém um arquivo `.pkla` para autorizar todos os usuários do [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `power` para alterar o regulador.
 
 ## Solução de problemas
 
-*   Some applications, like [ntop](/index.php/Ntop "Ntop"), do not respond well to automatic frequency scaling. In the case of ntop it can result in segmentation faults and lots of lost information as even the `on-demand` governor cannot change the frequency quickly enough when a lot of packets suddenly arrive at the monitored network interface that cannot be handled by the current processor speed.
+*   Alguns aplicativos, como [ntop](/index.php/Ntop "Ntop"), não respondem bem ao escalonamento automático de frequência. No caso de ntop, isso pode resultar em falhas de segmentação e muitas informações perdidas, pois mesmo o regulador `on-demand` não pode alterar a frequência com rapidez suficiente quando muitos pacotes chegam de repente à interface de rede monitorada que não pode ser manipulado pela velocidade atual do processador.
 
-*   Some CPU's may suffer from poor performance with the default settings of the `on-demand` governor (e.g. flash videos not playing smoothly or stuttering window animations). Instead of completely disabling frequency scaling to resolve these issues, the aggressiveness of frequency scaling can be increased by lowering the *up_threshold* [sysctl](/index.php/Sysctl "Sysctl") variable for each CPU. See [how to change the on-demand governor's threshold](#Switching_threshold).
+*   Algumas CPUs podem sofrer um desempenho ruim com as configurações padrão do regulador `on-demand` (por exemplo, vídeos em flash que não reproduzem suavemente ou animações instáveis de janelas). Em vez de desativar completamente o escalonamento de frequência para resolver esses problemas, a agressividade do escalonamento de frequência pode ser aumentada diminuindo a variável *up_threshold* do [sysctl](/index.php/Sysctl "Sysctl") para cada CPU. Veja [como alterar o limite do regulador sob demanda](#Trocando_o_limite).
 
-*   Sometimes the on-demand governor may not throttle to the maximum frequency but one step below. This can be solved by setting max_freq value slightly higher than the real maximum. For example, if frequency range of the CPU is from 2.00 GHz to 3.00 GHz, setting max_freq to 3.01 GHz can be a good idea.
+*   Às vezes, o regulador sob demanda pode não acelerar até a frequência máxima, mas um passo abaixo. Isto pode ser resolvido ajustando o valor de max_freq para ligeiramente mais alto que o máximo real. Por exemplo, se a faixa de frequência da CPU for de 2,00 GHz a 3,00 GHz, configurar max_freq para 3,01 GHz pode ser uma boa ideia.
 
-*   Some combinations of [ALSA](/index.php/ALSA "ALSA") drivers and sound chips may cause audio skipping as the governor changes between frequencies, switching back to a non-changing governor seems to stop the audio skipping.
+*   Algumas combinações de drivers e chips de som [ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)") podem causar saltos de áudio enquanto o regulador muda entre as frequências, e a mudança de volta para um regulador que não muda muda a parada do áudio.
 
 ### Limitação de frequências da BIOS
 
-Some CPU/BIOS configurations may have difficulties to scale to the maximum frequency or scale to higher frequencies at all. This is most likely caused by BIOS events telling the OS to limit the frequency resulting in `/sys/devices/system/cpu/cpu0/cpufreq/bios_limit` set to a lower value.
+Algumas configurações de CPU/BIOS podem ter dificuldades para escalar até a frequência máxima ou escalar para frequências mais altas. Isso é provavelmente causado por eventos do BIOS dizendo ao sistema operacional para limitar a frequência resultando em `/sys/devices/system/cpu/cpu0/cpufreq/bios_limit` definido como um valor mais baixo.
 
-Either you just made a specific Setting in the BIOS Setup Utility, (Frequency, Thermal Management, etc.) you can blame a buggy/outdated BIOS or the BIOS might have a serious reason for throttling the CPU on it's own.
+Ou você acabou de fazer uma configuração específica no utilitário de configuração da BIOS (frequência, gerenciamento térmico, etc.), você pode culpar uma BIOS com bugs/desatualizada ou a BIOS pode ter uma razão séria para limitar a CPU por conta própria.
 
-Reasons like that can be (assuming your machine's a notebook) that the battery is removed (or near death) so you're on AC-power only. In this case a weak AC-source might not supply enough electricity to fulfill extreme peak demands by the overall system and as there is no battery to assist this could lead to data loss, data corruption or in worst case even hardware damage!
+Razões como essa podem ser (supondo que sua máquina seja um notebook) que a bateria está desconectada (ou quase no fim da vida útil), então você está apenas em energia da fonte de alimentação. Neste caso, uma fonte de alimentação fraca pode não fornecer eletricidade suficiente para atender às demandas de pico extremo pelo sistema geral e, como não há bateria para ajudar, isso pode levar à perda de dados, corrupção de dados ou, no pior dos casos, até mesmo danos ao hardware!
 
-Not all BIOS'es limit the CPU-Frequency in this case, but for example most IBM/Lenovo Thinkpads do. Refer to thinkwiki for more [thinkpad related info on this topic](http://www.thinkwiki.org/wiki/Problem_with_CPU_frequency_scaling).
+Nem todos as BIOS limitam a frequência da CPU neste caso, mas, por exemplo, a maioria dos thinkpads IBM/Lenovo. Consulte thinkwiki para obter mais [informações relacionadas a thinkpad sobre este tópico](http://www.thinkwiki.org/wiki/Problem_with_CPU_frequency_scaling).
 
-If you checked there's not just an odd BIOS setting and you know what you're doing you can make the Kernel ignore these BIOS-limitations.
+Se você verificou que não há apenas uma configuração estranha do BIOS e sabe o que está fazendo, pode fazer com que o Kernel ignore essas limitações do BIOS.
 
-**Warning:** Make sure you read and understood the section above. CPU frequency limitation is a safety feature of your BIOS and you should not need to work around it.
+**Atenção:** Certifique-se de ler e entender a seção acima. A limitação de frequência da CPU é um recurso de segurança da sua BIOS e você não deve precisar contorná-la.
 
-A special parameter has to be passed to the processor module.
+Um parâmetro especial deve ser passado para o módulo do processador.
 
-For trying this temporarily change the value in `/sys/module/processor/parameters/ignore_ppc` from `0` to `1`.
+Para tentar isso temporariamente, alerte o valor em `/sys/module/processor/parameters/ignore_ppc` de `0` para `1`.
 
-For setting it permanently [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") describes alternatives. For example, you can add `processor.ignore_ppc=1` to your kernel boot line, or create
+Para definir permanentemente, [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") descreve alternativas. Por exemplo, você pode adicionar `processor.ignore_ppc=1` à sua linha de inicialização de kernel ou crie
 
  `/etc/modprobe.d/ignore_ppc.conf` 
 ```
-# If the frequency of your machine gets wrongly limited by BIOS, this should help
+# Se a frequência de sua máquina for limitada de forma errada pela BIOS, isso deve ajudar
 options processor ignore_ppc=1
 ```
 
 ## Veja também
 
-*   [Linux CPUFreq - kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt)
-*   [Comprehensive explanation of pstate](http://www.reddit.com/r/linux/comments/1hdogn/acpi_cpufreq_or_intel_pstates/)
+*   [Linux CPUFreq - documentação do kernel](https://www.kernel.org/doc/Documentation/cpu-freq/index.txt)
+*   [Explicação compreensiva de pstate](http://www.reddit.com/r/linux/comments/1hdogn/acpi_cpufreq_or_intel_pstates/)
+*   [Controle de impulsão de processador](https://www.kernel.org/doc/Documentation/cpu-freq/boost.txt)

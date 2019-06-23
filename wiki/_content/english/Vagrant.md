@@ -155,6 +155,8 @@ As of version 1.8.4, Vagrant appears to use the deprecated `route` command to co
 
 Installing [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package may solve this problem.
 
+Make sure the connection isn't blocked by [iptables](https://www.archlinux.org/packages/?name=iptables) or [nftables](https://www.archlinux.org/packages/?name=nftables). If you're using [libvirt](/index.php/Libvirt "Libvirt") along with [firewalld](/index.php/Firewalld "Firewalld"), enable `nfs` (`nfs3`), `rpc-bind` and `mountd` for the libvirt zone.
+
 ### Mounting NFS shared folders: mount.nfs: requested NFS version or transport protocol is not supported
 
 [Install](/index.php/Install "Install") the [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package. Enable (v3 and) UDP support by editing `/etc/nfs.conf` and uncommenting the following lines:

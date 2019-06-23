@@ -19,6 +19,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 *   [2 Changing your default shell](#Changing_your_default_shell)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 /etc/profile](#/etc/profile)
+    *   [3.2 Standardisation](#Standardisation)
 *   [4 Input and output](#Input_and_output)
 *   [5 See also](#See_also)
 
@@ -115,6 +116,12 @@ See also [configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configur
 ### /etc/profile
 
 Upon login, all Bourne-compatible shells source `/etc/profile`, which in turn sources any readable `*.sh` files in `/etc/profile.d/`: these scripts do not require an interpreter directive, nor do they need to be executable. They are used to set up an environment and define application-specific settings.
+
+### Standardisation
+
+It is possible to make (some) shells configuration files follow the same naming convention, as well as supporting some common configuration between the shells.
+
+See [the article about this](https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html) and the [related repository](https://bitbucket.org/flowblok/shell-startup).
 
 ## Input and output
 

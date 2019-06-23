@@ -205,7 +205,7 @@ If your system is currently configured to properly insert its own cpu frequency 
 | Service | Installer | In browser client | Use your own host | Offers host renting | Full desktop support | Controller support | Remarks |
 | [Dixper](https://dixper.gg/) | – | Yes | Windows-only | ? | ? | ? | – |
 | [LiquidSky](https://liquidsky.com/) | [liquidsky](https://aur.archlinux.org/packages/liquidsky/) | No | No | Yes | Yes | Yes | – |
-| [Moonlight](https://moonlight-stream.org/) | [moonlight](https://aur.archlinux.org/packages/moonlight/) | No | Windows-only | No | No | ? | This is only a client. Host machine needs GeForce experience installed. |
+| [Moonlight](https://moonlight-stream.org/) | [moonlight-qt](https://aur.archlinux.org/packages/moonlight-qt/) | No | Windows-only | No | Yes | Yes | This is only a client. Host machine needs GeForce experience installed. |
 | [Parsec](https://ui.parsecgaming.com/) | [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | Yes (experimental) | Windows-only | Yes | Yes | Yes | – |
 | [Playkey](https://playkey.net/) | [playkey-linux](https://aur.archlinux.org/packages/playkey-linux/) | ? | ? | ? | ? | ? | – |
 | [PlayStation Now](https://www.playstation.com/en-gb/explore/playstation-now/ps-now-on-pc/) | Runs under [Wine](/index.php/Wine "Wine") or [Steam](/index.php/Steam "Steam")'s proton | No | No | – | No | Yes | Play PS4, PS3 and PS2 games on PC. Alternatively, you can use [emulators](/index.php/Video_game_platform_emulators "Video game platform emulators"). |

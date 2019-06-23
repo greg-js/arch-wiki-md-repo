@@ -121,7 +121,7 @@ GNOME может быть запущен как графически, испол
 *   Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) все еще нужен даже для запуска тех приложений, которые не портированы на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
 *   Wayland с проприетарным драйвером [NVIDIA](/index.php/NVIDIA "NVIDIA") на данный момент имеет плохую производительность: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Вручную можно запустить следующей командой: `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM заставляет приложения, написанные на [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"), например, [VLC](/index.php/VLC "VLC"), calibre и SMPlayer, использовать Wayland.
+Вручную можно запустить следующей командой: `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM заставляет приложения, написанные на [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"), например, [VLC](/index.php/VLC "VLC"), calibre и SMPlayer, использовать Wayland. Помимо переменной QT_QPA_PLATFORM необходимо также установить пакет [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Добавление поддержки других графических библиотек смотри в [Wayland#GUI_libraries](/index.php/Wayland#GUI_libraries "Wayland").
 
 Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в `.bash_profile`:
 

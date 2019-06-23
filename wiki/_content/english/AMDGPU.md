@@ -104,18 +104,11 @@ Make sure `modconf` is in the the `HOOKS` array in `/etc/mkinitcpio.conf` and [r
 
 ### AMDGPU PRO
 
-**Warning:** Arch Linux is officially not supported.
+AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver.
 
-**Note:**
+From [Radeon Software 18.50 vs Mesa 19 benchmarks](http://www.phoronix.com/vr.php?view=27266) article: When it comes to OpenGL games, the RadeonSI Gallium3D driver simply dominates the proprietary AMD OpenGL driver. About the only advantage to the closed-source AMD OpenGL driver is its support for GL 4.6 while RadeonSI is still limited to GL 4.5 until its SPIR-V ingestion support is completed.
 
-*   To use the proprietary OpenCL component without AMDGPU PRO, [install](/index.php/Install "Install") [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) instead.
-*   A [downgrade](/index.php/Downgrade "Downgrade") of the [linux](https://www.archlinux.org/packages/?name=linux) (4.9) and [Xorg](/index.php/Xorg "Xorg") (1.18) packages is required to use AMDGPU PRO 17.10.
-
-AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. The driver provides OpenGL, [OpenCL](/index.php/OpenCL "OpenCL"), [Vulkan](/index.php/Vulkan "Vulkan"), [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") support (although this is also supported by the open-source driver). For some workloads it provides better performance than the open-source driver ([example benchmark](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)), while for others the contrary is true ([example benchmark](https://openbenchmarking.org/prospect/1610315-TA-AMDGPUPRO08/998ba9b677230564e0fbca342a8e1b9a7e85b6ab)).
-
-See the [release notes](https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
-
-A patched version of the official AMDGPU PRO driver is available as [amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/).
+Install the [amdgpu-pro-libgl](https://aur.archlinux.org/packages/amdgpu-pro-libgl/). Optionally install the [lib32-amdgpu-pro-libgl](https://aur.archlinux.org/packages/lib32-amdgpu-pro-libgl/) package for 32-bit application support.
 
 ## Loading
 

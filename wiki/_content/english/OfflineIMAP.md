@@ -367,7 +367,7 @@ remotepasseval = get_password("examplerepo")
 
 **Note:** This script relies upon [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) which has been deprecated. [[2]](https://gitlab.gnome.org/GNOME/libgnome-keyring/commit/6a5adea4aec93)
 
-Install [python2-gnomekeyring](https://www.archlinux.org/packages/?name=python2-gnomekeyring). Then:
+Install [python2-gnomekeyring](https://aur.archlinux.org/packages/python2-gnomekeyring/). Then:
 
  `~/.offlineimap.py` 
 ```

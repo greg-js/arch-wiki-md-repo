@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [List of applications/Multimedia#Screencast](/index.php/List_of_applications/Multimedia#Screencast "List of applications/Multimedia")
+*   [Screen capture#Screencast software](/index.php/Screen_capture#Screencast_software "Screen capture")

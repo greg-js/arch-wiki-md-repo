@@ -30,6 +30,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
         *   [4.1.3 Stylus-toolbox](#Stylus-toolbox)
     *   [4.2 Custom drivers](#Custom_drivers_2)
         *   [4.2.1 Avasys](#Avasys)
+    *   [4.3 Adding missing paper sizes](#Adding_missing_paper_sizes)
 *   [5 HP](#HP)
     *   [5.1 HPLIP](#HPLIP)
     *   [5.2 foo2zjs](#foo2zjs)
@@ -53,8 +54,8 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | DCP-135C | [brother-dcp135c](https://aur.archlinux.org/packages/brother-dcp135c/) |
 | DCP-150C | [brother-dcp150c](https://aur.archlinux.org/packages/brother-dcp150c/) |
 | DCP-7020 | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
-| DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
-| DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
+| DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
+| DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
 | DCP-J515W | [brother-dcp-j515w](https://aur.archlinux.org/packages/brother-dcp-j515w/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
 | FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/Foomatic "Foomatic") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
@@ -76,21 +77,21 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-4150CDN | [brother-hl4150cdn](https://aur.archlinux.org/packages/brother-hl4150cdn/) |
 | HL-5140 | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
 | HL-5340 | [foomatic](/index.php/Foomatic "Foomatic") | Using the *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Or Brother's driver, which may result in failed prints with postscript errors. |
-| HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
-| HL-L2340DW | [brother-hll2340dw](https://aur.archlinux.org/packages/brother-hll2340dw/) |
+| HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
+| HL-L2340DW | [brother-hll2340dw](https://aur.archlinux.org/packages/brother-hll2340dw/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
 | HL-L2350DW | [brother-hll2350dw](https://aur.archlinux.org/packages/brother-hll2350dw/) |
-| HL-L2360DN | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) |
-| HL-L2360DW | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) |
-| HL-L2365DW | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) |
+| HL-L2360DN | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
+| HL-L2360DW | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) | [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) should works. |
+| HL-L2365DW | [brother-hll2360d](https://aur.archlinux.org/packages/brother-hll2360d/) | [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) should works. |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Use the `socket` protocol as described in [#Network printers](#Network_printers) |
 | HL-L5100DN | HP LaserJet Foomatic driver | This model will emulate a HP LaserJet. Use the `lpd` protocol as described in [#Network printers](#Network_printers). |
 | HL-L8360CDW | [brother-hll8360cdw-cups-bin](https://aur.archlinux.org/packages/brother-hll8360cdw-cups-bin/) |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
-| MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
+| MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
 | MFC-7460DN | [Gutenprint](/index.php/Gutenprint "Gutenprint") | Use the *Generic PCL 6 Printer wide margin - CUPS+Gutenprint* driver, with address `ipp://hostname-or-ip/pcl_p1`. |
-| MFC-7840W | [brother-mfc-7840w](https://aur.archlinux.org/packages/brother-mfc-7840w/) |
+| MFC-7840W | [brother-mfc-7840w](https://aur.archlinux.org/packages/brother-mfc-7840w/) | Or [brlaser-git](https://aur.archlinux.org/packages/brlaser-git/) |
 | MFC-9320CW | Install Brother's driver. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
 | MFC-9840CDW | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
@@ -401,6 +402,56 @@ $ make
 ```
 
 If you have any problems on a 64 system, some other lib32 libraries may be required. Please adjust this page if that is the case.
+
+### Adding missing paper sizes
+
+Some of the PPD files in [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) are missing paper size definitions for media that is supported by the printers and the filter. It is relatively straightforward to add the missing media types to the PPD files.
+
+To begin, download the PKGBUILD for the [epson-inkjet-printer-escpr2](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr2/) package, either with an AUR helper or from a snapshot tarball. Once in the directory with the PKGBUILD, download and extract the source of the package by running
+
+```
+$ makepkg --nobuild
+
+```
+
+Change directory to to `src/epson-inkjet-printer-escpr2-$PKGVER`. Open the file `src/optBase.h` in a text editor for reference.
+
+Identify the PPD used by your printer in the `ppd` directory. For example, a Workforce 7710 printer uses `Epson-WF-7710_Series-epson-escpr2-en.ppd`. Let's call it `your_ppd_filename`. Convert the relevant PPD to a PPD compiler source file using the `ppdi` utility from the [cups](https://www.archlinux.org/packages/?name=cups) package.
+
+```
+$ ppdi -o your_ppd_filename.drv ppd/your_ppd_filename.ppd
+
+```
+
+Open the newly-created `your_ppd_filename.drv` in a text editor. Identify the section of the file with a lot of lines starting with `CustomMedia`. Duplicate one such line to modify. For example:
+
+```
+CustomMedia "Legal/US Legal" 612.00 1008.00 8.40 8.40 8.40 8.40 "<</PageSize[612.00 1008.00]/ImagingBBox null>>setpagedevice" "<</PageRegion[612.00 1008.00]/ImagingBBox null>>setpagedevice"
+
+```
+
+The pair of numbers `612.00 1008.00` represents the width and height of the paper in inches, multiplied by 72\. Replace all three instances of these numbers with the dimensions of the paper you want to add. For example to add 11"x17" paper, replace the numbers with `792.00 1224.00`.
+
+The string `"Legal/US Legal"` identifies the paper. On the left side of the slash, `Legal` is a magic identifier that the filter uses to identify the paper size. Replace it with the one you want to use. Refer to the `mediaSizeData` array in `optBase.h` for a list of possible values. The string to the right of the slash can be set to any human-readable value.
+
+If you want to enable borderless printing for a paper size, prefix the magic identifier string you just found with the letter T. So `Letter` would become `TLetter`. Additionally, change the four numbers `8.40 8.40 8.40 8.40` to `0.00 0.00 0.00 0.00`.
+
+For example, I was able to add 11x17 paper to the PPD for a Workforce 7710 by adding the following lines:
+
+```
+CustomMedia "USB/US B(11x17 in)" 792.00 1224.00 8.40 8.40 8.40 8.40 "<</PageSize[792.00 1224.00]/ImagingBBox null>>setpagedevice" "<</PageRegion[792.00 1224.00]/ImagingBBox null>>setpagedevice"
+CustomMedia "TUSB/US B(11x17 in) (Borderless)" 792.00 1224.00 0.00 0.00 0.00 0.00 "<</PageSize[792.00 1224.00]/ImagingBBox null>>setpagedevice" "<</PageRegion[792.00 1224.00]/ImagingBBox null>>setpagedevice"
+
+```
+
+Once you've added your custom size, recompile `your_ppd_filename.drv` into a PPD file with ppdc (also from [cups](https://www.archlinux.org/packages/?name=cups)):
+
+```
+$ ppdc your_ppd_filename.drv
+
+```
+
+This will create a ppd file in the `ppd` directory with a file name derived from the `PCFileName` parameter in `your_ppd_filename.drv`. You can test this file by uploading it to the CUPS web interface, or install it permanently by overwriting the original PPD file and making the package with `makepkg`.
 
 ## HP
 

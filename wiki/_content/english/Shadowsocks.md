@@ -4,7 +4,11 @@ Related articles
 
 [Shadowsocks](https://shadowsocks.org/en/) is a lightweight socks5 proxy, originally written in Python.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)
@@ -20,7 +24,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)(c++) or [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)(python).
+[Install](/index.php/Install "Install") the package [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev)(c) or [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)(python).
 
 ## Setup
 
@@ -88,9 +92,39 @@ $ ss-local -s *server_address* -p *server_port* -l *local_port* -k *password* -m
 
 #### Using systemd
 
-The Shadowsocks client can be controlled with an instance of `shadowsocks@.service`.
+Make sure that the configuration file is in `/etc/shadowsocks`. For example, the configuration file is `/etc/shadowsocks/foo.json`.
 
-For example, to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the service using the configuration file `/etc/shadowsocks/config.json`, use the service `shadowsocks-libev@config.service`.
+The Shadowsocks client can be controlled with an instance of `shadowsocks@.service`:
+
+start shadowsocks:
+
+```
+# systemctl start shadowsocks@foo
+
+```
+
+autostart shadowsocks:
+
+```
+# systemctl enable shadowsocks@foo
+
+```
+
+start shadowsocks-libev:
+
+```
+# systemctl start shadowsocks-libev@foo
+
+```
+
+autostart shadowsocks-libev:
+
+```
+# systemctl enable shadowsocks-libev@foo
+
+```
+
+**Tip:** use `journalctl -u shadowsocks@foo` to see the log
 
 #### GUI client
 

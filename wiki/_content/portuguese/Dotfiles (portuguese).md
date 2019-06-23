@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-04-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=570824) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=573269) na versão em inglês.
 
 Artigos relacionados
 
@@ -101,6 +101,7 @@ Se você não estiver confortável com o [Git](/index.php/Git "Git"), você pode
 (Estrutura
 de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-mail | IRC |
 | [alfunx](https://github.com/alfunx/.dotfiles) | zsh | awesome | vim | kitty | tmux | ncmpcpp/mpd | htop/lain | thunderbird |
+| [peterzuger](https://gitlab.com/peterzuger/dotfiles) | zsh | i3-gaps | emacs | rxvt-unicode | screen | moc | htop |
 | [Ambrevar](https://gitlab.com/Ambrevar/dotfiles) | Eshell | EXWM | Emacs | Emacs (Eshell) | Emacs TRAMP + dtach | EMMS | conky/dzen | mu4e | Circe |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | st | tmux | i3status | The Lounge |
 | [ayekat](https://github.com/ayekat/dotfiles) | zsh | karuiwm | vim | rxvt-unicode | tmux | ncmpcpp/mpd | karuibar | mutt | irssi |

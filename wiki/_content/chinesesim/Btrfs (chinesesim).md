@@ -54,8 +54,7 @@
     *   [4.8 去重](#去重)
 *   [5 已知问题](#已知问题)
     *   [5.1 加密](#加密)
-    *   [5.2 交换文件](#交换文件)
-    *   [5.3 TLP](#TLP)
+    *   [5.2 TLP](#TLP)
 *   [6 提示和技巧](#提示和技巧)
     *   [6.1 无分区 Btrfs 磁盘](#无分区_Btrfs_磁盘)
     *   [6.2 从 Ext3/4 转换](#从_Ext3/4_转换)
@@ -443,10 +442,6 @@ Btrfs 提供对 RAID 一类的 [#多设备文件系统](#多设备文件系统)�
 Btrfs 目前还没有内建的加密支持，但未来[可能](https://lwn.net/Articles/700487/)加入此功能。可以在运行`mkfs.btrfs`前加密分区，参阅[Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS").
 
 (如果已经创建了文件系统，可以使用[EncFS](/index.php/EncFS "EncFS")或[TrueCrypt](/index.php/TrueCrypt "TrueCrypt"),但是这样会无法使用 btrfs 的一些功能。)
-
-### 交换文件
-
-Btrfs 不支持交换文件，因为 Btrfs 有潜在的文件系统损坏风险，没有加入交换文件需要的功能，参阅[这里](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F)。交换文件可以挂载到 loop 设备中，但是性能比较差。[systemd-loop-swapfile](https://aur.archlinux.org/packages/systemd-loop-swapfile/)提供了需要的服务文件。
 
 ### TLP
 

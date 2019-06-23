@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [ClamAV](/index.php/ClamAV "ClamAV"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=ClamAV&diff=0&oldid=569887) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [ClamAV](/index.php/ClamAV "ClamAV"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=ClamAV&diff=0&oldid=575975) na versão em inglês.
 
 [Clam AntiVirus](https://www.clamav.net) é uma caixa de ferramentas de antivírus, código aberto (GPL), para UNIX. Ele fornece uma série de utilitários, incluindo um daemon multi-threaded flexível e escalável, um scanner de linha de comando e uma ferramenta avançada para atualizações automáticas de banco de dados. Como o uso principal do ClamAV é em servidores de arquivos/e-mails para desktops Windows, ele principalmente detecta vírus e malwares do Windows com suas assinaturas embutidas.
 
@@ -40,6 +40,8 @@ Atualize as definições de vírus com:
 # freshclam
 
 ```
+
+Se você está por trás de um proxy, edite `/etc/clamav/freshclam.conf` and update HTTPProxyServer, HTTPProxyPort, HTTPProxyUsername e HTTPProxyPassword.
 
 Os arquivos de banco de dados são salvos em:
 
@@ -103,7 +105,7 @@ Para alterar as configurações padrão, acesse e modifique `/etc/clamav-unoffic
 
 #### Banco de dados MalwarePatrol
 
-Se você quiser de usar o banco de dados do MalwarePatrol, crie uma conta em [https://www.malwarepatrol.net/](https://www.malwarepatrol.net/).
+Se você quiser de usar o banco de dados do MalwarePatrol, crie uma conta em [https://www.malwarepatrol.net/free-guard-upgrade-option](https://www.malwarepatrol.net/free-guard-upgrade-option).
 
 Em `/etc/clamav-unofficial-sigs/user.conf`, altere o seguinte para habilitar essa funcionalidade:
 
@@ -222,13 +224,13 @@ alert="Signature detected: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENA
 
 # Envia o alerta para o systemd logger se existir, do contrário para /var/log
 if [[ -z $(command -v systemd-cat) ]]; then
-	echo "$(date) - $alert" >> /var/log/clamav/infected.log
+        echo "$(date) - $alert" >> /var/log/clamav/detections.log
 else
-	# como "emerg", isso poderia fazer com que seu DE mostre um alerta virtual. Acontece no plasma, mas o próximo alerta visual é muito melhor
-	echo "$alert" | /usr/bin/systemd-cat -t clamav -p emerg
+        # Isso poderia fazer com que seu DE mostre um alerta virtual. Acontece no plasma, mas o próximo alerta visual é muito melhor
+        echo "$alert" | /usr/bin/systemd-cat -t clamav -p emerg
 fi
 
-# Envia um alerta para todos os usuários gráficos
+# Envia um alerta para todos os usuários na interface gráfica.
 XUSERS=($(who|awk '{print $1$NF}'|sort -u))
 
 for XUSER in $XUSERS; do

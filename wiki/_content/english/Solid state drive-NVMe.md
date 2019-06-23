@@ -25,7 +25,7 @@ Related articles
 
 The Linux NVMe driver is natively included in the kernel since version 3.3\. NVMe devices should show up under `/dev/nvme*`.
 
-Extra userspace NVMe tools can be found in [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) or [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/).
+Extra userspace NVMe tools can be found in [nvme-cli](https://www.archlinux.org/packages/?name=nvme-cli) or [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/).
 
 See [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") for supported filesystems, maximizing performance, minimizing disk reads/writes, etc.
 
@@ -62,7 +62,7 @@ Raw device performance tests can be run with [hdparm](https://www.archlinux.org/
 
 Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. The patch has been merged into mainline kernel v4.11.
 
-To test if NVME Power Management is working, install [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) or [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/), and run `nvme get-feature -f 0x0c -H /dev/nvme[0-9]`:
+To test if NVME Power Management is working, install [nvme-cli](https://www.archlinux.org/packages/?name=nvme-cli) or [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/), and run `nvme get-feature -f 0x0c -H /dev/nvme[0-9]`:
 
  `# nvme get-feature -f 0x0c -H /dev/nvme0` 
 ```

@@ -120,22 +120,20 @@ blacklist nv
 
 ### [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
 
-The optimus configuration is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. As the discret NVIDIA GPU card eats lots of power, we want to use the intergrated Intel card most of the time and activate/desactivate the NVIDIA GPU card only when required by a defined application.
+The optimus configuration is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. As the discret NVIDIA GPU card eats lots of power, we want to use the intergrated Intel card most of the time and activate/desactivate the NVIDIA GPU card only when required by a defined application. Due to a bug [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1794626#p1794626), the XPS 15 9570's secondary NVIDIA GPU cannot be powered down by [bbswitch](/index.php/Bbswitch "Bbswitch"). However, standard Linux power management is able to properly turn off the card when the driver is unloaded.
 
-Regarding to this conversation [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641), an optimus configuration well working on the xps 15 9570 is:
+One solution [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641) to this problem is to manually unload the NVIDIA module when not in use, which can be done as follows:
 
-*   Install `nvidia`, `bumblebee`, `powertop` and `unigine-valley`
+[Install](/index.php/Install "Install")
 
-```
-pacman -S nvidia
-pacman -S bumblebee
-pacman -S powertop
-yaourt -a unigine-valley # to test the NVIDIA GPU later
-```
+*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) - Official NVIDIA drivers for Linux.
+*   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
+*   [powertop](https://www.archlinux.org/packages/?name=powertop) - Tool to verify power consumption.
+*   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/) - Graphic intensive application for testing
 
-*   Make sure that `bbswitch` is uninstalled or at least disabled
+Make sure that [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is uninstalled or at least disabled
 
-*   `bumblebee` configuration, in the `[driver-nvidia]` section
+`bumblebee` configuration, in the `[driver-nvidia]` section
 
  `/etc/bumblebee/bumblebee.conf` 
 ```
@@ -144,7 +142,7 @@ Driver=nvidia
 PMMethod=none
 ```
 
-*   Server X configuration for not auto adding gpu
+Server X configuration for not auto adding gpu
 
  `/etc/X11/xorg.conf.d/01-noautogpu.conf` 
 ```
@@ -153,21 +151,16 @@ Section "ServerFlags"
 EndSection
 ```
 
-*   `ipmi` modules are loaded together with `nvidia` and block its unloading.
-
-	create:
+`ipmi` modules are loaded together with `nvidia` and block its unloading. Create the two following files to disable them:
 
  `/etc/modprobe.d/disable-ipmi.conf` 
 ```
   install ipmi_msghandler /usr/bin/false
   install ipmi_devintf /usr/bin/false
 ```
-
-	and:
-
  `/etc/modprobe.d/disable-nvidia.conf`  `install nvidia /bin/false` 
 
-*   Finally add `nvidia` and `ipmi` in the modprobe.d blacklist to disable this functionality:
+Now, add `nvidia` and `ipmi` in the modprobe.d blacklist to disable this functionality:
 
  `/etc/modprobe.d/blacklist.conf` 
 ```
@@ -184,7 +177,7 @@ blacklist ipmi_msghandler
 blacklist ipmi_devintf
 ```
 
-*   Create 2 GPU management scripts for enabling and disabling discret NVIDIA graphical card [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641):
+Create 2 GPU management scripts for enabling and disabling discret NVIDIA graphical card [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641):
 
  `enablegpu.sh` 
 ```
@@ -223,9 +216,7 @@ sleep 1
 mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modprobe.d/disable-nvidia.conf
 ```
 
-*   Create service locking NVIDIA GPU on shutdown
-
-A service which locks GPU on shutdown / restart when it is not disabled by `disablegpu.sh` script is necessary. Otherwise, on next boot `nvidia` will be loaded together with `ipmi` modules (even if blacklisted with `install` command) and it won't be possible to unload them then.
+Create service locking NVIDIA GPU on shutdown A service which locks GPU on shutdown / restart when it is not disabled by `disablegpu.sh` script is necessary. Otherwise, on next boot `nvidia` will be loaded together with `ipmi` modules (even if blacklisted with `install` command) and it won't be possible to unload them then.
 
  `/etc/systemd/system/disable-nvidia-on-shutdown.service` 
 ```
@@ -242,7 +233,7 @@ ExecStop=/bin/bash -c "mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modpr
 WantedBy=multi-user.target
 ```
 
-*   Reload systemd daemons and enable the `disable-nvidia-on-shutdown` service:
+Reload systemd daemons and enable the `disable-nvidia-on-shutdown` service:
 
 ```
  sudo systemctl daemon-reload
@@ -250,11 +241,11 @@ WantedBy=multi-user.target
 
 ```
 
-*   Allow gpu to poweroff on boot
+Allow gpu to poweroff on boot
 
  `/etc/tmpfiles.d/nvidia_pm.conf`  `w /sys/bus/pci/devices/0000:01:00.0/power/control - - - - auto` 
 
-*   Finally check that everything is well configured:
+Finally, check that everything is well configured:
 
 1.  Reboot and verify that nvidia is not loaded by running:
 
@@ -295,7 +286,7 @@ EndSection
 
 #### NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts
 
-Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
+Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[6]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
 
 ```
  options nvidia NVreg_EnableMSI=0
@@ -304,7 +295,7 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[5]
 
 #### Built-in screen flickers or does not come on with Linux kernel 5.0.0 - 5.0.7
 
-Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[6]](https://bugs.archlinux.org/task/61964))
+Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[7]](https://bugs.archlinux.org/task/61964))
 
 Currently, it seems that there are three possible workarounds :
 

@@ -164,13 +164,13 @@ You can refer to the [pam_cracklib(8)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 [hardened_malloc](https://github.com/GrapheneOS/hardened_malloc) ([hardened-malloc-git](https://aur.archlinux.org/packages/hardened-malloc-git/)) is a hardened replacement for glibc's malloc(). The project was originally developed for integration into Android's Bionic and musl by Daniel Micay, of GrapheneOS, but he has also built in support for standard Linux distributions on the x86_64 architecture.
 
-While hardened_malloc is not yet integrated into glibc (assistance and pull requests welcome) it can be used easily with LD_PRELOAD. In testing so far, it only causes issues with a handful of applications if enabled globally in /etc/ld.so.preload - Xorg fails to start, and man fails to work properly unless its seccomp environment flag is disabled. Between these, and because hardened_malloc is arguably less efficient and more complex than the standard malloc, it is suggested that one use it for more at risk applications, such as those that face the internet. It can also be used as a complement to sandboxed applications inside [Firejail](/index.php/Firejail "Firejail").
+While hardened_malloc is not yet integrated into glibc (assistance and pull requests welcome) it can be used easily with LD_PRELOAD. In testing so far, it only causes issues with a handful of applications if enabled globally in /etc/ld.so.preload. For example, man fails to work properly unless its seccomp environment flag is disabled due to not having `getrandom` in the standard whitelist, although this can be easily fixed by rebuilding it with the system call added. Since hardened_malloc has a performance cost, you may want to decide which implementation to use on a case-by-case basis based on attack surface and performance needs.
 
 To try it out in a standalone manner, use the hardened-malloc-preload wrapper script, or manually start an application with the proper preload value:
 
  `LD_PRELOAD="/usr/lib/libhardened_malloc.so" /usr/bin/firefox` 
 
-Proper usage with Firejail can be found on its wiki page, and some configurable environment variables available for hardened_malloc can be found on the github repo.
+Proper usage with [Firejail](/index.php/Firejail "Firejail") can be found on its wiki page, and some configurable build options for hardened_malloc can be found on the github repo.
 
 ## Storage
 

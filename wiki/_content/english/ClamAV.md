@@ -39,7 +39,7 @@ Update the virus definitions with:
 
 ```
 
-If you are behind a proxy, edit /etc/clamav/freshclam.conf and update HTTPProxyServer, HTTPProxyPort, HTTPProxyUsername and HTTPProxyPassword.
+If you are behind a proxy, edit `/etc/clamav/freshclam.conf` and update HTTPProxyServer, HTTPProxyPort, HTTPProxyUsername and HTTPProxyPassword.
 
 The database files are saved in:
 
@@ -215,7 +215,7 @@ Next, create the file `/etc/clamav/detected.sh` and add the following. This allo
 
  `/etc/clamav/detected.sh` 
 ```
-#!/usr/bin/bash
+#!/bin/bash
 PATH=/usr/bin
 alert="Signature detected: $CLAM_VIRUSEVENT_VIRUSNAME in $CLAM_VIRUSEVENT_FILENAME"
 

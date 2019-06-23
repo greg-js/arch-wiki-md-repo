@@ -811,7 +811,7 @@ Ask systemd-tmpfiles to create the shared memory file now without waiting to nex
 
 #### Installing the IVSHMEM Host to Windows guest
 
-Currently Windows would not notify users about a new IVSHMEM device, it would silently install a dummy driver. To actually enable the device you have to go into device manager and update the driver for the device under the "System Devices" node for **"PCI standard RAM Controller"**. Download a signed driver [from issue 217](https://github.com/virtio-win/kvm-guest-drivers-windows/issues/217), as it is not yet available elsewhere.
+Currently Windows would not notify users about a new IVSHMEM device, it would silently install a dummy driver. To actually enable the device you have to go into device manager and update the driver for the device under the "System Devices" node for **"PCI standard RAM Controller"**. Download the signed driver [from Red Hat](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/upstream-virtio/).
 
 Once the driver is installed you must download a matching [looking-glass-host](https://github.com/gnif/LookingGlass/releases) that matches the client you installed from AUR and start it on your guest. In order to run it you would also need to install Microsoft Visual C++ Redistributable from [Microsoft](https://www.visualstudio.com/downloads/) It is also possible to make it start automatically on VM boot by editing the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` registry and adding a path to the downloaded executable.
 

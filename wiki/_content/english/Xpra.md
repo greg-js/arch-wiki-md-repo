@@ -15,20 +15,23 @@ Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you 
 
 *   [1 Installation](#Installation)
 *   [2 Use](#Use)
-    *   [2.1 run applications](#run_applications)
-    *   [2.2 run whole desktop environment](#run_whole_desktop_environment)
-    *   [2.3 shadow remote desktop](#shadow_remote_desktop)
-    *   [2.4 as xorg sandbox](#as_xorg_sandbox)
-    *   [2.5 more](#more)
+    *   [2.1 run application "single shot"](#run_application_"single_shot")
+    *   [2.2 run applications in a persistent xpra server on the remote host](#run_applications_in_a_persistent_xpra_server_on_the_remote_host)
+    *   [2.3 run whole desktop environment](#run_whole_desktop_environment)
+    *   [2.4 shadow remote desktop](#shadow_remote_desktop)
+    *   [2.5 as xorg sandbox](#as_xorg_sandbox)
+    *   [2.6 more](#more)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Start at boot](#Start_at_boot)
         *   [3.1.1 Server](#Server)
         *   [3.1.2 Client](#Client)
             *   [3.1.2.1 Method 1: .xinitrc](#Method_1:_.xinitrc)
             *   [3.1.2.2 Method 2: systemd user session](#Method_2:_systemd_user_session)
-    *   [3.2 Error: Only console users are allowed to run the X server](#Error:_Only_console_users_are_allowed_to_run_the_X_server)
-    *   [3.3 Error: failed to connect to display :100](#Error:_failed_to_connect_to_display_:100)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Error: Only console users are allowed to run the X server](#Error:_Only_console_users_are_allowed_to_run_the_X_server)
+    *   [4.2 Error: failed to connect to display :100](#Error:_failed_to_connect_to_display_:100)
+    *   [4.3 Problem: Fonts are rendered in wrong sizes or clicks will not register after resizing a window](#Problem:_Fonts_are_rendered_in_wrong_sizes_or_clicks_will_not_register_after_resizing_a_window)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -38,9 +41,17 @@ Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you 
 
 ## Use
 
-### run applications
+### run application "single shot"
 
-Start an xpra server on the machine where you want to run the applications (we are using display number **7** here):
+To run an application remotely over ssh without starting an xpra server on the host it's runnig on in advance, you can simply use this command on your client machine:
+
+ `$ xpra start ssh:user@host --exit-with-children --start-child="command"` 
+
+Where "command" is the command you would start on the remote hosts shell. This will start xpra remotely and shuts down the xpra server when the command exits.
+
+### run applications in a persistent xpra server on the remote host
+
+If you want to have a persistent server on the remote machine, you can start an xpra server on the machine where you want to run the applications (we are using display number **7** here):
 
  `$ xpra start :7` 
 
@@ -226,6 +237,8 @@ Example:
 
 [Enable that service](/index.php/Daemons "Daemons"), and remember to use the `--user` flag on `systemctl`.
 
+## Troubleshooting
+
 ### Error: Only console users are allowed to run the X server
 
 If the execution fails with this error message in the log file you need to make the following changes:
@@ -253,6 +266,17 @@ Sometimes this errors are produced:
 To solve it is necessary run with `--xvfb=/usr/bin/Xorg`. Example:
 
  `xpra start ssh://$USER@$SERVER/100 --start-child=/usr/bin/terminator --xvfb=/usr/bin/Xorg` 
+
+### Problem: Fonts are rendered in wrong sizes or clicks will not register after resizing a window
+
+Try to install the [xf86-video-dummy-xpra-patch](https://aur.archlinux.org/packages/xf86-video-dummy-xpra-patch/) package, if you encounter problems with font rendering or missed clicks after resizing a remote window. It contains the xf86-video-dummy driver with patches from the xpra team, that are meant to help with these problems.
+
+**Tip:** If font rendering is either too big or too small, try experimenting with the --dpi setting of xpra. The default is --dpi 96\. Bigger values mean larger font rendering, lower values make font rendering smaller.
+
+For the patches and further information see:
+
+*   [xpra wiki article about the Xdummy driver](https://xpra.org/trac/wiki/Xdummy)
+*   [xpra wiki article about dpi settings](https://xpra.org/trac/wiki/DPI)
 
 ## See also
 

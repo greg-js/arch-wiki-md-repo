@@ -332,7 +332,7 @@ Aby fungovala akcelerace a často aby se zpřístupnila všechna rozlišení, kt
 | Intel | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
 | NVIDIA | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
-| [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) | [nvidia-340xx-utils](https://aur.archlinux.org/packages/nvidia-340xx-utils/) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
+| [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) | [nvidia-340xx-utils](https://aur.archlinux.org/packages/nvidia-340xx-utils/) | [lib32-nvidia-340xx-utils](https://aur.archlinux.org/packages/lib32-nvidia-340xx-utils/) |
 
 ### Display server
 

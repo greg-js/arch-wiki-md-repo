@@ -90,7 +90,7 @@ If a needed public key for a package is missing, the [PKGBUILD](/index.php/PKGBU
 
 ## Usage
 
-Before continuing, [install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group. Packages belonging to this group are **not** required to be listed as build-time dependencies (*makedepends*) in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files. In addition, the [base](https://www.archlinux.org/groups/x86_64/base/) group is assumed to be installed on **all** Arch systems.
+Before continuing, [install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group. Packages belonging to this group are **not** required to be listed as build-time dependencies (*makedepends*) in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files.
 
 **Note:**
 
@@ -241,6 +241,13 @@ COMPRESSXZ=(xz -c -z - **--threads=0**)
 
 ```
 COMPRESSGZ=(**pigz** -c -f -n)
+
+```
+
+[pbzip2](https://www.archlinux.org/packages/?name=pbzip2) is a drop-in, parallel implementation for [bzip2](https://www.archlinux.org/packages/?name=bzip2) which also uses all available CPU cores by default. The `-p#` flag can be used to employ less cores (note: no space between the `-p` and number of cores).
+
+```
+COMPRESSBZ2 =(**pbzip2** -c -f)
 
 ```
 

@@ -17,7 +17,7 @@
 
 ## Usage
 
-Some directories where [tmpfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfs.5) is commonly used are [/tmp](http://www.pathname.com/fhs/2.2/fhs-3.15.html), [/var/lock](http://www.pathname.com/fhs/2.2/fhs-5.9.html) and [/var/run](http://www.pathname.com/fhs/2.2/fhs-5.13.html). Do **not** use it on [/var/tmp](http://www.pathname.com/fhs/2.2/fhs-5.15.html), because that folder is meant for temporary files that are preserved across reboots.
+Some directories where [tmpfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfs.5) is commonly used are [/tmp](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s18.html), [/var/lock](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s09.html) and [/var/run](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s13.html). Do **not** use it on [/var/tmp](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s15.html), because that folder is meant for temporary files that are preserved across reboots.
 
 Arch uses a tmpfs `/run` directory, with `/var/run` and `/var/lock` simply existing as symlinks for compatibility. It is also used for `/tmp` by the default systemd setup and does not require an entry in [fstab](/index.php/Fstab "Fstab") unless a specific configuration is needed.
 

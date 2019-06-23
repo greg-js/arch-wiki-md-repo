@@ -1,5 +1,5 @@
 Questa pagina raccoglie alcune delle somiglianze e delle differenze tra Arch e le altre distribuzioni GNU/Linux.
-Nota: il modo migliore per confrontare Arch con le altre distribuzioni è quello di installarla e provarla in prima persona. Arch ha una magnifica comunità di utenti sempre pronta ad aiutare i nuovi arrivati. Le informazioni qui sotto sono pensate per aiutarti a decidere se Arch è giusta per te.
+Nota: il modo migliore per confrontare Arch con le altre distribuzioni è quello di installarla e provarla in prima persona. Arch ha una magnifica comunità di utenti sempre pronta ad aiutare i nuovi arrivati. Le informazioni qui sotto sono pensate per aiutarti a decidere se Arch sia giusta per te.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -30,7 +30,7 @@ Nota: il modo migliore per confrontare Arch con le altre distribuzioni è quello
 
 # Source-Based
 
-Le distribuzioni basate su sorgenti sono altamente portabili, hanno il vantaggio di controllare e compilare l'intero SO ed i pacchetti secondo una particolare architettura del processore e secondo le modalità d'uso del sistema, hanno però lo svantaggio di richiedere molto tempo in fase di compilazione. Arch e tutti i pacchetti sono ottimizzati per le architetture i686 e x86-64, offrendo un significativo incremento di prestazioni rispetto alle distribuzioni basate su pacchetti i386/i486/i586 binari, con il vantaggio di installazioni rapide.
+Le distribuzioni basate su sorgenti sono altamente portabili, hanno il vantaggio di controllare e compilare l'intero SO e i pacchetti secondo una particolare architettura del processore e secondo le modalità d'uso del sistema, hanno però lo svantaggio di richiedere molto tempo in fase di compilazione. Arch e tutti i pacchetti sono ottimizzati per le architetture i686 e x86-64, offrendo un significativo incremento di prestazioni rispetto alle distribuzioni basate su pacchetti i386/i486/i586 binari, con il vantaggio di installazioni rapide.
 
 ## Arch vs Gentoo
 
@@ -38,11 +38,11 @@ Siccome Arch distribuisce pacchetti binari, richiede molto meno tempo rispetto a
 
 ## Arch vs Sorcerer/Lunar-linux/Sourcemage
 
-Sorcerer/Lunar-linux/Sourcemage (SLS) sono tutte distribuzioni basate su sorgenti, proprio come gentoo, ma sono collegate originariamente ad un'altra. La distro SLS usa un insieme di script piuttosto semplici da utilizzare per creare pacchetti e descrizioni, e usa un file di configurazione globale per configurare il processo di compilazione, in modo molto simile al sistema ABS di Arch. I tool di SLS garantiscono un pieno controllo delle dipendenze (compresa la gestione di caratteristiche opzionali), e il monitoraggio dei pacchetti (e disinstallazione/aggiornamento). Non ci sono pacchetti binari per una qualsiasi distro appartenente alla famiglia SLS, anche se tutti possono facilmente effettuare un rollback a pacchetti installati precedentemente.
+Sorcerer/Lunar-linux/Sourcemage (SLS) sono tutte distribuzioni basate su sorgenti, proprio come Gentoo, ma sono collegate originariamente ad un'altra. La distro SLS usa un insieme di script piuttosto semplici da utilizzare per creare pacchetti e descrizioni, e usa un file di configurazione globale per configurare il processo di compilazione, in modo molto simile al sistema ABS di Arch. I tool di SLS garantiscono un pieno controllo delle dipendenze (compresa la gestione di caratteristiche opzionali), e il monitoraggio dei pacchetti (e disinstallazione/aggiornamento). Non ci sono pacchetti binari per una qualsiasi distro appartenente alla famiglia SLS, anche se tutti possono facilmente effettuare un rollback a pacchetti installati precedentemente.
 
 L'installazione implica l'installazione di un sistema di base (un po' come Arch: ottimizzazione i686, CLI e menu ncurses, solo strumenti essenziali), quindi successivamente una ricompilazione del sistema di base (opzionale). Non c'è ovviamente uno 'standard' WM/DE/DM e non installano un server X durante l'installazione di base, ma permettono di installare in modo semplice una delle diverse alternative disponibili per un server X (xorg 6.8 oppure 7, xfree86).
 
-SLS ha una storia davvero complicata. Il migliore articolo che ne parla lo si può trovare qui: [http://wiki.sourcemage.org/Our_History](http://wiki.sourcemage.org/Our_History)
+SLS ha una storia davvero complicata. Il migliore articolo che ne parli lo si può trovare qui: [http://wiki.sourcemage.org/Our_History](http://wiki.sourcemage.org/Our_History)
 
 Lunar Linux: [http://lunar-linux.org/](http://lunar-linux.org/)
 SourceMage: [http://www.sourcemage.org/](http://www.sourcemage.org/)
@@ -59,7 +59,7 @@ LFS, o Linux From Scratch, è semplicemente questo; un insieme di applicazioni b
 ## Arch vs CRUX
 
 *   Q: Arch è Basata su CRUX?
-*   A: No. Arch è sviluppata indipendentemente, è stato costruito da zero e non si basa su qualsiasi altra distribuzione GNU/Linux.
+*   A: No. Arch è sviluppata indipendentemente, è stato costruito da zero e non si basa su nessun'altra distribuzione GNU/Linux.
 
 Prima di creare Arch, Judd Vinet ha ammirato ed utilizzato CRUX, una distribuzione minimale, creata da Per Lidén. Originariamente ispirate da idee in comune con CRUX, Arch è stata costruita da zero, e poi pacman è stato codificato in C. Entrambe condividono alcuni principi guida; ad esempio, tutte e due sono ottimizzate per alcune architetture, minimali e K.I.S.S. Entrambe dispongono di sistemi 'ports-like', gestiscono il sistema init stile *BSD e, come *BSD, forniscono una base minimale su cui sviluppare il sistema operativo. Arch propone pacman, il quale gestisce i pacchetti binari e lavora in simbiosi con ABS, il sistema 'ports-like' di Arch. CRUX fa uso di prt-get, al quale contribuisce la community, in combinazione con il proprio sistema 'port', che risolve le dipendenze ma compila pacchetti sorgenti (anche se l'installazione base di CRUX avviene tramite pacchetti binari i686). Arch supporta ufficialmente i686 e x86-64, mentre CRUX solo i686\. Arch è di tipo 'rolling release' e fornisce un grande insieme di 'repository' di pacchetti binari così come AUR. CRUX fornisce un ridotto numero di applicazioni supportate in aggiunta a modesti 'repository' gestiti dalla community.
 
@@ -105,7 +105,7 @@ NetBSD è un SO UNIX-like libero, sicuro e altamente portabile, disponibile per 
 
 ## Arch vs OpenBSD
 
-Il progetto OpenBSD fornisce un SO UNIX-like libero, multi-piattaforma '4.4BSD-based'. Lo sviluppo è concentrato sulla portabilità, standardizzazione, correttezza del codice, sicurezza e crittografia integrata. Al contrario, Arch mira più alla semplicità, eleganza, minimalismo e 'bleeding-edge' software. OpenBSD supporta l'emulazione binaria della maggioranza dei programmi di SVR4 (Solaris), FreeBSD, GNU/Linux, BSD/OS, SunOS e HP-UX. OpenBSD è forse il numero 1 per quanto concerne la sicurezza. In comune con Arch, OpenBSD offre una piccola ed elegante installazione di base ed usa un sistema 'port' e 'packaging' per permettere una facile installazione e gestione dei programmi non facenti parte del sistema operativo di base. In contrasto con sistemi GNU/Linux quali Arch, ma in comune con altri sistemi operativi BSD, il kernel di OpenBSD e programmi per gli utenti, come la 'shell' e altri strumenti (come ls, cp, cat e ps), sono distribuiti in un singolo 'repository' sorgente.
+Il progetto OpenBSD fornisce un SO UNIX-like libero, multi-piattaforma '4.4BSD-based'. Lo sviluppo è concentrato sulla portabilità, standardizzazione, correttezza del codice, sicurezza e crittografia integrata. Al contrario, Arch mira più alla semplicità, eleganza, minimalismo e 'bleeding-edge' software. OpenBSD supporta l'emulazione binaria della maggioranza dei programmi di SVR4 (Solaris), FreeBSD, GNU/Linux, BSD/OS, SunOS e HP-UX. OpenBSD è forse il numero 1 per quanto concerne la sicurezza. In comune con Arch, OpenBSD offre una piccola ed elegante installazione di base e usa un sistema 'port' e 'packaging' per permettere una facile installazione e gestione dei programmi non facenti parte del sistema operativo di base. In contrasto con sistemi GNU/Linux quali Arch, ma in comune con altri sistemi operativi BSD, il kernel di OpenBSD e programmi per gli utenti, come la 'shell' e altri strumenti (come ls, cp, cat e ps), sono distribuiti in un singolo 'repository' sorgente.
 
 # Altre
 
@@ -117,4 +117,4 @@ Debian è un progetto molto vasto, così come la community, offre oltre 20,000 p
 
 ## Arch vs Frugalware
 
-Arch è 'text-based' ed orientato alla linea di comando. Frugalware ha adottato pacman di Arch come gestore di pacchetti, ma usa 'bzipped-tarballs'. Arch, invece, usa 'gzipped-tarballs', con lo scopo di velocizzare l'installazione. Frugalware di default non supporta il file system JFS. Frugalware non è più basata su Slackware ma piuttosto una distribuzione indipendente, è ottimizzata per i686. Arch è fondamentalmente un sistema differente, l'installazione iniziale fornisce un sistema di base con pacman in aggiunta alle scelte ed alle necessità dell'utente. Frugalware è installata tramite DVD con applicazioni e sistemi desktop di default. Frugalware è rilasciata ciclicamente. Arch è di tipo 'rolling-release'.
+Arch è 'text-based' e orientata alla linea di comando; Frugalware ha adottato pacman di Arch come gestore di pacchetti, ma usa 'bzipped-tarballs'. Arch, invece, usa 'gzipped-tarballs', con lo scopo di velocizzare l'installazione. Frugalware di default non supporta il file system JFS. Frugalware non è più basata su Slackware ma piuttosto una distribuzione indipendente, è ottimizzata per i686. Arch è fondamentalmente un sistema differente, l'installazione iniziale fornisce un sistema di base con pacman in aggiunta alle scelte ed alle necessità dell'utente. Frugalware è installata tramite DVD con applicazioni e sistemi desktop di default. Frugalware è rilasciata ciclicamente. Arch è di tipo 'rolling-release'.

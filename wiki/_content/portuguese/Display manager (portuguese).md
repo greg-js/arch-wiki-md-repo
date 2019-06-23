@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=562748) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=572750) na versão em inglês.
 
 Artigos relacionados
 
@@ -56,7 +56,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Gerente de exibição para vários desktops, pode usar vários front-ends escritos em qualquer kit de ferramentas.
 
-	[https://www.freedesktop.org/wiki/Software/LightDM/](https://www.freedesktop.org/wiki/Software/LightDM/) || [lightdm](https://www.archlinux.org/packages/?name=lightdm)
+	[https://github.com/CanonicalLtd/lightdm/](https://github.com/CanonicalLtd/lightdm/) || [lightdm](https://www.archlinux.org/packages/?name=lightdm)
 
 *   **[LXDM](/index.php/LXDM "LXDM")** — Gerenciador de exibição do [LXDE](/index.php/LXDE "LXDE"). Pode ser usado independentemente do ambiente de desktop LXDE.
 

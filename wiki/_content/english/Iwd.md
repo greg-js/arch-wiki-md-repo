@@ -50,7 +50,7 @@ The [iwd](https://www.archlinux.org/packages/?name=iwd) package provides the cli
 To get an interactive prompt do:
 
 ```
-# iwctl
+$ iwctl
 
 ```
 

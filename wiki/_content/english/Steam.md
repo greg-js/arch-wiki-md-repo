@@ -8,7 +8,7 @@ Related articles
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
-**Warning:** Steam native is currently broken on Arch Linux. For reference, see [FS#62095](https://bugs.archlinux.org/task/62095)
+**Warning:** Steam native runtime has issues on Arch, you can install steam-native-pcre-fix from AUR to work around store and friends not loading because of missing lib-pcre. [Forum Resolution](https://forum.manjaro.org/t/steam-cant-work-correctly-without-steam-runtime-1-anymore/79970/9) For offical reference, see [FS#62095](https://bugs.archlinux.org/task/62095)
 
 **Note:** Steam for Linux only supports Ubuntu LTS.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus, do not turn to Valve for support for issues with Steam on Arch Linux.
 
@@ -136,9 +136,13 @@ By default Steam simply appends your option string to the launch command. To set
 
 Valve developed a compatibility tool for Steam Play based on Wine and additional components. It allows you to launch many Windows games (see [compatibility list](https://www.protondb.com/)).
 
-It's open-source and avaliable on [Github](https://github.com/ValveSoftware/Proton/). You can also install it from AUR with [proton](https://aur.archlinux.org/packages/proton/) or [proton-git](https://aur.archlinux.org/packages/proton-git/).
+It's open-source and available on [Github](https://github.com/ValveSoftware/Proton/). Steam will install its own versions of Proton when Steam Play is enabled.
 
-Proton need to be enabled on Steam client : `Steam > Settings > Steam Play`
+Proton needs to be enabled on Steam client : `Steam > Settings > Steam Play`. You can enable Steam Play for games that have and have not been whitelisted by Valve in that dialog.
+
+If needed, to force enable Proton or a specific version of Proton for a game, right click on the game, click `Properties > General > Force the use of a specific Steam Play compatibility tool`, and select the desired version. Doing so can also be used to force games that have a Linux port to use the Windows version.
+
+You can also install Proton from AUR with [proton](https://aur.archlinux.org/packages/proton/) or [proton-git](https://aur.archlinux.org/packages/proton-git/), but extra setup is required for them to work with Steam. See the Proton Github for details on how Steam recognizes Proton installs.
 
 ### Big Picture Mode without a window manager
 

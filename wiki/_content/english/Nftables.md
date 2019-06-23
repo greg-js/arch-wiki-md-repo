@@ -690,10 +690,12 @@ Drop any invalid traffic:
 
 ```
 
-New echo requests (pings) will be accepted:
+Accept ICMP and IGMP:
 
 ```
-# nft add rule inet filter input ip protocol icmp icmp type echo-request ct state new accept
+# nft add rule inet filter input ip6 nexthdr icmpv6 icmpv6 type '{ destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report }' accept
+# nft add rule inet filter input ip protocol icmp icmp type '{ destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem }' accept
+# nft add rule inet filter input ip protocol igmp accept
 
 ```
 

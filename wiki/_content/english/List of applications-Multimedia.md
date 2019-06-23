@@ -318,6 +318,10 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[https://github.com/linuxdeepin/deepin-draw](https://github.com/linuxdeepin/deepin-draw) || [deepin-draw](https://www.archlinux.org/packages/?name=deepin-draw)
 
+*   **Drawing** — Drawing application for the GNOME desktop, using Cairo and GdkPixbuf for basic drawing operations.
+
+	[https://github.com/maoschanz/drawing](https://github.com/maoschanz/drawing) || [drawing](https://www.archlinux.org/packages/?name=drawing)
+
 *   **[GIMP](/index.php/GIMP "GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
@@ -348,7 +352,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **PhotoFlare** — Simple but powerful image editor originally inspired by PhotoFiltre.
 
-	[https://photoflare.io/](https://photoflare.io/) || [photoflare](https://aur.archlinux.org/packages/photoflare/)
+	[https://photoflare.io/](https://photoflare.io/) || [photoflare](https://www.archlinux.org/packages/?name=photoflare)
 
 *   **[Pinta](https://en.wikipedia.org/wiki/Pinta_(software) "wikipedia:Pinta (software)")** — Drawing and editing program modeled after [Paint.NET](https://en.wikipedia.org/wiki/Paint.net "wikipedia:Paint.net"). Its goal is to provide a simplified alternative to GIMP for casual users.
 

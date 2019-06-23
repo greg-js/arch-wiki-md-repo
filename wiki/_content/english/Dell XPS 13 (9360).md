@@ -139,7 +139,7 @@ $ systemctl start intel-undervolt
 
 For some devices it might be necessary to set a higher value for the `nvme_core.default_ps_max_latency_us` parameter to enable all power saving states. This parameter has to be set on the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
 
-For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all states is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). For the 1TB SSD this valued should be increased to 180000 instead. To check if all states are enabled you can use the [nvme-cli](https://aur.archlinux.org/packages/nvme-cli/) package, which provides the `nvme-cli` command:
+For the Toshiba 512GB SSD used in some models of the XPS 13 the value to enable all states is 170000 (the combined latency of entering and leaving the highest power state, add `nvme_core.default_ps_max_latency_us=170000` to your kernel command line). For the 1TB SSD this valued should be increased to 180000 instead. To check if all states are enabled you can use the [nvme-cli](https://www.archlinux.org/packages/?name=nvme-cli) package, which provides the `nvme-cli` command:
 
 ```
 # nvme get-feature -f 0x0c -H /dev/nvme0

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=570964) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=572622) na versão em inglês.
 
 Artigos relacionados
 

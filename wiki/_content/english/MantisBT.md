@@ -27,8 +27,6 @@ Choose your favorite [web server](/index.php/Web_server "Web server") and/or app
 
 *mantisbt* has a decent [administration guide](https://mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/), that can be followed for setting it up.
 
-**Warning:** Currently the package has bug [FS#49141](https://bugs.archlinux.org/task/49141) that will prevent you from being able to do the initial signup using the administrator account on a new setup. Applying the fix mentioned in the bug report fixes this issue though.
-
 All configuration is exposed in `/etc/webapps/mantisbt/config_inc.php`.
 
 *   Setup a compatible [DBMS](/index.php/DBMS "DBMS") and use the 'Database Configuration' section to connect mantisbt with it.

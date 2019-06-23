@@ -1836,11 +1836,11 @@ Bus **003** Device **007**: ID **0781**:**5406** SanDisk Corp. Cruzer Micro U3
 
 The outputs in bold above will be useful to identify respectively the *host_bus* and *host_addr* or the *vendor_id* and *product_id*.
 
-In qemu, the idea is to emulate an EHCI (USB 2) or XHCI (USB 3) controller with the option `-device usb-ehci,id=ehci` or `-device nec-usb-xhci,id=xhci` respectively and then attach the physical device to it with the option `-device usb-host,..`. We will say that *controler_id* is either `ehci` or `xhci`.
+In qemu, the idea is to emulate an EHCI (USB 2) or XHCI (USB 3) controller with the option `-device usb-ehci,id=ehci` or `-device qemu-xhci,id=xhci` respectively and then attach the physical device to it with the option `-device usb-host,..`. We will consider that *controller_id* is either `ehci` or `xhci` for the rest of this section.
 
 Then, there are two ways to connect to the USB of the host with qemu:
 
-1.  Identify the device and connect to it on any bus and address it is attached to on the host, the generic syntax is: `-device usb-host,bus=*controller_id*.0,vendorid=0x*vendor_id*,productid=0x*product_id*` Applied to device used in the example above, it becomes: `-device usb-ehci,id=ehci -device usb-host,bus=ehci.0,vendorid=0x**0781**,productid=0x**5406**` One can also add the `...,port=*port_number*` setting to the previous option to specify in which physical port of the virtual controller the device should be attached, useful in the case one want to add multiple usb devices to the VM.
+1.  Identify the device and connect to it on any bus and address it is attached to on the host, the generic syntax is: `-device usb-host,bus=*controller_id*.0,vendorid=0x*vendor_id*,productid=0x*product_id*` Applied to the device used in the example above, it becomes: `-device usb-ehci,id=ehci -device usb-host,bus=ehci.0,vendorid=0x**0781**,productid=0x**5406**` One can also add the `...,port=*port_number*` setting to the previous option to specify in which physical port of the virtual controller the device should be attached, useful in the case one want to add multiple usb devices to the VM.
 2.  Attach whatever is connected to a given USB bus and address, the syntax is: `-device usb-host,bus=*controller_id*.0,hostbus=*host_bus*,host_addr=*host_addr*` Applied to the bus and the address in the example above, it becomes: `-device usb-ehci,id=ehci -device usb-host,bus=ehci.0,hostbus=**3**,hostaddr=**7**` 
 
 **Note:** If you encounter permission errors when running QEMU, see [udev#About udev rules](/index.php/Udev#About_udev_rules "Udev") for information on how to set permissions of the device.
