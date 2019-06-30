@@ -42,7 +42,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") [deluge](https://www.archlinux.org/packages/?name=deluge). GTK+ client also needs [pygtk](https://www.archlinux.org/packages/?name=pygtk) package to run.
+[Install](/index.php/Install "Install") [deluge](https://www.archlinux.org/packages/?name=deluge). Be sure to read and install the optional dependencies particularly if interested in running the gtk client.
 
 ## Daemon
 
@@ -170,7 +170,7 @@ Enter the `help` command for a list of available commands.
 
 ### GTK+
 
-**Note:** It is necessary to disable Classic Mode in *Edit -> Preferences -> Interface* for daemon (server) setups.
+**Note:** It is necessary to select This Client Mode in *Edit -> Preferences -> Interface* for daemon (server) setups.
 
 The GTK+ client can be run with:
 

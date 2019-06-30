@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=571436) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2019-06-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=575196) na versão em inglês.
 
 Artigos relacionados
 
@@ -10,17 +10,17 @@ Artigos relacionados
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
 
-Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
+Esse artigo discute variáveis definíveis pelo mantenedor em um `PKGBUILD`. Para informações sobre funções do `PKGBUILD` e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
-Um PKGBUILD é um script shell contendo as informações de compilação necessárias por pacotes do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)").
+Um `PKGBUILD` é um script shell contendo as informações de compilação necessárias por pacotes do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)").
 
 Pacotes no Arch Linux são compilados usando o utilitário [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Quando *makepkg* é executado, ele pesquisa por um arquivo `PKGBUILD` no diretório atual e segue as instruções dele para compilar ou obter os arquivos para compilar um pacote (`*pkgname*.pkg.tar.xz`). O pacote resultante contém arquivos binários e instruções de instalação, prontos para serem instalados com [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
-Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` não é estritamente necessária para compilar um pacote, mas é recomendada para quaisquer PKGBUILDs compartilhados com outras pessoas, já que *makepkg* vai produzir um aviso se não estiver presente.
+Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` não é estritamente necessária para compilar um pacote, mas é recomendada para quaisquer `PKGBUILD`s compartilhados com outras pessoas, já que *makepkg* vai produzir um aviso se não estiver presente.
 
-É uma prática comum definir as variáveis no PKGBUILD da mesma forma dadas aqui. Porém, isso não é obrigatório, desde que a sintaxe [Bash](/index.php/Bash "Bash") correta seja usada.
+É uma prática comum definir as variáveis no `PKGBUILD` da mesma forma dadas aqui. Porém, isso não é obrigatório, desde que a sintaxe [Bash](/index.php/Bash "Bash") correta seja usada.
 
-**Dica:** Use [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar PKGBUILDs por erros comuns de empacotamento.
+**Dica:** Use [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar `PKGBUILD`s por erros comuns de empacotamento.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -70,32 +70,32 @@ Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` 
 
 ### pkgbase
 
-Ao compilar pacotes comuns, esta variável não deve ser explicitamente declarada no PKGBUILD: seu valor é padronizado para o do [#pkgname](#pkgname).
+Ao compilar pacotes comuns, esta variável não deve ser explicitamente declarada no `PKGBUILD`: seu valor é padronizado para o do [#pkgname](#pkgname).
 
 Ao criar um [pacote dividido](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5#PACKAGE_SPLITTING) (*split package*, em inglês), essa variável pode ser usada para especificar explicitamente o nome a ser usado para se referir ao grupo de pacotes na saída de *makepkg* e na nomeação de tarballs somente de origem. O valor não é permitido para começar com um hífen. Se não for especificado, o valor será o padrão para o primeiro elemento no vetor `pkgname`.
 
-Todas opções e diretivas para pacotes divididos têm como padrão os valores globais definidos no PKGBUILD. Mesmo assim, os seguintes podem ser sobrescritos dentro de cada função de empacotameto do pacote dividido: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install) e [#changelog](#changelog).
+Todas opções e diretivas para pacotes divididos têm como padrão os valores globais definidos no `PKGBUILD`. Mesmo assim, os seguintes podem ser sobrescritos dentro de cada função de empacotameto do pacote dividido: [#pkgdesc](#pkgdesc), [#arch](#arch), [#url](#url), [#license](#license), [#groups](#groups), [#depends](#depends), [#optdepends](#optdepends), [#provides](#provides), [#conflicts](#conflicts), [#replaces](#replaces), [#backup](#backup), [#options](#options), [#install](#install) e [#changelog](#changelog).
 
 ### pkgname
 
-O nome do pacote (por exemplo, `pkgname='foo'`) ou, para pacotes divididos, um vetor de nomes (por exemplo, `pkgname=('foo' 'bar')`). Nomes não podem iniciar com hífenes. Por uma questão de consistência, `pkgname` deve corresponder ao nome do tarball fonte do software: por exemplo, se o software está em `foobar-2.5.tar.gz`, use `pkgname=foobar`. O nome do diretório contendo o PKGBUILD também deve corresponder ao `pkgname`.
+O nome do pacote (por exemplo, `pkgname='foo'`) ou, para pacotes divididos, um vetor de nomes (por exemplo, `pkgname=('foo' 'bar')`). Nomes não podem iniciar com hífenes. Por uma questão de consistência, `pkgname` deve corresponder ao nome do tarball fonte do software: por exemplo, se o software está em `foobar-2.5.tar.gz`, use `pkgname=foobar`. O nome do diretório contendo o `PKGBUILD` também deve corresponder ao `pkgname`.
 
 ## Versão
 
 ### pkgver
 
-A versão do pacote. Ela deve ser a mesma que a versão publicada pelo autor do software *upstream*. Ela pode conter letras, números, pontos e sublinhados, mas **não** um hífen (`-`). Se o autor do software usa um hífen, substitua-o com um sublinhado (`_`). Se a variável `pkgver` é usada posteriormente no PKGBUILD, então o sublinhado pode ser facilmente substituído por um hífen, ex.: `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
+A versão do pacote. Ela deve ser a mesma que a versão publicada pelo autor do software *upstream*. Ela pode conter letras, números, pontos e sublinhados, mas **não** um hífen (`-`). Se o autor do software usa um hífen, substitua-o com um sublinhado (`_`). Se a variável `pkgver` é usada posteriormente no `PKGBUILD`, então o sublinhado pode ser facilmente substituído por um hífen, ex.: `source=("$pkgname-${pkgver//_/-}.tar.gz")`.
 
 **Nota:** Se o *upstream* usa um versionamento com marca de tempo como `30102014`, certifique-se de usar a data reversa, i.e. `20141030` (formato [ISO 8601](https://en.wikipedia.org/wiki/pt:ISO_8601 "wikipedia:pt:ISO 8601")). Do contrário, ela não aparecerá como uma versão mais nova
 
 **Dica:**
 
 *   A ordem de valores incomuns pode ser testada com [vercmp](https://www.archlinux.org/pacman/vercmp.8.html), que é fornecido pelo pacote [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
-*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no PKGBUILD. Veja [Diretrizes de pacotes VCS#A função pkgver()](/index.php/Diretrizes_de_pacotes_VCS#A_função_pkgver() "Diretrizes de pacotes VCS") para detalhes.
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") pode [atualizar](http://allanmcrae.com/2013/04/pacman-4-1-released/) automaticamente essa variável definindo uma função `pkgver()` no `PKGBUILD`. Veja [Diretrizes de pacotes VCS#A função pkgver()](/index.php/Diretrizes_de_pacotes_VCS#A_função_pkgver() "Diretrizes de pacotes VCS") para detalhes.
 
 ### pkgrel
 
-O número de lançamento. Geralmente é um número inteiro positivo que permite diferenciar entre compilações consecutivas da mesma versão de um pacote. Na medida em que correções e funcionalidades adicionais são adicionadas ao PKGBUILD que influencie no pacote resultante, `pkgrel` deve ser incrementado em 1\. Quando uma nova versão do software é lançada, esse valor deve ser redefinido para 1\. Em casos excepcionais, outros formatos podem ser encontrados em uso, como em *maior.menor*.
+O número de lançamento. Geralmente é um número inteiro positivo que permite diferenciar entre compilações consecutivas da mesma versão de um pacote. Na medida em que correções e funcionalidades adicionais são adicionadas ao `PKGBUILD` que influencie no pacote resultante, `pkgrel` deve ser incrementado em 1\. Quando uma nova versão do software é lançada, esse valor deve ser redefinido para 1\. Em casos excepcionais, outros formatos podem ser encontrados em uso, como em *maior.menor*.
 
 ### epoch
 
@@ -122,13 +122,13 @@ Também é importante usar palavras-chaves com sabedoria para aumentar as chance
 
 ### arch
 
-Um vetor de arquiteturas nas quais o PKGBUILD deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas `x86_64`, mas outros projetos podem oferecer suporte a outras arquiteturas. Por exemplo, [Arch Linux 32](https://archlinux32.org/) fornece suporte a `i686` [Arch Linux ARM](http://archlinuxarm.org/) forence suporte a `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat) e `aarch64` (armv8 64-bit).
+Um vetor de arquiteturas nas quais o `PKGBUILD` deve poder ser compilado e funcionar. Arch oferece suporte oficialmente apenas `x86_64`, mas outros projetos podem oferecer suporte a outras arquiteturas. Por exemplo, [Arch Linux 32](https://archlinux32.org/) fornece suporte a `i686` [Arch Linux ARM](http://archlinuxarm.org/) forence suporte a `arm` (armv5), `armv6h` (armv6 hardfloat), `armv7h` (armv7 hardfloat) e `aarch64` (armv8 64-bit).
 
 Há dois tipos de valores que o vetor pode usar:
 
 *   `arch=('any')` é um valor mágico que, usado assim, indica que o pacote pode ser compilado em uma arquitetura e, após compilado, independe da arquitetura em seu estado compilado (shell scripts, fontes, ema, muitos tipos de extensões etc.).
 
-*   `arch=('x86_64')` com uma ou mais arquiteturas indica que o pacote pode ser compilado para qualquer uma das arquiteturas especificadas, mas é específico da arquitetura depois de compilado. Para esses pacotes, especifique todas as arquiteturas as quais o PKGBUILD oficialmente possui suporte. Para repositórios oficiais e pacotes AUR, isso significa *x86_64*. Opcionalmente, os pacotes AUR podem optar por ter suporte adicional a outras arquiteturas que save-se funcionar.
+*   `arch=('x86_64')` com uma ou mais arquiteturas indica que o pacote pode ser compilado para qualquer uma das arquiteturas especificadas, mas é específico da arquitetura depois de compilado. Para esses pacotes, especifique todas as arquiteturas as quais o `PKGBUILD` oficialmente possui suporte. Para repositórios oficiais e pacotes AUR, isso significa *x86_64*. Opcionalmente, os pacotes AUR podem optar por ter suporte adicional a outras arquiteturas que save-se funcionar.
 
 A arquitetura alvo pode ser acessada com a variável `$CARCH` durante uma compilação.
 
@@ -314,7 +314,7 @@ Arquivos *.install* são reconhecidos automaticamente pelo *makepkg* e não deve
 
 ### noextract
 
-Um vetor de arquivos listados sob `source` que não devem ser extraídos de seu formato empacotado pelo *makepkg*. Isso pode ser usado com pacotes que não podem ser tratados pelo `/usr/bin/bsdtar` ou aqueles que precisam ser instalado como estão. Se uma ferramenta alternativa de extração for usada (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), ela deve ser adicionada no vetor `makedepends` e a primeira linha da função [prepare()](/index.php/Criando_pacotes#prepare() "Criando pacotes") deve extrair manualmente o pacote fonte; por exemplo:
+Um vetor de arquivos listados sob `source` que não devem ser extraídos de seu formato empacotado pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Isso pode ser usado com pacotes que não podem ser tratados pelo `/usr/bin/bsdtar` ou aqueles que precisam ser instalado como estão. Se uma ferramenta alternativa de extração for usada (e.g. [lrzip](https://www.archlinux.org/packages/?name=lrzip)), ela deve ser adicionada no vetor `makedepends` e a primeira linha da função [prepare()](/index.php/Criando_pacotes#prepare() "Criando pacotes") deve extrair manualmente o pacote fonte; por exemplo:
 
 ```
 prepare() {
@@ -359,7 +359,7 @@ O tipo e os valores da soma de verificação *(checksum)* devem ser sempre aquel
 
 **Nota:** Além disso, quando o upstream disponibiliza [assinaturas digitais](https://en.wikipedia.org/wiki/pt:Assinatura_digital "w:pt:Assinatura digital"), os arquivos de assinatura devem ser adicionados ao vetor [source](#source) e a impressão digital da chave PGP ao vetor [validpgpkeys](#validpgpkeys). Isso permite a autenticação dos arquivos no momento de compilação.
 
-Os valores para essas variáveis podem ser geradas automaticamente pela opção `-g`/`--geninteg` do [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, anexado com `makepkg -g >> PKGBUILD`. O comando `updpkgsums` do [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) é capaz de atualizar as variáveis onde quer que elas estejam no PKGBUILD. Ambas ferramentas usarão a variável que já está definida no PKGBUILD, ou voltarão para `md5sums` se nada estiver definido.
+Os valores para essas variáveis podem ser geradas automaticamente pela opção `-g`/`--geninteg` do [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, anexado com `makepkg -g >> PKGBUILD`. O comando `updpkgsums` do [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) é capaz de atualizar as variáveis onde quer que elas estejam no `PKGBUILD`. Ambas ferramentas usarão a variável que já está definida no `PKGBUILD`, ou voltarão para `md5sums` se nada estiver definido.
 
 As verificações de integridade de arquivo a serem usadas podem ser configuradas com a opção `INTEGRITY_CHECK` no `/etc/makepkg.conf`. Veja [makepkg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5).
 

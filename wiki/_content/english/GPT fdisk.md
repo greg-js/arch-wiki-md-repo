@@ -120,11 +120,6 @@ Create a new partition with the `n` command. You must enter the partition number
 
 **Note:** See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for considerations concerning the size and location of partitions.
 
-**Tip:**
-
-*   It is advised to follow the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) since [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) will automount them. See [#Prevent GPT partition automounting](#Prevent_GPT_partition_automounting) if you want to disable automounting for a partition.
-*   Leave a 1 MiB free space somewhere in the first 2 TiB of the disk (e.g. by using `+1M` as the first sector of a partition) in case you ever need to create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
-
 #### Partition number
 
 A partition number is the number assigned to a partition, e.g. a partition with number `1` on a disk `/dev/sda` would be `/dev/sda1`. Partition numbers may not always match the order of partitions on disk, in which case they can be [sorted](#Sort_partitions).
@@ -142,7 +137,10 @@ The position can be specified in:
 
 Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the first sector and the end of the same block for the last sector.
 
-**Tip:** When partitioning it is always a good idea to specify partition sizes using relative terms with the `+*size{M,G,T,P}*` notation and not use sizes smaller than 1 MiB. Such partitions will always be aligned according to the device properties.
+**Tip:**
+
+*   When partitioning it is always a good idea to specify partition sizes using relative terms with the `+*size{M,G,T,P}*` notation and not use sizes smaller than 1 MiB. Such partitions will always be aligned according to the device properties.
+*   Leave a 1 MiB free space somewhere in the first 2 TiB of the disk (e.g. by using `+1M` as the first sector of a partition) in case you ever need to create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 
 #### Partition type
 
@@ -163,7 +161,10 @@ code | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#
 | [Linux LUKS](/index.php/Dm-crypt/Drive_preparation#Physical_partitions "Dm-crypt/Drive preparation") | Any | `8309` | `CA7D7CCB-63ED-4C53-861C-1742536059CC` |
 | [Linux dm-crypt](/index.php/Dm-crypt/Drive_preparation#Physical_partitions "Dm-crypt/Drive preparation") | Any | `8308` | `7FFEC5C9-2D00-49B7-8941-3EA10A5586B7` |
 
-**Tip:** Press `L` to show gdisk's internal code list.
+**Tip:**
+
+*   Press `L` to show gdisk's internal code list.
+*   It is advised to follow the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) since [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) will automount them. See [#Prevent GPT partition automounting](#Prevent_GPT_partition_automounting) if you want to disable automounting for a partition.
 
 Repeat this procedure until you have the partitions you desire.
 

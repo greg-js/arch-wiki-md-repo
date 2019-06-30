@@ -308,7 +308,7 @@ First enable IOMMU, see [PCI passthrough via OVMF#Setting up IOMMU](/index.php/P
 Add `-device intel-iommu` to create the IOMMU device:
 
 ```
-$ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host ..
+$ qemu-system-x86_64 **-enable-kvm -machine q35 -device intel-iommu** -cpu host ..
 
 ```
 
@@ -1707,7 +1707,7 @@ There are a number of techniques that you can use to improve the performance of 
 *   Especially for Windows guests, enable [Hyper-V enlightenments](http://blog.wikichoon.com/2014/07/enabling-hyper-v-enlightenments-with-kvm.html): `-cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time`.
 *   If the host machine has multiple cores, assign the guest more cores using the `-smp` option.
 *   Make sure you have assigned the virtual machine enough memory. By default, QEMU only assigns 128 MiB of memory to each virtual machine. Use the `-m` option to assign more memory. For example, `-m 1024` runs a virtual machine with 1024 MiB of memory.
-*   Use KVM if possible: add `-machine type=pc,accel=kvm` to the QEMU start command you use.
+*   Use KVM if possible: add `-enable-kvm` to the QEMU start command you use.
 *   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:
 
 ```
@@ -1728,13 +1728,6 @@ $ qemu-system-x86_64 -drive file=*disk_image*,if=virtio,**cache=none**
 
 ```
 $ qemu-system-x86_64 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
-
-```
-
-*   If you use a qcow2 disk image, I/O performance can be improved considerably by ensuring that the L2 cache is of sufficient size. The [formula](https://blogs.igalia.com/berto/2015/12/17/improving-disk-io-performance-in-qemu-2-5-with-the-qcow2-l2-cache/) to calculate L2 cache is: l2_cache_size = disk_size * 8 / cluster_size. Assuming the qcow2 image was created with the default cluster size of 64K, this means that for every 8 GB in size of the qcow2 image, 1 MB of L2 cache is best for performance. Only 1 MB is used by QEMU by default; specifying a larger cache is done on the QEMU command line. For instance, to specify 4 MB of cache (suitable for a 32 GB disk with a cluster size of 64K):
-
-```
-$ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 
 ```
 

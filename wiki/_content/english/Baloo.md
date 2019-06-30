@@ -19,7 +19,7 @@
 
 ## Usage and configuration
 
-In order to search using Baloo on the Plasma desktop, start [KRunner](/index.php/KRunner "KRunner") (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`.
+In order to search using Baloo on the Plasma desktop, start [KRunner](/index.php/KRunner "KRunner") (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`. Alternatively, for command-line usage, there is `baloosearch [OPTIONS] query`, which supports complex queries such as `baloosearch //?query=tag:coolpicture AND width:100`, and `balooshow [OPTIONS] filename` to show the data baloo has stored for the file.
 
 By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click. Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)).
 

@@ -21,7 +21,8 @@ Related articles
     *   [3.3 Changing the Theme](#Changing_the_Theme)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Show kernel messages](#Show_kernel_messages)
-    *   [4.2 Replacing the Arch Logo and creating custom themes](#Replacing_the_Arch_Logo_and_creating_custom_themes)
+    *   [4.2 Adding Arch Logo to spinner and BGRT themes](#Adding_Arch_Logo_to_spinner_and_BGRT_themes)
+    *   [4.3 Replacing the Arch Logo and creating custom themes](#Replacing_the_Arch_Logo_and_creating_custom_themes)
 *   [5 See also](#See_also)
 
 ## Preparation
@@ -163,6 +164,15 @@ Reboot to apply the changes.
 #### Show kernel messages
 
 During boot you can switch to kernel messages by pressing "Home" (or "Escape") key.
+
+### Adding Arch Logo to spinner and BGRT themes
+
+To add Arch Logo to *spinner* and *BGRT* themes copy Arch logo to spinner theme directory with name `watermark.png`:
+
+```
+# cp /usr/share/plymouth/arch-logo.png /usr/share/plymouth/themes/spinner/watermark.png
+
+```
 
 ### Replacing the Arch Logo and creating custom themes
 

@@ -36,6 +36,7 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [6.9 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze/Plasma_5_theme)
     *   [6.10 LibreOffice Math formula editor unreadable with dark theme](#LibreOffice_Math_formula_editor_unreadable_with_dark_theme)
     *   [6.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
+    *   [6.12 LibreOffice freezes](#LibreOffice_freezes)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -137,6 +138,13 @@ The default path for macros in Arch Linux is different from most Linux distribut
 
 ## Troubleshooting
 
+A general way to track down problems is the safe mode in LibreOffice:
+
+```
+$ libreoffice --safe-mode
+
+```
+
 ### Font substitution
 
 These settings can be changed in the LibreOffice options. From the drop-down menu, select *Tools > Options > LibreOffice > Fonts*. Check the box that says *Apply Replacement Table*. Type `Andale Sans UI` in the font box and choose your desired font for the *Replace with* option. When done, click the *checkmark*. Then choose the *Always* and *Screen only* options in the box below. Click OK. You will then need to go to *Tools > Options > LibreOffice > View*, and uncheck "Use system font for user interface". If you use a non-antialised font, such as Arial, you will also need to uncheck "Screen font antialiasing" before menu fonts render correctly.
@@ -233,6 +241,10 @@ Only workaround known is to override the theme to a light one (e.g. `GTK_THEME=A
 ### AutoText expected default behaviour not functional in system locales other than en_US
 
 If expected default AutoText behaviour is not present (for example, typing `fn` in a document in Writer and then pressing the `F3` key does not result in the automatic insertion of a numbered function) when the system locale is not `en_US` you need to add the default `en_US` AutoText templates to your AutoText path. To do this, go to *Tools > AutoText*, then click on *Path...* and add the following path to the list: `/usr/lib/libreoffice/share/autotext/en-US`. AutoText should now work as expected by default.
+
+### LibreOffice freezes
+
+Disable OpenCL and/or OpenGL by setting the [environment variable](/index.php/Environment_variable "Environment variable") `SAL_DISABLE_OPENCL=1` and/or `SAL_DISABLEGL=1`. The LibreOffice safe mode also offers the option to disable both.
 
 ## See also
 

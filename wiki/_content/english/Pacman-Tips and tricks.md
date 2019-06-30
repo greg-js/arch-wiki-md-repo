@@ -821,11 +821,11 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
-*   **GNOME PackageKit** — GTK+ 3 package manager using PackageKit written in C.
+*   **GNOME PackageKit** — GTK 3 package manager using PackageKit written in C.
 
 	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — GTK+ 3 application manager using PackageKit written in C. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") and [firmware updates](/index.php/Fwupd "Fwupd").
+*   **GNOME Software** — GTK 3 application manager using PackageKit written in C. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") and [firmware updates](/index.php/Fwupd "Fwupd").
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 

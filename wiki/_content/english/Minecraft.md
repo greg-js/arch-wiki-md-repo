@@ -81,7 +81,7 @@ To easily control the server you may use the provided `minecraftd` script. It is
 
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 
-For example, more advanced users may wish enable `IDLE_SERVER` by setting it to `true`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ncat.1) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time after suspension, it significantly decreases the CPU and memory usage leading to a more reasonably resource and power consumption.
+For example, more advanced users may wish enable `IDLE_SERVER` by setting it to `true`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the Minecraft port using [ncat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ncat.1) (also called netcat or simply nc for short) and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time after suspension, it significantly decreases the CPU and memory usage leading to a more reasonable resource and power consumption.
 
 **Note:** If running for the first time with this option enabled, the `/srv/minecraft/eula.txt` file will not get created. You need to disable it to initially start.
 

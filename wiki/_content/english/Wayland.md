@@ -293,33 +293,7 @@ The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/F
 
 #### Window switching
 
-To switch windows with `Super`+`Space` instead of `Super`+`Tab` use the following patch:
-
-```
-diff --git a/shell.c b/shell.c
-index 9a44715..348a576 100644
---- a/shell.c
-+++ b/shell.c
-@@ -4510,7 +4510,7 @@ switcher_key(struct weston_keyboard_grab *grab,
- 	struct switcher *switcher = container_of(grab, struct switcher, grab);
- 	enum wl_keyboard_key_state state = state_w;
-
--	if (key == KEY_TAB && state == WL_KEYBOARD_KEY_STATE_PRESSED)
-+	if (key == KEY_SPACE && state == WL_KEYBOARD_KEY_STATE_PRESSED)
- 		switcher_next(switcher);
- }
-
-@@ -5003,7 +5003,7 @@ shell_add_bindings(struct weston_compositor *ec, struct desktop_shell *shell)
- 		weston_compositor_add_button_binding(ec, BTN_MIDDLE, mod,
- 						     rotate_binding, NULL);
-
--	weston_compositor_add_key_binding(ec, KEY_TAB, mod, switcher_binding,
-+	weston_compositor_add_key_binding(ec, KEY_SPACE, mod, switcher_binding,
- 					  shell);
- 	weston_compositor_add_key_binding(ec, KEY_F9, mod, backlight_binding,
- 					  ec);
-
-```
+To switch windows with `Super+Space` instead of `Super+Tab` change `KEY_TAB` to `KEY_SPACE` in `desktop-shell/shell.c`.
 
 ## GUI libraries
 

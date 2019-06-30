@@ -2,7 +2,11 @@
 
 本页面试图揭开 Arch Linux 社区术语的神秘面纱。您可以自由的添加或更改任何术语，但是请使用某个章节的编辑选项。如果想添加新术语请按照字母顺序。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ABS](#ABS)
 *   [2 Arch Linux](#Arch_Linux)
@@ -48,12 +52,12 @@ ABS 不是必须的，但是很有用。
 应该用下面术语指代 Arch：
 
 *   **Arch Linux**
-*   **Arch** (Linux implied)
+*   **Arch** (省略了隐含的 Linux)
 *   **archlinux** (UNIX name)
 
 Archlinux、ArchLinux、archLinux、aRcHlInUx 等等称呼都不是标准的。
 
-'Arch' 在 "Arch Linux" 中的官方读音是 /ˈɑrtʃ/ ，就像单词 "archer"，或者 "arch-nemesis" 中的读音，但不是在单词 "ark" 或者 "archangel" 中的读音。
+'Arch' 在 "Arch Linux" 中的官方读音是 /ˈɑrtʃ/ ，就像单词 "archer"，或者 "arch-nemesis" 中的读音，但不是在单词 "ark" 或者 "archangel" 中的读音。 近似中文普通话“啊吃”的读音（“吃”字去掉韵母并读作轻声），不读作“啊刻”。
 
 ## Arch 之道
 

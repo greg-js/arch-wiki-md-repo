@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Daemon](/index.php/Daemon "Daemon"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=564488) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Daemon](/index.php/Daemon "Daemon"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Daemon&diff=0&oldid=573986) na versão em inglês.
 
 Um [daemon](https://en.wikipedia.org/wiki/Daemon_(computing) é um programa que roda em "background" como um processo (sem terminal ou interface), que comumente espera por eventos para oferecer serviços. Um bom exemplo é um servidor web que espera por requisições para entregar uma página, ou um servidor ssh que espera por alguma tentativa de login. Apesar destes serem exemplos de aplicações bastante conhecidas e difundidas, há daemons cujo trabalho não é visível. Daemons que as tarefas são enviar logs para arquivos(ex: `syslog`, `metalog`) ou manter o horário do sistema sincronizado como o [ntpd](/index.php/Ntpd "Ntpd"). Para maiores informações veja [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
@@ -125,8 +125,8 @@ shadow.service
  soundmodem | soundmodem.service | Sistema de modem de rádio de bolso |
 | [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | Serviço de filtragem de spam. |
 | [OpenSSH](/index.php/OpenSSH "OpenSSH") | sshd | sshd.service | OpenSSH. Daemon famoso de provimento de conexões do protocolo Secure Shell(ssh). |
- stunnel | stunnel.service | Permite encriptação arbitrária de conexões tcp dentro de um túnel SSL. |
- svnserve | svnserve.service | Servidor Subversion. |
+| [stunnel](https://www.archlinux.org/packages/?name=stunnel) | stunnel | stunnel.service | Permite encriptação arbitrária de conexões tcp dentro de um túnel SSL. |
+| [subversion](/index.php/Subversion "Subversion") | svnserve | svnserve.service | Servidor Subversion. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | Log de sistema de próxima geração. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Sintetizador de MIDI através de software. |
 | [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | Serviço de leitura e conexão vpn baseado no diretório /etc/tinc/*<nome_da_vpn>*/ |

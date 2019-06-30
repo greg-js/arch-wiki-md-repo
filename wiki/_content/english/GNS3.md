@@ -106,4 +106,6 @@ VPCS is a simple virtual PC simulator, supported by GNS3 and useful to enhance t
 
 ## Wireshark packet capture
 
-[Wireshark](/index.php/Wireshark "Wireshark") can be used with GNS3 to "sniff" packets from the links between devices of a virtual topology. Install it and create a symlink under `~/GNS3/wireshark/` directory.
+[Wireshark](/index.php/Wireshark "Wireshark") can be used with GNS3 to "sniff" packets from the links between devices of a virtual topology. Install it and create a symlink under `~/GNS3/wireshark/` directory:
+
+`ln -s /usr/bin/wireshark ~/GNS3/wireshark/`

@@ -115,14 +115,16 @@ To check if the driver for your card has been loaded, check the output of the `l
 
 **Note:** If the card is a USB device, running `dmesg | grep usbcore` should give something like `usbcore: registered new interface driver rtl8187` as output.
 
-Also check the output of `ip link` command to see if a wireless interface ([usually](/index.php/Network_configuration#Network_interfaces "Network configuration") it starts with the letter "w", e.g. `wlp2s1`) was created. Then bring the interface up with `ip link set *interface* up`. For example, assuming the interface is `wlan0`:
+Also check the output of the `ip link` command to see if a wireless interface was created; usually the naming of the wireless [network interfaces](/index.php/Network_interfaces "Network interfaces") starts with the letter "w", e.g. `wlp2s0`. Then bring the interface up with:
 
 ```
-# ip link set wlan0 up
+# ip link set *interface* up
 
 ```
 
-If you get this error message: `SIOCSIFFLAGS: No such file or directory`, it most certainly means that your wireless chipset requires a firmware to function.
+For example, assuming the interface is `wlp2s0`, this is `ip link set wlp2s0 up`.
+
+If you get the error message `SIOCSIFFLAGS: No such file or directory`, it most certainly means that your wireless chipset requires a firmware to function.
 
 Check kernel messages for firmware being loaded:
 

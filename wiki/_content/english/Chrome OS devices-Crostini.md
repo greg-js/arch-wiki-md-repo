@@ -2,16 +2,12 @@
 
 This article describes how to install Arch Linux on a Chromebook in a container (via Crostini), without needing to enable developer mode, allowing apps to run alongside other Chrome/Android apps.
 
-	Advantages
+Highlights:
 
-*   Don't need to enable developer mode - Officially supported, leaves ChromeOS secure, no need to flash a BIOS etc.
+*   Officially supported, don't need to enable developer mode - leaves ChromeOS secure, no need to flash a BIOS etc.
 *   Better battery life - Battery life of Chrome with the functionality of Linux.
 *   Access to Android apps, play store etc.
-
-	Disadvantages
-
-*   Audio support rolling in [Chroms Os 74](https://crbug.com/781398) (Feb 28 2019)
-*   OpenGL support is still [in progress](https://crbug.com/837073) (Feb 4 2019)
+*   Audio & OpenGL are supported, but microphone and USB devices are still in progress.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -27,7 +23,7 @@ This article describes how to install Arch Linux on a Chromebook in a container 
     *   [2.2 DNS resolution not working](#DNS_resolution_not_working)
     *   [2.3 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
     *   [2.4 Steam / OpenGL / GLX not working](#Steam_/_OpenGL_/_GLX_not_working)
-    *   [2.5 App that requires sound card not working](#App_that_requires_sound_card_not_working)
+    *   [2.5 Fullscreen games and mouse capture don't work correctly](#Fullscreen_games_and_mouse_capture_don't_work_correctly)
 
 ## Introduction
 
@@ -170,6 +166,6 @@ I found that Steam / OpenGL / GLX don't work out of the box because the Arch ins
 
 To get steam working I had to replace /usr/lib64/dri/swrast_dri.so with the cros-containers version. This works permanently. I haven't been able to find a way to keep glxgears/glxinfo working permanently.
 
-### App that requires sound card not working
+### Fullscreen games and mouse capture don't work correctly
 
-Crostini does not yet support sound. However, a dummy sound card can be created by installing and running pulseaudio that allows apps that require a sound card to run.
+Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasable.

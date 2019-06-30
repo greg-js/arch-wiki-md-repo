@@ -29,10 +29,10 @@ Screen brightness might be tricky to control. On some machines physical hardware
 
 ## Overview
 
-There are many ways to control brightness of a monitor, laptop or integrated panel (such as the iMac). According to this [discussion](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617) and this [wiki page](https://wiki.ubuntu.com/Kernel/Debugging/Backlight) the control method can be divided into these categories:
+There are many ways to control brightness of a monitor, laptop or integrated panel (such as the iMac). According to [these](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617) [discussions](https://lore.kernel.org/patchwork/patch/528936/#708706) and this [wiki page](https://wiki.ubuntu.com/Kernel/Debugging/Backlight) the control method can be divided into these categories:
 
 *   brightness is controlled by vendor-specified hotkey and there is no interface for the OS to adjust the brightness.
-*   brightness is controlled by either the ACPI or the graphic driver.
+*   brightness is controlled by either the ACPI, graphic or platform driver.
 *   brightness is controlled by HW register through setpci.
 
 All methods are exposed to the user through `/sys/class/backlight` and xrandr/xbacklight can choose one method to control brightness. It is still not very clear which one xbacklight prefers by default.
@@ -196,7 +196,7 @@ Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/pack
 
 **Note:**
 
-*   xbacklight only works with [Intel](/index.php/Intel "Intel"). [Radeon](/index.php/Radeon "Radeon") does not support the RandR backlight property.
+*   xbacklight only works with [Intel](/index.php/Intel "Intel"). Other drivers (e.g. [Radeon](/index.php/Radeon "Radeon")) did not add support for the RandR backlight property.
 *   xbacklight currently does not work with the modesetting driver [[1]](https://gitlab.freedesktop.org/xorg/xserver/issues/47).
 
 To set brightness to 50% of maximum:
@@ -306,14 +306,14 @@ Users of [NVIDIA's proprietary drivers](/index.php/NVIDIA "NVIDIA") users can ch
 
 ### Increase brightness above maximum level
 
-You can use [xrandr](/index.php/Xrandr "Xrandr") to increase brightness above its maximum level:
+You can use [xrandr](/index.php/Xrandr "Xrandr") to increase perceived brightness above its maximum level (the same caveats mentioned above for Nvidia apply):
 
 ```
 $ xrandr --output *output_name* --brightness 2
 
 ```
 
-This will set the brightness level to 200%. It will cause higher power usage and sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
+This should roughly double luma in the image. It will sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
 
 ## External monitors
 

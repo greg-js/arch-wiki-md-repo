@@ -211,7 +211,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 *   To make the left mouse button warp the scrollbar instead of the middle one on KDE, go to *System Settings > Application Style > GNOME/GTK Application Style* and choose 'Jump to the mouse cursor position' in the 'On left-clicking the scroll bar' option.
 *   To use the KDE file selection and print dialogs in Firefox 64 or newer:
     1.  Install [xdg-desktop-portal](https://www.archlinux.org/packages/?name=xdg-desktop-portal) and [xdg-desktop-portal-kde](https://www.archlinux.org/packages/?name=xdg-desktop-portal-kde),
-    2.  [Edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `GTK_USE_PORTAL=1` to all `Exec` lines.
+    2.  Set `GTK_USE_PORTAL=1` as [environment variable](/index.php/Environment_variable "Environment variable") or [edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `GTK_USE_PORTAL=1` to the `Exec` lines.
 *   For integration with [KDE](/index.php/KDE "KDE") mime type system and file dialog, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 *   Extensions/add-ons may provide additional integration, such as:
     *   Browser integration in [Plasma](/index.php/Plasma "Plasma"): requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the [Plasma Integration add-on](https://addons.mozilla.org/firefox/addon/plasma-integration/).
@@ -254,7 +254,7 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 ### Dark themes
 
-If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK+ themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK+_themes "Firefox/Tweaks") for more information.
+If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK_themes "Firefox/Tweaks") for more information.
 
 ### Memory limit
 

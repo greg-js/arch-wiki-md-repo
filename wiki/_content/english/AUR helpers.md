@@ -95,7 +95,7 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 
 **Warning:** Usage of graphical AUR helpers may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
 
-*   **Argon** — GTK+ 3 pacman wrapper written in Python.
+*   **Argon** — GTK 3 pacman wrapper written in Python.
 
 	[https://github.com/14mRh4X0r/arch-argon](https://github.com/14mRh4X0r/arch-argon) || [argon](https://aur.archlinux.org/packages/argon/)
 
@@ -103,11 +103,11 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 
 	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
-*   **Pamac** — Standalone GTK+ 3 package manager using [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) written in Vala.
+*   **Pamac** — Standalone GTK 3 package manager using [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) written in Vala.
 
 	[https://gitlab.manjaro.org/applications/pamac](https://gitlab.manjaro.org/applications/pamac) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
 
-*   **Pakku GUI** — GTK+ 3 frontend for pakku written in Python.
+*   **Pakku GUI** — GTK 3 frontend for pakku written in Python.
 
 	[https://gitlab.com/mrvik/pakku-gui](https://gitlab.com/mrvik/pakku-gui) || [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/)
 

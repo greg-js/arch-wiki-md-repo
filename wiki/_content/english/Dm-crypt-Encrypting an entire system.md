@@ -286,7 +286,7 @@ Depending on which other hooks are used, the order may be relevant. See [dm-cryp
 
 ### Configuring the boot loader
 
-In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
+In order to unlock the encrypted root partition at boot, the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") need to be set by the boot loader:
 
 ```
 cryptdevice=UUID=*device-UUID*:cryptroot root=/dev/mapper/cryptroot
@@ -562,7 +562,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring the boot loader
 
-In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
+In order to unlock the encrypted root partition at boot, the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") need to be set by the boot loader:
 
 ```
 cryptdevice=UUID=*device-UUID*:root root=/dev/mapper/root
@@ -929,7 +929,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring the boot loader
 
-In order to boot the encrypted root partition, the following kernel parameters need to be set by the boot loader (note that 64 is the number of bytes in 512 bits):
+In order to boot the encrypted root partition, the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") need to be set by the boot loader (note that 64 is the number of bytes in 512 bits):
 
 ```
 cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:64 crypto=:aes-xts-plain64:512:0:
@@ -1126,6 +1126,7 @@ First create a keyfile and add it as LUKS key:
 ```
 # dd bs=512 count=4 if=/dev/random of=/root/cryptlvm.keyfile iflag=fullblock
 # chmod 000 /root/cryptlvm.keyfile
+# chmod 600 /boot/initramfs-linux*
 # cryptsetup -v luksAddKey /dev/sda3 /root/cryptlvm.keyfile
 
 ```

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=573174) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=575777) na versão em inglês.
 
 Artigos relacionados
 
@@ -121,18 +121,16 @@ Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `star
 *   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland").
 *   Wayland com o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA") atualmente sofre de um desempenho muito ruim: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em [Qt](/index.php/Qt "Qt") como [VLC](/index.php/VLC "VLC"), calibre e SMPlayer usarem Wayland.
+Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em [Qt](/index.php/Qt "Qt") como [VLC](/index.php/VLC "VLC"), calibre e SMPlayer usarem Wayland. Além da variável QT_QPA_PLATFORM, você deve também instalar o pacote [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Para adicionar suporte para outras bibliotecas gráficas, veja [Wayland#GUI_libraries](/index.php/Wayland#GUI_libraries "Wayland").
 
 Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ -z $XDG_SESSION_TYPE ]]; then
+if [[ -z $DISPLAY && $(tty) == /dev/tty1 && ( -z $XDG_SESSION_TYPE || $XDG_SESSION_TYPE == tty )]]; then
   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```
-
-Caso isso não funcione como esperado, você pode tentar alterar `[[ -z $XDG_SESSION_TYPE ]]` para `[[ $XDG_SESSION_TYPE = tty ]]`.
 
 ### Aplicativos do GNOME no Wayland
 

@@ -18,7 +18,6 @@ Fan control can bring various benefits to your system, such as quieter working s
 *   [1 Overview](#Overview)
 *   [2 Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors))
     *   [2.1 lm-sensors](#lm-sensors)
-        *   [2.1.1 Increasing fan_div](#Increasing_fan_div)
     *   [2.2 Configuration](#Configuration)
         *   [2.2.1 Tweaking](#Tweaking)
     *   [2.3 fancontrol](#fancontrol)
@@ -34,15 +33,17 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [5.1 Installation](#Installation_3)
     *   [5.2 Running](#Running)
 *   [6 Asus laptops](#Asus_laptops)
-    *   [6.1 Kernel modules overview](#Kernel_modules_overview)
-    *   [6.2 asus-nb-wmi](#asus-nb-wmi)
-    *   [6.3 asus_fan](#asus_fan)
-    *   [6.4 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
+    *   [6.1 Kernel modules](#Kernel_modules)
+        *   [6.1.1 asus-nb-wmi](#asus-nb-wmi)
+        *   [6.1.2 asus_fan](#asus_fan)
+    *   [6.2 Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig)
 *   [7 AMDGPU sysfs fan control](#AMDGPU_sysfs_fan_control)
     *   [7.1 Configuration of manual control](#Configuration_of_manual_control)
     *   [7.2 amdgpu-fan](#amdgpu-fan)
     *   [7.3 fancurve script](#fancurve_script)
         *   [7.3.1 Setting up fancurve script](#Setting_up_fancurve_script)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Increase the fan divisor for sensors](#Increase_the_fan_divisor_for_sensors)
 
 ## Overview
 
@@ -68,16 +69,14 @@ In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sen
 
 ### lm-sensors
 
-Set up [lm_sensors](/index.php/Lm_sensors "Lm sensors").
+After checking that [lm_sensors](/index.php/Lm_sensors "Lm sensors") is properly setup, run `sensors`.
 
  `$ sensors` 
 ```
 coretemp-isa-0000
 Adapter: ISA adapter
 Core 0:      +29.0°C  (high = +76.0°C, crit = +100.0°C)  
-
-[...]
-
+...
 it8718-isa-0290
 Adapter: ISA adapter
 Vcc:         +1.14 V  (min =  +0.00 V, max =  +4.08 V)   
@@ -90,32 +89,7 @@ temp1:       +37.5°C  (low  = +129.5°C, high = +129.5°C)  sensor = thermistor
 temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal diode
 ```
 
-If the output does not display an RPM value for the CPU fan, one may need to increase the fan divisor. If fan speed is shown and higher than 0, skip the next step.
-
-#### Increasing fan_div
-
-The first line of the sensors output is the chipset used by the motherboard for readings of temperatures and voltages.
-
-Create a file in `/etc/sensors.d/`:
-
- `/etc/sensors.d/fan-speed-control.conf` 
-```
-chip "*coretemp-isa-**"
-set fan*X*_div 4
-```
-
-Replacing *coretemp-isa-* with name of the chipset and *X* with the number of the CPU fan to change.
-
-Save the file, and run as root:
-
-```
-# sensors -s
-
-```
-
-which will reload the configuration files.
-
-Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!
+**Note:** If the output does not display an RPM value for the CPU fan, one may need to [#increase the fan divisor for sensors](#increase_the_fan_divisor_for_sensors). If the fan speed is shown and higher than 0, this is fine.
 
 ### Configuration
 
@@ -391,18 +365,15 @@ When you have it configured correctly, [start/enable](/index.php/Start/enable "S
 
 ## Asus laptops
 
-This topic will cover drivers configuration on Asus laptops **for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29)**.
+This topic will cover drivers configuration on Asus laptops for [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29).
 
-### Kernel modules overview
-
-*   [#asus-nb-wmi](#asus-nb-wmi) is a kernel module, which is included in mainstream Linux kernel and is loaded automatically in Asus laptops. It will only allow to control a single fan and if there is a second fan - you will not have any controls over it. Blacklisting this module will prevent keyboard backlight to work.
-*   [#asus_fan](#asus_fan) is a kernel module, which allows to control both fans on some older Asus laptops. Does not work with the most recent models.
+### Kernel modules
 
 In configuration files, we are going to use full paths to sysfs files (e.g. `/sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1`). This is because hwmon**1** might change to any other number after reboot. [Fancontrol (lm-sensors)](#Fancontrol_.28lm-sensors.29) is written in [Bash](/index.php/Bash "Bash"), so using these paths in configuration file is completely acceptable. You can find complete `/etc/fancontrol` configuration file examples at [ASUS N550JV#Fan control](/index.php/ASUS_N550JV#Fan_control "ASUS N550JV").
 
-### asus-nb-wmi
+#### asus-nb-wmi
 
-Kernel module `asus-nb-wmi` is already included in Linux kernel and should already be loaded to your kernel.
+*asus-nb-wmi* is a kernel module, which is included in the Linux kernel and is loaded automatically on Asus laptops. It will only allow to control a single fan and if there is a second fan you will not have any controls over it. Note that blacklisting this module will prevent keyboard backlight to work.
 
 Below are the commands to control it. Check if you have any controls over your fan:
 
@@ -416,7 +387,9 @@ Below are the commands to control it. Check if you have any controls over your f
 
 If you were able to modify fan speed with above commands, then continue with [#Generate config file with pmwconfig](#Generate_config_file_with_pmwconfig).
 
-### asus_fan
+#### asus_fan
+
+*asus_fan* is a kernel module, which allows to control both fans on some older Asus laptops. It does not work with the most recent models.
 
 Install the [DKMS](/index.php/DKMS "DKMS") [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/) [kernel module](/index.php/Kernel_module "Kernel module"), providing `asus_fan`:
 
@@ -566,3 +539,32 @@ ExecStart=/usr/bin/systemctl restart amdgpu-fancontrol.service
 [Install]
 WantedBy=suspend.target
 ```
+
+## Troubleshooting
+
+### Increase the fan divisor for sensors
+
+If *sensors* does not output the CPU fan RPM, it may be necessary to change the fan divisor.
+
+The first line of the *sensors* output is the chipset used by the motherboard for readings of temperatures and voltages.
+
+Create a file in `/etc/sensors.d/`:
+
+ `/etc/sensors.d/fan-speed-control.conf` 
+```
+chip "*coretemp-isa-**"
+set fan*X*_div 4
+```
+
+Replacing *coretemp-isa-* with name of the chipset and *X* with the number of the CPU fan to change.
+
+Save the file, and run as root:
+
+```
+# sensors -s
+
+```
+
+which will reload the configuration files.
+
+Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!

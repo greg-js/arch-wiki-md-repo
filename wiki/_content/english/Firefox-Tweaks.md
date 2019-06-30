@@ -37,7 +37,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.5 Hide window border and title bar](#Hide_window_border_and_title_bar)
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
-        *   [2.2.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK+_themes)
+        *   [2.2.8 Unreadable input fields with dark GTK themes](#Unreadable_input_fields_with_dark_GTK_themes)
             *   [2.2.8.1 Override input field color with CSS](#Override_input_field_color_with_CSS)
             *   [2.2.8.2 Change the GTK theme](#Change_the_GTK_theme)
             *   [2.2.8.3 Change the GTK theme for content process only](#Change_the_GTK_theme_for_content_process_only)
@@ -232,7 +232,7 @@ This section only deals with the `userChrome.css` file which modifies Firefox's 
 
 #### Change the interface font
 
-The setting effectively overrides the global GTK+ font preferences, and does not affect webpages, only the user interface itself:
+The setting effectively overrides the global GTK font preferences, and does not affect webpages, only the user interface itself:
 
  `~/.mozilla/firefox/<profile_dir>/chrome/userChrome.css` 
 ```
@@ -351,9 +351,9 @@ Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox 
 
 ```
 
-#### Unreadable input fields with dark GTK+ themes
+#### Unreadable input fields with dark GTK themes
 
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background, or black text on dark background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
+When using a dark [GTK](/index.php/GTK "GTK") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background, or black text on dark background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
 
 Otherwise, if the previous modification didn't solve the issue, it is possible to launch Firefox with a light GTK theme by adding a new string in `about:config` named `widget.content.gtk-theme-override` and setting it to a light theme like `Breeze:light` or `Adwaita:light`.
 
@@ -630,7 +630,7 @@ To disable audio post processing, change the value of the following preferences 
 
 Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for the required udev rules to allow Firefox to communicate with the U2F key.
 
-Firefox supports the Fido U2F authentication protocol. However, it is disabled by default. To enable it set `security.webauth.u2f` to `true` in `about:config`.
+Firefox supports the Fido U2F authentication protocol.
 
 **Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
 

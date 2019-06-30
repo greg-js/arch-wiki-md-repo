@@ -88,25 +88,26 @@ When you update a library that ROS depends on (e.g. Boost), all packages that li
 
 Build instructions are available at [https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/](https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/).
 
-Install build dependencies: [wget](https://www.archlinux.org/packages/?name=wget), [python](https://www.archlinux.org/packages/?name=python), [python-yaml](https://www.archlinux.org/packages/?name=python-yaml), [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [sip](https://www.archlinux.org/packages/?name=sip), [python-sip](https://www.archlinux.org/packages/?name=python-sip), [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5), [git](https://www.archlinux.org/packages/?name=git), [cmake](https://www.archlinux.org/packages/?name=cmake), [asio](https://www.archlinux.org/packages/?name=asio), [tinyxml](https://www.archlinux.org/packages/?name=tinyxml), [tinyxml2](https://www.archlinux.org/packages/?name=tinyxml2), [eigen](https://www.archlinux.org/packages/?name=eigen), [libxaw](https://www.archlinux.org/packages/?name=libxaw), [glu](https://www.archlinux.org/packages/?name=glu), [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [opencv](https://www.archlinux.org/packages/?name=opencv), [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/), [python-empy](https://aur.archlinux.org/packages/python-empy/), [log4cxx](https://aur.archlinux.org/packages/log4cxx/).
+Install build dependencies: [wget](https://www.archlinux.org/packages/?name=wget), [python](https://www.archlinux.org/packages/?name=python), [python-yaml](https://www.archlinux.org/packages/?name=python-yaml), [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [sip](https://www.archlinux.org/packages/?name=sip), [python-sip](https://www.archlinux.org/packages/?name=python-sip), [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5), [git](https://www.archlinux.org/packages/?name=git), [cmake](https://www.archlinux.org/packages/?name=cmake), [asio](https://www.archlinux.org/packages/?name=asio), [tinyxml](https://www.archlinux.org/packages/?name=tinyxml), [tinyxml2](https://www.archlinux.org/packages/?name=tinyxml2), [eigen](https://www.archlinux.org/packages/?name=eigen), [libxaw](https://www.archlinux.org/packages/?name=libxaw), [glu](https://www.archlinux.org/packages/?name=glu), [qt5-base](https://www.archlinux.org/packages/?name=qt5-base), [opencv](https://www.archlinux.org/packages/?name=opencv), [hdf5](https://www.archlinux.org/packages/?name=hdf5), [vtk](https://www.archlinux.org/packages/?name=vtk), [glew](https://www.archlinux.org/packages/?name=glew), [python-vcstool](https://aur.archlinux.org/packages/python-vcstool/), [python-empy](https://aur.archlinux.org/packages/python-empy/), [log4cxx](https://aur.archlinux.org/packages/log4cxx/).
 
 Fetch the sources:
 
 ```
 $ mkdir -p ~/ros2_ws/src
 $ cd ~/ros2_ws
-$ wget [https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos](https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos)
+$ wget [https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos](https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos)
 $ vcs import src < ros2.repos
 
 ```
 
 Presently some fixes are required:
 
+Edit `build/qt_gui_cpp/sip/qt_gui_cpp_sip/Makefile:12`, replacing `$$[QT_INSTALL_LIBS]` with `/usr/lib`. [Github issue](https://github.com/ros-visualization/rviz/issues/1382#issuecomment-507007580)
+
+Create a symbolic link to fix `fatal error: numpy/ndarrayobject.h: No such file or directory` [Github issue](https://github.com/ros2/rosidl_python/issues/66#issuecomment-507009953):
+
 ```
-$ cd ~/ros2_ws/src/ros2/rviz/
-$ git remote add racko [https://github.com/racko/rviz.git](https://github.com/racko/rviz.git)
-$ git fetch racko added_cmake_project_type fix_fallthrough fix_wrong_yaml_cpp
-$ git cherry-pick racko/added_cmake_project_type racko/fix_fallthrough racko/fix_wrong_yaml_cpp
+# ln -s /usr/lib/python3.7/site-packages/numpy/core/include/numpy /usr/include/python3.7m/numpy
 
 ```
 

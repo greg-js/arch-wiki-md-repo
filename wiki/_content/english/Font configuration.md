@@ -173,7 +173,7 @@ Using BCI hinting, instructions in TrueType fonts are rendered according to Free
 
 ```
 
-**Note:** You can switch BCI implementations by editing `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode, emulates Windows 98; 2.6 default), `truetype:interpreter-version=38` ("Infinality" subpixel mode), `truetype:interpreter-version=40` (minimal subpixel mode; 2.7 default). Subpixel rendering should use a subpixel BCI. For details, see [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html).
+**Note:** You can switch BCI implementations by editing `/etc/profile.d/freetype2.sh` which includes a brief documentation. Most popular values are `truetype:interpreter-version=35` (classic mode, emulates Windows 98; 2.6 default), `truetype:interpreter-version=38` ("Infinality" subpixel mode), `truetype:interpreter-version=40` (minimal subpixel mode; 2.7 default). If you prefer classic Windows ClearType style you can use `truetype:interpreter-version=36`. Subpixel rendering should use a subpixel BCI. For details, see [[1]](https://www.freetype.org/freetype2/docs/reference/ft2-properties.html#tt_interpreter_version_xxx).
 
 #### Autohinter
 

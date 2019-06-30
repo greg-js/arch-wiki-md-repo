@@ -3,12 +3,12 @@ Related articles
 *   [GnuPG](/index.php/GnuPG "GnuPG")
 *   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
 
-To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. The current Master Signing Keys are found [here](https://www.archlinux.org/master-keys/). At least three, of these Master Signing Keys, are used to sign the Developer's and Trusted User's own keys. They are then used to sign their packages. Each user also has a unique PGP key, which is generated when you configure *pacman-key*. It is this web of trust that links the user's key to the Master Keys.
+To determine if packages are authentic, *pacman* uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. The current Master Signing Keys are found [here](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign the Developer's and Trusted User's own keys. They are then used to sign their packages. Each user also has a unique PGP key, which is generated when you configure *pacman-key*. It is this web of trust that links the user's key to the master keys.
 
 Examples of webs of trust:
 
-*   **Custom packages**: Packages you made and signed with your own key.
-*   **Unofficial packages**: Packages made and signed by a developer. You then used your key to sign that developer's key.
+*   **Custom packages**: Packages made and signed with a local key.
+*   **Unofficial packages**: Packages made and signed by a developer. Then, a local key was used to sign the developer's key.
 *   **Official packages**: Packages made and signed by a developer. The developer's key was signed by the Arch Linux master keys. You used your key to sign the master keys, and you trust them to vouch for developers.
 
 **Note:** The HKP protocol uses 11371/tcp for communication. In order to get the signed keys from the servers (using *pacman-key*), this port is required for communication.
@@ -108,7 +108,7 @@ Once you have downloaded a developer key, you will not have to download it again
 
 ### Adding unofficial keys
 
-This method can be used, for example, to add your own key to the *pacman* keyring, or to enable signed [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+This method can be utilized to add a key to the *pacman* keyring, or to enable signed [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
 First, get the **key ID** (`*keyid*`) from its owner. Then add it to the keyring using one of the two methods:
 
@@ -211,7 +211,7 @@ You need to comment out any repository-specific SigLevel settings too because th
 
 ### Resetting all the keys
 
-If you want to remove or reset all the keys installed in your system, you can remove `/etc/pacman.d/gnupg` folder as root and rerun `pacman-key --init` and following that add the keys as preferred.
+If you want to remove or reset all the keys installed in your system, you can remove `/etc/pacman.d/gnupg` folder as root and rerun `pacman-key --init` followed by `pacman-key --populate archlinux` to re-add the default keys.
 
 ### Removing stale packages
 

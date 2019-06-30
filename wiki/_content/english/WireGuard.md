@@ -131,23 +131,22 @@ Invoking the [wg(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg.8) command wi
 
 As an example, when Peer A has been configured we are able to see its identity and its associated peers:
 
+ `[user@peer-a]# wg` 
 ```
- peer-a # wg
- interface: wg0
-   public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
-   private key: (hidden)
-   listening port: 48574
+interface: wg0
+  public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
+  private key: (hidden)
+  listening port: 48574
 
- peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
-   endpoint: 203.0.113.102:39814
-   allowed ips: 10.0.0.2/32
-
+peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
+  endpoint: 203.0.113.102:39814
+  allowed ips: 10.0.0.2/32
 ```
 
 At this point one could reach the end of the tunnel:
 
 ```
- peer-a $ ping 10.0.0.2
+[user@peer-a]$ ping 10.0.0.2
 
 ```
 
@@ -220,7 +219,7 @@ The purpose of this section is to setup a WireGuard "server" and generic "client
 On the machine acting as the server, first enable IPv4 forwarding using [sysctl](/index.php/Sysctl "Sysctl"):
 
 ```
-# sysctl net.ipv4.ip_forward=1
+# sysctl -w net.ipv4.ip_forward=1
 
 ```
 
@@ -334,8 +333,8 @@ $ dd if=/dev/zero bs=1024K count=1024 | nc -v 10.0.0.203 2222
 
 Status can be monitored using `wg` directly.
 
+ `# wg` 
 ```
-# wg
 interface: wg0
   public key: UguPyBThx/+xMXeTbRYkKlP0Wh/QZT3vTLPOVaaXTD8=
   private key: (hidden)
@@ -347,7 +346,6 @@ peer: 9jalV3EEBnVXahro0pRMQ+cHlmjE33Slo9tddzCVtCw=
   allowed ips: 10.0.0.0/0
   latest handshake: 1 minutes, 17 seconds ago
   transfer: 56.43 GiB received, 1.06 TiB sent
-
 ```
 
 ## Troubleshooting
@@ -519,7 +517,7 @@ GatewayOnlink=true
 It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in the configuration file with:
 
 ```
- PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
+PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
 
 ```
 

@@ -587,7 +587,7 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 *Pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
 
-Pacman hooks are used, for example, in combination with `systemd-sysusers` and `systemd-tmpfiles` to automatically create system users and files during the installation of packages. For example, package `tomcat8` specifies that it wants a system user called `tomcat8` and certain directories owned by this user. The pacman hooks `systemd-sysusers.hook` and `systemd-tmpfiles.hook` invoke `systemd-sysusers` and `systemd-tmpfiles` when pacman determines that package `tomcat8` contains files specifying users and tmp files.
+*Pacman* hooks are used, for example, in combination with `systemd-sysusers` and `systemd-tmpfiles` to automatically create system users and files during the installation of packages. For example, package `tomcat8` specifies that it wants a system user called `tomcat8` and certain directories owned by this user. The *pacman* hooks `systemd-sysusers.hook` and `systemd-tmpfiles.hook` invoke `systemd-sysusers` and `systemd-tmpfiles` when *pacman* determines that package `tomcat8` contains files specifying users and tmp files.
 
 For more information on alpm hooks, see [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
@@ -698,9 +698,9 @@ In the case that *pacman* crashes with a "database write" error while removing p
 
 ### "Unable to find root device" error after rebooting
 
-Most likely your initramfs got broken during a kernel update (improper use of *pacman'*s `--force` option can be a cause). You have two options; first, try the *Fallback* entry.
+Most likely the [initramfs](/index.php/Initramfs "Initramfs") became corrupted during a [kernel](/index.php/Kernel "Kernel") update (improper use of *pacman'*s `--force` option can be a cause). There are two options; first, try the *Fallback* entry.
 
-**Tip:** In case you removed the *Fallback* entry, you can always press the `Tab` key when the bootloader menu shows up (for Syslinux) or `e` (for GRUB or systemd-boot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your bootloader) to boot with the new parameters.
+**Tip:** In case you removed the *Fallback* entry, you can always press the `Tab` key when the boot loader menu shows up (for Syslinux) or `e` (for GRUB or systemd-boot), rename it `initramfs-linux-fallback.img` and press `Enter` or `b` (depending on your [boot loader](/index.php/Boot_loader "Boot loader")) to boot with the new parameters.
 
 Once the system starts, run this command (for the stock [linux](https://www.archlinux.org/packages/?name=linux) kernel) either from the console or from a terminal to rebuild the initramfs image:
 
@@ -729,7 +729,7 @@ Afterwards, it is recommended that you run `exit`, `umount /mnt/{boot,}` and `re
 
 ### Signature from "User <email@example.org>" is unknown trust, installation failed
 
-You can try to either:
+Potential solutions:
 
 *   Update the known keys, i.e. `pacman-key --refresh-keys`
 *   Manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
@@ -737,7 +737,7 @@ You can try to either:
 
 ### Request on importing PGP keys
 
-If [installing](/index.php/Installation_guide "Installation guide") Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed)).
+If installing Arch with an outdated ISO, you are likely prompted to import PGP keys. Agree to download the key to proceed. If you are unable to add the PGP key successfully, update the keyring or upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (see [above](#Signature_from_"User_<email@example.org>"_is_unknown_trust,_installation_failed)).
 
 ### Error: key "0123456789ABCDEF" could not be looked up remotely
 
@@ -792,17 +792,17 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 
 ### What happens during package install/upgrade/removal
 
-When successfully completing a package transaction, pacman performs for the following high-level steps:
+When successfully completing a package transaction, *pacman* performs the following high-level steps:
 
-1.  pacman obtains the to-be installed package file for all packages queued in a transaction
-2.  pacman performs various checks that the packages can likely be installed
-3.  if pre-existing pacman `PreTransaction` hooks apply, they are executed
-4.  Each package is installed/upgraded/removed in turn
-    1.  if the package has an install script, its `pre_install` function is executed (or `pre_upgrade` or `pre_remove` in the case of an upgraded or removed package)
-    2.  pacman deletes all the files from a pre-existing version of the package (in the case of an upgraded or removed package). However, files that were marked as configuration files in the package are kept (see [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")).
-    3.  pacman untars the package and dumps its files into the file system (in the case of an installed or upgraded package). Files that would overwrite kept, and manually modified, configuration files (see previous step), are stored with a new name (.pacnew).
-    4.  if the package has an install script, its `post_install` function is executed (or `post_upgrade` or `post_remove` in the case of an upgraded or removed package)
-5.  if pacman `PostTransaction` hooks that exist at the end of the transaction apply, they are executed
+1.  *pacman* obtains the to-be installed package file for all packages queued in a transaction.
+2.  *pacman* performs various checks that the packages can likely be installed.
+3.  If pre-existing *pacman* `PreTransaction` hooks apply, they are executed.
+4.  Each package is installed/upgraded/removed in turn.
+    1.  If the package has an install script, its `pre_install` function is executed (or `pre_upgrade` or `pre_remove` in the case of an upgraded or removed package).
+    2.  *pacman* deletes all the files from a pre-existing version of the package (in the case of an upgraded or removed package). However, files that were marked as configuration files in the package are kept (see [Pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")).
+    3.  *pacman* untars the package and dumps its files into the file system (in the case of an installed or upgraded package). Files that would overwrite kept, and manually modified, configuration files (see previous step), are stored with a new name (.pacnew).
+    4.  If the package has an install script, its `post_install` function is executed (or `post_upgrade` or `post_remove` in the case of an upgraded or removed package).
+5.  If *pacman* `PostTransaction` hooks that exist at the end of the transaction apply, they are executed.
 
 ## See also
 

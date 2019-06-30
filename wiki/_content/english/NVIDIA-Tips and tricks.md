@@ -14,6 +14,8 @@
     *   [6.2 nvidia-smi](#nvidia-smi)
     *   [6.3 nvclock](#nvclock)
 *   [7 Set fan speed at login](#Set_fan_speed_at_login)
+    *   [7.1 for non-headless system](#for_non-headless_system)
+    *   [7.2 for headless system](#for_headless_system)
 *   [8 Manual configuration](#Manual_configuration)
     *   [8.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
     *   [8.2 Overriding monitor detection](#Overriding_monitor_detection)
@@ -218,6 +220,10 @@ Option "Coolbits" "4"
 
 **Note:** GeForce 400/500 series cards cannot currently set fan speeds at login using this method. This method only allows for the setting of fan speeds within the current X session by way of nvidia-settings.
 
+*nvidia-settings* needs a X to works properly.
+
+### for non-headless system
+
 Place the following line in your [xinitrc](/index.php/Xinitrc "Xinitrc") file to adjust the fan when you launch Xorg. Replace `*n*` with the fan speed percentage you want to set.
 
 ```
@@ -255,6 +261,36 @@ $ nvidia-xconfig --cool-bits=4
 ```
 
 **Note:** On some laptops (including the ThinkPad [X1 Extreme](https://devtalk.nvidia.com/default/topic/1052110/linux/can-t-control-gtx-1050-ti-max-q-fan-on-thinkpad-x1-extreme-laptop/post/5340658/#5340658) and [P51/P52](https://devtalk.nvidia.com/default/topic/1048624/linux/how-to-set-gpu-fan-speed/post/5321818/#5321818)), there are two fans, but neither are controlled by nvidia.
+
+### for headless system
+
+You need to install Xorg and start X, for example, you could write a script `/usr/bin/gpufancontrol`:
+
+```
+#!/bin/bash
+pkill -9 Xorg
+sleep 3
+X :0 &
+sleep 3
+export DISPLAY=:0
+nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUTargetFanSpeed=*n*"
+
+```
+
+to start this script at boot and managed by systemd, create a systemd unit `/etc/systemd/system/gpufancontrol.service`:
+
+```
+[Unit]
+Description=GPU fan control
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/gpufancontrol
+
+[Install]
+WantedBy=default.target
+
+```
 
 ## Manual configuration
 

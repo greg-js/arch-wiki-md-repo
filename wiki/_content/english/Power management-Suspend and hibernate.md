@@ -29,6 +29,7 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [3.1 About swap partition/file size](#About_swap_partition/file_size)
     *   [3.2 Required kernel parameters](#Required_kernel_parameters)
         *   [3.2.1 Hibernation into swap file](#Hibernation_into_swap_file)
+        *   [3.2.2 Hibernation into swap file on BTRFS](#Hibernation_into_swap_file_on_BTRFS)
     *   [3.3 Configure the initramfs](#Configure_the_initramfs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
@@ -94,7 +95,10 @@ The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot
 
 #### Hibernation into swap file
 
-**Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+**Warning:**
+
+*   [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
+*   [systemd](https://www.archlinux.org/packages/?name=systemd) does not currently support hibernating into a swap file on Btrfs, even with Linux 5.0\. Fortunately, there is an alternate method: [Power_management/Suspend_and_hibernate#Hibernation_into_swap_file_on_Btrfs](/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file_on_Btrfs "Power management/Suspend and hibernate"). For more information, see [systemd issue 11939](https://github.com/systemd/systemd/issues/11939).
 
 Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`. Note that the `resume` keyword should still point to the partition where your swapfile resides as described above.
 
@@ -115,6 +119,61 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 In the example the value of `*swap_file_offset*` is the first `38912` with the two periods.
 
 **Tip:** The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
+
+#### Hibernation into swap file on BTRFS
+
+On Btrfs, the "physical" offset you get from filefrag isn't the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
+
+An alternate method is to use [this tool](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.
+
+Download or copy the text into a file named `btrfs_map_physical.c`.], then compile it:
+
+ `gcc -O2 -o btrfs_map_physical btrfs_map_physical.c` 
+
+Run it. For example:
+
+ `# ./btrfs_map_physical /.swapfile/swapfile ` 
+```
+FILE OFFSET  EXTENT TYPE  LOGICAL SIZE  LOGICAL OFFSET  PHYSICAL SIZE  DEVID  PHYSICAL OFFSET
+0            regular      4096          2927632384      268435456      1      4009762816
+4096         prealloc     268431360     2927636480      268431360      1      4009766912
+268435456    prealloc     268435456     3251634176      268435456      1      4333764608
+536870912    prealloc     268435456     3520069632      268435456      1      4602200064
+805306368    prealloc     268435456     3788505088      268435456      1      4870635520
+1073741824   prealloc     268435456     4056940544      268435456      1      5139070976
+1342177280   prealloc     268435456     4325376000      268435456      1      5407506432
+1610612736   prealloc     268435456     4593811456      268435456      1      5675941888
+1879048192   prealloc     268435456     4862246912      268435456      1      5944377344
+2147483648   prealloc     268435456     5130682368      268435456      1      6212812800
+2415919104   prealloc     268435456     5399117824      268435456      1      6481248256
+2684354560   prealloc     268435456     5667553280      268435456      1      6749683712
+2952790016   prealloc     268435456     5935988736      268435456      1      7018119168
+3221225472   prealloc     268435456     6204424192      268435456      1      7286554624
+3489660928   prealloc     268435456     6472859648      268435456      1      7554990080
+3758096384   prealloc     268435456     6741295104      268435456      1      7823425536
+4026531840   prealloc     268435456     7009730560      268435456      1      8091860992
+4294967296   prealloc     268435456     7278166016      268435456      1      8360296448
+4563402752   prealloc     268435456     7546601472      268435456      1      8628731904
+4831838208   prealloc     268435456     7815036928      268435456      1      8897167360
+5100273664   prealloc     268435456     8083472384      268435456      1      9165602816
+5368709120   prealloc     268435456     8351907840      268435456      1      9434038272
+5637144576   prealloc     268435456     8620343296      268435456      1      9702473728
+5905580032   prealloc     268435456     8888778752      268435456      1      9970909184
+6174015488   prealloc     268435456     9157214208      268435456      1      10239344640
+6442450944   prealloc     268435456     9425649664      268435456      1      10507780096
+6710886400   prealloc     268435456     9694085120      268435456      1      10776215552
+6979321856   prealloc     268435456     9962520576      268435456      1      11044651008
+7247757312   prealloc     268435456     10230956032     268435456      1      11313086464
+7516192768   prealloc     268435456     10499391488     268435456      1      11581521920
+7784628224   prealloc     268435456     10767826944     268435456      1      11849957376
+8053063680   prealloc     268435456     11036262400     268435456      1      12118392832
+8321499136   prealloc     268435456     11304697856     268435456      1      12386828288
+
+```
+
+The first physical offset should be the one. In this example, we will use `4009762816`. Divide that by 4096 and you have your resume_offset value. In this example, it is `978946`.
+
+Systemd overrides those settings incorrectly. Instead of using `systemctl hibernate` to hibernate, use `# echo disk > /sys/power/state`. As a regular user you could use `$ echo disk | sudo tee /sys/power/state` instead.
 
 **Note:**
 

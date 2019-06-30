@@ -445,6 +445,39 @@ WPAConfigSection=(
 
 **Note:** If trying to connect to an SSID with non-ASCII characters (unicode, emoji, etc), you can specify the SSID as hex instead of as a string, e.g. `ssid=F09F90BA` for "🐺". When unsure on the hex encoding, run *wifi-menu* (be sure to remove the \ and x characters).
 
+This is an example that works with [eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") on at least one campus:
+
+```
+Description='<some description>'
+Interface=<name of the interface>
+Connection=wireless
+Security=wpa-configsection
+IP=dhcp
+ESSID=<id of the provider>
+WPAConfigSection=(
+    'ssid="<id of the provider>"'
+    'key_mgmt=WPA-EAP'
+    'pairwise=CCMP'
+    'group=CCMP TKIP'
+    'eap=PEAP'
+    'ca_cert="<path to .pem certificate>"
+    'identity="<username>"'
+    'altsubject_match="DNS:radius1.<domain>;DNS:radius2.<domain>;DNS:radius3.<domain>;DNS:radius4.<domain>"'
+    'phase2="auth=MSCHAPV2"'
+    'password="<password>"'
+)
+
+```
+
+The configuration provided by the institution assigned an empty value to `anonymous_identity`:
+
+```
+'anonymous_identity=""'
+
+```
+
+This resulted in a failure to connect. Deleting this line resolved the issue.
+
 ### resolv.conf
 
 If you use `DNS*` options in your profile, *netctl* calls [resolvconf](/index.php/Resolvconf "Resolvconf") to overwrite [resolv.conf](/index.php/Resolv.conf "Resolv.conf").

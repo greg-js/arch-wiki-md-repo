@@ -68,6 +68,7 @@
         *   [1.4.7 Webcam](#Webcam)
         *   [1.4.8 DVD authoring](#DVD_authoring)
         *   [1.4.9 DVD ripping](#DVD_ripping)
+        *   [1.4.10 Video thumbnails](#Video_thumbnails)
     *   [1.5 Collection managers](#Collection_managers)
     *   [1.6 Media servers](#Media_servers)
     *   [1.7 Metadata](#Metadata)
@@ -1815,6 +1816,12 @@ See also [Wikipedia:List of DVD authoring applications](https://en.wikipedia.org
 #### DVD ripping
 
 See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Optical disc drive").
+
+#### Video thumbnails
+
+*   **vcsi** — Create video contact sheets. A video contact sheet is an image composed of video capture thumbnails arranged on a grid.
+
+	[https://github.com/amietn/vcsi](https://github.com/amietn/vcsi) || [vcsi-git](https://aur.archlinux.org/packages/vcsi-git/)
 
 ### Collection managers
 

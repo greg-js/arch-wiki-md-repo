@@ -244,10 +244,17 @@ The routing table is managed using [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/m
 
 *PREFIX* is either a CIDR notation or `default` for the default gateway.
 
-List routes:
+List IPv4 routes:
 
 ```
 $ ip route show
+
+```
+
+List IPv6 routes:
+
+```
+$ ip -6 route
 
 ```
 

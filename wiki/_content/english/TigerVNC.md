@@ -113,6 +113,8 @@ exec startxfce4
 
 To start [GNOME](/index.php/GNOME "GNOME"), replace `exec startxfce4` by `exec dbus-launch gnome-session` in the example above.
 
+To start [Cinnamon](/index.php/Cinnamon "Cinnamon"), replace `exec startxfce4` by `exec dbus-launch cinnamon-session` in the example above.
+
 Make sure `~/.vnc/xstartup` has a execute permission.
 
 #### Edit the optional config file

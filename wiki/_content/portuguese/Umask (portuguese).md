@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [umask](/index.php/Umask "Umask"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=572529) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [umask](/index.php/Umask "Umask"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Umask&diff=0&oldid=576154) na versão em inglês.
 
 Artigos relacionados
 
@@ -32,7 +32,7 @@ Isso é, as permissões resultantes `R` são o resultado da [conjunção binári
 
 **Nota:**
 
-*   O Linux não permite que um arquivo seja criado com permissões de execução – de fato, as permissões de criação padrão são `777` para diretórios, mas apenas `666` para arquivos.
+*   O Linux não permite que um arquivo seja criado com permissões de execução – as permissões de criação padrão são `777` para diretórios e apenas `666` para arquivos.
 *   No Linux, apenas os bits de permissão do arquivo da máscara são usados – veja [umask(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.2). Os bits *suid*, *sgid* e *sticky* da máscara são ignorados.
 
 Por exemplo, suponha que a máscara do modo de criação de arquivos seja `027`. Aqui, a representação bit a bit de cada dígito representa:

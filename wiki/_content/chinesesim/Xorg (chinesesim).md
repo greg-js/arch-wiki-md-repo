@@ -48,25 +48,25 @@ Xorg 在 Linux 用户中非常流行，已经成为图形用户程序的必备�
     *   [6.1 List of composite managers](#List_of_composite_managers)
 *   [7 技巧和技巧](#技巧和技巧)
     *   [7.1 调整 X 启动参数(/usr/bin/startx)](#调整_X_启动参数(/usr/bin/startx))
-    *   [7.2 Nested X session](#Nested_X_session)
-    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
-    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
-    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
-    *   [7.6 Block TTY access](#Block_TTY_access)
-    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
+    *   [7.2 嵌套 X 会话](#嵌套_X_会话)
+    *   [7.3 远程启动 GUI 程序](#远程启动_GUI_程序)
+    *   [7.4 按需禁用和启用输入源](#按需禁用和启用输入源)
+    *   [7.5 使用热建结束应用程序](#使用热建结束应用程序)
+    *   [7.6 阻止 TTY 访问](#阻止_TTY_访问)
+    *   [7.7 防止用户结束 X](#防止用户结束_X)
 *   [8 故障和修复](#故障和修复)
     *   [8.1 通用问题](#通用问题)
-    *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen,_No_protocol_specified..,_Resource_temporarily_unavailable_for_all_or_some_users)
+    *   [8.2 黑屏，没有指定协议..，资源暂时不可用等问题](#黑屏，没有指定协议..，资源暂时不可用等问题)
     *   [8.3 CTRL 右键无法与和oss keymap一起工作](#CTRL_右键无法与和oss_keymap一起工作)
     *   [8.4 Ctrl-Alt-Backspace无法退出X](#Ctrl-Alt-Backspace无法退出X)
-        *   [8.4.1 System-wide](#System-wide)
-        *   [8.4.2 User-specific](#User-specific)
+        *   [8.4.1 应用于整个系统](#应用于整个系统)
+        *   [8.4.2 应用于特定用户](#应用于特定用户)
     *   [8.5 无法用"su"以root身份启动X客户端](#无法用"su"以root身份启动X客户端)
     *   [8.6 无法加载'(null)'字体](#无法加载'(null)'字体)
     *   [8.7 无法运行在frambuffer模式下](#无法运行在frambuffer模式下)
     *   [8.8 Matrox显卡的DRI功能失效](#Matrox显卡的DRI功能失效)
     *   [8.9 修复：在出现GUI登录界面之前，不启动Xorg](#修复：在出现GUI登录界面之前，不启动Xorg)
-    *   [8.10 X failed to start : Keyboard initialization failed](#X_failed_to_start_:_Keyboard_initialization_failed)
+    *   [8.10 X 启动失败：键盘初始化失败](#X_启动失败：键盘初始化失败)
     *   [8.11 不使用 root 权限的 Xorg (v1.16)](#不使用_root_权限的_Xorg_(v1.16))
 
 ## 安装
@@ -273,7 +273,7 @@ $ lspci | grep VGA
 
 ```
 
-这个示例的BusID是 1:0:0.
+这个示例的BusID是 1:0:0。
 
 ### 显示大小和 DPI
 
@@ -411,37 +411,37 @@ $ man Xserver
 
 ```
 
-### Nested X session
+### 嵌套 X 会话
 
-To run a nested session of another desktop environment:
+在嵌套的 X 的会话中启动其他桌面环境：
 
 ```
 $ /usr/bin/Xnest :1 -geometry 1024x768+0+0 -ac -name Windowmaker & wmaker -display :1
 
 ```
 
-This will launch a Window Maker session in a 1024 by 768 window within your current X session.
+这会在你当前的 X 会话中启动一个1024 × 768大小的 Window Maker 会话。
 
-This needs the package [xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest) to be installed.
+需要安装[xorg-server-xnest](https://www.archlinux.org/packages/?name=xorg-server-xnest)。
 
-### Starting GUI programs remotely
+### 远程启动 GUI 程序
 
-See main article: [SSH#X11 forwarding](/index.php/SSH#X11_forwarding "SSH").
+查看主条目：[X11转发](/index.php/OpenSSH#X11_forwarding "OpenSSH")。
 
-### On-demand disabling and enabling of input sources
+### 按需禁用和启用输入源
 
-With the help of *xinput* you can temporarily disable or enable input sources. This might be useful, for example, on systems that have more than one mouse, such as the ThinkPads and you would rather use just one to avoid unwanted mouse clicks.
+利用*xinput*你可以您可以暂时禁用或启用输入源。这可能很有用，例如，在具有多个鼠标的系统上（如ThinkPad），可以只使用一个鼠标以避免不必要的点击。
 
-[Install](/index.php/Pacman "Pacman") the [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) package from the [official repositories](/index.php/Official_repositories "Official repositories").
+从[official repositories](/index.php/Official_repositories "Official repositories")[安装](/index.php/Pacman "Pacman") [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput)。
 
-Find the ID of the device you want to disable:
+找到要禁用的设备的ID：
 
 ```
 $ xinput
 
 ```
 
-For example in a Lenovo ThinkPad T500, the output looks like this:
+例如在Lenovo ThinkPad T500中，输出如下所示：
 
  `$ xinput` 
 ```
@@ -459,23 +459,23 @@ For example in a Lenovo ThinkPad T500, the output looks like this:
 
 ```
 
-Disable the device with `xinput --disable *device_id*`, where *device_id* is the device ID you want to disable. In this example we will disable the Synaptics Touchpad, with the ID 10:
+使用`xinput --disable *device_id*`禁用设备，*device_id*是你要禁用的设备的ID。在此示例中，我们将禁用ID为10的Synaptics触摸板：
 
 ```
 $ xinput --disable 10
 
 ```
 
-To re-enable the device, just issue the opposite command:
+要重新启用该设备，只需发出相反的命令：
 
 ```
 $ xinput --enable 10
 
 ```
 
-### Killing application with hotkey
+### 使用热建结束应用程序
 
-Run script on hotkey:
+在热键上运行脚本：
 
 ```
 #!/bin/bash
@@ -485,11 +485,11 @@ kill -9 $pid
 
 ```
 
-Deps: [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop), [xdotool](https://www.archlinux.org/packages/?name=xdotool)
+依赖：[xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop)，[xdotool](https://www.archlinux.org/packages/?name=xdotool)
 
-### Block TTY access
+### 阻止 TTY 访问
 
-To block tty access when in an X add the following to xorg.conf:
+要在X中阻止tty访问，请将以下内容添加到xorg.conf：
 
 ```
 Section "ServerFlags"
@@ -497,9 +497,9 @@ Section "ServerFlags"
 EndSection
 ```
 
-### Prevent a user from killing X
+### 防止用户结束 X
 
-To prevent a user from killing when it is running add the following to xorg.conf:
+要防止用户在运行时被结束，请将以下内容添加到xorg.conf：
 
 ```
 Section "ServerFlags"
@@ -533,9 +533,9 @@ wgetpaste 用法：
  `$wgetpaste </path/to/file>` 
 **注意:** 解决 X 相关问题时，请提供上面所说的内容的详细信息。
 
-### Black screen, No protocol specified.., Resource temporarily unavailable for all or some users
+### 黑屏，没有指定协议..，资源暂时不可用等问题
 
-X creates configuration and temporary files in current user's home directory. Make sure there is free disk space available on the partition your home directory resides in. Unfortunately, X server does not provide any more obvious information about lack of disk space in this case.
+X在当前用户的主目录中创建配置和临时文件。确保主目录所在的分区上有可用的可用磁盘空间。然而，在这种情况下，X服务器不提供有关磁盘空间不足的更明显信息。
 
 ### CTRL 右键无法与和oss keymap一起工作
 
@@ -557,7 +557,7 @@ include "level5(rctrl_switch)"
 
 ### Ctrl-Alt-Backspace无法退出X
 
-#### System-wide
+#### 应用于整个系统
 
 Within `/etc/X11/xorg.conf.d/10-evdev.conf`, simply add the following:
 
@@ -572,7 +572,7 @@ EndSection
 
 **注意:** 在KDE中，这种全局设置没有任何效果。恢复的方法是，通过Kickoff启动器 > 计算机 > 系统设置打开系统设置窗口。点击“输入设备”，在新窗口中选择“键盘”，然后点击“高级”标签页。点选“配置键盘选项”选框。展开“杀死X服务器的键盘序列”菜单，确定选中 `Ctrl+Alt+Backspace` ，点击“应用”按钮然后关闭系统设置窗口。`Ctrl+Alt+Backspace` 又回来啦。
 
-#### User-specific
+#### 应用于特定用户
 
 另外一种方法是加入以下内容到`~/.xinitrc`：
 
@@ -665,9 +665,9 @@ Option "OldDmaInit" "On"
 
 挂载该分区至 `/mnt`。 这样你的文件系统就挂载在了 `/mnt` 下。例如，可以删除 `gdm` 来阻止Xorg正常启动，或者做其他一些必需的改动。
 
-### X failed to start : Keyboard initialization failed
+### X 启动失败：键盘初始化失败
 
-If your hard disk is full, startx will fail. `/var/log/Xorg.0.log` will end with:
+遇到“X failed to start : Keyboard initialization failed”。 如果您的硬盘已满，startx将失败。 `/var/log/Xorg.0.log` 的末尾会是：
 
 ```
 (EE) Error compiling keymap (server-0)
@@ -686,7 +686,7 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 ```
 
-Make some free space on your root partition and X will start.
+在/分区上腾出一些可用空间，X才能启动。
 
 ### 不使用 root 权限的 Xorg (v1.16)
 

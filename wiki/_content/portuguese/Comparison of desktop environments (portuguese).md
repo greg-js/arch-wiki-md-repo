@@ -1,10 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Comparison of desktop environments](/index.php/Comparison_of_desktop_environments "Comparison of desktop environments"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Comparison_of_desktop_environments&diff=0&oldid=570024) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Comparison of desktop environments](/index.php/Comparison_of_desktop_environments "Comparison of desktop environments"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Comparison_of_desktop_environments&diff=0&oldid=574106) na versão em inglês.
 
 Veja [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") para o artigo principal.
 
 Veja também [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
 
-<caption>Visão geral dos ambientes desktop</caption>
 | Ambiente
 de desktop | Widget toolkit | Gerenciador de janela | Barra de tarefas | Emulador de terminal | Gerenciador de arquivos | Calculadora | Editor de texto | Visualizador de imagens | Reprodutor de mídia | Visualizador de documentos | Navegador web | Gerenciador de exibição |
 | [Budgie](/index.php/Budgie "Budgie") | [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) | [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](https://www.archlinux.org/packages/?name=gedit) | [eog](https://www.archlinux.org/packages/?name=eog) | [totem](https://www.archlinux.org/packages/?name=totem) | [evince](https://www.archlinux.org/packages/?name=evince) | [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [gdm](https://www.archlinux.org/packages/?name=gdm) |

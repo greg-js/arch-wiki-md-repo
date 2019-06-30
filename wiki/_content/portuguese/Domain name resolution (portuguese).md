@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=573789) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=576022) na versão em inglês.
 
 Artigos relacionados
 
@@ -173,7 +173,7 @@ por HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTP
 | [Stubby](/index.php/Stubby "Stubby") | [stubby](https://www.archlinux.org/packages/?name=stubby) | Não | Não | Não | Sim | Não | Servidor | Não | Resolvedor | Não |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | [systemd](https://www.archlinux.org/packages/?name=systemd) | Não | Não | Sim | Sim | [Sim](/index.php/Systemd-resolvconf "Systemd-resolvconf") | [servidor limitado](https://github.com/systemd/systemd/issues/4621#issuecomment-260050033) e resolvedor | Não | Resolvedor inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
 | [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) | Parcial | Não | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
-| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [Não](https://kb.isc.org/docs/aa-01386) | Não |
+| [BIND](/index.php/BIND "BIND") | [bind](https://www.archlinux.org/packages/?name=bind) | Sim | Sim | Sim | Sim | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | [stunnel#DNS over TLS](/index.php/Stunnel#DNS_over_TLS "Stunnel") | Não |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | [knot-resolver](https://aur.archlinux.org/packages/knot-resolver/) | Sim | Sim | Sim | Sim | Não | Sim | Não | Sim | [Servidor](https://knot-resolver.readthedocs.io/en/stable/modules.html#dns-over-http-doh) |
 | [MaraDNS](https://en.wikipedia.org/wiki/MaraDNS "wikipedia:MaraDNS") | [maradns](https://aur.archlinux.org/packages/maradns/) | Sim | Sim | Sim | Não | Não | Sim | Não | Não | Não |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | [pdnsd](https://www.archlinux.org/packages/?name=pdnsd) | Sim | Sim | Permanente | Não | [Sim](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)") | Sim | Não | Não | Não |
@@ -199,9 +199,9 @@ geográfico |
 
 Para implementá-lo, você precisa usar um [resolvedor local](#Servidores_DNS) porque o glibc não oferece suporte a isso.
 
-Em um ambiente dinâmico (laptops e algumas extensões de desktops), você precisa configurar seu resolvedor com base na(s) rede(s) à(s) qual(is) você está conectado. A melhor maneira de fazer isso é usar [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") porque ele possui suporte a [vários assinantes](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)"). Alguns [gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede") possuem suporte, seja através do OpenResolv, ou configurando o resolvedor diretamente.
+Em um ambiente dinâmico (laptops e algumas extensões de desktops), você precisa configurar seu resolvedor com base na(s) rede(s) à(s) qual(is) você está conectado. A melhor maneira de fazer isso é usar [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") porque ele possui suporte a [vários assinantes](/index.php/Openresolv_(Portugu%C3%AAs)#Assinantes "Openresolv (Português)"). Alguns [gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede") possuem suporte, seja através do openresolv, ou configurando o resolvedor diretamente.
 
-**Nota:** Embora você possa usar outras condições para encaminhamento (por exemplo, IP de origem), "encaminhamento condicional" parece ser o nome usado para a condição "domínio consultado".
+**Nota:** Embora você possa usar outras condições para encaminhamento (por exemplo, endereço de IP de origem), "encaminhamento condicional" parece ser o nome usado para a condição "domínio consultado".
 
 ## Veja também
 

@@ -45,7 +45,7 @@ Enchant is available as the [enchant](https://www.archlinux.org/packages/?name=e
 
 Enchant is used by many applications through the following [GTK](/index.php/GTK "GTK") libraries:
 
-*   **gspell** — Flexible API to implement spell checking in GTK+ applications.
+*   **gspell** — Flexible API to implement spell checking in GTK applications.
 
 	[https://wiki.gnome.org/Projects/gspell](https://wiki.gnome.org/Projects/gspell) || [gspell](https://www.archlinux.org/packages/?name=gspell)
 

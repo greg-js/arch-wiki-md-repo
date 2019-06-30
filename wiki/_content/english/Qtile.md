@@ -7,7 +7,11 @@ From [Qtile web site](http://qtile.org/):
 
 	Qtile is a full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Starting](#Starting)
@@ -176,9 +180,13 @@ def autostart():
 If you want to locate the source of a problem, you can execute the following line in your terminal:
 
 ```
-echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
+echo "exec qtile" > /tmp/.start_qtile ; xinit /tmp/.start_qtile -- :2
 
 ```
+
+You can also consult the file in
+
+/home/$USER/.local/share/qtile/qtile.log
 
 ## See also
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages_for_other_distributions&diff=0&oldid=571379) na versão em inglês.
+
 Artigos relacionados
 
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
@@ -29,58 +31,58 @@ Artigos relacionados
 
 ## Geral
 
-*   [Virtualization](/index.php/Virtualization "Virtualization") is an obvious way, but requires maintaining additional system(s).
-*   Use distribution-specific packaging tools. Examples: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://aur.archlinux.org/packages/dpkg/) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Shortcuts such as [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) or [checkinstall](https://aur.archlinux.org/packages/checkinstall/) may be suited for less complex tasks.
-*   [Chroot](/index.php/Chroot "Chroot") to create a base system inside (yet separate from) Arch. Examples: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) (Debian), [dnf](https://aur.archlinux.org/packages/dnf/) (Fedora). This has the added benefit of building in a minimal, clean environment.
-*   Use chroot with packaging tools in an an automated fashion. Examples: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/) (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/) (Fedora).
-*   A different way to handle (possibly incompatible) depends is [static linking](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.xhtml). Please note that most distributions frown on this practice.
-*   Common practice applies regardless of distribution used. For example, do [not build packages as root](https://bbs.archlinux.org/viewtopic.php?id=67561).
+*   [Virtualização](/index.php/Virtualiza%C3%A7%C3%A3o "Virtualização") é uma forma óbvia, mas requer manutenção de sistema(s) adicional(is).
+*   Use ferramentas de empacotamento específica de distribuição. Exemplos: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://aur.archlinux.org/packages/dpkg/) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Atalhos como [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) ou [checkinstall](https://aur.archlinux.org/packages/checkinstall/) pode ser adequado para tarefas menos complexas.
+*   [Chroot](/index.php/Chroot_(Portugu%C3%AAs) "Chroot (Português)") para criar um sistema base dentro (apesar de separada do) Arch. Por exemplo: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap) (Debian), [dnf](https://aur.archlinux.org/packages/dnf/) (Fedora). Isso foi adicionado para beneficiar a construção em um ambiente mínimo e limpo.
+*   Use chroot com ferramentas de empacotamento de uma forma automatizada. Exemplos: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/) (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/) (Fedora).
+*   Uma forma diferente de lidar (possivelmente incompatível) com dependências é com [vínculo estático](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.xhtml). Por favor, note que a maioria das distribuições não gostam dessa prática.
+*   A prática comum se aplica independentemente da distribuição usada. Por exemplo, [não compilar pacotes como root](https://bbs.archlinux.org/viewtopic.php?id=67561).
 
 ## Debian
 
-The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.pdf) explains the groundwork. It describes use of the following tools:
+[Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.pdf) explica as bases, descrevendo o uso das seguintes ferramentas:
 
-*   **cowdancer** — Copy-on-write wrapper for pbuilder
+*   **cowdancer** — Interface de cópia e escrita para o pbuilder
 
 	[https://packages.debian.org/sid/cowdancer](https://packages.debian.org/sid/cowdancer) || [cowdancer](https://aur.archlinux.org/packages/cowdancer/)
 
-*   **debootstrap** — A tool used to create a Debian base system from scratch, without requiring the availability of dpkg or apt.
+*   **debootstrap** — Uma ferramenta usada para criar um sistema base Debian do zero, sem exibir a disponibilidade de dpkg ou apt.
 
 	[https://packages.debian.org/sid/debootstrap](https://packages.debian.org/sid/debootstrap) || [debootstrap](https://www.archlinux.org/packages/?name=debootstrap)
 
-*   **devscripts** — Scripts to make the life of a Debian Package maintainer easier
+*   **devscripts** — Scripts para facilitara vida de um mantenedor de pacote do Debian
 
 	[https://packages.debian.org/sid/devscripts](https://packages.debian.org/sid/devscripts) || [devscripts](https://aur.archlinux.org/packages/devscripts/)
 
-*   **dh-autoreconf** — Debhelper add-on to call autoreconf and clean up after the build
+*   **dh-autoreconf** — Complemento ao Debhelper para chamar autoreconf e limpar após a compilação
 
 	[https://packages.debian.org/sid/dh-autoreconf](https://packages.debian.org/sid/dh-autoreconf) || [dh-autoreconf](https://aur.archlinux.org/packages/dh-autoreconf/)
 
-*   **dh-make** — Tool that converts source archives into Debian package source
+*   **dh-make** — Ferramenta que converte os arquivos fonte em fonte de pacote do Debian
 
 	[https://packages.debian.org/sid/dh-make](https://packages.debian.org/sid/dh-make) || [dh-make](https://aur.archlinux.org/packages/dh-make/)
 
-*   **[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
+*   **[dpkg](https://en.wikipedia.org/wiki/pt:dpkg "wikipedia:pt:dpkg")** — O gerenciador de pacotes do Debian
 
 	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)
 
-*   **dput** — Debian package upload tool
+*   **dput** — Ferramenta de envio de pacotes do Debian
 
 	[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)
 
-*   **equivs** — Circumvent Debian package dependencies
+*   **equivs** — Contorne dependências de pacotes do Debian
 
 	[https://launchpad.net/ubuntu/+source/equivs](https://launchpad.net/ubuntu/+source/equivs) || [equivs](https://aur.archlinux.org/packages/equivs/)
 
-*   **git-buildpackage** — Tools from Debian to integrate the package build system with Git
+*   **git-buildpackage** — Ferramentas do Debian para integrar o sistema de compilação de pacotes com Git
 
 	[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)
 
-*   **pbuilder-ubuntu** — Chroot environment for building Debian packages
+*   **pbuilder-ubuntu** — Ambiente de chroot para compilação de pacotes do Debian
 
 	[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)
 
-*   **[quilt](https://en.wikipedia.org/wiki/Quilt_(software) "wikipedia:Quilt (software)")** — Manage a series of patches by keeping track of the changes each patch makes
+*   **[quilt](https://en.wikipedia.org/wiki/Quilt_(software) "wikipedia:Quilt (software)")** — Gerencia uma série de patches mantendo rastro de alterações que cada patch faz
 
 	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
 
@@ -88,7 +90,7 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 #### Sobrescrever tratamento de dependências
 
-*dpkg* does not recognize dependencies installed by [pacman](/index.php/Pacman "Pacman"). This means `dpkg-buildpackage` will generally fail with errors such as:
+O *dpkg* não reconhece as dependências instaladas pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Isso significa que `dpkg-buildpackage` geralmente falhará com erros como:
 
 ```
 dpkg-checkbuilddeps: Unmet build dependencies: build-essential:native debhelper (>= 8.0.0)
@@ -96,14 +98,14 @@ dpkg-buildpackage: warning: build dependencies/conflicts unsatisfied; aborting
 
 ```
 
-To override this, use the -d flag:
+Para contornar isso, use a opção `-d`:
 
 ```
 $ dpkg-buildpackage -d -us -uc
 
 ```
 
-You may also need to override `dh_shlibdeps` by adding the following lines to `debian/rules`:
+Você também pode precisar sobrescrever `dh_shlibdeps` adicionando as seguintes linhas ao `debian/rules`:
 
 ```
 override_dh_shlibdeps:
@@ -111,16 +113,16 @@ override_dh_shlibdeps:
 
 ```
 
-**Note:** Any run-time dependencies (and matching version numbers) should be added manually to `debian/control`, where `${shlibs:Depends}` now has no meaning.
+**Nota:** Quaisquer dependências de tempo de execução (e números de versão correspondentes) devem ser adicionadas manualmente ao `debian/control`, onde `${shlibs:Depends}` agora não tem significado.
 
-**Warning:** Even *if* you manage to successfully build a package this way, it is **strongly recommended** to build in a clean environment (such as chroot) to prevent any incompatibilities.
+**Atenção:** Mesmo *se* você conseguir compilar um pacote com sucesso desta forma, é **fortemente recomendado** construir em um ambiente limpo (como o chroot) para prevenir qualquer incompatibilidade.
 
 #### Configurar um chroot
 
-See the [Pbuilder How-To](https://wiki.ubuntu.com/PbuilderHowto) for an introduction to *pbuilder-ubuntu*. Using *cowdancer* in addition is recommended as [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write") offers a significant performance benefit.
+Veja o [How-To do Pbuilder](https://wiki.ubuntu.com/PbuilderHowto) para uma introdução ao *pbuilder-ubuntu*. O uso de *cowdancer*, além disso, é recomendado, pois [cópia em gravação](https://en.wikipedia.org/wiki/pt:C%C3%B3pia_em_grava%C3%A7%C3%A3o "wikipedia:pt:Cópia em gravação") oferece um benefício de desempenho significativo.
 
-*   [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring), [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) and [gnupg1](https://aur.archlinux.org/packages/gnupg1/) from the [AUR](/index.php/AUR "AUR") are required.
-*   *eatmydata* is available as [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) and [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/) in the [AUR](/index.php/AUR "AUR"). To prevent `LD_PRELOAD` errors, it must be installed both inside and outside the chroot. As the paths are different in Arch and Debian, create the following symbolic links:
+*   [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring), [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) e [gnupg1](https://aur.archlinux.org/packages/gnupg1/) do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") são necessários.
+*   *eatmydata* está disponível como [libeatmydata](https://www.archlinux.org/packages/?name=libeatmydata) e [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/) no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). Para evitar erros de `LD_PRELOAD`, deve ser instalado dentro e fora do chroot. Como os caminhos são diferentes no Arch e Debian, crie os links simbólicos a seguir:
 
 ```
 # ln -s /usr/lib/libeatmydata.so.1.1.1 /usr/lib/libeatmydata/libeatmydata.so
@@ -128,8 +130,8 @@ See the [Pbuilder How-To](https://wiki.ubuntu.com/PbuilderHowto) for an introduc
 
 ```
 
-*   [Sample pbuilderrc](https://gist.githubusercontent.com/AladW/71352540eca7de2197c7/raw/c28f6d96c0beb116f99e1ff0bd16599c356855ed/gistfile1.sh)
-*   To create a source package for pbuilder to handle:
+*   [Exemplo de pbuilderrc](https://gist.githubusercontent.com/AladW/71352540eca7de2197c7/raw/c28f6d96c0beb116f99e1ff0bd16599c356855ed/gistfile1.sh)
+*   Para criar um pacote fonte para o pbuilder lidar:
 
 ```
 $ dpkg-buildpackage -d -us -uc -S
@@ -138,19 +140,19 @@ $ dpkg-buildpackage -d -us -uc -S
 
 ### Veja também sobre o Debian
 
-*   [Debian Policy](https://www.debian.org/doc/debian-policy/)
-*   [New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/)
-*   [Quilt in Debian packaging](http://raphaelhertzog.com/2012/08/08/how-to-use-quilt-to-manage-patches-in-debian-packages/)
+*   [Política do Debian](https://www.debian.org/doc/debian-policy/)
+*   [Novo Guia do Mantenedor](https://www.debian.org/doc/manuals/maint-guide/)
+*   [Quilt no empacotamento do Debian](http://raphaelhertzog.com/2012/08/08/how-to-use-quilt-to-manage-patches-in-debian-packages/)
 
 ## Fedora
 
-[How to create an RPM package](https://fedoraproject.org/wiki/How_to_create_an_RPM_package)
+[Como criar um pacote RPM](https://fedoraproject.org/wiki/How_to_create_an_RPM_package)
 
-*   **rpm-org** — RPM.org fork, used in major RPM distros
+*   **rpm-org** — Fork do RPM.org, usado na maioria das distros RPM
 
 	[http://www.rpm.org/](http://www.rpm.org/) || [rpm-org](https://aur.archlinux.org/packages/rpm-org/)
 
-*   **mock** — Takes Source RPMs and builds RPMs from them in a chroot
+*   **mock** — Pega RPMs fonte e compila RPMs a partir deles em um chroot
 
 	[https://github.com/rpm-software-management/mock/wiki](https://github.com/rpm-software-management/mock/wiki) || [mock](https://aur.archlinux.org/packages/mock/)
 
@@ -160,41 +162,41 @@ $ dpkg-buildpackage -d -us -uc -S
 
 ## openSUSE
 
-The [Open Build Service (OBS)](http://openbuildservice.org/) is a generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. It supports at least .deb, .rpm and Arch packages.
+O [Open Build Service (OBS)](http://openbuildservice.org/) é um sistema genérico para criar e distribuir pacotes de fontes de uma maneira automática, consistente e reproduzível. Suporta pelo menos pacotes .deb, .rpm e Arch.
 
 ### Criando pacotes do Arch no OBS com OSC
 
-**Note:** For building, you must upload your PKGBUILD file as well as the source files (by uploading or letting OBS download the files). OBS uses virtual machines without networking support and cannot download any file.
+**Nota:** Para criar, você deve enviar o arquivo PKGBUILD, bem como dos arquivos de origem (carregando ou permitindo que o OBS baixe os arquivos). O OBS usa máquinas virtuais sem suporte de rede e não pode baixar nenhum arquivo.
 
 #### Criando um pacote
 
-1.  Create an account in [[1]](https://build.opensuse.org/)
-2.  [Install](/index.php/Install "Install") the [osc](https://aur.archlinux.org/packages/osc/) package. Upstream documentation is available [here](http://en.opensuse.org/openSUSE:OSC).
-3.  Create an example `home:foo` project.
-4.  Create an example `home:foo:bar` subproject (optional, but recommended).
-5.  Create a new `ham` example package with `osc meta pkg -e home:foo:bar ham`. Save the created XML then exit.
-6.  Switch to a clean working directory then checkout the project you've just created: `osc co home:foo:bar/ham`.
-7.  Now cd into it: `cd home:foo:bar/ham`.
+1.  Crie uma conta no [[1]](https://build.opensuse.org/)
+2.  [Instale](/index.php/Instale "Instale") o pacote [osc](https://aur.archlinux.org/packages/osc/). A documentação upstream está disponível [aqui](http://en.opensuse.org/openSUSE:OSC).
+3.  Crie um projeto exemplo `home:foo`.
+4.  Crie um subprojeto exemplo `home:foo:bar` (opcional, mas recomendável).
+5.  Crie um novo pacote exemplo `ham` com `osc meta pkg -e home:foo:bar ham`. Salve o XML criado e, então, sai.
+6.  Mude para um diretório de trabalho limpe e, então, façacheckout do projeto que você acabou de criar: `osc co home:foo:bar/ham`.
+7.  Agora, use *cd* para ir entrar nele: `cd home:foo:bar/ham`.
 
 #### Gerenciando um pacote
 
-Now it is time to decide how we will manage our project. There are two practical ways to do this:
+Agora é hora de decidir como administraremos nosso projeto. Existem duas maneiras práticas de fazer isso:
 
-1.  Maintain a PKGBUILD plus its helper files (such as *.install scripts) in a version control system (such as git, hg) then just make OBS track it;
-2.  Maintain a package entirely in OBS itself.
+1.  Manter um PKGBUILD mais seus arquivos auxiliares (como scripts *.install) em um sistema de controle de versão (como git, hg) e faça o OBS rastreá-lo;
+2.  Manter um pacote inteiramente no próprio OBS.
 
-The first version is more flexible and dynamic. To proceed:
+A primeira versão é mais flexível e dinâmica. Para prosseguir:
 
-*   From your project directory, create a `_service` file with the following contents:
+*   A partir do diretório do seu projeto, crie um arquivo `_service` com o seguinte conteúdo:
 
 ```
 <services>
   <service name="tar_scm">
     <param name="scm">git</param>
-    <param name="url">git://<your_repo_here></param>
+    <param name="url">git://<seu_repo_aqui></param>
     <param name="versionformat">git%cd~%h</param>
-    <param name="versionprefix"><your_version_here></param>
-    <param name="filename"><name_of_your_package></param>
+    <param name="versionprefix"><sua_versão_aqui></param>
+    <param name="filename"><nome_do_seu_pacote></param>
   </service>
   <service name="recompress">
     <param name="file">*.tar</param>
@@ -204,7 +206,7 @@ The first version is more flexible and dynamic. To proceed:
 </services>
 ```
 
-Here is an example for [gimp-git](https://aur.archlinux.org/packages/gimp-git/):
+Aqui está um exemplo para [gimp-git](https://aur.archlinux.org/packages/gimp-git/):
 
 ```
 <services>
@@ -223,21 +225,21 @@ Here is an example for [gimp-git](https://aur.archlinux.org/packages/gimp-git/):
 </services>
 ```
 
-*   Make OBS track it: `osc add _service`
-*   If you have any other files to include into the repo, just proceed as before: add the files in the project directory, then make OBS track them (OBS uses subversion as its underlying SCM, so this process might already be familiar for you)
-*   Check-in (=upload) your files into the repo `osc ci -m "commit message (e.g. bumped package xxx to version yyy"`.
+*   Faça o OBS rastreá-lo: `osc add _service`
+*   Se você tiver outros arquivos para incluir no repositório, apenas continue como antes: adicione os arquivos no diretório do projeto e faça a OBS rastreá-los (o OBS usa o subversion como seu SCM subjacente, portanto, esse processo pode já ser familiar para você)
+*   Faça check-in (=upload) seus arquivos no repo `osc ci -m "mensagem de commit (p.ex., atualiza pacote xxx para versão yyy"`.
 
-Now, after a while, OBS will begin building your package.
+Agora, após um tempo, OBS vai começar a compilar seu pacote.
 
 #### Dicas e truques sobre o openSUSE
 
-*   To see the build progress of your package, cd into its working directory, then: `osc results`.
-*   There are two repositories, Arch_Core and Arch_Extra. You'll probably want Arch_Extra, since it is more complete. [community] isn't currently available there as of this edit, so if your project has any dependencies in [community], you should include them (manually) in your (sub)project too.
-*   There is an unofficial arch-community repo [here](https://build.opensuse.org/project/show/home:roman-neuhauser:arch-community). You might clone a package from there with `osc branch home:roman-neuhauser:arch-community/<package-name> home:foo:bar/<package-name>`.
+*   Para ver o progresso da compilação do seu pacote, faça *cd* para seu diretório de trabalho, então: `osc results`.
+*   Existem dois repositórios, Arch_Core e Arch_Extra. Você provavelmente vai querer o Arch_Extra, já que é mais completo. [community] não está disponível atualmente a partir desta edição, então se o seu projeto tem alguma dependência em [community], você deve incluí-los (manualmente) em seu (sub)projeto também.
+*   Existe um repositório não-oficial da comunidade de bibliotecas [aqui](https://build.opensuse.org/project/show/home:roman-neuhauser:arch-community). Você pode clonar um pacote de lá com `osc branch home:roman-neuhauser:arch-community/<nome-pacote> home:foo:bar/<nome-pacote>`.
 
 #### Programa com o pacote ca-certificates-utils
 
-If OBS build fails because of the ca-certificates-utils package, you can add this line to your project config (from your project page, go to Advanced -> Project Config).
+Se a criação do OBS falhar por causa do pacote ca-certificates-utils, você poderá adicionar essa linha à configuração do seu projeto (na página do projeto, vá para Advanced -> Project Config).
 
 ```
 Prefer: ca-certificates-utils ca-certificates
@@ -246,11 +248,11 @@ Prefer: ca-certificates-utils ca-certificates
 
 #### Veja também sobre o openSUSE
 
-*   Example repo: [arch-deepin](https://build.opensuse.org/project/show/home:metakcahura:arch-deepin)
-*   [openSUSE packaging guidelines](http://en.opensuse.org/openSUSE:Packaging_guidelines)
-*   [Portal:Packaging from openSUSE wiki](http://en.opensuse.org/Portal:Packaging)
+*   Repo exemplo: [arch-deepin](https://build.opensuse.org/project/show/home:metakcahura:arch-deepin)
+*   [Diretrizes de empacotamentos do openSUSE](http://en.opensuse.org/openSUSE:Packaging_guidelines)
+*   [Portal:Packaging do wiki do openSUSE](http://en.opensuse.org/Portal:Packaging)
 
 ## Veja também
 
-*   [BBS - PKGBUILD equivalents for other distros](https://bbs.archlinux.org/viewtopic.php?id=175409)
-*   [BBS - Original discussion](https://bbs.archlinux.org/viewtopic.php?id=182198)
+*   [BBS - PKGBUILD equivalentes para outras distros](https://bbs.archlinux.org/viewtopic.php?id=175409)
+*   [BBS - Discussão original](https://bbs.archlinux.org/viewtopic.php?id=182198)

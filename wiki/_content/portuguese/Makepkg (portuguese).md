@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=572163) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=575911) na versão em inglês.
 
 Artigos relacionados
 
@@ -41,11 +41,10 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
     *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_QMAKE)
     *   [4.4 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diretório_de_instalação_para_pacotes_baseados_em_QMAKE)
     *   [4.5 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_contém_referência_para_$srcdir)
-    *   [4.6 ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?](#ERRO:_Uma_ou_mais_assinaturas_PGP_não_puderam_ser_verificadas!;_o_que_eu_devo_fazer?)
-    *   [4.7 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
-        *   [4.7.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
-        *   [4.7.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
-    *   [4.8 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
+    *   [4.6 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
+        *   [4.6.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
+        *   [4.6.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
+    *   [4.7 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
 *   [5 Veja também](#Veja_também)
 
 ## Configuração
@@ -243,6 +242,13 @@ COMPRESSGZ=(**pigz** -c -f -n)
 
 ```
 
+[pbzip2](https://www.archlinux.org/packages/?name=pbzip2) é um *drop-in*, implementação paralela para [bzip2](https://www.archlinux.org/packages/?name=bzip2) que também usa todos os núcleos de CPU disponíveis por padrão. A opção `-p#` pode ser usado para empregar menos núcleos (note: nenhum espaço entre o `-p` e número de núcleos).
+
+```
+COMPRESSBZ2 =(**pbzip2** -c -f)
+
+```
+
 ### Mostrar pacotes com um empacotador específico
 
 Isso mostra todos os pacotes instalados no sistema com o empacotador chamado *nome-empacotador*:
@@ -368,12 +374,6 @@ Para identificar quais arquivos, execute o seguinte do diretório de compilaçã
 $ grep -R "$(pwd)/src" pkg/
 
 ```
-
-### ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?
-
-É muito provável que você não tenha as chaves públicas necessárias no seu chaveiro pessoal para verificar os arquivos baixados. Se um ou mais arquivos .sig forem baixados durante a criação do pacote, o [makepkg verificará automaticamente o(s) arquivo(s) correspondente(s) com a chave pública de seu signatário](#Verificação_de_assinatura). Se você não tiver a chave necessária no seu chaveiro pessoal, o *makepkg* não fará a verificação.
-
-A maneira recomendada para lidar com este problema é importar a chave pública requerida, ou [manualmente](/index.php/GnuPG#Import_a_public_key "GnuPG") ou [de um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Geralmente, você pode simplesmente encontrar a impressão digital das chaves públicas necessárias na seção [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
 
 ### Makepkg falha em baixar dependências quando por trás de um proxy
 

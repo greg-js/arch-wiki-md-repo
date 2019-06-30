@@ -115,11 +115,30 @@ case `uname` in
 ```
 This is discouraged as it tampers with a directory preferably modified by [pacman](/index.php/Pacman "Pacman") when installing packages. However it might be useful when reinstalling Libero or installing a newer version of it because the manual modification of the file above can be skipped.
 
-Furthermore the outdated `libz` version shipped by Microsemi does not work with the repository version of [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12). In `/home/*user*/programs/microsemi/libero/v12.1/Libero/lib` do the following:
+Furthermore the outdated `libz` version shipped by Microsemi does not work with the repository version of [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12). In `/home/*user*/programs/microsemi/libero/v12.1/Libero/lib` do the following to make Libero use your library installed by [pacman](/index.php/Pacman "Pacman"):
 
 ```
 $ mv libz.so.1 libz.so.1.old
 $ ln -s /lib/libz.so libz.so.1
+
+```
+
+By mistake the installer adds double quotes around the common path when defining the vault location. Thus Libero will create a folder called `""` in the working directory when it is called. To change that either manually edit the file `install.def` to remove the double quotes from the line where `VAULT_LOCATION` is defined:
+
+ `/home/*user*/programs/microsemi/libero/v12.1/Libero/data/install.def` 
+```
+...
+data VAULT_LOCATION '/home/*user*/programs/microsemi/common/vault' OVERRIDE
+...
+```
+
+... or run the commands below to remove the quotes:
+
+```
+$ cd /home/*user*/programs/microsemi/libero/v12.1/Libero/data
+$ sed 's/"//g' install.def > tmp.def
+$ cp tmp.def install.def
+$ rm tmp.def
 
 ```
 

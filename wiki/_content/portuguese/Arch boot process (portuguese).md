@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=569656) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-06-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=575410) na versão em inglês.
 
 Artigos relacionados
 
@@ -52,6 +52,8 @@ A especificação UEFI determina o suporte para os sistemas de arquivos [FAT12, 
 
 O UEFI inicia aplicativos EFI, por exemplo [gerenciadores de boot](#Gerenciador_de_boot), [Shell UEFI](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface"), etc. Esses aplicativos geralmente são armazenados como arquivos na [partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition"). Cada fornecedor pode armazenar seus arquivos na partição do sistema EFI sob a pasta `/EFI/*nome_fornecedor*`. Os aplicativos podem ser iniciados adicionando uma entrada de inicialização à NVRAM ou a partir do shell UEFI.
 
+A especificação UEFI tem suporte para inicializar BIOS legado com sua [CSM (Compatibility Support Module)](https://en.wikipedia.org/wiki/pt:Unified_Extensible_Firmware_Interface#Compatibility_Support_Module "wikipedia:pt:Unified Extensible Firmware Interface"). Se o CSM estiver ativado no UEFI, o UEFI gerará entradas de inicialização do CSM para todas as unidades. Se uma entrada de inicialização do CSM for escolhida para ser inicializada, o CSM do UEFI tentará inicializar a partir do MBR da unidade.
+
 ## Inicialização do sistema
 
 ### Na BIOS
@@ -88,7 +90,7 @@ Veja também [Dual boot com Windows](/index.php/Dual_boot_with_Windows "Dual boo
 
 ## Gerenciador de boot
 
-O gerenciador de boot é o primeiro software iniciado pela [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") ou pelo [UEFI](/index.php/UEFI "UEFI"). Ele é responsável por carregar o kernel com os [parâmetros de kernel](/index.php/Kernel_parameters "Kernel parameters") desejados e o [disco de RAM inicial](/index.php/Mkinitcpio "Mkinitcpio") com base nos arquivos de configuração.
+Um gerenciador de boot é um peça de software iniciada pela [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") ou pelo [UEFI](/index.php/UEFI "UEFI"). Ele é responsável por carregar o kernel com os [parâmetros de kernel](/index.php/Kernel_parameters "Kernel parameters") desejados e o [disco de RAM inicial](/index.php/Mkinitcpio "Mkinitcpio") com base nos arquivos de configuração. No caso do UEFI, o kernel em si pode ser lançado diretamente pelo UEFI usando o stub de inicialização EFI. Um gerenciador de boot separado ainda pode ser usado para editar os parâmetros do kernel antes de inicializar.
 
 **Note:** Carregar atualizações de [microcódigo](/index.php/Microcode "Microcode") exige ajustes na configuração de gerenciador de boot. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -112,6 +114,8 @@ O gerenciador de boot só consegue acessar o sistema de arquivos no qual ele est
 | [systemd-boot](/index.php/Systemd-boot "Systemd-boot") | Não | Sim | [Somente instalação manual](https://github.com/systemd/systemd/issues/1125) | Sim | Sim | Não | Não | Não | Somente ESP | Não | Não é possível iniciar binários de outras partições além de [ESP](/index.php/ESP "ESP"). |
 | [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Sim | Não | Sim | Não | Sim | Não | Não | Sim | Sim | Somente v4 | [Descontinuado](https://www.gnu.org/software/grub/grub-legacy.html) em favor do [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"). |
 | [LILO](/index.php/LILO "LILO") | Sim | Não | Sim | Não | Sim | Não | sem criptografia | Sim | Sim | [Sim](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Descontinuado](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) em razão de limitações (p.ex., com Btrfs, GPT, RAID). |
+
+1.  Um [gerenciador de boot](https://www.rodsbooks.com/efi-bootloaders/principles.html). Ele só pode iniciar outros aplicativos EFI, por exemplo, imagens de kernel do Linux criadas com `CONFIG_EFI_STUB=y` e Windows `bootmgfw.efi`.
 
 Veja também [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders").
 
@@ -141,6 +145,8 @@ No estágio final do início do espaço de usuário, a raiz real é montada e, e
 
 Um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") pode ser configurado para substituir o prompt de login do getty em um tty.
 
+Para inicializar automaticamente um gerenciador de exibição após a inicialização, é necessário ativar manualmente a unidade de serviço através de [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"). Para obter mais informações sobre como ativar e iniciar unidades de serviço, consulte [systemd (Português)#Usando units](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)").
+
 ## Login
 
 O programa *login* começa uma sessão para o usuário definindo as variáveis de ambiente e iniciando o shell do usuário, com base no `/etc/passwd`.
@@ -153,7 +159,7 @@ Uma vez iniciado o [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)
 
 ## GUI, xinit ou wayland
 
-[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, xinit, startx, o shell e o login serão encerrados nessa ordem, retornando ao getty.
+[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, xinit, startx, o shell e o login serão encerrados nessa ordem, retornando ao [getty](#Getty).
 
 ## Veja também
 

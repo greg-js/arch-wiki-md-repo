@@ -2,28 +2,38 @@ Veja também [Wikipedia:pt:Arch Linux](https://en.wikipedia.org/wiki/pt:Arch_Lin
 
 **Nota:** Aqui você encontra publicações em português sobre o Arch Linux. Para publicações em inglês, veja [a versão em inglês desta página](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 2018](#2018)
-*   [2 2017](#2017)
-*   [3 2016](#2016)
-*   [4 2015](#2015)
-*   [5 2012](#2012)
-*   [6 2011](#2011)
-*   [7 2010](#2010)
-*   [8 2009](#2009)
-*   [9 2008](#2008)
-*   [10 2006](#2006)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 2019](#2019)
+*   [2 2018](#2018)
+*   [3 2017](#2017)
+*   [4 2016](#2016)
+*   [5 2015](#2015)
+*   [6 2012](#2012)
+*   [7 2011](#2011)
+*   [8 2010](#2010)
+*   [9 2009](#2009)
+*   [10 2008](#2008)
+*   [11 2006](#2006)
+
+## 2019
+
+*   [O Arch Linux é bom? Hora de mudar de distribuição GNU/Linux?](https://sempreupdate.com.br/o-arch-linux-e-bom-hora-de-mudar-de-distribuicao-gnu-linux/) Emanuel Negromonte - sempreupdate.com.br, 2019-02-15
 
 ## 2018
 
+*   [Supere o seu terror do Arch Linux, hoje!](https://sempreupdate.com.br/supere-o-seu-terror-do-arch-linux-hoje/) Emanuel Negromonte - sempreupdate.com.br, 2018-12-22
 *   [O que você precisa saber sobre o GNU/Linux – Debian e Arch Linux](https://canaltech.com.br/linux/o-que-voce-precisa-saber-sobre-o-gnulinux-debian-e-arch-linux-109626/) Pedro Cipoli - canaltech.com.br, 2018-03-09
 
 ## 2017
 
 *   [5 bons motivos para você começar a usar o Arch Linux](https://www.linuxdescomplicado.com.br/2017/06/5-bons-motivos-para-voce-comecar-a-usar-o-arch-linux.html) Ricardo Ferreira - linuxdescomplicado.com.br, 2017-06-08
 
-*   [História do Arch Linux | Como Nasceu?](https://www.youtube.com/watch?v=8q_o6ZHsqyA) Oficina do Tux - Youtube.com, 2017-06-11
+*   [História do Arch Linux | Como Nasceu? (Vídeo do YouTube)](https://www.youtube.com/watch?v=8q_o6ZHsqyA) Oficina do Tux - Youtube.com, 2017-06-11
 
 *   [Arch Linux – a melhor distro de todos os tempos?](https://imasters.com.br/infra/linux/arch-linux-melhor-distro-de-todos-os-tempos/?trace=1519021197&source=single) Fábio Akita - imasters.com.br, 2017-04-06
 
@@ -61,7 +71,9 @@ Veja também [Wikipedia:pt:Arch Linux](https://en.wikipedia.org/wiki/pt:Arch_Lin
 
 *   [Arch Linux](http://www.hardware.com.br/livros/linux/arch-linux.html) Carlos E. Morimoto - "Linux, Guia Prático", hardware.com.br, 2009-06-01
 
-*   [Arch Linux: Leveza e simplicidade](http://www.guiadopc.com.br/analises/analises-de-softwares/8739/arch-linux-leveza-e-simplicidade.html) Paulo Seikishi Higa - GuiadoPC.com.br 2009-03-21
+*   [Arch Linux: Leveza e simplicidade](http://www.guiadopc.com.br/analises/analises-de-softwares/8739/arch-linux-leveza-e-simplicidade.html) Paulo Seikishi Higa - GuiadoPC.com.br, 2009-03-21
+
+*   [Arch Linux (análise)](https://www.hardware.com.br/analises/arch-linux/) Chris Smart no Distrowatch com tradução por Roberto Bechtlufft - hardware.com.br, 2009-01-28
 
 *   [Archlinux, Um Sistema Operacional Para Hackers?](http://blog.marcelocavalcante.net/blog/2009/01/06/archlinux-um-sistema-operacional-para-hackers/) Marcelo Cavalcante Rocha - Blog, 2009-01-06
 

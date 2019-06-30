@@ -168,14 +168,10 @@ set content.headers.custom '{"accept": "text/html,application/xhtml+xml,applicat
 
 #### Disable reading from canvas
 
-This option is not currently available in qutebrowser other than by specifying it on the commandline like so:
+```
+set content.canvas_reading false
 
 ```
-$ qutebrowser --qt-flag disable-reading-from-canvas
-
-```
-
-See [issue #2235](https://github.com/qutebrowser/qutebrowser/issues/2235) for more information.
 
 **Note:** Some websites depend on canvas reading for content rendering and other functionality. Adding this option may cause them to not work properly [[2]](https://github.com/qutebrowser/qutebrowser/issues/2908).
 

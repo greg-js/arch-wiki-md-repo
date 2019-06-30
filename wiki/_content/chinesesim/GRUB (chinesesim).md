@@ -80,6 +80,7 @@
     *   [5.15 未找到 Windows 8/10](#未找到_Windows_8/10)
     *   [5.16 VirtualBox EFI 模式](#VirtualBox_EFI_模式)
     *   [5.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
+    *   [5.18 GRUB 救急与加密启动](#GRUB_救急与加密启动)
 *   [6 参阅](#参阅)
 
 ## BIOS 系统
@@ -910,6 +911,21 @@ Windows 8/10 如果启用了 "Hiberboot", "Hybrid Boot" 或 "Fast Boot"，可能
 ```
 
 参见 [FS#61040](https://bugs.archlinux.org/task/61040) 和 [workaround](https://bbs.archlinux.org/viewtopic.php?pid=1820949#p1820949)。
+
+### GRUB 救急与加密启动
+
+在使用加密启动，而你没法键入正确的密码的时候，就会进入 GRUB 救急命令行。
+
+这个救急命令行只有有限的功能，可以使用下面的命令来完成启动：
+
+```
+grub rescue> cryptomount <分区>
+grub rescue> insmod normal
+grub rescue> normal
+
+```
+
+更好的介绍参见 [这个帖子](https://blog.stigok.com/2017/12/30/decrypt-and-mount-luks-disk-from-grub-rescue-mode.html)。
 
 ## 参阅
 

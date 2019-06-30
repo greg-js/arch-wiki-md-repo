@@ -109,11 +109,12 @@ If the SSID does not have password authentication, you must explicitly configure
 *   Each network is indexed numerically, so the first network will have index 0.
 *   The [PSK](https://en.wikipedia.org/wiki/Pre-shared_key "wikipedia:Pre-shared key") is computed from the *quoted* "passphrase" string, as also shown by the [wpa_passphrase](#Connecting_with_wpa_passphrase) command. Nonetheless, you can enter the PSK directly by passing it to `psk` *without* quotes.
 
-Finally save this network in the configuration file:
+Finally save this network in the configuration file and quit *wpa_cli*:
 
 ```
 > save_config
 OK
+> quit
 
 ```
 

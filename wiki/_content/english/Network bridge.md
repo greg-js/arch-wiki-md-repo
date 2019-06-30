@@ -7,7 +7,11 @@ A bridge is a piece of software used to unite two or more network segments. A br
 
 This article explains how to create a bridge that contains at least an ethernet device. This is useful for things like the bridge mode of [QEMU](/index.php/QEMU "QEMU"), setting a software based access point, etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Creating a bridge](#Creating_a_bridge)
     *   [1.1 With iproute2](#With_iproute2)
@@ -141,21 +145,37 @@ See [systemd-networkd#Bridge interface](/index.php/Systemd-networkd#Bridge_inter
 
 ### With NetworkManager
 
-Gnome's NetworkManager can create bridges, but currently will not auto-connect to them or slave/attached interfaces. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
+[GNOME](/index.php/GNOME "GNOME")'s Network settings can create bridges, but currently will not auto-connect to them or slave/attached interfaces. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
 
-**Note:** When using plasma/plasma-nm, "Show and configure virtual connections" must be enabled in plasma-nm configuration in order to view and modify bridge interfaces.
+[KDE](/index.php/KDE "KDE")'s [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) can't create bridges, another tool must be used for the creation. It can, however, view and modify bridges. "Show and configure virtual connections" must be enabled in the applet configuration (as opposed to the KCM dialog accessed from the applet's configure button or KDE system settings) in order to view and modify bridge interfaces.
 
-Now, find the UUID of the attached device (by default named "bridge0 slave 1"):
+[nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) can create bridges in the same manner as GNOME's Network settings.
 
-```
-$ nmcli connection
-
-```
-
-Finally, enable that connection:
+`nmcli` from [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) can create bridges. Creating a bridge with STP disabled (to avoid the bridge being advertised on the network):
 
 ```
-$ nmcli con up <UUID>
+$ nmcli c add type bridge ifname br0 stp no
+
+```
+
+Making interface `enp30s0` a slave to the bridge:
+
+```
+$ nmcli c add type bridge-slave ifname enp30s0 master br0
+
+```
+
+Setting the existing connection as down:
+
+```
+$ nmcli c down *Connection*
+
+```
+
+Setting the new bridge as up:
+
+```
+$ nmcli c up bridge-br0
 
 ```
 

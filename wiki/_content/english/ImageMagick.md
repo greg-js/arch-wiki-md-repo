@@ -21,9 +21,7 @@ See also [FS#59778](https://bugs.archlinux.org/task/59778).
         *   [2.1.1 Screenshot of multiple X screens](#Screenshot_of_multiple_X_screens)
         *   [2.1.2 Screenshot of individual Xinerama heads](#Screenshot_of_individual_Xinerama_heads)
         *   [2.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active/focused_window)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Error: # unsupported relocations with Radeon video card](#Error:_#_unsupported_relocations_with_Radeon_video_card)
-*   [4 See also](#See_also)
+*   [3 See also](#See_also)
 
 ## Installation
 
@@ -111,26 +109,6 @@ $ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
 ```
 
 **Note:** If screenshots of some programs (dwb and zathura) appear blank, try appending `-frame` or removing `-f` from the `xdotool` command.
-
-## Troubleshooting
-
-### Error: # unsupported relocations with Radeon video card
-
-Many users with Radeon video cards using [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa) are receiving this error when trying to use ImageMagick to convert an image, whether directly or through another package using ImageMagick's API, i.e.: [1](https://github.com/ImageMagick/ImageMagick/issues/1366) [2](https://bbs.archlinux.org/viewtopic.php?pid=1809711#p1809711)
-
-```
-$ convert source.png -resize '100x100' converted.jpg
-Error: 8 unsupported relocations
-Error: 8 unsupported relocations
-
-```
-
-Using [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) or [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/) is a temporary workaround. [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) is the proprietary AMD OpenCL implementation, which was able to be extracted from the proprietary AMDGPU PRO driver so that it runs on top of the open source AMDGPU. In this case, you may need to force OpenCL to select one of these alternatives, i.e.:
-
-```
-$ OCL_ICD_VENDORS=amdocl64 convert source.png -resize '100x100' converted.jpg
-
-```
 
 ## See also
 

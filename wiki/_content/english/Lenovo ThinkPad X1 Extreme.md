@@ -45,11 +45,7 @@ Despite not being strictly required for an Arch Linux install, a BIOS update is 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The latest version, v1.21, is highly recommended, and can be installed by running `fwupdmgr install [https://download.lenovo.com/pccbbs/mobiles/n2eet39w.cab](https://download.lenovo.com/pccbbs/mobiles/n2eet39w.cab)` as root. This will download the firmware directly from Lenovo. The firmware updates are digitally signed, so there is no additional risk caused by the direct download.
-
-The latest version available on the LVFS as of early March 2019 is v1.17 (listed as 0.1.17). While that version resolves all known critical (read: hard bricking) issues, it still contains multiple security vulnerabilities ([see README](https://download.lenovo.com/pccbbs/mobiles/n2eet39w.txt)) and bugs, particularly related to power management and early boot, that are fixed in the later versions, so v1.21 should be preferred when possible.
-
-All information on this page generally assumes the latest BIOS unless explicitly stated.
+The latest version, v1.21, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ### Hybrid graphics
 

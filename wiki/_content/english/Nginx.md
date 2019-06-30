@@ -547,20 +547,29 @@ Tweak `-f 10` to change the number of children that are spawned.
 
 ##### nginx configuration
 
+In `/etc/nginx`, copy the file `fastcgi_params` to `fcgiwrap_params`. In `fcgiwrap_params`, comment or delete the lines which set `SCRIPT_NAME` and `DOCUMENT_ROOT`.
+
 Inside each `server` block serving a CGI web application should appear a `location` block similar to:
 
 ```
 location ~ \.cgi$ {
-     root           /path/to/server/cgi-bin;
-     fastcgi_pass   unix:/run/fcgiwrap.sock;
-     include        fastcgi.conf;
+     include       fcgiwrap_params;
+     fastcgi_param DOCUMENT_ROOT /srv/www/cgi-bin/;
+     fastcgi_param SCRIPT_NAME   myscript.cgi;
+     fastcgi_pass  unix:/run/fcgiwrap.sock;
 }
 
 ```
 
 The default socket file for `fcgiwrap` is `/run/fcgiwrap.sock`.
 
+Using `fastcgi_param SCRIPT_FILENAME /srv/www/cgi-bin/myscript.cgi` is a shortcut alternative to setting `DOCUMENT_ROOT` and `SCRIPT_NAME`. If you use `SCRIPT_FILENAME`, you also will not need to copy `fastcgi_params` to `fcgiwrap_params` and comment out the `DOCUMENT_ROOT` and `SCRIPT_NAME` lines.
+
+**Warning:** If SCRIPT_NAME and DOCUMENT_ROOT are used, fcgiwrap will *discard* any other fastcgi_params set in nginx. You must use SCRIPT_FILENAME in order for other params (like PATH_INFO) to be settable through the Nginx configuration. See [this](https://github.com/gnosek/fcgiwrap/issues/3) GitHub issue.
+
 If you keep getting a `502 - bad Gateway` error, you should check if your CGI-application first announces the mime-type of the following content. For html this needs to be `Content-type: text/html`.
+
+If you get 403 errors, make sure that the CGI executable is readable and executable by the `http` user and that every parent folder is readable by the `http` user.
 
 ## Installation in a chroot
 

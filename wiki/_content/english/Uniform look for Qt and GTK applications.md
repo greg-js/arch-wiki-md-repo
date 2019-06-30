@@ -1,9 +1,9 @@
 Related articles
 
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK "GTK")
 *   [Qt](/index.php/Qt "Qt")
 
-[Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") based programs both use a different widget toolkit to render the graphical user interface. Each come with different themes, styles and icon sets by default, among other things, so the "look and feel" differ significantly. This article will help you make your Qt and GTK+ applications look similar for a more streamlined and integrated desktop experience.
+[Qt](/index.php/Qt "Qt") and [GTK](/index.php/GTK "GTK") based programs both use a different widget toolkit to render the graphical user interface. Each come with different themes, styles and icon sets by default, among other things, so the "look and feel" differ significantly. This article will help you make your Qt and GTK applications look similar for a more streamlined and integrated desktop experience.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,7 +12,7 @@ Related articles
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Overview](#Overview)
-*   [2 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK+)
+*   [2 Styles for both Qt and GTK](#Styles_for_both_Qt_and_GTK)
     *   [2.1 Breeze](#Breeze)
     *   [2.2 Adwaita](#Adwaita)
     *   [2.3 Kvantum](#Kvantum)
@@ -20,14 +20,14 @@ Related articles
     *   [3.1 QGtkStyle](#QGtkStyle)
     *   [3.2 QGnomePlatform](#QGnomePlatform)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 KDE file dialogs for GTK+ applications](#KDE_file_dialogs_for_GTK+_applications)
-    *   [4.2 Using a GTK+ icon theme in Qt apps](#Using_a_GTK+_icon_theme_in_Qt_apps)
+    *   [4.1 KDE file dialogs for GTK applications](#KDE_file_dialogs_for_GTK_applications)
+    *   [4.2 Using a GTK icon theme in Qt apps](#Using_a_GTK_icon_theme_in_Qt_apps)
     *   [4.3 Add Title bar and frame to GTK3 applications under KDE Plasma](#Add_Title_bar_and_frame_to_GTK3_applications_under_KDE_Plasma)
     *   [4.4 Improve subpixel rendering of GTK apps under KDE Plasma](#Improve_subpixel_rendering_of_GTK_apps_under_KDE_Plasma)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Qt applications do not use QGtkStyle](#Qt_applications_do_not_use_QGtkStyle)
-    *   [5.2 Themes not working in GTK+ apps](#Themes_not_working_in_GTK+_apps)
-    *   [5.3 GTK+ apps don't use svg (breeze) icons after system upgrade](#GTK+_apps_don't_use_svg_(breeze)_icons_after_system_upgrade)
+    *   [5.2 Themes not working in GTK apps](#Themes_not_working_in_GTK_apps)
+    *   [5.3 GTK apps don't use svg (breeze) icons after system upgrade](#GTK_apps_don't_use_svg_(breeze)_icons_after_system_upgrade)
 
 ## Overview
 
@@ -40,28 +40,28 @@ To get a similar look between the toolkits, you will most likely have to modify 
 
 You can choose various approaches:
 
-*   Modify [GTK+ and Qt styles](#Styles_for_both_Qt_and_GTK+) separately with the tools listed below for each toolkit and aim for choosing similarly looking themes (style, colors, icons, cursors, fonts).
+*   Modify [GTK and Qt styles](#Styles_for_both_Qt_and_GTK) separately with the tools listed below for each toolkit and aim for choosing similarly looking themes (style, colors, icons, cursors, fonts).
 *   Use a special [theme engine](#Theme_engines), which intermediates the modification of the other graphical toolkit to match your main toolkit.
 
-## Styles for both Qt and GTK+
+## Styles for both Qt and GTK
 
-There are widget style sets available for the purpose of integration, where builds are written and provided for both Qt and GTK+, all major versions included. With these, you can have one look for all applications regardless of the toolkit they had been written with.
+There are widget style sets available for the purpose of integration, where builds are written and provided for both Qt and GTK, all major versions included. With these, you can have one look for all applications regardless of the toolkit they had been written with.
 
 **Tip:** You may want to apply user defined styles to root applications, see [GTK#Theme not applied to root applications](/index.php/GTK#Theme_not_applied_to_root_applications "GTK") and [Qt#Theme not applied to root applications](/index.php/Qt#Theme_not_applied_to_root_applications "Qt").
 
-**Note:** Since version 3.16, GTK+ 3 [does not support](https://bbs.archlinux.org/viewtopic.php?pid=1518404#p1518404) non-CSS themes, hence previous solutions such as Oxygen-Gtk are [no longer viable](https://bugs.kde.org/show_bug.cgi?id=340288) options.
+**Note:** Since version 3.16, GTK 3 [does not support](https://bbs.archlinux.org/viewtopic.php?pid=1518404#p1518404) non-CSS themes, hence previous solutions such as Oxygen-Gtk are [no longer viable](https://bugs.kde.org/show_bug.cgi?id=340288) options.
 
 ### Breeze
 
-Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK+ 2 and GTK+ 3.
+Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://aur.archlinux.org/packages/breeze-kde4/) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK 2 and GTK 3.
 
-Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
+Once installed, you can use one of the many [GTK configuration tools](/index.php/GTK#Configuration_tools "GTK") to change the GTK theme.
 
 If running KDE Plasma, install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and either run it from the command line, or go to *System Settings > Application Style > GNOME Application Style (GTK)*. Fonts, icon themes, cursors, and widget styles set in System Settings outside of the GTK configuration module will affect Qt only; GTK settings should be set manually using the previously mentioned module.
 
 ### Adwaita
 
-Adwaita is the default GNOME theme. The GTK+ 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK+ 2 version is in [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) packages for the Qt 4 and 5 versions, respectively.
+Adwaita is the default GNOME theme. The GTK 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK 2 version is in [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK 2 theme, it provides a native Qt style made to look like the GTK 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) packages for the Qt 4 and 5 versions, respectively.
 
 To set the Qt style as default:
 
@@ -79,7 +79,7 @@ style=adwaita
 
 ### Kvantum
 
-Kvantum ([kvantum-qt5](https://www.archlinux.org/packages/?name=kvantum-qt5)) is customizable SVG-based theme engine for Qt5 that comes with a variety of built-in styles, including versions of some of popular GTK+ themes such as Adapta, Arc, Ambiance, Materia.
+Kvantum ([kvantum-qt5](https://www.archlinux.org/packages/?name=kvantum-qt5)) is customizable SVG-based theme engine for Qt5 that comes with a variety of built-in styles, including versions of some of popular GTK themes such as Adapta, Arc, Ambiance, Materia.
 
 ## Theme engines
 
@@ -89,13 +89,13 @@ A *theme engine* can be thought of as a thin layer API which translates themes (
 
 **Note:** QGtkStyle has been removed from [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) 5.7.0 [[1]](https://github.com/qtproject/qtbase/commit/899a815414e95da8d9429a4a4f4d7094e49cfc55) and added to [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins) [[2]](https://github.com/qtproject/qtstyleplugins/commit/102da7d50231fc5723dba6e72340bef3d29471aa)
 
-**Warning:** Depending on GTK+ 2 theme, this style may cause rendering issues such as transparent fonts or inconsistent widgets.
+**Warning:** Depending on GTK 2 theme, this style may cause rendering issues such as transparent fonts or inconsistent widgets.
 
-This Qt style uses GTK+ 2 to render all components to blend in with [GNOME](/index.php/GNOME "GNOME") and similar GTK+ based environments. Beginning with Qt 4.5, this style is included in Qt. It requires [gtk2](https://www.archlinux.org/packages/?name=gtk2) to be installed and configured.
+This Qt style uses GTK 2 to render all components to blend in with [GNOME](/index.php/GNOME "GNOME") and similar GTK based environments. Beginning with Qt 4.5, this style is included in Qt. It requires [gtk2](https://www.archlinux.org/packages/?name=gtk2) to be installed and configured.
 
 This is the default Qt4 style in Cinnamon, GNOME and Xfce, and the default Qt5 style in Cinnamon, GNOME, MATE, LXDE and Xfce. In other environments:
 
-*   For Qt4, it can be enabled with *Qt Configuration* (`qtconfig-qt4`), choose *GTK+* under *Appearance > GUI Style*. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
+*   For Qt4, it can be enabled with *Qt Configuration* (`qtconfig-qt4`), choose *GTK* under *Appearance > GUI Style*. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
 
  `~/.config/Trolltech.conf` 
 ```
@@ -107,27 +107,27 @@ style=GTK+
 
 *   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins) and setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=gtk2`
 
-For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2B#Themes "GTK+") supports both GTK+ 2 and GTK+ 3\. If your preferred theme has inconsistent rendering after configuring Qt to use GTK+2, install [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2) and choose a theme.
+For full uniformity, make sure that the configured [GTK theme](/index.php/GTK#Themes "GTK") supports both GTK 2 and GTK 3\. If your preferred theme has inconsistent rendering after configuring Qt to use GTK2, install [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2) and choose a theme.
 
 ### QGnomePlatform
 
-This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform](https://aur.archlinux.org/packages/qgnomeplatform/) package or the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package for the development version. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK+).
+This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform](https://aur.archlinux.org/packages/qgnomeplatform/) package or the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package for the development version. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK](#Styles_for_both_Qt_and_GTK).
 
 This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
 
 ## Tips and tricks
 
-### KDE file dialogs for GTK+ applications
+### KDE file dialogs for GTK applications
 
 **Chromium**
 
 At least for chromium installing `kdialog` makes chromium used kde file dialog ( so `KGtk-wrapper` is not required )
 
-**Warning:** Some GTK+ applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash ([Firefox](/index.php/Firefox "Firefox") or [Thunderbird](/index.php/Thunderbird "Thunderbird")).
+**Warning:** Some GTK applications may not be compatible with KGtk-wrapper (e.g. [Chromium](/index.php/Chromium "Chromium")), sometimes the wrapper makes the application crash ([Firefox](/index.php/Firefox "Firefox") or [Thunderbird](/index.php/Thunderbird "Thunderbird")).
 
-[kgtk](https://aur.archlinux.org/packages/kgtk/) from the [AUR](/index.php/AUR "AUR") is a wrapper script which uses `LD_PRELOAD` to force KDE file dialogs in GTK+ 2.x apps. Once installed you can run GTK+ 2.x applications with `kgtk-wrapper` in two ways (using [GIMP](/index.php/GIMP "GIMP") in the examples):
+[kgtk](https://aur.archlinux.org/packages/kgtk/) from the [AUR](/index.php/AUR "AUR") is a wrapper script which uses `LD_PRELOAD` to force KDE file dialogs in GTK 2.x apps. Once installed you can run GTK 2.x applications with `kgtk-wrapper` in two ways (using [GIMP](/index.php/GIMP "GIMP") in the examples):
 
-*   Calling `kgtk-wrapper` directly and using the GTK+ 2.x binary as an argument:
+*   Calling `kgtk-wrapper` directly and using the GTK 2.x binary as an argument:
 
 	 `$ /usr/bin/kgtk-wrapper gimp` 
 
@@ -139,7 +139,7 @@ At least for chromium installing `kdialog` makes chromium used kde file dialog (
 
 Firefox can use kde file dialogs natively. See [Firefox#KDE/GNOME integration](/index.php/Firefox#KDE/GNOME_integration "Firefox")
 
-### Using a GTK+ icon theme in Qt apps
+### Using a GTK icon theme in Qt apps
 
 If you are running Plasma, install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under *System Settings > Application Style > GTK*.
 
@@ -183,17 +183,17 @@ See [Font configuration#LCD filter](/index.php/Font_configuration#LCD_filter "Fo
 
 ### Qt applications do not use QGtkStyle
 
-Qt will not apply QGtkStyle correctly if GTK+ is using the [GTK+-Qt Engine](#GTK+-Qt_Engine). Qt determines whether the GTK+-Qt Engine is in use by reading the GTK+ configuration files listed in the environmental variable `GTK2_RC_FILES`. If the environmental variable is not set properly, Qt assumes you are using the engine, sets QGtkStyle to use the style GTK+ style *Clearlooks*, and outputs an error message:
+Qt will not apply QGtkStyle correctly if GTK is using the [GTK-Qt Engine](#GTK-Qt_Engine). Qt determines whether the GTK-Qt Engine is in use by reading the GTK configuration files listed in the environmental variable `GTK2_RC_FILES`. If the environmental variable is not set properly, Qt assumes you are using the engine, sets QGtkStyle to use the style GTK style *Clearlooks*, and outputs an error message:
 
 ```
 QGtkStyle cannot be used together with the GTK_Qt engine.
 
 ```
 
-Another error you may get after launching `qtconfig-qt4` from a shell and selecting the GTK+ style is:
+Another error you may get after launching `qtconfig-qt4` from a shell and selecting the GTK style is:
 
 ```
-QGtkStyle was unable to detect the current GTK+ theme.
+QGtkStyle was unable to detect the current GTK theme.
 
 ```
 
@@ -215,7 +215,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 *   You can add multiple paths by separating them with colons.
 *   Make sure to use `$HOME` instead of `~` as it will not properly expand to the user's home directory.
 
-Then specify the theme you want in the `~/.gtkrc-2.0` file using a [dedicated application](/index.php/GTK%2B#Configuration_tools "GTK+") or manually, by adding:
+Then specify the theme you want in the `~/.gtkrc-2.0` file using a [dedicated application](/index.php/GTK#Configuration_tools "GTK") or manually, by adding:
 
  `.gtkrc-2.0` 
 ```
@@ -268,18 +268,18 @@ Inherits=Adwaita
 
 ```
 
-### Themes not working in GTK+ apps
+### Themes not working in GTK apps
 
-If the style or theme engine you set up is not showing in your GTK applications then it is likely your GTK+ settings files are not being loaded for some reason. You can check where your system expects to find these files by doing the following..
+If the style or theme engine you set up is not showing in your GTK applications then it is likely your GTK settings files are not being loaded for some reason. You can check where your system expects to find these files by doing the following..
 
 ```
 $ export | grep gtk
 
 ```
 
-Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~/.gtkrc2.0-kde` for GTK+ 2.x.
+Usually the expected files should be `~/.gtkrc` for GTK1 and `~/.gtkrc2.0` or `~/.gtkrc2.0-kde` for GTK 2.x.
 
-### GTK+ apps don't use svg (breeze) icons after system upgrade
+### GTK apps don't use svg (breeze) icons after system upgrade
 
 Try to run this to fix this issue:
 

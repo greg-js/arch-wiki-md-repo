@@ -48,7 +48,9 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 Deepin QQ/TIM 是 wine 中相对成熟的方案。几乎开箱即用，bug 较少。
 
-您可以安装[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)或[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装。
+您可以安装[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)或[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装deepin.com.qq.office或者deepin.com.qq.im。
+
+如果是Arch系KDE/Plasma桌面，请[按照这个教程](https://wiki.archlinux.org/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%90%AF%E5%8A%A8/)，先安装gnome-settings-daemon，然后将/usr/lib/gsd-xsettings设置为自动启动
 
 ### Crossover
 

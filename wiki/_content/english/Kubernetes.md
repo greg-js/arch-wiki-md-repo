@@ -33,6 +33,7 @@ There are several AUR packages for Kubernetes on Arch Linux:
 There are AUR packages for Kubectl plugins on Arch Linux:
 
 *   [kubectl-trace-git](https://aur.archlinux.org/packages/kubectl-trace-git/): Schedule bpftrace programs on your kubernetes cluster using the kubectl.
+*   [kubelogin](https://aur.archlinux.org/packages/kubelogin/): Kubectl plugin for Kubernetes OpenID Connect authentication (oidc-login).
 
 ## Basic configuration
 

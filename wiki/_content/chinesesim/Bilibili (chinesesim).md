@@ -13,7 +13,7 @@
 先使用 `you-get -u *url*`获得播放视频的流媒体地址，*url* 为视频播放页面的网址，然后使用以下命令播放视频：
 
 ```
-mpv --no-ytdl --http-header-fields="referer: [https://www.bilibili.com](https://www.bilibili.com)" *stream_url*
+mpv --no-ytdl --http-header-fields="referer: [https://www.bilibili.com](https://www.bilibili.com)" *video_url* --audio-file *audio_url*
 
 ```
 

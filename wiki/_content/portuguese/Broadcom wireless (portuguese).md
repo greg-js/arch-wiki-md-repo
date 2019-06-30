@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=570756) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=575582) na versão em inglês.
 
 Artigos relacionados
 

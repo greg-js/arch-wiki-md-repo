@@ -711,16 +711,16 @@ If git operations (-T, pull, clone, etc.) fails using ssh try changing the shell
 If you have any issues with styles and CSS not working, you may try to edit `/usr/share/webapps/gitlab/config/environments/production.rb` and change:
 
 ```
-# Disable Rails's static asset server (Apache or nginx will already do this)
-config.public_file_server = false
+ # Disable Rails's static asset server (Apache or nginx will already do this)
+ config.public_file_server.enabled = false
 
 ```
 
 to:
 
 ```
-# Disable Rails's static asset server (Apache or nginx will already do this)
-config.public_file_server = true
+ # Disable Rails's static asset server (Apache or nginx will already do this)
+ config.public_file_server.enabled = true
 
 ```
 

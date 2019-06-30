@@ -67,10 +67,15 @@ Where `-D` is the default location where the database cluster must be stored (se
 
 Note that by default, the locale and the encoding for the database cluster are derived from your current environment (using [$LANG](/index.php/Locale#LANG:_default_locale "Locale") value). [[1]](https://www.postgresql.org/docs/current/static/locale.html) However, depending on your settings and use cases this might not be what you want, and you can override the defaults using:
 
-*   `--locale *locale*`, where *locale* is to be chosen amongst the ones defined in the file `/etc/locale.conf` (plus `POSIX` and `C` that are also accepted);
+*   `--locale=*locale*`, where *locale* is to be chosen amongst the system's [available locales](/index.php/Locale#Generating_locales "Locale");
 *   `-E *encoding*` for the encoding (which must match the chosen locale);
 
-Example: `[postgres]$ initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'` 
+Example:
+
+```
+[postgres]$ initdb --locale=en_US.UTF-8 -E UTF8 -D /var/lib/postgres/data
+
+```
 
 Many lines should now appear on the screen with several ending by `... ok`:
 
@@ -106,7 +111,7 @@ Success. You can now start the database server using:
 
 If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
 
-**Note:** To read more about this `WARNING`, see [local users configuration](#Restricts_access_rights_to_the_database_superuser_by_default).
+**Note:** To read more about this `WARNING`, see [#Restricts access rights to the database superuser by default](#Restricts_access_rights_to_the_database_superuser_by_default).
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to [edit](/index.php/Edit "Edit") the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
@@ -410,14 +415,16 @@ Upgrading major PostgreSQL versions requires some extra maintenance.
 
 **Warning:** The following instructions could cause data loss. Do not run the commands below blindly, without understanding what they do. [Backup database](https://www.postgresql.org/docs/current/static/backup.html) first.
 
-It is recommended to add the following to your `/etc/pacman.conf` file:
+To ensure you do not accidentally upgrade the database to an incompatible version, it is recommended to [skip updates](/index.php/Pacman#Skip_package_from_being_upgraded "Pacman") to the PostgreSQL packages:
 
+ `/etc/pacman.conf` 
 ```
+...
 IgnorePkg = postgresql postgresql-libs
-
+...
 ```
 
-This will ensure you do not accidentally upgrade the database to an incompatible version. When an upgrade is available, pacman will notify you that it is skipping the upgrade because of the entry in `pacman.conf`. Minor version upgrades are safe to perform. However, if you do an accidental upgrade to a different major version, you might not be able to access any of your data. Always check the [PostgreSQL home page](https://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](https://www.postgresql.org/support/versioning).
+Minor version upgrades are safe to perform. However, if you do an accidental upgrade to a different major version, you might not be able to access any of your data. Always check the [PostgreSQL home page](https://www.postgresql.org/) to be sure of what steps are required for each upgrade. For a bit about why this is the case, see the [versioning policy](https://www.postgresql.org/support/versioning).
 
 There are two main ways to upgrade your PostgreSQL database. Read the official documentation for details.
 
@@ -450,14 +457,21 @@ Rename the databases cluster directory, and create an empty one:
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
 # mkdir /var/lib/postgres/data /var/lib/postgres/tmp
 # chown postgres:postgres /var/lib/postgres/data /var/lib/postgres/tmp
-[postgres]$ initdb -D '/var/lib/postgres/data'
-
-```
-
-Upgrade the cluster, replacing `*PG_VERSION*` with the old PostgreSQL version number (e.g `10`):
-
-```
 [postgres]$ cd /var/lib/postgres/tmp
+[postgres]$ initdb -D /var/lib/postgres/data
+
+```
+
+Check if it is possible to upgrade, replacing `*PG_VERSION*` with the old PostgreSQL version number (e.g. `10`):
+
+```
+[postgres]$ pg_upgrade -b /opt/pgsql-*PG_VERSION*/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data -c
+
+```
+
+If the output returns `Clusters are compatible`, upgrade the cluster:
+
+```
 [postgres]$ pg_upgrade -b /opt/pgsql-*PG_VERSION*/bin -B /usr/bin -d /var/lib/postgres/olddata -D /var/lib/postgres/data
 
 ```
@@ -487,7 +501,7 @@ You could also do something like this (after the upgrade and install of [postgre
 # mv /var/lib/postgres/data /var/lib/postgres/olddata
 # mkdir /var/lib/postgres/data
 # chown postgres:postgres /var/lib/postgres/data
-[postgres]$ initdb -D '/var/lib/postgres/data'
+[postgres]$ initdb -D /var/lib/postgres/data
 [postgres]$ /opt/pgsql-10/bin/pg_ctl -D /var/lib/postgres/olddata/ start
 [postgres]$ pg_dumpall -h /tmp -f /tmp/old_backup.sql
 [postgres]$ /opt/pgsql-10/bin/pg_ctl -D /var/lib/postgres/olddata/ stop

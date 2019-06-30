@@ -14,7 +14,6 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Configuration file](#Configuration_file)
-    *   [2.2 Systemd service file](#Systemd_service_file)
 *   [3 Usage](#Usage)
 *   [4 Example](#Example)
 *   [5 See also](#See_also)
@@ -48,33 +47,6 @@ Where `MODIFIER` is one of the following names: `super`, `hyper`, `meta`, `alt`,
 Mouse hotkeys can be defined by using one of the following special keysym names: `button1`, `button2`, `button3`, ..., `button24`. The hotkey can contain a sequence of the form {`STRING_1`,…,`STRING_N`}, in which case, the command must also contain a sequence with *N* elements: the pairing of the two sequences generates *N* hotkeys. In addition, the sequences can contain ranges of the form `A-Z` where *A* and *Z* are alphanumeric characters.
 
 What is actually executed is `SHELL -c COMMAND`, which means you can use environment variables in `COMMAND`. `SHELL` will be the content of the first defined environment variable in the following list: `SXHKD_SHELL`, `SHELL`. If sxhkd receives a `SIGUSR1` signal, it will reload its configuration file.
-
-### Systemd service file
-
-Create systemd service file for the user in question
-
- `$HOME/.config/systemd/user/sxhkd.service` 
-```
-[Unit]
-Description=Simple X Hotkey Daemon
-Documentation=man:sxhkd(1)
-BindsTo=xorg.service
-After=xorg.service
-
-[Service]
-ExecStart=/usr/bin/sxhkd
-ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
-
-[Install]
-WantedBy=graphical.target
-```
-
-Enable and start the service
-
-```
-$ systemctl --user enable --now sxhkd
-
-```
 
 ## Usage
 

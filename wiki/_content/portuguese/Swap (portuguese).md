@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=571341) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=574895) na versão em inglês.
 
 Artigos relacionados
 
@@ -124,23 +124,25 @@ Como o swap é gerenciado pelo systemd, ele será ativado novamente na próxima 
 
 Como uma alternativa para criar uma partição inteira, um arquivo swap oferece a capacidade de variar seu tamanho em execução, e é mais facilmente removido completamente. Isto pode ser especialmente desejável se o espaço em disco for precioso (por exemplo, um SSD de tamanho modesto).
 
-**Atenção:** [Btrfs](/index.php/Btrfs "Btrfs") no kernel Linux antes da versão 5.0 não tem suporte a arquivos swap. Não seguir este aviso pode resultar em corrupção do sistema de arquivos. Enquanto um arquivo swap pode ser usado no Btrfs quando montado através de um dispositivo de loop, isso resultará em desempenho swap severamente degradado.
+**Atenção:**
+
+*   [Btrfs](/index.php/Btrfs "Btrfs") no kernel Linux antes da versão 5.0 não tem suporte a arquivos swap. Não seguir este aviso pode resultar em corrupção do sistema de arquivos. Enquanto um arquivo swap pode ser usado no Btrfs quando montado através de um dispositivo de loop, isso resultará em desempenho swap severamente degradado.
+*   Para kernels 5.0+, o Btrfs não possui suporte a arquivos swao em sistemas de arquivos que criam diversos dispositivos. Veja [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) e [essa discussão no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
 
 ### Manualmente
 
 #### Criação de arquivo swap
 
-Para sistemas de arquivos "copy-on-write", como o [Btrfs](/index.php/Btrfs "Btrfs"), primeiro criar um arquivo de tamanho zero e defina o atributo `No_COW` nele com [chattr](/index.php/Chattr "Chattr"):
+Para sistemas de arquivos "copy-on-write", como o [Btrfs](/index.php/Btrfs "Btrfs"), primeiro crie um arquivo de tamanho zero, defina o atributo `No_COW` nele com [chattr](/index.php/Chattr "Chattr") e certifique-se que a compressão está desabilitada:
 
 ```
 # truncate -s 0 /swapfile
 # chattr +C /swapfile
+ # btrfs property set /swapfile compression none
 
 ```
 
-Veja [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs") para mais informações.
-
-Use `fallocate` para criar um arquivo swap com o tamanho de sua escolha (M = [Mebibytes](https://en.wikipedia.org/wiki/pt:Mebibyte "wikipedia:pt:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/pt:Gibibyte "wikipedia:pt:Gibibyte")). Por exemplo, para criar um arquivo swap de 512 MiB:
+Veja [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs") para mais informações. Use `fallocate` para criar um arquivo swap com o tamanho de sua escolha (M = [Mebibytes](https://en.wikipedia.org/wiki/pt:Mebibyte "wikipedia:pt:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/pt:Gibibyte "wikipedia:pt:Gibibyte")). Por exemplo, para criar um arquivo swap de 512 MiB:
 
 ```
 # fallocate -l 512M /swapfile
@@ -149,7 +151,7 @@ Use `fallocate` para criar um arquivo swap com o tamanho de sua escolha (M = [Me
 
 **Nota:** *fallocate* pode causar problemas com alguns sistemas de arquivos tal como [F2FS](/index.php/F2FS "F2FS").[[1]](https://github.com/karelzak/util-linux/issues/633) Como uma alternativa, usar *dd* é mais confiável, mas mais lento: `# dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress` 
 
-Defina as permissões certas (um arquivo swap legível por todos é uma imensa vulnerabilidade local)
+Defina as permissões certas (um arquivo swap legível por todos é uma imensa vulnerabilidade local):
 
 ```
 # chmod 600 /swapfile
@@ -170,13 +172,15 @@ Ative o arquivo swap:
 
 ```
 
-Finalmente, edite o [fstab](/index.php/Fstab "Fstab") para adicionar uma entrada para o arquivo swap:
+Finalmente, edite a configuração do fstab para adicionar uma entrada para o arquivo swap:
 
  `/etc/fstab` 
 ```
 /swapfile none swap defaults 0 0
 
 ```
+
+Para informações adicionais, veja [fstab#Usage](/index.php/Fstab#Usage "Fstab").
 
 **Nota:** O arquivo swap deve ser especificado por sua localização no sistema de arquivos, e não por seu UUID ou LABEL.
 

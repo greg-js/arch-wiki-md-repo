@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=574389) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=576378) na versão em inglês.
 
 Artigos relacionados
 
@@ -23,7 +23,8 @@ Artigos relacionados
     *   [3.3 Mudar o tema](#Mudar_o_tema)
 *   [4 Truques e dicas](#Truques_e_dicas)
     *   [4.1 Mostrar mensagens do kernel](#Mostrar_mensagens_do_kernel)
-    *   [4.2 Substituir o logo Arch e criar temas próprios](#Substituir_o_logo_Arch_e_criar_temas_próprios)
+    *   [4.2 Adicionar o Arch Logo para temas BGRT e spinner](#Adicionar_o_Arch_Logo_para_temas_BGRT_e_spinner)
+    *   [4.3 Substituir o logo Arch e criar temas próprios](#Substituir_o_logo_Arch_e_criar_temas_próprios)
 *   [5 Veja também](#Veja_também)
 
 ## Preparação
@@ -165,6 +166,15 @@ Reinicie para aplicar as alterações.
 #### Mostrar mensagens do kernel
 
 Durante a inicialização, é possível alterar para as mensagens do kernel pressionando a tecla "Home" (ou "Escape").
+
+### Adicionar o Arch Logo para temas BGRT e spinner
+
+Para adicionar o Arch Logo aos temas *spinner* e *BGRT* copie o logo Arch o diretório de tema do spinner com nome `watermark.png`:
+
+```
+# cp /usr/share/plymouth/arch-logo.png /usr/share/plymouth/themes/spinner/watermark.png
+
+```
 
 ### Substituir o logo Arch e criar temas próprios
 

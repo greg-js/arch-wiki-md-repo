@@ -75,7 +75,7 @@ pacman -Fl | dnf repoquery -l | dpkg-query -L | rpm -ql | equery files; qlist |
 | List packages that were recently added to one of the installation sources, i.e. which are new to it. | (none) | dnf list recent | aptitude search '~N' / aptitude forget-new | n/a | eix-diff |
 | List installed local packages along with version | pacman -Q | rpm -qa | dpkg -l | zypper search -s; rpm -qa | qlist -ICv |
 | Search locally installed package for names or descriptions | pacman -Qs | rpm -qa '*<str>*' | aptitude search '~i(~n $name|~d $description)' | eix -S -I |
-| List packages not required by any other package | pacman -Qt | package-cleanup --all --leaves | deborphan -anp1 | emerge -pc |
+| List packages not required by any other package | pacman -Qt | dnf leaves | deborphan -anp1 | emerge -pc |
 | List packages installed explicitly (not as dependencies) | pacman -Qe | dnf history userinstalled | apt-mark showmanual | emerge -pvO @selected; eix --selected |
 | List packages installed automatically (as dependencies) | pacman -Qd | apt-mark showauto |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |

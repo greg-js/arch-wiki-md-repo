@@ -51,7 +51,7 @@ The Qt framework is the basis of the [KDE](/index.php/KDE "KDE") software commun
 
 ## Installation
 
-Two versions of Qt are currently available in the [official repositories](/index.php/Official_repositories "Official repositories"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
+Qt 5.x is available in the [official repositories](/index.php/Official_repositories "Official repositories"). Legacy versions of Qt (4.x and 3.x) are available from the [AUR](/index.php/AUR "AUR"). They can be [installed](/index.php/Pacman "Pacman") with the following packages:
 
 *   **Qt 5.x** is available in the [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) package, with documentation in the [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc) package.
 *   **Qt 4.x** is available in the [qt4](https://aur.archlinux.org/packages/qt4/) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/) package.
@@ -409,7 +409,7 @@ Set `QT_LOGGING_RULES` as [environment variable](/index.php/Environment_variable
 
  `/etc/environment`  `QT_LOGGING_RULES='*=false'` 
 
-To allow only debug logging, use `QT_LOGGING_RULES="*.debug=false"`.
+To disable only debug logging, use `QT_LOGGING_RULES="*.debug=false"`.
 
 ### Icon theme is not applied
 

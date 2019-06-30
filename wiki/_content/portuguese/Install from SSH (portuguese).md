@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Install from SSH](/index.php/Install_from_SSH "Install from SSH"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_SSH&diff=0&oldid=571701) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Install from SSH](/index.php/Install_from_SSH "Install from SSH"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_SSH&diff=0&oldid=575492) na versão em inglês.
 
 Este artigo possui o intuito de mostrar aos usuários como instalar o Arch através de uma conexão [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)"). Considere esta abordagem quando o host está em local remoto ou você quiser usar capacidade de copiar/colar de um cliente SSH para fazer a instalação do Arch.
 

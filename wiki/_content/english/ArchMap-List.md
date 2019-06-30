@@ -1117,5 +1117,6 @@ You can use the following website to get your device's coordinates along with a 
 51.601860, 7.137573 "Scrumplex" # Herten, NRW, Germany
 51.338977, -0.008085 "curl pipe sudo bash" # London, UK
 53.349933, -6.231844 "Arksun" # Dublin, Ireland
+18.479652, 73.904432 "Strykar" # Maharashtra, India
 
 ```

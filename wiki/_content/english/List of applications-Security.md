@@ -546,6 +546,10 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
+*   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Cross-platform encrypted messaging service.
+
+	[https://signal.org/](https://signal.org/) || [signal](https://aur.archlinux.org/packages/signal/)
+
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)

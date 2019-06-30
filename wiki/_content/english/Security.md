@@ -528,7 +528,7 @@ The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kern
 
 See also [Wikipedia:Sandbox (computer security)](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)").
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is currently enabled in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (v4.14.15 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Lack of it may prevent certain sandboxing features from being made available to applications. Unprivileged usage is disabled by default unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `1`, since it greatly increases the attack surface for local privilege escalation.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is currently enabled in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (v4.14.15 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Lack of it may prevent certain sandboxing features from being made available to applications. Unprivileged usage is enabled by default starting with v5.1.8 unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `0`. Since this greatly increases the attack surface for local privilege escalation, it is advised to disable this manually, or use the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel.
 
 ### Firejail
 
@@ -536,7 +536,7 @@ See also [Wikipedia:Sandbox (computer security)](https://en.wikipedia.org/wiki/S
 
 ### bubblewrap
 
-[bubblewrap](/index.php/Bubblewrap "Bubblewrap") is a setuid sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with an even smaller resource footprint than Firejail. While it lacks certain features such as file path whitelisting, bubblewrap does offer bind mounts as well as the creation of user/IPC/PID/network/cgroup namespaces and can support both simple and [complex sandboxes](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh).
+[bubblewrap](/index.php/Bubblewrap "Bubblewrap") is a sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with an even smaller resource footprint than Firejail. While it lacks certain features such as file path whitelisting, bubblewrap does offer bind mounts as well as the creation of user/IPC/PID/network/cgroup namespaces and can support both simple and [complex sandboxes](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh).
 
 ### chroots
 

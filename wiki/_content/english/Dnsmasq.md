@@ -29,6 +29,7 @@ Related articles
     *   [4.3 More than one instance](#More_than_one_instance)
         *   [4.3.1 Static](#Static)
         *   [4.3.2 Dynamic](#Dynamic)
+    *   [4.4 Domain blacklisting](#Domain_blacklisting)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -359,6 +360,20 @@ bind-dynamic
 ```
 
 **Note:** This is default in [libvirt](/index.php/Libvirt "Libvirt").
+
+### Domain blacklisting
+
+To blacklist domains, i.e. answer queries for them with NXDOMAIN, use the `address` option without specifying the IP address:
+
+```
+address=/blacklisted.example/
+address=/another.blacklisted.example/
+
+```
+
+For ease of use place the blacklist in a separate file, e.g. `/etc/dnsmasq.d/blacklist.conf` and load it from `/etc/dnsmasq.conf` with `conf-file=/etc/dnsmasq.d/blacklist.conf` or `conf-dir=conf-dir=/etc/dnsmasq.d/,*.conf`.
+
+**Tip:** A list of potential sources for the blacklist can be found in [OpenWrt's adblock package's README](https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md).
 
 ## See also
 

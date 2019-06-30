@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=569432) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=574417) na versão em inglês.
 
 Artigos relacionados
 
@@ -65,7 +65,7 @@ Participe da discussão em uma ou mais [listas de discussão](https://lists.arch
 
 Relatar e corrigir erros no [rastreador de erros](https://bugs.archlinux.org/) é uma das formas possíveis de se ajudar a comunidade.
 
-Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
+Contudo, o uso inefetivo pode ser contraprodutivo. Por favor, leia [Diretrizes de relatórios de erro](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
 
 ### Informe sobre problemas de segurança
 
@@ -100,7 +100,7 @@ Você pode ajudar a sustentar os custos dos servidores, na [página oficial de d
 
 ## Projetos não oficiais
 
-**Note:** Entradas listadas aqui *não* são parte do projeto [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)").
+**Nota:** Entradas listadas aqui *não* são parte do projeto [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)").
 
 A comunidade Arch mantém vários projetos. Sinta-se livre para incluir o seu!
 
@@ -112,15 +112,15 @@ Grupos específicos do Arch, que podem ser de seu interesse.
 
 	O projeto ArchMap cria um mapa dos usuários do Arch Linux por todo o mundo
 
-	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
+	[Arch Linux Subreddit](https://www.reddit.com/r/archlinux/)
 
-	Uma comunidade no Google Plus para usuários Arch Linux interagirem, fazer perguntas ou conversas de notícias em geral sobre o Arch Linux.
+	Local para usuários do Reddit discutirem questões relacionadas do Arch.
 
 	[Comunidades internacionais](/index.php/Comunidades_internacionais "Comunidades internacionais")
 
 	Comunidades locais e lugares para encontros de usuários.
 
-	[Arch Women](http://archwomen.org/)
+	[Arch Women](https://archwomen.org/)
 
 	Grupo com a intenção de resolver possíveis barreiras no Arch para usuárias. ([tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
@@ -128,7 +128,7 @@ Grupos específicos do Arch, que podem ser de seu interesse.
 
 Softwares desenvolvidos pela comunidade com foco no Arch.
 
-	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
+	[Xyne's Arch Linux Projects](https://xyne.archlinux.ca/projects/)
 
 	Projetos relacionados ao Arch de um Trusted User.
 
@@ -159,5 +159,6 @@ Leia [Trusted Users (Português)#Como eu me torno um TU?](/index.php/Trusted_Use
 
 ### O que eu posso fazer sendo um artista?
 
-Sinta-se livre para compartilhar papéis de parede, splash screens, cores, widgets, temas, etc., com a comunidade no [subforum de arte](https://bbs.archlinux.org/viewforum.php?id=47).
+Sinta-se livre para compartilhar papéis de parede, splash screens, paletas de cores, widgets, temas, etc., com a comunidade no [subforum de arte](https://bbs.archlinux.org/viewforum.php?id=47).
+
 Veja também [Arch Linux Art](https://www.archlinux.org/art/).

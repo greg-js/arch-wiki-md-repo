@@ -28,7 +28,7 @@ Configuration is done through an xml file `config.plist` under path `EFI/CLOVER`
 
 A tool is now available to easily edit your `config.plist` in any OS: [Cloud Clover Editor (CCE)](http://cloudclovereditor.altervista.org/cce/index.php)
 
-For details please reference [their wiki](http://clover-wiki.zetam.org/Home), for the Linux kernel EFISTUB boot entry and native resolution GUI, add following code to the relevant place.
+For details please reference [their wiki](https://sourceforge.net/p/cloverefiboot/wiki/Home/), for the Linux kernel EFISTUB boot entry and native resolution GUI, add following code to the relevant place.
 
 `/initramfs-linux.img` and `vmlinuz-linux` are relative to the root of the UEFI partition. In this example, the initramfs and kernel files have to be at the root of the EFI partition, at the same level as the `EFI` directory.
 
@@ -68,4 +68,4 @@ For details please reference [their wiki](http://clover-wiki.zetam.org/Home), fo
 ## See also
 
 *   [Project homepage](http://sourceforge.net/projects/cloverefiboot/)
-*   [Clover Wiki](https://clover-wiki.zetam.org/Home)
+*   [Clover Wiki](https://sourceforge.net/p/cloverefiboot/wiki/Home/)

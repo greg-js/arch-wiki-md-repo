@@ -55,6 +55,8 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
             *   [4.4.1.1 PostgreSQL](#PostgreSQL)
+                *   [4.4.1.1.1 Per user PostgreSQL instance](#Per_user_PostgreSQL_instance)
+                *   [4.4.1.1.2 System-wide PostgreSQL instance](#System-wide_PostgreSQL_instance)
             *   [4.4.1.2 SQLite](#SQLite)
             *   [4.4.1.3 Disabling Akonadi](#Disabling_Akonadi)
     *   [4.5 KDE Telepathy](#KDE_Telepathy)
@@ -430,7 +432,43 @@ See also [FS#32878](https://bugs.archlinux.org/task/32878).
 
 [Install](/index.php/Install "Install") [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
-To use [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") edit Akonadi configuration file so that it has the following contents:
+Akonadi supports either using the existing system-wide [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") instance, i.e. `postgresql.service`, or running a PostgreSQL instance with user privileges and the database in `~/.local/share/akonadi/db_data/`.
+
+###### Per user PostgreSQL instance
+
+Edit Akonadi configuration file so that it has the following contents:
+
+ `~/.config/akonadi/akonadiserverrc` 
+```
+[%General]
+Driver=QPSQL
+```
+
+**Note:** The `[QPSQL]` section and its values will get set by Akonadi when it starts for the first time.
+
+Start Akonadi with `akonadictl start`, and check its status: `akonadictl status`.
+
+**Note:** Akonadi supports upgrading its managed database between major PostgreSQL versions[[6]](https://phabricator.kde.org/D21154), but it does not support the location of PostgreSQL binaries that [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade) uses, thus major PostgreSQL version upgrades will require a manual database upgrade. To update the PostgreSQL database in `~/.local/share/akonadi/db_data/`, that is used by Akonadi, follow the [update instructions on KDE UserBase Wiki](https://userbase.kde.org/Akonadi/Postgres_update). Make sure to adjust the paths to PostgreSQL binaries to those used by [postgresql](https://www.archlinux.org/packages/?name=postgresql) and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade), see [PostgreSQL#Upgrading PostgreSQL](/index.php/PostgreSQL#Upgrading_PostgreSQL "PostgreSQL").
+
+###### System-wide PostgreSQL instance
+
+This requires an already configured and running [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+
+Create a PostgreSQL user account for your user:
+
+```
+[postgres]$ createuser *username*
+
+```
+
+Create a database for Akonadi:
+
+```
+[postgres]$ createdb -O *username* --locale=en_US.UTF-8 -T template0 akonadi-*username*
+
+```
+
+Configure Akonadi to use the system-wide PostgreSQL:
 
  `~/.config/akonadi/akonadiserverrc` 
 ```
@@ -438,15 +476,12 @@ To use [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") edit Akonadi configurati
 Driver=QPSQL
 
 [QPSQL]
-Host=
-InitDbPath=/usr/bin/initdb
-Name=akonadi
-ServerPath=/usr/bin/pg_ctl
-StartServer=true
-
+Host=/run/postgresql
+Name=akonadi-*username*
+StartServer=false
 ```
 
-**Note:** The value for `Host=` will get set by Akonadi when it starts for the first time.
+**Note:** Custom port, username and password can be specified with options `Port=`, `User=`, `Password=` in the `[QPSQL]` section.
 
 Start Akonadi with `akonadictl start`, and check its status: `akonadictl status`.
 
@@ -458,9 +493,6 @@ To use [SQLite](/index.php/SQLite "SQLite") edit Akonadi configuration file to m
 ```
 [%General]
 Driver=QSQLITE3
-
-[QSQLITE3]
-Name=/home/*username*/.local/share/akonadi/akonadi.db
 ```
 
 ##### Disabling Akonadi
@@ -503,7 +535,7 @@ If you use a [firewall](/index.php/Firewall "Firewall"), you need to open UDP an
 
 ### Use a different window manager
 
-The component chooser settings in Plasma does not allow changing the window manager anymore. [[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env/` and export the `KDEWM` variable there. For example to use the i3 window manager :
+The component chooser settings in Plasma does not allow changing the window manager anymore. [[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[8]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env/` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 
@@ -735,7 +767,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 #### Empty IMAP inbox in KMail
 
-For some IMAP accounts KMail will show the inbox as a top-level container (so it will not be possible to read messages there) with all other folders of this account inside.[[8]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server-side subscriptions in the KMail account settings.
+For some IMAP accounts KMail will show the inbox as a top-level container (so it will not be possible to read messages there) with all other folders of this account inside.[[9]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server-side subscriptions in the KMail account settings.
 
 #### Authorization error for EWS account in KMail
 

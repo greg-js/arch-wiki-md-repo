@@ -112,7 +112,7 @@ tscale=oversample
 
 Beyond this there is still a lot you can do but things become more complicated, require more powerful video cards, and are in constant development. As a brief overview, it is possible to load special shaders that perform exotic scaling and sharpening techniques including some that actually use deep neural networks trained on images (for both real world and animated content). To learn more about this take a look around the [mpv wiki](https://github.com/mpv-player/mpv/wiki), particularly the [user shader's section](https://github.com/mpv-player/mpv/wiki/User-Scripts#user-shaders).
 
-There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1). It's also helpful to run *mpv* from the command line to check for error messages about the config.
+There are also plenty of other options you may find desirable as well. It is worthwhile taking a look at [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1). It is also helpful to run *mpv* from the command line to check for error messages about the config.
 
 #### Custom profiles
 
@@ -138,7 +138,7 @@ log-file=~~/log           #Sets a location for writing a log file, ~~/ translate
 
 ```
 
-There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `gpu-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it's never called in the top level area.
+There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `gpu-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it is never called in the top level area.
 
 Alternatively one could call *mpv* from the command line with:
 
@@ -198,7 +198,7 @@ Scripts are typically installed by putting them in the `~/.config/mpv/scripts/` 
 
 Since JavaScript support is still fairly new, there is currently very little in the way of scripts, but [documentation exists](https://mpv.io/manual/master/#javascript) for anyone interested in making their own.
 
-JavaScript support is not available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but it's supported by some AUR packages e.g. [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-full-git](https://aur.archlinux.org/packages/mpv-full-git/).
+JavaScript support is not available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but it is supported by some AUR packages e.g. [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-full-git](https://aur.archlinux.org/packages/mpv-full-git/).
 
 ### Lua
 
@@ -226,11 +226,11 @@ Vapoursynth is an alternative to AviSynth that can be used on Linux and allows f
 
 To use vapoursynth filters you have to install the [vapoursynth](https://www.archlinux.org/packages/?name=vapoursynth) package (or [vapoursynth-git](https://aur.archlinux.org/packages/vapoursynth-git/)) and compile *mpv* with the `--enable-vapoursynth` build flag.
 
-This is easier to do by first installing Vapoursynth and then installing (or re-installing if it's already installed) [mpv-git](https://aur.archlinux.org/packages/mpv-git/). The configure script for [mpv-git](https://aur.archlinux.org/packages/mpv-git/) will auto-detect Vapoursynth (as long as it has already been installed) and it will automatically compile *mpv* with support for Vapoursynth without having to manually change any configure options or anything (this makes it very easy to update *mpv* as well).
+This is easier to do by first installing Vapoursynth and then installing (or re-installing if it is already installed) [mpv-git](https://aur.archlinux.org/packages/mpv-git/). The configure script for [mpv-git](https://aur.archlinux.org/packages/mpv-git/) will auto-detect Vapoursynth (as long as it has already been installed) and it will automatically compile *mpv* with support for Vapoursynth without having to manually change any configure options or anything (this makes it very easy to update *mpv* as well).
 
 ### SVP 4 Linux (SmoothVideoProject)
 
-[SmoothVideoProject SVP](https://www.svp-team.com/wiki/Main_Page) is a program that's primarily known for converting video to 60fps. It's free [as in beer] and full featured for 64bit Linux (costs money for Windows and OS X and is incompatible with 32bit Linux).
+[SmoothVideoProject SVP](https://www.svp-team.com/wiki/Main_Page) is a program that is primarily known for converting video to 60fps. It is free [as in beer] and full featured for 64bit Linux (costs money for Windows and OS X and is incompatible with 32bit Linux).
 
 It has three main features and each one can be disabled/enabled as one chooses (you are not forced to use motion interpolation).
 
@@ -238,7 +238,7 @@ It has three main features and each one can be disabled/enabled as one chooses (
 2.  [Black bar lighting](https://www.svp-team.com/wiki/Manual:Outer_lighting) ([youtube video](https://www.youtube.com/watch?v=yTzTpW3kTBE)) - If the image has an aspect ratio that produces black bars on your display then SVP will illuminate the black bars with "lights" generated by the content on the screen. It has some amount of customization but the defaults are pretty close to optimal.
 3.  [LED ambient lighting control](https://www.svp-team.com/wiki/Manual:SVPlight) ([youtube video](https://www.youtube.com/watch?v=UUM2n-8kIJ8)) - Has the ability to control LED ambient lighting attached to your television.
 
-Once you have *mpv* compiled with Vapoursynth support it's fairly easy to get SVP working with *mpv*. Simply install [svp](https://aur.archlinux.org/packages/svp/), open the SVP program to let it assess your system performance (you may want to close other programs first so that it gets an accurate reading), and finally add the following *mpv* profile to your mpv.conf (taken from [here](https://www.svp-team.com/wiki/SVP:mpv)):
+Once you have *mpv* compiled with Vapoursynth support it is fairly easy to get SVP working with *mpv*. Simply install [svp](https://aur.archlinux.org/packages/svp/), open the SVP program to let it assess your system performance (you may want to close other programs first so that it gets an accurate reading), and finally add the following *mpv* profile to your mpv.conf[[3]](https://www.svp-team.com/wiki/SVP:mpv):
 
  `mpv.conf` 
 ```
@@ -277,6 +277,8 @@ Either way, hardware decoding is discouraged by *mpv* developers and is not like
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 Hardware accelerated video decoding is available via `--hwdec=*API*` option. For list of all supported APIs and other required options see [relevant manual section](https://mpv.io/manual/stable/#options-hwdec).
+
+Newer versions of mpv try to use `cuda`/`nvdec` as the API of choice for hardware acceleration on [NVIDIA](/index.php/NVIDIA "NVIDIA") cards when `--hwdec=auto`. If that method does not work for your card and you have a dual-GPU system, meaning that you cannot just set `--hwdec=vdpau`, you can make mpv fall back to `vdpau` by faking the cuda device: Set `cuda-decode-device=*value*` where `*value*` is the wrong index number for the card. (in most systems the correct number will be 0), e.g. `--cuda-decode-device=999`. See [mpv issue 6777](https://github.com/mpv-player/mpv/issues/6777).
 
 For [Wayland](/index.php/Wayland "Wayland") use `--gpu-context=wayland` option. For list of other available GPU APIs see [manual](https://mpv.io/manual/stable/#options-gpu-context).
 
@@ -401,7 +403,7 @@ Screenshots will be saved in /path/to/screenshot.png.
 
 ### General debugging
 
-If you are having trouble with *mpv'*s playback (or if it's flat out failing to run) then the first three things you should do are:
+If you are having trouble with *mpv'*s playback (or if it is flat out failing to run) then the first three things you should do are:
 
 1.  Run *mpv* from the command line (the -v flag increases verbosity). If you are lucky there will be an error message there telling you what is wrong.
     `$ mpv -v video.mkv`
@@ -410,7 +412,7 @@ If you are having trouble with *mpv'*s playback (or if it's flat out failing to 
 3.  Run *mpv* without a configuration. If this runs well then the problem is somewhere in your configuration (perhaps your hardware cannot keep up with your settings).
     `$ mpv --no-config video.mkv`
 
-If *mpv* runs but it just does not run well then a fourth thing that might be worth taking a look at is installing the [mpv-stats](#mpv-stats) script and using it to see exactly how it's performing.
+If *mpv* runs but it just does not run well then a fourth thing that might be worth taking a look at is installing the [mpv-stats](#mpv-stats) script and using it to see exactly how it is performing.
 
 ### Fix jerky playback and tearing
 

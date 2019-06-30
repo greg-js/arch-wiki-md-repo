@@ -10,7 +10,7 @@
 | Card Reader | Working |
 | Bluetooth | Working |
 | Function keys | Working |
-| Face recognition sensor | Not working |
+| Face recognition sensor | working |
 | Battery charge threshold | Not working |
 
 ASUS [announced](https://www.asus.com/us/News/C8ew3iV9HQ6KqLnw) UX333, UX433 and UX533models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia GPU), this article covers hardware specific configuration for all ZenBook 13 (UX333), ZenBook 14 (UX433) and ZenBook 15 (UX533).
@@ -57,7 +57,7 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 ## Facerecognition login
 
-This computer has built-in face recognition sensor but we haven't tested it. There are projects that try to achieve this [[1]](https://github.com/boltgolt/howdy) but we haven't have the change to test it.
+This computer has built-in face recognition sensor. You can use it with the project Howdy [[1]](https://github.com/boltgolt/howdy). See the [howdy](/index.php/Howdy "Howdy") page for further informations.
 
 # Troubleshooting
 

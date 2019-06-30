@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-05-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=573594) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=574103) na versão em inglês.
 
 Artigos relacionados
 
@@ -74,10 +74,6 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
-*   **[Pantheon](/index.php/Pantheon "Pantheon")** — O Pantheon é o ambiente de área de trabalho padrão originalmente criado para a distribuição do ElementaryOS. Ele é escrito do zero usando Vala e o kit de ferramentas GTK3\. Com relação à usabilidade e aparência, a área de trabalho tem algumas semelhanças com o GNOME Shell e o macOS.
-
-	[https://elementary.io/](https://elementary.io/) || [pantheon](https://aur.archlinux.org/packages/pantheon/)
-
 *   **[Sugar](/index.php/Sugar "Sugar")** — A Sugar Learning Platform (plataforma de aprendizagem Sugar) é um ambiente computacional composto por Atividades projetadas para ajudar crianças de 5 a 12 anos de idade a aprenderem juntas por meio de expressão de mídia rica. O Sugar é o principal componente de um esforço mundial para oferecer a todas as crianças a oportunidade de uma educação de qualidade – atualmente é usado por quase um milhão de crianças em todo o mundo, falando 25 idiomas em mais de 40 países. Sugar fornece os meios para ajudar as pessoas a levarem vidas completas através do acesso a uma educação de qualidade que atualmente é desperdiçada por muitos.
 
 	[https://sugarlabs.org/](https://sugarlabs.org/) || [sugar](https://www.archlinux.org/packages/?name=sugar) + [sugar-fructose](https://www.archlinux.org/groups/x86_64/sugar-fructose/)
@@ -103,6 +99,10 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork do Enlightenment atualmente usado como ambiente de desktop padrão no Bodhi Linux baseado em Ubuntu.
 
 	[http://www.bodhilinux.com/moksha-desktop/](http://www.bodhilinux.com/moksha-desktop/) || [moksha](https://aur.archlinux.org/packages/moksha/)
+
+*   **[Pantheon](/index.php/Pantheon "Pantheon")** — O Pantheon é o ambiente de área de trabalho padrão originalmente criado para a distribuição do ElementaryOS. Ele é escrito do zero usando Vala e o kit de ferramentas GTK3\. Com relação à usabilidade e aparência, a área de trabalho tem algumas semelhanças com o GNOME Shell e o macOS.
+
+	[https://elementary.io/](https://elementary.io/) || [pantheon](https://aur.archlinux.org/packages/pantheon/)
 
 *   **theShell** — theShell é um ambiente de desktop que tenta ser o mais transparente possível. Ele usa o Qt 5 como seu kit de ferramentas de widgets e o KWin como seu gerenciador de janelas. Também incorpora um assistente pessoal. Ele também incorpora um assistente pessoal.
 

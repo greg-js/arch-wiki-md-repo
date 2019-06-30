@@ -428,7 +428,7 @@
 
 *   **[Calibre](https://en.wikipedia.org/wiki/ru:Calibre_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Calibre (программа)")** — Приложение управления библиотекой электронных книг, которое может также осуществлять конвертацию между различными форматами и синхронизацию с многими электронными читалками. Среди поддерживаемых форматов есть CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT и TXTZ
 
-	[http://calibre-ebook.com/](http://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
+	[https://calibre-ebook.com/](https://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
 
 *   **Cool Reader** — Программа чтения электронных книг с большим количеством поддерживаемых форматов, таких как EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM и TCR
 

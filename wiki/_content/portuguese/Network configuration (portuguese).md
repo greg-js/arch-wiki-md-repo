@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=569731) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-06-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=576369) na versão em inglês.
 
 Artigos relacionados
 
@@ -246,10 +246,17 @@ A tabela de roteamento é gerenciada usando [ip-route(8)](https://jlk.fjfi.cvut.
 
 *PREFIXO* é uma notação CIDR ou `default` para o gateway padrão.
 
-Lista rotas:
+Lista rotas IPv4:
 
 ```
 $ ip route show
+
+```
+
+Lista rotas IPv6:
+
+```
+$ ip -6 route
 
 ```
 
@@ -366,7 +373,7 @@ Para tornar sua máquina acessível em sua LAN por seu hostname, você pode:
 *   configurar um [servidor DNS](/index.php/Servidor_DNS "Servidor DNS") para resolver seu hostname e faça com que os dispositivos LAN o usem (ex., por [#DHCP](#DHCP))
 *   ou a forma fácil: use um serviço [Zero-configuration networking](https://en.wikipedia.org/wiki/pt:Zeroconf "wikipedia:pt:Zeroconf"):
     *   [Samba](/index.php/Samba "Samba") fornece resolução de nomes via **NetBIOS** da Microsoft. Ele precisa da instalação do [samba](https://www.archlinux.org/packages/?name=samba) e habilitação do serviço `nmb.service`. Computadores usando Windows, macOS ou Linux com `nmb` ativo, serão capazes de localizar sua máquina.
-    *   [Avahi](/index.php/Avahi "Avahi") fornece resolução de nomes via **zeroconf**, também conhecido como Avahi ou Bonjour. É necessário uma configuração um pouco mais complexa que o Samba: veja [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes details. Computadores usando macOS, ou Linux com um daemon Avahi ativo, serão capazes de localizar sua máquina. Windows não têm um cliente ou daemon Avahi incorporados.
+    *   [Avahi](/index.php/Avahi "Avahi") fornece resolução de nomes via **zeroconf**, também conhecido como Avahi ou Bonjour. É necessário uma configuração um pouco diferente que o Samba: veja [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes details. Computadores usando macOS, ou Linux com um daemon Avahi ativo, serão capazes de localizar sua máquina. Windows não têm um cliente ou daemon Avahi incorporados.
 
 ## Dicas e truques
 

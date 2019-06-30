@@ -13,10 +13,14 @@ From project [home page](http://lxde.org/):
 
 	The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Installation](#Installation)
-    *   [1.1 GTK+ 3 version](#GTK+_3_version)
+    *   [1.1 GTK 3 version](#GTK_3_version)
 *   [2 Starting the desktop](#Starting_the_desktop)
     *   [2.1 Graphical log-in](#Graphical_log-in)
     *   [2.2 Console](#Console)
@@ -43,9 +47,9 @@ From project [home page](http://lxde.org/):
 
 LXDE requires at least [lxde-common](https://www.archlinux.org/packages/?name=lxde-common), [lxsession](https://www.archlinux.org/packages/?name=lxsession) and [openbox](https://www.archlinux.org/packages/?name=openbox) (or another window manager) to be [installed](/index.php/Install "Install"). The [lxde](https://www.archlinux.org/groups/x86_64/lxde/) group contains the full desktop.
 
-### GTK+ 3 version
+### GTK 3 version
 
-An experimental GTK+ 3 build of LXDE can be installed with the [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/) group.
+An experimental GTK 3 build of LXDE can be installed with the [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/) group.
 
 While it works mostly, there are some known issues with [gpicview](https://sourceforge.net/p/lxde/bugs/769/), [lxappearance-obconf](https://sourceforge.net/p/lxde/bugs/768/), [lxlauncher](https://sourceforge.net/p/lxde/bugs/803/) and [lxpanel](https://sourceforge.net/p/lxde/bugs/773/).
 
@@ -205,7 +209,7 @@ The icons of running applications do not match the set *Icon size* in *Panel Set
 
 ### Fake transparency in LXTerminal
 
-The latest version of [VTE terminal widget library](https://wiki.gnome.org/Apps/Terminal/VTE) requires a compositing window manager for background transparency. The unmaintained, legacy GTK+ 2 version of VTE has fake transparency, where the desktop background image will show through the terminal. It you prefer fake transparency, the GTK+ 2 version of LXTerminal can be installed with the [lxterminal-gtk2](https://aur.archlinux.org/packages/lxterminal-gtk2/) package.
+The latest version of [VTE terminal widget library](https://wiki.gnome.org/Apps/Terminal/VTE) requires a compositing window manager for background transparency. The unmaintained, legacy GTK 2 version of VTE has fake transparency, where the desktop background image will show through the terminal. It you prefer fake transparency, the GTK 2 version of LXTerminal can be installed with the [lxterminal-gtk2](https://aur.archlinux.org/packages/lxterminal-gtk2/) package.
 
 ## See also
 

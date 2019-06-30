@@ -43,6 +43,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [4.10 xterm title](#xterm_title)
         *   [4.10.1 Terminal emulator tab title](#Terminal_emulator_tab_title)
     *   [4.11 Shell environment detection](#Shell_environment_detection)
+    *   [4.12 /dev/tcp equivalent: ztcp](#/dev/tcp_equivalent:_ztcp)
 *   [5 Uninstallation](#Uninstallation)
 *   [6 See also](#See_also)
 
@@ -194,7 +195,7 @@ Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its
 
 ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
-Add the following to your `~/.zshrc` to set up key bindings using key sequences from [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5):
+Add the following to your `~/.zshrc` to set up key bindings using key sequences from [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)[[1]](http://zshwiki.org/home/keybindings/):
 
  `~/.zshrc` 
 ```
@@ -243,8 +244,6 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 ```
-
-See [ZshWiki:Keybindings](http://zshwiki.org/home/keybindings/) for more information.
 
 ### History search
 
@@ -537,7 +536,7 @@ $ rehash
 
 ```
 
-This 'rehash' can be set to happen automatically.[[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
+This 'rehash' can be set to happen automatically.[[3]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
 
  `~/.zshrc` 
 ```
@@ -733,6 +732,16 @@ Some terminal emulators and multiplexers support setting the title of the tab. T
 ### Shell environment detection
 
 See [a repository about shell environment detection](https://gitlab.com/jdorel-documentation/shell-environment-detection) for tests to detect the shell environment. This includes login/interactive shell, Xorg session, TTY and SSH session.
+
+### /dev/tcp equivalent: ztcp
+
+Use the `zsh/net/tcp` module:
+
+ `zmodload zsh/net/tcp` 
+
+You can now establish tcp connections:
+
+ `ztcp exemple.com 80` 
 
 ## Uninstallation
 

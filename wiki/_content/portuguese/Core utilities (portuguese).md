@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-05-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=573702) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=575494) na versão em inglês.
 
 Artigos relacionados
 
@@ -20,15 +20,14 @@ A maioria das interfaces de linha de comando está principalmente documentada em
 
 *   [1 Essenciais](#Essenciais)
     *   [1.1 Prevenindo perda de dados](#Prevenindo_perda_de_dados)
-    *   [1.2 Melhoria de cp e mv](#Melhoria_de_cp_e_mv)
-    *   [1.3 rm para a lixeira](#rm_para_a_lixeira)
 *   [2 Não essenciais](#Não_essenciais)
 *   [3 Alternativas](#Alternativas)
-    *   [3.1 Alternativas ao find](#Alternativas_ao_find)
-    *   [3.2 Alternativas ao diff](#Alternativas_ao_diff)
-    *   [3.3 Alternativas ao grep](#Alternativas_ao_grep)
-        *   [3.3.1 Pesquisadores de código](#Pesquisadores_de_código)
-    *   [3.4 Filtros interativos](#Filtros_interativos)
+    *   [3.1 Alternativas ao cp](#Alternativas_ao_cp)
+    *   [3.2 Alternativas ao find](#Alternativas_ao_find)
+    *   [3.3 Alternativas ao diff](#Alternativas_ao_diff)
+    *   [3.4 Alternativas ao grep](#Alternativas_ao_grep)
+        *   [3.4.1 Pesquisadores de código](#Pesquisadores_de_código)
+    *   [3.5 Filtros interativos](#Filtros_interativos)
 *   [4 Veja também](#Veja_também)
 
 ## Essenciais
@@ -68,15 +67,7 @@ A tabela a seguir lista alguns utilitários importantes com os quais os usuário
 
 ### Prevenindo perda de dados
 
-Os redirecionamentos rm, mv, cp e shell excluem ou sobrescrevem arquivos sem perguntar. Todos os rm, mv e cp possuem suporte ao sinalizador `-i` para avisar o usuário antes de cada remoção/sobrescrita. Alguns usuários gostam de ativar o sinalizador `-i` por padrão usando [aliases](/index.php/Alias "Alias"). Essas configurações de shell, no entanto, são perigosas porque você se acostuma a elas, resultando em perda de dados em potencial quando você usa outro sistema ou usuário que não as possui. A melhor maneira de evitar a perda de dados é fazer [backups](/index.php/Backup_(Portugu%C3%AAs) "Backup (Português)").
-
-### Melhoria de cp e mv
-
-O uso de [rsync como uma alternativa a cp/mv](/index.php/Rsync#As_cp/mv_alternative "Rsync") permite retomar uma transferência com falha, mostrar o status da transferência, pular arquivos já existentes e certificar-se da integridade dos arquivos de destino usando somas de verificação.
-
-### rm para a lixeira
-
-Veja [Gerenciamento de lixo](/index.php/Trash_management "Trash management")
+Os redirecionamentos `rm`, `mv`, `cp` e shell excluem ou sobrescrevem arquivos sem perguntar. `rm`, `mv` e `cp` possuem suporte ao sinalizador `-i` para avisar o usuário antes de cada remoção/sobrescrita. Alguns usuários gostam de ativar o sinalizador `-i` por padrão usando [aliases](/index.php/Alias "Alias"). Depender dessas opções de shell pode ser perigoso porque você se acostuma a elas, resultando em perda de dados em potencial quando você usa outro sistema ou usuário que não as possui. A melhor maneira de evitar a perda de dados é criar [backups](/index.php/Backup_(Portugu%C3%AAs) "Backup (Português)").
 
 ## Não essenciais
 
@@ -106,6 +97,10 @@ O pacote [moreutils](https://www.archlinux.org/packages/?name=moreutils) fornece
 ## Alternativas
 
 Alternativas aos utilitários principais no grupo [base](https://www.archlinux.org/groups/x86_64/base/) são [BusyBox](/index.php/BusyBox "BusyBox"), o [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) e [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
+
+### Alternativas ao cp
+
+O uso de [rsync como uma alternativa a cp/mv](/index.php/Rsync#As_cp/mv_alternative "Rsync") permite retomar uma transferência com falha, mostrar o status da transferência, pular arquivos já existentes e certificar-se da integridade dos arquivos de destino usando somas de verificação.
 
 ### Alternativas ao find
 

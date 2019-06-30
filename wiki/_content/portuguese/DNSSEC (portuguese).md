@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=565817) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=573800) na versão em inglês.
 
 Artigos relacionados
 

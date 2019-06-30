@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [pkgstats](/index.php/Pkgstats "Pkgstats"). Data da última tradução: 2019-05-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pkgstats&diff=0&oldid=511582) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [pkgstats](/index.php/Pkgstats "Pkgstats"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pkgstats&diff=0&oldid=576131) na versão em inglês.
 
-pkgstats envia uma lista de todos os pacotes instalados, [módulos de kernel](https://www.archlinux.org/news/pkgstats-now-collects-modules-usage/), a arquitetura e o *mirror* que você está usando para o projeto do Arch Linux. Essa informação é anônima e não pode ser usada para identificar o usuário, porém vai ajudar os desenvolvedores do Arch a priorizar seus esforços ([código-fonte](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/pkgstats)).
+pkgstats envia uma lista de todos os pacotes instalados, a arquitetura e o *mirror* que você está usando para o projeto do Arch Linux. Essa informação é anônima e não pode ser usada para identificar o usuário, porém vai ajudar os desenvolvedores do Arch a priorizar seus esforços ([código-fonte](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/pkgstats)).
 
 ## Instalação
 
@@ -16,7 +16,7 @@ Se você não deseja esperar por um ciclo de reinicialização, você pode [inic
 
 ## Resultados e referência
 
-Estatísticas estão disponíveis em [https://www.archlinux.de/?page=Statistics](https://www.archlinux.de/?page=Statistics).
+Estatísticas e documentação estão disponíveis em [https://pkgstats.archlinux.de/](https://pkgstats.archlinux.de/).
 
 O projeto código aberto a seguir permite que você obtenha dados estatísticos como JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper), bem como um front-end web para comparar os dados está disponível: [https://trycatchchris.co.uk/archpackagecompare/](https://trycatchchris.co.uk/archpackagecompare/comparePackage/gnome-terminal/lxterminal/rxvt/rxvt-unicode/st/terminator/termite/xterm).
 

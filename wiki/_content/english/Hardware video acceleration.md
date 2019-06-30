@@ -43,7 +43,7 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive o
 *   HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
 *   GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 *   GMA 4500 H.264 decoding is supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/), see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
-*   Haswell to Skylake hybrid VP8 encoding and VP9 decoding is supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/).
+*   Haswell to Skylake hybrid VP8 encoding and, on some GPUs, VP9 decoding is supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). Note: VP9 decoding is not supported on Haswell, but exposed by the driver. This confuses at least [mpv](https://www.archlinux.org/packages/?name=mpv), which, as a result, does single-threaded CPU-based decoding and drops a lot of frames on streams that it perfectly decodes without this driver.
 
 ### NVIDIA
 

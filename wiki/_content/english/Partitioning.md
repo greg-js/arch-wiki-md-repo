@@ -60,7 +60,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 
 **Tip:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a [block device](/index.php/Block_device "Block device") name.
 
-There are two main types of partition table available: Master Boot Record (MBR), and GUID Partition Table (GPT). These are described below along with a discussion on how to choose between the two. A third, less common alternative is using a partitionless disk, which is also discussed.
+There are two main types of partition table available. These are described below in the [#Master Boot Record](#Master_Boot_Record) (MBR) and [#GUID Partition Table](#GUID_Partition_Table) (GPT) sections along with a discussion on how to choose between the two. A third, less common alternative is using a partitionless disk, which is also discussed.
 
 ### Master Boot Record
 
@@ -95,7 +95,7 @@ The customary numbering scheme is to create primary partitions *sda1* through *s
 
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
-At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like a real MBR has a [bootstrap code area](#Master_Boot_Record_(bootstrap_code)) which can be used for BIOS/GPT booting with boot loaders that support it.
+At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like a ordinary MBR has a [bootstrap code area](#Master_Boot_Record_(bootstrap_code)) which can be used for BIOS/GPT booting with boot loaders that support it.
 
 ### Choosing between GPT and MBR
 

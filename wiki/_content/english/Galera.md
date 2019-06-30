@@ -6,7 +6,7 @@
 
 The two components Galera cluster comprised of are Galera plugin itself and a patched version of MySQL server which connect using wsrep API.
 
-Install the [galera](https://www.archlinux.org/packages/?name=galera) package. Also you will need rsync and lsof packages for rsync method.
+Install the [galera](https://www.archlinux.org/packages/?name=galera) package. Also you will need [rsync](https://www.archlinux.org/packages/?name=rsync) and [lsof](https://www.archlinux.org/packages/?name=lsof) packages for rsync method.
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mysqld.service` daemon.
 
@@ -14,7 +14,7 @@ Install the [galera](https://www.archlinux.org/packages/?name=galera) package. A
 
 You need to configure the cluster.
 
-On each node edit `/etc/mysql/my.cnf` and update the wsrep_cluster_address variable so it contains the list of all nodes in the cluster:
+On each node edit `/etc/mysql/my.cnf.d/server.cnf` and update the wsrep_cluster_address variable so it contains the list of all nodes in the cluster:
 
 ```
 wsrep_cluster_address="gcomm://192.168.1.4,192.168.1.5,192.168.1.6"
@@ -43,10 +43,20 @@ wsrep_sst_method=rsync
 
 ```
 
-When you have finished with `/etc/mysql/my.cnf`, start the mysqld service on the first node:
+Make sure you also set the following options:
 
 ```
-# systemctl start mysqld-bootstrap.service
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+
+```
+
+When you have finished with `/etc/mysql/my.cnf.d/server.cnf`, bootstrap the mysqld service on the first node (ONLY on the first node):
+
+```
+# galera_new_cluster
 
 ```
 
@@ -97,3 +107,5 @@ Once you configured the first node, you should be able to start all other nodes 
 
 *   [Galera Wiki](http://www.codership.com/wiki/doku.php?id=galera_wiki)
 *   [Percona XtraDB Cluster's documentation](https://www.percona.com/doc/percona-xtradb-cluster/index.html)
+*   [How to Bootstrap MySQL or MariaDB Galera Cluster](https://severalnines.com/blog/updated-how-bootstrap-mysql-or-mariadb-galera-cluster)
+*   [How To Recover MariaDB Galera Cluster After Partial or Full Crash](https://www.symmcom.com/docs/how-tos/databases/how-to-recover-mariadb-galera-cluster-after-partial-or-full-crash)

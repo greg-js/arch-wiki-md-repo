@@ -32,6 +32,8 @@
 *   [3 Graphics](#Graphics)
     *   [3.1 kernel modules](#kernel_modules)
     *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
+        *   [3.2.1 Manually loading/unloading NVIDIA module](#Manually_loading/unloading_NVIDIA_module)
+        *   [3.2.2 Letting bumblebee automatically unload the kernel module](#Letting_bumblebee_automatically_unload_the_kernel_module)
     *   [3.3 Troubleshooting](#Troubleshooting)
         *   [3.3.1 xbacklight](#xbacklight)
         *   [3.3.2 NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts](#NVRM:_Failed_to_enable_MSI;_falling_back_to_PCIe_virtual-wire_interrupts)
@@ -122,12 +124,14 @@ blacklist nv
 
 The optimus configuration is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. As the discret NVIDIA GPU card eats lots of power, we want to use the intergrated Intel card most of the time and activate/desactivate the NVIDIA GPU card only when required by a defined application. Due to a bug [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1794626#p1794626), the XPS 15 9570's secondary NVIDIA GPU cannot be powered down by [bbswitch](/index.php/Bbswitch "Bbswitch"). However, standard Linux power management is able to properly turn off the card when the driver is unloaded.
 
-One solution [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641) to this problem is to manually unload the NVIDIA module when not in use, which can be done as follows:
+#### Manually loading/unloading NVIDIA module
+
+One solution [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641) to the problem described above is to manually unload the nvidia module when not in use, which can be done as follows:
 
 [Install](/index.php/Install "Install")
 
-*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) - Official NVIDIA drivers for Linux.
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
+*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) - Official NVIDIA drivers for Linux.
 *   [powertop](https://www.archlinux.org/packages/?name=powertop) - Tool to verify power consumption.
 *   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/) - Graphic intensive application for testing
 
@@ -268,6 +272,81 @@ Finally, check that everything is well configured:
 6.  Close all nvidia applications and disable gpu with the disablegpu.sh script
 7.  Check again power consumption, it should have gone back to a similar value as before
 
+#### Letting bumblebee automatically unload the kernel module
+
+Another possible way of shutting off the secondary GPU is to use a patched version of [bumblebee](/index.php/Bumblebee "Bumblebee") that automatically unloads the nvidia kernel module when the card is not in use [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1803779#p1803779). This patch has already been merged into the `development` branch of bumblebee [[7]](https://github.com/Bumblebee-Project/Bumblebee/pull/983) which can be obtained via [bumblebee-git](https://aur.archlinux.org/packages/bumblebee-git/). It is also provided by [bumblebee-forceunload](https://aur.archlinux.org/packages/bumblebee-forceunload/), which is a modified version of [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) with this patch applied.
+
+[Install](/index.php/Install "Install")
+
+*   [bumblebee-git](https://aur.archlinux.org/packages/bumblebee-git/) or [bumblebee-forceunload](https://aur.archlinux.org/packages/bumblebee-forceunload/) - [Bumblebee](/index.php/Bumblebee "Bumblebee") with the `AlwaysUnloadKernelDriver` option
+*   [nvidia](https://www.archlinux.org/packages/?name=nvidia) - Official NVIDIA drivers for Linux.
+*   [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) - Mesa demos for testing device graphics capabilities
+
+Make sure that `AlwaysUnloadKernelDriver` is set to `true` in the `driver-nvidia` section of your `bumblebee` configuration:
+
+ `/etc/bumblebee/bumblebee.conf` 
+```
+# *[driver-nvidia]* section
+KernelDriver=nvidia
+PMMethod=auto
+AlwaysUnloadKernelDriver=true
+```
+
+While the above option unloads the nvidia kernel module when not in use, [Xorg](/index.php/Xorg "Xorg") will still automatically discover the secondary graphics card and attempt to enable it. In order to prevent this, the option `AutoAddGPU` should be disabled. However, this would lead to Xorg unable to detect the default integrated graphics card. The intel graphics card needs to be manually added to Xorg. This can be done by creating the following two configuration files in `/etc/X11/xorg.conf.d`:
+
+ `/etc/X11/xorg.conf.d/01-noautogpu.conf` 
+```
+Section "ServerFlags"
+	Option "AutoAddGPU" "off"
+EndSection
+```
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+	Identifier	"Intel Graphics"
+	Driver		"intel"
+	# Uncomment line below if you are also having issues with backlight
+	# Option		"Backlight"	"intel_backlight"
+EndSection
+```
+
+Set GPU power control to auto on boot so it will be powered off when the module is unloaded:
+
+ `/etc/tmpfiles.d/nvidia_pm.conf`  `w /sys/bus/pci/devices/0000:01:00.0/power/control - - - - auto` 
+
+Enable `bumblebeed.service` to start on boot:
+
+```
+ sudo systemctl enable bumblebeed.service
+
+```
+
+After restarting your system, you should be able to verify that everything is working properly:
+
+1.  Verify that nvidia is not loaded on boot by running:
+
+    	 `lsmod | grep nvidia` 
+
+    	Should not return anything
+
+2.  Check that secondary graphics card is functioning properly with optirun:
+
+    	 `optirun glxgears` 
+
+3.  Don't close this window just yet, we need to check that the nvidia module is loaded correctly:
+
+    	 `lsmod | grep nvidia` 
+
+    	This time, it should be able to find nvidia in the loaded modules list
+
+4.  After closing `glxgears`, check again to make sure that nvidia is properly unloaded:
+
+    	 `lsmod | grep nvidia` 
+
+    	Should not return anything once again
+
+5.  At this point, the graphics card should be working correctly. You can further check the power consumption by disconnecting the charger and using [Powertop](/index.php/Powertop "Powertop"), there should be a significant power difference when `optirun glxgears` is running and when it is not.
+
 ### Troubleshooting
 
 #### xbacklight
@@ -286,7 +365,7 @@ EndSection
 
 #### NVRM: Failed to enable MSI; falling back to PCIe virtual-wire interrupts
 
-Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[6]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
+Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[8]](http://us.download.nvidia.com/XFree86/Linux-x86/325.15/README/knownissues.html#msi_interrupts). You could disable MSI by adding the following in **/etc/modprobe.d/nvidia.conf**:
 
 ```
  options nvidia NVreg_EnableMSI=0
@@ -295,7 +374,7 @@ Sometimes it happens after suspend/resume. GPU could work fine without MSI. [[6]
 
 #### Built-in screen flickers or does not come on with Linux kernel 5.0.0 - 5.0.7
 
-Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[7]](https://bugs.archlinux.org/task/61964))
+Some users reported that running Linux kernel 5.0.0 to 5.0.7 can cause the screen to flicker (or stay completely black) when booting up or running an X server, making the built-in display unusable (see *[[9]](https://bugs.archlinux.org/task/61964))
 
 Currently, it seems that there are three possible workarounds :
 

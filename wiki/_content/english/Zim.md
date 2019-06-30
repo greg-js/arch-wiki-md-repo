@@ -30,7 +30,7 @@ From the project [home page](http://zim-wiki.org/):
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [zim](https://www.archlinux.org/packages/?name=zim) package. There is also an AUR package called [zim-bzr](https://aur.archlinux.org/packages/zim-bzr/) which provides the latest developer snapshot.
+[Install](/index.php/Install "Install") the [zim](https://www.archlinux.org/packages/?name=zim) package. There is also an AUR package called [zim-git](https://aur.archlinux.org/packages/zim-git/) which provides the latest developer git version.
 
 ## Usage
 

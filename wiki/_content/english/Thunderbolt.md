@@ -36,7 +36,8 @@ The security level is normally configured at firmware level; it is recommended t
 
 ### Graphical front-ends
 
-[GNOME](/index.php/GNOME "GNOME") has native support for authorizing devices from the UI since version 3.30; [Plasma](/index.php/Plasma "Plasma") integration is in the works ([[2]](https://phabricator.kde.org/T9012), [[3]](https://bugs.kde.org/show_bug.cgi?id=395304)).
+*   [GNOME](/index.php/GNOME "GNOME") has native support for authorizing devices from the UI since version 3.30
+*   [Plasma](/index.php/Plasma "Plasma") integration is available ([git repository](https://cgit.kde.org/plasma-thunderbolt.git/tree/README.md)) but not yet available as a package for Arch Linux.
 
 ### Automatically connect any device
 
@@ -46,7 +47,7 @@ Users who just want to connect any device without any sort of manual work can cr
 
 ### Forcing power
 
-Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[4]](https://www.kernel.org/doc/html/v5.1/admin-guide/thunderbolt.html#forcing-power).
+Many OEMs include a method that can be used to force the power of a Thunderbolt controller to an *On* state. If supported by the machine this will be exposed by the WMI bus with a sysfs attribute called *force_power* [[2]](https://www.kernel.org/doc/html/v5.1/admin-guide/thunderbolt.html#forcing-power).
 
 Forcing power may especially be useful when a connected device loses connection or the controller that switches itself off.
 

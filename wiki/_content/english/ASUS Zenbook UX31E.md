@@ -1,6 +1,10 @@
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook UX31E Ultrabook. *(There is probably little/no difference with his 11" little brother, the UX21E)*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation problems](#Installation_problems)
 *   [2 Compatibility](#Compatibility)
@@ -43,7 +47,7 @@ There are different versions of the UX31, some have Sentelic and some have Elant
 
 Touch & Scroll works out of the box. Clickpad functionality does not. (However, using two and three finger touches for right an middle click works fine).
 
-If higher pressure must be applied to your touchpad in order to function properly, tweak the following properties according to your needs [synaptics(4)](http://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)
+If higher pressure must be applied to your touchpad in order to function properly, tweak the following properties according to your needs [synaptics(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/synaptics.4)
 
 ```
 synclient FingerLow=5
@@ -101,7 +105,7 @@ There seems to be a problem whereby having an HDMI device plugged in at boot res
 export XAUTHORITY=/home/$USER/.Xauthority
 export DISPLAY=:0
 
-/usr/bin/xrandr -display :0 --output eDP1 --auto --output HDMI1 --auto --above eDP1
+/usr/bin/xrandr -display :0 --output eDP1 --auto --output HDMI1 --auto --above eDP1
 ```
 
 #### Colour Profiles
@@ -110,17 +114,13 @@ Colour accuracy on the Zenbook is not very good. There is a [UX31E ICC profile](
 
 ### Networking
 
-**Warning:** [NetworkManager](/index.php/NetworkManager "NetworkManager") generally fails to work for one reason or another on the UX31E. Consider using an alternative such as [netctl](/index.php/Netctl "Netctl").
-
 #### Wireless
 
-Works fine with the ath9k driver, included in the kernel since 2.6.27.
-
-**Warning:** Do not forget to install the wireless_tools and wpa_supplicant packages during the installation since you will get stuck with no internet access if you do not!
+The embedded Qualcomm adapter works fine with the ath9k driver included in the kernel.
 
 ##### Unstable Wireless when using Network Manager
 
-Some users experience connection drops when using wireless. For some users this can be fixed by setting the wireless connection's BSSID (usually the router's MAC address). This only works if your wireless connection only has one access point as the BSSID is unique for each access point.
+[NetworkManager](/index.php/NetworkManager "NetworkManager") generally fails to work for one reason or another on the UX31E. Consider using an alternative such as [netctl](/index.php/Netctl "Netctl"). Some users experience connection drops when using wireless. For some users this can be fixed by setting the wireless connection's BSSID (usually the router's MAC address). This only works if your wireless connection only has one access point as the BSSID is unique for each access point.
 
 An alternative solution is to disable the ath9k driver ani feature, to do this use the following : `echo 1 > /sys/kernel/debug/ieee80211/phy0/ath9k/disable_ani`
 

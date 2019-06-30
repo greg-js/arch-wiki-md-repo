@@ -28,8 +28,8 @@ In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) must be
     *   [3.1 Feature comparison](#Feature_comparison)
 *   [4 Kernel](#Kernel)
 *   [5 initramfs](#initramfs)
-*   [6 Init process](#Init_process)
-*   [7 Getty](#Getty)
+*   [6 init process](#init_process)
+*   [7 getty](#getty)
 *   [8 Display manager](#Display_manager)
 *   [9 Login](#Login)
 *   [10 Shell](#Shell)
@@ -82,7 +82,7 @@ If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot proc
 
 ### Multibooting in UEFI
 
-Since each OS or vendor can maintain its own files within the EFI system partition without affecting the other, multi-booting using UEFI is just a matter of launching a different EFI application corresponding to the particular operating system's boot loader. This removes the need for relying on chainloading mechanisms of one [boot loader](#Boot_loader) to load another OS.
+Since each OS or vendor can maintain its own files within the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") without affecting the other, multi-booting using UEFI is just a matter of launching a different EFI application corresponding to the particular operating system's boot loader. This removes the need for relying on [chain loading](https://en.wikipedia.org/wiki/Chain_loading "wikipedia:Chain loading") mechanisms of one [boot loader](#Boot_loader) to load another OS.
 
 See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
@@ -123,17 +123,17 @@ The [kernel](/index.php/Kernel "Kernel") is the core of an operating system. It 
 
 ## initramfs
 
-After the bootloader loads the kernel and possible initramfs files and executes the kernel, the kernel unpacks the initramfs (initial RAM filesystem) archives into the (then empty) rootfs (initial root filesystem, specifically a ramfs or tmpfs). The first extracted initramfs is the one embedded in the kernel binary during the kernel build, then possible external initramfs files are extracted. Thus files in the external initramfs overwrite files with the same name in the embedded initramfs. The kernel then executes `/init` (in the rootfs) as the first process. The *early userspace* starts.
+After the [boot loader](#Boot_loader) loads the [kernel](/index.php/Kernel "Kernel") and possible [initramfs](/index.php/Initramfs "Initramfs") files and executes the kernel, the kernel unpacks the initramfs (initial RAM filesystem) archives into the (then empty) rootfs (initial root filesystem, specifically a ramfs or tmpfs). The first extracted initramfs is the one embedded in the kernel binary during the kernel build, then possible external initramfs files are extracted. Thus files in the external initramfs overwrite files with the same name in the embedded initramfs. The kernel then executes `/init` (in the rootfs) as the first process. The *early userspace* starts.
 
 Arch Linux uses an empty archive for the builtin initramfs (which is the default when building Linux). See [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for more and Arch-specific info about the external initramfs.
 
 The purpose of the initramfs is to bootstrap the system to the point where it can access the root filesystem (see [FHS](/index.php/FHS "FHS") for details). This means that any modules that are required for devices like IDE, SCSI, SATA, USB/FW (if booting from an external drive) must be loadable from the initramfs if not built into the kernel; once the proper modules are loaded (either explicitly via a program or script, or implicitly via [udev](/index.php/Udev "Udev")), the boot process continues. For this reason, the initramfs only needs to contain the modules necessary to access the root filesystem; it does not need to contain every module one would ever want to use. The majority of modules will be loaded later on by udev, during the init process.
 
-## Init process
+## init process
 
 At the final stage of early userspace, the real root is mounted, and then replaces the initial root filesystem. `/sbin/init` is executed, replacing the `/init` process. Arch uses [systemd](/index.php/Systemd "Systemd") as the default [init](/index.php/Init "Init").
 
-## Getty
+## getty
 
 [init](/index.php/Init "Init") calls [getty](/index.php/Getty "Getty") once for each [virtual terminal](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (typically six of them), which initializes each tty and asks for a username and password. Once the username and password are provided, getty checks them against `/etc/passwd` and `/etc/shadow`, then calls [login](#Login). Alternatively, getty may start a display manager if one is present on the system.
 
@@ -155,7 +155,7 @@ Once the user's [shell](/index.php/Shell "Shell") is started, it will typically 
 
 ## GUI, xinit or wayland
 
-[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, xinit, startx, the shell, and login will terminate in that order, returning to [getty](#Getty).
+[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, *xinit*, *startx*, the shell, and login will terminate in that order, returning to [getty](#Getty).
 
 ## See also
 

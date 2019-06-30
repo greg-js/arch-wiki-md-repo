@@ -2,7 +2,7 @@
 
 	multi-platform application used to provide a universal TLS/SSL tunneling service. It is sort of proxy designed to add TLS encryption functionality to existing clients and servers without any changes in the programs' code. It is designed for security, portability, and scalability (including load-balancing), making it suitable for large deployments. It uses [openssl](/index.php/Openssl "Openssl"), and distributed under GNU GPL version 2 or later with OpenSSL exception.
 
-Can tunnel only TCP packets. Its [FAQ](https://www.stunnel.org/faq.html) has some work around for UDP.
+Can tunnel only TCP packets. Its [FAQ](https://www.stunnel.org/faq.html) has some work around for UDP. [WireGuard](/index.php/WireGuard "WireGuard") also has UDP capabilities.
 
 Authentication can also be used by the server to allow access only to approved clients.
 
@@ -96,7 +96,7 @@ setgid     = stunnel
 where `/etc/stunnel/psk.txt` could be created on one machine by
 
 ```
-# openssl rand -base64 -out /etc/stunnel/psk.txt 40
+# openssl rand -base64 -out /etc/stunnel/psk.txt 180
 # sed --in-place '1s/^/psk:/' /etc/stunnel/psk.txt
 
 ```

@@ -385,7 +385,10 @@ Follow [USB flash installation media#BIOS and UEFI bootable USB](/index.php/USB_
 
 ### Remove UEFI boot support from optical media
 
-**Note:** This section mentions removing UEFI boot support from a **CD/DVD only** (Optical Media), not from a USB flash drive.
+**Note:**
+
+*   This section mentions removing UEFI boot support from a **CD/DVD only** (Optical Media booting via EL Torito), not from a USB flash drive.
+*   In order to hide the UEFI equipment on USB stick, use a partition editor after having copied the ISO to the flash drive. Remove the partition of type `EF`. **Do not** accept offers to convert to GPT.
 
 Most of the 32-bit EFI Macs and some 64-bit EFI Macs refuse to boot from a UEFI(X64)+BIOS bootable CD/DVD. If one wishes to proceed with the installation using optical media, it might be necessary to remove UEFI support first.
 
@@ -513,7 +516,7 @@ You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourc
 
 ### Windows 7 will not boot in UEFI mode
 
-**Note:** Windows 7 can boot in pure UEFI class 3 without CSM support, though installation requires CSM.
+**Note:** Windows 7 can boot in pure UEFI class 3 without CSM support, though installation requires CSM ([specifically INT 10 H](https://support.microsoft.com/en-us/kb/2828074)).
 
 If you have installed Windows to a different hard disk with GPT partitioning and still have a MBR partitioned hard disk in your computer, then it is possible that the firmware (UEFI) is starting its CSM support (for booting MBR partitions) and therefore Windows will not boot. To solve this merge your MBR hard disk to GPT partitioning or disable the SATA port where the MBR hard disk is plugged in or unplug the SATA connector from this hard disk.
 
