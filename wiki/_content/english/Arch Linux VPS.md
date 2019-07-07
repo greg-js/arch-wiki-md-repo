@@ -60,6 +60,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [LYLIX](http://lylix.net/) | [2014.01.xx](http://lylix.net/archlinux) | OpenVZ | Multiple US; Europe | 32-bit and 64-bit available |
 | [Netcup](https://www.netcup.de/) | 2012.11.xx | KVM | Germany (DE) | (German language site only) |
 | [MedHaHosting](https://www.medhahosting.com) | Latest | KVM | Buffalo, NY, USA; Atlanta, GA, USA; Chicago, IL, USA; Los Angeles, CA, USA | ArchLinux available on request. Many Linux and Windows hosting options. |
+| [MonoVM](https://monovm.com) | Latest | VMware | USA - Canada - Netherlands - Germany - UK - France - Denmark | VMware Based VPS Server Provider. |
 | [OnePoundWebHosting](https://www.onepoundwebhosting.co.uk/) | 2014.01 | Xen PV, Xen HVM | United Kingdom (UK) | They are a registrar too. Unable to verify server locations. |
 | [OVH](https://www.ovh.com/us/vps/) | Latest | KVM | Beauharnois, Canada (CA); Frankfurt, Germany (DE); Gravelines, Stratsbourg, France (FR); Warsaw, Poland (PL); London, United Kingdom (UK) |
 | [PacmanVPS](https://pacmanvps.com/) | 2014.01 | KVM | Canada (CA), Poland (PL) | Arch image is very old and PacmanVPS repos are broken. Not possible to update Arch. Site appears unmaintained. |

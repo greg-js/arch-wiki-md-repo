@@ -2,7 +2,7 @@ Related articles
 
 *   [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal")
 *   [Firefox#Middle-click errors](/index.php/Firefox#Middle-click_errors "Firefox")
-*   [GTK+#Disable mouse paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+")
+*   [GTK#Disable mouse paste](/index.php/GTK#Disable_mouse_paste "GTK")
 *   [Vim#Clipboard](/index.php/Vim#Clipboard "Vim")
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Clipboard_(computing) "wikipedia:Clipboard (computing)"):
@@ -37,7 +37,7 @@ In X10, *cut buffers* were introduced. These were limited buffers that stored ar
 
 	Used for explicit copy/paste commands involving keyboard shortcuts or menu items. Hence, it behaves like the single-clipboard system on Windows. Unlike PRIMARY, it can also handle [multiple data formats](https://stackoverflow.com/questions/3571179/how-does-x11-clipboard-handle-multiple-data-formats).
 
-The majority of programs for [Xorg](/index.php/Xorg "Xorg"), including [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") applications, follow this behavior. While [ICCCM](https://tronche.com/gui/x/icccm/) also defines a SECONDARY selection, it does not have a consensually agreed upon purpose. Despite the naming, all three selections are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections.
+The majority of programs for [Xorg](/index.php/Xorg "Xorg"), including [Qt](/index.php/Qt "Qt") and [GTK](/index.php/GTK "GTK") applications, follow this behavior. While [ICCCM](https://tronche.com/gui/x/icccm/) also defines a SECONDARY selection, it does not have a consensually agreed upon purpose. Despite the naming, all three selections are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections.
 
 See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") page which lists the default shortcuts in many programs.
 

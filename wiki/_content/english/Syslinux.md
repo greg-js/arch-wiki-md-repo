@@ -789,19 +789,7 @@ Syslinux supports booting from ISO images directly using the [memdisk](https://w
 
 ### Serial console
 
-To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[10]](https://wiki.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
-
- `syslinux.cfg` 
-```
-SERIAL 0 115200
-
-```
-
-Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[11]](https://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
-
- `syslinux.cfg`  `APPEND root=UUID=126ca36d-c853-4f3a-9f46-cdd49d034ce4 rw console=tty0 console=ttyS0,115200n8` 
-
-How to do this with GRUB: [Working with the serial console#GRUB2 and systemd](/index.php/Working_with_the_serial_console#GRUB2_and_systemd "Working with the serial console")
+See [Working with the serial console#Syslinux](/index.php/Working_with_the_serial_console#Syslinux "Working with the serial console").
 
 ### Boot another OS once
 
@@ -820,14 +808,14 @@ During the next boot, the specified label will be booted without any Syslinux pr
 
 An error message such as "Failed to load ldlinux.c32" during the initial boot can be triggered by many diverse reasons. One potential reason could be a change in file system tools or in a file system structure, depending on its own version.
 
-**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader. See [[12]](https://wiki.syslinux.org/wiki/index.php/Filesystem) for more information.
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader. See [[10]](https://wiki.syslinux.org/wiki/index.php/Filesystem) for more information.
 
 **Note:** There is no direct and unique correspondence between a message such as `Failed to load ldlinux.c32` and a problem related to the file system:
 
 *   Other alternative symptoms, instead of this message, could also indicate a problem related to the file system.
 *   The message does not necessarily mean that the problem is related to the file system; there are other possible reasons for this type of messages.
 
-See also [[13]](https://wiki.syslinux.org/wiki/index.php/Common_Problems#Failed_to_load_ldlinux) (the whole page might be relevant for troubleshooting too).
+See also [[11]](https://wiki.syslinux.org/wiki/index.php/Common_Problems#Failed_to_load_ldlinux) (the whole page might be relevant for troubleshooting too).
 
 ### Using the Syslinux prompt
 
@@ -991,7 +979,7 @@ To get more detailed debug log, [recompile](/index.php/ABS "ABS") the [syslinux]
 
 ### Btrfs compression
 
-Booting from btrfs with compression is not supported.[[14]](https://wiki.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
+Booting from btrfs with compression is not supported.[[12]](https://wiki.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
 
 ```
 btrfs: found compressed data, cannot continue!
@@ -1001,7 +989,7 @@ invalid or corrupt kernel image.
 
 ### Btrfs multi-device
 
-Booting from multiple-device btrfs is not supported.[[15]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 21-Jul-2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
+Booting from multiple-device btrfs is not supported.[[13]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 21-Jul-2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
 
 ```
 /boot/syslinux is device /dev/sda1

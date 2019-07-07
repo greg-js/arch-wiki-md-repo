@@ -326,7 +326,7 @@ rpc-passwd=rpcpass
 
 	[http://sourceforge.net/projects/karia2/](http://sourceforge.net/projects/karia2/) || [karia2-svn](https://aur.archlinux.org/packages/karia2-svn/)
 
-*   **uGet** — Feature-rich GTK+/CLI download manager which can use aria2 as a back-end by enabling a built-in plugin.
+*   **uGet** — Feature-rich GTK/CLI download manager which can use aria2 as a back-end by enabling a built-in plugin.
 
 	[http://ugetdm.com](http://ugetdm.com) || [uget](https://www.archlinux.org/packages/?name=uget)
 

@@ -593,7 +593,7 @@ Which can also be automated with a startup script, systemd service or [autossh](
 At the client side the connection is established with:
 
 ```
-ssh user2@relay ssh user3@localhost -p 2222
+ssh -t user2@relay ssh user3@localhost -p 2222
 
 ```
 

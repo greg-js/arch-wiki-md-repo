@@ -519,7 +519,7 @@ Xft.rgba: rgb
 
 ```
 
-Make sure the settings are loaded properly when X starts with `xrdb -q` (see [Xresources](/index.php/Xresources "Xresources") for more information).
+Make sure the settings are loaded properly when X starts with `xrdb -q` (see [X resources](/index.php/X_resources "X resources") for more information).
 
 ## Troubleshooting
 
@@ -602,7 +602,7 @@ Xft/Antialias 1
 
 ```
 
-Alternatively you could just write the font configuration as `Xft.*` directives in `~/.Xresources` without using a settings daemon.
+Alternatively you could just write the font configuration as `Xft.*` directives in `~/.Xresources` without using a settings daemon. See [#Applications without fontconfig support](#Applications_without_fontconfig_support).
 
 ### Helvetica font problem in generated PDFs
 

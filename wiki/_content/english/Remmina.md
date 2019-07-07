@@ -3,7 +3,7 @@ Related articles
 *   [Rdesktop](/index.php/Rdesktop "Rdesktop")
 *   [xrdp](/index.php/Xrdp "Xrdp")
 
-[Remmina](http://www.remmina.org/wp/) is a remote desktop client written in GTK+ from the [freerdp](http://www.freerdp.com/) project. It supports the protocols SSH, VNC, RDP, NX and XDMCP.
+[Remmina](http://www.remmina.org/wp/) is a remote desktop client written in GTK from the [freerdp](http://www.freerdp.com/) project. It supports the protocols SSH, VNC, RDP, NX and XDMCP.
 
 ## Installation
 

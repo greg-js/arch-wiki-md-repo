@@ -9,7 +9,11 @@ From [https://github.com/logrotate/logrotate](https://github.com/logrotate/logro
 
 By default, logrotate's *rotation* consists of renaming existing log files with a numerical suffix, then recreating the original *empty* log file. For example, `/var/log/syslog.log` is renamed `/var/log/syslog.log.1`. If `/var/log/syslog.log.1` already exists from a previous rotation, it is first renamed `/var/log/syslog.log.2`. (The number of backlogs to keep can be configured.)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -30,16 +34,16 @@ By default, logrotate runs daily using a [systemd timer](/index.php/Systemd/Time
 
 The primary configuration file for logrotate which sets default parameters is `/etc/logrotate.conf`; additional application-specific configuration files are included from the `/etc/logrotate.d` directory. Values set in application-specific configuration files override those same parameters in the primary configuration file. See [logrotate.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logrotate.conf.5) for configuration examples and a reference of available directives.
 
-To verify if logrotate works correctly run the following command which will produce debug output:
+To verify if logrotate works correctly, run it in debug mode, in this mode it does nothing except producing debug output:
 
 ```
-logrotate -d
+logrotate --debug /etc/logrotate.conf
 
 ```
 
 ## Usage
 
-logrotate is usually run through [Cron](/index.php/Cron "Cron") jobs.
+logrotate is usually run through the [systemd](/index.php/Systemd "Systemd") service: `logrotate.service`.
 
 To run logrotate manually:
 
@@ -58,11 +62,11 @@ logrotate /etc/logrotate.d/mylog
 To simulate running your configuration file (*dry run*):
 
 ```
-logrotate -d /etc/logrotate.d/mylog
+logrotate --debug /etc/logrotate.d/mylog
 
 ```
 
-To force running rotations even when conditions are not met, run
+To force running rotations even when conditions are not met, run:
 
 ```
 logrotate -vf /etc/logrotate.d/mylog

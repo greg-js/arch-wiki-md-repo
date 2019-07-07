@@ -4,7 +4,7 @@ Installation of Arch Linux is possible via the serial console as well.
 
 A basic environment for this scenario is two machines connected using a serial cable (9-pin connector cable). The administering machine can be any Unix/Linux or Windows machine with a terminal emulator program (PuTTY or Minicom, for example).
 
-The configuration instructions below will enable GRUB menu selection, boot messages, and terminal forwarding to the serial console.
+The configuration instructions below will enable boot loader menu selection, boot messages, and terminal forwarding to the serial console.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,11 +12,14 @@ The configuration instructions below will enable GRUB menu selection, boot messa
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Configuration](#Configuration)
-    *   [1.1 Configure console access on the target machine](#Configure_console_access_on_the_target_machine)
-        *   [1.1.1 GRUB2 and systemd](#GRUB2_and_systemd)
-            *   [1.1.1.1 Without GRUB2, systemd only](#Without_GRUB2,_systemd_only)
-        *   [1.1.2 GRUB v1 and No systemd](#GRUB_v1_and_No_systemd)
+*   [1 Configure console access on the target machine](#Configure_console_access_on_the_target_machine)
+    *   [1.1 Boot loader](#Boot_loader)
+        *   [1.1.1 GRUB](#GRUB)
+        *   [1.1.2 GRUB Legacy](#GRUB_Legacy)
+        *   [1.1.3 rEFInd](#rEFInd)
+        *   [1.1.4 Syslinux](#Syslinux)
+    *   [1.2 Kernel](#Kernel)
+    *   [1.3 getty](#getty)
 *   [2 Making Connections](#Making_Connections)
     *   [2.1 Connect using a terminal emulator program](#Connect_using_a_terminal_emulator_program)
         *   [2.1.1 Command line](#Command_line)
@@ -32,55 +35,36 @@ The configuration instructions below will enable GRUB menu selection, boot messa
     *   [4.1 Ctrl-C and Minicom](#Ctrl-C_and_Minicom)
     *   [4.2 Resizing a terminal](#Resizing_a_terminal)
 
-## Configuration
+## Configure console access on the target machine
 
-### Configure console access on the target machine
+### Boot loader
 
-#### GRUB2 and systemd
+#### GRUB
 
-If you configure the serial console in GRUB2 systemd will create a getty listener on the same serial device as GRUB2 by default. So, this is the only configuration needed for Arch running with systemd. To make grub enable the serial console, open `/etc/default/grub` in an editor. Change the `GRUB_CMDLINE_DEFAULT` line to start the console on `/dev/ttyS0`. Note in the example below, we set two consoles up; one on tty0 and one on the serial port.
+When using [GRUB](/index.php/GRUB "GRUB") with a generated `grub.cfg`, edit `/etc/defaults/grub` and enable serial input and output support:
 
+ `/etc/defaults/grub` 
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 console=ttyS0,38400n8"
-
-```
-
-Now we need to tell grub where is the console and what command to start in order to enable the serial console (Note as above for Linux kernel, one can append multiple input/output terminals in grub e.g. GRUB_TERMINAL="console serial" would enable both display and serial):
-
-```
-## Serial console
-GRUB_TERMINAL=serial
-GRUB_SERIAL_COMMAND="serial --speed=38400 --unit=0 --word=8 --parity=no --stop=1"
-
+...
+GRUB_TERMINAL_INPUT="console serial"
+...
+GRUB_TERMINAL_OUTPUT="gfxterm serial"
+...
 ```
 
-Rebuild the grub.cfg file with following command:
+Next add the `GRUB_SERIAL_COMMAND` variable and set the options for the serial connection. For COM1 (`/dev/ttyS0`) with baud rate of 115200 bit/s:
 
+ `/etc/defaults/grub` 
 ```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-After a reboot, getty will be listening on `/dev/ttyS0`, expecting 38400 baud, 8 data bits, no parity and one stop bit. When Arch boots, systemd will automatically start a getty session to listen on the same device with the same settings.
-
-##### Without GRUB2, systemd only
-
-Ignore this entire section if you have configured GRUB2 to listen on the serial interface. If you do not want GRUB2 to listen on the serial device, but only want getty listening after boot then follow these steps.
-
-To start getty listening on `/dev/ttyS0` [start/enable](/index.php/Start/enable "Start/enable") `getty@ttyS0.service`.
-
-You can check to see the speed(s) getty is using with systemctl, but should be 38400 8N1:
-
-```
-# systemctl status serial-getty@ttyS0.service
-
+...
+GRUB_SERIAL_COMMAND="serial --unit=0 --speed=115200"
 ```
 
-Getty will be listening on device `/dev/ttyS0` expecting 38400 baud, 8 data bits, no parity and one stop bit-times.
+Read GRUB's manual on [Using GRUB via a serial line](https://www.gnu.org/software/grub/manual/grub/grub.html#Serial-terminal) and the [serial command](https://www.gnu.org/software/grub/manual/grub/grub.html#serial) for detailed explanation of the available options.
 
-#### GRUB v1 and No systemd
+#### GRUB Legacy
 
-Edit the GRUB config file `/boot/grub/menu.lst` and add these lines to the general area of the configuration:
+Edit the [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") configuration file `/boot/grub/menu.lst` and add these lines to the general area of the configuration:
 
 ```
 serial --unit=0 --speed=9600
@@ -88,50 +72,43 @@ terminal --timeout=5 serial console
 
 ```
 
-Add suitable console parameters (e.g. change the serial device name or baud rate if required) at the end of your current kernel line:
+**Note:** When the `terminal --timeout=5 serial console` line is added to your `menu.lst`, your boot sequence will now show a series of `Press any key to continue` messages. If no key is pressed, the boot menu will appear on whichever (serial or console) appears first in the `terminal` configuration line.
+
+#### rEFInd
+
+[rEFInd](/index.php/REFInd "REFInd") supports serial console only in text mode. Edit `refind.conf` and uncomment `textonly`.
+
+#### Syslinux
+
+To enable serial console in [Syslinux](/index.php/Syslinux "Syslinux"), edit `syslinux.cfg` and add `SERIAL` as the first directive in the configuration file.
+
+For COM1 (`/dev/ttyS0`) with baud rate of 115200 bit/s:
 
 ```
-console=tty0 console=ttyS0,9600
-
-```
-
-For example, the kernel line should look something like this after modification:
-
-```
-kernel /vmlinuz-linux root=/dev/md0 ro md=0,/dev/sda3,/dev/sdb3 vga=773 console=tty0 console=ttyS0,9600
-
-```
-
-**Note:** When the `terminal --timeout=5 serial console` line is added to your menu.lst grub configuration, your boot sequence will now show a series of "Press any key to continue" messages. If no key is pressed, the boot menu will appear on whichever (serial or console) appears first in the 'terminal' configuration line. The lines will look like this upon boot:
-
-```
-Press any key to continue.
-Press any key to continue.
-Press any key to continue.
-Press any key to continue.
-Press any key to continue.
-Press any key to continue.
-Press any key to continue.
+SERIAL 0 115200
 
 ```
 
-Next, we have to edit `/etc/inittab` and add a new agetty line below the existing ones:
+The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[1]](https://wiki.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D). Read [Syslinux Wiki:Config#SERIAL](https://wiki.syslinux.org/wiki/index.php?title=Config#SERIAL) for the directive's options.
+
+### Kernel
+
+Kernel's output can be sent to serial console by setting the `console=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). The last specified `console=` will be set as `/dev/console`.
 
 ```
-c0:2345:respawn:/sbin/agetty 9600 ttyS0 linux
-
-```
-
-Edit `/etc/securetty` and add an entry for the the serial console, *below the existing entries*:
-
-```
-ttyS0
+console=tty0 console=ttyS0,115200
 
 ```
 
-Reboot.
+See [https://www.kernel.org/doc/Documentation/admin-guide/serial-console.rst](https://www.kernel.org/doc/Documentation/admin-guide/serial-console.rst).
 
-**Note:** In all of the steps above, ttyS1 can also be used in case your machine has more than one serial port.
+### getty
+
+At boot, [systemd-getty-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-getty-generator.8) will start a [getty](/index.php/Getty "Getty") instance for each console specified in the kernel command line.
+
+If you have not configured `console=` in kernel command line [start](/index.php/Start "Start") `serial-getty@*device*.service`. For `/dev/ttyS0` (COM1) that would be `serial-getty@ttyS0.service`. [Enable](/index.php/Enable "Enable") the service to start it at boot.
+
+Unless specified otherwise in the kernel command line, getty will be expecting 38400 bit/s baud rate, 8 data bits, no parity and one stop bit-times.
 
 ## Making Connections
 
@@ -157,7 +134,7 @@ $ dterm 115200 8 n 1
 
 ```
 
-See its homepage[[1]](http://www.knossos.net.nz/resources/free-software/dterm/) for more examples.
+See its homepage[[2]](http://www.knossos.net.nz/resources/free-software/dterm/) for more examples.
 
 ##### Minicom
 
@@ -211,7 +188,7 @@ To end the session, press `Ctrl+a` followed by `K`. Alternatively, press `Ctrl+a
 
 ##### Serialclient
 
-Serialclient[[2]](https://github.com/flagos/serialclient) is a CLI client for serial connection written in ruby. Install it with the following:
+Serialclient[[3]](https://github.com/flagos/serialclient) is a CLI client for serial connection written in ruby. Install it with the following:
 
 ```
 # pacman -S ruby
@@ -228,7 +205,7 @@ $ serialclient -p /dev/ttyS0
 
 #### And, for Windows
 
-On Windows machines, connect to the serial port using programs like PuTTY[[3]](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or Terminalbpp[[4]](https://sites.google.com/site/terminalbpp/).
+On Windows machines, connect to the serial port using programs like PuTTY[[4]](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or Terminalbpp[[5]](https://sites.google.com/site/terminalbpp/).
 
 #### Graphical front-ends
 
@@ -240,7 +217,7 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 
 ## Installing Arch Linux using the serial console
 
-**Note:** The Arch Linux monthly release(i.e. the installation CD)'s boot loader has been configured[[5]](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux/archiso_head.cfg#n1) to listen on 0 port(`ttyS0`/COM1) at 38400 bps, with 8 data bits, no parity bit and 1 stop bit-times.
+**Note:** The Arch Linux monthly release(i.e. the installation CD)'s boot loader has been configured[[6]](https://projects.archlinux.org/archiso.git/tree/configs/releng/syslinux/archiso_head.cfg#n1) to listen on 0 port(`ttyS0`/COM1) at 38400 bps, with 8 data bits, no parity bit and 1 stop bit-times.
 
 1.  Connect to the target machine using the method described above.
 2.  Boot the target machine using the Arch Linux installation CD.

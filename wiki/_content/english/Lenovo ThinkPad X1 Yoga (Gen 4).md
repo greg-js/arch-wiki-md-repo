@@ -1,0 +1,1 @@
+The Lenovo ThinkPad X1 Yoga, 4th generation is a 2-in-1 convertible laptop introduced in June of 2019\. It features a 14" screen and an aluminum body.

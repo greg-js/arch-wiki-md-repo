@@ -727,7 +727,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://sayonara-player.com/](https://sayonara-player.com/) || [sayonara-player](https://aur.archlinux.org/packages/sayonara-player/)
 
-*   **Strawberry** — Music player aimed at audio enthusiasts and music collectors.
+*   **Strawberry** — Fork of Clementine aimed at audio enthusiasts and music collectors.
 
 	[https://strawbs.org/](https://strawbs.org/) || [strawberry](https://www.archlinux.org/packages/?name=strawberry)
 
@@ -1771,7 +1771,7 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 *   **[Motion](/index.php/Motion "Motion")** — Highly configurable program that monitors video signals from many types of cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
 
-	[https://motion-project.github.io/](https://motion-project.github.io/) || [motion](https://aur.archlinux.org/packages/motion/)
+	[https://motion-project.github.io/](https://motion-project.github.io/) || [motion](https://www.archlinux.org/packages/?name=motion)
 
 *   **Pantheon Camera** — Camera app designed for elementary OS.
 

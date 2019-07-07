@@ -77,7 +77,7 @@ It is a DNS resolver/forwarder and a database-like wrapper/API that provides lon
 1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
 2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
 
-`pihole-FTL.service` is statically enabled; re/start it. For FTL configuration, see [upstream documentation](https://docs.pi-hole.net/ftldns/configfile/).
+If `systemd-resolved.service` is running then stop and disable it. The `pihole-FTL.service` is statically enabled; re/start it. For FTL configuration, see [upstream documentation](https://docs.pi-hole.net/ftldns/configfile/).
 
 #### Web interface
 

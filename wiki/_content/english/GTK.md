@@ -50,6 +50,7 @@ GTK, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_Pr
     *   [6.9 Button and menu icons](#Button_and_menu_icons)
     *   [6.10 GTK 3 without polkit](#GTK_3_without_polkit)
     *   [6.11 Some GTK 2 themes only change the UI color palette](#Some_GTK_2_themes_only_change_the_UI_color_palette)
+    *   [6.12 Patching GTK file picker to use regular type ahead](#Patching_GTK_file_picker_to_use_regular_type_ahead)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -631,6 +632,12 @@ GTK3 depends on polkit through colord, which is required for printing. However p
 ### Some GTK 2 themes only change the UI color palette
 
 Depending on the theme of choice's support for GTK 2, UI controls may still have the default Raleigh appearance, possibly with a different color palette. This is due to these themes requiring the GTK 2 Murrine engine, which is missing (GTK 2 programs should complain about it on their standard error output). Install the [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) package.
+
+### Patching GTK file picker to use regular type ahead
+
+GTK file picker uses the same type-ahead-find feature as GNOME/Nautilus. This can be very jarring and doesn't fit in very well with other desktop enviroments.
+
+Some applications support XDG-desktop-portal which allows application to use the native filepicker. If that doesn't work you can restore type-ahead functionality by using a patched GTK, for example gtk-mushrooms.
 
 ## See also
 

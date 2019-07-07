@@ -17,7 +17,8 @@
     *   [1.4 Web-приложения](#Web-приложения)
 *   [2 Советы и рекомендации](#Советы_и_рекомендации)
     *   [2.1 Ресурсы в Telegram про Arch Linux](#Ресурсы_в_Telegram_про_Arch_Linux)
-    *   [2.2 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
+    *   [2.2 Проблема со шрифтами](#Проблема_со_шрифтами)
+    *   [2.3 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
 
 ## Установка
 
@@ -72,6 +73,10 @@
 *   [Planet Arch](https://t.me/archplanet) — канал с последними публикациями с сайта Planet Arch *(не обновляется)*.
 *   [Archlinux.fr News](https://t.me/archlinuxfr) — канал с последними записями на форумах Archlinux.fr, а также другой информацией об Arch Linux.
 *   [Archlinux.fr Chat](https://t.me/archlinux_FR) — неофициальная группа для обсуждения всего об Arch Linux (на французском).
+
+### Проблема со шрифтами
+
+Telegram использует шрифт Open Sans. Если надписи в вашем клиенте выглядят отвратительно, попробуйте установить пакет [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans) из официального репозитория Arch Linux. После установки перезапустите Telegram.
 
 ### Счётчик непрочитанных сообщений для Telegram Desktop
 

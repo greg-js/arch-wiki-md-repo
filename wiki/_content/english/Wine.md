@@ -383,14 +383,12 @@ You should of course refer to your application's documentation and Wine's [AppDB
 
 [DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 10 and DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
 
-To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official binaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
+To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/). Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
 
 ```
-$ WINEPREFIX=*your-prefix* setup_dxvk64
+$ WINEPREFIX=*your-prefix* setup_dxvk install
 
 ```
-
-Use `setup_dxvk32` for 32-bit applications.
 
 **Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine) and [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) work out of the box.
 

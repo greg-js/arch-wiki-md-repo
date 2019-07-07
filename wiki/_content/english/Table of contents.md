@@ -59,7 +59,7 @@
 | <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(24)</small> |
 | <small>3.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
 | <small>3.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
-| <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small> |
+| <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
 | <small>3.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
 | <small>3.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
 | <small>4.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(54)</small> |

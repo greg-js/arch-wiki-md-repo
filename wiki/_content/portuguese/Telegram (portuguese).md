@@ -4,7 +4,7 @@ Parte copiada do [Wikipedia](https://pt.wikipedia.org/wiki/Telegram_(aplicativo)
 
 Atualmente o repositório oficial ainda não possui pacotes relacionados，mas o AUR tem [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop)、[telegram-dev](https://aur.archlinux.org/packages/telegram-dev/)、[telegram-desktop-cn](https://aur.archlinux.org/packages/telegram-desktop-cn/) e outros. Para China, Japão e Coreia, você usar outros métodos de digitação, logo, é preciso instalar [telegram-desktop-cn](https://aur.archlinux.org/packages/telegram-desktop-cn/)。
 
-A partir da versão 0.8.50 do Telegram, foram consertados os problemas com métodos de entrada asiático, recomenda-se usar versoes posteriores. Pode ser necessário definir a variável de ambiente QT_IM_MODULE. Para mais detalhes, consulte [Fcitx#GTK+ and Qt modules](/index.php/Fcitx#GTK.2B_and_Qt_modules "Fcitx")
+A partir da versão 0.8.50 do Telegram, foram consertados os problemas com métodos de entrada asiático, recomenda-se usar versoes posteriores. Pode ser necessário definir a variável de ambiente QT_IM_MODULE. Para mais detalhes, consulte [Fcitx#GTK+ and Qt modules](/index.php/Fcitx#GTK+_and_Qt_modules "Fcitx")
 
 Você pode diretamente adicionar o repositóro chinês [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") para instalar a versão chinesa：
 

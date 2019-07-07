@@ -69,6 +69,7 @@ If you find rebasing Git branches too cumbersome, you may want to use a [tool](#
 	Some tools process configuration files to allow them to be customized depending on the host.
 
 | Name | Package | Written in | File grouping | Processing |
+| [dot-templater](https://github.com/kesslern/dot-templater) | [dot-templater-git](https://aur.archlinux.org/packages/dot-templater-git/) | Rust | directory-based | custom syntax |
 | [dotdrop](https://deadc0de.re/dotdrop/) | [dotdrop](https://aur.archlinux.org/packages/dotdrop/) | Python | configuration file | Jinja2 |
 | [dotfiles](https://github.com/jbernard/dotfiles) | [dotfiles](https://aur.archlinux.org/packages/dotfiles/) | Python | [No](https://github.com/jbernard/dotfiles/pull/24) | No |
 | [Dots](https://github.com/EvanPurkhiser/dots) | [dots-manager](https://aur.archlinux.org/packages/dots-manager/) | Python | directory-based | custom append points |

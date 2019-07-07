@@ -36,7 +36,7 @@ Related articles
 
 ### Front-ends
 
-*   **Grsync** — GTK+ front-end.
+*   **Grsync** — GTK front-end.
 
 	[http://www.opbyte.it/grsync/](http://www.opbyte.it/grsync/) || [grsync](https://www.archlinux.org/packages/?name=grsync)
 

@@ -19,7 +19,9 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
         *   [2.2.2 Chromium](#Chromium)
         *   [2.2.3 Firefox](#Firefox)
         *   [2.2.4 For new cards issued since December 2018](#For_new_cards_issued_since_December_2018)
-    *   [2.3 Sweden](#Sweden)
+    *   [2.3 Germany](#Germany)
+        *   [2.3.1 ReinerSCT devices](#ReinerSCT_devices)
+    *   [2.4 Sweden](#Sweden)
 
 ## Installation
 
@@ -90,6 +92,12 @@ In Firefox, enable "IDEMIA PKCS11 loader" extension after restart. For Chrome/Ch
  modutil -force -dbdir sql:$HOME/.pki/nssdb -add idemia-pkcs11 -libfile /usr/local/AWP/lib/libOcsPKCS11Wrapper.so -mechanisms FRIENDLY
 
 ```
+
+### Germany
+
+#### ReinerSCT devices
+
+Install [pcsc-cyberjack](https://aur.archlinux.org/packages/pcsc-cyberjack/) and copy the default configuration file `/etc/pcsc-cyberjack/cyberjack.conf.default` to the same folder, without default. Restart `pcsc.service` and apps like [ausweisapp2](https://aur.archlinux.org/packages/ausweisapp2/) should recognize the scanner. The ReinerSCT RFID will blink its LED, which it does not when the driver is not installed correctly.
 
 ### Sweden
 

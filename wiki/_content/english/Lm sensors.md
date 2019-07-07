@@ -27,10 +27,11 @@ Related articles
     *   [5.2 Automatic lm_sensors deployment](#Automatic_lm_sensors_deployment)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 K10Temp module](#K10Temp_module)
-    *   [6.2 Asus Z97/Z170 motherboards](#Asus_Z97/Z170_motherboards)
-    *   [6.3 Gigabyte B250 motherboards](#Gigabyte_B250_motherboards)
-    *   [6.4 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
-    *   [6.5 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
+    *   [6.2 Asus B450 motherboards with Ryzen CPU](#Asus_B450_motherboards_with_Ryzen_CPU)
+    *   [6.3 Asus Z97/Z170 motherboards](#Asus_Z97/Z170_motherboards)
+    *   [6.4 Gigabyte B250 motherboards](#Gigabyte_B250_motherboards)
+    *   [6.5 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
+    *   [6.6 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
 
 ## Installation
 
@@ -196,7 +197,7 @@ Part Number                                     OCZ3G1600LV2G
 
 There are a variety of front-ends for sensors data.
 
-*   **psensor** — GTK+ application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
+*   **psensor** — GTK application for monitoring hardware sensors, including temperatures and fan speeds. Monitors motherboard and CPU (using lm-sensors), Nvidia GPUs (using XNVCtrl), and harddisks (using [hddtemp](/index.php/Hddtemp "Hddtemp") or libatasmart).
 
 	[https://wpitchoune.net/psensor/](https://wpitchoune.net/psensor/) || [psensor](https://www.archlinux.org/packages/?name=psensor)
 
@@ -492,16 +493,15 @@ options k10temp force=1
 
 This will allow the module to load at boot.
 
+### Asus B450 motherboards with Ryzen CPU
+
+With some recent Asus motherboards, fan and voltage sensor access may require the it87 module. [Install](/index.php/Install "Install") [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/) and load the `it87` [kernel module](/index.php/Kernel_module "Kernel module").
+
 ### Asus Z97/Z170 motherboards
 
-With some recent Asus motherboards, fan and voltage sensor access may require the NCT6775 module:
+With some recent Asus motherboards, fan and voltage sensor access may require the `nct6775` [kernel module](/index.php/Kernel_module "Kernel module") to be loaded.
 
-```
- # modprobe nct6775
-
-```
-
-and add to the kernel boot parameters:
+Additionally, add to the kernel boot parameters:
 
 ```
  acpi_enforce_resources=lax

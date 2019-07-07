@@ -4,7 +4,11 @@ It primarily offers the most basic things: A window manager ([PekWM](/index.php/
 
 Unlike any other desktop environment, EDE² is based upon the [FLTK toolkit](http://fltk.org). It's especially fit for systems with little RAM or for users who want to completely customize their system and need a GUI that is not already bloated with functions and applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Custom repository](#Custom_repository)
@@ -49,7 +53,7 @@ To bring up EDE you can either use a [Display manager](/index.php/Display_manage
 
 Since EDE is a bare-bone DE, you will have to add even the most common applications like a file manager or an editor yourself. It's all your freedom and choice.
 
-Due to the nature of the DE, it obviously makes sense to install light-weight software. There are however not that many [FLTK](http://fltk.org) applications available so you will likely have to relay on a second toolkit like [GTK+](/index.php/GTK%2B "GTK+") for example.
+Due to the nature of the DE, it obviously makes sense to install light-weight software. There are however not that many [FLTK](http://fltk.org) applications available so you will likely have to relay on a second toolkit like [GTK](/index.php/GTK "GTK") for example.
 
 ### Some recommendations
 

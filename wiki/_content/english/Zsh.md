@@ -25,7 +25,9 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
             *   [3.6.2.1 Colors](#Colors)
             *   [3.6.2.2 Example](#Example)
     *   [3.7 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.8 Configuration Frameworks](#Configuration_Frameworks)
+    *   [3.8 Extensions](#Extensions)
+        *   [3.8.1 Configuration Frameworks](#Configuration_Frameworks)
+        *   [3.8.2 Plugin Managers](#Plugin_Managers)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart X at login](#Autostart_X_at_login)
     *   [4.2 The "command not found" hook](#The_"command_not_found"_hook)
@@ -91,6 +93,7 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 *   If `$ZDOTDIR` is not set, `$HOME` is used instead.
 *   If option `RCS` is unset in any of the files, no configuration files will be sourced after that file.
 *   If option `GLOBAL_RCS` is unset in any of the files, no global configuration files (`/etc/zsh/*`) will be sourced after that file.
+*   You could consider [implementing a standard path](/index.php/Command-line_shell#Standardisation "Command-line shell") for your ZSH configuration files.
 
 When starting Zsh, it will source the following files in this order by default:
 
@@ -106,6 +109,8 @@ When starting Zsh, it will source the following files in this order by default:
 *   `$ZDOTDIR/.zlogin` Used for executing user's commands at ending of initial progress, will be sourced when starting as a ***login shell***.
 *   `$ZDOTDIR/.zlogout` Will be sourced when a ***login shell*** **exits**.
 *   `/etc/zsh/zlogout` Will be sourced when a ***login shell*** **exits**.
+
+See [the graphic representation](https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html#implementation).
 
 **Note:** The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
 
@@ -394,15 +399,9 @@ username@host ~ % [0]
 
 See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles") for more.
 
-### Configuration Frameworks
+### Extensions
 
-*   **Antigen** — A plugin manager for zsh, inspired by oh-my-zsh and vundle.
-
-	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
-
-*   **Antibody** — A performance-focused plugin manager similar to Antigen.
-
-	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
+#### Configuration Frameworks
 
 *   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
 
@@ -415,6 +414,28 @@ See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles
 *   **ZIM** — A configuration framework with blazing speed and modular extensions. Zim is very easy to customize, and comes with a rich set of modules and features without compromising on speed or functionality.
 
 	[https://github.com/zimfw/zimfw](https://github.com/zimfw/zimfw) || [zsh-zim-git](https://aur.archlinux.org/packages/zsh-zim-git/)
+
+#### Plugin Managers
+
+*   **Antibody** — A performance-focused plugin manager similar to Antigen.
+
+	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
+
+*   **zplug** — A next-generation plugin manager for zsh
+
+	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
+
+*   **zplugin** — Flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode
+
+	[http://github.com/zdharma/zplugin](http://github.com/zdharma/zplugin) || [zsh-zplugin-git](https://aur.archlinux.org/packages/zsh-zplugin-git/)
+
+*   **Antigen** — A plugin manager for zsh, inspired by oh-my-zsh and vundle. [ABANDONNED](https://github.com/zsh-users/antigen/issues/673)
+
+	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
+
+*   **zgen** — A lightweight and simple plugin manager for ZSH. [ABANDONNED](https://github.com/tarjoilija/zgen/issues/123)
+
+	[https://github.com/tarjoilija/zgen](https://github.com/tarjoilija/zgen) || [zgen-git](https://aur.archlinux.org/packages/zgen-git/)
 
 ## Tips and tricks
 
@@ -737,11 +758,17 @@ See [a repository about shell environment detection](https://gitlab.com/jdorel-d
 
 Use the `zsh/net/tcp` module:
 
- `zmodload zsh/net/tcp` 
+```
+$ zmodload zsh/net/tcp
 
-You can now establish tcp connections:
+```
 
- `ztcp exemple.com 80` 
+You can now establish TCP connections:
+
+```
+$ ztcp exemple.com 80
+
+```
 
 ## Uninstallation
 

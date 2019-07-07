@@ -64,6 +64,8 @@ By default the LXD daemon allows users in the `lxd` group access, so add your us
 
 ```
 
+**Warning:** Anyone added to the `lxd` group is root equivalent. More information [here](https://github.com/lxc/lxd#security) and [here](https://bugs.launchpad.net/ubuntu/+source/lxd/+bug/1829071).
+
 ## Basic usage
 
 ### Create container

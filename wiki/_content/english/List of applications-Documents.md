@@ -862,6 +862,10 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 
 	[https://fbreader.org/](https://fbreader.org/) || [fbreader](https://www.archlinux.org/packages/?name=fbreader)
 
+*   **Foliate** — Simple and modern GTK eBook reader.
+
+	[https://johnfactotum.github.io/foliate/](https://johnfactotum.github.io/foliate/) || [foliate](https://aur.archlinux.org/packages/foliate/)
+
 *   **GNOME Books** — E-book manager application for GNOME with EPUB, Mobipocket, FictionBook, DjVu and Comicbook support.
 
 	[https://wiki.gnome.org/Apps/Documents](https://wiki.gnome.org/Apps/Documents) || [gnome-documents](https://www.archlinux.org/packages/?name=gnome-documents)

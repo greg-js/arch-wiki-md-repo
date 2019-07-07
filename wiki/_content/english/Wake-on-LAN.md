@@ -189,7 +189,7 @@ If used to wake up a computer over the internet or in a different subnet, it typ
 
 Applications that are able to send magic packets for Wake-on-LAN:
 
-*   **gWakeOnLAN** — GTK+ utility to awake turned off computers through the Wake-on-LAN feature.
+*   **gWakeOnLAN** — GTK utility to awake turned off computers through the Wake-on-LAN feature.
 
 	[https://muflone.com/gwakeonlan/english/](https://muflone.com/gwakeonlan/english/) || [gwakeonlan](https://www.archlinux.org/packages/?name=gwakeonlan)
 

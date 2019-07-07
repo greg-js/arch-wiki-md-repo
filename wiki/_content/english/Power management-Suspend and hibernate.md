@@ -29,7 +29,7 @@ There are multiple low level interfaces (backends) providing basic functionality
     *   [3.1 About swap partition/file size](#About_swap_partition/file_size)
     *   [3.2 Required kernel parameters](#Required_kernel_parameters)
         *   [3.2.1 Hibernation into swap file](#Hibernation_into_swap_file)
-        *   [3.2.2 Hibernation into swap file on BTRFS](#Hibernation_into_swap_file_on_BTRFS)
+        *   [3.2.2 Hibernation into swap file on Btrfs](#Hibernation_into_swap_file_on_Btrfs)
     *   [3.3 Configure the initramfs](#Configure_the_initramfs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
@@ -120,19 +120,29 @@ In the example the value of `*swap_file_offset*` is the first `38912` with the t
 
 **Tip:** The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
 
-#### Hibernation into swap file on BTRFS
+**Note:**
+
+*   The kernel parameters will only take effect after rebooting. To be able to hibernate right away, echo the the volume's major and minor device numbers (obtain them from [lsblk](/index.php/Lsblk "Lsblk") output) in format `*major*:*minor*` to `/sys/power/resume` and the resume offset to `/sys/power/resume_offset`. See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kernel.org/doc/Documentation/power/swsusp.txt)
+*   The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided within the set of tools [uswsusp](/index.php/Uswsusp "Uswsusp"). If using this method, then these two parameters have to be provided in `/etc/suspend.conf` via the keys `resume device` and `resume offset`. No reboot is required in this case.
+
+**Tip:** You might want to decrease the [swappiness](/index.php/Swap#Swappiness "Swap") for your swapfile if the only purpose is to be able to hibernate and not expand RAM.
+
+#### Hibernation into swap file on Btrfs
 
 On Btrfs, the "physical" offset you get from filefrag isn't the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
 
 An alternate method is to use [this tool](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.
 
-Download or copy the text into a file named `btrfs_map_physical.c`.], then compile it:
+Download or copy the text into a file named `btrfs_map_physical.c`, then compile it:
 
- `gcc -O2 -o btrfs_map_physical btrfs_map_physical.c` 
+```
+$ gcc -O2 -o btrfs_map_physical btrfs_map_physical.c
+
+```
 
 Run it. For example:
 
- `# ./btrfs_map_physical /.swapfile/swapfile ` 
+ `# ./btrfs_map_physical */path/to/swapfile*` 
 ```
 FILE OFFSET  EXTENT TYPE  LOGICAL SIZE  LOGICAL OFFSET  PHYSICAL SIZE  DEVID  PHYSICAL OFFSET
 0            regular      4096          2927632384      268435456      1      4009762816
@@ -143,44 +153,12 @@ FILE OFFSET  EXTENT TYPE  LOGICAL SIZE  LOGICAL OFFSET  PHYSICAL SIZE  DEVID  PH
 1073741824   prealloc     268435456     4056940544      268435456      1      5139070976
 1342177280   prealloc     268435456     4325376000      268435456      1      5407506432
 1610612736   prealloc     268435456     4593811456      268435456      1      5675941888
-1879048192   prealloc     268435456     4862246912      268435456      1      5944377344
-2147483648   prealloc     268435456     5130682368      268435456      1      6212812800
-2415919104   prealloc     268435456     5399117824      268435456      1      6481248256
-2684354560   prealloc     268435456     5667553280      268435456      1      6749683712
-2952790016   prealloc     268435456     5935988736      268435456      1      7018119168
-3221225472   prealloc     268435456     6204424192      268435456      1      7286554624
-3489660928   prealloc     268435456     6472859648      268435456      1      7554990080
-3758096384   prealloc     268435456     6741295104      268435456      1      7823425536
-4026531840   prealloc     268435456     7009730560      268435456      1      8091860992
-4294967296   prealloc     268435456     7278166016      268435456      1      8360296448
-4563402752   prealloc     268435456     7546601472      268435456      1      8628731904
-4831838208   prealloc     268435456     7815036928      268435456      1      8897167360
-5100273664   prealloc     268435456     8083472384      268435456      1      9165602816
-5368709120   prealloc     268435456     8351907840      268435456      1      9434038272
-5637144576   prealloc     268435456     8620343296      268435456      1      9702473728
-5905580032   prealloc     268435456     8888778752      268435456      1      9970909184
-6174015488   prealloc     268435456     9157214208      268435456      1      10239344640
-6442450944   prealloc     268435456     9425649664      268435456      1      10507780096
-6710886400   prealloc     268435456     9694085120      268435456      1      10776215552
-6979321856   prealloc     268435456     9962520576      268435456      1      11044651008
-7247757312   prealloc     268435456     10230956032     268435456      1      11313086464
-7516192768   prealloc     268435456     10499391488     268435456      1      11581521920
-7784628224   prealloc     268435456     10767826944     268435456      1      11849957376
-8053063680   prealloc     268435456     11036262400     268435456      1      12118392832
-8321499136   prealloc     268435456     11304697856     268435456      1      12386828288
 
 ```
 
 The first physical offset should be the one. In this example, we will use `4009762816`. Divide that by 4096 and you have your resume_offset value. In this example, it is `978946`.
 
-Systemd overrides those settings incorrectly. Instead of using `systemctl hibernate` to hibernate, use `# echo disk > /sys/power/state`. As a regular user you could use `$ echo disk | sudo tee /sys/power/state` instead.
-
-**Note:**
-
-*   Before the first hibernation, a reboot is required to activate the feature.
-*   The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided within the set of tools [uswsusp](/index.php/Uswsusp "Uswsusp"). If using this method, then these two parameters have to be provided in `/etc/suspend.conf` via the keys `resume device` and `resume offset`. No reboot is required in this case.
-
-**Tip:** You might want to decrease the [Swap#Swappiness](/index.php/Swap#Swappiness "Swap") for your swapfile if the only purpose is to be able to hibernate and not expand RAM.
+Systemd overrides those settings incorrectly. Instead of using `systemctl hibernate` to hibernate, run `echo disk > /sys/power/state` as root.
 
 ### Configure the initramfs
 

@@ -66,7 +66,7 @@ Options:
 
 	`-w`: do a destructive write test
 
-	`-s`: show progress-bar
+	`-s`: show progress
 
 	`-v`: be "verbose" and output bad sectors detected to stdout
 

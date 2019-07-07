@@ -293,7 +293,7 @@ The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/F
 
 #### Window switching
 
-To switch windows with `Super+Space` instead of `Super+Tab` change `KEY_TAB` to `KEY_SPACE` in `desktop-shell/shell.c`.
+To switch windows with `Super+Space` instead of `Super+Tab` change `KEY_TAB` to `KEY_SPACE` in `desktop-shell/shell.c` and recompile [weston](https://www.archlinux.org/packages/?name=weston).
 
 ## GUI libraries
 

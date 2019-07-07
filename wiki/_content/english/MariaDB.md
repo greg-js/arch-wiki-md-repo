@@ -65,7 +65,7 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards 
 
 Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 
-**Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/mysql/my.cnf`.
+**Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/my.cnf.d/server.cnf`.
 
 The following command will interactively guide you through a number of recommended security measures at the database level:
 
@@ -104,7 +104,7 @@ MariaDB> quit
 *MariaDB* configuration options are read from the following files in the given order (according to `mysqld --help --verbose` output):
 
 ```
-/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf
+/etc/my.cnf /etc/my.cnf.d/ ~/.my.cnf
 
 ```
 
@@ -114,7 +114,7 @@ Depending on the scope of the changes you want to make (system-wide, user-only..
 
 **Warning:** This is not considered as best practice and may cause security issues. Consider using [Secure Shell](/index.php/Secure_Shell "Secure Shell"), [VNC](/index.php/VNC "VNC") or [VPN](/index.php/VPN "VPN"), if you want to maintain the MySQL-server outside and/or inside your LAN.
 
-If you want to access your MySQL server from other LAN hosts, you have to edit the following lines in `/etc/mysql/my.cnf`:
+If you want to access your MySQL server from other LAN hosts, you have to edit the following lines in `/etc/my.cnf.d/server.cnf`:
 
 ```
 [mysqld]
@@ -150,7 +150,7 @@ You can change the '%' wildcard to a specific host if you like. The password can
 
 ### Disable remote access
 
-The MySQL server is accessible from the network by default. If MySQL is only needed for the localhost, you can improve security by not listening on TCP port 3306\. To refuse remote connections, uncomment the following line in `/etc/mysql/my.cnf`:
+The MySQL server is accessible from the network by default. If MySQL is only needed for the localhost, you can improve security by not listening on TCP port 3306\. To refuse remote connections, uncomment the following line in `/etc/my.cnf.d/server.cnf`:
 
 ```
 skip-networking

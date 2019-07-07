@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Command-line shell](/index.php/Command-line_shell "Command-line shell"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Command-line_shell&diff=0&oldid=538822) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Command-line shell](/index.php/Command-line_shell "Command-line shell"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Command-line_shell&diff=0&oldid=576047) na versão em inglês.
 
 Artigos relacionados
 
@@ -9,7 +9,11 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/pt:Shell_do_Unix "wikipedia:pt:She
 
 	Um shell do Unix é um interpretador de linha de comando ou shell que fornece uma interface semelhante ao Unix tradicional. Os usuários indicam a operação do computador pela entrada de comandos como texto para um interpretador de linha de comando executar, ou criando scripts de texto de um ou mais de tais comandos.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Lista de shells](#Lista_de_shells)
     *   [1.1 Compatíveis com POSIX](#Compatíveis_com_POSIX)
@@ -17,6 +21,7 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/pt:Shell_do_Unix "wikipedia:pt:She
 *   [2 Alterando seu shell padrão](#Alterando_seu_shell_padrão)
 *   [3 Arquivos de configuração](#Arquivos_de_configuração)
     *   [3.1 /etc/profile](#/etc/profile)
+    *   [3.2 Padronização](#Padronização)
 *   [4 Entrada e saída](#Entrada_e_saída)
 *   [5 Veja também](#Veja_também)
 
@@ -56,7 +61,7 @@ Esses shells podem todos serem vinculados a `/usr/bin/sh`. Quando [Bash](/index.
 
 	[https://elvish.io](https://elvish.io) || [elvish](https://aur.archlinux.org/packages/elvish/)
 
-*   **[fish](/index.php/Fish "Fish")** — Shell de linha de comando inteligente e amigável. O *fish* executa o realce da sintaxe da linha de comando em cores, bem como o realce e a completação dos comandos e dos argumentos, da existência do arquivo e do histórico. Ele oferece suporte à completação na medida em que você escreve para o histórico e os comandos. O fish é capaz de analisar as páginas man do sistema para determinar argumentos válidos para comandos, permitindo que ele realce e complete os comandos. Uma revisão fácil do último comando pode ser feita usando Alt-Up. O daemon de fish (fishd) facilita ter um histórico sincronizado em todas as instâncias do fish, bem como variáveis de ambiente universais e persistentes.
+*   **[fish](/index.php/Fish "Fish")** — Shell de linha de comando inteligente e amigável. O *fish* executa o realce da sintaxe da linha de comando em cores, bem como o realce e a completação dos comandos e dos argumentos, da existência do arquivo e do histórico. Ele oferece suporte à completação na medida em que você escreve para o histórico e os comandos. O fish é capaz de analisar as páginas man do sistema para determinar argumentos válidos para comandos, permitindo que ele realce e complete os comandos. Uma revisão fácil do último comando pode ser feita usando `Alt+Up`. O daemon de fish (fishd) facilita ter um histórico sincronizado em todas as instâncias do fish, bem como variáveis de ambiente universais e persistentes. Além disso, fish possui sintaxe de programação significativamente simplificada e fluxo de controle (similar ao ruby). Para mais informações, veja o [tutorial](http://fishshell.com/docs/current/tutorial).
 
 	[http://fishshell.com/](http://fishshell.com/) || [fish](https://www.archlinux.org/packages/?name=fish)
 
@@ -68,7 +73,7 @@ Esses shells podem todos serem vinculados a `/usr/bin/sh`. Quando [Bash](/index.
 
 	[https://github.com/michaelmacinnis/oh](https://github.com/michaelmacinnis/oh) || [oh-git](https://aur.archlinux.org/packages/oh-git/)
 
-*   **[powerShell](https://en.wikipedia.org/wiki/pt:PowerShell "wikipedia:pt:PowerShell")** — O PowerShell é uma linguagem de programação orientada a objetos e um shell de linha de comando interativo, originalmente escrito para e exclusivo para o Windows. Mais tarde, foi aberto e portado para Mac OS X e Linux.
+*   **[PowerShell](https://en.wikipedia.org/wiki/pt:PowerShell "wikipedia:pt:PowerShell")** — O PowerShell é uma linguagem de programação orientada a objetos e um shell de linha de comando interativo, originalmente escrito para e exclusivo para o Windows. Mais tarde, foi aberto e portado para Mac OS X e Linux.
 
 	[https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) || [powershell](https://aur.archlinux.org/packages/powershell/)
 
@@ -102,15 +107,23 @@ sendo *caminho-completo-do-shell* é o caminho completo como fornecido em `chsh 
 
 Se você agora você encerrar a sessão e iniciá-la novamente, você será saudado pelo outro shell.
 
+**Dica:** chsh usa `/etc/shells` como referência. Se um shell instalado recentemente não estiver presente na lista, ele pode ser manualmente adicionado a este arquivo.
+
 ## Arquivos de configuração
 
 Para iniciar automaticamente programas no console ou no login, você pode usar os arquivos/diretórios de inicialização do shell. Leia a documentação do seu shell, ou seu artigo do ArchWiki, p. ex., [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
 
-Veja também [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
+Veja também [arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
 
 ### /etc/profile
 
 Após o login, todas os shells compatíveis com Bourne usam `/etc/profile`, o que, por sua vez, origina qualquer arquivo `*.sh` legível em `/etc/profile.d/`: estes scripts não requerem uma diretiva de interpretador, nem precisam ser executáveis. Eles são usados para configurar um ambiente e definir configurações específicas do aplicativo.
+
+### Padronização
+
+É possível fazer com que os arquivos de configuração de shells (alguns) sigam a mesma convenção de nomenclatura, além de ter suporte a alguma configuração comum entre os shells.
+
+Veja [o artigo sobre isso](https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html) e o [repositório relacionado](https://bitbucket.org/flowblok/shell-startup).
 
 ## Entrada e saída
 

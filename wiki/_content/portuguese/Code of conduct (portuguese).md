@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=568270) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=575057) na versão em inglês.
 
 A comunidade Arch é uma comunidade técnica cujo propósito compartilhado é oferecer suporte e melhoria do Arch Linux.
 
@@ -233,10 +233,7 @@ Texto simples é o padrão de Unix e de e-mail. HTML é desnecessário e, para a
 
 ### AUR
 
-Diretrizes para o [Arch User Repository](https://aur.archlinux.org/) podem ser encontradas aqui:
-
-*   [AUR (Português)#Regras de envio](/index.php/AUR_(Portugu%C3%AAs)#Regras_de_envio "AUR (Português)")
-*   [AUR (Português)#Outras requisições](/index.php/AUR_(Portugu%C3%AAs)#Outras_requisições "AUR (Português)")
+Diretrizes para o [Arch User Repository](https://aur.archlinux.org/) podem ser encontradas nas [diretrizes de envio ao AUR](/index.php/Diretrizes_de_envio_ao_AUR "Diretrizes de envio ao AUR").
 
 ### IRC
 

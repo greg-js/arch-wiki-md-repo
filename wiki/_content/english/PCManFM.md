@@ -180,7 +180,7 @@ See these threads for more information: [[1]](https://bbs.archlinux.org/viewtopi
 
 ### No icons
 
-If you are using a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment") and you have no icons for folders and files, specify a GTK+ icon theme.
+If you are using a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment") and you have no icons for folders and files, specify a GTK icon theme.
 
 If you have e.g. [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) installed, edit `~/.gtkrc-2.0` **or** `/etc/gtk-2.0/gtkrc` and add the following line:
 

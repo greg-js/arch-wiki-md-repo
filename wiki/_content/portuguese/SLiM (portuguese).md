@@ -4,27 +4,31 @@ Artigos relacionados
 
 [SLiM](http://slim.berlios.de/) é um acrônimo para Gerenciador de Login Simples (Simple Login Manager). SLiM é simples, leve e fácil de ser configurado. SLiM é usado por alguns porque não requer dependências do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE "KDE") e pode ajudar a criar um sistema leve para usuários que gostam de usar desktops leve como [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox"), e [Fluxbox](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
-*   [2 Configuração](#Configura.C3.A7.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalação](#Instalação)
+*   [2 Configuração](#Configuração)
     *   [2.1 Habilitando o SLIM](#Habilitando_o_SLIM)
-    *   [2.2 Único ambiente gráfico](#.C3.9Anico_ambiente_gr.C3.A1fico)
-    *   [2.3 Login automático](#Login_autom.C3.A1tico)
-    *   [2.4 Múltiplos ambientes gráficos](#M.C3.BAltiplos_ambientes_gr.C3.A1ficos)
+    *   [2.2 Único ambiente gráfico](#Único_ambiente_gráfico)
+    *   [2.3 Login automático](#Login_automático)
+    *   [2.4 Múltiplos ambientes gráficos](#Múltiplos_ambientes_gráficos)
     *   [2.5 Temas](#Temas)
-        *   [2.5.1 Configuração em tela dupla](#Configura.C3.A7.C3.A3o_em_tela_dupla)
-*   [3 Outras opções](#Outras_op.C3.A7.C3.B5es)
+        *   [2.5.1 Configuração em tela dupla](#Configuração_em_tela_dupla)
+*   [3 Outras opções](#Outras_opções)
     *   [3.1 Modificando o Cursor](#Modificando_o_Cursor)
-    *   [3.2 Compartilhando o papel de parede do SLiM e da Área de trabalho](#Compartilhando_o_papel_de_parede_do_SLiM_e_da_.C3.81rea_de_trabalho)
-    *   [3.3 Desligar, reiniciar, suspender, sair, executar um terminal no SLiM](#Desligar.2C_reiniciar.2C_suspender.2C_sair.2C_executar_um_terminal_no_SLiM)
-    *   [3.4 Erro de inicialização do SLiM com o daemon rc.d](#Erro_de_inicializa.C3.A7.C3.A3o_do_SLiM_com_o_daemon_rc.d)
+    *   [3.2 Compartilhando o papel de parede do SLiM e da Área de trabalho](#Compartilhando_o_papel_de_parede_do_SLiM_e_da_Área_de_trabalho)
+    *   [3.3 Desligar, reiniciar, suspender, sair, executar um terminal no SLiM](#Desligar,_reiniciar,_suspender,_sair,_executar_um_terminal_no_SLiM)
+    *   [3.4 Erro de inicialização do SLiM com o daemon rc.d](#Erro_de_inicialização_do_SLiM_com_o_daemon_rc.d)
     *   [3.5 Erro de Desligar com Splashy](#Erro_de_Desligar_com_Splashy)
-    *   [3.6 Informações de login com o SLiM](#Informa.C3.A7.C3.B5es_de_login_com_o_SLiM)
+    *   [3.6 Informações de login com o SLiM](#Informações_de_login_com_o_SLiM)
     *   [3.7 SLiM e o Keyring do Gnome](#SLiM_e_o_Keyring_do_Gnome)
     *   [3.8 Configurando o DPI com o SLiM](#Configurando_o_DPI_com_o_SLiM)
-    *   [3.9 Usando um tema aleatório](#Usando_um_tema_aleat.C3.B3rio)
-*   [4 Todas as opções do SLIM](#Todas_as_op.C3.A7.C3.B5es_do_SLIM)
+    *   [3.9 Usando um tema aleatório](#Usando_um_tema_aleatório)
+*   [4 Todas as opções do SLIM](#Todas_as_opções_do_SLIM)
 *   [5 Fontes](#Fontes)
 
 ## Instalação
@@ -253,8 +257,8 @@ Se você usa o Splashy e o SLiM, algumas vezes você não consegue desligar ou r
 Por padrão, o SLiM falha em registrar logins (quem, último, etc.) para utmp e wtmp, relatando de forma incorreta as informações de login. Para resolver isso, edite seu `slim.conf` como a seguir:
 
 ```
- sessionstart_cmd    /usr/bin/sessreg -a -l $DISPLAY %user
- sessionstop_cmd     /usr/bin/sessreg -d -l $DISPLAY %user
+ sessionstart_cmd    /usr/bin/sessreg -a -l $DISPLAY %user
+ sessionstop_cmd     /usr/bin/sessreg -d -l $DISPLAY %user
 
 ```
 
@@ -271,7 +275,7 @@ session		optional	pam_gnome_keyring.so	auto_start
 Porém, essa solução não funciona com o Gnome 2.30\. Uma alternativa para contornar o problema está descrito [aqui](https://bugs.archlinux.org/task/18930). Modificando a linha login_cmd em /etc/slim.conf:
 
 ```
-login_cmd exec /bin/bash -login ~/.xinitrc %session >~/.xsession-errors 2>&1
+login_cmd exec /bin/bash -login ~/.xinitrc %session >~/.xsession-errors 2>&1
 
 ```
 
@@ -310,15 +314,15 @@ login_cmd permite **%session** e **%theme**
 | numlock |
 | daemon | <tt>yes</tt> |
 | xauth_path | <tt>/usr/bin/xauth</tt> |
-| login_cmd | <tt>exec /bin/bash -login ~/.xinitrc %session</tt> |
+| login_cmd | <tt>exec /bin/bash -login ~/.xinitrc %session</tt> |
 | halt_cmd | <tt>/sbin/shutdown -h now</tt> |
 | reboot_cmd | <tt>/sbin/shutdown -r now</tt> |
 | suspend_cmd |
 | sessionstart_cmd |
 | sessionstop_cmd |
-| console_cmd | <tt>/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T</tt> |
+| console_cmd | <tt>/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T</tt> |
 | screenshot_cmd | <tt>import -window root /slim.png</tt> |
-| welcome_msg | <tt>Welcome to %host</tt> |
+| welcome_msg | <tt>Welcome to %host</tt> |
 | session_msg | <tt>Session:</tt> |
 | default_user |
 | focus_password | <tt>no</tt> |

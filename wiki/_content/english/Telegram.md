@@ -15,7 +15,8 @@ The official clients are open-source but the code for recent versions is not alw
     *   [1.4 Web-based clients](#Web-based_clients)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Telegram resources about Arch Linux](#Telegram_resources_about_Arch_Linux)
-    *   [2.2 Unread messages counter for Telegram Desktop](#Unread_messages_counter_for_Telegram_Desktop)
+    *   [2.2 Trouble with fonts](#Trouble_with_fonts)
+    *   [2.3 Unread messages counter for Telegram Desktop](#Unread_messages_counter_for_Telegram_Desktop)
 
 ## Installation
 
@@ -68,6 +69,10 @@ Third-party clients:
 *   [Planet Arch](https://t.me/archplanet) - Channel with latest posts from Planet Arch web site *(not updated)*.
 *   [Archlinux.fr News](https://t.me/archlinuxfr) - Channel with latest posts from Archlinux.fr forums and other stuff about Arch Linux.
 *   [Archlinux.fr Chat](https://t.me/archlinux_FR) - Unofficial group for discussing everything about Arch Linux for french users.
+
+### Trouble with fonts
+
+Telegram uses an Open Sans font. In case labels look ugly, try to install a [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans) package from official Arch Linux repository. Restart Telegram after the installation.
 
 ### Unread messages counter for Telegram Desktop
 

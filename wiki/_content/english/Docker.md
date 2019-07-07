@@ -442,3 +442,4 @@ This is a [known issue](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=865975
 *   [Official website](https://www.docker.com)
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
+*   [Awesome Docker](https://awesome-docker.netlify.com/)

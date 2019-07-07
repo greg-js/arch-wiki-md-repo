@@ -6,7 +6,7 @@ Related articles
 
 ## Installation
 
-Install the [motion](https://aur.archlinux.org/packages/motion/) package.
+Install the [motion](https://www.archlinux.org/packages/?name=motion) package.
 
 ## Configuration
 

@@ -42,7 +42,7 @@ Related articles
 
 The [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group, so it is likely already [installed](/index.php/Install "Install") on your system.
 
-[dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) is a [GTK+](/index.php/GTK%2B "GTK+") frontend for the *dhcpcd* daemon, and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
+[dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) is a [GTK](/index.php/GTK "GTK") frontend for the *dhcpcd* daemon, and optionally [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). It features a configuration dialogue and the ability to enter a pass phrase for wireless networks.
 
 [dhcpcd-ui-patched](https://aur.archlinux.org/packages/dhcpcd-ui-patched/) is a patched version of the [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) package. It uses AppIndicator instead of GtkStatusIcon and compiles with gtk3\. Has a sharp tray icon when used with [KDE](/index.php/KDE "KDE").
 

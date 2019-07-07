@@ -61,7 +61,7 @@ If running KDE Plasma, install [kde-gtk-config](https://www.archlinux.org/packag
 
 ### Adwaita
 
-Adwaita is the default GNOME theme. The GTK 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK 2 version is in [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK 2 theme, it provides a native Qt style made to look like the GTK 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) packages for the Qt 4 and 5 versions, respectively.
+Adwaita is the default GNOME theme. The GTK 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK 2 version is in [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK 2 theme, it provides a native Qt style made to look like the GTK 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt](https://aur.archlinux.org/packages/adwaita-qt/) packages for the Qt 4 and 5 versions, respectively.
 
 To set the Qt style as default:
 

@@ -123,7 +123,7 @@ The [kernel](/index.php/Kernel "Kernel") is the core of an operating system. It 
 
 ## initramfs
 
-After the [boot loader](#Boot_loader) loads the [kernel](/index.php/Kernel "Kernel") and possible [initramfs](/index.php/Initramfs "Initramfs") files and executes the kernel, the kernel unpacks the initramfs (initial RAM filesystem) archives into the (then empty) rootfs (initial root filesystem, specifically a ramfs or tmpfs). The first extracted initramfs is the one embedded in the kernel binary during the kernel build, then possible external initramfs files are extracted. Thus files in the external initramfs overwrite files with the same name in the embedded initramfs. The kernel then executes `/init` (in the rootfs) as the first process. The *early userspace* starts.
+After the [boot loader](#Boot_loader) loads the [kernel](/index.php/Kernel "Kernel") and possible initramfs files and executes the kernel, the kernel unpacks the initramfs (initial RAM filesystem) archives into the (then empty) rootfs (initial root filesystem, specifically a ramfs or tmpfs). The first extracted initramfs is the one embedded in the kernel binary during the kernel build, then possible external initramfs files are extracted. Thus files in the external initramfs overwrite files with the same name in the embedded initramfs. The kernel then executes `/init` (in the rootfs) as the first process. The *early userspace* starts.
 
 Arch Linux uses an empty archive for the builtin initramfs (which is the default when building Linux). See [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") for more and Arch-specific info about the external initramfs.
 

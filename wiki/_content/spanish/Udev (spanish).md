@@ -317,7 +317,7 @@ KERNEL=="sd*", SUBSYSTEM=="block", \
 
 Para configurar la cámara web, en primer lugar, consulte [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
 
-Si utilizamos múltiples cámaras web, útil por ejemplo con [motion](https://aur.archlinux.org/packages/motion/) (software detector de movimiento que toma imágenes de los dispositivos video4linux y/o de webcams), asignará los dispositivos de vídeo como /dev/video0..n al azar en el arranque. La solución recomendada es crear enlaces simbólicos que utilicen una regla udev (como en el ejemplo de la [sección anterior](#Escribir_reglas_udev)).
+Si utilizamos múltiples cámaras web, útil por ejemplo con [motion](https://www.archlinux.org/packages/?name=motion) (software detector de movimiento que toma imágenes de los dispositivos video4linux y/o de webcams), asignará los dispositivos de vídeo como /dev/video0..n al azar en el arranque. La solución recomendada es crear enlaces simbólicos que utilicen una regla udev (como en el ejemplo de la [sección anterior](#Escribir_reglas_udev)).
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```

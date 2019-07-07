@@ -26,6 +26,8 @@ The following packages provide VSCode:
 *   [code-git](https://aur.archlinux.org/packages/code-git/) (in-development open-source version)
 *   [vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/) (another open-source version with a community-driven default configuration)
 
+The Microsoft [ptvsd](https://github.com/microsoft/ptvsd) (Python Tools for Visual Studio Debug) server/module is available at [python-ptvsd](https://aur.archlinux.org/packages/python-ptvsd/).
+
 ## Usage
 
 Run `code` to start the application (or `code-git` when using [code-git](https://aur.archlinux.org/packages/code-git/)).

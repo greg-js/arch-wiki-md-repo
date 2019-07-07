@@ -25,7 +25,7 @@ To use PostfixAdmin, you need a working [web server](/index.php/Web_server "Web 
 
 For IMAP functionality, refer to [PHP#IMAP](/index.php/PHP#IMAP "PHP").
 
-Next, [install](/index.php/Install "Install") [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin).
+Next, [install](/index.php/Install "Install") the [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin) package.
 
 **Note:** Postfixadmin should only be accessed over [TLS](/index.php/TLS "TLS") (unless accessed directly from the machine running it), as it otherwise exposes passwords and user data.
 

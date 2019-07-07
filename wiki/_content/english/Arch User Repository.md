@@ -232,7 +232,7 @@ To check if the `PKGBUILD` is broken, or your system is misconfigured, consider 
 
 ### ERROR: One or more PGP signatures could not be verified!; what should I do?
 
-Most likely you do not have the required public key(s) in your personal keyring to verify downloaded files. See [Makepkg#Signature_checking](/index.php/Makepkg#Signature_checking "Makepkg") for details.
+Most likely you do not have the required public key(s) in your personal keyring to verify downloaded files. See [Makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg") for details.
 
 ### How do I create a PKGBUILD?
 

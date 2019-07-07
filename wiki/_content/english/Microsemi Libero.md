@@ -19,6 +19,9 @@ This article shows how to install the Microsemi Libero Toolchain on Arch Linux.
     *   [1.3 Post-Installation](#Post-Installation)
 *   [2 Launching Libero](#Launching_Libero)
     *   [2.1 Application menu entry](#Application_menu_entry)
+*   [3 Using a FlashPro programmer](#Using_a_FlashPro_programmer)
+    *   [3.1 Adding udev rules](#Adding_udev_rules)
+    *   [3.2 Removing conflicting kernel module](#Removing_conflicting_kernel_module)
 
 ## Installation
 
@@ -123,6 +126,8 @@ $ ln -s /lib/libz.so libz.so.1
 
 ```
 
+Repeat the same two commands in `/home/*user*/programs/microsemi/libero/v12.1/Libero/libfp` to enable the FlashPro utilities.
+
 By mistake the installer adds double quotes around the common path when defining the vault location. Thus Libero will create a folder called `""` in the working directory when it is called. To change that either manually edit the file `install.def` to remove the double quotes from the line where `VAULT_LOCATION` is defined:
 
  `/home/*user*/programs/microsemi/libero/v12.1/Libero/data/install.def` 
@@ -195,3 +200,40 @@ Terminal=false
 Type=Application
 Categories=Development
 ```
+
+## Using a FlashPro programmer
+
+Using a programmer (e.g. the Microsemi FlashPro5) requires two steps: Adding rules to gain device permissions and unloading a conflicting kernel module.
+
+### Adding udev rules
+
+To add the correct permissions for your user to access the programmer add the following file to your [Udev](/index.php/Udev "Udev") ruleset as root:
+
+ `/etc/udev/rules.d/70-microsemi.rules` 
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="1514", ATTR{idProduct}=="2008", MODE="0666", GROUP="microsemi-prog"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", MODE="0666", GROUP="microsemi-prog"
+```
+
+The group `microsemi-prog` is just an example, you may replace it by any group your user is in or add a new group and put your User *user* into it:
+
+```
+# groupadd microsemi-prog
+# usermod -aG microsemi-prog *user*
+
+```
+
+You have to log out and in to apply the new group for the session. In a single terminal some can also apply the new group with `newgrp microsemi-prog`. To list your groups type `id` or `groups`.
+
+### Removing conflicting kernel module
+
+When plugging in the programmer it identifies as an FTDI serial device and loads the corresponding kernel driver. Liberos software does not work with that kernel driver so we have to unload it:
+
+```
+# rmmod ftdi_sio
+
+```
+
+To permanently unload the driver you may add it to your [Blacklist](/index.php/Blacklist "Blacklist"):
+
+ `/etc/modprobe.d/blacklist-ftdi.conf`  `blacklist ftdi_sio`

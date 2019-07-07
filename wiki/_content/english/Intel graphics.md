@@ -37,7 +37,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_(VSYNC))
     *   [6.3 SNA issues](#SNA_issues)
     *   [6.4 DRI3 issues](#DRI3_issues)
-    *   [6.5 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK+_applications_(missing_glyphs_after_suspend/resume))
+    *   [6.5 Font and screen corruption in GTK applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK_applications_(missing_glyphs_after_suspend/resume))
     *   [6.6 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot,_when_"Loading_modules")
     *   [6.7 X freeze/crash with intel driver](#X_freeze/crash_with_intel_driver)
     *   [6.8 Baytrail complete freeze](#Baytrail_complete_freeze)
@@ -301,9 +301,9 @@ Option "DRI" "2"
 
 For the `modesetting` driver, this method of disabling DRI3 does not work. Instead, one can set the environment variable `LIBGL_DRI3_DISABLE=1`.
 
-### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
+### Font and screen corruption in GTK applications (missing glyphs after suspend/resume)
 
-Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Textedit "Textedit") `/etc/environment` to add the following line:
+Should you experience missing font glyphs in GTK applications, the following workaround might help. [Edit](/index.php/Textedit "Textedit") `/etc/environment` to add the following line:
 
  `/etc/environment`  `COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer` 
 

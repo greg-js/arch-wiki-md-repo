@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-03-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=565524) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=576654) na versão em inglês.
 
 Artigos relacionados
 
@@ -50,7 +50,7 @@ Os TUs são governados usando as [TU bylaws](https://aur.archlinux.org/trusted-u
     *   para lhe conceder o status de TU no AUR.
     *   para abrir uma nova tarefa no projeto "Keyring" do rastreador de erro seguindo as instruções [nesta mensagem](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) na ordem de ter sua chave PGP assinado pelos três detentores de chave mestre.
 11.  Instalar o pacote [devtools](https://www.archlinux.org/packages/?name=devtools).
-12.  [Configurar sua chave privada ssh](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Autenticação "Arch User Repository (Português)") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
+12.  [Configurar sua chave privada ssh](/index.php/Diretrizes_de_envio_ao_AUR#Autenticação "Diretrizes de envio ao AUR") para os servidores `orion.archlinux.org` e `repos.archlinux.org`.
 13.  Testar a conexão SSH para seunome@orion.archlinux.org (assim que você tiver permissões).
 14.  Se você não for promovido a um grupo de Trusted User no rastreador de erro em dois dias, relate isso como um bug para arch-dev-public.
 15.  Começar a contribuir!

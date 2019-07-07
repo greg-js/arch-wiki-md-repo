@@ -4,7 +4,11 @@ Related articles
 
 [insync](https://insynchq.com) is an alternative Google Drive client which is available for Windows, Mac OS X and Linux which allows you to sync a local folder or symlinked folders with your Google Drive. Whilst previous Beta versions used to be for free, the final release features a trial period after which a one-time payment per Google account is required.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -60,4 +64,4 @@ ExecStart=/usr/bin/insync start
 
 When running `insync start`, the status tray icon does not appear and insync does not start.
 
-According to [[1]](https://forums.insynchq.com/t/insync-arch-linux-not-starting-segfault-at-730-error-14/8893), this is due to `QGtkStyle`. You will need to set the Qt4 theme to something other than Gtk+ using `qtconfig-qt4`.
+According to [[1]](https://forums.insynchq.com/t/insync-arch-linux-not-starting-segfault-at-730-error-14/8893), this is due to `QGtkStyle`. You will need to set the Qt4 theme to something other than GTK using `qtconfig-qt4`.

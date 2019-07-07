@@ -20,9 +20,10 @@ hdparm is a command line utility to set and view hardware parameters of [hard di
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Querying the status of the disk without waking it up](#Querying_the_status_of_the_disk_without_waking_it_up)
     *   [3.2 Persistent configuration using udev rule](#Persistent_configuration_using_udev_rule)
-    *   [3.3 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
-    *   [3.4 Working with unsupported hardware](#Working_with_unsupported_hardware)
-    *   [3.5 Power management for Western Digital Green drives](#Power_management_for_Western_Digital_Green_drives)
+    *   [3.3 Reapplying configuration after wakeup](#Reapplying_configuration_after_wakeup)
+    *   [3.4 Putting a drive to sleep directly after boot](#Putting_a_drive_to_sleep_directly_after_boot)
+    *   [3.5 Working with unsupported hardware](#Working_with_unsupported_hardware)
+    *   [3.6 Power management for Western Digital Green drives](#Power_management_for_Western_Digital_Green_drives)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 APM level reset after suspend](#APM_level_reset_after_suspend)
 *   [5 See also](#See_also)
@@ -97,6 +98,22 @@ Because a disk device can be assigned randomly to a changing `/dev/sd*X*`, the d
 Systems with multiple hard drives can apply the rule in a flexible way according to some criteria. For example, to apply power-saving settings to all rotational drives (hard disk with rotational head, excluding in particular [solid state drives](/index.php/Solid_state_drive "Solid state drive")), use the following rule:
 
  `/etc/udev/rules.d/69-hdparm.rules`  `ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 /dev/%k"` 
+
+### Reapplying configuration after wakeup
+
+If the configuration is lost after system suspension/hibernation, it can be reapplied using [systemd-sleep](/index.php/Power_management#Hooks_in_/usr/lib/systemd/system-sleep "Power management").
+
+Put a script into `/usr/lib/systemd/system-sleep` and make it executable:
+
+ `/usr/lib/systemd/system-sleep/hdparm` 
+```
+#!/bin/sh
+
+case $1 in post)
+        /usr/bin/hdparm -B 254 -S 0 /dev/sda
+        ;;
+esac
+```
 
 ### Putting a drive to sleep directly after boot
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-06-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=575410) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=576631) na versão em inglês.
 
 Artigos relacionados
 
@@ -31,7 +31,7 @@ Para inicializar o Arch Linux, um carregador [gerenciador de boot](#Gerenciador_
 *   [5 Kernel](#Kernel)
 *   [6 initramfs](#initramfs)
 *   [7 Processo init](#Processo_init)
-*   [8 Getty](#Getty)
+*   [8 getty](#getty)
 *   [9 Gerenciador de exibição](#Gerenciador_de_exibição)
 *   [10 Login](#Login)
 *   [11 Shell](#Shell)
@@ -84,7 +84,7 @@ Se [Secure Boot](/index.php/Secure_Boot "Secure Boot") estiver habilitado, o pro
 
 ### Multiboot no UEFI
 
-Como cada sistema operacional ou fornecedor pode manter seus próprios arquivos dentro da partição de sistema EFI sem afetar o outro, a inicialização múltipla *(multi-booting)* usando UEFI é apenas uma questão de iniciar um aplicativo EFI diferente correspondente ao gerenciador de boot do sistema operacional específico. Isso elimina a necessidade de contar com mecanismos de carregamento em cadeia de um [gerenciador de boot](#Gerenciador_de_boot) para carregar outro sistema operacional.
+Como cada sistema operacional ou fornecedor pode manter seus próprios arquivos dentro da [partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition") sem afetar o outro, a inicialização múltipla *(multi-booting)* usando UEFI é apenas uma questão de iniciar um aplicativo EFI diferente correspondente ao gerenciador de boot do sistema operacional específico. Isso elimina a necessidade de contar com mecanismos de [carregamento em cadeia](https://en.wikipedia.org/wiki/Chain_loading "wikipedia:Chain loading") de um [gerenciador de boot](#Gerenciador_de_boot) para carregar outro sistema operacional.
 
 Veja também [Dual boot com Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
@@ -125,7 +125,7 @@ O [kernel](/index.php/Kernel "Kernel") é o núcleo de um sistema operacional. E
 
 ## initramfs
 
-Depois que o gerenciador de boot carrega o kernel e os possíveis arquivos initramfs e executa o kernel, o kernel extrai os arquivos initramfs (sistema de arquivos RAM inicial) no (então vazio) rootfs (sistema de arquivos raiz inicial, especificamente um ramfs ou tmpfs). O primeiro initramfs extraído é aquele embutido no binário do kernel durante a construção do kernel, então os possíveis arquivos initramfs externos são extraídos. Assim, os arquivos no initramfs externo sobrescrevem arquivos com o mesmo nome no initramfs incorporado. O kernel então executa `/init` (no rootfs) como o primeiro processo. O *early userspace* é iniciado.
+Depois que o [gerenciador de boot](#Gerenciador_de_boot) carrega o [kernel](/index.php/Kernel "Kernel") e os possíveis arquivos initramfs e executa o kernel, o kernel extrai os arquivos initramfs (sistema de arquivos RAM inicial) no (então vazio) rootfs (sistema de arquivos raiz inicial, especificamente um ramfs ou tmpfs). O primeiro initramfs extraído é aquele embutido no binário do kernel durante a construção do kernel, então os possíveis arquivos initramfs externos são extraídos. Assim, os arquivos no initramfs externo sobrescrevem arquivos com o mesmo nome no initramfs incorporado. O kernel então executa `/init` (no rootfs) como o primeiro processo. O *early userspace* é iniciado.
 
 O Arch Linux usa um arquivo vazio para o initramfs incorporado (que é o padrão ao construir o Linux). Veja [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais informações específicas do Arch sobre o initramfs externo.
 
@@ -137,7 +137,7 @@ O objetivo do initramfs é inicializar o sistema até o ponto em que ele pode ac
 
 No estágio final do início do espaço de usuário, a raiz real é montada e, em seguida, substitui o sistema de arquivos raiz inicial. `/sbin/init` é executado, substituindo o processo `/init`. Arch usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como o [init](/index.php/Init "Init") padrão.
 
-## Getty
+## getty
 
 [init](/index.php/Init "Init") chama [getty](/index.php/Getty "Getty") uma vez para cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (geralmente seis deles), que inicializa cada tty e solicita um nome de usuário e senha. Uma vez que o nome de usuário e a senha são fornecidos, o getty os verifica em `/etc/passwd` e `/etc/shadow`, depois chama [login](#Login). Alternativamente, o getty pode iniciar um gerenciador de exibição se houver um presente no sistema.
 
@@ -159,7 +159,7 @@ Uma vez iniciado o [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)
 
 ## GUI, xinit ou wayland
 
-[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, xinit, startx, o shell e o login serão encerrados nessa ordem, retornando ao [getty](#Getty).
+[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, *xinit*, *startx*, o shell e o login serão encerrados nessa ordem, retornando ao [getty](#Getty).
 
 ## Veja também
 

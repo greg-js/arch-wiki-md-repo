@@ -1,17 +1,17 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=564037) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2019-07-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=576664) na versão em inglês.
 
 Artigos relacionados
 
 *   [GnuPG](/index.php/GnuPG "GnuPG")
 *   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
 
-Para determinar se os pacotes são autênticos, o *pacman* usa [chaves GnuPG](http://www.gnupg.org/) em um modelo de [rede de confiança](http://www.gnupg.org/gph/en/manual.html#AEN385). As Chaves Mestras de Assinatura (*Master Signing Keys*) são encontradas [aqui](https://www.archlinux.org/master-keys/). Pelo menos três dessas Chaves Mestras de Assinatura são usadas para assinar cada uma das próprias chaves de Desenvolvedor e de *Trusted User* que, por sua vez, são usadas para assinar seus pacotes. O usuário também possui uma chave PGP única que é gerada quando você configura *pacman-key*. Portanto, a rede de confiança liga a chave do usuário às chaves mestras.
+Para determinar se os pacotes são autênticos, o *pacman* usa [chaves GnuPG](http://www.gnupg.org/) em um modelo de [rede de confiança](http://www.gnupg.org/gph/en/manual.html#AEN385). As Chaves Mestras de Assinatura (*Master Signing Keys*) são encontradas [aqui](https://www.archlinux.org/master-keys/). Pelo menos três dessas Chaves Mestras de Assinatura são usadas para assinar as chaves de Desenvolvedor e de *Trusted User*. Elas são, então, usadas para assinar seus pacotes. Cada usuário também possui uma chave PGP única, a qual é gerada quando você configura *pacman-key*. É essa rede de confiança que liga a chave do usuário às chaves mestras.
 
 Exemplos de redes de confiança:
 
-*   **Pacotes personalizados**: Você mesmo fez o pacote e o assinou com sua própria chave.
-*   **Pacotes não oficiais**: Um desenvolvedor fez o pacote e o assinou. Você usou sua chave para assinar aquela chave de desenvolvedor.
-*   **Pacotes oficiais**: Um desenvolvedor fez o pacote e o assinou. A chave do desenvolvedor foi assinada pelas chaves mestras do Arch Linux. Você usou sua chave para assinar as chaves mestras e você confia nelas como garantia dos desenvolvedores.
+*   **Pacotes personalizados**: Pacotes feitos e assinados com uma chave local.
+*   **Pacotes não oficiais**: Pacotes feitos e assinados por um desenvolvedor. Então, uma chave local foi usada assinar aquela chave de desenvolvedor.
+*   **Pacotes oficiais**: Pacotes feitos e assinados por um desenvolvedor. A chave do desenvolvedor foi assinada pelas chaves mestras do Arch Linux. Você usou sua chave para assinar as chaves mestras e você confia nelas como garantia dos desenvolvedores.
 
 **Nota:** O protocolo HKP usa 11371/tcp para comunicação. Para obter as chaves assinadas dos servidores (usando *pacman-key*), essa porta é necessária para comunicação.
 
@@ -42,15 +42,15 @@ Exemplos de redes de confiança:
 
 ### Configurando o pacman
 
-A opção `SigLevel` no `/etc/pacman.conf` determina quanta confiança é exigida para instalar um pacote. Para uma explicação detalhada de `SigLevel`, veja a [página man do pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) e os comentários no arquivo em si. A verificação de assinatura pode ser definida globalmente ou por repositório. Se `SigLevel` estiver definido globalmente na seção `[options]` para exigir que todos os pacotes seja assinados, então os pacotes que você compilar também precisarão ser assinados usando *makepkg*.
+A opção `SigLevel` no `/etc/pacman.conf` determina o nível de confiança exigido para instalar um pacote. Para uma explicação detalhada de `SigLevel`, veja a [página man do pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html#_package_and_database_signature_checking) e os comentários no arquivo. É possível configurar uma verificação de assinatura global ou por repositório. Se `SigLevel` estiver definido globalmente na seção `[options]`, todos os pacotes vão exigir assinatura. Com isso, quaisquer pacotes que você compilar precisarão ser assinados usando *makepkg*.
 
 **Nota:** Apesar de todos os pacotes oficiais serem agora assinados, desde Novembro de 2018 a assinatura da base de dados é um [trabalho em progresso](https://bbs.archlinux.org/viewtopic.php?id=242258). Se `Required` estiver definido, então `DatabaseOptional` também deve ser definido.
 
-Uma configuração padrão pode ser usada para instalar apenas os pacotes que estão assinados pelas chaves confiadas:
+A configuração padrão terá suporte apenas à instalação de pacotes que estão assinados pelas chaves confiadas:
 
  `/etc/pacman.conf`  `SigLevel = Required DatabaseOptional` 
 
-Isso porque `TrustedOnly` é um parâmetro padrão compilado no *pacman*. Então, a linha acima leva ao mesmo resultado que uma opção global de:
+Isso porque `TrustedOnly` é um parâmetro padrão compilado no *pacman*. A configuração padrão é idêntica a usar a opção global de:
 
 ```
 SigLevel = Required DatabaseOptional TrustedOnly
@@ -72,16 +72,16 @@ adiciona explicitamente verificação de assinatura para pacotes do repositório
 
 ### Inicializando o chaveiro
 
-Para configurar o chaveiro (*keyring*) do *pacman*, use:
+Para inicializar o chaveiro (*keyring*) do *pacman*, execute:
 
 ```
 # pacman-key --init
 
 ```
 
-Para essa inicialização, uma [entropia](https://en.wikipedia.org/wiki/Entropy_(computing) é exigida. Mover seu mouse por aí, pressionar caracteres aleatórios no teclado e executar algumas atividades de disco (por exemplo, em outro console, executando `ls -R /` ou `find / -name foo` ou `dd if=/dev/sda8 of=/dev/tty7`) deve gerar entropia. Se o seu sistema ainda não possui entropia suficiente, esta etapa pode levar horas; se você ativamente gerar entropia, ele irá completar muito mais rapidamente.
+A inicialização do chaveiro requer [entropia](https://en.wikipedia.org/wiki/Entropy_(computing) "wikipedia:Entropy (computing)"). Para gerar entropia, mova seu mouse por aí, pressiona caracteres aleatórios no teclado e executa algumas atividades de disco (por exemplo, em outro console, executando `ls -R /` ou `find / -name foo` ou `dd if=/dev/sda8 of=/dev/tty7`). Se o seu sistema ainda não possui entropia suficiente, esta etapa pode levar horas; se você ativamente gerar entropia, ele irá completar muito mais rapidamente.
 
-A aleatoriedade criada é usada para configurar um chaveiro (`/etc/pacman.d/gnupg`) e a chave de assinatura GPG do seu sistema.
+A aleatoriedade criada é usada para inicializar o chaveiro (`/etc/pacman.d/gnupg`) e a chave de assinatura GPG do seu sistema.
 
 **Nota:** Se você precisa executar `pacman-key --init` em um computador que não gera muita entropia (por exemplo, um servidor *headless* - sem monitor e periféricos), a geração de chaves pode levar muito tempo. Para gerar pseudo-entropia, instale [haveged](/index.php/Haveged "Haveged") ou [rng-tools](/index.php/Rng-tools "Rng-tools") na máquina de destino e inicie o serviço correspondente antes de executar `pacman-key --init`.
 
@@ -110,7 +110,7 @@ Depois de ter baixado uma chave do desenvolvedor, você não terá que baixá-la
 
 ### Adicionando chaves não oficiais
 
-Esse método pode ser usado, por exemplo, para adicionar sua própria chave para o chaveiro do *pacman*, ou para permitir [repositórios não oficiais de usuários](/index.php/Unofficial_user_repositories "Unofficial user repositories") assinados.
+Esse método pode ser usado para adicionar uma chave ao chaveiro do *pacman*, ou para permitir [repositórios não oficiais de usuários](/index.php/Unofficial_user_repositories "Unofficial user repositories") assinados.
 
 Primeiro, obtenha o **ID de chave** (`*id-chave*`) de seu dono. Então, adicione-o ao chaveiro usando um dos métodos abaixo:
 
@@ -213,7 +213,7 @@ Você precisa comentar quaisquer configurações de SigLevel específica de repo
 
 ### Redefinindo todas as chaves
 
-Se você quiser remover ou redefinir todas as chaves instaladas no seu sistema, você pode remover a pasta `/etc/pacman.d/gnupg` como *root* e executar novamente `pacman-key --init` e, em seguida, adicionar as chaves como preferidas.
+Se você quiser remover ou redefinir todas as chaves instaladas no seu sistema, você pode remover a pasta `/etc/pacman.d/gnupg` como *root* e executar novamente `pacman-key --init` seguido por `pacman-key --populate archlinux` para adicionar novaemente as chave padrão.
 
 ### Removendo pacotes obsoletos
 

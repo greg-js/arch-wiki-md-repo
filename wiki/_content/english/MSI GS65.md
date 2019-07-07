@@ -181,7 +181,7 @@ If keyboard lights remain off, be sure you've rebooted after installing msi-perk
 
 ##### Airplane Mode Key Combination
 
-The airplane mode key combination (FN + F10) is disabled by default. Adding the following kernel parameters activates airplane mode:
+The airplane mode key combination (FN + F10) is disabled by default. Adding the following kernel parameters activates airplane mode key combination:
 
 `acpi_osi=! acpi_osi="Windows 2009"`
 

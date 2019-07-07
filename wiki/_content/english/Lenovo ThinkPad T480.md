@@ -104,7 +104,29 @@ Suspend and Hibernation work out of the box. The T480 does not have the same iss
 
 ## TrackPoint and Touchpad
 
-TrackPoint and Touchpad work out of the box and do not seem to have the same issues as the [X1 Carbon Gen 6](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#TrackPoint_and_Touchpad_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
+TrackPoint and Touchpad work out of the box and do not seem to have the same issues as the [X1 Carbon Gen 6](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#TrackPoint_and_Touchpad_issues "Lenovo ThinkPad X1 Carbon (Gen 6)").
+
+However one could benefit from having greatly increased event reporting frequency by enabling `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") option `synaptics_intertouch=1`.
+
+This can be done for example by editing `/etc/modprobe.d/psmouse.conf`:
+
+```
+ options psmouse synaptics_intertouch=1
+
+```
+
+For two-finger scrolling activity this gives a boost from 40 Hz to 135 Hz on average which is more than threefold increase. This boost greatly contributes to the [Desktop Environment](/index.php/Desktop_Environment "Desktop Environment") scrolling performance and smoothness.
+
+([evhz-git](https://aur.archlinux.org/packages/evhz-git/)) may be of use to find out how frequently Touchpad reports events. For example after enabling said option:
+
+```
+ # evhz
+ Press CTRL-C to exit.
+ ...
+ ^C
+ Average for Synaptics TM3276-022:   137Hz
+
+```
 
 ## Power management/Throttling issues
 

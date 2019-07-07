@@ -722,22 +722,7 @@ Another reason you are encountering static noise in your headphone jack could be
 
 Make sure you have [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed, launch `alsamixer`, then select your audio device (pressing `F6`}), navigate all the way left using the `left arrow`, and stop on **Loopback**, if **Enabled** disable it using the `down arrow`. This should not impact audio playback or microphone recording negatively, unless you require loopback mixing.
 
-Yet another reason for this symptom could be power-saving mode of your audio device.[[10]](https://askubuntu.com/a/534082) If you are using `snd-hda-intel` (as known as `Intel HDA driver`[[11]](https://alsa-project.org/wiki/Matrix:Module-hda-intel)) you can disable it until reboot and check if that's the problem.
-
-```
-$ echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save_controller
-$ echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
-
-```
-
-**Tip:** you can check if you are using Intel HDA by running `lsmod | grep ^snd_hda_intel`, if the output is none you are **not** using it.
-
-If that works, you can apply a reboot-persistent fix adding default options for the `snd-hda-intel` module.
-
-```
-$ echo "options snd_hda_intel power_save=0 power_save_controller=0" | sudo tee /etc/modprobe.d/fix-headphone-static-noise.conf
-
-```
+Yet another reason for this symptom could be power-saving mode of your audio device.[[10]](https://askubuntu.com/a/534082) If you followed [Power management#Audio](/index.php/Power_management#Audio "Power management"), revert the changes and check if it solves the problem.
 
 ### Setting the default fragment number and buffer size in PulseAudio
 
@@ -943,7 +928,7 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
-Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[12]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
+Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[11]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
 
  `/etc/pulse/default.pa` 
 ```
@@ -1248,7 +1233,7 @@ As a workaround, include [kdesu](https://www.archlinux.org/packages/?name=kdesu)
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 
-See also [[13]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+See also [[12]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1460,4 +1445,4 @@ PulseAudio does not have a true default device. Instead it uses a ["fallback"](h
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[14]](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/505) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[15]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[13]](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/505) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[14]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

@@ -278,8 +278,6 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 Hardware accelerated video decoding is available via `--hwdec=*API*` option. For list of all supported APIs and other required options see [relevant manual section](https://mpv.io/manual/stable/#options-hwdec).
 
-Newer versions of mpv try to use `cuda`/`nvdec` as the API of choice for hardware acceleration on [NVIDIA](/index.php/NVIDIA "NVIDIA") cards when `--hwdec=auto`. If that method does not work for your card and you have a dual-GPU system, meaning that you cannot just set `--hwdec=vdpau`, you can make mpv fall back to `vdpau` by faking the cuda device: Set `cuda-decode-device=*value*` where `*value*` is the wrong index number for the card. (in most systems the correct number will be 0), e.g. `--cuda-decode-device=999`. See [mpv issue 6777](https://github.com/mpv-player/mpv/issues/6777).
-
 For [Wayland](/index.php/Wayland "Wayland") use `--gpu-context=wayland` option. For list of other available GPU APIs see [manual](https://mpv.io/manual/stable/#options-gpu-context).
 
 ### Save position on quit

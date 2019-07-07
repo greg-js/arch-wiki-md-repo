@@ -168,6 +168,8 @@ udp=y
 
 ```
 
+[Restart](/index.php/Restart "Restart") `nfs-server.service` to apply the changes immediately.
+
 ### Error starting network 'default': internal error: Failed to initialize a valid firewall backend
 
 Most likely the firewall dependencies were not installed. [Install](/index.php/Install "Install") the [ebtables](https://www.archlinux.org/packages/?name=ebtables) and [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) packages and [restart](/index.php/Restart "Restart") the `libvirtd` systemd service.

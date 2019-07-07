@@ -51,14 +51,14 @@ Active Directory utiliza las versiones dos y tres del [protocolo ligero de acces
     *   [5.2 passwd](#passwd)
         *   [5.2.1 Sección "password"](#Sección_"password"_2)
     *   [5.3 Comprobar inicio de sesión](#Comprobar_inicio_de_sesión)
-*   [6 Configuring Shares](#Configuring_Shares)
-*   [7 Adding a machine keytab file and activating password-free kerberized ssh to the machine](#Adding_a_machine_keytab_file_and_activating_password-free_kerberized_ssh_to_the_machine)
-    *   [7.1 Creating a machine key tab file](#Creating_a_machine_key_tab_file)
-    *   [7.2 Enabling keytab authentication](#Enabling_keytab_authentication)
-    *   [7.3 Preparing sshd on server](#Preparing_sshd_on_server)
-    *   [7.4 Adding necessary options on client](#Adding_necessary_options_on_client)
-    *   [7.5 Testing the setup](#Testing_the_setup)
-    *   [7.6 Nifty fine-tuning for complete password-free kerberos handling.](#Nifty_fine-tuning_for_complete_password-free_kerberos_handling.)
+*   [6 Configurar recursos compartidos](#Configurar_recursos_compartidos)
+*   [7 Añadir un ordenador al archivo keytab y activar ssh kerberizado sin contraseña al ordenador](#Añadir_un_ordenador_al_archivo_keytab_y_activar_ssh_kerberizado_sin_contraseña_al_ordenador)
+    *   [7.1 Crear un archivo keytab del ordenador](#Crear_un_archivo_keytab_del_ordenador)
+    *   [7.2 Activar la autentificación keytab](#Activar_la_autentificación_keytab)
+    *   [7.3 Preparar sshd en el servidor](#Preparar_sshd_en_el_servidor)
+    *   [7.4 Añadir las opciones necesarias en el cliente](#Añadir_las_opciones_necesarias_en_el_cliente)
+    *   [7.5 Comprobar la ejecución](#Comprobar_la_ejecución)
+    *   [7.6 Ajuste preciso para un manejo completo de kerberos sin contraseña.](#Ajuste_preciso_para_un_manejo_completo_de_kerberos_sin_contraseña.)
 *   [8 Generating user Keytabs which are accepted by AD](#Generating_user_Keytabs_which_are_accepted_by_AD)
     *   [8.1 Nice to know](#Nice_to_know)
 *   [9 See also](#See_also)
@@ -641,14 +641,14 @@ EJEMPLO+test.user
 
 Ambos comandos deben funcionar. Debe notar que `/home/example/test.user` se creará automáticamente. **Inicie sesión utilizando una cuenta de Linux. Compruebe si puede iniciar sesión como root - ¡pero tenga en cuenta que tiene que iniciar sesión como root en al menos una sesión!**
 
-## Configuring Shares
+## Configurar recursos compartidos
 
-Earlier we skipped configuration of the shares. Now that things are working, go back to `/etc/samba/smb.conf`, and add the exports for the host that you want available on the windows network.
+Antes se omitió la configuración de recursos compartidos. Ahora que todo funciona vuelva a `/etc/samba/smb.conf` y añada los recursos del host que quiere que estén disponibles en la red de Windows.
 
  `/etc/samba/smb.conf` 
 ```
 [MyShare]
-  comment = Example Share
+  comment = Ejemplo de recurso compartido
   path = /srv/exports/myshare
   read only = no
   browseable = yes
@@ -656,46 +656,46 @@ Earlier we skipped configuration of the shares. Now that things are working, go 
 
 ```
 
-In the above example, the keyword **NETWORK** is to be used. Do not mistakenly substitute this with your domain name. For adding groups, prepend the '@' symbol to the group. Note that `Domain Admins` is encapsulated in quotes so Samba correctly parses it when reading the configuration file.
+En el ejemplo anterior la palabra **NETWORK** se tiene que utilizar. No lo sustituya erróneamente por su nombre de dominio. Para añadir grupos preceda el símbolo '@' del grupo. Note que `Domain Admins` está entre comillas para que Samba lo sustituya cuando lea el archivo de configuración.
 
-## Adding a machine keytab file and activating password-free kerberized ssh to the machine
+## Añadir un ordenador al archivo keytab y activar ssh kerberizado sin contraseña al ordenador
 
-This explains how to generate a machine keytab file which you will need e.g. to enable password-free kerberized ssh to your machine from other machines in the domain. The scenario in mind is that you have a bunch of systems in your domain and you just added a server/workstation using the above description to your domain onto which a lot of users need to ssh in order to work - e.g. GPU workstation or an OpenMP compute node, etc. In this case you might not want to type your password every time you log in. On the other hand the key authentication used by many users in this case can not give you the necessary credentials to e.g. mount kerberized NFSv4 shares. So this will help you to enable password-free logins from your clients to the machine in question using kerberos ticket forwarding.
+Esto explica cómo generar un ordenador al archivo keytab por el cual puede necesitar, por ejemplo, activar ssh kerberizado sin contraseña a tu ordenador desde otros ordenadores del dominio. El escenario que se plantea es que tenga un grupo de sistemas en su dominio y solo añadió un servidor/espacio de trabajo utilizando la descripción de arriva a su dominio del cual muchos usuarios necesitan ssh para trabajar, por ejemplo, con un espacio de trabajo GPU o con un nodo computacional OpenMP, etc. En este caso puede que no quiera introducir la contraseña cada vez que entre al servidor. Por otra parte muchos usuarios utilizan la autentificación por llave, en este supuesto a lo mejor no puede darle las credenciales necesarias para montar recursos compartidos kerberizados NFSv4, por ejemplo. Esto le ayudará activar los accesos sin contraseña desde sus clientes a la maquina en cuestion utilizando seguimiento de ticket kerberos.
 
-### Creating a machine key tab file
+### Crear un archivo keytab del ordenador
 
-run 'net ads keytab create -U administrator' as root to create a machine keytab file in /etc/krb5.keytab. It will prompt you with a warning that we need to enable keytab authentication in our configuration file, so we will do that in the next step. In my case it had problems when a key tab file is already in place - the command just did not come back it hang ... In that case you should rename the existing /etc/krb5.keytab and run the command again - it should work now.
+Ejecute 'net ads keytab create -U administrador' como root para crear el archivo keytab del ordenador en /etc/krb5.keytab. Mostrará una advertencia de que necesita activar la autentificación keytab en su archivo de configuración, por tanto hágalo en el paso siguiente. En este caso específico hubo problemas cuando se creó el archivo keytab porque ya existía. En este caso el comando se queda sin responder. Para solucionarlo renombre el archivo /etc/krb5.keytab existente y ejecute el comando de nuevo, debería funcionar.
 
- `# net ads keytab create -U administrator` 
+ `# net ads keytab create -U administrador` 
 
-verify the content of your keytab by running:
+verifique el contenido de su keytab ejecutando:
 
  `# klist -k /etc/krb5.keytab` 
 ```
 Keytab name: FILE:/etc/krb5.keytab
 KVNO Principal
 ---- --------------------------------------------------------------------------
-   4 host/myarchlinux.example.com@EXAMPLE.COM
-   4 host/myarchlinux.example.com@EXAMPLE.COM
-   4 host/myarchlinux.example.com@EXAMPLE.COM
-   4 host/myarchlinux.example.com@EXAMPLE.COM
-   4 host/myarchlinux.example.com@EXAMPLE.COM
-   4 host/MYARCHLINUX@EXAMPLE.COM
-   4 host/MYARCHLINUX@EXAMPLE.COM
-   4 host/MYARCHLINUX@EXAMPLE.COM
-   4 host/MYARCHLINUX@EXAMPLE.COM
-   4 host/MYARCHLINUX@EXAMPLE.COM
-   4 MYARCHLINUX$@EXAMPLE.COM
-   4 MYARCHLINUX$@EXAMPLE.COM
-   4 MYARCHLINUX$@EXAMPLE.COM
-   4 MYARCHLINUX$@EXAMPLE.COM
-   4 MYARCHLINUX$@EXAMPLE.COM
+   4 host/myarchlinux.ejemplo.com@EJEMPLO.COM
+   4 host/myarchlinux.ejemplo.com@EJEMPLO.COM
+   4 host/myarchlinux.ejemplo.com@EJEMPLO.COM
+   4 host/myarchlinux.ejemplo.com@EJEMPLO.COM
+   4 host/myarchlinux.ejemplo.com@EJEMPLO.COM
+   4 host/MYARCHLINUX@EJEMPLO.COM
+   4 host/MYARCHLINUX@EJEMPLO.COM
+   4 host/MYARCHLINUX@EJEMPLO.COM
+   4 host/MYARCHLINUX@EJEMPLO.COM
+   4 host/MYARCHLINUX@EJEMPLO.COM
+   4 MYARCHLINUX$@EJEMPLO.COM
+   4 MYARCHLINUX$@EJEMPLO.COM
+   4 MYARCHLINUX$@EJEMPLO.COM
+   4 MYARCHLINUX$@EJEMPLO.COM
+   4 MYARCHLINUX$@EJEMPLO.COM
 
 ```
 
-### Enabling keytab authentication
+### Activar la autentificación keytab
 
-Now you need to tell winbind to use the file by adding these lines to the /etc/samba/smb.conf:
+Ahora necesita decirle a winbind que utilice el archivo añadiendo estas lineas a /etc/samba/smb.conf:
 
 ```
  kerberos method = secrets and keytab
@@ -703,18 +703,18 @@ Now you need to tell winbind to use the file by adding these lines to the /etc/s
 
 ```
 
-It should look something like this:
+Se verá algo parecido a esto:
 
  `/etc/samba/smb.conf` 
 ```
 [Global]
   netbios name = MYARCHLINUX
-  workgroup = EXAMPLE
-  realm = EXAMPLE.COM
+  workgroup = EJEMPLO
+  realm = EJEMPLO.COM
   server string = %h ArchLinux Host
   security = ads
   encrypt passwords = yes
-  password server = pdc.example.com
+  password server = pdc.ejemplo.com
   kerberos method = secrets and keytab
   dedicated keytab file = /etc/krb5.keytab
 
@@ -733,7 +733,7 @@ It should look something like this:
 
   preferred master = no
   dns proxy = no
-  wins server = pdc.example.com
+  wins server = pdc.ejemplo.com
   wins proxy = no
 
   inherit acls = Yes
@@ -746,50 +746,53 @@ It should look something like this:
 
 ```
 
-Restart the winbind daemon using 'systemctl restart winbindd.service' with root privileges.
+Reinicie el demonio winbind utilizando 'systemctl restart winbindd.service' con privilegios root.
 
  `# systemctl restart winbindd.service` 
 
-Check if everything works by getting a machine ticket for your system by running
+Compruebe que todo funciona obteniendo un ticket del ordenador desde su sistema ejecutando
 
  `# kinit MYARCHLINUX$ -kt /etc/krb5.keytab` 
 
-This should not give you any feedback but running 'klist' should show you sth like:
+No debe de devolver ningún resultado pero ejecutando 'klist' debe mostrarse su sth así:
 
  `# klist` 
 ```
  Ticket cache: FILE:/tmp/krb5cc_0
- Default principal: MYARCHLINUX$@EXAMPLE.COM
+ Default principal: MYARCHLINUX$@EJEMPLO.COM
 
  Valid starting    Expires           Service principal 
- 02/04/12 21:27:47 02/05/12 07:27:42 krbtgt/EXAMPLE.COM@EXAMPLE.COM
+ 02/04/12 21:27:47 02/05/12 07:27:42 krbtgt/EJEMPLO.COM@EJEMPLO.COM
          renew until 02/05/12 21:27:47
 
 ```
 
-Some common mistakes here are a) forgetting the trailing $ or b) ignoring case sensitivity - it needs to look exactly like the entry in the keytab (usually you cannot to much wrong with all capital)
+Algunos errores comunes aquí son
 
-### Preparing sshd on server
+*   Olvidar los $ finales o
+*   Ignorar la sensibilidad de mayúsculas que son necesarias para las entradas en el keytab (en general no puede haber muchos fallos con todas las mayúsculas).
 
-All we need to do is add some options to our sshd_config and restart the sshd.service.
+### Preparar sshd en el servidor
 
-Edit /etc/ssh/sshd_config to look like this in the appropriate places:
+Todo lo que necesita hacer es añadir algunas opciones a su configuración sshd_config y reiniciar sshd.service.
+
+Edite /etc/ssh/sshd_config como sigue en los lugares adecuados:
 
  `# /etc/ssh/sshd_config` 
 ```
 
 ...
 
-# Change to no to disable s/key passwords
+# Cámbiela a no para desactivar las contraseñas s/key
 ChallengeResponseAuthentication no
 
-# Kerberos options
+# Opciones Kerberos
 KerberosAuthentication yes
 #KerberosOrLocalPasswd yes
 KerberosTicketCleanup yes
 KerberosGetAFSToken yes
 
-# GSSAPI options
+# Opciones GSSAPI
 GSSAPIAuthentication yes
 GSSAPICleanupCredentials yes
 
@@ -797,17 +800,17 @@ GSSAPICleanupCredentials yes
 
 ```
 
-Restart the sshd.service using:
+Reinicie el sshd.service utilizando:
 
  `# systemctl restart sshd.service` 
 
-### Adding necessary options on client
+### Añadir las opciones necesarias en el cliente
 
-First we need to make sure that the tickets on our client are forwardable. This is usually standard but we better check anyways. You have to look for the forwardable option and set it to 'true' in the Kerberos config file /etc/krb5.conf
+Primero necesita asegurarse que los tickets de su cliente se puede transferir. Esto normalmente es un estándar pero es mejor comprobarlo de todas formas. Tiene que mirar la opción transferible y establecerlo a 'true' en el archivo /etc/krb5.conf.
 
  `forwardable     =       true` 
 
-Secondly we need to add the options
+Después añada las siguientes opciones
 
 ```
  GSSAPIAuthentication yes
@@ -815,31 +818,31 @@ Secondly we need to add the options
 
 ```
 
-to our .ssh/config file to tell ssh to use this options - alternatively they can be invoked using the -o options directly in the ssh command (see 'man ssh' for help).
+a su archivo .ssh/config para decirle a ssh que utilice estas opciones. Alternativamente se puede invocar directamente con la opción -o en el comando ssh (vea 'man ssh' para más información).
 
-### Testing the setup
+### Comprobar la ejecución
 
-On Client:
+En el cliente:
 
-make sure you have a valid ticket - if in doubt run 'kinit'
+Asegúrese que tiene un ticket válido - si tiene dudas ejecute 'kinit'.
 
-then use ssh to connect to you machine
+Después utilice ssh para conectarse a su ordenador.
 
- `ssh myarchlinux.example.com ` 
+ `ssh myarchlinux.ejemplo.com ` 
 
-you should get connected without needing to enter your password.
+Debe comprobar que se conecta sin necesidad de introducir su contraseña.
 
-if you have key authentication additionally activated then you should perform
+Si tiene una llave de autentificación adicional debe realizar
 
- `ssh -v myarchlinux.example.com ` 
+ `ssh -v myarchlinux.ejemplo.com ` 
 
-to see which authentication method it actually uses.
+para ver cual método de autentificación utiliza actualmente.
 
-For debugging you can enable DEBUG3 on the server and look into the journal using [journalctl](/index.php/Journalctl "Journalctl").
+Para depuración puede activar en el servidor DEBUG3 y mirar en el journal utilizando [journalctl](/index.php/Journalctl "Journalctl").
 
-### Nifty fine-tuning for complete password-free kerberos handling.
+### Ajuste preciso para un manejo completo de kerberos sin contraseña.
 
-In case your clients are not using domain accounts on their local machines (for whatever reason) it can be hard to actually teach them to kinit before ssh to the workstation. Therefore I came up with a nice workaround:
+En el caso de que sus clientes no estén utilizando cuentas de dominio en sus ordenadores locales (por cualquier razón) puede ser difícil decirle a kinit antes que a ssh el espacio de trabajo. Sin embargo una solución posible es la que se propone en el siguiente apartado.
 
 ## Generating user Keytabs which are accepted by AD
 

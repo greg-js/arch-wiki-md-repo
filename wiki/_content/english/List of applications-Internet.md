@@ -1330,10 +1330,6 @@ The number of networks supported by these clients is very large but they (like a
 
 	[https://volt-app.com/](https://volt-app.com/) || [volt](https://aur.archlinux.org/packages/volt/)
 
-*   **[Yate Client](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — Instant messenger and softphone supporting XMPP, SIP and H.323.
-
-	[http://yateclient.yate.ro/](http://yateclient.yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
-
 ##### IRC clients
 
 See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
@@ -1510,9 +1506,9 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/List_of_SIP_software#Clients "wikipedia:List of SIP software").
 
-*   **[Banji](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Ring network. KDE client, formerly known as Ring KDE.
+*   **[Banji](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. KDE client, formerly known as Ring KDE.
 
-	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
+	[https://kde.org/applications/internet/org.kde.ring-kde](https://kde.org/applications/internet/org.kde.ring-kde) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
@@ -1522,9 +1518,9 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 	[http://www.ekiga.org/](http://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
 
-*   **[Jami](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Ring network. Formerly known as Ring and SFLphone.
+*   **[Jami](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. Formerly known as Ring and SFLphone.
 
-	[https://ring.cx/](https://ring.cx/) || [jami-gnome](https://www.archlinux.org/packages/?name=jami-gnome)
+	[https://jami.net/](https://jami.net/) || [jami-gnome](https://www.archlinux.org/packages/?name=jami-gnome)
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application (SIP client) for communicating freely with people over the internet, with voice, video, and text instant messaging.
 
@@ -1946,7 +1942,7 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **CPod** — Simple, beautiful podcast app. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod](https://aur.archlinux.org/packages/cpod/)
+	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod-bin](https://aur.archlinux.org/packages/cpod-bin/)
 
 *   **GNOME Podcasts** — Podcast client for the GNOME Desktop written in Rust.
 

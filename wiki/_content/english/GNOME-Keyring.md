@@ -160,6 +160,12 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 ```
+ `~/.config/fish/config.fish` 
+```
+if test -n "$DESKTOP_SESSION"
+    set (gnome-keyring-daemon --start | string split "=")
+end
+```
 
 ## SSH keys
 

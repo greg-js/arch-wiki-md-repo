@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=574552) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=576382) na versão em inglês.
 
 Artigos relacionados
 
@@ -31,6 +31,7 @@ Artigos relacionados
     *   [4.3 Mais de uma instância](#Mais_de_uma_instância)
         *   [4.3.1 Estático](#Estático)
         *   [4.3.2 Dinâmico](#Dinâmico)
+    *   [4.4 Colocar domínios em lista negra](#Colocar_domínios_em_lista_negra)
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
@@ -363,6 +364,20 @@ bind-dynamic
 ```
 
 **Nota:** Esse é o padrão no [libvirt](/index.php/Libvirt "Libvirt").
+
+### Colocar domínios em lista negra
+
+Para fazer um *blacklist* em domínios, ou seja, as respostas a consultas para eles com NXDOMAIN, use a opção `address` sem especificar o endereço IP:
+
+```
+address=/blacklisted.example/
+address=/another.blacklisted.example/
+
+```
+
+Para facilitar o uso, coloque a lista negra em um arquivo separado, como, por exemplo, `/etc/dnsmasq.d/blacklist.conf`, e carregue-o a partir de `/etc/dnsmasq.conf` com `conf-file=/etc/dnsmasq.d/blacklist.conf` ou `conf-dir=conf-dir=/etc/dnsmasq.d/,*.conf`.
+
+**Dica:** Uma lista de fontes potenciais para a lista negra pode ser encontrada no [README do pacote de bloqueador de propagandas do OpenWrt](https://github.com/openwrt/packages/blob/master/net/adblock/files/README.md).
 
 ## Veja também
 

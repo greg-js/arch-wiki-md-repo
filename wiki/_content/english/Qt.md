@@ -323,11 +323,9 @@ sys.exit(app.exec_())
 
 #### Python (PySide2)
 
-*   Package:
-    *   [pyside2](https://www.archlinux.org/packages/?name=pyside2) - Python 3 bindings
-    *   [python2-pyside2](https://aur.archlinux.org/packages/python2-pyside2/) - Python 2 bindings
+*   Package: [pyside2](https://www.archlinux.org/packages/?name=pyside2)
 *   Website: [https://wiki.qt.io/Qt_for_Python](https://wiki.qt.io/Qt_for_Python)
-*   Run with: `python hello-pyside.py` or `python2 hello-pyside.py`
+*   Run with: `python hello-pyside.py`
 
  `hello-pyside2.py` 
 ```

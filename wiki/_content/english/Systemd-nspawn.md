@@ -30,6 +30,7 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [3 Management](#Management)
     *   [3.1 machinectl](#machinectl)
     *   [3.2 systemd toolchain](#systemd_toolchain)
+    *   [3.3 Resource control](#Resource_control)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Use an X environment](#Use_an_X_environment)
         *   [4.1.1 Avoiding xhost](#Avoiding_xhost)
@@ -254,6 +255,28 @@ $ systemd-cgtop
 
 ```
 
+### Resource control
+
+You can take advantage of control groups to implement limits and resource management of your containers with `systemctl set-property`, see [systemd.resource-control(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.resource-control.5). For example, you may want to limit the memory amount or CPU usage. To limit the memory consumption of your container to 2 GiB:
+
+```
+# systemctl set-property systemd-nspawn@*myContainer*.service MemoryMax=2G
+
+```
+
+Or to limit the CPU time usage to roughly the equivalent of 2 cores:
+
+```
+# systemctl set-property systemd-nspawn@*myContainer*.service CPUQuota=200%
+
+```
+
+This will create permanent files in `/etc/systemd/system.control/systemd-nspawn@*myContainer*.service.d/`.
+
+According to the documentation, `MemoryHigh` is the preferred method to keep in check memory consumption, but it will not be hard-limited as is the case with `MemoryMax`. You can use both options leaving `MemoryMax` as the last line of defense. Also take in consideration that you will not limit the number of CPUs the container can see, but you will achieve similar results by limiting how much time the container will get at maximum, relative to the total CPU time.
+
+**Tip:** If you do not want this changes to be preserved after reboot you can pass the option `--runtime` to make the changes temporary. You can check their results with `systemd-cgtop`.
+
 ## Tips and tricks
 
 ### Use an X environment
@@ -348,6 +371,8 @@ If the name of the container is `foo`, the name of the virtual Ethernet interfac
 When examining the interfaces with `ip link`, interface names will be shown with a suffix, such as `ve-foo@if2` and `host0@if9`. The `@ifN` is not actually part of the name of the interface; instead, `ip link` appends this information to indicate which "slot" the virtual Ethernet cable connects to on the other end.
 
 For example, a host virtual Ethernet interface shown as `ve-foo@if2` will connect to container `foo`, and inside the container to the second network interface -- the one shown with index 2 when running `ip link` inside the container. Similarly, in the container, the interface named `host0@if9` will connect to the 9th slot on the host.
+
+**Note:** If you use a firewall, the traffic of your virtual interface can be blocked as result. You will have to enable the necesary rules to by-pass your firewall.
 
 #### Use a network bridge
 

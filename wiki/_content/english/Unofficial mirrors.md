@@ -11,22 +11,23 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [3 Chile](#Chile)
 *   [4 China](#China)
 *   [5 France](#France)
-*   [6 Indonesia](#Indonesia)
-*   [7 Iran](#Iran)
-*   [8 Italy](#Italy)
-*   [9 Japan](#Japan)
-*   [10 Malaysia](#Malaysia)
-*   [11 Netherlands](#Netherlands)
-*   [12 New Zealand](#New_Zealand)
-*   [13 Poland](#Poland)
-*   [14 Russia](#Russia)
-*   [15 South Africa](#South_Africa)
-*   [16 Sweden](#Sweden)
-*   [17 Thailand](#Thailand)
-*   [18 Turkey](#Turkey)
-*   [19 United Kingdom](#United_Kingdom)
-*   [20 United States](#United_States)
-*   [21 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+*   [6 Germany](#Germany)
+*   [7 Indonesia](#Indonesia)
+*   [8 Iran](#Iran)
+*   [9 Italy](#Italy)
+*   [10 Japan](#Japan)
+*   [11 Malaysia](#Malaysia)
+*   [12 Netherlands](#Netherlands)
+*   [13 New Zealand](#New_Zealand)
+*   [14 Poland](#Poland)
+*   [15 Russia](#Russia)
+*   [16 South Africa](#South_Africa)
+*   [17 Sweden](#Sweden)
+*   [18 Thailand](#Thailand)
+*   [19 Turkey](#Turkey)
+*   [20 United Kingdom](#United_Kingdom)
+*   [21 United States](#United_States)
+*   [22 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
 
 ## Australia
 
@@ -63,12 +64,17 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Lanzhou University*
 *   [https://mirrors.nju.edu.cn/archlinux/](https://mirrors.nju.edu.cn/archlinux/) - *Nanjing University*
 *   [https://mirrors.zzu.edu.cn/archlinux/](https://mirrors.zzu.edu.cn/archlinux/) - *Zhengzhou University*
+*   [https://mirrors.dgut.edu.cn/archlinux/](https://mirrors.dgut.edu.cn/archlinux/) - *Dongguan University of Technology GNU/Linux Association*
 
 ## France
 
 *   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *With Delta package support. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run.*
 *   [https://eu.mirrors.coltondrg.com/archlinux/](https://eu.mirrors.coltondrg.com/archlinux/)
 *   [https://mirror.oldsql.cc/archlinux/](https://mirror.oldsql.cc/archlinux/)
+
+## Germany
+
+*   [https://mirror.mikrogravitation.org/archlinux/](https://mirror.mikrogravitation.org/archlinux/) - *IPv4/IPv6, https, rsync, 20 Gbit/s Bandwidth*
 
 ## Indonesia
 

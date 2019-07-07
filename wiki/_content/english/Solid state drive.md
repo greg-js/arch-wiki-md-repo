@@ -39,6 +39,7 @@ This article covers special topics for operating [solid state drives](https://en
     *   [3.7 Samsung](#Samsung)
         *   [3.7.1 Native upgrade](#Native_upgrade)
     *   [3.8 SanDisk](#SanDisk)
+    *   [3.9 Western Digital](#Western_Digital)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -361,6 +362,10 @@ SanDisk Extreme SSD [Firmware Release notes](https://kb.sandisk.com/app/answers/
 SanDisk Ultra SSD [Firmware release notes](https://kb.sandisk.com/app/answers/detail/a_id/10192) and [Manual Firmware update version 365A13F0](https://kb.sandisk.com/app/answers/detail/a_id/10477)
 
 SanDisk Ultra+ SSD [Firmware release notes](https://kb.sandisk.com/app/answers/detail/a_id/12763) and [Manual Firmware update version X2316RL](https://kb.sandisk.com/app/answers/detail/a_id/12762) - use `smartctl -a /dev/sdX` to determine if a "H2" or "HP" model is used.
+
+### Western Digital
+
+Some Western Digital drives have issues that may cause the system to freeze when read from. See [askubuntu](https://askubuntu.com/questions/1051205/wd-black-nvme-ssd-2018-is-not-working-under-linux-ubuntu). This may have something to do with low power state latencies, and some people have been able to resolve it by adding nvme_core.default_ps_max_latency_us=52000 to grub. However, the other people have reported that the parameter has not worked. Also note that Western Digital only supplies firmware updates via its Windows software that does not run in wine.
 
 ## See also
 

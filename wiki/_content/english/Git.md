@@ -67,7 +67,7 @@ Related articles
 
 See also [git GUI Clients](https://git-scm.com/download/gui/linux).
 
-*   **Giggle** — GTK+ frontend for git.
+*   **Giggle** — GTK frontend for git.
 
 	[https://wiki.gnome.org/Apps/giggle/](https://wiki.gnome.org/Apps/giggle/) || [giggle](https://www.archlinux.org/packages/?name=giggle)
 
@@ -96,6 +96,10 @@ See also [git GUI Clients](https://git-scm.com/download/gui/linux).
 *   **gitk** — Tcl/Tk based Git repository browser.
 
 	[https://git-scm.com/docs/gitk](https://git-scm.com/docs/gitk) || [git](https://www.archlinux.org/packages/?name=git) + [tk](https://www.archlinux.org/packages/?name=tk)
+
+*   **Guitar** — Git GUI Client.
+
+	[https://github.com/soramimi/Guitar](https://github.com/soramimi/Guitar) || [guitar](https://aur.archlinux.org/packages/guitar/)
 
 *   **QGit** — Git GUI viewer to browse revisions history, view patch content and changed files, graphically following different development branches.
 

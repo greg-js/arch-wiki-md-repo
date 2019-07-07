@@ -1,14 +1,18 @@
 [OpenStack](https://www.openstack.org/) is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Components](#Components)
-    *   [1.1 Compute (Nova)](#Compute_.28Nova.29)
-    *   [1.2 Networking (Neutron)](#Networking_.28Neutron.29)
-    *   [1.3 Image Service (Glance)](#Image_Service_.28Glance.29)
-    *   [1.4 Block Storage (Cinder)](#Block_Storage_.28Cinder.29)
-    *   [1.5 Identity (Keystone)](#Identity_.28Keystone.29)
-    *   [1.6 Dashboard (Horizon)](#Dashboard_.28Horizon.29)
+    *   [1.1 Compute (Nova)](#Compute_(Nova))
+    *   [1.2 Networking (Neutron)](#Networking_(Neutron))
+    *   [1.3 Image Service (Glance)](#Image_Service_(Glance))
+    *   [1.4 Block Storage (Cinder)](#Block_Storage_(Cinder))
+    *   [1.5 Identity (Keystone)](#Identity_(Keystone))
+    *   [1.6 Dashboard (Horizon)](#Dashboard_(Horizon))
 *   [2 Deploy OpenStack](#Deploy_OpenStack)
 *   [3 Images](#Images)
     *   [3.1 Available images](#Available_images)

@@ -39,7 +39,7 @@ Optional [fzf keybindings](https://github.com/junegunn/fzf/wiki/Configuring-shel
 
 #### [zsh](/index.php/Zsh "Zsh")
 
-Source the desired files from your `.zshrc`:
+Source the desired files from your `.zshrc` (after vi-mode, if using that, too):
 
 *   `/usr/share/fzf/key-bindings.zsh`
 *   `/usr/share/fzf/completion.zsh`

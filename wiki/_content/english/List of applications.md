@@ -324,7 +324,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [5.9 Cryptography](#Cryptography)
         *   [5.9.1 Hash checkers](#Hash_checkers)
         *   [5.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
-        *   [5.9.3 Disk encryption](#Disk_encryption)
+        *   [5.9.3 Messaging](#Messaging)
+        *   [5.9.4 Disk encryption](#Disk_encryption)
 *   [6 Science](#Science)
     *   [6.1 Mathematics](#Mathematics)
         *   [6.1.1 Calculator](#Calculator)
@@ -1646,10 +1647,6 @@ The number of networks supported by these clients is very large but they (like a
 
 	[https://volt-app.com/](https://volt-app.com/) || [volt](https://aur.archlinux.org/packages/volt/)
 
-*   **[Yate Client](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — Instant messenger and softphone supporting XMPP, SIP and H.323.
-
-	[http://yateclient.yate.ro/](http://yateclient.yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
-
 ##### IRC clients
 
 See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
@@ -1826,9 +1823,9 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/List_of_SIP_software#Clients "wikipedia:List of SIP software").
 
-*   **[Banji](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Ring network. KDE client, formerly known as Ring KDE.
+*   **[Banji](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. KDE client, formerly known as Ring KDE.
 
-	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
+	[https://kde.org/applications/internet/org.kde.ring-kde](https://kde.org/applications/internet/org.kde.ring-kde) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
@@ -1838,9 +1835,9 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 	[http://www.ekiga.org/](http://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
 
-*   **[Jami](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Ring network. Formerly known as Ring and SFLphone.
+*   **[Jami](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. Formerly known as Ring and SFLphone.
 
-	[https://ring.cx/](https://ring.cx/) || [jami-gnome](https://www.archlinux.org/packages/?name=jami-gnome)
+	[https://jami.net/](https://jami.net/) || [jami-gnome](https://www.archlinux.org/packages/?name=jami-gnome)
 
 *   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application (SIP client) for communicating freely with people over the internet, with voice, video, and text instant messaging.
 
@@ -2262,7 +2259,7 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 *   **CPod** — Simple, beautiful podcast app. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod](https://aur.archlinux.org/packages/cpod/)
+	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod-bin](https://aur.archlinux.org/packages/cpod-bin/)
 
 *   **GNOME Podcasts** — Podcast client for the GNOME Desktop written in Rust.
 
@@ -3154,7 +3151,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://sayonara-player.com/](https://sayonara-player.com/) || [sayonara-player](https://aur.archlinux.org/packages/sayonara-player/)
 
-*   **Strawberry** — Music player aimed at audio enthusiasts and music collectors.
+*   **Strawberry** — Fork of Clementine aimed at audio enthusiasts and music collectors.
 
 	[https://strawbs.org/](https://strawbs.org/) || [strawberry](https://www.archlinux.org/packages/?name=strawberry)
 
@@ -4198,7 +4195,7 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 *   **[Motion](/index.php/Motion "Motion")** — Highly configurable program that monitors video signals from many types of cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
 
-	[https://motion-project.github.io/](https://motion-project.github.io/) || [motion](https://aur.archlinux.org/packages/motion/)
+	[https://motion-project.github.io/](https://motion-project.github.io/) || [motion](https://www.archlinux.org/packages/?name=motion)
 
 *   **Pantheon Camera** — Camera app designed for elementary OS.
 
@@ -5780,7 +5777,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 *   **WoeUSB** — Simple tool to create USB stick windows installer from an ISO image or a real DVD. (Fork of WinUSB).
 
-	[https://github.com/slacka/WoeUSB](https://github.com/slacka/WoeUSB) || [woeusb](https://aur.archlinux.org/packages/woeusb/)
+	[https://github.com/WoeUSB/WoeUSB-frontend-wxgtk](https://github.com/WoeUSB/WoeUSB-frontend-wxgtk) || [woeusb-git](https://aur.archlinux.org/packages/woeusb-git/)
 
 *   **windows2usb** — Windows 7/8/8.1/10 ISO to Flash Drive burning utility for Linux with MBR/GPT, BIOS/UEFI, FAT32/NTFS support
 
@@ -6867,6 +6864,10 @@ See [PDF, PS and DjVu](/index.php/PDF,_PS_and_DjVu "PDF, PS and DjVu").
 *   **[FBReader](https://en.wikipedia.org/wiki/FBReader "wikipedia:FBReader")** — E-book viewer with many supported formats such as EPUB, FictionBook, HTML, plucker, PalmDoc, zTxt, TCR, CHM, RTF, OEB, Mobipocket (non-DRM) and TXT.
 
 	[https://fbreader.org/](https://fbreader.org/) || [fbreader](https://www.archlinux.org/packages/?name=fbreader)
+
+*   **Foliate** — Simple and modern GTK eBook reader.
+
+	[https://johnfactotum.github.io/foliate/](https://johnfactotum.github.io/foliate/) || [foliate](https://aur.archlinux.org/packages/foliate/)
 
 *   **GNOME Books** — E-book manager application for GNOME with EPUB, Mobipocket, FictionBook, DjVu and Comicbook support.
 
@@ -8000,13 +8001,15 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
-*   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Cross-platform encrypted messaging service.
-
-	[https://signal.org/](https://signal.org/) || [signal](https://aur.archlinux.org/packages/signal/)
-
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
+
+##### Messaging
+
+*   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Cross-platform encrypted messaging service.
+
+	[https://signal.org/](https://signal.org/) || [signal](https://aur.archlinux.org/packages/signal/)
 
 ##### Disk encryption
 
@@ -8801,6 +8804,10 @@ See also [Wikipedia:Comparison of deep learning software](https://en.wikipedia.o
 *   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — Automatic (intelligent) keyboard layout adaption.
 
 	[https://xneur.ru/](https://xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/)
+
+*   **[Tensorflow](https://en.wikipedia.org/wiki/Tensorflow "wikipedia:Tensorflow")** — An end-to-end open source machine learning platform.
+
+	[https://www.tensorflow.org/](https://www.tensorflow.org/) || [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow), with CPU optimization [python-tensorflow-opt](https://www.archlinux.org/packages/?name=python-tensorflow-opt), with CUDA [python-tensorflow-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-cuda), with CUDA and CPU optimizations [python-tensorflow-opt-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-opt-cuda)
 
 ## Others
 

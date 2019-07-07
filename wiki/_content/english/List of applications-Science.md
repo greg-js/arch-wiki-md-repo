@@ -834,3 +834,7 @@ See also [Wikipedia:Comparison of deep learning software](https://en.wikipedia.o
 *   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — Automatic (intelligent) keyboard layout adaption.
 
 	[https://xneur.ru/](https://xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/)
+
+*   **[Tensorflow](https://en.wikipedia.org/wiki/Tensorflow "wikipedia:Tensorflow")** — An end-to-end open source machine learning platform.
+
+	[https://www.tensorflow.org/](https://www.tensorflow.org/) || [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow), with CPU optimization [python-tensorflow-opt](https://www.archlinux.org/packages/?name=python-tensorflow-opt), with CUDA [python-tensorflow-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-cuda), with CUDA and CPU optimizations [python-tensorflow-opt-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-opt-cuda)

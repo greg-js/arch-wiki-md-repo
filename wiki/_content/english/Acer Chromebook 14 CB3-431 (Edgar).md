@@ -2,7 +2,11 @@
 
 The following article briefly explains all necessary procedures to install a fully-functional Arch Linux configuration on the Acer Chromebook 14 cb3-431 (Edgar).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Write Protection](#Write_Protection)
 *   [2 Developer Mode](#Developer_Mode)
@@ -107,6 +111,7 @@ To fix trackpad sensitivity issues when using the [libinput](https://www.archlin
 
  `/etc/libinput/local-overrides.quirks` 
 ```
+[Touchpad pressure override]
 MatchUdevType=touchpad
 MatchName=*Elan Touchpad
 MatchDMIModalias=dmi:*svnGOOGLE:*pnEdgar*

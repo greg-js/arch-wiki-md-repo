@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-06-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=575505) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=576622) na versão em inglês.
 
 Artigos relacionados
 
@@ -234,9 +234,7 @@ Para verificar se o `PKGBUILD` está quebrado, ou seu sistema está desconfigura
 
 ### ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?
 
-É muito provável que você não tenha as chaves públicas necessárias no seu chaveiro pessoal para verificar os arquivos baixados. Se um ou mais arquivos .sig forem baixados durante a criação do pacote, [makepkg verificará automaticamente o(s) arquivo(s) correspondente(s) com a chave pública de seu signatário](/index.php/Makepkg_(Portugu%C3%AAs)#Verificação_de_assinatura "Makepkg (Português)"). Se você não tiver a chave necessária no seu chaveiro pessoal, o *makepkg* falhará na verificação.
-
-A maneira recomendada para lidar com esse problema é importar a chave pública necessária, [manualmente](/index.php/GnuPG#Import_a_public_key "GnuPG") ou [de um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Geralmente, você pode simplesmente encontrar a impressão digital das chaves públicas necessárias na seção [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
+É muito provável que você não tenha as chaves públicas necessárias no seu chaveiro pessoal para verificar os arquivos baixados. Veja [Makepkg (Português)#Verificação de assinatura](/index.php/Makepkg_(Portugu%C3%AAs)#Verificação_de_assinatura "Makepkg (Português)") para detalhes.
 
 ### Como eu crio um PKGBUILD?
 

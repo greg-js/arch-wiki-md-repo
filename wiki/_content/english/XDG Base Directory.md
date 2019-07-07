@@ -152,7 +152,7 @@ Supported only in Git master branch, there's no updated stable release yet.
  |
 | [Git](/index.php/Git "Git") | `~/.gitconfig` | [0d94427](https://github.com/git/git/commit/0d94427) |
 | [GStreamer](/index.php/GStreamer "GStreamer") | `~/.gstreamer-0.10` | [4e36f93](https://cgit.freedesktop.org/gstreamer/gstreamer/commit/?id=4e36f93) | [[19]](https://bugzilla.gnome.org/show_bug.cgi?id=518597) |
-| [GTK+](/index.php/GTK%2B "GTK+") 3 |
+| [GTK](/index.php/GTK "GTK") 3 |
 | [htop](https://www.archlinux.org/packages/?name=htop) | `~/.htoprc` | [93233a6](https://github.com/hishamhm/htop/commit/93233a6) |
 | [i3](/index.php/I3 "I3") | `~/.i3` | [7c130fb](http://code.stapelberg.de/git/i3/commit/?id=7c130fb) |
 | [i3status](https://www.archlinux.org/packages/?name=i3status) | `~/.i3status.conf` | [c3f7fc4](http://code.stapelberg.de/git/i3status/commit/?id=c3f7fc4) |
@@ -277,7 +277,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 | [rTorrent](/index.php/RTorrent "RTorrent") | `~/.rtorrent.rc` | [6a8d332](https://github.com/rakshasa/rtorrent/commit/6a8d332) |
 | [RuboCop](https://www.rubocop.org) | `~/.rubocop.yml` | [6fe5956](https://github.com/rubocop-hq/rubocop/commit/6fe5956c177ca369cfaa70bdf748b70020a56bf4) | [[55]](https://github.com/rubocop-hq/rubocop/issues/6662) |
 | [skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) | `~/.Skype` | 8.0 |
-| [snes9x](https://www.archlinux.org/packages/?name=snes9x) | `~/.snes9x` | [93b5f11](https://github.com/snes9xgit/snes9x/commit/93b5f11) | [[56]](https://github.com/snes9xgit/snes9x/issues/194) | By default configuration is blank, is intended that the user fill it at they will (throw the gui or manually) before launch a rom |
+| [snes9x](https://www.archlinux.org/packages/?name=snes9x) | `~/.snes9x` | [93b5f11](https://github.com/snes9xgit/snes9x/commit/93b5f11) | [[56]](https://github.com/snes9xgit/snes9x/issues/194) | By default, the configuration file is left blank with intention that the user will fill it at their will (through the gui or manually). |
 | [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/) | Cache is placed in `$XDG_CONFIG_HOME/sublime-text-3/Cache` instead of expected `$XDG_CACHE_HOME/sublime-text-3`. |
 | [surfraw](/index.php/Surfraw "Surfraw") | 
 
@@ -422,8 +422,8 @@ $ mkdir -p "$(dirname "$GQSTATE")"`
 
  |
 | [Gradle](/index.php/Gradle "Gradle") | `~/.gradle` | [[88]](https://discuss.gradle.org/t/be-a-nice-freedesktop-citizen-move-the-gradle-to-the-appropriate-location-in-linux/2199) | `$ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle` |
-| [GTK+](/index.php/GTK%2B "GTK+") 1 | `~/.gtkrc` | `$ export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc` |
-| [GTK+](/index.php/GTK%2B "GTK+") 2 | `~/.gtkrc-2.0` | `$ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc` |
+| [GTK](/index.php/GTK "GTK") 1 | `~/.gtkrc` | `$ export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc` |
+| [GTK](/index.php/GTK "GTK") 2 | `~/.gtkrc-2.0` | `$ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc` |
 | [httpie](https://www.archlinux.org/packages/?name=httpie) | `~/.httpie` | [[89]](https://github.com/jakubroztocil/httpie/issues/145) | `$ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME"/httpie` |
 | [intellij-idea-ce](https://aur.archlinux.org/packages/intellij-idea-ce/) | `~/.IntelliJIdea*` | [[90]](https://youtrack.jetbrains.com/issue/IDEA-22407) | 
 ```
@@ -800,9 +800,10 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
  | [[146]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](https://stackoverflow.com/questions/22348604/the-mongorc-js-is-not-found-but-there-is-one/22349050#22349050) suggests a partial workaround using command-line switch `--norc`. |
 | [Nestopia UE](http://0ldsk00l.ca/nestopia/) | `~/.nestopia/` | [won't fix](https://github.com/0ldsk00l/nestopia/pull/292) |
  `~/.netrc` | Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp. |
-| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[147]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
+| [Networkmanager-openvpn](/index.php/Networkmanager-openvpn "Networkmanager-openvpn") | `~/.cert/nm-openvpn` | [[147]](https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/issues/35) |
+| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[148]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
 | [OpenSSH](/index.php/OpenSSH "OpenSSH") | `~/.ssh` | [won't fix](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
-| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[148]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
+| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[149]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
 | [parsec-bin](https://aur.archlinux.org/packages/parsec-bin/) | `~/.parsec` |
 | [pcsxr](https://aur.archlinux.org/packages/pcsxr/) | `~/.pcsxr` | A `-cfg` flag exists, but can only be set relative to `~/.pcsxr`. |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:29](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L29). |
@@ -812,18 +813,18 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [racket](https://racket-lang.org/) | `~/.racketrc` |
 | [RedNotebook](http://rednotebook.sourceforge.net/) | `~/.rednotebook` |
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
-| [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[149]](https://github.com/renpy/renpy/issues/1377) |
+| [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[150]](https://github.com/renpy/renpy/issues/1377) |
 | [SANE](/index.php/SANE "SANE") | `~/.sane/` | `scanimage` creates a `.cal` file there |
 | [scribus](https://www.archlinux.org/packages/?name=scribus) | `~/.scribus` |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[150]](https://bugzil.la/726939) |
-| [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder) | `~/.ssr/` | [[151]](https://github.com/MaartenBaert/ssr/issues/407) | Author seems against this feature. |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[151]](https://bugzil.la/726939) |
+| [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder) | `~/.ssr/` | [[152]](https://github.com/MaartenBaert/ssr/issues/407) | Author seems against this feature. |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | 
 
 `~/.solfege
 ~/.solfegerc
 ~/lessonfiles`
 
- | [[152]](https://savannah.gnu.org/bugs/index.php?50251) |
+ | [[153]](https://savannah.gnu.org/bugs/index.php?50251) |
 | [SpamAssassin](https://spamassassin.apache.org/) | `~/.spamassassin` |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
 | [SQLite](/index.php/SQLite "SQLite") | 
@@ -831,7 +832,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 `~/.sqlite_history
 ~/.sqliterc`
 
- | [[153]](https://www.sqlite.org/src/info/696e82f7c82d1720) | `$ export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+ | [[154]](https://www.sqlite.org/src/info/696e82f7c82d1720) | `$ export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
 `
 
 `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc`
@@ -843,11 +844,11 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 ~/.steampath
 ~/.steampid`
 
- | [[154]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
+ | [[155]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [texinfo](https://www.archlinux.org/packages/?name=texinfo) | `~/.infokey` | `$ info --init-file "$XDG_CONFIG_HOME/infokey"` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[155]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[156]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | 
 
@@ -877,17 +878,17 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[156]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[157]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
-| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[157]](https://sourceforge.net/p/w3m/feature-requests/31/) |
+| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[158]](https://sourceforge.net/p/w3m/feature-requests/31/) |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
-| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[158]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[159]](https://github.com/conformal/xombrero/issues/74) |
-| [YARD](https://yardoc.org) | `~/.yard` | [[160]](https://github.com/lsegal/yard/issues/1230) | Would accept Pull Request if anyone want to implement it. |
-| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[161]](http://seclists.org/nmap-dev/2012/q2/163) [[162]](https://github.com/nmap/nmap/issues/590) |
+| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[159]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[160]](https://github.com/conformal/xombrero/issues/74) |
+| [YARD](https://yardoc.org) | `~/.yard` | [[161]](https://github.com/lsegal/yard/issues/1230) | Would accept Pull Request if anyone want to implement it. |
+| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[162]](http://seclists.org/nmap-dev/2012/q2/163) [[163]](https://github.com/nmap/nmap/issues/590) |
 | [zsh](/index.php/Zsh "Zsh") | 
 
 `~/.zshrc
@@ -898,11 +899,11 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ~/.histfile
 ~/.zcompdump`
 
- | [[163]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[164]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 
-`$ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION` [[164]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
+`$ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION` [[165]](https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files) /!\ The folder needs to exist
 
  |
 

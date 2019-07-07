@@ -4,7 +4,11 @@ See also: [DeveloperWiki:Package Signing Proposal for Pacman](/index.php/Develop
 
 Pacman 4 uses [GnuPG](/index.php/GnuPG "GnuPG") to implement package signing.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usage](#Usage)
     *   [1.1 Arch implementation](#Arch_implementation)
@@ -122,7 +126,7 @@ According to the Gentoo wiki, individual ebuilds are not signed.
 *   Signature type: GPG
 *   Stored: in the RPM
 
-A RPM package is a tarball of installed files to which is added a header made up of metadata (name of package, version, ...). This metadata can contain a GPG signature of the tarball. See the [file format specification for details](http://www.rpm.org/wiki/DevelDocs/FileFormat).
+A RPM package is a tarball of installed files to which is added a header made up of metadata (name of package, version, ...). This metadata can contain a GPG signature of the tarball. See the [file format specification for details](https://rpm.org/devel_doc/file_format.html).
 
 NB: packages built for the Red Hat Network are signed with the [Red Hat official key(s)](https://www.redhat.com/security/team/key/) but technically a RPM can be signed using any other key (one can even add another signature to the RPM)
 

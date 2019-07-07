@@ -300,7 +300,7 @@ Make sure you are mounting the filesystem with the correct flags in your `/etc/f
 
 This error might also occur if your library folder does not contain a `steamapps` directory. Previous versions used `SteamApps` instead, so ensure the name is fully lowercase.
 
-This error can also occur because of Steam runtime issues and may be fixed following the [#Finding missing runtime libraries](#Finding_missing_runtime_libraries) section.
+This error can also occur because of Steam runtime issues and may be fixed following the [#Finding missing runtime libraries](#Finding_missing_runtime_libraries) section or due to no space being left on the device. For debugging purposes it might be useful to run Steam from the console and observe the log.
 
 ### Unusually slow download speed
 

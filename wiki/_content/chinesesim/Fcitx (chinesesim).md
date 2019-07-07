@@ -90,7 +90,7 @@ Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Piny
 
 ### 输入法模块
 
-Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5). 软件包组 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 包含了全部模块。如果没有安装对应的模块，一般还是可以在大部分程序中使用输入法的。不过很可能出现从无法光标跟随、无法显示预编辑字符串、无法输入甚至程序卡死等情况。
+Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://aur.archlinux.org/packages/fcitx-qt4/) 和 [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5). 软件包组 [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) 包含了全部模块。如果没有安装对应的模块，一般还是可以在大部分程序中使用输入法的。不过很可能出现从无法光标跟随、无法显示预编辑字符串、无法输入甚至程序卡死等情况。
 
 某些程序不使用 Gtk+/Qt 的输入法模块，这些程序包括:
 

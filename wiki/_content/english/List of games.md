@@ -1077,7 +1077,7 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 *   **[Spring:1944](https://en.wikipedia.org/wiki/Spring_Engine#Spring:1944 "wikipedia:Spring Engine")** — A WWII themed game with four fully functional sides (US, Germany, USSR, Britain), period-accurate units and strengths. Realism comes second only to creating a game that is fun and accessible to play.
 
-	[http://spring1944.org/](http://spring1944.org/) || [spring-1944](https://www.archlinux.org/packages/?name=spring-1944)
+	[http://spring1944.net/](http://spring1944.net/) || [spring-1944](https://www.archlinux.org/packages/?name=spring-1944)
 
 *   **[Unknown Horizons](https://en.wikipedia.org/wiki/Unknown_Horizons "wikipedia:Unknown Horizons")** — 2.5D isometric real-time strategy simulation with an emphasis on economy and city building. Expand your small settlement to a strong and wealthy colony, collect taxes and supply your inhabitants with valuable goods. Increase your power with a well balanced economy and with strategic trade and diplomacy.
 

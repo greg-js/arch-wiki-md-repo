@@ -343,7 +343,7 @@ bindsym --to-code {
 
 ## See also
 
-*   [GitHub project](https://github.com/SirCmpwn/sway)
+*   [GitHub project](https://github.com/swaywm/sway)
 *   [Sway official wiki](https://github.com/swaywm/sway/wiki)
 *   [sr.ht git page](https://git.sr.ht/~sircmpwn/sway)
 *   [Website](https://swaywm.org)

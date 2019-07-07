@@ -28,7 +28,7 @@ GNS3 uses patched python extensions, [python-aiohttp-cors-gns3](https://aur.arch
 
 **Note:** That can potentially create trouble with another programs using the original extensions.
 
-The [gns3-gui](https://aur.archlinux.org/packages/gns3-gui/) and [gns3-server](https://aur.archlinux.org/packages/gns3-server/) packages are needed to run the GNS3 GUI.
+The [gns3-gui](https://aur.archlinux.org/packages/gns3-gui/) and [gns3-server](https://aur.archlinux.org/packages/gns3-server/) packages are needed to run the GNS3 GUI. The [dynamips](https://aur.archlinux.org/packages/dynamips/) package are needed to simulate Cisco routers.
 
 [libvirt](/index.php/Libvirt "Libvirt") can be used to create the end devices "Cloud" (providing a virtual wan interfaces, isolating the tested network to the other devices in the main network) and NAT. To make [libvirt](/index.php/Libvirt "Libvirt") work correctly, GNS3 needs [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [ubridge](https://aur.archlinux.org/packages/ubridge/). Install them and ensure the *libvirtd* daemon is running before using GNS3 for can use Cloud and NAT end devices.
 

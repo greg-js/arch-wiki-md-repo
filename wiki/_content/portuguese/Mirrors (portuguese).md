@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=573041) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mirrors](/index.php/Mirrors "Mirrors"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mirrors&diff=0&oldid=576138) na versão em inglês.
 
 Artigos relacionados
 
@@ -158,7 +158,14 @@ Outra alternativa popular é a ferramenta a seguir:
 
 ## Solução de problemas
 
-Na improvável situação de você estar sem espelhos configurados e `pacman-mirrorlist` não instalado, execute o seguinte comando:
+Se você encontrar o seguinte erro:
+
+```
+erro: arquivo de configuração /etc/pacman.d/mirrorlist não pôde ser lido: Arquivo ou diretório inexistente
+
+```
+
+Obtenha o mirrorlist do site:
 
 ```
 # curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/

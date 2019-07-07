@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=575874) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=576592) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -99,7 +99,7 @@ de shell | Especificidade |
 
 **Atenção:** O uso de auxiliares do AUR gráficos podem levar a um sistema defeituoso, por exemplo, através de [atualizações parciais](/index.php/Atualiza%C3%A7%C3%B5es_parciais "Atualizações parciais") não assistidas.
 
-*   **Argon** — Wrapper do pacman em GTK+3 escrito em Python.
+*   **Argon** — Wrapper do pacman em GTK 3 escrito em Python.
 
 	[https://github.com/14mRh4X0r/arch-argon](https://github.com/14mRh4X0r/arch-argon) || [argon](https://aur.archlinux.org/packages/argon/)
 
@@ -107,11 +107,11 @@ de shell | Especificidade |
 
 	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
-*   **Pamac** — Gerenciador de pacotes autônomo em GTK+3 usando [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) escrito em Vala.
+*   **Pamac** — Gerenciador de pacotes autônomo em GTK 3 usando [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) escrito em Vala.
 
 	[https://gitlab.manjaro.org/applications/pamac](https://gitlab.manjaro.org/applications/pamac) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
 
-*   **Pakku GUI** — Frontend GTK+3 para o pakku escrito em Python.
+*   **Pakku GUI** — Frontend GTK 3 para o pakku escrito em Python.
 
 	[https://gitlab.com/mrvik/pakku-gui](https://gitlab.com/mrvik/pakku-gui) || [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/)
 

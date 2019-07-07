@@ -1,6 +1,4 @@
-Discord is a proprietary all-in-one voice and text chat application, cross-platform chat application, especially tailored for gamers. Based on the [Electron](https://electronjs.org/) platform.
-
-Before installing, one should be aware of the [privacy implications](https://spyware.neocities.org/articles/discord.html).
+Discord is a proprietary all-in-one voice and text chat application, cross-platform chat application, especially tailored for Gamers, however many open source communities have [official servers through Discord](https://discordapp.com/open-source) as well. Discord can be used through the browser, however there is also a desktop application as well. The desktop application uses [Electron](https://github.com/electron/electron).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,16 +10,19 @@ Before installing, one should be aware of the [privacy implications](https://spy
     *   [1.1 Graphical clients](#Graphical_clients)
     *   [1.2 Command-line clients](#Command-line_clients)
     *   [1.3 Chat client plugins](#Chat_client_plugins)
+*   [2 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
-You can use one of following methods in order to use Discord in Arch:
+You can use one of following packages in order to install the desktop application for Discord:
 
 ### Graphical clients
 
 The [official app](https://discordapp.com/):
 
-*   [discord](https://aur.archlinux.org/packages/discord/)
+*   Stable: [discord](https://aur.archlinux.org/packages/discord/)
+*   Testing: [discord-ptb](https://aur.archlinux.org/packages/discord-ptb/)
+*   Nightly: [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
 
 Third-party clients:
 
@@ -37,3 +38,7 @@ There are more CLI-based third-party clients out there hosted on places like Git
 
 *   By using [purple-discord-git](https://aur.archlinux.org/packages/purple-discord-git/), you can use Discord on graphical or terminal messenger softwares based on [libpurple](https://www.archlinux.org/packages/?name=libpurple) such as [Pidgin](/index.php/Pidgin "Pidgin").
 *   By using [bitlbee-discord-git](https://aur.archlinux.org/packages/bitlbee-discord-git/), you can use Discord via [Bitlbee](/index.php/Bitlbee "Bitlbee").
+
+## Troubleshooting
+
+If you experience crackling sounds when in voice chat, you should try the steps outlined here: [PulseAudio/Troubleshooting](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Glitches,_skips_or_crackling)

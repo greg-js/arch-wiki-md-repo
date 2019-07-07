@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=576022) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=576251) na versão em inglês.
 
 Artigos relacionados
 
@@ -208,3 +208,4 @@ Em um ambiente dinâmico (laptops e algumas extensões de desktops), você preci
 *   [Linux Network Administrators Guide](https://www.tldp.org/LDP/nag2/x-087-2-resolv.html)
 *   [Debian Handbook](https://www.debian.org/doc/manuals/debian-handbook/sect.hostname-name-service.en.html#sect.name-resolution)
 *   [RFC:7706](https://tools.ietf.org/html/rfc7706 "rfc:7706") - Diminuindo o tempo de acesso a servidores raiz executando um com loopback (inglês)
+*   [Visão geral de sistema de nomes de domínio](http://linux-ip.net/pages/diagrams.html#domain-name-system-overview) - Diagrama sobre DNS

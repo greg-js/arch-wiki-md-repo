@@ -77,7 +77,7 @@ To initialize the *pacman* keyring run:
 
 ```
 
-Initializing the keyring requires [entropy](https://en.wikipedia.org/wiki/Entropy_(computing) "wikipedia:Entropy (computing)"). To generate entropy, move your mouse around, press random characters on the keyboard, or run some disk-based activity (for example in another console running `ls -R /` or `find / -name foo` or `dd if=/dev/sda8 of=/dev/tty7`). If your system does not already have sufficient entropy, this step may take hours; if you are actively generate entropy, it will complete much more quickly.
+Initializing the keyring requires [entropy](https://en.wikipedia.org/wiki/Entropy_(computing) "wikipedia:Entropy (computing)"). To generate entropy, move your mouse around, press random characters on the keyboard, or run some disk-based activity (for example in another console running `ls -R /` or `find / -name foo` or `dd if=/dev/sda8 of=/dev/tty7`). If your system does not already have sufficient entropy, this step may take hours; if you actively generate entropy, it will complete much more quickly.
 
 The randomness created is used to initialize the keyring (`/etc/pacman.d/gnupg`) and the GPG signing key of your system.
 

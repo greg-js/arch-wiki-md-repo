@@ -71,6 +71,7 @@ Related articles
         *   [4.17.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
         *   [4.17.3 Verify folder access by guest](#Verify_folder_access_by_guest)
     *   [4.18 Mount error: Host is down](#Mount_error:_Host_is_down)
+    *   [4.19 Software caused connection abort](#Software_caused_connection_abort)
 *   [5 See also](#See_also)
 
 ## Server
@@ -1135,6 +1136,12 @@ Access shared folder again as guest to be sure guest read access error has been 
 ### Mount error: Host is down
 
 This error might be seen when mounting shares of Synology NAS servers. Use the mount option `vers=1.0` to solve it.
+
+### Software caused connection abort
+
+File managers that utilizes [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) can show the error `Software caused connection abort` when writing a file to a share/server. This may be due to the server running SMB/CIFS version 1, which many routers use for USB drive sharing (e.g. Belkin routers). To write to these shares specify the CIFS version with the option `vers=1.0`. E.g.:
+
+ `/etc/fstab`  `//SERVER/sharename /mnt/mountpoint cifs guest,file_mode=0777,dir_mode=0777,vers=1.0 0 0` 
 
 ## See also
 

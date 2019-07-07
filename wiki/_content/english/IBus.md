@@ -13,8 +13,9 @@
         *   [1.1.3 Vietnamese](#Vietnamese)
         *   [1.1.4 Others](#Others)
     *   [1.2 Initial setup](#Initial_setup)
-    *   [1.3 GNOME](#GNOME)
-    *   [1.4 KDE](#KDE)
+    *   [1.3 Integration](#Integration)
+        *   [1.3.1 GNOME](#GNOME)
+        *   [1.3.2 KDE](#KDE)
 *   [2 Configuration](#Configuration)
     *   [2.1 IBus](#IBus)
     *   [2.2 Ibus-rime](#Ibus-rime)
@@ -105,13 +106,27 @@ export QT_IM_MODULE=ibus
 
 Next, a configuration screen will appear. It can be accessed whenever IBus is running by right-clicking the icon in the system tray and choosing *Preferences*. See [Configuration](#Configuration).
 
-### GNOME
+### Integration
+
+If you want IBus to show an indicator for desktop environments who don’t provide an applet, launch it with this command:
+
+```
+ ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
+
+```
+
+#### GNOME
 
 [GNOME](/index.php/GNOME "GNOME") integrates with IBus[[1]](https://help.gnome.org/misc/release-notes/3.6/i18n-ibus.html.en), so it should only be necessary to install the package specific to the language being utilized. To enable input, add it to the *Input Sources* section of the *Region & Language* settings. After you add your input sources (at least 2), GNOME will show the input switcher icon in the tray. If you do not find your appropriate input source when trying to add your input sources, most likely you have not done locale-gen for that locale. The default keyboard shortcut to switch to the next input method in GNOME is `Super+space`; disregard the *next input method* shortcut set in *ibus-setup*.
 
-### KDE
+#### KDE
 
-[KDE](/index.php/KDE "KDE") needs the 'kimtoy' package to work with ibus
+[KDE](/index.php/KDE "KDE") can integrate with IBus with [kimtoy](https://www.archlinux.org/packages/?name=kimtoy). You then need to launch IBus this way:
+
+```
+ ibus-daemon -drx --panel=/usr/lib/kimpanel-ibus-panel
+
+```
 
 ## Configuration
 

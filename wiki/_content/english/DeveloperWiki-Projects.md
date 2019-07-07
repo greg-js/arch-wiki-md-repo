@@ -20,5 +20,5 @@ Links:
 | dbscripts | Scripts to release and manage packages into the repositories | Bash | Pierres, Eschwartz | [GitHub](https://github.com/archlinux/dbscripts) |
 | arch-install-scripts | Useful scripts for installing Arch Linux | Bash | Eschwartz | [GitHub](https://github.com/archlinux/arch-install-scripts), [bugs](https://bugs.archlinux.org/index.php?string=arch-install-scripts&project=1&) |
 | arch-signoff | Sign off Arch Linux test packages | Python | Jelle | [GitHub](https://github.com/archlinux/arch-signoff), [bugs](https://github.com/archlinux/arch-signoff/issues) |
-| archlinux-repro | Tools to rebuild arch linux packages | Python | Foxboron, Jelle, Coderobe | [GitHub](https://github.com/archlinux/archlinux-repro), [bugs](https://github.com/archlinux/archlinux-repro/issues) |
+| archlinux-repro | Tools to rebuild Arch Linux packages | Python | Foxboron, Jelle, Coderobe | [GitHub](https://github.com/archlinux/archlinux-repro), [bugs](https://github.com/archlinux/archlinux-repro/issues) |
 | Vagrant & Docker images | Bash | Shibumi, Pierre | [arch-boxes GH](https://github.com/archlinux/arch-boxes), [archlinux-docker GH](https://github.com/archlinux/archlinux-docker) |

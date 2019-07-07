@@ -24,9 +24,10 @@ This article aims on providing information on flashing your system BIOS under Li
     *   [4.1 Unetbootin](#Unetbootin)
     *   [4.2 dosemu](#dosemu)
     *   [4.3 Pre-built images](#Pre-built_images)
-    *   [4.4 Using a FreeDOS-provided Disk Image + USB stick](#Using_a_FreeDOS-provided_Disk_Image_+_USB_stick)
-    *   [4.5 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
-    *   [4.6 Usage](#Usage_3)
+    *   [4.4 Using a FreeDOS-provided Disk Image + USB stick on Linux](#Using_a_FreeDOS-provided_Disk_Image_+_USB_stick_on_Linux)
+    *   [4.5 Using a FreeDOS-provided Disk Image + USB stick with Windows](#Using_a_FreeDOS-provided_Disk_Image_+_USB_stick_with_Windows)
+    *   [4.6 Images that are too large for a floppy](#Images_that_are_too_large_for_a_floppy)
+    *   [4.7 Usage](#Usage_3)
 *   [5 Bootable optical disk emulation](#Bootable_optical_disk_emulation)
     *   [5.1 Installation](#Installation_3)
     *   [5.2 Usage](#Usage_4)
@@ -140,7 +141,7 @@ For an alternative method, see [FreeDOS Flash Drive](https://wiki.gentoo.org/wik
 
 Yet another simple solution: [FreeDOS pre-built bootable USB flash drive image by Christian Taube](http://myhq.it/sites/myhq.it/files/FreeDOS-1.1-memstick-2-2048M.img.bz2). Instructions can be found [here](https://archive.is/6QPXD).
 
-### Using a FreeDOS-provided Disk Image + USB stick
+### Using a FreeDOS-provided Disk Image + USB stick on Linux
 
 As of writing (2017-07-11), [unetbootin](https://aur.archlinux.org/packages/unetbootin/) doesn't support versions of FreeDOS more recent than 1.0 (current version is 1.2). The following procedure worked to upgrade an Inspiron 17-3737 to the A09 BIOS. (Dell offers this as a possibility [on their site](http://www.dell.com/support/article/ca/en/cabsdt1/SLN171755/updating-the-dell-bios-in-linux-and-ubuntu-environments?lang=EN#Creating%20a%20USB%20Bootable%20Storage%20Device))
 
@@ -176,6 +177,34 @@ Now you will find yourself in the FreeDOS live installation environment.
 5.  Run the executable
     *   author note: in the case of the Dell tool, the machine displayed a spash screen and then rebooted. Upon reboot, it started the firmware upgrade automatically, and ran for about 2 minutes with the fan at full speed)
 6.  Once the process specific to your vendor completes, optionally verify through the BIOS setup screen, as well as by running [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) when you're back in linux
+
+### Using a FreeDOS-provided Disk Image + USB stick with Windows
+
+The author for this procedure encountered several issues related to mounting the FAT partition type of the USB using the previous method on Linux with dd. This procedure seeks to outline a method to flash the BIOS with FreeDOS, a USB stick and Ruckus on Windows 7/8/8.1/10\. This procedure was performed on 4 JULY 2019 on a Dell Inspiron 5547 Laptop to upgrade from BIOS A10 to A12.
+
+Prerequisites:
+
+*   Download and install Rufus for Windows. This can be either the full installation or the portable version.
+*   Download the latest Full USB installer for FreeDOS (v1.2 as of the time of writing).
+*   Download the latest BIOS update from the vendors' website
+*   It is assumed that *dmidecode* is installed on the system
+
+Procedure:
+
+1.  Extract the contents of the *FD12FULL.zip* archive, noting the *.img* file
+2.  Insert a flash drive and flash the *FD12FULL.img* file using Rufus, leaving all default options
+    *   Detailed use of Rufus is not covered in this guide. Refer to Rufus' manual or documentation for detailed usage
+3.  Once flashed with Rufus, rename the BIOS file with 8 uppercase characters (not including the extension) and copy it over to the flash drive
+4.  Eject the flash drive and plug it into the laptop.
+5.  Perform whatever steps are necessary to boot from the USB with LEGACY BOOT
+    *   Author note: For my Dell Laptop, I press F12 for boot options and select 'USB Storage Device' under 'Legacy Options'. I have explicitly enabled legacy boot from within my BIOS, but this option may not be present if the system is only configured to boot with UEFI
+6.  You will be presented with the FreeDOS Installation environment
+    *   Select preferred language
+    *   Select 'No - Return to DOS' on the next screen
+    *   Type *dir* to view the contents of the USB flash drive
+    *   To execute the BIOS upgrade file, simply type the filename and press enter
+    *   Note: My upgrade took <2 minutes with the fans at full speed. The system reboot 3 times total.
+7.  Once the upgrade completes and the system boots back into the OS, issue *sudo dmidecode | grep -E 'BIOS|Version'* and validate the BIOS version has been upgraded
 
 ### Images that are too large for a floppy
 

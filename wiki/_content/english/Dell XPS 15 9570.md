@@ -63,7 +63,7 @@ Before installing it is necessary to modify some UEFI Settings. They can be acce
 
 *   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the change but [this can be fixed without a reinstallation](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
 *   Change Fastboot to "Thorough" in "POST Behaviour". This prevents intermittent boot failures.
-*   Disable secure boot to allow Linux to boot.
+*   Disable secure boot to allow Linux to boot. Alternatively, you can choose to [set up Secure Boot](/index.php/Secure_Boot "Secure Boot") so that it works with Linux and you can take advantage of its potential security benefits.
 
 Installation of Arch Linux can proceed normally. Refer to the [Installation guide](/index.php/Installation_guide "Installation guide") for more information.
 

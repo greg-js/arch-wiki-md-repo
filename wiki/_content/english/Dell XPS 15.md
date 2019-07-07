@@ -19,7 +19,11 @@ This page is a work in progress! More info coming soon.
 *   Not tested
 *   Not working
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 System Settings](#System_Settings)
 *   [2 Differences between XPS 9550 & Precision 5510](#Differences_between_XPS_9550_&_Precision_5510)

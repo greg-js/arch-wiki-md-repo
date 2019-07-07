@@ -48,7 +48,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
     *   to give you TU status on the AUR.
     *   to open a new task in the "Keyring" project of the bug tracker following the instructions in [this message](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) in order to have your PGP key signed by three master key holders.
 11.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
-12.  [Configure your private ssh key](/index.php/Arch_User_Repository#Authentication "Arch User Repository") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
+12.  [Configure your private ssh key](/index.php/AUR_submission_guidelines#Authentication "AUR submission guidelines") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
 13.  Ssh to yourname@orion.archlinux.org (once you have permissions).
 14.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
 15.  Start contributing!

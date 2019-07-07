@@ -52,7 +52,7 @@ LXCs can be setup to run in either *privileged* or *unprivileged* configurations
 
 In general, running an *unprivileged* container is [considered safer](https://www.stgraber.org/2014/01/17/lxc-1-0-unprivileged-containers) than running a *privileged* container since *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host.
 
-The Arch packages currently provide out-of-the-box support for *privileged* containers. *Unprivileged* containers are only available for the system administrator with additional kernel configuration. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel shipping with user namespaces disabled for normal users. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers.
+The Arch [linux](https://www.archlinux.org/packages/?name=linux), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) and [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) packages currently provide out-of-the-box support for *unprivileged* containers. In [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) *unprivileged* containers are only available for the system administrator with additional kernel configuration as user namespaces are disabled by default for normal users there. This article contains information for users to run either type of container, but additional setup may required to use *unprivileged* containers.
 
 ### An example to illustrate unprivileged containers
 
@@ -99,9 +99,9 @@ Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install
 
 #### Enable support to run unprivileged containers (optional)
 
-Users wishing to run *unprivileged* containers need to complete several additional setup steps.
+Users wishing to run *unprivileged* containers on [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) or their custom kernel need to complete several additional setup steps.
 
-Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user. You have two options to create *unprivileged* containers:
+Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel does ship with User Namespaces enabled only for the *root* user. You have two options to create *unprivileged* containers there:
 
 *   Start your unprivileged containers only as *root*.
 *   Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).

@@ -258,7 +258,7 @@
 | <small>6.7.1.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)"))</small> |
 | <small>6.7.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(3)</small> |
 | <small>6.8.</small> [Compartir archivos](/index.php/Category:File_sharing_(Espa%C3%B1ol) "Category:File sharing (Español)") <small>(0) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
-| <small>6.9.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(13)</small> |
+| <small>6.9.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(14)</small> |
 | <small>6.9.1.</small> [Cifrado de disco](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(11) (también en [Cifrado](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)"))</small> |
 | <small>6.9.2.</small> [FUSE](/index.php/Category:FUSE_(Espa%C3%B1ol) "Category:FUSE (Español)") <small>(4)</small> |
 | <small>6.9.3.</small> [Virtualización de almacenamiento](/index.php/Category:Storage_virtualization_(Espa%C3%B1ol) "Category:Storage virtualization (Español)") <small>(3)</small> |

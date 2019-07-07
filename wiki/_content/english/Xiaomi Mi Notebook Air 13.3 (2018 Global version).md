@@ -7,11 +7,11 @@
 | Webcam | Working | uvcvideo |
 | USB-C / Thunderbolt 3 | Working | ? |
 | Function/Multimedia Keys | Working | ? |
-| Fingerprint | Unsupported | ? |
+| Fingerprint | Working | (none) |
 
 The Mi Notebook Air 13.3 is an aluminium Ultrabook. It is a product by the Chinese Company Xiaomi and is available in China or Europe through online-shops. Using the [Intel Core i5 8250U](https://ark.intel.com/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz) @ 3.4 GHz and the NVIDIA GeForce MX150, it provides good power for a decent price.
 
-This 2018 global version is hardware updated: new CPU and GPU, as well as a fingerprint reader. However, the fingerprint reader is not currently supported by [fprintd](https://www.archlinux.org/packages/?name=fprintd) and [libfprint](https://www.archlinux.org/packages/?name=libfprint).
+This 2018 global version is hardware updated: new CPU and GPU, as well as a fingerprint reader.
 
 The installation should be going without any problems, if you follow the following steps.
 

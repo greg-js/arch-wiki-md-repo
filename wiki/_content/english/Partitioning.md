@@ -95,7 +95,7 @@ The customary numbering scheme is to create primary partitions *sda1* through *s
 
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
-At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like a ordinary MBR has a [bootstrap code area](#Master_Boot_Record_(bootstrap_code)) which can be used for BIOS/GPT booting with boot loaders that support it.
+At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like an ordinary MBR has a [bootstrap code area](#Master_Boot_Record_(bootstrap_code)) which can be used for BIOS/GPT booting with boot loaders that support it.
 
 ### Choosing between GPT and MBR
 

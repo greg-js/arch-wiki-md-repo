@@ -42,8 +42,10 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [5.5.2 Mounting a partition from a qcow2 image](#Mounting_a_partition_from_a_qcow2_image)
     *   [5.6 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
         *   [5.6.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
-        *   [5.6.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
-            *   [5.6.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
+        *   [5.6.2 Simulate a virtual disk with MBR](#Simulate_a_virtual_disk_with_MBR)
+            *   [5.6.2.1 Device Mapper](#Device_Mapper)
+            *   [5.6.2.2 Linear RAID](#Linear_RAID)
+            *   [5.6.2.3 Network Block Device](#Network_Block_Device)
 *   [6 Networking](#Networking)
     *   [6.1 Link-level address caveat](#Link-level_address_caveat)
     *   [6.2 User-mode networking](#User-mode_networking)
@@ -342,7 +344,9 @@ $ ssh *guest-user*@localhost -p10022
 
 ### QEMU's built-in SMB server
 
-QEMU's documentation says it has a "built-in" SMB server, but actually it just starts up [Samba](/index.php/Samba "Samba") with an automatically generated `smb.conf` file located at `/tmp/qemu-smb.*pid*-0/smb.conf` and makes it accessible to the guest at a different IP address (10.0.2.4 by default). This only works for user networking, and this is not necessarily very useful since the guest can also access the normal [Samba](/index.php/Samba "Samba") service on the host if you have set up shares on it.
+QEMU's documentation says it has a "built-in" SMB server, but actually it just starts up [Samba](/index.php/Samba "Samba") with an automatically generated `smb.conf` file located in `/tmp/qemu-smb.*random_string*` and makes it accessible to the guest at a different IP address (10.0.2.4 by default). This only works for user networking, and is useful when you don't want to start the normal [Samba](/index.php/Samba "Samba") service on the host, which the guest can also access if you have set up shares on it.
+
+Only a single directory can be set as shared with the option `smb=`, but adding more directories (even while the virtual machine is running) could be as easy as creating symbolic links in the shared directory if QEMU configured SMB to follow symbolic links. It doesn't do so, but the configuration of the running SMB server can be changed as described below.
 
 To enable this feature, start QEMU with a command like:
 
@@ -360,6 +364,35 @@ Then, in the guest, you will be able to access the shared directory on the host 
 *   If you are using sharing options multiple times like `-net user,smb=*shared_dir_path1* -net user,smb=*shared_dir_path2*` or `-net user,smb=*shared_dir_path1*,smb=*shared_dir_path2*` then it will share only the last defined one.
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
 *   If you cannot access the shared folder and the guest system is Windows 10 Enterprise or Education or Windows Server 2016, [enable guest access](https://support.microsoft.com/en-us/help/4046019).
+
+One way to share multiple directories and to add or remove them while the virtual machine is running, is to share an empty directory and create/remove symbolic links to the directories in the shared directory. For this to work, the configuration of the running SMB server can be changed with the following script, which also allows the execution of files on the guest that are not set executable on the host:
+
+```
+#!/bin/bash
+eval $(ps h -C smbd -o pid,args | grep /tmp/qemu-smb | gawk '{print "pid="$1";conf="$6}')
+echo "[global]
+allow insecure wide links = yes
+[qemu]
+follow symlinks = yes
+wide links = yes
+acl allow execute always = yes" >> $conf
+# in case the change is not detected automatically:
+smbcontrol --configfile=$conf $pid reload-config
+
+```
+
+This can be applied to the running server started by qemu only after the guest has connected to the network drive the first time. An alternative to this method is to add additional shares to the configuration file like so:
+
+```
+echo "[*myshare*]
+path=*another_path*
+read only=no
+guest ok=yes
+force user=*username*" >> $conf
+
+```
+
+This share will be available on the guest as `\\10.0.2.4\*myshare*`.
 
 ### Using filesystem passthrough and VirtFS
 
@@ -492,7 +525,7 @@ In Arch Linux, device files for raw partitions are, by default, owned by *root* 
 
 After doing so, you can attach the partition to a QEMU virtual machine as a virtual disk.
 
-However, things are a little more complicated if you want to have the *entire* virtual machine contained in a partition. In that case, there would be no disk image file to actually boot the virtual machine since you cannot install a bootloader to a partition that is itself formatted as a file system and not as a partitioned device with a MBR. Such a virtual machine can be booted either by specifying the [kernel](/index.php/Kernel "Kernel") and [initrd](/index.php/Initrd "Initrd") manually, or by simulating a disk with a MBR by using linear [RAID](/index.php/RAID "RAID").
+However, things are a little more complicated if you want to have the *entire* virtual machine contained in a partition. In that case, there would be no disk image file to actually boot the virtual machine since you cannot install a bootloader to a partition that is itself formatted as a file system and not as a partitioned device with an MBR. Such a virtual machine can be booted either by specifying the [kernel](/index.php/Kernel "Kernel") and [initrd](/index.php/Initrd "Initrd") manually, or by simulating a disk with an MBR by using the [Device-mapper](https://www.kernel.org/doc/Documentation/device-mapper/), linear [RAID](/index.php/RAID "RAID"), or a [Linux Network Block Device](https://www.kernel.org/doc/Documentation/blockdev/nbd.txt).
 
 #### By specifying kernel and initrd manually
 
@@ -516,13 +549,79 @@ When there are multiple [kernel parameters](/index.php/Kernel_parameters "Kernel
 
 ```
 
-#### Simulate virtual disk with MBR using linear RAID
+#### Simulate a virtual disk with MBR
 
-A more complicated way to have a virtual machine use a physical partition, while keeping that partition formatted as a file system and not just having the guest partition the partition as if it were a disk, is to simulate a MBR for it so that it can boot using a bootloader such as GRUB.
+A more complicated way to have a virtual machine use a physical partition, while keeping that partition formatted as a file system and not just having the guest partition the partition as if it were a disk, is to simulate an MBR for it so that it can boot using a bootloader such as GRUB.
 
-You can do this using software [RAID](/index.php/RAID "RAID") in linear mode (you need the `linear.ko` kernel driver) and a loopback device: the trick is to dynamically prepend a master boot record (MBR) to the real partition you wish to embed in a QEMU raw disk image.
+For the following, suppose you have a plain, unmounted `/dev/hda*N*` partition with some file system on it you wish to make part of a QEMU disk image. The trick is to dynamically prepend a master boot record (MBR) to the real partition you wish to embed in a QEMU raw disk image. More generally, the partition can be any part of a larger simulated disk, in particular a block device that simulates the original physical disk but only exposes `/dev/hda*N*` to the virtual machine.
 
-Suppose you have a plain, unmounted `/dev/hdaN` partition with some file system on it you wish to make part of a QEMU disk image. First, you create some small file to hold the MBR:
+A virtual disk of this type can be represented by a VMDK file that contains references to (a copy of) the MBR and the partition, but QEMU does not support this VMDK format. For instance, a virtual disk [created by](https://www.virtualbox.org/manual/ch09.html#rawdisk)
+
+```
+$ VBoxManage internalcommands createrawvmdk -filename */path/to/file.vmdk* -rawdisk /dev/hda
+
+```
+
+will be rejected by QEMU with the error message
+
+```
+Unsupported image type 'partitionedDevice'
+
+```
+
+Note that `VBoxManage` creates two files, `*file.vmdk*` and `*file-pt.vmdk*`, the latter being a copy of the MBR, to which the text file `file.vmdk` points. Read operations outside the target partition or the MBR would give zeros, while written data would be discarded.
+
+##### Device Mapper
+
+A method that is similar to the use of a VMDK descriptor file uses the device mapper to prepend a loop device attached to the MBR file to the target partition. In case we don't need our virtual disk to have the same size as the original, we first create a file to hold the MBR:
+
+```
+$ dd if=/dev/zero of=*/path/to/mbr* count=2048
+
+```
+
+Here, a 1 MB (2048 * 512 bytes) file is created in accordance with partition alignment policies used by modern disk partitioning tools. For compatibility with older partitioning software, 63 sectors instead of 2048 might be required. The MBR only needs a single 512 bytes block, the additional free space can be used for a BIOS boot partition and, in the case of a hybrid partitioning scheme, for a GUID Partition Table. Then, we attach a loop device to the MBR file:
+
+```
+# losetup --show -f */path/to/mbr*
+/dev/loop0
+
+```
+
+In this example, the resulting device is `/dev/loop0`. The device mapper is now used to join the MBR and the partition:
+
+```
+# echo "0 2048 linear /dev/loop0 0
+2048 `blockdev --getsz /dev/hda*N*` linear /dev/hda*N* 0" | dmsetup create qemu
+
+```
+
+The resulting `/dev/mapper/qemu` is what we will use as a QEMU raw disk image. Additional steps are required to create a partition table (see the section that describes the use of a linear RAID for an example) and boot loader code on the virtual disk (which will be stored in `*/path/to/mbr*`).
+
+The following setup is an example where the position of `/dev/hda*N*` on the virtual disk is to be the same as on the physical disk and the rest of the disk is hidden, except for the MBR, which is provided as a copy:
+
+```
+# dd if=/dev/hda count=1 of=*/path/to/mbr*
+# loop=`losetup --show -f */path/to/mbr*`
+# start=`blockdev --report /dev/hda*N* | tail -1 | awk '{print $5}'`
+# size=`blockdev --getsz /dev/hda*N*`
+# disksize=`blockdev --getsz /dev/hda`
+# echo "0 1 linear $loop 0
+1 $((start-1)) zero
+$start $size linear /dev/hda*N* 0
+$((start+size)) $((disksize-start-size)) zero" | dmsetup create qemu
+
+```
+
+The table provided as standard input to `dmsetup` has a similar format as the table in a VDMK descriptor file produced by `VBoxManage` and can alternatively be loaded from a file with `dmsetup create qemu --table *table_file*`. To the virtual machine, only `/dev/hda*N*` is accessible, while the rest of the hard disk reads as zeros and discards written data, except for the first sector. We can print the table for `/dev/mapper/qemu` with `dmsetup table qemu` (use `udevadm info -rq name /sys/dev/block/*major*:*minor*` to translate `*major*:*minor*` to the corresponding `/dev/*blockdevice*` name). Use `dmsetup remove qemu` and `losetup -d $loop` to delete the created devices.
+
+A situation where this example would be useful is an existing Windows XP installation in a multi-boot configuration and maybe a hybrid partitioning scheme (on the physical hardware, Windows XP could be the only operating system that uses the MBR partition table, while more modern operating systems installed on the same computer could use the GUID Partition Table). Windows XP supports hardware profiles, so that that the same installation can be used with different hardware configurations alternatingly (in this case bare metal vs. virtual) with Windows needing to install drivers for newly detected hardware only once for every profile. Note that in this example the boot loader code in the copied MBR needs to be updated to directly load Windows XP from `/dev/hda*N*` instead of trying to start the multi-boot capable boot loader (like GRUB) present in the original system. Alternatively, a copy of the boot partition containing the boot loader installation can be included in the virtual disk the same way as the MBR.
+
+##### Linear RAID
+
+You can also do this using software [RAID](/index.php/RAID "RAID") in linear mode (you need the `linear.ko` kernel driver) and a loopback device:
+
+First, you create some small file to hold the MBR:
 
 ```
 $ dd if=/dev/zero of=*/path/to/mbr* count=32
@@ -536,7 +635,7 @@ Here, a 16 KB (32 * 512 bytes) file is created. It is important not to make it t
 
 ```
 
-Let us assume the resulting device is `/dev/loop0`, because we would not already have been using other loopbacks. Next step is to create the "merged" MBR + `/dev/hdaN` disk image using software RAID:
+Let us assume the resulting device is `/dev/loop0`, because we would not already have been using other loopbacks. Next step is to create the "merged" MBR + `/dev/hda*N*` disk image using software RAID:
 
 ```
 # modprobe linear
@@ -568,9 +667,9 @@ $ qemu-system-x86_64 -hdc /dev/md0 *[...]*
 
 You can, of course, safely set any bootloader on this disk image using QEMU, provided the original `/dev/hda*N*` partition contains the necessary tools.
 
-##### Alternative: use nbd-server
+##### Network Block Device
 
-Instead of linear RAID, you may use `nbd-server` (from the [nbd](https://www.archlinux.org/packages/?name=nbd) package) to create an MBR wrapper for QEMU.
+Instead of the methods decribed above, you may use `nbd-server` (from the [nbd](https://www.archlinux.org/packages/?name=nbd) package) to create an MBR wrapper for QEMU.
 
 Assuming you have already set up your MBR wrapper file like above, rename it to `wrapper.img.0`. Then create a symbolic link named `wrapper.img.1` in the same directory, pointing to your partition. Then put the following script in the same directory:
 

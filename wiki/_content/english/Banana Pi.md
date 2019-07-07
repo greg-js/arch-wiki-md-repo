@@ -1,10 +1,6 @@
-From the [manufacturer](http://www.lemaker.org/):
+The Banana Pi was originally an open-source single-board computer capable of running multiple forms of Linux, Android and even prebuilt Raspberry Pi images. It is now the name of a small series of boards made available by the Banana Pi open source project. More info about their project and product line is available at [their website](http://www.banana-pi.org/).
 
-	Banana Pi is an open-source single-board computer. It can run Android 4.4, Ubuntu, Debian, Rasberry Pi Image, as well as the Cubieboard Image. It uses the AllWinner A20 SoC, and has 1GB DDR3 SDRAM
-
-BananaPi is a minimalist computer built for the [ARMv7-A architecture](https://en.wikipedia.org/wiki/ARMv7-A "wikipedia:ARMv7-A"). [More information about this project](http://www.banana-pi.org/) and [technical specification](http://www.bananapi.org/p/product.html).
-
-With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Linux kernel. So for any hardware or kernel related tasks, you should [take a look at the Sunxi Wiki](https://linux-sunxi.org/Main_Page) as well.
+The Banana Pi M1, M2 (most variants included), and M3 are all minimalist computers built for the [ARMv7-A architecture](https://en.wikipedia.org/wiki/ARMv7-A "wikipedia:ARMv7-A"). With their [Allwinner](https://en.wikipedia.org/wiki/Allwinner_Technology "wikipedia:Allwinner Technology") SoCs, these Banana Pi boards usually run the well documented Sunxi Linux kernel, so for any hardware or kernel related tasks you should [take a look at the Sunxi Wiki.](https://linux-sunxi.org/Main_Page)
 
 **Note:** The device is not officially supported by the ALARM project, i.e. please refrain from submitting patches, feature requests or bug reports for it.
 
@@ -16,8 +12,8 @@ With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Li
 
 *   [1 Article preface](#Article_preface)
 *   [2 Installation](#Installation)
-    *   [2.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
-    *   [2.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
+    *   [2.1 Install base system to a SD card](#Install_base_system_to_a_SD_card)
+    *   [2.2 Compile and copy U-Boot boot loader](#Compile_and_copy_U-Boot_boot_loader)
     *   [2.3 Login / SSH](#Login_/_SSH)
 *   [3 X.org driver](#X.org_driver)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -27,28 +23,33 @@ With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Li
 
 ## Article preface
 
-This article is strongly based on [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
+This article is strongly based on the [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi "wikipedia:Raspberry Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
 ## Installation
 
-This method will install unmodified ArchLinuxARM armv7 basesystem to your Banana Pi, meaning you'll have the latest mainline kernel running.
+This method will install unmodified ArchLinuxARM armv7 base system to your Banana Pi, meaning you'll have the latest mainline kernel from the [ALARM Project](https://archlinuxarm.org/) even thought the Banana Pi series is not officially supported.
 
-### Install basesystem to a SD card
+### Install base system to a SD card
 
-Zero the beginning of the SD card:
-
-```
-# dd if=/dev/zero of=/dev/sdX bs=1M count=8
+Zero the beginning of the SD card replacing `*sdX*` with the drive's block device:
 
 ```
+# dd if=/dev/zero of=/dev/*sdX* bs=1M count=8
 
-Use [fdisk](/index.php/Fdisk "Fdisk") to partition the SD card, and [format](/index.php/File_systems "File systems") it with `mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1`.
+```
 
-Mount the ext4 filesystem, replacing `sda1` with the formatted partition:
+Use [fdisk](/index.php/Fdisk "Fdisk") to partition the SD card with a [MBR](/index.php/MBR "MBR") partition table, and [format](/index.php/File_systems "File systems") the root partition, replacing `*sdX1*` with the root partition:
+
+```
+# mkfs.ext4 -O ^metadata_csum,^64bit /dev/*sdX1*
+
+```
+
+Mount the [Ext4](/index.php/Ext4 "Ext4") file system:
 
 ```
 # mkdir mnt
-# mount /dev/*sdX1* /mnt
+# mount /dev/*sdX1* mnt
 
 ```
 
@@ -59,10 +60,10 @@ Download ArchLinuxARM with [wget](https://www.archlinux.org/packages/?name=wget)
 
 ```
 
-Extract the root filesystem:
+Extract the root file system:
 
 ```
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C /mnt/
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C mnt/
 
 ```
 
@@ -91,22 +92,37 @@ if load ${devtype} ${devnum}:${bootpart} 0x48000000 /boot/uImage; then
 fi
 ```
 
-Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools)
+Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools).
 
 ```
-# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "BananPI boot script" -d boot.cmd /mnt/boot/boot.scr
-# umount /mnt
+# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "BananPI boot script" -d boot.cmd mnt/boot/boot.scr
+# umount mnt
 
 ```
 
-### Compile and copy U-Boot bootloader
+### Compile and copy U-Boot boot loader
 
-The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. [swig](https://www.archlinux.org/packages/?name=swig) seems also to be needed. Then clone the u-boot source code and compile a Banana Pi image:
+The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git), [swig](https://www.archlinux.org/packages/?name=swig) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. Then clone the u-boot source code and compile an image, making sure to replace *defconfig* with the config of your specific board:
+
+<caption>Config List</caption>
+| Board | Defconfig |
+| M1 | `Bananapi_defconfig` |
+| M1+ | `bananapi_m1_plus_defconfig` |
+| M2 | `Sinovoip_BPI_M2_defconfig` |
+| M2 Berry | `bananapi_m2_berry_defconfig` |
+| M2PLUS-H3 | `bananapi_m2_plus_h3_defconfig` |
+| M2PLUS-H5 | `bananapi_m2_plus_h5_defconfig` |
+| M2 Ultra | `Bananapi_M2_Ultra_defconfig` |
+| M2 Magic | `Bananapi_m2m_defconfig` |
+| M2 Zero | `bananapi_m2_zero_defconfig` |
+| M3 | `Sinovoip_BPI_M3_defconfig` |
+
+**Note:** The M2 Ultra and Magic boards have device tree files available. They, and other defconfigs, can be found at the [U-Boot GitLab](https://gitlab.denx.de/u-boot/u-boot/).
 
 ```
 $ git clone [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
 $ cd u-boot
-$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- Bananapi_defconfig 
+$ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- *defconfig*
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
 
 ```
@@ -142,7 +158,7 @@ $ source my_uboot/bin/activate
 
 Then compile again as above.
 
-If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.bin. Now dd the image to your sdcard, where /dev/sdX is your sdcard.
+If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.bin. Now dd the image to your SD Card, where ``/dev/sdX`` is your SD Card.
 
 ```
 # dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
@@ -198,5 +214,6 @@ If for some reason the display still keeps turning off, e.g. when restarting you
 
 ## See also
 
-*   [Manufacturer device FAQ](http://wiki.lemaker.org/BananaPro/Pi:FAQs)
-*   [Jelly's blog on installing ALARM](http://vdwaa.nl/archlinux/arm/bananapi/banana-pi-archlinux-arm/)
+*   [Banana-Pi Forum](http://forum.banana-pi.org/)
+*   [Banana-Pi Wiki](https://wiki.banana-pi.org/Main_Page)
+*   [Banana-Pi GitBook](https://legacy.gitbook.com/@bananapi/)

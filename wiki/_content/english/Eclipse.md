@@ -22,7 +22,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.1 Ctrl+X closes Eclipse](#Ctrl+X_closes_Eclipse)
     *   [4.2 Dark theme](#Dark_theme)
     *   [4.3 Change Default Window Title Font Size](#Change_Default_Window_Title_Font_Size)
-    *   [4.4 Disable GTK+ 3](#Disable_GTK+_3)
+    *   [4.4 Disable GTK 3](#Disable_GTK_3)
     *   [4.5 Freshplayerplugin](#Freshplayerplugin)
     *   [4.6 Eclipse 4.6 may not open the marketplace properly](#Eclipse_4.6_may_not_open_the_marketplace_properly)
     *   [4.7 Show in System Explorer does not work](#Show_in_System_Explorer_does_not_work)
@@ -131,7 +131,7 @@ If you have constant Internet access on your machine, you can use the on-line do
 
 1.  Go to *Window > Preferences*, then go to *Java > Installed JREs*.
 2.  There should be one named "java" with the type "Standard VM". Select this and click *Edit*.
-3.  Select the `/opt/java/jre/lib/rt.jar` item under "JRE system libraries:", then click *Javadoc Location...*.
+3.  Select the `/usr/lib/jvm/java-8-openjdka/jre/lib/rt.jar` item under "JRE system libraries:", then click *Javadoc Location...*.
 4.  Enter "[https://docs.oracle.com/javase/8/docs/api/](https://docs.oracle.com/javase/8/docs/api/)" in the "Javadoc location path:" text field.
 
 ### Offline version
@@ -170,9 +170,9 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ```
 
-### Disable GTK+ 3
+### Disable GTK 3
 
-When the SWT GTK+ 3 UI is buggy and sometimes unusable, You can try to disable the use of GTK+ 3 with the SWT_GTK3=0 [environment variable](/index.php/Environment_variable "Environment variable") when you start eclipse:
+When the SWT GTK 3 UI is buggy and sometimes unusable, You can try to disable the use of GTK 3 with the SWT_GTK3=0 [environment variable](/index.php/Environment_variable "Environment variable") when you start eclipse:
 
 ```
 SWT_GTK3=0 eclipse

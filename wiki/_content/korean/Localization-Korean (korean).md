@@ -114,7 +114,7 @@ scim -d
 
 ### fcitx-hangul
 
-[fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul)과 자신이 사용하는 GUI 툴킷에 알맞은 fcitx 프론트엔드 패키지를 [설치](/index.php/Install "Install")합니다. [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4), [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5) 등에서 필요한 패키지를 선택하여 설치하십시오..
+[fcitx-hangul](https://www.archlinux.org/packages/?name=fcitx-hangul)과 자신이 사용하는 GUI 툴킷에 알맞은 fcitx 프론트엔드 패키지를 [설치](/index.php/Install "Install")합니다. [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://aur.archlinux.org/packages/fcitx-qt4/), [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5) 등에서 필요한 패키지를 선택하여 설치하십시오..
 
 KDE 사용자라면 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx)를 설치하십시오. KDE 시스템 설정 안에서 fcitx를 설정할 수 있습니다.
 

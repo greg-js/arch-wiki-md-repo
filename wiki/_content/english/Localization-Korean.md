@@ -79,7 +79,7 @@ scim -d
 
 ```
 
-**Note:** The above environment variables differ slightly from the ones recommended in the [scim](/index.php/Scim "Scim") article. We are adding `export GTK_IM_MODULE="xim"` instead of `GTK_IM_MODULE=”scim"`. This allows us to input Korean in apps such as Chrome and Chromium (though with issues discussed above), and to use backspace properly in GTK+3 applications such as gedit.
+**Note:** The above environment variables differ slightly from the ones recommended in the [scim](/index.php/Scim "Scim") article. We are adding `export GTK_IM_MODULE="xim"` instead of `GTK_IM_MODULE=”scim"`. This allows us to input Korean in apps such as Chrome and Chromium (though with issues discussed above), and to use backspace properly in GTK3 applications such as gedit.
 
 #### uim-byeoru
 

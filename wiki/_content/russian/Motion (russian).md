@@ -6,7 +6,7 @@ Related articles
 
 ## Установка
 
-Установите пакет [motion](https://aur.archlinux.org/packages/motion/) из АУР.
+Установите пакет [motion](https://www.archlinux.org/packages/?name=motion) из АУР.
 
 ## Настройка
 

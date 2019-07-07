@@ -23,14 +23,12 @@
     *   [3.1 PAM with virtual users](#PAM_with_virtual_users)
         *   [3.1.1 Adding private folders for the virtual users](#Adding_private_folders_for_the_virtual_users)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 vsftpd: Error 421 Service not available, remote server has closed connection](#vsftpd:_Error_421_Service_not_available,_remote_server_has_closed_connection)
-    *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot())
-    *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
-    *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
-    *   [4.5 Passive mode replies with the local IP address to a remote connection](#Passive_mode_replies_with_the_local_IP_address_to_a_remote_connection)
-    *   [4.6 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
-    *   [4.7 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
-    *   [4.8 vsftpd: failure to log in with correct password (because of PAM)](#vsftpd:_failure_to_log_in_with_correct_password_(because_of_PAM))
+    *   [4.1 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot())
+    *   [4.2 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
+    *   [4.3 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
+    *   [4.4 Passive mode replies with the local IP address to a remote connection](#Passive_mode_replies_with_the_local_IP_address_to_a_remote_connection)
+    *   [4.5 ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6](#ipv6_only_fails_with:_500_OOPS:_run_two_copies_of_vsftpd_for_IPv4_and_IPv6)
+    *   [4.6 vsftpd connections fail on a machine using nis with: yp_bind_client_create_v2: RPC: Unable to send](#vsftpd_connections_fail_on_a_machine_using_nis_with:_yp_bind_client_create_v2:_RPC:_Unable_to_send)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -413,17 +411,6 @@ user_sub_token=$USER
 
 ## Troubleshooting
 
-### vsftpd: Error 421 Service not available, remote server has closed connection
-
-Disabling [seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") may be necessary to prevent issues with listing directory contents, as reported in [FS#50309](https://bugs.archlinux.org/task/50309). Try adding the following line to `/etc/vsftpd.conf`:
-
-```
-seccomp_sandbox=NO
-
-```
-
-The issue was fixed according to [RedHat Bugzilla#845980](https://bugzilla.redhat.com/show_bug.cgi?id=845980), but is still reported to cause issues with 4.18 kernels.
-
 ### vsftpd: refusing to run with writable root inside chroot()
 
 As of vsftpd 2.3.5, the chroot directory that users are locked to must not be writable. This is in order to prevent a security vulnerabilty.
@@ -535,30 +522,6 @@ add this undocumented line to your `/etc/vsftpd.conf`
 
 ```
 isolate_network=NO
-
-```
-
-### vsftpd: failure to log in with correct password (because of PAM)
-
-PAM definition files were changed at the beginning of 2019 to be more strict. To allow local users to log in again, a PAM configuration file for vsftpd needs to be created.
-
-Create a file `/etc/pam.d/vsftpd` with the following contents:
-
-```
-#%PAM-1.0
-
-account    required  pam_listfile.so onerr=fail item=user sense=allow file=/etc/vsftpd.user_list
-account    required  pam_unix.so
-auth       required  pam_unix.so
-
-```
-
-This definition allows logging in only for those users that are listed in the `/etc/vsftpd.user_list` file (one username per line), after which they go through the normal password authentication.
-
-In addition, the service name that vsftpd uses must be changed from the default to `vsftpd` by modifying the configuration file `/etc/vsftpd.conf`:
-
-```
-pam_service_name=vsftpd
 
 ```
 

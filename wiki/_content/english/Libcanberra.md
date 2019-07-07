@@ -1,6 +1,6 @@
 Related articles
 
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK "GTK")
 *   [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
 
 **Libcanberra** is a simple abstract interface for playing event sounds. It implements the [XDG Sound Theme and Naming Specifications](https://freedesktop.org/wiki/Specifications/sound-theme-spec/) for generating event sounds on free desktops, such as GNOME. Further description [here](http://0pointer.de/lennart/projects/libcanberra/)
@@ -28,7 +28,7 @@ Related articles
 
 ## Installation
 
-Libcanberra can be installed with the package [libcanberra](https://www.archlinux.org/packages/?name=libcanberra), available in the [Official repositories](/index.php/Official_repositories "Official repositories"). It contains the library and a GTK+ module.
+Libcanberra can be installed with the package [libcanberra](https://www.archlinux.org/packages/?name=libcanberra), available in the [Official repositories](/index.php/Official_repositories "Official repositories"). It contains the library and a GTK module.
 
 You have to choose a backend to play sounds:
 
@@ -43,7 +43,7 @@ Also, you have to install a sound theme in order to hear any event sound:
 
 ## Configuration
 
-By default, the GTK+ module is loaded automatically, when a GTK+ application launched. You can overwrite default settings in user's GtkSettings file:
+By default, the GTK module is loaded automatically, when a GTK application launched. You can overwrite default settings in user's GtkSettings file:
 
  `$HOME/.gtkrc-2.0 and $XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
 ```
