@@ -2,7 +2,7 @@ This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch
 
 For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki "ArchWiki") articles or the various programs' [man pages](/index.php/Man_page "Man page"), both linked from this guide. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
-Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
+Arch Linux should run on any [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64")-compatible machine with a minimum of 512 MiB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MiB of disk space. As the installation process needs to retrieve packages from a remote repository, this guide assumes a working internet connection is available.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -42,7 +42,7 @@ The installation media and their [GnuPG](/index.php/GnuPG "GnuPG") signatures ca
 
 ### Verify signature
 
-It is recommended to verify the image signature before use, especially when downloading from an *HTTP mirror*, where downloads are generally prone to be intercepted to [serve malicious images](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
+It is recommended to verify the image signature before use, especially when downloading from an *HTTP mirror*, where downloads are generally prone to be intercepted to [serve malicious images](https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html).
 
 On a system with [GnuPG](/index.php/GnuPG "GnuPG") installed, do this by downloading the *PGP signature* (under *Checksums*) to the ISO directory, and [verifying](/index.php/GnuPG#Verify_a_signature "GnuPG") it with:
 
@@ -61,13 +61,13 @@ $ pacman-key -v archlinux-*version*-x86_64.iso.sig
 **Note:**
 
 *   The signature itself could be manipulated if it is downloaded from a mirror site, instead of from [archlinux.org](https://archlinux.org/download/) as above. In this case, ensure that the public key, which is used to decode the signature, is signed by another, trustworthy key. The `gpg` command will output the fingerprint of the public key.
-*   Another method to verify the authenticity of the signature is to ensure that the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed the ISO-file. See [Wikipedia:Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") for more information on the public-key process to authenticate keys.
+*   Another method to verify the authenticity of the signature is to ensure that the public key's fingerprint is identical to the key fingerprint of the [Arch Linux developer](https://www.archlinux.org/people/developers/) who signed the ISO-file. See [Wikipedia:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") for more information on the public-key process to authenticate keys.
 
 ### Boot the live environment
 
 The live environment can be booted from a [USB flash drive](/index.php/USB_flash_installation_media "USB flash installation media"), an [optical disc](/index.php/Optical_disc_drive#Burning "Optical disc drive") or a network with [PXE](/index.php/PXE "PXE"). For alternative means of installation, see [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
 
-*   Pointing the current boot device to a drive containing the Arch installation media is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "w:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
+*   Pointing the current boot device to a drive containing the Arch installation media is typically achieved by pressing a key during the [POST](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test") phase, as indicated on the splash screen. Refer to your motherboard's manual for details.
 *   When the Arch menu appears, select *Boot Arch Linux* and press `Enter` to enter the installation environment.
 *   See [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) for a list of [boot parameters](/index.php/Kernel_parameters#Configuration "Kernel parameters"), and [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) for a list of included packages.
 *   You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
@@ -115,7 +115,7 @@ To set up a network connection, go through the following steps:
 
     **Note:** The installation image enables [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot.
 
-4.  The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping "w:ping"): `# ping archlinux.org` 
+4.  The connection may be verified with [ping](https://en.wikipedia.org/wiki/ping "wikipedia:ping"): `# ping archlinux.org` 
 
 ### Update the system clock
 
@@ -149,12 +149,12 @@ If you want to create any stacked block devices for [LVM](/index.php/LVM "LVM"),
 #### Example layouts
 
 | BIOS with [MBR](/index.php/MBR "MBR") |
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Suggested size |
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | Suggested size |
 | `/mnt` | `/dev/sd*X*1` | Linux | Remainder of the device |
 | [SWAP] | `/dev/sd*X*2` | Linux swap | More than 512 MiB |
 | UEFI with [GPT](/index.php/GPT "GPT") |
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Suggested size |
-| `/mnt/boot` or `/mnt/efi` | `/dev/sd*X*1` | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 256–512 MiB |
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | Suggested size |
+| `/mnt/boot` or `/mnt/efi` | `/dev/sd*X*1` | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
 | `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Remainder of the device |
 | [SWAP] | `/dev/sd*X*3` | Linux swap | More than 512 MiB |
 
@@ -329,7 +329,7 @@ See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Ar
 
 ## Reboot
 
-Exit the chroot environment by typing `exit` or pressing `Ctrl+D`.
+Exit the chroot environment by typing `exit` or pressing `Ctrl+d`.
 
 Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 

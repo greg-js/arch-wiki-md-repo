@@ -87,7 +87,24 @@ Devices are now automatically mounted when they are accessed, they will remain m
 
 ### Removable media
 
-Edit `/etc/autofs/auto.misc` to add, remove or edit miscellaneous devices.
+Removable devices are assigned block device locations according to the next available spot, e.g. if `/dev/sd{a,b,c}` are already occupied, the next removable media will be given block `/dev/sdd`. Instead of assigning a mount point based on an unreliable block device path, a more robust approach is to use the UUID or PARTUUID of the removable media as the location in the map file.
+
+For example, to mount a specific USB drive to the path `/mnt/black`, configure the template file and map file:
+
+ `/etc/autofs/auto.master` 
+```
+# master template file
+/mnt     /etc/autofs/auto.mnt   # [options here]
+```
+
+Use `blkid` to find the UUID of the partition to mount, then generate the map file:
+
+```
+ # _ID=$( blkid --output value --match-tag PARTUUID /dev/sd*XY* )
+ # printf "%s %s
+" "black -fstype=auto :PARTUUID=" "${_ID}" >/etc/autofs/auto.mnt
+
+```
 
 ### NFS network mounts
 

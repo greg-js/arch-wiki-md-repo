@@ -82,12 +82,22 @@ application\/vnd.openxmlformats-officedocument.wordprocessingml.document;"
 
 WPS 默认的 UI 为 Qt，事实上其捆绑的 Qt 为 4.7.4，从而因为版本不符，无法正常加载 qtcurve 之类的主题。但我们可以改为 GTK+，直接加上参数 `-style gtk+` 即可。
 
-可以修改{{Ic|/usr/share/applications/wps-office-{wps,wpp,et}.desktop}}一劳永逸设定：
+可以修改 /usr/bin/ 目录下的 et、wpp、wps 文件，删除（如果有的话）：
 
 ```
-Exec=/usr/bin/{wps,wpp,et} **-style gtk+** %f
+gOpt=
 
 ```
+
+然后，添加：
+
+```
+gOpt="-style=gtk+"
+export GTK2_RC_FILES=/usr/share/themes/Breeze/gtk-2.0/gtkrc
+
+```
+
+由于每次升级可能导致文件修改遗失，可以考虑将 et、wpp、wps 文件复制到其他目录（例如：`~/.local/bin/`），并将其添加到 [Environment_variables](/index.php/Environment_variables "Environment variables")
 
 ## 疑难解答
 

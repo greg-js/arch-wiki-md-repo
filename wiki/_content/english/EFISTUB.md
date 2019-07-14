@@ -23,7 +23,9 @@ With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly
         *   [2.3.3 UEFI Shell](#UEFI_Shell)
         *   [2.3.4 More tools](#More_tools)
         *   [2.3.5 Using a startup.nsh script](#Using_a_startup.nsh_script)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Cannot create a new boot entry with efibootmgr](#Cannot_create_a_new_boot_entry_with_efibootmgr)
+*   [4 See also](#See_also)
 
 ## Preparing for EFISTUB
 
@@ -66,7 +68,7 @@ UEFI is designed to remove the need for an intermediate bootloader such as [GRUB
 
 #### efibootmgr
 
-The command looks like
+To create a boot entry which loads the kernel using *efibootmgr*, run a command similar to this:
 
 ```
 # efibootmgr --disk */dev/sdX* --part *Y* --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw initrd=\initramfs-linux.img' --verbose
@@ -77,22 +79,12 @@ Where `*/dev/sdX*` and `*Y*` are the drive and partition number where the ESP is
 
 Note that the `-u`/`--unicode` argument in quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters (e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode")).
 
-**Tip:** Save the command for creating your boot entry in a shell script somewhere, which makes it easier to modify (when changing kernel parameters, for example).
-
 After adding the boot entry, you can verify the entry was added properly with:
 
 ```
 # efibootmgr --verbose
 
 ```
-
-**Note:** Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
-```
-# rm /sys/firmware/efi/efivars/dump-*
-
-```
-
-Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrade "Downgrade") your efibootmgr install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641), in particular the [closing comment](https://bugs.archlinux.org/task/34641#comment111365), for more information.
 
 To set the boot order, run:
 
@@ -103,7 +95,9 @@ To set the boot order, run:
 
 where *XXXX* is the number that appears in the output of `efibootmgr` command against each entry.
 
-The forum post titled [[Solved]The linux kernel with build in bootloader?](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040%7C) might also be of interest.
+**Tip:** It is convenient to save the command to create the boot entry in a shell script, which makes it easier to modify, for example when changing kernel parameters.
+
+**Tip:** The forum post titled [The linux kernel with build in bootloader?](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) might also be of interest.
 
 #### efibootmgr with .efi file
 
@@ -202,6 +196,19 @@ vmlinuz-linux rw root=/dev/sdX [rootfs=myfs] [rootflags=myrootflags] \
 ```
 
 This method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort. **The script must be a single long line.** Sections in brackets are optional and given only as a guide. Shell style linebreaks are for visual clarification only. FAT filesystems use the backslash as path separator and in this case, the backslash declares the initramfs is located in the root of the ESP partition. Only Intel microcode is loaded in the booting parameters line; AMD microcode is read from disk later during the boot process; this is done automatically by the kernel.
+
+## Troubleshooting
+
+### Cannot create a new boot entry with efibootmgr
+
+Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
+
+```
+# rm /sys/firmware/efi/efivars/dump-*
+
+```
+
+Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrade "Downgrade") your efibootmgr install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641), in particular the [closing comment](https://bugs.archlinux.org/task/34641#comment111365), for more information.
 
 ## See also
 

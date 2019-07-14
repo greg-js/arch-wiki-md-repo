@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Language checking](/index.php/Language_checking "Language checking"). Data da última tradução: 2018-12-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Language_checking&diff=0&oldid=559295) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Language checking](/index.php/Language_checking "Language checking"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Language_checking&diff=0&oldid=576590) na versão em inglês.
 
 Esse artigo cobre softwares corretores/[verificadores ortográficos](https://en.wikipedia.org/wiki/pt:Corretor_ortogr%C3%A1fico "wikipedia:pt:Corretor ortográfico") e [verificadores gramaticais](https://en.wikipedia.org/wiki/pt:Corretor_gramatical "wikipedia:pt:Corretor gramatical").
 
@@ -47,7 +47,7 @@ Enchant está disponível como o pacote [enchant](https://www.archlinux.org/pack
 
 Enchant é usado por vários aplicativos pelas bibliotecas [GTK](/index.php/GTK "GTK") a seguir:
 
-*   **gspell** — API flexível para implementar verificação ortográfica em aplicativos GTK+.
+*   **gspell** — API flexível para implementar verificação ortográfica em aplicativos GTK.
 
 	[https://wiki.gnome.org/Projects/gspell](https://wiki.gnome.org/Projects/gspell) || [gspell](https://www.archlinux.org/packages/?name=gspell)
 

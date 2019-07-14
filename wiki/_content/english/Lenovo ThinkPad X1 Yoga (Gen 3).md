@@ -65,7 +65,7 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
 
 ### Thunderbolt BIOS assist potential brick issue
 
-Several linux users reported their systems were bricked after enabling "Thunderbolt BIOS assist" in the UEFI menu. Lenovo has released BIOS version 1.27 which prevents this issue. See this [thread](https://forums.lenovo.com/t5/ThinkPad-X-Series-Laptops/Thinkpad-X1-Yoga-3rd-Gen-Stuck-at-Black-Screen-After-Enabling/td-p/4106952%7Cthis) on the Lenovo forums for details.
+Several linux users reported their systems were bricked after enabling "Thunderbolt BIOS assist" in the UEFI menu. Lenovo has released BIOS version 1.27 which prevents this issue. See this [thread](https://forums.lenovo.com/t5/ThinkPad-X-Series-Laptops/Thinkpad-X1-Yoga-3rd-Gen-Stuck-at-Black-Screen-After-Enabling/td-p/4106952) on the Lenovo forums for details.
 
 ### EC Fan issues under Linux
 
@@ -139,7 +139,7 @@ The manual method can be used in any distribution of Linux. Below is a modified 
 
 1\. Reboot, enter BIOS/UEFI. Go to Config - Thunderbolt (TM) 3 - set Thunderbolt BIOS Assist Mode to Enabled. Set also Security - Secure Boot to Disabled.
 
-2\. Install iasl (Intel's compiler/decompiler for ACPI machine language) and cpio iasl in Ubuntu and possibly other distributions probably do not have the latest release for it to fully work. To make sure you have the latest version, download the [source code](https://acpica.org/downloads/) and make install iasl. cpio can be installed normally with your distribution's package manager
+2\. Install iasl (Intel's compiler/decompiler for ACPI machine language) and cpio. iasl in Ubuntu and possibly other distributions probably do not have the latest release for it to fully work. To make sure you have the latest version, download the [source code](https://acpica.org/downloads/) and make install iasl. cpio can be installed normally with your distribution's package manager
 
 3\. Get a dump of ACPI DSDT table: `cat /sys/firmware/acpi/tables/DSDT > dsdt.aml`
 

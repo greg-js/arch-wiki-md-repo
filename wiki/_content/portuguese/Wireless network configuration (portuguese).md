@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=572376) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=576668) na versão em inglês.
 
 Artigos relacionados
 
@@ -117,14 +117,16 @@ Para verificar se o driver da placa foi carregado, verifique a saída do comando
 
 **Nota:** Se a placa for um dispositivo USB, a execução `dmesg | grep usbcore` deve retornar algo como `usbcore: registered new interface driver rtl8187` como saída.
 
-Verifique também a saída do comando `ip link` para ver se uma interface sem fio ([geralmente](/index.php/Configura%C3%A7%C3%A3o_de_rede#Interfaces_de_rede "Configuração de rede") começa com a letra "w", por exemplo, `wlp2s1`) foi criada. Em seguida, ative a interface com `ip link set *interface* up`. Por exemplo, supondo que a interface seja `wlan0`:
+Verifique também a saída do comando `ip link` para ver se uma interface sem fio foi criada; geralmente, a nomenclatura das [interfaces de rede](/index.php/Interfaces_de_rede "Interfaces de rede") sem fio começa com a letra "w", por ex. `wlan0` ou `wlp2s0`. Então, ative a interface com:
 
 ```
-# ip link set wlan0 up
+# ip link set *interface* up
 
 ```
 
-Se você receber esta mensagem de erro: `SIOCSIFFLAGS: No such file or directory`, isso certamente significa que seu chipset sem fio requer um firmware para funcionar.
+Por exemplo, considerando que a interface seja `wlan0`, este seria `ip link set wlan0 up`.
+
+Se você receber a mensagem de erro `SIOCSIFFLAGS: No such file or directory`, isso certamente significa que seu chipset sem fio requer um firmware para funcionar.
 
 Verifique as mensagens de kernel para o firmware sendo carregado:
 

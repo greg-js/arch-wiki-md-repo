@@ -151,10 +151,11 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 	页面已与英文页面同步
 
 | 页面 | 翻译状态 | 维护者 | 备注 |
-| [AMD Catalyst (简体中文)](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AMD Catalyst (简体中文)") | 过期 | Shibao Zhao | 无 |
 | [acpid (简体中文)](/index.php/Acpid_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Acpid (简体中文)") | 过期 | Cael |
 | [Advanced Linux Sound Architecture (简体中文)](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Advanced Linux Sound Architecture (简体中文)") | 翻译中 | ihonliu | 无 |
 | [Arch based distributions (active) (简体中文)](/index.php/Arch_based_distributions_(active)_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch based distributions (active) (简体中文)") | 完成 | Joshua | 勘误中 |
+| [Amateur radio (简体中文)](/index.php/Amateur_radio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Amateur radio (简体中文)") | 翻译中 | liu-shuyuan |
+| [AMD Catalyst (简体中文)](/index.php/AMD_Catalyst_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AMD Catalyst (简体中文)") | 过期 | Shibao Zhao | 无 |
 | [ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)") | 完成 | skysailing | 无 |
 | [AUR helpers (简体中文)](/index.php/AUR_helpers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helpers (简体中文)") | 完成 | Kurobac | 部分用词可能需要修改 |
 | [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") | 进行中 | Cael | 无 |
@@ -173,7 +174,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Dynamic Kernel Module Support (简体中文)](/index.php/Dynamic_Kernel_Module_Support_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dynamic Kernel Module Support (简体中文)") | 完成 | Mithrandir | 完善中 |
 | [Emacs (简体中文)](/index.php/Emacs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Emacs (简体中文)") | 翻译中 | Jaurung yuanhang | 未完成 |
 | [File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)") | 翻译中 | _spaike97 | 无 |
-| [Fish (简体中文)](/index.php/Fish_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fish (简体中文)") | 完成 | Liu-shuyuan |
+| [Fish (简体中文)](/index.php/Fish_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fish (简体中文)") | 完成 | liu-shuyuan |
 | [Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)") | 翻译中 | Jaurung | 完善中 |
 | [Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") | 翻译中 | qqbzg | 无 |
 | [GDM (简体中文)](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") | 翻译中 | Junjie Yuan | 绝大多数内容未翻译，重新进行翻译 |

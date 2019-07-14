@@ -40,9 +40,12 @@
     *   [11.2 VirtualBox configuration](#VirtualBox_configuration)
         *   [11.2.1 Create virtual disk image files](#Create_virtual_disk_image_files)
         *   [11.2.2 Attach virtual disk images to the VM](#Attach_virtual_disk_images_to_the_VM)
+            *   [11.2.2.1 Higher-Security File System Permissions Configuration](#Higher-Security_File_System_Permissions_Configuration)
+            *   [11.2.2.2 Lower-Security File System Permissions Configuration](#Lower-Security_File_System_Permissions_Configuration)
     *   [11.3 Set up a separate ESP in VirtualBox](#Set_up_a_separate_ESP_in_VirtualBox)
     *   [11.4 Configure the virtual UEFI firmware to use the Windows bootloader](#Configure_the_virtual_UEFI_firmware_to_use_the_Windows_bootloader)
-*   [12 Set guest starting resolution](#Set_guest_starting_resolution)
+*   [12 Run an entire physical disk in Virtualbox](#Run_an_entire_physical_disk_in_Virtualbox)
+*   [13 Set guest starting resolution](#Set_guest_starting_resolution)
 
 ## Import/export VirtualBox virtual machines from/to other hypervisors
 
@@ -575,7 +578,7 @@ Configure the VM with the following settings:
 
 #### Create virtual disk image files
 
-To access the Windows partitions, create a [raw VMDK file](https://www.virtualbox.org/manual/ch09.html#rawdisk) pointing to the relevant Windows partitions and set the ownership:
+To access the Windows partitions, create a [raw VMDK file](https://www.virtualbox.org/manual/ch09.html#rawdisk-access-disk-partitions) pointing to the relevant Windows partitions and set the ownership:
 
 ```
 # vboxmanage internalcommands createrawvmdk -filename */path/to/vm/folder/windows.vmdk* -rawdisk /dev/*sdx* -partitions *res*,*data* -relative
@@ -599,9 +602,70 @@ In order to boot the virtual machine in UEFI mode, a dedicated virtual disk for 
 
 #### Attach virtual disk images to the VM
 
+##### Higher-Security File System Permissions Configuration
+
+Add your user in virtualbox group:
+
+```
+# usermod -aG vboxusers user
+
+```
+
+Determine the UUID of the targeted disk.
+
+```
+# udevadm info /dev/sdb | grep UUID
+
+```
+
+Example of output:
+
+```
+E: ID_PART_TABLE_UUID=01234567-89ab-cdef-0123-456789abcde
+
+```
+
+Create an udev rule with the found UUID:
+
+ `/etc/udev/rules.d/99-vbox.rules` 
+```
+# Rules to give VirtualBox users raw access to Windows disk
+
+# sdb
+ENV{ID_PART_ENTRY_TYPE}=="1234567-89ab-cdef-0123-456789abcde", GROUP="vboxusers"
+```
+
+##### Lower-Security File System Permissions Configuration
+
+To be able to add the vmdk file in Virtualbox Virtual Media Manager without running VirtualBox as root, the user need to be in `vboxusers` and `disk` groups.
+
+```
+# usermod -aG disk,vboxusers user
+
+```
+
+Once the disk is added to the Virtual Media Manager, it is possible to attach it to a virtual machine through the GUI.
+
+**Warning:** Be aware of the potential security implications of this, as you will probably be giving your user account full read-write access to some or all storage devices.
+
 ### Set up a separate ESP in VirtualBox
 
 ### Configure the virtual UEFI firmware to use the Windows bootloader
+
+## Run an entire physical disk in Virtualbox
+
+**Note:** You may refer to Virtualbox official documentation [9.8.1\. Using a Raw Host Hard Disk From a Guest](https://www.virtualbox.org/manual/ch09.html#rawdisk).
+
+This works the same way as [#Run a Windows partition in VirtualBox](#Run_a_Windows_partition_in_VirtualBox) but the vmdk will contain the entire disk rather than one partion, and so you won't need to create a separate ESP or MBR partition as the one in the physical disk will be used.
+
+Create the raw disk:
+
+```
+# VBoxManage internalcommands createrawvmdk -filename /path/to/file.vmdk -rawdisk /dev/sdb
+
+```
+
+Then follow the same method as in [#Run a Windows partition in VirtualBox](#Run_a_Windows_partition_in_VirtualBox) for the configuration and virtual disk attachement.
 
 ## Set guest starting resolution
 

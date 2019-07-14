@@ -80,6 +80,8 @@ set nowrap
 
 Shortcuts can be viewed from inside *nano*. See the nano online help files via `Ctrl+g` within nano and the [nano Command Manual](https://www.nano-editor.org/dist/latest/nano.html) for complete descriptions and additional support.
 
+See also the [cheatsheet for nano](https://www.nano-editor.org/dist/latest/cheatsheet.html).
+
 ### Special functions
 
 Keyboard shortcuts representing commonly used functions are listed along the bottom two lines of the nano screen.

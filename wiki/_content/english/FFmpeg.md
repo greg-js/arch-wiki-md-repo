@@ -221,7 +221,7 @@ $ ffmpeg -i input -vf vidstabdetect=stepsize=4:mincontrast=0:result=transforms.t
 
 #### Second pass
 
-The second pass parses the stabilization parameters generated from the first pass and applies them to produce "output-stab_final". You will want to apply any additional filters at this point so as to aboid subsequent transcoding to preserve as much video quality as possible. The following example performs the following in addition to video stabilization:
+The second pass parses the stabilization parameters generated from the first pass and applies them to produce "output-stab_final". You will want to apply any additional filters at this point so as to avoid subsequent transcoding to preserve as much video quality as possible. The following example performs the following in addition to video stabilization:
 
 *   `unsharp` is recommended by the author of vid.stab. Here we are simply using the defaults of 5:5:1.0:5:5:1.0
 *   **Tip:** fade=t=in:st=0:d=4

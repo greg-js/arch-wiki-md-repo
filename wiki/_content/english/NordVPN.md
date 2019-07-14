@@ -14,6 +14,7 @@ NordVPN is a personal virtual private network service provider. NordVPN is based
     *   [4.2 Connect to VPN](#Connect_to_VPN)
     *   [4.3 Settings](#Settings)
     *   [4.4 Server List](#Server_List)
+*   [5 Alternative Method : connecting to NordVPN using NetworkManager](#Alternative_Method_:_connecting_to_NordVPN_using_NetworkManager)
 
 ## Create Account
 
@@ -181,3 +182,17 @@ Example: nordvpn cities United_States
 ```
 
 Shows the city list.
+
+## Alternative Method : connecting to NordVPN using NetworkManager
+
+1\. [Install](/index.php/Install "Install") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) and [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn).
+
+2\. Choose and download an appropriate server using the NordVPN servers page : [https://nordvpn.com/fr/servers/](https://nordvpn.com/fr/servers/) Download the corresponding configuration file on the NordVPN site : [https://nordvpn.com/ovpn/](https://nordvpn.com/ovpn/)
+
+3\. Add the file to you vpn connections in NetworkManager. In the VPN tab, enter your NordVPN id and password.
+
+4\. Optional : to avoid DNS leak, choose "automatic adresses only (VPN)" in the ipv4 settings, and write the NordVPN DNS adresses in "DNS servers" : 103.86.96.100, 103.86.99.100
+
+5\. Optional : you can make the connection automatic by ticking "Automatically connect to VPN when using this connection" in every connection you want, and choosing the right configuration file.
+
+6\. Optional : if you want to use a killswitch, you'll have to install and configure a firewall, like [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") or [Iptables](/index.php/Iptables "Iptables")

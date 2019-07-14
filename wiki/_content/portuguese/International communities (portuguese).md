@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-04-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=571944) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=576500) na versão em inglês.
 
 Artigos relacionados
 
@@ -138,7 +138,9 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 
 *   Site: [https://archlinux.org.ru/](https://archlinux.org.ru/)
 *   Fórum: [https://archlinux.org.ru/forum](https://archlinux.org.ru/forum)
-*   Bate-papo do Telegram: [https://t.me/ArchLinuxChatRU](https://t.me/ArchLinuxChatRU)
+*   Grupos de Telegram:
+    *   [https://t.me/archlinux_ru](https://t.me/archlinux_ru)
+    *   [https://t.me/ArchLinuxChatRU](https://t.me/ArchLinuxChatRU)
 *   Wiki: [Main page (Русский)](/index.php/Main_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main page (Русский)")
 
 ## Sérvia

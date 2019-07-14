@@ -95,7 +95,7 @@
 | <small>6.3.</small> [File formats](/index.php/Category:File_formats_(Portugu%C3%AAs) "Category:File formats (Português)") <small>(1)</small> |
 | <small>6.4.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(10) (também em [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)"))</small> |
 | <small>6.5.</small> [Software companies](/index.php/Category:Software_companies_(Portugu%C3%AAs) "Category:Software companies (Português)") <small>(0)</small> |
-| <small>6.5.1.</small> [Oracle](/index.php/Category:Oracle_(Portugu%C3%AAs) "Category:Oracle (Português)") <small>(1)</small> |
+| <small>6.5.1.</small> [Oracle](/index.php/Category:Oracle_(Portugu%C3%AAs) "Category:Oracle (Português)") <small>(2)</small> |
 | <small>6.5.2.</small> [Red Hat](/index.php/Category:Red_Hat_(Portugu%C3%AAs) "Category:Red Hat (Português)") <small>(1)</small> |
 | <small>6.6.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Portugu%C3%AAs) "Category:Software comparisons (Português)") <small>(2)</small> |
 | <small>6.7.</small> [Software projects](/index.php/Category:Software_projects_(Portugu%C3%AAs) "Category:Software projects (Português)") <small>(0)</small> |

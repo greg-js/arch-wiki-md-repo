@@ -6,7 +6,11 @@ Related articles
 
 Disk cloning is the process of making an image of a partition or of an entire hard drive. This can be useful for copying the drive to other computers and for [backup](/index.php/Backup "Backup") and [recovery](/index.php/File_recovery "File recovery") purposes.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Using dd](#Using_dd)
 *   [2 Using ddrescue](#Using_ddrescue)
@@ -21,7 +25,7 @@ See [dd#Disk cloning and restore](/index.php/Dd#Disk_cloning_and_restore "Dd").
 
 ## Using ddrescue
 
-*ddrescue* is a tool designed for cloning and recovering data. It copies data from one file or block device (hard disc, cdrom, etc) to another, trying to rescue the good parts first in case of read errors, to maximize the recovered data.
+[ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a tool designed for cloning and recovering data. It copies data from one file or block device (hard disc, cdrom, etc) to another, trying to rescue the good parts first in case of read errors, to maximize the recovered data.
 
 To clone a faulty or dying drive, run ddrescue twice. First round, copy every block without read error and log the errors to rescue.log.
 

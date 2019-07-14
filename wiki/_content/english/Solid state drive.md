@@ -37,7 +37,7 @@ This article covers special topics for operating [solid state drives](https://en
     *   [3.5 Mushkin](#Mushkin)
     *   [3.6 OCZ](#OCZ)
     *   [3.7 Samsung](#Samsung)
-        *   [3.7.1 Native upgrade](#Native_upgrade)
+        *   [3.7.1 Upgrade under Linux](#Upgrade_under_Linux)
     *   [3.8 SanDisk](#SanDisk)
     *   [3.9 Western Digital](#Western_Digital)
 *   [4 See also](#See_also)
@@ -272,17 +272,15 @@ OCZ has a [Command Line Online Update Tool (CLOUT)](https://www.ocz.com/us/downl
 
 ### Samsung
 
-Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician-consumer-ssd](https://aur.archlinux.org/packages/samsung_magician-consumer-ssd/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
+Samsung notes that update methods other than using their Magician Software are "not supported", but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician-consumer-ssd](https://aur.archlinux.org/packages/samsung_magician-consumer-ssd/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
 
 **Note:** Samsung does not make it obvious at all that they actually provide these. They seem to have 4 different firmware update pages, and each references different ways of doing things.
 
-Users preferring to run the firmware update from a live USB created under Linux (without using Samsung's "Magician" software under Microsoft Windows) can refer to [this post](http://fomori.org/blog/?p=933) for reference.
+Users preferring to run the firmware update from a live USB created under Linux (without using Samsung's "Magician" software under Microsoft Windows) can refer to [this post](https://web.archive.org/web/20160322230114/fomori.org/blog/?p=933) for reference.
 
-#### Native upgrade
+#### Upgrade under Linux
 
-Alternatively, the firmware can be upgraded natively, without making a bootable USB stick, as shown below.
-
-First visit the [Samsung downloads page](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) and download the latest firmware for Windows, which is available as a disk image. In the following, `Samsung_SSD_840_EVO_EXT0DB6Q.iso` is used as an example file name, adjust it accordingly.
+Alternatively, the firmware can be upgraded natively, without making a bootable USB stick, as shown below. First visit the [Samsung downloads page](https://www.samsung.com/semiconductor/minisite/ssd/download/tools.html) and download the latest firmware for Windows, which is available as a disk image. In the following, `Samsung_SSD_840_EVO_EXT0DB6Q.iso` is used as an example file name, adjust it accordingly.
 
 Setup the disk image:
 

@@ -343,8 +343,8 @@ Some clients may however still rely on `/etc/hosts`, see [[4]](https://lists.deb
 To configure the hosts file, add the following lines to `/etc/hosts`:
 
 ```
-127.0.0.1        localhost.localdomain         localhost
-::1              localhost.localdomain         localhost
+127.0.0.1        localhost
+::1              localhost
 127.0.1.1        *myhostname*.localdomain        *myhostname*
 
 ```
@@ -355,8 +355,8 @@ As a result the system resolves to both entries:
 
  `$ getent hosts` 
 ```
-127.0.0.1       localhost.localdomain localhost
-127.0.0.1       localhost.localdomain localhost
+127.0.0.1       localhost
+127.0.0.1       localhost
 127.0.1.1       *myhostname*.localdomain *myhostname*
 
 ```
@@ -370,8 +370,8 @@ To make your machine accessible in your LAN via its hostname you can:
 *   edit the `/etc/hosts` file for every device in your LAN, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
 *   set up a [DNS server](/index.php/DNS_server "DNS server") to resolve your hostname and make the LAN devices use it (e.g. via [#DHCP](#DHCP))
 *   or the easy way: use a [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") service:
-    *   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmb.service` service. Computers running Windows, macOS, or Linux with `nmb` running, will be able to find your machine.
-    *   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly different configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running macOS, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have a built-in Avahi client or daemon.
+    *   Hostname resolution via Microsoft's [NetBIOS](https://en.wikipedia.org/wiki/NetBIOS#Name_service "wikipedia:NetBIOS"). Provided by [Samba](/index.php/Samba "Samba") on Linux. It only requires the `nmb.service`. Computers running Windows, macOS, or Linux with `nmb` running, will be able to find your machine.
+    *   Hostname resolution via [mDNS](https://en.wikipedia.org/wiki/Multicast_DNS "wikipedia:Multicast DNS"). Provided by either `nss_mdns` with [Avahi](/index.php/Avahi "Avahi") (see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for setup details) or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"). Computers running macOS, or Linux with Avahi or systemd-resolved running, will be able to find your machine. Windows does not have a built-in mDNS client or daemon.
 
 ## Tips and tricks
 

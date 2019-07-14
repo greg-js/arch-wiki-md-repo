@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=573846) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [lm_sensors](/index.php/Lm_sensors "Lm sensors"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lm_sensors&diff=0&oldid=576871) na versão em inglês.
 
 Artigos relacionados
 
@@ -29,10 +29,11 @@ Artigos relacionados
     *   [5.2 Implantação automática de lm_sensors](#Implantação_automática_de_lm_sensors)
 *   [6 Solução de problemas](#Solução_de_problemas)
     *   [6.1 Módulo K10Temp](#Módulo_K10Temp)
-    *   [6.2 Placas-mãe Asus Z97/Z170](#Placas-mãe_Asus_Z97/Z170)
-    *   [6.3 Placas-mãe Gigabyte B250](#Placas-mãe_Gigabyte_B250)
-    *   [6.4 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
-    *   [6.5 Problemas na tela do laptop após a execução de sensors-detect](#Problemas_na_tela_do_laptop_após_a_execução_de_sensors-detect)
+    *   [6.2 Placas-mãe Asus B450 com Ryzen CPU](#Placas-mãe_Asus_B450_com_Ryzen_CPU)
+    *   [6.3 Placas-mãe Asus Z97/Z170](#Placas-mãe_Asus_Z97/Z170)
+    *   [6.4 Placas-mãe Gigabyte B250](#Placas-mãe_Gigabyte_B250)
+    *   [6.5 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
+    *   [6.6 Problemas na tela do laptop após a execução de sensors-detect](#Problemas_na_tela_do_laptop_após_a_execução_de_sensors-detect)
 
 ## Instalação
 
@@ -494,16 +495,15 @@ options k10temp force=1
 
 Isso vai permitir o módulo para carregar na inicialização.
 
+### Placas-mãe Asus B450 com Ryzen CPU
+
+Com algumas placas-mãe recentes da Asus, acesso aos sensores de cooler e voltagem podem exigir o módulo it87\. [Instale](/index.php/Instale "Instale") [it87-dkms-git](https://aur.archlinux.org/packages/it87-dkms-git/) e carregue o [módulo de kernel](/index.php/Kernel_module "Kernel module") `it87`.
+
 ### Placas-mãe Asus Z97/Z170
 
-Com algumas placas-mãe recentes da Asus, o acesso ao ventilador e ao sensor de tensão pode exigir o módulo NCT6775:
+Com algumas placas-mãe recentes da Asus, o acesso ao ventilador e ao sensor de tensão pode exigir que o [módulo de kernel](/index.php/Kernel_module "Kernel module") `nct6775` esteja carregado.
 
-```
- # modprobe nct6775
-
-```
-
-e adicione-o aos parâmetros do kernel de inicialização:
+Além disso, adicione-o aos parâmetros do kernel de inicialização:
 
 ```
  acpi_enforce_resources=lax

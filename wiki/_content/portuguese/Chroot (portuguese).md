@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=569735) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=576766) na versão em inglês.
 
 Artigos relacionados
 

@@ -3,7 +3,7 @@ Related articles
 *   [DeveloperWiki:Building in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot")
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
-[makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) is a collection of supplemental [buildenv](https://git.archlinux.org/pacman.git/commit/?id=508b4e3ec0cb3e365942f4dc0626edda4789932b) and [tidy](https://git.archlinux.org/pacman.git/commit/?id=295a3491adc4af5c8634ac82777212ed9c664457) scripts for [pacman-git](https://aur.archlinux.org/packages/pacman-git/) which provide macros for several kinds of optimization in the `build()` and `package()` stages.
+[makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) is a collection of supplemental [tidy](https://git.archlinux.org/pacman.git/commit/?id=295a3491adc4af5c8634ac82777212ed9c664457), [buildenv](https://git.archlinux.org/pacman.git/commit/?id=508b4e3ec0cb3e365942f4dc0626edda4789932b), and [executable](https://git.archlinux.org/pacman.git/commit/?id=0bb04fa16a82db133dd010478c1256bc8500c5e7) scripts for [pacman-git](https://aur.archlinux.org/packages/pacman-git/) which provide macros for several kinds of optimization in the `build()` and `package()` stages.
 
 **Note:** As with any package in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) has no official support. You should read, and you may post [comments](/index.php/Talk:Arch_User_Repository#Commenting_on_packages "Talk:Arch User Repository") on its AUR page.
 
@@ -32,7 +32,7 @@ Install [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/)
 
 [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) generates a redundant [configuration file](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5), `/etc/makepkg-optimize.conf`, from your current [makepkg](/index.php/Makepkg "Makepkg") configuration.
 
-This file lists the supplementary options for [COMPILE FLAGS](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), [BUILD ENVIRONMENT](https://aur.archlinux.org/cgit/aur.git/tree/buildenv_ext.conf?h=makepkg-optimize), [GLOBAL PACKAGE OPTIONS](https://aur.archlinux.org/cgit/aur.git/tree/pkgopts_ext.conf?h=makepkg-optimize), [PACKAGE OUTPUT](https://aur.archlinux.org/cgit/aur.git/tree/destdirs_ext.conf?h=makepkg-optimize), and [COMPRESSION DEFAULTS](https://aur.archlinux.org/cgit/aur.git/tree/compress-param_max.conf?h=makepkg-optimize), all of which are disabled by default.
+This file lists supplementary [COMPILE FLAGS](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), [BUILD ENVIRONMENT](https://aur.archlinux.org/cgit/aur.git/tree/buildenv_ext.conf?h=makepkg-optimize) options, [GLOBAL PACKAGE OPTIONS](https://aur.archlinux.org/cgit/aur.git/tree/pkgopts_ext.conf?h=makepkg-optimize), [PACKAGE OUTPUT](https://aur.archlinux.org/cgit/aur.git/tree/destdirs_ext.conf?h=makepkg-optimize) options, and [COMPRESSION DEFAULTS](https://aur.archlinux.org/cgit/aur.git/tree/compress-param_max.conf?h=makepkg-optimize), all of which are disabled by default.
 
 **Warning:** Some packages may fail to build with certain optimizations and over-optimization may cause problems for some programs--such as decreased performance and segmentation faults.
 

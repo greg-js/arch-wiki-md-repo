@@ -19,6 +19,7 @@ Output may be [PostScript](/index.php/PostScript "PostScript") or PDF, html, or 
 *   [2 Usage](#Usage)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Adding support for cyrillic fonts](#Adding_support_for_cyrillic_fonts)
+    *   [3.2 Correctly display Polish diacritics](#Correctly_display_Polish_diacritics)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -97,6 +98,16 @@ Where '(times8.pfb)' is a name of your copied type1 font.
 
 ```
  iconv -f utf-8 -t koi8-r test.ms | groff -ms -Tps > test.ps && ps2pdf test.ps test.pdf
+
+```
+
+### Correctly display Polish diacritics
+
+To display Polish diacritics:
+
+```
+ groff -Kutf8 -Tdvi -mec -ms test.ms > test.dvi
+ dvipdfm -cz 9 test.dvi 
 
 ```
 

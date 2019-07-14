@@ -187,7 +187,7 @@ source=("${url}/files/tarball.tar.gz"
         'linux-3.14.patch')
 md5sums=(*use 'updpkgsums'*)
 
-build() {
+prepare() {
   cd ${_pkgbase}-${pkgver}
 
   # Patch
@@ -197,7 +197,6 @@ build() {
 
 package() {
   # Install
-  msg2 "Starting make install..."
   make DESTDIR="${pkgdir}" install
 
   # Copy dkms.conf

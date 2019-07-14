@@ -10,5 +10,5 @@ The Bcachefs userspace tools are available from [bcachefs-tools-git](https://aur
 
 ## See also
 
-*   [Kent Overtreet's Patreon page](https://www.patreon.com/bcachefs)
+*   [Kent Overstreet's Patreon page](https://www.patreon.com/bcachefs)
 *   [Wikipedia:Bcachefs](https://en.wikipedia.org/wiki/Bcachefs "wikipedia:Bcachefs")

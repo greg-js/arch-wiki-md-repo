@@ -6,6 +6,18 @@ Related articles
 
 The author is no longer continuing to develop, and has expressed a plan to replace it with a lightdm autologin wrapper [[2]](https://github.com/spanezz/nodm/issues/8).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+    *   [2.1 Login session](#Login_session)
+*   [3 Known issues](#Known_issues)
+    *   [3.1 Unclean poweroff/reboot](#Unclean_poweroff/reboot)
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [nodm](https://www.archlinux.org/packages/?name=nodm) package.
@@ -37,3 +49,9 @@ account   include   system-local-login
 password  include   system-local-login
 session   include   system-local-login
 ```
+
+## Known issues
+
+### Unclean poweroff/reboot
+
+Users have reported in [this issue](https://github.com/spanezz/nodm/issues/5) that upon poweroff/reboot, [systemd](/index.php/Systemd "Systemd") will fail to kill nodm, resulting in a delayed poweroff until systemd hard kills the remaining processes.

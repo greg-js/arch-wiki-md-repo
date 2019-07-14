@@ -18,9 +18,10 @@ Related articles
     *   [3.2 Fujitsu fi series](#Fujitsu_fi_series)
 *   [4 Install a frontend](#Install_a_frontend)
 *   [5 Network scanning](#Network_scanning)
-    *   [5.1 Sharing your scanner over a network](#Sharing_your_scanner_over_a_network)
-    *   [5.2 Accessing your scanner from a remote workstation](#Accessing_your_scanner_from_a_remote_workstation)
-    *   [5.3 Windows clients](#Windows_clients)
+    *   [5.1 Network attached scanners](#Network_attached_scanners)
+    *   [5.2 Sharing your scanner over a network](#Sharing_your_scanner_over_a_network)
+    *   [5.3 Accessing your scanner from a remote workstation](#Accessing_your_scanner_from_a_remote_workstation)
+    *   [5.4 Windows clients](#Windows_clients)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Invalid argument](#Invalid_argument)
         *   [6.1.1 Missing firmware file](#Missing_firmware_file)
@@ -126,6 +127,10 @@ Some [OCR software](/index.php/List_of_applications/Documents#OCR_software "List
 *   Using a frontend does not mean you do not have to apply some tricks. This is especially true with devices configured via [mDNS](/index.php/MDNS "MDNS"). For example, `skanlite` needs to have additional info specified on the command line in order to detect a network scanner properly as it cannot handle mDNS. Here is an example with an HP Officejet Pro L7590: `skanlite --device "hpaio:/net/Officejet_Pro_L7500?ip=192.168.0.17"`.
 
 ## Network scanning
+
+### Network attached scanners
+
+Some scanners may be network attached and already provide their own server. For example, HP all-in-one multifunction devices use the open source "hpaio" driver from [hplip](https://www.archlinux.org/packages/?name=hplip) and, depending on device, the proprietary [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) firmware. See [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems") for additional information.
 
 ### Sharing your scanner over a network
 

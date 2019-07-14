@@ -5,12 +5,16 @@ Related articles
 
 [Parallels](http://www.parallels.com/products/desktop) Desktop is a hypervisor for macOS which allows users to install a variety of operating systems as "virtual machines" (guests) on the host system, reducing the need for managing multiple physical machines. A more complete description on virtualization can be found at [Wikipedia](https://en.wikipedia.org/wiki/Hardware_virtualization "wikipedia:Hardware virtualization").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation of Arch as a guest](#Installation_of_Arch_as_a_guest)
 *   [2 Parallels Tools](#Parallels_Tools)
     *   [2.1 Overview](#Overview)
-    *   [2.2 Required Kernel & Xorg versions](#Required_Kernel_.26_Xorg_versions)
+    *   [2.2 Required Kernel & Xorg versions](#Required_Kernel_&_Xorg_versions)
     *   [2.3 Configuring Xorg](#Configuring_Xorg)
     *   [2.4 Preparing dependencies](#Preparing_dependencies)
     *   [2.5 Installing Parallels tools](#Installing_Parallels_tools)
@@ -42,10 +46,11 @@ The tools installer uses binaries which can sometimes be incompatible with the l
 
 Different versions have different software requirements:
 
-*   9.0.24229.991745 needs 3.13.8 (or possibly a later 3.13.y) (3.14 is known to show a black screen and freeze the system) and xorg 1.15.y or earlier
-*   9.0.24237.1028877 works with Arch's 3.14.15-1-lts (newer versions may work) and xorg 1.15.y or earlier
-*   11.0.0.31193 works on the latest Arch 4.1.6-1 and xorg 1.17.2-4
-*   12.1.0.41489 works on latest Arch 4.8.7-1 and Xorg 1.18.4, after removing the PATH statement in the install script (cdrom//Parallels Tools//install), and adding "iomem=relaxed" to kernel boot parameters.
+*   9.0.24229.991745 needs 3.13.8 (or possibly a later 3.13.y) (3.14 is known to show a black screen and freeze the system) and Xorg 1.15.y or earlier
+*   9.0.24237.1028877 works on Arch 3.14.15-1-lts (newer versions may work) and Xorg 1.15.y or earlier
+*   11.0.0.31193 works on Arch 4.1.6-1 and Xorg 1.17.2-4
+*   12.1.0.41489 works on Arch 4.8.7-1 and Xorg 1.18.4, after removing the PATH statement in the install script (cdrom//Parallels Tools//install), and adding "iomem=relaxed" to kernel boot parameters.
+*   14.1.3.45485 works on Arch 5.1.16-1 and Xorg 1.20.5 when following [this guide](https://gist.github.com/mag911/1a5583a766467d6023584d738cee0d98)
 
 And there are different ways to obtain them:
 

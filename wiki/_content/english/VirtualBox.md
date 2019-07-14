@@ -304,27 +304,18 @@ Two additional steps are needed in order for the mount point to be accessible fr
 Use the following command to mount your folder in your Arch Linux guest:
 
 ```
-# mount -t vboxsf *shared_folder_name* *mount_point_on_guest_system*
+# mount -t vboxsf -o gid=vboxsf *shared_folder_name* *mount_point_on_guest_system*
 
 ```
 
-where *shared_folder_name* is the *Folder name* assigned by the hypervisor when the share was created.
+where `*shared_folder_name*` is the *Folder name* assigned by the hypervisor when the share was created.
 
-The vboxsf filesystem offers other options which can be displayed with this command:
-
-```
-# mount.vboxsf
-
-```
-
-For example if the user was not in the *vboxsf* group, we could have used this command to give access our mountpoint to him:
+If the user is not in the *vboxsf* group, to give them access to our mountpoint we can specify the [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) options `uid=` and `gid=` with the corresponding values of the user. These values can obtained from the `id` command run against this user. For example:
 
 ```
 # mount -t vboxsf -o uid=1000,gid=1000 home /mnt
 
 ```
-
-Where *uid* and *gid* are values corresponding to the users we want to give access to. These values are obtained from the `id` command run against this user.
 
 #### Automounting
 
@@ -455,7 +446,7 @@ $ VBoxManage internalcommands dumphdinfo <storage.vdi> | grep "offData"
 
 ```
 
-The can now be mounted with:
+The storage can now be mounted with:
 
 ```
 # mount -t ext4 -o rw,noatime,noexec,loop,offset=101888 <storage.vdi> /mntpoint/

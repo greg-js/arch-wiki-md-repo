@@ -84,14 +84,9 @@ For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other
 
 #### For new cards issued since December 2018
 
-Install [awp-blob](https://aur.archlinux.org/packages/awp-blob/). (Which installs awp from official deb package with blobs. No source currently exists: see discussion at [[2]](https://github.com/open-eid/linux-installer/issues/37)).
+The [opensc](https://www.archlinux.org/packages/?name=opensc) package provides drivers for EstEID 2018+ [[2]](https://github.com/OpenSC/OpenSC/pull/1635).
 
-In Firefox, enable "IDEMIA PKCS11 loader" extension after restart. For Chrome/Chromium, you could try
-
-```
- modutil -force -dbdir sql:$HOME/.pki/nssdb -add idemia-pkcs11 -libfile /usr/local/AWP/lib/libOcsPKCS11Wrapper.so -mechanisms FRIENDLY
-
-```
+**Note:** As of July 12th 2019, the opensc package included in the repositories does not yet contain the drivers for EstEID 2018+, to get around this, you may build opensc manually from source, or alternatively, install [opensc-git](https://aur.archlinux.org/packages/opensc-git/).
 
 ### Germany
 

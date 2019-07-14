@@ -102,7 +102,7 @@ Works out of the box with Motorola Pulse Escape on kernel 4.19.5.
 
 ## Hard Drive
 
-Built-in NVME drive works with advertised speed. Blockdevices are loacated at /dev/nvme0n1p*.
+Built-in NVME drive works with advertised speed. Blockdevices are located at /dev/nvme0n1p*.
 
 ## Dual Boot
 

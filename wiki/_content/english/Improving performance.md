@@ -363,9 +363,9 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 ### Turn off CPU exploit mitigations
 
-Turning off CPU exploit mitigations against Spectre/Meltdown improves performance at the cost of security, see [phoronix.com](https://phoronix.com/scan.php?page=news_item&px=Linux-Improve-CPU-Spec-Switches), which can be acceptable for isolated linux systems.
+**Warning:** Do not apply this setting without considering the vulnerabilities it opens up. See [this](https://phoronix.com/scan.php?page=news_item&px=Linux-Improve-CPU-Spec-Switches) and [this](https://linuxreviews.org/HOWTO_make_Linux_run_blazing_fast_(again)_on_Intel_CPUs) for more information.
 
-To turn off most of the mitigations, add the following argument to the kernel commandline.
+Turning off CPU exploit mitigations improves performance (sometimes up to 50%). Use below [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") to disable them all:
 
 ```
 mitigations=off
@@ -373,8 +373,6 @@ mitigations=off
 ```
 
 The explanations of all the switches it toggles are given at [kernel.org](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html).
-
-**Warning:** Do not apply this setting without considering the vulnerabilities it opens up.
 
 ## Graphics
 

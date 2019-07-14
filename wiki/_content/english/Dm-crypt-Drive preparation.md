@@ -108,7 +108,7 @@ Wiping the LUKS header will delete the PBKDF2-encrypted (AES) master key, salts 
 
 **Note:** It is crucial to write to the LUKS encrypted partition (`/dev/sdX**1**` in this example) and not directly to the disks device node. Setups with encryption as a device-mapper layer on top of others, e.g. LVM on LUKS on RAID should then write to RAID respectively.
 
-A header with one single default 256 bit size keyslot is 1024KiB in size. It is advised to also overwrite the first 4KiB written by dm-crypt, so 1028KiB have to be wiped. That is `1052672` Byte.
+A LUKS1 header with one single default 256 bit size keyslot is 1024 KiB in size. It is advised to also overwrite the first 4 KiB written by dm-crypt, so 1028 KiB have to be wiped. That is `1052672` Byte.
 
 For zero offset use:
 
@@ -117,12 +117,19 @@ For zero offset use:
 
 ```
 
-For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2MiB. LUKS2 header is 4MiB.
+For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2 MiB. LUKS2 header is 4 MiB or if created with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) < 2.1 or 16 MiB if created with [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) ≥ 2.1.
 
-If in doubt, just be generous and overwrite the first 10MiB or so.
+If in doubt, just be generous and overwrite the first 20 MiB or so:
 
 ```
-# dd if=/dev/urandom of=*/dev/sdX1* bs=512 count=20480
+# dd if=/dev/urandom of=*/dev/sdX1* bs=512 count=40960
+
+```
+
+Or use `shred`. For example, to overwrite the first 20 MiB for 20 times:
+
+```
+# shred -v -z -s 20MiB -n 20 */dev/sdX1*
 
 ```
 

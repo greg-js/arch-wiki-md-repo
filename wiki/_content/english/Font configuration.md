@@ -46,6 +46,7 @@ Though Fontconfig is used often in modern Unix and Unix-like operating systems, 
     *   [4.5 Incorrect hinting in GTK applications on non-Gnome systems](#Incorrect_hinting_in_GTK_applications_on_non-Gnome_systems)
     *   [4.6 Helvetica font problem in generated PDFs](#Helvetica_font_problem_in_generated_PDFs)
     *   [4.7 FreeType Breaking Bitmap Fonts](#FreeType_Breaking_Bitmap_Fonts)
+    *   [4.8 Debugging FreeType Fonts](#Debugging_FreeType_Fonts)
 *   [5 See also](#See_also)
 
 ## Font paths
@@ -650,6 +651,15 @@ Assume we want to create an alias for [terminus-font](https://www.archlinux.org/
 
 Everything should now work as it did before the update, the *font alias* should not be in effect, but make sure to either reload `.Xresources` or restart the display server first so the affected programs can use the alias.
 
+### Debugging FreeType Fonts
+
+[freetype2-demos](https://www.archlinux.org/packages/?name=freetype2-demos) provides tools for debugging FreeType font configuration. `ftview` is a GUI in which you can tweak font rendering settings with a live preview. For example:
+
+```
+$ ftview -e unic -d 1024x768x24 -r 96 10 /usr/share/fonts/noto/NotoSans-Regular.ttf
+
+```
+
 ## See also
 
 *   [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig")
@@ -657,3 +667,4 @@ Everything should now work as it did before the update, the *font alias* should 
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)
 *   [On slight hinting](http://www.freetype.org/freetype2/docs/text-rendering-general.html)
+*   [FreeType 2 API Reference: Controlling FreeType Modules](https://www.freetype.org/freetype2/docs/reference/index.html#controlling-freetype-modules)

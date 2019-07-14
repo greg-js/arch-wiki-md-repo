@@ -260,7 +260,7 @@ If your HP device [is supported by hplip](http://hplipopensource.com/hplip-web/s
 The latter comes with 3 tools:
 
 *   *hp-setup* to add and setup the device
-*   *hp-plugin* is the 'HPLIP Plugin Download and Install Utility'.
+*   *hp-plugin* is the 'HPLIP Plugin Download and Install Utility' (plugin also available from [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/)).
 *   *hp-scan* is the 'HPLIP Scan Utility'. If you need that tool, you will need to install [python-pillow](https://www.archlinux.org/packages/?name=python-pillow).
 
 *hp-setup* requires Python Qt5 when run using the GUI (which is the default). As an alternative, you can run the CLI interface of hp-setup using `-i` as argument.

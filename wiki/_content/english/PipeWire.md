@@ -1,4 +1,4 @@
-[PipeWire](http://pipewire.org) is a rather new multimedia framework by GNOME based on GStreamer. The main developer is Christian FK Schaller.
+[PipeWire](http://pipewire.org) is a rather new multimedia framework by GNOME. The main developer is Wim Taymans.
 
 Because PipeWire supports containers like [Flatpak](/index.php/Flatpak "Flatpak") it doesn't rely on the [user groups](/index.php/User_group "User group") *audio* and *video*, but rather uses a complex PolKit-like security model asking Flatpak or Wayland for permission to record screen or audio.
 
@@ -10,23 +10,43 @@ Because PipeWire supports containers like [Flatpak](/index.php/Flatpak "Flatpak"
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Video](#Video)
-    *   [2.2 Audio (JACK)](#Audio_(JACK))
-    *   [2.3 ALSA/Legacy applications](#ALSA/Legacy_applications)
-    *   [2.4 Bluetooth](#Bluetooth)
+    *   [2.1 WebRTC screen sharing](#WebRTC_screen_sharing)
+    *   [2.2 Video](#Video)
+    *   [2.3 Audio (JACK)](#Audio_(JACK))
+    *   [2.4 ALSA/Legacy applications](#ALSA/Legacy_applications)
+    *   [2.5 Bluetooth](#Bluetooth)
 *   [3 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [pipewire](https://www.archlinux.org/packages/?name=pipewire) package from the official repositories or the [pipewire-git](https://aur.archlinux.org/packages/pipewire-git/) package from the [AUR](/index.php/AUR "AUR").
 
+The package installs systemd unit files for the service itself and automatic socket activation (which means it will autostart).
+
+```
+systemctl --user status pipewire.socket
+systemctl --user status pipewire.service
+
+```
+
 ## Usage
+
+### WebRTC screen sharing
+
+Most browsers used to rely on X11 for capturing the desktop (or apps) when using WebRTC (e.g. on google Hangouts); because Gnome shell uses Wayland by default on Arch when started by GDM, desktop sharing is basically broken, but pipewire is going to provide support for this usecase under Wayland.
+
+This requires [Pipewire and xdg-desktop-portal to be installed](http://jgrulich.cz/2018/07/04/how-to-enable-and-use-screen-sharing-on-wayland); Firefox 68 [will support PipeWire with a custom patch from fedora](https://bugzilla.mozilla.org/show_bug.cgi?id=1496359), and on Chromium (73+) you need to enable [WebRTC PipeWire support](https://bugs.chromium.org/p/chromium/issues/detail?id=682122) the following url in a chromium tab:
+
+```
+chrome://flags/#enable-webrtc-pipewire-capturer
+
+```
+
+Note that the only supported feature is sharing the entire desktop and not a specific app/window due to [missing implementation in xdg-desktop-portal](https://github.com/flatpak/xdg-desktop-portal-gtk/issues/204).
 
 ### Video
 
 Although the software is not yet production ready, it is safe to play around with. Most application which rely on [GStreamer](/index.php/GStreamer "GStreamer") to handle e.g. video streams should work out-of-the-box due to the PipeWire GStreamer plugin. Applications like e.g. [cheese](https://www.archlinux.org/packages/?name=cheese) are therefore already able to share video input using it.
-
-The GStreamer autoplugging process obviously requires that the PipeWire process is running beforehand. Hence you must start `pipewire` prior to using it.
 
 ### Audio (JACK)
 

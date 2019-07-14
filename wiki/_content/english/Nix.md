@@ -13,15 +13,15 @@ In order to use Nix for the first time, you need to add a channel. But before, y
 Nix is by default installed in the `/nix` folder. If you want to use Nix with an [unprivileged account](https://nixos.org/nix/manual/#sec-single-user), run
 
 ```
-   sudo chown -R you:you /nix
+sudo chown -R "${USER}:${USER}" /nix
 
 ```
 
-Then, in order to add and update channels, run [the following commnads](https://nixos.org/nix/manual/#sec-channels):
+Then, in order to add and update channels, run [the following commands](https://nixos.org/nix/manual/#sec-channels):
 
 ```
-   nix-channel --add [https://nixos.org/channels/nixpkgs-unstable](https://nixos.org/channels/nixpkgs-unstable)
-   nix-channel --update
-   nix-env -u
+nix-channel --add [https://nixos.org/channels/nixpkgs-unstable](https://nixos.org/channels/nixpkgs-unstable)
+nix-channel --update
+nix-env -u
 
 ```

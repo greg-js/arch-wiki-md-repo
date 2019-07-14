@@ -6,7 +6,11 @@ Related articles
 
 See also [Wikipedia:GNUnet](https://en.wikipedia.org/wiki/GNUnet "wikipedia:GNUnet").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -33,7 +37,7 @@ Alternatively, to start the peer immediately in a terminal:
 
 ```
 
-See also [How to start and stop a GNUnet peer](https://gnunet.org/how-start-and-stop-gnunet-peer).
+See also [How to start and stop a GNUnet peer](https://docs.gnunet.org/handbook/gnunet.html#Start-and-stop-GNUnet).
 
 ## Usage
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Vivaldi](/index.php/Vivaldi "Vivaldi"). Data da última tradução: 2019-04-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=572203) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Vivaldi](/index.php/Vivaldi "Vivaldi"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=576866) na versão em inglês.
 
 [Vivaldi](http://vivaldi.com/) é um novo navegador da web do ex-fundador do [Opera](/index.php/Opera_(Portugu%C3%AAs) "Opera (Português)") e membros da equipe, com base no [Chromium](/index.php/Chromium "Chromium") e focado em aspectos de personalização.
 

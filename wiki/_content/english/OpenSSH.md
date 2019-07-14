@@ -172,6 +172,7 @@ Port 39901
 *   To help select an alternative port that is not already assigned to a common service, review the [list of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers "wikipedia:List of TCP and UDP port numbers"). You can also find port information locally in `/etc/services`. A port change from default port 22 will reduce the number of log entries caused by automated authentication attempts but will not eliminate them. See [Port knocking](/index.php/Port_knocking "Port knocking") for related information.
 *   It is recommended to disable password logins entirely. This will greatly increase security, see [#Force public key authentication](#Force_public_key_authentication) for more information. See [#Protection](#Protection) for more recommend security methods.
 *   OpenSSH can listen to multiple ports simply by having multiple `Port *port_number*` lines in the config file.
+*   New key pairs can be generated as explained in [SSH keys#Generating an SSH key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") in addition, or to replace, those originally created.
 
 ### Daemon management
 
@@ -258,7 +259,7 @@ session   include   system-remote-login
 
 #### Protecting against brute force attacks
 
-Brute forcing is a simple concept: One continuously tries to log in to a webpage or server log-in prompt like SSH with a high number of random username and password combinations.
+Brute forcing is a simple concept: one continuously tries to log in to a webpage or server log-in prompt like SSH with a high number of random username and password combinations.
 
 ##### Using ufw
 
@@ -811,23 +812,6 @@ If you are using an interactive session, there are multiple ways to execute a co
 *   use the `authorized_keys` file on the remote host (see `AUTHORIZED_KEYS FILE FORMAT` in [sshd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sshd.8))
 *   use `~/.ssh/rc` on the remote host if the server has enabled the `PermitUserRC` option
 *   use your shell config file on the remote host, e.g. `.bashrc`
-
-*   use a combination of `RemoteCommand` and `RequestTTY` (`-t`)
-
-For example, to automatically show your host's distribution on login:
-
-```
-$ ssh -t *host* "grep '^NAME' /etc/os-release; bash"
-
-```
-
-Or using your config file:
-
-```
-RemoteCommand grep '^NAME' /etc/os-release; bash
-RequestTTY yes
-
-```
 
 ## Troubleshooting
 

@@ -42,12 +42,11 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
         *   [7.2.2 Storing the keyfile in ramfs](#Storing_the_keyfile_in_ramfs)
     *   [7.3 Configuring LUKS to make use of the keyfile](#Configuring_LUKS_to_make_use_of_the_keyfile)
     *   [7.4 Manually unlocking a partition using a keyfile](#Manually_unlocking_a_partition_using_a_keyfile)
-    *   [7.5 Unlocking a secondary partition at boot](#Unlocking_a_secondary_partition_at_boot)
-    *   [7.6 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
-        *   [7.6.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
-            *   [7.6.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
-            *   [7.6.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
-        *   [7.6.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
+    *   [7.5 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
+        *   [7.5.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
+            *   [7.5.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
+            *   [7.5.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
+        *   [7.5.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
 
 ## Preparation
 
@@ -910,28 +909,6 @@ Use the `--key-file` option when opening the LUKS device:
 
 ```
 
-### Unlocking a secondary partition at boot
-
-If the keyfile for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off but can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). Following from the first example above using [UUID](/index.php/UUID "UUID"):
-
- `/etc/crypttab` 
-```
-home    UUID=<UUID identifier>    /etc/mykeyfile
-
-```
-
-is all needed for unlocking, and
-
- `/etc/fstab` 
-```
-/dev/mapper/home        /home   ext4        defaults        0       2
-
-```
-
-for mounting the LUKS blockdevice with the generated keyfile.
-
-**Tip:** If you prefer to use a `--plain` mode blockdevice, the encryption options necessary to unlock it are specified in `/etc/crypttab`. Take care to apply the systemd workaround mentioned in [crypttab](/index.php/Crypttab "Crypttab") in this case.
-
 ### Unlocking the root partition at boot
 
 This is simply a matter of configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") to include the necessary modules or files and configuring the [cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to know where to find the keyfile.
@@ -999,7 +976,7 @@ If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile 
 
 ```
 # dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin iflag=fullblock
-# chmod 000 /crypto_keyfile.bin
+# chmod 600 /crypto_keyfile.bin
 # chmod 600 /boot/initramfs-linux*
 # cryptsetup luksAddKey /dev/sdX# /crypto_keyfile.bin
 

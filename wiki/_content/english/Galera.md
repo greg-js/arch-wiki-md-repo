@@ -14,7 +14,7 @@ Install the [galera](https://www.archlinux.org/packages/?name=galera) package. A
 
 You need to configure the cluster.
 
-On each node edit `/etc/mysql/my.cnf.d/server.cnf` and update the wsrep_cluster_address variable so it contains the list of all nodes in the cluster:
+On each node edit `/etc/my.cnf.d/server.cnf` and update the wsrep_cluster_address variable so it contains the list of all nodes in the cluster:
 
 ```
 wsrep_cluster_address="gcomm://192.168.1.4,192.168.1.5,192.168.1.6"
@@ -50,10 +50,11 @@ wsrep_on=ON
 wsrep_provider=/usr/lib/galera/libgalera_smm.so
 default_storage_engine=InnoDB
 innodb_autoinc_lock_mode=2
+binlog_format=row
 
 ```
 
-When you have finished with `/etc/mysql/my.cnf.d/server.cnf`, bootstrap the mysqld service on the first node (ONLY on the first node):
+When you have finished with `/etc/my.cnf.d/server.cnf`, bootstrap the mysqld service on the first node (ONLY on the first node):
 
 ```
 # galera_new_cluster

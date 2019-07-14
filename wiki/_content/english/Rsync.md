@@ -395,6 +395,7 @@ You may want to include additional <a class="mw-selflink selflink">rsync</a> opt
 *   If you use any sparse files, such as virtual disks, [Docker](/index.php/Docker "Docker") images and similar, you should add the `-S` option.
 *   The `--numeric-ids` option will disable mapping of user and group names; instead, numeric group and user IDs will be transfered. This is useful when backing up over [SSH](/index.php/SSH "SSH") or when using a live system to backup different system disk.
 *   Choosing `--info=progress2` option instead of `-v` will show the overall progress info and transfer speed instead of the list of files being transferred.
+*   To avoid crossing a filesystem boundary when recursing, add the option `-x`/`--one-file-system`. This will prevent backing up any mount point in the hierarchy.
 
 ### Restore a backup
 

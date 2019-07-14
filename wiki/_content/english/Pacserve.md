@@ -14,6 +14,7 @@
 *   [4 Configure Pacman to use Pacserve](#Configure_Pacman_to_use_Pacserve)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Problems if using external downloaders in pacman.conf](#Problems_if_using_external_downloaders_in_pacman.conf)
+    *   [5.2 Machines do not see each other](#Machines_do_not_see_each_other)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -81,6 +82,10 @@ If you are using an external downloader such as [wget](/index.php/Wget "Wget"), 
 XferCommand = /usr/bin/wget --timeout=6 --passive-ftp -c -O '%o' '%u'
 
 ```
+
+### Machines do not see each other
+
+Peers detection relies on version of [python3-threaded_servers](https://aur.archlinux.org/packages/python3-threaded_servers/). TCP multicast frames coming from a different version of the service are discarded. In this case, `journalctl -u pacserve` warns about such unrecognized frames. Upgrade this package first then restart the `pacserve.service`.
 
 ## See also
 

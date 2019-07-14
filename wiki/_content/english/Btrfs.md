@@ -304,15 +304,15 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Swap file
 
-[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7). The proper way to initialize a swapfile is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
+[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7). The proper way to initialize a swapfile is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
 
-**Note:** The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
+**Note:** For kernels version 5.0+, Btfrs has native swap file support with some limitations:
 
-**Warning:**
+*   The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
+*   It does not support swap files on file systems that span multiple devices. See [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) and [Arch forums discussion](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
+*   Hibernation onto a swapfile is currently not supported by [systemd](https://www.archlinux.org/packages/?name=systemd) [[4]](https://github.com/systemd/systemd/issues/11939).
 
-*   Linux kernels before v5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btrfs can lead to file system corruption if using kernels before v5.0.
-
-*   Hibernation onto a swapfile on btrfs is not currently supported by [systemd](https://www.archlinux.org/packages/?name=systemd), even with kernel v5.0\. [[4]](https://github.com/systemd/systemd/issues/11939)
+**Warning:** Linux kernels before version 5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btrfs and a kernel prior to 5.0 can lead to file system corruption.
 
 ### Displaying used/free space
 
@@ -449,7 +449,7 @@ Using TLP requires special precautions in order to avoid filesystem corruption. 
 
 ### Partitionless Btrfs disk
 
-**Warning:** Most users do not want this type of setup and instead should install Btrfs on a regular partition. Furthermore GRUB strongly discourages installation to a partitionless disk.
+**Warning:** Most users do not want this type of setup and instead should install Btrfs on a regular partition. Furthermore, GRUB strongly discourages installation to a partitionless disk. Consider using `--alloc-start` for mkfs.btrfs to give larger space to GRUB.
 
 Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes, using [subvolumes](#Subvolumes) to simulate partitions. However, using a partitionless setup is not required to simply [create a Btrfs filesystem](#File_system_creation) on an existing [partition](/index.php/Partition "Partition") that was created using another method. There are some limitations to partitionless single disk setups:
 
@@ -464,9 +464,9 @@ To overwrite the existing partition table with Btrfs, run the following command:
 
 ```
 
-For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme.
+For example, use `/dev/sda` rather than `/dev/sda1`. The latter would format an existing partition instead of replacing the entire partitioning scheme. Because the root partition is Btrfs, make sure `btrfs` is compiled into the kernel, or put `btrfs` into [mkinitcpio.conf#MODULES](/index.php/Mkinitcpio.conf#MODULES "Mkinitcpio.conf") and activate.
 
-Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") or [GRUB/Tips and tricks#Install to partition or partitionless disk](/index.php/GRUB/Tips_and_tricks#Install_to_partition_or_partitionless_disk "GRUB/Tips and tricks").
+Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would for a data storage device with a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"). See [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux") or [GRUB/Tips and tricks#Install to partition or partitionless disk](/index.php/GRUB/Tips_and_tricks#Install_to_partition_or_partitionless_disk "GRUB/Tips and tricks"). If your kernel does not boot due to `Failed to mount /sysroot.`, please add `GRUB_PRELOAD_MODULES="btrfs"` in `/etc/default/grub` and generate the grub configuration ([GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB")).
 
 ### Ext3/4 to Btrfs conversion
 

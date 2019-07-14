@@ -220,6 +220,7 @@ This article is a general list of applications sorted by category, as a referenc
         *   [3.3.13 Issue tracking systems](#Issue_tracking_systems)
         *   [3.3.14 Code review](#Code_review)
         *   [3.3.15 Game development](#Game_development)
+        *   [3.3.16 Repository managers](#Repository_managers)
     *   [3.4 Text input](#Text_input)
         *   [3.4.1 Character selectors](#Character_selectors)
         *   [3.4.2 On-screen keyboards](#On-screen_keyboards)
@@ -324,8 +325,7 @@ This article is a general list of applications sorted by category, as a referenc
     *   [5.9 Cryptography](#Cryptography)
         *   [5.9.1 Hash checkers](#Hash_checkers)
         *   [5.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
-        *   [5.9.3 Messaging](#Messaging)
-        *   [5.9.4 Disk encryption](#Disk_encryption)
+        *   [5.9.3 Disk encryption](#Disk_encryption)
 *   [6 Science](#Science)
     *   [6.1 Mathematics](#Mathematics)
         *   [6.1.1 Calculator](#Calculator)
@@ -4669,7 +4669,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/mariostg/nffm](https://github.com/mariostg/nffm) || [nffm-git](https://aur.archlinux.org/packages/nffm-git/)
 
-*   **nnn** — Tiny, lightning fast, feature-packed file manager.
+*   **[nnn](/index.php/Nnn "Nnn")** — Tiny, lightning fast, feature-packed file manager.
 
 	[https://github.com/jarun/nnn](https://github.com/jarun/nnn) || [nnn](https://www.archlinux.org/packages/?name=nnn)
 
@@ -5536,6 +5536,20 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 *   **Tiled** — General purpose 2D level editor with powerful tile map editing features. It’s built to be easy to use and is suitable for many type of games.
 
 	[https://www.mapeditor.org/](https://www.mapeditor.org/) || [tiled](https://www.archlinux.org/packages/?name=tiled)
+
+#### Repository managers
+
+*   **Nexus 2** — Nexus 2 Repository Manager (OSS)
+
+	[http://nexus.sonatype.org](http://nexus.sonatype.org) || [nexus](https://aur.archlinux.org/packages/nexus/)
+
+*   **Nexus 3** — Nexus 3 Repository OSS
+
+	[http://nexus.sonatype.org](http://nexus.sonatype.org) || [nexus-oss](https://aur.archlinux.org/packages/nexus-oss/)
+
+*   **Artifactory** — Artifactory is an advanced Binary Repository Manager for use by build tools, dependency management tools and build servers
+
+	[https://bintray.com/jfrog/product/JFrog-Artifactory-Oss/view](https://bintray.com/jfrog/product/JFrog-Artifactory-Oss/view) || [artifactory-oss](https://aur.archlinux.org/packages/artifactory-oss/)
 
 ### Text input
 
@@ -8004,12 +8018,6 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
-
-##### Messaging
-
-*   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Cross-platform encrypted messaging service.
-
-	[https://signal.org/](https://signal.org/) || [signal](https://aur.archlinux.org/packages/signal/)
 
 ##### Disk encryption
 

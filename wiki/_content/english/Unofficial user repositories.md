@@ -72,8 +72,9 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.51 trinity](#trinity)
     *   [2.52 ungoo](#ungoo)
     *   [2.53 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.54 xyne-x86_64](#xyne-x86_64)
-    *   [2.55 home-thaodan](#home-thaodan)
+    *   [2.54 xuanrui](#xuanrui)
+    *   [2.55 xyne-x86_64](#xyne-x86_64)
+    *   [2.56 home-thaodan](#home-thaodan)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -796,6 +797,19 @@ Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$a
 
 ```
 
+### xuanrui
+
+*   **Maintainer:** [Xuanrui Qi (xuanruiqi)](https://aur.archlinux.org/account/xuanruiqi)
+*   **Description:** xuanruiqi's own packages and frequently-used packages, mainly of interest to functional programmers.
+*   **Upstream Page:** [https://www.xuanruiqi.com/linux.html](https://www.xuanruiqi.com/linux.html)
+*   **Key-ID:** 6E06FBC8
+
+```
+[xuanrui]
+Server = https://arch.xuanruiqi.com/repo
+
+```
+
 ### xyne-x86_64
 
 *   **Maintainer:** [Xyne](https://www.archlinux.org/people/trusted-users/#xyne)
@@ -999,12 +1013,12 @@ Server = http://linux.shikadi.net/arch/$repo/$arch/
 
 ```
 [ownstuff-testing]
-Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
+Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 
 [ownstuff]
-Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 Server = https://ftp.f3l.de/~martchus/$repo/os/$arch
+Server = https://martchus.no-ip.biz/repo/arch/$repo/os/$arch
 
 ```
 

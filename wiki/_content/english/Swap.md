@@ -122,10 +122,7 @@ Since swap is managed by systemd, it will be activated again on the next system 
 
 As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
 
-**Warning:**
-
-*   [Btrfs](/index.php/Btrfs "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
-*   For kernels 5.0+ Btrfs does not support swap files on file systems that span multiple devices. See [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) and [Arch forums discussion](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
+**Warning:** [Btrfs](/index.php/Btrfs "Btrfs") supports swap file with limitations since Linux kernel version 5.0\. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs") for more information.
 
 ### Manually
 

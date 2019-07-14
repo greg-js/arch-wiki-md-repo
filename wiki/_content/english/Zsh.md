@@ -25,9 +25,9 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
             *   [3.6.2.1 Colors](#Colors)
             *   [3.6.2.2 Example](#Example)
     *   [3.7 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.8 Extensions](#Extensions)
-        *   [3.8.1 Configuration Frameworks](#Configuration_Frameworks)
-        *   [3.8.2 Plugin Managers](#Plugin_Managers)
+    *   [3.8 Third-party extensions](#Third-party_extensions)
+        *   [3.8.1 Configuration frameworks](#Configuration_frameworks)
+        *   [3.8.2 Plugin managers](#Plugin_managers)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart X at login](#Autostart_X_at_login)
     *   [4.2 The "command not found" hook](#The_"command_not_found"_hook)
@@ -46,6 +46,7 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
         *   [4.10.1 Terminal emulator tab title](#Terminal_emulator_tab_title)
     *   [4.11 Shell environment detection](#Shell_environment_detection)
     *   [4.12 /dev/tcp equivalent: ztcp](#/dev/tcp_equivalent:_ztcp)
+    *   [4.13 Shortcut to exit shell on partial command line](#Shortcut_to_exit_shell_on_partial_command_line)
 *   [5 Uninstallation](#Uninstallation)
 *   [6 See also](#See_also)
 
@@ -196,7 +197,7 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 ### Key bindings
 
-Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor (ZLE). It does not read `/etc/inputrc` or `~/.inputrc`.
+Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor (ZLE). It does not read `/etc/inputrc` or `~/.inputrc`. See [this blog post](https://sgeb.io/posts/2014/04/zsh-zle-custom-widgets/) for an introduction to ZLE configuration.
 
 ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
@@ -399,9 +400,9 @@ username@host ~ % [0]
 
 See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles") for more.
 
-### Extensions
+### Third-party extensions
 
-#### Configuration Frameworks
+#### Configuration frameworks
 
 *   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
 
@@ -415,7 +416,7 @@ See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles
 
 	[https://github.com/zimfw/zimfw](https://github.com/zimfw/zimfw) || [zsh-zim-git](https://aur.archlinux.org/packages/zsh-zim-git/)
 
-#### Plugin Managers
+#### Plugin managers
 
 *   **Antibody** — A performance-focused plugin manager similar to Antigen.
 
@@ -767,6 +768,18 @@ You can now establish TCP connections:
 
 ```
 $ ztcp exemple.com 80
+
+```
+
+### Shortcut to exit shell on partial command line
+
+By default, `Ctrl+d` will not close your shell if the command line is filled, this fixes it:
+
+ `.zshrc` 
+```
+exit_zsh() { exit }
+zle -N exit_zsh
+bindkey '^D' exit_zsh
 
 ```
 

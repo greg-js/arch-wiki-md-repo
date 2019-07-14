@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Badblocks](/index.php/Badblocks "Badblocks"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Badblocks&diff=0&oldid=575919) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Badblocks](/index.php/Badblocks "Badblocks"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Badblocks&diff=0&oldid=576932) na versão em inglês.
 
 *badblocks* é um programa para testar dispositivos de armazenamento para blocos defeituosos (em inglês, *bad blocks*).
 
@@ -71,7 +71,7 @@ Opções:
 
 	`-w`: faz um teste de gravação destrutivo
 
-	`-s`: mostra a barra de progresso
+	`-s`: mostra o progresso
 
 	`-v`: torna a saída "verbosa" e emite setores defeituosos detectados para a *stdout*
 

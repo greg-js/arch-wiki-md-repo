@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [XDG user directories](/index.php/XDG_user_directories "XDG user directories"). Data da última tradução: 2019-01-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_user_directories&diff=0&oldid=563506) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [XDG user directories](/index.php/XDG_user_directories "XDG user directories"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=XDG_user_directories&diff=0&oldid=576769) na versão em inglês.
 
 Artigos relacionados
 

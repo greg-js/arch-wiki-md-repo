@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=575777) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=576564) na versão em inglês.
 
 Artigos relacionados
 
@@ -442,7 +442,7 @@ Você pode desabilitar o cano superior esquerdo ativo com o pacote [gnome-shell-
 
 O catálogo de extensões está disponível em [extensions.gnome.org](https://extensions.gnome.org). Elas podem ser instaladas e ativadas no navegador definindo o botão no canto superior esquerdo da tela para **ON** e clicando em **Install** no diálogo resultante (se a extensão em questão não estiver instalada). Extensões instaladas podem ser vistas em [extensions.gnome.org/local](https://extensions.gnome.org/local/), na qual atualizações podem ser verificadas. Extensões instaladas também podem ser habilitadas ou desabilitadas usando [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
-**Nota:** Extensões do [extensions.gnome.org](https://extensions.gnome.org) podem ser instalados imediatamente com [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). Para outros navegadores, é necessário instalar [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) e a extensão de navegador apropriada.
+**Nota:** Extensões do [extensions.gnome.org](https://extensions.gnome.org) podem ser instalados imediatamente com [gnome-software](https://www.archlinux.org/packages/?name=gnome-software). Para outros navegadores, é necessário instalar [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) e a extensão de navegador apropriada.
 
 O GNOME Shell pode ser personalizado com extensões por usuário ou por todo o sistema. A instalação de extensões com [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") as disponibiliza para todos os usuários do sistema e automatiza o processo de atualização. O pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) fornece um conjunto de extensões mantidas como parte do projeto GNOME (muitas das extensões incluídas são usadas pela sessão do GNOME Clássico). Usuários que desejem uma barra de tarefas, mas não desejam usar a sessão do GNOME Clássico, podem querer habilitar a extensão *Window list* (fornecida pelo pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions)).
 

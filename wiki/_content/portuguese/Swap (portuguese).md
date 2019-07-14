@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=574895) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=577064) na versão em inglês.
 
 Artigos relacionados
 
@@ -124,10 +124,7 @@ Como o swap é gerenciado pelo systemd, ele será ativado novamente na próxima 
 
 Como uma alternativa para criar uma partição inteira, um arquivo swap oferece a capacidade de variar seu tamanho em execução, e é mais facilmente removido completamente. Isto pode ser especialmente desejável se o espaço em disco for precioso (por exemplo, um SSD de tamanho modesto).
 
-**Atenção:**
-
-*   [Btrfs](/index.php/Btrfs "Btrfs") no kernel Linux antes da versão 5.0 não tem suporte a arquivos swap. Não seguir este aviso pode resultar em corrupção do sistema de arquivos. Enquanto um arquivo swap pode ser usado no Btrfs quando montado através de um dispositivo de loop, isso resultará em desempenho swap severamente degradado.
-*   Para kernels 5.0+, o Btrfs não possui suporte a arquivos swao em sistemas de arquivos que criam diversos dispositivos. Veja [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) e [essa discussão no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
+**Atenção:** [Btrfs](/index.php/Btrfs "Btrfs") possui suporte a arquivo swap com limitações desde a versão 5.0 do kernel Linux. Veja [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs") para mais informações.
 
 ### Manualmente
 

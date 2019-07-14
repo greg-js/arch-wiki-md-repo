@@ -88,7 +88,7 @@ Para o Skylake e os processadores mais recentes, alguns recursos de vídeo (por 
 
 **Nota:** Veja [Gentoo:Intel#Feature support](https://wiki.gentoo.org/wiki/Intel#Feature_support "gentoo:Intel") para uma visão geral das gerações de processadores Intel.
 
-Para esses processadores, é necessário adicionar `i915.enable_guc=2` aos [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") para ativar o carregamento do firmware. Alternativamente, se o [initramfs](/index.php/Initramfs "Initramfs") já inclui o módulo `i915` (veja [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), você pode definir estas opções através de um arquivo em `/etc/modprobe.d/`, por exemplo:
+Para esses processadores, é necessário adicionar `i915.enable_guc=2` aos [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") para ativar o carregamento do firmware. Alternativamente, se o [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") já inclui o módulo `i915` (veja [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), você pode definir estas opções através de um arquivo em `/etc/modprobe.d/`, por exemplo:
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=2` 
 

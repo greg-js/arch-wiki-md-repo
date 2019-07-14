@@ -31,6 +31,7 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
         *   [2.1.2 Creating remote configurations](#Creating_remote_configurations)
     *   [2.2 Application-specific actions](#Application-specific_actions)
 *   [3 Usage](#Usage)
+    *   [3.1 Running as a regular user rather than as root](#Running_as_a_regular_user_rather_than_as_root)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Remote functions as a keyboard](#Remote_functions_as_a_keyboard)
         *   [4.1.1 When using Xorg](#When_using_Xorg)
@@ -146,6 +147,53 @@ $ irw
 ```
 
 If `irw` gives no output, double check the config files in `/etc/lirc/lircd.conf.d/` for errors.
+
+### Running as a regular user rather than as root
+
+By default, lircd runs as user root. However, for increased stability and security, upstream recommends running it as a regular user. See Appendix 14 at [this](http://www.lirc.org/html/configuration-guide.html) link.
+
+To do this, create and provision a lirc user:
+
+```
+# groupadd -r lirc
+# useradd -r -g lirc -d /var/lib/lirc -s /usr/bin/nologin -c "LIRC daemon user" lirc
+# usermod -a -G lock,input lirc
+
+```
+
+Augment the package-providing service unit by creating a lircd [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd"):
+
+ `# systemctl edit lircd` 
+```
+[Service]
+User=lirc
+Group=lirc
+
+CapabilityBoundingSet=CAP_SETEUID
+MemoryDenyWriteExecute=true
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+```
+
+To allow `/dev/lirc*` devices to be accessible for the lirc group and to grant r/w access for the lirc group to USB devices using ACLs, copy the following udev rule into place:
+
+```
+# cp /usr/share/lirc/contrib/60-lirc.rules /etc/udev/rules.d/
+
+```
+
+To allow access to the lirc group to be able to create a PID file, create the following lircd tmpfile which will supersede the package provided one (which makes ownership only to root):
+
+ `/etc/tmpfiles.d/lirc.conf` 
+```
+d /run/lirc 0755 lirc lirc -
+
+```
+
+Reboot the system to verify expected function.
 
 ## Troubleshooting
 

@@ -156,7 +156,7 @@ options root=LABEL=*arch_os* rw
 **Note:**
 
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
-*   Remember to load the Intel *microcode* with `initrd` if applicable, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
+*   If you have an Intel or AMD CPU, load the *microcode* with `initrd` before other images, an example is provided in [Microcode#systemd-boot](/index.php/Microcode#systemd-boot "Microcode").
 *   The root partition can be identified with its `LABEL`, `PARTUUID` or `UUID` (see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming")). This is required only to identify the root partition, not the `*esp*`.
 
 **Tip:**

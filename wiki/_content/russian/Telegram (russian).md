@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 13 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=575200).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 13 июля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=576990).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -17,8 +17,7 @@
     *   [1.4 Web-приложения](#Web-приложения)
 *   [2 Советы и рекомендации](#Советы_и_рекомендации)
     *   [2.1 Ресурсы в Telegram про Arch Linux](#Ресурсы_в_Telegram_про_Arch_Linux)
-    *   [2.2 Проблема со шрифтами](#Проблема_со_шрифтами)
-    *   [2.3 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
+    *   [2.2 Счётчик непрочитанных сообщений для Telegram Desktop](#Счётчик_непрочитанных_сообщений_для_Telegram_Desktop)
 
 ## Установка
 
@@ -37,6 +36,8 @@
 *   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) — официальное приложение (сборка от команды Arch Linux).
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) — официальное приложение (сборка от команды Telegram).
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) — экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных и emoji от [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
+
+**Совет:** По умолчанию Telegram использует шрифт Open Sans, который предоставляется опциональным пакетом [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans).
 
 Неофициальные клиенты:
 
@@ -73,10 +74,6 @@
 *   [Planet Arch](https://t.me/archplanet) — канал с последними публикациями с сайта Planet Arch *(не обновляется)*.
 *   [Archlinux.fr News](https://t.me/archlinuxfr) — канал с последними записями на форумах Archlinux.fr, а также другой информацией об Arch Linux.
 *   [Archlinux.fr Chat](https://t.me/archlinux_FR) — неофициальная группа для обсуждения всего об Arch Linux (на французском).
-
-### Проблема со шрифтами
-
-Telegram использует шрифт Open Sans. Если надписи в вашем клиенте выглядят отвратительно, попробуйте установить пакет [ttf-opensans](https://www.archlinux.org/packages/?name=ttf-opensans) из официального репозитория Arch Linux. После установки перезапустите Telegram.
 
 ### Счётчик непрочитанных сообщений для Telegram Desktop
 

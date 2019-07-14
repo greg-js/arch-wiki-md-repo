@@ -1,8 +1,12 @@
 Esta página é para aqueles que preferem limitar a verbosidade de seu sistema a um mínimo estrito, seja por estética ou por outros motivos. Seguir este guia removerá todo o texto do processo de inicialização. [Demonstração de vídeo](http://www.youtube.com/watch?v=tuqhsqrhXk0)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Parâmetros do kernel](#Par.C3.A2metros_do_kernel)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Parâmetros do kernel](#Parâmetros_do_kernel)
 *   [2 sysctl](#sysctl)
 *   [3 startx](#startx)
 *   [4 fsck](#fsck)
@@ -29,9 +33,9 @@ quiet loglevel=3 vga=current
 
 Note que isto parece funcionar apenas se `quiet` e `loglevel=<nível>` forem usados, e eles devem estar nessa ordem (quiet primeiro). O parâmetro de loglevel só alterará o que é impresso no console, os níveis do próprio dmesg não serão afetados e ainda estarão disponíveis através do diário, bem como do comando `dmesg`. Para obter mais informações, consulte o arquivo `Documentation/kernel-parameters.txt` do pacote [linux-docs](https://www.archlinux.org/packages/?name=linux-docs).
 
-Se você também quiser impedir o systemd de imprimir seu número de versão ao inicializar, você também deve anexar `udev.log_priority=3` à sua linha de comando do kernel ([fonte](http://www.freedesktop.org/software/systemd/man/systemd-udevd.service.html#Kernel%20command%20line)). Se systemd for usado em um [initramfs](/index.php/Initramfs "Initramfs"), anexe `rd.udev.log_priority=3`.
+Se você também quiser impedir o systemd de imprimir seu número de versão ao inicializar, você também deve anexar `udev.log_priority=3` à sua linha de comando do kernel ([fonte](http://www.freedesktop.org/software/systemd/man/systemd-udevd.service.html#Kernel%20command%20line)). Se systemd for usado em um [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)"), anexe `rd.udev.log_priority=3`.
 
-Se você estiver usando o hook `systemd` no [initramfs](/index.php/Initramfs "Initramfs"), você poderá receber mensagens systemd durante a inicialização do initramfs. Você pode passar `rd.systemd.show_status=false` para desativá-los, ou `rd.systemd.show_status=auto` para suprimir somente mensagens bem-sucedidas (portanto, em caso de erros você ainda pode vê-los). Na verdade, `auto` já foi passado para `systemd.show_status=auto` quando `quiet` é usado, no entanto por algum motivo algumas vezes systemd dentro do initramfs não entende isso. Abaixo estão os parâmetros que você precisa passar para o seu kernel para obter uma inicialização completamente limpa com o systemd em seu [initramfs](/index.php/Initramfs "Initramfs"):
+Se você estiver usando o hook `systemd` no [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)"), você poderá receber mensagens systemd durante a inicialização do initramfs. Você pode passar `rd.systemd.show_status=false` para desativá-los, ou `rd.systemd.show_status=auto` para suprimir somente mensagens bem-sucedidas (portanto, em caso de erros você ainda pode vê-los). Na verdade, `auto` já foi passado para `systemd.show_status=auto` quando `quiet` é usado, no entanto por algum motivo algumas vezes systemd dentro do initramfs não entende isso. Abaixo estão os parâmetros que você precisa passar para o seu kernel para obter uma inicialização completamente limpa com o systemd em seu [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)"):
 
 ```
  quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3

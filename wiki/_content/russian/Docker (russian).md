@@ -433,4 +433,5 @@ ExecStart=/usr/bin/docker -d -e lxc
 
 *   [Официальный сайт](https://www.docker.com)
 *   [Arch Linux на docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
-*   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
+*   [Are Docker containers really secure?](https://opensource.com/business/14/7/docker-security-selinux) — opensource.com
+*   [Awesome Docker](https://awesome-docker.netlify.com/)

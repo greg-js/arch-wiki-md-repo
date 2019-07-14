@@ -1119,5 +1119,6 @@ You can use the following website to get your device's coordinates along with a 
 53.349933, -6.231844 "Arksun" # Dublin, Ireland
 18.479652, 73.904432 "Strykar" # Maharashtra, India
 46.529175, 8.608885 "pipep" # Airolo, Switzerland
+50.822755, -4.365627 "Stewart Little" # Holsworthy, UK
 
 ```

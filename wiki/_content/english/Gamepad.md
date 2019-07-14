@@ -406,7 +406,7 @@ Reboot your system. Steam should now detect your PlayStation 3 controller.
 
 ##### Using generic/clone controllers
 
-Using generic/clone Dualshock controllers is possible, however there are some issues that may require to install patched packages. The default Bluetooth protocol stack doesn't detect some of the clone controllers, the [bluez-ps3](https://aur.archlinux.org/packages/bluez-ps3/) package is a version patched to be able to detect them. Another issue is a bug where the controller starts to non-stop rumble as soon as it gets connected via USB. That can be fixed by using a patched version of the hid-sony driver, which is available on the [dkms-hid-sony-shanwan](https://aur.archlinux.org/packages/dkms-hid-sony-shanwan/) package.
+Using generic/clone Dualshock controllers is possible, however there is an issue that may require to install a patched package. The default Bluetooth protocol stack doesn't detect some of the clone controllers. The [bluez-ps3](https://aur.archlinux.org/packages/bluez-ps3/) package is a version patched to be able to detect them.
 
 ### iPEGA-9017s and other Bluetooth gamepads
 

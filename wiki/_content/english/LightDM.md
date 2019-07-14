@@ -53,16 +53,17 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.13 VNC Server](#VNC_Server)
     *   [5.14 Lock the screen using light-locker](#Lock_the_screen_using_light-locker)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
-    *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
-    *   [6.3 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
-    *   [6.4 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
-    *   [6.5 LightDM does not appear or monitor only displays TTY output](#LightDM_does_not_appear_or_monitor_only_displays_TTY_output)
-    *   [6.6 LightDM is running with low FPS on Intel Graphics](#LightDM_is_running_with_low_FPS_on_Intel_Graphics)
-    *   [6.7 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
-    *   [6.8 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
-    *   [6.9 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface.")
-    *   [6.10 Wayland session not working with duplicate GNOME entries in greeter](#Wayland_session_not_working_with_duplicate_GNOME_entries_in_greeter)
+    *   [6.1 LightDM not starting and screen flashing](#LightDM_not_starting_and_screen_flashing)
+    *   [6.2 Wrong locale displayed](#Wrong_locale_displayed)
+    *   [6.3 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
+    *   [6.4 LightDM freezes on login attempt](#LightDM_freezes_on_login_attempt)
+    *   [6.5 LightDM displaying in wrong monitor](#LightDM_displaying_in_wrong_monitor)
+    *   [6.6 LightDM does not appear or monitor only displays TTY output](#LightDM_does_not_appear_or_monitor_only_displays_TTY_output)
+    *   [6.7 LightDM is running with low FPS on Intel Graphics](#LightDM_is_running_with_low_FPS_on_Intel_Graphics)
+    *   [6.8 Pulseaudio not starting automatically](#Pulseaudio_not_starting_automatically)
+    *   [6.9 Long pause before LightDM shows up when home is encrypted](#Long_pause_before_LightDM_shows_up_when_home_is_encrypted)
+    *   [6.10 Boot hangs on "[ OK ] Reached target Graphical Interface."](#Boot_hangs_on_"[_OK_]_Reached_target_Graphical_Interface.")
+    *   [6.11 Wayland session not working with duplicate GNOME entries in greeter](#Wayland_session_not_working_with_duplicate_GNOME_entries_in_greeter)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -298,6 +299,8 @@ autologin-user=*username*
 autologin-session=*session*
 ```
 
+The list of valid session names can be found by listing `/usr/share/xsessions/*.desktop` for X's sessions and `/usr/share/wayland-sessions/*.desktop` for Wayland's.
+
 You will also need to ensure you have the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package installed, otherwise LightDM will fail to start, and running it from the command line will show `Error getting user list from org.freedesktop.Accounts`.
 
 **Note:** GNOME users, and by extension any gnome-keyring user will have to set up a blank password to their keyring for it to be unlocked automatically.
@@ -411,6 +414,8 @@ $ light-locker-command -l
 This requires `light-locker` to be started at the beginning of your session - see [Autostarting](/index.php/Autostarting "Autostarting").
 
 ## Troubleshooting
+
+### LightDM not starting and screen flashing
 
 If you encounter consistent screen flashing and ultimately no LightDM on boot, ensure that you have defined the greeter correctly in LightDM's config file. And if you have correctly defined the GTK greeter, make sure the `xsessions-directory` (default: `/usr/share/xsessions`) exists and contains at least one .desktop file.
 

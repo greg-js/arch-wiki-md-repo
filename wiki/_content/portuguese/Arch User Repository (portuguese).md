@@ -197,7 +197,7 @@ Os pacotes no AUR são apenas "scripts de compilação", ou seja, receitas para 
 
 Inscreva-se no [site do AUR](https://aur.archlinux.org/) para obter uma opção "Votar neste pacote" enquanto navega nos pacotes. Depois de se inscrever, também é possível votar na linha de comando com [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) ou [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
 
-Como alternativa, se você tiver configurado as [autenicação via ssh](/index.php/Diretrizes_de_envio_ao_AUR#Autenticação "Diretrizes de envio ao AUR"), poderá votar diretamente na linha de comando usando a chave ssh. Isso significa que você não precisará salvar ou digitar sua senha do AUR.
+Como alternativa, se você tiver configurado as [autenticação via ssh](/index.php/Diretrizes_de_envio_ao_AUR#Autenticação "Diretrizes de envio ao AUR"), poderá votar diretamente na linha de comando usando a chave ssh. Isso significa que você não precisará salvar ou digitar sua senha do AUR.
 
 ```
 $ ssh aur@aur.archlinux.org vote *nome_do_pacote*

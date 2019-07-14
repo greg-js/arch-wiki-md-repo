@@ -237,6 +237,8 @@ EndSection
 
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
 
+If you have enabled [Intel Fastboot](/index.php/Intel_graphics#Fastboot "Intel graphics") you might also get the `No outputs have backlight property` error. In this case, trying the above method may cause Xorg to crash on start up. You should disable it to fix the issue. It is [known](https://bugs.freedesktop.org/show_bug.cgi?id=108225) to cause issues with brightness control.
+
 ### setpci
 
 It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.

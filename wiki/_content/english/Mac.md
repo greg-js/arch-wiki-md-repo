@@ -12,6 +12,8 @@ Related articles
 *   [iMac (21.5-inch, Mid 2010)](/index.php/IMac_(21.5-inch,_Mid_2010) "IMac (21.5-inch, Mid 2010)")
 *   [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive")
 
+**Warning:** This does not apply to more recent macbooks. These are very poorly supported. See [here](https://github.com/Dunedan/mbp-2016-linux) for more information.
+
 Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

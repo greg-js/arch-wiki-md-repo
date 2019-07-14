@@ -55,15 +55,15 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 2\. Determine the necessary driver version for your card by:
 
 *   finding the code name (e.g. NV50, NVC0, etc.) on [Nouveau wiki's code names page](https://nouveau.freedesktop.org/wiki/CodeNames/)
-*   looking up the name in NVIDIA's [legacy card list](http://www.nvidia.com/object/IO_32667.html): if your card is not there you can use the latest driver
-*   visiting NVIDIA's [driver download site](http://www.nvidia.com/Download/index.aspx)
+*   looking up the name in NVIDIA's [legacy card list](https://www.nvidia.com/object/IO_32667.html): if your card is not there you can use the latest driver
+*   visiting NVIDIA's [driver download site](https://www.nvidia.com/Download/index.aspx)
 
 3\. Install the appropriate driver for your card:
 
 *   For GeForce 600-900 and Quadro/Tesla/Tegra K-series cards and newer [NVE0, NV110 and NV130 family cards from around 2010-2019], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
-*   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
+*   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](https://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
 *   For GeForce 400/500 series cards [NVCx and NVDx] from around 2010-2011, [install](/index.php/Install "Install") the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) or [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts) package.
 
@@ -77,7 +77,7 @@ Once the driver has been installed, continue to [#Configuration](#Configuration)
 
 ### Unsupported drivers
 
-If you have a GeForce 300 series card or older (released in 2010 or earlier), Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [Nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
+If you have a GeForce 300 series card or older (released in 2010 or earlier), Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](https://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [Nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
 
 However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade [Xorg](/index.php/Xorg "Xorg"):
 
@@ -100,7 +100,7 @@ Do not forget to run [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") every time
 
 **Warning:** Enabling [KMS](/index.php/KMS "KMS") causes [GNOME](/index.php/GNOME "GNOME") to default to [Wayland](/index.php/Wayland "Wayland"), which currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284). Use the *GNOME on Xorg* session instead.
 
-**Note:** The NVIDIA driver does **not** provide an `fbdev` driver for the high-resolution console for the kernel compiled-in `vesafb` module. However, the kernel compiled-in `efifb` module supports a high-resolution console on EFI systems. This method requires GRUB and is described in [NVIDIA/Tips and tricks#Fixing terminal resolution](/index.php/NVIDIA/Tips_and_tricks#Fixing_terminal_resolution "NVIDIA/Tips and tricks").[[1]](http://forums.fedoraforum.org/showthread.php?t=306271)[[2]](https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/).
+**Note:** The NVIDIA driver does **not** provide an `fbdev` driver for the high-resolution console for the kernel compiled-in `vesafb` module. However, the kernel compiled-in `efifb` module supports a high-resolution console on EFI systems. This method requires GRUB and is described in [NVIDIA/Tips and tricks#Fixing terminal resolution](/index.php/NVIDIA/Tips_and_tricks#Fixing_terminal_resolution "NVIDIA/Tips and tricks").[[1]](https://forums.fedoraforum.org/showthread.php?t=306271)[[2]](https://www.reddit.com/r/archlinux/comments/4gwukx/nvidia_drivers_and_high_resolution_tty_possible/).
 
 #### Pacman hook
 

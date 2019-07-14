@@ -26,6 +26,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.4.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired,_but_is_not_recognized_by_device)
         *   [1.4.9 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
         *   [1.4.10 Apple Airpods have low volume](#Apple_Airpods_have_low_volume)
+        *   [1.4.11 HSP problem: the bluetooth sink and source are created, but no audio is being transmitted](#HSP_problem:_the_bluetooth_sink_and_source_are_created,_but_no_audio_is_being_transmitted)
 *   [2 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5/bluez-alsa)
 *   [3 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA,_bluez5_and_PulseAudio_method)
     *   [3.1 Install Software Packages](#Install_Software_Packages)
@@ -386,6 +387,10 @@ ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=avrcp
 Finally [restart](/index.php/Restart "Restart") `bluetooth.service`, [reload](/index.php/Reload "Reload") systemd manager configuration
 
 Reconnect your headset.
+
+#### HSP problem: the bluetooth sink and source are created, but no audio is being transmitted
+
+You may be missing firmware or the SCO (audio protocol of HSP and HFP) routing might be wrong. See [[3]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Bluetooth/#index10h3) - the firmware for BCM20702 can be installed via [bcm20702a1-firmware](https://aur.archlinux.org/packages/bcm20702a1-firmware/) or [bcm20702b0-firmware](https://aur.archlinux.org/packages/bcm20702b0-firmware/).
 
 ## Headset via Bluez5/bluez-alsa
 

@@ -134,7 +134,7 @@ WantedBy=multi-user.target
 
 ### Working with unsupported hardware
 
-Some drives, do not support spin down via hdparm. A diagnostic error message similar to the following is a good indication this is the case:
+Some drives do not support spin down via hdparm. A diagnostic error message similar to the following is a good indication this is the case:
 
  `# hdparm -S 240 /dev/sda` 
 ```

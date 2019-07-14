@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=573269) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=576779) na versão em inglês.
 
 Artigos relacionados
 
@@ -71,6 +71,7 @@ Se você achar que fazer *rebase* de ramos do Git é trabalhoso demais, você po
 	Algumas ferramentas processam arquivos de configuração para permitir que eles sejam personalizados dependendo do host.
 
 | Nome | Pacote | Escrito em | Agrupamento de arquivos | Processamento |
+| [dot-templater](https://github.com/kesslern/dot-templater) | [dot-templater-git](https://aur.archlinux.org/packages/dot-templater-git/) | Rust | baseado em diretórios | sintaxe personalizada |
 | [dotdrop](https://deadc0de.re/dotdrop/) | [dotdrop](https://aur.archlinux.org/packages/dotdrop/) | Python | arquivo de configuração | Jinja2 |
 | [dotfiles](https://github.com/jbernard/dotfiles) | [dotfiles](https://aur.archlinux.org/packages/dotfiles/) | Python | [Não](https://github.com/jbernard/dotfiles/pull/24) | Não |
 | [Dots](https://github.com/EvanPurkhiser/dots) | [dots-manager](https://aur.archlinux.org/packages/dots-manager/) | Python | baseado em diretórios | pontos de acréscimos personalizados |

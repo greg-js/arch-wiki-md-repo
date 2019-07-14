@@ -387,7 +387,7 @@ Using this configuration may also solve any graphical boot issues.
 
 ### Enabling overclocking
 
-**Warning:** Please note that overclocking may damage hardware and that no responsibility may be placed on the authors of this page due to any damage to any information technology equipment from operating products out of specifications set by the manufacturer.
+**Warning:** Overclocking might permanently damage your hardware. You have been warned.
 
 Overclocking is controlled via *Coolbits* option in the `Device` section, which enables various unsupported features:
 

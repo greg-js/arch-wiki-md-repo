@@ -38,14 +38,14 @@ In case of scaleable server monitoring in combination with Grafana and InfluxDB,
 Herefore, create a database named `example`:
 
 ```
-curl -G [http://localhost:8086/query](http://localhost:8086/query) --data-urlencode "q=CREATE DATABASE example"
+curl -G http://localhost:8086/query --data-urlencode "q=CREATE DATABASE example"
 
 ```
 
 Post data into the example database:
 
 ```
-curl -i -XPOST '[http://localhost:8086/write?db=example'](http://localhost:8086/write?db=example') --data-binary 'cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000'
+curl -i -XPOST 'http://localhost:8086/write?db=example' --data-binary 'cpu_load_short,host=server01,region=us-west value=0.64 1434055562000000000'
 
 ```
 

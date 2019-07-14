@@ -31,7 +31,8 @@ X server can only be used with integrated graphics or discrete Nvidia graphics, 
 
 ### Setting the right bus id
 
-**Note:** Users who installed `nvidia-xrun` from the [AUR](/index.php/AUR "AUR") can skip this step, because the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`.
+**Note:** If you installed package from [AUR](/index.php/AUR "AUR"), the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`. Make sure the bus ID has been correctly set, otherwise change it (you can find correct bus ID using {ic
+command).}}
 
 Find your display device bus id:
 

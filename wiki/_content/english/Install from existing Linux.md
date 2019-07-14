@@ -28,6 +28,8 @@ If the host system runs Arch Linux, this can be achieved by simply installing [a
 
 *   [1 Backup and Preparation](#Backup_and_Preparation)
 *   [2 From a host running Arch Linux](#From_a_host_running_Arch_Linux)
+    *   [2.1 Create a new Arch installation](#Create_a_new_Arch_installation)
+    *   [2.2 Create a copy of an existing Arch installation](#Create_a_copy_of_an_existing_Arch_installation)
 *   [3 From a host running another Linux distribution](#From_a_host_running_another_Linux_distribution)
     *   [3.1 Using pacman from the host system](#Using_pacman_from_the_host_system)
     *   [3.2 Creating a chroot](#Creating_a_chroot)
@@ -66,22 +68,36 @@ In general, it is a good idea to have a local copy of your original `/etc` direc
 
 Install the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package.
 
-Follow [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide"). If you already use the `/mnt` directory for something else, just create another directory such as `/mnt/install`, and use that instead.
+Follow [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") to mount the filesystem and all the needed mount points. If you already use the `/mnt` directory for something else, just create another directory such as `/mnt/install`, and use that instead as the mount point base.
 
-Then follow [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide"). You can skip [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide"), since the host should already have a correct mirrorlist.
+### Create a new Arch installation
+
+Follow [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide").
+
+In the procedure, [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide") can be skipped since the host should already have a correct mirrorlist.
 
 **Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using *pacstrap'*s `-c` option.
 
-**Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` error when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, `arch-chroot` to the new partition, then install and configure grub. The last step may require disabling `lvmetad` from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
+**Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, `arch-chroot` to the new partition, then install and configure grub. The last step may require disabling `lvmetad` from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
 
-**Note:** If you only want to create an exact copy of an existing Arch installation, it is also possible to just copy the filesystem to the new partition. With this method, you will still need to
+### Create a copy of an existing Arch installation
 
-*   Create [`/etc/fstab`](/index.php/Installation_guide#Fstab "Installation guide") and edit `/etc/hostname`
-*   Delete `/etc/machine-id` so that a new, unique, one will be regenerated on boot
-*   Make any other changes appropriate to the installation medium
-*   Install the bootloader
+It is possible to replicate an existing Arch Linux installation by copying the host filesystem to the new partition and make some adjustments to it to make it bootable and unique.
 
-When copying the filesystem root, use something like `cp -ax` or `rsync -axX`. This avoids copying contents of mountpoints (`-x`), and preserves the [capabilities](/index.php/Capabilities "Capabilities") attributes of some system binaries (`rsync -X`).
+The first step is to copy the host files into the mounted new partition, for this, consider using the approach exhibited in [rsync#Full system backup](/index.php/Rsync#Full_system_backup "Rsync").
+
+Then, follow the procedure described in [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") with some caveats and additional steps:
+
+*   [Installation guide#Time zone](/index.php/Installation_guide#Time_zone "Installation guide"), [Installation guide#Localization](/index.php/Installation_guide#Localization "Installation guide") and [Installation guide#Root password](/index.php/Installation_guide#Root_password "Installation guide") can be skipped
+*   [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide") may be required in particular if changing filesystem, for example from [ext4](/index.php/Ext4 "Ext4") to [Btrfs](/index.php/Btrfs "Btrfs")
+*   Regarding [Installation guide#bootloader](/index.php/Installation_guide#bootloader "Installation guide"), it is necessary to reinstall the bootloader
+*   Delete `/etc/machine-id` so that a new, unique one, is generated at the next boot
+
+If the mirrored Arch installation may be used within a different configuration or with another hardware, consider the following additional operations:
+
+*   Use the CPU [microcode](/index.php/Microcode "Microcode") update adapted to the target system during the step [Installation guide#bootloader](/index.php/Installation_guide#bootloader "Installation guide")
+*   If any specific [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") was present on the host and may be incompatible with the target system, follow [Moving an existing install into (or out of) a virtual machine#Disable any Xorg-related files](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine#Disable_any_Xorg-related_files "Moving an existing install into (or out of) a virtual machine")
+*   Make any other adjustment appropriate to the target system, like reconfiguring the network or the audio.
 
 ## From a host running another Linux distribution
 

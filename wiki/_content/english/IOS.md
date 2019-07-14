@@ -29,8 +29,9 @@ The purpose of this article is to demonstrate the use of an **iPad**, **iPod** o
         *   [5.1.3 Unobfuscating the Database](#Unobfuscating_the_Database)
     *   [5.2 iPod Classic/Nano (3rd generation)](#iPod_Classic/Nano_(3rd_generation))
     *   [5.3 iPod Nano 5th generation](#iPod_Nano_5th_generation)
-    *   [5.4 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
-    *   [5.5 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
+    *   [5.4 iPod Nano 6th generation](#iPod_Nano_6th_generation)
+    *   [5.5 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
+    *   [5.6 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
 *   [6 iPod management apps](#iPod_management_apps)
 *   [7 See also](#See_also)
 
@@ -319,6 +320,10 @@ Follow the instructions below in order to set up the FirewireID then go to follo
 All credits go to [https://wired-news.blogspot.it/2012/09/ipod-nano-5g-synchronization-issues-in.html](https://wired-news.blogspot.it/2012/09/ipod-nano-5g-synchronization-issues-in.html)
 
 **Note:** I tried to follow the above 3rd generation instructions but they were not enough. I don't know if this further step is needed also for the above mentioned iPod.
+
+### iPod Nano 6th generation
+
+By default libgpod does not seem to be able to syncronize on a iPod Nano 6th generation. It copies data, but as soon as USB is disconnected, everything is as before. The package [libhashab-git](https://aur.archlinux.org/packages/libhashab-git/) fix this.
 
 ### iPod Shuffle 1st and 2nd generation
 

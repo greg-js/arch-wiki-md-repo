@@ -37,6 +37,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
             *   [1.5.2.2 Unmapped Buttons](#Unmapped_Buttons)
         *   [1.5.3 Non-US Keyboards' Backslash/Pipe 102nd Key](#Non-US_Keyboards'_Backslash/Pipe_102nd_Key)
     *   [1.6 Touchpad](#Touchpad)
+    *   [1.7 Fan Control](#Fan_Control)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
@@ -212,6 +213,10 @@ WantedBy=multi-user.target
 ### Touchpad
 
 Single tap and double finger scrolling work. Multi gestures do not work out the box though, they are detected with [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/).
+
+### Fan Control
+
+Fan control by "Fancontrol (lm-sensors)" or "NoteBook Fan Control (NBFC)" is not supported, but by the use of the tool [isw](https://aur.archlinux.org/packages/isw/) you can control the fans in the same way as Dragon Center on Windows.
 
 ## Troubleshooting
 

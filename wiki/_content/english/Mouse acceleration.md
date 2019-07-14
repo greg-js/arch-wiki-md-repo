@@ -259,7 +259,7 @@ Section "InputClass"
 EndSection
 ```
 
-and restart X.
+and restart X. Notice that under certain conditions (for example if you have a different `Pointer Speed` value for your mouse in Plasma 5.13) your desktop environment may try to override some of these values even if you have this X configuration file.
 
 Another option is this command:
 

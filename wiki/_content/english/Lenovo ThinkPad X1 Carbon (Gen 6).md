@@ -71,9 +71,8 @@ ThinkPad X1 Carbon 6th
 *   [7 Configuration](#Configuration)
     *   [7.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [7.2 Special buttons](#Special_buttons)
-    *   [7.3 Bind special keys](#Bind_special_keys)
-    *   [7.4 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
-    *   [7.5 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+    *   [7.3 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
+    *   [7.4 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
 *   [8 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
     *   [8.1 GNOME Wayland not available](#GNOME_Wayland_not_available)
 *   [9 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
@@ -185,10 +184,9 @@ There is also a kernel patch for this issue, which can be found [here](https://b
 
 ## Built-in speakers low volume workaround
 
-If your ThinkPad X1 Carbon (Gen 6) built-in speakers are limited to a maximum of about 20% volume even though the volume is set at 100%, try adding the following parameter to the snd_hda_intel module by editing /etc/modprobe.d/alsa-base.conf and adding the following line:
+If your ThinkPad X1 Carbon (Gen 6) built-in speakers are limited to a maximum of about 20% volume even though the volume is set at 100%, try adding the following parameter to the `snd_hda_intel` module, which can be set through a file in `/etc/modprobe.d/`, e.g.:
 
-options snd-hda-intel model=nofixup
-
+ `/etc/modprobe.d/alsa-base.conf`  `options snd-hda-intel model=nofixup` 
 **Note:** This stops the LEDs on the mute and mic-mute buttons from working.
 
 ## Wireless WAN / LTE
@@ -240,16 +238,6 @@ To make the changes take effect:
 ```
 # udevadm hwdb --update
 # udevadm trigger --sysname-match="event*"
-
-```
-
-### Bind special keys
-
-It should be noted that `Fn+F11` which is `KEY_KEYBOARD` and `Fn+F12` which is `KEY_FAVORITES` could be bound respectively with `XF86Launch1` and `XF86Launch2`, as followed :
-
-```
-# bindsym XF86Launch1 [your app]
-# bindsym XF86Launch2 [your app]
 
 ```
 

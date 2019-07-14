@@ -1,6 +1,10 @@
 [Cloud-init](https://cloud-init.io/) is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -120,12 +124,16 @@ unverified_modules: ['ssh-import-id']
 
 ## Systemd integration
 
-Package cloud-init provides 4 systemd services, and a systemd target, whose dependencies are constructed in a way that they are activated in the sequence listed:
+Package cloud-init provides four systemd [services](https://www.freedesktop.org/software/systemd/man/systemd.service.html), two systemd [targets](https://www.freedesktop.org/software/systemd/man/systemd.target.html), and a systemd [generator](https://www.freedesktop.org/software/systemd/man/systemd.generator.html), whose dependencies are constructed in a way that they are activated in the sequence listed:
 
+*   `cloud-init-generator`. Determines availability of any data source and enables or disables `cloud-init.target`
 *   `cloud-init-local.service`. Only requires the filesystems to be up. Executes `cloud-init init --local`
 *   `cloud-init.service`. Requires the network to be up. Executes `cloud-init init`
 *   `cloud-config.target`. Corresponds to the cloud-config upstart event "to inform third parties that cloud-config is available"
 *   `cloud-config.service`. Executes `cloud-init modules --mode=config`
 *   `cloud-final.service`. Executes `cloud-init modules --mode=final`
+*   `cloud-init.target`. Reached when all services have been started
 
-The [Uplink Labs EC2 images](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services") have all of them enabled, although that appears to be overkill due to the dependencies.
+The [Uplink Labs EC2 images](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services") have all of them enabled, although that appears to be overkill due to the dependencies. When preparing an image, enabling `cloud-init.service` and `cloud-final.service` should be sufficient. Note that this does not mean that the cloud-init services will actually be run - that still depends on the generator enabling the `cloud-init.target` on early boot.
+
+See also the [cloud-init boot stages documentation](https://cloudinit.readthedocs.io/en/latest/topics/boot.html) for more info.

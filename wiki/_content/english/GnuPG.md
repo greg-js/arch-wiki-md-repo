@@ -684,7 +684,10 @@ SSH_AGENT_PID	DEFAULT=
 SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 ```
 
-**Note:** If you set your `SSH_AUTH_SOCK` manually (such as in this pam_env example), keep in mind that your socket location may be different if you are using a custom `GNUPGHOME`. You can use the following bash example, or change `SSH_AUTH_SOCK` to the value of `gpgconf --list-dirs agent-ssh-socket`.
+**Note:**
+
+*   If you set your `SSH_AUTH_SOCK` manually (such as in this pam_env example), keep in mind that your socket location may be different if you are using a custom `GNUPGHOME`. You can use the following bash example, or change `SSH_AUTH_SOCK` to the value of `gpgconf --list-dirs agent-ssh-socket`.
+*   If GNOME Keyring is installed, it is necessary to [deactivate](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring") its ssh component. Otherwise, it will overwrite `SSH_AUTH_SOCK`.
 
 Alternatively, depend on Bash. This works for non-standard socket locations as well:
 
@@ -963,7 +966,7 @@ See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p149
 
 When `gpg --list-keys` fails to show keys that used to be there, and applications complain about missing or invalid keys, some keys may not have been migrated to the new format.
 
-Please read [GnuPG invalid packet workaround](http://jo-ke.name/wp/?p=111). Basically, it says that there is a bug with keys in the old `pubring.gpg` and `secring.gpg` files, which have now been superseded by the new `pubring.kbx` file and the `private-keys-v1.d/` subdirectory and files. Your missing keys can be recovered with the following commnads:
+Please read [GnuPG invalid packet workaround](http://jo-ke.name/wp/?p=111). Basically, it says that there is a bug with keys in the old `pubring.gpg` and `secring.gpg` files, which have now been superseded by the new `pubring.kbx` file and the `private-keys-v1.d/` subdirectory and files. Your missing keys can be recovered with the following commands:
 
 ```
 $ cd

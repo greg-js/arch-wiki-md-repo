@@ -52,6 +52,7 @@
         *   [1.3.13 Issue tracking systems](#Issue_tracking_systems)
         *   [1.3.14 Code review](#Code_review)
         *   [1.3.15 Game development](#Game_development)
+        *   [1.3.16 Repository managers](#Repository_managers)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 On-screen keyboards](#On-screen_keyboards)
@@ -350,7 +351,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/mariostg/nffm](https://github.com/mariostg/nffm) || [nffm-git](https://aur.archlinux.org/packages/nffm-git/)
 
-*   **nnn** — Tiny, lightning fast, feature-packed file manager.
+*   **[nnn](/index.php/Nnn "Nnn")** — Tiny, lightning fast, feature-packed file manager.
 
 	[https://github.com/jarun/nnn](https://github.com/jarun/nnn) || [nnn](https://www.archlinux.org/packages/?name=nnn)
 
@@ -1217,6 +1218,20 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 *   **Tiled** — General purpose 2D level editor with powerful tile map editing features. It’s built to be easy to use and is suitable for many type of games.
 
 	[https://www.mapeditor.org/](https://www.mapeditor.org/) || [tiled](https://www.archlinux.org/packages/?name=tiled)
+
+#### Repository managers
+
+*   **Nexus 2** — Nexus 2 Repository Manager (OSS)
+
+	[http://nexus.sonatype.org](http://nexus.sonatype.org) || [nexus](https://aur.archlinux.org/packages/nexus/)
+
+*   **Nexus 3** — Nexus 3 Repository OSS
+
+	[http://nexus.sonatype.org](http://nexus.sonatype.org) || [nexus-oss](https://aur.archlinux.org/packages/nexus-oss/)
+
+*   **Artifactory** — Artifactory is an advanced Binary Repository Manager for use by build tools, dependency management tools and build servers
+
+	[https://bintray.com/jfrog/product/JFrog-Artifactory-Oss/view](https://bintray.com/jfrog/product/JFrog-Artifactory-Oss/view) || [artifactory-oss](https://aur.archlinux.org/packages/artifactory-oss/)
 
 ### Text input
 

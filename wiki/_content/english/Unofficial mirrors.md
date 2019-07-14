@@ -76,6 +76,8 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 *   [https://mirror.mikrogravitation.org/archlinux/](https://mirror.mikrogravitation.org/archlinux/) - *IPv4/IPv6, https, rsync, 20 Gbit/s Bandwidth*
 
+*   [https://www.chaoticum.ch/mirror/arch/](https://www.chaoticum.ch/mirror/arch/) - *IPv4, https, 1Gbit/s Bandwith, server-location: Nuernberg*
+
 ## Indonesia
 
 *   [http://kambing.ui.ac.id/archlinux/](http://kambing.ui.ac.id/archlinux/)

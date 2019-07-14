@@ -45,7 +45,7 @@ Alternatively, the bare 'tar.gz' packaged executable can be downloaded from the 
 
 The Linux client of Resilio Sync does not use a typical GUI, instead it sets up a WebUI server accessible at `localhost:8888`. Shared folders can also be configured statically in a configuration file, but doing so disables the WebGUI.
 
-Once installed, you'll first need to create a configuration file at `~/.config/rslsync/rslsync.conf`, see [#Configuration](#Configuration). You will also need to create the `storage_path` directory. When that is done, start and (if you want it to start on boot) [start/enable](/index.php/Start/enable "Start/enable") the user service `rslsync` (i.e., with the `--user` flag.
+Once installed, you'll first need to create a configuration file at `~/.config/rslsync/rslsync.conf`, see [#Configuration](#Configuration). You will also need to create the `storage_path` directory. When that is done, start and (if you want it to start on boot) [start/enable](/index.php/Start/enable "Start/enable") the user service `rslsync` (i.e., with the `--user` flag).
 
 The service will run as the user invoking the command. Note that the above command is *not* run as root: doing so may lead to a cryptic error stating that D-Bus has refused the connection.
 

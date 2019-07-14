@@ -147,7 +147,7 @@ Las herramientas de gestión de usuarios, grupos y contraseñas en Arch Linux pr
 
 Para listar los usuarios que actualmente están conectados en el sistema, se puede usar la orden *who*. Para listar todas las cuentas de usuario existentes, incluidas sus propiedades almacenadas en la [base de datos del usuario](#Base_de_datos_del_usuario), ejecute `passwd -Sa` como superusuario. Véase [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para la descripción del formato de salida.
 
-Para añadir un nuevo usuario, utilice el ocmando *useradd*:
+Para añadir un nuevo usuario, utilice el comando *useradd*:
 
 ```
 # useradd -m -g *grupo_inicial* -G *grupos_adicionales* -s *intérprete_de_línea_de_órdenes* *nombre_de_usuario*

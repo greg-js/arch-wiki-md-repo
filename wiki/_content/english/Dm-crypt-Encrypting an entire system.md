@@ -253,10 +253,23 @@ Note that each blockdevice requires its own passphrase. This may be inconvenient
 
 ### Preparing the boot partition
 
-What you do have to setup is a non-encrypted `/boot` partition, which is needed for a encrypted root. For a standard [MBR/non-EFI](/index.php/EFI "EFI") `/boot` partition, for example, execute:
+What you do have to setup is a non-encrypted `/boot` partition, which is needed for a encrypted root. For an ordinary boot partition on BIOS systems, for example, execute:
 
 ```
 # mkfs.ext4 /dev/sda1
+
+```
+
+or for an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") on UEFI systems:
+
+```
+# mkfs.fat -F32 /dev/sda1
+
+```
+
+Afterwards create the directory for the mounpoint and mount the partition:
+
+```
 # mkdir /mnt/boot
 # mount /dev/sda1 /mnt/boot
 
@@ -781,7 +794,7 @@ Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda
 The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the LUKS1 device, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [dm-crypt/Device encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for details.
 
 *   Create the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") and add the key to `/dev/md/root`.
-*   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot. See [dm-crypt/Device encryption#Unlocking a secondary partition at boot](/index.php/Dm-crypt/Device_encryption#Unlocking_a_secondary_partition_at_boot "Dm-crypt/Device encryption").
+*   Create another keyfile for the HDD (`/dev/sdc1`) so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it. Edit `/etc/crypttab` to decrypt the HDD at boot. See [Dm-crypt/System configuration#Unlocking with a keyfile](/index.php/Dm-crypt/System_configuration#Unlocking_with_a_keyfile "Dm-crypt/System configuration").
 
 ### Configuring the system
 

@@ -22,18 +22,20 @@ This article shows how to install the Microsemi Libero Toolchain on Arch Linux.
 *   [3 Using a FlashPro programmer](#Using_a_FlashPro_programmer)
     *   [3.1 Adding udev rules](#Adding_udev_rules)
     *   [3.2 Removing conflicting kernel module](#Removing_conflicting_kernel_module)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Libero crashes with SysXceptError](#Libero_crashes_with_SysXceptError)
 
 ## Installation
 
 ### Preparations
 
-Libero needs about 45GiB free diskspace.
+Libero needs about 45GiB free diskspace. **The size of the disk where Libero is installed must not exceed 2TB!**
 
 #### Package installation
 
 Libero depends on some 32-bit packages from multilib. In order to install multilib packages using [pacman](/index.php/Pacman "Pacman"), you need to enable the [multilib](/index.php/Multilib "Multilib") repository first (if not already done).
 
-Install the following packages: [openmotif](https://www.archlinux.org/packages/?name=openmotif) [zlib](https://www.archlinux.org/packages/?name=zlib) [lib32-libxft](https://www.archlinux.org/packages/?name=lib32-libxft) [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) [lib32-dbus](https://www.archlinux.org/packages/?name=lib32-dbus) [lib32-sqlite](https://www.archlinux.org/packages/?name=lib32-sqlite) [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse)
+Install the following packages: [openmotif](https://www.archlinux.org/packages/?name=openmotif) [zlib](https://www.archlinux.org/packages/?name=zlib) [libjpeg6-turbo](https://www.archlinux.org/packages/?name=libjpeg6-turbo) [lib32-libxft](https://www.archlinux.org/packages/?name=lib32-libxft) [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12) [lib32-dbus](https://www.archlinux.org/packages/?name=lib32-dbus) [lib32-sqlite](https://www.archlinux.org/packages/?name=lib32-sqlite) [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) [lib32-libxcomposite](https://www.archlinux.org/packages/?name=lib32-libxcomposite)
 
 #### Qt5 32-bit dependencies
 
@@ -95,9 +97,9 @@ Reenable the [tmpfs](/index.php/Tmpfs "Tmpfs") after the installation with:
 
 Some modifications have to be made for Libero to run on Arch Linux.
 
-Libero tries to load an old version of the motif library. Modify the following file and change the 3 to a 4 in the `case `uname`` block:
+Libero tries to load an old version of the motif library. Modify the following files and change the 3 to a 4 in the `case `uname`` block:
 
- `/home/*user*/programs/microsemi/libero/v12.1/Libero/bin/actel_setup_vars` 
+ `/home/*user*/programs/microsemi/libero/v12.1/Libero/bin/actel_setup_vars and /home/*user*/programs/microsemi/libero/v12.1/Libero/bin64/actel_setup_vars` 
 ```
 ...
 case `uname` in
@@ -116,7 +118,7 @@ case `uname` in
 # ln -s /lib/libXm.so.4 /lib/libXm.so.3
 
 ```
-This is discouraged as it tampers with a directory preferably modified by [pacman](/index.php/Pacman "Pacman") when installing packages. However it might be useful when reinstalling Libero or installing a newer version of it because the manual modification of the file above can be skipped.
+This is discouraged as it tampers with a directory preferably modified by [pacman](/index.php/Pacman "Pacman") when installing packages. However it might be useful when reinstalling Libero or installing a newer version of it because the manual modification of the files above can be skipped.
 
 Furthermore the outdated `libz` version shipped by Microsemi does not work with the repository version of [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12). In `/home/*user*/programs/microsemi/libero/v12.1/Libero/lib` do the following to make Libero use your library installed by [pacman](/index.php/Pacman "Pacman"):
 
@@ -171,10 +173,10 @@ Probably you may want to create a launch script for that:
 
  `/home/*user*/scripts/launch_libero.sh` 
 ```
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/*user*/lib/qt5_32/5.5/gcc/lib
-LM_LICENSE_FILE="*port*@*domain.of.your.license.server*"
-SNPSLMD_LICENSE_FILE="*port*@*domain.of.synopsys.license.server*"
-/home/*user*/programs/microsemi/libero/v12.1//Libero/bin/libero
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/*user*/lib/qt5_32/5.5/gcc/lib
+export LM_LICENSE_FILE="*port*@*domain.of.your.license.server*"
+export SNPSLMD_LICENSE_FILE="*port*@*domain.of.synopsys.license.server*"
+/home/*user*/programs/microsemi/libero/v12.1/Libero/bin/libero
 ```
 
 Do not forget to make it executable:
@@ -236,4 +238,17 @@ When plugging in the programmer it identifies as an FTDI serial device and loads
 
 To permanently unload the driver you may add it to your [Blacklist](/index.php/Blacklist "Blacklist"):
 
- `/etc/modprobe.d/blacklist-ftdi.conf`  `blacklist ftdi_sio`
+ `/etc/modprobe.d/blacklist-ftdi.conf`  `blacklist ftdi_sio` 
+
+## Troubleshooting
+
+### Libero crashes with SysXceptError
+
+Libero till version 12.1 does not work on disks larger than 2TB of size. Neither the Libero binaries nor the vault nor your home-folder nor any project may reside on a partition larger than that size. If you cannot change the size of the partition where your home-folder is located start Libero with a different path for your home on a smaller disk:
+
+```
+$ HOME=/path/to/fake/home libero
+
+```
+
+Some may add that to the startup-script to apply it on start. The install and vault locations have to be set on installation or may be edited in `/home/*user*/programs/microsemi/libero/v12.1/Libero/data/install.def` when moving the files afterwards.

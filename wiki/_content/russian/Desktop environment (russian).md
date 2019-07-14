@@ -68,10 +68,7 @@
 
 ### Неофициально поддерживаемые
 
-*   **[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")** — легкая и современных среда рабочего стола, направленная на простоту и элегантность. По внешнему виду напоминает рабочий стол Chrome/Chromium OS.
-
-	[https://evolve-os.com/budgie/](https://evolve-os.com/budgie/) || [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)
-
+*   {{App|[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") Рабочая среда разрабатываемая усилиями Solus (ранее Evolve OS)
 *   **[Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")** — стандартная среда рабочего стола дистрибутива Linux Deepin. По сути является измененной оболочкой GNOME Shell
 
 	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/)
@@ -152,11 +149,10 @@
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
-[compiz](https://aur.archlinux.org/packages/compiz/) | Dock
-[deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/) | Deepin Terminal
-[deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+| [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") | qt5
+[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Kwin| [Kwinwindowsystem](https://www.archlinux.org/packages/?name=Kwinwindowsystem) | Dock
+[deepin-dock](https://www.archlinux.org/packages/?name=deepin-dock) | Deepin Terminal
+[deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | [Nautilus](/index.php/Nautilus "Nautilus")
 [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
 [gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
@@ -283,8 +279,8 @@
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [MATE](/index.php/MATE "MATE") | [GTK+](/index.php/GTK%2B "GTK+") 2
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) | Marco
+| [MATE](/index.php/MATE "MATE") | [GTK+](/index.php/GTK%2B "GTK+") 3
+[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
 [marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
 [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
 [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
@@ -355,8 +351,8 @@
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") Unity Greeter
 [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) |
-| [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 2
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
+| [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 3
+[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
 [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [Xfce Panel](http://docs.xfce.org/xfce/xfce4-panel/start)
 [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) | [Terminal](http://www.xfce.org/projects/terminal)
 [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal) | [Thunar](/index.php/Thunar "Thunar")
@@ -372,11 +368,11 @@
 
 Среди всех окружений рабочего стола, GNOME и KDE наиболее требовательны к ресурсам компьютера. Полные версии этих сред не только занимают больше места на диске чем более легкие альтернативы (Enlightenment, LXDE, LXQt и Xfce), но также требуют больше процессорного времени и оперативной памяти для работы. Все дело в том, что GNOME и KDE позиционируют cебя как полнофункциональные (*full-featured*) среды: они предоставляют наиболее полное и интегрированное окружение рабочего стола.
 
-Enlightenment, LXDE, LXQt и Xfce, напротив, являются легковесными (*lightweight*) средами. Они хорошо работают на более старом оборудовании и в общем потребляют меньше системных ресурсов. Это достигается отказом от возможностей, которые могут быть полезны только небольшому количеству пользователей, и концентрацией на действительно важной функциональности.
+Enlightenment, LXDE, LXQt и Xfce, напротив, являются легковесными (*lightweight*) средами. Они хорошо работают на более старом и слабом оборудовании и в общем потребляют меньше системных ресурсов. Это достигается отказом от возможностей, которые могут быть полезны только небольшому количеству пользователей, и концентрацией на действительно важной функциональности.
 
 ### Схожесть окружений
 
-Многие пользователи отмечают, что интерфейс KDE во многом похож на окружение Windows, а GNOME ближе к системам Mac. Это достаточно субъективное сравнение, так как любая из этих сред может быть настроена чтобы в той или иной степени эмулировать интерфейсы Windows или Mac. Читайте подробнее на страницах [Больше ли KDE похож на Windows, чем GNOME?](http://www.psychocats.net/ubuntucat/is-kde-more-windows-like-than-gnome/) и [KDE против GNOME](http://www.jeffwu.net/?p=71). Также обратите внимание на статью [Linux — не Windows](http://linux.oneandoneis2.org/LNW.htm).
+Многие пользователи отмечают, что интерфейс KDE во многом похож на окружение Windows, а GNOME ближе к системам OS X. Это достаточно субъективное сравнение, так как любая из этих сред может быть настроена чтобы в той или иной степени эмулировать интерфейсы Windows или OS X.
 
 ## Создание своей среды
 

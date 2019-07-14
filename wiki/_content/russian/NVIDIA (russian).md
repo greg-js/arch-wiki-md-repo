@@ -20,10 +20,9 @@
 *   [1 Установка](#Установка)
     *   [1.1 Не поддерживаемые драйвера](#Не_поддерживаемые_драйвера)
     *   [1.2 Собственное ядро](#Собственное_ядро)
-    *   [1.3 Pure Video HD](#Pure_Video_HD)
-    *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
-        *   [1.4.1 Pacman hook](#Pacman_hook)
-    *   [1.5 Аппаратное ускорение видео посредством XvMC](#Аппаратное_ускорение_видео_посредством_XvMC)
+    *   [1.3 DRM kernel mode setting](#DRM_kernel_mode_setting)
+        *   [1.3.1 Pacman hook](#Pacman_hook)
+    *   [1.4 Аппаратное ускорение видео посредством XvMC](#Аппаратное_ускорение_видео_посредством_XvMC)
 *   [2 Настройка](#Настройка)
     *   [2.1 Минимальная настройка](#Минимальная_настройка)
     *   [2.2 Автоматическая настройка](#Автоматическая_настройка)
@@ -43,43 +42,46 @@
 
 ## Установка
 
-**Важно:** Избегайте установки пакета драйвера с сайта NVIDIA. Установка через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") позволяет обновлять драйвер вместе с остальной системой.
+**Важно:** Избегайте установки драйвера с сайта NVIDIA. Установка через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") позволяет обновлять драйвер вместе с остальными компонентами системы .
 
-Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#Собственное_ядро) подразделу.
+Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) и [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Пользователи других пакетов ядра могут сразу перейти к [следующему](#Собственное_ядро) подразделу.
 
-1\. Если вы не знаете модель графической карты, установленной у вас, для поиска используйте данный запрос:
+1\. Если вы не знаете модель установленной графической карты, воспользуйтесь следующей командой:
 
 	 `$ lspci -k | grep -A 2 -E "(VGA|3D)"` 
 
-2\. Есть несколько вариантов определения необходимой версии драйвера:
+2\. Определите версию драйвера, необходимую для вашей видеокарты:
 
-*   поиск по кодовому имени (например, NV50, NVC0 и т.д.) на [странице с кодовыми именами nouveau](http://nouveau.freedesktop.org/wiki/CodeNames)
-*   просмотр модели в [списке устаревших графических карт](http://www.nvidia.com/object/IO_32667.html) NVIDIA: если вашей карты нет в списке, используйте драйвер для нового оборудования
-*   также можно посетить [страницу загрузки драйвера с сайта](http://www.nvidia.com/Download/index.aspx) NVIDIA
+*   Используя поиск по кодовому имени (например, NV50, NVC0 и т.д.) на [странице Nouveau с кодовыми именами](https://nouveau.freedesktop.org/wiki/CodeNames/)
+*   Просмотрев модели в [списке устаревших графических карт](https://www.nvidia.com/object/IO_32667.html) NVIDIA: если вашей карты нет в списке, используйте последний доступный драйвер
+*   Посетив [страницу загрузки драйверов](https://www.nvidia.com/Download/index.aspx) NVIDIA
 
 3\. Установите подходящий драйвер для своей карты:
 
-*   Для карт GeForce 400 series и более новых [NVCx и новее], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет **nvidia-390xx** (**sudo pacman -S nvidia-390xx**) или [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) для [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для самых новых моделей графических ускорителей может потребоваться [установка](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакета [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/), т.к. стабильная версия драйвера может не поддерживать новые функции, добавленные в эти карты. Для использования драйвера с длительным сроком поддержки и поддержкой [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)"), [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/).
-*   Для карт GeForce 8000/9000 и 100-300 series [NV5x, NV8x, NV9x и NVAx] года производства 2006-2010, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-340xx](https://aur.archlinux.org/packages/nvidia-340xx/) или [nvidia-340xx-lts](https://aur.archlinux.org/packages/nvidia-340xx-lts/) вместе с [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
-*   Для карт GeForce 6000/7000 series [NV4x и NV6x] года производства 2004-2006, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) или [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) вместе с [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
-*   Для более старых моделей, обратитесь к подразделу [#Не поддерживаемые драйвера](#Не_поддерживаемые_драйвера).
+*   Для карт GeForce 600-900 и Quadro/Tesla/Tegra серии K и новее [семейства NVE0, NV110 и NV130 примерно из 2010-2019], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) или [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts).
 
-4\. Если разрядность вашей ОС 64-бит и вам необходима поддержка OpenGL 32-бит, то необходимо установить соответствующие пакеты *lib32* из репозитория [multilib](/index.php/Multilib "Multilib") (например, [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) или [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
+*   Если эти пакеты не работают, в [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) может быть более новый драйвер с поддержкой вашего оборудования.
+*   Также существует [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), собранный из [ветки NVIDIA с длительным сроком поддержки](https://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
 
-5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл с чёрным списком, который включает в себя модуль *nouveau*, поэтому перезагрузка необходима.
+*   Для видеокарт серии GeForce 400/500 [NVCx и NVDx] примерно из 2010-2011, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) или [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts).
+*   Для установки драйвера более старых моделей, обратитесь к разделу [#Не поддерживаемые драйвера](#Не_поддерживаемые_драйвера).
 
-После того, как драйвер будет установлен, можно перейти к разделу [#Настройка](#Настройка).
+4\. Для поддержки 32-разрядных приложений также необходимо установить соответствующий пакет nvidia *lib32* из репозитория [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)") (например, [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) или [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils)).
+
+5\. Перезагрузите систему. Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) содержит файл, который добавляет модуль *nouveau* в чёрный список, поэтому перезагрузка необходима.
+
+После того, как драйвер был установлен, можно перейти к разделу [#Настройка](#Настройка).
 
 ### Не поддерживаемые драйвера
 
-Если вы имеете карту GeForce 5 FX series или старее, Nvidia не поддерживает больше драйвера для вашей карты. Это означает, что эти драйвера [не поддерживают текущую версию Xorg](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). В вашем случае, проще использовать драйвер [nouveau](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"), который поддерживает старые карты с текущей версией Xorg.
+Если у вас установлена видеокарта серии GeForce 300 или старее (выпущенная в 2010 или раньше), Nvidia больше не поддерживает драйвера для данной карты. Это означает, что указанные драйвера [не поддерживают текущую версию Xorg](https://nvidia.custhelp.com/app/answers/detail/a_id/3142/). В таком случае проще использовать драйвер [Nouveau](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"), который поддерживает старые видеокарты с текущей версией Xorg.
 
-Однако, старые драйвера Nvidia пока ещё доступны и могут предоставлять лучшую 3D производительность/стабильность, если вы откатите версию Xorg:
+Однако устаревшие драйверы Nvidia ещё доступны и могут предоставлять лучшую стабильность или 3D-производительность, если вы готовы откатить версию [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"):
 
-*   Для карт GeForce 5 FX series [NV30-NV36], установите пакет [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/). Последняя поддерживаемая версия Xorg 1.15.
-*   Для карт GeForce 2/3/4 MX/Ti series [NV11, NV17-NV28], установите пакет [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/). Последняя поддерживаемая версия Xorg 1.12.
-
-**Совет:** Устаревшие драйвера nvidia-96xx-dkms и nvidia-173xx-dkms также можно установить с неофициального [репозитория [city]](http://pkgbuild.com/~bgyorgy/city.html). (Настоятельно рекомендуется использовать данный способ, который поможет избежать любых проблем с зависимостями после установки.)
+*   Для карт серий GeForce 8/9, ION и 100-300 [NV5x, NV8x, NV9x and NVAx], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/). (поддерживает последнюю версию Xorg, но имеет [проблемы](https://lists.archlinux.org/pipermail/arch-dev-public/2019-May/029568.html) с Linux 5.0+)
+*   Для карт серий GeForce 6/7 [NV4x и NV6x], [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-304xx-dkms](https://aur.archlinux.org/packages/nvidia-304xx-dkms/). Последняя поддерживаемая версия Xorg — 1.19.
+*   Для карт серии GeForce 5 FX [NV30-NV36], установите пакет [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/). Последняя поддерживаемая версия Xorg — 1.15.
+*   Для карт серий GeForce 2/3/4 MX/Ti [NV11, NV17-NV28], установите пакет [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/). Последняя поддерживаемая версия Xorg — 1.12.
 
 ### Собственное ядро
 
@@ -87,17 +89,13 @@
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (или специфичную ветку, например, [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/)). Модуль будет пересобираться после каждого обновления драйвера или ядра благодаря DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
 
-### Pure Video HD
-
-По крайней мере, видеокартам со второго поколения [PureVideo HD](https://en.wikipedia.org/wiki/ru:Nvidia_PureVideo#.D0.A2.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0._.D0.92.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B_.D1.81_.D0.B1.D0.BB.D0.BE.D0.BA.D0.BE.D0.BC_PureVideo "wikipedia:ru:Nvidia PureVideo") необходимо [аппаратное ускорение](/index.php/Hardware_video_acceleration "Hardware video acceleration"), использующее VDPAU.
-
 ### DRM kernel mode setting
 
-**Примечание:** Драйвер Nvidia **не** предоставляет драйвер `fbdev` для высокого разрешения в консоли для скомпилированного модуля ядра `vesafb`. Тем не менее, скомпилированный в ядро модуль `efifb` поддерживает высокое разрешение в консоли на EFI системах.[[1]](http://forums.fedoraforum.org/showthread.php?t=306271)
+[nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 добавляет поддержку DRM (Direct Rendering Manager) [Kernel mode setting](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"). Для активации добавьте `nvidia-drm.modeset=1` в [параметры ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)"), а также добавьте `nvidia`, `nvidia_modeset`, `nvidia_uvm` и `nvidia_drm` в initramfs в соответствии с [Mkinitcpio (Русский)#MODULES](/index.php/Mkinitcpio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#MODULES "Mkinitcpio (Русский)").
 
-Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 добавляет поддержку DRM [Kernel mode setting](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"). Чтобы включить эту особенность, добавьте `nvidia-drm.modeset=1` в [параметры ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)"), а также: nvidia, nvidia_modeset, nvidia_uvm и nvidia_drm в [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs")
+Не забывайте запускать `mkinitcpio` каждый раз после обновления драйвера. См. раздел [#Pacman hook](#Pacman_hook) для автоматизации данных действий.
 
-**Важно:** Не забывайте запускать `mkinitcpio` каждый раз после обновления драйвера.
+**Примечание:** Драйвер Nvidia **не** предоставляет драйвер `fbdev` для высокого разрешения в консоли для скомпилированного модуля ядра `vesafb`. Тем не менее, скомпилированный в ядро модуль `efifb` поддерживает высокое разрешение в консоли на EFI системах.[[1]](https://forums.fedoraforum.org/showthread.php?t=306271)
 
 #### Pacman hook
 

@@ -8,18 +8,19 @@ This article provides a list of (not commonly known) default keyboard shortcuts 
 
 *   [1 Standard shortcuts](#Standard_shortcuts)
     *   [1.1 Kernel](#Kernel)
-    *   [1.2 Terminal](#Terminal)
-        *   [1.2.1 Virtual console](#Virtual_console)
-        *   [1.2.2 Readline](#Readline)
+    *   [1.2 Virtual console](#Virtual_console)
     *   [1.3 Xorg and Wayland](#Xorg_and_Wayland)
 *   [2 Customization](#Customization)
-    *   [2.1 Readline](#Readline_2)
-    *   [2.2 Xorg](#Xorg)
-        *   [2.2.1 sxhkd](#sxhkd)
-        *   [2.2.2 actkbd](#actkbd)
-        *   [2.2.3 xbindkeys](#xbindkeys)
-    *   [2.3 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
-        *   [2.3.1 XMonad Window Manager](#XMonad_Window_Manager)
+    *   [2.1 Readline](#Readline)
+    *   [2.2 Zsh](#Zsh)
+    *   [2.3 Xorg](#Xorg)
+        *   [2.3.1 sxhkd](#sxhkd)
+        *   [2.3.2 actkbd](#actkbd)
+        *   [2.3.3 xbindkeys](#xbindkeys)
+    *   [2.4 Desktop environments](#Desktop_environments)
+    *   [2.5 Windows managers](#Windows_managers)
+    *   [2.6 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
+        *   [2.6.1 XMonad Window Manager](#XMonad_Window_Manager)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 See also](#See_also)
 
@@ -51,46 +52,9 @@ A common idiom to remember this is "**R**eboot **E**ven **I**f **S**ystem **U**t
 
 See [Wikipedia:Magic SysRq key](https://en.wikipedia.org/wiki/Magic_SysRq_key "wikipedia:Magic SysRq key") for more details.
 
-### Terminal
-
-#### Virtual console
+### Virtual console
 
 See [Linux console#Keyboard shortcuts](/index.php/Linux_console#Keyboard_shortcuts "Linux console").
-
-#### Readline
-
-[Readline](/index.php/Readline "Readline") is a commonly used library for line-editing; it is used for example by Bash, FTP, and many more (see the details of [readline](https://www.archlinux.org/packages/?name=readline) package under "Required By" for more examples). Readline is also customizable, see examples on the [readline](/index.php/Readline "Readline") page.
-
-| Keyboard Shortcut | Description |
-| `Ctrl+l` | Clear the screen |
-| **Cursor Movement** |
-| `Ctrl+b` | Move cursor one character to the left |
-| `Ctrl+f` | Move cursor one character to the right |
-| `Alt+b` | Move cursor one word to the left |
-| `Alt+f` | Move cursor one word to the right |
-| `Ctrl+a` | Move cursor to start of the line |
-| `Ctrl+e` | Move cursor to end of the line |
-| **Copy & Paste** |
-| `Ctrl+u` | Cut everything from line start to cursor |
-| `Ctrl+k` | Cut everything from the cursor to end of the line |
-| `Alt+d` | Cut the current word after the cursor |
-| `Ctrl+w` | Cut the current word before the cursor |
-| `Ctrl+y` | Paste the previous cut text |
-| `Alt+y` | Paste the second latest cut text |
-| `Alt+Ctrl+y` | Paste the first argument of the previous command |
-| `Alt+.`/`_` | Paste the last argument of the previous command |
-| **History** |
-| `Ctrl+p` | Move to the previous line |
-| `Ctrl+n` | Move to the next line |
-| `Ctrl+s` | Search |
-| `Ctrl+r` | Reverse search |
-| `Ctrl+j` | End search |
-| `Ctrl+g` | Abort search (restores original line) |
-| `Alt+r` | Restores all changes made to line |
-| **Completion** |
-| `Tab` | Auto-complete a name |
-| `Alt+?` | List all possible completions |
-| `Alt+*` | Insert all possible completions |
 
 ### Xorg and Wayland
 
@@ -103,7 +67,11 @@ See [Linux console#Keyboard shortcuts](/index.php/Linux_console#Keyboard_shortcu
 
 ### Readline
 
-[Readline](/index.php/Readline "Readline") has [Emacs](/index.php/Emacs "Emacs")-like and [vi](/index.php/Vi "Vi")-like editing modes which can be customized with escape sequences.
+[Readline](/index.php/Readline "Readline") is a commonly used library for line-editing; it is used for example by [Bash](/index.php/Bash "Bash"), FTP, and many more (see the details of [readline](https://www.archlinux.org/packages/?name=readline) package under "Required By" for more examples). It has [Emacs](/index.php/Emacs "Emacs")-like and [vi](/index.php/Vi "Vi")-like editing modes which can be customized with escape sequences. Default key bindings are listed in the [Info documentation](https://tiswww.cwru.edu/php/chet/readline/rluserman.html).
+
+### Zsh
+
+[Zsh](/index.php/Zsh "Zsh") uses [ZLE](/index.php/Zsh#Key_bindings "Zsh") to link shortcuts to widgets, scripts and commands.
 
 ### Xorg
 
@@ -132,6 +100,16 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 [xbindkeys](/index.php/Xbindkeys "Xbindkeys") allows advanced mapping of keysyms to actions independently of the Desktop Environment.
 
 **Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) from the [AUR](/index.php/AUR "AUR").
+
+### Desktop environments
+
+*   [LXDE#Bindings](/index.php/LXDE#Bindings "LXDE")
+*   [Xfce#Keyboard_Shortcuts](/index.php/Xfce#Keyboard_Shortcuts "Xfce")
+
+### Windows managers
+
+*   [Fluxbox#Hotkeys](/index.php/Fluxbox#Hotkeys "Fluxbox")
+*   [Openbox#Keybinds](/index.php/Openbox#Keybinds "Openbox")
 
 ### Key binding for X-selection-paste
 

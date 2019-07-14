@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=562766) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=576055) na versão em inglês.
 
 [AbiWord](http://www.abisource.com/) é um processador de texto que oferece uma alternativa mais leve para o [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer e o [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, ao mesmo tempo em que fornece excelente funcionalidade. O AbiWord possui suporte a muitos tipos de documentos padrão, como documentos ODF, documentos do Microsoft Word, documentos do WordPerfect, documentos em formato Rich Text e páginas da Web em HTML.
 
@@ -19,7 +19,9 @@
 
 ## Instalação
 
-[Instale](/index.php/Instale "Instale") o pacote [abiword](https://www.archlinux.org/packages/?name=abiword). Você pode querer instalar dicionários se quiser a verificação ortográfica, que pode ser fornecida pelo pacote [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) para inglês.
+[Instale](/index.php/Instale "Instale") o pacote [abiword](https://www.archlinux.org/packages/?name=abiword).
+
+AbiWord pode usar vários dicionários de verificação ortográfica, veja [Verificação de idioma](/index.php/Verifica%C3%A7%C3%A3o_de_idioma "Verificação de idioma").
 
 Para corrigir pequenos problemas de cursor e texto desalinhado, instale [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) ou [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) e [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont).
 
@@ -61,7 +63,7 @@ Para definir as associações de teclas, edite `~/.config/abiword/profile` e, de
 
 ## Fontes LaTeX
 
-O pacote [abiword](https://www.archlinux.org/packages/?name=abiword) vem com uma função que permite ao usuário inserir códigos LaTeX em um documento. Para exibir os símbolos de matemática corretamente, é necessário fazer o download [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz) e salvá-lo no diretório `/usr/share/fonts`. Para instalar a fonte, extraia o tarball e execute o seguinte:
+O pacote [abiword](https://www.archlinux.org/packages/?name=abiword) vem com uma função que permite ao usuário inserir códigos LaTeX em um documento. Para exibir os símbolos de matemática corretamente, [instale](/index.php/Instale "Instale") [ttf-latex-xft-fonts](https://aur.archlinux.org/packages/ttf-latex-xft-fonts/).
 
 ```
 # fc-cache -fv

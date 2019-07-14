@@ -51,6 +51,7 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
     *   [2.8 Powersaving](#Powersaving)
     *   [2.9 Calibrated ICC profile](#Calibrated_ICC_profile)
         *   [2.9.1 QHD+ model](#QHD+_model)
+    *   [2.10 Disable the touchscreen](#Disable_the_touchscreen)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Sometimes the system fails to resume from suspend after closing and reopening the LID](#Sometimes_the_system_fails_to_resume_from_suspend_after_closing_and_reopening_the_LID)
     *   [3.2 DE can't connect Bluetooth devices](#DE_can't_connect_Bluetooth_devices)
@@ -213,6 +214,45 @@ An [ICC profile](/index.php/ICC_profiles "ICC profiles") is a binary file which 
 This profile has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on for at least 30 minutes prior to start the calibration.
 
 *   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
+
+### Disable the touchscreen
+
+This is an optional step and was tested 07.2019 using Gnome and Wayland. Find out which device it is:
+
+```
+libinput list-devices
+
+```
+
+Scroll to find the right section (Something like ELAN Touchscreen) and find the line "Kernel: /dev/input/event#". (in my case 6) Use the event# for the next command:
+
+```
+udevadm info -a -p /sys/class/input/event#
+
+```
+
+Find an attribute that is most probably unique/distinct. (I used: ATTRS{name}=="ELAN Touchscreen" ) Use this in a newly created file: /etc/udev/rules.d/99-disable_touchscreen.rules
+
+```
+KERNEL=="event*", ATTRS{name}=="ELAN Touchscreen", ENV{LIBINPUT_IGNORE_DEVICE}="1"
+
+```
+
+Then check if it worked:
+
+```
+udevadm test /sys/class/input/event6
+
+```
+
+and search for:
+
+```
+LIBINPUT_IGNORE_DEVICE=1
+
+```
+
+If this line is there (most probably within the last 3 lines) reboot and your touchscreen should be disabled.
 
 ## Troubleshooting
 

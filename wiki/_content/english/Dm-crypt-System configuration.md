@@ -24,7 +24,8 @@
         *   [2.3.5 Timeout](#Timeout)
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
-        *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
+        *   [3.1.1 Unlocking with a keyfile](#Unlocking_with_a_keyfile)
+        *   [3.1.2 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
     *   [3.2 Mounting on demand](#Mounting_on_demand)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot/password_prompt_does_not_show)
@@ -346,11 +347,25 @@ The first parameter is your preferred device mapper's name for the encrypted dri
 
 **Note:** Keep in mind that the `timeout` option in `crypttab` only determines the amount of time allowed for *entering the password* of the encrypted device. In addition, [systemd](/index.php/Systemd "Systemd") also has a default timeout which determines the amount of time allowed for *the device to be available* (defaulting to 90 seconds), which is independent of the password timer. In consequence, even when the `timeout` option in `crypttab` is set to a value larger than 90 seconds (or it is at its default value of 0, meaning unlimited time), *systemd* will still only wait a maximum of 90 seconds for the device to be unlocked. In order to change the time *systemd* will wait for a device to be available, the option `x-systemd.device-timeout` (see [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5)) can be set in [fstab](/index.php/Fstab "Fstab") for said device. It is probably desired, then, that the amount of time of the `timeout` option in `crypttab` is equal to the amount of time of the `x-systemd.device-timeout` option in `fstab` for each device mounted at boot time.
 
-A [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") can also be set up and referenced instead of `none`. This results in an automatic unlocking, if the keyfile is accessible during boot. Since LUKS offers the option to have multiple keys, the chosen option can also be changed later.
+#### Unlocking with a keyfile
 
-Use the device mapper's name you have defined in `/etc/crypttab` in `/etc/fstab` as follows:
+If the [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for a secondary file system is itself stored inside an encrypted root, it is safe while the system is powered off and can be sourced to automatically unlock the mount during with boot via [crypttab](/index.php/Crypttab "Crypttab"). For example, unlock a crypt specified by [UUID](/index.php/UUID "UUID"):
 
- `/etc/fstab`  `/dev/mapper/externaldrive      /mnt/backup               ext4    defaults,errors=remount-ro  0  2` 
+ `/etc/crypttab` 
+```
+home-crypt    UUID=<UUID identifier>    /etc/mykeyfile
+
+```
+
+**Tip:** If you prefer to use a `--plain` mode blockdevice, the encryption options necessary to unlock it are specified in `/etc/crypttab`. Take care to apply the systemd workaround mentioned in [crypttab](/index.php/Crypttab "Crypttab") in this case.
+
+Then use the device mapper's name (defined in `/etc/crypttab`) to make an entry in `/etc/fstab`:
+
+ `/etc/fstab` 
+```
+/dev/mapper/home-crypt        /home   ext4        defaults        0       2
+
+```
 
 Since `/dev/mapper/externaldrive` already is the result of a unique partition mapping, there is no need to specify an UUID for it. In any case, the mapper with the filesystem will have a different UUID than the partition it is encrypted in.
 

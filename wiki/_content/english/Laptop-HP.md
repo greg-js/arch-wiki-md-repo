@@ -233,6 +233,18 @@ Rotation sensor: works with iio-sensor-proxy and screen-rotator | Not tested | H
 Webcam: Works
 Fingerprint scanner: do not work ( undetected Synaptic SecurePad )
 Keyboard backlight: works | TO be able to boot, need to remove the initrd intel and amd patches / install and boots without issues without it -- |
+| [HP Elitebook x360 1030 g3](/index.php?title=HP_Elitebook_x360_1030_g3&action=edit&redlink=1 "HP Elitebook x360 1030 g3 (page does not exist)") | 2019.07 | Intel Core i5-8250U, Intel UHD Graphics 620 (*i915*) | Working
+hwC0D2: Intel
+hwC0D0: Conexant | None | Intel 8265/8275 Driver: *iwlwifi* | Yes | ACPI: works
+Suspend to RAM: works
+Suspend to Disk: works
+Battery: works
+Display dimming: works
+CPU frequency scaling: works
+Rotation sensor: works with iio-sensor-proxy and screen-rotator | Not tested | Hot keys: Works with acpi_backlight=native
+Webcam: Works
+Fingerprint scanner: Not tested
+Keyboard backlight: works |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

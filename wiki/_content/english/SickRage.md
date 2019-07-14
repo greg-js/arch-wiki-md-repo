@@ -4,7 +4,11 @@ Related articles
 
 [Sick Rage](https://www.sickrage.tv/) is an automatic video library manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Running as a systemd service](#Running_as_a_systemd_service)
@@ -14,7 +18,7 @@ Related articles
 
 ## Installation
 
-Install [sickrage](https://aur.archlinux.org/packages/sickrage/) or [sickrage-git](https://aur.archlinux.org/packages/sickrage-git/). Or install [sickrage2-git](https://aur.archlinux.org/packages/sickrage2-git/), a fork of sickrage. Note: this fork is now called SickChill. It contains the application and a systemd service file.
+Install [sickrage](https://aur.archlinux.org/packages/sickrage/) or [sickrage-git](https://aur.archlinux.org/packages/sickrage-git/). Or install [sickchill](https://aur.archlinux.org/packages/sickchill/) or [sickchill-git](https://aur.archlinux.org/packages/sickchill-git/), one of several forks of SickRage/SickBeard. It contains the application and a systemd service file.
 
 ### Running as a systemd service
 

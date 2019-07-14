@@ -19,6 +19,7 @@ PRIME is a technology used to manage hybrid graphics found on recent laptops ([O
     *   [4.3 Kernel crash/oops when using PRIME and switching windows/workspaces](#Kernel_crash/oops_when_using_PRIME_and_switching_windows/workspaces)
     *   [4.4 Glitches/Ghosting synchronization problem on second monitor when using reverse PRIME](#Glitches/Ghosting_synchronization_problem_on_second_monitor_when_using_reverse_PRIME)
     *   [4.5 Error "radeon: Failed to allocate virtual address for buffer:" when launching GL application](#Error_"radeon:_Failed_to_allocate_virtual_address_for_buffer:"_when_launching_GL_application)
+    *   [4.6 Constant hangs/freezes with Vulkan applications/games using VSync with closed-source drivers and reverse PRIME](#Constant_hangs/freezes_with_Vulkan_applications/games_using_VSync_with_closed-source_drivers_and_reverse_PRIME)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -242,6 +243,24 @@ CLUTTER_VBLANK=True
 ### Error "radeon: Failed to allocate virtual address for buffer:" when launching GL application
 
 This error is given when the power management in the kernel driver is running. You can overcome this error by appending radeon.runpm=0 to the kernel parameters in the bootloader.
+
+### Constant hangs/freezes with Vulkan applications/games using VSync with closed-source drivers and reverse PRIME
+
+Some Vulkan applications (particularly ones using VK_PRESENT_MODE_FIFO_KHR and/or VK_PRESENT_MODE_FIFO_RELAXED_KHR, including Windows games ran with DXVK) will cause the GPU to lockup constantly (~5-10 seconds freezed, ~1 second working fine)[[4]](https://devtalk.nvidia.com/default/topic/1044496/linux/hangs-freezes-when-vulkan-v-sync-vk_present_mode_fifo_khr-is-enabled/) when ran on a system using **reverse PRIME**.
+
+A GPU lockup will render any input unusable (this includes switching TTYs and using SysRq functions).
+
+There's no known fix for this NVIDIA bug, but a few workarounds exist:
+
+*   Turning Vsync off (not possible for some applications)
+*   Turning PRIME Synchronization[[5]](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/) off (will introduce screen tearing):
+
+```
+xrandr --output HDMI-0 --set "PRIME Synchronization" 0 #replace HDMI-0 with your xrandr output ID
+
+```
+
+You can verify if your configuration is affected by the issue simply by running **vkcube** from the [vulkan-tools](https://www.archlinux.org/packages/?name=vulkan-tools) package.
 
 ## See also
 

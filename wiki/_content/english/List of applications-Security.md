@@ -20,8 +20,7 @@
     *   [1.9 Cryptography](#Cryptography)
         *   [1.9.1 Hash checkers](#Hash_checkers)
         *   [1.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
-        *   [1.9.3 Messaging](#Messaging)
-        *   [1.9.4 Disk encryption](#Disk_encryption)
+        *   [1.9.3 Disk encryption](#Disk_encryption)
 
 ## Security
 
@@ -550,12 +549,6 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
 	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
-
-##### Messaging
-
-*   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Cross-platform encrypted messaging service.
-
-	[https://signal.org/](https://signal.org/) || [signal](https://aur.archlinux.org/packages/signal/)
 
 ##### Disk encryption
 

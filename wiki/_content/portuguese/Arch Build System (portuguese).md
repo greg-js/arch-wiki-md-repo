@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2019-01-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=564796) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=575573) na versão em inglês.
 
 Artigos relacionados
 
@@ -28,7 +28,7 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
     *   [1.1 Árvore SVN](#Árvore_SVN)
 *   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS?)
 *   [3 Como usar o ABS](#Como_usar_o_ABS)
-    *   [3.1 Obtendo fonte de PKGBUILD usando Svn](#Obtendo_fonte_de_PKGBUILD_usando_Svn)
+    *   [3.1 Obtendo fonte de PKGBUILD usando SVN](#Obtendo_fonte_de_PKGBUILD_usando_SVN)
         *   [3.1.1 Pré-requisitos](#Pré-requisitos)
         *   [3.1.2 Checkout não-recursivo](#Checkout_não-recursivo)
         *   [3.1.3 Fazer checkout de um pacote](#Fazer_checkout_de_um_pacote)
@@ -103,9 +103,9 @@ ABS não é necessário para usar o Arch Linux, mas é útil para automatizar ce
 
 ## Como usar o ABS
 
-Para obter o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") necessário para compilar um certo pacote a partir do fonte, você pode usar uma abordagem baseada em [Svn](/index.php/Svn "Svn") ou [Git](/index.php/Git "Git") usando o pacote [asp](https://www.archlinux.org/packages/?name=asp) que é uma interface para os repositórios svntogit. A seguir, o método baseado em svn, bem como o [método baseado em git](#Obtendo_fonte_de_PKGBUILD_usando_Git), é descrito.
+Para obter o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") necessário para compilar um certo pacote a partir do fonte, você pode usar uma abordagem baseada em [SVN](/index.php/SVN "SVN") ou [Git](/index.php/Git "Git") usando o pacote [asp](https://www.archlinux.org/packages/?name=asp) que é uma interface para os repositórios svntogit. A seguir, o método baseado em svn, bem como o [método baseado em git](#Obtendo_fonte_de_PKGBUILD_usando_Git), são descritos.
 
-### Obtendo fonte de PKGBUILD usando Svn
+### Obtendo fonte de PKGBUILD usando SVN
 
 #### Pré-requisitos
 

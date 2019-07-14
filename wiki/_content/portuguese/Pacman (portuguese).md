@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-04-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=569743) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=576411) na versão em inglês.
 
 Artigos relacionados
 
@@ -583,7 +583,7 @@ sendo que arquivo `*/caminho/para/configurações/comuns*` contém as mesmas op�
 
 *pacman* pode executar hooks de pré- e pós-transação do diretório `/usr/share/libalpm/hooks/`; mais diretórios podem ser especificados com a opção `HookDir` no `pacman.conf`, que tem como padrão `/etc/pacman.d/hooks`. Nomes de arquivo hook devem ser sufixados com *.hook*.
 
-Hooks do *pacman* são usados, por exemplo, em combinação com `systemd-sysusers` e `systemd-tmpfiles` para criar automaticamente arquivos e usuários de sistema durante a isntalação dos pacotes. Por exemplo, o pacote `tomcat8` especifica que ele deseja um usuário de sistema chamado `tomcat8` e certos diretórios pertencentes a este usuário. Os hooks do pacman `systemd-sysusers.hook` e `systemd-tmpfiles.hook` chamam `systemd-sysusers` e `systemd-tmpfiles` quando o pacman determina que o pacote `tomcat8` contém arquivos especificando usuários e arquivos tmp.
+Hooks do *pacman* são usados, por exemplo, em combinação com `systemd-sysusers` e `systemd-tmpfiles` para criar automaticamente arquivos e usuários de sistema durante a isntalação dos pacotes. Por exemplo, o pacote `tomcat8` especifica que ele deseja um usuário de sistema chamado `tomcat8` e certos diretórios pertencentes a este usuário. Os hooks do *pacman* `systemd-sysusers.hook` e `systemd-tmpfiles.hook` chamam `systemd-sysusers` e `systemd-tmpfiles` quando o *pacman* determina que o pacote `tomcat8` contém arquivos especificando usuários e arquivos tmp.
 
 Para mais informações sobre hooks do alpm, veja [alpm-hooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alpm-hooks.5).
 
@@ -694,9 +694,9 @@ No caso do *pacman* travar com um erro de "escrita da base de dados" enquanto re
 
 ### Erro "Unable to find root device" após a reinicialização
 
-Muito provavelmente seus initramfs quebrou durante uma atualização do kernel (uso indevido da opção `--force` do *pacman* pode ser uma causa). Você tem duas opções; primeiro, tente a entrada *Fallback*.
+Muito provavelmente o [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") acabou corrompido durante uma atualização do [kernel](/index.php/Kernel "Kernel") (uso indevido da opção `--force` do *pacman* pode ser uma causa). Há duas opções; primeiro, tente a entrada *Fallback*.
 
-**Dica:** No caso de você ter removido o *Fallback*, você pode sempre pressionar a tecla `Tab` quando o gerenciador de boot aparecer (para Syslinux) ou `e` (para GRUB), renomear `initramfs-linux-fallback.img` e pressione `Enter` ou `b` (dependendo do seu gerenciador de boot) para inicializar com os novos parâmetros.
+**Dica:** No caso de você ter removido o *Fallback*, você pode sempre pressionar a tecla `Tab` quando o gerenciador de boot aparecer (para Syslinux) ou `e` (para GRUB), renomear `initramfs-linux-fallback.img` e pressione `Enter` ou `b` (dependendo do seu [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot")) para inicializar com os novos parâmetros.
 
 Quando o sistema iniciar, execute este comando (para o Kernel [linux](https://www.archlinux.org/packages/?name=linux) padrão) através do console ou de um terminal para reconstruir a imagem initramfs:
 
@@ -725,7 +725,7 @@ Após, recomenda-se que você execute `exit`, `umount /mnt/{boot,}` e `reboot`.
 
 ### Assinatura de "<email@exemplo.org>" tem confiança desconhecida, falha na instalação
 
-Você pode tentar:
+Soluções potenciais:
 
 *   Atualizar as chaves conhecidas, executando `pacman-key --refresh-keys`
 *   Atualizar manualmente o pacote [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) primeiro, i.e. `pacman -Sy archlinux-keyring && pacman -Su`
@@ -733,7 +733,7 @@ Você pode tentar:
 
 ### Solicitação de importação de chaves PGP
 
-Se estiver [instalando](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") o Arch com uma ISO desatualizado, você provavelmente terá que importar chaves PGP. Concorde com baixar a chave para proceder. Se você não consegue adicionar a chave PGP com sucesso, atualizar o chaveiro ou atualizar [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (veja [acima](#Assinatura_de_"<email@exemplo.org>"_tem_confiança_desconhecida,_falha_na_instalação)).
+Se estiver instalando o Arch com uma ISO desatualizado, você provavelmente terá que importar chaves PGP. Concorde com baixar a chave para proceder. Se você não consegue adicionar a chave PGP com sucesso, atualizar o chaveiro ou atualizar [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) (veja [acima](#Assinatura_de_"<email@exemplo.org>"_tem_confiança_desconhecida,_falha_na_instalação)).
 
 ### Erro: chave "0123456789ABCDEF" não pôde ser procurado remotamente
 
@@ -788,17 +788,17 @@ Se você receber essa mensagem de erro com os [espelhos](/index.php/Espelhos "Es
 
 ### O que acontece durante a instalação/atualização/remoção de pacote
 
-Ao concluir com êxito uma transação de pacote, o pacman executa as seguintes etapas de alto nível:
+Ao concluir com êxito uma transação de pacote, o *pacman* executa as seguintes etapas de alto nível:
 
-1.  o pacman obtém o arquivo do pacote a ser instalado para todos os pacotes enfileirados em uma transação
-2.  o pacman executa várias verificações de que os pacotes provavelmente podem ser instalados
-3.  se hooks `PreTransaction` pré-existentes do pacman se aplicarem, eles serão executados
-4.  cada pacote é instalado/atualizado/removido por vez
-    1.  se o pacote tiver um script de instalação, sua função `pre_install` é executada (ou `pre_upgrade` ou `pre_remove` no caso de um pacote atualizado ou removido)
-    2.  pacman exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido). Porém, arquivos que foram marcados como arquivos de configuração no pacote são mantidos (veja [Pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave")).
-    3.  pacman descompacta o pacote e despeja seus arquivos no sistema de arquivos (no caso de um pacote instalado ou atualizado). Arquivos que sobrescreveriam os arquivos de configuração mantidos, e modificados manualmente (veja a etapa anterior), são armazenados com um novo nome (.pacnew).
-    4.  se o pacote tiver um script de instalação, sua função `post_install` será executada (ou `post_upgrade` ou `post_remove` no caso de um pacote atualizado ou removido)
-5.  se hooks do pacman `PostTransaction` que existem no final da transação se aplicarem, eles serão executados
+1.  O *pacman* obtém o arquivo do pacote a ser instalado para todos os pacotes enfileirados em uma transação.
+2.  O *pacman* executa várias verificações de que os pacotes provavelmente podem ser instalados.
+3.  Se hooks `PreTransaction` pré-existentes do *pacman* se aplicarem, eles serão executados.
+4.  Cada pacote é instalado/atualizado/removido por vez.
+    1.  Se o pacote tiver um script de instalação, sua função `pre_install` é executada (ou `pre_upgrade` ou `pre_remove` no caso de um pacote atualizado ou removido).
+    2.  O *pacman* exclui todos os arquivos de uma versão pré-existente do pacote (no caso de um pacote atualizado ou removido). Porém, arquivos que foram marcados como arquivos de configuração no pacote são mantidos (veja [Pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave")).
+    3.  O *pacman* descompacta o pacote e despeja seus arquivos no sistema de arquivos (no caso de um pacote instalado ou atualizado). Arquivos que sobrescreveriam os arquivos de configuração mantidos, e modificados manualmente (veja a etapa anterior), são armazenados com um novo nome (.pacnew).
+    4.  Se o pacote tiver um script de instalação, sua função `post_install` será executada (ou `post_upgrade` ou `post_remove` no caso de um pacote atualizado ou removido).
+5.  Se hooks do *pacman* `PostTransaction` que existem no final da transação se aplicarem, eles serão executados.h
 
 ## Veja também
 

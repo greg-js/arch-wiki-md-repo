@@ -211,7 +211,7 @@ $ pihole -g
 
 #### Temporarily disable Pi-hole
 
-Pi-hole can be paused via CLI by executing:
+Pi-hole can be paused via the web interface; or via the CLI by executing:
 
 ```
 $ pihole disable [time]
