@@ -247,7 +247,7 @@ COMPRESSGZ=(**pigz** -c -f -n)
 [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) is a drop-in, parallel implementation for [bzip2](https://www.archlinux.org/packages/?name=bzip2) which also uses all available CPU cores by default. The `-p#` flag can be used to employ less cores (note: no space between the `-p` and number of cores).
 
 ```
-COMPRESSBZ2 =(**pbzip2** -c -f)
+COMPRESSBZ2=(**pbzip2** -c -f)
 
 ```
 
@@ -401,11 +401,11 @@ Alternatively, one may want to use sudoer's `env_keep` option, which enables pre
 
 ### Makepkg fails, but make succeeds
 
-If something manually compiles using *make*, but fails through *makepkg*, it's almost certainly because `/etc/makepkg.conf` sets a compilation variable to something reasonable that usually works, but that what you're compiling is incompatible with. Try adding these flags to the PKGBUILD `options` array:
+If something manually compiles using *make*, but fails through *makepkg*, it is almost certainly because `/etc/makepkg.conf` sets a compilation variable to something reasonable that usually works, but that what you are compiling is incompatible with. Try adding these flags to the PKGBUILD `options` array:
 
 `!buildflags`, to prevent its default `CPPFLAGS`, `CFLAGS`, `CXXFLAGS`, and `LDFLAGS`.
 
-`!makeflags`, to prevent its default `MAKEFLAGS`, in case you've edited `/etc/makepkg.conf` to enable parallel builds.
+`!makeflags`, to prevent its default `MAKEFLAGS`, in case you have edited `/etc/makepkg.conf` to enable parallel builds.
 
 `!debug`, to prevent its default `DEBUG_CFLAGS`, and `DEBUG_CXXFLAGS`, in case your package is a debug build.
 

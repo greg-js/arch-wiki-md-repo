@@ -63,7 +63,7 @@ $ virtualenv --python=/usr/bin/pypy venv-pypy
 
 ```
 
-see [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for further information
+see [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for further information.
 
 ### Installing pip
 
@@ -82,7 +82,7 @@ Once you have pip you can install any package you need, eg:
 
 ```
 
-If you'd prefer to install packages system wide just run the previous commands as root without the --user. Note that this will result in the packages being installed in /opt/pypy without the package manager being aware of them.
+If you'd prefer to install packages system wide just run the previous commands as root without the `--user`. Note that this will result in the packages being installed in `/opt/pypy` without the package manager being aware of them.
 
 ## EasyInstall
 
@@ -90,9 +90,9 @@ Python libraries and programs can be installed in PyPy through EasyInstall.
 
 ### EasyInstall installation
 
-EasyInstall does not come with the PyPy package and but is automatically installed when installing pip
+EasyInstall does not come with the PyPy package and but is automatically installed when installing pip.
 
-EasyInstall is located at /opt/pypy/bin/easy_install
+EasyInstall is located at `/opt/pypy/bin/easy_install`.
 
 ### Installing EasyInstall packages
 
@@ -103,11 +103,11 @@ To install EasyInstall package *package_name* into PyPy enter
 
 ```
 
-Packages Will be Located at /opt/pypy/site-packages Installed libraries and applications will be at /opt/pypy/bin Programs installed through EasyInstall on PyPy can usually be ran with `/opt/pypy/bin/program_name` where *program_name* is the name of the PyPy program.
+Packages will be located at `/opt/pypy/site-packages`. Installed libraries and applications will be at `/opt/pypy/bin`. Programs installed through EasyInstall on PyPy can usually be ran with `/opt/pypy/bin/program_name` where *program_name* is the name of the PyPy program.
 
 ### EasyInstall package example
 
-The following will install the Lamson email framework.
+The following will install the Lamson email framework
 
 ```
 # /opt/pypy/bin/easy_install lamson

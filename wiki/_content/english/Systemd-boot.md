@@ -16,9 +16,10 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 *   [1 Installation](#Installation)
     *   [1.1 Installing the EFI boot manager](#Installing_the_EFI_boot_manager)
-    *   [1.2 Updating the EFI boot manager](#Updating_the_EFI_boot_manager)
-        *   [1.2.1 Manual update](#Manual_update)
-        *   [1.2.2 Automatic update](#Automatic_update)
+    *   [1.2 Manual installation](#Manual_installation)
+    *   [1.3 Updating the EFI boot manager](#Updating_the_EFI_boot_manager)
+        *   [1.3.1 Manual update](#Manual_update)
+        *   [1.3.2 Automatic update](#Automatic_update)
 *   [2 Configuration](#Configuration)
     *   [2.1 Loader configuration](#Loader_configuration)
     *   [2.2 Adding loaders](#Adding_loaders)
@@ -53,7 +54,18 @@ With the ESP mounted to `*esp*`, use [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/
 
 This will copy the *systemd-boot* boot loader to the EFI partition: on a x64 architecture system the two identical binaries `*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/BOOT/BOOTX64.EFI` will be transferred to the ESP. It will then set *systemd-boot* as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
-Then, go to the [#Configuration](#Configuration) section to add boot loaders to make *systemd-boot* to function properly at boot time.
+To conclude the installation, [configure](#Configuration) *systemd-boot*.
+
+### Manual installation
+
+It may be necessary to install *systemd-boot* manually: for example, *bootctl* will fail if the destination has an MBR partition table. In case *bootctl* fails, copy the *systemd-boot* EFI executable from its location in the *systemd* package to its target destination,
+
+```
+# cp /usr/lib/systemd/boot/efi/systemd-bootx64.efi *esp*/EFI/BOOT/BOOTX64.EFI
+
+```
+
+and use `efibootmgr` to set *systemd-boot* as the default boot entry.
 
 ### Updating the EFI boot manager
 

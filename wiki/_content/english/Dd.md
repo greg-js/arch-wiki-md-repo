@@ -29,6 +29,7 @@ For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1
     *   [2.5 Restore system](#Restore_system)
 *   [3 Binary file patching](#Binary_file_patching)
 *   [4 Backup and restore MBR](#Backup_and_restore_MBR)
+    *   [4.1 Remove bootloader](#Remove_bootloader)
 
 ## Installation
 
@@ -185,6 +186,8 @@ To restore only the partition table, one must use:
 # dd if=*/path/to/mbr_file.img* of=/dev/sd*X* bs=1 skip=446 count=64
 
 ```
+
+### Remove bootloader
 
 To erase the MBR bootstrap code (may be useful if you have to do a full reinstall of another operating system) only the first 440 bytes need to be zeroed:
 

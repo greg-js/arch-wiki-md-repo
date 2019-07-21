@@ -91,7 +91,7 @@ It is also recommended to install the following fonts:
 *   [ttf-raleway](https://aur.archlinux.org/packages/ttf-raleway/): Raleway Font
 *   [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu): Font family based on the Bitstream Vera Fonts
 *   [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid): General-purpose fonts released by Google as part of Android
-*   [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont): Set of free outline fonts covering the Unicode character set
+*   [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts): Set of free outline fonts covering the Unicode character set
 *   [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation): Red Hats Liberation fonts
 
 ### Applications

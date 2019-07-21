@@ -1,6 +1,10 @@
 [surf](http://surf.suckless.org/) jest prostą przeglądarką internetową opartą na WebKit/GTK+. Jest w stanie wyświetlać strony internetowe i śledzić linki. Obsługuje protokół XEmbed, który umożliwia osadzenie jej w innej aplikacji. Ponadto można wskazać surf do innego URI, ustawiając jego XProperties.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalacja](#Instalacja)
 *   [2 Konfiguracja](#Konfiguracja)

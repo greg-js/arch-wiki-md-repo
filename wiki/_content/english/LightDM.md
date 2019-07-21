@@ -81,6 +81,7 @@ The official repositories contain the following greeters:
 *   [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): this is the **default** greeter LightDM attempts to use when started unless configured to do otherwise.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin "Deepin") project.
 *   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
+*   [lightdm-webkit-theme-litarvan](https://www.archlinux.org/packages/?name=lightdm-webkit-theme-litarvan): A modern and full-featured Webkit2 LightDM theme.
 
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 

@@ -4,7 +4,7 @@
 
 **翻译状态：** 本文是英文页面 [MPlayer](/index.php/MPlayer "MPlayer") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-24，点击[这里](https://wiki.archlinux.org/index.php?title=MPlayer&diff=0&oldid=550300)可以查看翻译后英文页面的改动。
 
-[MPlayer](http://www.mplayerhq.hu/) 是 GNU/Linux 下非常流行的影音播放器，支持大多数文件格式，非常通用。
+[MPlayer](http://www.mplayerhq.hu/) 是 GNU/Linux 下非常流行的影音播放器，支持绝大多数视频/音频文件格式，非常通用。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -20,8 +20,8 @@
     *   [4.1 继续之前的播放](#继续之前的播放)
     *   [4.2 硬件加速](#硬件加速)
         *   [4.2.1 启用 VDPAU](#启用_VDPAU)
-        *   [4.2.2 Enabling VA-API](#Enabling_VA-API)
-    *   [4.3 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
+        *   [4.2.2 启用 VA-API](#启用_VA-API)
+    *   [4.3 Radeon 显卡启用半透明视频混合显示](#Radeon_显卡启用半透明视频混合显示)
     *   [4.4 播放流媒体文件](#播放流媒体文件)
     *   [4.5 播放DVD](#播放DVD)
         *   [4.5.1 DVB-T Streaming](#DVB-T_Streaming)
@@ -40,11 +40,11 @@
 
 ## 安装
 
-[安装](/index.php/Install "Install") 软件包 [mplayer](https://www.archlinux.org/packages/?name=mplayer) 或 [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/) 的开发版本。
+[安装](/index.php/Install "Install") 软件包 [mplayer](https://www.archlinux.org/packages/?name=mplayer) 或它的开发版本 [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/) 。
 
-其他版本：
+定制版：
 
-*   **MPlayer-VAAPI** — 启用 VAAPI 的版本
+*   **MPlayer-VAAPI** — 支持 VAAPI 的版本
 
 	[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)
 
@@ -52,7 +52,7 @@
 
 	[https://github.com/nezumisama/mplayer2](https://github.com/nezumisama/mplayer2) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
 
-**注意:** *mplayer2* 的开发已经停止，推荐使用 [mpv](/index.php/Mpv "Mpv")，mpv 更注重速度和开发质量，这会破坏兼容性，使用前请注意一下它们的 [差异](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst)。
+**注意:** *mplayer2* 的开发已经停止，推荐使用 [mpv](/index.php/Mpv "Mpv")，mpv 更注重速度和开发质量，尽管它对老旧设备兼容性差。使用前请注意一下它们的 [差异](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst)。
 
 ## 图形前端
 
@@ -64,17 +64,17 @@
 
 `/etc/mplayer/` 下默认包含：
 
-*   `codecs.conf` - 解码器配置文件.
-*   `example.conf` - mplayer.conf 示例，要进行配置，需要安装之后将此示例文件复制为 mplayer.conf.
-*   `input.conf` - 快捷键配置.
+*   `codecs.conf` - 解码器配置文件。
+*   `example.conf` - mplayer.conf 不会在安装时自动创建，这是其示例文件。
+*   `input.conf` - 快捷键配置文件。
 
-`~/.mplayer/` 下默认包含一个 *config* 文件.
+`~/.mplayer/` 下默认包含一个 *config* 文件。
 
-参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
+参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1)。
 
 ### 按键绑定
 
-系统按键绑定通过 `/etc/mplayer/input.conf` 配置，个人按键绑定通过 `~/.mplayer/input.conf` 配。完整的键盘快捷键列表请阅读 [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1).
+系统按键绑定通过 `/etc/mplayer/input.conf` 配置，个人按键绑定通过 `~/.mplayer/input.conf` 配。完整的键盘快捷键列表请阅读 [mplayer(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mplayer.1)。
 
 参阅：[XF86 键盘符号](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols)
 
@@ -82,7 +82,7 @@
 
 ### 继续之前的播放
 
-To get this behavior, you can install the [mplayer-resumer](https://aur.archlinux.org/packages/mplayer-resumer/) package from the [AUR](/index.php/AUR "AUR"). The package contains a Perl wrapper script for MPlayer which will allow you to autoresume playback from the point it was last stopped.
+为了获得这个功能, 你可以到 [AUR](/index.php/AUR "AUR") 下载[mplayer-resumer](https://aur.archlinux.org/packages/mplayer-resumer/) 软件包。这个软件包包含一个Perl脚本，使你可以从上一次的播放记录继续播放。
 
 To use it, simply call the wrapper script in place of MPlayer:
 
@@ -97,7 +97,7 @@ If the video file to be played is on a read-only filesystem, or otherwise lives 
 
 ### 硬件加速
 
-See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+参考 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
 #### 启用 VDPAU
 
@@ -116,7 +116,7 @@ vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau,
 
 **警告:** 只有最新型号的显卡支持ffodivxvdpau。如果你的不支持，可以删除。详情请查阅 [NVIDIA#VDPAU](/index.php/NVIDIA#VDPAU "NVIDIA")。
 
-#### Enabling VA-API
+#### 启用 VA-API
 
 This requires [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) from the AUR.
 
@@ -130,23 +130,23 @@ MPlayer based players:
 *   [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer): To enable hardware acceleration: *Edit > Preferences > Player*, then set Video Output to `vaapi`.
 *   [smplayer](https://www.archlinux.org/packages/?name=smplayer): To enable hardware acceleration: *Options > Preferences > General > Video*, then set Output driver to `vaapi`.
 
-### Translucent video with Radeon cards and Composite enabled
+### Radeon 显卡启用半透明视频混合显示
 
-To get translucent video output in X you have to enable textured video in MPlayer:
+为了在 X 中获得半透明视频效果，你需要在MPlayer中启用视频纹理:
 
 ```
 $ mplayer -vo xv:adaptor=1 *file*
 
 ```
 
-Or add the following line to `~/.mplayer/config`:
+或者在 `~/.mplayer/config` 中添加一行:
 
 ```
 vo=xv:adaptor=1
 
 ```
 
-You can use `xvinfo` to check which video modes your graphic card supports.
+你可以使用 `xvinfo` 命令检查你的显卡支持那种视频模式。
 
 ### 播放流媒体文件
 

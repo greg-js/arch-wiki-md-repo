@@ -45,7 +45,7 @@ Despite not being strictly required for an Arch Linux install, a BIOS update is 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The latest version, v1.21, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
+The latest version, v1.23, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ### Hybrid graphics
 

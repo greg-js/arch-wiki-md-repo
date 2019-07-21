@@ -42,14 +42,14 @@ The [lsblk](/index.php/Lsblk "Lsblk") command can be used for viewing graphicall
 
  `$ lsblk -f` 
 ```
-NAME        FSTYPE LABEL  UUID                                 MOUNTPOINT
+NAME        FSTYPE LABEL      UUID                                 MOUNTPOINT
 sda                                                       
-├─sda1      vfat          CBB6-24F2                            /boot
-├─sda2      ext4   System 0a3407de-014b-458b-b5c1-848e92a327a3 /
-├─sda3      ext4   Data   b411dc99-f0a0-4c87-9e05-184977be8539 /home
-└─sda4      swap          f9fe0b69-a280-415d-a03a-a32752370dee [SWAP]
+├─sda1      vfat              CBB6-24F2                            /boot
+├─sda2      ext4   Arch Linux 0a3407de-014b-458b-b5c1-848e92a327a3 /
+├─sda3      ext4   Data       b411dc99-f0a0-4c87-9e05-184977be8539 /home
+└─sda4      swap              f9fe0b69-a280-415d-a03a-a32752370dee [SWAP]
 mmcblk0
-└─mmcblk0p1 vfat          F4CA-5D75
+└─mmcblk0p1 vfat              F4CA-5D75
 
 ```
 
@@ -58,7 +58,7 @@ For those using [GPT](/index.php/GPT "GPT"), use the `blkid` command instead. Th
  `# blkid` 
 ```
 /dev/sda1: UUID="CBB6-24F2" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="d0d0d110-0a71-4ed6-936a-304969ea36af" 
-/dev/sda2: LABEL="System" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/Linux" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
+/dev/sda2: LABEL="Arch Linux" UUID="0a3407de-014b-458b-b5c1-848e92a327a3" TYPE="ext4" PARTLABEL="GNU/Linux" PARTUUID="98a81274-10f7-40db-872a-03df048df366" 
 /dev/sda3: LABEL="Data" UUID="b411dc99-f0a0-4c87-9e05-184977be8539" TYPE="ext4" PARTLABEL="Home" PARTUUID="7280201c-fc5d-40f2-a9b2-466611d3d49e" 
 /dev/sda4: UUID="f9fe0b69-a280-415d-a03a-a32752370dee" TYPE="swap" PARTLABEL="Swap" PARTUUID="039b6c1c-7553-4455-9537-1befbc9fbc5b"
 /dev/mmcblk0: PTUUID="0003e1e5" PTTYPE="dos"
@@ -73,7 +73,7 @@ Almost every [file system type](/index.php/File_systems#Types_of_file_systems "F
 ```
 total 0
 lrwxrwxrwx 1 root root 10 May 27 23:31 Data -> ../../sda3
-lrwxrwxrwx 1 root root 10 May 27 23:31 System -> ../../sda2
+lrwxrwxrwx 1 root root 10 May 27 23:31 Arch\x20Linux -> ../../sda2
 
 ```
 
@@ -125,11 +125,19 @@ Most file systems support setting the label upon file system creation, see the [
 
 	`cryptsetup config --label="*new label*" /dev/*XXX*` using [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup)
 
-The label of a device can be obtained by `lsblk`:
+The label of a device can be obtained with *lsblk*:
 
- `$ lsblk -drno LABEL /dev/sda2` 
+ `$ lsblk -dno LABEL /dev/sda2` 
 ```
-System
+Arch Linux
+
+```
+
+Or with *blkid*:
+
+ `# blkid -s LABEL -o value /dev/sda2` 
+```
+Arch Linux
 
 ```
 
@@ -156,7 +164,15 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 F4CA-5D75 -> ../../mmcblk0p1
 
 ```
 
-The UUID of a device can be obtained by `blkid`:
+The UUID of a device can be obtained with *lsblk*:
+
+ `$ lsblk -dno UUID /dev/sda1` 
+```
+CBB6-24F2
+
+```
+
+Or with *blkid*:
 
  `# blkid -s UUID -o value /dev/sda1` 
 ```
@@ -228,7 +244,15 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 Swap -> ../../sda4
 
 ```
 
-The partition label of a device can be obtained by `blkid`:
+The partition label of a device can be obtained with *lsblk*:
+
+ `$ lsblk -dno PARTLABEL /dev/sda1` 
+```
+EFI system partition
+
+```
+
+Or with *blkid*:
 
  `# blkid -s PARTLABEL -o value /dev/sda1` 
 ```
@@ -260,7 +284,15 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ```
 
-The partition UUID of a device can be obtained by `blkid`:
+The partition UUID of a device can be obtained with *lsblk*:
+
+ `$ lsblk -dno PARTUUID /dev/sda1` 
+```
+d0d0d110-0a71-4ed6-936a-304969ea36af
+
+```
+
+Or with *blkid*:
 
  `# blkid -s PARTUUID -o value /dev/sda1` 
 ```
@@ -289,10 +321,10 @@ To use persistent names in the [boot manager (boot loader)](/index.php/Boot_load
 
 The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
 
-Persistent device naming [using label](#by-label) and the `LABEL=` format, in this example `System` is the LABEL of the root file system.
+Persistent device naming [using label](#by-label) and the `LABEL=` format, in this example `Arch Linux` is the LABEL of the root file system.
 
 ```
-root=LABEL=System
+root="LABEL=Arch Linux"
 
 ```
 

@@ -5,6 +5,7 @@
 | [Hibernate](#Hibernate) | Working |
 | [Integrated Graphics](#Graphics) | Working |
 | [Discrete Nvidia Graphics](#Graphics) | Modify |
+| [Backlight](#Graphics) | Modify |
 | [Wifi](#Wifi_and_Bluetooth) | Modify |
 | [Bluetooth](#Wifi_and_Bluetooth) | Working |
 | [rfkill](#Wifi_and_Bluetooth) | Working |
@@ -35,6 +36,8 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
 *   [3 Graphics](#Graphics)
     *   [3.1 kernel modules](#kernel_modules)
     *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
+    *   [3.3 Backlight](#Backlight)
+    *   [3.4 Backlight function keys](#Backlight_function_keys)
 *   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
     *   [4.1 WIFI](#WIFI)
 *   [5 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
@@ -42,6 +45,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
 *   [7 EFI firmware updates](#EFI_firmware_updates)
 *   [8 Thermal management](#Thermal_management)
 *   [9 Tips and Tricks](#Tips_and_Tricks)
+*   [10 Fingerprint reader](#Fingerprint_reader)
 
 ## UEFI
 
@@ -79,11 +83,75 @@ The process will take about five minutes, during which the system will have some
 
 ### NVIDIA Optimus
 
+### Backlight
+
+If using a desktop environment with an OLED screen, you may notice the backlight does not function. Since on some models the screen is OLED (which do not have physical backlights), you may need to shim the ACPI backlight functions to update Xrandr's "--backlight" option. This is done by monitoring the acpi_video0 levels, and updating the xrandr brightness levels accordingly.
+
+For this to work, you must first install [inotify-tool](https://www.archlinux.org/packages/?name=inotify-tool) and [bc](https://www.archlinux.org/packages/?name=bc). Then, create the following file:
+
+```
+$ cat /usr/local/bin/xbacklightmon
+
+```
+
+```
+#!/bin/sh
+
+# modify this path to the location of your backlight class
+path=/sys/class/backlight/intel_backlight
+
+luminance() {
+    read -r level < "$path"/actual_brightness
+    factor=$((max))
+    new_brightness="$(bc -l <<< "scale = 2; $level / $factor")"
+    printf '%f
+' $new_brightness
+}
+
+read -r max < "$path"/max_brightness
+
+xrandr --output eDP-1-1 --brightness "$(luminance)"
+
+inotifywait -me modify --format * "$path"/actual_brightness | while read; do*
+    xrandr --output eDP-1-1 --brightness "$(luminance)"
+done
+
+```
+
+Then make this file executable and owned by root:
+
+```
+$ chown root:root /usr/local/bin/xbacklightmon
+$ chmod 755 /usr/local/bin/xbacklightmon
+
+```
+
+You may test this by running the file, and using the backlight keys to test if the brightness updates. Finally, configure the script to run when you display manager starts.
+
+### Backlight function keys
+
+When using a LCD display device and in a desktop environment (KDE verified) the function key will be working out of the box for the DEs have their own key mapping. However, when in a window manager with modesetting driver (and also int the tty console), the backlight controlling function keys won't be working and will throw out errors like `ACPI BIOS Error, could not resolve symbol`.
+
+Usually `/sys/class/backlight/intel_backlight` is symlinked to `/sys/device/pci00/0000:00:02.0/drm/card0/card0-eDP-1/`, and by changing the value of `backlight` file inside the directory the backlight level can be controlled, but the operation needs root previliege. Establishing a udev rule and accordingly a backlight control group will help, but these steps can be done easily with the package [light](https://www.archlinux.org/packages/?name=light).
+
+Then a mapping of function key to the command, say, `light -A 3` and `light -U 3` would be in need. `XF86BrightnessDown` and `XF86BrightnessUp` won't be working. The mapping of the keys can be done with [acpid](https://www.archlinux.org/packages/?name=acpid). Install the package, then insert these lines to the `case "$1" in` block
+
+ `/etc/acpi/handler.sh` 
+```
+video/brightnessup) light -A 3 ;;
+video/brightnessdown) light -U 3 ;;
+
+```
+
+start and enable the service:
+
+`systemctl enable acpid.service`, `systemctl start acpid.service`.
+
 ## Wifi and Bluetooth
 
 ### WIFI
 
-WIFI will not be working out of the box, a manual installation is required. Connect to the internet via a cable or via USB tethering, then consult [this page](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/), i.e.
+On kernel versions lower than 5.2.0, WIFI will not be working out of the box, a manual installation of drivers in is required in order that the hardware can be recognized correctly. Connect to the internet via a cable or via USB tethering, then consult [this page](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/)
 
 ```
 $ pacman -S git
@@ -95,7 +163,7 @@ $ sudo make install
 
 ```
 
-Additionally, you will need to ensure you have the latest iwlwifi firmware:
+Additionally, you may need to ensure you have the latest iwlwifi firmware:
 
 ```
 $ sudo git clone [git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git](git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
@@ -104,7 +172,9 @@ $ sudo cp iwlwifi-* /lib/firmware/
 
 ```
 
-Reboot.
+It is basically same with Pacman -Syu and updating the Linux-firmware package, albeit the package version would be newer in the former case. Reboot.
+
+For kernel versions 5.2.0 and above. At the moment [linux kernel 5.2 and above have a problem in getting the WiFi module working](https://bbs.archlinux.org/viewtopic.php?id=247705) . However,according to the same post, removing the file `/lib/firmware/iwlwifi-cc-a0-48.ucode` will help, which keeps the troublesome firmware verision 48 from being loaded and load the version 46 firmware instead.
 
 ## Touchpad and Touchscreen
 
@@ -115,3 +185,5 @@ Reboot.
 ## Thermal management
 
 ## Tips and Tricks
+
+## Fingerprint reader

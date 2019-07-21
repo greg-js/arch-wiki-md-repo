@@ -52,6 +52,8 @@ Reboot for these settings to take effect.
 
 	[https://doc.qt.io/qt-5/qdbusviewer.html](https://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
 
+You can also use [busctl(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/busctl.5) from [systemd](/index.php/Systemd "Systemd").
+
 ## See also
 
 *   [D-Bus homepage](https://www.freedesktop.org/wiki/Software/dbus/) – freedesktop.org

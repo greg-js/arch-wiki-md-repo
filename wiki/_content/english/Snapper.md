@@ -398,7 +398,7 @@ Create a read-write snapshot of the read-only snapshot snapper took:
 
 ```
 
-Where `*#*` is the number of the snapper snapshot you wish to restore. Your `/` has now been restore to the previous snapshot. Now just simply reboot.
+Where `*#*` is the number of the snapper snapshot you wish to restore. Your `/` has now been restored to the previous snapshot. Now just simply reboot.
 
 ### Deleting files from snapshots
 

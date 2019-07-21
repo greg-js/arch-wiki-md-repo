@@ -45,8 +45,11 @@ Install and configure [NetworkManager](/index.php/NetworkManager "NetworkManager
 2.  When you choose a connection type, click the drop down menu and scroll all the way down until you reach "Import a saved VPN configuration". Select that option. Now, click Create.
 3.  Navigate to the directory you extracted all of the openvpn files to earlier, then open one of the files from that folder. Generally speaking, you will want to open the file that is associated with the connection you specifically want.
 4.  After you have opened one of the openvpn files, the window that appears should be "Editing <connection type>". Type in your Username and Password that you received from Private Internet Access. There is an icon in the password box indicating user permission of the credentials; change the settings as you wish.
-5.  Now, click Advanced. Next to "Use LZO data compression", click the drop down menu to select "adaptive". Click the OK button at the bottom left of the window to save this change.
-6.  Click Save at the bottom left of the "Editing <connection type>" window.
+5.  Now, click Advanced. Next to "Use LZO data compression", click the drop down menu to select "adaptive" and next to "Set vitrual device type", click the menu and make sure "TUN" is selected.
+6.  Next, go to the security tab and select as cipher "AES-128-CBC" and as HMAC Authentication "SHA-1".
+7.  Click the OK button at the bottom left of the window to save this change.
+8.  Go to the IPv6 tab and select for "Method" "Ignored" since PIA blocks IPv6 addresses [[2]](https://www.privateinternetaccess.com/helpdesk/kb/articles/why-do-you-block-ipv6-2).
+9.  Click Save at the bottom left of the "Editing <connection type>" window.
 
 #### Usage
 

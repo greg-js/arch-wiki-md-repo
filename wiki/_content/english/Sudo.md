@@ -23,16 +23,18 @@ Sudo can also be used to run commands as other users; additionally, sudo logs al
     *   [3.3 Example entries](#Example_entries)
     *   [3.4 Sudoers default file permissions](#Sudoers_default_file_permissions)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Disable per-terminal sudo](#Disable_per-terminal_sudo)
-    *   [4.2 Environment variables](#Environment_variables)
-    *   [4.3 Passing aliases](#Passing_aliases)
-    *   [4.4 Root password](#Root_password)
-    *   [4.5 Disable root login](#Disable_root_login)
-        *   [4.5.1 kdesu](#kdesu)
-    *   [4.6 Harden with Sudo Example](#Harden_with_Sudo_Example)
-    *   [4.7 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_/etc/sudoers.d)
-    *   [4.8 Editing files](#Editing_files)
-    *   [4.9 Enable insults](#Enable_insults)
+    *   [4.1 Disable password *prompt* timeout](#Disable_password_prompt_timeout)
+    *   [4.2 Add terminal bell to the password prompt](#Add_terminal_bell_to_the_password_prompt)
+    *   [4.3 Disable per-terminal sudo](#Disable_per-terminal_sudo)
+    *   [4.4 Environment variables](#Environment_variables)
+    *   [4.5 Passing aliases](#Passing_aliases)
+    *   [4.6 Root password](#Root_password)
+    *   [4.7 Disable root login](#Disable_root_login)
+        *   [4.7.1 kdesu](#kdesu)
+    *   [4.8 Harden with Sudo Example](#Harden_with_Sudo_Example)
+    *   [4.9 Configure sudo using drop-in files in /etc/sudoers.d](#Configure_sudo_using_drop-in_files_in_/etc/sudoers.d)
+    *   [4.10 Editing files](#Editing_files)
+    *   [4.11 Enable insults](#Enable_insults)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SSH TTY Problems](#SSH_TTY_Problems)
     *   [5.2 Permissive umask](#Permissive_umask)
@@ -161,6 +163,26 @@ The owner and group for the `sudoers` file must both be 0\. The file permissions
 ```
 
 ## Tips and tricks
+
+### Disable password *prompt* timeout
+
+A common annoyance is a long-running process that runs on a background terminal somewhere that runs with normal permissions and elevates only when needed. This leads to a sudo password prompt which goes unnoticed and times out, at which point the process dies and the work done is lost or, at best, cached. Common advice is to enable passwordless sudo, or extend the timeout of sudo remembering a password. Both of these have negative security implications. The **prompt** timeout can also be disabled and since that does not serve any reasonable security purpose it should be the solution here:
+
+```
+Defaults passwd_timeout=0
+
+```
+
+### Add terminal bell to the password prompt
+
+To draw attention to a sudo prompt in a background terminal, users can simply make it echo a bell character:
+
+```
+Defaults passprompt="^G[sudo] password for %p: "
+
+```
+
+Note the ^G is a literal bell character. E.g. in vim, insert using the sequence ^V ^G.
 
 ### Disable per-terminal sudo
 

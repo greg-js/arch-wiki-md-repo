@@ -359,6 +359,8 @@ Otherwise, if the previous modification didn't solve the issue, it is possible t
 
 ##### Override input field color with CSS
 
+**Note:** Related bug has been resolved starting with 68\. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1527048#c44)
+
 The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
 Alternatively set the standard colors explicitly for all web pages in `userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/). The style sheet is usually located in your profile folder (visit `about:profiles` for the path) in `chrome/userContent.css`, if not you can create it there.
@@ -385,7 +387,7 @@ To force Firefox to use a light theme (e.g. Adwaita) for both web content and UI
 
 ##### Change the GTK theme for content process only
 
-**Note:** Works with multiprocess enabled. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1158076#c145)
+**Note:** Works with multiprocess enabled. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1158076#c145)
 
 To force Firefox to use a light theme (e.g. Adwaita) for web content only:
 
@@ -632,13 +634,13 @@ Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for 
 
 Firefox supports the Fido U2F authentication protocol.
 
-**Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
+**Note:** Firefox does not inplement the entire U2F protocol [[5]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
 
 ### Get ALSA working back
 
 As long as Arch keeps building Firefox with *ac_add_options --enable-alsa*, then one can make Firefox allow ioctl syscalls, blocked by default by Firefox sandboxing, and required by ALSA setting `security.sandbox.content.syscall_whitelist` in `about:config`, to the right ioctl syscall number, which is *16* for x86-64 and *54* for x86-32\. See:
 
-[[5]](https://www.linuxquestions.org/questions/slackware-14/firefox-in-current-alsa-sound-4175622116) [[6]](https://codelab.wordpress.com/2017/12/11/firefox-drops-alsa-apulse-to-the-rescue) [[7]](https://www.bleepingcomputer.com/news/security/firefox-57-brings-better-sandboxing-on-linux)
+[[6]](https://www.linuxquestions.org/questions/slackware-14/firefox-in-current-alsa-sound-4175622116) [[7]](https://codelab.wordpress.com/2017/12/11/firefox-drops-alsa-apulse-to-the-rescue) [[8]](https://www.bleepingcomputer.com/news/security/firefox-57-brings-better-sandboxing-on-linux)
 
 No need for apulse if built as done so far.
 

@@ -38,6 +38,7 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [6.2 Restricting root login](#Restricting_root_login)
         *   [6.2.1 Allow only certain users](#Allow_only_certain_users)
         *   [6.2.2 Denying SSH login](#Denying_SSH_login)
+        *   [6.2.3 Specify acceptable login combinations with access.conf](#Specify_acceptable_login_combinations_with_access.conf)
 *   [7 Mandatory access control](#Mandatory_access_control)
     *   [7.1 Pathname MAC](#Pathname_MAC)
     *   [7.2 Labels MAC](#Labels_MAC)
@@ -342,6 +343,28 @@ This means only users who are already able to run privileged commands may login 
 #### Denying SSH login
 
 Even if you do not wish to deny root login for local users, it is always good practice to [deny root login via SSH](/index.php/OpenSSH#Deny "OpenSSH"). The purpose of this is to add an additional layer of security before a user can completely compromise your system remotely.
+
+#### Specify acceptable login combinations with access.conf
+
+When someone attempts to log in with [PAM](/index.php/PAM "PAM"), `/etc/security/access.conf` is checked for the first combination that matches their login properties. Their attempt then fails or succeeds based on the rule for that combination.
+
+```
++:root:LOCAL
+-:root:ALL
+
+```
+
+Rules can be set for specific groups and users. In this example, the user archie is allowed to login locally, as are all users in the wheel and adm groups. All other logins are rejected:
+
+```
++:archie:LOCAL
++:(wheel):LOCAL
++:(adm):LOCAL
+-:ALL:ALL
+
+```
+
+Read more at [access.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/access.conf.5)
 
 ## Mandatory access control
 

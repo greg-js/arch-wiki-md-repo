@@ -218,7 +218,16 @@ $ cd ~/android
 
 ```
 
-The Android build process expects `python` to be python2\. Create a python2 virtual environment and activate it:
+The Android build process expects `python` to be python2\. Prepend it to the `PATH`:
+
+```
+$ mkdir bin
+$ ln -s /bin/python2 bin/python
+$ export PATH=$PWD/bin:$PATH
+
+```
+
+Alternatively, create a python2 virtual environment and activate it:
 
 ```
 $ virtualenv2 --system-site-packages venv

@@ -59,7 +59,7 @@ OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
 To get PRIME functioning on the proprietary drivers, it is pretty much the same process. Follow the following articles to install the drivers:
 
-*   [ATI](/index.php/ATI "ATI") to install drivers for ATI/AMD GPUs.
+*   [Catalyst](/index.php/Catalyst "Catalyst") or [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") to install drivers for ATI/AMD GPUs.
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") to install drivers for NVIDIA GPUs.
 
 After you have the driver installed, do *not* reboot or relaunch Xorg. Depending on your system configuration, this may render your Xorg system unusable until reconfigured.

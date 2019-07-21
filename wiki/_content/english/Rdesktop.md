@@ -90,7 +90,7 @@ wins support = yes
 
 Then you have to install winbind, then edit the `/etc/nsswitch.conf` and add the "wins" to the list of hosts.
 
-Restart `smbd` and `nmbd` services and test your success by pinging a Windows NetBIOS host.
+Restart `smb` and `nmb` services and test your success by pinging a Windows NetBIOS host.
 
 ### Supplying missing cursors
 

@@ -254,7 +254,7 @@ Open the address where you have installed Nextcloud in a web browser (e.g., [htt
 
 ### Create storage directories
 
-To webserver read/write access to the *apps* directory (e.g. on "Cannot write into "apps" directory"), setup the correct permissions:
+To give webserver read/write access to the *apps* directory (e.g. on "Cannot write into "apps" directory"), setup the correct permissions:
 
 **Note:** Replace `http` when using a different [user](/index.php/User "User")/[user group](/index.php/User_group "User group") for the webserver.
 
@@ -686,7 +686,7 @@ You may see the following error in the ownCloud sync client:
 
 ```
 
-This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://aur.archlinux.org/packages/php-redis/), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
+This is caused by an issue with the File Locking app, which is often not sufficient to keep conflicts from occurring on some webserver configurations. A more complete [Transactional File Locking](https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/files_locking_transactional.html) is available that rids these errors, but you must be using the Redis php-caching method. Install [redis](https://www.archlinux.org/packages/?name=redis) and [php-redis](https://www.archlinux.org/packages/?name=php-redis), comment out your current php-cache mechanism, and then in `/etc/php/conf.d/redis.ini` uncomment `extension=redis`. Then in `config.php` make the following changes:
 
 ```
    'memcache.local' => '\OC\Memcache\Redis',

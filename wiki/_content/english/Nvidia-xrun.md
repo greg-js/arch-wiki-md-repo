@@ -31,8 +31,7 @@ X server can only be used with integrated graphics or discrete Nvidia graphics, 
 
 ### Setting the right bus id
 
-**Note:** If you installed package from [AUR](/index.php/AUR "AUR"), the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`. Make sure the bus ID has been correctly set, otherwise change it (you can find correct bus ID using {ic
-command).}}
+**Note:** If you installed package from [AUR](/index.php/AUR "AUR"), the bus id has been automatically set in `/etc/X11/nvidia-xorg.conf`. Make sure the bus ID has been correctly set, otherwise change it (you can find correct bus ID using `lspci` command).
 
 Find your display device bus id:
 

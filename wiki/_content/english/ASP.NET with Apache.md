@@ -4,12 +4,20 @@ From [Mod_Mono's site](http://www.mono-project.com/Mod_mono/):
 
 	"*Mod_Mono is an Apache 2.0/2.2 module that provides ASP.NET support for the web's favorite server, Apache ([http://httpd.apache.org/](http://httpd.apache.org/)).*"
 
+**Warning:** The Apache module mod-mono along with the web server xsp (which mod-mono depends) has not been in active development since April 2018 and may therefore have issues with updated Arch Linux systems as well as possible security vulnerabilities.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Configuring](#Configuring)
     *   [2.1 AutoHosting](#AutoHosting)
 *   [3 Testing](#Testing)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Application/Site Instance Hangs with high cpu usage.](#Application/Site_Instance_Hangs_with_high_cpu_usage.)
 
 ## Installing
 
@@ -49,3 +57,13 @@ With this setting, configuring apache for each deployment is no longer needed; j
 ## Testing
 
 If xsp is installed and html-path is `/httpd/html`, then open a browser and access [http://server/xsp/](http://server/xsp/) to see an overview over the ASP.NET-testfiles.
+
+## Troubleshooting
+
+### Application/Site Instance Hangs with high cpu usage.
+
+This is believed to be caused by a bug/incompatibility in the mod-mono module with SystemD versions above 239.303.
+
+Currently there is no fix (other than a workaround) as the project appears to have ceased development.
+
+See [https://github.com/mono/mod_mono/issues/9](https://github.com/mono/mod_mono/issues/9) for more information.

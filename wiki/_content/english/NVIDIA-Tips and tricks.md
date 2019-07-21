@@ -260,7 +260,7 @@ $ nvidia-xconfig --cool-bits=4
 
 Several tweaks (which cannot be enabled [automatically](/index.php/NVIDIA#Automatic_configuration "NVIDIA") or with the [GUI](/index.php/NVIDIA#NVIDIA_Settings "NVIDIA")) can be performed by editing your [config](/index.php/NVIDIA#Minimal_configuration "NVIDIA") file. The Xorg server will need to be restarted before any changes are applied.
 
-See [NVIDIA Accelerated Linux Graphics Driver README and Installation Guide](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/README.txt) for additional details and options.
+See [NVIDIA Accelerated Linux Graphics Driver README and Installation Guide](https://download.nvidia.com/XFree86/Linux-x86_64/381.09/README/) for additional details and options.
 
 ### Disabling the logo on startup
 

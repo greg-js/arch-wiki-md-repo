@@ -52,6 +52,7 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
     *   [6.6 Wake Up After Suspend](#Wake_Up_After_Suspend)
     *   [6.7 Light sensor](#Light_sensor)
     *   [6.8 Sound](#Sound)
+        *   [6.8.1 USB audio interface](#USB_audio_interface)
     *   [6.9 Bluetooth](#Bluetooth)
     *   [6.10 Magic Mouse](#Magic_Mouse)
     *   [6.11 Webcam](#Webcam)
@@ -888,6 +889,12 @@ You can try to specify other options, that depend on your hardware. All other po
 *   [HD-Audio-Models.txt](http://www.kernel.org/doc/Documentation/sound/alsa/HD-Audio-Models.txt).}}
 
 Then, reboot.
+
+#### USB audio interface
+
+In some cases, it can actually be easier to set up sound using a USB audio interface rather than the jack directly.
+
+For example, after plugging in a Focusrite Scarlett Solo, open [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol), go to `Configuration`, choose `Off` for all devices and choose `Analog Stereo Duplex` for `Scarlett Solo USB`. You can then use the headphone jack on the Focusrite device for speakers or headphones. This should work immediately and on startup. This does not require any Focusrite software to be installed.
 
 ### Bluetooth
 

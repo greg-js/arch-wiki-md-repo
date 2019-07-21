@@ -39,25 +39,26 @@ Related articles
         *   [3.6.1 Searching the history](#Searching_the_history)
         *   [3.6.2 Tagging](#Tagging)
         *   [3.6.3 Organizing commits](#Organizing_commits)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Using git-config](#Using_git-config)
-    *   [4.2 Adopting a good etiquette](#Adopting_a_good_etiquette)
-    *   [4.3 Speeding up authentication](#Speeding_up_authentication)
-    *   [4.4 Protocol defaults](#Protocol_defaults)
-    *   [4.5 Bash completion](#Bash_completion)
-    *   [4.6 Git prompt](#Git_prompt)
-    *   [4.7 Visual representation](#Visual_representation)
-    *   [4.8 Commit tips](#Commit_tips)
-    *   [4.9 Signing commits](#Signing_commits)
-    *   [4.10 Working with a non-master branch](#Working_with_a_non-master_branch)
-    *   [4.11 Directly sending patches to a mailing list](#Directly_sending_patches_to_a_mailing_list)
-    *   [4.12 When the remote repo is huge](#When_the_remote_repo_is_huge)
-        *   [4.12.1 Simplest way: fetch the entire repo](#Simplest_way:_fetch_the_entire_repo)
-        *   [4.12.2 Partial fetch](#Partial_fetch)
-        *   [4.12.3 Get other branches](#Get_other_branches)
-        *   [4.12.4 Possible Future alternative](#Possible_Future_alternative)
-    *   [4.13 Filtering confidential information](#Filtering_confidential_information)
-*   [5 See also](#See_also)
+*   [4 Extensions](#Extensions)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Using git-config](#Using_git-config)
+    *   [5.2 Adopting a good etiquette](#Adopting_a_good_etiquette)
+    *   [5.3 Speeding up authentication](#Speeding_up_authentication)
+    *   [5.4 Protocol defaults](#Protocol_defaults)
+    *   [5.5 Bash completion](#Bash_completion)
+    *   [5.6 Git prompt](#Git_prompt)
+    *   [5.7 Visual representation](#Visual_representation)
+    *   [5.8 Commit tips](#Commit_tips)
+    *   [5.9 Signing commits](#Signing_commits)
+    *   [5.10 Working with a non-master branch](#Working_with_a_non-master_branch)
+    *   [5.11 Directly sending patches to a mailing list](#Directly_sending_patches_to_a_mailing_list)
+    *   [5.12 When the remote repo is huge](#When_the_remote_repo_is_huge)
+        *   [5.12.1 Simplest way: fetch the entire repo](#Simplest_way:_fetch_the_entire_repo)
+        *   [5.12.2 Partial fetch](#Partial_fetch)
+        *   [5.12.3 Get other branches](#Get_other_branches)
+        *   [5.12.4 Possible Future alternative](#Possible_Future_alternative)
+    *   [5.13 Filtering confidential information](#Filtering_confidential_information)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -464,6 +465,14 @@ Editing the action in the first column will dictate how the rebase will be done.
 The commits can be re-ordered or erased from the history (but be very careful with these). After editing the file, Git will perform the specified actions; if prompted to resolve merge problems, fix them and continue with `git rebase --continue` or back out with the `git rebase --abort` command.
 
 **Note:** Squashing commits is only used for local commits, it will cause troubles on a repository that is shared by other people.
+
+## Extensions
+
+You can use [gitflow](http://danielkummer.github.io/git-flow-cheatsheet/) to easily manage a repository using [Vincent Driessen's branching model](http://nvie.com/posts/a-successful-git-branching-model/).
+
+*   **gitflow-avh** — Extend git with Vincent Driessen's branching model. The AVH Edition adds more functionality.
+
+	[https://github.com/petervanderdoes/gitflow/](https://github.com/petervanderdoes/gitflow/) || [gitflow-avh](https://aur.archlinux.org/packages/gitflow-avh/)
 
 ## Tips and tricks
 

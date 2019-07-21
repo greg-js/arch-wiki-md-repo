@@ -819,7 +819,7 @@ Backtrace:
 
 Segfault is caused by [lib32-intel-tbb](https://aur.archlinux.org/packages/lib32-intel-tbb/). To fix the issue:
 
-1.  Download [libtbb2 deb-package](https://packages.ubuntu.com/trusty/i386/libtbb2/download) from one of the Ubuntu mirrors.
+1.  Download the [libtbb2 deb-package](http://archive.ubuntu.com/ubuntu/pool/universe/t/tbb/libtbb2_4.2~20130725-1.1ubuntu1_i386.deb) from the Ubuntu archive.
 2.  Unpack `libtbb.so.2` from `libtbb2_4.2_20130725-1.1ubuntu1_i386.deb/data.tar.xz/usr/lib` into the game directory.
 3.  Run the game with `LD_PRELOAD='./libtbb.so.2'`.
 

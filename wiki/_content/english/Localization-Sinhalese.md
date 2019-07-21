@@ -1,6 +1,10 @@
 This article describes how to get [Sinhalese](https://en.wikipedia.org/wiki/Sinhalese_language "wikipedia:Sinhalese language") Unicode support and Sinhalese Unicode input to work using [IBus](/index.php/IBus "IBus") (sayura-ibus) or [scim](/index.php/Scim "Scim") (sayura-scim).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Fonts](#Fonts)
     *   [1.1 Guide to install Sinhala Unicode Font](#Guide_to_install_Sinhala_Unicode_Font)

@@ -142,11 +142,17 @@ If you only want to forward queries to an external DNS server, skip ahead to [#F
 
 ##### Using openresolv
 
-If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide local DNS servers and search domains to Unbound. [[2]](https://roy.marples.name/projects/openresolv/config)
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide local DNS servers and search domains to Unbound[[2]](https://roy.marples.name/projects/openresolv/config):
 
  `/etc/resolvconf.conf` 
 ```
 ...
+
+# If don't want to forward the root zone and let the local resolver
+# recursively query the root servers directly,
+# simply mark all interfaces private.
+# You may need to do this if you enable DNSSEC in the local resolver but the
+# upstream DNS servers say from your router or ISP don't support DNSSEC.
 private_interfaces="*"
 
 # Write out unbound configuration file

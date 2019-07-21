@@ -87,6 +87,7 @@ There are two variants of the restrictively licensed driver:
 
 *   is kernel agnostic. This means it supports different kernels you may use (e.g. [linux-ck](https://aur.archlinux.org/packages/linux-ck/)).
 *   is kernel-release agnostic, too. It will be automatically rebuilt after every kernel upgrade or fresh installation. If you use [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) or another kernel release dependant variant (e.g. [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), it may happen that kernel upgrades break wireless from time to time until the packages are in sync again.
+*   will need the [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) package for the installed kernel(s) in order to build the module. Those packages are optional to the DKMS package and will need to be installed manually.
 
 #### Offline installation
 

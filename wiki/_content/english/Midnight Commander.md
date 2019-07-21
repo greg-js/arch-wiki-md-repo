@@ -1,6 +1,7 @@
 Related articles
 
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [nnn](/index.php/Nnn "Nnn")
 *   [ranger](/index.php/Ranger "Ranger")
 
 [Midnight Commander](https://midnight-commander.org/) is an orthodox (two-pane) file manager, supporting standard file operations, virtual filesystems, panelizing of external commands, and user menus. It also includes an internal viewer, editor, and visual diff tool.

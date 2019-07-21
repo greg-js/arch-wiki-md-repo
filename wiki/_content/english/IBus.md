@@ -146,6 +146,8 @@ If you have decided to use the great *ibus-rime* IME, check out [Rime IME](/inde
 
 To type special characters, XKB supports compose key sequences. To fulfil this function, IBus supports an input method that is permanently in Compose mode. Instead of hitting a compose key, then typing out the compose sequence, the user switches to the Compose input method (by default using super-space (a.k.a. win-space)), types the compose sequence, then switches back to the previous method. In Archlinux, the Compose input method is not installed by default. To use it, install [ibus-table-others](https://aur.archlinux.org/packages/ibus-table-others/) from the AUR, restart IBus, then look for it in the list of input methods under 'other' at the bottom.
 
+For entering mathematical symbols, [ibus-table-others](https://aur.archlinux.org/packages/ibus-table-others/) also contains a LaTeX Input Method (which maps LaTeX commands such as `\infty` to the equivalent Unicode characters `∞`) and a mathwriter Input Method.
+
 ## Tips and tricks
 
 ### Pinyin usage

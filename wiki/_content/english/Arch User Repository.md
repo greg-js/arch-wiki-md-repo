@@ -90,6 +90,8 @@ Installing packages from the AUR is a relatively simple process. Essentially:
 
 First ensure that the necessary tools are installed by [installing](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group in full which includes [make](https://www.archlinux.org/packages/?name=make) and other tools needed for compiling from source.
 
+**Tip:** Use the `--needed` flag when installing the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group to skip packages you already have instead of reinstalling them.
+
 **Note:** Packages in the AUR assume that the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is installed, i.e. they do not list the group's members as dependencies explicitly.
 
 Next choose an appropriate build directory. A build directory is simply a directory where the package will be made or "built" and can be any directory. The examples in the following sections will use `~/builds` as the build directory.

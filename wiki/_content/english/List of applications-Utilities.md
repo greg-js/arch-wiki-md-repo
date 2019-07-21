@@ -337,7 +337,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Last File Manager** — Powerful file manager written in Python 3 with a curses interface.
 
-	[https://inigo.katxi.org/devel/lfm/](https://inigo.katxi.org/devel/lfm/) || [lfm3-hg](https://aur.archlinux.org/packages/lfm3-hg/)
+	[https://inigo.katxi.org/devel/lfm/](https://inigo.katxi.org/devel/lfm/) || [lfm](https://aur.archlinux.org/packages/lfm/)
 
 *   **lf** — Terminal file manager written in Go using server/client architecture.
 
@@ -357,7 +357,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
-	[https://www.washington.edu/alpine/](https://www.washington.edu/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)
+	[https://www.washington.edu/alpine/](https://www.washington.edu/alpine/) || [alpine-git](https://aur.archlinux.org/packages/alpine-git/)
 
 *   **[Ranger](/index.php/Ranger "Ranger")** — Console-based file manager with vi bindings, customizability, and lots of features.
 
@@ -1437,7 +1437,7 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 *   **Etcher** — Flash OS images to SD cards & USB drives, safely and easily. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://etcher.io/](https://etcher.io/) || [etcher](https://aur.archlinux.org/packages/etcher/)
+	[https://etcher.io/](https://etcher.io/) || [balena-etcher](https://aur.archlinux.org/packages/balena-etcher/)
 
 *   **[Fedora Media Writer](https://en.wikipedia.org/wiki/Fedora_Media_Writer "wikipedia:Fedora Media Writer")** — Tool that helps users put Fedora images on their portable drives such as flash disks.
 

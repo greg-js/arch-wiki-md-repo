@@ -708,47 +708,62 @@ In this case we manually specify the GPU to bind.
 ```
 #!/bin/sh
 
-GROUP="0000:00:03.0"
-DEVS="0000:03:00.0 0000:03:00.1 ."
+DEVS="0000:03:00.0 0000:03:00.1"
 
 if [ ! -z "$(ls -A /sys/class/iommu)" ]; then
 	for DEV in $DEVS; do
-		echo "vfio-pci" > /sys/bus/pci/devices/$GROUP/$DEV/driver_override
+		echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
 	done
 fi
-
-modprobe -i vfio-pci
 
 ```
 
 #### Script installation
 
-**Note:** This will not work as of Linux 4.18.16, since vfio-pci is compiled-in. Has to be done through an initcpio hook.
-
-Create `/etc/modprobe.d/vfio.conf` with the following:
+Create `/etc/initcpio/install/vfio` with the following:
 
 ```
-install vfio-pci /usr/bin/vfio-pci-override.sh
+   #!/bin/bash
+   build() {
+       add_file /usr/bin/vfio-pci-override.sh
+       add_runscript
+   }
+
+```
+
+Create `/etc/initcpio/hooks/vfio` with the following:
+
+```
+   #!/usr/bin/ash
+
+   run_hook() {
+       msg ":: Triggering vfio-pci override"
+       /bin/sh /usr/bin/vfio-pci-override.sh
+   }
 
 ```
 
 Edit `/etc/mkinitcpio.conf`
 
-Remove any video drivers from MODULES, and add `vfio-pci`, and `vfio_iommu_type1`
+Remove any video drivers from MODULES
+
+Add `/usr/bin/vfio-pci-override.sh` to FILES:
 
 ```
-MODULES=(ext4 vfat vfio-pci vfio_iommu_type1)
+  FILES=(/usr/bin/vfio-pci-override.sh)
 
 ```
 
-Add `/etc/modprobe.d/vfio.conf` and `/usr/bin/vfio-pci-override.sh` to FILES:
+Add `vfio` to HOOKS:
 
 ```
-FILES=(/etc/modprobe.d/vfio.conf /usr/bin/vfio-pci-override.sh)
+   HOOKS=(base udev autodetect modconf block filesystems keyboard fsck vfio)
 
 ```
 
 [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and reboot:
+
+Warning: If there is a syntax error in the hook, the boot will fail with a kernel panic. Be careful when generating the hook, and have install media handy in case you have to recover.
 
 ### Passing the boot GPU to the guest
 

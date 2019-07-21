@@ -82,6 +82,26 @@ Or install this script as a package from the AUR: [sxiv-rifle](https://aur.archl
 
 As indicated in the comments of the script, it may be used to have this behavior when opening images from within [ranger](/index.php/Ranger "Ranger").
 
+This shell script from [[3]](https://github.com/muennich/sxiv/issues/365) starts `sxiv` in thumbnail mode if and only if the passed file argument is a folder:
+
+ `~/bin/sxiv.sh` 
+```
+#!/bin/sh
+
+    if command -v sxiv >/dev/null 2>&1; then
+      if [ -d "${@: -1}" ] || [ -h "${@: -1}" ]; then
+        sxiv -t "$@"
+      else
+        sxiv    "$@"
+      fi
+    elif command -v feh >/dev/null 2>&1; then
+      feh "$@"
+    else
+      echo "Please install SXIV or FEH!"
+    fi
+
+```
+
 ### Showing the image size in the status bar
 
 Place the following executable script in `~/.config/sxiv/exec/image-info` and make sure that you have the [exiv2](https://www.archlinux.org/packages/?name=exiv2) package installed:

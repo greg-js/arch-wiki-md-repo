@@ -81,6 +81,7 @@ According to the [official website](https://www.gnupg.org/):
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
     *   [9.10 server 'gpg-agent' is older than us (x < y)](#server_'gpg-agent'_is_older_than_us_(x_<_y))
     *   [9.11 IPC connect call failed](#IPC_connect_call_failed)
+    *   [9.12 Mitigating Poisoned PGP Certificates](#Mitigating_Poisoned_PGP_Certificates)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -1026,6 +1027,17 @@ socket=/dev/shm/S.gpg-agent.ssh
 ```
 
 Test that gpg-agent starts successfully with `gpg-agent --daemon`.
+
+### Mitigating Poisoned PGP Certificates
+
+In June 2019, an unknown attacker spammed several high-profile PGP certificates with tens of thousands (or hundreds of thousands) of signatures (CVE-2019-13050) and uploaded these signatures to the SKS keyservers. The existence of these poisoned certificates in a keyring causes gpg to hang with the following message:
+
+```
+gpg: removing stale lockfile (created by 7055)
+
+```
+
+Possible mitigation involves removing the poisoned certificate as per this [blog post](https://tech.michaelaltfield.net/2019/07/14/mitigating-poisoned-pgp-certificates/).
 
 ## See also
 

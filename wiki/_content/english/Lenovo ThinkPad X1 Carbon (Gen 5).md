@@ -30,8 +30,6 @@ Related articles
     *   [2.4 Backlight Control](#Backlight_Control)
     *   [2.5 TrackPoint Scrolling](#TrackPoint_Scrolling)
     *   [2.6 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
-        *   [2.6.1 Ethernet](#Ethernet)
-        *   [2.6.2 USB](#USB)
     *   [2.7 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
     *   [2.8 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_(USB_Type_C))
 
@@ -210,26 +208,13 @@ The USB-C Dock is a Thunderbolt 3 device. Plugging it in results in a whole lot 
 
 ```
 
-The dock works nearly perfect out of the box with Kernel 4.10.13\. Even hot plugging works: unplugging the dock while a display is connected just lets all the devices disappear. Replugging it later works, all the USB devices come back up automagically, thought you might need to issue a xrandr to get the display showing again (tested with Xorg based i3 setup).
+As of stock kernel 5.2.1, the dock is fully functional with appropriate kernel modules enabled. In particular, you must enable the `r8152` kernel module. See also the [Kernel module](/index.php/Kernel_module "Kernel module") article on how to enable `r8152` persistently. This driver allows the kernel to recognize the USB devices and ethernet port of the dock.
 
-#### Ethernet
+Finally, in order for the internal USB hub in the dock to work, you need to set Thunderbolt 3 security appropriately.
 
-The r8152 based USB Ethernet Port does not work out of the box. It gives the message:
+The easiest, but insecure, way to do so is to change the "Security Level" to "No Security" under Thuderbolt settings in the BIOS. Be aware, however, that this directly exposes the PCIe bus to any device plugged into your laptop, leaving you vulnerable to attacks such as [DMA attacks](https://en.wikipedia.org/wiki/DMA_attack "wikipedia:DMA attack") and [Thunderstrike](https://trmm.net/Thunderstrike_2). As of July 2019, this is not necessary as the more secure method below works with stock packages.
 
-```
-[    7.574773] r8152 4-1.1:1.0 (unnamed net_device) (uninitialized): Unknown version 0x6010
-
-```
-
-Installing [r8152-dkms](https://aur.archlinux.org/packages/r8152-dkms/) fixes this (the DKMS module adds the version 0x6010 to the module).
-
-#### USB
-
-In order for the internal USB hub in the dock to work, you need to set Thunderbolt 3 security appropriately.
-
-The easiest, but insecure, way to do so is to change the "Security Level" to "No Security" under Thuderbolt settings in the BIOS. Be aware, however, that this directly exposes the PCIe bus to any device plugged into your laptop, leaving you vulnerable to attacks such as [DMA attacks](https://en.wikipedia.org/wiki/DMA_attack "wikipedia:DMA attack") and [Thunderstrike](https://trmm.net/Thunderstrike_2).
-
-The more secure (but still under development) way to enable USB ports on the dock is to use the [bolt](https://christian.kellner.me/2017/12/14/introducing-bolt-thunderbolt-3-security-levels-for-gnulinux/) tool, which can be found in the AUR as [bolt-git](https://aur.archlinux.org/packages/bolt-git/). To use this tool, set "Security level" in the Thunderbolt settings in the BIOS to "Secure". After booting, attach the dock and (using the laptop's own keyboard) run `boltctl list` to find the UUID of your dock, then run `boltctl enroll --policy=auto <uuid>` to give the dock permission to access the PCIe bus automatically whenever it is plugged in. This procedure is verified to work with the X1 Carbon Gen 5 and Lenovo's dock. It may or may not work with other docks.
+The more secure way to enable USB ports on the dock is to use the `bolt` tool, which can be installed via [bolt](https://www.archlinux.org/packages/?name=bolt). To use this tool, set "Security level" in the Thunderbolt settings in the BIOS to "Secure". After booting, attach the dock and (using the laptop's own keyboard) run `boltctl list` to find the UUID of your dock. Following that, run `boltctl enroll --policy=auto <uuid>` to give the dock permission to access the PCIe bus automatically whenever it is plugged in. This procedure is verified to work with the X1 Carbon Gen 5 and Lenovo's dock. It may or may not work with other docks.
 
 Also remember to enable the "Support in pre boot environment" for USB peripherals connected to the dock to work at all.
 

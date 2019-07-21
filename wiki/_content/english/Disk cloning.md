@@ -59,7 +59,7 @@ To clone a partition from physical disk `/dev/sda`, partition 1, to physical dis
 
 ```
 
-**Note:** gparted uses e2image to efficiently copy ext2/3/4 partitions.
+**Tip:** [GParted](/index.php/GParted "GParted") uses *e2image* to efficiently copy ext2/3/4 partitions.
 
 ## Disk cloning software
 

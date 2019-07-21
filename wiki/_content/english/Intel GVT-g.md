@@ -19,6 +19,7 @@ There is also a variant of this technology called GVT-d - it is essentially Inte
     *   [1.2 Using libvirt](#Using_libvirt)
         *   [1.2.1 Getting vGPU display contents](#Getting_vGPU_display_contents)
             *   [1.2.1.1 Using DMA-BUF display](#Using_DMA-BUF_display)
+                *   [1.2.1.1.1 Using DMA-BUF with UEFI/OVMF](#Using_DMA-BUF_with_UEFI/OVMF)
             *   [1.2.1.2 Using RAMFB display](#Using_RAMFB_display)
         *   [1.2.2 Display vGPU output](#Display_vGPU_output)
             *   [1.2.2.1 Output using SPICE with MESA EGL](#Output_using_SPICE_with_MESA_EGL)
@@ -76,7 +77,7 @@ To create a VM with the virtualized GPU, add this parameter to the QEMU command 
 
 ### Using libvirt
 
-First it is needed to add the following device inside the VM <devices> tag.
+With libvirt, add the following device to the `<devices>` element of the VM definition:
 
  `$ virsh edit [vmname]` 
 ```
@@ -89,17 +90,17 @@ First it is needed to add the following device inside the VM <devices> tag.
 ...
 ```
 
-Replacing GVT_GUID with the above generated UUID.
+Replace **GVT_GUID** with the UUID of your vGPU.
 
 #### Getting vGPU display contents
 
-In order to retrieve the contents from the vGPU there are 2 possible ways
+There are several possible ways to retrieve the display contents from the vGPU.
 
 ##### Using DMA-BUF display
 
-**Warning:** Acording to this [issue](https://github.com/intel/gvt-linux/issues/20), this method will not work using OVMF for now.
+**Warning:** According to this [issue](https://github.com/intel/gvt-linux/issues/20), this method will not work with UEFI guests using (unmodified) OVMF. See below for patches/workarounds.
 
-First, modify the libvirt configuration
+First, modify the XML schema of the VM definition so that we can use QEMU-specific elements later, changing
 
  `$ virsh edit [vmname]` 
 ```
@@ -115,24 +116,47 @@ to
 
 ```
 
-Now we add those lines to your configuration right before the closing </domain> tag:
+Then add this configuration to the end of the `<domain>` element, i. e. insert this text right above the closing `</domain>` tag:
 
  `$ virsh edit [vmname]` 
 ```
 ...
- <qemu:commandline>
-       <qemu:arg value='-set'/>
-       <qemu:arg value='device.hostdev0.x-igd-opregion=on'/>
+  <qemu:commandline>
+    <qemu:arg value='-set'/>
+    <qemu:arg value='device.hostdev0.x-igd-opregion=on'/>
  </qemu:commandline>
+...
+
+```
+
+###### Using DMA-BUF with UEFI/OVMF
+
+As stated above, DMA-BUF display will not work with UEFI-based guests using (unmodified) OVMF because it won't create the necessary ACPI OpRegion exposed via QEMU's nonstandard fw_cfg interface. See [this OVMF bug](https://bugzilla.tianocore.org/show_bug.cgi?id=935) for details of this issue.
+
+According to [this GitHub comment](https://github.com/intel/gvt-linux/issues/23#issuecomment-468125999), the OVMF bug report suggests several solutions to the problem. It is possible to:
+
+*   [patch](https://bugzilla.tianocore.org/attachment.cgi?id=165) OVMF ([details](https://bugzilla.tianocore.org/show_bug.cgi?id=935#c4)) to add an Intel-specific quirk (most straightforward but non-upstreamable solution);
+*   [patch](https://bugzilla.tianocore.org/attachment.cgi?id=168) the host kernel ([details](https://bugzilla.tianocore.org/show_bug.cgi?id=935#c12)) to automatically provide an option ROM for the vGPU containing basically the same code but in option ROM format;
+*   [extract the OpROM](http://120.25.59.132:3000/vbios_gvt_uefi.rom) from the kernel patch ([source](https://www.reddit.com/r/VFIO/comments/av736o/creating_a_clover_bios_nonuefi_install_for_qemu/ehdz6mf/)) and feed it to QEMU as an override.
+
+We will go with the last option because it does not involve patching anything. (Note: if the link goes down, the OpROM can be extracted from the kernel patch by hand.)
+
+Download `vbios_gvt_uefi.rom` and place it somewhere world-accessible (we will use `/` to make an example). Then edit the VM definition, appending this configuration to the `<qemu:commandline>` element we added earlier:
+
+ `$ virsh edit [vmname]` 
+```
+...
+    <qemu:arg value='-set'/>
+    <qemu:arg value='device.hostdev0.romfile=**/vbios_gvt.uefi.rom**'/>
 ...
 
 ```
 
 ##### Using RAMFB display
 
-This can be combined with the above DMA-BUF in order to also display initial VGA initialization.
+This can be combined with the above DMA-BUF configuration in order to also display everything that happens before the guest Intel driver is loaded (i. e. POST, the firmware interface and the guest initialization).
 
-First, modify the libvirt configuration
+First, modify the XML schema of the VM definition so that we can use QEMU-specific elements later, changing
 
  `$ virsh edit [vmname]` 
 ```
@@ -148,7 +172,7 @@ to
 
 ```
 
-Now we add those lines to your configuration right before the closing </domain> tag:
+Then add this configuration to the end of the `<domain>` element, i. e. insert this text right above the closing `</domain>` tag:
 
  `$ virsh edit [vmname]` 
 ```

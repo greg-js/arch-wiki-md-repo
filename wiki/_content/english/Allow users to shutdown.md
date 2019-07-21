@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Button and Lid events](#Button_and_Lid_events)
 *   [2 Using systemd-logind](#Using_systemd-logind)
@@ -30,6 +34,26 @@ $ systemctl reboot
 ```
 
 Other commands can be used as well, including `systemctl suspend` and `systemctl hibernate`. See the *System Commands* section in [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)
+
+You can also run this over dbus with:
+
+```
+$ dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.PowerOff" boolean:true
+$ dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
+
+```
+
+Note that the above will require interactive user authentication, unless you create a custom polkit rule on e.g. `/etc/polkit-1/rules.d/00-reboot-nopassword.rules`
+
+```
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.login1.reboot-multiple-sessions" && subject.user == "myusername")
+    {
+        return polkit.Result.YES;
+    }
+});
+
+```
 
 ## Using sudo
 

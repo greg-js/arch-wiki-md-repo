@@ -62,7 +62,7 @@ $ lspci | egrep 'VGA|3D'
 
 ```
 
-The PCI address is the first 7 characters of the line that mentions NVIDIA. It will look something like `01:00.0`. In the `xorg.conf`, you will need to format it as `#:#:#`; e.g. `01:00.0` would be formatted as `1:0:0`.
+The PCI address is the first 7 characters of the line that mentions NVIDIA. It will look something like `01:00.0`. In the `xorg.conf`, you will need to format it as `#:#:#` while converting hexadecimal numbers to decimal numbers; e.g. `01:00.0` would be formatted as `1:0:0`.
 
 **Note:** On some setups this setup breaks automatic detection of the values of the display by the nvidia driver through the EDID file. As a work-around see [#Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log).
 
@@ -77,7 +77,7 @@ EndSection
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"
-    BusID "<BusID for NVIDIA device here>"
+    BusID "PCI:**<BusID for NVIDIA device here>**"
     Option "AllowEmptyInitialConfiguration"
 EndSection
 

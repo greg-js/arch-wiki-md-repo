@@ -102,7 +102,7 @@ Prior to the introduction to Arial and Times New Roman, Microsoft used two bitma
 
 ### GNU FreeFont
 
-[GNU FreeFont](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)) is an outline family intended to cover as much of the UCS charset as possible. Most of the Latin characters [are from](https://www.gnu.org/software/freefont/sources/) [URW](#PostScript) (Nimbus) fonts. This set of fonts is released under GPL v3+ + FE.
+[GNU FreeFont](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) is an outline family intended to cover as much of the UCS charset as possible. Most of the Latin characters [are from](https://www.gnu.org/software/freefont/sources/) [URW](#PostScript) (Nimbus) fonts. This set of fonts is released under GPL v3+ + FE.
 
 ### Liberation
 

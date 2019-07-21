@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Font configuration](/index.php/Font_configuration "Font configuration"), revisada por última vez el **2019-05-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=571497) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Font configuration](/index.php/Font_configuration "Font configuration"), revisada por última vez el **2019-07-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=577038) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -32,7 +32,7 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
     *   [2.5 Representación subpixel](#Representación_subpixel)
         *   [2.5.1 Filtro LCD](#Filtro_LCD)
         *   [2.5.2 Especificaciones avanzadas del filtro LCD](#Especificaciones_avanzadas_del_filtro_LCD)
-    *   [2.6 Desactivar auto-hinter para fuentes en negrita](#Desactivar_auto-hinter_para_fuentes_en_negrita)
+    *   [2.6 Ajustes específicos para ciertas fuentes o estilos de fuente](#Ajustes_específicos_para_ciertas_fuentes_o_estilos_de_fuente)
     *   [2.7 Reemplazar o establecer las fuentes por defecto](#Reemplazar_o_establecer_las_fuentes_por_defecto)
     *   [2.8 Lista blanca y lista negra de fuentes](#Lista_blanca_y_lista_negra_de_fuentes)
     *   [2.9 Desactivar fuentes bitmap](#Desactivar_fuentes_bitmap)
@@ -49,6 +49,7 @@ Aunque Fontconfig se utiliza a menudo en los Unix modernos y en los sistemas ope
     *   [4.5 Hinting incorrecto en aplicaciones GTK sobre sistemas no Gnome](#Hinting_incorrecto_en_aplicaciones_GTK_sobre_sistemas_no_Gnome)
     *   [4.6 Problema con la fuente Helvetica en PDFs generados](#Problema_con_la_fuente_Helvetica_en_PDFs_generados)
     *   [4.7 FreeType rompe fuentes Bitmap](#FreeType_rompe_fuentes_Bitmap)
+    *   [4.8 Depurar fuentes FreeType](#Depurar_fuentes_FreeType)
 *   [5 Véase también](#Véase_también)
 
 ## Path de fuentes
@@ -176,7 +177,7 @@ Utilizando las optimizaciones del BCI las instrucciones en las fuentes TrueType 
 
 ```
 
-**Nota:** Puede cambiar las implementaciones BCI editando `/etc/profile.d/freetype2.sh` que incluye una breve documentación. Los valores posibles son `truetype:interpreter-version=35` (modo clásico, emula Windows 98; 2.6 por defecto), `truetype:interpreter-version=38` (modo subpixel "ifinito"), `truetype:interpreter-version=40` (modo subpixel minimo; 2.7 por defecto). La renderización subpixel debe utilizar al BCI subpixel. Para más detalles, vea [[1]](https://www.freetype.org/freetype2/docs/subpixel-hinting.html).
+**Nota:** Puede cambiar las implementaciones BCI editando `/etc/profile.d/freetype2.sh` que incluye una breve documentación. Los valores más populares son `truetype:interpreter-version=35` (modo clásico, emula Windows 98; 2.6 por defecto), `truetype:interpreter-version=38` (modo subpixel "ifinito"), `truetype:interpreter-version=40` (modo subpixel minimo; 2.7 por defecto). Si prefiere el estilo ClearType de Windows clásico puede utilizar `truetype:interpreter-version=36`. La renderización subpixel debe utilizar al BCI subpixel. Para más detalles, vea [[1]](https://www.freetype.org/freetype2/docs/reference/ft2-properties.html#tt_interpreter_version_xxx).
 
 #### Auto-optimizado
 
@@ -280,7 +281,7 @@ $ makepkg -e
 
 Reinicie o reinicie X. El filtro lcddefault debe renderizar las fuentes de forma diferente.
 
-### Desactivar auto-hinter para fuentes en negrita
+### Ajustes específicos para ciertas fuentes o estilos de fuente
 
 Auto-hinter utiliza métodos sofisticados para renderizar fuentes, pero a veces hace que las fuentes sean demasiado grandes. Afortunadamente, una solución es desactivar autohinter para fuentes en negritas mientras que para el resto sige activado:
 
@@ -291,6 +292,22 @@ Auto-hinter utiliza métodos sofisticados para renderizar fuentes, pero a veces 
         <const>medium</const>
     </test>
     <edit name="autohint" mode="assign">
+        <bool>false</bool>
+    </edit>
+</match>
+...
+
+```
+
+Algunas fuentes puede que no se vean bien con el hinting BCI. Se puede desactivar para estas fuentes:
+
+```
+...
+ <match target="font">
+    <test name="family" qual="any">
+        <string>My Font</string>
+    </test>
+    <edit name="hinting" mode="assign">
         <bool>false</bool>
     </edit>
 </match>
@@ -506,7 +523,7 @@ Xft.rgba: rgb
 
 ```
 
-Asegúrese que los ajustes se cargan apropiadamente cuando X se inicia con `xrdb -q` (vea [Xresources (en inglés)](/index.php/Xresources "Xresources") para más información).
+Asegúrese que los ajustes se cargan apropiadamente cuando X se inicia con `xrdb -q` (vea [X resources (en inglés)](/index.php/X_resources "X resources") para más información).
 
 ## Solución de problemas
 
@@ -589,7 +606,7 @@ Xft/Antialias 1
 
 ```
 
-También puede simplemente escribir en la configuración de la fuente como directivas `Xft.*` en `~/.Xresources` sin utilizar un demonio configurador.
+También puede simplemente escribir en la configuración de la fuente como directivas `Xft.*` en `~/.Xresources` sin utilizar un demonio configurador. Vea [#Aplicaciones sin soporte fontconfig](#Aplicaciones_sin_soporte_fontconfig).
 
 ### Problema con la fuente Helvetica en PDFs generados
 
@@ -637,6 +654,15 @@ Asuma que queremos crear un alias para [terminus-font](https://www.archlinux.org
 
 Todo debería funcionar como lo hacía antes de la actualización, el *alias de fuente* no debería surtir efecto, pero asegúrese de que recarga `.Xresources` o reinicia el servidor de la pantalla antes de que los programas afectados puedan utilizar el alias.
 
+### Depurar fuentes FreeType
+
+[freetype2-demos](https://www.archlinux.org/packages/?name=freetype2-demos) proporciona herramientas para depurar las configuraciones de fuentes FreeType. `ftview` es una GUI en la cual puede retocar los ajustes de renderizado con una previsualización en vivo. Por ejemplo:
+
+```
+$ ftview -e unic -d 1024x768x24 -r 96 10 /usr/share/fonts/noto/NotoSans-Regular.ttf
+
+```
+
 ## Véase también
 
 *   [Fontconfig Wikipedia](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig")
@@ -644,3 +670,4 @@ Todo debería funcionar como lo hacía antes de la actualización, el *alias de 
 *   [FreeType 2 visión general](http://freetype.sourceforge.net/freetype2/)
 *   [Hilo de la representación de fuentes Gentoo](https://forums.gentoo.org/viewtopic-t-723341.html)
 *   [hinting leve](http://www.freetype.org/freetype2/docs/text-rendering-general.html)
+*   [Referencia a la API de FreeType 2: Controlar módulos FreeType](https://www.freetype.org/freetype2/docs/reference/index.html#controlling-freetype-modules)

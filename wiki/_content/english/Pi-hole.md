@@ -43,7 +43,7 @@ Related articles
 *   [5 Tips & Tricks](#Tips_&_Tricks)
     *   [5.1 Password-protected web interface](#Password-protected_web_interface)
     *   [5.2 Cloudflared DOH](#Cloudflared_DOH)
-    *   [5.3 Minimise disk writes](#Minimise_disk_writes)
+    *   [5.3 Optimise for solid state drives](#Optimise_for_solid_state_drives)
     *   [5.4 Use with VPN server](#Use_with_VPN_server)
         *   [5.4.1 OpenVPN](#OpenVPN)
         *   [5.4.2 WireGuard](#WireGuard)
@@ -77,7 +77,9 @@ It is a DNS resolver/forwarder and a database-like wrapper/API that provides lon
 1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
 2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
 
-If `systemd-resolved.service` is running then stop and disable it. The `pihole-FTL.service` is statically enabled; re/start it. For FTL configuration, see [upstream documentation](https://docs.pi-hole.net/ftldns/configfile/).
+`pihole-FTL.service` is statically enabled; re/start it. For FTL configuration, see [upstream documentation](https://docs.pi-hole.net/ftldns/configfile/).
+
+**Note:** Starting `pihole-FTL.service` is likelly going to fail. See [#Failed to start Pi-hole FTLDNS engine](#Failed_to_start_Pi-hole_FTLDNS_engine).
 
 #### Web interface
 
@@ -211,7 +213,7 @@ $ pihole -g
 
 #### Temporarily disable Pi-hole
 
-Pi-hole can be paused via the web interface; or via the CLI by executing:
+Pi-hole can be paused via CLI by executing:
 
 ```
 $ pihole disable [time]
@@ -247,7 +249,7 @@ To disable the password protection, set a blank password.
 
 ### Cloudflared DOH
 
-Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS (DOH). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
+Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS ([DOH](https://en.wikipedia.org/wiki/DNS_over_HTTPS)). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
 
  `/etc/cloudflared/cloudflared.yml` 
 ```
@@ -264,7 +266,7 @@ proxy-dns-address: 0.0.0.0
 
 Then [start and enable](/index.php/Start/enable "Start/enable") `cloudflared@cloudflared.service`. Now you can use `127.0.0.1#5053` as a DNS server in Pi-Hole.
 
-### Minimise disk writes
+### Optimise for solid state drives
 
 If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (SD card, SSD etc..) it is recommended to uncomment the `DBINTERVAL` value and change it to at least `60.0` to minimize writes to the database:
 
@@ -379,7 +381,7 @@ For devices lacking a [RTC](/index.php/RTC "RTC"): A hacky work-around for this 
 
 ### Failed to start Pi-hole FTLDNS engine
 
-It might be that `systemd-resolved.service` already occupied port 53, which is required for `pihole-FTL.service`. To resolve this, [disable](/index.php/Disable "Disable") `systemd-resolved.service` and [restart](/index.php/Restart "Restart") `pihole-FTL.service`.
+It might be that `systemd-resolved.service` already occupied port 53, which is required for `pihole-FTL.service`. To resolve this, [stop and disable](/index.php/Systemd#Using_units "Systemd") `systemd-resolved.service` and [restart](/index.php/Restart "Restart") `pihole-FTL.service`.
 
 ### DNSMasq package conflict
 

@@ -116,6 +116,7 @@ The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc]
 | M2 Magic | `Bananapi_m2m_defconfig` |
 | M2 Zero | `bananapi_m2_zero_defconfig` |
 | M3 | `Sinovoip_BPI_M3_defconfig` |
+| R1 | `Lamobo_R1_defconfig` |
 
 **Note:** The M2 Ultra and Magic boards have device tree files available. They, and other defconfigs, can be found at the [U-Boot GitLab](https://gitlab.denx.de/u-boot/u-boot/).
 

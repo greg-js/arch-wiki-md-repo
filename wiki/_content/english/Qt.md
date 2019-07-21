@@ -104,7 +104,7 @@ The following styles are included in Qt5: *Fusion*, *Windows*. Others can be ins
 
 *   **Adwaita-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
-	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt](https://aur.archlinux.org/packages/adwaita-qt/)
 
 *   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
 

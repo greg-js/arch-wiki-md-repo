@@ -24,6 +24,7 @@ Related articles
     *   [6.2 Actions](#Actions)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Using dunstify as volume/brightness level indicator](#Using_dunstify_as_volume/brightness_level_indicator)
+    *   [7.2 Overwrite previous notification](#Overwrite_previous_notification)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Dunst fails to start via systemd](#Dunst_fails_to_start_via_systemd)
 
@@ -182,6 +183,10 @@ To realize that volume indicator place the following script somewhere on your `P
 `getProgressString` needs to be some function assembling the progressbar like string. This script uses [[3]](https://github.com/Fabian-G/dotfiles/blob/master/scripts/bin/getProgressString).
 
 Now simply bind `changeVolume 2dB+ unmute` etc. to some hotkey and you are done. You might also want to make dunst ignore these type of notifications in its history. See [#Modifying](#Modifying).
+
+### Overwrite previous notification
+
+For some notifications (for example sound or brightness), you might want to overwrite the previous notification. You can either use the [#Notification ID](#Notification_ID), or `-h string:x-canonical-private-synchronous:<notification-name>`.
 
 ## Troubleshooting
 

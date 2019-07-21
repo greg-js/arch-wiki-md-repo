@@ -6,13 +6,19 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Keybase "wikipedia:Keybase"):
 
 	Keybase is a key directory that maps social media identities to encryption keys (including, but not limited to PGP keys) in a publicly auditable manner. Keybase also offers an encrypted chat and cloud storage system, called Keybase Chat and the Keybase filesystem respectively. Files placed in the public portion of the filesystem are served from a public endpoint, as well as locally from a filesystem mounted by the Keybase client. Keybase supports publicly connecting Twitter, GitHub, Facebook, Reddit, and Hacker News identities to encryption keys, along with Bitcoin and Zcash wallet addresses.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Installation](#Installation)
-*   [2 Signup / Login](#Signup_.2F_Login)
+*   [2 Signup / Login](#Signup_/_Login)
 *   [3 GnuPG Keys](#GnuPG_Keys)
-*   [4 Keybase Filesystem (KBFS)](#Keybase_Filesystem_.28KBFS.29)
-*   [5 See also](#See_also)
+*   [4 Keybase Filesystem (KBFS)](#Keybase_Filesystem_(KBFS))
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Keybase GUI starts automatically](#Keybase_GUI_starts_automatically)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -84,6 +90,14 @@ Now the `kbfs` service can be started:
 Enable this service to have the kbfs mounted on boot.
 
 All files under `/path/to/kbfs/public` are automatically signed by the client. All files under `/path/to/kbfs/private` are both encrypted and signed before being uploaded, making them end-to-end encrypted. See the [KBFS docs on keybase.io](https://keybase.io/docs/kbfs) for more information and usage instructions.
+
+## Troubleshooting
+
+### Keybase GUI starts automatically
+
+By default, keybase-gui add a desktop entry in your [autostart](/index.php/XDG_Autostart "XDG Autostart"). To disable it:
+
+ `keybase ctl autostart --disable` 
 
 ## See also
 

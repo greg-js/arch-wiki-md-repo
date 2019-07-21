@@ -88,7 +88,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.10 heftig](#heftig)
     *   [3.11 jkanetwork](#jkanetwork)
     *   [3.12 mesa-git](#mesa-git)
-    *   [3.13 minzord](#minzord)
+    *   [3.13 Mountain](#Mountain)
     *   [3.14 oracle](#oracle)
     *   [3.15 ownstuff](#ownstuff)
     *   [3.16 pantheon](#pantheon)
@@ -982,14 +982,15 @@ Server = https://pkgbuild.com/~lcarlier/$repo/$arch
 
 ```
 
-### minzord
+### Mountain
 
-*   **Maintainer:** Minzord
-*   **Description:** A Minzord repository is there to avoid long compilation on some software. It also adds some very useful additional software.
+*   **Maintainer:** [Minzord](https://mountainlinux.wordpress.com)
+*   **Description:** Popular AUR Packages and some Driver Wifi.
 
 ```
-[minzord]
-Server = https://minzordos.000webhostapp.com/Repo/
+[Mountain]
+SigLevel = Never
+Server = https://mountain-linux.github.io/Mountain/$arch
 
 ```
 

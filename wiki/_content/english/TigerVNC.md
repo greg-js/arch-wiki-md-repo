@@ -276,6 +276,15 @@ $ vncviewer -passwd */path/to/server-passwd-file*
 
 ```
 
+The password can also be provided directly.
+
+**Note:** The password below is not secured; anyone who can run `ps` on the machine will see it.
+
+```
+$ vncviewer -passwd <(echo MYPASSWORD | vncpasswd -f)
+
+```
+
 ### Example GUI-based clients
 
 *   [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc)

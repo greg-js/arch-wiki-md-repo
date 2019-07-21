@@ -56,30 +56,31 @@ Related articles
         *   [4.2.3 Chainloading Windows/Linux installed in UEFI mode](#Chainloading_Windows/Linux_installed_in_UEFI_mode)
         *   [4.2.4 Normal loading](#Normal_loading)
     *   [4.3 Using the rescue console](#Using_the_rescue_console)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
-    *   [5.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
-    *   [5.3 Enable debug messages](#Enable_debug_messages)
-    *   [5.4 "No suitable mode found" error](#"No_suitable_mode_found"_error)
-    *   [5.5 msdos-style error message](#msdos-style_error_message)
-    *   [5.6 UEFI](#UEFI)
-        *   [5.6.1 Common installation errors](#Common_installation_errors)
-        *   [5.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
-        *   [5.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
-        *   [5.6.4 Default/fallback boot path](#Default/fallback_boot_path)
-    *   [5.7 Invalid signature](#Invalid_signature)
-    *   [5.8 Boot freezes](#Boot_freezes)
-    *   [5.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
-    *   [5.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
-    *   [5.11 GRUB loads slowly](#GRUB_loads_slowly)
-    *   [5.12 error: unknown filesystem](#error:_unknown_filesystem)
-    *   [5.13 grub-reboot not resetting](#grub-reboot_not_resetting)
-    *   [5.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
-    *   [5.15 Windows 8/10 not found](#Windows_8/10_not_found)
-    *   [5.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
-    *   [5.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
-    *   [5.18 Grub rescue and encrypted boot](#Grub_rescue_and_encrypted_boot)
-*   [6 See also](#See_also)
+*   [5 GRUB removal](#GRUB_removal)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 F2FS and other unsupported file systems](#F2FS_and_other_unsupported_file_systems)
+    *   [6.2 Intel BIOS not booting GPT](#Intel_BIOS_not_booting_GPT)
+    *   [6.3 Enable debug messages](#Enable_debug_messages)
+    *   [6.4 "No suitable mode found" error](#"No_suitable_mode_found"_error)
+    *   [6.5 msdos-style error message](#msdos-style_error_message)
+    *   [6.6 UEFI](#UEFI)
+        *   [6.6.1 Common installation errors](#Common_installation_errors)
+        *   [6.6.2 Drop to rescue shell](#Drop_to_rescue_shell)
+        *   [6.6.3 GRUB UEFI not loaded](#GRUB_UEFI_not_loaded)
+        *   [6.6.4 Default/fallback boot path](#Default/fallback_boot_path)
+    *   [6.7 Invalid signature](#Invalid_signature)
+    *   [6.8 Boot freezes](#Boot_freezes)
+    *   [6.9 Arch not found from other OS](#Arch_not_found_from_other_OS)
+    *   [6.10 Warning when installing in chroot](#Warning_when_installing_in_chroot)
+    *   [6.11 GRUB loads slowly](#GRUB_loads_slowly)
+    *   [6.12 error: unknown filesystem](#error:_unknown_filesystem)
+    *   [6.13 grub-reboot not resetting](#grub-reboot_not_resetting)
+    *   [6.14 Old BTRFS prevents installation](#Old_BTRFS_prevents_installation)
+    *   [6.15 Windows 8/10 not found](#Windows_8/10_not_found)
+    *   [6.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
+    *   [6.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
+    *   [6.18 Grub rescue and encrypted boot](#Grub_rescue_and_encrypted_boot)
+*   [7 See also](#See_also)
 
 ## BIOS systems
 
@@ -671,6 +672,15 @@ boot
 After successfully booting the Arch Linux installation, users can correct `grub.cfg` as needed and then reinstall GRUB.
 
 To reinstall GRUB and fix the problem completely, changing `/dev/sda` if needed. See [#Installation](#Installation) for details.
+
+## GRUB removal
+
+After migrating to GPT/UEFI one may want to remove the [MBR boot code](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning") [using dd](/index.php/Dd#Remove_bootloader "Dd"):
+
+```
+# dd if=/dev/zero of=/dev/sd*X* bs=440 count=1
+
+```
 
 ## Troubleshooting
 

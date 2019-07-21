@@ -186,6 +186,15 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ```
 
+Currently building executables using MinGW 6 and the toolchains installed by rustup is broken. To fix it, execute
+
+```
+for lib in crt2.o dllcrt2.o libmsvcrt.a; do cp -v /usr/x86_64-w64-mingw32/lib/$lib $HOME/.rustup/toolchains/$RELEASE-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-pc-windows-gnu/lib/; done
+
+```
+
+where `CHANNEL` is the update channel (`stable`, `beta` or `nightly`)
+
 ### Unofficial packages
 
 The [unofficial repository archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") has rust-nightly and Rust std library for i686, ARM, ARMv7, Windows 32 and 64 so you can just install the one you want then enjoy cross compiling. However, you have to find an ARM toolchain by yourself. For Windows 32bit targets, you'll need to get a libgcc_s_dw2-1.dll to build and run.
@@ -257,7 +266,7 @@ $ rustup component add clippy-preview
 
 #### Visual Studio Code
 
-[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via [rust-lang.rls](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) extension or the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
+[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via [rust-lang.rls](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) extension(requires rustup) or the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
 
 #### Vim
 

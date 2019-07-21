@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), revisada por última vez el **2019-05-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=569667) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), revisada por última vez el **2019-07-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dhcpcd&diff=0&oldid=576860) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -45,7 +45,7 @@ Artículos relacionados
 
 El paquete [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) es parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/), por lo tanto ya esta [instalado](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") en su sistema.
 
-[dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) es una interfaz [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") del demonio *dhcpcd*, y opcionalmente [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)"). Estas interfaces ofrecen un diálogo de configuración y la capacidad de introducir una contraseña para las redes inalámbricas.
+[dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/) es una interfaz [GTK](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") del demonio *dhcpcd*, y opcionalmente [WPA supplicant](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)"). Estas interfaces ofrecen un diálogo de configuración y la capacidad de introducir una contraseña para las redes inalámbricas.
 
 [dhcpcd-ui-patched](https://aur.archlinux.org/packages/dhcpcd-ui-patched/) es una versión parcheada del paquete [dhcpcd-ui](https://aur.archlinux.org/packages/dhcpcd-ui/). Esta utiliza AppIndicator en vez de GtkStatusIcon y compila con gtk3\. Posee un icono nítido para la bandeja del sistema cuando se utiliza con [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)").
 

@@ -1,5 +1,6 @@
 Related articles
 
+*   [nnn](/index.php/Nnn "Nnn")
 *   [ranger](/index.php/Ranger "Ranger")
 
 From the [Vifm](http://vifm.info/) home page:

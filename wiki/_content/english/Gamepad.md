@@ -42,6 +42,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.8.2 xboxdrv](#xboxdrv)
             *   [7.8.2.1 Multiple controllers](#Multiple_controllers)
             *   [7.8.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
+        *   [7.8.3 Using generic/clone controllers](#Using_generic/clone_controllers_2)
     *   [7.9 Xbox Wireless Controller / Xbox One Wireless Controller](#Xbox_Wireless_Controller_/_Xbox_One_Wireless_Controller)
         *   [7.9.1 Connect Xbox Wireless Controller with usb cable](#Connect_Xbox_Wireless_Controller_with_usb_cable)
         *   [7.9.2 Connect Xbox Wireless Controller with Bluetooth](#Connect_Xbox_Wireless_Controller_with_Bluetooth)
@@ -688,6 +689,24 @@ $ xboxdrv --evdev /dev/input/event* --evdev-absmap ABS_RX=X2 --evdev-keymap BTN_
 The above example is incomplete. It only maps one axis and 3 buttons for demonstration purposes. Use `xboxdrv --help-button` to see the names of the Xbox controller buttons and axes and bind them accordingly by expanding the command above. Axes mappings should go after `--evdev-absmap` and button mappings follow `--evdev-keymap` (comma separated list; no spaces).
 
 By default, xboxdrv outputs all events to the terminal. You can use this to test that the mappings are correct. Append the `--silent` option to keep it quiet.
+
+#### Using generic/clone controllers
+
+Some clone gamepads might require a specific initialization sequence in order to work ([Super User answer](https://superuser.com/a/1380235/303390)). For that you should run the following python script with sudo:
+
+```
+#!/usr/bin/env python3
+
+import usb.core
+
+dev = usb.core.find(idVendor=0x045e, idProduct=0x028e)
+
+if dev is None:
+    raise ValueError('Device not found')
+else:
+    dev.ctrl_transfer(0xc1, 0x01, 0x0100, 0x00, 0x14) 
+
+```
 
 ### Xbox Wireless Controller / Xbox One Wireless Controller
 

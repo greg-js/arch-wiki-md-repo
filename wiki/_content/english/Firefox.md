@@ -28,13 +28,14 @@ Related articles
     *   [4.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Dark themes](#Dark_themes)
-    *   [5.2 Memory limit](#Memory_limit)
-    *   [5.3 New tabs position](#New_tabs_position)
-    *   [5.4 Screenshot of webpage](#Screenshot_of_webpage)
-    *   [5.5 Wayland](#Wayland)
-    *   [5.6 Window manager rules](#Window_manager_rules)
-        *   [5.6.1 Profiles](#Profiles)
-    *   [5.7 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
+    *   [5.2 Frame rate](#Frame_rate)
+    *   [5.3 Memory limit](#Memory_limit)
+    *   [5.4 New tabs position](#New_tabs_position)
+    *   [5.5 Screenshot of webpage](#Screenshot_of_webpage)
+    *   [5.6 Wayland](#Wayland)
+    *   [5.7 Window manager rules](#Window_manager_rules)
+        *   [5.7.1 Profiles](#Profiles)
+    *   [5.8 Touchscreen gestures and pixel-perfect trackpad scrolling](#Touchscreen_gestures_and_pixel-perfect_trackpad_scrolling)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 All Firefox extensions disabled (May 2019)](#All_Firefox_extensions_disabled_(May_2019))
     *   [6.2 Firefox startup takes very long](#Firefox_startup_takes_very_long)
@@ -256,6 +257,12 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 If a dark [GTK](/index.php/GTK "GTK") theme is in use (e.g. Arc Dark), it is recommended to start Firefox with a brighter one (e.g. Adwaita). See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Firefox/Tweaks#Unreadable input fields with dark GTK themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK_themes "Firefox/Tweaks") for more information.
 
+Alternatively, starting with Firefox 68 you can make the all Firefox interfaces and even other websites respect dark themes, irrespective of the system GTK theme and Firefox theme. To do this, set `browser.in-content.dark-mode` to `true` and `ui.systemUsesDarkTheme` to `1` in `about:config` [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1488384#c23).
+
+### Frame rate
+
+If you have a high refresh rate monitor, Firefox might not be able to automatically detect the right value, in which case it will default to rendering at 60 Hz. To manually set this, set `layout.frame_rate` to the refresh rate of your monitor, e.g. 144 for 144 Hz.
+
 ### Memory limit
 
 To prevent pages from abusing memory (and possible OOM), we can use [Firejail](/index.php/Firejail "Firejail") with the `rlimit-as` option.
@@ -264,15 +271,15 @@ Decreasing [swappiness](/index.php/Swappiness "Swappiness") may also help.
 
 ### New tabs position
 
-To control where new tabs appears (relative or absolute), use `browser.tabs.insertAfterCurrent` and `browser.tabs.insertRelatedAfterCurrent`. See [[1]](https://support.mozilla.org/en/questions/1229062) for more informations.
+To control where new tabs appears (relative or absolute), use `browser.tabs.insertAfterCurrent` and `browser.tabs.insertRelatedAfterCurrent`. See [[2]](https://support.mozilla.org/en/questions/1229062) for more informations.
 
 ### Screenshot of webpage
 
-You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[2]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
+You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[3]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
 
 **Note:**
 
-*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[3]](https://github.com/mozilla-services/screenshots/issues/3503)
+*   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[4]](https://github.com/mozilla-services/screenshots/issues/3503)
 *   If [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy") is enabled, to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
 
 As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` or `Ctrl+Shift+i` (you might need to enable the button first in the *Developer Tools Settings > Available Toolbox Buttons > Take a screenshot of the entire page*).
@@ -398,7 +405,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### JavaScript context menu does not appear on some sites
 
@@ -414,13 +421,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab *Dictionaries* in *Add-ons*. You may have to change the order of *preferred language for displaying pages* in `about:preferences#general` to make the spell check default to the language of the addon dictionary.
 
-Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

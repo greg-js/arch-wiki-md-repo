@@ -174,13 +174,13 @@ By default, docker images are located at `/var/lib/docker`. They can be moved to
 
 If you have run the docker images, you need to make sure the images are unmounted totally. Once that is completed, you may move the images from `/var/lib/docker` to the target destination.
 
-Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
+Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `--data-root` parameter to the `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/dockerd -g */path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
 ```
 
 ### Insecure registries

@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration"), revisada por última vez el **2019-07-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Active_Directory_Integration&diff=0&oldid=574158) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)")
@@ -59,10 +62,11 @@ Active Directory utiliza las versiones dos y tres del [protocolo ligero de acces
     *   [7.4 Añadir las opciones necesarias en el cliente](#Añadir_las_opciones_necesarias_en_el_cliente)
     *   [7.5 Comprobar la ejecución](#Comprobar_la_ejecución)
     *   [7.6 Ajuste preciso para un manejo completo de kerberos sin contraseña.](#Ajuste_preciso_para_un_manejo_completo_de_kerberos_sin_contraseña.)
-*   [8 Generating user Keytabs which are accepted by AD](#Generating_user_Keytabs_which_are_accepted_by_AD)
-    *   [8.1 Nice to know](#Nice_to_know)
-*   [9 See also](#See_also)
-    *   [9.1 Commercial Solutions](#Commercial_Solutions)
+*   [8 Generar Keytabs de usuarios que sean aceptados por AD](#Generar_Keytabs_de_usuarios_que_sean_aceptados_por_AD)
+    *   [8.1 Es bueno conocer](#Es_bueno_conocer)
+*   [9 Véase también](#Véase_también)
+    *   [9.1 Soluciones comerciales](#Soluciones_comerciales)
+    *   [9.2 Versiones de código abierto](#Versiones_de_código_abierto)
 
 ## Terminología
 
@@ -844,39 +848,44 @@ Para depuración puede activar en el servidor DEBUG3 y mirar en el journal utili
 
 En el caso de que sus clientes no estén utilizando cuentas de dominio en sus ordenadores locales (por cualquier razón) puede ser difícil decirle a kinit antes que a ssh el espacio de trabajo. Sin embargo una solución posible es la que se propone en el siguiente apartado.
 
-## Generating user Keytabs which are accepted by AD
+## Generar Keytabs de usuarios que sean aceptados por AD
 
-On a system let the user run:
+En el sistema deje que el usuario ejecute:
 
 ```
 ktutil
-addent -password -p username@EXAMPLE.COM -k 1 -e RC4-HMAC
-- enter password for username -
+addent -password -p username@EJEMPLO.COM -k 1 -e RC4-HMAC
+- introduzca la contraseña del usuario -
 wkt username.keytab
 q
 
 ```
 
-Now test the file by invoking:
+Ahora compruebe el archivo con:
 
- `kinit username@EXAMPLE.COM -kt username.keytab` 
+ `kinit username@EJEMPLO.COM -kt username.keytab` 
 
-It should not promt you to give your password nor should it give any other feedback. If it worked you are basically done - just put the line above into your ~./bashrc - you can now get kerberos tickets without typing a password and with that you can connect to your workstation without typing a password while being completely kerberized and able to authenticate against NFSv4 and CIFS via tickets - pretty neat.
+No debe pedirle contraseña y no debe devolverle ningún comentario. Si funcionó ya estaría hecho; simplemente añada la linea de arriba en su ~./bashrc - ahora puede obtener tickets de kerberos sin escribir ninguna contraseña y puede conectar a su espacio de trabajo sin escribir la contraseña mientras este completamente kerberizado y habilitado para la autentificación a través de NFSv4 y CIFS via tickets.
 
-### Nice to know
+### Es bueno conocer
 
-The file 'username.keytab' is not machinespecific and can therefore be copied around. E.g. we created the files on a linux machine and copied them to our Mac clients as the commands on Macs are different ...
+El archivo 'username.keytab' no es exclusivo del ordenador y puede copiarse. Ej. se copio archivos desde un ordenador Linux a un ordenador Mac ya que los comandos de Mac son diferentes.
 
-## See also
+## Véase también
 
-*   [Wikipedia - Active Directory](https://en.wikipedia.org/wiki/Active_Directory "wikipedia:Active Directory")
-*   [Wikipedia - Samba](https://en.wikipedia.org/wiki/Samba_(software) "wikipedia:Samba (software)")
-*   [Wikipedia - Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) "wikipedia:Kerberos (protocol)")
+*   [Wikipedia - Active Directory](https://en.wikipedia.org/wiki/es:Active_Directory "wikipedia:es:Active Directory")
+*   [Wikipedia - Samba](https://en.wikipedia.org/wiki/es:Samba_(software) "wikipedia:es:Samba (software)")
+*   [Wikipedia - Kerberos](https://en.wikipedia.org/wiki/es:Kerberos "wikipedia:es:Kerberos")
 *   [Samba - Documentation](http://www.samba.org/samba/docs)
 *   [Samba Wiki - Samba & Active Directory](http://wiki.samba.org/index.php/Samba_&_Active_Directory)
 *   [`smb.conf(5)` manpage](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)
 
-### Commercial Solutions
+### Soluciones comerciales
 
 *   Centrify
 *   Likewise
+
+### Versiones de código abierto
+
+*   [PowerBroker Identity Services Open](https://github.com/BeyondTrust/pbis-open/): anteriormente también adquirida por BeyondTrust
+*   [Centrify Express para Linux](https://www.centrify.com/express/linux/)

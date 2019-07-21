@@ -1,6 +1,10 @@
 This article contains information regarding sparse files, their creation, maintenance, and expansion.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sparse Files](#Sparse_Files)
     *   [1.1 What is a sparse file?](#What_is_a_sparse_file?)
@@ -74,7 +78,7 @@ As you can see, although the apparent size of the file is 512 MiB, its "actual" 
 
 ### Making existing files sparse
 
-The *fallocate* utility can make existing files sparse on supported file systems (XFS, ext4, and tmpfs):
+The *fallocate* utility can make existing files sparse on supported file systems (XFS, btrfs, ext4, and tmpfs):
 
 ```
 $ cp file.img copy.img --sparse=never

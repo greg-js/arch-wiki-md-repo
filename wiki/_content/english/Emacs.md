@@ -722,7 +722,7 @@ There are numerous "smaller" implementations of Emacs. GNU/Emacs is probably the
 
 *   [GNU Emacs home page](http://www.gnu.org/software/emacs/)
 *   [GNU Emacs manual](http://www.gnu.org/software/emacs/manual/emacs.html)
-*   [Emacs Wiki](http://www.emacswiki.org/cgi-bin/wiki/)
+*   [Emacs Wiki](http://www.emacswiki.org/)
 *   [WikEmacs - a more readable, but less complete Emacs wiki](http://wikemacs.org)
 *   [Useful introduction to Emacs and its shortcuts](http://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html)
 *   [The Church of Emacs (via Google drive)](https://d0edfcdc0ccc1cd13cdab5eb986fb92e8660dbef.googledrive.com/host/0B6LMD0u8OhYYZEotN2QyR1hwR1k/)

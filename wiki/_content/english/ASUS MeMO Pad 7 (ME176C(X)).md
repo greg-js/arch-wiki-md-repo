@@ -134,6 +134,8 @@ options  root=PARTUUID=... rw
 
 ```
 
+Consider setting up Intel [Microcode](/index.php/Microcode "Microcode") updates.
+
 ## Packages
 
 **Tip:** All me176c packages are available in the `me176c` package group, so you can install all of them with: `pacman -S me176c`
@@ -146,8 +148,6 @@ options  root=PARTUUID=... rw
 *   [thermald-me176c](https://aur.archlinux.org/packages/thermald-me176c/) provides a custom configuration for [thermald](/index.php/CPU_frequency_scaling#thermald "CPU frequency scaling") based on values from the stock ROM. [Start/enable](/index.php/Start/enable "Start/enable") `thermald-me176c.service` instead of `thermald.service`.
 
 These packages are maintained on [GitHub](https://github.com/me176c-dev/archlinux-me176c) and are available through the [AUR](/index.php/AUR "AUR") or through the [ME176C unofficial user repository](/index.php/Unofficial_user_repository#me176c "Unofficial user repository"). Older versions are available on [GitHub Releases](https://github.com/me176c-dev/archlinux-me176c/releases).
-
-[Microcode](/index.php/Microcode "Microcode") updates for this tablet are not included in [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode), consider installing [intel-ucode-byt-t-c0](https://aur.archlinux.org/packages/intel-ucode-byt-t-c0/) instead and [enable early microcode updates](/index.php/Microcode#Enabling_early_microcode_updates "Microcode") for `/intel-ucode-byt-t-c0.img`.
 
 ### me176c-factory
 

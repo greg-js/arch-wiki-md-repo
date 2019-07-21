@@ -229,7 +229,7 @@ And the [#Launch options](#Launch_options) should be something like:
 
 ### Steam Remote Play
 
-**Note:** Steam In-Home Streaming [has became Steam Remote Play](https://store.steampowered.com/news/51761/).
+**Note:** Steam In-Home Streaming [has become Steam Remote Play](https://store.steampowered.com/news/51761/).
 
 Steam has built-in support for [remote play](http://store.steampowered.com/streaming/).
 

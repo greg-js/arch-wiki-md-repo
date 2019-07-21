@@ -1,6 +1,7 @@
 Related articles
 
 *   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
+*   [nnn](/index.php/Nnn "Nnn")
 *   [vifm](/index.php/Vifm "Vifm")
 
 [ranger](http://ranger.github.io/) is a text-based file manager written in [Python](/index.php/Python "Python"). Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.

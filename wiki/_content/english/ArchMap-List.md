@@ -960,7 +960,7 @@ You can use the following website to get your device's coordinates along with a 
 39.024598,-77.512196 "harrisek" # Ashburn, VA, USA
 46.318137,16.348986 "efranor" # Varaždin, Croatia
 39.483009599999995,-74.50769439999999 "meskarune" # Galloway, NJ, USA
-44.853836,-93.650484 "nlydeen" # Victoria, MN, USA
+38.853183,-77.299025 "nlydeen" # Fairfax, VA, USA
 13.060422,80.249583 "rkalyankumar" # Chennai, India
 43.361507,-8.414497 "Xoan" # A Coruña, Spain
 49.751409,6.629933 "iffer" # Trier, Germany

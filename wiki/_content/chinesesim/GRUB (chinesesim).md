@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-06-17，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=575787)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-07-15，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=577465)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -58,30 +58,31 @@
         *   [4.2.3 链式加载 UEFI 模式下安装的 Windows/Linux](#链式加载_UEFI_模式下安装的_Windows/Linux)
         *   [4.2.4 正常载入](#正常载入)
     *   [4.3 使用救急控制台](#使用救急控制台)
-*   [5 异常处理](#异常处理)
-    *   [5.1 F2FS 以及其他不支持的文件系统](#F2FS_以及其他不支持的文件系统)
-    *   [5.2 Intel BIOS 不能引导 GPT](#Intel_BIOS_不能引导_GPT)
-    *   [5.3 启用调试信息](#启用调试信息)
-    *   [5.4 "No suitable mode found" 错误](#"No_suitable_mode_found"_错误)
-    *   [5.5 出现 “msdos-style” 错误消息](#出现_“msdos-style”_错误消息)
-    *   [5.6 UEFI 异常](#UEFI_异常)
-        *   [5.6.1 常见安装错误](#常见安装错误)
-        *   [5.6.2 启动时进入了救急控制台](#启动时进入了救急控制台)
-        *   [5.6.3 GRUB UEFI 无法载入](#GRUB_UEFI_无法载入)
-        *   [5.6.4 缺省/后备启动路径](#缺省/后备启动路径)
-    *   [5.7 "Invalid signature"（无效签名错误）](#"Invalid_signature"（无效签名错误）)
-    *   [5.8 引导过程卡死](#引导过程卡死)
-    *   [5.9 其他系统不能自动发现 Arch Linux](#其他系统不能自动发现_Arch_Linux)
-    *   [5.10 在 chroot 环境下安装时遇到警告](#在_chroot_环境下安装时遇到警告)
-    *   [5.11 GRUB 载入非常慢](#GRUB_载入非常慢)
-    *   [5.12 error: unknown filesystem（未知文件系统错误）](#error:_unknown_filesystem（未知文件系统错误）)
-    *   [5.13 grub-reboot 不能重新设定](#grub-reboot_不能重新设定)
-    *   [5.14 不能在旧的 BTRFS 上进行安装](#不能在旧的_BTRFS_上进行安装)
-    *   [5.15 未找到 Windows 8/10](#未找到_Windows_8/10)
-    *   [5.16 VirtualBox EFI 模式](#VirtualBox_EFI_模式)
-    *   [5.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
-    *   [5.18 GRUB 救急与加密启动](#GRUB_救急与加密启动)
-*   [6 参阅](#参阅)
+*   [5 GRUB removal](#GRUB_removal)
+*   [6 异常处理](#异常处理)
+    *   [6.1 F2FS 以及其他不支持的文件系统](#F2FS_以及其他不支持的文件系统)
+    *   [6.2 Intel BIOS 不能引导 GPT](#Intel_BIOS_不能引导_GPT)
+    *   [6.3 启用调试信息](#启用调试信息)
+    *   [6.4 "No suitable mode found" 错误](#"No_suitable_mode_found"_错误)
+    *   [6.5 出现 “msdos-style” 错误消息](#出现_“msdos-style”_错误消息)
+    *   [6.6 UEFI 异常](#UEFI_异常)
+        *   [6.6.1 常见安装错误](#常见安装错误)
+        *   [6.6.2 启动时进入了救急控制台](#启动时进入了救急控制台)
+        *   [6.6.3 GRUB UEFI 无法载入](#GRUB_UEFI_无法载入)
+        *   [6.6.4 缺省/后备启动路径](#缺省/后备启动路径)
+    *   [6.7 "Invalid signature"（无效签名错误）](#"Invalid_signature"（无效签名错误）)
+    *   [6.8 引导过程卡死](#引导过程卡死)
+    *   [6.9 其他系统不能自动发现 Arch Linux](#其他系统不能自动发现_Arch_Linux)
+    *   [6.10 在 chroot 环境下安装时遇到警告](#在_chroot_环境下安装时遇到警告)
+    *   [6.11 GRUB 载入非常慢](#GRUB_载入非常慢)
+    *   [6.12 error: unknown filesystem（未知文件系统错误）](#error:_unknown_filesystem（未知文件系统错误）)
+    *   [6.13 grub-reboot 不能重新设定](#grub-reboot_不能重新设定)
+    *   [6.14 不能在旧的 BTRFS 上进行安装](#不能在旧的_BTRFS_上进行安装)
+    *   [6.15 未找到 Windows 8/10](#未找到_Windows_8/10)
+    *   [6.16 VirtualBox EFI 模式](#VirtualBox_EFI_模式)
+    *   [6.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
+    *   [6.18 GRUB 救急与加密启动](#GRUB_救急与加密启动)
+*   [7 参阅](#参阅)
 
 ## BIOS 系统
 
@@ -674,6 +675,15 @@ boot
 成功启动 Arch Linux 后，用户可以修正 `grub.cfg` 然后重新安装 GRUB。
 
 为了完全修正错误和重新安装 GRUB，可能需要修改 `/dev/sda`。详情请参考[#安装](#安装)章节。
+
+## GRUB removal
+
+在迁移到 GPT/UEFI 后，你可能想要移除 [MBR 启动代码](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning")，只需 [使用 dd](/index.php/Dd#Remove_bootloader "Dd"):
+
+```
+# dd if=/dev/zero of=/dev/sd*X* bs=440 count=1
+
+```
 
 ## 异常处理
 

@@ -38,6 +38,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
         *   [6.1.3 Client bar](#Client_bar)
     *   [6.2 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
     *   [6.3 Endpoint with changing IP](#Endpoint_with_changing_IP)
+    *   [6.4 Generate QR code](#Generate_QR_code)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -305,12 +306,6 @@ Using the catch-all `AllowedIPs = 0.0.0.0/0, ::/0` will forward all IPv4 (`0.0.
 
 **Note:** Users of [NetworkManager](/index.php/NetworkManager "NetworkManager"), may need to [enable](/index.php/Enable "Enable") the `NetworkManager-wait-online.service` and users of [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") may need to [enable](/index.php/Enable "Enable") the `systemd-networkd-wait-online.service` to wait until devices are network ready before attempting wireguard connection.
 
-**Tip:** If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to share the config with the client:
-```
-$ qrencode -t ansiutf8 < foo.conf
-
-```
-
 ## Testing the tunnel
 
 Once a tunnel has been established, one can use [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) to send traffic through it to test out throughput, CPU usage, etc. On one side of the tunnel, run `nc` in listen mode and on the other side, pipe some data from `/dev/zero` into `nc` in sending mode.
@@ -561,6 +556,15 @@ ExecStart=/bin/sh -c 'for i in /etc/wireguard/*.conf; do /usr/share/wireguard/ex
 ```
 
 Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `wireguard_reresolve-dns.timer`
+
+### Generate QR code
+
+If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to generate the config for the client:
+
+```
+$ qrencode -t ansiutf8 < client.conf
+
+```
 
 ## See also
 

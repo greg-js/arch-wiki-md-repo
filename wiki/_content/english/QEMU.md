@@ -1434,18 +1434,12 @@ $ qemu-system-x86_64 -vnc :0,password -monitor stdio
 
 In the QEMU monitor, password is set using the command `change vnc password` and then indicating the password.
 
-Alternatively if one create the following file:
-
- `vncpassword.txt` 
-```
-change vnc password
-*mykvmvncpassword*
-```
-
 The following command line directly runs vnc with a password:
 
 ```
-$ cat vncpassword.txt | qemu-system-x86_64 -vnc :0,password -monitor stdio
+$ printf "change vnc password
+%s
+" MYPASSWORD | qemu-system-x86_64 -vnc :0,password -monitor stdio
 
 ```
 
@@ -1806,7 +1800,7 @@ There are a number of techniques that you can use to improve the performance of 
 *   Especially for Windows guests, enable [Hyper-V enlightenments](http://blog.wikichoon.com/2014/07/enabling-hyper-v-enlightenments-with-kvm.html): `-cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time`.
 *   If the host machine has multiple cores, assign the guest more cores using the `-smp` option.
 *   Make sure you have assigned the virtual machine enough memory. By default, QEMU only assigns 128 MiB of memory to each virtual machine. Use the `-m` option to assign more memory. For example, `-m 1024` runs a virtual machine with 1024 MiB of memory.
-*   Use KVM if possible: add `-enable-kvm` to the QEMU start command you use.
+*   Apply [#Enabling KVM](#Enabling_KVM): add `-enable-kvm` to the QEMU start command you use.
 *   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:
 
 ```

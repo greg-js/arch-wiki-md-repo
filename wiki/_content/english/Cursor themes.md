@@ -51,21 +51,21 @@ Some websites that have cursor themes:
 *   [Deviant Art](https://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
 *   [Open Desktop](https://www.opendesktop.org/browse/cat/107/)
 
-For *user-specific* installation, use the `~/.icons/` directory. Extract them with this command that will work for most archives:
+For *user-specific* installation, use the `~/.local/share/icons/` or `~/.icons/` directory. Extract them with this command that will work for most archives:
 
 ```
-$ tar xvf foobar-cursor-theme.tar.gz -C ~/.icons
+$ tar xvf foobar-cursor-theme.tar.gz -C ~/.local/share/icons
 
 ```
 
-The cursor theme directory structure is `theme-name/cursors`, for example: `~/.icons/*theme*/cursors/`; make sure the extracted files follow this structure.
+The cursor theme directory structure is `theme-name/cursors`, for example: `~/.local/share/icons/*theme*/cursors/`; make sure the extracted files follow this structure.
 
 **Note:** For *system-wide* installation the `/usr/share/icons` directory is used. Direct extraction to this directory is usually discouraged as files here are not tracked by [pacman](/index.php/Pacman "Pacman"); it is recommended to create a [package](/index.php/PKGBUILD "PKGBUILD") for the cursor theme instead.
 
 Already installed cursor themes can be viewed with the command:
 
 ```
-find /usr/share/icons ~/.icons -type d -name "cursors"
+find /usr/share/icons ~/.local/share/icons ~/.icons -type d -name "cursors"
 
 ```
 

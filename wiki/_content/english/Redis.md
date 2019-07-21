@@ -2,7 +2,11 @@ From [Wikipedia:Redis](https://en.wikipedia.org/wiki/Redis "wikipedia:Redis"):
 
 	*Redis is a software project that implements data structure servers. It is open-source, networked, in-memory, and stores keys with optional durability.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Client-side software](#Client-side_software)
@@ -22,7 +26,7 @@ From [Wikipedia:Redis](https://en.wikipedia.org/wiki/Redis "wikipedia:Redis"):
 ### Client-side software
 
 *   Python: [python-redis](https://www.archlinux.org/packages/?name=python-redis) and [python2-redis](https://www.archlinux.org/packages/?name=python2-redis)
-*   PHP: [php-redis](https://aur.archlinux.org/packages/php-redis/)
+*   PHP: [php-redis](https://www.archlinux.org/packages/?name=php-redis)
 
 ## Configuration
 

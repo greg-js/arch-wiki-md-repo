@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-05-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=573815) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fonts](/index.php/Fonts "Fonts"), revisada por última vez el **2019-07-19**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=577427) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -290,7 +290,7 @@ Para más fuentes mono espaciada vea [#Bitmap](#Bitmap) y [#Familias](#Familias)
 *   [Monaco](https://en.wikipedia.org/wiki/es:Monaco_(tipograf%C3%ADa) ([ttf-monaco](https://aur.archlinux.org/packages/ttf-monaco/)) - fuente propietaria diseñada por Apple para OS X.
 *   Monofur ([ttf-monofur](https://aur.archlinux.org/packages/ttf-monofur/))
 *   [Mononoki](https://madmalik.github.io/mononoki) ([ttf-mononoki](https://aur.archlinux.org/packages/ttf-mononoki/))
-*   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts))
+*   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts) incluido en [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 
 Webs relevantes:
 
@@ -491,8 +491,7 @@ Una sección del Unicode estándar está dedicado a caracteres pictográficos qu
 
 *   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Fuente de emoji de Google, como en Android o Google Hangouts.
 *   [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) - proporciona muchos símbolos Unicode, incluido emoji, en un estilo de contorno.
-*   [ttf-emojione](https://aur.archlinux.org/packages/ttf-emojione/) - Fuente colorida oficial EmojiOne.
-*   [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/) - Fuente de emoji a color y en B&W SVGinOT construida desde EmojiOne.
+*   [ttf-joypixels](https://www.archlinux.org/packages/?name=ttf-joypixels) - Fuente completa Unicode 12 Emoji font (formalmente EmojiOne)
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Glifos código abierto de Twitter.
 
 [Kaomoji](https://en.wikipedia.org/wiki/es:Emoticono#Estilo_de_Asia_Oriental "wikipedia:es:Emoticono") a veces como "emoticonos japoneses" están compuestos por caracteres de varios conjuntos, incluido CJK y fuentes índicas. Por ejemplo, estos paquetes proporcionan muchos kaomoji existentes: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), y [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).

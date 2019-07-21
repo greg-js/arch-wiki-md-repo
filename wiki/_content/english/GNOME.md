@@ -110,7 +110,14 @@ Select the session: *GNOME*, *GNOME Classic*, or *GNOME on Xorg* from the displa
     exec gnome-session --session=gnome-classic
     ```
 
-After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
+After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login"), e.g. on tty2 by adding to `.bash_profile`:
+
+```
+if [[ -z $DISPLAY && $(tty) == /dev/tty2; ]]; then
+  GDK_BACKEND=x11 exec startx
+fi
+
+```
 
 #### Wayland sessions
 
@@ -124,7 +131,7 @@ Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XD
 To start on login to tty1, add the following to your `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY && $(tty) == /dev/tty1 && ( -z $XDG_SESSION_TYPE || $XDG_SESSION_TYPE == tty )]]; then
+if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 

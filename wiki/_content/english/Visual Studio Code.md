@@ -98,6 +98,8 @@ Visual Studio Code, Visual Studio or Visual Studio for Mac software
 to help you develop and test your applications.
 ```
 
+But in another way, you can use [netcoredbg](https://github.com/Samsung/netcoredbg),[netcoredbg](https://aur.archlinux.org/packages/netcoredbg/)
+
 ### Error from OmniSharp that MSBuild cannot be located
 
 It's noted in the [OmniSharp introduction](https://github.com/OmniSharp/omnisharp-roslyn#introduction) that Arch Linux users should install the [msbuild-stable](https://aur.archlinux.org/packages/msbuild-stable/) package. Without it, you might get an error like:

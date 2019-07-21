@@ -17,7 +17,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [alpine](https://aur.archlinux.org/packages/alpine/). Optionally a spellchecker may be installed. Alpine supports both [aspell](https://www.archlinux.org/packages/?name=aspell) and [hunspell](https://www.archlinux.org/packages/?name=hunspell).
+[Install](/index.php/Install "Install") [alpine-git](https://aur.archlinux.org/packages/alpine-git/). Optionally a spellchecker may be installed. Alpine supports both [aspell](https://www.archlinux.org/packages/?name=aspell) and [hunspell](https://www.archlinux.org/packages/?name=hunspell).
 
 ## IMAP
 

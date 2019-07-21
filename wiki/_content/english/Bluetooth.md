@@ -40,6 +40,7 @@ Related articles
     *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
     *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
     *   [6.15 Interference between Headphones and Mouse](#Interference_between_Headphones_and_Mouse)
+    *   [6.16 Failed to pair: org.bluez.Error.ConnectionAttemptFailed](#Failed_to_pair:_org.bluez.Error.ConnectionAttemptFailed)
 
 ## Installation
 
@@ -506,3 +507,7 @@ If you experience audio stuttering while using a bluetooth mouse and keyboard si
 # hciconfig hci0 lp HOLD,SNIFF,PARK
 
 ```
+
+### Failed to pair: org.bluez.Error.ConnectionAttemptFailed
+
+When getting this error on pairing via `bluetoothctl`, among other things (search the internet), rebooting can help.

@@ -1,4 +1,17 @@
-[nnn](https://github.com/jarun/nnn) is a very fast and minimalistic file manager that runs in your terminal. It is a excellent choice if you need a file manager on multiple machines, as it is highly portable and doesn't require exotic dependencies. Even though it is minimalistic it still offers a full experience of a file manager and it is easily extensible via its plugin system where you can add your own scripts.
+Related articles
+
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
+*   [ranger](/index.php/Ranger "Ranger")
+*   [vifm](/index.php/Vifm "Vifm")
+
+[nnn](https://github.com/jarun/nnn) is a very fast and minimalist terminal file manager written in C. It is an excellent choice if you need a file manager on multiple machines, as it is highly portable and doesn't require exotic dependencies. It is a full-featured file manager and is easily extensible via its plugin system where you can add your own scripts alongside already available plugins. A [(neo)vim](https://github.com/mcchrish/nnn.vim) plugin is also available.
+
+In addition to being a file manager, nnn is also a disk usage analyzer, a fuzzy app launcher, a batch file renamer and a file picker.
+
+nnn supports instant *search-as-you-type* with regex (or simple string) filters and a *navigate-as-you-type* mode for continuous navigation in filter mode with directory auto-select. It supports contexts, bookmarks, multiple sorting options, SSHFS, batch operations on selections (a group of selected files) and a lot more.
+
+Despite its capabilities, nnn is designed to be easy to use. It integrates seamlessly with the Desktop Environment at zero to minimal configuration.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,7 +22,9 @@
 *   [1 Installation](#Installation)
     *   [1.1 Usage](#Usage)
     *   [1.2 Configuration](#Configuration)
-        *   [1.2.1 cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G))
+        *   [1.2.1 Indicate depth level within nnn shells](#Indicate_depth_level_within_nnn_shells)
+        *   [1.2.2 cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G))
+        *   [1.2.3 Add your own plugins](#Add_your_own_plugins)
 *   [2 See also](#See_also)
 
 ## Installation
@@ -24,7 +39,7 @@ nnn can be controlled with the vim-like characters `hjkl` or the `arrow keys`. D
 
 nnn is configured via environment variables, by editing `~/.bashrc`. For detailed information on these settings see the included, well-documented man page `man nnn` as well as the [additional configurations](https://github.com/jarun/nnn/wiki/hacking-nnn) on the nnn wiki.
 
-Here is a exmaple configuration you can add to you `~/.bashrc`:
+Here is a example configuration you can add to you `~/.bashrc`:
 
  `~/.bashrc` 
 ```
@@ -39,7 +54,17 @@ alias ncp="cat ~/.config/nnn/.selection
 
 The most important setting would be the `NNN_BMS` variable which lets you choose shortcuts to quickly jump to your bookmarked directories. By default they are reached with `<leader-key>` which is set to `,` (a comma). In the example configuration hitting the keys: `,D` would result in nnn jumping into `~/Downloads`. But all of these are optional, nnn will consistently behave the same on all of your machines.
 
-##### cd on quit (CTRL-G)
+#### Indicate depth level within nnn shells
+
+If you use `!` to spawn a shell in the current directory, it could be nice to add:
+
+ `~/.bashrc`  `[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"` 
+
+To have your prompt indicate that you are within a shell that will return you to nnn when you are done.
+
+This together with [#cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G)) becomes a powerful combination.
+
+#### cd on quit (CTRL-G)
 
 To exit nnn and cd to the current working directory, you could add the following to your `~/.bashrc`.
 
@@ -71,6 +96,18 @@ From now on you can run nnn as:
  `$ n` 
 
 Which will correctly handle CTRL-G upon exiting nnn.
+
+#### Add your own plugins
+
+You can run your own plugins by putting them in `${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins`. For example you could create a executable shell script
+
+ `${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/git-changes` 
+```
+#!/usr/bin/env sh
+git log -p -- "$@"
+```
+
+And then trigger it by hitting `R` and selecting `git-changes` which will conveniently show the git log of changes to the particular file along with the code for a quick and easy review.
 
 ## See also
 

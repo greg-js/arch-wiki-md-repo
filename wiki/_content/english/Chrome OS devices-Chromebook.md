@@ -1,6 +1,10 @@
 Main article: [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduction](#Introduction)
     *   [1.1 First generation of Chromebooks](#First_generation_of_Chromebooks)
@@ -271,6 +275,12 @@ Intel Core i7-7Y75 | 8GB DDR3
 512GB | No | 12.3 in
 (31.2 cm) | 2400x1600
 (3:2) | Yes | Custom firmware
+available |
+| March 2018 | Acer | [Chromebook 11 (C732)](/index.php/Chromebook_11_(C732) "Chromebook 11 (C732)")
+Astronaut | Intel(R) Celeron(R) CPU N3450 @ 1.10GHz | 4GB LPDDR4
+8GB LPDDR4 | 32GB
+64GB | No | 11.6 in
+(29.5 cm) | 1366 x 768 | Yes | Custom firmware
 available |
 
 </center>

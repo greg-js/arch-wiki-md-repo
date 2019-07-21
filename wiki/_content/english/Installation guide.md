@@ -130,7 +130,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-When recognized by the live system, disks are assigned to a [block device](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "wikipedia:Device file") such as `/dev/sda` or `/dev/nvme0n1`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
+When recognized by the live system, disks are assigned to a [block device](/index.php/Block_device "Block device") such as `/dev/sda` or `/dev/nvme0n1`. To identify these devices, use [lsblk](/index.php/Lsblk "Lsblk") or *fdisk*.
 
 ```
 # fdisk -l

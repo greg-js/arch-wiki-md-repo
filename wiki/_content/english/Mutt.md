@@ -806,9 +806,11 @@ alternative_order text/plain text/html
 Some HTML mails may not display correctly in a text-based web browser. As a fallback solution, you can bind a key to open a graphical browser in such cases. The following macro will open the HTML mail selected from the attachment view in the web browser defined in the environment. (Feel free to adapt the `~/.cache/mutt/` folder).
 
 ```
-macro attach 'V' "<pipe-entry>cat >~/.cache/mutt/mail.html && $BROWSER ~/.cache/mutt/mail.html && rm ~/.cache/mutt/mail.html<enter>"
+ macro attach 'V' "<pipe-entry>iconv -c --to-code=UTF8 > ~/.cache/mutt/mail.html<enter><shell-escape>$BROWSER ~/.cache/mutt/mail.html<enter>"
 
 ```
+
+If `$BROWSER` is `firefox`, then set `intl.charset.fallback.utf8_for_file` to `true` in `about:config` as described in [[1]](https://superuser.com/questions/1215064/change-firefox-default-encoding-for-text-files/1319905#1319905) to ensure non-ASCII characters in the HTML page are displayed correctly.
 
 #### Filtering the message view
 
@@ -932,7 +934,7 @@ set editor="emacsclient -a \"\" -t"
 
 The actual color each of these settings will produce depends on the colors set in your [~/.Xresources](/index.php/Xresources "Xresources") file.
 
-Alternatively, you can source any file you want containing colors (and thus act as a theme file). See [[1]](http://nongeekshandbook.blogspot.be/2009/03/mutt-color-configuration.html) for a theme example.
+Alternatively, you can source any file you want containing colors (and thus act as a theme file). See [[2]](http://nongeekshandbook.blogspot.be/2009/03/mutt-color-configuration.html) for a theme example.
 
 #### Index Format
 
@@ -1331,7 +1333,7 @@ Gmail disables access from apps it considers less secure, including `mutt`. You 
 
 ### Not possible to open too long URLs with urlview
 
-Too long URLs are not parsed correctly, because urlview does not decode text (see [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090)). You can let mutt decode the e-mails instead. Replace the line for opening urlview with the following code:
+Too long URLs are not parsed correctly, because urlview does not decode text (see [[3]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=127090)). You can let mutt decode the e-mails instead. Replace the line for opening urlview with the following code:
 
 ```
 macro index \cb "\

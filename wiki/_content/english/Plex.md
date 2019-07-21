@@ -155,7 +155,7 @@ export LD_LIBRARY_PATH=/usr/lib/plexmediaserver
 
 Previously known as Plex Media Center, Plex Home Theater is the software component used for a long time as the front-end media player for Plex's back-end server component Plex Media Server. This component came from a fork of XBMC Media Center software on May 21, 2008.
 
-Official support for Plex Home Theater (from Plex, Inc.) has been discontinued in favour of Plex Media Player (based on MPV). However, Plex Home Theater has been forked and is still under active development by the Open Source community under the name [OpenPHT](https://github.com/RasPlex/OpenPHT)
+Official support for Plex Home Theater (from Plex, Inc.) has been discontinued in favour of Plex Media Player (based on MPV). However, Plex Home Theater was forked and has been developed further by the Open Source community under the name [OpenPHT](https://github.com/RasPlex/OpenPHT)
 
 ### Installation
 

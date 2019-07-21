@@ -13,6 +13,7 @@ The configuration file allows to change colors and set some options. Termite sup
 *   [3 Configuration](#Configuration)
     *   [3.1 Font](#Font)
     *   [3.2 Colors](#Colors)
+    *   [3.3 Reload configuration without exiting](#Reload_configuration_without_exiting)
 *   [4 Transparency](#Transparency)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Ctrl+Shift+t](#Ctrl+Shift+t)
@@ -63,6 +64,17 @@ An amazing collection of termite color schemes can be found here: [https://githu
 [colors]
 foreground = #dcdccc
 background  = #3f3f3f
+```
+
+### Reload configuration without exiting
+
+You can reload Termite's config file without exiting by pressing `Ctrl+Shift+r` from within Termite.
+
+Alternative you can send a `USR1` signal:
+
+```
+$ killall -USR1 termite
+
 ```
 
 ## Transparency

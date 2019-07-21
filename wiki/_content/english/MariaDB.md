@@ -389,7 +389,6 @@ Basically you should add the following section to the relevant [configuration fi
 [mysqldump]
 user=mysqluser
 password=secret
-
 ```
 
 Mentioning a user here is optional, but doing so will free you from having to mention it on the command line. If you want to set this for all tools, including `mysql`, use the `[client]` group.
@@ -447,7 +446,7 @@ Stop `mariadb.service`. Issue the following command:
 Connect to the mysql server. Issue the following command:
 
 ```
-# mysql -u root mysql
+# mysql -u root
 
 ```
 
@@ -503,7 +502,7 @@ Password:
 
 ```
 
-consider changing the password to smaller one.
+Consider changing the password to smaller one.
 
 **Note:** You still can log in by specifying the password as an argument to mysql command.
 **Warning:** This behavior is considered dangerous, because your password might leak, for example, to the logs. Use it only in case of emergency and do not forget to change password right afterwards.

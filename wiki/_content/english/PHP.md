@@ -96,7 +96,7 @@ $ pacman -Ss php-
 
 **Tip:** Instead of editing `/etc/php/php.ini`, an extension may be enabled/configured in the `/etc/php/conf.d` directory instead (e.g. `/etc/php/conf.d/gd.ini`)
 
-Extensions for current and older versions of PHP are also available in [AUR](/index.php/AUR "AUR") under the prefix php-* and php56-*, e.g. [php-imagick](https://www.archlinux.org/packages/?name=php-imagick), [php-redis](https://aur.archlinux.org/packages/php-redis/), [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/).
+Extensions for current and older versions of PHP are also available in [AUR](/index.php/AUR "AUR") under the prefix php-* and php56-*, e.g. [php-imagick](https://www.archlinux.org/packages/?name=php-imagick), [php-redis](https://www.archlinux.org/packages/?name=php-redis), [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/).
 
 ### gd
 

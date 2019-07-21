@@ -29,7 +29,7 @@ By default, hadoop is already configured for pseudo-distributed operation. Some 
 | ENV | Value | Description | Permission |
 | HADOOP_CONF_DIR | `/etc/hadoop` | Where configuration files are stored. | Read |
 | HADOOP_LOG_DIR | `/tmp/hadoop/log` | Where log files are stored. | Read and Write |
-| HADOOP_SLAVES | `/etc/hadoop/slaves` | File naming remote slave hosts. | Read |
+| HADOOP_WORKERS | `/etc/hadoop/workers` | File naming remote worker hosts. | Read |
 | HADOOP_PID_DIR | `/tmp/hadoop/run` | Where pid files are stored. | Read and Write |
 
 You also should set up the following files correctly.
@@ -52,7 +52,7 @@ hadoop version
 
 ```
 
-If you get warning message "WARNING: HADOOP_SLAVES has been replaced by HADOOP_WORKERS. Using value of HADOOP_SLAVES." Then replace `export HADOOP_SLAVES=/etc/hadoop/slaves` in `/etc/profile.d/hadoop.sh` with:
+The HADOOP_WORKERS option was previously called HADOOP_SLAVES. If you get warning message "WARNING: HADOOP_SLAVES has been replaced by HADOOP_WORKERS. Using value of HADOOP_SLAVES." Then replace `export HADOOP_SLAVES=/etc/hadoop/slaves` in `/etc/profile.d/hadoop.sh` with:
 
 ```
 export HADOOP_WORKERS=/etc/hadoop/workers
