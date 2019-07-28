@@ -84,7 +84,7 @@ initrd /boot/initramfs-linux.img
 
 ### GRUB
 
-Na GPT com instalações UEFI, certifique-se de seguir as instruções em [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") e incluir a opção `--removable`, pois isso pode interromper as instalações do GRUB existentes, como no comando abaixo:
+Na GPT com instalações UEFI, certifique-se de seguir as instruções em [GRUB (Português)#Sistemas UEFI](/index.php/GRUB_(Portugu%C3%AAs)#Sistemas_UEFI "GRUB (Português)") e incluir a opção `--removable`, pois isso pode interromper as instalações do GRUB existentes, como no comando abaixo:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=*esp* **--removable** --recheck

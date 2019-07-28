@@ -196,7 +196,7 @@ Shows the city list.
 
 1\. [Install](/index.php/Install "Install") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) and [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn).
 
-2\. Choose an appropriate server using the NordVPN servers page : [https://nordvpn.com/fr/servers/](https://nordvpn.com/fr/servers/) Download the corresponding openvpn configuration file on the NordVPN site : [https://nordvpn.com/ovpn/](https://nordvpn.com/ovpn/) Save the file to a place in your user home directory or elsewhere that is memorable for future access.
+2\. Choose an appropriate server using the NordVPN servers page : [https://nordvpn.com/servers/](https://nordvpn.com/servers/) Download the corresponding openvpn configuration file on the NordVPN site : [https://nordvpn.com/ovpn/](https://nordvpn.com/ovpn/) Save the file to a place in your user home directory or elsewhere that is memorable for future access.
 
 ### Configuration
 

@@ -68,7 +68,7 @@
 
 ### Неофициально поддерживаемые
 
-*   {{App|[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") Рабочая среда разрабатываемая усилиями Solus (ранее Evolve OS)
+*   {{App|[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")| Рабочая среда разрабатываемая усилиями Solus (ранее Evolve OS)
 *   **[Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")** — стандартная среда рабочего стола дистрибутива Linux Deepin. По сути является измененной оболочкой GNOME Shell
 
 	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/)

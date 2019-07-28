@@ -16,7 +16,8 @@ This article presents ways of doing audio transcoding between FLAC and MP3 audio
     *   [3.1 Usage](#Usage)
     *   [3.2 With FFmpeg](#With_FFmpeg)
         *   [3.2.1 Parallel version](#Parallel_version)
-        *   [3.2.2 Makefile for incremental recursive transcoding](#Makefile_for_incremental_recursive_transcoding)
+        *   [3.2.2 Parallel with recursion](#Parallel_with_recursion)
+        *   [3.2.3 Makefile for incremental recursive transcoding](#Makefile_for_incremental_recursive_transcoding)
     *   [3.3 Without FFmpeg](#Without_FFmpeg)
     *   [3.4 Recursively](#Recursively)
 *   [4 See also](#See_also)
@@ -74,9 +75,20 @@ parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: ./*.flac
 
 ```
 
+#### Parallel with recursion
+
+Fd is a fast, user-friendly alternative to find. This one liner avoids the "while read" loop, which may have performance implications according to a response on Stack Exchange. [[1]](https://unix.stackexchange.com/questions/169716/why-is-using-a-shell-loop-to-process-text-considered-bad-practice/)
+
+[Install](/index.php/Install "Install") [fd](https://www.archlinux.org/packages/?name=fd) and [parallel](https://www.archlinux.org/packages/?name=parallel) first, then run:
+
+```
+fd -t f -e flac -x echo ffmpeg -i \"{}\" -qscale:a 0 \"{.}.mp3\" \; | parallel -j$(nproc)
+
+```
+
 #### Makefile for incremental recursive transcoding
 
-**Warning:** Makefiles do not handle spaces correctly, see [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1506405#p1506405) for details.
+**Warning:** Makefiles do not handle spaces correctly, see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1506405#p1506405) for details.
 
 Besides transcoding in parallel with `make -j$(nproc)`, this has the added benefit of not regenerating transcoded files that already exist on subsequent executions:
 

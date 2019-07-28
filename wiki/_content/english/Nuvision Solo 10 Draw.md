@@ -1,17 +1,19 @@
 | **Device** | **Status** | **Modules** |
-| Display | Working | xf86-video-intel |
-| Backlight | Working with workaround, see notes |
-| Touchscreen | Working |
-| Stylus | Pen tip and pressure sensitivity work, see notes | xf86-input-wacom |
-| Wireless | Working with workaround, see notes | r8723bs |
+| Accelerometer | Working |
 | Audio | Working |
+| Backlight | Working with workaround, see notes |
 | Battery Status | Working |
-| Camera | Not working |
 | Bluetooth | Working | r8723bs |
+| Cameras | Not working |
+| Charging | Working with workaround, see notes | axp288_adc |
+| Display | Working | xf86-video-intel |
+| Hardware Buttons | Working |
 | MicroSD Reader | Working |
 | Power Management | Seems to work fine |
-| Accelerometer | Working |
-| Hardware Buttons | Working |
+| OTG (On-The-Go) | Working with workaround, see notes | extcon-axp288 and intel_cht_int33fe |
+| Stylus | Working | xf86-input-wacom |
+| Touchscreen | Working |
+| Wireless | Working with workaround, see notes | r8723bs |
 
 The Nuvision Solo 10 Draw is a [Tablet PC](/index.php/Tablet_PC "Tablet PC") device, equipped with a 10.1 inch touchscreen display that supports 1920 x 1200 pixels. It also has support for N-Trig Pens like the ones for Microsoft Surface.
 
@@ -28,6 +30,8 @@ The Nuvision Solo 10 Draw is a [Tablet PC](/index.php/Tablet_PC "Tablet PC") dev
 *   [5 Stylus](#Stylus)
 *   [6 Wireless](#Wireless)
 *   [7 Accelerometer](#Accelerometer)
+*   [8 Charging](#Charging)
+*   [9 OTG (On-The-Go)](#OTG_(On-The-Go))
 
 ## System Specifications
 
@@ -82,15 +86,19 @@ As of the 11th of February 2019, this workaround appears to work fine.
 
 ## Stylus
 
-As of February 25, 2019 the current Linux Wacom drver does not fully support the built-in digitizer, so stylus support is hit or miss.
+As of July 23, 2019 a patch has been merged fixing stylus support for a number of tablets including the Nuvision Solo 10 Draw. Styluses should now be fully working including styluses that have a eraser end. For [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom)>=0.37.0
 
-As discussed here, [https://github.com/linuxwacom/libwacom/issues/70](https://github.com/linuxwacom/libwacom/issues/70), there are a number of issues and possibility a bug.
+Until this is added into a new release you'll need to add this file as well. [https://github.com/linuxwacom/xf86-input-wacom/commit/030d272d5d605f9605ed44cdde4856737415a972](https://github.com/linuxwacom/xf86-input-wacom/commit/030d272d5d605f9605ed44cdde4856737415a972)
 
-Regardless of what stylus you use, there will be issues until code is updated, changed, and fixed.
-
-Stylus buttons work some of the time and the pen tip with full pressure sensitivity works fine but dedicated erasers do not.
-
-Someone will need to help write the required code changes to make this work as intended.
+ `/etc/X11/xorg.conf.d/60-wacom.conf` 
+```
+Section "InputClass"
+        Identifier "Nuvision Solo 10 Draw"
+        MatchProduct "04F3200A:00 04F3:22F7"
+        MatchDevicePath "/dev/input/event*"
+        Driver "wacom"
+EndSection
+```
 
 ## Wireless
 
@@ -125,3 +133,32 @@ If you're running a older systemd you may need to add the following.
 sensor:modalias:acpi:KIOX000A*:dmi:*:svnTMAX:pnTM101W610L:*
  ACCEL_MOUNT_MATRIX=0, -1, 0; -1, 0, 0; 0, 0, 1
 ```
+
+## Charging
+
+As of July 23, 2019 there is a bug with the 'axp288_adc' module. It improperly handles the temperature sensor and sometimes triggers a temperature warning even when no temperature sensor is present. This leads the whole system to stop allowing a charge.
+
+Bug reported at [https://bugzilla.redhat.com/show_bug.cgi?id=1610545](https://bugzilla.redhat.com/show_bug.cgi?id=1610545) there is a upstream patch but it doesn't appear to work correctly, patch at [https://github.com/torvalds/linux/commit/9bcf15f75cac3c6a00d8f8083a635de9c8537799#diff-8bdeb4777214fc30523f85b51c4a1851](https://github.com/torvalds/linux/commit/9bcf15f75cac3c6a00d8f8083a635de9c8537799#diff-8bdeb4777214fc30523f85b51c4a1851)
+
+A workaround mentioned at the previous bug report link appears to help prevent any temperature warnings pertaining to the battery. However it's unclear if this will cause any damage to the battery, it shouldn't since it does not appear this tablet has a functioning temperature sensor for the battery.
+
+Install [i2c-tools](https://www.archlinux.org/packages/?name=i2c-tools) and run the following commands as root. This disables the battery temperature sensor pin, preventing any issues with bogus temperature sensing that stops charging. This workaround appears to work as of July 23, 2019
+
+ `Disable temperature pin` 
+```
+modprobe i2c-dev
+
+i2cset -y -f 6 0x34 0x82 0xf0
+
+i2cset -y -f 6 0x34 0x84 0xf0
+```
+
+You may want to make sure these commands run at boot, see [Autostarting](/index.php/Autostarting "Autostarting") for some ways you can run these commands at boot.
+
+## OTG (On-The-Go)
+
+The drivers and chipset used for this particular tablet do not have automatic switching of OTG modes. It's either in 'device' mode or 'host' mode. If you leave a OTG cable plugged in before booting up the system properly enables 'host' mode. But otherwise the system will be left in 'device' mode and OTG will not work unless it's switched.
+
+However you can run these commands as root to switch the modes as needed.
+
+ `To switch USB OTG port to device mode.`  `echo device > /sys/class/usb_role/intel_xhci_usb_sw-role-switch/role`  `To switch USB OTG port to host mode.`  `echo host > /sys/class/usb_role/intel_xhci_usb_sw-role-switch/role`

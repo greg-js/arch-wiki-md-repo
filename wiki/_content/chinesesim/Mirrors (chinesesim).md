@@ -6,7 +6,11 @@
 
 本页面说明如何选择和配置镜像，以及列出可用的镜像。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 启用您喜爱的镜像](#启用您喜爱的镜像)
     *   [1.1 强制 pacman 刷新软件包列表](#强制_pacman_刷新软件包列表)
@@ -186,6 +190,7 @@ Architecture = auto
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *兰州大学*
 *   [https://mirrors.nju.edu.cn/archlinux/](https://mirrors.nju.edu.cn/archlinux/) - *南京大学*
+*   [https://mirrors.dgut.edu.cn/archlinux/](https://mirrors.dgut.edu.cn/archlinux/) - *东莞理工学院*
 
 ### 德国
 

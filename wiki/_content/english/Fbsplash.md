@@ -1,6 +1,10 @@
 [Fbsplash](http://sourceforge.net/projects/fbsplash.berlios/) (formerly gensplash) is a userspace implementation of a splash screen for Linux systems. It provides a graphical environment during system boot using the Linux framebuffer layer. Fbsplash has not been actively updated in the recent years and may not be working correctly on a recent Arch setup using [systemd](/index.php/Systemd "Systemd"). If you want a fancy splash screen during boot, you might want to try [Plymouth](/index.php/Plymouth "Plymouth") instead.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Fbsplash](#Fbsplash)

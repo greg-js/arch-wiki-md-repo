@@ -110,7 +110,7 @@ Exec = /usr/bin/bootctl update
 
 ### Loader configuration
 
-The loader configuration is stored in the file `*esp*/loader/loader.conf` and it is composed of the following options:
+The loader configuration is stored in the file `*esp*/loader/loader.conf`. The following settings can be specified:
 
 *   `default` – default entry to select as defined in [#Adding loaders](#Adding_loaders); it is given without the *.conf* suffix and it can be a wildcard like `arch-*`.
 *   `timeout` – menu timeout in seconds before the default entry is booted. If this is not set, the menu will only be shown on `Space` key (or most other keys actually work too) press during boot.
@@ -119,9 +119,7 @@ The loader configuration is stored in the file `*esp*/loader/loader.conf` and it
 *   `auto-firmware` – shows entry for rebooting into UEFI firmware settings if set to `1` (default), `0` to hide;
 *   `console-mode` – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for non-standard modes provided by the device firmware, if any, `auto` picks a suitable mode automatically, `max` for highest available mode, `keep` (default) for the firmware selected mode.
 
-See [loader.conf manual](https://www.freedesktop.org/software/systemd/man/loader.conf.html) for the full list of options.
-
-A loader configuration example is provided thereafter:
+For a detailed explanation of the available settings and their corresponding arguments see the [loader.conf manual](https://www.freedesktop.org/software/systemd/man/loader.conf.html). A loader configuration example is provided below:
 
  `*esp*/loader/loader.conf` 
 ```
@@ -161,6 +159,16 @@ linux   /vmlinuz-linux
 initrd  /intel-ucode.img
 initrd  /initramfs-linux.img
 options root=LABEL=*arch_os* rw
+```
+
+Another example using [lvm](/index.php/Lvm "Lvm") on top of [dm-crypt](/index.php/Dm-crypt "Dm-crypt"):
+
+ `*esp*/loader/entries/arch.conf` 
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options rd.luks.uuid=*uuid* rd.lvm.lv=*volumegroup*/*lvroot* root=UUID=*uuid* rw
 ```
 
 *bootctl* will automatically check at boot time for **Windows Boot Manager** at the location `/EFI/Microsoft/Boot/Bootmgfw.efi`, **EFI Shell** `/shellx64.efi` and **EFI Default Loader** `/EFI/BOOT/bootx64.efi`, as well as specially prepared kernel files found in `/EFI/Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.

@@ -64,7 +64,7 @@ A especificação UEFI tem suporte para inicializar BIOS legado com sua [CSM (Co
 4.  O primeiro estágio do gerenciador de boot no código de inicialização da MBR, então, inicia o código de seu segundo estágio (se houver) de:
     *   próximos setores de disco após o MBR, ou seja, o chamado intervalo pós-MBR (somente em uma tabela de partição MBR).
     *   um [registro de inicialização de volume (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") do disco com partição ou sem partição.
-    *   a [partição de inicialização do BIOS](/index.php/BIOS_boot_partition "BIOS boot partition") ([GRUB](/index.php/GRUB "GRUB") em BIOS/GPT somente).
+    *   a [partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS") ([GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") em BIOS/GPT somente).
 5.  O atual [gerenciador de boot](#Gerenciador_de_boot) é iniciado.
 6.  O gerenciador de boot carrega um sistema operacional por encadeamento ou diretamente o kernel do sistema operacional.
 
@@ -106,7 +106,7 @@ Um gerenciador de boot é um peça de software iniciada pela [BIOS](https://en.w
 | BIOS | [UEFI](/index.php/UEFI "UEFI") | [MBR](/index.php/MBR "MBR") | [GPT](/index.php/GPT "GPT") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)") | ReiserFS | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
 | [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Sim | Sim | Sim | – | – | – | – | Somente ESP | – | O kernel se tornou em um executável EFI para ser carregado diretamente do firmware [UEFI](/index.php/UEFI "UEFI") ou de outro gerenciado de boot. |
 | [Clover](/index.php/Clover "Clover") | emula UEFI | Sim | Sim | Sim | Sim | Não | sem criptografia | Não | Sim | Não | Fork do rEFIt modificado para funcionar em [macOS em hardware que não seja da Apple](https://en.wikipedia.org/wiki/pt:Hackintosh "wikipedia:pt:Hackintosh"). |
-| [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") | Sim | Sim | Sim | Sim | Sim | Sem compressão zstd | Sim | Sim | Sim | Sim | No BIOS/GPT, configuração requer uma [partição de inicialização BIOS](/index.php/BIOS_boot_partition "BIOS boot partition").
+| [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") | Sim | Sim | Sim | Sim | Sim | Sem compressão zstd | Sim | Sim | Sim | Sim | No BIOS/GPT, configuração requer uma [partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS").
 Possui suporte a RAID, LUKS1 e LVM (mas não volumes de provisionamento fino). |
 | [rEFInd](/index.php/REFInd "REFInd") | Não | Sim | Sim | Sim | Sim | sem: criptografia, compressão zstd | sem criptografia | sem recurso de *tail-packing* | Sim | Não | Possui suporte a autodetecção de kernels e parâmetros sem configuração explícita. |
 | [Syslinux](/index.php/Syslinux "Syslinux") | Sim | [Parcial](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | Sim | Sim | [Parcial](/index.php/Syslinux#Chainloading "Syslinux") | sem: volumes de vários dispositivos, compressão, criptografia | sem criptografia | Não | Sim | Somente MBR; sem nós-i esparsos | Sem suporte a certos recursos de [sistema de arquivos](/index.php/File_system "File system") [[2]](https://wiki.syslinux.org/wiki/index.php?title=Filesystem)

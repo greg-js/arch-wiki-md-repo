@@ -255,7 +255,8 @@ Architecture = *x86_64*
 *   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(ipv4 only)*
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(ipv6 only)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) — *Lanzhou University*
-*   [http://mirrors.huste.du.cn/archlinux](http://mirrors.huste.du.cn/archlinux) — *Huazhong University of Science and Technology*
+*   [http://mirrors.hust.edu.cn/archlinux](http://mirrors.hust.edu.cn/archlinux) — *Huazhong University of Science and Technology*
+*   [https://mirrors.dgut.edu.cn/archlinux/](https://mirrors.dgut.edu.cn/archlinux/) — *Dongguan University of Technology*
 
 ### Франция
 

@@ -56,22 +56,22 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.35 Minerva W Science](#Minerva_W_Science)
     *   [2.36 mobile](#mobile)
     *   [2.37 nah](#nah)
-    *   [2.38 origincode](#origincode)
-    *   [2.39 pkgbuilder](#pkgbuilder)
-    *   [2.40 post-factum kernels](#post-factum_kernels)
-    *   [2.41 QOwnNotes](#QOwnNotes)
-    *   [2.42 qt-debug](#qt-debug)
-    *   [2.43 quarry](#quarry)
-    *   [2.44 repo-ck](#repo-ck)
-    *   [2.45 seblu](#seblu)
-    *   [2.46 seiichiro](#seiichiro)
-    *   [2.47 sergej-repo](#sergej-repo)
-    *   [2.48 siosm-aur](#siosm-aur)
-    *   [2.49 sublime-text](#sublime-text)
-    *   [2.50 subtitlecomposer](#subtitlecomposer)
-    *   [2.51 trinity](#trinity)
-    *   [2.52 ungoo](#ungoo)
-    *   [2.53 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.38 nickcao](#nickcao)
+    *   [2.39 origincode](#origincode)
+    *   [2.40 pkgbuilder](#pkgbuilder)
+    *   [2.41 post-factum kernels](#post-factum_kernels)
+    *   [2.42 QOwnNotes](#QOwnNotes)
+    *   [2.43 qt-debug](#qt-debug)
+    *   [2.44 quarry](#quarry)
+    *   [2.45 repo-ck](#repo-ck)
+    *   [2.46 seblu](#seblu)
+    *   [2.47 seiichiro](#seiichiro)
+    *   [2.48 sergej-repo](#sergej-repo)
+    *   [2.49 siosm-aur](#siosm-aur)
+    *   [2.50 sublime-text](#sublime-text)
+    *   [2.51 subtitlecomposer](#subtitlecomposer)
+    *   [2.52 trinity](#trinity)
+    *   [2.53 ungoo](#ungoo)
     *   [2.54 xuanrui](#xuanrui)
     *   [2.55 xyne-x86_64](#xyne-x86_64)
     *   [2.56 home-thaodan](#home-thaodan)
@@ -600,6 +600,18 @@ Server = https://repo.nah.nz/$repo
 
 ```
 
+### nickcao
+
+*   **Maintainer:** [NickCao](https://nichi.co/about)
+*   **Description:** Some (useful for some) packages from me, and some aur packages I personally use.
+*   **Key-ID:** 83F6C7F44763993A
+
+```
+[nickcao]
+Server = https://repo.nichi.co/file/archrepo/$arch
+
+```
+
 ### origincode
 
 *   **Maintainer:** [OriginCode](https://aur.archlinux.org/account/OriginCode)
@@ -781,19 +793,6 @@ Server = https://repo.nasutek.com/arch/contrib/trinity/x86_64
 ```
 [ungoo]
 Server = https://arch.scrumplex.net/$repo/os/x86_64
-
-```
-
-### Webkit2Gtk-unstable
-
-*   **Maintainer:** [Mariusz Wojcik](/index.php/User:Mrmariusz "User:Mrmariusz")
-*   **Description:** Latest Webkit2Gtk build for early adopters.
-*   **Upstream Page:** [https://webkitgtk.org/](https://webkitgtk.org/)
-*   **Key-ID:** 346854B5
-
-```
-[home_mrmariusz_ArchLinux]
-Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$arch
 
 ```
 

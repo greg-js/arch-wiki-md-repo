@@ -19,16 +19,16 @@ Nullmailer is a small mail program that allows you (or your system) to send mail
 
 ## Configuration
 
-Configuration files are located in /etc/nullmailer. Each file contains one option and the possible configurations are not particularly well documented. Below we give an example of a configuration to use gmail as a relay host.
+Configuration files are located in `/etc/nullmailer/`. Each file contains one option and the possible configurations are not particularly well documented. Below we give an example of a configuration to use gmail as a relay host.
 
-After setting the configurations, start and/or enable the [systemd](/index.php/Systemd "Systemd") service "nullmailer"
+After setting the configurations, [start/enable](/index.php/Start/enable "Start/enable") the `nullmailer.service`.
 
 ### Example: gmail
 
-In the file /etc/nullmailer/remotes you need to set the connection to the relay host. For gmail:
+In the file `/etc/nullmailer/remotes` you need to set the connection to the relay host. For gmail:
 
 ```
-smtp.gmail.com smtp --port=465 --auth-login --user=<gmail address> --pass=<password> --ssl
+smtp.gmail.com smtp --port=465 --auth-login --user=*gmail_address* --pass=*password* --ssl
 
 ```
 
@@ -36,32 +36,33 @@ You can also use starttls but to the author SSL is preferable.
 
 **Note:** You are encoding your password in this file. Make sure the permissions are set correctly so that only you can read it. The default settings are safe, but please check.
 
-In the file /etc/nullmailer/me, you need to encode the hostname of your computer. This was set up correctly by the installation.
+In the file `/etc/nullmailer/me`, you need to encode the [hostname](/index.php/Hostname "Hostname") of your computer. This was set up correctly by the installation.
 
-In the file /etc/nullmailer/defaultdomain, you need to set the gmail domain:
+In the file `/etc/nullmailer/defaultdomain`, you need to set the gmail domain:
 
 ```
 gmail.com
 
 ```
 
-**Note:** In the configuration after installation, this file is missing. However, it is required by the systemd unit file. If you get an error message
+**Note:** In the configuration after installation, this file is missing. However, it is required by `nullmailer.service`. If you get an error message
 ```
 Condition check resulted in Nullmailer relay-only MTA being skipped.
 
 ```
-in the journal (through journalctl -u nullmailer), this might refer to this file.
+
+in the journal, this might refer to this file.
 
 ### Other configurations
 
-In the file /etc/nullmailer/pausetime you can set the minimum time to pause between successive queue runs when there are messages in the queue, in seconds. This defaults to 60, which for the author's usage (travelling laptop) is way too soon. You can set this to one hour for example:
+In the file `/etc/nullmailer/pausetime` you can set the minimum time to pause between successive queue runs when there are messages in the queue, in seconds. This defaults to 60, which for the author's usage (travelling laptop) is way too soon. You can set this to one hour for example:
 
 ```
 3600
 
 ```
 
-In the file /etc/nullmailer/sendtimeout you can set how long nullmailer tries to send a particular message before giving up. The default is one hour, 3 minutes might be a more reasonable cutoff:
+In the file `/etc/nullmailer/sendtimeout` you can set how long nullmailer tries to send a particular message before giving up. The default is one hour, 3 minutes might be a more reasonable cutoff:
 
 ```
 180
@@ -73,7 +74,7 @@ In the file /etc/nullmailer/sendtimeout you can set how long nullmailer tries to
 You can test the configuration by sending a test email:
 
 ```
- echo "Subject: sendmail test" | sendmail -v <recipient address>
+$ echo "Subject: sendmail test" | sendmail -v *recipient_address*
 
 ```
 

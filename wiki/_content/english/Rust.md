@@ -189,7 +189,7 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 Currently building executables using MinGW 6 and the toolchains installed by rustup is broken. To fix it, execute
 
 ```
-for lib in crt2.o dllcrt2.o libmsvcrt.a; do cp -v /usr/x86_64-w64-mingw32/lib/$lib $HOME/.rustup/toolchains/$RELEASE-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-pc-windows-gnu/lib/; done
+for lib in crt2.o dllcrt2.o libmsvcrt.a; do cp -v /usr/x86_64-w64-mingw32/lib/$lib $HOME/.rustup/toolchains/$CHANNEL-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-pc-windows-gnu/lib/; done
 
 ```
 

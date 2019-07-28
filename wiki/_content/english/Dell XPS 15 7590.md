@@ -6,7 +6,7 @@
 | [Integrated Graphics](#Graphics) | Working |
 | [Discrete Nvidia Graphics](#Graphics) | Modify |
 | [Backlight](#Graphics) | Modify |
-| [Wifi](#Wifi_and_Bluetooth) | Modify |
+| [Wifi](#Wifi_and_Bluetooth) | Working |
 | [Bluetooth](#Wifi_and_Bluetooth) | Working |
 | [rfkill](#Wifi_and_Bluetooth) | Working |
 | Audio | Working |
@@ -55,8 +55,6 @@ Before installing it is necessary to modify some UEFI Settings. They can be acce
 *   Change Fastboot to "Thorough" in "POST Behaviour". This prevents intermittent boot failures.
 *   Disable secure boot to allow Linux to boot.
 
-The WIFI will not be working out of the box, a internet connection via cable or USB tethering is needed. To get it working, a manual installation of the driver is required, see [Dell XPS 15 7590#WIFI](/index.php/Dell_XPS_15_7590#WIFI "Dell XPS 15 7590").
-
 ### Firmware Update
 
 Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-7590-laptop/drivers). Keeping an existing Windows system will make updates of BIOS much simpler. If a clean Arch Linux install is the case in order to install:
@@ -96,6 +94,8 @@ $ cat /usr/local/bin/xbacklightmon
 
 ```
 #!/bin/sh
+#use LC_NUMERIC if you are using an European LC, else printf will not work because it expects an comma instead of a decimal point
+LC_NUMERIC="en_US.UTF-8"
 
 # modify this path to the location of your backlight class
 path=/sys/class/backlight/intel_backlight
@@ -110,10 +110,10 @@ luminance() {
 
 read -r max < "$path"/max_brightness
 
-xrandr --output eDP-1-1 --brightness "$(luminance)"
+xrandr --output eDP-1 --brightness "$(luminance)"
 
-inotifywait -me modify --format * "$path"/actual_brightness | while read; do*
-    xrandr --output eDP-1-1 --brightness "$(luminance)"
+inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
+    xrandr --output eDP-1 --brightness "$(luminance)"
 done
 
 ```
@@ -127,6 +127,8 @@ $ chmod 755 /usr/local/bin/xbacklightmon
 ```
 
 You may test this by running the file, and using the backlight keys to test if the brightness updates. Finally, configure the script to run when you display manager starts.
+
+**Please note:** If you are using the xf86-video-intel driver, you will need to replace 'eDP-1' in the script above with 'eDP1' You also have to change the path to 'path=/sys/class/backlight/intel_backlight/' if you are using xf86-video-intel
 
 ### Backlight function keys
 
@@ -151,7 +153,9 @@ start and enable the service:
 
 ### WIFI
 
-On kernel versions lower than 5.2.0, WIFI will not be working out of the box, a manual installation of drivers in is required in order that the hardware can be recognized correctly. Connect to the internet via a cable or via USB tethering, then consult [this page](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/)
+With kernel version 5.2.2 and linux-firmware 20190717.bf13a71-1, WIFI would be working out of the box.
+
+With kernel versions lower than 5.2.0, WIFI will not be working out of the box, a manual installation of drivers in is required in order that the hardware can be recognized correctly. Connect to the internet via a cable or via USB tethering, then consult [this page](https://support.killernetworking.com/knowledge-base/killer-ax1650-in-debian-ubuntu-16-04/)
 
 ```
 $ pacman -S git
@@ -174,7 +178,7 @@ $ sudo cp iwlwifi-* /lib/firmware/
 
 It is basically same with Pacman -Syu and updating the Linux-firmware package, albeit the package version would be newer in the former case. Reboot.
 
-For kernel versions 5.2.0 and above. At the moment [linux kernel 5.2 and above have a problem in getting the WiFi module working](https://bbs.archlinux.org/viewtopic.php?id=247705) . However,according to the same post, removing the file `/lib/firmware/iwlwifi-cc-a0-48.ucode` will help, which keeps the troublesome firmware verision 48 from being loaded and load the version 46 firmware instead.
+Kernel versions 5.2.0 and 5.2.1 [have issues with getting the WiFi module working](https://bbs.archlinux.org/viewtopic.php?id=247705) . However, according to the same post, removing the file `/lib/firmware/iwlwifi-cc-a0-48.ucode` will help, which keeps the troublesome firmware verision 48 from being loaded and load the version 46 firmware instead.
 
 ## Touchpad and Touchscreen
 

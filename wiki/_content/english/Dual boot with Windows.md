@@ -18,11 +18,14 @@ This is an article detailing different methods of Arch/Windows coexistence.
     *   [1.5 Fast Start-Up](#Fast_Start-Up)
     *   [1.6 Windows filenames limitations](#Windows_filenames_limitations)
 *   [2 Installation](#Installation)
-    *   [2.1 BIOS systems](#BIOS_systems)
-        *   [2.1.1 Using a Linux boot loader](#Using_a_Linux_boot_loader)
-        *   [2.1.2 Using Windows boot loader](#Using_Windows_boot_loader)
-            *   [2.1.2.1 Windows Vista/7/8/8.1 boot loader](#Windows_Vista/7/8/8.1_boot_loader)
-    *   [2.2 UEFI systems](#UEFI_systems)
+    *   [2.1 Windows before Linux](#Windows_before_Linux)
+        *   [2.1.1 BIOS systems](#BIOS_systems)
+            *   [2.1.1.1 Using a Linux boot loader](#Using_a_Linux_boot_loader)
+            *   [2.1.1.2 Using Windows boot loader](#Using_Windows_boot_loader)
+                *   [2.1.1.2.1 Windows Vista/7/8/8.1 boot loader](#Windows_Vista/7/8/8.1_boot_loader)
+        *   [2.1.2 UEFI systems](#UEFI_systems)
+    *   [2.2 Linux before Windows](#Linux_before_Windows)
+        *   [2.2.1 UEFI firmware](#UEFI_firmware)
     *   [2.3 Troubleshooting](#Troubleshooting)
         *   [2.3.1 Couldn't create a new partition or locate an existing one](#Couldn't_create_a_new_partition_or_locate_an_existing_one)
         *   [2.3.2 Cannot boot Linux after installing Windows](#Cannot_boot_Linux_after_installing_Windows)
@@ -36,7 +39,7 @@ This is an article detailing different methods of Arch/Windows coexistence.
 
 Microsoft imposes limitations on which firmware boot mode and partitioning style can be supported based on the version of Windows used:
 
-*   **Windows XP** both **x86 32-bit** and **x86_64** (also called x64) (RTM and all Service Packs) versions do not support booting in UEFI mode (IA32 or x86_64) from any disk (MBR or GPT) OR in BIOS mode from GPT disk. They support only BIOS boot and only from MBR disk.
+*   **Windows XP** both **x86 32-bit** and **x86_64** (also called x64) (RTM and all Service Packs) versions do not support booting in [UEFI](/index.php/UEFI "UEFI") mode (IA32 or x86_64) from any disk ([MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT")) OR in BIOS mode from GPT disk. They support only BIOS boot and only from MBR disk.
 *   **Windows Vista** or **7** **x86 32-bit** (RTM and all Service Packs) versions support booting in BIOS mode from MBR disks only, not from GPT disks. They do not support x86_64 UEFI or IA32 (x86 32-bit) UEFI boot. They support only BIOS boot and only from MBR disk.
 *   **Windows Vista RTM x86_64** (only RTM) version support booting in BIOS mode from MBR disks only, not from GPT disks. It does not support x86_64 UEFI or IA32 (x86 32-bit) UEFI boot. It supports only BIOS boot and only from MBR disk.
 *   **Windows Vista** (SP1 and above, not RTM) and **Windows 7** **x86_64** versions support booting in x86_64 UEFI mode from GPT disk only, OR in BIOS mode from MBR disk only. They do not support IA32 (x86 32-bit) UEFI boot from GPT/MBR disk, x86_64 UEFI boot from MBR disk, or BIOS boot from GPT disk.
@@ -115,17 +118,19 @@ These are limitations of Windows and not NTFS: any other OS using the NTFS parti
 
 The recommended way to setup a Linux/Windows dual booting system is to first install Windows, only using part of the disk for its partitions. When you have finished the Windows setup, boot into the Linux install environment where you can create and resize partitions for Linux while leaving the existing Windows partitions untouched. The Windows installation will create the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") which can be used by your Linux [boot loader](/index.php/Boot_loader "Boot loader").
 
-### BIOS systems
+### Windows before Linux
 
-#### Using a Linux boot loader
+#### BIOS systems
+
+##### Using a Linux boot loader
 
 You may use any multi-boot supporting BIOS [boot loader](/index.php/Boot_loader "Boot loader").
 
-#### Using Windows boot loader
+##### Using Windows boot loader
 
 With this setup the Windows bootloader loads GRUB which then boots Arch.
 
-##### Windows Vista/7/8/8.1 boot loader
+###### Windows Vista/7/8/8.1 boot loader
 
 The following section contains excerpts from [http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/](http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/).
 
@@ -164,7 +169,7 @@ bcdedit /timeout 30
 
 Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map my Dell Precision M4500's second power button to boot Linux instead of Windows.
 
-### UEFI systems
+#### UEFI systems
 
 If you already have Windows installed, it will already have created some partitions on a [GPT](/index.php/GPT "GPT")-formatted disk:
 
@@ -185,6 +190,20 @@ The boot loader needs to support chainloading other EFI applications to do dual 
 **Tip:** [rEFInd](/index.php/REFInd "REFInd") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot") will autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow either [GRUB#Windows installed in UEFI/GPT mode](/index.php/GRUB#Windows_installed_in_UEFI/GPT_mode "GRUB") to add boot menu entry manually or [GRUB#Detecting other operating systems](/index.php/GRUB#Detecting_other_operating_systems "GRUB") for a generated configuration file.
 
 Computers that come with newer versions of Windows often have [Secure Boot](/index.php/Secure_Boot "Secure Boot") enabled. You will need to take extra steps to either disable Secure Boot or to make your installation media compatible with secure boot (see above and in the linked page).
+
+### Linux before Windows
+
+Even though the recommended way to setup a Linux/Windows dual booting system is to first install Windows, it can be done the other way around. In contrast to installing Windows before Linux, you will have to set aside a partition for windows, say 40GB or larger, in advance. Or have some unpartitioned disk space, or create and resize partitions for Windows from within the Linux installation, before launching the Windows installation.
+
+#### UEFI firmware
+
+Windows will use the already existing [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). In contrast to what was [stated earlier](#UEFI_systems), it is unclear if a single partition for Windows, without the Windows Recovery Environment and without Microsoft Reserved Partition, will not do.
+
+Follows an outline, assuming [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in the firmware.
+
+1.  Boot into windows installation. Watch to let it use only the intend partition, but otherwise let it do its work as if there is no Linux installation.
+2.  Follow the [#Fast Start-Up](#Fast_Start-Up) section.
+3.  Fix the ability to load Linux at start up, perhaps by following [#Cannot boot Linux after installing Windows](#Cannot_boot_Linux_after_installing_Windows). It was already mentioned in [#UEFI systems](#UEFI_systems) that some Linux boot managers will autodetect *Windows Boot Manager*. Even though newer Windows installations have an advanced restart option, from which you can boot into Linux, it is advised to have other means to boot into Linux, such as an arch installation media or a live CD.
 
 ### Troubleshooting
 

@@ -11,6 +11,7 @@
     *   [2.1 Retrieving mail](#Retrieving_mail)
         *   [2.1.1 More than one Email account with getmail](#More_than_one_Email_account_with_getmail)
     *   [2.2 Sorting mail with procmail](#Sorting_mail_with_procmail)
+    *   [2.3 Fetching mail automatically with systemd](#Fetching_mail_automatically_with_systemd)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -104,6 +105,41 @@ path = /usr/bin/procmail
 ```
 
 Then configure [procmail](/index.php/Procmail "Procmail") to filter your mail.
+
+### Fetching mail automatically with systemd
+
+You can run `getmail` every n hours/minutes with [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Create a unit file for the timer:
+
+ `~/.config/systemd/user/get_mail.timer` 
+```
+[Unit]
+Description=Run getmail every 15 minutes
+
+[Timer]
+OnActiveSec=15min
+OnUnitActiveSec=15min
+
+[Install]
+WantedBy=timers.target
+
+```
+
+Now create the service file:
+
+ `~/.config/systemd/user/get_mail.service` 
+```
+[Unit]
+Description=Run getmail
+
+[Service]
+ExecStart=/usr/bin/getmail --quiet
+
+[Install]
+WantedBy=default.target
+
+```
+
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `get_mail.timer` using the `--user` flag.
 
 ## See also
 

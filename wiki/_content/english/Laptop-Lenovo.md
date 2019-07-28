@@ -76,8 +76,20 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. |
+| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). On Linux 5.2, add `iommu=pt` to prevent render artifacts on X. In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. If WiFi doesn't work on RTL8822BE adapter models, create a file `/etc/modprobe.d/wifi.conf` and add the following lines: `blacklist rtw_pci
+blacklist rtwpci`. Then, install [rtlwifi_new-extended-dkms](https://aur.archlinux.org/packages/rtlwifi_new-extended-dkms/) and reboot. |
 | Lenovo ThinkPad E585 | 2018-11-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). In order to get X to work correctly, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (Linux 4.20 only). In order to get microsd (SDHCI) working, `echo 'options sdhci debug_quirks2="0x8000"' > /etc/modprobe.d/sdhci.conf` and change module load order `MODULES=(sdhci sdhci_pci)` in `/etc/mkinitcpio.conf` (line 7). Don't forget to run `mkinitcpio -p linux` afterwards. Bluetooth doesn't work until a suspend/resume cycle occurs. |
+| Lenovo ThinkPad E595 | 2019-07-01 | Yes | Yes | Yes | Yes | Yes | Yes | N/A | 
+
+Wifi is slow and unstable with default driver, but it works using [rtlwifi_new-dkms](https://aur.archlinux.org/packages/rtlwifi_new-dkms/).
+
+To make sound work properly, add `intel_iommu=igfx_off` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+Missing IVRS map in ACPI Table, add `amd_iommu=pt ivrs_ioapic[32]=00:14.0` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (copied from above, the fan stopped making noise all the time afterwards).
+
+MicroSD not tested, see above if it doesn’t work.
+
+ |
 
 #### L series
 
@@ -184,7 +196,7 @@ install CD version
 | [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
-| Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
+| Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -281,7 +293,7 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo V110-15ISK | ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
 | Lenovo V330-15IKB | 2018.10.01 | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | Fingerprint (No, no driver exists for the Validity/Synaptics 06cb:0081 Fingerprint Reader), Touchpad (Yes), Webcam (Yes) |
-| Lenovo V330-14ARR | 2019.06.15 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD-Card Reader (Yes) HDMI Out (Yes), USB 3.0 (Yes), Touchpad (Yes), Webcam (Yes) | DOS installable BIOS available* |
+| Lenovo V330-14ARR | 2019.06.15 | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD-Card Reader (Yes) HDMI Out (Yes), USB 3.0 (Yes), Touchpad (Yes), Webcam (Yes) | DOS installable BIOS available* |
 
 ### Y series
 
@@ -393,6 +405,7 @@ Solution: Update BIOS (at least 1.08).
 ### Lenovo IdeaPad V330-14ARR
 
 *   Lenovo only provide BIOS updates as a WinX64 package. The 3.05 release has been extracted and can be installed in DOS using H2OFFT-D.EXE and is available [online](https://drive.google.com/drive/folders/1IgwALJ_LLHY1nRbl3naNJU1QQ7l33Vrv?usp=sharing).
+*   The installed wireless card (atheros based) has shown itself to be troublesome with many pci errors, most caught and corrected but very occasionally the card would fail to come up on boot or drop out during use. intel-9260 works with no errors (tested with bios 3.05) intel-9560 was not initialised by the bios.
 
 ## See also
 

@@ -13,6 +13,7 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Auto-mounting with udisks](#Auto-mounting_with_udisks)
+    *   [1.1 Thunar](#Thunar)
 *   [2 Manual mounting](#Manual_mounting)
     *   [2.1 Getting a kernel that supports usb_storage](#Getting_a_kernel_that_supports_usb_storage)
     *   [2.2 Identifying device](#Identifying_device)
@@ -30,6 +31,29 @@ If you have an up-to-date system with the standard Arch kernel and a modern [Des
 This is the easiest and most frequently used method. It is used by many [desktop environments](/index.php/Desktop_environments "Desktop environments"), but can be used separately too.
 
 See [Udisks](/index.php/Udisks "Udisks") for detailed information, including list of mount helpers.
+
+### Thunar
+
+Additionally to [Udisks](/index.php/Udisks "Udisks") gvfs and thunar-volman have to be installed:
+
+```
+# pacman -S gvfs thunar-volman udisks2
+
+```
+
+dbus-launch must also be started. Either manually
+
+```
+# $ dbus-launch thunar
+
+```
+
+or automatically through [xinit](/index.php/Xinit "Xinit")
+
+```
+# exec dbus-launch
+
+```
 
 ## Manual mounting
 

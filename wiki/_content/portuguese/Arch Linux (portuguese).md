@@ -71,7 +71,7 @@ A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico d
 
 ### Nascimento do ArchWiki
 
-Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:About_(Portugu%C3%AAs)#História_antiga "ArchWiki:About (Português)") pela primeira vez no motor do MediaWiki.
+Em 2005-07-08 o ArchWiki foi [configurado](/index.php/ArchWiki:Sobre#História_antiga "ArchWiki:Sobre") pela primeira vez no motor do MediaWiki.
 
 ### O alvorecer da era A. Griffin
 

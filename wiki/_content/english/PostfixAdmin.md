@@ -78,7 +78,7 @@ The [apache](/index.php/Apache "Apache") [web server](/index.php/Web_server "Web
 
 #### php-fpm
 
-[Install](/index.php/Install "Install") and configure [apache](/index.php/Apache "Apache") with [php-fpm](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server"). Use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`.
+[Install](/index.php/Install "Install") and configure [apache](/index.php/Apache "Apache") with [php-fpm](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server"). Use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group.
 
 Include the following configuration in your [apache](/index.php/Apache "Apache") configuration (i.e. `/etc/httpd/conf/httpd.conf`) and [restart](/index.php/Restart "Restart") the [web server](/index.php/Web_server "Web server"):
 
@@ -88,12 +88,28 @@ Alias /postfixadmin "/usr/share/webapps/postfixadmin/public"
 <Directory "/usr/share/webapps/postfixadmin/public">
     DirectoryIndex index.html index.php
     <FilesMatch \.php$>
-        SetHandler "proxy:unix:/run/postfixadmin/postfixadmin.sock|fcgi://localhost/"
+        SetHandler "proxy:unix:/run/php-fpm/postfixadmin.sock|fcgi://localhost/"
     </FilesMatch>
     AllowOverride All
     Options FollowSymlinks
     Require all granted
+    SetEnv PHP_ADMIN_VALUE "open_basedir = /tmp/:/usr/share/webapps/postfixadmin:/etc/webapps/postfixadmin/:/var/cache/postfixadmin/templates_c"
 </Directory>
+
+```
+
+Create a pool for postfixadmin and [restart](/index.php/Restart "Restart") php-fpm.service:
+
+ `/etc/php/php-fpm.d/postfixadmin.conf` 
+```
+[postfixadmin]
+ user = postfixadmin
+ group = postfixadmin
+ listen = /run/php-fpm/postfixadmin.sock
+ listen.owner = http
+ listen.group = http
+ pm = ondemand
+ pm.max_children = 4
 
 ```
 

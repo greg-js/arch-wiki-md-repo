@@ -7,21 +7,25 @@ Artigos relacionados
 
 O objetivo deste guia é permitir a utilização de um arranjo RAID criado através de uma controladora RAID on-board e assim permitir o dual-boot do GNU/L*i*nux com o Windows a partir de partições dentro do conjunto RAID usando o GRUB. Ao utilizar os chamados "Fake RAID"ou "Host RAID", os arranjos RAID serão atingidos a partir de `/dev/mapper/chipsetName_randomName` e não `/dev/sdX`.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 O que é "Fake RAID"](#O_que_.C3.A9_.22Fake_RAID.22)
-*   [2 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [2.1 Prepare a instalação](#Prepare_a_instala.C3.A7.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 O que é "Fake RAID"](#O_que_é_"Fake_RAID")
+*   [2 Instalação](#Instalação)
+    *   [2.1 Prepare a instalação](#Prepare_a_instalação)
         *   [2.1.1 Configure os arranjos RAID](#Configure_os_arranjos_RAID)
     *   [2.2 Inicie com o CD do Arch](#Inicie_com_o_CD_do_Arch)
     *   [2.3 Inicie o dmraid](#Inicie_o_dmraid)
-    *   [2.4 Continue com a instalação normal](#Continue_com_a_instala.C3.A7.C3.A3o_normal)
+    *   [2.4 Continue com a instalação normal](#Continue_com_a_instalação_normal)
         *   [2.4.1 Particionamento do arranjo RAID](#Particionamento_do_arranjo_RAID)
         *   [2.4.2 Monte o sistema de arquivos](#Monte_o_sistema_de_arquivos)
         *   [2.4.3 Instale e configure o Arch](#Instale_e_configure_o_Arch)
-        *   [2.4.4 Instalação do GRUB](#Instala.C3.A7.C3.A3o_do_GRUB)
-        *   [2.4.5 Toques finais e término da instalação](#Toques_finais_e_t.C3.A9rmino_da_instala.C3.A7.C3.A3o)
-*   [3 Resolução de problemas](#Resolu.C3.A7.C3.A3o_de_problemas)
+        *   [2.4.4 Instalação do GRUB](#Instalação_do_GRUB)
+        *   [2.4.5 Toques finais e término da instalação](#Toques_finais_e_término_da_instalação)
+*   [3 Resolução de problemas](#Resolução_de_problemas)
     *   [3.1 Iniciando com um arranjo corrompido](#Iniciando_com_um_arranjo_corrompido)
 *   [4 Resources](#Resources)
 
@@ -163,7 +167,7 @@ Prossiga com a instalação até o ponto **Install Bootloader**.
 
 #### Instalação do GRUB
 
-Veja [GRUB](/index.php/GRUB "GRUB") para maiores informações sobre a instalação e configuração do GRUB. A instalação do GRUB será iniciada ao selecionar **Install Bootloader** no instalador do Arch.
+Veja [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") para maiores informações sobre a instalação e configuração do GRUB. A instalação do GRUB será iniciada ao selecionar **Install Bootloader** no instalador do Arch.
 
 **Nota:** Por alguma razão o `menu.lst` padrão provavelmente será incorretamente preenchido ao instalar via "Fake RAID" Verifique as linhas de **root** (root (hd0,0)). Além disso, se você não criou uma partição separada para `/boot`, certifique-se que o caminho do kernel/initrd estão corretos (`/vmlinuz` e `/kernel26.img` para `/boot/vmlinuz` e `/boot/kernel26.img`).
 
@@ -266,7 +270,7 @@ Uma desvantagem do uso de Fake RAID no GNU/L*i*nux é que o **dmraid** é, atual
 
 Alternativamente, se você estiver utilizando um arranjo de espelhamento (mirror ou RAID 1), você pode desabilitar temporariamente o dmraid e efetuar o boot através de um único drive:
 
-1.  Edite a linhe **kernel** no menu do [GRUB](/index.php/GRUB "GRUB")
+1.  Edite a linhe **kernel** no menu do [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)")
     1.  Remova as referencias aos dispositivos dmriad (exemplo mude `/dev/mapper/raidSet1` para `/dev/sda1`)
     2.  Acrescente `disablehooks=dmraid` para prevenir um **kernel panic** se o dmraid descobrir o arranjo degradado
 2.  Inicie o sistema

@@ -59,11 +59,11 @@ After entering the firmware setup, be careful not to change any settings without
 To check if the machine was booted with Secure Boot, use this command:
 
 ```
-$ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*
+$ od --address-radix=n --format=u1 /sys/firmware/efi/efivars/SecureBoot-*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*
 
 ```
 
-The characters denoted by `*XXXX*` differ from machine to machine. To help with this, you can use tab completion or list the EFI variables.
+The characters denoted by `*XXXX*` differ from machine to machine. To help with this, you can use [tab completion](/index.php/Bash#Tab_completion "Bash") or list the EFI variables.
 
 If Secure Boot is enabled, this command returns `1` as the final integer in a list of five, for example:
 
@@ -83,11 +83,11 @@ $ bootctl status
 
 ## Using a signed boot loader
 
-Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loader "Boot loader")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
+Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loader "Boot loader")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list, abbreviated MokList. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
 
 ### PreLoader
 
-When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is not in MokList, PreLoader will launch `HashTool.efi`. In HashTool you must enroll the hash of the EFI binaries you want to launch, that means your [boot loader](/index.php/Boot_loader "Boot loader") (`loader.efi`) and kernel.
+When run, PreLoader tries to launch `loader.efi`. If the hash of `loader.efi` is not in MokList, PreLoader will launch `HashTool.efi`. In HashTool you must enroll the hash of the EFI binaries you want to launch, that means your [boot loader](/index.php/Boot_loader "Boot loader") (`loader.efi`) and kernel.
 
 **Note:** Each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 

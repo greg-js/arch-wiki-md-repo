@@ -122,9 +122,11 @@ For more about bbswitch see [Bumblebee-Project/bbswitch](https://github.com/Bumb
 
 ## Usage
 
-Once system boots, from virtual console login to your user and run `nvidia-xrun <application>`.
+Once the system boots, from the virtual console, login to your user, and run `nvidia-xrun <application>`.
 
 If above does not work, [switch](/index.php/Keyboard_shortcuts#Xorg_and_Wayland "Keyboard shortcuts") to unused virtual console and try again.
+
+As mentioned before, running apps directly with `nvidia-xrun <application>` **does not work well**, so it is best to create an `~/.nvidia-xinitrc` as outlined earlier, and use `nvidia-xrun` to launch your window manager.
 
 ## Troubleshooting
 

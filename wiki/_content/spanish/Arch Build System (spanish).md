@@ -90,7 +90,7 @@ El código fuente para el paquete no está presente en el directorio ABS. En cam
 
 ## ¿Por qué utilizar ABS?
 
-El sistema de sompilación de Arch (siglas en inglés ABS) se utiliza para:
+El sistema de compilación de Arch (siglas en inglés ABS) se utiliza para:
 
 *   Compilar o recopilar un paquete, por cualquier motivo.
 *   Hacer e instalar nuevos paquetes desde el código fuente del software para los que no se dispone todavía de paquetes —binarios— (véase [Creating packages](/index.php/Creating_packages "Creating packages")).

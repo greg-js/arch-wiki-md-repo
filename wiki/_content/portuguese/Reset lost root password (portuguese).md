@@ -4,7 +4,11 @@ Este guia irá mostrar-lhe como redefinir uma senha de [root](/index.php/Usu%C3%
 
 **Atenção:** Um invasor pode usar os métodos mencionados abaixo para entrar em seu sistema. Não importa o quão seguro o sistema operacional seja ou como as senhas são boas, ter acesso físico equivale a carregar um sistema operacional alternativo e expor seus dados, a menos que você use [criptografia de disco](/index.php/Disk_encryption "Disk encryption").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usando um LiveCD](#Usando_um_LiveCD)
     *   [1.1 Alterando a raiz](#Alterando_a_raiz)
@@ -24,7 +28,7 @@ Com um LiveCD, alguns métodos estão disponíveis: alterar a raiz e usar o coma
 
 ## Usando GRUB para chamar bash
 
-1.  Selecione uma entrada de inicialização adequada no menu do [GRUB](/index.php/GRUB "GRUB") e pressione `e` para editar a linha.
+1.  Selecione uma entrada de inicialização adequada no menu do [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") e pressione `e` para editar a linha.
 2.  Selecione a linha de kernel e pressione `e` novamente para editá-la.
 3.  Acrescente `init=/bin/bash` ao final da linha.
 4.  Pressione `Ctrl-X` para inicializar (essa alterações é apenas temporária e não será salva em seu menu.lst). Após a incialização, você estará em um prompt do bash.

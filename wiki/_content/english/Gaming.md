@@ -34,6 +34,7 @@ This page contains information about running games and related system configurat
         *   [5.2.3 Core affinity](#Core_affinity)
         *   [5.2.4 General case](#General_case)
         *   [5.2.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
+*   [6 Gaming mouse](#Gaming_mouse)
 
 ## Game environments
 
@@ -300,3 +301,7 @@ wineserver -F -p 20 -n 19
 steam.exe -I -n -5
 
 ```
+
+## Gaming mouse
+
+If you are using a gaming mouse (especially Logitech and Steelseries), you may want configure your mouse such as DPI, LED... using [piper](https://www.archlinux.org/packages/?name=piper). See [this page](https://github.com/libratbag/libratbag/tree/master/data/devices) for a full list of supported devices.

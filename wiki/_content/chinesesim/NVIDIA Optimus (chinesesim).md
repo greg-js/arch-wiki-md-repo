@@ -82,7 +82,7 @@ EndSection
 Section "Device"
     Identifier "nvidia"
     Driver "nvidia"
-    BusID "<BusID for NVIDIA device here>"
+    BusID "PCI:**<BusID for NVIDIA device here>**"
     Option "AllowEmptyInitialConfiguration"
 EndSection
 

@@ -52,7 +52,7 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 ```
 
-Então, [edite](/index.php/Help:Reading_(Portugu%C3%AAs)#Acrescentar,_adicionar,_criar,_editar "Help:Reading (Português)") o arquivo e substitua os programas padrão pelos comandos desejados. Lembre-se que as linhas que seguem um comando usando `exec` serão ignoradas. Por exemplo, para iniciar `xscreensaver` em segundo plano e, em seguida, iniciar [openbox](/index.php/Openbox#Standalone "Openbox"), use o seguinte:
+Então, [edite](/index.php/Help:Leitura#Acrescentar,_adicionar,_criar,_editar "Help:Leitura") o arquivo e substitua os programas padrão pelos comandos desejados. Lembre-se que as linhas que seguem um comando usando `exec` serão ignoradas. Por exemplo, para iniciar `xscreensaver` em segundo plano e, em seguida, iniciar [openbox](/index.php/Openbox#Standalone "Openbox"), use o seguinte:
 
  `~/.xinitrc` 
 ```

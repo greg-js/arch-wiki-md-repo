@@ -33,7 +33,7 @@ Kernel packages are [installed](/index.php/Install "Install") onto the file syst
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **Hardened** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along with [AppArmor](/index.php/AppArmor "AppArmor") and [SELinux](/index.php/SELinux "SELinux").
+*   **Hardened** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux).
 
 	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 

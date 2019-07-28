@@ -29,6 +29,9 @@ Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a 
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Disable MSI](#Disable_MSI)
     *   [4.2 Phantom output issue](#Phantom_output_issue)
+        *   [4.2.1 Kernel parameters](#Kernel_parameters)
+        *   [4.2.2 Xorg configuration](#Xorg_configuration)
+        *   [4.2.3 Xrandr](#Xrandr)
     *   [4.3 Random lockups with kernel error messages](#Random_lockups_with_kernel_error_messages)
     *   [4.4 Flat Panel Table Invalid](#Flat_Panel_Table_Invalid)
 
@@ -272,9 +275,11 @@ Source: [https://bugs.freedesktop.org/show_bug.cgi?id=78441](https://bugs.freede
 
 It is possible for the nouveau driver to detect "phantom" outputs. For example, both VGA-1 and LVDS-1 are shown as connected but only LVDS-1 is present.
 
-This causes display problems and a corrupted screen.
+This causes display problems and/or prevent suspending on lid closure.
 
-The problem can be overcome by disabling the phantom output (VGA-1 in the examples given) on the kernel command line of your boot loader. This can be achieved by appending the following:
+#### Kernel parameters
+
+The problem can be overcome by disabling the phantom output (VGA-1 in the examples given) with [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
 video=VGA-1:d
@@ -283,7 +288,16 @@ video=VGA-1:d
 
 Where **d** = disable.
 
-The phantom output can also be disabled in X by adding the following to `/etc/X11/xorg.conf.d/20-nouveau.conf`:
+The nouveau kernel module also has an option to disable TV-out detection [[2]](https://nouveau.freedesktop.org/wiki/KernelModuleParameters/#tv_disable):
+
+```
+ tv_disable=1
+
+```
+
+#### Xorg configuration
+
+The phantom output can be disabled in [Xorg](/index.php/Xorg "Xorg") by adding the following to `/etc/X11/xorg.conf.d/20-nouveau.conf`:
 
 ```
 Section "Monitor"
@@ -295,15 +309,26 @@ EndSection
 
 Source: [http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_connector_issues](http://gentoo-en.vfose.ru/wiki/Nouveau#Phantom_and_unpopulated_output_connector_issues)
 
+#### Xrandr
+
+[Xrandr](/index.php/Xrandr "Xrandr") can disable the output:
+
+```
+ $ xrandr --output VGA-1 --off
+
+```
+
+This can be added to the [xinit](/index.php/Xinit "Xinit") configuration.
+
 ### Random lockups with kernel error messages
 
-Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[2]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
+Specific Nvidia chips with Nouveau may give random system lockups and more commonly throw many kernel messages, seen with *dmesg*. Try adding the `nouveau.noaccel=1` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). See [[3]](https://fedoraproject.org/wiki/Common_kernel_problems#Systems_with_nVidia_adapters_using_the_nouveau_driver_lock_up_randomly) for more information.
 
 As an alternative you can also use the `QT_XCB_FORCE_SOFTWARE_OPENGL=1` [environment variable](/index.php/Environment_variable "Environment variable") to disable OpenGL acceleration in Qt applications.
 
 ### Flat Panel Table Invalid
 
-NVIDIA graphics cards with recent chipsets can cause startup issues - this includes X11 being unable to start and lspci freezing indefinitely[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1425253)[[4]](https://bbs.archlinux.org/viewtopic.php?id=192532)[[5]](https://stackoverflow.com/questions/28062458/nouveau-error-while-booting-arch)[[6]](https://bbs.archlinux.org/viewtopic.php?id=207602)[[7]](https://unix.stackexchange.com/questions/207895/how-do-i-install-antergos-with-a-gtx-970).
+NVIDIA graphics cards with recent chipsets can cause startup issues - this includes X11 being unable to start and lspci freezing indefinitely[[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1425253)[[5]](https://bbs.archlinux.org/viewtopic.php?id=192532)[[6]](https://stackoverflow.com/questions/28062458/nouveau-error-while-booting-arch)[[7]](https://bbs.archlinux.org/viewtopic.php?id=207602)[[8]](https://unix.stackexchange.com/questions/207895/how-do-i-install-antergos-with-a-gtx-970).
 
 This can break live distributions/installation media. This can be detected either by running lspci, or checking the systemd journal for the error:
 

@@ -13,13 +13,15 @@
     *   [3.2 Dzen and Conky](#Dzen_and_Conky)
     *   [3.3 Clickable areas and popups](#Clickable_areas_and_popups)
     *   [3.4 Enabling Xft support for dzen](#Enabling_Xft_support_for_dzen)
+    *   [3.5 Gadgets](#Gadgets)
+        *   [3.5.1 dbar](#dbar)
+        *   [3.5.2 gdbar](#gdbar)
+        *   [3.5.3 Others](#Others)
 *   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [dzen2](https://www.archlinux.org/packages/?name=dzen2) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories") which includes Xft, XPM, and Xinerama support.
-
-**Note:** Xft doesn't seem to work with the official package. Alternatively, you can install the [dzen2-xft-xpm-xinerama-git](https://aur.archlinux.org/packages/dzen2-xft-xpm-xinerama-git/) package located in the [AUR](/index.php/AUR "AUR") with Xft, XPM and Xinerama support.
 
 ## Configuration
 
@@ -136,6 +138,69 @@ To check libxft support, you can use this command:
 echo "hello world" | dzen2 -fn 'Times New Roman' -p
 
 ```
+
+### Gadgets
+
+There are some gadgets on dzen that may be used to make a good customize. Follow below some of they with a brief explanation and examples.
+
+#### dbar
+
+Dbar receive a pipe from another command with any number and outputs a semi-graphical progress bar with it, by default the max number of *100%* is "100". The maximum and minimum values can be changed with `-max`/`-min` respectively.
+
+Output example:
+
+```
+50% [=============            ]
+
+```
+
+Code example:
+
+ `~/test` 
+```
+#!/bin/sh
+
+(
+amixer get Master | \
+awk '/Left:/{gsub(/[[:punct:]]/,"",$5);left=$5}
+     /Right:/{gsub(/[[:punct:]]/,"",$5);right=$5}
+     END {print left ORS right}'
+) | dbar -max 100 -min 0 -s '|' -l 'Vol'
+
+```
+
+See [README.dbar](https://github.com/robm/dzen/blob/master/gadgets/README.dbar) for details.
+
+#### gdbar
+
+Gdbar as well as [dbar](#dbar) outputs a progress bar based on a value of *100%*, but here it is full-graphical. Gdbar have the same options of dbar with some additional options. Some of the options are:
+
+*   *-fg* set the foreground.
+*   *-bg* set the background.
+*   *-w*/*-h* set the width and height respectively.
+
+Code example:
+
+ `~/test` 
+```
+#!/bin/sh
+
+(
+amixer get Master | \
+awk '/Left:/{gsub(/[[:punct:]]/,"",$5);left=$5}
+     /Right:/{gsub(/[[:punct:]]/,"",$5);right=$5}
+     END{print left ORS right}'
+) | gdbar -max 100 -min 0 -l 'Vol ' -bg '#777777' -fg '#00ff00' -ss '2' | dzen2 -p -l '1' -w '150' -y '100' -x '100' -ta c -sa c -e 'onstartup=uncollapse;button3=exit'
+
+```
+
+See [README.gdbar](https://github.com/robm/dzen/blob/master/gadgets/README.gdbar) for details.
+
+**Note:** Gdbar will only be useful in combination with dzen >= 0.7.0.
+
+#### Others
+
+Information about others gadgets can be found [here](https://github.com/robm/dzen/tree/master/gadgets).
 
 ## See also
 

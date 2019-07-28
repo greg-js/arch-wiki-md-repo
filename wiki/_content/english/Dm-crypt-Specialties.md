@@ -16,7 +16,9 @@
 *   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_(or_other)_partition)
     *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_(hooks:_systemd,_systemd-tool))
     *   [3.2 Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)](#Remote_unlocking_(hooks:_netconf,_dropbear,_tinyssh,_ppp))
-    *   [3.3 Remote unlock via wifi (hooks: build your own)](#Remote_unlock_via_wifi_(hooks:_build_your_own))
+    *   [3.3 Remote unlock via wifi](#Remote_unlock_via_wifi)
+        *   [3.3.1 Predefined hook](#Predefined_hook)
+        *   [3.3.2 Build your own](#Build_your_own)
 *   [4 Discard/TRIM support for solid state drives (SSD)](#Discard/TRIM_support_for_solid_state_drives_(SSD))
 *   [5 The encrypt hook and multiple disks](#The_encrypt_hook_and_multiple_disks)
     *   [5.1 Expanding LVM on multiple disks](#Expanding_LVM_on_multiple_disks)
@@ -265,9 +267,22 @@ Another package combination providing remote logins to the initcpio is [mkinitcp
 
 **Tip:** If you would simply like a nice solution to mount other encrypted partitions (such as `/home`) remotely, you may want to look at [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=880484).
 
-### Remote unlock via wifi (hooks: build your own)
+### Remote unlock via wifi
 
-The net hook is normally used with an ethernet connection. In case you want to setup a computer with wireless only, and unlock it via wifi, you can create a custom hook to connect to a wifi network before the net hook is run.
+The net hook is normally used with an ethernet connection. In case you want to setup a computer with wireless only, and unlock it via wifi, you can use a predefined hook or create a custom hook to connect to a wifi network before the net hook is run.
+
+#### Predefined hook
+
+You can install a predefined hook based on the one in this wiki:
+
+1.  Install [mkinitcpio-wifi](https://aur.archlinux.org/packages/mkinitcpio-wifi/).
+2.  Configure your wifi connection by creating a wpa_supplicant configuration with your network properties: `wpa_passphrase "ESSID" "passphrase" > /etc/wpa_supplicant/initcpio.conf` 
+3.  Add the `wifi` hook before `netconf` in your `/etc/mkinitcpio.conf`. Your wifi-related modules should be autodetected, if not: add them to the `MODULES` section.
+4.  Add `ip=:::::wlan0:dhcp` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+5.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+6.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader").
+
+#### Build your own
 
 Below example shows a setup using a usb wifi adapter, connecting to a wifi network protected with WPA2-PSK. In case you use for example WEP or another boot loader, you might need to change some things.
 

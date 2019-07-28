@@ -265,6 +265,8 @@ This article is a general list of applications sorted by category, as a referenc
     *   [4.2 Office](#Office)
         *   [4.2.1 Office suites](#Office_suites)
         *   [4.2.2 Word processors](#Word_processors)
+            *   [4.2.2.1 WYSIWYG HTML editors](#WYSIWYG_HTML_editors)
+            *   [4.2.2.2 Desktop publishing](#Desktop_publishing)
         *   [4.2.3 Presentations](#Presentations)
         *   [4.2.4 Spreadsheets](#Spreadsheets)
         *   [4.2.5 Database tools](#Database_tools)
@@ -609,13 +611,17 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[https://cyberfox.8pecxstudios.com/](https://cyberfox.8pecxstudios.com/) || [cyberfox-bin](https://aur.archlinux.org/packages/cyberfox-bin/)
 
-*   **Waterfox** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
-
-	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/)
-
 *   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
 
 	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
+
+*   **LibreWolf** — A fork of Firefox, focused on privacy, security and freedom.
+
+	[https://librewolf-community.gitlab.io/](https://librewolf-community.gitlab.io/) || [librewolf](https://aur.archlinux.org/packages/librewolf/) or [librewolf-bin](https://aur.archlinux.org/packages/librewolf-bin/)
+
+*   **Waterfox** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
+
+	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/)
 
 ##### Blink-based
 
@@ -3423,6 +3429,10 @@ See also [Wikipedia:Comparison of digital audio editors](https://en.wikipedia.or
 
 	[http://mp3splt.sourceforge.net/](http://mp3splt.sourceforge.net/) || CLI: [mp3splt](https://www.archlinux.org/packages/?name=mp3splt), GUI: [mp3splt-gtk](https://www.archlinux.org/packages/?name=mp3splt-gtk)
 
+*   **ocenaudio** — Proprietary cross-platform, easy to use, fast and functional audio editor.
+
+	[https://www.ocenaudio.com/en/](https://www.ocenaudio.com/en/) || [ocenaudio-bin](https://aur.archlinux.org/packages/ocenaudio-bin/) or [ocenaudio](https://aur.archlinux.org/packages/ocenaudio/)
+
 *   **Play it Slowly** — Play back audio files at a different speed or pitch.
 
 	[https://29a.ch/playitslowly](https://29a.ch/playitslowly) || [playitslowly](https://aur.archlinux.org/packages/playitslowly/)
@@ -4075,7 +4085,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
-*   **[DaVinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Proprietary A/V post-production software suite.
+*   **[DaVinci Resolve](/index.php/DaVinci_Resolve "DaVinci Resolve")** — Proprietary A/V post-production software suite.
 
 	[https://www.blackmagicdesign.com/products/davinciresolve/](https://www.blackmagicdesign.com/products/davinciresolve/) || [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)
 
@@ -6389,21 +6399,9 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 
-*   **[BlueGriffon](https://en.wikipedia.org/wiki/BlueGriffon "wikipedia:BlueGriffon")** — WYSIWYG content editor for the World Wide Web.
-
-	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
-
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Powerful word processor included in the Calligra Suite.
 
 	[https://www.calligra.org/words/](https://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
-
-*   **gLabels** — Program for creating labels, business cards and media covers.
-
-	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
-
-*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
-
-	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
 
 *   **[LibreOffice Writer](/index.php/LibreOffice "LibreOffice")** — Full-featured word processor included in the LibreOffice suite.
 
@@ -6413,14 +6411,6 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.openoffice.org/product/writer.html](http://www.openoffice.org/product/writer.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
-*   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
-
-	[http://www.scribus.net/canvas/Scribus](http://www.scribus.net/canvas/Scribus) || [scribus](https://www.archlinux.org/packages/?name=scribus)
-
-*   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
-
-	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-
 *   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK+-based rich text processor (with footnote support).
 
 	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
@@ -6428,6 +6418,30 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 *   **[WordGrinder](https://en.wikipedia.org/wiki/WordGrinder "wikipedia:WordGrinder")** — Word processor for the console.
 
 	[http://cowlark.com/wordgrinder/](http://cowlark.com/wordgrinder/) || [wordgrinder](https://aur.archlinux.org/packages/wordgrinder/)
+
+##### WYSIWYG HTML editors
+
+*   **[BlueGriffon](https://en.wikipedia.org/wiki/BlueGriffon "wikipedia:BlueGriffon")** — WYSIWYG content editor for the World Wide Web.
+
+	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
+
+*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
+
+	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
+
+*   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
+
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+
+##### Desktop publishing
+
+*   **gLabels** — Program for creating labels, business cards and media covers.
+
+	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
+
+*   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
+
+	[http://www.scribus.net/canvas/Scribus](http://www.scribus.net/canvas/Scribus) || [scribus](https://www.archlinux.org/packages/?name=scribus)
 
 #### Presentations
 

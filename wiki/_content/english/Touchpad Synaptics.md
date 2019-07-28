@@ -665,6 +665,8 @@ modprobe psmouse
 
 Now switch back to the tty that X is running on. If you chose the right module, your touchpad should be working again.
 
+If you are using a laptop computer and your touchpad does not work after switching the laptop's lid, you can just change your power management policy: when closing the lid, 'shutdown the screen' instead of 'suspend'(or 'hibernate'). This is useful for some laptops.
+
 ### xorg.conf.d/70-synaptics.conf does not seem to apply in MATE
 
 [MATE](/index.php/MATE "MATE") will by default overwrite various options for your touchpad. This includes configurable features for which there is no graphical configuration within MATE's system control panel. This may cause it to appear that `/etc/X11/xorg.conf.d/70-synaptics.conf` is not applied. Follow [#MATE](#MATE) to prevent this behavior.

@@ -1,15 +1,17 @@
 Ссылки по теме
 
-*   [NVIDIA/Решение проблем](/index.php/NVIDIA/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "NVIDIA/Решение проблем")
 *   [NVIDIA/Советы и приёмы](/index.php/NVIDIA/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "NVIDIA/Советы и приёмы")
+*   [NVIDIA/Решение проблем](/index.php/NVIDIA/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC "NVIDIA/Решение проблем")
 *   [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)")
+*   [nvidia-xrun (Русский)](/index.php/Nvidia-xrun_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nvidia-xrun (Русский)")
 *   [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)")
-*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)")
 *   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
+*   [Vulkan](/index.php/Vulkan "Vulkan")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [NVIDIA](/index.php/NVIDIA "NVIDIA"). Дата последней синхронизации: 22 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=NVIDIA&diff=0&oldid=427168).
 
-Данная статья описывает процесс установки и настройки проприетарного драйвера графических карт [NVIDIA](http://www.nvidia.com). Для получения информации о драйверах с открытым исходным кодом обратитесь к статье [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"). Также есть отдельная статья для обладателей ноутбуков с технологиями на базе [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus").
+Данная статья описывает процесс установки и настройки проприетарного драйвера графических карт [NVIDIA](https://www.nvidia.com/ru-ru/). Для получения информации о драйверах с открытым исходным кодом обратитесь к статье [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)"). Также есть отдельная статья для обладателей ноутбуков с гибридной графикой Intel и NVIDIA, см. [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)"). Пользователи [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") с несколькими GPU, которые хотят использовать графическую карту NVIDIA в качестве основной, могут воспользоваться [nvidia-xrun (Русский)](/index.php/Nvidia-xrun_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nvidia-xrun (Русский)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

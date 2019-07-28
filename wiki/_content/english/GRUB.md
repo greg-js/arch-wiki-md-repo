@@ -79,7 +79,7 @@ Related articles
     *   [6.15 Windows 8/10 not found](#Windows_8/10_not_found)
     *   [6.16 VirtualBox EFI mode](#VirtualBox_EFI_mode)
     *   [6.17 Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds](#Device_/dev/xxx_not_initialized_in_udev_database_even_after_waiting_10000000_microseconds)
-    *   [6.18 Grub rescue and encrypted boot](#Grub_rescue_and_encrypted_boot)
+    *   [6.18 GRUB rescue and encrypted /boot](#GRUB_rescue_and_encrypted_/boot)
 *   [7 See also](#See_also)
 
 ## BIOS systems
@@ -208,7 +208,7 @@ By default the generation scripts automatically add menu entries for all install
 
 To automatically add entries for other installed operating systems, see [#Detecting other operating systems](#Detecting_other_operating_systems).
 
-You can add additional custom menu entries by editing `/etc/grub.d/40_custom` and re-generating `/boot/grub/grub.cfg`. Or you can create `/boot/grub/custom.cfg` and add them there. Changes to `/boot/grub/custom.cfg` do not require re-running *grub-mkconfig*, since `/etc/grub.d/40_custom` adds the necessary `source` statement to the generated configuration file.
+You can add additional custom menu entries by editing `/etc/grub.d/40_custom` and re-generating `/boot/grub/grub.cfg`. Or you can create `/boot/grub/custom.cfg` and add them there. Changes to `/boot/grub/custom.cfg` do not require re-running *grub-mkconfig*, since `/etc/grub.d/41_custom` adds the necessary `source` statement to the generated configuration file.
 
 **Tip:** `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/*nn*_custom`, where `*nn*` defines the precedence, indicating the order the script is executed. The order scripts are executed determine the placement in the GRUB boot menu. `*nn*` should be greater than `06` to ensure necessary scripts are executed first.
 
@@ -621,13 +621,13 @@ The available commands in GRUB rescue include `insmod`, `ls`, `set`, and `unset`
 Before starting, the user must know the location of their `/boot` partition (be it a separate partition, or a subdirectory under their root):
 
 ```
-grub rescue> set prefix=(hdX,Y)/boot/grub
+grub rescue> set prefix=(hd*X*,*Y*)/boot/grub
 
 ```
 
-where X is the physical drive number and Y is the partition number.
+where `*X*` is the physical drive number and `*Y*` is the partition number.
 
-**Note:** With a separate boot partition, omit `/boot` from the path (i.e. type `set prefix=(hdX,Y)/grub`).
+**Note:** With a separate boot partition, omit `/boot` from the path (i.e. type `set prefix=(hd*X*,*Y*)/grub`).
 
 To expand console capabilities, insert the `linux` module:
 
@@ -661,8 +661,8 @@ With a separate boot partition (e.g. when using UEFI), again change the lines ac
 
 ```
 set root=(hd0,5)
-linux (hdX,Y)/vmlinuz-linux root=/dev/sda6
-initrd (hdX,Y)/initramfs-linux.img
+linux (hd*X*,*Y*)/vmlinuz-linux root=/dev/sda6
+initrd (hd*X*,*Y*)/initramfs-linux.img
 boot
 
 ```
@@ -919,9 +919,9 @@ You may need to provide `/run/lvm/` access to the chroot environment using:
 
 See [FS#61040](https://bugs.archlinux.org/task/61040) and [workaround](https://bbs.archlinux.org/viewtopic.php?pid=1820949#p1820949).
 
-### Grub rescue and encrypted boot
+### GRUB rescue and encrypted /boot
 
-When using an encrypted boot, and you fail to input a correct password, you will be dropped in grub-rescue prompt.
+When using an [encrypted /boot](#Encrypted_/boot), and you fail to input a correct password, you will be dropped in grub-rescue prompt.
 
 This grub-rescue prompt has limited capabilities. Use the following commands to complete the boot:
 

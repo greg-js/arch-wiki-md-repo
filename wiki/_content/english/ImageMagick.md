@@ -2,12 +2,12 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
 
 	ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files. It can read and write over 200 image file formats.
 
-**Note:** [libmagick](https://www.archlinux.org/packages/?name=libmagick) uses [Ghostscript](/index.php/Ghostscript "Ghostscript") for PDF, EPS, PS and XPS parsing. Because there have been multiple vulnerabilities with Ghostscript[[1]](https://security.archlinux.org/package/ghostscript), these formats are now proactively disabled in `/etc/ImageMagick-7/policy.xml` with the following line:
+**Note:** [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) uses [Ghostscript](/index.php/Ghostscript "Ghostscript") for PDF, EPS, PS and XPS parsing. Because there have been multiple vulnerabilities with Ghostscript[[1]](https://security.archlinux.org/package/ghostscript), it is compiled without Ghostscript library. It would fall back to `gs` command instead, but that is, by default, disabled in `/etc/ImageMagick-7/policy.xml` with the following line
 ```
-<policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
+<policy domain="delegate" rights="none" pattern="gs" />
 
 ```
-See also [FS#59778](https://bugs.archlinux.org/task/59778).
+See also [FS#59778](https://bugs.archlinux.org/task/59778), [FS#62171](https://bugs.archlinux.org/task/62171).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

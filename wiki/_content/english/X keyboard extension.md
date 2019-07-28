@@ -26,12 +26,13 @@ This article describes how to modify and create keyboard layouts. If you are loo
 *   [5 Basic examples](#Basic_examples)
     *   [5.1 Simple key assignment](#Simple_key_assignment)
     *   [5.2 Multiple layouts](#Multiple_layouts)
-    *   [5.3 Additional symbols](#Additional_symbols)
-        *   [5.3.1 Compose key](#Compose_key)
-        *   [5.3.2 Level3](#Level3)
-    *   [5.4 Meta, Super and Hyper](#Meta,_Super_and_Hyper)
-        *   [5.4.1 Real modifiers](#Real_modifiers)
-        *   [5.4.2 Keysym tracking](#Keysym_tracking)
+    *   [5.3 Caps hjkl as vim keys](#Caps_hjkl_as_vim_keys)
+    *   [5.4 Additional symbols](#Additional_symbols)
+        *   [5.4.1 Compose key](#Compose_key)
+        *   [5.4.2 Level3](#Level3)
+    *   [5.5 Meta, Super and Hyper](#Meta,_Super_and_Hyper)
+        *   [5.5.1 Real modifiers](#Real_modifiers)
+        *   [5.5.2 Keysym tracking](#Keysym_tracking)
 *   [6 Preset configuration](#Preset_configuration)
     *   [6.1 xmodmap](#xmodmap)
 *   [7 Indicators](#Indicators)
@@ -465,6 +466,71 @@ Adjust ISO_Group_Latch definition in xkb_compatibility section to use the right 
 ```
 
 Check /usr/share/X11/xkb/symbols/group for more standard examples.
+
+### Caps hjkl as vim keys
+
+In order to rebind caps h,j,k,l to vim's arrow keys, we could naively replace symbols in the symbols section, but this would not clear any modifiers. Clearing modifiers is trickier. This method allows linux users to achieve functionality akin to AHK's blind command, albeit somewhat crudely. We can clear modifiers when an action is triggered in compatability if we redirect a dummy keysym to the one we want and use clearmodifiers while we do it:
+
+```
+ xkb_compatibility "complete" {
+   ...
+   interpret osfLeft {
+       repeat= True;
+       action = RedirectKey(keycode=<LEFT>, clearmodifiers=Lock);
+   };
+ };
+
+```
+
+Now, when the keysym osfLeft is seen, it is redirected to the keycode that we really want to use, LEFT. This method requires having extra keysyms, but it is not too hard to find extras.
+
+To use this, you need to update your types to include some sort of type for caps and shift so that: When we press nothing, we go to the first level (lowercase letters). When we press Shift, we go to the second level (capital letters). When we press Lock, we go to the third level (our arrow keys) When we press Shift AND Lock, we also go to the third layer. This is so when we press Shift and Lock it actually maps to level 3.
+
+Add this to the bottom of your types section:
+
+```
+ xkb_types "complete" {
+   ...
+   type "CUST_CAPSLOCK" {
+       modifiers= Shift+Lock;
+       map[Shift] = Level2;
+       map[Shift+Lock] = Level3;
+       map[Lock] = Level3;
+       level_name[Level1]= "Base";
+       level_name[Level2]= "Shift";
+       level_name[Level3]= "Lock";
+   };
+ };
+
+```
+
+and then change caps from a lock (toggle) to a set by changing the already existing definition in compatability from LockMods to SetMods:
+
+(Note that this means you can't use capslock like normal)
+
+```
+ xkb_compatibility "complete" {
+   ...
+   interpret Caps_Lock+AnyOfOrNone(all) {
+       action= SetMods(modifiers=Lock);
+   };
+ };
+
+```
+
+And we can simply change the symbols entry for h, changing the type and adding the third layer keysym:
+
+```
+ xkb_symbols "pc_us_inet(evdev)" {
+   ...
+   key <AC06> {
+       type= "CUST_CAPSLOCK",
+       symbols[Group1]= [               h,               H,               osfLeft]
+ };
+
+```
+
+Overall, when <AC06> is pressed while caps is held, the Lock modifier is being applied and the osfLeft keysym is changed to a Left keysym and has the Lock modifier removed. We can do this for any other keysyms, and remove any other combination of modifiers we want. This more broadly means users can do things like use the arrows in other shortcuts, like highlighting text from the main keyboard (hold Shift, Caps, and h). You should start selecting text to the left, character by character. The keyboard combination should make it appear exactly as if the key was pressed.
 
 ### Additional symbols
 
@@ -1010,6 +1076,6 @@ Using [rules](#Using_rules) instead of static keymap configuration will give you
 
 *   [The XKB Configuration Guide](https://www.x.org/releases/current/doc/xorg-docs/input/XKB-Config.html)
 *   [http://www.x.org/wiki/XKB](http://www.x.org/wiki/XKB)
-*   [An Unreliable Guide To XKB Configuration](http://www.charvolant.org/~doug/xkb/html/index.html).
+*   [An Unreliable Guide To XKB Configuration](http://www.charvolant.org/doug/xkb/html/index.html).
 *   [Ivan Pascal XKB docs](http://pascal.tsu.ru/en/xkb/). One of the oldest and most well-known guides. Focuses a lot on details, and explains some of exotic XKB features.
 *   [XKB protocol specification](http://www.x.org/releases/current/doc/kbproto/xkbproto.pdf). Comprehensive description of all XKB features. Extremely useful for understating how XKB works, includes a good description of virtual modifiers among other things. Some practice with xkbcomp is strongly recommended though, because the features are described on protocol level.

@@ -160,3 +160,21 @@ Hotkeys: OK
 Synaptic Touchpad: OK (supports libinput-gestures)
 HDMI: OK
 Microphone: OK | Everything works fine, but you have to stick to a modern kernel. Also, it's important to add ivrs_ioapic[4]=00:14.0 ivrs_ioapic[5]=00:00.2 as a kernel parameter on grub (or whatever boot loader of your choice), because it otherwise works erratically and gets stuck either on boot or at shutdown. To properly install Arch Linux, it's a good idea to use noapic as boot parameter, it will run smoothly. Don't use it later, though, as it will disable the I2C touchpad and some other relevant stuff. |
+| Acer Aspire E5-476G | 2019.06.01 | 
+
+*   Intel UHD: Works
+*   Nvidia MX150: Untested
+
+ | OK | Untested | OK | Not detected | 
+
+*   Suspend to RAM: OK
+*   Hibernate: OK
+*   Battery: OK
+
+ | Untested | 
+
+*   Webcam: OK
+*   Hotkeys: OK
+*   Synaptic Touchpad: OK, Support Gestures
+
+ | ... |

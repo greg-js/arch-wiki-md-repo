@@ -29,6 +29,7 @@ This article covers special topics for operating [solid state drives](https://en
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Resolving NCQ errors](#Resolving_NCQ_errors)
     *   [2.2 Resolving SATA power management related errors](#Resolving_SATA_power_management_related_errors)
+    *   [2.3 External SSD with TRIM support](#External_SSD_with_TRIM_support)
 *   [3 Firmware](#Firmware)
     *   [3.1 ADATA](#ADATA)
     *   [3.2 Crucial](#Crucial)
@@ -227,6 +228,25 @@ If this (and also updating the firmware) does not resolves the problem or cause 
 Some SSDs (e.g. Transcend MTS400) are failing when SATA Active Link Power Management, [ALPM](https://en.wikipedia.org/wiki/Aggressive_Link_Power_Management "wikipedia:Aggressive Link Power Management"), is enabled. ALPM is disabled by default and enabled by a power saving daemon (e.g. [TLP](/index.php/TLP "TLP"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")).
 
 If you are starting to encounter SATA related errors when using such a daemon, you should try to disable ALPM by setting its state to `max_performance` for both battery and AC powered profiles.
+
+### External SSD with TRIM support
+
+Several USB-SATA Bridge Chips, like VL715, VL716 etc, support TRIM. But `lsblk --discard` may return:
+
+```
+NAME          DISC-ALN DISC-GRAN DISC-MAX DISC-ZERO
+sdX                  0        0B       0B         0
+
+```
+
+According to [https://www.dpreview.com/forums/thread/4302710](https://www.dpreview.com/forums/thread/4302710), in this situation, a [udev](/index.php/Udev "Udev") rule is needed:
+
+```
+ACTION=="add|change", ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="61f5", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"
+
+```
+
+**Tip:** Vendor and product IDs can be easily found from `lsusb`.
 
 ## Firmware
 

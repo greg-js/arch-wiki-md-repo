@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 13 июля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=576990).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 27 июля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=578091).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -43,7 +43,7 @@
 
 *   [bettergram](https://aur.archlinux.org/packages/bettergram/)
 *   [kepka-git](https://aur.archlinux.org/packages/kepka-git/)
-*   [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) (статус сопровождения проекта неизвестен)
+*   [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/)
 *   [telegreat-git](https://aur.archlinux.org/packages/telegreat-git/)
 
 ### Приложения для терминала

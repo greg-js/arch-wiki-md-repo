@@ -15,6 +15,8 @@
     *   [1.2 Office](#Office)
         *   [1.2.1 Office suites](#Office_suites)
         *   [1.2.2 Word processors](#Word_processors)
+            *   [1.2.2.1 WYSIWYG HTML editors](#WYSIWYG_HTML_editors)
+            *   [1.2.2.2 Desktop publishing](#Desktop_publishing)
         *   [1.2.3 Presentations](#Presentations)
         *   [1.2.4 Spreadsheets](#Spreadsheets)
         *   [1.2.5 Database tools](#Database_tools)
@@ -372,21 +374,9 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 
-*   **[BlueGriffon](https://en.wikipedia.org/wiki/BlueGriffon "wikipedia:BlueGriffon")** — WYSIWYG content editor for the World Wide Web.
-
-	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
-
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Powerful word processor included in the Calligra Suite.
 
 	[https://www.calligra.org/words/](https://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
-
-*   **gLabels** — Program for creating labels, business cards and media covers.
-
-	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
-
-*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
-
-	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
 
 *   **[LibreOffice Writer](/index.php/LibreOffice "LibreOffice")** — Full-featured word processor included in the LibreOffice suite.
 
@@ -396,14 +386,6 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.openoffice.org/product/writer.html](http://www.openoffice.org/product/writer.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
-*   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
-
-	[http://www.scribus.net/canvas/Scribus](http://www.scribus.net/canvas/Scribus) || [scribus](https://www.archlinux.org/packages/?name=scribus)
-
-*   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
-
-	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-
 *   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK+-based rich text processor (with footnote support).
 
 	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
@@ -411,6 +393,30 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 *   **[WordGrinder](https://en.wikipedia.org/wiki/WordGrinder "wikipedia:WordGrinder")** — Word processor for the console.
 
 	[http://cowlark.com/wordgrinder/](http://cowlark.com/wordgrinder/) || [wordgrinder](https://aur.archlinux.org/packages/wordgrinder/)
+
+##### WYSIWYG HTML editors
+
+*   **[BlueGriffon](https://en.wikipedia.org/wiki/BlueGriffon "wikipedia:BlueGriffon")** — WYSIWYG content editor for the World Wide Web.
+
+	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
+
+*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
+
+	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
+
+*   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
+
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+
+##### Desktop publishing
+
+*   **gLabels** — Program for creating labels, business cards and media covers.
+
+	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
+
+*   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
+
+	[http://www.scribus.net/canvas/Scribus](http://www.scribus.net/canvas/Scribus) || [scribus](https://www.archlinux.org/packages/?name=scribus)
 
 #### Presentations
 

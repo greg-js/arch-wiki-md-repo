@@ -41,7 +41,7 @@ Third-party clients:
 
 *   [bettergram](https://aur.archlinux.org/packages/bettergram/)
 *   [kepka-git](https://aur.archlinux.org/packages/kepka-git/)
-*   [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) (current maintenance status unknown)
+*   [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/)
 *   [telegreat-git](https://aur.archlinux.org/packages/telegreat-git/)
 
 ### Command-line clients
@@ -53,7 +53,7 @@ Third-party clients:
 ### Web-based clients
 
 *   The official [Telegram Web](https://web.telegram.org).
-*   [franz](https://aur.archlinux.org/packages/franz/) is an [open-source](https://github.com/meetfranz/franz) web-based application that can be used for web-based interface of various instant messaging software such as [Telegram](https://en.wikipedia.org/wiki/Telegram_(service) "wikipedia:Telegram (service)"), [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/Facebook "wikipedia:Facebook"), and more.
+*   [franz](https://aur.archlinux.org/packages/franz/) is an [open-source](https://github.com/meetfranz/franz) web-based application that can be used for web-based interface of various instant messaging software such as [Telegram](https://en.wikipedia.org/wiki/Telegram_(software) "wikipedia:Telegram (software)"), [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/Facebook "wikipedia:Facebook"), and more.
 *   [rambox-bin](https://aur.archlinux.org/packages/rambox-bin/) is an alternative to Franz, also open source. It offers all features of its counterpart.
 *   Use [Telegram Desktop](https://addons.mozilla.org/en-US/firefox/addon/telegram-desktop/) addons for [Firefox](/index.php/Firefox "Firefox"), to connect to Telegram in your browser via web interface.
 *   Use [Telegram Chrome app](https://telegram.org/dl/webogram/chromeapp) for [Chromium](/index.php/Chromium "Chromium"), to connect to Telegram in your browser via web interface.

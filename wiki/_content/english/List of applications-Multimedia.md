@@ -999,6 +999,10 @@ See also [Wikipedia:Comparison of digital audio editors](https://en.wikipedia.or
 
 	[http://mp3splt.sourceforge.net/](http://mp3splt.sourceforge.net/) || CLI: [mp3splt](https://www.archlinux.org/packages/?name=mp3splt), GUI: [mp3splt-gtk](https://www.archlinux.org/packages/?name=mp3splt-gtk)
 
+*   **ocenaudio** — Proprietary cross-platform, easy to use, fast and functional audio editor.
+
+	[https://www.ocenaudio.com/en/](https://www.ocenaudio.com/en/) || [ocenaudio-bin](https://aur.archlinux.org/packages/ocenaudio-bin/) or [ocenaudio](https://aur.archlinux.org/packages/ocenaudio/)
+
 *   **Play it Slowly** — Play back audio files at a different speed or pitch.
 
 	[https://29a.ch/playitslowly](https://29a.ch/playitslowly) || [playitslowly](https://aur.archlinux.org/packages/playitslowly/)
@@ -1651,7 +1655,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
-*   **[DaVinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Proprietary A/V post-production software suite.
+*   **[DaVinci Resolve](/index.php/DaVinci_Resolve "DaVinci Resolve")** — Proprietary A/V post-production software suite.
 
 	[https://www.blackmagicdesign.com/products/davinciresolve/](https://www.blackmagicdesign.com/products/davinciresolve/) || [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)
 

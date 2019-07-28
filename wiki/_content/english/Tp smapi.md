@@ -1,6 +1,10 @@
 tp_smapi is a set of kernel modules that retrieves information from and conveys commands to the hardware of many ThinkPad laptops. This information is presented through the `/sys/devices/platform/smapi` filesystem. Much like the `/proc` filesystem, you can read and write information to these files to get information about and send commands to the hardware. tp_smapi is highly recommended if you're using a supported ThinkPad laptop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Supported laptops](#Supported_laptops)
 *   [2 Installation](#Installation)
@@ -10,8 +14,9 @@ tp_smapi is a set of kernel modules that retrieves information from and conveys 
         *   [3.1.2 Check whether settings were accepted](#Check_whether_settings_were_accepted)
     *   [3.2 Protect the hard disk from drops](#Protect_the_hard_disk_from_drops)
 *   [4 Workaround for partially supported laptops](#Workaround_for_partially_supported_laptops)
-    *   [4.1 1st option, custom script](#1st_option.2C_custom_script)
-    *   [4.2 2nd option, tpacpi-bat](#2nd_option.2C_tpacpi-bat)
+    *   [4.1 1st option, custom script](#1st_option,_custom_script)
+    *   [4.2 2nd option, tpacpi-bat](#2nd_option,_tpacpi-bat)
+    *   [4.3 3rd option, in kernel](#3rd_option,_in_kernel)
 *   [5 See also](#See_also)
 
 ## Supported laptops
@@ -105,10 +110,10 @@ battery)
     BAT0)
       case "$4" in
         00000000)
-        ;;
+        ;;
         00000001)
         **/usr/sbin/set_battery_thresholds**
-        ;;
+        ;;
 #... more ACPI stuff
 
 ```
@@ -137,9 +142,9 @@ cat /sys/devices/platform/smapi/BAT0/stop_charge_thresh
 
 ```
 
-If start-charge_thresh is supported but not stop_charge_thresh but you still want to have your computer stop charging your battery you have two options.
+If start-charge_thresh is supported but not stop_charge_thresh but you still want to have your computer stop charging your battery you might have other options.
 
-Note: None of the two options works on T42p.
+Note: None of the first two options works on T42p. The third one works on E540.
 
 ### 1st option, custom script
 
@@ -181,9 +186,23 @@ tpacpi-bat -v -s stopThreshold 0 80
 
 ```
 
-The example values 40 and 80 given here are in percent of the full battery capacity. Adjust them to your own needs. You may also want to add these lines to /etc/rc.local to set the at startup. While these values should be permanent, they will be reset any time the battery is removed.
+The example values 40 and 80 given here are in percent of the full battery capacity. Adjust them to your own needs. You may also want to add these lines to /etc/rc.local to set the at startup.
+
+The manual setting of thresholds via the command `tpacpi-bat` is not permanent. To set the thresholds permanently, edit the start and end thresholds accordingly in `/etc/conf.d/tpacpi`.
 
 **Note:** See tpacpi-bat help for the list of commands: `perl /usr/lib/perl5/vendor_perl/tpacpi-bat -h`.
+
+### 3rd option, in kernel
+
+Kernel 4.17 added the option to adjust battery charging thresholds for ThinkPads directly.
+
+```
+echo 60 > /sys/class/power_supply/BAT0/charge_stop_threshold
+echo 40 > /sys/class/power_supply/BAT0/charge_start_threshold
+
+```
+
+Note that if you try to display the values, you'll get only the last one set (start in the example), with 128 added to it. This is a known issue, but the true value is really set, as you can see from battery behaviour. Other interesting parameters can be found under `/sys/class/power_supply/BAT0/`.
 
 ## See also
 

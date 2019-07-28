@@ -2,7 +2,11 @@
 
 You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/) for an example.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -365,7 +369,7 @@ You must enable one of these:
        <IfModule mod_fcgid.c>
            SetHandler fcgid-script
        </IfModule>
-       <IfModule !mod_fcgid.c>
+       <IfModule !mod_fcgid.c>
            SetHandler cgi-script
        </IfModule>
    </Directory>
@@ -430,7 +434,7 @@ You must enable one of these:
        <IfModule mod_fcgid.c>
            SetHandler fcgid-script
        </IfModule>
-       <IfModule !mod_fcgid.c>
+       <IfModule !mod_fcgid.c>
            SetHandler cgi-script
        </IfModule>
    </Directory>
@@ -499,7 +503,7 @@ Although Munin 2.1.x versions are not yet available in the Arch repository. It i
 
 ### MySQL
 
-The MySQL plugin has extra dependencies available in the AUR: [perl-dbi](https://www.archlinux.org/packages/?name=perl-dbi), [perl-cache-cache](https://aur.archlinux.org/packages/perl-cache-cache/), and [perl-ipc-sharelite](https://aur.archlinux.org/packages/perl-ipc-sharelite/)
+The MySQL plugin has extra dependencies available in the AUR: [perl-dbi](https://www.archlinux.org/packages/?name=perl-dbi), [perl-dbd-mysql](https://www.archlinux.org/packages/?name=perl-dbd-mysql), [perl-cache-cache](https://aur.archlinux.org/packages/perl-cache-cache/), and [perl-ipc-sharelite](https://aur.archlinux.org/packages/perl-ipc-sharelite/)
 
 Additionally it is recommended to access the database through a separate [MySQL](/index.php/MySQL "MySQL") user. To make another user via the following MySQL commands:
 

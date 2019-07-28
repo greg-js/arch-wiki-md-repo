@@ -1,12 +1,17 @@
 [Acer](/index.php/Laptop/Acer "Laptop/Acer") – [Apple](/index.php/Laptop/Apple "Laptop/Apple") – [ASUS](/index.php/Laptop/ASUS "Laptop/ASUS") – [Dell](/index.php/Laptop/Dell "Laptop/Dell") – [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") – [HP](/index.php/Laptop/HP "Laptop/HP") – [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") – [MSI](/index.php/Laptop/MSI "Laptop/MSI") – [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") – [Sony](/index.php/Laptop/Sony "Laptop/Sony") – [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") – <a class="mw-selflink selflink">Other</a>
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Clevo](#Clevo)
 *   [2 Gigabyte](#Gigabyte)
 *   [3 Gateway](#Gateway)
 *   [4 Panasonic](#Panasonic)
 *   [5 Packard Bell](#Packard_Bell)
+*   [6 Purism](#Purism)
 
 ## Clevo
 
@@ -133,3 +138,11 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | dot se (N450, DDR2, BIOS 3.16, probably OEM [AOD255](/index.php/Acer_Aspire_One "Acer Aspire One")) | 2018.08 | Intel, use [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | Intel, [ALSA](/index.php/ALSA "ALSA") + [PulseAudio](/index.php/PulseAudio "PulseAudio") | Qualcomm Atheros AR8152, not tested, visible | Intel Centrino Wireless-N 1000, works | N/A | Suspend-to-RAM/Hibernate works | N/A | For advanced touchpad functionality install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) and create `/etc/X11/xorg.conf.d/70-synaptics.conf` (see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")) | Fn keys work. SD card reader works. Webcam works. |
+
+## Purism
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Librem 15v4 | 2019.06 | Intel HD Graphics 620 (i915) | [ALSA](/index.php/ALSA "ALSA") + [PulseAudio](/index.php/PulseAudio "PulseAudio") | N/A | Atheros 802.11n w/ Two Antenna | Works | Suspend-to-RAM/Hibernate works | N/A | Hardware kill switches work; 2-in-1 SD/MMC works; Fn keys work; HDMI not tested | Information taken from [https://puri.sm/products](https://puri.sm/products). Everything works on open source drivers available with the kernel. Librem 13v4 has identical specs to those listed here and should also work without issue. |

@@ -123,7 +123,7 @@ First, download the appropriate dictionary using the `dictcli.py` script that co
 For example, for English (US):
 
 ```
-# /usr/share/qutebrowser/scripts/dictcli.py install en-US
+$ /usr/share/qutebrowser/scripts/dictcli.py install en-US
 
 ```
 

@@ -143,7 +143,7 @@ Environment="HTTPS_PROXY=192.168.1.1:8080"
 Настройки в файле `docker.service` не применяются к контейнерам. Для этого необходимо задать переменные `ENV` в `Dockerfile` следующим образом:
 
 ```
-FROM base/archlinux
+FROM archlinux/base
 ENV http_proxy="http://192.168.1.1:3128"
 ENV https_proxy="https://192.168.1.1:3128"
 
@@ -177,13 +177,13 @@ IPForward=kernel
 
 Если вы запустили Docker образы, вам необходимо убедиться, что они полностью размонтированы. После этого вы можете переместить изображения из `/var/lib/docker` в целевой путь.
 
-Затем добавьте [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") для `docker.service`, добавив параметр `-g` в `ExecStart`:
+Затем добавьте [Drop-in сниппет](/index.php/Drop-in_%D1%81%D0%BD%D0%B8%D0%BF%D0%BF%D0%B5%D1%82 "Drop-in сниппет") для `docker.service`, добавив параметр `--data-root` в `ExecStart`:
 
  `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/dockerd -g=*/path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd --data-root=*/path/to/new/location/docker* -H fd://
 ```
 
 ### Небезопасные реестры

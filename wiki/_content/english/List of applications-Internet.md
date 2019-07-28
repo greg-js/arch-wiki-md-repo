@@ -292,13 +292,17 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 	[https://cyberfox.8pecxstudios.com/](https://cyberfox.8pecxstudios.com/) || [cyberfox-bin](https://aur.archlinux.org/packages/cyberfox-bin/)
 
-*   **Waterfox** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
-
-	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/)
-
 *   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
 
 	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
+
+*   **LibreWolf** — A fork of Firefox, focused on privacy, security and freedom.
+
+	[https://librewolf-community.gitlab.io/](https://librewolf-community.gitlab.io/) || [librewolf](https://aur.archlinux.org/packages/librewolf/) or [librewolf-bin](https://aur.archlinux.org/packages/librewolf-bin/)
+
+*   **Waterfox** — Optimized fork of Mozilla Firefox, without data collection and allowing unsigned extensions and NPAPI plugins.
+
+	[https://www.waterfoxproject.org/](https://www.waterfoxproject.org/) || [waterfox-bin](https://aur.archlinux.org/packages/waterfox-bin/)
 
 ##### Blink-based
 

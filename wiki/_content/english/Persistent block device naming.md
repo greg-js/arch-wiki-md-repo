@@ -26,7 +26,7 @@ This article describes how to use persistent names for your [block devices](/ind
     *   [1.6 Static device names with Udev](#Static_device_names_with_Udev)
 *   [2 Using persistent naming](#Using_persistent_naming)
     *   [2.1 fstab](#fstab)
-    *   [2.2 Boot managers](#Boot_managers)
+    *   [2.2 Kernel parameters](#Kernel_parameters)
 
 ## Persistent naming methods
 
@@ -312,14 +312,14 @@ There are various applications that can be configured using persistent naming. F
 
 See the main article: [fstab#Identifying filesystems](/index.php/Fstab#Identifying_filesystems "Fstab").
 
-### Boot managers
+### Kernel parameters
 
-To use persistent names in the [boot manager (boot loader)](/index.php/Boot_loader "Boot loader"), the following prerequisites must be met. On a standard installation following the installation guide both prerequisites are met.
+To use persistent names in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), the following prerequisites must be met. On a standard installation following the installation guide both prerequisites are met.
 
 *   You are using a [mkinitcpio](/index.php/Mkinitcpio#Configuration "Mkinitcpio") initial RAM disk image
-*   You have udev enabled in `/etc/mkinitcpio.conf`
+*   You have either udev or systemd hook enabled in `/etc/mkinitcpio.conf`
 
-The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
+The location of the root filesystem is given by the parameter `root` on the kernel command line. The kernel command line is configured from the [boot loader](/index.php/Boot_loader "Boot loader"), see [Kernel parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
 
 Persistent device naming [using label](#by-label) and the `LABEL=` format, in this example `Arch Linux` is the LABEL of the root file system.
 

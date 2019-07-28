@@ -263,6 +263,8 @@ BIOS version 2.9.0 manages to make these crashes occur no matter what firmware y
 
 After following the instructions given at [Bluetooth](/index.php/Bluetooth "Bluetooth") tethering of internet connections via phone works immediately.
 
+See [Troubleshooting](#Freezing_after_waking_from_suspend) when having issues with Bluetooth and suspend (blinking CapsLock).
+
 ## Thunderbolt 3 / USB 3.1
 
 The USB-C port supports Thunderbolt 3, Displayport-over-USB-C and USB power delivery as well as USB 3.1.
@@ -483,6 +485,8 @@ Unfortunately Dell still did not fix this issue and the sound for my model was v
 ### Freezing after waking from suspend
 
 Installing [xf86-video-intel-git](https://aur.archlinux.org/packages/xf86-video-intel-git/) is [reported](https://bbs.archlinux.org/viewtopic.php?pid=1698282#p1698282) to fix this.
+
+When using a bluetooth device (confirmed for a Logitech MX Anywhere 2S and gnome), the computer frequently does not respond and the LED on CapsLock blinks. Using the solution from [launchpad](https://bugs.launchpad.net/dell-sputnik/+bug/1766825/comments/26) helps in this case.
 
 ### Continuous hissing sound with headphones
 

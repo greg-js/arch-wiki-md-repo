@@ -29,6 +29,7 @@ Notes for the [GPD Pocket](https://www.indiegogo.com/projects/gpd-pocket-7-0-ump
         *   [3.2.5 Fan](#Fan)
         *   [3.2.6 Power Saving](#Power_Saving)
         *   [3.2.7 PulseAudio](#PulseAudio)
+        *   [3.2.8 Charge control](#Charge_control)
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 USB-C Power source status](#USB-C_Power_source_status)
     *   [4.2 systemd-gpt-auto-generator failed to dissect](#systemd-gpt-auto-generator_failed_to_dissect)
@@ -307,6 +308,12 @@ set-sink-port alsa_output.platform-cht-bsw-rt5645.HiFi__hw_chtrt5645_0__sink [Ou
 Turn off realtime scheduling by editing `/etc/pulse/daemon.conf`:
 
  `/etc/pulse/daemon.conf`  `realtime-scheduling = no` 
+
+#### Charge control
+
+It is possible to control the charge current, charge end voltage and a few more settings.
+
+See [this reddit post](http://reddit.com/r/GPDPocket/comments/cfyekh/limit_battery_charge/eudbwto) for more information and an example script.
 
 ## Known Issues
 

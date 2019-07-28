@@ -62,12 +62,16 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [8.1 USB controller](#USB_controller)
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
         *   [8.2.1 QEMU 3.0 audio changes](#QEMU_3.0_audio_changes)
-    *   [8.3 Physical disk/partition](#Physical_disk/partition)
-    *   [8.4 Gotchas](#Gotchas_3)
-        *   [8.4.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+    *   [8.3 Passing VM audio to host via Scream and IVSHMEM](#Passing_VM_audio_to_host_via_Scream_and_IVSHMEM)
+        *   [8.3.1 Adding the IVSHMEM](#Adding_the_IVSHMEM)
+        *   [8.3.2 Configuring the Windows guest](#Configuring_the_Windows_guest)
+        *   [8.3.3 Configuring the host](#Configuring_the_host)
+    *   [8.4 Physical disk/partition](#Physical_disk/partition)
+    *   [8.5 Gotchas](#Gotchas_3)
+        *   [8.5.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 QEMU 4.0: Unable to load graphics drivers/BSOD after driver install using Q35](#QEMU_4.0:_Unable_to_load_graphics_drivers/BSOD_after_driver_install_using_Q35)
+    *   [10.1 QEMU 4.0: Unable to load graphics drivers/BSOD/Graphics stutter after driver install using Q35](#QEMU_4.0:_Unable_to_load_graphics_drivers/BSOD/Graphics_stutter_after_driver_install_using_Q35)
     *   [10.2 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#"Error_43:_Driver_failed_to_load"_on_Nvidia_GPUs_passed_to_Windows_VMs)
     *   [10.3 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#"BAR_3:_cannot_reserve_[mem]"_error_in_dmesg_after_starting_VM)
     *   [10.4 UEFI (OVMF) compatibility in VBIOS](#UEFI_(OVMF)_compatibility_in_VBIOS)
@@ -295,6 +299,8 @@ nvram = [
 ```
 
 You can now [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `libvirtd.service` and its logging component `virtlogd.socket`.
+
+You may also need to [activate the default libvirt network](https://wiki.libvirt.org/page/Networking#NAT_forwarding_.28aka_.22virtual_networks.22.29).
 
 ### Setting up the guest OS
 
@@ -1076,6 +1082,80 @@ You will need to change the chipset accordingly to how your VM is set up, i.e. `
 *   To speed up compilation time with [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) use `--target-list=x86_64-softmmu` to compile qemu with only x86_64 guest support.
 *   Since Qemu 3.0 the XML arguments `qemu:env` above are *not* needed if you run PulseAudio as your user and you have `nographics_allow_host_audio = 1` enabled in `/etc/libvirt/qemu.conf`. If you use a different user with QEMU/Libvirt, you will need to keep the `QEMU_PA_SERVER` variable otherwise permission errors will occur.
 
+### Passing VM audio to host via Scream and IVSHMEM
+
+It's possible to pass VM audio through a IVSHMEM device to the host using [scream](https://github.com/duncanthrax/scream). This guide will only cover using PulseAudio as a receiver on the host. See the project page for more details.
+
+#### Adding the IVSHMEM
+
+With the VM turned off, edit the machine configuration
+
+ `$ virsh edit [vmname]` 
+```
+...
+<devices>
+    ...
+  <shmem name='scream-ivshmem'>
+    <model type='ivshmem-plain'/>
+    <size unit='M'>2</size>
+  </shmem>
+</devices>
+...
+
+```
+
+In the above configuration, the size of the IVSHMEM device is 2MB (the recommended amount). Change this as needed.
+
+Now refer to [#Adding_IVSHMEM_Device_to_VM](#Adding_IVSHMEM_Device_to_VM) to configure the host to create the shared memory file on boot, replacing `looking-glass` with `scream-ivshmem`.
+
+#### Configuring the Windows guest
+
+The correct driver must be installed for the IVSHMEM device on the guest. See [#Installing_the_IVSHMEM_Host_to_Windows_guest](#Installing_the_IVSHMEM_Host_to_Windows_guest). Ignore the part about `looking-glass-host`.
+
+Install the [scream](https://github.com/duncanthrax/scream/releases) virtual audio driver on the guest. If you have secure boot enabled for your VM, you may need to disable it.
+
+Using the registry editor, set the DWORD `HKLM\SYSTEM\CurrentControlSet\Services\Scream\Options\UseIVSHMEM` to the size of the IVSHMEM device in MB. Note that scream identifies its IVSHMEM device using its size, so make sure there is only one device of that size.
+
+#### Configuring the host
+
+Install [scream-pulse](https://aur.archlinux.org/packages/scream-pulse/).
+
+Create the systemd user service file to control the reciever
+
+ `~/.config/systemd/user/scream-ivshmem-pulse.service` 
+```
+[Unit]
+Description=Scream IVSHMEM pulse reciever
+After=pulseaudio.service
+Wants=pulseaudio.service
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/truncate -s 0 /dev/shm/scream-ivshmem
+ExecStartPre=/usr/bin/dd if=/dev/zero of=/dev/shm/scream-ivshmem bs=1M count=2
+ExecStart=/usr/bin/scream-ivshmem-pulse /dev/shm/scream-ivshmem
+
+[Install]
+WantedBy=default.target
+
+```
+
+Edit `count=2` with the size of the IVSHMEM device in MB.
+
+Now start the service with
+
+```
+$ systemctl start --user scream-ivshmem-pulse
+
+```
+
+To have it automatically start on next login, enable the service
+
+```
+$ systemctl enable --user scream-ivshmem-pulse
+
+```
+
 ### Physical disk/partition
 
 A whole disk or a partition may be used as a whole for improved I/O performance by adding an entry to the XML
@@ -1171,9 +1251,9 @@ We encourage those who successfully build their system from this resource to hel
 
 If your issue is not mentioned below, you may want to browse [QEMU#Troubleshooting](/index.php/QEMU#Troubleshooting "QEMU").
 
-### QEMU 4.0: Unable to load graphics drivers/BSOD after driver install using Q35
+### QEMU 4.0: Unable to load graphics drivers/BSOD/Graphics stutter after driver install using Q35
 
-Starting with QEMU 4.0 the q35 machine type changes the default `kernel_irqchip` from `off` to `split` which breaks some guest devices, such as nVidia graphics (the driver fails to load / black screen / code 43). Switch to full KVM mode instead with `<ioapic driver='kvm'/>` under libvirts `<features>` tag or `kernel_irqchip=on` in the `-machine` qemu arg.
+Starting with QEMU 4.0, the Q35 machine type changes the default `kernel_irqchip` from `off` to `split` which breaks some guest devices, such as nVidia graphics (the driver fails to load / black screen / code 43 / graphics stutters, usually when mouse moving). Switch to full KVM mode instead by adding `<ioapic driver='kvm'/>` under libvirt's `<features>` tag in your VM configuration or by adding `kernel_irqchip=on` in the `-machine` QEMU arg.
 
 ### "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs
 
@@ -1401,6 +1481,8 @@ Capabilities: [60] MSI: Enable**-** Count=1/1 Maskable- 64bit+
 A `-` after `Enable` means MSI is supported, but not used by the VM, while a `+` says that the VM is using it.
 
 The procedure to enable it is quite complex, instructions and an overview of the setting can be found [here](https://forums.guru3d.com/showthread.php?t=378044).
+
+On a linux guest you can use modinfo to see if there is option to enable MSI (for example: "modinfo snd_hda_intel |grep msi"). If there is, one can enable it by adding the relevant option to a custom omdprobe file - in "/etc/modprobe.d/snd-hda-intel.conf" inserting "options snd-hda-intel enable_msi=1"
 
 Other hints can be found on the [lime-technology's wiki](https://lime-technology.com/wiki/index.php/UnRAID_6/VM_Guest_Support#Enable_MSI_for_Interrupts_to_Fix_HDMI_Audio_Support), or on this article on [VFIO tips and tricks](https://vfio.blogspot.it/2014/09/vfio-interrupts-and-how-to-coax-windows.html).
 

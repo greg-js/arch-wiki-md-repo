@@ -17,16 +17,15 @@
     *   [5.2 dwm | dmenu](#dwm_|_dmenu)
     *   [5.3 Firefox](#Firefox)
     *   [5.4 slock](#slock)
-    *   [5.5 Freezing video playback](#Freezing_video_playback)
-    *   [5.6 Flicker](#Flicker)
-    *   [5.7 Fullscreen tearing](#Fullscreen_tearing)
-    *   [5.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [5.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver)
-    *   [5.10 Tabbed windows (shadows and transparency)](#Tabbed_windows_(shadows_and_transparency))
-    *   [5.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [5.12 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA's_proprietary_drivers)
-    *   [5.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
-    *   [5.14 Slock after suspend](#Slock_after_suspend)
+    *   [5.5 Flicker](#Flicker)
+    *   [5.6 Fullscreen tearing](#Fullscreen_tearing)
+    *   [5.7 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [5.8 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver)
+    *   [5.9 Tabbed windows (shadows and transparency)](#Tabbed_windows_(shadows_and_transparency))
+    *   [5.10 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [5.11 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA's_proprietary_drivers)
+    *   [5.12 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
+    *   [5.13 Slock after suspend](#Slock_after_suspend)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -237,12 +236,6 @@ Otherwise, where using a configuration file:
 focus-exclude = "id = 0x1800001";
 
 ```
-
-### Freezing video playback
-
-Some media players may experience an issue where the video will momentarily freeze while the audio continues to play. This has been worked around in compton version 2, with full fix to be included in next release. If problem persists, you can try [compton-git](https://aur.archlinux.org/packages/compton-git/).
-
-For more detail, see the [bug report](https://github.com/chjj/compton/issues/494).
 
 ### Flicker
 

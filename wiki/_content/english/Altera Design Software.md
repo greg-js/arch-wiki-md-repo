@@ -29,8 +29,9 @@ This tutorial shows how to download, install, and configure the following softwa
     *   [1.4 Troubleshooting](#Troubleshooting)
         *   [1.4.1 Empty (greyish) windows inside quartus (XMonad)](#Empty_(greyish)_windows_inside_quartus_(XMonad))
         *   [1.4.2 USB Blaster not working](#USB_Blaster_not_working)
-            *   [1.4.2.1 JTAG chain broken](#JTAG_chain_broken)
-            *   [1.4.2.2 Error when scanning hardware - Server error](#Error_when_scanning_hardware_-_Server_error)
+            *   [1.4.2.1 No JTAG hardware available](#No_JTAG_hardware_available)
+            *   [1.4.2.2 JTAG chain broken](#JTAG_chain_broken)
+            *   [1.4.2.3 Error when scanning hardware - Server error](#Error_when_scanning_hardware_-_Server_error)
         *   [1.4.3 Installation hangs when installing Quartus Prime Help and/or ModelSim](#Installation_hangs_when_installing_Quartus_Prime_Help_and/or_ModelSim)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
@@ -287,6 +288,16 @@ Run:
 
 Then depending on the output:
 
+##### No JTAG hardware available
+
+Check if the device shows up with `lsusb`. If it does try to restart `jtagd` as root[[1]](https://www.intel.com/content/www/us/en/programmable/support/support-resources/knowledge-base/embedded/2018/why-do-i-get-the-error-no-jtag-hardware-available-when-running-j.html)
+
+```
+  # killall -9 jtagd
+  # /opt/altera/quartus/bin/jtagd
+
+```
+
 ##### JTAG chain broken
 
 ```
@@ -355,7 +366,7 @@ to
 
 #### With freetype2 2.5.0.1-1
 
-The upgrade from freetype2 version 2.5.0.1-1 to 2.5.0.1-2 (October 2013[[1]](https://projects.archlinux.org/svntogit/packages.git/commit/?h=packages/freetype2&id=f2903d2374daf5becc931b010efb2f613eaaae18)) causes the following error in ModelSim:
+The upgrade from freetype2 version 2.5.0.1-1 to 2.5.0.1-2 (October 2013[[2]](https://projects.archlinux.org/svntogit/packages.git/commit/?h=packages/freetype2&id=f2903d2374daf5becc931b010efb2f613eaaae18)) causes the following error in ModelSim:
 
 ```
 $ vsim
@@ -425,7 +436,7 @@ So, in addition to libfreetype, you also have to supply a downgraded version of 
 
 #### With ncurses 5.9
 
-The upgrade from ncurses version 5.9-7 to 6.0-1 (and later) (September 2015[[2]](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/ncurses&id=ddb1abecfe25260321c9cb0ef24f29351f28ecb3)) causes the following error in ModelSim:
+The upgrade from ncurses version 5.9-7 to 6.0-1 (and later) (September 2015[[3]](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/ncurses&id=ddb1abecfe25260321c9cb0ef24f29351f28ecb3)) causes the following error in ModelSim:
 
 ```
 $ vsim

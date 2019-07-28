@@ -20,7 +20,7 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [4.1 PowerEdge T30](#PowerEdge_T30)
 *   [5 MSI](#MSI)
     *   [5.1 B250M PRO-VH](#B250M_PRO-VH)
-    *   [5.2 B250 PC MATE / H110I PRO / Z370 GAMING PLUS](#B250_PC_MATE_/_H110I_PRO_/_Z370_GAMING_PLUS)
+    *   [5.2 B150 PC MATE / B250 PC MATE / H110I PRO / Z370 GAMING PLUS](#B150_PC_MATE_/_B250_PC_MATE_/_H110I_PRO_/_Z370_GAMING_PLUS)
 *   [6 HP](#HP)
     *   [6.1 EliteBook 840 G1](#EliteBook_840_G1)
 *   [7 Intel](#Intel)
@@ -189,7 +189,7 @@ These MSI motherboards seem to want the EFI program to exist in a different loca
 
 ```
 
-### B250 PC MATE / H110I PRO / Z370 GAMING PLUS
+### B150 PC MATE / B250 PC MATE / H110I PRO / Z370 GAMING PLUS
 
 Install GRUB to the [default/fallback boot path](/index.php/GRUB#Default/fallback_boot_path "GRUB").
 

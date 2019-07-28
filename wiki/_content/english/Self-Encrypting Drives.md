@@ -1,4 +1,9 @@
-Hardware-based full-disk encryption (FDE) is now available from many hard disk (HDD) vendors, becoming increasingly common especially for [solid state drives](/index.php/Solid_State_Drives "Solid State Drives"). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE). [OPAL](https://en.wikipedia.org/wiki/Opal_Storage_Specification "wikipedia:Opal Storage Specification") is a set of specifications for self-encrypting drives developed by the Trusted Computing Group.
+Related articles
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [Trusted Platform Module](/index.php/Trusted_Platform_Module "Trusted Platform Module")
+
+[Hardware-based full-disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") (FDE) is now available from many hard disk (HDD) vendors, becoming increasingly common especially for [solid state drives](/index.php/Solid_State_Drives "Solid State Drives"). The term "Self-Encrypting Drive" (SED) is now common when referring to HDDs / SSDs with built-in full-disk encryption (FDE). [OPAL](https://en.wikipedia.org/wiki/Opal_Storage_Specification "wikipedia:Opal Storage Specification") is a set of specifications for self-encrypting drives developed by the Trusted Computing Group.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

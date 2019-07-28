@@ -59,28 +59,29 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.4 Cannot send Ctrl+Alt+Fn to guest](#Cannot_send_Ctrl+Alt+Fn_to_guest)
     *   [5.5 USB subsystem not working](#USB_subsystem_not_working)
     *   [5.6 USB modem not working on host](#USB_modem_not_working_on_host)
-    *   [5.7 Access serial port from guest](#Access_serial_port_from_guest)
-    *   [5.8 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
-    *   [5.9 Fullscreen mode shows blank screen](#Fullscreen_mode_shows_blank_screen)
-    *   [5.10 Host freezes on virtual machine start](#Host_freezes_on_virtual_machine_start)
-    *   [5.11 Linux guests have slow/distorted audio](#Linux_guests_have_slow/distorted_audio)
-    *   [5.12 Analog microphone not working](#Analog_microphone_not_working)
-    *   [5.13 Microphone not working after upgrade](#Microphone_not_working_after_upgrade)
-    *   [5.14 Problems with images converted to ISO](#Problems_with_images_converted_to_ISO)
-    *   [5.15 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
-    *   [5.16 Failed to insert module](#Failed_to_insert_module)
-    *   [5.17 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
-    *   [5.18 NS_ERROR_FAILURE and missing menu items](#NS_ERROR_FAILURE_and_missing_menu_items)
-    *   [5.19 Arch: pacstrap script fails](#Arch:_pacstrap_script_fails)
-    *   [5.20 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
-    *   [5.21 Windows host: VERR_ACCESS_DENIED](#Windows_host:_VERR_ACCESS_DENIED)
-    *   [5.22 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_"The_specified_path_does_not_exist._Check_the_path_and_then_try_again.")
-    *   [5.23 Windows 8.x error code 0x000000C4](#Windows_8.x_error_code_0x000000C4)
-    *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8,_8.1_or_10_fails_to_install,_boot_or_has_error_"ERR_DISK_FULL")
-    *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
-    *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
-    *   [5.27 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
-    *   [5.28 Cannot launch VirtualBox on Wayland: Segmentation fault](#Cannot_launch_VirtualBox_on_Wayland:_Segmentation_fault)
+    *   [5.7 USB device crashes guest](#USB_device_crashes_guest)
+    *   [5.8 Access serial port from guest](#Access_serial_port_from_guest)
+    *   [5.9 Guest freezes after starting Xorg](#Guest_freezes_after_starting_Xorg)
+    *   [5.10 Fullscreen mode shows blank screen](#Fullscreen_mode_shows_blank_screen)
+    *   [5.11 Host freezes on virtual machine start](#Host_freezes_on_virtual_machine_start)
+    *   [5.12 Linux guests have slow/distorted audio](#Linux_guests_have_slow/distorted_audio)
+    *   [5.13 Analog microphone not working](#Analog_microphone_not_working)
+    *   [5.14 Microphone not working after upgrade](#Microphone_not_working_after_upgrade)
+    *   [5.15 Problems with images converted to ISO](#Problems_with_images_converted_to_ISO)
+    *   [5.16 Failed to create the host-only network interface](#Failed_to_create_the_host-only_network_interface)
+    *   [5.17 Failed to insert module](#Failed_to_insert_module)
+    *   [5.18 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
+    *   [5.19 NS_ERROR_FAILURE and missing menu items](#NS_ERROR_FAILURE_and_missing_menu_items)
+    *   [5.20 Arch: pacstrap script fails](#Arch:_pacstrap_script_fails)
+    *   [5.21 OpenBSD unusable when virtualisation instructions unavailable](#OpenBSD_unusable_when_virtualisation_instructions_unavailable)
+    *   [5.22 Windows host: VERR_ACCESS_DENIED](#Windows_host:_VERR_ACCESS_DENIED)
+    *   [5.23 Windows: "The specified path does not exist. Check the path and then try again."](#Windows:_"The_specified_path_does_not_exist._Check_the_path_and_then_try_again.")
+    *   [5.24 Windows 8.x error code 0x000000C4](#Windows_8.x_error_code_0x000000C4)
+    *   [5.25 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8,_8.1_or_10_fails_to_install,_boot_or_has_error_"ERR_DISK_FULL")
+    *   [5.26 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
+    *   [5.27 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
+    *   [5.28 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
+    *   [5.29 Cannot launch VirtualBox on Wayland: Segmentation fault](#Cannot_launch_VirtualBox_on_Wayland:_Segmentation_fault)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Automounting does not work](#Automounting_does_not_work)
 *   [7 See also](#See_also)
@@ -285,6 +286,8 @@ Now, you should have a working Arch Linux guest. Note that features like clipboa
 ### Hardware acceleration
 
 Hardware acceleration can be activated in the VirtualBox options. The [GDM](/index.php/GDM "GDM") display manager 3.16+ is known to break hardware acceleration support. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=749390) So if you get issues with hardware acceleration, try out another display manager (lightdm seems to work fine). [[4]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
+
+If the hardware acceleration does not work as expected, try changing the *Graphics Controller* option found under the *Screen* tab in the *Display* options of the settings GUI. It seems that depending on the host GPU type, not all emulated controllers work equally well.
 
 ### Enable shared folders
 
@@ -717,6 +720,10 @@ Also make sure that your user is a member of the `storage` group.
 ### USB modem not working on host
 
 If you have a USB modem which is being used by the guest OS, killing the guest OS can cause the modem to become unusable by the host system. Killing and restarting `VBoxSVC` should fix this problem.
+
+### USB device crashes guest
+
+If attaching a USB device to the guest causes a crash or any other erroneous behavior, try switching the USB controller from USB 2 (EHCI) to USB 3 (xHCI) or vice versa.
 
 ### Access serial port from guest
 

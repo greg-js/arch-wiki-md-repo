@@ -66,7 +66,7 @@ Some users find the default escape key `Ctrl+a` inconvenient. The escape key can
 ### Command Prompt Commands
 
 *   `Ctrl+a` `:quit` Closes all windows and closes screen session
-*   `Ctrl+a` `:source ~/.screenrc` Reloads screenrc configuration file (can alternatively use /etc/screenrc)
+*   `Ctrl+a` `:source ~/.screenrc` Reloads screenrc configuration file (can alternatively use `/etc/screenrc`)
 
 ### Named sessions
 
@@ -135,7 +135,7 @@ It can be a good idea to change the default escape key, not only because "a" is 
 
 The escape key can be changed with the `escape` option in `~/.screenrc`, or the `-e` option to `screen`.
 
-For example, if you find that you rarely type `Ctrl+j` in your shell or editor, you could use `escape ^Jj` to set the escape key to `Ctrl+j`. The second "j" means that a literal `Ctrl+j` can be sent to the terminal via the sequence `Ctrl+j j`. For [Dvorak](/index.php/Dvorak "Dvorak") keyboard users, `Ctrl+t` (`escape ^Tt`) might be more convenient.
+For example, if you find that you rarely type `Ctrl+j` in your shell or editor, you could use `escape ^Jj` to set the escape key to `Ctrl+j`. The second "j" means that a literal `Ctrl+j` can be sent to the terminal via the sequence `Ctrl+j` `j`. For [Dvorak](/index.php/Dvorak "Dvorak") keyboard users, `Ctrl+t` (`escape ^Tt`) might be more convenient.
 
 More exotic options include `escape ``` which sets the escape key to ```, or `escape ^^^` which sets it to `Ctrl+^`.
 
@@ -279,7 +279,7 @@ This will give you something like `screen (0 bash)` in the title of your termina
 
 ### Use X scrolling mechanism
 
-The scroll buffer of GNU Screen can be accessed with `Ctrl+a` `[`. However, this is very inconvenient. To use the scroll bar of e.g. xterm or konsole, add the following line:
+The scroll buffer of GNU Screen can be accessed with `Ctrl+a` `[`. However, this is very inconvenient. To use the scroll bar of e.g. xterm or Konsole, add the following line:
 
  `~/.screenrc` 
 ```
@@ -289,17 +289,20 @@ termcapinfo xterm* ti@:te@
 
 ### Attach an existing running program to screen
 
-If you started a program outside Screen, but now you would like it to be inside, you can use **reptyr** to reparent the process from it's current tty to one inside screen.
+If you started a program outside Screen, but now you would like it to be inside, you can use **reptyr** to reparent the process from its current TTY to one inside screen.
 
 [Install](/index.php/Install "Install") the [reptyr](https://www.archlinux.org/packages/?name=reptyr) package.
 
 Get the PID of the process (you can use `ps ax` for that). Now just enter the PID as argument to reptyr inside a screen window.
 
- `$ reptyr *<pid>*` 
+```
+$ reptyr *pid*
+
+```
 
 ### Setting a different bash prompt while in screen
 
-If you want a different bash prompt when in a screen session, add the following to your .bashrc:
+If you want a different bash prompt when in a screen session, add the following to your `.bashrc`[[1]](http://serverfault.com/questions/257975/how-to-check-if-im-in-screen-session):
 
 ```
 if [ -z $STY ]
@@ -310,8 +313,6 @@ else
 fi
 
 ```
-
-[[1]](http://serverfault.com/questions/257975/how-to-check-if-im-in-screen-session)
 
 ### Turn off visual bell
 
@@ -341,7 +342,7 @@ caption string "%{03} "
 
 ### Fix for residual editor text
 
-When you open a text editor like nano in screen and then close it, the text may stay visible in your terminal. To fix this, put the following:
+When you open a text editor like [nano](/index.php/Nano "Nano") in screen and then close it, the text may stay visible in your terminal. To fix this, put the following:
 
  `~/.screenrc` 
 ```
@@ -351,7 +352,7 @@ altscreen on
 
 ### Fix for Name column in windowlist only show "bash"
 
-add following to ~/.screenrc
+Add following to `~/.screenrc`:
 
  `~/.screenrc`  `windowlist string "%4n %h%=%f"` 
 

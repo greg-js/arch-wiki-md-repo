@@ -54,12 +54,16 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
     *   [2.3 Enabling S3 (before BIOS version 1.33)](#Enabling_S3_(before_BIOS_version_1.33))
         *   [2.3.1 Manual method](#Manual_method)
     *   [2.4 Fix touchscreen after resume](#Fix_touchscreen_after_resume)
+        *   [2.4.1 Using s2idle](#Using_s2idle)
+        *   [2.4.2 Other methods](#Other_methods)
     *   [2.5 Enabling S2idle](#Enabling_S2idle)
 *   [3 Tablet Functions](#Tablet_Functions)
     *   [3.1 Stylus](#Stylus)
     *   [3.2 Screen Rotation](#Screen_Rotation)
         *   [3.2.1 Automatic Screen Rotation in Gnome](#Automatic_Screen_Rotation_in_Gnome)
         *   [3.2.2 With Screen Rotator](#With_Screen_Rotator)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
 
 ## BIOS
 
@@ -217,7 +221,11 @@ and replaced it with the following (removing the two "One" lines):
 
 ### Fix touchscreen after resume
 
-When the above fix is applied to allow S3 suspend, the touchscreen will not work upon resume from sleep. This fix was pulled from: [Lenovo Linux Forums](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1Y3-Touchscreen-not-working-after-resume-on-Linux/td-p/4021200)
+These fixes were pulled from: [Lenovo Linux Forums](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1Y3-Touchscreen-not-working-after-resume-on-Linux/td-p/4021200)
+
+#### Using s2idle
+
+When the above fix is applied to allow S3 suspend, the touchscreen will not work upon resume from sleep.
 
 The touchscreen functionality can be restored by freezing system (s2idle):
 
@@ -232,7 +240,7 @@ with content:
 
 ```
  [Unit]
- Description= s2idle fo 1 second after resume
+ Description= s2idle for 1 second after resume
  After=suspend.target
  [Service]
  Type=oneshot
@@ -242,12 +250,16 @@ with content:
 
 ```
 
-enable in standard waycreate a unit file:
+enable in standard way:
 
 ```
  sudo systemctl enable wake_wacom_hack.service
 
 ```
+
+#### Other methods
+
+Some users have reported this temporary fix: quickly close and open the lid to enable sleep, and use the power button to resume from sleep.
 
 ### Enabling S2idle
 
@@ -324,3 +336,24 @@ No configuration was needed for my machine.
 Automatic screen rotation works well with ScreenRotator which has no configuration necessary. The touchscreen two finger swipe does not follow rotation at this time. Install [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/) and [screenrotator-git](https://aur.archlinux.org/packages/screenrotator-git/).
 
 **Note:** [ScreenRotator](https://github.com/GuLinux/screenrotator) is in early development stages.
+
+## Configuration
+
+F86A
+
+### Keyboard Fn Shortcuts
+
+<caption>Fn Shortcuts</caption>
+| Keybind | XF86 Event |
+| Fn+F1 | XF86AudioMicMute |
+| Fn+F2 | XF86AudioLowerVolume |
+| Fn+F3 | XF86AudioRaiseVolume |
+| Fn+F4 | XF86AudioMicMute |
+| Fn+F5 | XF86MonBrightnessDown |
+| Fn+F6 | XF86MonBrightnessUp |
+| Fn+F7 | XF86Display |
+| Fn+F8 | XF86WLAN |
+| Fn+F9 | XF86Tools |
+| Fn+F10 | XF86Bluetooth (This should already enable/disable bluetooth if you use a minimal window manager like i3) |
+| Fn+F11 | ?? |
+| Fn+F12 | XF86Favorites |

@@ -347,7 +347,7 @@ Below listed display managers which supports running Wayland compositors. The Ty
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [GitHub](https://github.com/SirCmpwn/sway) |
 | Enlightenment | Stacking and tiling | [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
-| Orbment | Tiling | [orbment](https://github.com/Buttef/orbment) (previously loliwm) is an abandonned tiling WM for Wayland. |
+| Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandonned tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
@@ -355,6 +355,8 @@ Below listed display managers which supports running Wayland compositors. The Ty
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
 | Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
 | Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/imbavirus/mazecompositor) is a 3D Qt based Wayland compositor |
+| Cage | Kiosk | [Cage](https://www.hjdskes.nl/projects/cage/) is a Wayland compositor that displays a single fullscreen application |
+| Greenfield | Stacking | [Greenfield](https://github.com/udevbe/greenfield) is a Wayland compositor that runs in a web browser and can display remote applications |
 | Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
 | Waymonad | Tiling | [Waymonad](https://github.com/waymonad/waymonad) is a Wayland compositor based on ideas from and inspired by xmonad |
 | wayfire | Stacking | [Wayfire](https://github.com/WayfireWM/wayfire) is a general purpose compositor. |
@@ -407,11 +409,14 @@ $ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
 
 [green-recorder](https://aur.archlinux.org/packages/green-recorder/) and [obs-gnome-screencast](https://aur.archlinux.org/packages/obs-gnome-screencast/) support screen recording on Wayland using GNOME screencast feature.
 
+[wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) is a video recorder for wlroots-based compositors.
+
 ### Remote display
 
 *   (20190503) [wlroots](https://www.archlinux.org/packages/?name=wlroots) (used by [sway](/index.php/Sway "Sway")) offers an RDP backend since version 0.6 [[4]](https://github.com/swaywm/wlroots/blob/master/docs/env_vars.md).
 *   (20180401) mutter has now remote desktop enabled at compile time, see [[5]](https://wiki.gnome.org/Projects/Mutter/RemoteDesktop) and [gnome-remote-desktop](https://www.archlinux.org/packages/?name=gnome-remote-desktop) for details.
-*   (20161229) there was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package does not have it enabled.
+*   There was a merge of FreeRDP into Weston in 2013, enabled via a compile flag. The [weston](https://www.archlinux.org/packages/?name=weston) package has it enabled since version 6.0.0.
+*   [waypipe-git](https://aur.archlinux.org/packages/waypipe-git/) is a transparent proxy for Wayland applications, with a wrapper command to run over [SSH](/index.php/SSH "SSH")
 
 ### Input grabbing in games, remote desktop and VM windows
 

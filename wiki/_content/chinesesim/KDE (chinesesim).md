@@ -270,7 +270,7 @@ Plasma Netbool shell （上网本交互界面）已从 Plasma 5 中移除，请�
 
 #### 缩略图生成
 
-若要在桌面和 Dolphin 内为媒体或文档文件生成缩略图，安装 [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers)，[ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs) 和 [kde-thumbnailer-odf](https://aur.archlinux.org/packages/kde-thumbnailer-odf/)。
+若要在桌面和 Dolphin 内为媒体或文档文件生成缩略图，安装 [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers)，[ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs)。
 
 然后在 *桌面背景* > *配置桌面* > *图标* > *更多预览选项...* 内通过 *右键单击* 启用桌面的缩略图类别。
 

@@ -48,7 +48,7 @@ Los manuales se ordenan en varias secciones:
 7.  Miscelánea (incluye convenciones)
 8.  Comandos de administración de sistemas (normalmente requiere privilegios de superusuario) y demonios
 
-Generalmente, para indicar las páginas del manual se suelen usar el nombre seguido del número entre paréntesis de la sección a la que pertenece. A menudo , existen múltiples páginas del manual con el mismo nombre, como man(1) y man(7). En este caso, pásele a man como argumentos el número de página seguido del nombre, por ejemplo:
+Generalmente, para indicar las páginas del manual se suelen usar el nombre seguido del número entre paréntesis de la sección a la que pertenece. A menudo , existen múltiples páginas del manual con el mismo nombre, como man(1) y man(7). En este caso, pásele a man como argumentos el número de sección seguido del nombre, por ejemplo:
 
 ```
 $ man 5 passwd

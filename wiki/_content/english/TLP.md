@@ -89,10 +89,17 @@ See also these links for discussion on this topic: [Github bug report](https://g
 
 If you're running [Bumblebee](/index.php/Bumblebee "Bumblebee") with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
 
-Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value:
+If you are running TLP version prior to 0.9, run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value:
 
 ```
  RUNTIME_PM_BLACKLIST="01:00.0"
+
+```
+
+If your TLP version is 1.0 or above, then set, according to the driver you are using:
+
+```
+ RUNTIME_PM_DRIVER_BLACKLIST="nouveau nvidia" 
 
 ```
 
@@ -118,3 +125,4 @@ You can display information about the currently used Mode(AC/BAT) and applied co
 ## See also
 
 *   [TLP - Linux Advanced Power Management](http://linrunner.de/tlp) - Project homepage & documentation.
+*   [Project FAQ](https://linrunner.de/en/tlp/docs/tlp-faq.html) - Project FAQ

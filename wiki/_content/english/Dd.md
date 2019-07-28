@@ -33,7 +33,7 @@ For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1
 
 ## Installation
 
-dd is part of the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). For other utilities in the package, please refer to [Core utilities](/index.php/Core_utilities "Core utilities").
+*dd* is part of the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). For other utilities in the package, please refer to [Core utilities](/index.php/Core_utilities "Core utilities").
 
 ## Disk cloning and restore
 
@@ -96,14 +96,14 @@ Then mount the external hard drive and backup the drive:
 
 ```
 
-If necessary (e.g. when the format of the external HD is FAT32) split the disk image in volumes (see also the *split* man pages):
+If necessary (e.g. when the format of the external HD is FAT32) split the disk image in volumes (see also [split(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/split.1)):
 
 ```
 # dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c | split -a3 -b2G - */path/to/backup.img.gz*
 
 ```
 
-If there is not enough disk space locally, you may send the image through ssh:
+If there is not enough disk space locally, you may send the image through *ssh*:
 
 ```
 # dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c | ssh user@local dd of=backup.img.gz

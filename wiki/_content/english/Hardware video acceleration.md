@@ -349,4 +349,4 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 *   Not supported officially by developers, alternative packages available.
 *   VDPAU is supported only by NPAPI plugin. PPAPI plugin to NPAPI browser experimental adapter is available that provides partial VA-API and VDPAU acceleration.
 
-**Tip:** To reduce CPU usage while watching YouTube where VP8/VP9 hardware decoding is not available use h264ify extension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal).
+**Tip:** To reduce CPU usage while watching YouTube where VP8/VP9 hardware decoding is not available use the h264ify extension (available for [Firefox](https://addons.mozilla.org/firefox/addon/h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)) or the enhanced-h264ify extension (available for [Firefox](https://addons.mozilla.org/firefox/addon/enhanced-h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)).

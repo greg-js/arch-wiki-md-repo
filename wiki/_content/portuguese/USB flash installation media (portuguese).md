@@ -69,7 +69,7 @@ Execute o seguinte comando, substituindo `/dev/**sdx**` pela sua unidade, por ex
 
 ```
 
-Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre [dd](/index.php/Dd "Dd"). Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
+Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre [dd](/index.php/Dd_(Portugu%C3%AAs) "Dd (Português)"). Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
 
 ##### Usando etcher
 

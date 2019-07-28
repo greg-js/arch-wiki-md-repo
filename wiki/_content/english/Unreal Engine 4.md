@@ -6,7 +6,11 @@ Related articles
 
 The content of this article was originally written on [Unreal Engine wiki](https://wiki.unrealengine.com/Building_On_Linux#Setting_up_on_Arch_Linux) and adapted specifically for Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Prerequisites](#Prerequisites)
     *   [1.1 Gain access to the source code](#Gain_access_to_the_source_code)
@@ -17,7 +21,7 @@ The content of this article was originally written on [Unreal Engine wiki](https
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Compilation problems](#Compilation_problems)
     *   [3.2 Runtime problems](#Runtime_problems)
-    *   [3.3 C++ code project problems](#C.2B.2B_code_project_problems)
+    *   [3.3 C++ code project problems](#C++_code_project_problems)
     *   [3.4 Disable Tooltips](#Disable_Tooltips)
     *   [3.5 Random freeze under KDE](#Random_freeze_under_KDE)
     *   [3.6 Slow rendered tooltips in KDE](#Slow_rendered_tooltips_in_KDE)
@@ -137,7 +141,7 @@ The StarterContent project is installed to /opt/unreal-engine/Samples/StarterCon
 
 The launcher with the Unreal Marketplace is not available for Linux yet[[3]](https://forums.unrealengine.com/showthread.php?52166-Unreal-launcher-for-linux), so apps like the ContentExamples project cannot be installed from Linux[[4]](https://answers.unrealengine.com/questions/301869/download-content-from-marketplace-on-linux.html).
 
-The marketplace apps can be downloaded using the [launcher](https://www.unrealengine.com/download) on Windows (Mac may also work), they are stored in:
+The marketplace apps can be downloaded using the [launcher](https://www.unrealengine.com/download) on Windows (or Mac), they are stored in:
 
 ```
    /Program Files (x86)/Epic Games/Launcher/VaultCache/

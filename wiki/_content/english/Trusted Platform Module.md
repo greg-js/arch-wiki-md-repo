@@ -1,4 +1,8 @@
-Trusted Platform Module (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
+Related articles
+
+*   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
+
+[Trusted Platform Module](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module") (TPM) is an international standard for a secure cryptoprocessor, which is a dedicated microprocessor designed to secure hardware by integrating cryptographic keys into devices.
 
 In practice a TPM can be used for various different security applications such as secure boot and key storage.
 
@@ -24,9 +28,9 @@ TPM is naturally supported only on devices that have TPM hardware support. If yo
 
 There are two very different TPM specifications: 1.2 and 2.0, which also use different software stacks.
 
-- TPM 1.2 uses the "TrouSerS" TSS (TCG software stack) by IBM, which is packaged as [trousers](https://aur.archlinux.org/packages/trousers/) (tcsd) and [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) (userspace). All software access the TPM through the *tcsd* daemon.
+*   TPM 1.2 uses the "TrouSerS" TSS (TCG software stack) by IBM, which is packaged as [trousers](https://aur.archlinux.org/packages/trousers/) (tcsd) and [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) (userspace). All software access the TPM through the *tcsd* daemon.
 
-- TPM 2.0 allows direct access via `/dev/tpm0` (one client at a time), managed access through the [tpm2-abrmd](https://www.archlinux.org/packages/?name=tpm2-abrmd) resource manager daemon, or kernel-managed access via `/dev/tpmrm0`. There are two choices of userspace tools, [tpm2-tools](https://www.archlinux.org/packages/?name=tpm2-tools) by Intel and [ibm-tss](https://aur.archlinux.org/packages/ibm-tss/) by IBM.
+*   TPM 2.0 allows direct access via `/dev/tpm0` (one client at a time), managed access through the [tpm2-abrmd](https://www.archlinux.org/packages/?name=tpm2-abrmd) resource manager daemon, or kernel-managed access via `/dev/tpmrm0`. There are two choices of userspace tools, [tpm2-tools](https://www.archlinux.org/packages/?name=tpm2-tools) by Intel and [ibm-tss](https://aur.archlinux.org/packages/ibm-tss/) by IBM.
 
 TPM 2.0 requires UEFI (native); BIOS or CSM systems can only use TPM 1.2.
 
@@ -153,7 +157,6 @@ The `tcsd.service` service may not start correctly due to permission issues.[[1]
 
 ## See also
 
-*   [TPM on Wikipedia](https://en.wikipedia.org/wiki/Trusted_Platform_Module "wikipedia:Trusted Platform Module")
 *   [Protecting systems with the TPM](http://lwn.net/Articles/674751/)
 *   [Embedded Security Subsystem on Thinkwiki](http://www.thinkwiki.org/wiki/Embedded_Security_Subsystem)
 *   [TPM Fundamentals (PDF)](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)

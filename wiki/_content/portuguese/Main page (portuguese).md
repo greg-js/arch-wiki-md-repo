@@ -50,18 +50,18 @@ Visite a [tabela de conteúdo](/index.php/Tabela_de_conte%C3%BAdo "Tabela de con
 
 ## Interação com o wiki
 
-	[Help:Reading (Português)](/index.php/Help:Reading_(Portugu%C3%AAs) "Help:Reading (Português)")
+	[Help:Leitura](/index.php/Help:Leitura "Help:Leitura")
 
 	Encontre esclarecimentos se você tiver dificuldade para entender instruções em alguns artigos.
 
-	[Help:Browsing (Português)](/index.php/Help:Browsing_(Portugu%C3%AAs) "Help:Browsing (Português)")
+	[Help:Navegação](/index.php/Help:Navega%C3%A7%C3%A3o "Help:Navegação")
 
 	Como pesquisar no wiki, localizar artigos relacionados e visualizar o wiki offline.
 
-	[ArchWiki:Contributing (Português)](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs) "ArchWiki:Contributing (Português)")
+	[ArchWiki:Contribuindo](/index.php/ArchWiki:Contribuindo "ArchWiki:Contribuindo")
 
 	O ponto de partida para aqueles que desejam contribuir para o wiki.
 
-	[Help:Editing (Português)](/index.php/Help:Editing_(Portugu%C3%AAs) "Help:Editing (Português)")
+	[Help:Edição](/index.php/Help:Edi%C3%A7%C3%A3o "Help:Edição")
 
 	Tutorial sobre edição de artigos e introdução à sintaxe de texto wiki.

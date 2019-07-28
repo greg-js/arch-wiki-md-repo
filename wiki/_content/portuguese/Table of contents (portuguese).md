@@ -58,9 +58,9 @@
 | <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(5)</small> |
 | <small>5.2.</small> [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>5.2.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
-| <small>5.3.</small> [Instant messaging](/index.php/Category:Instant_messaging_(Portugu%C3%AAs) "Category:Instant messaging (Português)") <small>(1) (também em [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)"))</small> |
-| <small>5.4.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(2)</small> |
-| <small>5.4.1.</small> [Instant messaging](/index.php/Category:Instant_messaging_(Portugu%C3%AAs) "Category:Instant messaging (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
+| <small>5.3.</small> [Instant messaging](/index.php/Category:Instant_messaging_(Portugu%C3%AAs) "Category:Instant messaging (Português)") <small>(2) (também em [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)"))</small> |
+| <small>5.4.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(1)</small> |
+| <small>5.4.1.</small> [Instant messaging](/index.php/Category:Instant_messaging_(Portugu%C3%AAs) "Category:Instant messaging (Português)") <small>(2) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>5.4.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(Portugu%C3%AAs) "Category:Internet Relay Chat (Português)") <small>(3)</small> |
 | <small>5.4.3.</small> [Web browser](/index.php/Category:Web_browser_(Portugu%C3%AAs) "Category:Web browser (Português)") <small>(3)</small> |
 | <small>5.5.</small> [Network Configuration](/index.php/Category:Network_Configuration_(Portugu%C3%AAs) "Category:Network Configuration (Português)") <small>(1)</small> |
@@ -84,7 +84,7 @@
 | <small>6.</small> [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)") <small>(0)</small> |
 | <small>6.1.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
 | <small>6.1.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
-| <small>6.1.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(12)</small> |
+| <small>6.1.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(13)</small> |
 | <small>6.1.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>6.1.2.2.</small> [Shell builtins](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>6.1.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |
@@ -100,7 +100,7 @@
 | <small>6.6.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Portugu%C3%AAs) "Category:Software comparisons (Português)") <small>(2)</small> |
 | <small>6.7.</small> [Software projects](/index.php/Category:Software_projects_(Portugu%C3%AAs) "Category:Software projects (Português)") <small>(0)</small> |
 | <small>6.7.1.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(5) (também em [DeveloperWiki](/index.php/Category:DeveloperWiki_(Portugu%C3%AAs) "Category:DeveloperWiki (Português)"))</small> |
-| <small>6.7.2.</small> [GNU](/index.php/Category:GNU_(Portugu%C3%AAs) "Category:GNU (Português)") <small>(2)</small> |
+| <small>6.7.2.</small> [GNU](/index.php/Category:GNU_(Portugu%C3%AAs) "Category:GNU (Português)") <small>(3)</small> |
 | <small>6.8.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(5)</small> |
 | <small>6.8.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>7.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(4)</small> |
@@ -110,7 +110,7 @@
 | <small>7.1.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(2)</small> |
 | <small>7.2.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
 | <small>7.2.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
-| <small>7.2.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(12)</small> |
+| <small>7.2.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(13)</small> |
 | <small>7.2.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>7.2.2.2.</small> [Shell builtins](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>7.2.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |
@@ -126,7 +126,7 @@
 | <small>7.6.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)"))</small> |
 | <small>7.7.</small> [File systems](/index.php/Category:File_systems_(Portugu%C3%AAs) "Category:File systems (Português)") <small>(4)</small> |
 | <small>7.8.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org_(Portugu%C3%AAs) "Category:Freedesktop.org (Português)") <small>(2)</small> |
-| <small>7.9.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(4)</small> |
+| <small>7.9.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Portugu%C3%AAs) "Category:Graphical user interfaces (Português)") <small>(5)</small> |
 | <small>7.9.1.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>7.9.2.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |
 | <small>7.9.2.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
@@ -142,16 +142,17 @@
 | <small>7.14.</small> [Logging](/index.php/Category:Logging_(Portugu%C3%AAs) "Category:Logging (Português)") <small>(1)</small> |
 | <small>7.15.</small> [Monitoring](/index.php/Category:Monitoring_(Portugu%C3%AAs) "Category:Monitoring (Português)") <small>(0)</small> |
 | <small>7.15.1.</small> [System monitors](/index.php/Category:System_monitors_(Portugu%C3%AAs) "Category:System monitors (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
-| <small>7.16.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(22)</small> |
-| <small>7.17.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
-| <small>7.18.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
-| <small>7.18.1.</small> [Cryptography](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
-| <small>7.18.1.1.</small> [Encryption](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(2)</small> |
-| <small>7.18.2.</small> [Sandboxing](/index.php/Category:Sandboxing_(Portugu%C3%AAs) "Category:Sandboxing (Português)") <small>(1)</small> |
-| <small>7.18.3.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(4) (também em [Protocols](/index.php/Category:Protocols_(Portugu%C3%AAs) "Category:Protocols (Português)"))</small> |
-| <small>7.18.4.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Portugu%C3%AAs) "Category:Virtual Private Network (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"), [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
-| <small>7.19.</small> [Synchronization](/index.php/Category:Synchronization_(Portugu%C3%AAs) "Category:Synchronization (Português)") <small>(0)</small> |
-| <small>7.19.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization_(Portugu%C3%AAs) "Category:Cloud synchronization (Português)") <small>(1)</small> |
-| <small>7.20.</small> [System recovery](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") <small>(2)</small> |
-| <small>7.21.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |
-| <small>7.21.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(Portugu%C3%AAs) "Category:Hypervisors (Português)") <small>(1)</small> |
+| <small>7.16.</small> [Notification](/index.php/Category:Notification_(Portugu%C3%AAs) "Category:Notification (Português)") <small>(1)</small> |
+| <small>7.17.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(22)</small> |
+| <small>7.18.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
+| <small>7.19.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
+| <small>7.19.1.</small> [Cryptography](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
+| <small>7.19.1.1.</small> [Encryption](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(2)</small> |
+| <small>7.19.2.</small> [Sandboxing](/index.php/Category:Sandboxing_(Portugu%C3%AAs) "Category:Sandboxing (Português)") <small>(1)</small> |
+| <small>7.19.3.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(4) (também em [Protocols](/index.php/Category:Protocols_(Portugu%C3%AAs) "Category:Protocols (Português)"))</small> |
+| <small>7.19.4.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network_(Portugu%C3%AAs) "Category:Virtual Private Network (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"), [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
+| <small>7.20.</small> [Synchronization](/index.php/Category:Synchronization_(Portugu%C3%AAs) "Category:Synchronization (Português)") <small>(0)</small> |
+| <small>7.20.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization_(Portugu%C3%AAs) "Category:Cloud synchronization (Português)") <small>(1)</small> |
+| <small>7.21.</small> [System recovery](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") <small>(2)</small> |
+| <small>7.22.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |
+| <small>7.22.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(Portugu%C3%AAs) "Category:Hypervisors (Português)") <small>(1)</small> |

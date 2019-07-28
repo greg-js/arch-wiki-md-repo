@@ -166,7 +166,7 @@ The kernel command line should use `loglevel=3` or `rd.udev.log_priority=3` as m
 
 If you use [Intel graphics](/index.php/Intel_graphics "Intel graphics"), set `i915.fastboot=1` in the kernel command line to avoid unnecessary modesetting (and screen blanking) on boot.
 
-*Further reading:*
+Further reading:
 
 *   [Phoronix: Linux 4.19 Adds Deferred Console Takeover Support For FBDEV - Cleaner Boot Process](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.19-FBDEV-Defer-Console)
 *   [Hans de Goede: Adding deferred fbcon console takeover to the Fedora kernels](https://lists.fedoraproject.org/archives/list/kernel@lists.fedoraproject.org/thread/3MWCKJ2DVJPC4INXPKB4ECFZLA7X5RTI/)

@@ -232,8 +232,7 @@ Now, after a while, OBS will begin building your package.
 #### Tips and tricks about openSUSE
 
 *   To see the build progress of your package, cd into its working directory, then: `osc results`.
-*   There are two repositories, Arch_Core and Arch_Extra. You'll probably want Arch_Extra, since it is more complete. [community] isn't currently available there as of this edit, so if your project has any dependencies in [community], you should include them (manually) in your (sub)project too.
-*   There is an unofficial arch-community repo [here](https://build.opensuse.org/project/show/home:roman-neuhauser:arch-community). You might clone a package from there with `osc branch home:roman-neuhauser:arch-community/<package-name> home:foo:bar/<package-name>`.
+*   There are three repositories, Arch:Core, Arch:Extra and Arch:Community. [community] can be appended as a "repository path" after adding the main Arch repository to the project.
 
 #### ca-certificates-utils package problem
 

@@ -211,21 +211,34 @@ $ nmcli radio wifi off
 
 For a comprehensive list of settings, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5).
 
-You have three methods to configure a connection after it has been created:
+Firstly you need to get list of connections:
+
+ `$ nmcli connection` 
+```
+NAME                UUID                                  TYPE      DEVICE
+Wired connection 2  e7054040-a421-3bef-965d-bb7d60b7cecf  ethernet  enp5s0
+Wired connection 1  997f2782-f0fc-301d-bfba-15421a2735d8  ethernet  enp0s25
+MY-HOME-WIFI-5G     92a0f7b3-2eba-49ab-a899-24d83978f308  wifi       --
+
+```
+
+Here you can use the first column as connection-id used later. In this example we pick `Wired connection 2` as a connection-id.
+
+You have three methods to configure a connection `Wired connection 2` after it has been created:
 
 	nmcli interactive editor
 
-	`nmcli connection edit *connection-id*`.
+	`nmcli connection edit 'Wired connection 2'`.
 Usage is well documented from the editor.
 
 	nmcli command line interface
 
-	`nmcli connection modify *connection-id* *setting*.*property* *value*`. See [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) for usage.
+	`nmcli connection modify 'Wired connection 2' *setting*.*property* *value*`. See [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) for usage. For example you can change its IPv4 route metric to 200 using `nmcli connection modify 'Wired connection 2' ipv4.route-metric 200` command.
 
 	Connection file
 
-	In `/etc/NetworkManager/system-connections/`, modify the corresponding `*connection-id*.nmconnection` file .
-Do not forget to reload the configuration file with `nmcli connection reload`
+	In `/etc/NetworkManager/system-connections/`, modify the corresponding `Wired connection 2.nmconnection` file .
+Do not forget to reload the configuration file with `nmcli connection reload`.
 
 ## Front-ends
 

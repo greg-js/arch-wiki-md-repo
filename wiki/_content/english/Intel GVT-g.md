@@ -36,7 +36,7 @@ You'll have to create a virtual GPU (vGPU) first, then assign it to your VM. The
 You'll need to:
 
 *   Use at least Linux 4.16 and [QEMU](/index.php/QEMU "QEMU") 2.12.
-*   Enable kernel modules `kvmgt vfio-iommu-type1 vfio-mdev`.
+*   [Enable](/index.php/Mkinitcpio#MODULES "Mkinitcpio") kernel modules `kvmgt vfio-iommu-type1 vfio-mdev`.
 *   Add `i915.enable_gvt=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable GPU virtualization.
 *   Find the PCI address and domain number of your GPU (`$GVT_PCI` and `$GVT_DOM` in commands below), as it resides in `/sys/bus/pci/devices`. It looks like this: `0000:00:02.0` - you can look it up by running `lspci -D -nn`, looking for `VGA compatible controller: Intel Corporation HD Graphics ...` and noting down the address on the left.
 *   Generate the vGPU GUID (`$GVT_GUID` in commands below) which you'll use to create and assign the vGPU. A single virtual GPU can be assigned only to a single VM - create as many GUIDs as you want vGPUs. (You can do so by running `uuidgen`.)
@@ -147,7 +147,7 @@ Download `vbios_gvt_uefi.rom` and place it somewhere world-accessible (we will u
 ```
 ...
     <qemu:arg value='-set'/>
-    <qemu:arg value='device.hostdev0.romfile=**/vbios_gvt.uefi.rom**'/>
+    <qemu:arg value='device.hostdev0.romfile=**/vbios_gvt_uefi.rom**'/>
 ...
 
 ```

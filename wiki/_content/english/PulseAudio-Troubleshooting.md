@@ -627,7 +627,7 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 *   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
 *   `beamforming=0` - See [[8]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[9]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
     *   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
-    *   `target_direction=a,e,r` - Only with "beamforming=1".
+    *   `target_direction=a,e,r` - Only with "beamforming=1". Note: If the module does not want to load with this argument, set azimuth (a) to the desired value, but set elevation (e) and radius (r) to 0.
 *   `mobile=0` - ?
     *   `routing_mode=speakerphone` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
     *   `comfort_noise=1` - ? - only valid with "mobile=1".

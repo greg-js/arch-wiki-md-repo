@@ -27,6 +27,8 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
             *   [1.1.2.4 Using Cygwin](#Using_Cygwin)
             *   [1.1.2.5 dd for Windows](#dd_for_Windows)
         *   [1.1.3 In macOS](#In_macOS)
+        *   [1.1.4 In Android](#In_Android)
+            *   [1.1.4.1 EtchDroid](#EtchDroid)
     *   [1.2 Using manual formatting](#Using_manual_formatting)
         *   [1.2.1 In GNU/Linux](#In_GNU/Linux_2)
         *   [1.2.2 In Windows](#In_Windows_2)
@@ -194,6 +196,16 @@ Now copy the ISO image file to the device. The `dd` command is similar to its Li
 ```
 
 This command will run silently. To view progress, send SIGINFO by pressing `Ctrl+t`. Note `diskX` here should not include the `s1` suffix, or else the USB device will only be bootable in UEFI mode and not legacy. After completion, macOS may complain that "The disk you inserted was not readable by this computer". Select 'Ignore'. The USB device will be bootable.
+
+#### In Android
+
+##### EtchDroid
+
+[EtchDroid](https://etchdroid.depau.eu/) is a OS image flasher for Android. It works without root permissions on Android 5 to Android 8\. According to bug reports it doesn't always work on Android 9 and Android 4.4.
+
+To create an Arch Linux installer, download the ISO image file on your Android device. Plug the USB drive to your device, using a USB-OTG adapter if needed. Open EtchDroid, select "Flash raw image", select your Arch ISO, then select your USB drive. Grant the USB API permission and confirm.
+
+Keep your phone on a table while it's writing the image: a lot of USB-OTG adapters are a bit wobbly and you might unplug it by mistake.
 
 ### Using manual formatting
 

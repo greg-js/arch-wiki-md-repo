@@ -20,7 +20,7 @@ Fan control can bring various benefits to your system, such as quieter working s
     *   [2.1 lm-sensors](#lm-sensors)
     *   [2.2 Configuration](#Configuration)
         *   [2.2.1 Tweaking](#Tweaking)
-    *   [2.3 fancontrol](#fancontrol)
+    *   [2.3 Running Fancontrol](#Running_Fancontrol)
 *   [3 NBFC](#NBFC)
     *   [3.1 Installation](#Installation)
     *   [3.2 Configuration](#Configuration_2)
@@ -44,6 +44,9 @@ Fan control can bring various benefits to your system, such as quieter working s
         *   [7.3.1 Setting up fancurve script](#Setting_up_fancurve_script)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Increase the fan divisor for sensors](#Increase_the_fan_divisor_for_sensors)
+    *   [8.2 Device Paths have Changed in /etc/fancontrol](#Device_Paths_have_Changed_in_/etc/fancontrol)
+        *   [8.2.1 Solution](#Solution)
+        *   [8.2.2 Alternative Solution: Absolute paths](#Alternative_Solution:_Absolute_paths)
 
 ## Overview
 
@@ -63,13 +66,16 @@ There are multiple working solutions for fan control for both desktops and noteb
 
 Support for newer motherboards may not yet be in the Linux kernel. Check the official [lm-sensors devices](https://hwmon.wiki.kernel.org/device_support_status) table to see if experimental drivers are available for such motherboards.
 
-It is recommended not to use `lm_sensors.service` to load the needed modules for fancontrol. Instead, manually place them in `/etc/modules-load.d/load_these.conf` since the order in which these modules are loaded dictate the order in which the needed symlinks for hwmon get created. In other words, using the `lm_sensors.service` causes inconsistencies boot-to-boot which will render the configuration file for fan control worthless for a consistency point of view. To avoid this problem:
-
-In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sensors-detect` accepting the defaults. In the `modules-load.d` file place one module name per line. Specifying them like this will create a reproducible order. Another alternative is to use absolute device names in the configuration file.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1415552#p1415552)
-
 ### lm-sensors
 
-After checking that [lm_sensors](/index.php/Lm_sensors "Lm sensors") is properly setup, run `sensors`.
+The first thing to do is to run
+
+```
+# sensors-detect
+
+```
+
+This will detect all of the sensors present and they will be used for fancontrol. After that, run the following to check if it detected the sensors correctly:
 
  `$ sensors` 
 ```
@@ -93,84 +99,59 @@ temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal di
 
 ### Configuration
 
-**Note:** Advanced users may want to skip this section and write `/etc/fancontrol` on their own, which also saves them from hearing all of the fans at full speed.
-
-Once sensors are properly configured, use `pwmconfig` to test and configure fan speed control. The default configuration options should create `/etc/fancontrol` configuration file:
+Once the sensors are properly configured, use `pwmconfig` to test and configure fan speed control. Following the guide should create /etc/fancontrol a customized configuration file. In the guide, the default answers are in parenthesis if you press enter without typing anything. Enter "y" for yes, "n" for no.
 
 ```
 # pwmconfig
 
 ```
 
+**Note:** Some users may experience issues when using /sys/class/hwmon/ paths for their configuration file. hwmon class device symlinks points to the absolute paths, and are used to group all of the hwmon sensors together into one folder for easier access. Sometimes, the order of the hwmon devices change from a reboot, causing fancontrol to stop working. Go to [#Device Paths have Changed in /etc/fancontrol](#Device_Paths_have_Changed_in_/etc/fancontrol) for more information on how to fix this.
+
 #### Tweaking
 
-**Note:** On several systems, the included script may report errors as it tries to calibrate fans to the respective pulse-width modulation (PWM). Users may safely ignore these errors. The problem is that the script does not wait long enough before ramping up or down the PWM.
-
-Users wishing more control may need to tweak the generated configuration. Here is a sample configuration file:
+Some users may want to manually tweak the config file after running pwmconfig, usually to fix something. For manually tweaking the /etc/fancontrol configuration file, check the fancontrol manpage for the definitions of the variables:
 
 ```
-INTERVAL=10
-DEVPATH=hwmon0=devices/platform/coretemp.0 hwmon2=devices/platform/w83627ehf.656
-DEVNAME=hwmon0=coretemp hwmon2=w83627dhg
-FCTEMPS=hwmon0/device/pwm1=hwmon0/device/temp1_input
-FCFANS= hwmon0/device/pwm1=hwmon0/device/fan1_input
-MINTEMP=hwmon0/device/pwm1=20
-MAXTEMP=hwmon0/device/pwm1=55
-MINSTART=hwmon0/device/pwm1=150
-MINSTOP=hwmon0/device/pwm1=105
+$ man fancontrol
 
 ```
 
-*   `INTERVAL`: how often the daemon should poll CPU temps and adjust fan speeds. INTERVAL is in seconds.
+Users will probably encounter the hwmon path issues as noted above in [#Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors)). Look at [#Device Paths have Changed in /etc/fancontrol](#Device_Paths_have_Changed_in_/etc/fancontrol) for more information.
 
-The rest of the configuration file is split into (at least) two values per configuration option. Each configuration option first points to a PWM device which is written to which sets the fan speed. The second "field" is the actual value to set. This allows monitoring and controlling multiple fans and temperatures.
+**Tip:** Use `MAXPWM` and `MINPWM` options that limit fan speed range. See the fancontrol manual page for details.
 
-*   `FCTEMPS`: The temperature input device to read for CPU temperature. The above example corresponds to `/sys/class/hwmon/hwmon0/device/temp1_input`.
-*   `FCFANS`: The current fan speed, which can be read (like the temperature) in `/sys/class/hwmon/hwmon0/device/fan1_input`
-*   `MINTEMP`: The temperature (°C) at which to **SHUT OFF** the CPU fan. Efficient CPUs often will not need a fan while idling. Be sure to set this to a temperature that *you know is safe*. Setting this to 0 is not recommended and may ruin your hardware!
-*   `MAXTEMP`: The temperature (°C) at which to spin the fan at its *MAXIMUM* speed. This should be probably be set to perhaps 10 or 20 degrees (°C) below your CPU's critical/shutdown temperature. Setting it closer to MINTEMP will result in higher fan speeds overall.
-*   `MINSTOP`: The PWM value at which your fan stops spinning. Each fan is a little different. Power tweakers can `echo` different values (between 0 and 255) to `/sys/class/hwmon/hwmon0/device/pwm1` and then watch the CPU fan. When the CPU fan stops, use this value.
-*   `MINSTART`: The PWM value at which your fan starts to spin again. This is often a higher value than MINSTOP as more voltage is required to overcome inertia.
-
-There are also two settings fancontrol needs to verify the configuration file is still up to date. The lines start with the setting name and an equality sign, followed by groups of hwmon-class-device=setting, separated by spaces. You need to specify each setting for each hwmon class device you use anywhere in the config, or fancontrol will not work.
-
-*   `DEVPATH`: Sets the physical device. You can determine this by executing the command
-
+**Tip:** Temperature and fan sensor paths could change as well (usually on a kernel update) (e.g. hwmon0/device/temp1_input becomes hwmon0/temp1_input). Check the system log to find out which path is the troublemaker:
 ```
-readlink -f /sys/class/hwmon/*[your-hwmon-device]*/device | sed -e 's/^\/sys\///'
-
-```
-
-*   `DEVNAME`: Sets the name of the device. Try:
-
-```
-$ sed -e 's/[[:space:]=]/_/g' /sys/class/hwmon/*[your-hwmon-device]*/device/name
-
-```
-
-**Tip:** Use `MAXPWM` and `MINPWM` options that limit fan speed range. See fancontrol manual page for details.
-
-**Tip:** Not only the `DEVPATH` may change on reboot due to different timing of module loading, but also e.g. the temperature sensor paths (hwmon0/device/temp1_input becomes hwmon0/temp1_input). This usually happens on a kernel update. Check the system log to find out which is the troublemaker:
-```
-# systemctl status fancontrol.service
+# systemctl status fancontrol.service 
 
 ```
 and correct your config file accordingly.
 
-### fancontrol
-
-**Note:** Upon upgrading/changing the kernel, running `fancontrol` may result in an error regarding changed device paths. This issue may be fixed by running `sensors-detect` again and restarting the system.
+### Running Fancontrol
 
 Try to run *fancontrol*:
 
 ```
-# /usr/bin/fancontrol
+# fancontrol
 
 ```
 
-A properly configured setup will not error out and will take control of system fans. Users should hear system fans slowing shortly after executing this command.
+A properly configured setup will not output errors and will take control of the system fans. Users should hear system fans starting shortly after executing this command.
 
-To enable starting *fancontrol* automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`.
+To enable starting *fancontrol* automatically on every boot, [enable](/index.php/Enable "Enable") `fancontrol.service`:
+
+```
+# systemctl enable fancontrol.service
+
+```
+
+To start it in the background, run
+
+```
+# systemctl start fancontrol.service
+
+```
 
 For an unofficial GUI [install](/index.php/Install "Install") [fancontrol-gui](https://aur.archlinux.org/packages/fancontrol-gui/) or [fancontrol-kcm](https://aur.archlinux.org/packages/fancontrol-kcm/).
 
@@ -200,7 +181,7 @@ $ nbfc config -a "Asus Zenbook UX430UA"
 
 ```
 
-**Note:** If you are getting `File Descriptor does not support writing`, delete `StagWare.Plugins.ECSysLinux.dll` [[2]](https://github.com/hirschmann/nbfc/issues/439) and [restart](/index.php/Restart "Restart") `nbfc.service`:
+**Note:** If you are getting `File Descriptor does not support writing`, delete `StagWare.Plugins.ECSysLinux.dll` [[1]](https://github.com/hirschmann/nbfc/issues/439) and [restart](/index.php/Restart "Restart") `nbfc.service`:
 ```
 # mv /opt/nbfc/Plugins/StagWare.Plugins.ECSysLinux.dll /opt/nbfc/Plugins/StagWare.Plugins.ECSysLinux.dll.old
 
@@ -568,3 +549,67 @@ Save the file, and run as root:
 which will reload the configuration files.
 
 Run `sensors` again, and check if there is an RPM readout. If not, increase the divisor to 8, 16, or 32\. YMMV!
+
+### Device Paths have Changed in /etc/fancontrol
+
+The enumerated hwmon symlinks located in /sys/class/hwmon/ might vary in order because the kernel modules do not load in a consistent order per boot. Because of this, it may cause fancontrol to not function correctly.
+
+#### Solution
+
+In `/etc/conf.d/lm_sensors`, there are 2 arrays that lists all of the modules detected when you execute `sensors-detect`. These get loaded in by fancontrol. If the file does not exist, run `sensors-detect` as root, accepting the defaults. Open (or create) `/etc/modules-load.d/modules.conf`. Get all of the modules listed from the 2 variables in {{ic|/etc/conf.d/lm_sensors/ and place them into the `/etc/modules-load.d/modules.conf` file, one module per line. Specifying them like this should make a defined order for the modules to load in, which should make the hwmon paths stay where they are and not change orders for every boot. If this doesnt work, I highly recommend finding another program to control your fans. If you cannot find any, then you could try using the alternative solution below.
+
+#### Alternative Solution: Absolute paths
+
+Using absolute file paths in fancontrol does not work by default, as it is programmed to only use the hwmon paths to get the files. The way it does this is that it detects whether the hwmon path provided in its config file `/etc/fancontrol` did not change, and uses the variables `DEVNAME` and `DEVPATH` to determine this. If your hwmon paths keep changing, this will prevent fancontrol from running no matter what you do. However, one can circumvent this problem. Open `/usr/bin/fancontrol`, and comment out this part of the script:
+
+```
+if ! ValidateDevices "$DEVPATH" "$DEVNAME"
+ then
+     echo "Configuration appears to be outdated, please run pwmconfig again" >&2
+     exit 1
+ fi
+
+```
+
+**Note:** Doing this may make fancontrol write input into files you gave it in the config file, no matter what the file is. This can corrupt files if you provide the wrong path. Be sure that you are using the correct path for your files.
+
+Commenting this out should effectively ignore the hwmon validation checks. You can also ignore the variables `DEVNAME` and `DEVPATH` in the config file as well. After this, replace all of the hwmon paths in the other variables with its absolute path. To make it easier, rerun `pwmconfig` to refresh the hwmon devices. The hwmon paths in the config file should now point to the correct absolute paths. For each hwmon path, run the following command:
+
+```
+"#" is the enumeration of the hwmon path
+$ readlink -f /sys/class/hwmon/hwmon#/device
+
+```
+
+This will give you the absolute path of the device.
+
+For example, a /etc/fancontrol file lists FCTEMPS as this:
+
+```
+FCTEMPS=hwmon2/pwm1=hwmon3/temp1_input
+
+```
+
+Executing `readlink -f /sys/class/hwmon/hwmon3/device` can, for example, output `/sys/devices/platform/coretemp.0/`. `cd` into this directory. If you see a `/hwmon/hwmon#/` directory, you have to do this in your fancontrol config file to replace the hwmon# path. From the previous example:
+
+```
+# BEFORE
+FCTEMPS=hwmon2/pwm1=hwmon3/temp1_input
+# AFTER
+FCTEMPS=hwmon2/pwm1=/sys/devices/platform/coretemp.0/hwmon/[[:print:]]*/temp1_input
+
+```
+
+Essentially, you must replace the hwmon path with the absolute path, concatenated with {{ic|/hwmon/[[:print:]]*/} so that bash can catch the random enumerated hwmon name.
+
+If you do not see the `/hwmon/hwmon#/` directory, then you do not have to worry about this. This means that the temperature files are in the root of the device folder. Just replace `hwmon#/` with the absolute file path. For example:
+
+```
+#BEFORE
+FCTEMPS=hwmon2/pwm1=hwmon3/temp1_input
+#AFTER
+FCTEMPS=hwmon2/pwm1=/sys/devices/platform/coretemp.0/temp1_input
+
+```
+
+After replacing all of paths, fancontrol should work fine.

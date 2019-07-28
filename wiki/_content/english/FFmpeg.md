@@ -199,7 +199,7 @@ $ ffmpeg -i *video*.VOB -acodec aac -b:a 256k -ar 96000 -vcodec libx264 \
 
 ### x264 video stabilization
 
-Video stablization using the vbid.stab plugin entails two passes.
+Video stablization using the vid.stab plugin entails two passes.
 
 #### First pass
 

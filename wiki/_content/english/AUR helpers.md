@@ -115,7 +115,7 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 
 	[https://bitbucket.org/kachelaqa/pkgbrowser](https://bitbucket.org/kachelaqa/pkgbrowser) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
-*   **Octopi** — Qt 5 pacman wrapper written in C++. May lead to defective system as [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service [regularly performs](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
+*   **Octopi** — Qt 5 pacman wrapper written in C++.
 
 	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
 
@@ -147,10 +147,6 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 
 ## Other
 
-*   **aur.rs** — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
-
-	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
-
 *   **aur-talk** — Fetch and display AUR comments.
 
 	[https://github.com/GermainZ/aur-talk](https://github.com/GermainZ/aur-talk) || [aur-talk-git](https://aur.archlinux.org/packages/aur-talk-git/)
@@ -170,3 +166,7 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 *   **python3-aur** — Python 3 modules and helper utilities for accessing AUR package information and automating AUR interactions.
 
 	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+
+*   **raur** — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
+
+	[https://gitlab.com/davidbittner/raur](https://gitlab.com/davidbittner/raur) ||

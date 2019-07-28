@@ -240,6 +240,8 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 ```
 
+For a detailed explanation of these flags, see the [Qt article on High DPI Displays](https://doc.qt.io/qt-5/highdpi.html).
+
 If automatic detection of DPI does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
 
 **Note:**
@@ -255,6 +257,14 @@ An [alternative](https://bugreports.qt.io/browse/QTBUG-53022) is e.g.:
 QT_FONT_DPI=96 vym
 
 ```
+
+**Note:**
+
+Recap of the environmental variables (from [the Qt doc](https://doc.qt.io/qt-5/highdpi.html))
+
+*   `QT_AUTO_SCREEN_SCALE_FACTOR [boolean]` enables automatic scaling, based on the pixel density of the monitor. This will not change the size of point sized fonts, since point is a physical unit of measure. Multiple screens may get different scale factors.
+*   `QT_SCALE_FACTOR [numeric]` defines a global scale factor for the whole application, including point sized fonts.
+*   `QT_SCREEN_SCALE_FACTORS [list]` specifies scale factors for each screen. This will not change the size of point sized fonts. This environment variable is mainly useful for debugging, or to work around monitors with wrong EDID information (Extended Display Identification Data). The format can be either a semicolon-separated list of scale factors in the same order as `QGuiApplication::screens()`, or a semicolon-separated list of name-value pairs, where name is the same as `QScreen::name()`.
 
 ### GDK 3 (GTK+ 3)
 

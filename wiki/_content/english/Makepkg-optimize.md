@@ -5,7 +5,7 @@ Related articles
 
 [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) is a collection of supplemental [tidy](https://git.archlinux.org/pacman.git/commit/?id=295a3491adc4af5c8634ac82777212ed9c664457), [buildenv](https://git.archlinux.org/pacman.git/commit/?id=508b4e3ec0cb3e365942f4dc0626edda4789932b), and [executable](https://git.archlinux.org/pacman.git/commit/?id=0bb04fa16a82db133dd010478c1256bc8500c5e7) scripts for [pacman-git](https://aur.archlinux.org/packages/pacman-git/) which provide macros for several kinds of optimization in the `build()` and `package()` stages.
 
-**Note:** As with any package in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) has no official support. You should read, and you may post [comments](/index.php/Talk:Arch_User_Repository#Commenting_on_packages "Talk:Arch User Repository") on its AUR page.
+**Note:** As with any package in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) has no official support. You should read, and you may post [comments](/index.php/User:Quequotion/Arch_User_Repository#Commenting_on_packages "User:Quequotion/Arch User Repository") on its AUR page.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

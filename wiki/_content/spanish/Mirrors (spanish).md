@@ -6,7 +6,11 @@ Artículos relacionados
 
 Esta guía esta orientada a ayudarle a seleccionar y configurar los mejores mirrors para su equipo, y mostrarle un listado de los mirrors actuales disponibles.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Habilitar un mirror especifico](#Habilitar_un_mirror_especifico)
     *   [1.1 Forzar a pacman para actualizar la lista de paquetes](#Forzar_a_pacman_para_actualizar_la_lista_de_paquetes)
@@ -248,6 +252,7 @@ Estos mirrors *no* están listados en el archivo de configuración `/etc/pacman.
 *   [http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.4.tuna.tsinghua.edu.cn/archlinux/) *(solo ipv4)*
 *   [http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/](http://mirrors.6.tuna.tsinghua.edu.cn/archlinux/) *(solo ipv6)*
 *   [http://mirror.lzu.edu.cn/archlinux/](http://mirror.lzu.edu.cn/archlinux/) - *Universidad de Lanzhou*
+*   [http://mirrors.dgut.edu.cn/archlinux/](http://mirrors.dgut.edu.cn/archlinux/) - *Universidad de tecnología de Dongguan*
 
 ### Francia
 

@@ -140,7 +140,7 @@ Verify that the configuration has been loaded:
 The settings in the `docker.service` file will not translate into containers. To achieve this you must set `ENV` variables in your `Dockerfile` thus:
 
 ```
-FROM base/archlinux
+FROM archlinux/base
 ENV http_proxy="http://192.168.1.1:3128"
 ENV https_proxy="https://192.168.1.1:3128"
 

@@ -8,7 +8,11 @@
 
 本文描述了 ***Synaptics 输入驱动*** 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -40,7 +44,7 @@
     *   [3.9 一体化触摸板 (也被称为 ClickPads)](#一体化触摸板_(也被称为_ClickPads))
         *   [3.9.1 Bottom edge correction](#Bottom_edge_correction)
 *   [4 疑难解答](#疑难解答)
-    *   [4.1 Touchpad does not work after resuming from hibernate/suspend](#Touchpad_does_not_work_after_resuming_from_hibernate/suspend)
+    *   [4.1 在从挂起/休眠恢复后触摸板不工作](#在从挂起/休眠恢复后触摸板不工作)
     *   [4.2 xorg.conf.d/70-synaptics.conf在 MATE 上失效](#xorg.conf.d/70-synaptics.conf在_MATE_上失效)
     *   [4.3 触摸板无法工作, Xorg.0.log 中显示 "Query no Synaptics: 6003C8"](#触摸板无法工作,_Xorg.0.log_中显示_"Query_no_Synaptics:_6003C8")
     *   [4.4 触摸板被识别为"PS/2 Generic Mouse" 或者 "Logitech PS/2 mouse"](#触摸板被识别为"PS/2_Generic_Mouse"_或者_"Logitech_PS/2_mouse")
@@ -531,8 +535,8 @@ Then have udev run this script when USB mices are plugged in or out, with these 
 
  `/etc/udev/rules.d/01-touchpad.rules` 
 ```
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", RUN+="/usr/bin/mouse-pnp-event-handler.sh add %k"
-SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/mouse-pnp-event-handler.sh remove %k"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", RUN+="/usr/bin/mouse-pnp-event-handler.sh add %k"
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/mouse-pnp-event-handler.sh remove %k"
 ```
 
 ### 一体化触摸板 (也被称为 ClickPads)
@@ -620,7 +624,7 @@ Option "AreaBottomEdge"         "4000"
 
 ## 疑难解答
 
-### Touchpad does not work after resuming from hibernate/suspend
+### 在从挂起/休眠恢复后触摸板不工作
 
 Occasionally touchpads will fail to work when the computer resumes from sleep or hibernation. This can often be corrected without rebooting by
 
@@ -637,6 +641,8 @@ modprobe psmouse
 ```
 
 Now switch back to the tty that X is running on. If you chose the right module, your touchpad should be working again.
+
+如果您使用的是笔记本电脑，在合上笔记本电脑盖子后再次打开之后遇到这个问题，可以修改您的电源管理策略，将合上盖子的行为改为“关闭屏幕”，而不是”挂起“或者”休眠“
 
 ### xorg.conf.d/70-synaptics.conf在 MATE 上失效
 

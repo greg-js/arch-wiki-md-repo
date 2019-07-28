@@ -421,7 +421,7 @@ See also [UWSGI#Running uWSGI](/index.php/UWSGI#Running_uWSGI "UWSGI").
 
 ### Setting strong permissions for the filesystem
 
-You should set the permissions for `config/`, `data/` and `apps/` as strict as possible. That means that your HTTP user (*http* in case of [apache](https://www.archlinux.org/packages/?name=apache)) should own them, and the should have `700` permissions. You can use the following script to achieve this.
+You should set the permissions for `config/`, `data/` and `apps/` as strict possible. That means that your HTTP user (*http* in case of [apache](https://www.archlinux.org/packages/?name=apache)) should own them, and the should have `700` permissions. You can use the following script to achieve this.
 
  `oc-perms` 
 ```
@@ -1154,7 +1154,7 @@ Alter the `/etc/loolwsd/loolwsd.xml` file, so that:
 Then:
 
 *   [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `loolwsd.service`;
-*   configure Nginx as showed in /usr/share/doc/loolwsd/example.nginx.conf, and restart it.
+*   configure Nginx as showed in `/usr/share/doc/loolwsd/example.nginx.conf`, and restart it.
 
 ## See also
 
