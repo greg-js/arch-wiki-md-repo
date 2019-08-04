@@ -418,7 +418,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
 
-	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
 
@@ -438,7 +438,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://www.archlinux.org/packages/?name=vimb)
 
 ###### Browsers based on qt5-webkit
 
@@ -554,7 +554,7 @@ The [Python](/index.php/Python "Python") standard library module [http.server](h
 
 *   **webhook** — Small server for creating HTTP endpoints (hooks)
 
-	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://aur.archlinux.org/packages/webhook/)
+	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://www.archlinux.org/packages/?name=webhook)
 
 *   **Woof** — An ad-hoc single file webserver; Web Offer One File.
 

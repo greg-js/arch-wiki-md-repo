@@ -4,7 +4,11 @@ From [the official site](http://www.offensive-security.com/metasploit-unleashed/
 
 Currently, Metasploit requires to setup and configure [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") on target system to work. This wiki will show how to get Metasploit working with a PostgreSQL database.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Armitage](#Armitage)
@@ -42,7 +46,7 @@ A sample `database.yml` file is packaged with Armitage as `/usr/share/metasploit
 
 Msfconsole requires [Ruby](/index.php/Ruby "Ruby") and some [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") to run without error.
 
-Follow the [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") and [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM") articles to install and use Ruby version 2.5.1 (see [Metasploit Git Repo](https://github.com/rapid7/metasploit-framework/blob/master/.ruby-version)) and set it to default.
+Follow the [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") and [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM") articles to install and use Ruby version 2.6.2 (see [Metasploit Git Repo](https://github.com/rapid7/metasploit-framework/blob/master/.ruby-version)) and set it to default.
 
 Once complete, source the newly created RVM installation:
 

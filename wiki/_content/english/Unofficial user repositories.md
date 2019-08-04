@@ -340,7 +340,7 @@ Server = https://downloads.devkitpro.org/packages/linux
 *   **Key-ID:** CBAE582A876533FD
 *   **Keyfile:** [https://mirror.repohost.de/disastrousaur.key](https://mirror.repohost.de/disastrousaur.key)
 
-**Warning:** disastrousaur and disastrousarm are undergoing restructuring (e.g. support for the aarch64 architecture and more). The repository itself will be available again under the disastrousaur name in the next week. Please make sure you have the URL changed accordingly as shown below. Sorry for causing any inconvenience.
+**Warning:** disastrousaur and disastrousarm have now been merged under the disastrousaur name Please make sure you've changed the Server URL for your repos accordingly. Builds for other architectures may come out as I got enough time getting things running.
 
 ```
 [disastrousaur]

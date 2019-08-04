@@ -33,7 +33,7 @@ To run Davinci Resolve it is required to have suitable OpenGL driver and suitabl
 | GPU Vendor | OpenCL driver | Tested version | Works with D.R. 16.0b6-1 |
 | Neutral | opencl-mesa | No |
 | AMD | [opencl-amdgpu-pro-orca](https://aur.archlinux.org/packages/opencl-amdgpu-pro-orca/) | 19.30_838629-1 | Yes |
-| [opencl-amdgpu-pro-pal](https://aur.archlinux.org/packages/opencl-amdgpu-pro-pal/) | Not tested |
+| [opencl-amdgpu-pro-pal](https://aur.archlinux.org/packages/opencl-amdgpu-pro-pal/) | 19.30_838629-1 | Yes |
 | Intel | [intel-compute-runtime](https://www.archlinux.org/packages/?name=intel-compute-runtime) | 19.27.13361-1 | Core dumped |
 | [beignet](https://www.archlinux.org/packages/?name=beignet) | 1.3.2+12+gfc5f430c-2 | Core dumped |
 | [intel-opencl](https://aur.archlinux.org/packages/intel-opencl/) | 5.0.r63503-2 | Core dumped |

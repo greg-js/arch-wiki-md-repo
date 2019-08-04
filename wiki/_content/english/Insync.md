@@ -65,3 +65,7 @@ ExecStart=/usr/bin/insync start
 When running `insync start`, the status tray icon does not appear and insync does not start.
 
 According to [[1]](https://forums.insynchq.com/t/insync-arch-linux-not-starting-segfault-at-730-error-14/8893), this is due to `QGtkStyle`. You will need to set the Qt4 theme to something other than GTK using `qtconfig-qt4`.
+
+This issue is sometimes observed when using the Nouveau driver for NVIDIA graphics cards, and can be resolved by using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers.
+
+Running `insync start --no-daemon` from the terminal logs output to stdout and prevents the process from being detached. This makes troubleshooting much simpler.

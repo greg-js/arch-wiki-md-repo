@@ -37,7 +37,7 @@ Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.
 To start customizing termite copy the base example file to your home dir first:
 
 ```
- $ cp /etc/xdg/termite/config ~/.config/termite/config
+$ cp /etc/xdg/termite/config ~/.config/termite/config
 
 ```
 
@@ -70,7 +70,7 @@ background  = #3f3f3f
 
 You can reload Termite's config file without exiting by pressing `Ctrl+Shift+r` from within Termite.
 
-Alternative you can send a `USR1` signal:
+Alternatively, you can send a `USR1` signal to all Termite instances:
 
 ```
 $ killall -USR1 termite

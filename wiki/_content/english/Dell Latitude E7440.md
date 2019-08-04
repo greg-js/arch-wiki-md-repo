@@ -1,6 +1,10 @@
 The Dell Latitude E7440 is a business Ultrabook™. Generally speaking, it has nice support of (Arch) Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware Overview](#Hardware_Overview)
 *   [2 Further Information about other Configurations](#Further_Information_about_other_Configurations)
@@ -65,7 +69,7 @@ The instructions below focus on GPT partitioning scheme, and relies on UEFI feat
 **Before any installation please make sure that latest system BIOS firmware is installed first**.
 
 *   A USB flash drive can be prepared on another computer. Firmware update process does not need an operating system and it can be done with BIOS utilities of the laptop.
-*   The latest BIOS firmware, which is an EXE file, can be downloaded from the Dell website.
+*   The latest BIOS firmware, which is an EXE file, can be downloaded from the ["Dell website"](https://www.dell.com/support/home/us/en/19/product-support/product/latitude-e7440-ultrabook/drivers).
 *   On Windows, the firmware can be burned with [Rufus](https://rufus.akeo.ie/) into a bootable USB flash drive. USB Flash drive can be made UEFI/GPT bootable.
 *   After the USB flash is prepared, plug the USB flash stick, boot the laptop by pressing F12 and follow the instructions to boot the USB flash.
 *   After the firmware update, during reboot press F2 and check whether the shown BIOS version is the one which is burned.
@@ -81,14 +85,12 @@ Further remarks for this laptop:
 
 Following partitioning scheme was tested on a 256GB SSD drive:
 
-*   /dev/sda1/ ESP with label ESP, to be mounted to /boot/efi, file system FAT32, between the sectors 2048 – 2097151\. 2097151 is last sector in the 1st GB of SSD. As mentioned in ["Managing EFI Boot Loaders for Linux: Basic Principles"](http://www.rodsbooks.com/efi-bootloaders/principles.html), the ESP should have 550 MB at least. For max. performance on SSD, 1 GB was allocated.
-*   /dev/sda2/ file system ext4, between the sectors 2097152 – 4194303 (exactly 1 GB boundary, 2nd 1 GB area of the SSD). It can be reserved for multi-boot installations in the future.
-*   /dev/sda3/ swap with label SWAP, between the sectors 4194304 – 20971519, giving 8 GB of swap for 8 GB laptop. The end sector is last sector of the 1st 10 GB of SSD.
-*   /dev/sda4/ to be mounted as/data, file system ext4, between the sectors 50331648 – 134217727, intended for general storage, and can be shared between many Linux installations. This is a 40 GB area which end is aligned to 1st 64 GB of SSD. As it can be figured out, 10 GB end and 24 GB beginning was not allocated. This was reserved if 8 GB RAM is upgraded to 16 GB RAM for which at least 16 GB swap could be needed. Since 1st 2x 1GB was reserved for ESP and sda2, this area starts at 24GB boundary, thus giving 40 GB to the end of 1st 64 GB.
-*   /dev/sda5 label root partition with label ROOT_ARCHLINUX, file system ext4, to be mounted to /, between the sectors 134217728 – 268.435.455, giving exactly 64 GB boundary, aligned to the 1st 64 GB.
+*   /dev/sda1/ ESP with label ESP, to be mounted to /boot/efi, file system FAT32\. As mentioned in ["Managing EFI Boot Loaders for Linux: Basic Principles"](http://www.rodsbooks.com/efi-bootloaders/principles.html), the ESP should have 550 MB at least. For max. performance on SSD, 1 GB was allocated.
+*   /dev/sda2/ file system ext4 - 1 GB boundary (2nd 1 GB area of the SSD). It can be reserved for multi-boot installations in the future.
+*   /dev/sda3/ swap with label SWAP, 8 GB for the laptop with 8 GB. The end sector is last sector of the 1st 10 GB of SSD.
+*   /dev/sda4/ to be mounted as/data, file system ext4 and can be shared between many Linux installations. This is a 40 GB area which end is aligned to 1st 64 GB of SSD. End of 1st 10 GB and 24 GB beginning was not allocated. This was reserved if 8 GB RAM is upgraded to 16 GB RAM for which at least 16 GB swap could be needed. Since 1st 2x 1GB was reserved for ESP and sda2, this area starts at 24GB boundary, thus giving 40 GB to the end of 1st 64 GB.
+*   /dev/sda5 file system ext4, to be mounted to /, 2nd 64 GB.
 *   With the scheme above, an 256GB SSD has been partitioned for the 1st 2x 64 GB. The last two 64GB regions can be partitioned for other Linux operating systems. In [Partitioning](/index.php/Partitioning "Partitioning") it is advised to reserve 15-20 GB for a distro. For maximum flexibility 64 GB is taken in the scheme above.
-
-For max. performance on SSD, partitioons are aligned to 1 GB and 64 GB, respectively.
 
 ## Drivers
 
@@ -136,10 +138,10 @@ This seems to be related to [https://bugs.launchpad.net/ubuntu/+source/linux/+bu
 case "$1" in
     post)
         /bin/chvt 1
-    ;;
+    ;;
     pre)
         /bin/chvt 2
-    ;;
+    ;;
 esac
 
 ```

@@ -469,7 +469,7 @@ Check /usr/share/X11/xkb/symbols/group for more standard examples.
 
 ### Caps hjkl as vim keys
 
-In order to rebind caps h,j,k,l to vim's arrow keys, we could naively replace symbols in the symbols section, but this would not clear any modifiers. Clearing modifiers is trickier. This method allows linux users to achieve functionality akin to AHK's blind command, albeit somewhat crudely. We can clear modifiers when an action is triggered in compatability if we redirect a dummy keysym to the one we want and use clearmodifiers while we do it:
+In order to rebind caps h,j,k,l to vim's arrow keys, we could naively replace symbols in the symbols section, but this would not clear any modifiers. Clearing modifiers is trickier. This method allows linux users to achieve functionality akin to AHK's blind command. We can clear modifiers when an action is triggered in compatibility if we redirect a dummy keysym to the one we want and use clearmodifiers while we do it:
 
 ```
  xkb_compatibility "complete" {

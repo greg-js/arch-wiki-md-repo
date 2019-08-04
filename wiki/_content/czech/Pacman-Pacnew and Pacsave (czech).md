@@ -1,13 +1,17 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Na začátek](#Na_za.C4.8D.C3.A1tek)
-*   [2 backup soubory balíčků](#backup_soubory_bal.C3.AD.C4.8Dk.C5.AF)
-*   [3 Popis druhů](#Popis_druh.C5.AF)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Na začátek](#Na_začátek)
+*   [2 backup soubory balíčků](#backup_soubory_balíčků)
+*   [3 Popis druhů](#Popis_druhů)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
     *   [3.3 .pacorig](#.pacorig)
-*   [4 Lokalizace *.pac* souborů](#Lokalizace_.2A.pac.2A_soubor.C5.AF)
-*   [5 Nástroje pro soubory .pacnew](#N.C3.A1stroje_pro_soubory_.pacnew)
+*   [4 Lokalizace *.pac* souborů](#Lokalizace_*.pac*_souborů)
+*   [5 Nástroje pro soubory .pacnew](#Nástroje_pro_soubory_.pacnew)
 *   [6 Zdroje](#Zdroje)
 
 ## Na začátek

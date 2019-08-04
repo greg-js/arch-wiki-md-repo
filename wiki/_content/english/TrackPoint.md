@@ -21,6 +21,7 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
     *   [4.2 Trackpoint buttons do not always work](#Trackpoint_buttons_do_not_always_work)
+    *   [4.3 Two-finger scroll ceases to work after suspending](#Two-finger_scroll_ceases_to_work_after_suspending)
 *   [5 See also](#See_also)
 
 ## GUI configuration
@@ -204,6 +205,17 @@ If you discover that disabling the touchpad in the BIOS disables the wrong butto
 # rmmod psmouse; modprobe psmouse proto=imps
 
 ```
+
+### Two-finger scroll ceases to work after suspending
+
+On some laptops, psmouse seems to fail on start up, or after suspend:
+
+```
+psmouse serio1: synaptics: Unable to initialize device
+
+```
+
+One workaround is to use add `psmouse.synaptics_intertouch=0` to your kernel commandline.
 
 ## See also
 

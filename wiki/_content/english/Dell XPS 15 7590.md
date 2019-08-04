@@ -38,6 +38,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
     *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
     *   [3.3 Backlight](#Backlight)
     *   [3.4 Backlight function keys](#Backlight_function_keys)
+    *   [3.5 Backlight in Wayland](#Backlight_in_Wayland)
 *   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
     *   [4.1 WIFI](#WIFI)
 *   [5 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
@@ -148,6 +149,12 @@ video/brightnessdown) light -U 3 ;;
 start and enable the service:
 
 `systemctl enable acpid.service`, `systemctl start acpid.service`.
+
+### Backlight in Wayland
+
+The xrandr command does not work with Wayland. Instead you can use the [icc-brightness](https://www.archlinux.org/packages/?name=icc-brightness) tool to control the brightness.
+
+You can find it here: [https://github.com/udifuchs/icc-brightness](https://github.com/udifuchs/icc-brightness)
 
 ## Wifi and Bluetooth
 

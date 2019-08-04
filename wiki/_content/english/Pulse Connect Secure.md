@@ -1,6 +1,10 @@
 [Pulse Connect Secure](https://www.pulsesecure.net/connect-secure) (PCS), previously known as Juniper SSL VPN, is a commercial VPN solution targeted at businesses.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 AUR](#AUR)
@@ -11,23 +15,23 @@
         *   [2.2.1 Instructions for 64-bit users](#Instructions_for_64-bit_users)
         *   [2.2.2 Automatic installation of ncsvc using msjnc](#Automatic_installation_of_ncsvc_using_msjnc)
         *   [2.2.3 Manual installation of msjnc](#Manual_installation_of_msjnc)
-        *   [2.2.4 Note regarding Server/URL](#Note_regarding_Server.2FURL)
+        *   [2.2.4 Note regarding Server/URL](#Note_regarding_Server/URL)
     *   [2.3 JVPN](#JVPN)
         *   [2.3.1 Installation](#Installation_2)
         *   [2.3.2 Running as root](#Running_as_root)
         *   [2.3.3 Running as a regular user](#Running_as_a_regular_user)
 *   [3 Workarounds](#Workarounds)
-    *   [3.1 64-bit Java (workaround 1)](#64-bit_Java_.28workaround_1.29)
-    *   [3.2 64-bit Java (workaround 2)](#64-bit_Java_.28workaround_2.29)
-    *   [3.3 Motif and libstdc++-libc6.2-2.so.3](#Motif_and_libstdc.2B.2B-libc6.2-2.so.3)
+    *   [3.1 64-bit Java (workaround 1)](#64-bit_Java_(workaround_1))
+    *   [3.2 64-bit Java (workaround 2)](#64-bit_Java_(workaround_2))
+    *   [3.3 Motif and libstdc++-libc6.2-2.so.3](#Motif_and_libstdc++-libc6.2-2.so.3)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Password incorrect](#Password_incorrect)
     *   [4.2 Login succeeds but Network Connect will not launch](#Login_succeeds_but_Network_Connect_will_not_launch)
     *   [4.3 Network Connect launched but the VPN does not work](#Network_Connect_launched_but_the_VPN_does_not_work)
     *   [4.4 Network Connect launched and a configuration error message is displayed](#Network_Connect_launched_and_a_configuration_error_message_is_displayed)
-    *   [4.5 ncapp.error Failed to connect/authenticate with IVE.](#ncapp.error_Failed_to_connect.2Fauthenticate_with_IVE.)
+    *   [4.5 ncapp.error Failed to connect/authenticate with IVE.](#ncapp.error_Failed_to_connect/authenticate_with_IVE.)
     *   [4.6 ncsvc and kernel versions 3.19 and 4.5 to 4.9](#ncsvc_and_kernel_versions_3.19_and_4.5_to_4.9)
-    *   [4.7 Unauthorized new route has been added, disconnecting](#Unauthorized_new_route_has_been_added.2C_disconnecting)
+    *   [4.7 Unauthorized new route has been added, disconnecting](#Unauthorized_new_route_has_been_added,_disconnecting)
 
 ## Installation
 
@@ -335,6 +339,8 @@ Finally, ensure that the useragent is `Firefox`, not `Bon Echo`. You may need to
 ### Network Connect launched but the VPN does not work
 
 Run `ip route` to to check if the route is present. Network connect has a diagnosis tool in the GUI. You can also checks the logs (also available in the GUI).
+
+Other cause for VPN not working can lie in DNS settings. Check whether they really are set (usually in /etc/resolv.conf) and that DNS cache does not intervene (stop systemd-resolved service if running).
 
 **Note:** `/etc/resolv.conf` will periodically get overwritten by DHCPCD so your VPN will stop working eventually. If that happens, just restart Network Connect. You might also wish to save your `/etc/resolv.conf` file so that your VPN settings can be easily restored. As of 2007, there is no known solution to the problem but there is a bug report on Red Hat Bugzilla.
 

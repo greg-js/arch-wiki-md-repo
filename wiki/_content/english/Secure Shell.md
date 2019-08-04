@@ -2,6 +2,7 @@ Related articles
 
 *   [SSHFS](/index.php/SSHFS "SSHFS")
 *   [Mosh](/index.php/Mosh "Mosh")
+*   [VPN over SSH](/index.php/VPN_over_SSH "VPN over SSH")
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell"):
 
@@ -13,7 +14,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
 
 ## Implementations
 
-*   **Dropbear** — Lightweight SSH server. The command-line ssh client is named [dbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dbclient.1).
+*   **[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) "wikipedia:Dropbear (software)")** — Lightweight SSH server. The command-line ssh client is named [dbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dbclient.1).
 
 	[https://matt.ucc.asn.au/dropbear/dropbear.html](https://matt.ucc.asn.au/dropbear/dropbear.html) || [dropbear](https://www.archlinux.org/packages/?name=dropbear)
 

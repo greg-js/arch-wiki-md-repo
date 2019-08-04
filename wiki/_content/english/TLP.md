@@ -45,7 +45,7 @@ See [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#r
 For advanced battery functions, i.e. charge thresholds and recalibration, install the following package(s):
 
 *   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) – tp-smapi is needed for battery charge thresholds, recalibration and specific status output of tlp-stat
-*   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) – acpi-call is needed for battery charge thresholds and recalibration on Sandy Bridge and newer models (X220/T420, X230/T430 et al.)
+*   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) – acpi-call is needed for battery charge thresholds and recalibration on Sandy Bridge and newer models (X220/T420, X230/T430 et al.). Use [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) if not running kernels from [official repositories](/index.php/Official_repositories "Official repositories").
 
 See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/docs/tlp-faq.html#kernmod), for details.
 

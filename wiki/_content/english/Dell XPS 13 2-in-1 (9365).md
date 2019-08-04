@@ -21,6 +21,7 @@ The Dell XPS 13 2-in-1 (9365) is the early 2017 model. It can be used like a tab
     *   [2.2 Screen not rotating](#Screen_not_rotating)
     *   [2.3 Fingerprint sensor](#Fingerprint_sensor)
     *   [2.4 Soundcard turning off and coil whine](#Soundcard_turning_off_and_coil_whine)
+    *   [2.5 Reduce throttling](#Reduce_throttling)
 
 ## Installation
 
@@ -71,4 +72,22 @@ The fingerprint sensor on this computer is not yet supported. [[6]](https://www.
 
 By default, the soundcard automatically turns of which leads to delays when there is a song to play (or distortion). This can also cause coil whine especially while scrolling with headphones plugged and sound muted. To solve this, you can force the soundcard to always stay awake :
 
- `/etc/modprobe.d/audio_no_powersave.conf`  `options snd_hda_intel power_save=0`
+ `/etc/modprobe.d/audio_no_powersave.conf`  `options snd_hda_intel power_save=0` 
+
+### Reduce throttling
+
+The CPU seems to throttle already at around 50 to 60°C. Install [throttled](https://www.archlinux.org/packages/?name=throttled) to raise this limit. It raises it by default to 90°C. Intel's product page lists 100°C as the temperature limit. [[8]](https://ark.intel.com/content/www/de/de/ark/products/95452/intel-core-i5-7y54-processor-4m-cache-up-to-3-20-ghz.html) Though it is not recommenced to run it at such a high temperature. You can change these settings at
+
+```
+/etc/lenovo_fix.conf
+
+```
+
+After installation you need enable the systemd service with
+
+```
+$ sudo systemctl enable --now lenovo_fix.service
+
+```
+
+Beware that a higher temperature might reduce the longevity of your device.

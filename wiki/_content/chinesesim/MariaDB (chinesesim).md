@@ -2,12 +2,14 @@ Related articles
 
 *   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
 *   [Adminer](/index.php/Adminer "Adminer")
+*   [JDBC and MySQL](/index.php/JDBC_and_MySQL "JDBC and MySQL")
+*   [Open Database Connectivity](/index.php/Open_Database_Connectivity "Open Database Connectivity")
 
 **翻译状态：** 本文是英文页面 [MySQL](/index.php/MySQL "MySQL") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-07，点击[这里](https://wiki.archlinux.org/index.php?title=MySQL&diff=0&oldid=435153)可以查看翻译后英文页面的改动。
 
-MySQL是一个广泛使用的多线程多用户式数据库。具体特性请参看[官方网站](http://www.mysql.com/)。
+MySQL是一个可靠的、高性能的、功能全面的数据库，旨在为用户提供长期免费的、向下兼容的、可取代[MySQL](/index.php/MySQL "MySQL")的数据库服务。
 
-**注意:** MariaDB 现在是 Arch Linux 官方默认的 MySQL 实现。Oracle MySQL 已被移动到 [AUR](/index.php/AUR "AUR")，推荐所有用户[升级](#Upgrade_from_Oracle_MySQL_to_MariaDB)到 MariaDB。参见[这条公告](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/)。
+**注意:** 自2013年起，MariaDB就被Arch Linux当作官方默认的MySQL实现[[1]](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/)。Oracle MySQL 已被移动到 [AUR](/index.php/AUR "AUR")，推荐所有用户[升级](#Upgrade_from_Oracle_MySQL_to_MariaDB)到 MariaDB。参见[这条公告](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/)。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -57,7 +59,7 @@ Archlinux 选择的 MySQL [默认实现](https://www.archlinux.org/news/mariadb-
 
 ```
 
-**注意:** 出于安全考虑，systemd 的 .service 文件设置了 `ProtectHome=true` 来禁止 MariaDB 访问 `/home`、`/root` 和 `/run/user` 目录内的文件。`datadir` 必须要放在以上文件夹之外，并且由 `mysql` 用户和用户组 [所有](/index.php/Chown "Chown")。 如果要改变这个设置，你可以根据以下链接创建一个替代的 service 文件：[[1]](https://mariadb.com/kb/en/mariadb/systemd/)
+**注意:** 出于安全考虑，systemd 的 .service 文件设置了 `ProtectHome=true` 来禁止 MariaDB 访问 `/home`、`/root` 和 `/run/user` 目录内的文件。`datadir` 必须要放在以上文件夹之外，并且由 `mysql` 用户和用户组 [所有](/index.php/Chown "Chown")。 如果要改变这个设置，你可以根据以下链接创建一个替代的 service 文件：[[2]](https://mariadb.com/kb/en/mariadb/systemd/)
 
 然后 [enable](/index.php/Enable "Enable") 或者 [start](/index.php/Start "Start") `mariadb.service`。
 

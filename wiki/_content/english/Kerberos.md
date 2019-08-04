@@ -4,7 +4,11 @@ Related articles
 
 [Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) is a network authentication system. See [krb5 documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/index.html).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Server configuration](#Server_configuration)
@@ -127,6 +131,13 @@ Finally, Add the KDC principal to the server's keytab:
 ```
 Entry for principal host/kerberos.example.com with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
 Entry for principal host/kerberos.example.com with kvno 2, encryption type aes128-cts-hmac-sha1-96 added to keytab FILE:/etc/krb5.keytab.
+
+```
+
+Quit the Kerberos administration tool:
+
+```
+kadmin.local: quit
 
 ```
 

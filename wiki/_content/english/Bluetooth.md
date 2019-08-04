@@ -40,7 +40,6 @@ Related articles
     *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
     *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
     *   [6.15 Interference between Headphones and Mouse](#Interference_between_Headphones_and_Mouse)
-    *   [6.16 Failed to pair: org.bluez.Error.ConnectionAttemptFailed](#Failed_to_pair:_org.bluez.Error.ConnectionAttemptFailed)
 
 ## Installation
 
@@ -51,7 +50,7 @@ Related articles
 
 **Note:**
 
-*   By default the bluetooth daemon will only give out bnep0 devices to users that are a member of the `lp` group. Make sure to add your user to that group if you intend to connect to a bluetooth tether. You can change the group that is required in the file `/usr/share/dbus-1/system.d/bluetooth.conf`.
+*   By default the bluetooth daemon will only give out bnep0 devices to users that are a member of the `lp` [group](/index.php/Users_and_groups#System_groups "Users and groups"). Make sure to add your user to that group if you intend to connect to a bluetooth tether. You can change the group that is required in the file `/usr/share/dbus-1/system.d/bluetooth.conf`.
 *   Some Bluetooth adapters are bundled with a Wi-Fi card (e.g. [Intel Centrino](http://www.intel.com/content/www/us/en/wireless-products/centrino-advanced-n-6235.html)). These require that the Wi-Fi card is firstly enabled (typically a keyboard shortcut on a laptop) in order to make the Bluetooth adapter visible to the kernel.
 *   Some Bluetooth cards (e.g. Broadcom) conflict with the network adapter. Thus, you need to make sure that your Bluetooth device get connected before the network service boot.
 *   Some tools such as hcitool and hciconfig have been deprecated upstream, and are no longer included in [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils). Since these tools will no longer be updated, it is recommended that scripts be updated to avoid using them. If you still desire to use them, install [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). See [FS#53110](https://bugs.archlinux.org/task/53110) and [the Bluez mailing list](https://www.spinics.net/lists/linux-bluetooth/msg69239.html) for more information.
@@ -507,7 +506,3 @@ If you experience audio stuttering while using a bluetooth mouse and keyboard si
 # hciconfig hci0 lp HOLD,SNIFF,PARK
 
 ```
-
-### Failed to pair: org.bluez.Error.ConnectionAttemptFailed
-
-When getting this error on pairing via `bluetoothctl`, among other things (search the internet), rebooting can help.

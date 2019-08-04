@@ -26,16 +26,17 @@ This list is by no means complete. If you know of a community that is not listed
 *   [6 Italian](#Italian)
 *   [7 Japanese](#Japanese)
 *   [8 Lithuanian](#Lithuanian)
-*   [9 Persian](#Persian)
-*   [10 Polish](#Polish)
-*   [11 Portuguese](#Portuguese)
-*   [12 Russian](#Russian)
-*   [13 Serbian](#Serbian)
-*   [14 Spanish](#Spanish)
-*   [15 Swedish](#Swedish)
-*   [16 Turkish](#Turkish)
-*   [17 Ukrainian](#Ukrainian)
-*   [18 Vietnamese](#Vietnamese)
+*   [9 Norwegian](#Norwegian)
+*   [10 Persian](#Persian)
+*   [11 Polish](#Polish)
+*   [12 Portuguese](#Portuguese)
+*   [13 Russian](#Russian)
+*   [14 Serbian](#Serbian)
+*   [15 Spanish](#Spanish)
+*   [16 Swedish](#Swedish)
+*   [17 Turkish](#Turkish)
+*   [18 Ukrainian](#Ukrainian)
+*   [19 Vietnamese](#Vietnamese)
 
 ## Chinese
 
@@ -45,7 +46,10 @@ This list is by no means complete. If you know of a community that is not listed
 *   Forum: [https://bbs.archlinuxcn.org/](https://bbs.archlinuxcn.org/)
 *   Forum: [https://forum.ubuntu.org.cn/viewforum.php?f=155](https://forum.ubuntu.org.cn/viewforum.php?f=155)
 *   Forum: [http://tieba.baidu.com/f?kw=archlinux](http://tieba.baidu.com/f?kw=archlinux)
+*   Telegram Chat: [https://t.me/archlinuxcn_group](https://t.me/archlinuxcn_group)
+*   [archlinuxcn] repo: [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
 *   Wiki: [Main page (简体中文)](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")
+*   Planet: [https://planet.archlinuxcn.org/](https://planet.archlinuxcn.org/)
 
 ### Taiwan
 
@@ -98,6 +102,11 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Forum: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
 *   Wiki: [lt:Main page](https://wiki.archlinux.org/index.php/Main_page_(Lietuvi%C5%A1kai) "lt:Main page")
+
+## Norwegian
+
+*   IRC: #archlinux-nordics @ freenode
+*   Homepage: [https://archlinux.no/](https://archlinux.no/)
 
 ## Persian
 

@@ -7,7 +7,7 @@
 *   [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)")
 *   [Opera](/index.php/Opera "Opera")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 18 июля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=577570).
+**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 1 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=577635).
 
 [Firefox](https://www.mozilla.org/ru/firefox/) — популярный графический веб-браузер с открытым исходным кодом, разрабатываемый [Mozilla](https://www.mozilla.org/ru/).
 
@@ -257,7 +257,9 @@ user_pref("toolkit.scrollbox.verticalScrollDistance", 2);
 
 ### Тёмные темы
 
-Если используется тёмная тема [GTK (Русский)](/index.php/GTK_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK (Русский)") (например, Arc Dark), рекомендуется запускать Firefox с более светлой темой (например, Adwaita). См. [GTK+ (Русский)#Темы](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Темы "GTK+ (Русский)") и [Firefox/Tweaks#Unreadable input fields with dark GTK themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK_themes "Firefox/Tweaks") для получения более подробной информации.
+Рекомендуется запускать Firefox с более светлой темой (например, Adwaita), если используется тёмная тема [GTK (Русский)](/index.php/GTK_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK (Русский)") (например, Arc Dark). См. [GTK+ (Русский)#Темы](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Темы "GTK+ (Русский)") и [Firefox/Tweaks#Unreadable input fields with dark GTK themes](/index.php/Firefox/Tweaks#Unreadable_input_fields_with_dark_GTK_themes "Firefox/Tweaks") для получения более подробной информации.
+
+В качестве альтернативы, начиная с Firefox 68, интерфейсу Firefox и даже другим сайтам можно задать приоритет использования тёмной темы независимо от темы Firefox и системной темы GTK. Задайте параметру `browser.in-content.dark-mode` значение `true`, а параметру `ui.systemUsesDarkTheme` значение `1` на странице `about:config` [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1488384#c23).
 
 ### Частота смены кадров
 
@@ -271,15 +273,15 @@ Firefox может не определить корректное значени
 
 ### Расположение новых вкладок
 
-Используйте параметры `browser.tabs.insertAfterCurrent` и `browser.tabs.insertRelatedAfterCurrent`, чтобы настроить расположение новых вкладок (относительное или абсолютное). См. [[1]](https://support.mozilla.org/en/questions/1229062) для получения более подробной информации.
+Используйте параметры `browser.tabs.insertAfterCurrent` и `browser.tabs.insertRelatedAfterCurrent`, чтобы настроить расположение новых вкладок (относительное или абсолютное). См. [[2]](https://support.mozilla.org/en/questions/1229062) для получения более подробной информации.
 
 ### Скриншот страницы
 
-*Сделать скриншот* можно из меню *Действия страницы* (три горизонтальных точки) в адресной строке или из контекстного меню страницы (доступному по щелчку ПКМ). См. [[2]](https://support.mozilla.org/ru/kb/skrinshoty-firefox) для получения более подробной информации.
+*Сделать скриншот* можно из меню *Действия страницы* (три горизонтальных точки) в адресной строке или из контекстного меню страницы (доступному по щелчку ПКМ). См. [[3]](https://support.mozilla.org/ru/kb/skrinshoty-firefox) для получения более подробной информации.
 
 **Примечание:**
 
-*   Кнопка *Сохранить* обманчиво загружает скриншот на поддомен firefox.com. Задайте параметру `extensions.screenshots.upload-disabled` значение `true`, чтобы отключить эту функцию. [[3]](https://github.com/mozilla-services/screenshots/issues/3503)
+*   Кнопка *Сохранить* обманчиво загружает скриншот на поддомен firefox.com. Задайте параметру `extensions.screenshots.upload-disabled` значение `true`, чтобы отключить эту функцию. [[4]](https://github.com/mozilla-services/screenshots/issues/3503)
 *   Если включён параметр [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy"), для создания скриншота вышеописанным методом потребуется дать разрешение *Extract Canvas Data*.
 
 Также можно воспользоваться кнопкой создания скриншота всей страницы в *Инструментах разработчика*, которые доступны по нажатию `F12` или `Ctrl+Shift+i` (сперва может потребоваться включить эту кнопку в *Настройках инструментов разработчика > Доступные кнопки инструментов > Сделать скриншот всей страницы*).
@@ -405,7 +407,7 @@ C официального сайта [поддержки Mozilla](https://suppo
 
 Если вы обновили плагин в то время, когда Firefox был запущен, то в файл будет записана неправильная информация. При следующем запуске Firefox покажет сообщение `Firefox has prevented the outdated plugin "XXXX" from running on ...` во время воспроизведения контента соответствующим плагином, что часто случается с официальным [плагином Adobe Flash Player](/index.php/Browser_plugins_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Adobe_Flash_Player "Browser plugins (Русский)").
 
-Решение состоит в удалении файла `pluginreg.dat` из директории профиля. Firefox автоматически пересоздаст данный файл при следующем закрытии. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+Решение состоит в удалении файла `pluginreg.dat` из директории профиля. Firefox автоматически пересоздаст данный файл при следующем закрытии. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Контекстное меню JavaScript не отображается на некоторых сайтах
 
@@ -421,13 +423,13 @@ C официального сайта [поддержки Mozilla](https://suppo
 
 Firefox может не запоминать язык по умолчанию, если установлены только системные словари [hunspell](https://www.archlinux.org/packages/?name=hunspell). Это исправляется установкой хотя бы одного [словаря](https://addons.mozilla.org/firefox/language-tools/) в виде Firefox-плагина. Также после этого появится вкладка **Словари** в **Дополнениях**. Кроме того, может потребоваться изменить порядок предпочитаемых языков для отображения веб-страниц в `about:preferences#general`, чтобы язык проверки орфографии по умолчанию соответствовал языку словаря из дополнения.
 
-Связанные вопросы на **StackExchange**: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Связанные вопросы на **StackExchange**: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Соответствующие отчёты об ошибках: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Не отображаются некоторые символы MathML
 
-Необходимо установить шрифты Latin Modern Math и STIX (см. страницу MDN: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)) для корректного отображения MathML.
+Необходимо установить шрифты Latin Modern Math и STIX (см. страницу MDN: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)) для корректного отображения MathML.
 
 В Arch Linux данные шрифты содержатся в пакетах [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **и** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), но недоступны fontconfig по умолчанию. См. [TeX Live#Making fonts available to Fontconfig](/index.php/TeX_Live#Making_fonts_available_to_Fontconfig "TeX Live") для получения более подробной информации. Также можно попробовать другие [математические шрифты](/index.php/Fonts#Math "Fonts").
 

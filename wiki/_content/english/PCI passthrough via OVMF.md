@@ -35,7 +35,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [5.1.2 XML examples](#XML_examples)
             *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c/1t_CPU_w/o_Hyperthreading_Example)
             *   [5.1.2.2 4c/2t Intel CPU pinning example](#4c/2t_Intel_CPU_pinning_example)
-            *   [5.1.2.3 4c/2t AMD CPU example](#4c/2t_AMD_CPU_example)
+            *   [5.1.2.3 4c/2t AMD CPU example (Before ComboPi AGESA)](#4c/2t_AMD_CPU_example_(Before_ComboPi_AGESA))
     *   [5.2 Huge memory pages](#Huge_memory_pages)
         *   [5.2.1 Transparent huge pages](#Transparent_huge_pages)
         *   [5.2.2 Static huge pages](#Static_huge_pages)
@@ -87,6 +87,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.14 Cannot boot after upgrading ovmf](#Cannot_boot_after_upgrading_ovmf)
     *   [10.15 QEMU via cli pulseaudio stuttering/delay](#QEMU_via_cli_pulseaudio_stuttering/delay)
     *   [10.16 Bluescreen at boot since Windows 10 1803](#Bluescreen_at_boot_since_Windows_10_1803)
+    *   [10.17 AMD Ryzen / BIOS updates (AGESA) yields "Error: internal error: Unknown PCI header type ‘127’"](#AMD_Ryzen_/_BIOS_updates_(AGESA)_yields_"Error:_internal_error:_Unknown_PCI_header_type_‘127’")
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -361,7 +362,7 @@ Next, find your keyboard and mouse devices in `/dev/input/by-id/`. You may find 
 
 Replace `MOUSE_NAME` and `KEYBOARD_NAME` with your device id. You will also need to include these devices in your qemu config, and setting the user and group to one that has access to your input devices:
 
- `$ vim /etc/libvirt/qemu.conf` 
+ `/etc/libvirt/qemu.conf` 
 ```
 ...
 user = "<your_user>"
@@ -444,6 +445,8 @@ CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
 
 ```
 
+**Note:** Ryzen 3000 ComboPi AGESA changes topology to match Intel example, even on prior generation CPUs. Above valid only on older AGESA.
+
 `lscpu -e` on a 6c/12t Intel 8700k:
 
 ```
@@ -512,7 +515,7 @@ If you do not need all cores for the guest, it would then be preferable to leave
 
 ```
 
-##### 4c/2t AMD CPU example
+##### 4c/2t AMD CPU example (Before ComboPi AGESA)
 
  `$ virsh edit [vmname]` 
 ```
@@ -693,14 +696,14 @@ Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Creat
 #!/bin/sh
 
 for i in /sys/bus/pci/devices/*/boot_vga; do
-	if [ $(cat "$i") -eq 0 ]; then
-		GPU="${i%/boot_vga}"
-		AUDIO="$(echo "$GPU" | sed -e "s/0$/1/")"
-		echo "vfio-pci" > "$GPU/driver_override"
-		if [ -d "$AUDIO" ]; then
-			echo "vfio-pci" > "$AUDIO/driver_override"
-		fi
-	fi
+    if [ $(cat "$i") -eq 0 ]; then
+        GPU="${i%/boot_vga}"
+        AUDIO="$(echo "$GPU" | sed -e "s/0$/1/")"
+        echo "vfio-pci" > "$GPU/driver_override"
+        if [ -d "$AUDIO" ]; then
+            echo "vfio-pci" > "$AUDIO/driver_override"
+        fi
+    fi
 done
 
 modprobe -i vfio-pci
@@ -717,59 +720,45 @@ In this case we manually specify the GPU to bind.
 DEVS="0000:03:00.0 0000:03:00.1"
 
 if [ ! -z "$(ls -A /sys/class/iommu)" ]; then
-	for DEV in $DEVS; do
-		echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
-	done
+    for DEV in $DEVS; do
+        echo "vfio-pci" > /sys/bus/pci/devices/$DEV/driver_override
+    done
 fi
 
 ```
 
 #### Script installation
 
-Create `/etc/initcpio/install/vfio` with the following:
+Create the following files:
+
+ `/etc/initcpio/install/vfio` 
+```
+#!/bin/bash
+build() {
+    add_file /usr/bin/vfio-pci-override.sh
+    add_runscript
+}
 
 ```
-   #!/bin/bash
-   build() {
-       add_file /usr/bin/vfio-pci-override.sh
-       add_runscript
-   }
-
+ `/etc/initcpio/hooks/vfio` 
 ```
+#!/usr/bin/ash
 
-Create `/etc/initcpio/hooks/vfio` with the following:
-
-```
-   #!/usr/bin/ash
-
-   run_hook() {
-       msg ":: Triggering vfio-pci override"
-       /bin/sh /usr/bin/vfio-pci-override.sh
-   }
-
-```
-
-Edit `/etc/mkinitcpio.conf`
-
-Remove any video drivers from MODULES
-
-Add `/usr/bin/vfio-pci-override.sh` to FILES:
-
-```
-  FILES=(/usr/bin/vfio-pci-override.sh)
+run_hook() {
+    msg ":: Triggering vfio-pci override"
+    /bin/sh /usr/bin/vfio-pci-override.sh
+}
 
 ```
 
-Add `vfio` to HOOKS:
+Edit `/etc/mkinitcpio.conf`:
 
-```
-   HOOKS=(base udev autodetect modconf block filesystems keyboard fsck vfio)
+1.  Remove any video drivers from `MODULES`.
+2.  Add `/usr/bin/vfio-pci-override.sh` to FILES: `FILES=(/usr/bin/vfio-pci-override.sh)` 
+3.  Add `vfio` to `HOOKS`: `HOOKS=(... vfio)` 
+4.  [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and reboot.
 
-```
-
-[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") and reboot:
-
-Warning: If there is a syntax error in the hook, the boot will fail with a kernel panic. Be careful when generating the hook, and have install media handy in case you have to recover.
+**Warning:** If there is a syntax error in the hook, the boot will fail with a kernel panic. Be careful when generating the hook, and have install media handy in case you have to recover.
 
 ### Passing the boot GPU to the guest
 
@@ -1615,6 +1604,10 @@ To make it permanently you can create a modprobe file `kvm.conf`:
 options kvm ignore_msrs=1
 
 ```
+
+### AMD Ryzen / BIOS updates (AGESA) yields "Error: internal error: Unknown PCI header type ‘127’"
+
+AMD users have been experiencing breakage of their KVM setups after updating the BIOS on their motherboard. There is a kernel [patch](https://clbin.com/VCiYJ), (see [Kernel/Arch_Build_System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System") for instruction on compiling kernels with custom patches) that can resolve the issue as of now (7/28/19), but this is not the first time AMD has made an error of this very nature, so take this into account if you are considering updating your BIOS in the future as a VFIO user.
 
 ## See also
 

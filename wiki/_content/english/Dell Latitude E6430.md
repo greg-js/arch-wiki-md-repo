@@ -30,7 +30,7 @@ Seems to work out of the box
 
 **GPU**
 
-Install the [nvidia-390xx](https://aur.archlinux.org/packages/nvidia-390xx/) package from pacman.
+Install the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) package from pacman.
 
 **PC/SC**
 

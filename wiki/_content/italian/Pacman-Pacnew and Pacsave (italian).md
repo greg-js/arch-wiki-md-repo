@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Per Iniziare](#Per_Iniziare)
 *   [2 File di backup dei pacchetti](#File_di_backup_dei_pacchetti)
@@ -6,7 +10,7 @@
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
     *   [3.3 .pacorig](#.pacorig)
-*   [4 Localizzare i file .pac*](#Localizzare_i_file_.pac.2A)
+*   [4 Localizzare i file .pac*](#Localizzare_i_file_.pac*)
 *   [5 Gestire i file .pacnew](#Gestire_i_file_.pacnew)
     *   [5.1 Usare Meld per sistemare le Differenze](#Usare_Meld_per_sistemare_le_Differenze)
 *   [6 Risorse](#Risorse)

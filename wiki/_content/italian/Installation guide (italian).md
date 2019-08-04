@@ -15,7 +15,7 @@ Per istruzioni piu` dettagliate sui vari programmi vedere le rispettive [man pag
     *   [1.4 Aggiornare l'orologio di sistema](#Aggiornare_l'orologio_di_sistema)
     *   [1.5 Partizionare il disco](#Partizionare_il_disco)
     *   [1.6 Formattare le partizioni](#Formattare_le_partizioni)
-    *   [1.7 Mount the file systems](#Mount_the_file_systems)
+    *   [1.7 Montare il file system](#Montare_il_file_system)
 *   [2 Installazione](#Installazione)
     *   [2.1 Selezionare il mirror corretto](#Selezionare_il_mirror_corretto)
     *   [2.2 Installare i pacchetti base](#Installare_i_pacchetti_base)
@@ -112,9 +112,9 @@ Una volta che le partizioni sono state create, vanno formattate con un [file sys
 
 Vedere [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") per dettagli.
 
-### Mount the file systems
+### Montare il file system
 
-[Montare](/index.php/Mount "Mount") il filesiste della partizione di root in `/mnt`, per esempio:
+[Montare](/index.php/Mount "Mount") il file system della partizione di root in `/mnt`, per esempio:
 
 ```
 # mount /dev/*sda1* /mnt

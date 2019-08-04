@@ -524,8 +524,6 @@ The below is a colored example of the virtual console login screen in `/etc/issu
 
 ```
 
-Save the file and make it executable with `chmod +x /etc/issue`.
-
 See also:
 
 *   [https://bbs.archlinux.org/viewtopic.php?pid=386429#p386429](https://bbs.archlinux.org/viewtopic.php?pid=386429#p386429)

@@ -211,7 +211,7 @@ EndSection
 
 *   **brightnessctl** — Легковесный инструмент контроля яркости (совместимый с Wayland).
 
-	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)
+	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl)
 
 *   **light** — Light последователь *LightScript*.
 

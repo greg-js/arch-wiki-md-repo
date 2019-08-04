@@ -140,7 +140,7 @@ For applications which do not provide a [systemd unit](/index.php/Systemd#Using_
 
 	Add it to the [dconf key](#Configuration) `org.pantheon.desktop.cerbere.monitored-processes`.
 
-	Should the process stop, [cerbere](https://aur.archlinux.org/packages/cerbere/) will respawn it.
+	Should the process stop, [cerbere](https://www.archlinux.org/packages/?name=cerbere) will respawn it.
 
 *   Launch from a [.desktop](/index.php/.desktop ".desktop") file:
 

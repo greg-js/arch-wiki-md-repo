@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-02-12，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=545158)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-07-28，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=576866)可以查看翻译后英文页面的改动。
 
 [Vivaldi](http://vivaldi.com/) 是由前 [Opera](/index.php/Opera "Opera") 创立者和开发团队成员新近开发的一款浏览器。Vivaldi 基于 [Chromium](/index.php/Chromium "Chromium") 开发，专注于个性化体验。
 
@@ -42,4 +42,4 @@ Vivaldi 兼容 Chrome 的绝大部分扩展。可以从[Chrome 网上商店](htt
 ## 参阅
 
 *   [官方网站](http://vivaldi.com/)
-*   [Vivaldi浏览器中文讨论区](https://vivaldi.club/)（由前*Opera中国*员工[@Csineneo](https://twitter.com/csineneo)创建的非官方论坛）
+*   [Vivaldi浏览器中文讨论区](https://vivaldi.club/)（由前*Opera中国*员工[@Csineneo](https://twitter.com/csineneo)创建的非官方中文论坛）

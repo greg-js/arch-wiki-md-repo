@@ -28,7 +28,7 @@ There are many different methods of providing accessibility to users that have a
 
 Most modern desktop environments ship with an extensive set of features, among which one can find a tool to configure the accessibility options with. Generally, these options can be found listed under those of 'accessibility', or under those of the corresponding input device (e.g. 'keyboard' and 'mouse'). For example, with [GNOME](https://help.gnome.org/users/gnome-help/stable/a11y.html.en) and [KDE](https://userbase.kde.org/Applications/Accessibility).
 
-**Note:** When using the configuration tools of a desktop environment, be weary of possible conflicts with settings of desktop-environment-independent tools.
+**Note:** When using the configuration tools of a desktop environment, be aware of possible conflicts with settings of desktop-environment-independent tools.
 
 ## Independent to specific desktop environments
 
@@ -174,7 +174,7 @@ Once satisfied, you can enable it on start by placing the first line in `~/.xini
 
 #### Mouse keys
 
-[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "w:Mouse keys") is a Xorg feature (like StickyKeys) to use the keyboard (especially a numeric keypad) as a pointing device. It can replace a mouse, or work beside it. It is disabled by default. You can use
+[Mouse keys](https://en.wikipedia.org/wiki/Mouse_keys "wikipedia:Mouse keys") is a Xorg feature (like StickyKeys) to use the keyboard (especially a numeric keypad) as a pointing device. It can replace a mouse, or work beside it. It is disabled by default. You can use
 
 ```
 $ xset q | grep "Mouse Keys"
@@ -190,7 +190,7 @@ $ setxkbmap -option keypad:pointerkeys
 
 If you use a [xmodmap](/index.php/Xmodmap "Xmodmap") configuration, be aware *setxkbmap* resets it.
 
-**Tip:** Some third-party keyboard layouts, for example the [German Neo layout](https://wiki.neo-layout.org/wiki/Tastaturmaus), may use different ways to activate mouse keys.
+**Tip:** Some third-party keyboard layouts, for example the [German Neo layout](https://wiki.neo-layout.org), may use different ways to activate mouse keys.
 
 To enable Mouse keys permanently, add
 

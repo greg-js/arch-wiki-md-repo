@@ -97,7 +97,7 @@ $ htop
 
 *   If applications using direct rendering are slow (i.e those which use the GPU, such as video players, games, or even a [window manager](/index.php/Window_manager "Window manager")), then improving GPU performance should help. The first step is to verify if direct rendering is actually enabled. This is indicated by the `glxinfo` command, part of the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package:
 
- `$ glxinfo | grep direct` 
+ `$ glxinfo | grep "direct rendering"` 
 ```
 direct rendering: Yes
 

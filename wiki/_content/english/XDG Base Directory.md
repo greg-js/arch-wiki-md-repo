@@ -297,7 +297,7 @@ Supported only in Git master branch, there's no updated stable release yet.
 | [Transmission](/index.php/Transmission "Transmission") | `~/.transmission` | [b71a298](https://github.com/transmission/transmission/commit/b71a298) |
 | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [570b321](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/commit/?id=570b321) |
 | [Uzbl](/index.php/Uzbl "Uzbl") | [c6fd63a](https://github.com/uzbl/uzbl/commit/c6fd63a) | [[60]](https://github.com/uzbl/uzbl/pull/150) |
-| [vimb](https://aur.archlinux.org/packages/vimb/) |
+| [vimb](https://www.archlinux.org/packages/?name=vimb) |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | `~/.VirtualBox` | [4.3](https://www.virtualbox.org/ticket/5099?action=diff&version=7) | [[61]](https://www.virtualbox.org/ticket/5099) |
 | [vis](https://www.archlinux.org/packages/?name=vis) | `~/.vis` | 
 

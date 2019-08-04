@@ -467,6 +467,13 @@ Make sure `dom.w3c_touch_events.enabled` is either set to 1 (*enabled*) or 2 (*d
 
 Add `MOZ_USE_XINPUT2 DEFAULT=1` to `/etc/security/pam_env.conf` and then logout or reboot your system for the changes to take effect.
 
+On some devices, it may be necessary to disable xinput's touchscreen gestures by running the following:
+
+```
+$ xsetwacom --set *device* Gesture off
+
+```
+
 ### Mouse click on URL bar's behavior
 
 To make the url bar behaves like in Windows regarding mouse clicks: a single click selects everything, a double click selects a single word until a punctuation sign and a triple click selects everything again, set the following in `about:config`:

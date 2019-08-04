@@ -79,10 +79,10 @@ parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: ./*.flac
 
 Fd is a fast, user-friendly alternative to find. This one liner avoids the "while read" loop, which may have performance implications according to a response on Stack Exchange. [[1]](https://unix.stackexchange.com/questions/169716/why-is-using-a-shell-loop-to-process-text-considered-bad-practice/)
 
-[Install](/index.php/Install "Install") [fd](https://www.archlinux.org/packages/?name=fd) and [parallel](https://www.archlinux.org/packages/?name=parallel) first, then run:
+[Install](/index.php/Install "Install") [fd](https://www.archlinux.org/packages/?name=fd) first, then run:
 
 ```
-fd -t f -e flac -x echo ffmpeg -i \"{}\" -qscale:a 0 \"{.}.mp3\" \; | parallel -j$(nproc)
+fd -t f -e flac -x ffmpeg -i "{}" -qscale:a 0 "{.}.mp3"
 
 ```
 

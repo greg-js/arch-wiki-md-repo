@@ -160,8 +160,7 @@ LVM的基本组成部分如下：
 *   继续[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#格式化分区 "Installation guide (简体中文)")中的格式化分区步骤。
 *   当你做到安装指南中的“Initramfs”步骤时，把 `lvm2`加入到 `mkinitcpio.conf`文件中（请参考下文）。
 
-**警告:** {若你使用不支持LVM的引导程序，{ic
-不能置于LVM中。你必须创建一个独立的`/boot`分区并直接格式化它。已知支持LVM的引导程序只有[GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)")。}}
+**警告:** 若你使用不支持LVM的引导程序，`/boot`不能置于LVM中。你必须创建一个独立的`/boot`分区并直接格式化它。已知支持LVM的引导程序只有[GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)")。
 
 ### 创建分区
 
@@ -386,7 +385,7 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 命令将自动探测设备当前大小并将物理卷扩展到其最大容量。
 
-**注意:** 该命令可在卷在线时运行。
+**注意:** 该命令可在卷在线（on-line）时运行。
 
 ##### 缩小
 
@@ -487,11 +486,11 @@ LVM支持将卷组与物理卷的创建聚合在一个命令中。例如，为�
 
 {{小贴士|[lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8)提供一些与[lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8)和[lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8)相同的命令与选项，并同时允许两种类型的操作。然而，这几个命令都提供一个`-r`/`--resizefs`选项，使用[fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8)在调整逻辑卷时同时调整其中的文件系统（支持*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* 和 [XFS](/index.php/XFS "XFS") ）。 因此，对普通使用来说，使用`lvresize}和`--resizefs`将会更容易, 除非您有特定的需求或希望完全控制流程。`
 
-**警告:** 尽管扩大一个文件系统可以“在线”(on-line，也就是当它已挂载时)完成，甚至对根分区。缩小一个文件系统却往往要求先卸载（umount）它，以避免丢失数据。请先确保你的文件系统支持相关操作。
+**警告:** 尽管扩大一个文件系统可以“在线”(on-line)，也就是当它已挂载时)完成，甚至对根分区。缩小一个文件系统却往往要求先卸载（umount）它，以避免丢失数据。请先确保你的文件系统支持相关操作。
 
 ##### 同时缩小逻辑卷和其文件系统
 
-**注意:** 只有*ext2*，[ext3](/index.php/Ext3 "Ext3")，[ext4](/index.php/Ext4 "Ext4")，*ReiserFS*和 [XFS](/index.php/XFS "XFS") [文件系统](/index.php/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F "文件系统")支持以下操作。对于其他文件系统，请参见[#单独调整逻辑卷和其文件系统大小](#单独调整逻辑卷和其文件系统大小)。
+**注意:** 只有*ext2*，[ext3](/index.php/Ext3 "Ext3")，[ext4](/index.php/Ext4 "Ext4")，*ReiserFS*和 [XFS](/index.php/XFS "XFS") [文件系统](/index.php/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F "文件系统")支持以下操作。对于其他文件系统，请参见[#单独设置文件系统大小](#单独设置文件系统大小)。
 
 将`MyVolGroup`组中的逻辑卷`mediavol`扩大10GiB，并同时扩大其文件系统：
 
@@ -730,10 +729,6 @@ LVM可以给系统创建一个快照，由于使用了写入时复制(copy-on-wr
 快照也可以被挂载，并可用**dd**或者**tar**备份。使用**dd**备份的快照的大小为拍摄快照后对应逻辑卷中变更过文件的大小。 要使用备份，只需创建并挂载一个快照，并将备份写入或解压到其中。再将快照合并到对应逻辑卷即可。
 
 快照主要用于提供一个文件系统的拷贝，以用来备份; 比起直接备份分区，使用快照备份可以提供一个更符合原文件系统的镜像。
-
-[dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") and [dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system").
-
-If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "Initramfs"), [enable](/index.php/Enable "Enable") `lvm-monitoring.service`, which is provided by the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package.
 
 ### LVM 缓存
 

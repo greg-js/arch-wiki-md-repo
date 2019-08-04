@@ -12,10 +12,10 @@ A detached GPG signature is provided on the download page.
 
 *   [1 Credits](#Credits)
 *   [2 Installing from the CD](#Installing_from_the_CD)
-*   [3 Braille Support](#Braille_Support)
-*   [4 Maintaining Your Speech-enabled Arch Linux Installation](#Maintaining_Your_Speech-enabled_Arch_Linux_Installation)
-*   [5 Mastering Speech-enabled ISO Images](#Mastering_Speech-enabled_ISO_Images)
-*   [6 Further Resources](#Further_Resources)
+*   [3 Braille support](#Braille_support)
+*   [4 Maintaining your speech-enabled Arch Linux installation](#Maintaining_your_speech-enabled_Arch_Linux_installation)
+*   [5 Mastering speech-enabled ISO images](#Mastering_speech-enabled_ISO_images)
+*   [6 Further resources](#Further_resources)
 *   [7 Disclaimer](#Disclaimer)
 
 ### Credits
@@ -28,12 +28,12 @@ The following list of steps is a brief guide to installing Arch Linux using this
 
 1.  You can just press `enter` at the boot prompt, or wait for the bootloader to time-out. The boot process will begin at that point. If you have a console speaker, you will hear a beep when the boot prompt is on screen. Otherwise, wait about 10 to 20 seconds after the CD starts spinning, or about 3 to 5 seconds after the system begins to boot from USB, and then press `enter` to boot the image.
 2.  You are strongly encouraged to read the Arch Linux documentation, especially the [Installation guide](/index.php/Installation_guide "Installation guide"). Do the installation procedure described in the [Installation guide](/index.php/Installation_guide "Installation guide"), as modified by the instructions below.
-3.  You'll need to install the `espeakup` and `alsa-utils` packages. The [Installation guide](/index.php/Installation_guide "Installation guide") mentions that you can install additional packages by appending their names to the packstrap command. For example, `pacstrap /mnt base espeakup alsa-utils`
+3.  You'll need to install the `espeakup` and `alsa-utils` packages. The [Installation guide](/index.php/Installation_guide "Installation guide") mentions that you can install additional packages by appending their names to the pacstrap command. For example, `pacstrap /mnt base espeakup alsa-utils`
 4.  If you heard a voice recording informing you that multiple sound cards were detected, and you selected a card by pressing enter at the beep, a /etc/asound.conf file was generated that will configure ALSA to use your selected card as the default. You will need to copy this file by executing `cp /etc/asound.conf /mnt/etc`
 5.  While in the arch-chroot, Enable the espeakup systemd service by executing `systemctl enable espeakup.service`
 6.  When you boot the system from the hard disk, it should start speaking.
 
-## Braille Support
+## Braille support
 
 The latest image includes brltty, for those who own braille displays. The brltty package available on the CD was compiled with as few dependencies as possible. It is packaged as brltty-minimal in the Arch User Repository. If you wish to use braille, you will need to supply the brltty parameter at the boot prompt. Alternatively, you can start brltty from the shell, after the system has booted.
 
@@ -48,15 +48,15 @@ arch32 brltty=auto,ttyS0,en_US
 
 Once brltty is running, you may wish to disable speech. You can do so via the "print screen" key, also known as sysrq. On my qwerty keyboard, that key is located directly above the insert key, between F12 and scroll lock.
 
-## Maintaining Your Speech-enabled Arch Linux Installation
+## Maintaining your speech-enabled Arch Linux installation
 
 You shouldn't need to do anything extraordinary to maintain the installation. Everything should just seamlessly work.
 
-## Mastering Speech-enabled ISO Images
+## Mastering speech-enabled ISO images
 
 This process is now fairly straightforward. Just grab and install the talkingarch-git package from the AUR. It depends on archiso-git, so you need that as well. See /usr/share/doc/talkingarch/README for full instructions.
 
-## Further Resources
+## Further resources
 
 TalkingArch has an IRC channel at #talkingarch on irc.talkabout.cf. Feel free to drop in and talk to the maintainers or anyone else in the channel. You may also reach the maintainers by [email](mailto:support@talkingarch.tk).
 

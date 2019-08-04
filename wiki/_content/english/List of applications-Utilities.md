@@ -355,6 +355,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/jarun/nnn](https://github.com/jarun/nnn) || [nnn](https://www.archlinux.org/packages/?name=nnn)
 
+*   **fff** — A simple file manager written in Bash.
+
+	[https://github.com/dylanaraps/fff](https://github.com/dylanaraps/fff) || [fff](https://www.archlinux.org/packages/?name=fff)
+
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
 	[https://www.washington.edu/alpine/](https://www.washington.edu/alpine/) || [alpine-git](https://aur.archlinux.org/packages/alpine-git/)

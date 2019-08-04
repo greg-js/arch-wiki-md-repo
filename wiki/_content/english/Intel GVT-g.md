@@ -27,6 +27,7 @@ There is also a variant of this technology called GVT-d - it is essentially Inte
             *   [1.2.2.3 Disable all output](#Disable_all_output)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Missing mdev_supported_types directory](#Missing_mdev_supported_types_directory)
+    *   [2.2 Windows hanging with bad memory error](#Windows_hanging_with_bad_memory_error)
 *   [3 See also](#See_also)
 
 ## Configuration
@@ -283,6 +284,17 @@ If you have followed instructions and added `i915.enable_gvt=1` kernel parameter
  `$ dmesg | grep -i gvt `  `[    4.227468] [drm] Unsupported device. GVT-g is disabled` 
 
 If that is the case, you may want to check upstream for support plans. For example, for the "Coffee Lake" (CFL) platform support, see [https://github.com/intel/gvt-linux/issues/53](https://github.com/intel/gvt-linux/issues/53)
+
+### Windows hanging with bad memory error
+
+If Windows is hanging due to a Bad Memory error look for more details via dmesg. If the logs show something like rlimit memory exceeded, you may need to increase the max memory linux allows qemu to allocate. Assuming you are in the group kvm, adding the following to /etc/security/limits.conf and restarting the PC fixed the errors for me.
+
+```
+   # qemu kvm, need high memlock to allocate mem for vga-passthrough
+   @kvm	hard	memlock	8388608
+   @kvm	soft	memlock	8388608
+
+```
 
 ## See also
 

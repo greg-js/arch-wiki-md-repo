@@ -1,4 +1,4 @@
-[ReadyMedia](https://sourceforge.net/projects/minidlna) (previously **MiniDLNA**) is server software with the aim of being fully compliant with [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance "wikipedia:Digital Living Network Alliance")/[UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play "wikipedia:Universal Plug and Play") clients. The MiniDNLA daemon serves media files (music, pictures, and video) to clients on a network. Example clients include applications such as [Totem](https://www.archlinux.org/packages/extra/x86_64/totem/) and [Kodi](/index.php/Kodi "Kodi"), and devices such as portable media players, Smartphones, Televisions, and gaming systems (such as PS3 and Xbox 360).
+[ReadyMedia](https://sourceforge.net/projects/minidlna) (previously **MiniDLNA**) is server software with the aim of being fully compliant with [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance "wikipedia:Digital Living Network Alliance")/[UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play "wikipedia:Universal Plug and Play") clients. The MiniDNLA daemon serves media files (music, pictures, and video) to clients on a network. Example clients include applications such as [totem](https://www.archlinux.org/packages/?name=totem) and [Kodi](/index.php/Kodi "Kodi"), and devices such as portable media players, Smartphones, Televisions, and gaming systems (such as PS3 and Xbox 360).
 
 ReadyMedia is a simple, lightweight alternative to [MediaTomb](/index.php/MediaTomb "MediaTomb"), but has fewer features. It does not have a web interface for administration and must be configured by editing a text file.
 
@@ -100,7 +100,7 @@ Sometimes the minidlna daemon fails to start while booting. [NetworkManager#Enab
 
 ### Running minidlna as your own user
 
-Alternatively to a system service, you can run minidlna as your own user. This can be useful if you want to share media but don't have administrator access to the machine.
+Alternatively to a system service, you can run minidlna as your own user. This can be useful if you want to share media but do not have administrator access to the machine.
 
 Create the necessary files and directories locally and edit the configuration:
 

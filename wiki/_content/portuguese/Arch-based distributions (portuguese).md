@@ -4,7 +4,7 @@ Artigos relacionados
 
 *   [Arch em comparação com outras distribuições](/index.php/Arch_em_compara%C3%A7%C3%A3o_com_outras_distribui%C3%A7%C3%B5es "Arch em comparação com outras distribuições")
 *   [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)")
-*   [TalkingArch](/index.php/TalkingArch "TalkingArch")
+*   [TalkingArch](/index.php/TalkingArch_(Portugu%C3%AAs) "TalkingArch (Português)")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
 **Atenção:** **Não** há suporte a distribuições baseadas no Arch pela comunidade ou desenvolvedores do Arch. Veja [Código de conduta#Suporte *apenas* à distribuição Arch Linux](/index.php/C%C3%B3digo_de_conduta#Suporte_*apenas*_à_distribuição_Arch_Linux "Código de conduta")

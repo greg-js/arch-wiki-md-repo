@@ -71,7 +71,7 @@ ThinkPad X1 Carbon 6th
 *   [7 Configuration](#Configuration)
     *   [7.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
     *   [7.2 Special buttons](#Special_buttons)
-    *   [7.3 Disabling red LED Thinkpad logo](#Disabling_red_LED_Thinkpad_logo)
+    *   [7.3 Disabling red LED in Thinkpad logo](#Disabling_red_LED_in_Thinkpad_logo)
     *   [7.4 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
 *   [8 Intel Graphics UHD 620 issues](#Intel_Graphics_UHD_620_issues)
     *   [8.1 GNOME Wayland not available](#GNOME_Wayland_not_available)
@@ -160,14 +160,14 @@ There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linu
 
 An easy package has been written to address the problem until (or if) Lenovo ever solves it.
 
-Install [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/), then run:
+Install [throttled](https://www.archlinux.org/packages/?name=throttled), then run:
 
 ```
 sudo systemctl enable --now lenovo_fix.service
 
 ```
 
-The script also supports more advance thermal/performance features including CPU undervolting. See the [lenovo-throttling-fix repository](https://github.com/erpalma/lenovo-throttling-fix) `README.md` for details.
+The script also supports more advance thermal/performance features including CPU undervolting. See the [repository](https://github.com/erpalma/throttled) `README.md` for details.
 
 **Note:** If you installed [thermald](https://aur.archlinux.org/packages/thermald/), it may conflict with the throttling fix in this package. Consider disabling thermald or otherwise work around this.
 
@@ -241,21 +241,22 @@ To make the changes take effect:
 
 ```
 
-### Disabling red LED Thinkpad logo
+### Disabling red LED in Thinkpad logo
 
-If you want to shut down Big Brother, (the red led on the "i" letter located on the cover of your x1c6 thinkpad logo) follow these steps :
+To disable the red LED in the ThinkPad logo on the cover:
 
-*   Firstly, add the kernel parameter : **ec_sys.write_support=1** (if you are using UEFI boot as I do, you can add this parameter in /boot/efi/loader/entries/arch.conf in "options")
-*   Then, you can disable directly the LED with this command :
+1\. Enable writing to the embedded controller registers by adding the kernel parameter `ec_sys.write_support=1`. If you use UEFI boot, you can add this parameter in `/boot/efi/loader/entries/arch.conf` under "options".
+
+2\. Then, you can disable directly the LED with this command:
 
 ```
 # echo -n -e "\x0a" | sudo dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
 
 ```
 
-You can also turn the LED off at startup with [Systemd](/index.php/Systemd "Systemd") :
+**To disable the LED at startup, you can create a systemd service:**
 
-*   Create a sh script (/root/disable_led.sh for instance) and put this :
+1\. Create a sh script (/root/disable_led.sh for instance) and put this :
 
 ```
 #!/bin/bash
@@ -263,7 +264,7 @@ echo -n -e "\x0a" | dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 con
 
 ```
 
-*   Create a service under /etc/systemd/system/ called led.service, and insert the following:
+2\. Create a new service unit file in {{ic|/etc/systemd/system} called "led.service", and insert the following:
 
 ```
 Description=Disabling thinkpad led
@@ -276,15 +277,13 @@ WantedBy=multi-user.target
 
 ```
 
-*   Then start and enable this service
+3\. Start and enable this service:
 
 ```
 # systemctl start led.service
 # systemctl enable led.service
 
 ```
-
-Say goodbye to Big Brother !
 
 ### HDR Display Color Calibration
 

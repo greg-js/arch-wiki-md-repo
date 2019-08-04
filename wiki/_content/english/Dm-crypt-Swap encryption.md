@@ -100,9 +100,9 @@ The following three methods are alternatives for setting up an encrypted swap fo
 
 A simple way to realize encrypted swap with suspend-to-disk support is by using a swap [LVM](/index.php/LVM "LVM") device on the same encryption layer as the root volume, so that both are opened by the `encrypt` hook at boot. Follow the instructions on [Dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") and then configure the [required kernel parameters](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate").
 
-Assuming you have setup LVM on LUKS with a swap logical volume (at `/dev/MyStorage/swap` for example), add the *resume* [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook, and add `resume=/dev/MyStorage/swap` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
+Assuming you have setup LVM on LUKS with a swap logical volume (at `/dev/MyStorage/swap` for example), add `resume` to the [HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") array `/etc/mkinitcpio.conf` (only if using the default [busybox based hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio")), and add `resume=/dev/MyStorage/swap` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
 
- `/etc/mkinitcpio.conf`  `HOOKS=(... encrypt lvm2 **resume** ... filesystems ...)` 
+ `/etc/mkinitcpio.conf`  `HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems **resume** fsck)` 
 
 [Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 

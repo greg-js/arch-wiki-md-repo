@@ -95,7 +95,7 @@ temp1:       +37.5°C  (low  = +129.5°C, high = +129.5°C)  sensor = thermistor
 temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal diode
 ```
 
-**Note:** If the output does not display an RPM value for the CPU fan, one may need to [#increase the fan divisor for sensors](#increase_the_fan_divisor_for_sensors). If the fan speed is shown and higher than 0, this is fine.
+**Note:** If the output does not display an RPM value for the CPU fan, one may need to [#Increase the fan divisor for sensors](#Increase_the_fan_divisor_for_sensors). If the fan speed is shown and higher than 0, this is fine.
 
 ### Configuration
 
@@ -110,18 +110,13 @@ Once the sensors are properly configured, use `pwmconfig` to test and configure 
 
 #### Tweaking
 
-Some users may want to manually tweak the config file after running pwmconfig, usually to fix something. For manually tweaking the /etc/fancontrol configuration file, check the fancontrol manpage for the definitions of the variables:
-
-```
-$ man fancontrol
-
-```
+Some users may want to manually tweak the config file after running pwmconfig, usually to fix something. For manually tweaking the `/etc/fancontrol` configuration file, see the [fancontrol(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fancontrol.8) manual page for the definitions of the variables.
 
 Users will probably encounter the hwmon path issues as noted above in [#Fancontrol (lm-sensors)](#Fancontrol_(lm-sensors)). Look at [#Device Paths have Changed in /etc/fancontrol](#Device_Paths_have_Changed_in_/etc/fancontrol) for more information.
 
-**Tip:** Use `MAXPWM` and `MINPWM` options that limit fan speed range. See the fancontrol manual page for details.
+**Tip:** Use `MAXPWM` and `MINPWM` options that limit fan speed range. See the [fancontrol(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fancontrol.8) manual page for details.
 
-**Tip:** Temperature and fan sensor paths could change as well (usually on a kernel update) (e.g. hwmon0/device/temp1_input becomes hwmon0/temp1_input). Check the system log to find out which path is the troublemaker:
+**Note:** Temperature and fan sensor paths could change as well (usually on a kernel update) (e.g. `hwmon0/device/temp1_input` becomes `hwmon0/temp1_input`). Check the system log to find out which path is the troublemaker:
 ```
 # systemctl status fancontrol.service 
 
@@ -270,8 +265,6 @@ To automatically disable BIOS fan control via [systemd](/index.php/Systemd "Syst
 
 ## ThinkPad laptops
 
-The embedded controller (EC) regulates fan speed. However, in order to take control over it, add `fan_control=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
-
 Current fan control daemons available in the [AUR](/index.php/AUR "AUR") are [simpfand-git](https://aur.archlinux.org/packages/simpfand-git/) and [thinkfan](https://aur.archlinux.org/packages/thinkfan/) (recommended).
 
 ### Installation
@@ -307,13 +300,6 @@ $ su
 ```
 
 You should see that the fan level is "auto" by default, but you can echo a level command to the same file to control the fan speed manually. The thinkfan daemon will do this automatically.
-
-Set thinkfan to run at startup by editing `/etc/default/thinkfan` and adding the following line:
-
-```
-START=yes
-
-```
 
 Finally, enable the thinkfan systemd service:
 
@@ -560,7 +546,7 @@ In `/etc/conf.d/lm_sensors`, there are 2 arrays that lists all of the modules de
 
 #### Alternative Solution: Absolute paths
 
-Using absolute file paths in fancontrol does not work by default, as it is programmed to only use the hwmon paths to get the files. The way it does this is that it detects whether the hwmon path provided in its config file `/etc/fancontrol` did not change, and uses the variables `DEVNAME` and `DEVPATH` to determine this. If your hwmon paths keep changing, this will prevent fancontrol from running no matter what you do. However, one can circumvent this problem. Open `/usr/bin/fancontrol`, and comment out this part of the script:
+Using absolute file paths in fancontrol does not work by default, as its helper script `pwmconfig` is programmed to only use the hwmon paths to get the files. The way it does this is that it detects whether the hwmon path that is provided in its config file `/etc/fancontrol` did not change, and uses the variables `DEVNAME` and `DEVPATH` to determine such change. If your hwmon paths keep changing, this will prevent fancontrol from running no matter what you do. However, one can circumvent this problem. Open `/usr/bin/fancontrol`, and comment out this part of the script:
 
 ```
 if ! ValidateDevices "$DEVPATH" "$DEVNAME"
@@ -571,7 +557,9 @@ if ! ValidateDevices "$DEVPATH" "$DEVNAME"
 
 ```
 
-**Note:** Doing this may make fancontrol write input into files you gave it in the config file, no matter what the file is. This can corrupt files if you provide the wrong path. Be sure that you are using the correct path for your files.
+**Note:** Doing this may make fancontrol write into files you gave it in the config file, no matter what the file is. This can corrupt files if you provide the wrong path. Be sure that you are using the correct path for your files.
+
+Another thing to note is that while doing this workaround, using `pwmconfig` to create your script again will overwrite all of your absolute paths that you have configured. Therefore, it is better to manually change the old paths to the new paths if it is needed instead of using pwmconfig.
 
 Commenting this out should effectively ignore the hwmon validation checks. You can also ignore the variables `DEVNAME` and `DEVPATH` in the config file as well. After this, replace all of the hwmon paths in the other variables with its absolute path. To make it easier, rerun `pwmconfig` to refresh the hwmon devices. The hwmon paths in the config file should now point to the correct absolute paths. For each hwmon path, run the following command:
 

@@ -1,6 +1,10 @@
-[fbpanel](http://aanatoly.github.io/fbpanel/) is a lightweight NETWM compliant desktop panel. This article describes the installation and configuration of fbpanel.
+[fbpanel](http://aanatoly.github.io/fbpanel/) is a lightweight [NETWM](https://www.freedesktop.org/wiki/Specifications/wm-spec/) compliant desktop panel. This article describes the installation and configuration of fbpanel.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installing](#Installing)
 *   [2 Starting](#Starting)

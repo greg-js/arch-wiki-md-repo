@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=576206) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-08-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=577754) na versão em inglês.
 
 Artigos relacionados
 
@@ -6,7 +6,7 @@ Artigos relacionados
 *   [Category:Hypervisors (Português)](/index.php/Category:Hypervisors_(Portugu%C3%AAs) "Category:Hypervisors (Português)")
 *   [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox")
 *   [RemoteBox](/index.php/RemoteBox "RemoteBox")
-*   [Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+*   [Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual](/index.php/Movendo_uma_instala%C3%A7%C3%A3o_existente_para_dentro_(ou_fora)_de_uma_m%C3%A1quina_virtual "Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual")
 
 [VirtualBox](https://www.virtualbox.org) é um [hipervisor](https://en.wikipedia.org/wiki/pt:Hipervisor para gerenciar e executar máquinas virtuais.
 
@@ -52,10 +52,38 @@ A fim de integrar funções do sistema host aos convidados, incluindo pastas com
         *   [3.5.2 Aumentando o tamanho de discos VDI](#Aumentando_o_tamanho_de_discos_VDI)
     *   [3.6 Substituir um disco virtual manualmente a partir do arquivo .vbox](#Substituir_um_disco_virtual_manualmente_a_partir_do_arquivo_.vbox)
         *   [3.6.1 Transferir entre host Linux e outro SO](#Transferir_entre_host_Linux_e_outro_SO)
-    *   [3.7 Clonar um disco virtual e atribuição d eum novo UUID a ele](#Clonar_um_disco_virtual_e_atribuição_d_eum_novo_UUID_a_ele)
+    *   [3.7 Clonar um disco virtual e atribuição de um novo UUID a ele](#Clonar_um_disco_virtual_e_atribuição_de_um_novo_UUID_a_ele)
 *   [4 Dicas e truques](#Dicas_e_truques)
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Teclado e mouse estão travados na máquina virtual](#Teclado_e_mouse_estão_travados_na_máquina_virtual)
+    *   [5.2 Nenhuma opção para cliente de SO 64 bits](#Nenhuma_opção_para_cliente_de_SO_64_bits)
+    *   [5.3 VirtualBox GUI não corresponde ao tema GTK do hospedeiro](#VirtualBox_GUI_não_corresponde_ao_tema_GTK_do_hospedeiro)
+    *   [5.4 Não é possível enviar Ctrl+Alt+Fn para o convidado](#Não_é_possível_enviar_Ctrl+Alt+Fn_para_o_convidado)
+    *   [5.5 Subsistema USB não funciona](#Subsistema_USB_não_funciona)
+    *   [5.6 Modem USB não funciona no hospedeiro](#Modem_USB_não_funciona_no_hospedeiro)
+    *   [5.7 Dispositivo USB trava o convidado](#Dispositivo_USB_trava_o_convidado)
+    *   [5.8 Acesso a porta serial pelo convidado](#Acesso_a_porta_serial_pelo_convidado)
+    *   [5.9 Convidado trava após iniciar o Xorg](#Convidado_trava_após_iniciar_o_Xorg)
+    *   [5.10 Modo tela cheia mostra uma tela branca](#Modo_tela_cheia_mostra_uma_tela_branca)
+    *   [5.11 Hospedeiro trava ao iniciar máquina virtual](#Hospedeiro_trava_ao_iniciar_máquina_virtual)
+    *   [5.12 Convidados Linux têm áudio lento/distorcido](#Convidados_Linux_têm_áudio_lento/distorcido)
+    *   [5.13 Microfone analógico não funciona](#Microfone_analógico_não_funciona)
+    *   [5.14 Microfone não funciona após atualização](#Microfone_não_funciona_após_atualização)
+    *   [5.15 Problemas com imagens convertidas para ISO](#Problemas_com_imagens_convertidas_para_ISO)
+    *   [5.16 Falha ao criar a interface de rede interna](#Falha_ao_criar_a_interface_de_rede_interna)
+    *   [5.17 Falha ao inserir módulo](#Falha_ao_inserir_módulo)
+    *   [5.18 VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)](#VBOX_E_INVALID_OBJECT_STATE_(0x80BB0007))
+    *   [5.19 NS_ERROR_FAILURE e itens de menu em falta](#NS_ERROR_FAILURE_e_itens_de_menu_em_falta)
+    *   [5.20 Arch: script pacstrap falhando](#Arch:_script_pacstrap_falhando)
+    *   [5.21 OpenBSD inutilizável quando instruções de virtualização estão indisponíveis](#OpenBSD_inutilizável_quando_instruções_de_virtualização_estão_indisponíveis)
+    *   [5.22 Hospedeiro Windows: VERR_ACCESS_DENIED](#Hospedeiro_Windows:_VERR_ACCESS_DENIED)
+    *   [5.23 Windows: "O caminho especificado não existe. Verifique o caminho e tente novamente."](#Windows:_"O_caminho_especificado_não_existe._Verifique_o_caminho_e_tente_novamente.")
+    *   [5.24 Erro no Windows 8.x com código 0x000000C4](#Erro_no_Windows_8.x_com_código_0x000000C4)
+    *   [5.25 Windows 8, 8.1 ou 10 falha em instalar, inicializar ou tem erro "ERR_DISK_FULL"](#Windows_8,_8.1_ou_10_falha_em_instalar,_inicializar_ou_tem_erro_"ERR_DISK_FULL")
+    *   [5.26 WinXP: Profundidade de bits não pode ser maior que 16](#WinXP:_Profundidade_de_bits_não_pode_ser_maior_que_16)
+    *   [5.27 Windows: Oscilação da tela se a aceleração 3D estiver ativada](#Windows:_Oscilação_da_tela_se_a_aceleração_3D_estiver_ativada)
+    *   [5.28 Nenhuma aceleração 3D de hardware no convidado Arch Linux](#Nenhuma_aceleração_3D_de_hardware_no_convidado_Arch_Linux)
+    *   [5.29 Não é possível iniciar o VirtualBox no Wayland: Falha de segmentação](#Não_é_possível_iniciar_o_VirtualBox_no_Wayland:_Falha_de_segmentação)
 
 ## Etapas de instalação para hosts Arch Linux
 
@@ -258,6 +286,8 @@ Agora, você deve ter um convidado Arch Linux. Observe que recursos como compart
 
 A aceleração de hardware pode ser ativada nas opções do VirtualBox. O gerenciador de exibição [GDM](/index.php/GDM "GDM") 3.16+ é conhecido por quebrar o suporte de aceleração de hardware. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=749390) Então, se você tiver problemas com a aceleração de hardware, experimente outro gerenciador de exibição (o lightdm parece funcionar bem). [[4]](https://bbs.archlinux.org/viewtopic.php?id=200025) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1607593#p1607593)
 
+Se a aceleração de hardware não funcionar como esperado, tente alterar a opção *Controladora Gráfica* localizada na aba *Tela* nas opções *Monitor* das configurações da GUI. Parece que, dependendo do tipo de GPU do hospedeiro, nem todos as controladoras emuladas funcionam igualmente bem.
+
 ### Habilitar pastas compartilhadas
 
 Pastas compartilhadas são gerenciadas no host, nas configurações da máquina virtual acessível através da GUI do VirtualBox, na aba *Pastas Compartilhadas*. Lá, *Caminho da pasta*, o nome do ponto de montagem identificado por *Nome da pasta* e opções como *Apenas para Leitura*, *Montar Automaticamente* e *Tornar Permanente* podem ser especificados. Esses parâmetros podem ser definidos com o utilitário de linha de comando `VBoxManage`. Consulte [para mais detalhes](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
@@ -276,27 +306,18 @@ Duas etapas adicionais são necessárias para que o ponto de montagem seja acess
 Use o seguinte comando para montar sua pasta em seu convidado Arch Linux:
 
 ```
-# mount -t vboxsf *nome_da_pasta_compartilhada* *ponto_de_montagem_em_sistema_convidado*
+# mount -t vboxsf -o gid=vboxsf *nome_da_pasta_compartilhada* *ponto_de_montagem_em_sistema_convidado*
 
 ```
 
 sendo que `*nome_da_pasta_compartilhada*` é o *Nome da Pasta* atribuído pelo hipervisor quando o compartilhamento foi criado.
 
-O sistema de arquivos vboxsf oferece outras opções que podem ser exibidas com esse comando:
-
-```
-# mount.vboxsf
-
-```
-
-Por exemplo, se o usuário não estava no grupo *vboxsf*, nós poderíamos ter usado este comando para lhe dar acesso ou ponto de montagem:
+Se o usuário não estiver no grupo *vboxsf*, para dar acesso ao nosso ponto de montagem, podemos especificar as opções [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) `uid=` e `gid=` com os valores correspondentes do usuário. Estes valores podem ser obtidos do comando `id` executado contra este usuário. Por exemplo:
 
 ```
 # mount -t vboxsf -o uid=1000,gid=1000 home /mnt
 
 ```
-
-sendo que `*uid*` e `*gid*` são valores correspondentes para os usuários aos quais queremos dar acesso. Esses valores são obtidos a partir do comando `id` executado com este usuário.
 
 #### Montagem automática
 
@@ -476,81 +497,81 @@ Para desmontar:
 
 ### Compactar discos virtuais
 
-Compacting virtual disks only works with *.vdi* files and basically consists of the following steps.
+A compactação de discos virtuais só funciona com arquivos *.vdi* e consiste basicamente nas seguintes etapas.
 
-Boot your virtual machine and remove all bloat manually or by using cleaning tools like [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) which is [available for Windows systems too](http://bleachbit.sourceforge.net/download/windows).
+Inicialize sua máquina virtual e remova todo o inchaço manualmente ou usando ferramentas de limpeza como [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) que está [disponível para sistemas Windows também](http://bleachbit.sourceforge.net/download/windows).
 
-Wiping free space with zeroes can be achieved with several tools:
+A limpeza do espaço livre com zeros pode ser alcançado por meio de várias ferramentas:
 
-*   If you were previously using Bleachbit, check the checkbox *System > Free disk space* in the GUI, or use `bleachbit -c system.free_disk_space` in CLI;
-*   On UNIX-based systems, by using `dd` or preferably [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (see [here](http://superuser.com/a/355322) to learn the differences):
+*   Se você estava usando Bleachbit anteriormente, marque a caixa de seleção *Sistema > Espaço livre em disco* na GUI, ou use `bleachbit -c system.free_disk_space` na CLI;
+*   Em sistemas baseados em UNIX, usando `dd` ou preferencialmente [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (veja [aqui](http://superuser.com/a/355322) para aprender as diferenças):
 
-	 `# dcfldd if=/dev/zero of=*/fillfile* bs=4M` 
+	 `# dcfldd if=/dev/zero of=*/arquivo_para_preencher* bs=4M` 
 
-	When `fillfile` reaches the limit of the partition, you will get a message like `1280 blocks (5120Mb) written.dcfldd:: No space left on device`. This means that all of the user-space and non-reserved blocks of the partition will be filled with zeros. Using this command as root is important to make sure all free blocks have been overwritten. Indeed, by default, when using partitions with ext filesystem, a specified percentage of filesystem blocks is reserved for the super-user (see the `-m` argument in the `mkfs.ext4` man pages or use `tune2fs -l` to see how much space is reserved for root applications).
+Quando `arquivo_para_preencher` atingir o limite da partição, você receberá uma mensagem como `1280 blocks (5120Mb) written.dcfldd:: No space left on device`. Isso significa que todos os blocos de espaço do usuário e não reservados da partição serão preenchidos com zeros. Usar esse comando como root é importante para garantir que todos os blocos livres tenham sido sobrescritos. De fato, por padrão, ao usar partições com sistema de arquivos ext, uma porcentagem especificada de blocos do sistema de arquivos é reservada para o superusuário (veja o argumento `-m` nas páginas man do `mkfs.ext4` ou use `tune2fs -l` para ver quanto espaço é reservado para aplicativos da raiz).
 
-	When the aforementioned process has completed, you can remove the file `*fillfile*` you created.
+	Quando o processo supramencionado estiver concluído, você poderá remover o arquivo `*arquivo_para_preencher*` que você criou.
 
-*   On Windows, there are two tools available:
-    *   `sdelete` from the [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), type `sdelete -s -z *c:*`, where you need to reexecute the command for each drive you have in your virtual machine;
-    *   or, if you love scripts, there is a [PowerShell solution](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), but which still needs to be repeated for all drives.
+*   No Windows, há duas ferramentas disponíveis:
+    *   `sdelete` da [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), digite `sdelete -s -z *c:*`, sendo que você precisa reexecutar o comando para cada unidade existente em sua máquina virtual;
+    *   ou, se você gosta de scripts, há uma [solução em PowerShell](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), mas que ainda precisa ser repetida para todas as unidades.
 
 	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root *c:\* -PercentFree 0` 
 
-**Note:** This script must be run in a PowerShell environment with administrator privileges. By default, scripts cannot be run, ensure the execution policy is at least on `RemoteSigned` and not on `Restricted`. This can be checked with `Get-ExecutionPolicy` and the required policy can be set with `Set-ExecutionPolicy RemoteSigned`.
+**Nota:** Este script deve ser executado em um ambiente do PowerShell com privilégios de administrador. Por padrão, os scripts não podem ser executados, certifique-se de que a política de execução esteja, pelo menos, em `RemoteSigned` e não em `Restricted`. Isso pode ser verificado com `Get-ExecutionPolicy` e a política necessária pode ser definida com `Set-ExecutionPolicy RemoteSigned`.
 
-Once the free disk space have been wiped, shut down your virtual machine.
+Uma vez que o espaço livre em disco tenha sido apagado, desligue sua máquina virtual.
 
-The next time you boot your virtual machine, it is recommended to do a filesystem check.
+Na próxima vez que você inicializar sua máquina virtual, é recomendável fazer uma verificação do sistema de arquivos.
 
-*   On UNIX-based systems, you can use `fsck` manually;
-    *   On GNU/Linux systems, and thus on Arch Linux, you can force a disk check at boot [thanks to a kernel boot parameter](/index.php/Fsck#Forcing_the_check "Fsck");
-*   On Windows systems, you can use:
-    *   either `chkdsk *c:* /F` where `*c:*` needs to be replaced by each disk you need to scan and fix errors;
-    *   or `FsckDskAll` [from here](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) which is basically the same software as `chkdsk`, but without the need to repeat the command for all drives;
+*   Em sistemas baseados em UNIX, você pode usar `fsck` manualmente;
+    *   Nos sistemas GNU/Linux e, portanto, no Arch Linux, você pode forçar uma verificação de disco na inicialização [graças a um parâmetro de inicialização do kernel](/index.php/Fsck#Forcing_the_check "Fsck");
+*   Nos sistemas Windows, você pode usar:
+    *   `chkdsk *c:* /F` sendo que `*c:*` precisa ser substituído por cada disco que você precisa verificar e corrigir erros;
+    *   ou `FsckDskAll` [daqui](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) que é basicamente o mesmo software que `chkdsk`, mas sem a necessidade de repetir o comando para todas as unidades;
 
-Now, remove the zeros from the *.vdi* file with [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
-
-```
-$ VBoxManage modifyhd *your_disk.vdi* --compact
+Agora, remova os zeros do arquivo *.vdi* com [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
 
 ```
+$ VBoxManage modifyhd *seu_disco.vdi* --compact
 
-**Note:** If your virtual machine has snapshots, you need to apply the above command on each `.vdi` files you have.
+```
+
+**Nota:** Se sua máquina virtual tiver snapshots, você precisará aplicar o comando acima em cada arquivo `.vdi` que você possui.
 
 ### Aumentar discos virtuais
 
 #### Procedimento geral
 
-If you are running out of space due to the small hard drive size you selected when you created your virtual machine, the solution adviced by the VirtualBox manual is to use [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi). However this command only works for VDI and VHD disks and only for the dynamically allocated variants. If you want to resize a fixed size virtual disk disk too, read on this trick which works either for a Windows or UNIX-like virtual machine.
+Se você está ficando sem espaço devido ao pequeno tamanho do disco rígido que você selecionou quando criou sua máquina virtual, a solução recomendada pelo manual do VirtualBox é usar [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi). No entanto, esse comando só funciona para discos VDI e VHD e apenas para as variantes alocadas dinamicamente. Se você quiser redimensionar um disco de disco virtual de tamanho fixo também, leia este truque que funciona para uma máquina virtual do Windows ou UNIX.
 
-First, create a new virtual disk next to the one you want to increase:
-
-```
-$ VBoxManage createhd -filename *new.vdi* --size *10000*
+Primeiro, crie um novo disco virtual próximo ao que você deseja aumentar:
 
 ```
-
-where size is in MiB, in this example 10000MiB ~= 10GiB, and *new.vdi* is name of new hard drive to be created.
-
-**Note:** By default, this command uses the *Standard* (corresponding to dynamic allocated) file format variant and thus will not use the same file format variant as your source virtual disk. If your *old.vdi* has a fixed size and you want to keep this variant, add the parameter `--variant Fixed`.
-
-Next, the old virtual disk needs to be cloned to the new one which this may take some time:
-
-```
-$ VBoxManage clonehd *old.vdi* *new.vdi* --existing
+$ VBoxManage createhd -filename *novo.vdi* --size *10000*
 
 ```
 
-Detach the old hard drive and attach new one, replace all mandatory italic arguments by your own:
+sendo que o tamanho está em MiB, neste exemplo 10000MiB ~= 10GiB e *novo.vdi* é o nome do novo disco rígido a ser criado.
+
+**Nota:** Por padrão, esse comando usa a variante de formato de arquivo *Standard* (correspondente à dinâmica alocada) e, portanto, não usará a mesma variante de formato de arquivo do disco virtual de origem. Se o seu *antigo.vdi* tiver um tamanho fixo e você quiser manter essa variante, adicione o parâmetro `--variant Fixed`.
+
+Em seguida, o disco virtual antigo precisa ser clonado para o novo, o que pode levar algum tempo:
 
 ```
-$ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium none
-$ VBoxManage storageattach *VM_name* --storagectl *SATA* --port *0* --medium *new.vdi* --type hdd
+$ VBoxManage clonehd *antigo.vdi* *novo.vdi* --existing
 
 ```
 
-To get the storage controller name and the port number, you can use the command `VBoxManage showvminfo *VM_name*`. Among the output you will get such a result (what you are looking for is in italic):
+Desanexe o disco rígido antigo e anexe um novo, substitua todos os argumentos itálicos obrigatórios pelos seus valores apropriados:
+
+```
+$ VBoxManage storageattach *nome_VM* --storagectl *SATA* --port *0* --medium none
+$ VBoxManage storageattach *nome_VM* --storagectl *SATA* --port *0* --medium *novo.vdi* --type hdd
+
+```
+
+Para obter o nome do controlador de armazenamento e o número da porta, você pode usar o comando `VBoxManage showvminfo *nome_VM*`. Entre os resultados, você obterá esse resultado (o que você está procurando está em itálico):
 
 ```
 [...]
@@ -572,36 +593,36 @@ IDE (1, 0): Empty
 
 ```
 
-Download [GParted live image](http://gparted.org/download.php) and mount it as a virtual CD/DVD disk file, boot your virtual machine, increase/move your partitions, umount GParted live and reboot.
+Baixe a [imagem do GParted live](http://gparted.org/download.php) e monte-a como um arquivo de CD/DVD virtual, inicialize sua máquina virtual, aumente/mova suas partições, desmonte o GParted live e reinicie.
 
-**Note:** On GPT disks, increasing the size of the disk will result in the backup GPT header not being at the end of the device. GParted will ask to fix this, click on *Fix* both times. On MBR disks, you do not have such a problem as this partition table as no trailer at the end of the disk.
+**Nota:** Nos discos GPT, aumentar o tamanho do disco resultará no backup do cabeçalho GPT não estar no final do dispositivo. O GParted pedirá para corrigir isso, clique em *Corrigir* nas duas vezes. Nos discos MBR, você não tem esse problema como essa tabela de partições como nenhum trailer no final do disco.
 
-Finally, unregister the virtual disk from VirtualBox and remove the file:
+Finalmente, cancele o registro do disco virtual do VirtualBox e remova o arquivo:
 
 ```
-$ VBoxManage closemedium disk *old.vdi*
-$ rm *old.vdi*
+$ VBoxManage closemedium disk *antigo.vdi*
+$ rm *antigo.vdi*
 
 ```
 
 #### Aumentando o tamanho de discos VDI
 
-If your disk is a VDI one, run:
+Se o seu disco for um VDI, execute:
 
 ```
-$ VBoxManage modifyhd *your_virtual_disk.vdi* --resize *the_new_size*
+$ VBoxManage modifyhd *seu_disco_virtual.vdi* --resize *o_novo_tamanho*
 
 ```
 
-Then jump back to the Gparted step, to increase the size of the partition on the virtual disk.
+Em seguida, retorne à etapa Gparted para aumentar o tamanho da partição no disco virtual.
 
 ### Substituir um disco virtual manualmente a partir do arquivo .vbox
 
-If you think that editing a simple *XML* file is more convenient than playing with the GUI or with `VBoxManage` and you want to replace (or add) a virtual disk to your virtual machine, in the *.vbox* configuration file corresponding to your virtual machine, simply replace the GUID, the file location and the format to your needs:
+Se você acha que editar um simples arquivo *XML* é mais conveniente do que brincar com a GUI ou com `VBoxManage` e você deseja substituir (ou adicionar) um disco virtual à sua máquina virtual, no arquivo de configuração *.vbox* correspondente à sua máquina virtual, basta substituir o GUID, o local do arquivo e o formato de acordo com suas necessidades:
 
  `ArchLinux_vm.vbox`  `<HardDisk uuid="*{670157e5-8bd4-4f7b-8b96-9ee412a712b5}*" location="*ArchLinux_vm.vdi*" format="*VDI*" type="Normal"/>` 
 
-then in the `<AttachedDevice>` sub-tag of `<StorageController>`, replace the GUID by the new one.
+então, na sub-tag `<AttachedDevice>` de `<StorageController>`, substitua o GUID pelo novo.
 
  `ArchLinux_vm.vbox` 
 ```
@@ -610,11 +631,11 @@ then in the `<AttachedDevice>` sub-tag of `<StorageController>`, replace the GUI
 </AttachedDevice>
 ```
 
-**Note:** If you do not know the GUID of the drive you want to add, you can use the `VBoxManage showhdinfo *file*`. If you previously used `VBoxManage clonehd` to copy/convert your virtual disk, this command should have outputted the GUID just after the copy/conversion completed. Using a random GUID does not work, as each [UUID is stored inside each disk image](http://www.virtualbox.org/manual/ch05.html#cloningvdis).
+**Nota:** Se você não souber o GUID da unidade que deseja adicionar, poderá usar o `VBoxManage showhdinfo *arquivo*`. Se você usou anteriormente o `VBoxManage clonehd` para copiar/converter seu disco virtual, este comando deveria ter gerado o GUID logo após a conclusão da cópia/conversão. O uso de um GUID aleatório não funciona, pois cada UUID [é armazenado dentro de cada imagem de disco](http://www.virtualbox.org/manual/ch05.html#cloningvd).
 
 #### Transferir entre host Linux e outro SO
 
-The information about path to harddisks and the snapshots is stored between `<HardDisks> .... </HardDisks>` tags in the file with the *.vbox* extension. You can edit them manually or use this script where you will need change only the path or use defaults, assumed that *.vbox* is in the same directory with a virtual harddisk and the snapshots folder. It will print out new configuration to stdout.
+As informações sobre o caminho para discos rígidos e snapshots são armazenadas entre as tags `<HardDisks> .... </HardDisks>` no arquivo com a extensão *.vbox*. Você pode editá-las manualmente ou usar este script onde você precisará alterar apenas o caminho ou usar os padrões, presumindo que *.vbox* está no mesmo diretório com um disco virtual e a pasta de instantâneos. Ele imprimirá a nova configuração na *stdout*.
 
 ```
 #!/bin/bash
@@ -632,37 +653,281 @@ L=B[2];
 else print $0}' "$Filename"
 ```
 
-**Note:**
+**Nota:**
 
-*   If you will prepare virtual machine for use in Windows host then in the path name end you should use backslash \ instead of / .
-*   The script detects snapshots by looking for `{` in the file name.
-*   To make it run on a new host you will need to add it first to the register by clicking on **Machine -> Add...** or use hotkeys Ctrl+A and then browse to *.vbox* file that contains configuration or use command line `VBoxManage registervm *filename*.vbox`
+*   Se você for preparar a máquina virtual para uso em um host Windows, no final do nome do caminho, use a barra invertida \ em vez de /.
+*   O script detecta snapshots procurando `{` no nome do arquivo.
+*   Para executá-lo em um novo host, você precisará adicioná-lo primeiro ao registrador clicando em **Máquina -> Adicionar...** ou usando as teclas de atalho Ctrl+A e depois navegue até arquivo *.vbox* que contém configuração ou linha de comando de uso `VBoxManage registervm *nome_de_arquivo*. vbox`
 
-### Clonar um disco virtual e atribuição d eum novo UUID a ele
+### Clonar um disco virtual e atribuição de um novo UUID a ele
 
-UUIDs are widely used by VirtualBox. Each virtual machines and each virtual disk of a virtual machine must have a different UUID. When you launch a virtual machine in VirtualBox, VirtualBox will keep track of all UUIDs of your virtual machine instance. See the [VBoxManage list](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) to list the items registered with VirtualBox.
+Os UUIDs são amplamente utilizados pelo VirtualBox. Cada máquina virtual e cada disco virtual de uma máquina virtual deve ter um UUID diferente. Quando você inicia uma máquina virtual no VirtualBox, o VirtualBox rastreia todos os UUIDs da sua instância de máquina virtual. Veja a [VBoxManage list](http://www.virtualbox.org/manual/ch08.html#vboxmanage-list) para listar os itens registrados no VirtualBox.
 
-If you cloned a virtual disk manually by copying the virtual disk file, you will need to assign a new UUID to the cloned virtual drive if you want to use the disk in the same virtual machine or even in another (if that one has already been opened, and thus registered, with VirtualBox).
+Se clonou um disco virtual manualmente copiando o arquivo de disco virtual, você precisará atribuir um novo UUID à unidade virtual clonada se desejar usar o disco na mesma máquina virtual ou mesmo em outra (se essa já tiver sido aberto, e assim registrado, com o VirtualBox).
 
-You can use this command to assign a new UUID to a virtual disk:
-
-```
-$ VBoxManage internalcommands sethduuid */path/to/disk.vdi*
+Você pode usar este comando para atribuir um novo UUID a um disco virtual:
 
 ```
+$ VBoxManage internalcommands sethduuid */caminho/para/disco.vdi*
 
-**Tip:** To avoid copying the virtual disk and assigning a new UUID to your file manually you can use [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
+```
 
-**Note:** The commands above support all [virtual disk formats supported by VirtualBox](#Formats_supported_by_VirtualBox).
+**Dica:** Para evitar a cópia do disco virtual e atribuir um novo UUID ao seu arquivo manualmente, você pode usar [VBoxManage clonehd](http://www.virtualbox.org/manual/ch08.html#vboxmanage-clonevdi).
+
+**Nota:** Os comando acima possuem suporte a todos os [formatos de discos virtuais suportados pelo VirtualBox](#Formatos_suportados_pelo_VirtualBox).
 
 ## Dicas e truques
 
-For advanced configuration, see [VirtualBox/Tips and tricks](/index.php/VirtualBox/Tips_and_tricks "VirtualBox/Tips and tricks").
+Para configurações avançadas, veja [VirtualBox/Dicas e truques](/index.php/VirtualBox/Tips_and_tricks "VirtualBox/Tips and tricks").
 
 ## Solução de problemas
 
 ### Teclado e mouse estão travados na máquina virtual
 
-This means your virtual machine has captured the input of your keyboard and your mouse. Simply press the right `Ctrl` key and your input should control your host again.
+Isso significa que sua máquina virtual capturou a entrada do teclado e do mouse. Simplesmente pressione a tecla `Ctrl` e sua entrada deve controlar seu hospedeiro novamente.
 
-To control transparently your virtual machine with your mouse going back and forth your host, without having to press any key, and thus have a seamless integration, install the guest additions inside the guest. Read from the [[
+Para controlar de forma transparente sua máquina virtual com o mouse indo e voltando de seu hospedeiro, sem ter que pressionar nenhuma tecla e, assim, ter uma integração perfeita, instale os adicionais para convidados dentro do convidado. Leia a partir do passo [#Instalar os adicionais para convidado](#Instalar_os_adicionais_para_convidado) se o convidado for o Arch Linux, caso contrário leia a ajuda oficial do VirtualBox.
+
+### Nenhuma opção para cliente de SO 64 bits
+
+When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
+
+If you are using a Windows host, you may need to disable Hyper-V, as it prevents VirtualBox from using VT-x. [[6]](https://www.virtualbox.org/ticket/12350)
+
+### VirtualBox GUI não corresponde ao tema GTK do hospedeiro
+
+See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt-based applications like VirtualBox.
+
+### Não é possível enviar Ctrl+Alt+Fn para o convidado
+
+Your guest operating system is a GNU/Linux distribution and you want to open a new TTY shell by hitting `Ctrl+Alt+F2` or exit your current X session with `Ctrl+Alt+Backspace`. If you type these keyboard shortcuts without any adaptation, the guest will not receive any input and the host (if it is a GNU/Linux distribution too) will intercept these shortcut keys. To send `Ctrl+Alt+F2` to the guest for example, simply hit your *Host Key* (usually the right `Ctrl` key) and press `F2` simultaneously.
+
+### Subsistema USB não funciona
+
+Your user must be in the `vboxusers` group and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
+
+If `VBoxManage list usbhost` does not show any USB devices even if run as root, make sure that there is no old udev rules (from VirtualBox 4.x) in `/etc/udev/rules.d/`. VirtualBox 5.0 installs udev rules to `/usr/lib/udev/rules.d/`. You can use command like `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` to determine if the udev rule file is outdated.
+
+Sometimes, on old Linux hosts, the USB subsystem is not auto-detected resulting in an error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` or in a not visible USB drive on the host, [even when the user is in the **vboxusers** group](https://bbs.archlinux.org/viewtopic.php?id=121377). This problem is due to the fact that VirtualBox switched from *usbfs* to *sysfs* in version 3.0.8\. If the host does not understand this change, you can revert to the old behaviour by defining the following environment variable in any file that is sourced by your shell (e.g. your `~/.bashrc` if you are using *bash*):
+
+ `~/.bashrc`  `VBOX_USB=usbfs` 
+
+Then make sure, the environment has been made aware of this change (reconnect, source the file manually, launch a new shell instance or reboot).
+
+Also make sure that your user is a member of the `storage` group.
+
+### Modem USB não funciona no hospedeiro
+
+If you have a USB modem which is being used by the guest OS, killing the guest OS can cause the modem to become unusable by the host system. Killing and restarting `VBoxSVC` should fix this problem.
+
+### Dispositivo USB trava o convidado
+
+If attaching a USB device to the guest causes a crash or any other erroneous behavior, try switching the USB controller from USB 2 (EHCI) to USB 3 (xHCI) or vice versa.
+
+### Acesso a porta serial pelo convidado
+
+Check you permission for the serial port:
+
+ `$ ls -l /dev/ttyS*` 
+```
+crw-rw---- 1 root uucp 4, 64 Feb  3 09:12 /dev/ttyS0
+crw-rw---- 1 root uucp 4, 65 Feb  3 09:12 /dev/ttyS1
+crw-rw---- 1 root uucp 4, 66 Feb  3 09:12 /dev/ttyS2
+crw-rw---- 1 root uucp 4, 67 Feb  3 09:12 /dev/ttyS3
+
+```
+
+Add your user to the `uucp` [user group](/index.php/User_group "User group").
+
+### Convidado trava após iniciar o Xorg
+
+Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[8]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+
+### Modo tela cheia mostra uma tela branca
+
+On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To work around this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings > User Interface > Mini ToolBar". See the [upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
+
+### Hospedeiro trava ao iniciar máquina virtual
+
+Possible causes/solutions:
+
+*   SMAP
+
+This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. A solution to this problem is disabling SMAP support in your kernel by appending the `nosmap` option to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+*   Hardware Virtualisation
+
+Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
+
+*   Various Kernel bugs
+    *   Fuse mounted partitions (like ntfs) [[9]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+
+Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
+
+### Convidados Linux têm áudio lento/distorcido
+
+The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside Virtual Box, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d/` with the following line:
+
+```
+options snd-intel8x0 ac97_clock=48000
+
+```
+
+### Microfone analógico não funciona
+
+If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
+
+If after installing [PulseAudio](/index.php/PulseAudio "PulseAudio") the microphone still refuses to work, setting *Host Audio Driver* (under *VirtualBox > Machine > Settings > Audio*) to *ALSA Audio Driver* might help.
+
+### Microfone não funciona após atualização
+
+There have been issues reported around sound input in 5.1.x versions. [[11]](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
+
+[Downgrading](/index.php/Downgrading "Downgrading") may solve the problem. You can use [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
+
+### Problemas com imagens convertidas para ISO
+
+Some image formats cannot be reliably converted to ISO. For instance, [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso) ignores .ccd and .sub files, which can result in disk images with broken files.
+
+In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for Linux inside VirtualBox or any other utility used to mount disk images.
+
+### Falha ao criar a interface de rede interna
+
+Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
+
+If all required kernel modules are loaded and you are still unable to create the host-only adapter, navigate to *File > Host Network Manager* and click the *Create* button to add the network interface.
+
+### Falha ao inserir módulo
+
+When you get the following error when trying to load modules:
+
+```
+Failed to insert 'vboxdrv': Required key not available
+
+```
+
+[Sign](#Sign_modules) your modules or disable `CONFIG_MODULE_SIG_FORCE` in your kernel config.
+
+### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
+
+This can occur if a VM is exited ungracefully. Run the following command:
+
+```
+$ VBoxManage controlvm *virtual_machine_name* poweroff
+
+```
+
+### NS_ERROR_FAILURE e itens de menu em falta
+
+This happens sometimes when selecting *QCOW*/*QCOW2*/*QED* disk format when creating a new virtual disk.
+
+If you encounter this message the first time you start the virtual machine:
+
+```
+Failed to open a session for the virtual machine debian.
+Could not open the medium '/home/.../VirtualBox VMs/debian/debian.qcow'.
+QCow: Reading the L1 table for image '/home/.../VirtualBox VMs/debian/debian.qcow' failed (VERR_EOF).
+VD: error VERR_EOF opening image file '/home/.../VirtualBox VMs/debian/debian.qcow' (VERR_EOF).
+
+Result Code: 
+NS_ERROR_FAILURE (0x80004005)
+Component: 
+Medium
+
+```
+
+Exit VirtualBox, delete all files of the new machine and from virtualbox config file remove the last line in `MachineRegistry` menu (or the offending machine you are creating):
+
+ `~/.config/VirtualBox/VirtualBox.xml` 
+```
+...
+<MachineRegistry>
+  <MachineEntry uuid="{00000000-0000-0000-0000-000000000000}" src="/home/void/VirtualBox VMs/debian/debian.vbox"/>
+  <MachineEntry uuid="{00000000-0000-0000-0000-000000000000}" src="/home/void/VirtualBox VMs/ubuntu/ubuntu.vbox"/>
+  ~~<MachineEntry uuid="{00000000-0000-0000-0000-000000000000}" src="/home/void/VirtualBox VMs/lastvmcausingproblems/lastvmcausingproblems.qcow"/>~~
+</MachineRegistry>
+...
+```
+
+### Arch: script pacstrap falhando
+
+If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
+
+### OpenBSD inutilizável quando instruções de virtualização estão indisponíveis
+
+While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the *-norawr0* argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
+
+```
+$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
+
+```
+
+### Hospedeiro Windows: VERR_ACCESS_DENIED
+
+To access the raw VMDK image on a Windows host, run the VirtualBox GUI as administrator.
+
+### Windows: "O caminho especificado não existe. Verifique o caminho e tente novamente."
+
+This error message may appear when running an `.exe` file which requires administrator privileges from a shared folder in windows guests. [[12]](https://www.virtualbox.org/ticket/5732#comment:39)
+
+As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "w:Uniform Naming Convention") (`\\vboxsvr`). See [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
+
+### Erro no Windows 8.x com código 0x000000C4
+
+If you get this error code while booting, even if you choose OS Type Win 8, try to enable the `CMPXCHG16B` CPU instruction:
+
+```
+$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
+
+```
+
+### Windows 8, 8.1 ou 10 falha em instalar, inicializar ou tem erro "ERR_DISK_FULL"
+
+Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
+
+### WinXP: Profundidade de bits não pode ser maior que 16
+
+If you are running at 16-bit color depth, then the icons may appear fuzzy/choppy. However, upon attempting to change the color depth to a higher level, the system may restrict you to a lower resolution or simply not enable you to change the depth at all. To fix this, run `regedit` in Windows and add the following key to the Windows XP VM's registry:
+
+```
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
+"ColorDepth"=dword:00000004
+
+```
+
+Then update the color depth in the "desktop properties" window. If nothing happens, force the screen to redraw through some method (i.e. `Host+f` to redraw/enter full screen).
+
+### Windows: Oscilação da tela se a aceleração 3D estiver ativada
+
+VirtualBox > 4.3.14 has a regression in which Windows guests with 3D acceleration flicker. Since r120678 a patch has been implemented to recognize an [environment variable](/index.php/Environment_variable "Environment variable") setting, launch VirtualBox like this:
+
+```
+$ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
+
+```
+
+Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653).
+
+### Nenhuma aceleração 3D de hardware no convidado Arch Linux
+
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package as of version 5.2.16-2 does not contain the file `VBoxEGL.so`. This causes the Arch Linux guest does not have proper 3D acceleration. See [FS#49752](https://bugs.archlinux.org/task/49752).
+
+To deal with this problem, apply the patch set at [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Some fix to the patch set is required to make it work for version 5.2.16-2.
+
+### Não é possível iniciar o VirtualBox no Wayland: Falha de segmentação
+
+This problem is usually caused by Qt on Wayland, see [FS#58761](https://bugs.archlinux.org/task/58761).
+
+The best thing, not to affect the rest of Qt applications (which usually work well in Wayland), is to unset the `QT_QPA_PLATFORM` [environment variable](/index.php/Environment_variable "Environment variable") in the VirtualBox's [desktop entry](/index.php/Desktop_entry "Desktop entry"). Follow the instructions in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and change the lines starting with
+
+```
+Exec=VirtualBox ...
+
+```
+
+to
+
+```
+Exec=env -u QT_QPA_PLATFORM VirtualBox ...
+
+```

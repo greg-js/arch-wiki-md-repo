@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-06-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=576369) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-08-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=577225) na versão em inglês.
 
 Artigos relacionados
 
@@ -345,8 +345,8 @@ Alguns clientes, porém, podem depender de `/etc/hosts`, veja [[4]](https://list
 Para configurar o arquivo hosts, adicione as seguintes linhas ao `/etc/hosts`:
 
 ```
-127.0.0.1        localhost.localdomain         localhost
-::1              localhost.localdomain         localhost
+127.0.0.1        localhost
+::1              localhost
 127.0.1.1        *meuhostname*.localdomain        *meuhostname*
 
 ```
@@ -357,8 +357,8 @@ Como um resultado, o sistema resolve ambas entradas:
 
  `$ getent hosts` 
 ```
-127.0.0.1       localhost.localdomain localhost
-127.0.0.1       localhost.localdomain localhost
+127.0.0.1       localhost
+127.0.0.1       localhost
 127.0.1.1       *meuhostname*.localdomain *meuhostname*
 
 ```
@@ -372,8 +372,8 @@ Para tornar sua máquina acessível em sua LAN por seu hostname, você pode:
 *   editar o arquivo `/etc/hosts` para todo dispositivio em sua LAN, veja [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
 *   configurar um [servidor DNS](/index.php/Servidor_DNS "Servidor DNS") para resolver seu hostname e faça com que os dispositivos LAN o usem (ex., por [#DHCP](#DHCP))
 *   ou a forma fácil: use um serviço [Zero-configuration networking](https://en.wikipedia.org/wiki/pt:Zeroconf "wikipedia:pt:Zeroconf"):
-    *   [Samba](/index.php/Samba "Samba") fornece resolução de nomes via **NetBIOS** da Microsoft. Ele precisa da instalação do [samba](https://www.archlinux.org/packages/?name=samba) e habilitação do serviço `nmb.service`. Computadores usando Windows, macOS ou Linux com `nmb` ativo, serão capazes de localizar sua máquina.
-    *   [Avahi](/index.php/Avahi "Avahi") fornece resolução de nomes via **zeroconf**, também conhecido como Avahi ou Bonjour. É necessário uma configuração um pouco diferente que o Samba: veja [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes details. Computadores usando macOS, ou Linux com um daemon Avahi ativo, serão capazes de localizar sua máquina. Windows não têm um cliente ou daemon Avahi incorporados.
+    *   Resolução de nomes de host através do serviço [NetBIOS](https://en.wikipedia.org/wiki/pt:NetBIOS#Servi.C3.A7o_de_nomes "wikipedia:pt:NetBIOS") da Microsoft. Fornecido pelo [Samba](/index.php/Samba "Samba") no Linux. Ele precisa da instalação do [samba](https://www.archlinux.org/packages/?name=samba) e habilitação do serviço `nmb.service`. Computadores usando Windows, macOS ou Linux com `nmb` ativo, serão capazes de localizar sua máquina.
+    *   Resolução de nomes de host via [mDNS](https://en.wikipedia.org/wiki/pt:Multicast_DNS "wikipedia:pt:Multicast DNS"). Fornecido por `nss_mdns` com [Avahi](/index.php/Avahi "Avahi") (consulte [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") para detalhes de configuração) ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"). Computadores usando macOS, ou Linux com o Avahi ou o systemd-running em execução, poderão localizar sua máquina. O Windows não possui um cliente ou daemon mDNS integrado.
 
 ## Dicas e truques
 

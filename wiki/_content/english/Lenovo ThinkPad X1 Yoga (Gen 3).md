@@ -63,7 +63,8 @@ To ensure you have this version, [install](/index.php/Install "Install") the pac
         *   [3.2.1 Automatic Screen Rotation in Gnome](#Automatic_Screen_Rotation_in_Gnome)
         *   [3.2.2 With Screen Rotator](#With_Screen_Rotator)
 *   [4 Configuration](#Configuration)
-    *   [4.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
+    *   [4.1 Fan Control](#Fan_Control)
+    *   [4.2 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
 
 ## BIOS
 
@@ -339,21 +340,25 @@ Automatic screen rotation works well with ScreenRotator which has no configurati
 
 ## Configuration
 
-F86A
+Many of the configuration options can be found in [Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Configuration](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Configuration "Lenovo ThinkPad X1 Carbon (Gen 6)"), as the X1 Carbon 6 has a very similar structure to the X1 Yoga 3.
+
+### Fan Control
+
+See [Fan_speed_control#ThinkPad_laptops](/index.php/Fan_speed_control#ThinkPad_laptops "Fan speed control")
 
 ### Keyboard Fn Shortcuts
 
-<caption>Fn Shortcuts</caption>
-| Keybind | XF86 Event |
-| Fn+F1 | XF86AudioMicMute |
-| Fn+F2 | XF86AudioLowerVolume |
-| Fn+F3 | XF86AudioRaiseVolume |
-| Fn+F4 | XF86AudioMicMute |
-| Fn+F5 | XF86MonBrightnessDown |
-| Fn+F6 | XF86MonBrightnessUp |
-| Fn+F7 | XF86Display |
-| Fn+F8 | XF86WLAN |
-| Fn+F9 | XF86Tools |
-| Fn+F10 | XF86Bluetooth (This should already enable/disable bluetooth if you use a minimal window manager like i3) |
+| Keybind | XF86 Event | Keycode | Keysym |
+| Fn | XF86WakeUp | 151 | 0x1008ff2b |
+| Fn+F1 | XF86AudioMute | 121 | 0x1008ff12 |
+| Fn+F2 | XF86AudioLowerVolume | 122 | 0x1008ff11 |
+| Fn+F3 | XF86AudioRaiseVolume | 123 | 0x1008ff13 |
+| Fn+F4 | XF86AudioMicMute | 198 | 0x1008ffb2 |
+| Fn+F5 | XF86MonBrightnessDown | 232 | 0x1008ff03 |
+| Fn+F6 | XF86MonBrightnessUp | 233 | 0x1008ff02 |
+| Fn+F7 | XF86Display | 235 | 0x1008ff59 |
+| Fn+F8 | XF86WLAN | 246 | 0x1008ff95 |
+| Fn+F9 | XF86Tools | 179 | 0x1008ff81 |
+| Fn+F10 | XF86Bluetooth | 245 | 0x1008ff94 |
 | Fn+F11 | ?? |
-| Fn+F12 | XF86Favorites |
+| Fn+F12 | XF86Favorites | 164 | 0x1008ff30 |

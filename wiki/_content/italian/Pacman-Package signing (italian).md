@@ -1,6 +1,10 @@
 Pacman-key è un nuovo tool disponibile con pacman 4\. Con la nuova implementazione dei pacchetti firmati, permette all'utente di amministrarne la lista delle chiavi affidabili in pacman.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Installazione](#Installazione)

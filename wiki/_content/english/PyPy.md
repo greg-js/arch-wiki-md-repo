@@ -63,7 +63,7 @@ $ virtualenv --python=/usr/bin/pypy venv-pypy
 
 ```
 
-see [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for further information.
+See [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for further information.
 
 ### Installing pip
 

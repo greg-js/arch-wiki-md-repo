@@ -5,9 +5,13 @@ Related articles
 
 [Zswap](https://en.wikipedia.org/wiki/zswap "wikipedia:zswap") is a kernel feature that provides a compressed RAM cache for swap pages. Pages which would otherwise be swapped out to disk are instead compressed and stored into a memory pool in RAM. Once the pool is full or the RAM is exhausted, the least recently used *(LRU)* page is decompressed and written to disk, as if it had not been intercepted. After the page has been decompressed into the swap cache, the compressed version in the pool can be freed.
 
-The [difference compared to zram](/index.php/Improving_performance#Zram_or_zswap "Improving performance") is that zswap works in conjunction with a [swap](/index.php/Swap "Swap") device while zram is a swap device in RAM that does not require a backing swap device.
+The [difference compared to zram](/index.php/Improving_performance#Zram_or_zswap "Improving performance") is that zswap works in conjunction with a [swap](/index.php/Swap "Swap") device while *zram* is a swap device in RAM that does not require a backing swap device.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Enabling zswap](#Enabling_zswap)
 *   [2 Customizing zswap](#Customizing_zswap)
@@ -40,16 +44,19 @@ To enable zswap permanently:
 
 ### Current parameters
 
-Zswap has 4 customizable parameters. The live settings can be displayed using:
+Zswap has several customizable parameters. The live settings can be displayed using:
 
  `$ grep -R . /sys/module/zswap/parameters` 
 ```
+/sys/module/zswap/parameters/same_filled_pages_enabled:Y
 /sys/module/zswap/parameters/enabled:Y
 /sys/module/zswap/parameters/max_pool_percent:25
-/sys/module/zswap/parameters/zpool:z3fold
 /sys/module/zswap/parameters/compressor:lz4
+/sys/module/zswap/parameters/zpool:z3fold
 
 ```
+
+See the [zswap documentation](https://www.kernel.org/doc/Documentation/vm/zswap.txt) for the description of the different parameters.
 
 The boot time load message showing the initial configuration can be retrieved with:
 
@@ -104,7 +111,6 @@ On next reboot, see [#Current parameters](#Current_parameters) to check if zswap
 
 ## See also
 
-*   [zswap documentation](https://www.kernel.org/doc/Documentation/vm/zswap.txt).
 *   [zswap: How to determine whether it is compressing swap pages?](https://lkml.org/lkml/2013/7/17/147).
 *   [IBM Developer Works Article (with benchmarks)](https://www.ibm.com/developerworks/community/blogs/fe313521-2e95-46f2-817d-44a4f27eba32/entry/new_linux_zswap_compression_functionality7?lang=en).
 *   [Ask Ubuntu: zram vs. zswap vs. zcache](http://askubuntu.com/questions/471912/zram-vs-zswap-vs-zcache-ultimate-guide-when-to-use-which-one).

@@ -66,7 +66,7 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
 *   [NetworkManager#/etc/resolv.conf](/index.php/NetworkManager#/etc/resolv.conf "NetworkManager")
 
-To prevent programs from overwriting `/etc/resolv.conf` you can also write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute"):
+To prevent programs from overwriting `/etc/resolv.conf`, it is also possible to write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute"):
 
 ```
 # chattr +i /etc/resolv.conf
@@ -95,14 +95,14 @@ options single-request
 
 ### Local domain names
 
-If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `/etc/resolv.conf` with the local domain such as:
+To be able to use the hostname of local machine names without the fully qualified domain name, add a line to `/etc/resolv.conf` with the local domain such as:
 
 ```
-domain example.com
+domain example.org
 
 ```
 
-That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the [drill](#Lookup_utilities) command still requires the fully qualified domain names in order to perform lookups.
+That way you can refer to local hosts such as `mainmachine1.example.org` as simply `mainmachine1` when using the *ssh* command, but the [drill](#Lookup_utilities) command still requires the fully qualified domain names in order to perform lookups.
 
 ## Lookup utilities
 
@@ -117,7 +117,7 @@ $ drill @*nameserver* TXT *domain*
 
 ```
 
-If you do not specify a DNS server *drill* uses the nameservers defined in `/etc/resolv.conf`.
+Unless a DNS server is specified, *drill* will use the nameservers defined in `/etc/resolv.conf`.
 
 *   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) provides [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) and a bunch of `dnssec-` tools.
 
@@ -125,7 +125,7 @@ If you do not specify a DNS server *drill* uses the nameservers defined in `/etc
 
 ## Resolver performance
 
-The Glibc resolver does not cache queries. If you want local caching use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") or set up a local caching [DNS server](#DNS_servers) and use `127.0.0.1` as your name server.
+The Glibc resolver does not cache queries. To implement local caching, use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") or set up a local caching [DNS server](#DNS_servers) and use it as the name server by setting `127.0.0.1` and `::1` as the name servers in `/etc/resolv.conf` or in `/etc/resolvconf.conf` if using [openresolv](/index.php/Openresolv "Openresolv").
 
 **Tip:**
 
@@ -149,7 +149,7 @@ There are various [third-party DNS services](https://en.wikipedia.org/wiki/Publi
 
 *   **dingo** — A DNS client for Google DNS over HTTPS
 
-	[https://github.com/pforemski/dingo](https://github.com/pforemski/dingo) || [dingo](https://www.archlinux.org/packages/?name=dingo)
+	[https://github.com/pforemski/dingo](https://github.com/pforemski/dingo) || [dingo-git](https://aur.archlinux.org/packages/dingo-git/)
 
 *   **opennic-up** — Automates the renewal of the DNS servers with the most responsive OpenNIC servers
 

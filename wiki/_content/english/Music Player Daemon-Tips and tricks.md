@@ -1,6 +1,10 @@
 Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Organizing library](#Organizing_library)
 *   [2 Last.fm/Libre.fm scrobbling](#Last.fm/Libre.fm_scrobbling)
@@ -8,6 +12,7 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
     *   [2.2 mpdcron](#mpdcron)
     *   [2.3 mpdscribble](#mpdscribble)
     *   [2.4 Sonata](#Sonata)
+    *   [2.5 YAMScrobbler](#YAMScrobbler)
 *   [3 Disable resume playback on startup](#Disable_resume_playback_on_startup)
 *   [4 Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once](#Example_configuration:_Output_with_44.1_KHz_at_e._g._16_bit_depth,_multiple_programs_at_once)
 *   [5 Control MPD with lirc](#Control_MPD_with_lirc)
@@ -137,6 +142,26 @@ Alternatively you can autostart *mpdscribble* along with *mpd*, add an entry for
 ### Sonata
 
 Sonata has built-in support for scrobbling, although that requires the program to run the whole time. Additionally, Sonata does not cache the songs if they cannot be forwarded to Last.fm at the time of playing, meaning they will not be added to the statistics.
+
+### YAMScrobbler
+
+[python-yams](https://aur.archlinux.org/packages/python-yams/) is a daemon available in the [AUR](/index.php/AUR "AUR"). You may authenticate with the new Last.FM Scrobbling API v2.0 without needing to input/store your username/password locally. Simply start `yams` and copy the resulting authentication URL into your web browser.
+
+You can autostart YAMScrobbler after `mpd.service` using the [example](https://github.com/Berulacks/yams/blob/master/yams.service) systemd service file:
+
+```
+[Unit]
+Description=yams
+After=mpd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/yams -N
+
+[Install]
+WantedBy=default.target
+
+```
 
 ## Disable resume playback on startup
 

@@ -156,7 +156,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 See also [Wikipedia:Comparison of video codecs](https://en.wikipedia.org/wiki/Comparison_of_video_codecs "wikipedia:Comparison of video codecs").
 
 | Codec | Libraries |
-| [AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1") | [aom](https://www.archlinux.org/packages/?name=aom) |
+| [AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1") | [aom](https://www.archlinux.org/packages/?name=aom), [dav1d](https://www.archlinux.org/packages/?name=dav1d) (decode), [rav1e-git](https://aur.archlinux.org/packages/rav1e-git/) (encode) |
 | [Daala](https://en.wikipedia.org/wiki/Daala "wikipedia:Daala") | [daala-git](https://aur.archlinux.org/packages/daala-git/) |
 | [Dirac](https://en.wikipedia.org/wiki/Dirac_(video_compression_format) | [schroedinger](https://www.archlinux.org/packages/?name=schroedinger) |
 | [DV](https://en.wikipedia.org/wiki/DV "wikipedia:DV") | [libdv](https://www.archlinux.org/packages/?name=libdv) |
@@ -167,9 +167,9 @@ See also [Wikipedia:Comparison of video codecs](https://en.wikipedia.org/wiki/Co
 | [MPEG-2](https://en.wikipedia.org/wiki/MPEG-2 "wikipedia:MPEG-2") |
 | [MPEG-4](https://en.wikipedia.org/wiki/MPEG-4 "wikipedia:MPEG-4") | [Xvid](https://en.wikipedia.org/wiki/Xvid "wikipedia:Xvid") ([xvidcore](https://www.archlinux.org/packages/?name=xvidcore)) |
 | [Theora](https://en.wikipedia.org/wiki/Theora "wikipedia:Theora") | [libtheora](https://www.archlinux.org/packages/?name=libtheora) |
-| [VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8") | [libvpx](https://www.archlinux.org/packages/?name=libvpx), [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/) |
+| [VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8"), [VP9](https://en.wikipedia.org/wiki/VP9 "wikipedia:VP9") | [libvpx](https://www.archlinux.org/packages/?name=libvpx), [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/) |
 
-*   **[AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1")** — AOMedia Video 1 (AV1) is successor codec to Google's VP9, Mozilla's Daala, Cisco's Thor.
+*   **[AV1](https://en.wikipedia.org/wiki/AV1 "wikipedia:AV1")** — AOMedia Video 1 (AV1) is successor codec to Google's VP9, Mozilla's Daala, Cisco's Thor. [aom](https://www.archlinux.org/packages/?name=aom) is the reference implementation of both encoding and decoding. [dav1d](https://www.archlinux.org/packages/?name=dav1d) is the performance focused decoder. [rav1e](https://github.com/xiph/rav1e) is performance focused encoder.
 
 	[https://aomediacodec.github.io/av1-spec/](https://aomediacodec.github.io/av1-spec/) || [aom](https://www.archlinux.org/packages/?name=aom)
 
@@ -197,7 +197,7 @@ See also [Wikipedia:Comparison of video codecs](https://en.wikipedia.org/wiki/Co
 
 	[https://www.theora.org/](https://www.theora.org/) || [libtheora](https://www.archlinux.org/packages/?name=libtheora)
 
-*   **[VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8")** — High-quality, open video format for the web that's freely available to everyone.
+*   **[VP9](https://en.wikipedia.org/wiki/VP9 "wikipedia:VP9")** — High-quality, open video format for the web that's freely available to everyone. Improved version of earlier [VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8") codec.
 
 	[https://www.webmproject.org](https://www.webmproject.org) || [libvpx](https://www.archlinux.org/packages/?name=libvpx), [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/)
 

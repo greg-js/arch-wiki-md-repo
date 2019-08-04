@@ -593,7 +593,7 @@ Explanation:
 
 *   **PyPDF2** — A pure-Python library built as a PDF toolkit.
 
-	[https://mstamy2.github.com/PyPDF2](https://mstamy2.github.com/PyPDF2) || [python-pypdf2](https://www.archlinux.org/packages/?name=python-pypdf2), [python2-pypdf2](https://aur.archlinux.org/packages/python2-pypdf2/)
+	[https://mstamy2.github.com/PyPDF2](https://mstamy2.github.com/PyPDF2) || [python-pypdf2](https://aur.archlinux.org/packages/python-pypdf2/), [python2-pypdf2](https://aur.archlinux.org/packages/python2-pypdf2/)
 
 *   **PyX** — Python library for the creation of PostScript and PDF files.
 

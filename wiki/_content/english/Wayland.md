@@ -411,6 +411,8 @@ $ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
 
 [wf-recorder-git](https://aur.archlinux.org/packages/wf-recorder-git/) is a video recorder for wlroots-based compositors.
 
+[wlrobs-hg](https://aur.archlinux.org/packages/wlrobs-hg/) is obs-studio plugin that allows you to screen capture on wlroots-based compositors.
+
 ### Remote display
 
 *   (20190503) [wlroots](https://www.archlinux.org/packages/?name=wlroots) (used by [sway](/index.php/Sway "Sway")) offers an RDP backend since version 0.6 [[4]](https://github.com/swaywm/wlroots/blob/master/docs/env_vars.md).

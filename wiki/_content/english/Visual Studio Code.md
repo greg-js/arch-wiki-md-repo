@@ -16,6 +16,7 @@
     *   [4.2 Unable to move items to trash](#Unable_to_move_items_to_trash)
     *   [4.3 Unable to debug C#](#Unable_to_debug_C#)
     *   [4.4 Error from OmniSharp that MSBuild cannot be located](#Error_from_OmniSharp_that_MSBuild_cannot_be_located)
+    *   [4.5 Saving with "Retry as Sudo" does not work](#Saving_with_"Retry_as_Sudo"_does_not_work)
 
 ## Installation
 
@@ -119,3 +120,9 @@ System.TypeLoadException: Could not load type of field 'OmniSharp.MSBuild.Projec
 ```
 
 You might be able to build anyway (possibly depending whether you have [mono](https://www.archlinux.org/packages/?name=mono) installed too)
+
+### Saving with "Retry as Sudo" does not work
+
+This feature does not work in the [code](https://www.archlinux.org/packages/?name=code) package, because Microsoft does not support the way the Arch package is packaged (native instead of bundled Electron). See [FS#61516](https://bugs.archlinux.org/task/61516) and the [upstream bug report](https://github.com/Microsoft/vscode/issues/70403) for more information.
+
+The binary release [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) does not have this issue, and the feature works there.

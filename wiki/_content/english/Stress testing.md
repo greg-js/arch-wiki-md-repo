@@ -169,9 +169,9 @@ Originally a very good program for memory failure detection, [Memtest86+](http:/
 
 ### Running Memtest86+
 
-Either download and burn the ISO to a CD and boot from it, or install [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) from [extra] and [update GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") which will auto-detect the package and allow users to boot directly to it (only for BIOS). If you are using EFI, use [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) (non-free) instead or boot grub with memtest86+ from [Arch Linux install image](https://www.archlinux.org/download/).
+Either download and burn the *Memtest86+* ISO and boot from it, or install the package [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) and [update GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") which will auto-detect the package and allow users to boot directly to it. The latter works only for BIOS, for UEFI use instead [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) (non-free) or boot grub with *Memtest86+* from [Arch Linux install image](https://www.archlinux.org/download/).
 
-**Tip:** Allowing Memtest86+ to run for >10 cycles without errors is usually sufficient.
+**Tip:** Allowing *Memtest86+* to run for >10 cycles without errors is usually sufficient.
 
 ## Discovering Errors
 

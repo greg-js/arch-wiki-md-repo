@@ -68,7 +68,7 @@ The default page served at [http://127.0.0.1](http://127.0.0.1) is `/usr/share/n
 
 First steps with nginx are described in the [Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html). You can modify the configuration by editing the files in `/etc/nginx/` The main configuration file is located at `/etc/nginx/nginx.conf`.
 
-More details and examples can be found in [http://wiki.nginx.org/Configuration](http://wiki.nginx.org/Configuration) and the [official documentation](http://nginx.org/en/docs/) and [https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/).
+More details and examples can be found in [http://wiki.nginx.org/Configuration](http://wiki.nginx.org/Configuration) and the [official documentation](http://nginx.org/en/docs/).
 
 The examples below cover the most common use cases. It is assumed that you use the default location for documents (`/usr/share/nginx/html`). If that is not the case, substitute your path instead.
 

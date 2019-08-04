@@ -1320,7 +1320,7 @@ The [SPICE project](http://spice-space.org/) aims to provide a complete open sou
 
 ### Enabling SPICE via the command line
 
-The following is example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
+The following is an example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
 ```
 $ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -spice port=5930,disable-ticketing -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
@@ -1330,8 +1330,9 @@ $ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -spice port=5930,disable
 The parameters have the following meaning:
 
 1.  `-device virtio-serial-pci` adds a virtio-serial device
-2.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in the virtio-serial device,
-3.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
+2.  `-spice port=5930,disable-ticketing` set TCP port `5930` for spice channels listening and allow client to connect without authentication
+3.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in the virtio-serial device,
+4.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
 
 **Tip:**
 
@@ -2129,7 +2130,7 @@ Windows 8 or Windows 10 guests may raise a generic compatibility exception at bo
 
 ### Certain Windows games/applications crashing/causing a bluescreen
 
-Occasionally, applications running in the VM may crash unexpectedly, whereas they'd run normally on a physical machine. If, while running `dmesg -wH`, you encounter an error mentioning `MSR`, the reason for those crashes is that KVM injects a [General protection fault](https://en.wikipedia.org/wiki/General_protection_fault "wikipedia:General protection fault") (GPF) when the guest tries to access unsupported [Model-specific registers](https://en.wikipedia.org/wiki/Model-specific_register "wikipedia:Model-specific register") (MSRs) - this often results in guest applications/OS crashing. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs.
+Occasionally, applications running in the VM may crash unexpectedly, whereas they would run normally on a physical machine. If, while running `dmesg -wH`, you encounter an error mentioning `MSR`, the reason for those crashes is that KVM injects a [General protection fault](https://en.wikipedia.org/wiki/General_protection_fault "wikipedia:General protection fault") (GPF) when the guest tries to access unsupported [Model-specific registers](https://en.wikipedia.org/wiki/Model-specific_register "wikipedia:Model-specific register") (MSRs) - this often results in guest applications/OS crashing. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs.
 
  `/etc/modprobe.d/kvm.conf` 
 ```

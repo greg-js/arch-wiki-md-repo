@@ -64,6 +64,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-2035 | [foomatic](/index.php/Foomatic "Foomatic") | Should be compatible with any drivers for the HL-2030. |
 | HL-2040 | [foomatic](/index.php/Foomatic "Foomatic") | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
 | HL-2130 | [foomatic](/index.php/Foomatic "Foomatic") (using the HL-2140 driver) | Or [hplip](https://www.archlinux.org/packages/?name=hplip) |
+| HL-2135W | [brother-brgenml1](https://aur.archlinux.org/packages/brother-brgenml1/) |
 | HL-2140 | [foomatic](/index.php/Foomatic "Foomatic") | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
 | HL-2170W | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
 | HL-2230 | [foomatic](/index.php/Foomatic "Foomatic") | Same as HL-2170W. Select HL-2170W as the driver in CUPS admin when adding a printer. |

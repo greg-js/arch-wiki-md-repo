@@ -19,24 +19,28 @@ Related articles
 
 关于此问题的背景，请访问博客 [[1]](http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/)[[2]](http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/)[[3]](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)[[4]](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/) 和 [软件包签名提议](/index.php/Package_Signing_Proposal_for_Pacman "Package Signing Proposal for Pacman") wiki 页面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [1.1 配置 pacman](#.E9.85.8D.E7.BD.AE_pacman)
-    *   [1.2 初始化密钥环](#.E5.88.9D.E5.A7.8B.E5.8C.96.E5.AF.86.E9.92.A5.E7.8E.AF)
-*   [2 管理密钥](#.E7.AE.A1.E7.90.86.E5.AF.86.E9.92.A5)
-    *   [2.1 验证主密钥](#.E9.AA.8C.E8.AF.81.E4.B8.BB.E5.AF.86.E9.92.A5)
-    *   [2.2 官方开发者密钥](#.E5.AE.98.E6.96.B9.E5.BC.80.E5.8F.91.E8.80.85.E5.AF.86.E9.92.A5)
-    *   [2.3 导入非官方密钥](#.E5.AF.BC.E5.85.A5.E9.9D.9E.E5.AE.98.E6.96.B9.E5.AF.86.E9.92.A5)
-    *   [2.4 用GPG调试](#.E7.94.A8GPG.E8.B0.83.E8.AF.95)
-*   [3 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [3.1 如何收集熵](#.E5.A6.82.E4.BD.95.E6.94.B6.E9.9B.86.E7.86.B5)
-    *   [3.2 密钥导入失败](#.E5.AF.86.E9.92.A5.E5.AF.BC.E5.85.A5.E5.A4.B1.E8.B4.A5)
-    *   [3.3 禁用签名检查](#.E7.A6.81.E7.94.A8.E7.AD.BE.E5.90.8D.E6.A3.80.E6.9F.A5)
-    *   [3.4 重置所有密钥](#.E9.87.8D.E7.BD.AE.E6.89.80.E6.9C.89.E5.AF.86.E9.92.A5)
-    *   [3.5 删除陈旧的包](#.E5.88.A0.E9.99.A4.E9.99.88.E6.97.A7.E7.9A.84.E5.8C.85)
-    *   [3.6 通过代理更新密钥](#.E9.80.9A.E8.BF.87.E4.BB.A3.E7.90.86.E6.9B.B4.E6.96.B0.E5.AF.86.E9.92.A5)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 配置](#配置)
+    *   [1.1 配置 pacman](#配置_pacman)
+    *   [1.2 初始化密钥环](#初始化密钥环)
+*   [2 管理密钥](#管理密钥)
+    *   [2.1 验证主密钥](#验证主密钥)
+    *   [2.2 官方开发者密钥](#官方开发者密钥)
+    *   [2.3 导入非官方密钥](#导入非官方密钥)
+    *   [2.4 用GPG调试](#用GPG调试)
+*   [3 问题解决](#问题解决)
+    *   [3.1 如何收集熵](#如何收集熵)
+    *   [3.2 密钥导入失败](#密钥导入失败)
+    *   [3.3 禁用签名检查](#禁用签名检查)
+    *   [3.4 重置所有密钥](#重置所有密钥)
+    *   [3.5 删除陈旧的包](#删除陈旧的包)
+    *   [3.6 通过代理更新密钥](#通过代理更新密钥)
+*   [4 参阅](#参阅)
 
 ## 配置
 
@@ -199,7 +203,7 @@ pacman-key 成功运行后停止 rngd 并删除软件包。
 *   *pacman* 缓存中包含之前的未签名软件包
 *   未正确设置 `dirmngr`
 
-过期的 [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) 包可能会导致这个问题，你应该首先尝试 [升级系统](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85 "Pacman (简体中文)") 能否解决这个问题。
+过期的 [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) 包可能会导致这个问题，你应该首先尝试 [升级系统](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#升级软件包 "Pacman (简体中文)") 能否解决这个问题。
 
 请确保 `/root/.gnupg/dirmngr_ldapservers.conf` 文件存在，`# dirmngr` 可以正常运行. 如果没有，创建一个空文件，并执行 `# dirmngr`。
 

@@ -372,7 +372,7 @@ If you plan to use the same key across multiple devices, you may want to strip o
 First, find out which subkey you want to export.
 
 ```
-$ gpg --list-secret-keys
+$ gpg --list-secret-keys --with-subkey-fingerprint
 
 ```
 

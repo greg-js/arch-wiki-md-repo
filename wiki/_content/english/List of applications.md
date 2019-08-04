@@ -737,7 +737,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua.
 
-	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
 
@@ -757,7 +757,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://www.archlinux.org/packages/?name=vimb)
 
 ###### Browsers based on qt5-webkit
 
@@ -873,7 +873,7 @@ The [Python](/index.php/Python "Python") standard library module [http.server](h
 
 *   **webhook** — Small server for creating HTTP endpoints (hooks)
 
-	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://aur.archlinux.org/packages/webhook/)
+	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://www.archlinux.org/packages/?name=webhook)
 
 *   **Woof** — An ad-hoc single file webserver; Web Offer One File.
 
@@ -4683,6 +4683,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/jarun/nnn](https://github.com/jarun/nnn) || [nnn](https://www.archlinux.org/packages/?name=nnn)
 
+*   **fff** — A simple file manager written in Bash.
+
+	[https://github.com/dylanaraps/fff](https://github.com/dylanaraps/fff) || [fff](https://www.archlinux.org/packages/?name=fff)
+
 *   **Pilot** — File manager that comes with the [Alpine](/index.php/Alpine "Alpine") email client.
 
 	[https://www.washington.edu/alpine/](https://www.washington.edu/alpine/) || [alpine-git](https://aur.archlinux.org/packages/alpine-git/)
@@ -7761,6 +7765,10 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://github.com/linuxmint/cinnamon-screensaver](https://github.com/linuxmint/cinnamon-screensaver) || [cinnamon-screensaver](https://www.archlinux.org/packages/?name=cinnamon-screensaver)
 
+*   **Deepin Screensaver** — A lightweight Qt5 based screensaver.
+
+	[https://github.com/linuxdeepin/deepin-screensaver](https://github.com/linuxdeepin/deepin-screensaver) || [deepin-screensaver](https://www.archlinux.org/packages/?name=deepin-screensaver)
+
 *   **GNOME Screensaver** — Screen locker for the GNOME Flashback desktop.
 
 	[https://wiki.gnome.org/Projects/GnomeScreensaver](https://wiki.gnome.org/Projects/GnomeScreensaver) || [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver)
@@ -7773,6 +7781,10 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://github.com/karulont/i3lock-blur](https://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)
 
+*   **i3lock-color** — Fork of *i3lock* with color and positioning configuration support and can use your desktop with the blur effect applied as a background.
+
+	[https://github.com/PandorasFox/i3lock-color](https://github.com/PandorasFox/i3lock-color) || [i3lock-color](https://aur.archlinux.org/packages/i3lock-color/)
+
 *   **i3lock-wrapper** — A simple wrapper around *i3lock* which sets up a blurred screenshot of the desktop as a background image.
 
 	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3lock-wrapper](https://aur.archlinux.org/packages/i3lock-wrapper/)
@@ -7784,10 +7796,6 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 *   **MATE Screensaver** — Screensaver and locker for MATE Desktop Environment.
 
 	[https://github.com/mate-desktop/mate-screensaver](https://github.com/mate-desktop/mate-screensaver) || [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver)
-
-*   **Deepin Screensaver** — A lightweight Qt5 based screensaver.
-
-	[https://github.com/linuxdeepin/deepin-screensaver](https://github.com/linuxdeepin/deepin-screensaver) || [deepin-screensaver](https://www.archlinux.org/packages/?name=deepin-screensaver)
 
 *   **physlock** — Screen and console locker.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-06-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=575244) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-08-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=578516) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Leitura](/index.php/Help:Leitura "Help:Leitura"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -93,6 +93,13 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://
 
 ```
 
+Ou para definir para um layout de teclado de português de Portugal:
+
+```
+# loadkeys pt-latin1 
+
+```
+
 [Fontes de console](/index.php/Fontes_de_console "Fontes de console") estão localizadas em `/usr/share/kbd/consolefonts/` e, de forma semelhante, podem ser definidas com [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Definir o idioma do ambiente live
@@ -101,19 +108,21 @@ Para modificar o layout, acrescente um nome de arquivo ao [loadkeys(1)](https://
 
 O ambiente *live* vem em inglês (locale `en_US.UTF-8`) por padrão, mas você pode alterá-lo para executar as etapas de instalação usando o idioma desejado.
 
-Descomente `pt_BR.UTF-8 UTF-8` e qualquer outro locale desejado em `/etc/locale.gen` e gere-os com:
+Para português brasileiro, descomente `pt_BR.UTF-8 UTF-8` e qualquer outro locale desejado em `/etc/locale.gen` e gere-os com:
 
 ```
  # locale-gen
 
 ```
 
-Então, exporte a variável `LANG` acrescentando o idioma e codificação desejados. Por exemplo, para pt_BR seria:
+Então, exporte a variável `LANG` acrescentando o idioma e codificação desejados. Por exemplo, para português brasileiro seria:
 
 ```
  # export LANG=pt_BR.UTF-8
 
 ```
+
+Para português de Portugal, use `pt_PT.UTF-8 UTF-8` em vez do "pt_BR".
 
 ### Verificar o modo de inicialização
 
@@ -353,9 +362,7 @@ Defina a [senha](/index.php/Senha "Senha") do *root* (também conhecido como "su
 
 ### Gerenciador de boot
 
-Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para uma lista de gerenciadores de boot com suporte a Linux.
-
-**Nota:** Se você tiver um CPU Intel ou AMD, habilite atualizações de [microcódigo](/index.php/Microcode "Microcode").
+Escolha e instale um [gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") compatível com Linux. Se você tiver um CPU Intel ou AMD, habilite atualizações de [microcódigo](/index.php/Microcode "Microcode") também.
 
 ## Reiniciar
 

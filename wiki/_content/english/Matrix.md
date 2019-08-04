@@ -22,7 +22,7 @@ After installation, a configuration file needs to be generated. It should be rea
 
 ```
 $ cd /etc/synapse
-$ sudo -u synapse python /usr/lib/python3.7/site-packages/synapse/app/homeserver.py \
+$ sudo -u synapse python -m synapse.app.homeserver \
   --server-name my.domain.name \
   --config-path /etc/synapse/homeserver.yaml \
   --generate-config \
@@ -34,7 +34,7 @@ Note that this will generate corresponding SSL keys and self-signed certificates
 
 ## Service
 
-A systemd service named *synapse.service* will be installed by the matrix-synapse package. It will start the synapse server as user *synapse* and use the configuration file `/etc/synapse/homeserver.yaml`.
+A systemd service named `synapse.service` will be installed by the matrix-synapse package. It will start the synapse server as user *synapse* and use the configuration file `/etc/synapse/homeserver.yaml`.
 
 ## User management
 

@@ -16,10 +16,9 @@ It is simple to configure but it can only start EFI executables such as the Linu
 
 *   [1 Installation](#Installation)
     *   [1.1 Installing the EFI boot manager](#Installing_the_EFI_boot_manager)
-    *   [1.2 Manual installation](#Manual_installation)
-    *   [1.3 Updating the EFI boot manager](#Updating_the_EFI_boot_manager)
-        *   [1.3.1 Manual update](#Manual_update)
-        *   [1.3.2 Automatic update](#Automatic_update)
+    *   [1.2 Updating the EFI boot manager](#Updating_the_EFI_boot_manager)
+        *   [1.2.1 Manual update](#Manual_update)
+        *   [1.2.2 Automatic update](#Automatic_update)
 *   [2 Configuration](#Configuration)
     *   [2.1 Loader configuration](#Loader_configuration)
     *   [2.2 Adding loaders](#Adding_loaders)
@@ -55,17 +54,6 @@ With the ESP mounted to `*esp*`, use [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/
 This will copy the *systemd-boot* boot loader to the EFI partition: on a x64 architecture system the two identical binaries `*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/BOOT/BOOTX64.EFI` will be transferred to the ESP. It will then set *systemd-boot* as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 To conclude the installation, [configure](#Configuration) *systemd-boot*.
-
-### Manual installation
-
-It may be necessary to install *systemd-boot* manually: for example, *bootctl* will fail if the destination has an MBR partition table. In case *bootctl* fails, copy the *systemd-boot* EFI executable from its location in the *systemd* package to its target destination,
-
-```
-# cp /usr/lib/systemd/boot/efi/systemd-bootx64.efi *esp*/EFI/BOOT/BOOTX64.EFI
-
-```
-
-and use `efibootmgr` to set *systemd-boot* as the default boot entry.
 
 ### Updating the EFI boot manager
 
@@ -119,7 +107,7 @@ The loader configuration is stored in the file `*esp*/loader/loader.conf`. The f
 *   `auto-firmware` – shows entry for rebooting into UEFI firmware settings if set to `1` (default), `0` to hide;
 *   `console-mode` – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for non-standard modes provided by the device firmware, if any, `auto` picks a suitable mode automatically, `max` for highest available mode, `keep` (default) for the firmware selected mode.
 
-For a detailed explanation of the available settings and their corresponding arguments see the [loader.conf manual](https://www.freedesktop.org/software/systemd/man/loader.conf.html). A loader configuration example is provided below:
+For a detailed explanation of the available settings and their corresponding arguments see the [loader.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loader.conf.5) manual. A loader configuration example is provided below:
 
  `*esp*/loader/loader.conf` 
 ```
@@ -150,6 +138,8 @@ For Linux boot, you can also use `linux` instead of `efi`. Or `initrd` in additi
 
 *   `linux` and `initrd` followed by the relative path of the corresponding files in the ESP; e.g. `/vmlinuz-linux`; this will be automatically translated into `efi *path*` and `options initrd=*path*` – this syntax is only supported for convenience and has no differences in function.
 
+**Note:** If `options` is present in a boot entry and [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled, the value of `options` will override any `.cmdline` string embedded in the EFI image that is specified by `efi` or `linux` (see [#Preparing kernels for /EFI/Linux](#Preparing_kernels_for_/EFI/Linux)). With Secure Boot, however, `options` (and any edits made to the kernel command line in the bootloader UI) will be ignored, and only the embedded `.cmdline` will be used.
+
 An example of a loader file to launch Arch from a partition with the label *arch_os* and loading the Intel CPU [microcode](/index.php/Microcode "Microcode") is:
 
  `*esp*/loader/entries/arch.conf` 
@@ -159,16 +149,6 @@ linux   /vmlinuz-linux
 initrd  /intel-ucode.img
 initrd  /initramfs-linux.img
 options root=LABEL=*arch_os* rw
-```
-
-Another example using [lvm](/index.php/Lvm "Lvm") on top of [dm-crypt](/index.php/Dm-crypt "Dm-crypt"):
-
- `*esp*/loader/entries/arch.conf` 
-```
-title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /initramfs-linux.img
-options rd.luks.uuid=*uuid* rd.lvm.lv=*volumegroup*/*lvroot* root=UUID=*uuid* rw
 ```
 
 *bootctl* will automatically check at boot time for **Windows Boot Manager** at the location `/EFI/Microsoft/Boot/Bootmgfw.efi`, **EFI Shell** `/shellx64.efi` and **EFI Default Loader** `/EFI/BOOT/bootx64.efi`, as well as specially prepared kernel files found in `/EFI/Linux`. When detected, corresponding entries with titles `auto-windows`, `auto-efi-shell` and `auto-efi-default`, respectively, will be generated. These entries do not require manual loader configuration. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the Linux kernel, manual configuration entries must be created.
@@ -280,7 +260,7 @@ If booted in BIOS mode, you can still install *systemd-boot*, however this proce
 *   you have a working EFI Shell somewhere else.
 *   your firmware interface provides a way of properly setting the EFI file that needs to be loaded at boot time.
 
-If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` ( or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
+If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` (or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
 
 **Note:** The firmware interface of Dell Latitude series provides everything you need to setup EFI boot but the EFI Shell won't be able to write to the computer's ROM.
 

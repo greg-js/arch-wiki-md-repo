@@ -93,7 +93,7 @@ $ sed -i 's/python %s/python2 %s/' hda-analyzer.py
 
 Close the analyzer, and when prompted as to whether you want to reset the codecs, say "yes".
 
-If the volume is *still* too low, run *alsamixer* again: resetting the codecs may have caused new sliders to become enabled and some of them may be set to a low value.
+If the volume is still too low, run *alsamixer* again: resetting the codecs may have caused new sliders to become enabled and some of them may be set to a low value.
 
 ### Low Sound Volume
 
@@ -267,9 +267,7 @@ load-module module-udev-detect tsched=0
 
 ```
 
-See the DMA-Position Problem in the kernel docs.
-
-*   [HD-audio Kernel Docs](https://www.kernel.org/doc/Documentation/sound/alsa/HD-Audio.txt)
+See the [DMA-Position Problem in the kernel docs](https://www.kernel.org/doc/html/latest/sound/hd-audio/notes.html#dma-position-problem).
 
 ## Audio Quality
 

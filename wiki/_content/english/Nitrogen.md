@@ -2,7 +2,7 @@ Related articles
 
 *   [feh](/index.php/Feh "Feh")
 
-[Nitrogen](https://github.com/l3ib/nitrogen/) is a fast and lightweight desktop background browser and setter for X windows.
+[Nitrogen](https://github.com/l3ib/nitrogen/) is a fast and lightweight desktop background browser and setter for X Window.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

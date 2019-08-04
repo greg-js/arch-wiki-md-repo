@@ -30,17 +30,21 @@ Related articles
     *   [3.2 Debian](#Debian)
         *   [3.2.1 Manually](#Manually)
 *   [4 Remove Docker and images](#Remove_Docker_and_images)
-*   [5 Useful tips](#Useful_tips)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_/_no_internet_access_in_containers)
-    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes/threads_too_low)
-    *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
-    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
-    *   [6.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
-    *   [6.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
-    *   [6.7 Docker-machine fails to create virtual machines using the virtualbox driver](#Docker-machine_fails_to_create_virtual_machines_using_the_virtualbox_driver)
-    *   [6.8 Starting Docker breaks KVM bridged networking](#Starting_Docker_breaks_KVM_bridged_networking)
-*   [7 See also](#See_also)
+*   [5 Run GPU accelerated Docker containers with NVIDIA GPUs](#Run_GPU_accelerated_Docker_containers_with_NVIDIA_GPUs)
+    *   [5.1 With NVIDIA Container Toolkit (recommended)](#With_NVIDIA_Container_Toolkit_(recommended))
+    *   [5.2 With NVIDIA Container Runtime](#With_NVIDIA_Container_Runtime)
+    *   [5.3 With nvidia-docker (deprecated)](#With_nvidia-docker_(deprecated))
+*   [6 Useful tips](#Useful_tips)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_/_no_internet_access_in_containers)
+    *   [7.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes/threads_too_low)
+    *   [7.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
+    *   [7.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some/path/to/file:_No_space_left_on_device)
+    *   [7.5 Invalid cross-device link in kernel 4.19.1](#Invalid_cross-device_link_in_kernel_4.19.1)
+    *   [7.6 CPUACCT missing in docker with Linux-ck](#CPUACCT_missing_in_docker_with_Linux-ck)
+    *   [7.7 Docker-machine fails to create virtual machines using the virtualbox driver](#Docker-machine_fails_to_create_virtual_machines_using_the_virtualbox_driver)
+    *   [7.8 Starting Docker breaks KVM bridged networking](#Starting_Docker_breaks_KVM_bridged_networking)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -318,6 +322,115 @@ Delete all Docker data (purge directory):
 # rm -R /var/lib/docker
 
 ```
+
+## Run GPU accelerated Docker containers with NVIDIA GPUs
+
+### With NVIDIA Container Toolkit (recommended)
+
+Starting from Docker version 19.03, NVIDIA GPUs are natively supported as Docker devices. [NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker) is the recommended way of running containers that leverage NVIDIA GPUs.
+
+Install the [nvidia-container-toolkit](https://aur.archlinux.org/packages/nvidia-container-toolkit/) package. Next, [restart](/index.php/Restart "Restart") docker. You can now run containers that make use of NVIDIA GPUs using the `--gpus` option:
+
+```
+# docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Specify how many GPUs are enabled inside a container:
+
+```
+# docker run --gpus 2 nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Specify which GPUs to use:
+
+```
+# docker run --gpus '"device=1,2"' nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+or
+
+```
+# docker run --gpus '"device=UUID-ABCDEF,1"' nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+Specify a capability (graphics, compute, ...) for the container (though this is rarely if ever used this way):
+
+```
+# docker run --gpus all,capabilities=utility nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+For more information see [README.md](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md) and [Wiki](https://github.com/NVIDIA/nvidia-docker/wiki).
+
+### With NVIDIA Container Runtime
+
+Install the [nvidia-container-runtime](https://aur.archlinux.org/packages/nvidia-container-runtime/) package. Next, register the NVIDIA runtime by editing `/etc/docker/daemon.json`
+
+ `/etc/docker/daemon.json` 
+```
+{
+  "runtimes": {
+    "nvidia": {
+      "path": "/usr/bin/nvidia-container-runtime",
+      "runtimeArgs": []
+    }
+  }
+}
+```
+
+and then [restart](/index.php/Restart "Restart") docker.
+
+The runtime can also be registered via a command line option to *dockerd*:
+
+```
+# /usr/bin/dockerd --add-runtime=nvidia=/usr/bin/nvidia-container-runtime
+
+```
+
+Afterwards GPU accelerated containers can be started with
+
+```
+# docker run --runtime=nvidia nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+or (required Docker version 19.03 or higher)
+
+```
+# docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+See also [README.md](https://github.com/NVIDIA/nvidia-container-runtime/blob/master/README.md).
+
+### With nvidia-docker (deprecated)
+
+[nvidia-docker](https://nvidia.github.io/nvidia-docker/) is a wrapper around NVIDIA Container Runtime which registers the NVIDIA runtime by default and provides the *nvidia-docker* command.
+
+To use nvidia-docker, install the [nvidia-docker](https://aur.archlinux.org/packages/nvidia-docker/) package and then [restart](/index.php/Restart "Restart") docker. Containers with NVIDIA GPU support can then be run using any of the following methods:
+
+```
+# docker run --runtime=nvidia nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+```
+# nvidia-docker run nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+or (required Docker version 19.03 or higher)
+
+```
+# docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+```
+
+**Note:** nvidia-docker is a legacy method for running NVIDIA GPU accelerated containers used prior to Docker 19.03 and has been deprecated. If you are using Docker version 19.03 or higher, it is recommended to use [NVIDIA Container Toolkit](#With_NVIDIA_Container_Toolkit_(recommended)) instead.
 
 ## Useful tips
 

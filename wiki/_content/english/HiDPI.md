@@ -240,9 +240,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 ```
 
-For a detailed explanation of these flags, see the [Qt article on High DPI Displays](https://doc.qt.io/qt-5/highdpi.html).
-
-If automatic detection of DPI does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
+If automatic detection of DPI does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/) or [Qt developer documentation](https://doc.qt.io/qt-5/highdpi.html).
 
 **Note:**
 
@@ -258,17 +256,11 @@ QT_FONT_DPI=96 vym
 
 ```
 
-**Note:**
-
-Recap of the environmental variables (from [the Qt doc](https://doc.qt.io/qt-5/highdpi.html))
-
-*   `QT_AUTO_SCREEN_SCALE_FACTOR [boolean]` enables automatic scaling, based on the pixel density of the monitor. This will not change the size of point sized fonts, since point is a physical unit of measure. Multiple screens may get different scale factors.
-*   `QT_SCALE_FACTOR [numeric]` defines a global scale factor for the whole application, including point sized fonts.
-*   `QT_SCREEN_SCALE_FACTORS [list]` specifies scale factors for each screen. This will not change the size of point sized fonts. This environment variable is mainly useful for debugging, or to work around monitors with wrong EDID information (Extended Display Identification Data). The format can be either a semicolon-separated list of scale factors in the same order as `QGuiApplication::screens()`, or a semicolon-separated list of name-value pairs, where name is the same as `QScreen::name()`.
-
 ### GDK 3 (GTK+ 3)
 
-If you are using a window manager other than Gnome and have scaled the fonts using Xft.dpi, you must tell GDK to scale the UI as well. This will result in a further increase of the font-size for GDK apps, so you must undo the scaling of the text only.
+**Note:** As stated in the [#X Resources](#X_Resources) section, if you have xft.dpi set to a larger dpi, it will make other scales larger than usual, including GDK.
+
+Setting the GDK scale will scale the UI, however it will not scale icons. If you are using a minimal window manager where you are setting the dpi via Xft.dpi, GDK should scale perfectly fine with it. In other cases, do the following:
 
 To scale UI elements by a factor of two:
 

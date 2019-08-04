@@ -67,9 +67,18 @@ server:
 
 ### Local DNS server
 
-If you want to use *unbound* as your local DNS server, set your nameserver to the loopback addresses `::1` and `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Domain_name_resolution#Overwriting_of_/etc/resolv.conf "Domain name resolution").
+If you want to use *unbound* as your local DNS server, set your nameserver to the loopback addresses `::1` and `127.0.0.1` in `/etc/resolv.conf`:
 
-**Tip:** A simple way to do this is to install [openresolv](/index.php/Openresolv "Openresolv") and uncomment the line containing `name_servers="::1 127.0.0.1"` in `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
+ `/etc/resolv.conf` 
+```
+nameserver ::1
+nameserver 127.0.0.1
+
+```
+
+Make sure to protect `/etc/resolv.conf` from modification as described in [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_/etc/resolv.conf "Domain name resolution").
+
+**Tip:** A simple way to do this is to install [openresolv](/index.php/Openresolv "Openresolv") and add `name_servers="::1 127.0.0.1"` to `/etc/resolvconf.conf`. Then run `resolvconf -u` to generate `/etc/resolv.conf`.
 
 See [Domain name resolution#Lookup utilities](/index.php/Domain_name_resolution#Lookup_utilities "Domain name resolution") on how to test your settings.
 

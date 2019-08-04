@@ -28,7 +28,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
         *   [1.3.3 imlib2](#imlib2)
         *   [1.3.4 FFmpeg](#FFmpeg)
 *   [2 Screencast software](#Screencast_software)
-*   [3 Weston](#Weston)
+*   [3 Wayland](#Wayland)
 *   [4 Terminal](#Terminal)
     *   [4.1 Capture with ANSI codes](#Capture_with_ANSI_codes)
     *   [4.2 Framebuffer](#Framebuffer)
@@ -290,7 +290,7 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[http://xvidcap.sourceforge.net/](http://xvidcap.sourceforge.net/) || [xvidcap](https://aur.archlinux.org/packages/xvidcap/)
 
-## Weston
+## Wayland
 
 See [Wayland#Screencast recording](/index.php/Wayland#Screencast_recording "Wayland").
 

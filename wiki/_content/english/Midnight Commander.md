@@ -121,7 +121,7 @@ Midnight Commander does [not support](https://midnight-commander.org/ticket/3072
 Install the [libtrash](https://aur.archlinux.org/packages/libtrash/) package, and create an *mc* alias in the initialization file of your shell (e.g., `~/.bashrc` or `~/.zshrc`):
 
 ```
-alias mc='LD_PRELOAD=/usr/lib/libtrash.so.3.3 mc'
+alias mc='LD_PRELOAD=/usr/lib/libtrash.so.3.4 mc'
 
 ```
 

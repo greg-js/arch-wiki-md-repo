@@ -55,6 +55,7 @@ This article contains recommendations and best practices for [hardening](https:/
         *   [8.5.1 Examples of broken functionality](#Examples_of_broken_functionality)
     *   [8.6 hidepid](#hidepid)
     *   [8.7 Restricting module loading](#Restricting_module_loading)
+    *   [8.8 Disable kexec](#Disable_kexec)
 *   [9 Sandboxing applications](#Sandboxing_applications)
     *   [9.1 Firejail](#Firejail)
     *   [9.2 bubblewrap](#bubblewrap)
@@ -169,7 +170,10 @@ While hardened_malloc is not yet integrated into glibc (assistance and pull requ
 
 To try it out in a standalone manner, use the hardened-malloc-preload wrapper script, or manually start an application with the proper preload value:
 
- `LD_PRELOAD="/usr/lib/libhardened_malloc.so" /usr/bin/firefox` 
+```
+LD_PRELOAD="/usr/lib/libhardened_malloc.so" /usr/bin/firefox
+
+```
 
 Proper usage with [Firejail](/index.php/Firejail "Firejail") can be found on its wiki page, and some configurable build options for hardened_malloc can be found on the github repo.
 
@@ -290,11 +294,7 @@ Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su]
 # visudo
 
 ```
- `/etc/sudoers` 
-```
-alice ALL = NOPASSWD: /path/to/program
-
-```
+ `/etc/sudoers`  `alice ALL = NOPASSWD: /path/to/program` 
 
 Or, individual commands can be allowed for all users. To mount Samba shares from a server as a regular user:
 
@@ -311,7 +311,7 @@ To use restricted version of `nano` instead of `vi` with `visudo`,
 
  `/etc/sudoers`  `Defaults editor=/usr/bin/rnano` 
 
-Exporting `# EDITOR=nano visudo` is regarded as a severe security risk since everything can be used as an `EDITOR`.
+Exporting `EDITOR=nano visudo` is regarded as a severe security risk since everything can be used as an `EDITOR`.
 
 #### Editing files using sudo
 
@@ -483,7 +483,7 @@ Randomization under memory exhaustion @0 : No randomization
 
 ### Restricting access to kernel logs
 
-**Note:** This is enabled by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened).
+**Tip:** This is enabled by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened).
 
 The kernel logs contain useful information for an attacker trying to exploit kernel vulnerabilities, such as sensitive memory addresses. The `kernel.dmesg_restrict` flag was to forbid access to the logs without the `CAP_SYS_ADMIN` capability (which only processes running as root have by default).
 
@@ -503,7 +503,7 @@ Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/
 
 The Linux kernel includes the ability to compile BPF/Seccomp rule sets to native code as a performance optimization. The `net.core.bpf_jit_enable` flag should be set to `0` for a maximum level of security.
 
-**Note:** Arch Linux kernels are built with [CONFIG_BPF_JIT_ALWAYS_ON](https://cateee.net/lkddb/web-lkddb/BPF_JIT_ALWAYS_ON.html) option which can't be overridden by the above. You may set `net.core.bpf_jit_harden` flag to `2` instead.
+**Note:** Arch Linux kernels are built with [CONFIG_BPF_JIT_ALWAYS_ON](https://cateee.net/lkddb/web-lkddb/BPF_JIT_ALWAYS_ON.html) option which cannot be overridden by the above. You may set `net.core.bpf_jit_harden` flag to `2` instead.
 
 BPF/Seccomp compilation can be useful in specific domains, such as dynamic servers (e.g. orchestration platforms like Mesos and Kubernetes). It is not usually useful for desktop users or for static servers. A JIT compiler opens up the possibility for an attacker to perform a heap spraying attack, where they fill the kernel's heap with malicious code. This code can then potentially be executed via another exploit, like an incorrect function pointer dereference. The [Spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability) attacks, published early 2018, are prominent respective exploits.
 
@@ -548,6 +548,14 @@ SupplementaryGroups=proc
 ### Restricting module loading
 
 The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kernel modules build as part of the [linux](https://www.archlinux.org/packages/?name=linux) package. This allows the kernel to restrict modules to be only loaded when they are signed with a valid key, in practical terms this means that all out of tree modules compiled locally or provides by packages such as [wireguard-arch](https://www.archlinux.org/packages/?name=wireguard-arch) cannot be loaded. Restricting loading kernel modules can be done by adding `module.sig_enforce=1` to the kernel command line, further documentation can be found [here](https://www.kernel.org/doc/html/v5.2-rc3/admin-guide/module-signing.html).
+
+### Disable kexec
+
+**Tip:** kexec is disabled by default in [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened).
+
+Kexec allows replacing the current running kernel.
+
+ `/etc/sysctl.d/50-kexec-restrict.conf`  `kernel.kexec_loaded_disabled = 1` 
 
 ## Sandboxing applications
 

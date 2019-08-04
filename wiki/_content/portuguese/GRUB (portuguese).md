@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GRUB](/index.php/GRUB "GRUB"). Data da última tradução: 2019-07-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=577865) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GRUB](/index.php/GRUB "GRUB"). Data da última tradução: 2019-07-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=578291) na versão em inglês.
 
 Artigos relacionados
 
@@ -688,21 +688,21 @@ Após migrar para o GPT/UEFI, pode-se querer remover o [código de inicializaç�
 
 ### F2FS e outros sistemas de arquivos sem suporte
 
-GRUB does not support [F2FS](/index.php/F2FS "F2FS") file system. In case the root partition is on an unsupported file system, an alternative `/boot` partition with a supported file system must be created. In some cases, the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) may have native support for the file system.
+O GRUB não possui suporte ao sistema de arquivos [F2FS](/index.php/F2FS "F2FS"). Caso a partição raiz esteja em um sistema de arquivos incompatível, uma partição alternativa `/boot` com um sistema de arquivos compatível deve ser criada. Em alguns casos, a versão de desenvolvimento do GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) pode ter suporte nativo para o sistema de arquivos.
 
-If GRUB is used with an unsupported filesystem it is not able to extract the [UUID](/index.php/UUID "UUID") of your drive so it uses classic non-persistent `/dev/*sdXx*` names instead. In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/*sdXx*` with `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. You can use the `blkid` command to get the UUID of your device, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+Se o GRUB é usado com um sistema de arquivos incompatível, ele não é capaz de extrair o [UUID](/index.php/UUID "UUID") da sua unidade, então ele usa nomes clássicos não-persistentes `/dev/*sdXx*`. Nesse caso, você pode ter que editar manualmente `/boot/grub/grub.cfg` e substituir `root=/dev/*sdXx*` com `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. Você pode usar o comando `blkid` para obter o UUID do seu dispositivo, consulte [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 ### BIOS da Intel não está inicialização GPT
 
-Some Intel BIOS's require at least one bootable MBR partition to be present at boot, causing GPT-partitioned boot setups to be unbootable.
+Alguns BIOS da Intel exigem que pelo menos uma partição MBR inicializável esteja presente na inicialização, fazendo com que as configurações de inicialização particionadas por GPT não sejam iniciadas.
 
-This can be circumvented by using (for instance) fdisk to mark one of the GPT partitions (preferably the 1007 KiB partition you have created for GRUB already) bootable in the MBR. This can be achieved, using fdisk, by the following commands: Start fdisk against the disk you are installing, for instance `fdisk /dev/sda`, then press `a` and select the partition you wish to mark as bootable (probably #1) by pressing the corresponding number, finally press `w` to write the changes to the MBR.
+Isto pode ser contornado usando, por exemplo, fdisk para marcar uma das partições GPT (preferencialmente a partição 1007 KiB que você criou para o GRUB já) inicializável no MBR. Isto pode ser conseguido, usando fdisk, pelos seguintes comandos: Inicie o fdisk no disco que você está instalando, por exemplo `fdisk/dev/sda`, então pressione `a` e selecione a partição que você Para marcar como inicializável (provavelmente #1) pressionando o número correspondente, finalmente pressione `w` para escrever as alterações no MBR.
 
-**Note:** The bootable-marking must be done in `fdisk` or similar, not in GParted or others, as they will not set the bootable flag in the MBR.
+**Nota:** A marcação inicializável deve ser feita em `fdisk` ou similar, não no GParted ou em outros, pois eles não configurarão o sinalizador de inicialização no MBR.
 
-With cfdisk, the steps are similar, just `cfdisk /dev/sda`, choose bootable (at the left) in the desired hard disk, and quit saving.
+Com o cfdisk, as etapas são semelhantes, apenas `cfdisk/dev/sda`, escolha inicializável (à esquerda) no disco rígido desejado e saia do salvamento.
 
-With recent version of parted, you can use `disk_toggle pmbr_boot` option. Afterwards verify that Disk Flags show pmbr_boot.
+Com a versão recente do parted, você pode usar a opção `disk_toggle pmbr_boot`. Em seguida, verifique se as "Opções de disco" mostram pmbr_boot.
 
 ```
 # parted /dev/sd*x* disk_toggle pmbr_boot
@@ -710,13 +710,13 @@ With recent version of parted, you can use `disk_toggle pmbr_boot` option. After
 
 ```
 
-More information is available [here](http://www.rodsbooks.com/gdisk/bios.html)
+Mais informações estão disponíveis [aqui](http://www.rodsbooks.com/gdisk/bios.html).
 
 ### Habilitar mensagens de depuração
 
-**Note:** This change is overwritten when [#Generate the main configuration file](#Generate_the_main_configuration_file).
+**Nota:** Essas mudanças são sobrescritas ao [#Gerar o arquivo de configuração principal](#Gerar_o_arquivo_de_configuração_principal).
 
-Add:
+Adicionar:
 
 ```
 set pager=1
@@ -724,11 +724,11 @@ set debug=all
 
 ```
 
-to `grub.cfg`.
+para `grub.cfg`.
 
 ### Erro "No suitable mode found"
 
-If you get this error when booting any menuentry:
+Se você receber este erro ao inicializar qualquer entrada de menu:
 
 ```
 error: no suitable mode found
@@ -736,25 +736,25 @@ Booting however
 
 ```
 
-Then you need to initialize GRUB graphical terminal (`gfxterm`) with proper video mode (`gfxmode`) in GRUB. This video mode is passed by GRUB to the linux kernel via 'gfxpayload'. In case of UEFI systems, if the GRUB video mode is not initialized, no kernel boot messages will be shown in the terminal (atleast until KMS kicks in).
+Então, você precisa inicializar o terminal gráfico do GRUB (`gfxterm`) com o modo de vídeo apropriado (`gfxmode`) no GRUB. Este modo de vídeo é passado pelo GRUB para o kernel do Linux via "gfxpayload". No caso de sistemas UEFI, se o modo de vídeo GRUB não for inicializado, nenhuma mensagem de inicialização do kernel será mostrada no terminal (pelo menos até o KMS entrar em ação).
 
-Copy `/usr/share/grub/unicode.pf2` to `${GRUB_PREFIX_DIR`} (`/boot/grub/` in case of BIOS and UEFI systems). If GRUB UEFI was installed with `--boot-directory=*esp*/EFI` set, then the directory is `*esp*/EFI/grub/`:
+Copie `/usr/share/grub/unicode.pf2` para `${GRUB_PREFIX_DIR` (`/boot/grub/` no caso de sistemas BIOS e UEFI). Se GRUB UEFI foi instalado com `--boot-directory=*esp*/EFI` definido, então o diretório é `*esp*/EFI/grub/`:
 
 ```
 # cp /usr/share/grub/unicode.pf2 ${GRUB_PREFIX_DIR}
 
 ```
 
-If `/usr/share/grub/unicode.pf2` does not exist, install [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont), create the `unifont.pf2` file and then copy it to `${GRUB_PREFIX_DIR`}:
+Se `/usr/share/grub/unicode.pf2` não existe, instale [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont), crie o arquivo `unifont.pf2` e, então, copie-o para `${GRUB_PREFIX_DIR}`:
 
 ```
 # grub-mkfont -o unicode.pf2 /usr/share/fonts/misc/unifont.bdf
 
 ```
 
-Then, in the `grub.cfg` file, add the following lines to enable GRUB to pass the video mode correctly to the kernel, without of which you will only get a black screen (no output) but booting (actually) proceeds successfully without any system hang.
+Em seguida, no arquivo `grub.cfg`, adicione as seguintes linhas para permitir que o GRUB passe o modo de vídeo corretamente para o kernel, sem o qual você só obterá uma tela preta (sem saída), mas reiniciando prossegue com sucesso sem nenhum travamento do sistema.
 
-After that add the following code (common to both BIOS and UEFI):
+Depois disso, adicione o seguinte código (comum ao BIOS e ao UEFI):
 
 ```
 loadfont "unicode"
@@ -768,33 +768,33 @@ terminal_output gfxterm
 ### Mensagem de erro sobre estilo msdos
 
 ```
-grub-setup: warn: This msdos-style partition label has no post-MBR gap; embedding will not be possible!
-grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists.
-            However, blocklists are UNRELIABLE and its use is discouraged.
+grub-setup: warn: Este rótulo de partição estilo msdos não tem espaço vago pós-MBR; não será possível embuti-lo!
+grub-setup: warn: Incorporação não permitida. O GRUB só pode ser instalado neste setup usando blocklists.
+            Porém. blocklists são INSTÁVEIS e seu uso não é aconselhado.
 grub-setup: error: If you really want blocklists, use --force.
 
 ```
 
-This error may occur when you try installing GRUB in a VMware container. Read more about it [here](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). It happens when the first partition starts just after the MBR (block 63), without the usual space of 1 MiB (2048 blocks) before the first partition. Read [#Master Boot Record (MBR) specific instructions](#Master_Boot_Record_(MBR)_specific_instructions)
+Este erro pode ocorrer quando você tenta instalar o GRUB em um contêiner VMware. Leia mais sobre isso [aqui](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). Isso acontece quando a primeira partição começa logo após o MBR (bloco 63), sem o espaço usual de 1 MiB (2048 blocos) antes da primeira partição. Leia [#Instruções específicas de Master Boot Record (MBR)](#Instruções_específicas_de_Master_Boot_Record_(MBR)).
 
 ### UEFI
 
 #### Erros comuns de instalação
 
-*   If you have a problem when running *grub-install* with *sysfs* or *procfs* and it says you must run `modprobe efivarfs`, try [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
-*   Without `--target` or `--directory` option, grub-install cannot determine for which firmware to install. In such cases `grub-install` will print `source_dir does not exist. Please specify --target or --directory`.
-*   If after running grub-install you are told your partition does not look like an EFI partition then the partition is most likely not `Fat32`.
+*   Se você tiver um problema ao executar o *grub-install* com *sysfs* ou *procfs* e ele disser que você deve executar `modprobe efivarfs`, tente [Unified Extensible Firmware Interface#Mount efivarfs](/index.php/Unified_Extensible_Firmware_Interface#Mount_efivarfs "Unified Extensible Firmware Interface").
+*   Sem a opção `--target` ou `--directory`, o grub-install não pode determinar qual firmware deve ser instalado. Em tais casos, `grub-install` irá imprimir `source_dir não existe. Por favor, especifique --target ou --diretório`.
+*   Se, depois de executar o grub-install, for informado que sua partição não se parece com uma partição EFI, a partição provavelmente não é `Fat32`.
 
 #### Descartar o shell de recuperação
 
-If GRUB loads but drops into the rescue shell with no errors, it can be due to one of these two reasons:
+Se o GRUB for carregado, mas cair no shell de recuperação sem erros, pode ser devido a um destes dois motivos:
 
-*   It may be because of a missing or misplaced `grub.cfg`. This will happen if GRUB UEFI was installed with `--boot-directory` and `grub.cfg` is missing,
-*   It also happens if the boot partition, which is hardcoded into the `grubx64.efi` file, has changed.
+*   Pode ser por causa de um `grub.cfg` ausente ou extraviado. Isso acontecerá se o UEFI do GRUB tiver sido instalado com `--boot-directory` e `grub.cfg` estiver faltando,
+*   Isso também acontece se a partição de inicialização, que é codificada no arquivo `grubx64.efi`, for alterada.
 
 #### UEFI do GRUB não carregado
 
-An example of a working UEFI:
+Um exemplo de um UEFI funcional:
 
  `# efibootmgr -v` 
 ```
@@ -807,7 +807,7 @@ Boot0002* Festplatte BIOS(2,0,00)P0: SAMSUNG HD204UI
 
 ```
 
-If the screen only goes black for a second and the next boot option is tried afterwards, according to [this post](https://bbs.archlinux.org/viewtopic.php?pid=981560#p981560), moving GRUB to the partition root can help. The boot option has to be deleted and recreated afterwards. The entry for GRUB should look like this then:
+Se a tela ficar preta por um segundo e a próxima opção de inicialização for tentada posteriormente, de acordo com [esta publicação](https://bbs.archlinux.org/viewtopic.php?pid=981560#p981560), mova o GRUB para a raiz da partição pode ajudar. A opção de inicialização deve ser excluída e recriada posteriormente. A entrada para o GRUB deve ficar assim:
 
 ```
 Boot0000* GRUB HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\grubx64.efi)
@@ -816,14 +816,14 @@ Boot0000* GRUB HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\grubx64
 
 #### Caminho de inicialização padrão/reserva
 
-Some UEFI firmwares require a bootable file at a known location before they will show UEFI NVRAM boot entries. If this is the case, `grub-install` will claim `efibootmgr` has added an entry to boot GRUB, however the entry will not show up in the VisualBIOS boot order selector. The solution is to install GRUB at the default/fallback boot path:
+Alguns firmwares UEFI exigem um arquivo inicializável em um local conhecido antes de mostrar as entradas de inicialização da UEFI NVRAM. Se este for o caso, `grub-install` irá reivindicar que `efibootmgr` adicionou uma entrada para inicializar o GRUB, no entanto a entrada não será mostrada no seletor de ordem de inicialização do VisualBIOS. A solução é instalar o GRUB no caminho de inicialização padrão/reserva:
 
 ```
 # grub-install --target=x86_64-efi --efi-directory=*esp* **--removable**
 
 ```
 
-Alternatively you can move an already installed GRUB EFI executable to the default/fallback path:
+Alternativamente, você pode mover um executável do GRUB EFI já instalado para o caminho padrão/reserva:
 
 ```
 # mv *esp*/EFI/grub *esp*/EFI/BOOT
@@ -833,7 +833,7 @@ Alternatively you can move an already installed GRUB EFI executable to the defau
 
 ### Assinatura inválida
 
-If trying to boot Windows results in an "invalid signature" error, e.g. after reconfiguring partitions or adding additional hard drives, (re)move GRUB's device configuration and let it reconfigure:
+Se tentar inicializar o Windows, resulta em um erro de "assinatura inválida", por exemplo, depois de reconfigurar partições ou adicionar discos rígidos adicionais, (re)mova a configuração do dispositivo do GRUB e reconfigure:
 
 ```
 # mv /boot/grub/device.map /boot/grub/device.map-old
@@ -841,75 +841,73 @@ If trying to boot Windows results in an "invalid signature" error, e.g. after re
 
 ```
 
-`grub-mkconfig` should now mention all found boot options, including Windows. If it works, remove `/boot/grub/device.map-old`.
+`grub-mkconfig` agora deve mencionar todas as opções de inicialização encontradas, incluindo o Windows. Se funcionar, remova `/boot/grub/device.map-old`.
 
 ### Inicialização congelando
 
-If booting gets stuck without any error message after GRUB loading the kernel and the initial ramdisk, try removing the `add_efi_memmap` kernel parameter.
+Se a inicialização for travada sem nenhuma mensagem de erro após o GRUB carregar o kernel e o disco em memória inicial, tente remover o parâmetro do kernel `add_efi_memmap`.
 
 ### Arch não encontrado por outros sistemas operacionais
 
-Some have reported that other distributions may have trouble finding Arch Linux automatically with `os-prober`. If this problem arises, it has been reported that detection can be improved with the presence of `/etc/lsb-release`. This file and updating tool is available with the package [lsb-release](https://www.archlinux.org/packages/?name=lsb-release).
+Algumas pessoas relataram que outras distribuições podem ter problemas para encontrar o Arch Linux automaticamente com `os-prober`. Se esse problema ocorrer, foi relatado que a detecção pode ser melhorada com a presença de `/etc/lsb-release`. Esta ferramenta de arquivo e atualização está disponível com o pacote [lsb-release](https://www.archlinux.org/packages/?name=lsb-release).
 
 ### Aviso ao instalar em chroot
 
-When installing GRUB on a LVM system in a chroot environment (e.g. during system installation), you may receive warnings like
+Ao instalar o GRUB em um sistema LVM em um ambiente chroot (por exemplo, durante a instalação do sistema), você pode receber avisos como
 
 ```
 /run/lvm/lvmetad.socket: connect failed: No such file or directory
 
 ```
 
-or
+ou
 
 ```
 WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.
 
 ```
 
-This is because `/run` is not available inside the chroot. These warnings will not prevent the system from booting, provided that everything has been done correctly, so you may continue with the installation.
+Isto é porque `/run` não está disponível dentro do chroot. Esses avisos não impedem o sistema de inicializar, desde que tudo tenha sido feito corretamente, assim você pode continuar com a instalação.
 
 ### GRUB carrega lentamente
 
-GRUB can take a long time to load when disk space is low. Check if you have sufficient free disk space on your `/boot` or `/` partition when you are having problems.
+O GRUB pode levar muito tempo para carregar quando o espaço em disco está baixo. Verifique se você tem espaço livre em disco suficiente em sua partição `/boot` ou `/` quando tiver problemas.
 
 ### erro: sistema de arquivos desconhecido
 
-GRUB may output `error: unknown filesystem` and refuse to boot for a few reasons. If you are certain that all [UUIDs](/index.php/UUID "UUID") are correct and all filesystems are valid and supported, it may be because your [BIOS Boot Partition](#GUID_Partition_Table_(GPT)_specific_instructions) is located outside the first 2 TiB of the drive [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use a partitioning tool of your choice to ensure this partition is located fully within the first 2 TiB, then reinstall and reconfigure GRUB.
+O GRUB pode emitir `erro: sistema de arquivos desconhecido` e se recusar a inicializar por alguns motivos. Se você tem certeza de que todos os [UUIDs](/index.php/UUID "UUID") estão corretos e todos os sistemas de arquivos são válidos e compatíveis, pode ser que sua [partição de inicialização de BIOS](#Instruções_específicas_de_Tabela_de_Partição_GUID_(GPT)) esteja localizada fora dos primeiros 2 TiB da unidade [[2]](https://bbs.archlinux.org/viewtopic.php?id=195948). Use uma ferramenta de particionamento de sua escolha para garantir que essa partição esteja totalmente localizada nos primeiros 2 TiB, depois reinstale e reconfigure o GRUB.
 
-This error might also be caused by an [ext4](/index.php/Ext4 "Ext4") filesystem having the features `large_dir` or `metadata_csum_seed` set.
+Esse erro também pode ser causado por um sistema de arquivos [ext4](/index.php/Ext4 "Ext4") com os recursos `large_dir` ou `metadata_csum_seed` definidos.
 
 ### grub-reboot não está redefinido
 
-GRUB seems to be unable to write to root BTRFS partitions [[3]](https://bbs.archlinux.org/viewtopic.php?id=166131). If you use grub-reboot to boot into another entry it will therefore be unable to update its on-disk environment. Either run grub-reboot from the other entry (for example when switching between various distributions) or consider a different file system. You can reset a "sticky" entry by executing `grub-editenv create` and setting `GRUB_DEFAULT=0` in your `/etc/default/grub` (do not forget `grub-mkconfig -o /boot/grub/grub.cfg`).
+O GRUB parece não conseguir gravar em partições BTRFS de raiz [[3]](https://bbs.archlinux.org/viewtopic.php?id=166131). Se você usar o grub-reboot para inicializar em outra entrada, será incapaz de atualizar seu ambiente em disco. Execute o grub-reboot a partir da outra entrada (por exemplo, ao alternar entre várias distribuições) ou considere um sistema de arquivos diferente. Você pode redefinir uma entrada "sticky" executando `grub-editenv create` e configurando `GRUB_DEFAULT=0` no `/etc/default/grub` (não esqueça `grub-mkconfig -o /boot/grub/grub.cfg`).
 
 ### BTRFS antigo impede a instalação
 
-If a drive is formatted with BTRFS without creating a partition table (eg. /dev/sdx), then later has partition table written to, there are parts of the BTRFS format that persist. Most utilities and OS's do not see this, but GRUB will refuse to install, even with --force
+Se uma unidade estiver formatada com o BTRFS sem criar uma tabela de partição (por exemplo, `/dev/sdx`), mais tarde será gravada a tabela de partições, existindo partes do formato BTRFS que persistem. A maioria dos utilitários e sistemas operacionais não vê isso, mas o GRUB se recusará a instalar, mesmo com `--force`.
 
 ```
-# grub-install: warning: Attempting to install GRUB to a disk with multiple partition labels. This is not supported yet..
+# grub-install: warning: Attempting to install GRUB to a disk with multiple partition labels. This is not supported yet.
 # grub-install: error: filesystem `btrfs' does not support blocklists.
 
 ```
 
-You can zero the drive, but the easy solution that leaves your data alone is to erase the BTRFS superblock with `wipefs -o 0x10040 /dev/sdx`
+Você pode zerar a unidade, mas a solução fácil que deixa seus dados sozinhos é apagar o superbloco BTRFS com `wipefs -o 0x10040 /dev/sdx`.
 
 ### Windows 8/10 não encontrado
 
-A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can prevent the Windows partition from being mounted, so `grub-mkconfig` will not find a Windows install. Disabling Hiberboot in Windows will allow it to be added to the GRUB menu.
+Uma configuração no Windows 8/10 chamada "Hiberboot", "Hybrid Boot" or "Fast Boot" (inicialização rápida pode impedir que a partição do Windows seja montada, portanto, o `grub-mkconfig` não localizará uma instalação do Windows. Desativar o Hiberboot no Windows permitirá que ele seja adicionado ao menu GRUB.
 
 ### Modo EFI no VirtualBox
 
-Install GRUB to the [default/fallback boot path](#Default/fallback_boot_path).
+Instal o GRUB para o [caminho de inicialização padrão/reserva](#Caminho_de_inicialização_padrão/reserva).
 
-See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
+Veja também [VirtualBox (Português)#Instalação no modo EFI](/index.php/VirtualBox_(Portugu%C3%AAs)#Instalação_no_modo_EFI "VirtualBox (Português)").
 
 ### Device /dev/xxx not initialized in udev database even after waiting 10000000 microseconds
 
-If grub-mkconfig hangs and gives error: `WARNING: Device /dev/*xxx* not initialized in udev database even after waiting 10000000 microseconds`.
-
-You may need to provide `/run/lvm/` access to the chroot environment using:
+Se o *grub-mkconfig* travar e exibir a mensagem de erro: `WARNING: Device /dev/*xxx* not initialized in udev database even after waiting 10000000 microseconds`, você pode precisar fornecer o acesso a `/run/lvm/` para o ambiente de chroot usando:
 
 ```
 # mkdir /mnt/hostlvm
@@ -919,29 +917,29 @@ You may need to provide `/run/lvm/` access to the chroot environment using:
 
 ```
 
-See [FS#61040](https://bugs.archlinux.org/task/61040) and [workaround](https://bbs.archlinux.org/viewtopic.php?pid=1820949#p1820949).
+Veja o [FS#61040](https://bugs.archlinux.org/task/61040) e [solução de contorno](https://bbs.archlinux.org/viewtopic.php?pid=1820949#p1820949).
 
 ### Recuperação do GRUB e /boot criptografado
 
-When using an [/boot criptografado](#/boot_criptografado), and you fail to input a correct password, you will be dropped in grub-rescue prompt.
+Ao usar um [/boot criptografado](#/_boot_criptografado) e você não conseguir inserir uma senha correta, você será jogado no prompt de recuperação do GRUB.
 
-This grub-rescue prompt has limited capabilities. Use the following commands to complete the boot:
+Este prompt de recuperação do grub tem capacidades limitadas. Use os seguintes comandos para completar a inicialização:
 
 ```
-grub rescue> cryptomount <partition>
+grub rescue> cryptomount <partição>
 grub rescue> insmod normal
 grub rescue> normal
 
 ```
 
-See [this blog post](https://blog.stigok.com/2017/12/30/decrypt-and-mount-luks-disk-from-grub-rescue-mode.html) for a better description.
+Veja [esta publicação de blog](https://blog.stigok.com/2017/12/30/decrypt-and-mount-luks-disk-from-grub-rescue-mode.html) para uma descrição melhor.
 
 ## Veja também
 
 *   [Wikipedia:GNU GRUB](https://en.wikipedia.org/wiki/GNU_GRUB "wikipedia:GNU GRUB")
-*   [Official GRUB Manual](https://www.gnu.org/software/grub/manual/grub.html)
-*   [Ubuntu wiki page for GRUB](https://help.ubuntu.com/community/Grub2)
-*   [GRUB wiki page describing steps to compile for UEFI systems](https://help.ubuntu.com/community/UEFIBooting)
+*   [Manual oficial do GRUB](https://www.gnu.org/software/grub/manual/grub.html)
+*   [Página wiki do Ubuntu sobre GRUB](https://help.ubuntu.com/community/Grub2)
+*   [Página wiki sobre GRUB descrevendo passos para compilar para sistemas UEFI](https://help.ubuntu.com/community/UEFIBooting)
 *   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
-*   [How to configure GRUB](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme)
-*   [Boot with GRUB](http://www.linuxjournal.com/article/4622)
+*   [Como configurar o GRUB](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme)
+*   [Inicializar com GRUB](http://www.linuxjournal.com/article/4622)

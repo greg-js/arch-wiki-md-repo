@@ -139,11 +139,6 @@ Plasma can be started either using a [display manager](/index.php/Display_manage
 *   Select *Plasma* to launch a new session in [Xorg](/index.php/Xorg "Xorg").
 *   [Install](/index.php/Install "Install") [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) and select *Plasma (Wayland)* to launch a new session in [Wayland](/index.php/Wayland "Wayland").
 
-**Note:** The [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver implementation for Wayland requires EGLStreams. KDE will support EGLStreams [starting with Plasma 5.16](https://www.phoronix.com/scan.php?page=news_item&px=EGLStreams-Merged-KWin-5.16). Until then, the following workarounds are available:
-
-*   Using the [Nouveau](/index.php/Nouveau "Nouveau") driver.
-*   Using the (default) Xorg session.
-
 ### From the console
 
 To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)

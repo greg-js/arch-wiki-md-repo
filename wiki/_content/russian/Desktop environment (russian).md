@@ -1,11 +1,9 @@
 Ссылки по теме
 
-*   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
-*   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер")
-*   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
-*   [Приложения по умолчанию](/index.php/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BF%D0%BE_%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E "Приложения по умолчанию")
+*   [Сравнение сред рабочего стола](/index.php/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D1%80%D0%B5%D0%B4_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Сравнение сред рабочего стола")
+*   [Category:Freedesktop.org (Русский)](/index.php/Category:Freedesktop.org_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Freedesktop.org (Русский)")
 
-[Среда рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "wikipedia:ru:Среда рабочего стола") предоставляет полнофункциональное графическое окружение для системы, включающее набор графических приложений, утилит и компонентов рабочего стола. Как правило, среды рабочего стола базируются на одном из графических тулкитов, таких как [GTK+](/index.php/GTK%2B "GTK+") или [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)").
+[Среда рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "wikipedia:ru:Среда рабочего стола") (**DE**) — реализация [метафоры рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9_%D1%81%D1%82%D0%BE%D0%BB "wikipedia:ru:Рабочий стол"), состоящая из набора программ, которые разделяют общий графический интерфейс (GUI).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -17,362 +15,99 @@
 *   [2 Список сред рабочего стола](#Список_сред_рабочего_стола)
     *   [2.1 Официально поддерживаемые](#Официально_поддерживаемые)
     *   [2.2 Неофициально поддерживаемые](#Неофициально_поддерживаемые)
-*   [3 Сравнение сред рабочего стола](#Сравнение_сред_рабочего_стола)
-    *   [3.1 Потребление ресурсов](#Потребление_ресурсов)
-    *   [3.2 Схожесть окружений](#Схожесть_окружений)
-*   [4 Создание своей среды](#Создание_своей_среды)
+*   [3 Создание своей среды](#Создание_своей_среды)
 
 ## Обзор
 
-Кроме стандартных компонентов рабочего стола, большинство сред включают в себя интегрированный набор программ. Также среды рабочего стола предоставляют свой собственный [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), который обычно можно заменить альтернативным вариантом из совместимых.
+Среда рабочего стола объединяет различные компоненты для предоставления единых элементов графического интерфейса, например, значков, панелей, обоев и виджетов рабочего стола. Также большинство сред включают в себя интегрированный набор программ и утилит. Что самое важное, среды рабочего стола предоставляют свой собственный [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), который обычно можно заменить совместимым вариантом.
 
-Пользователю дается возможность настраивать графический интерфейс разными путями. Как правило, среды рабочего стола предоставляют графические средства настройки.
+Пользователю даётся возможность настраивать графический интерфейс разными путями. Как правило, среды рабочего стола предоставляют для этого готовые и удобные средства. Следует отметить, что пользователи могут комбинировать и одновременно запускать приложения, написанные для разных сред. Так, пользователь [KDE Plasma](/index.php/KDE_Plasma_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE Plasma (Русский)") может устанавливать и запускать приложения [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), например, веб-браузер [Epiphany](/index.php/Epiphany "Epiphany"), если он нравится больше, чем Konqueror от KDE. Однако, такой подход имеет и недостаток: многие графические приложения тесно связаны с тем или иным набором библиотек, которые входят в состав "родной" среды. В результате установка множества "неродных" приложений потребует установки большего количества зависимостей. Пользователям, которые экономят место на диске, следует избегать подобных смешанных окружений или выбирать альтернативные программы, которые зависят всего от нескольких внешних библиотек.
 
-Пользователи могут одновременно запускать приложения, написанные для разных сред. Например, в KDE можно запускать приложения GNOME. Так, вы можете заменить стандартный веб-браузер KDE — Konqueror на Epiphany, если он вам больше нравится. Однако, такой подход имеет и недостаток: многие графические приложения тесно связаны с тем или иным набором библиотек, которые входят в состав "родной" среды. В результате установка множества "неродных" приложений потребует установки большего количества зависимостей. Пользователям, которые экономят место на диске, следует избегать установки [раздутых](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B7%D0%B4%D1%83%D1%82%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5 "wikipedia:ru:Раздутое программное обеспечение") программ, написанных для других сред.
+Кроме того, приложения в родной среде выглядят более единообразно и лучше в неё интегрируются. Приложения, написанные с использованием разных библиотек компонентов интерфейса, могут по-разному выглядеть (использовать разные наборы иконок и стили оформления компонентов) и вести себя (например, использовать одиночный щелчок по значку вместо двойного или иметь другое поведение drag-and-drop), создавая путаницу или непредсказуемое поведение.
 
-Кроме того, обычно приложения в родной среде выглядят более единообразно и лучше в нее интегрируются. Приложения, написанные с использованием разных библиотек компонентов интерфейса могут выглядеть по-разному (использовать разные наборы иконок, стиль оформления компонентов и т. д.) и по-разному себя вести (например, может не работать перетаскивание мышью).
-
-Перед установкой среды рабочего стола необходимо установить, и, возможно, настроить сервер X. Подробнее об этом смотрите на странице [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
+Для установки среды рабочего стола необходим работоспособный сервер X. Подробнее об этом смотрите в статье [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"). Также некоторые среды поддерживают [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), но в большинстве случаев эта поддержка носит экспериментальный характер.
 
 ## Список сред рабочего стола
 
 ### Официально поддерживаемые
 
-*   **[Cinnamon](/index.php/Cinnamon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cinnamon (Русский)")** — стремится предоставить пользователю более привычную, традиционную среду в стиле GNOME 2, но с использованием технологий GNOME 3.
+*   **[Budgie](/index.php/Budgie_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Budgie (Русский)")** — рабочая среда, рассчитанная на современного пользователя, где основное внимание уделяется простоте и элегантности.
 
-	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
+	[https://getsol.us/](https://getsol.us/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
-*   **[Enlightenment](/index.php/E17_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "E17 (Русский)")** — предоставляет эффективный менеджер окон, основанный на библиотеках Enlightenment Foundation. Его можно запускать на устаревших компьютерах и встраиваемых устройствах, при этом существует поддержка тем, значков рабочего стола и виджетов, а также встроенный файловый менеджер.
+*   **[Cinnamon](/index.php/Cinnamon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cinnamon (Русский)")** — Cinnamon стремится предоставить пользователю более привычную и традиционную среду. Cinnamon — форк GNOME 3.
 
-	[http://www.enlightenment.org/](http://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
+	[http://developer.linuxmint.com/projects/cinnamon-projects.html/](http://developer.linuxmint.com/projects/cinnamon-projects.html/) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
 
-*   **[GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")** — популярная и интуитивная среда рабочего стола, которая включает современный (*GNOME*) и классический (*GNOME Classic*) режимы.
+*   **[Deepin](/index.php/Deepin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Deepin (Русский)")** — интерфейс и приложения Deepin предоставляют интуитивный и элегантный дизайн. Перемещения, обмен, поиск и другие возможности теперь вызывают только удовольствие.
 
-	[http://www.gnome.org/gnome-3/](http://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
+	[https://www.deepin.org/](https://www.deepin.org/) || [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
 
-*   **[KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")** — предоставляет большое количество встроенных приложений, а также гибкий в настройке рабочий стол в качестве оболочки. Эти приложения могут быть запущены и в других средах, но KDE обеспечивает наилучшую интеграцию с ними.
+*   **[Enlightenment](/index.php/Enlightenment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Enlightenment (Русский)")** — Enlightenment предоставляет эффективный менеджер окон, основанный на библиотеках Enlightenment Foundation, а также другие необходимые компоненты вроде файлового менеджера, значков и виджетов. Он поддерживает темы и его можно запускать на устаревших компьютерах и встраиваемых устройствах.
 
-	[http://www.kde.org/](http://www.kde.org/) || [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/), [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
+	[https://www.enlightenment.org/](https://www.enlightenment.org/) || [enlightenment](https://www.archlinux.org/packages/?name=enlightenment)
 
-*   **[LXDE](/index.php/LXDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXDE (Русский)")** — облегченная среда рабочего стола для X11 — быстрая и легкая среда, созданная сообществом разработчиков со всего мира. Она предлагает современный интерфейс, поддержку языков и стандартные сочетания клавиш. При этом LXDE старается тратить как можно меньше ресурсов компьютера и обеспечивать минимальное энергопотребление.
+*   **[GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")** — популярная и интуитивная среда рабочего стола, которая поддерживает современный (*GNOME*) и классический (*GNOME Classic*) режимы.
 
-	[http://lxde.org/](http://lxde.org/) || [lxde](https://www.archlinux.org/groups/x86_64/lxde/)
+	[https://www.gnome.org/gnome-3/](https://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
-*   **[MATE](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)")** — предоставляет интуитивный традиционный рабочий стол для пользователей Linux. Mate — форк GNOME 2.
+*   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — оболочка для GNOME 3, которая изначально использовалась в нём для режима совместимости. Рабочий стол и технологии похожи на GNOME 2.
 
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
+	[https://wiki.gnome.org/Projects/GnomeFlashback](https://wiki.gnome.org/Projects/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
-*   **[Xfce](/index.php/Xfce_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xfce (Русский)")** — следует традиционной философии UNIX, основываясь на принципах модульности и повторного использования. Он состоит из множества компонентов, которые составляют полноценное современное рабочее окружение, при этом оставаясь относительно легким. Эти компоненты распределены по разным пакетам, поэтому вы можете выбирать какие из них вам нужны.
+*   **[KDE Plasma](/index.php/KDE_Plasma_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE Plasma (Русский)")** — хорошо известная рабочая среда. Она предоставляет все необходимые современному пользователю средства, тем самым обеспечивая продуктивность с самого начала.
 
-	[http://www.xfce.org/](http://www.xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
+	[https://www.kde.org/plasma-desktop](https://www.kde.org/plasma-desktop) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
+
+*   **[LXDE](/index.php/LXDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXDE (Русский)")** — лёгкая, быстрая и энергосберегающая среда рабочего стола для X11\. Она предлагает современный интерфейс, поддержку различных языков, стандартные сочетания клавиш и дополнительные возможности, например, использование файлового менеджера со вкладками. При этом LXDE старается тратить меньше ресурсов процессора и оперативной памяти, чем другие окружения.
+
+	[https://lxde.org/](https://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+
+*   **[LXQt](/index.php/LXQt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXQt (Русский)")** — порт LXDE (Lightweight Desktop Environment) на Qt. LXQt объединяет проекты LXDE-Qt и Razor-qt, предоставляя легковесное, модульное, быстрое и интуитивное окружение рабочего стола.
+
+	[https://lxqt.org/](https://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
+
+*   **[MATE](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)")** — MATE предоставляет интуитивный, привлекательный и традиционный рабочий стол. Изначально MATE был форком GNOME 2, но в данный момент использует GTK+ 3.
+
+	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
+
+*   **[Sugar](/index.php/Sugar "Sugar")** — The Sugar Learning Platform — окружение, состоящее из Комнат (Activities), которые разработаны для помощи в совместном обучении детей 5-12 лет с помощью мультимедийных приложений. Sugar направлен на предоставление детям по всему миру возможности получить качественное образование — на данный момент проект используется примерно миллионом детей на 25 языках в более, чем 40 странах.
+
+	[https://sugarlabs.org/](https://sugarlabs.org/) || [sugar](https://www.archlinux.org/packages/?name=sugar) + [sugar-fructose](https://www.archlinux.org/groups/x86_64/sugar-fructose/)
+
+*   **[Xfce](/index.php/Xfce_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xfce (Русский)")** — Xfce следует традиционной [философии UNIX](https://en.wikipedia.org/wiki/ru:%D0%A4%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F_Unix "wikipedia:ru:Философия Unix"), основываясь на принципах модульности и повторного использования. Данная среда состоит из множества компонентов, составляющих полноценное современное рабочее окружение, при этом оставаясь относительно лёгким. Эти компоненты распределены по разным пакетам, поэтому вы можете выбирать только нужные, чтобы создать оптимальное рабочее окружение.
+
+	[https://xfce.org/](https://xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
 
 ### Неофициально поддерживаемые
 
-*   {{App|[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")| Рабочая среда разрабатываемая усилиями Solus (ранее Evolve OS)
-*   **[Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment")** — стандартная среда рабочего стола дистрибутива Linux Deepin. По сути является измененной оболочкой GNOME Shell
+*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — простое, быстрое и исключительно лёгкое окружение рабочего стола.
 
-	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/)
+	[https://edeproject.org/](https://edeproject.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 
-*   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — рабочий стол, созданный быть простым, исключительно легким и быстрым.
+*   **[Liri](/index.php/Liri "Liri")** — окружение рабочего стола с современными возможностями и дизайном. Проект объединяет [Hawaii](https://github.com/hawaii-desktop), [Papyros](https://github.com/papyros) и [Liri Project](https://github.com/liri-project). Данное окружение находится в очень экспериментальной стадии разработки.
 
-	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
+	[https://liri.io/](https://liri.io/) || [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/)
 
-*   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — оболочка для GNOME 3, которая изначально использовалась в нем для режима совместимости. Рабочий стол и технологии аналогичны GNOME 2.
+*   **[Lumina](/index.php/Lumina "Lumina")** — легковесное окружение рабочего стола для FreeBSD, написанное на Qt 5 и использующее Fluxbox в качестве оконного менеджера.
 
-	[https://wiki.gnome.org/GnomeFlashback](https://wiki.gnome.org/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
+	[https://www.lumina-desktop.org/](https://www.lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
 
-*   **GNUstep** — свободная объектно-ориентированная кросс-платформенная среда разработки, которая стремится к простоте и элегантности.
+*   **[Moksha](/index.php/Moksha "Moksha")** — форк Enlightenment, использующийся в качестве окружения рабочего стола по умолчанию в дистрибутиве Bodhi Linux на основе Ubuntu.
 
-	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://aur.archlinux.org/packages/windowmaker/) [gworkspace](https://aur.archlinux.org/packages/gworkspace/)
+	[http://www.bodhilinux.com/moksha-desktop/](http://www.bodhilinux.com/moksha-desktop/) || [moksha](https://aur.archlinux.org/packages/moksha/)
 
-*   **[Hawaii](/index.php/Hawaii "Hawaii")** — легкое, последовательное и быстрое окружение на основе Qt 5, QtQuick и [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), и созданное с целью предложить удобный интерфейс независимо от устройства, на котором запущено.
+*   **[Pantheon](/index.php/Pantheon "Pantheon")** — среда рабочего стола, изначально созданная для дистрибутива elementary OS. Она написана с нуля на основе Vala и GTK3, а внешний вид и удобство напоминают собой GNOME Shell и macOS.
 
-	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/)
+	[https://elementary.io/](https://elementary.io/) || [pantheon-session-git](https://aur.archlinux.org/packages/pantheon-session-git/)
 
-*   **[LXQt](/index.php/Razor-qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Razor-qt (Русский)")** — порт LXDE на Qt. Рабочее окружение LXQt позиционируется как легковесное, быстрое и удобное, имеющее модульную архитектуру и продолжающее развитие LXDE и Razor-qt, вобрав в себя лучшие черты обеих оболочек.
+*   **theShell** — среда рабочего стола, старающаяся быть как можно более прозрачной. В ней используются фреймфорк Qt 5 и оконный менеджер KWin.
 
-	[http://lxqt.org/](http://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
+	[https://vicr123.com/theshell/](https://vicr123.com/theshell/) || [theshell](https://aur.archlinux.org/packages/theshell/)
 
-*   **Maynard** — среда рабочего стола, разработанная для [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi") (но им не ограничивающаяся), работающая на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
+*   **[Trinity](/index.php/Trinity "Trinity")** — среда рабочего стола для Unix-подобных ОС, сохраняющая общий стиль неподдерживаемой в настоящее время среды KDE 3.5.
 
-	[https://github.com/raspberrypi/maynard](https://github.com/raspberrypi/maynard) || [maynard-git](https://aur.archlinux.org/packages/maynard-git/)
-
-*   **[Pantheon](/index.php/Pantheon "Pantheon")** — среда, созданная для дистрибутива elementary OS. Написана с нуля на основе тулкитов Vala и GTK3\. Рабочий стол построен с упором на удобство и внешний вид и напоминает собой GNOME Shell и Mac OS X.
-
-	[http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
-
-*   **[ROX](/index.php/ROX "ROX")** — быстрый и удобный рабочий стол, в котором сделан упор на возможности все и везде перетаскивать мышью (drag-&-drop). Интерфейс обращается вокруг файлового менеджера, который строго следует принципу UNIX "все является файлом". Цель проекта — сделать систему, которая хорошо спроектирована и четко представлена. Подход ROX — использовать множество небольших приложений вместе, чем создавать комбайны "все-в-одном".
-
-	[http://rox.sourceforge.net/desktop/](http://rox.sourceforge.net/desktop/) || [rox](https://www.archlinux.org/packages/?name=rox)
-
-*   **[Sugar](/index.php/Sugar "Sugar")** — The Sugar Learning Platform — окружение, состоящее из набора мультимедийных программ, разработанных для помощи в обучении детям 5-12 лет. Sugar направлен на то, чтобы предоставить детям по всему миру возможность получить качественное образование.
-
-	[http://wiki.sugarlabs.org/](http://wiki.sugarlabs.org/) || [sugar](https://www.archlinux.org/packages/?name=sugar)
-
-*   **[Trinity](/index.php/Trinity "Trinity")** — среда рабочего стола, являющаяся ответвлением от кодовой базы неподдерживаемой в настоящее время среды KDE 3.
-
-	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || Смотрите [Trinity](/index.php/Trinity "Trinity")
-
-*   **[Unity](/index.php/Unity "Unity")** — оболочка для GNOME, разработанная Canonical для Ubuntu.
-
-	[http://unity.ubuntu.com/](http://unity.ubuntu.com/) || [unity](https://aur.archlinux.org/packages/unity/)
-
-## Сравнение сред рабочего стола
-
-*В этом разделе приведена сравнительная таблица с популярными средами рабочего стола. Помните, что получение личного опыта использования — единственный эффективный способ определить, какая среда рабочего стола вам лучше всего подходит.*
-
-Смотрите также страницу [Wikipedia:Comparison of X Window System desktop environments](https://en.wikipedia.org/wiki/Comparison_of_X_Window_System_desktop_environments "wikipedia:Comparison of X Window System desktop environments").
-
-<caption>Обзор сред рабочего стола</caption>
-| Среда рабочего стола | Графический тулкит | Оконный менеджер | Панель задач | Эмулятор терминала | Файловый менеджер | Калькулятор | Текстовый редактор | Просмотр изображений | Плеер | Браузер | Менеджер входа |
-| [Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | budgie-wm
-[budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) | budgie-panel
-[budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [Budgie Media Player](https://github.com/evolve-os/budgie-media-player)
-[budgie-git](https://aur.archlinux.org/packages/budgie-git/) | [Chromium](/index.php/Chromium "Chromium")
-[chromium](https://www.archlinux.org/packages/?name=chromium) | [GDM](/index.php/GDM "GDM")
-[gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [Cinnamon](/index.php/Cinnamon "Cinnamon") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Muffin
-[muffin](https://www.archlinux.org/packages/?name=muffin) | Cinnamon
-[cinnamon](https://www.archlinux.org/packages/?name=cinnamon) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [Nemo](/index.php/Nemo "Nemo")
-[nemo](https://www.archlinux.org/packages/?name=nemo) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") | qt5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Kwin| [Kwinwindowsystem](https://www.archlinux.org/packages/?name=Kwinwindowsystem) | Dock
-[deepin-dock](https://www.archlinux.org/packages/?name=deepin-dock) | Deepin Terminal
-[deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | [Nautilus](/index.php/Nautilus "Nautilus")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | DPlayer
-[deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") Deepin Greeter
-[deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/) |
-| [EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment") | [FLTK](http://www.fltk.org/)
-[fltk](https://www.archlinux.org/packages/?name=fltk) | [PekWM](/index.php/PekWM "PekWM")
-[ede](https://aur.archlinux.org/packages/ede/) | EDE Panel
-[ede](https://aur.archlinux.org/packages/ede/) | [XTerm](/index.php/Xterm "Xterm")
-[xterm](https://www.archlinux.org/packages/?name=xterm) | Fluff
-[fluff](https://aur.archlinux.org/packages/fluff/) | Calculator
-[ede](https://aur.archlinux.org/packages/ede/) | Editor
-[fltk-editor](https://aur.archlinux.org/packages/fltk-editor/) | Image Viewer
-[ede](https://aur.archlinux.org/packages/ede/) | flmusic
-[flmusic](https://aur.archlinux.org/packages/flmusic/) | [Dillo](/index.php/Dillo "Dillo")
-[dillo](https://www.archlinux.org/packages/?name=dillo) | [XDM](/index.php/XDM "XDM")
-[xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [Enlightenment](/index.php/Enlightenment "Enlightenment") | [Elementary](https://phab.enlightenment.org/w/elementary/)
-[efl](https://www.archlinux.org/packages/?name=efl) | Enlightenment
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Enlightenment
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Terminology](http://www.enlightenment.org/p.php?p=about/terminology)
-[terminology](https://www.archlinux.org/packages/?name=terminology) | [EFM](https://phab.enlightenment.org/w/efm/)
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Equate
-[equate-git](https://aur.archlinux.org/packages/equate-git/) | Ecrire
-[ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto)
-[ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) | [Rage](http://www.enlightenment.org/p.php?p=about/rage)
-[rage](https://aur.archlinux.org/packages/rage/) | Elbow
-[elbow-git](https://aur.archlinux.org/packages/elbow-git/) | [XDM](/index.php/XDM "XDM")
-[xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")
-[mutter](https://www.archlinux.org/packages/?name=mutter) | [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell "wikipedia:GNOME Shell")
-[gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
-[gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
-[metacity](https://www.archlinux.org/packages/?name=metacity) | [GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")
-[gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
-[gdm](https://www.archlinux.org/packages/?name=gdm) |
-| GNUstep | [GNUstep](http://gnustep.org/)
-[gnustep-core](https://www.archlinux.org/groups/x86_64/gnustep-core/) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://aur.archlinux.org/packages/windowmaker/) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://aur.archlinux.org/packages/windowmaker/) | [Terminal](http://gap.nongnu.org/terminal/index.html)
-[gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/) | [GWorkspace](http://www.gnustep.org/experience/GWorkspace.html)
-[gworkspace](https://aur.archlinux.org/packages/gworkspace/) | [Calculator](http://www.gnustep.org/experience/examples.html)
-[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [Ink](http://www.gnustep.org/experience/examples.html)
-[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [LaternaMagica](http://gap.nongnu.org/laternamagica/index.html)
-[laternamagica](https://aur.archlinux.org/packages/laternamagica/) | [Cynthiune](http://gap.nongnu.org/cynthiune/index.html)
-[cynthiune](https://aur.archlinux.org/packages/cynthiune/) | [SWK Browser](http://wiki.gnustep.org/index.php/SimpleWebKit)
-[swkbrowser-svn](https://aur.archlinux.org/packages/swkbrowser-svn/) | [XDM](/index.php/XDM "XDM")
-[xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [Hawaii](/index.php/Hawaii "Hawaii") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Weston
-[weston](https://www.archlinux.org/packages/?name=weston) | Hawaii Shell
-[hawaii-shell-git](https://aur.archlinux.org/packages/hawaii-shell-git/) | Terminal
-[hawaii-terminal-git](https://aur.archlinux.org/packages/hawaii-terminal-git/) | Swordfish
-[swordfish-git](https://aur.archlinux.org/packages/swordfish-git/) | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
-[juffed-git](https://aur.archlinux.org/packages/juffed-git/) | EyeSight
-[eyesight-git](https://aur.archlinux.org/packages/eyesight-git/) | SMPlayer
-[smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
-[qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | - |
-| [KDE](/index.php/KDE "KDE") 4 | [Qt](/index.php/Qt "Qt") 4
-[qt4](https://aur.archlinux.org/packages/qt4/) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
-[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) | [Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_4#Desktop "wikipedia:KDE Plasma 4")
-[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) | [Konsole](http://konsole.kde.org/)
-[kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole) | [Dolphin](http://dolphin.kde.org/)
-[kdebase-dolphin](https://www.archlinux.org/packages/?name=kdebase-dolphin) | [KCalc](http://www.kde.org/applications/utilities/kcalc/)
-[kdeutils-kcalc](https://www.archlinux.org/packages/?name=kdeutils-kcalc) | [KWrite/Kate](http://kate-editor.org/)
-[kdebase-kwrite](https://www.archlinux.org/packages/?name=kdebase-kwrite) [kdesdk-kate](https://www.archlinux.org/packages/?name=kdesdk-kate) | [Gwenview](http://gwenview.sourceforge.net/)
-[kdegraphics-gwenview](https://www.archlinux.org/packages/?name=kdegraphics-gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
-[kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [KDM](/index.php/KDM "KDM")
-[kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) |
-| [KDE](/index.php/KDE "KDE") 5 | [Qt](/index.php/Qt "Qt") 4/5
-[qt4](https://aur.archlinux.org/packages/qt4/) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
-[kwin](https://www.archlinux.org/packages/?name=kwin) | [Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_5#Desktop "wikipedia:KDE Plasma 5")
-[plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) | [Konsole](http://konsole.kde.org/)
-[kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole) | [Dolphin](http://dolphin.kde.org/)
-[kdebase-dolphin](https://www.archlinux.org/packages/?name=kdebase-dolphin) | [KCalc](http://www.kde.org/applications/utilities/kcalc/)
-[kdeutils-kcalc](https://www.archlinux.org/packages/?name=kdeutils-kcalc) | [KWrite/Kate](http://kate-editor.org/)
-[kdebase-kwrite](https://www.archlinux.org/packages/?name=kdebase-kwrite) [kdesdk-kate](https://www.archlinux.org/packages/?name=kdesdk-kate) | [Gwenview](http://gwenview.sourceforge.net/)
-[kdegraphics-gwenview](https://www.archlinux.org/packages/?name=kdegraphics-gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
-[kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
-[konqueror](https://www.archlinux.org/packages/?name=konqueror) | SDDM
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [LXDE](/index.php/LXDE "LXDE") | [GTK+](/index.php/GTK%2B "GTK+") 2
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
-[openbox](https://www.archlinux.org/packages/?name=openbox) | [LXPanel](http://wiki.lxde.org/en/LXPanel)
-[lxpanel](https://www.archlinux.org/packages/?name=lxpanel) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
-[lxterminal](https://www.archlinux.org/packages/?name=lxterminal) | [PCManFM](/index.php/PCManFM "PCManFM")
-[pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm) | [Galculator](http://galculator.sourceforge.net/)
-[galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | [Leafpad](http://tarot.freeshell.org/leafpad/)
-[leafpad](https://www.archlinux.org/packages/?name=leafpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
-[gpicview](https://www.archlinux.org/packages/?name=gpicview) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic](https://www.archlinux.org/packages/?name=lxmusic) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LXDM](/index.php/LXDM "LXDM")
-[lxdm](https://www.archlinux.org/packages/?name=lxdm) |
-| [LXQt](/index.php/LXQt "LXQt") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [Openbox](/index.php/Openbox "Openbox")
-[openbox](https://www.archlinux.org/packages/?name=openbox) | LXQt Panel
-[lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) | QTerminal
-[qterminal](https://www.archlinux.org/packages/?name=qterminal) | PCManFM-Qt
-[pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
-[juffed-git](https://aur.archlinux.org/packages/juffed-git/) | LxImage-Qt
-[lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt) | SMPlayer
-[smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
-[qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [MATE](/index.php/MATE "MATE") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
-[marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
-[mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
-[mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
-[caja](https://www.archlinux.org/packages/?name=caja) | [Galculator](http://galculator.sourceforge.net/)
-[galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | pluma
-[pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
-[eom](https://www.archlinux.org/packages/?name=eom) | Whaaw!
-[whaawmp](https://aur.archlinux.org/packages/whaawmp/) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| Maynard | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | Weston
-[weston](https://www.archlinux.org/packages/?name=weston) | Maynard
-[maynard-git](https://aur.archlinux.org/packages/maynard-git/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
-[epiphany](https://www.archlinux.org/packages/?name=epiphany) | - |
-| [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
-[gala-bzr](https://aur.archlinux.org/packages/gala-bzr/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
-[plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
-[pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | [Pantheon Files](https://launchpad.net/pantheon-files)
-[pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [Scratch](https://launchpad.net/scratch)
-[scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")
-[shotwell](https://www.archlinux.org/packages/?name=shotwell) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
-[lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
-| [ROX](/index.php/ROX "ROX") | [GTK+](/index.php/GTK%2B "GTK+") 2
-[gtk2](https://www.archlinux.org/packages/?name=gtk2) | [OroboROX](http://rox.sourceforge.net/desktop/OroboROX.html)
-[oroborox](https://aur.archlinux.org/packages/oroborox/) | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
-[rox](https://www.archlinux.org/packages/?name=rox) | [ROXTerm](http://roxterm.sourceforge.net/)
-[roxterm-gtk2](https://aur.archlinux.org/packages/roxterm-gtk2/) | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
-[rox](https://www.archlinux.org/packages/?name=rox) | [Galculator](http://galculator.sourceforge.net/)
-[galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | [Edit](http://rox.sourceforge.net/desktop/Edit.html)
-[rox-edit](https://aur.archlinux.org/packages/rox-edit/) | [Picky](http://rox.sourceforge.net/desktop/picky.html)
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=picky)</small> | [MusicBox](http://rox.sourceforge.net/desktop/Software/Audio_Video/MusicBox.html)
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=musicbox)</small> | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
-[metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar
-[sugar](https://www.archlinux.org/packages/?name=sugar) | Terminal
-[sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal) | Sugar Journal
-[sugar](https://www.archlinux.org/packages/?name=sugar) | Calculate
-[sugar-activity-calculate](https://www.archlinux.org/packages/?name=sugar-activity-calculate) | Write
-[sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write) | ImageViewer
-[sugar-activity-imageviewer](https://www.archlinux.org/packages/?name=sugar-activity-imageviewer) | Jukebox
-[sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox) | Browse
-[sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Trinity](/index.php/Trinity "Trinity") | [Qt](/index.php/Qt "Qt") 3 | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
-| [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
-[compiz-ubuntu](https://aur.archlinux.org/packages/compiz-ubuntu/) | Unity
-[unity](https://aur.archlinux.org/packages/unity/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
-[gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus-ubuntu](https://aur.archlinux.org/packages/nautilus-ubuntu/) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
-[gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | [Totem](https://en.wikipedia.org/wiki/Totem_(software) "wikipedia:Totem (software)")
-[totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") Unity Greeter
-[lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) |
-| [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 3
-[gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
-[xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [Xfce Panel](http://docs.xfce.org/xfce/xfce4-panel/start)
-[xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) | [Terminal](http://www.xfce.org/projects/terminal)
-[xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal) | [Thunar](/index.php/Thunar "Thunar")
-[thunar](https://www.archlinux.org/packages/?name=thunar) | [Galculator](http://galculator.sourceforge.net/)
-[galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | Mousepad
-[mousepad](https://www.archlinux.org/packages/?name=mousepad) | [Ristretto](http://goodies.xfce.org/projects/applications/ristretto)
-[ristretto](https://www.archlinux.org/packages/?name=ristretto) | [Parole](http://goodies.xfce.org/projects/applications/parole)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
-[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-
-### Потребление ресурсов
-
-Среди всех окружений рабочего стола, GNOME и KDE наиболее требовательны к ресурсам компьютера. Полные версии этих сред не только занимают больше места на диске чем более легкие альтернативы (Enlightenment, LXDE, LXQt и Xfce), но также требуют больше процессорного времени и оперативной памяти для работы. Все дело в том, что GNOME и KDE позиционируют cебя как полнофункциональные (*full-featured*) среды: они предоставляют наиболее полное и интегрированное окружение рабочего стола.
-
-Enlightenment, LXDE, LXQt и Xfce, напротив, являются легковесными (*lightweight*) средами. Они хорошо работают на более старом и слабом оборудовании и в общем потребляют меньше системных ресурсов. Это достигается отказом от возможностей, которые могут быть полезны только небольшому количеству пользователей, и концентрацией на действительно важной функциональности.
-
-### Схожесть окружений
-
-Многие пользователи отмечают, что интерфейс KDE во многом похож на окружение Windows, а GNOME ближе к системам OS X. Это достаточно субъективное сравнение, так как любая из этих сред может быть настроена чтобы в той или иной степени эмулировать интерфейсы Windows или OS X.
+	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || См. [Trinity](/index.php/Trinity "Trinity")
 
 ## Создание своей среды
 

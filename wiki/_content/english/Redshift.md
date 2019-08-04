@@ -62,7 +62,7 @@ $ redshift -P -O *TEMPERATURE*
 
 ```
 
-where *TEMPERATURE* is the desired color temperature (between `1000` and `25000`).
+where *TEMPERATURE* is the desired [color temperature](https://en.wikipedia.org/wiki/Color_temperature "wikipedia:Color temperature") (between `1000` and `25000`).
 
 ### Autostart
 

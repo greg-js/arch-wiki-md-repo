@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [Xdg-menu](/index.php/Xdg-menu "Xdg-menu"). Дата последней синхронизации: 27 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xdg-menu&diff=0&oldid=428040).
 
-**Меню XDG** создаёт меню для оконных менеджеров используя [Стандарт Меню Free Desktop](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html). Вы можете [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) из [официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории").
+**Меню XDG** создаёт меню для оконных менеджеров используя [Стандарт Меню Free Desktop](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html). Вы можете [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu).
 
 Поддерживаются следующие оконные менеджеры:
 
@@ -498,6 +498,5 @@ $ xdg_menu --format blackbox  --root-menu /etc/xdg/menus/arch-applications.menu 
 
 ## Смотрите также
 
-*   [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu)
-*   [Стандарт Free Desktop](http://standards.freedesktop.org/menu-spec/menu-spec-latest.html)
-*   [A workaround for sawfish](/index.php/Sawfish "Sawfish")
+*   [Sawfish#Menus](/index.php/Sawfish#Menus "Sawfish")
+*   [https://github.com/gapan/xdgmenumaker](https://github.com/gapan/xdgmenumaker)

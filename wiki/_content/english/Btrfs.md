@@ -454,7 +454,7 @@ Using TLP requires special precautions in order to avoid filesystem corruption. 
 Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes, using [subvolumes](#Subvolumes) to simulate partitions. However, using a partitionless setup is not required to simply [create a Btrfs filesystem](#File_system_creation) on an existing [partition](/index.php/Partition "Partition") that was created using another method. There are some limitations to partitionless single disk setups:
 
 *   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
-*   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
+*   If using a Linux kernel version before 5.0, you cannot use [swap area](/index.php/Swap "Swap") as Btrfs did not support [swap files](/index.php/Swap#Swap_file "Swap") pre-5.0 and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image. This includes the current LTS version of Linux which is on 4.xx.
 *   Cannot use [UEFI](/index.php/UEFI "UEFI") to boot.
 
 To overwrite the existing partition table with Btrfs, run the following command:

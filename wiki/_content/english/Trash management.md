@@ -13,7 +13,7 @@ To prevent accidental deletion of files, you can use a trash can. To ensure comp
 *   [1 Trash creation](#Trash_creation)
 *   [2 Trash space usage management](#Trash_space_usage_management)
     *   [2.1 Software list](#Software_list)
-    *   [2.2 Criterias](#Criterias)
+    *   [2.2 Criteria](#Criteria)
     *   [2.3 Automation](#Automation)
 
 ## Trash creation
@@ -42,7 +42,7 @@ To prevent the trash can from using to much space, you can empty it yourself, or
 
 autotrash (not in the AUR)
 
-### Criterias
+### Criteria
 
 *   make sure to have at least x MB of free space
 *   delete files older than x days

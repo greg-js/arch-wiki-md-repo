@@ -117,13 +117,13 @@ Available fonts may be found by [querying packages](/index.php/Pacman#Querying_p
 You should give pacman the ability to manage your fonts, which is done by creating an Arch package. These can also be shared with the community in the [AUR](/index.php/AUR "AUR"). The packages to install fonts are particularly similar; simply taking an existing [package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/adobe-source-code-pro-fonts) as template should work well. To learn about how to modify it for your font, please refer to [Creating packages](/index.php/Creating_packages "Creating packages").
 
 The family name of a font file can be aquired with the use of `fc-query` for example: `fc-query -f '%{family[0]}
-' /path/to/file`. The formatting is described in the FcPatternFormat(3) manual.
+' /path/to/file`. The formatting is described in [FcPatternFormat(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/FcPatternFormat.3).
 
 ### Manual installation
 
 The recommended way of adding fonts that are not in the repositories to your system is described in [#Creating a package](#Creating_a_package). This gives pacman the ability to remove or update them at a later time. Fonts can alternately be installed manually as well.
 
-To install fonts system-wide (available for all users), move the folder to the `/usr/share/fonts/` directory. The files need to be readable by every user, use [chmod](/index.php/Chmod "Chmod") to set the correct permissions (i.e. at least `0444` for files and `0555` for directories). To install fonts for only a single user, use `~/.local/share/fonts` (`~/.fonts/` is now deprecated).
+To install fonts system-wide (available for all users), move the folder to the `/usr/share/fonts` directory. The files need to be readable by every user, use [chmod](/index.php/Chmod "Chmod") to set the correct permissions (i.e. at least `0444` for files and `0555` for directories). To install fonts for only a single user, use `~/.local/share/fonts/` (`~/.fonts/` is now deprecated).
 
 For Xserver to load fonts directly (as opposed to the use of a *font server*) the directory for your newly added font must be added with a FontPath entry. This entry is located in the *Files* section [of your Xorg configuration file](/index.php/Xorg#Configuration "Xorg") (e.g. `/etc/X11/xorg.conf` or `/etc/xorg.conf`). See [#Older applications](#Older_applications) for more detail.
 
@@ -207,8 +207,8 @@ When [Pango](http://www.pango.org/) is in use on your system it will read from [
 
 If you are seeing errors similar to this and/or seeing blocks instead of characters in your application then you need to add fonts and update the font cache. This example uses the [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) fonts to illustrate the solution (after successful installation of the package) and runs as root to enable them system-wide.
 
+ `# fc-cache` 
 ```
-# fc-cache
 /usr/share/fonts: caching, new cache contents: 0 fonts, 3 dirs
 /usr/share/fonts/TTF: caching, new cache contents: 16 fonts, 0 dirs
 /usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
@@ -221,8 +221,8 @@ fc-cache: succeeded
 
 You can test for a default font being set like so:
 
+ `$ fc-match` 
 ```
-# fc-match
 LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 ```
@@ -234,6 +234,8 @@ This is a selective list that includes many font packages from the [AUR](/index.
 The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be used to generate an overview of all the TTF fonts found in the official repositories / the AUR (the image generation is done using [ttf2png](https://aur.archlinux.org/packages/ttf2png/)).
 
 ### Bitmap
+
+**Note:** [pango](https://www.archlinux.org/packages/?name=pango) 1.44 [dropped support for bitmap fonts](https://blogs.gnome.org/mclasen/2019/05/25/pango-future-directions/), so applications like e.g. [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) will not work with such fonts anymore, showing rectangles instead of glyphs. See [Pango issue #486](https://gitlab.gnome.org/GNOME/pango/issues/386) and [FS#63297](https://bugs.archlinux.org/task/63297).
 
 *   Default 8x16
 *   [Dina](http://www.dcmembers.com/jibsen/download/61/) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 6pt, 8pt, 9pt, 10pt, monospaced, based on Proggy
@@ -277,7 +279,7 @@ For more monospaced fonts see [#Bitmap](#Bitmap) and [#Families](#Families).
 *   Fantasque Sans Mono ([ttf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=ttf-fantasque-sans-mono), [otf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=otf-fantasque-sans-mono))
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – designed for Firefox OS
 *   [Fira Code](https://github.com/tonsky/FiraCode) ([ttf-fira-code](https://www.archlinux.org/packages/?name=ttf-fira-code), [otf-fira-code](https://www.archlinux.org/packages/?name=otf-fira-code)) – with programming ligatures
-*   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
+*   [FreeMono](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - an open source monospaced font, used as the default in KDE Plasma
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspired by Consolas
 *   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - adds some programmer-friendly modifications
@@ -299,7 +301,7 @@ Relevant websites:
 #### Sans-serif
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
-*   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
+*   [FreeSans](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – designed for user interfaces
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – free substitute for Times New Roman
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - 3 major variations: normal, narrow, and caption - Unicode: Latin, Cyrillic
@@ -309,7 +311,7 @@ Relevant websites:
 #### Serif
 
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/))
-*   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
+*   [FreeSerif](https://en.wikipedia.org/wiki/GNU_FreeFont "wikipedia:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode
 *   [Gentium](https://en.wikipedia.org/wiki/Gentium "wikipedia:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: Latin, Greek, Cyrillic, Phonetic Alphabet
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 
@@ -344,10 +346,9 @@ Relevant websites:
 
 ##### Pan-CJK
 
-*   adobe source han fonts - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
+*   Adobe Source Han fonts - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
     *   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Sans fonts
     *   [adobe-source-han-serif-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-otc-fonts) - Serif fonts
-
 *   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look. It is currently a rebadged version of [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
 
 ##### Chinese
@@ -357,34 +358,26 @@ Relevant websites:
     *   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Traditional Chinese OpenType/CFF Sans fonts
     *   [adobe-source-han-serif-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-cn-fonts) - Simplified Chinese OpenType/CFF Serif fonts
     *   [adobe-source-han-serif-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-serif-tw-fonts) - Traditional Chinese OpenType/CFF Serif fonts
-
 *   noto Chinese fonts
     *   [noto-fonts-sc](https://aur.archlinux.org/packages/noto-fonts-sc/) - Noto CJK-SC fonts for Simplified Chinese
     *   [noto-fonts-tc](https://aur.archlinux.org/packages/noto-fonts-tc/) - Noto CJK-TC fonts for Traditional Chinese
-
 *   wqy fonts
     *   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - WenQuanYi Micro Hei font family (also known as Hei, Gothic or Dotum) is a sans-serif style derived from Droid Sans Fallback, it offers high quality CJK outline font and it is extremely compact (~5M).
     *   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
     *   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font.
-
 *   arphic fonts
     *   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - *Kaiti* (brush stroke) Unicode font (enabling anti-aliasing is suggested)
     *   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - *Mingti* (printed) Unicode font
-
 *   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - *New Sung* font, previously is ttf-fireflysung package
-
 *   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Chinese and Vietnamese ttf fonts
-
 *   Standart fonts of the Republic of China ministry of education in Taiwan
     *   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Kai and Song traditional Chinese font from the Ministry of Education of Taiwan
     *   [ttf-twcns-fonts](https://aur.archlinux.org/packages/ttf-twcns-fonts/) Chinese TrueType fonts by Ministry of Education of Taiwan government, support CNS11643 standard, including Kai and Sung fontface.
-
 *   Windows Chinese fonts
     *   [ttf-ms-win8-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win8-zh_cn/) - windows8 simple Chinese fonts。
     *   [ttf-ms-win8-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win8-zh_tw/) - windows8 traditional Chinese fonts。
     *   [ttf-ms-win10-zh_cn](https://aur.archlinux.org/packages/ttf-ms-win10-zh_cn/) - windows10 simple Chinese fonts。
     *   [ttf-ms-win10-zh_tw](https://aur.archlinux.org/packages/ttf-ms-win10-zh_tw/) - windows10 traditional Chinese fonts。
-
 *   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - CJK serif font that emphasis on an old-style typeface.
 
 ##### Japanese
@@ -491,7 +484,7 @@ A section of the Unicode standard is designated for pictographic characters call
 *   [ttf-joypixels](https://www.archlinux.org/packages/?name=ttf-joypixels) - Unicode 12 compliant Emoji font (formerly EmojiOne)
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Twitter's open-sourced emoji glyphs.
 
-[Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
+[Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
 
 ### Math
 
@@ -562,7 +555,7 @@ $ fc-list
 
 ### List installed fonts for a particular language
 
-Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="two letter language code"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
+Applications and browsers select and display fonts depending upon fontconfig preferences and available font glyph for Unicode text. To list installed fonts for a particular language, issue a command `fc-list :lang="*two letter language code*"`. For instance, to list installed Arabic fonts or fonts supporting Arabic glyph:
 
  `$ fc-list -f '%{file}
 ' :lang=ar` 
@@ -572,7 +565,6 @@ Applications and browsers select and display fonts depending upon fontconfig pre
 /usr/share/fonts/truetype/custom/DroidKufi-Bold.ttf
 /usr/share/fonts/TTF/DejaVuSansMono.ttf
 /usr/share/fonts/TTF/FreeSerif.ttf
-
 ```
 
 ### List installed fonts for a particular Unicode character

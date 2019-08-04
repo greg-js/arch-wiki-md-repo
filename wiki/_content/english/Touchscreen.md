@@ -14,10 +14,9 @@ If you ever tried to set up a touchscreen device in linux, you might have notice
 *   [2 Available X11 drivers](#Available_X11_drivers)
 *   [3 evdev drivers](#evdev_drivers)
     *   [3.1 Calibration](#Calibration)
-*   [4 Wacom touchscreens](#Wacom_touchscreens)
-*   [5 Using a touchscreen in a multi-head setup](#Using_a_touchscreen_in_a_multi-head_setup)
-*   [6 Touchegg](#Touchegg)
-*   [7 Firefox](#Firefox)
+*   [4 Using a touchscreen in a multi-head setup](#Using_a_touchscreen_in_a_multi-head_setup)
+*   [5 Touchegg](#Touchegg)
+*   [6 Firefox](#Firefox)
 
 ## Introduction
 
@@ -61,51 +60,6 @@ Depending on your touchscreen device choose an appropriate driver. Again, evdev 
 ### Calibration
 
 Install [xinput_calibrator](https://aur.archlinux.org/packages/xinput_calibrator/) (AUR). Then, run xinput_calibrator and follow the instructions.
-
-## Wacom touchscreens
-
-For Wacom touchscreens, the driver might sometimes fail, when resuming from suspend state or during boot.
-
-```
-$ dmesg | grep wacom
-[    9.205933] wacom 0003:056A:502B.0001: wacom_set_report: ran out of retries (last error = -110)
-
-```
-
-The problem can be fixed manually, by reloading the kernel module:
-
-```
-# rmmod wacom
-# modprobe wacom
-
-```
-
-The fix can be automated, by creating a systemd service[[1]](https://gist.github.com/emesik/d01679052ef3aeb83ebe87f46d223b12)
-
- `/etc/systemd/system/wacom-reload.service` 
-```
-[Unit]
-Description=Reload wacom module (touchscreen)
-After=suspend.target
-
-[Service]
-User=root
-Type=oneshot
-ExecStart=/usr/bin/rmmod wacom
-ExecStop=/usr/bin/modprobe wacom
-TimeoutSec=0
-StandardOutput=syslog
-
-[Install]
-WantedBy=suspend.target multi-user.target
-```
-
-Enable this service by running
-
-```
-# systemctl enable wacom-reload.service
-
-```
 
 ## Using a touchscreen in a multi-head setup
 

@@ -245,7 +245,7 @@ If your provider did not give you IPv6 DNS and you are not running your own, you
 
 ## IPv6 and PPPoE
 
-The standard tool for PPPoE, `pppd`, provides support for IPv6 on PPPoE as long as your ISP and your modem support it. Just add the following to `/etc/ppp/pppoe.conf`
+The standard tool for PPPoE, `pppd`, provides support for IPv6 on PPPoE as long as your ISP and your modem support it. Just add the following to `/etc/ppp/options`
 
 ```
 +ipv6

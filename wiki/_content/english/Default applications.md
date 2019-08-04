@@ -8,7 +8,11 @@ Programs implement default application associations in different ways, while com
 
 Many [desktop environments](/index.php/Desktop_environment "Desktop environment") and graphical [file managers](/index.php/File_manager "File manager") provide a GUI for configuring default applications.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Background information](#Background_information)
 *   [2 Resource openers](#Resource_openers)
@@ -72,7 +76,7 @@ $ mimeopen -n photo.jpeg
 
 ```
 
-Most importantly, [xdg-utils](/index.php/Xdg-utils "Xdg-utils") programs will actually call `mimetype` instead of `file` for MIME type detection, if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the XDG standard.
+Most importantly, [xdg-utils](/index.php/Xdg-utils "Xdg-utils") programs will actually call `file` instead of `mimetype` for MIME type detection if it does not detect your [desktop environment](/index.php/Desktop_environment "Desktop environment"). This is important because `file` does not follow the XDG standard.
 
 **Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 does not *entirely* follow the XDG standard. For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
 
@@ -98,7 +102,7 @@ However a big difference with *xdg-utils* is that mimeo also supports custom "as
 
 ```
 # open youtube links in VLC without opening a new instance
-vlc --one-instance --playlist-enqueue %U
+vlc --one-instance --playlist-enqueue %U
   ^https?://(www.)?youtube.com/watch\?.*v=
 
 ```

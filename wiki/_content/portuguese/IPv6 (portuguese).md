@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-02-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=565013) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IPv6](/index.php/IPv6 "IPv6"). Data da última tradução: 2019-08-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IPv6&diff=0&oldid=578330) na versão em inglês.
 
 Artigos relacionados
 
@@ -247,7 +247,7 @@ Se o seu provedor não forneceu DNS IPv6 e você não está executando o seu pr�
 
 ## IPv6 e PPPoE
 
-A ferramenta padrão para o PPPoE, `pppd`, fornece suporte a IPv6 sob PPPoE desde que seu provedor de internet e seu modem tenham suporte a isso. Basta adicionar ao seguinte a `/etc/ppp/pppoe.conf`
+A ferramenta padrão para o PPPoE, `pppd`, fornece suporte a IPv6 sob PPPoE desde que seu provedor de internet e seu modem tenham suporte a isso. Basta adicionar ao seguinte a `/etc/ppp/options`
 
 ```
 +ipv6

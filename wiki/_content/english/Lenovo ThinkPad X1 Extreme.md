@@ -120,7 +120,7 @@ A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates
 
 It should be possible to modify those settings by [applying the correct DPTF policy](https://lkml.org/lkml/2018/10/10/328), however, as of BIOS 1.21, the policies seem to be ignored by the firmware.
 
-This can be worked around by using [throttled](https://aur.archlinux.org/packages/throttled/) (previously known as [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/)) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
+This can be worked around by using [throttled](https://www.archlinux.org/packages/?name=throttled) (previously known as [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/)) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
 
 ### CPU undervolting
 

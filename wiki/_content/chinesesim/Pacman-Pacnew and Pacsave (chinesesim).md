@@ -4,16 +4,20 @@
 
 同样的，当 pacman 升级一个软件包，而新软件包含有与与当前配置不同的新配置文件时，pacman 会将新配置写入 .pacnew 文件。当写入这些文件时，pacman 会输出提示信息。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 为什么创建了这样的文件](#.E4.B8.BA.E4.BB.80.E4.B9.88.E5.88.9B.E5.BB.BA.E4.BA.86.E8.BF.99.E6.A0.B7.E7.9A.84.E6.96.87.E4.BB.B6)
-*   [2 包备份文件](#.E5.8C.85.E5.A4.87.E4.BB.BD.E6.96.87.E4.BB.B6)
-*   [3 类型说明](#.E7.B1.BB.E5.9E.8B.E8.AF.B4.E6.98.8E)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 为什么创建了这样的文件](#为什么创建了这样的文件)
+*   [2 包备份文件](#包备份文件)
+*   [3 类型说明](#类型说明)
     *   [3.1 .pacnew](#.pacnew)
     *   [3.2 .pacsave](#.pacsave)
-*   [4 定位 .pac* 文件](#.E5.AE.9A.E4.BD.8D_.pac.2A_.E6.96.87.E4.BB.B6)
-*   [5 .管理 .pacnew 文件](#..E7.AE.A1.E7.90.86_.pacnew_.E6.96.87.E4.BB.B6)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [4 定位 .pac* 文件](#定位_.pac*_文件)
+*   [5 .管理 .pacnew 文件](#.管理_.pacnew_文件)
+*   [6 参阅](#参阅)
 
 ## 为什么创建了这样的文件
 
@@ -119,7 +123,7 @@ $ egrep "pac(new|save)" /var/log/pacman.log
 
 ## .管理 .pacnew 文件
 
-Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会搜索所有的 `pacnew` 和 `pacsave` 文件并询问要执行的操作。默认使用 [vimdiff](/index.php/Vim#Merging_files "Vim") 工具，可以通过 `DIFFPROG=your_editor pacdiff` 指定要使用的差异比较工具。参考 [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities").
+Pacman 包含了 *pacdiff* 工具管理 pacnew/pacsave 文件。这个工具会搜索所有的 `pacnew` 和 `pacsave` 文件并询问要执行的操作。默认使用 [vimdiff](/index.php/Vim#Merging_files "Vim") 工具，可以通过 `DIFFPROG=your_editor pacdiff` 指定要使用的差异比较工具。参考 [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison,_diff,_merge "List of applications/Utilities").
 
 下面一些 [AUR](/index.php/AUR "AUR") 三方工具可以自动处理这些文件：
 

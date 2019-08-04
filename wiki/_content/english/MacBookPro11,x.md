@@ -125,6 +125,7 @@ This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed
 # pacman -U broadcom-wl-*.pkg.tar.xz
 # rmmod b43
 # rmmod ssb
+# rmmod bcma
 # modprobe wl
 
 ```

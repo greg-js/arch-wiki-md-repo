@@ -1,39 +1,45 @@
 Related articles
 
-*   [Users and groups](/index.php/Users_and_groups "Users and groups")
-*   [umask](/index.php/Umask "Umask")
-*   [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists")
-*   [Capabilities](/index.php/Capabilities "Capabilities")
+*   [Users and groups (简体中文)](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Users and groups (简体中文)")
+*   [umask (简体中文)](/index.php?title=Umask_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Umask (简体中文) (page does not exist)")
+*   [Access Control Lists (简体中文)](/index.php?title=Access_Control_Lists_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Access Control Lists (简体中文) (page does not exist)")
+*   [Capabilities (简体中文)](/index.php/Capabilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Capabilities (简体中文)")
 
-[文件系统](/index.php/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F "文件系统") use [权限](https://en.wikipedia.org/wiki/File_system_permissions "w:File system permissions") and [属性](https://en.wikipedia.org/wiki/File_attribute "w:File attribute")来规范系统进程与文件和目录之间的交互。
+**翻译状态：** 本文是英文页面 [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2019-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=File+permissions+and+attributes&diff=0&oldid=562573)可以查看翻译后英文页面的改动。
+
+[文件系统](/index.php/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F "文件系统") 用 [权限](https://en.wikipedia.org/wiki/File_system_permissions "w:File system permissions") 和 [属性](https://en.wikipedia.org/wiki/File_attribute "w:File attribute")来规范系统进程与文件和目录之间的交互。
 
 **警告:** 权限和属性设置只能防范来自已经启动了的当前系统的攻击。为了防止数据被能物理访问该机器的人的接触，必须同时使用[磁盘加密](/index.php/%E7%A3%81%E7%9B%98%E5%8A%A0%E5%AF%86 "磁盘加密").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 查看权限](#查看权限)
-    *   [1.1 例子](#例子)
-*   [2 更改权限](#更改权限)
-    *   [2.1 文本方式](#文本方式)
-        *   [2.1.1 快捷文本方式](#快捷文本方式)
-        *   [2.1.2 复制权限](#复制权限)
-    *   [2.2 数值方式](#数值方式)
-    *   [2.3 批量chmod](#批量chmod)
-*   [3 改变所有者](#改变所有者)
-*   [4 访问控制列表（ACL）](#访问控制列表（ACL）)
+    *   [1.1 Examples](#Examples)
+*   [2 Changing permissions](#Changing_permissions)
+    *   [2.1 Text method](#Text_method)
+        *   [2.1.1 Text method shortcuts](#Text_method_shortcuts)
+        *   [2.1.2 Copying permissions](#Copying_permissions)
+    *   [2.2 Numeric method](#Numeric_method)
+    *   [2.3 Bulk chmod](#Bulk_chmod)
+*   [3 Changing ownership](#Changing_ownership)
+*   [4 Access Control Lists](#Access_Control_Lists)
 *   [5 Umask](#Umask)
-*   [6 文件属性](#文件属性)
-    *   [6.1 chattr和lsattr](#chattr和lsattr)
-*   [7 额外属性](#额外属性)
-    *   [7.1 用户定义的额外文件属性](#用户定义的额外文件属性)
-    *   [7.2 Capabilities](#Capabilities)
-*   [8 小技巧](#小技巧)
-    *   [8.1 保住根目录（/）](#保住根目录（/）)
-*   [9 参考文献](#参考文献)
+*   [6 File attributes](#File_attributes)
+    *   [6.1 chattr and lsattr](#chattr_and_lsattr)
+*   [7 Extended attributes](#Extended_attributes)
+    *   [7.1 User extended attributes](#User_extended_attributes)
+    *   [7.2 Preserving extended attributes](#Preserving_extended_attributes)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Preserve root](#Preserve_root)
+*   [9 See also](#See_also)
 
 ## 查看权限
 
-Use the [ls](/index.php/Ls "Ls") command's `-l` option to view the permissions (or **file mode**) set for the contents of a directory, for example:
+使用[ls](/index.php/Ls "Ls")命令的 `-l`选项查看为目录内容设置的权限（或**文件模式**），例如：
 
  `$ ls -l /path/to/directory` 
 ```
@@ -47,10 +53,10 @@ drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
 
 ```
 
-The first column is what we must focus on. Taking an example value of `drwxrwxrwx+`, the meaning of each character is explained in the following tables:
+第一栏是我们必须关注的内容。 以 `drwxrwxrwx +`为例，每个字符的含义在下表中说明：
 
 | `d` | `rwx` | `rwx` | `rwx` | `+` |
-| The file type, technically not part of its permissions. See `info ls -n "What information is listed"` for an explanation of the possible values. | The permissions that the owner has over the file, explained below. | The permissions that the group has over the file, explained below. | The permissions that all the other users have over the file, explained below. | A single character that specifies whether an alternate access method applies to the file. When this character is a space, there is no alternate access method. A `.` character indicates a file with a security context, but no other alternate access method. A file with any other combination of alternate access methods is marked with a `+` character, for example in the case of [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists"). |
+| 文件类型，技术上不属于其权限。 有关可能值的说明，请参阅 `info ls -n "What information is listed"`。 | 所有者对文件的权限，如下所述。 | 该组对该文件的权限，如下所述。 | 所有其他用户对该文件的权限，如下所述。 | 一个字符，指定备用访问方法是否适用于该文件。 当此字符是空格时，没有替代访问方法。 `.`字符表示具有安全上下文的文件，但没有其他备用访问方法。 具有备用访问方法的任何其他组合的文件用 `+`字符标记，例如在[Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists")的情况下. |
 
 Each of the three permission triads (`rwx` in the example above) can be made up of the following characters:
 
@@ -68,7 +74,9 @@ Each of the three permission triads (`rwx` in the example above) can be made up 
 
 See `info Coreutils -n "Mode Structure"` and [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) for more details.
 
-### 例子
+**Tip:** You can view permissions along a path with `namei -l *path*`.
+
+### Examples
 
 Let us see some examples to clarify:
 
@@ -109,13 +117,13 @@ Let us look at another example, this time of a file, not a directory:
 
 ```
 
-Here we can see the first letter is not `d` but `-`. So we know it is a file, not a directory. Next the owner's permissions are `rw-` so the owner has the ability to read and write but not execute. This may seem odd that the owner does not have all three permissions, but the `x` permission is not needed as it is a text/data file, to be read by a text editor such as Gedit, EMACS, or software like R, and not an executable in its own right (if it contained something like python programming code then it very well could be). The group's permssions are set to `r--`, so the group has the ability to read the file but not write/edit it in any way — it is essentially like setting something to read-only. We can see that the same permissions apply to everyone else as well.
+Here we can see the first letter is not `d` but `-`. So we know it is a file, not a directory. Next the owner's permissions are `rw-` so the owner has the ability to read and write but not execute. This may seem odd that the owner does not have all three permissions, but the `x` permission is not needed as it is a text/data file, to be read by a text editor such as Gedit, EMACS, or software like R, and not an executable in its own right (if it contained something like python programming code then it very well could be). The group's permissions are set to `r--`, so the group has the ability to read the file but not write/edit it in any way — it is essentially like setting something to read-only. We can see that the same permissions apply to everyone else as well.
 
-## 更改权限
+## Changing permissions
 
 [chmod](https://en.wikipedia.org/wiki/chmod "wikipedia:chmod") is a command in Linux and other Unix-like operating systems that allows to *ch*ange the permissions (or access *mod*e) of a file or directory.
 
-### 文本方式
+### Text method
 
 To change the permissions — or *access mode* — of a file, use the *chmod* command in a terminal. Below is the command's general structure:
 
@@ -183,7 +191,7 @@ After: `-rw-rw-r-- 1 archie users 5120 Jun 27 08:28 foobar`
 
 This is exactly like the first example, but with a file, not a directory, and you grant write permission (just so as to give an example of granting every permission).
 
-#### 快捷文本方式
+#### Text method shortcuts
 
 The *chmod* command lets add and subtract permissions from an existing set using `+` or `-` instead of `=`. This is different from the above commands, which essentially re-write the permissions (e.g. to change a permission from `r--` to `rw-`, you still need to include `r` as well as `w` after the `=` in the *chmod* command invocation. If you missed out `r`, it would take away the `r` permission as they are being re-written with the `=`. Using `+` and `-` avoids this by adding or taking away from the *current* set of permissions).
 
@@ -216,7 +224,7 @@ $ chmod -R a+rX ./data/
 
 ```
 
-#### 复制权限
+#### Copying permissions
 
 It is possible to tell *chmod* to copy the permissions from one class, say the owner, and give those same permissions to group or even all. To do this, instead of putting `r`, `w`, or `x` after the `=`, put another *who* letter. e.g:
 
@@ -238,7 +246,7 @@ $ chmod g=wu foobar
 
 In that case *chmod* throw an error.
 
-### 数值方式
+### Numeric method
 
 *chmod* can also set permissions using numbers.
 
@@ -282,11 +290,11 @@ $ chmod go=rx *filename*
 To view the existing permissions of a file or directory in numeric form, use the [stat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stat.1) command:
 
 ```
-$ stat -c %a *filename*
+$ stat -c %a *filename*
 
 ```
 
-Where the %a option specifies output in numeric form.
+Where the %a option specifies output in numeric form.
 
 Most folders and directories are set to `755` to allow reading, writing and execution to the owner, but deny writing to everyone else, and files are normally `644` to allow reading and writing for the owner but just reading for everyone else; refer to the last note on the lack of `x` permissions with non executable files: it is the same thing here.
 
@@ -351,7 +359,7 @@ sticky=1
 
 For example, `chmod 2777 *filename*` will set read/write/executable bits for everyone and also enable the `setgid` bit.
 
-### 批量chmod
+### Bulk chmod
 
 Generally directories and files should not have the same permissions. If it is necessary to bulk modify a directory tree, use [find](/index.php/Find "Find") to selectively modify one or the other.
 
@@ -369,7 +377,7 @@ $ find *directory* -type f -exec chmod 644 {} +
 
 ```
 
-## 改变所有者
+## Changing ownership
 
 [chown](https://en.wikipedia.org/wiki/chown "wikipedia:chown") changes the owner of a file or directory, which is quicker and easier than altering the permissions in some cases.
 
@@ -399,7 +407,7 @@ Now the partition can have data written to it by the new owner, archie, without 
 *   `chown` always clears the setuid and setgid bits.
 *   Non-root users cannot use `chown` to "give away" files they own to another user.
 
-## 访问控制列表（ACL）
+## Access Control Lists
 
 [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") provides an additional, more flexible permission mechanism for file systems by allowing to set permissions for any user or group to any file.
 
@@ -407,13 +415,13 @@ Now the partition can have data written to it by the new owner, archie, without 
 
 The [umask](/index.php/Umask "Umask") utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files.
 
-## 文件属性
+## File attributes
 
 Apart from the file mode bits that control [user and group](/index.php/Users_and_groups "Users and groups") read, write and execute permissions, several [file systems](/index.php/File_systems "File systems") support file attributes that enable further customization of allowable file operations. This section describes some of these attributes and how to work with them.
 
 **Warning:** By default, file attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
 
-### chattr和lsattr
+### chattr and lsattr
 
 For ext2 and [ext3](/index.php/Ext3 "Ext3") file systems, the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package contains the programs [lsattr](https://en.wikipedia.org/wiki/lsattr "wikipedia:lsattr") and [chattr](https://en.wikipedia.org/wiki/chattr "wikipedia:chattr") that list and change a file's attributes, respectively. Though some are not honored by all file systems, the available attributes are:
 
@@ -441,40 +449,51 @@ For example, if you want to set the immutable bit on some file, use the followin
 
 To remove an attribute on a file just change `+` to `-`.
 
-## 额外属性
+## Extended attributes
 
-From [attr(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/attr.5): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+From [xattr(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xattr.7): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
 
-**Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
+**Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs, see [#Preserving extended attributes](#Preserving_extended_attributes).
 
-### 用户定义的额外文件属性
+Extended attributes are also used to set [Capabilities](/index.php/Capabilities "Capabilities").
+
+### User extended attributes
 
 User extended attributes can be used to store arbitrary information about a file. To create one:
 
 ```
-$ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.bar
+$ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.txt
 
 ```
 
 Use getfattr to display extended attributes:
 
- `$ getfattr -d foo.bar` 
+ `$ getfattr -d foo.txt` 
 ```
-# file: foo.bar
+# file: foo.txt
 user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 ```
 
-### Capabilities
+### Preserving extended attributes
 
-Extended attributes are also used to set [Capabilities](/index.php/Capabilities "Capabilities").
+| Command | Required flag |
+| `cp` | `--preserve=mode,ownership,timestamps,xattr` |
+| `mv` | preserves by default |
+| `tar` | `--xattrs` for creation and extraction |
+| `bsdtar` | `-p` for extraction |
+| [rsync](/index.php/Rsync "Rsync") | `--xattrs` |
 
-## 小技巧
+1.  mv silently discards extended attributes when the target file system does not support them.
 
-### 保住根目录（/）
+To preserve extended attributes with [text editors](/index.php/Text_editor "Text editor") you need to configure them to truncate files on saving instead of using [rename(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rename.2).[[1]](https://unix.stackexchange.com/questions/45407)
 
-Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`. This can, for example, prevent one from removing the executable bit systemwide and thus breaking the system. To use this flag every time, set it within an [alias](/index.php/Alias "Alias"). See also [[1]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
+## Tips and tricks
 
-## 参考文献
+### Preserve root
+
+Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`. This can, for example, prevent one from removing the executable bit systemwide and thus breaking the system. To use this flag every time, set it within an [alias](/index.php/Alias "Alias"). See also [[2]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
+
+## See also
 
 *   [wikipedia:Chattr](https://en.wikipedia.org/wiki/Chattr "wikipedia:Chattr")
 *   [Linux File Permission Confusion](http://www.hackinglinuxexposed.com/articles/20030417.html)

@@ -20,7 +20,7 @@ If it does not exist, it is *not* possible to continue with this method. You may
 
 [Install](/index.php/Install "Install") the [pacutils](https://www.archlinux.org/packages/?name=pacutils) package to get *paclog*.
 
-Create the log filter script and make it executable:
+Create the log filter script and make it [executable](/index.php/Executable "Executable"):
 
  `pacrecover` 
 ```
@@ -60,7 +60,7 @@ $ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
 
 **Note:** If this fails with `failed to initialise alpm library`, then check if `/var/lib/pacman/local/ALPM_DB_VERSION` exists - if not, then run `pacman-db-upgrade` as root followed by `pacman -Sy` and then **retry the previous command**.
 
-Check if some important *base* package are missing, and add them to the list:
+Check if some important *base* packages are missing, and add them to the list:
 
 ```
 $ comm -23 <(pacman -Sgq base | sort) pkglist.orig >> pkglist
@@ -71,7 +71,7 @@ Proceed once the contents of both lists are satisfactory, since they will be use
 
 ## Performing the recovery
 
-Define a bash function for recovery purposes:
+Define a [bash function](/index.php/Bash/Functions "Bash/Functions") for recovery purposes:
 
 ```
  recovery-pacman() {
@@ -109,7 +109,7 @@ Install the rest from `pkglist`:
 
 ```
 
-Update the local database so that packages that are not required by any other package are marked as explicitly installed and the other as dependences. You will need be extra careful in the future when removing packages, but with the original database lost is the best we can do.
+Update the local database so that packages that are not required by any other package are marked as explicitly installed and the other as dependences. You will need to be extra careful in the future when removing packages, but with the original database lost, it is the best we can do.
 
 ```
 # pacman -D --asdeps $(pacman -Qq)

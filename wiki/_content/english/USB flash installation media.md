@@ -83,14 +83,16 @@ See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more informatio
 
 ##### Using Rufus
 
-[Rufus](https://rufus.akeo.ie/) is a multi-purpose USB ISO writer. Simply select the Arch Linux ISO, the USB drive you want to create the bootable Arch Linux onto and click *START*.
+[Rufus](https://rufus.akeo.ie/) is a multi-purpose USB ISO writer. It provides a graphical user interface and does not care if the drive is properly formatted or not.
 
-Since Rufus does not care if the drive is properly formatted or not and provides a GUI it may be the easiest and most robust tool to use.
+Simply select the Arch Linux ISO, the USB drive you want to create the bootable Arch Linux onto and click *START*.
 
-**Note:** The image has to be transferred in **DD Image mode**.
+**Note:** If the USB drive does not boot properly using the default ISO Image mode, **DD Image mode** should be used instead.
 
 *   For Rufus version ≥ 3.0 select *GPT* from the *Partition scheme* drop-down menu. After clicking *START* you will get the mode selection dialog, select *DD Image mode*.
 *   For Rufus version < 3.0 select *DD Image* mode from the drop-down menu on the bottom.
+
+**Tip:** To add [an additional partition for persistent storage](https://github.com/pbatard/rufus/issues/691) use the slider to choose the persistent partition's size. When using the persistent partition feature, make sure to select *MBR* in the *Partition scheme* drop-down menu and *BIOS or UEFI* in *Target System*, otherwise the drive will not be usable for both BIOS and UEFI booting.
 
 ##### Using USBwriter
 

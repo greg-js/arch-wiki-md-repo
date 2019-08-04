@@ -3,13 +3,13 @@ Related articles
 *   [NVIDIA/Tips and tricks](/index.php/NVIDIA/Tips_and_tricks "NVIDIA/Tips and tricks")
 *   [NVIDIA/Troubleshooting](/index.php/NVIDIA/Troubleshooting "NVIDIA/Troubleshooting")
 *   [Nouveau](/index.php/Nouveau "Nouveau")
-*   [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun")
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee")
 *   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
+*   [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun")
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Vulkan](/index.php/Vulkan "Vulkan")
 
-This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics card driver. For the open-source driver, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead. [Xorg](/index.php/Xorg "Xorg") users with multiple GPUs who wish to use their Nvidia card primarily, should start X using [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").
+This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics card driver. For the open-source driver, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

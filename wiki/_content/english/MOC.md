@@ -7,11 +7,13 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 PulseAudio](#PulseAudio)
 *   [2 Front-ends](#Front-ends)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Navigation](#Navigation)
-    *   [3.2 systemd service](#systemd_service)
-    *   [3.3 Themes](#Themes)
+    *   [3.1 Using PulseAudio](#Using_PulseAudio)
+    *   [3.2 Navigation](#Navigation)
+    *   [3.3 systemd service](#systemd_service)
+    *   [3.4 Themes](#Themes)
 *   [4 Usage](#Usage)
 *   [5 Scrobbling](#Scrobbling)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -22,7 +24,11 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/). For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-svn](https://aur.archlinux.org/packages/moc-pulse-svn/) for the development version.
+[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package.
+
+### PulseAudio
+
+For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-svn](https://aur.archlinux.org/packages/moc-pulse-svn/) for the development version. To use the pulseaudio driver, go to [#Using PulseAudio](#Using_PulseAudio).
 
 ## Front-ends
 
@@ -41,6 +47,17 @@ Sample configuration files can be found in `/usr/share/doc/moc/`. On *mocp* firs
 To use MOC with v4.1 [OSS](/index.php/OSS "OSS"), see [OSS#MOC](/index.php/OSS#MOC "OSS").
 
 To change the default key bindings, see `/usr/share/doc/moc/keymap.example`.
+
+### Using PulseAudio
+
+If you have [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-svn](https://aur.archlinux.org/packages/moc-pulse-svn/) downloaded, locate the variable `SoundDriver` and add `PULSEAUDIO:` to the front.
+
+```
+SoundDriver = PULSEAUDIO:JACK:ALSA:OSS
+
+```
+
+This ensures that PulseAudio gets loaded with first priority. Listing other sound drivers after this are fallbacks when the previous ones are not available.
 
 ### Navigation
 

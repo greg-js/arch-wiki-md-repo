@@ -1,23 +1,27 @@
 [Festival](http://www.cstr.ed.ac.uk/projects/festival/) - это многоязычная система синтеза речи, разработанная CSTR ([Centre for Speech Technology Research](http://www.cstr.ed.ac.uk/)).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [2.1 Использование со звуковым сервером](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D1.8B.D0.BC_.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.BE.D0.BC)
-    *   [2.2 Голоса](#.D0.93.D0.BE.D0.BB.D0.BE.D1.81.D0.B0)
-    *   [2.3 Установка голоса по умолчанию](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B3.D0.BE.D0.BB.D0.BE.D1.81.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-        *   [2.3.1 Ручная установка голосов](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B3.D0.BE.D0.BB.D0.BE.D1.81.D0.BE.D0.B2)
-    *   [2.4 Поддержка русского языка](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D1.8F.D0.B7.D1.8B.D0.BA.D0.B0)
-*   [3 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-    *   [3.1 Интерактивный режим (тестирование голосов и пр.)](#.D0.98.D0.BD.D1.82.D0.B5.D1.80.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC_.28.D1.82.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B3.D0.BE.D0.BB.D0.BE.D1.81.D0.BE.D0.B2_.D0.B8_.D0.BF.D1.80..29)
-    *   [3.2 Чтение текстового файла](#.D0.A7.D1.82.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0)
-    *   [3.3 Чтение текстового файла и сохранение в wav](#.D0.A7.D1.82.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0_.D0.B8_.D1.81.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_wav)
-    *   [3.4 Пример скрипта для festival](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80_.D1.81.D0.BA.D1.80.D0.B8.D0.BF.D1.82.D0.B0_.D0.B4.D0.BB.D1.8F_festival)
-*   [4 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [4.1 Cannot open /dev/dsp](#Cannot_open_.2Fdev.2Fdsp)
-    *   [4.2 Alsa playing @ wrong speed](#Alsa_playing_.40_wrong_speed)
-*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка](#Настройка)
+    *   [2.1 Использование со звуковым сервером](#Использование_со_звуковым_сервером)
+    *   [2.2 Голоса](#Голоса)
+    *   [2.3 Установка голоса по умолчанию](#Установка_голоса_по_умолчанию)
+        *   [2.3.1 Ручная установка голосов](#Ручная_установка_голосов)
+    *   [2.4 Поддержка русского языка](#Поддержка_русского_языка)
+*   [3 Использование](#Использование)
+    *   [3.1 Интерактивный режим (тестирование голосов и пр.)](#Интерактивный_режим_(тестирование_голосов_и_пр.))
+    *   [3.2 Чтение текстового файла](#Чтение_текстового_файла)
+    *   [3.3 Чтение текстового файла и сохранение в wav](#Чтение_текстового_файла_и_сохранение_в_wav)
+    *   [3.4 Пример скрипта для festival](#Пример_скрипта_для_festival)
+*   [4 Решение проблем](#Решение_проблем)
+    *   [4.1 Cannot open /dev/dsp](#Cannot_open_/dev/dsp)
+    *   [4.2 Alsa playing @ wrong speed](#Alsa_playing_@_wrong_speed)
+*   [5 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -30,7 +34,7 @@ $ echo "This is an example. Arch is the best." | festival --tts
 
 ```
 
-Если вы слышите то, что написано в примере, вы успешно установили TTS-систему. Если вы ничего не слышите, слышите какой-то странный звук или только начало предложения, смотрите раздел [#Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC).
+Если вы слышите то, что написано в примере, вы успешно установили TTS-систему. Если вы ничего не слышите, слышите какой-то странный звук или только начало предложения, смотрите раздел [#Решение проблем](#Решение_проблем).
 
 ## Настройка
 
@@ -75,13 +79,13 @@ $ echo "This is an example. Arch is the best." | festival --tts
    All rights reserved.
    For details type `(festival_warranty)'
    festival> voice_default 
-   voice_cmu_us_slt_arctic_hts          ;;<-- THIS IS THE VOICE FESTIVAL SPEAKS WITH
+   voice_cmu_us_slt_arctic_hts          ;;<-- THIS IS THE VOICE FESTIVAL SPEAKS WITH
    festival> default-voice-priority-list 
 
 ```
 
 ```
-   (kal_diphone                         ;;<-- THIS IS THE HARD-CODED LIST OF VOICES FESTIVAL CAME PRE-AWARE OF
+   (kal_diphone                         ;;<-- THIS IS THE HARD-CODED LIST OF VOICES FESTIVAL CAME PRE-AWARE OF
     cmu_us_bdl_arctic_hts
     cmu_us_jmk_arctic_hts
     cmu_us_slt_arctic_hts
@@ -96,7 +100,7 @@ $ echo "This is an example. Arch is the best." | festival --tts
     gsw_diphone
     el_diphone)
 
-   festival> (voice_                    ;;<-- PRESS TAB HERE TO SEE WHAT VOICES FESTIVAL HAS AVAILABLE
+   festival> (voice_                    ;;<-- PRESS TAB HERE TO SEE WHAT VOICES FESTIVAL HAS AVAILABLE
    voice_cmu_us_slt_arctic_hts     voice_kal_diphone               voice_nitech_us_slt_arctic_hts  voice_reset
    voice_default                   voice_nitech_us_clb_arctic_hts  voice_rab_diphone
    festival> (voice_cmu_us_slt_arctic_hts) 

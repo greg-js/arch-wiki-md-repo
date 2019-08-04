@@ -61,7 +61,7 @@ $ keybase login <keybase_username>
 During the interactive signup if you already have any GnuPG key pairs on your keyring, Keybase will ask if you wish to use one of them. If you do not have a key pair, you can generate one with:
 
 ```
-$ keybase gpg gen
+$ keybase pgp gen
 
 ```
 

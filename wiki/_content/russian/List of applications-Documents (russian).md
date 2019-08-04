@@ -294,17 +294,29 @@
 
 ##### Текстовые редакторы Vi
 
-*   **Neovim** — Возрожденный в XXI веке *Vim*
+*   **Amp** — текстовый редактор на языке Rust, основанный на упрощенной модели взаимодействия с Vim и с добавлением основных функций, необходимых современному редактору.
 
-	[http://neovim.org/](http://neovim.org/) || [neovim-git](https://aur.archlinux.org/packages/neovim-git/)
+	[https://amp.rs/](https://amp.rs/) || [amp](https://aur.archlinux.org/packages/amp/)
 
-*   **[Vi](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)")** — Оригинальный текстовый редактор ex/vi
+*   **[Kakoune](/index.php/Kakoune "Kakoune")** — модальный текстовый редактор. Уменьшенный набор комбинаций клавиш, мультикурсорные правки, ортогональный дизайн.
+
+	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
+
+*   **[Neovim](/index.php/Neovim "Neovim")** — возрожденный в XXI веке *Vim*.
+
+	[https://neovim.io/](https://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)
+
+*   **[vi](https://en.wikipedia.org/wiki/ru:vi "wikipedia:ru:vi")** — оригинальный текстовый редактор ex/vi.
 
 	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
 
-*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — Продвинутый текстовый редактор, который стремится предоставить силу редактора *vi* с более полным списком возможностей
+*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — продвинутый текстовый редактор, стремящийся предоставить *vi* с расширенным списком возможностей.
 
-	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
+	[https://www.vim.org/](https://www.vim.org/) || с GUI: [gvim](https://www.archlinux.org/packages/?name=gvim), без GUI: [vim](https://www.archlinux.org/packages/?name=vim)
+
+*   **[Vis](/index.php/Vis "Vis")** — современный, свободный от легаси-кода, простой, но в то же время эффективный текстовый редактор, подобный Vim.
+
+	[https://github.com/martanne/vis](https://github.com/martanne/vis) || [vis](https://www.archlinux.org/packages/?name=vis)
 
 #### Графические
 

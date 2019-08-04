@@ -1,6 +1,10 @@
 Cairo-Dock is a highly customizable dock written in C.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Plugin dependencies](#Plugin_dependencies)
@@ -8,7 +12,7 @@ Cairo-Dock is a highly customizable dock written in C.
     *   [2.1 Running the dock](#Running_the_dock)
     *   [2.2 Running the dock at startup](#Running_the_dock_at_startup)
         *   [2.2.1 Cairo-Dock method](#Cairo-Dock_method)
-        *   [2.2.2 Openbox/Fluxbox](#Openbox.2FFluxbox)
+        *   [2.2.2 Openbox/Fluxbox](#Openbox/Fluxbox)
         *   [2.2.3 Xfce](#Xfce)
         *   [2.2.4 GNOME](#GNOME)
     *   [2.3 Configuring the dock](#Configuring_the_dock)
@@ -41,7 +45,7 @@ $ cairo-dock &
 
 ```
 
-This will generate a startup message that will ask you to choose a backend for the current session (OpenGL or Cairo). There is an option to remember the choice and if not choosing to remember the choice, a startup message will be generated each time Cairo-Dock is run without backend options. To supress the startup message, you can specify which backend to use when running Cairo-Dock by specifying it as an option.
+This will generate a startup message that will ask you to choose a backend for the current session (OpenGL or [Cairo](https://www.cairographics.org/)). There is an option to remember the choice and if not choosing to remember the choice, a startup message will be generated each time Cairo-Dock is run without backend options. To supress the startup message, you can specify which backend to use when running Cairo-Dock by specifying it as an option.
 
 Run the dock with OpenGL backend:
 

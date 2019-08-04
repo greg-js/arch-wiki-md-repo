@@ -5,13 +5,13 @@ Related articles
 *   [ranger](/index.php/Ranger "Ranger")
 *   [vifm](/index.php/Vifm "Vifm")
 
-[nnn](https://github.com/jarun/nnn) is a very fast and minimalist terminal file manager written in C. It is an excellent choice if you need a file manager on multiple machines, as it is highly portable and doesn't require exotic dependencies. It is a full-featured file manager and is easily extensible via its plugin system where you can add your own scripts alongside already available plugins. A [(neo)vim](https://github.com/mcchrish/nnn.vim) plugin is also available.
+[nnn](https://github.com/jarun/nnn) is a portable, minimalist and lightweight terminal file manager written in C. It is easily extensible via its plugin system where you can add your own scripts alongside already available plugins. A [(neo)vim](https://github.com/mcchrish/nnn.vim) plugin is also available.
 
 In addition to being a file manager, nnn is also a disk usage analyzer, a fuzzy app launcher, a batch file renamer and a file picker.
 
 nnn supports instant *search-as-you-type* with regex (or simple string) filters and a *navigate-as-you-type* mode for continuous navigation in filter mode with directory auto-select. It supports contexts, bookmarks, multiple sorting options, SSHFS, batch operations on selections (a group of selected files) and a lot more.
 
-Despite its capabilities, nnn is designed to be easy to use. It integrates seamlessly with the Desktop Environment at zero to minimal configuration.
+Despite its capabilities, nnn is designed to be easy to use.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -22,9 +22,10 @@ Despite its capabilities, nnn is designed to be easy to use. It integrates seaml
 *   [1 Installation](#Installation)
     *   [1.1 Usage](#Usage)
     *   [1.2 Configuration](#Configuration)
-        *   [1.2.1 Indicate depth level within nnn shells](#Indicate_depth_level_within_nnn_shells)
-        *   [1.2.2 cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G))
-        *   [1.2.3 Add your own plugins](#Add_your_own_plugins)
+        *   [1.2.1 Get selected files in terminal](#Get_selected_files_in_terminal)
+        *   [1.2.2 Indicate depth level within nnn shells](#Indicate_depth_level_within_nnn_shells)
+        *   [1.2.3 cd on quit (CTRL-G)](#cd_on_quit_(CTRL-G))
+        *   [1.2.4 Add your own plugins](#Add_your_own_plugins)
 *   [2 See also](#See_also)
 
 ## Installation
@@ -44,15 +45,23 @@ Here is a example configuration you can add to you `~/.bashrc`:
  `~/.bashrc` 
 ```
 export NNN_BMS='d:~/Documents;u:/home/user/Cam Uploads;D:~/Downloads/'
-export NNN_USE_EDITOR=1                                 # Use the $EDITOR when opening text files
-export NNN_NO_AUTOSELECT=1                              # Do not auto select in navigate-as-you-type-mode
-export NNN_NOTE="$HOME/mynotes"                         # If you already have your own notebook, 
-export NNN_OPS_PROG=1                                   # If you have installed advcp from the AUR. Giving you progress bars for mv and cp
+export NNN_USE_EDITOR=1                                 # use the $EDITOR when opening text files
+export NNN_NO_AUTOSELECT=1                              # do not auto select in navigate-as-you-type-mode
+export NNN_NOTE="$HOME/mynotes"                         # if you already have your own notebook, 
+export NNN_OPS_PROG=1                                   # if you have installed advcp from the AUR. Giving you progress bars for mv and cp
 export NNN_SSHFS_OPTS="sshfs -o follow_symlinks"        # make sshfs follow symlinks on the remote
-alias ncp="cat ~/.config/nnn/.selection
 ```
 
 The most important setting would be the `NNN_BMS` variable which lets you choose shortcuts to quickly jump to your bookmarked directories. By default they are reached with `<leader-key>` which is set to `,` (a comma). In the example configuration hitting the keys: `,D` would result in nnn jumping into `~/Downloads`. But all of these are optional, nnn will consistently behave the same on all of your machines.
+
+#### Get selected files in terminal
+
+To get a list of the files you have selected in `nnn` one could create the following alias:
+
+ `~/.bashrc`  `alias ncp="cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection | tr '\0' '
+'"` 
+
+which later could be used to pipe the selected files to other tools.
 
 #### Indicate depth level within nnn shells
 

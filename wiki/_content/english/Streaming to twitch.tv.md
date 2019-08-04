@@ -1,6 +1,10 @@
 Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol "wikipedia:Real Time Messaging Protocol") based streaming services offered. As [Steam](/index.php/Steam "Steam") has a Linux client available, some people may be in search of solutions to stream their games or Linux desktop. The info included here should serve as a list of such solutions.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Twitch streaming Guidelines](#Twitch_streaming_Guidelines)
 *   [2 GUI solutions](#GUI_solutions)
@@ -49,6 +53,8 @@ These solutions revolve around making use of the [FFmpeg](/index.php/FFmpeg "FFm
 
 One method of streaming to twitch using FFMPEG makes use of a simple script that is placed in a user's ~/.bashrc file. this script supports streaming of both desktop and OpenGL elements.
 
+You must use "pacmd list-sources" to find your Input Audio stream when using PulseAudio.
+
 *   Depending on your internet upload speed, you may need to modify the Ffmpeg parameters. use the breakdown list for reference.
 
 The script can be used by typing
@@ -74,7 +80,7 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
      STREAM_KEY="$1" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
      SERVER="live-fra" # twitch server in frankfurt, see [http://bashtech.net/twitch/ingest.php](http://bashtech.net/twitch/ingest.php) for list
 
-     ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f alsa -i pulse -f flv -ac 2 -ar $AUDIO_RATE \
+     ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f pulse -i 0 -f flv -ac 2 -ar $AUDIO_RATE \
        -vcodec libx264 -g $GOP -keyint_min $GOPMIN -b:v $CBR -minrate $CBR -maxrate $CBR -pix_fmt yuv420p\
        -s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
        -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
@@ -88,12 +94,12 @@ into a terminal. While it is running, use **pavucontrol** to edit sound sources.
 | -f x11grab | -f forces input to be from x11grab |
 | -s $INRES | -s sets a specific image size, relying on the variable $INRES |
 | -r $FPS | -r sets framerate to be the value equal to $FPS |
-| -i :0.0 | -i gets input, in this case its pulling in screen :0.0 from x11\. Can be adjusted, e.g. -i :0.0+500,100 to start at screenpos 500/100 |
+| -i :0.0 | -i gets input, in this case its pulling in screen :0.0 from x11\. Can be adjusted, e.g. -i :0.0+500,100 to start at screenpos 500/100 |
 | -b:v $CBR | -b:v specifies that the video bitrate is to be changed. the value of the bitrate is set by $CBR |
 | -ab 96k | -ab sets audio bitrate to 96k. **-b:a** is the alternate form of this command |
-| -f alsa | forces input(?) to be from alsa |
+| -f pulse | forces input to be from PulseAudio |
+| -i 0 | Select the stream number to stream from "pacmd list-sources" |
 | -ac 2 | sets audio channels to 2 |
-| -i pulse | gets input from pulse |
 | -vcodec libx264 | sets video codec to libx264 |
 | -crf 23 | sets the ffmpeg constant rate factor to 23 |
 | -preset "$QUAL" | sets the preset compression quality and speed |

@@ -116,6 +116,7 @@ If you are uncomfortable with [Git](/index.php/Git "Git"), you may want to use o
 | [jasonwryan](https://bitbucket.org/jasonwryan/shiv/src) | bash/zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irssi |
 | [jdevlieghere](https://github.com/JDevlieghere/dotfiles/) | zsh | xmonad | vim | terminal | tmux | htop | mutt | weechat |
 | [jelly](https://github.com/jelly/Dotfiles) | zsh | i3 | vim | termite | tmux | ncmpcpp | mutt-kz-git | weechat |
+| [Jorengarenar](https://github.com/Jorengarenar/dotfiles) | bash | i3 | vim | xterm | mpv | i3blocks | aerc | weechat |
 | [maximbaz](https://github.com/maximbaz/dotfiles) | zsh | i3-gaps | neovim | kitty | py3status | thunderbird |
 | [mehalter](https://gitlab.com/mehalter/dotfiles) | zsh | i3-gaps | neovim | termite | tmux | gpymusic | i3blocks, gotop | neomutt | weechat |
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |

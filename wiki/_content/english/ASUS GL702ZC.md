@@ -1,6 +1,10 @@
 This page is about the Laptop ROG Strix AMD laptop. Runs pretty good out of the box, with some minor issues.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Backlight](#Backlight)
 *   [2 Fans](#Fans)
@@ -22,7 +26,7 @@ ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", RUN+="/bin/chmod g+
 
 ```
 
-Then adding the user to the `video` and `input` group. (Default udev rules override for kbd_backlight, so you can't set them to video as well) [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/) is a nice script that can increase and decrease brightness, which can be bound to the media keys.
+Then adding the user to the `video` and `input` group. (Default udev rules override for kbd_backlight, so you can't set them to video as well) [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) is a nice script that can increase and decrease brightness, which can be bound to the media keys.
 
 ## Fans
 

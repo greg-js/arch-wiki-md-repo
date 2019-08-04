@@ -8,6 +8,7 @@ Related articles
 *   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 *   [SCP and SFTP](/index.php/SCP_and_SFTP "SCP and SFTP")
+*   [VPN over SSH](/index.php/VPN_over_SSH "VPN over SSH")
 
 [OpenSSH](https://en.wikipedia.org/wiki/OpenSSH "wikipedia:OpenSSH") (OpenBSD Secure Shell) is a set of computer programs providing encrypted communication sessions over a computer network using the [Secure Shell](/index.php/Secure_Shell "Secure Shell") (SSH) protocol. It was created as an open source alternative to the proprietary Secure Shell software suite offered by SSH Communications Security. OpenSSH is developed as part of the OpenBSD project, which is led by Theo de Raadt.
 
@@ -39,7 +40,8 @@ OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the 
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Encrypted SOCKS tunnel](#Encrypted_SOCKS_tunnel)
         *   [4.1.1 Step 1: start the connection](#Step_1:_start_the_connection)
-        *   [4.1.2 Step 2: configure your browser (or other programs)](#Step_2:_configure_your_browser_(or_other_programs))
+        *   [4.1.2 Step 2 (Variant A): configure your browser (or other programs)](#Step_2_(Variant_A):_configure_your_browser_(or_other_programs))
+        *   [4.1.3 Step 2 (Variant B): set up a local TUN interface](#Step_2_(Variant_B):_set_up_a_local_TUN_interface)
     *   [4.2 X11 forwarding](#X11_forwarding)
         *   [4.2.1 Setup](#Setup)
             *   [4.2.1.1 Remote](#Remote)
@@ -398,7 +400,7 @@ where `*user*` is your username at the SSH server running at the `*host*`. It wi
 
 It is nice to add the verbose (`-v`) flag, because then you can verify that it is actually connected from that output.
 
-#### Step 2: configure your browser (or other programs)
+#### Step 2 (Variant A): configure your browser (or other programs)
 
 The above step is useful only in combination with a web browser or another program that uses this newly created SOCKS tunnel. Since SSH currently supports both SOCKS v4 and SOCKS v5, you can use either of them.
 
@@ -440,6 +442,12 @@ $ secure_chromium
 ```
 
 Enjoy your secure tunnel!
+
+#### Step 2 (Variant B): set up a local TUN interface
+
+This variant is slightly more involved upfront but results in you not having to manually configure every single application one by one to use the SOCKS proxy. It involves setting up a local TUN interface and routing traffic through it.
+
+See [VPN over SSH#Set up badvpn and tunnel interface](/index.php/VPN_over_SSH#Set_up_badvpn_and_tunnel_interface "VPN over SSH").
 
 ### X11 forwarding
 

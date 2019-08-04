@@ -186,7 +186,7 @@
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Сильнонастраиваемый микробраузер, основанный на движке WebKit и тулките [GTK+](/index.php/GTK%2B "GTK+"). Очень быстрый, расширяемый при помощи Lua и распространяемый под лицензией GNU GPLv3
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **Maxthon** — Браузер, сочетающий в себе минималистичный дизайн с современными технологиями, чтобы сделать интернет для вас быстрее, безопаснее и легче
 
@@ -230,7 +230,7 @@
 
 *   **Vimb** — Быстрый и легковесный веб-браузер в стиле vim, основанный на движке webkit и тулките GTK
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://www.archlinux.org/packages/?name=vimb)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Браузер, который ведет себя, как плагин Vimperator в [Mozilla Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)"). Основан на движке WebKit и использует привязки (bindings) [GTK+](/index.php/GTK%2B "GTK+")
 

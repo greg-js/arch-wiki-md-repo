@@ -35,9 +35,9 @@ $ echo "This is an example. Arch is the best." | festival --tts
 
 ```
 
-If your hear all the example text, you sucessfully installed a TTS system.
+If your hear all the example text, you successfully installed a TTS system.
 
-If you do not hear anything, see the [Troubleshooting](#Troubleshooting) section. If you have a desktop system you will almost certainly get a message about /dev/dsp and need to follow those instructions.
+If you do not hear anything, see the [Troubleshooting](#Troubleshooting) section. If you have a desktop system you will almost certainly get a message about `/dev/dsp` and need to follow those instructions.
 
 ### Using German IMS festival extension with mbrola
 
@@ -45,7 +45,7 @@ You can use the [festival-ims](https://aur.archlinux.org/packages/festival-ims/)
 
 The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/). To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified.
 
-Add these two files downloaded from the IMS (do NOT use the third file, *ims_german_1.3-os.fix.tgz*)
+Add these two files downloaded from the IMS (do NOT use the third file, `ims_german_1.3-os.fix.tgz`)
 
 ```
  ims_german_1.3-os.tgz
@@ -67,7 +67,7 @@ ALSO_INCLUDE += ims_german_text/' "$srcdir/festival/config/config.in"
 
 ```
 
-This should install support for the german voices de1 through de4\. Install at least one of these voices, e.g. [mbrola-voices-de2](https://aur.archlinux.org/packages/mbrola-voices-de2/), and then use it in festival by selecting the voice via
+This should install support for the german voices `de1` through `de4`. Install at least one of these voices, e.g. [mbrola-voices-de2](https://aur.archlinux.org/packages/mbrola-voices-de2/), and then use it in festival by selecting the voice via
 
 ```
  (voice_german_de2_os)
@@ -78,13 +78,15 @@ This should install support for the german voices de1 through de4\. Install at l
 from the prompt or use it in *text2wave* via
 
 ```
- text2wave -o spoken.wav -eval '(voice_german_de2_os)' inputfile.txt
+ text2wave -o spoken.wav -eval '(voice_german_de2_os)' *inputfile*.txt
 
 ```
 
+where `*inputfile*.txt` the input file containing the text to be processed.
+
 ## Configuration
 
-There is no global /etc configuration file, but you can configure festival with your `~/.festivalrc` file, or by directly editing `/usr/share/festival/festival.scm`. Both of these are scheme files, using scheme syntax and rerun everytime festival is run.
+There is no global `/etc` configuration file, but you can configure festival with your `~/.festivalrc` file, or by directly editing `/usr/share/festival/festival.scm`. Both of these are scheme files, using scheme syntax and rerun everytime festival is run.
 
 ### Usage with a Sound Server
 
@@ -177,7 +179,7 @@ You can install the patched version from [AUR](/index.php/AUR "AUR"): [festival-
 
 #### Manual Voice Installs
 
-You can also get voices straight from [festvox.org](http://festvox.org/festival/downloads.html). In their downloads, the files named "festvox_*.tgz" each contain a different voice, as built by the festival team. They do work, but you will need to manually unzip and move the folder containing the voice to the appropriate place. On a recent Arch, the appropriate place is /usr/share/festival/voices/english/ and the way to tell what folder contains the voice is to look for a 'festvox/' subfolder inside of it.
+You can also get voices straight from [festvox.org](http://festvox.org/festival/downloads.html). In their downloads, the files named "festvox_*.tgz" each contain a different voice, as built by the festival team. They do work, but you will need to manually unzip and move the folder containing the voice to the appropriate place. On a recent Arch, the appropriate place is `/usr/share/festival/voices/english/` and the way to tell what folder contains the voice is to look for a 'festvox/' subfolder inside of it.
 
 You can then test that your new voices are found by loading up the festival prompt again.
 

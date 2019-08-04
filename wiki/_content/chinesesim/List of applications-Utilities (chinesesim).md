@@ -11,15 +11,19 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 工具](#工具)
-    *   [1.1 分区工具](#分区工具)
-    *   [1.2 挂载](#挂载)
-        *   [1.2.1 Udisks](#Udisks)
-    *   [1.3 基本 Shell 命令](#基本_Shell_命令)
-    *   [1.4 集成式开发环境](#集成式开发环境)
-    *   [1.5 虚拟终端](#虚拟终端)
-        *   [1.5.1 基于 VTE](#基于_VTE)
-        *   [1.5.2 KMS-based](#KMS-based)
-        *   [1.5.3 framebuffer-based](#framebuffer-based)
+    *   [1.1 终端](#终端)
+        *   [1.1.1 命令行 shells](#命令行_shells)
+        *   [1.1.2 终端模拟器](#终端模拟器)
+            *   [1.1.2.1 基于 VTE](#基于_VTE)
+            *   [1.1.2.2 基于 KMS](#基于_KMS)
+            *   [1.1.2.3 基于帧缓冲器（framebuffer）](#基于帧缓冲器（framebuffer）)
+        *   [1.1.3 终端分页器](#终端分页器)
+        *   [1.1.4 终端复用器](#终端复用器)
+    *   [1.2 分区工具](#分区工具)
+    *   [1.3 挂载](#挂载)
+        *   [1.3.1 Udisks](#Udisks)
+    *   [1.4 基本 Shell 命令](#基本_Shell_命令)
+    *   [1.5 集成式开发环境](#集成式开发环境)
     *   [1.6 文件](#文件)
         *   [1.6.1 文件管理器](#文件管理器)
             *   [1.6.1.1 命令行](#命令行)
@@ -48,6 +52,226 @@
     *   [1.20 Finders](#Finders)
 
 ## 工具
+
+### 终端
+
+#### 命令行 shells
+
+参见： [Command-line shell](/index.php/Command-line_shell "Command-line shell").
+
+以及： [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
+
+#### 终端模拟器
+
+终端模拟器是包含一个终端的图形界面窗口。它们大多是模仿 Xterm，后者向 VT102 看齐，而 VT102 模仿的是打字机。更多的背景信息参见：[Wikipedia:Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator").
+
+[Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators") 有包含得更全面的列表。
+
+*   **Alacritty** — 跨平台，GPU硬件加速
+
+	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty](https://www.archlinux.org/packages/?name=alacritty)
+
+*   **aterm** — 可以改变透明度的 Xterm 替代品，自从2008年之后就不再推荐使用（被 urxvt 替代）
+
+	[http://aterm.sourceforge.net/](http://aterm.sourceforge.net/) || [aterm](https://aur.archlinux.org/packages/aterm/)
+
+*   **Cool Retro Term** — 模仿阴极显示器显示效果
+
+	[https://github.com/Swordfish90/cool-retro-term](https://github.com/Swordfish90/cool-retro-term) || [cool-retro-term](https://www.archlinux.org/packages/?name=cool-retro-term)
+
+*   **Eterm** — 为 [Enlightenment](/index.php/Enlightenment "Enlightenment") 桌面设计，目的是作为 xterm 替代品
+
+	[http://eterm.org](http://eterm.org) || [eterm](https://aur.archlinux.org/packages/eterm/)
+
+*   **Hyper** — 支持 JS/CSS
+
+	[https://github.com/zeit/hyper](https://github.com/zeit/hyper) || [hyper](https://aur.archlinux.org/packages/hyper/)
+
+*   **[Konsole](https://en.wikipedia.org/wiki/Konsole "wikipedia:Konsole")** — [KDE](/index.php/KDE "KDE") 桌面自带的.
+
+	[https://www.kde.org/applications/system/konsole/](https://www.kde.org/applications/system/konsole/) || [konsole](https://www.archlinux.org/packages/?name=konsole)
+
+*   **[kitty](/index.php/Kitty "Kitty")** — A modern, hackable, featureful, OpenGL based terminal emulator
+
+	[https://github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) || [kitty](https://www.archlinux.org/packages/?name=kitty)
+
+*   **mlterm** — 多语言支持，支持各种字符集和编码
+
+	[https://sourceforge.net/projects/mlterm/](https://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)
+
+*   **[PuTTY](/index.php/PuTTY "PuTTY")** — 高度可配置，主要用于 ssh/telnet/serial
+
+	[https://www.chiark.greenend.org.uk/~sgtatham/putty/](https://www.chiark.greenend.org.uk/~sgtatham/putty/) || [putty](https://www.archlinux.org/packages/?name=putty)
+
+*   **QTerminal** — 轻量化，基于 Qt
+
+	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
+
+*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — xterm的人气替代.
+
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
+
+*   **shellinabox** — 基于 web 的 SSH 终端
+
+	[https://github.com/shellinabox/shellinabox](https://github.com/shellinabox/shellinabox) || [shellinabox-git](https://aur.archlinux.org/packages/shellinabox-git/)
+
+*   **[st](/index.php/St "St")** — X 的一个简单的终端实现
+
+	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
+
+*   **Terminology** — 由 Enlightenment project 团队开发，有一些创新的功能：文件缩略图、多媒体播放
+
+	[https://www.enlightenment.org/about-terminology](https://www.enlightenment.org/about-terminology) || [terminology](https://www.archlinux.org/packages/?name=terminology)
+
+*   **[urxvt](/index.php/Urxvt "Urxvt")** — 支持触摸、打开URL、伪透明度、Quake 样式的下拉模式和unicode编码，同时凭借 Perl 来实现高度可扩展性
+
+	[http://software.schmorp.de/pkg/rxvt-unicode.html](http://software.schmorp.de/pkg/rxvt-unicode.html) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
+
+*   **[xterm](/index.php/Xterm "Xterm")** — X 窗口系统的一个简单的终端模拟器，提供兼容 DEC VT102 和 Tektronix 4014 的终端来运行不是为窗口系统设计的程序
+
+	[http://invisible-island.net/xterm/](http://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
+
+*   **[Yakuake](/index.php/Yakuake "Yakuake")** — 基于 Konsole 的 Quake 样式的下拉终端
+
+	[https://yakuake.kde.org/](https://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
+
+##### 基于 VTE
+
+[VTE](https://developer.gnome.org/vte/unstable/) 虚拟终端模拟器(Virtual Terminal Emulator) 是 GNOME 早期开发的在 GNOME 终端里使用的小插件。它催生了很多拥有相似功能的终端。
+
+*   **Deepin Terminal** — Deepin 桌面的终端模拟器
+
+	[https://www.deepin.org/en/original/deepin-terminal/](https://www.deepin.org/en/original/deepin-terminal/) || [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal)
+
+*   **evilvte** — 非常轻量化、高度可定制，支持标签页、自动隐藏和多种字符编码
+
+	[http://calno.com/evilvte/](http://calno.com/evilvte/) || [evilvte-git](https://aur.archlinux.org/packages/evilvte-git/)
+
+*   **Germinal** — 极简主义，提供一个无边框、最大化窗口的终端，默认连接到一个 tmux 会话，有标签页和面板功能
+
+	[http://www.imagination-land.org/tags/germinal.html](http://www.imagination-land.org/tags/germinal.html) || [germinal](https://aur.archlinux.org/packages/germinal/)
+
+*   **[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")** — [GNOME](/index.php/GNOME "GNOME") 桌面自带，支持 Unicode 和 伪透明度
+
+	[https://wiki.gnome.org/Apps/Terminal](https://wiki.gnome.org/Apps/Terminal) || [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)
+
+*   **[Guake](/index.php/Guake "Guake")** — 一个下拉终端
+
+	[http://guake-project.org/](http://guake-project.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
+
+*   **LXTerminal** — 与桌面无关的终端模拟器，本来是为 [LXDE](/index.php/LXDE "LXDE") 设计的
+
+	[https://wiki.lxde.org/en/LXTerminal](https://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
+
+*   **MATE terminal** — [Wikipedia:GNOME terminal](https://en.wikipedia.org/wiki/GNOME_terminal "wikipedia:GNOME terminal") 的一个分支，为 [MATE](/index.php/MATE "MATE") 桌面设置.
+
+	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
+
+*   **Pantheon Terminal** — 超级轻量化，好看、简洁，默认配置已经很好用，几乎不需要做设置
+
+	[https://github.com/elementary/terminal](https://github.com/elementary/terminal) || [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal)
+
+*   **ROXTerm** — 有标签页和小 footprint
+
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
+
+*   **sakura** — 基于GTK+ 和 VTE
+
+	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
+
+*   **[Terminator](/index.php/Terminator "Terminator")** — 支持多个可调整大小的终端面板
+
+	[https://gnometerminator.blogspot.com/](https://gnometerminator.blogspot.com/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
+
+*   **[Termite](/index.php/Termite "Termite")** — 以键盘为中心的、基于 VTE 的终端，为在平铺式和标签式窗口管理器里使用作优化
+
+	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
+
+*   **[Tilda](/index.php/Tilda "Tilda")** — 可配置的下拉终端模拟器
+
+	[https://github.com/lanoxx/tilda/](https://github.com/lanoxx/tilda/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
+
+*   **Tilix** — 给 GNOME 的平铺式终端模拟器Tiling terminal emulator for GNOME.
+
+	[https://gnunn1.github.io/tilix-web/](https://gnunn1.github.io/tilix-web/) || [tilix](https://www.archlinux.org/packages/?name=tilix)
+
+*   **tinyterm** — 基于 VTE 的轻量化终端模拟器
+
+	[https://github.com/lahwaacz/tinyterm](https://github.com/lahwaacz/tinyterm) || [tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/)
+
+*   **[Xfce Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — [Xfce](/index.php/Xfce "Xfce") 桌面的带彩色提示和和标签页化的界面的终端模拟器.
+
+	[https://docs.xfce.org/apps/terminal/start](https://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
+
+##### 基于 KMS
+
+下面这些终端模拟器是基于 [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") 的，没有 X 也可以运行。
+
+*   **[KMSCON](/index.php/KMSCON "KMSCON")** — 一个基于 KMS/DRM 的系统控制台（getty），对于 Linux 操作系统内置一个终端模拟器
+
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+
+##### 基于帧缓冲器（framebuffer）
+
+在 GNU/Linux 术语里，[framebuffer](https://en.wikipedia.org/wiki/Framebuffer "wikipedia:Framebuffer") 可以指代 Linux 内核里的一个虚拟设备 (**fbdev**) 或者 X 的虚拟帧缓冲系统 (**xvfb**)。下面列出的是基于 **fbdev** 的。
+
+*   **yaft** — 没有 X 也可以运行，支持 UCS2 glyphs、 壁纸和256色
+
+	[https://github.com/uobikiemukot/yaft](https://github.com/uobikiemukot/yaft) || [yaft](https://aur.archlinux.org/packages/yaft/)
+
+#### 终端分页器
+
+参见 [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager")。
+
+*   **[more](https://en.wikipedia.org/wiki/More_(command) "wikipedia:More (command)")** — 一个简单（功能也简单）的分页器。是 util-linux 的一部分。
+
+	[https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[less](/index.php/Core_utilities#Essentials "Core utilities")** — 类似 more，但是支持前滚和后滚，包括文件的部分加载
+
+	[https://www.gnu.org/software/less/](https://www.gnu.org/software/less/) || [less](https://www.archlinux.org/packages/?name=less)
+
+*   **[most](https://en.wikipedia.org/wiki/Most_(Unix) "wikipedia:Most (Unix)")** — 支持多窗口、左右滚动和显示颜色
+
+	[http://www.jedsoft.org/most/](http://www.jedsoft.org/most/) || [most](https://www.archlinux.org/packages/?name=most)
+
+*   **mcview** — 支持显示颜色和鼠标的分页器，与 midnight commander 捆绑在一起
+
+	[http://midnight-commander.org/](http://midnight-commander.org/) || [mc](https://www.archlinux.org/packages/?name=mc)
+
+*   [Vim](/index.php/Vim "Vim") 也可以 [做分页器](/index.php/Vim#Vim_as_a_pager "Vim").
+
+#### 终端复用器
+
+参见 [Wikipedia:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal_multiplexer "wikipedia:Terminal multiplexer").
+
+*   **abduco** — 用于连接和断开会话的工具，支持让进程独立于控制它的终端
+
+	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
+
+*   **[byobu](https://en.wikipedia.org/wiki/Byobu_(software) "wikipedia:Byobu (software)")** — GPLv3 许可证的 tmux 或 screen 插件。要求已经安装一个终端复用器。
+
+	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
+
+*   **[dtach](/index.php/Dtach "Dtach")** — 模拟 [GNU Screen](/index.php/GNU_Screen "GNU Screen") 的断开连接功能的程序
+
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
+
+*   **dvtm** — [dwm](/index.php/Dwm "Dwm") 样式的控制台窗口管理器
+
+	[http://brain-dump.org/projects/dvtm/](http://brain-dump.org/projects/dvtm/) || [dvtm](https://www.archlinux.org/packages/?name=dvtm)
+
+*   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — 复用一个终端的终端内全屏窗口管理器
+
+	[https://www.gnu.org/software/screen/](https://www.gnu.org/software/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
+
+*   **mtm** — 只有四个命令的简单复用器：change focus, split, close, 和 screen redraw.
+
+	[https://github.com/deadpixi/mtm](https://github.com/deadpixi/mtm) || [mtm-git](https://aur.archlinux.org/packages/mtm-git/)
+
+*   **[tmux](/index.php/Tmux "Tmux")** — BSD 许可证的终端复用器
+
+	[https://tmux.github.io/](https://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
 
 ### 分区工具
 
@@ -230,144 +454,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **Spyder** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
 
 	[http://code.google.com/p/spyderlib/](http://code.google.com/p/spyderlib/) || [spyder](https://www.archlinux.org/packages/?name=spyder)
-
-### 虚拟终端
-
-参见 [Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators").
-
-资深用户爱用虚拟终端，也难怪会有那么多 X11 虚拟终端冒出来了。大多虚拟终端在模拟 Xterm, Xterm 又向 VT102 看齐，最后 VT102 更是在模仿打字机，所以您应该品读 [Wikipedia article](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") 和 [other sources](https://google.com/search?q=linux+terminal+emulators) 以把握个大概。
-
-*   **Eterm** — 取代 Xterm 且为 [Enlightenment](/index.php/Enlightenment "Enlightenment") 而打造。
-
-	[http://eterm.org](http://eterm.org) || [eterm](https://aur.archlinux.org/packages/eterm/)
-
-*   **[KMSCON](/index.php/KMSCON "KMSCON")** — 基于 linux kernel mode setting (KMS).
-
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
-
-*   **[Konsole](https://en.wikipedia.org/wiki/Konsole "wikipedia:Konsole")** — [KDE](/index.php/KDE "KDE") 专用。
-
-	[http://kde.org/applications/system/konsole/](http://kde.org/applications/system/konsole/) || [kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole)
-
-*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — 基于 rxvt, 支持 Tabs.
-
-	[http://materm.sourceforge.net/wiki/pmwiki.php](http://materm.sourceforge.net/wiki/pmwiki.php) || [mrxvt](https://aur.archlinux.org/packages/mrxvt/)
-
-*   **QTerminal** — 基于 Qt, 轻量。
-
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal-git](https://aur.archlinux.org/packages/qterminal-git/)
-
-*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — 公认已取代 Xterm 的虚拟终端。
-
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
-
-*   **[st](/index.php/St "St")** — 简单，在Ｘ下可用。
-
-	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
-
-*   **Terminal** — 支持多窗口，滚动缓冲以及众多理想功能，从属 GNUstep.
-
-	[http://gap.nongnu.org/terminal/index.html](http://gap.nongnu.org/terminal/index.html) || [gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/)
-
-*   **[terminator](/index.php/Terminator "Terminator")** — 支持多 Panels.
-
-	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
-
-*   **Terminology** — Enlightenment 项目专用，有众多金光闪闪的功能：文件缩略图，多媒体播放器。
-
-	[http://enlightenment.org/p.php?p=about/terminology](http://enlightenment.org/p.php?p=about/terminology) || [terminology](https://www.archlinux.org/packages/?name=terminology)
-
-*   **[Tilda](https://en.wikipedia.org/wiki/Tilda_(software) "wikipedia:Tilda (software)")** — 受众多 FPS 游戏，如 Quake, Doom 和半条命，启发而诞生。
-
-	[http://sourceforge.net/projects/tilda/files/](http://sourceforge.net/projects/tilda/files/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
-
-*   **[urxvt](/index.php/Urxvt "Urxvt")** — 基于 Perl, rxvt, 高度可扩展，支持 Unicode, 多 Tab, 访问 URL, Quake 风格的下拉式，伪・透明。
-
-	[http://software.schmorp.de/pkg/rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
-
-*   **[xterm](/index.php/Xterm "Xterm")** — Ｘ最简单的虚拟终端了，它还为不能在窗口系统下直接用的程序，提供了兼容于 DEC VT102 和 Tektronix 4014 的终端。
-
-	[http://invisible-island.net/xterm/](http://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
-
-*   **[Yakuake](https://en.wikipedia.org/wiki/Yakuake "wikipedia:Yakuake")** — 基于 Konsole, 下拉式，Quake 风格。
-
-	[http://yakuake.kde.org/](http://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
-
-#### 基于 VTE
-
-[VTE](http://developer.gnome.org/vte/unstable/) (Virtual Terminal Emulator) 最早是由 GNOME 开发并广泛使用的虚拟终端，它还派生了众多大大小小的分支。
-
-*   **evilvte** — 很轻量，可定制性强，支持 Tabs, 自动隐藏，换编码。
-
-	[http://calno.com/evilvte/](http://calno.com/evilvte/) || [evilvte](https://aur.archlinux.org/packages/evilvte/)
-
-*   **[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")** — [GNOME](/index.php/GNOME "GNOME") 专用，支持 Unicode, 不支持透明。
-
-	[https://wiki.gnome.org/Apps/Terminal](https://wiki.gnome.org/Apps/Terminal) || [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)
-
-*   **[Guake](/index.php/Guake "Guake")** — GNOME 桌面的，下拉式的。
-
-	[http://guake.org/](http://guake.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
-
-*   **Terra** — 基于 GTK+3.0, 同一个窗口上可以分割成众多小窗口。
-
-	[https://github.com/ozcanesen/terra-terminal](https://github.com/ozcanesen/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
-
-*   **[LilyTerm](/index.php/LilyTerm "LilyTerm")** — 很轻量。
-
-	[http://lilyterm.luna.com.tw/](http://lilyterm.luna.com.tw/) || [lilyterm](https://www.archlinux.org/packages/?name=lilyterm)
-
-*   **LXTerminal** — [LXDE](/index.php/LXDE "LXDE") 组件之一，也可单独安装。
-
-	[http://wiki.lxde.org/en/LXTerminal](http://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
-
-*   **MATE terminal** — [Wikipedia:GNOME terminal](https://en.wikipedia.org/wiki/GNOME_terminal "wikipedia:GNOME terminal") 在 [MATE](/index.php/MATE "MATE") 桌面上的 Fork.
-
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
-
-*   **ROXTerm** — 有 Tab 机制。
-
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
-
-*   **sakura** — 基于 GTK+ 和 VTE.
-
-	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
-
-*   **Stjerm** — 基于 GTK+, 下拉式，提供简约的界面，内存占用少，与合成窗口管理器有很好的互动，比如 Compiz.
-
-	[https://code.google.com/p/stjerm-terminal-emulator/](https://code.google.com/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
-
-*   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — [Xfce](/index.php/Xfce "Xfce") 桌面专用虚拟终端，支持颜色提示符，Tab 机制。
-
-	[http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
-
-*   **Termit** — 简单，基于 VTE, 支持 Tabs, 书签，编码转换。
-
-	[https://wiki.github.com/nonstop/termit/](https://wiki.github.com/nonstop/termit/) || [termit](https://aur.archlinux.org/packages/termit/)
-
-*   **[Termite](/index.php/Termite "Termite")** — 适合命令行控，专为平铺式窗口管理器打造，还有 Tab 机制。
-
-	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
-
-#### KMS-based
-
-The following terminal emulators are based on the [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") that could be invoked without X.
-
-*   **[KMSCON](/index.php/KMSCON "KMSCON")** — A KMS/DRM-based system console(getty) with an integrated terminal emulator for Linux operating systems.
-
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
-
-#### framebuffer-based
-
-In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer "wikipedia:Framebuffer") could be refered to a virtual device in the Linux kernel (**fbdev**) or the virtual framebuffer system for X (**xvfb**). This section mainly lists the terminal emulators that based on the in-kernel virtual device, i.e. **fbdev**.
-
-*   **[fbterm](/index.php/Fbterm "Fbterm")** — A fast framebuffer-based terminal emulator with many amazing features. Development stopped.
-
-	[http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
-
-*   **yaft** — A simple terminal emulator for living without X, with UCS2 glyphs, wallpaper and 256color support.
-
-	[https://github.com/uobikiemukot/yaft](https://github.com/uobikiemukot/yaft) || [yaft](https://aur.archlinux.org/packages/yaft/)
 
 ### 文件
 

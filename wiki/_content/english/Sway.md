@@ -25,6 +25,7 @@
     *   [4.1 Autostart on login](#Autostart_on_login)
     *   [4.2 Backlight toggle](#Backlight_toggle)
     *   [4.3 Screen capture](#Screen_capture)
+    *   [4.4 Control swaynag with the keyboard](#Control_swaynag_with_the_keyboard)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Application launchers](#Application_launchers)
     *   [5.2 VirtualBox](#VirtualBox)
@@ -173,7 +174,7 @@ $ swaymsg -t get_outputs
 
 ```
 
-To control brightness you can use [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/) or [light](https://www.archlinux.org/packages/?name=light). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
+To control brightness you can use [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) or [light](https://www.archlinux.org/packages/?name=light). For a list of utilities to control brightness and color correction see [Backlight](/index.php/Backlight "Backlight").
 
 ### Xresources
 
@@ -263,6 +264,42 @@ Example of usage with [grim](https://www.archlinux.org/packages/?name=grim), [sl
 bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 
 ```
+
+### Control swaynag with the keyboard
+
+Swaynag, the default warning/prompt program shipped with sway, only supports user interaction with the mouse. A helper program such as [swaynagmode](https://aur.archlinux.org/packages/swaynagmode/) may be used to enable interaction via keyboard shortcuts.
+
+Swaynagmode works by first launching swaynag, then listening for signals which trigger actions such as selecting the next button, dismissing the prompt, or accepting the selected button. These signals are sent by launching another instance of the swaynagmode script itself with a control argument, such as `swaynagmode --select right` or `swaynagmode --confirm`.
+
+Swaynagmode by default triggers the sway mode `nag` upon initialization, followed by `default` on exit. This makes it easy to define keybindings in your sway configuration:
+
+ `~/.config/sway/config` 
+```
+set $nag exec swaynagmode
+mode "nag" {
+  bindsym {
+    Ctrl+d    mode "Default"
+
+    Ctrl+c    $nag --exit
+    q         $nag --exit
+    Escape    $nag --exit
+
+    Return    $nag --confirm
+
+    Tab       $nag --select prev
+    Shift+Tab $nag --select next
+
+    Left      $nag --select next
+    Right     $nag --select prev
+
+    Up        $nag --select next
+    Down      $nag --select prev
+  }
+}
+
+```
+
+You can configure sway to use swaynagmode with the configuration command `swaynag_command swaynagmode`.
 
 ## Troubleshooting
 

@@ -400,7 +400,7 @@
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — lua可扩展的快速，小巧，基于webkit的浏览器框架.
 
-	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **[Midori](/index.php/Midori "Midori")** — 基于GTK+ 和 WebKit的轻量级浏览器.
 
@@ -428,7 +428,7 @@
 
 *   **Vimb** — 一个像vim的浏览器，灵感来源于Pentadactyl和 Vimprobable.
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://www.archlinux.org/packages/?name=vimb)
 
 ###### 基于qt5-webkit的浏览器
 
@@ -544,7 +544,7 @@
 
 *   **webhook** — 创建 HTTP 端点(hooks)的小型服务器
 
-	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://aur.archlinux.org/packages/webhook/)
+	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://www.archlinux.org/packages/?name=webhook)
 
 *   **Woof** — 一个专门的单文件web服务器; 是Web Offer One File（提供单文件服务的web）的缩写.
 

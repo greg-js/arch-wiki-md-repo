@@ -25,7 +25,9 @@ This article aggregates information to get Arch Linux working on a tablet PC. Th
     *   [7.2 Easystroke](#Easystroke)
         *   [7.2.1 Launch CellWriter under pen](#Launch_CellWriter_under_pen)
         *   [7.2.2 Gestures for the Alphabet](#Gestures_for_the_Alphabet)
-    *   [7.3 Xournal](#Xournal)
+    *   [7.3 Xournal & Xournal++](#Xournal_&_Xournal++)
+        *   [7.3.1 Xournal](#Xournal)
+        *   [7.3.2 Xournal++](#Xournal++)
     *   [7.4 GNOME Screensaver](#GNOME_Screensaver)
     *   [7.5 GDM](#GDM)
     *   [7.6 LightDM](#LightDM)
@@ -427,11 +429,17 @@ Replace `$LETTER` with the letter in the alphabet in question.
 
 So, when you want to enter an upper-case letter, use your gesture for the shift key followed by the letter. If you want a lower-case letter, simply use your gesture for the letter.
 
-### Xournal
+### Xournal & Xournal++
+
+#### Xournal
 
 [Xournal](http://xournal.sourceforge.net/) is an application for notetaking, sketching, and keeping a journal using a stylus. Xournal aims to provide superior graphical quality (subpixel resolution) and overall functionality. [xournal](https://aur.archlinux.org/packages/xournal/) can be installed from the **extra** repository.
 
 You can also extend the functionality of Xournal with patches, to enable things such as autosaving documents and inserting images. See [SourceForge](http://sourceforge.net/tracker/?group_id=163434&atid=827735) for links to all the available patches. To apply a patch, download the PKGBUILD for Xournal from the [ABS](/index.php/ABS "ABS"), and reference the article [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
+
+#### Xournal++
+
+Xournal++ ([xournalpp](https://www.archlinux.org/packages/?name=xournalpp)) is the successor to Xournal that is currently in development. If you want a newer version Xournal, then you could try this. It is currently stable with little to no bugs that causes crashes.
 
 ### GNOME Screensaver
 

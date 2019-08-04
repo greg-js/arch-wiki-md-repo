@@ -1,4 +1,4 @@
-[polybar](https://github.com/jaagr/polybar) is a fast and easy-to-use tool for creating status bars. It aims to be easily customizable, utilising many modules which enable a wide range of (editable) functionality, such as displaying workspaces, the date, or system volume. Polybar is especially useful for [Window managers](/index.php/Window_manager "Window manager") that have a limited or non-existent status bar, such as [awesome](/index.php/Awesome "Awesome") or [i3](/index.php/I3 "I3"). Polybar can also be used on full [Desktop environments](/index.php/Desktop_environment "Desktop environment") like [Plasma](/index.php/Plasma "Plasma").
+[polybar](https://github.com/jaagr/polybar) is a fast and easy-to-use tool for creating status bars. It aims to be easily customizable, utilising many modules which enable a wide range of (editable) functionality, such as displaying workspaces, the date, or system volume. Polybar is especially useful for [window managers](/index.php/Window_manager "Window manager") that have a limited or non-existent status bar, such as [awesome](/index.php/Awesome "Awesome") or [i3](/index.php/I3 "I3"). Polybar can also be used with [desktop environments](/index.php/Desktop_environment "Desktop environment") like [Plasma](/index.php/Plasma "Plasma").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -23,11 +23,11 @@
 
 ## Configuration
 
-Copy the configuration example from `/usr/share/doc/polybar/config` to `$XDG_CONFIG_HOME/polybar/config`
+Copy the configuration example from `/usr/share/doc/polybar/config` to `$XDG_CONFIG_HOME/polybar/config`.
 
 #### Running Polybar
 
-Polybar can be run with the following:
+Polybar can be run with the following arguments:
 
 ```
 Usage: polybar [OPTION]... BAR
@@ -47,7 +47,7 @@ Usage: polybar [OPTION]... BAR
 
 ```
 
-However you will probably want to run Polybar with your window manager's bootstrap routine. See [#Running with WM](#Running_with_WM)
+However you will probably want to run Polybar with your window manager's bootstrap routine. See [#Running with WM](#Running_with_WM).
 
 #### Sample Config
 
@@ -112,11 +112,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ### Cannot open shared object file libjsoncpp.so
 
-Attempt a reinstall as per [this](https://github.com/jaagr/polybar/issues/885) github issue.
+Attempt a reinstall as described in the [issue](https://github.com/jaagr/polybar/issues/885) on the GitHub.
 
-Failing that, try installing jsoncpp from the official repositories:
-
- `pacman -S jsoncpp` 
+Failing that, try to [install](/index.php/Install "Install") the [jsoncpp](https://www.archlinux.org/packages/?name=jsoncpp) package.
 
 ## See also
 

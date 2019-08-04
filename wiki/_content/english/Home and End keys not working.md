@@ -23,7 +23,7 @@ The **number one cause of broken keys** is overriding the TERM environment varia
 
 If you do not like the TERM value chosen by your terminal (e.g. 'xterm' when you want 'xterm-256color'), there is typically a way to configure your terminal to properly override it without changing the TERM variable.
 
-For xterm and urxvt, you can set it in your [X resources](/index.php/X_resources "X resources")
+For xterm and urxvt, you can set it in your [X resources](/index.php/X_resources "X resources"):
 
 ```
 XTerm*termName: xterm-256color
@@ -32,14 +32,14 @@ URxvt*termName: rxvt-unicode
 
 ```
 
-For [GNU Screen](/index.php/GNU_Screen "GNU Screen"), you can set it in your ~/.screenrc:
+For [GNU Screen](/index.php/GNU_Screen "GNU Screen"), you can set it in your `~/.screenrc`:
 
 ```
 term screen-256color
 
 ```
 
-For [Tmux](/index.php/Tmux "Tmux"), you can set it in your ~/.tmux.conf:
+For [Tmux](/index.php/Tmux "Tmux"), you can set it in your `~/.tmux.conf`:
 
 ```
 set -g default-terminal screen-256color
@@ -64,24 +64,24 @@ In the default `/etc/inputrc`, there are several lines that attempt to handle co
 
 ```
 
-If your keys are not working, it could be because your particular terminal sends escape codes not in this list. First you need to find out what escape codes are being sent. To see them, you can use a Readline command called "quoted-insert" or run the command `showkey --scancodes` which outputs the value of a key verbatim. The default binding for quoted-insert is <kbd>Ctrl</kbd>+<kbd>V</kbd>.
+If your keys are not working, it could be because your particular terminal sends escape codes not in this list. First you need to find out what escape codes are being sent. To see them, you can use a Readline command called "quoted-insert" or run the command `showkey --scancodes` which outputs the value of a key verbatim. The default binding for quoted-insert is `Ctrl+v`.
 
 For example, you could give the following series of inputs in your terminal:
 
-1.  <kbd>Ctrl</kbd>+<kbd>V</kbd>
-2.  <kbd>Home</kbd>
-3.  <kbd>Spacebar</kbd>
-4.  <kbd>Ctrl</kbd>+<kbd>V</kbd>
-5.  <kbd>End</kbd>
+1.  `Ctrl+v`
+2.  `Home`
+3.  `Space`
+4.  `Ctrl+v`
+5.  `End`
 
-And get as output
-
-```
-$ ^[[1~ ^[[4~
+And get as output:
 
 ```
+^[[1~ ^[[4~
 
-The `^[` indicates an escape character in your shell, so this means that your Home key has an escape code of `[1~` and you End key has an escape code of `[4~`. Since these escape codes are not listed in the default Readline config, you will need to add them:
+```
+
+The `^[` indicates an escape character in your shell, so this means that your Home key has an escape code of `[1~` and you End key has an escape code of `[4~`. Since these escape codes are not listed in the default Readline configuration, you will need to add them:
 
 ```
 "\e[1~": beginning-of-line
@@ -98,11 +98,11 @@ For programs that do not use Readline (e.g. ncurses), you can try editing your t
 First save your existing terminfo to a file
 
 ```
-infocmp $TERM >terminfo.src
+$ infocmp $TERM > terminfo.src
 
 ```
 
-Then edit it to change the escape codes. For example change khome and kend:
+Then edit it to change the escape codes. For example change `khome` and `kend`:
 
 ```
 khome=\E[1~, kend=\E[4~,
@@ -114,11 +114,11 @@ khome=\E[1~, kend=\E[4~,
 Then compile the new terminfo (which saves it to your `~/.terminfo` directory)
 
 ```
-tic terminfo.src
+$ tic terminfo.src
 
 ```
 
-And lastly specify the new terminfo in your shell's environment variables
+And lastly specify the new terminfo in your shell's [environment variables](/index.php/Environment_variables "Environment variables"):
 
 ```
 export TERMINFO=~/.terminfo
@@ -137,6 +137,7 @@ You can add key binds using the same quoted-insert characters as used for [Readl
 ```
 setkey "\033[1~" HOME
 setkey "\033[4~" END
+
 ```
 
 ### URxvt/Rxvt
@@ -148,9 +149,10 @@ URxvt.keysym.Home: \033[1~
 URxvt.keysym.End: \033[4~
 URxvt.keysym.KP_Home: \033[1~
 URxvt.keysym.KP_End:  \033[4~
+
 ```
 
-Where KP_Home and KP_End are the numpad Home and End keys. These binds might also fix programs running within URxvt e.g. Nano.
+Where `KP_Home` and `KP_End` are the numpad `Home` and `End` keys. These binds might also fix programs running within URxvt e.g. [nano](/index.php/Nano "Nano").
 
 Another solution is to add the following section to `/etc/inputrc`
 
@@ -163,16 +165,7 @@ Another solution is to add the following section to `/etc/inputrc`
 
 ### Zsh
 
-In short, use the terminfo database to set the correct keybind.
-
- `~/.zshrc` 
-```
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-bindkey "${terminfo[kdch1]}" delete-char
-```
-
-See [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh") and [ZshWiki:zle:bindkeys](http://zshwiki.org/home/zle/bindkeys#reading_terminfo) for more complete information.
+Use the [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) database to set the correct key bindings, see [Zsh#Key bindings](/index.php/Zsh#Key_bindings "Zsh").
 
 ### Less
 
@@ -193,4 +186,5 @@ or for [xterm](/index.php/Xterm "Xterm") you may have to use different escape co
 #command
 \eOF goto-end
 \eOH goto-line
+
 ```

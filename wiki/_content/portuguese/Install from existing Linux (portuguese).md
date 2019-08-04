@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=567412) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2019-08-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=577222) na versão em inglês.
 
 Artigos relacionados
 
@@ -30,6 +30,8 @@ Se o sistema hospedeiro funciona no Arch Linux, isso pode ser conseguido simples
 
 *   [1 Backup e preparação](#Backup_e_preparação)
 *   [2 De um host executando o Arch Linux](#De_um_host_executando_o_Arch_Linux)
+    *   [2.1 Criar uma nova instalação do Arch](#Criar_uma_nova_instalação_do_Arch)
+    *   [2.2 Criar uma cópia exata de uma instalação do Arch existente](#Criar_uma_cópia_exata_de_uma_instalação_do_Arch_existente)
 *   [3 De um host executando outra distribuição Linux](#De_um_host_executando_outra_distribuição_Linux)
     *   [3.1 Usando pacman do sistema hospedeiro](#Usando_pacman_do_sistema_hospedeiro)
     *   [3.2 Criando um chroot](#Criando_um_chroot)
@@ -68,22 +70,36 @@ Em geral, é uma boa ideia ter uma cópia local do diretório original `/etc` no
 
 Instale o pacote [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts).
 
-Siga [Guia de instalação#Montar os sistemas de arquivos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Montar_os_sistemas_de_arquivos "Guia de instalação"). Se você já usa o diretório `/mnt` para alguma outra coisa, basta criar outro diretório como `/mnt/install` e usá-lo.
+Siga [Guia de instalação#Montar os sistemas de arquivos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Montar_os_sistemas_de_arquivos "Guia de instalação") para montar o sistema de arquivos e todos os pontos de montagem necessários. Se você já usa o diretório `/mnt` para alguma outra coisa, basta criar outro diretório como `/mnt/install` e usá-lo como a base de pontos de montagem.
 
-Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instalação "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os espelhos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_espelhos "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
+### Criar uma nova instalação do Arch
+
+Siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instalação "Guia de instalação").
+
+No procedimento, [Guia de instalação#Selecionar os espelhos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_espelhos "Guia de instalação") pode ser pulado, já que o host já deve ter a lista de espelhos correta.
 
 **Dica:** Para evitar baixar novamente todos os pacotes, considere seguir [Pacman/Dicas e truques#Cache do pacman compartilhado na rede](/index.php/Pacman/Dicas_e_truques#Cache_do_pacman_compartilhado_na_rede "Pacman/Dicas e truques") ou usara opção `-c` do *pacstrap*.
 
-**Dica:** Quando o gerenciador de boot Grub é usado, o comando `grub-mkconfig` pode detectar dispositivos incorretamente. Isso resultará no erro `Erro:nenhuma partição` ao tentar inicializar a partir do pendrive. Para resolver este problema, a partir do host executando o Arch Linux, monte as partições recém-instaladas, use `arch-chroot` na nova partição, depois instale e configure o grub. A última etapa pode requerer a desativação de `lvmetad` do `/etc/lvm/lvm.conf` configurando `use_lvmetad=0`.
+**Dica:** Quando o gerenciador de boot Grub é usado, o comando `grub-mkconfig` pode detectar dispositivos incorretamente. Isso resultará em `Erro:nenhuma partição` ao tentar inicializar a partir do pendrive. Para resolver este problema, a partir do host executando o Arch Linux, monte as partições recém-instaladas, use `arch-chroot` na nova partição, depois instale e configure o grub. A última etapa pode requerer a desativação de `lvmetad` do `/etc/lvm/lvm.conf` configurando `use_lvmetad=0`.
 
-**Nota:** Se você quiser apenas criar uma cópia exata de uma instalação do Arch existente, também é possível copiar o sistema de arquivos para a nova partição. Com este método, você ainda precisará
+### Criar uma cópia exata de uma instalação do Arch existente
 
-*   Criar [`/etc/fstab`](/index.php/Guia_de_instala%C3%A7%C3%A3o#Fstab "Guia de instalação") e editar `/etc/hostname`
-*   Excluir `/etc/machine-id` de forma que um novo, único, será gerado na inicialização
-*   Fazer quaisquer outras alterações apropriadas à mídia de instalação
-*   Instalar o gerenciador de inicialização *(bootloader)*
+É possível replicar uma instalação existente do Arch Linux copiando o sistema de arquivos do host para a nova partição e fazer alguns ajustes nela para torná-la inicializável e única.
 
-Ao copiar o sistema de arquivos raiz, use alguma coisa como `cp -ax` ou `rsync -axX`. Isso evita copiar conteúdo dos pontos de montagem (`-x`) e preserve os atributos de [capacidades](/index.php/Capabilities "Capabilities") de alguns sistemas binários (`rsync -X`).
+O primeiro passo é copiar os arquivos do host para a nova partição montada, para isso, considere o uso da abordagem exibida em [rsync#Full system backup](/index.php/Rsync#Full_system_backup "Rsync").
+
+Em seguida, siga o procedimento descrito em [Guia de instalação#Configurar o sistema](/index.php/Guia_de_instala%C3%A7%C3%A3o#Configurar_o_sistema "Guia de instalação") com algumas advertências e etapas adicionais:
+
+*   [Guia de instalação#Fuso horário](/index.php/Guia_de_instala%C3%A7%C3%A3o#Fuso_horário "Guia de instalação"), [Guia de instalação#Localização](/index.php/Guia_de_instala%C3%A7%C3%A3o#Localização "Guia de instalação") e [Guia de instalação#Senha do root](/index.php/Guia_de_instala%C3%A7%C3%A3o#Senha_do_root "Guia de instalação") podem ser ignorados
+*   [Guia de instalação#Initramfs](/index.php/Guia_de_instala%C3%A7%C3%A3o#Initramfs "Guia de instalação") pode ser necessário especialmente se estiver alterando o sistema de arquivos, por exemplo, para [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)") para [Btrfs](/index.php/Btrfs "Btrfs")
+*   Sobre [Guia de instalação#Gerenciador de boot](/index.php/Guia_de_instala%C3%A7%C3%A3o#Gerenciador_de_boot "Guia de instalação"), é necessário reinstalar o gerenciador de boot
+*   Exclua `/etc/machine-id` de forma que um novo, único, seja gerado na próxima inicialização
+
+Se a instalação espelhada do Arch puder ser usada em uma configuração diferente ou com outro hardware, considere as seguintes operações adicionais:
+
+*   Use a atualização do [microcódigo](/index.php/Microcode "Microcode") da CPU adaptada para o sistema alvo durante o passo [Guia de instalação#Gerenciador de boot](/index.php/Guia_de_instala%C3%A7%C3%A3o#Gerenciador_de_boot "Guia de instalação")
+*   Se algum [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") específico foi apresentado no host e pode estar incompleto com o sistema alvo, siga [Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual#Desabilitar quaisquer arquivos relacionados a Xorg](/index.php/Movendo_uma_instala%C3%A7%C3%A3o_existente_para_dentro_(ou_fora)_de_uma_m%C3%A1quina_virtual#Desabilitar_quaisquer_arquivos_relacionados_a_Xorg "Movendo uma instalação existente para dentro (ou fora) de uma máquina virtual")
+*   Faça qualquer outro ajuste apropriado para o sistema de destino, como reconfigurar a rede ou o áudio.
 
 ## De um host executando outra distribuição Linux
 
