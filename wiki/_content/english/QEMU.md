@@ -756,7 +756,7 @@ Generating unique link-level addresses can be done in several ways:
 
 By default, without any `-netdev` arguments, QEMU will use user-mode networking with a built-in DHCP server. Your virtual machines will be assigned an IP address when they run their DHCP client, and they will be able to access the physical host's network through IP masquerading done by QEMU.
 
-**Warning:** This only works with the TCP and UDP protocols, so ICMP, including `ping`, will not work. Do not use `ping` to test network connectivity.
+**Warning:** This only works with the TCP and UDP protocols, so ICMP, including `ping`, will not work. Do not use `ping` to test network connectivity. To make ping work in the guest see [Sysctl#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets](/index.php/Sysctl#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets "Sysctl").
 
 This default configuration allows your virtual machines to easily access the Internet, provided that the host is connected to it, but the virtual machines will not be directly visible on the external network, nor will virtual machines be able to talk to each other if you start up more than one concurrently.
 
@@ -1274,6 +1274,8 @@ Notice the lack of network IDs, and that the device was created with `model=...`
 See [QEMU networking documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#Network-options) for more information on parameters you can use.
 
 ## Graphic card
+
+QEMU can emulate a standard graphic card text mode using `-curses` command line option. This allows to type text and see text output directly inside a text terminal.
 
 QEMU can emulate several types of VGA card. The card type is passed in the `-vga *type*` command line option and can be `std`, `qxl`, `vmware`, `virtio`, `cirrus` or `none`.
 

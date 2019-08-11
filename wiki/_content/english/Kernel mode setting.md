@@ -69,7 +69,7 @@ If you are using a custom EDID file (not applicable for the built-in resolutions
 
  `/etc/mkinitcpio.conf`  `FILES=(/usr/lib/firmware/edid/your_edid.bin)` 
 
-[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+Then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 ## Troubleshooting
 

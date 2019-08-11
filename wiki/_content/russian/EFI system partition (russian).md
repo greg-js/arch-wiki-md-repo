@@ -6,7 +6,11 @@
 
 **Важно:** Если вы выполняете [двойную загрузку](/index.php/Dual_boot_with_Windows_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dual boot with Windows (Русский)") с существующей установкой Windows в системе UEFI/GPT, не форматируйте раздел UEFI, так как это включает в себя файл Windows *.efi*, необходимый для ее загрузки. Другими словами, используйте существующий раздел как есть и просто [монтируйте его](#Монтирование_раздела).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Создание раздела](#Создание_раздела)
     *   [1.1 Разметка дисков GPT](#Разметка_дисков_GPT)

@@ -97,7 +97,7 @@ Also see [xfs(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs.5) for details 
 
 If this filesystem will be on a striped RAID you can gain significant speed improvements by specifying the stripe size to the [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) command.
 
-See [How to calculate the correct sunit,swidth values for optimal performance](http://xfs.org/index.php/XFS_FAQ#Q:_How_to_calculate_the_correct_sunit.2Cswidth_values_for_optimal_performance)
+XFS can sometimes detect the geometry under software RAID, but in case you reshape it or you are using hardware RAID see [how to calculate the correct sunit,swidth values for optimal performance](http://xfs.org/index.php/XFS_FAQ#Q:_How_to_calculate_the_correct_sunit.2Cswidth_values_for_optimal_performance)
 
 ### Access time
 

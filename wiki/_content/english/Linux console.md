@@ -97,6 +97,8 @@ $ setfont lat2-16 -m 8859-2
 
 ```
 
+Font names are case-sensitive. With no parameter, `setfont` returns the console to the default font.
+
 So to have a **small 8x8** font, with that font installed like seen below, use e.g.:
 
 ```
@@ -104,7 +106,7 @@ $ setfont -h8 /usr/share/kbd/consolefonts/drdos8x8.psfu.gz
 
 ```
 
-Font names are case-sensitive. With no parameter, `setfont` returns the console to the default font.
+To have a **bigger** font, the Terminus font ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) is available in many sizes, such as `ter-132n` which is large.
 
 **Tip:** All font changing commands can be typed in "blind".
 

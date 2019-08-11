@@ -45,7 +45,7 @@ The Unity 5 engine expects you to be running PulseAudio. You can install [pulsen
 
 The game requires Arial and Arial Black fonts, provided in the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) [AUR](/index.php/AUR "AUR") package.
 
-Another alternative is to try to use [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), from the [official repositories](/index.php/Official_repositories "Official repositories"). This worked using KSP 0.90.0 on x86_64 Arch Linux. YMMV
+Another alternative is to try to use [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts). This worked using KSP 0.90.0 on x86_64 Arch Linux. YMMV
 
 ### In-game menus are blank, v1.1+
 

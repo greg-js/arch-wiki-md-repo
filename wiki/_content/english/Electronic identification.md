@@ -25,7 +25,7 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
 
 ## Installation
 
-All types of electronic identification **require** installing the [ccid](https://www.archlinux.org/packages/?name=ccid) package. After installation, [enable](/index.php/Enable "Enable"), and [start](/index.php/Start "Start") `pcscd.socket`. In addition, [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart cards also require the [acsccid](https://www.archlinux.org/packages/?name=acsccid) package.
+a All types of electronic identification **require** installing the [ccid](https://www.archlinux.org/packages/?name=ccid) package. After installation, [enable](/index.php/Enable "Enable"), and [start](/index.php/Start "Start") `pcscd.socket`. In addition, [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart cards also require the [acsccid](https://www.archlinux.org/packages/?name=acsccid) package.
 
 [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) contains `pcsc_scan` program that can be used to check smart card detection [Smartcards#Scan for card reader](/index.php/Smartcards#Scan_for_card_reader "Smartcards").
 
@@ -86,7 +86,7 @@ For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other
 
 The [opensc](https://www.archlinux.org/packages/?name=opensc) package provides drivers for EstEID 2018+ [[2]](https://github.com/OpenSC/OpenSC/pull/1635).
 
-**Note:** As of July 12th 2019, the opensc package included in the repositories does not yet contain the drivers for EstEID 2018+, to get around this, you may build opensc manually from source, or alternatively, install [opensc-git](https://aur.archlinux.org/packages/opensc-git/).
+**Note:** As of August 05 2019, the opensc package included in the repositories does not yet contain the drivers for EstEID 2018+, to get around this, you may build opensc manually from source, or alternatively, install [opensc-git](https://aur.archlinux.org/packages/opensc-git/). qdigidoc4 requires opensc which conflicts with this package. To work around this, remove the dependency on opensc in the qdigidoc4 PKGBUILD file and rebuild.
 
 ### Germany
 

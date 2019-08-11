@@ -482,7 +482,7 @@ Krita only requires that Qt is able to use your tablet to function properly. If 
 
 ### VirtualBox
 
-First, make sure that your tablet works well under Arch. Then, download and install the last driver from [Wacom website](http://www.wacom.com/downloads/drivers.php) on the guest OS. Shutdown the virtual machine, go to *Settings > USB*. Select *Add Filter From Device* and select your tablet (e.g. WACOM CTE-440-U V4.0-3 [0403]). Select *Edit Filter*, and change the last item *Remote* to *Any*.
+First, make sure that your tablet works well under Arch. Then, download and install the last driver from [Wacom website](https://www.wacom.com/en-cl/support/bamboo-support) on the guest OS. Shutdown the virtual machine, go to *Settings > USB*. Select *Add Filter From Device* and select your tablet (e.g. WACOM CTE-440-U V4.0-3 [0403]). Select *Edit Filter*, and change the last item *Remote* to *Any*.
 
 ## Troubleshooting
 

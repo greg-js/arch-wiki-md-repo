@@ -120,7 +120,7 @@ XMODIFIERS=@im=fcitx
 
 Re-login or reboot to make these environment changes effective.
 
-If *fcitx* process does not start automatically, you might need to add `fcitx &` in your `~/.xinitrc`.
+If *fcitx* process does not start automatically, you might need to add `fcitx &` in your `~/.xinitrc`. If `fcitx &` doesn't start, type `sleep 2` after it
 
 **Note:**
 

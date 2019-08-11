@@ -747,7 +747,7 @@ run_hook() {
 **Tip:** You could also close `cryptboot` using `cryptsetup close`, but having it open makes it easier to mount for system updates using [Pacman](/index.php/Pacman "Pacman") and regenerating the initramfs with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). The `/boot` partition must be mounted for updates that affect the [kernel](/index.php/Kernel "Kernel") or [Initramfs](/index.php/Initramfs "Initramfs"), and the initramfs will be automatically regenerated after these updates.
 
 ```
-# cp /usr/lib/initcpio/install/encrypt /etc/initpcio/install/customencrypthook
+# cp /usr/lib/initcpio/install/encrypt /etc/initcpio/install/customencrypthook
 
 ```
 

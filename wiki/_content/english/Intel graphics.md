@@ -127,9 +127,10 @@ However, if [Xorg](/index.php/Xorg "Xorg") does not start, and to take advantage
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Section "Device"
-  Identifier  "Intel Graphics"
-  Driver      "intel"
+Section "OutputClass"
+  Identifier "Intel Graphics"
+  MatchDriver "i915"
+  Driver "intel"
 EndSection
 ```
 
@@ -242,10 +243,11 @@ The SNA acceleration method causes tearing on some machines. To fix this, enable
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Section "Device"
-  Identifier  "Intel Graphics"
-  Driver      "intel"
-  Option      "TearFree" "true"
+Section "OutputClass"
+  Identifier "Intel Graphics"
+  MatchDriver "i915"
+  Driver "intel"
+  Option "TearFree" "true"
 EndSection
 ```
 

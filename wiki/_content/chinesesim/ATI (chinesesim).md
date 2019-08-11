@@ -179,7 +179,7 @@ Option "EXAVSync" "yes"
 ```
 Section "Device"
         Identifier  "Radeon"
-        Driver "radeon“
+        Driver "radeon"
         Option "AccelMethod" "glamor"
         Option "DRI" "3"
         Option "TearFree" "on"

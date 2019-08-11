@@ -121,7 +121,7 @@ This file is also pre-configured, meaning that it will only be necessary to amen
 
 ### menu.xml
 
-`~/.config/openbox/menu.xml` defines the type and behaviour of the desktop menu, accessable by right-clicking the background. Although the default provided is a **static menu** (meaning that it will not automatically update when new applications are installed), it is possible to employ the use of **dynamic menus** that will automatically update as well.
+`~/.config/openbox/menu.xml` defines the type and behaviour of the desktop menu, accessible by right-clicking the background. Although the default provided is a **static menu** (meaning that it will not automatically update when new applications are installed), it is possible to employ the use of **dynamic menus** that will automatically update as well.
 
 The available options are discussed extensively below in the [#Menus](#Menus) section.
 
@@ -584,6 +584,27 @@ Another example will launch application preserving all stdout and stderr output 
  <keybind key="A-f">
    <action name="Execute">
      <command>sh -c sh -c "exec gimp &gt;/tmp/gimp.out 2&gt;&amp;1"</command>
+   </action>
+ </keybind>
+
+```
+
+Enable screenshot:
+
+```
+ <keybind key="Print">
+   <action name="Execute">
+     <command>gnome-screenshot -c</command>
+   </action>
+ </keybind>
+ <keybind key="A-Print">
+   <action name="Execute">
+     <command>gnome-screenshot -c -w</command>
+   </action>
+ </keybind>
+ <keybind key="W-Print">
+   <action name="Execute">
+     <command>gnome-screenshot -i</command>
    </action>
  </keybind>
 

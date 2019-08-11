@@ -38,7 +38,7 @@ For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse]
 
 *   **eXo** — Qt frontend to MOC, supports scrobbling
 
-	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || [exo-player](https://aur.archlinux.org/packages/exo-player/)
 
 ## Configuration
 

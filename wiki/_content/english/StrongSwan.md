@@ -8,7 +8,11 @@ It is natively supported by the Linux kernel, but configuration of encryption ke
 
 They are typically implemented in userspace daemons on the server side. [strongSwan](https://strongswan.org/) is an IKE daemon with full support for IKEv1 and IKEv2\. It is natively supported by most modern clients, including Linux, Windows 7, Apple iOS, Mac OSX, FreeBSD and BlackBerry OS.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Certificates](#Certificates)
@@ -18,13 +22,14 @@ They are typically implemented in userspace daemons on the server side. [strongS
 *   [3 VPN Variants](#VPN_Variants)
     *   [3.1 IPSec in tunnel mode](#IPSec_in_tunnel_mode)
     *   [3.2 IPSec in transport mode](#IPSec_in_transport_mode)
-    *   [3.3 IPSec/L2TP](#IPSec.2FL2TP)
+    *   [3.3 IPSec/L2TP](#IPSec/L2TP)
 *   [4 Secrets](#Secrets)
 *   [5 Networking](#Networking)
 *   [6 Starting](#Starting)
     *   [6.1 Running Strongswan in a Container](#Running_Strongswan_in_a_Container)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Routing issues](#Routing_issues)
+    *   [7.2 SSL Handshake Timeouts](#SSL_Handshake_Timeouts)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -227,6 +232,8 @@ conn CiscoIPSec
 
 ### IPSec in transport mode
 
+Compared to tunnel mode, transport mode does not encrypt the original IP header from its point of view. This is useful if something else (i.e. GRE) has already encapsulated the original packet to be transported through a tunnel, before IPSec gets it. From the point of view of IPSec, the IP header it thinks is the original is actually the IP header already setup for the tunneling, and it will encrypt what is truly the original IP header as just part of the encapsulated packet payload, without realizing it's doing it.
+
 ### IPSec/L2TP
 
 The [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup") page describes how to setup a client to connect to an IPSec/L2TP server. This variant of an IPSec VPN has the advantage of allowing to tunnel non-IP packets, contrary to pure IPSec, but at the expense of having to run an additional L2TP daemon.
@@ -307,6 +314,40 @@ If you are having troubles with routing traffic from client (road warrior) to th
 # priority of this plugin.
 load = no
 ```
+
+### SSL Handshake Timeouts
+
+Some users have had intermittent SSL handshake timeouts, such as:
+
+*   `curl -v https://example.com` getting stuck at "TLSv1.3 (OUT), TLS handshake, Client hello (1):"
+*   Firefox stalling loading a page, showing "Performing a TLS handshake to www.example.com"
+
+Some users have fixed (or worked around?) this problem by decreasing their network interface mtu to be in the 1422-1438 range, even if they don't need to do so without a VPN or when using OpenVPN. [[1]](https://bbs.archlinux.org/viewtopic.php?id=244606) [[2]](https://wiki.strongswan.org/projects/strongswan/wiki/ForwardingAndSplitTunneling#MTUMSS-issues)
+
+Lowering mtu could potentially cause other problems, so your mileage may vary. This fix/workaround will likely somewhat decrease internet and internal network performance. (But, SSL handshakes will stop stalling.) If you're using jumbo frames, this may significantly decrease internal network performance.
+
+Check your interface's mtu: (The one being used to connect to the VPN)
+
+```
+$ ip link
+
+```
+
+Consider this default (probably 1500) bad.
+
+You can efficiently try to find a mtu that prevents an SSL timeout by repeating this process, perhaps starting with a really low ***trial-mtu*** like 1300, or lower if that still fails: (***interface*** is the name shown above by `ip link`, not a full path like `/dev/device`)
+
+```
+# ip link set dev ***interface*** mtu ***trial-mtu***
+$ while(curl -v https://example.com); do
+> sleep 2
+> done
+
+```
+
+If it succeeds enough times for you to be confident an intermittent failure should have happened, consider this mtu as good, and hit `CTRL+C`. Re-run the above commands with a ***trial-mtu*** halfway between this one and your closest known bad mtu.
+
+If it gets stuck on a TLS handshake, consider this as bad, and hit `CTRL+C`. Re-run the above with halfway between this one and your closest known good mtu.
 
 ## See also
 

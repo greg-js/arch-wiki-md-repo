@@ -25,6 +25,8 @@
         *   [3.2.4 Log martian packets](#Log_martian_packets)
         *   [3.2.5 Disable ICMP redirecting](#Disable_ICMP_redirecting)
         *   [3.2.6 Enable Ignoring to ICMP Request](#Enable_Ignoring_to_ICMP_Request)
+    *   [3.3 Other](#Other)
+        *   [3.3.1 Allow unprivileged users to create IPPROTO_ICMP sockets](#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets)
 *   [4 Virtual memory](#Virtual_memory)
 *   [5 MDADM](#MDADM)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -71,6 +73,8 @@ or:
 # echo "1" > /proc/sys/kernel/sysrq
 
 ```
+
+See [Linux kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html) for details about `kernel.sysrq`.
 
 To preserve changes between reboots, add or modify the appropriate lines in `/etc/sysctl.d/99-sysctl.conf` or another applicable parameter file in `/etc/sysctl.d/`.
 
@@ -315,6 +319,31 @@ net.ipv4.icmp_echo_ignore_all = 1
 ```
 
 **Note:** Beware this may cause issues with monitoring tools and/or applications relying on ICMP echo responses.
+
+### Other
+
+#### Allow unprivileged users to create IPPROTO_ICMP sockets
+
+The IPPROTO_ICMP socket type adds the possibility to send ICMP_ECHO messages and receive corresponding ICMP_ECHOREPLY messages without the need to open a raw socket, an operation which requires the CAP_NET_RAW capability or the SUID bit with a proper privileged owner. These ICMP_ECHO messages are sent by the ping application thus making the IPPROTO_ICMP socket also known as ping socket in addition to ICMP Echo socket.
+
+`ping_group_range` determines the GID range of groups which their users are allowed to create IPPROTO_ICMP sockets. Additionally, the owner of the CAP_NET_RAW capability is also allowed to create IPPROTO_ICMP sockets.
+By default this range is `1 0` which means no one is allowed to create IPPROTO_ICMP sockets except root.
+To take advantage of this setting programs which currently uses raw sockets need to ported to use IPPROTO_ICMP sockets instead.
+For example, QEMU uses IPPROTO_ICMP for SLIRP aka User-mode networking, so allowing the user running QEMU to create IPPROTO_ICMP sockets means it's possible to ping from the guest.
+
+To allow only users which are members of the group with GID 100 to create IPPROTO_ICMP sockets
+
+```
+net.ipv4.ping_group_range = 100 100
+
+```
+
+To allow all the users in the system to create IPPROTO_ICMP sockets
+
+```
+net.ipv4.ping_group_range = 0 65535
+
+```
 
 ## Virtual memory
 

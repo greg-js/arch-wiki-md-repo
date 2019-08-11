@@ -27,6 +27,7 @@ De [JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connecti
     *   [2.5 GStreamer](#GStreamer)
     *   [2.6 PulseAudio](#PulseAudio)
     *   [2.7 Firewire](#Firewire)
+    *   [2.8 Red/audio remoto](#Red/audio_remoto)
 *   [3 MIDI](#MIDI)
 *   [4 Solución de problemas](#Solución_de_problemas)
     *   [4.1 Mensaje de "No se puede bloquear el área de memoria (No se puede asignar memoria)" en el inicio](#Mensaje_de_"No_se_puede_bloquear_el_área_de_memoria_(No_se_puede_asignar_memoria)"_en_el_inicio)
@@ -291,6 +292,39 @@ blacklist snd-firewire-motu
 *La lista de módulos es la más reciente disponible en el momento de escribir en [Alsa Firewire mejorar repositorio](https://github.com/takaswie/snd-firewire-mejorar).*
 
 Ahora puede descargar sus módulos Firewire cargados o reiniciar.
+
+### Red/audio remoto
+
+JACK se puede configurar para enviar datos de audio a través de una red a una máquina "master", que luego emite el audio a un dispositivo físico. Esto puede ser útil para mezclar audio de una serie de computadoras "esclavas" sin necesidad de cables adicionales o mezcladores de hardware, y mantener la ruta de audio digital durante el mayor tiempo posible (ya que los mezcladores de hardware con entradas digitales son muy raros).
+
+La configuración es muy simple, sin embargo requiere una red que admita el tráfico de multidifusión (es decir, el IGMP Snooping debe estar habilitado en los switches de red administrados), y requiere que todas las máquinas estén ejecutando la misma versión principal de JACK (JACK1 o JACK2) ya que los protocolos son no interoperable entre versiones. Para JACK2, se debe cargar el módulo de la aplicación:
+
+```
+master$ jack_load netmanager -i -c
+
+```
+
+La opción `-i -c` le indica al administrador de red que asigne automáticamente las conexiones entrantes al dispositivo de audio predeterminado. Sin esto, cada conexión entrante tendría que asignarse manualmente en cada conexión. En su lugar, puede utilizar `-i -h` para ver todas las opciones disponibles, sin embargo tenga en cuenta que las opciones se imprimen en la salida del servidor `jackd`, el comando `jack_load` no mostrará nada.
+
+En el cliente, JACK debe iniciarse en modo de red:
+
+```
+slave$ jackd -d net
+
+```
+
+Las dos máquinas se conectarán y en el maestro la nueva fuente de audio será visible:
+
+```
+master$ jack_lsp
+system:playback_1
+system:playback_2
+remotehost:from_slave_1
+remotehost:from_slave_2
+
+```
+
+Si ha pasado la opción `-c` a la anterior `jack_load`, entonces el sistema remoto ahora será capaz de reproducir audio.
 
 ## MIDI
 

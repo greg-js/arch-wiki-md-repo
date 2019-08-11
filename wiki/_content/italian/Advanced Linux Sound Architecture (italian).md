@@ -7,7 +7,11 @@ L' [Architettura Avanzata per il Suono su Linux](https://en.wikipedia.org/wiki/A
 
 **Nota:** Per una eventuale alternativa consultare la pagina [OSS](/index.php/OSS "OSS").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installazione](#Installazione)
     *   [1.1 Utility](#Utility)
@@ -15,26 +19,26 @@ L' [Architettura Avanzata per il Suono su Linux](https://en.wikipedia.org/wiki/A
 *   [3 Configurazione](#Configurazione)
     *   [3.1 Nessun suono in VirtualBox](#Nessun_suono_in_VirtualBox)
     *   [3.2 Impostare la scheda audio predefinita](#Impostare_la_scheda_audio_predefinita)
-        *   [3.2.1 Selezionare il PCM di default tramite variabili d'ambiente](#Selezionare_il_PCM_di_default_tramite_variabili_d.27ambiente)
+        *   [3.2.1 Selezionare il PCM di default tramite variabili d'ambiente](#Selezionare_il_PCM_di_default_tramite_variabili_d'ambiente)
         *   [3.2.2 Metodo alternativo](#Metodo_alternativo)
     *   [3.3 Assicurarsi che i moduli audio siano caricati](#Assicurarsi_che_i_moduli_audio_siano_caricati)
     *   [3.4 Ottenere un output SPDIF](#Ottenere_un_output_SPDIF)
     *   [3.5 Equalizzatore System-Wide](#Equalizzatore_System-Wide)
-        *   [3.5.1 Utilizzando AlsaEqual (fornisce l’interfaccia grafica)](#Utilizzando_AlsaEqual_.28fornisce_l.E2.80.99interfaccia_grafica.29)
+        *   [3.5.1 Utilizzando AlsaEqual (fornisce l’interfaccia grafica)](#Utilizzando_AlsaEqual_(fornisce_l’interfaccia_grafica))
             *   [3.5.1.1 Gestire gli stati di AlsaEqual](#Gestire_gli_stati_di_AlsaEqual)
         *   [3.5.2 Utilizzando mbeq](#Utilizzando_mbeq)
-*   [4 Ricampionamento in alta qualità](#Ricampionamento_in_alta_qualit.C3.A0)
-*   [5 Upmixing/Downmixing](#Upmixing.2FDownmixing)
+*   [4 Ricampionamento in alta qualità](#Ricampionamento_in_alta_qualità)
+*   [5 Upmixing/Downmixing](#Upmixing/Downmixing)
     *   [5.1 Upmixing](#Upmixing)
     *   [5.2 Downmixing](#Downmixing)
 *   [6 Mixaggio](#Mixaggio)
-    *   [6.1 Mixaggio software (dmix)](#Mixaggio_software_.28dmix.29)
+    *   [6.1 Mixaggio software (dmix)](#Mixaggio_software_(dmix))
     *   [6.2 Mixaggio Hardware](#Mixaggio_Hardware)
         *   [6.2.1 Supporto](#Supporto)
         *   [6.2.2 Fix](#Fix)
 *   [7 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [7.1 Suono che salta utilizzando Dynamic Frequency Scaling](#Suono_che_salta_utilizzando_Dynamic_Frequency_Scaling)
-    *   [7.2 Problemi con la disponibilità del mixaggio software per più di un utente per volta](#Problemi_con_la_disponibilit.C3.A0_del_mixaggio_software_per_pi.C3.B9_di_un_utente_per_volta)
+    *   [7.2 Problemi con la disponibilità del mixaggio software per più di un utente per volta](#Problemi_con_la_disponibilità_del_mixaggio_software_per_più_di_un_utente_per_volta)
     *   [7.3 Problemi di riproduzione simultanea](#Problemi_di_riproduzione_simultanea)
     *   [7.4 Mancanza di suono casuale](#Mancanza_di_suono_casuale)
         *   [7.4.1 Timidity](#Timidity)
@@ -42,26 +46,26 @@ L' [Architettura Avanzata per il Suono su Linux](https://en.wikipedia.org/wiki/A
     *   [7.6 Impostazione modelli](#Impostazione_modelli)
     *   [7.7 Audio in conflitto con altoparlante interno del PC](#Audio_in_conflitto_con_altoparlante_interno_del_PC)
     *   [7.8 Nessun Input dal Microfono](#Nessun_Input_dal_Microfono)
-    *   [7.9 Impostazione predefinita Microfono/Dispositivo di acquisizione](#Impostazione_predefinita_Microfono.2FDispositivo_di_acquisizione)
+    *   [7.9 Impostazione predefinita Microfono/Dispositivo di acquisizione](#Impostazione_predefinita_Microfono/Dispositivo_di_acquisizione)
     *   [7.10 Il microfono interno non funziona](#Il_microfono_interno_non_funziona)
     *   [7.11 Nessun suono con scheda integrata Intel](#Nessun_suono_con_scheda_integrata_Intel)
     *   [7.12 Nessun suono dalle cuffie con scheda audio integrata Intel](#Nessun_suono_dalle_cuffie_con_scheda_audio_integrata_Intel)
-    *   [7.13 Nessun suono quando è installata la scheda video con S/PDIF](#Nessun_suono_quando_.C3.A8_installata_la_scheda_video_con_S.2FPDIF)
-    *   [7.14 La qualità dell'audio è bassa](#La_qualit.C3.A0_dell.27audio_.C3.A8_bassa)
-    *   [7.15 Rumori/Suoni all’avvio ed allo stop della riproduzione](#Rumori.2FSuoni_all.E2.80.99avvio_ed_allo_stop_della_riproduzione)
-    *   [7.16 L'uscita S/PDIF non funziona](#L.27uscita_S.2FPDIF_non_funziona)
-    *   [7.17 L'uscita HDMI non funziona](#L.27uscita_HDMI_non_funziona)
+    *   [7.13 Nessun suono quando è installata la scheda video con S/PDIF](#Nessun_suono_quando_è_installata_la_scheda_video_con_S/PDIF)
+    *   [7.14 La qualità dell'audio è bassa](#La_qualità_dell'audio_è_bassa)
+    *   [7.15 Rumori/Suoni all’avvio ed allo stop della riproduzione](#Rumori/Suoni_all’avvio_ed_allo_stop_della_riproduzione)
+    *   [7.16 L'uscita S/PDIF non funziona](#L'uscita_S/PDIF_non_funziona)
+    *   [7.17 L'uscita HDMI non funziona](#L'uscita_HDMI_non_funziona)
     *   [7.18 HP TX2500](#HP_TX2500)
     *   [7.19 Salto di suono durante la riproduzione MP3](#Salto_di_suono_durante_la_riproduzione_MP3)
     *   [7.20 Cuffia USB e schede audio esterne USB](#Cuffia_USB_e_schede_audio_esterne_USB)
         *   [7.20.1 Suono gracchiante su dispositivi USB](#Suono_gracchiante_su_dispositivi_USB)
         *   [7.20.2 Inserimento a caldo di una scheda audio USB](#Inserimento_a_caldo_di_una_scheda_audio_USB)
-    *   [7.21 Errore 'Unknown hardware' dopo aggiornamento Kernel](#Errore_.27Unknown_hardware.27_dopo_aggiornamento_Kernel)
+    *   [7.21 Errore 'Unknown hardware' dopo aggiornamento Kernel](#Errore_'Unknown_hardware'_dopo_aggiornamento_Kernel)
     *   [7.22 HDA Analyzer](#HDA_Analyzer)
     *   [7.23 ALSA con SDL](#ALSA_con_SDL)
     *   [7.24 Workaround in caso di volume basso](#Workaround_in_caso_di_volume_basso)
-    *   [7.25 "Schiocco" al resume dopo una sospensione](#.22Schiocco.22_al_resume_dopo_una_sospensione)
-*   [8 Configurazioni d'esempio](#Configurazioni_d.27esempio)
+    *   [7.25 "Schiocco" al resume dopo una sospensione](#"Schiocco"_al_resume_dopo_una_sospensione)
+*   [8 Configurazioni d'esempio](#Configurazioni_d'esempio)
 *   [9 Link esterni](#Link_esterni)
 
 ## Installazione
@@ -74,7 +78,7 @@ Gli utenti con un login locale (su terminale virtuale o tramite display manager)
 
 ### Utility
 
-Installare dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") il pacchetto [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), contenente lo strumento `alsamixer`, che consente la configurazione delle periferiche audio tramite console o terminale. Installare anche il pacchetto [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) se si necessità del [ricampionamento in alta qualità](#Ricampionamento_in_alta_qualit.C3.A0), dell'[upmixing/downmixing](#Upmixing.2FDownmixing) e di altre funzionalità avanzate. Se si vuole che le applicazioni basate su [OSS](/index.php/Open_Sound_System_(Italiano) "Open Sound System (Italiano)") funzionino tramite dmix (mixaggio software) installare anche il pacchetto [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss). Caricare i [moduli del kernel](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)") `snd_seq_oss`, `snd_pcm_oss` e `snd_mixer_oss` per abilitare i componenti di emulazione di OSS.
+Installare dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") il pacchetto [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), contenente lo strumento `alsamixer`, che consente la configurazione delle periferiche audio tramite console o terminale. Installare anche il pacchetto [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) se si necessità del [ricampionamento in alta qualità](#Ricampionamento_in_alta_qualità), dell'[upmixing/downmixing](#Upmixing/Downmixing) e di altre funzionalità avanzate. Se si vuole che le applicazioni basate su [OSS](/index.php/Open_Sound_System_(Italiano) "Open Sound System (Italiano)") funzionino tramite dmix (mixaggio software) installare anche il pacchetto [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss). Caricare i [moduli del kernel](/index.php/Kernel_modules_(Italiano) "Kernel modules (Italiano)") `snd_seq_oss`, `snd_pcm_oss` e `snd_mixer_oss` per abilitare i componenti di emulazione di OSS.
 
 ## Togliere il muto ai canali
 
@@ -90,7 +94,7 @@ In `alsamixer`, l'etichetta `MM` sotto un canale indica che quest'ultimo è impo
 
 Togliere il muto dai canali `Master` e `PCM` posizionandovi sopra di essi tramite i tasti `←` e `→` e premendo il tasto `M`. Usare il tasto `↑` per incrementare il volume ed ottenere un `db gain` pari a 0\. Il valore di gain si trova in alto a sinistra dopo il campo `Item:`. Valori di gain superiori produrranno suoni distorti.
 
-Per ottenere un vero suono surround 5.1 o 7.1, è necessario togliere il muto anche ad altri canali come Front, Surround, Center, LFE (subwoofer) e Side (questi sono i nomi dei canali per il modulo intel HDA, possono variare in base all'hardware). Si tenga presente che ciò non abilita direttamente l'upmixing delle sorgenti stereo (come la maggior parte della musica). Per ottenere quell'effetto è necessario consultare il paragrafo [upmixing/downmixing](#Upmixing.2FDownmixing).
+Per ottenere un vero suono surround 5.1 o 7.1, è necessario togliere il muto anche ad altri canali come Front, Surround, Center, LFE (subwoofer) e Side (questi sono i nomi dei canali per il modulo intel HDA, possono variare in base all'hardware). Si tenga presente che ciò non abilita direttamente l'upmixing delle sorgenti stereo (come la maggior parte della musica). Per ottenere quell'effetto è necessario consultare il paragrafo [upmixing/downmixing](#Upmixing/Downmixing).
 
 Per abilitare il microfono, portarsi sulla tab Capture tramite `F4` ed abilitare il canale premendo `Spazio`
 
@@ -485,7 +489,7 @@ pcm.dmix6 {
 
 ```
 
-ed usare "dmix6" al posto di "surround71". Se si dovessero riscontrare problemi di suono che salta o risulta distorto, provare ad incrementare la dimensione del buffer (ad esempio a 32768) oppure utilizzare un [ricampionatore di alta qualità](#Ricampionamento_in_alta_qualit.C3.A0).
+ed usare "dmix6" al posto di "surround71". Se si dovessero riscontrare problemi di suono che salta o risulta distorto, provare ad incrementare la dimensione del buffer (ad esempio a 32768) oppure utilizzare un [ricampionatore di alta qualità](#Ricampionamento_in_alta_qualità).
 
 ### Downmixing
 
@@ -618,7 +622,7 @@ pcm.dsp {
 
 ```
 
-**Nota:** Questo `/etc/asound.conf` è stato creato ed utilizzato con successo per una configurazione globale di [MPD](/index.php/Music_Player_Daemon_(Italiano) "Music Player Daemon (Italiano)"). Consultare [questa sezione](#Problemi_con_la_disponibilit.C3.A0_del_mixaggio_software_per_pi.C3.B9_di_un_utente_per_volta)
+**Nota:** Questo `/etc/asound.conf` è stato creato ed utilizzato con successo per una configurazione globale di [MPD](/index.php/Music_Player_Daemon_(Italiano) "Music Player Daemon (Italiano)"). Consultare [questa sezione](#Problemi_con_la_disponibilità_del_mixaggio_software_per_più_di_un_utente_per_volta)
 
 ### Mancanza di suono casuale
 
@@ -1003,7 +1007,7 @@ Se si hanno salti di suono durante la riproduzione di file MP3 e se al computer 
 
 ### Cuffia USB e schede audio esterne USB
 
-Se si utilizza una cuffia USB con ALSA, si può provare ad usare [asoundconf](https://aur.archlinux.org/packages/asoundconf/) (attualmente disponibile solo da [AUR](/index.php/AUR "AUR")) per impostare l'auricolare come uscita audio principale. Prima di proseguire, assicurarsi di avere abilitato il modulo usb audio (`modprobe snd-usb-audio`).
+Se si utilizza una cuffia USB con ALSA, si può provare ad usare [asoundconf](https://www.archlinux.org/packages/?name=asoundconf) (attualmente disponibile solo da [AUR](/index.php/AUR "AUR")) per impostare l'auricolare come uscita audio principale. Prima di proseguire, assicurarsi di avere abilitato il modulo usb audio (`modprobe snd-usb-audio`).
 
 ```
 #modprobe snd-usb-audio

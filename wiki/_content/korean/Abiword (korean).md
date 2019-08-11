@@ -24,9 +24,9 @@
 
 맞춤법 검사를 하고자 한다면 사전을 설치할 수 있다. [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) 꾸러미는 영문 맞춤법 검사용 사전이다. 한글용은 아직 없다.
 
-플러그인을 추가하려면 [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) 꾸러미를 설치하라.
+플러그인을 추가하려면 [abiword](https://www.archlinux.org/packages/?name=abiword) 꾸러미를 설치하라.
 
-커서가 작고 글자가 가지런하지 않을 경우 공식 저장소에서 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)을 설치하거나 [AUR](/index.php/Arch_User_Repository "Arch User Repository")에서 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)와 공식 저장소에서 [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont)를 설치하라.
+커서가 작고 글자가 가지런하지 않을 경우 공식 저장소에서 [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)을 설치하거나 [AUR](/index.php/Arch_User_Repository "Arch User Repository")에서 [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)와 공식 저장소에서 [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)를 설치하라.
 
 ## 템플릿
 
@@ -38,7 +38,7 @@
 
 ## LaTeX 폰트
 
-[abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) 꾸러미는 LaTeX 코드를 문서에 삽입할 수 있는 기능을 포함한다. 수식을 제대로 표시하려면 , [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz)를 내려받아서 `/usr/share/fonts` 디렉토리에 저장한다. 그 폰트를 설치하려면 타볼을 풀어서 다음을 실행하라.
+[abiword](https://www.archlinux.org/packages/?name=abiword) 꾸러미는 LaTeX 코드를 문서에 삽입할 수 있는 기능을 포함한다. 수식을 제대로 표시하려면 , [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz)를 내려받아서 `/usr/share/fonts` 디렉토리에 저장한다. 그 폰트를 설치하려면 타볼을 풀어서 다음을 실행하라.
 
 ```
 # fc-cache -fv

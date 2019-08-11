@@ -392,7 +392,7 @@ Veja `paccache -h` para mais opções.
 
 O *pacman* também tem algumas opções embutidas para limpar o cache e os arquivos de base de dados restantes dos repositórios que não estão mais listados no arquivo de configuração `/etc/pacman.conf`. No entanto, o *pacman* não oferece a possibilidade de manter um número de versões anteriores e, portanto, é mais agressivo do que as opções padrão do *paccache*.
 
-Para remover todos os pacotes em cache que não estão instalados atualmente e a base de dados de sincronização não utilizado, execute:
+Para remover todos os pacotes em cache que não estão instalados atualmente e a base de dados de sincronização não utilizada, execute:
 
 ```
 # pacman -Sc
@@ -406,7 +406,7 @@ Para remover todos os arquivos do cache, use a opção de limpeza duas vezes, se
 
 ```
 
-**Atenção:** Deve-se evitar apagar do cache todas as versões anteriores dos pacotes instalados e todos os pacotes desinstalados, a menos que um deles precise desesperadamente liberar algum espaço em disco. Isso impedirá o downgrade ou a reinstalação de pacotes sem baixá-los novamente.
+**Atenção:** Deve-se evitar apagar do cache todas as versões anteriores dos pacotes instalados e todos os pacotes desinstalados, a menos que se necessita desesperadamente liberar algum espaço em disco. Isso impedirá o downgrade ou a reinstalação de pacotes sem baixá-los novamente.
 
 [pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) e [pacleaner](https://aur.archlinux.org/packages/pacleaner/) são duas alternativas para limpar o cache.
 

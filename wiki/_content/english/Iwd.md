@@ -29,7 +29,10 @@ iwd can work in standalone mode or in combination with comprehensive network man
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
-    *   [4.3 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
+    *   [4.3 Enable built-in network configuration](#Enable_built-in_network_configuration)
+    *   [4.4 Setting static IP address in network configuration](#Setting_static_IP_address_in_network_configuration)
+    *   [4.5 Select DNS resolver](#Select_DNS_resolver)
+    *   [4.6 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
     *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
@@ -161,6 +164,8 @@ If you do not want autoconnect to the AP you can set the option to False and con
 
 ### EAP-PEAP
 
+**Warning:** iwd is currently not secure against man-in-the-middle attacks since the certificate name is not validated. See the project's [TODO](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/TODO?id=0.19#n311) file.
+
 Like EAP-PWD, you also need to create a `*essid*.8021x` in the folder. Before you proceed to write the configuration file, this is also a good time to find out which CA certificate your organization uses. This is an example configuration file that uses MSCHAPv2 password authentication:
 
  `/var/lib/iwd/*essid*.8021x` 
@@ -258,6 +263,60 @@ By default when `iwd` is in disconnected state, it periodically scans for availa
 ```
 [Scan]
 disable_periodic_scan=true
+```
+
+### Enable built-in network configuration
+
+Since version 0.19, iwd can assign IP address(es) and set up routes using a built-in DHCP client or with static configuration.
+
+To activate iwd's network configuration feature, create/edit `/etc/iwd/main.conf` and add the following section to it:
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+enable_network_config=true
+```
+
+There is also ability to set route metric with `route_priority_offset`:
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+route_priority_offset=300
+```
+
+### Setting static IP address in network configuration
+
+Add the following section to `/var/lib/iwd/*network*.*type*` file. For example:
+
+ `/var/lib/iwd/spaceship.psk` 
+```
+[IPv4]
+ip=192.168.1.10
+netmask=255.255.255.0
+gateway=192.168.1.1
+broadcast=192.168.1.255
+dns=192.168.1.1
+```
+
+### Select DNS resolver
+
+At the moment, iwd supports two DNS managers—[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") and [resolvconf](/index.php/Resolvconf "Resolvconf").
+
+Add the following section to `/etc/iwd/main.conf` for `systemd-resolved`:
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+dns_resolve_method=systemd
+```
+
+For `resolvconf`:
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+dns_resolve_method=resolvconf
 ```
 
 ### Deny console (local) user from modifying the settings

@@ -27,7 +27,7 @@ O grupo [base](https://www.archlinux.org/groups/x86_64/base/) contém:
 
 ### base-devel
 
-O grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) contém ferramentas necessárias para compilar muitos pacotes como o [GCC](/index.php/GCC "GCC") e o [make](/index.php/GNU_make "GNU make"). Veja também [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)").
+O grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) contém ferramentas necessárias para compilar muitos pacotes como o [GCC](/index.php/GCC_(Portugu%C3%AAs) "GCC (Português)") e o [make](/index.php/GNU_make "GNU make"). Veja também [makepkg (Português)#Uso](/index.php/Makepkg_(Portugu%C3%AAs)#Uso "Makepkg (Português)").
 
 ## Diferença para um pacote meta
 

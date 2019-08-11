@@ -14,7 +14,11 @@ From [StumpWM's homepage](https://stumpwm.github.io/):
 
 Want to see it in action? A StumpWM user created a [video](http://www.archive.org/details/TheStumpWMExperience).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 With SBCL](#With_SBCL)
@@ -98,7 +102,7 @@ You can also put this in your config file
 Clicking on another window will send the click event to that window, but it will not get focus meaning any keyboard input will go to whichever window has focus. The following line makes focus change to any window that is clicked on.
 
 ```
-(setf *mouse-focus-policy* :click) 
+(setf *mouse-focus-policy* :click) 
 
 ```
 
@@ -110,14 +114,14 @@ First set the window name format and overall modeline format
 
 ```
 (setf *window-format* "%m%n%s%c")
-(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
+(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
 
 ```
 
 The date format is constructed using the same format specifiers as [strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) e.g.
 
 ```
-(setf *time-modeline-string* "%a %b %e %k:%M")
+(setf *time-modeline-string* "%a %b %e %k:%M")
 
 ```
 
@@ -142,7 +146,7 @@ StumpWM uses the default XOrg font which is probably small and pixellated. You c
 ```
 (ql:quickload "clx-truetype")
 (load-module "ttf-fonts")
-(set-font (make-instance 'xft:font :family "DejaVu Sans Mono" :subfamily "Book" :size 11))
+(set-font (make-instance 'xft:font :family "DejaVu Sans Mono" :subfamily "Book" :size 11))
 
 ```
 
@@ -158,7 +162,7 @@ StumpWM uses the default XOrg font which is probably small and pixellated. You c
        no non-whitespace characters in string "".
        Type HELP for debugger help, or (SB-EXT:QUIT) to exit from SBCL.
        (no restarts: If you did not do this on purpose, please report it as a bug.)
-       (PARSE-INTEGER "" :START 0 :END NIL :RADIX 10 :JUNK-ALLOWED NIL)
+       (PARSE-INTEGER "" :START 0 :END NIL :RADIX 10 :JUNK-ALLOWED NIL)
 
 ```
 

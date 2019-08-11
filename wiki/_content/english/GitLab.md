@@ -59,7 +59,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 
 **Note:** This article covers installing and configuring GitLab without HTTPS at first. If needed, see [#Advanced configuration](#Advanced_configuration) to set up SSL.
 
-GitLab requires [Redis](/index.php/Redis "Redis") and a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+GitLab requires [Redis](/index.php/Redis "Redis") and a database backend. If you plan to run it on the same machine, first install [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 [Install](/index.php/Install "Install") the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package.
 
@@ -344,7 +344,7 @@ Finally run the following commands to check your installation:
 
 ## Start and test GitLab
 
-Make sure [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and [Redis](/index.php/Redis "Redis") are running and setup correctly.
+Make sure [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and [Redis](/index.php/Redis "Redis") are running and setup correctly.
 
 Then [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `gitlab.target`.
 

@@ -5,7 +5,7 @@ Related articles
 *   [ranger](/index.php/Ranger "Ranger")
 *   [vifm](/index.php/Vifm "Vifm")
 
-[nnn](https://github.com/jarun/nnn) is a portable, minimalist and lightweight terminal file manager written in C. It is easily extensible via its plugin system where you can add your own scripts alongside already available plugins. A [(neo)vim](https://github.com/mcchrish/nnn.vim) plugin is also available.
+[nnn](https://github.com/jarun/nnn) is a portable terminal file manager written in C. It is easily extensible via its plugin system where you can add your own scripts alongside already available plugins. A [(neo)vim](https://github.com/mcchrish/nnn.vim) plugin is also available.
 
 In addition to being a file manager, nnn is also a disk usage analyzer, a fuzzy app launcher, a batch file renamer and a file picker.
 

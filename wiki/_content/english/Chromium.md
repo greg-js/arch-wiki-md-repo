@@ -55,6 +55,7 @@ There are several packages available to [install](/index.php/Install "Install") 
 *   [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/) – nightly build.
 *   [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) – patched stable release with [VA-API](#Hardware_video_acceleration).
 *   [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) – patched stable release with [VA-API](#Hardware_video_acceleration), pre-compiled.
+*   [chromium-ozone](https://aur.archlinux.org/packages/chromium-ozone/) – stable release compiled with wayland support via ozone
 
 Google Chrome packages:
 
@@ -161,6 +162,8 @@ Chromium can save incorrect data about your GPU in your user profile (e.g. if yo
 Chromium will automatically scale for a [HiDPI](/index.php/HiDPI "HiDPI") display, however this may cause an incorrect renderend GUI.
 
 The flag `--force-device-scale-factor=1` may be used to overrule the automatic scaling factor.
+
+On Wayland, the [chromium-ozone](https://aur.archlinux.org/packages/chromium-ozone/) package will automatically scale based on the configured scale of each monitor.
 
 ### Password prompt on every start with GNOME Keyring
 

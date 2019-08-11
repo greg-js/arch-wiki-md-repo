@@ -161,27 +161,7 @@ Option "DRI" "3"
 
 ### Variable refresh rate
 
-Variable refresh rate (also known as FreeSync) allows the monitor to adjust its refresh rate to the output signal. This allows for games to eliminate screen tearing with less of the usual downsides of vsync (such as stuttering):
-
-```
-Option "VariableRefresh" "true"
-
-```
-
-**Note:**
-
-*   The monitor and GPU need to support FreeSync and be connected over DisplayPort. HDMI is not supported.
-*   Only OpenGL applications can be adaptively refreshed. RADV [Vulkan](/index.php/Vulkan "Vulkan") does not (yet) support FreeSync.
-*   Mesa has blacklisted various desktop compositors, web browsers, and media players from enabling FreeSync support.
-
-Verify *vrr_capable* is set to *1* using [xrandr](/index.php/Xrandr "Xrandr"):
-
- `$ xrandr --props` 
-```
-vrr_capable: 1
-        range: (0, 1)
-
-```
+See [Variable refresh rate](/index.php/Variable_refresh_rate "Variable refresh rate").
 
 ## Features
 

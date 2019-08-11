@@ -70,7 +70,7 @@ sendo que `*X*` e `*N*` são a letra do dispositivo e o número da partição, r
 
 *   Se o parâmetro `compress` estiver definido como `y`, as ferramentas *s2disk* e *resume* usarão o algoritmo de compactação LZF para compactar/descompactar a imagem.
 
-*   Se `splash` estiver definido como `y`, *s2disk* e/ou *resume* usarão um sistema inicial. Atualmente, há suporte a *splashy* e [fbsplash](https://www.archlinux.org/packages/?name=fbsplash), mas *splashy* não está disponível no Arch Linux.
+*   Se `splash` estiver definido como `y`, *s2disk* e/ou *resume* usarão um sistema inicial. Atualmente, há suporte a *splashy* e [fbsplash](https://aur.archlinux.org/packages/fbsplash/), mas *splashy* não está disponível no Arch Linux.
     **Nota:** Isso exige opções adicionais ao `configure` para µswsusp (`--enable-splashy` e `--enable-fbsplash`, respectivamente).
 
 *   A opção `resume pause` introduzirá um atraso depois de retomar com sucesso da hibernação, para permitir que o usuário leia as estatísticas (velocidade de leitura e gravação, tamanho da imagem, etc.)

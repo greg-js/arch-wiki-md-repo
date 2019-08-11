@@ -33,15 +33,10 @@
     *   [7.1 Search engines search for *undefined*](#Search_engines_search_for_undefined)
     *   [7.2 Fuzzy font in Github](#Fuzzy_font_in_Github)
     *   [7.3 HTML5 media](#HTML5_media)
-*   [8 dwb-git](#dwb-git)
-    *   [8.1 Plugin Support](#Plugin_Support)
-        *   [8.1.1 Flash Support](#Flash_Support)
-        *   [8.1.2 Java Support](#Java_Support)
-    *   [8.2 Improved Ability to Display Websites](#Improved_Ability_to_Display_Websites)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dwb](https://aur.archlinux.org/packages/dwb/) package. Alternatively, install the [dwb-git](https://aur.archlinux.org/packages/dwb-git/) package for the development version.
+[Install](/index.php/Install "Install") the [dwb-git](https://aur.archlinux.org/packages/dwb-git/) package for the development version.
 
 ## Basic usage
 
@@ -321,7 +316,7 @@ Signal.connect("navigation", function (wv, frame, request) {
 
 ### mpv.sh
 
-The [vv](/index.php?title=Vv&action=edit&redlink=1 "Vv (page does not exist)") keybind will open the URL of current page with mpv, works with You Tube, Dailymotion, Vodlocker and many more video streaming services. (uses [mpv](https://www.archlinux.org/packages/?name=mpv) [libnotify](https://www.archlinux.org/packages/?name=libnotify) [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)).
+The `vv` keybind will open the URL of current page with mpv, works with You Tube, Dailymotion, Vodlocker and many more video streaming services. (uses [mpv](https://www.archlinux.org/packages/?name=mpv) [libnotify](https://www.archlinux.org/packages/?name=libnotify) [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)).
 
  `~/.config/dwb/userscripts/mpv.sh` 
 ```
@@ -376,7 +371,7 @@ If you are always searching for *undefined* even with the `searchengine-submit-p
 
 ### Fuzzy font in Github
 
-Install [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) or add this in your `~/.config/fontconfig/fonts.conf` inside the fontconfig-tags:
+Install [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts) or add this in your `~/.config/fontconfig/fonts.conf` inside the fontconfig-tags:
 
 ```
  <selectfont>
@@ -396,25 +391,3 @@ If above solution doesn't help try to remove `xorg-fonts-75dpi` and `xorg-fonts-
 ### HTML5 media
 
 See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins").
-
-## dwb-git
-
-[dwb-git](https://aur.archlinux.org/packages/dwb-git/) offers many improvements over the stable version, the most notable of which are listed below.
-
-**Note:** As of May 4th, 2015, the official [dwb](https://aur.archlinux.org/packages/dwb/) package should contain all those features, and more.
-
-### Plugin Support
-
-Browser Plugins can be enabled and disabled through the new [dwb:plugins dwb:plugins] settings page. Other [Browser plugins](/index.php/Browser_plugins "Browser plugins") may be supported as well, but these two alone will make your dwb experience much more enjoyable.
-
-#### Flash Support
-
-[dwb-git](https://aur.archlinux.org/packages/dwb-git/) has built in support for the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). Dwb should auto-detect and enabled the plugin after it is installed. Alternatively, you can install [gnash-gtk](https://aur.archlinux.org/packages/gnash-gtk/) and it will be detected as well.
-
-#### Java Support
-
-[dwb-git](https://aur.archlinux.org/packages/dwb-git/) has built in support for the [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web). Dwb should auto-detect and enable the plugin after it is installed.
-
-### Improved Ability to Display Websites
-
-If you are having problems with they layout of websites not loading correctly then give [dwb-git](https://aur.archlinux.org/packages/dwb-git/) a shot.

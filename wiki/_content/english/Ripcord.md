@@ -32,6 +32,8 @@ For further updates and information, see the relevant [ticket](https://dev.cance
 
 **Warning:** The following hack is not supported or guaranteed to work in any way.
 
+**Note:** Recent versions of Arch have broken QT backwards compatibility, making this no longer work.
+
 The Ripcord AppImage bundles its own copy of required libraries, which are also used by the AUR package. It is however possible to force the program to load libraries preexisting in the system. The main advantage of this is better integration with the [desktop environment](/index.php/Desktop_environment "Desktop environment") and Arch as a whole. The main disadvantage is that system libraries might be incompatible with the Ripcord release in use.
 
 Proceed as follows:

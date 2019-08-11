@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=575582) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Broadcom_wireless&diff=0&oldid=579270) na versão em inglês.
 
 Artigos relacionados
 
@@ -89,6 +89,7 @@ Existem duas variantes do driver licenciado restrito:
 
 *   é agnóstico a kernel. Significa que ela possui suporte a diferentes kernels que você possa usar (e.g. [linux-ck](https://aur.archlinux.org/packages/linux-ck/)).
 *   é agnóstica a lançamento de kernel também. Ela será recompilada automaticamente após cada atualização de kernel ou nova instalação. Se você usa [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) ou outra variante dependente de lançamento de kernel (p.ex., [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), pode acontecer de atualizações do kernel atrapalharem o funcionamento da rede sem fim de tempo em tempo até que o pacote seja sincronizado novamente.
+*   vai precisar do pacote [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) para o(s) kernel(s) instalado(s) para compilar o módulo. Esses pacotes são opcionais para o pacote DKMS e precisarão ser instalados manualmente.
 
 #### Instalação offline
 

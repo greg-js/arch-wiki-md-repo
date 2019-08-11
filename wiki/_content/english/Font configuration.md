@@ -507,7 +507,7 @@ Look up the meaning of the numbers at [fonts-conf(5)](https://jlk.fjfi.cvut.cz/a
 
 ## Applications without fontconfig support
 
-Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
+Some applications like [URxvt](/index.php/URxvt "URxvt") will ignore fontconfig settings. You can work around this by using `~/.Xresources`, but it is not as flexible as fontconfig. Example (see [#Fontconfig configuration](#Fontconfig_configuration) for explanations of the options):
 
  `~/.Xresources` 
 ```

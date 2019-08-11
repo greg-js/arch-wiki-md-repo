@@ -6,23 +6,23 @@
 
 ## Реализации
 
-*   **Bigloo** — Быстрый компилятор Scheme
+*   **Bigloo** — быстрый компилятор Scheme
 
 	[https://www-sop.inria.fr/mimosa/fp/Bigloo/](https://www-sop.inria.fr/mimosa/fp/Bigloo/) || [bigloo](https://www.archlinux.org/packages/?name=bigloo)
 
-*   **CHICKEN** — Многофункциональный компилятор и интерпретатор R5RS Scheme
+*   **CHICKEN** — многофункциональный компилятор и интерпретатор R5RS Scheme
 
 	[http://call-cc.org/](http://call-cc.org/) || [chicken](https://www.archlinux.org/packages/?name=chicken)
 
-*   **Gambit Scheme** — Интерпретатор и компилятор Scheme R5RS
+*   **Gambit Scheme** — интерпретатор и компилятор Scheme R5RS
 
 	[http://gambitscheme.org/](http://gambitscheme.org/) || [gambit-c](https://www.archlinux.org/packages/?name=gambit-c)
 
-*   **Gauche** — Реализация R5RS Scheme (предоставляет gosh)
+*   **Gauche** — реализация R5RS Scheme (предоставляет gosh)
 
 	[https://practical-scheme.net/gauche/](https://practical-scheme.net/gauche/) || [gauche](https://www.archlinux.org/packages/?name=gauche)
 
-*   **Guile** — Переносимая, встраиваемая реализация Scheme на языке C
+*   **Guile** — переносимая, встраиваемая реализация Scheme на языке C
 
 	[https://www.gnu.org/software/guile/](https://www.gnu.org/software/guile/) || [guile](https://www.archlinux.org/packages/?name=guile)
 
@@ -30,6 +30,6 @@
 
 	[https://www.gnu.org/software/mit-scheme/](https://www.gnu.org/software/mit-scheme/) || [mit-scheme](https://www.archlinux.org/packages/?name=mit-scheme)
 
-*   **Racket** — Язык программирования для выполнения широкого спектра задач, ранее известный как PLT Scheme. Поставляется вместе с DrRacket IDE.
+*   **Racket** — язык программирования для выполнения широкого спектра задач, ранее известный как PLT Scheme. Поставляется вместе с DrRacket IDE.
 
 	[https://racket-lang.org/](https://racket-lang.org/) || [racket](https://www.archlinux.org/packages/?name=racket)

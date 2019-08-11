@@ -727,7 +727,7 @@ If attaching a USB device to the guest causes a crash or any other erroneous beh
 
 ### Access serial port from guest
 
-Check you permission for the serial port:
+Check your permission for the serial port:
 
  `$ ls -l /dev/ttyS*` 
 ```

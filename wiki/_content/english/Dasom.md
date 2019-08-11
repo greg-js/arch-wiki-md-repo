@@ -9,9 +9,15 @@ Related articles
 
 **Warning:** Dasom is no longer maintained, last update was 2016.[[1]](https://github.com/dasom-im)
 
+**Note:** Use [nimf](/index.php/Nimf "Nimf") instead,it's a fork of Dasom.[[2]](https://gitlab.com/nimf-i18n/nimf)
+
 [Dasom](https://dasom-im.github.io) is a multilingual [input method framework](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Input method engines](#Input_method_engines)

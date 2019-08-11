@@ -63,7 +63,7 @@ See the man page for tabbed for more details and possibilities.
 
 ### Fuzzy font in Github
 
-Install [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) or add this in your `~/.config/fontconfig/fonts.conf` inside the fontconfig-tags:
+Install [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts) or add this in your `~/.config/fontconfig/fonts.conf` inside the fontconfig-tags:
 
 ```
  <selectfont>

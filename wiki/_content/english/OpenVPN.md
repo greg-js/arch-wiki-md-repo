@@ -785,6 +785,14 @@ down-pre
 
 ```
 
+In order to send all DNS traffic through the VPN tunnel and prevent DNS leaks, also add the following line (see [[7]](https://github.com/jonathanio/update-systemd-resolved#dns-leakage)):
+
+ `/etc/openvpn/client/client.conf` 
+```
+dhcp-option DOMAIN-ROUTE .
+
+```
+
 Make sure that the [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") service is configured and running.
 
 ### Override DNS servers using NetworkManager
@@ -793,7 +801,7 @@ By default [networkmanager-openvpn](https://www.archlinux.org/packages/?name=net
 
 The NetworkManager GUI does not provide any way to change this behavior, but it is possible to [completely override](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1211110/comments/92) DNS using connection configuration file.
 
-If the override is applied, queries for non-public DNS records are sent to the external resolver, see [[7]](https://bugs.launchpad.net/network-manager/+bug/1624317).
+If the override is applied, queries for non-public DNS records are sent to the external resolver, see [[8]](https://bugs.launchpad.net/network-manager/+bug/1624317).
 
 To use DNS settings provided by the VPN connection add `dns-priority=-1` ([ipv4 section](https://developer.gnome.org/NetworkManager/stable/settings-ipv4.html)) to the file located at `/etc/NetworkManager/system-connections/*your_vpn_name*`, where `*your_vpn_name*` is the name of your VPN connection.
 

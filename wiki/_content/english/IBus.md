@@ -67,7 +67,7 @@ There are several other vietnamese IME with [ibus-m17n](https://www.archlinux.or
 
 #### Others
 
-*   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) - Korean IME, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
+*   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) - Korean IME, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul). Manage several dubeolsik and sebeolsik keyboards variants and ahnmatae keyboard. Can be switched in hanja mode both with hanja key and F9 by default.
 *   [ibus-table](https://www.archlinux.org/packages/?name=ibus-table) - IME that accommodates table-based IMs.
 *   [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) - M17n IME which allows input of many languages using the input methods from [m17n-db](https://www.archlinux.org/packages/?name=m17n-db).
 *   [ibus-kmfl](https://aur.archlinux.org/packages/ibus-kmfl/) - Linux port of [Keyman](https://keyman.com/) input method for Windows which supports over 1,000 languages, such as complex scripts, languages of minorities, and IPA symbols. Only part of them is available in KMFL as it can work with uncompiled layout description only (*.kmn files).

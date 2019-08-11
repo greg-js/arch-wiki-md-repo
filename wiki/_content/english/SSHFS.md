@@ -5,7 +5,7 @@ Related articles
 *   [Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")
 *   [sftpman](/index.php/Sftpman "Sftpman")
 
-[SSHFS](https://github.com/libfuse/sshfs) is a FUSE-based filesystem client for mounting remote directories over a [Secure Shell](/index.php/Secure_Shell "Secure Shell") connection.
+[SSHFS](https://github.com/libfuse/sshfs) is a [FUSE](/index.php/FUSE "FUSE")-based filesystem client for mounting remote directories over a [Secure Shell](/index.php/Secure_Shell "Secure Shell") connection.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

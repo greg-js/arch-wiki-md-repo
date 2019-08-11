@@ -81,7 +81,7 @@ There are no exclusive hardware differences between the *Developer Edition* and 
 
 The latest BIOS update is [A19](https://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=TRF18) and it was released on 15th February 2019\. With version A02 or newer, almost everything should work out-of-the-box and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
 
-BIOS upgrade is easy, thanks to the EFI implementation: place the update binary in the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
+BIOS upgrade is easy, thanks to the EFI implementation: place the update binary (the just downloaded `.exe` file) in the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
 
 ### Screen and Keyboard Backlight
 

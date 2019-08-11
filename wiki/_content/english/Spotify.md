@@ -331,7 +331,7 @@ GLib.MainLoop().run()
 
 ### Mute commercials
 
-**Warning:** Muting commercials is not supported by Spotfiy and may result in a temporary ban [[2]](https://www.theverge.com/2018/3/5/17080920/spotify-cracking-down-pirating-premium-free-account)
+**Warning:** Muting commercials is not supported by Spotify and may result in a temporary ban [[2]](https://www.theverge.com/2018/3/5/17080920/spotify-cracking-down-pirating-premium-free-account)
 
 #### blockify
 

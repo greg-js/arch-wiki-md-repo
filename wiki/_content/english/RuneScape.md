@@ -13,6 +13,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
     *   [1.2 Rsu-client](#Rsu-client)
     *   [1.3 OSBuddy (Old School RuneScape only)](#OSBuddy_(Old_School_RuneScape_only))
     *   [1.4 RuneLite (Old School RuneScape only)](#RuneLite_(Old_School_RuneScape_only))
+        *   [1.4.1 GPU Plugin](#GPU_Plugin)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Audio issues](#Audio_issues)
     *   [2.2 SSL errors](#SSL_errors)
@@ -35,7 +36,11 @@ Install the official RuneScape NXT client with the [runescape-launcher](https://
 
 ### RuneLite (Old School RuneScape only)
 
-[RuneLite](https://runelite.net/) is an open-source alternative to other third-party Old School RuneScape clients. It is available on the AUR: [runelite](https://aur.archlinux.org/packages/runelite/)
+[RuneLite](https://runelite.net/) is an open-source alternative to other third-party Old School RuneScape clients. It is available on the AUR: [runelite](https://aur.archlinux.org/packages/runelite/).
+
+#### GPU Plugin
+
+To enable the GPU feature within RuneLite, ensure you meet the [requirements](https://github.com/runelite/runelite/wiki/GPU-FAQ) and have updated to the latest version of [mesa](https://www.archlinux.org/packages/?name=mesa).
 
 ## Troubleshooting
 

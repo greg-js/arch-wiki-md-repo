@@ -19,11 +19,12 @@ Also note that x11vnc is not shipped with a client viewer. Any VNC viewer should
     *   [1.2 Starting](#Starting)
         *   [1.2.1 Setting X authority](#Setting_X_authority)
             *   [1.2.1.1 Start X](#Start_X)
-            *   [1.2.1.2 GDM](#GDM)
-            *   [1.2.1.3 Lightdm](#Lightdm)
-            *   [1.2.1.4 LXDM](#LXDM)
-            *   [1.2.1.5 SDDM](#SDDM)
-            *   [1.2.1.6 SLIM](#SLIM)
+            *   [1.2.1.2 Running from xinetd](#Running_from_xinetd)
+            *   [1.2.1.3 GDM](#GDM)
+            *   [1.2.1.4 Lightdm](#Lightdm)
+            *   [1.2.1.5 LXDM](#LXDM)
+            *   [1.2.1.6 SDDM](#SDDM)
+            *   [1.2.1.7 SLIM](#SLIM)
     *   [1.3 Setting a password](#Setting_a_password)
     *   [1.4 Running constantly](#Running_constantly)
     *   [1.5 Accessing](#Accessing)
@@ -78,6 +79,31 @@ If that fails, you may have to run instead (as root):
 ```
 
 Where *user* is the username of the user who is running the X server.
+
+##### Running from xinetd
+
+X11vnc can be run using a xinetd service, which only starts X11vnc once a user connects.
+
+Create an xinetd service entry for x11vnc, for example:
+
+ `/etc/xinetd/x11vnc` 
+```
+service x11vncservice
+{
+       port            = 5900
+       type            = UNLISTED
+       socket_type     = stream
+       protocol        = tcp
+       wait            = no
+       user            = root
+       server          = /usr/bin/x11vnc
+       server_args     = -inetd -o /var/log/x11vnc.log -noxdamage -display :0 -auth guess
+       disable         = no
+}
+
+```
+
+After reloading `xinetd.service`, X11vnc will start once a client connects to port 5900.
 
 ##### GDM
 

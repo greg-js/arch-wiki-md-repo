@@ -36,9 +36,10 @@ Running `resolvconf -u` will generate `/etc/resolv.conf`.
 
 ## Users
 
-Stand-alone [DHCP](/index.php/DHCP "DHCP") clients:
+[DHCP](/index.php/DHCP "DHCP") clients:
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") has a hook which uses *resolvconf* if it is installed.
+*   [iwd#Enable built-in network configuration](/index.php/Iwd#Enable_built-in_network_configuration "Iwd")
 
 [Network managers](/index.php/Network_manager "Network manager"):
 

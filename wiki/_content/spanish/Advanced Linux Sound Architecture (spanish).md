@@ -1142,7 +1142,7 @@ Si tiene saltos de sonido al reproducir archivos MP3 y tiene más de dos altavoc
 
 ### Auriculares USB y tarjetas de sonido externas USB
 
-Si está usando un auricular USB con ALSA puede probar a usar [asoundconf](https://aur.archlinux.org/packages/asoundconf/) (actualmente solo disponible en [AUR](/index.php/AUR "AUR")) para ajustar el auricular como salida de sonido principal. Antes de proseguir, asegúrese de tener el módulo usb audio habilitado (`modprobe snd-usb-audio`).
+Si está usando un auricular USB con ALSA puede probar a usar [asoundconf](https://www.archlinux.org/packages/?name=asoundconf) (actualmente solo disponible en [AUR](/index.php/AUR "AUR")) para ajustar el auricular como salida de sonido principal. Antes de proseguir, asegúrese de tener el módulo usb audio habilitado (`modprobe snd-usb-audio`).
 
 ```
 # asoundconf is-active

@@ -11,8 +11,8 @@
 | Bluetooth | Working |
 | Function keys | Working |
 | Fingerprint Sensor | Partially working |
-| Ambient Light Sensor | Not working |
-| Battery charge threshold | Not working |
+| Ambient Light Sensor | Partially working |
+| Battery charge threshold | Working |
 
 ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia GPU), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
 
@@ -28,6 +28,8 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [1.3 Audio](#Audio)
     *   [1.4 Touchpad](#Touchpad)
     *   [1.5 Fingerprint sensor](#Fingerprint_sensor)
+    *   [1.6 Ambient Light Sensor](#Ambient_Light_Sensor)
+    *   [1.7 Battery charge threshold](#Battery_charge_threshold)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Headphones audio is too low](#Headphones_audio_is_too_low)
     *   [2.2 Microcode](#Microcode)
@@ -64,7 +66,43 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 **Note:** This is likely not going to work at all. See [Talk:ASUS Zenbook UX430/UX530#Fingerprint Reader](/index.php/Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader "Talk:ASUS Zenbook UX430/UX530").
 
-Install fingerprint sensor driver [libfprint-elantech-git](https://aur.archlinux.org/packages/libfprint-elantech-git/), then see [Fprint](/index.php/Fprint "Fprint") and you might be also interested in [Fingerprint GUI](/index.php/Fingerprint_GUI "Fingerprint GUI").
+The fingerprint sensor is supported since [Fprint](/index.php/Fprint "Fprint") v0.99.0, even through it is supported it doesn't work reliably. This is due to the fingerprint small sensor[[1]](https://github.com/iafilatov/libfprint/tree/e459992e76ab322d9f92e1885215f2da7c1d0a59#common-problems).
+
+## Ambient Light Sensor
+
+The Ambient Light Sensor should work on UX430UQ[[2]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=db2582afa7444a0ce6bb1ebf1431715969a10b06) and a patch for UX430UNR is available[[3]](https://www.spinics.net/lists/platform-driver-x86/msg19357.html).
+
+## Battery charge threshold
+
+**Note:** The following has been tested on a Zenbook UX430UNR with BIOS version 308.
+
+Most newer Zenbooks supports specifying a charge stop threshold (see [ASUS Battery Health Charging](https://www.asus.com/us/support/FAQ/1032726/) for more information).
+
+The battery charge stop threshold can be set by modifying the EC registers, which can be done with [acpi_call](https://www.archlinux.org/packages/?name=acpi_call). Finding the correct EC register to modify, is the tricky part.
+
+You can check the current threshold and battery percent, with the following commands:
+
+```
+$ read () { echo "${1}" > /proc/acpi/call; printf "%d
+" $(sed 's/\x0.*//g' /proc/acpi/call); }
+$ read "\_SB.PCI0.LPCB.EC0.RRAM 0x3af"
+100 # Percent at which the battery will stop charging (default is 100)
+$ read "\_SB.PCI0.LPCB.EC0.RRAM 0x3b0"
+80 # current battery percent, should match: cat /sys/class/power_supply/BAT0/capacity
+```
+
+**Warning:** Do not proceed if the commands don't return the expected values!
+
+The threshold can be changed with the following command (the threshold is reset when the computer is power cycled):
+
+ `$ echo "\_SB.PCI0.LPCB.EC0.WRAM 0x3af <battery percent in hex, ex: 0x50 for 80%>" > /proc/acpi/call` 
+
+The hex value can be found with `printf "0x%x
+" 80`.
+
+To change the threshold at boot it is possible to use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd").
+
+ `/etc/tmpfiles.d/battery.conf`  `w /proc/acpi/call - - - - \\_SB.PCI0.LPCB.EC0.WRAM 0x3af 0x50 # 80%` 
 
 # Troubleshooting
 

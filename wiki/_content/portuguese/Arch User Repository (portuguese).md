@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=576622) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=577636) na versão em inglês.
 
 Artigos relacionados
 
@@ -62,7 +62,7 @@ Os usuários podem pesquisar e baixar os [PKGBUILDs](/index.php/PKGBUILD_(Portug
 
 *   Certifique-se de que o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está todo instalado (`pacman -S --needed base-devel`).
 *   Veja o [#FAQ](#FAQ) para respostas das questões mais comuns.
-*   Você pode querer ajustar `/etc/makepkg.conf` para melhor otimizar a prioridade do seu processador para a construção dos pacotes do AUR. Uma melhora significante nos tempos de compilação pode ser realizada nos sistemas com processadores multi-cores ao ajustar a variável `MAKEFLAGS`. Os usuários também podem habilitar otimizações específicas de hardware no [GCC](/index.php/GCC "GCC") por meio da variável `CFLAGS`. Veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") para mais informações.
+*   Você pode querer ajustar `/etc/makepkg.conf` para melhor otimizar a prioridade do seu processador para a construção dos pacotes do AUR. Uma melhora significante nos tempos de compilação pode ser realizada nos sistemas com processadores multi-cores ao ajustar a variável `MAKEFLAGS`. Os usuários também podem habilitar otimizações específicas de hardware no [GCC](/index.php/GCC_(Portugu%C3%AAs) "GCC (Português)") por meio da variável `CFLAGS`. Veja [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") para mais informações.
 
 Também é possível interagir com o AUR por meio de SSH: digite `ssh aur@aur.archlinux.org help` para uma lista de comandos disponíveis.
 
@@ -91,6 +91,8 @@ A instalação de pacotes do AUR é um processo relativamente simples. Essencial
 ### Pré-requisitos
 
 Primeiro, certifique-se de que as ferramentas necessárias estão instaladas, [instalando](/index.php/Instale "Instale") todo o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), o qual inclui [make](https://www.archlinux.org/packages/?name=make) e outras ferramentas necessárias para a compilação do código-fonte.
+
+**Dica:** Use a opção `--needed` ao instalar o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) para ignorar pacotes que você já tem instalados, em vez de reinstalá-los.
 
 **Nota:** Os pacotes do AUR presumem que o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) está instalado, isto é, eles não listarão explicitamente os membros deste grupo como dependências
 

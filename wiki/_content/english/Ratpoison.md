@@ -1,6 +1,12 @@
 [Ratpoison](http://www.nongnu.org/ratpoison/) is a tiling [window manager](/index.php/Window_manager "Window manager") written in C that allows the user to manage applications without a mouse. The user interface is inspired by [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
+By default, Ratpoison controls in much the same way as Emacs. Commands begin by pressing `Ctrl t`, and are then followed by another combination such as `Ctrl Space` to move to the next window.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

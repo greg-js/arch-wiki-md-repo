@@ -380,7 +380,7 @@ See [GnuPG#Smartcards](/index.php/GnuPG#Smartcards "GnuPG")
 
 ### Using a YubiKey with SSH
 
-The following example describes how to use a YubiKey for [SSH keys](/index.php/SSH_keys "SSH keys"). A YubiKey with the PIV (Personal Identification Verification) application is required; this means you need a YubiKey 4 or later.
+The following example describes how to use a YubiKey for [SSH keys](/index.php/SSH_keys "SSH keys"). A YubiKey with the PIV (Personal Identification Verification) application is required; this means you need a YubiKey NEO or YubiKey 4 or later.
 
 #### Generating a key pair on the YubiKey
 

@@ -4,13 +4,18 @@ Possiamo distinguere e definire due categorie di programmi, per lo meno relativi
 
 Iniziamo con i programmi agenti.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Programmi Agenti](#Programmi_Agenti)
     *   [1.1 Temperature](#Temperature)
     *   [1.2 Pulsanti di Alimentazione](#Pulsanti_di_Alimentazione)
     *   [1.3 Ram](#Ram)
     *   [1.4 Hard Disk](#Hard_Disk)
+    *   [1.5 Hardware probe](#Hardware_probe)
 *   [2 Frontend](#Frontend)
 
 ## Programmi Agenti
@@ -128,6 +133,15 @@ Così facendo istruiamo smartmontools a fare un controllo del disco ogni giorno 
 
 ```
 
+### Hardware probe
+
+Vedi questa pagina: [Hw-probe](/index.php/Hw-probe "Hw-probe")
+
+```
+   hw-probe -all -check -upload
+
+```
+
 ## Frontend
 
 Parliamo ora dei frontend. Ci sono 3 modi principali per monitorare quanto installato. La scelta è tra le applet del pannello del vostro DE scelto, **conky** oppure **gkrellm**.
@@ -149,7 +163,7 @@ Per concludere, propongo un esempio di array modules e daemons presenti in /etc/
 
 ```
 MODULES=(8139too mii i2c-i801 eeprom w83627ehf capability thermal)
-DAEMONS=(@syslog-ng @network !netfs @crond alsamixer @hal @dbus @acpid @smartd @apcupsd @hddtemp)
+DAEMONS=(@syslog-ng @network !netfs @crond alsamixer @hal @dbus @acpid @smartd @apcupsd @hddtemp)
 
 ```
 

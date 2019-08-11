@@ -2600,6 +2600,13 @@ Dependencies:
 
 #### Game does not start
 
+The game will not start with SDL set to use wayland. You can have only the game run in x11 by adding the following launch options in steam:
+
+```
+$ SDL_VIDEODRIVER=x11 %command%
+
+```
+
 If the game does not run, enable error messages:
 
 ```

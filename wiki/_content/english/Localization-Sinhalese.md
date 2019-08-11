@@ -17,7 +17,7 @@ This article describes how to get [Sinhalese](https://en.wikipedia.org/wiki/Sinh
 For Sinhala support, you can install any of these [fonts](/index.php/Fonts "Fonts"):
 
 *   [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts) - Noto Sans Sinhala, a sans serif font.
-*   [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) - FreeSerif, a serif font.
+*   [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts) - FreeSerif, a serif font.
 *   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - LKLUG, a serif font.
 
 ### Guide to install Sinhala Unicode Font

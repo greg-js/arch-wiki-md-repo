@@ -8,7 +8,7 @@
 | [Fingerprint Sensor](/index.php/Fprint "Fprint") | ? |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| Smartcard Reader | ? |
+| [Smartcard Reader](/index.php/Smartcards "Smartcards") | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T495s laptop. Almost everything seems to work pretty much out the box. Yet untested: wwan, smartcardreader
 
@@ -24,6 +24,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [2 AMD Graphics](#AMD_Graphics)
 *   [3 Fingerprint reader](#Fingerprint_reader)
 *   [4 Backlight](#Backlight)
+*   [5 Smartcard Reader](#Smartcard_Reader)
 
 ## Hardware
 
@@ -103,3 +104,7 @@ Fingerprint sensor 06cb:00bd is not supported by libfprint right now. There is s
 Backlight works correctly by manipulating the values, between 0-255, inside `/sys/class/backlight/amdgpu_bl0/brightness` or using a backlight managing utility.
 
 `systemd-backlight@backlight:acpi_video0.service` requires [masking](/index.php/Systemd#Using_units "Systemd") as it seems to be triggered and fails on boot.
+
+## Smartcard Reader
+
+Seems to work and read cards. Following instructions from [smartcards](/index.php/Smartcards "Smartcards").

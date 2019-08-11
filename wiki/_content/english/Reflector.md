@@ -161,6 +161,5 @@ To update the mirrorlist daily, consider the following:
 /usr/bin/reflector -c "India" -p http --sort rate > /etc/pacman.d/mirrorlist
 
 # Work through the alternatives
-/usr/bin/reflector -p http  --latest 20 -p https -p ftp --sort rate >> /etc/pac
-man.d/mirrorlist
+/usr/bin/reflector -p http  --latest 20 -p https -p ftp --sort rate >> /etc/pacman.d/mirrorlist
 ```

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=576564) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=579324) na versão em inglês.
 
 Artigos relacionados
 
@@ -112,7 +112,14 @@ Selecione a sessão: *GNOME*, *GNOME Clássico* ou *GNOME sobre Xorg* a partir d
     exec gnome-session --session=gnome-classic
     ```
 
-Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `startx` (veja [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para detalhes adicionais, tal como preservar a sessão de logind). Após configurar o arquivo `~/.xinitrc`, também é possível ser arranjado para [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login").
+Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `startx` (veja [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para detalhes adicionais, tal como preservar a sessão de logind). Após configurar o arquivo `~/.xinitrc`, também é possível ser arranjado para [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login"),por exemplo no tty2 adicionando ao `.bash_profile`:
+
+```
+if [[ -z $DISPLAY && $(tty) == /dev/tty2; ]]; then
+  GDK_BACKEND=x11 exec startx
+fi
+
+```
 
 #### Sessões Wayland
 
@@ -126,8 +133,8 @@ Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=waylan
 Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 
 ```
-if [[ -z $DISPLAY && $(tty) == /dev/tty1 && ( -z $XDG_SESSION_TYPE || $XDG_SESSION_TYPE == tty )]]; then
-  QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
+   QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```

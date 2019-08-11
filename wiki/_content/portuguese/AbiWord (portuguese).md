@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=576055) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AbiWord](/index.php/AbiWord "AbiWord"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AbiWord&diff=0&oldid=579248) na versão em inglês.
 
 [AbiWord](http://www.abisource.com/) é um processador de texto que oferece uma alternativa mais leve para o [LibreOffice](/index.php/LibreOffice "LibreOffice") Writer e o [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, ao mesmo tempo em que fornece excelente funcionalidade. O AbiWord possui suporte a muitos tipos de documentos padrão, como documentos ODF, documentos do Microsoft Word, documentos do WordPerfect, documentos em formato Rich Text e páginas da Web em HTML.
 
@@ -23,7 +23,7 @@
 
 AbiWord pode usar vários dicionários de verificação ortográfica, veja [Verificação de idioma](/index.php/Verifica%C3%A7%C3%A3o_de_idioma "Verificação de idioma").
 
-Para corrigir pequenos problemas de cursor e texto desalinhado, instale [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) ou [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) e [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont).
+Para corrigir pequenos problemas de cursor e texto desalinhado, instale [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) ou [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) e [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts).
 
 ## Diretório de configuração do usuário
 

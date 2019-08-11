@@ -1,4 +1,4 @@
-Configure your Arch Linux machine so you can connect to it via the serial console port. This will enable you to administer the machine even if it has no keyboard, mouse, monitor, or network attached to it (a headless server).
+An Arch Linux machine can be configured for connections via the serial console port, which enables administration of a machine even if it has no keyboard, mouse, monitor, or network attached to it.
 
 Installation of Arch Linux is possible via the serial console as well.
 

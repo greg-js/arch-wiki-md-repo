@@ -102,9 +102,14 @@ If you want [OSS](/index.php/OSS "OSS") applications to work with [dmix](#Dmix),
 
 The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-state.service` by default.
 
-These are automatically installed and activated during installation. Therefore, there is no further action needed. Though, you can check their status using `systemctl`.
+These are automatically installed and activated during installation. Neither will run by default, as they rely on some conscious decisions by the user to know which method should be preferred. The options are as follows:
 
-**Note:** For reference, ALSA stores its settings in `/var/lib/alsa/asound.state`
+*   `alsa-restore.service` Reads `/var/lib/alsa/asound.state` on boot and writes updated values on shutdown, granted it is already present by having ran `alsactl store` at some point
+*   `alsa-state.service` (Re-)Starts alsactl in daemon mode to continouously keep track of, and persist, volume changes, again under the condition that the user has consciously started `alsactl daemon` at least once
+
+Both methods are mutually exclusive and you can decide for one of the two approaches depending on your requirements, for further information see [alsactl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alsactl.1)
+
+You can check their status using `systemctl`.
 
 ### ALSA Firmware
 
@@ -437,7 +442,7 @@ Now you can select the sound card when starting programs by just changing the en
 
 #### Alternative method
 
-**Tip:** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/).
+**Tip:** This process can be partly automated using [asoundconf](https://www.archlinux.org/packages/?name=asoundconf).
 
 First you will have to find out the card and device id that you want to set as the default:
 

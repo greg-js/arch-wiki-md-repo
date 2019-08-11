@@ -1,9 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=575995) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Java](/index.php/Java "Java"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java&diff=0&oldid=577395) na versão em inglês.
 
 Artigos relacionados
 
 *   [Diretrizes de pacotes Java](/index.php/Diretrizes_de_pacotes_Java "Diretrizes de pacotes Java")
-*   [Fontes do Java Runtime Environment](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [Fontes do Java Runtime Environment](/index.php/Java_Runtime_Environment_fonts "Java Runtime Environment fonts")
 
 Do [artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:Java_(linguagem_de_programa%C3%A7%C3%A3o) "wikipedia:pt:Java (linguagem de programação)"):
 

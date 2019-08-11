@@ -257,7 +257,7 @@ The easiest way to see if you were successful, is to install the [NVIDIA](/index
 [Wireless Setup](/index.php/Wireless_Setup "Wireless Setup") provides instructions on how to identify your card, but if your MacBook Pro 7,1 is like mine then you'll head to [Broadcom Wireless](/index.php/Broadcom_wireless "Broadcom wireless") and use this command.
 
 ```
-# lspci -vnn -d 14e4:
+$ lspci -vnn -d 14e4:
 
 ```
 

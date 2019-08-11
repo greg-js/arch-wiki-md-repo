@@ -2,7 +2,7 @@
 
 *   [Файловые системы](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [XFS](/index.php/XFS "XFS"). Дата последней синхронизации: 13 июля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=575925).
+**Состояние перевода:** На этой странице представлен перевод статьи [XFS](/index.php/XFS "XFS"). Дата последней синхронизации: 7 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=579083).
 
 XFS — высокопроизводительная журналируемая файловая система, созданная Silicon Graphics, Inc. XFS особенно хорошо справляется с параллельным вводом-выводом благодаря структуре на основе заголовков для групп (allocation groups), что обеспечивает исключительную масштабируемость потоков ввода-вывода, пропускной способности файловой системы, размера файлов и файловой системы при работе с несколькими устройствами хранения.
 
@@ -99,7 +99,7 @@ XFS — высокопроизводительная журналируемая 
 
 Если файловая система будет использоваться на чередующемся RAID-массиве, можно значительно повысить скорость, указав размер полосы (stripe) в команде [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8).
 
-Смотрите также [How to calculate the correct sunit,swidth values for optimal performance](http://xfs.org/index.php/XFS_FAQ#Q:_How_to_calculate_the_correct_sunit.2Cswidth_values_for_optimal_performance)
+XFS иногда определяет "геометрию" программного RAID-массива, но если она изменяется или используется аппаратный RAID, то см. статью "[How to calculate the correct sunit,swidth values for optimal performance](http://xfs.org/index.php/XFS_FAQ#Q:_How_to_calculate_the_correct_sunit.2Cswidth_values_for_optimal_performance)".
 
 ### Время доступа
 

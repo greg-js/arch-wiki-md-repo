@@ -24,6 +24,7 @@ Related articles
         *   [1.1.10 Helix Series](#Helix_Series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
+        *   [2.1.1 Battery Conservation Mode on IdeaPad laptops](#Battery_Conservation_Mode_on_IdeaPad_laptops)
     *   [2.2 B series](#B_series)
     *   [2.3 K series](#K_series)
     *   [2.4 N series](#N_series)
@@ -243,6 +244,26 @@ install CD version
 | Lenovo Ideapad 320 | 2018.03.01 | Yes | Yes | Yes | Yes | Not tested | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
 | Lenovo Ideapad N24 | 2018.04.01 | Yes | Yes | NA | Yes | Not tested | Not tested | NA | Touchscreen |
 
+###### Battery Conservation Mode on IdeaPad laptops
+
+Battery Conservation Mode is a feature that limits battery charging to 55-60% of its capacity to improve battery life, being most useful when the laptop tends to run on external power much of the time. If your particular laptop model supports it, it can be enabled or disabled in the following manner:
+
+	First make sure the **ideapad_laptop** kernel module is loaded, with the `lsmod` command.
+
+	If it is, run the following command as root to enable Battery Conservation Mode:
+
+```
+# echo 1 >/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+
+```
+
+	A 0 will in turn disable the feature.
+
+**Note:**
+
+*   Both the presence and implementation of this feature vary by model. Particularly, the name of the folder **VPC2004:00** could differ.
+*   If the above doesn't work on your laptop, you can try a different method described [here](https://forums.linuxmint.com/viewtopic.php?f=49&t=286237#p1583578), which may require some (further) trial and error.
+
 ### B series
 
 | Model version | Arch Linux
@@ -404,7 +425,7 @@ Solution: Update BIOS (at least 1.08).
 
 ### Lenovo IdeaPad V330-14ARR
 
-*   Lenovo only provide BIOS updates as a WinX64 package. The 3.05 release has been extracted and can be installed in DOS using H2OFFT-D.EXE and is available [online](https://drive.google.com/drive/folders/1IgwALJ_LLHY1nRbl3naNJU1QQ7l33Vrv?usp=sharing).
+*   Lenovo only provide BIOS updates as a WinX64 package. The 3.06 release has been extracted and can be installed in DOS using H2OFFT-D.EXE and is available [online](https://drive.google.com/drive/folders/1IgwALJ_LLHY1nRbl3naNJU1QQ7l33Vrv?usp=sharing).
 *   The installed wireless card (atheros based) has shown itself to be troublesome with many pci errors, most caught and corrected but very occasionally the card would fail to come up on boot or drop out during use. intel-9260 works with no errors (tested with bios 3.05) intel-9560 was not initialised by the bios.
 
 ## See also

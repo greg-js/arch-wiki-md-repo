@@ -9,80 +9,84 @@
 
 **注意:** 关于另一种声音体系，请阅读[开放声音系统（OSS）](/index.php/Open_Sound_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Open Sound System (简体中文)")的页面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 用户权限](#.E7.94.A8.E6.88.B7.E6.9D.83.E9.99.90)
-    *   [1.2 ALSA 工具](#ALSA_.E5.B7.A5.E5.85.B7)
-    *   [1.3 OSS 兼容性](#OSS_.E5.85.BC.E5.AE.B9.E6.80.A7)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+    *   [1.1 用户权限](#用户权限)
+    *   [1.2 ALSA 工具](#ALSA_工具)
+    *   [1.3 OSS 兼容性](#OSS_兼容性)
     *   [1.4 PulseAudio compatibility](#PulseAudio_compatibility)
-    *   [1.5 ALSA 和 Systemd](#ALSA_.E5.92.8C_Systemd)
+    *   [1.5 ALSA 和 Systemd](#ALSA_和_Systemd)
     *   [1.6 ALSA Firmware](#ALSA_Firmware)
-*   [2 解除各声道的静音](#.E8.A7.A3.E9.99.A4.E5.90.84.E5.A3.B0.E9.81.93.E7.9A.84.E9.9D.99.E9.9F.B3)
-    *   [2.1 测试你改变的设置](#.E6.B5.8B.E8.AF.95.E4.BD.A0.E6.94.B9.E5.8F.98.E7.9A.84.E8.AE.BE.E7.BD.AE)
-    *   [2.2 附加注释](#.E9.99.84.E5.8A.A0.E6.B3.A8.E9.87.8A)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 基本语法](#.E5.9F.BA.E6.9C.AC.E8.AF.AD.E6.B3.95)
-        *   [3.1.1 赋值与分隔符](#.E8.B5.8B.E5.80.BC.E4.B8.8E.E5.88.86.E9.9A.94.E7.AC.A6)
-        *   [3.1.2 数据类型](#.E6.95.B0.E6.8D.AE.E7.B1.BB.E5.9E.8B)
-        *   [3.1.3 操作模式](#.E6.93.8D.E4.BD.9C.E6.A8.A1.E5.BC.8F)
-            *   [3.1.3.1 使用“默认”节点的默认设备设定示例](#.E4.BD.BF.E7.94.A8.E2.80.9C.E9.BB.98.E8.AE.A4.E2.80.9D.E8.8A.82.E7.82.B9.E7.9A.84.E9.BB.98.E8.AE.A4.E8.AE.BE.E5.A4.87.E8.AE.BE.E5.AE.9A.E7.A4.BA.E4.BE.8B)
-        *   [3.1.4 嵌套](#.E5.B5.8C.E5.A5.97)
-        *   [3.1.5 引用配置文件](#.E5.BC.95.E7.94.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.2 设置默认声卡](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E5.A3.B0.E5.8D.A1)
-        *   [3.2.1 使用环境变量选择默认PCM设备](#.E4.BD.BF.E7.94.A8.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F.E9.80.89.E6.8B.A9.E9.BB.98.E8.AE.A4PCM.E8.AE.BE.E5.A4.87)
-        *   [3.2.2 另外一种方式](#.E5.8F.A6.E5.A4.96.E4.B8.80.E7.A7.8D.E6.96.B9.E5.BC.8F)
-    *   [3.3 确认所有声音模块都已经加载](#.E7.A1.AE.E8.AE.A4.E6.89.80.E6.9C.89.E5.A3.B0.E9.9F.B3.E6.A8.A1.E5.9D.97.E9.83.BD.E5.B7.B2.E7.BB.8F.E5.8A.A0.E8.BD.BD)
-    *   [3.4 启用 SPDIF 输出](#.E5.90.AF.E7.94.A8_SPDIF_.E8.BE.93.E5.87.BA)
-    *   [3.5 系统级均衡器](#.E7.B3.BB.E7.BB.9F.E7.BA.A7.E5.9D.87.E8.A1.A1.E5.99.A8)
-        *   [3.5.1 使用 AlsaEqual（包含界面）](#.E4.BD.BF.E7.94.A8_AlsaEqual.EF.BC.88.E5.8C.85.E5.90.AB.E7.95.8C.E9.9D.A2.EF.BC.89)
-            *   [3.5.1.1 管理 AlsaEqual 配置](#.E7.AE.A1.E7.90.86_AlsaEqual_.E9.85.8D.E7.BD.AE)
-        *   [3.5.2 使用 mbeq](#.E4.BD.BF.E7.94.A8_mbeq)
-*   [4 高质量重采样](#.E9.AB.98.E8.B4.A8.E9.87.8F.E9.87.8D.E9.87.87.E6.A0.B7)
-*   [5 上混和缩混](#.E4.B8.8A.E6.B7.B7.E5.92.8C.E7.BC.A9.E6.B7.B7)
-    *   [5.1 上混（upmixing）](#.E4.B8.8A.E6.B7.B7.EF.BC.88upmixing.EF.BC.89)
-    *   [5.2 缩混（downmixing）](#.E7.BC.A9.E6.B7.B7.EF.BC.88downmixing.EF.BC.89)
-*   [6 混音](#.E6.B7.B7.E9.9F.B3)
-    *   [6.1 手动启用 dmix](#.E6.89.8B.E5.8A.A8.E5.90.AF.E7.94.A8_dmix)
-*   [7 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [7.1 USB声卡热插拔](#USB.E5.A3.B0.E5.8D.A1.E7.83.AD.E6.8F.92.E6.8B.94)
-    *   [7.2 同时输出](#.E5.90.8C.E6.97.B6.E8.BE.93.E5.87.BA)
-    *   [7.3 键盘控制声音](#.E9.94.AE.E7.9B.98.E6.8E.A7.E5.88.B6.E5.A3.B0.E9.9F.B3)
-*   [8 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [8.1 Audigy 2 ZS 不发出声音](#Audigy_2_ZS_.E4.B8.8D.E5.8F.91.E5.87.BA.E5.A3.B0.E9.9F.B3)
-    *   [8.2 VirtualBox中无声音](#VirtualBox.E4.B8.AD.E6.97.A0.E5.A3.B0.E9.9F.B3)
-    *   [8.3 使用CPU频率动态调整时，音频发生跳跃](#.E4.BD.BF.E7.94.A8CPU.E9.A2.91.E7.8E.87.E5.8A.A8.E6.80.81.E8.B0.83.E6.95.B4.E6.97.B6.EF.BC.8C.E9.9F.B3.E9.A2.91.E5.8F.91.E7.94.9F.E8.B7.B3.E8.B7.83)
-    *   [8.4 同时只能有一个用户播放音频](#.E5.90.8C.E6.97.B6.E5.8F.AA.E8.83.BD.E6.9C.89.E4.B8.80.E4.B8.AA.E7.94.A8.E6.88.B7.E6.92.AD.E6.94.BE.E9.9F.B3.E9.A2.91)
-    *   [8.5 无法同时播放多个音频](#.E6.97.A0.E6.B3.95.E5.90.8C.E6.97.B6.E6.92.AD.E6.94.BE.E5.A4.9A.E4.B8.AA.E9.9F.B3.E9.A2.91)
-    *   [8.6 有时候开机无声](#.E6.9C.89.E6.97.B6.E5.80.99.E5.BC.80.E6.9C.BA.E6.97.A0.E5.A3.B0)
-    *   [8.7 特定程序的问题](#.E7.89.B9.E5.AE.9A.E7.A8.8B.E5.BA.8F.E7.9A.84.E9.97.AE.E9.A2.98)
-    *   [8.8 特定型号的配置](#.E7.89.B9.E5.AE.9A.E5.9E.8B.E5.8F.B7.E7.9A.84.E9.85.8D.E7.BD.AE)
-    *   [8.9 与蜂鸣器冲突](#.E4.B8.8E.E8.9C.82.E9.B8.A3.E5.99.A8.E5.86.B2.E7.AA.81)
-    *   [8.10 麦克风输入无声音](#.E9.BA.A6.E5.85.8B.E9.A3.8E.E8.BE.93.E5.85.A5.E6.97.A0.E5.A3.B0.E9.9F.B3)
-    *   [8.11 设置默认的麦克风/录音设备](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E7.9A.84.E9.BA.A6.E5.85.8B.E9.A3.8E.2F.E5.BD.95.E9.9F.B3.E8.AE.BE.E5.A4.87)
-    *   [8.12 内置麦克风无效](#.E5.86.85.E7.BD.AE.E9.BA.A6.E5.85.8B.E9.A3.8E.E6.97.A0.E6.95.88)
-    *   [8.13 Intel 板载声卡无声](#Intel_.E6.9D.BF.E8.BD.BD.E5.A3.B0.E5.8D.A1.E6.97.A0.E5.A3.B0)
-    *   [8.14 Intel 板载声卡耳机无声](#Intel_.E6.9D.BF.E8.BD.BD.E5.A3.B0.E5.8D.A1.E8.80.B3.E6.9C.BA.E6.97.A0.E5.A3.B0)
-    *   [8.15 消除耳机电流声的方法](#.E6.B6.88.E9.99.A4.E8.80.B3.E6.9C.BA.E7.94.B5.E6.B5.81.E5.A3.B0.E7.9A.84.E6.96.B9.E6.B3.95)
-    *   [8.16 安装支持 S/PDIF 输出的显卡后无声](#.E5.AE.89.E8.A3.85.E6.94.AF.E6.8C.81_S.2FPDIF_.E8.BE.93.E5.87.BA.E7.9A.84.E6.98.BE.E5.8D.A1.E5.90.8E.E6.97.A0.E5.A3.B0)
-    *   [8.17 音效差或卡顿](#.E9.9F.B3.E6.95.88.E5.B7.AE.E6.88.96.E5.8D.A1.E9.A1.BF)
-    *   [8.18 开始或停止音频播放时出现噪音](#.E5.BC.80.E5.A7.8B.E6.88.96.E5.81.9C.E6.AD.A2.E9.9F.B3.E9.A2.91.E6.92.AD.E6.94.BE.E6.97.B6.E5.87.BA.E7.8E.B0.E5.99.AA.E9.9F.B3)
-    *   [8.19 S/PDIF 输出无效](#S.2FPDIF_.E8.BE.93.E5.87.BA.E6.97.A0.E6.95.88)
-    *   [8.20 HDMI 输出无效](#HDMI_.E8.BE.93.E5.87.BA.E6.97.A0.E6.95.88)
-    *   [8.21 HDMI多通道PCM输出无法工作(Intel)](#HDMI.E5.A4.9A.E9.80.9A.E9.81.93PCM.E8.BE.93.E5.87.BA.E6.97.A0.E6.B3.95.E5.B7.A5.E4.BD.9C.28Intel.29)
+*   [2 解除各声道的静音](#解除各声道的静音)
+    *   [2.1 测试你改变的设置](#测试你改变的设置)
+    *   [2.2 附加注释](#附加注释)
+*   [3 配置](#配置)
+    *   [3.1 基本语法](#基本语法)
+        *   [3.1.1 赋值与分隔符](#赋值与分隔符)
+        *   [3.1.2 数据类型](#数据类型)
+        *   [3.1.3 操作模式](#操作模式)
+            *   [3.1.3.1 使用“默认”节点的默认设备设定示例](#使用“默认”节点的默认设备设定示例)
+        *   [3.1.4 嵌套](#嵌套)
+        *   [3.1.5 引用配置文件](#引用配置文件)
+    *   [3.2 设置默认声卡](#设置默认声卡)
+        *   [3.2.1 使用环境变量选择默认PCM设备](#使用环境变量选择默认PCM设备)
+        *   [3.2.2 另外一种方式](#另外一种方式)
+    *   [3.3 确认所有声音模块都已经加载](#确认所有声音模块都已经加载)
+    *   [3.4 启用 SPDIF 输出](#启用_SPDIF_输出)
+    *   [3.5 系统级均衡器](#系统级均衡器)
+        *   [3.5.1 使用 AlsaEqual（包含界面）](#使用_AlsaEqual（包含界面）)
+            *   [3.5.1.1 管理 AlsaEqual 配置](#管理_AlsaEqual_配置)
+        *   [3.5.2 使用 mbeq](#使用_mbeq)
+*   [4 高质量重采样](#高质量重采样)
+*   [5 上混和缩混](#上混和缩混)
+    *   [5.1 上混（upmixing）](#上混（upmixing）)
+    *   [5.2 缩混（downmixing）](#缩混（downmixing）)
+*   [6 混音](#混音)
+    *   [6.1 手动启用 dmix](#手动启用_dmix)
+*   [7 提示和技巧](#提示和技巧)
+    *   [7.1 USB声卡热插拔](#USB声卡热插拔)
+    *   [7.2 同时输出](#同时输出)
+    *   [7.3 键盘控制声音](#键盘控制声音)
+*   [8 疑难解答](#疑难解答)
+    *   [8.1 Audigy 2 ZS 不发出声音](#Audigy_2_ZS_不发出声音)
+    *   [8.2 VirtualBox中无声音](#VirtualBox中无声音)
+    *   [8.3 使用CPU频率动态调整时，音频发生跳跃](#使用CPU频率动态调整时，音频发生跳跃)
+    *   [8.4 同时只能有一个用户播放音频](#同时只能有一个用户播放音频)
+    *   [8.5 无法同时播放多个音频](#无法同时播放多个音频)
+    *   [8.6 有时候开机无声](#有时候开机无声)
+    *   [8.7 特定程序的问题](#特定程序的问题)
+    *   [8.8 特定型号的配置](#特定型号的配置)
+    *   [8.9 与蜂鸣器冲突](#与蜂鸣器冲突)
+    *   [8.10 麦克风输入无声音](#麦克风输入无声音)
+    *   [8.11 设置默认的麦克风/录音设备](#设置默认的麦克风/录音设备)
+    *   [8.12 内置麦克风无效](#内置麦克风无效)
+    *   [8.13 Intel 板载声卡无声](#Intel_板载声卡无声)
+    *   [8.14 Intel 板载声卡耳机无声](#Intel_板载声卡耳机无声)
+    *   [8.15 消除耳机电流声的方法](#消除耳机电流声的方法)
+    *   [8.16 安装支持 S/PDIF 输出的显卡后无声](#安装支持_S/PDIF_输出的显卡后无声)
+    *   [8.17 音效差或卡顿](#音效差或卡顿)
+    *   [8.18 开始或停止音频播放时出现噪音](#开始或停止音频播放时出现噪音)
+    *   [8.19 S/PDIF 输出无效](#S/PDIF_输出无效)
+    *   [8.20 HDMI 输出无效](#HDMI_输出无效)
+    *   [8.21 HDMI多通道PCM输出无法工作(Intel)](#HDMI多通道PCM输出无法工作(Intel))
     *   [8.22 HP TX2500](#HP_TX2500)
-    *   [8.23 播放 MP3 时有声音跳跃](#.E6.92.AD.E6.94.BE_MP3_.E6.97.B6.E6.9C.89.E5.A3.B0.E9.9F.B3.E8.B7.B3.E8.B7.83)
-    *   [8.24 使用USB头戴设备和外接USB声卡](#.E4.BD.BF.E7.94.A8USB.E5.A4.B4.E6.88.B4.E8.AE.BE.E5.A4.87.E5.92.8C.E5.A4.96.E6.8E.A5USB.E5.A3.B0.E5.8D.A1)
-        *   [8.24.1 USB设备输出劈啪声](#USB.E8.AE.BE.E5.A4.87.E8.BE.93.E5.87.BA.E5.8A.88.E5.95.AA.E5.A3.B0)
-        *   [8.24.2 热插拔USB设备](#.E7.83.AD.E6.8F.92.E6.8B.94USB.E8.AE.BE.E5.A4.87)
-    *   [8.25 内核升级后出现'Unknown hardware'错误](#.E5.86.85.E6.A0.B8.E5.8D.87.E7.BA.A7.E5.90.8E.E5.87.BA.E7.8E.B0.27Unknown_hardware.27.E9.94.99.E8.AF.AF)
-    *   [8.26 HDA分析仪](#HDA.E5.88.86.E6.9E.90.E4.BB.AA)
-    *   [8.27 ALSA 与 SDL 协同工作的问题](#ALSA_.E4.B8.8E_SDL_.E5.8D.8F.E5.90.8C.E5.B7.A5.E4.BD.9C.E7.9A.84.E9.97.AE.E9.A2.98)
+    *   [8.23 播放 MP3 时有声音跳跃](#播放_MP3_时有声音跳跃)
+    *   [8.24 使用USB头戴设备和外接USB声卡](#使用USB头戴设备和外接USB声卡)
+        *   [8.24.1 USB设备输出劈啪声](#USB设备输出劈啪声)
+        *   [8.24.2 热插拔USB设备](#热插拔USB设备)
+    *   [8.25 内核升级后出现'Unknown hardware'错误](#内核升级后出现'Unknown_hardware'错误)
+    *   [8.26 HDA分析仪](#HDA分析仪)
+    *   [8.27 ALSA 与 SDL 协同工作的问题](#ALSA_与_SDL_协同工作的问题)
     *   [8.28 Low Sound Workaround](#Low_Sound_Workaround)
-    *   [8.29 暂停后继续播放发出噼叭声](#.E6.9A.82.E5.81.9C.E5.90.8E.E7.BB.A7.E7.BB.AD.E6.92.AD.E6.94.BE.E5.8F.91.E5.87.BA.E5.99.BC.E5.8F.AD.E5.A3.B0)
+    *   [8.29 暂停后继续播放发出噼叭声](#暂停后继续播放发出噼叭声)
     *   [8.30 Virtual sound device using snd-aloop](#Virtual_sound_device_using_snd-aloop)
-*   [9 配置文件范例](#.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E8.8C.83.E4.BE.8B)
-*   [10 相关阅读](#.E7.9B.B8.E5.85.B3.E9.98.85.E8.AF.BB)
+*   [9 配置文件范例](#配置文件范例)
+*   [10 相关阅读](#相关阅读)
 
 ## 安装
 
@@ -94,13 +98,13 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 一般情况下，本地用户（通过虚拟终端或登录管理器）有权限播放音频和改变音频的音质。
 
-要让远程登录的用户拥有这些权限，必须把用户[加入](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.94.A8.E6.88.B7.E7.BB.84.E7.AE.A1.E7.90.86 "Users and groups (简体中文)") `audio` 用户组。
+要让远程登录的用户拥有这些权限，必须把用户[加入](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#用户组管理 "Users and groups (简体中文)") `audio` 用户组。
 
 **注意:** 该组的成员可以直接访问声音设备，会导致某些程序独占音频输出。这会让软件混音或快速用户切换无法工作。因此，除非真的有某些[特殊需求](https://wiki.ubuntu.com/Audio/TheAudioGroup)，**不建议**把用户加入 `audio` 用户组。
 
 ### ALSA 工具
 
-[安装](/index.php/Pacman "Pacman") 软件包 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)，其中包含的 `alsamixer` 工具允许用户在控制台或终端中配置声音设备。 如果你需要 [高质量重采样](#.E9.AB.98.E8.B4.A8.E9.87.8F.E9.87.8D.E9.87.87.E6.A0.B7) 、 [#上混和缩混](#.E4.B8.8A.E6.B7.B7.E5.92.8C.E7.BC.A9.E6.B7.B7)和其他高级特性的话 ，请另外安装 [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) 软件包。
+[安装](/index.php/Pacman "Pacman") 软件包 [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)，其中包含的 `alsamixer` 工具允许用户在控制台或终端中配置声音设备。 如果你需要 [高质量重采样](#高质量重采样) 、 [#上混和缩混](#上混和缩混)和其他高级特性的话 ，请另外安装 [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) 软件包。
 
 ### OSS 兼容性
 
@@ -108,7 +112,7 @@ Arch 默认的内核已经通过一套模块提供了 ALSA，不必特别安装�
 
 ALSA能够截获[OSS](/index.php/OSS "OSS")调用，然后转而在ALSA中重新发送他们。例如，对于试图打开`/dev/dsp`并向里面写入声音数据的传统应用，这个模仿层很有用。没有OSS或者这个模仿库的话，会缺少`/dev/dsp`，应用程序从而不会产生任何声音。
 
-如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#.E7.BC.A9.E6.B7.B7.EF.BC.88downmixing.EF.BC.89)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
+如果你希望[OSS](/index.php/OSS "OSS")应用和[dmix](#缩混（downmixing）)一起工作，也安装[alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss)。然后载入`snd-seq-oss`， `snd-pcm-oss` 和 `snd-mixer-oss` [核心模块](/index.php/Kernel_modules_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel modules (简体中文)") 来激活OSS模仿。
 
 ### PulseAudio compatibility
 
@@ -148,7 +152,7 @@ $ amixer sset Master unmute
 
 使用 `←` 和 `→` 方向键，选中 `Master` 和 `PCM` 声道。按下 `m` 键解除静音。使用 `↑` 方向键增加音量，直到增益值为`0`。该值显示在左上方 `Item:` 字段后。过高的增益值会导致声音失真。
 
-要想得到完整的 5.1 或 7.1 环绕立体声，还得解除 Front、Surround、Center、LFE (subwoofer) 和 Side 这些声道的静音（上述名称是 Intel HD Audio 声卡使用的声道名，可能因设备不同而有所差异）。注意，仅有这些设置，系统不会自动将立体声源（多数音乐）提升（upmix）成环绕立体声。如果需要这些功能，请阅读[#上混和缩混](#.E4.B8.8A.E6.B7.B7.E5.92.8C.E7.BC.A9.E6.B7.B7)。
+要想得到完整的 5.1 或 7.1 环绕立体声，还得解除 Front、Surround、Center、LFE (subwoofer) 和 Side 这些声道的静音（上述名称是 Intel HD Audio 声卡使用的声道名，可能因设备不同而有所差异）。注意，仅有这些设置，系统不会自动将立体声源（多数音乐）提升（upmix）成环绕立体声。如果需要这些功能，请阅读[#上混和缩混](#上混和缩混)。
 
 要启用麦克风，切换至 Capture 选项卡，按下 `F4`，按下 `空格` 启用其中一个声道即可。
 
@@ -199,7 +203,7 @@ surround51:CARD=PCH,DEV=0
 surround71:CARD=PCH,DEV=0
 ```
 
-如果没有正常工作，请继续阅读 [#配置](#.E9.85.8D.E7.BD.AE) 以及 [#疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94) 部分。和 [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting") 页面。
+如果没有正常工作，请继续阅读 [#配置](#配置) 以及 [#疑难解答](#疑难解答) 部分。和 [Advanced Linux Sound Architecture/Troubleshooting](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting "Advanced Linux Sound Architecture/Troubleshooting") 页面。
 
 ### 附加注释
 
@@ -314,7 +318,7 @@ key.!subkeyN valueN;
 
 使用覆盖操作模式, 如果被正确执行的话,通常来说是安全的, 但是每个人都应记在心中的是, 在一个节点中也许会有正确执行的必须值。
 
-**警告:** 覆盖 pcm 节点通常来说会使 alsa 无法使用, 因为所有插件定义都会被删除。 因此 **不要使用 !pcm.key** ，除非你在scratch中设定设置。
+**警告:** 覆盖 pcm 节点通常来说会使 alsa 无法使用, 因为所有插件定义都会被删除。 因此 **不要使用 !pcm.key** ，除非你在scratch中设定设置。
 
 ##### 使用“默认”节点的默认设备设定示例
 
@@ -473,7 +477,7 @@ ALSA_RAWMIDI_DEVICE # rawmidi.default rawmidi.hw
 
 #### 另外一种方式
 
-**提示：** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+**提示：** This process can be partly automated using [asoundconf](https://www.archlinux.org/packages/?name=asoundconf) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 首先，运行 `aplay -l`，获取声卡的声卡ID和设备ID：
 
@@ -867,7 +871,7 @@ pcm.dmix6 {
 
 注意要用 dmix6 而非 surround71。
 
-如果遇到声音卡顿或混乱，可能需要增加 buffer_size（比如增加到 32768），或使用[高质量重采样](#.E9.AB.98.E8.B4.A8.E9.87.8F.E9.87.8D.E9.87.87.E6.A0.B7)。
+如果遇到声音卡顿或混乱，可能需要增加 buffer_size（比如增加到 32768），或使用[高质量重采样](#高质量重采样)。
 
 ### 缩混（downmixing）
 
@@ -911,7 +915,7 @@ pcm.dsp {
 
 至于 S/PDIF 之类的数字音频输出，目前的 ALSA 还不会默认启用 dmix。因此，必须像上面这样手动启用。
 
-常见问题的解答，参见[#疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)部分。
+常见问题的解答，参见[#疑难解答](#疑难解答)部分。
 
 ## 提示和技巧
 
@@ -1044,11 +1048,11 @@ pcm.dsp {
 
 ```
 
-**注意:** 本 `/etc/asound.conf` 本来是配合 [MPD](/index.php/MPD "MPD") 全局配置使用的。参见[该节](#.E5.90.8C.E6.97.B6.E5.8F.AA.E8.83.BD.E6.9C.89.E4.B8.80.E4.B8.AA.E7.94.A8.E6.88.B7.E6.92.AD.E6.94.BE.E9.9F.B3.E9.A2.91)关于多用户的内容。
+**注意:** 本 `/etc/asound.conf` 本来是配合 [MPD](/index.php/MPD "MPD") 全局配置使用的。参见[该节](#同时只能有一个用户播放音频)关于多用户的内容。
 
 ### 有时候开机无声
 
-如果会随机地出现开机无声的问题，原因可能是多声卡的顺序发生了变化。如果是这种情况，请参照[#设置默认声卡](#.E8.AE.BE.E7.BD.AE.E9.BB.98.E8.AE.A4.E5.A3.B0.E5.8D.A1)进行设置。
+如果会随机地出现开机无声的问题，原因可能是多声卡的顺序发生了变化。如果是这种情况，请参照[#设置默认声卡](#设置默认声卡)进行设置。
 
 对于 mpd 用户，上述配置无效，请参考[该文](http://mpd.wikia.com/wiki/Configuration#ALSA_MPD_software_volume_control)设置。
 
@@ -1475,7 +1479,7 @@ options snd-hda-intel model=hp (works for tx2000cto)
 
 ### 使用USB头戴设备和外接USB声卡
 
-如果你在ALSA下使用USB头戴设备，那么你可以试试使用 [asoundconf](https://aur.archlinux.org/packages/asoundconf/) （当前只有在[AUR](/index.php/AUR "AUR")内获得）来设置头戴设备为主要声音输出设备。运行前别忘了确认你的USB音频模块已经启用(`modprobe snd-usb-audio`)。
+如果你在ALSA下使用USB头戴设备，那么你可以试试使用 [asoundconf](https://www.archlinux.org/packages/?name=asoundconf) （当前只有在[AUR](/index.php/AUR "AUR")内获得）来设置头戴设备为主要声音输出设备。运行前别忘了确认你的USB音频模块已经启用(`modprobe snd-usb-audio`)。
 
 ```
 # asoundconf is-active

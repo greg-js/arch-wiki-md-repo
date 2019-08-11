@@ -31,31 +31,32 @@ This page explains how to set up, diagnose, and benchmark [InfiniBand](https://e
     *   [4.1 Connection mode](#Connection_mode)
     *   [4.2 MTU](#MTU)
     *   [4.3 Finetuning connection mode and MTU](#Finetuning_connection_mode_and_MTU)
-*   [5 Remote data storage](#Remote_data_storage)
-    *   [5.1 targetcli](#targetcli)
-        *   [5.1.1 Installing and using](#Installing_and_using)
-        *   [5.1.2 Create backstores](#Create_backstores)
-    *   [5.2 iSCSI](#iSCSI)
-        *   [5.2.1 Over IPoIB](#Over_IPoIB)
-        *   [5.2.2 Over iSER](#Over_iSER)
-        *   [5.2.3 Adding to /etc/fstab](#Adding_to_/etc/fstab)
-*   [6 Network segmentation](#Network_segmentation)
-*   [7 SDP (Sockets Direct Protocol)](#SDP_(Sockets_Direct_Protocol))
-*   [8 Diagnosing and benchmarking](#Diagnosing_and_benchmarking)
-    *   [8.1 ibstat - View a computer's IB GUIDs](#ibstat_-_View_a_computer's_IB_GUIDs)
-    *   [8.2 ibhosts - View all hosts on IB network](#ibhosts_-_View_all_hosts_on_IB_network)
-    *   [8.3 ibswitches - View all switches on IB network](#ibswitches_-_View_all_switches_on_IB_network)
-    *   [8.4 iblinkinfo - View link information on IB network](#iblinkinfo_-_View_link_information_on_IB_network)
-    *   [8.5 ibping - Ping another IB device](#ibping_-_Ping_another_IB_device)
-    *   [8.6 ibdiagnet - Show diagnostic information for entire subnet](#ibdiagnet_-_Show_diagnostic_information_for_entire_subnet)
-    *   [8.7 qperf - Measure performance over RDMA or TCP/IP](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP)
-        *   [8.7.1 TCP/IP over IPoIB](#TCP/IP_over_IPoIB)
-    *   [8.8 iperf - Measure performance over TCP/IP](#iperf_-_Measure_performance_over_TCP/IP)
-*   [9 Common problems / FAQ](#Common_problems_/_FAQ)
-    *   [9.1 Connection problems](#Connection_problems)
-        *   [9.1.1 Link, physical state and port state](#Link,_physical_state_and_port_state)
-        *   [9.1.2 getaddrinfo failed: Name or service not known](#getaddrinfo_failed:_Name_or_service_not_known)
-    *   [9.2 Speed problems](#Speed_problems)
+*   [5 Soft RoCE (RXE)](#Soft_RoCE_(RXE))
+*   [6 Remote data storage](#Remote_data_storage)
+    *   [6.1 targetcli](#targetcli)
+        *   [6.1.1 Installing and using](#Installing_and_using)
+        *   [6.1.2 Create backstores](#Create_backstores)
+    *   [6.2 iSCSI](#iSCSI)
+        *   [6.2.1 Over IPoIB](#Over_IPoIB)
+        *   [6.2.2 Over iSER](#Over_iSER)
+        *   [6.2.3 Adding to /etc/fstab](#Adding_to_/etc/fstab)
+*   [7 Network segmentation](#Network_segmentation)
+*   [8 SDP (Sockets Direct Protocol)](#SDP_(Sockets_Direct_Protocol))
+*   [9 Diagnosing and benchmarking](#Diagnosing_and_benchmarking)
+    *   [9.1 ibstat - View a computer's IB GUIDs](#ibstat_-_View_a_computer's_IB_GUIDs)
+    *   [9.2 ibhosts - View all hosts on IB network](#ibhosts_-_View_all_hosts_on_IB_network)
+    *   [9.3 ibswitches - View all switches on IB network](#ibswitches_-_View_all_switches_on_IB_network)
+    *   [9.4 iblinkinfo - View link information on IB network](#iblinkinfo_-_View_link_information_on_IB_network)
+    *   [9.5 ibping - Ping another IB device](#ibping_-_Ping_another_IB_device)
+    *   [9.6 ibdiagnet - Show diagnostic information for entire subnet](#ibdiagnet_-_Show_diagnostic_information_for_entire_subnet)
+    *   [9.7 qperf - Measure performance over RDMA or TCP/IP](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP)
+        *   [9.7.1 TCP/IP over IPoIB](#TCP/IP_over_IPoIB)
+    *   [9.8 iperf - Measure performance over TCP/IP](#iperf_-_Measure_performance_over_TCP/IP)
+*   [10 Common problems / FAQ](#Common_problems_/_FAQ)
+    *   [10.1 Connection problems](#Connection_problems)
+        *   [10.1.1 Link, physical state and port state](#Link,_physical_state_and_port_state)
+        *   [10.1.2 getaddrinfo failed: Name or service not known](#getaddrinfo_failed:_Name_or_service_not_known)
+    *   [10.2 Speed problems](#Speed_problems)
 
 ## Introduction
 
@@ -287,6 +288,22 @@ Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP/IP) examples giv
 
 **Tip:** Use the same connection and MTU settings for the entire subnet. Mixing and matching doesn't work optimally.
 
+## Soft RoCE (RXE)
+
+Soft ROCE is a software implementation of RoCE that allows using Infiniband over any ethernet adapter.
+
+*   Install [ethtool](https://www.archlinux.org/packages/?name=ethtool)
+*   Run `rxe_cfg start` to load RXE modules and configure persistent instances.
+*   Run `rxe_cfg add ethN` to configure an RXE instance on ethernet device ethN.
+
+You should now have an rxe0 device:
+
+ `# rxe_cfg status` 
+```
+  Name    Link  Driver      Speed  NMTU  IPv4_addr        RDEV  RMTU          
+  enp1s0  yes   virtio_net         1500  192.168.122.211  rxe0  1024  (3)
+```
+
 ## Remote data storage
 
 You can share physical or virtual devices from a target (host/server) to an initiator (guest/client) system over an IB network, using iSCSI, iSCSI with iSER, or SRP. These methods differ from traditional file sharing (i.e. [Samba](/index.php/Samba "Samba") or [NFS](/index.php/NFS "NFS")) because the initiator system views the shared device as its own block level device, rather than a traditionally mounted network shared folder. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`
@@ -399,7 +416,7 @@ Use `librdmacm` (successor to rsockets and libspd) and `LD_PRELOAD` to intercept
 
 ## Diagnosing and benchmarking
 
-All IB specific tools are included in [infiniband-diags](https://aur.archlinux.org/packages/infiniband-diags/) and [ibutils](https://aur.archlinux.org/packages/ibutils/).
+All IB specific tools are included in [rdma-core](https://aur.archlinux.org/packages/rdma-core/) and [ibutils](https://aur.archlinux.org/packages/ibutils/).
 
 ### ibstat - View a computer's IB GUIDs
 

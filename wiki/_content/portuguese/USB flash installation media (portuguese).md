@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-05-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=571973) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=579165) na versão em inglês.
 
 Artigos relacionados
 
@@ -29,6 +29,8 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
             *   [1.1.2.4 Usando Cygwin](#Usando_Cygwin)
             *   [1.1.2.5 dd para Windows](#dd_para_Windows)
         *   [1.1.3 No macOS](#No_macOS)
+        *   [1.1.4 No Android](#No_Android)
+            *   [1.1.4.1 EtchDroid](#EtchDroid)
     *   [1.2 Usando formatação manual](#Usando_formatação_manual)
         *   [1.2.1 No GNU/Linux](#No_GNU/Linux_2)
         *   [1.2.2 No Windows](#No_Windows_2)
@@ -83,14 +85,16 @@ Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informa�
 
 ##### Usando Rufus
 
-[Rufus](https://rufus.akeo.ie/) é um escritor multiuso de ISO em USB. Basta selecionar a ISO do Arch Linux, a unidade USB na qual você deseja criar o Arch Linux inicializável e clicar em *Iniciar*.
+[Rufus](https://rufus.akeo.ie/) é um escritor multiuso de ISO em USB. Ele fornece uma interface gráfica do usuário e não se importa se a unidade está formatada corretamente ou não.
 
-Como o Rufus não se importa se a unidade está formatada corretamente ou não e fornece uma GUI, ela pode ser a ferramenta mais fácil e mais robusta a ser usada.
+Basta selecionar a ISO do Arch Linux, a unidade USB na qual você deseja criar o Arch Linux inicializável e clicar em *Iniciar*.
 
-**Nota:** A imagem tem que ser transferida no **modo Imagem DD**.
+**Nota:** Se a unidade USB não inicializar adequadamente usando o modo padrão da imagem ISO, o **modo Imagem DD** deve ser usado.
 
 *   Para Rufus versão ≥ 3.0, selecione *GPT* a partir do menu suspenso *Esquema de partição*. Ao clicar em *Iniciar*, você verá o diálogo de seleção de modo, selecione o *modo Imagem DD*.
 *   Para Rufus versão < 3.0,selecione o modo *Imagem DD* a partir do menu suspenso na parte inferior.
+
+**Dica:** Para adicionar [uma partição adicional a um armazenamento persistente](https://github.com/pbatard/rufus/issues/691) use o controle deslizante para escolher o tamanho da partição persistente. Ao usar o recurso de partição persistente, certifique-se de selecionar *MBR* no menu suspenso *Esquema de partição* e *BIOS ou UEFI* em *Sistema de sestino*, caso contrário a unidade não será utilizável para inicialização de BIOS e UEFI.
 
 ##### Usando USBwriter
 
@@ -191,11 +195,21 @@ $ diskutil unmountDisk /dev/disk*X*
 Agora, copie o arquivo de imagem ISO para o dispositivo. O comando `dd` é similar à sua contraparte Linux, mas note o 'r' antes do modo 'disk' para modo *raw*, que torna a transferência muito mais rápida:
 
 ```
-# dd if=caminho/para/arch.iso of=/dev/**r**disk*X* bs=1m
+# dd if=caminho/para/arch.iso of=/dev/**r**disk*X* bs=1M
 
 ```
 
 Esse comando será executado sem qualquer mensagem de saída. Para ver o progresso, envie SIGINFO pressionando `Ctrl+t`. Note que `disk*X*` aqui não deve incluir o sufixo `s1` ou, do contrário, o dispositivo USB só será inicializável no modo UEFI e não no legado. Após a conclusão, o macOS reclamar "O disco que você inseriu não podia ser lido por este computador". Selecione 'Ignorar'. O dispositivo USB será inicializável.
+
+#### No Android
+
+##### EtchDroid
+
+[EtchDroid](https://etchdroid.depau.eu/) é um instalador de imagem de sistema operacional para o Android. Ele funciona sem permissões de root no Android 5 até o Android 8\. De acordo com relatórios de erros, nem sempre funciona no Android 9 e Android 4.4.
+
+Para criar um instalador do Arch Linux, baixe o arquivo de imagem ISO no seu dispositivo Android. Conecte a unidade USB ao seu dispositivo, usando um adaptador USB-OTG, se necessário. Abra o EtchDroid, selecione "Flash raw image", selecione o seu Arch ISO e selecione o seu drive USB. Conceda a permissão da API USB e confirme.
+
+Mantenha seu telefone em uma mesa enquanto está gravando a imagem: muitos adaptadores USB-OTG são um pouco instáveis e você pode desconectá-lo por engano.
 
 ### Usando formatação manual
 

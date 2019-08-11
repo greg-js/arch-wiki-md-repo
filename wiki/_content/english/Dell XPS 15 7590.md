@@ -72,6 +72,30 @@ The process will take about five minutes, during which the system will have some
 
 ### Suspend
 
+By default, the very inefficient s2idle suspend variant is incorrectly selected. This is probably due to the BIOS. The much more efficient deep variant should be selected instead:
+
+```
+ $ cat /sys/power/mem_sleep 
+ [s2idle] deep
+ $ echo deep|sudo tee /sys/power/mem_sleep
+ $ cat /sys/power/mem_sleep 
+ s2idle [deep]
+
+```
+
+To make the change permanent add `mem_sleep_default=deep` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+An easy way would be to add `mem_sleep_default=deep` to the `GRUB_CMDLINE_LINUX_DEFAULT` entry in /etc/default/grub:
+
+```
+ GRUB_CMDLINE_LINUX_DEFAULT="mem_sleep_default=deep"
+
+```
+
+Read more regarding the sleep variants on the kernel documentation [[1]](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html).
+
+**Warning:** Some users have reported a problem where the CPUs get stuck in a high power state after resuming from S3 (deep) suspension [[2]](https://www.reddit.com/r/Dell/comments/91313h/xps_15_9570_c_state_bug_after_s3_sleep_and_modern/).
+
 ### Hibernate
 
 ### Powertop

@@ -17,7 +17,7 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [5 startx](#startx)
 *   [6 fsck](#fsck)
 *   [7 Make GRUB silent](#Make_GRUB_silent)
-*   [8 Retaining the vendor logo from BIOS](#Retaining_the_vendor_logo_from_BIOS)
+*   [8 Retaining or disabling the vendor logo from BIOS](#Retaining_or_disabling_the_vendor_logo_from_BIOS)
     *   [8.1 Disabling deferred takeover](#Disabling_deferred_takeover)
 
 ## Kernel parameters
@@ -152,7 +152,7 @@ GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
 
 Lastly, regenerate `grub.cfg` file.
 
-## Retaining the vendor logo from BIOS
+## Retaining or disabling the vendor logo from BIOS
 
 Modern UEFI systems display a vendor logo on boot until handing over control to the bootloader; e.g. Lenovo laptops display a bright red Lenovo logo. This vendor logo is typically blanked by the bootloader (if standard GRUB is used) or by the kernel.
 

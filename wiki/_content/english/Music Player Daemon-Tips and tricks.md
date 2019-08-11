@@ -9,10 +9,9 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
 *   [1 Organizing library](#Organizing_library)
 *   [2 Last.fm/Libre.fm scrobbling](#Last.fm/Libre.fm_scrobbling)
     *   [2.1 mpdas](#mpdas)
-    *   [2.2 mpdcron](#mpdcron)
-    *   [2.3 mpdscribble](#mpdscribble)
-    *   [2.4 Sonata](#Sonata)
-    *   [2.5 YAMScrobbler](#YAMScrobbler)
+    *   [2.2 mpdscribble](#mpdscribble)
+    *   [2.3 Sonata](#Sonata)
+    *   [2.4 YAMScrobbler](#YAMScrobbler)
 *   [3 Disable resume playback on startup](#Disable_resume_playback_on_startup)
 *   [4 Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once](#Example_configuration:_Output_with_44.1_KHz_at_e._g._16_bit_depth,_multiple_programs_at_once)
 *   [5 Control MPD with lirc](#Control_MPD_with_lirc)
@@ -70,21 +69,6 @@ $ systemctl --user start mpdas.service
 ```
 
 **Tip:** If you get a failed `mpdas.service` after system startup, consider using [socket activation](/index.php/Music_Player_Daemon#Socket_activation "Music Player Daemon") with `mpd.socket` instead.
-
-### mpdcron
-
-[mpdcron](http://alip.github.io/mpdcron/) is a cron-like daemon for MPD that listens for events and executes user defined actions. It can be extended via modules to show notifications, submit songs to Last.fm or Libre.fm (*scrobbling*), or to collect statistics about played songs.
-
-[mpdcron-git](https://aur.archlinux.org/packages/mpdcron-git/) is available in the [AUR](/index.php/AUR "AUR").
-
-See the official page for information about configuration and modules.
-
-To autostart *mpdcron* along with *mpd*, add an entry for it into the file in which you start *mpd* (e.g. [xinitrc](/index.php/Xinitrc "Xinitrc")):
-
-```
-[[ -z $(pgrep -xU $UID mpdcron) ]] && mpdcron &
-
-```
 
 ### mpdscribble
 

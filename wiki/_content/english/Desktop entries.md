@@ -118,7 +118,7 @@ This should be avoided, as it will only be confusing to users. The `Name` key sh
 
 ### Validation
 
-As some keys have become deprecated over time, you may want validate your desktop entries using [desktop-file-validate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-validate.1) which is part of the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package. To validate, run:
+As some keys have become deprecated over time, you may want to validate your desktop entries using [desktop-file-validate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-validate.1) which is part of the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package. To validate, run:
 
 ```
 $ desktop-file-validate <*your desktop file*>

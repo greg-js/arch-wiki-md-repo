@@ -73,6 +73,7 @@ If you find rebasing Git branches too cumbersome, you may want to use a [tool](#
 | [dotdrop](https://deadc0de.re/dotdrop/) | [dotdrop](https://aur.archlinux.org/packages/dotdrop/) | Python | configuration file | Jinja2 |
 | [dotfiles](https://github.com/jbernard/dotfiles) | [dotfiles](https://aur.archlinux.org/packages/dotfiles/) | Python | [No](https://github.com/jbernard/dotfiles/pull/24) | No |
 | [Dots](https://github.com/EvanPurkhiser/dots) | [dots-manager](https://aur.archlinux.org/packages/dots-manager/) | Python | directory-based | custom append points |
+| [chezmoi](https://github.com/twpayne/chezmoi) | [chezmoi](https://www.archlinux.org/packages/?name=chezmoi) | Go | directory-based | Go templates |
 | [GNU Stow](https://www.gnu.org/software/stow/) | [stow](https://www.archlinux.org/packages/?name=stow) | Perl | directory-based[[2]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) | No |
 | [Mackup](https://github.com/lra/mackup) | [mackup](https://aur.archlinux.org/packages/mackup/) | Python | automatic per application | No |
 | [mir.qualia](https://github.com/darkfeline/mir.qualia) | [mir.qualia](https://aur.archlinux.org/packages/mir.qualia/) | Python | No | custom blocks |

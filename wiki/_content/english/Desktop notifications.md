@@ -775,7 +775,7 @@ Notifications can be replaced if their ID is known; if a new notification reques
 
 However, with *some* notification servers (such as Notify-OSD), you can use the `string:x-canonical-private-synchronous:` hint with notify-send to achieve the same result.
 
-For exemple, to get a notification displaying time:
+For example, to get a notification displaying time:
 
 ```
 while true; do

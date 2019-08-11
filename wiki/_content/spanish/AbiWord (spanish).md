@@ -22,7 +22,7 @@ Este artículo es una traducción de [AbiWord](/index.php/AbiWord "AbiWord"), re
 
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [abiword](https://www.archlinux.org/packages/?name=abiword). Es posible que desee instalar diccionarios si desea realizar una revisión ortográfica, el cual puede ser proporcionado por el paquete [aspell-es](https://www.archlinux.org/packages/?name=aspell-es) para el idioma español.
 
-Para solucionar los problemas del cursor pequeño y el texto desalineado, instale o [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) o [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) y [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont).
+Para solucionar los problemas del cursor pequeño y el texto desalineado, instale o [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) o [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) y [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts).
 
 ## Directorio de configuración del usuario
 

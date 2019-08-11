@@ -13,7 +13,7 @@ Artigos relacionados
 
 [GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) é um [gerenciador de multi-boot](/index.php/Gerenciador_de_boot "Gerenciador de boot"). É derivado do [PUPA](http://www.nongnu.org/pupa/), que foi um projeto de pesquisa para desenvolver a substituição do que é agora conhecido como [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). Este último tornou-se muito difícil de manter e o GRUB foi reescrito do zero com o objetivo de fornecer modularidade e portabilidade [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). O GRUB atual também é referido como GRUB 2, enquanto o GRUB Legacy corresponde às versões 0.9x.
 
-**Nota:** Em todo este artigo `*esp*` denota o ponto de montagem do [partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition"), comumente abreviado como ESP.
+**Nota:** Em todo este artigo `*esp*` denota o ponto de montagem da [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI"), comumente abreviada como ESP.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -94,7 +94,7 @@ Em uma configuração de BIOS/[GPT](/index.php/GPT "GPT"), é necessária uma [p
 
 *   Antes de tentar este método, lembre-se de que nem todos os sistemas poderão ter suporte a este esquema de particionamento. Leia mais sobre [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
 *   A partição de inicialização de BIOS é necessária apenas pelo GRUB em uma configuração de BIOS/GPT. Em uma configuração de BIOS/MBR, o GRUB usa a lacuna pós-MBR para a incorporação do `core.img`. No GPT, no entanto, não há espaço não utilizado garantido antes da primeira partição.
-*   Para sistemas [UEFI](/index.php/UEFI "UEFI"), essa partição extra não é necessária, pois não há incorporação de setores de inicialização nesse caso. No entanto, os sistemas UEFI ainda requerem uma [partição do sistema EFI](/index.php/EFI_system_partition "EFI system partition").
+*   Para sistemas [UEFI](/index.php/UEFI "UEFI"), essa partição extra não é necessária, pois não há incorporação de setores de inicialização nesse caso. No entanto, os sistemas UEFI ainda requerem uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
 
 Crie uma partição de mebibyte (`+1M` com *fdisk* ou *gdisk*) no disco sem sistema de arquivos e com o tipo de partição GUID `21686148-6449-6E6F-744E-656564454649`.
 
@@ -135,7 +135,7 @@ Veja [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8
 
 *   É recomendável ler e entender as páginas [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning") e [Processo de inicialização do Arch#No UEFI](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#No_UEFI "Processo de inicialização do Arch").
 *   Ao instalar o UEFI, é importante inicializar a mídia de instalação no modo UEFI, caso contrário o *efibootmgr* não poderá adicionar a entrada de inicialização GRUB UEFI. A instalação no [caminho de inicialização reserva](#Caminho_de_inicialização_padrão/reserva) continuará funcionando mesmo no modo BIOS, já que ele não toca na NVRAM.
-*   Para inicializar a partir de um disco usando UEFI, é necessária uma partição de sistema EFI. Siga [EFI system partition#Check for an existing partition](/index.php/EFI_system_partition#Check_for_an_existing_partition "EFI system partition") para descobrir se você já tem uma, caso contrário você precisa criá-la.
+*   Para inicializar a partir de um disco usando UEFI, é necessária uma partição de sistema EFI. Siga [Partição de sistema EFI#Verificar uma partição existente](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI#Verificar_uma_partição_existente "Partição de sistema EFI") para descobrir se você já tem uma, caso contrário você precisa criá-la.
 
 ### Instalação
 
@@ -148,7 +148,7 @@ Primeiro, [instale](/index.php/Instale "Instale") os pacotes [grub](https://www.
 
 Então, siga os seguintes passos para instalar o GRUB:
 
-1.  [Monte a partição de sistema EFI](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") e, no restante da sessão, substitua `*esp*` com seu ponto de montagem.
+1.  [Monte a partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI#Montar_a_partição "Partição de sistema EFI") e, no restante da sessão, substitua `*esp*` com seu ponto de montagem.
 2.  Escolha um identificador de gerenciador de boot, aqui chamado `GRUB`. Um diretório com esse nome será criado em `*esp*/EFI/` para armazenar o binário EFI e esse é o nome que aparecerá no menu de inicialização UEFI para identificar a entrada de inicialização do GRUB.
 3.  Execute o seguinte comando para instalar o aplicativo EFI do GRUB `grubx64.efi` em `*esp*/EFI/GRUB/` e instalar seus módulos para `/boot/grub/x86_64-efi/`.
 
@@ -371,7 +371,7 @@ fi
 
 ###### Shell de UEFI
 
-Você pode iniciar o [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") colocando-a na raiz da [partição do sistema EFI](/index.php/EFI_system_partition "EFI system partition") e adicionando esta entrada de menu:
+Você pode iniciar o [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") colocando-a na raiz da [partição do sistema EFI](/index.php?title=Parti%C3%A7%C3%A3o_do_sistema_EFI&action=edit&redlink=1 "Partição do sistema EFI (page does not exist)") e adicionando esta entrada de menu:
 
 ```
 menuentry "UEFI Shell" {
@@ -467,7 +467,7 @@ O comando `$hints_string` determinará a localização da partição do sistema 
 
  `# grub-probe --target=hints_string *esp*/EFI/Microsoft/Boot/bootmgfw.efi`  `--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1` 
 
-Estes dois comandos assumem que o uso do Windows ESP é montado em `*esp*`. Pode haver diferenças entre maiúsculas e minúsculas no caminho para o arquivo EFI do Windows, com o Windows e tudo mais.
+Estes dois comandos presumem o uso da ESP do Windows montada em `*esp*`. Pode haver diferenças entre maiúsculas e minúsculas no caminho para o arquivo EFI do Windows, com o Windows e tudo mais.
 
 ###### Windows instalado em modo BIOS/MBR
 

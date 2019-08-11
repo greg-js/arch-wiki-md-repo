@@ -6,14 +6,18 @@ Articoli correlati
 
 Questa pagina è una guida per la selezione e la configurazione dei "mirrors", e un elenco degli attuali mirrors disponibili.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Attivazione di un mirror specifico](#Attivazione_di_un_mirror_specifico)
 *   [2 Mirror status](#Mirror_status)
 *   [3 Scelta e selezione dei mirrors](#Scelta_e_selezione_dei_mirrors)
-    *   [3.1 Elenco per velocità](#Elenco_per_velocit.C3.A0)
-    *   [3.2 Elenco misto in base a velocità e stato](#Elenco_misto_in_base_a_velocit.C3.A0_e_stato)
-    *   [3.3 Script per automatizzare l'uso di Pacman Mirrorlist Generator](#Script_per_automatizzare_l.27uso_di_Pacman_Mirrorlist_Generator)
+    *   [3.1 Elenco per velocità](#Elenco_per_velocità)
+    *   [3.2 Elenco misto in base a velocità e stato](#Elenco_misto_in_base_a_velocità_e_stato)
+    *   [3.3 Script per automatizzare l'uso di Pacman Mirrorlist Generator](#Script_per_automatizzare_l'uso_di_Pacman_Mirrorlist_Generator)
     *   [3.4 Uso di reflector](#Uso_di_reflector)
 *   [4 Mirror ufficiali](#Mirror_ufficiali)
     *   [4.1 IPv6-ready mirrors](#IPv6-ready_mirrors)
@@ -36,7 +40,7 @@ Questa pagina è una guida per la selezione e la configurazione dei "mirrors", e
     *   [5.16 Sud Africa](#Sud_Africa)
     *   [5.17 Stati Uniti](#Stati_Uniti)
 *   [6 Risoluzioni dei problemi](#Risoluzioni_dei_problemi)
-    *   [6.1 Mirror non sincronizzati: pacchetti corrotti/file non trovati](#Mirror_non_sincronizzati:_pacchetti_corrotti.2Ffile_non_trovati)
+    *   [6.1 Mirror non sincronizzati: pacchetti corrotti/file non trovati](#Mirror_non_sincronizzati:_pacchetti_corrotti/file_non_trovati)
         *   [6.1.1 Usare tutti i mirror](#Usare_tutti_i_mirror)
 *   [7 Vedere anche](#Vedere_anche)
 
@@ -53,7 +57,7 @@ Esempio:
 
 ```
 
-Consultare [#Mirror status](#Mirror_status) e [#Elenco per velocità](#Elenco_per_velocit.C3.A0) per alcuni utili strumenti che aiutano nella scelta dei mirrors.
+Consultare [#Mirror status](#Mirror_status) e [#Elenco per velocità](#Elenco_per_velocità) per alcuni utili strumenti che aiutano nella scelta dei mirrors.
 
 **Tip:** Decommentare 5 mirrors di preferenza e metterli in cima al file mirrorlist. In questo modo è più facile trovarli ed eventualmente spostarli se il primo mirror della lista avesse dei problemi. Inoltre agevola gli aggiornamenti dei mirrorlist all'interno del file stesso.
 
@@ -82,7 +86,7 @@ pacman tenterà ora di connettersi prima a questo mirror. Procedere con la stess
 
 Verificare lo stato dei mirror Arch ed il loro livello di aggiornamento visitando il sito [http://www.archlinux.de/?page=MirrorStatus](http://www.archlinux.de/?page=MirrorStatus) o [https://www.archlinux.org/mirrors/status/](https://www.archlinux.org/mirrors/status/).
 
-Si può generare una lista aggiornata dei mirror [qui](https://www.archlinux.org/mirrorlist/) e automatizzare il processo con uno [script](#Script_per_automatizzare_l.27uso_di_Pacman_Mirrorlist_Generator), oppure installare eventualmente [Reflector](/index.php/Reflector "Reflector"), una utility che genera una mirrorlist usando la lista "Mirrorcheck"; un ulteriore alternativa è controllare il livello di aggiornamento manualmente così:
+Si può generare una lista aggiornata dei mirror [qui](https://www.archlinux.org/mirrorlist/) e automatizzare il processo con uno [script](#Script_per_automatizzare_l'uso_di_Pacman_Mirrorlist_Generator), oppure installare eventualmente [Reflector](/index.php/Reflector "Reflector"), una utility che genera una mirrorlist usando la lista "Mirrorcheck"; un ulteriore alternativa è controllare il livello di aggiornamento manualmente così:
 
 1.  scegliere un server ed esplorare "extra/os/";
 2.  accedere a [https://www.archlinux.org/](https://www.archlinux.org/) in un'altra scheda o finestra del browser e,
@@ -145,7 +149,7 @@ Dopo la creazione/modifica di `/etc/pacman.d/mirrorlist` (manualmente o usando `
 
 ### Elenco misto in base a velocità e stato
 
-Non è una buona idea quella di utilizzare solo i mirror più veloci, dal momento che potrebbe anche non essere ben aggiornato. La soluzione migliore sarebbe usare [#Elenco per velocità](#Elenco_per_velocit.C3.A0), che elenca i 6 mirror più veloci tramite il loro [#Mirror status](#Mirror_status).
+Non è una buona idea quella di utilizzare solo i mirror più veloci, dal momento che potrebbe anche non essere ben aggiornato. La soluzione migliore sarebbe usare [#Elenco per velocità](#Elenco_per_velocità), che elenca i 6 mirror più veloci tramite il loro [#Mirror status](#Mirror_status).
 
 Basta visitare uno o più [#Mirror status](#Mirror_status) link e ordinarli in base al più alto livello di aggiornamento. Spostare i mirror più aggiornati in cima a `/etc/pacman.d/mirrorlist` e se non sono aggiornati, semplicemente non usarli; ripetere il processo tralasciando i mirror non aggiornati. Così si ottiene un totale di 6 mirror ordinati per velocità e stato, lasciando da parte quelli obsoleti.
 
@@ -383,4 +387,4 @@ done < <(pacman -Sup | tail -n +2 | sed -e 's,/\(core\|extra\)/,/testing/,' \
 
 ## Vedere anche
 
-*   [MirUp](http://wiki.gotux.net/code:bash:mirup) – pacman mirrorlist downloader/checker
+*   [GitHub archweb mirrorlist.py](https://github.com/archlinux/archweb/blob/master/mirrors/views/mirrorlist.py) - codice sorgente del mirrorlist generator di archweb

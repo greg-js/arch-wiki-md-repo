@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions"). Data da última tradução: 2019-06-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages_for_other_distributions&diff=0&oldid=571379) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages for other distributions](/index.php/Creating_packages_for_other_distributions "Creating packages for other distributions"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages_for_other_distributions&diff=0&oldid=577806) na versão em inglês.
 
 Artigos relacionados
 
@@ -234,8 +234,7 @@ Agora, após um tempo, OBS vai começar a compilar seu pacote.
 #### Dicas e truques sobre o openSUSE
 
 *   Para ver o progresso da compilação do seu pacote, faça *cd* para seu diretório de trabalho, então: `osc results`.
-*   Existem dois repositórios, Arch_Core e Arch_Extra. Você provavelmente vai querer o Arch_Extra, já que é mais completo. [community] não está disponível atualmente a partir desta edição, então se o seu projeto tem alguma dependência em [community], você deve incluí-los (manualmente) em seu (sub)projeto também.
-*   Existe um repositório não-oficial da comunidade de bibliotecas [aqui](https://build.opensuse.org/project/show/home:roman-neuhauser:arch-community). Você pode clonar um pacote de lá com `osc branch home:roman-neuhauser:arch-community/<nome-pacote> home:foo:bar/<nome-pacote>`.
+*   Há três repositórios, Arch:Core, Arch:Extra e Arch:Community. [community] pode ser anexado como um "caminho de repositório" após adicionar o repositório principal do Arch ao projeto.
 
 #### Programa com o pacote ca-certificates-utils
 

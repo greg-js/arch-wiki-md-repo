@@ -60,7 +60,7 @@ A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipe
 
 	[http://www.gnu.org/software/make](http://www.gnu.org/software/make) || [make](https://www.archlinux.org/packages/?name=make)
 
-*   **[GCC](/index.php/GCC "GCC")** — O GNU Compiler Collection - frontends para C e C++.
+*   **[GCC](/index.php/GCC_(Portugu%C3%AAs) "GCC (Português)")** — O GNU Compiler Collection - frontends para C e C++.
 
 	[https://gcc.gnu.org/](https://gcc.gnu.org/) || [gcc](https://www.archlinux.org/packages/?name=gcc)
 

@@ -38,7 +38,7 @@
     *   [13.2 UEFI firmware workaround](#UEFI_firmware_workaround)
     *   [13.3 Create a GRUB entry in the firmware boot manager](#Create_a_GRUB_entry_in_the_firmware_boot_manager)
     *   [13.4 GRUB standalone](#GRUB_standalone)
-    *   [13.5 Technical information](#Technical_information)
+        *   [13.4.1 Technical information](#Technical_information)
 
 ## Alternative installation methods
 
@@ -607,7 +607,7 @@ Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Bo
 
 **Warning:** You may find that the `grub.cfg` file is not loaded due to `${cmdpath}` missing a slash (i.e. `(hd1,msdos2)EFI/Boot` instead of `(hd1,msdos2)/EFI/Boot`) and so you are dropped into a GRUB shell. If this happens determine what `${cmdpath}` is set to (`echo ${cmdpath}` ) and then load the config file manually (e.g. `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
 
-### Technical information
+#### Technical information
 
 The GRUB EFI file always expects its config file to be at `${prefix}/grub.cfg`. However in the standalone GRUB EFI file, the `${prefix}` is located inside a tar archive and embedded inside the standalone GRUB EFI file itself (inside the GRUB environment, it is denoted by `"(memdisk)"`, without quotes). This tar archive contains all the files that would be stored normally at `/boot/grub` in case of a normal GRUB EFI install.
 

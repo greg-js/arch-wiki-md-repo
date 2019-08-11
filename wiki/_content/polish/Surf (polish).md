@@ -63,7 +63,7 @@ Zobacz stronę man aby uzyskać więcej informacji.
 
 ### Niewyraźna czcionka na GitHubie
 
-Zainstaluj [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) lub dodaj to do `~/.config/fontconfig/fonts.conf` wśrodku tagów fontconfig-tags:
+Zainstaluj [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts) lub dodaj to do `~/.config/fontconfig/fonts.conf` wśrodku tagów fontconfig-tags:
 
 ```
  <selectfont>

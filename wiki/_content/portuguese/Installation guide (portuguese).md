@@ -174,7 +174,7 @@ Resultados terminando em `rom`, `loop` ou `airoot` podem ser ignorados.
 As seguintes [partições](/index.php/Partition "Partition") são **exigidas** para um dispositivo escolhido:
 
 *   Uma partição para o diretório raiz `/`.
-*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, uma [partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition").
+*   Se [UEFI](/index.php/UEFI "UEFI") estiver habilitado, uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI").
 
 Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php/LVM "LVM"), [criptografia de sistema](/index.php/Dm-crypt "Dm-crypt") ou [RAID](/index.php/RAID "RAID"), faça isso agora.
 
@@ -186,7 +186,7 @@ Se você quiser criar algum dispositivo de bloco empilhado para [LVM](/index.php
 | [SWAP] | `/dev/sd*X*2` | Swap Linux | Mais que 512 MiB |
 | UEFI com [GPT](/index.php/GPT "GPT") |
 | Ponto de montagem | Partição | [Tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") | Tamanho sugerido |
-| `/mnt/boot` ou `/mnt/efi` | `/dev/sd*X*1` | [Partição de sistema EFI](/index.php/EFI_system_partition "EFI system partition") | 260–512 MiB |
+| `/mnt/boot` ou `/mnt/efi` | `/dev/sd*X*1` | [Partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") | 260–512 MiB |
 | `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Restante do dispositivo |
 | [SWAP] | `/dev/sd*X*3` | Linux swap | Mais que 512 MiB |
 

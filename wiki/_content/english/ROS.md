@@ -104,13 +104,6 @@ Presently some fixes are required:
 
 Edit `build/qt_gui_cpp/sip/qt_gui_cpp_sip/Makefile:12`, replacing `$$[QT_INSTALL_LIBS]` with `/usr/lib`. [Github issue](https://github.com/ros-visualization/rviz/issues/1382#issuecomment-507007580)
 
-Create a symbolic link to fix `fatal error: numpy/ndarrayobject.h: No such file or directory` [Github issue](https://github.com/ros2/rosidl_python/issues/66#issuecomment-507009953):
-
-```
-# ln -s /usr/lib/python3.7/site-packages/numpy/core/include/numpy /usr/include/python3.7m/numpy
-
-```
-
 Now you can build the workspace:
 
 ```

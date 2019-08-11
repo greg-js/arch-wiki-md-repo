@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=576668) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=577411) na versão em inglês.
 
 Artigos relacionados
 
@@ -33,15 +33,17 @@ A seção [#iw](#iw) descreve como gerenciar manualmente sua interface de rede s
     *   [3.4 Descobrir pontos de acesso](#Descobrir_pontos_de_acesso)
     *   [3.5 Definir o modo de operação](#Definir_o_modo_de_operação)
     *   [3.6 Conectar a um ponto de acesso](#Conectar_a_um_ponto_de_acesso)
-*   [4 WPA2 Empresarial](#WPA2_Empresarial)
-    *   [4.1 eduroam](#eduroam)
-    *   [4.2 Configuração manual/automática](#Configuração_manual/automática)
-        *   [4.2.1 wpa_supplicant](#wpa_supplicant)
-        *   [4.2.2 NetworkManager](#NetworkManager)
-        *   [4.2.3 connman](#connman)
-        *   [4.2.4 netctl](#netctl)
-    *   [4.3 Solução de problemas](#Solução_de_problemas)
-        *   [4.3.1 MS-CHAPv2](#MS-CHAPv2)
+*   [4 Wi-Fi Protected Access](#Wi-Fi_Protected_Access)
+    *   [4.1 WPA2 Pessoal](#WPA2_Pessoal)
+    *   [4.2 WPA2 Empresarial](#WPA2_Empresarial)
+        *   [4.2.1 eduroam](#eduroam)
+        *   [4.2.2 Configuração manual/automática](#Configuração_manual/automática)
+            *   [4.2.2.1 wpa_supplicant](#wpa_supplicant)
+            *   [4.2.2.2 NetworkManager](#NetworkManager)
+            *   [4.2.2.3 connman](#connman)
+            *   [4.2.2.4 netctl](#netctl)
+        *   [4.2.3 Solução de problemas](#Solução_de_problemas)
+            *   [4.2.3.1 MS-CHAPv2](#MS-CHAPv2)
 *   [5 Dicas e truques](#Dicas_e_truques)
     *   [5.1 Respeitar o domínio regulatório](#Respeitar_o_domínio_regulatório)
 *   [6 Solução de problemas](#Solução_de_problemas_2)
@@ -328,7 +330,47 @@ Independentemente do método usado, você pode verificar se você conseguiu se a
 
 ```
 
-## WPA2 Empresarial
+## Wi-Fi Protected Access
+
+### WPA2 Pessoal
+
+WPA2 Pessoal, ou WPA2-PSK, é um modo de [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/pt:Wi-Fi_Protected_Access "wikipedia:pt:Wi-Fi Protected Access").
+
+Você pode autenticar em redes WPA2 Pessoal usando [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") ou [iwd](/index.php/Iwd "Iwd"), ou conectar usando um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede"). Se você autenticou apenas na rede, para ter uma conexão totalmente funcional, você ainda precisará atribuir o(s) endereço(s) IP e rotas ou [manualmente](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endereço_IP_estático "Configuração de rede") ou usando um [DHCP](/index.php/DHCP_(Portugu%C3%AAs) "DHCP (Português)") cliente.
+
+O método a seguir usa [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") para se conectar a um roteador sem fio do modo pessoal WPA2 a partir da linha de comando. É particularmente adequado para instalar a partir da ISO do Arch Linux por rede sem fio. Todos os comandos necessários já estão incluídos na sessão live.
+
+Primeiro, critografe a senha do seu roteador:
+
+```
+# wpa_passphrase *meu_essid* *minha senha* > /etc/wpa_supplicant/*meu_essid.conf*
+
+```
+
+Antes de executar wpa_supplicant em segundo plano, teste para se certificar de obter uma conexão:
+
+```
+# wpa_supplicant -c /etc/wpa_supplicant/*meu_essid.conf* -i *meu_dispositivo_sem_fio*
+
+```
+
+Você pode receber alguns erros, mas deve ver uma mensagem "conectada" no final. Em caso afirmativo, <Ctrl>-c, e execute wpa_supplicant em segundo plano:
+
+```
+# wpa_supplicant -B -c /etc/wpa_supplicant/*meu_essid.conf* -i *meu_dispositivo_sem_fio*
+
+```
+
+Você ainda pode precisar atribuir um endereço IP. Se estiver usando DHCP:
+
+```
+# dhclient *meu_dispositivo_sem_fio*
+
+```
+
+É isso. A conexão sem fio deve agora estar completamente funcional.
+
+### WPA2 Empresarial
 
 Do inglês *WPA2 Enterprise*, é um modo de [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/pt:Wi-Fi_Protected_Access "wikipedia:pt:Wi-Fi Protected Access"). Ele oferece melhor segurança e gerenciamento de chaves do que o *WPA2 Pessoal* *(WPA2 Personal)* e suporta outras funcionalidades do tipo corporativo, como VLANs e [NAP](https://en.wikipedia.org/wiki/pt:Prote%C3%A7%C3%A3o_de_Acesso_%C3%A0_Rede "wikipedia:pt:Proteção de Acesso à Rede"). No entanto, é necessário um servidor de autenticação externo, chamado servidor [RADIUS](https://en.wikipedia.org/wiki/pt:RADIUS "wikipedia:pt:RADIUS") para lidar com a autenticação de usuários. Isso está em contraste com o modo Pessoal, que não exige nada além do roteador sem fio ou pontos de acesso (APs) e usa uma única senha ou senha para todos os usuários.
 
@@ -342,7 +384,7 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 **Atenção:** É possível usar o WPA2 Empresarial sem que o cliente verifique o certificado de AC do servidor. No entanto, você deve sempre procurar fazê-lo, porque sem autenticar o ponto de acesso, a conexão pode estar sujeita a um ataque *man-in-the-middle*. Isso pode acontecer porque, embora o handshake de conexão em si possa ser criptografado, as configurações mais usadas transmitem a própria senha em texto simples ou no modo facilmente quebrável [#MS-CHAPv2](#MS-CHAPv2). Portanto, o cliente pode enviar a senha para um ponto de acesso mal-intencionado que, então, faz o proxy da conexão.
 
-### eduroam
+#### eduroam
 
 [Eduroam](https://en.wikipedia.org/wiki/pt:eduroam "wikipedia:pt:eduroam") (acrônimo em inglês para *education roaming*) é uma rede de serviços internacional de roaming para os usuários em pesquisa no ensino superior e cursos subsequentes, baseado em WPA2 Empresarial.
 
@@ -353,21 +395,21 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 **Dica:** A configuração para o [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") e [#wpa_supplicant](#wpa_supplicant) podem ser geradas com a [ferramenta assistente de configuração (CAT) do eduroam](https://cat.eduroam.org/) .
 
-### Configuração manual/automática
+#### Configuração manual/automática
 
-#### wpa_supplicant
+##### wpa_supplicant
 
 [Suplicante de WPA](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") pode ser configurado diretamente por meio de seu arquivo de configuração ou usando seus frontends CLI/GUI e usado em combinação com um cliente DHCP. Veja os exemplos em `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` para configurar os detalhes de conexão.
 
-#### NetworkManager
+##### NetworkManager
 
 [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") pode gerar perfis de WPA2 Empresarial com [frontends gráficos](/index.php/NetworkManager_(Portugu%C3%AAs)#Front-ends "NetworkManager (Português)"). *nmcli* e *nmtui* não oferecem suporte a isso, mas podem usar perfis existentes.
 
-#### connman
+##### connman
 
 [ConnMan](/index.php/ConnMan "ConnMan") precisa de um arquivo de configuração separado antes de [se conectar](/index.php/ConnMan#Wi-Fi "ConnMan") à rede. Veja [connman-service.config(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connman-service.config.5) e [Connman#Connecting to eduroam](/index.php/ConnMan#Connecting_to_eduroam_.28802.1X.29 "ConnMan") para detalhes.
 
-#### netctl
+##### netctl
 
 [netctl](/index.php/Netctl "Netctl") possui suporte a configuração de [#wpa_supplicant](#wpa_supplicant) por meio de blocos inclusos com `WPAConfigSection=`. Veja [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) para detalhes.
 
@@ -375,9 +417,9 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 **Dica:** Certificados personalizados podem ser especificados adicionando a linha `'ca_cert="/caminho/para/o/ceritficado.cer"'` em `WPAConfigSection`.
 
-### Solução de problemas
+#### Solução de problemas
 
-#### MS-CHAPv2
+##### MS-CHAPv2
 
 As redes sem fio WPA2 Empresarial que exigem autenticação tipo 2 de MSCHAPv2 com PEAP às vezes exigem [pptpclient](https://www.archlinux.org/packages/?name=pptpclient), além do pacote [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl "Netctl") parece funcionar facilmente sem ppp-mppe, no entanto. Em ambos os casos, o uso de MSCHAPv2 é desencorajado, pois é altamente vulnerável, embora o uso de outro método geralmente não seja uma opção. Veja também [[2]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) e [.pdf](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise).
 

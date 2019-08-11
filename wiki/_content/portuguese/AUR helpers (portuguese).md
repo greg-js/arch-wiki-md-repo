@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=576592) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=578031) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -119,9 +119,9 @@ de shell | Especificidade |
 
 	[https://bitbucket.org/kachelaqa/pkgbrowser](https://bitbucket.org/kachelaqa/pkgbrowser) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
-*   **Octopi** — Wrapper do pacman em Qt 5 escrito em C++. Pode levar a um sistema defeituoso, pois um noificação de serviço [habilitado na instalação](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) [realiza regularmente](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) [atualizações parciais](/index.php/Atualiza%C3%A7%C3%B5es_parciais "Atualizações parciais").
+*   **Octopi** — Wrapper do pacman em Qt 5 escrito em C++.
 
-	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
+	[octopi](https://aur.archlinux.org/packages/octopi/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## Manutenção
 
@@ -151,10 +151,6 @@ de shell | Especificidade |
 
 ## Outros
 
-*   **aur.rs** — Biblioteca em Rust para acessar [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")
-
-	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
-
 *   **aur-talk** — Busca e exibe comentários do AUR.
 
 	[https://github.com/GermainZ/aur-talk](https://github.com/GermainZ/aur-talk) || [aur-talk-git](https://aur.archlinux.org/packages/aur-talk-git/)
@@ -174,3 +170,7 @@ de shell | Especificidade |
 *   **python3-aur** — Módulos Python 3 e utilitários auxiliares para acessar as informações de pacote do AUR e automatizar as interações do AUR.
 
 	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+
+*   **raur** — Biblioteca em Rust para acessar [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")
+
+	[https://gitlab.com/davidbittner/raur](https://gitlab.com/davidbittner/raur) ||

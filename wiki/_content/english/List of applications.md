@@ -577,7 +577,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Graphics and text mode web browser. Includes a console version similar to Lynx.
 
-	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
+	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links) or [links-g-directfb](https://aur.archlinux.org/packages/links-g-directfb/)
 
 *   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
 
@@ -1957,7 +1957,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 *   **[Discord](/index.php/Discord "Discord")** — Proprietary all-in-one voice and text chat application for gamers that’s free and works on both your desktop and phone.
 
-	[https://discordapp.com/](https://discordapp.com/) || [discord](https://aur.archlinux.org/packages/discord/)
+	[https://discordapp.com/](https://discordapp.com/) || [discord](https://www.archlinux.org/packages/?name=discord)
 
 *   **Esmska** — Program for sending SMS over the Internet.
 
@@ -3502,6 +3502,10 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 *   **[BRP-PACU](https://en.wikipedia.org/wiki/BRP-PACU "wikipedia:BRP-PACU")** — Dual channel FFT based acoustic analysis tool to help engineers analyze live professional sound systems using the transfer function.
 
 	[https://sourceforge.net/projects/brp-pacu/](https://sourceforge.net/projects/brp-pacu/) || [brp-pacu](https://aur.archlinux.org/packages/brp-pacu/)
+
+*   **Baudline** — Time-frequency and spectrogram analyzer
+
+	[http://www.baudline.com/index.html](http://www.baudline.com/index.html) || [baudline-bin](https://aur.archlinux.org/packages/baudline-bin/)
 
 *   **FMIT** — Graphical utility for tuning your musical instruments, with error and volume history and advanced features.
 
@@ -7783,7 +7787,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **i3lock-color** — Fork of *i3lock* with color and positioning configuration support and can use your desktop with the blur effect applied as a background.
 
-	[https://github.com/PandorasFox/i3lock-color](https://github.com/PandorasFox/i3lock-color) || [i3lock-color](https://aur.archlinux.org/packages/i3lock-color/)
+	[https://github.com/PandorasFox/i3lock-color](https://github.com/PandorasFox/i3lock-color) || [i3lock-color](https://www.archlinux.org/packages/?name=i3lock-color)
 
 *   **i3lock-wrapper** — A simple wrapper around *i3lock* which sets up a blurred screenshot of the desktop as a background image.
 
@@ -7823,7 +7827,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **xfce4-screensaver** — A screen saver and locker that aims to have simple, sane, secure defaults and be well integrated with the xfce desktop.
 
-	[https://git.xfce.org/apps/xfce4-screensaver/about/](https://git.xfce.org/apps/xfce4-screensaver/about/) || [xfce4-screensaver](https://aur.archlinux.org/packages/xfce4-screensaver/)
+	[https://git.xfce.org/apps/xfce4-screensaver/about/](https://git.xfce.org/apps/xfce4-screensaver/about/) || [xfce4-screensaver](https://www.archlinux.org/packages/?name=xfce4-screensaver)
 
 *   **xlockmore** — Simple X11 screen lock with PAM support.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-06-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=574864) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=579214) na versão em inglês.
 
 Related articles
 
@@ -120,7 +120,7 @@ Interfaces adicionais:
 
 ### Suporte a VPN
 
-O NetworkManager desde a versão 1.16 tem suporte nativo ao [WireGuard](/index.php/WireGuard "WireGuard")[[1]](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
+O NetworkManager desde a versão 1.16 tem suporte nativo ao [WireGuard](/index.php/WireGuard "WireGuard"), veja o [WireGuard na publicação de blog do NetworkManager](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
 
 O suporte para outros tipos de VPN é baseado em um sistema de plug-in. Eles são fornecidos nos seguintes pacotes:
 
@@ -136,7 +136,7 @@ O suporte para outros tipos de VPN é baseado em um sistema de plug-in. Eles sã
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [network-manager-sstp](https://www.archlinux.org/packages/?name=network-manager-sstp)
 
-**Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+**Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
 **Nota:** Pra ter uma resolução de DNS totalmente funcional ao usar VPN, você deve configurar [encaminhamento condicional](#Cache_de_DNS_e_encaminhamento_condicional).
 
@@ -213,20 +213,33 @@ $ nmcli radio wifi off
 
 Para uma lista compreensiva de configurações, veja [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5).
 
-Você pode ter três métodos para configurar uma conexão após ela ter sido criada:
+Em primeiro lugar você precisa obter lista de conexões:
+
+ `$ nmcli connection` 
+```
+NAME                UUID                                  TYPE      DEVICE
+Conexão cabeada 2   e7054040-a421-3bef-965d-bb7d60b7cecf  ethernet  enp5s0
+Conexão cabeada 1   997f2782-f0fc-301d-bfba-15421a2735d8  ethernet  enp0s25
+MEU-WIFI-DE-CASA    92a0f7b3-2eba-49ab-a899-24d83978f308  wifi       --
+
+```
+
+Aqui você pode usar a primeira coluna como ID de conexão usada posteriormente. Neste exemplo, escolhemos `Conexão cabeada 2` como um ID de conexão.
+
+Você pode ter três métodos para configurar uma conexão após `Conexão cabeada 2` ter sido criada:
 
 	Editor interativo do nmcli
 
-	`nmcli connection edit *id-da-conexão*`.
+	`nmcli connection edit *Conexão cabeada 2*`.
 O uso está bem documentado no editor.
 
 	Interface de linha de comando do nmcli
 
-	`nmcli connection modify *id-da-conexão* *definição*.*propriedade* *valor*`. Veja [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) para seu uso.
+	`nmcli connection modify *Conexão cabeada 2* *definição*.*propriedade* *valor*`. Veja [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) para seu uso. Por exemplo, você pode alterar sua métrica de rota IPv4 para 200 usando o comando `nmcli connection modify 'Conexão cabeada 2' ipv4.route-metric 200`.
 
 	Arquivo de conexão
 
-	Em `/etc/NetworkManager/system-connections/`, modifique o arquivo `*id-da-conexão*.nmconnection` correspondente.
+	Em `/etc/NetworkManager/system-connections/`, modifique o arquivo `*Conexão cabeada 2*.nmconnection` correspondente.
 Não se esqueça de recarregar o arquivo de configuração com `nmcli connection reload`
 
 ## Front-ends
@@ -262,7 +275,7 @@ killall nm-applet
 
 Quando você fecha a janela *stalonetray*, ela fecha `nm-applet` também, então nenhuma memória extra é usada quando você terminar as configurações de rede.
 
-O applet pode mostrar notificações de eventos, como conexão ou desconexão de uma rede WiFi. Para que essas notificações sejam exibidas, verifique se você tem um servidor de notificação instalado - consulte [Notificações na área de trabalho](/index.php/Desktop_notifications "Desktop notifications"). Se você usar o applet sem um servidor de notificação, poderá ver algumas mensagens em stdout/stderr e o aplicativo poderá ser interrompido. Veja [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
+O applet pode mostrar notificações de eventos, como conexão ou desconexão de uma rede WiFi. Para que essas notificações sejam exibidas, verifique se você tem um servidor de notificação instalado - consulte [Notificações na área de trabalho](/index.php/Desktop_notifications "Desktop notifications"). Se você usar o applet sem um servidor de notificação, poderá ver algumas mensagens em stdout/stderr e o aplicativo poderá ser interrompido. Veja [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
 
 Para executar `nm-applet` com tais notificações desabilitadas, inicie o miniaplicativo com o seguinte comando:
 
@@ -345,7 +358,9 @@ Para aqueles por trás de um [captive portal](https://en.wikipedia.org/wiki/Capt
 
 ### Cliente DHCP
 
-Por padrão, o NetworkManager usará seu cliente DHCP interno, baseado em systemd-networkd. Para usar um cliente DHCP diferente, [instale](/index.php/Instale "Instale") uma das alternativas:
+Por padrão, o NetworkManager usará seu cliente DHCP interno, baseado em systemd-networkd. Um novo cliente DHCP baseado em [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) está sendo trabalhado atualmente, ele acabará se tornando o cliente DHCP `interno` substituindo aquele baseado no systemd-networkd. [[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)
+
+Para usar um cliente DHCP diferente, [instale](/index.php/Instale "Instale") uma das alternativas:
 
 *   [dhclient](https://www.archlinux.org/packages/?name=dhclient) - Cliente DHCP da ISC.
 *   [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) - [dhcpcd](/index.php/Dhcpcd "Dhcpcd").

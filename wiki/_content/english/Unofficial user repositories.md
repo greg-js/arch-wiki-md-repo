@@ -94,6 +94,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.16 pantheon](#pantheon)
     *   [3.17 pietma](#pietma)
     *   [3.18 pnsft-pur](#pnsft-pur)
+    *   [3.19 titanium](#titanium)
 
 ## Adding your repository to this page
 
@@ -247,6 +248,7 @@ Server = https://repo.herecura.be/$repo/$arch
 ```
 [chaotic-aur]
 Server = http://lonewolf-builder.duckdns.org/$repo/x86_64
+Server = http://chaotic.bangl.de/$repo/x86_64
 
 ```
 
@@ -1055,5 +1057,16 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 ```
 [pnsft-pur]
 Server = https://osdn.net/projects/ponsfoot-aur/storage/pur/x86_64/
+
+```
+
+### titanium
+
+*   **Maintainer:** Pyrerune <pyrerune@gmail.com>
+*   **Description:** Repository containing software I develop.
+
+```
+[titanium]
+Server = https://pyrerune.github.io/titanium/$arch
 
 ```

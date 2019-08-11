@@ -218,6 +218,7 @@ To find whether the installation was successful and if cuda is up and running, y
 *   [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/) - a non-linear video editor. Can use both OpenCL and CUDA.
 *   [darktable](https://www.archlinux.org/packages/?name=darktable) – OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
 *   [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+*   [lc0](https://aur.archlinux.org/packages/lc0/) - Used for searching the neural network (supports tensorflow, OpenCL, CUDA, and openblas)
 *   [opencv](https://www.archlinux.org/packages/?name=opencv)
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
 *   [tensorflow-cuda](https://www.archlinux.org/packages/?name=tensorflow-cuda) - Port of TensorFlow to CUDA

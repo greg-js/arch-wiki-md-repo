@@ -21,7 +21,7 @@
 
 AbiWord can use multiple spell checking dictionaries, see [Language checking](/index.php/Language_checking "Language checking").
 
-To fix tiny cursor and misaligned text issues, install either [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) and [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont).
+To fix tiny cursor and misaligned text issues, install either [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) and [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts).
 
 ## User config directory
 

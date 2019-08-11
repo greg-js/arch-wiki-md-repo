@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacserve](/index.php/Pacserve "Pacserve"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacserve&diff=0&oldid=567147) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacserve](/index.php/Pacserve "Pacserve"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacserve&diff=0&oldid=577371) na versão em inglês.
 
 [Pacserve](http://xyne.archlinux.ca/projects/pacserve/) permite compartilhar facilmente pacotes do *pacman* entre computadores. Isso é muito útil se você tiver uma conexão lenta com a Internet, com várias máquinas funcionando com o Arch Linux.
 
@@ -16,6 +16,7 @@
 *   [4 Configurar o Pacman para usar Pacserve](#Configurar_o_Pacman_para_usar_Pacserve)
 *   [5 Solução de problemas](#Solução_de_problemas)
     *   [5.1 Problemas se usar baixadores externos no pacman.conf](#Problemas_se_usar_baixadores_externos_no_pacman.conf)
+    *   [5.2 Máquinas não veem uma a outra](#Máquinas_não_veem_uma_a_outra)
 *   [6 Veja também](#Veja_também)
 
 ## Instalação
@@ -83,6 +84,10 @@ Se você estiver usando um baixador externo, como o [wget](/index.php/Wget "Wget
 XferCommand = /usr/bin/wget --timeout=6 --passive-ftp -c -O '%o' '%u'
 
 ```
+
+### Máquinas não veem uma a outra
+
+A detecção de peers depende da versão do [python3-threaded_servers](https://aur.archlinux.org/packages/python3-threaded_servers/). Quadros multicast TCP provenientes de uma versão diferente do serviço são descartados. Nesse caso, `journalctl -u pacserve` avisa sobre esses quadros não reconhecidos. Atualize este pacote primeiro e depois reinicie o `pacserve.service`.
 
 ## Veja também
 

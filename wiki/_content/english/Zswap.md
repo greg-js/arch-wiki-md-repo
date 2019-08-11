@@ -3,7 +3,7 @@ Related articles
 *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
 *   [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
 
-[Zswap](https://en.wikipedia.org/wiki/zswap "wikipedia:zswap") is a kernel feature that provides a compressed RAM cache for swap pages. Pages which would otherwise be swapped out to disk are instead compressed and stored into a memory pool in RAM. Once the pool is full or the RAM is exhausted, the least recently used *(LRU)* page is decompressed and written to disk, as if it had not been intercepted. After the page has been decompressed into the swap cache, the compressed version in the pool can be freed.
+[Zswap](https://en.wikipedia.org/wiki/zswap "wikipedia:zswap") is a kernel feature that provides a compressed RAM cache for swap pages. Pages which would otherwise be swapped out to disk are instead compressed and stored into a memory pool in RAM. Once the pool is full or the RAM is exhausted, the least recently used ([LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_.28LRU.29 "wikipedia:Cache replacement policies")) page is decompressed and written to disk, as if it had not been intercepted. After the page has been decompressed into the swap cache, the compressed version in the pool can be freed.
 
 The [difference compared to zram](/index.php/Improving_performance#Zram_or_zswap "Improving performance") is that zswap works in conjunction with a [swap](/index.php/Swap "Swap") device while *zram* is a swap device in RAM that does not require a backing swap device.
 

@@ -169,7 +169,7 @@ Inicialize a mídia de instalação do Arch por meio de uma das unidades virtuai
 
 Se você deseja instalar o Arch Linux no modo EFI dentro do VirtualBox, nas configurações da máquina virtual, escolha o item *Sistema* no painel à esquerda e a aba *Placa-mãe* no painel direito, e marque a caixa de seleção *Habilitar EFI (sistemas especiais apenas)*. Depois de selecionar o kernel no menu da mídia de instalação do Arch Linux, a mídia irá travar por um minuto ou dois e continuará a inicializar o kernel normalmente depois. Seja paciente.
 
-Uma vez que o sistema e o gerenciador de boot sejam instalados, o VirtualBox tentará primeiro executar `/EFI/BOOT/BOOTX64.EFI` da [ESP](/index.php/ESP "ESP"). Se essa primeira opção falhar, o VirtualBox tentará o script de shell EFI `startup.nsh` da raiz da ESP. Isso significa que, para inicializar o sistema, você tem as seguintes opções:
+Uma vez que o sistema e o gerenciador de boot sejam instalados, o VirtualBox tentará primeiro executar `/EFI/BOOT/BOOTX64.EFI` da [ESP](/index.php/ESP_(Portugu%C3%AAs) "ESP (Português)"). Se essa primeira opção falhar, o VirtualBox tentará o script de shell EFI `startup.nsh` da raiz da ESP. Isso significa que, para inicializar o sistema, você tem as seguintes opções:
 
 *   [Iniciar o gerenciador de boot manualmente](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") do shell EFI toda vez;
 *   Mover o gerenciador de boot para o caminho padrão `/EFI/BOOT/BOOTX64.EFI`;
@@ -690,43 +690,43 @@ Para controlar de forma transparente sua máquina virtual com o mouse indo e vol
 
 ### Nenhuma opção para cliente de SO 64 bits
 
-When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
+Ao iniciar um cliente VM e nenhuma opção de 64 bits estiver disponível, verifique se os recursos de virtualização da CPU (geralmente denominados `VT-x`) estão habilitados na BIOS.
 
-If you are using a Windows host, you may need to disable Hyper-V, as it prevents VirtualBox from using VT-x. [[6]](https://www.virtualbox.org/ticket/12350)
+Se você estiver usando um hospedeiro do Windows, talvez seja necessário desabilitar o Hyper-V, já que ele impede que o VirtualBox use o VT-x. [[6]](https://www.virtualbox.org/ticket/12350)
 
 ### VirtualBox GUI não corresponde ao tema GTK do hospedeiro
 
-See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt-based applications like VirtualBox.
+Veja [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") para informações sobre aplicação de temas em aplicativos baseados no Q, como o VirtualBox.
 
 ### Não é possível enviar Ctrl+Alt+Fn para o convidado
 
-Your guest operating system is a GNU/Linux distribution and you want to open a new TTY shell by hitting `Ctrl+Alt+F2` or exit your current X session with `Ctrl+Alt+Backspace`. If you type these keyboard shortcuts without any adaptation, the guest will not receive any input and the host (if it is a GNU/Linux distribution too) will intercept these shortcut keys. To send `Ctrl+Alt+F2` to the guest for example, simply hit your *Host Key* (usually the right `Ctrl` key) and press `F2` simultaneously.
+O sistema operacional do convidado é uma distribuição GNU/Linux e você deseja abrir um novo shell TTY pressionando `Ctrl+Alt+F2` ou sair da sessão atual com `Ctrl+Alt+Backspace`. Se você digitar esses atalhos de teclado sem qualquer adaptação, o convidado não receberá nenhuma entrada e o hospedeiro (se for uma distribuição GNU/Linux também) interceptará essas teclas de atalho. Para enviar `Ctrl+Alt+F2` para o convidado, por exemplo, simplesmente pressione a *Tecla do Hospedeiro* (normalmente a tecla `Ctrl` da direita) e pressione `F2` simultaneamente.
 
 ### Subsistema USB não funciona
 
-Your user must be in the `vboxusers` group and you need to install the [extension pack](#Extension_pack) if you want USB 2 support. Then you will be able to enable USB 2 in the VM settings and add one or several filters for the devices you want to access from the guest OS.
+Seu usuário deve estar no grupo `vboxusers` e você precisa instalar o [pacote de extensões](#Pacote_de_extensões) se quiser suporte a USB 2\. Em seguida, você poderá ativar o USB 2 nas configurações da VM e adicionar um ou vários filtros para os dispositivos que deseja acessar no sistema operacional do convidado.
 
-If `VBoxManage list usbhost` does not show any USB devices even if run as root, make sure that there is no old udev rules (from VirtualBox 4.x) in `/etc/udev/rules.d/`. VirtualBox 5.0 installs udev rules to `/usr/lib/udev/rules.d/`. You can use command like `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` to determine if the udev rule file is outdated.
+Se `VBoxManage list usbhost` não mostrar nenhum dispositivo USB, mesmo que seja executado como root, certifique-se de que não há regras antigas do udev (do VirtualBox 4.x) em `/etc/udev/rules.d/`. O VirtualBox 5.0 instala as regras do udev para `/usr/lib/udev/rules.d/`. Você pode usar o comando como `pacman -Qo /usr/lib/udev/rules.d/60-vboxdrv.rules` para determinar se o arquivo de regras do udev está desatualizado.
 
-Sometimes, on old Linux hosts, the USB subsystem is not auto-detected resulting in an error `Could not load the Host USB Proxy service: VERR_NOT_FOUND` or in a not visible USB drive on the host, [even when the user is in the **vboxusers** group](https://bbs.archlinux.org/viewtopic.php?id=121377). This problem is due to the fact that VirtualBox switched from *usbfs* to *sysfs* in version 3.0.8\. If the host does not understand this change, you can revert to the old behaviour by defining the following environment variable in any file that is sourced by your shell (e.g. your `~/.bashrc` if you are using *bash*):
+Às vezes, em hospedeiros Linux antigos, o subsistema USB não é detectado automaticamente, resultando em um erro `Could not load the Host USB Proxy service: VERR_NOT_FOUND` ou em uma unidade USB não visível no hospedeiro, [mesmo quando o usuário está no grupo **vboxusers**](https://bbs.archlinux.org/viewtopic.php?id=121377). Este problema é devido ao fato de que o VirtualBox mudou de *usbfs* para *sysfs* na versão 3.0.8\. Se o hospedeiro não entender essa alteração, você poderá reverter para o comportamento antigo definindo a seguinte variável de ambiente em qualquer arquivo originado pelo seu shell (por exemplo, `~/.bashrc` se estiver usando *bash*):
 
  `~/.bashrc`  `VBOX_USB=usbfs` 
 
-Then make sure, the environment has been made aware of this change (reconnect, source the file manually, launch a new shell instance or reboot).
+Em seguida, certifique-se de que o ambiente tenha conhecimento dessa alteração (reconecte, crie o arquivo manualmente, ative uma nova instância do shell ou reinicialize).
 
-Also make sure that your user is a member of the `storage` group.
+Certifique-se também de que seu usuário seja membro do grupo `storage`.
 
 ### Modem USB não funciona no hospedeiro
 
-If you have a USB modem which is being used by the guest OS, killing the guest OS can cause the modem to become unusable by the host system. Killing and restarting `VBoxSVC` should fix this problem.
+Se você tiver um modem USB que está sendo usado pelo sistema operacional convidado, a eliminação do sistema operacional convidado pode fazer com que o modem fique inutilizável pelo sistema hospedeiro. Matar e reiniciar `VBoxSVC` deve corrigir este problema.
 
 ### Dispositivo USB trava o convidado
 
-If attaching a USB device to the guest causes a crash or any other erroneous behavior, try switching the USB controller from USB 2 (EHCI) to USB 3 (xHCI) or vice versa.
+Se a conexão de um dispositivo USB ao convidado causar uma falha ou qualquer outro comportamento incorreto, tente alternar o controlador USB de USB 2 (EHCI) para USB 3 (xHCI) ou vice-versa.
 
 ### Acesso a porta serial pelo convidado
 
-Check you permission for the serial port:
+Verifique sua permissão para a porta serial:
 
  `$ ls -l /dev/ttyS*` 
 ```
@@ -737,11 +737,11 @@ crw-rw---- 1 root uucp 4, 67 Feb  3 09:12 /dev/ttyS3
 
 ```
 
-Add your user to the `uucp` [user group](/index.php/User_group "User group").
+Adicione seu usuário ao [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `uucp`.
 
 ### Convidado trava após iniciar o Xorg
 
-Faulty or missing drivers may cause the guest to freeze after starting Xorg, see for example [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) and [[8]](https://bbs.archlinux.org/viewtopic.php?id=156079). Try disabling 3D acceleration in *Settings > Display*, and check if all [Xorg](/index.php/Xorg "Xorg") drivers are installed.
+Drivers com defeito ou em falta podem fazer com que o convidado congele após iniciar o Xorg, veja por exemplo [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1167838) e [[8]](https://bbs.archlinux.org/viewtopic.php?id=156079). Tente desativar a aceleração 3D em *Configurações > Monitor* e verifique se todos os drivers [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") estão instalados.
 
 ### Modo tela cheia mostra uma tela branca
 

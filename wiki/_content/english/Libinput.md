@@ -240,6 +240,8 @@ To disable the touchpad, first get its name with `xinput list` and then disable 
 
 To make it permanent, see [Autostarting](/index.php/Autostarting "Autostarting").
 
+To toggle, write a script such as [[6]](https://github.com/lahwaacz/Scripts/blob/master/toggle-touchpad.sh).
+
 ### Gestures
 
 While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch [gestures](https://wayland.freedesktop.org/libinput/doc/latest/gestures.html), the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.

@@ -24,7 +24,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
     *   [5.4 Decrypt a PDF](#Decrypt_a_PDF)
     *   [5.5 Encrypt a PDF](#Encrypt_a_PDF)
     *   [5.6 Extract images from a PDF](#Extract_images_from_a_PDF)
-    *   [5.7 Extract page range from PDF](#Extract_page_range_from_PDF)
+    *   [5.7 Extract page range from PDF, split multipage PDF document](#Extract_page_range_from_PDF,_split_multipage_PDF_document)
     *   [5.8 Imposing a PDF](#Imposing_a_PDF)
     *   [5.9 Inspecting metadata](#Inspecting_metadata)
     *   [5.10 Optimize a PDF](#Optimize_a_PDF)
@@ -196,7 +196,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 ### Basic editors
 
-*   **PDF Arranger** — Helps merge or split pdf documents and rotate, crop and rearrange pages. It's a maintained fork of PDF-Shuffler.
+*   **PDF Arranger** — Helps merge or split pdf documents and rotate, crop and rearrange pages. It is a maintained fork of PDF-Shuffler.
 
 	[https://github.com/jeromerobert/pdfarranger](https://github.com/jeromerobert/pdfarranger) || [pdfarranger](https://www.archlinux.org/packages/?name=pdfarranger)
 
@@ -210,7 +210,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 *   **PDF Mod** — Reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
-	[https://wiki.gnome.org/Apps/PdfMod](https://wiki.gnome.org/Apps/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
+	[https://wiki.gnome.org/Attic/PdfMod](https://wiki.gnome.org/Attic/PdfMod) || [pdfmod](https://www.archlinux.org/packages/?name=pdfmod)
 
 *   **PDFsam** — Open source application, written in Java, supports merging, splitting and rotating.
 
@@ -390,7 +390,7 @@ $ pdfimages *infile*.pdf -j *outfileroot*
 
 ```
 
-### Extract page range from PDF
+### Extract page range from PDF, split multipage PDF document
 
 With PDFtk as a single file:
 
@@ -496,28 +496,28 @@ Can be used to undo simple [imposition](#Imposing_a_PDF).
 Break Djvu into separate pages:
 
 ```
-djvmcvt -i input.djvu /path/to/out/dir output-index.djvu
+$ djvmcvt -i input.djvu /path/to/out/dir output-index.djvu
 
 ```
 
 Convert Djvu pages into images:
 
 ```
-ddjvu --format=tiff page.djvu page.tiff
+$ ddjvu --format=tiff page.djvu page.tiff
 
 ```
 
 Convert Djvu pages into PDF:
 
 ```
-ddjvu --format=pdf inputfile.djvu ouputfile.pdf
+$ ddjvu --format=pdf inputfile.djvu ouputfile.pdf
 
 ```
 
 You can also use *--page* to export specific pages:
 
 ```
-ddjvu --format=tiff --page=1-10 input.djvu output.tiff
+$ ddjvu --format=tiff --page=1-10 input.djvu output.tiff
 
 ```
 
@@ -538,11 +538,11 @@ You can use [scantailor](https://www.archlinux.org/packages/?name=scantailor) to
 There is a useful script [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/).
 
 ```
-img2djvu -c1 -d600 -v1 ./out
+$ img2djvu -c1 -d600 -v1 ./out
 
 ```
 
-it will create 600dpi out.djvu from all files in ./out directory.
+it will create 600 DPI `out.djvu` from all files in `./out` directory.
 
 Alternatively, you can try [didjvu](https://aur.archlinux.org/packages/didjvu/), which seems to create smaller files especially on images with well defined background.
 
@@ -566,10 +566,10 @@ $ ps2pdf -sPAPERSIZE=a4 -dOptimize=true -dEmbedAllFonts=true YourPSFile.ps
 Explanation:
 
 *   with `-sPAPERSIZE=something` you define the paper size. For valid PAPERSIZE values, see [[6]](http://ghostscript.com/doc/current/Use.htm#Known_paper_sizes).
-*   `-dOptimize=true` let's the created PDF be optimised for loading
+*   `-dOptimize=true` lets the created PDF be optimised for loading
 *   `-dEmbedAllFonts=true` makes the fonts look always nice
 
-**Note:** You cannot choose the paper orientation in ps2pdf. If your input PS file is healthy, it already contains the orientation information. If you are trying to use an Encapsulated PS file, you will have problems, if it does not fit in the `-sPAPERSIZE` you specified, because EPS files usually do not contain paper orientation informaiton. a workaround is creating a new paper in ghostscript settings (call it e.g. "slide") and use it as `-sPAPERSIZE=slide`.
+**Note:** You cannot choose the paper orientation in ps2pdf. If your input PS file is healthy, it already contains the orientation information. If you are trying to use an Encapsulated PS file, you will have problems, if it does not fit in the `-sPAPERSIZE` you specified, because EPS files usually do not contain paper orientation information. a workaround is creating a new paper in ghostscript settings (call it e.g. "slide") and use it as `-sPAPERSIZE=slide`.
 
 ## Libraries
 

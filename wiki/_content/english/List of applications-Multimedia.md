@@ -1073,6 +1073,10 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 	[https://sourceforge.net/projects/brp-pacu/](https://sourceforge.net/projects/brp-pacu/) || [brp-pacu](https://aur.archlinux.org/packages/brp-pacu/)
 
+*   **Baudline** — Time-frequency and spectrogram analyzer
+
+	[http://www.baudline.com/index.html](http://www.baudline.com/index.html) || [baudline-bin](https://aur.archlinux.org/packages/baudline-bin/)
+
 *   **FMIT** — Graphical utility for tuning your musical instruments, with error and volume history and advanced features.
 
 	[http://gillesdegottex.github.io/fmit/](http://gillesdegottex.github.io/fmit/) || [fmit](https://aur.archlinux.org/packages/fmit/)

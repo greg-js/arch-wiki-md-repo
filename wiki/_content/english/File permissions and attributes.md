@@ -472,6 +472,13 @@ Use getfattr to display extended attributes:
 user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 ```
 
+Finally, to remove an extended attribute:
+
+```
+$ setfattr -x user.checksum foo.txt
+
+```
+
 ### Preserving extended attributes
 
 | Command | Required flag |

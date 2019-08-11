@@ -131,7 +131,7 @@ This list is by no means complete. If you know of a community that is not listed
 *   Homepage: [https://archlinux.org.ru/](https://archlinux.org.ru/)
 *   Forum: [https://archlinux.org.ru/forum](https://archlinux.org.ru/forum)
 *   Telegram groups:
-    *   [https://t.me/archlinux_ru](https://t.me/archlinux_ru)
+    *   [https://t.me/archlinux_ru](https://t.me/archlinux_ru) (with mirror in Matrix: [#archlinux_ru:matrix.org](https://matrix.to/#/#archlinux_ru:matrix.org))
     *   [https://t.me/ArchLinuxChatRU](https://t.me/ArchLinuxChatRU)
 *   Wiki: [Main page (Русский)](/index.php/Main_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main page (Русский)")
 

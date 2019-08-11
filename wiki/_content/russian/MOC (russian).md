@@ -1,4 +1,4 @@
-**M**usic **O**n **C**onsole (Музыка в консоли) - это легкий музыкальный плеер, который состоит из двух частей: сервера (Moc) и плеера/интерфейса (Mocp). Такая реализация похожа на реализацию [mpd](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)"), но, в отличие от *mpd*, Moc поставляется сразу с интерфейсом. Сервер не поддерживает удалённый доступ.
+**M**usic **O**n **C**onsole (Музыка в консоли) — лёгкий музыкальный плеер, который состоит из двух частей: сервера (Moc) и плеера/интерфейса (Mocp). Такая реализация похожа на реализацию [mpd](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)"), но в отличие от *mpd*, Moc поставляется сразу с интерфейсом. Сервер не поддерживает удалённый доступ.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -7,11 +7,12 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
-*   [2 Настройка](#Настройка)
-*   [3 Использование](#Использование)
-*   [4 Скробблинг Last.fm](#Скробблинг_Last.fm)
-    *   [4.1 mocp-scrobbler](#mocp-scrobbler)
-*   [5 Фронтэнды](#Фронтэнды)
+    *   [1.1 PulseAudio](#PulseAudio)
+*   [2 Фронтэнды](#Фронтэнды)
+*   [3 Настройка](#Настройка)
+*   [4 Использование](#Использование)
+*   [5 Скробблинг Last.fm](#Скробблинг_Last.fm)
+    *   [5.1 mocp-scrobbler](#mocp-scrobbler)
 *   [6 Файл сервиса systemd](#Файл_сервиса_systemd)
 *   [7 Решение проблем](#Решение_проблем)
     *   [7.1 MOC не запускается](#MOC_не_запускается)
@@ -21,11 +22,25 @@
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [moc](https://www.archlinux.org/packages/?name=moc). Последняя разрабатываемая версия доступна в пакете [moc-svn](https://aur.archlinux.org/packages/moc-svn/).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [moc](https://www.archlinux.org/packages/?name=moc).
+
+### PulseAudio
+
+Установите пакет [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) или [moc-pulse-svn](https://aur.archlinux.org/packages/moc-pulse-svn/) (содержащий последнюю разрабатываемую версию) для получения поддержки [PulseAudio](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "PulseAudio (Русский)"). См. раздел [MOC#Using PulseAudio](/index.php/MOC#Using_PulseAudio "MOC") для получения информации об использовании драйвера pulseaudio.
+
+## Фронтэнды
+
+*   **mocicon** — GTK-апплет панели для управления MOC
+
+	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
+
+*   **eXo** — Qt-фронтэнд для MOC, поддерживающий скробблинг
+
+	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || [exo-player](https://aur.archlinux.org/packages/exo-player/)
 
 ## Настройка
 
-Пакет включает в себя конфигурационный файл-пример `/usr/share/doc/moc/config.example`. Для настройки *moc* скопируйте этот файл в `~/.moc/config` и отредактируйте его.
+Пакет включает в себя пример конфигурационного файла `/usr/share/doc/moc/config.example`. Для настройки *moc* скопируйте этот файл в `~/.moc/config` и отредактируйте его.
 
 Настройка горячих клавиш описана в `/usr/share/doc/moc/keymap.example`.
 
@@ -60,7 +75,7 @@ $ mocp
 | Изменить громкость на 20% | `meta+2` |
 | Закрыть проигрыватель (без завершения работы сервера) | `q` |
 
-**Примечание:** Для завершения работы сервера, испотльзуйте `Shift+q` или:
+**Примечание:** Для завершения работы сервера, используйте `Shift+q` или:
 ```
 $ mocp -x
 
@@ -70,9 +85,9 @@ $ mocp -x
 
 ### mocp-scrobbler
 
-[mocp-scrobbler](https://aur.archlinux.org/packages/mocp-scrobbler/) - это скробблер Last.fm/Libre.fm для MOC с поддержкой уведомлений о текущем воспроизведении, демонизации и кеширования. Он зависит только от [Python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") 3.
+[mocp-scrobbler](https://aur.archlinux.org/packages/mocp-scrobbler/) — скробблер Last.fm/Libre.fm для MOC с поддержкой уведомлений о текущем воспроизведении, "демонизации" и кеширования. Он зависит только от [Python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") 3.
 
-Скопируйте файл-пример в каталог с пользовательскими конфигурационными файлами:
+Скопируйте пример файла в каталог с пользовательскими конфигурационными файлами:
 
 ```
 mkdir ~/.mocpscrob/
@@ -88,24 +103,6 @@ cp /usr/share/doc/mocp-scrobbler/config.example  ~/.mocpscrob/config
 alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 ```
-
-## Фронтэнды
-
-*   **dmenu_mocp** — Фронтэнд Dmenu для MOC
-
-	[https://github.com/mutantturkey/mocicon](https://github.com/mutantturkey/mocicon) || [dmenu_mocp](https://aur.archlinux.org/packages/dmenu_mocp/)
-
-*   **mocicon** — Апплет GTK панели для управления MOC
-
-	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
-
-*   **moc-tray** — Быстрый и простой доступ к основным фунциям *mocp*
-
-	[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
-
-*   **eXo** — Qt-фронтэнд для MOC, поддерживающий скробблинг
-
-	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>Пакет не существует? [искать в AUR](https://aur.archlinux.org/packages/?K=exo)</small>
 
 ## Файл сервиса systemd
 

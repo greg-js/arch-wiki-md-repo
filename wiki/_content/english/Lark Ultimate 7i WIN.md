@@ -14,7 +14,7 @@
 
 [Lark Ultimate 7i WIN](http://www.lark.com.pl/produkt/155_ultimate-7i-win.html) is a budget 7" tablet shipping with Windows 8, 8.1 or 10\. Android versions are known to exist but were not as popular and less featured than the Windows (WIN) counterparts. There also exist 8", 10" and 11" versions of these tables and versions with 3G modem, featuring different interiors.
 
-Lark Ultimate 7i WIN has Intel Atom Z3735G BayTrail processor with integrated graphics and 1 GB of integrated DDR3 RAM, 16 GB eMMC, 1024 x 600 pixel screen with 10-point touchscreen of unknown resolution and "Windows" button, three hardware buttons (volume up, down and power), basic accelerometer, two cameras (VGA in front, 1.6 Mpix in the back), microphone, mono speaker, 3.5 mm jack slot, microSD slot, miniHDMI port and one USB port (data and charging). It features InsydeH20 32-bit UEFI BIOS.
+Lark Ultimate 7i WIN has Intel Atom Z3735G BayTrail processor with integrated graphics and 1 GB of integrated DDR3L RAM, 16 GB eMMC, 1024 x 600 pixel screen with 10-point touchscreen of unknown resolution and "Windows" button, three hardware buttons (volume up, down and power), basic accelerometer, two cameras (VGA in front, 2 Mpix in the back), microphone, mono speaker, 3.5 mm jack slot, microSD slot, miniHDMI port and one microUSB port (for data and charging). It features InsydeH20 32-bit UEFI BIOS.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

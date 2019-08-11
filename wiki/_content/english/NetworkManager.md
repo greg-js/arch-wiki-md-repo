@@ -118,7 +118,7 @@ Additional interfaces:
 
 ### VPN support
 
-NetworkManager since version 1.16 has native support for [WireGuard](/index.php/WireGuard "WireGuard")[[1]](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
+NetworkManager since version 1.16 has native support for [WireGuard](/index.php/WireGuard "WireGuard"), see the [WireGuard in NetworkManager blog post](https://blogs.gnome.org/thaller/2019/03/15/wireguard-in-networkmanager/).
 
 Support for other VPN types is based on a plug-in system. They are provided in the following packages:
 
@@ -134,7 +134,7 @@ Support for other VPN types is based on a plug-in system. They are provided in t
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [network-manager-sstp](https://www.archlinux.org/packages/?name=network-manager-sstp)
 
-**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
+**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
 **Note:** To have fully functioning DNS resolution when using VPN, you should set up [conditional forwarding](#DNS_caching_and_conditional_forwarding).
 
@@ -273,7 +273,7 @@ killall nm-applet
 
 When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
 
-The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
+The applet can show notifications for events such as connecting to or disconnecting from a WiFi network. For these notifications to display, ensure that you have a notification server installed - see [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). If you use the applet without a notification server, you might see some messages in stdout/stderr, and the app might hang. See [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
 
 In order to run `nm-applet` with such notifications disabled, start the applet with the following command:
 
@@ -356,7 +356,9 @@ For those behind a captive portal, the desktop manager can automatically open a 
 
 ### DHCP client
 
-By default NetworkManager will use its internal DHCP client, based on systemd-networkd. To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
+By default NetworkManager will use its internal DHCP client, based on systemd-networkd. A new [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) based DHCP client is currently being worked on, it will eventually become the `internal` DHCP client replacing the one based on systemd-networkd.[[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)
+
+To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
 
 *   [dhclient](https://www.archlinux.org/packages/?name=dhclient) - ISC’s DHCP client.
 *   [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) - [dhcpcd](/index.php/Dhcpcd "Dhcpcd").

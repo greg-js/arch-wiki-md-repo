@@ -296,7 +296,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **i3lock-color** — Fork of *i3lock* with color and positioning configuration support and can use your desktop with the blur effect applied as a background.
 
-	[https://github.com/PandorasFox/i3lock-color](https://github.com/PandorasFox/i3lock-color) || [i3lock-color](https://aur.archlinux.org/packages/i3lock-color/)
+	[https://github.com/PandorasFox/i3lock-color](https://github.com/PandorasFox/i3lock-color) || [i3lock-color](https://www.archlinux.org/packages/?name=i3lock-color)
 
 *   **i3lock-wrapper** — A simple wrapper around *i3lock* which sets up a blurred screenshot of the desktop as a background image.
 
@@ -336,7 +336,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 *   **xfce4-screensaver** — A screen saver and locker that aims to have simple, sane, secure defaults and be well integrated with the xfce desktop.
 
-	[https://git.xfce.org/apps/xfce4-screensaver/about/](https://git.xfce.org/apps/xfce4-screensaver/about/) || [xfce4-screensaver](https://aur.archlinux.org/packages/xfce4-screensaver/)
+	[https://git.xfce.org/apps/xfce4-screensaver/about/](https://git.xfce.org/apps/xfce4-screensaver/about/) || [xfce4-screensaver](https://www.archlinux.org/packages/?name=xfce4-screensaver)
 
 *   **xlockmore** — Simple X11 screen lock with PAM support.
 

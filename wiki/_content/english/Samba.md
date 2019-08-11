@@ -1137,6 +1137,8 @@ Access shared folder again as guest to be sure guest read access error has been 
 
 This error might be seen when mounting shares of Synology NAS servers. Use the mount option `vers=1.0` to solve it.
 
+**Note:** SMB version 1 is known to have security vulnerabilities and was used in successful ransomware attacks.
+
 ### Software caused connection abort
 
 File managers that utilizes [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) can show the error `Software caused connection abort` when writing a file to a share/server. This may be due to the server running SMB/CIFS version 1, which many routers use for USB drive sharing (e.g. Belkin routers). To write to these shares specify the CIFS version with the option `vers=1.0`. E.g.:

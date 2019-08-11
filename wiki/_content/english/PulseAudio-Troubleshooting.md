@@ -94,6 +94,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [7.11 pactl "invalid option" error with negative percentage arguments](#pactl_"invalid_option"_error_with_negative_percentage_arguments)
     *   [7.12 Fallback device is not respected](#Fallback_device_is_not_respected)
     *   [7.13 RTP/UDP packet flood](#RTP/UDP_packet_flood)
+    *   [7.14 New audio source streams auto-select to "blank" stream instead of BT headphones](#New_audio_source_streams_auto-select_to_"blank"_stream_instead_of_BT_headphones)
 
 ## Volume
 
@@ -592,7 +593,7 @@ Arch does not load the Pulseaudio Echo-Cancellation module by default, therefore
  `/etc/pulse/default.pa` 
 ```
 ### Enable Echo/Noise-Cancellation
-load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0 digital_gain_control=1" source_name=echoCancel_source sink_name=echoCancel_sink
+load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0\ digital_gain_control=1" source_name=echoCancel_source sink_name=echoCancel_sink
 set-default-source echoCancel_source
 set-default-sink echoCancel_sink
 ```
@@ -1446,3 +1447,15 @@ PulseAudio does not have a true default device. Instead it uses a ["fallback"](h
 ### RTP/UDP packet flood
 
 In some cases the default configuration might flood the network with UDP packets.[[13]](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/505) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[14]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+
+### New audio source streams auto-select to "blank" stream instead of BT headphones
+
+Example scenario: Restarting, stopping, fast forwarding a Youtube video on Firefox 68.0.1 on KDE + Arch might set the "sink" associated with it in PulseAudio to a blank state, and then output sound over laptop speakers. Inconsistently reproducible on Dell 9360\.
+
+Fix seems to be to kill and restart `pulseaudio`.
+
+```
+pulseaudio -k
+pulseaudio --start
+
+```

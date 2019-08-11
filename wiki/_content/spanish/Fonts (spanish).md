@@ -280,7 +280,7 @@ Para más fuentes mono espaciada vea [#Bitmap](#Bitmap) y [#Familias](#Familias)
 *   Fantasque Sans Mono ([ttf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=ttf-fantasque-sans-mono), [otf-fantasque-sans-mono](https://www.archlinux.org/packages/?name=otf-fantasque-sans-mono)).
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono), [otf-fira-mono](https://www.archlinux.org/packages/?name=otf-fira-mono)) – diseñado para Firefox OS.
 *   [Fira Code](https://github.com/tonsky/FiraCode) ([ttf-fira-code](https://www.archlinux.org/packages/?name=ttf-fira-code), [otf-fira-code](https://www.archlinux.org/packages/?name=otf-fira-code)) – con ligaduras de programación.
-*   [FreeMono](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
+*   [FreeMono](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
 *   [Hack](https://sourcefoundry.org/hack/) ([ttf-hack](https://www.archlinux.org/packages/?name=ttf-hack)) - fuente mono espaciada de código abierto, utilizada por defecto en KDE Plasma.
 *   [Inconsolata](https://en.wikipedia.org/wiki/Inconsolata "wikipedia:Inconsolata") ([ttf-inconsolata](https://www.archlinux.org/packages/?name=ttf-inconsolata), incluida en [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - inspirado por Consolas.
 *   [Inconsolata-g](https://leonardo-m.livejournal.com/77079.html) ([ttf-inconsolata-g](https://aur.archlinux.org/packages/ttf-inconsolata-g/)) - añade algunas modificaciones familiares para el programador.
@@ -302,7 +302,7 @@ Webs relevantes:
 #### Sans-serif
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/)).
-*   [FreeSans](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
+*   [FreeSans](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
 *   [Inter UI](https://github.com/rsms/inter) ([ttf-inter-ui](https://aur.archlinux.org/packages/ttf-inter-ui/)) – diseñada para las interfaces de usuario.
 *   [Linux Biolinum](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) – sustituto libre para Times New Roman.
 *   [PT Sans](https://en.wikipedia.org/wiki/PT_Sans "wikipedia:PT Sans") ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - tres pricipales variantes: normal, estrecho, y subtítulo - Unicode: latín, cirílico.
@@ -312,7 +312,7 @@ Webs relevantes:
 #### Serif
 
 *   [EB Garamond](http://www.georgduffner.at/ebgaramond/) ([otf-eb-garamond](https://aur.archlinux.org/packages/otf-eb-garamond/)).
-*   [FreeSerif](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
+*   [FreeSerif](https://en.wikipedia.org/wiki/es:GNU_FreeFont "wikipedia:es:GNU FreeFont") ([gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts)) - Unicode.
 *   [Gentium](https://en.wikipedia.org/wiki/es:Gentium "wikipedia:es:Gentium") ([ttf-gentium](https://www.archlinux.org/packages/?name=ttf-gentium)) - Unicode: latín, griego cirílico, hebreo.
 *   [Linux Libertine](https://en.wikipedia.org/wiki/es:Linux_Libertine "wikipedia:es:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: latín, griego cirílico, hebreo.
 
@@ -494,7 +494,7 @@ Una sección del Unicode estándar está dedicado a caracteres pictográficos qu
 *   [ttf-joypixels](https://www.archlinux.org/packages/?name=ttf-joypixels) - Fuente completa Unicode 12 Emoji font (formalmente EmojiOne)
 *   [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) - Glifos código abierto de Twitter.
 
-[Kaomoji](https://en.wikipedia.org/wiki/es:Emoticono#Estilo_de_Asia_Oriental "wikipedia:es:Emoticono") a veces como "emoticonos japoneses" están compuestos por caracteres de varios conjuntos, incluido CJK y fuentes índicas. Por ejemplo, estos paquetes proporcionan muchos kaomoji existentes: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), y [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
+[Kaomoji](https://en.wikipedia.org/wiki/es:Emoticono#Estilo_de_Asia_Oriental "wikipedia:es:Emoticono") a veces como "emoticonos japoneses" están compuestos por caracteres de varios conjuntos, incluido CJK y fuentes índicas. Por ejemplo, estos paquetes proporcionan muchos kaomoji existentes: [gnu-free-fonts](https://www.archlinux.org/packages/?name=gnu-free-fonts), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), y [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
 
 ### Matemáticas
 
