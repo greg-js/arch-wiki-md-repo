@@ -1,8 +1,12 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introduzione](#Introduzione)
 *   [2 Come ottenere nuovi plasmoidi](#Come_ottenere_nuovi_plasmoidi)
-*   [3 Consigli & trucchi](#Consigli_.26_trucchi)
+*   [3 Consigli & trucchi](#Consigli_&_trucchi)
     *   [3.1 Dividere la Dashboard dal Desktop](#Dividere_la_Dashboard_dal_Desktop)
         *   [3.1.1 Introduzione](#Introduzione_2)
         *   [3.1.2 Creare un nuovo desktop](#Creare_un_nuovo_desktop)
@@ -10,10 +14,10 @@
         *   [3.1.4 Modificare i file](#Modificare_i_file)
         *   [3.1.5 Riavviare plasma](#Riavviare_plasma)
         *   [3.1.6 Risoluzione di problemi](#Risoluzione_di_problemi)
-    *   [3.2 Dividere la Dashboard dal Desktop – il metodo di plasma](#Dividere_la_Dashboard_dal_Desktop_.E2.80.93_il_metodo_di_plasma)
-    *   [3.3 Aggiungere un pannello in stile OSX chiamato anche "fancy"](#Aggiungere_un_pannello_in_stile_OSX_chiamato_anche_.22fancy.22)
+    *   [3.2 Dividere la Dashboard dal Desktop – il metodo di plasma](#Dividere_la_Dashboard_dal_Desktop_–_il_metodo_di_plasma)
+    *   [3.3 Aggiungere un pannello in stile OSX chiamato anche "fancy"](#Aggiungere_un_pannello_in_stile_OSX_chiamato_anche_"fancy")
     *   [3.4 Tenere sfondi differenti per ogni faccia del cubo](#Tenere_sfondi_differenti_per_ogni_faccia_del_cubo)
-    *   [3.5 Miscelazione del Desktop e delle attività di visualizzazione delle cartelle in un cubo](#Miscelazione_del_Desktop_e_delle_attivit.C3.A0_di_visualizzazione_delle_cartelle_in_un_cubo)
+    *   [3.5 Miscelazione del Desktop e delle attività di visualizzazione delle cartelle in un cubo](#Miscelazione_del_Desktop_e_delle_attività_di_visualizzazione_delle_cartelle_in_un_cubo)
 
 # Introduzione
 

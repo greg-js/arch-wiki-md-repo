@@ -75,7 +75,7 @@ Whenever R starts, its configuration is controlled by several files. Please refe
 
 ### Environment
 
-R first loads **site** and **user** environment variable files. The name of the site file is controlled by the [Environment variables](/index.php/Environment_variables "Environment variables") `R_ENVIRON` if it exists, and defaults to `/etc/R/.Renviron`. The name of the user file is specified by `R_ENVIRON_USER`. If that is unset, it defaults to `.Renviron` in the curent working directory or if it exists, and `~/.Renviron` otherwise.
+R first loads **site** and **user** environment variable files. The name of the site file is controlled by the [Environment variables](/index.php/Environment_variables "Environment variables") `R_ENVIRON` if it exists, and defaults to `/etc/R/Renviron`. The name of the user file is specified by `R_ENVIRON_USER`. If that is unset, it defaults to `.Renviron` in the curent working directory or if it exists, and `~/.Renviron` otherwise.
 
 Most important variables can be found on [Environment Variables R Documentation](http://stat.ethz.ch/R-manual/R-devel/library/base/html/EnvVar.html).
 

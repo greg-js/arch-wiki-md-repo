@@ -106,7 +106,7 @@ Many other optional GNU tools are available in the [official repositories](/inde
 
 *   [GNOME](/index.php/GNOME "GNOME"), a desktop environment
 *   [GIMP](/index.php/GIMP "GIMP"), an image editor
-*   [GTK+](/index.php/GTK%2B "GTK+"), a widget toolkit
+*   [GTK](/index.php/GTK "GTK"), a widget toolkit
 *   [Gnumeric](/index.php/Gnumeric "Gnumeric"), a spreadsheet software
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), a partition manager
 *   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), a terminal multiplexer

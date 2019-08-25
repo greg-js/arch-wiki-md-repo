@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=577064) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=579407) na versão em inglês.
 
 Artigos relacionados
 
@@ -234,13 +234,13 @@ $ cat /proc/sys/vm/swappiness
 Para definir temporariamente o valor do swappiness:
 
 ```
-# sysctl vm.swappiness=10
+# sysctl -w vm.swappiness=10
 
 ```
 
-Para definir permanentemente o valor de swappiness, edite um arquivo de configuração *sysctl*
+Para definir permanentemente o valor de swappiness, crie um arquivo de configuração [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5). Por exemplo:
 
- `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
+ `/etc/sysctl.d/99-swappiness.conf`  `vm.swappiness=10` 
 
 Para testar e mais sobre por que isso pode funcionar, dê uma olhada [neste artigo](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 

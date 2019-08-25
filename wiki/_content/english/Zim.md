@@ -52,9 +52,9 @@ Zim provides a lot of useful plugins where many of them are not enabled by defau
 
 #### Spell checker
 
-The requirements for the Spell Checker plugin are as follows: [gtkspell](https://www.archlinux.org/packages/?name=gtkspell), [python-gtkspellcheck](https://aur.archlinux.org/packages/python-gtkspellcheck/) and [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
+The requirements for the Spell Checker plugin are as follows: [gtkspell](https://www.archlinux.org/packages/?name=gtkspell) and [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
 
-Change `aspell-en` to your desired language support. Now you can configure the Spell Checker and define the default language , in my case `en_GB`. If you do not want Zim to spell-check based on your system default language, go to `File` > `Properties` > `Spell Checker` and enter a language code such as `en_US` or `en_GB`.
+Change `aspell-en` to your desired language support. Now you can configure the Spell Checker and define the default language, in my case `en_GB`. If you do not want Zim to spell-check based on your system default language, go to `File` > `Properties` > `Spell Checker` and enter a language code such as `en_US` or `en_GB`.
 
 #### Source View
 

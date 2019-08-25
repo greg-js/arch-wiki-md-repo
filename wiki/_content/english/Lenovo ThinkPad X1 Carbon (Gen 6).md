@@ -198,7 +198,7 @@ ThinkPad X1 Carbon (Gen 6) is exclusively shipped with a Fibocom L850-GL LTE mod
 
 It is normally impossible to swap the LTE modem for a supported one due to BIOS-level restrictions ("whitelists" of allowed M.2 expansion cards) implemented in all modern Lenovo laptops. However, a method has been found to configure any Sierra Wireless EM73xx/EM74xx modem to "evade" the whitelist checks, so these modems can be used normally.
 
-Take a look at [ThinkPad mobile internet: Getting around BIOS-level whitelist restrictions](/index.php/ThinkPad_mobile_internet#Getting_around_BIOS-level_whitelist_restrictions "ThinkPad mobile internet") for instructions.
+Take a look at [ThinkPad mobile internet: Getting around BIOS-level whitelist restrictions](/index.php/ThinkPad_mobile_Internet#Getting_around_BIOS-level_whitelist_restrictions "ThinkPad mobile Internet") for instructions.
 
 ### WWAN/LTE GUI
 
@@ -358,7 +358,7 @@ If you haven't added the i915 to the MODULES list in /etc/mkinitcpio.conf (e.g. 
 
 **Note:** Some models of the 6th generation X1 Carbon seem to have issues with the TrackPoint and Touchpad working at the same time.
 
-**Note:** The following parameter will only work for kernel versions *after* v4.14\. Fore more information, see [Lenovo ThinkPad X1 Carbon (Gen 5)#Bug: Trackpoint/Trackpad not working](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5)#Bug:_Trackpoint/Trackpad_not_working "Lenovo ThinkPad X1 Carbon (Gen 5)").
+**Note:** The following parameter will only work for kernel versions *after* v4.14\. Fore more information, see [Lenovo ThinkPad X1 Carbon (Gen 5)#Trackpoint/Trackpad not working](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5)#Trackpoint/Trackpad_not_working "Lenovo ThinkPad X1 Carbon (Gen 5)").
 
 To get the TrackPoint and Touchpad to work at the same time, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 

@@ -15,7 +15,8 @@ The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be
 *   [3 Compiling](#Compiling)
 *   [4 Installing](#Installing)
 *   [5 Boot Loader](#Boot_Loader)
-*   [6 See Also](#See_Also)
+*   [6 Updating](#Updating)
+*   [7 See Also](#See_Also)
 
 ## Getting the Ingredients
 
@@ -120,6 +121,60 @@ Now, you only have to install the packages as usual. Best practice is to install
 ## Boot Loader
 
 Now, the folders and files for your custom kernel have been created, e.g. `/boot/vmlinuz-linux-test`. To test your kernel, update your [bootloader](/index.php/Bootloader "Bootloader") configuration file and add new entries ('default' and 'fallback') for your custom kernel. If you renamed your kernel in the *PKGBUILD pkgbase* you may have to rename the initramfs.img in your *$build/pkg/kernel/etc* before installing with pacman. That way, you can have both the stock kernel and the custom one to choose from.
+
+## Updating
+
+Assuming one has an arch kernel source at /home/user/linux/ that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the paths are relative to the top kernel source directory, which is assumed at /home/user/linux/. In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
+
+For this example, the HEAD of the locally installed bare git repository source at archlinux-linux/ was initially pointing to `4010b622f1d2 Merge branch 'dax-fix-5.3-rc3' of [git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm](git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm)`, which was, or still is, somewhere between v5.2.5-arch1 and v5.2.6-arch1.
+
+```
+$ cd archlinux-linux/
+$ git fetch --verbose
+
+```
+
+That was fetching v5.2.7-arch1, which was the newest archlinux tag.
+
+```
+$ cd ../src/archlinux-linux/
+$ git checkout master
+$ git pull
+$ git fetch --tag
+$ git branch --verbose 5.2.7-arch1 v5.2.7-arch1
+$ git checkout 5.2.7-arch1
+
+```
+
+.scmversion is empty here. In fact, it seems to be always empty, no matter what arch version is checked out. Other than the directory archlinux-linux/, and the version file, all other 4 files at src/ are arch specific files, and are symlinked to files by the same name on its parent directory.
+
+```
+$ ls ../
+60-linux.hook  archlinux-linux	linux.preset
+90-linux.hook  config		version
+
+```
+
+The up to date version of these 4 files, as well as the newer PKGBUILD, can be pulled in by asp update, followed by asp export linux:
+
+```
+$ cd ../../
+$ asp update
+$ asp export linux
+$ mv --verbose linux linux-tmp
+
+```
+
+```
+$ ls linux-tmp
+60-linux.hook  config	      linux.preset
+90-linux.hook  linux.install  PKGBUILD
+
+```
+
+Now one should manually merge, probably copy, the files at linux-tmp to the files by the same name at its parent directory. After which, the directory linux-tmp/, with all the files in it, can be deleted. Then run manually most, if not all, of PKGBUILD::prepare().
+
+At this point, `makepkg --verifysource` should succseed. And `makepkg --noextract` should be able to build the packages as if the source was extracted by `makepkg --nobuild`.
 
 ## See Also
 

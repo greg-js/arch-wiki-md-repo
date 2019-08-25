@@ -80,9 +80,9 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
 | [minio](https://www.archlinux.org/packages/?name=minio) | minio | 103 |
  nm-openconnect | 104 |
- gitlab | 105 |
+| [gitlab](https://www.archlinux.org/packages/?name=gitlab) | gitlab | 105 |
  cherokee | 106 |
- gitlab-runner | 107 |
+| [gitlab-runner](https://www.archlinux.org/packages/?name=gitlab-runner) | gitlab-runner | 107 |
  partimag | 110 |
 | [x2goserver](https://www.archlinux.org/packages/?name=x2goserver) | x2gouser | 111 |
 | [x2goserver](https://www.archlinux.org/packages/?name=x2goserver) | x2goprint | 112 |
@@ -133,7 +133,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
 | [opendmarc](https://www.archlinux.org/packages/?name=opendmarc) | opendmarc | 335 |
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
- ldap | 439 |
+| [openldap](https://www.archlinux.org/packages/?name=openldap) | ldap | 439 |
+| [389-ds-base](https://www.archlinux.org/packages/?name=389-ds-base) | dirsrv | 440 |
  oprofile | 492 |
 | [oidentd](https://www.archlinux.org/packages/?name=oidentd) | oidentd | 493 |
  alias | 7790 |
@@ -231,9 +232,9 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [polkit](https://www.archlinux.org/packages/?name=polkit) | polkitd | 102 |
 | [minio](https://www.archlinux.org/packages/?name=minio) | minio | 103 |
  nm-openconnect | 104 |
- gitlab | 105 |
+| [gitlab](https://www.archlinux.org/packages/?name=gitlab) | gitlab | 105 |
  cherokee | 106 |
- gitlab-runner | 107 |
+| [gitlab-runner](https://www.archlinux.org/packages/?name=gitlab-runner) | gitlab-runner | 107 |
  vboxusers | 108 |
  vboxsf | 109 |
  partimag | 110 |
@@ -298,7 +299,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [amavisd-new](https://www.archlinux.org/packages/?name=amavisd-new) | amavis | 333 |
 | [opendmarc](https://www.archlinux.org/packages/?name=opendmarc) | opendmarc | 335 |
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
- ldap | 439 |
+| [openldap](https://www.archlinux.org/packages/?name=openldap) | ldap | 439 |
+| [389-ds-base](https://www.archlinux.org/packages/?name=389-ds-base) | dirsrv | 440 |
  oprofile | 492 |
 | [oidentd](https://www.archlinux.org/packages/?name=oidentd) | oidentd | 493 |
  qmail | 2107 |

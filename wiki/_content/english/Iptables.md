@@ -100,6 +100,10 @@ The stock Arch Linux kernel is compiled with iptables support. You will only nee
 
 	[https://sourceforge.net/projects/peerguardian/](https://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
 
+*   **FireStarter** — High-level GUI Iptables firewall for Linux systems
+
+	[http://www.fs-security.com/](http://www.fs-security.com/) || [firestarter](https://aur.archlinux.org/packages/firestarter/)
+
 ## Basic concepts
 
 iptables is used to inspect, modify, forward, redirect, and/or drop IP packets. The code for filtering IP packets is already built into the kernel and is organized into a collection of *tables*, each with a specific purpose. The tables are made up of a set of predefined *chains*, and the chains contain rules which are traversed in order. Each rule consists of a predicate of potential matches and a corresponding action (called a *target*) which is executed if the predicate is true; i.e. the conditions are matched. If the IP packet reaches the end of a built-in chain, including an empty chain, then the chain's *policy* target determines the final destination of the IP packet. iptables is the user utility which allows you to work with these chains/rules. Most new users find the complexities of linux IP routing quite daunting, but, in practice, the most common use cases (NAT and/or basic Internet firewall) are considerably less complex.
@@ -191,7 +195,7 @@ iptables rules for IPv6 are, by default, stored in `/etc/iptables/ip6tables.rule
 After adding rules via command-line as shown in the following sections, the configuration file is not changed automatically — you have to save it manually:
 
 ```
-# iptables-save > /etc/iptables/iptables.rules
+# iptables-save -f /etc/iptables/iptables.rules
 
 ```
 
@@ -200,7 +204,7 @@ If you edit the configuration file manually, you have to [reload](/index.php/Rel
 Or you can load it directly through iptables:
 
 ```
-# iptables-restore < /etc/iptables/iptables.rules
+# iptables-restore /etc/iptables/iptables.rules
 
 ```
 

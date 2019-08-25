@@ -6,15 +6,19 @@
 
 本页面主要是讲第二种方法。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 配置](#.E9.85.8D.E7.BD.AE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 配置](#配置)
     *   [1.1 Syslinux](#Syslinux)
     *   [1.2 GRUB](#GRUB)
     *   [1.3 GRUB Legacy](#GRUB_Legacy)
     *   [1.4 LILO](#LILO)
-*   [2 常见参数列表](#.E5.B8.B8.E8.A7.81.E5.8F.82.E6.95.B0.E5.88.97.E8.A1.A8)
-*   [3 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
+*   [2 常见参数列表](#常见参数列表)
+*   [3 更多信息](#更多信息)
 
 ## 配置
 

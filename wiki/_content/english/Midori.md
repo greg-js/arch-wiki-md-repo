@@ -9,8 +9,8 @@ Related articles
 
 Some of its features are:
 
-*   Full integration with [GTK+](/index.php/GTK%2B "GTK+") 3.
-*   Fast rendering, due to the [WebKitGTK+](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit") engine.
+*   Full integration with [GTK](/index.php/GTK "GTK") 3.
+*   Fast rendering, due to the [WebKitGTK](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit") engine.
 *   Tabs, windows, and **session management**.
 *   Flexible, configurable web search.
 *   Support for **user scripts and styles**.

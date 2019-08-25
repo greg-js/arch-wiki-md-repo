@@ -6,7 +6,7 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| [Mobile internet](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") |
+| [Mobile internet](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") |
 | Fingerprint Sensor |
 | 
 

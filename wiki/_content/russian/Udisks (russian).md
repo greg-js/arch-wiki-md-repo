@@ -9,21 +9,25 @@
 
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) предоставляет демон *udisksd*, который реализует интерфейс [D-Bus](/index.php/D-Bus "D-Bus"), используемый для запроса и управления устройств хранения данных и инструмента командной строки *udisksctl*, используемый для запросов и использования в качестве демона.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-*   [3 Помощники монтирования](#.D0.9F.D0.BE.D0.BC.D0.BE.D1.89.D0.BD.D0.B8.D0.BA.D0.B8_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Настройка](#Настройка)
+*   [3 Помощники монтирования](#Помощники_монтирования)
     *   [3.1 Devmon](#Devmon)
     *   [3.2 inotify](#inotify)
-*   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-    *   [4.1 Отключить скрытие устройств (udisks2)](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D1.81.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.28udisks2.29)
-    *   [4.2 Монтировать в /media (udisks2)](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D0.B2_.2Fmedia_.28udisks2.29)
-    *   [4.3 Монтирование ISO-образа](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_ISO-.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
-    *   [4.4 Скрыть выбранные разделы](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D1.8C_.D0.B2.D1.8B.D0.B1.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8B)
-*   [5 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [5.1 udisks: Устройства не остаются размонтированными](#udisks:_.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.BD.D0.B5_.D0.BE.D1.81.D1.82.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D1.80.D0.B0.D0.B7.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [4 Советы и рекомендации](#Советы_и_рекомендации)
+    *   [4.1 Отключить скрытие устройств (udisks2)](#Отключить_скрытие_устройств_(udisks2))
+    *   [4.2 Монтировать в /media (udisks2)](#Монтировать_в_/media_(udisks2))
+    *   [4.3 Монтирование ISO-образа](#Монтирование_ISO-образа)
+    *   [4.4 Скрыть выбранные разделы](#Скрыть_выбранные_разделы)
+*   [5 Решение проблем](#Решение_проблем)
+    *   [5.1 udisks: Устройства не остаются размонтированными](#udisks:_Устройства_не_остаются_размонтированными)
+*   [6 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -33,7 +37,7 @@
 
 ## Настройка
 
-Действия пользователя, на выполнение и использование udisks, ограничиваются [Policykit](/index.php/Policykit "Policykit"). Если Вашей [сессии](/index.php/%D0%A3%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B0%D1%81%D1%82%D0%BE_%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F_%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8 "Устранение часто встречающихся неполадок") нет или она не активируется, настройте policykit вручную. Следующий файл устанавливает общие полномочия udisks для группы `storage`. [[2]](https://github.com/coldfix/udiskie#permissions)
+Действия пользователя, на выполнение и использование udisks, ограничиваются [Policykit](/index.php/Policykit "Policykit"). Если Вашей [сессии](/index.php/%D0%A3%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%87%D0%B0%D1%81%D1%82%D0%BE_%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0%D1%8E%D1%89%D0%B8%D1%85%D1%81%D1%8F_%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA#Разрешения_сессии "Устранение часто встречающихся неполадок") нет или она не активируется, настройте policykit вручную. Следующий файл устанавливает общие полномочия udisks для группы `storage`. [[2]](https://github.com/coldfix/udiskie#permissions)
 
  `/etc/polkit-1/rules.d/50-udisks.rules` 
 ```
@@ -68,7 +72,7 @@ polkit.addRule(function(action, subject) {
 
 ## Помощники монтирования
 
-Автоматическое монтирование устройств легко достигается с [оболочками udisks](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Udisks "Список приложений"). См. также [Список приложений#Монтирование](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5 "Список приложений")и [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+Автоматическое монтирование устройств легко достигается с [оболочками udisks](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Udisks "Список приложений"). См. также [Список приложений#Монтирование](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Монтирование "Список приложений")и [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
 
 ### Devmon
 
@@ -88,7 +92,7 @@ polkit.addRule(function(action, subject) {
 
 **Примечание:** После запуска этой команды от имени суперпользователя *devmon* для слежения за устройствами будет использовать *udisks*
 
-**Совет:** Чтобы для автоматического монтирования устройств запустить *devmon* в фоновом режиме, [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `devmon@.service`, используя имя пользователя в качестве аргумента: `devmon@*пользователь*.service`. Следует иметь в виду службы, выполняемые вне [сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.B5.D1.81.D1.81.D0.B8.D0.B8 "General troubleshooting (Русский)"). Скорректируйте правила [Polkit](/index.php/Polkit "Polkit"), где это необходимо, или запускайте *devmon* из сеанса пользователя (смотрите статью [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск"))
+**Совет:** Чтобы для автоматического монтирования устройств запустить *devmon* в фоновом режиме, [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `devmon@.service`, используя имя пользователя в качестве аргумента: `devmon@*пользователь*.service`. Следует иметь в виду службы, выполняемые вне [сессии](/index.php/General_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Разрешения_сессии "General troubleshooting (Русский)"). Скорректируйте правила [Polkit](/index.php/Polkit "Polkit"), где это необходимо, или запускайте *devmon* из сеанса пользователя (смотрите статью [Автозапуск](/index.php/%D0%90%D0%B2%D1%82%D0%BE%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA "Автозапуск"))
 
 ### inotify
 
@@ -114,7 +118,7 @@ done
 
 ```
 
-## Советы и хитрости
+## Советы и рекомендации
 
 ### Отключить скрытие устройств (udisks2)
 

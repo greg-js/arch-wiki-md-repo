@@ -142,7 +142,7 @@ Em vez da interface padrão, o uso de navegadores como [lynx](https://www.archli
 
 	[https://wiki.gnome.org/Apps/Yelp](https://wiki.gnome.org/Apps/Yelp) || [yelp](https://www.archlinux.org/packages/?name=yelp)
 
-*   **KHelpCenter** — Aplicativo para mostrar documentação dos aplicativos do [KDE](/index.php/KDE "KDE"). Páginas man estão em *Páginas de manual do UNIX* ou executando `khelpcenter man:<nome>`.
+*   **KHelpCenter** — Aplicativo para mostrar documentação dos aplicativos do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"). Páginas man estão em *Páginas de manual do UNIX* ou executando `khelpcenter man:<nome>`.
 
 	[https://userbase.kde.org/KHelpCenter](https://userbase.kde.org/KHelpCenter) || [khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)
 

@@ -162,7 +162,7 @@ configuration file: `/etc/e4rat-lite.conf`
 
 ### bootchart
 
-**Warning:** The official bootchart package appears to be deprecated, as it longer includes the bootchart-render command needed to generate the graph. It is recommended to use bootchart2 as an alternative.
+**Warning:** The official bootchart package appears to be deprecated, as it no longer includes the bootchart-render command needed to generate the graph. It is recommended to use bootchart2 as an alternative.
 
 This version of [bootchart](/index.php/Bootchart "Bootchart") automatically stops logging as soon as a [display manager](/index.php/Display_manager "Display manager") comes up. Supposedly the following overrides that and continues logging but it does not work for me:
 

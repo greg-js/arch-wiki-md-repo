@@ -743,7 +743,9 @@ Then the underlying filesystem must be resized.
 
 ### Loopback filesystem
 
-Assuming that an encrypted loopback filesystem is mounted on `/mnt/secret`, for example following [dm-crypt/Encrypting a non-root file system#Loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system"), first unmount the encrypted container:
+Assume that an encrypted loopback filesystem is stored in a file `/bigsecret`, looped to `/dev/loop0`, mapped to `secret` and mounted on `/mnt/secret`, as in the example at [dm-crypt/Encrypting a non-root file system#Loop device](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system").
+
+If the container file is currently mapped and/or mounted, unmount and/or close it:
 
 ```
 # umount /mnt/secret
@@ -752,9 +754,9 @@ Assuming that an encrypted loopback filesystem is mounted on `/mnt/secret`, for 
 
 ```
 
-Next, expand the container file with the size of the data you want to add:
+Next, expand the container file with the size of the data you want to add. In this example, the file will be expanded with 1M * 1024, which is 1G.
 
-**Warning:** Be careful to really use **two** `>`, or you will override your current container.
+**Warning:** Make absolutely sure to use **two** `>`, instead of just one, or else you will overwrite the file instead of appending to it. Making a backup before this step is strongly recommended.
 
 ```
 # dd if=/dev/urandom bs=1M count=1024 | cat - >> /bigsecret
@@ -769,7 +771,7 @@ Now map the container to the loop device:
 
 ```
 
-After this, resize the encrypted part of the container to the maximum size of the container file:
+After this, resize the encrypted part of the container to the new maximum size of the container file:
 
 ```
 # cryptsetup resize secret

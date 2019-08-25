@@ -205,3 +205,4 @@ In a dynamic environment (laptops and to some extents desktops), you need to con
 *   [Debian Handbook](https://www.debian.org/doc/manuals/debian-handbook/sect.hostname-name-service.en.html#sect.name-resolution)
 *   [RFC:7706](https://tools.ietf.org/html/rfc7706 "rfc:7706") - Decreasing Access Time to Root Servers by Running One on Loopback
 *   [Domain name system overview](http://linux-ip.net/pages/diagrams.html#domain-name-system-overview) - Diagram about DNS
+*   [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services")

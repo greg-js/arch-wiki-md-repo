@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=576631) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=579332) na versão em inglês.
 
 Artigos relacionados
 
@@ -46,13 +46,13 @@ Uma [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") (acrônimo
 
 ### UEFI
 
-[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") tem suporte para ler a tabela de partições e os sistemas de arquivos. UEFI não inicia qualquer código de inicialização na MBR independentemente de existir ou não - em vez disso, a inicialização depende de entradas de inicialização na [NVRAM](https://en.wikipedia.org/wiki/pt:NVRAM "wikipedia:pt:NVRAM").
+[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") tem suporte para ler a tabela de partições e os sistemas de arquivos. UEFI não inicia qualquer [código de inicialização do Master Boot Record (MBR)](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning") independentemente de existir ou não - em vez disso, a inicialização depende de entradas de inicialização na [NVRAM](https://en.wikipedia.org/wiki/pt:NVRAM "wikipedia:pt:NVRAM").
 
 A especificação UEFI determina o suporte para os sistemas de arquivos [FAT12, FAT16 e FAT32](/index.php/FAT "FAT") (veja [Especificação UEFI versão 2.7, seção 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), mas qualquer fornecedor em conformidade pode, opcionalmente, adicionar suporte para sistemas de arquivos adicionais; por exemplo, o [Mac](/index.php/Mac "Mac") da Apple (e por padrão) oferece suporte a seus próprios drivers de sistema de arquivos HFS+. As implementações da UEFI também suportam ISO-9660 para discos ópticos.
 
 O UEFI inicia aplicativos EFI, por exemplo [gerenciadores de boot](#Gerenciador_de_boot), [Shell UEFI](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface"), etc. Esses aplicativos geralmente são armazenados como arquivos na [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI"). Cada fornecedor pode armazenar seus arquivos na partição do sistema EFI sob a pasta `/EFI/*nome_fornecedor*`. Os aplicativos podem ser iniciados adicionando uma entrada de inicialização à NVRAM ou a partir do shell UEFI.
 
-A especificação UEFI tem suporte para inicializar BIOS legado com sua [CSM (Compatibility Support Module)](https://en.wikipedia.org/wiki/pt:Unified_Extensible_Firmware_Interface#Compatibility_Support_Module "wikipedia:pt:Unified Extensible Firmware Interface"). Se o CSM estiver ativado no UEFI, o UEFI gerará entradas de inicialização do CSM para todas as unidades. Se uma entrada de inicialização do CSM for escolhida para ser inicializada, o CSM do UEFI tentará inicializar a partir do MBR da unidade.
+A especificação UEFI tem suporte para inicializar BIOS legado com sua [Compatibility Support Module (CSM)](https://en.wikipedia.org/wiki/pt:Unified_Extensible_Firmware_Interface#Compatibility_Support_Module "wikipedia:pt:Unified Extensible Firmware Interface"). Se o CSM estiver ativado no UEFI, o UEFI gerará entradas de inicialização do CSM para todas as unidades. Se uma entrada de inicialização do CSM for escolhida para ser inicializada, o CSM do UEFI tentará inicializar a partir do MBR da unidade.
 
 ## Inicialização do sistema
 
@@ -75,7 +75,7 @@ A especificação UEFI tem suporte para inicializar BIOS legado com sua [CSM (Co
 3.  O firmware lê as entradas de inicialização na NVRAM para determinar qual aplicativo EFI deve ser iniciado e de onde (por exemplo, de qual disco e partição).
     *   Uma entrada de inicialização pode ser simplesmente um disco. Nesse caso, o firmware procura uma [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") nesse disco e tenta localizar o aplicativo EFI no caminho reserva de inicialização `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` em [sistemas com um IA32 (32 bits)](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). É assim que as mídias removíveis inicializáveis UEFI funcionam.
 4.  O firmware inicia o aplicativo EFI.
-    *   Isso poderia ser um [gerenciador de boot](#Gerenciador_de_boot) ou o [kernel](/index.php/Kernel "Kernel") do Arch usando [EFISTUB](/index.php/EFISTUB "EFISTUB")
+    *   Isso poderia ser um [gerenciador de boot](#Gerenciador_de_boot) ou o [kernel](/index.php/Kernel "Kernel") do Arch usando [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)")
     *   Ele poderia ser algum aplicativo EFI como um shell UEFI ou um [gerenciador de boot](#Gerenciador_de_boot), como [systemd-boot](/index.php/Systemd-boot "Systemd-boot") ou [rEFInd](/index.php/REFInd "REFInd").
 
 Se [Secure Boot](/index.php/Secure_Boot "Secure Boot") estiver habilitado, o processo de inicialização vai verificar a autenticidade do binário EFI pela assinatura.
@@ -90,7 +90,7 @@ Veja também [Dual boot com Windows](/index.php/Dual_boot_with_Windows "Dual boo
 
 ## Gerenciador de boot
 
-Um gerenciador de boot é um peça de software iniciada pela [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") ou pelo [UEFI](/index.php/UEFI "UEFI"). Ele é responsável por carregar o kernel com os [parâmetros de kernel](/index.php/Kernel_parameters "Kernel parameters") desejados e o [disco de RAM inicial](/index.php/Mkinitcpio "Mkinitcpio") com base nos arquivos de configuração. No caso do UEFI, o kernel em si pode ser lançado diretamente pelo UEFI usando o stub de inicialização EFI. Um gerenciador de boot separado ainda pode ser usado para editar os parâmetros do kernel antes de inicializar.
+Um gerenciador de boot é um peça de software iniciada pela [BIOS](https://en.wikipedia.org/wiki/pt:BIOS "wikipedia:pt:BIOS") ou pelo [UEFI](/index.php/UEFI "UEFI"). Ele é responsável por carregar o kernel com os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") desejados e o [disco de RAM inicial](/index.php/Mkinitcpio "Mkinitcpio") com base nos arquivos de configuração. No caso do UEFI, o kernel em si pode ser lançado diretamente pelo UEFI usando o stub de inicialização EFI. Um gerenciador de boot separado ainda pode ser usado para editar os parâmetros do kernel antes de inicializar.
 
 **Note:** Carregar atualizações de [microcódigo](/index.php/Microcode "Microcode") exige ajustes na configuração de gerenciador de boot. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -104,7 +104,7 @@ Um gerenciador de boot é um peça de software iniciada pela [BIOS](https://en.w
 
 | Nome | Firmware | [Tabela de partição](/index.php/Partition_table "Partition table") | Multiboot | [Sistema de arquivos](/index.php/File_systems "File systems") | Notas |
 | BIOS | [UEFI](/index.php/UEFI "UEFI") | [MBR](/index.php/MBR "MBR") | [GPT](/index.php/GPT "GPT") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4_(Portugu%C3%AAs) "Ext4 (Português)") | ReiserFS | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
-| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Sim | Sim | Sim | – | – | – | – | Somente ESP | – | O kernel se tornou em um executável EFI para ser carregado diretamente do firmware [UEFI](/index.php/UEFI "UEFI") ou de outro gerenciado de boot. |
+| [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)") | – | Sim | Sim | Sim | – | – | – | – | Somente ESP | – | O kernel se tornou em um executável EFI para ser carregado diretamente do firmware [UEFI](/index.php/UEFI "UEFI") ou de outro gerenciado de boot. |
 | [Clover](/index.php/Clover "Clover") | emula UEFI | Sim | Sim | Sim | Sim | Não | sem criptografia | Não | Sim | Não | Fork do rEFIt modificado para funcionar em [macOS em hardware que não seja da Apple](https://en.wikipedia.org/wiki/pt:Hackintosh "wikipedia:pt:Hackintosh"). |
 | [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") | Sim | Sim | Sim | Sim | Sim | Sem compressão zstd | Sim | Sim | Sim | Sim | No BIOS/GPT, configuração requer uma [partição de inicialização de BIOS](/index.php/Parti%C3%A7%C3%A3o_de_inicializa%C3%A7%C3%A3o_de_BIOS "Partição de inicialização de BIOS").
 Possui suporte a RAID, LUKS1 e LVM (mas não volumes de provisionamento fino). |
@@ -159,7 +159,7 @@ Uma vez iniciado o [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)
 
 ## GUI, xinit ou wayland
 
-[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, *xinit*, *startx*, o shell e o login serão encerrados nessa ordem, retornando ao [getty](#Getty).
+[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, *xinit*, *startx*, o shell e o login serão encerrados nessa ordem, retornando ao [getty](#getty).
 
 ## Veja também
 

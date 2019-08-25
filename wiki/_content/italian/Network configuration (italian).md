@@ -10,7 +10,11 @@ Articoli correlati
 
 Una semplice guida per la configurazione di rete e risoluzione di problemi annessi.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Primo controllo](#Primo_controllo)
 *   [2 Impostare l'host name](#Impostare_l'host_name)
@@ -378,7 +382,7 @@ Provare a pingare il gateway, il server DNS, l’ISP e altri siti Internet, in q
 
 ### ifplugd per laptops
 
-[ifplugd](https://www.archlinux.org/packages/?name=ifplugd) nei [Official Repositories (Italiano)Repository Ufficiali](/index.php?title=Official_Repositories_(Italiano)Repository_Ufficiali&action=edit&redlink=1 "Official Repositories (Italiano)Repository Ufficiali (page does not exist)") è un demone che configura automaticamente il dispositivo Ethernet quando viene collegato il cavo e che sconfigura il dispositivo quando il cavo viene scollegato. Ciò è utile su portatili con schede di rete integrate, così verrà creata una configurazione solo quando si collegherà il cavo. Questo sistema può essere utilizzato anche quando si vuole riavviare la rete, senza riavviare il computer e senza utilizzare la shell.
+[ifplugd](https://www.archlinux.org/packages/?name=ifplugd) nei [Repository Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)") è un demone che configura automaticamente il dispositivo Ethernet quando viene collegato il cavo e che sconfigura il dispositivo quando il cavo viene scollegato. Ciò è utile su portatili con schede di rete integrate, così verrà creata una configurazione solo quando si collegherà il cavo. Questo sistema può essere utilizzato anche quando si vuole riavviare la rete, senza riavviare il computer e senza utilizzare la shell.
 
 Di default è configurato per funzionare per il dispositivo `eth0`. Questa ed altre impostazioni come i ritardi, possono essere configurati in `/etc/ifplugd/ifplugd.conf`.
 
@@ -622,7 +626,7 @@ Il metodo migliore per diagnosticare il problema è utilizzare Firefox/Konqueror
 Prima di tutto, abilitare wget per pacman (in modo da ricevere informazioni inerenti il download dei pacchetti da parte di pacman). Aprire `/etc/pacman.conf` con l’editor di testo che si preferisce e decommentare la seguente linea (eliminare il cancelletto #):
 
 ```
-XferCommand=/usr/bin/wget --passive-ftp -c -O %o %u
+XferCommand=/usr/bin/wget --passive-ftp -c -O %o %u
 
 ```
 

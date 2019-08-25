@@ -1,10 +1,14 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Wstęp](#Wstęp)
 *   [2 Instalacja](#Instalacja)
 *   [3 Uruchomienie](#Uruchomienie)
 *   [4 Konfiguracja](#Konfiguracja)
-*   [5 Informacje końcowe](#Informacje_ko.C5.84cowe)
+*   [5 Informacje końcowe](#Informacje_końcowe)
 
 ## Wstęp
 

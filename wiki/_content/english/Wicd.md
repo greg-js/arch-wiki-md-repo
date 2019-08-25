@@ -3,7 +3,7 @@ Related articles
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 
-[Wicd](https://launchpad.net/wicd) is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to [NetworkManager](/index.php/NetworkManager "NetworkManager"). Wicd is written in [Python](/index.php/Python "Python") and [GTK+](/index.php/GTK%2B "GTK+"). Wicd can also run from the terminal in a curses interface, requiring no X server session or task panel (see [#Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)).
+[Wicd](https://launchpad.net/wicd) is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to [NetworkManager](/index.php/NetworkManager "NetworkManager"). Wicd is written in [Python](/index.php/Python "Python") and [GTK](/index.php/GTK "GTK"). Wicd can also run from the terminal in a curses interface, requiring no X server session or task panel (see [#Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -41,7 +41,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [wicd](https://www.archlinux.org/packages/?name=wicd) package, or [wicd-git](https://aur.archlinux.org/packages/wicd-git/) for the development version. It includes everything needed to run the wicd daemon and the `wicd-cli` and `wicd-curses` interfaces.
 
-There is also an official GTK+ front-end, available as [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk).
+There is also an official GTK front-end, available as [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk).
 
 ### Notifications
 

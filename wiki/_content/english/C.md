@@ -84,7 +84,7 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 
 See also:
 
-*   [GTK+/Development#C](/index.php/GTK%2B/Development#C "GTK+/Development")
+*   [GTK/Development#C](/index.php/GTK/Development#C "GTK/Development")
 *   [Desktop notifications#C](/index.php/Desktop_notifications#C "Desktop notifications")
 *   [Libcanberra#C](/index.php/Libcanberra#C "Libcanberra")
 *   [Archiving and compression#Compression libraries](/index.php/Archiving_and_compression#Compression_libraries "Archiving and compression")

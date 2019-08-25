@@ -1446,6 +1446,8 @@ The problem seems to correlate with a weak GPU and the game is timing out from t
 
 The problem seems to be related to RAM usage, once you hit around 2GB of RAM used, the game will crash. Servers with many addons have much more RAM usage, and lowering graphics settings to the minimum lowers RAM usage and mitigates crashes.
 
+Using the experimental x86-64 branch may help mitigate this issue, however keep in mind that some addons may return errors while using this branch.
+
 ### Gods will be watching
 
 Follow [#OpenSSL 1.0 setup](#OpenSSL_1.0_setup).

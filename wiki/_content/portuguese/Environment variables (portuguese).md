@@ -111,7 +111,7 @@ GUIVAR=value
 
 Para definir variáveis de ambiente apenas para um aplicativo específico em vez de toda a sessão, edite o arquivo *.desktop* do aplicativo. Veja [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") para instruções.
 
-**Dica:** [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") possui suporte a execução de shell scripts no login e mesmo após iniciar o Plasma, eles podem ser usados para definir variáveis de ambiente. Veja [KDE#Autostart](/index.php/KDE#Autostart "KDE").
+**Dica:** [KDE Plasma](/index.php/KDE_Plasma_(Portugu%C3%AAs) "KDE Plasma (Português)") possui suporte a execução de shell scripts no login e mesmo após iniciar o Plasma, eles podem ser usados para definir variáveis de ambiente. Veja [KDE (Português)#Iniciar automaticamente](/index.php/KDE_(Portugu%C3%AAs)#Iniciar_automaticamente "KDE (Português)").
 
 ### Por sessão
 
@@ -128,7 +128,7 @@ $ export PATH="${PATH}:/home/meu_usuário/tmp/usr/bin"
 
 A seção a seguir lista uma série de variáveis de ambiente comuns usadas por um sistema Linux e descreve seus valores.
 
-*   `DE` indica o ambiente desktop (*D*esktop *E*nvironment) sendo usado. [xdg-open](/index.php/Xdg-open "Xdg-open") vai usá-la para escolher um aplicativo seletor de arquivo mais amigável para o usuário que o ambiente desktop fornece. Alguns pacotes precisam ser instalados para usar esse recurso. Para o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), que seria o [libgnome](https://aur.archlinux.org/packages/libgnome/); para o [Xfce](/index.php/Xfce "Xfce") esse seria o [exo](https://www.archlinux.org/packages/?name=exo). Valores reconhecidos da variável `DE` são: `gnome`, `kde`, `xfce`, `lxde` e `mate`.
+*   `DE` indica o ambiente desktop (*D*esktop *E*nvironment) sendo usado. [xdg-open](/index.php/Xdg-open "Xdg-open") vai usá-la para escolher um aplicativo seletor de arquivo mais amigável para o usuário que o ambiente desktop fornece. Alguns pacotes precisam ser instalados para usar esse recurso. Para o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), que seria o [libgnome](https://aur.archlinux.org/packages/libgnome/); para o [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)") esse seria o [exo](https://www.archlinux.org/packages/?name=exo). Valores reconhecidos da variável `DE` são: `gnome`, `kde`, `xfce`, `lxde` e `mate`.
 
 	A variável de ambiente `DE` precisa ser exportada antes de iniciar o gerenciador de janela. Por exemplo:
 

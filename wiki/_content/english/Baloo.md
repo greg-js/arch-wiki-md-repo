@@ -36,7 +36,7 @@ By default every removable and remote device is blacklisted. It is possible to r
 To disable the Baloo file indexer:
 
 ```
-$ balooctl stop
+$ balooctl suspend
 $ balooctl disable
 
 ```

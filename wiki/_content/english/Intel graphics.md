@@ -54,10 +54,10 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mesa](https://www.archlinux.org/packages/?name=mesa) package, which provides the DRI driver for 3D acceleration.
+[Install](/index.php/Install "Install") the [mesa](https://www.archlinux.org/packages/?name=mesa) package, which provides the [DRI](https://en.wikipedia.org/wiki/Direct_Rendering_Infrastructure "wikipedia:Direct Rendering Infrastructure") driver for 3D acceleration.
 
 *   For 32-bit application support, also install the [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) package from the [multilib](/index.php/Multilib "Multilib") repository.
-*   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), [install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. (Often not recommended, see note below.)
+*   For the [DDX](https://en.wikipedia.org/wiki/X.Org_Server#DDX "wikipedia:X.Org Server") driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), [install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. (Often not recommended, see note below.)
 *   For [Vulkan](/index.php/Vulkan "Vulkan") support (*Ivy Bridge* and newer), install the [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) package.
 
 Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
@@ -88,8 +88,7 @@ For Skylake and newer processors, some video features (e.g. CBR rate control on 
 For those processors it is necessary to add `i915.enable_guc=2` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuC and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=2` 
-
-It is possible to enable both GuC/HuC firmware loading and GuC submission by using the `enable_guc=3` module parameter, although this is generally discouraged and may even negatively affect your system stability.
+**Note:** It is possible to enable both GuC/HuC firmware loading and GuC submission by using the `enable_guc=3` module parameter, although this is generally discouraged and may even negatively affect your system stability.
 
 You can verify both are enabled by using [dmesg](/index.php/Dmesg "Dmesg"):
 

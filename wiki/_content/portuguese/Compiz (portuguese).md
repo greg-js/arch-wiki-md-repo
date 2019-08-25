@@ -3,14 +3,18 @@ Artigos relacionados
 *   [Compiz/Configuration](/index.php/Compiz/Configuration "Compiz/Configuration")
 *   [Gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela")
 *   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
-*   [Xfce](/index.php/Xfce "Xfce")
+*   [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)")
 *   [MATE](/index.php/MATE "MATE")
 
 Segundo a [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
 
 	O Compiz é um gerenciador de janela de composição para o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), que utiliza aceleração 3D para criar efeitos compostos rápidos de desktop para o gerenciador de janelas. Efeitos como minimizar e maximizar ou a área de trabalho em cubo são implementados como plugins carregáveis.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
     *   [1.1 Através do Repositório Community](#Através_do_Repositório_Community)

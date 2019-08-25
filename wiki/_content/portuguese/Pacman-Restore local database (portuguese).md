@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=557130) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=578798) na versão em inglês.
 
 Sinais de que o pacman precisa de uma restauração da base de dados local:
 
@@ -22,7 +22,7 @@ Se não existe, *não* é possível continuar com este método. Você pode usar 
 
 [Instale](/index.php/Instale "Instale") o pacote [pacutils](https://www.archlinux.org/packages/?name=pacutils) para obter *paclog*.
 
-Crie um script de filtro de logs e torne-o executável:
+Crie um script de filtro de logs e torne-o [executável](/index.php/Execut%C3%A1vel "Executável"):
 
  `pacrecover` 
 ```
@@ -62,7 +62,7 @@ $ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
 
 **Nota:** Se isso falhar com `falha ao iniciar a biblioteca alpm`, verifique se `/var/lib/pacman/local/ALPM_DB_VERSION` existe - se não existir, execute `pacman-db-upgrade` como root seguido por `pacman -Sy` e, então, **tente novamente o comando anterior**.
 
-Verifique se algum pacote importante do *base* está em falta e adicione-o à lista:
+Verifique se algum pacotes importantes do *base* está em falta e adicione-o à lista:
 
 ```
 $ comm -23 <(pacman -Sgq base | sort) pkglist.orig >> pkglist
@@ -73,7 +73,7 @@ Proceda assim que o conteúdo de ambas listas seja satisfatório, já que elas s
 
 ## Efetuando a recuperação
 
-Defina uma função de bash para fins de recuperação:
+Defina uma [função de bash](/index.php/Bash/Functions "Bash/Functions") para fins de recuperação:
 
 ```
  recovery-pacman() {

@@ -4,11 +4,15 @@ From [wikipedia:Random number generation](https://en.wikipedia.org/wiki/Random_n
 
 Generation of random data is crucial for several applications like making cryptographic keys (e.g. for [Disk encryption](/index.php/Disk_encryption "Disk encryption")), [securely wiping disks](/index.php/Securely_wipe_disk "Securely wipe disk"), running encrypted [Software access points](/index.php/Software_access_point "Software access point").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Kernel built-in RNG](#Kernel_built-in_RNG)
-    *   [1.1 /dev/random](#.2Fdev.2Frandom)
-    *   [1.2 /dev/urandom](#.2Fdev.2Furandom)
+    *   [1.1 /dev/random](#/dev/random)
+    *   [1.2 /dev/urandom](#/dev/urandom)
 *   [2 Alternatives](#Alternatives)
 *   [3 See also](#See_also)
 

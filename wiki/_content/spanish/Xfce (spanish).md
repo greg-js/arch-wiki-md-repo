@@ -10,7 +10,11 @@ De Xfce - [Acerca de](http://www.xfce.org/about):
 
 *Xfce encarna la filosofía tradicional UNIX de modularidad y reutilización. Se compone de una serie de componentes que proporcionan toda la funcionalidad que se puede esperar de un moderno entorno de escritorio. Se empaquetan por separado y puede escogerse entre los paquetes disponibles para crear elentorno de trabajo personal óptimo.*
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ¿Qué es Xfce?](#¿Qué_es_Xfce?)
 *   [2 Instalación](#Instalación)

@@ -399,7 +399,7 @@ stripe width = # of physical **data** disks * stride. In this example, the math 
 Users wanting to mount the RAID partition from a Live CD, use:
 
 ```
-# mdadm --assemble /dev/<disk1> /dev/<disk2> /dev/<disk3> /dev/<disk4>
+# mdadm --assemble /dev/md<number> /dev/<disk1> /dev/<disk2> /dev/<disk3> /dev/<disk4>
 
 ```
 
@@ -414,7 +414,7 @@ If your RAID 1 that is missing a disk array was wrongly auto-detected as RAID 1 
 
 **Note:** The following section is applicable only if the root filesystem resides on the array. Users may skip this section if the array holds a data partition(s).
 
-You should create the RAID array between the [Partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the Installation Procedure. Instead of directly formatting a partition to be your root file system, it will be created on a RAID array. Follow the section [#Installation](#Installation) to create the RAID array. Then continue with the installation procedure until the pacstrap step is completed. When using [UEFI boot](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), also read [EFI system partition#ESP on RAID](/index.php/EFI_system_partition#ESP_on_RAID "EFI system partition").
+You should create the RAID array between the [Partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the Installation Procedure. Instead of directly formatting a partition to be your root file system, it will be created on a RAID array. Follow the section [#Installation](#Installation) to create the RAID array. Then continue with the installation procedure until the pacstrap step is completed. When using [UEFI boot](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), also read [EFI system partition#ESP on software RAID1](/index.php/EFI_system_partition#ESP_on_software_RAID1 "EFI system partition").
 
 ### Update configuration file
 

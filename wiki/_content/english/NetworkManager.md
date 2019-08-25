@@ -3,7 +3,7 @@ Related articles
 *   [Network configuration](/index.php/Network_configuration "Network configuration")
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 
-[NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to network. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
+[NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to networks. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
 
 **Warning:** By default, Wi-Fi passwords are stored in clear text, see [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
 
@@ -55,7 +55,8 @@ Related articles
         *   [5.2.3 Mounting of NFS shares](#Mounting_of_NFS_shares)
         *   [5.2.4 Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_wireless_depending_on_LAN_cable_being_plugged_in)
         *   [5.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
-        *   [5.2.6 OpenNTPD](#OpenNTPD)
+        *   [5.2.6 Use dispatcher to disable IPv6 on VPN provider connections](#Use_dispatcher_to_disable_IPv6_on_VPN_provider_connections)
+        *   [5.2.7 OpenNTPD](#OpenNTPD)
 *   [6 Testing](#Testing)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
@@ -254,7 +255,7 @@ To configure and have easy access to NetworkManager, most users will want to ins
 
 ### nm-applet
 
-[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) is a GTK+ 3 front-end which works under Xorg environments with a systray.
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) is a GTK 3 front-end which works under Xorg environments with a systray.
 
 To store connection secrets install and configure [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring").
 
@@ -356,7 +357,7 @@ For those behind a captive portal, the desktop manager can automatically open a 
 
 ### DHCP client
 
-By default NetworkManager will use its internal DHCP client, based on systemd-networkd. A new [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) based DHCP client is currently being worked on, it will eventually become the `internal` DHCP client replacing the one based on systemd-networkd.[[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)
+By default NetworkManager will use its internal DHCP client, based on systemd-networkd. A new [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) based DHCP client is currently being worked on, it will eventually become the `internal` DHCP client replacing the one based on systemd-networkd.[[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/b53e261427c925034ada6b90278b7e9077e2ea43)
 
 To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
 
@@ -444,7 +445,7 @@ If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for your lo
 
 Because NetworkManager advertises a single "interface" to *resolvconf*, it is not possible to implement conditional forwarding between to NetworkManager connections. See [NetworkManager issue 153](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
 
-This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[5]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
+This can be partially mitigated if you set `private="*"` in `/etc/resolvconf.conf`[[6]](https://roy.marples.name/projects/openresolv/config). Any queries for domains that are not in search domain list will not get forwarded. They will be handled according to the local resolver's configuration, for example, forwarded to another DNS server or resolved recursively from the DNS root.
 
 #### Setting custom DNS servers in a connection
 
@@ -758,6 +759,25 @@ esac
 
 **Note:** It may now be necessary to re-open the NetworkManager connection editor and save the VPN passwords/secrets again.
 
+#### Use dispatcher to disable IPv6 on VPN provider connections
+
+Many [commercial VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") support only IPv4\. That means all IPv6 traffic bypasses the VPN and renders it virtually useless. To avoid this, dispatcher can be used to disable all IPv6 traffic for the time a VPN connection is up.
+
+ `/etc/NetworkManager/dispatcher.d/10-vpn-ipv6` 
+```
+#!/bin/sh
+
+case "$2" in
+	vpn-up)
+		echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+		;;
+	vpn-down)
+		echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+		;;
+esac
+
+```
+
 #### OpenNTPD
 
 See [OpenNTPD#Using NetworkManager dispatcher](/index.php/OpenNTPD#Using_NetworkManager_dispatcher "OpenNTPD").
@@ -920,7 +940,7 @@ After you have put this in, [restart](/index.php/Restart "Restart") `NetworkMana
 
 ### Configuring MAC address randomization
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[7]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[8]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 
@@ -1161,7 +1181,7 @@ dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop
 
 ```
 
-This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[8]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+This is because NetworkManager will try to send DNS information to [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") regardless of the `main.dns=` setting in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[9]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
 
 This can be disabled with a configuration file in `/etc/NetworkManager/conf.d/`:
 

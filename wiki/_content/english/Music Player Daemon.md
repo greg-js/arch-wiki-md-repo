@@ -47,7 +47,7 @@ MPD is configured in the file [mpd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpag
 1.  `~/.config/mpd/mpd.conf` in per-user configuration mode, this is the first location searched,
 2.  `/etc/mpd.conf` in system-wide configuration.
 
-For indication, some of the most commonly used configuration options are listed thereafter:
+These are some of the most commonly used configuration options:
 
 *   `pid_file` - The file where MPD stores its process ID
 *   `db_file` - The music database
@@ -304,11 +304,11 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[https://www.suruatoel.xyz/codes/mcg](https://www.suruatoel.xyz/codes/mcg) || [mcg](https://aur.archlinux.org/packages/mcg/)
 
-*   **GMPC** — Gnome Music Player Client. GTK+ frontend for MPD. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
+*   **GMPC** — Gnome Music Player Client. GTK frontend for MPD. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
 	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://aur.archlinux.org/packages/gmpc/)
 
-*   **pymp'd** — A GTK+ front end client for the music playing daemon MPD.
+*   **pymp'd** — A GTK front end client for the music playing daemon MPD.
 
 	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://aur.archlinux.org/packages/pympd/)
 
@@ -328,7 +328,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[https://github.com/soramimi/SkyMPC](https://github.com/soramimi/SkyMPC) || [skympc-git](https://aur.archlinux.org/packages/skympc-git/)
 
-*   **Sonata** — Elegant Python GTK+ client.
+*   **Sonata** — Elegant Python GTK client.
 
 	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
 
@@ -336,7 +336,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 	[http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin) || [xfce4-mpc-plugin](https://www.archlinux.org/packages/?name=xfce4-mpc-plugin)
 
-*   **Xfmpc** — Graphical GTK+ MPD client focusing on low footprint.
+*   **Xfmpc** — Graphical GTK MPD client focusing on low footprint.
 
 	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [xfmpc](https://www.archlinux.org/packages/?name=xfmpc)
 

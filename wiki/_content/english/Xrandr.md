@@ -44,7 +44,7 @@ Related articles
 
 *   **LXRandR** — Screen resolution and external monitors management tool for LXDE.
 
-	[https://wiki.lxde.org/en/LXRandR](https://wiki.lxde.org/en/LXRandR) || GTK+ 2: [lxrandr](https://www.archlinux.org/packages/?name=lxrandr), GTK+ 3: [lxrandr-gtk3](https://www.archlinux.org/packages/?name=lxrandr-gtk3)
+	[https://wiki.lxde.org/en/LXRandR](https://wiki.lxde.org/en/LXRandR) || GTK 2: [lxrandr](https://www.archlinux.org/packages/?name=lxrandr), GTK 3: [lxrandr-gtk3](https://www.archlinux.org/packages/?name=lxrandr-gtk3)
 
 ## Testing configuration
 

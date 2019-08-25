@@ -1,6 +1,12 @@
-Processor manufacturers release stability and security updates to the processor [microcode](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode"). While microcode can be updated through the BIOS, the Linux kernel is also able to apply these updates during boot. These updates provide bug fixes that can be critical to the stability of your system. Without these updates, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
+Processor manufacturers release stability and security updates to the processor [microcode](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode"). These updates provide bug fixes that can be critical to the stability of your system. Without them, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
 
-Users of CPUs belonging to the Intel Haswell and Broadwell processor families in particular must install these microcode updates to ensure system stability. But all users should install the updates as a matter of course.
+All users should install the microcode updates to ensure system stability.
+
+Microcode updates are usually shipped with the motherboard's firmware and applied during firmware initialization. Since OEMs might not release firmware updates in a timely fashion and old systems do not get new firmware updates at all, the ability to apply CPU microcode updates during boot was added to the Linux kernel. [The Linux microcode loader](https://www.kernel.org/doc/Documentation/x86/microcode.txt) supports three loading methods:
+
+1.  **Early loading** updates the microcode very early during boot, before the initramfs stage, so it is the preferred method. This is mandatory for CPUs with severe hardware bugs, like the Intel Haswell and Broadwell processor families.
+2.  **Late loading** updates the microcode after booting which could be too late since the CPU might have already tried to use a bugged instruction set. Even if already using early loading, late loading can still be used to apply a newer microcode update without needing to reboot.
+3.  **Built-in microcode** can be compiled into the kernel that is then applied by the early loader.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -8,34 +14,25 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Installation](#Installation)
-*   [2 Enabling early microcode updates](#Enabling_early_microcode_updates)
-    *   [2.1 GRUB](#GRUB)
-        *   [2.1.1 Automatic method](#Automatic_method)
-        *   [2.1.2 Manual method](#Manual_method)
-    *   [2.2 systemd-boot](#systemd-boot)
-    *   [2.3 EFISTUB](#EFISTUB)
-    *   [2.4 rEFInd](#rEFInd)
-    *   [2.5 Syslinux](#Syslinux)
-    *   [2.6 LILO](#LILO)
-*   [3 Late microcode updates](#Late_microcode_updates)
-    *   [3.1 Enabling late microcode updates](#Enabling_late_microcode_updates)
-    *   [3.2 Disabling late microcode updates](#Disabling_late_microcode_updates)
-*   [4 Verifying that microcode got updated on boot](#Verifying_that_microcode_got_updated_on_boot)
-*   [5 Which CPUs accept microcode updates](#Which_CPUs_accept_microcode_updates)
-    *   [5.1 Detecting available microcode update](#Detecting_available_microcode_update)
-*   [6 Enabling early microcode loading in custom kernels](#Enabling_early_microcode_loading_in_custom_kernels)
-*   [7 See also](#See_also)
+*   [1 Early loading](#Early_loading)
+    *   [1.1 Installation](#Installation)
+    *   [1.2 Configuration](#Configuration)
+        *   [1.2.1 Enabling early microcode loading in custom kernels](#Enabling_early_microcode_loading_in_custom_kernels)
+        *   [1.2.2 GRUB](#GRUB)
+        *   [1.2.3 systemd-boot](#systemd-boot)
+        *   [1.2.4 EFISTUB](#EFISTUB)
+        *   [1.2.5 rEFInd](#rEFInd)
+        *   [1.2.6 Syslinux](#Syslinux)
+        *   [1.2.7 LILO](#LILO)
+*   [2 Late loading](#Late_loading)
+    *   [2.1 Enabling late microcode updates](#Enabling_late_microcode_updates)
+    *   [2.2 Disabling late microcode updates](#Disabling_late_microcode_updates)
+*   [3 Verifying that microcode got updated on boot](#Verifying_that_microcode_got_updated_on_boot)
+*   [4 Which CPUs accept microcode updates](#Which_CPUs_accept_microcode_updates)
+    *   [4.1 Detecting available microcode update](#Detecting_available_microcode_update)
+*   [5 See also](#See_also)
 
-## Installation
-
-For AMD processors, [install](/index.php/Install "Install") the [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) package.
-
-For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package.
-
-If your Arch installation is [on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") that needs to have microcode for both manufacturer processors, install both of the packages.
-
-## Enabling early microcode updates
+## Early loading
 
 Microcode must be loaded by the [boot loader](/index.php/Boot_loader "Boot loader"). Because of the wide variability in users' early-boot configuration, microcode updates may not be triggered automatically by Arch's default configuration. Many AUR kernels have followed the path of the official Arch [kernels](/index.php/Kernels "Kernels") in this regard.
 
@@ -45,9 +42,29 @@ These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-uc
 
 **Tip:** For [Arch Linux on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") add both microcode files as `initrd` to the boot loader configuration. Their order does not matter as long as they both are specified before the real initramfs image.
 
-### GRUB
+### Installation
 
-#### Automatic method
+For AMD processors, [install](/index.php/Install "Install") the [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) package.
+
+For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package.
+
+If your Arch installation is [on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") that needs to have microcode for both manufacturer processors, install both of the packages.
+
+### Configuration
+
+#### Enabling early microcode loading in custom kernels
+
+In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, **not** compiled as a module. This will enable the "Early load microcode" prompt which should be set to `Y`.
+
+```
+CONFIG_BLK_DEV_INITRD=Y
+CONFIG_MICROCODE=y
+CONFIG_MICROCODE_INTEL=Y
+CONFIG_MICROCODE_AMD=y
+
+```
+
+#### GRUB
 
 *grub-mkconfig* will automatically detect the microcode update and configure [GRUB](/index.php/GRUB "GRUB") appropriately. After installing the microcode package, regenerate the GRUB config to activate loading the microcode update by running:
 
@@ -55,8 +72,6 @@ These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-uc
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
-
-#### Manual method
 
 Alternatively, users that manage their GRUB config file manually can add `/boot/*cpu_manufacturer*-ucode.img` (or `/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as follows:
 
@@ -71,7 +86,7 @@ initrd	**/boot/*cpu_manufacturer*-ucode.img** /boot/initramfs-linux.img
 
 Repeat it for each menu entry.
 
-### systemd-boot
+#### systemd-boot
 
 Use the `initrd` option to load the microcode, before the initial ramdisk, as follows:
 
@@ -87,7 +102,14 @@ initrd  /initramfs-linux.img
 
 The latest microcode `*cpu_manufacturer*-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) or [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/*cpu_manufacturer*-ucode.img` to your ESP at every update of the microcode package.
 
-### EFISTUB
+For [kernels that have been generated as a single file](/index.php/Systemd-boot#Preparing_kernels_for_/EFI/Linux "Systemd-boot") containing all initrd, cmdline and kernel, first generate the initrd to integrate by creating a new one as follows:
+
+```
+cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > my_new_initrd
+objcopy ... --add-section .initrd=my_new_initrd
+```
+
+#### EFISTUB
 
 Append two `initrd=` options:
 
@@ -96,14 +118,7 @@ Append two `initrd=` options:
 
 ```
 
-For [kernels that have been generated as a single file](/index.php/Systemd-boot#Preparing_kernels_for_/EFI/Linux "Systemd-boot") containing all initrd, cmdline and kernel, first generate the initrd to integrate by creating a new one as follows:
-
-```
-cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > my_new_initrd
-objcopy ... --add-section .initrd=my_new_initrd
-```
-
-### rEFInd
+#### rEFInd
 
 Edit boot options in `/boot/refind_linux.conf` and add `initrd=/boot/*cpu_manufacturer*-ucode.img` (or `initrd=/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as the first initramfs. For example:
 
@@ -119,7 +134,7 @@ options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap
 
 ```
 
-### Syslinux
+#### Syslinux
 
 **Note:** There must be no spaces between the `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` initrd files. The `INITRD` line must be exactly as illustrated below.
 
@@ -134,7 +149,7 @@ LABEL arch
 
 ```
 
-### LILO
+#### LILO
 
 [LILO](/index.php/LILO "LILO") and potentially other old bootloaders do not support multiple initrd images. In that case, `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` will have to be merged into one image.
 
@@ -165,7 +180,7 @@ And run `lilo` as root:
 
 ```
 
-## Late microcode updates
+## Late loading
 
 Late loading of microcode updates happens after the system has booted. It uses files in `/usr/lib/firmware/amd-ucode/` and `/usr/lib/firmware/intel-ucode/`.
 
@@ -177,14 +192,14 @@ For Intel processors no package provides the microcode update files ([FS#59841](
 
 Unlike early loading, late loading of microcode updates on Arch Linux are enabled by default using `/usr/lib/tmpfiles.d/linux-firmware.conf`. After boot the file gets parsed by [systemd-tmpfiles-setup.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles-setup.service.8) and CPU microcode gets updated.
 
-To manually update the microcode on a running system run:
+To manually reload the microcode, e.g. after updating the microcode files in `/usr/lib/firmware/amd-ucode/` or `/usr/lib/firmware/intel-ucode/`, run:
 
 ```
 # echo 1 > /sys/devices/system/cpu/microcode/reload
 
 ```
 
-This allows to apply microcode updates after [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) has updated without rebooting the system. You can even automate it with a [pacman hook](/index.php/Pacman_hook "Pacman hook"), e.g.:
+This allows to apply newer microcode updates without rebooting the system. For [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) you can automate it with a [pacman hook](/index.php/Pacman_hook "Pacman hook"), e.g.:
 
  `/etc/pacman.d/hooks/microcode_reload.hook` 
 ```
@@ -204,7 +219,9 @@ Exec = /bin/sh -c 'echo 1 > /sys/devices/system/cpu/microcode/reload'
 
 ### Disabling late microcode updates
 
-For AMD systems the CPU microcode will get updated even if [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) is not installed since the files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) ([FS#59840](https://bugs.archlinux.org/task/59840)). To disable late loading you must override the [tmpfile](/index.php/Tmpfile "Tmpfile") `/usr/lib/tmpfiles.d/linux-firmware.conf`. It can be done by creating a file with the same filename in `/etc/tmpfiles.d/`:
+For AMD systems the CPU microcode will get updated even if [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) is not installed since the files in `/usr/lib/firmware/amd-ucode/` are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package ([FS#59840](https://bugs.archlinux.org/task/59840)).
+
+For [virtual machines](/index.php/Virtual_machine "Virtual machine") and [containers](https://en.wikipedia.org/wiki/Container_(virtualization) ([FS#46591](https://bugs.archlinux.org/task/46591)) it is not possible to update the CPU microcode, so you may want to disable microcode updates. To do so, you must override the [tmpfile](/index.php/Tmpfile "Tmpfile") `/usr/lib/tmpfiles.d/linux-firmware.conf` that is provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware). It can be done by creating a file with the same filename in `/etc/tmpfiles.d/`:
 
 ```
 # ln -s /dev/null /etc/tmpfiles.d/linux-firmware.conf
@@ -298,18 +315,6 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
      `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -` 
 5.  If an update is available, it should show up below *selected microcodes*
 6.  The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
-
-## Enabling early microcode loading in custom kernels
-
-In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, **not** compiled as a module. This will enable the "Early load microcode" prompt which should be set to `Y`.
-
-```
-CONFIG_BLK_DEV_INITRD=Y
-CONFIG_MICROCODE=y
-CONFIG_MICROCODE_INTEL=Y
-CONFIG_MICROCODE_AMD=y
-
-```
 
 ## See also
 

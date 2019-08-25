@@ -98,7 +98,7 @@ This article covers software to view, edit and convert [PDF](https://en.wikipedi
 
 	[http://djvu.sourceforge.net/djview4.html](http://djvu.sourceforge.net/djview4.html) || [djview](https://www.archlinux.org/packages/?name=djview)
 
-*   **ePDFView** — Lightweight PDF document viewer using the Poppler and GTK+ libraries. Development stopped.
+*   **ePDFView** — Lightweight PDF document viewer using the Poppler and GTK libraries. Development stopped.
 
 	[http://freecode.com/projects/epdfview](http://freecode.com/projects/epdfview) || [epdfview](https://www.archlinux.org/packages/?name=epdfview)
 
@@ -392,6 +392,13 @@ $ pdfimages *infile*.pdf -j *outfileroot*
 
 ### Extract page range from PDF, split multipage PDF document
 
+With Ghostscript as a single file[[6]](https://forums.freebsd.org/threads/split-pdf-file.58902/#post-336971)
+
+```
+$ gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=*first* -dLastPage=*last* -sOutputFile=*outfile*.pdf *infile*.pdf
+
+```
+
 With PDFtk as a single file:
 
 ```
@@ -565,7 +572,7 @@ $ ps2pdf -sPAPERSIZE=a4 -dOptimize=true -dEmbedAllFonts=true YourPSFile.ps
 
 Explanation:
 
-*   with `-sPAPERSIZE=something` you define the paper size. For valid PAPERSIZE values, see [[6]](http://ghostscript.com/doc/current/Use.htm#Known_paper_sizes).
+*   with `-sPAPERSIZE=something` you define the paper size. For valid PAPERSIZE values, see [[7]](http://ghostscript.com/doc/current/Use.htm#Known_paper_sizes).
 *   `-dOptimize=true` lets the created PDF be optimised for loading
 *   `-dEmbedAllFonts=true` makes the fonts look always nice
 

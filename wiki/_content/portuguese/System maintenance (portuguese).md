@@ -95,7 +95,7 @@ Pode fazer sentido verificar e sincronizar periodicamente os backups de cabeçal
 
 ### Dados de sistema e de usuário
 
-Veja [System backup](/index.php/System_backup "System backup").
+Veja [Backup do sistema](/index.php/Backup_do_sistema "Backup do sistema").
 
 ## Atualizando o sistema
 

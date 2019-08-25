@@ -318,10 +318,10 @@ In order to start the agent automatically and make sure that only one `ssh-agent
 
 ```
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
+    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
 fi
 
 ```

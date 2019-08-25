@@ -66,7 +66,7 @@ These applications support time, task and contacts management.
 
 	[http://www.kontact.org/](http://www.kontact.org/) || [kontact](https://www.archlinux.org/packages/?name=kontact)
 
-*   **Osmo** — GTK+ personal organizer, which includes calendar, tasks manager and address book modules.
+*   **Osmo** — GTK personal organizer, which includes calendar, tasks manager and address book modules.
 
 	[http://clayo.org/osmo/](http://clayo.org/osmo/) || [osmo](https://www.archlinux.org/packages/?name=osmo)
 
@@ -144,7 +144,7 @@ These applications support time, task and contacts management.
 
 	[https://github.com/nextcloud/calendar](https://github.com/nextcloud/calendar) || [nextcloud-app-calendar](https://www.archlinux.org/packages/?name=nextcloud-app-calendar)
 
-*   **Orage** — GTK+ calendar and task manager often seen integrated with Xfce.
+*   **Orage** — GTK calendar and task manager often seen integrated with Xfce.
 
 	[http://www.xfce.org/projects](http://www.xfce.org/projects) || [orage](https://www.archlinux.org/packages/?name=orage)
 
@@ -210,7 +210,7 @@ These applications support time, task and contacts management.
 
 	[https://slgobinath.github.io/SafeEyes/](https://slgobinath.github.io/SafeEyes/) || [safeeyes](https://aur.archlinux.org/packages/safeeyes/)
 
-*   **Tider** — Lightweight time tracking application (GTK+)
+*   **Tider** — Lightweight time tracking application (GTK)
 
 	[http://pusto.org/en/tider/](http://pusto.org/en/tider/) || [tider-git](https://aur.archlinux.org/packages/tider-git/)
 
@@ -280,7 +280,7 @@ These applications support time, task and contacts management.
 
 	[https://github.com/nextcloud/tasks](https://github.com/nextcloud/tasks) || [nextcloud-app-tasks](https://www.archlinux.org/packages/?name=nextcloud-app-tasks)
 
-*   **ptask** — GTK+ task manager based on [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior").
+*   **ptask** — GTK task manager based on [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior").
 
 	[https://wpitchoune.net/ptask/](https://wpitchoune.net/ptask/) || [ptask](https://aur.archlinux.org/packages/ptask/)
 
@@ -588,7 +588,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 	[http://festvox.org/flite/](http://festvox.org/flite/) || [flite](https://www.archlinux.org/packages/?name=flite)
 
-*   **Gespeaker** — GTK+ frontend for espeak. It allows you to play a text in many languages with settings for voice, pitch, volume and speed.
+*   **Gespeaker** — GTK frontend for espeak. It allows you to play a text in many languages with settings for voice, pitch, volume and speed.
 
 	[https://muflone.com/jekyll/gespeaker/english/](https://muflone.com/jekyll/gespeaker/english/) || [gespeaker](https://aur.archlinux.org/packages/gespeaker/)
 
@@ -822,7 +822,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 	[http://stalonetray.sourceforge.net/](http://stalonetray.sourceforge.net/) || [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)
 
-*   **Trayer** — Lightweight GTK+-based system tray (notification area).
+*   **Trayer** — Lightweight GTK-based system tray (notification area).
 
 	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
 
@@ -862,11 +862,11 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
-*   **Fehlstart** — Small GTK+-based application launcher.
+*   **Fehlstart** — Small GTK-based application launcher.
 
 	[https://gitlab.com/fehlstart/fehlstart](https://gitlab.com/fehlstart/fehlstart) || [fehlstart-git](https://aur.archlinux.org/packages/fehlstart-git/)
 
-*   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK+-based application launcher, with the ability to run programs inside a terminal and other handy features.
+*   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK-based application launcher, with the ability to run programs inside a terminal and other handy features.
 
 	[https://sourceforge.net/projects/gmrun/](https://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
@@ -986,7 +986,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **HydraPaper** — Gtk utility to set two different backgrounds for each monitor on GNOME.
 
-	[https://github.com/gabmus/hydrapaper](https://github.com/gabmus/hydrapaper) || [hydrapaper-git](https://aur.archlinux.org/packages/hydrapaper-git/)
+	[https://gitlab.com/gabmus/hydrapaper](https://gitlab.com/gabmus/hydrapaper) || [hydrapaper-git](https://aur.archlinux.org/packages/hydrapaper-git/)
 
 *   **LiveWallpaper** — Animated 3D wallpapers.
 

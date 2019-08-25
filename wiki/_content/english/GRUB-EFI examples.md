@@ -72,7 +72,7 @@ After this launch the UEFI Shell from the UEFI setup/menu (in ASUS UEFI BIOS, sw
 
 ```
 
-If your motherboard has no such option (or even if it does), you can use [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") to create a UEFI boot option for the Arch partition temporarily.
+If your motherboard has no such option (or even if it does), you can use [UEFI shell](/index.php/UEFI_shell "UEFI shell") to create a UEFI boot option for the Arch partition temporarily.
 
 Once you boot into the UEFI shell, add a UEFI boot menu entry:
 

@@ -40,5 +40,5 @@ A vantagem de um pacote meta, comparado a um grupo, é que quaisquer novos pacot
 *   [Lista de todos os grupos de pacotes](https://www.archlinux.org/groups/)
 *   Exemplos:
     *   [GNOME (Português)#Instalação](/index.php/GNOME_(Portugu%C3%AAs)#Instalação "GNOME (Português)")
-    *   [KDE#Installation](/index.php/KDE#Installation "KDE")
+    *   [KDE (Português)#Instalação](/index.php/KDE_(Portugu%C3%AAs)#Instalação "KDE (Português)")
     *   [i3#Installation](/index.php/I3#Installation "I3")

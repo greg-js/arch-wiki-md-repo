@@ -40,7 +40,8 @@
     *   [3.9 Can't play local files](#Can't_play_local_files)
     *   [3.10 Not respecting window manager rules](#Not_respecting_window_manager_rules)
     *   [3.11 GUI hangs while the music plays](#GUI_hangs_while_the_music_plays)
-    *   [3.12 Can't open settings in Wayland](#Can't_open_settings_in_Wayland)
+    *   [3.12 GUI Borders are gone and app occupies the whole screen over cinnamon panel](#GUI_Borders_are_gone_and_app_occupies_the_whole_screen_over_cinnamon_panel)
+    *   [3.13 Can't open settings in Wayland](#Can't_open_settings_in_Wayland)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -649,6 +650,18 @@ Window manager that try to apply specific rules like starting it on a determined
 Also the previous and next track buttons act with a delay of 10-40 seconds. Spotify by default tries to send notification about next track, if you don't have a notification-daemon installed, Spotify's GUI hangs.
 
 The solution is to either disable notifications in the settings or to install a notification daemon from [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications").
+
+### GUI Borders are gone and app occupies the whole screen over cinnamon panel
+
+If having issue with window borders disappearing and so app goes to a kind of fullscreen but you can't drag the window or change its size on cinnamon, that may be caused by the preferences located by default at text file `/home/yourusername/.config/Spotify/Users/yourusername-user/prefs` configs:
+
+```
+app.window.position.width=1366
+app.window.position.height=768
+
+```
+
+What probably happens is, when both resolutions matches your "main" monitor resolution values or higher, this may happen when going from two monitors to only one monitor. As a solution, close Spotify, edit `prefs` file to remove both configs above, save it, then run Spotify again.
 
 ### Can't open settings in Wayland
 

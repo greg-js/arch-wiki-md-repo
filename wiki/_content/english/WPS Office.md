@@ -1,4 +1,4 @@
-[WPS Office for Linux](https://www.wps.com/linux) is an efficient, stable and compatible alternative for Microsoft Office with a modern UI which supports cross-device file transfer and cloud backup. The suite contains Writer, Presentation and Spreadsheets.
+[WPS Office for Linux](https://www.wps.com/linux) is a proprietary alternative for Microsoft Office with a modern UI which supports cross-device file transfer and cloud backup. The suite contains Writer, Presentation and Spreadsheets.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,10 +12,9 @@
     *   [2.2 Spell checking](#Spell_checking)
 *   [3 Theme](#Theme)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 What is the command to start WPS Office](#What_is_the_command_to_start_WPS_Office)
-    *   [4.2 formula can not display normally](#formula_can_not_display_normally)
-    *   [4.3 Microsoft Office file in KDE is recognized as Zip](#Microsoft_Office_file_in_KDE_is_recognized_as_Zip)
-    *   [4.4 Fcitx imput method framework can't input on WPS](#Fcitx_imput_method_framework_can't_input_on_WPS)
+    *   [4.1 formula can not display normally](#formula_can_not_display_normally)
+    *   [4.2 Microsoft Office file in KDE Plasma is recognized as Zip](#Microsoft_Office_file_in_KDE_Plasma_is_recognized_as_Zip)
+    *   [4.3 Fcitx imput method framework can't input on WPS](#Fcitx_imput_method_framework_can't_input_on_WPS)
 *   [5 See also](#See_also)
 
 ## installation
@@ -30,19 +29,15 @@ install [wps-office](https://aur.archlinux.org/packages/wps-office/) from [AUR](
 
 ### interface language
 
-To change interface lannguage of WPS you can install [wps-office-mui-fr-fr](https://aur.archlinux.org/packages/wps-office-mui-fr-fr/) for French,[wps-office-mui-ja-jp](https://aur.archlinux.org/packages/wps-office-mui-ja-jp/) for Japanese,etc.Then set your language by selecting *Review->Spell Check->Set Language* to choose your language and restart WPS.
+To change interface language of WPS you can install [wps-office-mui-fr-fr](https://aur.archlinux.org/packages/wps-office-mui-fr-fr/) for French, [wps-office-mui-ja-jp](https://aur.archlinux.org/packages/wps-office-mui-ja-jp/) for Japanese, etc. Then set your language by selecting *Review->Spell Check->Set Language* to choose your language and restart WPS.
 
 ### Spell checking
 
-For spell checking,you need to install [wps-office-extension-german-dictionary](https://aur.archlinux.org/packages/wps-office-extension-german-dictionary/)for German,[wps-office-extension-french-dictionary](https://aur.archlinux.org/packages/wps-office-extension-french-dictionary/)for French,etc.Then,customize spell check by selecting *Tool -> Options -> Language -> choose* to choose your language and restart WPS.
+For spell checking, you need to install [wps-office-extension-german-dictionary](https://aur.archlinux.org/packages/wps-office-extension-german-dictionary/)for German, [wps-office-extension-french-dictionary](https://aur.archlinux.org/packages/wps-office-extension-french-dictionary/)for French, etc. Then, customize spell check by selecting *Tool -> Options -> Language -> choose* to choose your language and restart WPS.
 
 ## Theme
 
 ## Troubleshooting
-
-### What is the command to start WPS Office
-
-wps,et,wpp is the command to start WPS Writer,WPS Spreadsheet and WPS Presentation
 
 ### formula can not display normally
 
@@ -53,11 +48,11 @@ symbol.ttf webdings.ttf wingding.ttf wingdng2.ttf wingdng3.ttf monotypesorts.ttf
 
 ```
 
-[ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/) in [AUR](/index.php/AUR "AUR") contain all of these fonts except *monotypesorts.ttf*,you can install it directly.
+[ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/) in [AUR](/index.php/AUR "AUR") contain all of these fonts except *monotypesorts.ttf*, you can install it directly.
 
-### Microsoft Office file in KDE is recognized as Zip
+### Microsoft Office file in KDE Plasma is recognized as Zip
 
-after install WPS Office,Microsoft Office file will be recognized as zip,and can't open with WPS,you can change this kind of recognition by delete mime file in */usr/share/packages/*:
+After installing WPS Office, Microsoft Office files will be recognized as zip and can't open with WPS. You can change this kind of recognition by delete mime file in */usr/share/packages/*:
 
 ```
 sudo rm /usr/share/mime/packages/wps-office-*.xml
@@ -67,7 +62,7 @@ sudo update-mime-database /usr/share/mime
 
 ### Fcitx imput method framework can't input on WPS
 
-add following lines to /usr/bin/wps /usr/bin/et /usr/bin/wpp seperately to add fcitx to writer,spreadsheet and presentation:
+add following lines to /usr/bin/wps /usr/bin/et /usr/bin/wpp seperately to add fcitx to Writer, Spreadsheet and Presentation:
 
 ```
 export XMODIFIERS="@im=fcitx"

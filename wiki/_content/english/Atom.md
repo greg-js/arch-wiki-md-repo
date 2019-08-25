@@ -1,6 +1,10 @@
 [Atom](https://atom.io/) is an open-source, cross-platform text editor developed by GitHub that is licensed under the MIT License. It is written predominantly in CoffeeScript and JavaScript and uses [Node.js](/index.php/Node.js "Node.js") as its runtime environment. It is extensively extensible via use of over 5,000 available packages and 1,000 themes. It uses its own package manager for managing these packages and themes, apm.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Packages](#Packages)

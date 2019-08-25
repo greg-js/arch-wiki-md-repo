@@ -5,7 +5,7 @@ Related articles
 
 The [EFI system partition](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") (also called ESP) is an OS independent partition that acts as the storage place for the EFI bootloaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot.
 
-The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems (see [UEFI specification version 2.7, section 13.3.1.1](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional file systems; for example, the firmware in Apple [Macs](/index.php/Mac "Mac") supports the HFS+ file system.
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems (see [UEFI specification version 2.8, section 13.3.1.1](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional file systems; for example, the firmware in Apple [Macs](/index.php/Mac "Mac") supports the HFS+ file system.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -19,16 +19,17 @@ The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file sys
     *   [2.2 MBR partitioned disks](#MBR_partitioned_disks)
 *   [3 Format the partition](#Format_the_partition)
 *   [4 Mount the partition](#Mount_the_partition)
-    *   [4.1 Alternative mount points](#Alternative_mount_points)
-        *   [4.1.1 Using bind mount](#Using_bind_mount)
-        *   [4.1.2 Using systemd](#Using_systemd)
-        *   [4.1.3 Using filesystem events](#Using_filesystem_events)
-        *   [4.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
-        *   [4.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_(2))
-        *   [4.1.6 Using mkinitcpio preset](#Using_mkinitcpio_preset)
-        *   [4.1.7 Using pacman hook](#Using_pacman_hook)
-*   [5 Known issues](#Known_issues)
-    *   [5.1 ESP on RAID](#ESP_on_RAID)
+    *   [4.1 Typical mount points](#Typical_mount_points)
+    *   [4.2 Alternative mount points](#Alternative_mount_points)
+        *   [4.2.1 Using bind mount](#Using_bind_mount)
+        *   [4.2.2 Using systemd](#Using_systemd)
+        *   [4.2.3 Using filesystem events](#Using_filesystem_events)
+        *   [4.2.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
+        *   [4.2.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_(2))
+        *   [4.2.6 Using mkinitcpio preset](#Using_mkinitcpio_preset)
+        *   [4.2.7 Using pacman hook](#Using_pacman_hook)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 ESP on software RAID1](#ESP_on_software_RAID1)
 *   [6 See also](#See_also)
 
 ## Check for an existing partition
@@ -92,7 +93,7 @@ Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ## Format the partition
 
-The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems[[3]](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485). To prevent potential issues with other operating systems and also since the UEFI specification only mandates supporting FAT16 and FAT12 on removable media[[4]](https://uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1345080), it is recommended to use FAT32.
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems[[3]](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1019485). To prevent potential issues with other operating systems and also since the UEFI specification only mandates supporting FAT16 and FAT12 on removable media[[4]](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1345080), it is recommended to use FAT32.
 
 After creating the partition, [format](/index.php/Format "Format") it as [FAT32](/index.php/FAT32 "FAT32"). To use the `mkfs.fat` utility, [install](/index.php/Install "Install") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
 
@@ -106,6 +107,8 @@ If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce 
 ## Mount the partition
 
 The kernels, initramfs files, and, in most cases, the processor's [microcode](/index.php/Microcode "Microcode"), need to be accessible by the [boot loader](/index.php/Boot_loader "Boot loader") or UEFI itself to successfully boot the system. Thus if you want to keep the setup simple, your boot loader choice limits the available mount points for EFI system partition.
+
+### Typical mount points
 
 The simplest scenarios for mounting EFI system partition are:
 
@@ -396,9 +399,9 @@ exit 0
 
 ```
 
-## Known issues
+## Troubleshooting
 
-### ESP on RAID
+### ESP on software RAID1
 
 It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
 

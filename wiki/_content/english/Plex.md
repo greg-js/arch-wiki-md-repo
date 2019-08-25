@@ -70,6 +70,8 @@ To enable live TV viewing and DVR support with plex, you must have one of the su
 
 The plex user needs to be part of the video group in order to access local tuners. This can be done by running `usermod -a -G video plex`
 
+To enable IPTV support via m3u playlist install [xTeVe](https://aur.archlinux.org/packages/xTeVe/).
+
 ### Security
 
 It is recommended to store your media files outside of your home directory, as making it accessible to PMS would mean lowering its security. Having a separate `/media` or `/mnt/media` partition is a good setup for use with PMS.

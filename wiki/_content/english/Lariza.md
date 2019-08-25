@@ -1,6 +1,10 @@
 [lariza](https://github.com/vain/lariza/) is a simple and lightweight browser with minimal dependencies against [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk). Generally considered to be one of the lightest front-end GUI interfaces to webkit2gtk in terms of binary size and resource consumption, notable features of lariza include an address/location bar, customizable [user agent](https://en.wikipedia.org/wiki/User_agent "wikipedia:User agent") and regex-based [adblocking](https://en.wikipedia.org/wiki/Ad_blocking "wikipedia:Ad blocking"), keyword based searching, a download manager and global content zoom. lariza leverages [suckless.org](http://suckless.org/) [tabbed](https://www.archlinux.org/packages/?name=tabbed) to support tabs within a single window instance. Additionally, lariza supports the [XEmbed](https://freedesktop.org/wiki/Specifications/xembed-spec/) protocol which makes it possible to embed the runtime in another application. Notable feature exclusions include the lack of cookie/JavaScript/local storage toggles and support for custom stylesheets.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -15,7 +19,7 @@
 *   [3 Using lariza](#Using_lariza)
 *   [4 Open urls with external applications](#Open_urls_with_external_applications)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 lariza + tabbed freezes with certain key combinations](#lariza_.2B_tabbed_freezes_with_certain_key_combinations)
+    *   [5.1 lariza + tabbed freezes with certain key combinations](#lariza_+_tabbed_freezes_with_certain_key_combinations)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -39,7 +43,7 @@ export LARIZA_ZOOM=1.0 # Default Zoom Level
 
 ```
 
-Set various XDG environment variables to modify the default [WebKit](https://webkitgtk.org/) cache and/or [local storage](https://en.wikipedia.org/wiki/Web_storage "wikipedia:Web storage") locations. To avoid establishing a global environment which affects other applications, XDG variables should be set before calling lariza. [GTK+ variables](https://developer.gnome.org/gtk3/stable/gtk-running.html) can also be used to support the environment.
+Set various XDG environment variables to modify the default [WebKit](https://webkitgtk.org/) cache and/or [local storage](https://en.wikipedia.org/wiki/Web_storage "wikipedia:Web storage") locations. To avoid establishing a global environment which affects other applications, XDG variables should be set before calling lariza. [GTK variables](https://developer.gnome.org/gtk3/stable/gtk-running.html) can also be used to support the environment.
 
 *   Specify a theme and cache directory before launching lariza without support for tabbed:
 

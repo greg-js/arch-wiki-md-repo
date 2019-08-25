@@ -1,4 +1,4 @@
-[surf](http://surf.suckless.org/) is a simple web browser based on WebKit/GTK+. It is able to display websites and follow links. It supports the XEmbed protocol which makes it possible to embed it in another application. Furthermore, one can point surf to another URI by setting its XProperties.
+[surf](http://surf.suckless.org/) is a simple web browser based on WebKit/GTK. It is able to display websites and follow links. It supports the XEmbed protocol which makes it possible to embed it in another application. Furthermore, one can point surf to another URI by setting its XProperties.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -34,8 +34,8 @@ As with other packages such as [dwm](/index.php/Dwm "Dwm"), consider using the A
 There are many user-created [patches](http://surf.suckless.org/patches/) available from the offical site that greatly extend the functionality of surf. Patches can be applied to both the source `surf.c` file and the `config.h` file:
 
 ```
-$ cd src/surf-[version]/
-$ patch -p1 < path/to/patch.diff
+$ cd src/surf-*version*/
+$ patch -p1 < *path/to/patch.diff*
 
 ```
 
@@ -57,7 +57,7 @@ $ tabbed -c surf -e
 
 ```
 
-See the man page for tabbed for more details and possibilities.
+See man page [tabbed(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tabbed.1) for more details and possibilities.
 
 ## Troubleshooting
 

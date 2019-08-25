@@ -576,7 +576,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://bashburn.dose.se/](http://bashburn.dose.se/) || [bashburn](https://www.archlinux.org/packages/?name=bashburn)
 
-*   **[Brasero](https://en.wikipedia.org/wiki/Brasero_(software) "wikipedia:Brasero (software)")** — Disc burning application for the GNOME desktop that is designed to be as simple as possible. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
+*   **[Brasero](https://en.wikipedia.org/wiki/Brasero_(software) "wikipedia:Brasero (software)")** — Disc burning application for the GNOME desktop that is designed to be as simple as possible.
 
 	[https://wiki.gnome.org/Apps/Brasero](https://wiki.gnome.org/Apps/Brasero) || [brasero](https://www.archlinux.org/packages/?name=brasero)
 
@@ -596,7 +596,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
-*   **SimpleBurn** — Minimalistic GTK+ application for burning and extracting CDs and DVDs.
+*   **SimpleBurn** — Minimalistic GTK application for burning and extracting CDs and DVDs.
 
 	[https://simpleburn.tuxfamily.org/](https://simpleburn.tuxfamily.org/) || [simpleburn](https://aur.archlinux.org/packages/simpleburn/)
 
@@ -666,7 +666,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 #### Graphical
 
-*   **[Asunder](https://en.wikipedia.org/wiki/Asunder "wikipedia:Asunder")** — GTK+-based CD ripping program.
+*   **[Asunder](https://en.wikipedia.org/wiki/Asunder "wikipedia:Asunder")** — GTK-based CD ripping program.
 
 	[http://littlesvr.ca/asunder/](http://littlesvr.ca/asunder/) || [asunder](https://www.archlinux.org/packages/?name=asunder)
 
@@ -694,7 +694,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[https://www.kde.org/applications/multimedia/kaudiocreator/](https://www.kde.org/applications/multimedia/kaudiocreator/) || [kaudiocreator](https://www.archlinux.org/packages/?name=kaudiocreator)
 
-*   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
+*   **ripperX** — GTK program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
 	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://aur.archlinux.org/packages/ripperx/)
 
@@ -757,7 +757,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 	[https://www.exit1.org/dvdrip/](https://www.exit1.org/dvdrip/) || [dvdrip](https://aur.archlinux.org/packages/dvdrip/)
 
-*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
+*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 

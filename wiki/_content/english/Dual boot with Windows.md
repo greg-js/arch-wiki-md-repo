@@ -183,7 +183,7 @@ Using the Disk Management utility in Windows, check how the partitions are label
 
 **Warning:** The first 4 partitions in the above list are essential, do not delete them.
 
-You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that there is no need to create an additional EFI system partition, since it already exists. Simply [mount the existing partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition").
+You can then proceed with [partitioning](/index.php/Partitioning "Partitioning"), depending on your needs. Mind that an additional EFI system partition should not be created, as it may [prevent Windows from booting](https://support.microsoft.com/en-us/help/2879602/unable-to-boot-if-more-than-one-efi-system-partition-is-present). Simply [mount the existing partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition").
 
 The boot loader needs to support chainloading other EFI applications to do dual boot Windows / Linux.
 

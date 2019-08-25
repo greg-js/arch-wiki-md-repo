@@ -6,7 +6,7 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| [Mobile internet](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes¹ |
+| [Mobile internet](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | Yes¹ |
 | Fingerprint Sensor |
 | 
 
@@ -115,7 +115,7 @@ This can be done for example by editing `/etc/modprobe.d/psmouse.conf`:
 
 ```
 
-For two-finger scrolling activity this gives a boost from 40 Hz to 135 Hz on average which is more than threefold increase. This boost greatly contributes to the [Desktop Environment](/index.php/Desktop_Environment "Desktop Environment") scrolling performance and smoothness.
+For two-finger scrolling activity this gives a boost from 40 Hz to 135 Hz on average which is more than threefold increase. This boost greatly contributes to the [Desktop environment](/index.php/Desktop_environment "Desktop environment") scrolling performance and smoothness.
 
 ([evhz-git](https://aur.archlinux.org/packages/evhz-git/)) may be of use to find out how frequently Touchpad reports events. For example after enabling said option:
 

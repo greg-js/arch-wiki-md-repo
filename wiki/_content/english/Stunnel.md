@@ -1,6 +1,6 @@
 [stunnel](https://www.stunnel.org) (“Secure Tunnel”) is a
 
-	multi-platform application used to provide a universal TLS/SSL tunneling service. It is sort of proxy designed to add TLS encryption functionality to existing clients and servers without any changes in the programs' code. It is designed for security, portability, and scalability (including load-balancing), making it suitable for large deployments. It uses [openssl](/index.php/Openssl "Openssl"), and distributed under GNU GPL version 2 or later with OpenSSL exception.
+	multi-platform application used to provide a universal TLS/SSL tunneling service. It is sort of proxy designed to add TLS encryption functionality to existing clients and servers without any changes in the programs' code. It is designed for security, portability, and scalability (including load-balancing), making it suitable for large deployments. It uses [OpenSSL](/index.php/OpenSSL "OpenSSL"), and distributed under GNU GPL version 2 or later with OpenSSL exception.
 
 Can tunnel only TCP packets. Its [FAQ](https://www.stunnel.org/faq.html) has some work around for UDP. [WireGuard](/index.php/WireGuard "WireGuard") also has UDP capabilities.
 
@@ -25,7 +25,7 @@ Authentication can also be used by the server to allow access only to approved c
 
 [Install](/index.php/Install "Install") [stunnel](https://www.archlinux.org/packages/?name=stunnel) from [official repositories](/index.php/Official_repositories "Official repositories").
 
-Depending on your usage, you might also [Systemd#Editing_provided_units](/index.php/Systemd#Editing_provided_units "Systemd") to better [Systemd#Handling_dependencies](/index.php/Systemd#Handling_dependencies "Systemd"). In order for the stunnel to start up automatically at system boot you must [enable](/index.php/Enable "Enable") it.
+Depending on your usage, you might also [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") to better [Systemd#Handling dependencies](/index.php/Systemd#Handling_dependencies "Systemd"). In order for the stunnel to start up automatically at system boot you must [enable](/index.php/Enable "Enable") it.
 
 ## setup
 
@@ -41,7 +41,7 @@ For better security, it is advised to explicitly set an appropriate uid and gid,
 
 ### Byte order mark (BOM)
 
-The configuration file should have a UTF-8 [byte order mark (BOM)](https://en.wikipedia.org/wiki/Byte_order_mark), at the beginning of the file. A BOM is the unicode character U+FEFF. Its UTF-8 representation is the (hexadecimal) byte sequence 0xEF, 0xBB, 0xBF. Creating a file with these bytes at its beginning can be done by
+The configuration file should have a UTF-8 [byte order mark (BOM)](https://en.wikipedia.org/wiki/Byte_order_mark "wikipedia:Byte order mark"), at the beginning of the file. A BOM is the unicode character U+FEFF. Its UTF-8 representation is the (hexadecimal) byte sequence 0xEF, 0xBB, 0xBF. Creating a file with these bytes at its beginning can be done by
 
 ```
 # echo -e '\x**ef**\x**bb**\x**bf**; BOM composed of non printable characters. It is here, before the semicolon!' > /etc/stunnel/stunnel.conf
@@ -107,7 +107,7 @@ and copied to the other machine by secure means before starting stunnel. The [pe
 
 ### DNS over TLS
 
-[bind](/index.php/Bind "Bind") does not offer builtin facilities for encryption of queries and answers. Bind knowledge base suggests using stunnel. See [https://kb.isc.org/docs/aa-01386](https://kb.isc.org/docs/aa-01386). The link mentions [unbound](/index.php/Unbound "Unbound") at the bottom of the page. A user that have only shell accounts on both the client and the server can still tunnel DNS traffic even when both the resolver and the NS do not support DNS over TLS.
+[BIND](/index.php/BIND "BIND") does not offer builtin facilities for encryption of queries and answers. Bind knowledge base suggests using stunnel. See [https://kb.isc.org/docs/aa-01386](https://kb.isc.org/docs/aa-01386). The link mentions [unbound](/index.php/Unbound "Unbound") at the bottom of the page. A user that have only shell accounts on both the client and the server can still tunnel DNS traffic even when both the resolver and the NS do not support DNS over TLS.
 
 ### Encrypting NFSv4 with Stunnel TLS
 

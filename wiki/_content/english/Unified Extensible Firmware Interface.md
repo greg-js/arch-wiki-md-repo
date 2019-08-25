@@ -289,7 +289,7 @@ For more info see [Intel Scripting Guide 2008](https://software.intel.com/en-us/
 
 #### bcfg
 
-`bcfg` modifies the UEFI NVRAM entries which allows the user to change the boot entries or driver options. This command is described in detail in page 83 (Section 5.3) of the [UEFI Shell Specification 2.0](https://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) document.
+`bcfg` modifies the UEFI NVRAM entries which allows the user to change the boot entries or driver options. This command is described in detail in page 96 (Section 5.3) of the [UEFI Shell Specification 2.2](https://uefi.org/sites/default/files/resources/UEFI_Shell_2_2.pdf) document.
 
 **Note:**
 

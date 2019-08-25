@@ -21,7 +21,8 @@ TrueType fonts appear to be the best supported format for use with Java.
     *   [1.3 OpenJDK patch](#OpenJDK_patch)
 *   [2 Font selection](#Font_selection)
     *   [2.1 TrueType fonts](#TrueType_fonts)
-    *   [2.2 Fixing Mojibake (For JRE8)](#Fixing_Mojibake_(For_JRE8))
+    *   [2.2 Fixing Tofu](#Fixing_Tofu)
+*   [3 External links](#External_links)
 
 ## Anti-aliasing
 
@@ -94,7 +95,7 @@ JAVA_FONTS=/usr/share/fonts/TTF
 
 Relogin for the change to take effect.
 
-### Fixing Mojibake (For JRE8)
+### Fixing Tofu
 
 Place font files under the directory below. Create the directory if it does not exist.
 
@@ -102,3 +103,11 @@ Place font files under the directory below. Create the directory if it does not 
 /usr/lib/jvm/java-8-openjdk/jre/lib/fonts/fallback/
 
 ```
+
+Substitute the `/usr/lib/jvm/java-8-openjdk` for the `$JAVA_HOME` of the JRE you are actually using. Note that the feature is removed since Oracle Java 9, as Oracle [considers it a bug](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8039273) to encourage users to change "lib", moved the config files to "conf" and called the fallback functionality a "mis-feature". The specific function providing this behavior is `sun.awt.FontConfiguration.getInstalledFallbackFonts`, and OpenJDK seems to still have it.
+
+Doing so makes Java always add the fonts in this directory into the fallback sequence to look for character shapes (glyphs) in. This way, no matter what fonts the application has asked for, these additional fonts will provide the missing glyphs when needed.
+
+## External links
+
+*   [Java Font Configuration Files](http://docs.oracle.com/en/java/javase/11/intl/font-configuration-files.html) (Java 11); [Java 8](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/fontconfig.html)

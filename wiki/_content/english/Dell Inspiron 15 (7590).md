@@ -20,7 +20,7 @@ Related articles
 
 The Dell Inspiron 15 (7590) was released in May 2019, some country released it called Vostro 7590, and the aluminum alloy body version is Inspiron 7591\. They use the same BIOS and Motherboard.
 
-The installation process for Arch on the Inspiron 15 does not differ from any other PC. Although you might need to consider upgrading the SSD Firmware first if you have a working Windows installation (see section [#Storage](#Storage)). For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
+The installation process for Arch on the Inspiron 15 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -221,7 +221,7 @@ By default, the [libinput](/index.php/Libinput "Libinput") driver might not have
 
 While running `sudo`, `htop`, `lspci` and so on, then get freezing or very slow, to fix it below:
 
-If you're running over Linux Kernel 5.2, while staying in bootloader, add kernel parameter `nomodeset` to boot, then add `nouveau` to blacklist ([Kernel_module#Blacklisting](/index.php/Kernel_module#Blacklisting "Kernel module"))
+If you're running over Linux Kernel 5.2, while staying in bootloader, add kernel parameter `nomodeset` to boot, then add `nouveau` to blacklist ([Kernel module#Blacklisting](/index.php/Kernel_module#Blacklisting "Kernel module"))
 
 ### Freezing while resume from suspend
 

@@ -1,8 +1,12 @@
-[Luakit](https://luakit.github.io/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts. It uses GTK+ 3 and WebKit2GTK+.
+[Luakit](https://luakit.github.io/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts. It uses GTK 3 and WebKit2GTK.
 
 **Warning:** This page has been updated, but Luakit is in rapid development nowadays, and discrepancies may occur. Also, there is much more to document than found here.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)

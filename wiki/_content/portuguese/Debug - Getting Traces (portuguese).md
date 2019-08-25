@@ -6,19 +6,23 @@ Artigos relacionados
 
 Esse artigo visa ajudar na criação de um pacote de depuração do Arch e usá-lo para fornecer informações de rastro e depuração para relatar bugs de software para desenvolvedores.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Nomes de pacotes](#Nomes_de_pacotes)
 *   [2 PKGBUILD](#PKGBUILD)
-*   [3 Configurações de compilação](#Configura.C3.A7.C3.B5es_de_compila.C3.A7.C3.A3o)
+*   [3 Configurações de compilação](#Configurações_de_compilação)
     *   [3.1 Geral](#Geral)
     *   [3.2 Qt4](#Qt4)
     *   [3.3 Qt5](#Qt5)
-    *   [3.4 Aplicativos CMAKE (KDE)](#Aplicativos_CMAKE_.28KDE.29)
+    *   [3.4 Aplicativos CMAKE (KDE)](#Aplicativos_CMAKE_(KDE))
 *   [4 Compilando e instalando o pacote](#Compilando_e_instalando_o_pacote)
 *   [5 Obtendo o rastro](#Obtendo_o_rastro)
-*   [6 Conclusão](#Conclus.C3.A3o)
-*   [7 Veja também](#Veja_tamb.C3.A9m)
+*   [6 Conclusão](#Conclusão)
+*   [7 Veja também](#Veja_também)
 
 ## Nomes de pacotes
 
@@ -53,7 +57,7 @@ O pacote é chamado [glibc](https://www.archlinux.org/packages/?name=glibc) na v
 
 ## PKGBUILD
 
-Para compilar um pacote a partir do fonte, o arquivo PKGBUILD file é necessário. Veja [ABS (Português)](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") para pacotes nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), e [AUR (Português)#Obtendo arquivos de compilação](/index.php/AUR_(Portugu%C3%AAs)#Obtendo_arquivos_de_compila.C3.A7.C3.A3o "AUR (Português)") para pacotes no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
+Para compilar um pacote a partir do fonte, o arquivo PKGBUILD file é necessário. Veja [ABS (Português)](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") para pacotes nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"), e [AUR (Português)#Obtendo arquivos de compilação](/index.php/AUR_(Portugu%C3%AAs)#Obtendo_arquivos_de_compilação "AUR (Português)") para pacotes no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)").
 
 ## Configurações de compilação
 
@@ -64,14 +68,14 @@ Neste estágio, você pode modificar o arquivo de configuração global do `make
 Desde o pacman 4.1, `/etc/makepkg.conf` possui flags de depuração de compilação em `DEBUG_CFLAGS` e `DEBUG_CXXFLAGS`. Para usá-las, habilite a opção do makepkg `debug` e desabilite `strip`.
 
 ```
-OPTIONS+=(debug !strip)
+OPTIONS+=(debug !strip)
 
 ```
 
 Essas configurações vão forçar a compilação com informações de depuração e vai desabilitar a remoção de símbolos de executáveis. Para aplicar essa configuração a um único pacote, modifique o PKGBUILD:
 
 ```
-options=(debug !strip)
+options=(debug !strip)
 
 ```
 
@@ -109,7 +113,7 @@ O repositório [qt-debug](/index.php/Unofficial_user_repositories#qt-debug "Unof
 
 ### Aplicativos CMAKE (KDE)
 
-[KDE](/index.php/KDE "KDE") e programas relacionados geralmente usam [cmake](https://www.archlinux.org/packages/?name=cmake). Para habilitar informações de depuração e desabilitar otimização, altere `-DCMAKE_BUILD_TYPE` para `Debug`. Para habilitar informações de depuração enquanto mantém as otimizações habilitadas, altere `-DCMAKE_BUILD_TYPE` para `RelWithDebInfo`.
+[KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") e programas relacionados geralmente usam [cmake](https://www.archlinux.org/packages/?name=cmake). Para habilitar informações de depuração e desabilitar otimização, altere `-DCMAKE_BUILD_TYPE` para `Debug`. Para habilitar informações de depuração enquanto mantém as otimizações habilitadas, altere `-DCMAKE_BUILD_TYPE` para `RelWithDebInfo`.
 
 ## Compilando e instalando o pacote
 

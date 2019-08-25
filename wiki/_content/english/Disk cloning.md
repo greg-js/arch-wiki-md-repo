@@ -14,7 +14,8 @@ Disk cloning is the process of making an image of a partition or of an entire ha
 
 *   [1 Using dd](#Using_dd)
 *   [2 Using ddrescue](#Using_ddrescue)
-*   [3 Using e2image](#Using_e2image)
+*   [3 File system cloning](#File_system_cloning)
+    *   [3.1 Using e2image](#Using_e2image)
 *   [4 Disk cloning software](#Disk_cloning_software)
     *   [4.1 dd spin-offs](#dd_spin-offs)
 *   [5 See also](#See_also)
@@ -27,28 +28,32 @@ See [dd#Disk cloning and restore](/index.php/Dd#Disk_cloning_and_restore "Dd").
 
 [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a tool designed for cloning and recovering data. It copies data from one file or block device (hard disc, cdrom, etc) to another, trying to rescue the good parts first in case of read errors, to maximize the recovered data.
 
-To clone a faulty or dying drive, run ddrescue twice. First round, copy every block without read error and log the errors to rescue.log.
+To clone a faulty or dying drive, run *ddrescue* twice. First round, copy every block without read error and log the errors to `rescue.log`.
 
 ```
-# ddrescue -f -n /dev/sdX /dev/sdY rescue.log
+# ddrescue -f -n /dev/sd*X* /dev/sd*Y* rescue.log
 
 ```
+
+where `*X*` and `*Y*` are the desired partition letters of the [block devices](/index.php/Block_device "Block device").
 
 Second round, copy only the bad blocks and try 3 times to read from the source before giving up.
 
 ```
-# ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
+# ddrescue -d -f -r3 /dev/sd*X* /dev/sd*Y* rescue.log
 
 ```
 
 Now you can check the file system for corruption and mount the new drive.
 
 ```
-# fsck -f /dev/sdY
+# fsck -f /dev/sd*Y*
 
 ```
 
-## Using e2image
+## File system cloning
+
+### Using e2image
 
 *e2image* is a tool included in [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) for debugging purposes. It can be used to copy ext2, ext3, and ext4 partitions efficiently by only copying the used blocks. Note that this only works for ext2, ext3, and ext4 filesystems, and the unused blocks are not copied so this may not be a useful tool if one is hoping to recover deleted files.
 
@@ -88,16 +93,16 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
 
 *   **FSArchiver** — A safe and flexible file-system backup and deployment tool
     *   Support for basic file attributes (permissions, owner, ...).
-    *   Support for multiple file-systems per archive.
+    *   Support for multiple file systems per archive.
     *   Support for extended attributes (they are used by SELinux).
-    *   Support the basic file-system attributes (label, uuid, block-size) for all linux file-systems.
-    *   Support for [ntfs filesystems](http://www.fsarchiver.org/Cloning-ntfs) (ability to create flexible clones of a Windows partitions).
+    *   Support the basic file system attributes (label, uuid, block-size) for all Linux file systems.
+    *   Support for [NTFS filesystem](http://www.fsarchiver.org/Cloning-ntfs) (ability to create flexible clones of Windows partitions).
     *   Checksumming of everything which is written in the archive (headers, data blocks, whole files).
     *   Ability to restore an archive which is corrupt (it will just skip the current file).
     *   Multi-threaded lzo, gzip, bzip2, lzma compression.
     *   Support for splitting large archives into several files with a fixed maximum size.
     *   Encryption of the archive using a password. Based on blowfish from libcrypto from [OpenSSL](/index.php/OpenSSL "OpenSSL").
-    *   Support backup of a mounted root filesystem (-A option).
+    *   Support backup of a mounted root filesystem (`-A` option).
     *   Can be found on the [System Rescue CD](http://www.sysresccd.org/Main_Page).
 
 	[http://www.fsarchiver.org/](http://www.fsarchiver.org/) || [fsarchiver](https://www.archlinux.org/packages/?name=fsarchiver)
@@ -108,13 +113,13 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Can backup live systems (without having to halt it).
     *   Can split image over many files.
     *   Supports booting to a Live CD to perform a full restore.
-    *   Can backup/restore over NFS, from CDs, tape drives and and other media.
+    *   Can backup/restore over NFS, from CDs, tape drives and other media.
     *   Can verify backups.
 
 	[http://www.mondorescue.org/](http://www.mondorescue.org/) || [mondo](https://aur.archlinux.org/packages/mondo/)
 
 *   **[Partclone](/index.php/Partclone "Partclone")** — A tool that can be used to back up and restore a partition while considering only used blocks.
-    *   Supports *ext2*, *ext3*, *ext4*, *hfs+*, *reiserfs*, *reiser4*, *btrfs*, *vmfs3*, *vmfs5*, *xfs*, *jfs*, *ufs*, *ntfs*, *fat(12/16/32)*, *exfat*.
+    *   Supports ext2, ext3, ext4, hfs+, reiserfs, reiser4, btrfs, vmfs3, vmfs5, xfs, jfs, ufs, ntfs, fat(12/16/32), exfat.
     *   Supports compression.
     *   Optionally, an *ncurses* interface can be used.
 

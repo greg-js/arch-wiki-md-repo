@@ -1,4 +1,4 @@
-[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful [shell](/index.php/Shell "Shell") that operates as both an interactive shell and as a scripting language interpreter. While being compatible with the Bourne shell (not by default, only if issuing `emulate sh`), it offers advantages such as improved [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and [globbing](http://zsh.sourceforge.net/Doc/Release/Expansion.html).
+[Zsh](http://zsh.sourceforge.net/Intro/intro_1.html) is a powerful [shell](/index.php/Shell "Shell") that operates as both an interactive shell and as a scripting language interpreter. While being compatible with the POSIX sh (not by default, only if issuing `emulate sh`), it offers advantages such as improved [tab completion](http://zsh.sourceforge.net/Guide/zshguide06.html) and [globbing](http://zsh.sourceforge.net/Doc/Release/Expansion.html).
 
 The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reasons to use Zsh.
 
@@ -17,17 +17,17 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.2 Configuring $PATH](#Configuring_$PATH)
     *   [3.3 Command completion](#Command_completion)
     *   [3.4 Key bindings](#Key_bindings)
-    *   [3.5 History search](#History_search)
-    *   [3.6 Prompts](#Prompts)
-        *   [3.6.1 Prompt themes](#Prompt_themes)
-            *   [3.6.1.1 Manually installing prompt themes](#Manually_installing_prompt_themes)
-        *   [3.6.2 Customized prompt](#Customized_prompt)
-            *   [3.6.2.1 Colors](#Colors)
-            *   [3.6.2.2 Example](#Example)
-    *   [3.7 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.8 Third-party extensions](#Third-party_extensions)
-        *   [3.8.1 Configuration frameworks](#Configuration_frameworks)
-        *   [3.8.2 Plugin managers](#Plugin_managers)
+        *   [3.4.1 History search](#History_search)
+    *   [3.5 Prompts](#Prompts)
+        *   [3.5.1 Prompt themes](#Prompt_themes)
+            *   [3.5.1.1 Manually installing prompt themes](#Manually_installing_prompt_themes)
+        *   [3.5.2 Customized prompt](#Customized_prompt)
+            *   [3.5.2.1 Colors](#Colors)
+            *   [3.5.2.2 Example](#Example)
+    *   [3.6 Sample .zshrc files](#Sample_.zshrc_files)
+    *   [3.7 Third-party extensions](#Third-party_extensions)
+        *   [3.7.1 Configuration frameworks](#Configuration_frameworks)
+        *   [3.7.2 Plugin managers](#Plugin_managers)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart X at login](#Autostart_X_at_login)
     *   [4.2 The "command not found" hook](#The_"command_not_found"_hook)
@@ -70,10 +70,11 @@ $ zsh
 
 ```
 
-You should now see *zsh-newuser-install*, which will walk you through some basic configuration. If you want to skip this, press `q`. If you did not see it, you can invoke it manually with
+You should now see *zsh-newuser-install*, which will walk you through some basic configuration. If you want to skip this, press `q`. If you did not see it, you can invoke it manually with:
 
 ```
-$ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
+$ autoload -Uz zsh-newuser-install
+$ zsh-newuser-install -f
 
 ```
 
@@ -87,35 +88,39 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 
 ## Startup/Shutdown files
 
-**Tip:** See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html) for explanation on interactive and login shells, and what to put in your startup files.
+**Tip:**
+
+*   See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html) for explanation on interactive and login shells, and what to put in your startup files.
+*   You could consider [implementing a standard path](/index.php/Command-line_shell#Standardisation "Command-line shell") for your Zsh configuration files.
 
 **Note:**
 
 *   If `$ZDOTDIR` is not set, `$HOME` is used instead.
 *   If option `RCS` is unset in any of the files, no configuration files will be sourced after that file.
 *   If option `GLOBAL_RCS` is unset in any of the files, no global configuration files (`/etc/zsh/*`) will be sourced after that file.
-*   You could consider [implementing a standard path](/index.php/Command-line_shell#Standardisation "Command-line shell") for your ZSH configuration files.
 
 When starting Zsh, it will source the following files in this order by default:
 
-*   `/etc/zsh/zshenv` Used for setting system-wide [environment variables](/index.php/Environment_variables "Environment variables"); it should not contain commands that produce output or assume the shell is attached to a tty. This file will ***always*** be sourced, this cannot be overridden.
-*   `$ZDOTDIR/.zshenv` Used for setting user's environment variables; it should not contain commands that produce output or assume the shell is attached to a tty. This file will ***always*** be sourced.
-*   `/etc/zsh/zprofile` Used for executing commands at start, will be sourced when starting as a ***login shell***. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`.
-    *   `/etc/profile` This file should be sourced by all Bourne-compatible shells upon login: it sets up `$PATH` and other environment variables and application-specific (`/etc/profile.d/*.sh`) settings upon login.
-*   `$ZDOTDIR/.zprofile` Used for executing user's commands at start, will be sourced when starting as a ***login shell***.
-    *   `$HOME/.profile` is **not** sourced by zsh.
-*   `/etc/zsh/zshrc` Used for setting interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
+*   `/etc/zsh/zshenv` Used for setting [environment variables](/index.php/Environment_variables "Environment variables") for all users; it should not contain commands that produce output or assume the shell is attached to a TTY. This file will ***always*** be sourced, this cannot be overridden.
+*   `$ZDOTDIR/.zshenv` Used for setting user's environment variables; it should not contain commands that produce output or assume the shell is attached to a TTY. This file will ***always*** be sourced.
+*   `/etc/zsh/zprofile` Used for executing commands at start for all users, will be sourced when starting as a ***login shell***. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`.
+    *   `/etc/profile` This file should be sourced by all POSIX sh-compatible shells upon login: it sets up `$PATH` and other environment variables and application-specific (`/etc/profile.d/*.sh`) settings upon login.
+*   `$ZDOTDIR/.zprofile` Used for executing user's commands at start, will be sourced when starting as a ***login shell***. Typically used to autostart graphical sessions and set environment variables for them.
+*   `/etc/zsh/zshrc` Used for setting interactive shell configuration and executing commands for all users, will be sourced when starting as an ***interactive shell***.
 *   `$ZDOTDIR/.zshrc` Used for setting user's interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
-*   `/etc/zsh/zlogin` Used for executing commands at ending of initial progress, will be sourced when starting as a ***login shell***.
-*   `$ZDOTDIR/.zlogin` Used for executing user's commands at ending of initial progress, will be sourced when starting as a ***login shell***.
-*   `$ZDOTDIR/.zlogout` Will be sourced when a ***login shell*** **exits**.
-*   `/etc/zsh/zlogout` Will be sourced when a ***login shell*** **exits**.
+*   `/etc/zsh/zlogin` Used for executing commands for all users at ending of initial progress, will be sourced when starting as a ***login shell***.
+*   `$ZDOTDIR/.zlogin` Used for executing user's commands at ending of initial progress, will be sourced when starting as a ***login shell***. Typically used to autostart command line utilities. Should not be used to autostart graphical sessions, as at this point the session might contain configuration meant only for an interactive shell.
+*   `$ZDOTDIR/.zlogout` Used for executing commands for all users when a ***login shell*** **exits**.
+*   `/etc/zsh/zlogout` Used for executing commands when a ***login shell*** **exits**.
 
 See [the graphic representation](https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html#implementation).
 
-**Note:** The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
+**Note:**
 
-**Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something else, otherwise it will break the integrity of other packages which provide some scripts in `/etc/profile.d/`.
+*   `$HOME/.profile` is not a part of the Zsh startup files and thus **is not sourced** by Zsh.
+*   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
+
+**Warning:** Do not remove the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile`, otherwise it will break the integrity of other packages which provide some scripts in `/etc/profile.d/`.
 
 ## Configure Zsh
 
@@ -142,14 +147,15 @@ prompt walters
 
 ### Configuring $PATH
 
-See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and also the note in [#Startup/Shutdown files](#Startup/Shutdown_files) for details.
+Zsh ties the `PATH` variable to an `path` array, they are automatically kept in sync. This allows to easily change `PATH` by simply working with the array. See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) for details.
 
-The incantation `typeset -U path`, where the `-U` stands for unique, tells the shell that it should not add anything to `$PATH` if it is there already:
+The incantation `typeset -U PATH path`, where the `-U` stands for unique, tells the shell that it should not append anything to `$PATH` and `$path` if it is there already:
 
  `~/.zshenv` 
 ```
-typeset -U path
-path=(*~/.local/bin* */other/things/in/path* $path[@])
+typeset -U PATH path
+path=("$HOME/.local/bin" */other/things/in/path* "$path[@]")
+export PATH
 ```
 
 ### Command completion
@@ -191,7 +197,7 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 ```
 
-**Warning:** This will let zsh completion scripts run commands with sudo privileges. You should not enable this if you use untrusted autocompletion scripts.
+**Warning:** This will let Zsh completion scripts run commands with sudo privileges. You should not enable this if you use untrusted autocompletion scripts.
 
 **Note:** This special kind of context-aware completion is only available for a small number of commands.
 
@@ -199,9 +205,9 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor (ZLE). It does not read `/etc/inputrc` or `~/.inputrc`. See [this blog post](https://sgeb.io/posts/2014/04/zsh-zle-custom-widgets/) for an introduction to ZLE configuration.
 
-ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
+ZLE has an [Emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `VISUAL` or `EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") contain the string `vi` then vi mode will be used; otherwise, it will default to Emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for Emacs mode or vi mode.
 
-Add the following to your `~/.zshrc` to set up key bindings using key sequences from [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)[[1]](http://zshwiki.org/home/keybindings/):
+Add the following to your `~/.zshrc` to set up key bindings using key sequences from [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5)[[1]](https://web.archive.org/web/20180704181216/http://zshwiki.org/home/zle/bindkeys)[[2]](https://www.zsh.org/mla/users/2010/msg00065.html):
 
  `~/.zshrc` 
 ```
@@ -251,7 +257,7 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 fi
 ```
 
-### History search
+#### History search
 
 You need to set up [#Key bindings](#Key_bindings) to use this. To enable history search add these lines to `.zshrc` file:
 
@@ -311,7 +317,8 @@ $ prompt -p
 It is possible to install themes manually, without external configuration manager tools. For a local installation, first create a folder and add it to the `fpath` array, eg:
 
 ```
-$ mkdir ~/.zprompts && fpath=( "$HOME/.zprompts" $fpath )
+$ mkdir ~/.zprompts
+$ fpath=("$HOME/.zprompts" "$fpath[@]")
 
 ```
 
@@ -348,7 +355,7 @@ All prompts can be customized with prompt escapes. The available prompt escapes 
 
 ##### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization"), you do not need to use ANSI escape sequences. Zsh provides convenient prompt escapes to set the foreground color, background color and other visual effects; see [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Visual_effects) for a list of them.
+Zsh sets colors differently than [Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization"), you do not need to use convoluted ANSI escape sequences or terminal capabilities from [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5). Zsh provides convenient prompt escapes to set the foreground color, background color and other visual effects; see [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Visual_effects) for a list of them and their descriptions.
 
 [Colors](http://zsh.sourceforge.net/FAQ/zshfaq03.html#l42) can be specified using a decimal integer, the name of one of the eight most widely-supported colors or as a # followed by an RGB triplet in hexadecimal format. See the description of fg=colour in [zshzle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshzle.1#CHARACTER_HIGHLIGHTING) for more details.
 
@@ -366,7 +373,7 @@ Most terminals support the following colors by name:
 
 Color numbers 0–255 for terminal emulators compatible with xterm 256 colors can be found in the [xterm-256color chart](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg).
 
-With a correctly set TERM environment variable, the terminal's supported maximum number of colors can be found from the [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) database using `echoti colors`. In the case of 24-bit colors, also check the COLORTERM environment variable with `echo $COLORTERM`. If it returns `24bit` or `truecolor` then your terminal supports 16777216 (2) colors even if terminfo shows a smaller number.
+With a correctly set TERM environment variable, the terminal's supported maximum number of colors can be found from the [terminfo(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/terminfo.5) database using `echoti colors`. In the case of [24-bit colors](https://gist.github.com/XVilka/8346728), also check the COLORTERM environment variable with `echo $COLORTERM`. If it returns `24bit` or `truecolor` then your terminal supports 16777216 (2) colors even if terminfo shows a smaller number.
 
 **Note:**
 
@@ -422,7 +429,7 @@ See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles
 
 	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
 
-*   **zplug** — A next-generation plugin manager for zsh
+*   **zplug** — A next-generation plugin manager for Zsh
 
 	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
 
@@ -430,11 +437,11 @@ See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles
 
 	[http://github.com/zdharma/zplugin](http://github.com/zdharma/zplugin) || [zsh-zplugin-git](https://aur.archlinux.org/packages/zsh-zplugin-git/)
 
-*   **Antigen** — A plugin manager for zsh, inspired by oh-my-zsh and vundle. [ABANDONNED](https://github.com/zsh-users/antigen/issues/673)
+*   **Antigen** — A plugin manager for Zsh, inspired by oh-my-zsh and vundle. [ABANDONED](https://github.com/zsh-users/antigen/issues/673)
 
 	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
 
-*   **zgen** — A lightweight and simple plugin manager for ZSH. [ABANDONNED](https://github.com/tarjoilija/zgen/issues/123)
+*   **zgen** — A lightweight and simple plugin manager for Zsh. [ABANDONED](https://github.com/tarjoilija/zgen/issues/123)
 
 	[https://github.com/tarjoilija/zgen](https://github.com/tarjoilija/zgen) || [zgen-git](https://aur.archlinux.org/packages/zgen-git/)
 
@@ -476,16 +483,19 @@ Zsh can be configured to remember the DIRSTACKSIZE last visited folders. This ca
 
  `~/.zshrc` 
 ```
-DIRSTACKFILE="$HOME/.cache/zsh/dirs"
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-  [[ -d $dirstack[1] ]] && cd $dirstack[1]
-fi
-chpwd() {
-  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
-}
+autoload -Uz add-zsh-hook
 
-DIRSTACKSIZE=20
+DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
+if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
+	dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
+	[[ -d "${dirstack[1]}" ]] && cd -- "${dirstack[1]}"
+fi
+chpwd_dirstack() {
+	print -l -- "$PWD" "${(u)dirstack[@]}" > "$DIRSTACKFILE"
+}
+add-zsh-hook -Uz chpwd chpwd_dirstack
+
+DIRSTACKSIZE='20'
 
 setopt AUTO_PUSHD PUSHD_SILENT PUSHD_TO_HOME
 
@@ -512,11 +522,11 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session.
 
-See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1#REMEMBERING_RECENT_DIRECTORIES).
+See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1#REMEMBERING_RECENT_DIRECTORIES) for setup instructions.
 
 ### Help command
 
-Zsh `help` command is called `run-help`. Unlike [bash](/index.php/Bash "Bash"), *zsh* does not enable it by default. To use `help` in zsh, add following to your `zshrc`:
+Zsh `help` command is called `run-help`. Unlike [bash](/index.php/Bash "Bash"), Zsh does not enable it by default. To use `help` in Zsh, add following to your `zshrc`:
 
 ```
 autoload -Uz run-help
@@ -542,7 +552,7 @@ For example `run-help git commit` command will now open the [man page](/index.ph
 
 ### Fish-like syntax highlighting
 
-[Fish](/index.php/Fish "Fish") provides a very powerful shell syntax highlighting. To use this in zsh, you can install [zsh-syntax-highlighting](https://www.archlinux.org/packages/?name=zsh-syntax-highlighting) from offical repository and add following to your zshrc:
+[Fish](/index.php/Fish "Fish") provides a very powerful shell syntax highlighting. To use this in Zsh, you can install [zsh-syntax-highlighting](https://www.archlinux.org/packages/?name=zsh-syntax-highlighting) from offical repository and add following to your zshrc:
 
 ```
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -558,7 +568,7 @@ $ rehash
 
 ```
 
-This 'rehash' can be set to happen automatically.[[3]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
+This 'rehash' can be set to happen automatically.[[4]](https://github.com/robbyrussell/oh-my-zsh/issues/3440) Simply include the following in your `zshrc`:
 
  `~/.zshrc` 
 ```
@@ -577,11 +587,11 @@ Operation = Install
 Operation = Upgrade
 Operation = Remove
 Type = Package
-Target = *
+Target = usr/bin/*
 [Action]
 Depends = zsh
 When = PostTransaction
-Exec = /usr/bin/env touch /var/cache/zsh/pacman
+Exec = /usr/bin/touch /var/cache/zsh/pacman
 ```
 
 This keeps the modification date of the file `/var/cache/zsh/pacman` consistent with the last time a package was installed, upgraded or removed. Then, `zsh` must be coaxed into rehashing its own command cache when it goes out of date, by adding to your `~/.zshrc`:
@@ -619,7 +629,7 @@ Operation = Install
 Operation = Upgrade
 Operation = Remove
 Type = Package
-Target = *
+Target = usr/bin/*
 
 [Action]
 Depends = zsh
@@ -708,7 +718,7 @@ My xterm title
 
 ```
 
-An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Hook_Functions).
+An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Hook_Functions) for a list of available hook functions and their descriptions.
 
 By using `print -P` you can take advantage of prompt escapes.
 
@@ -727,16 +737,16 @@ By using `print -P` you can take advantage of prompt escapes.
 autoload -Uz add-zsh-hook
 
 function xterm_title_precmd () {
-	print -Pn '\e]2;%n@%m %~\a'
-	[[ "$TERM" == 'screen'* ]] && print -Pn '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
+	print -Pn -- '\e]2;%n@%m %~\a'
+	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
 }
 
 function xterm_title_preexec () {
-	print -Pn '\e]2;%n@%m %~ %# ' && print -n "${(q)1}\a"
-	[[ "$TERM" == 'screen'* ]] && { print -Pn '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n "${(q)1}\e\\"; }
+	print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
+	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
 }
 
-if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
+if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
 	add-zsh-hook -Uz precmd xterm_title_precmd
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi

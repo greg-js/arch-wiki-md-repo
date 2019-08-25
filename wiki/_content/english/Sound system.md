@@ -1,6 +1,10 @@
 This article is about basic sound management. For advanced topics see [professional audio](/index.php/Professional_audio "Professional audio").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 General information](#General_information)
 *   [2 Drivers and interface](#Drivers_and_interface)
@@ -41,10 +45,6 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 *   **JACK2** — This is the newer edition of JACK, designed explicitly towards multi-processor systems, and also includes transport over network.
 
 	[https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) || [jack2](https://www.archlinux.org/packages/?name=jack2)
-
-*   **JACK2 with D-Bus** — This is JACK2 with a different startup architecture, capable of running well at all times in coexistence with PulseAudio and non-JACK applications, which is a problem for the other two categories of JACK setup.
-
-	[https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) || [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus)
 
 *   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — This is a sound server supported by some major applications.
 

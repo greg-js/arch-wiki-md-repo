@@ -128,7 +128,7 @@ fi
 *   Um servidor X — fornecido pelo pacote [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) — ainda é necessário para executar aplicativos que ainda não foram portados para o [Wayland](/index.php/Wayland "Wayland").
 *   Wayland com o driver proprietário da [NVIDIA](/index.php/NVIDIA "NVIDIA") atualmente sofre de um desempenho muito ruim: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em [Qt](/index.php/Qt "Qt") como [VLC](/index.php/VLC "VLC"), calibre e SMPlayer usarem Wayland. Além da variável QT_QPA_PLATFORM, você deve também instalar o pacote [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Para adicionar suporte para outras bibliotecas gráficas, veja [Wayland#GUI_libraries](/index.php/Wayland#GUI_libraries "Wayland").
+Iniciar manualmente uma sessão Wayland é possível com `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM faz aplicativos em [Qt](/index.php/Qt "Qt") como [VLC](/index.php/VLC "VLC"), calibre e SMPlayer usarem Wayland. Além da variável QT_QPA_PLATFORM, você deve também instalar o pacote [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Para adicionar suporte para outras bibliotecas gráficas, veja [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland").
 
 Para iniciar ao autenticar no tty1, adicione o seguinte ao seu `.bash_profile`:
 

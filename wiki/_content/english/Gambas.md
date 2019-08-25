@@ -10,7 +10,7 @@ To install the latest stable version of Gambas 3, [install](/index.php/Install "
 
 Gambas 3 can build installation packages for various distributions and has support for building Arch packages, perfect for use with the [AUR](/index.php/AUR "AUR").
 
-Gambas supports both the [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") toolkits and can make use of both, allowing the application to fit seamlessly into most [Desktop environments](/index.php/Desktop_environment "Desktop environment"). This also applies to applications made inside the Gambas IDE, assuming the gb3-gui component is used.
+Gambas supports both the [GTK](/index.php/GTK "GTK") and [Qt](/index.php/Qt "Qt") toolkits and can make use of both, allowing the application to fit seamlessly into most [Desktop environments](/index.php/Desktop_environment "Desktop environment"). This also applies to applications made inside the Gambas IDE, assuming the gb3-gui component is used.
 
 ## External Links
 

@@ -19,8 +19,8 @@ Drives with a translation layer (see above) will usually report a logical block 
 
 Tools which will report the physical sector of a drive (provided the drive will report it correctly) includes
 
-*   [smartmontools](/index.php/S.M.A.R.T. "S.M.A.R.T.") (since 5.41 ; `smartctl -a`, in information section)
-*   [hdparm](/index.php/Hdparm "Hdparm") (since 9.12 ; `hdparm -I`, in configuration section)
+*   [smartmontools](/index.php/S.M.A.R.T. "S.M.A.R.T.") since 5.41: `smartctl -a /dev/sd*X* | grep 'Sector Size:'`
+*   [hdparm](/index.php/Hdparm "Hdparm") since 9.12: `hdparm -I /dev/sd*X* | grep 'Physical Sector size:'`
 
 Note that both works even for USB-attached discs (if the USB bridge supports SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
 

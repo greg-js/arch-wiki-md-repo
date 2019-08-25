@@ -23,7 +23,7 @@ Related articles
         *   [1.3.4 System tray](#System_tray)
         *   [1.3.5 Notifications](#Notifications)
     *   [1.4 Themes](#Themes)
-        *   [1.4.1 GTK+](#GTK+)
+        *   [1.4.1 GTK](#GTK)
     *   [1.5 Modules and Gadgets](#Modules_and_Gadgets)
         *   [1.5.1 "Extra" modules](#"Extra"_modules)
     *   [1.6 Default Keybindings](#Default_Keybindings)
@@ -175,11 +175,11 @@ You can install the themes (coming in .edj format) using the theme configuration
 
 **Note:** Enlightenment does not provide a stable theme API, and there have been numerous theme API changes over the years, even after E17 was released. Themes that have not been updated regularly are unlikely to work.
 
-**Tip:** To make GTK and Qt applications match the default theme of Enlightenment you can download a theme like the [E17 GTK theme](http://gnome-look.org/content/show.php/?content=163472). Place it in `~/.themes/` or install the [gtk-theme-e17gtk-git](https://aur.archlinux.org/packages/gtk-theme-e17gtk-git/) package and select application themes from Enlightenments settings, and set it to that, this will make all GTK2 and GTK3 applications match the default Enlightenment theme, you can then configure Qt applications (or configure Qt's default settings) to use the Gtk+ theme so it will mimic the theme your GTK applications are using, this way you can make sure most applications will blend in perfectly with your default enlightenment theme. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+**Tip:** To make GTK and Qt applications match the default theme of Enlightenment you can download a theme like the [E17 GTK theme](http://gnome-look.org/content/show.php/?content=163472). Place it in `~/.themes/` or install the [gtk-theme-e17gtk-git](https://aur.archlinux.org/packages/gtk-theme-e17gtk-git/) package and select application themes from Enlightenments settings, and set it to that, this will make all GTK2 and GTK3 applications match the default Enlightenment theme, you can then configure Qt applications (or configure Qt's default settings) to use the GTK theme so it will mimic the theme your GTK applications are using, this way you can make sure most applications will blend in perfectly with your default enlightenment theme. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-#### GTK+
+#### GTK
 
-To alter the GTK+ theme, go to *Settings > All > Look > Application Theme*.
+To alter the GTK theme, go to *Settings > All > Look > Application Theme*.
 
 ### Modules and Gadgets
 

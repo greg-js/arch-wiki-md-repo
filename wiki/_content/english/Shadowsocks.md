@@ -127,7 +127,7 @@ autostart shadowsocks-libev:
 start shadowsocks-libev after Network is already:
 
 ```
-see [Running services after the network is up](https://wiki.archlinux.org/index.php/Systemd#Running_services_after_the_network_is_up)
+see [Running services after the network is up](/index.php/Systemd#Running_services_after_the_network_is_up "Systemd")
 
 ```
 

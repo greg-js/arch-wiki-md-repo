@@ -189,12 +189,13 @@ remark = Welcome to the SmokePing website of Arch User. \
 
 + targets
 menu = Targets
+title = Targets
 
-++ ArchLinux
+++ CloudflareDNS
 
-menu = Arch Linux
-title = Arch Linux Website
-host = 66.211.214.131
+menu = Cloudflare DNS
+title = Cloudflare DNS server
+host = 1.1.1.1
 
 ++ GoogleDNS
 
@@ -205,8 +206,8 @@ host = 8.8.8.8
 ++ MultiHost
 
 menu = Multihost example
-title = Arch Wiki and Google DNS
-host = /targets/ArchLinux /targets/GoogleDNS
+title = CloudflareDNS and Google DNS
+host = /targets/CloudflareDNS /targets/GoogleDNS
 
 ```
 

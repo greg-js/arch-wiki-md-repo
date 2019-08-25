@@ -1,6 +1,10 @@
 FrankenWM is a dynamic tiling [window manager](/index.php/Window_manager "Window manager"), comparable to dwm or awesome. This means there are a number of predefined layouts that are used to tile the windows. The source code is based on monsterwm-xcb, but includes a lot of bugfixes and additonal features like extensive runtime configuration, a scratchpad window, window minimizing, floating control via keyboard and currently 13 different tiling layouts.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 AUR](#AUR)
@@ -19,7 +23,7 @@ You can get FrankenWM by [installing](/index.php/Install "Install") the [franken
 
 ### AUR
 
-When using the AUR-version, you can supply you own `config.h` which whill be used instead of the default config.
+When using the AUR-version, you can supply you own `config.h` which will be used instead of the default config.
 
 ### Git
 

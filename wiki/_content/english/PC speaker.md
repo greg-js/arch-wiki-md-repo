@@ -23,7 +23,7 @@ Sounds from the computer can be heard from the built-in case speaker, the speake
     *   [1.4 ALSA](#ALSA)
     *   [1.5 GNOME](#GNOME)
     *   [1.6 Cinnamon](#Cinnamon)
-    *   [1.7 GTK+](#GTK+)
+    *   [1.7 GTK](#GTK)
 *   [2 Beep](#Beep)
     *   [2.1 Installation](#Installation)
     *   [2.2 Run as non-root user](#Run_as_non-root_user)
@@ -120,7 +120,7 @@ $ dconf write /org/cinnamon/desktop/wm/preferences/audible-bell false
 
 ```
 
-### GTK+
+### GTK
 
 Append this line to `~/.gtkrc-2.0`:
 
@@ -151,7 +151,7 @@ You may also need to [unmute](#ALSA) the PC speaker in [ALSA](/index.php/ALSA "A
 
 ### Run as non-root user
 
-`beep` uses `/dev/input/by-path/platform-pcspkr-event-spkr` to control the PC speaker. To access it as a non-root user, one has to set the proper permissions. Create `/usr/lib/udev/rules.d/70-pcspkr-beep.rules` and add the following rule:
+`beep` uses `/dev/input/by-path/platform-pcspkr-event-spkr` to control the PC speaker. To access it as a non-root user, one has to set the proper permissions. Create `/etc/udev/rules.d/70-pcspkr-beep.rules` and add the following rule:
 
 ```
 ACTION=="add", SUBSYSTEM=="input", ATTRS{name}=="PC Speaker", ENV{DEVNAME}!="", TAG+="uaccess"

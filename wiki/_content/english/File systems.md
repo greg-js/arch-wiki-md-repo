@@ -41,20 +41,20 @@ Individual drive partitions can be setup using one of the many different availab
 
 See [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) for a general overview and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
 
+<caption>In-tree and FUSE file systems</caption>
 | File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
 | [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
 | [VFAT](/index.php/VFAT "VFAT") | [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
-| [exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT") | [mkexfatfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkexfatfs.8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Yes | N/A (FUSE-based) |
+| [exFAT](https://en.wikipedia.org/wiki/exFAT "wikipedia:exFAT") | [mkexfatfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkexfatfs.8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Yes | N/A (FUSE-based) |
 | [F2FS](/index.php/F2FS "F2FS") | [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Flash-based devices |
 | [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
 | [ext4](/index.php/Ext4 "Ext4") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
-| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) | No | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") (8.x-10.12.x) file system |
+| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "wikipedia:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) | No | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "wikipedia:macOS") (8.x-10.12.x) file system |
 | [JFS](/index.php/JFS "JFS") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
 | [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | [mkfs.nilfs2(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.nilfs2.8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Yes | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
-| [NTFS](/index.php/NTFS "NTFS") | [mkfs.ntfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") file system |
-| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | No |
-| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
-| [UDF](https://en.wikipedia.org/wiki/Universal_Disk_Format "w:Universal Disk Format") | [mkfs.udf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.udf.8) | [udftools](https://www.archlinux.org/packages/?name=udftools) | Optional | [udf.txt](https://www.kernel.org/doc/Documentation/filesystems/udf.txt) |
+| [NTFS](/index.php/NTFS "NTFS") | [mkfs.ntfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "wikipedia:Microsoft Windows") file system |
+| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "wikipedia:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
+| [UDF](https://en.wikipedia.org/wiki/Universal_Disk_Format "wikipedia:Universal Disk Format") | [mkfs.udf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.udf.8) | [udftools](https://www.archlinux.org/packages/?name=udftools) | Optional | [udf.txt](https://www.kernel.org/doc/Documentation/filesystems/udf.txt) |
 | [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
 
 [xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
@@ -62,9 +62,14 @@ See [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) f
 [xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
 
  |
-| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | No | N/A ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS") port) |
 
 **Note:** The kernel has its own NTFS driver (see [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), but it has limited support for writing files.
+
+<caption>Out-of-tree file systems</caption>
+| File system | Creation command | Kernel patchset | Userspace utilities | Notes |
+| [Bcachefs](/index.php/Bcachefs "Bcachefs") | bcachefs(8) | [linux-bcachefs-git](https://aur.archlinux.org/packages/linux-bcachefs-git/) | [bcachefs-tools-git](https://aur.archlinux.org/packages/bcachefs-tools-git/) |
+| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [linux-ck-reiser4](https://aur.archlinux.org/packages/linux-ck-reiser4/) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) |
+| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/), [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) | [zfs-utils](https://aur.archlinux.org/packages/zfs-utils/) | [OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "wikipedia:OpenZFS") port |
 
 ### Journaling
 
@@ -209,7 +214,7 @@ For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") 
 **Tip:**
 
 *   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e2label* can be used to change the label on an existing file system.
-*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") filesystem's size can be increased, but it cannot reduced. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "w:Comparison of file systems") and the respective file system documentation for details.
+*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") filesystem's size can be increased, but it cannot reduced. See [Wikipedia:Comparison of file systems#Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "wikipedia:Comparison of file systems") and the respective file system documentation for details.
 
 The new file system can now be mounted to a directory of choice.
 

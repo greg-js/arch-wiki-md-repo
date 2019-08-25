@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Silent boot](/index.php/Silent_boot "Silent boot"). Data da última tradução: 2019-07-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Silent_boot&diff=0&oldid=577877) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Silent boot](/index.php/Silent_boot "Silent boot"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Silent_boot&diff=0&oldid=579359) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,12 +19,12 @@ Esta página é para aqueles que preferem limitar a verbosidade de seu sistema a
 *   [5 startx](#startx)
 *   [6 fsck](#fsck)
 *   [7 Silenciar o GRUB](#Silenciar_o_GRUB)
-*   [8 Retendo o logotipo do fornecedor do BIOS](#Retendo_o_logotipo_do_fornecedor_do_BIOS)
+*   [8 Retendo ou desabilitando o logotipo do fornecedor do BIOS](#Retendo_ou_desabilitando_o_logotipo_do_fornecedor_do_BIOS)
     *   [8.1 Desabilitando o controle obtido](#Desabilitando_o_controle_obtido)
 
 ## Parâmetros do kernel
 
-Altere os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") usando as opções de configuração do seu gerenciador de inicialização, para incluir os seguintes parâmetros:
+Altere os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") usando as opções de configuração do seu gerenciador de inicialização, para incluir os seguintes parâmetros:
 
 ```
 quiet vga=current
@@ -154,13 +154,13 @@ GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
 
 Finalmente, gere novamente o arquivo `grub.cfg`.
 
-## Retendo o logotipo do fornecedor do BIOS
+## Retendo ou desabilitando o logotipo do fornecedor do BIOS
 
 Os modernos sistemas UEFI exibem um logotipo de fornecedor na inicialização até entregar o controle ao gerenciador de boot; por exemplo, Os laptops da Lenovo exibem um logotipo vermelho brilhante da Lenovo. Esse logotipo de fornecedor é normalmente apagado pelo gerenciador de boot (se o GRUB padrão for usado) ou pelo kernel.
 
 Para evitar que o kernel apague o logotipo de fornecedor, o Linux 4.19 introduziu uma nova opção de configuração `FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER` que retém o conteúdo do framebuffer até que o texto precise ser impresso no console framebuffer. A partir de novembro de 2018 (Linux 4.19.1), os kernels oficiais do Arch Linux são compilados com `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER = y`.
 
-Quando combinado com um nível de log baixo (para impedir que o texto seja impresso), o logotipo do fornecedor pode ser mantido enquanto o sistema é inicializado. Observe que o GRUB na configuração padrão substitui a tela; considere usar a inicialização [EFISTUB](/index.php/EFISTUB "EFISTUB") para inicializar diretamente no kernel e, assim, alavancar o controle diferido.
+Quando combinado com um nível de log baixo (para impedir que o texto seja impresso), o logotipo do fornecedor pode ser mantido enquanto o sistema é inicializado. Observe que o GRUB na configuração padrão substitui a tela; considere usar a inicialização [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)") para inicializar diretamente no kernel e, assim, alavancar o controle diferido.
 
 [Demonstração em vídeo](https://www.youtube.com/watch?v=5DW2JgJmsuY)
 
@@ -175,4 +175,4 @@ Leia mais sobre isso em:
 
 ### Desabilitando o controle obtido
 
-Se o novo comportamento causar problema, você pode desabilitar o controle obtido por meio do [parâmetro de kernel](/index.php/Kernel_parameter "Kernel parameter") `fbcon=nodefer`.
+Se o novo comportamento causar problema, você pode desabilitar o controle obtido por meio do [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") `fbcon=nodefer`.

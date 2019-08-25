@@ -50,7 +50,7 @@ TPM drivers are natively supported in modern kernels, but might need to be loade
 Depending on your chipset, you might also need to load one of the following:
 
 ```
-# modprobe tpm_{atmel,bios,infineon,nsc,tis,crb}
+# modprobe tpm_{atmel,infineon,nsc,tis,crb}
 
 ```
 

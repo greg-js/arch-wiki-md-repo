@@ -158,7 +158,7 @@ install CD version
 | [Lenovo ThinkPad T470s](/index.php/Lenovo_ThinkPad_T470s "Lenovo ThinkPad T470s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
-| [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | ? | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
+| [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | Yes | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -197,7 +197,8 @@ install CD version
 | [Lenovo ThinkPad X250](/index.php/Lenovo_ThinkPad_X250 "Lenovo ThinkPad X250") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
-| Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes) |
+| Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (Fibcom L830-EB-00) | Webcam (Yes) |
+| Lenovo ThinkPad X395 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -205,6 +206,7 @@ install CD version
 | [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | [Lenovo ThinkPad X1 Carbon (Gen 6)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6) "Lenovo ThinkPad X1 Carbon (Gen 6)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | [Lenovo ThinkPad X1 Extreme](/index.php/Lenovo_ThinkPad_X1_Extreme "Lenovo ThinkPad X1 Extreme") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA | Fingerprint reader not supported, Thunderbolt ports not tested | Graphics requires some configuration to work correctly |
+| [Lenovo ThinkPad X1 Extreme (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2) "Lenovo ThinkPad X1 Extreme (Gen 2)") | NA | Yes | Yes | Unknown | Yes | Yes | Yes | NA | Fingerprint reader not supported [yet](https://github.com/nmikhailov/Validity90/issues/72), Thunderbolt ports not tested |
 | [Lenovo ThinkPad X1 Yoga (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Yoga_(Gen_3) "Lenovo ThinkPad X1 Yoga (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Partial | NA | SD card (Yes), Webcam (Yes), Fingerprint (No), Touchscreen (Yes), Accelerometer (Yes) |
 
 #### Yoga Series
@@ -313,6 +315,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo V110-15ISK | ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
+| Lenovo V130-15IKB | ??? | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (Yes), Touchpad (Yes), Webcam (Yes) |
 | Lenovo V330-15IKB | 2018.10.01 | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | Fingerprint (No, no driver exists for the Validity/Synaptics 06cb:0081 Fingerprint Reader), Touchpad (Yes), Webcam (Yes) |
 | Lenovo V330-14ARR | 2019.06.15 | Yes | Yes | Yes | Yes* | Yes | Yes | NA | SD-Card Reader (Yes) HDMI Out (Yes), USB 3.0 (Yes), Touchpad (Yes), Webcam (Yes) | DOS installable BIOS available* |
 

@@ -90,7 +90,7 @@ For example, more advanced users may wish to enable `IDLE_SERVER` by setting it 
 
 #### Spigot (respectively Craftbukkit)
 
-[Spigot](https://www.spigotmc.org/) is the most widely-used **modded** Minecraft server in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/spigot`.
+[Spigot](https://www.spigotmc.org/) is the most widely-used **modded** Minecraft server in the world. It can be installed as [spigot](https://aur.archlinux.org/packages/spigot/) via the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server provides its own systemd unit files, spigot script and corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd`. The configuration file resides under `/etc/conf.d/spigot`.
 
 Be sure to read [#Setup](#Setup) and replace `minecraftd` with `spigot` wherever you encounter it.
 
@@ -100,7 +100,7 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 
 [Cuberite](https://cuberite.org/) is a highly efficient and extensively moddable Minecraft server, written in C++ and Lua. It achieves much better performances than the vanilla Minecraft server, but is not fully compatible with the latest Minecraft client (some game aspects might be missing or not working).
 
-Cuberite minecraft server can be installed as a [cuberite](https://aur.archlinux.org/packages/cuberite/) package, which also provides a simple web interface by default at port `8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
+Cuberite minecraft server can be installed as a [cuberite](https://aur.archlinux.org/packages/cuberite/) package, which provides a simple web interface by default at port `8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd`. The configuration file resides under `/etc/conf.d/cuberite`.
 
 Be sure to read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever you encounter it.
 
@@ -140,7 +140,7 @@ There are several [programs and editors](http://www.minecraftwiki.net/wiki/Progr
 
 *   Mapcrafter ([mapcrafter-git](https://aur.archlinux.org/packages/mapcrafter-git/)) is a high performance Minecraft map renderer written in C++ which renders worlds to maps with an 3D-isometric perspective. You can view these maps in any webbrowser hence they are easily deployed on one's server. Mapcrafter has a simple configuration file format to specify worlds to render, different rendermodes such as day/night/cave and can also render worlds from different rotations.
 
-*   Minutor ([minutor-git](https://aur.archlinux.org/packages/minutor-git/)) is a minimalistic map generator for Minecraft. You are provided with a simple GTK+ based interface for viewing your world. Several rendering modes are available, as well as custom coloring modes and the ability to slice through z-levels.
+*   Minutor ([minutor-git](https://aur.archlinux.org/packages/minutor-git/)) is a minimalistic map generator for Minecraft. You are provided with a simple GTK based interface for viewing your world. Several rendering modes are available, as well as custom coloring modes and the ability to slice through z-levels.
 
 ## Troubleshooting
 

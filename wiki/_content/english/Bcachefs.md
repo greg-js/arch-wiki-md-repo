@@ -13,7 +13,8 @@ It is built upon [Bcache](/index.php/Bcache "Bcache") and is mainly developed by
     *   [2.1 Single drive](#Single_drive)
     *   [2.2 Multiple drives in RAID0/1](#Multiple_drives_in_RAID0/1)
     *   [2.3 Using ssds as a caching layer](#Using_ssds_as_a_caching_layer)
-*   [3 Tips and Tricks](#Tips_and_Tricks)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Documentation](#Documentation)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -52,7 +53,9 @@ The Bcachefs userspace tools are available from [bcachefs-tools-git](https://aur
 # mount -t bcachefs /dev/sda1:/dev/sdb1:/dev/sdc1:/dev/sdd1/dev/sde1:/dev/sdf1 /mnt
 ```
 
-## Tips and Tricks
+## Tips and tricks
+
+### Documentation
 
 Up-to-date documentation is only available via `bcachefs --help`. The man page, for instance, includes the now-useless `--tier` option.
 

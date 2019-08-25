@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=576500) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=579331) na versão em inglês.
 
 Artigos relacionados
 
@@ -29,16 +29,17 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   [7 Italiano](#Italiano)
 *   [8 Japonês](#Japonês)
 *   [9 Lituano](#Lituano)
-*   [10 Persa](#Persa)
-*   [11 Polonês](#Polonês)
-*   [12 Português](#Português)
-*   [13 Romeno](#Romeno)
-*   [14 Russo](#Russo)
-*   [15 Sérvia](#Sérvia)
-*   [16 Sueco](#Sueco)
-*   [17 Turco](#Turco)
-*   [18 Ucraniano](#Ucraniano)
-*   [19 Vietnamita](#Vietnamita)
+*   [10 Noruego](#Noruego)
+*   [11 Persa](#Persa)
+*   [12 Polonês](#Polonês)
+*   [13 Português](#Português)
+*   [14 Romeno](#Romeno)
+*   [15 Russo](#Russo)
+*   [16 Sérvia](#Sérvia)
+*   [17 Sueco](#Sueco)
+*   [18 Turco](#Turco)
+*   [19 Ucraniano](#Ucraniano)
+*   [20 Vietnamita](#Vietnamita)
 
 ## Alemão
 
@@ -56,7 +57,10 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Fórum: [https://bbs.archlinuxcn.org/](https://bbs.archlinuxcn.org/)
 *   Fórum: [https://forum.ubuntu.org.cn/viewforum.php?f=155](https://forum.ubuntu.org.cn/viewforum.php?f=155)
 *   Fórum: [http://tieba.baidu.com/f?kw=archlinux](http://tieba.baidu.com/f?kw=archlinux)
+*   Bate-papo do Telegram: [https://t.me/archlinuxcn_group](https://t.me/archlinuxcn_group)
+*   Repositório [archlinuxcn]: [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
 *   Wiki: [Main page (简体中文)](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")
+*   Planet: [https://planet.archlinuxcn.org/](https://planet.archlinuxcn.org/)
 
 ### Taiwan
 
@@ -110,6 +114,11 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Fórum: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
 *   Wiki: [lt:Main page](https://wiki.archlinux.org/index.php/Main_page_(Lietuvi%C5%A1kai) "lt:Main page")
 
+## Noruego
+
+*   IRC: #archlinux-nordics @ freenode
+*   site: [https://archlinux.no/](https://archlinux.no/)
+
 ## Persa
 
 *   Site: [http://www.archusers.ir/](http://www.archusers.ir/)
@@ -139,7 +148,7 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Site: [https://archlinux.org.ru/](https://archlinux.org.ru/)
 *   Fórum: [https://archlinux.org.ru/forum](https://archlinux.org.ru/forum)
 *   Grupos de Telegram:
-    *   [https://t.me/archlinux_ru](https://t.me/archlinux_ru)
+    *   [https://t.me/archlinux_ru](https://t.me/archlinux_ru) (com espelho no Matrix: [#archlinux_ru:matrix.org](https://matrix.to/#/#archlinux_ru:matrix.org))
     *   [https://t.me/ArchLinuxChatRU](https://t.me/ArchLinuxChatRU)
 *   Wiki: [Main page (Русский)](/index.php/Main_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main page (Русский)")
 

@@ -1,6 +1,10 @@
 [Mercurial](https://www.mercurial-scm.org/) (commonly referred to as **hg**) is a distributed version control system written in Python and is similar in many ways to [Git](/index.php/Git "Git"), [Bazaar](http://bazaar.canonical.com/) and [Darcs](/index.php/Darcs "Darcs").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Graphical front-ends](#Graphical_front-ends)
@@ -31,7 +35,7 @@ See also [Mercurial graphical user interfaces](https://www.mercurial-scm.org/wik
 
 *   **hgview** — Qt4 and text based Mercurial log navigator.
 
-	[https://www.logilab.org/project/hgview/](https://www.logilab.org/project/hgview/) || [hgview](https://www.archlinux.org/packages/?name=hgview)
+	[https://www.logilab.org/project/hgview/](https://www.logilab.org/project/hgview/) || [hgview](https://aur.archlinux.org/packages/hgview/)
 
 *   **[TortoiseHg](https://en.wikipedia.org/wiki/TortoiseHg "wikipedia:TortoiseHg")** — Set of graphical tools and a Nautilus extension for the Mercurial distributed revision control system.
 
@@ -139,4 +143,4 @@ You can then create a `~/.hgignore` to ensure that only the files you wish to in
 *   [Mercurial: The Definitive Guide](http://hgbook.red-bean.com/read/)
 *   [hginit.com](http://hginit.com/) - a tutorial by Joel Spolsky
 *   [Mercurial Kick-Start](http://mercurial.aragost.com/kick-start/en/) one more tutorial by Aragost.
-*   [Bitbucket](http://bitbucket.org) - free and commercial hosting of mercurial repositories
+*   [Bitbucket](http://bitbucket.org) - free and commercial hosting of Mercurial repositories (all Mercurial repositories [will be removed](https://bitbucket.org/blog/sunsetting-mercurial-support-in-bitbucket) on 2020-06-01)

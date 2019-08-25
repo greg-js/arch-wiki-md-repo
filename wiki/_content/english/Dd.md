@@ -96,7 +96,7 @@ Then mount the external hard drive and backup the drive:
 
 ```
 
-If necessary (e.g. when the format of the external HD is FAT32) split the disk image in volumes (see also [split(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/split.1)):
+If necessary (e.g. when the resulting files will be stored on a [FAT32](/index.php/FAT32 "FAT32") file system) split the disk image into multiple parts (see also [split(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/split.1)):
 
 ```
 # dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c | split -a3 -b2G - */path/to/backup.img.gz*
@@ -118,6 +118,8 @@ Finally, save extra information about the drive geometry necessary in order to i
 ```
 
 **Note:** You may wish to use a block size (`bs=`) that is equal to the amount of cache on the HD you are backing up. For example, `bs=8192K` works for an 8 MiB cache. The 64 KiB mentioned in this article is better than the default `bs=512` bytes, but it will run faster with a larger `bs=`.
+
+**Tip:** `gzip` is only able to compress data using a single CPU core, which leads to a data throughput considerably lower than the write speeds on modern storage. In order to leverage multicore compression and create a disk image more quickly, one could for instance install the [pigz](https://www.archlinux.org/packages/?name=pigz) package, and simply replace the `gzip -c` command above with `pigz -c`. For large disks, this can potentially save hours.
 
 ### Restore system
 

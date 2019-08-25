@@ -3,7 +3,7 @@
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | bluetooth |
 | Mobile broadband | Not working | ? Intel XMM 7560 |
-| Audio | Partially Working | snd_hda_intel |
+| Audio | Partially Working | snd_hda_intel or snd_sof |
 | Touchpad | Working | ? |
 | Touchscreen | Working | hid_multitouch |
 | Pen input | Working | ? |
@@ -12,7 +12,7 @@
 | Wireless Switch | Working | ? |
 | Function/Multimedia Keys | Working | ? |
 | Suspend/Resume | Partially Working (patched kernel needed) | ? |
-| Fingerprint sensor | Not working | ? synaptic 06cb:00bb |
+| Fingerprint sensor | Not working | ? synaptic 06cb:00bb WIP |
 
 This article covers specific configuration of this laptop. Currently based on experience with Xfce4 and with Awesome, running on X.org.
 
@@ -27,6 +27,8 @@ This article covers specific configuration of this laptop. Currently based on ex
     *   [1.2 lspci for 13-ap0xxxx](#lspci_for_13-ap0xxxx)
     *   [1.3 lsusb for 13-ap0xxxx](#lsusb_for_13-ap0xxxx)
 *   [2 Installation](#Installation)
+    *   [2.1 Basics](#Basics)
+    *   [2.2 Advanced / Kernel update](#Advanced_/_Kernel_update)
 *   [3 Issues / Notes](#Issues_/_Notes)
     *   [3.1 Audio](#Audio)
     *   [3.2 Camera](#Camera)
@@ -37,12 +39,13 @@ This article covers specific configuration of this laptop. Currently based on ex
     *   [3.7 USB-C HDMI-out / dualscreen](#USB-C_HDMI-out_/_dualscreen)
     *   [3.8 Bluetooth](#Bluetooth)
     *   [3.9 Mobile Broadband](#Mobile_Broadband)
-    *   [3.10 ACPI Errors](#ACPI_Errors)
+    *   [3.10 Fingerprint Reader](#Fingerprint_Reader)
     *   [3.11 Tablet mode](#Tablet_mode)
     *   [3.12 IR Camera Login](#IR_Camera_Login)
     *   [3.13 Battery optimizations](#Battery_optimizations)
     *   [3.14 Suspend issues](#Suspend_issues)
     *   [3.15 Sensors](#Sensors)
+    *   [3.16 ACPI Errors](#ACPI_Errors)
 
 ## Hardware Info
 
@@ -108,6 +111,8 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Installation
 
+### Basics
+
 Installation needs a bit of workarounds ( as of 2018.12 arch iso ).
 
 First you will need to disable secureboot in BIOS (ESC to bring up menu, then F10 for BIOS and/or F9 for Boot options).
@@ -118,11 +123,19 @@ Upon boot, you need to edit the kernel cmdline ( press e in UEFI mode when prese
 
 Then follow the [installation guide](/index.php/Installation_guide "Installation guide") as usual.
 
+### Advanced / Kernel update
+
+If you want to have support for the digital mic, sleep mode s2idle and working rotation, you can also try compiling the kernel at [[1]](https://github.com/gled-rs/linux-hp_ap0xxx)
+
 ## Issues / Notes
 
 ### Audio
 
-The laptop has a Realtek ALC285 Codec with a 4 speaker system built in. Internal microphone do not work ( or I have not yet found the correct parameters ). External mic with headphones works.
+The laptop has a Realtek ALC285 Codec with a 4 speaker system built in. External mic with headphones works and legacy driver plays only on two speakers.
+
+For the internal dual digital mic, it currently does not work with the legacy driver ( snd-hda-intel ) but works using snd-sof as described in the kernel bug [https://bugzilla.kernel.org/show_bug.cgi?id=201251#c73](https://bugzilla.kernel.org/show_bug.cgi?id=201251#c73) . Hopefully will be merged fully by kernel 5.3-5.4 and will allow using the microphone.
+
+There is still work needed to support the 4 speakers.
 
 ### Camera
 
@@ -134,21 +147,11 @@ All the media keys works. The mute button does not light up though.
 
 ### Auto Rotation
 
-Installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and this script [[1]](https://gist.github.com/Migacz85/3f544933ce5add438555ba7cd33f0413) autorotation works out of the box. In the script you have to change the line
+Installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and [screenrotator-git](https://aur.archlinux.org/packages/screenrotator-git/) autorotation works out of the box.
 
-```
-TOUCHPAD="ELAN Touchscreen"
+You can also use this script [[2]](https://gist.github.com/Migacz85/3f544933ce5add438555ba7cd33f0413) but you have to change the line TOUCHPAD="ELAN Touchscreen" by PEN="ELAN2514:00 04F3:280E Pen (0)" and change everywhere the word TOUCHPAD by the word PEN. Indeed, the touchpad do not need to be remaped, since it is deactivated when the screen is rotated, however the PEN is.
 
-```
-
-by
-
-```
-PEN="ELAN2514:00 04F3:280E Pen (0)"
-
-```
-
-and change everywhere the word TOUCHPAD by the word PEN. Indeed, the touchpad do not need to be remaped, since it is deactivated when the screen is rotated, however the PEN is.
+WARNING sensor support is broken in 5.0+ kernels because of a kernel bug floating around that cause issues and error messages to be spammed. A simple fix is [https://lkml.org/lkml/2019/3/8/2](https://lkml.org/lkml/2019/3/8/2) ( that patch got reverted in the current 5.2+ kernels, but can be reapplied safely ).
 
 ### Dual boot
 
@@ -177,6 +180,42 @@ Some configurations include the [Intel XMM 7560](https://www.intel.com/content/w
 	Subsystem: Hewlett-Packard Company Device [103c:8507]
 
 ```
+
+### Fingerprint Reader
+
+Not supported at the moment in libfprint, there seems to be a beginning of work to support those types of fingerprint readers here: [https://gitlab.freedesktop.org/vincenth/libfprint.git](https://gitlab.freedesktop.org/vincenth/libfprint.git) The branch synaptics-driver-20190617 contains code that seems to be able to open the fingerprint reader ( if you add the correct device id in drivers/synaptics/synaptics.c ) .
+
+Generates an error after opening though so this is not complete yet.
+
+### Tablet mode
+
+Keyboard is automatically deactivated when screen is rotated to tent or tablet mode. Screen-rotator works great. Using Onboard for onscreen keyboard works also, but xfce4 does not allow Onboard to come automatically when editing text ( Onboard uses the Gnome accessibility, so if you are a Gnome user, you should be fine ).
+
+### IR Camera Login
+
+Works with [Howdy](/index.php/Howdy "Howdy") configured to use /dev/video2 and the patch referenced in [https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621](https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621)
+
+### Battery optimizations
+
+tlp installed, no customisations: around 8-12h of browsing / sysadmin work, depending on the tasks. (Please, see next section, since tlp messes up with suspend).
+
+Powertop display a constant mW consumption of 570 mW ( probably wrong ). There is a setting in the BIOS to allow reporting via ACPI of the battery remaining time. It is disabled by default => to investigate.
+
+### Suspend issues
+
+This model only supports the S0ix, and so only S0 (s2idle) sleep mode is activated. Since this device use a Hynix SSD, it is affected by a bug [[3]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875), resulting in 4-5% battery drain per hour during suspend. A patch set is available, but will not be merged [[4]](https://lore.kernel.org/patchwork/patch/1007283/). In any case, you can install the patched kernel from AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/). The battery drain during suspend should drop to 1-2% per hour.
+
+As it is mentioned by Intel [[5]](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), TLP may not work, and so it should not be used with S0ix.
+
+### Sensors
+
+coretemp-isa-0000 Adapter: ISA adapter Package id 0: +51.0°C (high = +100.0°C, crit = +100.0°C) Core 0: +49.0°C (high = +100.0°C, crit = +100.0°C) Core 1: +51.0°C (high = +100.0°C, crit = +100.0°C) Core 2: +48.0°C (high = +100.0°C, crit = +100.0°C) Core 3: +48.0°C (high = +100.0°C, crit = +100.0°C)
+
+acpitz-acpi-0 Adapter: ACPI interface temp1: +49.0°C
+
+iwlwifi-virtual-0 Adapter: Virtual device temp1: +52.0°C
+
+pch_cannonlake-virtual-0 Adapter: Virtual device temp1: +45.0°C
 
 ### ACPI Errors
 
@@ -336,33 +375,3 @@ Many ACPI errors are logged on boot:
 [   17.820943] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
 
 ```
-
-### Tablet mode
-
-Keyboard is automatically deactivated when screen is rotated to tent or tablet mode. Screen-rotator works great. Using Onboard for onscreen keyboard works also, but xfce4 does not allow Onboard to come automatically when editing text ( Onboard uses the Gnome accessibility, so if you are a Gnome user, you should be fine ).
-
-### IR Camera Login
-
-Works with [Howdy](/index.php/Howdy "Howdy") configured to use /dev/video2 and the patch referenced in [https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621](https://github.com/boltgolt/howdy/issues/70#issuecomment-439123621)
-
-### Battery optimizations
-
-tlp installed, no customisations: around 8-12h of browsing / sysadmin work, depending on the tasks. (Please, see next section, since tlp messes up with suspend).
-
-Powertop display a constant mW consumption of 570 mW ( probably wrong ). There is a setting in the BIOS to allow reporting via ACPI of the battery remaining time. It is disabled by default => to investigate.
-
-### Suspend issues
-
-This model only supports the S0ix, and so only S0 (s2idle) sleep mode is activated. Since this device use a Hynix SSD, it is affected by a bug [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1801875), resulting in 4-5% battery drain per hour during suspend. A patch set is available, but will not be merged [[3]](https://lore.kernel.org/patchwork/patch/1007283/). In any case, you can install the patched kernel from AUR [linux-hynix](https://aur.archlinux.org/packages/linux-hynix/). The battery drain during suspend should drop to 1-2% per hour.
-
-As it is mentioned by Intel [[4]](https://01.org/blogs/qwang59/2018/how-achieve-s0ix-states-linux), TLP may not work, and so it should not be used with S0ix.
-
-### Sensors
-
-coretemp-isa-0000 Adapter: ISA adapter Package id 0: +51.0°C (high = +100.0°C, crit = +100.0°C) Core 0: +49.0°C (high = +100.0°C, crit = +100.0°C) Core 1: +51.0°C (high = +100.0°C, crit = +100.0°C) Core 2: +48.0°C (high = +100.0°C, crit = +100.0°C) Core 3: +48.0°C (high = +100.0°C, crit = +100.0°C)
-
-acpitz-acpi-0 Adapter: ACPI interface temp1: +49.0°C
-
-iwlwifi-virtual-0 Adapter: Virtual device temp1: +52.0°C
-
-pch_cannonlake-virtual-0 Adapter: Virtual device temp1: +45.0°C

@@ -29,6 +29,7 @@ The `mount` command will use fstab, if just one of either directory or device is
         *   [3.1.1 Local partition](#Local_partition)
         *   [3.1.2 Remote filesystem](#Remote_filesystem)
         *   [3.1.3 Encrypted filesystem](#Encrypted_filesystem)
+        *   [3.1.4 Automatic unmount](#Automatic_unmount)
     *   [3.2 External devices](#External_devices)
     *   [3.3 Filepath spaces](#Filepath_spaces)
     *   [3.4 atime options](#atime_options)
@@ -186,6 +187,8 @@ If you have encrypted filesystems with keyfiles, you can also add the `noauto` p
 data /dev/md0 /root/key noauto
 
 ```
+
+#### Automatic unmount
 
 You may also specify an idle timeout for a mount with the `x-systemd.idle-timeout` flag. For example:
 

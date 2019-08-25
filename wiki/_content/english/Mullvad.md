@@ -15,7 +15,7 @@
 
 The new [official GUI client](https://mullvad.net/download/) is available as [mullvad-vpn](https://aur.archlinux.org/packages/mullvad-vpn/).
 
-After installation you will need to enable and start the [systemd](/index.php/Systemd "Systemd") service mullvad-daemon.
+After installation you will need to enable and start the [systemd](/index.php/Systemd "Systemd") service `mullvad-daemon.service`.
 
 Alternatively you can use the old client or [OpenVPN](/index.php/OpenVPN "OpenVPN") with a configuration file for Mullvad as explained in [#Manual configuration](#Manual_configuration).
 

@@ -747,14 +747,10 @@ For the first, remove any spurious spaces, or else quote path etc. where they ar
 
 ## Web interface
 
-There are numerous web interfaces and front ends for rTorrent including:
+There are numerous web-based front ends for rTorrent; the most active include the following:
 
-*   ~~[WTorrent](/index.php/WTorrent "WTorrent") is a web interface to rtorrent programmed in php using Smarty templates and XMLRPC for PHP library.~~ Archived. Not packaged for Arch, last update 2012
-*   ~~[nTorrent](http://code.google.com/p/ntorrent/) is a graphical user interface client to rtorrent written in Java.~~ Last release in 2009.
-*   [rTWi](https://rtwi.jmk.hu/) is a simple rTorrent web interface written in PHP.
-*   ~~[Rtgui](/index.php/Rtgui "Rtgui") is a web based front end for rTorrent written in PHP and uses XML-RPC to communicate with the rTorrent client.~~ Archived. Not packaged for Arch, last release 2011.
-*   [rutorrent](https://github.com/Novik/ruTorrent) - A web-based front-end with an interface very similar to uTorrent which supports many plugins and advanced features (see also: [ruTorrent](/index.php/RuTorrent "RuTorrent") and [Guide on forum](https://bbs.archlinux.org/viewtopic.php?pid=897577#p897577)).
-*   [flood](https://github.com/jfurrow/flood) is a web interface for rtorrent written in Node.js using XMLRPC.
+*   [ruTorrent](https://github.com/Novik/ruTorrent) - Has an interface very similar to μTorrent and supports many plugins and advanced features (see also: [RTorrent/RuTorrent](/index.php/RTorrent/RuTorrent "RTorrent/RuTorrent") and [guide on forum](https://bbs.archlinux.org/viewtopic.php?pid=897577#p897577)).
+*   [Flood](https://github.com/jfurrow/flood) - Modern interface, written in Node.js using XMLRPC.
 
 **Note:** rTorrent is currently built using [XML-RPC for C/C++](http://xmlrpc-c.sourceforge.net/), which is required for some web interfaces (e.g. ruTorrent).
 

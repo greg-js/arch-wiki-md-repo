@@ -152,7 +152,7 @@ You can then chainload GRUB's `core.img` from GRUB Legacy or syslinux as a Linux
 
 Following package may be installed:
 
-*   **grub-customizer** — GTK+ customizer for GRUB or BURG
+*   **grub-customizer** — GTK customizer for GRUB or BURG
 
 	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://www.archlinux.org/packages/?name=grub-customizer)
 

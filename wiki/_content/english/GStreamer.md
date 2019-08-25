@@ -47,7 +47,9 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 GStreamer will automatically detect and use the correct API [[1]](https://gstreamer.freedesktop.org/documentation/tutorials/playback/hardware-accelerated-video-decoding.html). Depending on your system you can [install](/index.php/Install "Install"):
 
 *   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
-*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU support. (NVDEC/NVENC is [disabled in the Arch package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45))
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU support. (NVDECODE/NVENCODE is [disabled in the Arch package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45))
+
+GStreamer [uses a whitelist](https://blogs.igalia.com/vjaquez/2018/03/28/gstreamer-va-api-troubleshooting/) of VA-API drivers. To use other drivers like [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver), set [environment variable](/index.php/Environment_variable "Environment variable") `GST_VAAPI_ALL_DRIVERS=1`.
 
 ## See also
 

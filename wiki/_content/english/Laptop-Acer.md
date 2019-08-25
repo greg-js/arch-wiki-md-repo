@@ -178,3 +178,16 @@ Microphone: OK | Everything works fine, but you have to stick to a modern kernel
 *   Synaptic Touchpad: OK, Support Gestures
 
  | ... |
+| [Swift 5](/index.php/Acer_Swift_5 "Acer Swift 5") SF515-51T | 2019.06.01 | OK, Intel UHD 620 | OK, Intel HDA `options snd-hda-intel model=dell-headset-multi` added to `/etc/modprobe.d/sound.conf` to get headset micro input working | Not present | OK | Not tested | 
+
+*   Suspend to RAM: OK
+*   Hibernate: OK
+*   Battery: OK
+
+ | Not present | 
+
+*   Webcam: OK
+*   Hotkeys: OK
+*   Synaptic Touchpad: OK, Support Gestures
+
+ | ... |

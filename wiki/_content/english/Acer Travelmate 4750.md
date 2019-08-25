@@ -10,7 +10,11 @@
 
 2012/08/02 Setup ArchLinux by just copy file system from old machine. I changed the /etc/fstab and install xf86-video-intel, it works now.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
     *   [1.1 Standard Hardware](#Standard_Hardware)
@@ -166,12 +170,12 @@ Install [cheese](https://www.archlinux.org/packages/?name=cheese) to view.
             SLPB|SBTN)
                 logger 'SleepButton pressed'
 		echo -n mem > /sys/power/state
-                ;;
+                ;;
             *)
                 logger "ACPI action undefined: $2"
-                ;;
+                ;;
         esac
-        ;;
+        ;;
     #...
     button/volumeup)
 		logger "VOLUP"

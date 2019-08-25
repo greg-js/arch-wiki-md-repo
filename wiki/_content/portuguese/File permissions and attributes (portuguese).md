@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2019-01-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=562573) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_permissions_and_attributes&diff=0&oldid=579195) na versão em inglês.
 
 Artigos relacionados
 
@@ -472,6 +472,13 @@ Use getfattr para exibir atributos estendidos:
 ```
 # file: foo.txt
 user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
+```
+
+Finalmente, para remover um atributo estendido:
+
+```
+$ setfattr -x user.checksum foo.txt
+
 ```
 
 ### Preservando atributos estendidos

@@ -1,6 +1,10 @@
 [aMule](http://www.amule.org/) is an eMule-like client for the [eDonkey Network](https://en.wikipedia.org/wiki/eDonkey_Network "w:eDonkey Network") and [Kademlia](https://en.wikipedia.org/wiki/Kademlia "w:Kademlia") networks, supporting multiple platforms.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Services](#Services)
@@ -15,7 +19,7 @@
 
 [Install](/index.php/Install "Install") the [amule](https://www.archlinux.org/packages/?name=amule) package.
 
-`amuled` is a full featured aMule daemon, running without any user interface (GUI). It is controlled by remote access through aMuleGUI (GTK+), aMuleWeb, or aMuleCmd.
+`amuled` is a full featured aMule daemon, running without any user interface (GUI). It is controlled by remote access through aMuleGUI (GTK), aMuleWeb, or aMuleCmd.
 
 ## Services
 
@@ -76,7 +80,7 @@ Note that here, the *password here* is the unencrypted password you used to conf
 
 ## amulegui
 
-Amulegui is a GTK+ interface for aMule.
+Amulegui is a GTK interface for aMule.
 
 ### Configuring notifications
 

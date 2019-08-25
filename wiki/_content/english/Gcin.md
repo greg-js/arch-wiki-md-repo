@@ -1,13 +1,17 @@
 [Gcin](http://hyperrate.com/dir.php?eid=67) is a new generation of Chinese [input method](/index.php/Input_method "Input method") server developed by Edward Liu. Gcin supports various input methods and works under most Unix-like operating systems. It's one of the most popular Chinese input engines in Taiwan.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Installing other input tables](#Installing_other_input_tables)
 *   [2 Configuration](#Configuration)
     *   [2.1 Autostart](#Autostart)
 *   [3 Usage](#Usage)
-    *   [3.1 With GNOME/GTK+ 2 applications](#With_GNOME/GTK+_2_applications)
+    *   [3.1 With GNOME/GTK 2 applications](#With_GNOME/GTK_2_applications)
     *   [3.2 With other applications](#With_other_applications)
     *   [3.3 Additional notes for Wine/Crossover Office](#Additional_notes_for_Wine/Crossover_Office)
 
@@ -32,7 +36,7 @@ gcin &
 
 ## Usage
 
-### With GNOME/GTK+ 2 applications
+### With GNOME/GTK 2 applications
 
 gcin provides a gtk input module, thus all gtk2-based applications are directly supported, there is no need to configure anything after installation (it's not XIM, and gcin is automatically started when needed).
 

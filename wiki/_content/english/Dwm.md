@@ -5,7 +5,11 @@ Related articles
 
 [dwm](https://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of optional patches. Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Configuration](#Configuration)
@@ -68,7 +72,7 @@ Dynamically updated information should be put in a loop which is forked to backg
 ```
 # Statusbar loop
 while true; do
-   xsetroot -name "$( date +"%F %R" )"
+   xsetroot -name "$( date +"%F %R" )"
    sleep 1m    # Update time every minute
 done &
 
@@ -205,6 +209,8 @@ Try setting `export _JAVA_AWT_WM_NONREPARENTING=1`. Also see the [Java](/index.p
 If there are empty gaps of desktop space outside terminal windows, it is likely due to the terminal's font size. Either adjust the size until finding the ideal scale that closes the gap, or toggle `resizehints` to *0* in `config.h`.
 
 This will cause dwm to ignore resize requests from all client windows, not just terminals. The downside to this workaround is that some terminals may suffer redraw anomalies, such as ghost lines and premature line wraps, among others.
+
+Alternatively, if you use the [st](/index.php/St "St") terminal emulator, you can apply the [anysize](https://st.suckless.org/patches/anysize/) patch and recompile st.
 
 ## Known issues
 

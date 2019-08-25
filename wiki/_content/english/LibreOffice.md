@@ -51,15 +51,15 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
 *   In the past, the installation of at least 1 language pack was required. Currently, LibreOffice detects your system defaults; manual installation of a language pack is no longer mandatory. See [help.libreoffice.org](https://help.libreoffice.org/Scalc/cui/ui/optlanguagespage/ignorelanguagechange#User_interface) for additional information.
 *   If you want the UK-English language pack, install [libreoffice-fresh-en-gb](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-gb), not [libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk) (Ukrainian) or [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br) (Breton)!
 *   For SDK install [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk).
-*   For Qt and GTK+ visual integration, see [#Theme](#Theme).
+*   For Qt and GTK visual integration, see [#Theme](#Theme).
 
 Check the optional dependencies pacman displays. If you want to use LibreOffice Base, you must install a Java Runtime Environment: see [Java](/index.php/Java "Java"). You may need [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/) to use [some modules](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) in LibreOffice Base.
 
 ## Theme
 
-LibreOffice includes support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+LibreOffice includes support for [GTK](/index.php/GTK "GTK") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`. Note that the `kde4` and `gtk2` backends are [deprecated](https://wiki.documentfoundation.org/ReleaseNotes/6.2#Feature_removal_.2F_deprecation).
+LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`. Note that the `gtk2` backend is [deprecated](https://wiki.documentfoundation.org/ReleaseNotes/6.2#Feature_removal_.2F_deprecation).
 
 **Note:** When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment.
 
@@ -222,7 +222,7 @@ As an alternative workaround, run *libreoffice* with a light theme (e.g. with en
 
 If you do not want to install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) change the icon style in *Tools > Options > LibreOffice > View > Icon Style* to a readable one provided by LibreOffice.
 
-Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK+](/index.php/GTK%2B "GTK+"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), and, if using a LibreOffice version < 5.3.0, the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
+Otherwise [install](/index.php/Install "Install") the Breeze theme for [GTK](/index.php/GTK "GTK"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk), and, if using a LibreOffice version < 5.3.0, the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
 
 Just enable "Breeze Dark" or another readable icon style in *Tools > Options > LibreOffice > View > Icon Style* then.
 

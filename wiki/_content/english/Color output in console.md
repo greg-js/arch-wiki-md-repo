@@ -409,6 +409,10 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 	[https://github.com/erikrose/blessings](https://github.com/erikrose/blessings) || [python-blessings](https://www.archlinux.org/packages/?name=python-blessings), [python2-blessings](https://www.archlinux.org/packages/?name=python2-blessings)
 
+*   **lolcat** — Ruby program that makes the output colorful like a rainbow
+
+	[https://github.com/busyloop/lolcat/](https://github.com/busyloop/lolcat/) || [lolcat](https://www.archlinux.org/packages/?name=lolcat)
+
 ### Application specific
 
 #### Compilers

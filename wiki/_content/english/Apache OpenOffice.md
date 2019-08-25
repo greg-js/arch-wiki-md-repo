@@ -4,7 +4,11 @@ From [Why Apache OpenOffice](http://why.openoffice.org/):
 
 	Apache OpenOffice is the leading open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more. It is available in many languages and works on all common computers. It stores all your data in an international open standard format and can also read and write files from other common office software packages. It can be downloaded and used completely free of charge for any purpose.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Microsoft fonts](#Microsoft_fonts)
@@ -21,7 +25,7 @@ From [Why Apache OpenOffice](http://why.openoffice.org/):
     *   [4.1 Font substitution](#Font_substitution)
     *   [4.2 Anti-aliasing](#Anti-aliasing)
     *   [4.3 Spell checking problems](#Spell_checking_problems)
-    *   [4.4 Dark GTK+ themes, icons and GTK-Qt Engine](#Dark_GTK+_themes,_icons_and_GTK-Qt_Engine)
+    *   [4.4 Dark GTK themes, icons and GTK-Qt Engine](#Dark_GTK_themes,_icons_and_GTK-Qt_Engine)
     *   [4.5 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
     *   [4.6 Fixing Java framework error](#Fixing_Java_framework_error)
     *   [4.7 OpenOffice does not detect my certificates](#OpenOffice_does_not_detect_my_certificates)
@@ -103,9 +107,9 @@ Check [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_
 
 #### Use different configuration from general theme
 
-Do **not** select *Use my KDE style in GTK applications*. Instead choose a native syle and font for GTK+ 2 applications.
+Do **not** select *Use my KDE style in GTK applications*. Instead choose a native syle and font for GTK 2 applications.
 
-Use a program like [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme) to select a style (in general different from KDE) and a font (may be the same as your KDE general system font). There are also other GTK+ engine packages available.
+Use a program like [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme) to select a style (in general different from KDE) and a font (may be the same as your KDE general system font). There are also other GTK engine packages available.
 
 There are two relevant parts of the OpenOffice options dialog, *View* and *Fonts*:
 
@@ -203,9 +207,9 @@ rm -rf "$tmp"
 
 Finally, use the OpenOffice extension manager (available through the *Tools* menu) to install the dictionary from the resulting `dict-*xx*.oxt` file(s).
 
-### Dark GTK+ themes, icons and GTK-Qt Engine
+### Dark GTK themes, icons and GTK-Qt Engine
 
-Older OpenOffice/LibreOffice versions would start in *High Contrast Mode* if you use dark [GTK+](/index.php/GTK%2B "GTK+") themes. This might prevent you from changing *High Contrast Icons* or Calc cell background coloring is completely disabled.
+Older OpenOffice/LibreOffice versions would start in *High Contrast Mode* if you use dark [GTK](/index.php/GTK "GTK") themes. This might prevent you from changing *High Contrast Icons* or Calc cell background coloring is completely disabled.
 
 In newer version of OpenOffice / LibreOffice ( > 3.2.x), possible solutions may be:
 

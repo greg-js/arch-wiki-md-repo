@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-08-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=577754) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-08-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=579546) na versão em inglês.
 
 Artigos relacionados
 
@@ -10,7 +10,7 @@ Artigos relacionados
 
 [VirtualBox](https://www.virtualbox.org) é um [hipervisor](https://en.wikipedia.org/wiki/pt:Hipervisor para gerenciar e executar máquinas virtuais.
 
-A fim de integrar funções do sistema host aos convidados, incluindo pastas compartilhadas e área de transferência, aceleração de vídeo e um modo de integração de janela transparente, os "adicionais para convidado" (*guest additions*) são fornecidos para alguns sistemas operacionais convidados.
+A fim de integrar funções do sistema hospedeiro aos convidados, incluindo pastas compartilhadas e área de transferência, aceleração de vídeo e um modo de integração de janela transparente, os "adicionais para convidado" (*guest additions*) são fornecidos para alguns sistemas operacionais convidados.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -18,11 +18,11 @@ A fim de integrar funções do sistema host aos convidados, incluindo pastas com
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Etapas de instalação para hosts Arch Linux](#Etapas_de_instalação_para_hosts_Arch_Linux)
+*   [1 Etapas de instalação para hospedeiros Arch Linux](#Etapas_de_instalação_para_hospedeiros_Arch_Linux)
     *   [1.1 Instalar os pacotes principais](#Instalar_os_pacotes_principais)
     *   [1.2 Assinar módulos](#Assinar_módulos)
     *   [1.3 Carregar os módulos de kernel do VirtualBox](#Carregar_os_módulos_de_kernel_do_VirtualBox)
-    *   [1.4 Acessando dispositivos USB do host no convidado](#Acessando_dispositivos_USB_do_host_no_convidado)
+    *   [1.4 Acessando dispositivos USB do hospedeiro no convidado](#Acessando_dispositivos_USB_do_hospedeiro_no_convidado)
     *   [1.5 Disco de adicionais para convidado](#Disco_de_adicionais_para_convidado)
     *   [1.6 Pacote de extensões](#Pacote_de_extensões)
     *   [1.7 Front-ends](#Front-ends)
@@ -37,7 +37,7 @@ A fim de integrar funções do sistema host aos convidados, incluindo pastas com
         *   [2.7.1 Montagem manual](#Montagem_manual)
         *   [2.7.2 Montagem automática](#Montagem_automática)
         *   [2.7.3 Montar na inicialização](#Montar_na_inicialização)
-    *   [2.8 SSH do host para o convidado](#SSH_do_host_para_o_convidado)
+    *   [2.8 SSH do hospedeiro para o convidado](#SSH_do_hospedeiro_para_o_convidado)
         *   [2.8.1 SSHFS como alternativa à pasta compartilhada](#SSHFS_como_alternativa_à_pasta_compartilhada)
 *   [3 Gerenciamento de discos virtuais](#Gerenciamento_de_discos_virtuais)
     *   [3.1 Formatos suportados pelo VirtualBox](#Formatos_suportados_pelo_VirtualBox)
@@ -51,7 +51,7 @@ A fim de integrar funções do sistema host aos convidados, incluindo pastas com
         *   [3.5.1 Procedimento geral](#Procedimento_geral)
         *   [3.5.2 Aumentando o tamanho de discos VDI](#Aumentando_o_tamanho_de_discos_VDI)
     *   [3.6 Substituir um disco virtual manualmente a partir do arquivo .vbox](#Substituir_um_disco_virtual_manualmente_a_partir_do_arquivo_.vbox)
-        *   [3.6.1 Transferir entre host Linux e outro SO](#Transferir_entre_host_Linux_e_outro_SO)
+        *   [3.6.1 Transferir entre hospedeiro Linux e outro SO](#Transferir_entre_hospedeiro_Linux_e_outro_SO)
     *   [3.7 Clonar um disco virtual e atribuição de um novo UUID a ele](#Clonar_um_disco_virtual_e_atribuição_de_um_novo_UUID_a_ele)
 *   [4 Dicas e truques](#Dicas_e_truques)
 *   [5 Solução de problemas](#Solução_de_problemas)
@@ -85,13 +85,13 @@ A fim de integrar funções do sistema host aos convidados, incluindo pastas com
     *   [5.28 Nenhuma aceleração 3D de hardware no convidado Arch Linux](#Nenhuma_aceleração_3D_de_hardware_no_convidado_Arch_Linux)
     *   [5.29 Não é possível iniciar o VirtualBox no Wayland: Falha de segmentação](#Não_é_possível_iniciar_o_VirtualBox_no_Wayland:_Falha_de_segmentação)
 
-## Etapas de instalação para hosts Arch Linux
+## Etapas de instalação para hospedeiros Arch Linux
 
 Para iniciar as máquinas virtuais do VirtualBox na sua caixa Arch Linux, siga estas etapas de instalação.
 
 ### Instalar os pacotes principais
 
-[Instale](/index.php/Instale "Instale") o pacote [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). Você precisará escolher um pacote para fornecer os módulos de host:
+[Instale](/index.php/Instale "Instale") o pacote [virtualbox](https://www.archlinux.org/packages/?name=virtualbox). Você precisará escolher um pacote para fornecer os módulos de hospedeiro:
 
 *   para o kernel [linux](https://www.archlinux.org/packages/?name=linux), escolha [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch)
 *   para outros [kernels](/index.php/Kernels "Kernels"), escolha [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
@@ -128,18 +128,18 @@ Para carregar o módulo manualmente, executar:
 
 Os seguintes módulos são necessários somente em configurações avançadas:
 
-*   `vboxnetadp` e `vboxnetflt` são necessários quando você pretende usar os recursos de [conexão em modo Bridge](https://www.virtualbox.org/manual/ch06.html#network_bridged) ou [Rede Interna](https://www.virtualbox.org/manual/ch06.html#network_hostonly). Mais precisamente, o `vboxnetadp` é necessário para criar a interface do host nas preferências globais do VirtualBox, e `vboxnetflt` é necessário para iniciar uma máquina virtual usando essa interface de rede.
-*   `vboxpci` é necessário quando sua máquina virtual precisa passar por um dispositivo PCI em seu host.
+*   `vboxnetadp` e `vboxnetflt` são necessários quando você pretende usar os recursos de [conexão em modo Bridge](https://www.virtualbox.org/manual/ch06.html#network_bridged) ou [Rede Interna](https://www.virtualbox.org/manual/ch06.html#network_hostonly). Mais precisamente, o `vboxnetadp` é necessário para criar a interface do hospedeiro nas preferências globais do VirtualBox, e `vboxnetflt` é necessário para iniciar uma máquina virtual usando essa interface de rede.
+*   `vboxpci` é necessário quando sua máquina virtual precisa passar por um dispositivo PCI em seu hospedeiro.
 
 **Nota:** Se os módulos do kernel do VirtualBox foram carregados no kernel enquanto você atualizou os módulos, você precisa recarregá-los manualmente para usar a nova versão atualizada. Para fazer isso, execute `vboxreload` como root.
 
-### Acessando dispositivos USB do host no convidado
+### Acessando dispositivos USB do hospedeiro no convidado
 
-Para usar as portas USB de sua máquina host em suas máquinas virtuais, adicione usuários que serão autorizados a usar esse recurso para o [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `vboxusers`.
+Para usar as portas USB de sua máquina do hospedeiro em suas máquinas virtuais, adicione usuários que serão autorizados a usar esse recurso para o [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `vboxusers`.
 
 ### Disco de adicionais para convidado
 
-Também é recomendado instalar o pacote [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) no host executando o VirtualBox. Este pacote funcionará como uma imagem de disco que pode ser usada para instalar os adicionais para convidado em sistemas convidados que não sejam o Arch Linux. O arquivo *.iso* estará localizado em `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`, e pode ter que ser montado manualmente dentro da máquina virtual. Uma vez montado, você pode executar o instalador de adicionais para convidado dentro da máquina convidado.
+Também é recomendado instalar o pacote [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso) no hospedeiro executando o VirtualBox. Este pacote funcionará como uma imagem de disco que pode ser usada para instalar os adicionais para convidado em sistemas convidados que não sejam o Arch Linux. O arquivo *.iso* estará localizado em `/usr/lib/virtualbox/additions/VBoxGuestAdditions.iso`, e pode ter que ser montado manualmente dentro da máquina virtual. Uma vez montado, você pode executar o instalador de adicionais para convidado dentro da máquina convidado.
 
 ### Pacote de extensões
 
@@ -174,7 +174,7 @@ Uma vez que o sistema e o gerenciador de boot sejam instalados, o VirtualBox ten
 *   [Iniciar o gerenciador de boot manualmente](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") do shell EFI toda vez;
 *   Mover o gerenciador de boot para o caminho padrão `/EFI/BOOT/BOOTX64.EFI`;
 *   Criar um script chamado `startup.nsh` na raiz da ESP contendo o caminho para o aplicativo do gerenciador de boot, p.ex., `\EFI\grub\grubx64.efi`.
-*   Inicializar diretamente da partição ESP usando um [script startup.nsh](/index.php/EFISTUB#Using_a_startup.nsh_script "EFISTUB").
+*   Inicializar diretamente da partição ESP usando um [script startup.nsh](/index.php/EFISTUB_(Portugu%C3%AAs)#Usando_um_script_startup.nsh "EFISTUB (Português)").
 
 Nem se incomode em usar o gerenciador de boot do VirtualBox (acessível com `F2` na inicialização), pois ele é cheio de bugs e está incompleto. Ele não armazena efivars configurados interativamente. Portanto, entradas EFI adicionadas a ele manualmente no firmware (acessado com `F12` no momento da inicialização) ou com [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) persistirão após a reinicialização, [mas são perdidas quando a VM é desligada](https://www.virtualbox.org/ticket/11177).
 
@@ -196,10 +196,10 @@ Para compilar os módulos do VirtualBox fornecidos pelo [virtualbox-guest-dkms](
 
 **Nota:**
 
-*   Você pode alternativamente instalar os adicionais para convidado com o ISO do pacote [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso), desde que você o tenha instalado no sistema host. Para fazer isso, vá para o menu do dispositivo e clique em *Inserir imagem de CD dos Adicionais para Convidado*.
+*   Você pode alternativamente instalar os adicionais para convidado com o ISO do pacote [virtualbox-guest-iso](https://www.archlinux.org/packages/?name=virtualbox-guest-iso), desde que você o tenha instalado no sistema hospedeiro. Para fazer isso, vá para o menu do dispositivo e clique em *Inserir imagem de CD dos Adicionais para Convidado*.
 *   Para recompilar os módulos de kernel do vbox, execute `rcvboxdrv` como root.
 
-Os adicionais para convidado em execução no seu convidado e o aplicativo VirtualBox em execução no seu host devem ter versões correspondentes, caso contrário, os adicionais para convidado (como a área de transferência compartilhada) podem parar de funcionar. Se você atualizar seu convidado (por exemplo, `pacman -Syu`), verifique se o aplicativo do VirtualBox neste host também é a versão mais recente. "Verificar por atualizações" na GUI do VirtualBox às vezes não é suficiente; verifique o site [VirtualBox.org](https://www.virtualbox.org/).
+Os adicionais para convidado em execução no seu convidado e o aplicativo VirtualBox em execução no seu hospedeiro devem ter versões correspondentes, caso contrário, os adicionais para convidado (como a área de transferência compartilhada) podem parar de funcionar. Se você atualizar seu convidado (por exemplo, `pacman -Syu`), verifique se o aplicativo do VirtualBox neste hospedeiro também é a versão mais recente. "Verificar por atualizações" na GUI do VirtualBox às vezes não é suficiente; verifique o site [VirtualBox.org](https://www.virtualbox.org/).
 
 ### Definir a melhor resolução de framebuffer
 
@@ -214,7 +214,7 @@ hwinfo --framebuffer
 
 ```
 
-Se a resolução ideal não aparecer, você precisará executar a ferramenta `VBoxManage` na máquina host e adicionar "resoluções extras" à sua máquina virtual (em um host Windows, vá para o diretório de instalação do VirtualBox para encontrar `VBoxManage.exe`). Por exemplo:
+Se a resolução ideal não aparecer, você precisará executar a ferramenta `VBoxManage` na máquina do hospedeiro e adicionar "resoluções extras" à sua máquina virtual (em um hospedeiro Windows, vá para o diretório de instalação do VirtualBox para encontrar `VBoxManage.exe`). Por exemplo:
 
 ```
 $ VBoxManage setextradata "Arch Linux" "CustomVideoMode1" "1360x768x24"
@@ -227,7 +227,7 @@ Depois, reinicie a máquina virtual e execute `hwinfo --framebuffer` mais uma ve
 
 **Nota:** A partir do VirtualBox 5.2, `hwinfo --framebuffer` pode não mostrar qualquer saída, mas você ainda deve ser capaz de definir uma resolução personalizada seguindo este procedimento.
 
-Finalmente, adicione um [parâmetro de kernel](/index.php/Kernel_parameter "Kernel parameter") `video=*resolução*` para definir o framebuffer para uma nova resolução, por exemplo:
+Finalmente, adicione um [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") `video=*resolução*` para definir o framebuffer para uma nova resolução, por exemplo:
 
 ```
 video=1360x768
@@ -240,7 +240,7 @@ Além disso, você pode querer configurar seu [gerenciador de boot](/index.php/G
 
 ### Carregar os módulos de kernel do VirtualBox
 
-Para carregar os módulos automaticamente, [habilite](/index.php/Habilite "Habilite") `vboxservice.service` que carrega os módulos e sincroniza a hora do sistema do convidado com o host.
+Para carregar os módulos automaticamente, [habilite](/index.php/Habilite "Habilite") `vboxservice.service` que carrega os módulos e sincroniza a hora do sistema do convidado com o hospedeiro.
 
 Para carregar os módulos manualmente, digite:
 
@@ -257,10 +257,10 @@ Para carregar os módulos manualmente, digite:
 
 Após o passo de instalação bastante grande lidando com módulos de kernel do VirtualBox, agora você precisa iniciar os serviços de convidado. Os serviços de convidado são na verdade apenas um executável binário chamado `VBoxClient` que irá interagir com o seu Sistema de Janelas X. O `VBoxClient` gerencia os seguintes recursos:
 
-*   área de transferência compartilhada e arrastar e soltar entre o host e o convidado;
+*   área de transferência compartilhada e arrastar e soltar entre o hospedeiro e o convidado;
 *   modo de janela *seamless*;
 *   a exibição de convidado é automaticamente redimensionada de acordo com o tamanho da janela do convidado;
-*   verificação da versão do host VirtualBox
+*   verificação da versão do hospedeiro VirtualBox
 
 Todos esses recursos podem ser ativados independentemente com seus flags dedicados:
 
@@ -278,7 +278,7 @@ Observe que `VBoxClient` só pode ser chamado com um sinalizador por vez, cada c
 
 [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) instala `/etc/xdg/autostart/vboxclient.desktop` que inicia `VBoxClient-all` ao iniciar a sessão. Se o seu [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") ou [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela") não tiver suporte a [XDG Autostart](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)"), você precisará configurar a inicialização automática -- veja [Autostarting#On desktop environment startup](/index.php/Autostarting#On_desktop_environment_startup "Autostarting") e [Autostarting#On window manager startup](/index.php/Autostarting#On_window_manager_startup "Autostarting") para mais detalhes.
 
-O VirtualBox também pode sincronizar o tempo entre o host e o convidado, para isso, [inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") o `vboxservice.service`.
+O VirtualBox também pode sincronizar o tempo entre o hospedeiro e o convidado, para isso, [inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") o `vboxservice.service`.
 
 Agora, você deve ter um convidado Arch Linux. Observe que recursos como compartilhamento de área de transferência estão desabilitados por padrão no VirtualBox, e você precisará desabilitá-los nas configurações por VM se realmente quiser usá-los (p.ex., *Configurações > Geral > Avançado > Área de Transferência Compartilhada*).
 
@@ -290,7 +290,7 @@ Se a aceleração de hardware não funcionar como esperado, tente alterar a opç
 
 ### Habilitar pastas compartilhadas
 
-Pastas compartilhadas são gerenciadas no host, nas configurações da máquina virtual acessível através da GUI do VirtualBox, na aba *Pastas Compartilhadas*. Lá, *Caminho da pasta*, o nome do ponto de montagem identificado por *Nome da pasta* e opções como *Apenas para Leitura*, *Montar Automaticamente* e *Tornar Permanente* podem ser especificados. Esses parâmetros podem ser definidos com o utilitário de linha de comando `VBoxManage`. Consulte [para mais detalhes](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
+Pastas compartilhadas são gerenciadas no hospedeiro, nas configurações da máquina virtual acessível através da GUI do VirtualBox, na aba *Pastas Compartilhadas*. Lá, *Caminho da pasta*, o nome do ponto de montagem identificado por *Nome da pasta* e opções como *Apenas para Leitura*, *Montar Automaticamente* e *Tornar Permanente* podem ser especificados. Esses parâmetros podem ser definidos com o utilitário de linha de comando `VBoxManage`. Consulte [para mais detalhes](https://www.virtualbox.org/manual/ch04.html#sharedfolders).
 
 Não importa qual método você usará para montar sua pasta, todos os métodos requerem algumas etapas primeiro.
 
@@ -343,7 +343,7 @@ Você pode montar seu diretório com [fstab](/index.php/Fstab "Fstab"). No entan
 
 ```
 
-*   `*nomePastaCompartilhada*`: o valor do menu *Configurações > Pastas Compartilhadas > Editar > Nome da Pasta* da máquina virtual. Esse valor pode ser diferente do nome do nome real da pasta na máquina host. Para ver as *Configurações* da máquina virtual, vá para o aplicativo VirtualBox do sistema host, selecione a máquina virtual correspondente e clique em *Configurações*.
+*   `*nomePastaCompartilhada*`: o valor do menu *Configurações > Pastas Compartilhadas > Editar > Nome da Pasta* da máquina virtual. Esse valor pode ser diferente do nome do nome real da pasta na máquina do hospedeiro. Para ver as *Configurações* da máquina virtual, vá para o aplicativo VirtualBox do sistema do hospedeiro, selecione a máquina virtual correspondente e clique em *Configurações*.
 *   `*/caminho/para/PontoMontagemNaMáquinaConvidado*`: se não existir, esse diretório deve ser criado manualmente (por exemplo, usando [mkdir](/index.php/Utilit%C3%A1rios_principais#Essenciais "Utilitários principais")).
 *   `dmode`/`fmode` são permissões de diretório/arquivo para diretórios/arquivos dentro `*/caminho/para/PontoMontagemNaMáquinaConvidado*`.
 
@@ -354,20 +354,20 @@ Até 2012-08-02, mount.vboxsf não possui suporte à opção `nofail`:
 
 ```
 
-### SSH do host para o convidado
+### SSH do hospedeiro para o convidado
 
-A aba de rede das configurações da máquina virtual contém, em *Avançado*, uma ferramenta para criar o encaminhamento de porta. É possível usá-lo para encaminhar a porta ssh do convidado `22` para uma porta do host, por exemplo, `3022`:
+A aba de rede das configurações da máquina virtual contém, em *Avançado*, uma ferramenta para criar o encaminhamento de porta. É possível usá-lo para encaminhar a porta ssh do convidado `22` para uma porta do hospedeiro, por exemplo, `3022`:
 
 ```
 user@host$ ssh -p 3022 $USER@localhost
 
 ```
 
-vai estabelecer uma conexão entre host e o convidado.
+vai estabelecer uma conexão entre hospedeiro e o convidado.
 
 #### SSHFS como alternativa à pasta compartilhada
 
-Usando este encaminhamento de porta e o sshfs, é simples montar o sistema de arquivos do convidado no do host:
+Usando este encaminhamento de porta e o sshfs, é simples montar o sistema de arquivos do convidado no do hospedeiro:
 
 ```
 user@host$ sshfs -p 3022 $USER@localhost:$HOME ~/pasta_compartilhada
@@ -633,7 +633,7 @@ então, na sub-tag `<AttachedDevice>` de `<StorageController>`, substitua o GUID
 
 **Nota:** Se você não souber o GUID da unidade que deseja adicionar, poderá usar o `VBoxManage showhdinfo *arquivo*`. Se você usou anteriormente o `VBoxManage clonehd` para copiar/converter seu disco virtual, este comando deveria ter gerado o GUID logo após a conclusão da cópia/conversão. O uso de um GUID aleatório não funciona, pois cada UUID [é armazenado dentro de cada imagem de disco](http://www.virtualbox.org/manual/ch05.html#cloningvd).
 
-#### Transferir entre host Linux e outro SO
+#### Transferir entre hospedeiro Linux e outro SO
 
 As informações sobre o caminho para discos rígidos e snapshots são armazenadas entre as tags `<HardDisks> .... </HardDisks>` no arquivo com a extensão *.vbox*. Você pode editá-las manualmente ou usar este script onde você precisará alterar apenas o caminho ou usar os padrões, presumindo que *.vbox* está no mesmo diretório com um disco virtual e a pasta de instantâneos. Ele imprimirá a nova configuração na *stdout*.
 
@@ -655,9 +655,9 @@ else print $0}' "$Filename"
 
 **Nota:**
 
-*   Se você for preparar a máquina virtual para uso em um host Windows, no final do nome do caminho, use a barra invertida \ em vez de /.
+*   Se você for preparar a máquina virtual para uso em um hospedeiro Windows, no final do nome do caminho, use a barra invertida \ em vez de /.
 *   O script detecta snapshots procurando `{` no nome do arquivo.
-*   Para executá-lo em um novo host, você precisará adicioná-lo primeiro ao registrador clicando em **Máquina -> Adicionar...** ou usando as teclas de atalho Ctrl+A e depois navegue até arquivo *.vbox* que contém configuração ou linha de comando de uso `VBoxManage registervm *nome_de_arquivo*. vbox`
+*   Para executá-lo em um novo hospedeiro, você precisará adicioná-lo primeiro ao registrador clicando em **Máquina -> Adicionar...** ou usando as teclas de atalho Ctrl+A e depois navegue até arquivo *.vbox* que contém configuração ou linha de comando de uso `VBoxManage registervm *nome_de_arquivo*. vbox`
 
 ### Clonar um disco virtual e atribuição de um novo UUID a ele
 
@@ -745,28 +745,28 @@ Drivers com defeito ou em falta podem fazer com que o convidado congele após in
 
 ### Modo tela cheia mostra uma tela branca
 
-On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To work around this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings > User Interface > Mini ToolBar". See the [upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
+Em alguns gerenciadores de janelas ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), o VirtualBox tem problemas com o modo de tela cheia corretamente devido à barra de sobreposição. Para solucionar esse problema, desative a opção *Exibir em modos Tela-Cheia/Seamless* em *Configurações do convidado > Interface do usuário > Minibarra de Ferramentas*. Veja o [relatório de erros do upstream](https://www.virtualbox.org/ticket/14323) para mais informações.
 
 ### Hospedeiro trava ao iniciar máquina virtual
 
-Possible causes/solutions:
+Possíveis causas/soluções:
 
 *   SMAP
 
-This is a known incompatiblity with SMAP enabled kernels affecting (mostly) Intel Broadwell chipsets. A solution to this problem is disabling SMAP support in your kernel by appending the `nosmap` option to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+Essa é uma incompatibilidade conhecida com os kernels ativados para SMAP que afetam (principalmente) os chipsets Intel Broadwell. Uma solução para este problema é desabilitar o suporte a SMAP em seu kernel, anexando a opção `nosmap` aos seus [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel").
 
-*   Hardware Virtualisation
+*   Virtualização de hardware
 
-Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
+Desabilitar virtualização de hardware (VT-x/AMD-V) pode resolver o problema.
 
-*   Various Kernel bugs
-    *   Fuse mounted partitions (like ntfs) [[9]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
+*   Vários erros de kernel
+    *   Partições montadas de fuse (como ntfs) [[9]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
-Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
+Geralmente, tais problemas são observados após a atualização do VirtualBox ou do kernel do Linux. Fazer downgrade para as versões anteriores deles pode resolver o problema.
 
 ### Convidados Linux têm áudio lento/distorcido
 
-The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside Virtual Box, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d/` with the following line:
+O driver de áudio AC97 dentro do kernel Linux ocasionalmente adivinha as configurações erradas do relógio quando executado dentro do VirtualBox, levando a um áudio que está muito lento ou muito rápido. Para corrigir isso, crie um arquivo em `/etc/modprobe.d/` com a seguinte linha:
 
 ```
 options snd-intel8x0 ac97_clock=48000
@@ -775,53 +775,53 @@ options snd-intel8x0 ac97_clock=48000
 
 ### Microfone analógico não funciona
 
-If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
+Se a entrada de áudio de um microfone analógico está funcionando corretamente no hospedeiro, mas nenhum som parece passar para o convidado, apesar do dispositivo de microfone aparentemente ser detectado normalmente, instalar um [servidor de som](/index.php/Sistema_de_som#Servidores_de_som "Sistema de som") como como [PulseAudio](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)") no hospedeiro pode corrigir o problema.
 
-If after installing [PulseAudio](/index.php/PulseAudio "PulseAudio") the microphone still refuses to work, setting *Host Audio Driver* (under *VirtualBox > Machine > Settings > Audio*) to *ALSA Audio Driver* might help.
+Se depois de instalar o [PulseAudio](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)") o microfone ainda se recusar a funcionar, configurar *Driver de áudio do Hospedeiro* (em *VirtualBox > Máquina > Configurações > Áudio*) como *Driver de áudio ALSA* pode ajudar.
 
 ### Microfone não funciona após atualização
 
-There have been issues reported around sound input in 5.1.x versions. [[11]](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
+Houve problemas relatados em torno da entrada de som nas versões 5.1.x. [[11]](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
 
-[Downgrading](/index.php/Downgrading "Downgrading") may solve the problem. You can use [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
+[Fazendo downgrade](/index.php/Fazendo_downgrade "Fazendo downgrade") pode resolver o problema. Você pode usar [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) para facilitar o downgrade.
 
 ### Problemas com imagens convertidas para ISO
 
-Some image formats cannot be reliably converted to ISO. For instance, [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso) ignores .ccd and .sub files, which can result in disk images with broken files.
+Alguns formatos de imagem não podem ser convertidos de forma confiável para ISO. Por exemplo, [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso) ignora arquivos .ccd e .sub, que podem resultar em imagens de disco com arquivos quebrados.
 
-In this case, you will either have to use [CDemu](/index.php/CDemu "CDemu") for Linux inside VirtualBox or any other utility used to mount disk images.
+Neste caso, você terá que usar o [CDemu](/index.php/CDemu "CDemu") para Linux dentro do VirtualBox ou qualquer outro utilitário usado para montar imagens de disco.
 
 ### Falha ao criar a interface de rede interna
 
-Make sure all required kernel modules are loaded. See [#Load the VirtualBox kernel modules](#Load_the_VirtualBox_kernel_modules).
+Certifique-se de que todos os módulos do kernel necessários estejam carregados. Veja [#Carregar os módulos de kernel do VirtualBox](#Carregar_os_módulos_de_kernel_do_VirtualBox).
 
-If all required kernel modules are loaded and you are still unable to create the host-only adapter, navigate to *File > Host Network Manager* and click the *Create* button to add the network interface.
+Se todos os módulos do kernel necessários forem carregados e você ainda não conseguir criar o adaptador somente para hospedeiro, navegue até *Arquivo > Gerenciar rede do hospedeiro* e clique no botão *Criar* para adicionar a interface de rede.
 
 ### Falha ao inserir módulo
 
-When you get the following error when trying to load modules:
+Quando você obtiver o seguinte erro ao tentar carregar módulos:
 
 ```
 Failed to insert 'vboxdrv': Required key not available
 
 ```
 
-[Sign](#Sign_modules) your modules or disable `CONFIG_MODULE_SIG_FORCE` in your kernel config.
+[Assine](#Assinar_módulos) seus módulos ou desative `CONFIG_MODULE_SIG_FORCE` na configuração do seu kernel.
 
 ### VBOX_E_INVALID_OBJECT_STATE (0x80BB0007)
 
-This can occur if a VM is exited ungracefully. Run the following command:
+Isso pode ocorrer se uma VM for encerrada de modo inadequado. Execute o seguinte comando:
 
 ```
-$ VBoxManage controlvm *virtual_machine_name* poweroff
+$ VBoxManage controlvm *nome_da_máquina_virtual* poweroff
 
 ```
 
 ### NS_ERROR_FAILURE e itens de menu em falta
 
-This happens sometimes when selecting *QCOW*/*QCOW2*/*QED* disk format when creating a new virtual disk.
+Isso acontece algumas vezes ao selecionar o formato de disco *QCOW*/*QCOW2*/*QED* ao criar um novo disco virtual.
 
-If you encounter this message the first time you start the virtual machine:
+Se você encontrar essa mensagem na primeira vez que iniciar a máquina virtual:
 
 ```
 Failed to open a session for the virtual machine debian.
@@ -836,7 +836,7 @@ Medium
 
 ```
 
-Exit VirtualBox, delete all files of the new machine and from virtualbox config file remove the last line in `MachineRegistry` menu (or the offending machine you are creating):
+Saia do VirtualBox, exclua todos os arquivos da nova máquina e, do arquivo de configuração do virtualbox, remova a última linha do menu `MachineRegistry` (ou a máquina incorreta que você está criando):
 
  `~/.config/VirtualBox/VirtualBox.xml` 
 ```
@@ -851,43 +851,43 @@ Exit VirtualBox, delete all files of the new machine and from virtualbox config 
 
 ### Arch: script pacstrap falhando
 
-If you used *pacstrap* in the [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests) to also [#Install the Guest Additions](#Install_the_Guest_Additions) **before** performing a first boot into the new guest, you will need to `umount -l /mnt/dev` as root before using *pacstrap* again; a failure to do this will render it unusable.
+Se você usou *pacstrap* nas [#Etapas de instalação para convidados Arch Linux](#Etapas_de_instalação_para_convidados_Arch_Linux) para também [#Instalar os adicionais para convidado](#Instalar_os_adicionais_para_convidado) **antes de** executar uma primeira inicialização no novo convidado, você precisa `umount -l /mnt/dev` como root antes de usar *pacstrap* novamente; uma falha em fazer isso o tornará inutilizável.
 
 ### OpenBSD inutilizável quando instruções de virtualização estão indisponíveis
 
-While OpenBSD is reported to work fine on other hypervisors without virtualisation instructions (VT-x AMD-V) enabled, an OpenBSD virtual machine running on VirtualBox without these instructions will be unusable, manifesting with a bunch of segmentation faults. Starting VirtualBox with the *-norawr0* argument [may solve the problem](https://www.virtualbox.org/ticket/3947). You can do it like this:
+Embora o OpenBSD funcione bem em outros hipervisores sem as instruções de virtualização (VT-x AMD-V) ativadas, uma máquina virtual OpenBSD funcionando no VirtualBox sem essas instruções será inutilizável, manifestando-se com um monte de falhas de segmentação. Iniciar o VirtualBox com o argumento *-norawr0* [pode resolver o problema](https://www.virtualbox.org/ticket/3947). Você pode fazer assim:
 
 ```
-$ VBoxSDL -norawr0 -vm *name_of_OpenBSD_VM*
+$ VBoxSDL -norawr0 -vm *nome_da_VM_OpenBSD*
 
 ```
 
 ### Hospedeiro Windows: VERR_ACCESS_DENIED
 
-To access the raw VMDK image on a Windows host, run the VirtualBox GUI as administrator.
+Para acessar a imagem não tratada VMDK em um hospedeiro Windows, execute a GUI do VirtualBox como administrador.
 
 ### Windows: "O caminho especificado não existe. Verifique o caminho e tente novamente."
 
-This error message may appear when running an `.exe` file which requires administrator privileges from a shared folder in windows guests. [[12]](https://www.virtualbox.org/ticket/5732#comment:39)
+Essa mensagem de erro pode aparecer ao executar um arquivo `.exe` que requer privilégios de administrador de uma pasta compartilhada em convidados do windows. [[12]](https://www.virtualbox.org/ticket/5732#comment:39)
 
-As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "w:Uniform Naming Convention") (`\\vboxsvr`). See [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
+Como solução alternativa, copie o arquivo para a unidade virtual ou use [caminhos UNC](https://en.wikipedia.org/wiki/pt:Uniform_Naming_Convention "wikipedia:pt:Uniform Naming Convention") (`\\vboxsvr`). Consulte [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) para obter mais informações.
 
 ### Erro no Windows 8.x com código 0x000000C4
 
-If you get this error code while booting, even if you choose OS Type Win 8, try to enable the `CMPXCHG16B` CPU instruction:
+Se você receber este código de erro durante a inicialização, mesmo que você escolha o tipo de sistema operacional Windows 8, tente habilitar a instrução da CPU `CMPXCHG16B`:
 
 ```
-$ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
+$ vboxmanage setextradata *nome_da_máquina_virtual* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ```
 
 ### Windows 8, 8.1 ou 10 falha em instalar, inicializar ou tem erro "ERR_DISK_FULL"
 
-Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
+Atualize as configurações da VM indo em *Configurações > Armazenamento > Controladora: SATA* e marque a opção *Utilizar cache de I/O do hospedeiro*.
 
 ### WinXP: Profundidade de bits não pode ser maior que 16
 
-If you are running at 16-bit color depth, then the icons may appear fuzzy/choppy. However, upon attempting to change the color depth to a higher level, the system may restrict you to a lower resolution or simply not enable you to change the depth at all. To fix this, run `regedit` in Windows and add the following key to the Windows XP VM's registry:
+Se você estiver executando em profundidade de cor de 16 bits, os ícones podem aparecer difusos/instáveis. No entanto, ao tentar alterar a profundidade de cor para um nível mais alto, o sistema pode restringi-lo a uma resolução mais baixa ou simplesmente não permitir que você altere a profundidade. Para corrigir isso, execute `regedit` no Windows e adicione a seguinte chave ao registro da VM do Windows XP:
 
 ```
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
@@ -895,37 +895,37 @@ If you are running at 16-bit color depth, then the icons may appear fuzzy/choppy
 
 ```
 
-Then update the color depth in the "desktop properties" window. If nothing happens, force the screen to redraw through some method (i.e. `Host+f` to redraw/enter full screen).
+Em seguida, atualize a profundidade de cor na janela "propriedades da área de trabalho". Se nada acontecer, force a tela a redesenhar através de algum método (por exemplo, `Host+f` para redesenhar/entrar em tela cheia).
 
 ### Windows: Oscilação da tela se a aceleração 3D estiver ativada
 
-VirtualBox > 4.3.14 has a regression in which Windows guests with 3D acceleration flicker. Since r120678 a patch has been implemented to recognize an [environment variable](/index.php/Environment_variable "Environment variable") setting, launch VirtualBox like this:
+VirtualBox > 4.3.14 traz um problema em que os convidados Windows com aceleração 3D ficam oscilando. Desde que o r120678 foi implementado um patch para reconhecer uma configuração de [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente"), abra o VirtualBox assim:
 
 ```
 $ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
 
 ```
 
-Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653).
+Certifique-se de que nenhum serviço do VirtualBox ainda esteja em execução. Consulta o [bug 13653 do VirtualBox](https://www.virtualbox.org/ticket/13653).
 
 ### Nenhuma aceleração 3D de hardware no convidado Arch Linux
 
-[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package as of version 5.2.16-2 does not contain the file `VBoxEGL.so`. This causes the Arch Linux guest does not have proper 3D acceleration. See [FS#49752](https://bugs.archlinux.org/task/49752).
+O pacote [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) a partir da versão 5.2.16-2 não contém o arquivo `VBoxEGL.so`. Isso faz com que o convidado Arch Linux não tenha uma aceleração 3D adequada. Veja [FS#49752](https://bugs.archlinux.org/task/49752).
 
-To deal with this problem, apply the patch set at [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Some fix to the patch set is required to make it work for version 5.2.16-2.
+Para lidar com esse problema, aplique o conjunto de correções em [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Algumas correções no conjunto de correções são necessárias para que funcione na versão 5.2.16-2.
 
 ### Não é possível iniciar o VirtualBox no Wayland: Falha de segmentação
 
-This problem is usually caused by Qt on Wayland, see [FS#58761](https://bugs.archlinux.org/task/58761).
+Este problema é geralmente causado pelo Qt on Wayland, veja [FS#58761](https://bugs.archlinux.org/task/58761).
 
-The best thing, not to affect the rest of Qt applications (which usually work well in Wayland), is to unset the `QT_QPA_PLATFORM` [environment variable](/index.php/Environment_variable "Environment variable") in the VirtualBox's [desktop entry](/index.php/Desktop_entry "Desktop entry"). Follow the instructions in [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and change the lines starting with
+A melhor coisa, para não afetar o resto dos aplicativos Qt (que geralmente funcionam bem em Wayland), é desabilitar a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `QT_QPA_PLATFORM` na [entrada de desktop](/index.php/Desktop_entry "Desktop entry") do VirtualBox. Siga as instruções em [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") e altere as linhas que começam com
 
 ```
 Exec=VirtualBox ...
 
 ```
 
-to
+para
 
 ```
 Exec=env -u QT_QPA_PLATFORM VirtualBox ...

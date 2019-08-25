@@ -64,7 +64,7 @@ This document is an annotated index of popular articles and important informatio
     *   [10.3 Printing](#Printing)
 *   [11 Appearance](#Appearance)
     *   [11.1 Fonts](#Fonts)
-    *   [11.2 GTK+ and Qt themes](#GTK+_and_Qt_themes)
+    *   [11.2 GTK and Qt themes](#GTK_and_Qt_themes)
 *   [12 Console improvements](#Console_improvements)
     *   [12.1 Tab-completion enhancements](#Tab-completion_enhancements)
     *   [12.2 Aliases](#Aliases)
@@ -322,9 +322,9 @@ A plethora of information on the subject can be found in the [Fonts](/index.php/
 
 If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console").
 
-### GTK+ and Qt themes
+### GTK and Qt themes
 
-A big part of the applications with a graphical interface for Linux systems are based on the [GTK+](/index.php/GTK%2B "GTK+") or the [Qt](/index.php/Qt "Qt") toolkits. See those articles and [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for ideas to improve the appearance of your installed programs and adapt it to your liking.
+A big part of the applications with a graphical interface for Linux systems are based on the [GTK](/index.php/GTK "GTK") or the [Qt](/index.php/Qt "Qt") toolkits. See those articles and [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for ideas to improve the appearance of your installed programs and adapt it to your liking.
 
 ## Console improvements
 

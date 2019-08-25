@@ -27,6 +27,8 @@
     *   [4.2 Example of WoL script](#Example_of_WoL_script)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Wake-up after shutdown](#Wake-up_after_shutdown)
+        *   [5.1.1 Fix using BIOS Settings](#Fix_using_BIOS_Settings)
+        *   [5.1.2 Fix by Kernel quirks](#Fix_by_Kernel_quirks)
     *   [5.2 Battery draining problem](#Battery_draining_problem)
     *   [5.3 Realtek](#Realtek)
     *   [5.4 alx driver support](#alx_driver_support)
@@ -165,6 +167,15 @@ Then reboot, possibly two times. To disable Wake-on-Lan, substitute `magic` with
 
 The Wake-on-LAN settings can also be changed from the GUI using [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor).
 
+You can disable Wake-on-Lan for all connections permanently by adding a dedicated configuration file :
+
+ `/etc/NetworkManager/conf.d/*wake-on-lan.conf*` 
+```
+[connection]
+ethernet.wake-on-lan = ignore
+wifi.wake-on-wlan = ignore
+```
+
 ### Enable WoL in TLP
 
 When using [TLP](/index.php/TLP "TLP") for suspend/hibernate, the `WOL_DISABLE` setting should be set to `N` in `/etc/default/tlp` to allow resuming the computer with WoL.
@@ -293,13 +304,24 @@ esac
 
 ### Wake-up after shutdown
 
-It is known that some motherboards are affected by a bug that can cause immediate or random wake-up after a *shutdown* whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example). The following actions in the BIOS preferences can solve this issue with some motherboards:
+It is known that some motherboards are affected by a bug that can cause immediate or random wake-up after a *shutdown* whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example).
+
+#### Fix using BIOS Settings
+
+The following actions in the BIOS preferences can solve this issue with some motherboards:
 
 1.  Disable all references to *xHCI* in the USB settings (note this will also disable USB 3.0 at boot time)
 2.  Disable *EuP 2013* if it is explicitly an option
 3.  Optionally enable wake-up on keyboard actions
 
 **Note:** There are mixed opinions as to the value of #3 above and it may be motherboard dependent.
+
+#### Fix by Kernel quirks
+
+The issue can also be solved by adding the following kernel boot parameter: `xhci_hcd.quirks=270336` This activates the following quirks:
+
+*   `XHCI_SPURIOUS_REBOOT`
+*   `XHCI_SPURIOUS_WAKEUP`
 
 ### Battery draining problem
 

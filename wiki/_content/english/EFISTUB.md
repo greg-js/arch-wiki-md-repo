@@ -93,7 +93,7 @@ To set the boot order, run:
 
 ```
 
-where *XXXX* is the number that appears in the output of `efibootmgr` command against each entry.
+where *XXXX* is the number that appears in the output of *efibootmgr* command against each entry.
 
 **Tip:** It is convenient to save the command to create the boot entry in a shell script, which makes it easier to modify, for example when changing kernel parameters.
 
@@ -112,7 +112,7 @@ See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for
 
 #### UEFI Shell
 
-Some UEFI implementations make it difficult to modify the NVRAM successfully using efibootmgr. If efibootmgr cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2 (i.e., from the [Arch Linux live iso](https://www.archlinux.org/download/)).
+Some UEFI implementations make it difficult to modify the NVRAM successfully using *efibootmgr*. If *efibootmgr* cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2 (i.e., from the [Arch Linux live iso](https://www.archlinux.org/download/)).
 
 First, find out the device number where your [ESP](/index.php/ESP "ESP") resides by using:
 
@@ -189,8 +189,8 @@ Some UEFI implementations do not retain EFI variables between cold boots (e.g. [
 The [UEFI Shell Specification 2.0](http://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) establishes that a script called `startup.nsh` at the root of the ESP partition will always be interpreted and can contain arbitrary instructions; among those you can set a bootloading line. Make sure you mount the ESP partition on `/boot` and create a `startup.nsh` script that contains a kernel bootloading line. For example:
 
 ```
-vmlinuz-linux rw root=/dev/sdX [rootfs=myfs] [rootflags=myrootflags] \
- [kernel.flag=foo] [mymodule.flag=bar] \
+vmlinuz-linux rw root=/dev/sd*X* [rootfs=*myfs*] [rootflags=*myrootflags*] \
+ [kernel.flag=*foo*] [*mymodule*.flag=*bar*] \
  [initrd=\intel-ucode.img] initrd=\initramfs-linux.img
 
 ```
@@ -201,14 +201,14 @@ This method will work with almost all UEFI firmware versions you may encounter i
 
 ### Cannot create a new boot entry with efibootmgr
 
-Some kernel and `efibootmgr` version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
+Some kernel and *efibootmgr* version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
 
 ```
 # rm /sys/firmware/efi/efivars/dump-*
 
 ```
 
-Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrade "Downgrade") your efibootmgr install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641), in particular the [closing comment](https://bugs.archlinux.org/task/34641#comment111365), for more information.
+Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrade "Downgrade") your *efibootmgr* install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641), in particular the [closing comment](https://bugs.archlinux.org/task/34641#comment111365), for more information.
 
 ## See also
 

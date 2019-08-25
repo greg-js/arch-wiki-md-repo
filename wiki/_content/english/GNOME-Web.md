@@ -15,6 +15,7 @@ Web is the default web browser for [GNOME](/index.php/GNOME "GNOME"). Web provid
     *   [2.3 Custom stylesheet](#Custom_stylesheet)
     *   [2.4 Fonts](#Fonts)
     *   [2.5 Video](#Video)
+    *   [2.6 Hardware accelerated compositing](#Hardware_accelerated_compositing)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -76,7 +77,16 @@ Web does not check GNOME font settings, but checks [Font configuration](/index.p
 
 ### Video
 
-See [GStreamer](/index.php/GStreamer "GStreamer") for required plugin installation.
+See [GStreamer](/index.php/GStreamer "GStreamer") for required plugin installation. For hardware accelerated video decoding also enable [#Hardware accelerated compositing](#Hardware_accelerated_compositing).
+
+### Hardware accelerated compositing
+
+Enable hardware accelerated compositing with following command:
+
+```
+$ gsettings set org.gnome.Epiphany.web:/ hardware-acceleration-policy 'always'
+
+```
 
 ## See also
 

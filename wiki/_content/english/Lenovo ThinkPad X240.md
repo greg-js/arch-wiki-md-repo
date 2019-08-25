@@ -1,6 +1,10 @@
 The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is a complete redesign of the X Series. This can be observed especially with devices like the touchpad, which has been changed to be a one-click touchpad instead of having the classic 5 button touchpad. The X240 is a very light device, weighing in at just 2.84 lbs (1.36 kg) and measuring 12.02" x 8.19" x 0.79".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Tested Configuration](#Tested_Configuration)
 *   [2 System Configuration](#System_Configuration)
@@ -8,12 +12,14 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
     *   [2.2 Touchpad](#Touchpad)
     *   [2.3 TrackPoint](#TrackPoint)
     *   [2.4 Keyboard](#Keyboard)
+        *   [2.4.1 Keyboard Backlight](#Keyboard_Backlight)
     *   [2.5 Fingerprint Reader](#Fingerprint_Reader)
+        *   [2.5.1 Fingerprint Login](#Fingerprint_Login)
 *   [3 Caveats](#Caveats)
     *   [3.1 Common hardware problems](#Common_hardware_problems)
         *   [3.1.1 NFC Reader](#NFC_Reader)
     *   [3.2 Grey noise with analog audio when audio is not muted](#Grey_noise_with_analog_audio_when_audio_is_not_muted)
-*   [4 More later (ToDo)](#More_later_.28ToDo.29)
+*   [4 More later (ToDo)](#More_later_(ToDo))
 *   [5 See also](#See_also)
 
 #### Tested Configuration
@@ -106,9 +112,43 @@ The keyboard doesn't have an LED for `Caps Lock`. If your WM/DE doesn't come wit
 
 The indicator LED for `XF86AudioMicMute` seems to be broken in some way. According to [this commit](https://github.com/torvalds/linux/commit/420f9739a62cdb027f5580d25c813501ff93aa6f) it should work with `snd-hda-intel` but it doesn't. There is also an [older kernel patch](http://comments.gmane.org/gmane.linux.drivers.platform.x86.devel/1962) available that might or might not help, but probably doesn't work with a current kernel as is.
 
+##### Keyboard Backlight
+
+The default hotkey for the keyboard backlight (`Fn + SPACE`) is automatically supported by [GNOME](/index.php/GNOME "GNOME"). In order to set the keyboard brightness from a terminal it is possible to choose between three different levels of brightness using the following commands:
+
+0% brightness:
+
+ `echo 0 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness` 
+
+50% brightness:
+
+ `echo 1 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness` 
+
+100% brightness:
+
+ `echo 2 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness` 
+
+Alternatively, installing the package [acpilight](https://www.archlinux.org/packages/?name=acpilight) allows to do the same thing using a different syntax:
+
+0% brightness:
+
+ `sudo xbacklight -ctrl tpacpi::kbd_backlight -set 0` 
+
+50% brightness:
+
+ `sudo xbacklight -ctrl tpacpi::kbd_backlight -set 50` 
+
+100% brightness:
+
+ `sudo xbacklight -ctrl tpacpi::kbd_backlight -set 100` 
+
 #### Fingerprint Reader
 
 The fingerprint reader is a Validity Sensors model (138a:0017) also used on the Thinkpad X1 Carbon and T440\. ThinkFinger does NOT support this reader. This fingerprint reader requires libfprint to be build from the current git ([https://github.com/ars3niy/fprint_vfs5011.git](https://github.com/ars3niy/fprint_vfs5011.git) ). Alternatively, it can also be done going through [Fprint](/index.php/Fprint "Fprint"), for 20ALA0K-WIG.
+
+##### Fingerprint Login
+
+[Install](/index.php/Install "Install") the [fprintd](https://www.archlinux.org/packages/?name=fprintd) package to enable the fingerprint login in [GNOME](/index.php/GNOME "GNOME").
 
 ### Caveats
 
@@ -127,10 +167,8 @@ On some X240 and other TP 4xx models, persisting grey noise is hearable when the
 ### More later (ToDo)
 
 ```
-- kernel
-- powersave
-- backlight
-- keyboard
+- Powersave
+- Thunderbolt
 
 ```
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-06-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=576251) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=580146) na versão em inglês.
 
 Artigos relacionados
 
@@ -70,7 +70,7 @@ Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, at
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
 *   [NetworkManager (Português)#/etc/resolv.conf](/index.php/NetworkManager_(Portugu%C3%AAs)#/etc/resolv.conf "NetworkManager (Português)")
 
-Para evitar que programas sobrescrevam `/etc/resolv.conf`, você também pode protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/Atributos_de_arquivo "Atributos de arquivo") imutável:
+Para evitar que programas sobrescrevam `/etc/resolv.conf`, também é possível protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/Atributos_de_arquivo "Atributos de arquivo") imutável:
 
 ```
 # chattr +i /etc/resolv.conf
@@ -99,14 +99,14 @@ options single-request
 
 ### Nomes de domínio local
 
-Se você quiser usar o hostname de máquinas locais sem os nomes de domínio totalmente qualificados, adicione uma linha ao `/etc/resolv.conf` com o domínio local, como:
+Para ser capaz de usar o hostname de máquinas locais sem o nome de domínio totalmente qualificado, adicione uma linha ao `/etc/resolv.conf` com o domínio local, como:
 
 ```
-domain exemplo.com.br
+domain exemplo.org
 
 ```
 
-Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exemplo.com.br` como simplesmente `maquinaprincipal1` ao usar o comando *ssh*, mas o comando [drill](#Utilitários_de_pesquisa) ainda requer os nomes de domínio totalmente qualificados para realizar pesquisas.
+Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exemplo.org` como simplesmente `maquinaprincipal1` ao usar o comando *ssh*, mas o comando [drill](#Utilitários_de_pesquisa) ainda requer os nomes de domínio totalmente qualificados para realizar pesquisas.
 
 ## Utilitários de pesquisa
 
@@ -121,7 +121,7 @@ $ drill @*servidor-de-nome* TXT *domínio*
 
 ```
 
-Se você não especificar um servidor DNS, *drill* use os servidores de nome definidos em `/etc/resolv.conf`.
+A menos que um servidor DNS seja especificado, *drill* vai usar os servidores de nome definidos em `/etc/resolv.conf`.
 
 *   [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) fornece [dig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dig.1), [host(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/host.1), [nslookup(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nslookup.1) e um monte de ferramentas `dnssec-`.
 
@@ -129,7 +129,7 @@ Se você não especificar um servidor DNS, *drill* use os servidores de nome def
 
 ## Desempenho de resolvedor
 
-O resolvedor do Glibc não armazena em cache as consultas. Se você quiser que o cache local, use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") ou configure um cache local [servidor DNS](#Servidores_DNS) e use `127.0.0.1` como seu servidor de nomes.
+O resolvedor do Glibc não armazena em cache as consultas. Para implementar um cache local, use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") ou configure um cache local [servidor DNS](#Servidores_DNS) e use-o como o servidor de nome configurando `127.0.0.1` e `::1` como os servidores de nomes em `/etc/resolv.conf` ou em `/etc/resolvconf.conf` se estiver usando [openresolv (Português)](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)").
 
 **Dica:**
 
@@ -153,7 +153,7 @@ Existem vários [serviços DNS de terceiros](https://en.wikipedia.org/wiki/Publi
 
 *   **dingo** — Um cliente DNS para o DNS do Google por HTTPS
 
-	[https://github.com/pforemski/dingo](https://github.com/pforemski/dingo) || [dingo](https://www.archlinux.org/packages/?name=dingo)
+	[https://github.com/pforemski/dingo](https://github.com/pforemski/dingo) || [dingo-git](https://aur.archlinux.org/packages/dingo-git/)
 
 *   **opennic-up** — Automatiza a renovação de servidores DNS com os servidores OpenNIC mais responsivos
 
@@ -209,3 +209,4 @@ Em um ambiente dinâmico (laptops e algumas extensões de desktops), você preci
 *   [Debian Handbook](https://www.debian.org/doc/manuals/debian-handbook/sect.hostname-name-service.en.html#sect.name-resolution)
 *   [RFC:7706](https://tools.ietf.org/html/rfc7706 "rfc:7706") - Diminuindo o tempo de acesso a servidores raiz executando um com loopback (inglês)
 *   [Visão geral de sistema de nomes de domínio](http://linux-ip.net/pages/diagrams.html#domain-name-system-overview) - Diagrama sobre DNS
+*   [Serviços alternativos de DNS](/index.php/Alternative_DNS_services "Alternative DNS services")

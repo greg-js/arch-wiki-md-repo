@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Linux console](/index.php/Linux_console "Linux console"). Data da última tradução: 2019-03-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console&diff=0&oldid=567964) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Linux console](/index.php/Linux_console "Linux console"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Linux_console&diff=0&oldid=579208) na versão em inglês.
 
 Artigos relacionados
 
@@ -99,6 +99,8 @@ $ setfont lat2-16 -m 8859-2
 
 ```
 
+Os nomes das fontes diferenciam maiúsculo de minúsculo. Com nenhum parâmetro, `setfont` retorna o console para a fonte padrão.
+
 Então, para ter uma fonte **8x8 pequena**, com aquela fonte instalada como visto abaixo, use, por exemplo:
 
 ```
@@ -106,7 +108,7 @@ $ setfont -h8 /usr/share/kbd/consolefonts/drdos8x8.psfu.gz
 
 ```
 
-Nomes de fontes diferenciam maiúsculo e minúsculo. Com nenhum parâmetro, `setfont` retorna o console para a fonte padrão.
+Para ter uma fonte **maior**, a fonte Terminus ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) está disponível em muitos tamanhos, tal como `ter-132n` que é maior.
 
 **Dica:** Todos os comandos alteradores de fonte podem ser digitados as "cegas".
 

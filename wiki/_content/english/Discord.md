@@ -40,6 +40,6 @@ There are more CLI-based third-party clients out there hosted on places like Git
 
 ## Troubleshooting
 
-If you experience crackling sounds when in voice chat, you should try the steps outlined here: [PulseAudio/Troubleshooting](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Glitches,_skips_or_crackling)
+If you experience crackling sounds when in voice chat, you should try the steps outlined here: [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting#Glitches,_skips_or_crackling "PulseAudio/Troubleshooting")
 
 If you can't share individual monitors on a multi-monitor setup, you should try [mon2cam-git](https://aur.archlinux.org/packages/mon2cam-git/) as a workaround to this bug: [Discord Trello](https://trello.com/c/SJEH2Fsi/41-multiple-monitors-are-shown-as-one-in-screenshare)

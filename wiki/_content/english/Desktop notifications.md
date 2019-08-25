@@ -1,6 +1,6 @@
 Related articles
 
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK "GTK")
 *   [Libcanberra](/index.php/Libcanberra "Libcanberra")
 
 Desktop notifications are small, passive popup dialogs that notify the user of particular events in an asynchronous manner.
@@ -51,7 +51,7 @@ Desktop notifications are small, passive popup dialogs that notify the user of p
 
 ## Libnotify
 
-Libnotify is an implementation of the [Desktop Notifications Specification](https://developer.gnome.org/notification-spec/) which provides support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") applications and is desktop independent: it is already used by many open source apps like [Evolution](/index.php/Evolution "Evolution") and [Pidgin](/index.php/Pidgin "Pidgin"). Libnotify can be installed with the [libnotify](https://www.archlinux.org/packages/?name=libnotify) package.
+Libnotify is an implementation of the [Desktop Notifications Specification](https://developer.gnome.org/notification-spec/) which provides support for [GTK](/index.php/GTK "GTK") and [Qt](/index.php/Qt "Qt") applications and is desktop independent: it is already used by many open source apps like [Evolution](/index.php/Evolution "Evolution") and [Pidgin](/index.php/Pidgin "Pidgin"). Libnotify can be installed with the [libnotify](https://www.archlinux.org/packages/?name=libnotify) package.
 
 In order to use libnotify, you have to install a [notification server](#Notification_servers).
 

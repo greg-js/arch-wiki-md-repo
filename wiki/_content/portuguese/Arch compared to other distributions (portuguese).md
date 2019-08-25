@@ -115,7 +115,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 *   [Linux Mint](https://www.linuxmint.com/) nasceu como uma derivação do [Ubuntu](#Ubuntu) e, posteriormente, adicionou o LMDE (Linux Mint Debian Edition), que é baseado no [#Debian](#Debian). Por outro lado, o Arch é uma distribuição independente que depende do seu próprio [sistema de compilação](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 *   O Mint inclui várias ferramentas gráficas para facilitar a manutenção, chamadas *MintTools*. O Arch fornece apenas ferramentas de linha de comando simples, como o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e deixa o gerenciamento do sistema ser organizado pelo usuário.
-*   O Mint é fornecido principalmente com [Cinnamon](/index.php/Cinnamon "Cinnamon") ou [MATE](/index.php/MATE "MATE") como sua interface gráfica e, alternativamente, [KDE](/index.php/KDE "KDE") ou [Xfce4](/index.php/Xfce4 "Xfce4").
+*   O Mint é fornecido principalmente com [Cinnamon](/index.php/Cinnamon "Cinnamon") ou [MATE](/index.php/MATE "MATE") como sua interface gráfica e, alternativamente, [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") ou [Xfce4](/index.php/Xfce4_(Portugu%C3%AAs) "Xfce4 (Português)").
 *   Novas versões do Mint são lançadas a cada seis meses, cerca de um mês após o Ubuntu. Cada lançamento é baseado no Ubuntu LTS mais recente e há suporte por cinco anos. O Linux Mint Debian Edition (LMDE) é baseado em Debian Stable e só recebe atualizações em pacotes do Mint e atualizações de segurança. O Arch é, em vez disso, uma distribuição completamente de lançamento contínuo.
 
 ### openSUSE

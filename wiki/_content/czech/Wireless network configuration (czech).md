@@ -2,7 +2,11 @@ Konfigurace wifi je dvoufázový proces. V první fázi je třeba identifikovat 
 
 **Instalace nového systému Archlinux:** Ovladače síťových karet a nástroje pro správu naleznete v kategorii *base-devel*. Zde je třeba zvolit k instalaci správný ovladač pro vaše zařízení. Udev si pak obvykle načte příslušný jaderný modul, čímž vytvoří bezdrátové rozhraní, které je použitelné už během instalace a samozřejmě také v nově instalovaném systému na pevném disku. Pokud jste nenastavili bezdrátovou síť během instalace a provádíte konfiguraci v již instalovaném systému, ujistěte se, že jste pomocí správce balíků pacman nainstalovali potřebný software (ovladač, případně i firmware, wireless_tools, wpa_supplicant) a dále postupujte podle návodu níže.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Fáze I: Identifikace zařízení / Instalace ovladače](#Fáze_I:_Identifikace_zařízení_/_Instalace_ovladače)
     *   [1.1 Identifikace a podpora zařízení](#Identifikace_a_podpora_zařízení)
@@ -483,7 +487,7 @@ depmod -a
 
 Instalace je temř u konce; upravte /etc/rc.conf pro načtení modulu při bootu. Příklad:
 
- `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
+ `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
 
 Důležitá část je ujištěbí se, že ndiswrapper je v tomto řádku, takže ho stačí přidat k ostatním modulům. Nejlepší by bylo otestovat, jestli se nyní načte, takže:
 

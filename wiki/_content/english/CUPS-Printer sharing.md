@@ -3,7 +3,15 @@ Related articles
 *   [Samba](/index.php/Samba "Samba")
 *   [CUPS](/index.php/CUPS "CUPS")
 
-This article contains instruction on sharing printers between systems, be it between two GNU/Linux systems or between a GNU/Linux system and Microsoft Windows.
+This article contains instruction on sharing printers from a GNU/Linux system.
+
+<caption>Client support</caption>
+| Protocol | Linux | Windows | macOS |
+| [Discovery (DNS-SD/mDNS)](https://en.wikipedia.org/wiki/Zero-configuration_networking#DNS-based_service_discovery "wikipedia:Zero-configuration networking") | [CUPS](/index.php/CUPS "CUPS") with [Avahi](/index.php/Avahi "Avahi") | Native support since [Windows 10](https://www.ctrl.blog/entry/windows-mdns-dnssd.html) | Bonjour |
+| [Internet Printing Protocol](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol") | [CUPS](/index.php/CUPS "CUPS") | *Control Panel > Programs > Turn Windows features on or off > Print and Document Services > Internet Printing Client* | Native support |
+| [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") shared printer | [Samba](/index.php/Samba "Samba") with [CUPS](/index.php/CUPS "CUPS") | Native support | Native support |
+| [Line Printer Daemon protocol](https://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol "wikipedia:Line Printer Daemon protocol") | [CUPS](/index.php/CUPS "CUPS") | *Control Panel > Programs > Turn Windows features on or off > Print services >*
+*LPD Print Service* and *LPR Port Monitor* | Native support |
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -12,21 +20,17 @@ This article contains instruction on sharing printers between systems, be it bet
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Creating class for multiple printers](#Creating_class_for_multiple_printers)
-*   [2 Between GNU/Linux systems](#Between_GNU/Linux_systems)
-    *   [2.1 Using the web interface](#Using_the_web_interface)
-    *   [2.2 Manual setup](#Manual_setup)
-    *   [2.3 Enabling browsing](#Enabling_browsing)
-*   [3 Between GNU/Linux and Windows](#Between_GNU/Linux_and_Windows)
-    *   [3.1 Linux server - Windows client](#Linux_server_-_Windows_client)
-        *   [3.1.1 Sharing via IPP](#Sharing_via_IPP)
-        *   [3.1.2 Sharing via Samba](#Sharing_via_Samba)
-    *   [3.2 Windows server - Linux client](#Windows_server_-_Linux_client)
-        *   [3.2.1 Sharing via LPD](#Sharing_via_LPD)
-        *   [3.2.2 Sharing via IPP](#Sharing_via_IPP_2)
-        *   [3.2.3 Sharing via Samba](#Sharing_via_Samba_2)
-            *   [3.2.3.1 Configuration using the web interface](#Configuration_using_the_web_interface)
-            *   [3.2.3.2 Manual configuration](#Manual_configuration)
-            *   [3.2.3.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
+*   [2 Printer sharing](#Printer_sharing)
+    *   [2.1 DNS-SD advertisement](#DNS-SD_advertisement)
+    *   [2.2 Sharing via Internet Printing Protocol](#Sharing_via_Internet_Printing_Protocol)
+    *   [2.3 Sharing via Samba](#Sharing_via_Samba)
+    *   [2.4 Sharing via Line Printer Daemon protocol](#Sharing_via_Line_Printer_Daemon_protocol)
+*   [3 Windows server - Linux client](#Windows_server_-_Linux_client)
+    *   [3.1 Sharing via LPD](#Sharing_via_LPD)
+    *   [3.2 Sharing via Samba](#Sharing_via_Samba_2)
+        *   [3.2.1 Configuration using the web interface](#Configuration_using_the_web_interface)
+        *   [3.2.2 Manual configuration](#Manual_configuration)
+        *   [3.2.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
 *   [4 Remote administration](#Remote_administration)
     *   [4.1 Kerberos](#Kerberos)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -38,17 +42,33 @@ This article contains instruction on sharing printers between systems, be it bet
 
 In CUPS, a class is a group of printers which appears to clients as a single printer. When a client selects to print to the class, CUPS selects any printer in the group to accept the print job. This may be especially useful when one printer from the class must be removed. If it is excluded from the class, end users will not notice any change because the print job will be queued to another printer in the class. Creating and managing classes can be done from CUPS Web GUI.
 
-## Between GNU/Linux systems
+## Printer sharing
 
-The server can be configured using either the web interface or by manually editing `/etc/cups/cupsd.conf`. To configure the client, see [CUPS](/index.php/CUPS "CUPS").
+### DNS-SD advertisement
 
-### Using the web interface
+To announce the printer to the network over DNS-SD/mDNS (Bonjour in Apple world), [Avahi](/index.php/Avahi "Avahi") must be installed and running on the server.
+
+To enable it, either select *Share printers connected to this system* in the web interface, or manually set `Browsing On` in `/etc/cups/cupsd.conf`:
+
+ `/etc/cups/cupsd.conf` 
+```
+...
+Browsing On
+...
+
+```
+
+Afterwards [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
+
+Note that "browsing" at the print server is a different thing from "browsing" at a remote networked host. On the print server, `cupsd` provides the DNS-SD protocol support which the `avahi-daemon` broadcasts. The `cups-browsed` service is unnecessary on the print server, unless also broadcasting the old CUPS protocol, or the print server is also "browsing" for other networked printers. On the remote networked host, the `cups-browsed` service is *required* to "browse" for network broadcasts of print services, and running `cups-browsed` will also automatically start `cupsd`.
+
+The `org.cups.cupsd.service` service will be automatically started when a USB printer is plugged in, however this may not be the case for other connection types. If `cupsd` is not running, `avahi-daemon` does not broadcast the print services, so in that case the systemd unit service file must be modified to start on boot, and then the service must again be "enabled/installed" with the new dependency. To do this, [edit](/index.php/Edit "Edit") the service file `[Install]` section to add a `WantedBy=default.target` dependency, and then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `org.cups.cupsd.service` service.
+
+### Sharing via Internet Printing Protocol
+
+The server can be configured using either the web interface or by manually editing `/etc/cups/cupsd.conf`.
 
 Open up the web interface to the server, select the *Administration* tab, look under the *Server* heading, and enable the "Share printers connected to this system" option. Save your change by clicking on the *Change Settings* button. The server will automatically restart.
-
-For more complex configurations, you can directly edit the `/etc/cups/cupsd.conf` file by selecting *Edit Configuration File*. See [#Manual setup](#Manual_setup) for more information.
-
-### Manual setup
 
 On the server computer (the one directly connected to the printer), allow access to the server by modifying the location directive. For instance:
 
@@ -85,71 +105,18 @@ If CUPS is started using socket activation, create a [drop-in snippet](/index.ph
 ListenStream=631
 ```
 
-### Enabling browsing
-
-To enable browsing (shared printer discovery), [Avahi](/index.php/Avahi "Avahi") must be installed and running on the server. If you do not need printer discovery, Avahi is not required on either the server or the client.
-
-To enable browsing, either select *Share printers connected to this system* in the web interface, or manually turn on Browsing:
-
- `/etc/cups/cupsd.conf` 
-```
-...
-Browsing On
-...
-
-```
-
-and [restart](/index.php/Restart "Restart") `org.cups.cupsd.service`.
-
-Note that "browsing" at the print server is a different thing from "browsing" at a remote networked host. On the print server, `cupsd` provides the DNS-SD protocol support which the `avahi-daemon` broadcasts. The `cups-browsed` service is unnecessary on the print server, unless also broadcasting the old CUPS protocol, or the print server is also "browsing" for other networked printers. On the remote networked host, the `cups-browsed` service is *required* to "browse" for network broadcasts of print services, and running `cups-browsed` will also automatically start `cupsd`.
-
-The `org.cups.cupsd.service` service will be automatically started when a USB printer is plugged in, however this may not be the case for other connection types. If `cupsd` is not running, `avahi-daemon` does not broadcast the print services, so in that case the systemd unit service file must be modified to start on boot, and then the service must again be "enabled/installed" with the new dependency. To do this, [edit](/index.php/Edit "Edit") the service file `[Install]` section to add a `WantedBy=default.target` dependency, and then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `org.cups.cupsd.service` service.
-
-## Between GNU/Linux and Windows
-
-### Linux server - Windows client
-
-Sharing to Windows clients can be achieved using [#Sharing via IPP](#Sharing_via_IPP), or [#Sharing via Samba](#Sharing_via_Samba).
-
-After setting up the server, install the native printer drivers for your printer on the Windows computer. If the CUPS server's print queue is set up to use its own printer drivers instead of as a `raw` queue, you can just select a generic postscript printer driver for the Windows client (e.g. 'HP Color LaserJet 8500 PS' or 'Xerox DocuTech 135 PS2' or 'Microsoft PS Class driver').
-
-#### Sharing via IPP
-
-The [Internet Printing Protocol](https://en.wikipedia.org/wiki/Internet_Printing_Protocol "wikipedia:Internet Printing Protocol") is a widely supported standard among operating systems that is simple to configure. It features port forwarding, tunnelling, etc.
-
-**Note:** You may have to add the Internet Printing Client to Windows (*Control Panel > Programs > Turn Windows features on or off > Print and Document Services*)
-
-First, configure the server as described in the section [#Between GNU/Linux systems](#Between_GNU/Linux_systems).
-
-On the Windows computer, go to *Control Panel > Devices and Printers* and choose 'Add a printer'. If on Windows 10, click "The printer that I want is not listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
-
-```
-http://*hostname*:631/printers/*Printer_Name*
-
-```
-
-Where *hostname* is the GNU/Linux server's hostname or IP address and *Printer_Name* is the name of the print queue being connected to. You can also use the server's fully qualified domain name, if it has one, but you may need to set `ServerAlias my.fully.qualified.domain.name` in `/etc/cups/cupsd.conf` for this to work.
-
-**Note:**
-
-*   The 'Add Printer' dialog in Windows suggests the format `http://computername/printers/printername/.printer`, which it will not accept. Instead, use the syntax suggested above.
-*   If you are using a proxy carefully check any used proxy **exclusions**. A wrong setting here may result in you being unable to add a printer until the next reboot even if you disable the proxy afterwards (at least on Windows 7).
-
-#### Sharing via Samba
+### Sharing via Samba
 
 [Samba](/index.php/Samba "Samba") is an implementation of the Windows file and printer sharing protocols, even the most vintage ones.
-
-Note that printer sharing using Samba is usually **more difficult** to configure and maintain.
 
 To configure Samba on the Linux server, edit `/etc/samba/smb.conf` file to allow access to printers. File `smb.conf` can look something like this:
 
  `/etc/samba/smb.conf` 
 ```
 [global]
-workgroup = WORKGROUP
-server string = Arch Linux Print Server
-security = user
+...
 printing = CUPS
+...
 
 [printers]
     comment = All Printers
@@ -187,7 +154,13 @@ After this, [restart](/index.php/Restart "Restart") `smb.service` and `nmb.servi
 
 See Samba's documentation [Setting up Samba as a Print Server](https://wiki.samba.org/index.php/Setting_up_Samba_as_a_Print_Server) for more details.
 
-### Windows server - Linux client
+### Sharing via Line Printer Daemon protocol
+
+**Warning:** *cups-lpd* does not perform any access control based on the settings in `/etc/cups/cupsd.conf`. Therefore, running *cups-lpd* on your server will allow any computer on your network (and perhaps the entire Internet) to print to your server.
+
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `org.cups.cups-lpd.socket`.
+
+## Windows server - Linux client
 
 **Warning:** Any special characters in the printer URIs need to be appropriately quoted, or, if your Windows printer name or user passwords have spaces, CUPS will throw a `lpadmin: Bad device-uri` error.
 
@@ -200,7 +173,7 @@ $ python -c 'from urllib.parse import quote; print("smb://" + quote("BEN-DESKTOP
 
 ```
 
-#### Sharing via LPD
+### Sharing via LPD
 
 Windows 7, 8 and 10 have a built-in LPD server - using it will probably be the easiest approach as it does neither require an installation of *Samba* on the client nor heavy configuration on the server. It can be activated in the *Control Panel* under *Programs* -> *Activate Windows functions* in the section *Print services*. The printer must have *shared* activated in its properties. Use a share name without any special characters like spaces, commas, etc.
 
@@ -213,11 +186,7 @@ lpd://windowspc/printersharename
 
 Before adding the printer, you will most likely have to install an appropriate printer driver depending on your printer model. Generic PostScript or RAW drivers might also work.
 
-#### Sharing via IPP
-
-As above, IPP is also the **preferred** protocol for printer sharing although it **only works with Windows Server versions**. Windows Server versions (e.g. Server 2016) include IPP support ("Print and Document Services" role, "Internet Printing" service). Client versions (e.g. Windows 10), only include the IPP client, and **do not support sharing through IPP**.
-
-#### Sharing via Samba
+### Sharing via Samba
 
 A **much simpler way** is using Window's native printer sharing via Samba. There is almost no configuration needed, and all of it can be done from the CUPS Backend. As above noted, if there are any problems the reason is mostly related to authentication trouble and Windows access restrictions.
 
@@ -225,7 +194,7 @@ On the server side enable sharing for your desired printer and ensure that the u
 
 The following section describes how to set up the client, assuming that both daemons (cupsd and smbd) are running.
 
-##### Configuration using the web interface
+#### Configuration using the web interface
 
 The Samba CUPS back-end is enabled by default, if for any reason it is not activate it by entering the following command and restarting CUPS.
 
@@ -257,7 +226,7 @@ smb://username:password@domain/hostname/printer_name
 
 ```
 
-##### Manual configuration
+#### Manual configuration
 
 For manual configuration stop the CUPS daemon and add your printer to `/etc/cups/printers.conf`, which might for example look like this
 
@@ -285,7 +254,7 @@ ErrorPolicy stop-printer
 
 Then restart the CUPS daemon and try to print a test page.
 
-##### Finding URIs for Windows print servers
+#### Finding URIs for Windows print servers
 
 Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
 
@@ -318,7 +287,7 @@ as the URI into CUPS.
 
 ## Remote administration
 
-Once the server is set up as described in [#Between GNU/Linux systems](#Between_GNU/Linux_systems), it can also be configured so that it can be remotely administered. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [#Manual setup](#Manual_setup). Note that three levels of access can be granted:
+Once the server is set up as described in [#Printer sharing](#Printer_sharing), it can also be configured so that it can be remotely administered. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [#Sharing via Internet Printing Protocol](#Sharing_via_Internet_Printing_Protocol). Note that three levels of access can be granted:
 
 ```
 <Location />           #access to the server

@@ -351,9 +351,9 @@ O cliente wide-dhcpv6 pode ser [iniciado/habilitado](/index.php/Iniciado/habilit
 
 ### Desabilitar funcionalidade
 
-**Atenção:** Desativar a pilha IPv6 pode quebrar certos programas que esperam que ela seja ativada. [FS#46297](https://bugs.archlinux.org/task/46297)
+**Atenção:** Desabilitar a pilha IPv6 pode quebrar certos programas que esperam que ela seja ativada. [FS#46297](https://bugs.archlinux.org/task/46297)
 
-Adicionar `ipv6.disable=1` à linha do kernel desativa toda a pilha IPv6, o que é provável o que você deseja se estiver tendo problemas. Veja [Parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") para mais informações.
+Adicionar `ipv6.disable=1` à linha do kernel desabilita toda a pilha IPv6, o que é provável o que você deseja se estiver tendo problemas. Veja [Parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") para mais informações.
 
 Como alternativa, adicionar `ipv6.disable_ipv6=1` manterá a pilha do IPv6 funcional, mas não atribuirá endereços IPv6 a nenhum de seus dispositivos de rede.
 

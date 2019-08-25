@@ -7,31 +7,36 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Australia](#Australia)
-*   [2 Canada](#Canada)
-*   [3 Chile](#Chile)
-*   [4 China](#China)
-*   [5 France](#France)
-*   [6 Germany](#Germany)
-*   [7 Indonesia](#Indonesia)
-*   [8 Iran](#Iran)
-*   [9 Italy](#Italy)
-*   [10 Japan](#Japan)
-*   [11 Malaysia](#Malaysia)
-*   [12 Netherlands](#Netherlands)
-*   [13 New Zealand](#New_Zealand)
-*   [14 Poland](#Poland)
-*   [15 Russia](#Russia)
-*   [16 South Africa](#South_Africa)
-*   [17 Sweden](#Sweden)
-*   [18 Thailand](#Thailand)
-*   [19 Turkey](#Turkey)
-*   [20 United Kingdom](#United_Kingdom)
-*   [21 United States](#United_States)
-*   [22 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+*   [2 Belgium](#Belgium)
+*   [3 Canada](#Canada)
+*   [4 Chile](#Chile)
+*   [5 China](#China)
+*   [6 France](#France)
+*   [7 Germany](#Germany)
+*   [8 Indonesia](#Indonesia)
+*   [9 Iran](#Iran)
+*   [10 Italy](#Italy)
+*   [11 Japan](#Japan)
+*   [12 Malaysia](#Malaysia)
+*   [13 Netherlands](#Netherlands)
+*   [14 New Zealand](#New_Zealand)
+*   [15 Poland](#Poland)
+*   [16 Russia](#Russia)
+*   [17 South Africa](#South_Africa)
+*   [18 Sweden](#Sweden)
+*   [19 Thailand](#Thailand)
+*   [20 Turkey](#Turkey)
+*   [21 United Kingdom](#United_Kingdom)
+*   [22 United States](#United_States)
+*   [23 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
 
 ## Australia
 
 *   [https://chestm007.ddns.net/archlinux/](https://chestm007.ddns.net/archlinux/)
+
+## Belgium
+
+*   [https://ftp.belnet.be/mirror/archlinux.org/](https://ftp.belnet.be/mirror/archlinux.org/) - *Belnet*
 
 ## Canada
 

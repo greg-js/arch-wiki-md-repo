@@ -3,7 +3,7 @@ Related articles
 *   [LXDE](/index.php/LXDE "LXDE")
 *   [Display manager](/index.php/Display_manager "Display manager")
 
-LXDM is a lightweight [display manager](/index.php/Display_manager "Display manager") for the [LXDE](/index.php/LXDE "LXDE") [desktop environment](/index.php/Desktop_environment "Desktop environment"). The UI is implemented with [GTK+](/index.php/GTK%2B "GTK+") 2.
+LXDM is a lightweight [display manager](/index.php/Display_manager "Display manager") for the [LXDE](/index.php/LXDE "LXDE") [desktop environment](/index.php/Desktop_environment "Desktop environment"). The UI is implemented with [GTK](/index.php/GTK "GTK") 2.
 
 LXDM does not support the [XDMCP](/index.php/XDMCP "XDMCP") protocol. An alternative that does is [LightDM](/index.php/LightDM "LightDM").
 
@@ -199,4 +199,4 @@ LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbm
 
 ### White flash
 
-When using the default LXDM `theme=Industrial` and a dark background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK+](/index.php/GTK%2B "GTK+") theme. To avoid this change `gtk_theme=Adwaita` to `gtk_theme=Adwaita-dark` or to another dark theme.
+When using the default LXDM `theme=Industrial` and a dark background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK](/index.php/GTK "GTK") theme. To avoid this change `gtk_theme=Adwaita` to `gtk_theme=Adwaita-dark` or to another dark theme.

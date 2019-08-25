@@ -59,7 +59,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [daurnimator](https://aur.archlinux.org/packages.php?K=daurnimator&SeB=m) | Daurnimator | quae at daurnimator com |
 | [dbermond](https://aur.archlinux.org/packages.php?K=dbermond&SeB=m) | Daniel Bermond | gmail-com: danielbermond |
 | [demize](https://aur.archlinux.org/packages.php?K=demize&SeB=m) | [Johannes Löthberg](/index.php/User:Kyrias "User:Kyrias") | johannes@kyriasis.com |
-| [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | dragonlord @ aur archlinux org |
+| [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | svetlemodry @ archlinux org |
 | [dvzrv](https://aur.archlinux.org/packages.php?K=dvzrv&SeB=m) | [David Runge](/index.php/User:Davezerave "User:Davezerave") | dave@sleepmap.de |
 | [eschwartz](https://aur.archlinux.org/packages.php?K=eschwartz&SeB=m) | Eli Schwartz | eschwartz@archlinux.org |
 | [escondida](https://aur.archlinux.org/packages.php?K=escondida&SeB=m) | Ivy Foster | code @ escondida dot tk |

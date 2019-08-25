@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=574103) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=579918) na versão em inglês.
 
 Artigos relacionados
 
@@ -24,7 +24,7 @@ Um [ambiente de desktop](https://en.wikipedia.org/wiki/pt:Ambiente_de_desktop "w
 
 Um ambiente de desktop reúne uma variedade de componentes para fornecer elementos comuns de interface gráfica do usuário, como ícones, barras de ferramentas, papéis de parede e widgets da área de trabalho. Além disso, a maioria dos ambientes de desktop inclui um conjunto de aplicativos e utilitários integrados. Mais importante ainda, os ambientes de desktop fornecem seu próprio [gerenciador de janela](/index.php/Gerenciador_de_janela "Gerenciador de janela"), que normalmente pode ser substituído por outro compatível.
 
-O usuário é livre para configurar seu ambiente de GUI de várias maneiras. Ambientes de desktop simplesmente fornecem um meio completo e conveniente de realizar essa tarefa. Observe que os usuários estão livres para misturar e combinar aplicativos de vários ambientes de desktop. Por exemplo, um usuário do [KDE](/index.php/KDE "KDE") pode instalar e executar aplicativos do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") como o navegador [Epiphany](/index.php/Epiphany "Epiphany"), caso ele/ela prefira este ao navegador web Konqueror do KDE. Uma desvantagem dessa abordagem é que muitos aplicativos fornecidos por projetos de ambiente de desktop dependem muito das respectivas bibliotecas subjacentes do DE. Como resultado, a instalação de aplicativos de uma variedade de ambientes de desktop exigirá a instalação de um maior número de dependências. Os usuários que buscam economizar espaço em disco geralmente evitam esses ambientes mistos ou escolhem alternativas que dependem apenas de algumas bibliotecas externas.
+O usuário é livre para configurar seu ambiente de GUI de várias maneiras. Ambientes de desktop simplesmente fornecem um meio completo e conveniente de realizar essa tarefa. Observe que os usuários estão livres para misturar e combinar aplicativos de vários ambientes de desktop. Por exemplo, um usuário do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") pode instalar e executar aplicativos do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") como o navegador [Epiphany](/index.php/Epiphany "Epiphany"), caso ele/ela prefira este ao navegador web Konqueror do KDE. Uma desvantagem dessa abordagem é que muitos aplicativos fornecidos por projetos de ambiente de desktop dependem muito das respectivas bibliotecas subjacentes do DE. Como resultado, a instalação de aplicativos de uma variedade de ambientes de desktop exigirá a instalação de um maior número de dependências. Os usuários que buscam economizar espaço em disco geralmente evitam esses ambientes mistos ou escolhem alternativas que dependem apenas de algumas bibliotecas externas.
 
 Além disso, os aplicativos fornecidos por DE tendem a se integrar melhor com seus ambientes nativos. Superficialmente, a mistura de ambientes com kits de ferramentas *(toolkits)* de widgets diferentes resultará em discrepâncias visuais (ou seja, as interfaces usarão ícones e estilos de widgets diferentes). Em termos de usabilidade, os ambientes mistos podem não se comportar de maneira semelhante (por exemplo, clique único versus ícones de clique duplo; funcionalidade arrastar e soltar), potencialmente causando confusão ou comportamento inesperado.
 
@@ -58,19 +58,19 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://wiki.gnome.org/Projects/GnomeFlashback](https://wiki.gnome.org/Projects/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
-*   **[KDE Plasma](/index.php/KDE_Plasma "KDE Plasma")** — O ambiente de desktop Plasma do KDE é um ambiente de trabalho familiar. O Plasma oferece todas as ferramentas necessárias para uma experiência de computação moderna, para que você possa ser produtivo desde o início.
+*   **[KDE Plasma](/index.php/KDE_Plasma_(Portugu%C3%AAs) "KDE Plasma (Português)")** — O ambiente de desktop Plasma do KDE é um ambiente de trabalho familiar. O Plasma oferece todas as ferramentas necessárias para uma experiência de computação moderna, para que você possa ser produtivo desde o início.
 
 	[https://www.kde.org/plasma-desktop](https://www.kde.org/plasma-desktop) || [plasma](https://www.archlinux.org/groups/x86_64/plasma/)
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — O Lightweight X11 Desktop Environment (ambiente de desktop X11 leve) é um ambiente de desktop rápido e que economiza energia. Ele vem com uma interface moderna, suporte a vários idiomas, atalhos de teclado padrão e recursos adicionais, como a navegação por arquivos com guias. Fundamentalmente projetado para ser leve, o LXDE se esforça para ter menos CPU e RAM do que outros ambientes.
 
-	[https://lxde.org/](https://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+	[https://lxde.org/](https://lxde.org/) || GTK 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
 
 *   **[LXQt](/index.php/LXQt "LXQt")** — O LXQt é o *port* do Qt e a próxima versão do LXDE, o Lightweight Desktop Environment. É o produto da fusão entre os projetos LXDE-Qt e Razor-qt: Um ambiente de desktop leve, modular, extremamente rápido e fácil de usar.
 
-	[http://lxqt.org/](http://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
+	[https://lxqt.org/](https://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
 
-*   **[MATE](/index.php/MATE "MATE")** — O Mate fornece um ambiente de desktop intuitivo e atraente para usuários de Linux que usam metáforas tradicionais. O MATE começou como um fork do GNOME 2, mas agora usa o GTK+ 3.
+*   **[MATE](/index.php/MATE "MATE")** — O Mate fornece um ambiente de desktop intuitivo e atraente para usuários de Linux que usam metáforas tradicionais. O MATE começou como um fork do GNOME 2, mas agora usa o GTK 3.
 
 	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
@@ -78,7 +78,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://sugarlabs.org/](https://sugarlabs.org/) || [sugar](https://www.archlinux.org/packages/?name=sugar) + [sugar-fructose](https://www.archlinux.org/groups/x86_64/sugar-fructose/)
 
-*   **[Xfce](/index.php/Xfce "Xfce")** — O Xfce incorpora a tradicional [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix") de modularidade e reutilização. Ele consiste em vários componentes que fornecem a funcionalidade completa que se pode esperar de um ambiente de desktop moderno, mantendo-se relativamente leve. Eles são empacotados separadamente e você pode escolher entre os pacotes disponíveis para criar o melhor ambiente de trabalho pessoal.
+*   **[Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)")** — O Xfce incorpora a tradicional [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix") de modularidade e reutilização. Ele consiste em vários componentes que fornecem a funcionalidade completa que se pode esperar de um ambiente de desktop moderno, mantendo-se relativamente leve. Eles são empacotados separadamente e você pode escolher entre os pacotes disponíveis para criar o melhor ambiente de trabalho pessoal.
 
 	[https://xfce.org/](https://xfce.org/) || [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/)
 
@@ -88,7 +88,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://edeproject.org/](https://edeproject.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 
-*   **[Liri](/index.php/Liri "Liri")** — O Liri é um ambiente de desktop com design e recursos modernos. Liri é a fusão entre [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) e o [Projeto Liri](https://github.com/liri-project). Altamente experimental.
+*   **[Liri](/index.php/Liri "Liri")** — O Liri é um ambiente de desktop com design e recursos modernos. Liri é a fusão entre [Hawaii](https://github.com/hawaii-desktop), [Papyros](https://github.com/papyros) e o [Projeto Liri](https://github.com/liri-project). Altamente experimental.
 
 	[https://liri.io/](https://liri.io/) || [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/)
 
@@ -139,8 +139,8 @@ Se o ambiente de desktop tem um artigo, veja sua seção *Usar um gerenciador de
 *   [Budgie#Use a different window manager](/index.php/Budgie#Use_a_different_window_manager "Budgie")
 *   [Cinnamon#Use a different window manager](/index.php/Cinnamon#Use_a_different_window_manager "Cinnamon")
 *   [GNOME (Português)#Usar um gerenciador de janela diferente](/index.php/GNOME_(Portugu%C3%AAs)#Usar_um_gerenciador_de_janela_diferente "GNOME (Português)")
-*   [KDE#Use a different window manager](/index.php/KDE#Use_a_different_window_manager "KDE")
+*   [KDE (Português)#Usar um gerenciador de janela diferente](/index.php/KDE_(Portugu%C3%AAs)#Usar_um_gerenciador_de_janela_diferente "KDE (Português)")
 *   [LXDE#Use a different window manager](/index.php/LXDE#Use_a_different_window_manager "LXDE")
 *   [LXQt#Use a different window manager](/index.php/LXQt#Use_a_different_window_manager "LXQt")
 *   [MATE#Use a different window manager](/index.php/MATE#Use_a_different_window_manager "MATE")
-*   [Xfce#Use a different window manager](/index.php/Xfce#Use_a_different_window_manager "Xfce")
+*   [Xfce (Português)#Usar um gerenciador de janela diferente](/index.php/Xfce_(Portugu%C3%AAs)#Usar_um_gerenciador_de_janela_diferente "Xfce (Português)")

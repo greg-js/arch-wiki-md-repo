@@ -21,7 +21,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [unison](https://www.archlinux.org/packages/?name=unison) package, which provides CLI, GTK+ and GTK+ 2.0 interfaces.
+[Install](/index.php/Install "Install") the [unison](https://www.archlinux.org/packages/?name=unison) package, which provides CLI, GTK and GTK 2.0 interfaces.
 
 ## Configuration
 

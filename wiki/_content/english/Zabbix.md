@@ -51,6 +51,10 @@ $ ln -s /usr/share/webapps/zabbix /srv/http/zabbix
 
 ```
 
+To get working apache out of the box you need to enable php integration:
+
+*   [see arch wiki](https://wiki.archlinux.org/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi/)
+
 Make sure to adjust following variables to these minimal values in your `/etc/php/php.ini`:
 
 ```

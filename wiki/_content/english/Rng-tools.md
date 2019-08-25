@@ -4,7 +4,7 @@ Related articles
 *   [Trusted Platform Module](/index.php/Trusted_Platform_Module "Trusted Platform Module")
 *   [Random number generation](/index.php/Random_number_generation "Random number generation")
 
-The [rng-tools](https://git.kernel.org/cgit/utils/kernel/rng-tools/rng-tools.git/) is a set of utilities related to random number generation in kernel. The main program is **rngd**, a daemon developed to check and feed random data from hardware device to kernel entropy pool.
+The [rng-tools](https://github.com/nhorman/rng-tools) is a set of utilities related to random number generation in kernel. The main program is **rngd**, a daemon developed to check and feed random data from hardware device to kernel entropy pool.
 
 This is mainly useful to increase the quantity of entropy in kernel to make `/dev/random` faster. By default, `/dev/random` is very slow since it only collects entropy from [device drivers and other (slow) sources](https://en.wikipedia.org/wiki//dev/random "wikipedia:/dev/random"). *rngd* allows the use of faster entropy sources, mainly [hardware random number generators (TRNG)](https://en.wikipedia.org/wiki/Hardware_random_number_generator "wikipedia:Hardware random number generator"), present in modern hardware like [recent AMD/Intel processors](https://en.wikipedia.org/wiki/RdRand "wikipedia:RdRand"), [Via Nano](https://jve.linuxwall.info/blog/index.php?post/2013/08/19/Hardware-RNG-from-Via-CPU-(on-debibox)) or even [Raspberry Pi](http://scruss.com/blog/2013/06/07/well-that-was-unexpected-the-raspberry-pis-hardware-random-number-generator/).
 

@@ -9,17 +9,16 @@
 *   [3 Drivers](#Drivers)
     *   [3.1 Nvidia/Optimus](#Nvidia/Optimus)
     *   [3.2 Touchpad](#Touchpad)
-        *   [3.2.1 GS63-8RE](#GS63-8RE)
     *   [3.3 Networking](#Networking)
         *   [3.3.1 Wireless](#Wireless)
     *   [3.4 Audio](#Audio)
     *   [3.5 SteelSeries Keyboard](#SteelSeries_Keyboard)
-        *   [3.5.1 GS63-8RE](#GS63-8RE_2)
+        *   [3.5.1 GS63-8RE](#GS63-8RE)
     *   [3.6 Sleep](#Sleep)
     *   [3.7 Web Camera](#Web_Camera)
-        *   [3.7.1 GS63-8RE](#GS63-8RE_3)
+        *   [3.7.1 GS63-8RE](#GS63-8RE_2)
     *   [3.8 Power Management](#Power_Management)
-        *   [3.8.1 GS63-8RE](#GS63-8RE_4)
+        *   [3.8.1 GS63-8RE](#GS63-8RE_3)
 *   [4 Misc](#Misc)
     *   [4.1 BIOS](#BIOS)
 
@@ -31,7 +30,7 @@ This issue was discussed in this thread: [https://bbs.archlinux.org/viewtopic.ph
 
 As of 2018, the patch is now part of the mainstream kernel. Intel driver (i915) works, but without power management. It is only possible to run a graphical environment with the nvidia card ON. In order to get the maximum performance out of this notebook, it is recommended to use [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun-git). Bumblebee is not working on the 2017 model.
 
-| **Device** | **GS63 (2016)** | **GS63 (2017)** | **[GS63-8RE](https://www.msi.com/Laptop/GS63-Stealth-8RE/Specification) (2018)** |
+| **Device** | **[GS63-6RF](https://www.msi.com/Laptop/GS63VR-6RF-Stealth-Pro/Specification) (2016)** | **GS63 (2017)** | **[GS63-8RE](https://www.msi.com/Laptop/GS63-Stealth-8RE/Specification) (2018)** |
 | CPU | Yes i7-6700HQ | Yes i7-7700HQ | Yes i7-8750H |
 | Display | -- | Full HD 120Hz/3ms | Full HD 120Hz/3ms |
 | Intel IGU | Yes Intel HD Graphics 530 | Yes HD Graphics 630 (i915) | Yes Intel HD Graphics 630 |
@@ -60,13 +59,7 @@ As alternative, you can use [Optimus Manager](https://github.com/Askannz/optimus
 
 ### Touchpad
 
-This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinput "Libinput") works well.
-
-Note* As of 2017.04.18, some multitouch aspects of the touchpad do not seem to be working (two finger scroll, for instance). This bug has been reported in [100696](https://bugs.freedesktop.org/show_bug.cgi?id=100696).
-
-#### GS63-8RE
-
-Two finger scrolling worked out of the box. Tested on 2018.09.23. Install [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) for more multitouch actions.
+This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinput "Libinput") works well. Two finger scrolling works out of the box (tested on GS63-6RF and GS63-8RE). Install [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) for more multitouch actions.
 
 ### Networking
 

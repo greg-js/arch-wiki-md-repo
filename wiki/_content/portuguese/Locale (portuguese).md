@@ -233,7 +233,7 @@ Você precisa iniciar esses aplicativos a partir de um locale UTF-8 ou eles não
 
 Se você está usando um ambiente gráfico, como o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), suas configurações de idioma podem estar sobrescrevendo as configurações em `locale.conf`.
 
-[KDE](/index.php/KDE "KDE") Plasma também permite alterar o idioma da interface de usuário por meio de configurações do sistema. Se o ambiente gráfico ainda está usando o idioma padrão após a modificação, [excluir o arquivo em](https://bbs.archlinux.org/viewtopic.php?pid=1435219#p1435219) `~/.config/plasma-localerc` (anteriormente: `~/.config/plasma-locale-settings.sh`) deve resolver o problema.
+[KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") Plasma também permite alterar o idioma da interface de usuário por meio de configurações do sistema. Se o ambiente gráfico ainda está usando o idioma padrão após a modificação, [excluir o arquivo em](https://bbs.archlinux.org/viewtopic.php?pid=1435219#p1435219) `~/.config/plasma-localerc` (anteriormente: `~/.config/plasma-locale-settings.sh`) deve resolver o problema.
 
 ## Veja também
 

@@ -158,7 +158,7 @@ If this does not work, comment all drivers listed except the ones for your devic
 To control the volume of various devices, mixers levels will need to be set. There are two mixers:
 
 *   **ossmix**: a command-line mixer, similar to the BSD audio mixer `mixerctl`.
-*   **ossxmix**: a GTK+-based graphical mixer.
+*   **ossxmix**: a GTK-based graphical mixer.
 
 The basic `ossxmix` controls look like:
 

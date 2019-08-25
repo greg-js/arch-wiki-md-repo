@@ -264,7 +264,7 @@ See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times
 
 ### What is the difference between foo and foo-git packages?
 
-Many AUR packages are presented in regular ("stable") and development versions ("unstable"). A development package usually has a suffix such as `-cvs`, `-svn`, `-git`, `-hg`, `-bzr` or `-darcs`. While development packages are not intended for regular use, they may offer new features or bugfixes. Because these packages download the latest available source when you execute [makepkg](/index.php/Makepkg "Makepkg"), a package version to track possible updates is not directly available for these. Likewise, these packages cannot perform an authenticity checksum, instead it is relied on the maintainer(s) of the [Git](/index.php/Git "Git") repository.
+Many AUR packages come in "stable" release and "unstable" development versions. Development packages usually have a [suffix](/index.php/VCS_package_guidelines#Guidelines "VCS package guidelines") denoting their [Version Control System](/index.php/Version_Control_System "Version Control System") and are not intended for regular use, but may offer new features or bugfixes. Because these packages only download the latest available source when you execute `makepkg`, their `pkgver()` in the AUR does not reflect upstream changes. Likewise, these packages cannot perform an authenticity checksum on any [VCS source](/index.php/VCS_package_guidelines#VCS_sources "VCS package guidelines").
 
 See also [System maintenance#Use proven software packages](/index.php/System_maintenance#Use_proven_software_packages "System maintenance").
 

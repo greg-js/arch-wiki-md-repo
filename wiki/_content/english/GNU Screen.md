@@ -233,7 +233,7 @@ hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%
 
 ```
 
-As of Screen v5 ([master branch](git://git.savannah.gnu.org/screen.git) currently) the escape codes have changed, you could use this instead:
+As of Screen v5 ([master branch](https://git.savannah.gnu.org/cgit/screen.git) currently) the escape codes have changed, you could use this instead:
 
  `~/.screenrc` 
 ```

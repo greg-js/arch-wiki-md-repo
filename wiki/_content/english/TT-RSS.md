@@ -12,6 +12,7 @@
     *   [1.3 Set up an update daemon](#Set_up_an_update_daemon)
     *   [1.4 Known issues](#Known_issues)
         *   [1.4.1 Integrity constraint violation: 1062 Duplicate entry '1' for key 'ttrss_feeds_feed_url_owner_uid_key'](#Integrity_constraint_violation:_1062_Duplicate_entry_'1'_for_key_'ttrss_feeds_feed_url_owner_uid_key')
+        *   [1.4.2 PHP UConverter class is missing, it's provided by the Internationalization (intl) module.](#PHP_UConverter_class_is_missing,_it's_provided_by_the_Internationalization_(intl)_module.)
 
 ## Installation
 
@@ -58,6 +59,7 @@ In `/etc/php/php.ini`, enable the following modules:
 ```
 extension=curl
 extension=iconv
+extension=intl
 extension=mysqli # for MySQL
 extension=pdo_mysql # for MySQL
 extension=pdo_pgsql # for PostgreSQL
@@ -146,3 +148,12 @@ $ use tt-rss;
 ```
 
 And then run [query from official forum](https://discourse.tt-rss.org/t/potential-problems-when-upgrading-to-schema-137/2122) that drops duplicated database entries.
+
+#### PHP UConverter class is missing, it's provided by the Internationalization (intl) module.
+
+If you see this error after tt-rss upgrade, please edit `/etc/php/php.ini`, enable 'extension=intl' module and then restart php-fpm systemctl service
+
+```
+# systemctl restart php-fpm.service
+
+```

@@ -122,7 +122,7 @@
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK+ interfaces.
+*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK interfaces.
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GUI: [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
 
@@ -258,7 +258,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Graphics and text mode web browser. Includes a console version similar to Lynx.
 
-	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links) or [links-g-directfb](https://aur.archlinux.org/packages/links-g-directfb/)
+	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
 
 *   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
 
@@ -408,11 +408,11 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://wiki.gnome.org/Apps/Eolie](https://wiki.gnome.org/Apps/Eolie) || [eolie](https://www.archlinux.org/packages/?name=eolie)
 
-*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
 	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
-*   **[Lariza](/index.php/Lariza "Lariza")** — A simple, experimental web browser using GTK+ 3, GLib and WebKit2GTK+.
+*   **[Lariza](/index.php/Lariza "Lariza")** — A simple, experimental web browser using GTK 3, GLib and WebKit2GTK.
 
 	[https://www.uninformativ.de/git/lariza/](https://www.uninformativ.de/git/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
@@ -420,7 +420,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
-*   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
+*   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK and WebKit.
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
@@ -676,7 +676,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[http://www.frostwire.com/](http://www.frostwire.com/) || [frostwire](https://aur.archlinux.org/packages/frostwire/)
 
-*   **gtk-youtube-viewer** — GTK+ utility for viewing YouTube videos.
+*   **gtk-youtube-viewer** — GTK utility for viewing YouTube videos.
 
 	[https://github.com/trizen/youtube-viewer](https://github.com/trizen/youtube-viewer) || [youtube-viewer](https://www.archlinux.org/packages/?name=youtube-viewer) + [gtk2-perl](https://www.archlinux.org/packages/?name=gtk2-perl) + [perl-file-sharedir](https://www.archlinux.org/packages/?name=perl-file-sharedir)
 
@@ -712,7 +712,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://sourceforge.net/projects/streamtuner2/](https://sourceforge.net/projects/streamtuner2/) || [streamtuner2](https://aur.archlinux.org/packages/streamtuner2/)
 
-*   **uGet** — GTK+ download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
+*   **uGet** — GTK download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
 
 	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
@@ -960,15 +960,19 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
+*   **[Tixati](https://en.wikipedia.org/wiki/Tixati "wikipedia:Tixati")** — Tixati is a peer-to-peer file sharing program that uses the popular BitTorrent protocol.
+
+	[https://tixati.com/](https://tixati.com/) || [tixati](https://aur.archlinux.org/packages/tixati/)
+
 *   **Torrential** — Simple torrent client for elementary OS.
 
 	[https://github.com/davidmhewitt/torrential](https://github.com/davidmhewitt/torrential) || [torrential](https://aur.archlinux.org/packages/torrential/)
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends.
 
-	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
+	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
 
-*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK+ client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
+*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
 
 	[https://github.com/transmission-remote-gtk/transmission-remote-gtk](https://github.com/transmission-remote-gtk/transmission-remote-gtk) || [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
 
@@ -988,15 +992,15 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 See also [Wikipedia:Comparison of file-sharing applications](https://en.wikipedia.org/wiki/Comparison_of_file-sharing_applications "wikipedia:Comparison of file-sharing applications").
 
-*   **[aMule](/index.php/AMule "AMule")** — Well-known eDonkey/Kad client with a daemon version and GTK+, web, and CLI front-ends.
+*   **[aMule](/index.php/AMule "AMule")** — Well-known eDonkey/Kad client with a daemon version and GTK, web, and CLI front-ends.
 
 	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
 
 *   **EiskaltDC++** — Direct Connect and ADC client.
 
-	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK+: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
+	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
 
-*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK+ server/client for the Gnutella peer-to-peer network.
+*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK server/client for the Gnutella peer-to-peer network.
 
 	[http://gtk-gnutella.sourceforge.net/](http://gtk-gnutella.sourceforge.net/) || [gtk-gnutella](https://aur.archlinux.org/packages/gtk-gnutella/)
 
@@ -1188,11 +1192,11 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
-*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK+ email client.
+*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK email client.
 
 	[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
-*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client from Mozilla written in GTK+.
+*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client from Mozilla written in GTK.
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
@@ -1372,6 +1376,10 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
+*   **Tiny** — an IRC client written in Rust with a clutter-free interface
+
+	[https://github.com/osa1/tiny](https://github.com/osa1/tiny) || [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/)
+
 **Comparison**
 
 | Name | Package | Written in | Extensible | [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer "wikipedia:Simple Authentication and Security Layer") |
@@ -1383,6 +1391,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 | [ScrollZ](http://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
 | [sic](https://tools.suckless.org/sic/) | [sic](https://aur.archlinux.org/packages/sic/) | C | stdin/stdout | No |
 | [WeeChat](/index.php/WeeChat "WeeChat") | [weechat](https://www.archlinux.org/packages/?name=weechat) | C | [multiple languages](https://weechat.org/files/doc/stable/weechat_scripting.en.html) | Yes |
+| [osa1/tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
 
 ###### Graphical
 
@@ -1398,11 +1407,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://kvirc.net/](http://kvirc.net/) || [kvirc-git](https://aur.archlinux.org/packages/kvirc-git/)
 
-*   **Loqui** — GTK+ IRC client.
+*   **Loqui** — GTK IRC client.
 
 	[https://launchpad.net/loqui](https://launchpad.net/loqui) || [loqui](https://aur.archlinux.org/packages/loqui/)
 
-*   **LostIRC** — Simple GTK+ IRC client with tab-autocompletion, multiple server support, logging and others.
+*   **LostIRC** — Simple GTK IRC client with tab-autocompletion, multiple server support, logging and others.
 
 	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)
 
@@ -1414,7 +1423,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **Srain** — Modern, beautiful IRC client written in GTK+ 3.
+*   **Srain** — Modern, beautiful IRC client written in GTK 3.
 
 	[https://srain.im/](https://srain.im/) || [srain](https://aur.archlinux.org/packages/srain/)
 
@@ -1886,7 +1895,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 	[http://jangernert.github.io/FeedReader/](http://jangernert.github.io/FeedReader/) || [feedreader](https://www.archlinux.org/packages/?name=feedreader)
 
-*   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
+*   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK news aggregator for online news feeds and weblogs.
 
 	[https://lzone.de/liferea/](https://lzone.de/liferea/) || [liferea](https://www.archlinux.org/packages/?name=liferea)
 
@@ -1952,11 +1961,11 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 	[https://gitlab.gnome.org/World/podcasts](https://gitlab.gnome.org/World/podcasts) || [gnome-podcasts](https://www.archlinux.org/packages/?name=gnome-podcasts)
 
-*   **gPodder** — Podcast client and media aggregator (GTK+ interface).
+*   **gPodder** — Podcast client and media aggregator (GTK interface).
 
 	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
 
-*   **Vocal** — Simple podcast client for the Modern Desktop (GTK+).
+*   **Vocal** — Simple podcast client for the Modern Desktop (GTK).
 
 	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://www.archlinux.org/packages/?name=vocal)
 
@@ -1994,7 +2003,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[https://nzbget.net/](https://nzbget.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
 
-*   **[Pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — GTK+ Usenet newsreader that's good at both text and binaries.
+*   **[Pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — GTK Usenet newsreader that's good at both text and binaries.
 
 	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
@@ -2034,11 +2043,11 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[http://choqok.gnufolks.org/](http://choqok.gnufolks.org/) || [choqok](https://www.archlinux.org/packages/?name=choqok)
 
-*   **Corebird** — Native GTK+ Twitter client for the Linux desktop.
+*   **Corebird** — Native GTK Twitter client for the Linux desktop.
 
 	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://aur.archlinux.org/packages/corebird/)
 
-*   **Mikutter** — Simple, powerful Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
+*   **Mikutter** — Simple, powerful Twitter client using [GTK](/index.php/GTK "GTK") and Ruby.
 
 	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/)
 
@@ -2132,7 +2141,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[https://www.kde.org/applications/internet/krdc/](https://www.kde.org/applications/internet/krdc/) || [krdc](https://www.archlinux.org/packages/?name=krdc)
 
-*   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK+. Supports RDP, VNC, NX, XDMCP and SSH.
+*   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK. Supports RDP, VNC, NX, XDMCP and SSH.
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 

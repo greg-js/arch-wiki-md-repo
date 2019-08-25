@@ -42,17 +42,15 @@ Firstly, a kernel is required that has support for **User Namespaces** (a kernel
 
 Enable the *sysctl* setting `kernel.unprivileged_userns_clone` to allow normal users to run unprivileged containers. This can be done for the current session with `sysctl kernel.unprivileged_userns_clone=1` and can be made permanent with [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5).
 
-Finally, create both `/etc/subuid` and `/etc/subgid` to contain the mapping to the containerized uid/gid pairs for each user who shall be able to run the containers. The example below is for the root user (and systemd system unit) and an example user `buildah`:
+Finally, create both `/etc/subuid` and `/etc/subgid` to contain the mapping to the containerized uid/gid pairs for each user who shall be able to run the containers.[[1]](https://github.com/containers/libpod/blob/master/docs/tutorials/rootless_tutorial.md#etcsubuid-and-etcsubgid-configuration) The example below is for the root user (and systemd system unit) and an example user `buildah`:
 
  `/etc/subuid` 
 ```
-root:100000:65536
 buildah:100000:65536
 
 ```
  `/etc/subgid` 
 ```
-root:100000:65536
 buildah:100000:65536
 
 ```

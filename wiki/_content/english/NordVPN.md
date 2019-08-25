@@ -31,7 +31,7 @@ There are different payment options to choose.
 
 ## Installation
 
-NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/), available in the [AUR](/index.php/AUR "AUR").
+NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/) or [nordvpn-cli](https://aur.archlinux.org/packages/nordvpn-cli/), available in the [AUR](/index.php/AUR "AUR").
 
 ## Systemd
 
@@ -242,7 +242,7 @@ Or you can also :
 
 ### Use a killswitch
 
-The NordVPN killswitch won't work with this method, you'll have to create your own using [ufw](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") or [iptables](/index.php/Iptables "Iptables").
+The NordVPN killswitch won't work with this method, you'll have to create your own using [ufw](/index.php/Ufw "Ufw") or [iptables](/index.php/Iptables "Iptables").
 
 Here is an [example with UFW](https://www.smarthomebeginner.com/vpn-kill-switch-with-ufw/#Gather_information_about_your_IP_addresses).
 

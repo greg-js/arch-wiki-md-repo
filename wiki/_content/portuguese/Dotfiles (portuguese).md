@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-07-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=576779) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=579073) na versão em inglês.
 
 Artigos relacionados
 
@@ -75,9 +75,10 @@ Se você achar que fazer *rebase* de ramos do Git é trabalhoso demais, você po
 | [dotdrop](https://deadc0de.re/dotdrop/) | [dotdrop](https://aur.archlinux.org/packages/dotdrop/) | Python | arquivo de configuração | Jinja2 |
 | [dotfiles](https://github.com/jbernard/dotfiles) | [dotfiles](https://aur.archlinux.org/packages/dotfiles/) | Python | [Não](https://github.com/jbernard/dotfiles/pull/24) | Não |
 | [Dots](https://github.com/EvanPurkhiser/dots) | [dots-manager](https://aur.archlinux.org/packages/dots-manager/) | Python | baseado em diretórios | pontos de acréscimos personalizados |
+| [chezmoi](https://github.com/twpayne/chezmoi) | [chezmoi](https://www.archlinux.org/packages/?name=chezmoi) | Go | baseado em diretórios | modelos em Go |
 | [GNU Stow](https://www.gnu.org/software/stow/) | [stow](https://www.archlinux.org/packages/?name=stow) | Perl | baseado em diretórios[[2]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) | Não |
 | [Mackup](https://github.com/lra/mackup) | [mackup](https://aur.archlinux.org/packages/mackup/) | Python | automático por aplicativo | Não |
-| [mir.qualia](https://github.com/darkfeline/mir.qualia) | [mir.qualia](https://aur.archlinux.org/packages/mir.qualia/) | Python | Não | custom blocks |
+| [mir.qualia](https://github.com/darkfeline/mir.qualia) | [mir.qualia](https://aur.archlinux.org/packages/mir.qualia/) | Python | Não | blocos personalizados |
 | [rcm](https://github.com/thoughtbot/rcm) | [rcm](https://aur.archlinux.org/packages/rcm/) | Perl | baseado em diretórios (por host ou tag) | Não |
 
 ### Ferramentas interfaceando Git
@@ -120,6 +121,7 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 | [jasonwryan](https://bitbucket.org/jasonwryan/shiv/src) | bash/zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | personalizado | mutt | irssi |
 | [jdevlieghere](https://github.com/JDevlieghere/dotfiles/) | zsh | xmonad | vim | terminal | tmux | htop | mutt | weechat |
 | [jelly](https://github.com/jelly/Dotfiles) | zsh | i3 | vim | termite | tmux | ncmpcpp | mutt-kz-git | weechat |
+| [Jorengarenar](https://github.com/Jorengarenar/dotfiles) | bash | i3 | vim | xterm | mpv | i3blocks | aerc | weechat |
 | [maximbaz](https://github.com/maximbaz/dotfiles) | zsh | i3-gaps | neovim | alacritty | tmux | py3status | thunderbird |
 | [mehalter](https://gitlab.com/mehalter/dotfiles) | zsh | i3-gaps | neovim | termite | tmux | gpymusic | i3blocks, gotop | neomutt | weechat |
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |

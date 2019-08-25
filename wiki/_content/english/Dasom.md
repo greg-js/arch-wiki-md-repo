@@ -28,7 +28,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [dasom-git](https://aur.archlinux.org/packages/dasom-git/) package.
 
-Additionally, you might want to install input method modules packages such as [dasom-gtk-git](https://aur.archlinux.org/packages/dasom-gtk-git/) for GTK+, [dasom-qt-git](https://aur.archlinux.org/packages/dasom-qt-git/) for Qt applications.
+Additionally, you might want to install input method modules packages such as [dasom-gtk-git](https://aur.archlinux.org/packages/dasom-gtk-git/) for GTK, [dasom-qt-git](https://aur.archlinux.org/packages/dasom-qt-git/) for Qt applications.
 
 ### Input method engines
 

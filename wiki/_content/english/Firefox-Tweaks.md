@@ -54,6 +54,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.4 Mouse click on URL bar's behavior](#Mouse_click_on_URL_bar's_behavior)
     *   [3.5 Set backspace's behavior](#Set_backspace's_behavior)
     *   [3.6 Disable middle mouse button clipboard paste](#Disable_middle_mouse_button_clipboard_paste)
+    *   [3.7 Emacs key bindings](#Emacs_key_bindings)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [4.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix/Amazon_Video)
@@ -493,6 +494,10 @@ See [Firefox#Backspace does not work as the 'Back' button](/index.php/Firefox#Ba
 
 See [Firefox#Middle-click behavior](/index.php/Firefox#Middle-click_behavior "Firefox").
 
+### Emacs key bindings
+
+To have Emacs/Readline-like key bindings active in text fields, see [GTK#Emacs key bindings](/index.php/GTK#Emacs_key_bindings "GTK").
+
 ## Miscellaneous
 
 ### Enable additional media codecs
@@ -554,9 +559,9 @@ The next time you open a magnet link, you will be prompted with a *Launch Applic
 
 ### Prevent accidental closing
 
-The [Disable Ctrl-Q and Cmd-Q](https://addons.mozilla.org/firefox/addon/disable-ctrl-q-and-cmd-q/) extension can be installed to prevent unwanted closing of the browser.
+There are different approaches to handle this:
 
-**Note:** This extension no longer works on Linux due to a bug in Firefox.
+Under `about:preferences#general` select `Warn you when quitting the browser`.
 
 An alternative is to add a rule in your window manager configuration file. For example in [Openbox](/index.php/Openbox "Openbox") add:
 
@@ -572,6 +577,10 @@ An alternative is to add a rule in your window manager configuration file. For e
 in the *<keyboard>* section of your `~/.config/openbox/rc.xml` file.
 
 **Note:** This will be effective for every application used under a graphic server.
+
+The [Disable Ctrl-Q and Cmd-Q](https://addons.mozilla.org/firefox/addon/disable-ctrl-q-and-cmd-q/) extension can be installed to prevent unwanted closing of the browser.
+
+**Note:** This extension no longer works on Linux due to a [bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1325692).
 
 ### Plugins do not work with latest version
 

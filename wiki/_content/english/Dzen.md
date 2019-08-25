@@ -7,21 +7,89 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Using custom fonts with dzen](#Using_custom_fonts_with_dzen)
-    *   [3.2 Dzen and Conky](#Dzen_and_Conky)
-    *   [3.3 Clickable areas and popups](#Clickable_areas_and_popups)
-    *   [3.4 Enabling Xft support for dzen](#Enabling_Xft_support_for_dzen)
-    *   [3.5 Gadgets](#Gadgets)
-        *   [3.5.1 dbar](#dbar)
-        *   [3.5.2 gdbar](#gdbar)
-        *   [3.5.3 Others](#Others)
-*   [4 See also](#See_also)
+*   [2 Usage](#Usage)
+    *   [2.1 Options](#Options)
+*   [3 Making a pop-up with dzen](#Making_a_pop-up_with_dzen)
+*   [4 Configuration](#Configuration)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Using custom fonts with dzen](#Using_custom_fonts_with_dzen)
+    *   [5.2 Dzen and Conky](#Dzen_and_Conky)
+    *   [5.3 Clickable areas and popups](#Clickable_areas_and_popups)
+    *   [5.4 Gadgets](#Gadgets)
+        *   [5.4.1 dbar](#dbar)
+        *   [5.4.2 gdbar](#gdbar)
+        *   [5.4.3 Others](#Others)
+*   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dzen2](https://www.archlinux.org/packages/?name=dzen2) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories") which includes Xft, XPM, and Xinerama support.
+[Install](/index.php/Install "Install") the [dzen2](https://www.archlinux.org/packages/?name=dzen2) package, which includes Xft, XPM, and Xinerama support.
+
+## Usage
+
+Dzen receives string from a pipe and output it graphicaly, this fact makes dzen scriptable in any language. Example:
+
+```
+$ echo "Hello World" | dzen2 -p
+
+```
+
+### Options
+
+Dzen have a lot of options, follow below some of them:
+
+*   `-fg` Foreground color.
+*   `-bg` Background color.
+*   `-fn` Font.
+*   `-ta` Align the title window content, **l**(eft), **c**(enter), **r**(ight).
+*   `-tw` Width of the title window.
+*   `-sa` Align the slave window content. See `-ta`.
+*   `-l` Number of lines in the slave window.
+*   `-e` Events and action.
+*   `-m` Menu mode.
+*   `-u` Update contents of title and slave window simultaneously.
+*   `-p` Persist EOF (optional timeout in seconds).
+*   `-x` X position .
+*   `-y` Y position .
+*   `-h` Height of the line (default: fontheight + 2 pixels).
+*   `-w` Width of the window.
+*   `-v` Version.
+
+**Warning:** The *-u* option is depprecated.
+
+## Making a pop-up with dzen
+
+The follow code will open a dzen window in the top right corner of the screen. It will be 100px width, 15px height with a black foreground and white background (right button click to close dzen).
+
+```
+$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF'
+
+```
+
+Note that the window is with the number 3 in the middle, try to run the same code with `-l` option.
+
+```
+$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF' -l '2'
+
+```
+
+Now when you hover the mouse through the dzen it will uncollapse the slave window. If you click on the lines in the slave window nothing will happen, try to use the `-m` option.
+
+```
+$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF' -l '2' -m
+
+```
+
+Now if you click on the lines it will print the numbers in your terminal. This feature is useful to make menus.
+
+But if you want to center the numbers and align the title to the left, you will need the options: `-sa` and `-ta`.
+
+```
+$ seq 1 3 | dzen2 -p -w '100' -h '15' -fg '#000000' -bg '#FFFFFF' -l '2' -m -ta 'l' -sa 'c'
+
+```
+
+That's how dzen works.
 
 ## Configuration
 
@@ -42,7 +110,7 @@ Dzen follows the [X Logical Font Description](/index.php/X_Logical_Font_Descript
 
 ### Dzen and Conky
 
-[Conky](/index.php/Conky "Conky") can be used to pipe information directly to dzen for output in a status bar. This can be done with Conky in the official repositories and also with [conky-cli](https://aur.archlinux.org/packages/conky-cli/), a stripped-down version of the Conky status utility from the [AUR](/index.php/AUR "AUR").
+[Conky](/index.php/Conky "Conky") can be used to pipe information directly to dzen for output in a status bar. This can be done with Conky in the official repositories and also with [conky-cli](https://aur.archlinux.org/packages/conky-cli/), a stripped-down version of the Conky status utility.
 
 The following example displays the average load values in red and the current time in the default dzen foreground colour:
 
@@ -118,34 +186,13 @@ Save this script and make it executable and then use the `^ca()` attribute in yo
 
 This will bind the script to mouse button 1 and execute it when it is clicked over the text.
 
-### Enabling Xft support for dzen
-
-**Note:** You need to install the [libxft](https://www.archlinux.org/packages/?name=libxft) package.
-
-As of SVN revision 241 (development), dzen2 has optional support for Xft. To enable Xft support, build dzen2 with these options by editing `config.mk`:
-
- `config.mk` 
-```
- ## Option: With Xinerama and XPM and XFT
- LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lXinerama -lXpm $(pkg-config --libs xft)
- CFLAGS = -Wall -Os ${INCS} -DVERSION=\"${VERSION}\" -DDZEN_XINERAMA -DDZEN_XPM -DDZEN_XFT $(pkg-config --cflags xft)
-
-```
-
-To check libxft support, you can use this command:
-
-```
-echo "hello world" | dzen2 -fn 'Times New Roman' -p
-
-```
-
 ### Gadgets
 
 There are some gadgets on dzen that may be used to make a good customize. Follow below some of they with a brief explanation and examples.
 
 #### dbar
 
-Dbar receive a pipe from another command with any number and outputs a semi-graphical progress bar with it, by default the max number of *100%* is "100". The maximum and minimum values can be changed with `-max`/`-min` respectively.
+Dbar receive a pipe from another command with any number and outputs a semi-graphical progress bar with it, by default the max number of *100%* is `100`. The maximum and minimum values can be changed with `-max`/`-min` respectively.
 
 Output example:
 
@@ -175,9 +222,9 @@ See [README.dbar](https://github.com/robm/dzen/blob/master/gadgets/README.dbar) 
 
 Gdbar as well as [dbar](#dbar) outputs a progress bar based on a value of *100%*, but here it is full-graphical. Gdbar have the same options of dbar with some additional options. Some of the options are:
 
-*   *-fg* set the foreground.
-*   *-bg* set the background.
-*   *-w*/*-h* set the width and height respectively.
+*   `-fg` set the foreground.
+*   `-bg` set the background.
+*   `-w`/`-h` set the width and height respectively.
 
 Code example:
 

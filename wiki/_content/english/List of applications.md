@@ -441,7 +441,7 @@ This article is a general list of applications sorted by category, as a referenc
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK+ interfaces.
+*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with ncurses and GTK interfaces.
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || CLI: [wicd](https://www.archlinux.org/packages/?name=wicd), GUI: [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk)
 
@@ -577,7 +577,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Graphics and text mode web browser. Includes a console version similar to Lynx.
 
-	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links) or [links-g-directfb](https://aur.archlinux.org/packages/links-g-directfb/)
+	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
 
 *   **[Lynx](https://en.wikipedia.org/wiki/Lynx_(web_browser) "wikipedia:Lynx (web browser)")** — Text browser for the World Wide Web.
 
@@ -727,11 +727,11 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://wiki.gnome.org/Apps/Eolie](https://wiki.gnome.org/Apps/Eolie) || [eolie](https://www.archlinux.org/packages/?name=eolie)
 
-*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+*   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
 	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
-*   **[Lariza](/index.php/Lariza "Lariza")** — A simple, experimental web browser using GTK+ 3, GLib and WebKit2GTK+.
+*   **[Lariza](/index.php/Lariza "Lariza")** — A simple, experimental web browser using GTK 3, GLib and WebKit2GTK.
 
 	[https://www.uninformativ.de/git/lariza/](https://www.uninformativ.de/git/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
@@ -739,7 +739,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
-*   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
+*   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK and WebKit.
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
@@ -995,7 +995,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[http://www.frostwire.com/](http://www.frostwire.com/) || [frostwire](https://aur.archlinux.org/packages/frostwire/)
 
-*   **gtk-youtube-viewer** — GTK+ utility for viewing YouTube videos.
+*   **gtk-youtube-viewer** — GTK utility for viewing YouTube videos.
 
 	[https://github.com/trizen/youtube-viewer](https://github.com/trizen/youtube-viewer) || [youtube-viewer](https://www.archlinux.org/packages/?name=youtube-viewer) + [gtk2-perl](https://www.archlinux.org/packages/?name=gtk2-perl) + [perl-file-sharedir](https://www.archlinux.org/packages/?name=perl-file-sharedir)
 
@@ -1031,7 +1031,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://sourceforge.net/projects/streamtuner2/](https://sourceforge.net/projects/streamtuner2/) || [streamtuner2](https://aur.archlinux.org/packages/streamtuner2/)
 
-*   **uGet** — GTK+ download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
+*   **uGet** — GTK download manager featuring download classification and HTML import. Supports HTTP, FTP, BitTorrent, Metalink, YouTube and Mega.
 
 	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
 
@@ -1279,15 +1279,19 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
+*   **[Tixati](https://en.wikipedia.org/wiki/Tixati "wikipedia:Tixati")** — Tixati is a peer-to-peer file sharing program that uses the popular BitTorrent protocol.
+
+	[https://tixati.com/](https://tixati.com/) || [tixati](https://aur.archlinux.org/packages/tixati/)
+
 *   **Torrential** — Simple torrent client for elementary OS.
 
 	[https://github.com/davidmhewitt/torrential](https://github.com/davidmhewitt/torrential) || [torrential](https://aur.archlinux.org/packages/torrential/)
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with a daemon version and multiple front-ends.
 
-	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
+	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
 
-*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK+ client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
+*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
 
 	[https://github.com/transmission-remote-gtk/transmission-remote-gtk](https://github.com/transmission-remote-gtk/transmission-remote-gtk) || [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
 
@@ -1307,15 +1311,15 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 See also [Wikipedia:Comparison of file-sharing applications](https://en.wikipedia.org/wiki/Comparison_of_file-sharing_applications "wikipedia:Comparison of file-sharing applications").
 
-*   **[aMule](/index.php/AMule "AMule")** — Well-known eDonkey/Kad client with a daemon version and GTK+, web, and CLI front-ends.
+*   **[aMule](/index.php/AMule "AMule")** — Well-known eDonkey/Kad client with a daemon version and GTK, web, and CLI front-ends.
 
 	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
 
 *   **EiskaltDC++** — Direct Connect and ADC client.
 
-	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK+: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
+	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
 
-*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK+ server/client for the Gnutella peer-to-peer network.
+*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK server/client for the Gnutella peer-to-peer network.
 
 	[http://gtk-gnutella.sourceforge.net/](http://gtk-gnutella.sourceforge.net/) || [gtk-gnutella](https://aur.archlinux.org/packages/gtk-gnutella/)
 
@@ -1507,11 +1511,11 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
-*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK+ email client.
+*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK email client.
 
 	[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
-*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client from Mozilla written in GTK+.
+*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client from Mozilla written in GTK.
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
@@ -1691,6 +1695,10 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
+*   **Tiny** — an IRC client written in Rust with a clutter-free interface
+
+	[https://github.com/osa1/tiny](https://github.com/osa1/tiny) || [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/)
+
 **Comparison**
 
 | Name | Package | Written in | Extensible | [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer "wikipedia:Simple Authentication and Security Layer") |
@@ -1702,6 +1710,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 | [ScrollZ](http://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
 | [sic](https://tools.suckless.org/sic/) | [sic](https://aur.archlinux.org/packages/sic/) | C | stdin/stdout | No |
 | [WeeChat](/index.php/WeeChat "WeeChat") | [weechat](https://www.archlinux.org/packages/?name=weechat) | C | [multiple languages](https://weechat.org/files/doc/stable/weechat_scripting.en.html) | Yes |
+| [osa1/tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
 
 ###### Graphical
 
@@ -1717,11 +1726,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://kvirc.net/](http://kvirc.net/) || [kvirc-git](https://aur.archlinux.org/packages/kvirc-git/)
 
-*   **Loqui** — GTK+ IRC client.
+*   **Loqui** — GTK IRC client.
 
 	[https://launchpad.net/loqui](https://launchpad.net/loqui) || [loqui](https://aur.archlinux.org/packages/loqui/)
 
-*   **LostIRC** — Simple GTK+ IRC client with tab-autocompletion, multiple server support, logging and others.
+*   **LostIRC** — Simple GTK IRC client with tab-autocompletion, multiple server support, logging and others.
 
 	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)
 
@@ -1733,7 +1742,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **Srain** — Modern, beautiful IRC client written in GTK+ 3.
+*   **Srain** — Modern, beautiful IRC client written in GTK 3.
 
 	[https://srain.im/](https://srain.im/) || [srain](https://aur.archlinux.org/packages/srain/)
 
@@ -2205,7 +2214,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 	[http://jangernert.github.io/FeedReader/](http://jangernert.github.io/FeedReader/) || [feedreader](https://www.archlinux.org/packages/?name=feedreader)
 
-*   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
+*   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK news aggregator for online news feeds and weblogs.
 
 	[https://lzone.de/liferea/](https://lzone.de/liferea/) || [liferea](https://www.archlinux.org/packages/?name=liferea)
 
@@ -2271,11 +2280,11 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 	[https://gitlab.gnome.org/World/podcasts](https://gitlab.gnome.org/World/podcasts) || [gnome-podcasts](https://www.archlinux.org/packages/?name=gnome-podcasts)
 
-*   **gPodder** — Podcast client and media aggregator (GTK+ interface).
+*   **gPodder** — Podcast client and media aggregator (GTK interface).
 
 	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
 
-*   **Vocal** — Simple podcast client for the Modern Desktop (GTK+).
+*   **Vocal** — Simple podcast client for the Modern Desktop (GTK).
 
 	[http://vocalproject.net/](http://vocalproject.net/) || [vocal](https://www.archlinux.org/packages/?name=vocal)
 
@@ -2313,7 +2322,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[https://nzbget.net/](https://nzbget.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
 
-*   **[Pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — GTK+ Usenet newsreader that's good at both text and binaries.
+*   **[Pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — GTK Usenet newsreader that's good at both text and binaries.
 
 	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
@@ -2353,11 +2362,11 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[http://choqok.gnufolks.org/](http://choqok.gnufolks.org/) || [choqok](https://www.archlinux.org/packages/?name=choqok)
 
-*   **Corebird** — Native GTK+ Twitter client for the Linux desktop.
+*   **Corebird** — Native GTK Twitter client for the Linux desktop.
 
 	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird](https://aur.archlinux.org/packages/corebird/)
 
-*   **Mikutter** — Simple, powerful Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
+*   **Mikutter** — Simple, powerful Twitter client using [GTK](/index.php/GTK "GTK") and Ruby.
 
 	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/)
 
@@ -2451,7 +2460,7 @@ See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remot
 
 	[https://www.kde.org/applications/internet/krdc/](https://www.kde.org/applications/internet/krdc/) || [krdc](https://www.archlinux.org/packages/?name=krdc)
 
-*   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK+. Supports RDP, VNC, NX, XDMCP and SSH.
+*   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK. Supports RDP, VNC, NX, XDMCP and SSH.
 
 	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
 
@@ -2567,7 +2576,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **GPicView** — Simple and fast image viewer for X, which is part of the [LXDE](/index.php/LXDE "LXDE") desktop.
 
-	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK+ 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK+ 3: [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3)
+	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK 3: [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3)
 
 *   **[Gwenview](https://en.wikipedia.org/wiki/Gwenview "wikipedia:Gwenview")** — Fast and easy to use image viewer for the KDE desktop.
 
@@ -2617,7 +2626,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/easymodo/qimgv/](https://github.com/easymodo/qimgv/) || [qimgv](https://aur.archlinux.org/packages/qimgv/)
 
-*   **Quick Image Viewer** — Very small and fast image viewer based on GTK+ and imlib2.
+*   **Quick Image Viewer** — Very small and fast image viewer based on GTK and imlib2.
 
 	[http://spiegl.de/qiv/](http://spiegl.de/qiv/) || [qiv](https://www.archlinux.org/packages/?name=qiv)
 
@@ -2637,7 +2646,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/muennich/sxiv](https://github.com/muennich/sxiv) || [sxiv](https://www.archlinux.org/packages/?name=sxiv)
 
-*   **Viewnior** — Minimalistic GTK+ image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
+*   **Viewnior** — Minimalistic GTK image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
 
 	[http://siyanpanayotov.com/project/viewnior/](http://siyanpanayotov.com/project/viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
 
@@ -2821,7 +2830,7 @@ Some image viewers and organizers like [digiKam](https://en.wikipedia.org/wiki/d
 
 	[https://oqapy.eu/](https://oqapy.eu/) || [oqapy](https://aur.archlinux.org/packages/oqapy/)
 
-*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK+.
+*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK.
 
 	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)
 
@@ -2833,7 +2842,7 @@ Some image viewers and organizers like [digiKam](https://en.wikipedia.org/wiki/d
 
 See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
 
-*   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK+-based diagram creation program.
+*   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK-based diagram creation program.
 
 	[https://wiki.gnome.org/Apps/Dia](https://wiki.gnome.org/Apps/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
 
@@ -2989,15 +2998,15 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[https://www.deepin.org/en/original/deepin-picker/](https://www.deepin.org/en/original/deepin-picker/) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
 
-*   **delicolour** — Lightweight GTK+ 3 color finder.
+*   **delicolour** — Lightweight GTK 3 color finder.
 
 	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [delicolour](https://aur.archlinux.org/packages/delicolour/)
 
-*   **gcolor2** — Simple GTK+ 2 color selector.
+*   **gcolor2** — Simple GTK 2 color selector.
 
 	[http://gcolor2.sourceforge.net/](http://gcolor2.sourceforge.net/) || [gcolor2](https://www.archlinux.org/packages/?name=gcolor2)
 
-*   **Gcolor3** — Simple GTK+ 3 color selector.
+*   **Gcolor3** — Simple GTK 3 color selector.
 
 	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://www.archlinux.org/packages/?name=gcolor3)
 
@@ -3085,7 +3094,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 ###### GStreamer-based
 
-*   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK+ and [Mono](/index.php/Mono "Mono"), feature-rich.
+*   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK and [Mono](/index.php/Mono "Mono"), feature-rich.
 
 	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
@@ -3093,11 +3102,11 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
-*   **Cozy** — Modern audio book player for Linux using GTK+ 3.
+*   **Cozy** — Modern audio book player for Linux using GTK 3.
 
 	[https://github.com/geigi/cozy](https://github.com/geigi/cozy) || [cozy-audiobooks](https://aur.archlinux.org/packages/cozy-audiobooks/)
 
-*   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
+*   **[Exaile](/index.php/Exaile "Exaile")** — GTK clone of Amarok.
 
 	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
 
@@ -3109,7 +3118,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://wiki.gnome.org/Apps/Music](https://wiki.gnome.org/Apps/Music) || [gnome-music](https://www.archlinux.org/packages/?name=gnome-music)
 
-*   **Gradio** — GTK+ 3 application for finding and listening to internet radio stations.
+*   **Gradio** — GTK 3 application for finding and listening to internet radio stations.
 
 	[https://github.com/haecker-felix/gradio](https://github.com/haecker-felix/gradio) || [gradio](https://aur.archlinux.org/packages/gradio/)
 
@@ -3137,7 +3146,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://pithos.github.io/](https://pithos.github.io/) || [pithos](https://aur.archlinux.org/packages/pithos/)
 
-*   **Pragha** — GTK+ music manager. (fork of the Consonance Music Manager)
+*   **Pragha** — GTK music manager. (fork of the Consonance Music Manager)
 
 	[https://pragha-music-player.github.io/](https://pragha-music-player.github.io/) || [pragha](https://www.archlinux.org/packages/?name=pragha)
 
@@ -3149,7 +3158,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://github.com/ebruck/radiotray-ng](https://github.com/ebruck/radiotray-ng) || [radiotray-ng](https://aur.archlinux.org/packages/radiotray-ng/)
 
-*   **[Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox")** — GTK+ clone of iTunes, used by default in GNOME.
+*   **[Rhythmbox](/index.php/Rhythmbox "Rhythmbox")** — GTK clone of iTunes, used by default in GNOME.
 
 	[https://wiki.gnome.org/Apps/Rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox) || [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox)
 
@@ -3211,7 +3220,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[http://audacious-media-player.org/](http://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
 
-*   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK+ GUI, comes with many plugins, and has a metadata editor.
+*   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK GUI, comes with many plugins, and has a metadata editor.
 
 	[http://deadbeef.sourceforge.net/](http://deadbeef.sourceforge.net/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
 
@@ -3229,7 +3238,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **LXMusic** — A minimalist xmms2-based music player.
 
-	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK+ 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK+ 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
+	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
 
 *   **museeks** — Minimalistic and easy to use music player. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -3547,6 +3556,10 @@ See also [LilyPond#Front-ends](/index.php/LilyPond#Front-ends "LilyPond") and [W
 
 	[https://sourceforge.net/projects/canorus/](https://sourceforge.net/projects/canorus/) || [canorus](https://www.archlinux.org/packages/?name=canorus)
 
+*   **[GNU Denemo](https://en.wikipedia.org/wiki/Denemo "wikipedia:Denemo")** — Denemo is a free music notation program for GNU/Linux, Mac OSX and Windows that lets you rapidly enter notation which it typesets using the [LilyPond](/index.php/LilyPond "LilyPond") music engraver. Music can be typed in at the PC-Keyboard [(watch demo)](https://vimeo.com/65174334), or played in via MIDI controller [(watch demo)](https://vimeo.com/61994482), or input acoustically into a microphone plugged into your computer's soundcard.
+
+	[http://www.denemo.org/](http://www.denemo.org/) || [denemo](https://aur.archlinux.org/packages/denemo/)
+
 *   **[Impro-Visor](https://en.wikipedia.org/wiki/Impro-Visor "wikipedia:Impro-Visor")** — Music notation program designed to help jazz musicians compose and hear solos similar to ones that might be improvised.
 
 	[https://www.cs.hmc.edu/~keller/jazz/improvisor/](https://www.cs.hmc.edu/~keller/jazz/improvisor/) || [impro-visor](https://aur.archlinux.org/packages/impro-visor/)
@@ -3751,7 +3764,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 	[https://karlstav.github.io/cava/](https://karlstav.github.io/cava/) || [cava](https://aur.archlinux.org/packages/cava/)
 
-*   **Cavalcade** — GTK+ GUI for C.A.V.A.
+*   **Cavalcade** — GTK GUI for C.A.V.A.
 
 	[https://github.com/worron/cavalcade/](https://github.com/worron/cavalcade/) || [cavalcade](https://aur.archlinux.org/packages/cavalcade/)
 
@@ -3887,7 +3900,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
 
-*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer") and GTK+. Precompiled and no Haskell dependency in run-time.
+*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer") and GTK. Precompiled and no Haskell dependency in run-time.
 
 	[https://lettier.github.io/movie-monad/](https://lettier.github.io/movie-monad/) || [movie-monad](https://aur.archlinux.org/packages/movie-monad/)
 
@@ -3911,7 +3924,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://github.com/gyunaev/spivak](https://github.com/gyunaev/spivak) || [spivak](https://aur.archlinux.org/packages/spivak/)
 
-*   **Xnoise** — GTK+ and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
+*   **Xnoise** — GTK and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
 
 	[http://www.xnoise-media-player.com/](http://www.xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
 
@@ -3925,7 +3938,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://www.deepin.org/en/original/deepin-movie/](https://www.deepin.org/en/original/deepin-movie/) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
-*   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK+ 3).
+*   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK 3).
 
 	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
@@ -3939,7 +3952,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
-	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
+	[https://gitlab.com/mpc-qt/mpc-qt](https://gitlab.com/mpc-qt/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
 
 *   **[mpv](/index.php/Mpv "Mpv")** — Very basic GUI for mpv. Can be launched with `mpv --player-operation-mode=pseudo-gui`.
 
@@ -3955,7 +3968,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 ###### MPlayer-based
 
-*   **GNOME MPlayer** — Simple GTK+-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
+*   **GNOME MPlayer** — Simple GTK-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
 
 	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
@@ -4053,7 +4066,7 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 	[https://sites.google.com/site/ffmulticonverter/](https://sites.google.com/site/ffmulticonverter/) || [ffmulticonverter](https://aur.archlinux.org/packages/ffmulticonverter/)
 
-*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
+*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 
@@ -4175,7 +4188,7 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 
 	[https://github.com/SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit) || [subtitleedit](https://aur.archlinux.org/packages/subtitleedit/)
 
-*   **Subtitle Editor** — GTK+3 tool to edit subtitles for GNU/Linux/*BSD.
+*   **Subtitle Editor** — GTK 3 tool to edit subtitles for GNU/Linux/*BSD.
 
 	[http://kitone.github.io/subtitleeditor/](http://kitone.github.io/subtitleeditor/) || [subtitleeditor](https://www.archlinux.org/packages/?name=subtitleeditor)
 
@@ -4197,7 +4210,7 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 *   **[Guvcview](https://en.wikipedia.org/wiki/Guvcview "wikipedia:Guvcview")** — Simple interface for capturing and viewing video from v4l2 devices.
 
-	[http://guvcview.sourceforge.net/](http://guvcview.sourceforge.net/) || GTK+: [guvcview](https://www.archlinux.org/packages/?name=guvcview), Qt: [guvcview-qt](https://www.archlinux.org/packages/?name=guvcview-qt)
+	[http://guvcview.sourceforge.net/](http://guvcview.sourceforge.net/) || GTK: [guvcview](https://www.archlinux.org/packages/?name=guvcview), Qt: [guvcview-qt](https://www.archlinux.org/packages/?name=guvcview-qt)
 
 *   **Kamoso** — Webcam recorder from KDE community.
 
@@ -4401,7 +4414,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
 
-*   **[gtkpod](https://en.wikipedia.org/wiki/gtkpod "wikipedia:gtkpod")** — GUI for Apple's iPod using GTK+. It allows you to import your existing iTunes database, add songs, podcasts, videos and cover art, and to edit ID3 tags.
+*   **[gtkpod](https://en.wikipedia.org/wiki/gtkpod "wikipedia:gtkpod")** — GUI for Apple's iPod using GTK. It allows you to import your existing iTunes database, add songs, podcasts, videos and cover art, and to edit ID3 tags.
 
 	[https://sourceforge.net/projects/gtkpod/](https://sourceforge.net/projects/gtkpod/) || [gtkpod](https://aur.archlinux.org/packages/gtkpod/)
 
@@ -4549,7 +4562,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
-*   **sakura** — Terminal emulator based on GTK+ and VTE.
+*   **sakura** — Terminal emulator based on GTK and VTE.
 
 	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
 
@@ -4767,7 +4780,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 
-	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK+: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
+	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
 
 *   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — File manager that implements the popular two-panel design.
 
@@ -4785,7 +4798,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 	[http://www.mucommander.com/](http://www.mucommander.com/) || [mucommander](https://aur.archlinux.org/packages/mucommander/)
 
-*   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK+ multi-panel tabbed file manager.
+*   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK multi-panel tabbed file manager.
 
 	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
@@ -4849,7 +4862,7 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 *   **[Syncthing](/index.php/Syncthing "Syncthing")** — Continuous file synchronization program. It synchronizes files between two or more computers in a simple way without advanced configuration.
 
-	[https://syncthing.net/](https://syncthing.net/) || Web: [syncthing](https://www.archlinux.org/packages/?name=syncthing), GTK+: [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
+	[https://syncthing.net/](https://syncthing.net/) || Web: [syncthing](https://www.archlinux.org/packages/?name=syncthing), GTK: [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
 
 *   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
 
@@ -4887,15 +4900,15 @@ For archiving and compression command-line tools, see [Archiving and compression
 
 *   **[PeaZip](https://en.wikipedia.org/wiki/PeaZip "wikipedia:PeaZip")** — Open source file and archive manager.
 
-	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || GTK+: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
+	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || GTK: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
 
 *   **Squeeze** — Featherweight front-end for commandline archiving tools.
 
 	[http://squeeze.xfce.org/](http://squeeze.xfce.org/) || [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)
 
-*   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK+.
+*   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK.
 
-	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || GTK+ 3: [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), GTK+ 2: [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
+	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || GTK 3: [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), GTK 2: [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
 
 #### Comparison, diff, merge
 
@@ -4935,7 +4948,7 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 #### Batch renamers
 
-*   **[GPRename](https://en.wikipedia.org/wiki/GPRename "wikipedia:GPRename")** — GTK+ batch renamer for files and directories.
+*   **[GPRename](https://en.wikipedia.org/wiki/GPRename "wikipedia:GPRename")** — GTK batch renamer for files and directories.
 
 	[http://gprename.sourceforge.net](http://gprename.sourceforge.net) || [gprename](https://www.archlinux.org/packages/?name=gprename)
 
@@ -5003,7 +5016,7 @@ These programs index your files to allow for quick searching.
 
 	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
 
-*   **fsearch** — A fast file search utility for Unix-like systems based on GTK+3.
+*   **fsearch** — A fast file search utility for Unix-like systems based on GTK 3.
 
 	[https://github.com/cboxdoerfer/fsearch](https://github.com/cboxdoerfer/fsearch) || [fsearch-git](https://aur.archlinux.org/packages/fsearch-git/)
 
@@ -5355,7 +5368,7 @@ And then there are also:
 
 	[http://www.fltk.org/](http://www.fltk.org/) || [fltk](https://www.archlinux.org/packages/?name=fltk)
 
-*   **[Glade](https://en.wikipedia.org/wiki/Glade_Interface_Designer "wikipedia:Glade Interface Designer")** — Create or open user interface designs for GTK+ applications.
+*   **[Glade](https://en.wikipedia.org/wiki/Glade_Interface_Designer "wikipedia:Glade Interface Designer")** — Create or open user interface designs for GTK applications.
 
 	[https://glade.gnome.org/](https://glade.gnome.org/) || [glade](https://www.archlinux.org/packages/?name=glade)
 
@@ -5577,7 +5590,7 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 	[https://gitlab.gnome.org/GNOME/gnome-characters](https://gitlab.gnome.org/GNOME/gnome-characters) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
 
-*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK+ 3 character selector for GNOME.
+*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK 3 character selector for GNOME.
 
 	[https://wiki.gnome.org/Apps/Gucharmap](https://wiki.gnome.org/Apps/Gucharmap) || [gucharmap](https://www.archlinux.org/packages/?name=gucharmap)
 
@@ -5879,7 +5892,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://projects.l3ib.org/fsniper/](http://projects.l3ib.org/fsniper/) || [fsniper](https://aur.archlinux.org/packages/fsniper/)
 
-*   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK+](/index.php/GTK%2B "GTK+") with many plug-ins.
+*   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK](/index.php/GTK "GTK") with many plug-ins.
 
 	[http://billw2.github.io/gkrellm/gkrellm.html](http://billw2.github.io/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)
 
@@ -6003,7 +6016,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 See also [Wikipedia:Font management software](https://en.wikipedia.org/wiki/Font_management_software "wikipedia:Font management software").
 
-*   **Font Manager** — Simple font management for GTK+ desktop environments.
+*   **Font Manager** — Simple font management for GTK desktop environments.
 
 	[https://fontmanager.github.io/](https://fontmanager.github.io/) || [font-manager](https://aur.archlinux.org/packages/font-manager/)
 
@@ -6023,7 +6036,7 @@ See also [Wikipedia:Font management software](https://en.wikipedia.org/wiki/Font
 
 	[https://github.com/mate-desktop/mate-control-center](https://github.com/mate-desktop/mate-control-center) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
-*   **Waterfall** — GTK+ application to view all characters of font in all sizes.
+*   **Waterfall** — GTK application to view all characters of font in all sizes.
 
 	[https://keithp.com/cgit/gwaterfall.git](https://keithp.com/cgit/gwaterfall.git) || [gwaterfall](https://www.archlinux.org/packages/?name=gwaterfall)
 
@@ -6169,7 +6182,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://atom.io/](https://atom.io/) || [atom](https://www.archlinux.org/packages/?name=atom)
 
-*   **Beaver** — GTK+ editor designed to be modular, lightweight and stylish.
+*   **Beaver** — GTK editor designed to be modular, lightweight and stylish.
 
 	[http://beaver-editor.sourceforge.net/](http://beaver-editor.sourceforge.net/) || [beaver](https://www.archlinux.org/packages/?name=beaver)
 
@@ -6201,7 +6214,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.fltk.org/](http://www.fltk.org/) || [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)
 
-*   **[gedit](https://en.wikipedia.org/wiki/gedit "wikipedia:gedit")** — GTK+ editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
+*   **[gedit](https://en.wikipedia.org/wiki/gedit "wikipedia:gedit")** — GTK editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
 
 	[https://wiki.gnome.org/Apps/Gedit](https://wiki.gnome.org/Apps/Gedit) || [gedit](https://www.archlinux.org/packages/?name=gedit)
 
@@ -6229,11 +6242,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.kde.org/applications/utilities/kwrite](https://www.kde.org/applications/utilities/kwrite) || [kwrite](https://www.archlinux.org/packages/?name=kwrite)
 
-*   **L3afpad** — Simple text editor forked from Leafpad, supports GTK+ 3.
+*   **L3afpad** — Simple text editor forked from Leafpad, supports GTK 3.
 
 	[https://github.com/stevenhoneyman/l3afpad](https://github.com/stevenhoneyman/l3afpad) || [l3afpad](https://www.archlinux.org/packages/?name=l3afpad)
 
-*   **[Leafpad](https://en.wikipedia.org/wiki/Leafpad "wikipedia:Leafpad")** — Notepad clone for GTK+ that emphasizes simplicity.
+*   **[Leafpad](https://en.wikipedia.org/wiki/Leafpad "wikipedia:Leafpad")** — Notepad clone for GTK that emphasizes simplicity.
 
 	[http://tarot.freeshell.org/leafpad](http://tarot.freeshell.org/leafpad) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
 
@@ -6419,7 +6432,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.openoffice.org/product/writer.html](http://www.openoffice.org/product/writer.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
-*   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK+-based rich text processor (with footnote support).
+*   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK-based rich text processor (with footnote support).
 
 	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
 
@@ -6697,7 +6710,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 	[https://github.com/retext-project/retext](https://github.com/retext-project/retext) || [retext](https://www.archlinux.org/packages/?name=retext)
 
-*   **[UberWriter](https://en.wikipedia.org/wiki/UberWriter "wikipedia:UberWriter")** — Elegant, free distraction GTK+ Markdown editor.
+*   **[UberWriter](https://en.wikipedia.org/wiki/UberWriter "wikipedia:UberWriter")** — Elegant, free distraction GTK Markdown editor.
 
 	[http://uberwriter.wolfvollprecht.de/](http://uberwriter.wolfvollprecht.de/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
 
@@ -6741,7 +6754,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://wiki.gnome.org/Apps/GNOME-LaTeX](https://wiki.gnome.org/Apps/GNOME-LaTeX) || [gnome-latex](https://www.archlinux.org/packages/?name=gnome-latex)
 
-*   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK+-based editor. It features a continuous preview mode, integrated BibTeX support, extendable snippet interface and multi-document support.
+*   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK-based editor. It features a continuous preview mode, integrated BibTeX support, extendable snippet interface and multi-document support.
 
 	[https://github.com/alexandervdm/gummi/](https://github.com/alexandervdm/gummi/) || [gummi](https://www.archlinux.org/packages/?name=gummi)
 
@@ -7001,9 +7014,9 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 #### Graphical
 
-*   **gImageReader** — Graphical GTK+/Qt frontend to Tesseract.
+*   **gImageReader** — Graphical GTK/Qt frontend to Tesseract.
 
-	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || GTK+: [gimagereader-gtk](https://www.archlinux.org/packages/?name=gimagereader-gtk), Qt: [gimagereader-qt](https://www.archlinux.org/packages/?name=gimagereader-qt)
+	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || GTK: [gimagereader-gtk](https://www.archlinux.org/packages/?name=gimagereader-gtk), Qt: [gimagereader-qt](https://www.archlinux.org/packages/?name=gimagereader-qt)
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
@@ -7095,7 +7108,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://joplin.cozic.net/](https://joplin.cozic.net/) || [joplin](https://aur.archlinux.org/packages/joplin/)
 
-*   **KeepNote** — Cross-platform GTK+ note-taking application with rich text formatting.
+*   **KeepNote** — Cross-platform GTK note-taking application with rich text formatting.
 
 	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
@@ -7219,7 +7232,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 #### Diary
 
-*   **Almanah** — Small GTK+ application to allow you to keep a diary of your life.
+*   **Almanah** — Small GTK application to allow you to keep a diary of your life.
 
 	[https://wiki.gnome.org/Apps/Almanah_Diary](https://wiki.gnome.org/Apps/Almanah_Diary) || [almanah](https://www.archlinux.org/packages/?name=almanah)
 
@@ -7367,7 +7380,7 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 
 	[http://artha.sourceforge.net/](http://artha.sourceforge.net/) || [artha](https://aur.archlinux.org/packages/artha/)
 
-*   **Gjiten Kai** — Rewrite of Gjiten, a GTK+ Japanese dictionary.
+*   **Gjiten Kai** — Rewrite of Gjiten, a GTK Japanese dictionary.
 
 	[http://odrevet.github.io/gjitenkai/](http://odrevet.github.io/gjitenkai/) || [gjitenkai-git](https://aur.archlinux.org/packages/gjitenkai-git/)
 
@@ -7507,7 +7520,7 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 *   **ZBarCam GUI** — Simple GUI for ZBar to read bar codes from various sources.
 
-	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK+: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
+	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
 
 *   **Zint Barcode Studio** — Barcode generator GUI.
 
@@ -7605,7 +7618,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
 
-*   **pyNeighborhood** — GTK+ based SMB/CIFS browsing utility.
+*   **pyNeighborhood** — GTK-based SMB/CIFS browsing utility.
 
 	[https://launchpad.net/pyneighborhood](https://launchpad.net/pyneighborhood) || [pyneighborhood](https://www.archlinux.org/packages/?name=pyneighborhood)
 
@@ -7673,7 +7686,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 *   **[OpenVAS](/index.php/OpenVAS "OpenVAS")** — Framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. FOSS Nessus fork.
 
-	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/groups/x86_64/openvas/)
+	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/packages/?name=openvas)
 
 *   **OSSEC** — Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.
 
@@ -7735,7 +7748,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 See also [Synchronization and backup programs#Incremental backups](/index.php/Synchronization_and_backup_programs#Incremental_backups "Synchronization and backup programs") and [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
 
-*   **Déjà Dup** — Simple GTK+ backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses [duplicity](/index.php/Duplicity "Duplicity") as the backend.
+*   **Déjà Dup** — Simple GTK backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses [duplicity](/index.php/Duplicity "Duplicity") as the backend.
 
 	[https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
 
@@ -7923,7 +7936,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://www.kde.org/applications/system/kwalletmanager/](https://www.kde.org/applications/system/kwalletmanager/) || [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager)
 
-*   **OTPClient** — Highly secure and easy to use GTK+ software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
+*   **OTPClient** — Highly secure and easy to use GTK software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
 
 	[https://github.com/paolostivanin/OTPClient](https://github.com/paolostivanin/OTPClient) || [otpclient](https://aur.archlinux.org/packages/otpclient/)
 
@@ -7967,7 +7980,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://aur.archlinux.org/packages/cfv/)
 
-*   **GtkHash** — A GTK+ utility for computing message digests or checksums
+*   **GtkHash** — A GTK utility for computing message digests or checksums
 
 	[http://gtkhash.sourceforge.net/](http://gtkhash.sourceforge.net/) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)
 
@@ -7987,7 +8000,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://github.com/rhash/RHash/](https://github.com/rhash/RHash/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
 
-*   **MassHash** — A set of file hashing tools (both CLI and GTK+ GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
+*   **MassHash** — A set of file hashing tools (both CLI and GTK GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
 
 	[http://jdleicher.github.io/MassHash/](http://jdleicher.github.io/MassHash/) || [masshash](https://aur.archlinux.org/packages/masshash/)
 
@@ -8079,9 +8092,9 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 
-*   **galculator** — GTK+ based scientific calculator.
+*   **galculator** — GTK-based scientific calculator.
 
-	[http://galculator.mnim.org/](http://galculator.mnim.org/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
+	[http://galculator.mnim.org/](http://galculator.mnim.org/) || GTK 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
 
 *   **[Genius](https://en.wikipedia.org/wiki/Genius_(mathematics_software) "wikipedia:Genius (mathematics software)")** — Advanced calculator including a mathematical programming language.
 
@@ -8369,7 +8382,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://bkchem.zirael.org/](http://bkchem.zirael.org/) || [bkchem](https://aur.archlinux.org/packages/bkchem/)
 
-*   **[Chemtool](https://en.wikipedia.org/wiki/Chemtool "wikipedia:Chemtool")** — GTK+-based program for drawing chemical structural formulas.
+*   **[Chemtool](https://en.wikipedia.org/wiki/Chemtool "wikipedia:Chemtool")** — GTK-based program for drawing chemical structural formulas.
 
 	[http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html](http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html) || [chemtool](https://www.archlinux.org/packages/?name=chemtool)
 
@@ -8509,7 +8522,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[https://subsurface-divelog.org/](https://subsurface-divelog.org/) || [subsurface](https://www.archlinux.org/packages/?name=subsurface)
 
-*   **Viking** — GTK+2 application to manage GPS data.
+*   **Viking** — GTK 2 application to manage GPS data.
 
 	[https://sourceforge.net/projects/viking/](https://sourceforge.net/projects/viking/) || [viking](https://www.archlinux.org/packages/?name=viking)
 
@@ -8703,7 +8716,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
 
-*   **GTKWave** — Fully featured GTK+ based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
+*   **GTKWave** — Fully featured GTK-based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
 
 	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://www.archlinux.org/packages/?name=gtkwave)
 
@@ -8859,7 +8872,7 @@ These applications support time, task and contacts management.
 
 	[http://www.kontact.org/](http://www.kontact.org/) || [kontact](https://www.archlinux.org/packages/?name=kontact)
 
-*   **Osmo** — GTK+ personal organizer, which includes calendar, tasks manager and address book modules.
+*   **Osmo** — GTK personal organizer, which includes calendar, tasks manager and address book modules.
 
 	[http://clayo.org/osmo/](http://clayo.org/osmo/) || [osmo](https://www.archlinux.org/packages/?name=osmo)
 
@@ -8937,7 +8950,7 @@ These applications support time, task and contacts management.
 
 	[https://github.com/nextcloud/calendar](https://github.com/nextcloud/calendar) || [nextcloud-app-calendar](https://www.archlinux.org/packages/?name=nextcloud-app-calendar)
 
-*   **Orage** — GTK+ calendar and task manager often seen integrated with Xfce.
+*   **Orage** — GTK calendar and task manager often seen integrated with Xfce.
 
 	[http://www.xfce.org/projects](http://www.xfce.org/projects) || [orage](https://www.archlinux.org/packages/?name=orage)
 
@@ -9003,7 +9016,7 @@ These applications support time, task and contacts management.
 
 	[https://slgobinath.github.io/SafeEyes/](https://slgobinath.github.io/SafeEyes/) || [safeeyes](https://aur.archlinux.org/packages/safeeyes/)
 
-*   **Tider** — Lightweight time tracking application (GTK+)
+*   **Tider** — Lightweight time tracking application (GTK)
 
 	[http://pusto.org/en/tider/](http://pusto.org/en/tider/) || [tider-git](https://aur.archlinux.org/packages/tider-git/)
 
@@ -9073,7 +9086,7 @@ These applications support time, task and contacts management.
 
 	[https://github.com/nextcloud/tasks](https://github.com/nextcloud/tasks) || [nextcloud-app-tasks](https://www.archlinux.org/packages/?name=nextcloud-app-tasks)
 
-*   **ptask** — GTK+ task manager based on [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior").
+*   **ptask** — GTK task manager based on [Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior").
 
 	[https://wpitchoune.net/ptask/](https://wpitchoune.net/ptask/) || [ptask](https://aur.archlinux.org/packages/ptask/)
 
@@ -9381,7 +9394,7 @@ See also [Wikipedia:Comparison of speech synthesizers](https://en.wikipedia.org/
 
 	[http://festvox.org/flite/](http://festvox.org/flite/) || [flite](https://www.archlinux.org/packages/?name=flite)
 
-*   **Gespeaker** — GTK+ frontend for espeak. It allows you to play a text in many languages with settings for voice, pitch, volume and speed.
+*   **Gespeaker** — GTK frontend for espeak. It allows you to play a text in many languages with settings for voice, pitch, volume and speed.
 
 	[https://muflone.com/jekyll/gespeaker/english/](https://muflone.com/jekyll/gespeaker/english/) || [gespeaker](https://aur.archlinux.org/packages/gespeaker/)
 
@@ -9615,7 +9628,7 @@ See also [Wikipedia:Taskbar](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Ta
 
 	[http://stalonetray.sourceforge.net/](http://stalonetray.sourceforge.net/) || [stalonetray](https://www.archlinux.org/packages/?name=stalonetray)
 
-*   **Trayer** — Lightweight GTK+-based system tray (notification area).
+*   **Trayer** — Lightweight GTK-based system tray (notification area).
 
 	[https://gna.org/projects/fvwm-crystal/](https://gna.org/projects/fvwm-crystal/) || [trayer](https://www.archlinux.org/packages/?name=trayer)
 
@@ -9655,11 +9668,11 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 	[https://github.com/Antithesisx/dswitcher](https://github.com/Antithesisx/dswitcher) || [dswitcher-git](https://aur.archlinux.org/packages/dswitcher-git/)
 
-*   **Fehlstart** — Small GTK+-based application launcher.
+*   **Fehlstart** — Small GTK-based application launcher.
 
 	[https://gitlab.com/fehlstart/fehlstart](https://gitlab.com/fehlstart/fehlstart) || [fehlstart-git](https://aur.archlinux.org/packages/fehlstart-git/)
 
-*   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK+-based application launcher, with the ability to run programs inside a terminal and other handy features.
+*   **[Gmrun](/index.php/Gmrun "Gmrun")** — Lightweight GTK-based application launcher, with the ability to run programs inside a terminal and other handy features.
 
 	[https://sourceforge.net/projects/gmrun/](https://sourceforge.net/projects/gmrun/) || [gmrun](https://www.archlinux.org/packages/?name=gmrun)
 
@@ -9779,7 +9792,7 @@ See also [Wikipedia:Wallpaper (computing)](https://en.wikipedia.org/wiki/Wallpap
 
 *   **HydraPaper** — Gtk utility to set two different backgrounds for each monitor on GNOME.
 
-	[https://github.com/gabmus/hydrapaper](https://github.com/gabmus/hydrapaper) || [hydrapaper-git](https://aur.archlinux.org/packages/hydrapaper-git/)
+	[https://gitlab.com/gabmus/hydrapaper](https://gitlab.com/gabmus/hydrapaper) || [hydrapaper-git](https://aur.archlinux.org/packages/hydrapaper-git/)
 
 *   **LiveWallpaper** — Animated 3D wallpapers.
 

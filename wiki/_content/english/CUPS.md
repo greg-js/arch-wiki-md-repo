@@ -113,7 +113,7 @@ CUPS includes support for [AirPrint](https://en.wikipedia.org/wiki/AirPrint "wik
 
 The Linux Foundation's OpenPrinting workgroup provides [cups-filters](https://wiki.linuxfoundation.org/openprinting/cups-filters). Those are backends, filters, and other binaries that were once part of CUPS but are no longer maintained by Apple. They are available in the [cups-filters](https://www.archlinux.org/packages/?name=cups-filters) package that is a dependency of [cups](https://www.archlinux.org/packages/?name=cups).
 
-Non-PostScript printers require [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) to be installed. For [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) may also be required.
+Non-PDF printers require [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) to be installed. For PostScript printers [gsfonts](https://www.archlinux.org/packages/?name=gsfonts) may also be required.
 
 ### Foomatic
 
@@ -164,7 +164,7 @@ The URI can also be generated manually, without using [Avahi](/index.php/Avahi "
 
 The URI for printers on [SMB](/index.php/SMB "SMB") shares is described in the [smbspool(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbspool.8) man page.
 
-Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU/Linux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
+Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Printer sharing](/index.php/CUPS/Printer_sharing#Printer_sharing "CUPS/Printer sharing") for details on setting up the remote print server.
 
 See [CUPS/Troubleshooting#Networking issues](/index.php/CUPS/Troubleshooting#Networking_issues "CUPS/Troubleshooting") for additional issues and solutions.
 
@@ -216,7 +216,7 @@ The *queue_name* is up to you. Examples:
 
 ```
 
-**Note:** When specifying the PPD, use just the file name and not the full path (for instance, `pxlmono.ppd` instead of `/usr/share/ppd/cupsfilters/pxlmono.ppd`)
+**Note:** When specifying the PPD, use just the file name and not the full path (for instance, `pxlmono.ppd` instead of `/usr/share/ppd/cupsfilters/pxlmono.ppd`). Alternatively, the full path can be used with the `-P` command line switch.
 
 	Set the default printer
 
@@ -341,7 +341,7 @@ Go to the **Printers** page, and select a queue.
 
 If your user does not have sufficient privileges to administer CUPS, the applications will request the root password when they start. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
 
-*   **GtkLP** — GTK+ interface for CUPS.
+*   **GtkLP** — GTK interface for CUPS.
 
 	[https://gtklp.sirtobi.com/index.shtml](https://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
 
@@ -349,7 +349,7 @@ If your user does not have sufficient privileges to administer CUPS, the applica
 
 	[https://cgit.kde.org/print-manager.git](https://cgit.kde.org/print-manager.git) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
 
-*   **system-config-printer** — GTK+ printer configuration tool and status applet.
+*   **system-config-printer** — GTK printer configuration tool and status applet.
 
 	[http://cyberelk.net/tim/software/system-config-printer/](http://cyberelk.net/tim/software/system-config-printer/) || [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer)
 

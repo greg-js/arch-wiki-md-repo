@@ -16,7 +16,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [1.1 GNOME](#GNOME)
         *   [1.1.1 Fractional Scaling](#Fractional_Scaling)
         *   [1.1.2 Text Scaling](#Text_Scaling)
-    *   [1.2 KDE](#KDE)
+    *   [1.2 KDE Plasma](#KDE_Plasma)
         *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
@@ -25,8 +25,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [3 X Resources](#X_Resources)
 *   [4 GUI toolkits](#GUI_toolkits)
     *   [4.1 Qt 5](#Qt_5)
-    *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3))
-    *   [4.3 GTK+ 2](#GTK+_2)
+    *   [4.2 GDK 3 (GTK 3)](#GDK_3_(GTK_3))
+    *   [4.3 GTK 2](#GTK_2)
     *   [4.4 Elementary (EFL)](#Elementary_(EFL))
 *   [5 Boot managers](#Boot_managers)
     *   [5.1 GRUB](#GRUB)
@@ -40,24 +40,25 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
         *   [6.2.2 Chromium / Google Chrome](#Chromium_/_Google_Chrome)
         *   [6.2.3 Opera](#Opera)
     *   [6.3 Gimp 2.8](#Gimp_2.8)
-    *   [6.4 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [6.5 Java applications](#Java_applications)
-    *   [6.6 MATLAB](#MATLAB)
-    *   [6.7 Mono applications](#Mono_applications)
-    *   [6.8 NetBeans](#NetBeans)
-    *   [6.9 Skype](#Skype)
-    *   [6.10 Slack](#Slack)
-    *   [6.11 Spotify](#Spotify)
-    *   [6.12 Steam](#Steam)
-        *   [6.12.1 Official HiDPI support](#Official_HiDPI_support)
-        *   [6.12.2 Unofficial](#Unofficial)
-    *   [6.13 Sublime Text 3](#Sublime_Text_3)
-    *   [6.14 Thunderbird](#Thunderbird)
-    *   [6.15 VirtualBox](#VirtualBox)
-    *   [6.16 Wine applications](#Wine_applications)
-    *   [6.17 Zathura document viewer](#Zathura_document_viewer)
-    *   [6.18 Zoom](#Zoom)
-    *   [6.19 Unsupported applications](#Unsupported_applications)
+    *   [6.4 Inkscape](#Inkscape)
+    *   [6.5 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.6 Java applications](#Java_applications)
+    *   [6.7 MATLAB](#MATLAB)
+    *   [6.8 Mono applications](#Mono_applications)
+    *   [6.9 NetBeans](#NetBeans)
+    *   [6.10 Skype](#Skype)
+    *   [6.11 Slack](#Slack)
+    *   [6.12 Spotify](#Spotify)
+    *   [6.13 Steam](#Steam)
+        *   [6.13.1 Official HiDPI support](#Official_HiDPI_support)
+        *   [6.13.2 Unofficial](#Unofficial)
+    *   [6.14 Sublime Text 3](#Sublime_Text_3)
+    *   [6.15 Thunderbird](#Thunderbird)
+    *   [6.16 VirtualBox](#VirtualBox)
+    *   [6.17 Wine applications](#Wine_applications)
+    *   [6.18 Zathura document viewer](#Zathura_document_viewer)
+    *   [6.19 Zoom](#Zoom)
+    *   [6.20 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Multiple external monitors](#Multiple_external_monitors)
@@ -139,9 +140,9 @@ $ gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 
 ```
 
-### KDE
+### KDE Plasma
 
-You can use KDE's settings to fine tune font, icon, and widget scaling. This solution affects both Qt and Gtk+ applications.
+You can use Plasma's settings to fine tune font, icon, and widget scaling. This solution affects both Qt and GTK applications.
 
 To adjust font, widget, and icon scaling together:
 
@@ -159,15 +160,13 @@ To adjust only icon scaling:
 1.  *System Settings > Icons > Advanced*
 2.  Choose the desired icon size for each category listed. This should take effect immediately.
 
-**Display Scale not integer bug :**
+**Display Scale not integer bug**
 
-When you use not integer values for Display Scale it causes font render issue in some QT application ( ex. Okular ).
-
-A workaround for this is to:
+When using not integer values for Display Scale it may causes font render issue in some Qt application. A workaround for this is to:
 
 1.  Set the scale value to `1`
 2.  Adjust your font and icons and use the "Force fonts DPI" ( this affects all apps, also GTK but not create issue with the fonts )
-3.  Restart KDE
+3.  Restart Plasma
 4.  If required tune the GTK apps using the variables `GDK_SCALE`/`GDK_DPI_SCALE` (as described above)
 
 #### Tray icons with fixed size
@@ -256,7 +255,7 @@ QT_FONT_DPI=96 vym
 
 ```
 
-### GDK 3 (GTK+ 3)
+### GDK 3 (GTK 3)
 
 **Note:** As stated in the [#X Resources](#X_Resources) section, if you have xft.dpi set to a larger dpi, it will make other scales larger than usual, including GDK.
 
@@ -276,7 +275,7 @@ export GDK_DPI_SCALE=0.5
 
 ```
 
-### GTK+ 2
+### GTK 2
 
 Scaling of UI elements is not supported by the toolkit itself, however it's possible to generate a theme with elements pre-scaled for HiDPI display using [oomox-git](https://aur.archlinux.org/packages/oomox-git/).
 
@@ -323,7 +322,7 @@ Update GRUB configuration by running `grub-mkconfig -o /boot/grub/grub.cfg`
 
 ### systemd-boot
 
-Adding the following line and running `bootctl update` increases font-size in the systemd-boot menu:
+Adding the following line and running `bootctl update` increases font-size in the [systemd-boot](/index.php/Systemd-boot#Loader_configuration "Systemd-boot") menu:
 
  `/boot/loader/loader.conf`  `console-mode 1` 
 
@@ -341,7 +340,7 @@ Add `--force-device-scale-factor=2` as a flag to the atom.desktop file:
 
 #### Firefox
 
-Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings. However, the suggested `GDK_SCALE` suggestion does not consistently scale the entirety of Firefox, and does not work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead. Another option, which will avoid Firefox-specific settings in many setups is to use the settings in [#X Resources](#X_Resources) as Firefox should respect the `Xft.dpi` value defined there.
+Firefox should use the [#GDK 3 (GTK 3)](#GDK_3_(GTK_3)) settings. However, the suggested `GDK_SCALE` suggestion does not consistently scale the entirety of Firefox, and does not work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead. Another option, which will avoid Firefox-specific settings in many setups is to use the settings in [#X Resources](#X_Resources) as Firefox should respect the `Xft.dpi` value defined there.
 
 To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also does not consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
 
@@ -369,7 +368,7 @@ If you use Wayland, you can also use the Wayland-enabled packages of Firefox fro
 
 #### Chromium / Google Chrome
 
-Chromium should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings.
+Chromium should use the [#GDK 3 (GTK 3)](#GDK_3_(GTK_3)) settings.
 
 To override those, use the `--force-device-scale-factor` flag with a scaling value. This will scale all content and ui, including tab and font size. For example `chromium --force-device-scale-factor=2`.
 
@@ -383,7 +382,7 @@ If you use a HiDPI monitor such as Retina display together with another monitor,
 
 #### Opera
 
-Opera should use the [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)) settings.
+Opera should use the [#GDK 3 (GTK 3)](#GDK_3_(GTK_3)) settings.
 
 To override those, use the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
 
@@ -393,9 +392,13 @@ Use a high DPI theme, or adjust `gtkrc` of an existing theme. (Change all occurr
 
 There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 
+### Inkscape
+
+To scale the icons to a "usable" size go to *Preferences > Interface* and set the icon size to Large or Larger[[1]](http://www.inkscapeforum.com/viewtopic.php?t=18684)[[2]](http://wiki.inkscape.org/wiki/index.php/HiDPI).
+
 ### IntelliJ IDEA
 
-IntelliJ IDEA 15 and above should include HiDPI support.[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+IntelliJ IDEA 15 and above should include HiDPI support.[[3]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
 
 	*File > Settings > Behaviour & Appearance > Appearance*
 
@@ -414,7 +417,7 @@ Since Java 9 the GDK_SCALE environment variable is used to scale Swing applicati
 
 ### MATLAB
 
-Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[2]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
+Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor[[4]](https://www.mathworks.com/matlabcentral/answers/406956-does-matlab-support-high-dpi-screens-on-linux):
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -426,11 +429,11 @@ The settings take effect after MATLAB is restarted.
 
 ### Mono applications
 
-According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_(GTK+_3)) applications.
+According to [[5]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK 3](#GDK_3_(GTK_3)) applications.
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[4]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[6]](http://wiki.netbeans.org/FaqFontSize)
 
 The editor fontsize can be controlled from *Tools > Option > Fonts & Colors*.
 
@@ -438,7 +441,7 @@ The output window fontsize can be controlled from *Tools > Options > Miscelaneou
 
 ### Skype
 
-Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK+ 3)](#GDK_3_(GTK+_3)).
+Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK 3)](#GDK_3_(GTK_3)).
 
 ### Slack
 
@@ -487,7 +490,7 @@ See [#Firefox](#Firefox). To access `about:config`, go to *Edit > Preferences > 
 
 **Note:** This only applies to KDE with scaling enabled.
 
-VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[5]](https://www.virtualbox.org/ticket/16604)).
+VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[7]](https://www.virtualbox.org/ticket/16604)).
 
 This can be worked around by calculating the inverse of your scaling factor and manually setting this new scaling factor for the VirtualBox execution, e.g.
 
@@ -552,7 +555,7 @@ When extending above the internal display, you may see part of the internal disp
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[7]](https://askubuntu.com/a/979551/763549).
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[9]](https://askubuntu.com/a/979551/763549).
 
 **Note:** If you are using the `modesetting` driver you will get mouse flickering. This can be solved by scaling your non-scaled screen by 0.9999x0.9999.
 

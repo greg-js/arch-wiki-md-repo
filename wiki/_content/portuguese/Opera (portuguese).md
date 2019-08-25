@@ -10,37 +10,41 @@ Artigos relacionados
 
 Opera continua a inovar com o seu cliente de email integrado, de um clique bookmarking, pilhas guia (uma forma de organizar suas abas) e suporte muito bom para recursos [HTML5](https://pt.wikipedia.org/wiki/HTML5).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalação](#Instalação)
 *   [2 Plugins](#Plugins)
     *   [2.1 Adobe Flash](#Adobe_Flash)
     *   [2.2 Suporte ao Java](#Suporte_ao_Java)
     *   [2.3 Adblock](#Adblock)
 *   [3 Ajustes de performance](#Ajustes_de_performance)
-    *   [3.1 Desabilitando características e serviços](#Desabilitando_caracter.C3.ADsticas_e_servi.C3.A7os)
+    *   [3.1 Desabilitando características e serviços](#Desabilitando_características_e_serviços)
         *   [3.1.1 Desativar o cliente de E-mail](#Desativar_o_cliente_de_E-mail)
-        *   [3.1.2 Desativar ARGB, LIRC e links de Email mailto](#Desativar_ARGB.2C_LIRC_e_links_de_Email_mailto)
+        *   [3.1.2 Desativar ARGB, LIRC e links de Email mailto](#Desativar_ARGB,_LIRC_e_links_de_Email_mailto)
     *   [3.2 Melhorar o desempenho do Flash](#Melhorar_o_desempenho_do_Flash)
         *   [3.2.1 Exemplo no .xinitrc](#Exemplo_no_.xinitrc)
         *   [3.2.2 Exemplo para linha de comando](#Exemplo_para_linha_de_comando)
     *   [3.3 Perfil na tmpfs](#Perfil_na_tmpfs)
-*   [4 Aparência](#Apar.C3.AAncia)
+*   [4 Aparência](#Aparência)
     *   [4.1 Temas](#Temas)
     *   [4.2 Modos das Guias](#Modos_das_Guias)
     *   [4.3 Fontes de texto](#Fontes_de_texto)
 *   [5 Guias privadas](#Guias_privadas)
 *   [6 Dicas de acessibilidade](#Dicas_de_acessibilidade)
-    *   [6.1 Desativar seleção de texto](#Desativar_sele.C3.A7.C3.A3o_de_texto)
+    *   [6.1 Desativar seleção de texto](#Desativar_seleção_de_texto)
     *   [6.2 Modo agarramento e modo de rolagem](#Modo_agarramento_e_modo_de_rolagem)
-    *   [6.3 Manter pressionado um link para abrir em uma aba de fundo (extensão)](#Manter_pressionado_um_link_para_abrir_em_uma_aba_de_fundo_.28extens.C3.A3o.29)
-    *   [6.4 Teclado virtual na tela (extensão)](#Teclado_virtual_na_tela_.28extens.C3.A3o.29)
-*   [7 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [6.3 Manter pressionado um link para abrir em uma aba de fundo (extensão)](#Manter_pressionado_um_link_para_abrir_em_uma_aba_de_fundo_(extensão))
+    *   [6.4 Teclado virtual na tela (extensão)](#Teclado_virtual_na_tela_(extensão))
+*   [7 Solução de problemas](#Solução_de_problemas)
     *   [7.1 Deslocamento lento em placas NVIDIA](#Deslocamento_lento_em_placas_NVIDIA)
     *   [7.2 Roda de rolagem horizontal do mouse](#Roda_de_rolagem_horizontal_do_mouse)
-    *   [7.3 Lançar um navegador externo](#Lan.C3.A7ar_um_navegador_externo)
-    *   [7.4 Opera trava ao iniciar ou fechar com GTK+ 2.24.7+](#Opera_trava_ao_iniciar_ou_fechar_com_GTK.2B_2.24.7.2B)
-    *   [7.5 Ilegíveis campos de texto e barra de endereços com temas escuros GTK+](#Ileg.C3.ADveis_campos_de_texto_e_barra_de_endere.C3.A7os_com_temas_escuros_GTK.2B)
+    *   [7.3 Lançar um navegador externo](#Lançar_um_navegador_externo)
+    *   [7.4 Opera trava ao iniciar ou fechar com GTK+ 2.24.7+](#Opera_trava_ao_iniciar_ou_fechar_com_GTK+_2.24.7+)
+    *   [7.5 Ilegíveis campos de texto e barra de endereços com temas escuros GTK+](#Ilegíveis_campos_de_texto_e_barra_de_endereços_com_temas_escuros_GTK+)
 *   [8 Veja mais](#Veja_mais)
 
 ## Instalação
@@ -61,7 +65,7 @@ Veja o principal artigo: [Browser plugins#Flash Player](/index.php/Browser_plugi
 
 ### Suporte ao Java
 
-Veja o principal artigo: [Browser plugins#Java (IcedTea)](/index.php/Browser_plugins#Java_.28IcedTea.29 "Browser plugins").
+Veja o principal artigo: [Browser plugins#Java (IcedTea)](/index.php/Browser_plugins#Java_(IcedTea) "Browser plugins").
 
 ### Adblock
 
@@ -162,7 +166,7 @@ $ opera -pd /tmp/opera
 
 ### Temas
 
-Já que o Opera é multi-plataforma, ele pode integrar muito bem em vários ambientes de desktop Linux.
+Já que o Opera é multiplataforma, ele pode integrar muito bem em vários ambientes de desktop Linux.
 
 	Qt
 
@@ -170,7 +174,7 @@ Já que o Opera é multi-plataforma, ele pode integrar muito bem em vários ambi
 
 	KDE
 
-	Para fazer o Opera usar icones do [KDE](/index.php/KDE "KDE"), você pode instalar uns temas [como estes](http://my.opera.com/community/customize/skins/info/?id=8141).
+	Para fazer o Opera usar ícones do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"), você pode instalar uns temas [como estes](http://my.opera.com/community/customize/skins/info/?id=8141).
 
 	GTK+
 
@@ -184,14 +188,14 @@ Opera tem suporte nativo para guias em modo cascata e lado a lado. Botões aprop
 
 Fontes de texto pode ser configuradas em *Configurações > Preferências... > Avançado > Fontes*.
 
-Se o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) foi instalado antes de executar o Opera pela primeira vez, por padrão o Opera irá usar estas fontes de texto, independentemente do que é especificado nas opções locais do GTK+ pelo gerenciamento de fontes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou do [KDE](/index.php/KDE "KDE"). Para fazer com que as instalações existentes do Opera usem as opções definidas pelo seu sistema:
+Se o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) foi instalado antes de executar o Opera pela primeira vez, por padrão o Opera irá usar estas fontes de texto, independentemente do que é especificado nas opções locais do GTK+ pelo gerenciamento de fontes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"). Para fazer com que as instalações existentes do Opera usem as opções definidas pelo seu sistema:
 
 *   Feche todas as instancias do Opera.
-*   Des-instale o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
+*   Desinstale o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
 *   Mover uma pasta de perfil existente: `mv -i ~/.opera ~/.opera.bak`
 *   Executar uma instancia do Opera e verificar se o gerenciamento de fontes aplicou as configurações corretamente.
 *   Restaurar marcadores e arquivos desejados no filtro de `~/.opera.bak` para `~/.opera` exceto o arquivo `operaprefs.ini`.
-*   Re-instale o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) , se quiser.
+*   Reinstale o pacote [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) , se quiser.
 
 ## Guias privadas
 

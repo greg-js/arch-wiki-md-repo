@@ -257,7 +257,7 @@ Either you try to use the same key twice, or you start sxhkd twice. Check bspwmr
 
 ### Firefox context menu automatically selects first option on right click
 
-Add the following line to the ```userChrome.css``` file of your firefox profile
+Add the following line to the `userChrome.css` file of your firefox profile
 
 ```
 #contentAreaContextMenu{ margin: 5px 0 0 5px }

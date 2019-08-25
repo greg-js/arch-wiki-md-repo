@@ -89,7 +89,7 @@ Run `openbox` or `openbox-session` with [xinit](/index.php/Xinit "Xinit"). Note 
 **Note:**
 
 *   When replacing the native window manager of a [desktop environment](/index.php/Desktop_environment "Desktop environment") with Openbox, keep in mind that Openbox does not provide any compositing effects (such as transparency). See [#Compositing effects](#Compositing_effects).
-*   Openbox does work with GNOME applications (but see [GTK+#Client-side decorations](/index.php/GTK%2B#Client-side_decorations "GTK+")). [[1]](http://comments.gmane.org/gmane.comp.window-managers.openbox/6595)
+*   Openbox does work with GNOME applications (but see [GTK#Client-side decorations](/index.php/GTK#Client-side_decorations "GTK")). [[1]](http://comments.gmane.org/gmane.comp.window-managers.openbox/6595)
 
 See [Desktop environment#Use a different window manager](/index.php/Desktop_environment#Use_a_different_window_manager "Desktop environment").
 
@@ -100,7 +100,8 @@ See [Desktop environment#Use a different window manager](/index.php/Desktop_envi
 Four key files form the basis of the [openbox configuration](http://openbox.org/wiki/Configuration), each serving a unique role. They are: `rc.xml`, `menu.xml`, `autostart`, and `environment`. Although these files are discussed in more detail below, to start configuring Openbox, it will first be necessary to create a **local** Openbox profile (i.e for your specific user account) based on them. This can be done by copying them from the **global** `/etc/xdg/openbox` profile (applicable to any and all users) as a template:
 
 ```
-$ cp -R /etc/xdg/openbox ~/.config/
+$ mkdir -p ~/.config/openbox
+$ cp -a /etc/xdg/openbox/. ~/.config/openbox/
 
 ```
 
@@ -157,7 +158,7 @@ xset -b
 
 Install [obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) for a GUI to configure visual settings and theming.
 
-A good selection of themes are available in the [openbox-themes](https://aur.archlinux.org/packages/openbox-themes/) package or the [AUR](/index.php/AUR "AUR"). Some [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") come with an Openbox theme as well. Both Openbox-specific and Openbox-compatible themes will be installed to the `/usr/share/themes` directory and will also be immediately available for selection.
+A good selection of themes are available in the [openbox-themes](https://aur.archlinux.org/packages/openbox-themes/) package or the [AUR](/index.php/AUR "AUR"). Some [GTK#Themes](/index.php/GTK#Themes "GTK") come with an Openbox theme as well. Both Openbox-specific and Openbox-compatible themes will be installed to the `/usr/share/themes` directory and will also be immediately available for selection.
 
 [box-look.org](https://www.box-look.org/browse/ord/latest/) is an excellent and well-established source of themes. [deviantART.com](http://www.deviantart.com/) is another excellent resource. Many more can be found online.
 
@@ -334,7 +335,7 @@ Once a new `~/.config/openbox/menu.xml` file has been generated it may then be m
 
 #### obmenu
 
-**Warning:** `obm-xdg` - a pipe menu to generate a list of [GTK+](/index.php/GTK%2B "GTK+") and [GNOME](/index.php/GNOME "GNOME") applications - is also provided with obmenu. However, it has long-running bugs whereby it may produce an invalid output, or even not function at all. Consequently it has been omitted from discussion.
+**Warning:** `obm-xdg` - a pipe menu to generate a list of [GTK](/index.php/GTK "GTK") and [GNOME](/index.php/GNOME "GNOME") applications - is also provided with obmenu. However, it has long-running bugs whereby it may produce an invalid output, or even not function at all. Consequently it has been omitted from discussion.
 
 [obmenu](https://aur.archlinux.org/packages/obmenu/) is a "user-friendly" GUI application to edit `~/.config/openbox/menu.xml`, without the need to code in `xml`.
 

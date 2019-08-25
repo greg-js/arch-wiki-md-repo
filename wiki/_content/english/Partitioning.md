@@ -301,7 +301,7 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 	[https://wiki.gnome.org/Apps/Disks](https://wiki.gnome.org/Apps/Disks) || [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility)
 
-*   **[GParted](/index.php/GParted "GParted")** — GTK+ partition editor for graphically managing your disk partitions.
+*   **[GParted](/index.php/GParted "GParted")** — GTK partition editor for graphically managing your disk partitions.
 
 	[https://gparted.sourceforge.io/](https://gparted.sourceforge.io/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
 

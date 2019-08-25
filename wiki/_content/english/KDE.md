@@ -30,7 +30,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [3.1 Personalization](#Personalization)
         *   [3.1.1 Plasma desktop](#Plasma_desktop)
             *   [3.1.1.1 Themes](#Themes)
-                *   [3.1.1.1.1 Qt and GTK+ Applications Appearance](#Qt_and_GTK+_Applications_Appearance)
+                *   [3.1.1.1.1 Qt and GTK Applications Appearance](#Qt_and_GTK_Applications_Appearance)
             *   [3.1.1.2 Faces](#Faces)
             *   [3.1.1.3 Widgets](#Widgets)
             *   [3.1.1.4 Sound applet in the system tray](#Sound_applet_in_the_system_tray)
@@ -71,7 +71,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_/_multiple_monitors)
     *   [5.3 Configuring ICC profiles](#Configuring_ICC_profiles)
     *   [5.4 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_(Windows_key))
-    *   [5.5 Disable Bookmarks Showing in Application Menu](#Disable_Bookmarks_Showing_in_Application_Menu)
+    *   [5.5 Disable bookmarks showing in application menu](#Disable_bookmarks_showing_in_application_menu)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fonts](#Fonts)
         *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
@@ -96,7 +96,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [6.5 Power management](#Power_management_2)
         *   [6.5.1 No Suspend/Hibernate options](#No_Suspend/Hibernate_options)
     *   [6.6 KMail](#KMail)
-        *   [6.6.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
+        *   [6.6.1 Clean Akonadi configuration to fix KMail](#Clean_Akonadi_configuration_to_fix_KMail)
         *   [6.6.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
         *   [6.6.3 Authorization error for EWS account in KMail](#Authorization_error_for_EWS_account_in_KMail)
     *   [6.7 Networking](#Networking)
@@ -108,6 +108,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [6.12 High CPU usage of kscreenlocker_greet with NVIDIA drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVIDIA_drivers)
     *   [6.13 OS error 22 when running Akonadi on ZFS](#OS_error_22_when_running_Akonadi_on_ZFS)
     *   [6.14 Some programs are unable to scroll when their windows are inactive](#Some_programs_are_unable_to_scroll_when_their_windows_are_inactive)
+    *   [6.15 TeamViewer behaves slowly](#TeamViewer_behaves_slowly)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -141,7 +142,8 @@ Plasma can be started either using a [display manager](/index.php/Display_manage
 
 ### From the console
 
-To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
+*   To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
+*   To start a Plasma on Wayland session from a console, run `XDG_SESSION_TYPE=wayland dbus-run-session startplasmacompositor`.[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland)
 
 ## Configuration
 
@@ -155,25 +157,25 @@ Most settings for KDE applications are stored in `~/.config/`. However, configur
 
 [Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme).
 
-Plasma themes can also be installed through *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
+Plasma themes can also be installed through *System Settings > Workspace Theme > Plasma Theme > Get new themes from the Internet*.
 
 The [KDE-Store](https://store.kde.org/) offers more Plasma customization's, like [SDDM](/index.php/SDDM "SDDM") themes and splash-screens.
 
-###### Qt and GTK+ Applications Appearance
+###### Qt and GTK Applications Appearance
 
 **Tip:** For Qt and GTK theme consistency, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 	Qt4
 
-Breeze is not directly available for Qt4 since it cannot be built without KDE 4 packages, which have been dropped from the extra repository in August 2018 ([FS#59784](https://bugs.archlinux.org/task/59784)). However you can install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style by running `qtconfig-qt4`.
+Breeze is not directly available for Qt4 since it cannot be built without KDE 4 packages, which have been dropped from the extra repository in August 2018 ([FS#59784](https://bugs.archlinux.org/task/59784)). However you can install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK as GUI Style by running `qtconfig-qt4`.
 
-	GTK+
+	GTK
 
-The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
+The recommended theme for a pleasant appearance in GTK applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK theme designed to mimic the appearance of Plasma's Breeze theme. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) (part of the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME/GTK Application Style*.
 
-In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`. It might also help to uncheck the option to *Apply colors to non-Qt applications* under *System Settings* > *Colors*.
+In some themes, tooltips in GTK applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`.
 
-Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly usable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *GNOME Application Style (GTK)* > *Select a GTK2 Theme:*. Numix-Frost-Light looks similar to Breeze.
+Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly usable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *GNOME/GTK Application Style* > *GTK2 Theme:*. Numix-Frost-Light looks similar to Breeze.
 
 ##### Faces
 
@@ -185,7 +187,7 @@ If *User Manager* is not found, install [user-manager](https://www.archlinux.org
 
 Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KDE applications designed to enhance the functionality of your desktop.
 
-The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new widgets > Download New Plasma Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
+The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get New Widgets... > Download New Plasma Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
 Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/packages.php?K=plasmoid).
 
@@ -251,9 +253,9 @@ The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE 
 
 To allow thumbnail generation for media or document files on the desktop and in Dolphin, install [kdegraphics-thumbnailers](https://www.archlinux.org/packages/?name=kdegraphics-thumbnailers) and [ffmpegthumbs](https://www.archlinux.org/packages/?name=ffmpegthumbs).
 
-Then enable the thumbnail categories for the desktop via *right click* on the *desktop background* > *Configure Desktop* > *Icons* > *More Preview Options...*.
+Then enable the thumbnail categories for the desktop via *right click* on the *desktop background* > *Configure Desktop* > *Icons* > *Configure Preview Plugins...*.
 
-In *Dolphin*, navigate to *Control* > *General* > *Previews*.
+In *Dolphin*, navigate to *Control* > *Configure Dolphin...* > *General* > *Previews*.
 
 ### Printing
 
@@ -451,7 +453,7 @@ Akonadi supports either using the existing system-wide [PostgreSQL](/index.php/P
 
 ###### Per-user PostgreSQL instance
 
-[Install](/index.php/Install "Install") [postgresql](https://www.archlinux.org/packages/?name=postgresql).
+[Install](/index.php/Install "Install") [postgresql](https://www.archlinux.org/packages/?name=postgresql) and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade).
 
 Edit Akonadi configuration file so that it has the following contents:
 
@@ -468,7 +470,10 @@ Driver=QPSQL
 
 Start Akonadi with `akonadictl start`, and check its status: `akonadictl status`.
 
-**Note:** Major PostgreSQL version upgrades will require a manual database upgrade. To update the PostgreSQL database in `~/.local/share/akonadi/db_data/`, that is used by Akonadi, follow the [update instructions on KDE UserBase Wiki](https://userbase.kde.org/Akonadi/Postgres_update). Make sure to adjust the paths to PostgreSQL binaries to those used by [postgresql](https://www.archlinux.org/packages/?name=postgresql) and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade), see [PostgreSQL#Upgrading PostgreSQL](/index.php/PostgreSQL#Upgrading_PostgreSQL "PostgreSQL").
+**Note:**
+
+*   Starting with [akonadi](https://www.archlinux.org/packages/?name=akonadi) 19.08.0-1 the PostgreSQL database cluster in `~/.local/share/akonadi/db_data/` will get automatically upgraded when a major PostgreSQL version upgrade is detected.
+*   For previous [akonadi](https://www.archlinux.org/packages/?name=akonadi) versions major PostgreSQL version upgrades will require a manual database upgrade. Follow the [update instructions on KDE UserBase Wiki](https://userbase.kde.org/Akonadi/Postgres_update). Make sure to adjust the paths to PostgreSQL binaries to those used by [postgresql](https://www.archlinux.org/packages/?name=postgresql) and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade), see [PostgreSQL#Upgrading PostgreSQL](/index.php/PostgreSQL#Upgrading_PostgreSQL "PostgreSQL").
 
 ###### System-wide PostgreSQL instance
 
@@ -604,7 +609,7 @@ $ kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""
 
 ```
 
-### Disable Bookmarks Showing in Application Menu
+### Disable bookmarks showing in application menu
 
 With Plasma Browser integration installed, KDE will show bookmarks in the application launcher.
 
@@ -710,7 +715,7 @@ In *System Settings > Display and Monitor > Compositor*, check *Enable composito
 
 #### Disable compositing
 
-In *System Settings > Display and Monitor*, uncheck *Enable compositor on startup* and restart Plasma.
+In *System Settings > Display and Monitor > Compositor*, uncheck *Enable compositor on startup* and restart Plasma.
 
 #### Flickering in fullscreen when compositing is enabled
 
@@ -776,7 +781,7 @@ If your system is able to suspend or hibernate using [systemd](/index.php/System
 
 ### KMail
 
-#### Clean akonadi configuration to fix KMail
+#### Clean Akonadi configuration to fix KMail
 
 First, make sure that KMail is not running. Then backup configuration:
 
@@ -786,9 +791,9 @@ $ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi/` and `~/.config/akonadi/` - the copies you made ensure that you can back-track if necessary.
+Start *System Settings > Online Accounts* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi/` and `~/.config/akonadi/` - the copies you made ensure that you can back-track if necessary.
 
-Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it works properly.
+Now go back to the System Settings and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it works properly.
 
 #### Empty IMAP inbox in KMail
 
@@ -852,6 +857,10 @@ See [MariaDB#OS error 22 when running on ZFS](/index.php/MariaDB#OS_error_22_whe
 ### Some programs are unable to scroll when their windows are inactive
 
 This is caused by the problematic way of GTK3 handling mouse scroll events. A workaround for this is to set [environment variable](/index.php/Environment_variable "Environment variable") `GDK_CORE_DEVICE_EVENTS=1`. However, this workaround also breaks touchpad smooth scrolling and touchscreen scrolling.
+
+### TeamViewer behaves slowly
+
+When using TeamViewer, it may behave slowly if you use smooth animations (such as windows minimizing). See [#Disable compositing](#Disable_compositing) as a workaround.
 
 ## See also
 

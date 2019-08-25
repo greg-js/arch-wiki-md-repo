@@ -15,7 +15,6 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
 
 *   [1 Installation](#Installation)
     *   [1.1 JACK2](#JACK2)
-        *   [1.1.1 JACK2 D-Bus](#JACK2_D-Bus)
     *   [1.2 JACK](#JACK)
     *   [1.3 GUI](#GUI)
 *   [2 Basic Configuration](#Basic_Configuration)
@@ -31,7 +30,7 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
 *   [3 MIDI](#MIDI)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#"Cannot_lock_down_memory_area_(Cannot_allocate_memory)"_message_on_startup)
-    *   [4.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
+    *   [4.2 jack2 and qjackctl errors](#jack2_and_qjackctl_errors)
     *   [4.3 "ALSA: cannot set channel count to 1 for capture" error in logs](#"ALSA:_cannot_set_channel_count_to_1_for_capture"_error_in_logs)
     *   [4.4 Crackling or pops in audio](#Crackling_or_pops_in_audio)
     *   [4.5 Problems with specific applications](#Problems_with_specific_applications)
@@ -48,33 +47,17 @@ There are two JACK implementations, see [this comparison](https://github.com/jac
 
 ### JACK2
 
-**JACK2** is a C++ implementation with SMP support. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository.
-
-#### JACK2 D-Bus
-
-JACK2 with [D-Bus](/index.php/D-Bus "D-Bus") can be installed via [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus). It is the same as the [jack2](https://www.archlinux.org/packages/?name=jack2) package but does not provide the legacy "jackd" server.
-
-It is controlled by the `jack_control` utility. The jack_control utility requires you to also install the [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) package as well.
-
-```
-The important commands are listed below:
-jack_control start  -  starts the jack server
-jack_control stop  - stops the jack server
-jack_control ds alsa  -  selects alsa as the driver (backend)
-jack_control eps realtime True  -  set engine parameters, such as realtime
-jack_control dps period 256  -  set the driver parameter period to 256
-
-```
+**JACK2** is a C++ implementation with SMP support. [Install](/index.php/Install "Install") it with the [jack2](https://www.archlinux.org/packages/?name=jack2) package. For 32-bit application support, also install the [lib32-jack2](https://www.archlinux.org/packages/?name=lib32-jack2) package from the [multilib](/index.php/Multilib "Multilib") repository. To use the *jack_control* command, also install the [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) package.
 
 ### JACK
 
-**JACK** uses a C API and supports more than one soundcard on Linux (plus MIDI). [Install](/index.php/Install "Install") it with the [jack](https://www.archlinux.org/packages/?name=jack) package. If you are on a 64-bit installation and need to run 32-bit applications that require JACK, also install the [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) package from the [multilib](/index.php/Multilib "Multilib") repository.
+**JACK** uses a C API and supports more than one soundcard on Linux (plus MIDI). [Install](/index.php/Install "Install") it with the [jack](https://www.archlinux.org/packages/?name=jack) package. For 32-bit application support, also install the [lib32-jack](https://www.archlinux.org/packages/?name=lib32-jack) package from the [multilib](/index.php/Multilib "Multilib") repository.
 
 ### GUI
 
 *   **Cadence** — Set of tools useful for audio production. It performs system checks, manages JACK, calls other tools and make system tweaks.
 
-	[https://kxstudio.linuxaudio.org/Applications:Cadence](https://kxstudio.linuxaudio.org/Applications:Cadence) || [cadence](https://www.archlinux.org/packages/?name=cadence)
+	[https://kx.studio/Applications:Cadence](https://kx.studio/Applications:Cadence) || [cadence](https://www.archlinux.org/packages/?name=cadence)
 
 *   **Patchage** — Modular patch bay for audio and MIDI systems based on JACK and ALSA.
 
@@ -84,7 +67,7 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 	[https://git.open-music-kontrollers.ch/lad/patchmatrix/about/](https://git.open-music-kontrollers.ch/lad/patchmatrix/about/) || [patchmatrix](https://www.archlinux.org/packages/?name=patchmatrix)
 
-*   **[QjackCtl](https://en.wikipedia.org/wiki/Qjackctl "wikipedia:Qjackctl")** — Simple Qt application to control the JACK sound server daemon.
+*   **QjackCtl** — Simple Qt application to control the JACK sound server daemon.
 
 	[https://qjackctl.sourceforge.io/](https://qjackctl.sourceforge.io/) || [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 
@@ -98,7 +81,7 @@ The mainline Linux kernel now supports realtime scheduling, so using a patched k
 
 ### A shell-based example setup
 
-The D-Bus edition of JACK2 can make startup much easier. Formerly, QjackCtl was used to start it, or a daemonizer was used, or some other method. But using [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus), JACK2 can be easily started and configured via a shell script.
+JACK2 can be directly launched with the *jackd* executable, or controlled with the D-Bus-based *jack_control* binary. *jack_control* makes it easy to start and configure JACK2 via a shell script. Note that you must install the [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) package to use *jack_control*.
 
 Create a shell script that can be executed at X login:
 
@@ -197,7 +180,7 @@ Load QjackCtl. GUI configuration tells it to run in the system tray. It will pic
 
 This example setup utilizes a more GUI focused configuration and management of JACK
 
-*   Install [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus).
+*   Install [jack2](https://www.archlinux.org/packages/?name=jack2) and [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus).
 *   Install [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), and tell your GUI window/desktop system to run it at startup.
 *   Make sure QjackCtl is told to:
     *   use the D-Bus interface,
@@ -360,9 +343,9 @@ To install some M-Audio MIDI keyboards, you will need the firmware package [midi
 
 See [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") and ensure that the user is in the `realtime` [user group](/index.php/User_group "User group").
 
-### jack2-dbus and qjackctl errors
+### jack2 and qjackctl errors
 
-Still having the "Cannot allocate memory" and/or "Cannot connect to server socket err = No such file or directory" error(s) when pressing qjackctl's start button (assuming that you have package jack2-dbus installed) ?
+Still having the "Cannot allocate memory" and/or "Cannot connect to server socket err = No such file or directory" error(s) when pressing qjackctl's start button?
 
 Please delete `~/.jackdrc`, `~/.config/jack/conf.xml`, `~/.config/rncbc.org/QjackCtl.conf`. Kill *jackdbus* and restart from scratch :) (Thanks to nedko)
 
@@ -388,7 +371,12 @@ Change ALSA input and output channels from 1 to 2
 
 ### Crackling or pops in audio
 
-Your CPU or sound card is too weak to handle your settings for JACK. Lower the bitrate, lower the frame size, and raise the frame period in small increments until crackling stops.
+Your CPU or sound card is too weak to handle your settings for JACK. Lower the bitrate, lower the frame size, and raise the frame period in small increments until crackling stops. You can also try changing the sampling rate to 44100 or whatever is natively supported. This allows jack to send audio to the system without having to resample. In [jack2](https://www.archlinux.org/packages/?name=jack2) with `jack_control`, this is accomplished with
+
+```
+jack_control dps rate 44100
+
+```
 
 ### Problems with specific applications
 

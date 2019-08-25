@@ -60,6 +60,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [9.2 Audio / headphones](#Audio_/_headphones)
     *   [9.3 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
     *   [9.4 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
+    *   [9.5 General slowness & stuttering](#General_slowness_&_stuttering)
 *   [10 External links](#External_links)
 
 ## UEFI
@@ -360,10 +361,21 @@ This can be corrected with the kernel boot option `pcie_aspm=off` which appears 
 
 The NVidia/nouveau driver may cause any runs of `lspci`, starting an X server, or otherwise poking the graphics card to cause at least one CPU core to lock up, as well as seeming to completely lock up PCIe access, for instance to the NVMe SSD. The kernel parameter `nouveau.modeset=0` may fix this. This is also related to the X freezes on startup (some machines may require lspci/startx to be run twice so they freeze after nouveau is taken care of); the solution in that case is to also set `acpi_rev_override=1`. [[3]](https://cnly.github.io/2017/08/25/fix-system-hangs-xps-15-9560.html)
 
+### General slowness & stuttering
+
+If you experience a large degradation of general performance and responsiveness it may be due to the CPU getting stuck at 800mhz. To check run `watch -n1 "lscpu | grep 'MHz' | awk '{print $1}'"` and perform some tasks. If the CPU MHz is stuck at 800 the whole time then you have the problem.
+
+To fix there are two options:
+
+1.  Disconnect the battery then hold the power button for 5-30 seconds
+2.  Drain the battery then hold the power button for 5-30 seconds
+
+After restarting run the same command again and the CPU MHz should be back to normal. [[4]](https://www.dell.com/community/Laptops-General-Read-Only/Dell-XPS-9550-CPU-Multiplier-Stuck-at-8/td-p/4740654)
+
 ## External links
 
 *   [Dell XPS 15 9560 (Early 2017) Thread on the Arch Forums](https://bbs.archlinux.org/viewtopic.php?id=223056)
 *   [Optimizing Dell XPS](https://www.reddit.com/r/Dell/comments/6s2e3w/optimizing_dell_xps_for_linux/)
 *   [Tutorial about how to change CPU thermal paste on XPS15 to avoid throttling](https://www.ultrabookreview.com/14875-fix-throttling-xps-15/)
-*   [[4]](https://www.displaylink.org/forum/showthread.php?t=65476&page=2)
+*   [[5]](https://www.displaylink.org/forum/showthread.php?t=65476&page=2)
 *   [Configuring the XPS to play nice with Linux thermal sensors (lm_sensors)](https://www.reddit.com/r/Dell/comments/9pdgid/configuring_the_xps_to_play_nice_with_linux/)

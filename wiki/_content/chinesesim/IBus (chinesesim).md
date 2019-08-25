@@ -4,7 +4,7 @@
 *   [SCIM](/index.php/SCIM "SCIM")
 *   [UIM](/index.php/UIM "UIM")
 
-[IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus 和 [UIM](/index.php/UIM "UIM") 类似。
+[IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus 和 [Uim](/index.php/Uim "Uim") 类似。
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

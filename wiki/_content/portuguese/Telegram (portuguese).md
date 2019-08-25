@@ -27,7 +27,7 @@ Você pode usar um dos seguintes métodos para usar o Telegram no Arch:
 
 *   Ao usar os pacotes [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) ou [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/), uma conexão com o Telegram por meio de software de mensageria (gráficos ou de linha de comando) baseados em [libpurple](https://www.archlinux.org/packages/?name=libpurple) tal como [Pidgin](/index.php/Pidgin "Pidgin") é fornecida.
 *   Aplicativos de mensageria que estão usando [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) tal como [empathy](https://www.archlinux.org/packages/?name=empathy) (o mensageiro padrão do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")) pode fazer uso do pacote [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), que fornece possibilidade de usar [libpurple](https://www.archlinux.org/packages/?name=libpurple) e, portanto, [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) para se conectar ao Telegram.
-*   No ambiente [KDE](/index.php/KDE "KDE"), usar [telepathy-morse](https://www.archlinux.org/packages/?name=telepathy-morse) fornece a capacidade de conectar o mensageiro padrão ao Telegram.
+*   No ambiente [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"), usar [telepathy-morse](https://www.archlinux.org/packages/?name=telepathy-morse) fornece a capacidade de conectar o mensageiro padrão ao Telegram.
 
 ### Clientes gráficos
 

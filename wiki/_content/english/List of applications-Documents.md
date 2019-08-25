@@ -136,7 +136,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://atom.io/](https://atom.io/) || [atom](https://www.archlinux.org/packages/?name=atom)
 
-*   **Beaver** — GTK+ editor designed to be modular, lightweight and stylish.
+*   **Beaver** — GTK editor designed to be modular, lightweight and stylish.
 
 	[http://beaver-editor.sourceforge.net/](http://beaver-editor.sourceforge.net/) || [beaver](https://www.archlinux.org/packages/?name=beaver)
 
@@ -168,7 +168,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.fltk.org/](http://www.fltk.org/) || [fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)
 
-*   **[gedit](https://en.wikipedia.org/wiki/gedit "wikipedia:gedit")** — GTK+ editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
+*   **[gedit](https://en.wikipedia.org/wiki/gedit "wikipedia:gedit")** — GTK editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
 
 	[https://wiki.gnome.org/Apps/Gedit](https://wiki.gnome.org/Apps/Gedit) || [gedit](https://www.archlinux.org/packages/?name=gedit)
 
@@ -196,11 +196,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://www.kde.org/applications/utilities/kwrite](https://www.kde.org/applications/utilities/kwrite) || [kwrite](https://www.archlinux.org/packages/?name=kwrite)
 
-*   **L3afpad** — Simple text editor forked from Leafpad, supports GTK+ 3.
+*   **L3afpad** — Simple text editor forked from Leafpad, supports GTK 3.
 
 	[https://github.com/stevenhoneyman/l3afpad](https://github.com/stevenhoneyman/l3afpad) || [l3afpad](https://www.archlinux.org/packages/?name=l3afpad)
 
-*   **[Leafpad](https://en.wikipedia.org/wiki/Leafpad "wikipedia:Leafpad")** — Notepad clone for GTK+ that emphasizes simplicity.
+*   **[Leafpad](https://en.wikipedia.org/wiki/Leafpad "wikipedia:Leafpad")** — Notepad clone for GTK that emphasizes simplicity.
 
 	[http://tarot.freeshell.org/leafpad](http://tarot.freeshell.org/leafpad) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
 
@@ -386,7 +386,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.openoffice.org/product/writer.html](http://www.openoffice.org/product/writer.html) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
-*   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK+-based rich text processor (with footnote support).
+*   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK-based rich text processor (with footnote support).
 
 	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
 
@@ -664,7 +664,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 	[https://github.com/retext-project/retext](https://github.com/retext-project/retext) || [retext](https://www.archlinux.org/packages/?name=retext)
 
-*   **[UberWriter](https://en.wikipedia.org/wiki/UberWriter "wikipedia:UberWriter")** — Elegant, free distraction GTK+ Markdown editor.
+*   **[UberWriter](https://en.wikipedia.org/wiki/UberWriter "wikipedia:UberWriter")** — Elegant, free distraction GTK Markdown editor.
 
 	[http://uberwriter.wolfvollprecht.de/](http://uberwriter.wolfvollprecht.de/) || [uberwriter](https://aur.archlinux.org/packages/uberwriter/)
 
@@ -708,7 +708,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[https://wiki.gnome.org/Apps/GNOME-LaTeX](https://wiki.gnome.org/Apps/GNOME-LaTeX) || [gnome-latex](https://www.archlinux.org/packages/?name=gnome-latex)
 
-*   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK+-based editor. It features a continuous preview mode, integrated BibTeX support, extendable snippet interface and multi-document support.
+*   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK-based editor. It features a continuous preview mode, integrated BibTeX support, extendable snippet interface and multi-document support.
 
 	[https://github.com/alexandervdm/gummi/](https://github.com/alexandervdm/gummi/) || [gummi](https://www.archlinux.org/packages/?name=gummi)
 
@@ -968,9 +968,9 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 #### Graphical
 
-*   **gImageReader** — Graphical GTK+/Qt frontend to Tesseract.
+*   **gImageReader** — Graphical GTK/Qt frontend to Tesseract.
 
-	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || GTK+: [gimagereader-gtk](https://www.archlinux.org/packages/?name=gimagereader-gtk), Qt: [gimagereader-qt](https://www.archlinux.org/packages/?name=gimagereader-qt)
+	[https://github.com/manisandro/gImageReader](https://github.com/manisandro/gImageReader) || GTK: [gimagereader-gtk](https://www.archlinux.org/packages/?name=gimagereader-gtk), Qt: [gimagereader-qt](https://www.archlinux.org/packages/?name=gimagereader-qt)
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
@@ -1062,7 +1062,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[https://joplin.cozic.net/](https://joplin.cozic.net/) || [joplin](https://aur.archlinux.org/packages/joplin/)
 
-*   **KeepNote** — Cross-platform GTK+ note-taking application with rich text formatting.
+*   **KeepNote** — Cross-platform GTK note-taking application with rich text formatting.
 
 	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
@@ -1186,7 +1186,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 #### Diary
 
-*   **Almanah** — Small GTK+ application to allow you to keep a diary of your life.
+*   **Almanah** — Small GTK application to allow you to keep a diary of your life.
 
 	[https://wiki.gnome.org/Apps/Almanah_Diary](https://wiki.gnome.org/Apps/Almanah_Diary) || [almanah](https://www.archlinux.org/packages/?name=almanah)
 
@@ -1334,7 +1334,7 @@ See also [#Markdown editors](#Markdown_editors) and [Wikipedia:Full-screen writi
 
 	[http://artha.sourceforge.net/](http://artha.sourceforge.net/) || [artha](https://aur.archlinux.org/packages/artha/)
 
-*   **Gjiten Kai** — Rewrite of Gjiten, a GTK+ Japanese dictionary.
+*   **Gjiten Kai** — Rewrite of Gjiten, a GTK Japanese dictionary.
 
 	[http://odrevet.github.io/gjitenkai/](http://odrevet.github.io/gjitenkai/) || [gjitenkai-git](https://aur.archlinux.org/packages/gjitenkai-git/)
 
@@ -1474,7 +1474,7 @@ See also [Wikipedia:Comparison of computer-assisted translation tools](https://e
 
 *   **ZBarCam GUI** — Simple GUI for ZBar to read bar codes from various sources.
 
-	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK+: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
+	[http://zbar.sourceforge.net/](http://zbar.sourceforge.net/) || GTK: [zbar-gtk](https://www.archlinux.org/packages/?name=zbar-gtk), Qt: [zbar-qt](https://www.archlinux.org/packages/?name=zbar-qt)
 
 *   **Zint Barcode Studio** — Barcode generator GUI.
 

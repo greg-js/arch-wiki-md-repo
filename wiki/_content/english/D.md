@@ -66,7 +66,7 @@ As of April 2017 [dmd's backend is now FOSS](https://github.com/dlang/dmd/pull/6
 *   [DDT](https://code.google.com/p/ddt/) - Eclipse plugin for project and code management in D
 *   [Mono-D](http://mono-d.alexanderbothe.com/) - [MonoDevelop](http://monodevelop.com/) addin for programming in D
 *   [QtD](https://bitbucket.org/qtd/repo) - Qt bindings for D
-*   [GtkD](http://gtkd.org/) - An object oriented GTK+ wrapper for D
+*   [GtkD](http://gtkd.org/) - An object oriented GTK wrapper for D
 *   [Derelict](https://github.com/aldacron/Derelict3) - Bindings for multimedia libraries, focused toward game development
 *   [Deimos](https://github.com/D-Programming-Deimos) - A project that houses a lot of bindings to different C libraries
 

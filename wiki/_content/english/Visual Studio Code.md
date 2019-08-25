@@ -15,8 +15,9 @@
     *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE/Plasma)
     *   [4.2 Unable to move items to trash](#Unable_to_move_items_to_trash)
     *   [4.3 Unable to debug C#](#Unable_to_debug_C#)
-    *   [4.4 Error from OmniSharp that MSBuild cannot be located](#Error_from_OmniSharp_that_MSBuild_cannot_be_located)
-    *   [4.5 Saving with "Retry as Sudo" does not work](#Saving_with_"Retry_as_Sudo"_does_not_work)
+    *   [4.4 Unable to open .csproj with OmniSharp server, invalid Microsoft.Common.props location](#Unable_to_open_.csproj_with_OmniSharp_server,_invalid_Microsoft.Common.props_location)
+    *   [4.5 Error from OmniSharp that MSBuild cannot be located](#Error_from_OmniSharp_that_MSBuild_cannot_be_located)
+    *   [4.6 Saving with "Retry as Sudo" does not work](#Saving_with_"Retry_as_Sudo"_does_not_work)
 
 ## Installation
 
@@ -100,6 +101,24 @@ to help you develop and test your applications.
 ```
 
 But in another way, you can use [netcoredbg](https://github.com/Samsung/netcoredbg),[netcoredbg](https://aur.archlinux.org/packages/netcoredbg/)
+
+### Unable to open .csproj with OmniSharp server, invalid Microsoft.Common.props location
+
+You have to switch from mono to proper SDK version props.
+
+ `/opt/dotnet/sdk/{VERSION}/Sdks/Microsoft.NET.Sdk/Sdk/Sdk.props` 
+```
+$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props
+
+```
+
+Modify import to look like this:
+
+ `/opt/dotnet/sdk/{VERSION}/Sdks/Microsoft.NET.Sdk/Sdk/Sdk.props` 
+```
+/opt/dotnet/sdk/{VERSION}/Current/Microsoft.Common.props
+
+```
 
 ### Error from OmniSharp that MSBuild cannot be located
 

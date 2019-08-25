@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=576591) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=578802) na versão em inglês.
 
 Artigos relacionados
 

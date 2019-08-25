@@ -11,8 +11,9 @@ The HP Zbook Studio G5 is a workstation replacement laptop.
 *   [2 Configuration](#Configuration)
     *   [2.1 Touchpad](#Touchpad)
     *   [2.2 Thunderbolt](#Thunderbolt)
-    *   [2.3 External monitors](#External_monitors)
-        *   [2.3.1 Bumblebee](#Bumblebee)
+    *   [2.3 Graphics rendering](#Graphics_rendering)
+    *   [2.4 External monitors](#External_monitors)
+        *   [2.4.1 Bumblebee](#Bumblebee)
 
 ## Installation
 
@@ -44,6 +45,10 @@ save & reboot.
 ### Thunderbolt
 
 Since the Zbook does not allow a no security option for Thunderbolt in the bios, a thunderbolt manager has to be installed see [bolt](https://www.archlinux.org/packages/?name=bolt).
+
+### Graphics rendering
+
+Use "Discrete" graphics in the bios. Auto and Hybrid was showing a blank screen. Installing nvidia drivers on discrete graphics worked flawlessly.
 
 ### External monitors
 

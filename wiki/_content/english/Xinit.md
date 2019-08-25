@@ -158,7 +158,7 @@ Make sure that *startx* is properly [configured](#Configuration).
 For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
 
 ```
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
 

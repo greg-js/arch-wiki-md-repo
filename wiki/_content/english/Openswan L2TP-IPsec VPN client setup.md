@@ -45,7 +45,7 @@ config setup
      virtual_private=%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12
      nat_traversal=yes
      protostack=netkey            # default is auto, which will try netkey first
-     plutoopts="--interface=eth0" # Replace eth0 with your network interface
+     plutoopts="--interface=eth0" # Replace eth0 with your network interface or use %defaultroute to use default route
 
 conn L2TP-PSK
      authby=secret

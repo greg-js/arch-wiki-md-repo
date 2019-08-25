@@ -128,4 +128,4 @@ Mesa has a list of blacklisted applications to avoid unexpected behavior, you ca
 *   Only one monitor may be used at a time with Gsync and possibly Freesync.
 *   Some compositors may need to be disabled before the OpenGl/Vulkan program is started.
 *   Mesa [blacklists](#Remove_applications_from_Blacklist) many applications including video players.
-*   Although tearing is much less of an issue at higher refresh rates, most Freesync monitors only have a range up to 90Hz see [Change Freesync range of Monitor](#Change_Freesync_range_of_monitor)
+*   Although tearing is much less of an issue at higher refresh rates, most Freesync monitors only have a range up to 90Hz see [Change Freesync range of Monitor](#Change_Freesync_Range_of_Monitor)

@@ -20,26 +20,100 @@ ThinkPad X1 Carbon 7th
 
 ```
 
+| **Device** | **Working** | **Modules** |
+| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
+| [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
+| Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
+| Mobile broadband Fibocom | No¹ | ? |
+| Audio | Yes | snd_hda_intel |
+| Microphone | Partial⁴ | snd_hda_intel |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
+| [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
+| Camera | Yes | uvcvideo |
+| [Fingerprint reader](/index.php/Fprint "Fprint") | No² | ? |
+| [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
+| Keyboard backlight | Yes | thinkpad_acpi |
+| Function/Multimedia keys | Yes | ? |
+| 
+
+1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
+2.  An official driver and a reverse engineered driver are in the works [[1]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181) (*06cb:00bd*).
+3.  S3 suspend requires changes to BIOS settings, see section on [enabling S3](#Enabling_S3).
+4.  The internal microphone doesn't seem to work, an external microphone connected on the 3.5mm jack does work, see [Talk#Microphone](/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_7)#Microphone "Talk:Lenovo ThinkPad X1 Carbon (Gen 7)").
+
+ |
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 BIOS](#BIOS)
-    *   [1.1 Updates](#Updates)
-        *   [1.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service))
-        *   [1.1.2 Manual (fwupdmgr)](#Manual_(fwupdmgr))
-    *   [1.2 Enabling S3](#Enabling_S3)
-    *   [1.3 Verifying S3](#Verifying_S3)
-    *   [1.4 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
-    *   [1.5 BIOS configurations](#BIOS_configurations)
-*   [2 Power management/Throttling issues](#Power_management/Throttling_issues)
-    *   [2.1 Throttling fix](#Throttling_fix)
-    *   [2.2 Touchpad Issues](#Touchpad_Issues)
-*   [3 Volume Controls](#Volume_Controls)
-*   [4 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
-*   [5 Additional resources](#Additional_resources)
+*   [1 Hardware](#Hardware)
+*   [2 BIOS](#BIOS)
+    *   [2.1 Updates](#Updates)
+        *   [2.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_(Linux_Vendor_Firmware_Service))
+        *   [2.1.2 Manual (fwupdmgr)](#Manual_(fwupdmgr))
+    *   [2.2 Enabling S3](#Enabling_S3)
+    *   [2.3 Verifying S3](#Verifying_S3)
+    *   [2.4 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
+    *   [2.5 BIOS configurations](#BIOS_configurations)
+*   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
+    *   [3.1 Throttling fix](#Throttling_fix)
+    *   [3.2 Touchpad fix](#Touchpad_fix)
+*   [4 Volume Controls](#Volume_Controls)
+    *   [4.1 Persistent fix](#Persistent_fix)
+*   [5 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
+*   [6 Additional resources](#Additional_resources)
+
+## Hardware
+
+Additional hardware information from `lsusb` and `lspci` can be found bellow when using the [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.2.7:
+
+`lsusb`
+
+```
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 06cb:00bd Synaptics, Inc. 
+Bus 001 Device 002: ID 04f2:b67c Chicony Electronics Co., Ltd 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+`lspci`
+
+```
+00:00.0 Host bridge: Intel Corporation Device 3e34 (rev 0c)
+00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620 (Whiskey Lake) (rev 02)
+00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem (rev 0c)
+00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th Gen Core Processor Gaussian Mixture Model
+00:12.0 Signal processing controller: Intel Corporation Cannon Point-LP Thermal Controller (rev 11)
+00:14.0 USB controller: Intel Corporation Cannon Point-LP USB 3.1 xHCI Controller (rev 11)
+00:14.2 RAM memory: Intel Corporation Cannon Point-LP Shared SRAM (rev 11)
+00:14.3 Network controller: Intel Corporation Cannon Point-LP CNVi [Wireless-AC] (rev 11)
+00:15.0 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP Serial IO I2C Controller #0 (rev 11)
+00:15.1 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP Serial IO I2C Controller #1 (rev 11)
+00:16.0 Communication controller: Intel Corporation Cannon Point-LP MEI Controller #1 (rev 11)
+00:1d.0 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #9 (rev f1)
+00:1d.4 PCI bridge: Intel Corporation Cannon Point-LP PCI Express Root Port #13 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Cannon Point-LP LPC Controller (rev 11)
+00:1f.3 Audio device: Intel Corporation Cannon Point-LP High Definition Audio Controller (rev 11)
+00:1f.4 SMBus: Intel Corporation Cannon Point-LP SMBus Controller (rev 11)
+00:1f.5 Serial bus controller [0c80]: Intel Corporation Cannon Point-LP SPI Controller (rev 11)
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (6) I219-V (rev 11)
+03:00.0 Non-Volatile memory controller: Sandisk Corp WD Black 2018/PC SN720 NVMe SSD
+05:00.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:00.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:01.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:02.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+06:04.0 PCI bridge: Intel Corporation JHL6540 Thunderbolt 3 Bridge (C step) [Alpine Ridge 4C 2016] (rev 02)
+07:00.0 System peripheral: Intel Corporation JHL6540 Thunderbolt 3 NHI (C step) [Alpine Ridge 4C 2016] (rev 02)
+2d:00.0 USB controller: Intel Corporation JHL6540 Thunderbolt 3 USB Controller (C step) [Alpine Ridge 4C 2016] (rev 02)
+
+```
 
 ## BIOS
 
@@ -51,11 +125,11 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 #### Automatic (Linux Vendor Firmware Service)
 
-[In August of 2018 Lenovo has joined](https://blogs.gnome.org/hughsie/2018/08/06/please-welcome-lenovo-to-the-lvfs/) the [Linux Vendor Firmware Service (LVFS)](https://fwupd.org/) project, which enables firmware updates from within the OS. BIOS updates (and possibly other firmware such as the Thunderbolt controller) can be queried for and installed through [fwupd](/index.php/Fwupd "Fwupd").
+[In August of 2018 Lenovo has joined](https://blogs.gnome.org/hughsie/2018/08/06/please-welcome-lenovo-to-the-lvfs/) the [Linux Vendor Firmware Service (LVFS)](https://fwupd.org/) project, which enables firmware updates from within the OS. BIOS updates (and possibly other firmware such as the Thunderbolt controller) can be queried for and installed through [fwupd](/index.php/Fwupd "Fwupd"). Currently, there is one small BIOS update available through fwupd.
 
 #### Manual (fwupdmgr)
 
-Lenovo provides a cabinet file that can be directly installed with fwupdmgr. Take the most recent `.cab` file from the [Lenovo ThinkPad X1 Carbon (Gen 6) driver website](https://pcsupport.lenovo.com/fr/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads).
+Lenovo may in the future provide cabinet files that can be directly installed with fwupdmgr. Check for Linux `.cab` files from the [Lenovo ThinkPad X1 Carbon (Gen 7) driver website](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-7th-gen-type-20qd-20qe/downloads).
 
 1.  Make sure the AC adapter is firmly connected to the target computer.
 2.  Launch Terminal.
@@ -95,14 +169,14 @@ There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linu
 
 ### Throttling fix
 
-[thermald](https://aur.archlinux.org/packages/thermald/) replaces the lenovo_fix used previously. Install [thermald](https://aur.archlinux.org/packages/thermald/), then run
+[throttled](https://www.archlinux.org/packages/?name=throttled) replaces [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/) used previously. Install [throttled](https://www.archlinux.org/packages/?name=throttled), then run
 
 ```
-sudo systemctl enable --now thermald.service
+sudo systemctl enable --now lenovo_fix.service
 
 ```
 
-### Touchpad Issues
+### Touchpad fix
 
 The touchpad works fine out of the box, except that [TLP](/index.php/TLP "TLP") does not detect that the Synaptics Touchpad is indeed an input device, so it does not exclude it from the USB_AUTOSUSPEND feature. You can tell that this is the issue if the touchpad works for just a moment after waking up from suspend, and then stops working again.
 
@@ -124,7 +198,16 @@ volume = ignore
 
 ```
 
-A reboot is required for this change to take affect.
+A PulseAudio restart is required for this change to take affect. Make sure to increase the "*Master*" channel volume to 100% for the top-firing speakers to work (using amixer or alsamixer, found in [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)).
+
+### Persistent fix
+
+Upgrading or reinstalling [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) will overwrite this file, and [pulseaudio does not offer another way to make this configuration change](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes/). To prevent pacman from overwriting the file, add the following line under `[options]` in `/etc/pacman.conf`:
+
+```
+NoUpgrade = usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
+
+```
 
 ## Disabling red LED in ThinkPad logo
 
@@ -172,6 +255,7 @@ WantedBy=multi-user.target
 
 ## Additional resources
 
-*   [ThinkWiki X1 Carbon 6th Gen page](https://www.thinkwiki.org/wiki/Category:X1_Carbon_(7th_Gen))
+*   [ThinkWiki X1 Carbon 7th Gen page](https://www.thinkwiki.org/wiki/Category:X1_Carbon_(7th_Gen))
 *   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also the [Intel graphics](/index.php/Intel_graphics "Intel graphics") page for interesting power-saving options.
 *   [Intel Blog: Best practice to debug Linux* suspend/hibernate issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues), including the [pm-graph](https://github.com/01org/pm-graph) tool to analyze power usage during suspend
+*   [How to fix volume control (ALSA problem)](https://forums.linuxmint.com/viewtopic.php?t=91453) This is where the volume fix came from originally.

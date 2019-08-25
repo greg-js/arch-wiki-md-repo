@@ -1,17 +1,21 @@
 La clonazione del disco è il processo di creare un'immagine di una partizione o di un intero disco rigido. Ciò può tornare utile sia per copiare il disco su un altro computer, sia per finalità di backup\recupero dei dati.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Usando dd](#Usando_dd)
     *   [1.1 Clonare una partizione](#Clonare_una_partizione)
     *   [1.2 Clonare un intero hard disk](#Clonare_un_intero_hard_disk)
     *   [1.3 Backup del MBR](#Backup_del_MBR)
-    *   [1.4 Creare l'immagine di un disco](#Creare_l.27immagine_di_un_disco)
+    *   [1.4 Creare l'immagine di un disco](#Creare_l'immagine_di_un_disco)
     *   [1.5 Ripristinare il sistema](#Ripristinare_il_sistema)
 *   [2 Usando cp](#Usando_cp)
 *   [3 Software per la clonazione del disco](#Software_per_la_clonazione_del_disco)
     *   [3.1 Clonazione del disco in Arch](#Clonazione_del_disco_in_Arch)
-    *   [3.2 Clonazione del disco all'infuori di Arch](#Clonazione_del_disco_all.27infuori_di_Arch)
+    *   [3.2 Clonazione del disco all'infuori di Arch](#Clonazione_del_disco_all'infuori_di_Arch)
 *   [4 Link esterni](#Link_esterni)
 
 ### Usando dd

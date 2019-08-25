@@ -1,10 +1,14 @@
 [Terminator](http://gnometerminator.blogspot.com/p/introduction.html) is a [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") which supports tabs and multiple resizable terminal panels in one window. It is based on [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 GTK+ customization](#GTK+_customization)
+    *   [2.1 GTK customization](#GTK_customization)
 *   [3 Key commands](#Key_commands)
 *   [4 Managing profiles](#Managing_profiles)
     *   [4.1 Drag and Drop](#Drag_and_Drop)
@@ -26,9 +30,9 @@ man terminator_config
 
 User-specific configuration can be found in `~/.config/terminator/config`.
 
-### GTK+ customization
+### GTK customization
 
-Terminator supports tabs. Tab header height is sometimes considered too big. This can be fixed with gtk styling. From version 1.9 Terminator uses gtk+ 3, so that configuration can be done in `~/.config/gtk-3.0/gtk.css`. The items to customize are 'notebook tab', 'notebook tab button'. (note that this affects other gtk3 applications, too).
+Terminator supports tabs. Tab header height is sometimes considered too big. This can be fixed with gtk styling. From version 1.9 Terminator uses GTK 3, so that configuration can be done in `~/.config/gtk-3.0/gtk.css`. The items to customize are 'notebook tab', 'notebook tab button'. (note that this affects other gtk3 applications, too).
 
 Example config:
 

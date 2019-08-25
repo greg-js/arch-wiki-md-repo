@@ -19,6 +19,7 @@ dhcpd is the [Internet Systems Consortium](http://www.isc.org/downloads/dhcp/) D
         *   [3.1.1 Configuring dhcpd](#Configuring_dhcpd)
         *   [3.1.2 Service file](#Service_file)
     *   [3.2 Use for PXE](#Use_for_PXE)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -38,7 +39,7 @@ Assign a static IPv4 address to the interface you want to use (in our examples w
 
 ```
 
-**Tip:** Usually, the one of next three subnets is used for private networks, which are specially reserved and won't conflict with any host in the Internet:
+**Tip:** Usually, one of the next three subnets is used for private networks, which are specially reserved and won't conflict with any host in the Internet:
 
 *   `192.168/16` (subnet `192.168.0.0`, netmask `255.255.0.0`)
 *   `172.16/12` (subnet `172.16.0.0`, netmask `255.240.0.0`)
@@ -51,7 +52,7 @@ To have your static ip assigned at boot, see [Network configuration#Static IP ad
 The default `dhcpd.conf` contains many uncommented examples, so relocate it:
 
 ```
-# cp /etc/dhcpd.conf.example /etc/dhcpd.conf
+# cp /etc/dhcpd.conf /etc/dhcpd.conf.example
 
 ```
 
@@ -68,7 +69,7 @@ subnet 139.96.30.0 netmask 255.255.255.0 {
 
 ```
 
-If you need to provide a fixed IP address for a single specific device, you can use the following syntax
+If you need to provide a fixed IP address for a single specific device, you can use the following syntax:
 
  `/etc/dhcpd.conf` 
 ```
@@ -163,3 +164,7 @@ filename "/pxelinux.0";
 ```
 
 This section can either be in an entire `subnet` or just in a `host` definition. `next-server` is the IP of the TFTP Server, and `filename` is the filename of the image to boot. For more information see [PXE](/index.php/PXE "PXE").
+
+## See also
+
+*   [ISC DHCP Documentation](https://kb.isc.org/docs/aa-00333)

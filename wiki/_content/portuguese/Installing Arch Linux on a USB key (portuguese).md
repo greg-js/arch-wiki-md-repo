@@ -128,7 +128,7 @@ Alternativamente, você pode criar a regra do udev para criar um link simbólico
 
 #### Parâmetros do kernel
 
-Você pode desabilitar KMS por vários motivos, como obter uma tela em branco ou um erro de "sem sinal" no visor, ao usar algumas placas de vídeo Intel, etc. Para desabilitar o KMS, adicione `nomodeset` como um parâmetro do kernel. Veja [Parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") para mais informações.
+Você pode desabilitar KMS por vários motivos, como obter uma tela em branco ou um erro de "sem sinal" no visor, ao usar algumas placas de vídeo Intel, etc. Para desabilitar o KMS, adicione `nomodeset` como um parâmetro do kernel. Veja [Parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") para mais informações.
 
 **Atenção:** Alguns drivers [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") não funcionam com o KMS desabilitado. Veja a página wiki em seu driver específico para detalhes. O Nouveau, em particular, precisa do KMS para determinar a resolução de exibição correta. Se você adicionar `nomodeset` como um parâmetro do kernel como uma medida preventiva, pode ser necessário ajustar a resolução de exibição manualmente ao usar máquinas com placas de vídeo Nvidia. Veja [Xrandr](/index.php/Xrandr "Xrandr") para mais informações.
 

@@ -46,9 +46,9 @@ A [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or Basic Input-Out
 
 [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") has support for reading both the partition table as well as file systems. UEFI does not launch any [boot code from the Master Boot Record (MBR)](/index.php/Partitioning#Master_Boot_Record_(bootstrap_code) "Partitioning") whether it exists or not, instead booting relies on boot entries in the [NVRAM](https://en.wikipedia.org/wiki/Non-volatile_random-access_memory "wikipedia:Non-volatile random-access memory").
 
-The UEFI specification mandates support for the [FAT12, FAT16, and FAT32](/index.php/FAT "FAT") file systems (see [UEFI specification version 2.7, section 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers. UEFI implementations also support ISO-9660 for optical discs.
+The UEFI specification mandates support for the [FAT12, FAT16, and FAT32](/index.php/FAT "FAT") file systems (see [UEFI specification version 2.8, section 13.3.1.1](https://uefi.org/sites/default/files/resources/UEFI_Spec_2_8_final.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers. UEFI implementations also support ISO-9660 for optical discs.
 
-UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers, [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface"), etc. These applications are usually stored as files in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Each vendor can store its files in the EFI system partition under the `/EFI/*vendor_name*` folder. The applications can be launched by adding a boot entry to the NVRAM or from the UEFI shell.
+UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers, [UEFI shell](/index.php/UEFI_shell "UEFI shell"), etc. These applications are usually stored as files in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Each vendor can store its files in the EFI system partition under the `/EFI/*vendor_name*` folder. The applications can be launched by adding a boot entry to the NVRAM or from the UEFI shell.
 
 The UEFI specification has support for legacy BIOS booting with its [Compatibility Support Module (CSM)](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#CSM_booting "wikipedia:Unified Extensible Firmware Interface"). If CSM is enabled in the UEFI, the UEFI will generate CSM boot entries for all drives. If a CSM boot entry is chosen to be booted from, the UEFI's CSM will attempt to boot from the drive's MBR bootstrap code.
 
@@ -155,7 +155,7 @@ Once the user's [shell](/index.php/Shell "Shell") is started, it will typically 
 
 ## GUI, xinit or wayland
 
-[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, *xinit*, *startx*, the shell, and login will terminate in that order, returning to [getty](#Getty).
+[xinit](/index.php/Xinit "Xinit") runs the user's [xinitrc](/index.php/Xinitrc "Xinitrc") runtime configuration file, which normally starts a [window manager](/index.php/Window_manager "Window manager"). When the user is finished and exits the window manager, *xinit*, *startx*, the shell, and login will terminate in that order, returning to [getty](#getty).
 
 ## See also
 

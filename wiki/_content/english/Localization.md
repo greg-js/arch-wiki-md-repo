@@ -118,14 +118,14 @@ First some background information on how GTK loads and selects IM modules:
 
 If no IM module is specified (either via GTK_IM_MODULE or in XSETTINGS), then GTK will automatically choose a suitable immodule from an internal listing (GTK_IM_MODULE_FILE... etc). This chosen IM module will depend on the software installed, and will be picked in a completely arbitrary order.
 
-For a listing of installed GTK+ immodules, see
+For a listing of installed GTK immodules, see
 
 *   `/usr/lib/gtk-2.0/modules/`
 *   `/usr/lib/gtk-2.0/2.10.0/immodules/`
 
 XSETTINGS provides a common API to configure common desktop settings. Similar database configuration systems such as gnome-config, GConf, liproplist and the kde configuration system already exist, however XSETTINGS unifies these systems. XSETTINGS daemons, such as gnome-settings-daemon from gnome, xfce-mcs-manager from xfce4, and other from openbox, etc, push desktop-environment-specific data to the XSETTINGS database. Technically, XSETTINGS is a simple storage medium intended to store only strings, integers and colors. When an XSETTINGS manager quits, the clients restore all settings to their default values.
 
-The if GTK+ has debugging enabled, the loaded modules can be seen by
+The if GTK has debugging enabled, the loaded modules can be seen by
 
 ```
 $ *application* --gtk-debug modules
@@ -134,7 +134,7 @@ $ *application* --gtk-debug modules
 
 Otherwise, the modules can be seen by scanning the linked libraries in gdb after attaching to the process.
 
-To prevent GTK+ from loading any IM modules
+To prevent GTK from loading any IM modules
 
 *   set `GTK_IM_MODULE` to the empty string
 *   set `GTK_IM_MODULE` to "gtk-im-context-simple"
@@ -160,4 +160,4 @@ To disable input method module loading in QT, [export](/index.php/Export "Export
 *   [Fedora wiki](https://fedoraproject.org/wiki/I18N/InputMethods "fedora:I18N/InputMethods")
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)
 *   [XSETTINGS 0.5 Specification](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html)
-*   [Running and Debugging GTK+ Applications](https://developer.gnome.org/gtk3/unstable/gtk-running.html)
+*   [Running and Debugging GTK Applications](https://developer.gnome.org/gtk3/unstable/gtk-running.html)

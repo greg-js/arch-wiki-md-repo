@@ -69,7 +69,7 @@ See the main article [Bluetooth](/index.php/Bluetooth "Bluetooth") and setup the
 
 #### Gnome/XFCE
 
-Install the [Blueman](/index.php/Blueman "Blueman") GTK+ Bluetooth manager.
+Install the [Blueman](/index.php/Blueman "Blueman") GTK Bluetooth manager.
 
 A Bluetooth icon should appear in your notification area. Note: the icon may not appear if bluetooth was not turned on at startup. Click it, and search for nearby devices, adding your iPhone (note, you may need to have the Bluetooth setting screen up on your iPhone for discovery to work).
 

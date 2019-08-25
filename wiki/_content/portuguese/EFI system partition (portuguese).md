@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=579821) na versão em inglês.
+
 Artigos relacionados
 
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
@@ -19,107 +21,110 @@ A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, F
     *   [2.2 Discos particionados em MBR](#Discos_particionados_em_MBR)
 *   [3 Formatar a partição](#Formatar_a_partição)
 *   [4 Montar a partição](#Montar_a_partição)
-    *   [4.1 Pontos de montagem alternativos](#Pontos_de_montagem_alternativos)
-        *   [4.1.1 Usando montagem com bind](#Usando_montagem_com_bind)
-        *   [4.1.2 Usando systemd](#Usando_systemd)
-        *   [4.1.3 Usando eventos do sistema de arquivos](#Usando_eventos_do_sistema_de_arquivos)
-        *   [4.1.4 Usando hook do mkinitcpio](#Usando_hook_do_mkinitcpio)
-        *   [4.1.5 Usando hook do mkinitcpio (2)](#Usando_hook_do_mkinitcpio_(2))
-        *   [4.1.6 Usando predefinição do mkinitcpio](#Usando_predefinição_do_mkinitcpio)
-        *   [4.1.7 Usando hook do pacman](#Usando_hook_do_pacman)
+    *   [4.1 Pontos de montagem comuns](#Pontos_de_montagem_comuns)
+    *   [4.2 Pontos de montagem alternativos](#Pontos_de_montagem_alternativos)
+        *   [4.2.1 Usando montagem com bind](#Usando_montagem_com_bind)
+        *   [4.2.2 Usando systemd](#Usando_systemd)
+        *   [4.2.3 Usando eventos do sistema de arquivos](#Usando_eventos_do_sistema_de_arquivos)
+        *   [4.2.4 Usando hook do mkinitcpio](#Usando_hook_do_mkinitcpio)
+        *   [4.2.5 Usando hook do mkinitcpio (2)](#Usando_hook_do_mkinitcpio_(2))
+        *   [4.2.6 Usando predefinição do mkinitcpio](#Usando_predefinição_do_mkinitcpio)
+        *   [4.2.7 Usando hook do pacman](#Usando_hook_do_pacman)
 *   [5 Problemas conhecidos](#Problemas_conhecidos)
     *   [5.1 ESP no RAID](#ESP_no_RAID)
 *   [6 Veja também](#Veja_também)
 
 ## Verificar uma partição existente
 
-If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 10 for example, it is very likely that you already have an EFI system partition.
+Se você estiver instalando o Arch Linux em um computador compatível com UEFI com um sistema operacional instalado, como [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 10 por exemplo, é muito provável que você já tenha uma partição do sistema EFI.
 
-To find out the disk partition scheme and the system partition, use [fdisk](/index.php/Fdisk "Fdisk") as root on the disk you want to boot from:
+Para descobrir o esquema de partição de disco e a partição do sistema, use [fdisk](/index.php/Fdisk "Fdisk") como root no disco que você quer inicializar:
 
 ```
 # fdisk -l /dev/sd*x*
 
 ```
 
-The command returns:
+O comando retorna:
 
-*   The disk's partition table: it indicates `Disklabel type: gpt` if the partition table is [GPT](/index.php/GPT "GPT") or `Disklabel type: dos` if it is [MBR](/index.php/MBR "MBR").
-*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB) partition with a type `EFI System` or `EFI (FAT-12/16/32)`. To confirm this is the ESP, [mount](/index.php/Mount "Mount") it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   A tabela de partições do disco: indica `Tipo de rótulo do disco: gpt` se a tabela de partições for [GPT](/index.php/GPT "GPT") ou `Tipo de rótulo do disco: dos` se for [MBR](/index.php/MBR "MBR").
+*   A lista de partições no disco: Procure a partição do sistema EFI na lista, é uma partição pequena (normalmente cerca de 100–550 MiB) com um tipo `Sistema EFI` ou `EFI (FAT-12/16/32)`. Para confirmar isso é a ESP, [monte](/index.php/Mount "Mount") e verifique se ela contém um diretório chamado `EFI`, se contiver é definitivamente a ESP.
 
-**Tip:** To find out whether it is a FAT12, FAT16 or FAT32 file system, use `minfo` from [mtools](https://www.archlinux.org/packages/?name=mtools).
+**Dica:** Para descobrir se é um sistema de arquivos FAT12, FAT16 ou FAT32, use `minfo` a partir de [mtools](https://www.archlinux.org/packages/?name=mtools).
 ```
 # minfo -i /dev/sd*xY* :: | grep 'disk type'
 
 ```
 
-**Warning:** When dual-booting, avoid reformatting the ESP, as it may contain files required to boot other operating systems.
+**Atenção:** Ao usar *dual-boot*, evite reformatar a ESP, pois ela pode conter arquivos necessários para inicializar outros sistemas operacionais.
 
-If you found an existing EFI system partition, simply proceed to [#Mount the partition](#Mount_the_partition). If you did not find one, you will need to create it, proceed to [#Create the partition](#Create_the_partition).
+Se você encontrou uma partição do sistema EFI existente, simplesmente prossiga para [#Montar a partição](#Montar_a_partição). Se você não encontrou uma, você precisará criá-la, vá para [#Criar a partição](#Criar_a_partição).
 
 ## Criar a partição
 
-The following two sections show how to create an EFI system partition (ESP).
+As duas seções a seguir mostram como criar uma partição do sistema EFI (ESP).
 
-**Warning:** The EFI system partition must be a physical partition in the main partition table of the disk, not under LVM or software RAID etc.
+**Atenção:** A partição do sistema EFI deve ser uma partição física na tabela de partição principal do disco, não sob LVM ou software RAID, etc.
 
-**Note:** It is recommended to use [GPT](/index.php/GPT "GPT") since some firmwares might not support UEFI/MBR booting due to it not being supported by [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). See also [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") for the advantages of GPT in general.
+**Nota:** Recomenda-se o uso de [GPT](/index.php/GPT "GPT"), pois alguns firmwares podem não suportar a inicialização via UEFI/MBR por não serem suportados pelo [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"). Veja também [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") para as vantagens da GPT em geral.
 
-To provide adequate space for storing boot loaders and other files required for booting, and to prevent interoperability issues with other operating systems[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules) the partition should be at least 260 MiB. For early and/or buggy UEFI implementations the size of at least 512 MiB might be needed.[[2]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
+Para fornecer espaço adequado para armazenar gerenciadores de boot e outros arquivos necessários para inicialização e para evitar problemas de interoperabilidade com outros sistemas operacionais[[1]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules) a partição deve ter pelo menos 260 MiB. Para implementações de UEFI precoces e/ou com bugs, o tamanho de pelo menos 512 MiB pode ser necessário.[[2]](https://www.rodsbooks.com/efi-bootloaders/principles.html)
 
 ### Discos particionados em GPT
 
-EFI system partition on a [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") is identified by the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
+Partição de sistema EFI em uma [Tabela de Partição GUID](/index.php/GUID_Partition_Table "GUID Partition Table") é identificada pelo [GUID de tipo de partição](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
 
-**Choose one** of the following methods to create an ESP for a GPT partitioned disk:
+**Escolha um** dos métodos a seguir para criar uma ESP para um disco particionado em GPT:
 
-*   [fdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type `EFI System`.
-*   [gdisk](/index.php/Gdisk "Gdisk"): Create a partition with partition type `EF00`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a partition with `fat32` as the file system type and set the `esp` flag on it.
+*   [fdisk](/index.php/Fdisk "Fdisk"): Crie uma partição com o tipo de partição `EFI System`.
+*   [gdisk](/index.php/Gdisk "Gdisk"): Crie uma partição com o tipo de partição `EF00`.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Crie uma partição com `fat32` como o tipo de sistema de arquivos e defina a opção `esp` nela.
 
-Proceed to [#Format the partition](#Format_the_partition) section below.
+Continue com a seção [#Formatar a partição](#Formatar_a_partição) abaixo.
 
 ### Discos particionados em MBR
 
-EFI system partition on a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") partition table is identified by the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
+A partição do sistema EFI em uma tabela de partição [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") é identificada pelo [ID de tipo de partição](https://en.wikipedia.org/wiki/pt:Tipo_de_parti%C3%A7%C3%A3o "wikipedia:pt:Tipo de partição") `EF`.
 
-**Choose one** of the following methods to create an ESP for a MBR partitioned disk:
+**Escolha um** dos métodos a seguir para criar uma ESP para um disco particionado em MBR:
 
-*   [fdisk](/index.php/Fdisk "Fdisk"): Create a primary partition with partition type `EFI (FAT-12/16/32)`.
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a primary partition with `fat32` as the file system type and set the `esp` flag on it.
+*   [fdisk](/index.php/Fdisk "Fdisk"): Crie uma partição primária com o tipo de partição `EFI (FAT-12/16/32)`.
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Crie uma partição primária com `fat32` como o tipo de sistema de arquivos e defina a opção `esp` nela.
 
-Proceed to [#Format the partition](#Format_the_partition) section below.
+Continue com a seção [#Formatar a partição](#Formatar_a_partição) abaixo.
 
 ## Formatar a partição
 
-The UEFI specification mandates support for the FAT12, FAT16, and FAT32 file systems[[3]](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485). To prevent potential issues with other operating systems and also since the UEFI specification only mandates supporting FAT16 and FAT12 on removable media[[4]](https://uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1345080), it is recommended to use FAT32.
+A especificação UEFI determina o suporte para os sistemas de arquivos FAT12, FAT16 e FAT32[[3]](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485). Para evitar possíveis problemas com outros sistemas operacionais e também porque a especificação UEFI apenas exige suporte a FAT16 e FAT12 em mídia removível[[4]](https://uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1345080), recomenda-se usar o FAT32.
 
-After creating the partition, [format](/index.php/Format "Format") it as [FAT32](/index.php/FAT32 "FAT32"). To use the `mkfs.fat` utility, [install](/index.php/Install "Install") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
+Após criar a partição, [formate](/index.php/Format "Format")-a como [FAT32](/index.php/FAT32 "FAT32"). Para usar o utilitário `mkfs.fat`, [instale](/index.php/Instale "Instale") [dosfstools](https://www.archlinux.org/packages/?name=dosfstools).
 
 ```
 # mkfs.fat -F32 /dev/sd*xY*
 
 ```
 
-If you get the message `WARNING: Not enough clusters for a 32 bit FAT!`, reduce cluster size with `mkfs.fat -s2 -F32 ...` or `-s1`; otherwise the partition may be unreadable by UEFI. See [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) for supported cluster sizes.
+Se você receber a mensagem `WARNING: Not enough clusters for a 32 bit FAT!`, reduza o tamanho do cluster com `mkfs.fat -s2 -F32 ...` ou `-s1`; caso contrário, a partição pode ser ilegível pelo UEFI. Veja [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) para os tamanhos de cluster suportados.
 
 ## Montar a partição
 
-The kernels, initramfs files, and, in most cases, the processor's [microcode](/index.php/Microcode "Microcode"), need to be accessible by the [boot loader](/index.php/Boot_loader "Boot loader") or UEFI itself to successfully boot the system. Thus if you want to keep the setup simple, your boot loader choice limits the available mount points for EFI system partition.
+Os kernels, os arquivos initramfs e, na maioria dos casos, o [microcódigo](/index.php/Microcode "Microcode") do processador, precisam ser acessados pelo [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") ou pelo próprio UEFI para inicializar com sucesso o sistema. Portanto, se você quiser manter a configuração simples, sua opção de gerenciador de boot limita os pontos de montagem disponíveis para a partição do sistema EFI.
 
-The simplest scenarios for mounting EFI system partition are:
+### Pontos de montagem comuns
 
-*   [mount](/index.php/Mount "Mount") ESP to `/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which has a driver for your root file system (eg. [GRUB](/index.php/GRUB "GRUB"), [rEFInd](/index.php/REFInd "REFInd")).
-*   [mount](/index.php/Mount "Mount") ESP to `/boot`. This is the preferred method when directly booting a [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from UEFI.
+Os cenários mais simples para montar uma partição de sistema EFI são:
 
-**Tip:**
+*   [montar](/index.php/Mount "Mount") a ESP em `/efi` e usar um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") que tem um driver para seu sistema de arquivos raiz (p.ex., [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)"), [rEFInd](/index.php/REFInd "REFInd")).
+*   [montar](/index.php/Mount "Mount") a ESP em `/boot`. Esse é o método preferível ao inicializar diretamente um kernel de [EFISTUB](/index.php/EFISTUB_(Portugu%C3%AAs) "EFISTUB (Português)") do UEFI.
 
-*   `/efi` is a replacement[[5]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) for the previously popular (and possibly still used by other Linux distributions) ESP mountpoint `/boot/efi`.
-*   The `/efi` directory is not available by default, you will need to first create it with [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) before mounting the ESP to it.
+**Dica:**
+
+*   `/efi` é um substituto[[5]](https://github.com/systemd/systemd/pull/3757#issuecomment-234290236) para o anterior e popular (e possivelmente ainda usado por outras distribuições) ponto de montagem ESP `/boot/efi`.
+*   O diretório `/efi` não está disponível por padrão, de forma que você precisará primeiro criá-lo com [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) antes de montar a ESP nele.
 
 ### Pontos de montagem alternativos
 
-If you do not use one of the simple methods from [#Mount the partition](#Mount_the_partition), you will need to copy your boot files to ESP (referred to hereafter as `*esp*`).
+Se você não usar um dos métodos simples de [#Montar a partição](#Montar_a_partição), você precisará copiar seus arquivos de inicialização para a ESP (referida daqui em diante como `*esp*`).
 
 ```
 # mkdir -p *esp*/EFI/arch
@@ -129,13 +134,13 @@ If you do not use one of the simple methods from [#Mount the partition](#Mount_t
 
 ```
 
-**Note:** You may also need to copy the [Microcode](/index.php/Microcode "Microcode") to the boot-entry location.
+**Nota:** Você também pode precisar copiar o [microcódigo](/index.php/Microcode "Microcode") para o local da entrada de inicialização.
 
-Furthermore, you will need to keep the files on the ESP up-to-date with later kernel updates. Failure to do so could result in an unbootable system. The following sections discuss several mechanisms for automating it.
+Além disso, você precisará manter os arquivos na ESP em dia com as atualizações posteriores do kernel. Não fazer isso pode resultar em um sistema não inicializável. As seções a seguir discutem vários mecanismos para automatizá-la.
 
-**Note:** If ESP is not mounted to `/boot`, make sure to not rely on the [systemd automount mechanism](/index.php/Fstab#Automount_with_systemd "Fstab") (including that of [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8)). Always have it mounted manually prior to the any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on ESP.
+**Nota:** Se a ESP não estiver montada em `/boot`, certifique-se de não confiar no [mecanismo de automontagem do systemd](/index.php/Fstab#Automount_with_systemd "Fstab") (incluindo o de [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8)). Sempre monte-a manualmente antes de atualizar o sistema ou o kernel, caso contrário você pode não conseguir montá-la após a atualização, lhe travando no kernel em execução no momento sem a capacidade de atualizar a cópia do kernel na ESP.
 
-Alternatively [preload the required kernel modules on boot](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module"), e.g.:
+Alternativamente, [carregue antecipadamente os módulos de kernel necessários na inicialização](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module"), p.ex.:
 
  `/etc/modules-load.d/vfat.conf` 
 ```
@@ -147,21 +152,21 @@ nls_iso8859-1
 
 #### Usando montagem com bind
 
-Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind [mount](/index.php/Mount "Mount") (see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). This allows [pacman](/index.php/Pacman "Pacman") to update the kernel directly while keeping the ESP organized to your liking.
+Em vez de montar o próprio ESP para `/boot`, você pode montar um diretório do ESP para `/boot` usando uma [montagem](/index.php/Mount "Mount") "bind" (consulte [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). Isto permite que [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") atualize o kernel diretamente enquanto mantém a ESP organizada ao seu gosto.
 
-**Note:**
+**Nota:**
 
-*   This requires a [kernel](/index.php/FAT#Kernel_configuration "FAT") and [bootloader](/index.php/Bootloader "Bootloader") compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot/`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
-*   You *must* use the `root=` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
+*   Isso requer um [kernel](/index.php/FAT#Kernel_configuration "FAT") e [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") compatível com o FAT32\. Este não é um problema para uma instalação comum do Arch, mas pode ser problemático para outras distribuições (ou seja, aquelas que exigem links simbólicos em `/boot/`). Veja a postagem no fórum [arquivo](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
+*   Você *deve* usar o [parâmetro do kernel](/index.php/Par%C3%A2metros_do_kernel#Lista_de_parâmetros "Parâmetros do kernel") `root=` para inicializar usando este método.
 
-Just like in [#Alternative mount points](#Alternative_mount_points), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot`. Then bind mount the directory:
+Assim como em [#Pontos de montagem alternativos](#Pontos_de_montagem_alternativos), copie todos os arquivos de inicialização para um diretório em sua ESP, mas monte a ESP **fora** do `/boot`. Em seguida, associe o diretório:
 
 ```
 # mount --bind *esp*/EFI/arch /boot
 
 ```
 
-After verifying success, edit your [Fstab](/index.php/Fstab "Fstab") to make the changes persistent:
+Após confirmar o sucesso, edite seu [Fstab](/index.php/Fstab "Fstab") para tornar as alterações persistentes:
 
  `/etc/fstab` 
 ```
@@ -171,7 +176,7 @@ After verifying success, edit your [Fstab](/index.php/Fstab "Fstab") to make the
 
 #### Usando systemd
 
-[Systemd](/index.php/Systemd "Systemd") features event triggered tasks. In this particular case, the ability to detect a change in path is used to sync the EFISTUB kernel and initramfs files when they are updated in `/boot/`. The file watched for changes is `initramfs-linux-fallback.img` since this is the last file built by mkinitcpio, to make sure all files have been built before starting the copy. The *systemd* path and service files to be created are:
+O [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") apresenta tarefas acionadas por eventos. Nesse caso específico, a capacidade de detectar uma alteração no caminho é usada para sincronizar os arquivos kernel EFISTUB e initramfs quando eles são atualizados em `/boot/`. O arquivo assistido por alterações é o `initramfs-linux-fallback.img`, pois este é o último arquivo construído pelo mkinitcpio, para garantir que todos os arquivos tenham sido construídos antes de iniciar a cópia. Os arquivos de caminho e serviço *systemd* a serem criados são:
 
  `/etc/systemd/system/efistub-update.path` 
 ```
@@ -197,13 +202,13 @@ ExecStart=/usr/bin/cp -af /boot/initramfs-linux.img *esp*/EFI/arch/
 ExecStart=/usr/bin/cp -af /boot/initramfs-linux-fallback.img *esp*/EFI/arch/
 ```
 
-Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
+Então, [habilite](/index.php/Habilite "Habilite") e [inicie](/index.php/Inicie "Inicie") `efistub-update.path`.
 
-**Tip:** For [Secure Boot](/index.php/Secure_Boot "Secure Boot") with your own keys, you can set up the service to also sign the image using [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools): `ExecStart=/usr/bin/sbsign --key */path/to/db.key* --cert */path/to/db.crt* --output *esp*/EFI/arch/vmlinuz-linux /boot/vmlinuz-linux` 
+**Dica:** Para [Secure Boot](/index.php/Secure_Boot "Secure Boot") com suas próprias chaves, você pode configurar o serviço para também assinar a imagem usando [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools): `ExecStart=/usr/bin/sbsign --key */caminho/para/bd.key* --cert */caminho/para/bd.crt* --output *esp*/EFI/arch/vmlinuz-linux /boot/vmlinuz-linux` 
 
 #### Usando eventos do sistema de arquivos
 
-[Filesystem events](/index.php/Autostarting#On_filesystem_events "Autostarting") can be used to run a script syncing the EFISTUB Kernel after kernel updates. An example with [incron](/index.php/Incron "Incron") follows.
+[Eventos do sistema de arquivos](/index.php/Autostarting#On_filesystem_events "Autostarting") podem ser usados para executar um script sincronizando o kernel EFISTUB após atualizações do kernel. Um exemplo com [incron](/index.php/Incron "Incron") a seguir:
 
  `/usr/local/bin/efistub-update` 
 ```
@@ -214,20 +219,20 @@ cp -af /boot/initramfs-linux-fallback.img *esp*/EFI/arch/
 
 ```
 
-**Note:** The first parameter `/boot/initramfs-linux-fallback.img` is the file to watch. The second parameter `IN_CLOSE_WRITE` is the action to watch for. The third parameter `/usr/local/bin/efistub-update` is the script to execute.
+**Nota:** O primeiro parâmetro `/boot/initramfs-linux-fallback.img` é o arquivo a ser observado. O segundo parâmetro `IN_CLOSE_WRITE` é a ação a ser observada. O terceiro parâmetro `/usr/local/bin/efistub-update` é o script a ser executado.
  `/etc/incron.d/efistub-update.conf` 
 ```
 /boot/initramfs-linux-fallback.img IN_CLOSE_WRITE /usr/local/bin/efistub-update
 
 ```
 
-In order to use this method, [enable](/index.php/Enable "Enable") the `incrond.service`.
+Para usar este método, [habilite](/index.php/Habilite "Habilite") o `incrond.service`.
 
 #### Usando hook do mkinitcpio
 
-Mkinitcpio can generate a hook that does not need a system level daemon to function. It spawns a background process which waits for the generation of `vmlinuz`, `initramfs-linux.img`, and `initramfs-linux-fallback.img` before copying the files.
+Mkinitcpio pode gerar um hook que não precisa de um daemon de nível de sistema para funcionar. Ele gera um processo de segundo plano que aguarda a geração de `vmlinuz`, `initramfs-linux.img` e `initramfs-linux-fallback.img` antes de copiar os arquivos.
 
-Add `efistub-update` to the list of hooks in `/etc/mkinitcpio.conf`.
+Adicione `efistub-update` à lista de hooks em `/etc/mkinitcpio.conf`.
 
  `/etc/initcpio/install/efistub-update` 
 ```
@@ -263,9 +268,9 @@ echo "Synced /boot with ESP"
 
 #### Usando hook do mkinitcpio (2)
 
-Another **alternative** to the above solutions, that is potentially cleaner because there are less copies and does not need a system level daemon to function. The logic is reversed, the initramfs is directly stored in the EFI partition, not copied in `/boot/`. Then the kernel and any other additional files are copied to the ESP partition, thanks to a mkinitcpio hook.
+Outra **alternativa** para as soluções acima, que é potencialmente mais limpa porque há menos cópias e não precisa de um daemon de nível de sistema para funcionar. A lógica é invertida, o initramfs é armazenado diretamente na partição EFI, não copiado em `/boot/`. Então, o kernel e quaisquer outros arquivos adicionais são copiados para a partição ESP, graças a um hook do mkinitcpio.
 
-Edit the file `/etc/mkinitcpio.d/linux.preset` :
+Edite o arquivo `/etc/mkinitcpio.d/linux.preset` :
 
  `/etc/mkinitcpio.d/linux.preset` 
 ```
@@ -288,7 +293,7 @@ fallback_image="${ESP_DIR}/initramfs-linux-fallback.img"
 fallback_options="-S autodetect"
 ```
 
-Then create the file `/etc/initcpio/install/esp-update-linux` which need to be executable :
+Então, crie o arquivo `/etc/initcpio/install/esp-update-linux` que precisa ser executado:
 
  `/etc/initcpio/install/esp-update-linux` 
 ```
@@ -309,7 +314,7 @@ HELPEOF
 
 ```
 
-To test that, just run:
+Para testar isso, basta executar:
 
 ```
 # rm /boot/initramfs-linux-fallback.img
@@ -320,7 +325,7 @@ To test that, just run:
 
 #### Usando predefinição do mkinitcpio
 
-As the presets in `/etc/mkinitcpio.d/` support shell scripting, the kernel and initramfs can be copied by just editing the presets.
+Como as predefinições em `/etc/mkinitcpio.d/` possuem suporte a scripts de shell, o kernel e o initramfs podem ser copiados apenas editando as predefinições.
 
  `/etc/mkinitcpio.d/0.preset` 
 ```
@@ -345,9 +350,9 @@ source /etc/mkinitcpio.d/0.preset
 
 #### Usando hook do pacman
 
-A last option relies on the [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") that are run at the end of the transaction.
+Uma última opção depende dos [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman") que são executados no final da transação.
 
-The first file is a hook that monitors the relevant files, and it is run if they were modified in the former transaction.
+O primeiro arquivo é um hook que monitora os arquivos relevantes e é executado se eles foram modificados na transação anterior.
 
  `/etc/pacman.d/hooks/999-kernel-efi-copy.hook` 
 ```
@@ -366,7 +371,7 @@ Exec = /usr/local/bin/kernel-efi-copy.sh
 
 ```
 
-The second file is the script itself. Create the file and make it [executable](/index.php/Executable "Executable"):
+O segundo arquivo é o próprio script. Crie o arquivo e torne-o [executável](/index.php/Execut%C3%A1vel "Executável"):
 
  `/usr/local/bin/kernel-efi-copy.sh` 
 ```
@@ -400,11 +405,11 @@ exit 0
 
 ### ESP no RAID
 
-It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
+É possível tornar a ESP parte de uma matriz RAID1, mas isso traz o risco de corrupção de dados, e outras considerações precisam ser feitas ao criar a ESP. Veja [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) e [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) para detalhes.
 
-See [UEFI booting and RAID1](https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/) for a in-depth guide.
+Veja [Inicialização com UEFI e RAID1](https://outflux.net/blog/archives/2018/04/19/uefi-booting-and-raid1/) (em inglês) para um guia mais aprofundado.
 
-The key part is to use `--metadata 1.0` in order to keep the RAID metadata at the end of the partition, otherwise the firmware will not be able to access it:
+A parte principal é usar `--metadata 1.0` para manter os metadados RAID no final da partição, caso contrário o firmware não poderá acessá-los:
 
 ```
 # mdadm --create --verbose --level=1 **--metadata=1.0** --raid-devices=2 /dev/md/ESP /dev/sda*X* /dev/sdb*Y*
@@ -413,4 +418,4 @@ The key part is to use `--metadata 1.0` in order to keep the RAID metadata at th
 
 ## Veja também
 
-*   [The EFI system partition and the default boot behavior](https://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/)
+*   [A partição de sistema EFI e o comportamento de inicialização padrão](https://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/)

@@ -58,7 +58,7 @@ Rust follows a regular six week release cycle, similar to the release cycle of F
 
 ## Installation
 
-There are 2 choices for a rustup installation, one is supported by Arch Linux, while the other is officially supported by Rust.
+There are two choices for a rust installation, one is supported by Arch Linux, while the other is officially supported by Rust.
 
 ### Native installation
 

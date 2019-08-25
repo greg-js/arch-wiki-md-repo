@@ -7,7 +7,11 @@
 | Suspend | Working | systemd-suspend |
 | Function keys | Working |
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
     *   [1.1 E403SA-WX0026T](#E403SA-WX0026T)

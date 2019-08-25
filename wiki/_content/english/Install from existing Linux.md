@@ -90,12 +90,12 @@ Then, follow the procedure described in [Installation guide#Configure the system
 
 *   [Installation guide#Time zone](/index.php/Installation_guide#Time_zone "Installation guide"), [Installation guide#Localization](/index.php/Installation_guide#Localization "Installation guide") and [Installation guide#Root password](/index.php/Installation_guide#Root_password "Installation guide") can be skipped
 *   [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide") may be required in particular if changing filesystem, for example from [ext4](/index.php/Ext4 "Ext4") to [Btrfs](/index.php/Btrfs "Btrfs")
-*   Regarding [Installation guide#bootloader](/index.php/Installation_guide#bootloader "Installation guide"), it is necessary to reinstall the bootloader
+*   Regarding [Installation guide#Boot loader](/index.php/Installation_guide#Boot_loader "Installation guide"), it is necessary to reinstall the bootloader
 *   Delete `/etc/machine-id` so that a new, unique one, is generated at the next boot
 
 If the mirrored Arch installation may be used within a different configuration or with another hardware, consider the following additional operations:
 
-*   Use the CPU [microcode](/index.php/Microcode "Microcode") update adapted to the target system during the step [Installation guide#bootloader](/index.php/Installation_guide#bootloader "Installation guide")
+*   Use the CPU [microcode](/index.php/Microcode "Microcode") update adapted to the target system during the step [Installation guide#Boot loader](/index.php/Installation_guide#Boot_loader "Installation guide")
 *   If any specific [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") was present on the host and may be incompatible with the target system, follow [Moving an existing install into (or out of) a virtual machine#Disable any Xorg-related files](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine#Disable_any_Xorg-related_files "Moving an existing install into (or out of) a virtual machine")
 *   Make any other adjustment appropriate to the target system, like reconfiguring the network or the audio.
 

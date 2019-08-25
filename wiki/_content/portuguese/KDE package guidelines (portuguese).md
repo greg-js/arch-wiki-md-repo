@@ -1,12 +1,12 @@
-**Status de tradução:** Esse artigo é uma tradução de [KDE package guidelines](/index.php/KDE_package_guidelines "KDE package guidelines"). Data da última tradução: 2019-04-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&diff=0&oldid=569678) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [KDE package guidelines](/index.php/KDE_package_guidelines "KDE package guidelines"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&diff=0&oldid=579262) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 
-[CLR](/index.php/Diretrizes_de_pacotes_CLR "Diretrizes de pacotes CLR") – [Cross](/index.php/Diretrizes_de_pacotes_de_ferramentas_de_compila%C3%A7%C3%A3o_cruzada "Diretrizes de pacotes de ferramentas de compilação cruzada") – [Eclipse](/index.php/Diretrizes_de_pacotes_de_plugin_do_Eclipse "Diretrizes de pacotes de plugin do Eclipse") – [Electron](/index.php/Diretrizes_de_pacotes_Electron "Diretrizes de pacotes Electron") – [Free Pascal](/index.php/Diretrizes_de_pacotes_Free_Pascal "Diretrizes de pacotes Free Pascal") – [GNOME](/index.php/Diretrizes_de_pacotes_GNOME "Diretrizes de pacotes GNOME") – [Go](/index.php/Diretrizes_de_pacotes_Go "Diretrizes de pacotes Go") – [Haskell](/index.php/Diretrizes_de_pacotes_Haskell "Diretrizes de pacotes Haskell") – [Java](/index.php/Diretrizes_de_pacotes_Java "Diretrizes de pacotes Java") – [KDE](/index.php/Diretrizes_de_pacotes_KDE "Diretrizes de pacotes KDE") – [Kernel](/index.php/Diretrizes_de_pacotes_de_m%C3%B3dulos_de_kernel "Diretrizes de pacotes de módulos de kernel") – [Lisp](/index.php/Diretrizes_de_pacotes_Lisp "Diretrizes de pacotes Lisp") – [MinGW](/index.php/Diretrizes_de_pacotes_MinGW "Diretrizes de pacotes MinGW") – [Node.js](/index.php/Diretrizes_de_pacotes_Node.js "Diretrizes de pacotes Node.js") – [Nonfree](/index.php/Diretrizes_de_pacotes_de_aplicativos_n%C3%A3o_livres "Diretrizes de pacotes de aplicativos não livres") – [OCaml](/index.php/Diretrizes_de_pacotes_OCaml "Diretrizes de pacotes OCaml") – [Perl](/index.php/Diretrizes_de_pacotes_Perl "Diretrizes de pacotes Perl") – [PHP](/index.php/Diretrizes_de_pacotes_PHP "Diretrizes de pacotes PHP") – [Python](/index.php/Diretrizes_de_pacotes_Python "Diretrizes de pacotes Python") – [R](/index.php/Diretrizes_de_pacotes_R "Diretrizes de pacotes R") – [Ruby](/index.php/Diretrizes_de_pacotes_Ruby_Gem "Diretrizes de pacotes Ruby Gem") – [Rust](/index.php/Diretrizes_de_pacotes_Rust "Diretrizes de pacotes Rust") – [VCS](/index.php/Diretrizes_de_pacotes_VCS "Diretrizes de pacotes VCS") – [Web](/index.php/Diretrizes_de_pacotes_de_aplicativos_da_Web "Diretrizes de pacotes de aplicativos da Web") – [Wine](/index.php/Diretrizes_de_pacotes_Wine "Diretrizes de pacotes Wine")
+[32-bit](/index.php/Diretrizes_de_pacotes_32-bit "Diretrizes de pacotes 32-bit") – [CLR](/index.php/Diretrizes_de_pacotes_CLR "Diretrizes de pacotes CLR") – [Cross](/index.php/Diretrizes_de_pacotes_de_ferramentas_de_compila%C3%A7%C3%A3o_cruzada "Diretrizes de pacotes de ferramentas de compilação cruzada") – [Eclipse](/index.php/Diretrizes_de_pacotes_de_plugin_do_Eclipse "Diretrizes de pacotes de plugin do Eclipse") – [Electron](/index.php/Diretrizes_de_pacotes_Electron "Diretrizes de pacotes Electron") – [Free Pascal](/index.php/Diretrizes_de_pacotes_Free_Pascal "Diretrizes de pacotes Free Pascal") – [GNOME](/index.php/Diretrizes_de_pacotes_GNOME "Diretrizes de pacotes GNOME") – [Go](/index.php/Diretrizes_de_pacotes_Go "Diretrizes de pacotes Go") – [Haskell](/index.php/Diretrizes_de_pacotes_Haskell "Diretrizes de pacotes Haskell") – [Java](/index.php/Diretrizes_de_pacotes_Java "Diretrizes de pacotes Java") – [KDE](/index.php/Diretrizes_de_pacotes_KDE "Diretrizes de pacotes KDE") – [Kernel](/index.php/Diretrizes_de_pacotes_de_m%C3%B3dulos_de_kernel "Diretrizes de pacotes de módulos de kernel") – [Lisp](/index.php/Diretrizes_de_pacotes_Lisp "Diretrizes de pacotes Lisp") – [MinGW](/index.php/Diretrizes_de_pacotes_MinGW "Diretrizes de pacotes MinGW") – [Node.js](/index.php/Diretrizes_de_pacotes_Node.js "Diretrizes de pacotes Node.js") – [Nonfree](/index.php/Diretrizes_de_pacotes_de_aplicativos_n%C3%A3o_livres "Diretrizes de pacotes de aplicativos não livres") – [OCaml](/index.php/Diretrizes_de_pacotes_OCaml "Diretrizes de pacotes OCaml") – [Perl](/index.php/Diretrizes_de_pacotes_Perl "Diretrizes de pacotes Perl") – [PHP](/index.php/Diretrizes_de_pacotes_PHP "Diretrizes de pacotes PHP") – [Python](/index.php/Diretrizes_de_pacotes_Python "Diretrizes de pacotes Python") – [R](/index.php/Diretrizes_de_pacotes_R "Diretrizes de pacotes R") – [Ruby](/index.php/Diretrizes_de_pacotes_Ruby_Gem "Diretrizes de pacotes Ruby Gem") – [Rust](/index.php/Diretrizes_de_pacotes_Rust "Diretrizes de pacotes Rust") – [VCS](/index.php/Diretrizes_de_pacotes_VCS "Diretrizes de pacotes VCS") – [Web](/index.php/Diretrizes_de_pacotes_de_aplicativos_da_Web "Diretrizes de pacotes de aplicativos da Web") – [Wine](/index.php/Diretrizes_de_pacotes_Wine "Diretrizes de pacotes Wine")
 
-Os pacotes do [KDE](/index.php/KDE "KDE") no Arch Linux seguem um certo esquema.
+Os pacotes do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") no Arch Linux seguem um certo esquema.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -74,12 +74,7 @@ Quando um pacote é movido para [extra] ou [community], essa linha deve ser alte
 
 ## Tipo de compilação
 
-Por favor, especifique o tipo de compilação; Isso torna realmente simples recompilar um pacote com símbolos de depuração usando apenas uma regra *sed*.
-
-```
--DCMAKE_BUILD_TYPE=Release
-
-```
+Geralmente você não deve especificar o tipo de compilação; isso faz com que o CMake honre variáveis ambientais como `CFLAGS`, `CPPFLAGS`, etc. [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2018-March/029181.html)
 
 ## Forçar Qt4
 
@@ -116,19 +111,19 @@ Pacotes de módulo de configuração do KDE devem ser nomeados `kcm-*módulo*`.
 
 ### Widgets do Plasma
 
-Os pacotes de widgets de Plasma (anteriormente Plasmoids) devem ser nomeados `kdeplasma-applets-*nome_widget*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE"); isso também os distingue dos pacotes oficiais.
+Os pacotes de widgets de Plasma (anteriormente Plasmoids) devem ser nomeados `kdeplasma-applets-*nome_widget*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"); isso também os distingue dos pacotes oficiais.
 
 ### Executores
 
-Os pacotes de corredores de plasma devem ser nomeados `kdeplasma-runners-*nome_do_runner*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE"); isso também os distingue dos pacotes oficiais.
+Os pacotes de corredores de plasma devem ser nomeados `kdeplasma-runners-*nome_do_runner*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"); isso também os distingue dos pacotes oficiais.
 
 ### Menus de serviço
 
-Os pacotes de menus de serviço devem ser nomeados `kde-servicemenus-*nome_do_serviço*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE")
+Os pacotes de menus de serviço devem ser nomeados `kde-servicemenus-*nome_do_serviço*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)").
 
 ### Temas
 
-Os pacotes de temas de plasma devem ser nomeados `kdeplasma-themes-*nome_do_tema*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE").
+Os pacotes de temas de plasma devem ser nomeados `kdeplasma-themes-*nome_do_tema*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)").
 
 ## Nomenclatura de pacote KF5
 
@@ -150,6 +145,6 @@ Os pacotes de temas de plasma devem ser nomeados `plasma5-themes-*nome_do_tema*`
 
 ## Instalação de arquivos de ícones e .desktop
 
-Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman"). Evite usar comando de instalação para esses tipos de arquivos em arquivos `.install`, pois resultaria em desnecessária execução duplicada.
+Alguns softwares do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Hooks_do_pacman "Hooks do pacman"). Evite usar comando de instalação para esses tipos de arquivos em arquivos `.install`, pois resultaria em desnecessária execução duplicada.
 
 O pacote [qt4](https://aur.archlinux.org/packages/qt4/) já depende de [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) e [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), então se seu pacote depender do [qt4](https://aur.archlinux.org/packages/qt4/), nenhuma outra ação deve ser necessária (isto é, desnecessário adicionar esses pacotes ao vetor de `depends`).

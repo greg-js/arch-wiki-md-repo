@@ -153,7 +153,7 @@ See also [[2]](https://mail.gnome.org/archives/mc/2010-March/msg00041.html).
 On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory. A wrapper script is included, which can be used by adding this line to your `~/.bashrc` or `~/.zshrc`:
 
 ```
-source /usr/lib/mc/mc.sh
+alias mc=". /usr/lib/mc/mc-wrapper.sh"
 
 ```
 

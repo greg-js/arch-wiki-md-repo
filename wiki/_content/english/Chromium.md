@@ -113,6 +113,13 @@ To enable video acceleration, [append](/index.php/Append "Append") the following
 
 **Note:** Additionally [#Force GPU acceleration](#Force_GPU_acceleration) and set `--disable-gpu-driver-bug-workarounds` to remove video freezes (especially when watching in fullscreen).
 
+To check if it's working play a video which is using a codec supported by your VA-API driver (vainfo tell you which codecs are supported) go to chrome://media-internals/ and check video_decoder :
+
+*   Hardware acceleration: MojoVideoDecoder, GpuVideoDecoder
+*   Software acceleration: VpxVideoDecoder, FFmpegVideoDecoder (some say it's Hardware acceleration?)
+
+Also chrome://gpu should read Video Decode: Hardware accelerated
+
 ### Flash Player plugin
 
 Flash Player is automatically installed when using Google Chrome.
@@ -145,7 +152,7 @@ UTF characters may render as boxes (e.g. simplified Chinese characters). Install
 
 #### Tab font size is too large
 
-Chromium will use the GTK settings as described in [GTK+#Configuration](/index.php/GTK%2B#Configuration "GTK+"). When configured, Chromium will use the `gtk-font-name` setting for tabs (which may mismatch window font size). To override these settings, use `--force-device-scale-factor=1.0`.
+Chromium will use the GTK settings as described in [GTK#Configuration](/index.php/GTK#Configuration "GTK"). When configured, Chromium will use the `gtk-font-name` setting for tabs (which may mismatch window font size). To override these settings, use `--force-device-scale-factor=1.0`.
 
 ### WebGL
 

@@ -62,7 +62,7 @@ EndSection
 
 ## Disabling DPMS
 
-Since DPMS is enable by default in many scenarios, explicit action must be taken to disable it. To complete disable DPMS, add the following to a file in `/etc/X11/xorg.conf.d/10-monitor.conf`:
+Since DPMS is enabled by default in many scenarios, explicit action must be taken to disable it. To completely disable DPMS, add the following to a file in `/etc/X11/xorg.conf.d/10-monitor.conf`:
 
 ```
 Section "Extensions"

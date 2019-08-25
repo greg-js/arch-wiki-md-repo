@@ -114,7 +114,7 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 
 	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
 
-*   **pyNeighborhood** — GTK+ based SMB/CIFS browsing utility.
+*   **pyNeighborhood** — GTK-based SMB/CIFS browsing utility.
 
 	[https://launchpad.net/pyneighborhood](https://launchpad.net/pyneighborhood) || [pyneighborhood](https://www.archlinux.org/packages/?name=pyneighborhood)
 
@@ -182,7 +182,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 *   **[OpenVAS](/index.php/OpenVAS "OpenVAS")** — Framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. FOSS Nessus fork.
 
-	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/groups/x86_64/openvas/)
+	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/packages/?name=openvas)
 
 *   **OSSEC** — Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.
 
@@ -244,7 +244,7 @@ See [iptables#Front-ends](/index.php/Iptables#Front-ends "Iptables").
 
 See also [Synchronization and backup programs#Incremental backups](/index.php/Synchronization_and_backup_programs#Incremental_backups "Synchronization and backup programs") and [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software").
 
-*   **Déjà Dup** — Simple GTK+ backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses [duplicity](/index.php/Duplicity "Duplicity") as the backend.
+*   **Déjà Dup** — Simple GTK backup program. It hides the complexity of doing backups the 'right way' (encrypted, off-site, and regular) and uses [duplicity](/index.php/Duplicity "Duplicity") as the backend.
 
 	[https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
 
@@ -432,7 +432,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://www.kde.org/applications/system/kwalletmanager/](https://www.kde.org/applications/system/kwalletmanager/) || [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager)
 
-*   **OTPClient** — Highly secure and easy to use GTK+ software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
+*   **OTPClient** — Highly secure and easy to use GTK software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
 
 	[https://github.com/paolostivanin/OTPClient](https://github.com/paolostivanin/OTPClient) || [otpclient](https://aur.archlinux.org/packages/otpclient/)
 
@@ -476,7 +476,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://aur.archlinux.org/packages/cfv/)
 
-*   **GtkHash** — A GTK+ utility for computing message digests or checksums
+*   **GtkHash** — A GTK utility for computing message digests or checksums
 
 	[http://gtkhash.sourceforge.net/](http://gtkhash.sourceforge.net/) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)
 
@@ -496,7 +496,7 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 
 	[https://github.com/rhash/RHash/](https://github.com/rhash/RHash/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
 
-*   **MassHash** — A set of file hashing tools (both CLI and GTK+ GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
+*   **MassHash** — A set of file hashing tools (both CLI and GTK GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
 
 	[http://jdleicher.github.io/MassHash/](http://jdleicher.github.io/MassHash/) || [masshash](https://aur.archlinux.org/packages/masshash/)
 

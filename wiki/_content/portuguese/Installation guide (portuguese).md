@@ -72,7 +72,7 @@ O ambiente *live* pode ser inicializado a partir de uma [unidade flash USB](/ind
 
 *   O apontamento do dispositivo de inicialização atual para uma unidade que contém a mídia de instalação do Arch normalmente pode ser alcançado pressionando-se uma tecla durante a fase [POST](https://en.wikipedia.org/wiki/pt:Power-on_self-test "wikipedia:pt:Power-on self-test"), conforme indicado na tela inicial. Consulte o manual da sua placa-mãe para obter detalhes.
 *   Quando o menu do Arch aparecer, selecione *Boot Arch Linux* e pressione `Enter` para entrar no ambiente de instalação.
-*   Consulte [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) para uma lista de [parâmetros de inicialização](/index.php/Kernel_parameters#Configuration "Kernel parameters") e [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para uma lista de pacotes incluídos.
+*   Consulte [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams) para uma lista de [parâmetros de inicialização](/index.php/Par%C3%A2metros_do_kernel#Configuração "Parâmetros do kernel") e [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) para uma lista de pacotes incluídos.
 *   Você será autenticado no primeiro [console virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como o usuário *root* sob um prompt de shell [Zsh](/index.php/Zsh "Zsh").
 
 Para trocar para um console diferente — por exemplo, para ver esse guia com [ELinks](/index.php/ELinks "ELinks") junto com a instalação — use o [atalho](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*seta*`. Para [editar](/index.php/Edi%C3%A7%C3%A3o_de_texto "Edição de texto") arquivos de configuração, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") e [vim](/index.php/Vim#Usage "Vim") estão disponíveis.
@@ -162,7 +162,7 @@ Para verificar o status do serviço, use `timedatectl status`.
 
 ### Partição dos discos
 
-Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](https://en.wikipedia.org/wiki/Device_file#Naming_conventions ou *fdisk*.
+Quando reconhecido pelo sistema *live*, discos são atribuídos a um [dispositivo de bloco](/index.php/Dispositivo_de_bloco "Dispositivo de bloco") tal como `/dev/sda` ou `/dev/nvme0n1`.. Para identificar esses dispositivos, use [lsblk](/index.php/Lsblk_(Portugu%C3%AAs) "Lsblk (Português)") ou *fdisk*.
 
 ```
 # fdisk -l

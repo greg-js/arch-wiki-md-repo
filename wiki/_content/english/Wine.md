@@ -318,7 +318,7 @@ $ rm ~/.local/share/mime/application/x-wine-extension*
 
 ### Appearance
 
-A similar to XP looking theme can be downloaded from [here](http://download.microsoft.com/download/e/a/9/ea9af5ae-b48e-473e-85fe-dcde7472e644/ZuneDesktopTheme.msi). To install it see [here](https://wiki.winehq.org/Wine_User%27s_Guide#Running_.msi_files). Lastly use *winecfg* to select it. Wine staging users may instead want to try enabling the option *Enable GTK3 Theming* under the Staging section of *winecfg* for a theme that matches the current GTK+ theme.
+A similar to XP looking theme can be downloaded from [here](http://download.microsoft.com/download/e/a/9/ea9af5ae-b48e-473e-85fe-dcde7472e644/ZuneDesktopTheme.msi). To install it see [here](https://wiki.winehq.org/Wine_User%27s_Guide#Running_.msi_files). Lastly use *winecfg* to select it. Wine staging users may instead want to try enabling the option *Enable GTK3 Theming* under the Staging section of *winecfg* for a theme that matches the current GTK theme.
 
 ### Printing
 

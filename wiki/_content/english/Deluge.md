@@ -6,7 +6,7 @@ Related articles
 *   [iptables](/index.php/Iptables "Iptables")
 *   [OpenSSL](/index.php/OpenSSL "OpenSSL")
 
-[Deluge](http://deluge-torrent.org/) is a full-featured BitTorrent application written in Python 2\. It has a variety of features, including but not limited to: a client/server model, DHT support, magnet links, a plugin system, UPnP support, full-stream encryption, proxy support, and three different client applications. When the server daemon is running, users can connect to it via a console client, a GTK+-based GUI, or a Web-based UI. A full list of features can be viewed [here](http://dev.deluge-torrent.org/wiki/About).
+[Deluge](http://deluge-torrent.org/) is a full-featured BitTorrent application written in Python 2\. It has a variety of features, including but not limited to: a client/server model, DHT support, magnet links, a plugin system, UPnP support, full-stream encryption, proxy support, and three different client applications. When the server daemon is running, users can connect to it via a console client, a GTK-based GUI, or a Web-based UI. A full list of features can be viewed [here](http://dev.deluge-torrent.org/wiki/About).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -24,7 +24,7 @@ Related articles
     *   [3.3 Plugins](#Plugins)
 *   [4 Clients](#Clients)
     *   [4.1 Console](#Console)
-    *   [4.2 GTK+](#GTK+)
+    *   [4.2 GTK](#GTK)
     *   [4.3 Web](#Web)
         *   [4.3.1 System service](#System_service_2)
         *   [4.3.2 User service](#User_service_2)
@@ -168,11 +168,11 @@ $ deluge-console
 
 Enter the `help` command for a list of available commands.
 
-### GTK+
+### GTK
 
 **Note:** It is necessary to select This Client Mode in *Edit -> Preferences -> Interface* for daemon (server) setups.
 
-The GTK+ client can be run with:
+The GTK client can be run with:
 
 ```
 $ deluge-gtk
@@ -186,7 +186,7 @@ $ deluge
 
 ```
 
-The GTK+ client has a number of useful plugins:
+The GTK client has a number of useful plugins:
 
 *   AutoAdd - Monitors directories for .torrent files
 *   Blocklist - Downloads and imports an IP blocklist
@@ -195,7 +195,7 @@ The GTK+ client has a number of useful plugins:
 *   Label - Allows labels to be assigned to torrents, as well as state, tracker, and keyword filters
 *   Notifications - Provides notifications (email, pop-up, blink, sound) for events as well as other plugins
 *   Scheduler - Limits active torrents and their speed on a per-hour, per-day basis
-*   WebUi - Allows the Web UI to be started via the GTK+ client
+*   WebUi - Allows the Web UI to be started via the GTK client
 
 ### Web
 
@@ -213,7 +213,7 @@ Just as with deluge daemon mentioned above, the web client as can be started sev
 
 Several things to note:
 
-*   The web client offers many of the same features of the GTK+ UI, including the plugin system.
+*   The web client offers many of the same features of the GTK UI, including the plugin system.
 *   It is recommended to use HTTPS for the Web client to protect against a man-in-the-middle attack.
 *   Users may be greeted by a warning from the browser that the SSL certificate is untrusted. Add an exception to this in the browser to continue on. See the [OpenSSL](/index.php/OpenSSL "OpenSSL") page for information on creating your own certificate.
 *   If multiple users are running a daemon, the default port (8112) will need to be changed for each user.
@@ -317,7 +317,7 @@ connect <host>[:<port>] <user> <password>
 
 ```
 
-In the GTK+ client, *Edit > Connection Manager > Add*.
+In the GTK client, *Edit > Connection Manager > Add*.
 
 In the Web client, *Connection Manager > Add*.
 

@@ -295,7 +295,7 @@ production:
 
 ### Ruby gems
 
-Redmine requires some [RubyGems](/index.php/Ruby#RubyGems "Ruby") to be installed and there are multiple ways of installing them (as listed on the referenced page).
+Redmine requires some [RubyGems](/index.php/RubyGems "RubyGems") to be installed and there are multiple ways of installing them (as listed on the referenced page).
 
 *   prototype-rails
 *   unicorn (an application-server)

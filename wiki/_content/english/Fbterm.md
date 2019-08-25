@@ -6,7 +6,11 @@ Related articles
 
 [Fbterm](https://code.google.com/archive/p/fbterm/) (*F*rame *b*uffer *term*inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg"). Keep in mind that its development has stopped.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Features](#Features)
 *   [2 Installation](#Installation)
@@ -24,7 +28,7 @@ From [http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/):
 	*FbTerm is a fast terminal emulator for linux with frame buffer device or VESA video card. Features include:*
 
 *   *mostly as fast as terminal of linux kernel while accelerated scrolling is enabled*
-*   *select font with fontconfig and draw text with freetype2, same as Qt/Gtk+ based GUI apps*
+*   *select font with fontconfig and draw text with freetype2, same as Qt/Gtk based GUI apps*
 *   *dynamically create/destroy up to 10 windows initially running default shell*
 *   *record scroll-back history for every window*
 *   *auto-detect text encoding with current locale, support double width scripts like Chinese, Japanese etc*

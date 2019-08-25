@@ -30,9 +30,9 @@ iwd can work in standalone mode or in combination with comprehensive network man
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Disable periodic scan for available networks](#Disable_periodic_scan_for_available_networks)
     *   [4.3 Enable built-in network configuration](#Enable_built-in_network_configuration)
-    *   [4.4 Setting static IP address in network configuration](#Setting_static_IP_address_in_network_configuration)
-    *   [4.5 Select DNS resolver](#Select_DNS_resolver)
-    *   [4.6 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
+        *   [4.3.1 Setting static IP address in network configuration](#Setting_static_IP_address_in_network_configuration)
+        *   [4.3.2 Select DNS manager](#Select_DNS_manager)
+    *   [4.4 Deny console (local) user from modifying the settings](#Deny_console_(local)_user_from_modifying_the_settings)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Connect issues after reboot](#Connect_issues_after_reboot)
     *   [5.2 Systemd unit fails on startup due to device not being available](#Systemd_unit_fails_on_startup_due_to_device_not_being_available)
@@ -231,7 +231,7 @@ A minimal example file to connect to a WPA2/PSK secured network with SSID "space
 PreSharedKey=aafb192ce2da24d8c7805c956136f45dd612103f086034c402ed266355297295
 ```
 
-The PreSharedKey can be calculated with wpa_passphrase from the SSID and the WIFI passphrase:
+The PreSharedKey can be calculated with wpa_passphrase (from [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)) from the SSID and the WIFI passphrase:
 
  `$ wpa_passphrase "spaceship" "test1234"` 
 ```
@@ -285,7 +285,7 @@ There is also ability to set route metric with `route_priority_offset`:
 route_priority_offset=300
 ```
 
-### Setting static IP address in network configuration
+#### Setting static IP address in network configuration
 
 Add the following section to `/var/lib/iwd/*network*.*type*` file. For example:
 
@@ -299,7 +299,7 @@ broadcast=192.168.1.255
 dns=192.168.1.1
 ```
 
-### Select DNS resolver
+#### Select DNS manager
 
 At the moment, iwd supports two DNS managers—[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") and [resolvconf](/index.php/Resolvconf "Resolvconf").
 
@@ -361,7 +361,15 @@ A low entropy pool can cause connection problems in particular noticeable after 
 
 ### Systemd unit fails on startup due to device not being available
 
-Some users have reported that the provided systemd unit does not wait for the wireless device to become available. [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803) Unfortunately, if iwd is started before udev renaming is done, the network device will be blocked and renaming will fail. Thus, the unit fails on startup. To fix this, one can create a systemd unit with the following content:
+Some users have reported that the provided systemd unit does not wait for the wireless device to become available. [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803) Unfortunately, if iwd is started before udev renaming is done, the network device will be blocked and renaming will fail. Thus, the unit fails on startup. [[3]](https://iwd.wiki.kernel.org/interface_lifecycle) The issue can be fixed by forcing iwd to fallback to legacy mode by adding an option to `/etc/iwd/main.conf` as follows:
+
+ `/etc/iwd/main.conf` 
+```
+[General]
+use_default_interface=true
+```
+
+Another fix is to create a systemd unit with the following content:
 
  `/etc/systemd/system/iwd@.service` 
 ```
@@ -380,7 +388,7 @@ Restart=on-failure
 
 Then one can enable the `iwd@*device*.service` unit for the specific wireless *device*.
 
-Alternatively, set a proper dependency for iwd to run after systemd/udevd by creating a [drop-in file](/index.php/Drop-in_file "Drop-in file") as follows: [[3]](https://lists.01.org/pipermail/iwd/2019-March/005837.html)
+Alternatively, set a proper dependency for iwd to run after systemd/udevd by creating a [drop-in file](/index.php/Drop-in_file "Drop-in file") as follows: [[4]](https://lists.01.org/pipermail/iwd/2019-March/005837.html)
 
  `/etc/systemd/system/iwd.service.d/override.conf` 
 ```
@@ -401,4 +409,5 @@ See [FS#61367](https://bugs.archlinux.org/task/61367).
 ## See also
 
 *   [Getting Started with iwd](https://iwd.wiki.kernel.org/gettingstarted)
-*   [More examples for Enterprise WPA](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests)
+*   [Network Configuration Settings](https://iwd.wiki.kernel.org/networkconfigurationsettings)
+*   [More Examples for WPA Enterprise](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests)

@@ -97,7 +97,7 @@ export GTK2_RC_FILES=/usr/share/themes/Breeze/gtk-2.0/gtkrc
 
 ```
 
-由于每次升级可能导致文件修改遗失，可以考虑将 et、wpp、wps 文件复制到其他目录（例如：`~/.local/bin/`），并将其添加到 [Environment_variables](/index.php/Environment_variables "Environment variables")
+由于每次升级可能导致文件修改遗失，可以考虑将 et、wpp、wps 文件复制到其他目录（例如：`~/.local/bin/`），并将其添加到 [Environment variables](/index.php/Environment_variables "Environment variables")
 
 ## 疑难解答
 

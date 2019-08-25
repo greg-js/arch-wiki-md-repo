@@ -2,7 +2,11 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
 
 	LVM is a [logicznym menedżerem woluminów](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management") dla [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"); zarządza dyskami i podobnymi urządzeniami pamięci masowej.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 LVM Building Blocks](#LVM_Building_Blocks)
 *   [2 Zalety](#Zalety)
@@ -11,9 +15,9 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [4.1 Utwórz partycje](#Utwórz_partycje)
     *   [4.2 Utwórz woluminy fizyczne](#Utwórz_woluminy_fizyczne)
     *   [4.3 Utwórz grupę woluminów](#Utwórz_grupę_woluminów)
-    *   [4.4 Utwórz w jednym kroku](#Utwórz_w_jednym_kroku)
+    *   [4.4 Utwórz PV i VG w jednym kroku](#Utwórz_PV_i_VG_w_jednym_kroku)
     *   [4.5 Utwórz woluminy logiczne](#Utwórz_woluminy_logiczne)
-    *   [4.6 Twórz systemy plików i montowanie woliminów logicznych](#Twórz_systemy_plików_i_montowanie_woliminów_logicznych)
+    *   [4.6 Twórzenie systemów plików i montowanie woluminów logicznych](#Twórzenie_systemów_plików_i_montowanie_woluminów_logicznych)
     *   [4.7 Skonfiguruj mkinitcpio](#Skonfiguruj_mkinitcpio)
     *   [4.8 Opcje jądra](#Opcje_jądra)
 *   [5 Volume operations](#Volume_operations)
@@ -128,20 +132,20 @@ LVM zapewnia większą elastyczność niż zwykłe partycje dysku twardego:
 
 ## Instalowanie Arch Linux na LVM
 
-You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Zamiast bezpośrednio formatować partycję, która ma być głównym systemem plików, system plików zostanie utworzony wewnątrz woluminu logicznego (LV).
+Woluminy LVM powinieneś utworzyć między krokami [partycjonowania dysków](/index.php/Partitioning "Partitioning"), a [formatowania](/index.php/File_systems#Create_a_file_system "File systems") w [procedurze instalacji](/index.php/Installation_guide "Installation guide"). Zamiast bezpośrednio formatować partycję, która ma być głównym systemem plików, system plików zostanie utworzony wewnątrz woluminu logicznego (LV).
 
-Upewnij się, że [lvm2](https://www.archlinux.org/packages/?name=lvm2) pakiet to [installed](/index.php/Install "Install").
+Upewnij się, że [lvm2](https://www.archlinux.org/packages/?name=lvm2) pakiet jest [zainstalowany](/index.php/Install "Install").
 
 Szybki przegląd:
 
-*   Utwórz partycję(s), w której będą przechowywane twoje PV (s).
-    *   Jeśli używasz tabeli partycji Master Boot Record, ustaw opcję [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") do `8e` (typ partycji `Linux LVM` w *fdisk*).
+*   Utwórz partycję, która stanie się twoim woluminem fizycznym (PV).
+    *   Jeśli używasz tabeli partycji Master Boot Record, ustaw opcję [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") na `8e` (typ partycji `Linux LVM` w *fdisk*).
     *   Jeśli używasz tabeli partycji GUID, ustaw opcję [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") do `E6D6D379-F507-44C2-A23C-238F2A3DF928` (typ partycji `Linux LVM` w *fdisk* i `8e00` w *gdisk*).
 *   Utwórz swoje woluminy fizyczne (PV). Jeśli masz jeden dysk, najlepiej jest po prostu utworzyć jeden PV w jednej dużej partycji. Jeśli masz wiele dysków, możesz utworzyć partycje na każdym z nich i utworzyć PV na każdej partycji.
 *   Utwórz swoją grupę woluminów (VG) i dodaj do niej wszystkie PV.
 *   Utwórz woluminy logiczne (LVs) wewnątrz tego VG.
-*   kontynuuj [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
-*   Po przejściu do “Create initial ramdisk environment” w przewodniku instalacji, dodaj `lvm` hak do `/etc/mkinitcpio.conf` (patrz poniżej, aby uzyskać szczegółowe informacje).
+*   Kontynuuj instalację ([Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide")).
+*   Po przejściu do “Create initial ramdisk environment” w przewodniku instalacji, dodaj hak (hook) `lvm` do `/etc/mkinitcpio.conf` (patrz poniżej, aby uzyskać szczegółowe informacje).
 
 **Warning:** `/boot` nie może znajdować się w LVM, gdy używa się programu ładującego, który nie obsługuje LVM; musisz utworzyć oddzielną partycję `/boot` i sformatować ją bezpośrednio. Tylko [GRUB](/index.php/GRUB "GRUB") jest znany z obsługi LVM.
 
@@ -229,7 +233,7 @@ Możesz śledzić, jak powiększa się grupa woluminów:
 
 **Note:** Jeśli chcesz, możesz utworzyć więcej niż jedną grupę woluminów, ale wtedy cała pamięć nie będzie prezentowana jako jeden dysk.
 
-### Utwórz w jednym kroku
+### Utwórz PV i VG w jednym kroku
 
 LVM umożliwia łączenie tworzenia grupy woluminów i woluminów fizycznych w jednym prostym kroku. Na przykład, aby utworzyć grupę VolGroup00 z trzema wymienionymi wyżej urządzeniami, możesz uruchomić:
 
@@ -260,7 +264,7 @@ Na przykład:
 
 Spowoduje to utworzenie woluminu logicznego, do którego można uzyskać dostęp później `/dev/mapper/Volgroup00-lvolhome` lub `/dev/VolGroup00/lvolhome`. Podobnie jak w przypadku grup woluminów, podczas tworzenia możesz użyć dowolnej nazwy dla woluminu logicznego.
 
-Można także określić jeden lub więcej woluminów fizycznych, aby ograniczyć miejsce, w którym LVM przydziela dane. Na przykład możesz utworzyć wolumin logiczny dla głównego systemu plików na małym dysku SSD i wolumin domowy na wolniejszym dysku mechanicznym. Wystarczy dodać fizyczne urządzenia głośności do wiersza poleceń, na przykład:
+Można także określić jeden lub więcej woluminów fizycznych, aby ograniczyć miejsce, w którym LVM przydziela dane. Na przykład możesz utworzyć wolumin logiczny dla głównego systemu plików na małym dysku SSD i wolumin domowy na wolniejszym dysku mechanicznym. Wystarczy dodać urządzenia, na których znajdują się woluminy fizyczne, do wiersza poleceń, na przykład:
 
 ```
 # lvcreate -L 10G VolGroup00 -n lvolhome /dev/sdc1
@@ -283,9 +287,9 @@ Możesz śledzić utworzone woluminy logiczne za pomocą:
 
 **Note:** Może być konieczne załadowanie modułu jądra "device-mapper" (`modprobe dm_mod'`) aby powyższe polecenia odniosły sukces.
 
-**Tip:** Możesz zacząć od względnie małych woluminów logicznych i rozwinąć je później, jeśli zajdzie taka potrzeba. Dla uproszczenia pozostaw trochę wolnego miejsca w grupie woluminów, aby było miejsce na rozbudowę.
+**Tip:** Możesz zacząć od względnie małych woluminów logicznych i rozszerzyć je później, jeśli zajdzie taka potrzeba. Dla uproszczenia pozostaw trochę wolnego miejsca w grupie woluminów, aby było miejsce na rozbudowę.
 
-### Twórz systemy plików i montowanie woliminów logicznych
+### Twórzenie systemów plików i montowanie woluminów logicznych
 
 Twoje woluminy logiczne powinny teraz znajdować się w `/dev/mapper/` i `/dev/*YourVolumeGroupName*`. Jeśli nie możesz ich znaleźć, użyj kolejnych poleceń, aby wywołać moduł do tworzenia węzłów urządzeń i udostępnić grupy woluminów:
 
@@ -296,7 +300,7 @@ Twoje woluminy logiczne powinny teraz znajdować się w `/dev/mapper/` i `/dev/*
 
 ```
 
-Teraz możesz tworzyć systemy plików na woluminach logicznych i montować je jako normalne partycje (jeśli instalujesz Arch Linuksa, zajrzyj do [montowania partycji](/index.php/Mount "Mount") po dodatkowe szczegóły):
+Teraz możesz tworzyć systemy plików na woluminach logicznych i montować je jak normalne partycje (jeśli instalujesz Arch Linuksa, zajrzyj do [montowania partycji](/index.php/Mount "Mount") po dodatkowe szczegóły):
 
 ```
 # mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>
@@ -316,11 +320,9 @@ Na przykład:
 
 ### Skonfiguruj mkinitcpio
 
-In case your root filesystem is on LVM, you will need to enable the appropriate [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks, otherwise your system might not boot. Enable:
+W przypadku, gdy twój główny system plików jest na LVM, będziesz musiał włączyć odpowiednie haki (hook) [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), inaczej twój system może się nie uruchomić. Włącz:
 
-W przypadku, gdy twój główny system plików jest na LVM, będziesz musiał włączyć odpowiednie haki [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"), inaczej twój system może się nie uruchomić. Włącz:
-
-*   `udev` i `lvm2` dla domyślnych initramfs za pomocą busybox
+*   `udev` i `lvm2` dla domyślnych initramfs opartych na busybox
 *   `systemd` i `sd-lvm2` dla initramfs opartych na systemd
 
 `udev` jest tam domyślnie. Edytuj plik i wstaw `lvm2` pomiędzy `block` i `filesystems` jak na przykład:
@@ -331,11 +333,11 @@ Dla initramfs opartych na systemd:
 
  `/etc/mkinitcpio.conf`  `HOOKS=(base **systemd** ... block **sd-lvm2** filesystems)` 
 
-Następnie możesz kontynuować w normalnej instrukcji instalacji, [utwórz początkowy ramdysk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")
+Następnie możesz kontynuować normalną instrukcę instalacji: [utwórz początkowy ramdysk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")
 
 **Tip:**
 
-*   Haki `lvm2` i `sd-lvm2` są instalowane przez [lvm2](https://www.archlinux.org/packages/?name=lvm2), nie [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). Jeśli uruchamiasz *mkinitcpio* w arch-chroot dla nowej instalacji, [lvm2](https://www.archlinux.org/packages/?name=lvm2) musi być zainstalowany wewnątrz *arch-chroot* dla *mkinitcpio*, aby znaleźć `lvm2` lub `sd-lvm2` hak. Jeśli [lvm2](https://www.archlinux.org/packages/?name=lvm2) stnieje tylko poza *arch-chroot*, *mkinitcpio* wyświetli `Error: Hook 'lvm2' cannot be found`.
+*   Haki `lvm2` i `sd-lvm2` są instalowane przez [lvm2](https://www.archlinux.org/packages/?name=lvm2), nie [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). Jeśli uruchamiasz *mkinitcpio* w arch-chroot dla nowej instalacji, [lvm2](https://www.archlinux.org/packages/?name=lvm2) musi być zainstalowany wewnątrz *arch-chroot* dla *mkinitcpio*, aby znaleźć `lvm2` lub `sd-lvm2` hak. Jeśli [lvm2](https://www.archlinux.org/packages/?name=lvm2) istnieje tylko poza *arch-chroot*, *mkinitcpio* wyświetli `Error: Hook 'lvm2' cannot be found`.
 *   Jeśli twój główny system plików jest na LVM RAID, zobacz [#Skonfiguruj mkinitcpio dla RAID](#Skonfiguruj_mkinitcpio_dla_RAID).
 
 ### Opcje jądra

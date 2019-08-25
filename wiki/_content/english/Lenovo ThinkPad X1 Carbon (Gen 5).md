@@ -185,7 +185,7 @@ The ISO files provided by Lenovo are only bootable from a CD or DVD, not from US
 
 #### USB
 
-According to [Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Manual_(El_Torito)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Manual_(El_Torito) "Lenovo ThinkPad X1 Carbon (Gen 6)"), it is possible to create a bootable USB like so:
+According to [Lenovo ThinkPad X1 Carbon (Gen 6)#Manual (El Torito)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Manual_(El_Torito) "Lenovo ThinkPad X1 Carbon (Gen 6)"), it is possible to create a bootable USB like so:
 
 1.  Download the ISO file
 2.  Install [geteltorito](https://aur.archlinux.org/packages/geteltorito/)

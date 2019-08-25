@@ -8,7 +8,11 @@ Artículos relacionados
 
 En este artículo se explica qué es RAID y cómo crear/administrar una matriz RAID por software utilizando mdadm.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Introducción](#Introducción)
     *   [1.1 Niveles RAID estándar](#Niveles_RAID_estándar)

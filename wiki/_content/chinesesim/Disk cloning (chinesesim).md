@@ -2,11 +2,15 @@
 
 磁盘克隆是制作整个硬盘镜像的过程, 其对于复制整个磁盘到别的电脑和备份/恢复都十分有用. 你可以访问[File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)"), 这是一个专注于文件恢复的页面.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 使用dd](#.E4.BD.BF.E7.94.A8dd)
-    *   [1.1 克隆分区](#.E5.85.8B.E9.9A.86.E5.88.86.E5.8C.BA)
-    *   [1.2 克隆整个硬盘](#.E5.85.8B.E9.9A.86.E6.95.B4.E4.B8.AA.E7.A1.AC.E7.9B.98)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 使用dd](#使用dd)
+    *   [1.1 克隆分区](#克隆分区)
+    *   [1.2 克隆整个硬盘](#克隆整个硬盘)
     *   [1.3 Backing up the MBR](#Backing_up_the_MBR)
     *   [1.4 Create disk image](#Create_disk_image)
     *   [1.5 Restore system](#Restore_system)
@@ -19,7 +23,7 @@
 *   [3 Disk cloning software](#Disk_cloning_software)
     *   [3.1 Disk cloning in Arch](#Disk_cloning_in_Arch)
     *   [3.2 Disk cloning outside of Arch](#Disk_cloning_outside_of_Arch)
-*   [4 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
+*   [4 外部链接](#外部链接)
 
 ## 使用dd
 

@@ -62,7 +62,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://sourceforge.net/projects/lxdm/](https://sourceforge.net/projects/lxdm/) || [lxdm](https://www.archlinux.org/packages/?name=lxdm)
 
-*   **[SDDM](/index.php/SDDM "SDDM")** — Gerenciador de exibição baseado no QML e sucessor do KDM; recomendado para [Plasma](/index.php/Plasma "Plasma") e [LXQt](/index.php/LXQt "LXQt").
+*   **[SDDM](/index.php/SDDM "SDDM")** — Gerenciador de exibição baseado no QML e sucessor do KDM; recomendado para [Plasma](/index.php/Plasma_(Portugu%C3%AAs) "Plasma (Português)") e [LXQt](/index.php/LXQt "LXQt").
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 

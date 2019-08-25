@@ -27,16 +27,17 @@ OpenSSH is occasionally confused with the similarly-named OpenSSL; however, the 
     *   [3.1 Configuration](#Configuration_2)
     *   [3.2 Daemon management](#Daemon_management)
     *   [3.3 Protection](#Protection)
-        *   [3.3.1 Force public key authentication](#Force_public_key_authentication)
-        *   [3.3.2 Two-factor authentication and public keys](#Two-factor_authentication_and_public_keys)
-        *   [3.3.3 Protecting against brute force attacks](#Protecting_against_brute_force_attacks)
-            *   [3.3.3.1 Using ufw](#Using_ufw)
-            *   [3.3.3.2 Using iptables](#Using_iptables)
-            *   [3.3.3.3 Anti-brute-force tools](#Anti-brute-force_tools)
-        *   [3.3.4 Limit root login](#Limit_root_login)
-            *   [3.3.4.1 Deny](#Deny)
-            *   [3.3.4.2 Restrict](#Restrict)
-        *   [3.3.5 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
+        *   [3.3.1 Disable known weak algorithms and ciphers](#Disable_known_weak_algorithms_and_ciphers)
+        *   [3.3.2 Force public key authentication](#Force_public_key_authentication)
+        *   [3.3.3 Two-factor authentication and public keys](#Two-factor_authentication_and_public_keys)
+        *   [3.3.4 Protecting against brute force attacks](#Protecting_against_brute_force_attacks)
+            *   [3.3.4.1 Using ufw](#Using_ufw)
+            *   [3.3.4.2 Using iptables](#Using_iptables)
+            *   [3.3.4.3 Anti-brute-force tools](#Anti-brute-force_tools)
+        *   [3.3.5 Limit root login](#Limit_root_login)
+            *   [3.3.5.1 Deny](#Deny)
+            *   [3.3.5.2 Restrict](#Restrict)
+        *   [3.3.6 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Encrypted SOCKS tunnel](#Encrypted_SOCKS_tunnel)
         *   [4.1.1 Step 1: start the connection](#Step_1:_start_the_connection)
@@ -210,6 +211,19 @@ Several other good guides and tools are available on the topic, for example:
 *   [Article by Mozilla Infosec Team](https://wiki.mozilla.org/Security/Guidelines/OpenSSH "mozillawiki:Security/Guidelines/OpenSSH")
 *   [Mozilla ssh_scan](https://github.com/mozilla/ssh_scan)
 *   [Secure sshd](https://stribika.github.io/2015/01/04/secure-secure-shell.html)
+
+#### Disable known weak algorithms and ciphers
+
+The package default configuration allows some known weak elliptic curves as well as algorithms. A best-practice particularly if the server is Internet facing is to disallow these. Do so by editing `/etc/ssh/sshd_config` inserting the following lines, then [restart](/index.php/Restart "Restart") sshd service to enable the restriction.
+
+```
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group14-sha256,diffie-hellman-group18-sha512
+MACs umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com
+HostKeyAlgorithms ssh-rsa,rsa-sha2-256,rsa-sha2-512
+
+```
+
+For more, see [ssh-audit](https://aur.archlinux.org/packages/ssh-audit/).
 
 #### Force public key authentication
 

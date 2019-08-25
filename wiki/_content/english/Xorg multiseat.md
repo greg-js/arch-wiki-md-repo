@@ -3,7 +3,11 @@ Multiseat is a certain setup where N users work simultaneously on one computer. 
 *   Less power consumption (only one computer)
 *   Less hardware to purchase
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requirements](#Requirements)
     *   [1.1 Keyboards and mice](#Keyboards_and_mice)
@@ -322,7 +326,7 @@ Do this for every seat you have. If they are all working correctly and the keybo
 Open `/usr/share/config/kdm/kdmrc` and set the following variables:
 
 ```
-StaticServers=:0,:1 #In the case of two seats. If you have three this would become :0,:1,:2 and so forth.
+StaticServers=:0,:1 #In the case of two seats. If you have three this would become :0,:1,:2 and so forth.
 ReserveServers=:2,:3 #You can define here as many as you want, but these should always start at the highest seat + 1.
 ```
 
@@ -336,7 +340,7 @@ ServerArgsLocal=-nolisten tcp -layout seat0 -seat seat0
 ServerArgsLocal=-nolisten tcp -layout seat-1 -seat seat-1 -novtswitch
 ```
 
-Add section like this for every seat you have, and do not forget to change the :0 and the -layout seat0\. Note that the "-novtswitch" options should be added for all seats *except* the first one. Otherwise, you can end with rectangles of virtual terminals "showing through" on your primary screen.
+Add section like this for every seat you have, and do not forget to change the :0 and the -layout seat0\. Note that the "-novtswitch" options should be added for all seats *except* the first one. Otherwise, you can end with rectangles of virtual terminals "showing through" on your primary screen.
 
 ### For XDM
 
@@ -344,8 +348,8 @@ Open `/etc/X11/xdm/Xservers` and set the following variables (This sample demos 
 
 ```
 # NOTE: don't add -sharevts on seat0, otherwise it may reset in about 10~20 minutes automatically.
-:0 local /usr/bin/X :0 vt07 -nolisten tcp  -novtswitch -layout seat0 -seat seat0
-:1 local /usr/bin/X :1 vt08 -nolisten tcp -novtswitch -layout seat-1 -seat seat-1
+:0 local /usr/bin/X :0 vt07 -nolisten tcp  -novtswitch -layout seat0 -seat seat0
+:1 local /usr/bin/X :1 vt08 -nolisten tcp -novtswitch -layout seat-1 -seat seat-1
 
 ```
 
@@ -377,11 +381,11 @@ greeter-hide-users=false # Bug: lightdm-gtk-greeter doesn't load user saved sess
 session-wrapper=/etc/lightdm/Xsession
 
 [Seat:seat0]
-xserver-command=/usr/bin/X :0
+xserver-command=/usr/bin/X :0
 xserver-layout=seat0
 
 [Seat:seat-1]
-xserver-command=/usr/bin/X :1
+xserver-command=/usr/bin/X :1
 xserver-layout=seat-1
 ```
 

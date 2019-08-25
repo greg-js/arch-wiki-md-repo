@@ -1,7 +1,11 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Specs](#Specs)
-*   [2 Install/Configuration](#Install.2FConfiguration)
+*   [2 Install/Configuration](#Install/Configuration)
     *   [2.1 Kernel](#Kernel)
     *   [2.2 Wireless](#Wireless)
     *   [2.3 Audio](#Audio)
@@ -11,7 +15,7 @@
     *   [2.7 Hotkeys](#Hotkeys)
     *   [2.8 Bluetooth](#Bluetooth)
     *   [2.9 Card reader](#Card_reader)
-*   [3 See Also](#See_Also)
+*   [3 See also](#See_also)
 
 ## Specs
 
@@ -54,7 +58,7 @@ Work fine with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-
 
 ### Touchpad
 
-Working, 3 buttons. Upper right corner (middle-button), bottom right (right-button), vertical scroll (right edge) e horizontal scroll (bottom edge). [Install](/index.php/Install "Install") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for synaptics driver.
+Working, 3 buttons. Upper right corner (middle-button), bottom right (right-button), vertical scroll (right edge) e horizontal scroll (bottom edge). [Install](/index.php/Install "Install") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) for synaptic driver.
 
 Configurations for the `/etc/X11/xorg.conf.d/10-synaptics.conf` file:
 
@@ -114,6 +118,6 @@ Working with [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)
 
 *Not tested.*
 
-## See Also
+## See also
 
 *   [HP Mini 210-1040BR support page in HP website](https://support.hp.com/br-pt/product/HP-Mini-210-PC-series/4075896/model/4126174)

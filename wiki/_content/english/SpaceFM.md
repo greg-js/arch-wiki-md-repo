@@ -6,7 +6,11 @@ Related articles
 
 [SpaceFM](https://ignorantguru.github.io/spacefm/) (a fork of PCManFM) is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -24,7 +28,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [spacefm](https://aur.archlinux.org/packages/spacefm/) package.
 
-Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/) package if you need a GTK+ 2 version.
+Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/) package if you need a GTK 2 version.
 
 ## Usage
 
@@ -93,7 +97,7 @@ File Is Text equals true
 
 ### Columns are not resizeable
 
-This should only happen on the first start of SpaceFM (GTK+ 2 version). [[3]](https://github.com/IgnorantGuru/spacefm/issues/382)
+This should only happen on the first start of SpaceFM (GTK 2 version). [[3]](https://github.com/IgnorantGuru/spacefm/issues/382)
 
 ### Segmentation faults
 
@@ -104,7 +108,7 @@ localhost kernel: [245086.687050] spacefm[30684]: segfault at 3e8000003e8 ip 000
 
 ```
 
-SpaceFM uses many different GUI elements, and is thus suspectible to a malfunctioning theme (especially in GTK+ 3). Try a different theme such as Raleigh (default theme). To do so for SpaceFM only, in GTK+ 2:
+SpaceFM uses many different GUI elements, and is thus suspectible to a malfunctioning theme (especially in GTK 3). Try a different theme such as Raleigh (default theme). To do so for SpaceFM only, in GTK 2:
 
 ```
 GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc spacefm

@@ -104,7 +104,7 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 ### Desktop environments
 
 *   [LXDE#Bindings](/index.php/LXDE#Bindings "LXDE")
-*   [Xfce#Keyboard_Shortcuts](/index.php/Xfce#Keyboard_Shortcuts "Xfce")
+*   [Xfce#Keyboard Shortcuts](/index.php/Xfce#Keyboard_Shortcuts "Xfce")
 
 ### Windows managers
 

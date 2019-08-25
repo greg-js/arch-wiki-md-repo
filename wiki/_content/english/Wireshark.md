@@ -20,7 +20,7 @@
 
 [Install](/index.php/Install "Install") the [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) package for the Wireshark GUI or [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) for just the `tshark` CLI.
 
-**Note:** The deprecated GTK+ interface has been removed in Wireshark 3.0.
+**Note:** The deprecated GTK interface has been removed in Wireshark 3.0.
 
 ## Capturing privileges
 

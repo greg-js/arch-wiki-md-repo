@@ -107,7 +107,7 @@ See `man pwrstat` or the [PDF user manual](https://dl4jz3rbrsfum.cloudfront.net/
 
 #### Desktop Notifications
 
-You can modify the `pwrstatd-powerfail.sh` and `pwrstatd-lowbatt.sh` scripts to send [Desktop Notifications](/index.php/Desktop_Notifications "Desktop Notifications") when power fails or battery is low (respectively). For example, add the following line to either file:
+You can modify the `pwrstatd-powerfail.sh` and `pwrstatd-lowbatt.sh` scripts to send [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications") when power fails or battery is low (respectively). For example, add the following line to either file:
 
  `sudo -u *your_username_here* DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/*your_userid_here*/bus notify-send "Warning: Utility power has failed. Now running on battery." --icon=battery-caution` 
 

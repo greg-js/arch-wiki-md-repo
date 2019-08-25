@@ -114,7 +114,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[OpenVAS](/index.php/OpenVAS "OpenVAS")** — Framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. FOSS Nessus fork.
 
-	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/groups/x86_64/openvas/)
+	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/packages/?name=openvas)
 
 *   **Osiris** — Tool for monitoring system integrity and changes across a network.
 

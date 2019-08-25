@@ -51,7 +51,7 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [5.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
     *   [5.7 Logout/shutdown delayed by at-spi-registryd](#Logout/shutdown_delayed_by_at-spi-registryd)
     *   [5.8 Caja's text file preview](#Caja's_text_file_preview)
-    *   [5.9 GTK+ 2 applications seem to ignore default MATE themes](#GTK+_2_applications_seem_to_ignore_default_MATE_themes)
+    *   [5.9 GTK 2 applications seem to ignore default MATE themes](#GTK_2_applications_seem_to_ignore_default_MATE_themes)
     *   [5.10 Speaker test does not work](#Speaker_test_does_not_work)
     *   [5.11 Extra decoration on CSD applications](#Extra_decoration_on_CSD_applications)
 *   [6 See also](#See_also)
@@ -449,15 +449,15 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 
 ### Logout/shutdown delayed by at-spi-registryd
 
-When logging out or shutting down, you may find that you are presented with an *A program is still running: at-spi-registryd.desktop* popup. As a workaround, you can prevent *at-spi-registryd* from starting - see [GTK+#Suppress warning about accessibility bus](/index.php/GTK%2B#Suppress_warning_about_accessibility_bus "GTK+") - though this may have an effect on some accessibility features.
+When logging out or shutting down, you may find that you are presented with an *A program is still running: at-spi-registryd.desktop* popup. As a workaround, you can prevent *at-spi-registryd* from starting - see [GTK#Suppress warning about accessibility bus](/index.php/GTK#Suppress_warning_about_accessibility_bus "GTK") - though this may have an effect on some accessibility features.
 
 ### Caja's text file preview
 
-Since the migration to GTK+3 this feature is not working.[[4]](https://github.com/mate-desktop/caja/issues/1047)
+Since the migration to GTK 3 this feature is not working.[[4]](https://github.com/mate-desktop/caja/issues/1047)
 
-### GTK+ 2 applications seem to ignore default MATE themes
+### GTK 2 applications seem to ignore default MATE themes
 
-Themes that come with [mate-themes](https://www.archlinux.org/packages/?name=mate-themes) need optional dependencies [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines) and [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) for GTK+ 2 themes to function properly.
+Themes that come with [mate-themes](https://www.archlinux.org/packages/?name=mate-themes) need optional dependencies [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines) and [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) for GTK 2 themes to function properly.
 
 ### Speaker test does not work
 

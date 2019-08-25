@@ -57,7 +57,7 @@ Para agregar la entrada a `/etc/fstab` se usa el siguiente formato:
 
  `/etc/fstab`  `overlay */merged* overlay noauto,x-systemd.automount,lowerdir=*/lower*,upperdir=*/upper*,workdir=*/work* 0 0` 
 
-Las opciones `noauto` y `x-systemd.automont` son necesarias para evitar que systemd se bloquee en el arranque al fallar el montaje del overlay. El overlay ahora se montará cada vez que se acceda por primera vez y las solicitudes se almacenen en el buffer hasta que esté listo. Vea [Fstab_(Español)#Montaje_automático_con_systemd](/index.php/Fstab_(Espa%C3%B1ol)#Montaje_automático_con_systemd "Fstab (Español)").
+Las opciones `noauto` y `x-systemd.automont` son necesarias para evitar que systemd se bloquee en el arranque al fallar el montaje del overlay. El overlay ahora se montará cada vez que se acceda por primera vez y las solicitudes se almacenen en el buffer hasta que esté listo. Vea [Fstab (Español)#Montaje automático con systemd](/index.php/Fstab_(Espa%C3%B1ol)#Montaje_automático_con_systemd "Fstab (Español)").
 
 ### overlay de solo lectura
 

@@ -167,11 +167,11 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 	[https://wiki.qt.io/PySide2](https://wiki.qt.io/PySide2) || [pyside2](https://www.archlinux.org/packages/?name=pyside2) [pyside2-tools](https://www.archlinux.org/packages/?name=pyside2-tools)
 
-*   **pyGTK** — [GTK+ 2](/index.php/GTK%2B "GTK+") bindings
+*   **pyGTK** — [GTK 2](/index.php/GTK "GTK") bindings
 
 	[http://www.pygtk.org/](http://www.pygtk.org/) || [pygtk](https://www.archlinux.org/packages/?name=pygtk)
 
-*   **PyGObject** — [GTK+ 2/3](/index.php/GTK%2B "GTK+") bindings via GObject Introspection
+*   **PyGObject** — [GTK 2/3](/index.php/GTK "GTK") bindings via GObject Introspection
 
 	[https://wiki.gnome.org/PyGObject/](https://wiki.gnome.org/PyGObject/) || [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) [python-gobject2](https://www.archlinux.org/packages/?name=python-gobject2) [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 

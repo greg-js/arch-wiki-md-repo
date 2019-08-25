@@ -183,9 +183,9 @@ See also [UEFI VirtualBox installation boot problems](https://bbs.archlinux.org/
 
 ### Install the Guest Additions
 
-VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, install:
+VirtualBox [Guest Additions](https://www.virtualbox.org/manual/ch04.html) provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, [install](/index.php/Install "Install"):
 
-*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) for VirtualBox Guest utilities with X support
+*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) and [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) ([FS#61183](https://bugs.archlinux.org/task/61183)) for VirtualBox Guest utilities with X support
 *   [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) for VirtualBox Guest utilities without X support
 
 Both packages will make you choose a package to provide guest modules:
@@ -746,7 +746,7 @@ Faulty or missing drivers may cause the guest to freeze after starting Xorg, see
 
 ### Fullscreen mode shows blank screen
 
-On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To work around this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings > User Interface > Mini ToolBar". See the [upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
+On some window managers ([i3](/index.php/I3 "I3"), [awesome](/index.php/Awesome "Awesome")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To work around this issue, disable *Show in Full-screen/Seamless* option in *Guest Settings > User Interface > Mini ToolBar*. See the [upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.
 
 ### Host freezes on virtual machine start
 
@@ -767,7 +767,7 @@ Generally, such issues are observed after upgrading VirtualBox or linux kernel. 
 
 ### Linux guests have slow/distorted audio
 
-The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside Virtual Box, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d/` with the following line:
+The AC97 audio driver within the Linux kernel occasionally guesses the wrong clock settings when running inside VirtualBox, leading to audio that is either too slow or too fast. To fix this, create a file in `/etc/modprobe.d/` with the following line:
 
 ```
 options snd-intel8x0 ac97_clock=48000
@@ -871,7 +871,7 @@ To access the raw VMDK image on a Windows host, run the VirtualBox GUI as admini
 
 This error message may appear when running an `.exe` file which requires administrator privileges from a shared folder in windows guests. [[12]](https://www.virtualbox.org/ticket/5732#comment:39)
 
-As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "w:Uniform Naming Convention") (`\\vboxsvr`). See [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
+As a workaround, copy the file to the virtual drive or use [UNC paths](https://en.wikipedia.org/wiki/Uniform_Naming_Convention "wikipedia:Uniform Naming Convention") (`\\vboxsvr`). See [[13]](https://support.microsoft.com/de-de/help/2019185/copying-files-from-a-mapped-drive-to-a-local-directory-fails-with-erro) for more information.
 
 ### Windows 8.x error code 0x000000C4
 
@@ -884,7 +884,7 @@ $ vboxmanage setextradata *virtual_machine_name* VBoxInternal/CPUM/CMPXCHG16B 1
 
 ### Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"
 
-Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check "Use Host I/O Cache".
+Update the VM's settings by going to *Settings > Storage > Controller:SATA* and check *Use Host I/O Cache*.
 
 ### WinXP: Bit-depth cannot be greater than 16
 
@@ -930,6 +930,13 @@ to
 
 ```
 Exec=env -u QT_QPA_PLATFORM VirtualBox ...
+
+```
+
+If that does not work, you may need to set `QT_QPA_PLATFORM` to `xcb` instead:
+
+```
+Exec=env QT_QPA_PLATFORM=xcb VirtualBox ...
 
 ```
 

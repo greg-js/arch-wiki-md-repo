@@ -35,15 +35,14 @@ Related articles
     *   [3.6 Show packages with specific packager](#Show_packages_with_specific_packager)
     *   [3.7 Build 32-bit packages on a 64-bit system](#Build_32-bit_packages_on_a_64-bit_system)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Makepkg sometimes fails to sign a package without asking for signature passphrase](#Makepkg_sometimes_fails_to_sign_a_package_without_asking_for_signature_passphrase)
-    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_CMake_based_packages)
-    *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
-    *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
-    *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_$srcdir)
-    *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
-        *   [4.6.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
-        *   [4.6.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer's_env_keep)
-    *   [4.7 Makepkg fails, but make succeeds](#Makepkg_fails,_but_make_succeeds)
+    *   [4.1 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_CMake_based_packages)
+    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS/CXXFLAGS/LDFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
+    *   [4.3 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
+    *   [4.4 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_$srcdir)
+    *   [4.5 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
+        *   [4.5.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
+        *   [4.5.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer's_env_keep)
+    *   [4.6 Makepkg fails, but make succeeds](#Makepkg_fails,_but_make_succeeds)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -292,18 +291,6 @@ $ linux32 makepkg --config ~/.makepkg.i686.conf
 ```
 
 ## Troubleshooting
-
-### Makepkg sometimes fails to sign a package without asking for signature passphrase
-
-With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent is now started 'on-the-fly' by gpg. The problem arises in the package stage of `makepkg --sign`. To allow for the correct privileges, [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) runs the `package()` function thereby starting gpg-agent within the same fakeroot environment. On exit, the fakeroot cleanups semaphores causing the 'write' end of the pipe to close for that instance of gpg-agent which will result in a broken pipe error. If the same gpg-agent is running when `makepkg --sign` is next executed, then gpg-agent returns exit code 2; so the following output occurs:
-
-```
-==> Signing package...
-==> WARNING: Failed to sign package file.
-
-```
-
-This bug is currently being tracked: [FS#49946](https://bugs.archlinux.org/task/49946). A temporary workaround for this issue is to run `killall gpg-agent && makepkg --sign` instead. This issue is resolved within [pacman-git](https://aur.archlinux.org/packages/pacman-git/), specifically at commit hash `c6b04c04653ba9933fe978829148312e412a9ea7`
 
 ### CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages
 

@@ -3,7 +3,7 @@ Related articles
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [Window manager](/index.php/Window_manager "Window manager")
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK "GTK")
 
 Budgie is the default desktop of Solus Operating System, written from scratch. Besides a more modern design, Budgie can emulate the look and feel of the GNOME 2 desktop.
 

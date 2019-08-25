@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=574145) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CPU_frequency_scaling&diff=0&oldid=579818) na versão em inglês.
 
 Artigos relacionados
 
@@ -142,7 +142,7 @@ Os reguladores (veja a tabela abaixo) são esquemas de energia para a CPU. Apena
 | userspace | Execute a CPU nas frequências especificadas pelo usuário. |
 | ondemand | Escalona a frequência dinamicamente conforme a carga atual. Pula para a frequência mais alta e então volta conforme o tempo de ociosidade aumenta. |
 | conservative | Escalona a frequência dinamicamente conforme a carga atual. Escalona a frequência de forma mais gradual que o "ondemand". |
-| schedutil | Seleção de frequência da CPU controlada pelo agendador [[1]](http://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
+| schedutil | Seleção de frequência da CPU controlada pelo agendador [[1]](https://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
 
 Dependendo do driver de escalonamento, um dos reguladores serão carregados por padrão:
 

@@ -24,7 +24,7 @@ Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name th
 The [Sugar Activity Library](http://wiki.sugarlabs.org/go/Activity_Library) provides many [Activity Bundles](http://wiki.sugarlabs.org/go/Development_Team/Almanac/Activity_Bundles) packaged as zip files with the ".xo" extension. These bundles can be downloaded and installed to the user's directory from Sugar, but the installation does not ensure that the dependencies are satisfied. Therefore it's not the recommended way to install activities, because they likely fail to start due missing dependencies. Commonly used dependencies:
 
 *   For web activities, install [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) from the official repositories.
-*   For GTK+ 2 based activities, install [sugar-toolkit-gtk2](https://aur.archlinux.org/packages/sugar-toolkit-gtk2/) from AUR.
+*   For GTK 2 based activities, install [sugar-toolkit-gtk2](https://aur.archlinux.org/packages/sugar-toolkit-gtk2/) from AUR.
 
 In order to check why the activity fails to start, look at the log file located at `~/.sugar/default/logs/[app_id]-1.log`.
 

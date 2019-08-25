@@ -5,7 +5,11 @@ Related articles
 
 [Kolab](http://kolab.org) is an unified communication and collaboration system, composed of a server-side daemon which offers storage and synchronization capabilities for contact, calendar, mail and file data. Clients can use several well defined formats like vCard, iCal, XML, IMAP and LDAP to communicate with the Kolab server.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -16,16 +20,16 @@ Related articles
     *   [3.2 Enabling proper TLS](#Enabling_proper_TLS)
 *   [4 Frontends](#Frontends)
     *   [4.1 Roundcubemail Plugin](#Roundcubemail_Plugin)
-*   [5 Start/stop the services](#Start.2Fstop_the_services)
+*   [5 Start/stop the services](#Start/stop_the_services)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 PHP Error: required kolabformat module not found](#PHP_Error:_required_kolabformat_module_not_found)
-    *   [6.2 Error creating tasks / Tasks are not syncronized with Roundcube](#Error_creating_tasks_.2F_Tasks_are_not_syncronized_with_Roundcube)
+    *   [6.2 Error creating tasks / Tasks are not syncronized with Roundcube](#Error_creating_tasks_/_Tasks_are_not_syncronized_with_Roundcube)
     *   [6.3 Web interface is slow when accessing IMAP folders](#Web_interface_is_slow_when_accessing_IMAP_folders)
 *   [7 See also](#See_also)
 
 ## Installation
 
-Kolab server is available in the [AUR](/index.php/AUR "AUR") via the [kolab](https://aur.archlinux.org/packages/kolab/) meta-package. This package will install all Kolab components, as well as the neccesary external services: [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/), [Postfix](/index.php/Postfix "Postfix"), [389-ds-base](https://aur.archlinux.org/packages/389-ds-base/), [MySQL](/index.php/MySQL "MySQL"), [Amavis](/index.php/Amavis "Amavis"), [ClamAV](/index.php/ClamAV "ClamAV"), [SpamAssassin](/index.php/Postfix#SpamAssassin "Postfix") and [Apache](/index.php/Apache "Apache") with [PHP](/index.php/PHP "PHP") support.
+Kolab server is available in the [AUR](/index.php/AUR "AUR") via the [kolab](https://aur.archlinux.org/packages/kolab/) meta-package. This package will install all Kolab components, as well as the neccesary external services: [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/), [Postfix](/index.php/Postfix "Postfix"), [389-ds-base](https://www.archlinux.org/packages/?name=389-ds-base), [MySQL](/index.php/MySQL "MySQL"), [Amavis](/index.php/Amavis "Amavis"), [ClamAV](/index.php/ClamAV "ClamAV"), [SpamAssassin](/index.php/Postfix#SpamAssassin "Postfix") and [Apache](/index.php/Apache "Apache") with [PHP](/index.php/PHP "PHP") support.
 
 ## Configuration
 

@@ -34,6 +34,7 @@
 *   [21 Override EDID](#Override_EDID)
 *   [22 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 *   [23 Overclocking not working with Unknown Error](#Overclocking_not_working_with_Unknown_Error)
+*   [24 System will not boot after driver was installed](#System_will_not_boot_after_driver_was_installed)
 
 ## Corrupted screen: "Six screens" Problem
 
@@ -576,3 +577,7 @@ ERROR: Error assigning value 10 to attribute 'GPUGraphicsClockOffset' (trinity-z
 ```
 
 To avoid this issue, Xorg has to be run as the root user. See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for details.
+
+## System will not boot after driver was installed
+
+If after installing the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver your system becomes stuck before reaching the display manager, try to [disable kernel mode setting](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting").

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 The Big Idea Page](#The_Big_Idea_Page)
     *   [1.1 Move to better Bug Tracker](#Move_to_better_Bug_Tracker)
@@ -81,7 +85,7 @@ As a follow up to this, the fact that Arch packages only list "first level" depe
 
 The newbie friendliness can be kept if we continue to allow "first level only" packages in the AUR. However, I think official repositories should list every library dependency in the depends array. This will require a pkgrel bump of every package, but we only need to do it once. For those who still want short "pacman -Qi" output, we can introduce a new switch to pacman which will automatically trim second level deps. This is much faster than doing the opposite and trying to run namcap each time.
 
-One should not have to use separate tools to generate a rebuild list. The "Required by" field of a pacman query should be enough. As it stands, this field is useless because rebuilds don't care about "Required at the first level by". A short-lived alternative proposal was to achieve this with [hooks](/index.php/User:Allan/Pacman_Hooks "User:Allan/Pacman Hooks"). However, [as discussed](https://lists.archlinux.org/pipermail/pacman-dev/2014-April/018994.html), it is very ugly to expose the .PKGINFO file and let scripts alter dependencies as packages are installed.
+One should not have to use separate tools to generate a rebuild list. The "Required by" field of a pacman query should be enough. As it stands, this field is useless because rebuilds don't care about "Required at the first level by". A short-lived alternative proposal was to achieve this with [hooks](/index.php?title=User:Allan/Pacman_Hooks&action=edit&redlink=1 "User:Allan/Pacman Hooks (page does not exist)"). However, [as discussed](https://lists.archlinux.org/pipermail/pacman-dev/2014-April/018994.html), it is very ugly to expose the .PKGINFO file and let scripts alter dependencies as packages are installed.
 
 #### Multiple kernel support
 

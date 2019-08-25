@@ -35,14 +35,14 @@ A number of mobile telephone networks around the world offer mobile internet con
 
 First of all use your SIM card in a normal phone and disable the PIN request if present. If the SIM card asks the PIN wvdial will not work.
 
-Failing that, you can also use *mmcli* to unlock the SIM card:
+Failing that, you can also use *mmcli*, which is provided by [modemmanager](https://www.archlinux.org/packages/?name=modemmanager), to unlock the SIM card:
 
 ```
-# mmcli -i *SIMNUMBER* --pin=XXXX
+# mmcli --sim=*SIMNUMBER* --pin=*PIN*
 
 ```
 
-where *SIMNUMBER* can be found using `mmcli -L` and `mmcli -m X`.
+where *SIMNUMBER* can be found using `mmcli --list-modems` and `mmcli --modem=[PATH|INDEX]`.
 
 ## Device identification
 

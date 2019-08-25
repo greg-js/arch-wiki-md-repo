@@ -11,7 +11,7 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
     *   [2.1 mpdas](#mpdas)
     *   [2.2 mpdscribble](#mpdscribble)
     *   [2.3 Sonata](#Sonata)
-    *   [2.4 YAMScrobbler](#YAMScrobbler)
+    *   [2.4 YAMS](#YAMS)
 *   [3 Disable resume playback on startup](#Disable_resume_playback_on_startup)
 *   [4 Example configuration: Output with 44.1 KHz at e. g. 16 bit depth, multiple programs at once](#Example_configuration:_Output_with_44.1_KHz_at_e._g._16_bit_depth,_multiple_programs_at_once)
 *   [5 Control MPD with lirc](#Control_MPD_with_lirc)
@@ -127,25 +127,27 @@ Alternatively you can autostart *mpdscribble* along with *mpd*, add an entry for
 
 Sonata has built-in support for scrobbling, although that requires the program to run the whole time. Additionally, Sonata does not cache the songs if they cannot be forwarded to Last.fm at the time of playing, meaning they will not be added to the statistics.
 
-### YAMScrobbler
+### YAMS
 
-[python-yams](https://aur.archlinux.org/packages/python-yams/) is a daemon available in the [AUR](/index.php/AUR "AUR"). You may authenticate with the new Last.FM Scrobbling API v2.0 without needing to input/store your username/password locally. Simply start `yams` and copy the resulting authentication URL into your web browser.
+[YAMS](https://github.com/Berulacks/yams/) is a Last.FM scrobbling daemon for MPD written in Python.
 
-You can autostart YAMScrobbler after `mpd.service` using the [example](https://github.com/Berulacks/yams/blob/master/yams.service) systemd service file:
+As it's written for v2.0 of Last.FM's [scrobbling API](https://www.last.fm/api/scrobbling), YAMS does not store your username or password locally, but opts to use a cookie instead. Similar to other scrobblers, YAMS can save failed scrobbles and upload them at a later date. It also offers a decent amount of configuration options for when/how a scrobble should be made (including ignoring duplicate scrobbles when a track is played multiple times in a row).
 
-```
-[Unit]
-Description=yams
-After=mpd.service
+[python-yams](https://aur.archlinux.org/packages/python-yams/) is available in the [AUR](/index.php/AUR "AUR").
 
-[Service]
-Type=simple
-ExecStart=/usr/bin/yams -N
+In order to authenticate, the user *must* run the `yams` command in an interactive terminal, at least once, and follow the printed instructions.
 
-[Install]
-WantedBy=default.target
+Afterwards, YAMS can be started with its binary:
 
-```
+`yams` runs as a daemon by default (`yams -N` will run it in the foreground).
+
+`yams -k` will kill the current running instance.
+
+`yams -a` will attach to the current running instance's log file, allowing you to watch the daemon's output.
+
+`yams -h` will print all command line options.
+
+YAMS also comes with a systemd service file that can be started with `systemctl --user start yams` after authentication is complete.
 
 ## Disable resume playback on startup
 

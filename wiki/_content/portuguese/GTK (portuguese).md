@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GTK](/index.php/GTK "GTK"). Data da última tradução: 2019-07-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GTK&diff=0&oldid=577031) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GTK](/index.php/GTK "GTK"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GTK&diff=0&oldid=580079) na versão em inglês.
 
 Artigos relacionados
 
@@ -130,7 +130,7 @@ Mais temas podem ser instalados a partir dos repositórios oficiais ou do [AUR](
 
 *   **Numix** — Um tema plano e leve com um visual moderno (GNOME, Openbox, Unity, Xfce). Inclui: Numix
 
-	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
+	[https://github.com/numixproject/numix-gtk-theme](https://github.com/numixproject/numix-gtk-theme) || [numix-gtk-theme-git](https://aur.archlinux.org/packages/numix-gtk-theme-git/)
 
 *   **Vertex** — Tema para GTK 3, GTK 2, Gnome-Shell e Cinnamon.
 
@@ -154,9 +154,9 @@ A maioria dos grandes [ambientes de desktop](/index.php/Ambientes_de_desktop "Am
 
 *   Se você usa [Cinnamon](/index.php/Cinnamon "Cinnamon"), use a ferramenta Temas (*cinnamon-settings themes*): vá em *Configurações do sistema > Temas*.
 *   Se você usa [Enlightenment](/index.php/Enlightenment "Enlightenment"): vá em *Definições > Tudo > Aparência > Tema das aplicações*.
-*   Se você usa [GNOME](/index.php/GNOME "GNOME"), use Ajustes do GNOME (*gnome-tweaks*): instale [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
+*   Se você usa [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), use Ajustes do GNOME (*gnome-tweaks*): instale [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 *   Se você usa [MATE](/index.php/MATE "MATE"), use a ferramenta Appearance Preferences (*mate-appearance-properties*): vá em *Sistema > Configurações > Aparência*.
-*   Se você usa [Xfce](/index.php/Xfce "Xfce"), use a ferramenta Appearance: vá em *Configurações > Aparência*.
+*   Se você usa [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)"), use a ferramenta Appearance: vá em *Configurações > Aparência*.
 
 Outras ferramentas GUI geralmente sobrescrevem os [arquivos de configuração](#Configuração).
 

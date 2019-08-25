@@ -117,7 +117,7 @@ If the ACPI interface is available, the backlight level can be set at boot using
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
 ```
 
-**Note:** The systemd-backlight service restores the previous backlight brightness level at boot. To prevent conflicts for the above rules, see [#Save/Restore_functionality](#Save/Restore_functionality).
+**Note:** The systemd-backlight service restores the previous backlight brightness level at boot. To prevent conflicts for the above rules, see [#Save/Restore functionality](#Save/Restore_functionality).
 
 **Tip:** To set the backlight depending on power state, see [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") and use your favourite [backlight utility](#Backlight_utilities) in the script.
 

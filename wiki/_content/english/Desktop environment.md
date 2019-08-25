@@ -62,13 +62,13 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — The Lightweight X11 Desktop Environment is a fast and energy-saving desktop environment. It comes with a modern interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. Fundamentally designed to be lightweight, LXDE strives to be less CPU and RAM intensive than other environments.
 
-	[https://lxde.org/](https://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+	[https://lxde.org/](https://lxde.org/) || GTK 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
 
 *   **[LXQt](/index.php/LXQt "LXQt")** — LXQt is the Qt port and the upcoming version of LXDE, the Lightweight Desktop Environment. It is the product of the merge between the LXDE-Qt and the Razor-qt projects: A lightweight, modular, blazing-fast and user-friendly desktop environment.
 
 	[https://lxqt.org/](https://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
 
-*   **[MATE](/index.php/MATE "MATE")** — Mate provides an intuitive and attractive desktop to Linux users using traditional metaphors. MATE started as a fork of GNOME 2, but now uses GTK+ 3.
+*   **[MATE](/index.php/MATE "MATE")** — Mate provides an intuitive and attractive desktop to Linux users using traditional metaphors. MATE started as a fork of GNOME 2, but now uses GTK 3.
 
 	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 

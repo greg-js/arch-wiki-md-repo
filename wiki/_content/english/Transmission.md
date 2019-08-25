@@ -34,10 +34,10 @@
 There are several packages available to [install](/index.php/Install "Install") Transmission with:
 
 *   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) – daemon, with CLI, and [#Web Interface](#Web_Interface).
-*   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) – [GTK+](/index.php/GTK%2B "GTK+") 3 graphical interface.
+*   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) – [GTK](/index.php/GTK "GTK") 3 graphical interface.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) – [Qt](/index.php/Qt "Qt") 5 graphical interface.
 *   [tremc](https://aur.archlinux.org/packages/tremc/) or [tremc-git](https://aur.archlinux.org/packages/tremc-git/) – Curses interface for the daemon.
-*   [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) – [GTK+](/index.php/GTK%2B "GTK+") 3 graphical interface for the daemon.
+*   [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk) – [GTK](/index.php/GTK "GTK") 3 graphical interface for the daemon.
 
 ## Configuring the GUI version
 

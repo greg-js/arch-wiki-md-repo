@@ -17,7 +17,8 @@
     *   [5.2 'GLBCXX_3.X.XX' not found when using Bumblebee](#'GLBCXX_3.X.XX'_not_found_when_using_Bumblebee)
     *   [5.3 Game crashes immediately](#Game_crashes_immediately)
     *   [5.4 Version `CURL_OPENSSL_3` not found](#Version_`CURL_OPENSSL_3`_not_found)
-    *   [5.5 Steam webview/game browser not working in native runtime](#Steam_webview/game_browser_not_working_in_native_runtime)
+    *   [5.5 Steam webview/game browser not working in native runtime (Black screen)](#Steam_webview/game_browser_not_working_in_native_runtime_(Black_screen))
+    *   [5.6 Steam: An X Error occurred](#Steam:_An_X_Error_occurred)
 *   [6 Audio issues](#Audio_issues)
     *   [6.1 Configure PulseAudio](#Configure_PulseAudio)
     *   [6.2 No audio or 756 Segmentation fault](#No_audio_or_756_Segmentation_fault)
@@ -31,8 +32,8 @@
     *   [7.5 Preventing crash memory dumps](#Preventing_crash_memory_dumps)
     *   [7.6 Steam license problem with playing videos](#Steam_license_problem_with_playing_videos)
     *   [7.7 No context menu for joining/inviting friends](#No_context_menu_for_joining/inviting_friends)
-*   [8 In-home streaming issues](#In-home_streaming_issues)
-    *   [8.1 In-home streaming does not work from archlinux host to archlinux guest](#In-home_streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
+*   [8 Steam Remote Play issues](#Steam_Remote_Play_issues)
+    *   [8.1 Remote Play does not work from Arch Linux host to Arch Linux guest](#Remote_Play_does_not_work_from_Arch_Linux_host_to_Arch_Linux_guest)
     *   [8.2 Hardware decoding not available](#Hardware_decoding_not_available)
     *   [8.3 Big Picture Mode minimizes itself after losing focus](#Big_Picture_Mode_minimizes_itself_after_losing_focus)
 *   [9 Other issues](#Other_issues)
@@ -200,7 +201,7 @@ $ ln -s /usr/lib/libcurl-compat.so.4.4.0 *LIBRARY*/steamapps/common/devildaggers
 
 ```
 
-### Steam webview/game browser not working in native runtime
+### Steam webview/game browser not working in native runtime (Black screen)
 
 Since the new Steam Friends UI update, the client webview isn't working correctly with the native-runtime.
 
@@ -215,6 +216,28 @@ It can be solved preloading glib libraries; Those don't require libpcre and seli
 $ LD_PRELOAD="/usr/lib/libgio-2.0.so.0 /usr/lib/libglib-2.0.so.0" steam-native
 
 ```
+
+Alternatively, you may create a symbolic link to the native Arch libpcre library.
+
+```
+# ln -s /usr/lib/libpcre.so /usr/lib64/libpcre.so.3
+
+```
+
+### Steam: An X Error occurred
+
+When using an NVidia GPU and proprietary drivers, Steam may fail to start and (if run from the terminal) produce errors of the form:
+
+```
+Steam: An X Error occurred
+X Error of failed request:  GLXBadContext
+Major opcode of failed request:  151
+Serial number of failed request:  51
+xerror_handler: X failed, continuing
+
+```
+
+Install the package [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
 
 ## Audio issues
 
@@ -365,19 +388,19 @@ Since the new Steam Friends UI update, it may be the case that in the right-clic
 
 In order to fix this, it maybe be necessary to install [lsof](https://www.archlinux.org/packages/?name=lsof).
 
-## In-home streaming issues
+## Steam Remote Play issues
 
-See [Steam#In-home streaming](/index.php/Steam#In-home_streaming "Steam").
+See [Steam#Steam Remote Play](/index.php/Steam#Steam_Remote_Play "Steam").
 
-### In-home streaming does not work from archlinux host to archlinux guest
+### Remote Play does not work from Arch Linux host to Arch Linux guest
 
 Chances are you are missing [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra). Once you [install](/index.php/Install "Install") that, it should work as expected.
 
-With that, Steam should no longer crash when trying to launch a game through in-home streaming.
+With that, Steam should no longer crash when trying to launch a game through Remote Play.
 
 ### Hardware decoding not available
 
-In-home streaming hardware decoding uses `vaapi`, but steam requires `libva1` where arch now defaults to `libva2`. This means the libva1 package set is required, including the `lib32` versions as well.
+Remote Play hardware decoding uses `vaapi`, but steam requires `libva1` where arch now defaults to `libva2`. This means the libva1 package set is required, including the `lib32` versions as well.
 
 As a basic set, this is [libva1](https://www.archlinux.org/packages/?name=libva1) and [lib32-libva1](https://www.archlinux.org/packages/?name=lib32-libva1). Intel graphics users will also require both [libva1-intel-driver](https://www.archlinux.org/packages/?name=libva1-intel-driver) and [lib32-libva1-intel-driver](https://www.archlinux.org/packages/?name=lib32-libva1-intel-driver). For more information about vaapi see [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
@@ -392,7 +415,7 @@ If this shows locations in `~/.local/Share/steam` steam is still using it's pack
 
 ### Big Picture Mode minimizes itself after losing focus
 
-This can occur when you play a game via in-home streaming or if you have a multi-monitor setup and move the mouse outside of BPM's window. To prevent this, set the following environment variable and restart Steam
+This can occur when you play a game via Remote Play or if you have a multi-monitor setup and move the mouse outside of BPM's window. To prevent this, set the following environment variable and restart Steam
 
 ```
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0

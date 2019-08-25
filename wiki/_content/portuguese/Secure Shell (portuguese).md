@@ -1,9 +1,10 @@
-**Status de tradução:** Esse artigo é uma tradução de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Data da última tradução: 2019-06-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=572872) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=578278) na versão em inglês.
 
 Artigos relacionados
 
 *   [SSHFS](/index.php/SSHFS "SSHFS")
 *   [Mosh](/index.php/Mosh_(Portugu%C3%AAs) "Mosh (Português)")
+*   [VPN por SSH](/index.php/VPN_por_SSH "VPN por SSH")
 
 De acordo com o [Wikipédia](https://en.wikipedia.org/wiki/Secure_Shell "wikipedia:Secure Shell"):
 
@@ -15,7 +16,7 @@ Um servidor SSH, por padrão, escuta na porta TCP padrão 22\. Um programa clien
 
 ## Implementações
 
-*   **Dropbear** — Servidor SSH leve. O cliente ssh de linha de comando é chamado [dbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dbclient.1).
+*   **[Dropbear](https://en.wikipedia.org/wiki/Dropbear_(software) "wikipedia:Dropbear (software)")** — Servidor SSH leve. O cliente ssh de linha de comando é chamado [dbclient(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dbclient.1).
 
 	[https://matt.ucc.asn.au/dropbear/dropbear.html](https://matt.ucc.asn.au/dropbear/dropbear.html) || [dropbear](https://www.archlinux.org/packages/?name=dropbear)
 

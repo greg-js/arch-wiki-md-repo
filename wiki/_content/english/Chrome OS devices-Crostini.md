@@ -22,8 +22,11 @@ Highlights:
     *   [2.1 Network not working on Pixelbook](#Network_not_working_on_Pixelbook)
     *   [2.2 DNS resolution not working](#DNS_resolution_not_working)
     *   [2.3 App not opening in chrome OS (infinite spinner)](#App_not_opening_in_chrome_OS_(infinite_spinner))
-    *   [2.4 Steam / OpenGL / GLX not working](#Steam_/_OpenGL_/_GLX_not_working)
-    *   [2.5 Fullscreen games and mouse capture don't work correctly](#Fullscreen_games_and_mouse_capture_don't_work_correctly)
+    *   [2.4 Audio playback](#Audio_playback)
+    *   [2.5 Video playback](#Video_playback)
+    *   [2.6 GPU acceleration](#GPU_acceleration)
+    *   [2.7 Fullscreen video, games and mouse capture don't work correctly](#Fullscreen_video,_games_and_mouse_capture_don't_work_correctly)
+*   [3 Useful links](#Useful_links)
 
 ## Introduction
 
@@ -83,9 +86,7 @@ lxc console penguin
 
 ```
 
-[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools.
-
-At present (11-24-2018) xkeyboard-config 2.24 break the sommelier-x service. Workaround is to comment out two lines starting with "<i372>" and "<i374>" in /usr/share/X11/xkb/keycodes/evdev. Then enable and start the services.
+[Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools. Then enable and start the services.
 
 ```
 $ systemctl --user enable sommelier@0      # For Wayland GUI apps
@@ -139,33 +140,61 @@ lxc start penguin
 
 Instead of using an lxc console session, I use a regular Linux terminal GUI launched from ChomeOS that prevents this issue.
 
-### Steam / OpenGL / GLX not working
+### Audio playback
 
-I found that Steam / OpenGL / GLX don't work out of the box because the Arch install is different. The issue has to do with sommelier-x. The original crostini [cros-container-guest-tools installer](https://chromium.googlesource.com/chromiumos/containers/cros-container-guest-tools/+/master/cros-sommelier-config/postinst) copies the crostini supplied swrast_dri.so to /usr/lib64/dri/ because "mesa always looks at that path" instead of the version of swrast_dri.so supplied with crostini. This line installing swrast_dri.so is not part of the Arch linux installer, and thus OpenGL apps via X11 do not function. Further, on Arch copying this library over in needed for sommelier-x to work with GLX, allowing steam to work, but glxgears/glxinfo need the default mesa-distributed swrast_dri.so. I've been able to get steam & glxgears with the right combination of libraries by running the below commands each time Arch starts up.
+Crostini support audio playback starting Chrome OS 74\. With [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) installed both ALSA and PulseAudio playback should work out-of-the-box. Audio input is not supported as of 08/21/2019.
 
-```
- $ glxgears
- Error: couldn't get an RGB, Double-buffered visual
+### Video playback
 
- $ sudo cp /usr/lib64/dri/swrast_dri.so /usr/lib64/dri/swrast_dri.so.backup
- $ sudo cp /opt/google/cros-containers/lib/swrast_dri.so /usr/lib64/dri/swrast_dri.so
- $ systemctl --user restart sommelier-x@0.service
-
- $ glxinfo
- Segmentation fault (core dumped)
- $ # But Steam works at this point
-
- $ sudo cp /usr/lib64/dri/swrast_dri.so.backup /usr/lib64/dri/swrast_dri.so
-
- $ glxgears
- SUCCESS
-
- $ # But after a few minutes sommelier-x reloads the mesa version and fails.
+[mpv](/index.php/Mpv "Mpv") can play videos using software rendering without any addition configuration, however this is CPU consuming and laggy experience for modern video codecs like H265\. For hardware accelerated playback GPU acceleration is required. Take into account, that GPU acceleration for Crostini is based on [Virgil 3D GPU project](https://virgil3d.github.io/), so no real GPU device pass-though is performed and hardware-specific APIs like VA-API or VPDAU are not available. However OpenGL acceleration can be used, i.e. this is example of `mpv.conf` config for [mpv] media player which enabled accelerated video and audio playback on Google Pixelbook starting Chrome OS 77:
 
 ```
+vo=gpu
+ao=alsa
+```
 
-To get steam working I had to replace /usr/lib64/dri/swrast_dri.so with the cros-containers version. This works permanently. I haven't been able to find a way to keep glxgears/glxinfo working permanently.
+### GPU acceleration
 
-### Fullscreen games and mouse capture don't work correctly
+Make sure GPU acceleration is enabled for Crostini using chrome://flags/#crostini-gpu-support flag. On Google Pixelbook GPU acceleration works with Arch out-of-the-box starting Chrome OS 77:
+
+ `$ glxinfo -B` 
+```
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Red Hat (0x1af4)
+    Device: virgl (0x1010)
+    Version: 19.1.4
+--> Accelerated: yes <--
+    Video memory: 0MB
+    Unified memory: no
+    Preferred profile: core (0x1)
+    Max core profile version: 4.3
+    Max compat profile version: 3.1
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.2
+OpenGL vendor string: Red Hat
+OpenGL renderer string: virgl
+OpenGL core profile version string: 4.3 (Core Profile) Mesa 19.1.4
+OpenGL core profile shading language version string: 4.30
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 3.1 Mesa 19.1.4
+OpenGL shading language version string: 1.40
+OpenGL context flags: (none)
+
+OpenGL ES profile version string: OpenGL ES 3.2 Mesa 19.1.4
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+```
+
+### Fullscreen video, games and mouse capture don't work correctly
 
 Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasable.
+
+## Useful links
+
+1.  [Running Custom Containers Under Chrome OS](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md)
+2.  [/r/Crostini](https://www.reddit.com/r/Crostini/)
+3.  [Powerline Web Fonts for Chromebook](https://github.com/wernight/powerline-web-fonts)

@@ -87,7 +87,7 @@ For this example to work you must have pxechn.c32 copied to the directory where 
 
 ## UEFI
 
-The `ipxe.efi` image can be used to launch Arch Linux netboot in UEFI mode. Only 64-bit UEFI is supported. The `ipxe.efi` image can be added as a boot option via [efibootmgr](/index.php/Efibootmgr "Efibootmgr"), launched from a [boot manager](/index.php/Boot_manager "Boot manager"), like [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [rEFInd](/index.php/REFInd "REFInd"), or directly from the [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
+The `ipxe.efi` image can be used to launch Arch Linux netboot in UEFI mode. Only 64-bit UEFI is supported. The `ipxe.efi` image can be added as a boot option via [efibootmgr](/index.php/Efibootmgr "Efibootmgr"), launched from a [boot manager](/index.php/Boot_manager "Boot manager"), like [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [rEFInd](/index.php/REFInd "REFInd"), or directly from the [UEFI shell](/index.php/UEFI_shell "UEFI shell").
 
 ### Installation with efibootmgr
 

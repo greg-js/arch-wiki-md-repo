@@ -87,7 +87,7 @@ Utilities exist to monitor hdapsd's status so you know what is going on while yo
 
 	[http://michael.orlitzky.com/code/xfce4-hdaps.xhtml](http://michael.orlitzky.com/code/xfce4-hdaps.xhtml) || [xfce4-hdaps](https://aur.archlinux.org/packages/xfce4-hdaps/)
 
-**HDAPSicon** — Formerly thinkhdaps, standalone GTK+ applet for HDAPS disk protection status.
+**HDAPSicon** — Formerly thinkhdaps, standalone GTK applet for HDAPS disk protection status.
 
 	[https://github.com/thpani/thinkhdaps](https://github.com/thpani/thinkhdaps) || [hdapsicon-git](https://aur.archlinux.org/packages/hdapsicon-git/)
 

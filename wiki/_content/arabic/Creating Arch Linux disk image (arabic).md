@@ -1,6 +1,10 @@
 هذا المُستند يقوم بشرح كيفية إنشاء ملف يحتوي على صورة قرص لتوزيعة Arch Linux . صورة القرص يمكنها العمل على أحد برامج الآلة الافتراضية [QEMU](/index.php/QEMU "QEMU"), [VirtualBox](/index.php/VirtualBox "VirtualBox"), أو [VMware](/index.php/VMware "VMware"), و يمكنك تخصيصها كيفما تشاء .
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Archiso](#Archiso)
 *   [2 تنصيب Arch Linux داخل صورة قرص باستخدام وسيط التنصيب](#تنصيب_Arch_Linux_داخل_صورة_قرص_باستخدام_وسيط_التنصيب)
@@ -98,7 +102,7 @@ $ > w'
 
 ```
 
-**ملاحظة** `kpartx` هو جزء من [multipath-tools-git](https://aur.archlinux.org/packages/multipath-tools-git/) المُقدم من [AUR](/index.php/Arch_User_Repository "Arch User Repository"). يمكنك الرجوع الى[QEMU#Mounting a partition inside a raw disk image](/index.php/QEMU#Mounting_a_partition_inside_a_raw_disk_image "QEMU") لمعرفة الطرق الاخرى لكي يتم وصل قطاع داخل صورة قرص وهمي , لكن كن حذراً , حيث لا يتم تنصيب GRUB2 بشكل صحيح الى صورة القرص إذا لم يتم إنشاء القرص القابل للإسترجاع باستخدام (`kpartx`).
+**ملاحظة** `kpartx` هو جزء من [multipath-tools-git](https://aur.archlinux.org/packages/multipath-tools-git/) المُقدم من [AUR](/index.php/Arch_User_Repository "Arch User Repository"). يمكنك الرجوع الى[QEMU#Mounting a partition from a raw image](/index.php/QEMU#Mounting_a_partition_from_a_raw_image "QEMU") لمعرفة الطرق الاخرى لكي يتم وصل قطاع داخل صورة قرص وهمي , لكن كن حذراً , حيث لا يتم تنصيب GRUB2 بشكل صحيح الى صورة القرص إذا لم يتم إنشاء القرص القابل للإسترجاع باستخدام (`kpartx`).
 
 *   قم بإنشاء انظمة الأقراص في القطاعات التي قمت بإنشائها.
 

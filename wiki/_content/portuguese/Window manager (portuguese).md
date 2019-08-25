@@ -189,7 +189,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 	[http://www.all-day-breakfast.com/wm2/](http://www.all-day-breakfast.com/wm2/) || [wm2](https://aur.archlinux.org/packages/wm2/)
 
-*   **[Xfwm](/index.php/Xfwm "Xfwm")** — O gerenciador de janela [Xfce](/index.php/Xfce "Xfce") gerencia a colocação de janelas de aplicativos na tela, fornece belas decorações de janelas, gerencia espaços de trabalho ou desktops virtuais e suporta nativamente o modo de várias telas. Ele fornece seu próprio gerenciador de composição (da extensão X.Org Composite) para transparência e sombras verdadeiras. O gerenciador de janela do Xfce também inclui um editor de atalhos de teclado para comandos específicos do usuário e manipulações básicas do Windows e fornece um diálogo de preferências para ajustes avançados.
+*   **[Xfwm](/index.php/Xfwm "Xfwm")** — O gerenciador de janela [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)") gerencia a colocação de janelas de aplicativos na tela, fornece belas decorações de janelas, gerencia espaços de trabalho ou desktops virtuais e suporta nativamente o modo de várias telas. Ele fornece seu próprio gerenciador de composição (da extensão X.Org Composite) para transparência e sombras verdadeiras. O gerenciador de janela do Xfce também inclui um editor de atalhos de teclado para comandos específicos do usuário e manipulações básicas do Windows e fornece um diálogo de preferências para ajustes avançados.
 
 	[https://docs.xfce.org/xfce/xfwm4/start](https://docs.xfce.org/xfce/xfwm4/start) || [xfwm4](https://www.archlinux.org/packages/?name=xfwm4)
 

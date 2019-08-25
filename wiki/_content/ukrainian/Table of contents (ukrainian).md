@@ -26,7 +26,7 @@
  <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(4)</small> |
  <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
  <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
- <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(11)</small> |
+ <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(12)</small> |
  <small>3.4.</small> [Digital imaging](/index.php/Category:Digital_imaging "Category:Digital imaging") <small>(6)</small> |
  <small>3.5.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
  <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
@@ -35,18 +35,18 @@
  <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
  <small>3.8.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
  <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(23)</small> |
- <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small> |
+ <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small> |
  <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
  <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
  <small>3.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(63)</small> |
  <small>3.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
  <small>3.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
- <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(72)</small> |
+ <small>3.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(73)</small> |
  <small>3.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(1)</small> |
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
  <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(60)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(100)</small> |
+ <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(101)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
  <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
  <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -83,7 +83,7 @@
  <small>4.9.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(11)</small> |
  <small>4.10.</small> [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer") <small>(3)</small> |
  <small>4.10.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
- <small>4.11.</small> [Protocols](/index.php/Category:Protocols "Category:Protocols") <small>(6)</small> |
+ <small>4.11.</small> [Protocols](/index.php/Category:Protocols "Category:Protocols") <small>(7)</small> |
  <small>4.11.1.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"), [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"))</small> |
  <small>4.11.2.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(4)</small> |
  <small>4.11.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
@@ -96,7 +96,7 @@
  <small>4.11.8.</small> [Transport Layer Security](/index.php/Category:Transport_Layer_Security "Category:Transport Layer Security") <small>(5) (also in [Cryptography](/index.php/Category:Cryptography "Category:Cryptography"))</small> |
  <small>4.11.9.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.11.10.</small> [XMPP](/index.php/Category:XMPP "Category:XMPP") <small>(5) (also in [Instant messaging](/index.php/Category:Instant_messaging "Category:Instant messaging"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
- <small>4.12.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(12) (also in [Daemons](/index.php/Category:Daemons "Category:Daemons"))</small> |
+ <small>4.12.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(13) (also in [Daemons](/index.php/Category:Daemons "Category:Daemons"))</small> |
  <small>4.12.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>4.12.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>4.12.2.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
@@ -201,7 +201,7 @@
  <small>5.2.2.8.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [X server](/index.php/Category:X_server "Category:X server"))</small> |
  <small>5.2.3.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Emulation](/index.php/Category:Emulation "Category:Emulation"))</small> |
  <small>5.3.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(17) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
- <small>5.3.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(12) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+ <small>5.3.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>5.3.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>5.3.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>5.3.1.2.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
@@ -254,7 +254,7 @@
  <small>6.4.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(13)</small> |
  <small>6.5.</small> [Configuration management](/index.php/Category:Configuration_management "Category:Configuration management") <small>(7)</small> |
  <small>6.6.</small> [Daemons](/index.php/Category:Daemons "Category:Daemons") <small>(17) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
- <small>6.6.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(12) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
+ <small>6.6.1.</small> [Servers](/index.php/Category:Servers "Category:Servers") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>6.6.1.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19) (also in [Directory services](/index.php/Category:Directory_services "Category:Directory services"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>6.6.1.1.1.</small> [Multicast DNS](/index.php/Category:Multicast_DNS "Category:Multicast DNS") <small>(2)</small> |
  <small>6.6.1.2.</small> [FTP servers](/index.php/Category:FTP_servers "Category:FTP servers") <small>(4) (also in [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"))</small> |
@@ -307,13 +307,13 @@
  <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
  <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(33)</small> |
  <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
- <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(38)</small> |
+ <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(39)</small> |
  <small>6.21.1.</small> [Access control](/index.php/Category:Access_control "Category:Access control") <small>(5)</small> |
  <small>6.21.2.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>6.21.3.</small> [Authentication](/index.php/Category:Authentication "Category:Authentication") <small>(14)</small> |
  <small>6.21.4.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(6)</small> |
  <small>6.21.4.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
- <small>6.21.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(7)</small> |
+ <small>6.21.4.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(8)</small> |
  <small>6.21.4.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(17) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
  <small>6.21.4.3.</small> [Transport Layer Security](/index.php/Category:Transport_Layer_Security "Category:Transport Layer Security") <small>(5) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
  <small>6.21.5.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
@@ -326,7 +326,7 @@
  <small>6.21.12.</small> [Surveillance](/index.php/Category:Surveillance "Category:Surveillance") <small>(3)</small> |
  <small>6.21.13.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>6.21.13.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
- <small>6.22.</small> [Synchronization](/index.php/Category:Synchronization "Category:Synchronization") <small>(6)</small> |
+ <small>6.22.</small> [Synchronization](/index.php/Category:Synchronization "Category:Synchronization") <small>(7)</small> |
  <small>6.22.1.</small> [Cloud synchronization](/index.php/Category:Cloud_synchronization "Category:Cloud synchronization") <small>(3)</small> |
  <small>6.22.2.</small> [Network Time Protocol](/index.php/Category:Network_Time_Protocol "Category:Network Time Protocol") <small>(4) (also in [Protocols](/index.php/Category:Protocols "Category:Protocols"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>6.23.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(19)</small> |

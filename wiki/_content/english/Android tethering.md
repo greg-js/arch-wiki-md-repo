@@ -78,7 +78,7 @@ DHCP=ipv4
 
 ## USB tethering with AziLink
 
-This method works for all known Android versions and requires neither root access nor modifications in the phone. It does not require changes to your browser. All network traffic is transparently handled (except ICMP pings). It may be somewhat CPU intensive on the phone at high usage rates (a 500 kBytes/sec data transfer rate may take more than 50% of phone CPU).
+[AziLink](https://github.com/aziwoqpd/azilink) is an application that allows USB tethering for Android-based phones, without requiring root access. It is very useful for Android older than version 2.2, when there was no stock USB tethering feature implemented. It also does not require changes to your browser, and all network traffic is transparently handled (except ICMP pings). It may be somewhat CPU intensive on the phone at high usage rates (a 500 kBytes/sec data transfer rate may take more than 50% of phone CPU).
 
 ### Tools needed
 
@@ -86,7 +86,7 @@ For Arch, you need to [install](/index.php/Install "Install") the [openvpn](http
 
 #### Configuring the phone connection in Arch Linux
 
-So that you do not have to run adb as root, we are going to grant your user permissions to your usb device. Make sure you have turned on USB debugging on the phone (usually in Settings -> Applications -> Development -> USB debugging) so that it will be shown as a device, and that it is plugged in to your computer via the USB cable. You should see it with you run the `lsusb` command. Original azi link instructions are [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/HOWTO)
+So that you do not have to run adb as root, we are going to grant your user permissions to your usb device. Make sure you have turned on USB debugging on the phone (usually in *Settings -> Applications -> Development -> USB debugging*) so that it will be shown as a device, and that it is plugged in to your computer via the USB cable. You should see it with you run the `lsusb` command. Original azi link instructions are [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/HOWTO)
 
 The device should be listed. Example output for the Acer Liquid phone:
 
@@ -95,7 +95,7 @@ Bus 001 Device 006: ID **0502**:3202 Acer, Inc.
 
 ```
 
-Then, create the following file, replacing *ciri* by your own Linux user name, and **0502** by the vendor ID of your own phone:
+Then, create the following file, replacing `ciri` by your own Linux user name, and **0502** by the vendor ID of your own phone:
 
  `/etc/udev/rules.d/51-android.rules` 
 ```
@@ -103,22 +103,24 @@ SUBSYSTEM=="usb", ATTR(idVendor)=="0502", MODE="0666" OWNER="ciri"
 
 ```
 
-As root run the `udevadm control --reload` command to make the change effective. To make sure the change took effect, run 'adb devices' and it should say 'device' instead of 'unauthorized'. Another way to make it take effect is to reboot. Another test is to run `adb shell` to get to your phones unix prompt.
+As root run the `udevadm control --reload` command to make the change effective. To make sure the change took effect, run `adb devices` and it should say `device` instead of `unauthorized`. Another way to make it take effect is to reboot. Another test is to run `adb shell` to get to your phones unix prompt.
 
 ### Procedure
 
-Run the AziLink application in the phone and select "About" at the bottom to receive instructions, which basically are:
+Run the AziLink application in the phone and select *About* at the bottom to receive instructions, which basically are:
 
-1.  You will have to enable USB debugging on the phone if it was not already enabled (usually in Settings -> Applications -> Development -> USB debugging).
+1.  You will have to enable USB debugging on the phone if it was not already enabled (usually in *Settings -> Applications -> Development -> USB debugging*).
 2.  Connect the phone with the USB cable to the PC.
-3.  Run AziLink and make sure that the **Service active** option at the top is checked.
+3.  Run AziLink and make sure that the *Service active* option at the top is checked.
 4.  Run the following commands in your Linux PC:
 
-	 `$ adb forward tcp:41927 tcp:41927` 
+```
+$ adb forward tcp:41927 tcp:41927
+# openvpn azilink.ovpn
 
-	 `# openvpn azilink.ovpn` 
+```
 
-azilink.ovpn source from [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/azilink.ovpn)
+`azilink.ovpn` source from [here](https://raw.githubusercontent.com/aziwoqpd/azilink/master/azilink.ovpn)
 
  `azilink.ovpn` 
 ```
@@ -170,7 +172,7 @@ This will create a network interface `bnep0`. Finally, [configure a network conn
 
 ## Tethering with SOCKS proxy
 
-With this method tethering is achieved by port forwarding from the phone to the PC. This is suitable only for browsing. For Firefox, you should set **network.proxy.socks_remote_dns** to **true** in **about:config** ( address bar )
+With this method tethering is achieved by port forwarding from the phone to the PC. This is suitable only for browsing. For Firefox, you should set `network.proxy.socks_remote_dns` to `true` in `about:config` ( address bar )
 
 ### Tools needed
 
@@ -182,7 +184,15 @@ With this method tethering is achieved by port forwarding from the phone to the 
 
 #### Tetherbot
 
-Follow the instructions under **Using the Socks Proxy** on [[1]](http://graha.ms/androidproxy/).
+Tetherbot is *an experimental SOCKS proxy and Port Bouncer that should allow you to connect your laptop to the internet using the internet connection (EDGE, 3G or Wifi) of your T-Mobile G1 Cellphone.* It is discontinued and its website is down, but still can be accessed from Wayback Machine[[1]](https://web.archive.org/web/20171121193952/http://graha.ms/androidproxy/) and its APK can be downloaded from [Android APK website](https://android-apk.org/graha.ms.tunnel/).
+
+In order to do SOCKS proxy via Tetherbot to connect your browser to the Internet, do:
+
+1.  For your phone, open the application *Tetherbot* and press the *Start Socks* button
+2.  Start your SOCKS proxy by running: `# adb forward tcp:1080 tcp:1080` 
+3.  Now go to your web browser's proxy settings, set a manual proxy configuration with the proxy host address `localhost` and port `1080`, leaving the rest blank.
+
+**Note:** Remember to disable these proxy settings in your web browser if you want to stop using your phone's connection.
 
 #### Proxoid
 

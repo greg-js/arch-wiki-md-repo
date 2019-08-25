@@ -70,7 +70,7 @@ O principal comando usado para introspecção e controle *systemd* é *systemctl
 **Dica:**
 
 *   Você pode usar todos os comandos de *systemctl* abaixo com a opção `-H *usuário*@*host*` para controlar uma instância de *systemd* em uma máquina remota. Isso usará [SSH](/index.php/SSH_(Portugu%C3%AAs) "SSH (Português)") para se conectar uma instância remota *systemd*.
-*   Usuários de [Plasma](/index.php/Plasma "Plasma") podem instalar [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/) como um frontend gráfico para *systemctl*. Após a instalação, o módulo será adicionar sob *Administração de sistema*.
+*   Usuários de [Plasma](/index.php/Plasma_(Portugu%C3%AAs) "Plasma (Português)") podem instalar [systemd-kcm](https://aur.archlinux.org/packages/systemd-kcm/) como um frontend gráfico para *systemctl*. Após a instalação, o módulo será adicionar sob *Administração de sistema*.
 
 ### Analisando o estado do sistema
 
@@ -452,7 +452,7 @@ Removed /etc/systemd/system/default.target.
 Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/multi-user.target.
 ```
 
-Alternativamente, acrescente um dos seguintes [parâmetros de kernel](/index.php/Kernel_parameters "Kernel parameters") a seu gerenciador de boot:
+Alternativamente, acrescente um dos seguintes [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") a seu gerenciador de boot:
 
 *   `systemd.unit=multi-user.target` (que basicamente corresponde ao antigo nível de execução 3),
 *   `systemd.unit=rescue.target` (que basicamente corresponde ao antigo nível de execução 1).

@@ -8,8 +8,6 @@ Related articles
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
-**Warning:** Steam native runtime has issues on Arch, which prevents the Store page and Friends window from loading. To work around the problem, install the [steam-native-pcre-fix](https://aur.archlinux.org/packages/steam-native-pcre-fix/) package, or preload the required libraries as described in [Steam/Troubleshooting#Steam webview/game browser not working in native runtime](/index.php/Steam/Troubleshooting#Steam_webview/game_browser_not_working_in_native_runtime "Steam/Troubleshooting"). [Forum Resolution](https://forum.manjaro.org/t/steam-cant-work-correctly-without-steam-runtime-1-anymore/79970/9) For official reference, see [FS#62095](https://bugs.archlinux.org/task/62095)
-
 **Note:** Steam for Linux only supports Ubuntu LTS.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus, do not turn to Valve for support for issues with Steam on Arch Linux.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">

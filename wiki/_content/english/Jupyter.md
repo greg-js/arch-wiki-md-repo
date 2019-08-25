@@ -1,6 +1,6 @@
 [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
 
-Jupyter Notebook is the traditional and most stable application. [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) has a new interface and is more suitable for working with larger projects consisting of multiple files. JupyterLab is considered "ready for daily use" since [version 0.33](https://jupyterlab.readthedocs.io/en/stable/getting_started/changelog.html#v0-33-0).
+JupyterLab is "Jupyter’s Next-Generation Notebook Interface", while Jupyter Notebook is the original. See the [Jupyter website](https://jupyter.org/) for a comparison.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -21,11 +21,10 @@ Jupyter Notebook is the traditional and most stable application. [JupyterLab](ht
 
 ## Installation
 
-For Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) package.
+*   For JupyterLab, [install](/index.php/Install "Install") the [jupyterlab](https://www.archlinux.org/packages/?name=jupyterlab) package.
+*   For Jupyter Notebook, [install](/index.php/Install "Install") the [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook) package.
 
-For JupyterLab, [install](/index.php/Install "Install") the [jupyterlab](https://www.archlinux.org/packages/?name=jupyterlab) package.
-
-After installation, run the following to enable interactive Javascript widgets in the notebooks; otherwise, widgets will be disabled.
+After installation, run the following to enable interactive JavaScript widgets in the notebooks; otherwise, widgets will be disabled.
 
 ```
 # jupyter nbextension enable --py --sys-prefix widgetsnbextension
@@ -43,17 +42,17 @@ and verify it by running `jupyter lab paths`. Then onwards follow usual installa
 
 ## Running
 
-To start the notebook server run:
-
-```
-$ jupyter notebook
-
-```
-
 To start JupyterLab run:
 
 ```
 $ jupyter lab
+
+```
+
+To start Jupyter Notebook run:
+
+```
+$ jupyter notebook
 
 ```
 
@@ -95,4 +94,4 @@ Install the [jupyter-octave_kernel](https://aur.archlinux.org/packages/jupyter-o
 
 ## See also
 
-*   [Official website](http://jupyter.org/)
+*   [Official website](https://jupyter.org/)

@@ -66,7 +66,7 @@ Some users will not have the module installed. Instead, the default terminal can
 
 ### KIO Slaves
 
-Dolphin uses *KIO slaves* for network access, trash and other functionality, unlike [GTK+](/index.php/GTK%2B "GTK+") file managers which use [GVFS](/index.php/GVFS "GVFS"). Available protocols are shown in the location bar (editable mode) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). To quickly bookmark them, right-click in the workspace, and select "Add to Places".
+Dolphin uses *KIO slaves* for network access, trash and other functionality, unlike [GTK](/index.php/GTK "GTK") file managers which use [GVFS](/index.php/GVFS "GVFS"). Available protocols are shown in the location bar (editable mode) [[1]](https://docs.kde.org/stable/en/applications/dolphin/location-bar.html#location-bar-editable). To quickly bookmark them, right-click in the workspace, and select "Add to Places".
 
 ## Troubleshooting
 
@@ -76,7 +76,7 @@ Create a filesystem label, or a partition label, and Dolphin will show this labe
 
 ### Transparent fonts
 
-Fonts in selection frames may become transparent when using the [GTK+ Qt style](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications"). Native Qt styles such as *Cleanlooks* and *Oxygen* are unaffected.
+Fonts in selection frames may become transparent when using the [GTK Qt style](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications"). Native Qt styles such as *Cleanlooks* and *Oxygen* are unaffected.
 
 ### Crashes on mounted SMB share
 

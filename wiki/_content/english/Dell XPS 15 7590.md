@@ -36,9 +36,12 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
 *   [3 Graphics](#Graphics)
     *   [3.1 kernel modules](#kernel_modules)
     *   [3.2 NVIDIA Optimus](#NVIDIA_Optimus)
+        *   [3.2.1 Manually loading/unloading NVIDIA module](#Manually_loading/unloading_NVIDIA_module)
+        *   [3.2.2 Using nvidia-xrun](#Using_nvidia-xrun)
     *   [3.3 Backlight](#Backlight)
     *   [3.4 Backlight function keys](#Backlight_function_keys)
     *   [3.5 Backlight in Wayland](#Backlight_in_Wayland)
+    *   [3.6 Backlight in Sway](#Backlight_in_Sway)
 *   [4 Wifi and Bluetooth](#Wifi_and_Bluetooth)
     *   [4.1 WIFI](#WIFI)
 *   [5 Touchpad and Touchscreen](#Touchpad_and_Touchscreen)
@@ -52,7 +55,8 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
 
 Before installing it is necessary to modify some UEFI Settings. They can be accessed by pressing the F2 key repeatedly when booting.
 
-*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the * change but [this can be fixed without a reinstallation](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
+*   If you will be dual booting alongside an existing Windows installation, Windows will not boot if you just go ahead and make the switch to AHCI as described in the steps below. You must log into you Windows install both before and after that BIOS change [to set and then remove a safeboot flag](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/), respectively.
+*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD.
 *   Change Fastboot to "Thorough" in "POST Behaviour". This prevents intermittent boot failures.
 *   Disable secure boot to allow Linux to boot.
 
@@ -106,11 +110,94 @@ Read more regarding the sleep variants on the kernel documentation [[1]](https:/
 
 ### NVIDIA Optimus
 
+#### Manually loading/unloading NVIDIA module
+
+**Note:** The section is about manually loading/unloading NVIDIA module without packages unsupported by the model like [bbswitch](https://www.archlinux.org/packages/?name=bbswitch). After manually loaded NVIDIA module you still won't be able to run anything that actually displays something though have the module loaded is a prerequisite to all the things that are related to using the discrete graphic card, since it is mainly related to how the X window system handles the graphic card. However, you would be able to do GPU-related calculations, such like using CUDA or OpenCL. For running programs that do have something to display without launching a new X session, use [bumblebee](https://www.archlinux.org/packages/?name=bumblebee), see [bumblebee](/index.php/Bumblebee "Bumblebee").
+
+First disable the nouveau modules.
+
+ `/etc/modprobe.d/blacklist.conf` 
+```
+blacklist nouveau
+blacklist rivafb
+blacklist nvidiafb
+blacklist rivatv
+blacklist nv
+
+```
+
+If the nouveau modules are already loaded, a reboot would be required.
+
+**Warning:** Beware and check your X window system configuration before you reboot. If the discrete GPU is running the X server and you reboot the computer without further configurations on X window system, there could be problems in starting the X server and getting into a GUI.
+
+Install [nvidia](https://www.archlinux.org/packages/?name=nvidia)
+
+A script has been written to automate some tedious jobs, run
+
+```
+curl [https://raw.githubusercontent.com/noxultranonerit/SimpleScripts/master/nvidia_gpu](https://raw.githubusercontent.com/noxultranonerit/SimpleScripts/master/nvidia_gpu) -o gpucli
+chmod +x gpucli
+
+```
+
+to download the script and make it executable. Next run
+
+ `gpucli` 
+
+and follow the instructions.
+
+**Note:** One should investigate the script and learn what the script will do before using it.
+
+When unloading the dGPU, a message saying `module unload failed, run nvidia-smi to check running process and kill them` may be printed. Most process can be killed with the method described, that is, with `kill PROCESS_PID`, or when it doesn't work, with `kill -9 PROCESS_PID`.
+
+If you are loading the dGPU in a existing X session, the server would automatically handle the dGPU, leading to unloading failure. In this case you should add
+
+ `/etc/X11/xorg.conf.d/01-noautogpu.conf` 
+```
+Section "ServerFlags"
+	Option "AutoAddGPU" "off"
+EndSection
+
+```
+
+Finally, create a service locking NVIDIA GPU on shutdown
+
+ `/etc/systemd/system/disable-nvidia-on-shutdown.service` 
+```
+[Unit]
+Description=Disables Nvidia GPU on OS shutdown
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/true
+ExecStop=/bin/bash -c "mv /etc/modprobe.d/disable-nvidia.conf.disable /etc/modprobe.d/disable-nvidia.conf || true"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Reload systemd daemons and enable the `disable-nvidia-on-shutdown` service:
+
+```
+ sudo systemctl daemon-reload
+ sudo systemctl enable disable-nvidia-on-shutdown.service
+
+```
+
+Note that the script aforementioned will not install the systemd service. If you do not want a systemd service installed, make sure to turn off the computer only after you have unloaded the dGPU, i.e. have run `gpucli --off` and a success message has been printed.
+
+You will be able to run CUDA after `gpucli --on`.
+
+#### Using nvidia-xrun
+
+If you want to start a whole X-session with dGPU, install [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/) (not [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) or [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/)). Consult [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").
+
 ### Backlight
 
 If using a desktop environment with an OLED screen, you may notice the backlight does not function. Since on some models the screen is OLED (which do not have physical backlights), you may need to shim the ACPI backlight functions to update Xrandr's "--backlight" option. This is done by monitoring the acpi_video0 levels, and updating the xrandr brightness levels accordingly.
 
-For this to work, you must first install [inotify-tool](https://www.archlinux.org/packages/?name=inotify-tool) and [bc](https://www.archlinux.org/packages/?name=bc). Then, create the following file:
+For this to work, you must first install [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) and [bc](https://www.archlinux.org/packages/?name=bc). Then, create the following file:
 
 ```
 $ cat /usr/local/bin/xbacklightmon
@@ -180,6 +267,17 @@ The xrandr command does not work with Wayland. Instead you can use the [icc-brig
 
 You can find it here: [https://github.com/udifuchs/icc-brightness](https://github.com/udifuchs/icc-brightness)
 
+### Backlight in Sway
+
+For [sway](https://www.archlinux.org/packages/?name=sway) users you can use [redshift-wlr-gamma-control](https://aur.archlinux.org/packages/redshift-wlr-gamma-control/) to set the brightness. The following command sets the brightness to 75%.
+
+```
+redshift -o -b 0.75 -O 6500k -m wayland -l manual
+
+```
+
+This may also work for other window managers based on [wlroots](https://www.archlinux.org/packages/?name=wlroots).
+
 ## Wifi and Bluetooth
 
 ### WIFI
@@ -201,7 +299,7 @@ $ sudo make install
 Additionally, you may need to ensure you have the latest iwlwifi firmware:
 
 ```
-$ sudo git clone [git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git](git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
+$ sudo git clone [https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git)
 $ cd linux-firmware
 $ sudo cp iwlwifi-* /lib/firmware/
 

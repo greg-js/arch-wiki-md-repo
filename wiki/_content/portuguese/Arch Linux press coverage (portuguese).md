@@ -22,6 +22,7 @@ Veja também [Wikipedia:pt:Arch Linux](https://en.wikipedia.org/wiki/pt:Arch_Lin
 
 ## 2019
 
+*   [6 aprendizados que a instalação do Arch Linux oferece para o usuário entender mais sobre o Linux](https://www.linuxdescomplicado.com.br/2019/08/instalacao-do-arch-linux-como-aprendizado.html) Ricardo Ferreira Costa - linuxdescomplicado.com.br, 2019-08-18
 *   [O Arch Linux é bom? Hora de mudar de distribuição GNU/Linux?](https://sempreupdate.com.br/o-arch-linux-e-bom-hora-de-mudar-de-distribuicao-gnu-linux/) Emanuel Negromonte - sempreupdate.com.br, 2019-02-15
 
 ## 2018

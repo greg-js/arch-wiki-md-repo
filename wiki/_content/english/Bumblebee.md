@@ -11,7 +11,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 	Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer.
 
-**Note:** You might want to use [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [PRIME](/index.php/PRIME "PRIME") instead, because Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574).
+**Note:** Bumblebee not only has significant performance issues[[1]](https://github.com/Witko/nvidia-xrun/issues/4#issuecomment-153386837)[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1822926), but also has no plans to support [Vulkan](/index.php/Vulkan "Vulkan")[[3]](https://github.com/Bumblebee-Project/Bumblebee/issues/769#issuecomment-218016574). See [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") for alternative solutions.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -79,7 +79,7 @@ It tries to mimic the Optimus technology behavior; using the dedicated GPU for r
 
 ## Installation
 
-Before installing Bumblebee, check your BIOS and activate Optimus (older laptops call it "switchable graphics") if possible (BIOS does not have to provide this option). If neither "Optimus" or "switchable" is in the bios, still make sure both gpu's will be enabled and that the integrated graphics (igfx) is initial display (primary display). The display should be connected to the onboard integrated graphics, not the discrete graphics card. If integrated graphics had previously been disabled and discrete graphics drivers installed, be sure to remove `/etc/X11/xorg.conf` or the conf file in `/etc/X11/xorg.conf.d` related to the discrete graphics card.
+Before installing Bumblebee, check your BIOS and activate Optimus (older laptops call it "switchable graphics") if possible (BIOS does not have to provide this option). If neither "Optimus" or "switchable" is in the BIOS, still make sure both GPUs will be enabled and that the integrated graphics (igfx) is initial display (primary display). The display should be connected to the onboard integrated graphics, not the discrete graphics card. If integrated graphics had previously been disabled and discrete graphics drivers installed, be sure to remove `/etc/X11/xorg.conf` or the conf file in `/etc/X11/xorg.conf.d` related to the discrete graphics card.
 
 [Install](/index.php/Install "Install"):
 
@@ -420,7 +420,7 @@ If *intel-virtual-output* does not detect displays, or if a `no VIRTUAL outputs 
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Section "Device"                            # This file doesn't exist by default
+Section "Device"                            # This file does not exist by default
     Identifier "intelgpu0"
     Driver "intel"
 EndSection
@@ -454,7 +454,7 @@ EndSection
 
 See [[4]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configurations to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
 
-If you don't want to use intel-virtual-output, another option is to configure Bumblebee to leave the discrete GPU on and directly configure X to use both the screens, as it will be able to detect them.
+If you do not want to use intel-virtual-output, another option is to configure Bumblebee to leave the discrete GPU on and directly configure X to use both the screens, as it will be able to detect them.
 
 As a last resort, you can run 2 X Servers. The first will be using the Intel driver for the notebook's screen. The second will be started through optirun on the NVIDIA card, to show on the external display. Make sure to disable any display/session manager before manually starting your desktop environment with optirun. Then, you can log in the integrated-graphics powered one.
 
@@ -730,7 +730,7 @@ or (for 32 bit):
 
 If you are already in the `bumblebee` group (`$ groups | grep bumblebee`), you may try [removing the socket](https://bbs.archlinux.org/viewtopic.php?pid=1178729#p1178729) `/var/run/bumblebeed.socket`.
 
-Another reason for this error could be that you have not actually turned on both gpu's in your bios, and as a result, the Bumblebee daemon is in fact not running. Check the bios settings carefully and be sure intel graphics (integrated graphics - may be abbreviated in bios as something like igfx) has been enabled or set to auto, and that it's the primary gpu. Your display should be connected to the onboard integrated graphics, not the discrete graphics card.
+Another reason for this error could be that you have not actually turned on both GPUs in your BIOS, and as a result, the Bumblebee daemon is in fact not running. Check the BIOS settings carefully and be sure intel graphics (integrated graphics - may be abbreviated in BIOS as something like igfx) has been enabled or set to auto, and that it is the primary gpu. Your display should be connected to the onboard integrated graphics, not the discrete graphics card.
 
 If you mistakenly had the display connected to the discrete graphics card and intel graphics was disabled, you probably installed Bumblebee after first trying to run Nvidia alone. In this case, be sure to remove the /etc/X11/xorg.conf or .../20-nvidia... configuration files. If Xorg is instructed to use Nvidia in a conf file, X will fail.
 

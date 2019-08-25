@@ -150,7 +150,7 @@ Os usuários do driver broadcom-wl podem achar que suas interfaces Ethernet e Wi
 
 ### Interface está sendo mostrada, mas não permite conexões
 
-Acrescente ao final o seguinte [parâmetro de kernel](/index.php/Kernel_parameter "Kernel parameter"):
+Acrescente ao final o seguinte [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel"):
 
 ```
 b43.allhwsupport=1
@@ -169,7 +169,7 @@ enabled, active
 
 ```
 
-Para desabilitar essas mensagens, aumente o nível de log das mensagens impressas que chegam ao console - consulte [Silent boot (Português)#sysctl](/index.php/Silent_boot_(Portugu%C3%AAs)#sysctl "Silent boot (Português)").
+Para desabilitar essas mensagens, aumente o nível de log das mensagens impressas que chegam ao console - consulte [Inicialização silenciosa#sysctl](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa#sysctl "Inicialização silenciosa").
 
 ### Dispositivo BCM43241 não detectado
 

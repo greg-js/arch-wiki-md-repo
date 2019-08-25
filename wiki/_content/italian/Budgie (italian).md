@@ -41,6 +41,6 @@ Puoi vedere le notifiche, settare il volume e modificare l'aspetto del desktop c
 
 ## Vedere anche
 
-*   [Sito ufficiale di Solus](https://solus-project.com/)
+*   [Sito ufficiale di Solus](https://getsol.us/)
 *   [Repository git ufficiale per lo sviluppo di Solus](https://git.solus-project.com/)
 *   [Stato di sviluppo di Solus](https://build.solus-project.com/)

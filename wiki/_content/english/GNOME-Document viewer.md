@@ -16,7 +16,9 @@ Document viewer uses the poppler library as a backend.
     *   [2.2 Zoom-in is limited](#Zoom-in_is_limited)
     *   [2.3 PDF texts is not show correctly](#PDF_texts_is_not_show_correctly)
     *   [2.4 Inverse search with SyncTeX doesn't work](#Inverse_search_with_SyncTeX_doesn't_work)
-*   [3 See also](#See_also)
+*   [3 Tips and Tricks](#Tips_and_Tricks)
+    *   [3.1 Annotation handling](#Annotation_handling)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -28,7 +30,7 @@ For a standalone version install [evince-no-gnome](https://aur.archlinux.org/pac
 
 ### Printer does not show up
 
-Upgrade [gtk3](https://www.archlinux.org/packages/?name=gtk3) to version `3.22.26+47+g3a1a7135a2-1` or higher. In previous GTK+ 3 versions, the GTK+ printer backends were included in a separate package. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gtk3&id=54e7af64837e18355122e62ff565970620db3537)
+Upgrade [gtk3](https://www.archlinux.org/packages/?name=gtk3) to version `3.22.26+47+g3a1a7135a2-1` or higher. In previous GTK 3 versions, the GTK printer backends were included in a separate package. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/gtk3&id=54e7af64837e18355122e62ff565970620db3537)
 
 ### Zoom-in is limited
 
@@ -53,6 +55,19 @@ $ gsettings set org.gnome.Evince override-restrictions false
 ### Inverse search with SyncTeX doesn't work
 
 Check that [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) is [installed](/index.php/Install "Install"). After that `Ctrl+click` should work.
+
+## Tips and Tricks
+
+### Annotation handling
+
+[Evince v3.31.0](https://gitlab.gnome.org/GNOME/evince/blob/d203432a5e6dd530574e3fe403576f9b0cc2d3a3/shell/ev-application.c#L1048) adds keyboard hotkeys "s" for adding note text annotations and "Ctrl+H" for adding a highlight text annotation.
+
+The default author for note text animations is equal to the [GECOS comment](/index.php/Users_and_groups#User_database "Users and groups") for the current user, to change this:
+
+```
+usermod -c “Your full new Real Name” yourusername
+
+```
 
 ## See also
 

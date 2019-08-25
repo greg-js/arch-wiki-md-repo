@@ -2,7 +2,11 @@ From [www.ansible.com](https://www.ansible.com/how-ansible-works):
 
 	Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
@@ -118,7 +122,7 @@ The command returns directly the protected variable that can be inserted into a 
 ```
 notsecret: myvalue
 
-mysecret: !vault |
+mysecret: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           66386439653236336462626566653063336164663966303231363934653561363964363833313662
           6431626536303530376336343832656537303632313433360a626438346336353331386135323734
@@ -151,7 +155,7 @@ While Ansible expects to ssh as root, AUR helpers do not allow executing operati
      path: /etc/sudoers.d/*aur_builder-allow-to-sudo-pacman*
      state: present
      line: "*aur_builder* ALL=(ALL) NOPASSWD: /usr/bin/pacman"
-     validate: /usr/sbin/visudo -cf %s
+     validate: /usr/sbin/visudo -cf %s
      create: yes
 ```
 
@@ -212,7 +216,7 @@ More information about Python version support in Ansible is available in [[1]](h
 
 ### Unarchive
 
-The `unarchive` module unpacks an archive. However *tar* files are not well supported and several outstanding issues are reported in [GitHub - unarchive](https://github.com/ansible/ansible/labels/unarchive). In particular when the parameter `keep_newer` is set to `yes`, idempotence is not observed. In case you face an issue with the module, you can use instead the *zip* format which is better integrated in ansible.
+The `unarchive` module unpacks an archive. However *tar* files are not well supported and several outstanding issues are reported in [GitHub - unarchive](https://github.com/ansible/ansible/labels/m%3Aunarchive). In particular when the parameter `keep_newer` is set to `yes`, idempotence is not observed. In case you face an issue with the module, you can use instead the *zip* format which is better integrated in ansible.
 
 ## See also
 

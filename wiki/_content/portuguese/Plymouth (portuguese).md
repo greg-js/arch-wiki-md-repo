@@ -64,7 +64,7 @@ Neste caso poderá ser necessário utilizar [plymouth-git](https://aur.archlinux
 
 ### Linha de comando do kernel
 
-Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters") `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
+Neste momento precisa de adicionar os [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0`. Veja [Inicialização silenciosa](/index.php/Inicializa%C3%A7%C3%A3o_silenciosa "Inicialização silenciosa") para outros parâmetros para limitar a saída para o console.
 
 Recompile a sua imagem initrd (veja o artigo [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para mais detalhes), por exemplo:
 

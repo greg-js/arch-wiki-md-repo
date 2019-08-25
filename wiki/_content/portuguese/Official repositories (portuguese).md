@@ -163,7 +163,7 @@ Por favor, relate erros relacionados a empacotamento em nosso [rastreador de err
 
 ### kde-unstable
 
-Esse repositório contém o *beta* mais recente ou *Release Candidate* dos aplicativos e Plasma do [KDE](/index.php/KDE "KDE").
+Esse repositório contém o *beta* mais recente ou *Release Candidate* dos aplicativos e Plasma do [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)").
 
 Para habilitá-lo, adicione as seguintes linhas ao `/etc/pacman.conf`:
 

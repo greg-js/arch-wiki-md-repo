@@ -9,7 +9,11 @@
 
 [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) 是一款来自 "The Chromium Project" 的开源图形网络浏览器，基于 [Blink](https://en.wikipedia.org/wiki/Blink_(web_engine) 渲染引擎。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
 *   [2 配置](#配置)
@@ -29,7 +33,7 @@
 
 ## 安装
 
-稳定版的 Chromium, 可以[安装](/index.php/Pacman "Pacman") 软件包 [chromium](https://www.archlinux.org/packages/?name=chromium)。要使用打印功能，请参考 [Gtk#Printers not shown in the GTK print dialog](/index.php/Gtk#Printers_not_shown_in_the_GTK_print_dialog "Gtk").
+稳定版的 Chromium, 可以[安装](/index.php/Pacman "Pacman") 软件包 [chromium](https://www.archlinux.org/packages/?name=chromium)。要使用打印功能，请参考 [GTK#Printers not shown in the GTK print dialog](/index.php/GTK#Printers_not_shown_in_the_GTK_print_dialog "GTK").
 
 其它版本：
 

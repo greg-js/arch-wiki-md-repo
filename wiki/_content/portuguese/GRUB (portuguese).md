@@ -236,7 +236,7 @@ Por padrão, o *grub-mkconfig* determina o [UUID](/index.php/UUID "UUID") do sis
 
 Para gerar a entrada de recuperação do GRUB, você precisa garantir que `GRUB_DISABLE_RECOVERY` não esteja definido como `true` em `/etc/default/grub`.
 
-Veja [Parâmetros de kernel](/index.php/Kernel_parameters "Kernel parameters") para mais informações.
+Veja [Parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") para mais informações.
 
 #### LVM
 
@@ -371,7 +371,7 @@ fi
 
 ###### Shell de UEFI
 
-Você pode iniciar o [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") colocando-a na raiz da [partição do sistema EFI](/index.php?title=Parti%C3%A7%C3%A3o_do_sistema_EFI&action=edit&redlink=1 "Partição do sistema EFI (page does not exist)") e adicionando esta entrada de menu:
+Você pode iniciar o [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") colocando-a na raiz da [partição de sistema EFI](/index.php/Parti%C3%A7%C3%A3o_de_sistema_EFI "Partição de sistema EFI") e adicionando esta entrada de menu:
 
 ```
 menuentry "UEFI Shell" {
@@ -921,7 +921,7 @@ Veja o [FS#61040](https://bugs.archlinux.org/task/61040) e [solução de contorn
 
 ### Recuperação do GRUB e /boot criptografado
 
-Ao usar um [/boot criptografado](#/_boot_criptografado) e você não conseguir inserir uma senha correta, você será jogado no prompt de recuperação do GRUB.
+Ao usar um [/boot criptografado](#/boot_criptografado) e você não conseguir inserir uma senha correta, você será jogado no prompt de recuperação do GRUB.
 
 Este prompt de recuperação do grub tem capacidades limitadas. Use os seguintes comandos para completar a inicialização:
 

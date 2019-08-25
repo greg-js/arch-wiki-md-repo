@@ -2,7 +2,11 @@
 
 Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Informações gerais](#Informações_gerais)
 *   [2 Drivers e interface](#Drivers_e_interface)

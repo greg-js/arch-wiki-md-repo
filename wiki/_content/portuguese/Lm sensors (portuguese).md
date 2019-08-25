@@ -225,11 +225,11 @@ Para [Ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de deskto
 
 	[https://github.com/mate-desktop/mate-sensors-applet](https://github.com/mate-desktop/mate-sensors-applet) || [mate-sensors-applet](https://www.archlinux.org/packages/?name=mate-sensors-applet)
 
-*   **Sensors (Plugin do painel do Xfce4)** — Plugin de sensores de hardware para o painel do [Xfce](/index.php/Xfce "Xfce").
+*   **Sensors (Plugin do painel do Xfce4)** — Plugin de sensores de hardware para o painel do [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)").
 
 	[http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin) || [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin)
 
-*   **Thermal Monitor (Miniaplicativo do Plasma 5)** — Miniaplicativo do Plasma para [KDE](/index.php/KDE "KDE") para monitoramento de CPU, GPU e outros sensores de temperatura disponíveis.
+*   **Thermal Monitor (Miniaplicativo do Plasma 5)** — Miniaplicativo do Plasma para [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") para monitoramento de CPU, GPU e outros sensores de temperatura disponíveis.
 
 	[https://github.com/kotelnik/plasma-applet-thermal-monitor](https://github.com/kotelnik/plasma-applet-thermal-monitor) || [plasma5-applets-thermal-monitor-git](https://aur.archlinux.org/packages/plasma5-applets-thermal-monitor-git/)
 

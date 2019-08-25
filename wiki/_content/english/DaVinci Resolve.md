@@ -7,9 +7,12 @@ Davinci Resolve is a proprietary video editor, color correction and compositing 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
+    *   [1.1 BlackMagic Design Cards](#BlackMagic_Design_Cards)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Application window misses title bar](#Application_window_misses_title_bar)
     *   [2.2 My .mp4 clips are shown as audio clips and even its sound is not working](#My_.mp4_clips_are_shown_as_audio_clips_and_even_its_sound_is_not_working)
+    *   [2.3 HiDPI](#HiDPI)
+    *   [2.4 Wine version](#Wine_version)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -42,6 +45,10 @@ To run Davinci Resolve it is required to have suitable OpenGL driver and suitabl
 
 So currently it is not possible to use intel gpu alone. If using AMD + Intel setups, you can render on intel (set it as primary in uefi setup) and install proprietary opencl driver for amd gpu.
 
+### BlackMagic Design Cards
+
+If using DeckLink, UltraStudio or Intensity cards for video capture and playback, install Desktop Video Software with [decklink](https://aur.archlinux.org/packages/decklink/) package.
+
 ## Troubleshooting
 
 ### Application window misses title bar
@@ -50,7 +57,33 @@ It is a problem of a Linux version of D.R. There is a workaround for KDE - a win
 
 ### My .mp4 clips are shown as audio clips and even its sound is not working
 
-This problem only affects a free version of D.R. for Linux. To workaround, you may convert your video file to another format or purchase a studio version.
+This problem only affects a free version of D.R. for Linux. MP4 containers are not supported, also AAC audio is not supported. To workaround, you may convert your video file to another format or purchase a studio version. Transcoding command may look like this:
+
+```
+ffmpeg -i input.mp4 -c:v dnxhd -profile:v dnxhr_hq -pix_fmt yuv422p -c:a pcm_s16le -f mov output.mov
+
+```
+
+### HiDPI
+
+To enable compatibility with high-resolution displays, set the following environment variables accordingly:
+
+```
+export QT_DEVICE_PIXEL_RATIO=2
+export QT_AUTO_SCREEN_SCALE_FACTOR=true
+
+```
+
+Source: [https://forum.blackmagicdesign.com/viewtopic.php?f=21&t=84614&p=469009&hilit=hidpi#wrapper](https://forum.blackmagicdesign.com/viewtopic.php?f=21&t=84614&p=469009&hilit=hidpi#wrapper)
+
+### Wine version
+
+Some plugins are available for Windows, but not available for Linux, so you may want to use Davinci Resolve via wine. Unfortunately, as of wine 4.13-1, it is not working. Splash screen stucks at "Looking for control surface" and in terminal there is such error message:
+
+```
+ wine: Call from 0x7bc6c52c to unimplemented function OpenCL.dll.clReleaseDevice, aborting
+
+```
 
 ## See also
 

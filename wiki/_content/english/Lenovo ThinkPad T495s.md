@@ -5,8 +5,8 @@
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
-| [Fingerprint Sensor](/index.php/Fprint "Fprint") | ? |
-| [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | ? |
+| [Fingerprint Reader](/index.php/Fprint "Fprint") | ? |
+| [Mobile Broadband](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | [Smartcard Reader](/index.php/Smartcards "Smartcards") | Yes |
 
@@ -22,7 +22,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 *   [1 Hardware](#Hardware)
 *   [2 AMD Graphics](#AMD_Graphics)
-*   [3 Fingerprint reader](#Fingerprint_reader)
+*   [3 Fingerprint Reader](#Fingerprint_Reader)
 *   [4 Backlight](#Backlight)
 *   [5 Smartcard Reader](#Smartcard_Reader)
 
@@ -95,9 +95,9 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 The opensource [AMDGPU](/index.php/AMDGPU "AMDGPU") drivers work correctly with no special modification.
 
-## Fingerprint reader
+## Fingerprint Reader
 
-Fingerprint sensor 06cb:00bd is not supported by libfprint right now. There is some talk of an upcoming [driver](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617) though.
+Fingerprint sensor *06cb:00bd* is not supported by [fprint](/index.php/Fprint "Fprint") right now. There is some talk of an upcoming driver.[[1]](https://gitlab.freedesktop.org/vincenth/libfprint/tree/synaptics-driver-20190617)[[2]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/181)
 
 ## Backlight
 

@@ -215,7 +215,7 @@ First, highlighting text using the mouse in an xterm (or alternatively another a
 
 #### PRIMARY or CLIPBOARD
 
-By default, xterm, and many other applications running under X, copy highlighted text into a buffer called the [PRIMARY](/index.php/Clipboard "Clipboard") selection. The PRIMARY selection is short-lived; the text is immediately replaced by a new PRIMARY selection as soon as another piece of text is highlighted. Some applications will allow you to paste PRIMARY selections by using the middle-mouse, but not `Shift+Insert`, and some other applications may not allow pasting from PRIMARY entirely.
+By default, xterm, and many other applications running under X, copy highlighted text into a buffer called the [PRIMARY](/index.php/PRIMARY "PRIMARY") selection. The PRIMARY selection is short-lived; the text is immediately replaced by a new PRIMARY selection as soon as another piece of text is highlighted. Some applications will allow you to paste PRIMARY selections by using the middle-mouse, but not `Shift+Insert`, and some other applications may not allow pasting from PRIMARY entirely.
 
 There is another buffer used for copied text called the CLIPBOARD selection. The text in the CLIPBOARD is long-lived, remaining available until a user actively overwrites it. Applications that use `Ctrl+c` and `Ctrl+x` for text copying and cutting operations, and `Ctrl+v` for pasting, are using the CLIPBOARD.
 

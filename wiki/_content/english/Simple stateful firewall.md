@@ -316,7 +316,7 @@ If you are running a desktop machine, it might be a good idea to block some inco
 
 A 'Ping' request is an ICMP packet sent to the destination address to ensure connectivity between the devices. If your network works well, you can safely block all ping requests. It is important to note that this *does not* actually hide your computer — any packet sent to you is rejected, so you will still show up in a simple nmap "ping scan" of an IP range.
 
-This is rudimentary "protection" and makes life difficult when debugging issues in the future. You should only do this for education purposes.
+This is rudimentary "protection" and makes life difficult when debugging issues in the future. This should only be done for educational purposes.
 
 To block echo requests, add the following line to your `/etc/sysctl.d/90-firewall.conf` file (see [sysctl](/index.php/Sysctl "Sysctl") for details):
 
@@ -632,7 +632,7 @@ The same setup also works with udp packets.
 Save the rules:
 
 ```
-# iptables-save > /etc/iptables/iptables.rules
+# iptables-save -f /etc/iptables/iptables.rules
 
 ```
 

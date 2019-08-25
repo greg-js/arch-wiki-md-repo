@@ -1,6 +1,10 @@
 This is an install and configuration guide for the Dell Inspiron 1525 laptop, testing with the 2010.05 installer snapshot.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -11,7 +15,7 @@ This is an install and configuration guide for the Dell Inspiron 1525 laptop, te
     *   [2.5 Touchpad](#Touchpad)
     *   [2.6 Wireless](#Wireless)
     *   [2.7 Modem](#Modem)
-    *   [2.8 USB, SD card slot, ethernet, firewire, VGA, S-video, HDMI, webcam and mediakeys](#USB.2C_SD_card_slot.2C_ethernet.2C_firewire.2C_VGA.2C_S-video.2C_HDMI.2C_webcam_and_mediakeys)
+    *   [2.8 USB, SD card slot, ethernet, firewire, VGA, S-video, HDMI, webcam and mediakeys](#USB,_SD_card_slot,_ethernet,_firewire,_VGA,_S-video,_HDMI,_webcam_and_mediakeys)
     *   [2.9 PCMCIA](#PCMCIA)
 
 ## Installation

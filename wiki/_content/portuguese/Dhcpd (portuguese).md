@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [dhcpd](/index.php/Dhcpd "Dhcpd"). Data da última tradução: 2018-12-29\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=557343) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [dhcpd](/index.php/Dhcpd "Dhcpd"). Data da última tradução: 2019-08-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=580071) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,6 +21,7 @@ O *dhcpd* é o servidor DHCP da [Internet Systems Consortium](http://www.isc.org
         *   [3.1.1 Configurando dhcpd](#Configurando_dhcpd)
         *   [3.1.2 Arquivo de serviço](#Arquivo_de_serviço)
     *   [3.2 Usar para PXE](#Usar_para_PXE)
+*   [4 Veja também](#Veja_também)
 
 ## Instalação
 
@@ -53,7 +54,7 @@ Para ter seu IP estático atribuído na inicialização, veja [Configuração de
 O `dhcpd.conf` padrão contém muitos exemplos descomentados, então mude-o:
 
 ```
-# cp /etc/dhcpd.conf.example /etc/dhcpd.conf
+# cp /etc/dhcpd.conf /etc/dhcpd.conf.example
 
 ```
 
@@ -165,3 +166,7 @@ filename "/pxelinux.0";
 ```
 
 Essa seção pode tanto ser uma `subnet` inteira ou apenas uma definição de `host`. `next-server` é o IP do servidor TFTP e `filename` é o nome de arquivo da imagem para inicializar. Para mais informações, veja [PXE](/index.php/PXE "PXE").
+
+## Veja também
+
+*   [Documentação de DHCO do ISC](https://kb.isc.org/docs/aa-00333)

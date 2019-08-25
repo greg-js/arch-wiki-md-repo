@@ -143,15 +143,15 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 	[https://github.com/futpib/pagraphcontrol#readme](https://github.com/futpib/pagraphcontrol#readme) || [pagraphcontrol-git](https://aur.archlinux.org/packages/pagraphcontrol-git/)
 
-*   **PulseAudio Manager** — Simple GTK+ frontend for PulseAudio.
+*   **PulseAudio Manager** — Simple GTK frontend for PulseAudio.
 
 	[http://0pointer.de/lennart/projects/paman/](http://0pointer.de/lennart/projects/paman/) || [paman](https://aur.archlinux.org/packages/paman/)
 
-*   **PulseAudio Preferences** — Simple GTK+ configuration dialog for PulseAudio.
+*   **PulseAudio Preferences** — Simple GTK configuration dialog for PulseAudio.
 
 	[https://freedesktop.org/software/pulseaudio/paprefs/](https://freedesktop.org/software/pulseaudio/paprefs/) || [paprefs](https://www.archlinux.org/packages/?name=paprefs)
 
-*   **PulseAudio Volume Control** — Simple GTK+ volume control tool ("mixer") for PulseAudio.
+*   **PulseAudio Volume Control** — Simple GTK volume control tool ("mixer") for PulseAudio.
 
 	[https://freedesktop.org/software/pulseaudio/pavucontrol/](https://freedesktop.org/software/pulseaudio/pavucontrol/) || [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
 
@@ -159,7 +159,7 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 	[https://github.com/lxqt/pavucontrol-qt](https://github.com/lxqt/pavucontrol-qt) || [pavucontrol-qt](https://www.archlinux.org/packages/?name=pavucontrol-qt)
 
-*   **PulseAudio Volume Meter** — Simple GTK+ volume meter for PulseAudio.
+*   **PulseAudio Volume Meter** — Simple GTK volume meter for PulseAudio.
 
 	[http://0pointer.de/lennart/projects/pavumeter/](http://0pointer.de/lennart/projects/pavumeter/) || [pavumeter](https://aur.archlinux.org/packages/pavumeter/)
 
@@ -649,7 +649,7 @@ And then either restarting PulseAudio or your computer will only idle the input 
 
 ## Networked audio
 
-Play sound through the outputs of another computer on the network
+Play sound through the outputs of another computer on the network. This method streams raw PCM audio over the network, which can use pretty much network bandwidth (around 1.4 Mb/s for CD-quality sound).[[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Network/)
 
 ### Basic setup with direct connection
 

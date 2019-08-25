@@ -1,26 +1,30 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Informace od vývojáře tpowa](#Informace_od_v.C3.BDvoj.C3.A1.C5.99e_tpowa)
-*   [2 Upgrade balíčků](#Upgrade_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [2.1 Nabídky:](#Nab.C3.ADdky:)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Informace od vývojáře tpowa](#Informace_od_vývojáře_tpowa)
+*   [2 Upgrade balíčků](#Upgrade_balíčků)
+    *   [2.1 Nabídky:](#Nabídky:)
     *   [2.2 Update z kde3.4 beta1 na kde 3.4:](#Update_z_kde3.4_beta1_na_kde_3.4:)
-    *   [2.3 Kde vzít KDE 3.5:](#Kde_vz.C3.ADt_KDE_3.5:)
-*   [3 Známé problémy](#Zn.C3.A1m.C3.A9_probl.C3.A9my)
+    *   [2.3 Kde vzít KDE 3.5:](#Kde_vzít_KDE_3.5:)
+*   [3 Známé problémy](#Známé_problémy)
 *   [4 KDEBASE](#KDEBASE)
-    *   [4.1 Podpora pro Samba/Windows:](#Podpora_pro_Samba.2FWindows:)
+    *   [4.1 Podpora pro Samba/Windows:](#Podpora_pro_Samba/Windows:)
     *   [4.2 Podpora Javy:](#Podpora_Javy:)
     *   [4.3 Podpora tisku:](#Podpora_tisku:)
-    *   [4.4 Základní fonty:](#Z.C3.A1kladn.C3.AD_fonty:)
+    *   [4.4 Základní fonty:](#Základní_fonty:)
     *   [4.5 Soubor KDM Xserver:](#Soubor_KDM_Xserver:)
-    *   [4.6 D-Bus/udev Stuff:](#D-Bus.2Fudev_Stuff:)
-    *   [4.7 GPG/SSH Stuff:](#GPG.2FSSH_Stuff:)
+    *   [4.6 D-Bus/udev Stuff:](#D-Bus/udev_Stuff:)
+    *   [4.7 GPG/SSH Stuff:](#GPG/SSH_Stuff:)
     *   [4.8 Kdebindings:](#Kdebindings:)
     *   [4.9 Kdesdk:](#Kdesdk:)
-    *   [4.10 Změna nastavení DPI pro KDM:](#Zm.C4.9Bna_nastaven.C3.AD_DPI_pro_KDM:)
+    *   [4.10 Změna nastavení DPI pro KDM:](#Změna_nastavení_DPI_pro_KDM:)
 *   [5 Chyby](#Chyby)
-*   [6 Zajímavé odkazy](#Zaj.C3.ADmav.C3.A9_odkazy)
-*   [7 Rozdělování KDE balíčků](#Rozd.C4.9Blov.C3.A1n.C3.AD_KDE_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [7.1 Proč balíčky vycházejí před oficiálním vydáním?:](#Pro.C4.8D_bal.C3.AD.C4.8Dky_vych.C3.A1zej.C3.AD_p.C5.99ed_ofici.C3.A1ln.C3.ADm_vyd.C3.A1n.C3.ADm.3F:)
+*   [6 Zajímavé odkazy](#Zajímavé_odkazy)
+*   [7 Rozdělování KDE balíčků](#Rozdělování_KDE_balíčků)
+    *   [7.1 Proč balíčky vycházejí před oficiálním vydáním?:](#Proč_balíčky_vycházejí_před_oficiálním_vydáním?:)
 
 ## Informace od vývojáře tpowa
 

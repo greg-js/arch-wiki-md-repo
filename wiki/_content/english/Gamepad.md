@@ -10,6 +10,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
 *   [2 Determining which modules you need](#Determining_which_modules_you_need)
     *   [2.1 Loading the modules for analogue devices](#Loading_the_modules_for_analogue_devices)
     *   [2.2 USB joysticks](#USB_joysticks)
+        *   [2.2.1 Troubleshooting](#Troubleshooting)
 *   [3 Testing your configuration](#Testing_your_configuration)
     *   [3.1 Joystick API](#Joystick_API)
     *   [3.2 evdev API](#evdev_API)
@@ -56,7 +57,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
         *   [7.14.1 Button mapping](#Button_mapping)
         *   [7.14.2 Fix Motion control conflict (gamepad won't work on somes apps)](#Fix_Motion_control_conflict_(gamepad_won't_work_on_somes_apps))
         *   [7.14.3 Disable touchpad acting as mouse](#Disable_touchpad_acting_as_mouse)
-*   [8 Troubleshooting](#Troubleshooting)
+*   [8 Troubleshooting](#Troubleshooting_2)
     *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA/SDL_based_games)
     *   [8.3 Joystick not recognized by all programs](#Joystick_not_recognized_by_all_programs)
@@ -90,6 +91,10 @@ You need to load a module for your gameport (`ns558`, `emu10k1-gp`, `cs461x`, et
 ### USB joysticks
 
 You need to get USB working, and then modprobe your joystick driver, which is `usbhid`, as well as `joydev`. If you use a usb mouse or keyboard, `usbhid` will be loaded already and you just have to load the `joydev` module.
+
+#### Troubleshooting
+
+If your Xbox 360 joystick is connected with the Play&Charge USB cable it will show up in `lsusb` but it will not show up as an input device in `/dev/input/js*`, see note below.
 
 ## Testing your configuration
 
@@ -162,7 +167,7 @@ $ chmod +x jscal.sh
 Now you need to make a [udev](/index.php/Udev "Udev") rule (for example `/etc/udev/rules.d and name it 85-jscal.rules`) so the script will automatically run when you connect the controller:
 
 ```
-SUBSYSTEM=="input", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="c268", ACTION=="add", RUN+="/usr/bin/jscal.sh"
+SUBSYSTEM=="input", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="c268", ACTION=="add", RUN+="/usr/bin/bash /usr/bin/jscal.sh"
 
 ```
 
@@ -555,7 +560,7 @@ Alternatively you can use [sc-controller](https://aur.archlinux.org/packages/sc-
 
 ### Xbox 360 controller
 
-Both the wired and wireless (with the *Xbox 360 Wireless Receiver for Windows*) controllers are supported by the `xpad` kernel module and should work without additional packages.
+Both the wired and wireless (with the *Xbox 360 Wireless Receiver for Windows*) controllers are supported by the `xpad` kernel module and should work without additional packages. (Note that using a wireless Xbox360 controller with the Play&Charge USB cable will not work. The cable is for recharging only and does not transmit any input data over the wire.)
 
 It has been reported that the default xpad driver has some issues with a few newer wired and wireless controllers, such as:
 

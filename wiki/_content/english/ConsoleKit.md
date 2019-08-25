@@ -8,7 +8,11 @@ Related articles
 
 **ConsoleKit2** is a framework for defining and tracking users, login sessions, and seats. Its function is to support multiuser setups. It also works for a single user, but offers no benefits compared to existing methods. [[3]](http://wiki.gentoo.org/wiki/ConsoleKit#Description)
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -20,7 +24,7 @@ Related articles
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Use D-Bus for power operations](#Use_D-Bus_for_power_operations)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Running several applications from ~/.xinitrc](#Running_several_applications_from_.7E.2F.xinitrc)
+    *   [4.1 Running several applications from ~/.xinitrc](#Running_several_applications_from_~/.xinitrc)
     *   [4.2 Consolekit blocks active TTY](#Consolekit_blocks_active_TTY)
     *   [4.3 Inactive session when launching X on same TTY](#Inactive_session_when_launching_X_on_same_TTY)
 *   [5 Replacing ConsoleKit with systemd-logind](#Replacing_ConsoleKit_with_systemd-logind)

@@ -75,9 +75,9 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 
-*   **galculator** — GTK+ based scientific calculator.
+*   **galculator** — GTK-based scientific calculator.
 
-	[http://galculator.mnim.org/](http://galculator.mnim.org/) || GTK+ 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK+ 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
+	[http://galculator.mnim.org/](http://galculator.mnim.org/) || GTK 3: [galculator](https://www.archlinux.org/packages/?name=galculator), GTK 2: [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2)
 
 *   **[Genius](https://en.wikipedia.org/wiki/Genius_(mathematics_software) "wikipedia:Genius (mathematics software)")** — Advanced calculator including a mathematical programming language.
 
@@ -365,7 +365,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://bkchem.zirael.org/](http://bkchem.zirael.org/) || [bkchem](https://aur.archlinux.org/packages/bkchem/)
 
-*   **[Chemtool](https://en.wikipedia.org/wiki/Chemtool "wikipedia:Chemtool")** — GTK+-based program for drawing chemical structural formulas.
+*   **[Chemtool](https://en.wikipedia.org/wiki/Chemtool "wikipedia:Chemtool")** — GTK-based program for drawing chemical structural formulas.
 
 	[http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html](http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html) || [chemtool](https://www.archlinux.org/packages/?name=chemtool)
 
@@ -505,7 +505,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[https://subsurface-divelog.org/](https://subsurface-divelog.org/) || [subsurface](https://www.archlinux.org/packages/?name=subsurface)
 
-*   **Viking** — GTK+2 application to manage GPS data.
+*   **Viking** — GTK 2 application to manage GPS data.
 
 	[https://sourceforge.net/projects/viking/](https://sourceforge.net/projects/viking/) || [viking](https://www.archlinux.org/packages/?name=viking)
 
@@ -699,7 +699,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
 
-*   **GTKWave** — Fully featured GTK+ based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
+*   **GTKWave** — Fully featured GTK-based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
 
 	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://www.archlinux.org/packages/?name=gtkwave)
 

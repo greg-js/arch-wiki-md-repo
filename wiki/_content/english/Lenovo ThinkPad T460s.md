@@ -6,7 +6,7 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Fingerprint Sensor | WIP |
-| [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
+| [Mobile Broadband](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | Smartcard Reader | Yes |
 

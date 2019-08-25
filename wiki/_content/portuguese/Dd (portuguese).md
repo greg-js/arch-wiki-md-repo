@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [Clonagem de disco](/index.php/Disk_cloning "Disk cloning")
+*   [Clonagem de disco](/index.php/Clonagem_de_disco "Clonagem de disco")
 *   [Mídia de instalação em flash USB#Usando dd](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o_em_flash_USB#Usando_dd "Mídia de instalação em flash USB")
 *   [Benchmarking#dd](/index.php/Benchmarking#dd "Benchmarking")
 
@@ -70,7 +70,7 @@ Isso irá clonar a unidade inteira, incluindo o MBR (e, portanto, o gerenciador 
 *   `sync` preenche os blocos de entrada com zeros se houver algum erro de leitura, para que os deslocamentos de dados permaneçam em sincronia.
 *   `status=progress` mostra estatísticas de transferência periódicas que podem ser usadas para estimar quando a operação pode estar completa.
 
-**Nota:** O tamanho do bloco que você especifica influencia como os erros de leitura são manipulados. Leia abaixo. Para recuperação de dados, use [ddrescue](/index.php/Disk_cloning#Using_ddrescue "Disk cloning").
+**Nota:** O tamanho do bloco que você especifica influencia como os erros de leitura são manipulados. Leia abaixo. Para recuperação de dados, use [ddrescue](/index.php/Clonagem_de_disco#Usando_ddrescue "Clonagem de disco").
 
 O utilitário *dd* tecnicamente possui um "tamanho de bloco de entrada" (IBS) e um "tamanho de bloco de saída" (OBS). Quando você define `bs`, você efetivamente define IBS e OBS. Normalmente, se o tamanho do bloco for, digamos, 1 MiB, o *dd* lerá 1024×1024 bytes e gravará essa mesma quantidade de bytes. Mas se ocorrer um erro de leitura, as coisas vão dar errado. Muitas pessoas parecem pensar que o *dd* irá "preencher erros de leitura com zeros" se você usar as opções `noerror, sync`, mas isto não é o que acontece. O *dd* irá, segundo a documentação, preencher o OBS para o tamanho IBS *depois de completar sua leitura*, o que significa adicionar zeros no *fim* do bloco. Isso significa, para um disco, que efetivamente todo o 1 MiB seria confuso por causa de um único erro de leitura de 512 bytes no início da leitura: 12ERROR89 se tornaria 128900000 em vez de 120000089.
 

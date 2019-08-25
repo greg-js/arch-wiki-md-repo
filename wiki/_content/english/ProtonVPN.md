@@ -129,6 +129,6 @@ New IP: X.X.X.X
 
 ## Graphical interface
 
-Graphical interface for setting up OpenVPN connection may be provided by your [desktop environment](/index.php/Desktop_environment "Desktop environment"). Search in connection settings. Otherwise, [NetworkManager#Installation](/index.php/NetworkManager#Installation "NetworkManager"), [NetworkManager#VPN_support](/index.php/NetworkManager#VPN_support "NetworkManager") and [NetworkManager#Front-ends](/index.php/NetworkManager#Front-ends "NetworkManager") provide useful information.
+Graphical interface for setting up OpenVPN connection may be provided by your [desktop environment](/index.php/Desktop_environment "Desktop environment"). Search in connection settings. Otherwise, [NetworkManager#Installation](/index.php/NetworkManager#Installation "NetworkManager"), [NetworkManager#VPN support](/index.php/NetworkManager#VPN_support "NetworkManager") and [NetworkManager#Front-ends](/index.php/NetworkManager#Front-ends "NetworkManager") provide useful information.
 
 **Note:** You still need to follow [#Setup](#Setup).

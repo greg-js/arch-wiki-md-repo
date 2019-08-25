@@ -1,6 +1,10 @@
 [Stata](https://www.stata.com/) is a general-purpose statistical software package for *nix, Windows and Mac. In the following you'll be presented with how to install Stata and the needed libraries.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Needed libraries](#Needed_libraries)
 *   [2 Installing Stata](#Installing_Stata)
@@ -9,7 +13,7 @@
 
 ## Needed libraries
 
-Stata depends on [libpng12](https://www.archlinux.org/packages/?name=libpng12). Stata also uses the GTK+ framework.
+Stata depends on [libpng12](https://www.archlinux.org/packages/?name=libpng12). Stata also uses the GTK framework.
 
 If you are running STATA 14/15 and get a message about missing libncurses.so.5 [install](/index.php/Install "Install") [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
 

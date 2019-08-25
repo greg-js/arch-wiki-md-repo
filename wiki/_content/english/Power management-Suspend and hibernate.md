@@ -34,7 +34,7 @@ There are multiple low level interfaces (backends) providing basic functionality
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 ACPI_OS_NAME](#ACPI_OS_NAME)
     *   [4.2 VAIO users](#VAIO_users)
-    *   [4.3 Suspend/hibernate doesn't work, or not consistently](#Suspend/hibernate_doesn't_work,_or_not_consistently)
+    *   [4.3 Suspend/hibernate does not work, or does not work consistently](#Suspend/hibernate_does_not_work,_or_does_not_work_consistently)
     *   [4.4 Wake-on-LAN](#Wake-on-LAN)
     *   [4.5 Instantaneous wakeups from suspend](#Instantaneous_wakeups_from_suspend)
     *   [4.6 System does not power off when hibernating](#System_does_not_power_off_when_hibernating)
@@ -83,24 +83,24 @@ See [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd") to m
 
 ### Required kernel parameters
 
-The kernel parameter `resume=*swap_partition*` has to be used. Either the name the kernel assigns to the partition or its [UUID](/index.php/UUID "UUID") can be used as `*swap_partition*`. For example:
+The [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `resume=*swap_device*` must be used. Any of the [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") methods can be used as `*swap_device*`. For example:
 
-*   `resume=/dev/sda1`
 *   `resume=UUID=4209c845-f495-4c43-8a03-5363dd433153`
-*   `resume=/dev/archVolumeGroup/archLogicVolume` -- example if using LVM
+*   `resume="PARTLABEL=Swap partition"`
+*   `resume=/dev/archVolumeGroup/archLogicalVolume` -- if swap is on a [LVM](/index.php/LVM "LVM") logical volume
 
 Generally, the naming method used for the `resume` parameter should be the same as used for the `root` parameter.
-
-The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details.
 
 #### Hibernation into swap file
 
 **Warning:**
 
 *   [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
-*   [systemd](https://www.archlinux.org/packages/?name=systemd) does not currently support hibernating into a swap file on Btrfs, even with Linux 5.0\. Fortunately, there is an alternate method: [Power_management/Suspend_and_hibernate#Hibernation_into_swap_file_on_Btrfs](/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file_on_Btrfs "Power management/Suspend and hibernate"). For more information, see [systemd issue 11939](https://github.com/systemd/systemd/issues/11939).
+*   [systemd](https://www.archlinux.org/packages/?name=systemd) does not currently support hibernating into a swap file on Btrfs, even with Linux 5.0\. Fortunately, there is an alternate method—[#Hibernation into swap file on Btrfs](#Hibernation_into_swap_file_on_Btrfs). For more information, see [systemd issue 11939](https://github.com/systemd/systemd/issues/11939).
 
-Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`. Note that the `resume` keyword should still point to the partition where your swapfile resides as described above.
+Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
+
+**Note:** The `resume` parameter must point to the volume where the swap file resides.
 
 The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_file*`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
 
@@ -109,7 +109,7 @@ The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_
 Filesystem type is: ef53
 File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
  ext:     logical_offset:        physical_offset: length:   expected: flags:
-   0:        0..       0:      38912..     38912:      1:            
+   0:        0..       0:      **38912**..     38912:      1:            
    1:        1..   22527:      38913..     61439:  22527:             unwritten
    2:    22528..   53247:     899072..    929791:  30720:      61440: unwritten
 ...
@@ -118,18 +118,24 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 In the example the value of `*swap_file_offset*` is the first `38912` with the two periods.
 
-**Tip:** The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
+**Tip:**
 
-**Note:**
-
-*   The kernel parameters will only take effect after rebooting. To be able to hibernate right away, echo the the volume's major and minor device numbers (obtain them from [lsblk](/index.php/Lsblk "Lsblk") output) in format `*major*:*minor*` to `/sys/power/resume` and the resume offset to `/sys/power/resume_offset`. See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kernel.org/doc/Documentation/power/swsusp.txt)
+*   The following command may be used to identify `*swap_file_offset*`: `filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'`.
 *   The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided within the set of tools [uswsusp](/index.php/Uswsusp "Uswsusp"). If using this method, then these two parameters have to be provided in `/etc/suspend.conf` via the keys `resume device` and `resume offset`. No reboot is required in this case.
 
-**Tip:** You might want to decrease the [swappiness](/index.php/Swap#Swappiness "Swap") for your swapfile if the only purpose is to be able to hibernate and not expand RAM.
+**Note:** The kernel parameters will only take effect after rebooting. To be able to hibernate right away, obtain the volume's major and minor device numbers from [lsblk](/index.php/Lsblk "Lsblk") and echo them in format `*major*:*minor*` to `/sys/power/resume` and the resume offset to `/sys/power/resume_offset`. For example, if the swap file is on volume `8:2` and has the offset `38912`:
+```
+# echo 8:2 > /sys/power/resume
+# echo 38912 > /sys/power/resume_offset
+
+```
+See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kernel.org/doc/Documentation/power/swsusp.txt).
+
+**Tip:** You might want to decrease the [swappiness](/index.php/Swappiness "Swappiness") for your swapfile if the only purpose is to be able to hibernate and not expand RAM.
 
 #### Hibernation into swap file on Btrfs
 
-On Btrfs, the "physical" offset you get from filefrag isn't the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
+On Btrfs, the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
 
 An alternate method is to use [this tool](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.
 
@@ -182,7 +188,7 @@ You might want to tweak your **DSDT table** to make it work. See [DSDT](/index.p
 
 Add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_sleep=nonvs` to your bootloader.
 
-### Suspend/hibernate doesn't work, or not consistently
+### Suspend/hibernate does not work, or does not work consistently
 
 There have been many reports about the screen going black without easily viewable errors or the ability to do anything when going into and coming back from suspend and/or hibernate. These problems have been seen on both laptops and desktops. This is not an official solution, but switching to an older kernel, especially the LTS-kernel, will probably fix this.
 

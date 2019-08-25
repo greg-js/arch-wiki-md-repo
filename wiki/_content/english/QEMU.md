@@ -331,7 +331,7 @@ QEMU can forward ports from the host to the guest to enable e.g. connecting from
 For example, to bind port 10022 on the host with port 22 (SSH) on the guest, start QEMU with a command like:
 
 ```
-$ qemu-system-x86_64 *disk_image* -net nic -net user,hostfwd=*tcp::10022-:22*
+$ qemu-system-x86_64 *disk_image* -nic user,hostfwd=*tcp::10022-:22*
 
 ```
 
@@ -756,7 +756,7 @@ Generating unique link-level addresses can be done in several ways:
 
 By default, without any `-netdev` arguments, QEMU will use user-mode networking with a built-in DHCP server. Your virtual machines will be assigned an IP address when they run their DHCP client, and they will be able to access the physical host's network through IP masquerading done by QEMU.
 
-**Warning:** This only works with the TCP and UDP protocols, so ICMP, including `ping`, will not work. Do not use `ping` to test network connectivity. To make ping work in the guest see [Sysctl#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets](/index.php/Sysctl#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets "Sysctl").
+**Warning:** This only works with the TCP and UDP protocols, so ICMP, including `ping`, will not work. Do not use `ping` to test network connectivity. To make ping work in the guest see [Sysctl#Allow unprivileged users to create IPPROTO_ICMP sockets](/index.php/Sysctl#Allow_unprivileged_users_to_create_IPPROTO_ICMP_sockets "Sysctl").
 
 This default configuration allows your virtual machines to easily access the Internet, provided that the host is connected to it, but the virtual machines will not be directly visible on the external network, nor will virtual machines be able to talk to each other if you start up more than one concurrently.
 
@@ -1353,7 +1353,7 @@ A SPICE client is necessary to connect to the guest. In Arch, the following clie
 
 	run it with `$ remote-viewer spice://127.0.0.1:5930` || [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
 
-**spice-gtk** — is a GTK+ client which can also be used
+**spice-gtk** — is a GTK client which can also be used
 
 	run it with `$ spicy -h 127.0.0.1 -p 5930` || [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk)
 

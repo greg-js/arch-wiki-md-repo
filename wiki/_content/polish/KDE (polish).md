@@ -1,11 +1,15 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Wstęp](#Wst.C4.99p)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Wstęp](#Wstęp)
 *   [2 KDE 4](#KDE_4)
 *   [3 KDE 5](#KDE_5)
 *   [4 KDM](#KDM)
 *   [5 Uruchamianie KDE 4 i 5 bez KDM](#Uruchamianie_KDE_4_i_5_bez_KDM)
-*   [6 Informacje końcowe](#Informacje_ko.C5.84cowe)
+*   [6 Informacje końcowe](#Informacje_końcowe)
 
 ## Wstęp
 

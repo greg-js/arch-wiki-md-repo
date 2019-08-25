@@ -1,4 +1,4 @@
-[Blueman](https://github.com/blueman-project/blueman) is a full featured [Bluetooth](/index.php/Bluetooth "Bluetooth") manager written in [GTK+](/index.php/GTK%2B "GTK+").
+[Blueman](https://github.com/blueman-project/blueman) is a full featured [Bluetooth](/index.php/Bluetooth "Bluetooth") manager written in [GTK](/index.php/GTK "GTK").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

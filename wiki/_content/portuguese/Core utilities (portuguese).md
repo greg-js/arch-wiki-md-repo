@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=575494) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2019-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=578448) na versão em inglês.
 
 Artigos relacionados
 

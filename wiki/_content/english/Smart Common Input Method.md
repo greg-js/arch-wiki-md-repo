@@ -18,7 +18,7 @@ Its stated goals are to:
     *   [1.1 Input method engines](#Input_method_engines)
 *   [2 Configuration](#Configuration)
     *   [2.1 A simple scenario](#A_simple_scenario)
-    *   [2.2 Note for GTK+](#Note_for_GTK+)
+    *   [2.2 Note for GTK](#Note_for_GTK)
         *   [2.2.1 Note for GNOME, Xfce, LXDE](#Note_for_GNOME,_Xfce,_LXDE)
         *   [2.2.2 Note for KDE3](#Note_for_KDE3)
     *   [2.3 Locale-related files](#Locale-related_files)
@@ -73,7 +73,7 @@ These lines can be added to other files that are run at startup, such as: `/etc/
 
 This is a very basic example for configuring XIM (X Input Method) to work with SCIM. XIM is not recommended because it has quite some limitations.
 
-### Note for GTK+
+### Note for GTK
 
 If you use [GNOME](/index.php/GNOME "GNOME"), edit `/etc/gtk-2.0/gtk.immodules` by adding follow content at the end:
 
@@ -88,7 +88,7 @@ If your `LC_CTYPE` or `LANG` is *en_US.UTF-8*, change `ja:ko:zh` to `en:ja:ko:zh
 
 After making those changes, be sure to reboot. You can find out what input method modules are available on your system by executing `gtk-query-immodules-2.0`.
 
-If SCIM does not work with GTK+ applications after these changes, check that the GTK_IM_MODULE_FILE environment variable is set to `/etc/gtk-2.0/gtk.immodules`.
+If SCIM does not work with GTK applications after these changes, check that the GTK_IM_MODULE_FILE environment variable is set to `/etc/gtk-2.0/gtk.immodules`.
 
 You can use another file (in this example `~/.immodules`) that contains the necessary information about input methods modules by adding these lines in the file you selected in the [section above](#A_simple_scenario).
 

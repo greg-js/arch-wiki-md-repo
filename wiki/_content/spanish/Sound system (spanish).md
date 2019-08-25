@@ -1,6 +1,10 @@
 Este artículo versa sobre la gestión básica del sonido. Para temas avanzados consulte [Pro Audio](/index.php/Pro_Audio "Pro Audio").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Información General](#Información_General)
 *   [2 Controladores e interfaces](#Controladores_e_interfaces)

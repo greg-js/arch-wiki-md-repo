@@ -27,7 +27,7 @@ Next you will need to run to join a network:
 
 The network will be 16 alphanumeric similiar to 8056c2e21c000001 which can be found at the top of the network page under settings.
 
-Back on the network page at my.zerotier, you should see all address that have joined under members. Be sure sure to check the authorize for the desired addresses, and verify that it has IP address. You may need to run [dhcpcd](/index.php/Dhcpcd "Dhcpcd") to acquire the new IP address locally.
+Back on the network page at my.zerotier, you should see all address that have joined under members. Be sure to check the authorize for the desired addresses, and verify that it has IP address. You may need to run [dhcpcd](/index.php/Dhcpcd "Dhcpcd") to acquire the new IP address locally.
 
 To verify that all devices can see each other you can [ping](/index.php/Ping "Ping") each address with its associated IP, like so
 

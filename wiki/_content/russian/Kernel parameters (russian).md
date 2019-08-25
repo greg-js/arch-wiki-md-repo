@@ -6,7 +6,11 @@
 
 This page now explains in more detail the second method and shows a list of most used kernel parameters in Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Настройка](#Настройка)
     *   [1.1 Syslinux](#Syslinux)

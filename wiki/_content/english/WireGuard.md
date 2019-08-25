@@ -559,7 +559,7 @@ Afterwards [enable](/index.php/Enable "Enable") and [start](/index.php/Start "St
 
 ### Generate QR code
 
-If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to generate the config for the client:
+If the client is a mobile device such as a phone, [qrencode](https://www.archlinux.org/packages/?name=qrencode) can be used to generate client's configuration QR code and display it in terminal:
 
 ```
 $ qrencode -t ansiutf8 < client.conf

@@ -137,7 +137,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **GPicView** — Simple and fast image viewer for X, which is part of the [LXDE](/index.php/LXDE "LXDE") desktop.
 
-	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK+ 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK+ 3: [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3)
+	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK 3: [gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3)
 
 *   **[Gwenview](https://en.wikipedia.org/wiki/Gwenview "wikipedia:Gwenview")** — Fast and easy to use image viewer for the KDE desktop.
 
@@ -187,7 +187,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/easymodo/qimgv/](https://github.com/easymodo/qimgv/) || [qimgv](https://aur.archlinux.org/packages/qimgv/)
 
-*   **Quick Image Viewer** — Very small and fast image viewer based on GTK+ and imlib2.
+*   **Quick Image Viewer** — Very small and fast image viewer based on GTK and imlib2.
 
 	[http://spiegl.de/qiv/](http://spiegl.de/qiv/) || [qiv](https://www.archlinux.org/packages/?name=qiv)
 
@@ -207,7 +207,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://github.com/muennich/sxiv](https://github.com/muennich/sxiv) || [sxiv](https://www.archlinux.org/packages/?name=sxiv)
 
-*   **Viewnior** — Minimalistic GTK+ image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
+*   **Viewnior** — Minimalistic GTK image viewer featuring support for flipping, rotating, animations and configurable mouse actions.
 
 	[http://siyanpanayotov.com/project/viewnior/](http://siyanpanayotov.com/project/viewnior/) || [viewnior](https://www.archlinux.org/packages/?name=viewnior)
 
@@ -391,7 +391,7 @@ Some image viewers and organizers like [digiKam](https://en.wikipedia.org/wiki/d
 
 	[https://oqapy.eu/](https://oqapy.eu/) || [oqapy](https://aur.archlinux.org/packages/oqapy/)
 
-*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK+.
+*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK.
 
 	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)
 
@@ -403,7 +403,7 @@ Some image viewers and organizers like [digiKam](https://en.wikipedia.org/wiki/d
 
 See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors "wikipedia:Comparison of vector graphics editors").
 
-*   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK+-based diagram creation program.
+*   **[Dia](https://en.wikipedia.org/wiki/Dia_(software) "wikipedia:Dia (software)")** — GTK-based diagram creation program.
 
 	[https://wiki.gnome.org/Apps/Dia](https://wiki.gnome.org/Apps/Dia) || [dia](https://www.archlinux.org/packages/?name=dia)
 
@@ -559,15 +559,15 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[https://www.deepin.org/en/original/deepin-picker/](https://www.deepin.org/en/original/deepin-picker/) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
 
-*   **delicolour** — Lightweight GTK+ 3 color finder.
+*   **delicolour** — Lightweight GTK 3 color finder.
 
 	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [delicolour](https://aur.archlinux.org/packages/delicolour/)
 
-*   **gcolor2** — Simple GTK+ 2 color selector.
+*   **gcolor2** — Simple GTK 2 color selector.
 
 	[http://gcolor2.sourceforge.net/](http://gcolor2.sourceforge.net/) || [gcolor2](https://www.archlinux.org/packages/?name=gcolor2)
 
-*   **Gcolor3** — Simple GTK+ 3 color selector.
+*   **Gcolor3** — Simple GTK 3 color selector.
 
 	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://www.archlinux.org/packages/?name=gcolor3)
 
@@ -655,7 +655,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 ###### GStreamer-based
 
-*   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK+ and [Mono](/index.php/Mono "Mono"), feature-rich.
+*   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK and [Mono](/index.php/Mono "Mono"), feature-rich.
 
 	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
@@ -663,11 +663,11 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://www.clementine-player.org/](https://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
-*   **Cozy** — Modern audio book player for Linux using GTK+ 3.
+*   **Cozy** — Modern audio book player for Linux using GTK 3.
 
 	[https://github.com/geigi/cozy](https://github.com/geigi/cozy) || [cozy-audiobooks](https://aur.archlinux.org/packages/cozy-audiobooks/)
 
-*   **[Exaile](/index.php/Exaile "Exaile")** — GTK+ clone of Amarok.
+*   **[Exaile](/index.php/Exaile "Exaile")** — GTK clone of Amarok.
 
 	[http://www.exaile.org/](http://www.exaile.org/) || [exaile](https://aur.archlinux.org/packages/exaile/)
 
@@ -679,7 +679,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://wiki.gnome.org/Apps/Music](https://wiki.gnome.org/Apps/Music) || [gnome-music](https://www.archlinux.org/packages/?name=gnome-music)
 
-*   **Gradio** — GTK+ 3 application for finding and listening to internet radio stations.
+*   **Gradio** — GTK 3 application for finding and listening to internet radio stations.
 
 	[https://github.com/haecker-felix/gradio](https://github.com/haecker-felix/gradio) || [gradio](https://aur.archlinux.org/packages/gradio/)
 
@@ -707,7 +707,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://pithos.github.io/](https://pithos.github.io/) || [pithos](https://aur.archlinux.org/packages/pithos/)
 
-*   **Pragha** — GTK+ music manager. (fork of the Consonance Music Manager)
+*   **Pragha** — GTK music manager. (fork of the Consonance Music Manager)
 
 	[https://pragha-music-player.github.io/](https://pragha-music-player.github.io/) || [pragha](https://www.archlinux.org/packages/?name=pragha)
 
@@ -719,7 +719,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://github.com/ebruck/radiotray-ng](https://github.com/ebruck/radiotray-ng) || [radiotray-ng](https://aur.archlinux.org/packages/radiotray-ng/)
 
-*   **[Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox")** — GTK+ clone of iTunes, used by default in GNOME.
+*   **[Rhythmbox](/index.php/Rhythmbox "Rhythmbox")** — GTK clone of iTunes, used by default in GNOME.
 
 	[https://wiki.gnome.org/Apps/Rhythmbox](https://wiki.gnome.org/Apps/Rhythmbox) || [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox)
 
@@ -781,7 +781,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[http://audacious-media-player.org/](http://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
 
-*   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK+ GUI, comes with many plugins, and has a metadata editor.
+*   **[DeaDBeeF](https://en.wikipedia.org/wiki/DeaDBeeF "wikipedia:DeaDBeeF")** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK GUI, comes with many plugins, and has a metadata editor.
 
 	[http://deadbeef.sourceforge.net/](http://deadbeef.sourceforge.net/) || [deadbeef](https://www.archlinux.org/packages/?name=deadbeef)
 
@@ -799,7 +799,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 *   **LXMusic** — A minimalist xmms2-based music player.
 
-	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK+ 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK+ 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
+	[https://wiki.lxde.org/en/LXMusic](https://wiki.lxde.org/en/LXMusic) || GTK 2: [lxmusic](https://www.archlinux.org/packages/?name=lxmusic), GTK 3: [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3)
 
 *   **museeks** — Minimalistic and easy to use music player. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1117,6 +1117,10 @@ See also [LilyPond#Front-ends](/index.php/LilyPond#Front-ends "LilyPond") and [W
 
 	[https://sourceforge.net/projects/canorus/](https://sourceforge.net/projects/canorus/) || [canorus](https://www.archlinux.org/packages/?name=canorus)
 
+*   **[GNU Denemo](https://en.wikipedia.org/wiki/Denemo "wikipedia:Denemo")** — Denemo is a free music notation program for GNU/Linux, Mac OSX and Windows that lets you rapidly enter notation which it typesets using the [LilyPond](/index.php/LilyPond "LilyPond") music engraver. Music can be typed in at the PC-Keyboard [(watch demo)](https://vimeo.com/65174334), or played in via MIDI controller [(watch demo)](https://vimeo.com/61994482), or input acoustically into a microphone plugged into your computer's soundcard.
+
+	[http://www.denemo.org/](http://www.denemo.org/) || [denemo](https://aur.archlinux.org/packages/denemo/)
+
 *   **[Impro-Visor](https://en.wikipedia.org/wiki/Impro-Visor "wikipedia:Impro-Visor")** — Music notation program designed to help jazz musicians compose and hear solos similar to ones that might be improvised.
 
 	[https://www.cs.hmc.edu/~keller/jazz/improvisor/](https://www.cs.hmc.edu/~keller/jazz/improvisor/) || [impro-visor](https://aur.archlinux.org/packages/impro-visor/)
@@ -1321,7 +1325,7 @@ This section contains [drum machines](https://en.wikipedia.org/wiki/Drum_machine
 
 	[https://karlstav.github.io/cava/](https://karlstav.github.io/cava/) || [cava](https://aur.archlinux.org/packages/cava/)
 
-*   **Cavalcade** — GTK+ GUI for C.A.V.A.
+*   **Cavalcade** — GTK GUI for C.A.V.A.
 
 	[https://github.com/worron/cavalcade/](https://github.com/worron/cavalcade/) || [cavalcade](https://aur.archlinux.org/packages/cavalcade/)
 
@@ -1457,7 +1461,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
 
-*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer") and GTK+. Precompiled and no Haskell dependency in run-time.
+*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer") and GTK. Precompiled and no Haskell dependency in run-time.
 
 	[https://lettier.github.io/movie-monad/](https://lettier.github.io/movie-monad/) || [movie-monad](https://aur.archlinux.org/packages/movie-monad/)
 
@@ -1481,7 +1485,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://github.com/gyunaev/spivak](https://github.com/gyunaev/spivak) || [spivak](https://aur.archlinux.org/packages/spivak/)
 
-*   **Xnoise** — GTK+ and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
+*   **Xnoise** — GTK and [GStreamer](/index.php/GStreamer "GStreamer")-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
 
 	[http://www.xnoise-media-player.com/](http://www.xnoise-media-player.com/) || [xnoise](https://www.archlinux.org/packages/?name=xnoise)
 
@@ -1495,7 +1499,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://www.deepin.org/en/original/deepin-movie/](https://www.deepin.org/en/original/deepin-movie/) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
 
-*   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK+ 3).
+*   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK 3).
 
 	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
@@ -1509,7 +1513,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
-	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
+	[https://gitlab.com/mpc-qt/mpc-qt](https://gitlab.com/mpc-qt/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/), [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
 
 *   **[mpv](/index.php/Mpv "Mpv")** — Very basic GUI for mpv. Can be launched with `mpv --player-operation-mode=pseudo-gui`.
 
@@ -1525,7 +1529,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 ###### MPlayer-based
 
-*   **GNOME MPlayer** — Simple GTK+-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
+*   **GNOME MPlayer** — Simple GTK-based GUI for [MPlayer](/index.php/MPlayer "MPlayer").
 
 	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
@@ -1623,7 +1627,7 @@ See also [Wikipedia:Comparison of video converters](https://en.wikipedia.org/wik
 
 	[https://sites.google.com/site/ffmulticonverter/](https://sites.google.com/site/ffmulticonverter/) || [ffmulticonverter](https://aur.archlinux.org/packages/ffmulticonverter/)
 
-*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
+*   **[HandBrake](https://en.wikipedia.org/wiki/HandBrake "wikipedia:HandBrake")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 
@@ -1745,7 +1749,7 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 
 	[https://github.com/SubtitleEdit/subtitleedit](https://github.com/SubtitleEdit/subtitleedit) || [subtitleedit](https://aur.archlinux.org/packages/subtitleedit/)
 
-*   **Subtitle Editor** — GTK+3 tool to edit subtitles for GNU/Linux/*BSD.
+*   **Subtitle Editor** — GTK 3 tool to edit subtitles for GNU/Linux/*BSD.
 
 	[http://kitone.github.io/subtitleeditor/](http://kitone.github.io/subtitleeditor/) || [subtitleeditor](https://www.archlinux.org/packages/?name=subtitleeditor)
 
@@ -1767,7 +1771,7 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 *   **[Guvcview](https://en.wikipedia.org/wiki/Guvcview "wikipedia:Guvcview")** — Simple interface for capturing and viewing video from v4l2 devices.
 
-	[http://guvcview.sourceforge.net/](http://guvcview.sourceforge.net/) || GTK+: [guvcview](https://www.archlinux.org/packages/?name=guvcview), Qt: [guvcview-qt](https://www.archlinux.org/packages/?name=guvcview-qt)
+	[http://guvcview.sourceforge.net/](http://guvcview.sourceforge.net/) || GTK: [guvcview](https://www.archlinux.org/packages/?name=guvcview), Qt: [guvcview-qt](https://www.archlinux.org/packages/?name=guvcview-qt)
 
 *   **Kamoso** — Webcam recorder from KDE community.
 
@@ -1971,7 +1975,7 @@ See [Optical disc drive#DVD-Video](/index.php/Optical_disc_drive#DVD-Video "Opti
 
 	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
 
-*   **[gtkpod](https://en.wikipedia.org/wiki/gtkpod "wikipedia:gtkpod")** — GUI for Apple's iPod using GTK+. It allows you to import your existing iTunes database, add songs, podcasts, videos and cover art, and to edit ID3 tags.
+*   **[gtkpod](https://en.wikipedia.org/wiki/gtkpod "wikipedia:gtkpod")** — GUI for Apple's iPod using GTK. It allows you to import your existing iTunes database, add songs, podcasts, videos and cover art, and to edit ID3 tags.
 
 	[https://sourceforge.net/projects/gtkpod/](https://sourceforge.net/projects/gtkpod/) || [gtkpod](https://aur.archlinux.org/packages/gtkpod/)
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Дата последней синхронизации: 25 мая 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Nvidia-xrun&diff=0&oldid=573979).
+**Состояние перевода:** На этой странице представлен перевод статьи [Nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Дата последней синхронизации: 11 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Nvidia-xrun&diff=0&oldid=577861).
 
 [Nvidia-xrun](https://github.com/Witko/nvidia-xrun) — утилита, запускающая [X сервер](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)"), используя дискретный графический процессор NVIDIA, на ноутбуках с поддержкой NVIDIA Optimus. Это решение предлагает полное использование GPU, а также повышенные совместимость и производительность.
 
@@ -26,14 +26,14 @@ X сервер работает либо с интегрированным, ли
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia)
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/), [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)
-    *   или [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/) если `bbswitch` не поддерживает ваше оборудование [[1]](https://bbs.archlinux.org/viewtopic.php?id=238389)
-*   [Оконный менеджер](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)"), например, [openbox](https://www.archlinux.org/packages/?name=openbox) или [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), так как запуск приложений напрямую c помощью `nvidia-xrun` работает некорректно.
+    *   или [nvidia-xrun-pm](https://aur.archlinux.org/packages/nvidia-xrun-pm/), если `bbswitch` не поддерживает ваше оборудование [[1]](https://bbs.archlinux.org/viewtopic.php?id=238389)
+*   [Оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), например, [openbox](https://www.archlinux.org/packages/?name=openbox) или [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session), так как запуск приложений напрямую с помощью `nvidia-xrun` работает некорректно.
 
 ## Настройка
 
 ### Установка корректного идентификатора шины
 
-**Note:** Пользователи, которые установили `nvidia-xrun` из [AUR](/index.php/AUR "AUR"), могут пропустить этот шаг, потому что идентификатор шины устанавливается автоматически в `/etc/X11/nvidia-xorg.conf`.
+**Примечание:** Идентификатор шины в `/etc/X11/nvidia-xorg.conf` задаётся автоматически при установке пакета из [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)"). Убедитесь, что задан правильный идентификатор, а в противном случае измените его вручную (корректный идентификатор шины можно получить с помощью команды `lspci`).
 
 Найдите ID шины вашего дисплея:
 
@@ -82,7 +82,7 @@ fi
 
 ```
 
-Тогда не придется указывать приложение, просто выполните команду:
+Тогда не придётся указывать приложение, просто выполните команду:
 
 ```
 $ nvidia-xrun
@@ -126,17 +126,17 @@ $ nvidia-xrun
 
 ## Использование
 
-После загрузки системы, с виртуальной консоли войдите в пользователя и выполните `nvidia-xrun <application>`.
+После загрузки системы войдите в пользователя с виртуальной консоли и выполните `nvidia-xrun <приложение>`.
 
 Если способ выше не работает, [переключитесь](/index.php/Keyboard_shortcuts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Xorg_и_Wayland "Keyboard shortcuts (Русский)") на неиспользуемую виртуальную консоль и попробуйте снова.
 
-Как упоминалось ранее, запуск приложений напрямую с помощью `nvidia-xrun <application>` не работает как следует, поэтому лучше создать `~/.nvidia-xinitrc`, как описано выше, и использовать `nvidia-xrun` для запуска оконного менеджера.
+Как упоминалось ранее, запуск приложений напрямую с помощью `nvidia-xrun <application>` **не работает как следует**, поэтому лучше создать `~/.nvidia-xinitrc`, как описано выше, и использовать `nvidia-xrun` для запуска оконного менеджера.
 
 ## Решение проблем
 
 ### Графический процессор NVIDIA не отключается или устанавливается по умолчанию
 
-Если графический процессор NVIDIA по-прежнему не отключается или устанавливается по умолчанию, то придется занести в черный список модули, приведенные ниже. Создайте этот файл и перезапустите систему:
+Если графический процессор NVIDIA по-прежнему не отключается или устанавливается по умолчанию, то придётся занести в чёрный список модули, приведённые ниже. Создайте этот файл и перезапустите систему:
 
  `/usr/lib/modprobe.d/nvidia-xrun.conf` 
 ```

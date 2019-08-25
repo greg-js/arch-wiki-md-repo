@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-08-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=577225) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=579059) na versão em inglês.
 
 Artigos relacionados
 
@@ -298,7 +298,7 @@ Um gerenciador de rede permite que você gerencie configurações de conexão de
 
 | Gerenciador
 de rede | GUI | [Archiso](/index.php/Archiso_(Portugu%C3%AAs) "Archiso (Português)") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol") (ex., Modem 3G) | [Cliente DHCP](#DHCP) | Units de systemd |
-| [ConnMan](/index.php/ConnMan "ConnMan") | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim | interno | `connman.service` |
+| [ConnMan](/index.php/ConnMan "ConnMan") | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim ((com [ofono](https://aur.archlinux.org/packages/ofono/)) | interno | `connman.service` |
 | [netctl](/index.php/Netctl "Netctl") | 2 não oficiais | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Não | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Sim | interno, [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
 | [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | Não | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [networkctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1) | [Não](https://github.com/systemd/systemd/issues/481) | interno | `systemd-networkd.service`, `systemd-resolved.service` |
@@ -423,7 +423,7 @@ Se você preferir manter os nomes de interface tradicionais, como eth0, [Predict
 
 ```
 
-Alternativamente, adicione `net.ifnames=0` aos [parâmetros do kernel](/index.php/Kernel_parameters "Kernel parameters").
+Alternativamente, adicione `net.ifnames=0` aos [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel").
 
 ### Definindo o MTU do dispositivo e o tamanho da fila
 
@@ -706,7 +706,7 @@ Outra falha nos drivers para algumas revisões deste adaptador é um suporte fra
 
 Com placas-mãe como o *Gigabyte GA-990FXA-UD3*, inicializar com [IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF") desligado (o que pode ser o padrão) fará com que a interface de rede não seja confiável, muitas vezes não conseguindo se conectar, ou até conectar mas não permitindo a transferência. Isso se aplicará à NIC *on-board* e para qualquer outra NIC pci na máquina porque a configuração IOMMU afeta toda a interface de rede na placa. Habilitar o IOMMU e inicializar com a mídia de instalação lançará as falhas da página AMD I-10/xhci por um segundo, mas depois inicializará normalmente, resultando em uma NIC *onboard* totalmente funcional (mesmo com o módulo r8169).
 
-Ao configurar o processo de inicialização para sua instalação, adicione `iommu=soft` como um [parâmetro de kernel](/index.php/Kernel_parameter "Kernel parameter") para eliminar as mensagens de erro na inicialização e restaurar a funcionalidade USB3.0.
+Ao configurar o processo de inicialização para sua instalação, adicione `iommu=soft` como um [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") para eliminar as mensagens de erro na inicialização e restaurar a funcionalidade USB3.0.
 
 ## Veja também
 

@@ -25,7 +25,7 @@ Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot right click on desktop](#Cannot_right_click_on_desktop)
     *   [3.2 Unity stops working after update](#Unity_stops_working_after_update)
-    *   [3.3 Some GTK+ themes look ugly since GNOME 3.6](#Some_GTK+_themes_look_ugly_since_GNOME_3.6)
+    *   [3.3 Some GTK themes look ugly since GNOME 3.6](#Some_GTK_themes_look_ugly_since_GNOME_3.6)
     *   [3.4 Workspace switcher widget disappeared](#Workspace_switcher_widget_disappeared)
     *   [3.5 No skype or other applications appear in indicator tray](#No_skype_or_other_applications_appear_in_indicator_tray)
 *   [4 Known issues](#Known_issues)
@@ -115,7 +115,7 @@ Run `compiz.reset` and then log out and log back into the Unity session.
 
 If Unity still is not working, report an issue on [github](https://github.com/chenxiaolong/Unity-for-Arch/issues?state=open) or discuss it in this [forum thread](https://bbs.archlinux.org/viewtopic.php?id=125423&p=1) on the Arch Linux Forums.
 
-### Some GTK+ themes look ugly since GNOME 3.6
+### Some GTK themes look ugly since GNOME 3.6
 
 This affects the unity default theme and light themes. Use:
 

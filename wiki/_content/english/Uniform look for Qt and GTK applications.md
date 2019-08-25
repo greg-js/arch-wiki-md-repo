@@ -105,7 +105,7 @@ style=GTK+
 ...
 ```
 
-*   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins) and setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=gtk2`
+*   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins) and setting the following [environment variable](/index.php/Environment_variables#Graphical_environment "Environment variables"): `QT_QPA_PLATFORMTHEME=gtk2`
 
 For full uniformity, make sure that the configured [GTK theme](/index.php/GTK#Themes "GTK") supports both GTK 2 and GTK 3\. If your preferred theme has inconsistent rendering after configuring Qt to use GTK2, install [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2) and choose a theme.
 
@@ -113,7 +113,7 @@ For full uniformity, make sure that the configured [GTK theme](/index.php/GTK#Th
 
 This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform](https://aur.archlinux.org/packages/qgnomeplatform/) package or the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package for the development version. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK](#Styles_for_both_Qt_and_GTK).
 
-This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
+This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_environment "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
 
 ## Tips and tricks
 

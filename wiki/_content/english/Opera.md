@@ -7,7 +7,11 @@ Related articles
 
 [Opera](http://www.opera.com) is a free of charge web browser developed since 1994 by the Norwegian company [Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software"). It is known for being the first to bring new browsing features to the world that have become common on all web browsers, such as tabbed browsing and built-in search.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Old Presto version](#Old_Presto_version)
@@ -25,16 +29,16 @@ Related articles
 *   [6 Accessibility Tips](#Accessibility_Tips)
     *   [6.1 Disable text selection](#Disable_text_selection)
     *   [6.2 Grab and scroll mode](#Grab_and_scroll_mode)
-    *   [6.3 Long pressing a link opens it in a background tab (extension)](#Long_pressing_a_link_opens_it_in_a_background_tab_.28extension.29)
-    *   [6.4 Virtual On-Screen keyboard (extension)](#Virtual_On-Screen_keyboard_.28extension.29)
+    *   [6.3 Long pressing a link opens it in a background tab (extension)](#Long_pressing_a_link_opens_it_in_a_background_tab_(extension))
+    *   [6.4 Virtual On-Screen keyboard (extension)](#Virtual_On-Screen_keyboard_(extension))
 *   [7 Security](#Security)
     *   [7.1 Force a password store](#Force_a_password_store)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Slow scrolling on NVIDIA cards](#Slow_scrolling_on_NVIDIA_cards)
     *   [8.2 Horizontal mouse wheel scrolling](#Horizontal_mouse_wheel_scrolling)
     *   [8.3 Launching an external browser](#Launching_an_external_browser)
-    *   [8.4 Opera crashes when starting or closing with GTK+ 2.24.7+](#Opera_crashes_when_starting_or_closing_with_GTK.2B_2.24.7.2B)
-    *   [8.5 Unreadable input fields and address bar with dark GTK+ themes](#Unreadable_input_fields_and_address_bar_with_dark_GTK.2B_themes)
+    *   [8.4 Opera crashes when starting or closing with GTK 2.24.7+](#Opera_crashes_when_starting_or_closing_with_GTK_2.24.7+)
+    *   [8.5 Unreadable input fields and address bar with dark GTK themes](#Unreadable_input_fields_and_address_bar_with_dark_GTK_themes)
 *   [9 See Also](#See_Also)
 
 ## Installation
@@ -103,9 +107,9 @@ Although Opera is cross-platform, it can be made to integrate very well into var
 
 	To make Opera use [KDE](/index.php/KDE "KDE") icons, you can install a theme such as [this one](http://my.opera.com/community/customize/skins/info/?id=8141).
 
-	GTK+
+	GTK
 
-	A nice GTK+ skin that uses the Tango icon theme can be found [here](http://my.opera.com/community/customize/skins/info/?id=3465).
+	A nice GTK skin that uses the Tango icon theme can be found [here](http://my.opera.com/community/customize/skins/info/?id=3465).
 
 ### Title bar
 
@@ -119,7 +123,7 @@ Opera has native support for tab cascading and tiling mode. Appropriate buttons 
 
 Fonts can be configured under *Settings > Preferences... > Advanced > Fonts*.
 
-If the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package has been installed before running Opera for the first time, Opera will use those fonts by default, regardless of what is specified by local GTK+ options, [GNOME](/index.php/GNOME "GNOME") or KDE font management. To force existing installations of Opera to use the options set by your system:
+If the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package has been installed before running Opera for the first time, Opera will use those fonts by default, regardless of what is specified by local GTK options, [GNOME](/index.php/GNOME "GNOME") or KDE font management. To force existing installations of Opera to use the options set by your system:
 
 *   Close all running instances of Opera.
 *   Un-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package.
@@ -244,7 +248,7 @@ Button0, "Chromium"="Execute program, "chromium --block-nonsandboxed-plugins --d
 
 ```
 
-### Opera crashes when starting or closing with GTK+ 2.24.7+
+### Opera crashes when starting or closing with GTK 2.24.7+
 
 If this crash occurs, you can work around it by changing the *DialogToolkit* option to 4:
 
@@ -253,9 +257,9 @@ opera:config#FileSelector|DialogToolkit
 
 ```
 
-This will disable GTK+ styling support and hence avoid the issue.
+This will disable GTK styling support and hence avoid the issue.
 
-### Unreadable input fields and address bar with dark GTK+ themes
+### Unreadable input fields and address bar with dark GTK themes
 
 When using a dark GTK theme, one might encounter Opera address bar and Internet pages with unreadable input and text fields (e.g. Amazon can have black text on black text field background). This can happen because the site only sets either background or text color, and Opera takes the other one from the theme.
 

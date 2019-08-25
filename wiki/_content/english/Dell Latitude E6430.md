@@ -34,7 +34,7 @@ Install the [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx
 
 **PC/SC**
 
-Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) package. In some cases NFC/RFID is disabled and you need to enable it. There is instruction how to do this [[[1]](https://blog.g3rt.nl/enable-dell-nfc-contactless-reader.html)]
+Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools) package. In some cases NFC/RFID is disabled and you need to enable it. There is instruction how to do this [[1]](https://blog.g3rt.nl/enable-dell-nfc-contactless-reader.html)
 
 ## Hardware
 

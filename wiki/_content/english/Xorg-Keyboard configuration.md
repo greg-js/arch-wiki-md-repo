@@ -34,10 +34,11 @@ The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension 
     *   [3.6 Currency sign on other key](#Currency_sign_on_other_key)
     *   [3.7 Switching state immediately when Caps Lock is pressed](#Switching_state_immediately_when_Caps_Lock_is_pressed)
         *   [3.7.1 Workaround](#Workaround)
-*   [4 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
-    *   [4.1 Using xset](#Using_xset)
-    *   [4.2 Using XServer startup options](#Using_XServer_startup_options)
-*   [5 See also](#See_also)
+*   [4 One-click key functions](#One-click_key_functions)
+*   [5 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
+    *   [5.1 Using xset](#Using_xset)
+    *   [5.2 Using XServer startup options](#Using_XServer_startup_options)
+*   [6 See also](#See_also)
 
 ## Viewing keyboard settings
 
@@ -98,6 +99,8 @@ The layout name is usually a [2-letter country code](https://en.wikipedia.org/wi
 *   `localectl list-x11-keymap-options`
 
 Examples in the following subsections will have the same effect, they will set `pc104` model, `cz` as primary layout, `us` as secondary layout, `dvorak` variant for `us` layout and the `Alt+Shift` combination for switching between layouts. See [xkeyboard-config(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xkeyboard-config.7) for more detailed information.
+
+**Note:** Fcitx/IBus users may find these methods not work, or just work for a while, since they will try to control keyboard layout. Fcitx users need to set the first input method to be `Keyboard - *layout*`. See [Fcitx#Input methods configuration](/index.php/Fcitx#Input_methods_configuration "Fcitx"). IBus users need to enable "Use system keyboard layout" option in Preference -> Advanced if using X configuration files, or manually specify the layout if using setxkbmap. See [IBus#Non US keyboards](/index.php/IBus#Non_US_keyboards "IBus")
 
 ### Using setxkbmap
 
@@ -285,13 +288,26 @@ $ xkbcomp -w 0 xkbmap $DISPLAY
 
 Consider making it a service launching after X starts, since reloaded configurations do not survive a system reboot.
 
+## One-click key functions
+
+To assign an additional one-click function to a modifier key, you can use [xcape](https://www.archlinux.org/packages/?name=xcape). For example it is possible to have `CapsLock` work as `Escape` when pressed alone, and as `Control` when used with another key. First set the `Control` swapping using [setxkbmap](#Swapping_Caps_Lock_with_Left_Control) as mentioned earlier, and *xcape* to set the `Escape` association:
+
+```
+ $ xcape -e 'Caps_Lock=Escape'
+
+```
+
+You can set multiple associations separated with a semicolon, e.g.: `Caps_Lock=Escape;Shift_L=Escape`.
+
+If you hold a key for longer than the timeout value (default 500 ms), *xcape* will not generate a key event.
+
 ## Adjusting typematic delay and rate
 
-The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. Note that these settings are configured seperately for Xorg and [for the virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console").
+The *typematic delay* indicates the amount of time (typically in milliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. Note that these settings are configured separately for Xorg and [for the virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console").
 
 ### Using xset
 
-The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime though may cause the XServer to reset these changes and revert instead to its *seat defaults*.
+The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime though may cause the X server to reset these changes and revert instead to its *seat defaults*.
 
 Usage:
 
@@ -318,8 +334,8 @@ $ xset r rate
 
 A more resistant way to set the typematic delay and rate is to make them the *seat defaults* by passing the desired settings to the X server on its startup using the following options:
 
-*   `-ardelay *miliseconds*` - sets the autorepeat delay (length of time in milliseconds that a key must be depressed before autorepeat starts).
-*   `-arinterval *miliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
+*   `-ardelay *milliseconds*` - sets the autorepeat delay (length of time in milliseconds that a key must be depressed before autorepeat starts).
+*   `-arinterval *milliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
 
 See [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
 

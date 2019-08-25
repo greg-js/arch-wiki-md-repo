@@ -234,13 +234,13 @@ $ cat /proc/sys/vm/swappiness
 To temporarily set the swappiness value:
 
 ```
-# sysctl vm.swappiness=10
+# sysctl -w vm.swappiness=10
 
 ```
 
-To set the swappiness value permanently, edit a *sysctl* configuration file
+To set the swappiness value permanently, create a [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) configuration file. For example:
 
- `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
+ `/etc/sysctl.d/99-swappiness.conf`  `vm.swappiness=10` 
 
 To test and more on why this may work, take a look at [this article](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 

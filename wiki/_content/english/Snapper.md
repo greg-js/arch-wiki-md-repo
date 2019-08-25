@@ -293,6 +293,10 @@ Exec = /usr/bin/rsync -a --delete /boot /.bootbackup
 
 The following packages use `btrfs send` and `btrfs receive` to send backups incrementally to an external drive. Refer to their documenation to see differences in implementation, features, and requirements.
 
+*   **btrbk** — "Tool for creating snapshots and remote backups of btrfs subvolumes."
+
+	[https://github.com/digint/btrbk](https://github.com/digint/btrbk) || [btrbk](https://aur.archlinux.org/packages/btrbk/)
+
 *   **buttersink** — "Buttersink is like rsync for btrfs snapshots."
 
 	[https://github.com/AmesCornish/buttersink.git](https://github.com/AmesCornish/buttersink.git) || [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/)

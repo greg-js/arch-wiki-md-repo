@@ -2,7 +2,11 @@
 
 This article documents the configuration of `libgphoto2` to access digital cameras. Some digital cameras will mount as normal [USB storage devices](/index.php/USB_storage_devices "USB storage devices") and may not require the use of libgphoto2.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Frontend applications](#Frontend_applications)
@@ -37,7 +41,7 @@ This article documents the configuration of `libgphoto2` to access digital camer
 
 	[http://wiki.gnome.org/gthumb](http://wiki.gnome.org/gthumb) || [gthumb](https://www.archlinux.org/packages/?name=gthumb)
 
-*   **GTKam** — Graphical [GTK+](/index.php/GTK%2B "GTK+") 2 front-end to gphoto2.
+*   **GTKam** — Graphical [GTK](/index.php/GTK "GTK") 2 front-end to gphoto2.
 
 	[http://www.gphoto.org/proj/gtkam/](http://www.gphoto.org/proj/gtkam/) || [gtkam](https://aur.archlinux.org/packages/gtkam/)
 
@@ -57,7 +61,7 @@ This article documents the configuration of `libgphoto2` to access digital camer
 
 	[http://www.damonlynch.net/rapid/](http://www.damonlynch.net/rapid/) || [rapid-photo-downloader](https://www.archlinux.org/packages/?name=rapid-photo-downloader)
 
-*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — An open source raw-image converter written in GTK+. Supports tethered shooting with gphoto2.
+*   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — An open source raw-image converter written in GTK. Supports tethered shooting with gphoto2.
 
 	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)
 

@@ -54,7 +54,7 @@ freshclamd.service | Anti-virus para Unix. |
 | ip6tables | ip6tables.service | Carrega regras de firewall para IPv6. |
 | [IPFS](/index.php/IPFS "IPFS") | ipfs daemon | ? | Nó de protocolo p2p hypermidia. |
  irqbalance | irqbalance.service | Utilitário que faz o balanceamento de interrupções de hardware tornando-as o mais performático possível. |
-| [KDE](/index.php/KDE "KDE") | kdm | kdm.service | KDE Display Manager. |
+| [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") | kdm | kdm.service | KDE Display Manager. |
 | [krb5](https://www.archlinux.org/packages/?name=krb5) | krb5-kadmind | krb5-kadmind.service | Servidor de administração Kerberos 5. |
 | krb5-kdc | krb5-kdc.service | KDC Kerberos 5. |
 | krb5-kpropd | krb5-kpropd.service | Servidor de propagação Kerberos 5. |

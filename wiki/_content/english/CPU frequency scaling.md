@@ -143,7 +143,7 @@ Governors (see table below) are power schemes for the CPU. Only one may be activ
 | userspace | Run the CPU at user specified frequencies. |
 | ondemand | Scales the frequency dynamically according to current load. Jumps to the highest frequency and then possibly back off as the idle time increases. |
 | conservative | Scales the frequency dynamically according to current load. Scales the frequency more gradually than ondemand. |
-| schedutil | Scheduler-driven CPU frequency selection [[1]](http://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
+| schedutil | Scheduler-driven CPU frequency selection [[1]](https://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
 
 Depending on the scaling driver, one of these governors will be loaded by default:
 

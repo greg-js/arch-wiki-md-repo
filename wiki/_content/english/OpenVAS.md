@@ -62,9 +62,9 @@ If running OpenVAS in a virtual machine or any other system having a low entropy
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) package group from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [openvas](https://www.archlinux.org/packages/?name=openvas) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-This group provides the [openvas-cli](https://aur.archlinux.org/packages/openvas-cli/) command-line `omp` interface and [greenbone-security-assistant](https://www.archlinux.org/packages/?name=greenbone-security-assistant) web interface via the `gsad` daemon along with other OpenVAS dependencies.
+Alternatively install [greenbone-vulnerability-manager](https://www.archlinux.org/groups/x86_64/greenbone-vulnerability-manager/) which provides [openvas](https://www.archlinux.org/packages/?name=openvas), the Greenbone Vulnerability Manager ([gvmd](https://www.archlinux.org/packages/?name=gvmd)) and Greenbone Security Assistant (gsa) [greenbone-security-assistant](https://www.archlinux.org/packages/?name=greenbone-security-assistant)) OpenVAS web frontend.
 
 ## Initial setup
 

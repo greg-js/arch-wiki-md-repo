@@ -39,7 +39,7 @@ Este artigo descreve os pacotes de software adicionais necessários para expandi
 
 **Nota:** Quando instalados, os pacotes de software listados abaixo serão automaticamente originados por todos os gerenciadores de arquivos instalados e capazes, e em todos os ambientes de área de trabalho e/ou gerenciadores de janelas.
 
-Um gerenciador de arquivos sozinho não fornecerá os recursos e funcionalidades aos quais os usuários de ambientes de desktop completos, como o [Xfce](/index.php/Xfce "Xfce") ou o [KDE](/index.php/KDE "KDE"), estarão acostumados. Isso ocorre porque pacotes de software adicionais serão necessários para permitir que um determinado gerenciador de arquivos:
+Um gerenciador de arquivos sozinho não fornecerá os recursos e funcionalidades aos quais os usuários de ambientes de desktop completos, como o [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)") ou o [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"), estarão acostumados. Isso ocorre porque pacotes de software adicionais serão necessários para permitir que um determinado gerenciador de arquivos:
 
 *   Exibe e acesso outras partições
 *   Exibe, monte e acesse mídias removíveis (e.x., pendrives, discos óticos e câmeras digitais)
@@ -96,7 +96,7 @@ Outra opção é instalar um [aplicativo de montagem](/index.php/List_of_applica
 
 *   [obexfs](https://aur.archlinux.org/packages/obexfs/): Transferências de arquivos e montagem de dispositivos Bluetooth (veja [Bluetooth](/index.php/Bluetooth "Bluetooth"))
 *   [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb): Compartilhamento de arquivos e impressoras Windows para ambientes que **não sejam KDE** (veja [Samba](/index.php/Samba "Samba"))
-*   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Compartilhamento de arquivos e impressoras Windows para [KDE](/index.php/KDE "KDE") (veja [Samba#KDE](/index.php/Samba#KDE "Samba"))
+*   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Compartilhamento de arquivos e impressoras Windows para [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)") (veja [Samba#KDE](/index.php/Samba#KDE "Samba"))
 *   [sshfs](https://www.archlinux.org/packages/?name=sshfs): Cliente FUSE baseado no protocolo de transferência de arquivos SSH
 
 #### Acesso a Windows
@@ -125,7 +125,7 @@ Você não pode ver miniaturas para armazenamento remoto, incluindo [MTP](/index
 
 #### Gerenciadores de arquivo além do Dolphin e Konqueror
 
-Esses pacotes se aplicam à maioria dos gerenciadores de arquivos, como [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") e [xfe](https://aur.archlinux.org/packages/xfe/). As exceções são Dolphin e Konqueror, usados no ambiente de desktop [KDE](/index.php/KDE "KDE").
+Esses pacotes se aplicam à maioria dos gerenciadores de arquivos, como [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") e [xfe](https://aur.archlinux.org/packages/xfe/). As exceções são Dolphin e Konqueror, usados no ambiente de desktop [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)").
 
 *   [tumbler](https://www.archlinux.org/packages/?name=tumbler): Arquivos de imagem. Ele também **<u>deve</u>** deve ser instalado para expandir as capacidades de miniaturas para outros tipos de arquivos
 *   [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib): Arquivos `.pdf` do Adobe

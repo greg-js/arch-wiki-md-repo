@@ -108,7 +108,7 @@ Whenever you run *tmux*, you will be dropped into fish.
 
 ## Configuration
 
-The configuration file runs at every login and is located at `~/.config/fish/config.fish`. Adding commands or functions to the file will execute/define them when opening a terminal, similar to `.bashrc`. Note that whenever a variable needs to be preserved, it be set as *universal* rather than defined in the aforementioned configuration file.
+The configuration file runs at every login and is located at `~/.config/fish/config.fish`. Adding commands or functions to the file will execute/define them when opening a terminal, similar to `.bashrc`. Note that whenever a variable needs to be preserved, it should be set as *universal* rather than defined in the aforementioned configuration file.
 
 The user's functions are located in the directory `~/.config/fish/functions` under the filenames `*function_name*.fish`.
 
@@ -120,6 +120,8 @@ The fish terminal colors, prompt, functions, variables, history, bindings and ab
 fish_config
 
 ```
+
+It may fail to start if IPv6 has been disabled. See [[1]](https://github.com/fish-shell/fish-shell/issues/3857#issuecomment-281631629) and [IPv6#Disable IPv6](/index.php/IPv6#Disable_IPv6 "IPv6").
 
 ### Command completion
 
@@ -184,7 +186,7 @@ end
 
 ### Use liquidprompt
 
-[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[1]](https://github.com/nojhan/liquidprompt/pull/230). The [angel-PS1](https://github.com/dolmen/angel-PS1) project implements it's functionality for fish.
+[Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[2]](https://github.com/nojhan/liquidprompt/pull/230). The [angel-PS1](https://github.com/dolmen/angel-PS1) project implements it's functionality for fish.
 
 ### Put git status in prompt
 

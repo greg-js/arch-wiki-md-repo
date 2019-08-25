@@ -1,4 +1,4 @@
-[HexChat](http://hexchat.github.io/) is a multi-platform IRC client for [GTK+](/index.php/GTK%2B "GTK+").
+[HexChat](http://hexchat.github.io/) is a multi-platform IRC client for [GTK](/index.php/GTK "GTK").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

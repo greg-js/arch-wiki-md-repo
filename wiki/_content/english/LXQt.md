@@ -6,7 +6,7 @@ Related articles
 
 In early 2013, Hong Jen Yee "PCMan" started porting [LXDE](/index.php/LXDE "LXDE") components to [Qt](/index.php/Qt "Qt"). The first [preview of LXDE-Qt](http://blog.lxde.org/?p=1013) was released on July 3rd, 2013\. On July 21st, it was announced that Razor-qt (a desktop similar in design to LXDE) and LXDE were merging.
 
-The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses Razor-qt and LXDE components. While development is mainly focused on LXQt, the GTK+ 2 version of LXDE will see continued development.
+The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses Razor-qt and LXDE components. While development is mainly focused on LXQt, the GTK 2 version of LXDE will see continued development.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

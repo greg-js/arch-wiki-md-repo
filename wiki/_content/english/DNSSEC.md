@@ -85,7 +85,7 @@ If you choose not to [#Install a DNSSEC-validating resolver](#Install_a_DNSSEC-v
 
 ## DNSSEC Hardware
 
-You can check if your router, modem, AP, etc. supports DNSSEC (many different features) using [dnssec-tester](http://www.dnssec-tester.cz/) (Python and GTK+ based app) to know if it is DNSSEC-compatible, and using this tool you can also upload gathered data to a server, so other users and manufacturers can be informed about compatibility of their devices and eventually fix the firmware (they will be probably urged to do so). (Before running dnssec-tester please make sure, that you do not have any other nameservers in `/etc/resolv.conf`). You can also find the results of performed tests on the [dnssec-tester](http://www.dnssec-tester.cz/) website.
+You can check if your router, modem, AP, etc. supports DNSSEC (many different features) using [dnssec-tester](http://www.dnssec-tester.cz/) (Python and GTK based app) to know if it is DNSSEC-compatible, and using this tool you can also upload gathered data to a server, so other users and manufacturers can be informed about compatibility of their devices and eventually fix the firmware (they will be probably urged to do so). (Before running dnssec-tester please make sure, that you do not have any other nameservers in `/etc/resolv.conf`). You can also find the results of performed tests on the [dnssec-tester](http://www.dnssec-tester.cz/) website.
 
 ## See also
 

@@ -1,6 +1,10 @@
 The Dell Latitude D630 is a business line laptop made for corporate users who have a need for durability. This article will tell you how to get the basic components of the laptop running with Arch.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Hardware](#Hardware)
 *   [2 Installation](#Installation)
@@ -101,7 +105,7 @@ Xorg configuration is relatively straightforward. If you have the nVidia Quadro 
 
 ### PC Speaker
 
-To silence GTK+ apps that love to spew out system beeps for the most mundane of occurrences, you may then have to go into the ALSA settings and specifically mute the PC speaker channel. Then you should no longer hear any sound from it.
+To silence GTK apps that love to spew out system beeps for the most mundane of occurrences, you may then have to go into the ALSA settings and specifically mute the PC speaker channel. Then you should no longer hear any sound from it.
 
 ### Other Recommendations
 

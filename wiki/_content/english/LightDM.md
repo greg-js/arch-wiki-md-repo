@@ -4,7 +4,7 @@ Related articles
 *   [GDM](/index.php/GDM "GDM")
 *   [LXDM](/index.php/LXDM "LXDM")
 
-[LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager"). Its key features are:
+[LightDM](https://github.com/canonical/lightdm) is a cross-desktop [display manager](/index.php/Display_manager "Display manager"). Its key features are:
 
 *   Cross-desktop - supports different desktop technologies.
 *   Supports different display technologies (X, Mir, Wayland ...).
@@ -33,7 +33,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
         *   [5.1.1 Environment variables](#Environment_variables)
         *   [5.1.2 Keymap](#Keymap)
     *   [5.2 Changing background images/colors](#Changing_background_images/colors)
-        *   [5.2.1 GTK+ greeter](#GTK+_greeter)
+        *   [5.2.1 GTK greeter](#GTK_greeter)
             *   [5.2.1.1 GTK3 Theme](#GTK3_Theme)
         *   [5.2.2 Webkit2 greeter](#Webkit2_greeter)
         *   [5.2.3 Unity greeter](#Unity_greeter)
@@ -49,7 +49,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.10 NumLock on by default](#NumLock_on_by_default)
     *   [5.11 Default session](#Default_session)
     *   [5.12 Adjusting the login window's position](#Adjusting_the_login_window's_position)
-        *   [5.12.1 GTK+ greeter](#GTK+_greeter_2)
+        *   [5.12.1 GTK greeter](#GTK_greeter_2)
     *   [5.13 VNC Server](#VNC_Server)
     *   [5.14 Lock the screen using light-locker](#Lock_the_screen_using_light-locker)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -85,7 +85,7 @@ The official repositories contain the following greeters:
 
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 
-*   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK+ Based greeter that is preferred over the [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) by distro creators
+*   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK Based greeter that is preferred over the [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) by distro creators
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 *   [lightdm-mini-greeter](https://aur.archlinux.org/packages/lightdm-mini-greeter/): A minimal, configurable, single-user greeter.
@@ -180,7 +180,7 @@ The script runs [Xkbmap](/index.php/Xkbmap "Xkbmap") with arguments provided in 
 
 You can set the background to a hex color or an image. Some greeters offer more robust background options like background selection from the login screen, random backgrounds, etc.
 
-#### GTK+ greeter
+#### GTK greeter
 
 You can use the [lightdm-gtk-greeter-settings](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings) gui.
 
@@ -363,7 +363,7 @@ Lightdm, like other DMs, stores the last-selected xsession in `~/.dmrc`. See [Di
 
 ### Adjusting the login window's position
 
-#### GTK+ greeter
+#### GTK greeter
 
 Users need to edit `/etc/lightdm/lightdm-gtk-greeter.conf` and enter a value for the `position` variable. It accepts `x` and `y` values, either absolute (in pixels) or relative (in percent). Each value can also have an additional anchor location for the window, `start`, `center` and `end` separated from the value by a comma.
 
@@ -463,7 +463,7 @@ If you are using multiple monitors, LightDM may display in the wrong one (e.g. i
 
 Replace *HDMI1* with your real monitor ID, which you can find from **xrandr** command output.
 
-Alternatively, if you are using the GTK+ greeter, you can edit `/etc/lightdm/lightdm-gtk-greeter.conf` and add the *active-monitor* parameter like this:
+Alternatively, if you are using the GTK greeter, you can edit `/etc/lightdm/lightdm-gtk-greeter.conf` and add the *active-monitor* parameter like this:
 
  `/etc/lightdm/lightdm-gtk-greeter.conf` 
 ```

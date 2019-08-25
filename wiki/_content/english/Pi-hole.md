@@ -249,7 +249,7 @@ To disable the password protection, set a blank password.
 
 ### Cloudflared DOH
 
-Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS ([DOH](https://en.wikipedia.org/wiki/DNS_over_HTTPS)). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
+Pi-Hole can be configured to use privacy-first DNS [1.1.1.1](https://1.1.1.1/) by [Cloudflare](https://www.cloudflare.com/) over HTTPS ([DOH](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS")). Install [cloudflared-bin](https://aur.archlinux.org/packages/cloudflared-bin/) and create the following file:
 
  `/etc/cloudflared/cloudflared.yml` 
 ```

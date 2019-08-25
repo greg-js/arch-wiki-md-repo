@@ -42,10 +42,6 @@ Other versions include:
 
 	[https://www.thunderbird.net/channel/](https://www.thunderbird.net/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)
 
-*   **Thunderbird Earlybird** — Experience the newest innovations as they're developed (equivalent to an alpha and Firefox Aurora releases).
-
-	[https://www.thunderbird.net/channel/](https://www.thunderbird.net/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)
-
 *   **Thunderbird Nightly** — Experience the newest innovations with nightly releases (for those that want to work with breakages).
 
 	[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)

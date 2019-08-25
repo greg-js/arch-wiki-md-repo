@@ -51,7 +51,7 @@ If you use IBus, see [IBus](/index.php/IBus "IBus").
         *   [2.5.5 Ignoring C-SPC on uim.el](#Ignoring_C-SPC_on_uim.el)
         *   [2.5.6 Disabling XIM on Emacs](#Disabling_XIM_on_Emacs)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Set the GTK_IM_MODULE variable, but uim still does not work with GTK+ 2 applications](#Set_the_GTK_IM_MODULE_variable,_but_uim_still_does_not_work_with_GTK+_2_applications)
+    *   [3.1 Set the GTK_IM_MODULE variable, but uim still does not work with GTK 2 applications](#Set_the_GTK_IM_MODULE_variable,_but_uim_still_does_not_work_with_GTK_2_applications)
     *   [3.2 Cannot input Japanese on Opera](#Cannot_input_Japanese_on_Opera)
     *   [3.3 Cannot type a consonant in Zenkaku mode](#Cannot_type_a_consonant_in_Zenkaku_mode)
     *   [3.4 uim-toolbar-gtk-systray: tray icon is crushed](#uim-toolbar-gtk-systray:_tray_icon_is_crushed)
@@ -256,14 +256,14 @@ If you want to use UimToolbar utilities which shows and controls uim mode, add *
 
 Using toolbar appears as a window.
 
-For GTK+ 2:
+For GTK 2:
 
 ```
 uim-toolbar-gtk &
 
 ```
 
-For GTK+ 3:
+For GTK 3:
 
 ```
 uim-toolbar-gtk3 &
@@ -281,14 +281,14 @@ uim-toolbar-qt4 &
 
 Using toolbar for system tray.
 
-For GTK+ 2:
+For GTK 2:
 
 ```
 uim-toolbar-gtk-systray &
 
 ```
 
-For GTK+ 3:
+For GTK 3:
 
 ```
 uim-toolbar-gtk3-systray &
@@ -470,13 +470,13 @@ Emacs*UseXIM: false
 
 ## Troubleshooting
 
-### Set the GTK_IM_MODULE variable, but uim still does not work with GTK+ 2 applications
+### Set the GTK_IM_MODULE variable, but uim still does not work with GTK 2 applications
 
-In case you already set the GTK_IM_MODULE environmental variable, but uim still does not work with GTK+ 2 applications, you need to specify the location of gtk.immodules, which is created by and can be generated with `gtk-query-immodules-2.0`.
+In case you already set the GTK_IM_MODULE environmental variable, but uim still does not work with GTK 2 applications, you need to specify the location of gtk.immodules, which is created by and can be generated with `gtk-query-immodules-2.0`.
 
-The default location is `/etc/gtk-2.0/gtk.immodules` for GTK+ 2.
+The default location is `/etc/gtk-2.0/gtk.immodules` for GTK 2.
 
-You can do this with either the GTK_IM_MODULE_FILE variable (*not recommended*, it causes GTK+ 3 applications to see incompatible modules) or the im_module_file setting (*recommended*).
+You can do this with either the GTK_IM_MODULE_FILE variable (*not recommended*, it causes GTK 3 applications to see incompatible modules) or the im_module_file setting (*recommended*).
 
 Add the following to `/etc/gtk-2.0/gtkrc` or `~/.gtkrc-2.0`:
 

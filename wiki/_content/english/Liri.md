@@ -58,7 +58,7 @@ Every time you want to [start](/index.php/Start "Start") a Liri session:
 
  `$ systemctl --user isolate liri.target` 
 
-logind integration is know not to work with systemd user session at the moment, hence some features might not be working. systemd user session is pretty new and the developers are testing Liri with it.
+logind integration is known not to work with systemd user session at the moment, hence some features might not be working. systemd user session is pretty new and the developers are testing Liri with it.
 
 ## See also
 

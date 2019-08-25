@@ -26,7 +26,7 @@
     *   [4.1 Plasma 5](#Plasma_5)
     *   [4.2 Kimpanel](#Kimpanel)
     *   [4.3 rxvt-unicode](#rxvt-unicode)
-    *   [4.4 GTK+ applications](#GTK+_applications)
+    *   [4.4 GTK applications](#GTK_applications)
     *   [4.5 Chinese input](#Chinese_input)
     *   [4.6 LibreOffice](#LibreOffice)
     *   [4.7 Non US keyboards](#Non_US_keyboards)
@@ -60,8 +60,9 @@ At least one input method is required, corresponding to the language desired. Av
 
 #### Vietnamese
 
-*   [ibus-bogo](https://aur.archlinux.org/packages/ibus-bogo/) - Vietnamese IME, based on Bogo.
-*   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters.
+*   [ibus-bamboo](https://aur.archlinux.org/packages/ibus-bamboo/) - Vietnamese IME, based on Bamboo engine.
+*   [ibus-bogo](https://aur.archlinux.org/packages/ibus-bogo/) - Vietnamese IME, based on Bogo. (discontinued)
+*   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters. (discontinued)
 
 There are several other vietnamese IME with [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) and Viqr with [ibus-table](https://www.archlinux.org/packages/?name=ibus-table), support VIQR, VNI, VPS, VISCII, BK HCM1, BK HCM2.
 
@@ -175,7 +176,7 @@ to `~/.xprofile` and restart your X user session.
 
 ### Kimpanel
 
-IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. Kimpanel is bundled with Plasma 5, but IBus needs to be launched as following to be able to communicate with the panel
+IBus main interface is currently only available in GTK, but Kimpanel provides a native Qt/KDE input interface. Kimpanel is bundled with Plasma 5, but IBus needs to be launched as following to be able to communicate with the panel
 
 ```
 $ ibus-daemon --panel=/usr/lib/kimpanel-ibus-panel
@@ -227,7 +228,7 @@ $ ibus-daemon --xim
 
 If you start *ibus-daemon* automatically (e.g. in `~/.xinitrc` or `~/.xsession`) but used to use `ibus-daemon &` without the `--xim` option, make sure to kill the existing process before testing the new command.
 
-### GTK+ applications
+### GTK applications
 
 Some users have had problems using Input Methods with GTK applications, because it seems that the gtk.immodules file cannot be found. Adding:
 
@@ -236,16 +237,16 @@ export GTK_IM_MODULE_FILE=/etc/gtk-2.0/gtk.immodules
 
 ```
 
-for GTK+ 2, or:
+for GTK 2, or:
 
 ```
 export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
 
 ```
 
-for GTK+ 3, in addition to the three lines above in your `$HOME/.bashrc` seems to fix the problem.
+for GTK 3, in addition to the three lines above in your `$HOME/.bashrc` seems to fix the problem.
 
-**Note:** If you set it to GTK+ 2, then you cannot use GTK+ 3 applications like *gedit*, if you set it to GTK+ 3, then you cannot use GTK+ 2 applications like Xfce.
+**Note:** If you set it to GTK 2, then you cannot use GTK 3 applications like *gedit*, if you set it to GTK 3, then you cannot use GTK 2 applications like Xfce.
 
 ### Chinese input
 
@@ -283,7 +284,7 @@ ibus-daemon --xim -d
 
 But the horrible thing is that you need to start LibreOffice in terminal.
 
-If you are using KDE and the above does not work, install [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) and add this line to `~/.xprofile` if you do not mind running LibreOffice in GTK+ 2 mode:
+If you are using KDE and the above does not work, install [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) and add this line to `~/.xprofile` if you do not mind running LibreOffice in GTK 2 mode:
 
 ```
 export OOO_FORCE_DESKTOP="gnome"

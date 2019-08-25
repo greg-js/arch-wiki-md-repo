@@ -15,7 +15,7 @@
 
 **Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 21 апреля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=571802).
 
-[GNOME](https://en.wikipedia.org/wiki/ru:GNOME "wikipedia:ru:GNOME") (произностися как /(ɡ)noʊm/) — это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
+[GNOME](https://en.wikipedia.org/wiki/ru:GNOME "wikipedia:ru:GNOME") (произностися как /(ɡ)noʊm/) — [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которое стремится быть простым и легким в использовании. Оно разработано в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и состоит полностью из свободного и открытого программного обеспечения. Является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -121,7 +121,7 @@ GNOME может быть запущен как графически, испол
 *   Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) все еще нужен даже для запуска тех приложений, которые не портированы на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
 *   Wayland с проприетарным драйвером [NVIDIA](/index.php/NVIDIA "NVIDIA") на данный момент имеет плохую производительность: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Вручную можно запустить следующей командой: `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM заставляет приложения, написанные на [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"), например, [VLC](/index.php/VLC "VLC"), calibre и SMPlayer, использовать Wayland. Помимо переменной QT_QPA_PLATFORM необходимо также установить пакет [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Добавление поддержки других графических библиотек смотри в [Wayland#GUI_libraries](/index.php/Wayland#GUI_libraries "Wayland").
+Вручную можно запустить следующей командой: `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM заставляет приложения, написанные на [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)"), например, [VLC](/index.php/VLC "VLC"), calibre и SMPlayer, использовать Wayland. Помимо переменной QT_QPA_PLATFORM необходимо также установить пакет [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland). Добавление поддержки других графических библиотек смотри в [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland").
 
 Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в `.bash_profile`:
 
@@ -307,7 +307,7 @@ $ gsettings set org.gnome.desktop.interface icon-theme *имя-темы*
 
 **Примечание:** Тема оконного менеджера использует тему GTK+. Использование `org.gnome.desktop.wm.preferences theme` не поддерживается и игнорируется.
 
-Смотрите [GTK+#Темы](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Темы "GTK+ (Русский)") и [Icons#Manually](/index.php/Icons#Manually "Icons").
+Смотрите [GTK#Темы](/index.php/GTK_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Темы "GTK (Русский)") и [Icons#Manually](/index.php/Icons#Manually "Icons").
 
 ##### Высота заголовка
 

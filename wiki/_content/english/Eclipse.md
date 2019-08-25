@@ -38,6 +38,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
 *   [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp) for C/C++ Developers
 *   [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php) for PHP Developers
 *   [eclipse-javascript](https://www.archlinux.org/packages/?name=eclipse-javascript) for JavaScript and Web Developers
+*   [eclipse-rust](https://www.archlinux.org/packages/?name=eclipse-rust) for Rust Developers
 
 You cannot install multiple of these at the same time since they conflict, see [FS#45577](https://bugs.archlinux.org/task/45577): choose the package above which most immediately fulfills your needs, and then add support for any additionally required languages through [#Plugins](#Plugins).
 

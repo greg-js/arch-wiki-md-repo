@@ -58,7 +58,7 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 
 	[https://github.com/emersion/grim](https://github.com/emersion/grim) || [grim](https://www.archlinux.org/packages/?name=grim)
 
-*   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
+*   **gscreenshot** — Simple GTK screenshot utility with delays, selection, and copy-to-clipboard functionality.
 
 	[https://github.com/thenaterhood/gscreenshot](https://github.com/thenaterhood/gscreenshot) || [gscreenshot](https://aur.archlinux.org/packages/gscreenshot/)
 
@@ -274,9 +274,9 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[http://recorditnow.sourceforge.net/](http://recorditnow.sourceforge.net/) || [recorditnow](https://aur.archlinux.org/packages/recorditnow/)
 
-*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — Easy to use utility that records your desktop into the ogg format with a CLI, GTK+ or Qt interface. (inactive development)
+*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — Easy to use utility that records your desktop into the ogg format with a CLI, GTK or Qt interface. (inactive development)
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || CLI: [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), GTK+: [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop), Qt: [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || CLI: [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), GTK: [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop), Qt: [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **[SimpleScreenRecorder](https://en.wikipedia.org/wiki/SimpleScreenRecorder "wikipedia:SimpleScreenRecorder")** — Feature-rich screen recorder written in C++/Qt5 that supports X11 and OpenGL.
 

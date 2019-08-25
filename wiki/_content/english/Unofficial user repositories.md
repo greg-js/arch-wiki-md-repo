@@ -5,9 +5,9 @@ Related articles
 
 This article lists binary repositories freely created and shared by the community, often providing pre-built versions of PKGBUILDS found in the [AUR](/index.php/AUR "AUR").
 
-In order to use these repositories, add them to `/etc/pacman.conf`, as explained in [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman"). If a repository is signed, you must obtain and locally sign the associated key, as explained in [Pacman-key#Adding unofficial keys](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key").
+In order to use these repositories, add them to `/etc/pacman.conf`, as explained in [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman"). If a repository is signed, you must obtain and locally sign the associated key, as explained in [pacman/Package signing#Adding unofficial keys](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing").
 
-If you want to create your own custom repository, follow [pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips").
+If you want to create your own custom repository, follow [pacman/Tips and tricks#Custom local repository](/index.php/Pacman/Tips_and_tricks#Custom_local_repository "Pacman/Tips and tricks").
 
 **Warning:** The official Arch Linux Developers and the Trusted Users do not perform tests of any sort to verify the contents of these repositories. You must decide whether to trust their maintainers and you take full responsibility for any consequences of using any unofficial repository.
 
@@ -37,44 +37,47 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.16 devkitpro](#devkitpro)
     *   [2.17 disastrousaur](#disastrousaur)
     *   [2.18 dvzrv](#dvzrv)
-    *   [2.19 eatabrick](#eatabrick)
-    *   [2.20 eschwartz](#eschwartz)
-    *   [2.21 ffy00](#ffy00)
-    *   [2.22 fusion809](#fusion809)
-    *   [2.23 gnome-devel](#gnome-devel)
-    *   [2.24 herecura](#herecura)
-    *   [2.25 holo](#holo)
-    *   [2.26 ivasilev](#ivasilev)
-    *   [2.27 jlk](#jlk)
-    *   [2.28 llvm-svn](#llvm-svn)
-    *   [2.29 lmrepo](#lmrepo)
-    *   [2.30 markzz](#markzz)
-    *   [2.31 maximbaz](#maximbaz)
-    *   [2.32 me176c](#me176c)
-    *   [2.33 miffe](#miffe)
-    *   [2.34 mikelpint](#mikelpint)
-    *   [2.35 Minerva W Science](#Minerva_W_Science)
-    *   [2.36 mobile](#mobile)
-    *   [2.37 nah](#nah)
-    *   [2.38 nickcao](#nickcao)
-    *   [2.39 origincode](#origincode)
-    *   [2.40 pkgbuilder](#pkgbuilder)
-    *   [2.41 post-factum kernels](#post-factum_kernels)
-    *   [2.42 QOwnNotes](#QOwnNotes)
-    *   [2.43 qt-debug](#qt-debug)
-    *   [2.44 quarry](#quarry)
-    *   [2.45 repo-ck](#repo-ck)
-    *   [2.46 seblu](#seblu)
-    *   [2.47 seiichiro](#seiichiro)
-    *   [2.48 sergej-repo](#sergej-repo)
-    *   [2.49 siosm-aur](#siosm-aur)
-    *   [2.50 sublime-text](#sublime-text)
-    *   [2.51 subtitlecomposer](#subtitlecomposer)
-    *   [2.52 trinity](#trinity)
-    *   [2.53 ungoo](#ungoo)
-    *   [2.54 xuanrui](#xuanrui)
-    *   [2.55 xyne-x86_64](#xyne-x86_64)
-    *   [2.56 home-thaodan](#home-thaodan)
+    *   [2.19 ear](#ear)
+    *   [2.20 eatabrick](#eatabrick)
+    *   [2.21 eschwartz](#eschwartz)
+    *   [2.22 ffy00](#ffy00)
+    *   [2.23 fusion809](#fusion809)
+    *   [2.24 grawlinson](#grawlinson)
+    *   [2.25 gnome-devel](#gnome-devel)
+    *   [2.26 herecura](#herecura)
+    *   [2.27 holo](#holo)
+    *   [2.28 ivasilev](#ivasilev)
+    *   [2.29 jlk](#jlk)
+    *   [2.30 llvm-svn](#llvm-svn)
+    *   [2.31 lmrepo](#lmrepo)
+    *   [2.32 markzz](#markzz)
+    *   [2.33 maximbaz](#maximbaz)
+    *   [2.34 me176c](#me176c)
+    *   [2.35 miffe](#miffe)
+    *   [2.36 mikelpint](#mikelpint)
+    *   [2.37 Minerva W Science](#Minerva_W_Science)
+    *   [2.38 mobile](#mobile)
+    *   [2.39 nah](#nah)
+    *   [2.40 nickcao](#nickcao)
+    *   [2.41 origincode](#origincode)
+    *   [2.42 pkgbuilder](#pkgbuilder)
+    *   [2.43 post-factum kernels](#post-factum_kernels)
+    *   [2.44 QOwnNotes](#QOwnNotes)
+    *   [2.45 qt-debug](#qt-debug)
+    *   [2.46 quarry](#quarry)
+    *   [2.47 repo-ck](#repo-ck)
+    *   [2.48 seblu](#seblu)
+    *   [2.49 seiichiro](#seiichiro)
+    *   [2.50 sergej-repo](#sergej-repo)
+    *   [2.51 siosm-aur](#siosm-aur)
+    *   [2.52 sublime-text](#sublime-text)
+    *   [2.53 subtitlecomposer](#subtitlecomposer)
+    *   [2.54 trinity](#trinity)
+    *   [2.55 ungoo](#ungoo)
+    *   [2.56 valveaur](#valveaur)
+    *   [2.57 xuanrui](#xuanrui)
+    *   [2.58 xyne-x86_64](#xyne-x86_64)
+    *   [2.59 home-thaodan](#home-thaodan)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -87,14 +90,15 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.9 dx37essentials](#dx37essentials)
     *   [3.10 heftig](#heftig)
     *   [3.11 jkanetwork](#jkanetwork)
-    *   [3.12 mesa-git](#mesa-git)
-    *   [3.13 Mountain](#Mountain)
-    *   [3.14 oracle](#oracle)
-    *   [3.15 ownstuff](#ownstuff)
-    *   [3.16 pantheon](#pantheon)
-    *   [3.17 pietma](#pietma)
-    *   [3.18 pnsft-pur](#pnsft-pur)
-    *   [3.19 titanium](#titanium)
+    *   [3.12 kodi-devel-prebuilt](#kodi-devel-prebuilt)
+    *   [3.13 mesa-git](#mesa-git)
+    *   [3.14 Mountain](#Mountain)
+    *   [3.15 oracle](#oracle)
+    *   [3.16 ownstuff](#ownstuff)
+    *   [3.17 pantheon](#pantheon)
+    *   [3.18 pietma](#pietma)
+    *   [3.19 pnsft-pur](#pnsft-pur)
+    *   [3.20 titanium](#titanium)
 
 ## Adding your repository to this page
 
@@ -216,7 +220,7 @@ Server = http://arch.ashleytowns.id.au/repo/$arch
 ### Bennix Repo
 
 *   **Maintainer:** Ben P. Dorsi-Todaro ([Tech Me Out](https://techmeout.org))
-*   **Description:** Packages [Ben P. Dorsi-Todaro](http://ben-dorsi-todaro.com/) uses and aren't listed in repos, or packages built by [Big Ben's Web Hosting](http://www.bigbenshosting.com/)
+*   **Description:** Packages [Ben P. Dorsi-Todaro](http://ben-dorsi-todaro.com/) uses and are not listed in repos, or packages built by [Big Ben's Web Hosting](http://www.bigbenshosting.com/)
 *   **Key-ID:** F14BB858F6253DA0
 
 ```
@@ -342,7 +346,7 @@ Server = https://downloads.devkitpro.org/packages/linux
 *   **Key-ID:** CBAE582A876533FD
 *   **Keyfile:** [https://mirror.repohost.de/disastrousaur.key](https://mirror.repohost.de/disastrousaur.key)
 
-**Warning:** disastrousaur and disastrousarm have now been merged under the disastrousaur name Please make sure you've changed the Server URL for your repos accordingly. Builds for other architectures may come out as I got enough time getting things running.
+**Warning:** disastrousaur and disastrousarm have now been merged under the disastrousaur name Please make sure you have changed the Server URL for your repos accordingly. Builds for other architectures may come out as I got enough time getting things running.
 
 ```
 [disastrousaur]
@@ -359,6 +363,22 @@ Server = https://mirror.repohost.de/$repo/$arch
 ```
 [dvzrv]
 Server = https://pkgbuild.com/~dvzrv/repo/$arch
+
+```
+
+### ear
+
+*   **Maintainer:** [Ward Segers](https://wardsegers.be),
+*   **Description:** Editicalu's ArchLinux Repository. Contains precompiled AUR packages (mostly the ones maintained by editicalu)
+*   **Homepage:** [https://ear.wardsegers.be/](https://ear.wardsegers.be/)
+*   **Upstream page:** [https://gitlab.com/editicalu/ear](https://gitlab.com/editicalu/ear)
+*   **Key-ID:** CC0B7CE9604A8A91F0D70B778489DB248465FDD7
+
+**Note:** Instructions can be found at [https://ear.wardsegers.be](https://ear.wardsegers.be)
+
+```
+[ear]
+Server = https://ear.wardsegers.be/$arch
 
 ```
 
@@ -400,7 +420,7 @@ Server = https://pkgbuild.com/~ffy00/repo
 ### fusion809
 
 *   **Maintainer:** [Horne](https://aur.archlinux.org/account/fusion809%7CBrenton)] (brentonhorne77 at gmail dot com).
-*   **Description:** Provides a few AUR and other packages I like. Like CodeLite and bleeding-edge (latest release within 1 day of its release) GVim (GTK+2 interface).
+*   **Description:** Provides a few AUR and other packages I like. Like CodeLite and bleeding-edge (latest release within 1 day of its release) GVim (GTK 2 interface).
 *   **Package list:** [http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/](http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/)
 *   **Key-ID:** 03264DDCD606DC98
 *   **Keyfile:** [https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/home_fusion809_Arch_Extra.key](https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/home_fusion809_Arch_Extra.key)
@@ -408,6 +428,20 @@ Server = https://pkgbuild.com/~ffy00/repo
 ```
 [home_fusion809_Arch_Extra]
 Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$arch
+
+```
+
+### grawlinson
+
+*   **Maintainer:** [George Rawlinson](https://aur.archlinux.org/account/grawlinson)
+*   **Description:** AUR packages maintained by the user as well as some experimental packages.
+*   **Package list:** [https://repo.nullpointer.io](https://repo.nullpointer.io)
+*   **Key-ID:** 25ea6900d9ea5ebc
+*   **Keyfile:** [https://nullpointer.io/grawlinson.key](https://nullpointer.io/grawlinson.key)
+
+```
+[grawlinson]
+Server = https://repo.nullpointer.io
 
 ```
 
@@ -610,7 +644,7 @@ Server = https://repo.nah.nz/$repo
 
 ```
 [nickcao]
-Server = https://repo.nichi.co/file/archrepo/$arch
+Server = https://repo.nichi.co/$arch
 
 ```
 
@@ -798,6 +832,19 @@ Server = https://arch.scrumplex.net/$repo/os/x86_64
 
 ```
 
+### valveaur
+
+*   **Maintainer:** John Schoenick <johns@valvesoftware.com> ([https://valvesoftware.com](https://valvesoftware.com))
+*   **Description:** A repository by Valve Software Providing The Linux-fsync kernel and modules, including the futex-wait-multiple patchset for testing with Proton fsync & Mesa with the ACO compiler patchset.
+*   **Upstream page:** [https://steamcommunity.com/linux](https://steamcommunity.com/linux)
+*   **Key-ID:** 8DC2CE3A3D245E64
+
+```
+[valveaur]
+Server = http://repo.steampowered.com/arch/valveaur
+
+```
+
 ### xuanrui
 
 *   **Maintainer:** [Xuanrui Qi (xuanruiqi)](https://aur.archlinux.org/account/xuanruiqi)
@@ -969,6 +1016,19 @@ Server = https://pkgbuild.com/~heftig/repo/$arch
 ```
 [jkanetwork]
 Server = http://repo.jkanetwork.com/repo/$repo/
+
+```
+
+### kodi-devel-prebuilt
+
+*   **Maintainer:** asm0dey <pavel.finkelshtein+AUR@gmail.com>
+*   **Description:** Prebuilt packages of kodi-devel from AUR
+*   **Upstream page:** [kodi-devel](https://aur.archlinux.org/packages/kodi-devel/)
+
+```
+[kodi-devel-prebuilt]
+Server = https://asm0dey.github.io/$repo/$arch
+SigLevel = PackageOptional
 
 ```
 

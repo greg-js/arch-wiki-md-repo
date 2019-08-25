@@ -4,7 +4,11 @@ Related articles
 
 [Apache Cassandra](https://cassandra.apache.org/) is a NoSQL multi-master database with linear scalability and no single point of failure.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
@@ -13,6 +17,7 @@ Related articles
     *   [2.2 cassandra.yaml](#cassandra.yaml)
         *   [2.2.1 Basic config items to change](#Basic_config_items_to_change)
         *   [2.2.2 Recommended settings for linux specifically](#Recommended_settings_for_linux_specifically)
+        *   [2.2.3 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -128,3 +133,23 @@ Because we're using hsha, `rpc_max_threads` must be set, or cassandra will refus
 rpc_max_threads: 100
 
 ```
+
+##### Troubleshooting
+
+If Cassandra fails to run as a service, try running Cassandra
+
+```
+$ cassandra
+
+```
+
+If you receive the following error:
+
+```
+Improperly specified VM option 'ThreadPriorityPolicy=42'
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+
+```
+
+Cassandra only runs on Java 8\. You will need to install Java per directions here [Java](/index.php/Java "Java") to install Java 8 and switch your jvm using `archlinux-java`

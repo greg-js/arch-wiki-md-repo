@@ -43,7 +43,7 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive o
 *   HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
 *   GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 *   GMA 4500 H.264 decoding is supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/), see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
-*   Haswell to Skylake hybrid VP8 encoding and Broadwell to Skylake VP9 decoding is supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/).
+*   Broadwell to Skylake VP9 decoding and Haswell to Skylake hybrid VP8 encoding is supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [VP9 decoding on Haswell crashes](https://github.com/intel/intel-hybrid-driver/issues/21).
 
 ### NVIDIA
 
@@ -62,8 +62,8 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive o
 
 [ATI](/index.php/ATI "ATI") and [AMDGPU](/index.php/AMDGPU "AMDGPU") open-source drivers support both VA-API and VDPAU:
 
-*   VDPAU on Radeon R300 and newer GPUs is supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
 *   VA-API on Radeon HD 2000 and newer GPUs is supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver).
+*   VDPAU on Radeon R300 and newer GPUs is supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
 
 [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") proprietary driver is built on top of AMDGPU driver and supports both VA-API and VDPAU.
 
@@ -289,14 +289,12 @@ Hybrid: Haswell to Skylake | No |
 
 *   Up until GeForce GTX 750.
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
-*   Hybrid VP8 encoder and VP9 decoder supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [[6]](https://github.com/01org/intel-hybrid-driver/blob/master/README) [[7]](https://github.com/intel/intel-hybrid-driver/issues/21)
+*   Hybrid VP8 encoder and VP9 decoder supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [VP9 decoding on Haswell crashes](https://github.com/intel/intel-hybrid-driver/issues/21).
 *   MPEG-4 is disabled by default due to VAAPI limitations. Set the [environment variable](/index.php/Environment_variable "Environment variable") `VAAPI_MPEG4_ENABLED=true` to try to use it anyway.
 
 ### VDPAU drivers
 
-**Note:** VDPAU is not updated since September 2015 and is missing VP8 and VP9 support [[8]](https://gitlab.freedesktop.org/vdpau/libvdpau).
-
-| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[9]](https://www.x.org/wiki/RadeonFeature/) [[10]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[11]](https://www.nvidia.com/page/purevideo_support.html) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
+| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[8]](https://www.nvidia.com/page/purevideo_support.html) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
 | MPEG-2 | Radeon R300 and newer
@@ -313,11 +311,11 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 *   Up until GeForce GTX 750.
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.
-*   NVIDIA implementation is limited to 8-bit streams [[12]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[13]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
+*   NVIDIA implementation is limited to 8-bit streams [[9]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[10]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
 
 ### NVIDIA driver only
 
-| Codec | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[14]](https://developer.nvidia.com/nvidia-video-codec-sdk) |
+| Codec | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[11]](https://developer.nvidia.com/nvidia-video-codec-sdk) |
 | NVDECODE | NVENCODE |
 | MPEG-2 | Fermi and newer | No |
 | VC-1 |
@@ -345,10 +343,9 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_driver
 | [Chromium](/index.php/Chromium "Chromium") | Yes | No | No | – | – | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
 | [Firefox](/index.php/Firefox "Firefox") | No | No | No | – | – | [Bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
 
+*   GStreamer [uses a whitelist](https://blogs.igalia.com/vjaquez/2018/03/28/gstreamer-va-api-troubleshooting/) of VA-API drivers. To use other drivers like [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver), set [environment variable](/index.php/Environment_variable "Environment variable") `GST_VAAPI_ALL_DRIVERS=1`.
 *   NVDECODE/NVENCODE is [disabled in the Arch package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gst-plugins-bad#n45).
 *   Not supported officially by developers, alternative packages available.
 *   VDPAU is supported only by NPAPI plugin. PPAPI plugin to NPAPI browser experimental adapter is available that provides partial VA-API and VDPAU acceleration.
 
 **Tip:** To reduce CPU usage while watching YouTube where VP8/VP9 hardware decoding is not available use the h264ify extension (available for [Firefox](https://addons.mozilla.org/firefox/addon/h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal)) or the enhanced-h264ify extension (available for [Firefox](https://addons.mozilla.org/firefox/addon/enhanced-h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/enhanced-h264ify/omkfmpieigblcllmkgbflkikinpkodlk)).
-
-**Note:** GStreamer uses a whitelist of VA-API drivers and will not refuse to use [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) by default. To use [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) with GStreamer, you need to manually disable the whitelisting by setting the [environment variable](/index.php/Environment_variable "Environment variable") `GST_VAAPI_ALL_DRIVERS=1`. [[15]](https://blogs.igalia.com/vjaquez/2018/03/28/gstreamer-va-api-troubleshooting/)

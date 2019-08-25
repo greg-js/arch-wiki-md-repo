@@ -1,17 +1,23 @@
+**Status de tradução:** Esse artigo é uma tradução de [HP Mini 210-1040BR](/index.php/HP_Mini_210-1040BR "HP Mini 210-1040BR"). Data da última tradução: 2019-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=HP_Mini_210-1040BR&diff=0&oldid=580103) na versão em inglês.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Especificações](#Especifica.C3.A7.C3.B5es)
-*   [2 Instalação/Configuração](#Instala.C3.A7.C3.A3o.2FConfigura.C3.A7.C3.A3o)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Especificações](#Especificações)
+*   [2 Instalação/Configuração](#Instalação/Configuração)
     *   [2.1 Kernel](#Kernel)
     *   [2.2 Wireless](#Wireless)
-    *   [2.3 Áudio](#.C3.81udio)
-    *   [2.4 Vídeo](#V.C3.ADdeo)
+    *   [2.3 Áudio](#Áudio)
+    *   [2.4 Vídeo](#Vídeo)
     *   [2.5 Touchpad](#Touchpad)
     *   [2.6 Webcam](#Webcam)
     *   [2.7 Hotkeys](#Hotkeys)
     *   [2.8 Bluetooth](#Bluetooth)
-    *   [2.9 Leitor de Cartão](#Leitor_de_Cart.C3.A3o)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+    *   [2.9 Leitor de cartão](#Leitor_de_cartão)
+*   [3 Veja também](#Veja_também)
 
 ## Especificações
 
@@ -110,7 +116,7 @@ Agora poderá usar novamente wireless/Bluetooh.
 
 Funcionando com [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl). Ver [Bluetooth](/index.php/Bluetooth "Bluetooth") para configurações, GUIs e etc.
 
-### Leitor de Cartão
+### Leitor de cartão
 
 *Não testado.*
 

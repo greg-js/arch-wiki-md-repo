@@ -5,19 +5,7 @@ Related articles
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
 *   [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun")
 
-NVIDIA Optimus is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop. Getting Optimus graphics to work on Arch Linux requires a few somewhat complicated steps, explained below. There are several methods available:
-
-*   disabling one of the devices in BIOS, which may result in improved battery life if the NVIDIA device is disabled, but may not be available with all BIOSes and does not allow GPU switching
-
-*   using the official Optimus support included with the proprietary NVIDIA driver, which offers the best NVIDIA performance but does not allow GPU switching and can be more buggy than the open-source driver
-
-*   using the PRIME functionality of the open-source nouveau driver, which allows GPU switching and powersaving but offers poor performance compared to the proprietary NVIDIA driver and may cause issues with sleep and hibernate
-
-*   using the third-party Bumblebee program to implement Optimus-like functionality, which offers GPU switching and powersaving but requires extra configuration
-
-*   using the nvidia-xrun utility to run separate X sessions with discrete nvidia graphics with full performance
-
-These options are explained in detail below.
+[NVIDIA Optimus](https://en.wikipedia.org/wiki/NVIDIA_Optimus "wikipedia:NVIDIA Optimus") is a technology that allows an Intel integrated GPU and discrete NVIDIA GPU to be built into and accessed by a laptop.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -25,34 +13,49 @@ These options are explained in detail below.
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Disabling switchable graphics](#Disabling_switchable_graphics)
-*   [2 Using nvidia](#Using_nvidia)
-    *   [2.1 Display Managers](#Display_Managers)
-        *   [2.1.1 LightDM](#LightDM)
-        *   [2.1.2 SDDM](#SDDM)
-        *   [2.1.3 GDM](#GDM)
-    *   [2.2 Checking 3D](#Checking_3D)
-    *   [2.3 Further Information](#Further_Information)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Tearing/Broken VSync](#Tearing/Broken_VSync)
-    *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
-    *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log)
-    *   [3.4 Wrong resolution without EDID errors](#Wrong_resolution_without_EDID_errors)
-    *   [3.5 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
-    *   [3.6 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
-*   [4 Using nouveau](#Using_nouveau)
-*   [5 Using Bumblebee](#Using_Bumblebee)
-*   [6 Using nvidia-xrun](#Using_nvidia-xrun)
+*   [1 Available methods](#Available_methods)
+*   [2 Use Intel graphics only](#Use_Intel_graphics_only)
+*   [3 Use NVIDIA graphics only](#Use_NVIDIA_graphics_only)
+    *   [3.1 Display managers](#Display_managers)
+        *   [3.1.1 LightDM](#LightDM)
+        *   [3.1.2 SDDM](#SDDM)
+        *   [3.1.3 GDM](#GDM)
+    *   [3.2 Checking 3D](#Checking_3D)
+    *   [3.3 Further Information](#Further_Information)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Tearing/Broken VSync](#Tearing/Broken_VSync)
+    *   [4.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_(GPU_fallen_off_the_bus_/_RmInitAdapter_failed!))
+    *   [4.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution,_screen_scan_wrong._EDID_errors_in_Xorg.log)
+    *   [4.4 Wrong resolution without EDID errors](#Wrong_resolution_without_EDID_errors)
+    *   [4.5 Lockup issue (lspci hangs)](#Lockup_issue_(lspci_hangs))
+    *   [4.6 No screens found on a laptop/NVIDIA Optimus](#No_screens_found_on_a_laptop/NVIDIA_Optimus)
+*   [5 Use switchable graphics](#Use_switchable_graphics)
+    *   [5.1 Using nouveau](#Using_nouveau)
+    *   [5.2 Using Bumblebee](#Using_Bumblebee)
+    *   [5.3 Using nvidia-xrun](#Using_nvidia-xrun)
+    *   [5.4 Using optimus-manager](#Using_optimus-manager)
+        *   [5.4.1 Installation](#Installation)
+        *   [5.4.2 Usage](#Usage)
 
-## Disabling switchable graphics
+## Available methods
 
-If you only care to use a certain GPU without switching, check the options in your system's BIOS. There should be an option to disable one of the cards. Some laptops only allow disabling of the discrete card, or vice-versa, but it is worth checking if you only plan to use one of the cards.
+There are several methods available:
 
-For another way see [Hybrid graphics#Fully Power Down Discrete GPU](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics").
+*   [#Use Intel graphics only](#Use_Intel_graphics_only) - saves power, because NVIDIA GPU will be completely powered off.
+*   [#Use NVIDIA graphics only](#Use_NVIDIA_graphics_only) - gives more performance than Intel graphics, but drains more battery (which is not welcome for mobile devices).
+*   Using both (use NVIDIA GPU when needed and keep it powered off to save power):
+    *   [#Using optimus-manager](#Using_optimus-manager) - switches graphics with a single command (logout and login required to take effect). It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
+    *   [#Using nvidia-xrun](#Using_nvidia-xrun) - run separate X session on different TTY with NVIDIA graphics. It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
+    *   [#Using Bumblebee](#Using_Bumblebee) - provides Windows-like functionality by allowing to run selected applications with NVIDIA graphics while using Intel graphics for everything else. Has significant performance issues and does not support [Vulkan](/index.php/Vulkan "Vulkan").
+    *   [#Using nouveau](#Using_nouveau) - offers poorer performance (compared to the proprietary NVIDIA driver) and may cause issues with sleep and hibernate. Does not work with latest NVIDIA GPUs.
 
-If you want to use both cards, or cannot disable the card you do not want, see the options below.
+## Use Intel graphics only
 
-## Using nvidia
+If you only care to use a certain GPU without switching, check the options in your system's BIOS. There should be an option to disable one of the cards. Some laptops only allow disabling of the discrete card, or vice-versa, but it is worth checking if you only plan to use just one of the cards.
+
+If your BIOS does not allow to disable Nvidia graphics, you can disable it from the Linux itself. See [Hybrid graphics#Fully Power Down Discrete GPU](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics").
+
+## Use NVIDIA graphics only
 
 The proprietary NVIDIA driver does not support dynamic switching like the nouveau driver (meaning it can only use the NVIDIA device). It also has notable screen-tearing issues that NVIDIA recognizes but has not fixed, unless you are using x.org > 1.19 and enable prime sync, see [[1]](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/). However, it does allow use of the discrete GPU and has (as of [January 2017](https://www.phoronix.com/scan.php?page=article&item=nouveau-410-blob&num=1)) a marked edge in performance over the nouveau driver.
 
@@ -104,7 +107,7 @@ xrandr --dpi 96
 
 If you get a black screen when starting X, make sure that there are no ampersands after the two `xrandr` commands in `~/.xinitrc`. If there are ampersands, it seems that the window manager can run before the `xrandr` commands finish executing, leading to a black screen.
 
-### Display Managers
+### Display managers
 
 If you are using a display manager then you will need to create or edit a display setup script for your display manager instead of using `~/.xinitrc`.
 
@@ -243,14 +246,49 @@ NVIDIA drivers now offer Optimus support since 319.12 Beta [[6]](http://www.nvid
 
 Another solution is to install the [Intel](/index.php/Intel "Intel") driver to handle the screens, then if you want 3D software you should run them through [Bumblebee](/index.php/Bumblebee "Bumblebee") to tell them to use the NVIDIA card.
 
-## Using nouveau
+## Use switchable graphics
 
-The open-source [nouveau](/index.php/Nouveau "Nouveau") driver can dynamically switch with the [Intel graphics](/index.php/Intel_graphics "Intel graphics") driver using a technology called PRIME. For more information, see the wiki article on [PRIME](/index.php/PRIME "PRIME").
+### Using nouveau
 
-## Using Bumblebee
+See [PRIME](/index.php/PRIME "PRIME") for graphics switching and [nouveau](/index.php/Nouveau "Nouveau") for open-source NVIDIA driver.
 
-If you wish to use Bumblebee, which will implement powersaving and some other useful features, see the wiki article on [Bumblebee](/index.php/Bumblebee "Bumblebee").
+### Using Bumblebee
 
-## Using nvidia-xrun
+See [Bumblebee](/index.php/Bumblebee "Bumblebee").
+
+### Using nvidia-xrun
 
 See [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").
+
+### Using optimus-manager
+
+[Optimus-manager](https://github.com/Askannz/optimus-manager) is one of the easiest solutions for graphics switching between Nvidia and Intel with a single command. Graphical systray applet is also available.
+
+#### Installation
+
+Install required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) for power saving and [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for system tray applet.
+
+Also [start and enable](/index.php/Systemd#Using_units "Systemd") `optimus-manager.service`.
+
+#### Usage
+
+**Note:** Switching graphics will log you out automatically. Log in again to use selected graphics.
+
+Use below commands to switch graphics:
+
+```
+$ optimus-manager --switch intel    # Use Intel graphics
+$ optimus-manager --switch nvidia   # Use NVIDIA graphics
+$ optimus-manager --switch auto     # Switch to different graphics (from what is used now)
+
+```
+
+Also specify which graphics to use on boot:
+
+```
+$ optimus-manager --set-startup intel
+$ optimus-manager --set-startup nvidia
+
+```
+
+For more information and troubleshooting, see [upstream documentation](https://github.com/Askannz/optimus-manager/blob/master/README.md).

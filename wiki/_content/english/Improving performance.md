@@ -365,7 +365,7 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 **Warning:** Do not apply this setting without considering the vulnerabilities it opens up. See [this](https://phoronix.com/scan.php?page=news_item&px=Linux-Improve-CPU-Spec-Switches) and [this](https://linuxreviews.org/HOWTO_make_Linux_run_blazing_fast_(again)_on_Intel_CPUs) for more information.
 
-Turning off CPU exploit mitigations improves performance (sometimes up to 50%). Use below [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") to disable them all:
+Turning off CPU exploit mitigations improves performance (sometimes up to 50%). Use below [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to disable them all:
 
 ```
 mitigations=off

@@ -1,3 +1,7 @@
+Related articles
+
+*   [NTPSec](/index.php/NTPSec "NTPSec")
+
 [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") is the most common method to synchronize the [software clock](/index.php/System_time "System time") of a GNU/Linux system with internet time servers. It is designed to mitigate the effects of variable network latency and can usually maintain time to within tens of milliseconds over the public Internet. The accuracy on local area networks is even better, up to one millisecond.
 
 [The NTP Project](http://support.ntp.org/bin/view/Main/WebHome#The_NTP_Project) provides a reference implementation of the protocol called simply NTP. This article further describes how to set up and run the NTP daemon, both as a client and as a server.

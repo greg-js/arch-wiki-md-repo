@@ -128,7 +128,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: Numix
 
-	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
+	[https://github.com/numixproject/numix-gtk-theme](https://github.com/numixproject/numix-gtk-theme) || [numix-gtk-theme-git](https://aur.archlinux.org/packages/numix-gtk-theme-git/)
 
 *   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
 

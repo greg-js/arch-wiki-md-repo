@@ -161,7 +161,7 @@ To do this, create and provision a lirc user:
 
 ```
 
-Augment the package-providing service unit by creating a lircd [Systemd#Drop-in_files](/index.php/Systemd#Drop-in_files "Systemd"):
+Augment the package-providing service unit by creating a lircd [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"):
 
  `# systemctl edit lircd` 
 ```

@@ -817,7 +817,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://code.google.com/p/rimeime/](http://code.google.com/p/rimeime/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
 
-*   **[UIM](/index.php/UIM "UIM")** — 多语言输入库。
+*   **[Uim](/index.php/Uim "Uim")** — 多语言输入库。
 
 	[http://code.google.com/p/uim/](http://code.google.com/p/uim/) || [uim](https://www.archlinux.org/packages/?name=uim)
 

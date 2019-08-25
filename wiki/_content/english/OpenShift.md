@@ -16,7 +16,7 @@
 
 ### Server
 
-[minishift](https://aur.archlinux.org/packages/minishift/) - Run a single-node OpenShift cluster inside a VM (use [Virtualbox](/index.php/Virtualbox "Virtualbox") or [KVM](/index.php/KVM "KVM").
+[minishift](https://aur.archlinux.org/packages/minishift/) - Run a single-node OpenShift cluster inside a VM (use [VirtualBox](/index.php/VirtualBox "VirtualBox") or [KVM](/index.php/KVM "KVM").
 
 ### Client
 

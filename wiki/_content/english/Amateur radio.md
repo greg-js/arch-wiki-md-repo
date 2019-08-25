@@ -103,7 +103,7 @@ then logoff and logon.
 
 	|| [linpsk](https://aur.archlinux.org/packages/linpsk/)
 
-*   **xpsk31** — PSK31 using a GUI rendered by GTK+
+*   **xpsk31** — PSK31 using a GUI rendered by GTK
 
 	[http://www.qsl.net/5b4az/pkg/psk31/xpsk31/xpsk31.html](http://www.qsl.net/5b4az/pkg/psk31/xpsk31/xpsk31.html) || [xpsk31](https://aur.archlinux.org/packages/xpsk31/)
 

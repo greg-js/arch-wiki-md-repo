@@ -3,7 +3,7 @@
 *   [Сравнение сред рабочего стола](/index.php/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D1%80%D0%B5%D0%B4_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Сравнение сред рабочего стола")
 *   [Category:Freedesktop.org (Русский)](/index.php/Category:Freedesktop.org_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Freedesktop.org (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Дата последней синхронизации: 5 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=578832).
+**Состояние перевода:** На этой странице представлен перевод статьи [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Дата последней синхронизации: 17 августа 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=579918).
 
 [Среда рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "wikipedia:ru:Среда рабочего стола") (**DE**) — реализация [метафоры рабочего стола](https://en.wikipedia.org/wiki/ru:%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9_%D1%81%D1%82%D0%BE%D0%BB "wikipedia:ru:Рабочий стол"), состоящая из набора программ, которые разделяют общий графический интерфейс (GUI).
 
@@ -64,13 +64,13 @@
 
 *   **[LXDE](/index.php/LXDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXDE (Русский)")** — лёгкая, быстрая и энергосберегающая среда рабочего стола для X11\. Она предлагает современный интерфейс, поддержку различных языков, стандартные сочетания клавиш и дополнительные возможности, например, использование файлового менеджера со вкладками. При этом LXDE старается тратить меньше ресурсов процессора и оперативной памяти, чем другие окружения.
 
-	[https://lxde.org/](https://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+	[https://lxde.org/](https://lxde.org/) || GTK 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
 
 *   **[LXQt](/index.php/LXQt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXQt (Русский)")** — порт LXDE (Lightweight Desktop Environment) на Qt. LXQt объединяет проекты LXDE-Qt и Razor-qt, предоставляя легковесное, модульное, быстрое и интуитивное окружение рабочего стола.
 
 	[https://lxqt.org/](https://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
 
-*   **[MATE](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)")** — MATE предоставляет интуитивный, привлекательный и традиционный рабочий стол. Изначально MATE был форком GNOME 2, но в данный момент использует GTK+ 3.
+*   **[MATE](/index.php/MATE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "MATE (Русский)")** — MATE предоставляет интуитивный, привлекательный и традиционный рабочий стол. Изначально MATE был форком GNOME 2, но в данный момент использует GTK 3.
 
 	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 

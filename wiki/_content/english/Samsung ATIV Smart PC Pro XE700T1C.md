@@ -104,7 +104,7 @@ Not tested yet.
 
 ### Keyboard
 
-The tablet has an USB por so you can put a keyoard or a combo keyboard. With bluetooth no testes yet.
+The tablet has a USB port so you can put a keyboard or a combo keyboard. With Bluetooth no testes yet.
 
 ### Stylus
 

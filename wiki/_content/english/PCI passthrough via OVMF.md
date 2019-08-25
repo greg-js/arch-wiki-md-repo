@@ -1095,11 +1095,11 @@ With the VM turned off, edit the machine configuration
 
 In the above configuration, the size of the IVSHMEM device is 2MB (the recommended amount). Change this as needed.
 
-Now refer to [#Adding_IVSHMEM_Device_to_VM](#Adding_IVSHMEM_Device_to_VM) to configure the host to create the shared memory file on boot, replacing `looking-glass` with `scream-ivshmem`.
+Now refer to [#Adding IVSHMEM Device to VM](#Adding_IVSHMEM_Device_to_VM) to configure the host to create the shared memory file on boot, replacing `looking-glass` with `scream-ivshmem`.
 
 #### Configuring the Windows guest
 
-The correct driver must be installed for the IVSHMEM device on the guest. See [#Installing_the_IVSHMEM_Host_to_Windows_guest](#Installing_the_IVSHMEM_Host_to_Windows_guest). Ignore the part about `looking-glass-host`.
+The correct driver must be installed for the IVSHMEM device on the guest. See [#Installing the IVSHMEM Host to Windows guest](#Installing_the_IVSHMEM_Host_to_Windows_guest). Ignore the part about `looking-glass-host`.
 
 Install the [scream](https://github.com/duncanthrax/scream/releases) virtual audio driver on the guest. If you have secure boot enabled for your VM, you may need to disable it.
 
@@ -1251,7 +1251,9 @@ Starting with QEMU 4.0, the Q35 machine type changes the default `kernel_irqchip
 *   This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers.
 *   This may also fix problems under linux guests.
 
-Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration.
+Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=1234567890ab` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. The vendor_id can be whatever you prefer, however it is important to note that the vendor_id must be exactly 12 characters long, per the libvirt documentation [[2]](https://libvirt.org/formatdomain.html):
+
+"The optional vendor_id attribute (Since 0.10.0) can be used to set the vendor id seen by the guest. It must be exactly 12 characters long."
 
  `$ virsh edit [vmname]` 
 ```
@@ -1259,7 +1261,7 @@ Since version 337.88, Nvidia drivers on Windows check if an hypervisor is runnin
 <features>
 	<hyperv>
 		...
-		<vendor_id state='on' value='whatever'/>
+		<vendor_id state='on' value='1234567890ab'/>
 		...
 	</hyperv>
 	...
@@ -1525,7 +1527,7 @@ If that does not work make sure your user is added to the `kvm` and `libvirt` [u
 
 ### Host lockup after VM shutdown
 
-This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[3]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/). You can also download this application for windows here [[4]](https://github.com/TechtonicSoftware/MSIInturruptEnabler) that should make the process easier.
+This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[3]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[4]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/). You can also download this application for windows here [[5]](https://github.com/TechtonicSoftware/MSIInturruptEnabler) that should make the process easier.
 
 ### Host lockup if guest is left running during sleep
 
@@ -1607,7 +1609,7 @@ options kvm ignore_msrs=1
 
 ### AMD Ryzen / BIOS updates (AGESA) yields "Error: internal error: Unknown PCI header type ‘127’"
 
-AMD users have been experiencing breakage of their KVM setups after updating the BIOS on their motherboard. There is a kernel [patch](https://clbin.com/VCiYJ), (see [Kernel/Arch_Build_System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System") for instruction on compiling kernels with custom patches) that can resolve the issue as of now (7/28/19), but this is not the first time AMD has made an error of this very nature, so take this into account if you are considering updating your BIOS in the future as a VFIO user.
+AMD users have been experiencing breakage of their KVM setups after updating the BIOS on their motherboard. There is a kernel [patch](https://clbin.com/VCiYJ), (see [Kernel/Arch Build System](/index.php/Kernel/Arch_Build_System "Kernel/Arch Build System") for instruction on compiling kernels with custom patches) that can resolve the issue as of now (7/28/19), but this is not the first time AMD has made an error of this very nature, so take this into account if you are considering updating your BIOS in the future as a VFIO user.
 
 ## See also
 

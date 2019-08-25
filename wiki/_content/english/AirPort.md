@@ -18,7 +18,7 @@ If that's not an option, you basically have two things to try: either run the de
 
 ## Music streaming
 
-If you wish to use the music streaming feature of AirPort Express base stations, look for "raop" in the [AUR](/index.php/AUR "AUR").
+If you want to emulate the AirPort Express, take a look at [Shairport Sync](/index.php/Shairport_Sync "Shairport Sync"). If you wish to use the music streaming feature of AirPort Express base stations, look for "raop" in the [AUR](/index.php/AUR "AUR").
 
 ## Printing
 

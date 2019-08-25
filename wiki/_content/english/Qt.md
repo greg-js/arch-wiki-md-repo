@@ -2,7 +2,7 @@ Related articles
 
 *   [KDE](/index.php/KDE "KDE")
 *   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK "GTK")
 
 [Qt](https://www.qt.io/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](https://doc.qt.io/qt-5.12/moc.html), or *moc*) together with several macros to enrich the language. Some of its more important features include:
 
@@ -26,7 +26,7 @@ The Qt framework is the basis of the [KDE](/index.php/KDE "KDE") software commun
     *   [3.1 Qt5](#Qt5)
     *   [3.2 Qt4](#Qt4)
     *   [3.3 Qt Style Sheets](#Qt_Style_Sheets)
-    *   [3.4 GTK+ and Qt](#GTK+_and_Qt)
+    *   [3.4 GTK and Qt](#GTK_and_Qt)
     *   [3.5 Configuration of Qt5 apps under environments other than KDE Plasma](#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma)
 *   [4 Development](#Development)
     *   [4.1 Supported platforms](#Supported_platforms)
@@ -83,10 +83,10 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 Qt5 decides the style to use based on what desktop environment is used:
 
 *   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
-*   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
+*   In Cinnamon, GNOME, MATE, LXDE, Xfce, it uses GTK ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Fusion.
 
-To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `gtk2` if you want to use the [GTK+](/index.php/GTK%2B "GTK+") theme (Note: you will need to install the Qt style plugins mention below to get the GTK+ style). Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
+To force a specific style, you can set the `QT_STYLE_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable"). Specifically, set it to `gtk2` if you want to use the [GTK](/index.php/GTK "GTK") theme (Note: you will need to install the Qt style plugins mention below to get the GTK style). Qt5 applications also support the `-style` flag, which you can use to launch a Qt5 application with a specific style.
 
 The following styles are included in Qt5: *Fusion*, *Windows*. Others can be installed from the official repositories:
 
@@ -106,11 +106,11 @@ The following styles are included in Qt5: *Fusion*, *Windows*. Others can be ins
 
 	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt](https://aur.archlinux.org/packages/adwaita-qt/)
 
-*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK+*, *Cleanlooks*, *Motif*, *Plastique*.
+*   **Qt style plugins** — Additional style plugins for Qt5, including *GTK*, *Cleanlooks*, *Motif*, *Plastique*.
 
 	[https://code.qt.io/cgit/qt/qtstyleplugins.git](https://code.qt.io/cgit/qt/qtstyleplugins.git) || [qt5-styleplugins](https://www.archlinux.org/packages/?name=qt5-styleplugins)
 
-*   **Kvantum** — customizable SVG-based theme engine with a variety of built-in styles, including imitations of some popular GTK+ themes such as *Adapta*, *Arc*, *Ambiance*
+*   **Kvantum** — customizable SVG-based theme engine with a variety of built-in styles, including imitations of some popular GTK themes such as *Adapta*, *Arc*, *Ambiance*
 
 	[https://github.com/tsujan/Kvantum/tree/master/Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum) || [kvantum-qt5](https://www.archlinux.org/packages/?name=kvantum-qt5)
 
@@ -119,12 +119,12 @@ The following styles are included in Qt5: *Fusion*, *Windows*. Others can be ins
 Qt4 application will try to mimic the behavior of the desktop environment they are running on, unless they run into some problems or hard-coded settings.
 
 *   In KDE Plasma, it uses the actually selected Qt style. It can be configured using *KDE System Settings* (*systemsettings5*), the settings can be found in *Appearance > Application Style > Widget Style*.
-*   In Cinnamon, GNOME, Xfce, it uses GTK+ ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
+*   In Cinnamon, GNOME, Xfce, it uses GTK ([QGtkStyle](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications")).
 *   In other desktop environments, it uses Windows.
 
 For those who want to change the look and feel of Qt4 applications, the *Qt Configuration* (*qtconfig-qt4*) GUI tool is provided by the [qt4](https://aur.archlinux.org/packages/qt4/) package. It offers a simple interface to configure the appearance of Qt4 applications including style, colors, fonts and some further options.
 
-**Note:** If you use *GTK+* style, then color and font settings will be ignored, and inherited from GTK+ 2.
+**Note:** If you use *GTK* style, then color and font settings will be ignored, and inherited from GTK 2.
 
 Qt keeps all its configuration information in `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific). The file is rather difficult to navigate because it contains a lot of information not related to appearance, but for any changes you can just add to the end of the file and overwrite any previous values (make sure to add your modification under the [Qt] header).
 
@@ -138,7 +138,7 @@ style=QtCurve
 
 ```
 
-The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK+*, *Motif*, *Plastique*, *Windows*. Others can be installed from the official repositories or the [AUR](/index.php/AUR "AUR") (most are written for KDE Plasma Desktop):
+The following styles are included in Qt4: *CDE*, *Cleanlooks*, *GTK*, *Motif*, *Plastique*, *Windows*. Others can be installed from the official repositories or the [AUR](/index.php/AUR "AUR") (most are written for KDE Plasma Desktop):
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
@@ -165,9 +165,9 @@ $ qt_application -stylesheet *style.qss*
 
 For more information on Qt Style Sheets see the [official documentation](https://doc.qt.io/qt-5/stylesheet-reference.html) or other [tutorials](http://thesmithfam.org/blog/2009/09/10/qt-stylesheets-tutorial/). As an example Style Sheet see this [Dolphin modification](http://kde-apps.org/content/show.php/roxydoxy?content=125979).
 
-### GTK+ and Qt
+### GTK and Qt
 
-If you have GTK+ and Qt applications, their looks might not exactly blend in very well. If you wish to make your GTK+ styles match your Qt styles please read [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+If you have GTK and Qt applications, their looks might not exactly blend in very well. If you wish to make your GTK styles match your Qt styles please read [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 ### Configuration of Qt5 apps under environments other than KDE Plasma
 

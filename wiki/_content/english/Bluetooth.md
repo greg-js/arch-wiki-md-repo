@@ -21,25 +21,28 @@ Related articles
 *   [2 Pairing](#Pairing)
 *   [3 Configuration](#Configuration)
     *   [3.1 Auto power-on after boot](#Auto_power-on_after_boot)
+    *   [3.2 Discoverable on startup](#Discoverable_on_startup)
 *   [4 Audio](#Audio)
 *   [5 Bluetooth serial](#Bluetooth_serial)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Deprecated BlueZ tools](#Deprecated_BlueZ_tools)
-    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
-    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [6.9 HSP/HFP profiles](#HSP/HFP_profiles)
-    *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_/_Hon_Hai_/_Lite-On_Broadcom_device)
-    *   [6.11 Intel combined wifi and bluetooth cards](#Intel_combined_wifi_and_bluetooth_cards)
-    *   [6.12 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
-    *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [6.14 Device does not show up in scan](#Device_does_not_show_up_in_scan)
-    *   [6.15 Interference between Headphones and Mouse](#Interference_between_Headphones_and_Mouse)
+    *   [6.1 Debugging](#Debugging)
+    *   [6.2 Deprecated BlueZ tools](#Deprecated_BlueZ_tools)
+    *   [6.3 gnome-bluetooth](#gnome-bluetooth)
+    *   [6.4 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [6.4.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+        *   [6.4.2 CSR Dongle 0a12:0001](#CSR_Dongle_0a12:0001)
+    *   [6.5 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [6.6 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [6.7 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [6.8 My computer is not visible](#My_computer_is_not_visible)
+    *   [6.9 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [6.10 HSP/HFP profiles](#HSP/HFP_profiles)
+    *   [6.11 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_/_Hon_Hai_/_Lite-On_Broadcom_device)
+    *   [6.12 Intel combined wifi and bluetooth cards](#Intel_combined_wifi_and_bluetooth_cards)
+    *   [6.13 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
+    *   [6.14 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [6.15 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+    *   [6.16 Interference between Headphones and Mouse](#Interference_between_Headphones_and_Mouse)
 
 ## Installation
 
@@ -118,22 +121,37 @@ Start the `bluetoothctl` interactive command. Input `help` to get a list of avai
 
 An example session may look this way:
 
+ `# bluetoothctl` 
 ```
-# bluetoothctl 
 [NEW] Controller 00:10:20:30:40:50 pi [default]
-[bluetooth]# agent KeyboardOnly 
+
+```
+ `[bluetooth]# agent KeyboardOnly` 
+```
 Agent registered
-[bluetooth]# default-agent 
+
+```
+ `[bluetooth]# default-agent` 
+```
 Default agent request successful
-[bluetooth]# power on
+
+```
+ `[bluetooth]# power on` 
+```
 Changing power on succeeded
 [CHG] Controller 00:10:20:30:40:50 Powered: yes
-[bluetooth]# scan on
+
+```
+ `[bluetooth]# scan on` 
+```
 Discovery started
 [CHG] Controller 00:10:20:30:40:50 Discovering: yes
 [NEW] Device 00:12:34:56:78:90 myLino
 [CHG] Device 00:12:34:56:78:90 LegacyPairing: yes
-[bluetooth]# pair 00:12:34:56:78:90
+
+```
+ `[bluetooth]# pair 00:12:34:56:78:90` 
+```
 Attempting to pair with 00:12:34:56:78:90
 [CHG] Device 00:12:34:56:78:90 Connected: yes
 [CHG] Device 00:12:34:56:78:90 Connected: no
@@ -143,7 +161,10 @@ Request PIN code
 [CHG] Device 00:12:34:56:78:90 Paired: yes
 Pairing successful
 [CHG] Device 00:12:34:56:78:90 Connected: no
-[bluetooth]# connect 00:12:34:56:78:90
+
+```
+ `[bluetooth]# connect 00:12:34:56:78:90` 
+```
 Attempting to connect to 00:12:34:56:78:90
 [CHG] Device 00:12:34:56:78:90 Connected: yes
 Connection successful
@@ -162,6 +183,17 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 AutoEnable=true
 ```
 
+### Discoverable on startup
+
+If the device should always be visible and directly connectable:
+
+ `/etc/bluetooth/main.conf` 
+```
+[General]
+DiscoverableTimeout = 0
+Discoverable=true
+```
+
 ## Audio
 
 In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package. With a default PulseAudio installation you should immediately be able to stream audio from a bluetooth device to your speakers.
@@ -176,7 +208,7 @@ load-module module-bluetooth-discover
 ...
 ```
 
-Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
+See the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
 
 ## Bluetooth serial
 
@@ -196,6 +228,19 @@ Bind paired device MAC address to tty terminal:
 Now you can open `/dev/rfcomm0` for serial communication.
 
 ## Troubleshooting
+
+### Debugging
+
+In order to debug, first [stop](/index.php/Stop "Stop") `bluetooth.service`.
+
+And then start it with the `-d` parameter:
+
+```
+# /usr/lib/bluetooth/bluetoothd -n -d
+
+```
+
+Another option is via the `btmon` tool.
 
 ### Deprecated BlueZ tools
 
@@ -238,40 +283,89 @@ Feb 20 15:00:25 hostname bluetoothd[4568]: Adapter /org/bluez/4568/hci0 has been
 
 If you only get the first two lines, you may see that it found the device but you need to bring it up. Example:
 
- `hciconfig -a hci0` 
 ```
-hci0:	Type: USB
-	BD Address: 00:00:00:00:00:00 ACL MTU: 0:0 SCO MTU: 0:0
-	DOWN 
-	RX bytes:0 acl:0 sco:0 events:0 errors:0
-        TX bytes:0 acl:0 sco:0 commands:0 errors:
+# btmgmt
+
+```
+ `[mgmt]# info` 
+```
+Index list with 1 item
+hci0:	Primary controller
+	addr 00:1A:7D:DA:71:10 version 6 manufacturer 10 class 0x000000
+	supported settings: powered connectable fast-connectable discoverable bondable link-security ssp br/edr hs le advertising secure-conn debug-keys privacy static-addr 
+	**current settings:** connectable discoverable bondable ssp br/edr le secure-conn 
+	name Mozart
+	short name 
+
+```
+ `[mgmt]# select hci0` 
+```
+Selected index 0
+
+```
+ `[hci0]# power up` 
+```
+hci0 Set Powered complete, settings: **powered** connectable discoverable bondable ssp br/edr le secure-conn
+
+```
+ `[hci0]# info` 
+```
+hci0:	Primary controller
+	addr 00:1A:7D:DA:71:10 version 6 manufacturer 10 class 0x1c0104
+	supported settings: powered connectable fast-connectable discoverable bondable link-security ssp br/edr hs le advertising secure-conn debug-keys privacy static-addr 
+	**current settings: powered** connectable discoverable bondable ssp br/edr le secure-conn
 
 ```
 
-```
-# hciconfig hci0 up
+Or
 
 ```
- `hciconfig -a hci0` 
-```
-hci0:	Type: USB
-	BD Address: 00:02:72:C4:7C:06 ACL MTU: 377:10 SCO MTU: 64:8
-	UP RUNNING 
-	RX bytes:348 acl:0 sco:0 events:11 errors:0
-        TX bytes:38 acl:0 sco:0 commands:11 errors:0
+# bluetoothctl
 
 ```
-
-To verify that the device was detected you can use `hcitool` which is part of the `bluez-utils`. You can get a list of available devices and their identifiers and their MAC address by issuing:
-
- `$ hcitool dev` 
+ `[bluetooth]# show` 
 ```
-Devices:
-        hci0	00:1B:DC:0F:DB:40
+Controller 00:1A:7D:DA:71:10 (public)
+	Name: Mozart
+	Alias: Mozart
+	Class: 0x0000095c
+	**Powered: no**
+	Discoverable: yes
+	Pairable: yes
+
+```
+ `[bluetooth]# power on` 
+```
+[CHG] Controller 00:1A:7D:DA:71:10 Class: 0x001c0104
+Changing power on succeeded
+[CHG] Controller 00:1A:7D:DA:71:10 **Powered: yes**
+
+```
+ `[bluetooth]# show` 
+```
+Controller 00:1A:7D:DA:71:10 (public)
+	Name: Mozart
+	Alias: Mozart
+	Class: 0x001c0104
+	**Powered: yes**
+	Discoverable: yes
+	Pairable: yes
 
 ```
 
-More detailed information about the device can be retrieved by using `hciconfig`.
+To verify that the device was detected you can use `btmgmt` which is part of the `bluez-utils`. You can get a list of available devices and their identifiers and their MAC address by issuing:
+
+ `$ btmgmt info` 
+```
+Index list with 1 item
+hci0:	Primary controller
+	addr 00:1A:7D:DA:71:10 version 6 manufacturer 10 class 0x1c0104
+	supported settings: powered connectable fast-connectable discoverable bondable link-security ssp br/edr hs le advertising secure-conn debug-keys privacy static-addr 
+	current settings: powered connectable discoverable bondable ssp br/edr le secure-conn
+
+```
+
+More detailed information about the device can be retrieved by using the deprecated `hciconfig`. ([bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/))
 
  `$ hciconfig -a hci0` 
 ```
@@ -308,6 +402,10 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
+#### CSR Dongle 0a12:0001
+
+The device `ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)` has a regression bug, and currently only works in the kernel version ≤ 3.9.11\. There is a patch available for newer versions. For more information, see [Kernel Bug 60824](https://bugzilla.kernel.org/show_bug.cgi?id=60824).
+
 ### Logitech Bluetooth USB Dongle
 
 There are Logitech dongles (ex. Logitech MX5000) that can work in two modes: Embedded and HCI. In embedded mode dongle emulates a USB device so it seems to your PC that you are using a normal USB mouse/keyoard.
@@ -330,7 +428,7 @@ Alternatively, you can install the [bluez-hid2hci](https://www.archlinux.org/pac
 *   Sometimes also this simple command helps:
 
 ```
-# hciconfig hci0 up
+# bluetoothctl power on
 
 ```
 
@@ -345,27 +443,26 @@ $ connmanctl enable bluetooth
 
 ### My computer is not visible
 
-Cannot discover computer from your phone? Enable PSCAN and ISCAN:
+Cannot discover computer from your phone? Enable discoverable mode:
 
 ```
-# enable PSCAN and ISCAN
-$ hciconfig hci0 piscan 
-# check it worked
+# bluetoothctl discoverable on
 
 ```
- `$ hciconfig` 
+
+to check if it worked:
+
+ `# bluetoothctl show` 
 ```
-hci0:   Type: USB
-        BD Address: 00:12:34:56:78:9A ACL MTU: 192:8 SCO MTU: 64:8
-        **UP RUNNING PSCAN ISCAN**
-        RX bytes:20425 acl:115 sco:0 events:526 errors:0
-        TX bytes:5543 acl:84 sco:0 commands:340 errors:0
+	Powered: yes
+	Discoverable: yes
+	Pairable: yes
 
 ```
 
 **Note:** Check DiscoverableTimeout and PairableTimeout in `/etc/bluetooth/main.conf`
 
-Try changing device class in `/etc/bluetooth/main.conf` as following:
+If even so it does not show up, try changing the device class in `/etc/bluetooth/main.conf` as following:
 
 ```
 # Default device class. Only the major and minor device class bits are
@@ -375,14 +472,14 @@ Class = 0x100100
 
 ```
 
-This was the only solution to make my computer visible for my phone.
+A user reported that this was the only solution to make his computer visible for his phone.
 
 ### Logitech keyboard does not pair
 
 If you do not get the passkey when you try to pair your Logitech keyboard, type the following command:
 
 ```
-# hciconfig hci0 sspmode 0
+# btmgmt ssp off
 
 ```
 
@@ -452,8 +549,15 @@ This may be because you have already paired the device with another operating sy
 
 ```
 $ bluetoothctl
-[bluetooth]# devices
+
+```
+ `[bluetooth]# devices` 
+```
 Device XX:XX:XX:XX:XX:XX My Device
+
+```
+
+```
 [bluetooth]# remove XX:XX:XX:XX:XX:XX
 
 ```
@@ -475,14 +579,20 @@ try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=p
 
 Some devices using bluetooth low energy do not appear when scanning with bluetoothctl, for example the Logitech MX Master. The simplest way I have found to connect them is by installing [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/), then [start](/index.php/Start "Start") `bluetooth.service` and do:
 
+ `# bluetoothctl` 
 ```
-# bluetoothctl
 [NEW] Controller (MAC) myhostname [default]
-[bluetooth]# power on
+
+```
+ `[bluetooth]# power on` 
+```
 [CHG] Controller (MAC) Class: 0x0c010c
 Changing power on succeeded
 [CHG] Controller (MAC) Powered: yes
-[bluetooth]# scan on
+
+```
+ `[bluetooth]# scan on` 
+```
 Discovery started
 [CHG] Controller (MAC) Discovering: yes
 
@@ -495,7 +605,7 @@ In another terminal:
 
 ```
 
-Wait until your device shows up, then Ctrl+C hcitool. bluetoothctl should now see your device and pair normally.
+Wait until your device shows up, then `Ctrl+c` hcitool. bluetoothctl should now see your device and pair normally.
 
 ### Interference between Headphones and Mouse
 

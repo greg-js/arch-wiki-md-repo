@@ -217,7 +217,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
 
-*   **sakura** — Terminal emulator based on GTK+ and VTE.
+*   **sakura** — Terminal emulator based on GTK and VTE.
 
 	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
 
@@ -435,7 +435,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 *   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
 
-	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK+: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
+	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
 
 *   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — File manager that implements the popular two-panel design.
 
@@ -453,7 +453,7 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 	[http://www.mucommander.com/](http://www.mucommander.com/) || [mucommander](https://aur.archlinux.org/packages/mucommander/)
 
-*   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK+ multi-panel tabbed file manager.
+*   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK multi-panel tabbed file manager.
 
 	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
@@ -517,7 +517,7 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 *   **[Syncthing](/index.php/Syncthing "Syncthing")** — Continuous file synchronization program. It synchronizes files between two or more computers in a simple way without advanced configuration.
 
-	[https://syncthing.net/](https://syncthing.net/) || Web: [syncthing](https://www.archlinux.org/packages/?name=syncthing), GTK+: [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
+	[https://syncthing.net/](https://syncthing.net/) || Web: [syncthing](https://www.archlinux.org/packages/?name=syncthing), GTK: [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
 
 *   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
 
@@ -555,15 +555,15 @@ For archiving and compression command-line tools, see [Archiving and compression
 
 *   **[PeaZip](https://en.wikipedia.org/wiki/PeaZip "wikipedia:PeaZip")** — Open source file and archive manager.
 
-	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || GTK+: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
+	[http://www.peazip.org/peazip-linux.html](http://www.peazip.org/peazip-linux.html) || GTK: [peazip-gtk2](https://aur.archlinux.org/packages/peazip-gtk2/), Qt: [peazip-qt](https://aur.archlinux.org/packages/peazip-qt/)
 
 *   **Squeeze** — Featherweight front-end for commandline archiving tools.
 
 	[http://squeeze.xfce.org/](http://squeeze.xfce.org/) || [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/)
 
-*   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK+.
+*   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK.
 
-	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || GTK+ 3: [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), GTK+ 2: [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
+	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || GTK 3: [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), GTK 2: [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
 
 #### Comparison, diff, merge
 
@@ -603,7 +603,7 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 #### Batch renamers
 
-*   **[GPRename](https://en.wikipedia.org/wiki/GPRename "wikipedia:GPRename")** — GTK+ batch renamer for files and directories.
+*   **[GPRename](https://en.wikipedia.org/wiki/GPRename "wikipedia:GPRename")** — GTK batch renamer for files and directories.
 
 	[http://gprename.sourceforge.net](http://gprename.sourceforge.net) || [gprename](https://www.archlinux.org/packages/?name=gprename)
 
@@ -671,7 +671,7 @@ These programs index your files to allow for quick searching.
 
 	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
 
-*   **fsearch** — A fast file search utility for Unix-like systems based on GTK+3.
+*   **fsearch** — A fast file search utility for Unix-like systems based on GTK 3.
 
 	[https://github.com/cboxdoerfer/fsearch](https://github.com/cboxdoerfer/fsearch) || [fsearch-git](https://aur.archlinux.org/packages/fsearch-git/)
 
@@ -1023,7 +1023,7 @@ And then there are also:
 
 	[http://www.fltk.org/](http://www.fltk.org/) || [fltk](https://www.archlinux.org/packages/?name=fltk)
 
-*   **[Glade](https://en.wikipedia.org/wiki/Glade_Interface_Designer "wikipedia:Glade Interface Designer")** — Create or open user interface designs for GTK+ applications.
+*   **[Glade](https://en.wikipedia.org/wiki/Glade_Interface_Designer "wikipedia:Glade Interface Designer")** — Create or open user interface designs for GTK applications.
 
 	[https://glade.gnome.org/](https://glade.gnome.org/) || [glade](https://www.archlinux.org/packages/?name=glade)
 
@@ -1245,7 +1245,7 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 	[https://gitlab.gnome.org/GNOME/gnome-characters](https://gitlab.gnome.org/GNOME/gnome-characters) || [gnome-characters](https://www.archlinux.org/packages/?name=gnome-characters)
 
-*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK+ 3 character selector for GNOME.
+*   **[gucharmap](https://en.wikipedia.org/wiki/GNOME_Character_Map "wikipedia:GNOME Character Map")** — GTK 3 character selector for GNOME.
 
 	[https://wiki.gnome.org/Apps/Gucharmap](https://wiki.gnome.org/Apps/Gucharmap) || [gucharmap](https://www.archlinux.org/packages/?name=gucharmap)
 
@@ -1547,7 +1547,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://projects.l3ib.org/fsniper/](http://projects.l3ib.org/fsniper/) || [fsniper](https://aur.archlinux.org/packages/fsniper/)
 
-*   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK+](/index.php/GTK%2B "GTK+") with many plug-ins.
+*   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK](/index.php/GTK "GTK") with many plug-ins.
 
 	[http://billw2.github.io/gkrellm/gkrellm.html](http://billw2.github.io/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)
 
@@ -1671,7 +1671,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 See also [Wikipedia:Font management software](https://en.wikipedia.org/wiki/Font_management_software "wikipedia:Font management software").
 
-*   **Font Manager** — Simple font management for GTK+ desktop environments.
+*   **Font Manager** — Simple font management for GTK desktop environments.
 
 	[https://fontmanager.github.io/](https://fontmanager.github.io/) || [font-manager](https://aur.archlinux.org/packages/font-manager/)
 
@@ -1691,7 +1691,7 @@ See also [Wikipedia:Font management software](https://en.wikipedia.org/wiki/Font
 
 	[https://github.com/mate-desktop/mate-control-center](https://github.com/mate-desktop/mate-control-center) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
-*   **Waterfall** — GTK+ application to view all characters of font in all sizes.
+*   **Waterfall** — GTK application to view all characters of font in all sizes.
 
 	[https://keithp.com/cgit/gwaterfall.git](https://keithp.com/cgit/gwaterfall.git) || [gwaterfall](https://www.archlinux.org/packages/?name=gwaterfall)
 

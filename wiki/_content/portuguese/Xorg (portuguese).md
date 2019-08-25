@@ -717,9 +717,9 @@ See also:
     *   [ATI](/index.php/ATI "ATI")
     *   [NVIDIA](/index.php/NVIDIA "NVIDIA")
 *   [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop")
-    *   [KDE](/index.php/KDE "KDE")
+    *   [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)")
     *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
-    *   [Xfce](/index.php/Xfce "Xfce")
+    *   [Xfce](/index.php/Xfce_(Portugu%C3%AAs) "Xfce (Português)")
     *   [Enlightenment](/index.php/Enlightenment "Enlightenment")
     *   [Fluxbox](/index.php/Fluxbox_(Portugu%C3%AAs) "Fluxbox (Português)")
 

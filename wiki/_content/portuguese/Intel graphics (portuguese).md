@@ -73,7 +73,7 @@ O Intel kernel module carrega automaticamente na inicialização do sistema
 
 Caso isso não aconteça, então:
 
-*   Tenha certeza de que você não tem `nomodeset` ou {ic|1=vga=}} como um [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), visto que as GPU's Intel necessitam do kernel mode-setting.
+*   Tenha certeza de que você não tem `nomodeset` ou {ic|1=vga=}} como um [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel"), visto que as GPU's Intel necessitam do kernel mode-setting.
 *   Também, cheque se você não desabilitou o driver, utilizando algum modprobe blacklisting `/etc/modprobe.d/` ou `/usr/lib/modprobe.d/`.
 
 ### Habilitando KMS mais cedo no boot
@@ -88,7 +88,7 @@ Para o Skylake e os processadores mais recentes, alguns recursos de vídeo (por 
 
 **Nota:** Veja [Gentoo:Intel#Feature support](https://wiki.gentoo.org/wiki/Intel#Feature_support "gentoo:Intel") para uma visão geral das gerações de processadores Intel.
 
-Para esses processadores, é necessário adicionar `i915.enable_guc=2` aos [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") para ativar o carregamento do firmware. Alternativamente, se o [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") já inclui o módulo `i915` (veja [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), você pode definir estas opções através de um arquivo em `/etc/modprobe.d/`, por exemplo:
+Para esses processadores, é necessário adicionar `i915.enable_guc=2` aos [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") para ativar o carregamento do firmware. Alternativamente, se o [initramfs](/index.php/Initramfs_(Portugu%C3%AAs) "Initramfs (Português)") já inclui o módulo `i915` (veja [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), você pode definir estas opções através de um arquivo em `/etc/modprobe.d/`, por exemplo:
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_guc=2` 
 
@@ -169,7 +169,7 @@ Muitas opções tomam por padrão a íntegra -1, que assume os padrões do hardw
 
 O uso da compressão Framebuffer (FBC) pode reduzir o consumo de energia e, ao mesmo tempo, reduzir a largura de banda de memória necessária para as atualizações de tela.
 
-Para ativar o FBC, use `i915.enable_fbc=1` como [parâmetro do kernel](/index.php/Kernel_parameter "Kernel parameter") ou defina em `/etc/modprobe.d/i915.conf`:
+Para ativar o FBC, use `i915.enable_fbc=1` como [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") ou defina em `/etc/modprobe.d/i915.conf`:
 
  `/etc/modprobe.d/i915.conf`  `options i915 enable_fbc=1` 
 **Nota:** A compressão do framebuffer pode não ser confiável ou não estar disponível nas gerações da GPU Intel antes do Sandy Bridge (geração 6). Isso resulta em mensagens registradas no diário do sistema semelhante a esta:
@@ -192,7 +192,7 @@ A solução é desabilitar a compactação do buffer de quadros, o que aumentar�
 
 O objetivo do Intel Fastboot é preservar o buffer de quadros como configurado pelo BIOS ou [bootloader](/index.php/Bootloader "Bootloader") para evitar qualquer oscilação até que o [Xorg](/index.php/Xorg "Xorg") tenha iniciado [[3]](https://www.phoronix.com/scan.php?page=news_item&px=MTEwNzc).
 
-Para habilitar o fastboot, defina `i915.fastboot=1` como um [parâmetro do kernel](/index.php/Kernel_parameter "Kernel parameter") ou defina em `/etc/modprobe.d/i915.conf`:
+Para habilitar o fastboot, defina `i915.fastboot=1` como um [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel") ou defina em `/etc/modprobe.d/i915.conf`:
 
  `/etc/modprobe.d/i915.conf`  `options i915 fastboot=1` 
 **Atenção:** Esse parâmetro não é habilitado por padrão e pode causar problemas em alguns sistemas antigos (pré-Skylake).[[4]](https://www.phoronix.com/scan.php?page=news_item&px=Intel-Fastboot-Default-2019-Try)
@@ -271,7 +271,7 @@ Veja também [FreeDesktop bug 88584](https://bugs.freedesktop.org/show_bug.cgi?i
 
 Se estiver carregando o KMS mais tarde no boot ("late start") KMS e a tela ficar branca enquanto carregar os módulos, pode ajudar se adicionar `i915` e `intel_agp` para o initramfs. Veja a sessão [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
-Outra alternativa, seria adicionar o seguinte [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
+Outra alternativa, seria adicionar o seguinte [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel"):
 
 ```
 video=SVIDEO-1:d
@@ -347,7 +347,7 @@ Também existem outros problemas relacionados que podem ser corrigidos editando 
 
 Se depois de retomar a suspensão, as teclas de atalho para alterar o brilho da tela não tiverem efeito, verifique sua configuração em relação ao artigo [Backlight](/index.php/Backlight "Backlight").
 
-Se o problema persistir, tente um dos seguintes [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+Se o problema persistir, tente um dos seguintes [parâmetros do kernel](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel"):
 
 ```
 acpi_osi=Linux
@@ -402,7 +402,7 @@ Jun 16 17:54:03 hostname kernel: RIP  [<          (null)>]           (null)
 
 ```
 
-Isso pode ser corrigido desabilitando o suporte a execlist que foi alterado para o padrão com o kernel 4.0\. Adicione o seguinte [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
+Isso pode ser corrigido desabilitando o suporte a execlist que foi alterado para o padrão com o kernel 4.0\. Adicione o seguinte [parâmetro do kernel](/index.php/Par%C3%A2metro_do_kernel "Parâmetro do kernel"):
 
 ```
 i915.enable_execlists=0
@@ -437,7 +437,7 @@ A saída de vídeo de um convidado do Windows (windows guest) no VirtualBox às 
 
 ### Tela piscando
 
-Os seguintes recursos de economia de energia usados por intel iGPUs são conhecidos por causar cintilação em alguns casos. Uma solução temporária é desativar um deles usando a opção [kernel boot parameter](/index.php/Kernel_parameters "Kernel parameters") apropriada:
+Os seguintes recursos de economia de energia usados por intel iGPUs são conhecidos por causar cintilação em alguns casos. Uma solução temporária é desativar um deles usando a opção [kernel boot parameter](/index.php/Par%C3%A2metros_do_kernel "Parâmetros do kernel") apropriada:
 
 *   Rc6 sleep modes (ver [#RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_(enable_rc6))), pode ser desabilitado com `i915.enable_rc6=0`.
 

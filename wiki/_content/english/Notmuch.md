@@ -93,7 +93,7 @@ More file handlers can be configured of course.
 
 ### astroid
 
-[Astroid](https://github.com/astroidmail/astroid) is a graphical MUA and interface to notmuch written using C++ and GTK+. [astroid](https://aur.archlinux.org/packages/astroid/) (stable) and [astroid-git](https://aur.archlinux.org/packages/astroid-git/) (VCS) packages are available in [AUR](/index.php/AUR "AUR"). The GUI is designed to be very fast, preview HTML and attachments, be navigable by keyboard. It is extensively configurable and you use your favorite editor either embedded or launch it externally. Check out the [Tour](https://github.com/astroidmail/astroid/wiki) to see how astroid can be used and for a description of the complete setup, or check out the [README](https://github.com/astroidmail/astroid) for more information.
+[Astroid](https://github.com/astroidmail/astroid) is a graphical MUA and interface to notmuch written using C++ and GTK. [astroid](https://aur.archlinux.org/packages/astroid/) (stable) and [astroid-git](https://aur.archlinux.org/packages/astroid-git/) (VCS) packages are available in [AUR](/index.php/AUR "AUR"). The GUI is designed to be very fast, preview HTML and attachments, be navigable by keyboard. It is extensively configurable and you use your favorite editor either embedded or launch it externally. Check out the [Tour](https://github.com/astroidmail/astroid/wiki) to see how astroid can be used and for a description of the complete setup, or check out the [README](https://github.com/astroidmail/astroid) for more information.
 
 ### ner
 

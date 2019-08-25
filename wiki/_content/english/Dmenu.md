@@ -19,7 +19,7 @@ Related articles
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No locale support](#No_locale_support)
     *   [3.2 Missing menu entries](#Missing_menu_entries)
-    *   [3.3 Environmental Variables](#Environmental_Variables)
+    *   [3.3 Environment Variables](#Environment_Variables)
     *   [3.4 Current window loses focus](#Current_window_loses_focus)
 *   [4 See also](#See_also)
 
@@ -103,9 +103,9 @@ $ rm ~/.cache/dmenu_run
 
 Note that there will most likely be only one cache file, depending on if `$XDG_CACHE_HOME` is set. See the contents of `/usr/bin/dmenu_run` for more information.
 
-### Environmental Variables
+### Environment Variables
 
-Environmental variables needed for applications should instead be added to `/etc/environment`.
+Environment variables needed for applications should instead be added to `/etc/environment`.
 
 ### Current window loses focus
 

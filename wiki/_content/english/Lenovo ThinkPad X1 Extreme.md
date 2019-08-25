@@ -49,7 +49,7 @@ The latest version, v1.23, is highly recommended. All information on this page g
 
 ### Hybrid graphics
 
-Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee") or [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. After installing bumblebee, the HDMI port works after modifying the following files, rebooting, and executing `intel-virtual-output -f` from an X server running on the iGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee"), [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [optimus-manager](https://github.com/Askannz/optimus-manager). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. After installing bumblebee, the HDMI port works after modifying the following files, rebooting, and executing `intel-virtual-output -f` from an X server running on the iGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
@@ -81,6 +81,23 @@ Section "Screen"
     Identifier "Screen0"
     Device "DiscreteNVidia"
 EndSection
+
+```
+
+While optimus-manager requires logging out to switch graphics, its NVIDIA performance is better than bumblebee's and it may also be the right choice for using external displays. This is because it does not require bumblebee's intel-virtual-output, which is plagued with performance issues. The following configuration has been found to work well:
+
+ `/etc/optimus-manager/optimus-manager.conf` 
+```
+
+[intel]
+driver=intel
+modeset=yes
+
+[nvidia]
+modeset=yes
+
+[optimus]
+switching=bbswitch
 
 ```
 
@@ -118,7 +135,7 @@ Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_
 
 A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H.
 
-It should be possible to modify those settings by [applying the correct DPTF policy](https://lkml.org/lkml/2018/10/10/328), however, as of BIOS 1.21, the policies seem to be ignored by the firmware.
+It should be possible to modify those settings by [applying the correct DPTF policy](https://lkml.org/lkml/2018/10/10/328), however, as of BIOS 1.23, the policies seem to be ignored by the firmware.
 
 This can be worked around by using [throttled](https://www.archlinux.org/packages/?name=throttled) (previously known as [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/)) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
 
@@ -130,7 +147,7 @@ Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Unde
 
 As of March 2019, the following commonly used kernel parameters are known to work:
 
-*   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations
+*   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations (likely to be default starting with Linux 5.4)
 
 ## Specifications
 

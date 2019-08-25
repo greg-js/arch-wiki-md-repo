@@ -1,4 +1,4 @@
-[Audacious](http://audacious-media-player.org/) is a free and advanced audio player based on GTK+. It's focused on audio quality and supports a wide variety of audio codecs, and is easily extensible through third-party plugins.
+[Audacious](http://audacious-media-player.org/) is a free and advanced audio player based on GTK. It's focused on audio quality and supports a wide variety of audio codecs, and is easily extensible through third-party plugins.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,7 +9,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Interfaces](#Interfaces)
-        *   [2.1.1 GTK+](#GTK+)
+        *   [2.1.1 GTK](#GTK)
         *   [2.1.2 Qt5](#Qt5)
         *   [2.1.3 Winamp](#Winamp)
     *   [2.2 Plugins](#Plugins)
@@ -33,13 +33,13 @@
 
 Audacious currently provides three interfaces:
 
-#### GTK+
+#### GTK
 
-GTK+ 2 is the default interface in Audacious 2.4 and above.
+GTK 2 is the default interface in Audacious 2.4 and above.
 
 #### Qt5
 
-For the Qt5 interface install the [audacious-qt5](https://aur.archlinux.org/packages/audacious-qt5/) package and [audacious-plugins-qt5](https://aur.archlinux.org/packages/audacious-plugins-qt5/). To support both Qt5 and GTK+ and switch between interfaces, remove `--disable-gtk` from the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") of both packages.
+For the Qt5 interface install the [audacious-qt5](https://aur.archlinux.org/packages/audacious-qt5/) package and [audacious-plugins-qt5](https://aur.archlinux.org/packages/audacious-plugins-qt5/). To support both Qt5 and GTK and switch between interfaces, remove `--disable-gtk` from the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") of both packages.
 
 #### Winamp
 

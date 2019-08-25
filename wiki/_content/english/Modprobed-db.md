@@ -72,13 +72,11 @@ $ systemctl --user list-timers
 
 ### Data Recall
 
-As mentioned earlier, this script is meant to be used in concert with the **make localmodconfig** step of compiling a kernel. After the database has been adequately populated, simply invoke `/usr/bin/modprobed-db recall` (as the root user) prior to compiling a kernel to load all modules followed by the **make localmodconfig** to do the magic.
-
-**Warning:** Previous recommendation was to execute the following rather than calling `modprobed-db recall` BUT doing so gives kernel packages missing modules. It is therefore recommended NOT to build like this: `make LSMOD=$HOME/.config/modprobed.db localmodconfig`.
+After the database has been adequately populated, it can be read directly by [make localmodconfig](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/README?id=refs/tags/v4.3.3#n205)
 
 #### Using the Official Arch kernel PKGBUILD
 
-If your user has sudo rights to call `/usr/bin/modprobed-db`, the official Arch kernel PKGBUILD can be modified as shown to do this automatically. If not, remember to manually run the script in recall mode before starting the build:
+The official Arch kernel PKGBUILD can be modified as shown to do this automatically:
 
 ```
  ...
@@ -90,8 +88,7 @@ If your user has sudo rights to call `/usr/bin/modprobed-db`, the official Arch 
   cp ../config .config
   make olddefconfig
 
-  sudo modprobed-db recall                      # <---- insert this line
-  make localmodconfig                           # <---- insert this line
+  make LSMOD=$HOME/.config/modprobed.db localmodconfig          # <---- insert this line
 
   make -s kernelrelease > ../version
  ...

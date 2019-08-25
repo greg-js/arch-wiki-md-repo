@@ -7,7 +7,7 @@ Related articles
 *   [LXDE](/index.php/LXDE "LXDE")
 *   [GNOME](/index.php/GNOME "GNOME")
 
-[Xfce](http://www.xfce.org) is a lightweight and modular [desktop environment](/index.php/Desktop_environment "Desktop environment") currently based on both GTK+ 2 and GTK+ 3\. To provide a complete user experience, it includes a window manager, a file manager, desktop and panel.
+[Xfce](http://www.xfce.org) is a lightweight and modular [desktop environment](/index.php/Desktop_environment "Desktop environment") currently based on both GTK 2 and GTK 3\. To provide a complete user experience, it includes a window manager, a file manager, desktop and panel.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -231,11 +231,11 @@ Alternatively, add the commands you wish to run (including setting environment v
 
 #### Lock the screen
 
-*xflock4* is the reference Bash script which is used to lock an Xfce session . It tries consecutively four screen lockers or exits with return code 1 if it fails to find any. Therefore, for *xflock4* to succeed, either [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) needs to be installed.
+*xflock4* is the reference Bash script which is used to lock an Xfce session.
 
-The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications.
+It tries to lock the screen with either [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver), [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver), [slock](https://www.archlinux.org/packages/?name=slock) or [xlockmore](https://www.archlinux.org/packages/?name=xlockmore). It consecutively looks for the corresponding binary or exits with return code 1 if it fails to find any of these four.
 
-In particular, an alternative locker [light-locker](https://www.archlinux.org/packages/?name=light-locker) integrates well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager): once installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. It is then possible to set in this GUI whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
+The [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") contains a short description of these four screen lockers together with other popular applications. There is in this list an alternative locker, [light-locker](https://www.archlinux.org/packages/?name=light-locker), which integrates particularly well with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). Once it is installed, Xfce Power Manager's setting gains an additional *Security* tab to configure *light-locker* and the existing *Lock screen when system is going for sleep* setting is relocated under this tab. In this new GUI it is possible to set whether the session should be locked upon screensaver activity or whenever the system goes to sleep.
 
 To have *xflock4* run *light-locker* or any custom session locker, not among the four cited above, one must set `LockCommand` in the session's xfconf channel to the command line to be used (the command inside the quotes in the following example can be adapted accordingly for other screen lockers):
 
@@ -336,7 +336,7 @@ You can also change the window manager by autostarting `*wm_name* --replace` usi
 
 ### Theming
 
-XFCE themes are available at [xfce-look.org](http://www.xfce-look.org). *Xfwm* themes are stored in `/usr/share/themes/xfce4`, and set in *Settings > Window Manager*. [GTK+](/index.php/GTK%2B "GTK+") themes are set in *Settings > Appearance*.
+XFCE themes are available at [xfce-look.org](http://www.xfce-look.org). *Xfwm* themes are stored in `/usr/share/themes/xfce4`, and set in *Settings > Window Manager*. [GTK](/index.php/GTK "GTK") themes are set in *Settings > Appearance*.
 
 To achieve a uniform look for all applications, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 

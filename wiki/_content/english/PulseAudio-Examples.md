@@ -621,7 +621,7 @@ The [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio
 
 This is the recommended method as it is [officially endorsed by the JACK developers](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_PulseOnJack).
 
-This configuration works with both [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus) and [jack2](https://www.archlinux.org/packages/?name=jack2) packages.
+This configuration requires the [jack2](https://www.archlinux.org/packages/?name=jack2) package.
 
 JACK now has native features for bridging between ALSA, PulseAudio, and JACK. This will allow you to simultaneously have JACK and PulseAudio running with both outputting at the same time, with no config editing or terminal commands requried.
 
@@ -640,7 +640,7 @@ load-module module-jackdbus-detect *options*
 
 ```
 
-Where `*options*` can be any options supported by this module, usually `channels=2`.
+Where `*options*` can be any options supported by this module, usually `channels=2`. The default config file already has this line, so you shouldn't need to do anything here.
 
 As described on the [Jack-DBUS Packaging](https://github.com/jackaudio/jackaudio.github.com/wiki/JackDbusPackaging) page:
 

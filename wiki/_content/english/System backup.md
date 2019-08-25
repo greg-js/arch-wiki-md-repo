@@ -67,16 +67,16 @@ For [Syslinux](/index.php/Syslinux "Syslinux"), all you need to do is duplicate 
 
 **Tip:** Instead of editing `syslinux.cfg`, you can also temporarily edit the menu during boot. When the menu shows up, press the `Tab` key and change the relevant entries. Partitions are counted from one, drives are counted from zero.
 
-For [GRUB](/index.php/GRUB "GRUB"), it is recommended that you automatically [re-generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). If you want to freshly install all grub files to somewhere other than `/boot`, such as `/mnt/newroot/boot`, use the `--boot-directory` flag.
+For [GRUB](/index.php/GRUB "GRUB"), it is recommended that you automatically [re-generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). If you want to freshly install all GRUB files to somewhere other than `/boot`, such as `/mnt/newroot/boot`, use the `--boot-directory` flag.
 
 Also verify the new menu entry in `/boot/grub/grub.cfg`. Make sure the UUID is matching the new partition, otherwise it could still boot the old system. Find the UUID of a partition with [lsblk](/index.php/Lsblk "Lsblk"):
 
 ```
-$ lsblk -no NAME,UUID /dev/sdb3
+$ lsblk -no NAME,UUID /dev/sd*XY*
 
 ```
 
-where you substitute the desired partition for /dev/sdb3\. To list the UUIDs of partitions grub thinks it can boot, use grep:
+where `/dev/sd*XY*` is the desired partition (e.g. `/dev/sdb3`). To list the UUIDs of partitions GRUB thinks it can boot, use *grep*:
 
 ```
 # grep UUID= /boot/grub/grub.cfg

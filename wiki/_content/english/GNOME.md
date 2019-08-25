@@ -1,6 +1,6 @@
 Related articles
 
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK](/index.php/GTK "GTK")
 *   [GDM](/index.php/GDM "GDM")
 *   [GNOME/Tips and tricks](/index.php/GNOME/Tips_and_tricks "GNOME/Tips and tricks")
 *   [GNOME/Troubleshooting](/index.php/GNOME/Troubleshooting "GNOME/Troubleshooting")
@@ -126,7 +126,7 @@ fi
 *   An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland").
 *   Wayland with the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284).
 
-Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM makes [Qt](/index.php/Qt "Qt") applications like [VLC](/index.php/VLC "VLC"), calibre, or SMPlayer use Wayland. In addition to the QT_QPA_PLATFORM variable, you must also install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package. To add support for other graphics libraries, see [Wayland#GUI_libraries](/index.php/Wayland#GUI_libraries "Wayland").
+Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM makes [Qt](/index.php/Qt "Qt") applications like [VLC](/index.php/VLC "VLC"), calibre, or SMPlayer use Wayland. In addition to the QT_QPA_PLATFORM variable, you must also install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package. To add support for other graphics libraries, see [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland").
 
 To start on login to tty1, add the following to your `.bash_profile`:
 
@@ -139,7 +139,7 @@ fi
 
 ### GNOME applications in Wayland
 
-When the *GNOME* session is used, GNOME applications will be run using Wayland. For debugging cases, the [GTK+ manual](https://developer.gnome.org/gtk3/stable/gtk-running.html) lists options and environment variables.
+When the *GNOME* session is used, GNOME applications will be run using Wayland. For debugging cases, the [GTK manual](https://developer.gnome.org/gtk3/stable/gtk-running.html) lists options and environment variables.
 
 ## Navigation
 
@@ -274,7 +274,7 @@ The Tracker database can be queried using the *tracker-sparql* command. View its
 
 ### Advanced settings
 
-As noted above, many configuration options such as changing the [GTK+](/index.php/GTK%2B "GTK+") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweaks ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), a convenient graphical tool which exposes many of these settings.
+As noted above, many configuration options such as changing the [GTK](/index.php/GTK "GTK") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweaks ([gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks)), a convenient graphical tool which exposes many of these settings.
 
 GNOME settings (which are stored in the DConf database) can also be configured using the [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (a graphical DConf configuration tool) or the [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) command line tool. The GNOME Tweaks does not do anything else in the background of the GUI; note though that you will not find all settings described in the following sections in it.
 
@@ -282,7 +282,7 @@ GNOME settings (which are stored in the DConf database) can also be configured u
 
 ##### Themes
 
-GNOME uses Adwaita by default. To apply Adwaita dark only to GTK+2 applications use the following symlink:
+GNOME uses Adwaita by default. To apply Adwaita dark only to GTK 2 applications use the following symlink:
 
 ```
 $ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
@@ -291,7 +291,7 @@ $ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
 
 To select new themes (move them to the appropriate directory and) use GNOME Tweaks or the GSettings commands below:
 
-For the GTK+ theme:
+For the GTK theme:
 
 ```
 $ gsettings set org.gnome.desktop.interface gtk-theme *theme-name*
@@ -305,9 +305,9 @@ $ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
 
 ```
 
-**Note:** The window manager theme follows the GTK+ theme. Using `org.gnome.desktop.wm.preferences theme` is deprecated and ignored.
+**Note:** The window manager theme follows the GTK theme. Using `org.gnome.desktop.wm.preferences theme` is deprecated and ignored.
 
-See [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") and [Icons#Manually](/index.php/Icons#Manually "Icons").
+See [GTK#Themes](/index.php/GTK#Themes "GTK") and [Icons#Manually](/index.php/Icons#Manually "Icons").
 
 ##### Titlebar height
 

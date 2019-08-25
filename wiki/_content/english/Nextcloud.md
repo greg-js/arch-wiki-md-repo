@@ -19,20 +19,21 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
+    *   [2.1 Pacman hook](#Pacman_hook)
 *   [3 Setup](#Setup)
-    *   [3.1 Pacman hook](#Pacman_hook)
-    *   [3.2 PHP setup](#PHP_setup)
-    *   [3.3 Database setup](#Database_setup)
-        *   [3.3.1 MariaDB](#MariaDB)
-        *   [3.3.2 PostgreSQL](#PostgreSQL)
-    *   [3.4 Web server setup](#Web_server_setup)
-        *   [3.4.1 Apache](#Apache)
-            *   [3.4.1.1 WebDAV](#WebDAV)
-        *   [3.4.2 Nginx](#Nginx)
-        *   [3.4.3 lighttpd](#lighttpd)
+    *   [3.1 PHP setup](#PHP_setup)
+    *   [3.2 Database setup](#Database_setup)
+        *   [3.2.1 MariaDB](#MariaDB)
+        *   [3.2.2 PostgreSQL](#PostgreSQL)
+    *   [3.3 Web server setup](#Web_server_setup)
+        *   [3.3.1 Apache](#Apache)
+            *   [3.3.1.1 WebDAV](#WebDAV)
+        *   [3.3.2 Nginx](#Nginx)
+        *   [3.3.3 lighttpd](#lighttpd)
+    *   [3.4 Create data storage directory](#Create_data_storage_directory)
+    *   [3.5 Fix apps directory permissions](#Fix_apps_directory_permissions)
 *   [4 Initialize](#Initialize)
-    *   [4.1 Create storage directories](#Create_storage_directories)
-    *   [4.2 Configure caching](#Configure_caching)
+    *   [4.1 Configure caching](#Configure_caching)
 *   [5 Security Hardening](#Security_Hardening)
     *   [5.1 uWSGI](#uWSGI)
         *   [5.1.1 Activation](#Activation)
@@ -89,10 +90,6 @@ Make sure the required components are installed before proceeding.
 
 [Install](/index.php/Install "Install") the [nextcloud](https://www.archlinux.org/packages/?name=nextcloud) package.
 
-## Setup
-
-As stated above, in order to setup Nextcloud, you must set up the appropriate PHP requirements; additionally, you must configure a database and a webserver.
-
 ### Pacman hook
 
 To upgrade the Nextcloud database automatically on updates, you may want to create a [pacman hook](/index.php/Pacman_hook "Pacman hook"):
@@ -111,6 +108,10 @@ Description = Update Nextcloud installation
 When = PostTransaction
 Exec = /usr/bin/runuser -u http -- /usr/bin/php /usr/share/webapps/nextcloud/occ upgrade
 ```
+
+## Setup
+
+As stated above, in order to setup Nextcloud, you must set up the appropriate PHP requirements; additionally, you must configure a database and a webserver.
 
 ### PHP setup
 
@@ -138,9 +139,9 @@ It is recommended to set up an own database and user when using [MariaDB](/index
 
  `$ mysql -u root -p` 
 ```
-mysql> CREATE DATABASE `**nextcloud**` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
-mysql> CREATE USER `**nextcloud**`@'localhost' IDENTIFIED BY '**password'**;
-mysql> GRANT ALL PRIVILEGES ON `**nextcloud**`.* TO `**nextcloud**`@`localhost`;
+mysql> CREATE DATABASE **nextcloud** DEFAULT CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci';
+mysql> GRANT ALL PRIVILEGES ON **nextcloud**.* TO '**nextcloud'**@'localhost' IDENTIFIED BY '**password'**;
+mysql> FLUSH PRIVILEGES;
 mysql> \q
 ```
 
@@ -163,7 +164,7 @@ Enter it again:
 
 ### Web server setup
 
-**Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS](/index.php/Apache#TLS "Apache") or [Nginx#TLS](/index.php/Nginx#TLS "Nginx") for examples and implement this in the examples given below.
+**Warning:** It is recommended to use HTTPS instead of plain HTTP, see [Apache#TLS](/index.php/Apache#TLS "Apache") or [Nginx#TLS](/index.php/Nginx#TLS "Nginx") for examples and implement this in the examples given below.
 
 Depending on which [web server](/index.php/Web_server "Web server") you are using, further setup is required, indicated below.
 
@@ -248,32 +249,36 @@ Enable [lighttpd#FastCGI](/index.php/Lighttpd#FastCGI "Lighttpd"), e.g. by addin
 
 Create a link to `/usr/share/webapps/nextcloud` in your `/srv/http/` directory (or configured root).
 
-## Initialize
+### Create data storage directory
 
-Open the address where you have installed Nextcloud in a web browser (e.g., [https://www.example.com/nextcloud](https://www.example.com/nextcloud)).
+Nextcloud needs a directory to store all user files, which has to be writable for the web server. It is recommended to put this directory somewhere outside of `/usr`, e.g. `/var/nextcloud`.
 
-### Create storage directories
-
-To give webserver read/write access to the *apps* directory (e.g. on "Cannot write into "apps" directory"), setup the correct permissions:
-
-**Note:** Replace `http` when using a different [user](/index.php/User "User")/[user group](/index.php/User_group "User group") for the webserver.
+**Note:** Replace `http` when using a different [user](/index.php/User "User")/[user group](/index.php/User_group "User group") for the web server.
 
 ```
-# mkdir -p /usr/share/webapps/nextcloud/data
-# chown http:http /usr/share/webapps/nextcloud/data
+# mkdir /var/nextcloud
+# chown http:http /var/nextcloud
+# chmod 750 /var/nextcloud
+
+```
+
+### Fix apps directory permissions
+
+To give the web server read/write access to the *apps* directory (e.g. on "Cannot write into "apps" directory"), setup the correct permissions:
+
+**Note:** Replace `http` when using a different [user](/index.php/User "User")/[user group](/index.php/User_group "User group") for the web server.
+
+```
 # chown -R http:http /usr/share/webapps/nextcloud/apps
-# chmod 750 /usr/share/webapps/nextcloud/data
 # chmod 750 /usr/share/webapps/nextcloud/apps
 
 ```
 
-To overrule the data directory on the current setup, [append](/index.php/Append "Append") `datadirectory` to `/etc/webapps/nextcloud/config/config.php` before the closing tag `);`:
+## Initialize
 
- `/etc/webapps/nextcloud/config/config.php`  `'datadirectory' => '/usr/share/webapps/nextcloud/data'` 
+Open the address where you have installed Nextcloud in a web browser (e.g., [https://www.example.com/nextcloud](https://www.example.com/nextcloud)). Enter the database details and the location of the data directory (e.g. `/var/nextcloud`) set up above.
 
-If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
-
- `/etc/httpd/conf/extra/nextcloud.conf`  `php_admin_value open_basedir "*/path/to/data/*:/srv/http/:/dev/urandom:/tmp/:/usr/share/pear/:/usr/share/webapps/nextcloud/:/etc/webapps/nextcloud"` 
+If you get the error message "Cannot write into "apps" directory", make sure you followed [#Fix apps directory permissions](#Fix_apps_directory_permissions) above.
 
 ### Configure caching
 
@@ -708,7 +713,7 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 
 ### "Cannot write into apps directory"
 
-As mentioned in the [official admin manual](https://docs.nextcloud.com/server/latest/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+As mentioned in the [official admin manual](https://docs.nextcloud.com/server/latest/admin_manual/apps_management.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
 If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
 

@@ -2,7 +2,11 @@
 
 [Vimprobable](http://www.vimprobable.org/) is a WWW browser that behaves like the Vimperator plugin available for Mozilla [Firefox](/index.php/Firefox "Firefox"). It is based on the WebKit engine (using GTK bindings). It is a fork of the currently abandoned vimpression.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Install](#Install)
 *   [2 Configuration](#Configuration)

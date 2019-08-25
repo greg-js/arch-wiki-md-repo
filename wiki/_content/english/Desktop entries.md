@@ -11,6 +11,7 @@ The [XDG Desktop Entry specification](https://specifications.freedesktop.org/des
     *   [2.1 File example](#File_example)
     *   [2.2 Key definition](#Key_definition)
     *   [2.3 Validation](#Validation)
+    *   [2.4 Update database of desktop entries](#Update_database_of_desktop_entries)
 *   [3 Icons](#Icons)
     *   [3.1 Common image formats](#Common_image_formats)
     *   [3.2 Converting icons](#Converting_icons)
@@ -126,6 +127,15 @@ $ desktop-file-validate <*your desktop file*>
 ```
 
 This will give you very verbose and useful warnings and error messages.
+
+### Update database of desktop entries
+
+To make desktop entries defined in `~/.local/share/applications` work, run the following command:
+
+```
+$ update-desktop-database ~/.local/share/applications
+
+```
 
 ## Icons
 

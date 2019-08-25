@@ -76,9 +76,9 @@ Depending on the language you wish to type, other input method engines are avail
 
 ### Input method module
 
-To obtain a better experience in Gtk+ and Qt programs, install the [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://aur.archlinux.org/packages/fcitx-qt4/) and [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5) input method modules as your need, or the [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) group to install all of them. Without those modules, the input method may work on most applications but you may experience input method hang up, preview window screen location error or no preview error.
+To obtain a better experience in GTK and Qt programs, install the [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2), [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3), [fcitx-qt4](https://aur.archlinux.org/packages/fcitx-qt4/) and [fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5) input method modules as your need, or the [fcitx-im](https://www.archlinux.org/groups/x86_64/fcitx-im/) group to install all of them. Without those modules, the input method may work on most applications but you may experience input method hang up, preview window screen location error or no preview error.
 
-Applications below do not use Gtk+/Qt input module:
+Applications below do not use GTK/Qt input module:
 
 *   Applications use Tk, motif or xlib
 *   Emacs, Opera, OpenOffice, LibreOffice, Skype, Wine, Java, Xterm, urxvt, WPS
@@ -129,7 +129,7 @@ If *fcitx* process does not start automatically, you might need to add `fcitx &`
 
 ### XIM
 
-Optionally, you can use the [X Input Method](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") (XIM) in your GTK+ and/or Qt programs without installing the above modules in which case you need to change the corresponding lines above as following:
+Optionally, you can use the [X Input Method](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") (XIM) in your GTK and/or Qt programs without installing the above modules in which case you need to change the corresponding lines above as following:
 
 ```
 GTK_IM_MODULE=xim
@@ -137,7 +137,7 @@ QT_IM_MODULE=xim
 
 ```
 
-**Warning:** Using XIM can sometimes cause problems including not being able to input, no cursor following, word selection window issue, application freeze on input method restart. For these XIM related problems, Fcitx cannot provide any fix or support. This is the same with any other input method framework, so please use the GTK+ and Qt input method modules instead of xim whenever possible
+**Warning:** Using XIM can sometimes cause problems including not being able to input, no cursor following, word selection window issue, application freeze on input method restart. For these XIM related problems, Fcitx cannot provide any fix or support. This is the same with any other input method framework, so please use the GTK and Qt input method modules instead of xim whenever possible
 
 **Note:** Gtk2 uses `/usr/lib/gtk-2.0/2.10.0/immodules.cache` as immodule cache file since 2.24.20\. If you have set `GTM_IM_MODULE_FILE` environment variable or do not use install script of official packages to update the cache, please change/clear the environment variable and use `/usr/bin/gtk-query-immodules-2.0 --update-cache` to update immodule cache.
 

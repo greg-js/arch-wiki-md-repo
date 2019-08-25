@@ -240,6 +240,10 @@ Its author recommends a few [suggested settings](https://github.com/krakjoe/apcu
 
 ## Development tools
 
+*   **Visual Studio Code** — Code Editor for programming PHP and other languages.
+
+	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
+
 *   **Aptana Studio** — IDE for programming in PHP and web development. Does not have a PHP debugger.
 
 	[http://www.aptana.com/products/studio3.html](http://www.aptana.com/products/studio3.html) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)

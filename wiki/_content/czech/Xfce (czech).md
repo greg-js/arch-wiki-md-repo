@@ -1,26 +1,30 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Co je Xfce?](#Co_je_Xfce.3F)
-*   [2 Proč používat Xfce?](#Pro.C4.8D_pou.C5.BE.C3.ADvat_Xfce.3F)
-*   [3 Proč nepoužívat Xfce?](#Pro.C4.8D_nepou.C5.BE.C3.ADvat_Xfce.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Co je Xfce?](#Co_je_Xfce?)
+*   [2 Proč používat Xfce?](#Proč_používat_Xfce?)
+*   [3 Proč nepoužívat Xfce?](#Proč_nepoužívat_Xfce?)
 *   [4 Jak nainstalovat Xfce](#Jak_nainstalovat_Xfce)
-*   [5 Spouštění Xfce](#Spou.C5.A1t.C4.9Bn.C3.AD_Xfce)
-*   [6 Jak používat Xfce spolu se správci displeje](#Jak_pou.C5.BE.C3.ADvat_Xfce_spolu_se_spr.C3.A1vci_displeje)
-*   [7 Jak vypínat a restartovat z Xfce](#Jak_vyp.C3.ADnat_a_restartovat_z_Xfce)
+*   [5 Spouštění Xfce](#Spouštění_Xfce)
+*   [6 Jak používat Xfce spolu se správci displeje](#Jak_používat_Xfce_spolu_se_správci_displeje)
+*   [7 Jak vypínat a restartovat z Xfce](#Jak_vypínat_a_restartovat_z_Xfce)
 *   [8 Tipy](#Tipy)
-    *   [8.1 Příkazy pro správce nastavení](#P.C5.99.C3.ADkazy_pro_spr.C3.A1vce_nastaven.C3.AD)
-    *   [8.2 Vysouvací konzole jako ve Quake](#Vysouvac.C3.AD_konzole_jako_ve_Quake)
-    *   [8.3 Jak zapnout kompozitor (Xfce 4.4)](#Jak_zapnout_kompozitor_.28Xfce_4.4.29)
-    *   [8.4 Proč se moje plocha neobnovuje?](#Pro.C4.8D_se_moje_plocha_neobnovuje.3F)
-    *   [8.5 Průhledné pozadí pro popisky ikon na ploše](#Pr.C5.AFhledn.C3.A9_pozad.C3.AD_pro_popisky_ikon_na_plo.C5.A1e)
-    *   [8.6 Jak si přizpůsobit pozadí panelu Xfce](#Jak_si_p.C5.99izp.C5.AFsobit_pozad.C3.AD_panelu_Xfce)
-    *   [8.7 Jak si přizpůsobit spouštění Xfce](#Jak_si_p.C5.99izp.C5.AFsobit_spou.C5.A1t.C4.9Bn.C3.AD_Xfce)
-    *   [8.8 Jak do Xfce přidat témata](#Jak_do_Xfce_p.C5.99idat_t.C3.A9mata)
-    *   [8.9 Jak odstranit položky ze systémového menu](#Jak_odstranit_polo.C5.BEky_ze_syst.C3.A9mov.C3.A9ho_menu)
-        *   [8.9.1 Ale co dělat s položkami menu, které nejsou v /usr/share/applications?](#Ale_co_d.C4.9Blat_s_polo.C5.BEkami_menu.2C_kter.C3.A9_nejsou_v_.2Fusr.2Fshare.2Fapplications.3F)
-    *   [8.10 Jak dosáhnout toho, aby spolupracovaly xfce4-mixer a OSS4 (Xfce 4.4 a starší)](#Jak_dos.C3.A1hnout_toho.2C_aby_spolupracovaly_xfce4-mixer_a_OSS4_.28Xfce_4.4_a_star.C5.A1.C3.AD.29)
-*   [9 Související články](#Souvisej.C3.ADc.C3.AD_.C4.8Dl.C3.A1nky)
-*   [10 Externí zdroje](#Extern.C3.AD_zdroje)
+    *   [8.1 Příkazy pro správce nastavení](#Příkazy_pro_správce_nastavení)
+    *   [8.2 Vysouvací konzole jako ve Quake](#Vysouvací_konzole_jako_ve_Quake)
+    *   [8.3 Jak zapnout kompozitor (Xfce 4.4)](#Jak_zapnout_kompozitor_(Xfce_4.4))
+    *   [8.4 Proč se moje plocha neobnovuje?](#Proč_se_moje_plocha_neobnovuje?)
+    *   [8.5 Průhledné pozadí pro popisky ikon na ploše](#Průhledné_pozadí_pro_popisky_ikon_na_ploše)
+    *   [8.6 Jak si přizpůsobit pozadí panelu Xfce](#Jak_si_přizpůsobit_pozadí_panelu_Xfce)
+    *   [8.7 Jak si přizpůsobit spouštění Xfce](#Jak_si_přizpůsobit_spouštění_Xfce)
+    *   [8.8 Jak do Xfce přidat témata](#Jak_do_Xfce_přidat_témata)
+    *   [8.9 Jak odstranit položky ze systémového menu](#Jak_odstranit_položky_ze_systémového_menu)
+        *   [8.9.1 Ale co dělat s položkami menu, které nejsou v /usr/share/applications?](#Ale_co_dělat_s_položkami_menu,_které_nejsou_v_/usr/share/applications?)
+    *   [8.10 Jak dosáhnout toho, aby spolupracovaly xfce4-mixer a OSS4 (Xfce 4.4 a starší)](#Jak_dosáhnout_toho,_aby_spolupracovaly_xfce4-mixer_a_OSS4_(Xfce_4.4_a_starší))
+*   [9 Související články](#Související_články)
+*   [10 Externí zdroje](#Externí_zdroje)
 
 ## Co je Xfce?
 

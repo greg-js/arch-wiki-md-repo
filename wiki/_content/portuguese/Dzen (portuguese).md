@@ -1,4 +1,4 @@
-[Dzen](http://robm.github.com/dzen/) é um programa de propósito geral para notificações, menus e barras para o X11\. Ele foi feito para ser rápido, leve e programável em qualquer linguagem de programação.
+[Dzen](http://robm.github.com/dzen/) é "um programa de propósito geral para notificações, menus e barras para o X11\. Ele foi feito para ser rápido, leve e programável em qualquer linguagem de programação e se integra bem com gerenciadores de janela como [dwm](/index.php/Dwm "Dwm"), [wmii](/index.php/Wmii "Wmii") e [xmonad](/index.php/Xmonad "Xmonad") apesar de que vai funcionar com qualquer gerenciador de janela."
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -23,16 +23,15 @@
 *   [3 Configuração](#Configuração)
 *   [4 Dicas e truques](#Dicas_e_truques)
     *   [4.1 Dzen e Conky](#Dzen_e_Conky)
-    *   [4.2 Áreas clicáveis e popups](#Áreas_clicáveis_e_popups)
-    *   [4.3 Gadgets](#Gadgets)
-        *   [4.3.1 dbar](#dbar)
-        *   [4.3.2 gdbar](#gdbar)
-        *   [4.3.3 Outros](#Outros)
+    *   [4.2 Gadgets](#Gadgets)
+        *   [4.2.1 dbar](#dbar)
+        *   [4.2.2 gdbar](#gdbar)
+        *   [4.2.3 Outros](#Outros)
 *   [5 Veja também](#Veja_também)
 
 ## Instalação
 
-[Instale](/index.php/Instale "Instale") o pacote [dzen2](https://www.archlinux.org/packages/?name=dzen2) que está disponível nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") e inclui suporte a Xft, Xpm e Xinerama.
+[Instale](/index.php/Instale "Instale") o pacote [dzen2](https://www.archlinux.org/packages/?name=dzen2) que inclui suporte a Xft, Xpm e Xinerama.
 
 ## Uso
 
@@ -373,21 +372,6 @@ Criando um script em [shell script](https://en.wikipedia.org/wiki/pt:Shell_scrip
 ```
 
 Agora execute o script `~/dzconky`.
-
-### Áreas clicáveis e popups
-
-O dzen2 permite você criar áreas clicáveis usando `^ca(*botão*, *comando*)Texto^ca()`.
-
-Um exemplo simples:
-
-```
-$ echo "^ca(1, uname -a) Clique Aqui ^ca()" | dzen2 -p
-
-```
-
-Ao clicar em *Clique Aqui* no dzen, ele irá imprimir a saída do comando *uname -a* no seu terminal.
-
-**Nota:** *^ca(1...* o numero será o botão do mouse. 1 é o botão esquerdo, 2 o scroll (clique), 3 o botão direito, 4 e 5 scrollup/scrolldown respectivamente.
 
 ### Gadgets
 

@@ -188,7 +188,7 @@ By default, only English language dictionaries are installed. More dictionaries 
 
 ### Saving runtime state
 
-Normally, exiting `vim` discards all unessential information such as opened files, command line history, yanked text etc. Preserving these information can be configured in the following ways.
+Normally, exiting `vim` discards all unessential information such as opened files, command line history, yanked text etc. Preserving this information can be configured in the following ways.
 
 #### viminfo files
 

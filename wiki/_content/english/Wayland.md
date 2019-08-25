@@ -23,7 +23,7 @@ Related articles
         *   [2.4.1 Screencast recording](#Screencast_recording)
         *   [2.4.2 Window switching](#Window_switching)
 *   [3 GUI libraries](#GUI_libraries)
-    *   [3.1 GTK+ 3](#GTK+_3)
+    *   [3.1 GTK 3](#GTK_3)
     *   [3.2 Qt 5](#Qt_5)
     *   [3.3 Clutter](#Clutter)
     *   [3.4 SDL2](#SDL2)
@@ -299,9 +299,9 @@ To switch windows with `Super+Space` instead of `Super+Tab` change `KEY_TAB` to 
 
 See details on the [official website](http://wayland.freedesktop.org/toolkits.html).
 
-### GTK+ 3
+### GTK 3
 
-The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Wayland backend enabled. GTK+ will default to the Wayland backend, but it is possible to override it to Xwayland by modifying an environment variable: `GDK_BACKEND=x11`.
+The [gtk3](https://www.archlinux.org/packages/?name=gtk3) package has the Wayland backend enabled. GTK will default to the Wayland backend, but it is possible to override it to Xwayland by modifying an environment variable: `GDK_BACKEND=x11`.
 
 ### Qt 5
 

@@ -339,7 +339,7 @@ polkit.addRule(function(action, subject) {
 
 ### Configurações de proxy
 
-O NetworkManager não lida diretamente com configurações de proxy, mas se você estiver usando o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE "KDE"), você pode usar o [proxydriver](http://marin.jb.free.fr/proxydriver/) que lida com configurações de proxy usando Informações do NetworkManager. O proxydriver é encontrado no pacote [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
+O NetworkManager não lida diretamente com configurações de proxy, mas se você estiver usando o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE_(Portugu%C3%AAs) "KDE (Português)"), você pode usar o [proxydriver](http://marin.jb.free.fr/proxydriver/) que lida com configurações de proxy usando Informações do NetworkManager. O proxydriver é encontrado no pacote [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
 Para que o *proxydriver* possa alterar as configurações do proxy, você precisaria executar este comando, como parte do processo de inicialização do GNOME (veja [GNOME (Português)#Inicialização automática](/index.php/GNOME_(Portugu%C3%AAs)#Inicialização_automática "GNOME (Português)")):
 
