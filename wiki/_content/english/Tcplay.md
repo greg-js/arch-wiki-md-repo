@@ -99,7 +99,7 @@ To reverse them:
 
 ## Using tcplay-helper
 
-The [tcplay-helper-git](https://aur.archlinux.org/packages/tcplay-helper-git/) tool simplifies the process of creating, mounting and unmounting tc-play containers. The tool is still a work-in-progress, but should work fine for most users wanting to work with simple secure tc-play containers.
+The [tcplay-helper](https://github.com/robertmuil/tcplay-helper) script simplifies the process of creating, mounting and unmounting tc-play containers. The script is basic, but should work fine for most users wanting to work with simple secure tc-play containers.
 
 The following command creates a 3Mb container called foo.tc.
 

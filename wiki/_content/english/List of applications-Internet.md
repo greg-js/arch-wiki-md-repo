@@ -320,7 +320,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium).
 
-	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
+	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium-deb](https://aur.archlinux.org/packages/iridium-deb/)
 
 *   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
 
@@ -390,7 +390,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Beaker** — Peer-to-peer web browser with tools to create and host websites. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker-browser](https://aur.archlinux.org/packages/beaker-browser/)
+	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker](https://aur.archlinux.org/packages/beaker/)
 
 *   **Min** — A smarter, faster web browser based on the [Electron](https://electronjs.org/) platform.
 
@@ -946,7 +946,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **Fragments** — Easy to use BitTorrent client which follows the GNOME HIG and includes well thought-out features.
 
-	[https://gitlab.gnome.org/haecker-felix/Fragments](https://gitlab.gnome.org/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
+	[https://gitlab.gnome.org/World/Fragments](https://gitlab.gnome.org/World/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
@@ -960,7 +960,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
-*   **[Tixati](https://en.wikipedia.org/wiki/Tixati "wikipedia:Tixati")** — Tixati is a peer-to-peer file sharing program that uses the popular BitTorrent protocol.
+*   **[Tixati](https://en.wikipedia.org/wiki/Tixati "wikipedia:Tixati")** — Proprietary peer-to-peer file sharing program that uses the popular BitTorrent protocol.
 
 	[https://tixati.com/](https://tixati.com/) || [tixati](https://aur.archlinux.org/packages/tixati/)
 
@@ -1034,7 +1034,7 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 
 Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
 
-**Tip:** You can access the [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to sprunge: `*command* | curl -F c=@- https://sprunge.us ` or upload a file (including images): `curl -F c=@- https://sprunge.us < *file*` 
+**Tip:** You can access the [ix.io](http://ix.io/) pastebin using curl. For example pipe the output of a command to ix.io: `*command* | curl -F 'f:1=<-' ix.io ` or upload a file: `curl -F 'f:1=<-' ix.io < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
 
@@ -1521,7 +1521,7 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 *   **[Banji](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. KDE client, formerly known as Ring KDE.
 
-	[https://kde.org/applications/internet/org.kde.ring-kde](https://kde.org/applications/internet/org.kde.ring-kde) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
+	[https://kde.org/applications/internet/org.kde.ring-kde](https://kde.org/applications/internet/org.kde.ring-kde) || [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
@@ -1641,10 +1641,6 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 	[https://github.com/sindresorhus/caprine](https://github.com/sindresorhus/caprine) || [caprine](https://www.archlinux.org/packages/?name=caprine)
 
-*   **[Cryptocat](https://en.wikipedia.org/wiki/Cryptocat "wikipedia:Cryptocat")** — Free software with a simple mission: everyone should be able to chat with their friends in privacy. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://crypto.cat/](https://crypto.cat/) || [cryptocat](https://aur.archlinux.org/packages/cryptocat/)
-
 *   **[Discord](/index.php/Discord "Discord")** — Proprietary all-in-one voice and text chat application for gamers that’s free and works on both your desktop and phone.
 
 	[https://discordapp.com/](https://discordapp.com/) || [discord](https://www.archlinux.org/packages/?name=discord)
@@ -1752,6 +1748,10 @@ See also [Wikipedia:Comparison of Internet Relay Chat daemons](https://en.wikipe
 *   **[UnrealIRCd](/index.php/UnrealIRCd "UnrealIRCd")** — Open Source IRC Server.
 
 	[https://www.unrealircd.org/](https://www.unrealircd.org/) || [unrealircd](https://www.archlinux.org/packages/?name=unrealircd)
+
+*   **ngIRCd** — A free, portable and lightweight Internet Relay Chat server for small or private networks.
+
+	[https://ngircd.barton.de/](https://ngircd.barton.de/) || [ngircd](https://www.archlinux.org/packages/?name=ngircd)
 
 ##### XMPP servers
 
@@ -1880,6 +1880,10 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 *   **Snownews** — Text mode RSS news reader.
 
 	[https://github.com/kouya/snownews](https://github.com/kouya/snownews) || [snownews](https://aur.archlinux.org/packages/snownews/)
+
+*   **sfeed** — Lightweight RSS and Atom parser.
+
+	[https://codemadness.org/sfeed-simple-feed-parser.html](https://codemadness.org/sfeed-simple-feed-parser.html) || [sfeed-git](https://aur.archlinux.org/packages/sfeed-git/)
 
 ##### Graphical
 

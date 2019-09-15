@@ -431,8 +431,8 @@ auth            required        pam_unix.so
 **account [default=bad success=ok user_unknown=ignore authinfo_unavail=ignore] pam_sss.so**
 account         required        pam_unix.so
 
-**session         required        pam_unix.so**
-session optional pam_sss.so
+session         required        pam_unix.so
+**session optional pam_sss.so**
 ```
 
 ##### 1\. SUDO Configuration

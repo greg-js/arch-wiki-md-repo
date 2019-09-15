@@ -82,6 +82,8 @@ Before installing, disable [Secure Boot](/index.php/Secure_Boot "Secure Boot") i
 
 X works natively with a current [linux](https://www.archlinux.org/packages/?name=linux) and [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu).
 
+If you are having video issues with only the [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) installed, also install the AMD PRO package [amdgpu-pro-libgl](https://aur.archlinux.org/packages/amdgpu-pro-libgl/). See [AMDGPU](/index.php/AMDGPU "AMDGPU")
+
 ### Sound
 
 Sound works with PulseAudio in linux 4.15-1 from testing repos.

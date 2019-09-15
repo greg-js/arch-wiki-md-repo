@@ -56,7 +56,7 @@ Other lesser-known alternatives can be found in the AUR:
 
 *   **keeweb** — A web app (online / Electron) compatible with KeePass 2.x. KeeWeb is the only version with default Sync support for major cloud services, Gdrive, Onedrive, Dropbox etc...
 
-	[https://keeweb.info](https://keeweb.info) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)
+	[https://keeweb.info](https://keeweb.info) || [keeweb](https://aur.archlinux.org/packages/keeweb/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)
 
 ## Integration
 

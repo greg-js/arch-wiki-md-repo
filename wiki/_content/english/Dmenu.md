@@ -2,7 +2,7 @@ Related articles
 
 *   [List of applications/Other#Application launchers](/index.php/List_of_applications/Other#Application_launchers "List of applications/Other")
 
-[dmenu](http://tools.suckless.org/dmenu) is a fast and lightweight dynamic menu for X. It reads arbitrary text from stdin, and creates a menu with one item for each line. The user can then select an item, through the arrow keys or typing a part of the name, and the line is printed to stdout. dmenu_run is a wrapper that ships with the dmenu distribution that allows its use as an application launcher.
+[dmenu](http://tools.suckless.org/dmenu) is a fast and lightweight dynamic menu for X. It reads arbitrary text from stdin, and creates a menu with one item for each line. The user can then select an item, through the arrow keys or typing a part of the name, and the line is printed to stdout. *dmenu_run* is a wrapper that ships with the dmenu distribution that allows its use as an application launcher.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -44,7 +44,8 @@ Now, you will want to attach the `dmenu_run` command to a keystroke combination.
 
 ### Displaying Custom Items
 
-Custom items may be shown by piping them into *dmenu*. For example:
+Custom items will be shown by separating them with a new line (*
+*) and piping them into *dmenu*. For example:
 
 ```
 $ echo -e "first

@@ -2,12 +2,16 @@
 
 **Note:** The FUSE-based [SSHFS](/index.php/SSHFS "SSHFS") is much more widely used, as shfs has not been updated since 2004.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Why SHFS?](#Why_SHFS.3F)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Why SHFS?](#Why_SHFS?)
 *   [2 Installation](#Installation)
 *   [3 Configuration](#Configuration)
-    *   [3.1 /etc/fstab](#.2Fetc.2Ffstab)
+    *   [3.1 /etc/fstab](#/etc/fstab)
 *   [4 See Also](#See_Also)
 *   [5 External Links](#External_Links)
 

@@ -3,7 +3,7 @@
 There are several ways to achieve this on Linux:
 
 *   [Video Acceleration API](https://www.freedesktop.org/wiki/Software/vaapi/) (VA-API) is a specification and open source library to provide both hardware accelerated video encoding and decoding, developed by Intel.
-*   [Video Decode and Presentation API for Unix](https://www.freedesktop.org/wiki/Software/VDPAU/) (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA. VDPAU has not been updated since September 2015.
+*   [Video Decode and Presentation API for Unix](https://www.freedesktop.org/wiki/Software/VDPAU/) (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA.
 *   [NVDECODE/NVENCODE](https://developer.nvidia.com/nvidia-video-codec-sdk) - proprietary APIs for hardware video acceleration used by NVIDIA Fermi, Kepler, Maxwell and Pascal generation GPUs.
 
 For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive overview of driver and application support see [#Comparison tables](#Comparison_tables).
@@ -40,8 +40,8 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive o
 
 [Intel graphics](/index.php/Intel_graphics "Intel graphics") open-source drivers support VA-API:
 
-*   HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
-*   GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
+*   HD Graphics series starting from [Broadwell](https://github.com/intel/media-driver/#supported-platforms) [(~2015)](https://en.wikipedia.org/wiki/Template:Intel_processor_roadmap) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
+*   GMA 4500 [series](https://01.org/linuxmedia/vaapi) and newer GPUs up to [Coffee Lake](https://en.wikipedia.org/wiki/Coffee_Lake) are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 *   GMA 4500 H.264 decoding is supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/), see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
 *   Broadwell to Skylake VP9 decoding and Haswell to Skylake hybrid VP8 encoding is supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [VP9 decoding on Haswell crashes](https://github.com/intel/intel-hybrid-driver/issues/21).
 
@@ -274,7 +274,7 @@ GeForce 8 and newer | Radeon HD 4000 and newer |
 | H.265/HEVC 10bit | Broxton and newer | Broxton/Apollo Lake and newer | Radeon 400 and newer |
 | VP8 | Broadwell and newer | Broadwell and newer | No | No |
 | VP9 8bit | Broxton and newer
-Hybrid: Broadwell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer |
+Hybrid: Broadwell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer | See [#VDPAU drivers](#VDPAU_drivers) |
 | VP9 10bit | Kaby Lake and newer | Kaby Lake and newer |
 | Encoding |
 | MPEG-2 | Ivy Bridge and newer | Broadwell and newer
@@ -307,6 +307,7 @@ GeForce 9300 and newer | GeForce 8 and newer |
 GeForce 8 and newer | GeForce 8 and newer | See [#VA-API drivers](#VA-API_drivers) |
 | H.265/HEVC 8bit | Radeon R9 Fury and newer | GeForce 900 and newer | No |
 | H.265/HEVC 10bit | Radeon 400 and newer | No |
+| VP9 | No | No | No |
 
 *   Up until GeForce GTX 750.
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).

@@ -164,6 +164,17 @@ The URI can also be generated manually, without using [Avahi](/index.php/Avahi "
 
 The URI for printers on [SMB](/index.php/SMB "SMB") shares is described in the [smbspool(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smbspool.8) man page.
 
+**Note:** Any special characters in the printer URIs need to be appropriately quoted, or, if your Windows printer name or user passwords have spaces, CUPS will throw a `lpadmin: Bad device-uri` error.
+
+For example, `smb://BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6` becomes `smb://BEN-DESKTOP/HP%20Color%20LaserJet%20CP1510%20series%20PCL6`.
+
+This result string can be obtained by running the following command:
+
+```
+$ python -c 'from urllib.parse import quote; print("smb://" + quote("BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6"))'
+
+```
+
 Remote CUPS print servers can be accessed through a URI of the form `ipp://*hostname*:631/printers/*queue_name*`. See [CUPS/Printer sharing#Printer sharing](/index.php/CUPS/Printer_sharing#Printer_sharing "CUPS/Printer sharing") for details on setting up the remote print server.
 
 See [CUPS/Troubleshooting#Networking issues](/index.php/CUPS/Troubleshooting#Networking_issues "CUPS/Troubleshooting") for additional issues and solutions.
@@ -357,7 +368,7 @@ If your user does not have sufficient privileges to administer CUPS, the applica
 
 The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cups/cups-files.conf` (see [cupsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5) and [cups-files.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cups-files.conf.5)). After editing either file, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
 
-[User groups](/index.php/User_group "User group") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` and `root` [groups](/index.php/Groups "Groups") are used by default.
+[User groups](/index.php/User_group "User group") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` and `root` and `wheel` [groups](/index.php/Groups "Groups") are used by default.
 
 [cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 

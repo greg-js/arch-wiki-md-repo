@@ -1,6 +1,10 @@
 This article covers the installation and configuration of Arch Linux on a Lenovo T420 laptop.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Hardware](#Hardware)
@@ -21,14 +25,14 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [4.1 Media Keys](#Media_Keys)
     *   [4.2 Rebind Forward and Back keys](#Rebind_Forward_and_Back_keys)
     *   [4.3 Turn touchpad on and off](#Turn_touchpad_on_and_off)
-    *   [4.4 Volume up/down not changing volume](#Volume_up.2Fdown_not_changing_volume)
+    *   [4.4 Volume up/down not changing volume](#Volume_up/down_not_changing_volume)
     *   [4.5 Shutdown on battery](#Shutdown_on_battery)
     *   [4.6 Hang on reboot](#Hang_on_reboot)
 *   [5 See also](#See_also)
 
 ## Installation
 
-This laptop supports [UEFI](/index.php/UEFI "UEFI") as well as the traditional BIOS.
+This laptop supports [UEFI](/index.php/UEFI "UEFI") as well as the traditional BIOS. If you use Legacy Boot (traditional BIOS) or UEFI/Legacy Boot, choose an MBR partition table when partitioning the disk, because those modes are not compatible with GPT partition tables on the T420.
 
 There are no issues with installing Arch Linux with the latest [Archiso](https://www.archlinux.org/download/).
 

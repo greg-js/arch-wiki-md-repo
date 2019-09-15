@@ -26,7 +26,7 @@ This article describes how to modify and create keyboard layouts. If you are loo
 *   [5 Basic examples](#Basic_examples)
     *   [5.1 Simple key assignment](#Simple_key_assignment)
     *   [5.2 Multiple layouts](#Multiple_layouts)
-    *   [5.3 Caps hjkl as vim keys](#Caps_hjkl_as_vim_keys)
+    *   [5.3 Caps hjkl as vimlike arrow keys](#Caps_hjkl_as_vimlike_arrow_keys)
     *   [5.4 Additional symbols](#Additional_symbols)
         *   [5.4.1 Compose key](#Compose_key)
         *   [5.4.2 Level3](#Level3)
@@ -467,24 +467,25 @@ Adjust ISO_Group_Latch definition in xkb_compatibility section to use the right 
 
 Check /usr/share/X11/xkb/symbols/group for more standard examples.
 
-### Caps hjkl as vim keys
+### Caps hjkl as vimlike arrow keys
 
-In order to rebind caps h,j,k,l to vim's arrow keys, we could naively replace symbols in the symbols section, but this would not clear any modifiers. Clearing modifiers is trickier. This method allows linux users to achieve functionality akin to AHK's blind command. We can clear modifiers when an action is triggered in compatibility if we redirect a dummy keysym to the one we want and use clearmodifiers while we do it:
+Some users may wish to rebind the arrow keys to a more accessible location, while also being able to use keyboard shortcuts. However, keyboard shortcuts require an exact match of modifiers, and using a modifier to access the arrow keys can obstruct the use of these keyboard shortcuts. For example, `Caps+Shift+Left` does not give the same behaviour as `Shift+Left`, but the former key combination is what is sent by the naive rebinding. This configuration allows users to use the arrows in shortcuts, such as highlighting text from the main keyboard (`Shift+Caps+h`), or changing chats in most messengers (`Alt+Caps+j`). The keysyms produced should be identical to pressing the key on your keyboard. This method allows linux users to achieve functionality akin to AHK's blind command. This method requires the use of additional keysyms, but it is not too hard to find extras in `/usr/include/X11/keysymdef.h`.
+
+Clearing modifiers when an action is triggered can be done in `xkb_compatibility` if some dummy keysym (`osfLeft` is redirected to the desired keycode (`<LEFT>`) with a `clearmodifiers` argument.
 
 ```
  xkb_compatibility "complete" {
    ...
-   interpret osfLeft {
+   interpret osfLeft {                                              // Note that osfLeft is a keysym of its own, not a modified Left. You can swap it for any unused one.
        repeat= True;
-       action = RedirectKey(keycode=<LEFT>, clearmodifiers=Lock);
-   };
+       action = RedirectKey(keycode=<LEFT>, clearmodifiers=Lock);   // We could add a modifiers=... argument if adding additional modifiers was desired
  };
 
 ```
 
-Now, when the keysym osfLeft is seen, it is redirected to the keycode that we really want to use, LEFT. This method requires having extra keysyms, but it is not too hard to find extras.
+When the keysym osfLeft is triggered, it is now redirected to the keycode `<LEFT>`. Note that `osfLeft` is used purely for readability, and any unused keysym will work identically.
 
-To use this, you need to update your types to include some sort of type for caps and shift so that: When we press nothing, we go to the first level (lowercase letters). When we press Shift, we go to the second level (capital letters). When we press Lock, we go to the third level (our arrow keys) When we press Shift AND Lock, we also go to the third layer. This is so when we press Shift and Lock it actually maps to level 3.
+To use this keysym in your keyboard layout, your `types` section (which defines layer mapping) must contain an entry such that: When no modifiers are pressed, the first level of keysyms is used (lowercase letters). When Shift only is pressed, the second level of keysyms is used (capital letters). When Lock only is pressed, the third level of keysyms is used (the arrow keys) When Shift and Lock are pressed, the third level of keysyms is also used. This is so when Shift and Lock are pressed it maps to level 3 instead of defaulting to level 1.
 
 Add this to the bottom of your types section:
 
@@ -492,9 +493,9 @@ Add this to the bottom of your types section:
  xkb_types "complete" {
    ...
    type "CUST_CAPSLOCK" {
-       modifiers= Shift+Lock;
-       map[Shift] = Level2;
-       map[Shift+Lock] = Level3;
+       modifiers= Shift+Lock; 
+       map[Shift] = Level2;            // Note that this maps Shift only of {Shift,Lock} to Level2\. Alt+Shift will be mapped to Level2
+       map[Shift+Lock] = Level3;       // but Lock+Shift won't map to Level2 even without this line.
        map[Lock] = Level3;
        level_name[Level1]= "Base";
        level_name[Level2]= "Shift";
@@ -504,7 +505,7 @@ Add this to the bottom of your types section:
 
 ```
 
-and then change caps from a lock (toggle) to a set by changing the already existing definition in compatability from LockMods to SetMods:
+and then change caps from a lock (toggle) to a set by modifying the already existing definition in compatability from LockMods to SetMods:
 
 (Note that this means you can't use capslock like normal)
 
@@ -518,7 +519,7 @@ and then change caps from a lock (toggle) to a set by changing the already exist
 
 ```
 
-And we can simply change the symbols entry for h, changing the type and adding the third layer keysym:
+Finally, to direct the h button to send this `osfLeft` keysym, the `xkb_symbols` should be edited:
 
 ```
  xkb_symbols "pc_us_inet(evdev)" {
@@ -530,7 +531,7 @@ And we can simply change the symbols entry for h, changing the type and adding t
 
 ```
 
-Overall, when <AC06> is pressed while caps is held, the Lock modifier is being applied and the osfLeft keysym is changed to a Left keysym and has the Lock modifier removed. We can do this for any other keysyms, and remove any other combination of modifiers we want. This more broadly means users can do things like use the arrows in other shortcuts, like highlighting text from the main keyboard (hold Shift, Caps, and h). You should start selecting text to the left, character by character. The keyboard combination should make it appear exactly as if the key was pressed.
+Now, pressing `Lock+h` should send the `Left` keysym with no modifiers. To summarise, when `<AC06>` and `<CAPS>` keycodes are pressed, the osfLeft keysym is produced, which is redirected to the Left keysym without the Lock modifier. We can do this for any other keysyms, and add or remove any other combination of modifiers desired.
 
 ### Additional symbols
 

@@ -142,7 +142,7 @@ ACTION=="remove", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="05a9", ENV{ID_MODEL_ID}=
 
 ```
 
-Вы можете также указать прямой сисметный путь до устройства:
+Вы можете также указать прямой системный путь до устройства:
 
 ```
 # udevadm test /sys/class/backlight/acpi_video0/

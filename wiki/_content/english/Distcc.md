@@ -21,6 +21,7 @@ Related articles
 *   [4 Compile](#Compile)
     *   [4.1 With makepkg](#With_makepkg)
     *   [4.2 Without makepkg](#Without_makepkg)
+    *   [4.3 With CMake](#With_CMake)
 *   [5 Monitoring progress](#Monitoring_progress)
 *   [6 Cross Compiling with distcc](#Cross_Compiling_with_distcc)
     *   [6.1 Arch Linux ARM](#Arch_Linux_ARM)
@@ -147,6 +148,22 @@ $ pump make -j2 CC="distcc gcc -std=gnu99"
 ```
 
 This example would compile gzip using distcc's pump mode with two compile threads. For the correct `-j` setting have a look at [What -j level to use?](https://cdn.rawgit.com/distcc/distcc/master/doc/web/faq.html)
+
+### With CMake
+
+Use the following CMake options to build a CMake-based project with distcc:
+
+```
+$ cmake -DCMAKE_C_COMPILER_LAUNCHER=distcc -DCMAKE_CXX_COMPILER_LAUNCHER=distcc ...
+
+```
+
+To enable pump mode, use:
+
+```
+$ cmake -DCMAKE_C_COMPILER_LAUNCHER=pump\;distcc -DCMAKE_CXX_COMPILER_LAUNCHER=pump\;distcc ...
+
+```
 
 ## Monitoring progress
 

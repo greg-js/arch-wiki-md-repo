@@ -124,7 +124,7 @@ List files owned by a user or group with the *find* utility:
 
 A file's owning user and group can be changed with the [chown](/index.php/Chown "Chown") (change owner) command. A file's access permissions can be changed with the [chmod](/index.php/Chmod "Chmod") (change mode) command.
 
-See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
+See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/tutorials/understanding-linux-file-permissions) for additional detail.
 
 ## Shadow
 
@@ -163,11 +163,11 @@ To add a new user, use the *useradd* command:
 
 	defines the path and file name of the user's default login shell. After the boot process is complete, the default login shell is the one specified here. Ensure the chosen shell package is installed if choosing something other than [Bash](/index.php/Bash "Bash").
 
-**Warning:** In order to be able to log in, the login shell must be one of those listed in `/etc/shells`, otherwise the [PAM](/index.php/PAM "PAM") module `pam_shell` will deny the login request. In particular, do not use the `/usr/bin/bash` path instead of `/bin/bash`, unless it is properly configured in `/etc/shells`.
+**Warning:** In order to be able to log in, the login shell must be one of those listed in `/etc/shells`, otherwise the [PAM](/index.php/PAM "PAM") module `pam_shell` will deny the login request. In particular, do not use the `/usr/bin/bash` path instead of `/bin/bash`, unless it is properly configured in `/etc/shells`; see [FS#33677](https://bugs.archlinux.org/task/33677).
 
 **Note:** The password for the newly created user must then be defined, using *passwd* as shown in [#Example adding a user](#Example_adding_a_user).
 
-If an initial login group is specified by name or number, it must refer to an already existing group. If not specified, the behaviour of *useradd* will depend on the `USERGROUPS_ENAB` variable contained in `/etc/login.defs`. The default behaviour (`USERGROUPS_ENAB yes`) is to create a group with the same name as the username, with `GID` equal to `UID`.
+If an initial login group is specified by name or number, it must refer to an already existing group. If not specified, the behaviour of *useradd* will depend on the `USERGROUPS_ENAB` variable contained in `/etc/login.defs`. The default behaviour (`USERGROUPS_ENAB yes`) is to create a group with the same name as the username.
 
 When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
@@ -191,7 +191,7 @@ Although it is not required to protect the newly created user `archie` with a pa
 
 ```
 
-The above *useradd* command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
+The above *useradd* command will also automatically create a group called `archie` and makes this the default group for the user `archie`. Making each user have their own group (with the group name same as the user name) is the preferred way to add users.
 
 You could also make the default group something else using the `-g` option, but note that, in multi-user systems, using a single default group (e.g. `users`) for every user is not recommended. The reason is that typically, the method for facilitating shared write access for specific groups of users is setting user [umask](/index.php/Umask "Umask") value to `002`, which means that the default group will by default always have write access to any file you create. See also [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). If a user must be a member of a specific group specify that group as a supplementary group when creating the user.
 
@@ -437,17 +437,16 @@ This section explains the purpose of the essential groups from the [core/filesys
 Non-root workstation/desktop users often need to be added to some of following groups to allow access to hardware peripherals and facilitate system administration:
 
 | Group | Affected files | Purpose |
-| adm | Administration group, commonly used to give read access to protected logs (including [journal](/index.php/Systemd/Journal "Systemd/Journal") files). |
-| ftp | `/srv/ftp/` | Access to files served by [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") servers. |
+| adm | Administration group, commonly used to give read access to protected logs. It has full read access to [journal](/index.php/Systemd/Journal "Systemd/Journal") files. |
+| ftp | `/srv/ftp/` | Access to files served by [FTP servers](/index.php/List_of_applications/Internet#FTP_servers "List of applications/Internet"). |
 | games | `/var/games` | Access to some game software. |
-| http | `/srv/http/` | Access to files served by [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") servers. |
+| http | `/srv/http/` | Access to files served by [HTTP servers](/index.php/List_of_applications/Internet#Web_servers "List of applications/Internet"). |
 | log | Access to log files in `/var/log/` created by [syslog-ng](/index.php/Syslog-ng "Syslog-ng"). |
-| rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by *rfkill*). |
+| rfkill | `/dev/rfkill` | Right to control wireless devices power state (used by [rfkill](/index.php/Rfkill "Rfkill")). |
 | sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
 | systemd-journal | `/var/log/journal/*` | Can be used to provide read-only access to the systemd logs, as an alternative to `adm` and `wheel` [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). Otherwise, only user generated messages are displayed. |
-| users | Standard users group. |
 | uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+`, `/dev/rfcomm[0-9]+` | RS-232 serial ports and devices connected to them. |
-| wheel | Administration group, commonly used to give privileges to perform administrative actions. Can be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default, configurable in `/etc/pam.d/su` and `/etc/pam.d/su-l`). It also has full read access to [journal](/index.php/Systemd/Journal "Systemd/Journal") files. |
+| wheel | Administration group, commonly used to give privileges to perform administrative actions. It has full read access to [journal](/index.php/Systemd/Journal "Systemd/Journal") files and the right to administer printers in [CUPS](/index.php/CUPS "CUPS"). Can also be used to give access to the [sudo](/index.php/Sudo "Sudo") and [su](/index.php/Su "Su") utilities (neither uses it by default). |
 
 ### System groups
 
@@ -495,6 +494,7 @@ The following groups are currently not used for any purpose:
 | network | Unused by default. Can be used e.g. for granting access to NetworkManager (see [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
 | power |
 | uuidd |
+| users | The primary group for users when user private groups are not used (generally not recommended), e.g. when creating users with `USERGROUPS_ENAB no` in `/etc/login.defs` or the `-N`/`--no-user-group` option of *useradd*. |
 
 ## Other tools related to these databases
 

@@ -64,7 +64,7 @@ For some examples of audio tag editors see [List of applications/Multimedia#Audi
 
 ### Converting to other formats
 
-Re-encoding to another format can be done with [lame](https://www.archlinux.org/packages/?name=lame), [flac](https://www.archlinux.org/packages/?name=flac) or [FFmpeg](/index.php/FFmpeg "FFmpeg"). For example, to convert the output raw audio files from the example in [#Ripping](#Ripping) to highest quality variable bitrate MP3:
+Re-encoding to another format can be done with [lame](https://www.archlinux.org/packages/?name=lame), [flac](https://www.archlinux.org/packages/?name=flac) or [FFmpeg](/index.php/FFmpeg "FFmpeg"). For example, to convert the output raw audio files from [#Ripping](#Ripping) to highest quality variable bitrate MP3:
 
 ```
 $ lame -V0 *input*.wav

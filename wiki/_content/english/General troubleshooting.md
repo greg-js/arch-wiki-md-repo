@@ -132,8 +132,8 @@ Note that regardless of the chosen option, kernel messages can be displayed for 
 
 This is basic management that applies to most terminal emulators, including virtual consoles (vc):
 
-*   Press `Ctrl+S` to pause the output
-*   And `Ctrl+Q` to resume it
+*   Press `Ctrl+s` to pause the output
+*   And `Ctrl+q` to resume it
 
 This pauses not only the output, but also programs which try to print to the terminal, as they will block on the `write()` calls for as long as the output is paused. If your *init* appears frozen, make sure the system console is not paused.
 
@@ -171,7 +171,7 @@ Getting an interactive shell at some stage in the boot process can help you pinp
 *   `emergency` launches a shell even earlier, before most filesystems are mounted
 *   `init=/bin/sh` (as a last resort) changes the init program to a root shell. `rescue` and `emergency` both rely on [systemd](/index.php/Systemd "Systemd"), but this should work even if *systemd* is broken
 
-Another option is systemd's debug-shell which adds a root shell on `tty9` (accessible with Ctrl+Alt+F9). It can be enabled by either adding `systemd.debug-shell` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), or by [enabling](/index.php/Enabling "Enabling") `debug-shell.service`. Take care to disable the service when done to avoid the security risk of leaving a root shell open on every boot.
+Another option is systemd's debug-shell which adds a root shell on `tty9` (accessible with `Ctrl+Alt+F9`). It can be enabled by either adding `systemd.debug_shell` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), or by [enabling](/index.php/Enabling "Enabling") `debug-shell.service`. Take care to disable the service when done to avoid the security risk of leaving a root shell open on every boot.
 
 ### Blank screen with Intel video
 
@@ -278,7 +278,7 @@ You will need a root shell to make changes to the system so the panic no longer 
 **Note:** At this point, the root filesystem will be mounted **read-only**. Execute `# mount -o remount,rw /` to make changes.
 
 *   Reboot with the kernel parameter `rescue`, `rd.rescue`, `single`, `s`, `S`, or `1` to receive a prompt to login just after local filesystems are mounted.
-*   Reboot with the kernel parameter `systemd.debug-shell=1` to obtain a very early root shell on tty9\. Switch to it with by pressing `Ctrl-Alt-F9`.
+*   Reboot with the kernel parameter `systemd.debug_shell` to obtain a very early root shell on tty9\. Switch to it with by pressing `Ctrl+Alt+F9`.
 *   Experiment by rebooting with different sets of kernel parameters to possibly disable the kernel feature that is causing the panic. Try the "old standbys" `acpi=off` and `nolapic`.
 
 **Tip:** See `Documentation/admin-guide/kernel-parameters.txt` in the Linux kernel source tree for all parameters.

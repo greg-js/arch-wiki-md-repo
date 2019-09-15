@@ -34,11 +34,10 @@ Arch Linux официально поддерживает открытую реа
     *   [5.2 Маскировка под другой оконный менеджер](#Маскировка_под_другой_оконный_менеджер)
     *   [5.3 Шрифты отображаются размыто](#Шрифты_отображаются_размыто)
     *   [5.4 В некоторых приложениях отсутствует текст](#В_некоторых_приложениях_отсутствует_текст)
-    *   [5.5 Приложения не изменяют размер с WM, меню сразу закрывается](#Приложения_не_изменяют_размер_с_WM,_меню_сразу_закрывается)
+    *   [5.5 Серое окно | Приложения не изменяют размер с WM | Меню сразу закрываются](#Серое_окно_|_Приложения_не_изменяют_размер_с_WM_|_Меню_сразу_закрываются)
 *   [6 Советы и рекомендации](#Советы_и_рекомендации)
     *   [6.1 Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов)
     *   [6.2 Оформление GTK](#Оформление_GTK)
-    *   [6.3 Не-репарентинговые оконные менеджеры](#Не-репарентинговые_оконные_менеджеры)
 
 ## Установка
 
@@ -224,42 +223,37 @@ exec */path/to/application*
 
 ### Маскировка под другой оконный менеджер
 
-Вы можете использовать [wmname](https://www.archlinux.org/packages/?name=wmname) [отсюда](http://tools.suckless.org/wmname) чтобы заставить JVM поверить, что используется какой-то другой оконный менеджер. Это должно решить проблемы с отображением графических приложений на Java, которые появляются в менеджерах вроде [Awesome](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)") или [dwm](/index.php/Dwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dwm (Русский)").
+Можно воспользоваться утилитой [wmname](https://www.archlinux.org/packages/?name=wmname) от [suckless.org](https://tools.suckless.org/x/wmname), чтобы предоставить JVM название другого оконного менеджера. Это должно решить проблемы с отображением графических приложений на Java, которые появляются в оконных менеджерах вроде [awesome](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)"), [Dwm](/index.php/Dwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dwm (Русский)") или [Ratpoison](/index.php/Ratpoison "Ratpoison"). Попробуйте значения "compiz" или "LG3D":
 
 ```
-$ wmname LG3D
+$ wmname compiz
 
 ```
 
 После выполнения команды перезапустите Java-приложение.
 
-Это работает, потому что в JVM содержится закодированный список не-репарентинговых оконных менеджеров. Что интересно, некоторые пользователи предпочитают маскировать свои менеджеры под `LG3D`, написанный [Sun, на Java](https://en.wikipedia.org/wiki/Project_Looking_Glass "wikipedia:Project Looking Glass"), однако также являющийся не-репарентинговым.
+Это работает, потому что в JVM содержится закодированный список "non-re-parenting" оконных менеджеров. Что интересно, некоторые пользователи предпочитают маскировать свои менеджеры под `LG3D` [написанный Sun на Java](https://en.wikipedia.org/wiki/Project_Looking_Glass "wikipedia:Project Looking Glass"), однако также являющийся "non-re-parenting".
 
 ### Шрифты отображаются размыто
 
-Даже после выполнения всех рекомендаций в разделе [#Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов) некоторые шрифты все еще могут отображаться размыто. Если это так, попробуйте установить шрифты от Microsoft. Установите [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
+Даже после выполнения всех рекомендаций в разделе [#Улучшенное отображение шрифтов](#Улучшенное_отображение_шрифтов) некоторые шрифты все ещё могут отображаться размыто. Если это так, попробуйте установить шрифты от Microsoft. Установите [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
 
 ### В некоторых приложениях отсутствует текст
 
 Если в приложении совсем не отображаются никакие надписи, посмотрите советы в разделе [#Советы и рекомендации](#Советы_и_рекомендации), как предлагается в [FS#40871](https://bugs.archlinux.org/task/40871).
 
-### Приложения не изменяют размер с WM, меню сразу закрывается
+### Серое окно | Приложения не изменяют размер с WM | Меню сразу закрываются
 
-The standard Java GUI toolkit has a hard-coded list of "non-reparenting" window managers. If using one that is not on that list, there can be some problems with running some Java applications. One of the most common problems is "gray blobs", when the Java application renders as a plain gray box instead of rendering the GUI. Another one might be menus responding to your click, but closing immediately.
+Стандартный тулкит Java для графических приложений содержит закодированный список "non-re-parenting" оконных менеджеров. Если используется WM не из этого списка, то вы можете столкнуться с различными проблемами в Java-приложениях. Самые частые — это "серые окна", когда Java-приложение отрисовывает серое окно вместо самого интерфейса. Также возможна проблема, когда меню раскрывается при нажатии, но тут же пропадает.
 
-There are several things that may help:
+Несколько способов выйти из ситуации:
 
-*   For [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), append the line `export _JAVA_AWT_WM_NONREPARENTING=1` in `/etc/profile.d/jre.sh`. Then, source the file `/etc/profile.d/jre.sh` or log out and log back in.
-*   For Oracle's JRE/JDK, use [SetWMName.](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-SetWMName.html) However, its effect may be canceled when also using `XMonad.Hooks.EwmhDesktops`. In this case, appending
+*   В случае с [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) или [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) добавьте строку `export _JAVA_AWT_WM_NONREPARENTING=1` в `/etc/profile.d/jre.sh`, после чего выполните `source` над файлом `/etc/profile.d/jre.sh` или перезайдите в свой аккаунт.
+*   В случае с последней версией JDK и приложениями на AWT (например, IntelliJ IDEA) добавьте строку `export AWT_TOOLKIT=MToolkit` в `~/.xinitrc` перед запуском оконного менеджера.
+*   Также можно попробовать воспользоваться [wmname](https://www.archlinux.org/packages/?name=wmname), указав `wmname compiz` в `~/.xinitrc`.
+*   В случае с Oracle JRE/JDK используйте [SetWMName](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName). Заметьте, что данный параметр может не вступить в силу при использовании `XMonad.Hooks.EwmhDesktops`. В таком случае добавьте `>> setWMName "LG3D"` в `LogHook`.
 
-```
- >> setWMName "LG3D"
-
-```
-
-to the `LogHook` may help.
-
-See [[1]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
+См. [[1]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) для получения более подробной информации.
 
 ## Советы и рекомендации
 
@@ -294,12 +288,3 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 Некоторые упрямые приложения требуют использования кроссплатформенного оформления. В некоторых таких случаях, вам удастся заставить эти приложения использовать оформление GTK, установив следующий параметр:
 
 `swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
-
-### Не-репарентинговые оконные менеджеры
-
-Для не-репарентинговых оконных менеджеров следует установить следующую переменную окружения в файле `.xinitrc`:
-
-```
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-```

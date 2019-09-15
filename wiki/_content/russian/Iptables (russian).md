@@ -1,15 +1,15 @@
 Ссылки по теме
 
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Simple stateful firewall (Русский)](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)")
-*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
-*   [Sshguard](/index.php/Sshguard "Sshguard")
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [Nftables](/index.php/Nftables "Nftables")
+*   [Sshguard](/index.php/Sshguard "Sshguard")
+*   [Simple stateful firewall (Русский)](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)")
+*   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl")
+*   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-*iptables* представляет собой утилиту командной строки для настройки интегрированного в ядро Linux [межсетевого экрана](/index.php/Firewall "Firewall"), разработанного в рамках проекта [netfilter](https://en.wikipedia.org/wiki/ru:Netfilter существует *ip6tables*.
+**Состояние перевода:** На этой странице представлен перевод статьи [iptables](/index.php/Iptables "Iptables"). Дата последней синхронизации: 11 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=579906).
 
-[nftables](/index.php/Nftables "Nftables") была выпущена вместе с [ядром Linux версии 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), и в один прекрасный день заменит iptables как основную утилиту для настройки межсетевого экрана Linux.
+*iptables* — утилита командной строки для настройки интегрированного в ядро Linux [межсетевого экрана](/index.php/Firewall "Firewall"), разработка которого велась в рамках проекта [Netfilter](https://en.wikipedia.org/wiki/ru:Netfilter существует утилита *ip6tables*. В основном их синтаксис совпадает, но есть специфичные для каждого протокола опции.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -18,6 +18,9 @@
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Установка](#Установка)
+    *   [1.1 Интерфейс](#Интерфейс)
+        *   [1.1.1 Консольный](#Консольный)
+        *   [1.1.2 Графический](#Графический)
 *   [2 Основные понятия](#Основные_понятия)
     *   [2.1 Таблицы](#Таблицы)
     *   [2.2 Цепочки](#Цепочки)
@@ -29,8 +32,7 @@
         *   [3.1.1 Отображение текущих правил](#Отображение_текущих_правил)
         *   [3.1.2 Сброс правил](#Сброс_правил)
         *   [3.1.3 Редактирование правил](#Редактирование_правил)
-    *   [3.2 Файл настроек](#Файл_настроек)
-    *   [3.3 Руководства по настройке iptables](#Руководства_по_настройке_iptables)
+    *   [3.2 Руководства по настройке iptables](#Руководства_по_настройке_iptables)
 *   [4 Логирование](#Логирование)
     *   [4.1 Ограничение скорости логирования](#Ограничение_скорости_логирования)
     *   [4.2 Просмотр логированных пакетов](#Просмотр_логированных_пакетов)
@@ -40,7 +42,69 @@
 
 ## Установка
 
-Стандартная сборка ядра Arch Linux включает в себя поддержку iptables. Все, что потребуется – [установить](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_определенных_пакетов "Pacman (Русский)") пользовательские утилиты, предоставляемые пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") (пакет [iproute2](https://www.archlinux.org/packages/?name=iproute2) из группы [base](https://www.archlinux.org/groups/x86_64/base/) зависит от iptables, поэтому пакет iptables уже должен быть установлен в вашей системе).
+Стандартная сборка ядра Arch Linux включает в себя поддержку iptables. Все, что потребуется – [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") пользовательские утилиты, предоставляемые пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") (пакет [iproute2](https://www.archlinux.org/packages/?name=iproute2) из группы [base](https://www.archlinux.org/groups/x86_64/base/) зависит от iptables, поэтому пакет iptables уже должен быть установлен в вашей системе).
+
+### Интерфейс
+
+#### Консольный
+
+*   **Arno's firewall** — Безопасный межсетевой экран как для одиночной машины, так и для разрозненной сети. Лёгок в настройке, удобен в использовании, хорошо кастомизируется. Поддерживает: NAT и SNAT, проброс портов, ADSL ethernet-модемы со статическими и динамическими IP-адресами, фильтрация MAC-адресов, обнаружение скрытого сканирования портов, DMZ и DMZ-2-LAN пересылка, защита от SYN/ICMP флуда, обширное логирование с временными ограничениями для предотвращения засорения логов, все IP-протоколы и технологии VPN, такие как IPsec, плагины для расширения функциональности.
+
+	[http://rocky.eld.leidenuniv.nl/](http://rocky.eld.leidenuniv.nl/) || [arno-iptables-firewall](https://aur.archlinux.org/packages/arno-iptables-firewall/)
+
+*   **ferm** — Инструмент для обслуживания комплексных межсетевых экранов, помогающий избежать необходимости переписывать сложные правила снова и снова. Позволяет сохранить целый набор правил в одном файле и загрузить его всего одной командой. Настройка экрана производится посредством специального языка, наподобие языка программирования, с помощью уровней и списков.
+
+	[http://ferm.foo-projects.org/](http://ferm.foo-projects.org/) || [ferm](https://www.archlinux.org/packages/?name=ferm)
+
+*   **[FireHOL](https://en.wikipedia.org/wiki/FireHOL "wikipedia:FireHOL")** — Не только программа для создания межсетевого экрана, но и специальный язык для задания его настроек. Делает даже тонкую настройку экрана лёгкой — как вам бы и хотелось.
+
+	[http://firehol.sourceforge.net/](http://firehol.sourceforge.net/) || [firehol](https://aur.archlinux.org/packages/firehol/)
+
+*   **Firetable** — Инструмент для межсетевого экрана *iptables*. Каждый интерфейс настраивается отдельно в соответствии с собственным файлом настроек, синтаксис которого понятен и удобен.
+
+	[https://gitlab.com/hsleisink/firetable](https://gitlab.com/hsleisink/firetable) || [firetable](https://aur.archlinux.org/packages/firetable/)
+
+*   **[firewalld](/index.php/Firewalld "Firewalld") (firewall-cmd)** — Демон и консольный интерфейс для настройки сети, зональной политики и правил межсетевого экрана.
+
+	[https://firewalld.org/](https://firewalld.org/) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
+
+*   **[Shorewall](/index.php/Shorewall "Shorewall")** — Высокоуровневый инструмент для настройки *Netfilter*. Требования к экрану/шлюзу описываются посредством записей в наборе файлов настроек.
+
+	[http://www.shorewall.net/](http://www.shorewall.net/) || [shorewall](https://www.archlinux.org/packages/?name=shorewall)
+
+*   **[Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")** — Простой интерфейс для *iptables*.
+
+	[https://launchpad.net/ufw](https://launchpad.net/ufw) || [ufw](https://www.archlinux.org/packages/?name=ufw)
+
+*   **[PeerGuardian](/index.php/PeerGuardian_Linux "PeerGuardian Linux") (pglcmd)** — Ориентированное на приватность firewall-приложение. Занимается блокировкой входящих и исходящих подключений на основе огромного чёрного списка (тысячи или даже миллионы IP-диапазонов).
+
+	[http://sourceforge.net/projects/peerguardian/](http://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
+
+*   **Vuurmuur** — Мощный менеджер сетевого экрана. Лёгкая в освоении настройка, которая позволяет создавать как простые, так и сложные конфигурации межсетевого экрана. Для настройки есть графический интерфейс на основе [ncurses](https://www.archlinux.org/packages/?name=ncurses), который позволяет осуществлять безопасное удалённое администрирование через SSH или консоль. *Vuurmuur* поддерживает ограничение трафика, имеет мощную систему мониторинга, которая позволяет администратору следить за логами, подключениями и использованием пропускной способности в режиме реального времени.
+
+	[https://www.vuurmuur.org/](https://www.vuurmuur.org/) || [vuurmuur](https://aur.archlinux.org/packages/vuurmuur/)
+
+#### Графический
+
+*   **Firewall Builder** — Графический интерфейс для настройки и управления межсетевыми экранами, работает с iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA), а также с маршрутизаторами Cisco с поддержкой Extended ACL. Запускается на Linux, FreeBSD, OpenBSD, Windows и macOS, может управлять как локальными, так и удалёнными межсетевыми экранами.
+
+	[http://fwbuilder.sourceforge.net/](http://fwbuilder.sourceforge.net/) || [fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder)
+
+*   **[firewalld](https://en.wikipedia.org/wiki/firewalld "wikipedia:firewalld") (firewall-config)** — Демон и графический интерфейс для настройки сети, зональной политики и правил межсетевого экрана.
+
+	[https://firewalld.org/](https://firewalld.org/) || [firewalld](https://www.archlinux.org/packages/?name=firewalld)
+
+*   **[Gufw](/index.php/Uncomplicated_Firewall#Gufw "Uncomplicated Firewall")** — Графический GTK-интерфейс для [ufw](https://www.archlinux.org/packages/?name=ufw), который, в свою очередь, является интерфейсом [командной строки](#Консольный) для iptables (gufw–>ufw–>iptables), лёгкий и простой в использовании.
+
+	[https://gufw.org/](https://gufw.org/) || [gufw](https://www.archlinux.org/packages/?name=gufw)
+
+*   **[PeerGuardian](/index.php/PeerGuardian_Linux "PeerGuardian Linux") GUI (pglgui)** — Ориентированное на приватность firewall-приложение. Занимается блокировкой входящих и исходящих подключений на основе огромного чёрного списка (тысячи или даже миллионы IP-диапазонов).
+
+	[https://sourceforge.net/projects/peerguardian/](https://sourceforge.net/projects/peerguardian/) || [pgl](https://aur.archlinux.org/packages/pgl/)
+
+*   **FireStarter** — Высокоуровневый графический интерфейс межсетевого экрана Iptables для Linux.
+
+	[http://www.fs-security.com/](http://www.fs-security.com/) || [firestarter](https://aur.archlinux.org/packages/firestarter/)
 
 ## Основные понятия
 
@@ -126,25 +190,21 @@ iptables содержит пять таблиц:
 
 ## Настройка и запуск iptables
 
-Для iptables есть служба [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), которую, соответственно, можно запустить командой:
+*iptables* является службой [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") и [запускается](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Запустить") соответствующим образом. Пакет [iptables](https://www.archlinux.org/packages/?name=iptables) при установке добавляет начальный комплект правил в файл `/etc/iptables/iptables.rules`, который загружается при первом [запуске](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Запустить") службы `iptables.service`. Если вы хотите настроить автоматическую загрузку *iptables* при запуске системы, то необходимо [включить](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C "Включить") соответствующую службу.
+
+Правила *iptables* для IPv6 по умолчанию хранятся в файле `/etc/iptables/ip6tables.rules`, который используется службой `ip6tables.service`. Эту службу можно запустить так же, как и `iptables.service`.
+
+После добавления правил посредством [командной строки](#Настройка_из_командной_строки) файл настроек не изменится автоматически — необходимо сохранять изменения командой
 
 ```
-# systemctl start iptables
-
-```
-
-Однако, эта служба не будет стартовать, пока отсутствует файл `/etc/iptables/iptables.rules`, который не создается пакетом [iptables](https://www.archlinux.org/packages/?name=iptables) по умолчанию. Поэтому, чтобы запустить службу в первый раз, скопируйте в него "пустой" набор правил:
-
-```
-# cp /etc/iptables/empty.rules /etc/iptables/iptables.rules
-# systemctl start iptables
+# iptables-save -f /etc/iptables/iptables.rules
 
 ```
 
-Как и другие службы, для запуска при старте системы служба iptables должна быть включена:
+Если вы изменяли файл настроек вручную, нужно либо [перезапустить](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Перезапустить") *iptables*, либо загрузить его посредством команды
 
 ```
-# systemctl enable iptables
+# iptables-restore /etc/iptables/iptables.rules
 
 ```
 
@@ -152,7 +212,9 @@ iptables содержит пять таблиц:
 
 #### Отображение текущих правил
 
-Вы можете проверить текущий набор правил и количество срабатываний каждого используя команду:
+Основная команда для отображения текущих правил — `iptables --list-rules` (`-S`), вывод которой похож на вывод утилиты *iptables-save*. Разница между ними заключается в том, что по умолчанию последняя из них выводит правила из всех таблиц, в то время как *iptables* — только из таблицы `filter`.
+
+При работе с iptables из командной строки команда `--list` (`-L`) позволяет добавить больше модификаторов и вывести больше информации. Например, чтобы проверить текущий набор правил и количество срабатываний каждого из них используйте команду:
 
  `# iptables -nvL` 
 ```
@@ -318,51 +380,6 @@ num   pkts bytes target     prot opt in     out     source               destina
 
 ```
 
-Обратите внимание, что пакеты на другие порты все еще будут беспрепятственно пропущены, так как они попадут под стандартное действие цепочки `INPUT` – `ACCEPT`.
-
-### Файл настроек
-
-По умолчанию в Arch Linux файл с правилами iptables располагается в `/etc/iptables/iptables.rules`. Эти правила, однако, не будут загружаться автоматически при старте системы, пока вы не включите службу `iptables.service`, которая загружает из него все правила:
-
-```
-# systemctl enable iptables
-# systemctl start iptables
-
-```
-
-Правила iptables для IPv6 должны находиться в файле `/etc/iptables/ip6tables.rules`. Для этого файла, соответственно, существует служба `ip6tables.service`, которую тем же образом вы можете активировать, если вы используете IPv6.
-
-**Примечание:** Файлы служб `iptables.service` и `ip6tables.service` в [iptables](https://www.archlinux.org/packages/?name=iptables) версии 1.4.21-1 устарели. Начиная с systemd 214 в целях безопасности рекомендуется запускать межсетевые экраны перед `network-pre.target`, чтобы экран начинал работать перед установкой сети. В ожидании обновления пакета iptables, создайте каталог `/etc/systemd/system/iptables.service.d` и файл `00-pre-network.conf` в нем со следующим содержимым:
-```
-[Unit]
-Before=network-pre.target
-[Install]
-RequiredBy=network-pre.target
-
-```
-Если система использует службу `ip6tables.service`, создайте аналогичный файл в каталоге `/etc/systemd/system/ip6tables.service.d`. Подробнее смотрите на страницах [https://bugs.freedesktop.org/show_bug.cgi?id=79600](https://bugs.freedesktop.org/show_bug.cgi?id=79600), [http://lists.freedesktop.org/archives/systemd-devel/2014-June/019925.html](http://lists.freedesktop.org/archives/systemd-devel/2014-June/019925.html), а также [FS#33478](https://bugs.archlinux.org/task/33478).
-
-Когда вы добавляете правила через командную строку, они сохраняются лишь в оперативной памяти, и будут сброшены при перезагрузке. Чтобы выгрузить их в файл, вы должны выполнить:
-
-```
-# iptables-save > /etc/iptables/iptables.rules
-
-```
-
-Если вы вносили изменения в файл, вы можете перезагрузить правила из него перезапуском службы:
-
-```
-# systemctl reload iptables
-
-```
-
-Того же эффекта вы сможете достичь, используя следующую команду:
-
-```
-# iptables-restore < /etc/iptables/iptables.rules
-
-```
-
 ### Руководства по настройке iptables
 
 *   [Простой межсетевой экран с внутренним состоянием](/index.php/Simple_stateful_firewall_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Simple stateful firewall (Русский)")
@@ -407,7 +424,7 @@ RequiredBy=network-pre.target
 
 ### Просмотр логированных пакетов
 
-Логированные пакеты сохраняются как сообщения ядра в [журнале systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Журнал "Systemd (Русский)").
+Логированные пакеты сохраняются как сообщения ядра в [журнале systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)/Journal_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)/Journal (Русский)").
 
 Чтобы отобразить все пакеты, которые были залогированы с момента последнего перезапуска, выполните
 
@@ -450,5 +467,6 @@ destination d_iptables { file("/var/log/iptables.log"); };
 *   [Iptables в Википедии](https://en.wikipedia.org/wiki/ru:iptables "wikipedia:ru:iptables")
 *   [Port knocking](/index.php/Port_knocking "Port knocking")
 *   [Официальный сайт iptables](http://www.netfilter.org/projects/iptables/index.html)
-*   [Руководство по iptables версии 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) от Оскара Андреассона
-*   [статья iptables на Debian Wiki](http://wiki.debian.org/iptables)
+*   [Руководство по iptables версии 1.2.2](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) от Oskar Andreasson
+*   [Debian Wiki — iptables](http://wiki.debian.org/iptables)
+*   [Безопасное использование Connection Tracking helpers](https://home.regit.org/netfilter-en/secure-use-of-helpers/)

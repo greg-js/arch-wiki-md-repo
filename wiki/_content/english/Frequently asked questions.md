@@ -161,7 +161,7 @@ Pacman is a front-end to [libalpm](https://www.archlinux.org/pacman/libalpm.3.ht
 
 ### Pacman needs feature X!
 
-If you think an idea has merit, you may choose to discuss it on [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). Also check [https://bugs.archlinux.org](https://bugs.archlinux.org) for existing feature requests.
+If you think an idea has merit, you may choose to discuss it on [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). Also check [https://bugs.archlinux.org/index.php?project=3](https://bugs.archlinux.org/index.php?project=3) for existing feature requests.
 
 However, the best way to get a feature added to pacman or Arch Linux is to implement it yourself. The patch or code may or may not be officially accepted, but perhaps others will appreciate, test and contribute to your effort.
 
@@ -223,6 +223,8 @@ There are proposals to improve this. Some discussion from the mailing list:
 ## Installation
 
 ### Arch needs an installer. Maybe a GUI installer?
+
+Arch used to have an installer with a text-based user interface called the Arch Installation Framework (AIF). After its [last maintainer left](https://lists.archlinux.org/pipermail/arch-releng/2012-July/002628.html), it was [deprecated in favor of Arch Install Scripts](/index.php/Arch_Linux#Arch_Install_Scripts "Arch Linux").
 
 Since installation does not occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method.
 

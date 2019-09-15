@@ -2,9 +2,9 @@ Anbox is a free and open-source compatibility layer that aims to allow mobile ap
 
 ## Installation
 
-[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image](https://aur.archlinux.org/packages/anbox-image/) (or [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/) if you want to include Google's Apps and houdini), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/)
+Make sure you have had the header files for your kernel installed (e.g. [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) for Linux kernel).
 
-On recent ^5.1 kernels you need to apply a patch [[1]](https://aur.archlinux.org/pkgbase/anbox-git/#comment-694481) to the PKGBUILD of [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) in order to successfully compile the required binder module.
+[Install](/index.php/Install "Install") [anbox-git](https://aur.archlinux.org/packages/anbox-git/), [anbox-image](https://aur.archlinux.org/packages/anbox-image/) (or [anbox-image-gapps](https://aur.archlinux.org/packages/anbox-image-gapps/) if you want to include Google's Apps and houdini), [anbox-modules-dkms-git](https://aur.archlinux.org/packages/anbox-modules-dkms-git/) and [anbox-bridge](https://aur.archlinux.org/packages/anbox-bridge/)
 
 [Start/enable](/index.php/Start/enable "Start/enable") the following services:
 

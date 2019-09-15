@@ -14,12 +14,10 @@ Related articles
 *   [2 Kernels and related packages](#Kernels_and_related_packages)
 *   [3 Selecting the correct CPU optimized package](#Selecting_the_correct_CPU_optimized_package)
     *   [3.1 Speed benefits of CPU optimized packages](#Speed_benefits_of_CPU_optimized_packages)
-*   [4 Repository statistics](#Repository_statistics)
-*   [5 Mirrors](#Mirrors)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Support](#Support)
-    *   [6.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
-    *   [6.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Support](#Support)
+    *   [4.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
+    *   [4.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
 
 ## Setup
 
@@ -115,19 +113,6 @@ For further help, see:
 ### Speed benefits of CPU optimized packages
 
 Extensive testing comparing the effect of GCC compile options show varying results, from no change to rather significant speed ups. [[1]](https://bbs.archlinux.org/viewtopic.php?id=154333) [[2]](https://www.phoronix.com/scan.php?page=news_item&px=GCC-Optimizations-E3V5-Levels) [[3]](https://www.phoronix.com/scan.php?page=article&item=intel_core_avx2&num=2)
-
-## Repository statistics
-
-**Note:** The statistics are not updated daily but do give a snapshot of the data based on one mirror only.
-
-Repo [statistics](http://repo-ck.com/stats.pdf) are available (package and CPU popularity, number of downloads, and so forth).
-
-## Mirrors
-
-There are two mirrors available now:
-
-*   [https://mirror.archlinux.no/repo-ck](https://mirror.archlinux.no/repo-ck) (Very low uptime)
-*   [https://archd.hkno.it](https://archd.hkno.it) (Unavailable)
 
 ## Troubleshooting
 

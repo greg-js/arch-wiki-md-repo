@@ -1,3 +1,7 @@
+Related articles
+
+*   [File systems](/index.php/File_systems "File systems")
+
 [Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (FUSE) is a mechanism for Unix-like operating systems that lets non-privileged users create their own file systems without editing kernel code. This is achieved by running file system code in *user space*, while the FUSE kernel module provides only a "bridge" to the actual kernel interfaces.
 
 ## Unmounting
@@ -11,11 +15,11 @@ $ fusermount -u *mountpoint*
 
 ## List of FUSE filesystems
 
-*   **adbfs-git** — Mount an Android device connected via USB.
+*   **adbfs** — Mount an Android device connected via USB.
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
-*   **apfs-fuse-git** — FUSE driver for APFS (Apple File System).
+*   **apfs-fuse** — FUSE driver for APFS (Apple File System).
 
 	[https://github.com/sgan81/apfs-fuse](https://github.com/sgan81/apfs-fuse) || [apfs-fuse-git](https://aur.archlinux.org/packages/apfs-fuse-git/)
 
@@ -63,6 +67,10 @@ $ fusermount -u *mountpoint*
 
 	[https://github.com/TurboGit/hubicfuse](https://github.com/TurboGit/hubicfuse) || [hubicfuse](https://aur.archlinux.org/packages/hubicfuse/)
 
+*   **linux-apfs-oot** — Experimental APFS kernel module
+
+	[https://github.com/eafer/linux-apfs-oot](https://github.com/eafer/linux-apfs-oot) || [linux-apfs-dkms-git](https://aur.archlinux.org/packages/linux-apfs-dkms-git/)
+
 *   **MegaFuse** — MEGA client for Linux, based on FUSE.
 
 	[https://github.com/matteoserva/MegaFuse](https://github.com/matteoserva/MegaFuse) || [megafuse-git](https://aur.archlinux.org/packages/megafuse-git/)
@@ -83,7 +91,7 @@ $ fusermount -u *mountpoint*
 
 	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
-*   **xbfuse-git** — Mount an Xbox (360) ISO.
+*   **xbfuse** — Mount an Xbox (360) ISO.
 
 	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)
 

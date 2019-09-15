@@ -98,13 +98,20 @@ Lo script `syslinux-install_update` si occuperà dell'installazione di Syslinux,
 
 Se si utilizza una partizione di boot separata, assicurarsi che sia montata. Si controlli con `lsblk`; se non si vede nessun mount point che punta a `/boot`, si monti la partizione prima di procedere.
 
-Si esegua lo script `syslinux-install_update` con gli argomenti `-i` (installa i files) `-a` (imposta la partizione come "attiva") `-m` (installa il boot code nel MBR): `# syslinux-install_update -i -a -m` Se il comando di cui sopra restituisce l'errore `Syslinux BIOS install failed` è probabile che l'eseguibile `extlinux` non sia riuscito ad individuare la partizione contenente `/boot`:
+Si esegua lo script `syslinux-install_update` con gli argomenti `-i` (installa i files) `-a` (imposta la partizione come "attiva") `-m` (installa il boot code nel MBR):
+
+ `# syslinux-install_update -i -a -m` 
+
+Se il comando di cui sopra restituisce l'errore `Syslinux BIOS install failed` è probabile che l'eseguibile `extlinux` non sia riuscito ad individuare la partizione contenente `/boot`:
+
 ```
  # extlinux --install /boot/syslinux
  extlinux: cannot find device for path /boot/syslinux
  extlinux: cannot open device (null) 
 ```
+
 Questo problema può verificarsi quando si effettua l'upgrade da [LILO](/index.php/LILO "LILO") e si utilizza un kernel personalizzato. Può infatti accadere che LILO modifichi il parametro `root=` del kernel da (ad esempio) `root=/dev/sda1` al suo equivalente numerico, come `root=801`, come riportato dall'output di `/proc/cmdline` e `mount`. È possibile risolvere il problema effettuando l'installazione manuale descritta sotto, avendo cura di specificare il parametro `--device=/dev/sda1` a `extlinux`, oppure utilizzando un kernel stock di Arch, dal momento che l'utilizzo di un initramfs da parte di quest'ultimo evita il verificarsi dell'errore.
+
 **Nota:**
 
 *   Se si riavvia il proprio sistema ora, si otterrà solamente il prompt di Syslinux. Per ottenere un menù grafico sarà necessario creare un file di configurazione adatto.
@@ -698,7 +705,11 @@ KBDMAP de.ktl
 
 ### Nascondere il menu
 
-Si utilizzi l'opzione `/boot/syslinux/syslinuxcfg`  `MENU HIDDEN` per nascondere il menu e visualizzare solamente il timeout. Si prema un tasto qualsiasi per mostrarlo nuovamente.
+Si utilizzi l'opzione
+
+ `/boot/syslinux/syslinuxcfg`  `MENU HIDDEN` 
+
+per nascondere il menu e visualizzare solamente il timeout. Si prema un tasto qualsiasi per mostrarlo nuovamente.
 
 ### Pxelinux
 

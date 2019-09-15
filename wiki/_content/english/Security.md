@@ -330,15 +330,7 @@ Once [sudo](/index.php/Sudo "Sudo") is properly configured, full root access can
 
 #### Allow only certain users
 
-The [PAM](/index.php/PAM "PAM") `pam_wheel.so` lets you allow only users in the group `wheel` to login using `su`. Edit both `/etc/pam.d/su` and `/etc/pam.d/su-l`, then uncomment the line:
-
-```
-# Uncomment the following line to require a user to be in the "wheel" group.
-auth		required	pam_wheel.so use_uid
-
-```
-
-This means only users who are already able to run privileged commands may login as root.
+The [PAM](/index.php/PAM "PAM") `pam_wheel.so` lets you allow only users in the group `wheel` to login using [su](/index.php/Su "Su"). See [su#su and wheel](/index.php/Su#su_and_wheel "Su").
 
 #### Denying SSH login
 
@@ -487,7 +479,7 @@ Randomization under memory exhaustion @0 : No randomization
 
 The kernel logs contain useful information for an attacker trying to exploit kernel vulnerabilities, such as sensitive memory addresses. The `kernel.dmesg_restrict` flag was to forbid access to the logs without the `CAP_SYS_ADMIN` capability (which only processes running as root have by default).
 
- `/etc/sysctl.d/50-dmesg-restrict.conf`  `kernel.dmesg_restrict = 1` 
+ `/etc/sysctl.d/51-dmesg-restrict.conf`  `kernel.dmesg_restrict = 1` 
 
 ### Restricting access to kernel pointers in the proc filesystem
 
@@ -497,7 +489,7 @@ Setting `kernel.kptr_restrict` to 1 will hide kernel symbol addresses in `/proc/
 
 Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/kallsyms` regardless of privileges.
 
- `/etc/sysctl.d/50-kptr-restrict.conf`  `kernel.kptr_restrict = 1` 
+ `/etc/sysctl.d/51-kptr-restrict.conf`  `kernel.kptr_restrict = 1` 
 
 ### Keep BPF JIT compiler disabled
 
@@ -555,13 +547,15 @@ The default Arch kernel has `CONFIG_MODULE_SIG_ALL` enabled which signs all kern
 
 Kexec allows replacing the current running kernel.
 
- `/etc/sysctl.d/50-kexec-restrict.conf`  `kernel.kexec_loaded_disabled = 1` 
+ `/etc/sysctl.d/51-kexec-restrict.conf`  `kernel.kexec_loaded_disabled = 1` 
 
 ## Sandboxing applications
 
 See also [Wikipedia:Sandbox (computer security)](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)").
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is currently enabled in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (v4.14.15 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Lack of it may prevent certain sandboxing features from being made available to applications. Unprivileged usage is enabled by default starting with v5.1.8 unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `0`. Since this greatly increases the attack surface for local privilege escalation, it is advised to disable this manually, or use the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is currently enabled in [linux](https://www.archlinux.org/packages/?name=linux) (4.14.5 or later), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (4.14.15 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Lack of it may prevent certain sandboxing features from being made available to applications.
+
+**Warning:** Unprivileged user namespace usage (`CONFIG_USER_NS_UNPRIVILEGED`) is enabled by default in [linux](https://www.archlinux.org/packages/?name=linux) (5.1.8 or later), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (4.19.55-2 or later) and [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) (5.1.14.zen1-2 or later) unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `0`. Since this greatly increases the attack surface for local privilege escalation, it is advised to disable this manually, or use the [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) kernel. For more information see [FS#36969](https://bugs.archlinux.org/task/36969).
 
 ### Firejail
 
@@ -638,7 +632,7 @@ To check the blacklisting works as intended, you may re-open your preferred brow
 
 ## Authenticating packages
 
-[Attacks on package managers](https://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](https://www.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
+[Attacks on package managers](https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](https://www2.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
 
 ## Follow vulnerability alerts
 

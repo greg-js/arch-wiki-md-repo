@@ -225,7 +225,8 @@ This article is a general list of applications sorted by category, as a referenc
         *   [3.4.1 Character selectors](#Character_selectors)
         *   [3.4.2 On-screen keyboards](#On-screen_keyboards)
         *   [3.4.3 Keyboard layout switchers](#Keyboard_layout_switchers)
-        *   [3.4.4 Input methods](#Input_methods)
+        *   [3.4.4 Keybinding managers](#Keybinding_managers)
+        *   [3.4.5 Input methods](#Input_methods)
     *   [3.5 Disks](#Disks)
         *   [3.5.1 Partitioning tools](#Partitioning_tools)
         *   [3.5.2 Formatting tools](#Formatting_tools)
@@ -321,13 +322,14 @@ This article is a general list of applications sorted by category, as a referenc
     *   [5.5 Anti malware](#Anti_malware)
     *   [5.6 Backup programs](#Backup_programs)
     *   [5.7 Screen lockers](#Screen_lockers)
-    *   [5.8 Password managers](#Password_managers)
-        *   [5.8.1 Console](#Console_23)
-        *   [5.8.2 Graphical](#Graphical_23)
-    *   [5.9 Cryptography](#Cryptography)
-        *   [5.9.1 Hash checkers](#Hash_checkers)
-        *   [5.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
-        *   [5.9.3 Disk encryption](#Disk_encryption)
+    *   [5.8 Password auditing](#Password_auditing)
+    *   [5.9 Password managers](#Password_managers)
+        *   [5.9.1 Console](#Console_23)
+        *   [5.9.2 Graphical](#Graphical_23)
+    *   [5.10 Cryptography](#Cryptography)
+        *   [5.10.1 Hash checkers](#Hash_checkers)
+        *   [5.10.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
+        *   [5.10.3 Disk encryption](#Disk_encryption)
 *   [6 Science](#Science)
     *   [6.1 Mathematics](#Mathematics)
         *   [6.1.1 Calculator](#Calculator)
@@ -382,12 +384,12 @@ This article is a general list of applications sorted by category, as a referenc
         *   [7.1.6 Financial management](#Financial_management)
         *   [7.1.7 Cryptocurrency](#Cryptocurrency)
         *   [7.1.8 Project management](#Project_management)
+        *   [7.1.9 Recipe management](#Recipe_management)
     *   [7.2 Education](#Education)
         *   [7.2.1 Flashcards](#Flashcards)
         *   [7.2.2 Touch typing](#Touch_typing)
             *   [7.2.2.1 Console](#Console_27)
             *   [7.2.2.2 Graphical](#Graphical_27)
-        *   [7.2.3 Recipe management](#Recipe_management)
     *   [7.3 Accessibility](#Accessibility)
         *   [7.3.1 Speech synthesizers](#Speech_synthesizers)
         *   [7.3.2 Speech recognition](#Speech_recognition)
@@ -639,7 +641,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/tracker/wiki/Differences-between-Iridium-and-Chromium).
 
-	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
+	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium-deb](https://aur.archlinux.org/packages/iridium-deb/)
 
 *   **Ungoogled Chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
 
@@ -709,7 +711,7 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 *   **Beaker** — Peer-to-peer web browser with tools to create and host websites. Based on the [Electron](https://electronjs.org/) platform.
 
-	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker-browser](https://aur.archlinux.org/packages/beaker-browser/)
+	[https://github.com/beakerbrowser/beaker](https://github.com/beakerbrowser/beaker) || [beaker](https://aur.archlinux.org/packages/beaker/)
 
 *   **Min** — A smarter, faster web browser based on the [Electron](https://electronjs.org/) platform.
 
@@ -1265,7 +1267,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **Fragments** — Easy to use BitTorrent client which follows the GNOME HIG and includes well thought-out features.
 
-	[https://gitlab.gnome.org/haecker-felix/Fragments](https://gitlab.gnome.org/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
+	[https://gitlab.gnome.org/World/Fragments](https://gitlab.gnome.org/World/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
@@ -1279,7 +1281,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
 
-*   **[Tixati](https://en.wikipedia.org/wiki/Tixati "wikipedia:Tixati")** — Tixati is a peer-to-peer file sharing program that uses the popular BitTorrent protocol.
+*   **[Tixati](https://en.wikipedia.org/wiki/Tixati "wikipedia:Tixati")** — Proprietary peer-to-peer file sharing program that uses the popular BitTorrent protocol.
 
 	[https://tixati.com/](https://tixati.com/) || [tixati](https://aur.archlinux.org/packages/tixati/)
 
@@ -1353,7 +1355,7 @@ See also [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:
 
 Pastebin services are often used to quote text or images while collaborating and troubleshooting. Pastebin clients provide a convenient way to post from the command line.
 
-**Tip:** You can access the [sprunge.us](http://sprunge.us/) and [ix.io](http://ix.io/) pastebins using curl. For example pipe the output of a command to sprunge: `*command* | curl -F c=@- https://sprunge.us ` or upload a file (including images): `curl -F c=@- https://sprunge.us < *file*` 
+**Tip:** You can access the [ix.io](http://ix.io/) pastebin using curl. For example pipe the output of a command to ix.io: `*command* | curl -F 'f:1=<-' ix.io ` or upload a file: `curl -F 'f:1=<-' ix.io < *file*` 
 
 **Note:** [pastebin.com](http://pastebin.com/) is blocked for some people and has a history of annoying issues (javascript, adverts, poor formatting, etc). Do *not* use it.
 
@@ -1840,7 +1842,7 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 *   **[Banji](/index.php/Jami "Jami")** — SIP-compatible softphone and instant messenger for the decentralized Jami network. KDE client, formerly known as Ring KDE.
 
-	[https://kde.org/applications/internet/org.kde.ring-kde](https://kde.org/applications/internet/org.kde.ring-kde) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
+	[https://kde.org/applications/internet/org.kde.ring-kde](https://kde.org/applications/internet/org.kde.ring-kde) || [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
@@ -1960,10 +1962,6 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 
 	[https://github.com/sindresorhus/caprine](https://github.com/sindresorhus/caprine) || [caprine](https://www.archlinux.org/packages/?name=caprine)
 
-*   **[Cryptocat](https://en.wikipedia.org/wiki/Cryptocat "wikipedia:Cryptocat")** — Free software with a simple mission: everyone should be able to chat with their friends in privacy. Based on the [Electron](https://electronjs.org/) platform.
-
-	[https://crypto.cat/](https://crypto.cat/) || [cryptocat](https://aur.archlinux.org/packages/cryptocat/)
-
 *   **[Discord](/index.php/Discord "Discord")** — Proprietary all-in-one voice and text chat application for gamers that’s free and works on both your desktop and phone.
 
 	[https://discordapp.com/](https://discordapp.com/) || [discord](https://www.archlinux.org/packages/?name=discord)
@@ -2071,6 +2069,10 @@ See also [Wikipedia:Comparison of Internet Relay Chat daemons](https://en.wikipe
 *   **[UnrealIRCd](/index.php/UnrealIRCd "UnrealIRCd")** — Open Source IRC Server.
 
 	[https://www.unrealircd.org/](https://www.unrealircd.org/) || [unrealircd](https://www.archlinux.org/packages/?name=unrealircd)
+
+*   **ngIRCd** — A free, portable and lightweight Internet Relay Chat server for small or private networks.
+
+	[https://ngircd.barton.de/](https://ngircd.barton.de/) || [ngircd](https://www.archlinux.org/packages/?name=ngircd)
 
 ##### XMPP servers
 
@@ -2199,6 +2201,10 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 *   **Snownews** — Text mode RSS news reader.
 
 	[https://github.com/kouya/snownews](https://github.com/kouya/snownews) || [snownews](https://aur.archlinux.org/packages/snownews/)
+
+*   **sfeed** — Lightweight RSS and Atom parser.
+
+	[https://codemadness.org/sfeed-simple-feed-parser.html](https://codemadness.org/sfeed-simple-feed-parser.html) || [sfeed-git](https://aur.archlinux.org/packages/sfeed-git/)
 
 ##### Graphical
 
@@ -2781,6 +2787,10 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 *   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform.
 
 	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
+
+*   **Milton** — Infinite-canvas paint program.
+
+	[https://www.miltonpaint.com/](https://www.miltonpaint.com/) || [milton](https://aur.archlinux.org/packages/milton/)
 
 *   **mtPaint** — Graphics editing program geared towards creating indexed palette images and pixel art.
 
@@ -3934,13 +3944,13 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer)
 
+*   **Celluloid** — Simple GTK frontend for [mpv](/index.php/Mpv "Mpv"), formerly GNOME MPV.
+
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [celluloid](https://www.archlinux.org/packages/?name=celluloid)
+
 *   **Deepin Movie** — Movie player for Deepin desktop based on [mpv](/index.php/Mpv "Mpv").
 
 	[https://www.deepin.org/en/original/deepin-movie/](https://www.deepin.org/en/original/deepin-movie/) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
-
-*   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK 3).
-
-	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
 *   **Kawaii-Player** — Audio/video manager and multimedia player (based on [mpv](/index.php/Mpv "Mpv")) with PC-to-PC casting feature, along with functionalities of portable media server and torrent streaming server.
 
@@ -4494,7 +4504,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
 
-*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm.
+*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for xterm.
 
 	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
@@ -5650,6 +5660,10 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 	[http://www.xneur.ru/](http://www.xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
 
+#### Keybinding managers
+
+See [Keyboard Shortcuts#Xorg](/index.php/Keyboard_Shortcuts#Xorg "Keyboard Shortcuts").
+
 #### Input methods
 
 See the main article: [Internationalization#Input methods](/index.php/Internationalization#Input_methods "Internationalization").
@@ -6446,10 +6460,6 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
 
-*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
-
-	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
-
 *   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
@@ -6986,6 +6996,10 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 See [SANE#Install a frontend](/index.php/SANE#Install_a_frontend "SANE").
 
+*   **Scan Tailor** — Interactive post-processing tool for scanned pages.
+
+	[http://scantailor.org/](http://scantailor.org/) || [scantailor](https://www.archlinux.org/packages/?name=scantailor)
+
 ### OCR software
 
 #### Console
@@ -7033,10 +7047,6 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 *   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
 
 	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://www.archlinux.org/packages/?name=paperwork)
-
-*   **Scan Tailor** — Interactive post-processing tool for scanned pages.
-
-	[http://scantailor.org/](http://scantailor.org/) || [scantailor](https://www.archlinux.org/packages/?name=scantailor)
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 
@@ -7534,6 +7544,10 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 
 See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wiki/Comparison_of_packet_analyzers "wikipedia:Comparison of packet analyzers").
 
+*   **airgeddon** — Multi-use bash script to audit wireless networks
+
+	[https://github.com/v1s1t0r1sh3r3/airgeddon](https://github.com/v1s1t0r1sh3r3/airgeddon) || [airgeddon-git](https://aur.archlinux.org/packages/airgeddon-git/)
+
 *   **[Arpwatch](https://en.wikipedia.org/wiki/Arpwatch "wikipedia:Arpwatch")** — Tool that monitors ethernet activity and keeps a database of Ethernet/IP address pairings.
 
 	[http://ee.lbl.gov/](http://ee.lbl.gov/) || [arpwatch](https://www.archlinux.org/packages/?name=arpwatch)
@@ -7653,6 +7667,10 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 *   **[vnStat](/index.php/VnStat "VnStat")** — Console-based network traffic monitor that keeps a log of network traffic for the selected interfaces.
 
 	[http://humdi.net/vnstat/](http://humdi.net/vnstat/) || [vnstat](https://www.archlinux.org/packages/?name=vnstat)
+
+*   **wifiphisher** — Fast automated phishing attacks against WPA networks.
+
+	[https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher) || [wifiphisher](https://aur.archlinux.org/packages/wifiphisher/)
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
@@ -7857,6 +7875,16 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 *   **xtrlock** — Very lightweight X display locker. Keeps windows visible and displays lock icon instead of mouse cursor. Typing password followed by enter unlocks the screen.
 
 	[https://packages.debian.org/sid/xtrlock](https://packages.debian.org/sid/xtrlock) || [xtrlock](https://www.archlinux.org/packages/?name=xtrlock)
+
+#### Password auditing
+
+*   **[John](https://en.wikipedia.org/wiki/John "wikipedia:John")** — John the Ripper password cracker.
+
+	[https://www.openwall.com/john](https://www.openwall.com/john) || [john](https://www.archlinux.org/packages/?name=john)
+
+*   **[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat")** — Multithreaded advanced password recovery utility.
+
+	[https://hashcat.net/hashcat](https://hashcat.net/hashcat) || [hashcat](https://www.archlinux.org/packages/?name=hashcat)
 
 #### Password managers
 
@@ -8238,7 +8266,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[Python Data Analysis Library (pandas)](https://en.wikipedia.org/wiki/Pandas_(software) "wikipedia:Pandas (software)")** — Providing high-performance, easy-to-use data structures and data analysis tools with Python programming language.
 
-	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas](https://www.archlinux.org/packages/?name=python2-pandas) [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
+	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
 
 *   **[PSPP](https://en.wikipedia.org/wiki/PSPP "wikipedia:PSPP")** — Free SPSS implementation.
 
@@ -9258,6 +9286,20 @@ See also [Wikipedia:Comparison of project management software](https://en.wikipe
 
 	[http://taskjuggler.org/](http://taskjuggler.org/) || [taskjuggler](https://aur.archlinux.org/packages/taskjuggler/)
 
+#### Recipe management
+
+*   **GNOME Recipes** — Recipe management application for GNOME.
+
+	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
+
+*   **Gourmet** — Simple but powerful recipe-managing application.
+
+	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://aur.archlinux.org/packages/gourmet/)
+
+*   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
+
+	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://aur.archlinux.org/packages/krecipes/)
+
 ### Education
 
 See also [List of games#Education](/index.php/List_of_games#Education "List of games").
@@ -9351,20 +9393,6 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 *   **TypingTest** — Typing test desktop program with a large amount of customization.
 
 	[https://github.com/laelath/typingtest](https://github.com/laelath/typingtest) || [typingtest-git](https://aur.archlinux.org/packages/typingtest-git/)
-
-#### Recipe management
-
-*   **GNOME Recipes** — Recipe management application for GNOME.
-
-	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
-
-*   **Gourmet** — Simple but powerful recipe-managing application.
-
-	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://aur.archlinux.org/packages/gourmet/)
-
-*   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
-
-	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://aur.archlinux.org/packages/krecipes/)
 
 ### Accessibility
 

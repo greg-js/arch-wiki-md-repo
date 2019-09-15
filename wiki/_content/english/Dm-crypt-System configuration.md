@@ -287,7 +287,7 @@ rd.luks.key=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=*/path/to/keyfile*:UUID=*ZZZZ
 
 Replace `UUID=*ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ*` with the identifier of the device on which the keyfile is located. If the type of file system is different than your root file system, you must [include the kernel module for it in the initramfs](/index.php/Mkinitcpio#MODULES "Mkinitcpio").
 
-**Warning:** `rd.luks.key` with a keyfile on another device does not fallback to passphrase if the device is not available. See [systemd issue 12194](https://github.com/systemd/systemd/issues/12194).
+**Warning:** `rd.luks.key` with a keyfile on another device by default does not fallback to asking for a password if the device is not available. To fallback to a password prompt, specify the `keyfile-timeout=` option in `rd.luks.options`. E.g. for a 10 second timeout: `rd.luks.options=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*=keyfile-timeout=10s` 
 
 #### Timeout
 

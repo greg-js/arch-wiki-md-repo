@@ -22,11 +22,10 @@ This means that a user does not have to wait for a company, project, or package 
     *   [4.3 Build source location](#Build_source_location)
     *   [4.4 Patching](#Patching)
     *   [4.5 Module loading automatically in .install](#Module_loading_automatically_in_.install)
-    *   [4.6 namcap output](#namcap_output)
-    *   [4.7 Example](#Example)
-        *   [4.7.1 PKGBUILD](#PKGBUILD)
-        *   [4.7.2 dkms.conf](#dkms.conf)
-        *   [4.7.3 .install](#.install)
+    *   [4.6 Example](#Example)
+        *   [4.6.1 PKGBUILD](#PKGBUILD)
+        *   [4.6.2 dkms.conf](#dkms.conf)
+        *   [4.6.3 .install](#.install)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -153,12 +152,6 @@ The sources can be patched either directly in the PKGBUILD or through `dkms.conf
 Loading and unloading modules should be left to the user. Consider the possibility a module may crash when loaded.
 
 Also, please note that you do not have to call `depmod` explicitly to update the dependencies of your kernel module. Pacman is now calling DKMS `dkms install` and `dkms remove` automatically as hooks. `dkms install` is making sure `depmod` is called at the end of its process. `dkms install` depends on `dkms build` (to build the source against the current kernel), which itself depends on `dkms add` (to add a symlink from `/var/lib/dkms/<package>/<version>/source` to `/usr/src/<package>`).
-
-### namcap output
-
-[namcap](/index.php/Namcap "Namcap") (which attempts to check for common mistakes and non-standard decisions in a package) is good practice to use at least once on *any* package; however, it has not yet been updated for DKMS specific guidelines.
-
-For example, DKMS uses `/usr/src/` by default, but Namcap believes this to be a non-standard directory, a little contrary to its [reference](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard "wikipedia:Filesystem Hierarchy Standard").
 
 ### Example
 

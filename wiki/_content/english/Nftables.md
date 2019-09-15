@@ -38,7 +38,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
     *   [3.4 Atomic reloading](#Atomic_reloading)
 *   [4 Examples](#Examples)
     *   [4.1 Workstation](#Workstation)
-    *   [4.2 Simple IPv4/IPv6 firewall](#Simple_IPv4/IPv6_firewall)
+    *   [4.2 Server](#Server)
     *   [4.3 Limit rate IPv4/IPv6 firewall](#Limit_rate_IPv4/IPv6_firewall)
     *   [4.4 Jump](#Jump)
     *   [4.5 Different rules for different interfaces](#Different_rules_for_different_interfaces)
@@ -68,7 +68,7 @@ You can check the ruleset with
 
 ```
 
-**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ lsmod | grep '^nf'` Otherwise, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
+**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ grep -Eo '^nf\w+' /proc/modules` Otherwise, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
 
 ## Configuration
 
@@ -77,14 +77,11 @@ nftables' user-space utility *nft* performs most of the rule-set evaluation befo
 All changes below are temporary. To make changes permanent, save your ruleset to `/etc/nftables.conf` which is loaded by `nftables.service`:
 
 ```
-# nft list ruleset > /etc/nftables.conf
+# nft -s list ruleset > /etc/nftables.conf
 
 ```
 
-**Note:**
-
-*   `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by that variable value.
-*   `nft list ruleset` in nftables v0.7 (Scrooge McDuck) have syntax limitation for ICMP and ICMPv6 dual use. That leads to errors if the export is used as new ruleset. For further information and solution see the following [stackexchange post](https://unix.stackexchange.com/questions/408497/nftables-configuration-error-conflicting-protocols-specified-inet-service-v-i?rq=1).
+**Note:** `nft list` does not output variable definitions, if you have any in `/etc/nftables.conf` they will be lost. Any variables used in rules will be replaced by their value.
 
 To read input from a file use the `-f` flag:
 
@@ -111,8 +108,6 @@ Tables hold [#Chains](#Chains). Unlike tables in iptables, there are no built-in
 `ip` (i.e. IPv4) is the default family and will be used if family is not specified.
 
 To create one rule that applies to both IPv4 and IPv6, use `inet`. `inet` allows for the unification of the `ip` and `ip6` families to make defining rules for both easier.
-
-**Note:** `inet` does not work for `nat`-type chains, only for `filter`-type chains. ([source](http://www.spinics.net/lists/netfilter/msg56411.html))
 
 See the section `ADDRESS FAMILIES` in [nft(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nft.8) for a complete description of address families.
 
@@ -203,7 +198,7 @@ For example, to add a regular chain named `tcpchain` to the `filter` table of th
 To add a base chain specify hook and priority values:
 
 ```
-# nft add chain *family* *table* *chain* { type *type* hook *hook* priority *priority* \; }
+# nft add chain *family* *table* *chain* '{ type *type* hook *hook* priority *priority* ; }'
 
 ```
 
@@ -216,7 +211,7 @@ For IPv4/IPv6/Inet address families `*hook*` can be `prerouting`, `input`, `forw
 For example, to add a base chain that filters input packets:
 
 ```
-# nft add chain inet filter input { type filter hook input priority 0\; }
+# nft add chain inet filter input '{ type filter hook input priority 0; }'
 
 ```
 
@@ -243,14 +238,14 @@ For example, the following lists the rules of the chain named `output` in the `i
 To edit a chain, simply call it by its name and define the rules you want to change.
 
 ```
-# nft chain *family table chain* { [ type *type* hook *hook* device *device* priority *priority* \; policy <policy> \; ] }
+# nft chain *family table chain* '{ [ type *type* hook *hook* device *device* priority *priority* ; policy *policy* ; ] }'
 
 ```
 
 For example, to change the input chain policy of the default table from `accept` to `drop`
 
 ```
-# nft chain inet filter input { policy drop \; }
+# nft chain inet filter input '{ policy drop ; }'
 
 ```
 
@@ -362,8 +357,6 @@ ct:
 
 ```
 
-**Note:** *nft* does not use `/etc/services` to match port numbers with names, instead it uses an [internal list](https://git.netfilter.org/nftables/plain/src/services.c). To show the port mappings from the command line, use e.g. `nft describe tcp dport`.
-
 #### Deletion
 
 Individual rules can only be deleted by their handles. The `nft --handle list` command must be used to determine rule handles. Note the `--handle` switch, which tells `nft` to list handles in its output.
@@ -372,7 +365,7 @@ The following determines the handle for a rule and then deletes it. The `--numbe
 
  `# nft --handle --numeric list chain inet filter input` 
 ```
-table ip fltrTable {
+table inet fltrTable {
      chain input {
           type filter hook input priority 0;
           ip saddr 127.0.0.1 accept # handle 10
@@ -409,7 +402,7 @@ Flush the current ruleset:
 Dump the current ruleset:
 
 ```
-# nft list ruleset >> /tmp/nftables
+# nft -s list ruleset >> /tmp/nftables
 
 ```
 
@@ -429,33 +422,44 @@ Now you can edit /tmp/nftables and apply your changes with:
 flush ruleset
 
 table inet filter {
-        chain input {
-                type filter hook input priority 0;
+	chain input {
+		type filter hook input priority 0; policy drop;
 
-                # accept any localhost traffic
-                iif lo accept
+		iif lo accept comment "Accept any localhost traffic"
+		ct state invalid drop comment "Drop invalid connections"
+		ct state established,related accept comment "Accept traffic originated from us"
 
-                # accept traffic originated from us
-                ct state established,related accept
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept accept comment "Accept ICMPv6"
+		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept comment "Accept ICMP"
+		ip protocol igmp accept comment "Accept IGMP"
 
-		# accept ICMP & IGMP
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
-		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
-		ip protocol igmp accept
+		udp dport mdns ip6 daddr ff02::fb accept comment "Accept mDNS"
+		udp dport mdns ip daddr 224.0.0.251 accept comment "Accept mDNS"
 
-                # activate the following line to accept common local services
-                #tcp dport { 22, 80, 443 } ct state new accept
+		udp sport 1900 udp dport >= 1024 ip6 saddr { fd00::/8, fe80::/10 } meta pkttype unicast limit rate 4/second burst 20 packets accept comment "Accept UPnP IGD port mapping reply"
+		udp sport 1900 udp dport >= 1024 ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } meta pkttype unicast limit rate 4/second burst 20 packets accept comment "Accept UPnP IGD port mapping reply"
 
-                # count and drop any other traffic
-                counter drop
-        }
+		udp sport netbios-ns udp dport >= 1024 meta pkttype unicast ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept Samba Workgroup browsing replies"
+		udp sport netbios-ns udp dport >= 1024 meta pkttype unicast ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept Samba Workgroup browsing replies"
+
+		counter comment "Count any other traffic"
+	}
+
+	chain forward {
+		type filter hook forward priority 0; policy drop;
+	}
+
+	chain output {
+		type filter hook output priority 0; policy accept;
+	}
+
 }
 
 ```
 
-### Simple IPv4/IPv6 firewall
+### Server
 
- `firewall.rules` 
+ `/etc/nftables.conf` 
 ```
 # A simple firewall
 
@@ -465,25 +469,38 @@ table inet filter {
 	chain input {
 		type filter hook input priority 0; policy drop;
 
-		# established/related connections
-		ct state established,related accept
+		iif lo accept comment "Accept any localhost traffic"
+		ct state invalid drop comment "Drop invalid connections"
+		ct state established,related accept comment "Accept traffic originated from us"
 
-		# invalid connections
-		ct state invalid drop
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept accept comment "Accept ICMPv6"
+		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept comment "Accept ICMP"
+		ip protocol igmp accept comment "Accept IGMP"
 
-		# loopback interface
-		iif lo accept
+		udp dport mdns ip6 daddr ff02::fb accept comment "Accept mDNS"
+		udp dport mdns ip daddr 224.0.0.251 accept comment "Accept mDNS"
 
-		# ICMP & IGMP
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
-		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
-		ip protocol igmp accept
+		tcp dport ssh accept comment "Accept SSH on port 22"
 
-		# SSH (port 22)
-		tcp dport ssh accept
+		tcp dport { http, https, 8008, 8080 } accept comment "Accept HTTP (ports 80, 443, 8008, 8080)"
 
-		# HTTP (ports 80 & 443)
-		tcp dport { http, https } accept
+		meta l4proto { tcp, udp } th dport 2049 ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept NFS"
+		meta l4proto { tcp, udp } th dport 2049 ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept NFS"
+
+		udp dport netbios-ns ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept NetBIOS Name Service (nmbd)"
+		udp dport netbios-ns ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept NetBIOS Name Service (nmbd)"
+		udp dport netbios-dgm ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept NetBIOS Datagram Service (nmbd)"
+		udp dport netbios-dgm ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept NetBIOS Datagram Service (nmbd)"
+		tcp dport netbios-ssn ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept NetBIOS Session Service (smbd)"
+		tcp dport netbios-ssn ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept NetBIOS Session Service (smbd)"
+		tcp dport microsoft-ds ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept Microsoft Directory Service (smbd)"
+		tcp dport microsoft-ds ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept Microsoft Directory Service (smbd)"
+
+		udp sport bootpc udp dport bootps ip saddr 0.0.0.0 ip daddr 255.255.255.255 accept comment "Accept DHCPDISCOVER (for DHCP-Proxy)"
+		udp sport { bootpc, 4011 } udp dport { bootps, 4011 } ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept PXE"
+		udp dport tftp ip6 saddr { fd00::/8, fe80::/10 } accept comment "Accept TFTP"
+		udp dport tftp ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 169.254.0.0/16 } accept comment "Accept TFTP"
+
 	}
 
 	chain forward {
@@ -500,29 +517,25 @@ table inet filter {
 
 ### Limit rate IPv4/IPv6 firewall
 
- `firewall.2.rules` 
+ `/etc/nftables.conf` 
 ```
 table inet filter {
 	chain input {
 		type filter hook input priority 0; policy drop;
 
-		ct state invalid drop
+		iif lo accept comment "Accept any localhost traffic"
+		ct state invalid drop comment "Drop invalid connections"
 
-		iif lo accept
+		ip protocol icmp icmp type echo-request limit rate over 10/second burst 4 packets drop comment "No ping floods"
+		ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate over 10/second burst 4 packets drop comment "No ping floods"
 
-		# no ping floods:
-		ip protocol icmp icmp type echo-request limit rate over 10/second burst 4 packets  drop
-		ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate over 10/second burst 4 packets drop
+		ct state established,related accept comment "Accept traffic originated from us"
 
-		ct state established,related accept
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept accept comment "Accept ICMPv6"
+		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept comment "Accept ICMP"
+		ip protocol igmp accept comment "Accept IGMP"
 
-		# ICMP & IGMP
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
-		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
-		ip protocol igmp accept
-
-		# avoid brute force on ssh:
-		tcp dport ssh ct state new limit rate 15/minute accept
+		tcp dport ssh ct state new limit rate 15/minute accept comment "Avoid brute force on SSH"
 
 	}
 
@@ -593,7 +606,7 @@ table inet filter {
     type filter hook output priority 0;
     accept
   }
- }
+}
 
 ```
 
@@ -605,20 +618,14 @@ nftables has a special keyword `masquerade` "where the source address is automag
 
 To use it:
 
-*   make sure masquerading is enabled in the kernel (true if you use the default kernel), otherwise during kernel configuration, set
-
-```
-CONFIG_NFT_MASQ=m
-
-```
-
-*   the `masquerade` keyword can only be used in chains of type `nat`, which in turn cannot be contained in a table with family `inet`. Use a table with family `ip` and/or `ip6` instead.
+*   make sure masquerading is enabled in the kernel (true if you use the default kernel), otherwise during kernel configuration, set `CONFIG_NFT_MASQ=m`.
+*   the `masquerade` keyword can only be used in chains of type `nat`.
 *   masquerading is a kind of source NAT, so only works in the output path.
 
 Example for a machine with two interfaces: LAN connected to `nsp3s0`, and public internet connected to `enp2s0`:
 
 ```
-table ip nat {
+table inet nat {
   chain prerouting {
     type nat hook prerouting priority 0;
   }
@@ -655,9 +662,9 @@ Add a table:
 Add the input, forward, and output base chains. The policy for input and forward will be to drop. The policy for output will be to accept.
 
 ```
-# nft add chain inet filter input { type filter hook input priority 0 \; policy drop \; }
-# nft add chain inet filter forward { type filter hook forward priority 0 \; policy drop \; }
-# nft add chain inet filter output { type filter hook output priority 0 \; policy accept \; }
+# nft add chain inet filter input '{ type filter hook input priority 0 ; policy drop ; }'
+# nft add chain inet filter forward '{ type filter hook forward priority 0 ; policy drop ; }'
+# nft add chain inet filter output '{ type filter hook output priority 0 ; policy accept ; }'
 
 ```
 
@@ -709,7 +716,7 @@ New udp traffic will jump to the UDP chain:
 New tcp traffic will jump to the TCP chain:
 
 ```
-# nft add rule inet filter input ip protocol tcp tcp flags \& \(fin\|syn\|rst\|ack\) == syn ct state new jump TCP
+# nft add rule inet filter input 'ip protocol tcp tcp flags & (fin|syn|rst|ack) == syn ct state new jump TCP'
 
 ```
 

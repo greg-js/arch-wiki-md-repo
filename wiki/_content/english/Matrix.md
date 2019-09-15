@@ -40,7 +40,7 @@ A systemd service named `synapse.service` will be installed by the matrix-synaps
 
 You need at least one user on your fresh synapse server. You may create one as your normal non-root user with the command
 
- `$ register_new_matrix_user -c /etc/synapse/homeserver.yaml [https://localhost:8448](https://localhost:8448)` 
+ `$ register_new_matrix_user -c /etc/synapse/homeserver.yaml [http://127.0.0.1:8008](http://127.0.0.1:8008)` 
 
 or using one of the [matrix clients](https://matrix.org/docs/projects/try-matrix-now.html), for example [riot-desktop](https://www.archlinux.org/packages/?name=riot-desktop), or the [purple-matrix-git](https://aur.archlinux.org/packages/purple-matrix-git/) plug-in for [libpurple](https://www.archlinux.org/packages/?name=libpurple).
 

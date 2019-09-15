@@ -596,19 +596,40 @@ fi
 
 ```
 
-The following script will unmount all shares before a disconnect from a specific network:
+The following script will unmount all SMB shares before a software initiated disconnect from a specific network:
 
- `/etc/NetworkManager/dispatcher.d/pre-down.d/30-mount-smb.sh` 
+ `/etc/NetworkManager/dispatcher.d/pre-down.d/30-umount-smb.sh` 
 ```
 #!/bin/sh
-umount -a -l -t cifs
+
+if [ "$CONNECTION_UUID" = "uuid" ]; then
+  umount -a -l -t cifs
+fi
 
 ```
 
 **Note:**
 
 *   Make sure this script is located in the `pre-down.d` sub-directory as shown above, otherwise it will unmount all shares on any connection state change.
+
+The following script will attempt to unmount all SMB shares following an unexpected disconnect from a specific network:
+
+ `/etc/NetworkManager/dispatcher.d/40-umount-smb.sh` 
+```
+#!/bin/sh
+
+if [ "$CONNECTION_UUID" = "uuid" ]; then
+  if [ "$2" = "down" ]; then
+    umount -a -l -t cifs
+  fi
+fi
+
+```
+
+**Note:**
+
 *   Since NetworkManager 0.9.8, the *pre-down* and *down* events are not executed on shutdown or restart, see [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=701242) for more info.
+*   The previous *umount* scripts are still prone to leaving applications actually accessing the mount to 'hang'.
 
 An alternative is to use the script as seen in [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS"):
 

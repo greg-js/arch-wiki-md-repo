@@ -51,7 +51,7 @@ You should copy the links to your WM/DE starter to `$XDG_CONFIG_HOME/tdm/session
 
 The use of the program `tdmctl` is much like `systemctl`, and it's a powerful tool to configure Console TDM.
 
-You can customize Console TDM by editing `$XDG_CONFIG_HOME/tdm/tdminit`.
+You can customize Console TDM by editing `$XDG_CONFIG_HOME/tdm/tdminit` (sourced before the user is prompted for a session) and `$XDG_CONFIG_HOME/tdm/tdmexit` (sourced before the session is actually started).
 
 ## See also
 

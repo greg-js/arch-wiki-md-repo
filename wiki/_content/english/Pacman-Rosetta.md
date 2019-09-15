@@ -2,9 +2,7 @@ This page uses a table to display the correspondence of [package management](htt
 
 **Tip:** Arch users having to temporarily deal with another Linux distribution can use [pacapt](https://github.com/icy/pacapt), a simple wrapper around other package managers.
 
-**Note:**
-
-*   Some of the tools described here are specific to a certain version of pacman. The -Qk option is new in pacman 4.1.
+**Note:** Some of the tools described here are specific to a certain version of *pacman*. The `-Qk` option is new in *pacman* 4.1.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -150,7 +148,8 @@ aptitude install | zypper verify | revdep-rebuild |
 | Downloads the corresponding source package(s) to the given package name(s) | Use [ABS](/index.php/ABS "ABS") && makepkg -o | dnf download --source | apt-get source / debcheckout | zypper source-install | emerge --fetchonly |
 | Build a package | makepkg -s | rpmbuild -ba (normal)
 mock (in chroot) | debuild | rpmbuild -ba; build; osc build | ebuild; quickpkg |
-| Check for possible packaging issues | namcap | rpmlint | lintian | rpmlint | repoman |
+| Check for possible packaging issues | namcap
+(requires [namcap](https://www.archlinux.org/packages/?name=namcap)) | rpmlint | lintian | rpmlint | repoman |
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
 
 ## See also

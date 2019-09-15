@@ -27,7 +27,9 @@ A mail server consists of multiple components. A [mail transfer agent](https://e
     *   [5.1 Sender Policy Framework](#Sender_Policy_Framework)
     *   [5.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
     *   [5.3 DKIM](#DKIM)
-*   [6 Testing websites](#Testing_websites)
+*   [6 Testing](#Testing)
+    *   [6.1 Dedicated tools](#Dedicated_tools)
+    *   [6.2 Dedicated websites](#Dedicated_websites)
 *   [7 Tips and tricks](#Tips_and_tricks)
 
 ## Software
@@ -146,9 +148,17 @@ For [Postfix](/index.php/Postfix "Postfix"), see [Postfix#Sender Rewriting Schem
 
 Available DKIM implementations are [OpenDKIM](/index.php/OpenDKIM "OpenDKIM") and [dkimproxy](https://www.archlinux.org/packages/?name=dkimproxy).
 
-## Testing websites
+## Testing
 
-There are several handy web sites that can help you test DNS records, deliverability, and encryption support.
+There are several options to help you test DNS records, deliver ability, and encryption support.
+
+### Dedicated tools
+
+*   [swaks](https://www.archlinux.org/packages/?name=swaks)
+
+### Dedicated websites
+
+There are several handy web sites that can help you testing.
 
 *   [https://mxtoolbox.com/](https://mxtoolbox.com/)
 *   [http://ismyemailworking.com/](http://ismyemailworking.com/)

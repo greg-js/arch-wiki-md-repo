@@ -17,11 +17,12 @@ When building packages for Arch Linux, **adhere to the package guidelines** belo
 *   [1 PKGBUILD prototype](#PKGBUILD_prototype)
 *   [2 Package etiquette](#Package_etiquette)
 *   [3 Package naming](#Package_naming)
-*   [4 Directories](#Directories)
-*   [5 Makepkg duties](#Makepkg_duties)
-*   [6 Architectures](#Architectures)
-*   [7 Licenses](#Licenses)
-*   [8 Additional guidelines](#Additional_guidelines)
+*   [4 Package versioning](#Package_versioning)
+*   [5 Directories](#Directories)
+*   [6 Makepkg duties](#Makepkg_duties)
+*   [7 Architectures](#Architectures)
+*   [8 Licenses](#Licenses)
+*   [9 Additional guidelines](#Additional_guidelines)
 
 ## PKGBUILD prototype
 
@@ -100,8 +101,15 @@ optdepends=('cups: printing support'
 
 *   Package names can contain only alphanumeric characters and any of `@`, `.`, `_`, `+`, `-`. Names are not allowed to start with hyphens or dots. All letters should be lowercase.
 *   Package names should NOT be suffixed with the upstream major release version number (e.g. we don't want libfoo2 if upstream calls it libfoo v2.3.4) in case the library and its dependencies are expected to be able to keep using the most recent library version with each respective upstream release. However, for some software or dependencies, this can not be assumed. In the past this has been especially true for widget toolkits such as GTK and Qt. Software that depends on such toolkits can usually not be trivially ported to a new major version. As such, in cases where software can not trivially keep rolling alongside its dependencies, package names should carry the major version suffix (e.g. gtk2, gtk3, qt4, qt5). For cases where most dependencies can keep rolling along the newest release but some can't (for instance closed source that needs libpng12 or similar), a deprecated version of that package might be called libfoo1 while the current version is just libfoo.
-*   Package versions **should be the same as the version released by the author**. Versions can include letters if need be (eg, nmap's version is 2.54BETA32). **Version tags may not include hyphens!** Letters, numbers, and periods only.
-*   Package releases are **specific to Arch Linux packages**. These allow users to differentiate between newer and older package builds. When a new package version is first released, the **release count starts at 1**. Then as fixes and optimizations are made, the package will be **re-released** to the Arch Linux public and the **release number will increment**. When a new version comes out, the release count resets to 1\. Package release tags follow the **same naming restrictions as version tags**.
+
+## Package versioning
+
+*   Package versions (i.e. [PKGBUILD#pkgver](/index.php/PKGBUILD#pkgver "PKGBUILD")) **should be the same as the version released by the author**. Versions can include letters if need be (eg, nmap's version is 2.54BETA32). **Version tags may not include hyphens!** Letters, numbers, and periods only.
+*   **Stable packages package stable releases**: Release candidates (i.e. `1.0.0-rc1`), alpha (e.g. `1.0.0-alpha1`) and beta (e.g. `1.0.0-beta1`) releases are not allowed and are only to be used under the following circumstances:
+    *   The non-stable release holds **urgent** security fixes (and backporting is non-trivial).
+    *   The non-stable release allows for the package to be built (e.g. problems introduced due to updated dependencies) and those changes can not otherwise be backported easily.
+    *   The non-stable release allows the distribution to drop an EOL component (e.g. qt4, python2).
+*   Package releases (i.e. [PKGBUILD#pkgrel](/index.php/PKGBUILD#pkgrel "PKGBUILD")) are **specific to Arch Linux packages**. These allow users to differentiate between newer and older package builds. When a new package version is first released, the **release count starts at 1**. Then as fixes and optimizations are made, the package will be **re-released** to the Arch Linux public and the **release number will increment**. When a new version comes out, the release count resets to 1\. Package release tags follow the **same naming restrictions as version tags**.
 
 ## Directories
 

@@ -30,7 +30,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [5.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
         *   [5.2.1 Using resolvconf](#Using_resolvconf)
         *   [5.2.2 Using dnsmasq](#Using_dnsmasq)
-        *   [5.2.3 Using systemd-resolved](#Using_systemd-resolved)
+    *   [5.3 Low MTU](#Low_MTU)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Using systemd-networkd](#Using_systemd-networkd)
         *   [6.1.1 Server](#Server_2)
@@ -211,7 +211,7 @@ Destination = 10.0.0.0/24
 
 ## Specific use-case: VPN server
 
-The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux-native and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
+The purpose of this section is to setup a WireGuard "server" and generic "clients" to enable access to the server/network resources through an encrypted and secured tunnel like [OpenVPN](/index.php/OpenVPN "OpenVPN") and others. The server runs on Linux and the clients can run any number of platforms (the WireGuard Project offers apps on both iOS and Android platforms in addition to Linux, Windows and MacOS). See the official project [install link](https://www.wireguard.com/install/) for more.
 
 **Tip:** Instead of using [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) for server/client configuration, one may want to use [systemd-networkd](#Using_systemd-networkd) native WireGuard support.
 
@@ -254,14 +254,14 @@ PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o 
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 [Peer]
-# client foo
-PublicKey = [FOO's PUBLIC KEY]
+# foo
+PublicKey = [FOO'S PUBLIC KEY]
 PresharedKey = [PRE-SHARED KEY]
 AllowedIPs = 10.200.200.2/32
 
 [Peer]
-# client bar
-PublicKey = [BAR's PUBLIC KEY]
+# bar
+PublicKey = [BAR'S PUBLIC KEY]
 AllowedIPs = 10.200.200.3/32
 ```
 
@@ -279,7 +279,7 @@ Create the corresponding client config file(s):
 ```
 [Interface]
 Address = 10.200.200.2/24
-PrivateKey = [FOO's PRIVATE KEY]
+PrivateKey = [FOO'S PRIVATE KEY]
 DNS = 10.200.200.1
 
 [Peer]
@@ -292,7 +292,7 @@ Endpoint = my.ddns.address.com:51820
 ```
 [Interface]
 Address = 10.200.200.3/24
-PrivateKey = [BAR's PRIVATE KEY]
+PrivateKey = [BAR'S PRIVATE KEY]
 DNS = 10.200.200.1
 
 [Peer]
@@ -369,27 +369,18 @@ If resolvconf is already used by the system and connection losses persist, make 
 
 See [Dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq") for configuration.
 
-#### Using systemd-resolved
+### Low MTU
 
-At the time of writing (Sept. 2018), the resolvconf-compatible mode offered by [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) does not work with *wg-quick*. However [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") can still be used by *wg-quick* through the `PostUp` hook. First make sure that NetworkManager is configured with *systemd-resolved*: [NetworkManager#systemd-resolved](/index.php/NetworkManager#systemd-resolved "NetworkManager") and then alter the tunnel configuration:
+Due to too low MTU (lower than 1280), wg-quick may have failed to create the Wireguard interface. This can be solved by setting the MTU value in Wireguard configuration in Interface section on client.
 
- `/etc/wireguard/wg0.conf` 
+ `/foo.config` 
 ```
 [Interface]
-Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
-PrivateKey = [CLIENT PRIVATE KEY]
-PostUp = resolvectl domain %i "~."; resolvectl dns %i 10.0.0.1; resolvectl dnssec %i yes
-
-[Peer]
-PublicKey = [SERVER PUBLICKEY]
-AllowedIPs = 0.0.0.0/0, ::0/0
-Endpoint = [SERVER ENDPOINT]:51820
-PersistentKeepalive = 25
+Address = 10.200.200.2/24
+MTU = 1500
+PrivateKey = [FOO'S PRIVATE KEY]
+DNS = 10.200.200.1
 ```
-
-Setting `"~."` as a domain name is necessary for *systemd-resolved* to give priority to the newly available DNS server.
-
-No `PostDown` key is necessary as *systemd-resolved* automatically revert all parameters when `wg0` is torn down.
 
 ## Tips and tricks
 

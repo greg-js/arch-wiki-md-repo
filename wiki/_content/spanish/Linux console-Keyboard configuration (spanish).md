@@ -7,7 +7,11 @@ Artículos relacionados
 
 Las asignaciones del teclado (keymaps) para la [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"), tipos de letras de la consola y mapas de la consola son proporcionados por el paquete [kbd](https://www.archlinux.org/packages/?name=kbd) (paquete que ya debería estar instalado), que también proporciona muchas herramientas de bajo nivel para la gestión de la consola virtual.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Visualizar la configuración del teclado](#Visualizar_la_configuración_del_teclado)
 *   [2 Configurar la distribución del teclado](#Configurar_la_distribución_del_teclado)

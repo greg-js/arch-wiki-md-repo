@@ -33,7 +33,7 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
     *   [4.3 Impersonate another window manager](#Impersonate_another_window_manager)
     *   [4.4 Illegible fonts](#Illegible_fonts)
     *   [4.5 Missing text in some applications](#Missing_text_in_some_applications)
-    *   [4.6 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM,_menus_immediately_closing)
+    *   [4.6 Gray window | Applications not resizing with WM | menus immediately closing](#Gray_window_|_Applications_not_resizing_with_WM_|_menus_immediately_closing)
     *   [4.7 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
     *   [4.8 JavaFX's MediaPlayer constructor throws an exception](#JavaFX's_MediaPlayer_constructor_throws_an_exception)
     *   [4.9 Java applications cannot open external links](#Java_applications_cannot_open_external_links)
@@ -44,7 +44,6 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
     *   [5.3 GTK LookAndFeel](#GTK_LookAndFeel)
         *   [5.3.1 GTK3 Support](#GTK3_Support)
     *   [5.4 Better 2D performance](#Better_2D_performance)
-    *   [5.5 Non-reparenting window managers / Grey window / Programs not drawing properly](#Non-reparenting_window_managers_/_Grey_window_/_Programs_not_drawing_properly)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -239,7 +238,7 @@ If an invalid Java environment link is set, calling the `archlinux-java fix` com
 If you want to launch an application with another version of java than the default one (for example if you have both version jre7 and jre8 installed on your system), you can wrap your application in a small bash script to locally change the default PATH of java. For example if the default version is jre7 and you want to use jre8:
 
 ```
-#!/bin/sh 
+#!/bin/sh
 
 export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
 exec /path/to/application "$@"
@@ -277,10 +276,10 @@ If you have faced the error `The selected directory is not a valid home for JDK`
 
 ### Impersonate another window manager
 
-You may use the [wmname](https://www.archlinux.org/packages/?name=wmname) from [suckless.org](https://tools.suckless.org/x/wmname) to make the JVM believe you are running a different window manager. This may solve a rendering issue of Java GUIs occurring in window managers like [Awesome](/index.php/Awesome "Awesome") or [Dwm](/index.php/Dwm "Dwm") or [Ratpoison](/index.php/Ratpoison "Ratpoison").
+You may use the [wmname](https://www.archlinux.org/packages/?name=wmname) from [suckless.org](https://tools.suckless.org/x/wmname) to make the JVM believe you are running a different window manager. This may solve a rendering issue of Java GUIs occurring in window managers like [Awesome](/index.php/Awesome "Awesome") or [Dwm](/index.php/Dwm "Dwm") or [Ratpoison](/index.php/Ratpoison "Ratpoison"). Try set "compiz" or "LG3D"
 
 ```
-$ wmname LG3D
+$ wmname compiz
 
 ```
 
@@ -296,21 +295,16 @@ In addition to the suggestions mentioned below in [#Better font rendering](#Bett
 
 If some applications are completely missing texts it may help to use the options under [#Tips and tricks](#Tips_and_tricks) as suggested in [FS#40871](https://bugs.archlinux.org/task/40871).
 
-### Applications not resizing with WM, menus immediately closing
+### Gray window | Applications not resizing with WM | menus immediately closing
 
 The standard Java GUI toolkit has a hard-coded list of "non-reparenting" window managers. If using one that is not on that list, there can be some problems with running some Java applications. One of the most common problems is "gray blobs", when the Java application renders as a plain gray box instead of rendering the GUI. Another one might be menus responding to your click, but closing immediately.
 
 There are several things that may help:
 
 *   For [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) or [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk), append the line `export _JAVA_AWT_WM_NONREPARENTING=1` in `/etc/profile.d/jre.sh`. Then, source the file `/etc/profile.d/jre.sh` or log out and log back in.
-*   For Oracle's JRE/JDK, use [SetWMName.](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName) However, its effect may be canceled when also using `XMonad.Hooks.EwmhDesktops`. In this case, appending
-
-```
->> setWMName "LG3D"
-
-```
-
-to the `LogHook` may help.
+*   For last version of JDK append line `export AWT_TOOLKIT=MToolkit` in `~/.xinitrc` before exec window manager.
+*   Also, we can try to use [wmname](https://www.archlinux.org/packages/?name=wmname) with line `wmname compiz` in your `~/.xinitrc`.
+*   For Oracle's JRE/JDK, use [SetWMName.](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Using_SetWMName) However, its effect may be canceled when also using `XMonad.Hooks.EwmhDesktops`. In this case, appending `>> setWMName "LG3D"` to the `LogHook` may help.
 
 See [[2]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
 
@@ -415,17 +409,6 @@ export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
 ```
 
 **Note:** Enabling this option may cause the UI of software like JetBrains IDEs misbehave, making them drawing windows, popups and toolbars partially.
-
-### Non-reparenting window managers / Grey window / Programs not drawing properly
-
-Non-reparenting window managers user should set the following environment variable in their `.xinitrc`
-
-```
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-```
-
-Not setting this may result in java programs not being drawn properly.
 
 ## See also
 

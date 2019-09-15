@@ -17,6 +17,7 @@ JupyterLab is "Jupyter’s Next-Generation Notebook Interface", while Jupyter No
     *   [3.4 R](#R)
     *   [3.5 Sage math](#Sage_math)
     *   [3.6 Octave](#Octave)
+    *   [3.7 Maxima](#Maxima)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -91,6 +92,10 @@ Install the [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath
 ### Octave
 
 Install the [jupyter-octave_kernel](https://aur.archlinux.org/packages/jupyter-octave_kernel/) package.
+
+### Maxima
+
+Install the [maxima-jupyter-git](https://aur.archlinux.org/packages/maxima-jupyter-git/) package.
 
 ## See also
 

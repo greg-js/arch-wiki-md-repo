@@ -2,7 +2,7 @@
 
 Artigos relacionados
 
-*   [/Configuração de teclado](/index.php/Linux_console/Configura%C3%A7%C3%A3o_de_teclado "Linux console/Configuração de teclado")
+*   [/Configuração de teclado](/index.php/Console_do_Linux/Configura%C3%A7%C3%A3o_de_teclado "Console do Linux/Configuração de teclado")
 *   [Screen capture#Virtual console](/index.php/Screen_capture#Virtual_console "Screen capture")
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
 *   [getty](/index.php/Getty "Getty")
@@ -11,7 +11,7 @@ De acordo com [Wikipédia](https://en.wikipedia.org/wiki/Linux_console "wikipedi
 
 	O **console Linux** é um console do sistema interno ao [kernel Linux](/index.php/Linux_kernel "Linux kernel"). O console Linux fornece uma maneira de o kernel e outros processos enviarem a saída de texto ao usuário e receberem entrada de texto do usuário. O usuário normalmente insere texto com um teclado de computador e lê o texto de saída em um monitor de computador. O kernel Linux tem suporte a consoles virtuais - consoles que são logicamente separados, mas que acessam o mesmo teclado físico e tela.
 
-Este artigo descreve os conceitos básicos do console do Linux e como configurar a exibição da fonte. A configuração do teclado é descrita na subpágina [/Configuração de teclado](/index.php/Linux_console/Configura%C3%A7%C3%A3o_de_teclado "Linux console/Configuração de teclado").
+Este artigo descreve os conceitos básicos do console do Linux e como configurar a exibição da fonte. A configuração do teclado é descrita na subpágina [/Configuração de teclado](/index.php/Console_do_Linux/Configura%C3%A7%C3%A3o_de_teclado "Console do Linux/Configuração de teclado").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -75,7 +75,7 @@ O [console do Linux](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linu
 
 O pacote [kbd](https://www.archlinux.org/packages/?name=kbd) fornece ferramentas para alterar a fonte do console virtual e o mapeamento de fontes. As fontes disponíveis são salvas no diretório `/usr/share/kbd/consolefonts/`, aquelas que terminam com *.psfu* ou *.psfu.gz* possuem um mapa de tradução Unicode embutido.
 
-Os keymaps (mapas de teclado), a conexão entre a tecla pressionada e o caractere usado pelo computador, são encontrados nos subdiretórios de `/usr/share/kbd/keymaps/`, veja [/Configuração de teclado](/index.php/Linux_console/Configura%C3%A7%C3%A3o_de_teclado "Linux console/Configuração de teclado") para detalhes.
+Os keymaps (mapas de teclado), a conexão entre a tecla pressionada e o caractere usado pelo computador, são encontrados nos subdiretórios de `/usr/share/kbd/keymaps/`, veja [/Configuração de teclado](/index.php/Console_do_Linux/Configura%C3%A7%C3%A3o_de_teclado "Console do Linux/Configuração de teclado") para detalhes.
 
 **Nota:** Substituir a fonte pode causar problemas com programas que esperam uma fonte de estilo VGA padrão, como aqueles que usam gráficos de desenho de linha.
 

@@ -21,6 +21,7 @@ This article describes configuration & troubleshooting steps specific to Bluetoo
     *   [2.3 Mouse always disconnect](#Mouse_always_disconnect)
     *   [2.4 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
     *   [2.5 Problems with the Logitech BLE mouse (M557, M590, anywhere mouse 2, etc)](#Problems_with_the_Logitech_BLE_mouse_(M557,_M590,_anywhere_mouse_2,_etc))
+*   [3 See Also](#See_Also)
 
 ## Configuration
 
@@ -69,6 +70,31 @@ if using a Bluetooth LE device use [this](https://gist.github.com/5shekel/8b4998
 ### Mouse lag
 
 If you experience mouse lag you can try to increase the polling rate. See [Mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate") for more information.
+
+You can try to set the minimum/maximum latency for the mouse in BlueZ [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1860951#p1860951):
+
+Add or modify the following section in `/var/lib/bluetooth/<mac-of-your-adapter>/<mac-of-your-mouse>/info` (adapt the path accordingly):
+
+```
+[ConnectionParameters]
+MinInterval=6
+MaxInterval=9
+Latency=44
+Timeout=216
+
+```
+
+Also, you can use `hcitool` (in [bluez-hcitool](https://aur.archlinux.org/packages/bluez-hcitool/)) to change latency parameters of the device:
+
+```
+# HANDLE="$(hcitool con | grep '<Bluetooth Mouse mac address>' | awk '{print $5}')"  # get the device handle
+# hcitool lecup --handle $HANDLE --latency 0 --min 6 --max 8
+
+```
+
+Note that this method is only effective for the current connection. If the mouse gets disconnected, you'll need to execute again.
+
+Alternatively, you can change the default latency settings via debugfs. See `/sys/kernel/debug/bluetooth/hci0/conn_{latency,{min,max}_interval}` .
 
 ### Problems with the USB dongle
 
@@ -140,3 +166,7 @@ In some case, the mouse is paired but not moving when used. The device add to be
 9.  Power the bluetooth off and on.
 
 If the mouse does not work directly, just power off and power on the mouse.
+
+## See Also
+
+*   [BlueZ settings storage](https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/doc/settings-storage.txt)

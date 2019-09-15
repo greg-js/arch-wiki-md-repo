@@ -330,7 +330,7 @@ ibus-terminal -r &
 
 ```
 
-**The ending '&' is very important, else it will broke input when you stop it.**
+**The ending '&' is very important, else it will brake input when you stop it.**
 
 ## ibus-m17n
 

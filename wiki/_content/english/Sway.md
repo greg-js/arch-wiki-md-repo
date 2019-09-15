@@ -32,6 +32,7 @@
     *   [5.3 Sway socket not detected](#Sway_socket_not_detected)
     *   [5.4 Unable to retrieve socket path](#Unable_to_retrieve_socket_path)
     *   [5.5 Keybindings and keyboard layouts](#Keybindings_and_keyboard_layouts)
+    *   [5.6 Java applications](#Java_applications)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -53,6 +54,8 @@ To start Sway, simply type *sway* from a TTY.
 **Note:** Sway does not support display managers officially.[[1]](https://github.com/swaywm/sway/pull/3634#issuecomment-462779163)
 
 The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by modern display managers like [GDM](/index.php/GDM "GDM") and [SDDM](/index.php/SDDM "SDDM").
+
+It is also possible to start sway as a [systemd user service](https://github.com/swaywm/sway/wiki/Systemd-integration#running-sway-itself-as-a---user-service) through the display manager.
 
 Also you can use text-based session manager, see [Display manager#Console](/index.php/Display_manager#Console "Display manager").
 
@@ -278,7 +281,7 @@ Swaynagmode by default triggers the sway mode `nag` upon initialization, followe
 set $nag exec swaynagmode
 mode "nag" {
   bindsym {
-    Ctrl+d    mode "Default"
+    Ctrl+d    mode "default"
 
     Ctrl+c    $nag --exit
     q         $nag --exit
@@ -298,6 +301,8 @@ mode "nag" {
 }
 
 ```
+
+Note that, beginning in sway version 1.2, mode names are case-sensitive.
 
 You can configure sway to use swaynagmode with the configuration command `swaynag_command swaynagmode`.
 
@@ -377,6 +382,12 @@ bindsym --to-code {
 }
 
 ```
+
+### Java applications
+
+Some Java-based applications will display blank screen when opened, for example any Intellij editor. To mitigate this, the application can be started with the `_JAVA_AWT_WM_NONREPARENTING` environment variable set to 1.
+
+If you start the application from a launcher like [rofi](https://www.archlinux.org/packages/?name=rofi) or [dmenu](https://www.archlinux.org/packages/?name=dmenu), you might want to modify the application desktop entry as shown in [Desktop_entries#Modify_environment_variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
 
 ## See also
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [p7zip](/index.php/P7zip "P7zip"). Дата последней синхронизации: 7 июня 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=P7zip&diff=0&oldid=574739).
+**Состояние перевода:** На этой странице представлен перевод статьи [p7zip](/index.php/P7zip "P7zip"). Дата последней синхронизации: 11 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=P7zip&diff=0&oldid=581865).
 
 [p7zip](http://p7zip.sourceforge.net/) — портированная консольная версия [7-Zip](https://en.wikipedia.org/wiki/ru:7-Zip "wikipedia:ru:7-Zip") для [POSIX](https://en.wikipedia.org/wiki/ru:POSIX "wikipedia:ru:POSIX")-систем, включая Linux.
 
@@ -40,7 +40,7 @@ $ 7z a <имя архива> <имя файла>
 Также можно указать пароль с помощью флага `-p` и скрыть структуру архива флагом `-mhe=on`:
 
 ```
-$ 7z a <имя архива> <имя файла> -p<пароль> -mhe=on
+$ 7z a <имя архива> <имя файла> -p -mhe=on
 
 ```
 

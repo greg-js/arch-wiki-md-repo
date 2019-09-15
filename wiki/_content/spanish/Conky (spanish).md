@@ -1,23 +1,27 @@
 Conky es un monitor de sistema para los sistemas X Window. Está disponible para GNU/Linux y FreeBSD. Es un software libre liberado bajo los términos de la licencia GPL. Conky es capaz de monitorear distintas variables de sistema, incluyendo CPU, memoria, swap, espacio de disco, temperaturas, subidas, bajadas, mensajes de sistema, y mucho más. Es completamente configurable, la configuración puede ser un poco difícil de entender, pero es bastante posible realizarla. Conky es un *fork* de torsmo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Instalación](#Instalaci.C3.B3n)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Instalación](#Instalación)
 *   [2 Consejos y trucos](#Consejos_y_trucos)
-    *   [2.1 Habilitar transparecian real (KDE4)](#Habilitar_transparecian_real_.28KDE4.29)
+    *   [2.1 Habilitar transparecian real (KDE4)](#Habilitar_transparecian_real_(KDE4))
     *   [2.2 Evitar el parpadeo](#Evitar_el_parpadeo)
     *   [2.3 Integrar con KDesktop](#Integrar_con_KDesktop)
-    *   [2.4 Visualizar información de actualización de paquetes](#Visualizar_informaci.C3.B3n_de_actualizaci.C3.B3n_de_paquetes)
+    *   [2.4 Visualizar información de actualización de paquetes](#Visualizar_información_de_actualización_de_paquetes)
     *   [2.5 Mostrar Weather Forecast](#Mostrar_Weather_Forecast)
     *   [2.6 Mostrar RSS feeds](#Mostrar_RSS_feeds)
     *   [2.7 Mostrar ranking Distrowatch Arch Linux](#Mostrar_ranking_Distrowatch_Arch_Linux)
-    *   [2.8 Mostrar estadísticas rTorrent](#Mostrar_estad.C3.ADsticas_rTorrent)
-    *   [2.9 Mostrar numero de correos nuevos (GMail)](#Mostrar_numero_de_correos_nuevos_.28GMail.29)
-    *   [2.10 Mostrar correos nuevos (IMAP + SSL)](#Mostrar_correos_nuevos_.28IMAP_.2B_SSL.29)
-*   [3 Contribución de usuarios con ejemplos de configuración](#Contribuci.C3.B3n_de_usuarios_con_ejemplos_de_configuraci.C3.B3n)
+    *   [2.8 Mostrar estadísticas rTorrent](#Mostrar_estadísticas_rTorrent)
+    *   [2.9 Mostrar numero de correos nuevos (GMail)](#Mostrar_numero_de_correos_nuevos_(GMail))
+    *   [2.10 Mostrar correos nuevos (IMAP + SSL)](#Mostrar_correos_nuevos_(IMAP_+_SSL))
+*   [3 Contribución de usuarios con ejemplos de configuración](#Contribución_de_usuarios_con_ejemplos_de_configuración)
     *   [3.1 Graysky](#Graysky)
 *   [4 Un ejemplo de los anillos con soporte nVidia](#Un_ejemplo_de_los_anillos_con_soporte_nVidia)
-*   [5 Una nota sobre fuentes simbólicas](#Una_nota_sobre_fuentes_simb.C3.B3licas)
+*   [5 Una nota sobre fuentes simbólicas](#Una_nota_sobre_fuentes_simbólicas)
 *   [6 Enlaces externos](#Enlaces_externos)
 
 ## Instalación
@@ -433,10 +437,10 @@ o donde se haya guardado el archivo.
  50 lua_draw_hook_pre ring_stats
  51 
  52 TEXT
- 53 ${alignr}${voffset 53}${goto 90}${font MaiandraGD:size=11}${time %A, %d %B %Y}
+ 53 ${alignr}${voffset 53}${goto 90}${font MaiandraGD:size=11}${time %A, %d %B %Y}
  54 
  55 
- 56 ${voffset 5}${goto 164}${font MaiandraGD:size=16}${time %H:%M}
+ 56 ${voffset 5}${goto 164}${font MaiandraGD:size=16}${time %H:%M}
  57 
  58 
  59 
@@ -753,7 +757,7 @@ but must be larger (e.g. more clockwise) than start_angle.
 278                 local str=''
 279                 local value=0
 280 
-281                 str=string.format('${%s %s}',pt['name'],pt['arg'])
+281                 str=string.format('${%s %s}',pt['name'],pt['arg'])
 282                 str=conky_parse(str)
 283 
 284                 value=tonumber(str)

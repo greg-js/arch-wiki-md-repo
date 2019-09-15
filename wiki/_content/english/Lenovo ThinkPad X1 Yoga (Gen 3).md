@@ -107,10 +107,10 @@ and check for `S3` in the list.
 
 Since of May 17, 2019, Lenovo released firmware 1.33, which let you enable legacy S3 sleep in UEFI/BIOS. You can find the option in ThinkPad Setup: Config -> Power and disable the option "Optimized Sleep State for Modern Standby".
 
-Optimized Sleep State for Modern Standby:
+Optimized Sleep State for Modern Standby (after BIOS 1.35 the wording has changed to "Sleep State"):
 
-*   Disabled: "legacy" S3 sleep
-*   Enabled: modern standby
+*   Disabled: "legacy" S3 sleep (after BIOS 1.35 the wording has changed to "Linux")
+*   Enabled: modern standby (after BIOS 1.35 the wording has changed to "Windows 10")
 
 By setting this option to "Disabled", a warning will appear. The warning describes that a reinstallation of your OS might be mandatory. Accept the warning and both Windows and Linux should work fine. You can do this step even if you already installed a patch to enable s3 sleep. After disabling the optimized sleep state in the bios, and if you did the method to enable s3 sleep before the 1.33 bios update, it is best to remove `**GRUB_EARLY_INITRD_LINUX_CUSTOM="/acpi_override"**` in your /etc/default/grub (if you placed that there before), and regenerate the grub cfg using `sudo update-grub`. Don't forget to remove the acpi_override file as well.
 

@@ -170,8 +170,6 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/arch4edu/$arch
 ```
 [archlinuxcn]
 Server = http://repo.archlinuxcn.org/$arch
-## or use a CDN (beta)
-#Server = https://cdn.repo.archlinuxcn.org/$arch
 ## or install archlinuxcn-mirrorlist-git and use the mirrorlist
 #Include = /etc/pacman.d/archlinuxcn-mirrorlist
 

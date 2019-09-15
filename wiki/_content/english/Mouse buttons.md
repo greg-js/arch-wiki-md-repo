@@ -554,6 +554,10 @@ You can execute the g5hack tool at system start up using systemd unit. See [Syst
 
 ## User tools
 
+[piper](https://www.archlinux.org/packages/?name=piper) is a graphical user interface to configure gaming mice, works with Wayland. In order to work with your mouse, it must be in the [list of supported devices](https://github.com/libratbag/libratbag/tree/master/data/devices%7C).
+
+[wayland-mouse-mapper](https://github.com/mathportillo/wayland-mouse-mapper%7C) is a small script for mapping mouse buttons to keystrokes on Wayland.
+
 [IMWheel](/index.php/IMWheel "IMWheel") provides configurable mouse wheel and button mapping. It can be configured globally or for individual processes.
 
 Sample `~/.imwheelrc` to enable back/forward thumb buttons for all applications and increased scroll speed in Chromium:

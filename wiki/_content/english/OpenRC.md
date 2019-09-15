@@ -6,7 +6,11 @@ Related articles
 
 [OpenRC](https://wiki.gentoo.org/wiki/OpenRC) is a service manager maintained by the Gentoo developers. OpenRC is dependency based and works with the system provided init program, normally [SysVinit](/index.php/SysVinit "SysVinit").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Booting](#Booting)

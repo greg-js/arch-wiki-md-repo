@@ -43,7 +43,7 @@ Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you 
 
 ### run application "single shot"
 
-To run an application remotely over ssh without starting an xpra server on the host it's runnig on in advance, you can simply use this command on your client machine:
+To run an application remotely over ssh without starting an xpra server on the host it's running on in advance, you can simply use this command on your client machine:
 
  `$ xpra start ssh:user@host --exit-with-children --start-child="command"` 
 

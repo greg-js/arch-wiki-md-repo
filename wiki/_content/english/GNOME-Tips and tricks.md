@@ -192,7 +192,7 @@ terminal-window {
 
 ### Disable blinking cursor
 
-Since GNOME 3.8 and the migration to GSettings and DConf the key required to modify in order to disable the blinking cursor in the Terminal differs slightly in contrast to the old GConf key. To disable the blinking cursor in GNOME 3.8 and above use:
+To disable the blinking cursor in GNOME 3.8 and above use:
 
 ```
 $ gsettings set org.gnome.desktop.interface cursor-blink false

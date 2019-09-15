@@ -1,4 +1,6 @@
-tp_smapi is a set of kernel modules that retrieves information from and conveys commands to the hardware of many ThinkPad laptops. This information is presented through the `/sys/devices/platform/smapi` filesystem. Much like the `/proc` filesystem, you can read and write information to these files to get information about and send commands to the hardware. tp_smapi is highly recommended if you're using a supported ThinkPad laptop.
+*tp_smapi* is a set of kernel modules that retrieves information from and conveys commands to the hardware of many ThinkPad laptops before [Ivy Bridge processors](#Supported_laptops).
+
+This information is presented through the `/sys/devices/platform/smapi` filesystem. Much like the `/proc` filesystem, you can read and write information to these files to get information about and send commands to the hardware. tp_smapi is highly recommended if you're using a supported ThinkPad laptop.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -206,4 +208,4 @@ Note that if you try to display the values, you'll get only the last one set (st
 
 ## See also
 
-[tp_smapi on ThinkWiki](http://www.thinkwiki.org/wiki/Tp_smapi)
+*   [tp_smapi on ThinkWiki](http://www.thinkwiki.org/wiki/Tp_smapi)

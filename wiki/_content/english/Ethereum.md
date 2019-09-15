@@ -40,10 +40,4 @@ GPU mining with geth has been discontinued.
 
 ### Ethereum Wallet
 
-You can install the Ethereum Wallet via the [mist](https://aur.archlinux.org/packages/mist/) package or the GitHub [releases](https://github.com/ethereum/mist/releases). Mist will connect to a running geth instance or start its own if it cannot find one.
-
-If you use a GitHub release, download the most recent Linux one with the zip extension: `Ethereum-Wallet-linux64-*version*.zip`; unzip the file and run `./ethereumwallet`.
-
-If the application fails to start with `error while loading shared libraries: libgtk-x11-2.0.so: cannot open shared object file: No such file or directory`, install the [GTK 2](/index.php/GTK "GTK") library.
-
-The wallet also implements an Ethereum node.
+You can install the Ethereum Wallet via the [mycrypto-bin](https://aur.archlinux.org/packages/mycrypto-bin/) package. The old [mist](https://aur.archlinux.org/packages/mist/) wallet is deprecated. See the [announcement](https://medium.com/@avsa/sunsetting-mist-da21c8e943d2) and view the [migration guide](https://medium.com/@omgwtfmarc/mist-migration-patterns-6bcf066ac383).

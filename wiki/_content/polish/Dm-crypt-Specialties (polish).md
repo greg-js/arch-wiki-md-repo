@@ -203,7 +203,9 @@ Zauważ, że:
 
 *   Możesz wykonać powyższe instrukcje tylko z dwiema partycjami podstawowymi, jedną partycją rozruchową (wymaganą z powodu szyfrowania) i jedną podstawową partycją LVM. Na partycji LVM możesz mieć tyle partycji, ile potrzebujesz, ale co najważniejsze powinna zawierać przynajmniej partycje woluminu root, swap i home logical wolumin. Dodatkową zaletą jest posiadanie tylko jednego pliku klucza dla wszystkich partycji oraz możliwość hibernacji komputera (zawieszenie na dysk), w którym partycja wymiany jest szyfrowana. Jeśli zdecydujesz się na to, twoje haki w `/etc/mkinitcpio.conf` powinny wyglądać tak: `HOOKS=( ... usb usbinput (etwo or ssldec) encrypt (if using openssl) lvm2 resume ... )` i powinieneś dodać
 
- `resume=/dev/<VolumeGroupName>/<LVNameOfSwap>` do [parametrów jądra](/index.php/Kernel_parameters "Kernel parameters").
+ `resume=/dev/<VolumeGroupName>/<LVNameOfSwap>` 
+
+do [parametrów jądra](/index.php/Kernel_parameters "Kernel parameters").
 
 *   Jeśli musisz tymczasowo przechowywać zaszyfrowany plik klucza gdzieś, nie przechowuj ich na niezaszyfrowanym dysku. Nawet lepiej pamiętaj o zapisaniu ich w pamięci RAM, takich jak `/dev/shm`
 *   Jeśli chcesz użyć pliku klucza szyfrowanego GPG, musisz użyć statycznie skompilowanej wersji GnuPG 1.4 lub możesz edytować haki i użyć tego pakietu AUR [gnupg1](https://aur.archlinux.org/packages/gnupg1/)

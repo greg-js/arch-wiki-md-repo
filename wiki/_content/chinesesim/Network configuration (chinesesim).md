@@ -73,7 +73,7 @@
 
 ## 检查连接
 
-若要排查网络连接问题，go through the following conditions and ensure that you meet them：
+若要排查网络连接问题，请先确保你满足了以下要求。
 
 1.  你的[网络接口](#网络接口)可见并已启用。
 2.  你已连接到网络。网线已接好或者已经[连接到无线局域网](/index.php/Wireless_network_configuration "Wireless network configuration")。
@@ -309,7 +309,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 #### 手动指定
 
-It is possible to manually set up a static IP using only the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. This is a good way to test connection settings since the connection will not persist across reboots. First enable the [network interface](#Network_interfaces):
+可以利用[iproute2](https://www.archlinux.org/packages/?name=iproute2)来手动指定静态 IP。这种方法设置的IP在重启后不会保留，因此这是一个测试连接的好方法。首先开启[network interface](#Network_interfaces)：
 
 ```
  # ip link set *interface* up
@@ -385,68 +385,68 @@ Hosts/Net: 2                     Class A, Private Internet
 
 ### IP 地址
 
-[IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") are managed using [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8).
+[IP addresses](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address")使用[ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8)管理。
 
-List IP addresses:
+显示 IP 地址：
 
 ```
 $ ip address show
 
 ```
 
-Add an IP address to an interface:
+向某接口添加一个 IP：
 
 ```
-# ip address add *address/prefix_len* broadcast + dev *interface*
-
-```
-
-	Note that:
-
-*   the address is given in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing") to also supply a [subnet mask](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")
-*   `+` is a special symbol that makes `ip` derive the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address") from the IP address and the subnet mask
-
-**Note:** Make sure manually assigned IP addresses do not conflict with DHCP assigned ones.
-
-Delete an IP address from an interface:
-
-```
-$ ip address del *address/prefix_len* dev *interface*
+# ip address add *地址/前缀长度* broadcast + dev *interface*
 
 ```
 
-Delete all addresses matching a criteria, e.g. of a specific interface:
+	请注意:
+
+*   地址格式是[CIDR 标记](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing")格式，这种格式也可以提供[子网掩码](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")。
+*   `+`是一种特殊符号，使`ip`程序从 IP 地址和子网掩码获得[广播地址](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address")。
+
+**Note:** 确保手动分配的 IP 和 DHCP 分配的不冲突。
+
+从某接口删除一个 IP 地址：
+
+```
+$ ip address del *地址/前缀长度* dev *interface*
+
+```
+
+删除所有符合某种条件的地址，例如删除特定接口下的地址：
 
 ```
 $ ip address flush dev *interface*
 
 ```
 
-**Tip:** IP addresses can be calculated with [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)).
+**Tip:** 可以使用 [ipcalc](http://jodies.de/ipcalc) ([ipcalc](https://www.archlinux.org/packages/?name=ipcalc)) 计算 IP 地址。
 
 ### 路由表
 
-The [routing table](https://en.wikipedia.org/wiki/Routing_table "wikipedia:Routing table") is used to determine if you can reach an IP address directly or what gateway (router) you should use. If no other route matches the IP address, the [default gateway](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway") is used.
+[routing table](https://en.wikipedia.org/wiki/Routing_table "wikipedia:Routing table")用于决定是否能直连某个 IP 地址，或者应该使用哪个网关（路由器）进行通信。如果 IP 地址不匹配任何路由，就会走[默认网关](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway")。
 
-The routing table is managed using [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8).
+路由表由[ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8)管理。
 
-*PREFIX* is either a CIDR notation or `default` for the default gateway.
+*PREFIX*要么是 CIDR 标记，要么是`default`（默认网关）。
 
-List routes:
+显示路由表：
 
 ```
 $ ip route show
 
 ```
 
-Add a route:
+添加路由：
 
 ```
 # ip route add *PREFIX* via *address* dev *interface*
 
 ```
 
-Delete a route:
+删除路由：
 
 ```
 # ip route del *PREFIX* via *address* dev *interface*
@@ -473,7 +473,7 @@ Delete a route:
 
 ### IP 别名
 
-IP 别名是指给同一个网络接口分配多个 IP 地址。这样一个网络节点可以有多个网络连接，每个实现不同的作用。Typical uses are virtual hosting of Web and FTP servers, or reorganizing servers without having to update any other machines (this is especially useful for nameservers).
+IP 别名是指给同一个网络接口分配多个 IP 地址。这样一个网络节点可以有多个网络连接，每个实现不同的作用。典型的用处是 Web 服务器和 FTP 服务器的虚拟主机，或者是重组服务器时不需要更新其他任何机器上的 IP （对于名称服务器来说很有用）。
 
 要手动设置别名，可以使用 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 执行：
 

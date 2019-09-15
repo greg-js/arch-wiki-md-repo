@@ -1,4 +1,11 @@
-From [the official website](http://tomb.dyne.org/):
+Related articles
+
+*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
+*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
+*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
+*   [Tcplay](/index.php/Tcplay "Tcplay")
+
+From [the official website](https://www.dyne.org/software/tomb/):
 
 	Tomb is 100% free and open source software to make strong encryption easy to use.
 
@@ -10,7 +17,11 @@ Tomb aims to be a really simple to use software to manage "encrypted directories
 
 You can install [tomb](https://aur.archlinux.org/packages/tomb/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

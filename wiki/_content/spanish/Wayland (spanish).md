@@ -7,7 +7,11 @@ Artículos relacionados
 
 **Advertencia:** Wayland está en fuerte desarrollo. La ayuda técnica no se puede garantizar y puede que no funcione como se esperaba.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Requisitos](#Requisitos)
 *   [2 Instalación](#Instalación)
@@ -305,9 +309,9 @@ KDE 4.11 beta permite iniciar [KWin bajo el compositor del sistema Wayland](http
 
 ### GNOME
 
-Desde la versión 3.10, Gnome tiene soporte experimental Wayland, pero se debe instalar [xwayland-git](https://aur.archlinux.org/packages/xwayland-git/) y el parche equivalente del controlador de la tarjeta gráfica, por ejemplo [xf86-video-intel-xwayland-git](https://aur.archlinux.org/packages/xf86-video-intel-xwayland-git/) para hacer que *Mutter* funcione. Para más detalles mire en [GNOME wiki](https://live.gnome.org/Initiatives/Wayland) .
+Desde la versión 3.10, Gnome tiene soporte experimental Wayland. Para iniciar una sesión en Wayland se debe seleccionar '*GNOME* como método de sesión, este debería ser el valor predeterminado al instalar Gnome el cual utiliza Wayland.
 
- `gnome-session --session=gnome-wayland` 
+Si es necesario ejecutar aplicaciones que requieren un servidor X, el paquete [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) puede solventar esta necesidad al ejecutar una sesión en Wayland.
 
 ### i3
 

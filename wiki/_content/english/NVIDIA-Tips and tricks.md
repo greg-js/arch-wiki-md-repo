@@ -485,3 +485,7 @@ For example, enabling the following will turn on kernel mode setting (see above)
 options nvidia-drm modeset=1 
 options nvidia NVreg_UsePageAttributeTable=1
 ```
+
+On some notebooks, to enable any nvidia settings tweaking you must include this option, otherwise it responds with "Setting applications clocks is not supported" etc.
+
+ `/etc/modprobe.d/nvidia.conf`  `options nvidia NVreg_RegistryDwords="OverrideMaxPerf=0x1"`

@@ -34,19 +34,20 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 *   [5 HP](#HP)
     *   [5.1 HPLIP](#HPLIP)
     *   [5.2 foo2zjs](#foo2zjs)
-*   [6 Konica Minolta](#Konica_Minolta)
-    *   [6.1 foo2zjs](#foo2zjs_2)
-*   [7 Lexmark](#Lexmark)
-    *   [7.1 Utilities](#Utilities_2)
-    *   [7.2 Custom drivers](#Custom_drivers_3)
-*   [8 Oki](#Oki)
-*   [9 Ricoh](#Ricoh)
-*   [10 Samsung](#Samsung)
-*   [11 Xerox or FujiXerox](#Xerox_or_FujiXerox)
-    *   [11.1 Custom drivers](#Custom_drivers_4)
-        *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
-        *   [11.1.2 Phaser 6000B](#Phaser_6000B)
-        *   [11.1.3 Phaser 6125N](#Phaser_6125N)
+*   [6 Kodak](#Kodak)
+*   [7 Konica Minolta](#Konica_Minolta)
+    *   [7.1 foo2zjs](#foo2zjs_2)
+*   [8 Lexmark](#Lexmark)
+    *   [8.1 Utilities](#Utilities_2)
+    *   [8.2 Custom drivers](#Custom_drivers_3)
+*   [9 Oki](#Oki)
+*   [10 Ricoh](#Ricoh)
+*   [11 Samsung](#Samsung)
+*   [12 Xerox or FujiXerox](#Xerox_or_FujiXerox)
+    *   [12.1 Custom drivers](#Custom_drivers_4)
+        *   [12.1.1 Phaser 3100MFP](#Phaser_3100MFP)
+        *   [12.1.2 Phaser 6000B](#Phaser_6000B)
+        *   [12.1.3 Phaser 6125N](#Phaser_6125N)
 
 ## Brother
 
@@ -218,7 +219,7 @@ With that, the printer will restart, and the latest firmware will be installed a
 
 ## Canon
 
-There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint"). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS), [#cnijfilter](#cnijfilter) ([cnijfilter2](/index.php/AUR "AUR") / [cnijfilter2-bin](/index.php/AUR "AUR")), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
+There are many possible drivers for Canon printers. [Many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php) are supported by [Gutenprint](/index.php/Gutenprint "Gutenprint"). Some of Canon's LBP, iR, and MF printers use a driver supporting the UFR II/UFR II LT/LIPSLX protocols, which is available as [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) or [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Others use the [#CARPS](#CARPS), or [#cnijfilter](#cnijfilter) ([cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) / [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/)), or [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT") drivers.
 
 | Printer | Driver/filter | Notes |
 | iP4300 | [Gutenprint](/index.php/Gutenprint "Gutenprint") | Or use the [TurboPrint](http://www.turboprint.info/) driver. |
@@ -258,6 +259,7 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | LBP9100C |
 | MF635Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
 | MF4720w |
+| MF4770n |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it won't find the PPD file. |
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
 [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |
@@ -270,7 +272,7 @@ Some Canon printers will use a similar setup to the iP4500, so consider modifyin
 
 ### CARPS
 
-Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing System (CARPS) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/). The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
+Some of Canon's printers use Canon's proprietary CARPS (*Canon Advanced Raster Printing System*) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/). The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
 
 ### USB over IP (BJNP)
 
@@ -531,6 +533,10 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 
 [foo2zjs](http://foo2zjs.rkkda.com/) supports some HP LaserJet printers. As of June 2018 the hplip package interferes with [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), as described at [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1662809) and [FS#58815](https://bugs.archlinux.org/task/58815).
 
+## Kodak
+
+[c2esp](https://aur.archlinux.org/packages/c2esp/) is free software. [Upstream notes](https://sourceforge.net/projects/cupsdriverkodak/) it is likely to work on all ESP and Hero printers/scanners.
+
 ## Konica Minolta
 
 | Printer | Driver/filter | Notes |
@@ -551,7 +557,7 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 
 ### Utilities
 
-Lexmark provides a utility called lexijtools with the drivers.
+Lexmark provides a utility called *lexijtools* with the drivers.
 
 ### Custom drivers
 
@@ -625,13 +631,19 @@ For winprinters (Ricoh series SP100 and SP200) try out [ricoh-sp100-git](https:/
 
 ## Samsung
 
-For printers requiring the *cnijfilter* drivers, search for the correct driver [in the AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
+Since 2016, or 2017, Samsung is no longer in the printers/scanners business. As of 2019, HP partially support some of Samsung printers/scanners. Before 2016, Samsung was a major player. Which is why there are still many Samsung machines around. In addition, Linux, and cups, keep evolving. The bottom line of all this is that supporting Samsung products is at a flux.
 
-| Printer | Driver/filter | Notes |
-| ML-2010 | [splix](https://www.archlinux.org/packages/?name=splix) |
-| SCX-4200 | [splix](https://www.archlinux.org/packages/?name=splix) |
-| Newer printers? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) |
-| Printer | Driver/filter | Notes |
+A major site for information about Samsung printers/scanners is [Samsung Unified Linux Driver Repository](https://www.bchemnet.com/suldr/). Despite its name, it is not affiliated by Samsung. Neither it is devoted only to [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/). `samsung-unified-driver`, on the other hand, is close source by Samsung. It also encompass Windows and Mac. It might be the first stop to get a driver for a Samsung printer and scanner as it, or was, claim to support practically every one of these. Note that `samsung-unified-driver` includes software that can stand on its own, not tied to cups. If you can not get the printer to work with cups, you might try this route.
+
+That said, there are more options. An overview is at [alternatives](https://www.bchemnet.com/suldr/alternatives.html).
+
+*   Out of CJX-XXX series, at least CJX-1000, CJX-1050W, and CJX-2000FW are reported to work with [c2esp](https://aur.archlinux.org/packages/c2esp/), even though `c2esp` is supposedly for Kodak products.
+*   For [Samsung Printer Language](http://www.undocprint.org/formats/page_description_languages/spl), there is [splix](https://www.archlinux.org/packages/?name=splix). For a list of models that are supported, see its [home page](http://splix.ap2c.org/). Other SPL Samsung printers, even tough not in that list, might work with `splix`.
+*   QPDL (Quick Page Description Language) printers, some of which are supported by `splix`, are also supported by by `foo2qpdl`, provided by the [#foo2zjs](#foo2zjs) package. A list of known to work models is [here](http://www.foo2qpdl.rkkda.com/).
+
+All of `c2esp`, `splix` and `foo2zjs` are free software.
+
+You should also note that many Samsung printers support PostScript. Chances are that it will work with CUPS generic postscript printer, especially if it is only black & white and only printer, without a scanner added to it. Generic driver may be missing functionality or limited, for example in their support for duplex, color control, and resolution settings, and print quality may be lower.
 
 ## Xerox or FujiXerox
 

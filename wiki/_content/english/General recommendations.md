@@ -14,7 +14,7 @@ This document is an annotated index of popular articles and important informatio
 
 *   [1 System administration](#System_administration)
     *   [1.1 Users and groups](#Users_and_groups)
-    *   [1.2 Privilege escalation](#Privilege_escalation)
+    *   [1.2 Privilege elevation](#Privilege_elevation)
     *   [1.3 Service management](#Service_management)
     *   [1.4 System maintenance](#System_maintenance)
 *   [2 Package management](#Package_management)
@@ -39,7 +39,7 @@ This document is an annotated index of popular articles and important informatio
     *   [5.1 ACPI events](#ACPI_events)
     *   [5.2 CPU frequency scaling](#CPU_frequency_scaling)
     *   [5.3 Laptops](#Laptops)
-    *   [5.4 Suspend and Hibernate](#Suspend_and_Hibernate)
+    *   [5.4 Suspend and hibernate](#Suspend_and_hibernate)
 *   [6 Multimedia](#Multimedia)
     *   [6.1 Sound](#Sound)
     *   [6.2 Browser plugins](#Browser_plugins)
@@ -88,9 +88,9 @@ A new installation leaves you with only the [superuser](https://en.wikipedia.org
 
 Users and groups are a mechanism for *access control*; administrators may fine-tune group membership and ownership to grant or deny users and services access to system resources. Read the [Users and groups](/index.php/Users_and_groups "Users and groups") article for details and potential security risks.
 
-### Privilege escalation
+### Privilege elevation
 
-Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. By default *su* drops you to a login shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences.
+Both the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") commands allow you to run commands as another user. *su* by default starts an interactive shell as the root user, and *sudo* by default temporarily grants you root privileges for a single command. See their respective articles for differences.
 
 ### Service management
 
@@ -104,7 +104,7 @@ Arch is a rolling release system and has rapid package turnover, so users have t
 
 This section contains helpful information related to package management. For more, please see [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") and [Category:Package management](/index.php/Category:Package_management "Category:Package management").
 
-**Note:** It is imperative to keep up to date with changes in Arch Linux that require manual intervention **before** upgrading your system. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or check the front page [Arch news](https://www.archlinux.org/) every time before you update. Alternatively, you may find it useful to subscribe to [this RSS feed](https://www.archlinux.org/feeds/news/).
+**Note:** It is imperative to keep up to date with changes in Arch Linux that require manual intervention **before** upgrading your system. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or the [recent news RSS feed](https://www.archlinux.org/feeds/news/). Alternatively, check the front page [Arch news](https://www.archlinux.org/) every time before you update.
 
 ### pacman
 
@@ -156,7 +156,7 @@ Once it concludes, the screen is cleared and the login prompt appears, leaving u
 
 ### Num Lock activation
 
-Num Lock is a toggle key found in most keyboards. For activating Num Lock's number key-assignment during startup, see [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+[Num Lock](https://en.wikipedia.org/wiki/Num_Lock "wikipedia:Num Lock") is a toggle key found in most keyboards. For activating Num Lock's number key-assignment during startup, see [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
 
 ## Graphical user interface
 
@@ -206,9 +206,9 @@ Modern processors can decrease their frequency and voltage to reduce heat and po
 
 For articles related to portable computing along with model-specific installation guides, please see [Category:Laptops](/index.php/Category:Laptops "Category:Laptops"). For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
-### Suspend and Hibernate
+### Suspend and hibernate
 
-See main article: [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
+See main article: [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
 
 ## Multimedia
 
@@ -304,7 +304,7 @@ Most distributions have a *locate* command available to be able to quickly searc
 
 ### Local mail delivery
 
-A default setup does not provide a way to sync mail. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
+A default setup does not provide a way to sync mail. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
 
 ### Printing
 

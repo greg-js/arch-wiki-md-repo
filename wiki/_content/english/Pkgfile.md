@@ -6,7 +6,11 @@ Related articles
 
 **Tip:** [pacman](https://www.archlinux.org/packages/?name=pacman) has [a similar functionality built in](/index.php/Pacman#Search_for_a_package_that_contains_a_specific_file "Pacman").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -47,7 +51,7 @@ Latter is comparable to `pacman -Ql` (see [pacman#Querying package databases](/i
 
 ## Command not found
 
-See [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" hook](/index.php/Zsh#The_"command_not_found"_hook "Zsh") and [Fish#The "command not found" hook](/index.php/Fish#The_"command_not_found"_hook "Fish").
+See [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#The "command not found" handler](/index.php/Zsh#The_"command_not_found"_handler "Zsh") and [Fish#The "command not found" hook](/index.php/Fish#The_"command_not_found"_hook "Fish").
 
 ## Automatic updates
 

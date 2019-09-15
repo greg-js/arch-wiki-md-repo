@@ -131,20 +131,17 @@ sigok.verteiltesysteme.net: 134.91.78.139
 
 #### DNS over TLS
 
-**Warning:** As of version 239:
-
-*   Only opportunistic mode is supported making *systemd-resolved* vulnerable to downgrade attacks. See [systemd issue 10755](https://github.com/systemd/systemd/issues/10755).
-*   DNS server certificates are not checked making *systemd-resolved* vulnerable to man-in-the-middle attacks. See [systemd issue 9397](https://github.com/systemd/systemd/issues/9397).
+**Warning:** systemd-resolved only validates the DNS server certificate if it is issued for the server's IP address (a rare occurrence). DNS server certificates without an IP address are not checked making *systemd-resolved* vulnerable to man-in-the-middle attacks. See [systemd issue 9397](https://github.com/systemd/systemd/issues/9397).
 
 DNS over TLS is disabled by default. To enable it change the `DNSOverTLS=` setting in the `[Resolve]` section in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5).
 
  `/etc/systemd/resolved.conf.d/dns_over_tls.conf` 
 ```
 [Resolve]
-DNSOverTLS=opportunistic
+DNSOverTLS=yes
 ```
 
-**Note:** The used DNS server must support DNS over TLS otherwise *systemd-resolved* will disable DNS over TLS for the connection.
+**Note:** The used DNS server must support DNS over TLS otherwise all DNS requests will fail.
 
 ### mDNS
 

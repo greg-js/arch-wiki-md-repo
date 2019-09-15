@@ -26,16 +26,17 @@ Related articles
 *   [4 Launch options](#Launch_options)
     *   [4.1 Examples](#Examples)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Proton Steam-Play](#Proton_Steam-Play)
-    *   [5.2 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
-    *   [5.3 Steam skins](#Steam_skins)
-        *   [5.3.1 Creating skins](#Creating_skins)
-    *   [5.4 Changing the Steam notification position](#Changing_the_Steam_notification_position)
-        *   [5.4.1 Use a skin](#Use_a_skin)
-        *   [5.4.2 Live patching](#Live_patching)
-    *   [5.5 Steam Remote Play](#Steam_Remote_Play)
-        *   [5.5.1 Different subnets](#Different_subnets)
-    *   [5.6 Steam Controller](#Steam_Controller)
+    *   [5.1 Fsync patch](#Fsync_patch)
+    *   [5.2 Proton Steam-Play](#Proton_Steam-Play)
+    *   [5.3 Big Picture Mode without a window manager](#Big_Picture_Mode_without_a_window_manager)
+    *   [5.4 Steam skins](#Steam_skins)
+        *   [5.4.1 Creating skins](#Creating_skins)
+    *   [5.5 Changing the Steam notification position](#Changing_the_Steam_notification_position)
+        *   [5.5.1 Use a skin](#Use_a_skin)
+        *   [5.5.2 Live patching](#Live_patching)
+    *   [5.6 Steam Remote Play](#Steam_Remote_Play)
+        *   [5.6.1 Different subnets](#Different_subnets)
+    *   [5.7 Steam Controller](#Steam_Controller)
 *   [6 Troubleshooting](#Troubleshooting)
 *   [7 See also](#See_also)
 
@@ -48,7 +49,7 @@ The following requirements must be fulfilled in order to run Steam on Arch Linux
 *   Installed 32-bit version [OpenGL graphics driver](/index.php/Xorg#Driver_installation "Xorg").
 *   Generated [en_US.UTF-8](/index.php/Locale#Generating_locales "Locale") locale, preventing invalid pointer error.
 *   The GUI heavily uses the Arial font. See [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts"). An alternative is to use [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting") instead.
-*   [Install](/index.php/Install "Install") [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to add support for Asian languages.
+*   Install [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to add support for Asian languages.
 
 ### SteamCMD
 
@@ -129,6 +130,13 @@ By default Steam simply appends your option string to the launch command. To set
 *   completely different command: `othercommand # %command%`
 
 ## Tips and tricks
+
+### Fsync patch
+
+Valve has [released](https://steamcommunity.com/app/221410/discussions/0/3158631000006906163/) a special kernel patch that should help increase FPS in massively-threaded applications. There are few methods to get and use this patch:
+
+*   Use binary kernel provided directly from Valve. See [Unofficial_user_repositories#valveaur](/index.php/Unofficial_user_repositories#valveaur "Unofficial user repositories") and once you add this repository, kernel packages [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) and [linux-fsync-headers](https://aur.archlinux.org/packages/linux-fsync-headers/) become available. You will likely need to replace some regular packages (e.g. [nvidia](https://www.archlinux.org/packages/?name=nvidia)) with [DKMS](/index.php/DKMS "DKMS") packages (e.g. [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)) as well.
+*   Install [linux-fsync](https://aur.archlinux.org/packages/linux-fsync/) kernel.
 
 ### Proton Steam-Play
 

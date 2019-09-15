@@ -34,6 +34,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [4.2 Touchpad not detected at all](#Touchpad_not_detected_at_all)
+        *   [4.2.1 Elantech](#Elantech)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -80,14 +81,21 @@ $ xinput list-props *device*
 to view and
 
 ```
-$ xinput set-prop *device* *option-number* *setting*
+$ xinput set-prop *device* *option* *setting*
 
 ```
 
-to change a setting. For example, to set both options of libinput Click Method Enabled (303), the following is issued:
+to change a setting. `*option*` can be either the number or the name of the option. For example, to set both options of libinput Click Method Enabled (303), either of the following can be issued:
 
 ```
 $ xinput set-prop 14 303 {1 1}
+
+```
+
+or
+
+```
+$ xinput set-prop 14 "libinput Click Method Enabled" {1 1}
 
 ```
 
@@ -340,6 +348,19 @@ If a touchpad device is not detected and shown as a device at all, a possible so
 i8042.noloop i8042.nomux i8042.nopnp i8042.reset
 
 ```
+
+#### Elantech
+
+If it is an Elantech Touchpad not being detected and you are getting the following line in your `journalctl -k`:
+
+```
+elan_i2c 5-0015: 5-0015 supply vcc not found, using dummy regulator
+
+```
+
+it is related to an issue with the `psmouse` module trying to use a secondary bus for the touchpad device, and `elan_i2c` failing to do so. The fix is to force it to use the primary one. Just create the file below and reload the `psmouse` module or reboot:
+
+ `/etc/modprobe.d/psmouse.conf`  `options psmouse elantech_smbus=0` 
 
 ## See also
 

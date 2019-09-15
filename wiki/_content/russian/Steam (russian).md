@@ -1,26 +1,36 @@
+Related articles
+
+*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
+*   [Steam/Устранение_неполадок](/index.php/Steam/%D0%A3%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA "Steam/Устранение неполадок")
+*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
+
 Из [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
 [Steam](http://store.steampowered.com/about/) — сервис цифрового распространения компьютерных игр и программ, принадлежащий компании Valve, известному разработчику компьютерных игр. Steam выполняет функции службы активации, загрузки через интернет, автоматических обновлений и новостей для игр как самой Valve, так и сторонних разработчиков по соглашению с Valve, таких как Epic Games, THQ, 2K Games, Activision, Capcom, Codemasters, Eidos Interactive, 1С, GSC Game World, id Software, SEGA, Atari, Rockstar Games, Telltale Games, Ubisoft, Bethesda Softworks и многих других фирм, оформивших контракт на дистрибьюцию.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [2 Запуск Steam](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Steam)
-    *   [2.1 Режим Big Picture (из Display Manager)](#.D0.A0.D0.B5.D0.B6.D0.B8.D0.BC_Big_Picture_.28.D0.B8.D0.B7_Display_Manager.29)
-    *   [2.2 Запуск Steam свернутым в области уведомлений (silent mode)](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_Steam_.D1.81.D0.B2.D0.B5.D1.80.D0.BD.D1.83.D1.82.D1.8B.D0.BC_.D0.B2_.D0.BE.D0.B1.D0.BB.D0.B0.D1.81.D1.82.D0.B8_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.28silent_mode.29)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Установка](#Установка)
+*   [2 Запуск Steam](#Запуск_Steam)
+    *   [2.1 Режим Big Picture (из Display Manager)](#Режим_Big_Picture_(из_Display_Manager))
+    *   [2.2 Запуск Steam свернутым в области уведомлений (silent mode)](#Запуск_Steam_свернутым_в_области_уведомлений_(silent_mode))
     *   [2.3 Headless In-Home Streaming Server](#Headless_In-Home_Streaming_Server)
-*   [3 Советы и приёмы](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D0.BF.D1.80.D0.B8.D1.91.D0.BC.D1.8B)
-    *   [3.1 Запуск игр с дополнительными параметрами](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B8.D0.B3.D1.80_.D1.81_.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D0.B0.D0.BC.D0.B8)
-    *   [3.2 Отключение отдельных композиторов при запуске игр](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D1.82.D0.B4.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.D0.B8.D0.B3.D1.80)
+*   [3 Советы и приёмы](#Советы_и_приёмы)
+    *   [3.1 Запуск игр с дополнительными параметрами](#Запуск_игр_с_дополнительными_параметрами)
+    *   [3.2 Отключение отдельных композиторов при запуске игр](#Отключение_отдельных_композиторов_при_запуске_игр)
     *   [3.3 Using native runtime](#Using_native_runtime)
-    *   [3.4 Оформление для Steam](#.D0.9E.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BB.D1.8F_Steam)
-        *   [3.4.1 Менеджер тем Steam](#.D0.9C.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_.D1.82.D0.B5.D0.BC_Steam)
+    *   [3.4 Оформление для Steam](#Оформление_для_Steam)
+        *   [3.4.1 Менеджер тем Steam](#Менеджер_тем_Steam)
     *   [3.5 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
         *   [3.5.1 Use a skin](#Use_a_skin)
         *   [3.5.2 On-the-fly patch](#On-the-fly_patch)
-    *   [3.6 Предотвращение дампов памяти потребляющих RAM](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.82.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B0.D0.BC.D0.BF.D0.BE.D0.B2_.D0.BF.D0.B0.D0.BC.D1.8F.D1.82.D0.B8_.D0.BF.D0.BE.D1.82.D1.80.D0.B5.D0.B1.D0.BB.D1.8F.D1.8E.D1.89.D0.B8.D1.85_RAM)
-*   [4 Устранение неполадок](#.D0.A3.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.BF.D0.BE.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA)
-*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [3.6 Предотвращение дампов памяти потребляющих RAM](#Предотвращение_дампов_памяти_потребляющих_RAM)
+*   [4 Устранение неполадок](#Устранение_неполадок)
+*   [5 Смотрите также](#Смотрите_также)
 
 ## Установка
 
@@ -33,9 +43,9 @@ Steam можно установить с помощью пакета [steam](htt
 
 Steam не сопровождается для этого дистрибутива. Поэтому пользователям придётся самим исправить некоторые недочёты в работе:
 
-*   Steam интенсивно использует шрифт Arial. Для замены шрифта Arial воспользуйтесьпакетом [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) или [шрифтами, предоставленными Steam'ом](#.D0.A2.D0.B5.D0.BA.D1.81.D1.82_.D0.BF.D0.BE.D0.B2.D1.80.D0.B5.D0.B6.D0.B4.D1.91.D0.BD_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F). Чтобы корректно отображались азиатские языки, установите [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei).
+*   Steam интенсивно использует шрифт Arial. Для замены шрифта Arial воспользуйтесьпакетом [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) или [шрифтами, предоставленными Steam'ом](#Текст_повреждён_или_не_отображается). Чтобы корректно отображались азиатские языки, установите [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei).
 
-*   Если у вас 64-битная система, вы должны установить [32-битную версию графического драйвера](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0 "Xorg (Русский)") (пакет из столбца *Multilib* в таблице), чтобы запускать 32-битные игры.
+*   Если у вас 64-битная система, вы должны установить [32-битную версию графического драйвера](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка "Xorg (Русский)") (пакет из столбца *Multilib* в таблице), чтобы запускать 32-битные игры.
 
 *   Если у вас 64-битная система, вам нужно установить [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins), чтобы работал звук в 32-битных играх.
 
@@ -67,7 +77,7 @@ Type=Application
 Если при старте появляется главное окно Steam, вы можете добавить параметр `-silent` к команде запуска, чтобы окно не отображалось:
 
 ```
-/usr/bin/steam -silent %U
+/usr/bin/steam -silent %U
 
 ```
 
@@ -99,7 +109,7 @@ To setup a Headless In-Home Streaming Server follow the Guide at: [https://steam
 Steam может запускать игры, используя ваши собственные команды. Чтобы это сделать, перейдите в вашу Библиотеку игр, щёлкните правой кнопкой мыши по нужной игре, выбирете Свойства, Установить параметры запуска. Steam заменит тег `%command%` на команду, на ту, которую он выполнит по факту. Например, чтобы запустить Team Fortress 2 с primusrun и разрешением 1920x1080, вы должны ввести:
 
 ```
-primusrun %command% -w 1920 -h 1080
+primusrun %command% -w 1920 -h 1080
 
 ```
 
@@ -113,14 +123,14 @@ locate libGL
 что-бы узнать доступные варианты. Для 64-битных игр вы, возможно, захотите предзагрузить 64-битную версию libGL, для этого используйте команду запуска:
 
 ```
-LD_PRELOAD=/usr/lib/nvidia/libGL.so optirun %command%
+LD_PRELOAD=/usr/lib/nvidia/libGL.so optirun %command%
 
 ```
 
 Если вы используете ядро [Linux-ck](/index.php/Linux-ck "Linux-ck"), вы можете уменьшить задержки и увеличить производительность, запустив игру в SCHED_ISO (низкие задержки, избежание перегрузки CPU) с помощью [schedtool](https://www.archlinux.org/packages/?name=schedtool)
 
 ```
-# schedtool -I -e %command% *other arguments*
+# schedtool -I -e %command% *other arguments*
 
 ```
 
@@ -136,7 +146,7 @@ IGNORE_ME=%command% glxgears
 В дополнение к этому, используйте `%command%` для того, чтобы убивать отдельные композиторы, (такие как Xcompmgr или [Compton](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)")), из-за которых игра может глючить и тормозить на некоторых системах, и запускать их снова после выхода из игры, добавив в опции запуска игры следующее:
 
 ```
- killall compton && %command%; nohup compton &
+ killall compton && %command%; nohup compton &
 
 ```
 
@@ -314,7 +324,7 @@ The contents of the file should be the following:
 And the launch options should be something like the following.
 
 ```
- $HOME/.scripts/steam_topright.sh && %command%
+ $HOME/.scripts/steam_topright.sh && %command%
 
 ```
 

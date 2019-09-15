@@ -34,6 +34,8 @@ This will map `/dev/sd*X#*` to `/dev/mapper/swap` as a swap partition that can b
 *   Use an [LVM](/index.php/LVM "LVM") logical volume's name.
 *   Use the method described in [#UUID and LABEL](#UUID_and_LABEL). Labels and [UUIDS](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") **cannot** be used directly because of the recreation and re-encryption of the swap device on every boot with `mkswap`, see [cryptsetup FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
 
+**Note:** Swap partition setup can sometimes fail, see [systemd issue 10179](https://github.com/systemd/systemd/issues/10179).
+
 To use a `by-id` persistent device naming instead of kernel simple naming, first identify the swap device:
 
  `# find -L /dev/disk -samefile /dev/*sdaX*` 
@@ -108,7 +110,7 @@ Assuming you have setup LVM on LUKS with a swap logical volume (at `/dev/MyStora
 
 ### mkinitcpio hook
 
-**Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked (see [Dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration")), but swap autodetection is not available yet. [systemd issue 4878](https://github.com/systemd/systemd/issues/4878)
+**Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked, see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
 
 If the swap device is on a different device from that of the root file system, it will not be opened by the `encrypt` hook, i.e. the resume will take place before `/etc/crypttab` can be used, therefore it is required to create a hook in `/etc/mkinitcpio.conf` to open the swap LUKS device before resuming.
 

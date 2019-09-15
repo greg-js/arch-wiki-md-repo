@@ -25,30 +25,30 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
             *   [3.5.2.1 Colors](#Colors)
             *   [3.5.2.2 Example](#Example)
     *   [3.6 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.7 Third-party extensions](#Third-party_extensions)
-        *   [3.7.1 Configuration frameworks](#Configuration_frameworks)
-        *   [3.7.2 Plugin managers](#Plugin_managers)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Autostart X at login](#Autostart_X_at_login)
-    *   [4.2 The "command not found" hook](#The_"command_not_found"_hook)
-    *   [4.3 The ttyctl command](#The_ttyctl_command)
-    *   [4.4 Remembering recent directories](#Remembering_recent_directories)
-        *   [4.4.1 Dirstack](#Dirstack)
-        *   [4.4.2 cdr](#cdr)
-    *   [4.5 Help command](#Help_command)
-    *   [4.6 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
-    *   [4.7 Persistent rehash](#Persistent_rehash)
-        *   [4.7.1 On-demand rehash](#On-demand_rehash)
-        *   [4.7.2 Alternative on-demand rehash using SIGUSR1](#Alternative_on-demand_rehash_using_SIGUSR1)
-    *   [4.8 Bind key to ncurses application](#Bind_key_to_ncurses_application)
-    *   [4.9 File manager key binds](#File_manager_key_binds)
-    *   [4.10 xterm title](#xterm_title)
-        *   [4.10.1 Terminal emulator tab title](#Terminal_emulator_tab_title)
-    *   [4.11 Shell environment detection](#Shell_environment_detection)
-    *   [4.12 /dev/tcp equivalent: ztcp](#/dev/tcp_equivalent:_ztcp)
-    *   [4.13 Shortcut to exit shell on partial command line](#Shortcut_to_exit_shell_on_partial_command_line)
-*   [5 Uninstallation](#Uninstallation)
-*   [6 See also](#See_also)
+    *   [4.2 The ttyctl command](#The_ttyctl_command)
+    *   [4.3 Remembering recent directories](#Remembering_recent_directories)
+        *   [4.3.1 Dirstack](#Dirstack)
+        *   [4.3.2 cdr](#cdr)
+    *   [4.4 Help command](#Help_command)
+    *   [4.5 Persistent rehash](#Persistent_rehash)
+        *   [4.5.1 On-demand rehash](#On-demand_rehash)
+        *   [4.5.2 Alternative on-demand rehash using SIGUSR1](#Alternative_on-demand_rehash_using_SIGUSR1)
+    *   [4.6 Bind key to ncurses application](#Bind_key_to_ncurses_application)
+    *   [4.7 File manager key binds](#File_manager_key_binds)
+    *   [4.8 xterm title](#xterm_title)
+        *   [4.8.1 Terminal emulator tab title](#Terminal_emulator_tab_title)
+    *   [4.9 Shell environment detection](#Shell_environment_detection)
+    *   [4.10 /dev/tcp equivalent: ztcp](#/dev/tcp_equivalent:_ztcp)
+    *   [4.11 Shortcut to exit shell on partial command line](#Shortcut_to_exit_shell_on_partial_command_line)
+*   [5 Third-party extensions](#Third-party_extensions)
+    *   [5.1 Configuration frameworks](#Configuration_frameworks)
+    *   [5.2 Plugin managers](#Plugin_managers)
+    *   [5.3 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
+    *   [5.4 The "command not found" handler](#The_"command_not_found"_handler)
+*   [6 Uninstallation](#Uninstallation)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -82,7 +82,7 @@ $ zsh-newuser-install -f
 
 ### Making Zsh your default shell
 
-See [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").
+Change your shell to `/usr/bin/zsh`, see [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell") for instructions on how to do that.
 
 **Tip:** If replacing [bash](https://www.archlinux.org/packages/?name=bash), users may want to move some code from `~/.bashrc` to `~/.zshrc` (e.g. the prompt and the [aliases](/index.php/Bash#Aliases "Bash")) and from `~/.bash_profile` to `~/.zprofile` (e.g. [the code that starts the X Window System](/index.php/Xinit#Autostart_X_at_login "Xinit")).
 
@@ -96,20 +96,20 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 **Note:**
 
 *   If `$ZDOTDIR` is not set, `$HOME` is used instead.
-*   If option `RCS` is unset in any of the files, no configuration files will be sourced after that file.
-*   If option `GLOBAL_RCS` is unset in any of the files, no global configuration files (`/etc/zsh/*`) will be sourced after that file.
+*   If option `RCS` is unset in any of the files, no configuration files will be read after that file.
+*   If option `GLOBAL_RCS` is unset in any of the files, no global configuration files (`/etc/zsh/*`) will be read after that file.
 
-When starting Zsh, it will source the following files in this order by default:
+When starting, Zsh will read commands from the following files in this order by default:
 
-*   `/etc/zsh/zshenv` Used for setting [environment variables](/index.php/Environment_variables "Environment variables") for all users; it should not contain commands that produce output or assume the shell is attached to a TTY. This file will ***always*** be sourced, this cannot be overridden.
-*   `$ZDOTDIR/.zshenv` Used for setting user's environment variables; it should not contain commands that produce output or assume the shell is attached to a TTY. This file will ***always*** be sourced.
-*   `/etc/zsh/zprofile` Used for executing commands at start for all users, will be sourced when starting as a ***login shell***. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`.
+*   `/etc/zsh/zshenv` Used for setting [environment variables](/index.php/Environment_variables "Environment variables") for all users; it should not contain commands that produce output or assume the shell is attached to a TTY. This file will ***always*** be read, this cannot be overridden.
+*   `$ZDOTDIR/.zshenv` Used for setting user's environment variables; it should not contain commands that produce output or assume the shell is attached to a TTY. This file will ***always*** be read.
+*   `/etc/zsh/zprofile` Used for executing commands at start for all users, will be read when starting as a ***login shell***. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`.
     *   `/etc/profile` This file should be sourced by all POSIX sh-compatible shells upon login: it sets up `$PATH` and other environment variables and application-specific (`/etc/profile.d/*.sh`) settings upon login.
-*   `$ZDOTDIR/.zprofile` Used for executing user's commands at start, will be sourced when starting as a ***login shell***. Typically used to autostart graphical sessions and set environment variables for them.
-*   `/etc/zsh/zshrc` Used for setting interactive shell configuration and executing commands for all users, will be sourced when starting as an ***interactive shell***.
-*   `$ZDOTDIR/.zshrc` Used for setting user's interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
-*   `/etc/zsh/zlogin` Used for executing commands for all users at ending of initial progress, will be sourced when starting as a ***login shell***.
-*   `$ZDOTDIR/.zlogin` Used for executing user's commands at ending of initial progress, will be sourced when starting as a ***login shell***. Typically used to autostart command line utilities. Should not be used to autostart graphical sessions, as at this point the session might contain configuration meant only for an interactive shell.
+*   `$ZDOTDIR/.zprofile` Used for executing user's commands at start, will be read when starting as a ***login shell***. Typically used to autostart graphical sessions and to set session-wide environment variables.
+*   `/etc/zsh/zshrc` Used for setting interactive shell configuration and executing commands for all users, will be read when starting as an ***interactive shell***.
+*   `$ZDOTDIR/.zshrc` Used for setting user's interactive shell configuration and executing commands, will be read when starting as an ***interactive shell***.
+*   `/etc/zsh/zlogin` Used for executing commands for all users at ending of initial progress, will be read when starting as a ***login shell***.
+*   `$ZDOTDIR/.zlogin` Used for executing user's commands at ending of initial progress, will be read when starting as a ***login shell***. Typically used to autostart command line utilities. Should not be used to autostart graphical sessions, as at this point the session might contain configuration meant only for an interactive shell.
 *   `$ZDOTDIR/.zlogout` Used for executing commands for all users when a ***login shell*** **exits**.
 *   `/etc/zsh/zlogout` Used for executing commands when a ***login shell*** **exits**.
 
@@ -117,7 +117,7 @@ See [the graphic representation](https://blog.flowblok.id.au/2013-02/shell-start
 
 **Note:**
 
-*   `$HOME/.profile` is not a part of the Zsh startup files and thus **is not sourced** by Zsh.
+*   `$HOME/.profile` is not a part of the Zsh startup files and **is not sourced** by Zsh unless Zsh is invoked as `sh` or `ksh` and started as a login shell. For more details about the sh and ksh compatibility modes refer to [zsh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zsh.1#COMPATIBILITY).
 *   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
 
 **Warning:** Do not remove the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile`, otherwise it will break the integrity of other packages which provide some scripts in `/etc/profile.d/`.
@@ -407,63 +407,11 @@ username@host ~ % [0]
 
 See [dotfiles#User repositories](/index.php/Dotfiles#User_repositories "Dotfiles") for more.
 
-### Third-party extensions
-
-#### Configuration frameworks
-
-*   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
-
-	[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) || [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/)
-
-*   **Prezto** — A configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
-
-	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)
-
-*   **ZIM** — A configuration framework with blazing speed and modular extensions. Zim is very easy to customize, and comes with a rich set of modules and features without compromising on speed or functionality.
-
-	[https://github.com/zimfw/zimfw](https://github.com/zimfw/zimfw) || [zsh-zim-git](https://aur.archlinux.org/packages/zsh-zim-git/)
-
-#### Plugin managers
-
-*   **Antibody** — A performance-focused plugin manager similar to Antigen.
-
-	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
-
-*   **zplug** — A next-generation plugin manager for Zsh
-
-	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
-
-*   **zplugin** — Flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode
-
-	[http://github.com/zdharma/zplugin](http://github.com/zdharma/zplugin) || [zsh-zplugin-git](https://aur.archlinux.org/packages/zsh-zplugin-git/)
-
-*   **Antigen** — A plugin manager for Zsh, inspired by oh-my-zsh and vundle. [ABANDONED](https://github.com/zsh-users/antigen/issues/673)
-
-	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
-
-*   **zgen** — A lightweight and simple plugin manager for Zsh. [ABANDONED](https://github.com/tarjoilija/zgen/issues/123)
-
-	[https://github.com/tarjoilija/zgen](https://github.com/tarjoilija/zgen) || [zgen-git](https://aur.archlinux.org/packages/zgen-git/)
-
 ## Tips and tricks
 
 ### Autostart X at login
 
 See [xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit").
-
-### The "command not found" hook
-
-[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
-
-You need to [source](/index.php/Source "Source") the hook to enable it, for example:
-
- `~/.zshrc` 
-```
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
-```
-
-**Note:** The pkgfile database may need to be updated before this will work. See [pkgfile#Installation](/index.php/Pkgfile#Installation "Pkgfile") for details.
 
 ### The ttyctl command
 
@@ -526,7 +474,11 @@ See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1#REME
 
 ### Help command
 
-Zsh `help` command is called `run-help`. Unlike [bash](/index.php/Bash "Bash"), Zsh does not enable it by default. To use `help` in Zsh, add following to your `zshrc`:
+Unlike [Bash](/index.php/Bash "Bash"), Zsh does not enable a built in `help` command, instead it provides `run-help`. By default `run-help` is an alias to `man`, it can be either executed manually by prepending it to a command or it can be invoked for the currently typed command with the keyboard shortcuts `Alt+h` or `Esc+h`.
+
+Since by default it is just an alias to [man](/index.php/Man "Man"), it will only work on external commands. To improve its functionality, so that it works on shell builtins and other shell features, you need to use the `run-help` function. See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1) for more information on the `run-help` and its assistant functions.
+
+First load the `run-help` function and then remove the existing `run-help` alias. For convenience `help` can be aliased to `run-help`. For example, add following to your `zshrc`:
 
 ```
 autoload -Uz run-help
@@ -534,9 +486,7 @@ unalias run-help
 alias help=run-help
 ```
 
-`run-help` will invoke *man* for external commands. Default keyboard shortcut is `Alt+h` or `Esc+h`.
-
-`run-help` has assistant functions, they need to be enabled separately:
+Assistant functions have to be enabled separately:
 
 ```
 autoload -Uz run-help-git
@@ -548,16 +498,7 @@ autoload -Uz run-help-svk
 autoload -Uz run-help-svn
 ```
 
-For example `run-help git commit` command will now open the [man page](/index.php/Man_page "Man page") [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
-
-### Fish-like syntax highlighting
-
-[Fish](/index.php/Fish "Fish") provides a very powerful shell syntax highlighting. To use this in Zsh, you can install [zsh-syntax-highlighting](https://www.archlinux.org/packages/?name=zsh-syntax-highlighting) from offical repository and add following to your zshrc:
-
-```
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-```
+For example, `run-help git commit` command will now open the [man page](/index.php/Man_page "Man page") [git-commit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-commit.1) instead of [git(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git.1).
 
 ### Persistent rehash
 
@@ -702,9 +643,9 @@ bindkey '^[[1;3D'      cdUndoKey
 
 ### xterm title
 
-If your terminal emulator supports it you can set its title from Zsh. This allows dynamically changing the the title to display relevant information about the shell state, for example showing the user name and current directory or the currently executing command.
+If your terminal emulator supports it, you can set its title from Zsh. This allows dynamically changing the title to display relevant information about the shell state, for example showing the user name and current directory or the currently executing command.
 
-xterm title is set with the [xterm escape sequence](https://www.tldp.org/HOWTO/Xterm-Title-3.html#ss3.1) `\e]2;``\a`. For example:
+The xterm title is set with the [xterm escape sequence](https://www.tldp.org/HOWTO/Xterm-Title-3.html#ss3.1) `\e]2;``\a`. For example:
 
 ```
 $ print -n '\e]2;My xterm title\a'
@@ -718,19 +659,19 @@ My xterm title
 
 ```
 
-An simple way to have a dynamic title is to set the title in a hook functions `precmd` and `preexec`. See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Hook_Functions) for a list of available hook functions and their descriptions.
+A simple way to have a dynamic title is to set the title in the `precmd` and `preexec` hook functions. See [zshmisc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshmisc.1#Hook_Functions) for a list of available hook functions and their descriptions.
 
-By using `print -P` you can take advantage of prompt escapes.
+By using `print -P` you can additionally take advantage of Zsh's prompt escapes.
 
 **Tip:**
 
 *   Title printing can be split up in multiple commands as long as they are sequential.
-*   [GNU Screen](/index.php/GNU_Screen "GNU Screen") sends the xterm title to the hardstatus (`%h`). If you want to use Screen's [string escapes](https://www.gnu.org/software/screen/manual/html_node/String-Escapes.html) (e.g. for colors) you should set the hardstatus with the `\e_``\e\\` escape sequence. Otherwise, if string escapes are used in `\e]2;``\a`, the terminal emulator will get a garbled title due to it being incapable of interpreting them.
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen") sends the xterm title to the hardstatus (`%h`). If you want to use Screen's [string escapes](https://www.gnu.org/software/screen/manual/html_node/String-Escapes.html) (e.g. for colors) you should set the hardstatus with the `\e_``\e\\` escape sequence. Otherwise, if string escapes are used in `\e]2;``\a`, the terminal emulator will get a garbled title due to it being incapable of interpreting Screen's string escapes.
 
 **Note:**
 
-*   Do not use `-P` option of `print` when printing variables to prevent them from being parsed as prompt escapes.
-*   Use `q` [parameter expansion flag](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags) when printing variables to prevent them from being parsed as escape sequences.
+*   Do not use the `-P` option of `print` when printing variables to prevent them from being parsed as prompt escapes.
+*   Use the `q` [parameter expansion flag](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags) when printing variables to prevent them from being parsed as escape sequences.
 
  `~/.zshrc` 
 ```
@@ -777,7 +718,7 @@ $ zmodload zsh/net/tcp
 You can now establish TCP connections:
 
 ```
-$ ztcp exemple.com 80
+$ ztcp example.com 80
 
 ```
 
@@ -792,6 +733,67 @@ zle -N exit_zsh
 bindkey '^D' exit_zsh
 
 ```
+
+## Third-party extensions
+
+### Configuration frameworks
+
+*   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
+
+	[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) || [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/)
+
+*   **Prezto** — A configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
+
+	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)
+
+*   **ZIM** — A configuration framework with blazing speed and modular extensions. Zim is very easy to customize, and comes with a rich set of modules and features without compromising on speed or functionality.
+
+	[https://github.com/zimfw/zimfw](https://github.com/zimfw/zimfw) || [zsh-zim-git](https://aur.archlinux.org/packages/zsh-zim-git/)
+
+### Plugin managers
+
+*   **Antibody** — A performance-focused plugin manager similar to Antigen.
+
+	[https://github.com/getantibody/antibody](https://github.com/getantibody/antibody) || [antibody](https://aur.archlinux.org/packages/antibody/)
+
+*   **zplug** — A next-generation plugin manager for Zsh
+
+	[https://github.com/zplug/zplug](https://github.com/zplug/zplug) || [zplug](https://aur.archlinux.org/packages/zplug/)
+
+*   **zplugin** — Flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode
+
+	[http://github.com/zdharma/zplugin](http://github.com/zdharma/zplugin) || [zsh-zplugin-git](https://aur.archlinux.org/packages/zsh-zplugin-git/)
+
+*   **Antigen** — A plugin manager for Zsh, inspired by oh-my-zsh and vundle. [ABANDONED](https://github.com/zsh-users/antigen/issues/673)
+
+	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
+
+*   **zgen** — A lightweight and simple plugin manager for Zsh. [ABANDONED](https://github.com/tarjoilija/zgen/issues/123)
+
+	[https://github.com/tarjoilija/zgen](https://github.com/tarjoilija/zgen) || [zgen-git](https://aur.archlinux.org/packages/zgen-git/)
+
+### Fish-like syntax highlighting
+
+[Fish](/index.php/Fish "Fish") provides a very powerful shell syntax highlighting. To use this in Zsh, you can install [zsh-syntax-highlighting](https://www.archlinux.org/packages/?name=zsh-syntax-highlighting) from offical repository and add following to your zshrc:
+
+```
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+```
+
+### The "command not found" handler
+
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a Zsh script file that provides a `command_not_found_handler` function that will automatically search the official repositories, when entering an unrecognized command.
+
+You need to [source](/index.php/Source "Source") the script to enable it. For example:
+
+ `~/.zshrc` 
+```
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+```
+
+**Note:** The pkgfile database may need to be updated before this will work. See [pkgfile#Installation](/index.php/Pkgfile#Installation "Pkgfile") for details.
 
 ## Uninstallation
 

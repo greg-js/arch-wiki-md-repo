@@ -8,7 +8,7 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(9)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(2)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(2)</small> |
+| <small>2.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(3)</small> |
 | <small>2.1.</small> [Frameworks](/index.php/Category:Frameworks_(Portugu%C3%AAs) "Category:Frameworks (Português)") <small>(1)</small> |
 | <small>2.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems_(Portugu%C3%AAs) "Category:Issue tracking systems (Português)") <small>(1) (também em [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)"))</small> |
 | <small>2.3.</small> [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)") <small>(1)</small> |
@@ -95,7 +95,7 @@
 | <small>5.6.</small> [Software companies](/index.php/Category:Software_companies_(Portugu%C3%AAs) "Category:Software companies (Português)") <small>(0)</small> |
 | <small>5.6.1.</small> [Oracle](/index.php/Category:Oracle_(Portugu%C3%AAs) "Category:Oracle (Português)") <small>(2)</small> |
 | <small>5.6.2.</small> [Red Hat](/index.php/Category:Red_Hat_(Portugu%C3%AAs) "Category:Red Hat (Português)") <small>(1)</small> |
-| <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Portugu%C3%AAs) "Category:Software comparisons (Português)") <small>(2)</small> |
+| <small>5.7.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Portugu%C3%AAs) "Category:Software comparisons (Português)") <small>(3)</small> |
 | <small>5.8.</small> [Software projects](/index.php/Category:Software_projects_(Portugu%C3%AAs) "Category:Software projects (Português)") <small>(0)</small> |
 | <small>5.8.1.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(5) (também em [DeveloperWiki](/index.php/Category:DeveloperWiki_(Portugu%C3%AAs) "Category:DeveloperWiki (Português)"))</small> |
 | <small>5.8.2.</small> [GNU](/index.php/Category:GNU_(Portugu%C3%AAs) "Category:GNU (Português)") <small>(4)</small> |
@@ -131,7 +131,7 @@
 | <small>6.10.1.</small> [Widget toolkits](/index.php/Category:Widget_toolkits_(Portugu%C3%AAs) "Category:Widget toolkits (Português)") <small>(1) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
 | <small>6.10.2.</small> [Window managers](/index.php/Category:Window_managers_(Portugu%C3%AAs) "Category:Window managers (Português)") <small>(0)</small> |
 | <small>6.10.2.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Portugu%C3%AAs) "Category:Stacking WMs (Português)") <small>(2)</small> |
-| <small>6.10.2.2.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(Portugu%C3%AAs) "Category:Tiling WMs (Português)") <small>(1)</small> |
+| <small>6.10.2.2.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(Portugu%C3%AAs) "Category:Tiling WMs (Português)") <small>(2)</small> |
 | <small>6.11.</small> [Input](/index.php/Category:Input_(Portugu%C3%AAs) "Category:Input (Português)") <small>(0)</small> |
 | <small>6.11.1.</small> [Input devices](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") <small>(0) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
 | <small>6.11.1.1.</small> [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(2)</small> |
@@ -145,7 +145,7 @@
 | <small>6.16.1.</small> [Network monitoring](/index.php/Category:Network_monitoring_(Portugu%C3%AAs) "Category:Network monitoring (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>6.16.2.</small> [System monitors](/index.php/Category:System_monitors_(Portugu%C3%AAs) "Category:System monitors (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>6.17.</small> [Notification](/index.php/Category:Notification_(Portugu%C3%AAs) "Category:Notification (Português)") <small>(1)</small> |
-| <small>6.18.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(22)</small> |
+| <small>6.18.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(23)</small> |
 | <small>6.19.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(2)</small> |
 | <small>6.20.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
 | <small>6.20.1.</small> [Cryptography](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |

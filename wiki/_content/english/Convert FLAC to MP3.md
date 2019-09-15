@@ -2,7 +2,7 @@ Related articles
 
 *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
 
-This article presents ways of doing audio transcoding between FLAC and MP3 audio files using command line/scripted tools, and suggest a few graphical utilities to do the same and more.
+This article outlines different ways to transcode from FLAC to MP3\. FLAC is a lossless audio format, so it is better for archival purposes, but it also takes up more disk space. The idea is to compress the files without creating a perceived loss in fidelity.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -77,7 +77,7 @@ parallel ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: ./*.flac
 
 #### Parallel with recursion
 
-Fd is a fast, user-friendly alternative to find. This one liner avoids the "while read" loop, which may have performance implications according to a response on Stack Exchange. [[1]](https://unix.stackexchange.com/questions/169716/why-is-using-a-shell-loop-to-process-text-considered-bad-practice/)
+Fd is a fast, user-friendly alternative to [find](/index.php/Find "Find"). This one liner avoids the "while read" loop, which may have performance implications according to a response on Stack Exchange. [[1]](https://unix.stackexchange.com/questions/169716/why-is-using-a-shell-loop-to-process-text-considered-bad-practice/)
 
 [Install](/index.php/Install "Install") [fd](https://www.archlinux.org/packages/?name=fd) first, then run:
 

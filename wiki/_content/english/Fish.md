@@ -184,6 +184,8 @@ end
 
 ```
 
+For those running fish in interactive mode, replace `status is-login` with `status is-interactive` in the above code.
+
 ### Use liquidprompt
 
 [Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[2]](https://github.com/nojhan/liquidprompt/pull/230). The [angel-PS1](https://github.com/dolmen/angel-PS1) project implements it's functionality for fish.

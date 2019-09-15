@@ -28,6 +28,7 @@ If you require a technical run-down of requirements and build steps only, have a
     *   [2.5 Changing Automatic Login](#Changing_Automatic_Login)
 *   [3 Build the ISO](#Build_the_ISO)
     *   [3.1 Rebuild the ISO](#Rebuild_the_ISO)
+    *   [3.2 Removal of work directory](#Removal_of_work_directory)
 *   [4 Using the ISO](#Using_the_ISO)
 *   [5 See also](#See_also)
     *   [5.1 Documentation and tutorials](#Documentation_and_tutorials)
@@ -250,6 +251,10 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 ```
 
 This increases the speed of the initial bootstrap, since it does not have to download and install any of the base packages that are already installed.
+
+### Removal of work directory
+
+The temporary files are copied into work directory. If it happens that the build.sh script is interrupted, make sure there are no mount binds before deleting it - otherwise, you may lose data (e.g. an external device mounted at `/run/media/$user/$label` gets bound within `work/x86_64/airootfs/run/media/$user/$label` during the build process).
 
 ## Using the ISO
 

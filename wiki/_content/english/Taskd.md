@@ -27,7 +27,11 @@ taskd is available in the official repos as [taskd](https://www.archlinux.org/pa
 
 ### Setup
 
-Once taskd is installed, you need to set it up. The first step is to `$ export TASKDDATA=/var/lib/taskd ` (otherwise you need to append `--data /var/lib/taskd` to every taskd command).
+Once taskd is installed, you need to set it up. The first step is to
+
+ `$ export TASKDDATA=/var/lib/taskd ` 
+
+(otherwise you need to append `--data /var/lib/taskd` to every taskd command).
 
 Next, edit the `/usr/share/doc/taskd/pki/vars` file. The `CN=` line must either match the server's hostname or IP address, depending on how you connect. Once the file is edited to your heart's content, change to the directory `/usr/share/doc/taskd/pki/` and run `./generate`. This will create self-signed certificates for your server. Copy all generated `.pem` to `/var/lib/taskd`. Note that at least the `ca.cert.pem` must remain in the `pki` folder for the user-certificate generation later on.
 
@@ -74,7 +78,13 @@ Note the key the last command returns, the user will need it to synchronize.
 
 Make sure new group and user are readable by user `taskd`.
 
- `# chown -R taskd:taskd /var/lib/taskd/orgs` Return to `/usr/share/doc/taskd/pki/` and run `# ./generate.client username` This will return `username.cert.pem` and `username.key.pem`.
+ `# chown -R taskd:taskd /var/lib/taskd/orgs` 
+
+Return to `/usr/share/doc/taskd/pki/` and run
+
+ `# ./generate.client username` 
+
+This will return `username.cert.pem` and `username.key.pem`.
 
 The `username.key.pem`, `username.cert.pem` and `ca.cert.pem` must be copied into to the user's Taskwarrior user data directory (default `~/.task`).
 

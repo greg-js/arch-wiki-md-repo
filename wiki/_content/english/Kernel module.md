@@ -210,7 +210,7 @@ However, there is a workaround for this behaviour; the `install` command instruc
  `/etc/modprobe.d/blacklist.conf` 
 ```
 ...
-install *module_name* /bin/false
+install *module_name* /bin/true
 ...
 ```
 This will effectively blacklist that module and any other that depends on it.

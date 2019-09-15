@@ -6,7 +6,11 @@ Related articles
 
 To use it, a functional *mpd* must be present on the system since *ncmpcpp*/*mpd* work together in a client/server relationship.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Basic configuration](#Basic_configuration)
@@ -65,8 +69,8 @@ visualizer_look = "+|"
 ```
 
 *   **visualizer_sync_interval** - Set the interval for synchronizing the visualizer with the audio output from *mpd*. It should be set to greater than 10 to avoid trying to synchronize too frequently, which freezes the visualization. The recommended value is 30, but it can be reduced if the audio becomes desynced with the visualization.
-*   **visualizer_type** - Set the visualization to either a `spectrum`/`ellipse` analyzer or `wave`/`wave_filled` form.
-*   **visualizer_look** - Set the visualizer's look (string has to be exactly 2 characters long: first one is for wave and wave_filled whereas second for frequency spectrum and ellipse).
+*   **visualizer_type** - Set the visualization to either a `spectrum`/`ellipse`/`wave_filled` analyzer or `wave` form.
+*   **visualizer_look** - Set the visualizer's look (string has to be exactly 2 characters long: first one is for wave and whereas second for frequency spectrum, wave_filled and ellipse).
 
 ## Basic usage
 
@@ -150,7 +154,7 @@ A listing of key bindings and their respective functions is available from withi
 
 In the Tag Editor you can select a directory with music and then select the `Filename` option in the middle section. This opens a little window with two options: `Get Tags from Filename` and `Rename files`. If you choose `Get Tags From Filename`, a popup with two windows is shown. On the left side you can enter a pattern that extracts the selected information from the filenames. You can also hit `Preview` to see what the result would look like. On the right side you can see the legend containing all the possible keywords to be used for extraction.
 
-A simple Example would be the pattern: `%a - %t`. If your files are named according to this pattern (Artist - Title) then this pattern would extract this information and set the Tags for the File.
+A simple Example would be the pattern: `%a - %t`. If your files are named according to this pattern (Artist - Title) then this pattern would extract this information and set the Tags for the File.
 
 The other option `Rename Files` does the exact opposite. It takes the Tags from the audio files and creates a Filename from them.
 

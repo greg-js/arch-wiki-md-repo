@@ -1,22 +1,26 @@
 Conky è un monitor di sistema per X. È disponibile per sistemi Gnu/Linux e FreeBSD. ed è un software libero rilasciato con licenza GPL. Conky è in grado di monitorare molte variabili di sistena come CPU, memoria, swap, spazio su disco, temperatura, processi in top, upload, download, messaggi di sistema, e molto altro (tramite script aggiuntivi per es.). É estramamente configurabile, comunque, la configurazione può essere un pò difficile da capire.Conky è un fork di torsmo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Installazione & Configurazione](#Installazione_.26_Configurazione)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Installazione & Configurazione](#Installazione_&_Configurazione)
 *   [2 Pacchetti AUR](#Pacchetti_AUR)
 *   [3 Suggerimenti](#Suggerimenti)
-    *   [3.1 Abilitare la transparenza vera (KDE4)](#Abilitare_la_transparenza_vera_.28KDE4.29)
+    *   [3.1 Abilitare la transparenza vera (KDE4)](#Abilitare_la_transparenza_vera_(KDE4))
     *   [3.2 Prevenire lo sfarfallio](#Prevenire_lo_sfarfallio)
-    *   [3.3 Non minimizzare quando si abilita Mostra Desktop (Compiz)](#Non_minimizzare_quando_si_abilita_Mostra_Desktop_.28Compiz.29)
+    *   [3.3 Non minimizzare quando si abilita Mostra Desktop (Compiz)](#Non_minimizzare_quando_si_abilita_Mostra_Desktop_(Compiz))
     *   [3.4 Integrazione con KDesktop](#Integrazione_con_KDesktop)
     *   [3.5 Visualizzare informazioni di aggiornamento del pacchetto](#Visualizzare_informazioni_di_aggiornamento_del_pacchetto)
     *   [3.6 Visualizzazione previsioni meteo](#Visualizzazione_previsioni_meteo)
     *   [3.7 Visualizzazione feed RSS](#Visualizzazione_feed_RSS)
     *   [3.8 Visualizzazione ranking Arch Linux su Distrowatch](#Visualizzazione_ranking_Arch_Linux_su_Distrowatch)
     *   [3.9 Visualizzazione rTorrent](#Visualizzazione_rTorrent)
-    *   [3.10 Visualizzazione numero di nuove email (GMail)](#Visualizzazione_numero_di_nuove_email_.28GMail.29)
-    *   [3.11 Visualizzazione nuove email (IMAP + SSL)](#Visualizzazione_nuove_email_.28IMAP_.2B_SSL.29)
-*   [4 Contributo-Utenti Configurazioni d'esempio](#Contributo-Utenti_Configurazioni_d.27esempio)
+    *   [3.10 Visualizzazione numero di nuove email (GMail)](#Visualizzazione_numero_di_nuove_email_(GMail))
+    *   [3.11 Visualizzazione nuove email (IMAP + SSL)](#Visualizzazione_nuove_email_(IMAP_+_SSL))
+*   [4 Contributo-Utenti Configurazioni d'esempio](#Contributo-Utenti_Configurazioni_d'esempio)
     *   [4.1 Graysky](#Graysky)
 *   [5 Un semplice script ad anelli con supporto nvidia:](#Un_semplice_script_ad_anelli_con_supporto_nvidia:)
 *   [6 Una nota inerente i caratteri simbolici](#Una_nota_inerente_i_caratteri_simbolici)
@@ -408,7 +412,7 @@ ${execpi 300 ~/.conky/imap.pl}
 
 o la directory contenente il file.
 
-In alternativa, è possibile utilizzare stunnel, come indicato sopra: [#Visualizzazione numero di nuove email (GMail)](#Visualizzazione_numero_di_nuove_email_.28GMail.29)
+In alternativa, è possibile utilizzare stunnel, come indicato sopra: [#Visualizzazione numero di nuove email (GMail)](#Visualizzazione_numero_di_nuove_email_(GMail))
 
 ## Contributo-Utenti Configurazioni d'esempio
 
@@ -473,10 +477,10 @@ In alternativa, è possibile utilizzare stunnel, come indicato sopra: [#Visualiz
 50 lua_draw_hook_pre ring_stats
 51 
 52 TEXT
-53 ${alignr}${voffset 53}${goto 90}${font MaiandraGD:size=11}${time %A, %d %B %Y}
+53 ${alignr}${voffset 53}${goto 90}${font MaiandraGD:size=11}${time %A, %d %B %Y}
 54 
 55 
-56 ${voffset 5}${goto 164}${font MaiandraGD:size=16}${time %H:%M}
+56 ${voffset 5}${goto 164}${font MaiandraGD:size=16}${time %H:%M}
 57 
 58 
 59 
@@ -783,7 +787,7 @@ In alternativa, è possibile utilizzare stunnel, come indicato sopra: [#Visualiz
 278                 local str=
 279                 local value=0
 280 
-281                 str=string.format('${%s %s}',pt['name'],pt['arg'])
+281                 str=string.format('${%s %s}',pt['name'],pt['arg'])
 282                 str=conky_parse(str)
 283 
 284                 value=tonumber(str)

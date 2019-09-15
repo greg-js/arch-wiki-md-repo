@@ -119,7 +119,7 @@ Finally, save extra information about the drive geometry necessary in order to i
 
 **Note:** You may wish to use a block size (`bs=`) that is equal to the amount of cache on the HD you are backing up. For example, `bs=8192K` works for an 8 MiB cache. The 64 KiB mentioned in this article is better than the default `bs=512` bytes, but it will run faster with a larger `bs=`.
 
-**Tip:** `gzip` is only able to compress data using a single CPU core, which leads to a data throughput considerably lower than the write speeds on modern storage. In order to leverage multicore compression and create a disk image more quickly, one could for instance install the [pigz](https://www.archlinux.org/packages/?name=pigz) package, and simply replace the `gzip -c` command above with `pigz -c`. For large disks, this can potentially save hours.
+**Tip:** *gzip* is only able to compress data using a single CPU core, which leads to a data throughput considerably lower than the write speeds on modern storage. In order to leverage multicore compression and create a disk image more quickly, one could for instance install the [pigz](https://www.archlinux.org/packages/?name=pigz) package, and simply replace the `gzip -c` command above with `pigz -c`. For large disks, this can potentially save hours.
 
 ### Restore system
 
@@ -139,7 +139,9 @@ When the image has been split, use the following instead:
 
 ## Binary file patching
 
-If one wants to replace offset `0x123AB` of a file with the `FF C0 14` hexadecimal sequence, this can be done with the command line: `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/path/to/file*` 
+If one wants to replace offset `0x123AB` of a file with the `FF C0 14` hexadecimal sequence, this can be done with the command line:
+
+ `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/path/to/file*` 
 
 ## Backup and restore MBR
 

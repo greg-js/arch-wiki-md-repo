@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fdm](/index.php/Fdm "Fdm"), revisada por última vez el **2018-10-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fdm&diff=0&oldid=548286) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fdm](/index.php/Fdm "Fdm"), revisada por última vez el **2019-09-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fdm&diff=0&oldid=567760) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -25,7 +25,9 @@ Artículos relacionados
 *   [3 Pruebas](#Pruebas)
 *   [4 Utilización extendida](#Utilización_extendida)
     *   [4.1 Filtrado adicional](#Filtrado_adicional)
-    *   [4.2 Automatización con cron](#Automatización_con_cron)
+    *   [4.2 Automatización](#Automatización)
+        *   [4.2.1 Cron](#Cron)
+        *   [4.2.2 Systemd Timer](#Systemd_Timer)
 *   [5 Véase también](#Véase_también)
 
 ## Instalación
@@ -38,7 +40,7 @@ Artículos relacionados
 
 ### mbox
 
-Alpine utiliza el formato mbox, por lo que se necesita configurar algunos archivos.
+Alpine utiliza el formato mbox, por lo que se necesita configurar algunos archivos:
 
 ```
 $ cd
@@ -50,7 +52,7 @@ $ chmod 600 .fdm.conf mail/INBOX
 
 ### maildir
 
-Mutt prefiere un directorio de correo capitulado y puede usar el formato maildir. Si planea utilizar Mutt, haga la siguiente configuración.
+Mutt prefiere un directorio de correo capitulado y puede usar el formato maildir. Si planea utilizar Mutt, haga la siguiente configuración:
 
 ```
 $ cd
@@ -103,8 +105,6 @@ Esto mantendrá su correo intacto en el servidor en caso de que haya errores. Re
 
 ## Utilización extendida
 
-*Características no esenciales que se añaden a la usabilidad de* fdm
-
 ### Filtrado adicional
 
 Si desea que el correo de una determinada cuenta vaya a un buzón específico, puede añadir las siguientes líneas a su archivo fdm.conf. Desde el archivo de configuración anterior, si quisiera filtrar el correo de `*bar@gmail.com*` en su propia carpeta `*bar-mail*`, añadiría esto debajo de la línea "action" *(acción)* existente:
@@ -125,13 +125,64 @@ match account *bar* action *bar-deliver*
 
 Tras esto, todo el correo a `*bar@gmail.com* `se colocará en la carpeta de correo `*bar-mail*`.
 
-### Automatización con cron
+### Automatización
 
-Si todo salió bien, configure una tarea [cron](/index.php/Cron "Cron") para comprobar su correo con regularidad.
+Dado que *fdm* no se ejecuta como un demonio, la recuperación de correo cronometrada se deja a los planificadores de trabajos como [cron](/index.php/Cron "Cron") o [Systemd/Timers](/index.php/Systemd/Timers_(Espa%C3%B1ol) "Systemd/Timers (Español)").
+
+Esta sección mostrará implementaciones para ambos.
+
+#### Cron
+
+Obtenga y clasifique el correo de todas las cuentas cada 15 minutos, añadiendo un registro de todas las coincidencias a un archivo local:
+
+ `$ crontab -e` 
+```
+...
+*/15 * * * * fdm fetch >> $HOME/[Mm]ail/fdm.log
 
 ```
-$ crontab -e
-*/15 * * * * fdm fetch >> $HOME/[Mm]ail/fdm.log
+
+#### Systemd Timer
+
+Configure el servicio fdm para que el usuario local busque y ordene el correo de todas las cuentas:
+
+ `${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/fdm.service` 
+```
+[Unit]
+
+Description=Fetch mail using fdm
+After=network.target network-online.target dbus.socket
+Documentation=man:fdm(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/fdm fetch
+
+```
+
+Luego configure el temporizador para ejecutar el servicio cada 15 minutos:
+
+ `${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/fdm.timer` 
+```
+[Unit]
+Description=Fetch mail using fdm
+
+[Timer]
+# Descomente para ejecutar el servicio dos minutos después del arranque
+# OnBootSec=2m
+OnUnitActiveSec=15m
+Persistant=true
+
+[Install]
+WantedBy=timers.target
+
+```
+
+Por último:
+
+```
+ $ systemctl --user daemon-refresh
+ $ systemctl --user start fdm.timer
 
 ```
 

@@ -39,6 +39,7 @@ Related articles
     *   [7.7 Make PCManFM remember your preferred Sort Files settings](#Make_PCManFM_remember_your_preferred_Sort_Files_settings)
     *   [7.8 "Not authorized" error when attempting to mount drive](#"Not_authorized"_error_when_attempting_to_mount_drive)
     *   [7.9 Operation not supported](#Operation_not_supported)
+    *   [7.10 Passwords are forgotten on system restart](#Passwords_are_forgotten_on_system_restart)
 
 ## Installation
 
@@ -278,3 +279,7 @@ And add your user to storage group:
 ### Operation not supported
 
 See the General troubleshooting article on [Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
+
+### Passwords are forgotten on system restart
+
+Install a keyring application like [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring"), [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet") or [lxqt_wallet](https://aur.archlinux.org/packages/lxqt_wallet/) for network shares or an [SSH agent](/index.php/SSH_keys#SSH_agents "SSH keys") if appropriate.

@@ -217,6 +217,8 @@ Screen rotator has no configuration, it will automatically detect orientation ch
 
 You can use [https://github.com/alesguzik/linux_detect_tablet_mode](https://github.com/alesguzik/linux_detect_tablet_mode) to configure laptop and tablet modes (e.g. enable/disable keyboard/touchpad/trackpoint, start/kill on-screen keyboard etc.)
 
+If no sensor is detected, it can be manually triggered using [https://github.com/conqp/tablet-mode](https://github.com/conqp/tablet-mode)
+
 ## Desktop Environments / Window Managers
 
 ### i3

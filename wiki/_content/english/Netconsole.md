@@ -4,7 +4,11 @@ It can be used either built-in or as a module. Built-in *netconsole* initializes
 
 Documentation is available in the Linux kernel tree under [Documentation/networking/netconsole.txt](https://www.kernel.org/doc/Documentation/networking/netconsole.txt).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Sender configuration](#Sender_configuration)
     *   [1.1 Built-in Configuration](#Built-in_Configuration)
@@ -35,7 +39,7 @@ where the fields have the following meaning:
 For example:
 
 ```
-netconsole=6665@192.168.1.28/eth0,6666@192.168.1.19/00:13:32:20:r9:a5'
+netconsole=6665@192.168.1.28/eth0,6666@192.168.1.19/00:13:32:20:r9:a5
 
 ```
 

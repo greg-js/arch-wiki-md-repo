@@ -392,23 +392,30 @@ YubiKey 4 [OTP+FIDO+CCID] Serial: 1234567
 
 ```
 
+The following two commands (`generate-key` and `generate-certificate`) require providing the PIV application's 24-byte management key, if it has been changed from its default value (recommended). The examples below assume the shell variable `MK` has been set in advance to the 48 character hex string representation of the management key. For example:
+
+```
+$ MK=AB019982CA48BDC6776B1F9A0A3E129FDE0705D219AF0037
+
+```
+
 Generate a 2048-bit RSA key pair on the YubiKey. The private key will be stored in key slot 9a on the YubiKey, and the public key will be written to the file `pubkey.pem`.
 
 ```
-$ ykman piv generate-key -a RSA2048 9a pubkey.pem
+$ ykman piv generate-key -m $MK -a RSA2048 9a pubkey.pem
 
 ```
 
 Next, use the YubiKey to generate a self-signed certificate for the public key:
 
 ```
-$ ykman piv generate-certificate -s "SSH Key" 9a pubkey.pem
+$ ykman piv generate-certificate -m $MK -d 1826 -s "SSH Key" 9a pubkey.pem
 
 ```
 
-The Subject field in the certificate will be set to "SSH Key". This field will be included in the prompt for PIN to help identify which key is used for authentication.
+The Subject field in the certificate will be set to "SSH Key" with the `-s` option. This field will be included in the prompt for PIN to help identify which key is used for authentication. The example command also specifies the `-d` option to set the number of days until the certificate expires. If the `-d` option is omitted, a default value of 365 days is used.
 
-Note that the last parameter in the generate-key command is the file name where the public key is written to, whereas the last parameter in the generate-certificate command specifies where the public key is read from. The certificate is constructed and signed on the YubiKey and stored alongside the private key; the command does not output the certificate.
+Note that the last parameter in the `generate-key` command is the file name where the public key is written to, whereas the last parameter in the `generate-certificate` command specifies where the public key is read from. The certificate is constructed and signed on the YubiKey and stored alongside the private key; the command does not output the certificate.
 
 At this point the YubiKey is ready for authenticating to a SSH server. For this to happen, some additional configuration on both the client and the server is required.
 
@@ -427,7 +434,7 @@ $ ssh-keygen -i -m PKCS8 -f pubkey.pem > pubkey.txt
 
 ```
 
-This command uses the import (`-i`) function of the *ssh-keygen* program, specifies PKCS8 as the input file format (-m), and reads the input from the (`-f`) file `pubkey.pem`. The converted key is written on standard output, which is the example is redirected to the file `pubkey.txt`.
+This command uses the import (`-i`) function of the *ssh-keygen* program, specifies PKCS8 as the input file format (`-m`), and reads the input from the (`-f`) file `pubkey.pem`. The converted key is written on standard output, which is the example is redirected to the file `pubkey.txt`.
 
 The converted public key should now be copied to the remote server as described in [SSH keys#Copying the public key to the remote server](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys").
 

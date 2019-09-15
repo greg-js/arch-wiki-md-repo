@@ -416,7 +416,9 @@ Install [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-
 
 ### OpenAL
 
-OpenAL Soft should use PulseAudio by default, but can be explicitly configured to do so: `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
+OpenAL Soft should use PulseAudio by default, but can be explicitly configured to do so:
+
+ `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
 
 By default, OpenAL does not allow pulseaudio to move audio streams to a different device. To change this, add the allow-moves option:
 

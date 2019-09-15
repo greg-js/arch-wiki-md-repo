@@ -184,7 +184,7 @@ Add the following configuration for [nginx](/index.php/Nginx "Nginx") and [resta
 
 #### uWSGI
 
-[Install](/index.php/Install "Install") [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php), create a per-application socket for [uWSGI](/index.php/UWSGI "UWSGI") (see [UWSGI#Accessibility of uWSGI socket](/index.php/UWSGI#Accessibility_of_uWSGI_socket "UWSGI") for reference) and [activate](/index.php/Systemd#Using_units "Systemd") the `postfixadmin@uwsgi-secure.socket` unit.
+[Install](/index.php/Install "Install") [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php), create a per-application socket for [uWSGI](/index.php/UWSGI "UWSGI") (see [UWSGI#Accessibility of uWSGI socket](/index.php/UWSGI#Accessibility_of_uWSGI_socket "UWSGI") for reference) and [activate](/index.php/Systemd#Using_units "Systemd") the `uwsgi-secure@postfixadmin.socket` unit.
 
 Add the following configuration for nginx and [restart](/index.php/Restart "Restart") [nginx](/index.php/Nginx "Nginx").
 

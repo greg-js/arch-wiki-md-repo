@@ -1668,18 +1668,9 @@ So Arch, Much Good, Wow
 	Dutch
 
 ```
-Arch is het beste!
+Arch is het best!
 
 ```
-
-	or
-
-```
-Arch is de beste!
-
-```
-
-(these have a slighty different meaning)
 
 	Esperanto
 

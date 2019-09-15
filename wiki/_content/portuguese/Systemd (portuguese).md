@@ -3,8 +3,8 @@
 Artigos relacionados
 
 *   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
-*   [systemd/Journal](/index.php/Systemd/Journal_(Portugu%C3%AAs) "Systemd/Journal (Português)")
+*   [systemd/Journal](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs) "Systemd (Português)/Timers (Português)")
+*   [systemd/Journal](/index.php/Systemd_(Portugu%C3%AAs)/Journal_(Portugu%C3%AAs) "Systemd (Português)/Journal (Português)")
 *   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
 *   [init](/index.php/Init_(Portugu%C3%AAs) "Init (Português)")
 *   [Daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)")
@@ -487,9 +487,9 @@ Veja as páginas man [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpage
 
 ## Timers
 
-Um *timer* (em português, temporizador) é um arquivo de configuração de unit cujo nome termina com *.timer* e codifica informações sobre um temporizador controlado e supervisionado por *systemd*, para ativação baseada em temporizador. Veja [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+Um *timer* (em português, temporizador) é um arquivo de configuração de unit cujo nome termina com *.timer* e codifica informações sobre um temporizador controlado e supervisionado por *systemd*, para ativação baseada em temporizador. Veja [systemd (Português)/Timers (Português)](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs) "Systemd (Português)/Timers (Português)").
 
-**Nota:** *Timers* podem substitui a funcionalidade do [cron](/index.php/Cron "Cron") muito bem. Veja [systemd/Timers#As a cron replacement](/index.php/Systemd/Timers#As_a_cron_replacement "Systemd/Timers").
+**Nota:** *Timers* podem substitui a funcionalidade do [cron](/index.php/Cron "Cron") muito bem. Veja [systemd (Português)/Timers (Português)#Como um substituto do cron](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs)#Como_um_substituto_do_cron "Systemd (Português)/Timers (Português)").
 
 ## Montagem
 

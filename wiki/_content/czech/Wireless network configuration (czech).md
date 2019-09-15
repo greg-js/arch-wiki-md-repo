@@ -566,7 +566,9 @@ options acx debug=0
 
 #### zd1211rw
 
-[zd1211rw](http://zd1211.wiki.sourceforge.net/) je ovladač pro čipovou sadu ZyDAS ZD1211 802.11b/g USB WLAN a je obsažen v linuxovém jádře. Na [[2]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) naleznete seznam podporovaných zařízení. Potřebujete pouze nainstalovat firmware pro dané zařízení: `pacman -S zd1211-firmware` 
+[zd1211rw](http://zd1211.wiki.sourceforge.net/) je ovladač pro čipovou sadu ZyDAS ZD1211 802.11b/g USB WLAN a je obsažen v linuxovém jádře. Na [[2]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) naleznete seznam podporovaných zařízení. Potřebujete pouze nainstalovat firmware pro dané zařízení:
+
+ `pacman -S zd1211-firmware` 
 
 #### carl9170
 

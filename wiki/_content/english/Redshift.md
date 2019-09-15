@@ -115,8 +115,8 @@ location-provider=manual
 ; Keep in mind that longitudes west of Greenwich (e.g. the Americas)
 ; are negative numbers.
 [manual]
-lat=48.853
-lon=2.349
+lat=82.50
+lon=-62.34
 ```
 
 *   If using [i3wm](/index.php/I3wm "I3wm") or similar, you will also need to enable the geoclue agent on startup. As well as `systemctl --user enable redshift-gtk` or `redshift` user service.

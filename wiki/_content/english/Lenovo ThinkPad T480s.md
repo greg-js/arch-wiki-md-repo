@@ -138,7 +138,7 @@ The following adapters were tested
 
 ## PrivacyGuard
 
-This optional feature is currently not yet supported by the vanilla kernel. There is a [kernel patch available](https://patchwork.kernel.org/patch/10949501/).
+This optional feature is currently not yet supported by the vanilla kernel. There is a [kernel patch available](https://patchwork.kernel.org/patch/11109239/).
 
 ## See also
 

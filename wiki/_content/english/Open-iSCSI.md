@@ -15,10 +15,11 @@ This article describes how to access an [iSCSI](/index.php/ISCSI "ISCSI") target
     *   [3.2 ISCSI Qualified Name (IQN)](#ISCSI_Qualified_Name_(IQN))
     *   [3.3 Authentication](#Authentication)
     *   [3.4 Target discovery](#Target_discovery)
-    *   [3.5 Delete obsolete targets](#Delete_obsolete_targets)
-    *   [3.6 Login to available targets](#Login_to_available_targets)
-    *   [3.7 Info](#Info)
-    *   [3.8 Online resize of volumes](#Online_resize_of_volumes)
+    *   [3.5 Add target manually](#Add_target_manually)
+    *   [3.6 Delete obsolete targets](#Delete_obsolete_targets)
+    *   [3.7 Login to available targets](#Login_to_available_targets)
+    *   [3.8 Info](#Info)
+    *   [3.9 Online resize of volumes](#Online_resize_of_volumes)
 *   [4 Tips & Troubleshooting](#Tips_&_Troubleshooting)
 
 ## Installation
@@ -126,6 +127,15 @@ Request the target its nodes.
 ```
 
 On success information about nodes and target will be saved on your initiator.
+
+### Add target manually
+
+```
+# iscsiadm -m node --target *targetname* --portal *target_ip* -o new
+
+```
+
+A possible scenario to use this is when server does not allow discovery.
 
 ### Delete obsolete targets
 

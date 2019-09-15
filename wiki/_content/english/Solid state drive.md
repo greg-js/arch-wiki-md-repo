@@ -230,22 +230,78 @@ If you are starting to encounter SATA related errors when using such a daemon, y
 
 ### External SSD with TRIM support
 
-Several USB-SATA Bridge Chips, like VL715, VL716 etc, support TRIM. But `lsblk --discard` may return:
+Several USB-to-SATA bridge chips (like VL715, VL716 etc.) and also USB-to-PCIe bridge chips (like the [JMicron JMS583](http://www.jmicron.com/PDF/brief/jms583.pdf) used in external NVMe enclosures like [IB-1817M-C31](https://www.raidsonic.de/en/standards/searchresults.php?we_objectID=5666)) support TRIM-like commands that can be sent through the [USB Attached SCSI](https://en.wikipedia.org/wiki/USB_Attached_SCSI) driver (named "uas" under Linux).
+
+But the kernel may not automatically detect this capability, and therefore might not use it. Assuming your block device in question is /dev/sdX, you can find out whether that is the case by using the command
 
 ```
-NAME          DISC-ALN DISC-GRAN DISC-MAX DISC-ZERO
-sdX                  0        0B       0B         0
-
-```
-
-According to [https://www.dpreview.com/forums/thread/4302710](https://www.dpreview.com/forums/thread/4302710), in this situation, a [udev](/index.php/Udev "Udev") rule is needed:
-
-```
-ACTION=="add|change", ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="61f5", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"
+ sg_readcap -l /dev/sdX
 
 ```
 
-**Tip:** Vendor and product IDs can be easily found from `lsusb`.
+If in its output you find a line stating "Logical block provisioning: lbpme=0" then you know that the kernel assumes the device does not support "[Logical Block Provisioning Management](https://www.seagate.com/files/staticfiles/support/docs/manual/Interface%20manuals/100293068k.pdf#G4.1427908)" because the (LBPME) bit is not set.
+
+If this is the case, then you should next find out whether the ["Vital Product Data" (VPD) page on "Logical Block Provisioning"](https://www.seagate.com/files/staticfiles/support/docs/manual/Interface%20manuals/100293068k.pdf#G4.3076244) of your device tells of supported mechanisms for unmapping data. You can do this using the command:
+
+```
+ sg_vpd -a /dev/sdX
+
+```
+
+Look for lines in the output that look like this:
+
+```
+ Unmap command supported (LBPU): 1
+ Write same (16) with unmap bit supported (LBPWS): 0
+ Write same (10) with unmap bit supported (LBPWS10): 0
+
+```
+
+This example would tell you the device supports the "UNMAP" command.
+
+Have a look at the output of
+
+```
+ cat /sys/block/sdX/device/scsi_disk/*/provisioning_mode
+
+```
+
+If the kernel did not detect the capability of your device to unmap data, then this will likely return "full". Apart from "full", the kernel SCSI storage driver currently knows the following values for provisioning_mode:
+
+```
+ unmap
+ writesame_16
+ writesame_10
+ writesame_zero
+ disabled
+
+```
+
+For the example above, you could now write "unmap" to "provisioning_mode" to ask the kernel to use that:
+
+```
+ echo "unmap" >/sys/block/sdX/device/scsi_disk/*/provisioning_mode
+
+```
+
+This should immediately enable you to use tools like "blkdiscard" on /dev/sdX or "fstrim" on filesystems mounted on /dev/sdX.
+
+If you want to enable a "provisioning_mode" automatically when an external device of a certain vendor/product is attached, this can be automated via the "[udev](/index.php/Udev "Udev")" mechanism. First find the USB Vendor and Product IDs:
+
+```
+ cat /sys/block/sdX/../../../../../../idVendor
+ cat /sys/block/sdX/../../../../../../idProduct
+
+```
+
+Then create or append to a [udev](/index.php/Udev "Udev") rule file (example here using idVendor 152d and idProduct 0583):
+
+```
+ echo 'ACTION=="add|change", ATTRS{idVendor}=="152d", ATTRS{idProduct}=="0583", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"' >>/etc/udev/rules.d/10-uas-discard.rules
+
+```
+
+(You can also use the `lsusb` command to look for the relevant idVendor / idProduct.)
 
 ## Firmware
 

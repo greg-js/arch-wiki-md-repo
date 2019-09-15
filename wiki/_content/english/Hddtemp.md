@@ -20,7 +20,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) package.
 
 ## Usage
 
@@ -102,7 +102,7 @@ ExecStart=/usr/bin/hddtemp --daemon --foreground /dev/disk/by-id/wwn-0x60015ee00
 
 Change the device names to the ones you want to monitor.
 
-After editing, save the file and [reload](/index.php/Reload "Reload") *systemd'*s unit files then [restart](/index.php/Restart "Restart") the `hddtemp` service
+After editing, save the file and exit from editor. *systemd'* will apply changes and reload `hddtemp` service automatically.
 
 You can also use the [auto-generate](https://github.com/AndyCrowd/auto-generate-configuration-files/blob/master/gen-customexec.conf-hddtemp.sh) script will detect supported hard drives using [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) and print to the stdout.
 

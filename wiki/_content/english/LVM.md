@@ -48,6 +48,8 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [6.5 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
     *   [6.6 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
     *   [6.7 Deactivate volume group](#Deactivate_volume_group)
+    *   [6.8 Activate volume group](#Activate_volume_group)
+    *   [6.9 Repair a logical volume group](#Repair_a_logical_volume_group)
 *   [7 Logical volume types](#Logical_volume_types)
     *   [7.1 Snapshots](#Snapshots)
         *   [7.1.1 Configuration](#Configuration)
@@ -189,7 +191,7 @@ Create a physical volume on them:
 
 ```
 
-This command creates a header on each device so it can be used for LVM. As defined in [#LVM Building Blocks](#LVM_Building_Blocks), *DEVICE* can be a disk (e.g. `/dev/sda`), a partition (e.g. `/dev/sda2`) or a loop back device. For example:
+This command creates a header on each device so it can be used for LVM. As defined in [#LVM Building Blocks](#LVM_Building_Blocks), *DEVICE* can be any [block device](/index.php/Block_device "Block device"), e.g. a disk `/dev/sda`, a partition `/dev/sda2` or a loop back device. For example:
 
 ```
 # pvcreate /dev/sda2
@@ -202,6 +204,15 @@ You can track created physical volumes with:
 # pvdisplay
 
 ```
+
+You can also get summary information on physical volumes with:
+
+```
+# pvscan
+
+```
+
+**Tip:** If you run into trouble with a pre-existing disk signature, you can delete it using [wipefs](/index.php/Wipefs "Wipefs").
 
 **Note:** If using a SSD without partitioning it first, use `pvcreate --dataalignment 1m /dev/sda` (for erase block size < 1 MiB), see e.g. [here](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment)
 
@@ -248,6 +259,8 @@ You can track how your volume group grows with:
 # vgdisplay
 
 ```
+
+This is also what you would do if you wanted to add a disk to a RAID or mirror group with failed disks.
 
 **Note:** You can create more than one volume group if you need to, but then you will not have all your storage presented as one disk.
 
@@ -676,6 +689,13 @@ Or remove all empty physical volumes:
 
 ```
 
+For example: if you have a bad disk in a group that cannot be found because it has been removed or failed:
+
+```
+# vgreduce --removemissing --force vg0
+
+```
+
 And lastly, if you want to use the partition for something else, and want to avoid LVM thinking that the partition is a physical volume:
 
 ```
@@ -693,6 +713,31 @@ Just invoke
 ```
 
 This will deactivate the volume group and allow you to unmount the container it is stored in.
+
+### Activate volume group
+
+```
+# vgchange -a y vg0
+
+```
+
+This will reactivate the volume group if for example you had a drive failure in a mirror and you swapped the drive, ran `pvcreate`, `vgextend` and `vgreduce --removemissing --force`.
+
+### Repair a logical volume group
+
+To start the rebuilding process of the degraded mirror array in this example, you would run:
+
+```
+# lvconvert --repair /dev/vg0/mirror
+
+```
+
+You can monitor the rebuilding process (Cpy%Sync Column output) with:
+
+```
+# lvs -a -o +devices
+
+```
 
 ## Logical volume types
 

@@ -21,13 +21,15 @@ Shairport Sync is a fork of the original Shairport which was based on reverse-en
 
 [Install](/index.php/Install "Install") the [shairport-sync](https://www.archlinux.org/packages/?name=shairport-sync) package.
 
+**Note:** Shairport Sync requires the avahi-daemon to be running. You can [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `avahi-daemon.service` using systemd.
+
 ## Configuration
 
 The configuration file can be found at `/etc/shairport-sync.conf`. It contains useful comments and configuration hints. More documentation is available in the [README](https://github.com/mikebrady/shairport-sync/blob/master/README.md#configuring-shairport-sync) file.
 
 ## System service
 
-Will work well only with ALSA backed (maybe with Jack and Sndio too). Also, check `aply -L` output and look that device is referred by `default` target. If target device is PulseAudio, like:
+Will work well only with ALSA backed (maybe with Jack and Sndio too). Also, check list of output devices, e.g. by using tools from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils): `aplay -L` and look which device is referred by `default` target. If target device is PulseAudio, like:
 
 ```
 default

@@ -723,7 +723,9 @@ Another reason you are encountering static noise in your headphone jack could be
 
 Make sure you have [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) installed, launch `alsamixer`, then select your audio device (pressing `F6`}), navigate all the way left using the `left arrow`, and stop on **Loopback**, if **Enabled** disable it using the `down arrow`. This should not impact audio playback or microphone recording negatively, unless you require loopback mixing.
 
-Yet another reason for this symptom could be power-saving mode of your audio device.[[10]](https://askubuntu.com/a/534082) If you followed [Power management#Audio](/index.php/Power_management#Audio "Power management"), revert the changes and check if it solves the problem.
+Some notebook models, like Dell XPS 13 9360, suffer from [continuous hissing sound](/index.php/Dell_XPS_13_(9360)#Continuous_hissing_sound_with_headphones "Dell XPS 13 (9360)") when a headphone is plugged in.
+
+Yet another reason for this symptom could be the power-saving mode of your audio device.[[10]](https://askubuntu.com/a/534082) If you followed [Power management#Audio](/index.php/Power_management#Audio "Power management"), revert the changes and check if it solves the problem.
 
 ### Setting the default fragment number and buffer size in PulseAudio
 

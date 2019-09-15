@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-08-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=579214) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=580738) na versão em inglês.
 
 Related articles
 
@@ -57,7 +57,8 @@ O [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager/) é um progra
         *   [5.2.3 Montagem de compartilhamentos NFS](#Montagem_de_compartilhamentos_NFS)
         *   [5.2.4 Usar dispatcher para ativar rede sem fio automaticamente dependendo de cabo LAN estar conectado](#Usar_dispatcher_para_ativar_rede_sem_fio_automaticamente_dependendo_de_cabo_LAN_estar_conectado)
         *   [5.2.5 Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_após_uma_conexão_de_rede_ser_estabelecida)
-        *   [5.2.6 OpenNTPD](#OpenNTPD)
+        *   [5.2.6 Usar dispatcher para desabilitar IPv6 em conexões de provedor de VPN](#Usar_dispatcher_para_desabilitar_IPv6_em_conexões_de_provedor_de_VPN)
+        *   [5.2.7 OpenNTPD](#OpenNTPD)
 *   [6 Testando](#Testando)
 *   [7 Dicas e truques](#Dicas_e_truques)
     *   [7.1 Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas)
@@ -256,7 +257,7 @@ O [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem uma ferram
 
 ### nm-applet
 
-[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) é um front-end em GTK+ 3 que funciona sob ambientes Xorg com uma bandeja de sistema.
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) é um front-end em GTK 3 que funciona sob ambientes Xorg com uma bandeja de sistema.
 
 Para armazenar conexões secretas, instale e configure [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring").
 
@@ -358,7 +359,7 @@ Para aqueles por trás de um [captive portal](https://en.wikipedia.org/wiki/Capt
 
 ### Cliente DHCP
 
-Por padrão, o NetworkManager usará seu cliente DHCP interno, baseado em systemd-networkd. Um novo cliente DHCP baseado em [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) está sendo trabalhado atualmente, ele acabará se tornando o cliente DHCP `interno` substituindo aquele baseado no systemd-networkd. [[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)
+Por padrão, o NetworkManager usará seu cliente DHCP interno, baseado em systemd-networkd. Um novo cliente DHCP baseado em [nettools n-dhcp4](https://github.com/nettools/n-dhcp4) está sendo trabalhado atualmente, ele acabará se tornando o cliente DHCP `interno` substituindo aquele baseado no systemd-networkd. [[3]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/merge_requests/173)[[4]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/b53e261427c925034ada6b90278b7e9077e2ea43)
 
 Para usar um cliente DHCP diferente, [instale](/index.php/Instale "Instale") uma das alternativas:
 
@@ -446,7 +447,7 @@ Se o [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português
 
 Porque o NetworkManager anuncia uma única "interface" para o *resolvconf*, não é possível implementar encaminhamento condicional para conexões do NetworkManager. Veja [issue 153 do NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/153).
 
-Isso pode ser parcialmente mitigado se você definir `private="*"` no `/etc/resolvconf.conf`[[4]](https://roy.marples.name/projects/openresolv/config). Quaisquer consultas por domínios que não estejam na lista de domínios de pesquisa não serão encaminhados. Elas serão tratadas conforme a configuração do resolvedor local. Por exemplo, encaminhadas para outro servidor DNS ou resolvidas recursivamente a partir da raiz do DNS.
+Isso pode ser parcialmente mitigado se você definir `private="*"` no `/etc/resolvconf.conf`[[5]](https://roy.marples.name/projects/openresolv/config). Quaisquer consultas por domínios que não estejam na lista de domínios de pesquisa não serão encaminhados. Elas serão tratadas conforme a configuração do resolvedor local. Por exemplo, encaminhadas para outro servidor DNS ou resolvidas recursivamente a partir da raiz do DNS.
 
 #### Configurando servidores DNS personalizados em uma conexão
 
@@ -760,6 +761,25 @@ esac
 
 **Nota:** Agora pode ser necessário reabrir o editor de conexão do NetworkManager e salvar as senhas/segredos da VPN novamente.
 
+#### Usar dispatcher para desabilitar IPv6 em conexões de provedor de VPN
+
+Muitos [provedores de VPN comercial](/index.php/Category:VPN_providers "Category:VPN providers") possuem suporte apenas a IPv4\. Isso significa que todo o tráfego IPv6 ignora a VPN e acaba por se tornar virtualmente desnecessário. Para evitar isso, o dispatcher pode ser usado para desabilitar todo o tráfego IPv5 para o período em que a conexão VPN está ativa.
+
+ `/etc/NetworkManager/dispatcher.d/10-vpn-ipv6` 
+```
+#!/bin/sh
+
+case "$2" in
+    vpn-up)
+        echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+        ;;
+    vpn-down)
+        echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+        ;;
+esac
+
+```
+
 #### OpenNTPD
 
 Veja [OpenNTPD#Using NetworkManager dispatcher](/index.php/OpenNTPD#Using_NetworkManager_dispatcher "OpenNTPD").
@@ -922,7 +942,7 @@ Depois de colocar isso, [reinicie](/index.php/Reinicie "Reinicie") o `NetworkMan
 
 ### Configurando aleatorização de endereço MAC
 
-**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[5]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
+**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[6]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
 
 A aleatorização de MAC pode ser usada para aumentar a privacidade, não revelando seu endereço MAC real à rede.
 
@@ -1163,7 +1183,7 @@ dbus-daemon[991]: [system] Activating via systemd: service name='org.freedesktop
 
 ```
 
-Isso é porque o NetworkManager vai tentar enviar informações DNS para [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") independentemente da configuração `main.dns=` no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[6]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
+Isso é porque o NetworkManager vai tentar enviar informações DNS para [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") independentemente da configuração `main.dns=` no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).[[7]](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/d4eb4cb45f41b1751cacf71da558bf8f0988f383)
 
 Isso pode ser desabilitado com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
 

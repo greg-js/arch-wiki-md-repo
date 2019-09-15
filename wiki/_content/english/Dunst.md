@@ -27,6 +27,7 @@ Related articles
     *   [7.2 Overwrite previous notification](#Overwrite_previous_notification)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Dunst fails to start via systemd](#Dunst_fails_to_start_via_systemd)
+    *   [8.2 Non-matching font sizes (Emojis much larger than text)](#Non-matching_font_sizes_(Emojis_much_larger_than_text))
 
 ## Installation
 
@@ -200,3 +201,16 @@ To fix this, add the following to your `.xinitrc`:
 systemctl --user import-environment DISPLAY
 
 ```
+
+### Non-matching font sizes (Emojis much larger than text)
+
+This is caused by [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) not rescaling bitmap fonts. This is usually only noticed with certain emoji fonts (e.g. [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji))
+
+To solve, simply run:
+
+```
+# ln -s /etc/fonts/conf.avail/10-scale-bitmap-fonts.conf /etc/fonts/conf.d/
+
+```
+
+and restart Dunst.

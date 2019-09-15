@@ -143,7 +143,9 @@ A maioria dos gerenciadores de exibição carregam `/etc/xprofile`, `~/.xprofile
 
 ### Definir o idioma para sessão de usuário
 
-Para gerenciadores de exibição que usam [AccountsService](https://freedesktop.org/wiki/Software/AccountsService/) o [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") para a sessão de usuário pode ser definido editando: `/var/lib/AccountsService/users/$USER` 
+Para gerenciadores de exibição que usam [AccountsService](https://freedesktop.org/wiki/Software/AccountsService/) o [locale](/index.php/Locale_(Portugu%C3%AAs) "Locale (Português)") para a sessão de usuário pode ser definido editando:
+
+ `/var/lib/AccountsService/users/$USER` 
 ```
 [User]
 Language=*seu_locale*

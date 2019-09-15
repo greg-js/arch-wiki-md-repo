@@ -306,6 +306,7 @@ $ cp /etc/i3status.conf ~/.i3status.conf
 ```
 
 **提示：** 示范配置文件中用 `eth0` 和 `wlan0` 作为接口名，如果与您系统并不一致，请参考 [Network configuration#Device names](/index.php/Network_configuration#Device_names "Network configuration")
+
 。
 
 #### 添加温度状态

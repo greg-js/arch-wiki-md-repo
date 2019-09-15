@@ -364,7 +364,9 @@ To override those, open Firefox advanced preferences page (`about:config`) and s
 
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
 
-If you use Wayland, you can also use the Wayland-enabled packages of Firefox from the AUR: [firefox-wayland](https://aur.archlinux.org/packages/firefox-wayland/) (compiles from source) or [fedora-firefox-wayland-bin](https://aur.archlinux.org/packages/fedora-firefox-wayland-bin/) (binary from Fedora). You might experience some minor visual glitches with these packages.
+If you use Wayland, see [Firefox#Wayland](/index.php/Firefox#Wayland "Firefox") for instructions to enable the optional Wayland backend on [firefox](https://www.archlinux.org/packages/?name=firefox). This is also appicable to [thunderbird](https://www.archlinux.org/packages/?name=thunderbird).
+
+You can also use the Wayland-enabled packages of Firefox from the AUR: [firefox-wayland](https://aur.archlinux.org/packages/firefox-wayland/) (compiles from source) or [fedora-firefox-wayland-bin](https://aur.archlinux.org/packages/fedora-firefox-wayland-bin/) (binary from Fedora). You might experience some minor visual glitches with these packages.
 
 #### Chromium / Google Chrome
 

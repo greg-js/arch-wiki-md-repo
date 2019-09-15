@@ -154,7 +154,7 @@ cert servername.crt
 key servername.key
 dh dh.pem
 .
-tls-crypt ta.key
+tls-crypt ta.key # Replaces *tls-auth ta.key 0*
 .
 user nobody
 group nobody
@@ -648,7 +648,9 @@ By default, all IP packets on a LAN addressed to a different subnet get sent to 
 
 ### Connect the server LAN to a client
 
-The server is on a LAN using the 10.66.0.0/24 subnet. To inform the client about the available subnet, add a push directive to the server configuration file: `/etc/openvpn/server/server.conf`  `push "route 10.66.0.0 255.255.255.0"` 
+The server is on a LAN using the 10.66.0.0/24 subnet. To inform the client about the available subnet, add a push directive to the server configuration file:
+
+ `/etc/openvpn/server/server.conf`  `push "route 10.66.0.0 255.255.255.0"` 
 **Note:** To route more LANs from the server to the client, add more push directives to the server configuration file, but keep in mind that the server side LANs will need to know how to route to the client.
 
 ### Connect the client LAN to a server
@@ -840,7 +842,7 @@ Example:
 
 If the server is configured to use tls-crypt, as is suggested in [#The server configuration file](#The_server_configuration_file), [manually edit](https://github.com/graysky2/ovpngen/issues/4) the resulting `foo.ovpn` replacing `<tls-auth>` and `</tls-auth>` with `<tls-crypt>` and `</tls-crypt>`.
 
-The resulting `foo.ovpn` can be edited if desired as the script does insert some commented lines.
+The resulting `foo.ovpn` can be edited if desired as the script does insert some commented lines. `foo.ovpn` will not automatically route all traffic through the VPN, so you may want to follow [#Routing client traffic through the server](#Routing_client_traffic_through_the_server) to enable redirection.
 
 The client expects this file to be located in `/etc/openvpn/client/foo.conf`. Note the change in file extension from 'ovpn' to 'conf' in this case.
 

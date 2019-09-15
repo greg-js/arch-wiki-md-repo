@@ -189,7 +189,7 @@ As of 06/04/2009 libproxy is required by libsoup. It is then indirectly used by 
 
 *   [Squid](/index.php/Squid "Squid") is a very popular caching/optimizing proxy
 *   [Privoxy](/index.php/Privoxy "Privoxy") is an anonymizing and ad-blocking proxy
-*   Tinyproxy is a small, efficient HTTP/SSL proxy daemon || [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy)
+*   [tinyproxy](https://www.archlinux.org/packages/?name=tinyproxy) is a small, efficient HTTP/SSL proxy daemon
 *   For a simple proxy, ssh with port forwarding can be used
 
 ### Simple Proxy with SSH

@@ -78,8 +78,12 @@ vrr_capable: 1
 
 #### Via nvidia-settings
 
+Gsync monitors should automatically be enabled. To enable Gsync compatible monitors do the following:
+
 *   In [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) go to the "X Server Display Configuration" page, then under the Advanced button is the option to "Allow G-SYNC on monitor not validated as G-SYNC Compatible". Then click apply.
 *   Now, under OpenGL settings, check "Allow Gsync/Gsync Compatible."
+
+**Tip:** In the same menu, you can check the "show Gsync indicator" option to display an indicator that Gsync is working in the top right corner.
 
 ## Change Freesync Range of Monitor
 

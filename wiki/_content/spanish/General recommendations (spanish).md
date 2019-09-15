@@ -17,7 +17,7 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 
 *   [1 Administración del sistema](#Administración_del_sistema)
     *   [1.1 Usuarios y grupos](#Usuarios_y_grupos)
-    *   [1.2 Escalado de privilegios](#Escalado_de_privilegios)
+    *   [1.2 Elevación de privilegios](#Elevación_de_privilegios)
     *   [1.3 Administración de servicios](#Administración_de_servicios)
     *   [1.4 Mantenimiento del sistema](#Mantenimiento_del_sistema)
 *   [2 Administración de paquetes](#Administración_de_paquetes)
@@ -91,9 +91,9 @@ Una instalación nueva deja solamente la cuenta de [superusuario](https://en.wik
 
 Los usuarios y grupos son un mecanismo para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad de grupo para otorgar o denegar a los usuarios y servicios el acceso a los recursos del sistema. Véase [usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
 
-### Escalado de privilegios
+### Elevación de privilegios
 
-Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo transfiere a un intérprete de línea de órdenes de inicio de sesión como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
+Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. *su* por defecto inicia un intérprete de línea de órdenes interactivo como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
 
 ### Administración de servicios
 

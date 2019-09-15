@@ -1,39 +1,94 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"). Дата последней синхронизации: 13 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=582086).
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 TTY (Teletype) Консоль 1-6](#TTY_(Teletype)_Консоль_1-6)
+*   [1 Консоль](#Консоль)
+    *   [1.1 Отдельная служба](#Отдельная_служба)
+    *   [1.2 Расширение getty@.service](#Расширение_getty@.service)
+    *   [1.3 Bash](#Bash)
 *   [2 X.org](#X.org)
-    *   [2.1 KDM](#KDM)
-    *   [2.2 Пользователям KDE](#Пользователям_KDE)
-    *   [2.3 GDM](#GDM)
-    *   [2.4 SLiM](#SLiM)
+    *   [2.1 startx](#startx)
+    *   [2.2 MATE](#MATE)
+    *   [2.3 KDE Plasma](#KDE_Plasma)
+    *   [2.4 GDM](#GDM)
+    *   [2.5 GNOME](#GNOME)
+    *   [2.6 Xfce](#Xfce)
+    *   [2.7 SDDM](#SDDM)
+    *   [2.8 SLiM](#SLiM)
+    *   [2.9 OpenBox](#OpenBox)
+    *   [2.10 LightDM](#LightDM)
+    *   [2.11 LXDM](#LXDM)
+    *   [2.12 LXQt](#LXQt)
 
-## TTY (Teletype) Консоль 1-6
+## Консоль
 
-Для активации numlock при обычной загрузке в консоль TTY (tty1 -> tty6), добавьте следующую строку в `/etc/rc.local`:
+### Отдельная служба
+
+**Совет:** Данные шаги можно автоматизировать, [установив](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) и [включив](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу `numLockOnTty`.
+
+Для начала создайте скрипт включения Num Lock в необходимых TTY:
+
+ `/usr/local/bin/numlock` 
+```
+#!/bin/bash
+
+for tty in /dev/tty{1..6}
+do
+    /usr/bin/setleds -D +num < "$tty";
+done
 
 ```
-for tty in /dev/tty?; do /usr/bin/setleds -D +num < "$tty"; done
+
+Затем создайте и [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") службу systemd:
+
+ `/etc/systemd/system/numlock.service` 
+```
+[Unit]
+Description=numlock
+
+[Service]
+ExecStart=/usr/local/bin/numlock
+StandardInput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Расширение getty@.service
+
+Это более простой способ, так как в нём не используется отдельная служба и не привязываются номера определённых виртуальных терминалов. Создайте [drop-in сниппет](/index.php/Drop-in_%D1%81%D0%BD%D0%B8%D0%BF%D0%BF%D0%B5%D1%82 "Drop-in сниппет") для `getty@.service`, который будет применяться поверх оригинальной службы:
+
+ `/etc/systemd/system/getty@.service.d/activate-numlock.conf` 
+```
+[Service]
+ExecStartPre=/bin/sh -c 'setleds -D +num < /dev/%I'
+```
+
+**Примечание:** В случае каких-либо проблем, замените `ExecStartPre` на `ExecStartPost` и/или отключите подсказку, как описано ниже.
+
+Чтобы отключить подсказку активации Num Lock на экране входа, [отредактируйте](/index.php/%D0%9E%D1%82%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5 "Отредактируйте") `getty@tty1.service` и добавьте `--nohints` к аргументам *agetty*:
+
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
 
 ```
 
-примечание: Виртуальные Консоли vc/1 -> vc/6 были заменены на tty1 -> tty6 с 2009-08-02.
+### Bash
+
+Добавьте `setleds -D +num` в `~/.bash_profile`. Заметьте, что в отличие от других методов, изменения не вступят в силу до входа в аккаунт.
 
 ## X.org
 
-Если Вы используете startx для запуска вашей сессии X, просто установите пакет numlockx и добавьте его в Ваш файл `~/.xinitrc`.
+### startx
 
-Установите `numlockx`:
-
-```
-# pacman -S numlockx
-
-```
-
-Добавьте в `~/.xinitrc` до `exec`:
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [numlockx](https://www.archlinux.org/packages/?name=numlockx) и добавьте его в файл `~/.xinitrc` перед `exec`:
 
 ```
 #!/bin/sh
@@ -45,66 +100,29 @@ for tty in /dev/tty?; do /usr/bin/setleds -D +num < "$tty"; done
 
 numlockx &
 
-exec ваш_оконный_менеджер
+exec оконный_менеджер
 
 ```
 
-### KDM
+### MATE
 
-Если Вы используете для входа KDM добавьте :
-
-```
-numlockx on
+По умолчанию MATE сохраняет последнее состояние перед выходом и восстанавливает его при следующем входе. Чтобы включать Num Lock при каждом входе, измените следующие значения DCONF:
 
 ```
-
-в файл `/usr/share/config/kdm/Xsetup`, или в `/opt/kde/share/config/kdm/Xsetup`, если Вы используете KDM3.
-
-Обратите внимание на то, что этот файл не входит в "зону внимания" pacman'a, поэтому при апгрейде системы может быть перезаписан без предупреждений или создания .pacnew-файла. Чтобы предотвратить это, добавьте в ваш `/etc/pacman.conf` следующую строку:
-
-```
-NoUpgrade = usr/share/config/kdm/Xsetup
+dconf write org.mate.peripherals-keyboard remember-numlock-state false
+dconf write org.mate.peripherals-keyboard numlock-state 'on'
 
 ```
 
-Заметьте, что **/** в начале не ставится.
+### KDE Plasma
 
-Стоит отметить, что все эти настойки дают возможность включить требуемую опцию только *после* загрузки. Для того же, чтобы включать NumLock еще "до" загрузки KDM, следует отредактировать `/usr/share/config/kdm/kdmrc`. Это - файл конфигурации KDM, все опции там выставлены по умолчанию и закомментированы. Нам нужно найти секцию, отвечающую за включение NumLock, снять комментарий и изменить значение опции:
-
-```
-NumLock = On
-
-```
-
-### Пользователям KDE
-
-Можно добавить скрипт в директорию ~/.kde/Autostart:
-
-```
-$ nano ~/.kde/Autostart/numlockx
-
-```
-
-Добавляем:
-
-```
-#!/bin/sh
-numlockx on
-
-```
-
-И разрешаем выполнять запуск:
-
-```
-$ chmod +x ~/.kde/Autostart/numlockx
-
-```
-
-**Примечание:** Есть также вариант включения numlock при запуске kde в kcontrol (kde3) и системных настройках (kde4). Но он на данный момент не работает, так как никто не берется починить эту ошибку (вроде как починили уже).
+Перейдите в *Параметры системы > Устройства ввода > Клавиатура* и выберите необходимое поведение Num Lock в секции *Режим NumLock при запуске Plasma*.
 
 ### GDM
 
-Убедитесь, что пакет numlockx установлен. Теперь, добавьте следующий код в файл `/etc/gdm/Init/Default`:
+**Примечание:** GDM больше не выполняет скрипты из `/etc/gdm/Init`.
+
+Убедитесь, что пакет [numlockx](https://www.archlinux.org/packages/?name=numlockx) установлен, а затем добавьте следующий код в файл [~/.xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)"):
 
 ```
 if [ -x /usr/bin/numlockx ]; then
@@ -113,13 +131,87 @@ fi
 
 ```
 
+### GNOME
+
+Если вы не используете экранный менеджер GDM, numlockx можно запускать при загрузке GNOME.
+
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [numlockx](https://www.archlinux.org/packages/?name=numlockx), а затем добавьте команду запуска `numlockx`.
+
+```
+$ gnome-session-properties
+
+```
+
+Данная команда откроет приложение **Startup Applications Preferences**. Нажмите на ***Add*** и введите следующее:
+
+| Name: | *Numlockx* |
+| Command: | */usr/bin/numlockx on* |
+| Comment: | *Turns on numlock.* |
+
+**Примечание:** Это не общесистемная настройка, соответственно данную процедуру необходимо повторить для каждого пользователя, которому необходимо включать Num Lock после входа.
+
+### Xfce
+
+Убедитесь, что следующим параметрам задано значение `true` в файле `~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml`:
+
+```
+<property name="Numlock" type="bool" value="true"/>
+<property name="RestoreNumlock" type="bool" value="true"/>
+
+```
+
+**Примечание:** Если файл не существует, откройте *Настройки > Клавиатура*, а затем проверьте и снимите галочку с опции `Restore num lock state on startup`, что создаст файл `keyboards.xml`.
+
+### SDDM
+
+Задайте параметру *Numlock* значение *on* в секции `[General]` файла `/etc/sddm.conf`:
+
+```
+[General]
+...
+Numlock=on
+
+```
+
 ### SLiM
 
-В файле `/etc/slim.conf` найдите строку:
+Найдите следующую строку в файле `/etc/slim.conf` и раскомментируйте её (уберите символ `#`):
 
 ```
 #numlock             on
 
 ```
 
-и удалите символ комментария - "#".
+### OpenBox
+
+Добавьте следующую строку в файл `~/.config/openbox/autostart`:
+
+```
+numlockx &
+
+```
+
+А затем сохраните файл.
+
+### LightDM
+
+См. раздел [LightDM (Русский)#NumLock включен по умолчанию](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#NumLock_включен_по_умолчанию "LightDM (Русский)").
+
+### LXDM
+
+Задайте следующий параметр в файле `/etc/lxdm/lxdm.conf`:
+
+```
+numlock=1
+
+```
+
+### LXQt
+
+Задайте следующий параметр в файле `~/.config/lxqt/session.conf`:
+
+```
+[Keyboard]
+numlock=true
+
+```

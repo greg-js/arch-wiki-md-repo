@@ -1518,7 +1518,7 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 *   **[Ring](/index.php/Ring "Ring") KDE** — SIP-compatible softphone and instant messenger for the decentralized Ring network. KDE client.
 
-	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
+	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 

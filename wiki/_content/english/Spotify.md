@@ -643,7 +643,7 @@ If you get a segmentation fault or error message when trying to play local files
 
 ### Not respecting window manager rules
 
-Window manager that try to apply specific rules like starting it on a determined workspace or maximizing it on startup, has no effect, as Spotify doesn't set the *WM_CLASS* property before creating the window, violating the ICCCM specifications. One solution is to use [spotifywm](https://github.com/dasJ/spotifywm).
+Window manager that try to apply specific rules like starting it on a determined workspace or maximizing it on startup, has no effect, as Spotify doesn't set the *WM_CLASS* property before creating the window, violating the ICCCM specifications. One solution is to use [spotifywm-git](https://aur.archlinux.org/packages/spotifywm-git/).
 
 ### GUI hangs while the music plays
 

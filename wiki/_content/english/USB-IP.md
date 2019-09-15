@@ -11,6 +11,7 @@ From the [USB/IP site](http://usbip.sourceforge.net/):
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Server Setup](#Server_Setup)
+        *   [2.1.1 Binding with systemd service](#Binding_with_systemd_service)
     *   [2.2 Client Setup](#Client_Setup)
     *   [2.3 Disconnecting Devices](#Disconnecting_Devices)
 *   [3 Man Page](#Man_Page)
@@ -63,6 +64,38 @@ $ usbip unbind -b 1-1.5
 ```
 
 After binding, the device can be accessed from the client.
+
+#### Binding with systemd service
+
+In order to make binding persistent following systemd template unit file can be used:
+
+ `/etc/systemd/system/usbip-bind@.service` 
+```
+[Unit]
+ Description=USB-IP Binding on bus id %I
+ After=network-online.target usbipd.service
+ Wants=network-online.target
+ Requires=usbipd.service
+ #DefaultInstance=1-1.5
+
+ [Service]
+ Type=simple
+ ExecStart=/usr/bin/usbip bind -b %i
+ RemainAfterExit=yes
+ ExecStop=/usr/bin/usbip unbind -b %i  
+ Restart=on-failure
+
+ [Install]
+ WantedBy=multi-user.target
+```
+
+To bind the required device. For example to share the device having *busid* 1-1:
+
+```
+$ sudo systemctl enable usbip-bind\@1-1.service
+$ sudo systemctl start usbip-bind\@1-1.service
+
+```
 
 ### Client Setup
 

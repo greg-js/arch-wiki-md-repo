@@ -266,7 +266,7 @@ xrandr --newmode "2560x1440" 241.50 2560 2600 2632 2720 1440 1443 1448 1481 -hsy
 
 You may also find similar lines for the modesetting driver.
 
-Then we create a new xrandr mode. Note that the Modeline keyword needs to be ommited.
+Then we create a new xrandr mode. Note that the Modeline keyword needs to be omitted.
 
 ```
 $ xrandr --newmode "1280x1024_60.00"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync

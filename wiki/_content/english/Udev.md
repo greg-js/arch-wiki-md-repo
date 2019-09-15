@@ -66,7 +66,7 @@ Below is an example of a rule that creates a symlink `/dev/video-cam` when a web
 
 Let say this camera is currently connected and has loaded with the device name `/dev/video2`. The reason for writing this rule is that at the next boot, the device could show up under a different name, like `/dev/video0`.
 
- `$ udevadm info -a -p $(udevadm info -q path -n /dev/video2)` 
+ `$ udevadm info --attribute-walk --path=$(udevadm info --query=path --name=/dev/video2)` 
 ```
 Udevadm info starts with the device specified by the devpath and then walks up the chain of parent devices.
 It prints for every device found, all possible attributes in the udev rules key format.
@@ -116,7 +116,7 @@ In this command's output, you will see value pairs such as `ID_VENDOR_ID` and `I
 To get a list of all of the attributes of a device you can use to write rules, run this command:
 
 ```
-# udevadm info -a -n *device_name*
+# udevadm info --attribute-walk --name=*device_name*
 
 ```
 
@@ -125,14 +125,14 @@ Replace `*device_name*` with the device present in the system, such as `/dev/sda
 If you do not know the device name you can also list all attributes of a specific system path:
 
 ```
-# udevadm info -a -p /sys/class/backlight/acpi_video0
+# udevadm info --attribute-walk --path=/sys/class/backlight/acpi_video0
 
 ```
 
 ### Testing rules before loading
 
 ```
-# udevadm test $(udevadm info -q path -n *device_name*) 2>&1
+# udevadm test $(udevadm info --query=path --name=*device_name*) 2>&1
 
 ```
 
@@ -248,16 +248,16 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 **Note:** The `DEVPATH` can be found after connection the eSATA drive with the following commands (replace `sdb` accordingly):
 ```
-# udevadm info -q path -n /dev/sdb
+# udevadm info --query=path --name=/dev/sdb
 /devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sdb
 
 ```
 
 ```
 # find /sys/devices/ -name sdb
-/sys/devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sdb
 
 ```
+/sys/devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sdb
 
 ### Setting static device names
 
@@ -329,7 +329,7 @@ Now create the rule to change the `power/wakeup` attribute of both the device an
 It can be useful to trigger various *udev* events. For example, you might want to simulate a USB device disconnect on a remote machine. In such cases, use `udevadm trigger`:
 
 ```
-# udevadm trigger -v -t subsystems -c remove -s usb -a "idVendor=abcd"
+# udevadm trigger --verbose --type=subsystems --action=remove --subsystem-match=usb --attr-match="idVendor=abcd"
 
 ```
 
@@ -363,9 +363,9 @@ export XAUTHORITY=/home/USERNAME_TO_RUN_SCRIPT_AS/.Xauthority
 export DISPLAY=:0
 export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/bus"
 
-/usr/bin/sudo -u USERNAME_TO_RUN_SCRIPT_AS /usr/bin/paplay --server /run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/pulse/native /home/USERNAME/.i3/sounds/Click1.wav > /dev/null 2>&1
+/usr/bin/sudo -u USERNAME_TO_RUN_SCRIPT_AS /usr/bin/paplay --server=/run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/pulse/native /home/USERNAME/.i3/sounds/Click1.wav > /dev/null 2>&1
 
-/usr/bin/notify-send -i /usr/share/icons/gnome/256x256/status/battery-full-charging.png 'Changing Power States' --expire-time=4000
+/usr/bin/notify-send --icon=/usr/share/icons/gnome/256x256/status/battery-full-charging.png 'Changing Power States' --expire-time=4000
 
 ```
 
@@ -385,7 +385,7 @@ Programs started by udev will block further events from that device, and any tas
 
 ### Blacklisting modules
 
-In rare cases, *udev* can make mistakes and load the wrong modules. To prevent it from doing this, you can blacklist modules. Once blacklisted, *udev* will never load that module. See [blacklisting](/index.php/Blacklisting "Blacklisting"). Not at boot-time *or* later on when a hotplug event is received (eg, you plug in your USB flash drive).
+In rare cases, *udev* can make mistakes and load the wrong modules. To prevent it from doing this, you can [blacklist](/index.php/Blacklist "Blacklist") modules. Once blacklisted, *udev* will never load that module – not at boot-time and not even later on when a hot-plug event is received (e.g., you plug in your USB flash drive).
 
 ### Debug output
 

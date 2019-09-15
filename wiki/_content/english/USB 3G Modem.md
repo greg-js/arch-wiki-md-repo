@@ -17,18 +17,22 @@ A number of mobile telephone networks around the world offer mobile internet con
 *   [2 Device identification](#Device_identification)
 *   [3 Mode switching](#Mode_switching)
 *   [4 Connection](#Connection)
-    *   [4.1 Network Manager](#Network_Manager)
-    *   [4.2 pppd](#pppd)
-    *   [4.3 wvdial](#wvdial)
-    *   [4.4 netctl](#netctl)
-    *   [4.5 libmbim](#libmbim)
-    *   [4.6 sakis3g](#sakis3g)
-    *   [4.7 Connection halts after few minutes running](#Connection_halts_after_few_minutes_running)
+    *   [4.1 Serial like interface](#Serial_like_interface)
+        *   [4.1.1 Network Manager](#Network_Manager)
+        *   [4.1.2 pppd](#pppd)
+        *   [4.1.3 wvdial](#wvdial)
+        *   [4.1.4 netctl](#netctl)
+        *   [4.1.5 libmbim](#libmbim)
+        *   [4.1.6 sakis3g](#sakis3g)
+    *   [4.2 Ethernet like interface](#Ethernet_like_interface)
+    *   [4.3 Connection halts after few minutes running](#Connection_halts_after_few_minutes_running)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
     *   [5.1 AT commands](#AT_commands)
     *   [5.2 Low connection speed](#Low_connection_speed)
     *   [5.3 Monitor used bandwidth](#Monitor_used_bandwidth)
     *   [5.4 Reading SMS](#Reading_SMS)
+        *   [5.4.1 With dedicated software](#With_dedicated_software)
+        *   [5.4.2 With email like web interface](#With_email_like_web_interface)
     *   [5.5 Fix image quality](#Fix_image_quality)
 
 ## Remove the PIN
@@ -59,9 +63,7 @@ which will show the vendor and product IDs of the device. Note that some devices
 
 Often these devices will have two modes (1) USB flash memory storage (2) USB Modem. The first mode, sometimes known as ZeroCD, is often used to deliver an internet communications program for another operating system and is generally of no interest to Linux users. Additionally some have a slot into which the user can insert an additional flash memory card.
 
-A useful utility for switching these devices into modem mode is [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch), available in the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Udev rules are supplied with the package in `/lib/udev/rules.d/40-usb_modeswitch.rules`. This contains entries for many devices, which it will switch to modem mode upon insertion.
+A useful utility for switching these devices into modem mode is [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch), available in the [official repositories](/index.php/Official_repositories "Official repositories"). Udev rules are supplied with [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) in `/lib/udev/rules.d/40-usb_modeswitch.rules`. It contains entries for many devices, which it will switch to modem mode upon insertion.
 
 When a device is switched, its product ID may change to a different value. The vendor ID will remain unchanged. This can be seen in the output of `lsusb`.
 
@@ -73,7 +75,19 @@ Udev itself included a utility called `/lib/udev/modem-modeswitch`. In udev 157 
 
 ## Connection
 
-### Network Manager
+In general, at this point you should note if [#Mode Switching](#Mode_Switch) left you with additional /dev/ttyUSB* serial like device, or an Ethernet like device, such as en* interface. You can do that by shell commands such as
+
+```
+$ ls /dev/ttyUSB*
+$ ip link
+
+```
+
+, or with [journalctl](/index.php/Journalctl "Journalctl"). And follow [Network Configuration](/index.php/Network_Configuration "Network Configuration") accordingly. Some further notes are:
+
+### Serial like interface
+
+#### Network Manager
 
 After installing [usbutils](https://www.archlinux.org/packages/?name=usbutils) and [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch), you just need to install [modemmanager](https://www.archlinux.org/packages/?name=modemmanager) to make the modem work with [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
@@ -94,15 +108,15 @@ If you get error messages such as "Couldn't check support for device" and "not s
 
 Whilst running ModemManager gammu will not work. SMS and Ussd codes can be still used with [modem-manager-gui](https://www.archlinux.org/packages/?name=modem-manager-gui).
 
-### pppd
+#### pppd
 
 [pppd](/index.php/Pppd "Pppd") can be used to configure 3g connections. Step by step instruction is available on [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd"). Optionally, [pppconfig](https://aur.archlinux.org/packages/pppconfig/) can be used to simplify the pppd configuration using dialog interface.
 
-### wvdial
+#### wvdial
 
 See main article: [wvdial](/index.php/Wvdial "Wvdial")
 
-### netctl
+#### netctl
 
 Netctl can be used to establish a connection using a USB modem. An example configuration file provided by [netctl](https://www.archlinux.org/packages/?name=netctl) is located at `/etc/netctl/examples/mobile_ppp`. Minimally you will probably have to specify
 
@@ -117,24 +131,35 @@ AccessPointName=Broadband
 
 See the [netctl](/index.php/Netctl "Netctl") article and [netctl.profile](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) for more information.
 
-### libmbim
+#### libmbim
 
-Install `libmbim` from the official repositories. To bring up the modem you can use `mbim-network` which is a wrapper for `mmcli` calls. First create a profile for mbim-network.
+Install [libmbim](https://www.archlinux.org/packages/?name=libmbim) from the official repositories. To bring up the modem you can use `mbim-network` which is a wrapper for `mmcli` calls. First create a profile for mbim-network.
 
- `/etc/mbim-network.conf`  `APN=Broadband` Now connect to the network with `# mbim-network /dev/cdc-wdmX start` . Then bring up the interface and get an ip address:
+ `/etc/mbim-network.conf`  `APN=Broadband` 
+
+Now connect to the network with
+
+ `# mbim-network /dev/cdc-wdmX start` 
+
+. Then bring up the interface and get an ip address:
+
 ```
 # ip link set wwanY up
 # dhcpcd wwanY
 
 ```
 
-### sakis3g
+#### sakis3g
 
 There may be the chance that the modem stick is supported by [sakis3g](http://www.sakis3g.com/) which is an all in one command line script and automates all the steps above. Install [sakis3g](https://aur.archlinux.org/packages/sakis3g/) from the [AUR](/index.php/AUR "AUR").
 
+### Ethernet like interface
+
+In that case you will need to have the [interface up](/index.php/Network_configuration#Enabling_and_disabling_network_interfaces "Network configuration"). If the device has a [DHCP](/index.php/DHCP "DHCP") server, you can use a DHCP client to match it. Otherwise, you will have to have some knowledge about the network the device expects. Such information might be obtained from its behavior in another OS. Or by searching the web. Or from the drivers, and other information, stored in the initial USB flash memory storage (ZeroCD). Some Huawei HiLink devices, for example, sometime operate at 192.168.8.0/24, with a gateway at 192.168.8.1\. They also might have a web interface at 192.168.8.1.
+
 ### Connection halts after few minutes running
 
-This problem occurs on some modems which locked by a mobile operator. You can successfully connect to the internet but after few minutes connection halts and your modem reboots. That happens because an operator built a some checks into modem firmware so a modem checks if a branded software is running on your pc, but usually that software is Windows-only, and obviously you don't use it. Fix (it works on ZTE-mf190 at least) is simple - send this command through serial port (use minicom or similar soft):
+This problem commonly occurs on some modems which locked by a mobile operator. You can successfully connect to the internet but after few minutes connection halts and your modem reboots. That happens because an operator built a some checks into modem firmware so a modem checks if a branded software is running on your pc, but usually that software is Windows-only, and obviously you don't use it. Fix (it works on ZTE-mf190 at least) is simple - send this command through serial port (use minicom or similar soft):
 
 ```
 AT+ZCDRUN=E\r
@@ -142,6 +167,8 @@ AT+ZCDRUN=E\r
 ```
 
 This command will delete a NODOWNLOAD.FLG file in the modem's filesystem - it will disable such checks.
+
+Another possibility for such disconnections is to help the customer save bandwidth, which might be expensive. With Huawei HiLink devices with a web interface, there might be an option there to set a longer period of inactivity before the connection hangs up.
 
 ## Tips and Tricks
 
@@ -258,6 +285,8 @@ A number of tools are available to help with that. Two console tools are [vnstat
 
 ### Reading SMS
 
+#### With dedicated software
+
 This was tested on a Huawei EM770W (GTM382E) 3g card integrated into an Acer Aspire AS3810TG laptop.
 
 ```
@@ -284,7 +313,7 @@ model = AT
 connection = serial
 ```
 
-You need to be part of the `uucp` group to use `/dev/ttyUSB0`, for example if your user is called "x":
+You need to be part of the `uucp` [group](/index.php/User_group "User group") to use `/dev/ttyUSB0`, for example if your user is called "x":
 
 ```
 # gpasswd -a x uucp
@@ -326,6 +355,10 @@ gnokii # invoke gnokii
 
 Granted this does not work very well if your SMS contains the word "Text", but you may adapt the script to your liking.
 
+#### With email like web interface
+
+Some Devices, such as some Huawei HiLink, include an email like web interface for SMS. It is included in the device internal web server, which is used for other purposes too.
+
 ### Fix image quality
 
 If you are getting low quality images while browsing the web over a mobile broadband connection with the hints "shift+r improves the quality of this image" and "shift+a improves the quality of all images on this page", follow these instructions:
@@ -347,4 +380,4 @@ systemctl start tinyproxy
 
 ```
 
-Configure your browser to use localhost:8888 as a proxy server and you are all done. This is especially useful if you are using, for example, Google Chrome which, unlike Firefox, does not allow you to modify the Pragma and Cache-Control headers.
+Configure your browser to use localhost:8888 as a [proxy server](/index.php/Proxy_server "Proxy server") and you are all done. This is especially useful if you are using, for example, Google [Chrome](/index.php/Chrome "Chrome") which, unlike Firefox, does not allow you to modify the Pragma and Cache-Control headers.

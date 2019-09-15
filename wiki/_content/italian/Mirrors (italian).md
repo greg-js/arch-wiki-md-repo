@@ -49,7 +49,9 @@ Questa pagina è una guida per la selezione e la configurazione dei "mirrors", e
 Per attivare i mirrors, aprire `/etc/pacman.d/mirrorlist` e individuare la propria regione geografica. Decommentare i mirrors che si desidera utilizzare.
 
 **Nota:** La velocità di banda di ftp.archlinux.org [è limitata a 50KB/s](https://www.archlinux.org/news/throttling-ftparchlinuxorg-rsyncarchlinuxorg/)
+
 Esempio:
+
 ```
 # Any
 # Server = ftp://mirrors.kernel.org/archlinux/$repo/os/i686

@@ -18,6 +18,7 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
     *   [1.1 thermald](#thermald)
     *   [1.2 i7z](#i7z)
     *   [1.3 cpupower](#cpupower)
+    *   [1.4 cpupower-gui](#cpupower-gui)
 *   [2 CPU frequency driver](#CPU_frequency_driver)
     *   [2.1 Setting maximum and minimum frequencies](#Setting_maximum_and_minimum_frequencies)
     *   [2.2 Disabling Turbo Boost](#Disabling_Turbo_Boost)
@@ -53,6 +54,10 @@ The associated systemd unit is `thermald.service`, which should be [started](/in
 [cpupower](https://www.archlinux.org/packages/?name=cpupower) is a set of userspace utilities designed to assist with CPU frequency scaling. The package is not required to use scaling, but is highly recommended because it provides useful command-line utilities and a [systemd](/index.php/Systemd "Systemd") service to change the governor at boot.
 
 The configuration file for *cpupower* is located in `/etc/default/cpupower`. This configuration file is read by a bash script in `/usr/lib/systemd/scripts/cpupower` which is activated by *systemd* with `cpupower.service`. You may want to [enable](/index.php/Enable "Enable") `cpupower.service` to start at boot.
+
+### cpupower-gui
+
+[cpupower-gui](https://aur.archlinux.org/packages/cpupower-gui/) is a graphical utility designed to assist with CPU frequency scaling. The GUI is based on [gtk](/index.php/Gtk "Gtk") and is meant to provide the same options as *cpupower*. *cpupower-gui* can change the maximum/minimum CPU frequency and governor for each core. The application handles privilege granting through [polkit](/index.php/Polkit "Polkit") and allows any logged-in user in the `wheel` [user group](/index.php/User_group "User group") to change the frequency and governor.
 
 ## CPU frequency driver
 

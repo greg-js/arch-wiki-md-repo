@@ -211,7 +211,9 @@ See the Firefox article for [how to set the default spell checking language](/in
 
 ### Native notifications
 
-Enable `mail.biff.use_system_alert` in the [#Config Editor](#Config_Editor). This option means that extensions (such as Gnome Integration) are not needed for these newer versions of Thunderbird.
+Make sure that `mail.biff.use_system_alert` in the [#Config Editor](#Config_Editor) is set to "true" (default). This option means that extensions (such as Gnome Integration) are not needed for these newer versions of Thunderbird.
+
+You might also need to install [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 
 ### Theming tweaks
 

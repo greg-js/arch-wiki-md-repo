@@ -73,7 +73,7 @@ Veja [Xorg (Português)#Troubleshooting](/index.php/Xorg_(Portugu%C3%AAs)#Troubl
 
 Crie backups de dados importante em intervalos regulares. Veja [Programas de sincronização e backup](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") para muitas alternativas de aplicativos que podem se adequar ao seu caso. Veja [Category:System recovery (Português)](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") para outros artigos de internet.
 
-Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+Os backups podem ser automatizados com [systemd/Timers (Português)](/index.php/Systemd/Timers_(Portugu%C3%AAs) "Systemd/Timers (Português)").
 
 ### Arquivos de configuração
 

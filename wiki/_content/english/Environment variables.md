@@ -76,7 +76,6 @@ You do not always want to define an environment variable globally. For instance,
 
 *   `~/.pam_environment` is the user specific equivalent of `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), used by pam_env module. See [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) and [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for details.
 *   User configuration files of your [shell](/index.php/Shell "Shell"), for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup/Shutdown_files "Zsh").
-*   `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 *   [systemd](/index.php/Systemd "Systemd") will load environment variables from `~/.config/environment.d/*.conf` see [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) and [https://wiki.gnome.org/Initiatives/Wayland/SessionStart](https://wiki.gnome.org/Initiatives/Wayland/SessionStart).
 
 To add a directory to the `PATH` for local usage, put following in `~/.bash_profile`:
@@ -199,8 +198,7 @@ fi
 
 The [PAM](/index.php/PAM "PAM") module [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) loads the variables to be set in the environment from the following files: `/etc/security/pam_env.conf`, `/etc/environment` and `~/.pam_environment`.
 
-*   `/etc/environment` must consist of simple `*VARIABLE*=*value*` pairs on separate lines, for example: `EDITOR=NANO` 
-
+*   `/etc/environment` must consist of simple `*VARIABLE*=*value*` pairs on separate lines, for example: `EDITOR=nano` 
 *   `/etc/security/pam_env.conf` and `~/.pam_environment` share the same following format: `VARIABLE [DEFAULT=*value*] [OVERRIDE=*value*]` `@{HOME}` and `@{SHELL}` are special variables that expand to what is defined in `/etc/passwd`. The following example illustrates how to expand the `HOME` environment variable into another variable: `XDG_CONFIG_HOME   DEFAULT=@{HOME}/.config` 
     **Note:** The variables `${HOME}` and `${SHELL}` are not linked to the `HOME` and `SHELL` environment variables, they are not set by default.
     The format also allows to expand already defined variables in the values of other variables using `${*VARIABLE*}` , like this: `GNUPGHOME        DEFAULT=${XDG_CONFIG_HOME}/gnupg` `*VARIABLE*=*value*` pairs are also allowed, but variable expansion is not supported in those pairs. See [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) for more information.

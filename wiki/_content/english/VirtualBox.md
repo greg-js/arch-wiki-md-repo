@@ -326,7 +326,7 @@ If the user is not in the *vboxsf* group, to give them access to our mountpoint 
 
 In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
 
-The shared folder should now appear in `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions `755` or has group ownership `vboxsf` if using permission `750`. This is currently not the default if media is created by installing [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils).
+The shared folder should now appear as `/media/sf_*shared_folder_name*`. If users cannot access the shared folders, check that `/media/` has [permissions](/index.php/Permissions "Permissions") `755` or is owned by the `vboxsf` group if using permissions `750`. This is currently not the default if the `/media` directory is created by `vboxservice.service`.
 
 You can use symlinks if you want to have a more convenient access and avoid to browse in that directory, e.g.:
 

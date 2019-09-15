@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [dd](/index.php/Dd "Dd"). Data da última tradução: 2019-07-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dd&diff=0&oldid=578145) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [dd](/index.php/Dd "Dd"). Data da última tradução: 2019-08-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dd&diff=0&oldid=581123) na versão em inglês.
 
 Artigos relacionados
 
@@ -98,7 +98,7 @@ Em seguida, monte o disco rígido externo e faça o backup da unidade:
 
 ```
 
-Se necessário (por exemplo, quando o formato do HD externo é FAT32), divida a imagem do disco em volumes (veja também [split(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/split.1)):
+Se necessário (por exemplo, quando os arquivos resultantes serão armazenados em um sistema de arquivos [FAT32](/index.php/FAT32 "FAT32")), divida a imagem do disco em vários volumes (veja também [split(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/split.1)):
 
 ```
 # dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c | split -a3 -b2G - */caminho/para/backup.img.gz*
@@ -121,6 +121,8 @@ Finalmente, salve informações extras sobre a geometria da unidade necessária 
 
 **Nota:** Você pode querer usar um tamanho de bloco (`bs=`) que seja igual à quantidade de cache no HD que você está fazendo backup. Por exemplo, `bs=8192K` funciona para um cache de 8 MiB. O 64 KiB mencionado neste artigo é melhor que o padrão `bs=512` bytes, mas pode ser mais rápido se executado com um `bs=` maior.
 
+**Dica:** O *gzip* só é capaz de compactar dados usando um único núcleo ("core") de CPU, o que leva a um "throughput" de dados consideravelmente menor que as velocidades de gravação no armazenamento moderno. Para aproveitar a compactação com vários núcleos e criar uma imagem de disco mais rapidamente, pode-se instalar o pacote [pigz](https://www.archlinux.org/packages/?name=pigz) e simplesmente substituir o comando `gzip -c` acima por `pigz -c`. Para discos grandes, isso pode economizar horas.
+
 ### Restaurar o sistema
 
 Para restaurar seu sistema:
@@ -139,7 +141,9 @@ Quando a imagem tiver sido dividida com *split*, use o seguinte:
 
 ## Aplicação de patch em arquivo binário
 
-Caso queira substituir a posição `0x123AB` de um arquivo com a sequência hexadecimal `FF C0 14`, isso pode ser feito com a linha de comando: `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/path/to/file*` 
+Caso queira substituir a posição `0x123AB` de um arquivo com a sequência hexadecimal `FF C0 14`, isso pode ser feito com a linha de comando:
+
+ `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/path/to/file*` 
 
 ## Fazer backup e restaurar MBR
 

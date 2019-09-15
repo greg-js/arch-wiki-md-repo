@@ -19,14 +19,15 @@ Related articles
     *   [1.1 Support](#Support)
     *   [1.2 Fingerprint Reader](#Fingerprint_Reader)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
-    *   [2.2 Special buttons](#Special_buttons)
-    *   [2.3 Display](#Display)
-    *   [2.4 Backlight Control](#Backlight_Control)
-    *   [2.5 TrackPoint Scrolling](#TrackPoint_Scrolling)
-    *   [2.6 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
-    *   [2.7 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
-    *   [2.8 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_(USB_Type_C))
+    *   [2.1 Function Key actions are "swapped"](#Function_Key_actions_are_"swapped")
+    *   [2.2 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
+    *   [2.3 Special buttons](#Special_buttons)
+    *   [2.4 Display](#Display)
+    *   [2.5 Backlight Control](#Backlight_Control)
+    *   [2.6 TrackPoint Scrolling](#TrackPoint_Scrolling)
+    *   [2.7 Lenovo ThinkPad Thunderbolt 3 Dockingstation](#Lenovo_ThinkPad_Thunderbolt_3_Dockingstation)
+    *   [2.8 HP Thunderbolt 3 Dock](#HP_Thunderbolt_3_Dock)
+    *   [2.9 Lenovo p27h-10 (USB Type C)](#Lenovo_p27h-10_(USB_Type_C))
 *   [3 BIOS](#BIOS)
     *   [3.1 ISO](#ISO)
         *   [3.1.1 DVD](#DVD)
@@ -75,6 +76,12 @@ Version: ThinkPad X1 Carbon 5th
 The fingerprint reader included with this model is `138a:0097 Validity Sensors, Inc`. There's a patched libfprint which adds partial support for 138a:0097\. [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/) It allows fingerprint authentication, but only if fingers are previously enrolled on the device from Windows. [libfrprint issue](https://gitlab.freedesktop.org/libfprint/libfprint/issues/54#note_1991)
 
 ## Configuration
+
+### Function Key actions are "swapped"
+
+If the action performed when pressing a Function Key is "swapped" (Example: Pressing F10 kills Bluetooth instead of sending F10), this can be reversed in BIOS.
+
+Enter BIOS and change ***Config > Keyboard/Mouse > F1-F12 as Primary Function*** to "Enabled".
 
 ### Keyboard Fn Shortcuts
 

@@ -57,7 +57,8 @@
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 On-screen keyboards](#On-screen_keyboards)
         *   [1.4.3 Keyboard layout switchers](#Keyboard_layout_switchers)
-        *   [1.4.4 Input methods](#Input_methods)
+        *   [1.4.4 Keybinding managers](#Keybinding_managers)
+        *   [1.4.5 Input methods](#Input_methods)
     *   [1.5 Disks](#Disks)
         *   [1.5.1 Partitioning tools](#Partitioning_tools)
         *   [1.5.2 Formatting tools](#Formatting_tools)
@@ -149,7 +150,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
 
-*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm.
+*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for xterm.
 
 	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
@@ -1304,6 +1305,10 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 *   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — A text analyser, it detects the language of the input and corrects the keyboard layout if needed.
 
 	[http://www.xneur.ru/](http://www.xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/) (GUI)
+
+#### Keybinding managers
+
+See [Keyboard Shortcuts#Xorg](/index.php/Keyboard_Shortcuts#Xorg "Keyboard Shortcuts").
 
 #### Input methods
 

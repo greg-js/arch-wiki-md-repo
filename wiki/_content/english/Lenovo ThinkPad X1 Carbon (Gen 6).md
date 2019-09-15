@@ -89,8 +89,9 @@ ThinkPad X1 Carbon 6th
     *   [11.2 OPAL: Hardware based full-disk encryption](#OPAL:_Hardware_based_full-disk_encryption)
 *   [12 Tools](#Tools)
     *   [12.1 Diagnostics](#Diagnostics)
-*   [13 References](#References)
-*   [14 Additional resources](#Additional_resources)
+*   [13 nvme issues](#nvme_issues)
+*   [14 References](#References)
+*   [15 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -157,7 +158,7 @@ echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
 
 Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
 
-There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) to inform Lenovo about this issue.
+There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) to inform Lenovo about this issue, and a Lenovo employee has [confirmed that they're actively working on a fix](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4513821/highlight/true#M13563) but also said that it may take some time.
 
 ### Throttling fix
 
@@ -436,6 +437,10 @@ See [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting 
 `powertop` ([powertop](https://www.archlinux.org/packages/?name=powertop)): provides detailed information about CPU power consumption and recommendations on how to improve it.
 
 `tlp-stat` ([tlp](https://www.archlinux.org/packages/?name=tlp)): a much simpler alternative to remembering which `cat /sys/devices/system/*` to run in many cases. It can give very detailed, structured information about components like the battery, processor, graphics card, etc.
+
+## nvme issues
+
+There is an [issue](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/solutions/HT508405) with nvme installed in ThinkPad X1 Carbon (Gen 6) resulting in device failure. Be sure to update firmware or reach out to lenovo support for replacement.
 
 ## References
 

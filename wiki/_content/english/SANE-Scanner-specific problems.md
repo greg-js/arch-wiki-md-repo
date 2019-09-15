@@ -62,13 +62,14 @@ firmware /usr/share/sane/snapscan/u176v046.bin
 
 ## Brother
 
-In order to install a Brother scanner or printer/scanner combo you need the right driver. To find the right one, search for your model at the [Brother Linux scanner page](http://support.brother.com/g/s/id/linux/en/download_scn.html), or see the information below for scanners that aren't listed on that page.
+In order to install a Brother scanner or printer/scanner combo you need the right driver. To find the right one, search for your model at the [Brother Linux scanner page](http://support.brother.com/g/s/id/linux/en/download_scn.html). That list is not exhaustive. You can also search the web. Or see the information below for more scanners. Or extract each of the [AUR](/index.php/AUR "AUR") packages below. Each package seems to contain an exhaustive list of the models it is suitable to.
 
 Then, install the appropriate package:
 
 *   [brscan2](https://aur.archlinux.org/packages/brscan2/)
 *   [brscan3](https://aur.archlinux.org/packages/brscan3/)
 *   [brscan4](https://aur.archlinux.org/packages/brscan4/) (MFC-J5620DW)
+*   [brscan5](https://aur.archlinux.org/packages/brscan5/)
 *   [libsane-dsseries](https://aur.archlinux.org/packages/libsane-dsseries/)
 
 Now, the scanner should be recognized by SANE.
@@ -102,7 +103,7 @@ If all the necessary packages are installed but you still get the "invalid argum
 
 ```
 
-The output should narrow down the problem. Most likely the connection isn't setup correctly. In case of a network scanner check if the IP address is right by opening the `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection check if the path to the scanner in the configuration file is setup correctly. For that compare the values of the `lsusb` command with your configuration file and change them if necessary.
+The output should narrow down the problem. Most likely the connection isn't setup correctly. In case of a network scanner check if the IP address is right by opening the `/etc/opt/brother/scanner/brscan4//brsanenetdevice4.cfg` with an editor. In case of a USB connection check if the path to the scanner in the configuration file is setup correctly. For that compare the values of the `lsusb` command with your configuration file and change them if necessary. You might also try to follow the `brother*X*` suggestion from [Network Scanning above](/index.php/SANE/Scanner-specific_problems#Network_Scanning "SANE/Scanner-specific problems") even for non networked scanners.
 
 ### Scan-key-tool
 

@@ -665,7 +665,7 @@ libc.so.6 => /usr/lib/libc.so.6 (0x00007f57ea6ca000)
 For files residing in `/usr/lib` you may try the following one-liner:
 
 ```
-# cp $(ldd /usr/bin/nginx | grep /usr/lib | sed -sre 's/(.+)(\/usr\/lib\/\S+).+/\2/g') $JAIL/usr/lib
+# cp $(ldd /usr/bin/nginx | grep /usr/lib/ | sed -sre 's/(.+)(\/usr\/lib\/\S+).+/\2/g') $JAIL/usr/lib
 
 ```
 

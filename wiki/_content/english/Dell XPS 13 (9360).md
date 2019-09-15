@@ -444,7 +444,13 @@ w /sys/devices/pci0000:00/0000:00:14.0/power/wakeup - - - - disabled
 
 ```
 
-If you want to enable waking up by key press, see [Dell XPS 13 2-in-1 (9365)#Suspend issues](/index.php/Dell_XPS_13_2-in-1_(9365)#Suspend_issues "Dell XPS 13 2-in-1 (9365)").
+If you want to enable waking up by key press:
+
+ `/etc/tmpfiles.d/enable-key-press-wakeup.conf` 
+```
+# Enable key press to wakeup
+w /sys/devices/platform/i8042/serio0/power/wakeup - - - - enabled
+```
 
 ## Troubleshooting
 
@@ -499,7 +505,7 @@ $ amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1
 
 ```
 
-PulseAudio will rewrite these ALSA settings. So if you use PulseAudio you should change its config to make them permanent:
+PulseAudio will rewrite these ALSA settings on each boot. So if you use PulseAudio you may change its config to make the setting permanent:
 
  `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf` 
 ```
@@ -520,6 +526,45 @@ switch = off
 volume = 1
 
 ```
+
+This change will be overwritten by an upgrade of PulseAudio though. To make these changes persistent across upgrades you can use a pacman hook:
+
+ `/etc/pacman.d/hooks/headphones_hissing.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = pulseaudio
+
+[Action]
+Description = Set default Headphone Mic Boost volume to 1...
+When = PostTransaction
+Exec = /usr/bin/sed -i '/\[Element Headphone Mic Boost\]/,/^$/s/volume = .*/volume = 1/' /usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.conf /usr/share/pulseaudio/alsa-mixer/paths/analog-input-headphone-mic.conf
+
+```
+
+Alternatively, you can avoid these changes to files under /usr by calling amixer at startup. The first solution would be to add the command above to the profile of your shell (`~/.bash_profile` in case of bash). Or you set up a systemd user service that is pulled in by PulseAudio:
+
+ `~/.config/systemd/user/headphones_hissing.service` 
+```
+[Unit]
+Description=Disable hissing sound with headphones
+After=pulseaudio.service
+PartOf=pulseaudio.service
+
+[Service]
+Type=oneshot
+ExecStart=amixer -c PCH cset 'name=Headphone Mic Boost Volume' 1
+
+[Install]
+WantedBy=pulseaudio.service
+
+```
+
+Enable the unit with `systemctl --user enable headphones_hissing.service`.
+
+To give these benefits to the other users on your system, you can set this globally, i.e. call amixer in `/etc/profile` and put the systemd unit in `/etc/systemd/user/headphones_hissing.service` and enable it globally by using the `--global` option respectively.
 
 ### Blank screen issue after booting
 

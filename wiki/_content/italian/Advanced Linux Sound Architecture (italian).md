@@ -905,7 +905,13 @@ pcm.!default {
 
 Alcuni moduli (ad es. snd-ac97-codec e snd-hda-intel) posso spegnere la scheda audio quando questa non è utilizzata. Lo spegnimento può generare un suono. A volte ciò può avvenire anche quando si agisce sulla barra del volume, o quando si aprono o chiudono finestre (KDE4). Per evitare che ciò avvenga si può eseguire `modinfo snd-MY-MODULE`, e cercare un’opzione che regoli o disattivi questa funzione.
 
-Ad esempio: per disabilitare il risparmio energetico utilizzando snd_hda_intel aggiungere in `/etc/modprobe.d/modprobe.conf` `options snd-hda-intel power_save=0` o `options snd-hda-intel power_save=0 power_save_controller=N` 
+Ad esempio: per disabilitare il risparmio energetico utilizzando snd_hda_intel aggiungere in `/etc/modprobe.d/modprobe.conf`
+
+ `options snd-hda-intel power_save=0` 
+
+o
+
+ `options snd-hda-intel power_save=0 power_save_controller=N` 
 
 È anche possibile provare prima al volo le configurazioni dando, ad esempio, `modprobe snd_hda_intel power_save=0`
 

@@ -84,7 +84,7 @@ Other alternatives include:
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
-A number of language packs are available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox) and [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
+A number of language packs are available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox),[firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition) and [firefox-nightly-](https://aur.archlinux.org/packages/?K=firefox-nightly-) for [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
 ## Add-ons
 
@@ -106,9 +106,7 @@ Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extension
 
 ## Plugins
 
-**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash.
-
-See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+The only plugin supported by Firefox is [Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") (NPAPI version). Other plugins are [no longer supported](https://support.mozilla.org/en-US/kb/npapi-plugins).
 
 To find out what plugins are installed/enabled, enter:
 
@@ -287,6 +285,8 @@ As an alternative you can use the full-page screenshot button in the *Developer 
 ### Wayland
 
 In order to start Firefox as a native Wayland application set the [environment variable](/index.php/Environment_variable "Environment variable") `MOZ_ENABLE_WAYLAND=1`. For example, [edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `MOZ_ENABLE_WAYLAND=1` to all `Exec` lines.
+
+To verify you are running Wayland, go to about:support and check Window Protocol. If you are using Wayland, it will say so.
 
 ### Window manager rules
 

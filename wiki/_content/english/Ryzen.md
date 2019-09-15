@@ -24,7 +24,7 @@ Ryzen is a multithreaded, high performance processor released by AMD in Q1, 2017
     *   [3.1 Enabling The Ananicy Daemon](#Enabling_The_Ananicy_Daemon)
     *   [3.2 Irqbalance](#Irqbalance)
     *   [3.3 CPU Mitigations](#CPU_Mitigations)
-    *   [3.4 GameMode](#GameMode)
+    *   [3.4 Gaming Performance](#Gaming_Performance)
 *   [4 Compiling A Kernel](#Compiling_A_Kernel)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Screen-Tearing (APU)](#Screen-Tearing_(APU))
@@ -79,11 +79,9 @@ See [Improving performance#irqbalance](/index.php/Improving_performance#irqbalan
 
 See [Improving performance#Turn off CPU exploit mitigations](/index.php/Improving_performance#Turn_off_CPU_exploit_mitigations "Improving performance").
 
-### GameMode
+### Gaming Performance
 
-[gamemode](https://aur.archlinux.org/packages/gamemode/) is a daemon/lib combo for Linux made by [FeralInteractive](https://github.com/FeralInteractive/) that allows games to request a set of optimisations be temporarily applied to the host OS and/or a game process. You can either build it yourself from [GitHub](https://github.com/FeralInteractive/gamemode) or you can install it from the AUR.
-
-**Note:** There is also a tutorial on [YouTube](https://youtu.be/4gyRyYfyGJw) that you can follow.
+See [Gaming#Improving performance](/index.php/Gaming#Improving_performance "Gaming").
 
 ## Compiling A Kernel
 

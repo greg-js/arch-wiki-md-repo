@@ -67,7 +67,7 @@
 
 *   Debian 是上游最大的发行版,其社区规模更大,提供稳定、测试和不稳定分支,包含超过51000个二进制包. ARCH 的软件仓库相对较小,但是如果包含AUR,那么支持的软件数量也差不多.
 *   Debian 对自由软件更热情，但是也提供非自由软件仓库。Arch 对 GNU 定义的非自由（“non-free”）软件更显宽容.
-*   Debian 对稳定分支的测试更详细彻底，软件基本冻结并提供[五年](https://wiki.debian.org/LTS)支持。Arch 提供的的软件包比 Debian Stable 和 testing 分支中的软件包更新,和 unstable 里的差不多，而且没有固定发布周期，滚动发布。
+*   Debian 对稳定分支的测试更详细彻底，软件基本冻结并提供[五年](https://wiki.debian.org/LTS)支持。Arch 提供的的软件包比 Debian Stable 中的软件包新,与 unstable和testing里的差不多，而且没有固定发布周期，滚动发布。
 *   Debian 支持许多架构,包括 alpha,arm,hppa,i386,x86_64,ia64,m68k,mips,mipsel,powerpc,s390和sparc.而ARCH仅对 x86_64 提供官方支持,其对 arm 的支持移植自社区项目(例如对Raspberry Pi的支持).
 *   ARCH 对从源码创建软件包提供更好的支持,有一个类 ports 系统.Debian 不提供类 ports 系统,而是依靠它巨大的软件仓库.
 *   ARCH 安装环境只提供最小的基本系统,然后通过编辑文本文件来配置系统.而 Debian 的配置方式更为自动化并且还提供多种安装方式.
@@ -90,7 +90,7 @@
 ### Slackware
 
 *   Slackware 使用 BSD 风格的初始化脚本，Arch 使用 [systemd](/index.php/Systemd "Systemd").
-*   Arch 有一个健壮的包管理系统 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")。与 Slackware 的标准工具不同，它可以自己处理依赖关系并提供更自动化的系统升级方式。Slackware 用户更倾向于手动处理依赖关系，以尽可能控制自己的系统。Slackware也对预编译的库和依赖提供杰出的支持。
+*   Arch 有一个强大完整的软件包管理系统 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")。与 Slackware 的标准工具不同，它可以自己处理依赖关系并提供更自动化的系统升级方式。Slackware 用户更倾向于手动处理依赖关系，以尽可能控制自己的系统。Slackware也对预编译的库和依赖提供杰出的支持。
 *   Arch 是一个滚动升级的系统，Slackware的发布更为保守，更喜欢提供稳定的软件包。在这个方面，Arch 更为“前卫”。
 *   Arch 软件仓库提供成千上万的二进制包，而相比之下 Slackware 官方支持的软件包比较少。
 *   Arch提供 [Arch Build System](/index.php/Arch_Build_System "Arch Build System")（一个类ports系统）和[AUR](/index.php/AUR "AUR")（用户贡献的数以万计的PKGBUILD）。 Slackware 提供一个相似的系统 [slackbuilds.org](http://www.slackbuilds.org)，它是半官方支持的Slackbuilds（和PKGBUILD相似）仓库。Slackware 用户一般会对 Arch 的多数方面感到满意。

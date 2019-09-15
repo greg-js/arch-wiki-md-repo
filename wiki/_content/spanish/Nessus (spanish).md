@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Nessus](/index.php/Nessus "Nessus"), revisada por última vez el **2018-10-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Nessus&diff=0&oldid=549955) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Nessus](/index.php/Nessus "Nessus"), revisada por última vez el **2019-09-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Nessus&diff=0&oldid=573573) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Nessus](https://en.wikipedia.org/wiki/es:Nessus "wikipedia:es:Nessus") es un [escáner de vulnerabilidades](https://en.wikipedia.org/wiki/Vulnerability_scanner "wikipedia:Vulnerability scanner") patentado, disponible de forma gratuita para uso personal. Hay [más de 40,000 complementos](http://www.tenable.com/plugins/) que cubren una amplia gama de fallos tanto locales como remotos.
 
@@ -17,9 +17,11 @@ Este artículo es una traducción de [Nessus](/index.php/Nessus "Nessus"), revis
 
 ## Instalación
 
+**Nota:** A partir de mayo de 2019, debe seguir las instrucciones de los comentarios en AUR para instalar el paquete [nessus](https://aur.archlinux.org/packages/nessus/).
+
 [Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [nessus](https://aur.archlinux.org/packages/nessus/).
 
-**Nota:** A partir del 26 de abril de 2016, ya no es necesario aceptar y descargar el rpm de Nessus. Un script ejecutará y descargará el rpm del sitio de Nessus automáticamente. Si parece que no sucede nada, tenga paciencia, ya que el script se ejecuta de forma silenciosa. La instalación continuará después de que se descargue el rpm.
+**Nota:** A partir de mayo de 2019, esta nota ya no es válida: *A partir del 26 de abril de 2016, ya no es necesario aceptar y descargar el rpm de Nessus. Un script ejecutará y descargará el rpm del sitio de Nessus automáticamente. Si parece que no sucede nada, tenga paciencia, ya que el script se ejecuta de forma silenciosa. La instalación continuará después de que se descargue el rpm*.
 
 ## Configuración posterior a la instalación
 

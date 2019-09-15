@@ -14,13 +14,14 @@
     *   [1.5 Anti malware](#Anti_malware)
     *   [1.6 Backup programs](#Backup_programs)
     *   [1.7 Screen lockers](#Screen_lockers)
-    *   [1.8 Password managers](#Password_managers)
-        *   [1.8.1 Console](#Console)
-        *   [1.8.2 Graphical](#Graphical)
-    *   [1.9 Cryptography](#Cryptography)
-        *   [1.9.1 Hash checkers](#Hash_checkers)
-        *   [1.9.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
-        *   [1.9.3 Disk encryption](#Disk_encryption)
+    *   [1.8 Password auditing](#Password_auditing)
+    *   [1.9 Password managers](#Password_managers)
+        *   [1.9.1 Console](#Console)
+        *   [1.9.2 Graphical](#Graphical)
+    *   [1.10 Cryptography](#Cryptography)
+        *   [1.10.1 Hash checkers](#Hash_checkers)
+        *   [1.10.2 Encryption, signing, steganography](#Encryption,_signing,_steganography)
+        *   [1.10.3 Disk encryption](#Disk_encryption)
 
 ## Security
 
@@ -29,6 +30,10 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 #### Network security
 
 See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wiki/Comparison_of_packet_analyzers "wikipedia:Comparison of packet analyzers").
+
+*   **airgeddon** — Multi-use bash script to audit wireless networks
+
+	[https://github.com/v1s1t0r1sh3r3/airgeddon](https://github.com/v1s1t0r1sh3r3/airgeddon) || [airgeddon-git](https://aur.archlinux.org/packages/airgeddon-git/)
 
 *   **[Arpwatch](https://en.wikipedia.org/wiki/Arpwatch "wikipedia:Arpwatch")** — Tool that monitors ethernet activity and keeps a database of Ethernet/IP address pairings.
 
@@ -149,6 +154,10 @@ See also [Wikipedia:Comparison of packet analyzers](https://en.wikipedia.org/wik
 *   **[vnStat](/index.php/VnStat "VnStat")** — Console-based network traffic monitor that keeps a log of network traffic for the selected interfaces.
 
 	[http://humdi.net/vnstat/](http://humdi.net/vnstat/) || [vnstat](https://www.archlinux.org/packages/?name=vnstat)
+
+*   **wifiphisher** — Fast automated phishing attacks against WPA networks.
+
+	[https://github.com/wifiphisher/wifiphisher](https://github.com/wifiphisher/wifiphisher) || [wifiphisher](https://aur.archlinux.org/packages/wifiphisher/)
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
@@ -353,6 +362,16 @@ See also [Session lock](/index.php/Session_lock "Session lock").
 *   **xtrlock** — Very lightweight X display locker. Keeps windows visible and displays lock icon instead of mouse cursor. Typing password followed by enter unlocks the screen.
 
 	[https://packages.debian.org/sid/xtrlock](https://packages.debian.org/sid/xtrlock) || [xtrlock](https://www.archlinux.org/packages/?name=xtrlock)
+
+#### Password auditing
+
+*   **[John](https://en.wikipedia.org/wiki/John "wikipedia:John")** — John the Ripper password cracker.
+
+	[https://www.openwall.com/john](https://www.openwall.com/john) || [john](https://www.archlinux.org/packages/?name=john)
+
+*   **[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat")** — Multithreaded advanced password recovery utility.
+
+	[https://hashcat.net/hashcat](https://hashcat.net/hashcat) || [hashcat](https://www.archlinux.org/packages/?name=hashcat)
 
 #### Password managers
 

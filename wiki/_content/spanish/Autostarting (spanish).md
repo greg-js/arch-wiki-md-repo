@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Autostarting](/index.php/Autostarting "Autostarting"), revisada por última vez el **2018-09-28**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Autostarting&diff=0&oldid=539671) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Autostarting](/index.php/Autostarting "Autostarting"), revisada por última vez el **2019-09-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Autostarting&diff=0&oldid=574197) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -78,8 +78,11 @@ Si los entornos de escritorio tienen un artículo, véase su sección *Inicio au
 
 ## En el inicio del gestor de ventanas
 
+Muchos [gestores de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") implementan [XDG Autostart](/index.php/XDG_Autostart_(Espa%C3%B1ol) "XDG Autostart (Español)").
+
 Si el [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") tiene un artículo, véase su sección *Inicio automático*.
 
 *   [Fluxbox#Autostart](/index.php/Fluxbox#Autostart "Fluxbox")
 *   [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox")
 *   [Awesome#Autostart](/index.php/Awesome#Autostart "Awesome")
+*   [i3#Autostart](/index.php/I3#Autostart "I3")

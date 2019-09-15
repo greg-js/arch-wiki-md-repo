@@ -79,6 +79,7 @@ The following packages allow for a graphical interface to customize Bluetooth.
     *   [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) provides the status monitor applet
     *   [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) provides the configuration front-end GUI that can be accessed by typing Bluetooth on the Activities overview, or with the `gnome-control-center bluetooth` command.
     *   You can also launch the `bluetooth-sendto` command directly to send files to a remote device.
+    *   [nautilus-bluetooth](https://aur.archlinux.org/packages/nautilus-bluetooth/) adds a "Send via Bluetooth" entry to Nautilus' right-click menu
     *   To receive files, open the Bluetooth settings panel; you can only receive whilst the Bluetooth panel is open.
     *   To add a Bluetooth entry to the *Send To* menu in Thunar's file properties menu, see instructions [here](http://docs.xfce.org/xfce/thunar/send-to). (The command that needs to be configured is `bluetooth-sendto %F`).
 
@@ -359,11 +360,13 @@ To verify that the device was detected you can use `btmgmt` which is part of the
 ```
 Index list with 1 item
 hci0:	Primary controller
-	addr 00:1A:7D:DA:71:10 version 6 manufacturer 10 class 0x1c0104
+	addr 00:1A:7D:DA:71:10 **version 6** manufacturer 10 class 0x1c0104
 	supported settings: powered connectable fast-connectable discoverable bondable link-security ssp br/edr hs le advertising secure-conn debug-keys privacy static-addr 
 	current settings: powered connectable discoverable bondable ssp br/edr le secure-conn
 
 ```
+
+It is possible to check the Bluetooth version as mapped to the HCI version according to the table in the [official specification](https://www.bluetooth.com/specifications/assigned-numbers/host-controller-interface/). For example, in the previous output, HCI **version 6** is Bluetooth version 4.0.
 
 More detailed information about the device can be retrieved by using the deprecated `hciconfig`. ([bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/))
 

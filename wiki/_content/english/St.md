@@ -13,7 +13,8 @@
     *   [2.3 Font](#Font)
     *   [2.4 Cursor](#Cursor)
     *   [2.5 Colors](#Colors)
-    *   [2.6 Desktop entry](#Desktop_entry)
+    *   [2.6 Patches](#Patches)
+    *   [2.7 Desktop entry](#Desktop_entry)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Keyboard](#Keyboard)
     *   [3.2 Vim](#Vim)
@@ -140,6 +141,10 @@ static unsigned int defaultcs = 256;
 Tools exists to facilitate the creation of color palettes. For example [terminal sexy](http://terminal.sexy) has a set of pre-made ones and exports directly to *st'*s format (see [[1]](https://github.com/stayradiated/terminal.sexy/issues/22#issuecomment-430629424)).
 
 There is a patch for the Solarized color scheme. See [[2]](https://st.suckless.org/patches/solarized/) or [st-solarized](https://aur.archlinux.org/packages/st-solarized/) to install it.
+
+### Patches
+
+There are many patches available from the [suckless website](https://st.suckless.org/patches/alpha/). To apply a patch, download the [diff](https://www.gnu.org/software/diffutils/manual/html_node/Invoking-diff.html) and apply it with `patch -i patch.diff`. This alters the default config file `config.def.h`; if you are maintaining your own `config.h`, copy your configs from `config.h` into a copy of `config.def.h` and rename it `config.h`, then `make clean install`.
 
 ### Desktop entry
 

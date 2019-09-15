@@ -220,7 +220,7 @@ Works out of the box with [xf86-input-wacom](https://www.archlinux.org/packages/
 
 ## Not Working
 
-*   Microphone on-off key does not work out of the box
+*   Microphone on-off key does not work out of the box. [Solution](https://makandracards.com/makandra/47162-how-to-enable-the-thinkpad-microphone-mute-key-on-ubuntu-16-04)
 
 **Note:** It works out of the box with GNOME.
 

@@ -29,7 +29,7 @@ Basic functionality works out of the box. Suspending the machine doesn't work ou
 | Camera | **Working** | uvcvideo |
 | Card Reader | **???** |
 | Bluetooth | **Working** | btintel |
-| Fingerprint Reader | **Broken** |
+| Fingerprint Reader | **???** |
 | Smartcard reader | **???** |
 
 ## Configuration

@@ -42,7 +42,7 @@ When submitting a package to the AUR, observe the following rules:
 
 *   Do not use `replaces` in an AUR PKGBUILD unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an **alternate version of an already existing package**, use `conflicts` (and `provides` if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching `replaces` anywhere in its repositories; `conflicts`, on the other hand, is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
 
-*   Submitting **binaries** should be **avoided** if the sources are available. The AUR should not contain the binary tarball created by makepkg, nor should it contain the filelist.
+*   Packages that use **prebuilt** [deliverables](https://en.wikipedia.org/wiki/Deliverable "wikipedia:Deliverable"), when the sources are available, must use the `-bin` suffix. An exception to this is with [Java](/index.php/Java_package_guidelines#Java_packaging_on_Arch_Linux "Java package guidelines"). The AUR should not contain the binary tarball created by makepkg, nor should it contain the filelist.
 
 *   Please add a **comment line** to the top of the `PKGBUILD` file which contains information about the current **maintainers** and previous **contributors**, respecting the following format. Remember to disguise your email to protect against spam. Additional or unneeded lines are facultative.
 
@@ -96,7 +96,7 @@ Checking connectivity... done.
 
 **Note:** The repository will not be empty if `*pkgbase*` matches a [deleted](#Requests) package.
 
-If you already have a package, [initialize it](/index.php/Git#Getting_a_Git_repository "Git") as a Git repository if it isn't one, and add an AUR remote:
+If you already have a package, [initialize it](/index.php/Git#Getting_a_Git_repository "Git") as a Git repository if it is not one, and add an AUR remote:
 
 ```
 $ git remote add *label* ssh://aur@aur.archlinux.org/*pkgbase*.git

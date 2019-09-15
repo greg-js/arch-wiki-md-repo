@@ -1,6 +1,6 @@
 Processor manufacturers release stability and security updates to the processor [microcode](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode"). These updates provide bug fixes that can be critical to the stability of your system. Without them, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
 
-All users should install the microcode updates to ensure system stability.
+All users with an AMD or Intel CPU should install the microcode updates to ensure system stability.
 
 Microcode updates are usually shipped with the motherboard's firmware and applied during firmware initialization. Since OEMs might not release firmware updates in a timely fashion and old systems do not get new firmware updates at all, the ability to apply CPU microcode updates during boot was added to the Linux kernel. [The Linux microcode loader](https://www.kernel.org/doc/Documentation/x86/microcode.txt) supports three loading methods:
 
@@ -48,7 +48,7 @@ For AMD processors, [install](/index.php/Install "Install") the [amd-ucode](http
 
 For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package.
 
-If your Arch installation is [on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") that needs to have microcode for both manufacturer processors, install both of the packages.
+If your Arch installation is [on a removable drive](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key") that needs to have microcode for both manufacturer processors, install both packages.
 
 ### Configuration
 

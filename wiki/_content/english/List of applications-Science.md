@@ -221,7 +221,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[Python Data Analysis Library (pandas)](https://en.wikipedia.org/wiki/Pandas_(software) "wikipedia:Pandas (software)")** — Providing high-performance, easy-to-use data structures and data analysis tools with Python programming language.
 
-	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas](https://www.archlinux.org/packages/?name=python2-pandas) [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
+	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
 
 *   **[PSPP](https://en.wikipedia.org/wiki/PSPP "wikipedia:PSPP")** — Free SPSS implementation.
 

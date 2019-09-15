@@ -39,6 +39,18 @@ $ asp checkout linux
 
 ```
 
+At this point, the directory tree looks like:
+
+```
+~/build/linux/-+
+               +--60-linux.hook
+               +--90-linux.hook
+               +--config
+               +--linux.install
+               +--linux.preset
+               \__PKGBUILD
+```
+
 Then, get any other file you need (e.g. custom configuration files, patches, etc.) from the respective sources.
 
 ## Modifying the PKGBUILD
@@ -124,7 +136,7 @@ Now, the folders and files for your custom kernel have been created, e.g. `/boot
 
 ## Updating
 
-Assuming one has an arch kernel source at /home/user/linux/ that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the paths are relative to the top kernel source directory, which is assumed at /home/user/linux/. In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
+Assuming one has an arch kernel source that he wants to update, one method to do that is with [https://git.archlinux.org/linux.git](https://git.archlinux.org/linux.git). Follows a concrete example. In what follows, the paths are relative to the top kernel source directory, which is assumed at ~/build/linux/. In general, arch sets an arch kernel source with two local git repositories. The one at archlinux-linux/ is a local bare [git](/index.php/Git "Git") repository pointing to [git://git.archlinux.org/linux.git](git://git.archlinux.org/linux.git). The other one is at src/archlinux-linux, pulling from the first repository. Possible local patches, and building, is expected at src/archlinux-linux/.
 
 For this example, the HEAD of the locally installed bare git repository source at archlinux-linux/ was initially pointing to `4010b622f1d2 Merge branch 'dax-fix-5.3-rc3' of [git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm](git://git.kernel.org/pub/scm/linux/kernel/git/nvdimm/nvdimm)`, which was, or still is, somewhere between v5.2.5-arch1 and v5.2.6-arch1.
 

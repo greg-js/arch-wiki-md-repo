@@ -362,7 +362,7 @@ If the CPU supports SSE 4.2, make sure the `crc32c_intel` [kernel module](/index
 
 To read more about metadata checksums, see the [ext4 wiki](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 
-**Tip:** Use `dump2fs` to check the features that are enabled on the filesystem:
+**Tip:** Use `dumpe2fs` to check the features that are enabled on the filesystem:
 ```
 # dumpe2fs */dev/path/to/disk*
 

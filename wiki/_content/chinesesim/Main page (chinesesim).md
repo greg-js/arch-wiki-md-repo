@@ -34,14 +34,6 @@
 
 	无论新手或专家，您都可以参与我们，为 Arch 社区做出贡献。
 
-	[为 Wiki 做贡献](/index.php/ArchWiki:Contributing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:Contributing (简体中文)")
-
-	如果希望完善 Wiki，请先阅读此文。
-
-	[ArchWiki 编辑指南](/index.php/Help:Editing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Editing (简体中文)")
-
-	教您如何编辑 Wiki 文章。
-
 	[国际社区](/index.php/International_communities "International communities")
 
 	汇总世界各地的 Arch Linux 社区的信息。
@@ -54,15 +46,23 @@
 
 	通过聊天解决问题。
 
-## 帮助
+## 阅读和编辑这个 Wiki
 
-ArchWiki 有一些特殊的语法和标注方式，要了解它们，请阅读 [Help:Reading (简体中文)](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")。
+	[阅读](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")
 
-要查找专门的信息，可以使用左侧的搜索框。也可以直接通过搜索引擎进行搜索 (例如加入 `site:wiki.archlinux.org` 语法限定搜索范围). 参阅 [Help:Searching](/index.php/Help:Searching "Help:Searching").
+	了解一篇 Wiki 条目的基本结构
 
-## 非 Arch Linux 用户？
+	[查阅](/index.php/Help:Browsing "Help:Browsing")
 
-你需要一个最新的 Arch Linux 来获得注册账户时需要的验证问题的答案。不是 Arch Linux 用户？也欢迎来贡献与发行版无关的[通用](/index.php/ArchWiki:Contributing#Non-Arch_users "ArchWiki:Contributing")内容。启动 Arch Linux 的 Live 映像就可以获得验证问题的答案，或者你也可以电子邮件联系一个[管理员](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")来获得账户。
+	搜索 Wiki，查找相关文章和离线浏览
+
+	[参与 ArchWiki 贡献](/index.php/ArchWiki:Contributing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:Contributing (简体中文)")
+
+	完善 Wiki 的第一步。
+
+	[编辑指南](/index.php/Help:Editing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Editing (简体中文)")
+
+	教您如何编辑 Wiki 文章。
 
 ## 相关链接
 

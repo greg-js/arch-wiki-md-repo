@@ -7,7 +7,7 @@ Artigos relacionados
 *   [pacman/Assinatura de pacote](/index.php/Pacman/Assinatura_de_pacote "Pacman/Assinatura de pacote")
 *   [pacman/Pacnew e Pacsave](/index.php/Pacman/Pacnew_e_Pacsave "Pacman/Pacnew e Pacsave")
 *   [pacman/Restaurar base de dados local](/index.php/Pacman/Restaurar_base_de_dados_local "Pacman/Restaurar base de dados local")
-*   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
+*   [pacman/Roseta](/index.php/Pacman/Roseta "Pacman/Roseta")
 *   [pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques")
 *   [FAQ (Português)#Gerenciamento de pacote](/index.php/FAQ_(Portugu%C3%AAs)#Gerenciamento_de_pacote "FAQ (Português)")
 *   [Manutenção do sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistema "Manutenção do sistema")
@@ -79,7 +79,7 @@ O *pacman* é escrito na linguagem de programação [C](/index.php/C "C") e usa 
 
 O que se segue é apenas uma pequena amostra das operações que o *pacman* pode executar. Para ler mais exemplos, consulte [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8).
 
-**Dica:** Para usuários que utilizaram outras distribuições linux antes, ver o artigo [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") será útil.
+**Dica:** Para usuários que utilizaram outras distribuições linux antes, ver o artigo [Roseta do pacman](/index.php/Roseta_do_pacman "Roseta do pacman") será útil.
 
 ### Instalando pacotes
 

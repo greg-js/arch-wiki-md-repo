@@ -7,7 +7,11 @@ Related articles
 
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") 是在[GNOME](/index.php/GNOME "GNOME") 或 [KDE](/index.php/KDE "KDE")等桌面环境中广泛使用的音频服务。它在内核音频组件（比如[ALSA](/index.php/ALSA "ALSA") 和 [OSS](/index.php/OSS "OSS")）和应用程序之间充当代理的角色。由于Arch Linux默认包含ALSA，PulseAudio经常和ALSA协同使用。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 安装](#安装)
     *   [1.1 前端](#前端)
@@ -208,7 +212,9 @@ exec padsp /usr/bin/OSSprogram "$@"
 
 ### OpenAL
 
-OpenAL程序默认就应该使用PulseAudio了，但是可以明确指定其使用PulseAudio： `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
+OpenAL程序默认就应该使用PulseAudio了，但是可以明确指定其使用PulseAudio：
+
+ `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
 
 ### libao
 

@@ -11,9 +11,10 @@ NordVPN is a personal virtual private network service provider. NordVPN is based
 *   [3 Systemd](#Systemd)
 *   [4 Configuration](#Configuration)
     *   [4.1 Login/Logout](#Login/Logout)
-    *   [4.2 Connect to VPN](#Connect_to_VPN)
-    *   [4.3 Settings](#Settings)
-    *   [4.4 Server List](#Server_List)
+    *   [4.2 Enable NordLynx](#Enable_NordLynx)
+    *   [4.3 Connect to VPN](#Connect_to_VPN)
+    *   [4.4 Settings](#Settings)
+    *   [4.5 Server List](#Server_List)
 *   [5 Alternative Method : connecting to NordVPN using NetworkManager](#Alternative_Method_:_connecting_to_NordVPN_using_NetworkManager)
     *   [5.1 Installation](#Installation_2)
     *   [5.2 Configuration](#Configuration_2)
@@ -31,7 +32,7 @@ There are different payment options to choose.
 
 ## Installation
 
-NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/) or [nordvpn-cli](https://aur.archlinux.org/packages/nordvpn-cli/), available in the [AUR](/index.php/AUR "AUR").
+NordVPN can be installed with a package [nordvpn-bin](https://aur.archlinux.org/packages/nordvpn-bin/), available in the [AUR](/index.php/AUR "AUR").
 
 ## Systemd
 
@@ -62,6 +63,24 @@ $ nordvpn logout
 ```
 
 Logs you out from your NordVPN Account.
+
+### Enable NordLynx
+
+NordVPN has [introduced](https://nordvpn.com/blog/nordlynx-protocol-wireguard/) NordLynx technology which is based on [Wireguard](/index.php/Wireguard "Wireguard") protocol. Compared to default [OpenVPN](/index.php/OpenVPN "OpenVPN") technology, NordLynx provides lower latency, higher speeds and better connection stability.
+
+Enable it with the below command:
+
+```
+$ nordvpn set technology nordlynx
+
+```
+
+To see all available technologies:
+
+```
+$ nordvpn set technology --help
+
+```
 
 ### Connect to VPN
 

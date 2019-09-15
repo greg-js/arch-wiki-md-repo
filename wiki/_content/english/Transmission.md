@@ -263,7 +263,11 @@ You don't need a graphical interface to set up the web interface, the daemon off
 
 Nevertheless, you can specify everything that you see in the previous section:
 
- `$ transmission-daemon --auth --username arch --password linux --port 9091 --allowed "127.0.0.1"` is equivalent to `$ transmission-daemon -t -u arch -v linux -p 9091 -a "127.0.0.1"` 
+ `$ transmission-daemon --auth --username arch --password linux --port 9091 --allowed "127.0.0.1"` 
+
+is equivalent to
+
+ `$ transmission-daemon -t -u arch -v linux -p 9091 -a "127.0.0.1"` 
 
 ## Troubleshooting
 

@@ -69,7 +69,10 @@ See [Power management#Sleep hooks](/index.php/Power_management#Sleep_hooks "Powe
 
 In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to [configure the initramfs](#Configure_the_initramfs). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
 
-**Note:** See [Dm-crypt/Swap encryption#With suspend-to-disk support](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") when using [encryption](/index.php/Encryption "Encryption").
+**Note:**
+
+*   See [Dm-crypt/Swap encryption#With suspend-to-disk support](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") when using [encryption](/index.php/Encryption "Encryption").
+*   [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) does not support hibernation, see [FS#63648](https://bugs.archlinux.org/task/63648).
 
 ### About swap partition/file size
 
@@ -93,14 +96,11 @@ Generally, the naming method used for the `resume` parameter should be the same 
 
 #### Hibernation into swap file
 
-**Warning:**
-
-*   [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
-*   [systemd](https://www.archlinux.org/packages/?name=systemd) does not currently support hibernating into a swap file on Btrfs, even with Linux 5.0\. Fortunately, there is an alternate method—[#Hibernation into swap file on Btrfs](#Hibernation_into_swap_file_on_Btrfs). For more information, see [systemd issue 11939](https://github.com/systemd/systemd/issues/11939).
+**Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") on Linux kernel before version 5.0 does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
 Using a swap file instead of a swap partition requires an additional kernel parameter `resume_offset=*swap_file_offset*`.
 
-**Note:** The `resume` parameter must point to the volume where the swap file resides.
+**Note:** The `resume` parameter must point to the volume where the swap file resides. For a stacked block device, i.e. an encrypted container or RAID, or LVM, it means that `resume` must point to the unlocked/mapped device that contains the file system with the swap file.
 
 The value of `*swap_file_offset*` can be obtained by running `filefrag -v *swap_file*`, the output is in a table format and the required value is located in the first row of the `physical_offset` column. For example:
 
@@ -135,9 +135,9 @@ See [https://www.kernel.org/doc/Documentation/power/swsusp.txt](https://www.kern
 
 #### Hibernation into swap file on Btrfs
 
-On Btrfs, the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
+On [Btrfs](/index.php/Btrfs "Btrfs"), the "physical" offset you get from filefrag is not the real physical offset on disk; there is a virtual disk address space in order to support multiple devices. Due to this the above method will not work for a swap file from a Btrfs file system.
 
-An alternate method is to use [this tool](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.
+An alternate method is to use [btrfs_map_physical](https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c) instead of filefrag.[[1]](https://bugzilla.kernel.org/show_bug.cgi?id=202803#c5)
 
 Download or copy the text into a file named `btrfs_map_physical.c`, then compile it:
 
@@ -162,9 +162,7 @@ FILE OFFSET  EXTENT TYPE  LOGICAL SIZE  LOGICAL OFFSET  PHYSICAL SIZE  DEVID  PH
 
 ```
 
-The first physical offset should be the one. In this example, we will use `4009762816`. Divide that by 4096 and you have your resume_offset value. In this example, it is `978946`.
-
-Systemd overrides those settings incorrectly. Instead of using `systemctl hibernate` to hibernate, run `echo disk > /sys/power/state` as root.
+The first physical offset should be the one. In this example, we will use `4009762816`. Divide that by 4096 and you have your `resume_offset` value. In this example, it is `978946`.
 
 ### Configure the initramfs
 
@@ -198,7 +196,7 @@ Sometimes the screen goes black due to device initialization from within the ini
 
 For Intel graphics drivers, enabling early KMS may help to solve the blank screen issue. Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for details.
 
-After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[1]](https://bbs.archlinux.org/viewtopic.php?id=234646)
+After upgrading to kernel 4.15.3, resume may fail with a static (non-blinking) cursor on a black screen. [Blacklisting](/index.php/Blacklisting "Blacklisting") the module `nvidiafb` might help. [[2]](https://bbs.archlinux.org/viewtopic.php?id=234646)
 
 ### Wake-on-LAN
 
@@ -206,9 +204,9 @@ If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network in
 
 ### Instantaneous wakeups from suspend
 
-For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
+For some Intel Haswell systems with the LynxPoint and LynxPoint-LP chipset, instantaneous wakeups after suspend are reported. They are linked to erroneous BIOS ACPI implementations and how the `xhci_hcd` module interprets it during boot. As a work-around reported affected systems are added to a blacklist (named `XHCI_SPURIOUS_WAKEUP`) by the kernel case-by-case.[[3]](https://bugzilla.kernel.org/show_bug.cgi?id=66171#c6)
 
-Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[3]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
+Instantaneous resume may happen, for example, if a USB device is plugged during suspend and ACPI wakeup triggers are enabled. A viable work-around for such a system, if it is not on the blacklist yet, is to disable the wakeup triggers. An example to disable wakeup through USB is described as follows.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1575617)
 
 To view the current configuration:
 
@@ -254,7 +252,7 @@ case $1/$2 in
 esac
 ```
 
-The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[4]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
+The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[5]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
 
 ### System does not power off when hibernating
 

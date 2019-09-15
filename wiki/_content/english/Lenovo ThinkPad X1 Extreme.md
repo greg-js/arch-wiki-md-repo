@@ -143,6 +143,8 @@ This can be worked around by using [throttled](https://www.archlinux.org/package
 
 Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU"). Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs, but your mileage may vary.
 
+Undervolting with -150mV on both the CPU and GPU resolved the Nvidia GPU from crashing every other day on my system with the i7-8750 chip. I was using bumblebee and intel-virtual-output to mirror my display onto an external monitor when the nvidia gpu would drop.
+
 ### Kernel parameters
 
 As of March 2019, the following commonly used kernel parameters are known to work:

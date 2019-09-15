@@ -27,7 +27,7 @@ OpenTTD is a free re-implementation of the popular DOS game [Transport Tycoon De
 
 If you do not own the original game, [openttd-opengfx](https://www.archlinux.org/packages/?name=openttd-opengfx) and [openttd-opensfx](https://www.archlinux.org/packages/?name=openttd-opensfx) contains the free graphics & sounds.
 
-The free music pack, [OpenMSX](https://wiki.openttd.org/OpenMSX), can be downloaded from [the online content downloader provided with the game](https://wiki.openttd.org/Online_content).
+Additionally, you may [install](/index.php/Install "Install") [openttd-openmsx](https://aur.archlinux.org/packages/openttd-openmsx/) from the [AUR](/index.php/AUR "AUR") to get the free [OpenMSX](https://wiki.openttd.org/OpenMSX) music pack. Be sure to read through [Timidity#Configuration](/index.php/Timidity#Configuration "Timidity") to setup [Timidity](/index.php/Timidity "Timidity") correctly, in particular, add yourself to the audio group and configure [Timidity](/index.php/Timidity "Timidity") to use the Freepats SoundFont.
 
 ### Original Transport Tycoon Deluxe data (optional)
 

@@ -36,6 +36,7 @@ The biggest feature of WordPress is its ease in configuration and administration
     *   [5.1 Appearance is broken (no styling)](#Appearance_is_broken_(no_styling))
     *   [5.2 Plugins are unable to install: Could not create directory](#Plugins_are_unable_to_install:_Could_not_create_directory)
     *   [5.3 Cannot save plugins to localhost](#Cannot_save_plugins_to_localhost)
+    *   [5.4 There has been an error cropping your image.](#There_has_been_an_error_cropping_your_image.)
 *   [6 Tips and tricks](#Tips_and_tricks)
 *   [7 See also](#See_also)
 
@@ -142,7 +143,7 @@ MariaDB> FLUSH PRIVILEGES;
 MariaDB> EXIT
 ```
 
-See WordPress.org [official instructions](https://codex.wordpress.org/Installing_WordPress#Using_the_MySQL_Client) for details.
+See WordPress.org [[1]](https://wordpress.org/support/article/how-to-install-wordpress/#step-2-create-the-database-and-a-user) for details.
 
 #### Using phpMyAdmin
 
@@ -269,6 +270,19 @@ WordPress uses by default only a ftp server to download plugins. In order to als
  `# *wordpress_root_location*/wp-config.php` 
 ```
 define('FS_METHOD', 'direct');
+
+```
+
+### There has been an error cropping your image.
+
+Wordpress needs `php-gd` to modify images. Install `php-gd` with:
+
+ `# pacman -S --needed php-gd` 
+
+Then enable the extension by uncommenting the following line in `/etc/php/php.ini`:
+
+```
+extension=gd
 
 ```
 

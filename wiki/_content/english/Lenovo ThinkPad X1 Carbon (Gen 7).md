@@ -61,9 +61,11 @@ ThinkPad X1 Carbon 7th
     *   [2.5 BIOS configurations](#BIOS_configurations)
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
-    *   [3.2 Touchpad fix](#Touchpad_fix)
-*   [4 Volume Controls](#Volume_Controls)
-    *   [4.1 Persistent fix](#Persistent_fix)
+    *   [3.2 Touchpad TLP fix](#Touchpad_TLP_fix)
+*   [4 Audio](#Audio)
+    *   [4.1 Volume controls](#Volume_controls)
+        *   [4.1.1 Persistent fix](#Persistent_fix)
+    *   [4.2 Microphone](#Microphone)
 *   [5 Disabling red LED in ThinkPad logo](#Disabling_red_LED_in_ThinkPad_logo)
 *   [6 Additional resources](#Additional_resources)
 
@@ -176,7 +178,7 @@ sudo systemctl enable --now lenovo_fix.service
 
 ```
 
-### Touchpad fix
+### Touchpad TLP fix
 
 The touchpad works fine out of the box, except that [TLP](/index.php/TLP "TLP") does not detect that the Synaptics Touchpad is indeed an input device, so it does not exclude it from the USB_AUTOSUSPEND feature. You can tell that this is the issue if the touchpad works for just a moment after waking up from suspend, and then stops working again.
 
@@ -187,7 +189,11 @@ USB_BLACKLIST="06cb:00bd" <=========== use lsusb to get the correct UUID
 
 ```
 
-## Volume Controls
+## Audio
+
+As there are physically four loudspeakers, you need to configure to 4.0 audio output. When using PulseAudio there are various [configuration utilities](/index.php/PulseAudio#Front-ends "PulseAudio").
+
+### Volume controls
 
 In order for volume controls to work correctly you must edit `/usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common` by adding the following above `[Element PCM]`:
 
@@ -200,7 +206,7 @@ volume = ignore
 
 A PulseAudio restart is required for this change to take affect. Make sure to increase the "*Master*" channel volume to 100% for the top-firing speakers to work (using amixer or alsamixer, found in [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)).
 
-### Persistent fix
+#### Persistent fix
 
 Upgrading or reinstalling [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) will overwrite this file, and [pulseaudio does not offer another way to make this configuration change](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/PulseAudioStoleMyVolumes/). To prevent pacman from overwriting the file, add the following line under `[options]` in `/etc/pacman.conf`:
 
@@ -208,6 +214,10 @@ Upgrading or reinstalling [pulseaudio](https://www.archlinux.org/packages/?name=
 NoUpgrade = usr/share/pulseaudio/alsa-mixer/paths/analog-output.conf.common
 
 ```
+
+### Microphone
+
+On kernel 5.2, the internal microphone is detected but [no audio is captured](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Microphone "Advanced Linux Sound Architecture/Troubleshooting"). The fix should arrive with [linux](https://www.archlinux.org/packages/?name=linux) kernel 5.3 which includes the [SOF](https://github.com/thesofproject/sof) audio firmware. Instruction are available on the Lenovo [forums](https://forums.lenovo.com/t5/Ubuntu/Guide-X1-Carbon-7th-Generation-Ubuntu-compatability/m-p/4503771/highlight/true#M2849).
 
 ## Disabling red LED in ThinkPad logo
 
@@ -235,7 +245,7 @@ echo -n -e "\x0a" | dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 con
 2\. Create a new service unit file in {{ic|/etc/systemd/system} called "led.service", and insert the following:
 
 ```
-Description=Disabling thinkpad led
+Description=Disable ThinkPad logo LED
 
 [Service]
 ExecStart=/root/disable_led.sh

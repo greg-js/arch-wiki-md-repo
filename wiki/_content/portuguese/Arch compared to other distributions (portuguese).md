@@ -4,7 +4,7 @@ Artigos relacionados
 
 *   [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)")
 *   [Distribuições baseadas no Arch](/index.php/Distribui%C3%A7%C3%B5es_baseadas_no_Arch "Distribuições baseadas no Arch")
-*   [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
+*   [Pacman/Roseta](/index.php/Pacman/Roseta "Pacman/Roseta")
 
 Esta página tenta estabelecer uma comparação entre o Arch Linux e outras distribuições GNU/Linux populares e sistemas operacionais semelhantes ao UNIX. Os resumos que se seguem são descrições breves que podem ajudar uma pessoa a decidir se o Arch Linux atenderá às suas necessidades. Embora revisões e descrições possam ser úteis, a experiência de primeira mão é invariavelmente a melhor maneira de comparar distribuições.
 

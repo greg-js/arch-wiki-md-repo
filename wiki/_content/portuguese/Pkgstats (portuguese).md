@@ -8,7 +8,7 @@ pkgstats envia uma lista de todos os pacotes instalados, a arquitetura e o *mirr
 
 ## Uso
 
-*pkgstats* é configurado para executar automaticamente toda semana usando [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Uma vez instalado, ele será ativado após a próxima reinicialização.
+*pkgstats* é configurado para executar automaticamente toda semana usando [systemd/Timers (Português)](/index.php/Systemd/Timers_(Portugu%C3%AAs) "Systemd/Timers (Português)"). Uma vez instalado, ele será ativado após a próxima reinicialização.
 
 Se você não deseja esperar por um ciclo de reinicialização, você pode [iniciar](/index.php/Inicie "Inicie") manualmente o `pkgstats.timer`.
 

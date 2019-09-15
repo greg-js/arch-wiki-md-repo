@@ -182,7 +182,7 @@ Port 39901
 [openssh](https://www.archlinux.org/packages/?name=openssh) comes with two kinds of [systemd](/index.php/Systemd "Systemd") service files:
 
 1.  `sshd.service`, which will keep the SSH daemon permanently active and fork for each incoming connection.[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) It is especially suitable for systems with a large amount of SSH traffic.[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
-2.  `sshd.socket` + `sshd@.service`, which spawn on-demand instances of the SSH daemon per connection. Using it implies that *systemd* listens on the SSH socket and will only start the daemon process for an incoming connection. It is the recommended way to run `sshd` in almost all cases.[[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
+2.  `sshd.socket` + `sshd@.service`, which spawn on-demand instances of the SSH daemon per connection. Using it implies that *systemd* listens on the SSH socket and will only start the daemon process for an incoming connection. It is suggested to be the recommended way to run `sshd` in almost all cases.[[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
 
 You can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") either `sshd.service` **or** `sshd.socket` to begin using the daemon.
 
@@ -200,7 +200,10 @@ ListenStream=12345
 
 **Tip:** When using socket activation a transient instance of `sshd@.service` will be started for each connection (with different instance names). Therefore, neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log. The logs of socket-activated instances of SSH can be seen with `journalctl -u "sshd@*"` or with `journalctl /usr/bin/sshd`.
 
-**Note:** Even the `sshd.socket` unit may fail (e.g. due to out-of-memory situation) and `Restart=always` cannot be specified on socket units. [[6]](https://github.com/systemd/systemd/issues/11553)
+**Note:**
+
+*   Even the `sshd.socket` unit may fail (e.g. due to out-of-memory situation) and `Restart=always` cannot be specified on socket units. [[6]](https://github.com/systemd/systemd/issues/11553)
+*   Using socket activation can result in denial of service, as too many connections can cause refusal to further activate the service. See [FS#62248](https://bugs.archlinux.org/task/62248).
 
 ### Protection
 

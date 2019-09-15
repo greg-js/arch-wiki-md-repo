@@ -26,6 +26,7 @@ Highlights:
     *   [2.5 Video playback](#Video_playback)
     *   [2.6 GPU acceleration](#GPU_acceleration)
     *   [2.7 Fullscreen video, games and mouse capture don't work correctly](#Fullscreen_video,_games_and_mouse_capture_don't_work_correctly)
+    *   [2.8 SystemD status showed as degraded](#SystemD_status_showed_as_degraded)
 *   [3 Useful links](#Useful_links)
 
 ## Introduction
@@ -193,8 +194,28 @@ OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
 
 Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasable.
 
+### SystemD status showed as degraded
+
+Issue is caused by systemd-udev-trigger.service unit, which fails due to missing write access to the /sys. It is safe to mask it:
+
+```
+sudo systemctl mask systemd-udev-trigger.service
+
+```
+
+and restart the Linux subsystem. After restart
+
+```
+systemctl status
+
+```
+
+should report **State: running**.
+
 ## Useful links
 
 1.  [Running Custom Containers Under Chrome OS](https://chromium.googlesource.com/chromiumos/docs/+/master/containers_and_vms.md)
-2.  [/r/Crostini](https://www.reddit.com/r/Crostini/)
+2.  [How to install Arch Linux with Jupyter Notebook](https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux)
 3.  [Powerline Web Fonts for Chromebook](https://github.com/wernight/powerline-web-fonts)
+4.  [Pixelbook Setup](https://gist.github.com/cassiozen/93da03b91c8dae7c990e58e3e6b90615)
+5.  [/r/Crostini](https://www.reddit.com/r/Crostini/)

@@ -4,7 +4,11 @@ Related articles
 
 [KRunner](https://userbase.kde.org/Plasma/Krunner) is an application built into [Plasma](/index.php/Plasma "Plasma") 5 to perform functions and run commands quickly, and features a "runner" system to customize functions available for use.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
@@ -27,7 +31,7 @@ To open KRunner in Plasma, you can either right-click the desktop and press "run
 To set the Meta key as a shortcut to open KRunner, run
 
 ```
-kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,display"
+kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.kglobalaccel,/component/krunner,,invokeShortcut,run command"
 
 ```
 
@@ -78,9 +82,9 @@ This approach is more limited but far less ugly.
 
 ```
   - Remote application : org.kde.krunner
-  - Remote Object      : /App
-  - Function           : querySingleRunner
-  - Arguments          : windows ""
+  - Remote Object      : /App
+  - Function           : querySingleRunner
+  - Arguments          : windows ""
 
 ```
 

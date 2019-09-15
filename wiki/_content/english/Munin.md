@@ -534,7 +534,10 @@ To enable monitoring of S.M.A.R.T. data, install the [smartmontools](https://www
     user root
     group disk
 ```
-Then create the appropriate symlink for each disk to be monitored. As an example for `sda`: `# ln -s /usr/lib/munin/plugins/smart_ /etc/munin/plugins/smart_**sda**` 
+
+Then create the appropriate symlink for each disk to be monitored. As an example for `sda`:
+
+ `# ln -s /usr/lib/munin/plugins/smart_ /etc/munin/plugins/smart_**sda**` 
 
 ### lm_sensors
 

@@ -5,7 +5,7 @@ Related articles
 
 **Note:** See [CUPS](/index.php/CUPS "CUPS") for the main article, and [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for information on non-CAPT Canon printers
 
-CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, supporting the **Canon i-Sensys** series of laser printers. For more information, see [Setting up CAPT printers on Ubuntu](https://help.ubuntu.com/community/CanonCaptDrv190).
+CAPT (*Canon Advanced Printing Technology*) is Canon's proprietary driver, supporting the **Canon i-Sensys** series of laser printers. For more information, see [Setting up CAPT printers on Ubuntu](https://help.ubuntu.com/community/CanonCaptDrv190).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -23,7 +23,9 @@ CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, su
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [capt-src](https://aur.archlinux.org/packages/capt-src/) package. There is also an open source CAPT driver in *early alpha stage* not described here, available as [captdriver-git](https://aur.archlinux.org/packages/captdriver-git/).
+[Install](/index.php/Install "Install") the [capt-src](https://aur.archlinux.org/packages/capt-src/) package. It depends on 32-bit library packages and requires [enabling multilib](/index.php/Official_repositories#Enabling_multilib "Official repositories").
+
+There is also an open source CAPT driver in *early alpha stage* not described here, available as [captdriver-git](https://aur.archlinux.org/packages/captdriver-git/).
 
 ## Configuration
 
@@ -31,10 +33,9 @@ Canon's driver uses a local daemon to communicate with the printer, and wraps th
 
 To configure the printer, follow the [CUPS](/index.php/CUPS "CUPS") article, adding a *CAPT printer* and using a [Printer URI](/index.php/CUPS#Printer_URI "CUPS") of `ccp://localhost:59787`. Find the right model using `lpinfo -m`, or check the table provided on the [Ubuntu help page](https://help.ubuntu.com/community/CanonCaptDrv190), which matches each supported printer with its corresponding PPD.
 
-**Warning:** Installing CAPT printers via the [CUPS](/index.php/CUPS "CUPS") web interface may not work [[1]](http://askubuntu.com/a/464334). Instead, use the [CLI tools](/index.php/CUPS#CLI_tools "CUPS").
-
 **Note:**
 
+*   Installing CAPT printers via the [CUPS](/index.php/CUPS "CUPS") web interface may not work [[1]](http://askubuntu.com/a/464334). Instead, use the [CLI tools](/index.php/CUPS#CLI_tools "CUPS").
 *   If port `59787` doesn't work, try port `59**6**87`.
 *   Some models have multiple PPDs, where the last letter indicates the regional model (J = Japan, K = United Kingdom, S = United States)
 

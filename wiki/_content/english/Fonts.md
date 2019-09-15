@@ -235,7 +235,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 
 ### Bitmap
 
-**Note:** [pango](https://www.archlinux.org/packages/?name=pango) 1.44 [dropped support for FreeType in favor or HarfBuzz](https://blogs.gnome.org/mclasen/2019/05/25/pango-future-directions/) thus [losing support for bitmap fonts](https://blogs.gnome.org/mclasen/2019/08/07/pango-1-44-wrap-up/), so applications like e.g. [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) will not work with such fonts anymore, showing rectangles instead of glyphs. See [FS#63297](https://bugs.archlinux.org/task/63297), [Pango issue #386](https://gitlab.gnome.org/GNOME/pango/issues/386) and [HarfBuzz issue #1897](https://github.com/harfbuzz/harfbuzz/issues/1897).
+**Note:** [pango](https://www.archlinux.org/packages/?name=pango) 1.44 [dropped support for FreeType in favor of HarfBuzz](https://blogs.gnome.org/mclasen/2019/05/25/pango-future-directions/) thus [losing support for traditional BDF/PCF bitmap fonts](https://blogs.gnome.org/mclasen/2019/08/07/pango-1-44-wrap-up/), so applications like e.g. [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) will not work with such fonts anymore, showing rectangles instead of glyphs. See [FS#63297](https://bugs.archlinux.org/task/63297), [Pango issue #386](https://gitlab.gnome.org/GNOME/pango/issues/386) and [HarfBuzz issue #1897](https://github.com/harfbuzz/harfbuzz/issues/1897).
 
 *   Default 8x16
 *   [Dina](http://www.dcmembers.com/jibsen/download/61/) ([dina-font](https://www.archlinux.org/packages/?name=dina-font)) – 6pt, 8pt, 9pt, 10pt, monospaced, based on Proggy

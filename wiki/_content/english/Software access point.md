@@ -125,6 +125,14 @@ wpa_passphrase=Somepassphrase
 logger_stdout=-1
 logger_stdout_level=2
 
+# Uncomment and modify the following section if your device supports 802.11n
+## Enable 802.11n support
+#ieee80211n=1
+## QoS support
+#wmm_enabled=1
+## Use "iw list" to show device capabilities and modify ht_capab accordingly
+#ht_capab=[HT40+][SHORT-GI-40][TX-STBC][RX-STBC1][DSSS_CCK-40]
+
 ```
 
 **Tip:** You can set up the SSID with UTF-8 characters, so international characters will show properly. The option to enable it is `utf8_ssid=1`. Some clients may have problems with recognizing the correct encoding (e.g. [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") or Windows 7).

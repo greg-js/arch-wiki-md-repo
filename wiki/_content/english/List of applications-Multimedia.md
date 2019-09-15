@@ -343,6 +343,10 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
+*   **Milton** — Infinite-canvas paint program.
+
+	[https://www.miltonpaint.com/](https://www.miltonpaint.com/) || [milton](https://aur.archlinux.org/packages/milton/)
+
 *   **mtPaint** — Graphics editing program geared towards creating indexed palette images and pixel art.
 
 	[http://mtpaint.sourceforge.net/](http://mtpaint.sourceforge.net/) || [mtpaint](https://www.archlinux.org/packages/?name=mtpaint)
@@ -1495,13 +1499,13 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer)
 
+*   **Celluloid** — Simple GTK frontend for [mpv](/index.php/Mpv "Mpv"), formerly GNOME MPV.
+
+	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [celluloid](https://www.archlinux.org/packages/?name=celluloid)
+
 *   **Deepin Movie** — Movie player for Deepin desktop based on [mpv](/index.php/Mpv "Mpv").
 
 	[https://www.deepin.org/en/original/deepin-movie/](https://www.deepin.org/en/original/deepin-movie/) || [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie)
-
-*   **GNOME MPV** — Simple frontend for [mpv](/index.php/Mpv "Mpv") (GTK 3).
-
-	[https://gnome-mpv.github.io/](https://gnome-mpv.github.io/) || [gnome-mpv](https://www.archlinux.org/packages/?name=gnome-mpv), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
 *   **Kawaii-Player** — Audio/video manager and multimedia player (based on [mpv](/index.php/Mpv "Mpv")) with PC-to-PC casting feature, along with functionalities of portable media server and torrent streaming server.
 

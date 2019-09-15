@@ -400,10 +400,6 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://www.bluegriffon.com/](http://www.bluegriffon.com/) || [bluegriffon](https://www.archlinux.org/packages/?name=bluegriffon)
 
-*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
-
-	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
-
 *   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
@@ -940,6 +936,10 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 See [SANE#Install a frontend](/index.php/SANE#Install_a_frontend "SANE").
 
+*   **Scan Tailor** — Interactive post-processing tool for scanned pages.
+
+	[http://scantailor.org/](http://scantailor.org/) || [scantailor](https://www.archlinux.org/packages/?name=scantailor)
+
 ### OCR software
 
 #### Console
@@ -987,10 +987,6 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 *   **Paperwork** — Personal document manager. It manages scanned documents and PDFs.
 
 	[https://openpaper.work/](https://openpaper.work/) || [paperwork](https://www.archlinux.org/packages/?name=paperwork)
-
-*   **Scan Tailor** — Interactive post-processing tool for scanned pages.
-
-	[http://scantailor.org/](http://scantailor.org/) || [scantailor](https://www.archlinux.org/packages/?name=scantailor)
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 

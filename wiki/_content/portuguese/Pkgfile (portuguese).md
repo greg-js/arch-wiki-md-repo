@@ -8,7 +8,11 @@ Artigos relacionados
 
 **Dica:** [pacman](https://www.archlinux.org/packages/?name=pacman) possui [uma funcionalidade similar embutida](/index.php/Pacman_(Portugu%C3%AAs)#Pesquisar_por_um_pacote_que_contenha_um_arquivo_específico "Pacman (Português)").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instalação](#Instalação)
 *   [2 Uso](#Uso)
@@ -53,6 +57,6 @@ Veja [Bash#Command not found](/index.php/Bash#Command_not_found "Bash"), [Zsh#Th
 
 ## Atualizações automáticas
 
-**pkgfile** vem com um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") e [timer](/index.php/Systemd/Timers "Systemd/Timers") para sincronização automática da base de dados do pkgfile. Para ativar atualizações automáticas [habilite](/index.php/Habilite "Habilite") `pkgfile-update.timer`.
+**pkgfile** vem com um serviço [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") e [timer](/index.php/Systemd/Timers_(Portugu%C3%AAs) "Systemd/Timers (Português)") para sincronização automática da base de dados do pkgfile. Para ativar atualizações automáticas [habilite](/index.php/Habilite "Habilite") `pkgfile-update.timer`.
 
 Por padrão, pkgfile será atualizado diariamente. Para alterar esse agendamento, [edite o arquivo unit](/index.php/Systemd_(Portugu%C3%AAs)#Editando_units_fornecidas "Systemd (Português)").

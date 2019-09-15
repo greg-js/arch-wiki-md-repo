@@ -77,7 +77,7 @@ See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more informatio
 
 ##### Using Kindd
 
-[Kindd](https://github.com/LinArcX/Kindd) is a Qt based graphical frontend for dd. It is available as [kindd-git](https://aur.archlinux.org/packages/kindd-git/).
+[Kindd](https://github.com/LinArcX/Kindd) is a Qt based graphical frontend for dd. It is available as [kindd](https://aur.archlinux.org/packages/kindd/).
 
 #### In Windows
 

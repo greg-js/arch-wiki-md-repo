@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-08-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=578516) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Installation guide](/index.php/Installation_guide "Installation guide"). Data da última tradução: 2019-09-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=581644) na versão em inglês.
 
 Este documento irá guiá-lo no processo de instalação do [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") usando o [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Antes de instalar, é recomendável ler rapidamente o [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)"). Para convenções usadas neste documento, veja [Help:Leitura](/index.php/Help:Leitura "Help:Leitura"). Em especial, exemplos de código podem conter objetos reservados (formatados em `*italics*`) que devem ser substituídos manualmente.
 
@@ -82,7 +82,7 @@ Para trocar para um console diferente — por exemplo, para ver esse guia com [E
 O [mapa de teclas de console](/index.php/Mapa_de_teclas_de_console "Mapa de teclas de console") padrão é [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Layouts disponíveis podem ser listados com:
 
 ```
-# ls /usr/share/kbd/keymaps/**/*.map.gz
+# basename -s .map.gz /usr/share/kbd/keymaps/**/*.map.gz
 
 ```
 
@@ -139,15 +139,15 @@ Se o diretório não existir, o sistema pode ser inicializado no modo [BIOS](htt
 
 Para configurar uma conexão de rede, siga as etapas abaixo:
 
-1.  Certifique-se que sua [interface de rede](/index.php/Interface_de_rede "Interface de rede") esteja listada e ativada, por exemplo, com [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
-2.  Conecte-se à rede. Conecte o cabo Ethernet ou [conecte a uma rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
-3.  Configure sua conexão de rede:
+*   Certifique-se que sua [interface de rede](/index.php/Interface_de_rede "Interface de rede") esteja listada e ativada, por exemplo, com [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+*   Conecte-se à rede. Conecte o cabo Ethernet ou [conecte a uma rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio").
+*   Configure sua conexão de rede:
     *   [Endereço IP estático](/index.php/Configura%C3%A7%C3%A3o_de_rede#Endereço_IP_estático "Configuração de rede")
     *   Endereço IP dinâmico: use [DHCP](/index.php/DHCP "DHCP").
 
     **Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede com fio](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
 
-4.  A conexão pode ser verificada com [ping](https://en.wikipedia.org/wiki/pt:ping "wikipedia:pt:ping"): `# ping archlinux.org` 
+*   A conexão pode ser verificada com [ping](https://en.wikipedia.org/wiki/pt:ping "wikipedia:pt:ping"): `# ping archlinux.org` 
 
 ### Atualizar o relógio do sistema
 
@@ -362,7 +362,7 @@ Defina a [senha](/index.php/Senha "Senha") do *root* (também conhecido como "su
 
 ### Gerenciador de boot
 
-Escolha e instale um [gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") compatível com Linux. Se você tiver um CPU Intel ou AMD, habilite atualizações de [microcódigo](/index.php/Microcode "Microcode") também.
+Escolha e instale um [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot") compatível com Linux. Se você tiver um CPU Intel ou AMD, habilite atualizações de [microcódigo](/index.php/Microcode "Microcode") também.
 
 ## Reiniciar
 

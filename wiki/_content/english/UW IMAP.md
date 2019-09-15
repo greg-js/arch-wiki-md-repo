@@ -1,6 +1,12 @@
-Although **UW IMAP** has not been actively developed in many years, it still works well as a basic IMAPS server. (For other IMAP servers, see [Mail server#POP3/IMAP servers](/index.php/Mail_server#POP3/IMAP_servers "Mail server").)
+From [Wikipedia](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP"):
+
+	**UW IMAP** is the reference server implementation of the IMAP protocol, developed at the University of Washington.
+
+Although it has not been actively developed in many years, it still works well as a basic IMAPS server. (For other IMAP servers, see [Mail server#POP3/IMAP servers](/index.php/Mail_server#POP3/IMAP_servers "Mail server").)
 
 ## Installation
+
+In arch, UW IMAP is simply called imap.
 
 [Install](/index.php/Install "Install") [imap](https://www.archlinux.org/packages/?name=imap). It does not use a configuration file.
 

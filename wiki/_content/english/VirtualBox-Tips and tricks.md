@@ -313,8 +313,12 @@ Adapt the above command to your need, especially the path and filename of the VM
 	On a Windows host
 
 Open a command prompt must be run as administrator.
+
 **Tip:** On Windows, open your start menu/start screen, type `cmd`, and type `Ctrl+Shift+Enter`, this is a shortcut to execute the selected program with admin rights.
-On Windows, as the disk filename convention is different from UNIX, use this command to determine what drives you have in your Windows system and their location: `# wmic diskdrive get name,size,model` 
+
+On Windows, as the disk filename convention is different from UNIX, use this command to determine what drives you have in your Windows system and their location:
+
+ `# wmic diskdrive get name,size,model` 
 ```
 Model                               Name                Size
 WDC WD40EZRX-00SPEB0 ATA Device     \\.\PHYSICALDRIVE1  4000783933440

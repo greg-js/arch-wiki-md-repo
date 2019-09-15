@@ -59,6 +59,7 @@ See also:
 ### interbench
 
 interbench is an application designed to benchmark interactivity in Linux. It is designed to measure the effect of changes in Linux kernel design or system configuration changes such as CPU, I/O scheduler and filesystem changes and options.
+
 **Tip:** With careful benchmarking, different hardware can be compared.
 
 interbench is available in the [AUR](/index.php/AUR "AUR"): [interbench](https://aur.archlinux.org/packages/interbench/).

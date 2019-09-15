@@ -259,20 +259,22 @@ See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for a f
 
 #### Restrict protocols for better security
 
-By default Samba allows the usage of (possible) insecure and out-of-dated protocols for compatible reasons.
+**Warning:** By default, Samba versions prior to 4.11 allow connections using the outdated and insecure SMB1 protocol. When using one these Samba versions, it is highly recommended to set `server min protocol = SMB2_02` to protect yourself from ransomware attacks. In Samba 4.11 and newer, SMB2 is the default min protocol, so no changes are required there.
 
 [Append](/index.php/Append "Append") `server min protocol` and `server max protocol` in `/etc/samba/smb.conf` to force usage of a minimum and maximum protocol:
 
  `/etc/samba/smb.conf` 
 ```
 [global]
-  server min protocol = NT1
+  server min protocol = SMB2_02
   ; server max protocol = SMB3
 ```
 
-**Note:** See `server max protocol` in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for an overview of supported protocols.
+See `server max protocol` in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for an overview of supported protocols.
 
-**Tip:** Use `server min protocol = SMB3` when clients should only connect using the latest SMB3 protocol, e.g. on clients running Windows 8 and later.
+For compatibility with older clients and/or servers, you might need to set `client min protocol = CORE` or `server min protocol = CORE`, but please note that this makes you vulnerable to exploits in SMB1 including ransomware attacks.
+
+**Tip:** Use `server min protocol = SMB3_00` when clients should only connect using the latest SMB3 protocol, e.g. on clients running Windows 8 and later.
 
 [Clients](#Manual_mounting) using `mount.cifs` may need to specify the correct `vers=*`, e.g.:
 
@@ -686,7 +688,9 @@ The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` or `~/.
 
 KDE has the ability to browse Samba shares built in. To use a GUI in the KDE System Settings, you will need to install the [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) package.
 
-If you get a "Time Out" Error when navigating with Dolphin, you should uncomment and edit the following line in smb.conf: `name resolve order = lmhosts bcast host wins` 
+If you get a "Time Out" Error when navigating with Dolphin, you should uncomment and edit the following line in smb.conf:
+
+ `name resolve order = lmhosts bcast host wins` 
 
 as shown in this [page](http://ubuntuforums.org/showthread.php?t=1605499).
 

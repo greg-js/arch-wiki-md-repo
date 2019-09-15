@@ -394,7 +394,7 @@ RestartSec=30
 
 ## Targets
 
-*systemd* uses *targets* which serve a similar purpose as [runlevels](https://en.wikipedia.org/wiki/Runlevel "wikipedia:Runlevel") but act a little different. Each *target* is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some *target*s are implemented by inheriting all of the services of another *target* and adding additional services to it. There are *systemd* *target*s that mimic the common SystemVinit runlevels so you can still switch *target*s using the familiar `telinit RUNLEVEL` command.
+*systemd* uses *targets* to group units together via dependencies and as standardized synchronization points. They serve a similar purpose as [runlevels](https://en.wikipedia.org/wiki/Runlevel "wikipedia:Runlevel") but act a little different. Each *target* is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some *target*s are implemented by inheriting all of the services of another *target* and adding additional services to it. There are *systemd* *target*s that mimic the common SystemVinit runlevels so you can still switch *target*s using the familiar `telinit RUNLEVEL` command.
 
 ### Get current targets
 

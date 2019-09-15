@@ -62,7 +62,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver for fourth generation and newer GPUs. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Also, the modesetting driver will not be benefited by Intel GuC/HuC/DMC firmware.
+**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver for Gen4 and newer GPUs (GMA 3000 from 2006 and newer). See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Also, the modesetting driver will not be benefited by Intel GuC/HuC/DMC firmware.
 
 ## Loading
 
@@ -126,9 +126,8 @@ However, if [Xorg](/index.php/Xorg "Xorg") does not start, and to take advantage
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Section "OutputClass"
+Section "Device"
   Identifier "Intel Graphics"
-  MatchDriver "i915"
   Driver "intel"
 EndSection
 ```
@@ -242,10 +241,10 @@ The SNA acceleration method causes tearing on some machines. To fix this, enable
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Section "OutputClass"
+Section "Device"
   Identifier "Intel Graphics"
-  MatchDriver "i915"
   Driver "intel"
+
   Option "TearFree" "true"
 EndSection
 ```

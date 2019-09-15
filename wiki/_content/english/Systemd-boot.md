@@ -28,11 +28,13 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.5 Support hibernation](#Support_hibernation)
     *   [2.6 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Installing after booting in BIOS mode](#Installing_after_booting_in_BIOS_mode)
-    *   [4.2 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
-    *   [4.3 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
-*   [5 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Grml on ESP](#Grml_on_ESP)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Installing after booting in BIOS mode](#Installing_after_booting_in_BIOS_mode)
+    *   [5.2 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
+    *   [5.3 Menu does not appear after Windows upgrade](#Menu_does_not_appear_after_Windows_upgrade)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -106,6 +108,7 @@ The loader configuration is stored in the file `*esp*/loader/loader.conf`. The f
 *   `auto-entries` – shows automatic entries for Windows, EFI Shell, and Default Loader if set to `1` (default), `0` to hide;
 *   `auto-firmware` – shows entry for rebooting into UEFI firmware settings if set to `1` (default), `0` to hide;
 *   `console-mode` – changes UEFI console mode: `0` for 80x25, `1` for 80x50, `2` and above for non-standard modes provided by the device firmware, if any, `auto` picks a suitable mode automatically, `max` for highest available mode, `keep` (default) for the firmware selected mode.
+*   `random-seed-mode` - controls whether to read the random seed from the file `*esp*/loader/random-seed`. If set to `with-system-token` (default), it loads the seed from file only if the EFI variable `LoaderSystemToken` is set; if set to `always`, it loads the seed from file even if the EFI variable is unset; and if set to `off`, the file is ignored.
 
 For a detailed explanation of the available settings and their corresponding arguments see the [loader.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loader.conf.5) manual. A loader configuration example is provided below:
 
@@ -132,7 +135,7 @@ editor   no
 *   `version` – kernel version, shown only when multiple entries with same title exist. Optional.
 *   `machine-id` – machine identifier from `/etc/machine-id`, shown only when multiple entries with same title and version exist. Optional.
 *   `efi` – EFI program to start, relative to your ESP (`*esp*`); e.g. `/vmlinuz-linux`. **Either** this parameter or `linux` (see below) is **required**.
-*   `options` – command line options to pass to the EFI program or [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Optional, but you will need at least `initrd=*efipath*` and `root=*dev*` if booting Linux.
+*   `options` – command line options to pass to the EFI program or [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Optional, but you will need at least `root=*dev*` if booting Linux. This parameter can be omitted if the root partition is assigned the correct Root Partition Type GUID as defined in [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), in which case it will be automatically selected.
 
 For Linux boot, you can also use `linux` instead of `efi`. Or `initrd` in addition to `options`. The syntax is:
 
@@ -248,6 +251,42 @@ These hotkeys will, when pressed inside the menu or during bootup, directly boot
 *   `a` - OS X
 *   `s` - EFI Shell
 *   `1-9` - number of entry
+
+## Tips and tricks
+
+### Grml on ESP
+
+[Grml](https://grml.org/) is a small live system with a collection of software for system administration and rescue.
+
+In order to install Grml on the ESP, we only need to copy the kernel `vmlinuz`, the initramfs `initrd.img`, and the squashed image `grml64-small.squashfs` from the iso file to the ESP. To do so, first download [grml64-small.iso](https://grml.org/) and mount the file (the mountpoint is henceforth denoted *mnt*); the kernel and initramfs are located in `*mnt*/boot/grml64small/`, and the squashed image resides in `*mnt*/live/grml64-small/`.
+
+Next, create a directory for Grml in your ESP,
+
+```
+# mkdir -p *esp*/grml
+
+```
+
+and copy the above-mentioned files in there:
+
+```
+# cp *mnt*/boot/grml64small/vmlinuz *esp*/grml
+# cp *mnt*/boot/grml64small/initrd.img *esp*/grml
+# cp *mnt*/live/grml64-small/grml64-small.squashfs *esp*/grml
+
+```
+
+In the last step, create an entry for the systemd-boot loader: In `*esp*/loader/entries` create a `grml.conf` file with the following content:
+
+ `*esp*/loader/entries/grml.conf` 
+```
+title   Grml Live Linux
+linux   /grml/vmlinuz
+initrd  /grml/initrd.img
+options apm=power-off boot=live live-media-path=/grml/ nomce net.ifnames=0
+```
+
+For an overview of the avialable boot options, consult the [cheatcode for Grml](http://git.grml.org/?p=grml-live.git;a=blob_plain;f=templates/GRML/grml-cheatcodes.txt;hb=HEAD).
 
 ## Troubleshooting
 

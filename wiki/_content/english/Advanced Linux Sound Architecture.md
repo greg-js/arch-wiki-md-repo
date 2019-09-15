@@ -102,7 +102,7 @@ If you want [OSS](/index.php/OSS "OSS") applications to work with [dmix](#Dmix),
 
 The [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package comes with [systemd](/index.php/Systemd "Systemd") unit configuration files `alsa-restore.service` and `alsa-state.service` by default.
 
-These are automatically installed and activated during installation. Neither will run by default, as they rely on some conscious decisions by the user to know which method should be preferred. The options are as follows:
+These are automatically installed and activated during installation (via package provided symlink to [sound.target](/index.php/Systemd#Targets "Systemd")). Neither will run by default, as they rely on some conscious decisions by the user to know which method should be preferred. The options are as follows:
 
 *   `alsa-restore.service` Reads `/var/lib/alsa/asound.state` on boot and writes updated values on shutdown, granted it is already present by having ran `alsactl store` at some point
 *   `alsa-state.service` (Re-)Starts alsactl in daemon mode to continouously keep track of, and persist, volume changes, again under the condition that the user has consciously started `alsactl daemon` at least once

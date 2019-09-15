@@ -121,5 +121,5 @@ And then trigger it by hitting `R` and selecting `git-changes` which will conven
 ## See also
 
 *   [nnn's official repository](https://github.com/jarun/nnn)
-*   [Guides for additional configuration of nnn](https://github.com/jarun/nnn/wiki/hacking-nnn)
+*   [Guides for additional configuration of nnn](https://github.com/jarun/nnn/wiki/Basic-use-cases)
 *   [Introduction to nnn video](https://www.youtube.com/watch?v=U2n5aGqou9E)

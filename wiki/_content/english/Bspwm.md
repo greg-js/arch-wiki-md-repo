@@ -19,6 +19,7 @@ Related articles
     *   [3.3 Panels](#Panels)
         *   [3.3.1 Using lemonbar](#Using_lemonbar)
         *   [3.3.2 Using yabar](#Using_yabar)
+        *   [3.3.3 Using polybar](#Using_polybar)
     *   [3.4 Scratchpad](#Scratchpad)
     *   [3.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
     *   [3.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
@@ -42,7 +43,7 @@ Run `bspwm` using [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 
-**Important:** Make sure your environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
+**Important:** Make sure your [environment variable](/index.php/Environment_variable "Environment variable") `$XDG_CONFIG_HOME` is set or your bspwmrc will not be found. This can be done by adding `XDG_CONFIG_HOME="$HOME/.config"` and `export XDG_CONFIG_HOME` to your `~/.profile`.
 
 The example configuration is located in `/usr/share/doc/bspwm/examples/`.
 
@@ -91,13 +92,13 @@ bspc rule -a Screenkey manage=off
 
 The second option is to use an external rule command. This is more complex, but can allow you to craft more complex window rules. See [these examples](https://github.com/baskerville/bspwm/tree/master/examples/external_rules) for a sample rule command.
 
-If a particular window does not seem to be behaving according to your rules, check the class name of the program. This can be accomplished by running `xprop | grep WM_CLASS` to make sure you're using the proper string.
+If a particular window does not seem to be behaving according to your rules, check the class name of the program. This can be accomplished by running `xprop | grep WM_CLASS` to make sure you're using the proper string, which requires the [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
 
 ### Panels
 
 #### Using lemonbar
 
-An example panel for [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](/index.php/Lemonbar "Lemonbar") wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
+An example panel for [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](/index.php/Lemonbar "Lemonbar") wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the [optdepends](/index.php/Optdepends "Optdepends") in the [bspwm](https://www.archlinux.org/packages/?name=bspwm) package for dependencies that may be required.
 
 To display system information on your status bar you can use various system calls. This example will show you how to edit your `panel` to get the volume status on your BAR:
 
@@ -117,7 +118,7 @@ panel_volume()
 }
 ```
 
-Next, we will have to make sure it is called and piped to `$PANEL_FIFO`:
+Next, we will have to make sure it is called and redirected to `$PANEL_FIFO`:
 
 ```
 while true; do
@@ -131,6 +132,10 @@ done &
 
 Using the example panel using lemonbar requires you to set your environment (.profile), and make sure the panel scripts are on your path. Easier panel to set up is [yabar](https://aur.archlinux.org/packages/yabar/), which has just one config file.
 
+#### Using polybar
+
+[Polybar](/index.php/Polybar "Polybar") can be used by adding `polybar *example* &` to your bspwmrc configuration file, where `*example*` is the name of the bar.
+
 ### Scratchpad
 
 You can emulate a dropdown terminal (like i3's scratchpad feature if you put a terminal in it) using bspwm's window flags. Append the following to the end of the bspwm config file (adapt to your own terminal emulator):
@@ -141,7 +146,7 @@ st -c scratchpad -e ~/bin/scratch &
 
 ```
 
-The sticky flag ensures that the window is always present on the current desktop. And `~/bin/scratch` is:
+The `sticky` flag ensures that the window is always present on the current desktop. And `~/bin/scratch` is:
 
 ```
 #!/usr/bin/sh
@@ -183,9 +188,9 @@ Since the `bspwmrc` is a shell script, it allows you to do things like these:
 
 ### Set up a desktop where all windows are floating
 
-Here is how to setup the desktop 3 to have only floating windows. It can be useful for Gimp or other apps with multiple windows.
+Here is how to setup the desktop 3 to have only floating windows. It can be useful for GIMP or other apps with multiple windows.
 
-Put this script somewhere in your $PATH and call it from .xinitrc or similar (with a & at the end):
+Put this script somewhere in your `$PATH` and call it from `.xinitrc` or similar (with a `&` at the end):
 
 ```
 #!/bin/bash
@@ -205,7 +210,7 @@ Put this script somewhere in your $PATH and call it from .xinitrc or similar (wi
 
 ### Keyboard
 
-Bspwm does not handle any keyboard input and instead provides the `bspc` program as its interface.
+Bspwm does not handle any keyboard input and instead provides the *bspc* program as its interface.
 
 For keyboard shortcuts you will have to setup a hotkey daemon like [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) ([sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/) for the development version).
 

@@ -1,6 +1,10 @@
-[rss2email](https://github.com/wking/rss2email) is a free tool for retrieving content from RSS feeds and mailing it. It is useful for those who do not want yet another program with which to keep up and for people who have a system for e-mail management that they would like to apply to their RSS feeds as well. People with lots of e-mail often have highly customized systems that let them process their mail efficiently; rss2email allows them to easily apply this system to their feeds as well.
+[rss2email](https://github.com/rss2email/rss2email) is a free tool for retrieving content from RSS feeds and mailing it. It is useful for those who do not want yet another program with which to keep up and for people who have a system for e-mail management that they would like to apply to their RSS feeds as well. People with lots of e-mail often have highly customized systems that let them process their mail efficiently; rss2email allows them to easily apply this system to their feeds as well.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Adding feeds](#Adding_feeds)
@@ -11,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [rss2email-wking](https://aur.archlinux.org/packages/rss2email-wking/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [rss2email](https://aur.archlinux.org/packages/rss2email/) from the [AUR](/index.php/AUR "AUR").
 
 ## Adding feeds
 

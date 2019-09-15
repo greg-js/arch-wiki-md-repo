@@ -254,7 +254,7 @@ $ cdrecord -v dev=*/dev/sr0* blank=fast
 
 ```
 
-There are two options for blanking: `blank=fast` and `blank=full`. Full blanking lasts as long as a full write run. It overwrites the payload data on the CD. Nevertheless this should not be considered as securely making those data unreadable. For that purpose, several full write runs with random data are advised.
+There are two options for blanking: `blank=fast` and `blank=all`. Full blanking lasts as long as a full write run. It overwrites the payload data on the CD. Nevertheless this should not be considered as securely making those data unreadable. For that purpose, several full write runs with random data are advised.
 
 Alternative commands are:
 

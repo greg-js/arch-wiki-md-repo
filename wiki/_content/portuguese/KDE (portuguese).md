@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=580267) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [KDE](/index.php/KDE "KDE"). Data da última tradução: 2019-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=580574) na versão em inglês.
 
 Artigos relacionados
 
@@ -74,7 +74,6 @@ O KDE é um projeto de software que atualmente compreende um [ambiente de deskto
     *   [5.3 Configurando perfis ICC](#Configurando_perfis_ICC)
     *   [5.4 Desabilitar a abertura do lançador de aplicativos com a tecla Super (tecla Windows)](#Desabilitar_a_abertura_do_lançador_de_aplicativos_com_a_tecla_Super_(tecla_Windows))
     *   [5.5 Desabilitar exibição de Favoritos no menu de aplicativos](#Desabilitar_exibição_de_Favoritos_no_menu_de_aplicativos)
-    *   [5.6 Desabilitar animações suaves/efeitos gráficas](#Desabilitar_animações_suaves/efeitos_gráficas)
 *   [6 Solução de problemas](#Solução_de_problemas)
     *   [6.1 Fontes](#Fontes)
         *   [6.1.1 Fontes em uma sessão do Plasma têm visual ruim](#Fontes_em_uma_sessão_do_Plasma_têm_visual_ruim)
@@ -111,6 +110,7 @@ O KDE é um projeto de software que atualmente compreende um [ambiente de deskto
     *   [6.12 Alto uso de CPU de kscreenlocker_greet com drivers da NVIDIA](#Alto_uso_de_CPU_de_kscreenlocker_greet_com_drivers_da_NVIDIA)
     *   [6.13 OS error 22 ao executar Akonadi no ZFS](#OS_error_22_ao_executar_Akonadi_no_ZFS)
     *   [6.14 Alguns programas não conseguem rolar o texto quando suas janelas estão inativas](#Alguns_programas_não_conseguem_rolar_o_texto_quando_suas_janelas_estão_inativas)
+    *   [6.15 TeamViewer está lento](#TeamViewer_está_lento)
 *   [7 Veja também](#Veja_também)
 
 ## Instalação
@@ -455,7 +455,7 @@ O Akonadi possui suporte tanto a instância existente do sistema [PostgreSQL](/i
 
 ###### Instância de PostgreSQL por usuário
 
-[Instale](/index.php/Instale "Instale") [postgresql](https://www.archlinux.org/packages/?name=postgresql).
+[Instale](/index.php/Instale "Instale") [postgresql](https://www.archlinux.org/packages/?name=postgresql) e [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade).
 
 Edite o arquivo de configuração do Akonadi para que ele tenha o seguinte conteúdo:
 
@@ -472,7 +472,10 @@ Driver=QPSQL
 
 Inicie Akonadi com `akonadictl start` e verifique seu estado: `akonadictl status`.
 
-**Nota:** As principais atualizações da versão do PostgreSQL exigirão uma atualização manual do banco de dados. Para atualizar o banco de dados do PostgreSQL em `~/.local/share/akonadi/db_data/`, que é usado pelo Akonadi, siga as [instruções de atualização no KDE UserBase Wiki](https://userbase.kde.org/Akonadi/Postgres_update). Certifique-se de ajustar os caminhos dos binários do PostgreSQL para aqueles usados pelo [postgresql](https://www.archlinux.org/packages/?name=postgresql) e pelo [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade), veja [PostgreSQL#Upgrading PostgreSQL](/index.php/PostgreSQL#Upgrading_PostgreSQL "PostgreSQL").
+**Nota:**
+
+*   A partir do [akonadi](https://www.archlinux.org/packages/?name=akonadi) 19.08.0-1, o cluster de banco de dados do PostgreSQL em `~/.local/share/akonadi/db_data/` será atualizado automaticamente quando uma atualização de versão do postgreSQL é detectada.
+*   Para as versões anteriores do [akonadi](https://www.archlinux.org/packages/?name=akonadi), as principais atualizações da versão do PostgreSQL exigirão uma atualização manual do banco de dados. Siga as [instruções de atualização no KDE UserBase Wiki](https://userbase.kde.org/Akonadi/Postgres_update). Certifique-se de ajustar os caminhos dos binários do PostgreSQL para aqueles usados pelo [postgresql](https://www.archlinux.org/packages/?name=postgresql) e pelo [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade), veja [PostgreSQL#Upgrading PostgreSQL](/index.php/PostgreSQL#Upgrading_PostgreSQL "PostgreSQL").
 
 ###### Instância de PostgreSQL para todo o sistema
 
@@ -619,10 +622,6 @@ $ mkdir ~/.local/share/kservices5
 $ sed 's/EnabledByDefault=true$/EnabledByDefault=false/' /usr/share/kservices5/plasma-runner-bookmarks.desktop > ~/.local/share/kservices5/plasma-runner-bookmarks.desktop
 
 ```
-
-### Desabilitar animações suaves/efeitos gráficas
-
-Ao usar o TeamViewer, ele pode se comportar lentamente se você usar animações usaves (como minimizar janelas). Para maior comodidade, desabilite essas animações em *Configurações do sistema > Tela e monitor > Compositor > Infraestrutura de renderização*. Escolher *XRender* irá desabilitar os efeitos, escolher *OpenGL 3.1* irá habilitá-los.
 
 ## Solução de problemas
 
@@ -860,6 +859,10 @@ Veja [MariaDB#OS error 22 when running on ZFS](/index.php/MariaDB#OS_error_22_wh
 ### Alguns programas não conseguem rolar o texto quando suas janelas estão inativas
 
 Isso é causado pela maneira problemática de o GTK 3 lidar com eventos de rolagem do mouse. Uma solução para isso é definir a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `GDK_CORE_DEVICE_EVENTS=1`. No entanto, essa solução também interrompe a rolagem suave do touchpad e a rolagem da tela sensível ao toque.
+
+### TeamViewer está lento
+
+Ao usar o TeamViewer, ele pode se comportar lentamente se você usar animações uniformes (como minimizar janelas). Veja [#Desabilitar composição](#Desabilitar_composição) como uma solução alternativa.
 
 ## Veja também
 

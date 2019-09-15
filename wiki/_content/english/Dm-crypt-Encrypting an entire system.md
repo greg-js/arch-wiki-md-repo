@@ -673,7 +673,7 @@ For the sake of the instructions below, the following block devices are used:
 |                     +---------------------------+---------------------------+ |                     +---------------------------+---------------------------+ |                           |
 |                     | RAID1 array (part 1 of 2) | RAID0 array (part 1 of 2) | |                     | RAID1 array (part 2 of 2) | RAID0 array (part 2 of 2) | |                           |
 |                     |                           |                           | |                     |                           |                           | |                           |
-|                     | /dev/md/ESP               | /dev/md/root              | |                     | /dev/md/ESP               | /dev/md/root              | | /dev/mapper/cryptroot     |
+|                     | /dev/md/ESP               | /dev/md/root              | |                     | /dev/md/ESP               | /dev/md/root              | | /dev/mapper/cryptdata     |
 |                     +---------------------------+---------------------------+ |                     +---------------------------+---------------------------+ +---------------------------+
 | /dev/sda1           | /dev/sda2                 | /dev/sda3                 | | /dev/sdb1           | /dev/sdb2                 | /dev/sdb3                 | | /dev/sdc1                 |
 +---------------------+---------------------------+---------------------------+ +---------------------+---------------------------+---------------------------+ +---------------------------+
@@ -979,7 +979,7 @@ However, when an update to anything used in the initramfs, or a kernel, or the b
 
 ## Encrypted boot partition (GRUB)
 
-This setup utilizes the same partition layout and configuration for the system's root partition as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with the difference that a special feature of the [GRUB](/index.php/GRUB "GRUB") bootloader is used to additionally encrypt the boot partition `/boot`. See also [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB").
+This setup utilizes the same partition layout and configuration as the previous [#LVM on LUKS](#LVM_on_LUKS) section, with the difference that the [GRUB](/index.php/GRUB "GRUB") boot loader is used since it is capable of booting from an LVM logical volume and a LUKS1-encrypted `/boot`. See also [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB").
 
 The disk layout in this example is:
 
@@ -1062,12 +1062,12 @@ At this point, you should have the following partitions and logical volumes insi
 NAME                  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                   8:0      0   200G  0 disk
 ├─sda1                8:1      0     1M  0 part
-├─sda2                8:2      0   550M  0 part  /efi
+├─sda2                8:2      0   550M  0 part  /mnt/efi
 └─sda3                8:3      0   100G  0 part
   └─cryptlvm          254:0    0   100G  0 crypt
     ├─MyVolGroup-swap 254:1    0     8G  0 lvm   [SWAP]
-    ├─MyVolGroup-root 254:2    0    32G  0 lvm   /
-    └─MyVolGroup-home 254:3    0    60G  0 lvm   /home
+    ├─MyVolGroup-root 254:2    0    32G  0 lvm   /mnt
+    └─MyVolGroup-home 254:3    0    60G  0 lvm   /mnt/home
 
 ```
 
@@ -1101,7 +1101,7 @@ Set the kernel parameters, so that the initramfs can unlock the encrypted root p
 
 If using the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the following need to be set instead:
 
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm" ...` 
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="... rd.luks.name=*device-UUID*=cryptlvm ..."` 
 
 See [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Encrypted /boot](/index.php/GRUB#Encrypted_/boot "GRUB") for details. The `*device-UUID*` refers to the UUID of `/dev/sda3` (the partition which holds the lvm containing the root filesystem). See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 

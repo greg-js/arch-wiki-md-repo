@@ -188,7 +188,7 @@ You can set up systemd to send an e-mail when a unit fails. Cron sends mail to `
 
  `/usr/local/bin/systemd-email` 
 ```
-#!/bin/bash
+#!/bin/sh
 
 /usr/bin/sendmail -t <<ERRMAIL
 To: $1

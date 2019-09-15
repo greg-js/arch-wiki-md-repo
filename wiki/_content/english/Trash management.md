@@ -18,6 +18,7 @@ To prevent accidental deletion of files, you can use a trash can. To ensure comp
 
 ## Trash creation
 
+*   [glib2](https://www.archlinux.org/packages/?name=glib2) provides a `gio trash [FILE1] [FILE2] ...` command that allows to move files into the trash, while `gio trash --empty` empties the trash
 *   **trash-cli** — A command-line interface implementing [FreeDesktop.org's Trash specification](https://specifications.freedesktop.org/trash-spec/trashspec-latest.html).
 
 	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)

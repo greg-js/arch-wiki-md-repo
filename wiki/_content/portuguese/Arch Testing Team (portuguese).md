@@ -16,7 +16,7 @@ Você pode então testar os pacotes listados localmente e assiná-los se estiver
 
 ## Diretrizes
 
-Para testar um pacote de arch, lembre-se dos seguintes aspectos:
+Para testar um pacote do Arch, lembre-se dos seguintes aspectos:
 
 *   Se você está testando um kernel ou um pacote que depende dos módulos do kernel, você **deve reiniciar a máquina e garantir que ela inicialize corretamente**.
 *   Embora o teste em software de virtualização não seja proibido, pode não ser tão útil quanto testar um pacote em uma instalação em um computador físico. Isso se aplica especialmente aos pacotes suscetíveis a diferentes tipos de hardware, como pacotes do kernel.

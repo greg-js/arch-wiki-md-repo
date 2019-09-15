@@ -50,8 +50,8 @@ Overlayfs включён в ядре по умолчанию, а модуль `o
 ```
 /upper
 /lower1
-/lover2
-/lover3
+/lower2
+/lower3
 
 ```
 

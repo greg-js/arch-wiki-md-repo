@@ -22,6 +22,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [3.2 Old CUPS server](#Old_CUPS_server)
     *   [3.3 Shared printer works locally but remote machine fails to print](#Shared_printer_works_locally_but_remote_machine_fails_to_print)
     *   [3.4 Unable to locate PPD file](#Unable_to_locate_PPD_file)
+    *   [3.5 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
 *   [4 USB printers](#USB_printers)
     *   [4.1 Conflict with SANE](#Conflict_with_SANE)
     *   [4.2 Conflict with usblp](#Conflict_with_usblp)
@@ -167,6 +168,37 @@ copy_model: empty PPD file
 ```
 
 Make sure [Avahi](/index.php/Avahi "Avahi") is set up correctly. In particular, make sure [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) is installed and set up in `/etc/nsswitch.conf`.
+
+### Finding URIs for Windows print servers
+
+Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
+
+```
+$ smbtree -U *windowsusername*
+
+```
+
+This will list every share available to a certain Windows username on the local area network subnet, as long as Samba is set up and running properly. It should return something like this:
+
+```
+ WORKGROUP
+	\\REGULATOR-PC   		
+		\\REGULATOR-PC\Z              	
+		\\REGULATOR-PC\Public         	
+		\\REGULATOR-PC\print$         	Printer Drivers
+		\\REGULATOR-PC\G              	
+		\\REGULATOR-PC\EPSON Stylus CX8400 Series	EPSON Stylus CX8400 Series
+
+```
+
+What is needed here is first part of the last line, the resource matching the printer description. So to print to the EPSON Stylus printer, one would enter:
+
+```
+smb://username:password@REGULATOR-PC/EPSON%20Stylus%20CX8400%20Series
+
+```
+
+as the URI into CUPS.
 
 ## USB printers
 

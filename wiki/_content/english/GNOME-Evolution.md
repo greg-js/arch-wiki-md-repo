@@ -164,7 +164,7 @@ Optionally fill in automatically check for new mail every ** minutes. The rest i
 *   Server: smtp.gmail.com
 *   Port: 587
 *   Server requires authentication: Checked
-*   Use Secure Connection: TSL
+*   Use Secure Connection: TLS
 *   Fill in Username: <username>@gmail.com
 *   Authentication: PLAIN or Login
 

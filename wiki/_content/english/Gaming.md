@@ -28,12 +28,13 @@ This page contains information about running games and related system configurat
 *   [4 Remote gaming](#Remote_gaming)
 *   [5 Improving performance](#Improving_performance)
     *   [5.1 Utilities](#Utilities)
-    *   [5.2 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
-        *   [5.2.1 Policies](#Policies)
-        *   [5.2.2 Nice levels](#Nice_levels)
-        *   [5.2.3 Core affinity](#Core_affinity)
-        *   [5.2.4 General case](#General_case)
-        *   [5.2.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
+    *   [5.2 Fsync patch](#Fsync_patch)
+    *   [5.3 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
+        *   [5.3.1 Policies](#Policies)
+        *   [5.3.2 Nice levels](#Nice_levels)
+        *   [5.3.3 Core affinity](#Core_affinity)
+        *   [5.3.4 General case](#General_case)
+        *   [5.3.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 *   [6 Gaming mouse](#Gaming_mouse)
 
 ## Game environments
@@ -224,6 +225,12 @@ See also main article: [Improving performance](/index.php/Improving_performance 
 *   **GameMode** — Daemon/lib combo for Linux that allows games to request a set of optimisations be temporarily applied to the host OS.
 
 	[https://github.com/FeralInteractive/gamemode](https://github.com/FeralInteractive/gamemode) || [gamemode](https://aur.archlinux.org/packages/gamemode/), [lib32-gamemode](https://aur.archlinux.org/packages/lib32-gamemode/)
+
+**Note:** There is also a tutorial on [YouTube](https://youtu.be/4gyRyYfyGJw) that you can follow.
+
+### Fsync patch
+
+See [Steam#Fsync_patch](/index.php/Steam#Fsync_patch "Steam").
 
 ### Improving frame rates and responsiveness with scheduling policies
 

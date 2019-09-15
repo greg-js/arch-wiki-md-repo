@@ -52,6 +52,7 @@ Antes de tudo:
 #### Configure os arranjos RAID
 
 **Atenção:** Se seus HDs não estão configurados como RAID e o MS-Windows já está instalado, a mudança para "RAID" poderá causar danos.
+
 [[2]](http://support.microsoft.com/kb/316401/)
 
 *   Entre no **setup do BIOS** de sua placa-mãe e habilite o **Controlador RAID**, aproveite e também configure para que o PC inicie pelo drive de CD.

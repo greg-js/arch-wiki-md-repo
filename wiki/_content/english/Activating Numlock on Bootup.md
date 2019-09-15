@@ -11,7 +11,7 @@
 *   [2 X.org](#X.org)
     *   [2.1 startx](#startx)
     *   [2.2 MATE](#MATE)
-    *   [2.3 KDE Plasma Users](#KDE_Plasma_Users)
+    *   [2.3 KDE Plasma](#KDE_Plasma)
     *   [2.4 GDM](#GDM)
     *   [2.5 GNOME](#GNOME)
     *   [2.6 Xfce](#Xfce)
@@ -114,9 +114,9 @@ dconf write org.mate.peripherals-keyboard numlock-state 'on'
 
 ```
 
-### KDE Plasma Users
+### KDE Plasma
 
-Go to System Settings, under the Hardware/Input Devices/Keyboard item you will find an option to select the behavior of NumLock.
+Go to *System Settings > Input Devices > Keyboard* and choose desired NumLock behavior in the *NumLock on Plasma Startup* section.
 
 ### GDM
 

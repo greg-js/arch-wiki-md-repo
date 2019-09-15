@@ -5,11 +5,11 @@ Related articles
 *   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
 *   [sysctl](/index.php/Sysctl "Sysctl")
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"):
+According to Wikipedia:
 
-	The **Linux kernel** is an open-source monolithic Unix-like computer [operating system kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system) "wikipedia:Kernel (operating system)").
+	The [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel") is an open-source monolithic Unix-like computer [operating system kernel](https://en.wikipedia.org/wiki/Kernel_(operating_system) "wikipedia:Kernel (operating system)").
 
-[Arch Linux](/index.php/Arch_Linux "Arch Linux") is based on the Linux kernel. There are various alternative Linux kernels available for Arch Linux in addition to the stable [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"). This article lists some of the options available in the repositories with a brief description of each. There is also a description of patches that can be applied to the system's kernel. The article ends with an overview of custom kernel compilation with links to various methods.
+[Arch Linux](/index.php/Arch_Linux "Arch Linux") is based on the Linux kernel. There are various alternative Linux kernels available for Arch Linux in addition to the latest stable kernel. This article lists some of the options available in the repositories with a brief description of each. There is also a description of patches that can be applied to the system's kernel. The article ends with an overview of custom kernel compilation with links to various methods.
 
 Kernel packages are [installed](/index.php/Install "Install") onto the file system under `/boot/`. To be able to boot into kernels, the [boot loader](/index.php/Boot_loader "Boot loader") has to be configured appropriately.
 
@@ -41,7 +41,7 @@ Kernel packages are [installed](/index.php/Install "Install") onto the file syst
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-*   **ZEN Kernel** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. Some more details can be found on [https://liquorix.net](https://liquorix.net) (which provides kernel binaries based on ZEN for Debian).
+*   **Zen Kernel** — Result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems. Some more details can be found on [https://liquorix.net](https://liquorix.net) (which provides kernel binaries based on Zen for Debian).
 
 	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
@@ -126,11 +126,7 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 
 *   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
-	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) ||
-
-*   **BLD** — Provides alternate CPU load distribution technique for task scheduler.
-
-	[https://github.com/rmullick/bld-patches/wiki](https://github.com/rmullick/bld-patches/wiki) || [linux-bld](https://aur.archlinux.org/packages/linux-bld/)
+	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs](https://aur.archlinux.org/packages/linux-aufs/)
 
 *   **Clear** — Patches from Intel's Clear Linux project. Provides performance and security optimizations; [WireGuard](/index.php/WireGuard "WireGuard") module.
 
@@ -140,7 +136,7 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 
 	[https://www.fsfla.org/ikiwiki/selibre/linux-libre/](https://www.fsfla.org/ikiwiki/selibre/linux-libre/) || [linux-libre](https://aur.archlinux.org/packages/linux-libre/)
 
-*   **Liquorix** — Kernel replacement built using Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
+*   **Liquorix** — Kernel replacement built using Debian-targeted configuration and the Zen kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the Zen patchset as well.
 
 	[https://liquorix.net](https://liquorix.net) || [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
 
@@ -155,6 +151,10 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 *   **VFIO** — The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
 
 	[https://lwn.net/Articles/499240/](https://lwn.net/Articles/499240/) || [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/), [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
+
+*   **XanMod** — Aiming to take full advantage in high-performance workstations, gaming desktops, media centers and others and built to provide a more rock-solid, responsive and smooth desktop experience. This kernel uses the BFS scheduler, BFQ I/O scheduler, UKSM realtime memory data deduplication, YeAH TCP congestion control, x86_64 advanced instruction set support, and other default changes.
+
+	[https://xanmod.org/](https://xanmod.org/) || [linux-xanmod](https://aur.archlinux.org/packages/linux-xanmod/)
 
 ## See also
 

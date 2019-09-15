@@ -133,6 +133,8 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [15.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games/applications_crashing/causing_a_bluescreen)
     *   [15.14 Applications in the VM experience long delays or take a long time to start](#Applications_in_the_VM_experience_long_delays_or_take_a_long_time_to_start)
     *   [15.15 High interrupt latency and microstuttering](#High_interrupt_latency_and_microstuttering)
+    *   [15.16 QXL video causes low resolution](#QXL_video_causes_low_resolution)
+    *   [15.17 Hang during VM initramfs](#Hang_during_VM_initramfs)
 *   [16 See also](#See_also)
 
 ## Installation
@@ -295,7 +297,7 @@ By default, QEMU will show the virtual machine's video output in a window. One t
 
 KVM must be supported by your processor and kernel, and necessary [kernel modules](/index.php/Kernel_modules "Kernel modules") must be loaded. See [KVM](/index.php/KVM "KVM") for more information.
 
-To start QEMU in KVM mode, append `-enable-kvm` to the additional start options. To check if KVM is enabled for a running VM, enter the [#QEMU monitor](#QEMU_monitor) using `Ctrl+Alt+Shift+2`, and type `info kvm`.
+To start QEMU in KVM mode, append `-enable-kvm` to the additional start options. To check if KVM is enabled for a running VM, enter the [#QEMU monitor](#QEMU_monitor) using `Ctrl+Alt+2`, and type `info kvm`.
 
 **Note:**
 
@@ -2157,6 +2159,25 @@ Anecdotally, OpenSSH takes a while to start accepting connections under insuffic
 ### High interrupt latency and microstuttering
 
 This problem manifests itself as small pauses (stutters) and is particularly noticeable in graphics-intensive applications, such as games. One of the causes is CPU power saving features, which are controlled by [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"). Change this to `performance` for all processor cores.
+
+### QXL video causes low resolution
+
+QEMU 4.1.0 introduced a regression where QXL video can fall back to low resolutions, when being displayed through spice. [[2]](https://bugs.launchpad.net/qemu/+bug/1843151) For example, when KMS starts, text resolution may become as low as 4x10 characters. When trying to increase GUI resolution, it may go to the lowest supported resolution.
+
+As a workaround, create your device in this form:
+
+```
+-device qxl-vga,max_outputs=1...
+
+```
+
+### Hang during VM initramfs
+
+Linux 5.2.11 introduced a KVM regression where under some circumstances a VM may permanently hang during the early boot phase, when the initramfs is being loaded or ran. [[3]](https://www.spinics.net/lists/kvm/msg195171.html) The host shows qemu using 100% CPU * number of virtual CPUs. Reported case is with a host using hyperthreading, and a VM being given more than host's `nproc`/2 virtual CPUs. It is unknown what exact circumstances trigger one of the threads to delete a memory region to cause this. The workarounds are:
+
+*   Downgrade to Linux 5.2.10
+*   Until fixed, try giving the VM no more than the host's `nproc`/2 virtual CPUs
+*   Custom compile linux, reverting commit 2ad350fb4c (note this re-introduces a regression triggered when removing a memslot)
 
 ## See also
 

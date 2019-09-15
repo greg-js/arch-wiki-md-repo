@@ -123,16 +123,16 @@ fi
 
 **Note:**
 
-*   An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland").
-*   Wayland with the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver currently suffers from very poor performance: [FS#53284](https://bugs.archlinux.org/task/53284).
+*   An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland"). Applications using certain graphics libraries, such as Qt, can be forced to use Wayland by setting environment variables. See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for more information.
+*   When using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver, non-Wayland-native applications suffer from poor performance because of the lack of hardware accelerated XWayland. This is [expected](https://blogs.gnome.org/uraeus/2019/04/03/preparing-for-fedora-workstation-30/) to be resolved in Fall 2019.
 
-Manually starting a Wayland session is possible with `QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. QT_QPA_PLATFORM makes [Qt](/index.php/Qt "Qt") applications like [VLC](/index.php/VLC "VLC"), calibre, or SMPlayer use Wayland. In addition to the QT_QPA_PLATFORM variable, you must also install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package. To add support for other graphics libraries, see [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland").
+Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`.
 
 To start on login to tty1, add the following to your `.bash_profile`:
 
 ```
 if [[ -z $DISPLAY && $(tty) == /dev/tty1 && $XDG_SESSION_TYPE == tty ]]; then
-  QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
+  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```

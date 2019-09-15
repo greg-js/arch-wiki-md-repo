@@ -28,9 +28,9 @@ This modem is generic modem device, but there are two kludges:
 
 ### Switch into modem mode
 
-By default kernel recongnizes it as usb-storage device (SCSI CD-ROM). It is true, because of this modem contains MicroSD card (up to 4Gb) reader and internal flash.
+By default kernel recognizes it as usb-storage device (SCSI CD-ROM). It is true, because of this modem contains MicroSD card (up to 4Gb) reader and internal flash.
 
-To switch modem on you shoud run
+To turn on modem you should run
 
 ```
 $ /lib/udev/usb_modeswitch --vendor 0x12d1 --product 0x1446 --type option-zerocd
@@ -52,7 +52,7 @@ After that, modem changes its USB IDs to 12d1:140c and /proc/bus/usb/devices sho
 
 ### Driver loading
 
-usbserial is proper driver for this modem, but probably it does not recognize it, so you shold force it, passing USB IDs.
+usbserial is proper driver for this modem, but probably it does not recognize it, so you should force it, passing USB IDs.
 
 ```
  # modprobe usbserial vendor=0x12d1 product=0x140c
@@ -97,7 +97,7 @@ Now you have new 2 or 3 /dev/ttyUSB* devices.Most likely first of them (ttyUSB0 
 
 ## Using gammu
 
-Use [gammu](https://www.archlinux.org/packages/?name=gammu) is acesss cell phones functionalities.
+Use [gammu](https://www.archlinux.org/packages/?name=gammu) to access cell phones functionalities.
 
 Edit ~/.gammurc
 

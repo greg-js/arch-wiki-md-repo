@@ -59,7 +59,7 @@ Participe da discussão em uma ou mais [listas de discussão](https://lists.arch
 
 ### Relate pacotes instalados
 
-[pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)") fornece um [temporizador do systemd](/index.php/Systemd/Timers "Systemd/Timers") que envia uma lista de pacotes instalados em seu sistema, junto com a arquitetura e *mirrors* que você usa, para os desenvolvedores do Arch Linux para ajudá-los a priorizar seus esforços e melhorar a ainda mais a distribuição. As informações são enviadas anonimamente e não pode ser usadas para identificar você. Você pode ver os dados colecionados [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [neste tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=105431).
+[pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)") fornece um [temporizador do systemd](/index.php/Systemd_(Portugu%C3%AAs)/Timers_(Portugu%C3%AAs) "Systemd (Português)/Timers (Português)") que envia uma lista de pacotes instalados em seu sistema, junto com a arquitetura e *mirrors* que você usa, para os desenvolvedores do Arch Linux para ajudá-los a priorizar seus esforços e melhorar a ainda mais a distribuição. As informações são enviadas anonimamente e não pode ser usadas para identificar você. Você pode ver os dados colecionados [Statistics page](https://www.archlinux.de/?page=Statistics). More information is available in [neste tópico do fórum](https://bbs.archlinux.org/viewtopic.php?id=105431).
 
 ### Corrija e relate
 

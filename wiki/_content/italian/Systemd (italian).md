@@ -681,6 +681,7 @@ Poi eseguire i comandi seguenti perché le modifiche abbiano effetto:
 In alternativa si può copiare la vecchia unità da `/usr/lib/systemd/system/` in `/etc/systemd/system/` e fare qui le modifiche. Una unità in `/etc/systemd/system/` sovrascriverà sempre la stessa unità in `/usr/lib/systemd/system/`. Da notare che quando l'unità originale in `/usr/lib/` cambia a causa di un aggiornamento, le modifiche non si rifletteranno automaticamente sulla propria unità personalizzata in `/etc/`. In aggiunta occorre riattivarla manualmente con `systemctl reenable <unit>`. E' raccomandato usare il metodo con il `*.conf` descritto sopra.
 
 **Suggerimento:** Si può usare `systemd-delta` per vedere quali unità sono state sovrascritte e quali esattamente sono state modificate.
+
 Siccome le unità saranno aggiornate di volta in volta , usare systemd-delta per la manutenzione del sistema.
 
 ### Evidenziazione della sintassi per le unità di systemd con Vim

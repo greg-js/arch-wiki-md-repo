@@ -455,7 +455,43 @@ Add this to your Wine registry, by running `wine regedit associations.reg`, or a
 
 This has to be done for each WINEPREFIX which should not update file associations.
 
-You can disable winemenubuilder for all WINEPREFIXes by setting an environment variable:
+This method prevents the creation of file associations but retains the creation of XDG .desktop files (that you might see e.g. in menus).
+
+If you want it to apply by default for new WINEPREFIXES, edit `/usr/share/wine/wine.inf`. Find this line:
+
+```
+HKLM,%CurrentVersion%\RunServices,"winemenubuilder",2,"%11%\winemenubuilder.exe -a -r"
+
+```
+
+and remove the -a switch, so that the entry looks like this:
+
+```
+HKLM,%CurrentVersion%\RunServices,"winemenubuilder",2,"%11%\winemenubuilder.exe -r"
+
+```
+
+See [this post](https://askubuntu.com/a/400430) for more info.
+
+To prevent a package upgrade from overriding the modified file, create a pacman hook to make our change automatically:
+
+ `/etc/pacman.d/hooks/stop-wine-associations.hook` 
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Target = usr/share/wine/wine.inf
+
+[Action]
+Description = Stopping Wine from hijacking file associations...
+When = PostTransaction
+Exec = /usr/bin/sed -i 's/winemenubuilder.exe -a -r/winemenubuilder.exe -r/g' /usr/share/wine/wine.inf
+```
+
+See [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+
+Alternatively, you can disable winemenubuilder altogether (including the desktop entries) for all WINEPREFIXes by setting an environment variable:
 
 ```
 $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"

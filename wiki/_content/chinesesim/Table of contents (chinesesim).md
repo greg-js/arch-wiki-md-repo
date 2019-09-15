@@ -61,7 +61,7 @@
 | <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:CPU (简体中文)") <small>(4)</small> |
-| <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(16)</small> |
+| <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(17)</small> |
 | <small>4.5.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
 | <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(2)</small> |
 | <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(4)</small> |
@@ -139,7 +139,7 @@
 | <small>7.10.</small> [Software projects](/index.php/Category:Software_projects_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software projects (简体中文)") <small>(0)</small> |
 | <small>7.10.1.</small> [Apache](/index.php/Category:Apache_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Apache (简体中文)") <small>(1)</small> |
 | <small>7.10.2.</small> [GNU](/index.php/Category:GNU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:GNU (简体中文)") <small>(1)</small> |
-| <small>7.11.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(28)</small> |
+| <small>7.11.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(29)</small> |
 | <small>7.11.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Xorg commands (简体中文)") <small>(2) (同时还属于 [Commands](/index.php/Category:Commands_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Commands (简体中文)"))</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(7)</small> |
 | <small>8.1.</small> [Backup](/index.php/Category:Backup_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Backup (简体中文)") <small>(2)</small> |

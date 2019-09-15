@@ -100,6 +100,8 @@ Additionally the flag `--disable-gpu-driver-bug-workarounds` may need to be pass
 
 Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") can be used with community made patches [[1]](https://bugs.chromium.org/p/chromium/issues/detail?id=463440#c65), packages are available in [AUR](/index.php/AUR "AUR") as [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) or [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
 
+**Warning:** Wayland support is not enabled in above packages yet. XWayland is [broken](https://github.com/intel/libva/issues/79) on [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
+
 Be sure to install correct VA-API driver for your video card and verify VA-API has been enabled and working correctly, see [Hardware video acceleration#Verifying VA-API](/index.php/Hardware_video_acceleration#Verifying_VA-API "Hardware video acceleration").
 
 To enable video acceleration, [append](/index.php/Append "Append") the following flags to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"):

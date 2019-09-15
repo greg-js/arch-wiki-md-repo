@@ -380,23 +380,22 @@ And reboot before trying again.
 
 ### 7 Days To Die
 
-If game crash on start
+If game crash on start, add the following to Steam launch options:
 
 ```
-# add this to Steam launch option 
-$ LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 %command% -force-glcore
+LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 %command% -force-glcore
 
 ```
 
-If game does not recognize the resolution launch the game with **Game Launcher** check out the **Unity screen selector** to correct the resolution this will give you a GUI that can select the correct screen &| resolution when game is started
+If game does not recognize the resolution launch the game with **Game Launcher** and check the **Unity screen selector** option to correct the resolution. This will give you a GUI that can select the correct screen and when the game is started.
 
-**Note:** game tends to crash or disfunction in windowed mode it may be better to run in fullscreen mode
+**Note:** The game tends to crash or disfunction in windowed mode. It may be advisable to run it in full screen mode.
 
-If that does not help try running the game by checking out the **32-bit** Game-engine in launcher options
+If that does not help try running the game by checking the **32-bit** Game-engine in the launcher options.
 
-It will help the game performens if the **GLCore** option is checked out in launcher options
+It will help the game performance if the **GLCore** option is checked in launcher options.
 
-**Note:** game does not accept .dll '*mods* if installing mods allways check if the mod is a .dll type
+**Note:** The game does not accept `.dll` mods if installing mods. Always check if the mod is of `.dll` type
 
 ### Alien Isolation
 

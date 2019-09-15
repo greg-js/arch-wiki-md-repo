@@ -37,7 +37,6 @@ Related articles
 *   [conky-cli](https://aur.archlinux.org/packages/conky-cli/) - conky without X11 dependencies
 *   [conky-lua](https://aur.archlinux.org/packages/conky-lua/) - with Lua support
 *   [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/) - with both Lua and Nvidia support
-*   [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/) - with Nvidia support
 
 Some built in variables in conky require additional packages to be installed in order to be utilized, for example [Hddtemp](/index.php/Hddtemp "Hddtemp") for hard drive tempurature and [mpd](/index.php/Mpd "Mpd") for music.
 

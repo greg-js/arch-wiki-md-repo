@@ -85,7 +85,11 @@ Having these maps offline is beneficial for both client and server:
 
 ## Play
 
-To play DDNet, run the command `$ DDNet` or run the `.desktop` file provided in the package (e.g. in GNOME, search for "ddnet" in its Activities Overview)
+To play DDNet, run the command
+
+ `$ DDNet` 
+
+or run the `.desktop` file provided in the package (e.g. in GNOME, search for "ddnet" in its Activities Overview)
 
 It is very straightforward – all user configuration (skin selection, video, controls etc.) can be done from the GUI of the DDNet Client.
 

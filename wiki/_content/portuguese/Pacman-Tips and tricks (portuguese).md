@@ -821,7 +821,7 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://userbase.kde.org/Apper](https://userbase.kde.org/Apper) || [apper](https://www.archlinux.org/packages/?name=apper)
 
-*   **Discover** — Gerenciador de aplicativos do Qt 5 usando o PackageKit escrito em C++/QML. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") e [atualizações de firmware](/index.php/Fwupd "Fwupd").
+*   **Discover** — Gerenciador de aplicativos do Qt 5 usando o PackageKit escrito em C++/QML. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak_(Portugu%C3%AAs) "Flatpak (Português)") e [atualizações de firmware](/index.php/Fwupd "Fwupd").
 
 	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
@@ -829,7 +829,7 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **GNOME Software** — Gerenciador de aplicativos GTK 3 usando PackageKit escrito em C. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") e [atualizações de firmware](/index.php/Fwupd "Fwupd").
+*   **GNOME Software** — Gerenciador de aplicativos GTK 3 usando PackageKit escrito em C. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak_(Portugu%C3%AAs) "Flatpak (Português)") e [atualizações de firmware](/index.php/Fwupd "Fwupd").
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 

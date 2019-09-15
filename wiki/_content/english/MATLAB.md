@@ -116,7 +116,53 @@ The EULA for the proprietary MATLAB software is restrictive. The [matlab](https:
 
 The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") defaults to building a package for the most recent 64-bit release of MATLAB, one could also install old releases, eg. [matlab-r2015b](https://aur.archlinux.org/packages/matlab-r2015b/). The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](/index.php/AUR "AUR") requires that both the MATLAB installation software and the file installation key are available in the source directory.
 
-In order to install Matlab from AUR, download the PKGBUILD file from AUR. Download the zip file containing the Matlab installer and name it <tt>matlab.tar</tt>. Then download the .lic file: Go in [your MathWorks account](https://mathworks.com/mwaccount/) and click on the license number you want to use. Then, go to the Install and Activate tab and select "Activate to Retrieve License File". Follow the instructions and download the license file needed for the installation and name the file <tt>matlab.lic</tt>. Also, the File Installation Key (FIK) is displayed: copy-paste it in a empty file and name it <tt>matlab.fik</tt>. For more details, refer to the PKGBUILD file.
+In order to install Matlab from AUR, download the PKGBUILD file from AUR. Download the zip file containing the Matlab installer. Then, run the installer to download necessary files:
+
+```
+bsdtar xC matlab -f matlab_R2019a_glnxa64.zip
+./matlab/install
+
+```
+
+Make sure you check all the boxes of the toolboxes you would need, and wait until the download is finished. Make sure not to close the installer. You can locate the downloaded files:
+
+```
+sudo find /tmp -name "twm*"
+
+```
+
+or
+
+```
+cd /tmp
+ls | grep twm
+
+```
+
+Merge the downloaded files to the installer:
+
+```
+rsync -a /tmp/tmwXXXXXXXX/archives matlab
+
+```
+
+Then package the installer to the required tarball:
+
+```
+bsdtar cf matlab.tar matlab
+
+```
+
+Then download the .lic file: Go in [your MathWorks account](https://mathworks.com/mwaccount/) and click on the license number you want to use. Then, go to the Install and Activate tab and select "Activate to Retrieve License File". Follow the instructions and download the license file needed for the installation and name the file <tt>matlab.lic</tt>. Also, the File Installation Key (FIK) is displayed: copy-paste it in a empty file and name it <tt>matlab.fik</tt>.
+
+Copy the above files to the folder containing the PKGBUILD file. Then, modify the PKGBUILD file to install the toolboxes you need. Then, run the installation:
+
+```
+makepkg -sri
+
+```
+
+For more details, refer to the PKGBUILD file.
 
 ## Configuration
 

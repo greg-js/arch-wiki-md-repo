@@ -89,5 +89,5 @@ For example, to disable WiFi when docking and enable it when undocking:
 
 ## See also
 
-*   [dockd Documentation - ThinkPads.org](http://thinkpads.org/projects/dockd/)
+*   [dockd Documentation - ThinkPads.org](https://libthinkpad.github.io/projects/dockd)
 *   [Docking Port - ThinkWiki](http://www.thinkwiki.org/wiki/Docking_Port)

@@ -46,10 +46,6 @@ Check for the package in the sorted lists below before adding.
 
 *   Up to page 10 [https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=on&SB=l&SO=a&PP=50&do_Orphans=Orphans](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=on&SB=l&SO=a&PP=50&do_Orphans=Orphans)
 
-<--Should be renamed-->
-
-*   [firefox-extension- packages](https://aur.archlinux.org/packages/?O=0&K=firefox-extension) to `firefox-` - Uniformity with the [firefox-addons group](https://www.archlinux.org/groups/any/firefox-addons/) and similar packages in the AUR
-
 ### Possible reasons
 
 *   doesn't work anymore

@@ -9,7 +9,7 @@ Additionally, Jami has a clean separation between daemon and user interface. The
 Jami is currently packaged in [community], with some third-party clients in AUR. You can choose between several versions:
 
 *   official Gnome client, weekly/monthly snapshot: [jami-gnome](https://www.archlinux.org/packages/?name=jami-gnome)
-*   unofficial KDE client, stable version: [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
+*   unofficial KDE client, stable version: [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
 *   Gnome client, latest git version: [ring-gnome-git](https://aur.archlinux.org/packages/ring-gnome-git/)
 *   KDE client, latest git version: [ring-kde-git](https://aur.archlinux.org/packages/ring-kde-git/)
 

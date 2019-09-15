@@ -223,6 +223,7 @@ Webcam: Works
 Fingerprint scanner: not tested
 Keyboard backlight: works | Secure boot works with SYSLINUX. (installed from Archiso) -- |
 | HP Pavilion 15-cw0xxx | 2018.09 | AMD Raven Ridge: *amdgpu* | Intel HDA driver: *snd_hda_intel* ; pulseaudio requires a line to explicitly load an alsa sink for the speaker sound card | RTL8111\. Driver: *r8169* | Realtek RTL8822BE driver: *r8822be* | Yes | ACPI: works Suspend to RAM: works Suspend to Disk: untested Battery: works Display dimming: works CPU frequency scaling: works Rotation sensor: untested | not tested | Volume keys: work keyboard backlight: works | Make sure to install [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) to enable full CPU speed. If not cores are capped to 2.0 GHz |
+| [HP Pavilion 15-ab214nt](/index.php/HP_Pavilion_15-ab214nt "HP Pavilion 15-ab214nt") | 2019.05 | Intel Core i5-6200U, Intel HD Graphics 520 (*i915*) | Intel sound card: *snd-hda-intel* | RTL810xE. Driver: *r8169* | Realtek RTL8723BE driver: *rtl8723be* | Yes | ACPI: works Suspend to RAM: works Suspend to Disk: works Battery: works Display dimming: works CPU frequency scaling: works Rotation sensor: untested | Not tested | Hot keys: work Webcam: works Smart card reader: works | System will hang on boot or on shutdown without the `pci=nomsi` kernel parameter |
 | [HP Spectre x360 - 13-ap0xxxx](/index.php/HP_Spectre_x360_-_13-ap0xxxx "HP Spectre x360 - 13-ap0xxxx") | 2018.12 | Intel Core i7-8565U, Intel UHD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* / Internal mic does not work | None | Intel Ac9560 Driver: *iwlwifi* | Yes | ACPI: works
 Suspend to RAM: works
 Suspend to Disk: untested
@@ -245,6 +246,15 @@ Rotation sensor: works with iio-sensor-proxy and screen-rotator | Not tested | H
 Webcam: Works
 Fingerprint scanner: Not tested
 Keyboard backlight: works |
+| [HP Pavilion Laptop 14-ce0xxx](/index.php?title=HP_Pavilion_Laptop_14-ce0xxx&action=edit&redlink=1 "HP Pavilion Laptop 14-ce0xxx (page does not exist)") | 2019.07 | Intel i7-8550U (8) @ 4.000GHz | Working with Alsa | RTL8111/8168/8411 | RTL8821CE | Untested | ACPI: Working
+Suspend to RAM: Working
+Suspend to Disk: Working
+Battery: Working
+Display dimming: Working
+CPU frequency scaling: Untested
+Rotation sensor: Untested | Untested | Hot Keys: Working
+Webcam: Untested
+Keyboard backlight: Working | For WiFi you need to download an unofficial version from GitHub. |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

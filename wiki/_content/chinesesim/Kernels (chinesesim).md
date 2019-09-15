@@ -14,7 +14,11 @@
 
 在Arch Linux中，除了官方内核之外，还有许多各种各样的内核可供选择。这篇文章列出了这些内核和它们的简短介绍。这里还列出了一些可用的内核补丁的介绍。在文章的最后介绍了自行编译内核的方法。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 官方支持的内核](#官方支持的内核)
 *   [2 编译](#编译)

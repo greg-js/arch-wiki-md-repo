@@ -38,7 +38,7 @@ $ 7z a <archive name> <file name>
 Also it is possible to set password with flag `-p` and hide structure of the archive with flag `-mhe=on`:
 
 ```
-$ 7z a <archive name> <file name> -p<password> -mhe=on
+$ 7z a <archive name> <file name> -p -mhe=on
 
 ```
 

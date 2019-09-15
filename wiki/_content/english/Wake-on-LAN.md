@@ -36,7 +36,7 @@
 
 ## Hardware settings
 
-The target computer's motherboard and [Network Interface Controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN. The target computer has to be physically connected (with a cable) to a router or to the source computer, wireless cards do not support WoL.
+The target computer's motherboard and [Network Interface Controller](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN. The target computer has to be physically connected (with a cable) to a router or to the source computer for WoL to work properly. Some wireless cards have support for Wake on Wireless (WoWLAN or WoW).
 
 The Wake-on-LAN feature also has to be enabled in the computer's BIOS. Different motherboard manufacturers use slightly different language for this feature. Look for terminology such as "PCI Power up", "Allow PCI wake up event" or "Boot from PCI/PCI-E".
 

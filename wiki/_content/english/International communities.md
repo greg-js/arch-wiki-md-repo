@@ -26,17 +26,18 @@ This list is by no means complete. If you know of a community that is not listed
 *   [6 Italian](#Italian)
 *   [7 Japanese](#Japanese)
 *   [8 Lithuanian](#Lithuanian)
-*   [9 Norwegian](#Norwegian)
-*   [10 Persian](#Persian)
-*   [11 Polish](#Polish)
-*   [12 Portuguese](#Portuguese)
-*   [13 Russian](#Russian)
-*   [14 Serbian](#Serbian)
-*   [15 Spanish](#Spanish)
-*   [16 Swedish](#Swedish)
-*   [17 Turkish](#Turkish)
-*   [18 Ukrainian](#Ukrainian)
-*   [19 Vietnamese](#Vietnamese)
+*   [9 Luxembourgish](#Luxembourgish)
+*   [10 Norwegian](#Norwegian)
+*   [11 Persian](#Persian)
+*   [12 Polish](#Polish)
+*   [13 Portuguese](#Portuguese)
+*   [14 Russian](#Russian)
+*   [15 Serbian](#Serbian)
+*   [16 Spanish](#Spanish)
+*   [17 Swedish](#Swedish)
+*   [18 Turkish](#Turkish)
+*   [19 Ukrainian](#Ukrainian)
+*   [20 Vietnamese](#Vietnamese)
 
 ## Chinese
 
@@ -76,7 +77,6 @@ This list is by no means complete. If you know of a community that is not listed
 *   Forum: [https://bbs.archlinux.de/](https://bbs.archlinux.de/)
 *   Wiki: [https://wiki.archlinux.de/](https://wiki.archlinux.de/)
 *   Arch Linux User Group Berlin: [https://archlinux.berlin/](https://archlinux.berlin/)
-*   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
 ## Greek
 
@@ -102,6 +102,10 @@ This list is by no means complete. If you know of a community that is not listed
 
 *   Forum: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
 *   Wiki: [lt:Main page](https://wiki.archlinux.org/index.php/Main_page_(Lietuvi%C5%A1kai) "lt:Main page")
+
+## Luxembourgish
+
+*   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
 ## Norwegian
 

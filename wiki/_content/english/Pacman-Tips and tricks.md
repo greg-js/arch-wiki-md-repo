@@ -86,7 +86,7 @@ Figuring out which packages are largest can be useful when trying to free space 
 The following command will list all installed packages and their individual sizes:
 
 ```
-$ pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+$ LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
 
 ```
 

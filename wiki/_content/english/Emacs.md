@@ -49,18 +49,6 @@ Emacs comes in several variants (sometimes referred to as *emacsen*). The most c
 
 [Install](/index.php/Install "Install") [emacs](https://www.archlinux.org/packages/?name=emacs), available in the [official repositories](/index.php/Official_repositories "Official repositories"). If you usually work in a terminal, you may prefer the [emacs-nox](https://www.archlinux.org/packages/?name=emacs-nox) variant without GTK (nor sound and other fancy stuff). Be aware that the text version comes with some drawbacks: it supports less colors and less features for font handling (size change in live, various sizes in one document, and so on). Besides, emacs-nox has some limitation with advanced features like the Speedbar or GUD (the debugging environment), and is somewhat slower when handling complex faces (a "face" is the visual appearance of text in Emacs).
 
-If you want to fully enjoy all the extended features of Emacs without installing a daunting amount of dependencies, you can use the PKGBUILD to customize your needs. Using anything else than `gtk3` you can get rid of gconf. Image and sound support can be disabled as well. Run `./configure --help` in Emacs source folder to list all available options.
-
- `PKGBUILD` 
-```
-# ...
-  ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
-    --localstatedir=/var --with-x-toolkit=gtk2 --with-xft \
-    --without-gconf --without-sound
-# ...
-
-```
-
 ## Running Emacs
 
 Before launching emacs, you should know how to close it (especially if you run it in a terminal): use the `Ctrl+x``Ctrl+c` key sequence.

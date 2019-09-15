@@ -7,10 +7,11 @@
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | [Mobile internet](/index.php/ThinkPad_mobile_Internet "ThinkPad mobile Internet") | Yes¹ |
-| Fingerprint Sensor |
+| Fingerprint Sensor | No² |
 | 
 
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
+2.  No working Linux driver so far for Synaptics 06cb:009a. See [here](https://github.com/nmikhailov/Validity90) and [here](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320/highlight/true#M13440).
 
  |
 

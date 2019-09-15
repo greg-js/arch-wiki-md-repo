@@ -22,12 +22,12 @@
         *   [1.1.6 Financial management](#Financial_management)
         *   [1.1.7 Cryptocurrency](#Cryptocurrency)
         *   [1.1.8 Project management](#Project_management)
+        *   [1.1.9 Recipe management](#Recipe_management)
     *   [1.2 Education](#Education)
         *   [1.2.1 Flashcards](#Flashcards)
         *   [1.2.2 Touch typing](#Touch_typing)
             *   [1.2.2.1 Console](#Console_4)
             *   [1.2.2.2 Graphical](#Graphical_4)
-        *   [1.2.3 Recipe management](#Recipe_management)
     *   [1.3 Accessibility](#Accessibility)
         *   [1.3.1 Speech synthesizers](#Speech_synthesizers)
         *   [1.3.2 Speech recognition](#Speech_recognition)
@@ -452,6 +452,20 @@ See also [Wikipedia:Comparison of project management software](https://en.wikipe
 
 	[http://taskjuggler.org/](http://taskjuggler.org/) || [taskjuggler](https://aur.archlinux.org/packages/taskjuggler/)
 
+#### Recipe management
+
+*   **GNOME Recipes** — Recipe management application for GNOME.
+
+	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
+
+*   **Gourmet** — Simple but powerful recipe-managing application.
+
+	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://aur.archlinux.org/packages/gourmet/)
+
+*   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
+
+	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://aur.archlinux.org/packages/krecipes/)
+
 ### Education
 
 See also [List of games#Education](/index.php/List_of_games#Education "List of games").
@@ -545,20 +559,6 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 *   **TypingTest** — Typing test desktop program with a large amount of customization.
 
 	[https://github.com/laelath/typingtest](https://github.com/laelath/typingtest) || [typingtest-git](https://aur.archlinux.org/packages/typingtest-git/)
-
-#### Recipe management
-
-*   **GNOME Recipes** — Recipe management application for GNOME.
-
-	[https://wiki.gnome.org/Apps/Recipes](https://wiki.gnome.org/Apps/Recipes) || [gnome-recipes](https://www.archlinux.org/packages/?name=gnome-recipes)
-
-*   **Gourmet** — Simple but powerful recipe-managing application.
-
-	[http://thinkle.github.io/gourmet/](http://thinkle.github.io/gourmet/) || [gourmet](https://aur.archlinux.org/packages/gourmet/)
-
-*   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
-
-	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://aur.archlinux.org/packages/krecipes/)
 
 ### Accessibility
 

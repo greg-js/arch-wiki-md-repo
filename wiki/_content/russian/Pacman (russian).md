@@ -613,7 +613,12 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded.
 
 ```
-Установите [время](/index.php/Time_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Time (Русский)") (например, командой `ntpd -qg` от имени root) и выполните `hwclock -w` от имени root перед тем, как пытаться вновь установить/обновить пакет.
+
+Установите [время](/index.php/Time_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Time (Русский)") (например, командой `ntpd -qg` от имени root) и выполните
+
+ `hwclock -w` 
+
+от имени root перед тем, как пытаться вновь установить/обновить пакет.
 
 ### Ошибка "Warning: current locale is invalid; using default "C" locale"
 

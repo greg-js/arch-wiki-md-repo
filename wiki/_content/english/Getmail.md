@@ -9,7 +9,9 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Retrieving mail](#Retrieving_mail)
-        *   [2.1.1 More than one Email account with getmail](#More_than_one_Email_account_with_getmail)
+        *   [2.1.1 Password management](#Password_management)
+        *   [2.1.2 Other options](#Other_options)
+        *   [2.1.3 More than one Email account with getmail](#More_than_one_Email_account_with_getmail)
     *   [2.2 Sorting mail with procmail](#Sorting_mail_with_procmail)
     *   [2.3 Fetching mail automatically with systemd](#Fetching_mail_automatically_with_systemd)
 *   [3 See also](#See_also)
@@ -42,6 +44,17 @@ path = ~/mail/
 
 You can tweak this to your POP3 service's specification.
 
+#### Password management
+
+It is possible, rather than storing your password in the config, to call an external program to read the password. In which case, you would use the `password_command` parameter:
+
+```
+  password_command = ("/path/to/password-retriever", "-p", "myaccount@example.org")
+
+```
+
+Note that the password parameter (in the example config above) overrides this parameter; specify one or the other, not both.
+
 To store the password in a keyring instead of in plain text in the configuration file, setup [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and install the [python2-gnomekeyring](https://aur.archlinux.org/packages/python2-gnomekeyring/) package. Then, delete the `password` entry from `getmailrc`, and run
 
 ```
@@ -50,6 +63,8 @@ To store the password in a keyring instead of in plain text in the configuration
 ```
 
 type the password when prompted to have it saved into the keyring.
+
+#### Other options
 
 Most people will like to add the following section to their `getmailrc` to prevent all the mail on the server being downloaded every time getmail is ran.
 

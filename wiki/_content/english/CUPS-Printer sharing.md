@@ -25,18 +25,12 @@ This article contains instruction on sharing printers from a GNU/Linux system.
     *   [2.2 Sharing via Internet Printing Protocol](#Sharing_via_Internet_Printing_Protocol)
     *   [2.3 Sharing via Samba](#Sharing_via_Samba)
     *   [2.4 Sharing via Line Printer Daemon protocol](#Sharing_via_Line_Printer_Daemon_protocol)
-*   [3 Windows server - Linux client](#Windows_server_-_Linux_client)
-    *   [3.1 Sharing via LPD](#Sharing_via_LPD)
-    *   [3.2 Sharing via Samba](#Sharing_via_Samba_2)
-        *   [3.2.1 Configuration using the web interface](#Configuration_using_the_web_interface)
-        *   [3.2.2 Manual configuration](#Manual_configuration)
-        *   [3.2.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
-*   [4 Remote administration](#Remote_administration)
-    *   [4.1 Kerberos](#Kerberos)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
-    *   [5.2 Permission errors on Windows](#Permission_errors_on_Windows)
-*   [6 Other operating systems](#Other_operating_systems)
+*   [3 Remote administration](#Remote_administration)
+    *   [3.1 Kerberos](#Kerberos)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
+    *   [4.2 Permission errors on Windows](#Permission_errors_on_Windows)
+*   [5 Other operating systems](#Other_operating_systems)
 
 ## Creating class for multiple printers
 
@@ -159,131 +153,6 @@ See Samba's documentation [Setting up Samba as a Print Server](https://wiki.samb
 **Warning:** *cups-lpd* does not perform any access control based on the settings in `/etc/cups/cupsd.conf`. Therefore, running *cups-lpd* on your server will allow any computer on your network (and perhaps the entire Internet) to print to your server.
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `org.cups.cups-lpd.socket`.
-
-## Windows server - Linux client
-
-**Warning:** Any special characters in the printer URIs need to be appropriately quoted, or, if your Windows printer name or user passwords have spaces, CUPS will throw a `lpadmin: Bad device-uri` error.
-
-For example, `smb://BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6` becomes `smb://BEN-DESKTOP/HP%20Color%20LaserJet%20CP1510%20series%20PCL6`.
-
-This result string can be obtained by running the following command:
-
-```
-$ python -c 'from urllib.parse import quote; print("smb://" + quote("BEN-DESKTOP/HP Color LaserJet CP1510 series PCL6"))'
-
-```
-
-### Sharing via LPD
-
-Windows 7, 8 and 10 have a built-in LPD server - using it will probably be the easiest approach as it does neither require an installation of *Samba* on the client nor heavy configuration on the server. It can be activated in the *Control Panel* under *Programs* -> *Activate Windows functions* in the section *Print services*. The printer must have *shared* activated in its properties. Use a share name without any special characters like spaces, commas, etc.
-
-Then the printer can be added in CUPS, choosing LPD protocol. The printer address will look like this:
-
-```
-lpd://windowspc/printersharename
-
-```
-
-Before adding the printer, you will most likely have to install an appropriate printer driver depending on your printer model. Generic PostScript or RAW drivers might also work.
-
-### Sharing via Samba
-
-A **much simpler way** is using Window's native printer sharing via Samba. There is almost no configuration needed, and all of it can be done from the CUPS Backend. As above noted, if there are any problems the reason is mostly related to authentication trouble and Windows access restrictions.
-
-On the server side enable sharing for your desired printer and ensure that the user on the client machine has the right to access the printer.
-
-The following section describes how to set up the client, assuming that both daemons (cupsd and smbd) are running.
-
-#### Configuration using the web interface
-
-The Samba CUPS back-end is enabled by default, if for any reason it is not activate it by entering the following command and restarting CUPS.
-
-```
-# ln -s $(which smbspool) /usr/lib/cups/backend/smb
-
-```
-
-Next, simply log in on the CUPS web interface and choose to add a new printer. As a device choose "Windows Printer via SAMBA".
-
-For the device location, enter:
-
-```
-smb://username:password@hostname/printer_name
-
-```
-
-Or without a password:
-
-```
-smb://username@hostname/printer_name
-
-```
-
-Make sure that the user actually has access to the printer on the Windows computer and select the appropriate drivers. If the computer is located on a domain, make sure the URI includes the domain:
-
-```
-smb://username:password@domain/hostname/printer_name
-
-```
-
-#### Manual configuration
-
-For manual configuration stop the CUPS daemon and add your printer to `/etc/cups/printers.conf`, which might for example look like this
-
- `/etc/cups/printers.conf` 
-```
-<DefaultPrinter MyPrinter>
-AuthInfoRequired username,password
-Info My printer via SAMBA
-Location In my Office
-MakeModel Samsung ML-1250 - CUPS+Gutenprint v5.2.7        # <= use 'lpinfo -m' to list available models
-DeviceURI smb://username:password@hostname/printer_name   # <= server URI as described in previous section
-State Idle
-Type 4
-Accepting Yes
-Shared No
-JobSheets none none
-QuotaPeriod 0
-PageLimit 0
-KLimit 0
-AllowUser yourusername                                    # <= do not forget to change this
-OpPolicy default
-ErrorPolicy stop-printer
-</Printer>
-```
-
-Then restart the CUPS daemon and try to print a test page.
-
-#### Finding URIs for Windows print servers
-
-Sometimes Windows is a little less than forthcoming about exact device URIs (device locations). If having trouble specifying the correct device location in CUPS, run the following command to list all shares available to a certain windows username:
-
-```
-$ smbtree -U *windowsusername*
-
-```
-
-This will list every share available to a certain Windows username on the local area network subnet, as long as Samba is set up and running properly. It should return something like this:
-
-```
- WORKGROUP
-	\\REGULATOR-PC   		
-		\\REGULATOR-PC\Z              	
-		\\REGULATOR-PC\Public         	
-		\\REGULATOR-PC\print$         	Printer Drivers
-		\\REGULATOR-PC\G              	
-		\\REGULATOR-PC\EPSON Stylus CX8400 Series	EPSON Stylus CX8400 Series
-
-```
-
-What is needed here is first part of the last line, the resource matching the printer description. So to print to the EPSON Stylus printer, one would enter:
-
-```
-smb://username:password@REGULATOR-PC/EPSON%20Stylus%20CX8400%20Series
-
-```
-
-as the URI into CUPS.
 
 ## Remote administration
 

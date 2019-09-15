@@ -83,7 +83,7 @@ CPU frequency scaling: Yes | N/A | Webcam: Yes
 Hotkeys: OK
 Synaptic Touchpad: OK
 HDMI: Yes
-Booting from NVME: Yes | Ran into trouble with with fun control, porting driver from windows is required. |
+Booting from NVME: Yes | Ran into trouble with with fan control, porting driver from windows is required. |
 | Acer Nitro VN7-792G-710p | archlinux-2016.10.01-dual | Intel HD 530
 Nvidia GeForce GTX 960M 2GB VRAM | OK | Realtek: OK | OK | OK | Suspend to RAM: Yes
 Disk: Yes

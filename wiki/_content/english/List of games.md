@@ -1075,9 +1075,9 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.openra.net/](http://www.openra.net/) || [openra](https://www.archlinux.org/packages/?name=openra)
 
-*   **[Spring:1944](https://en.wikipedia.org/wiki/Spring_Engine#Spring:1944 "wikipedia:Spring Engine")** — A WWII themed game with four fully functional sides (US, Germany, USSR, Britain), period-accurate units and strengths. Realism comes second only to creating a game that is fun and accessible to play.
+*   **[Spring:1944](https://en.wikipedia.org/wiki/Spring_Engine#Spring:1944 "wikipedia:Spring Engine")** — A WWII themed game with four fully functional sides (US, Germany, USSR, Britain), period-accurate units and strengths. Realism comes second only to creating a game that is fun and accessible to play. The game can be downloaded through SpringLobby, the official lobby client for the spring lobby.
 
-	[http://spring1944.net/](http://spring1944.net/) || [spring-1944](https://www.archlinux.org/packages/?name=spring-1944)
+	[http://spring1944.net/](http://spring1944.net/) || [springlobby](https://www.archlinux.org/packages/?name=springlobby)
 
 *   **[Unknown Horizons](https://en.wikipedia.org/wiki/Unknown_Horizons "wikipedia:Unknown Horizons")** — 2.5D isometric real-time strategy simulation with an emphasis on economy and city building. Expand your small settlement to a strong and wealthy colony, collect taxes and supply your inhabitants with valuable goods. Increase your power with a well balanced economy and with strategic trade and diplomacy.
 
@@ -1120,6 +1120,13 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **KsirK** — A *risk*-styled game in which players try to conquer the world by deciding which area to be invaded next. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/ksirk/](https://www.kde.org/applications/games/ksirk/) || [ksirk](https://www.archlinux.org/packages/?name=ksirk)
+
+*   **OpenXCom** — An open source implementation of the game UFO: Enemy Unknown (X-Com: UFO defence in North America), with a plethora of community created mods.
+
+	[https://openxcom.org](https://openxcom.org) || [openxcom](https://aur.archlinux.org/packages/openxcom/), [openxcom-git](https://aur.archlinux.org/packages/openxcom-git/)
+
+*   An extended and more customisable version of Open X-COM (OXCE) [[2]](https://openxcom.org/forum/index.php/board,22.0.html) – [openxcom-extended](https://aur.archlinux.org/packages/openxcom-extended/), [openxcom-extended-git](https://aur.archlinux.org/packages/openxcom-extended-git/)
+*   Mods for Open X-COM and OXCE [[https://aur.archlinux.org/packages/openxcom-mod-40k/ openxcom-mod-40k](https://openx–), [openxcom-mod-area51](https://aur.archlinux.org/packages/openxcom-mod-area51/), [openxcom-mod-twots](https://aur.archlinux.org/packages/openxcom-mod-twots/), [openxcom-mod-xfiles](https://aur.archlinux.org/packages/openxcom-mod-xfiles/), [openxcom-mod-xpiratez](https://aur.archlinux.org/packages/openxcom-mod-xpiratez/)
 
 *   **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "wikipedia:The Battle for Wesnoth")** — Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat.
 

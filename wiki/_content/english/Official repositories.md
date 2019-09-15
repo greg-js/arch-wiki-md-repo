@@ -133,7 +133,7 @@ New packages go into *testing* if:
 
 *testing* is the only repository that can have name collisions with any of the other official repositories. If enabled, it has to be the first repository listed in your `/etc/pacman.conf` file.
 
-**Note:** *testing* is not for the "newest of the new" package versions. Part of its purpose is to hold package updates that have the potential to break the system, either by being part of the *core* set of packages, or by being critical in other ways. As such, users of *testing* are strongly encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), watch the [testing repository forum](https://bbs.archlinux.org/viewforum.php?id=49), and to [report all bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+**Note:** *testing* is not for the "newest of the new" package versions. Part of its purpose is to hold package updates that have the potential to break the system, either by being part of the *core* set of packages, or by being critical in other ways. As such, users of *testing* are strongly encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), watch the [testing repository forum](https://bbs.archlinux.org/viewforum.php?id=49), and to [report all bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines"). You should also consider joining the [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team").
 
 ### community-testing
 

@@ -309,7 +309,9 @@ exec padsp /usr/bin/OSSprogram "$@"
 
 ### OpenAL
 
-Приложение OpenAL должно использовать PulseAudio по умолчанию, но может быть настроено так, чтобы использовать именно его: `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
+Приложение OpenAL должно использовать PulseAudio по умолчанию, но может быть настроено так, чтобы использовать именно его:
+
+ `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
 
 ### libao
 

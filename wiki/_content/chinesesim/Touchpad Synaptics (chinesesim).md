@@ -239,20 +239,28 @@ To change these settings in **Cinnamon**:
 
 ## 高级配置
 
+``
+
 ### 使用xinput来检测您的触摸板有什么功能
 
+``
+
 根据型号不同，Synaptics可能有以下特性:
+
+``
 
 *   拥有物理左键，物理中键，物理右键
 *   能够进行两指检测
 *   能够进行三指检测
 *   能够配置分辨率
 
+``
+
 使用 `xinput list`来找到您的synaptics设备名
 
 首先，找到触摸板的名字
 
- `$ xinput -list` 
+`` `$ xinput -list` ``
 
 然后，您可以使用`xipunt`来查看您的触摸板有什么特性
 

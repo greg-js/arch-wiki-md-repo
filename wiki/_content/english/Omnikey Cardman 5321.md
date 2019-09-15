@@ -2,7 +2,7 @@ This page will explain how to get the Omnikey Cardman 5321 SmartCard Reader up a
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pcsclite](https://www.archlinux.org/packages/?name=pcsclite), [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools), and [omnikey_cardman_5x2x](https://aur.archlinux.org/packages/omnikey_cardman_5x2x/) packages.
+[Install](/index.php/Install "Install") the [pcsclite](https://www.archlinux.org/packages/?name=pcsclite), [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools), and [omnikey_ifdokccid](https://aur.archlinux.org/packages/omnikey_ifdokccid/) packages.
 
 [Start](/index.php/Start "Start") pcscd with `pcscd.service`.
 

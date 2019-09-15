@@ -297,7 +297,7 @@ To use the Dovecot SASL in a TLS protected environment, add the following authen
 
 ```
 
-The existing router for local delivery can be reused. You may want to consider add a `dsn_lasthop` to the router definition. If [DSN](https://en.wikipedia.org/wiki/de:Delivery_Status_Notification "wikipedia:de:Delivery Status Notification") is used, Exim will assume final delivery of the message at this point. In the transport section the transport for local delivery must be replaced by the following transport definition.
+The existing router for local delivery can be reused. You may want to consider add a `dsn_lasthop` to the router definition. If [DSN](https://en.wikipedia.org/wiki/Delivery_Status_Notification "wikipedia:Delivery Status Notification") is used, Exim will assume final delivery of the message at this point. In the transport section the transport for local delivery must be replaced by the following transport definition.
 
  `/etc/mai/exim.conf - transports section` 
 ```
@@ -408,7 +408,7 @@ Security breaches happen. In case you don't have any service that submits local 
 
 ```
 
-In local submission is required, consider imposing a rate limit to it. Do so by adding `acl_not_smtp = acl_local` to the main section and adding the following ACL to the acl section. It imposes 2 rate limits: 20 mails in a single minute and 30 mails in 10 minutes. With this a burst of local submitted alerts are possible while
+If local submission is required, consider imposing a rate limit to it. Do so by adding `acl_not_smtp = acl_local` to the main section and adding the following ACL to the acl section. It imposes 2 rate limits: 20 mails in a single minute and 30 mails in 10 minutes. With this a burst of local submitted alerts are possible while
 
  `/etc/mail/exim.conf - acl section` 
 ```

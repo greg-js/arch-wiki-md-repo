@@ -107,19 +107,24 @@ To check if OpenGL OMTC is enabled, go to `about:support` and under the "Graphic
 
 If OpenGL OMTC is disabled, you can force-enable it by going to `about:config` and enabling `layers.acceleration.force-enabled`. Restart Firefox for changes to take effect.
 
-**Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
+**Note:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
 
 For more information on OMTC in Firefox read [MozillaWiki:Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing "mozillawiki:Platform/GFX/OffMainThreadCompositing").
 
 ### Enable WebRender
 
-Enables WebRender compositor in Servo, instead of Gecko. Improves performance in supported hardware. Fixes some black visual glitches when "OpenGL Off-Main-Thread" is enabled. Currently it has some known bugs. You can read more in [MozillaWiki:Platform/GFX/Quantum Render](https://wiki.mozilla.org/Platform/GFX/Quantum_Render "mozillawiki:Platform/GFX/Quantum Render").
+Enables WebRender compositor in Servo, instead of Gecko. It improves performance on supported hardware, fixes some black visual glitches when "OpenGL Off-Main-Thread" is enabled. Currently it has some known bugs. You can read more in [MozillaWiki:Platform/GFX/Quantum Render](https://wiki.mozilla.org/Platform/GFX/Quantum_Render "mozillawiki:Platform/GFX/Quantum Render").
 
-You can force-enable it by going to `about:config` and setting `gfx.webrender.all` to `true`. Restart Firefox for changes to take effect.
+Mozilla is slowly deploying WebRender to "qualified" Linux configurations. The qualification mostly depends on the GPU, the driver's version and the screen resolution.
 
-To check if webrender is enabled go to `about:support` and under the "Graphics" section look for "WEBRENDER". If it reports "available by user: Force enabled by pref", it means is enabled. Otherwise it will just report "opt-in by default".
+One can force-enable it using one of the two methods below:
 
-**Warning:** If WebRender is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you are not sure.
+1.  by setting the `MOZ_WEBRENDER` [environment variable](/index.php/Environment_variable "Environment variable") to `1` before launching Firefox.
+2.  by going to `about:config` and setting `gfx.webrender.all` to `true`. Restart Firefox for changes to take effect.
+
+To check if WebRender is enabled go to `about:support` and under the "Graphics" section, in the "Decision Log" sub-section, look for "WEBRENDER". If it reports "available by user: Force enabled by pref", it means is enabled. Otherwise it will just report "opt-in by default: WebRender is an opt-in feature".
+
+**Note:** If WebRender is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you are not sure.
 
 ### Enable Accelerated Azure Canvas
 
@@ -324,7 +329,7 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 #### Hide window border and title bar
 
-Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it.
+Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it. If the checkbox is missing, make sure the `XDG_CURRENT_DESKTOP` environment variable is correctly set and/or the `MOZ_GTK_TITLEBAR_DECORATION` environment variable is set to "client" or "system".
 
 #### Auto-hide Bookmarks Toolbar
 

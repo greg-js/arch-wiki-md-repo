@@ -247,4 +247,4 @@ See [List of applications/Utilities#Version control systems](/index.php/List_of_
 *   [Exhaustive list of backup solutions for Linux](https://github.com/restic/others)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
-*   [rsync-snapshot.sh](http://blog.pointsoftware.ch/index.php/howto-local-and-remote-snapshot-backup-using-rsync-with-hard-links/) — Local and remote snapshot backup using rsync with hard links
+*   [rsync-snapshots.sh](https://github.com/artur-shaik/rsync-snapshots) — Local and remote snapshot backup using rsync with hard links

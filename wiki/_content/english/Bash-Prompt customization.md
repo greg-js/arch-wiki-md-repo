@@ -156,7 +156,7 @@ $ trap 'tput sgr0' DEBUG
 
 ### Customizing root prompts
 
-To ensure that you know when you are running as root, you can customize your root prompt to make it clearly stand out (perhaps blinking red?). This is done by customize the Bash prompt as usual but in root's home directory, `/root`. Start off by copying the skeleton files `/etc/skel/.bash_profile` and `/etc/skel/.bashrc` to `/root`, then edit `/root/.bashrc` as desired.
+To ensure that you know when you are running as root, you can customize your root prompt to make it clearly stand out (perhaps blinking red?). This is done by customizing the Bash prompt as usual but in root's home directory, `/root`. Start off by copying the skeleton files `/etc/skel/.bash_profile` and `/etc/skel/.bashrc` to `/root`, then edit `/root/.bashrc` as desired.
 
 ## Examples
 

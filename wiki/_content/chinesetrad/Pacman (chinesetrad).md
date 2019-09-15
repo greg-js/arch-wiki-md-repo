@@ -551,7 +551,12 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded. 
 
 ```
-當系統時鐘錯誤時會出現這些錯誤。設定好[時間](/index.php/System_time "System time")並執行： `# hwclock -w` ，再嘗試安裝/升級軟體包。
+
+當系統時鐘錯誤時會出現這些錯誤。設定好[時間](/index.php/System_time "System time")並執行：
+
+ `# hwclock -w` 
+
+，再嘗試安裝/升級軟體包。
 
 ### 我一直得到 "failed to commit transaction (invalid or corrupted package)" 錯誤
 

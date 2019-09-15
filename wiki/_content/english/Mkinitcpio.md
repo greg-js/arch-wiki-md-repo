@@ -189,6 +189,8 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks/`, custom runtime hooks can 
 
 `run_cleanuphook`: Functions of this name are run as late as possible, and in the reverse order of how they are listed in the `HOOKS` setting in the config file. These hooks should be used for any last minute cleanup, such as shutting down any daemons started by an early hook.
 
+**Note:** Runtime hooks are only used by busybox init. **systemd** hook triggers a systemd based init, which does not run any runtime hooks but uses systemd units instead.
+
 #### Common hooks
 
 A table of common hooks and how they affect image creation and runtime follows. Note that this table is not complete, as packages can provide custom hooks.

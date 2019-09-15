@@ -19,7 +19,7 @@ On Arch Linux the device nodes are managed by [udev](/index.php/Udev "Udev").
 *   [1 Block devices](#Block_devices)
     *   [1.1 Block device names](#Block_device_names)
         *   [1.1.1 SCSI](#SCSI)
-        *   [1.1.2 NVME](#NVME)
+        *   [1.1.2 NVMe](#NVMe)
         *   [1.1.3 MMC](#MMC)
         *   [1.1.4 SCSI optical disc drive](#SCSI_optical_disc_drive)
     *   [1.2 Utilities](#Utilities)
@@ -51,7 +51,7 @@ Summary:
 *   `/dev/sde` - device `e`, the fifth discovered device.
 *   `/dev/sde7` - partition `7` on device `e`.
 
-#### NVME
+#### NVMe
 
 The name of storage devices, like [SSDs](/index.php/SSD "SSD"), that are attached via [NVM Express](/index.php/NVM_Express "NVM Express") (NVMe) starts with `nvme`. It is then followed by a number starting from `0` for the device controller, `nvme0` for the first discovered NVMe controller, `nvme1` for the second, and so on. Next is the letter "n" and a number starting from `1` expressing the device on a controller, i.e. `nvme0n1` for first discovered device on first discovered controller, `nvme0n2` for second discovered device on first discovered controller, and so on. Existing [partitions](/index.php/Partition "Partition") on each device will be listed with the letter "p" and the number that is assigned to them in the partition table. For example, `nvme0n1p` for the partition with number `1` on first discovered device on first discovered controller, `nvme0n1p2` for partition `2`, and so on.
 

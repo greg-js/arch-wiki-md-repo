@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2019-06-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=571705) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Installation guide](/index.php/Installation_guide "Installation guide"), revisada por última vez el **2019-09-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=582205) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema «*live*» arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)"). En particular, los ejemplos de código pueden contener marcadores de posición (resaltados en `*cursiva*`) que deberán reemplazarse manualmente.
 
 Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki (Español)](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), o las [páginas de los manuales](/index.php/Man_page "Man page") de los distintos programas, con enlaces para ambos a lo largo de esta guía. Para obtener ayuda interactiva, dispone de los [Arch IRC channels (Español)](/index.php/Arch_IRC_channels_(Espa%C3%B1ol) "Arch IRC channels (Español)") y los [foros](https://bbs.archlinux.org/).
 
-Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a internet funcional.
+Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MiB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MiB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, esta guía asume que dispone de una conexión a internet funcional.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -45,7 +45,7 @@ Las imágenes de instalación y sus firmas [GnuPG (Español)](/index.php/GnuPG_(
 
 ### Verificar las firmas
 
-Se recomienda verificar la firma de la imagen antes de usarla, especialmente cuando se descarga desde un *servidor de réplica HTTP*, donde las descargas generalmente son susceptibles de ser interceptadas por [imágenes de servidores maliciosos](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
+Se recomienda verificar la firma de la imagen antes de usarla, especialmente cuando se descarga desde un *servidor de réplica HTTP*, donde las descargas generalmente son susceptibles de ser interceptadas por [imágenes de servidores maliciosos](https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html).
 
 En un sistema con [GnuPG (Español)](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") instalado, realice esta operación descargando la *firma PGP* (bajo *Checksums*) en el directorio de la imagen ISO, y [verifíquela](/index.php/GnuPG#Verify_a_signature "GnuPG") con la siguiente orden:
 
@@ -64,7 +64,7 @@ $ pacman-key -v archlinux-*version*-x86_64.iso.sig
 **Nota:**
 
 *   La firma en sí podría manipularse si se descarga desde un sitio de réplica, en lugar de hacerlo desde [archlinux.org](https://archlinux.org/download/) como se recomendó antes. En este caso, asegúrese de que la clave pública, que se utiliza para decodificar la firma, esté firmada por otra clave de confianza. La orden `gpg` emitirá la huella digital de la clave pública.
-*   Otro método para verificar la autenticidad de la firma es asegurarse de que la huella digital de la clave pública sea idéntica a la huella digital de la del [desarrollador de Arch Linux](https://www.archlinux.org/people/developers/) que firmó el archivo ISO. Consulte [Wikipedia:es:Criptografía asimétrica](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa_asim%C3%A9trica "wikipedia:es:Criptografía asimétrica") para obtener más información sobre el proceso de clave pública para autenticar claves.
+*   Otro método para verificar la autenticidad de la firma es asegurarse de que la huella digital de la clave pública sea idéntica a la huella digital de la del [desarrollador de Arch Linux](https://www.archlinux.org/people/developers/) que firmó el archivo ISO. Consulte [Wikipedia:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") y [Wikipedia:es:Criptografía asimétrica](https://en.wikipedia.org/wiki/es:Criptograf%C3%ADa_asim%C3%A9trica "wikipedia:es:Criptografía asimétrica") para obtener más información sobre el proceso de clave pública para autenticar claves.
 
 ### Arrancar el entorno live
 
@@ -86,7 +86,7 @@ Por defecto, [la distribución del teclado de la consola](/index.php/Fonts_(Espa
 
 ```
 
-La distribución del teclado se puede cambiar con la orden [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), añadiendo el nombre de un archivo (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»). Por ejemplo, para establecer ua distribución de teclado en [español](https://en.wikipedia.org/wiki/es:File:KB_Spanish.svg "wikipedia:es:File:KB Spanish.svg"), ejecute:
+La distribución del teclado se puede cambiar con la orden [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), añadiendo el nombre de un archivo (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»). Por ejemplo, para establecer una distribución de teclado en [español](https://en.wikipedia.org/wiki/es:File:KB_Spanish.svg "wikipedia:es:File:KB Spanish.svg"), ejecute:
 
 ```
 # loadkeys es
@@ -110,15 +110,15 @@ Si no existe el directorio, el sistema se iniciará en modo [BIOS](https://en.wi
 
 Para configurar una conexión de red, siga los siguientes pasos:
 
-1.  Asegúrese de que su [interfaz de red](/index.php/Network_interface "Network interface") está en la lista y activada, por ejemplo con la orden [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
-2.  Conéctese a la red. Enchufe el cable Ethernet o [conéctese a una LAN inalámbrica](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)").
-3.  Configure su conexión de red:
-    *   [Dirección IP estátic](/index.php/Network_configuration#Static_IP_address "Network configuration").
+*   Asegúrese de que su [interfaz de red](/index.php/Network_interface "Network interface") está en la lista y activada, por ejemplo con la orden [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8): `# ip link` 
+*   Conéctese a la red. Enchufe el cable Ethernet o [conéctese a una LAN inalámbrica](/index.php/Wireless_network_configuration_(Espa%C3%B1ol) "Wireless network configuration (Español)").
+*   Configure su conexión de red:
+    *   [Dirección IP estática](/index.php/Network_configuration#Static_IP_address "Network configuration").
     *   Dirección IP dinámica: utilice [DHCP](/index.php/DHCP "DHCP").
 
     **Nota:** la imagen de la instalación activa en el arranque [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*nombredelainterfaz*.service`) para [los dispositivos de red cableados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules).
 
-4.  La conexión se puede verificar con la utilidad [ping](https://en.wikipedia.org/wiki/ping "w:ping"): `# ping archlinux.org` 
+*   La conexión se puede verificar con la utilidad [ping](https://en.wikipedia.org/wiki/ping "wikipedia:ping"): `# ping archlinux.org` 
 
 ### Actualizar el reloj del sistema
 
@@ -133,7 +133,7 @@ Para comprobar el estado del servicio, utilice `timedatectl status`.
 
 ### Particionar el disco
 
-Cuando el sistema lo reconoce, los discos se asignan como [dispositivos de bloques](https://en.wikipedia.org/wiki/Device_file#Naming_conventions o *fdisk*:
+Cuando el sistema lo reconoce, los discos se asignan a un [dispositivo de bloque](/index.php/Block_device_(Espa%C3%B1ol) "Block device (Español)") como `/dev/sda` o `/dev/nvme0n1`. Para identificar estos dispositivos, utilice [lsblk](/index.php/Lsblk_(Espa%C3%B1ol) "Lsblk (Español)") o *fdisk*:
 
 ```
 # fdisk -l
@@ -152,12 +152,12 @@ Si desea crear dispositivos de bloques apilados —*stacked block devices*— pa
 #### Esquemas de ejemplo
 
 | BIOS con [MBR](/index.php/MBR "MBR") |
-| Punto de montaje | Partición | [Tipo de partición](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Tamaño sugerido |
+| Punto de montaje | Partición | [Tipo de partición](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | Tamaño sugerido |
 | `/mnt` | `/dev/sd*X*1` | Linux | Resto del dispositivo |
 | [SWAP] | `/dev/sd*X*2` | Linux swap | Más de 512 MiB |
 | UEFI con [GPT](/index.php/GPT "GPT") |
-| Punto de montaje | Partición | [Tipo de partición](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Tamaño sugerido |
-| `/mnt/boot` o `/mnt/efi` | `/dev/sd*X*1` | [EFI system partition](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") | 256–512 MiB |
+| Punto de montaje | Partición | [Tipo de partición](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | Tamaño sugerido |
+| `/mnt/boot` o `/mnt/efi` | `/dev/sd*X*1` | [EFI system partition](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") | 260–512 MiB |
 | `/mnt` | `/dev/sd*X*2` | Linux x86-64 root (/) | Resto del dispositivo |
 | [SWAP] | `/dev/sd*X*3` | Linux swap | Más de 512 MiB |
 
@@ -326,13 +326,11 @@ Establezca la [contraseña](/index.php/Users_and_groups_(Espa%C3%B1ol)#Base_de_d
 
 ### Instalar gestor de arranque
 
-Consulte [Arch boot process (Español)#Gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") para obtener una lista de cargadores de arranque compatibles con Linux.
-
-**Nota:** si tiene una CPU Intel o AMD, active las actualizaciones de [microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)").
+Elija e instale un [gestor de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)") compatible con Linux. Si tiene una CPU Intel o AMD, active las actualizaciones de [microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)").
 
 ## Reiniciar
 
-Salga del entorno chroot escribiendo `exit` o presionando `Ctrl+D`.
+Salga del entorno chroot escribiendo `exit` o presionando `Ctrl+d`.
 
 Opcionalmente, puede desmontar manualmente todas las particiones con `umount -R /mnt`: esto permite advertir cualquier partición «ocupada», y buscar su causa con [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
 

@@ -143,11 +143,11 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTime
 You can do this from an Administrator Command Prompt running:
 
 ```
-reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_QWORD /f
 
 ```
 
-(Replace `DWORD` with `QWORD` for 64-bit Windows.)
+(Replace `QWORD` with `DWORD` for 32-bit Windows.)
 
 Alternatively, create a `*.reg` file (on the desktop) with the following content and double-click it to import it into registry:
 
@@ -155,11 +155,11 @@ Alternatively, create a `*.reg` file (on the desktop) with the following content
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
-     "RealTimeIsUniversal"=dword:00000001
+     "RealTimeIsUniversal"=qword:00000001
 
 ```
 
-(Replace `dword` with `qword` for 64-bit Windows.)
+(Replace `qword` with `dword` for 32-bit Windows.)
 
 Should Windows ask to update the clock due to DST changes, let it. It will leave the clock in UTC as expected, only correcting the displayed time.
 

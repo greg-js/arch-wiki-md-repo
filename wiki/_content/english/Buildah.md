@@ -25,18 +25,20 @@ The most widely known alternative for building containers is [docker](/index.php
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Enable support to build unprivileged containers (optional)](#Enable_support_to_build_unprivileged_containers_(optional))
+    *   [2.1 Enable support to build unprivileged containers](#Enable_support_to_build_unprivileged_containers)
 *   [3 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [buildah](https://www.archlinux.org/packages/?name=buildah) package or, for the development version, the [buildah-git](https://aur.archlinux.org/packages/buildah-git/) package.
 
+If you want to run as [non-root user](#Enable_support_to_build_unprivileged_containers), also install [fuse-overlayfs](https://aur.archlinux.org/packages/fuse-overlayfs/) for better performance and storage space efficiency.
+
 ## Configuration
 
-#### Enable support to build unprivileged containers (optional)
+#### Enable support to build unprivileged containers
 
-Users wishing to use Buildah to build *unprivileged* containers need to complete several additional setup steps.
+Users wishing to use Buildah to build *unprivileged* containers need to complete additional setup steps.
 
 Firstly, a kernel is required that has support for **User Namespaces** (a kernel with `CONFIG_USER_NS`). All Arch Linux kernels have support for `CONFIG_USER_NS`. However, due to more general security concerns, the default Arch kernel does ship with User Namespaces enabled only for the *root* user.
 

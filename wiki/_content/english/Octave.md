@@ -38,11 +38,11 @@ The default *octave* GUI is included in the [octave](https://www.archlinux.org/p
 
 *   **Cantor** — A graphical user interface that delegates its mathematical operations to one of several back ends (Scilab, Maxima, Octave and others).
 
-	[http://edu.kde.org/cantor/](http://edu.kde.org/cantor/) || [cantor](https://www.archlinux.org/packages/?name=cantor)
+	[https://edu.kde.org/cantor/](https://edu.kde.org/cantor/) || [cantor](https://www.archlinux.org/packages/?name=cantor)
 
-*   **QtOctave** — A Qt frontend for Octave.
+*   **[JupyterLab](/index.php/Jupyter "Jupyter")** — Browser-based interactive environment which supports many programming backends, including Octave.
 
-	[https://forja.rediris.es/projects/csl-qtoctave/](https://forja.rediris.es/projects/csl-qtoctave/) || [qtoctave](https://aur.archlinux.org/packages/qtoctave/)
+	[https://jupyter.org/lab](https://jupyter.org/lab) || [jupyterlab](https://www.archlinux.org/packages/?name=jupyterlab)+[jupyter-octave_kernel](https://aur.archlinux.org/packages/jupyter-octave_kernel/)
 
 ## Octave-Forge
 

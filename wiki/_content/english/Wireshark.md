@@ -78,7 +78,7 @@ ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16
 
 ### Filter packets by port
 
-See all traffic on 2 ports or more:
+See all traffic on two ports or more:
 
 ```
 tcp.port==80||tcp.port==3306

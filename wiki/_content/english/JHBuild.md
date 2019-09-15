@@ -18,8 +18,9 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Default JHBuild configuration](#Default_JHBuild_configuration)
-    *   [2.2 User configuration](#User_configuration)
+    *   [2.1 Default configuration file](#Default_configuration_file)
+    *   [2.2 User-specific configuration file](#User-specific_configuration_file)
+    *   [2.3 Sample configuration](#Sample_configuration)
 *   [3 Usage](#Usage)
     *   [3.1 Checking and installing prerequisites](#Checking_and_installing_prerequisites)
     *   [3.2 Updating modules](#Updating_modules)
@@ -32,6 +33,8 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
     *   [4.2 pkg-config issues](#pkg-config_issues)
     *   [4.3 Build failed due to incompatible meson versions](#Build_failed_due_to_incompatible_meson_versions)
     *   [4.4 Build failed due to GCC library or object not found](#Build_failed_due_to_GCC_library_or_object_not_found)
+    *   [4.5 gst-plugin-bad fails on missing vulkan headers](#gst-plugin-bad_fails_on_missing_vulkan_headers)
+    *   [4.6 Library missing and no known rule to make it](#Library_missing_and_no_known_rule_to_make_it)
 *   [5 Building JHBuild from scratch](#Building_JHBuild_from_scratch)
 *   [6 See also](#See_also)
 
@@ -41,69 +44,67 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 ## Configuration
 
-JHBuild gets its configuration from a system-wide configuration file installed with the package, the `defaults.jhbuildrc`, and from an optional user configuration file jhbuildrc, in `~/.config/jhbuildrc` (if it exists).
+There are two configuration files: the [#Default configuration file](#Default_configuration_file) installed by [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package, and the [#User-specific configuration file](#User-specific_configuration_file) created by the user.
 
-These files use [Python](/index.php/Python "Python") syntax to set configuration variables.
+By default JHBuild uses the installed configuration file. Its configuration is overridden by the configuration in the user-specific configuration file if it exists.
 
-The variables currently accepted can be found in [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/).
+These use [Python](/index.php/Python "Python") syntax. See [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/) for more information.
 
-### Default JHBuild configuration
+### Default configuration file
 
-JHBuild default configuration is provided by [jhbuild](https://aur.archlinux.org/packages/jhbuild/) and can be found at `/usr/lib/python2.7/site-packages/jhbuild/defaults.jhbuildrc`.
+The default configuration file is located at `/usr/lib/python2.7/site-packages/jhbuild/defaults.jhbuildrc`. It should have everything you need for start using JHBuild, as it sets the modulesets directory, the default moduleset, autogen/meson/cmake arguments for all modules that use it.
 
-`defaults.jhbuildrc` should contain all values for options (e.g. moduleset, module_autoargs) needed to run JHBuild smoothly.
+Some default values currently set:
 
-Even though the default values in `defaults.jhbuildrc` should be all you need for running JHBuild, you might want to take a look at it to decide if and what you want to customize in a personal configuration file.
+*   moduleset = `gnome-apps-latest`
+*   modules = `meta-gnome-core`
+*   directory of downloaded tarball = `$XDG_CACHE_HOME/jhbuild/downloads`
+*   buildroot = `$XDG_CACHE_HOME/jhbuild/build`
 
-**Note:** If you think you found a setting that should be default, feel free to suggestion that in [jhbuild](https://aur.archlinux.org/packages/jhbuild/) comments
+If believe you found a Arch-specific setting that should be set, feel free to suggest that in [jhbuild](https://aur.archlinux.org/packages/jhbuild/) comments. If not Arch-specific, consider filing an [issue in the upstream](https://gitlab.gnome.org/GNOME/jhbuild/issues).
 
-### User configuration
+### User-specific configuration file
 
-The file `~/.config/jhbuildrc` is optional. You can create it with your personal JHBuild configurations, in order to overlap the default values (see above topic).
+This configuration file is located at `$XDG_CONFIG_HOME/jhbuildrc` (e.g. `~/.config/jhbuildrc`). It is optional, does not exist by default and overrides values set in the default JHBuild configuration file.
 
-A very extended sample of a configuration file can be found in `/usr/share/jhbuild/examples/sample.jhbuildrc`
+It is very useful for, e.g., set a different moduleset, or to add a compiler flag to debug and try to fix a build failure system.
 
-User configuration is particularly useful to, e.g., set a different moduleset, to add a flag to a build system to debug or to disable something.
+See examples in `/usr/share/jhbuild/examples/`.
 
-See below a few examples for `~/.config/jhbuildrc` contents:
+### Sample configuration
+
+This section shows a non-exhaustive list of key/value pairs that can be set in any of the configuration files.
+
+*   Use a local moduleset file instead of downloading it again, making it possible to change something in the file and test it
+
+```
+use_local_modulesets = True
+modulesets_dir = "~/.cache/jhbuild/"
+```
 
 *   Enable a wide-most moduleset, and also force GTK3 for modules that would use GTK2 by default
 
 ```
- moduleset = ['gnome-world']
- autogenargs = '--with-gtk3'
-
+moduleset = ['gnome-world']
+autogenargs = '--with-gtk3'
 ```
 
 *   Or you may want to enable documentation build for autotools, even though it will slowdown module compilation
 
-```
- autogenargs = '--enable-gtk-doc'
-
-```
+ `autogenargs = '--enable-gtk-doc'` 
 
 *   Or you want some debug output from make command
 
-```
- makeargs = 'V=1'
-
-```
+ `makeargs = 'V=1'` 
 
 *   Or you found out that a module requires a specific automake option (WebKit is already patched, there is no real need for this one)
 
-```
- module_autogenargs['WebKit'] = 'PYTHON=/usr/bin/python2'
-
-```
+ `module_autogenargs['WebKit'] = 'PYTHON=/usr/bin/python2'` 
 
 *   Or you want to disable documentation build for a module that use meson build system
 
-```
- module_mesonargs['gstreamer'] = '-Ddisable_gtkdoc=true
-
-```
-
-**Note:** **autotools** and **meson** are different build systems, so make sure to add the desired flags for the correct option name
+ `module_mesonargs['gstreamer'] = '-Ddisable_gtkdoc=true` 
+**Note:** *autotools* and *meson* are different build systems, so make sure to add the desired flags for the correct option name
 
 ## Usage
 
@@ -216,7 +217,7 @@ $ jhbuild dot gedit | dot -Tpng > dependencies.png
 
 ### Python issues
 
-A module that depends on [python2](https://www.archlinux.org/packages/?name=python2) may fail to build as softwares usually expect the binary filename of python 2.x to be `/usr/bin/python` and python 3.x to be `/usr/bin/python3`, which is not the case in Arch Linux: python 2.x is `/usr/bin/python2` and python 3.x is `/usr/bin/python`.
+A module that depends on [python2](https://www.archlinux.org/packages/?name=python2) may fail to build as software usually expect the binary filename of python 2.x to be `/usr/bin/python` and python 3.x to be `/usr/bin/python3`, which is not the case in Arch Linux: python 2.x is `/usr/bin/python2` and python 3.x is `/usr/bin/python`.
 
 For cases like that, force the modules to run `/usr/bin/python2` using the one or more methods below:
 
@@ -275,6 +276,42 @@ where *gcc_version* is a previous version which is not the current one, and *nam
 This may happen if [gcc](https://www.archlinux.org/packages/?name=gcc) was updated and the software was previously configured and built with the previous version of gcc.
 
 **Solution:** Run Configure phase again, in order to have this module configured with newer GCC version
+
+### gst-plugin-bad fails on missing vulkan headers
+
+When building the *gst-plugins-bad* module, You may come across with a number of messages similar to the one below:
+
+```
+In file included from ext/vulkan/gstvulkan-plugins-enumtypes.c:8:
+../../../../jhbuild/checkout/gst-plugins-bad/ext/vulkan/vkviewconvert.h:26:10: fatal error: gst/vulkan/vulkan.h: No such file or directory
+   26 
+```
+
+It means *gst-plugin-bad* was automatically set to build its *vulkan* extension, but did not find all the dependecies it needs. As of the writing this subsection, [ext/vulkan/meson.build](https://github.com/GStreamer/gst-plugins-bad/blob/master/ext/vulkan/meson.build) looks for the binary *glslc* provided by [shaderc](https://www.archlinux.org/packages/?name=shaderc), which several packages depend on directly or indirectly. Removing [shaderc](https://www.archlinux.org/packages/?name=shaderc) would solve this error, but this might not be an option if you want to keep one those packages the depends on it.
+
+**Solution:** edit your jhbuild user configuration file to disable the *vulkan* extension:
+
+ `~/.config/jhbuildrc`  `module_mesonargs['gst-plugins-bad'] = '-D vulkan=disabled'` 
+
+and run Configure phase again, in order to have the *gst-plugins-bad* module successfully built.
+
+### Library missing and no known rule to make it
+
+When building a module that uses meson build system you might come across an issue like this:
+
+```
+*** Checking out *module_name* *** [67/218]
+*some omitted checkout output*
+*** Building *module_name* *** [67/218]
+ninja
+**ninja: error: '*path/to/missing_library.so*', needed by '*path/to/module_file*', missing and no known rule to make it**
+*** Error during the phase build of *module_name*: ########## Error running ninja   *** [67/218]
+
+```
+
+This happens because the module was previously configured and built in another commit of this module, and in that occasion it was configured to a previous version of the dependency `*path/to/missing_library.so*`. Since the file `*path/to/module_file*` was configured to and expects that missing library to be available, it fails.
+
+**Solution**: Just run option 7 for the configure phase to reconfigure the module and build it again.
 
 ## Building JHBuild from scratch
 

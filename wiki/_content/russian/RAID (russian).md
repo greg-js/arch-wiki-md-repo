@@ -69,6 +69,7 @@ See also [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID").
 Redundant Array of Independent Disks (RAID) is a storage technology that combines multiple disk drive components (typically disk drives or partitions thereof) into a logical unit. Depending on the RAID implementation, this logical unit can be a file system or an additional transparent layer that can hold several partitions. Data is distributed across the drives in one of several ways called "RAID levels", depending on the level of redundancy and performance required. The RAID level chosen can thus prevent data loss in the event of a hard disk failure, increase performance or be a combination of both.
 
 Despite redundancy implied by most RAID levels, RAID does not guarantee that data is safe. A RAID will not protect data if there is a fire, the computer is stolen or multiple hard drives fail at once. Furthermore, installing a system with RAID is a complex process that may destroy data.
+
 **Warning:** Therefore, be sure [to back up](/index.php/Backup_programs "Backup programs") all data before proceeding.
 
 **Note:** Users considering a RAID array for data storage/redundancy should also consider RAIDZ which is implemented via [ZFS](/index.php/ZFS "ZFS"), a more modern and powerful alternative to software RAID.

@@ -57,18 +57,18 @@ The AACS decryption process for a protected disc by a licensed player goes throu
 3.  This VUK is used to unscramble the disc's scrambled Title Keys.
 4.  Finally those Title Keys unscramble the disc's protected media content.
 
-Note that it is the disc that contains the MKB. MKBs have been renewed since the first commercial Blu-ray release in 2006\. The latest MKB is version 70, but many MKB actually share the same key. The software player provides the Host key and certificate, whereas the drive contains a list of the Host key/certificates that have been revoked. Host key/certification revocation occurs when a newer disc (containing a higher MKB than the previous played disc) is decrypted, or played, or attempted to decrypt or play (the mere insertion of a disc does not update the drive). When this happens, the drive forever loses its capability to use older Host key/certificates.
+Note that it is the disc that contains the MKB. MKBs have been renewed since the first commercial Blu-ray release in 2006\. The latest MKB is version 70, and many discs actually share the same MKB. The software player provides the Host key and certificate, whereas the drive contains a list of the Host key/certificates that have been revoked. Host key/certification revocation occurs when a newer disc (containing a higher MKB than the previous played disc) is decrypted, or played, or attempted to decrypt or play (the mere insertion of a disc does not update the drive). When this happens, the drive forever loses its capability to use older Host key/certificates.
 
 Using [libaacs](https://www.archlinux.org/packages/?name=libaacs), the decryption process can skip some of these stages to reach the last step, which allows the media player to play the disc. This is either by providing in the `KEYDB.cfg` file either (or both):
 
 *   a valid (corresponding to the MKB version of the disc) Processing key and a valid (i.e. non revoked by the drive) Host key/certificate
 *   a valid VUK for the specific disc.
 
-If libaacs finds a valid processing key for the disc MKB version as well as a valid Host key and certificates, it can start the decryption process from step 2\. However, the Host key/certificates are regularly revoked through the propagation of new Blu-ray discs. Once revoked, a drive is not able to read both new and older discs. This is usually irreversible and can only be fixed by providing a more recent Host key/certificate (for Windows users, this corresponds to updating their software player). The advantage of this method is that until the Host key/certificate is revoked, and as long as the disc uses an MKB version for which the Processing key is known, libaacs is able to compute the VUK of any disc. As of today, the Processing keys for MKB version up to 61 have been computed and made available on the Internet. Thus, this method is slightly outdated.
+If libaacs finds a valid processing key for the disc MKB version as well as a valid Host key and certificates, it can start the decryption process from step 2\. However, the Host key/certificates are regularly revoked through the propagation of new Blu-ray discs. Once revoked, a drive is not able to read both new and older discs. This is usually irreversible and can only be fixed by providing a more recent Host key/certificate (for Windows users, this corresponds to updating their software player). The advantage of this method is that until the Host key/certificate is revoked, and as long as the disc uses an MKB version for which the Processing key is known, libaacs is able to compute the VUK of any disc.
 
-Thankfully, in case no valid Processing key is available and/or the Host certificate has been revoked, libaacs has an alternative way to decrypt a disc: by providing a valid VUK in the `KEYDB.cfg` file. This allows libaacs to skip directly to step 3\. Contrary to the Processing keys, VUKs are disc specific. Therefore this is less efficient as the user will have to get the VUK from a third party. But the great advantage is that VUKs cannot be revoked. Note that if libaacs is able to perform step 2 (with a valid Host key/certificate), then it stores the VUK calculated in step 3 in `~/.cache/aacs/vuk`. At subsequent viewings of the same disc, libaacs can reuse the stored VUK. Thus it may be a good idea to backup these VUKs or, even better, share them online.
+Thankfully, in case no valid Processing key is available and/or the Host certificate has been revoked, libaacs has an alternative way to decrypt a disc: by providing a valid VUK in the `KEYDB.cfg` file. This allows libaacs to skip directly to step 3\. Contrary to the Processing keys, VUKs are unique and specific to one disc ; however the great advantage is that once computed the VUK cannot be revoked. Note that if libaacs is able to perform step 2 (with a valid Host key/certificate), then it stores the VUK calculated in step 3 in `~/.cache/aacs/vuk`. At subsequent viewings of the same disc, libaacs can reuse the stored VUK. Thus it may be a good idea to backup these VUKs or, even better, share them online.
 
-There have been several efforts to compile VUKs from various sources. Early attempts include forum threads, such as available at [http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904](http://forum.doom9.org/attachment.php?attachmentid=11170&d=1276615904) or [http://forum.doom9.org/showthread.php?p=1525922#post1525922](http://forum.doom9.org/showthread.php?p=1525922#post1525922). As the community got organised, a centralised VUK database was created at [https://web.archive.org/web/20170726015555/http://www.labdv.com/aacs](https://web.archive.org/web/20170726015555/http://www.labdv.com/aacs) with more than 24,000 published VUKs, however, this website appears to be no longer maintained. A new initiative by the author of the [FindVUK tool](https://forum.doom9.org/showthread.php?t=172472) was then created at [http://fvonline-db.bplaced.net/](http://fvonline-db.bplaced.net/) with more than 90,000 downloadable entries, which makes it the most comprehensive source of public VUKs available.
+There have been several efforts to compile VUKs from various sources. Early attempts were provided in various forums, such as [Doom9.org](https://forum.doom9.org/forumdisplay.php?f=9). As the community got organised, a centralised VUK database was created at [[7]](https://web.archive.org/web/20170726015555/http://www.labdv.com/aacs) with more than 24,000 published VUKs ; however, this website appears to be no longer maintained. A new initiative by the author of the [FindVUK tool](https://forum.doom9.org/showthread.php?t=172472) was then created at [http://fvonline-db.bplaced.net/](http://fvonline-db.bplaced.net/) with more than 90,000 downloadable entries, which makes it the most comprehensive source of public VUKs available.
 
 #### BD+
 
@@ -81,8 +81,9 @@ BD+ is an additional but optional component of the Blu-ray DRM. In December 2013
 ### Preparation
 
 1.  [Install](/index.php/Install "Install") [libbluray](https://www.archlinux.org/packages/?name=libbluray) and [libaacs](https://www.archlinux.org/packages/?name=libaacs).
-2.  Download the [`KEYDB.cfg`](https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg) file from [[7]](https://vlc-bluray.whoknowsmy.name) and copy it in the directory `~/.config/aacs`. This file contains PK, HC and VUK data required for attempting the decryption process described below for more than 24,000 discs.
-3.  If necessary (i.e. if volumes are not mounted automatically on your system), mount the disc to a directory, *e.g.*: `# mount /dev/sr0 /media/blurays` 
+2.  Download a `KEYDB.cfg` file from [[8]](http://fvonline-db.bplaced.net/) and copy it in the directory `~/.config/aacs`. This file contains VUK data required for attempting the decryption process described below for more than 90,000 discs. Note that all languages contain the same information to read a disc, only the name of the disc is translated. You may want to update this file regularly, as new versions are provided from time to time.
+3.  Optionally, copy the PK and Host K/C data provided at [[9]](https://forum.doom9.org/showpost.php?p=1883655&postcount=3) at the beginning of that `KEYDB.cfg` file. This provides PK and Host K/C data for discs up to MKB v68\. This is only necessary for discs that may not already be listed in the VUK list, and will only work for drives that have never read a disc using MKB v70 or above.
+4.  If necessary (i.e. if volumes are not mounted automatically on your system), mount the disc to a directory, *e.g.*: `# mount /dev/sr0 /media/blurays` 
 
 ### Decryption process
 
@@ -110,11 +111,9 @@ If none of these are true, then the software player will attempt decrypting the 
 
 #### Decrypting using PK and Host K/C (step 3.2.2)
 
-The advantage of this method is that - when it works - it can decrypt any disc (up to a certain MBK version) and compute the VUK required to play it. Once the VUK is known, it is then stored for future usage.
+This method uses the Processing keys and a Host Key/Certificate present at the beginning of the `KEYDB.cfg` file and will only work if they have not been revoked in your drive.
 
-**Note:** As of August 2019, latest commercial Blu-ray discs come with MKB v70\. Since no PK beyond MKB v68 has been made publicly available, this decryption method may be obsolete for most recent discs. It is presented for information purpose, but has little chance to be used with recent discs until newer PKs are made available. Therefore, decrypting using VUK lists is now privileged, since it is irrevocable by the movie industry. However, this implies Linux users rely on discovery by third parties since there is no more any open source tool on Linux that can generate VUKs for discs with MKB v70 and above. If you have never inserted an MKB v70 disc, the latest (up to v68) PK and Host C/K can be found on this [thread](https://forum.doom9.org/showthread.php?t=172472&page=22).
-
-This method uses the Processing keys and a Host key/certificate present at the beginning of the `KEYDB.cfg` file. Currently, they will work for a disc up to MKB v68 but have been revoked in MKB v70 and above discs) in `~/.config/aacs/`. Further, this method will only work if your drive has not revoked the host key/certificate that is in this `KEYDB.cfg` file (*i.e.* if you have not tried to play a disc with MKB v30 and above).
+**Note:** As of August 2019, latest commercial Blu-ray discs come with MKB v70\. Because the latest publicly available PK and Host K/C are valid up to MKB v68, this method can only be used for drives that have only opened discs using MKB v68 or below. If you have opened a disc using MKB v70 or above, all publicly known Host K/C have been revoked on your drive, and you can only rely on the [former](#Decrypting_using_VUK_(step_3.1_or_3.2.1)) method.
 
 If this method is successful, after you play the disc, libaacs will store the VUK in `~/.cache/aacs/vuk`. The filename is the disc ID and its content is the VUK itself. VLC will reuse this VUK even if it does not find a valid `KEYDB.cfg` file, so it could be a good idea to backup this directory for the future.
 
@@ -237,7 +236,15 @@ When a disc (using mplayer or vlc) is succesfully decrypted, libaacs will store 
 
 Install [aacskeys](https://aur.archlinux.org/packages/aacskeys/). You need to run [aacskeys](https://aur.archlinux.org/packages/aacskeys/) from a directory that contains valid host key/certificate and processing keys:
 
- `cd /usr/share/aacskeys` and run: `aacskeys </bluray/mount/dir>` eg: `cd /usr/share/aacskeys && aacskeys /media/blurays` 
+ `cd /usr/share/aacskeys` 
+
+and run:
+
+ `aacskeys </bluray/mount/dir>` 
+
+eg:
+
+ `cd /usr/share/aacskeys && aacskeys /media/blurays` 
 
 If you wish, you may add the Blu-ray to the key database: edit `~/.config/aacs/KEYDB.cfg` and add the information output by aacskeys using this syntax:
 
@@ -262,7 +269,7 @@ Some drives need the sg module loaded.
 For DVD, the [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss) package supplies the needed decryption libs. Below are some options for Blu-ray/HD-DVD decryption. Users can employ to backup a commercial Blu-ray movie under Fair Use guidelines:
 
 *   [aacskeys](https://aur.archlinux.org/packages/aacskeys/) - Open source
-*   [makemkv](https://aur.archlinux.org/packages/makemkv/) - Closed source/limited free beta
+*   [makemkv](https://aur.archlinux.org/packages/makemkv/) - Closed source/limited free beta, has a native Linux version
 
 *   [vukextract](https://github.com/m4tthi4s/vukextract) [VukExtract support+discussion](https://forum.doom9.org/showthread.php?t=174404) - Open source software that uses proprietary DVDFab to extract VUKs
 *   [AnyDVD HD](https://www.redfox.bz/anydvdhd.html) - Commercial software requiring users to run it on an Microsoft OS in a VM.

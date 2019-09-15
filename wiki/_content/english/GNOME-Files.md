@@ -65,6 +65,14 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 
 	[https://bitbucket.org/brunonova/nautilus-admin](https://bitbucket.org/brunonova/nautilus-admin) || [nautilus-admin](https://aur.archlinux.org/packages/nautilus-admin/)
 
+*   **Nautilus Bluetooth** — Add to menu: "Send via Bluetooth"
+
+	[https://gitlab.gnome.org/madmurphy/nautilus-bluetooth/](https://gitlab.gnome.org/madmurphy/nautilus-bluetooth/) || [nautilus-bluetooth](https://aur.archlinux.org/packages/nautilus-bluetooth/)
+
+*   **Nautilus Git** — Nautilus/Nemo extension to add important information about the current git directory
+
+	[https://github.com/bilelmoussaoui/nautilus-git](https://github.com/bilelmoussaoui/nautilus-git) || [nautilus-ext-git](https://aur.archlinux.org/packages/nautilus-ext-git/)
+
 *   **Nautilus Terminal** — Terminal embedded in Files. It is always open in the current folder, and follows the navigation.
 
 	[http://projects.flogisoft.com/nautilus-terminal/](http://projects.flogisoft.com/nautilus-terminal/) || [nautilus-terminal](https://www.archlinux.org/packages/?name=nautilus-terminal)
@@ -84,6 +92,8 @@ Some programs can add extra functionality to Files. Here are a few packages in t
 *   **Python bindings for the Nautilus Extension API** — With these bindings, you can write extensions for the Nautilus in python.
 
 	[https://wiki.gnome.org/Projects/NautilusPython](https://wiki.gnome.org/Projects/NautilusPython) || [python-nautilus](https://www.archlinux.org/packages/?name=python-nautilus) or [python2-nautilus](https://aur.archlinux.org/packages/python2-nautilus/)
+
+If you wish to write new plugins, [nextgen](https://aur.archlinux.org/packages/nextgen/) is a helper script that lets you set up easily new extension projects for Nautilus.
 
 ## Configuration
 
@@ -135,6 +145,10 @@ $ gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 ### Thumbnails
 
 See [File manager functionality#Thumbnail previews](/index.php/File_manager_functionality#Thumbnail_previews "File manager functionality").
+
+**Note:** On [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened), thumbnails generation fails (all thumbnails go in `~/.cache/thumbnails/fail/`). This is due to unprivileged user namespace disabled by default on this kernel for security reasons. Nautilus uses `bwrap` (provided by [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)) to sandbox thumbnails generator for security reasons.
+
+See [Security#Sandboxing_applications](/index.php/Security#Sandboxing_applications "Security") for more information.
 
 Sometimes video thumbnails are not shown. To solve it (as mentioned in [No video thumbnails on nautilus](https://bbs.archlinux.org/viewtopic.php?id=168626)), you must install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer), [gst-libav](https://www.archlinux.org/packages/?name=gst-libav), [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly), and remove the content of `~/.cache/thumbnails/fail/`.
 

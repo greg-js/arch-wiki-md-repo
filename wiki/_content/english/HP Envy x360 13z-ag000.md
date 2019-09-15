@@ -25,12 +25,13 @@ The specs of my particular model are:
 *   [1 Installing Arch](#Installing_Arch)
 *   [2 Battery and Power Management](#Battery_and_Power_Management)
 *   [3 Display, Video Card](#Display,_Video_Card)
-*   [4 Touchscreen and Stylus](#Touchscreen_and_Stylus)
-*   [5 Orientation Sensor](#Orientation_Sensor)
-*   [6 Wireless Networking](#Wireless_Networking)
-*   [7 Bluetooth](#Bluetooth)
-*   [8 Hard Drive](#Hard_Drive)
-*   [9 Dual Boot](#Dual_Boot)
+*   [4 Audio](#Audio)
+*   [5 Touchscreen and Stylus](#Touchscreen_and_Stylus)
+*   [6 Orientation Sensor](#Orientation_Sensor)
+*   [7 Wireless Networking](#Wireless_Networking)
+*   [8 Bluetooth](#Bluetooth)
+*   [9 Hard Drive](#Hard_Drive)
+*   [10 Dual Boot](#Dual_Boot)
 
 ## Installing Arch
 
@@ -45,6 +46,39 @@ a 4 hour battery life because of the 4K display. Currently I'm running a patched
 ## Display, Video Card
 
 The integrated Vega GPU works with the AMDGPU drivers. `GDK_SCALE=2` is somewhat necessary for most applications.
+
+## Audio
+
+The"Bang & Olufsen" top-soundbar is by default disabled. You can activate it by using the "hdajackretask" utility provided by alsa-tools. More information can be found in this thread: [https://bugzilla.kernel.org/show_bug.cgi?id=189331](https://bugzilla.kernel.org/show_bug.cgi?id=189331)
+
+The exact pinout can be found in this attachment: [https://bugzilla.kernel.org/attachment.cgi?id=282109&action=edit](https://bugzilla.kernel.org/attachment.cgi?id=282109&action=edit)
+
+`
+```
+   Options : [x] Show unconnected
+             [ ] Set model  =  auto
+             [X] Advanced ovveride
+             [ ] Parser hints
+
+```
+``
+```
+   Pin ID; 0x14 
+   [x] Override
+   Connectivity : Jack; Location : Internal; Device : Speaker; Jack : Other Analog
+   Color : Unknown; Jack detection : Not present; Channel group : 5; Channel : Front
+
+```
+``
+```
+   Pin ID: 0x17
+   [X] Override
+   Connectivity : Jack; Location : Internal; Device : Speaker; Jack : Other
+   Color : Unknown; Jack detection : Not present; Channel group : 5; Channel : Back
+
+```
+`
+**Note:** that the top-soundbar only fires when using close to the max volume.
 
 ## Touchscreen and Stylus
 

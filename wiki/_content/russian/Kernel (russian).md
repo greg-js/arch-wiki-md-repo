@@ -47,23 +47,21 @@
 
 ### Официальные пакеты
 
-	[linux](https://www.archlinux.org/packages/?name=linux)
+*   **Stable** — Официальное ядро и модули Linux с несколькими патчами.
 
-	Linux ядро и модули из репозитория [core]. Ванильное ядро с [некоторыми патчами](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux).
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-	[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
+*   **Hardened** — Ориентированная на безопасность версия ядра Linux с набором защитных патчей, устраняющих эксплойты ядра и пространства пользователя. Внедрение защитных возможностей для этой версии ядра происходит быстрее, чем для [linux](https://www.archlinux.org/packages/?name=linux).
 
-	Версия ядра Linux и модулей с долгосрочной поддержкой (LTS - Long Term Support) из репозитория [core].
+	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
-	[linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec)
+*   **Longterm** — Версия ядра Linux и модулей с долгосрочной поддержкой (Long Term Support, LTS).
 
-	Linux ядро и модули с [Grsecurity Patchset](/index.php/Grsecurity_Patchset "Grsecurity Patchset") и PaX патчами для повышения безопасности.
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)
 
-	[linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
+*   **Zen Kernel** — Результат коллективных усилий исследователей ядра с целью создать лучшее из возможных ядер Linux для повседневных систем. Подробности проекта находятся на сайте [liquorix.net](https://liquorix.net/) (там же можно найти двоичные файлы Zen-ядра для Debian).
 
-	[ZEN-ядро](https://github.com/zen-kernel/zen-kernel) результат совместной работы проекта Zen-kernel.
-
-Для создания этого ядра берётся свежее стабильное официальное ядро Linux. И вносятся изменения проектом Zen-kernel (планировщик CPU BFS, BFQ-планировщик (I/O) ввода-вывода, Aufs, Unionfs, Reiser4, TuxOnIce, PHC и многие другие), которые улучшают отзывчивость и производительность системы.
+	[https://github.com/zen-kernel/zen-kernel](https://github.com/zen-kernel/zen-kernel) || [linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
 ### Неофициальные пользовательские репозитории с готовыми, собранными ядрами Linux
 

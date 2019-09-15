@@ -14,6 +14,7 @@ Capabilities (POSIX 1003.1e, [capabilities(7)](https://jlk.fjfi.cvut.cz/arch/man
     *   [3.3 iftop](#iftop)
     *   [3.4 mii-tool](#mii-tool)
     *   [3.5 mtr](#mtr)
+    *   [3.6 nethogs](#nethogs)
 *   [4 Useful commands](#Useful_commands)
 *   [5 See also](#See_also)
 
@@ -73,6 +74,13 @@ The following packages do not have files with the setuid attribute but require r
 
 ```
 # setcap cap_net_raw+ep /usr/bin/mtr-packet
+
+```
+
+### nethogs
+
+```
+# setcap cap_net_admin,cap_net_raw+ep /usr/bin/nethogs
 
 ```
 
