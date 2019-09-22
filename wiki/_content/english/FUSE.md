@@ -23,6 +23,10 @@ $ fusermount -u *mountpoint*
 
 	[https://github.com/sgan81/apfs-fuse](https://github.com/sgan81/apfs-fuse) || [apfs-fuse-git](https://aur.archlinux.org/packages/apfs-fuse-git/)
 
+*   **astreamfs** — A(synchronous) Stream(ing) (fuse) F(ile)S(ystem).
+
+	[https://gitlab.com/BylonAkila/astreamfs/tree/master](https://gitlab.com/BylonAkila/astreamfs/tree/master) || [astreamfs-git](https://aur.archlinux.org/packages/astreamfs-git/)
+
 *   **CloudFusion** — Linux file system (FUSE) to access Dropbox, Sugarsync, Amazon S3, Google Drive or WebDAV servers.
 
 	[https://joe42.github.io/CloudFusion/](https://joe42.github.io/CloudFusion/) || [cloudfusion-git](https://aur.archlinux.org/packages/cloudfusion-git/)
@@ -66,10 +70,6 @@ $ fusermount -u *mountpoint*
 *   **HubicFuse** — FUSE filesystem to access HubiC cloud storage.
 
 	[https://github.com/TurboGit/hubicfuse](https://github.com/TurboGit/hubicfuse) || [hubicfuse](https://aur.archlinux.org/packages/hubicfuse/)
-
-*   **linux-apfs-oot** — Experimental APFS kernel module
-
-	[https://github.com/eafer/linux-apfs-oot](https://github.com/eafer/linux-apfs-oot) || [linux-apfs-dkms-git](https://aur.archlinux.org/packages/linux-apfs-dkms-git/)
 
 *   **MegaFuse** — MEGA client for Linux, based on FUSE.
 

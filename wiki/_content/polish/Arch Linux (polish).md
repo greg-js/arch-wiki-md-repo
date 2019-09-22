@@ -1,6 +1,10 @@
 Arch Linux jest niezależnie tworzoną dystrubucją ogólnego przeznaczenia GNU/Linux dla komputerów z procesorami serii i686/x86-64 wszechstronną na tyle aby pełnić dowolne postawione przed nim zadania. Proces tworzenia systemu skupia się na prostocie, minimaliźmie i czystości kodu. Arch jest instalowany jako minimalistyczny system bazowy, który może zostać skonfigurowany przez użytkownika, aby spełniał rolę idealnego środowiska pracy. Pozwala na zainstalowanie wyłącznie niezbędnych narzędzi aby umożliwić szybką i bezproblemową pracę. Narzędzia konfiguracyjne działające poprzez interfejs graficzny nie są oficialnie udostępniane. Bazuje na modelu ciągłych wydań, dostarczając najnowsze stabilne wersje większości oprogramowania.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Historia](#Historia)
 *   [2 Prostota](#Prostota)

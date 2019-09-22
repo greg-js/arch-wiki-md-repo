@@ -1,9 +1,13 @@
 Esistono varie possibilità per il proprio `prompt` di bash e personalizzarlo aiuterà ad essere più produttivi dalla riga di comando. Si possono aggiungere informazioni al `prompt`, o semplicemente colorarlo per farlo risaltare.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 Prompt basilari](#Prompt_basilari)
-    *   [1.1 Prompt un po' più elaborati](#Prompt_un_po.27_pi.C3.B9_elaborati)
+    *   [1.1 Prompt un po' più elaborati](#Prompt_un_po'_più_elaborati)
 *   [2 Prompt avanzati](#Prompt_avanzati)
     *   [2.1 Caricamento Stato della memoria per 256 colori](#Caricamento_Stato_della_memoria_per_256_colori)
     *   [2.2 Lista di colori per il prompt e Bash](#Lista_di_colori_per_il_prompt_e_Bash)
@@ -14,10 +18,10 @@ Esistono varie possibilità per il proprio `prompt` di bash e personalizzarlo ai
     *   [2.6 Prompt di Wolfman](#Prompt_di_Wolfman)
     *   [2.7 Prompt di KitchM](#Prompt_di_KitchM)
 *   [3 Impostazione titolo finestra](#Impostazione_titolo_finestra)
-*   [4 Colori diversi per l'immissione di testo e output su console](#Colori_diversi_per_l.27immissione_di_testo_e_output_su_console)
+*   [4 Colori diversi per l'immissione di testo e output su console](#Colori_diversi_per_l'immissione_di_testo_e_output_su_console)
 *   [5 Esempi di bashrc da Gentoo](#Esempi_di_bashrc_da_Gentoo)
 *   [6 Colori generalizzati per tutti gli utenti](#Colori_generalizzati_per_tutti_gli_utenti)
-    *   [6.1 Ripristino del file originale /etc/bash.bashrc file](#Ripristino_del_file_originale_.2Fetc.2Fbash.bashrc_file)
+    *   [6.1 Ripristino del file originale /etc/bash.bashrc file](#Ripristino_del_file_originale_/etc/bash.bashrc_file)
 *   [7 Vedere anche](#Vedere_anche)
 *   [8 Risorse esterne](#Risorse_esterne)
 
@@ -461,10 +465,10 @@ bash_prompt() {
     case $TERM in
      xterm*|rxvt*)
          local TITLEBAR='\[\033]0;\u:${NEW_PWD}\007\]'
-          ;;
+          ;;
      *)
          local TITLEBAR=""
-          ;;
+          ;;
     esac
     local NONE="\[\033[0m\]"    # unsets color to term's fg color
 
@@ -574,7 +578,7 @@ Si noterà che i colori di sfondo renderanno più confortevole la lettura, ed i 
 case "$TERM" in
   xterm | xterm-color)
     XTERM_TITLE='\[\e]0;\W@\u@\H\a\]'
-  ;;
+  ;;
 esac
 
 ```

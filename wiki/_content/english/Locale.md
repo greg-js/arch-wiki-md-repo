@@ -187,7 +187,7 @@ If `LC_TIME` is set to `en_US.UTF-8`, for example, the date format will be "MM/D
 
  `locale.conf`  `LC_TIME=en_DK.UTF-8` 
 
-[glibc](https://www.archlinux.org/packages/?name=glibc) 2.29 fixed a bug, `en_US.UTF-8` started showing in 12 hour format, as was intended. If wanting to use 24 hour format, use `LC_TIME=en_GB.UTF-8`.
+[glibc](https://www.archlinux.org/packages/?name=glibc) 2.29 fixed a bug, `en_US.UTF-8` started showing in 12-hour format, as was intended. If wanting to use 24-hour format, use `LC_TIME=en_GB.UTF-8`.
 
 **Note:** Programs do not necessarily respect this variable to format the date. For example, [date(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) uses its own parameters to do so.
 

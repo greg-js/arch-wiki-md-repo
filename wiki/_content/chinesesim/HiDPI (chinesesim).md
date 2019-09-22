@@ -6,7 +6,11 @@ HiDPI (High Dots Per Inch) 显示器，指的是在较小尺寸下却拥有较�
 
 并非所有的软件都在高分辨率屏幕下工作良好。此页列出了一些常见的调整方法，让您更好的使用 HiDPI 显示器。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 桌面环境](#桌面环境)
     *   [1.1 GNOME](#GNOME)
@@ -362,7 +366,7 @@ Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/s
 
 ### Spotify
 
-您可以简单的使用 `Ctrl++` 和 `Ctrl+-` 来调整缩放。使用 `Ctrl+0` 来恢复默认缩放。缩放设置保存在`~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`：
+您可以简单的使用 `Ctrl++` 和 `Ctrl+-` 来调整缩放。使用 `Ctrl+0` 来恢复默认缩放。缩放设置保存在`~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`，您可能需要自行创建该设置文件：
 
  `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs` 
 ```

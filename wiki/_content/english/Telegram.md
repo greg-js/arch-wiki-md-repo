@@ -49,6 +49,7 @@ Third-party clients:
 *   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) provides command-line interface to connect and use Telegram. For more information about the program, visit the program page on [Github](https://github.com/vysheng/tg).
 *   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) is a command-line interface for Telegram based on [Ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") and needs [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) to run. For more information about the program, visit the program page on [Github](https://github.com/Nanoseb/ncTelegram).
 *   [python-telegram-send](https://aur.archlinux.org/packages/python-telegram-send/), not a full client but a command-line tool to directly send messages or files via Telegram.
+*   [telega.el](https://github.com/zevlg/telega.el) - GNU Emacs Telegram client.
 
 ### Web-based clients
 

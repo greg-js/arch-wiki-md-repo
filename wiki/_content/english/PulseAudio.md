@@ -70,7 +70,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package.
 
-**Note:** Some PulseAudio modules have been [split](https://www.archlinux.org/news/pulseaudio-split/) from the main package and must be installed separately if needed.
+Some PulseAudio modules are not included in the main package and must be installed separately if needed:
 
 *   [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), for PulseAudio to manage [ALSA](/index.php/ALSA "ALSA") as well, see [#ALSA](#ALSA).
 *   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), for [bluetooth](/index.php/Bluetooth "Bluetooth") support (Bluez), see [bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page.

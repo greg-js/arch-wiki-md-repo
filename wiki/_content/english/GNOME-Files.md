@@ -146,7 +146,7 @@ $ gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 
 See [File manager functionality#Thumbnail previews](/index.php/File_manager_functionality#Thumbnail_previews "File manager functionality").
 
-**Note:** On [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened), thumbnails generation fails (all thumbnails go in `~/.cache/thumbnails/fail/`). This is due to unprivileged user namespace disabled by default on this kernel for security reasons. Nautilus uses `bwrap` (provided by [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)) to sandbox thumbnails generator for security reasons.
+**Note:** On [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened), thumbnails generation fails (all thumbnails go in `~/.cache/thumbnails/fail/`). This is due to unprivileged user namespace being disabled by default on this kernel for security reasons. Nautilus uses `bwrap` (provided by [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)) to sandbox thumbnailers. You may decide to replace [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) with [bubblewrap-suid](https://www.archlinux.org/packages/?name=bubblewrap-suid).
 
 See [Security#Sandboxing_applications](/index.php/Security#Sandboxing_applications "Security") for more information.
 

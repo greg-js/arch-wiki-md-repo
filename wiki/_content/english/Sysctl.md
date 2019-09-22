@@ -18,6 +18,7 @@
         *   [3.1.6 Change TCP keepalive parameters](#Change_TCP_keepalive_parameters)
         *   [3.1.7 Enable MTU probing](#Enable_MTU_probing)
         *   [3.1.8 TCP Timestamps](#TCP_Timestamps)
+        *   [3.1.9 Enable BBR](#Enable_BBR)
     *   [3.2 TCP/IP stack hardening](#TCP/IP_stack_hardening)
         *   [3.2.1 TCP SYN cookie protection](#TCP_SYN_cookie_protection)
         *   [3.2.2 TCP rfc1337](#TCP_rfc1337)
@@ -236,6 +237,16 @@ Disabling timestamp generation will reduce spikes and may give a performance boo
 
 ```
 net.ipv4.tcp_timestamps = 0
+
+```
+
+#### Enable BBR
+
+The BBR congestion control algorithm can help achieve higher bandwidths and lower latencies for internet traffic. First, enable the `tcp_bbr` module.
+
+```
+ net.core.default_qdisc = fq
+ net.ipv4.tcp_congestion_control = bbr
 
 ```
 

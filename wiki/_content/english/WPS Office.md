@@ -15,6 +15,7 @@
     *   [4.1 formula can not display normally](#formula_can_not_display_normally)
     *   [4.2 Microsoft Office file in KDE Plasma is recognized as Zip](#Microsoft_Office_file_in_KDE_Plasma_is_recognized_as_Zip)
     *   [4.3 Fcitx imput method framework can't input on WPS](#Fcitx_imput_method_framework_can't_input_on_WPS)
+    *   [4.4 Bad integration with dark theme of KDE Plasma](#Bad_integration_with_dark_theme_of_KDE_Plasma)
 *   [5 See also](#See_also)
 
 ## installation
@@ -69,6 +70,19 @@ export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE="fcitx"
 
 ```
+
+### Bad integration with dark theme of KDE Plasma
+
+Run any of the apps with:
+
+```
+env GTK2_RC_FILES=/usr/share/themes/Breeze/gtk-2.0/gtkrc et -style gtk+
+
+```
+
+Breeze theme can be replaced with any light theme, i.e. Adwaita, Breath, etc.
+
+After running the app, WPS will show a warning: 'Unable to open "gtk+"'. Ignore it and press Ok.
 
 ## See also
 

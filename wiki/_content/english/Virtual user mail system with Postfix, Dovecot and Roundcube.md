@@ -148,7 +148,6 @@ smtpd_tls_received_header = yes
 smtpd_tls_cert_file = /etc/ssl/private/vmail.crt
 smtpd_tls_key_file = /etc/ssl/private/vmail.key
 smtpd_sasl_local_domain = $mydomain
-broken_sasl_auth_clients = yes
 smtpd_tls_loglevel = 1
 smtp_tls_security_level = may
 smtp_tls_loglevel = 1
@@ -393,6 +392,7 @@ While running the installer ...
 *   Use port `993`. Likewise with SMTP.
 *   For the address of the SMTP host, use `tls://localhost/` and port `587` if you used STARTTLS. Use `ssl://localhost/` with port `465` if you used SMTPS.
 *   See [#Postfix](#Postfix) for an explanation on that.
+*   Make sure the resulting configuration file has `$config['smtp_user'] = '%u';` and `$config['smtp_pass'] = '%p';` lines in it or you will not be able to send email.
 
 The post install process is similar to any other webapp like [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") or PostFixAdmin. The configuration file is in `/etc/webapps/roundcubemail/config/config.inc.php` which works as an override over `defaults.inc.php`.
 

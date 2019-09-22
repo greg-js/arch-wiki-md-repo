@@ -1,6 +1,10 @@
 Osim pitanja ispod, možda ćete pronaći nešto korisno na stranicama [Put Archa](/index.php/Arch_Linux_(Hrvatski) "Arch Linux (Hrvatski)") i [Arch Linux](/index.php/Arch_Linux_(Hrvatski) "Arch Linux (Hrvatski)"). Obje stranice sadrže puno informacija Arch Linuxu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Uopćeno](#Uopćeno)
     *   [1.1 Q) Što je Arch Linux?](#Q)_Što_je_Arch_Linux?)

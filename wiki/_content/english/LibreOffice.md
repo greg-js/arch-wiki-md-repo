@@ -14,8 +14,7 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
 
 *   [1 Installation](#Installation)
 *   [2 Theme](#Theme)
-    *   [2.1 Firefox themes](#Firefox_themes)
-    *   [2.2 Disable startup logo](#Disable_startup_logo)
+    *   [2.1 Disable startup logo](#Disable_startup_logo)
 *   [3 Extension management](#Extension_management)
 *   [4 Language aids](#Language_aids)
     *   [4.1 Spell checking](#Spell_checking)
@@ -53,25 +52,19 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
 *   For SDK install [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk).
 *   For Qt and GTK visual integration, see [#Theme](#Theme).
 
-Check the optional dependencies pacman displays. If you want to use LibreOffice Base, you must install a Java Runtime Environment: see [Java](/index.php/Java "Java"). You may need [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/) to use [some modules](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) in LibreOffice Base.
+Check the optional dependencies pacman displays. If you use HSQLDB Embedded in LibreOffice Base, you must install a [Java Runtime Environment](/index.php/Java "Java"). You may need [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/) to use [some modules](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) in LibreOffice Base.
 
 ## Theme
 
 LibreOffice includes support for [GTK](/index.php/GTK "GTK") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`. Note that the `gtk2` backend is [deprecated](https://wiki.documentfoundation.org/ReleaseNotes/6.2#Feature_removal_.2F_deprecation).
+LibreOffice will try to autodetect the most suitable VCL UI interface based on your desktop environment. To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde5`, or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`.
 
 **Note:** When using the [LXDE](/index.php/LXDE "LXDE") desktop environment, setting `SAL_USE_VCLPLUGIN` in `/etc/profile.d/libreoffice-fresh.sh` has no effect since the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") is afterwards set to `gtk` by the script `/usr/bin/startlxde`. In order to use `gtk3` toolkit with [LXDE](/index.php/LXDE "LXDE") the `SAL_USE_VCLPLUGIN` [environment variable](/index.php/Environment_variable "Environment variable") needs to be set after launching the desktop environment.
 
 However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
 
 If that does not work immediately, you may need to change the icon set that is in use; this is also in the Options Dialog, under *LibreOffice > View* with two pop-up boxes for "Icon size and style" (the latter pop-up box should be changed to something other than "High-contrast").
-
-### Firefox themes
-
-LibreOffice can use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
-
-Themes can be found on [Mozilla's theme repository](https://addons.mozilla.org/firefox/themes/).
 
 ### Disable startup logo
 

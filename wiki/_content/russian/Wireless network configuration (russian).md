@@ -7,7 +7,11 @@
 
 Настройка беспроводного соединения в Archlinux (или в любом другом Linux) состоит из 2-х частей. Первая часть это определение и установка правильного драйвера для вашего устройства (обычно они есть на установочном носителе, но устанавливаются вручную). Вторая - выбор метода управления беспроводным соединением. Эта статья описывает обе части, и содержит необходимые ссылки на утилиты управления беспроводными соединениями.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Драйвер устройства](#Драйвер_устройства)
     *   [1.1 Проверка состояния драйвера](#Проверка_состояния_драйвера)
@@ -760,7 +764,9 @@ pacman -S wlan-ng26 wlan-ng26-utils
 
 Для чипсетов Ralink (как rt2500,rt61,rt73 др.). Совместимы с wpa_supplicant, используют wext как интерфейс драйвера. Этот драйвер сейчас (в 2.6.24) является частью ядра и может быть загружен вручную например так...
 
- `modprobe rt2500pci` (замените при необходимости на rt2500pci например, т.е. rt2400pci, rt2500usb, rt61pci, rt73usb)
+ `modprobe rt2500pci` 
+
+(замените при необходимости на rt2500pci например, т.е. rt2400pci, rt2500usb, rt61pci, rt73usb)
 
 Для некоторых чипов необходимы прошивки (firmware). Смотри [rt2x00 статью wiki](/index.php/Using_the_new_rt2x00_beta_driver "Using the new rt2x00 beta driver").
 
@@ -941,7 +947,7 @@ depmod -a
 
 Сейчас установка ndiswrapper полностью завершена; вам только необходимо отредактировать /etc/rc.conf для загрузки модуля при старте системы (ниже приведён мой простейший конфиг; у вас может немного отличаться):
 
- `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
+ `MODULES=(ndiswrapper snd-intel8x0 !usbserial)` 
 
 Важно убедиться, что ndiswrapper присутствует в этом списке, также добавить другие необходимые модули. Лучший способ проверить, что ndiswrapper загружен:
 
@@ -983,7 +989,7 @@ options acx debug=0
 
 Пользователи, у которых чипсет из серии Broadcom 43xx имеют альтернативу ndiswrapper'у. В Ядре версии 2.6.17, драйвер bcm43xx представлен.
 
-1.  Запустите `iwconfig` или `hwd -s` для того, чтобы удостовериться, что драйвер загружен. Мой вывод hwd -s выглядит примерно так: `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
+1.  Запустите `iwconfig` или `hwd -s` для того, чтобы удостовериться, что драйвер загружен. Мой вывод hwd -s выглядит примерно так: `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
 
 Список поддерживаемого оборудования можно найти здесь [here](http://bcm43xx.berlios.de/?go=devices).
 
@@ -999,7 +1005,7 @@ options acx debug=0
 
 Этот драйвер - преемник драйвера bcm43xx и он включен в ядро 2.6.24.
 
-1.  Запустите `hwd -s` для определения вашей карты. Мой вывод hwd -s выглядит примерно так: `Network    : BCM4318 [AirForce One 54g] 802.11g Wireless LAN Controller module: unknown` 
+1.  Запустите `hwd -s` для определения вашей карты. Мой вывод hwd -s выглядит примерно так: `Network    : BCM4318 [AirForce One 54g] 802.11g Wireless LAN Controller module: unknown` 
 
 Список поддерживаемого оборудования находится [здесь](http://wireless.kernel.org/en/users/Drivers/b43).
 
@@ -1014,7 +1020,9 @@ options acx debug=0
 
 #### zd1211rw
 
-[zd1211rw](http://zd1211.wiki.sourceforge.net/) драйвер для ZyDAS ZD1211 802.11b/g USB WLAN чипсетов и он включен в ядро, в настоящее время. Смотри список поддерживаемого оборудования [здесь](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices). Только вам необходимо сначала установить файлы прошивки: `pacman -S zd1211-firmware` 
+[zd1211rw](http://zd1211.wiki.sourceforge.net/) драйвер для ZyDAS ZD1211 802.11b/g USB WLAN чипсетов и он включен в ядро, в настоящее время. Смотри список поддерживаемого оборудования [здесь](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices). Только вам необходимо сначала установить файлы прошивки:
+
+ `pacman -S zd1211-firmware` 
 
 ### Тестирование установки
 

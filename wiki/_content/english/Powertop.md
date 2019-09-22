@@ -44,7 +44,7 @@ There are two ways to automatically apply the suggested settings:
 Description=Powertop tunings
 
 [Service]
-Type=oneshot
+Type=exec
 ExecStart=/usr/bin/powertop --auto-tune
 RemainAfterExit=true
 

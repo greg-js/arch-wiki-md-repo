@@ -1,6 +1,10 @@
 Arch Linux คือลีนุกซ์ที่ถูกพัฒนาอย่างอิสระสำหรับระบบ i686/x86-64 ที่เน้นด้านการให้ซอฟท์แวร์เวอร์ชั่นเสถียรรุ่นใหม่ล่าสุดและมีการอัพเดตระบบอย่างต่อเนื่องตลอดเวลา (rolling-release) ระบบหลังติดตั้งเป็นเพียงระบบพื้นฐานที่สุด ซึ่งผู้ใช้ต้องปรับแต่งและเพิ่มส่วนต่าง ๆ ให้เหมาะสมกับตัวเอง
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 หลักการ](#หลักการ)
     *   [1.1 เรียบง่าย](#เรียบง่าย)

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Condivisione connessione internet](#Condivisione_connessione_internet)
     *   [1.1 Schema connessioni](#Schema_connessioni)
@@ -16,9 +20,9 @@ Assumiamo che la rete sia cosi' connessa:
 
 ```
 
-i computer dovranno essere connessi tra loro tramite un cavo [crossover](https://it.wikipedia.org/wiki/Cavo_ethernet_incrociato) o uno switch
+I dispositivi dovranno essere connessi tra loro tramite un cavo [crossover](https://it.wikipedia.org/wiki/Cavo_ethernet_incrociato) o uno switch.
 
-il *pc1* dovra' possedere due schede di rete: una connessa ad internet (in questo esempio **eth0**) e una connessa al *pc2* (in questo esempio **eth1**)
+Il *pc1* dovrà possedere due schede di rete per connetterle rispettivamente ad internet (**wan**) ed al **pc2**.
 
 ## Impostazioni generali
 

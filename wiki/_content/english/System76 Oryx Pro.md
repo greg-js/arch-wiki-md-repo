@@ -40,7 +40,7 @@ This system comes complete with an integrated (intel) and discrete (nvidia) grap
 
 When in doubt, remove bumblebee and install nvidia proprietary drivers.
 
-Your mileage may vary if you're using a more complete DE like Gnome; this has only been tested with i3-wm.
+Your mileage may vary if you are using a more complete DE like Gnome; this has only been tested with i3-wm.
 
 ## Audio
 

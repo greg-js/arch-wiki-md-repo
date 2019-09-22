@@ -1,6 +1,10 @@
 [Bash (Русский)](/index.php/Bash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bash (Русский)") также поддерживает функции. Добавляйте функции в `~/.bashrc` или в отдельный файл с `~/.bashrc` в качестве источника ([source](/index.php/Source "Source")). Больше примеров функций Bash тут: [BBS#30155](https://bbs.archlinux.org/viewtopic.php?id=30155).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Отображение кодов ошибок](#Отображение_кодов_ошибок)
 *   [2 Компиляция и запуск кода C на лету](#Компиляция_и_запуск_кода_C_на_лету)

@@ -10,7 +10,8 @@ Depending on requirements, different methods may be used to encrypt the [swap](/
     *   [1.1 UUID and LABEL](#UUID_and_LABEL)
 *   [2 With suspend-to-disk support](#With_suspend-to-disk_support)
     *   [2.1 LVM on LUKS](#LVM_on_LUKS)
-    *   [2.2 mkinitcpio hook](#mkinitcpio_hook)
+    *   [2.2 Using a swap partition](#Using_a_swap_partition)
+        *   [2.2.1 mkinitcpio hook](#mkinitcpio_hook)
     *   [2.3 Using a swap file](#Using_a_swap_file)
 *   [3 Known Issues](#Known_Issues)
 
@@ -100,15 +101,16 @@ The following three methods are alternatives for setting up an encrypted swap fo
 
 ### LVM on LUKS
 
-A simple way to realize encrypted swap with suspend-to-disk support is by using a swap [LVM](/index.php/LVM "LVM") device on the same encryption layer as the root volume, so that both are opened by the `encrypt` hook at boot. Follow the instructions on [Dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") and then configure the [required kernel parameters](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate").
+If the swap volume is in a volume group that gets activated in initramfs, simply follow the instructions in [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate").
 
-Assuming you have setup LVM on LUKS with a swap logical volume (at `/dev/MyStorage/swap` for example), add `resume` to the [HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") array `/etc/mkinitcpio.conf` (only if using the default [busybox based hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio")), and add `resume=/dev/MyStorage/swap` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
+### Using a swap partition
 
- `/etc/mkinitcpio.conf`  `HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems **resume** fsck)` 
+To resume from a encrypted swap partition, the encrypted partition must be unlocked in the initramfs.
 
-[Regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
+*   When using the default busybox-based initramfs with the [encrypt](/index.php/Dm-crypt/System_configuration#Using_encrypt_hook "Dm-crypt/System configuration") hook, follow the instructions in [#mkinitcpio hook](#mkinitcpio_hook).
+*   When using the systemd-based initramfs with the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") mkinitcpio hook, simply specify additional `rd.luks` kernel parateters to unlock the swap partition.
 
-### mkinitcpio hook
+#### mkinitcpio hook
 
 **Note:** This section is only applicable when using the `encrypt` hook, which can only unlock a single device ([FS#23182](https://bugs.archlinux.org/task/23182)). With `sd-encrypt` multiple devices may be unlocked, see [dm-crypt/System configuration#Using sd-encrypt hook](/index.php/Dm-crypt/System_configuration#Using_sd-encrypt_hook "Dm-crypt/System configuration").
 
@@ -233,45 +235,11 @@ At boot time, the `openswap` hook will open the swap partition so the kernel res
 
 ### Using a swap file
 
-A swap file can be used to reserve swap-space within an existing partition and may also be setup inside an encrypted blockdevice's partition. When resuming from a swapfile the `resume` hook must be supplied with the passphrase to unlock the device where the swap file is located.
+A swap file can be used to reserve swap-space within an existing partition and may also be setup inside an encrypted blockdevice's partition.
 
-**Warning:** [Btrfs](/index.php/Dm-crypt/Drive_preparation#Btrfs_subvolumes "Dm-crypt/Drive preparation") does not support swap files on kernel versions below 5.0\. Failure to heed this warning may result in file system corruption. While a swap file may be used on [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") when mounted through a loop device, this will result in severely degraded swap performance.
+Follow swap file creation instructions in [Swap#Swap file](/index.php/Swap#Swap_file "Swap") and set up hibernation according to [Power management/Suspend and hibernate#Hibernation into swap file](/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file "Power management/Suspend and hibernate").
 
-To create it, first choose a mapped partition (e.g. `/dev/mapper/rootDevice`) whose mounted filesystem (e.g. `/`) contains enough free space to create a swapfile with the desired size.
-
-Now [create the swap file](/index.php/Swap#Swap_file_creation "Swap") (e.g. `/swapfile`) inside the mounted filesystem of your chosen mapped partition. Be sure to activate it with `swapon` and also add it to your `/etc/fstab` file afterward. Note that the swapfile's previous contents remain transparent over reboots.
-
-Set up your system to resume from your chosen mapped partition. For example, if you use [GRUB](/index.php/GRUB "GRUB") with kernel hibernation support, add `resume=`*your chosen mapped partition* and `resume_offset=`*see calculation command below* to the kernel line in your GRUB configuration (typically at `/etc/default/grub`). A line with encrypted root partition can look like this:
-
-```
-kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/rootDevice resume_offset=123456789 ro
-
-```
-
-The `resume_offset` of the swap-file points to the start (extent zero) of the file and can be identified like this:
-
-```
-# filefrag -v /swapfile | awk '{if($1=="0:"){print $4}}'
-
-```
-
-**Warning:** This method does not work on btrfs because filegfrag returns virtual rather than physical offset. Systemd (systemctl hibernate) relies on FIEMAP which also does not work.
-
-As a workaround see [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=202803). Note: if swap file location on the filesystem is changed for some reason, the offset should be recalculated.
-
-Add the `resume` hook to your `etc/mkinitcpio.conf` file and [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") afterward:
-
-```
-HOOKS=(... encrypt **resume** ... filesystems ...)
-
-```
-
-If you use a USB keyboard to enter your decryption password, then the `keyboard` module **must** appear in front of the `encrypt` hook, as shown below. Otherwise, you will not be able to boot your computer because you could not enter your decryption password to decrypt your Linux root partition! (If you still have this problem after adding `keyboard`, try `usbinput`, though this is deprecated.)
-
-```
-HOOKS=(... **keyboard** encrypt ...)
-
-```
+**Note:** When resuming from a swapfile the `resume` parameter must point to the unlocked/mapped device that contains the file system with the swap file.
 
 ## Known Issues
 

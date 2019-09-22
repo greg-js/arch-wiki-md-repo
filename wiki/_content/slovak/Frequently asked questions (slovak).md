@@ -1,6 +1,10 @@
 Najprv si prečítajte [The Arch Way](/index.php/The_Arch_Way "The Arch Way") a [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Všetky tri obsahujú nemalé množstvo informácií o Arch Linuxe.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Q) Som úplný začiatočník v Linuxe. Mal by som používať Arch?](#Q)_Som_úplný_začiatočník_v_Linuxe._Mal_by_som_používať_Arch?)
 *   [2 Q) Našiel som chybu v balíčku X, čo by som mal urobiť?](#Q)_Našiel_som_chybu_v_balíčku_X,_čo_by_som_mal_urobiť?)

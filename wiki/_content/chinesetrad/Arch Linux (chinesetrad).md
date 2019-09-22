@@ -2,7 +2,11 @@
 
 Arch Linux 是一套獨立開發、支援 [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")/[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") 架構的通用 GNU/Linux 發行版本，靈活度高，適合各種用途。Arch 的開發著重於簡易、極簡化，以及優雅的編程。Arch 預設只會安裝一個迷你的基本系統，讓使用者自行組裝心目中最為理想的操作環境，只安裝所需的軟體包以達到目的。官方將不提供 GUI 配置工具，絕大多數的系統設定都將在 shell (文字介面) 和文字編輯器下進行。Arch 基於「漸進式發行」 (rolling-release)，致力走在最前線，並盡其所能地提供所有最新、最穩定的軟體。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 歷史](#歷史)
 *   [2 簡潔](#簡潔)

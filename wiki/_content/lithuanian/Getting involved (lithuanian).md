@@ -2,7 +2,11 @@ Evoliucinėje biologijoje, [bendradarbiavimas](https://en.wikipedia.org/wiki/Co-
 
 Šis straipsnis aprašo, kaip tiek nauji tiek patyrę Arch naudotojai gali pasidarbuoti bendruomenės labui. Tai nėra baigtinis sąrašas.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Oficialūs Arch Linux projektai](#Oficialūs_Arch_Linux_projektai)
     *   [1.1 Rašykite forumuose](#Rašykite_forumuose)

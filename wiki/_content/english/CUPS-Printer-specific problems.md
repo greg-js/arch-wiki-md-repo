@@ -555,6 +555,8 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 
 ## Lexmark
 
+Note that most Lexmark printers are now supported by CUPS without needing further installation. See also [SANE/Scanner-specific_problems#Lexmark](/index.php/SANE/Scanner-specific_problems#Lexmark "SANE/Scanner-specific problems") for Lexmark scanners issues.
+
 ### Utilities
 
 Lexmark provides a utility called *lexijtools* with the drivers.

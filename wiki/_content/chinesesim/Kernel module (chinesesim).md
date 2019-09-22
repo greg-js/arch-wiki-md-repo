@@ -10,23 +10,27 @@
 
 要创建内核模块，请阅读[此指南](http://tldp.org/LDP/lkmpg/2.6/html/index.html)。模块可以设置成内置或者动态加载，要编译成可动态加载，需要在内核配置时将模块配置为 `M` (模块)。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 获取信息](#.E8.8E.B7.E5.8F.96.E4.BF.A1.E6.81.AF)
-*   [2 自动处理](#.E8.87.AA.E5.8A.A8.E5.A4.84.E7.90.86)
-*   [3 手动加载卸载](#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E5.8D.B8.E8.BD.BD)
-*   [4 配置模块参数](#.E9.85.8D.E7.BD.AE.E6.A8.A1.E5.9D.97.E5.8F.82.E6.95.B0)
-    *   [4.1 手动加载时设置](#.E6.89.8B.E5.8A.A8.E5.8A.A0.E8.BD.BD.E6.97.B6.E8.AE.BE.E7.BD.AE)
-    *   [4.2 使用 /etc/modprobe.d/中的文件](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fmodprobe.d.2F.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
-    *   [4.3 使用内核命令行](#.E4.BD.BF.E7.94.A8.E5.86.85.E6.A0.B8.E5.91.BD.E4.BB.A4.E8.A1.8C)
-*   [5 别名](#.E5.88.AB.E5.90.8D)
-*   [6 黑名单](#.E9.BB.91.E5.90.8D.E5.8D.95)
-    *   [6.1 禁用内核模块](#.E7.A6.81.E7.94.A8.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [6.2 使用 /etc/modprobe.d/ 中的文件](#.E4.BD.BF.E7.94.A8_.2Fetc.2Fmodprobe.d.2F_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6)
-    *   [6.3 使用内核命令行](#.E4.BD.BF.E7.94.A8.E5.86.85.E6.A0.B8.E5.91.BD.E4.BB.A4.E8.A1.8C_2)
-*   [7 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
-    *   [7.1 模块未加载](#.E6.A8.A1.E5.9D.97.E6.9C.AA.E5.8A.A0.E8.BD.BD)
-*   [8 参见](#.E5.8F.82.E8.A7.81)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 获取信息](#获取信息)
+*   [2 自动处理](#自动处理)
+*   [3 手动加载卸载](#手动加载卸载)
+*   [4 配置模块参数](#配置模块参数)
+    *   [4.1 手动加载时设置](#手动加载时设置)
+    *   [4.2 使用 /etc/modprobe.d/中的文件](#使用_/etc/modprobe.d/中的文件)
+    *   [4.3 使用内核命令行](#使用内核命令行)
+*   [5 别名](#别名)
+*   [6 黑名单](#黑名单)
+    *   [6.1 禁用内核模块](#禁用内核模块)
+    *   [6.2 使用 /etc/modprobe.d/ 中的文件](#使用_/etc/modprobe.d/_中的文件)
+    *   [6.3 使用内核命令行](#使用内核命令行_2)
+*   [7 问题处理](#问题处理)
+    *   [7.1 模块未加载](#模块未加载)
+*   [8 参见](#参见)
 
 ## 获取信息
 

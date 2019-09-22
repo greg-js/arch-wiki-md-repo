@@ -56,7 +56,7 @@ $ flatpak remote-add *nome* *localização*
 
 ```
 
-onde *nome* é o nome do novo remoto e *localizaçã* o é o caminho ou a URL do repositório.
+onde *nome* é o nome do novo remoto e *localização* é o caminho ou a URL do repositório.
 
 Por exemplo, para adicionar o [repositório oficial Flathub](https://flathub.org/):
 
@@ -203,7 +203,7 @@ Isso irá prevenir que a aplicação acesse a sua pasta home.
 
 Todo tipo de permissão como dispositivo, sistema de arquivo ou soquete tem um uma linha de comando que permite aquela permissão em particular e uma opção separada que nega. Por exemplo, no caso de acesso ao dispositivo `--device=device_*nome*` permite o acesso, `--no-device=device_*nome*` nega a permissão para acessar o dispositivo.
 
-Para todos os tipos de comandos de permissão consulte a página de manual: [flatpak-override(1)(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak-override%281%29.1).
+Para todos os tipos de comandos de permissão consulte a página de manual: [flatpak-override(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/flatpak-override.1).
 
 Substituições de permissão podem ser resetadas para o padrão com o comando:
 

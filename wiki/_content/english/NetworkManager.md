@@ -608,9 +608,7 @@ fi
 
 ```
 
-**Note:**
-
-*   Make sure this script is located in the `pre-down.d` sub-directory as shown above, otherwise it will unmount all shares on any connection state change.
+**Note:** Make sure this script is located in the `pre-down.d` sub-directory as shown above, otherwise it will unmount all shares on any connection state change.
 
 The following script will attempt to unmount all SMB shares following an unexpected disconnect from a specific network:
 

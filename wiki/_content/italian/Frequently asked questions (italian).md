@@ -1,6 +1,10 @@
 Oltre alle domande seguenti, è possibile trovare utile leggere gli articoli [Il Metodo Arch](/index.php/Il_Metodo_Arch "Il Metodo Arch") e [Arch Linux](/index.php/Arch_Linux_(Italiano) "Arch Linux (Italiano)"). Entrambi contengono molte utili informazioni su Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Generale](#Generale)
     *   [1.1 D) Cos'è Arch Linux?](#D)_Cos'è_Arch_Linux?)

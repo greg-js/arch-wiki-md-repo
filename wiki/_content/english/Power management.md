@@ -518,11 +518,43 @@ The name of the configuration file is important. With the use of [persistent dev
 
 #### Intel wireless cards (iwlwifi)
 
-Additional power saving functions of Intel wireless cards with `iwlwifi` driver can be enabled by passing the correct parameters to the kernel module. Making it persistent can be achieved by adding the line below to `/etc/modprobe.d/iwlwifi.conf` file:
+Additional power saving functions of Intel wireless cards with `iwlwifi` driver can be enabled by passing the correct parameters to the kernel module. Making them persistent can be achieved by adding the lines below to the `/etc/modprobe.d/iwlwifi.conf` file:
 
 ```
-options iwlwifi power_save=1 d0i3_disable=0 uapsd_disable=0
+options iwlwifi power_save=1
+
+```
+
+This option will probably increase your median latency:
+
+```
+options iwlwifi uapsd_disable=0
+
+```
+
+On kernels <5.4 you can use this option, but it will probably decrease your maximum throughput:
+
+```
+options iwlwifi d0i3_disable=0
+
+```
+
+Depending on your wireless card one of these two options will apply.
+
+```
+options iwlmvm power_scheme=3
+
+```
+
+```
 options iwldvm force_cam=0
+
+```
+
+You can check which one is relevant by checking which of these modules is running using
+
+```
+# lsmod | grep '^iwl.vm'
 
 ```
 

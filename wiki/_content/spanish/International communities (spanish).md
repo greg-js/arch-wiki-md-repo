@@ -13,7 +13,11 @@ Tenga en cuenta que nuestra wiki oficial también admite contenido internacional
 
 Esta lista no esta de ninguna manera completa. Si conoce una comunidad que no figure en la lista, siéntase libre de añadirla. Si busca una comunidad que no tiene una comunidad existente, inicie una o visite el foro sobre [otros idiomas](https://bbs.archlinux.org/viewforum.php?id=30).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Alemán](#Alemán)
 *   [2 Chino](#Chino)

@@ -1,6 +1,10 @@
 Arch Linux je nezávisle vyvinutá komunitní distribuce GNU/Linuxu pro architektury [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")/[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64"), dost všestraná pro prakticky libovolné využití. Vývoj klade důraz na jednoduchost, minimalismus a eleganci kódu. Arch je instalován jako minimální základní systém a konfigurovaný uživatelem podle jejich vlastních potřeb a představ o ideálním prostředí. Volitelné závislosti balíčků nejsou automaticky instalovány, uživatel instaluje pouze to, co sám potřebuje, grafické konfigurační nástroje nejsou oficiálně poskytovány a většina systémové konfigurace probíhá na příkazová řádce a v textovém editoru. Arch je založen na rolling-release modelu a snaží se poskytovat vždy nejnovější stabilní verze většiny aplikací.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Historie](#Historie)
 *   [2 Jednoduchost](#Jednoduchost)

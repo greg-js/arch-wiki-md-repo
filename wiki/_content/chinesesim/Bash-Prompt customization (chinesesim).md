@@ -7,11 +7,15 @@
 
 这是一个设置[Bash](/index.php/Bash "Bash")提示符（PS1）色彩以及自定义的参考版本，它可以帮助你在命令行更有效率。您可以添加更多的信息给你的提示符，或者你可以简单地设置的色彩来使提示符中色彩斑斓。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 提示符　](#.E6.8F.90.E7.A4.BA.E7.AC.A6)
-*   [2 技巧](#.E6.8A.80.E5.B7.A7)
-    *   [2.1 Bash 转义字符](#Bash_.E8.BD.AC.E4.B9.89.E5.AD.97.E7.AC.A6)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 提示符　](#提示符)
+*   [2 技巧](#技巧)
+    *   [2.1 Bash 转义字符](#Bash_转义字符)
     *   [2.2 Terminfo escape sequences](#Terminfo_escape_sequences)
     *   [2.3 ANSI escape sequences](#ANSI_escape_sequences)
     *   [2.4 Embedding commands](#Embedding_commands)

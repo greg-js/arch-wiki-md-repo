@@ -6,17 +6,21 @@
 
 **Note:** 这里描述的一些工具只针对特定版本的 pacman。其中的 -Qk 选项是在 pacman 4.1 中新实现的。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 基本操作](#.E5.9F.BA.E6.9C.AC.E6.93.8D.E4.BD.9C)
-*   [2 查询某个包的信息](#.E6.9F.A5.E8.AF.A2.E6.9F.90.E4.B8.AA.E5.8C.85.E7.9A.84.E4.BF.A1.E6.81.AF)
-*   [3 查询包列表](#.E6.9F.A5.E8.AF.A2.E5.8C.85.E5.88.97.E8.A1.A8)
-*   [4 查询包的依赖关系](#.E6.9F.A5.E8.AF.A2.E5.8C.85.E7.9A.84.E4.BE.9D.E8.B5.96.E5.85.B3.E7.B3.BB)
-*   [5 管理软件源](#.E7.AE.A1.E7.90.86.E8.BD.AF.E4.BB.B6.E6.BA.90)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 基本操作](#基本操作)
+*   [2 查询某个包的信息](#查询某个包的信息)
+*   [3 查询包列表](#查询包列表)
+*   [4 查询包的依赖关系](#查询包的依赖关系)
+*   [5 管理软件源](#管理软件源)
 *   [6 Overrides](#Overrides)
-*   [7 校验和修复](#.E6.A0.A1.E9.AA.8C.E5.92.8C.E4.BF.AE.E5.A4.8D)
-*   [8 使用软件包文件和构建软件包](#.E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.96.87.E4.BB.B6.E5.92.8C.E6.9E.84.E5.BB.BA.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [9 参阅](#.E5.8F.82.E9.98.85)
+*   [7 校验和修复](#校验和修复)
+*   [8 使用软件包文件和构建软件包](#使用软件包文件和构建软件包)
+*   [9 参阅](#参阅)
 
 ## 基本操作
 

@@ -1,6 +1,10 @@
 In biologie is mutualisme een interactie tussen twee organismen die elk profijt trekt. Dit principe kan ook van toepassing op pro-actieve en gemotiveerde leden van de Arch gemeenschap die willen meedoen door dit aan hun favoriete GNU / Linux distributie bij te dragen. Deze participatie komt niet alleen ten goede voor het lid van de gemeenschap en hun collega-schutters, maar voor alle fans van vrije en open source software.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Schenken](#Schenken)
 *   [2 Forums](#Forums)

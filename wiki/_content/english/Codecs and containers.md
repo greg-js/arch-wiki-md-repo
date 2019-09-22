@@ -133,9 +133,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:
 
 	[http://www.audiocoding.com/faad2.html](http://www.audiocoding.com/faad2.html) || [faad2](https://www.archlinux.org/packages/?name=faad2)
 
-*   **[Fraunhofer FDK AAC](https://en.wikipedia.org/wiki/FAAD2 "wikipedia:FAAD2")** — Complete, high-quality audio solution to Android (and Linux) users.
+*   **[Fraunhofer FDK AAC](https://en.wikipedia.org/wiki/Fraunhofer_FDK_AAC "wikipedia:Fraunhofer FDK AAC")** — OpenCORE Framework implementation Advanced Audio Coding (AAC) encoder. Modified library of Fraunhofer AAC decoder and encoder.
 
-	[http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html](http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html) || [libfdk-aac](https://www.archlinux.org/packages/?name=libfdk-aac)
+	[https://sourceforge.net/projects/opencore-amr/](https://sourceforge.net/projects/opencore-amr/) || [libfdk-aac](https://www.archlinux.org/packages/?name=libfdk-aac) (codec library) [fdkaac](https://www.archlinux.org/packages/?name=fdkaac) (CLI frontend for libfdk-aac)
 
 *   **[Nero AAC](https://en.wikipedia.org/wiki/Nero_AAC_Codec "wikipedia:Nero AAC Codec")** — Nero AAC reference quality MPEG-4 and 3GPP audio codec. (deprecated)
 

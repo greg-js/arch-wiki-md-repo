@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2019-04-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=568013) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=582754) na versão em inglês.
 
 Artigos relacionados
 
@@ -188,6 +188,9 @@ LANGUAGE=en_AU:en_GB:en
 Se `LC_TIME` estiver configurado para `en_US.UTF-8`, por exemplo, o formato de data será "MM/DD/AAAA". Caso prefira usar o formato de data da ISO 8601 de "AAAA-MM-DD", use:
 
  `locale.conf`  `LC_TIME=en_DK.UTF-8` 
+
+[glibc](https://www.archlinux.org/packages/?name=glibc) 2.29 corrigiu um erro, `en_US.UTF-8` começou a mostrar no formato de 12 horas, como era a intenção. Se você quiser usar o formato de 24 horas, use `LC_TIME=en_GB.UTF-8`.
+
 **Nota:** Os programas não necessariamente respeitam essa variável para formatar a data. Por exemplo, [date(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/date.1) usa seus próprios parâmetros para fazê-lo.
 
 ### LC_COLLATE: colação

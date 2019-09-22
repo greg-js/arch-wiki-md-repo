@@ -47,6 +47,7 @@ Related articles
     *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_(with_multiple_NICs))
     *   [5.9 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
     *   [5.10 Journal warnings for profiles using .include directives](#Journal_warnings_for_profiles_using_.include_directives)
+    *   [5.11 Hooks don't work](#Hooks_don't_work)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -628,6 +629,19 @@ netctl reenable *profile*
 ```
 
 will update the profile to the new [drop-in unit file](/index.php/Drop-in_unit_file "Drop-in unit file") format.
+
+### Hooks don't work
+
+If you have multiple hooks in `/etc/netctl/hooks/`, variables like `ExecUpPost` and `ExecDownPre` will be executed only from one file. To fix this, define the variables like this:
+
+ `/etc/netctl/hooks/test` 
+```
+ExecUpPost="some command ; "$ExecUpPost
+ExecDownPre="some command ; "$ExecDownPre
+
+```
+
+This will append your commands to be executed with already defined ones.
 
 ## See also
 

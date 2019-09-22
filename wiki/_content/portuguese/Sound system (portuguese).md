@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=537953) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=580513) na versão em inglês.
 
 Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
 
@@ -47,10 +47,6 @@ Uma instalação padrão do Arch já inclui o sistema de som do kernel ([ALSA](/
 *   **JACK2** — Esta é a edição mais recente do JACK, projetada explicitamente para sistemas multiprocessados e também inclui transporte pela rede.
 
 	[https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) || [jack2](https://www.archlinux.org/packages/?name=jack2)
-
-*   **JACK2 with D-Bus** — Este é o JACK2 com uma arquitetura de inicialização diferente, capaz de funcionar bem em todos os momentos em coexistência com os aplicativos PulseAudio e não-JACK, o que é um problema para as outras duas categorias de configuração do JACK.
-
-	[https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) || [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus)
 
 *   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — Este é um servidor de som suportado por alguns dos principais aplicativos.
 

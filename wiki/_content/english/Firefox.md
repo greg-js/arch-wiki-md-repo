@@ -84,7 +84,7 @@ Other alternatives include:
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
-A number of language packs are available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox),[firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition) and [firefox-nightly-](https://aur.archlinux.org/packages/?K=firefox-nightly-) for [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
+A number of language packs are available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox),[firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition) and [firefox-nightly-](https://aur.archlinux.org/packages/?K=firefox-nightly-) for [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/).
 
 ## Add-ons
 
@@ -284,9 +284,28 @@ As an alternative you can use the full-page screenshot button in the *Developer 
 
 ### Wayland
 
-In order to start Firefox as a native Wayland application set the [environment variable](/index.php/Environment_variable "Environment variable") `MOZ_ENABLE_WAYLAND=1`. For example, [edit the .desktop file](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") and add `MOZ_ENABLE_WAYLAND=1` to all `Exec` lines.
+More recent versions of Firefox support opting into Wayland via an environment variable.
 
-To verify you are running Wayland, go to about:support and check Window Protocol. If you are using Wayland, it will say so.
+To opt in, first make sure you really are in a Wayland session:
+
+ `$ printenv XDG_SESSION_TYPE` 
+```
+wayland
+
+```
+
+Next, start Firefox like this:
+
+```
+$ MOZ_ENABLE_WAYLAND=1 firefox
+
+```
+
+Next go to about:support in the URL bar and check the Window Protocol field. If this worked, then it should say `wayland`. Otherwise, it will say `x11`.
+
+To make this permanent, edit Firefox's *.desktop* file (`firefox.desktop`) and add `env MOZ_ENABLE_WAYLAND=1` to all `Exec=` lines. See [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries") for instructions.
+
+Finally, open Firefox via the launcher like you normally would and verify it worked by checking Window Protocol again.
 
 ### Window manager rules
 

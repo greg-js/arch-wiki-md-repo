@@ -96,6 +96,15 @@ Note that this method is only effective for the current connection. If the mouse
 
 Alternatively, you can change the default latency settings via debugfs. See `/sys/kernel/debug/bluetooth/hci0/conn_{latency,{min,max}_interval}` .
 
+This example will solve the lag problems, but you must un pair and pair the mouse:
+
+```
+# echo 0 > /sys/kernel/debug/bluetooth/hci0/conn_latency
+# echo 6 > /sys/kernel/debug/bluetooth/hci0/conn_min_interval
+# echo 7 > /sys/kernel/debug/bluetooth/hci0/conn_max_interval
+
+```
+
 ### Problems with the USB dongle
 
 If you have trouble with your USB dongle, you may also want to try:

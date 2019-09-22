@@ -1000,5 +1000,3 @@ extlinux: path /boot/syslinux doesn't match device /dev/sda1
 ## See also
 
 *   [Official website](https://www.syslinux.org)
-*   [PXELinux configuration](http://www.josephn.net/scrapbook/pxelinux_stuff)
-*   [Multiboot USB using Syslinux](http://blog.jak.me/2013/01/03/creating-a-multiboot-usb-stick-using-syslinux/)

@@ -5,7 +5,11 @@ Related articles
 
 Dalam ilmu Biologi,simbiosis [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) adalah hubungan antar organisme yang saling memberikan manfaat/keuntungan.Prinsip ini juga dapat diaplikasikan untuk memotivasi dan mengajak anggota komunitas Archlinux untuk ikut serta dan berkontribusi untuk distro GNU/Linux favoritnya. Keikutsertaan ini tidak hanya memberikan manfaat untuk anggota komunitas dan kepada Archer lainnya,tetapi juga kepada seluruh pengguna [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bergabung dengan Forum Archlinux](#Bergabung_dengan_Forum_Archlinux)
 *   [2 Berkontribusi untuk Arch Wiki](#Berkontribusi_untuk_Arch_Wiki)

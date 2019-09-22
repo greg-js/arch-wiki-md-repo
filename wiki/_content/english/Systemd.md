@@ -236,14 +236,14 @@ $ systemctl help *unit*
 Shut down and reboot the system:
 
 ```
-$ systemctl reboot
+$ reboot
 
 ```
 
 Shut down and power-off the system:
 
 ```
-$ systemctl poweroff
+$ poweroff
 
 ```
 

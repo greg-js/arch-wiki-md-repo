@@ -56,9 +56,9 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 759
 Before installing it is necessary to modify some UEFI Settings. They can be accessed by pressing the F2 key repeatedly when booting.
 
 *   If you will be dual booting alongside an existing Windows installation, Windows will not boot if you just go ahead and make the switch to AHCI as described in the steps below. You must log into you Windows install both before and after that BIOS change [to set and then remove a safeboot flag](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/), respectively.
-*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD.
-*   Change Fastboot to "Thorough" in "POST Behaviour". This prevents intermittent boot failures.
-*   Disable secure boot to allow Linux to boot.
+*   Under 'System Configuration', change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD.
+*   Under 'Secure Boot', disable secure boot to allow Linux to boot.
+*   Under 'POST Behaviour', change "Fastboot" to "Thorough". This prevents intermittent boot failures.
 
 ### Firmware Update
 
@@ -209,6 +209,9 @@ $ cat /usr/local/bin/xbacklightmon
 #use LC_NUMERIC if you are using an European LC, else printf will not work because it expects an comma instead of a decimal point
 LC_NUMERIC="en_US.UTF-8"
 
+#Exit with 1 if $DISPLAY env isn't set. Helps when using the start up script below
+[ -z "$DISPLAY" ] && exit 1;
+
 # modify this path to the location of your backlight class
 path=/sys/class/backlight/intel_backlight
 
@@ -238,7 +241,29 @@ $ chmod 755 /usr/local/bin/xbacklightmon
 
 ```
 
-You may test this by running the file, and using the backlight keys to test if the brightness updates. Finally, configure the script to run when you display manager starts.
+You may test this by running the file, and using the backlight keys to test if the brightness updates.
+
+To run the script automatically on startup, write the following file:
+
+ `$HOME/.config/systemd/user/xbacklightmon.service` 
+```
+ [Unit]
+ Description=Ugly fix to be able to control the brightness of OLED screens via keyboard brightness
+ After=multi-user.target
+
+ [Service]
+ Type=simple
+ ExecStart=/usr/local/bin/xbacklightmon
+ Restart=on-failure
+ RestartSec=1
+
+ [Install]
+ WantedBy=default.target
+```
+
+And to enable on startup
+
+ `systemctl --user enable xbacklightmon.service` 
 
 **Please note:** If you are using the xf86-video-intel driver, you will need to replace 'eDP-1' in the script above with 'eDP1' You also have to change the path to 'path=/sys/class/backlight/intel_backlight/' if you are using xf86-video-intel
 

@@ -9,8 +9,9 @@
 *   [1 Unlock KDE Wallet automatically on login](#Unlock_KDE_Wallet_automatically_on_login)
     *   [1.1 Configure display manager](#Configure_display_manager)
 *   [2 Using the KDE Wallet to store ssh key passphrases](#Using_the_KDE_Wallet_to_store_ssh_key_passphrases)
-*   [3 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
-*   [4 See also](#See_also)
+*   [3 Using the KDE Wallet to store Git http/https credentials](#Using_the_KDE_Wallet_to_store_Git_http/https_credentials)
+*   [4 KDE Wallet for Chrome and Chromium](#KDE_Wallet_for_Chrome_and_Chromium)
+*   [5 See also](#See_also)
 
 ## Unlock KDE Wallet automatically on login
 
@@ -102,6 +103,21 @@ $ ssh-add /path/to/new/key </dev/null
 ```
 
 and append the key to the list of keys in `~/.config/autostart-scripts/ssh-add.sh` as explained above to have it unlocked upon providing the kwallet password.
+
+## Using the KDE Wallet to store Git http/https credentials
+
+[Git](/index.php/Git "Git") can delegate credentials handling to KDE Wallet using a helper like [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass)
+
+[Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
+
+Run the following command to configure Git:
+
+```
+$ git config --global core.askpass /usr/bin/ksshaskpass
+
+```
+
+See [gitcredentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitcredentials.7) for details.
 
 ## KDE Wallet for Chrome and Chromium
 

@@ -1,11 +1,11 @@
 Related articles
 
 *   [fstab](/index.php/Fstab "Fstab")
-*   [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate")
+*   [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate")
 *   [Zswap](/index.php/Zswap "Zswap")
 *   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
-*   [ZFS#Swap_volume](/index.php/ZFS#Swap_volume "ZFS")
-*   [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
+*   [ZFS#Swap volume](/index.php/ZFS#Swap_volume "ZFS")
+*   [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption")
 
 This page provides an introduction to [swap space and paging](https://en.wikipedia.org/wiki/Paging "wikipedia:Paging") on GNU/Linux. It covers creation and activation of swap partitions and swap files.
 
@@ -197,7 +197,11 @@ Finally remove the relevant entry from `/etc/fstab`.
 
 #### systemd-swap
 
-[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfc_enabled=1` in the *Swap File Chunked* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommended configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
+systemd-swap is a script for creating hybrid swap space from zram swaps, swap files and swap partitions. It is not affiliated with the systemd project.
+
+[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfc_enabled=1` in the *Swap File Chunked* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
+
+Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommended configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
 **Note:** If the journal keeps showing the following warning `systemd-swap[..]: WARN: swapFC: ENOSPC` and no swap file is being created, you need to set `swapfc_force_preallocated=1` in `/etc/systemd/swap.conf`.
 

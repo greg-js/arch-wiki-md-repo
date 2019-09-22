@@ -9,7 +9,11 @@ Pažymėtina, kad oficiali vikipedija taip pat palaiko ir internacionalizuotą t
 
 Šis sąrašas tikrai nėra išbaigtas. Jeigu žinote bendruomenę kuri nėra sąrašę, galite ją laisvai pridėti. Jeigu ieškote bendruomenės, kuri dar nėra sukurta, galite sukurti ją arba aplankyti [kitų kalbų forumą](https://bbs.archlinux.org/viewforum.php?id=30).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Brazilija](#Brazilija)
 *   [2 Kinija](#Kinija)

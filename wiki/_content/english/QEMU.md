@@ -72,9 +72,11 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [7.5 cirrus](#cirrus)
     *   [7.6 none](#none)
 *   [8 SPICE](#SPICE)
-    *   [8.1 Enabling SPICE via the command line](#Enabling_SPICE_via_the_command_line)
-    *   [8.2 Connect to the guest with a SPICE client](#Connect_to_the_guest_with_a_SPICE_client)
-    *   [8.3 SPICE support on the guest](#SPICE_support_on_the_guest)
+    *   [8.1 Enabling SPICE support on the host](#Enabling_SPICE_support_on_the_host)
+    *   [8.2 Connecting to the guest with a SPICE client](#Connecting_to_the_guest_with_a_SPICE_client)
+        *   [8.2.1 Manually running a SPICE client](#Manually_running_a_SPICE_client)
+        *   [8.2.2 Running a SPICE client with QEMU](#Running_a_SPICE_client_with_QEMU)
+    *   [8.3 Enabling SPICE support on the guest](#Enabling_SPICE_support_on_the_guest)
     *   [8.4 Password authentication with SPICE](#Password_authentication_with_SPICE)
     *   [8.5 TLS encrypted communication with SPICE](#TLS_encrypted_communication_with_SPICE)
 *   [9 VNC](#VNC)
@@ -1320,9 +1322,9 @@ This is like a PC that has no VGA card at all. You would not even be able to acc
 
 ## SPICE
 
-The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way. SPICE can only be used when using [#qxl](#qxl) as the graphical output.
+The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way.
 
-### Enabling SPICE via the command line
+### Enabling SPICE support on the host
 
 The following is an example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
@@ -1338,34 +1340,35 @@ The parameters have the following meaning:
 3.  `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in the virtio-serial device,
 4.  `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port. It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
 
-**Tip:**
+**Tip:** Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example: `$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing` 
 
-*   Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
-*   Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
-
- `$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing` 
-
-Then connect with `$ remote-viewer spice+unix:///tmp/vm_spice.socket` or with `$ spicy --uri="spice+unix:///tmp/vm_spice.socket"`.
-
-### Connect to the guest with a SPICE client
+### Connecting to the guest with a SPICE client
 
 A SPICE client is necessary to connect to the guest. In Arch, the following clients are available:
 
-**virt-viewer** — is the recommended SPICE client by the protocol developers
+**virt-viewer** — SPICE client recommended by the protocol developers, a subset of the virt-manager project.
 
-	run it with `$ remote-viewer spice://127.0.0.1:5930` || [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
+	[https://virt-manager.org/](https://virt-manager.org/) || [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer)
 
-**spice-gtk** — is a GTK client which can also be used
+**spice-gtk** — SPICE GTK client, a subset of the SPICE project. Embedded into other applications as a widget.
 
-	run it with `$ spicy -h 127.0.0.1 -p 5930` || [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk)
+	[https://www.spice-space.org/](https://www.spice-space.org/) || [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk)
+
+For clients that run on smartphone or on other platforms, refer to the *Other clients* section in [spice-space download](http://www.spice-space.org/download.html).
+
+#### Manually running a SPICE client
+
+One way of connecting to the guest is to manually run the SPICE client using `$ remote-viewer spice+unix:///tmp/vm_spice.socket` or `$ spicy --uri="spice+unix:///tmp/vm_spice.socket"`, depending on the desired client. Since QEMU in SPICE mode acts similarly to a remote desktop server, it may be more convenient to run QEMU in daemon mode with the `-daemonize` parameter.
 
 **Tip:** To connect to the guest through SSH tunelling, the following type of command can be used: `$ ssh -fL 5999:localhost:5930 *my.domain.org* sleep 10; spicy -h 127.0.0.1 -p 5999` 
 
 This example connects *spicy* to the local port `5999` which is forwarded through SSH to the guest's SPICE server located at the address *my.domain.org*, port `5930`. Note the `-f` option that requests ssh to execute the command `sleep 10` in the background. This way, the ssh session runs while the client is active and auto-closes once the client ends.
 
-For clients that run on smartphone or on other platforms, refer to the *Other clients* section in [spice-space download](http://www.spice-space.org/download.html).
+#### Running a SPICE client with QEMU
 
-### SPICE support on the guest
+QEMU can automatically start a SPICE client with an appropriate socket, if the display is set to SPICE with the `-display spice-app` parameter. This will use the system's default SPICE client as the viewer.
+
+### Enabling SPICE support on the guest
 
 For **Arch Linux guests**, for improved support for multiple monitors or clipboard sharing, the following packages should be installed:
 
@@ -2173,8 +2176,9 @@ As a workaround, create your device in this form:
 
 ### Hang during VM initramfs
 
-Linux 5.2.11 introduced a KVM regression where under some circumstances a VM may permanently hang during the early boot phase, when the initramfs is being loaded or ran. [[3]](https://www.spinics.net/lists/kvm/msg195171.html) The host shows qemu using 100% CPU * number of virtual CPUs. Reported case is with a host using hyperthreading, and a VM being given more than host's `nproc`/2 virtual CPUs. It is unknown what exact circumstances trigger one of the threads to delete a memory region to cause this. The workarounds are:
+Linux 5.2.11 introduced a KVM regression where under some circumstances a VM may permanently hang during the early boot phase, when the initramfs is being loaded or ran. [[3]](https://www.spinics.net/lists/kvm/msg195171.html) Linux 5.3 fixed the regression. The host shows qemu using 100% CPU * number of virtual CPUs. Reported case is with a host using hyperthreading, and a VM being given more than host's `nproc`/2 virtual CPUs. It is unknown what exact circumstances trigger one of the threads to delete a memory region to cause this. The workarounds are:
 
+*   Upgrade to Linux 5.3.
 *   Downgrade to Linux 5.2.10
 *   Until fixed, try giving the VM no more than the host's `nproc`/2 virtual CPUs
 *   Custom compile linux, reverting commit 2ad350fb4c (note this re-introduces a regression triggered when removing a memslot)

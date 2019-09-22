@@ -60,6 +60,7 @@ Openresolv can be configured to pass name servers and search domains to DNS reso
 *   [BIND](/index.php/BIND "BIND")
 *   [dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq")
 *   [pdnsd](/index.php/Pdnsd "Pdnsd")
+*   [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor)
 *   [Unbound](/index.php/Unbound "Unbound")
 
 See the [official documentation](https://roy.marples.name/projects/openresolv/config) for instructions.

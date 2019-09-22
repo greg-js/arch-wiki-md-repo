@@ -1,6 +1,10 @@
 Naast de behandelde vragen hieronder, vind je [The Arch Way](/index.php/The_Arch_Way_(Nederlands) "The Arch Way (Nederlands)"), [Arch Linux](/index.php/Arch_Linux_(Nederlands) "Arch Linux (Nederlands)") misschien ook behulpzaam. Deze bevatten alle drie ook duidelijke informatie over Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Algemeen](#Algemeen)
     *   [1.1 V) Wat is Arch Linux?](#V)_Wat_is_Arch_Linux?)

@@ -11,7 +11,11 @@ Da [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kerne
 
 Esistono diversi kernel alternativi per Arch Linux oltre a quello principale. Questo articolo elenca alcune delle opzioni disponibili nei repository con una breve descrizione per ognuna. È anche presente una descrizione delle patch che possono essere applicate al kernel del sistema. L'articolo termina con una panoramica sulla compilazione dei kernel personalizzati con link ai vari metodi.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Kernel precompilati](#Kernel_precompilati)
     *   [1.1 Pacchetti ufficiali](#Pacchetti_ufficiali)

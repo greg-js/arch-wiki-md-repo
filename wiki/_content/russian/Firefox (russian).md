@@ -7,7 +7,7 @@
 *   [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)")
 *   [Opera](/index.php/Opera "Opera")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 11 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=581406).
+**Состояние перевода:** На этой странице представлен перевод статьи [Firefox](/index.php/Firefox "Firefox"). Дата последней синхронизации: 20 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Firefox&diff=0&oldid=583421).
 
 [Firefox](https://www.mozilla.org/ru/firefox/) — популярный графический веб-браузер с открытым исходным кодом, разрабатываемый [Mozilla](https://www.mozilla.org/ru/).
 
@@ -86,7 +86,7 @@
 
 *   Кроме указанных выше каналов распространения Mozilla, существуют также форки со своими особенностями. Смотрите [Список приложений#Основанные на Gecko](/index.php/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9#Основанные_на_Gecko "Список приложений").
 
-Кроме языка по умолчанию, английского, для Firefox также доступен ряд языковых пакетов. Обычно они называются `firefox-i18n-*languagecode*` (где `*languagecode*` может быть любым кодом языка, например, **ru**, **de**, **ja**, **fr** и так далее). Для получения списка доступных языковых пакетов смотрите [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) для [firefox](https://www.archlinux.org/packages/?name=firefox) и [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) для [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
+Кроме языка по умолчанию, английского, для Firefox также доступен ряд языковых пакетов. Обычно они называются `firefox-i18n-*languagecode*` (где `*languagecode*` может быть любым кодом языка, например, **ru**, **de**, **ja**, **fr** и так далее). Для получения списка доступных языковых пакетов смотрите [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) для [firefox](https://www.archlinux.org/packages/?name=firefox), [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) для [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition) и [firefox-nightly-](https://aur.archlinux.org/packages/?K=firefox-nightly-) для [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/).
 
 ## Дополнения
 
@@ -286,9 +286,28 @@ Firefox может не определить корректное значени
 
 ### Wayland
 
-Задайте [переменную окружения](/index.php/Environment_variables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Environment variables (Русский)") `MOZ_ENABLE_WAYLAND=1`, чтобы запускать Firefox в качестве нативного Wayland-приложения. Например, [отредактируйте файл .desktop](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Изменение_переменных_среды "Desktop entries (Русский)"), добавив `MOZ_ENABLE_WAYLAND=1` во всех строках `Exec`.
+Последние версии Firefox можно запустить в Wayland, используя переменную окружения.
 
-Перейдите в about:support и проверьте строку "Window Protocol" для получения информации об используемом протоколе.
+Для начала убедитесь, что текущая сессия действительно запущена в Wayland:
+
+ `$ printenv XDG_SESSION_TYPE` 
+```
+wayland
+
+```
+
+Затем запустите Firefox следующим образом:
+
+```
+$ MOZ_ENABLE_WAYLAND=1 firefox
+
+```
+
+После чего перейдите на страницу about:support и проверьте значение строки "Window Protocol" — если метод сработал, вы увидите `wayland`. В противном случае, будет отображаться `x11`.
+
+Чтобы сделать данное изменение постоянным, отредактируйте ярлык Firefox (`firefox.desktop`), добавив `env MOZ_ENABLE_WAYLAND=1` ко всем строкам `Exec=`. См. [Desktop entries (Русский)#Изменение переменных среды](/index.php/Desktop_entries_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Изменение_переменных_среды "Desktop entries (Русский)") для получения более подробной информации.
+
+Затем запустите Firefox с помощью ярлыка и снова проверьте строку "Window Protocol".
 
 ### Правила оконного менеджера
 

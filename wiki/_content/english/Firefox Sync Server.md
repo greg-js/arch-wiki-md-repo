@@ -24,7 +24,7 @@ This page details on how to setup an own Firefox Sync Server and how to configur
 
 ### Configuration
 
-One file is available to configure a firefox sync server: `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini`. Most options are explained clearly in the [official documentation](http://docs.services.mozilla.com/howtos/run-sync-1.5.html). You might want to change two variables, the accepted domain name (`public_url`) and the database backend (`sqluri`):
+One file is available to configure a firefox sync server: `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini`. Most options are explained clearly in the [official documentation](https://mozilla-services.readthedocs.io/en/latest/howtos/run-sync-1.5.html). You might want to change two variables, the accepted domain name (`public_url`) and the database backend (`sqluri`):
 
  `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
 ```
@@ -37,19 +37,30 @@ sqluri = sqlite:////var/lib/mozilla-firefox-sync-server/syncserver.db
 
 Other databases can be used as backend for the firefox sync server such as [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") instead of [SQLite](/index.php/SQLite "SQLite"). In order to achieve this it's necesserary to add python packages via pip.
 
-For MySQL `/usr/share/webapps/mozilla-firefox-sync-server/local/bin/pip install PyMySQL` For PostgreSQL `/usr/share/webapps/mozilla-firefox-sync-server/local/bin/pip install psycopg2` 
+For MySQL
+
+ `/usr/share/webapps/mozilla-firefox-sync-server/local/bin/pip install PyMySQL` 
+
+For PostgreSQL
+
+ `/usr/share/webapps/mozilla-firefox-sync-server/local/bin/pip install psycopg2` 
 
 Then appropriate databases and users must be created in the database engine that will be used.
 
 The syncserver.ini file should also be modified to reflect the change of database and it uses the SQLAlchemy syntax.
 
-For MySQL `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
+For MySQL
+
+ `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
 ```
 [syncserver]
 sqluri = pymysql://username:password@db.example.com/sync
 
 ```
-For PostgreSQL `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
+
+For PostgreSQL
+
+ `/etc/webapps/mozilla-firefox-sync-server/syncserver.ini` 
 ```
 [syncserver]
 sqluri = postgresql://username:password@db.example.com/sync

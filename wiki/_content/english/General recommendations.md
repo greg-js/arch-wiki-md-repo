@@ -1,6 +1,6 @@
 Related articles
 
-*   [FAQ](/index.php/FAQ "FAQ")
+*   [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions")
 *   [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [List of applications](/index.php/List_of_applications "List of applications")
 

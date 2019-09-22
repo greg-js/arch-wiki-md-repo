@@ -20,6 +20,8 @@
     *   [3.2 Vim](#Vim)
         *   [3.2.1 The background colour of text in *vim* will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
         *   [3.2.2 256color and truecolor support not working in tmux or otherwise](#256color_and_truecolor_support_not_working_in_tmux_or_otherwise)
+    *   [3.3 Crashing](#Crashing)
+        *   [3.3.1 Emojis](#Emojis)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -219,6 +221,23 @@ set termguicolors                    " Enable GUI colors for the terminal to get
 **Tip:** It is recommended to set the values for `t_8f` and `t_8b` prior to setting `colorscheme`, `t_Co` and `termguicolors`.
 
 For more information, see the `:help` in `vim` for: `xterm-true-color`, `t_8f`, `t_8b`
+
+### Crashing
+
+#### Emojis
+
+St may crash if you try to load a page with color emojis that have [no associated glyph](https://lists.suckless.org/dev/1707/31965.html), seen specifically with fonts like [ttf-joypixels](https://www.archlinux.org/packages/?name=ttf-joypixels), returning something similar to this if run from another terminal:
+
+```
+X Error of failed request:  BadLength (poly request too large or internal Xlib length error)
+ Major opcode of failed request:  139 (RENDER)
+ Minor opcode of failed request:  20 (RenderAddGlyphs)
+ Serial number of failed request:  5118
+ Current serial number in output stream:  5209
+
+```
+
+In order to fix it, simply [install](/index.php/Install "Install") [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) for unicode coverage.
 
 ## See also
 

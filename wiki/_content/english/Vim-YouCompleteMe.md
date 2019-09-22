@@ -29,6 +29,7 @@
     *   [3.2 No completion in Java files](#No_completion_in_Java_files)
     *   [3.3 URLError: <urlopen error [Errno 111] Connection refused>](#URLError:_<urlopen_error_[Errno_111]_Connection_refused>)
     *   [3.4 RuntimeError: Error starting OmniSharp server: no solutionfile found](#RuntimeError:_Error_starting_OmniSharp_server:_no_solutionfile_found)
+    *   [3.5 Unable to create directory "/Debug/". Access to the path '/Debug/' is denied.](#Unable_to_create_directory_"/Debug/"._Access_to_the_path_'/Debug/'_is_denied.)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -236,6 +237,12 @@ This error appears when you do not have a `.sln` file in current or parent direc
 ### RuntimeError: Error starting OmniSharp server: no solutionfile found
 
 Same as above.
+
+### Unable to create directory "/Debug/". Access to the path '/Debug/' is denied.
+
+This can happen while opening C# files, preventing solutions from being read/processed (which will lead to a lack of auto-completion for non-open files). Note that this is an Omnisharp error, and will be found in its own debug logs (viewable via `:YcmToggleLogs` ).
+
+The solution appears to be to install [msbuild-stable](https://aur.archlinux.org/packages/msbuild-stable/). More information about the problem can be found in [this](https://github.com/OmniSharp/omnisharp-roslyn/issues/1168) issue on Omnisharp-Rosyln's issue tracker.
 
 ## See also
 

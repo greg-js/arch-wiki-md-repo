@@ -2,7 +2,11 @@
 
 이 문서는 아치 사용자가 공동체에 참여하고 이바지할 수 있는 방법에 관해 기술하고 있다. 아래에는 그 대표적 것들만을 한정적으로 열거했을 뿐이므로 다른 방법이 떠올랐다면 망설임없이 행동으로 옮겨보자.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 공식 아치 리눅스 프로젝트들](#공식_아치_리눅스_프로젝트들)
     *   [1.1 포럼에 글쓰기](#포럼에_글쓰기)

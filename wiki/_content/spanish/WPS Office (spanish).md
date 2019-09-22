@@ -19,6 +19,7 @@ Este artículo es una traducción de [WPS_Office](/index.php/WPS_Office "WPS Off
     *   [4.2 Las fórmulas no se muestran de forma normal](#Las_fórmulas_no_se_muestran_de_forma_normal)
     *   [4.3 Archivo de Microsoft Office en KDE es reconozido como Zip](#Archivo_de_Microsoft_Office_en_KDE_es_reconozido_como_Zip)
     *   [4.4 Framework de método de introducción Fcitx no puede introducir en WPS](#Framework_de_método_de_introducción_Fcitx_no_puede_introducir_en_WPS)
+    *   [4.5 Incorrecta integración con temas oscuros de KDE Plasma](#Incorrecta_integración_con_temas_oscuros_de_KDE_Plasma)
 *   [5 Véase también](#Véase_también)
 
 ## Instalación
@@ -77,6 +78,19 @@ export XMODIFIERS="@im=fcitx"
 export QT_IM_MODULE="fcitx"
 
 ```
+
+### Incorrecta integración con temas oscuros de KDE Plasma
+
+Ejecuta cualquiera de las aplicaciones con la siguiente variable de entorno:
+
+```
+ env GTK2_RC_FILES=/usr/share/themes/Breeze/gtk-2.0/gtkrc et -style gtk+
+
+```
+
+El tema Breeze puede ser reemplazado por cualquier tema claro, como por ejemplo, Adwaita, Breath, etc.
+
+Después de correr la aplicación, WPS mostrará una advertencia: 'Unable to open "gtk+"'. Ignorala y presiona Ok.
 
 ## Véase también
 

@@ -3,7 +3,11 @@ Udover de herunder dækkede spørgsmål finder kan du finde mange oplysninger p�
 *   [The Arch Way (Dansk)](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)") der fortæller om baggrunden og filosofien bag Arch Linux
 *   [Arch Linux (Dansk)](/index.php/Arch_Linux_(Dansk) "Arch Linux (Dansk)") der i korte træk beskriver Arch Linux
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Generelt](#Generelt)
     *   [1.1 Jeg er total Linux-nybegynder. Skal jeg bruge Arch?](#Jeg_er_total_Linux-nybegynder._Skal_jeg_bruge_Arch?)

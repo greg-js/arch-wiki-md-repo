@@ -20,6 +20,7 @@
         *   [2.3.1 Spigot (respectively Craftbukkit)](#Spigot_(respectively_Craftbukkit))
         *   [2.3.2 Cuberite](#Cuberite)
         *   [2.3.3 PaperMC](#PaperMC)
+        *   [2.3.4 Forge](#Forge)
     *   [2.4 Additional notes](#Additional_notes)
 *   [3 Minecraft mod launchers](#Minecraft_mod_launchers)
 *   [4 Other programs and editors](#Other_programs_and_editors)
@@ -109,6 +110,19 @@ Be sure to read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherev
 [PaperMC](https://papermc.io) is a Minecraft server, compatible with Spigot plugins which aims to offer better performance. It can be installed via [papermc](https://aur.archlinux.org/packages/papermc/).
 
 Be sure to read [#Setup](#Setup) and replace `minecraftd` with `papermc` wherever you encounter it.
+
+#### Forge
+
+[Forge](https://minecraftforge.net) is a widely used Minecraft modding API. The following server packages are available:
+
+*   [forge-server](https://aur.archlinux.org/packages/forge-server/) for the latest Minecraft version
+*   [forge-server-1.12.2](https://aur.archlinux.org/packages/forge-server-1.12.2/) for Minecraft 1.12.2
+*   [forge-server-1.11.2](https://aur.archlinux.org/packages/forge-server-1.11.2/) for Minecraft 1.11.2
+*   [forge-server-1.10.2](https://aur.archlinux.org/packages/forge-server-1.10.2/) for Minecraft 1.10.2
+*   [forge-server-1.9.4](https://aur.archlinux.org/packages/forge-server-1.9.4/) for Minecraft 1.9.4
+*   [forge-server-1.8.9](https://aur.archlinux.org/packages/forge-server-1.8.9/) for Minecraft 1.8.9
+
+Be sure to read [#Setup](#Setup) and replace `minecraftd` with `forged` (`forge-x.x.xd` for legacy versions) wherever you encounter it.
 
 ### Additional notes
 

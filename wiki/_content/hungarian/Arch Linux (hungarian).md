@@ -1,6 +1,10 @@
 Az Arch Linux egy függetlenül fejlesztett, [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")/[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architektúrára épülő általános célú GNU/Linux disztribúció, ami elég sokoldalú ahhoz, hogy alkalmas legyen bármilyen szerepre. A fejlesztés az egyszerűségre, minimalizmusra és kódhelyességre fókuszál. Az Arch egy minimális alaprendszerként települ, és a felhasználó állítja be, aki csak az egyéni céljaira szükséges vagy kívánatos dolgokat telepítve összeállítja a számára ideális környezetet. Nincsenek hivatalos GUI-val ellátott konfigurációs eszközök, és a legtöbb rendszerbeállítás a parancssorból vagy szövegszerkesztőből végrehajtható. Rolling-release modellen alapulva az Arch törekszik arra, hogy bleeding edge maradjon, és jellemzően a szoftverek legújabb verzióit kínálja.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Történet](#Történet)
 *   [2 Egyszerűség](#Egyszerűség)

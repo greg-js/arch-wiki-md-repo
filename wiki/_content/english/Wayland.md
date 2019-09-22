@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland provides a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications in Wayland.
+[Wayland](https://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland provides a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications in Wayland.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -47,7 +47,7 @@ Related articles
 
 Most Wayland compositors only work on systems using [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Wayland by itself does not provide a graphical environment; for this you also need a compositor such as [#Weston](#Weston) or [Sway](/index.php/Sway "Sway"), or a desktop environment that includes a compositor like [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE").
 
-For the GPU driver and Wayland compositor to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](http://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
+For the GPU driver and Wayland compositor to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](https://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
 
 | Buffer API | GPU driver support | Wayland compositor support |
 | GBM | All except [NVIDIA](/index.php/NVIDIA "NVIDIA") | All |
@@ -297,7 +297,7 @@ To switch windows with `Super+Space` instead of `Super+Tab` change `KEY_TAB` to 
 
 ## GUI libraries
 
-See details on the [official website](http://wayland.freedesktop.org/toolkits.html).
+See details on the [official website](https://wayland.freedesktop.org/toolkits.html).
 
 ### GTK 3
 
@@ -329,7 +329,7 @@ To use GLEW with the Wayland backend, install the [glew-wayland](https://www.arc
 
 ### EFL
 
-EFL has complete Wayland support. To run a EFL application on Wayland, see Wayland [project page](http://wayland.freedesktop.org/efl.html).
+EFL has complete Wayland support. To run a EFL application on Wayland, see Wayland [project page](https://wayland.freedesktop.org/efl.html).
 
 ## Display managers
 
@@ -459,4 +459,4 @@ No widget toolkit or application is known to support this protocol.
 *   [Article about Wayland debugging on Fedora Wiki](https://fedoraproject.org/wiki/How_to_debug_Wayland_problems)
 *   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
 *   [Arch Linux forum discussion](https://bbs.archlinux.org/viewtopic.php?id=107499)
-*   [Wayland documentation online](http://wayland.freedesktop.org/docs/html/)
+*   [Wayland documentation online](https://wayland.freedesktop.org/docs/html/)

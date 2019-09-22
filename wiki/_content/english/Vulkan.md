@@ -16,6 +16,7 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Error - vulkan: No DRI3 support](#Error_-_vulkan:_No_DRI3_support)
     *   [4.2 Nvidia - vulkan is not working and can not initialize](#Nvidia_-_vulkan_is_not_working_and_can_not_initialize)
+    *   [4.3 No device for the display GPU found. Are the intel-mesa drivers installed?](#No_device_for_the_display_GPU_found._Are_the_intel-mesa_drivers_installed?)
 
 ## Installation
 
@@ -74,3 +75,12 @@ EndSection
 Check if you have [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) installed, it may prevent Nvidia's vulkan driver from being detected.
 
 Alternatively set the [environment variable](/index.php/Environment_variable "Environment variable") `VK_ICD_FILENAMES` to `/usr/share/vulkan/icd.d/nvidia_icd.json`.
+
+### No device for the display GPU found. Are the intel-mesa drivers installed?
+
+Try to list both the intel_icd and primus_vk_wrapper configurations in VK_ICD_FILENAMES
+
+```
+export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json:/usr/share/vulkan/icd.d/primus_vk_wrapper.json
+
+```

@@ -7,7 +7,11 @@ Related articles
 
 Αυτό το άρθρο περιγράφει τον τρόπο με τον οποίο οι νέοι και έμπειροι χρήστες του Arch μπορούν να συμβάλουν στην κοινότητα.Σημειώστε ότι αυτό δεν είναι ένας εξαντλητικός κατάλογος.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Επίσημα έργα του Arch Linux](#Επίσημα_έργα_του_Arch_Linux)
     *   [1.1 Δημοσίευση στο φόρουμ](#Δημοσίευση_στο_φόρουμ)

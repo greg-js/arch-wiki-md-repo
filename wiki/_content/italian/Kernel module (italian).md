@@ -6,18 +6,22 @@ Articoli correlati
 
 I moduli del [kernel](https://en.wikipedia.org/wiki/it:Kernel "wikipedia:it:Kernel") sono file di codice che possono essere caricati e rimossi dal kernel su richiesta. Essi estendono le funzionalità del kernel senza bisogno di riavviare il sistema. In questo articolo saranno approfonditi i metodi per la gestione dei moduli del kernel.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Panoramica](#Panoramica)
 *   [2 Ottenere informazioni](#Ottenere_informazioni)
 *   [3 Configurazione](#Configurazione)
     *   [3.1 Caricamento](#Caricamento)
     *   [3.2 Impostazione delle opzioni](#Impostazione_delle_opzioni)
-        *   [3.2.1 Usando i file in /etc/modprobe.d/](#Usando_i_file_in_.2Fetc.2Fmodprobe.d.2F)
+        *   [3.2.1 Usando i file in /etc/modprobe.d/](#Usando_i_file_in_/etc/modprobe.d/)
         *   [3.2.2 Usando la riga di comando del kernel](#Usando_la_riga_di_comando_del_kernel)
     *   [3.3 Alias](#Alias)
     *   [3.4 Blacklist](#Blacklist)
-        *   [3.4.1 Usando i file in /etc/modprobe.d/](#Usando_i_file_in_.2Fetc.2Fmodprobe.d.2F_2)
+        *   [3.4.1 Usando i file in /etc/modprobe.d/](#Usando_i_file_in_/etc/modprobe.d/_2)
         *   [3.4.2 Uso della riga di comando del kernel](#Uso_della_riga_di_comando_del_kernel)
 *   [4 Gestione manuale dei moduli](#Gestione_manuale_dei_moduli)
 *   [5 Trucchi e Consigli](#Trucchi_e_Consigli)

@@ -37,17 +37,17 @@
 
 Список наших переводчиков:
 
-*   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
-*   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 *   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php/User_talk:SlavMetal "User talk:SlavMetal")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
-*   [Elnee](/index.php/User:Elnee "User:Elnee") ([обсуждение](/index.php/User_talk:Elnee "User talk:Elnee")|[вклад](/index.php/Special:Contributions/Elnee "Special:Contributions/Elnee"))
-*   [Vivanova](/index.php/User:Vivanova "User:Vivanova") ([обсуждение](/index.php/User_talk:Vivanova "User talk:Vivanova")|[вклад](/index.php/Special:Contributions/Vivanova "Special:Contributions/Vivanova"))
-*   [Wentfullarch](/index.php/User:Wentfullarch "User:Wentfullarch") ([обсуждение](/index.php?title=User_talk:Wentfullarch&action=edit&redlink=1 "User talk:Wentfullarch (page does not exist)")|[вклад](/index.php/Special:Contributions/Wentfullarch "Special:Contributions/Wentfullarch"))
-*   [VT-100](/index.php/User:VT-100 "User:VT-100") ([обсуждение](/index.php/User_talk:VT-100 "User talk:VT-100")|[вклад](/index.php/Special:Contributions/VT-100 "Special:Contributions/VT-100"))
 *   [Duodai](/index.php/User:Duodai "User:Duodai") ([обсуждение](/index.php/User_talk:Duodai "User talk:Duodai")|[вклад](/index.php/Special:Contributions/Duodai "Special:Contributions/Duodai"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
+*   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
+*   [Wentfullarch](/index.php/User:Wentfullarch "User:Wentfullarch") ([обсуждение](/index.php?title=User_talk:Wentfullarch&action=edit&redlink=1 "User talk:Wentfullarch (page does not exist)")|[вклад](/index.php/Special:Contributions/Wentfullarch "Special:Contributions/Wentfullarch"))
+*   [Vivanova](/index.php/User:Vivanova "User:Vivanova") ([обсуждение](/index.php/User_talk:Vivanova "User talk:Vivanova")|[вклад](/index.php/Special:Contributions/Vivanova "Special:Contributions/Vivanova"))
+*   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
+*   [Elnee](/index.php/User:Elnee "User:Elnee") ([обсуждение](/index.php/User_talk:Elnee "User talk:Elnee")|[вклад](/index.php/Special:Contributions/Elnee "Special:Contributions/Elnee"))
+*   [VT-100](/index.php/User:VT-100 "User:VT-100") ([обсуждение](/index.php/User_talk:VT-100 "User talk:VT-100")|[вклад](/index.php/Special:Contributions/VT-100 "Special:Contributions/VT-100"))
 *   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
 *   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok"))

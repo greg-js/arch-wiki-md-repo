@@ -370,7 +370,8 @@ Server = https://pkgbuild.com/~dvzrv/repo/$arch
 *   **Description:** Editicalu's ArchLinux Repository. Contains precompiled AUR packages (mostly the ones maintained by editicalu)
 *   **Homepage:** [https://ear.wardsegers.be/](https://ear.wardsegers.be/)
 *   **Upstream page:** [https://gitlab.com/editicalu/ear](https://gitlab.com/editicalu/ear)
-*   **Key-ID:** CC0B7CE9604A8A91F0D70B778489DB248465FDD7
+*   **Keyfile:** [https://ear.wardsegers.be/signingkey.asc](https://ear.wardsegers.be/signingkey.asc)
+*   **Key-ID:** A9C4E7734638ACF8
 
 **Note:** Instructions can be found at [https://ear.wardsegers.be](https://ear.wardsegers.be)
 

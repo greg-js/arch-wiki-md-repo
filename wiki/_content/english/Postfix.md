@@ -59,7 +59,7 @@ This article builds upon [Mail server](/index.php/Mail_server "Mail server"). Th
 
 See [Postfix Basic Configuration](http://www.postfix.org/BASIC_CONFIGURATION_README.html). Configuration files are in `/etc/postfix` by default. The two most important files are:
 
-*   `master.cf`, defines what Postfix services are enabled an what how clients connect to them, see [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
+*   `master.cf`, defines what Postfix services are enabled and how clients connect to them, see [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
 *   `main.cf`, the main configuration file, see [postconf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postconf.5)
 
 Configuration changes need a `postfix.service` [reload](/index.php/Reload "Reload") in order to take effect.

@@ -8,7 +8,11 @@ In biologia, il [mutualismo](https://en.wikipedia.org/wiki/it:Mutualismo "wikipe
 
 Quest'articolo descrive vari modi in cui gli utenti di Arch (sia nuovi che veterani) possono contribuire a questa comunità. Notare che questa non è una lista esaustiva.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Donazioni](#Donazioni)
 *   [2 Forum](#Forum)

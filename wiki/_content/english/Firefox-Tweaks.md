@@ -329,7 +329,7 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 #### Hide window border and title bar
 
-Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it. If the checkbox is missing, make sure the `XDG_CURRENT_DESKTOP` environment variable is correctly set and/or the `MOZ_GTK_TITLEBAR_DECORATION` environment variable is set to "client" or "system".
+Go to "Menu", then "Customize" and then at the bottom-left corner find checkbox named "Title Bar". Uncheck it. If the checkbox is missing, make sure the `XDG_CURRENT_DESKTOP` environment variable is correctly set and/or the `MOZ_GTK_TITLEBAR_DECORATION` environment variable is set to "client".
 
 #### Auto-hide Bookmarks Toolbar
 

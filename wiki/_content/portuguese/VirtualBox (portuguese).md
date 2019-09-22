@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-08-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=579546) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [VirtualBox](/index.php/VirtualBox "VirtualBox"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=VirtualBox&diff=0&oldid=581246) na versão em inglês.
 
 Artigos relacionados
 
@@ -84,6 +84,9 @@ A fim de integrar funções do sistema hospedeiro aos convidados, incluindo past
     *   [5.27 Windows: Oscilação da tela se a aceleração 3D estiver ativada](#Windows:_Oscilação_da_tela_se_a_aceleração_3D_estiver_ativada)
     *   [5.28 Nenhuma aceleração 3D de hardware no convidado Arch Linux](#Nenhuma_aceleração_3D_de_hardware_no_convidado_Arch_Linux)
     *   [5.29 Não é possível iniciar o VirtualBox no Wayland: Falha de segmentação](#Não_é_possível_iniciar_o_VirtualBox_no_Wayland:_Falha_de_segmentação)
+*   [6 Problemas conhecidos](#Problemas_conhecidos)
+    *   [6.1 Montagem automática não funciona](#Montagem_automática_não_funciona)
+*   [7 Veja também](#Veja_também)
 
 ## Etapas de instalação para hospedeiros Arch Linux
 
@@ -182,9 +185,9 @@ Veja também [UEFI Virtualbox installation boot problems](https://bbs.archlinux.
 
 ### Instalar os adicionais para convidado
 
-As [Adicionais para Convidado](https://www.virtualbox.org/manual/ch04.html) (*Guest Additions*) do VirtualBox fornecem drivers e aplicativos que otimizam o sistema operacional convidado, incluindo resolução de imagem aprimorada e melhor controle do mouse. Dentro do sistema convidado instalado, instale:
+As [Adicionais para Convidado](https://www.virtualbox.org/manual/ch04.html) (*Guest Additions*) do VirtualBox fornecem drivers e aplicativos que otimizam o sistema operacional convidado, incluindo resolução de imagem aprimorada e melhor controle do mouse. Dentro do sistema convidado instalado, [instale](/index.php/Instale "Instale"):
 
-*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) para utilitários de convidados do VirtualBox com suporte a X
+*   [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) e [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) ([FS#61183](https://bugs.archlinux.org/task/61183)) para utilitários de convidados do VirtualBox com suporte a X
 *   [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) para utilitários de convidados do VirtualBox sem suporte a X
 
 Ambos os pacotes farão você escolher um pacote para fornecer módulos de convidados:
@@ -325,7 +328,7 @@ Se o usuário não estiver no grupo *vboxsf*, para dar acesso ao nosso ponto de 
 
 Para que o recurso de montagem automática funcione, você deve marcar a caixa de seleção de *Montagem Automática* na GUI ou usar o argumento opcional `--automount` com o comando `VBoxManage sharedfolder`.
 
-A pasta compartilhada agora deve aparecer em `/media/sf_*nome_da_pasta_compartilhada*`. Se os usuários em `media` não puderem acessar as pastas compartilhadas, verifique se `media` tem permissões `755` ou se tem propriedade de grupo `vboxsf` se estiver usando permissão `750`. Atualmente, esse não é o padrão se a mídia for criada instalando o [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils).
+A pasta compartilhada agora deve aparecer como `/media/sf_*nome_da_pasta_compartilhada*`. Se os usuários não puderem acessar as pastas compartilhadas, verifique se `/media` tem [permissões](/index.php/Permiss%C3%B5es "Permissões") `755` ou é de propriedade do grupo `vboxsf` se estiver usando permissões `750`. Atualmente, esse não é o padrão se o diretório `/media` for criada por `vboxservice.service`.
 
 Você pode usar links simbólicos para ter um acesso mais conveniente e evitar de navegar naquele diretório, p.ex.:
 
@@ -931,3 +934,21 @@ para
 Exec=env -u QT_QPA_PLATFORM VirtualBox ...
 
 ```
+
+Se isso não funcionar, você pode precisar definir `QT_QPA_PLATFORM` para `xcb`:
+
+```
+Exec=env QT_QPA_PLATFORM=xcb VirtualBox ...
+
+```
+
+## Problemas conhecidos
+
+### Montagem automática não funciona
+
+Montagem automática não funciona com os adicionais para convidados empacotados em [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) e [virtualbox-guest-utils-nox](https://www.archlinux.org/packages/?name=virtualbox-guest-utils-nox) a partir da versão 6.0.0-1\. Veja [FS#61307](https://bugs.archlinux.org/task/61307).
+
+## Veja também
+
+*   [Manual de usuário do VirtualBox](https://www.virtualbox.org/manual/UserManual.html)
+*   [Wikipedia:pt:VirtualBox](https://en.wikipedia.org/wiki/pt:VirtualBox "wikipedia:pt:VirtualBox")

@@ -20,7 +20,11 @@
 
 **Примечание:** Приложения, перечисленные в разделах "Консольные", могут иметь графические фронтенды. Официально в настоящий момент они отсутствуют
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Интернет](#Интернет)
     *   [1.1 Управление подключениями](#Управление_подключениями)
@@ -349,7 +353,7 @@
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Сильнонастраиваемый микробраузер, основанный на движке WebKit и тулките [GTK+](/index.php/GTK%2B "GTK+"). Очень быстрый, расширяемый при помощи Lua и распространяемый под лицензией GNU GPLv3
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **Maxthon** — Браузер, сочетающий в себе минималистичный дизайн с современными технологиями, чтобы сделать интернет для вас быстрее, безопаснее и легче
 
@@ -361,7 +365,7 @@
 
 *   **Otter-browser** — Браузер, целью которого является воссоздание классического пользовательского интерфейса Opera (12.x) при помощи Qt5
 
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://www.archlinux.org/packages/?name=otter-browser)
 
 *   **[QupZilla](https://en.wikipedia.org/wiki/ru:QupZilla "wikipedia:ru:QupZilla")** — Новый и очень быстрый веб-браузер с открытым исходным кодом, основанный на WebKit core и написанный с использованием фреймворка [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")
 
@@ -393,7 +397,7 @@
 
 *   **Vimb** — Быстрый и легковесный веб-браузер в стиле vim, основанный на движке webkit и тулките GTK
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://www.archlinux.org/packages/?name=vimb)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Браузер, который ведет себя, как плагин Vimperator в [Mozilla Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)"). Основан на движке WebKit и использует привязки (bindings) [GTK+](/index.php/GTK%2B "GTK+")
 
@@ -611,7 +615,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **mu/mu4e** — Индексатор электронной почты (mu) и клиент для emacs (mu4e). Основан на Xapian для быстрого поиска
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Небольшой, но очень мощный консольный почтовый клиент
 
@@ -891,7 +895,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Кроссплатформенный клиент IRC для окружения GNOME, вдохновленный [Irssi](/index.php/Irssi "Irssi")
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/ru:XChat "wikipedia:ru:XChat")** — Основанный на GTK клиент IRC, способный работать как в Linux, так и в Windows
 
@@ -3087,7 +3091,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/ru:AUCTeX "wikipedia:ru:AUCTeX")** — Расширяемый пакет для написания и форматирования файлов TeX в Emacs
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/ru:Gummi "wikipedia:ru:Gummi")** — Легковесный, основанный на GTK+, редактор TeX/LaTeX
 
@@ -3207,17 +3211,29 @@ eDonkey по-прежнему является второй по величин�
 
 ##### Текстовые редакторы Vi
 
-*   **Neovim** — Возрожденный в XXI веке *Vim*
+*   **Amp** — текстовый редактор на языке Rust, основанный на упрощенной модели взаимодействия с Vim и с добавлением основных функций, необходимых современному редактору.
 
-	[http://neovim.org/](http://neovim.org/) || [neovim-git](https://aur.archlinux.org/packages/neovim-git/)
+	[https://amp.rs/](https://amp.rs/) || [amp](https://aur.archlinux.org/packages/amp/)
 
-*   **[Vi](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)")** — Оригинальный текстовый редактор ex/vi
+*   **[Kakoune](/index.php/Kakoune "Kakoune")** — модальный текстовый редактор. Уменьшенный набор комбинаций клавиш, мультикурсорные правки, ортогональный дизайн.
+
+	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune](https://www.archlinux.org/packages/?name=kakoune)
+
+*   **[Neovim](/index.php/Neovim "Neovim")** — возрожденный в XXI веке *Vim*.
+
+	[https://neovim.io/](https://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)
+
+*   **[vi](https://en.wikipedia.org/wiki/ru:vi "wikipedia:ru:vi")** — оригинальный текстовый редактор ex/vi.
 
 	[http://ex-vi.sourceforge.net/](http://ex-vi.sourceforge.net/) || [vi](https://www.archlinux.org/packages/?name=vi)
 
-*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — Продвинутый текстовый редактор, который стремится предоставить силу редактора *vi* с более полным списком возможностей
+*   **[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") (Vi IMproved)** — продвинутый текстовый редактор, стремящийся предоставить *vi* с расширенным списком возможностей.
 
-	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
+	[https://www.vim.org/](https://www.vim.org/) || с GUI: [gvim](https://www.archlinux.org/packages/?name=gvim), без GUI: [vim](https://www.archlinux.org/packages/?name=vim)
+
+*   **[Vis](/index.php/Vis "Vis")** — современный, свободный от легаси-кода, простой, но в то же время эффективный текстовый редактор, подобный Vim.
+
+	[https://github.com/martanne/vis](https://github.com/martanne/vis) || [vis](https://www.archlinux.org/packages/?name=vis)
 
 #### Графические
 
@@ -3279,7 +3295,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Medit** — Текстовый редактор для программирования и "околопрограммирования"
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/ru:Xfce#Mousepad.C2.A0.E2.80.94_.D1.82.D0.B5.D0.BA.D1.81.D1.82.D0.BE.D0.B2.D1.8B.D0.B9_.D1.80.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80 "wikipedia:ru:Xfce")** — Быстрый текстовый редактор для окружения рабочего стола Xfce
 
@@ -3315,7 +3331,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Scribes** — Ультраминималистичный текстовый редактор, который сочетает простоту с мощью
 
-	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
+	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://aur.archlinux.org/packages/scribes/)
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/ru:Sublime_Text "wikipedia:ru:Sublime Text")** — Редактор с закрытым исходным кодом, написанный на C++ и Python. Имеет большое количество возможностей и плагинов, но при этом остаётся легковесным и приятным
 
@@ -3341,7 +3357,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Calibre](https://en.wikipedia.org/wiki/ru:Calibre_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0) "wikipedia:ru:Calibre (программа)")** — Приложение управления библиотекой электронных книг, которое может также осуществлять конвертацию между различными форматами и синхронизацию с многими электронными читалками. Среди поддерживаемых форматов есть CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT и TXTZ
 
-	[http://calibre-ebook.com/](http://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
+	[https://calibre-ebook.com/](https://calibre-ebook.com/) || [calibre](https://www.archlinux.org/packages/?name=calibre)
 
 *   **Cool Reader** — Программа чтения электронных книг с большим количеством поддерживаемых форматов, таких как EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM и TCR
 
@@ -3365,7 +3381,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Приложение просмотра PDF и создания заметок
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ##### Управление книгами
 
@@ -3447,7 +3463,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Приложение просмотра PDF и создания заметок
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/ru:Xpdf "wikipedia:ru:Xpdf")** — Программа просмотра, которая способна декодировать LZW и читать зашифрованные файлы PDF
 
@@ -3579,7 +3595,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Cherrytree** — Иерархическое приложение ведения заметок, предоставляющее богатую подсветку текста и синтаксиса и хранение данных в одном файле xml или sqlite
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/ru:Gnote "wikipedia:ru:Gnote")** — Экспериментальный порт Tomboy на C++
 
@@ -3587,7 +3603,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **KeepNote** — Кроссплатформенное приложение GTK+ для ведения заметок с богатыми возможностями форматирования текста
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Небольшая программа, удобная для создания и управления различными заметками. Является частью [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
@@ -3681,7 +3697,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Анализатор сетевых протоколов, позволяющий вам в интерактивном режиме следить за трафиком в компьютерной сети
 
-	[http://www.wireshark.org/](http://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
+	[https://www.wireshark.org/](https://www.wireshark.org/) || CLI: [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli), GUI: [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt)
 
 #### Обнаружение угроз и уязвимостей
 
@@ -3765,7 +3781,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **cfv** — Крошечная утилита как для проверки, так и для создания файлов контрольных сумм. Поддерживает файлы *.sfv*, *.csv*, *.crc*, *.md5*, *md5sum*, *sha1sum*, *.torrent*, *par* и *.par2*
 
-	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
+	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://aur.archlinux.org/packages/cfv/)
 
 *   **GtkHash** — Утилита [GTK+](/index.php/GTK%2B "GTK+") для вычисления контрольных сумм
 
@@ -3795,7 +3811,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **ccrypt** — Консольная утилита для шифрования и расшифровки файлов и потоков
 
-	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
+	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://aur.archlinux.org/packages/ccrypt/)
 
 *   **[GnuPG](/index.php/GnuPG_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GnuPG (Русский)")** — Завершенная и бесплатная реализация стандарта OpenPGP от проекта GNU, как это определено в RFC4880\. Свободная замена PGP с открытым исходным кодом, чаще всего используемая для цифровых подписей пакетов
 
@@ -3857,7 +3873,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **KeePassX** — Приложение для людей с экстремально высокими требованиями к безопасности управления персональными данными
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx)
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://aur.archlinux.org/packages/keepassx/)
 
 *   **MyPasswords** — То, что вам нужно для управления вашими паролями, включая пароли от онлайн-аккаунтов, банковских аккаунтов и т.д.
 
@@ -4007,7 +4023,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Программа в стиле Matlab, поддерживающая многие ее функции, не требующая интерфейса к внешнему коду C, C++ и Fortran, поддерживающая параллельную распределенную разработку алгоритма (через MPI) и возможности 3D-визуализации
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — Тулкит для разработки программного обеспечения, предлагающий блоки обработки сигналов для реализации радиовещания на программном уровне
 
@@ -4087,7 +4103,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ru:ROOT "wikipedia:ru:ROOT")** — Программа анализа данных и библиотека, разработанные в CERN (изначально для физики элементарных частиц)
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/ru:SciDAVis "wikipedia:ru:SciDAVis")** — Форк QtiPlot, созданный с целью быть более документированным и дружелюбным к пользователю
 
@@ -4275,7 +4291,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/ru:KTechLab "wikipedia:ru:KTechLab")** — IDE для создания электронных цепей и цепей PIC microcontroller, а также их имитации, предоставляющая обширные возможности с автомаршрутами и имитацией всех общих электронных и логических компонентов
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Графическое приложение для создания и имитации электрических цепей. Для имитации используется движок [ngspice](https://en.wikipedia.org/wiki/ru:Ngspice "wikipedia:ru:Ngspice") или [Gnucap](https://en.wikipedia.org/wiki/ru:GnuCap "wikipedia:ru:GnuCap")
 
@@ -4353,7 +4369,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **dtach** — Программа, которая эмулирует возможность отделения консольной программы от терминала из [screen](/index.php/GNU_Screen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Screen (Русский)")
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Screen (Русский)")** — Полноэкранный оконный менеджер, "мультиплексирующий" физический терминал
 
@@ -4459,7 +4475,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Полноценный док, позволяющий открывать приложения и управлять окнами легче и быстрее
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Легковесная панель рабочего стола, совместимая с NETWM
 
@@ -4559,7 +4575,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do "wikipedia:GNOME Do")** — Изначально разработанная для окружения GNOME утилита запуска приложений с большим количеством плагинов, вдохновленная [Quicksilver](https://en.wikipedia.org/wiki/Quicksilver_(software) "wikipedia:Quicksilver (software)")
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **j4-dmenu-desktop** — Очень быстрая утилита запуска приложений *dmenu*
 
@@ -4717,7 +4733,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Hamster** — Приложение слежения за временем, помогающее вам узнавать, как много времени вы тратите в течение дня на различные виды деятельности
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Календарь и система планирования, часть группы пакетов [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
@@ -4749,7 +4765,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Легкое и быстрое приложение управления своим временем, написанное на C Sharp
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **TkRemind** — Сложная программа календаря и сигнализации
 

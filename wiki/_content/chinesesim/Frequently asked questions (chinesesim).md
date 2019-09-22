@@ -1,6 +1,10 @@
 **翻译状态：** 本文是英文页面 [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-06，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently+asked+questions&diff=0&oldid=547713)可以查看翻译后英文页面的改动。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 一般问题](#一般问题)
     *   [1.1 Q) Arch Linux 是什么？](#Q)_Arch_Linux_是什么？)

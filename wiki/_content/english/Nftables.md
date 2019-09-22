@@ -39,7 +39,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 *   [4 Examples](#Examples)
     *   [4.1 Workstation](#Workstation)
     *   [4.2 Server](#Server)
-    *   [4.3 Limit rate IPv4/IPv6 firewall](#Limit_rate_IPv4/IPv6_firewall)
+    *   [4.3 Limit rate](#Limit_rate)
     *   [4.4 Jump](#Jump)
     *   [4.5 Different rules for different interfaces](#Different_rules_for_different_interfaces)
     *   [4.6 Masquerading](#Masquerading)
@@ -419,6 +419,8 @@ Now you can edit /tmp/nftables and apply your changes with:
 
  `/etc/nftables.conf` 
 ```
+#!/usr/bin/nft -f
+
 flush ruleset
 
 table inet filter {
@@ -429,7 +431,7 @@ table inet filter {
 		ct state invalid drop comment "Drop invalid connections"
 		ct state established,related accept comment "Accept traffic originated from us"
 
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept accept comment "Accept ICMPv6"
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept comment "Accept ICMPv6"
 		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept comment "Accept ICMP"
 		ip protocol igmp accept comment "Accept IGMP"
 
@@ -461,7 +463,7 @@ table inet filter {
 
  `/etc/nftables.conf` 
 ```
-# A simple firewall
+#!/usr/bin/nft -f
 
 flush ruleset
 
@@ -473,7 +475,7 @@ table inet filter {
 		ct state invalid drop comment "Drop invalid connections"
 		ct state established,related accept comment "Accept traffic originated from us"
 
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept accept comment "Accept ICMPv6"
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept comment "Accept ICMPv6"
 		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept comment "Accept ICMP"
 		ip protocol igmp accept comment "Accept IGMP"
 
@@ -515,9 +517,8 @@ table inet filter {
 
 ```
 
-### Limit rate IPv4/IPv6 firewall
+### Limit rate
 
- `/etc/nftables.conf` 
 ```
 table inet filter {
 	chain input {
@@ -531,20 +532,12 @@ table inet filter {
 
 		ct state established,related accept comment "Accept traffic originated from us"
 
-		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept accept comment "Accept ICMPv6"
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept comment "Accept ICMPv6"
 		ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept comment "Accept ICMP"
 		ip protocol igmp accept comment "Accept IGMP"
 
 		tcp dport ssh ct state new limit rate 15/minute accept comment "Avoid brute force on SSH"
 
-	}
-
-	chain forward {
-		type filter hook forward priority 0; policy drop;
-	}
-
-	chain output {
-		type filter hook output priority 0; policy accept;
 	}
 
 }
@@ -555,7 +548,6 @@ table inet filter {
 
 When using jumps in config file, it is necessary to define the target chain first. Otherwise one could end up with `Error: Could not process rule: No such file or directory`.
 
- `jump.rules` 
 ```
 table inet filter {
     chain web {

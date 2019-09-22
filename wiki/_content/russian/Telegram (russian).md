@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 27 июля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=578091).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 18 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=582842).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -51,6 +51,7 @@
 *   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) — позволяет использовать Telegram при помощи командной строки. Для получения дополнительной информации о программе обратитесь к официальной странице на [Github](https://github.com/vysheng/tg).
 *   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) — основанный на [Ncurses](https://en.wikipedia.org/wiki/ru:ncurses "wikipedia:ru:ncurses") клиент для командной строки, требует [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/). Для получения дополнительной информации о программе обратитесь к официальной странице на [Github](https://github.com/Nanoseb/ncTelegram).
 *   [python-telegram-send](https://aur.archlinux.org/packages/python-telegram-send/) — утилита для отправки сообщений и файлов с помощью Telegram (не полнофункциональный клиент)
+*   [telega.el](https://github.com/zevlg/telega.el) — клиент Telegram для GNU Emacs
 
 ### Web-приложения
 

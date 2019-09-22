@@ -157,7 +157,7 @@ install CD version
 | [Lenovo ThinkPad T470](/index.php/Lenovo_ThinkPad_T470 "Lenovo ThinkPad T470") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T470s](/index.php/Lenovo_ThinkPad_T470s "Lenovo ThinkPad T470s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
-| [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
+| [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | ? | Yes | no beep | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader |
 | [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | Yes | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
@@ -199,7 +199,7 @@ install CD version
 | [Lenovo ThinkPad X260](/index.php/Lenovo_ThinkPad_X260 "Lenovo ThinkPad X260") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD card (Yes), Webcam (Yes), Fingerprint (Yes) |
 | Lenovo ThinkPad X270 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
 | Lenovo ThinkPad X280 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (Fibcom L830-EB-00) | Webcam (Yes) |
-| Lenovo ThinkPad X390 | 2019.08.01 | Yes | Yes | Yes | Yes | Not tested | Yes | NA | Webcam (Yes) |
+| Lenovo ThinkPad X390 | 2019.08.01 | Yes | Yes | Yes | Yes | Not tested | Yes | Yes (Fibocom L830-EB) | Webcam (Yes) |
 | Lenovo ThinkPad X395 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Webcam (Yes), Fingerprint(No, WIP[[1]](https://forums.lenovo.com/t5/Other-Linux-Discussions/Linux-on-T495/m-p/4474320#M13440)) |
 | [Lenovo ThinkPad X1 Carbon](/index.php/Lenovo_ThinkPad_X1_Carbon "Lenovo ThinkPad X1 Carbon") | NA | Yes | Yes | Yes | Yes | Proprietary/nonfree | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |

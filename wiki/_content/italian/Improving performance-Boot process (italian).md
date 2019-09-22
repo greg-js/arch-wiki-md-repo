@@ -1,6 +1,10 @@
 Incrementare la velocità di boot di un sistema riduce i tempi di attesa e significa conoscere meglio come certi files di sistema e scripts interagiscono gli uni con gli altri. Questo articolo prova ad aggregare vari metodi per migliorare i tempi di boot di un sistema Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Analizzare il processo di boot](#Analizzare_il_processo_di_boot)
     *   [1.1 systemd-analyze](#systemd-analyze)

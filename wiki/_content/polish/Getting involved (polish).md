@@ -6,7 +6,11 @@ Related articles
 
 W biologii, [mutualizm](https://en.wikipedia.org/wiki/Mutualism_(biology) jest zjawiskiem występującym pomiędzy dwoma organizmami, które czerpią z tego związku korzyści. Ta zasada obowiązuje także w przypadku społeczności Archa, która pragnie wspomóc swoją ulubioną dystrybucję Linuksa. Udzielona pomoc nie ogranicza się jedynie do użytkowników Archa, ale do wszystkich użytkowników [Wolnego i Otwartego Oprogramowania](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Oficjalne Projekty Arch Linux](#Oficjalne_Projekty_Arch_Linux)
     *   [1.1 Udzielanie się na forum](#Udzielanie_się_na_forum)

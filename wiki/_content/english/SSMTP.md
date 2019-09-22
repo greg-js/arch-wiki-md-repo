@@ -50,7 +50,7 @@ rewriteDomain=gmail.com
 hostname=yourlocalhost.yourlocaldomain.tld
 
 # Use SSL/TLS before starting negotiation
-TLS_CA_FILE=/etc/pki/tls/certs/ca-bundle.crt
+TLS_CA_FILE=/etc/ssl/certs/ca-certificates.crt
 UseTLS=Yes
 UseSTARTTLS=Yes
 

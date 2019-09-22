@@ -10,6 +10,7 @@
 *   [2 提示与技巧](#提示与技巧)
     *   [2.1 修改 WPS 文件图标以及文件关联](#修改_WPS_文件图标以及文件关联)
     *   [2.2 使用 GTK+ UI](#使用_GTK+_UI)
+        *   [2.2.1 手动修复 金山 PDF 启动脚本](#手动修复_金山_PDF_启动脚本)
 *   [3 疑难解答](#疑难解答)
     *   [3.1 Office WPS for Linux 的启动命令是什么](#Office_WPS_for_Linux_的启动命令是什么)
     *   [3.2 Zip 模板压缩包乱码](#Zip_模板压缩包乱码)
@@ -97,7 +98,31 @@ export GTK2_RC_FILES=/usr/share/themes/Breeze/gtk-2.0/gtkrc
 
 ```
 
-由于每次升级可能导致文件修改遗失，可以考虑将 et、wpp、wps 文件复制到其他目录（例如：`~/.local/bin/`），并将其添加到 [Environment variables](/index.php/Environment_variables "Environment variables")
+#### 手动修复 金山 PDF 启动脚本
+
+金山 PDF 提供的启动脚本缺失了对 GTK 的自定义配置 可以在其启动脚本 /usr/bin/wpspdf 开始位置添加：
+
+```
+gOpt="-style=gtk+"
+export GTK2_RC_FILES=/usr/share/themes/Breeze/gtk-2.0/gtkrc
+
+```
+
+并在其后的 run 函数中添加 `${gOpt`}，修改后的 run 函数如下：
+
+```
+function run()
+{
+	if [ -e "${gInstallPath}/office6/${gApp}" ] ; then
+		{ ${gInstallPath}/office6/${gApp} ${gOpt} "$@"; } >/dev/null 2>&1
+	else
+		echo "${gApp} does not exist!"
+	fi
+}
+
+```
+
+**Note:** 由于每次升级可能导致文件修改遗失，可以考虑将 et、wpp、wps 文件复制到其他目录（例如：`~/.local/bin/`），并将其添加到 [Environment variables](/index.php/Environment_variables "Environment variables")
 
 ## 疑难解答
 

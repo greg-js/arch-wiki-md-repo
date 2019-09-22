@@ -1,11 +1,16 @@
 [KDE Wallet Manager](http://utils.kde.org/projects/kwalletmanager/) es una herramienta para gestionar las contraseñas en un escritorio KDE. El uso de KDE Wallet no solo te permite mantener tu información secreta, sino también acceder y gestionar las contraseñas de cada aplicación que se integre con KDE Wallet.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Desbloquear KDE Wallet automáticamente al iniciar la sesión](#Desbloquear_KDE_Wallet_autom.C3.A1ticamente_al_iniciar_la_sesi.C3.B3n)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Desbloquear KDE Wallet automáticamente al iniciar la sesión](#Desbloquear_KDE_Wallet_automáticamente_al_iniciar_la_sesión)
 *   [2 Usar KDE Wallet para almacenar claves de ssh](#Usar_KDE_Wallet_para_almacenar_claves_de_ssh)
-*   [3 KDE Wallet para Firefox](#KDE_Wallet_para_Firefox)
-*   [4 KDE Wallet para Chromium](#KDE_Wallet_para_Chromium)
+*   [3 Usar KDE Wallet para almacenar credenciales Git http/https](#Usar_KDE_Wallet_para_almacenar_credenciales_Git_http/https)
+*   [4 KDE Wallet para Firefox](#KDE_Wallet_para_Firefox)
+*   [5 KDE Wallet para Chromium](#KDE_Wallet_para_Chromium)
 
 ## Desbloquear KDE Wallet automáticamente al iniciar la sesión
 
@@ -69,6 +74,21 @@ También puedes necesitar ejecutar mediante `source` el *script* que establece l
 ```
 
 Te preguntará tu contraseña y desbloqueará tus claves SSH.
+
+## Usar KDE Wallet para almacenar credenciales Git http/https
+
+Git puede delegar la gestión de credenciales a KDE Wallet usando una herramienta como [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass)
+
+Instala [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+
+Ejecuta el siguiente comando para configurar Git:
+
+```
+$ git config --global core.askpass /usr/bin/ksshaskpass
+
+```
+
+Ver [documentación gitcredentials](https://git-scm.com/docs/gitcredentials) para más detalles.
 
 ## KDE Wallet para Firefox
 

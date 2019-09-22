@@ -1,6 +1,10 @@
 다음 질문 외에도 [The Arch Way (한국어)](/index.php/The_Arch_Way_(%ED%95%9C%EA%B5%AD%EC%96%B4) "The Arch Way (한국어)"), [Arch Linux (한국어)](/index.php/Arch_Linux_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Arch Linux (한국어)")에서 유익한 내용을 찾을 수 있습니다. 양쪽 모두 아치 리눅스에 대한 좋은 정보가 있습니다.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 일반](#일반)
     *   [1.1 Q) 아치리눅스란 무엇인가요?](#Q)_아치리눅스란_무엇인가요?)

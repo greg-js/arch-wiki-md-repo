@@ -12,7 +12,7 @@ Related articles
 
 Add new user `mastodon`
 
-Check [build environment](https://github.com/rbenv/ruby-build/wiki#suggested-build-environment) and then the [Official Install guide](https://github.com/tootsuite/documentation/blob/master/Running-Mastodon/Production-guide.md) and prepare your setup by following:
+Check [build environment](https://github.com/rbenv/ruby-build/wiki#suggested-build-environment) and then the [Official Install guide](https://docs.joinmastodon.org/administration/installation/) and prepare your setup by following:
 
 *   [https://github.com/rbenv/rbenv#installation](https://github.com/rbenv/rbenv#installation)
 *   [https://github.com/rbenv/ruby-build#installation](https://github.com/rbenv/ruby-build#installation)

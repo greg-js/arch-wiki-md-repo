@@ -1,6 +1,10 @@
 Arch Linux е самостоятелно разработвана обществена дистрибуция за i686/x86-64, базирана на модела rolling-release и насочена за опитни потребители на GNU/Linux, която предлага големи binary repositories и прекрасна систем за управление на пакети, както и пакетна система подобна на ports. Разработването се стреми между баланс от минимализъм, елегантност, чист код и модерност. Версия 0.1 (Homer) бе пусната на 11 март, 2002г.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Преимущества](#Преимущества)
 *   [2 Уникално управление на пакети](#Уникално_управление_на_пакети)

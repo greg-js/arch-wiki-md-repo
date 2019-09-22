@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2018-12-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=560963) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=581805) na versão em inglês.
 
 Artigos relacionados
 
@@ -160,7 +160,7 @@ Certifique-se de que *startx* esteja apropriadamente [configurado](#Configuraç�
 Para o [Bash](/index.php/Bash "Bash"), adicione o seguinte ao final do `~/.bash_profile`. Se o arquivo não existir, copie uma versão esqueleto de `/etc/skel/.bash_profile`. Para [Zsh](/index.php/Zsh "Zsh"), adicione-o a `~/.zprofile`.
 
 ```
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
 

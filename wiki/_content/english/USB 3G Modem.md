@@ -27,13 +27,16 @@ A number of mobile telephone networks around the world offer mobile internet con
     *   [4.2 Ethernet like interface](#Ethernet_like_interface)
     *   [4.3 Connection halts after few minutes running](#Connection_halts_after_few_minutes_running)
 *   [5 Tips and Tricks](#Tips_and_Tricks)
-    *   [5.1 AT commands](#AT_commands)
-    *   [5.2 Low connection speed](#Low_connection_speed)
-    *   [5.3 Monitor used bandwidth](#Monitor_used_bandwidth)
-    *   [5.4 Reading SMS](#Reading_SMS)
-        *   [5.4.1 With dedicated software](#With_dedicated_software)
-        *   [5.4.2 With email like web interface](#With_email_like_web_interface)
-    *   [5.5 Fix image quality](#Fix_image_quality)
+    *   [5.1 Disable mode switching](#Disable_mode_switching)
+        *   [5.1.1 By the configuration file](#By_the_configuration_file)
+        *   [5.1.2 With a udev rule](#With_a_udev_rule)
+    *   [5.2 AT commands](#AT_commands)
+    *   [5.3 Low connection speed](#Low_connection_speed)
+    *   [5.4 Monitor used bandwidth](#Monitor_used_bandwidth)
+    *   [5.5 Reading SMS](#Reading_SMS)
+        *   [5.5.1 With dedicated software](#With_dedicated_software)
+        *   [5.5.2 With email like web interface](#With_email_like_web_interface)
+    *   [5.6 Fix image quality](#Fix_image_quality)
 
 ## Remove the PIN
 
@@ -172,6 +175,23 @@ Another possibility for such disconnections is to help the customer save bandwid
 
 ## Tips and Tricks
 
+### Disable mode switching
+
+Some ways to disable [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) from operating on a device before the device was inserted, for example to be able to read the initial flash memory (ZeroCD), are:
+
+#### By the configuration file
+
+ `/etc/usb_modeswitch.conf`  `DisableSwitching=1` 
+
+#### With a udev rule
+
+Masking the udev rule the package is using can be achieved with
+
+```
+# ln -s /dev/null /etc/udev/rules.d/40-usb_modeswitch.rules
+
+```
+
 ### AT commands
 
 There are some useful commands:
@@ -282,6 +302,8 @@ It is advisable to see the baud rate set by the official modem application for W
 Frequently a 3G connection obtained via a mobile phone operator comes with restricted bandwidth, so that you are only allowed to use a certain bandwidth per time (e.g. 1GB per month). While it is quite straight-forward to know which type of network applications are pretty bandwidth extensive (e.g. video streaming, gaming, torrent, etc.), it may be difficult to keep an overview about overall consumed bandwidth.
 
 A number of tools are available to help with that. Two console tools are [vnstat](https://www.archlinux.org/packages/?name=vnstat), which allows to keep track of bandwith over time, and [iftop](https://www.archlinux.org/packages/?name=iftop) to monitor bandwidth of individual sessions. If you are a [KDE](/index.php/KDE "KDE") user, [knemo](https://www.archlinux.org/packages/?name=knemo) might help. All are available in the [official repositories](/index.php/Official_repositories "Official repositories").
+
+The internal web server found in some devices, such as some Huawei HiLink, might also show information about bandwidth usage.
 
 ### Reading SMS
 

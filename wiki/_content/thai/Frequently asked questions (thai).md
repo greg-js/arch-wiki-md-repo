@@ -1,6 +1,10 @@
 โปรดอ่าน [The Arch Way](/index.php/The_Arch_Way "The Arch Way") และ [ArchLinux (ไทย)](/index.php/ArchLinux_(%E0%B9%84%E0%B8%97%E0%B8%A2) "ArchLinux (ไทย)") ก่อนในเบื้องต้น บทความทั้งสามมีข้อมูลที่สำคัญที่เกี่ยวข้องกับ Arch Linux
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ทั่วไป](#ทั่วไป)
     *   [1.1 ถาม) ฉันเป็นผู้ที่พึ่งเริ่มต้นใช้ Linux ฉันควรจะใช้ Arch ดีหรือไม่](#ถาม)_ฉันเป็นผู้ที่พึ่งเริ่มต้นใช้_Linux_ฉันควรจะใช้_Arch_ดีหรือไม่)

@@ -7,7 +7,11 @@
 
 这篇文章是关于如何在[VMware](/index.php/VMware "VMware")产品，比如[Player (Plus)](http://www.vmware.com/products/player/)，[Fusion](http://www.vmware.com/products/fusion/)或[Workstation](http://www.vmware.com/products/workstation/)中安装ArchLinux。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 编译进内核的驱动程序（模块）](#编译进内核的驱动程序（模块）)
 *   [2 VMware Tools 与 Open-VM-Tools 方案对比](#VMware_Tools_与_Open-VM-Tools_方案对比)
@@ -122,6 +126,7 @@ VMware Tools 曾经有使用 Unity mode 功能的优势，但由于使用的人�
 *   `vsock` - VMCI 套接字。
 
 **注意:** `vmware-vmblock-fuse` 这一组件不是以内核模块的形式实现的，而是需要手动启动 Systemd 服务。具体操作步骤见下文。 {ic
+
 模块已经从内核移除（除非你禁用了 `fuse`）。
 
 }}

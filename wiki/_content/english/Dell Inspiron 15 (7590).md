@@ -54,9 +54,6 @@ Before installing it is necessary to modify some UEFI Settings. They can be acce
 
 *   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the change but [this can be fixed without a reinstallation](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
 *   Disable secure boot to allow Linux to boot.
-*   To boot from a USB device attached via the USB-C to USB-A adapter included in the box, you'll need to enable Thunderbolt boot. Once enabled, F12 on boot will enter the boot menu.
-
-It is also possible to use the right USB-C port directly without any UEFI adjustment.
 
 Booting and installing from a microSD card is also possible, as long as SD Card and SD Card Boot are both enabled in the UEFI setup.
 

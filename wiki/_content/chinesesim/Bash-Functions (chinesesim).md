@@ -58,19 +58,19 @@ extract() {
    if [ -f $i && -r $i ]; then
        c=
        case $i in
-         *.tar.bz2) c='tar xjf'    ;;
-         *.tar.gz)  c='tar xzf'    ;;
-         *.bz2)     c='bunzip2'    ;;
-         *.gz)      c='gunzip'     ;;
-         *.tar)     c='tar xf'     ;;
-         *.tbz2)    c='tar xjf'    ;;
-         *.tgz)     c='tar xzf'    ;;
-         *.7z)      c='7z x'       ;;
+         *.tar.bz2) c='tar xjf'    ;;
+         *.tar.gz)  c='tar xzf'    ;;
+         *.bz2)     c='bunzip2'    ;;
+         *.gz)      c='gunzip'     ;;
+         *.tar)     c='tar xf'     ;;
+         *.tbz2)    c='tar xjf'    ;;
+         *.tgz)     c='tar xzf'    ;;
+         *.7z)      c='7z x'       ;;
          *.Z)       c='uncompress' ;;
          *.exe)     c='cabextract' ;;
-         *.rar)     c='unrar x'    ;;
-         *.xz)      c='unxz'       ;;
-         *.zip)     c='unzip'      ;;
+         *.rar)     c='unrar x'    ;;
+         *.xz)      c='unxz'       ;;
+         *.zip)     c='unzip'      ;;
          *)     echo "$0: cannot extract \`$i': Unrecognized file extension" >&2; e=1 ;;
        esac
        [ $c ] && command $c "$i"
@@ -88,11 +88,11 @@ docview ()
 {
   if [ -f $1 ] ; then
       case $1 in
-          *.pdf)       xpdf $1    ;;
-          *.ps)        oowriter $1    ;;
-          *.odt)       oowriter $1     ;;
-          *.txt)       leafpad $1       ;;
-          *.doc)       oowriter $1      ;;
+          *.pdf)       xpdf $1    ;;
+          *.ps)        oowriter $1    ;;
+          *.odt)       oowriter $1     ;;
+          *.txt)       leafpad $1       ;;
+          *.doc)       oowriter $1      ;;
           *)           echo "don't know how to extract '$1'..." ;;
       esac
   else

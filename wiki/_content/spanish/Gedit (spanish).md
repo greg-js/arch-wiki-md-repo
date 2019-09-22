@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [GNOME/Gedit (Español)](/index.php/GNOME/Gedit_(Espa%C3%B1ol) "GNOME/Gedit (Español)")
+*   [GNOME (Español)/Gedit (Español)](/index.php/GNOME_(Espa%C3%B1ol)/Gedit_(Espa%C3%B1ol) "GNOME (Español)/Gedit (Español)")

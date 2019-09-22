@@ -5,7 +5,11 @@ Related articles
 
 В биологията, [мутуализъм](https://en.wikipedia.org/wiki/Mutualism_biology) "wikipedia:Mutualism biology)") се нарича връзка между два индивида, при която те имат взаимна полза. Този принцип може също да се приложи и за активните и мотивирани членове на Arch обществото, които искат да допринесат за развитието на тяхната любима дистрибуция, като по този начин имат полза не само те, но и всички останали ползващи Arch Linux, също така и всички фенове на [свободния отворен софтуер](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Форуми](#Форуми)
 *   [2 Wiki](#Wiki)

@@ -5,7 +5,11 @@ There is a variety of [Global Positioning System](https://en.wikipedia.org/wiki/
 *   WWAN-integrated adapters (some HP EliteBook modules for example)
 *   smartphones are able to relay GPS data over USB or Bluetooth with additional software
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Drivers](#Drivers)
 *   [2 Interfaces](#Interfaces)
@@ -15,7 +19,9 @@ There is a variety of [Global Positioning System](https://en.wikipedia.org/wiki/
         *   [2.2.2 Enable GPS](#Enable_GPS)
         *   [2.2.3 Display location](#Display_location)
         *   [2.2.4 Disable GPS](#Disable_GPS)
-*   [3 See also](#See_also)
+*   [3 Clients](#Clients)
+    *   [3.1 Time Synchronization](#Time_Synchronization)
+*   [4 See also](#See_also)
 
 ## Drivers
 
@@ -60,6 +66,14 @@ watch mmcli -m 0 --location-get
 mmcli -m 0 --location-disable-gps-raw --location-disable-gps-nmea
 
 ```
+
+## Clients
+
+The [gpsd](https://www.archlinux.org/packages/?name=gpsd) package provides `cgps`, a simple console-based client for showing the current GPS device status.
+
+### Time Synchronization
+
+See [Network_Time_Protocol_daemon#Using_ntpd_with_GPS](/index.php/Network_Time_Protocol_daemon#Using_ntpd_with_GPS "Network Time Protocol daemon")
 
 ## See also
 

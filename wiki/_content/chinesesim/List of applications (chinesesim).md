@@ -21,7 +21,11 @@ Related articles
 
 **注意:** "Console" 中的应用程序可能会有图形前端，但其官方版本并不自带图形前端。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 互联网](#互联网)
     *   [1.1 网络连接](#网络连接)
@@ -42,64 +46,70 @@ Related articles
                 *   [1.2.2.3.1 基于webkit2gtk的浏览器](#基于webkit2gtk的浏览器)
                 *   [1.2.2.3.2 基于qt5-webkit的浏览器](#基于qt5-webkit的浏览器)
             *   [1.2.2.4 其它](#其它)
-    *   [1.3 下载](#下载)
-        *   [1.3.1 FTP](#FTP)
-            *   [1.3.1.1 FTP 客户端](#FTP_客户端)
-            *   [1.3.1.2 FTP 服务器](#FTP_服务器)
-        *   [1.3.2 BitTorrent 客户端](#BitTorrent_客户端)
-            *   [1.3.2.1 命令行](#命令行)
-                *   [1.3.2.1.1 命令行后端](#命令行后端)
-                *   [1.3.2.1.2 纯命令行界面](#纯命令行界面)
-            *   [1.3.2.2 图形环境](#图形环境)
-                *   [1.3.2.2.1 libtorrent-rasterbar 后端](#libtorrent-rasterbar_后端)
-                *   [1.3.2.2.2 libktorrent 后端](#libktorrent_后端)
-                *   [1.3.2.2.3 其它](#其它_2)
-        *   [1.3.3 电驴](#电驴)
-        *   [1.3.4 Gnutella](#Gnutella)
-    *   [1.4 通讯](#通讯)
-        *   [1.4.1 邮件客户端](#邮件客户端)
-            *   [1.4.1.1 终端](#终端_2)
+    *   [1.3 Web服务器](#Web服务器)
+        *   [1.3.1 静态web服务器](#静态web服务器)
+        *   [1.3.2 专门的 web服务器](#专门的_web服务器)
+        *   [1.3.3 WSGI 服务器](#WSGI_服务器)
+        *   [1.3.4 性能测试](#性能测试)
+    *   [1.4 文件分享](#文件分享)
+        *   [1.4.1 下载管理器](#下载管理器)
+            *   [1.4.1.1 命令行](#命令行)
             *   [1.4.1.2 图形界面](#图形界面_2)
-        *   [1.4.2 即时聊天](#即时聊天)
-            *   [1.4.2.1 多协议客户端](#多协议客户端)
-                *   [1.4.2.1.1 命令行](#命令行_2)
-                *   [1.4.2.1.2 图形环境](#图形环境_2)
-        *   [1.4.3 IRC 客户端](#IRC_客户端)
-            *   [1.4.3.1 终端](#终端_3)
-            *   [1.4.3.2 图形界面](#图形界面_3)
-            *   [1.4.3.3 XMPP (Jabber)](#XMPP_(Jabber))
-                *   [1.4.3.3.1 命令行客户端](#命令行客户端)
-                *   [1.4.3.3.2 图形界面客户端](#图形界面客户端)
-                *   [1.4.3.3.3 服务器](#服务器)
-            *   [1.4.3.4 多协议客户端](#多协议客户端_2)
-                *   [1.4.3.4.1 命令行](#命令行_3)
-                *   [1.4.3.4.2 图形界面](#图形界面_4)
-        *   [1.4.4 局域网聊天](#局域网聊天)
-        *   [1.4.5 软件式电话](#软件式电话)
-            *   [1.4.5.1 客户端](#客户端)
-                *   [1.4.5.1.1 SIP](#SIP)
-                *   [1.4.5.1.2 IAX2](#IAX2)
-                *   [1.4.5.1.3 Skype](#Skype)
-                *   [1.4.5.1.4 其它](#其它_3)
-                *   [1.4.5.1.5 多协议](#多协议)
-            *   [1.4.5.2 实用工具](#实用工具)
-    *   [1.5 新闻，RSS 与博客](#新闻，RSS_与博客)
-        *   [1.5.1 新闻抓取](#新闻抓取)
-            *   [1.5.1.1 终端](#终端_4)
-            *   [1.5.1.2 图形界面](#图形界面_5)
-        *   [1.5.2 播客客户端](#播客客户端)
-        *   [1.5.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
-        *   [1.5.4 博客软件](#博客软件)
-        *   [1.5.5 微博客户端](#微博客户端)
-    *   [1.6 网络剪贴板](#网络剪贴板)
-    *   [1.7 比特币](#比特币)
-    *   [1.8 Surveying](#Surveying)
+        *   [1.4.2 云存储服务器](#云存储服务器)
+        *   [1.4.3 云同步客户端](#云同步客户端)
+        *   [1.4.4 FTP](#FTP)
+            *   [1.4.4.1 FTP客户端](#FTP客户端)
+            *   [1.4.4.2 FTP服务器](#FTP服务器)
+        *   [1.4.5 BitTorrent客户端](#BitTorrent客户端)
+            *   [1.4.5.1 命令行](#命令行_2)
+            *   [1.4.5.2 图形界面](#图形界面_3)
+        *   [1.4.6 其他端到端（P2P）网络](#其他端到端（P2P）网络)
+        *   [1.4.7 Pastebin（粘贴箱）客户端](#Pastebin（粘贴箱）客户端)
+    *   [1.5 通信](#通信)
+        *   [1.5.1 邮件客户端](#邮件客户端)
+            *   [1.5.1.1 命令行](#命令行_3)
+            *   [1.5.1.2 图形化](#图形化)
+            *   [1.5.1.3 基于网络](#基于网络)
+        *   [1.5.2 邮件服务器](#邮件服务器)
+        *   [1.5.3 邮件检索代理](#邮件检索代理)
+        *   [1.5.4 即时通信客户端](#即时通信客户端)
+            *   [1.5.4.1 多协议客户端](#多协议客户端)
+                *   [1.5.4.1.1 命令行](#命令行_4)
+                *   [1.5.4.1.2 图形界面](#图形界面_4)
+            *   [1.5.4.2 IRC客户端](#IRC客户端)
+                *   [1.5.4.2.1 命令行](#命令行_5)
+                *   [1.5.4.2.2 Graphical](#Graphical)
+            *   [1.5.4.3 XMPP clients](#XMPP_clients)
+                *   [1.5.4.3.1 Console](#Console)
+                *   [1.5.4.3.2 Graphical](#Graphical_2)
+            *   [1.5.4.4 SIP clients](#SIP_clients)
+            *   [1.5.4.5 Matrix clients](#Matrix_clients)
+            *   [1.5.4.6 Tox clients](#Tox_clients)
+            *   [1.5.4.7 Serverless (decentralized) clients](#Serverless_(decentralized)_clients)
+            *   [1.5.4.8 Other IM clients](#Other_IM_clients)
+        *   [1.5.5 Instant messaging servers](#Instant_messaging_servers)
+            *   [1.5.5.1 IRC servers](#IRC_servers)
+            *   [1.5.5.2 XMPP servers](#XMPP_servers)
+            *   [1.5.5.3 SIP servers](#SIP_servers)
+            *   [1.5.5.4 Other IM servers](#Other_IM_servers)
+        *   [1.5.6 Collaborative software](#Collaborative_software)
+    *   [1.6 新闻，RSS 与博客](#新闻，RSS_与博客)
+        *   [1.6.1 新闻抓取](#新闻抓取)
+            *   [1.6.1.1 终端](#终端_2)
+            *   [1.6.1.2 图形界面](#图形界面_5)
+        *   [1.6.2 播客客户端](#播客客户端)
+        *   [1.6.3 Usenet 新闻播报与新闻抓取](#Usenet_新闻播报与新闻抓取)
+        *   [1.6.4 博客软件](#博客软件)
+        *   [1.6.5 微博客户端](#微博客户端)
+    *   [1.7 网络剪贴板](#网络剪贴板)
+    *   [1.8 比特币](#比特币)
+    *   [1.9 Surveying](#Surveying)
 *   [2 多媒体](#多媒体)
     *   [2.1 解码器](#解码器)
     *   [2.2 图像](#图像)
         *   [2.2.1 图像查看](#图像查看)
-            *   [2.2.1.1 命令行](#命令行_4)
-            *   [2.2.1.2 图形环境](#图形环境_3)
+            *   [2.2.1.1 命令行](#命令行_6)
+            *   [2.2.1.2 图形环境](#图形环境)
         *   [2.2.2 图形和图像处理](#图形和图像处理)
             *   [2.2.2.1 位图编辑器](#位图编辑器)
             *   [2.2.2.2 Vector graphics - illustration](#Vector_graphics_-_illustration)
@@ -110,8 +120,8 @@ Related articles
         *   [2.3.1 音频系统](#音频系统)
         *   [2.3.2 音频播放器](#音频播放器)
             *   [2.3.2.1 音乐播放器守护进程和客户端 (Client)](#音乐播放器守护进程和客户端_(Client))
-            *   [2.3.2.2 命令行](#命令行_5)
-            *   [2.3.2.3 图形环境](#图形环境_4)
+            *   [2.3.2.2 命令行](#命令行_7)
+            *   [2.3.2.3 图形环境](#图形环境_2)
         *   [2.3.3 音响管理](#音响管理)
         *   [2.3.4 提取 CD](#提取_CD)
         *   [2.3.5 可视化](#可视化)
@@ -120,11 +130,11 @@ Related articles
     *   [2.4 手机管家](#手机管家)
     *   [2.5 视频](#视频)
         *   [2.5.1 视频播放器](#视频播放器)
-            *   [2.5.1.1 命令行](#命令行_6)
+            *   [2.5.1.1 命令行](#命令行_8)
             *   [2.5.1.2 图形化界面](#图形化界面)
         *   [2.5.2 DVD 提取](#DVD_提取)
         *   [2.5.3 视频编辑器](#视频编辑器)
-            *   [2.5.3.1 命令行](#命令行_7)
+            *   [2.5.3.1 命令行](#命令行_9)
             *   [2.5.3.2 图形界面](#图形界面_6)
         *   [2.5.4 录屏](#录屏)
     *   [2.6 Optical media burning](#Optical_media_burning)
@@ -132,23 +142,27 @@ Related articles
     *   [2.8 Collection managers](#Collection_managers)
     *   [2.9 Lyrics fetchers](#Lyrics_fetchers)
 *   [3 工具](#工具)
-    *   [3.1 分区工具](#分区工具)
-    *   [3.2 挂载](#挂载)
-        *   [3.2.1 Udisks](#Udisks)
-    *   [3.3 基本 Shell 命令](#基本_Shell_命令)
-    *   [3.4 集成式开发环境](#集成式开发环境)
-    *   [3.5 虚拟终端](#虚拟终端)
-        *   [3.5.1 基于 VTE](#基于_VTE)
-        *   [3.5.2 KMS-based](#KMS-based)
-        *   [3.5.3 framebuffer-based](#framebuffer-based)
+    *   [3.1 终端](#终端_3)
+        *   [3.1.1 命令行 shells](#命令行_shells)
+        *   [3.1.2 终端模拟器](#终端模拟器)
+            *   [3.1.2.1 基于 VTE](#基于_VTE)
+            *   [3.1.2.2 基于 KMS](#基于_KMS)
+            *   [3.1.2.3 基于帧缓冲器（framebuffer）](#基于帧缓冲器（framebuffer）)
+        *   [3.1.3 终端分页器](#终端分页器)
+        *   [3.1.4 终端复用器](#终端复用器)
+    *   [3.2 分区工具](#分区工具)
+    *   [3.3 挂载](#挂载)
+        *   [3.3.1 Udisks](#Udisks)
+    *   [3.4 基本 Shell 命令](#基本_Shell_命令)
+    *   [3.5 集成式开发环境](#集成式开发环境)
     *   [3.6 文件](#文件)
         *   [3.6.1 文件管理器](#文件管理器)
-            *   [3.6.1.1 命令行](#命令行_8)
-            *   [3.6.1.2 图形环境](#图形环境_5)
+            *   [3.6.1.1 命令行](#命令行_10)
+            *   [3.6.1.2 图形环境](#图形环境_3)
         *   [3.6.2 桌面搜索引擎](#桌面搜索引擎)
         *   [3.6.3 压缩与解压](#压缩与解压)
-            *   [3.6.3.1 命令行](#命令行_9)
-            *   [3.6.3.2 图形环境](#图形环境_6)
+            *   [3.6.3.1 命令行](#命令行_11)
+            *   [3.6.3.2 图形环境](#图形环境_4)
         *   [3.6.4 文件合并及比较](#文件合并及比较)
         *   [3.6.5 批量命名](#批量命名)
     *   [3.7 磁盘清理](#磁盘清理)
@@ -156,8 +170,8 @@ Related articles
     *   [3.9 时钟同步](#时钟同步)
     *   [3.10 系统监视器](#系统监视器)
     *   [3.11 系统信息检测](#系统信息检测)
-        *   [3.11.1 命令行](#命令行_10)
-        *   [3.11.2 图形环境](#图形环境_7)
+        *   [3.11.1 命令行](#命令行_12)
+        *   [3.11.2 图形环境](#图形环境_5)
     *   [3.12 键盘布局切换](#键盘布局切换)
     *   [3.13 电源管理](#电源管理)
     *   [3.14 剪贴板管理](#剪贴板管理)
@@ -175,15 +189,15 @@ Related articles
     *   [4.5 学术文档](#学术文档)
     *   [4.6 翻译与本土化](#翻译与本土化)
     *   [4.7 文本编辑器](#文本编辑器)
-        *   [4.7.1 命令行](#命令行_11)
+        *   [4.7.1 命令行](#命令行_13)
             *   [4.7.1.1 Vi 类文本编辑器](#Vi_类文本编辑器)
-        *   [4.7.2 图形环境](#图形环境_8)
+        *   [4.7.2 图形环境](#图形环境_6)
             *   [4.7.2.1 协同式文本编辑器](#协同式文本编辑器)
     *   [4.8 阅读与浏览](#阅读与浏览)
         *   [4.8.1 电子书阅读](#电子书阅读)
             *   [4.8.1.1 书架](#书架)
         *   [4.8.2 PDF 和 DjVu](#PDF_和_DjVu)
-            *   [4.8.2.1 终端](#终端_5)
+            *   [4.8.2.1 终端](#终端_4)
             *   [4.8.2.2 图形化界面](#图形化界面_2)
         *   [4.8.3 虚拟分页器](#虚拟分页器)
         *   [4.8.4 CHM](#CHM)
@@ -193,8 +207,8 @@ Related articles
         *   [4.10.1 引擎](#引擎)
         *   [4.10.2 布局分析与用户界面](#布局分析与用户界面)
     *   [4.11 笔记](#笔记)
-        *   [4.11.1 命令行](#命令行_12)
-        *   [4.11.2 图形环境](#图形环境_9)
+        *   [4.11.1 命令行](#命令行_14)
+        *   [4.11.2 图形环境](#图形环境_7)
     *   [4.12 Mind-mapping tools](#Mind-mapping_tools)
     *   [4.13 字符选择器](#字符选择器)
     *   [4.14 Stylus notes taking](#Stylus_notes_taking)
@@ -232,15 +246,15 @@ Related articles
         *   [6.5.1 电子学](#电子学)
         *   [6.5.2 物理系统模拟器](#物理系统模拟器)
         *   [6.5.3 单位转换](#单位转换)
-*   [7 其它](#其它_4)
+*   [7 其它](#其它_2)
     *   [7.1 工作环境](#工作环境)
         *   [7.1.1 开机动画](#开机动画)
-        *   [7.1.2 命令行](#命令行_13)
+        *   [7.1.2 命令行](#命令行_15)
         *   [7.1.3 Terminal multiplexers](#Terminal_multiplexers)
         *   [7.1.4 Desktop environments](#Desktop_environments)
         *   [7.1.5 Window managers](#Window_managers)
-            *   [7.1.5.1 Console](#Console)
-            *   [7.1.5.2 Graphical](#Graphical)
+            *   [7.1.5.1 Console](#Console_2)
+            *   [7.1.5.2 Graphical](#Graphical_3)
         *   [7.1.6 Window tilers](#Window_tilers)
         *   [7.1.7 Virtual desktop pagers](#Virtual_desktop_pagers)
         *   [7.1.8 Support applications](#Support_applications)
@@ -255,8 +269,8 @@ Related articles
     *   [7.2 Finance](#Finance)
     *   [7.3 Flashcards](#Flashcards)
     *   [7.4 Time management](#Time_management)
-        *   [7.4.1 Console](#Console_2)
-        *   [7.4.2 Graphical](#Graphical_2)
+        *   [7.4.1 Console](#Console_3)
+        *   [7.4.2 Graphical](#Graphical_4)
     *   [7.5 Emulators](#Emulators)
         *   [7.5.1 Consoles](#Consoles)
         *   [7.5.2 Other](#Other)
@@ -573,7 +587,7 @@ Related articles
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — lua可扩展的快速，小巧，基于webkit的浏览器框架.
 
-	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[https://luakit.github.io/](https://luakit.github.io/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **[Midori](/index.php/Midori "Midori")** — 基于GTK+ 和 WebKit的轻量级浏览器.
 
@@ -601,7 +615,7 @@ Related articles
 
 *   **Vimb** — 一个像vim的浏览器，灵感来源于Pentadactyl和 Vimprobable.
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://www.archlinux.org/packages/?name=vimb)
 
 ###### 基于qt5-webkit的浏览器
 
@@ -615,7 +629,7 @@ Related articles
 
 *   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — 专注重造经典Opera(12.x) UI，使用的是 Qt5.
 
-	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+	[https://otter-browser.org/](https://otter-browser.org/) || [otter-browser](https://www.archlinux.org/packages/?name=otter-browser)
 
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — 一个键盘驱动的, 像[vim](/index.php/Vim "Vim")的浏览器基于PyQt5并且QtWebKit作为可选后端.
 
@@ -647,369 +661,881 @@ Related articles
 
 	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/) or [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 
-### 下载
+### Web服务器
 
-#### FTP
+一个[web服务器](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server")通过HTTP提供给像 [web浏览器](/index.php/Category:Web_browser "Category:Web browser")一样的客户端网页和其它文件服务. 主要的web服务器能通过程序提供界面来提供动态内容([web applications](/index.php/Web_applications "Web applications")).
 
-##### FTP 客户端
+也可查阅 [Category:Web server](/index.php/Category:Web_server "Category:Web server") 和 [Wikipedia:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "wikipedia:Comparison of web server software").
 
-See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
+*   **[Apache](/index.php/Apache "Apache")** — 高性能的 基于Unix的 HTTP 服务器.
 
-*   **[CurlFtpFS](/index.php/CurlFtpFS "CurlFtpFS")** — Filesystem for accessing FTP hosts; based on FUSE and libcurl.
+	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
 
-	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
+*   **[Caddy](/index.php/Caddy "Caddy")** — 带有自动HTTPS的HTTP/2 web服务器.
 
-*   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent, RapidShare and more.
+	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
 
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
+*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — 安全且先进的web服务器.
 
-*   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — 快速可靠的 FTP, FTPS and SFTP 客户端.
+	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
 
-	[http://filezilla-project.org/](http://filezilla-project.org/) || [filezilla](https://www.archlinux.org/packages/?name=filezilla)
+*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — 一个安全, 快速, 兼容且非常灵活的web服务器.
 
-*   **[fuseftp](/index.php/FtpFs#Fuseftp "FtpFs")** — FTP filesystem written in Perl, using [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace").
+	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
 
-	[http://freshmeat.net/projects/fuseftp/](http://freshmeat.net/projects/fuseftp/) || [fuseftp](https://aur.archlinux.org/packages/fuseftp/)
+*   **[nginx](/index.php/Nginx "Nginx")** — 轻量的 HTTP服务器和IMAP/POP3代理服务器.
 
-*   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — Multithreaded FTP client for Linux.
+	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
 
-	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
+*   **sthttpd** — thttpd web 服务器的支持分支.
 
-*   **[LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp")** — Sophisticated command-line FTP client.
+	[https://github.com/blueness/sthttpd](https://github.com/blueness/sthttpd) || [sthttpd](https://www.archlinux.org/packages/?name=sthttpd)
 
-	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
+*   **yaws** — 用Erlang写的Web 服务器/框架.
 
-*   **LftpFS** — Read-only filesystem based on lftp (also supports HTTP, FISH, SFTP, HTTPS, FTPS and proxies).
+	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
 
-	[http://lftpfs.sourceforge.net/](http://lftpfs.sourceforge.net/) || [lftpfs](https://aur.archlinux.org/packages/lftpfs/)
+#### 静态web服务器
 
-*   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
+*   **darkhttpd** — 一个小巧且安全的静态web服务器,用C写成,不支持HTTPS和 Auth.
 
-	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
+	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
 
-一些像 Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Files") 和 [Thunar](/index.php/Thunar "Thunar") 这样的文件管理器也提供FTP功能.
+*   **KatWeb** — 一个轻量的静态web服务器和反向代理工具, 用Go写成, 为现代web设计.
 
-##### FTP 服务器
+	[https://github.com/kittyhacker101/KatWeb](https://github.com/kittyhacker101/KatWeb) || [katweb](https://aur.archlinux.org/packages/katweb/)
 
-*   **bftpd** — 小巧, 易配置的 FTP 服务器
+*   **quark** — 一个极度小巧和简单的http仅支持get的web服务器. 仅仅支持在单个主机上的静态页面.
 
-	[http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
+	[http://tools.suckless.org/quark/](http://tools.suckless.org/quark/) || [quark-git](https://aur.archlinux.org/packages/quark-git/)
 
-*   **[proFTPd](/index.php/Proftpd "Proftpd")** — 一个安全的可配置的 FTP 服务器
+*   **serve** — 静态文件服务和目录列表.
 
-	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)
+	[https://github.com/zeit/serve](https://github.com/zeit/serve) || [nodejs-serve](https://aur.archlinux.org/packages/nodejs-serve/)
 
-*   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — Free (BSD-licensed), secure, production-quality and standard-compliant FTP server.
+*   **servy** — 一个小巧的web服务器, 单个二进制文件, 用Rust写成.
 
-	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
+	[https://github.com/zethra/servy](https://github.com/zethra/servy) || [servy](https://aur.archlinux.org/packages/servy/)
 
-*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — 适用于 类UNIX 系统的，轻量级的，标准的，安全的 FTP 服务器。
+*   **Webfs** — 简单和即时的web服务器用以支持最静态的内容.
 
-	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
 
-#### BitTorrent 客户端
+[Python](/index.php/Python "Python") 标准库模块 [http.server](https://docs.python.org/library/http.server.html) 也能从命令行用作服务器.
 
-参见 [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
+#### 专门的 web服务器
+
+*   **Mongoose** — 内置的web服务器库, 支持WebSocket和 MQTT.
+
+	[https://github.com/cesanta/mongoose](https://github.com/cesanta/mongoose) || [mongoose](https://aur.archlinux.org/packages/mongoose/)
+
+*   **webhook** — 创建 HTTP 端点(hooks)的小型服务器
+
+	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://www.archlinux.org/packages/?name=webhook)
+
+*   **Woof** — 一个专门的单文件web服务器; 是Web Offer One File（提供单文件服务的web）的缩写.
+
+	[http://www.home.unix-ag.org/simon/woof.html](http://www.home.unix-ag.org/simon/woof.html) || [woof](https://aur.archlinux.org/packages/woof/)
+
+#### WSGI 服务器
+
+*   **Gunicorn** — 一个Python的WSGI HTTP服务器，用在UNIX上.
+
+	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://www.archlinux.org/packages/?name=python2-gunicorn)
+
+*   **[uWSGI](/index.php/UWSGI "UWSGI")** — 一个快速、自治愈的、 开发者/系统管理员友好的 程序容器服务器，用C写成.
+
+	[https://uwsgi-docs.readthedocs.io/](https://uwsgi-docs.readthedocs.io/) || [uwsgi](https://www.archlinux.org/packages/?name=uwsgi)
+
+*   **Waitress** — 一个WSGI 服务器，针对 Python 2和3.
+
+	[https://github.com/Pylons/waitress](https://github.com/Pylons/waitress) || [python-waitress](https://www.archlinux.org/packages/?name=python-waitress), [python2-waitress](https://www.archlinux.org/packages/?name=python2-waitress)
+
+Apache也支持 WSGI ，通过 [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")模块.
+
+#### 性能测试
+
+*   **http_load** — 一个web服务器性能测试工具, 运行在一个进程里.
+
+	[http://www.acme.com/software/http_load/](http://www.acme.com/software/http_load/) || [http_load](https://aur.archlinux.org/packages/http_load/)
+
+*   **httperf** — 可以生成各种 HTTP 工作负载, 用 C写成.
+
+	[https://github.com/httperf/httperf](https://github.com/httperf/httperf) || [httperf](https://aur.archlinux.org/packages/httperf/)
+
+*   **vegeta** — HTTP 负载测试工具, 用 Go写成.
+
+	[https://github.com/tsenart/vegeta](https://github.com/tsenart/vegeta) || [vegeta](https://www.archlinux.org/packages/?name=vegeta)
+
+*   **Web Bench** — 基准测试工具, 用 fork() 来模拟多个客户端.
+
+	[http://home.tiscali.cz/~cz210552/webbench.html](http://home.tiscali.cz/~cz210552/webbench.html) || [webbench](https://aur.archlinux.org/packages/webbench/)
+
+### 文件分享
+
+#### 下载管理器
+
+也可查阅 [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wiki/Comparison_of_download_managers "wikipedia:Comparison of download managers").
 
 ##### 命令行
 
-###### 命令行后端
+*   **[aria2](/index.php/Aria2 "Aria2")** — 轻量的下载工具，支持HTTP、FTP、SFTP、BitTorrent和MetaLink. 它是作为守护进程运行的，通过内置的JSON-RPC 或 XML-RPC 界面控制.
 
-虽说可以在命令行上用，但均有可选的图形前端。
+	[https://aria2.github.io/](https://aria2.github.io/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
-*   **[aria2](/index.php/Aria2 "Aria2")** — 轻量级的下载工具，支持 HTTP(S), FTP, BitTorrent (DHT, PEX, MSE/PE)协议以及元链接。能够以守护进程运行，通过 JSON-RPC & XML-RPC 接口管理
+*   **Axel** — 轻量的命令行下载加速器. 支持 HTTP 和 FTP.
 
-	[http://aria2.sourceforge.net/](http://aria2.sourceforge.net/) || [aria2](https://www.archlinux.org/packages/?name=aria2)
+	[https://github.com/eribertomota/axel](https://github.com/eribertomota/axel) || [axel](https://www.archlinux.org/packages/?name=axel)
 
-*   **[btpd](/index.php/Btpd "Btpd")** — 简单，命令行界面，守护进程，同时也有 web 和 GTK+ 界面。
+*   **[cURL](https://en.wikipedia.org/wiki/cURL "wikipedia:cURL")** — 一个URL检索的实用工具和库. 支持 HTTP, FTP 和 SFTP.
 
-	[http://github.com/btpd/btpd](http://github.com/btpd/btpd) || [btpd](https://aur.archlinux.org/packages/btpd/)
+	[https://curl.haxx.se/](https://curl.haxx.se/) || [curl](https://www.archlinux.org/packages/?name=curl)
 
-*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — 支持 BitTorrent 的多协议 P2P 客户端
+*   **[LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp")** — 复制的文件传输程序. 支持 HTTP, FTP, SFTP, FISH, 和 BitTorrent.
 
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
+	[http://lftp.yar.ru/](http://lftp.yar.ru/) || [lftp](https://www.archlinux.org/packages/?name=lftp)
 
-*   **[Transmission](https://en.wikipedia.org/wiki/Transmission_(BitTorrent_client) "wikipedia:Transmission (BitTorrent client)")** — 简单易用的BitTorrent 客户端，拥有守护程序版本, TK+, Qt 图形用户界面, 网页和命令行前端
+*   **mps-youtube** — 基于终端的、带有播放列表管理的YouTube点唱机。 通过mplayer/mpv播放音频/视频.
 
-	[http://www.transmissionbt.com/](http://www.transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
+	[https://github.com/mps-youtube/mps-youtube](https://github.com/mps-youtube/mps-youtube) || [mps-youtube](https://www.archlinux.org/packages/?name=mps-youtube)
 
-###### 纯命令行界面
+*   **Plowshare** — 一系列命令行工具，用来管理文件分享网站(aka Hosters).
 
-*   **[rTorrent](/index.php/RTorrent "RTorrent")** — 简单的轻量级 BitTorrent 客户端
+	[https://github.com/mcrapet/plowshare](https://github.com/mcrapet/plowshare) || [plowshare](https://www.archlinux.org/packages/?name=plowshare)
 
-	[http://libtorrent.rakshasa.no/](http://libtorrent.rakshasa.no/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
+*   **[RTMPDump](https://en.wikipedia.org/wiki/RTMPDump "wikipedia:RTMPDump")** — 通过RTMP(Adobe的Flash视频播放器的专有协议)来下载flv视频
 
-##### 图形环境
+	[http://rtmpdump.mplayerhq.hu/](http://rtmpdump.mplayerhq.hu/) || [rtmpdump](https://www.archlinux.org/packages/?name=rtmpdump)
 
-###### libtorrent-rasterbar 后端
+*   **snarf** — 命令行 URL 检索工具. 支持HTTP 和 FTP.
 
-*   **[Deluge](/index.php/Deluge "Deluge")** — 用户友好的 BitTorrent 客户端，用Python和PyGTK编写
+	[http://www.xach.com/snarf/](http://www.xach.com/snarf/) || [snarf](https://www.archlinux.org/packages/?name=snarf)
 
-	[http://deluge-torrent.org/](http://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
+*   **[Streamlink](/index.php/Streamlink "Streamlink")** — 从各种自定义的视频播放器的流服务中启动流，并保存到文件里.
 
-*   **FatRat** — 基于 Qt 和 C++ 的下载器，支持 HTTP, FTP, SFTP. BT, rapidshare 以及更多。
+	[https://streamlink.github.io/](https://streamlink.github.io/) || [streamlink](https://www.archlinux.org/packages/?name=streamlink)
 
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat](https://aur.archlinux.org/packages/fatrat/)
+*   **[Streamripper](https://en.wikipedia.org/wiki/Streamripper "wikipedia:Streamripper")** — 记录并将流MP3分到不同轨.
 
-*   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — 一个和 µtorrent 相类似的开源 （GPLv2)BitTorrent 客户端。
+	[http://streamripper.sourceforge.net/](http://streamripper.sourceforge.net/) || [streamripper](https://aur.archlinux.org/packages/streamripper/)
 
-	[http://qbittorrent.sourceforge.net/](http://qbittorrent.sourceforge.net/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent)
+*   **You-Get** — 从web下载媒体内容 (视频, 音频, 图像).
 
-*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 第四代文件共享系统 BT 客户端。
+	[https://you-get.org/](https://you-get.org/) || [you-get](https://www.archlinux.org/packages/?name=you-get)
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
+*   **[youtube-dl](/index.php/Youtube-dl "Youtube-dl")** — 从 YouTube 和其它网站下载视频.
 
-###### libktorrent 后端
+	[https://rg3.github.io/youtube-dl/](https://rg3.github.io/youtube-dl/) || [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)
 
-*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — 一个支持 HTTP(S). FTP 和 BitTorrent 的 KDE 下载管理器.
+*   **youtube-viewer** — 查看YouTube视频的命令行工具.
 
-	[http://www.kde.org/applications/internet/kget/](http://www.kde.org/applications/internet/kget/) || [kdenetwork-kget](https://www.archlinux.org/packages/?name=kdenetwork-kget)
+	[https://github.com/trizen/youtube-viewer](https://github.com/trizen/youtube-viewer) || [youtube-viewer](https://www.archlinux.org/packages/?name=youtube-viewer)
 
-*   **[KTorrent](https://en.wikipedia.org/wiki/KTorrent "wikipedia:KTorrent")** — 一个 KDE 下的多功能 BitTorrent 客户端.
+*   **[Wget](https://en.wikipedia.org/wiki/Wget "wikipedia:Wget")** — 从网络检索文件的网络工具. 支持 HTTP 和 FTP.
 
-	[http://ktorrent.org/](http://ktorrent.org/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
-
-###### 其它
-
-*   **QTorrent** — 一个用PyQt写的BT客户端.
-
-	[http://thegraveyard.org/qtorrent.php](http://thegraveyard.org/qtorrent.php) || [qtorrent](https://aur.archlinux.org/packages/qtorrent/)
-
-*   **Tixati** — BitTorrent 协议，P2P 客户端。P
-
-	[http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)
-
-*   **[Transmission](https://en.wikipedia.org/wiki/Transmission_(BitTorrent_client) "wikipedia:Transmission (BitTorrent client)")** — 简单易用的 BitTorrent 客户端，拥有守护程序版本, 拥有 GTK+, Qt 图形用户界面, 网页和命令行前端
-
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
-
-*   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — 功能强大的 BitTorrent 客户端，用 Java 编写（以前是 Azureus）.
-
-	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
-
-#### 电驴
-
-eDonkey仍然是第二大p2p网络 (参见 [Internet Study 2008/2009](http://www.ipoque.com/en/resources/internet-studies)).
-
-*   **[aMule](/index.php/AMule "AMule")** — 著名的有守护进程的eDonkey/Kad 客户端，拥有GTK+,网页和命令行前端
-
-	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
-
-*   **[MlDonkey](/index.php?title=MlDonkey&action=edit&redlink=1 "MlDonkey (page does not exist)")** — A multi-network P2P client.
-
-	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
-
-*   **[Neoloader](/index.php?title=Neoloader&action=edit&redlink=1 "Neoloader (page does not exist)")** — Privacy using NeoKads mash routing.
-
-	[http://http://neoloader.com/](http://http://neoloader.com/) || [neoloader](https://aur.archlinux.org/packages/neoloader/)
-
-*   **KaMule** — kde下的aMule图形前端.
-
-	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
-
-#### Gnutella
-
-*   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
-
-	[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
-
-### 通讯
-
-#### 邮件客户端
-
-See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/Comparison_of_e-mail_clients "wikipedia:Comparison of e-mail clients").
-
-##### 终端
-
-*   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
-
-	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://www.archlinux.org/packages/?name=alot) [alot-git](https://aur.archlinux.org/packages/alot-git/)
-
-*   **[Alpine](/index.php/Alpine "Alpine")** — Fast, easy-to-use and Apache-licensed email client based on [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
-
-	[https://washington.edu/alpine](https://washington.edu/alpine) || [re-alpine](https://aur.archlinux.org/packages/re-alpine/) [alpine](https://aur.archlinux.org/packages/alpine/)
-
-*   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
-
-	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
-
-*   **S-nail** — a mail processing system with a command syntax reminiscent of *ed* with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx") and much more.
-
-	[http://sourceforge.net/projects/s-nail/](http://sourceforge.net/projects/s-nail/) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
-
-*   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
-
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
-
-*   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
-
-	[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
-
-*   **Nmh** — A modular mail handling system.
-
-	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/) [nmh-git](https://aur.archlinux.org/packages/nmh-git/)
-
-*   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of *xapian*.
-
-	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch) [notmuch-vim](https://www.archlinux.org/packages/?name=notmuch-vim) [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt)
-
-*   **[Sup](/index.php/Sup "Sup")** — CLI mail client with very fast searching, tagging, threading and GMail like operation.
-
-	[http://supmua.org/](http://supmua.org/) || [sup](https://aur.archlinux.org/packages/sup/)
-
-*   **Wanderlust** — Email client and news reader for Emacs.
-
-	[http://www.gohome.org/wl/](http://www.gohome.org/wl/) || [wanderlust](https://www.archlinux.org/packages/?name=wanderlust)
+	[https://www.gnu.org/software/wget/](https://www.gnu.org/software/wget/) || [wget](https://www.archlinux.org/packages/?name=wget)
 
 ##### 图形界面
 
-*   **[Balsa](/index.php/Balsa "Balsa")** — Simple and light email client that is part of the Gnome project.
+*   **ClipGrab** — YouTube, Vimeo 和许多其它在线视频站点的下载器和转换器.
 
-	[http://pawsa.fedorapeople.org/balsa/](http://pawsa.fedorapeople.org/balsa/) || [balsa](https://www.archlinux.org/packages/?name=balsa)
+	[https://clipgrab.org/](https://clipgrab.org/) || [clipgrab-qt5](https://aur.archlinux.org/packages/clipgrab-qt5/)
 
-*   **[Claws Mail](https://en.wikipedia.org/wiki/Claws_Mail "wikipedia:Claws Mail")** — Lightweight GTK-based email client and news reader.
+*   **FatRat** — 基于QT的下载管理器，支持 HTTP, FTP, SFTP, BitTorrent 和 Metalink.
 
-	[http://claws-mail.org/](http://claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
+	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
-*   **[Evolution](/index.php/Evolution "Evolution")** — Mature and feature-rich e-mail client used in GNOME by default. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
+*   **FreeRapid** — 基于Java的下载器，支持从文件分享服务下载.
 
-	[http://projects.gnome.org/evolution/](http://projects.gnome.org/evolution/) || [evolution](https://www.archlinux.org/packages/?name=evolution)
+	[http://wordrider.net/freerapid/](http://wordrider.net/freerapid/) || [freerapid](https://aur.archlinux.org/packages/freerapid/)
 
-*   **Geary** — Simple desktop mail client built in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)").
+*   **[FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire")** — 容易使用的云下载器, BitTorrent 客户端和媒体播放器.
+
+	[http://www.frostwire.com/](http://www.frostwire.com/) || [frostwire](https://aur.archlinux.org/packages/frostwire/)
+
+*   **gtk-youtube-viewer** — GTK+ 的用来看YouTube视频的工具.
+
+	[https://github.com/trizen/youtube-viewer](https://github.com/trizen/youtube-viewer) || [youtube-viewer](https://www.archlinux.org/packages/?name=youtube-viewer) + [gtk2-perl](https://www.archlinux.org/packages/?name=gtk2-perl) + [perl-file-sharedir](https://www.archlinux.org/packages/?name=perl-file-sharedir)
+
+*   **[Gwget](https://en.wikipedia.org/wiki/Wget#GWget "wikipedia:Wget")** — 针对GNOME的下载管理器. 支持HTTP和FTP.
+
+	[https://projects.gnome.org/gwget/](https://projects.gnome.org/gwget/) || [gwget](https://www.archlinux.org/packages/?name=gwget)
+
+*   **Gydl** — 对已存在的youtube-dl程序的GUI 封装来从类似YouTube的网站下载内容.
+
+	[https://github.com/JannikHv/gydl](https://github.com/JannikHv/gydl) || [gydl-git](https://aur.archlinux.org/packages/gydl-git/)
+
+*   **[JDownloader](/index.php/JDownloader "JDownloader")** — 基于Java的针对一键托管网站的下载器.
+
+	[http://jdownloader.org/](http://jdownloader.org/) || [jdownloader2](https://aur.archlinux.org/packages/jdownloader2/)
+
+*   **[KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet")** — 针对KDE的下载管理器. 支持HTTP, FTP, BitTorrent 和 Metalink. 是[kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/)的一部分.
+
+	[https://www.kde.org/applications/internet/kget/](https://www.kde.org/applications/internet/kget/) || [kget](https://www.archlinux.org/packages/?name=kget)
+
+*   **Persepolis** — aria2的图形化前端下载管理器，带有许多特性. 支持 HTTP 和 FTP.
+
+	[https://persepolisdm.github.io/](https://persepolisdm.github.io/) || [persepolis](https://aur.archlinux.org/packages/persepolis/)
+
+*   **[pyLoad](/index.php/PyLoad "PyLoad")** — 用Python写的下载器，设计的目的是极度轻量，易扩展和通过web的完全管理.
+
+	[https://pyload.net/](https://pyload.net/) || [pyload](https://aur.archlinux.org/packages/pyload/)
+
+*   **Steadyflow** — 针对GNOME的简单下载管理器. 支持 HTTP 和 FTP.
+
+	[https://launchpad.net/steadyflow](https://launchpad.net/steadyflow) || [steadyflow](https://www.archlinux.org/packages/?name=steadyflow)
+
+*   **Streamtuner2** — 互联网电台和视频浏览器. 它简单地按目录分类列出电台并用你喜欢的媒体播放器播放
+
+	[https://sourceforge.net/projects/streamtuner2/](https://sourceforge.net/projects/streamtuner2/) || [streamtuner2](https://aur.archlinux.org/packages/streamtuner2/)
+
+*   **uGet** — GTK+下载管理器，特性是分类下载和HTML导入.支持HTTP, FTP, BitTorrent, Metalink, YouTube 和 Mega.
+
+	[http://ugetdm.com/](http://ugetdm.com/) || [uget](https://www.archlinux.org/packages/?name=uget)
+
+*   **Xtreme Download Manager** — 提升下载速度至多500%的强力工具. 支持 HTTP and FTP. 视频采集器能以普通方式运行并且不限于特定网站.
+
+	[http://xdman.sourceforge.net/](http://xdman.sourceforge.net/) || [xdman](https://aur.archlinux.org/packages/xdman/)
+
+#### 云存储服务器
+
+*   **[Cozy](/index.php/Cozy "Cozy")** — 一款你可以破解，托管和删除的私有云.
+
+	[https://cozy.io/](https://cozy.io/) || [cozy-stack](https://www.archlinux.org/packages/?name=cozy-stack)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — 一款将文件集中存储在由你掌控的硬件上的云服务器.
+
+	[https://nextcloud.com](https://nextcloud.com) || [nextcloud](https://www.archlinux.org/packages/?name=nextcloud)
+
+*   **[Pydio](/index.php/Pydio "Pydio")** — 成熟且开源的针对文件分享和同步的web程序.
+
+	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)
+
+*   **[Seafile](/index.php/Seafile "Seafile")** — 一种在线文件存储和协作的工具，具有对文件同步、隐私保护和团队协作的高级支持.
+
+	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)
+
+#### 云同步客户端
+
+**Tip:**
+
+*   一些 [synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") 提供了对云存储服务的直接支持.
+*   一些 [FUSE filesystems](/index.php/FUSE#List_of_FUSE_filesystems "FUSE") 提供了将云存储挂载为文件系统的方式. Google Drive能通过 [gvfs-google](https://www.archlinux.org/packages/?name=gvfs-google) 来提供对基于GVFS的程序(比如 [Nautilus](/index.php/Nautilus "Nautilus")(GNOME桌面文件管理器))的支持, 和通过 [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive) 来提供对基于KIO的程序的支持 (比如 [Dolphin](/index.php/Dolphin "Dolphin")(KDE桌面文件管理器)).
+*   查阅 [Disk encryption#Cloud-storage optimized](/index.php/Disk_encryption#Cloud-storage_optimized "Disk encryption") 来实现在任何第三方云服务的“零知识“ (客户端透明加密) 存储.
+
+*   **aws-cli** — 针对亚马逊Web服务(Amazon Web Service)的CLI, 包括高效的从亚马逊S3上传或下载的文件传输.
+
+	[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/) || [aws-cli](https://www.archlinux.org/packages/?name=aws-cli)
+
+*   **Backblaze B2** — 开源的命令行客户端.
+
+	[https://www.backblaze.com/b2/cloud-storage.html](https://www.backblaze.com/b2/cloud-storage.html) || [backblaze-b2](https://aur.archlinux.org/packages/backblaze-b2/)
+
+*   **CloudCross** — 将本地文件和文件夹同步到许多云服务器提供商. Mail.ru Cloud, Yandex Disk, Google Drive, OneDrive 和 Dropbox 的服务都是支持的.
+
+	[https://cloudcross.mastersoft24.ru/](https://cloudcross.mastersoft24.ru/) || [cloudcross](https://aur.archlinux.org/packages/cloudcross/)
+
+*   **[Cozy](/index.php/Cozy "Cozy") Drive** — 针对Cozy的客户端.
+
+	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)
+
+*   **drive** — 上传或下载Google Drive的小型程序.
+
+	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive-bin](https://aur.archlinux.org/packages/drive-bin/)
+
+*   **DriveSync** — 将Google Drive的文件同步到你机器的一个本地文件夹的命令行工具.
+
+	[https://github.com/MStadlmeier/drivesync](https://github.com/MStadlmeier/drivesync) || [drivesync](https://aur.archlinux.org/packages/drivesync/)
+
+*   **[Dropbox](/index.php/Dropbox "Dropbox")** — Dropbox的专有客户端.
+
+	[https://www.dropbox.com/](https://www.dropbox.com/) || [dropbox](https://aur.archlinux.org/packages/dropbox/)
+
+*   **gdrive** — 与Google Drive交互的命令行工具.
+
+	[https://github.com/prasmussen/gdrive](https://github.com/prasmussen/gdrive) || [gdrive](https://aur.archlinux.org/packages/gdrive/)
+
+*   **Grive** — Google Drive客户端，支持最新的Drive REST API 和部分同步.
+
+	[https://github.com/vitalif/grive2](https://github.com/vitalif/grive2) || [grive](https://aur.archlinux.org/packages/grive/)
+
+*   **hubiC** — 针对hubiC的专有同步客户端服务和命令行工具.
+
+	[https://hubic.com/en/downloads](https://hubic.com/en/downloads) || [hubic](https://aur.archlinux.org/packages/hubic/)
+
+*   **[Insync](/index.php/Insync "Insync")** — 非官方的专有Google Drive客户端.
+
+	[https://www.insynchq.com/](https://www.insynchq.com/) || [insync](https://aur.archlinux.org/packages/insync/)
+
+*   **[Mail.ru](https://en.wikipedia.org/wiki/Mail.Ru "wikipedia:Mail.Ru") Cloud** — 针对Mail.ru云存储服务的专有.
+
+	[https://cloud.mail.ru/](https://cloud.mail.ru/) || [mailru-cloud](https://aur.archlinux.org/packages/mailru-cloud/)
+
+*   **[Mega](https://en.wikipedia.org/wiki/Mega_(service) Sync Client** — 同步 Mega的文件的桌面客户端.
+
+	[https://mega.nz/](https://mega.nz/) || [megasync](https://aur.archlinux.org/packages/megasync/)
+
+*   **Megatools** — 针对Mega的非官方CLI.
+
+	[https://megatools.megous.com/](https://megatools.megous.com/) || [megatools](https://aur.archlinux.org/packages/megatools/)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Client** — 针对Nextcloud的桌面客户端.
+
+	[https://nextcloud.com/](https://nextcloud.com/) || [nextcloud-client](https://www.archlinux.org/packages/?name=nextcloud-client)
+
+*   **Nutstore** — 针对Nutstore的客户端.
+
+	[https://www.jianguoyun.com/](https://www.jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)
+
+*   **OneDrive** — 针对 [OneDrive](https://onedrive.live.com/about/)的非官方CLI.
+
+	[https://skilion.github.io/onedrive/](https://skilion.github.io/onedrive/) || [onedrive](https://aur.archlinux.org/packages/onedrive/)
+
+*   **[ownCloud](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud") Desktop Client** — 针对 ownCloud的桌面同步客户端.
+
+	[https://owncloud.com/client/](https://owncloud.com/client/) || [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client)
+
+*   **pCloud Drive** — 针对pCloud的专有桌面同步客户端. 基于 [Electron](https://electronjs.org/) 平台.
+
+	[https://www.pcloud.com/download-free-online-cloud-file-storage.html](https://www.pcloud.com/download-free-online-cloud-file-storage.html) || [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/)
+
+*   **[Pydio](/index.php/Pydio "Pydio")Sync** — 针对Pydio的桌面客户端.
+
+	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
+
+*   **S3cmd** — 针对Amazon S3的非官方CLI.
+
+	[http://s3tools.org/s3cmd](http://s3tools.org/s3cmd) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
+
+*   **[Seafile](/index.php/Seafile "Seafile") Client** — 针对Seafile的GUI.
+
+	[https://www.seafile.com/](https://www.seafile.com/) || [seafile-client](https://aur.archlinux.org/packages/seafile-client/)
+
+*   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak") One** — 针对SpiderOak One的专有客户端.
+
+	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)
+
+*   **[Tresorit](https://en.wikipedia.org/wiki/Tresorit "wikipedia:Tresorit")** — 针对Tresorit的专有桌面同步客户端.
+
+	[https://tresorit.com/download](https://tresorit.com/download) || [tresorit](https://aur.archlinux.org/packages/tresorit/)
+
+*   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — 针对Yandex Disk的专有CLI.
+
+	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
+
+#### FTP
+
+##### FTP客户端
+
+也可查阅 [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
+
+*   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — 快速和可靠的FTP, FTPS 和 SFTP 客户端.
+
+	[http://filezilla-project.org/](http://filezilla-project.org/) || [filezilla](https://www.archlinux.org/packages/?name=filezilla)
+
+*   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — 针对Linux的多线程客户端.
+
+	[http://gftp.seul.org/](http://gftp.seul.org/) || [gftp](https://www.archlinux.org/packages/?name=gftp)
+
+*   **ftp** — 由GNU Inetutils 提供的简单的ftp客户端
+
+	[https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftp-invocation) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
+
+*   **ncftp** — 实现FTP的一系列免费应用程序.
+
+	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
+
+*   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — 针对 [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD")的有许多高级特性的ftp客户端.
+
+	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
+
+一些文件管理器像 [Dolphin](/index.php/Dolphin "Dolphin"), [GNOME Files](/index.php/GNOME_Files "GNOME Files") 和 [Thunar](/index.php/Thunar "Thunar") 也提供FTP功能.
+
+##### FTP服务器
+
+也可查阅 [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/List_of_FTP_server_software "wikipedia:List of FTP server software").
+
+*   **[bftpd](/index.php/Bftpd "Bftpd")** — 小巧和易配置的ftp服务器
+
+	[http://bftpd.sourceforge.net/](http://bftpd.sourceforge.net/) || [bftpd](https://www.archlinux.org/packages/?name=bftpd)
+
+*   **chezdav** — 允许分享一个特定目录的WebDAV服务器.
+
+	[https://wiki.gnome.org/phodav](https://wiki.gnome.org/phodav) || [phodav](https://www.archlinux.org/packages/?name=phodav)
+
+*   **ftpd** — 由GNU Inetutils提供的简单ftp服务器
+
+	[https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation](https://www.gnu.org/software/inetutils/manual/inetutils.html#ftpd-invocation) || [inetutils](https://www.archlinux.org/packages/?name=inetutils)
+
+*   **[proFTPd](/index.php/Proftpd "Proftpd")** — 一个安全和可配置的ftp服务器
+
+	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)
+
+*   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — 免费（BSD许可证），安全，生产质量和标准兼容的FTP服务器.
+
+	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
+
+*   **[SSH](/index.php/SSH "SSH")** — SFTP是一个网络协议，它提供在任何可靠的数据流间的文件访问、文件传输和文件管理.
+
+	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
+
+*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — 针对类UNIX系统的轻量、稳定和安全的FTP服务器.
+
+	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+
+#### BitTorrent客户端
+
+一些[download managers](#Download_managers)也能连接到Bittorrent网络: [Aria2](/index.php/Aria2 "Aria2"), [LFTP](https://en.wikipedia.org/wiki/Lftp "wikipedia:Lftp"), FatRat, [FrostWire](https://en.wikipedia.org/wiki/FrostWire "wikipedia:FrostWire"), [KGet](https://en.wikipedia.org/wiki/KGet "wikipedia:KGet"), [MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey"), uGet.
+
+也可查阅 [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients").
+
+##### 命令行
+
+*   **btpd** — Bittorrent协议守护进程.
+
+	[https://github.com/btpd/btpd](https://github.com/btpd/btpd) || [btpd](https://aur.archlinux.org/packages/btpd/)
+
+*   **Ctorrent** — CTorrent是一个BitTorrent的C++实现，轻量且快速.
+
+	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
+
+*   **peerflix** — 针对node.js的流torrent客户端.
+
+	[https://github.com/mafintosh/peerflix](https://github.com/mafintosh/peerflix) || [peerflix](https://aur.archlinux.org/packages/peerflix/)
+
+*   **[rTorrent](/index.php/RTorrent "RTorrent")** — 简单和轻量的ncurses BitTorrent 客户端. 需要 [libtorrent](https://www.archlinux.org/packages/?name=libtorrent) 后端.
+
+	[https://rakshasa.github.io/rtorrent/](https://rakshasa.github.io/rtorrent/) || [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
+
+*   **[Transmission](/index.php/Transmission "Transmission") CLI** — 简单易用的BitTorrent client带有一个守护进程版本和多前端. 这个包包括了后端、守护进程、命令行界面和一个web UI界面.
+
+	[https://transmissionbt.com/](https://transmissionbt.com/) || [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli)
+
+##### 图形界面
+
+*   **[Deluge](/index.php/Deluge "Deluge")** — 用户友好的BitTorrent客户端，用PyGTK写成，能以守护进程运行.
+
+	[https://deluge-torrent.org/](https://deluge-torrent.org/) || [deluge](https://www.archlinux.org/packages/?name=deluge)
+
+*   **Fragments** — 易用的BitTorrent客户端，遵循GNOME HIG规则并包括了许多经考虑的特性.
+
+	[https://gitlab.gnome.org/haecker-felix/Fragments](https://gitlab.gnome.org/haecker-felix/Fragments) || [fragments](https://www.archlinux.org/packages/?name=fragments)
+
+*   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — 针对KDE的功能丰富的BitTorrent客户端.
+
+	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
+
+*   **Powder Player** — 流式Bittorrent客户端和播放器的混合，基于[Electron](https://electronjs.org/) 平台.
+
+	[https://powder.media/](https://powder.media/) || [powder-player-bin](https://aur.archlinux.org/packages/powder-player-bin/)
+
+*   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — 开源的(GPLv2许可证) BitTorrent 客户端，非常像 µtorrent.
+
+	[https://www.qbittorrent.org/](https://www.qbittorrent.org/) || [qbittorrent](https://www.archlinux.org/packages/?name=qbittorrent) or [qbittorrent-nox](https://www.archlinux.org/packages/?name=qbittorrent-nox)
+
+*   **Torrential** — 针对elementary OS的简单torrent客户端.
+
+	[https://github.com/davidmhewitt/torrential](https://github.com/davidmhewitt/torrential) || [torrential](https://aur.archlinux.org/packages/torrential/)
+
+*   **[Transmission](/index.php/Transmission "Transmission")** — 简单易用的BitTorrent客户端，带有守护进程版本和多前端.
+
+	[https://transmissionbt.com/](https://transmissionbt.com/) || GTK+: [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk), Qt: [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt)
+
+*   **[Transmission](/index.php/Transmission "Transmission") Remote** — GTK+客户端，针对远程管理使用相同HTTP RFC协议的Transmission BitTorrent客户端.
+
+	[https://github.com/transmission-remote-gtk/transmission-remote-gtk](https://github.com/transmission-remote-gtk/transmission-remote-gtk) || [transmission-remote-gtk](https://www.archlinux.org/packages/?name=transmission-remote-gtk)
+
+*   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 第四代文件分享系统的BitTorrent 客户端.
+
+	[https://www.tribler.org](https://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
+
+*   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — 用Java写的功能丰富的Bittorrent客户端(之前是 Azureus).
+
+	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
+
+*   **WebTorrent Desktop** — 流式BitTorrent程序. 基于[Electron](https://electronjs.org/) 平台.
+
+	[https://webtorrent.io/desktop/](https://webtorrent.io/desktop/) || [webtorrent-desktop](https://aur.archlinux.org/packages/webtorrent-desktop/)
+
+#### 其他端到端（P2P）网络
+
+另请参见 [Wikipedia:Comparison of file-sharing applications](https://en.wikipedia.org/wiki/Comparison_of_file-sharing_applications "wikipedia:Comparison of file-sharing applications").
+
+*   **[aMule](/index.php/AMule "AMule")** — 著名的 eDonkey/Kad 客户端，带有守护进程版本和GTK+, web, 和 CLI 前端.
+
+	[http://www.amule.org/](http://www.amule.org/) || [amule](https://www.archlinux.org/packages/?name=amule)
+
+*   **EiskaltDC++** — 直连和ADC客户端.
+
+	[https://github.com/eiskaltdcpp/eiskaltdcpp](https://github.com/eiskaltdcpp/eiskaltdcpp) || GTK+: [eiskaltdcpp-gtk](https://aur.archlinux.org/packages/eiskaltdcpp-gtk/), Qt: [eiskaltdcpp-qt](https://aur.archlinux.org/packages/eiskaltdcpp-qt/)
+
+*   **[gtk-gnutella](https://en.wikipedia.org/wiki/gtk-gnutella "wikipedia:gtk-gnutella")** — GTK+服务器/客户端，针对Gnutella的P2P网络.
+
+	[http://gtk-gnutella.sourceforge.net/](http://gtk-gnutella.sourceforge.net/) || [gtk-gnutella](https://aur.archlinux.org/packages/gtk-gnutella/)
+
+*   **KaMule** — KDE的针对aMule的图形化前端.
+
+	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
+
+*   **LBRY** — LBRY的浏览器和钱包,分散的，用户控制的内容市场基于[Electron](https://electronjs.org/) 平台.
+
+	[https://lbry.io/](https://lbry.io/) || [lbry-app-bin](https://aur.archlinux.org/packages/lbry-app-bin/)
+
+*   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — 多协议的P2P客户端，支持HTTP, FTP, BitTorrent, Direct Connect, eDonkey 和 FastTrack.
+
+	[http://mldonkey.sourceforge.net/](http://mldonkey.sourceforge.net/) || [mldonkey](https://www.archlinux.org/packages/?name=mldonkey)
+
+*   **ncdc** — 现代的轻量的直连和ADC客户端，带有一个友好的ncurses界面.
+
+	[https://dev.yorhel.nl/ncdc](https://dev.yorhel.nl/ncdc) || [ncdc](https://aur.archlinux.org/packages/ncdc/)
+
+*   **Nicotine+** — 针对Soulseek P2P网络的图形化客户端.
+
+	[https://www.nicotine-plus.org/](https://www.nicotine-plus.org/) || [nicotine+](https://www.archlinux.org/packages/?name=nicotine%2B)
+
+*   **Valknut** — 直连客户端(像 DC++)带有断电续传功能.
+
+	[http://wxdcgui.sourceforge.net/](http://wxdcgui.sourceforge.net/) || [valknut](https://aur.archlinux.org/packages/valknut/)
+
+#### Pastebin（粘贴箱）客户端
+
+也可查阅 [Wikipedia:Pastebin](https://en.wikipedia.org/wiki/Pastebin "wikipedia:Pastebin").
+
+Pastebin服务经常用作引用文本或图片，特别是协作和故障排除的时候.Pastebin客户端提供了从命令行上传的方便的方法.
+
+**Tip:** 你可以使用curl访问[ptpb.pw](https://ptpb.pw), [sprunge.us](http://sprunge.us/) 和 [ix.io](http://ix.io/) 的pastebins. 比如把一个命令的管道输出到ptpb: `*command* | curl -F c=@- https://ptpb.pw ` 或者上传一个文件 (包括图片): `curl -F c=@- https://ptpb.pw < *file*` 
+
+**Note:** [pastebin.com](http://pastebin.com/) 对于某些人来说被阻塞了，而且有很多烦人问题的历史 (javascript, 广告, 格式很烂, 等等).*不要*使用它.
+
+*   **Elmer** — Pastebin客户端，类似于wgetpaste 和 curlpaste, 除了用 Perl写成和能通过wget或curl使用. 服务器: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
+
+	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
+
+*   **Fb-client** — 针对 [paste.xinu.at](http://paste.xinu.at/) pastebin的客户端.
+
+	[http://paste.xinu.at](http://paste.xinu.at) || [fb-client](https://www.archlinux.org/packages/?name=fb-client)
+
+*   **Gist** — 针对[gist.github.com](https://gist.github.com/) pastebin 服务的命令行界面.
+
+	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
+
+*   **imgur** — 一个CLI客户端能上传图片到[imgur.com](http://imgur.com)图片分享服务.
+
+	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
+
+*   **Ix** — 针对ix.io pastebin的客户端.
+
+	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
+
+*   **Pastebinit** — 非常小的Python脚本，能作为Pastebin客户端。 服务器: [pastie.org](http://pastie.org/), [paste.kde.org](https://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) 还有其它的 (全部名单可查阅 `pastebinit -l`).
+
+	[http://launchpad.net/pastebinit](http://launchpad.net/pastebinit) || [pastebinit](https://www.archlinux.org/packages/?name=pastebinit)
+
+*   **[pbpst](/index.php/Pbpst "Pbpst")** — 与 pb实例交互的小巧工具(eg [ptpb.pw](https://ptpb.pw)).
+
+	[https://github.com/HalosGhost/pbpst](https://github.com/HalosGhost/pbpst) || [pbpst](https://www.archlinux.org/packages/?name=pbpst)
+
+*   **ruby-haste** — 针对[hastebin.com](http://hastebin.com/)的客户端.
+
+	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/)
+
+*   **Uppity** — 有态度的pastebin客户端.
+
+	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)
+
+*   **Wgetpaste** — 自动粘贴到许多pastebin服务的Bash脚本. 服务器: [pastebin.ca](http://pastebin.ca/), [codepad.org](http://codepad.org/), [dpaste.com](http://dpaste.com/) and [pastebin.osuosl.org](http://pastebin.osuosl.org/).
+
+	[http://wgetpaste.zlin.dk/](http://wgetpaste.zlin.dk/) || [wgetpaste](https://www.archlinux.org/packages/?name=wgetpaste)
+
+### 通信
+
+#### 邮件客户端
+
+也可查阅[Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/Comparison_of_email_clients "wikipedia:Comparison of email clients")
+
+##### 命令行
+
+*   **aerc** — 异步邮件客户端.
+
+	[https://github.com/SirCmpwn/aerc](https://github.com/SirCmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
+
+*   **alot** — 一个实验性质的邮件客户端基于[notmuch mail](http://notmuchmail.org/). 用Python写成，使用 [urwid](http://urwid.org/) 工具包.
+
+	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://www.archlinux.org/packages/?name=alot)
+
+*   **[Alpine](/index.php/Alpine "Alpine")** — 快速，易用使用Apache许可证的邮件客户端，基于[Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
+
+	[http://www.washington.edu/alpine/](http://www.washington.edu/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)
+
+*   **[S-nail](/index.php/S-nail "S-nail")** — 一个邮件进程系统，它的语法让人想到行被消息替代的*ed*. 提供 [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx")的功能.
+
+	[https://www.sdaoden.eu/code.html#s-mailx](https://www.sdaoden.eu/code.html#s-mailx) || [s-nail](https://www.archlinux.org/packages/?name=s-nail)
+
+*   **mu/mu4e** — 邮件索引器(mu)和emacs的客户端 (mu4e). Xapian基于快速搜索.
+
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
+
+*   **[Mutt](/index.php/Mutt "Mutt")** — 小巧但强力的基于文字的邮件客户端.
+
+	[http://www.mutt.org/](http://www.mutt.org/) || [mutt](https://www.archlinux.org/packages/?name=mutt)
+
+*   **[NeoMutt](/index.php/Mutt#NeoMutt "Mutt")** — 命令行的邮件阅读器(或者 MUA). 它是Mutt的衍生版但添加了许多功能.
+
+	[https://www.neomutt.org/](https://www.neomutt.org/) || [neomutt](https://www.archlinux.org/packages/?name=neomutt)
+
+*   **[nmh](/index.php/Nmh "Nmh")** — 模块化邮件处理系统.
+
+	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/)
+
+*   **[notmuch](/index.php/Notmuch "Notmuch")** — 一个快速的邮件索引器，基于*xapian*.
+
+	[http://notmuchmail.org/](http://notmuchmail.org/) || [notmuch](https://www.archlinux.org/packages/?name=notmuch)
+
+*   **[Sup](/index.php/Sup "Sup")** — CLI邮件客户端，特性有快速搜索, 标签, 线程和类似与Gmail的操作.
+
+	[https://sup-heliotrope.github.io/](https://sup-heliotrope.github.io/) || [sup](https://aur.archlinux.org/packages/sup/)
+
+*   **Wanderlust** — 针对Emacs的邮件客户端和新闻阅读器.
+
+	[http://www.gohome.org/wl/](http://www.gohome.org/wl/) || [wanderlust](https://www.archlinux.org/packages/?name=wanderlust)
+
+##### 图形化
+
+*   **Balsa** — 简单小巧的邮件客户端，针对 GNOME.
+
+	[https://pawsa.fedorapeople.org/balsa/](https://pawsa.fedorapeople.org/balsa/) || [balsa](https://www.archlinux.org/packages/?name=balsa)
+
+*   **[Claws Mail](https://en.wikipedia.org/wiki/Claws_Mail "wikipedia:Claws Mail")** — 轻量基于GTK的邮件客户端和新闻阅读器.
+
+	[https://www.claws-mail.org/](https://www.claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
+
+*   **email-securely-app** — 非官方的桌面程序提供许多加密邮件提供商的服务 (比如 ProtonMail, Tutanota). 基于 [Electron](https://electronjs.org/) 平台.
+
+	[https://github.com/vladimiry/email-securely-app](https://github.com/vladimiry/email-securely-app) || [email-securely-app-bin](https://aur.archlinux.org/packages/email-securely-app-bin/)
+
+*   **[Evolution](/index.php/Evolution "Evolution")** — 成熟并且功能丰富的邮件客户端，是GNOME项目的一部分. 是[gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/)的一部分.
+
+	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution](https://www.archlinux.org/packages/?name=evolution)
+
+*   **Geary** — 用[Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)")写成的简单桌面邮件客户端.
 
 	[https://wiki.gnome.org/Apps/Geary](https://wiki.gnome.org/Apps/Geary) || [geary](https://www.archlinux.org/packages/?name=geary)
 
-*   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — Mature and feature-rich email client. Part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
+*   **Gnubiff** — 邮件通知程序，检查邮件，并在当新邮件到达时提供邮件标题通知.
 
-	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)
+	[http://gnubiff.sourceforge.net/](http://gnubiff.sourceforge.net/) || [gnubiff](https://www.archlinux.org/packages/?name=gnubiff)
 
-*   **Manitou Mail** — Database-driven email system.
+*   **Inboxer** — 非官方，免费，开源的Google Inbox桌面程序. 基于 [Electron](https://electronjs.org/) 平台.
 
-	[http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/) [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)
+	[https://denysdovhan.com/inboxer/](https://denysdovhan.com/inboxer/) || [inboxer](https://aur.archlinux.org/packages/inboxer/)
 
-*   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
+*   **[Kmail](https://en.wikipedia.org/wiki/Kmail "wikipedia:Kmail")** — 成熟且功能丰富的邮件客户端. 是 [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)的一部分.
 
-	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
+	[https://www.kde.org/applications/internet/kmail/](https://www.kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
-*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK+ email client.
+*   **Kube** — 现代的交流和协作客户端，用QtQuick写成.
+
+	[https://kube.kde.org/](https://kube.kde.org/) || [kube](https://www.archlinux.org/packages/?name=kube)
+
+*   **Mailnag** — 可扩展的邮件通知守护进程.
+
+	[https://github.com/pulb/mailnag](https://github.com/pulb/mailnag) || [mailnag](https://www.archlinux.org/packages/?name=mailnag)
+
+*   **Mailspring** — Nylas Mail[有所有权的](https://github.com/Foundry376/Mailspring/issues/24)分支，由它原创作者中的一位开发.
+
+	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
+
+*   **Nylas Mail** — 可扩展邮件客户端. 基于 [Electron](https://electronjs.org/) 平台.
+
+	[https://www.nylas.com/nylas-mail/](https://www.nylas.com/nylas-mail/) || [nylas-mail-lives-bin](https://aur.archlinux.org/packages/nylas-mail-lives-bin/)
+
+*   **openWMail** — 针对Gmail & Google Inbox的令人想念的邮件客户端. 基于 [Electron](https://electronjs.org/) 平台.
+
+	[https://openwmail.github.io/](https://openwmail.github.io/) || [openwmail](https://aur.archlinux.org/packages/openwmail/)
+
+*   **QGmailNotifier** — 便携式的基于Qt5的GMail通知程序.
+
+	[https://github.com/eteran/qgmailnotifier](https://github.com/eteran/qgmailnotifier) || [qgmailnotifier](https://aur.archlinux.org/packages/qgmailnotifier/)
+
+*   **Protonmail Desktop** — 非官方的程序，模拟ProtonMail邮件服务的本地客户端. 基于 [Electron](https://electronjs.org/) 平台.
+
+	[http://protondesktop.com/](http://protondesktop.com/) || [protonmail-desktop](https://aur.archlinux.org/packages/protonmail-desktop/)
+
+*   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — 包括SeaMonkey套件的邮件客户端.
+
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+
+*   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — 轻量的GTK+用户友好的邮件客户端.
 
 	[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
 
-*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Feature-rich email client from Mozilla written in GTK+.
+*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — 来自Mozilla的由GTK+写成的功能丰富的邮件客户端.
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
-*   **Trojitá** — Qt IMAP email client. Only supports one IMAP account.
+*   **Trojitá** — Qt IMAP 邮件客户端. 只支持[one IMAP account](https://bugs.kde.org/show_bug.cgi?id=321374).
 
 	[http://trojita.flaska.net/](http://trojita.flaska.net/) || [trojita](https://www.archlinux.org/packages/?name=trojita)
 
-#### 即时聊天
+##### 基于网络
 
-See also [Wikipedia:Comparison_of_instant_messaging_clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients").
+*   **[Mailpile](https://en.wikipedia.org/wiki/Mailpile "wikipedia:Mailpile")** — 现代且快速的web邮件客户端，带有用户友好的加密和隐私功能.
+
+	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — 针对NextCloud的邮件web程序.
+
+	[https://github.com/nextcloud/mail](https://github.com/nextcloud/mail) || [nextcloud-app-mail](https://www.archlinux.org/packages/?name=nextcloud-app-mail)
+
+*   **Roundcubemail** — 基于浏览器的多语言IMAP客户端web程序，带有一个像本地程序的界面.
+
+	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
+
+*   **[SquirrelMail](/index.php/Squirrelmail "Squirrelmail")** — 给疯子准备的邮件客户端！
+
+	[https://squirrelmail.org/](https://squirrelmail.org/) || [squirrelmail](https://aur.archlinux.org/packages/squirrelmail/)
+
+#### 邮件服务器
+
+查阅[Mail server](/index.php/Mail_server "Mail server").
+
+*   **Modoboa** — 模块化的邮件托管和管理平台，用Python写成.
+
+	[https://modoboa.org/](https://modoboa.org/) || [modoboa](https://aur.archlinux.org/packages/modoboa/)
+
+#### 邮件检索代理
+
+也可查阅 [Wikipedia:Mail retrieval agent](https://en.wikipedia.org/wiki/Mail_retrieval_agent "wikipedia:Mail retrieval agent").
+
+*   **[fdm](/index.php/Fdm "Fdm")** — 获取并传递邮件的程序.
+
+	[https://github.com/nicm/fdm](https://github.com/nicm/fdm) || [fdm](https://www.archlinux.org/packages/?name=fdm)
+
+*   **[Fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail")** — 一个远程邮件检索工具.
+
+	[http://www.fetchmail.info/](http://www.fetchmail.info/) || [fetchmail](https://aur.archlinux.org/packages/fetchmail/)
+
+*   **[getmail](/index.php/Getmail "Getmail")** — 一个POP3邮件检索器，带有可靠的Maildir和命令传递.
+
+	[http://pyropus.ca/software/getmail/](http://pyropus.ca/software/getmail/) || [getmail](https://www.archlinux.org/packages/?name=getmail)
+
+*   **imapsync** — IMAP 同步，复制，迁移工具
+
+	[http://imapsync.lamiral.info/](http://imapsync.lamiral.info/) || [imapsync](https://aur.archlinux.org/packages/imapsync/)
+
+*   **[isync](/index.php/Isync "Isync")** — IMAP和MailDir邮箱同步器
+
+	[http://isync.sourceforge.net/](http://isync.sourceforge.net/) || [isync](https://www.archlinux.org/packages/?name=isync)
+
+*   **mpop** — 小巧且快速的POP3客户端，能用作fetchmail的客户端
+
+	[https://marlam.de/mpop/](https://marlam.de/mpop/) || [mpop](https://www.archlinux.org/packages/?name=mpop)
+
+*   **[OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")** — 在两个库之间同步邮件.
+
+	[http://www.offlineimap.org/](http://www.offlineimap.org/) || [offlineimap](https://www.archlinux.org/packages/?name=offlineimap)
+
+#### 即时通信客户端
+
+也可查阅 [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") 和 [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/Comparison_of_VoIP_software "wikipedia:Comparison of VoIP software").
+
+这个部分在 [instant messaging](https://en.wikipedia.org/wiki/Instant_messaging "wikipedia:Instant messaging")的支持下列出了所有客户端软件.
 
 ##### 多协议客户端
 
-See also [Wikipedia:Comparison of instant messaging clients#Multiprotocol_clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#Multiprotocol_clients "wikipedia:Comparison of instant messaging clients").
+**Note:** 支持多个网络直连的通信客户端都属于这个部分.
 
-**Note:** All messengers, that support several networks by means of direct connections to them, belong to this section.
-
-列在这里的许多客户端(包括 Pidgin 及其衍生版本)都是通过[libpurple](https://en.wikipedia.org/wiki/libpurple "wikipedia:libpurple")来支持多种及时通讯网络的。这些网络的类型非常多, 但是这些客户端(像任何多协议客户端)通常只有限或不支持每个网络特别的特征。
+这些客户端支持的网络的数量很大但他们(像所有的多协议客户的一样)通常对特定网络的功能支持有限.
 
 ###### 命令行
 
-*   **BarnOwl** — 一个使用ncurses library的聊天客户端，支持Zephyr, AIM, Jabber, IRC, 和 Twitter协议.
+*   **BarnOwl** — 基于Ncurses的聊天客户端，支持Zephyr, XMPP, IRC 和 Twitter 的协议.
 
 	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
 
-*   **[Bitlbee](/index.php/Bitlbee "Bitlbee")** — 一个IRC客户端并且提供了其他流行聊天网络的入口支持(XMPP, MSN, Yahoo, AIM, ICQ and Twitter).
+*   **[BitlBee](/index.php/Bitlbee "Bitlbee")** — 连接到热门聊天网络的IRC网关(XMPP, ICQ 和 Twitter).
 
 	[http://bitlbee.org/](http://bitlbee.org/) || [bitlbee](https://www.archlinux.org/packages/?name=bitlbee)
 
-*   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — CenterICQ的复刻软件, 文字模式菜单和窗口驱动的IM界面.
+*   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — 文字模式的菜单和窗口驱动的IM界面. 支持大部分广泛使用的IM协议,包括ICQ, IRC, XMPP.
 
 	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
 
-*   **Finch** — 一个使用ncurses library的聊天客户端，使用libpurple并支持其所有的协议.
+*   **EKG2** — 基于Ncurses的XMPP, Gadu-Gadu, ICQ 和 IRC 客户端.
+
+	[http://en.ekg2.org/](http://en.ekg2.org/) || [ekg2](https://aur.archlinux.org/packages/ekg2/)
+
+*   **Finch** — 基于Ncurses的聊天客户端，使用libpurple并支持它所以的协议(Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
 
-*   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — 一个使用ncurses library的聊天客户端，支持AOL, ICQ, IRC 和the Lily CMC.
+*   **Minbif** — 连接到使用libpurple的IM网络的IRC网关.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
+	[https://symlink.me/projects/minbif/wiki](https://symlink.me/projects/minbif/wiki) || [minbif](https://www.archlinux.org/packages/?name=minbif)
 
-###### 图形环境
+###### 图形界面
 
-*   **Carrier** — Pidgin的复刻版，轻微加强的图形界面 (以前叫funpidgin).
+*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME的即时消息客户端，使用 [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架，支持音频/视频.
 
-	[http://funpidgin.sourceforge.net/](http://funpidgin.sourceforge.net/) || [carrier](https://aur.archlinux.org/packages/carrier/)
+	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
 
-*   **[Emesene](https://en.wikipedia.org/wiki/Emesene "wikipedia:Emesene")** — 一个Windows Live Messenger的PyGtk即时通讯客户端, 同样兼容Jabber, Facebook 和 Google Talk.
+*   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — 音频/视频VoIP手机和即时通信客户端，用Java写成，支持SIP, XMPP, ICQ, IRC协议和许多其它有用的特性.
 
-	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
+	[https://jitsi.org/](https://jitsi.org/) || [jitsi](https://aur.archlinux.org/packages/jitsi/)
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) 框架.
+*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — 用户友好的IM客户端，支持Bonjour, Gadu-Gadu, GroupWise, ICQ, XMPP.
 
-	[http://live.gnome.org/Empathy](http://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
+	[https://userbase.kde.org/Kopete](https://userbase.kde.org/Kopete) || [kopete](https://www.archlinux.org/packages/?name=kopete)
 
-*   **Galaxium Messenger** — 专为GNOME桌面设计的通讯软件.
+*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE即时通信客户端使用[Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架. 它的目的是做成Kopete的替代品.
 
-	[https://code.google.com/p/galaxium/](https://code.google.com/p/galaxium/) || [galaxium](https://aur.archlinux.org/packages/galaxium/)
+	[https://userbase.kde.org/Telepathy](https://userbase.kde.org/Telepathy) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
 
-*   **[Instantbird](https://en.wikipedia.org/wiki/Instantbird "wikipedia:Instantbird")** — 使用Mozilla's XUL 和 libpurple的多协议客户端.
-
-	[http://instantbird.com/](http://instantbird.com/) || [instantbird](https://aur.archlinux.org/packages/instantbird/)
-
-*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — 一个用户友好型即时通讯客户端，支持AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, 和其他IM网络.
-
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
-
-*   **[Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — 一个KDE 即时通讯客户端，使用[Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)")框架.作为Kopete的替代品而生.
-
-	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [kde-telepathy-meta](https://www.archlinux.org/packages/?name=kde-telepathy-meta)
-
-*   **Licq** — UNIX即时通讯客户端,支持多种协议(ICQ, MSN and Jabber).
-
-	[http://www.licq.org](http://www.licq.org) || [licq](https://www.archlinux.org/packages/?name=licq)
-
-*   **[Pidgin](/index.php/Pidgin "Pidgin")** — 一个多协议即时通讯客户端.
+*   **[Pidgin](/index.php/Pidgin "Pidgin")** — 多协议即时通信客户端并有音频支持，使用的libpurple并支持所以它的协议 (Bonjour, Gadu-Gadu, Groupwise, ICQ, IRC, SIMPLE, XMPP, Zephyr).
 
 	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin)
 
-*   **Pidgin Light** — Pidgin的轻量级版本, 不支持 gstreamer, tcl, tk, xscreensaver
-
-	[http://pidgin.im/](http://pidgin.im/) || [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)
-
-*   **qutIM** — 一个简单的用户友好型即时通讯客户端，支持ICQ, Jabber, Mail.Ru, IRC 和 VKontakte messaging.
+*   **qutIM** — 简单和用户友好的IM客户端支持ICQ, XMPP, Mail.Ru, IRC 和 VKontakte 消息.
 
 	[http://qutim.org/](http://qutim.org/) || [qutim](https://aur.archlinux.org/packages/qutim/)
 
-#### IRC 客户端
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — 跨平台的IRC客户端，支持Twitter和XMPP.
 
-See also [Wikipedia:Comparison of Internet_Relay_Chat_clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
+	[https://smuxi.im/](https://smuxi.im/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
-**Note:** Most web browsers and many IM clients also support IRC.
+*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — 功能丰富的email客户端，支持用IRC，XMPP和Twitter的即时通信.
 
-###### 终端
+	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
+
+*   **[Yate Client](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — 即时通信客户端和软件电话，支持XMPP, SIP and H.323.
+
+	[http://yateclient.yate.ro/](http://yateclient.yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
+
+##### IRC客户端
+
+也可查阅 [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients "wikipedia:Comparison of Internet Relay Chat clients").
+
+###### 命令行
 
 *   **[BitchX](https://en.wikipedia.org/wiki/BitchX "wikipedia:BitchX")** — Console-based IRC client developed from the popular [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 
 	[http://www.bitchx.org/](http://www.bitchx.org/) || [bitchx-git](https://aur.archlinux.org/packages/bitchx-git/)
 
-*   **ERC** — Powerful, modular, and extensible IRC client for [Emacs](/index.php/Emacs "Emacs").
+*   **ERC** — Powerful, modular and extensible IRC client for [Emacs](/index.php/Emacs "Emacs").
 
-	[http://savannah.gnu.org/projects/erc/](http://savannah.gnu.org/projects/erc/) || [erc-git](https://aur.archlinux.org/packages/erc-git/)
+	[https://savannah.gnu.org/projects/erc/](https://savannah.gnu.org/projects/erc/) || included with [emacs](https://www.archlinux.org/packages/?name=emacs)
 
 *   **[ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)")** — Featherweight IRC client, literally `tail -f` the conversation and `echo` back your replies to a file.
 
-	[http://tools.suckless.org/ii](http://tools.suckless.org/ii) || [ii](https://aur.archlinux.org/packages/ii/)
-
-*   **Ircfs** — File system interface to IRC written in [Limbo](http://limbo.cat-v.org).
-
-	[http://www.ueber.net/code/r/ircfs](http://www.ueber.net/code/r/ircfs) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=ircfs)</small>
+	[https://tools.suckless.org/ii/](https://tools.suckless.org/ii/) || [ii](https://aur.archlinux.org/packages/ii/)
 
 *   **[Irssi](/index.php/Irssi "Irssi")** — Highly-configurable ncurses-based IRC client.
 
-	[http://irssi.org/](http://irssi.org/) || [irssi](https://www.archlinux.org/packages/?name=irssi)
+	[https://irssi.org/](https://irssi.org/) || [irssi](https://www.archlinux.org/packages/?name=irssi)
+
+*   **pork** — Programmable, ncurses-based IRC client that mostly looks and feels like ircII.
+
+	[http://dev.ojnk.net/](http://dev.ojnk.net/) || [pork](https://www.archlinux.org/packages/?name=pork)
 
 *   **ScrollZ** — Advanced IRC client based on [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 
@@ -1017,95 +1543,385 @@ See also [Wikipedia:Comparison of Internet_Relay_Chat_clients](https://en.wikipe
 
 *   **sic** — Extremely simple IRC client, similar to [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)").
 
-	[http://tools.suckless.org/sic](http://tools.suckless.org/sic) || [sic](https://aur.archlinux.org/packages/sic/)
+	[https://tools.suckless.org/sic/](https://tools.suckless.org/sic/) || [sic](https://aur.archlinux.org/packages/sic/)
 
-*   **[WeeChat](https://en.wikipedia.org/wiki/WeeChat "wikipedia:WeeChat")** — Modular, lightweight ncurses-based IRC client.
+*   **[WeeChat](/index.php/WeeChat "WeeChat")** — Modular, lightweight ncurses-based IRC client.
 
-	[http://weechat.org/](http://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
+	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
-###### 图形界面
+**Comparison**
 
-*   **HexChat** — 基于Xchat，支持Linux和Windows。
+| Name | Package | Written in | Extensible | [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer "wikipedia:Simple Authentication and Security Layer") |
+| [BitchX](https://en.wikipedia.org/wiki/BitchX "wikipedia:BitchX") | [bitchx-git](https://aur.archlinux.org/packages/bitchx-git/) | C | ? | ? |
+| [ERC](https://savannah.gnu.org/projects/erc/) | [emacs](https://www.archlinux.org/packages/?name=emacs) | ELisp | in ELisp | [via script](https://www.emacswiki.org/emacs/ErcSASL) |
+| [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) | [ii](https://aur.archlinux.org/packages/ii/) | C | stdin/stdout | No |
+| [Irssi](/index.php/Irssi "Irssi") | [irssi](https://www.archlinux.org/packages/?name=irssi) | C | in Perl | Yes |
+| [pork](http://dev.ojnk.net/) | [pork](https://www.archlinux.org/packages/?name=pork) | C | in Perl | No |
+| [ScrollZ](http://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
+| [sic](https://tools.suckless.org/sic/) | [sic](https://aur.archlinux.org/packages/sic/) | C | stdin/stdout | No |
+| [WeeChat](/index.php/WeeChat "WeeChat") | [weechat](https://www.archlinux.org/packages/?name=weechat) | C | [multiple languages](https://weechat.org/files/doc/stable/weechat_scripting.en.html) | Yes |
 
-	[http://hexchat.github.io/](http://hexchat.github.io/) || [hexchat](https://www.archlinux.org/packages/?name=hexchat)
+###### Graphical
 
-*   **[Konversation](https://en.wikipedia.org/wiki/Konversation "wikipedia:Konversation")** — KDE桌面的IRC客户端。
+*   **HexChat** — Fork of XChat for Linux and Windows.
 
-	[http://konversation.kde.org/](http://konversation.kde.org/) || [konversation](https://www.archlinux.org/packages/?name=konversation)
+	[https://hexchat.github.io/](https://hexchat.github.io/) || [hexchat](https://www.archlinux.org/packages/?name=hexchat)
 
-*   **[KVIrc](https://en.wikipedia.org/wiki/KVIrc "wikipedia:KVIrc")** — 基于QT且能够更外主题外观的IRC客户端。
+*   **[Konversation](https://en.wikipedia.org/wiki/Konversation "wikipedia:Konversation")** — Qt-based IRC client for the KDE desktop.
 
-	[http://kvirc.net/](http://kvirc.net/) || [kvirc](https://www.archlinux.org/packages/?name=kvirc)
+	[https://konversation.kde.org/](https://konversation.kde.org/) || [konversation](https://www.archlinux.org/packages/?name=konversation)
 
-*   **Loqui** — 依赖少，基于GTK的IRC客户端。 [GNet](https://live.gnome.org/GNetLibrary)
+*   **[KVIrc](https://en.wikipedia.org/wiki/KVIrc "wikipedia:KVIrc")** — Qt-based IRC client featuring extensive themes support.
+
+	[http://kvirc.net/](http://kvirc.net/) || [kvirc-git](https://aur.archlinux.org/packages/kvirc-git/)
+
+*   **Loqui** — GTK+ IRC client.
 
 	[https://launchpad.net/loqui](https://launchpad.net/loqui) || [loqui](https://aur.archlinux.org/packages/loqui/)
 
-*   **LostIRC** — 简单的基于GTK+的IRC客户端，具有Tab补全功能，支持多服务器和日志记录等。
+*   **LostIRC** — Simple GTK+ IRC client with tab-autocompletion, multiple server support, logging and others.
 
 	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)
 
-*   **pcw** — [ii](http://tools.suckless.org/ii)的图形前端， 可以为每一个通信开启一个终端。
+*   **Polari** — Simple IRC client by the GNOME project.
 
-	[https://bitbucket.org/emg/pcw](https://bitbucket.org/emg/pcw) || [pcw-hg](https://aur.archlinux.org/packages/pcw-hg/)
+	[https://wiki.gnome.org/Apps/Polari](https://wiki.gnome.org/Apps/Polari) || [polari](https://www.archlinux.org/packages/?name=polari)
 
-*   **Polari** — Gnome项目中的简洁IRC客户端。
+*   **[Quassel](/index.php/Quassel "Quassel")** — Modern, cross-platform, distributed IRC client.
 
-	[https://wiki.gnome.org/Apps/Polari/](https://wiki.gnome.org/Apps/Polari/) || [polari](https://www.archlinux.org/packages/?name=polari)
+	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
-*   **[Quassel](https://en.wikipedia.org/wiki/Quassel_IRC "wikipedia:Quassel IRC")** — 现代的跨平台分布式IRC客户端。
+*   **Srain** — Modern, beautiful IRC client written in GTK+ 3.
 
-	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client)
+	[https://srain.im/](https://srain.im/) || [srain](https://aur.archlinux.org/packages/srain/)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — 跨平台的IRC客户端 ，灵感来自于[Irssi](/index.php/Irssi "Irssi")。
-
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
-
-##### XMPP (Jabber)
+##### XMPP clients
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
 
-###### 命令行客户端
+###### Console
 
-*   **Freetalk** — Console-based Jabber client.
+*   **Freetalk** — Console-based XMPP client.
 
-	[https://gnu.org/s/freetalk/](https://gnu.org/s/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
+	[https://www.gnu.org/software/freetalk/](https://www.gnu.org/software/freetalk/) || [freetalk](https://aur.archlinux.org/packages/freetalk/)
 
-*   **jabber.el** — Minimal Jabber client for [Emacs](/index.php/Emacs "Emacs").
+*   **jabber.el** — Minimal XMPP client for [Emacs](/index.php/Emacs "Emacs").
 
 	[http://emacs-jabber.sourceforge.net/](http://emacs-jabber.sourceforge.net/) || [emacs-jabber](https://aur.archlinux.org/packages/emacs-jabber/)
 
-*   **[MCabber](https://en.wikipedia.org/wiki/MCabber "wikipedia:MCabber")** — Small Jabber console client, includes features: SSL, PGP, MUC, OTR, and UTF8.
+*   **jp (Salut à Toi)** — CLI frontend for Salut à Toi, multi-purpose XMPP client
 
-	[http://mcabber.com/](http://mcabber.com/) || [mcabber](https://www.archlinux.org/packages/?name=mcabber)
+	[https://salut-a-toi.org/](https://salut-a-toi.org/) || [sat-jp](https://aur.archlinux.org/packages/sat-jp/)
 
-*   **Profanity** — A console based Jabber client inspired by Irssi.
+*   **[MCabber](https://en.wikipedia.org/wiki/MCabber "wikipedia:MCabber")** — Small XMPP console client, includes features: SSL, PGP, MUC, OTR and UTF8.
 
-	[http://www.profanity.im/](http://www.profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
+	[https://mcabber.com/](https://mcabber.com/) || [mcabber](https://www.archlinux.org/packages/?name=mcabber)
 
-###### 图形界面客户端
+*   **Poezio** — XMPP client with IRC feeling
 
-*   **[Gajim](https://en.wikipedia.org/wiki/Gajim "wikipedia:Gajim")** — Jabber client written in PyGTK.
+	[https://poez.io/](https://poez.io/) || [poezio](https://aur.archlinux.org/packages/poezio/)
+
+*   **Primitivus (Salut à Toi)** — Console frontend for Salut à Toi, multi-purpose XMPP client
+
+	[https://salut-a-toi.org/](https://salut-a-toi.org/) || [sat-primitivus](https://aur.archlinux.org/packages/sat-primitivus/)
+
+*   **Profanity** — A console based XMPP client inspired by Irssi.
+
+	[http://profanity.im/](http://profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
+
+*   **xmpp-client** — A minimalist XMPP client with OTR support.
+
+	[https://github.com/agl/xmpp-client](https://github.com/agl/xmpp-client) || [go-xmpp-client](https://aur.archlinux.org/packages/go-xmpp-client/)
+
+###### Graphical
+
+*   **Cagou (Salut à Toi)** — Desktop/mobiles frontend for Salut à Toi, multi-purpose XMPP client
+
+	[https://salut-a-toi.org/](https://salut-a-toi.org/) || [sat-cagou-hg](https://aur.archlinux.org/packages/sat-cagou-hg/)
+
+*   **Converse.js** — Web-based XMPP chat client written in JavaScript.
+
+	[https://conversejs.org/](https://conversejs.org/) || [conversejs-git](https://aur.archlinux.org/packages/conversejs-git/)
+
+*   **Dino** — A modern, easy to use XMPP client, with PGP and OMEMO support.
+
+	[https://dino.im/](https://dino.im/) || [dino-git](https://aur.archlinux.org/packages/dino-git/)
+
+*   **[Gajim](/index.php/Gajim "Gajim")** — XMPP client with audio support written in PyGTK.
 
 	[https://gajim.org/](https://gajim.org/) || [gajim](https://www.archlinux.org/packages/?name=gajim)
 
-*   **Jabbim** — Jabber client written in PyQt.
+*   **[Kadu](https://en.wikipedia.org/wiki/Kadu_(software) "wikipedia:Kadu (software)")** — Qt-based XMPP and Gadu-Gadu client.
 
-	[http://www.jabbim.com/](http://www.jabbim.com/) || [jabbim-svn](https://aur.archlinux.org/packages/jabbim-svn/)
+	[http://www.kadu.im/](http://www.kadu.im/) || [kadu](https://aur.archlinux.org/packages/kadu/)
 
-*   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing (since version 0.13).
+*   **Libervia (Salut à Toi)** — Web frontend for Salut à Toi, multi-purpose XMPP client
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://aur.archlinux.org/packages/psimedia/)
+	[https://salut-a-toi.org/](https://salut-a-toi.org/) || [sat-libervia-hg](https://aur.archlinux.org/packages/sat-libervia-hg/)
 
-*   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
+*   **Nextcloud JavaScript XMPP Client** — Chat app for Nextcloud with XMPP, end-to-end encryption, video calls, file transfer & group chat.
 
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
+	[https://github.com/nextcloud/jsxc.nextcloud](https://github.com/nextcloud/jsxc.nextcloud) || [nextcloud-app-jsxc](https://aur.archlinux.org/packages/nextcloud-app-jsxc/)
+
+*   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based XMPP client.
+
+	[https://psi-im.org/](https://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) or [psi-nowebengine](https://www.archlinux.org/packages/?name=psi-nowebengine)
+
+*   **[Spark](https://en.wikipedia.org/wiki/Spark_(XMPP_client) "wikipedia:Spark (XMPP client)")** — Cross-platform real-time XMPP collaboration client optimized for business and organizations.
+
+	[https://www.igniterealtime.org/projects/spark/](https://www.igniterealtime.org/projects/spark/) || [spark](https://aur.archlinux.org/packages/spark/)
+
+*   **Swift** — XMPP client written in C++ with Qt and Swiften.
+
+	[https://swift.im/](https://swift.im/) || [swift-im](https://aur.archlinux.org/packages/swift-im/)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
 	[http://tkabber.jabber.ru/](http://tkabber.jabber.ru/) || [tkabber](https://aur.archlinux.org/packages/tkabber/)
 
-###### 服务器
+*   **Vacuum IM** — Full-featured crossplatform XMPP client.
+
+	[https://github.com/Vacuum-IM/vacuum-im](https://github.com/Vacuum-IM/vacuum-im) || [vacuum-im](https://aur.archlinux.org/packages/vacuum-im/)
+
+##### SIP clients
+
+See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/List_of_SIP_software#Clients "wikipedia:List of SIP software").
+
+*   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
+
+	[http://icanblink.com/](http://icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
+
+*   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
+
+	[http://www.ekiga.org/](http://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
+
+*   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application (SIP client) for communicating freely with people over the internet, with voice, video, and text instant messaging.
+
+	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
+
+*   **[Ring](/index.php/Ring "Ring")** — SIP-compatible softphone and instant messenger for the decentralized Ring network. Formerly known as SFLphone.
+
+	[https://ring.cx/](https://ring.cx/) || [ring-gnome](https://www.archlinux.org/packages/?name=ring-gnome)
+
+*   **[Ring](/index.php/Ring "Ring") KDE** — SIP-compatible softphone and instant messenger for the decentralized Ring network. KDE client.
+
+	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
+
+*   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
+
+	[http://twinkle.dolezel.info/](http://twinkle.dolezel.info/) || [twinkle-qt5](https://aur.archlinux.org/packages/twinkle-qt5/)
+
+##### Matrix clients
+
+See also [Matrix](/index.php/Matrix "Matrix").
+
+*   **Fractal** — Matrix client for GNOME written in Rust.
+
+	[https://wiki.gnome.org/Apps/Fractal](https://wiki.gnome.org/Apps/Fractal) || [fractal](https://www.archlinux.org/packages/?name=fractal)
+
+*   **nheko** — Desktop client for the Matrix protocol.
+
+	[https://github.com/Nheko-Reborn/nheko](https://github.com/Nheko-Reborn/nheko) || [nheko](https://aur.archlinux.org/packages/nheko/), [nheko-git](https://aur.archlinux.org/packages/nheko-git/)
+
+*   **Quaternion** — Qt5-based IM client for the Matrix protocol.
+
+	[https://github.com/QMatrixClient/Quaternion](https://github.com/QMatrixClient/Quaternion) || [quaternion](https://aur.archlinux.org/packages/quaternion/)
+
+*   **Riot** — Glossy Matrix client with an emphasis on performance and usability. Web application and desktop application based on the [Electron](https://electronjs.org/) platform.
+
+	[https://about.riot.im/](https://about.riot.im/) || [riot-web](https://www.archlinux.org/packages/?name=riot-web), [riot-desktop](https://www.archlinux.org/packages/?name=riot-desktop)
+
+*   **Tensor** — Qt5/QML-based Matrix client.
+
+	[https://github.com/davidar/tensor](https://github.com/davidar/tensor) || [tensor-git](https://aur.archlinux.org/packages/tensor-git/)
+
+##### Tox clients
+
+See also [Tox](/index.php/Tox "Tox").
+
+*   **qTox** — Powerful Tox client written in C++/Qt that follows the Tox design guidelines.
+
+	[https://qtox.github.io/](https://qtox.github.io/) || [qtox](https://www.archlinux.org/packages/?name=qtox)
+
+*   **ratox** — FIFO based tox client.
+
+	[https://ratox.2f30.org/](https://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)
+
+*   **Ricin** — Dead-simple but powerful Tox client.
+
+	[https://github.com/RicinApp/Ricin](https://github.com/RicinApp/Ricin) || [ricin](https://aur.archlinux.org/packages/ricin/)
+
+*   **Toxic** — ncurses-based Tox client
+
+	[https://github.com/Jfreegman/toxic](https://github.com/Jfreegman/toxic) || [toxic](https://www.archlinux.org/packages/?name=toxic)
+
+*   **Toxygen** — Tox client written in pure Python3.
+
+	[https://github.com/toxygen-project/toxygen](https://github.com/toxygen-project/toxygen) || [toxygen-git](https://aur.archlinux.org/packages/toxygen-git/)
+
+*   **Venom** — a modern Tox client for the GNU/Linux desktop
+
+	[https://github.com/naxuroqa/Venom](https://github.com/naxuroqa/Venom) || [venom](https://aur.archlinux.org/packages/venom/)
+
+*   **µTox** — Lightweight Tox client.
+
+	[https://utox.io/](https://utox.io/) || [utox](https://www.archlinux.org/packages/?name=utox)
+
+##### Serverless (decentralized) clients
+
+See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"), [Ring](/index.php/Ring "Ring"), [Tox](/index.php/Tox "Tox") and [Wikipedia:Comparison of LAN messengers](https://en.wikipedia.org/wiki/Comparison_of_LAN_messengers "wikipedia:Comparison of LAN messengers").
+
+*   **BeeBEEP** — Secure LAN Messenger.
+
+	[http://beebeep.sourceforge.net/](http://beebeep.sourceforge.net/) || [beebeep](https://aur.archlinux.org/packages/beebeep/)
+
+*   **Bit Chat** — Secure, peer-to-peer instant messenger.
+
+	[https://bitchat.im/](https://bitchat.im/) || [bitchat](https://aur.archlinux.org/packages/bitchat/)
+
+*   **[Bitmessage](/index.php/Bitmessage "Bitmessage")** — Decentralized and trustless P2P communications protocol for sending encrypted messages to another person or to many subscribers.
+
+	[https://bitmessage.org/](https://bitmessage.org/) || [pybitmessage](https://aur.archlinux.org/packages/pybitmessage/)
+
+*   **iptux** — LAN communication software, compatible with IP Messenger.
+
+	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)
+
+*   **LAN Messenger** — P2P chat application for intranet communication and does not require a server. A variety of handy features are supported including notifications, personal and group messaging with encryption, file transfer and message logging.
+
+	[https://lanmessenger.github.io/](https://lanmessenger.github.io/) || [lmc](https://aur.archlinux.org/packages/lmc/)
+
+*   **Patchwork** — Decentralized messaging and sharing app built on top of Secure Scuttlebutt (SSB). Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/ssbc/patchwork](https://github.com/ssbc/patchwork) || [ssb-patchwork](https://aur.archlinux.org/packages/ssb-patchwork/)
+
+*   **[RetroShare](/index.php/RetroShare "RetroShare")** — Serverless encrypted instant messenger with filesharing, chatgroups, mail.
+
+	[http://retroshare.net/](http://retroshare.net/) || [retroshare](https://aur.archlinux.org/packages/retroshare/)
+
+*   **[Ricochet](https://en.wikipedia.org/wiki/Ricochet_(software) "wikipedia:Ricochet (software)")** — Anonymous peer-to-peer instant messaging system built on [Tor](/index.php/Tor "Tor") hidden services.
+
+	[https://ricochet.im/](https://ricochet.im/) || [ricochet](https://aur.archlinux.org/packages/ricochet/)
+
+##### Other IM clients
+
+*   **Caprine** — Unofficial Facebook Messenger app. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/sindresorhus/caprine](https://github.com/sindresorhus/caprine) || [caprine](https://www.archlinux.org/packages/?name=caprine)
+
+*   **[Cryptocat](https://en.wikipedia.org/wiki/Cryptocat "wikipedia:Cryptocat")** — Free software with a simple mission: everyone should be able to chat with their friends in privacy. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://crypto.cat/](https://crypto.cat/) || [cryptocat](https://aur.archlinux.org/packages/cryptocat/)
+
+*   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — Proprietary all-in-one voice and text chat application for gamers that’s free and works on both your desktop and phone. Before installing, one should be aware of the [privacy implications](https://spyware.neocities.org/articles/discord.html). Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://discordapp.com/](https://discordapp.com/) || [discord](https://www.archlinux.org/packages/?name=discord)
+
+*   **Esmska** — Program for sending SMS over the Internet.
+
+	[https://github.com/kparal/esmska](https://github.com/kparal/esmska) || [esmska](https://www.archlinux.org/packages/?name=esmska)
+
+*   **[Gitter](https://en.wikipedia.org/wiki/Gitter "wikipedia:Gitter")** — Communication product for communities and teams on GitHub.
+
+	[https://gitter.im/](https://gitter.im/) || [gitter](https://aur.archlinux.org/packages/gitter/)
+
+*   **Hangups** — Third-party instant messaging client for Google Hangouts.
+
+	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups](https://aur.archlinux.org/packages/hangups/)
+
+*   **[ICQ](https://en.wikipedia.org/wiki/ICQ "wikipedia:ICQ")** — Official ICQ client for Linux.
+
+	[https://icq.com/linux/](https://icq.com/linux/) || [icqdesktop-bin](https://aur.archlinux.org/packages/icqdesktop-bin/)
+
+*   **Licq** — Instant messaging client for UNIX supporting ICQ.
+
+	[http://licq.org/](http://licq.org/) || [licq](https://www.archlinux.org/packages/?name=licq)
+
+*   **Matterhorn** — Console client for the Mattermost chat system.
+
+	[https://github.com/matterhorn-chat/matterhorn](https://github.com/matterhorn-chat/matterhorn) || [matterhorn](https://aur.archlinux.org/packages/matterhorn/)
+
+*   **[Mattermost](/index.php/Mattermost "Mattermost") Desktop** — Desktop application for Mattermost. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/mattermost/desktop](https://github.com/mattermost/desktop) || [mattermost-desktop](https://aur.archlinux.org/packages/mattermost-desktop/)
+
+*   **[Mumble](/index.php/Mumble "Mumble")** — Voice chat application similar to TeamSpeak.
+
+	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
+
+*   **QHangups** — Alternative client for Google Hangouts written in PyQt.
+
+	[https://github.com/xmikos/qhangups](https://github.com/xmikos/qhangups) || [qhangups](https://aur.archlinux.org/packages/qhangups/)
+
+*   **Rocket.Chat Desktop** — Desktop application for Rocket.Chat. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/RocketChat/Rocket.Chat.Electron](https://github.com/RocketChat/Rocket.Chat.Electron) || [rocketchat-desktop](https://aur.archlinux.org/packages/rocketchat-desktop/)
+
+*   **[Signal](https://en.wikipedia.org/wiki/Signal_(software) "wikipedia:Signal (software)")** — Signal Private Messenger for the Desktop. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/signalapp/Signal-Desktop](https://github.com/signalapp/Signal-Desktop) || [signal](https://aur.archlinux.org/packages/signal/)
+
+*   **[Skype](https://en.wikipedia.org/wiki/Skype "wikipedia:Skype")** — Popular but proprietary application for voice and video communication. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://www.skype.com/](https://www.skype.com/) || [skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/)
+
+*   **[Slack](https://en.wikipedia.org/wiki/Slack_(software) "wikipedia:Slack (software)")** — Proprietary Slack client for desktop. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://slack.com/downloads/linux](https://slack.com/downloads/linux) || [slack-desktop](https://aur.archlinux.org/packages/slack-desktop/)
+
+*   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
+
+	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
+
+*   **[Telegram Desktop](/index.php/Telegram "Telegram")** — Official Telegram desktop client.
+
+	[https://desktop.telegram.org/](https://desktop.telegram.org/) || [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop)
+
+*   **[Viber](https://en.wikipedia.org/wiki/Viber "wikipedia:Viber")** — Proprietary cross-platform IM and VoIP software.
+
+	[https://www.viber.com/products/linux/](https://www.viber.com/products/linux/) || [viber](https://aur.archlinux.org/packages/viber/)
+
+*   **[Wire](https://en.wikipedia.org/wiki/Wire_(software) "wikipedia:Wire (software)")** — Modern, private messenger. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://wire.com/](https://wire.com/) || [wire-desktop](https://www.archlinux.org/packages/?name=wire-desktop)
+
+*   **YakYak** — Unofficial desktop client for Google Hangouts. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/yakyak/yakyak](https://github.com/yakyak/yakyak) || [yakyak](https://aur.archlinux.org/packages/yakyak/)
+
+*   **[Zoom](https://en.wikipedia.org/wiki/Zoom_Video_Communications "wikipedia:Zoom Video Communications")** — Proprietary video conferencing, online meetings and group messaging application.
+
+	[https://zoom.us/](https://zoom.us/) || [zoom](https://aur.archlinux.org/packages/zoom/)
+
+*   **[Zulip](https://en.wikipedia.org/wiki/Zulip "wikipedia:Zulip")** — Desktop client for Zulip group chat. Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://zulipchat.com/apps/linux](https://zulipchat.com/apps/linux) || [zulip-electron-bin](https://aur.archlinux.org/packages/zulip-electron-bin/)
+
+#### Instant messaging servers
+
+See also [Wikipedia:Comparison of instant messaging protocols](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_protocols "wikipedia:Comparison of instant messaging protocols").
+
+##### IRC servers
+
+See also [Wikipedia:Comparison of Internet Relay Chat daemons](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_daemons "wikipedia:Comparison of Internet Relay Chat daemons").
+
+*   **[InspIRCd](/index.php/InspIRCd "InspIRCd")** — A stable, modern and lightweight IRC daemon.
+
+	[https://www.inspircd.org/](https://www.inspircd.org/) || [inspircd](https://aur.archlinux.org/packages/inspircd/)
+
+*   **IRCD-Hybrid** — A lightweight, high-performance internet relay chat daemon.
+
+	[http://www.ircd-hybrid.org/](http://www.ircd-hybrid.org/) || [ircd-hybrid](https://aur.archlinux.org/packages/ircd-hybrid/)
+
+*   **miniircd** — A small and configuration free IRC server, suitable for private use.
+
+	[https://github.com/jrosdahl/miniircd](https://github.com/jrosdahl/miniircd) || [miniircd-git](https://aur.archlinux.org/packages/miniircd-git/)
+
+*   **[UnrealIRCd](/index.php/UnrealIRCd "UnrealIRCd")** — Open Source IRC Server.
+
+	[https://www.unrealircd.org/](https://www.unrealircd.org/) || [unrealircd](https://www.archlinux.org/packages/?name=unrealircd)
+
+##### XMPP servers
 
 See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org/wiki/Comparison_of_XMPP_server_software "wikipedia:Comparison of XMPP server software").
 
@@ -1113,213 +1929,95 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 	[http://prosody.im/](http://prosody.im/) || [prosody](https://www.archlinux.org/packages/?name=prosody)
 
-*   **Ejabberd** — Jabber server written in Erlang
+*   **Ejabberd** — Robust, scalable and extensible XMPP Server written in Erlang
 
-	[http://www.ejabberd.im/](http://www.ejabberd.im/) || [ejabberd](https://www.archlinux.org/packages/?name=ejabberd)
+	[https://www.ejabberd.im/](https://www.ejabberd.im/) || [ejabberd](https://www.archlinux.org/packages/?name=ejabberd)
 
 *   **[Jabberd2](/index.php/Jabberd2 "Jabberd2")** — An XMPP server written in the C language and licensed under the GNU General Public License. It was inspired by jabberd14.
 
 	[http://jabberd2.org](http://jabberd2.org) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)
 
-*   **Openfire** — An XMPP IM multiplatform server written in Java
+*   **[Openfire](/index.php/Openfire "Openfire")** — An XMPP IM multiplatform server written in Java
 
 	[http://www.igniterealtime.org/projects/openfire/](http://www.igniterealtime.org/projects/openfire/) || [openfire](https://www.archlinux.org/packages/?name=openfire)
 
-##### 多协议客户端
+##### SIP servers
 
-见 [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients").
+See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/List_of_SIP_software#Servers "wikipedia:List of SIP software").
 
-**Note:** All messengers, that support several networks by means of direct connections to them, belong to this section.
+*   **[Asterisk](/index.php/Asterisk "Asterisk")** — A complete PBX solution.
 
-Many clients listed here (including Pidgin and all its forks) support multiple IM networks via [libpurple](https://en.wikipedia.org/wiki/libpurple "wikipedia:libpurple"). The number of networks supported by these clients is very large but they (like any multiprotocol clients) usually have very limited or no support for network-specific features.
+	[https://www.asterisk.org/](https://www.asterisk.org/) || [asterisk](https://aur.archlinux.org/packages/asterisk/)
 
-###### 命令行
+*   **Kamailio** — Rock solid SIP server.
 
-*   **BarnOwl** — Ncurses-based chat client with support for the Zephyr, AIM, Jabber, IRC, and Twitter protocols.
+	[https://www.kamailio.org/](https://www.kamailio.org/) || [kamailio](https://aur.archlinux.org/packages/kamailio/)
 
-	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
+*   **openSIPS** — SIP proxy/server for voice, video, IM, presence and any other SIP extensions.
 
-*   **[Bitlbee](/index.php/Bitlbee "Bitlbee")** — IRC client that provides a gateway to popular chat networks (XMPP, MSN, Yahoo, AIM, ICQ and Twitter).
+	[https://opensips.org/](https://opensips.org/) || [opensips](https://www.archlinux.org/packages/?name=opensips)
 
-	[http://bitlbee.org/](http://bitlbee.org/) || [bitlbee](https://www.archlinux.org/packages/?name=bitlbee)
+*   **Repro** — An open-source, free SIP server.
 
-*   **[CenterIM](https://en.wikipedia.org/wiki/Centericq "wikipedia:Centericq")** — Fork of CenterICQ, a text mode menu- and window-driven IM interface.
+	[https://www.resiprocate.org/About_Repro](https://www.resiprocate.org/About_Repro) || [repro](https://aur.archlinux.org/packages/repro/)
 
-	[http://centerim.org/](http://centerim.org/) || [centerim](https://aur.archlinux.org/packages/centerim/)
+*   **[Yate](https://en.wikipedia.org/wiki/Yate_(telephony_engine) "wikipedia:Yate (telephony engine)")** — Advanced, mature, flexible telephony server that is used for VoIP and fixed networks, and for traditional mobile operators and MVNOs.
 
-*   **[Finch](/index.php/Pidgin "Pidgin")** — Ncurses-based chat client that uses libpurple and supports all its protocols.
+	[http://yate.ro/](http://yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
 
-	[http://developer.pidgin.im/wiki/Using%20Finch](http://developer.pidgin.im/wiki/Using%20Finch) || [finch](https://www.archlinux.org/packages/?name=finch)
+##### Other IM servers
 
-*   **[naim](https://en.wikipedia.org/wiki/naim_(software) "wikipedia:naim (software)")** — Ncurses chat client with support for AOL, ICQ, IRC and the Lily CMC.
+*   **[Mattermost](/index.php/Mattermost "Mattermost")** — Open source private cloud server, Slack-alternative.
 
-	[http://naim.n.ml.org/](http://naim.n.ml.org/) || [naim](https://aur.archlinux.org/packages/naim/)
+	[https://github.com/mattermost/mattermost-server](https://github.com/mattermost/mattermost-server) || [mattermost](https://aur.archlinux.org/packages/mattermost/)
 
-*   **pork** — Programmable, ncurses-based AIM and IRC client that mostly looks and feels like ircII.
+*   **[Murmur](/index.php/Murmur "Murmur")** — The voice chat application server for Mumble.
 
-	[http://dev.ojnk.net/](http://dev.ojnk.net/) || [pork](https://www.archlinux.org/packages/?name=pork)
+	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [murmur](https://www.archlinux.org/packages/?name=murmur)
 
-*   **[Tox](/index.php/Tox "Tox")** — Tox is a distributed, secure messenger with audio and video chat capabilities.
+*   **Nextcloud Talk** — Video- and audio-conferencing app for Nextcloud.
 
-	[https://tox.chat/](https://tox.chat/) || [tox-git](https://aur.archlinux.org/packages/tox-git/)
+	[https://github.com/nextcloud/spreed](https://github.com/nextcloud/spreed) || [nextcloud-app-spreed](https://www.archlinux.org/packages/?name=nextcloud-app-spreed)
 
-###### 图形界面
+*   **Rocket.Chat** — Web chat server, developed in JavaScript, using the Meteor fullstack framework.
 
-*   **Carrier** — Pidgin fork providing minor GUI enhancements (formerly FunPidgin).
+	[https://github.com/RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) || [rocketchat-server](https://aur.archlinux.org/packages/rocketchat-server/)
 
-	[http://funpidgin.sourceforge.net/](http://funpidgin.sourceforge.net/) || [carrier](https://aur.archlinux.org/packages/carrier/)
+*   **Spreed WebRTC** — WebRTC audio/video call and conferencing server.
 
-*   **[Emesene](https://en.wikipedia.org/wiki/Emesene "wikipedia:Emesene")** — PyGTK instant messenger for the Windows Live Messenger network, also compatible with Jabber, Facebook and Google Talk.
+	[https://github.com/strukturag/spreed-webrtc](https://github.com/strukturag/spreed-webrtc) || [spreed-webrtc-server](https://aur.archlinux.org/packages/spreed-webrtc-server/)
 
-	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
+*   **[Synapse](/index.php/Matrix "Matrix")** — Reference homeserver for the Matrix protocol.
 
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
+	[https://github.com/matrix-org/synapse](https://github.com/matrix-org/synapse) || [matrix-synapse](https://www.archlinux.org/packages/?name=matrix-synapse)
 
-	[http://live.gnome.org/Empathy](http://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
+*   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak") Server** — Proprietary VoIP conference server.
 
-*   **Galaxium Messenger** — Messenger application designed for the GNOME desktop.
+	[https://teamspeak.com/](https://teamspeak.com/) || [teamspeak3-server](https://www.archlinux.org/packages/?name=teamspeak3-server)
 
-	[https://code.google.com/p/galaxium/](https://code.google.com/p/galaxium/) || [galaxium](https://aur.archlinux.org/packages/galaxium/)
+*   **uMurmur** — Minimalistic Mumble server.
 
-*   **[Instantbird](https://en.wikipedia.org/wiki/Instantbird "wikipedia:Instantbird")** — Multi-protocol chat client using Mozilla's XUL and libpurple.
+	[http://umurmur.net/](http://umurmur.net/) || [umurmur](https://www.archlinux.org/packages/?name=umurmur)
 
-	[http://instantbird.com/](http://instantbird.com/) || [instantbird](https://aur.archlinux.org/packages/instantbird/)
+#### Collaborative software
 
-*   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — User-friendly IM supporting AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, and other IM networks. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
+See also [Wikipedia:Collaborative software](https://en.wikipedia.org/wiki/Collaborative_software "wikipedia:Collaborative software").
 
-	[http://kopete.kde.org/](http://kopete.kde.org/) || [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete)
+*   **[Citadel/UX](https://en.wikipedia.org/wiki/Citadel/UX "wikipedia:Citadel/UX")** — Includes an email & mailing list server, instant messaging, address books, calendar/scheduling, bulletin boards, and wiki and blog engines.
 
-*   **[KDE Telepathy](/index.php/KDE#KDE_Telepathy "KDE")** — KDE instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) framework. Meant as a replacement for Kopete.
+	[http://www.citadel.org/](http://www.citadel.org/) || [webcit](https://aur.archlinux.org/packages/webcit/)
 
-	[http://community.kde.org/Real-Time_Communication_and_Collaboration/](http://community.kde.org/Real-Time_Communication_and_Collaboration/) || [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta)
+*   **[Kolab](/index.php/Kolab "Kolab")** — Kolab Groupware solution consisting of a server and various clients.
 
-*   **Licq** — Instant messaging client for UNIX supporting multiple protocols (currently ICQ, MSN and Jabber).
+	[https://kolab.org/](https://kolab.org/) || [kolab](https://aur.archlinux.org/packages/kolab/)
 
-	[http://www.licq.org](http://www.licq.org) || [licq](https://www.archlinux.org/packages/?name=licq)
+*   **[Open-xchange](/index.php/Open-xchange "Open-xchange")** — A groupware solution providing mail facilities, calendaring, shared contacts and Google-Docs-like text editing
 
-*   **Mikutter** — An open-source Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
+	[http://www.ox.io/](http://www.ox.io/) || [open-xchange](https://aur.archlinux.org/packages/open-xchange/)
 
-	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/) [mikutter-git](https://aur.archlinux.org/packages/mikutter-git/)
+*   **[SOGo](/index.php/SOGo "SOGo")** — Groupware server built around OpenGroupware.org (OGo) and the SOPE application server.
 
-*   **[Pidgin](/index.php/Pidgin "Pidgin")** — Multi-protocol instant messaging client.
-
-	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin) [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)
-
-*   **qutIM** — Simple and user-friendly IM supporting ICQ, Jabber, Mail.Ru, IRC and VKontakte messaging.
-
-	[http://qutim.org/](http://qutim.org/) || [qutim-stable](https://aur.archlinux.org/packages/qutim-stable/)
-
-#### 局域网聊天
-
-See also: [Comparison of LAN messengers](https://en.wikipedia.org/wiki/Comparison_of_LAN_messengers "wikipedia:Comparison of LAN messengers").
-
-*   **iptux** — Lan communication software, compatible with IP Messenger.
-
-	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)
-
-#### 软件式电话
-
-See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/Comparison_of_VoIP_software "wikipedia:Comparison of VoIP software") and [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_SIP_software "wikipedia:List of SIP software").
-
-##### 客户端
-
-**Note:** Some [IM clients](#Instant_messaging)also offer voice and video communication
-
-###### SIP
-
-*   **[Blink](https://en.wikipedia.org/wiki/Blink_(software) "wikipedia:Blink (software)")** — State of the art, easy to use SIP client.
-
-	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink-darcs](https://aur.archlinux.org/packages/blink-darcs/)
-
-*   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
-
-	[http://www.ekiga.org/](http://www.ekiga.org/) || [ekiga](https://www.archlinux.org/packages/?name=ekiga)
-
-*   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME instant messenger client using the Telepathy framework with SIP support (using the Sofia-SIP library).
-
-	[https://live.gnome.org/Empathy](https://live.gnome.org/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
-
-*   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video SIP VoIP phone and instant messenger written in Java (formerly SIP-Communicator).
-
-	[https://jitsi.org/](https://jitsi.org/) || [jitsi](https://aur.archlinux.org/packages/jitsi/)
-
-*   **[KPhone](https://en.wikipedia.org/wiki/KPhone "wikipedia:KPhone")** — Qt SIP User Agent with voice, video and text messaging support.
-
-	[http://sourceforge.net/projects/kphone/](http://sourceforge.net/projects/kphone/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=kphone)</small>
-
-*   **[Linphone](https://en.wikipedia.org/wiki/Linphone "wikipedia:Linphone")** — VoIP phone application that allows you to to communicate freely with people over the internet, with voice, video, and text instant messaging.
-
-	[http://www.linphone.org/](http://www.linphone.org/) || [linphone](https://aur.archlinux.org/packages/linphone/)
-
-*   **Minisip** — SIP User Agent with focus on security (supports TLS, end-to-end security, SRTP, MIKEY (DH, PSK, PKE)).
-
-	[http://www.minisip.org/](http://www.minisip.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=minisip)</small>
-
-*   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Softphone which allows you to make free PC to PC video and voice calls, and to integrate all your IM contacts in one place (formerly Wengo Phone).
-
-	[http://trac.qutecom.org/](http://trac.qutecom.org/) || [qutecom](https://aur.archlinux.org/packages/qutecom/)
-
-*   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
-
-	[http://www.twinklephone.com/](http://www.twinklephone.com/) || [twinkle](https://aur.archlinux.org/packages/twinkle/)
-
-*   **[X-Lite](https://en.wikipedia.org/wiki/X-Lite "wikipedia:X-Lite")** — Proprietary freeware VoIP soft phone that uses SIP.
-
-	[http://www.counterpath.net/x-lite](http://www.counterpath.net/x-lite) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
-
-*   **[Zfone](https://en.wikipedia.org/wiki/Zfone "wikipedia:Zfone")** — Softphone application for secure voice communication over the Internet (VoIP), using the ZRTP protocol.
-
-	[http://zfoneproject.com/](http://zfoneproject.com/) || [zfone](https://aur.archlinux.org/packages/zfone/)
-
-###### IAX2
-
-*   **Kiax** — Qt-based IAX/2 Softphone.
-
-	[http://www.forschung-direkt.eu/projects/kiax2/](http://www.forschung-direkt.eu/projects/kiax2/) || [kiax](https://aur.archlinux.org/packages/kiax/)
-
-###### Skype
-
-*   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for high-quality voice communication.
-
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
-
-###### 其它
-
-*   **Hangups** — A third-party instant messaging client for Google Hangouts
-
-	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
-
-*   **[Mumble](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)")** — Voice chat application similar to TeamSpeak.
-
-	[http://mumble.sourceforge.net/](http://mumble.sourceforge.net/) || [mumble](https://www.archlinux.org/packages/?name=mumble)
-
-*   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
-
-	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
-
-*   **Webex** — Proprietary conferencing software.
-
-	[http://www.webex.com/](http://www.webex.com/) || [webex](https://aur.archlinux.org/packages/webex/)
-
-###### 多协议
-
-*   **[SFLPhone](https://en.wikipedia.org/wiki/SFLphone "wikipedia:SFLphone")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support.
-
-	[http://sflphone.org/](http://sflphone.org/) || [sflphone](https://aur.archlinux.org/packages/sflphone/)
-
-##### 实用工具
-
-*   **Gladstone** — Educational ITU-T G.729 compliant codec with a GStreamer plugin.
-
-	[https://gitorious.org/gladstone](https://gitorious.org/gladstone) || [gladstone-drizztbsd-git](https://aur.archlinux.org/packages/gladstone-drizztbsd-git/)
-
-*   **SIPp** — Open source test tool and traffic generator for the SIP protocol.
-
-	[http://sipp.sourceforge.net/](http://sipp.sourceforge.net/) || [sipp](https://aur.archlinux.org/packages/sipp/)
-
-*   **Sipsak** — Small command-line tool for developers and administrators of SIP applications.
-
-	[http://sipsak.org/](http://sipsak.org/) || [sipsak](https://aur.archlinux.org/packages/sipsak/)
+	[https://sogo.nu/](https://sogo.nu/) || [sogo](https://aur.archlinux.org/packages/sogo/)
 
 ### 新闻，RSS 与博客
 
@@ -2368,7 +3066,7 @@ See [Optical disc drive#DVD ripping](/index.php/Optical_disc_drive#DVD_ripping "
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — 专业级别，能够编辑或合成视频的环境。
 
-	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[HandBrake](/index.php/Optical_disc_drive#DVD_ripping "Optical disc drive")** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
@@ -2477,6 +3175,226 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 	[http://beets.radbox.org/](http://beets.radbox.org/) || [clyrics](https://aur.archlinux.org/packages/clyrics/)
 
 ## 工具
+
+### 终端
+
+#### 命令行 shells
+
+参见： [Command-line shell](/index.php/Command-line_shell "Command-line shell").
+
+以及： [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
+
+#### 终端模拟器
+
+终端模拟器是包含一个终端的图形界面窗口。它们大多是模仿 Xterm，后者向 VT102 看齐，而 VT102 模仿的是打字机。更多的背景信息参见：[Wikipedia:Terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator").
+
+[Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators") 有包含得更全面的列表。
+
+*   **Alacritty** — 跨平台，GPU硬件加速
+
+	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty](https://www.archlinux.org/packages/?name=alacritty)
+
+*   **aterm** — 可以改变透明度的 Xterm 替代品，自从2008年之后就不再推荐使用（被 urxvt 替代）
+
+	[http://aterm.sourceforge.net/](http://aterm.sourceforge.net/) || [aterm](https://aur.archlinux.org/packages/aterm/)
+
+*   **Cool Retro Term** — 模仿阴极显示器显示效果
+
+	[https://github.com/Swordfish90/cool-retro-term](https://github.com/Swordfish90/cool-retro-term) || [cool-retro-term](https://www.archlinux.org/packages/?name=cool-retro-term)
+
+*   **Eterm** — 为 [Enlightenment](/index.php/Enlightenment "Enlightenment") 桌面设计，目的是作为 xterm 替代品
+
+	[http://eterm.org](http://eterm.org) || [eterm](https://aur.archlinux.org/packages/eterm/)
+
+*   **Hyper** — 支持 JS/CSS
+
+	[https://github.com/zeit/hyper](https://github.com/zeit/hyper) || [hyper](https://aur.archlinux.org/packages/hyper/)
+
+*   **[Konsole](https://en.wikipedia.org/wiki/Konsole "wikipedia:Konsole")** — [KDE](/index.php/KDE "KDE") 桌面自带的.
+
+	[https://www.kde.org/applications/system/konsole/](https://www.kde.org/applications/system/konsole/) || [konsole](https://www.archlinux.org/packages/?name=konsole)
+
+*   **[kitty](/index.php/Kitty "Kitty")** — A modern, hackable, featureful, OpenGL based terminal emulator
+
+	[https://github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) || [kitty](https://www.archlinux.org/packages/?name=kitty)
+
+*   **mlterm** — 多语言支持，支持各种字符集和编码
+
+	[https://sourceforge.net/projects/mlterm/](https://sourceforge.net/projects/mlterm/) || [mlterm](https://aur.archlinux.org/packages/mlterm/)
+
+*   **[PuTTY](/index.php/PuTTY "PuTTY")** — 高度可配置，主要用于 ssh/telnet/serial
+
+	[https://www.chiark.greenend.org.uk/~sgtatham/putty/](https://www.chiark.greenend.org.uk/~sgtatham/putty/) || [putty](https://www.archlinux.org/packages/?name=putty)
+
+*   **QTerminal** — 轻量化，基于 Qt
+
+	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
+
+*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — xterm的人气替代.
+
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
+
+*   **shellinabox** — 基于 web 的 SSH 终端
+
+	[https://github.com/shellinabox/shellinabox](https://github.com/shellinabox/shellinabox) || [shellinabox-git](https://aur.archlinux.org/packages/shellinabox-git/)
+
+*   **[st](/index.php/St "St")** — X 的一个简单的终端实现
+
+	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
+
+*   **Terminology** — 由 Enlightenment project 团队开发，有一些创新的功能：文件缩略图、多媒体播放
+
+	[https://www.enlightenment.org/about-terminology](https://www.enlightenment.org/about-terminology) || [terminology](https://www.archlinux.org/packages/?name=terminology)
+
+*   **[urxvt](/index.php/Urxvt "Urxvt")** — 支持触摸、打开URL、伪透明度、Quake 样式的下拉模式和unicode编码，同时凭借 Perl 来实现高度可扩展性
+
+	[http://software.schmorp.de/pkg/rxvt-unicode.html](http://software.schmorp.de/pkg/rxvt-unicode.html) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
+
+*   **[xterm](/index.php/Xterm "Xterm")** — X 窗口系统的一个简单的终端模拟器，提供兼容 DEC VT102 和 Tektronix 4014 的终端来运行不是为窗口系统设计的程序
+
+	[http://invisible-island.net/xterm/](http://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
+
+*   **[Yakuake](/index.php/Yakuake "Yakuake")** — 基于 Konsole 的 Quake 样式的下拉终端
+
+	[https://yakuake.kde.org/](https://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
+
+##### 基于 VTE
+
+[VTE](https://developer.gnome.org/vte/unstable/) 虚拟终端模拟器(Virtual Terminal Emulator) 是 GNOME 早期开发的在 GNOME 终端里使用的小插件。它催生了很多拥有相似功能的终端。
+
+*   **Deepin Terminal** — Deepin 桌面的终端模拟器
+
+	[https://www.deepin.org/en/original/deepin-terminal/](https://www.deepin.org/en/original/deepin-terminal/) || [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal)
+
+*   **evilvte** — 非常轻量化、高度可定制，支持标签页、自动隐藏和多种字符编码
+
+	[http://calno.com/evilvte/](http://calno.com/evilvte/) || [evilvte-git](https://aur.archlinux.org/packages/evilvte-git/)
+
+*   **Germinal** — 极简主义，提供一个无边框、最大化窗口的终端，默认连接到一个 tmux 会话，有标签页和面板功能
+
+	[http://www.imagination-land.org/tags/germinal.html](http://www.imagination-land.org/tags/germinal.html) || [germinal](https://aur.archlinux.org/packages/germinal/)
+
+*   **[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")** — [GNOME](/index.php/GNOME "GNOME") 桌面自带，支持 Unicode 和 伪透明度
+
+	[https://wiki.gnome.org/Apps/Terminal](https://wiki.gnome.org/Apps/Terminal) || [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)
+
+*   **[Guake](/index.php/Guake "Guake")** — 一个下拉终端
+
+	[http://guake-project.org/](http://guake-project.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
+
+*   **LXTerminal** — 与桌面无关的终端模拟器，本来是为 [LXDE](/index.php/LXDE "LXDE") 设计的
+
+	[https://wiki.lxde.org/en/LXTerminal](https://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
+
+*   **MATE terminal** — [Wikipedia:GNOME terminal](https://en.wikipedia.org/wiki/GNOME_terminal "wikipedia:GNOME terminal") 的一个分支，为 [MATE](/index.php/MATE "MATE") 桌面设置.
+
+	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
+
+*   **Pantheon Terminal** — 超级轻量化，好看、简洁，默认配置已经很好用，几乎不需要做设置
+
+	[https://github.com/elementary/terminal](https://github.com/elementary/terminal) || [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal)
+
+*   **ROXTerm** — 有标签页和小 footprint
+
+	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
+
+*   **sakura** — 基于GTK+ 和 VTE
+
+	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
+
+*   **[Terminator](/index.php/Terminator "Terminator")** — 支持多个可调整大小的终端面板
+
+	[https://gnometerminator.blogspot.com/](https://gnometerminator.blogspot.com/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
+
+*   **[Termite](/index.php/Termite "Termite")** — 以键盘为中心的、基于 VTE 的终端，为在平铺式和标签式窗口管理器里使用作优化
+
+	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
+
+*   **[Tilda](/index.php/Tilda "Tilda")** — 可配置的下拉终端模拟器
+
+	[https://github.com/lanoxx/tilda/](https://github.com/lanoxx/tilda/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
+
+*   **Tilix** — 给 GNOME 的平铺式终端模拟器Tiling terminal emulator for GNOME.
+
+	[https://gnunn1.github.io/tilix-web/](https://gnunn1.github.io/tilix-web/) || [tilix](https://www.archlinux.org/packages/?name=tilix)
+
+*   **tinyterm** — 基于 VTE 的轻量化终端模拟器
+
+	[https://github.com/lahwaacz/tinyterm](https://github.com/lahwaacz/tinyterm) || [tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/)
+
+*   **[Xfce Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — [Xfce](/index.php/Xfce "Xfce") 桌面的带彩色提示和和标签页化的界面的终端模拟器.
+
+	[https://docs.xfce.org/apps/terminal/start](https://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
+
+##### 基于 KMS
+
+下面这些终端模拟器是基于 [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") 的，没有 X 也可以运行。
+
+*   **[KMSCON](/index.php/KMSCON "KMSCON")** — 一个基于 KMS/DRM 的系统控制台（getty），对于 Linux 操作系统内置一个终端模拟器
+
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
+
+##### 基于帧缓冲器（framebuffer）
+
+在 GNU/Linux 术语里，[framebuffer](https://en.wikipedia.org/wiki/Framebuffer "wikipedia:Framebuffer") 可以指代 Linux 内核里的一个虚拟设备 (**fbdev**) 或者 X 的虚拟帧缓冲系统 (**xvfb**)。下面列出的是基于 **fbdev** 的。
+
+*   **yaft** — 没有 X 也可以运行，支持 UCS2 glyphs、 壁纸和256色
+
+	[https://github.com/uobikiemukot/yaft](https://github.com/uobikiemukot/yaft) || [yaft](https://aur.archlinux.org/packages/yaft/)
+
+#### 终端分页器
+
+参见 [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager "wikipedia:Terminal pager")。
+
+*   **[more](https://en.wikipedia.org/wiki/More_(command) "wikipedia:More (command)")** — 一个简单（功能也简单）的分页器。是 util-linux 的一部分。
+
+	[https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[less](/index.php/Core_utilities#Essentials "Core utilities")** — 类似 more，但是支持前滚和后滚，包括文件的部分加载
+
+	[https://www.gnu.org/software/less/](https://www.gnu.org/software/less/) || [less](https://www.archlinux.org/packages/?name=less)
+
+*   **[most](https://en.wikipedia.org/wiki/Most_(Unix) "wikipedia:Most (Unix)")** — 支持多窗口、左右滚动和显示颜色
+
+	[http://www.jedsoft.org/most/](http://www.jedsoft.org/most/) || [most](https://www.archlinux.org/packages/?name=most)
+
+*   **mcview** — 支持显示颜色和鼠标的分页器，与 midnight commander 捆绑在一起
+
+	[http://midnight-commander.org/](http://midnight-commander.org/) || [mc](https://www.archlinux.org/packages/?name=mc)
+
+*   [Vim](/index.php/Vim "Vim") 也可以 [做分页器](/index.php/Vim#Vim_as_a_pager "Vim").
+
+#### 终端复用器
+
+参见 [Wikipedia:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal_multiplexer "wikipedia:Terminal multiplexer").
+
+*   **abduco** — 用于连接和断开会话的工具，支持让进程独立于控制它的终端
+
+	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
+
+*   **[byobu](https://en.wikipedia.org/wiki/Byobu_(software) "wikipedia:Byobu (software)")** — GPLv3 许可证的 tmux 或 screen 插件。要求已经安装一个终端复用器。
+
+	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
+
+*   **[dtach](/index.php/Dtach "Dtach")** — 模拟 [GNU Screen](/index.php/GNU_Screen "GNU Screen") 的断开连接功能的程序
+
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
+
+*   **dvtm** — [dwm](/index.php/Dwm "Dwm") 样式的控制台窗口管理器
+
+	[http://brain-dump.org/projects/dvtm/](http://brain-dump.org/projects/dvtm/) || [dvtm](https://www.archlinux.org/packages/?name=dvtm)
+
+*   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — 复用一个终端的终端内全屏窗口管理器
+
+	[https://www.gnu.org/software/screen/](https://www.gnu.org/software/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
+
+*   **mtm** — 只有四个命令的简单复用器：change focus, split, close, 和 screen redraw.
+
+	[https://github.com/deadpixi/mtm](https://github.com/deadpixi/mtm) || [mtm-git](https://aur.archlinux.org/packages/mtm-git/)
+
+*   **[tmux](/index.php/Tmux "Tmux")** — BSD 许可证的终端复用器
+
+	[https://tmux.github.io/](https://tmux.github.io/) || [tmux](https://www.archlinux.org/packages/?name=tmux)
 
 ### 分区工具
 
@@ -2659,144 +3577,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **Spyder** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
 
 	[http://code.google.com/p/spyderlib/](http://code.google.com/p/spyderlib/) || [spyder](https://www.archlinux.org/packages/?name=spyder)
-
-### 虚拟终端
-
-参见 [Wikipedia:List of terminal emulators](https://en.wikipedia.org/wiki/List_of_terminal_emulators "wikipedia:List of terminal emulators").
-
-资深用户爱用虚拟终端，也难怪会有那么多 X11 虚拟终端冒出来了。大多虚拟终端在模拟 Xterm, Xterm 又向 VT102 看齐，最后 VT102 更是在模仿打字机，所以您应该品读 [Wikipedia article](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") 和 [other sources](https://google.com/search?q=linux+terminal+emulators) 以把握个大概。
-
-*   **Eterm** — 取代 Xterm 且为 [Enlightenment](/index.php/Enlightenment "Enlightenment") 而打造。
-
-	[http://eterm.org](http://eterm.org) || [eterm](https://aur.archlinux.org/packages/eterm/)
-
-*   **[KMSCON](/index.php/KMSCON "KMSCON")** — 基于 linux kernel mode setting (KMS).
-
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
-
-*   **[Konsole](https://en.wikipedia.org/wiki/Konsole "wikipedia:Konsole")** — [KDE](/index.php/KDE "KDE") 专用。
-
-	[http://kde.org/applications/system/konsole/](http://kde.org/applications/system/konsole/) || [kdebase-konsole](https://www.archlinux.org/packages/?name=kdebase-konsole)
-
-*   **[Mrxvt](https://en.wikipedia.org/wiki/mrxvt "wikipedia:mrxvt")** — 基于 rxvt, 支持 Tabs.
-
-	[http://materm.sourceforge.net/wiki/pmwiki.php](http://materm.sourceforge.net/wiki/pmwiki.php) || [mrxvt](https://aur.archlinux.org/packages/mrxvt/)
-
-*   **QTerminal** — 基于 Qt, 轻量。
-
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal-git](https://aur.archlinux.org/packages/qterminal-git/)
-
-*   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — 公认已取代 Xterm 的虚拟终端。
-
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
-
-*   **[st](/index.php/St "St")** — 简单，在Ｘ下可用。
-
-	[http://st.suckless.org](http://st.suckless.org) || [st](https://aur.archlinux.org/packages/st/)
-
-*   **Terminal** — 支持多窗口，滚动缓冲以及众多理想功能，从属 GNUstep.
-
-	[http://gap.nongnu.org/terminal/index.html](http://gap.nongnu.org/terminal/index.html) || [gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/)
-
-*   **[terminator](/index.php/Terminator "Terminator")** — 支持多 Panels.
-
-	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
-
-*   **Terminology** — Enlightenment 项目专用，有众多金光闪闪的功能：文件缩略图，多媒体播放器。
-
-	[http://enlightenment.org/p.php?p=about/terminology](http://enlightenment.org/p.php?p=about/terminology) || [terminology](https://www.archlinux.org/packages/?name=terminology)
-
-*   **[Tilda](https://en.wikipedia.org/wiki/Tilda_(software) "wikipedia:Tilda (software)")** — 受众多 FPS 游戏，如 Quake, Doom 和半条命，启发而诞生。
-
-	[http://sourceforge.net/projects/tilda/files/](http://sourceforge.net/projects/tilda/files/) || [tilda](https://www.archlinux.org/packages/?name=tilda)
-
-*   **[urxvt](/index.php/Urxvt "Urxvt")** — 基于 Perl, rxvt, 高度可扩展，支持 Unicode, 多 Tab, 访问 URL, Quake 风格的下拉式，伪・透明。
-
-	[http://software.schmorp.de/pkg/rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode) || [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode)
-
-*   **[xterm](/index.php/Xterm "Xterm")** — Ｘ最简单的虚拟终端了，它还为不能在窗口系统下直接用的程序，提供了兼容于 DEC VT102 和 Tektronix 4014 的终端。
-
-	[http://invisible-island.net/xterm/](http://invisible-island.net/xterm/) || [xterm](https://www.archlinux.org/packages/?name=xterm)
-
-*   **[Yakuake](https://en.wikipedia.org/wiki/Yakuake "wikipedia:Yakuake")** — 基于 Konsole, 下拉式，Quake 风格。
-
-	[http://yakuake.kde.org/](http://yakuake.kde.org/) || [yakuake](https://www.archlinux.org/packages/?name=yakuake)
-
-#### 基于 VTE
-
-[VTE](http://developer.gnome.org/vte/unstable/) (Virtual Terminal Emulator) 最早是由 GNOME 开发并广泛使用的虚拟终端，它还派生了众多大大小小的分支。
-
-*   **evilvte** — 很轻量，可定制性强，支持 Tabs, 自动隐藏，换编码。
-
-	[http://calno.com/evilvte/](http://calno.com/evilvte/) || [evilvte](https://aur.archlinux.org/packages/evilvte/)
-
-*   **[GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")** — [GNOME](/index.php/GNOME "GNOME") 专用，支持 Unicode, 不支持透明。
-
-	[https://wiki.gnome.org/Apps/Terminal](https://wiki.gnome.org/Apps/Terminal) || [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal)
-
-*   **[Guake](/index.php/Guake "Guake")** — GNOME 桌面的，下拉式的。
-
-	[http://guake.org/](http://guake.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
-
-*   **Terra** — 基于 GTK+3.0, 同一个窗口上可以分割成众多小窗口。
-
-	[https://github.com/ozcanesen/terra-terminal](https://github.com/ozcanesen/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
-
-*   **[LilyTerm](/index.php/LilyTerm "LilyTerm")** — 很轻量。
-
-	[http://lilyterm.luna.com.tw/](http://lilyterm.luna.com.tw/) || [lilyterm](https://www.archlinux.org/packages/?name=lilyterm)
-
-*   **LXTerminal** — [LXDE](/index.php/LXDE "LXDE") 组件之一，也可单独安装。
-
-	[http://wiki.lxde.org/en/LXTerminal](http://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
-
-*   **MATE terminal** — [Wikipedia:GNOME terminal](https://en.wikipedia.org/wiki/GNOME_terminal "wikipedia:GNOME terminal") 在 [MATE](/index.php/MATE "MATE") 桌面上的 Fork.
-
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal)
-
-*   **ROXTerm** — 有 Tab 机制。
-
-	[http://roxterm.sourceforge.net/](http://roxterm.sourceforge.net/) || [roxterm](https://aur.archlinux.org/packages/roxterm/)
-
-*   **sakura** — 基于 GTK+ 和 VTE.
-
-	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
-
-*   **Stjerm** — 基于 GTK+, 下拉式，提供简约的界面，内存占用少，与合成窗口管理器有很好的互动，比如 Compiz.
-
-	[https://code.google.com/p/stjerm-terminal-emulator/](https://code.google.com/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
-
-*   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — [Xfce](/index.php/Xfce "Xfce") 桌面专用虚拟终端，支持颜色提示符，Tab 机制。
-
-	[http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
-
-*   **Termit** — 简单，基于 VTE, 支持 Tabs, 书签，编码转换。
-
-	[https://wiki.github.com/nonstop/termit/](https://wiki.github.com/nonstop/termit/) || [termit](https://aur.archlinux.org/packages/termit/)
-
-*   **[Termite](/index.php/Termite "Termite")** — 适合命令行控，专为平铺式窗口管理器打造，还有 Tab 机制。
-
-	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
-
-#### KMS-based
-
-The following terminal emulators are based on the [kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") that could be invoked without X.
-
-*   **[KMSCON](/index.php/KMSCON "KMSCON")** — A KMS/DRM-based system console(getty) with an integrated terminal emulator for Linux operating systems.
-
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
-
-#### framebuffer-based
-
-In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer "wikipedia:Framebuffer") could be refered to a virtual device in the Linux kernel (**fbdev**) or the virtual framebuffer system for X (**xvfb**). This section mainly lists the terminal emulators that based on the in-kernel virtual device, i.e. **fbdev**.
-
-*   **[fbterm](/index.php/Fbterm "Fbterm")** — A fast framebuffer-based terminal emulator with many amazing features. Development stopped.
-
-	[http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
-
-*   **yaft** — A simple terminal emulator for living without X, with UCS2 glyphs, wallpaper and 256color support.
-
-	[https://github.com/uobikiemukot/yaft](https://github.com/uobikiemukot/yaft) || [yaft](https://aur.archlinux.org/packages/yaft/)
 
 ### 文件
 
@@ -3160,7 +3940,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://code.google.com/p/rimeime/](http://code.google.com/p/rimeime/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
 
-*   **[UIM](/index.php/UIM "UIM")** — 多语言输入库。
+*   **[Uim](/index.php/Uim "Uim")** — 多语言输入库。
 
 	[http://code.google.com/p/uim/](http://code.google.com/p/uim/) || [uim](https://www.archlinux.org/packages/?name=uim)
 
@@ -3333,7 +4113,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTEX "wikipedia:AUCTEX")** — Extensible package for writing and formatting TeX files in Emacs.
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK+-based editor.
 
@@ -3511,7 +4291,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Medit** — 编程专用。
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Leafpad "wikipedia:Xfce")** — Xfce 桌面环境自带的文本编辑器
 
@@ -3547,7 +4327,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Scribes** — 终极，最小，即简单与强悍的合体。
 
-	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://www.archlinux.org/packages/?name=scribes)
+	[http://scribes.sourceforge.net](http://scribes.sourceforge.net) || [scribes](https://aur.archlinux.org/packages/scribes/)
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — 闭源，由 C++ 和 Python 编写而成，集成众多高级功能插件之大成，却难得地一直保持轻量流畅的高水准。
 
@@ -3686,7 +4466,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Pdf viewer/note taking application.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
 
@@ -3822,7 +4602,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **Cherrytree** — 阶层式笔记本程序，支持富文本，语法高亮，以 XML 或数据库文件储存数据。
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — 迁移 Tomboy 到 C++ 的一种尝试。
 
@@ -3830,7 +4610,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **KeepNote** — 支持富文本，跨平台的 GTK+ 笔记应用程序
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — 手动处理纷杂笔记的小程序，从属 [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/) 。
 
@@ -3920,7 +4700,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **Xournal** — an application for notetaking, sketching, keeping a journal using a stylus.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ### 参考书目管理
 
@@ -4034,11 +4814,11 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[OpenVAS](/index.php/OpenVAS "OpenVAS")** — Framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. FOSS Nessus fork.
 
-	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/groups/x86_64/openvas/)
+	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/packages/?name=openvas)
 
 *   **Osiris** — Tool for monitoring system integrity and changes across a network.
 
-	[https://launchpad.net/osiris](https://launchpad.net/osiris) || [osiris](https://www.archlinux.org/packages/?name=osiris)
+	[https://launchpad.net/osiris](https://launchpad.net/osiris) || [osiris](https://aur.archlinux.org/packages/osiris/)
 
 *   **OSSEC** — Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.
 
@@ -4200,7 +4980,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **ccrypt** — A command-line utility for encrypting and decrypting files and streams.
 
-	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
+	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://aur.archlinux.org/packages/ccrypt/)
 
 *   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
 
@@ -4262,7 +5042,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **KeePassX** — Free and open source Qt-based password manager (uses KeePass 1.x databases for storage).
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx)
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://aur.archlinux.org/packages/keepassx/)
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
@@ -4352,7 +5132,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[KCalc](https://en.wikipedia.org/wiki/KCalc "wikipedia:KCalc")** — KDE内建的科学计算器。
 
-	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kdeutils-kcalc](https://www.archlinux.org/packages/?name=kdeutils-kcalc)
+	[http://kde.org/applications/utilities/kcalc/](http://kde.org/applications/utilities/kcalc/) || [kcalc](https://www.archlinux.org/packages/?name=kcalc)
 
 *   **Qalculate** — 具备容错输入，常数识别及单位运算的计算器和方程求解器。
 
@@ -4424,7 +5204,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — 类[MATLAB](/index.php/MATLAB "MATLAB")程序，支持相当数量的Matlab函数，同时拥有编程友好(codeless)的C, C++, Fortran语言接口，以及对分布式并行算法开发和3D可视化功能的支持。
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[GNU Radio](/index.php/GNU_Radio "GNU Radio")** — 软件开发套件，提供信号处理模块以协助开发程序。
 
@@ -4504,7 +5284,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — CERN研发的数据分析软件和函数库(原用于微观物理学)。
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — QtiPlot的派生软件，以提供更好的文档支持和友好用户介面为目标。
 
@@ -4648,6 +5428,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 #### 电子学
 
+*   **[KiCad](https://en.wikipedia.org/wiki/KiCad "wikipedia:KiCad")** — 一款用于印刷电路板设计的自由软件。
+
+	[http://www.kicad-pcb.org/](http://www.kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
+
 See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
 
 #### 物理系统模拟器
@@ -4658,7 +5442,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 *   **[Step](https://en.wikipedia.org/wiki/Step_(software) "wikipedia:Step (software)")** — 包含在KDE的二维物理模拟引擎。
 
-	[http://edu.kde.org/step/](http://edu.kde.org/step/) || [kdeedu-step](https://www.archlinux.org/packages/?name=kdeedu-step)
+	[http://edu.kde.org/step/](http://edu.kde.org/step/) || [step](https://www.archlinux.org/packages/?name=step)
 
 *   **[SWMM](https://en.wikipedia.org/wiki/SWMM "wikipedia:SWMM")** — 雨水管理模型。
 
@@ -4712,7 +5496,7 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 *   **dtach** — Program that emulates the detach feature of [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Full-screen window manager that multiplexes a physical terminal.
 
@@ -4848,7 +5632,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Full fledged dock application that makes opening common applications and managing windows easier and quicker.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Lightweight, NETWM compliant desktop panel.
 
@@ -4916,7 +5700,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **Albert** — An application launcher inspired by Alfred.
 
-	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://aur.archlinux.org/packages/albert/)
+	[https://github.com/manuelschneid3r/albert](https://github.com/manuelschneid3r/albert) || [albert](https://www.archlinux.org/packages/?name=albert)
 
 *   **Ayr** — Manages menus of application launchers, either executables or desktop files. Also opens files and URLs with launchers, desktop files, or applications associated by name or mimetype. Uses dmenu to manage its menus.
 
@@ -4952,7 +5736,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do with many plugins, originally developed for the GNOME desktop.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **j4-dmenu-desktop** — Very fast dmenu application launcher.
 
@@ -5176,7 +5960,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -5212,7 +5996,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — Easy quick task management app written in C Sharp.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **Tider** — Lightweight time tracking application (GTK+)
 

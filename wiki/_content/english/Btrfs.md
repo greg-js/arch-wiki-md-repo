@@ -8,10 +8,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 
 	Btrfs is a modern copy on write (CoW) filesystem for Linux aimed at implementing advanced features while also focusing on fault tolerance, repair and easy administration. Jointly developed at multiple companies, Btrfs is licensed under the GPL and open for contribution from anyone.
 
-**Warning:**
-
-*   Btrfs has some features that are unstable. See the Btrfs Wiki's [Status](https://btrfs.wiki.kernel.org/index.php/Status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information. See the [#Known issues](#Known_issues) section.
-*   Btrfs introduced a regression in Linux 5.2 which may lead to hangs or data corruption in 5.2.x and 5.3rc. [[1]](https://marc.info/?l=linux-btrfs&m=156827465218288&w=2) See [FS#63733](https://bugs.archlinux.org/task/63733) for details.
+**Warning:** Btrfs has some features that are unstable. See the Btrfs Wiki's [Status](https://btrfs.wiki.kernel.org/index.php/Status), [Is Btrfs stable?](https://btrfs.wiki.kernel.org/index.php/FAQ#Is_btrfs_stable.3F) and [Getting started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for more detailed information. See the [#Known issues](#Known_issues) section.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -188,7 +185,7 @@ To enable compression when installing Arch to an empty Btrfs partition, use the 
 
 ### Subvolumes
 
-"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[2]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
+"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
 Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted as `/` (by default), or another subvolume can be [mounted](#Mounting_subvolumes) instead. Subvolumes can be moved around in the filesystem and are rather identified by their id than their path.
 
@@ -252,7 +249,7 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 
-Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[3]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
+Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[2]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 ### Quota
 
@@ -307,13 +304,13 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Swap file
 
-[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7) The proper way to initialize a swap file is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
+[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7) The proper way to initialize a swap file is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
 
 **Note:** For kernels version 5.0+, Btfrs has native swap file support with some limitations:
 
 *   The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
 *   It does not support swap files on file systems that span multiple devices. See [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) and [Arch forums discussion](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
-*   Hibernation onto a swap file is currently not supported by [systemd](https://www.archlinux.org/packages/?name=systemd) [[5]](https://github.com/systemd/systemd/issues/11939).
+*   Hibernation onto a swap file is currently not supported by [systemd](https://www.archlinux.org/packages/?name=systemd) [[4]](https://github.com/systemd/systemd/issues/11939).
 
 **Warning:** Linux kernels before version 5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btrfs and a kernel prior to 5.0 can lead to file system corruption.
 
@@ -328,7 +325,7 @@ General linux userspace tools such as `df` will inaccurately report free space o
 
 **Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
 
-See [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
+See [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
 
 ### Defragmentation
 
@@ -379,7 +376,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 ### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[7]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[6]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 

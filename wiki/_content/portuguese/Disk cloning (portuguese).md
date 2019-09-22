@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Disk cloning](/index.php/Disk_cloning "Disk cloning"). Data da última tradução: 2019-08-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_cloning&diff=0&oldid=580344) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Disk cloning](/index.php/Disk_cloning "Disk cloning"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Disk_cloning&diff=0&oldid=580571) na versão em inglês.
 
 Artigos relacionados
 
@@ -16,7 +16,8 @@ A clonagem de disco é o processo de criar uma imagem de uma partição ou de um
 
 *   [1 Usando dd](#Usando_dd)
 *   [2 Usando ddrescue](#Usando_ddrescue)
-*   [3 Usando e2image](#Usando_e2image)
+*   [3 Clonagem de sistema de arquivos](#Clonagem_de_sistema_de_arquivos)
+    *   [3.1 Usando e2image](#Usando_e2image)
 *   [4 Softwares de clonagem de disco](#Softwares_de_clonagem_de_disco)
     *   [4.1 Derivados do dd](#Derivados_do_dd)
 *   [5 Veja também](#Veja_também)
@@ -52,7 +53,9 @@ Agora você pode verificar o sistema de arquivos por corrupção e montar a nova
 
 ```
 
-## Usando e2image
+## Clonagem de sistema de arquivos
+
+### Usando e2image
 
 *e2image* é uma ferramenta incluída em [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) para fins de depuração. Ele pode ser usado para copiar partições ext2, ext3 e ext4 eficientemente apenas copiando os blocos usados. Observe que isso funciona apenas para sistemas de arquivos ext2, ext3 e ext4, e os blocos não utilizados não são copiados, portanto, essa pode não ser uma ferramenta útil se você estiver esperando recuperar arquivos excluídos.
 

@@ -1,6 +1,10 @@
 Arch Linux je nezavisno razvijana, i686/x86-64 GNU/Linux distrubucija opče namjene dovoljno raznolika za svaku upotrebu. Programiranje se svodi na jednostavnošću, minimalizmu i eleganciji kôda. Arch je instaliran kao minimalni sustav, koga konfigurira korisnik tako što instalira ono ukruženje koje je potrebno samo tako što će instalirati određene ili zahtjevane pakete za određene svrhe. Alatke za konfiguraciju grafičkog sučelja (GUI) nisu službeno dostavljene, i većina konfiguracije sustava se radi preko terminala tako što se uređuju osnove tekstualne datoteke. Pošto je osnovan na sustavu *rolling release*, Arch uvijek uspjeva biti najnoviji i tipično odmah pruža najnovije inačice većine softwarea čim izađu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Povijest](#Povijest)
 *   [2 Jednostavnost](#Jednostavnost)

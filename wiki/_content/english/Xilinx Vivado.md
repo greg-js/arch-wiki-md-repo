@@ -112,10 +112,15 @@ In addition, installing [digilent.adept.utilities](https://aur.archlinux.org/pac
 
 ### Linux cable driver
 
-Run as root privilege:
+```
+$ cd {vivado_install_dir}/data/xicom/cable_drivers/lin64/install_script/install_drivers
 
 ```
-$ {vivado_install_dir}/data/xicom/cable_drivers/lin64/install_script/install_drivers/install_drivers
+
+Then run as root privilege:
+
+```
+$ sudo ./install_drivers
 
 ```
 

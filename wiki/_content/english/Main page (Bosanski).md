@@ -1,6 +1,6 @@
-**Welcome to the [ArchWiki](/index.php/ArchWiki "ArchWiki"): your source for Arch Linux documentation on the web.**
+**Dobrodošli na [ArchWiki](/index.php/ArchWiki "ArchWiki"): vaš izvor za Arch Linux dokumentaciju na webu**
 
-Posjetite [Table of contents](/index.php/Table_of_contents "Table of contents") za listu kategorija artikala.
+Posjetite [Sadržaj](/index.php/Table_of_contents_(Bosanski) "Table of contents (Bosanski)") za listu kategorija artikala.
 
 ## Distribucija
 
@@ -12,7 +12,7 @@ Posjetite [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 	Često postavljenja pitanja i činjenice.
 
-	[Arch u poredjenju sa drugim distribucijama](/index.php?title=Arch_compared_to_other_distributions_(Bosanski)&action=edit&redlink=1 "Arch compared to other distributions (Bosanski) (page does not exist)")
+	[Arch u poredjenju sa drugim distribucijama](/index.php/Arch_compared_to_other_distributions_(Bosanski) "Arch compared to other distributions (Bosanski)")
 
 	Summarizes the similarities and differences between Arch and other distributions.
 
@@ -24,6 +24,42 @@ Posjetite [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 	Annotated index of post-installation tutorials and other popular articles.
 
-	[Lista aplikacija](/index.php?title=List_of_applications_(Bosanski)&action=edit&redlink=1 "List of applications (Bosanski) (page does not exist)")
+	[Lista aplikacija](/index.php/List_of_applications_(Bosanski) "List of applications (Bosanski)")
 
 	Categorized presentation of common official and AUR packages.
+
+## Naš community
+
+	[Kodeks ponašanja](/index.php?title=Code_of_conduct_(Bosanski)&action=edit&redlink=1 "Code of conduct (Bosanski) (page does not exist)")
+
+	Upute za Arch community.
+
+	[Biti uključen](/index.php/Getting_involved_(Bosanski) "Getting involved (Bosanski)")
+
+	Opisuje različite načine na koje Archeri mogu doprinijeti Arch community-u.
+
+	[Internacionalni community-i](/index.php/International_communities_(Bosanski) "International communities (Bosanski)")
+
+	Kolekcija linkova za Arch Linux community-e širom svijeta.
+
+	[IRC channeli](/index.php/IRC_channels_(Bosanski) "IRC channels (Bosanski)")
+
+	Poveži se sa ostalim Archerima za dobar razgovor.
+
+## Wiki interakcija
+
+	[Pomoć:Čitanje](/index.php/Help:Reading_(Bosanski) "Help:Reading (Bosanski)")
+
+	Pronađi pojašnjenje ako se mučiš da razumiješ instrukcije u nekom članku.
+
+	[Pomoć:Browsanje](/index.php/Help:Browsing_(Bosanski) "Help:Browsing (Bosanski)")
+
+	Kako pretraživati wiki, naći povezane članke i gledati wiki offline.
+
+	[Pomoć:Contributing](/index.php?title=ArchWiki:Contributing_(Bosanski)&action=edit&redlink=1 "ArchWiki:Contributing (Bosanski) (page does not exist)")
+
+	Početna tačka za one koji žele da doprinesu wiki-u.
+
+	[Pomoć:Editovanje](/index.php?title=Help:Editing_(Bosanski)&action=edit&redlink=1 "Help:Editing (Bosanski) (page does not exist)")
+
+	Tutorial vezan za editovanje članaka i uvod u wiki tekst sintaksu.

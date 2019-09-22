@@ -42,12 +42,14 @@ Related articles
 There are several methods available:
 
 *   [#Use Intel graphics only](#Use_Intel_graphics_only) - saves power, because NVIDIA GPU will be completely powered off.
-*   [#Use NVIDIA graphics only](#Use_NVIDIA_graphics_only) - gives more performance than Intel graphics, but drains more battery (which is not welcome for mobile devices).
-*   Using both (use NVIDIA GPU when need and power it off to save power when not needed):
-    *   [#Using optimus-manager](#Using_optimus-manager) - an unofficial implementation of Nvidia's `nvidia-prime` for Arch Linux. Due to its simplicity to use without compromising performance, it should be default choice for majority of users.
-    *   [#Using nvidia-xrun](#Using_nvidia-xrun) - run separate X session on different TTY with NVIDIA graphics.
-    *   [#Using Bumblebee](#Using_Bumblebee) - provides Windows-like functionality by allowing to run selected applications with NVIDIA graphics while using Intel graphics for everything else. Has significant performance issues and does not support [Vulkan](/index.php/Vulkan "Vulkan").
+*   [#Use NVIDIA graphics only](#Use_NVIDIA_graphics_only) - gives more performance than Intel graphics, but drains more battery (which is not welcome for mobile devices). This utilizes the same underlying process as the [optimus-manager](#Using_optimus-manager) and [nvidia-xrun](#Using_nvidia-xrun) options, it should be utilized for troubleshooting and verifying general functionality, before opting for one of the more automated approaches.
+*   Using both (use NVIDIA GPU when needed and keep it powered off to save power):
+    *   [#Using optimus-manager](#Using_optimus-manager) - switches graphics with a single command (logout and login required to take effect). It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
+    *   [#Using nvidia-xrun](#Using_nvidia-xrun) - run separate X session on different TTY with NVIDIA graphics. It achieves maximum performance out of NVIDIA GPU and switches it off if not in use.
+    *   [#Using Bumblebee](#Using_Bumblebee) - provides Windows-like functionality by allowing to run selected applications with NVIDIA graphics while using Intel graphics for everything else. Has significant performance issues.
     *   [#Using nouveau](#Using_nouveau) - offers poorer performance (compared to the proprietary NVIDIA driver) and may cause issues with sleep and hibernate. Does not work with latest NVIDIA GPUs.
+
+**Note:** All of these options are mutually exclusive, if you test one approach and decide for another, you must ensure to revert any configuration changes done by following one approach before attempting another method, otherwise file conflicts and undefined behaviours may arise.
 
 ## Use Intel graphics only
 
@@ -266,7 +268,7 @@ See [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").
 
 #### Installation
 
-Install required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) for power saving and [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for system tray applet.
+Install the required [NVIDIA](/index.php/NVIDIA "NVIDIA") driver and [optimus-manager](https://aur.archlinux.org/packages/optimus-manager/). Optionally install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) for power saving and [optimus-manager-qt](https://aur.archlinux.org/packages/optimus-manager-qt/) for system tray applet.
 
 Also [start and enable](/index.php/Systemd#Using_units "Systemd") `optimus-manager.service`.
 

@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 아치 리눅스가 무엇입니까?](#아치_리눅스가_무엇입니까?)
 *   [2 장점](#장점)

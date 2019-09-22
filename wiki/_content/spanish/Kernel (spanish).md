@@ -5,7 +5,11 @@ Artículos relacionados
 
 Arch Linux provee varios métodos para compilar el kernel. Usar [Arch Build System](#Usando_Arch_Build_System) es el recomendado.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Oficialmente compatibles](#Oficialmente_compatibles)
 *   [2 Usando Arch Build System](#Usando_Arch_Build_System)

@@ -37,7 +37,7 @@ The security level is normally configured at firmware level; it is recommended t
 ### Graphical front-ends
 
 *   [GNOME](/index.php/GNOME "GNOME") has native support for authorizing devices from the UI since version 3.30
-*   [Plasma](/index.php/Plasma "Plasma") integration is available ([git repository](https://cgit.kde.org/plasma-thunderbolt.git/tree/README.md)) but not yet available as a package for Arch Linux.
+*   [Plasma](/index.php/Plasma "Plasma") integration is available from this [git repository](https://cgit.kde.org/plasma-thunderbolt.git/tree/README.md) and from [plasma-thunderbolt](https://www.archlinux.org/packages/?name=plasma-thunderbolt) package in [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories") repository.
 
 ### Automatically connect any device
 

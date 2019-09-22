@@ -453,7 +453,7 @@ Slack ([slack-desktop](https://aur.archlinux.org/packages/slack-desktop/)), like
 
 ### Spotify
 
-You can change scale factor by simple `Ctrl++` for zoom in, `Ctrl+-` for zoom out and `Ctrl+0` for default scale. Scaling setting will be saved in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`:
+You can change scale factor by simple `Ctrl++` for zoom in, `Ctrl+-` for zoom out and `Ctrl+0` for default scale. Scaling setting will be saved in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`, you may have to create this file by yourself:
 
  `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`  `app.browser.zoom-level=100` 
 

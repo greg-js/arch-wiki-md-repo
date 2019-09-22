@@ -4,7 +4,11 @@ Related articles
 
 في علم الأحياء، [التكافل](https://en.wikipedia.org/wiki/Mutualism_(biology) هو تفاعل بين مخلوقين، كلّ واحد يستمد مصالحه من الآخر. هذا المبدأ يُطبّق أيضًا على أعضاء مجتمع آرتش السبّاقين للإنخراط والمساهمة في توزيعة لينكس المفضّلة لديهم. مصالح هذه المشاركة ليست فقط عضو في المجتمع وآرتشاويون متتبّعين، لكن كل مستخدموا [البرمجيات الحرة والمفتوحة المصدر](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 مشاريع آرتش لينكس الرسمية](#مشاريع_آرتش_لينكس_الرسمية)
     *   [1.1 شارك في المنتديات](#شارك_في_المنتديات)

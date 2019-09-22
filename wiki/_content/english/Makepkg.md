@@ -364,6 +364,8 @@ $ grep -R "$(pwd)/src" pkg/
 
 ```
 
+One possible cause would be from the usage of `__FILE__` macro in C/C++ code with full path passed to compiler.
+
 ### Makepkg fails to download dependencies when behind proxy
 
 When *makepkg* calls dependencies, it calls pacman to install the packages, which requires administrative privileges via *sudo*. However, *sudo* does not pass any [environment variables](/index.php/Environment_variables "Environment variables") to the privileged environment, and includes the proxy-related variables `ftp_proxy`, `http_proxy`, `https_proxy`, and `no_proxy`.

@@ -16,6 +16,12 @@ The [InnoDB](https://en.wikipedia.org/wiki/InnoDB "wikipedia:InnoDB") storage en
 
 For tools supporting multiple DBMSs, see [List of applications/Documents#Database tools](/index.php/List_of_applications/Documents#Database_tools "List of applications/Documents").
 
+## Console tools
+
+*   **MyCLI** — A terminal client for MySQL with autocompletion and syntax highlighting.
+
+	[https://www.mycli.net](https://www.mycli.net) || [mycli](https://aur.archlinux.org/packages/mycli/)
+
 ## Programmatic access
 
 *   [JDBC and MySQL](/index.php/JDBC_and_MySQL "JDBC and MySQL")

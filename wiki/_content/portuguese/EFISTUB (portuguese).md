@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [EFISTUB](/index.php/EFISTUB "EFISTUB"). Data da última tradução: 2019-08-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFISTUB&diff=0&oldid=580592) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [EFISTUB](/index.php/EFISTUB "EFISTUB"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=EFISTUB&diff=0&oldid=580648) na versão em inglês.
 
 Artigos relacionados
 

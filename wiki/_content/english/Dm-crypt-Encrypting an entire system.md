@@ -267,7 +267,7 @@ or for an [EFI system partition](/index.php/EFI_system_partition "EFI system par
 
 ```
 
-Afterwards create the directory for the mounpoint and mount the partition:
+Afterwards create the directory for the mountpoint and mount the partition:
 
 ```
 # mkdir /mnt/boot

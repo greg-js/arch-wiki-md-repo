@@ -1,6 +1,10 @@
 Selain membaca pertanyan-pertanyaan dibawah ini,Anda juga dapat langsung membaca artikel [Tentang Archlinux](/index.php/The_Arch_Way "The Arch Way"),sehingga Anda lebih paham tentang Archlinux dan prinsip penggunaannya.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pertanyaan Umum](#Pertanyaan_Umum)
     *   [1.1 Q) Apa itu Archlinux?](#Q)_Apa_itu_Archlinux?)

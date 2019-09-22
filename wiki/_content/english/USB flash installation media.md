@@ -71,6 +71,8 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more information about [dd](/index.php/Dd "Dd"). See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
 
+**Tip:** If the UEFI version of the USB's Arch ISO hangs or is unable to load, try repeating the [dd](/index.php/Dd "Dd") media creation process on the same USB drive one or more times.
+
 ##### Using etcher
 
 [Etcher](https://etcher.io/) is a OS image flasher built with node.js and Electron, capable of flashing an SDCard or USB drive. It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly. There are 6 related packages in the AUR.

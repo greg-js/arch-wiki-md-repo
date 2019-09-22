@@ -89,19 +89,11 @@ Now you have a coredump file called `core.2071`.
 
 ### Where do they go?
 
-The `kernel.core_pattern` [sysctl](/index.php/Sysctl "Sysctl") decides where automatic core dumps go:
+The `kernel.core_pattern` [sysctl](/index.php/Sysctl "Sysctl") decides where automatic core dumps go. By default, core dumps are sent to *systemd-coredump* which can be configured in `/etc/systemd/coredump.conf`. By default, all core dumps are stored in `/var/lib/systemd/coredump` (due to `Storage=external`) and they are compressed with `lz4` (due to `Compress=yes`). Additionally, various size limits for the storage can be configured.
 
-```
-$ cat /proc/sys/kernel/core_pattern 
-|/usr/lib/systemd/systemd-coredump %p %u %g %s %t %e
+**Note:** The default value for `kernel.core_pattern` is set in `/usr/lib/sysctl.d/50-coredump.conf`. This file may be masked or overridden to use a different setting following normal [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5) rules.
 
-```
-
-The default set in `/usr/lib/sysctl.d/50-coredump.conf` sends all core dumps to journald as part of the system logs.
-
-**Note:** If you do not have full-disk encryption, this means your program's memory will be written to raw disk! This is a potential information leak even if you have encrypted swap.
-
-To retrieve a core dump from the journal, see [coredumpctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/coredumpctl.1)
+To retrieve a core dump from the journal, see [coredumpctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/coredumpctl.1).
 
 ## Examining a core dump
 

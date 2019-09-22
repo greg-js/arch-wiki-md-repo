@@ -88,7 +88,7 @@ Alias /postfixadmin "/usr/share/webapps/postfixadmin/public"
 <Directory "/usr/share/webapps/postfixadmin/public">
     DirectoryIndex index.html index.php
     <FilesMatch \.php$>
-        SetHandler "proxy:unix:/run/php-fpm/postfixadmin.sock|fcgi://localhost/"
+        SetHandler "proxy:unix:/run/postfixadmin/postfixadmin.sock|fcgi://localhost/"
     </FilesMatch>
     AllowOverride All
     Options FollowSymlinks
@@ -103,13 +103,13 @@ Create a pool for postfixadmin and [restart](/index.php/Restart "Restart") php-f
  `/etc/php/php-fpm.d/postfixadmin.conf` 
 ```
 [postfixadmin]
- user = postfixadmin
- group = postfixadmin
- listen = /run/php-fpm/postfixadmin.sock
- listen.owner = http
- listen.group = http
- pm = ondemand
- pm.max_children = 4
+user = postfixadmin
+group = postfixadmin
+listen = /run/postfixadmin/postfixadmin.sock
+listen.owner = http
+listen.group = http
+pm = ondemand
+pm.max_children = 4
 
 ```
 
@@ -134,17 +134,16 @@ To only allow localhost access to postfixadmin (for heightened security), add th
 
 [Install](/index.php/Install "Install") [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) and [php-imap](https://www.archlinux.org/packages/?name=php-imap). Setup [nginx](/index.php/Nginx "Nginx") with [php-fpm](/index.php/Nginx#PHP_implementation "Nginx") and use a [pool](https://www.php.net/manual/en/install.fpm.configuration.php) run as user and group `postfixadmin`. The socket file should be accessible by the `http` user and/or group, but needs to be located below `/run/postfixadmin`. This can be achieved by adding the following lines.
 
+ `/etc/php/php-fpm.d/postfixadmin.conf` 
 ```
-/etc/php/php-fpm.d/www.conf
-
- [postfixadmin]
- user = postfixadmin
- group = postfixadmin
- listen = /run/php-fpm/postfixadmin.sock
- listen.owner = http
- listen.group = http
- pm = ondemand
- pm.max_children = 4
+[postfixadmin]
+user = postfixadmin
+group = postfixadmin
+listen = /run/postfixadmin/postfixadmin.sock
+listen.owner = http
+listen.group = http
+pm = ondemand
+pm.max_children = 4
 
 ```
 

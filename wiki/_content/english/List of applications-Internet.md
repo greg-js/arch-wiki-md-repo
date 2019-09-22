@@ -1376,7 +1376,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
-*   **Tiny** — an IRC client written in Rust with a clutter-free interface
+*   **tiny** — an IRC client written in Rust with a clutter-free interface
 
 	[https://github.com/osa1/tiny](https://github.com/osa1/tiny) || [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/)
 
@@ -1391,7 +1391,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 | [ScrollZ](http://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
 | [sic](https://tools.suckless.org/sic/) | [sic](https://aur.archlinux.org/packages/sic/) | C | stdin/stdout | No |
 | [WeeChat](/index.php/WeeChat "WeeChat") | [weechat](https://www.archlinux.org/packages/?name=weechat) | C | [multiple languages](https://weechat.org/files/doc/stable/weechat_scripting.en.html) | Yes |
-| [osa1/tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
+| [tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
 
 ###### Graphical
 
@@ -1700,6 +1700,10 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
 	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
+
+*   **[TeamTalk](/index.php/TeamTalk "TeamTalk")** — Proprietary VoIP application with video chat, file and desktop sharing. Desktop sharing doesn't appear to be working in Linux though. AUR package is server only, but client is built in the make process.
+
+	[https://bearware.dk](https://bearware.dk) || [teamtalk](https://aur.archlinux.org/packages/teamtalk/)
 
 *   **[Telegram](/index.php/Telegram "Telegram") Desktop** — Official Telegram desktop client.
 
@@ -2087,7 +2091,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
-	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
+	[https://ghost.org/](https://ghost.org/) || [ghost-web](https://aur.archlinux.org/packages/ghost-web/)
 
 *   **[Joomla](/index.php/Joomla "Joomla")** — A php Content Management System (CMS) which enables you to build websites and powerful online applications.
 

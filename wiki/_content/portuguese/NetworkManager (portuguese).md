@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=580738) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=582743) na versão em inglês.
 
 Related articles
 
@@ -598,19 +598,38 @@ fi
 
 ```
 
-O script a seguir desmontará todos os compartilhamentos antes de uma desconexão de uma rede específica:
+O script a seguir desmontará todos os compartilhamentos SMB antes de um software ter iniciado a desconexão de uma rede específica:
 
- `/etc/NetworkManager/dispatcher.d/pre-down.d/30-mount-smb.sh` 
+ `/etc/NetworkManager/dispatcher.d/pre-down.d/30-umount-smb.sh` 
 ```
 #!/bin/sh
-umount -a -l -t cifs
+
+if [ "$CONNECTION_UUID" = "uuid" ]; then
+  umount -a -l -t cifs
+fi
+
+```
+
+**Nota:** Certifique-se de que este script esteja localizado no subdiretório `pre-down.d`, conforme mostrado acima, caso contrário, ele desmontará todos os compartilhamentos em qualquer alteração de estado de conexão.
+
+O script a seguir tentará desmontar todos os compartilhamentos SMB após uma desconexão inesperada de uma rede específica:
+
+ `/etc/NetworkManager/dispatcher.d/40-umount-smb.sh` 
+```
+#!/bin/sh
+
+if [ "$CONNECTION_UUID" = "uuid" ]; then
+  if [ "$2" = "down" ]; then
+    umount -a -l -t cifs
+  fi
+fi
 
 ```
 
 **Nota:**
 
-*   Certifique-se de que este script esteja localizado no subdiretório `pre-down.d`, conforme mostrado acima, caso contrário, ele desmontará todos os compartilhamentos em qualquer alteração de estado de conexão.
 *   Desde o NetworkManager 0.9.8, os eventos *pre-down* e *down* não são executados no desligamento ou reinicialização, veja [este relatório de erro](https://bugzilla.gnome.org/show_bug.cgi?id=701242) para mais informações.
+*   Os scripts de *umount* anteriores ainda são propensos a deixar os aplicativos que realmente acessam a montagem para "travar".
 
 Uma alternativa é usar o script como visto em [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS"):
 

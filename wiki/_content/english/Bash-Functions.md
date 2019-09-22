@@ -1,6 +1,10 @@
 [Bash](/index.php/Bash "Bash") also supports functions. Add the functions to `~/.bashrc`, or a separate file which is [sourced](/index.php/Source "Source") from `~/.bashrc`. More Bash function examples can be found in [BBS#30155](https://bbs.archlinux.org/viewtopic.php?id=30155).
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Display error codes](#Display_error_codes)
 *   [2 Compile and execute a C source on the fly](#Compile_and_execute_a_C_source_on_the_fly)
@@ -33,7 +37,7 @@ The following function will compile (within the `/tmp/` directory) and execute t
 # Compile and execute a C source on the fly
 csource() {
 	[[ $1 ]]    || { echo "Missing operand" >&2; return 1; }
-	[[ -r $1 ]] || { printf "File %s does not exist or is not readable
+	[[ -r $1 ]] || { printf "File %s does not exist or is not readable
 " "$1" >&2; return 1; }
 	local output_path=${TMPDIR:-/tmp}/${1##*/};
 	gcc "$1" -o "$output_path" && "$output_path";

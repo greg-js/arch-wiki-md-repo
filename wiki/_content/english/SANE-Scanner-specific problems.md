@@ -29,10 +29,17 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
     *   [6.1 ScanSnap S300/S300M](#ScanSnap_S300/S300M)
 *   [7 HP](#HP)
     *   [7.1 Alternative way to scan with network HP scanner](#Alternative_way_to_scan_with_network_HP_scanner)
-*   [8 Medion](#Medion)
-*   [9 Mustek](#Mustek)
-    *   [9.1 BearPaw 2400CU](#BearPaw_2400CU)
-*   [10 Samsung](#Samsung)
+*   [8 Lexmark](#Lexmark)
+    *   [8.1 Warning](#Warning)
+    *   [8.2 Process](#Process)
+        *   [8.2.1 Option 1 : using DPKG](#Option_1_:_using_DPKG)
+        *   [8.2.2 Option 2 : manual installation](#Option_2_:_manual_installation)
+    *   [8.3 Supported devices](#Supported_devices)
+    *   [8.4 To do](#To_do)
+*   [9 Medion](#Medion)
+*   [10 Mustek](#Mustek)
+    *   [10.1 BearPaw 2400CU](#BearPaw_2400CU)
+*   [11 Samsung](#Samsung)
 
 ## Agfa
 
@@ -284,6 +291,65 @@ $ xsane "hpaio:/net/DeskJet_3630_series?ip=192.168.1.8"
 $ scanimage --device "hpaio:/net/DeskJet_3630_series?ip=10.12.129.6" --format=png --resolution 300 >scan01.png
 
 ```
+
+## Lexmark
+
+For Lexmark devices printing issues, please read [CUPS/Printer-specific_problems#Lexmark](/index.php/CUPS/Printer-specific_problems#Lexmark "CUPS/Printer-specific problems").
+
+Most Lexmark scanners are still (2019) not supported by SANE, and thus cannot be detected either by `sane-find-scanner` or by `scanimage -L`. Lexmark provides a non-free driver for GNU/Linux, which is supposed to support *all* its scanners. Nevertheless, the driver is only distributed for Debian, OpenSUSE, Fedora and RedHat, but not for Arch. Here is a way to install it.
+
+### Warning
+
+Before following these steps, note that :
+
+*   This driver is non-free (copyrighted by Lexmark)
+*   This hasn’t been widely tested yet (but the driver is supposed to work for all Lexmark scanners)
+*   The tree does not respect Arch standards — namely, all will be installed in `/usr/local`; you’ll get a `/usr/lexmark/` symbolic link; and get symbolic links to the files installed in `/usr/local/lexmark`.
+*   This process might generate conflicts if you’ve already installed some Lexmark drivers.
+
+### Process
+
+1.  Ensure [Java](/index.php/Java "Java") is installed.
+2.  Download the [`.deb` file](https://downloads.lexmark.com/downloads/drivers/lexmark_network-scan-linux-glibc2_04082019_x86_64.deb) containing the driver and save it (eg at `~/lexmark.deb`).
+
+#### Option 1 : using DPKG
+
+[dpkg](https://aur.archlinux.org/packages/dpkg/) is the standard package-manager for [Debian](/index.php/Debian "Debian")-based distributions. **It should not be used to replace `[pacman](/index.php/Pacman "Pacman")`** unless you precisely know what you’re doing. Simply run as root
+
+```
+# dpkg -i lexmark.deb
+
+```
+
+Your scanner should be detected after reboot.
+
+#### Option 2 : manual installation
+
+Alternatively, if you dont want to install dpkg or wish to control exactly what is done during install, you can follow these instructions (assuming you’re working in `~`). Please note that `md5` sums will not be checked, which could cause security issues.
+
+1.  Extract the `~/lexmark.deb` archive, running `ar x lexmark.deb`. File `debian-binary` can be dropped.
+2.  Extract both `~/control.tar.gz` and `~/data.tar.gz` archives.
+3.  `data.tar.gz` gives a `~/usr/` directory. As root, move `~/usr/local/lexmark` to `/usr/local/lexmark`.
+4.  As root, run `~/control/postinst` to perform install. This script will automatically set all files owners an `chmod`, then set some fonts, drivers and docs tricks. It will also eventually run `/usr/local/lexmark/network-scan.link`, creating several symbolic links in your Arch architecture.
+5.  Your scanner should be detected after reboot.
+
+### Supported devices
+
+This process has been successfully tested for the following devices:
+
+*   Lexmark MB2236 (USB only; network untested).
+
+It does not work fot the following:
+
+*   …
+
+### To do
+
+In order to improve Lexmark scanners support, you can:
+
+*   Check whether this process works for your computer and device
+*   Help defining the list of dependencies required for this process
+*   Create an AUR package with this driver which installation would not mess architecture up. Namely, such a package should not need to create a `/usr/lexmark` symlink, and should be containerized (eg in `/opt/lexmark`).
 
 ## Medion
 

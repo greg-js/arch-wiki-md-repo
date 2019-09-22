@@ -2,7 +2,11 @@
 
 يرجى الملاحظة أنَّ الموسوعة الرسميّة للمشروع تدعم تعدد اللغات (يمكن ترجمة المحتواها). وكما لدينا منتدى عالمي يمكنك النشر فيه بلغتك المحليّة. يمكنك استخدام هذه الأدوات بجانب أو كجزء من المجتمعات العالميّة المسرودة أدناه.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 مجتمعات عالميّة](#مجتمعات_عالميّة)
     *   [1.1 المجتمع البرازيلي](#المجتمع_البرازيلي)

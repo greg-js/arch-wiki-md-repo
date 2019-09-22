@@ -120,7 +120,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD
 
 ## 启动 Plasma
 
-**注意:** 虽然可以使用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动 Plasma，但 Plasma 5.13 仍存在一些缺失的功能和已知问题。问题清单详见 [Plasma 5.13 Errata（英文）](https://community.kde.org/Plasma/5.13_Errata#Wayland)，当前开发状况详见 [Plasma on Wayland workboard（英文）](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 以获得最完整和稳定的体验。
+**注意:** 虽然可以使用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动 Plasma，但 Plasma 仍存在一些缺失的功能和已知问题。问题清单详见 [Wayland Showstoppers](https://community.kde.org/Plasma/Wayland_Showstoppers)，当前开发状况详见 [Plasma on Wayland workboard（英文）](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 以获得最完整和稳定的体验。
 
 Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")启动,也可以从控制台手动启动。
 
@@ -128,11 +128,6 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 
 *   在菜单中选择 *Plasma* 用 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 启动。
 *   安装 [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) 软件包，并选择 *Plasma (Wayland)* 用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动。
-
-**注意:** [NVIDIA](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)") 的专有驱动需要 EGLStreams 启动 Wayland。KDE 还没有将 EGLStreams 加入到其 Wayland [配置（英文）](https://blog.martin-graesslin.com/blog/2016/09/to-eglstream-or-not)中。因此需要以下解决方案：
-
-*   使用 [Nouveau](/index.php/Nouveau_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Nouveau (简体中文)") 驱动。
-*   使用 Xorg 会话（默认）。
 
 ### 从控制台启动
 

@@ -1,6 +1,10 @@
 Be atsakytų klausimų apačioje, [The Arch Way](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)") ir [Arch Linux](/index.php/Arch_Linux_(Lietuvi%C5%A1kai) "Arch Linux (Lietuviškai)") taip pat turėtų būti vertingi. Abiejuose straipsniuose yra vertingos informacijos apie Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Pagrindinė informacija](#Pagrindinė_informacija)
     *   [1.1 Kas yra Arch Linux?](#Kas_yra_Arch_Linux?)

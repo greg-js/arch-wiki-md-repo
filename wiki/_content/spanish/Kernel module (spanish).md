@@ -6,23 +6,27 @@ Artículos relacionados
 
 [Los módulos del núcleo](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module") (también conocido por su nombre inglés, *kernel*) son ​​fragmentos de código que pueden ser cargados y eliminados del núcleo bajo demanda. Extienden la funcionalidad del núcleo sin necesidad de reiniciar el sistema.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Descripción](#Descripci.C3.B3n)
-*   [2 Obtener información](#Obtener_informaci.C3.B3n)
-*   [3 Configuración](#Configuraci.C3.B3n)
-    *   [3.1 Cargar módulos](#Cargar_m.C3.B3dulos)
-    *   [3.2 Configurar opciones de los módulos](#Configurar_opciones_de_los_m.C3.B3dulos)
-        *   [3.2.1 Usar archivos en /etc/modprobe.d/](#Usar_archivos_en_.2Fetc.2Fmodprobe.d.2F)
-        *   [3.2.2 Usar la línea de órdenes de arranque del núcleo](#Usar_la_l.C3.ADnea_de_.C3.B3rdenes_de_arranque_del_n.C3.BAcleo)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Descripción](#Descripción)
+*   [2 Obtener información](#Obtener_información)
+*   [3 Configuración](#Configuración)
+    *   [3.1 Cargar módulos](#Cargar_módulos)
+    *   [3.2 Configurar opciones de los módulos](#Configurar_opciones_de_los_módulos)
+        *   [3.2.1 Usar archivos en /etc/modprobe.d/](#Usar_archivos_en_/etc/modprobe.d/)
+        *   [3.2.2 Usar la línea de órdenes de arranque del núcleo](#Usar_la_línea_de_órdenes_de_arranque_del_núcleo)
     *   [3.3 Alias](#Alias)
     *   [3.4 Lista negra](#Lista_negra)
-        *   [3.4.1 Usar archivos en /etc/modprobe.d/](#Usar_archivos_en_.2Fetc.2Fmodprobe.d.2F_2)
-        *   [3.4.2 Usar la línea de órdenes del núcleo](#Usar_la_l.C3.ADnea_de_.C3.B3rdenes_del_n.C3.BAcleo)
-*   [4 Manejar módulos manualmente](#Manejar_m.C3.B3dulos_manualmente)
+        *   [3.4.1 Usar archivos en /etc/modprobe.d/](#Usar_archivos_en_/etc/modprobe.d/_2)
+        *   [3.4.2 Usar la línea de órdenes del núcleo](#Usar_la_línea_de_órdenes_del_núcleo)
+*   [4 Manejar módulos manualmente](#Manejar_módulos_manualmente)
 *   [5 Consejos y trucos](#Consejos_y_trucos)
-    *   [5.1 Función de bash para listar los parámetros del módulo](#Funci.C3.B3n_de_bash_para_listar_los_par.C3.A1metros_del_m.C3.B3dulo)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [5.1 Función de bash para listar los parámetros del módulo](#Función_de_bash_para_listar_los_parámetros_del_módulo)
+*   [6 Véase también](#Véase_también)
 
 ## Descripción
 

@@ -12,7 +12,7 @@
 
 ## Description
 
-Procfs is pseudo filesystem (/proc) containing information about the system resources, including currently running processes, kernel, hardware. Since procfs is pseudo(meaning false) filesystem that means it is not really existent(only exist in memory). Altering files in **/proc** allows us to manipulate kernel in runtime. If we take a look at the sizes of files inside procfs we can notice that their size is 0, reason for that is they are only populated when requested by user(on the fly).
+Procfs is pseudo filesystem (/proc) containing information about the system resources, including currently running processes, kernel, hardware. Since procfs is pseudo(meaning false) filesystem that means it is not really existent(only exist in memory). Altering files in **/proc** allows us to manipulate kernel in runtime. If we take a look at the sizes of files inside procfs we can notice that their size is 0, reason for that is they are only populated when requested by user(on the fly). It is suggested to use sysfs over procfs because it has defined structure and procfs became a mess over time.
 
 ## Content
 

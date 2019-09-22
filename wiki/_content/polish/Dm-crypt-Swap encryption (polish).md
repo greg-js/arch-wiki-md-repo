@@ -1,6 +1,10 @@
 W zależności od wymagań można zastosować różne metody szyfrowania partycji [swap](/index.php/Swap "Swap"). które są opisane poniżej. Konfiguracja, w której szyfrowanie swapowe jest re-inicjalizowane przy ponownym uruchomieniu (z nowym szyfrowaniem) zapewnia lepszą ochronę danych, ponieważ pozwala uniknąć wrażliwych fragmentów plików, które mogły zostać zamienione dawno temu bez nadpisywania. Jednak ponowne szyfrowanie swapu również uniemożliwia korzystanie z hibernacji
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bez wsparcia dla hibernacji](#Bez_wsparcia_dla_hibernacji)
     *   [1.1 UUID i LABEL](#UUID_i_LABEL)

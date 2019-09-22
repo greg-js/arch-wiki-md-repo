@@ -241,18 +241,18 @@ Additionally, the [brillo](https://aur.archlinux.org/packages/brillo/) and [ligh
 
 The utilities in the following table can be used to control screen brightness. All of them are compatible with Wayland and do not require X. Some (like `brightnessctl` or `light`) add udev rules to allow members of the `video` (or `input`) group to modify brightness.
 
-| Name | Controls keyboard backlights | Reacts to ambient brightness | Language | License | Notes | Package | Homepage |
-| acpilight | Yes | No | Python3 | GPL-3.0-or-later | "xbacklight" compatible | [acpilight](https://www.archlinux.org/packages/?name=acpilight) | [https://gitlab.com/wavexx/acpilight](https://gitlab.com/wavexx/acpilight) |
-| brightd | No | No | C | GPL-2.0 | Dims the screen when there is no user input for some time. | [brightd](https://aur.archlinux.org/packages/brightd/) | [http://www.pberndt.com/Programme/Linux/brightd](http://www.pberndt.com/Programme/Linux/brightd) |
-| brillo | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. | [brillo](https://aur.archlinux.org/packages/brillo/) | [https://gitlab.com/cameronnemo/brillo](https://gitlab.com/cameronnemo/brillo) |
-| brightnessctl | Yes | No | C | MIT | - | [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) | [https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) |
-| Calise | No | Yes | Python2 | GPL-3.0 | - | [calise](https://aur.archlinux.org/packages/calise/) | [http://calise.sourceforge.net](http://calise.sourceforge.net) |
-| Clight | Yes | Yes | C | GPL-3.0-or-later | Manages screen temperature and smoothly dims brightness after a timeout. Turns webcam into an ambient light sensor. | [clight](https://aur.archlinux.org/packages/clight/) | [https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) |
-| macbook-lighter | Yes | Yes | Bash,Perl | GPL | Macbook screen/keyboard backlight CLI and auto-adjust on ambient light. | [macbook-lighter](https://aur.archlinux.org/packages/macbook-lighter/) | [https://github.com/harttle/macbook-lighter](https://github.com/harttle/macbook-lighter) |
-| enlighten | No | No | C | GPL-3.0-or-later | - | [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/) | [https://github.com/HalosGhost/enlighten](https://github.com/HalosGhost/enlighten) |
-| illum | No | No | C | AGPL-3.0 | Reacts to key presses. | [illum-git](https://aur.archlinux.org/packages/illum-git/) | [https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) |
-| Light | Yes | No | C | GPL-3.0-only | - | [light](https://www.archlinux.org/packages/?name=light) | [https://haikarainen.github.io/light](https://haikarainen.github.io/light) |
-| Lux | No | No | Shell | MIT | - | [lux](https://aur.archlinux.org/packages/lux/) | [https://github.com/Ventto/lux](https://github.com/Ventto/lux) |
+| Package name | Controls keyboard backlights | Reacts to ambient brightness | Language | License | Notes |
+| [acpilight](https://www.archlinux.org/packages/?name=acpilight) | Yes | No | Python3 | GPL-3.0-or-later | "xbacklight" compatible |
+| [brightd](https://aur.archlinux.org/packages/brightd/) | No | No | C | GPL-2.0 | Dims the screen when there is no user input for some time. |
+| [brillo](https://aur.archlinux.org/packages/brillo/) | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. |
+| [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) | Yes | No | C | MIT | - |
+| [calise](https://aur.archlinux.org/packages/calise/) | No | Yes | Python2 | GPL-3.0 | - |
+| [clight](https://aur.archlinux.org/packages/clight/) | Yes | Yes | C | GPL-3.0-or-later | Manages screen temperature and smoothly dims brightness after a timeout. Turns webcam into an ambient light sensor. |
+| [macbook-lighter](https://aur.archlinux.org/packages/macbook-lighter/) | Yes | Yes | Bash,Perl | GPL | Macbook screen/keyboard backlight CLI and auto-adjust on ambient light. |
+| [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/) | No | No | C | GPL-3.0-or-later | - |
+| [illum-git](https://aur.archlinux.org/packages/illum-git/) | No | No | C | AGPL-3.0 | Reacts to key presses. |
+| [light](https://www.archlinux.org/packages/?name=light) | Yes | No | C | GPL-3.0-only | - |
+| [lux](https://aur.archlinux.org/packages/lux/) | No | No | Shell | MIT | - |
 
 ### xbacklight
 

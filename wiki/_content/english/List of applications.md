@@ -1697,7 +1697,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
-*   **Tiny** — an IRC client written in Rust with a clutter-free interface
+*   **tiny** — an IRC client written in Rust with a clutter-free interface
 
 	[https://github.com/osa1/tiny](https://github.com/osa1/tiny) || [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/)
 
@@ -1712,7 +1712,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 | [ScrollZ](http://www.scrollz.info/) | [scrollz](https://aur.archlinux.org/packages/scrollz/) | C | ? | No |
 | [sic](https://tools.suckless.org/sic/) | [sic](https://aur.archlinux.org/packages/sic/) | C | stdin/stdout | No |
 | [WeeChat](/index.php/WeeChat "WeeChat") | [weechat](https://www.archlinux.org/packages/?name=weechat) | C | [multiple languages](https://weechat.org/files/doc/stable/weechat_scripting.en.html) | Yes |
-| [osa1/tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
+| [tiny](https://github.com/osa1/tiny) | [tiny-irc-client-git](https://aur.archlinux.org/packages/tiny-irc-client-git/) | Rust | No | Yes |
 
 ###### Graphical
 
@@ -2021,6 +2021,10 @@ See also [Bonjour](/index.php/Avahi#Link-Local_(Bonjour/Zeroconf)_chat "Avahi"),
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
 	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
+
+*   **[TeamTalk](/index.php/TeamTalk "TeamTalk")** — Proprietary VoIP application with video chat, file and desktop sharing. Desktop sharing doesn't appear to be working in Linux though. AUR package is server only, but client is built in the make process.
+
+	[https://bearware.dk](https://bearware.dk) || [teamtalk](https://aur.archlinux.org/packages/teamtalk/)
 
 *   **[Telegram](/index.php/Telegram "Telegram") Desktop** — Official Telegram desktop client.
 
@@ -2408,7 +2412,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
-	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
+	[https://ghost.org/](https://ghost.org/) || [ghost-web](https://aur.archlinux.org/packages/ghost-web/)
 
 *   **[Joomla](/index.php/Joomla "Joomla")** — A php Content Management System (CMS) which enables you to build websites and powerful online applications.
 
@@ -4555,6 +4559,10 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 *   **[Guake](/index.php/Guake "Guake")** — Drop-down terminal for the GNOME desktop.
 
 	[http://guake-project.org/](http://guake-project.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
+
+*   **k3rmit** — A VTE-based terminal emulator that aims to be simple, fast and effective.
+
+	[https://github.com/orhun/k3rmit](https://github.com/orhun/k3rmit) || [k3rmit-git](https://aur.archlinux.org/packages/k3rmit-git/)
 
 *   **LXTerminal** — Desktop independent terminal emulator for [LXDE](/index.php/LXDE "LXDE").
 
@@ -8108,6 +8116,10 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 	[http://www.isthe.com/chongo/tech/comp/calc/](http://www.isthe.com/chongo/tech/comp/calc/) || [calc](https://www.archlinux.org/packages/?name=calc)
 
+*   **clac** — Command-line, stack-based calculator with postfix notation.
+
+	[https://github.com/soveran/clac](https://github.com/soveran/clac) || [clac](https://aur.archlinux.org/packages/clac/)
+
 *   **Deepin Calculator** — Easy to use calculator for Deepin desktop.
 
 	[https://www.deepin.org/en/original/deepin-calculator/](https://www.deepin.org/en/original/deepin-calculator/) || [deepin-calculator](https://www.archlinux.org/packages/?name=deepin-calculator)
@@ -8404,6 +8416,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[https://pymol.org/](https://pymol.org/) || [pymol](https://www.archlinux.org/packages/?name=pymol)
 
+*   **VMD** — VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.
+
+	[http://www.ks.uiuc.edu/Research/vmd/](http://www.ks.uiuc.edu/Research/vmd/) || [vmd](https://aur.archlinux.org/packages/vmd/)
+
 ##### Drawing
 
 *   **[BKChem](https://en.wikipedia.org/wiki/BKchem "wikipedia:BKchem")** — Practical and goodlooking skeletal formula molecule drawing program.
@@ -8424,9 +8440,33 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 ##### Modeling
 
+*   **APBS** — Electrostatic and solvation properties for complex molecules.
+
+	[http://www.poissonboltzmann.org/](http://www.poissonboltzmann.org/) || [apbs](https://aur.archlinux.org/packages/apbs/)
+
+*   **CP2K** — A quantum chemistry and solid state physics software package.
+
+	[https://www.cp2k.org/](https://www.cp2k.org/) || [cp2k](https://aur.archlinux.org/packages/cp2k/)
+
 *   **[GROMACS](/index.php/GROMACS "GROMACS") (GROningen MAchine for Chemical Simulations)** — Versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
 
 	[http://www.gromacs.org](http://www.gromacs.org) || [gromacs](https://aur.archlinux.org/packages/gromacs/)
+
+*   **AmberTools** — AmberTools consists of several independently developed packages that work well by themselves, and with Amber18 itself. The suite can also be used to carry out complete molecular dynamics simulations, with either explicit water or generalized Born solvent models.
+
+	[http://ambermd.org/AmberTools.php](http://ambermd.org/AmberTools.php) || [ambertools](https://aur.archlinux.org/packages/ambertools/)
+
+*   **NAMD** — NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems.
+
+	[http://www.ks.uiuc.edu/Research/namd/](http://www.ks.uiuc.edu/Research/namd/) || [namd](https://aur.archlinux.org/packages/namd/)
+
+*   **ORCA** — ORCA is an ab initio, DFT, and semi-empirical SCF-MO package.
+
+	[https://orcaforum.kofo.mpg.de/app.php/portal](https://orcaforum.kofo.mpg.de/app.php/portal) || [orcaqm](https://aur.archlinux.org/packages/orcaqm/)
+
+*   **PDB2PQR** — Electrostatic and solvation properties for complex molecules.
+
+	[http://www.poissonboltzmann.org/](http://www.poissonboltzmann.org/) || [pdb2pqr](https://aur.archlinux.org/packages/pdb2pqr/)
 
 *   **[Quantum ESPRESSO](https://en.wikipedia.org/wiki/Quantum_ESPRESSO "wikipedia:Quantum ESPRESSO")** — Integrated suite of applications for electronic-structure calculations and materials modeling at nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials (both norm-conserving and ultrasoft).
 
@@ -8919,6 +8959,10 @@ These applications support time, task and contacts management.
 *   **Calcurse** — Text-based ncurses calendar and scheduling system (supports CalDAV)
 
 	[http://calcurse.org/](http://calcurse.org/) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
+
+*   **ccal** — A console program which writes a calendar together with Chinese calendar to standard output.
+
+	[http://ccal.chinesebay.com/ccal/ccal.htm](http://ccal.chinesebay.com/ccal/ccal.htm) || [ccal](https://aur.archlinux.org/packages/ccal/)
 
 *   **khal** — Command-line (non-interactive) and ncurses (interactive) calendar system (supports CalDAV)
 

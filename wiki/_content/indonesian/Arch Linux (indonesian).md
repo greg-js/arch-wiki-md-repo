@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Apakah Arch Linux?](#Apakah_Arch_Linux?)
 *   [2 Kelebihan](#Kelebihan)

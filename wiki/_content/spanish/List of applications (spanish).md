@@ -2,7 +2,7 @@
 
 * * *
 
-[Internet](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") – [Multimedia](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") – [Documentos](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") – [Seguridad](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") – [Ciencia](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") – [Otras](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)")
+[Internet](/index.php/List_of_applications_(Espa%C3%B1ol)/Internet_(Espa%C3%B1ol) "List of applications (Español)/Internet (Español)") – [Multimedia](/index.php/List_of_applications_(Espa%C3%B1ol)/Multimedia_(Espa%C3%B1ol) "List of applications (Español)/Multimedia (Español)") – [Utilidades](/index.php/List_of_applications_(Espa%C3%B1ol)/Utilities_(Espa%C3%B1ol) "List of applications (Español)/Utilities (Español)") – [Documentos](/index.php/List_of_applications_(Espa%C3%B1ol)/Documents_(Espa%C3%B1ol) "List of applications (Español)/Documents (Español)") – [Seguridad](/index.php/List_of_applications_(Espa%C3%B1ol)/Security_(Espa%C3%B1ol) "List of applications (Español)/Security (Español)") – [Ciencia](/index.php/List_of_applications_(Espa%C3%B1ol)/Science_(Espa%C3%B1ol) "List of applications (Español)/Science (Español)") – [Otras](/index.php/List_of_applications_(Espa%C3%B1ol)/Other_(Espa%C3%B1ol) "List of applications (Español)/Other (Español)")
 
 Artículos relacionados
 
@@ -18,7 +18,11 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
 
 **Nota:** Las aplicaciones enumeradas en las secciones de «Consola» pueden tener [front-ends](https://en.wikipedia.org/wiki/es:Front-end_y_back-end "wikipedia:es:Front-end y back-end") gráficos. Aquellos que son de aplicaciones oficiales se omiten actualmente.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Internet](#Internet)
     *   [1.1 Clientes BitTorrent](#Clientes_BitTorrent)
@@ -469,7 +473,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cliente IRC multiplataforma para el escritorio GNOME inspirado en [Irssi](/index.php/Irssi "Irssi").
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — Cliente IRC basado en GTK que funciona tanto en Linux como en Windows.
 
@@ -645,7 +649,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **mu/mu4e** — Indexador de email (mu) y cliente para emacs (mu4e). Basado en xapian para las búsquedas rápidas.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://www.archlinux.org/packages/?name=mu)
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Pequeño, pero muy potente, cliente de correo electrónico basado en texto.
 
@@ -865,7 +869,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Altamente configurable, micronavegador basado en el motor WebKit y GTK+. Es muy rápido, extensible por Lua y licenciado bajo GNU GPLv3 license.
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Navegador web ligero basado en GTK+ y WebKit.
 
@@ -1668,7 +1672,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Aplicación para visualizar PDF y tomar notas.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ### Telefonía
 
@@ -2087,11 +2091,11 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **Docker** — Aplicación dock que actúa como bandeja del sistema.
 
-	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker](https://www.archlinux.org/packages/?name=docker)
+	[http://icculus.org/openbox/2/docker/](http://icculus.org/openbox/2/docker/) || [docker-tray](https://aur.archlinux.org/packages/docker-tray/)
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Aplicación dock propiamente dicha que abre las aplicaciones más comunes y las ventanas de forma más fácil y rápida.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Ligero, panel de escritorio compatible NETWM.
 
@@ -2227,7 +2231,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Aplicación para visualizar PDF y tomar notas.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Visor que puede decodificar LZW y leer archivos PDF encriptados.
 
@@ -2401,7 +2405,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTEX "wikipedia:AUCTEX")** — Paquete con extensiones para escribir y formatear archivos TeX en Emacs.
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Editor TeX/LaTeX ligero, basado en GTK+.
 
@@ -2634,7 +2638,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Programa como Matlab que soportta muchas de sus funciones y cuenta con una interfaz sin código externo basada en C, C+ + y Fortran, desarrollo de algoritmos paralelos y distribuidos (a través de MPI), y capacidades de visualización 3D.
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[Octave](/index.php/Octave "Octave")** — Lenguaje similar a [MATLAB](/index.php/MATLAB "MATLAB") e interfaz para cálculos numéricos.
 
@@ -2702,7 +2706,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Programa de análisis de datos y biblioteca (originalmente para la física de partículas), desarrollado por el CERN.
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — Fork de QtiPlot con el objetivo de estar mejor documentado y más fácil de usar.
 
@@ -2900,7 +2904,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE para el diseño de circuitos electrónicos y microcontroladores PIC y su simulación con un extenso diseñador de circuitos, con trazado automático y con simulación de todos los componentes electrónicos comunes y elementos lógicos.
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Aplicación de software gráfico de simulación y captura de esquemas de circuitos eléctricos. La simulación real se realiza por los motores [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") o [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package").
 
@@ -2974,7 +2978,7 @@ Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/w
 
 *   **dtach** — Programa que emula la capacidad de desconexión de [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Gestor de ventanas a tamaño completo que multiplexa una terminal física.
 
@@ -3110,7 +3114,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Aplicación dock consolidada que facilita la tarea de abrir aplicaciones muy usadas y el gestionar las ventanas.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Panel de escritorio ligero compatible con NETWM.
 
@@ -3210,7 +3214,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con muchos plugins, originalmente desarrollado para el escritorio GNOME.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **j4-dmenu-desktop** — Lanzador de aplicaciones dmenu muy rápido.
 
@@ -3392,7 +3396,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **Hamster** — Aplicación de seguimiento que le ayuda a controlar cuanto tiempo ha invertido a lo largo del día en actividades que ha decidido hacerles seguimiento.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Programa de calendario y agenda, parte de [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -3428,7 +3432,7 @@ Vea también [Wikipedia:Comparison of accounting software](https://en.wikipedia.
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque_(software) "wikipedia:Tasque (software)")** — aplicación de gestión rápida y fácil de tareas escrita en C Sharp.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **Tider** — Aplicación de seguimiento ligera (basada en GTK+)
 

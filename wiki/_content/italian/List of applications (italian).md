@@ -13,7 +13,11 @@ Questo articolo è un elenco generale delle applicazioni ordinati per categoria,
 
 **Nota:** Le applicazioni elencate nelle sezioni "Console" possono avere dei front-end grafici. Quelli ufficiali sono attualmente omessi.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Internet](#Internet)
     *   [1.1 Client BitTorrent](#Client_BitTorrent)
@@ -456,7 +460,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Client IRC multi piattaforma per l'ambiente desktop GNOME ispirato ad Irssi.
 
-	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
+	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://aur.archlinux.org/packages/smuxi/)
 
 *   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — Client IRC basato su GTK+ che può funzionare sia su Linux che su Windows.
 
@@ -842,7 +846,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Micro-browser framework per i contenuti web, altamente configurabile e basato sul motore WebKit ed il toolkit GTK +. È molto veloce, estensibile da Lua e concesso sotto la licenza GNU GPLv3.
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Leggero browser in GTK2/WebKit.
 
@@ -1599,7 +1603,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Visualizzatore di pdf e note.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ### Telefonia
 
@@ -1683,7 +1687,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Editor video professionale e ambiente di compositing.
 
-	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://aur.archlinux.org/packages/cinelerra-cv/)
 
 *   **[HandBrake](/index.php/DVD_Ripping#HandBrake "DVD Ripping")** — Semplice ma potente transcodificatore video, ideale per il ripping in formati mkv/x264\. Versione GTK+.
 
@@ -2007,7 +2011,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[Docky](https://en.wikipedia.org/wiki/Docky "wikipedia:Docky")** — Completa applicazione dock che permette di aprire i programmi più comuni e gestire facilmente e velocemente le finestre.
 
-	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://www.archlinux.org/packages/?name=docky)
+	[http://wiki.go-docky.com/](http://wiki.go-docky.com/) || [docky](https://aur.archlinux.org/packages/docky/)
 
 *   **[fbpanel](/index.php/Fbpanel "Fbpanel")** — Un leggero pannello per il desktop, NETWM compliant.
 
@@ -2147,7 +2151,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Un'applicazione per visualizzare pdf e prendere note.
 
-	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
+	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://aur.archlinux.org/packages/xournal/)
 
 ##### Visualizzatore di CHM
 
@@ -2299,7 +2303,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[AUCTeX](https://en.wikipedia.org/wiki/AUCTEX "wikipedia:AUCTEX")** — Un estensione per scrivere e formattare file TeX files in Emacs.
 
-	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://www.archlinux.org/packages/?name=auctex)
+	[https://www.gnu.org/software/auctex/](https://www.gnu.org/software/auctex/) || [auctex](https://aur.archlinux.org/packages/auctex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Un leggerissimo editor per TeX/LaTeX basato su GTK+.
 
@@ -2547,7 +2551,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Programma simile a Matlab che supporta molte delle sue funzioni e presenta una interfaccia intuitiva per codice esterno in C, C++ e Fortran, ulteriore sviluppo di algoritmi paralleli distribuiti (via MPI) e possibilità di visualizzazione 3D.
 
-	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
+	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://aur.archlinux.org/packages/freemat/)
 
 *   **[Octave](/index.php/Octave "Octave")** — Linguaggio per il calcolo numerico con interfaccia simile a [MATLAB](/index.php/MATLAB "MATLAB").
 
@@ -2611,7 +2615,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 *   **[ROOT](https://en.wikipedia.org/wiki/ROOT "wikipedia:ROOT")** — Programma di analisi dei dati e relativa libreria ideato originariamente per la fisica delle particelle sviluppato dal CERN.
 
-	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://aur.archlinux.org/packages/root/)
+	[http://root.cern.ch/drupal/](http://root.cern.ch/drupal/) || [root](https://www.archlinux.org/packages/?name=root)
 
 *   **[SciDAVis](https://en.wikipedia.org/wiki/SciDAVis "wikipedia:SciDAVis")** — Fork di QtiPlot con l'obiettivo do essere meglio documentato e più amichevole.
 
@@ -2793,7 +2797,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE per il disegno di circuiti elettronici e microcontrollori PIC e per la loro simulazione. Presenta un esteso archivio di circuiti con autorouting e simulazione dei più comuni componenti elettronici ed elementi logici.
 
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://www.archlinux.org/packages/?name=ktechlab)
+	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab](https://aur.archlinux.org/packages/ktechlab/)
 
 *   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Software grafico per la rappresentazione schematica e la simulazione di circuiti elettrici. La simulazione è delegata al motore [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") o [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package").
 
@@ -2851,7 +2855,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Cherrytree** — Applicazione per le note di tipo gerarchico, con supporto ad evidenziazione della sintassi e rich text. Immagazzina le informazioni in un file .xml singolo o in un database sqlite.
 
-	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://www.archlinux.org/packages/?name=cherrytree)
+	[http://giuspen.com/cherrytree/](http://giuspen.com/cherrytree/) || [cherrytree](https://aur.archlinux.org/packages/cherrytree/)
 
 *   **[Gnote](https://en.wikipedia.org/wiki/Gnote "wikipedia:Gnote")** — Porting sperimentale di Tomboy al C++.
 
@@ -2859,7 +2863,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **KeepNote** — Applicazione multipiattaforma GTK+ per le note, con supporto al rich text.
 
-	[http://keepnote.org](http://keepnote.org) || [keepnote](https://www.archlinux.org/packages/?name=keepnote)
+	[http://keepnote.org](http://keepnote.org) || [keepnote](https://aur.archlinux.org/packages/keepnote/)
 
 *   **[KJots](https://en.wikipedia.org/wiki/KJots "wikipedia:KJots")** — Piccola applicazione utile per archiviare ed organizzare note di vario genere, parte della suite [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 
@@ -2925,7 +2929,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Hamster** — Applicazione di monitoraggio volta ad aiutarvi a tenere traccia di quanto tempo avete speso durante la giornata sulle attività che si sceglie di seguire.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://aur.archlinux.org/packages/hamster-time-tracker/)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Programma per il calendario e gli appuntamenti, parte della suite KDE PIM.
 
@@ -2953,7 +2957,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **[Tasque](https://en.wikipedia.org/wiki/Tasque "wikipedia:Tasque")** — Semplice e veloce applicazione per la gestione delle attività, scritto in C Sharp.
 
-	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://www.archlinux.org/packages/?name=tasque)
+	[https://wiki.gnome.org/Apps/Tasque](https://wiki.gnome.org/Apps/Tasque) || [tasque](https://aur.archlinux.org/packages/tasque/)
 
 *   **TkRemind** — Sofisticato calendario e reminder.
 
@@ -3049,7 +3053,7 @@ Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.p
 
 *   **dtach** — Programma che emula la funzione detach di [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 
-	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
+	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://aur.archlinux.org/packages/dtach/)
 
 *   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Window manager a schermo intero che effettua la multiplazione di un terminale fisico
 
@@ -3273,7 +3277,7 @@ See also [Wikipedia:Comparison of text editors](https://en.wikipedia.org/wiki/Co
 
 *   **medit** — Editor di testo per programmazione e dintorni
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://aur.archlinux.org/packages/medit/)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Mousepad "wikipedia:Xfce")** — Veloce editor di testi per l'ambiente desktop Xfce.
 
@@ -3431,7 +3435,7 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 
 *   **[GNOME Do](https://en.wikipedia.org/wiki/GNOME_Do con molti plugins, originariamente sviluppato per il desktop GNOME.
 
-	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://www.archlinux.org/packages/?name=gnome-do)
+	[http://do.cooperteam.net/](http://do.cooperteam.net/) || [gnome-do](https://aur.archlinux.org/packages/gnome-do/)
 
 *   **Kupfer** — Comodo comando e uno strumento di accesso per il desktop GNOME che può lanciare applicazioni, aprire documenti e accedere a differenti tipi di oggetti e agire su di essi.
 

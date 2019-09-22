@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Disk encryption](/index.php/Disk_encryption "Disk encryption"), revisada por última vez el **2018-11-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=555962) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Disk encryption](/index.php/Disk_encryption "Disk encryption"), revisada por última vez el **2019-09-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=578193) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -16,6 +16,8 @@ Artículos relacionados
 Este artículo trata sobre el software de [cifrado de discos](https://en.wikipedia.org/wiki/es:Cifrado_de_disco o directorio. Ejemplos de dispositivos de bloque son discos duros, unidades flash y DVD.
 
 El cifrado de disco solo debe ser visto como un complemento a los mecanismos de seguridad existentes en el sistema operativo —se enfoca a asegurar el acceso físico fuera de línea—, al tiempo que se delega en *otras* partes del sistema que proporcinan elementos confiables como la seguridad de la red y la seguridad del usuario basada en el control de acceso.
+
+Para el cifrado de disco completo (siglas en inglés FDE Full-disk encryption), vea [dm-crypt (Español)/Encrypting an entire system (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol)/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt (Español)/Encrypting an entire system (Español)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -56,7 +58,7 @@ Por ejemplo, esto sirve para evitar la visualización no autorizada de los datos
 
 Además, el cifrado del disco también se puede utilizar para añadir un plus de seguridad frente a los intentos no autorizados de manipulación del sistema operativo, por ejemplo, instalando [keyloggers](https://en.wikipedia.org/wiki/es:Keylogger por [hacker](https://en.wikipedia.org/wiki/es:Hacker_(seguridad_inform%C3%A1tica) que pueden tener acceso físico al sistema, mientras se está ausente.
 
-**Advertencia:** El cifrado de discos **no** protege los datos contra todas las amenazas
+**Advertencia:** el cifrado de discos **no** protege los datos contra todas las amenazas
 
 Se seguirá siendo vulnerable a:
 
@@ -64,9 +66,9 @@ Se seguirá siendo vulnerable a:
 *   Los atacantes que son capaces de tener acceso físico al ordenador mientras está en ejecución (incluso si se utiliza un screenlocker), o muy poco *después* de haberlo ejecutado, si tienen los recursos para llevar a cabo un [ataque de arranque en frío](https://en.wikipedia.org/wiki/es:Ataque_de_arranque_en_fr%C3%ADo "wikipedia:es:Ataque de arranque en frío").
 *   Una entidad gubernamental, que no solo cuenta con los recursos para realizar fácilmente los ataques anteriores, sino que también puede simplemente obligar a renunciar a sus claves/frases de acceso mediante diversas técnicas de [coerción](https://en.wikipedia.org/wiki/es:Coerci%C3%B3n "wikipedia:es:Coerción"). En la mayoría de los países no democráticos de todo el mundo, así como en los EE.UU. y el Reino Unido, puede ser legal para las agencias de seguridad acceder si tienen sospechas de que se podría estar ocultando algo de interés.
 
-Se requiere una fuerte configuración de cifrado de disco (por ejemplo, el cifrado completo del sistema con comprobación de su autenticidad y sin partición de arranque en modo texto plano) para tener una cierta ventaja contra los atacantes profesionales que son capaces de alterar el sistema *antes* de que lo utilice. Y aun así no es seguro de que realmente se pueda prevenir todo tipo de manipulación (por ejemplo, keyloggers tipo hardware). El mejor remedio podría ser el [cifrado de disco completo basado en hardware](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") y la [computación confiable](https://en.wikipedia.org/wiki/es:Trusted_Computing "wikipedia:es:Trusted Computing").
+Se requiere una fuerte configuración de cifrado de disco (por ejemplo, el cifrado completo del sistema con comprobación de su autenticidad y sin partición de arranque en modo texto plano) para tener una cierta ventaja contra los atacantes profesionales que son capaces de alterar el sistema *antes* de que lo utilice. Y aun así no es seguro de que realmente se pueda prevenir todo tipo de manipulación (por ejemplo, keyloggers tipo hardware). El mejor remedio podría ser el [hardware-based full-disk encryption](/index.php/Hardware-based_full-disk_encryption "Hardware-based full-disk encryption")|cifrado de disco completo basado en hardware]] y la [computación confiable](https://en.wikipedia.org/wiki/es:Trusted_Computing "wikipedia:es:Trusted Computing").
 
-**Advertencia:** El cifrado de discos tampoco lo protegerá contra alguien que simplemente [borre el disco](/index.php/Securely_wipe_disk "Securely wipe disk"). Es recomendable realizar [copias de respaldo regulares](/index.php/Backup_programs "Backup programs") para mantener sus datos protegidos.
+**Advertencia:** el cifrado de discos tampoco lo protegerá contra alguien que simplemente [borre el disco](/index.php/Securely_wipe_disk "Securely wipe disk"). Es recomendable realizar [copias de respaldo regulares](/index.php/Backup_programs "Backup programs") para mantener sus datos protegidos.
 
 ## Cifrar datos del sistema
 
@@ -149,25 +151,25 @@ Para conocer las implicaciones prácticas de la capa de operación elegida, cons
 
 La columna «dm-crypt +/- LUKS» denota características de dm-crypt tanto para la modalidad de cifrado LUKS («+») como plain («-»). Si una característica específica requiere el uso de LUKS, esto se indica con «(con LUKS). De la misma manera «(sin LUKS)» indica que el uso de LUKS es contraproducente para lograr la función y el modo plain es el aconsejado.
 
-| Resumen | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") |
-| Tipo de cifrado | cifrado de dispositivos de bloques | cifrado de dispositivos de bloques | cifrado de dispositivos de bloques | cifrado de dispositivos de bloques | cifrado de sistemas de archivos apilados | cifrado de sistemas de archivos apilados |
-| Nota | el más longevo; posiblemente el más rápido; funciona en sistemas antiguos | estándar de hecho para el cifrado de dispositivos de bloques en Linux; muy flexible | solución muy portable, bien pulida y controlada pero abandonada | bifurcación mantenida de TrueCrypt | ligeramente más rápido respecto a EncFS; cifra archivos singulares portables a otros sistemas | fácil de usar; permite la adminitración por usuario normal |
-| Disponibilidad en Arch Linux | necesita compilar manualmente un kernel personalizado | *módulos del kernel:* ya cargados por el kernel por defecto; *herramientas:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | *módulos del kernel:* ya cargados por el kernel por defecto; *herramientas:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) | [encfs](https://www.archlinux.org/packages/?name=encfs) |
-| Licencia | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, partes sujetas a la licencia de TrueCrypt v3.0 | GPL | GPL |
-| Cifrado implementado en... | en el espacio del kernel | en el espacio del kernel | en el espacio del kernel | en el espacio del kernel | en el espacio del kernel | en el espacio del usuario (utilizando [FUSE](/index.php/FUSE "FUSE")) |
+| Resumen | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") | [gocryptfs](/index.php/Gocryptfs "Gocryptfs") |
+| Tipo de cifrado | cifrado de dispositivos de bloques | cifrado de dispositivos de bloques | cifrado de dispositivos de bloques | cifrado de dispositivos de bloques | cifrado de sistemas de archivos apilados | cifrado de sistemas de archivos apilados | cifrado de sistemas de archivos apilados |
+| Nota | el más longevo; posiblemente el más rápido; funciona en sistemas antiguos | estándar de hecho para el cifrado de dispositivos de bloques en Linux; muy flexible | solución muy portable, bien pulida y controlada pero abandonada | bifurcación mantenida de TrueCrypt | ligeramente más rápido respecto a EncFS; cifra archivos singulares portables a otros sistemas | fácil de usar; permite la adminitración por usuario normal | aspiring successor of EncFS |
+| Disponibilidad en Arch Linux | necesita compilar manualmente un kernel personalizado | *módulos del kernel:* ya cargados por el kernel por defecto; *herramientas:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | *módulos del kernel:* ya cargados por el kernel por defecto; *herramientas:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) | [encfs](https://www.archlinux.org/packages/?name=encfs) | [gocryptfs](https://www.archlinux.org/packages/?name=gocryptfs) |
+| Licencia | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, partes sujetas a la licencia de TrueCrypt v3.0 | GPL | GPL | MIT |
+| Cifrado implementado en... | en el espacio del kernel | en el espacio del kernel | en el espacio del kernel | en el espacio del kernel | en el espacio del kernel | en el espacio del usuario (utilizando [FUSE](/index.php/FUSE "FUSE")) | en el espacio del usuario (utilizando [FUSE](/index.php/FUSE "FUSE")) |
 | Metadatos criptográficos almacedados en... | ? | con LUKS: en la cabecera de LUKS | al principio/final del dispositivo (descifrado) | al principio/final del dispositivo (descifrado) ([formato específico](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | en la cabecera de cada archivo cifrado | en el archivo de control al principio de cada contenedor EncFs |
 | Clave de cifrado almacenada en... | ? | con LUKS: encabezado LUKS | al principio/final del dispositivo | al principio/final del dispositivo ([formato específico](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | el archivo de claves se puede almacenar en cualquier lugar | el archivo de claves se puede almacenar en cualquier lugar
 
 [[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831)
 
  |
-| Características de usabilidad | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| Los usuarios normales pueden crear/eliminar los contenedores para datos cifrados | ✘ | ✘ | ✘ | ✘ | limitada | ✔ |
+| Características de usabilidad | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs |
+| Los usuarios normales pueden crear/eliminar los contenedores para datos cifrados | ✘ | ✘ | ✘ | ✘ | limitada | ✔ | ✔ |
 | Proporciona una interfaz gráfica | ✘ | ✘ | ✔ | ✔ | ✘ | ✔
 
 [opcional](/index.php/EncFS#Gnome_Encfs_Manager "EncFS")
 
- |
+ | ✘ |
 | Soporte para montarse automáticamente al iniciar sesión | ? | ✔ | ✔
 
 con [systemd y /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fcrypttab "TrueCrypt")
@@ -177,11 +179,13 @@ con [systemd y /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fc
 con [systemd y /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fcrypttab "TrueCrypt")
 
  | ✔ | ✔ |
-| Soporte para desmontarse automáticamente en caso de inactividad | ? | ? | ? | ? | ? | ✔ |
-| Características de seguridad | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| Algoritmos de cifrado soportados | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (cada algoritmo de cifrado es ofrecido por el Crypto API del kernel) | AES, Twofish, Serpent | AES, Twofish, Serpernt, Camellia, Kuznyechik | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, y cualquier otro algoritmo de cifrado disponible en el sistema |
+| Soporte para desmontarse automáticamente en caso de inactividad | ? | ? | ? | ? | ? | ✔ | ? |
+| Características de seguridad | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs |
+| Algoritmos de cifrado soportados | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (cada algoritmo de cifrado es ofrecido por el Crypto API del kernel) | AES, Twofish, Serpent | AES, Twofish, Serpernt, Camellia, Kuznyechik | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, y cualquier otro algoritmo de cifrado disponible en el sistema | AES |
+| Integridad | ninguna | opcional en LUKS2 | ninguna | ninguna | ninguna | ninguna (modo por defecto)
+HMAC (modo paranoia) | GCM |
 | Soporte para salting | ? | ✔
-(con LUKS) | ✔ | ✔ | ✔ | ? |
+(con LUKS) | ✔ | ✔ | ✔ | ? | ✔ |
 | Soporte para múltiples sistemas de cifrado en cascada | ? | No en un solo dispositivo, pero permite conectarse a dispositivos de bloques en cascada | ✔
 
 AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serpent
@@ -190,47 +194,45 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 
 AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serpent
 
- | ? | ✘ |
+ | ? | ✘ | ✘ |
 | Soporte para la difusión del key-slot | ? | ✔
-(con LUKS) | ? | ? | ? | ? |
+(con LUKS) | ? | ? | ? | ? | ? |
 | Protección contra el forzado de clave | ✔ | ✔
-(sin LUKS) | ? | ? | ? | ? |
+(sin LUKS) | ? | ? | ? | ? | ? |
 | Soporte para múltiples claves (revocables independientemente) para los mismos datos cifrados | ? | ✔
 (con LUKS) | ? | ? | ? | ✘ |
-| Características de rendimiento | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+| Características de rendimiento | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs |
 | Soporte [multithreading](https://en.wikipedia.org/wiki/es:Multihilo "wikipedia:es:Multihilo") | ? | ✔
-[[3]](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c) | ✔ | ✔ | ? | ? |
+[[3]](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c) | ✔ | ✔ | ? | ? | ✔ |
 | Soporte para cifrado de hardware acelerado | ✔ | ✔ | ✔ | ✔ | ✔ | ✔
-[[4]](https://github.com/vgough/encfs/issues/118) |
+[[4]](https://github.com/vgough/encfs/issues/118) | ✔ |
 | Específico del cifrado de dispositivos de bloques | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt |
-| Soporte para redimensionar (manualmente) el dispositivo de bloque cifrado in situ | ? | ✔ | ✘ | ✘ |
-| Específico del cifrado de sistemas de archivos apilados | eCryptfs | EncFs |
+| Soporte para redimensionar (manualmente) el dispositivo de bloque cifrado in situ | ? | ✔ | ✘ | ✘ | ✘ |
+| Específico del cifrado de sistemas de archivos apilados | eCryptfs | EncFs | gocryptfs |
 | Sistemas de archivos soportados | ext3, ext4, xfs (con salvedades), jfs, nfs... | ext3, ext4, xfs (con salvedades), jfs, nfs, cifs...
 
 [[5]](https://github.com/vgough/encfs)
 
- |
-| Capacidad para cifrar los nombres de los archivos | ✔ | ✔ |
-| Capacidad para *no* cifrar los nombres de los archivos | ✔ | ✔ |
-| Optimizado para el manejo de archivos dispersos | ✘ | ✔ |
-| compatibilidad y prevalencia | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| Versiones del kernel de Linux que lo soportan | 2.0 o posterior | modalidad CBC a partir de 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | ? | 2.4 o posterior |
-| Los datos cifrados también pueden ser leídos desde Windows | ✔
-(con [CrossCrypt](https://en.wikipedia.org/wiki/CrossCrypt "wikipedia:CrossCrypt"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ?
-(with [FreeOTFE](https://en.wikipedia.org/wiki/es:FreeOTFE "wikipedia:es:FreeOTFE"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ✔ | ✔ | ? | ?
-[[6]](http://members.ferrara.linux.it/freddy77/encfs.html) |
+ | cualquiera |
+| Capacidad para cifrar los nombres de los archivos | ✔ | ✔ | ✔ |
+| Capacidad para *no* cifrar los nombres de los archivos | ✔ | ✔ | ✘ |
+| Optimizado para el manejo de archivos dispersos | ✘ | ✔ | ✔ |
+| compatibilidad y prevalencia | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs | gocryptfs |
+| Versiones del kernel de Linux que lo soportan | 2.0 o posterior | modalidad CBC a partir de 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | ? | ? | 2.4 o posterior |
+| Los datos cifrados también pueden ser leídos desde Windows | ? | ? | ✔ | ✔ | ? | ✔
+[[6]](https://github.com/vgough/encfs/wiki/Windows) | ✔ (puerto cppcryptfs |
 | Los datos cifrados también pueden ser leídos desde Mac OS X | ? | ? | ✔ | ✔ | ? | ✔
-[[7]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) |
+[[7]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) | ✔ (beta quality) |
 | Los datos cifrados también pueden ser leídos desde FreeBSD | ? | ? | ✔
 
 (con VeraCrypt)
 
  | ✔
  | ? | ✔
-[[8]](http://www.freshports.org/sysutils/fusefs-encfs/) |
+[[8]](http://www.freshports.org/sysutils/fusefs-encfs/) | ? |
 | Utilizado por | ? | Instalador de Debian/Ubuntu (cifrado del sistema)
 Instalador de Fedora | ? | ? | Instalador de Ubuntu (cifrado del directorio home)
-Chromium OS (cifrado de los datos del usuario en la memoria caché [[9]](https://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)) | ? |
+Chromium OS (cifrado de los datos del usuario en la memoria caché [[9]](https://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)) | ? | ? |
 
 1.  Un solo archivo en esos sistemas de archivos podría usarse como un contenedor (dispositivo loop virtual) pero en realidad uno ya no estaría usando el sistema de archivos (y las características que proporciona)
 
@@ -346,7 +348,7 @@ El segundo objetivo solo tiene sentido en combinación con el cifrado de disposi
 
 Una vez que haya decidido qué tipo de borrado de disco desea realizar, remítase al artículo [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk") para conocer instrucciones más técnicas.
 
-**Sugerencia:** Al decidir qué método utilizar para el borrado seguro de una unidad de disco duro, recuerde que esto no será necesario realizarlo más que una vez durante el tiempo que la unidad se utiliza como una unidad cifrada.
+**Sugerencia:** al decidir qué método utilizar para el borrado seguro de una unidad de disco duro, recuerde que esto no será necesario realizarlo más que una vez durante el tiempo que la unidad se utiliza como una unidad cifrada.
 
 ## Cómo funciona el cifrado
 

@@ -60,6 +60,12 @@ Alias /phppgadmin "/usr/share/webapps/phppgadmin"
     AllowOverride All
     Options FollowSymlinks
     Require all granted
+
+    # phppgadmin raises deprecated warnings that lead
+    # to parsing errors in JS
+    php_flag display_startup_errors off
+    php_flag display_errors off
+    php_flag html_errors off
 </Directory>
 
 ```

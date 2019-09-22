@@ -4,7 +4,11 @@
 
 In other words, DokuWiki is a wiki written in PHP and requires no database.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Initial notes](#Initial_notes)
 *   [2 Installation](#Installation)
@@ -94,7 +98,7 @@ Include conf/extra/dokuwiki.conf
 
 ```
 
-Make sure the folders `/etc/webapps/dokuwiki` and `/var/lib/dokuwiki` are owned by user and group "http". You may relocate these directories if you like as long as you update the references in `/etc/httpd/conf/extra/dokuwiki.conf` respectively.
+Make sure the folders `/etc/webapps/dokuwiki` and `/var/lib/dokuwiki` are owned by user and group "http". You may relocate these directories if you like as long as you update the references in `/etc/httpd/conf/extra/dokuwiki.conf` respectively. You should keep the reference to `/var/lib/dokuwiki/` for DokuWiki to find the plugins and tpl folder.
 
 Afterwards restart Apache:
 

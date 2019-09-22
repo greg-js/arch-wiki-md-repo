@@ -1,13 +1,17 @@
 Tento článek obsahuje pár triků, pomocí kterých můžete zrychlit boot vašeho systému.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Úprava bootovacích souborů](#.C3.9Aprava_bootovac.C3.ADch_soubor.C5.AF)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Úprava bootovacích souborů](#Úprava_bootovacích_souborů)
     *   [1.1 Mkinitcpio.conf](#Mkinitcpio.conf)
     *   [1.2 Rc.conf](#Rc.conf)
     *   [1.3 Rc.sysinit](#Rc.sysinit)
     *   [1.4 Inittab](#Inittab)
-*   [2 Kompilace jádra](#Kompilace_j.C3.A1dra)
+*   [2 Kompilace jádra](#Kompilace_jádra)
     *   [2.1 General Setup](#General_Setup)
     *   [2.2 Loadable Module Support](#Loadable_Module_Support)
     *   [2.3 Block Layer](#Block_Layer)

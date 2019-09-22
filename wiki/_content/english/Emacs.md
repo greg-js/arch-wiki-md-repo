@@ -254,7 +254,7 @@ $ setxkbmap -option 'ctrl:swapcaps'
 
 To set this permanently, consider adding it to your `.xinitrc` file.
 
-Now, if you ever need to upcase an region, just use the default `C-x C-u` keybinding, which calls the `upcase-region` function.
+Now, if you ever need to upcase a region, just use the default `C-x C-u` keybinding, which calls the `upcase-region` function.
 
 See [[1]](http://ergoemacs.org/emacs/swap_CapsLock_Ctrl.html) for an alternative approach.
 

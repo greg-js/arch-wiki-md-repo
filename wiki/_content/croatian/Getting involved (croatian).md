@@ -1,6 +1,10 @@
 U biologiji, mutualizam je interakcija između dvaju organizama od kojih svaki potječe korist. Ovo načelo također vrijedi i za proaktivne članova Arch zajednici koji žele da se uključe i doprinesu svojoj omiljenoj Linux distribuciji. To sudjelovanje ne koristi samo članu zajednice i njihovim Arch prijateljima, nego svim korisnicima besplatnog i open source softvera.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Službeni Arch Linux projekt](#Službeni_Arch_Linux_projekt)
     *   [1.1 Objave na forumima](#Objave_na_forumima)

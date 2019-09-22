@@ -44,7 +44,7 @@ You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/
 
 ## Installation
 
-[Install](/index.php/Install "Install") [munin](https://www.archlinux.org/packages/?name=munin) on the master machine and [munin-node](https://www.archlinux.org/packages/?name=munin-node) on the devices that you whish to monitor.
+[Install](/index.php/Install "Install") the [munin](https://www.archlinux.org/packages/?name=munin) package on the master machine and [munin-node](https://www.archlinux.org/packages/?name=munin-node) on the devices that you whish to monitor.
 
 You can also install them both on the same machine so that the master machine monitors itself.
 

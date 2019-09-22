@@ -11,18 +11,22 @@
 
 本文将为读者提供数种加速系统启动的方法。通过学习实践这些方法，读者不仅能改善系统性能，还能学习系统启动脚本的知识。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 启动过程分析](#.E5.90.AF.E5.8A.A8.E8.BF.87.E7.A8.8B.E5.88.86.E6.9E.90)
-    *   [1.1 使用 systemd-analyze](#.E4.BD.BF.E7.94.A8_systemd-analyze)
-    *   [1.2 使用 systemd-bootchart](#.E4.BD.BF.E7.94.A8_systemd-bootchart)
-    *   [1.3 使用 bootchart2](#.E4.BD.BF.E7.94.A8_bootchart2)
-*   [2 自己编译内核](#.E8.87.AA.E5.B7.B1.E7.BC.96.E8.AF.91.E5.86.85.E6.A0.B8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 启动过程分析](#启动过程分析)
+    *   [1.1 使用 systemd-analyze](#使用_systemd-analyze)
+    *   [1.2 使用 systemd-bootchart](#使用_systemd-bootchart)
+    *   [1.3 使用 bootchart2](#使用_bootchart2)
+*   [2 自己编译内核](#自己编译内核)
 *   [3 Early start for services](#Early_start_for_services)
 *   [4 Staggered spin-up](#Staggered_spin-up)
-*   [5 避免重复挂载](#.E9.81.BF.E5.85.8D.E9.87.8D.E5.A4.8D.E6.8C.82.E8.BD.BD)
-*   [6 精简输出信息](#.E7.B2.BE.E7.AE.80.E8.BE.93.E5.87.BA.E4.BF.A1.E6.81.AF)
-*   [7 参阅](#.E5.8F.82.E9.98.85)
+*   [5 避免重复挂载](#避免重复挂载)
+*   [6 精简输出信息](#精简输出信息)
+*   [7 参阅](#参阅)
 
 ## 启动过程分析
 

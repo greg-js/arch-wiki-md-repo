@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Čo je to Arch Linux?](#Čo_je_to_Arch_Linux?)
 *   [2 Výhody](#Výhody)

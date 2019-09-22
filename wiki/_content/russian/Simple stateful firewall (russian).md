@@ -6,7 +6,9 @@
 *   [Router](/index.php/Router "Router")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-В этой статье рассмотрена настройка межсетевого экрана с хранением состояния ([stateful firewall](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")) посредством [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"), с описанием основных правил и их назначения. Статья разбита на две части. В первой объяснена настройка межсетевого экрана [на одиночной машине](#Межсетевой_экран_для_одиночной_машины), во второй — [настройка NAT-шлюза](#Настройка_NAT-шлюза) в дополнение к файрволу.
+**Состояние перевода:** На этой странице представлен перевод статьи [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"). Дата последней синхронизации: 21 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=579834).
+
+В этой статье рассмотрена настройка простого межсетевого экрана с контекстной фильтрацией ([stateful firewall](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")) посредством [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)"), с описанием основных правил и их назначения. Статья разбита на две части. В первой объяснена настройка межсетевого экрана [на одиночной машине](#Межсетевой_экран_для_одиночной_машины), во второй — [настройка NAT-шлюза](#Настройка_NAT-шлюза) в дополнение к файрволу.
 
 **Важно:** Описанные ниже правила даны в порядке их выполнения, такая настройка возможна только при локальном входе в систему. Если вы вошли в систему удалённо, то в процессе установки правил соединение с ней будет потеряно. Чтобы обойти эту проблему, воспользуйтесь [готовым файлом настроек](#Итоговый_файл_iptables.rules).
 
@@ -39,7 +41,7 @@
     *   [2.11 Сохранение правил](#Сохранение_правил)
     *   [2.12 Итоговый файл ip6tables.rules](#Итоговый_файл_ip6tables.rules)
 *   [3 Настройка NAT-шлюза](#Настройка_NAT-шлюза)
-    *   [3.1 Таблица фильтров](#Таблица_фильтров)
+    *   [3.1 Таблица filter](#Таблица_filter)
         *   [3.1.1 Создание необходимых цепочек](#Создание_необходимых_цепочек)
         *   [3.1.2 Цепочка FORWARD](#Цепочка_FORWARD_2)
         *   [3.1.3 Цепочки fw-interfaces и fw-open](#Цепочки_fw-interfaces_и_fw-open)
@@ -95,11 +97,11 @@ num   pkts bytes target     prot opt in     out     source               destina
 
 ## Межсетевой экран для одиночной машины
 
-**Note:** Because iptables processes rules in linear order, from top to bottom within a chain, it is advised to put frequently-hit rules near the start of the chain. Of course there is a limit, depending on the logic that is being implemented. Also, rules have an associated runtime cost, so rules should not be reordered solely based upon empirical observations of the byte/packet counters.
+**Примечание:** Поскольку iptables проверяет правила в цепочке последовательно, сверху вниз, то имеет смысл переместить часто срабатывающие правила ближе к её началу. Разумеется, этот подход имеет свои ограничения, в зависимости от реализуемой логики. Кроме того, поскольку правила имеют определённую стоимость выполнения, не стоит изменять их порядок исключительно на основе эмпирических наблюдений за счётчиком байт/пакетов.
 
 ### Создание неоходимых цепочек
 
-For this basic setup, we will create two user-defined chains that we will use to open up ports in the firewall.
+Создадим две пользовательские цепочки, которые будут использоваться для открытия портов.
 
 ```
 # iptables -N TCP
@@ -107,11 +109,11 @@ For this basic setup, we will create two user-defined chains that we will use to
 
 ```
 
-The chains can of course have arbitrary names. We pick these just to match the protocols we want handle with them in the later rules, which are specified with the protocol options, e.g. `-p tcp`, always.
+В дальнейшем при назначений правил для этих цепочек мы будем всякий раз указывать тип протокола (например, добавив флаг `-p tcp`). Этим обусловлен выбор названий цепочек, но вообще говоря, названия могут быть любыми.
 
 ### Цепочка FORWARD
 
-If you want to set up your machine as a NAT gateway, please look at [#Setting up a NAT gateway](#Setting_up_a_NAT_gateway). For a single machine, however, we simply set the policy of the **FORWARD** chain to **DROP** and move on:
+Если вы хотите настроить свою систему в качестве NAT-шлюза, изучите раздел [#Настройка NAT-шлюза](#Настройка_NAT-шлюза). Для одиночной же системы можно для цепочки **FORWARD** ограничиться назначением политики **DROP**:
 
 ```
 # iptables -P FORWARD DROP
@@ -120,7 +122,7 @@ If you want to set up your machine as a NAT gateway, please look at [#Setting up
 
 ### Цепочка OUTPUT
 
-We have no intention of filtering any outgoing traffic, as this would make the setup much more complicated and would require some extra thought. In this simple case, we set the **OUTPUT** policy to **ACCEPT**.
+Поскольку фильтрация исходящих пакетов нас в данном случае не интересует, да и настраивается она достаточно сложно, для цепочки **OUTPUT** назначаем политику **ACCEPT**.
 
 ```
 # iptables -P OUTPUT ACCEPT
@@ -129,57 +131,55 @@ We have no intention of filtering any outgoing traffic, as this would make the s
 
 ### Цепочка INPUT
 
-Similar to the previous chains, we set the default policy for the **INPUT** chain to **DROP** in case something somehow slips by our rules. Dropping all traffic and specifying what is allowed is the best way to make a secure firewall.
-
-**Warning:** If you are logged in via SSH, the following will immediately disconnect the SSH session. To avoid it: (1) add the first INPUT chain rule below (it will keep the session open), (2) add a regular rule to allow inbound SSH (to be able to reconnect in case of a connection drop) and (3) set the policy.
+Назначаем политику **DROP** для цепочки **INPUT** на случай, если что-то каким-то образом проскочит мимо наших правил. Лучший способ создать надёжный файрвол — запретить весь трафик, отдельно указав то, что разрешено.
 
 ```
 # iptables -P INPUT DROP
 
 ```
 
-Every packet that is received by any network interface will pass the **INPUT** chain first, if it is destined for this machine. In this chain, we make sure that only the packets that we want are accepted.
+**Важно:** Если вы вошли в систему через SSH, этот шаг немедленно разорвёт SSH-сессию. Чтобы этого избежать: (1) сперва добавьте цепочку правил INPUT из следующего примера (это позволит сохранить существующее соединение), (2) добавьте обычное правило, разрешающее входящее SSH-подключение (чтобы иметь возможность восстановить соединение в случае потери связи) и (3) настройте политику, как предложено выше.
 
-The first rule added to the INPUT chain will allow traffic that belongs to established connections, or new valid traffic that is related to these connections such as ICMP errors, or echo replies (the packets a host returns when pinged). **ICMP** stands for **Internet Control Message Protocol**. Some ICMP messages are very important and help to manage congestion and MTU, and are accepted by this rule.
+Все входящие пакеты, пришедшие на любой сетевой интерфейс данной машины, будут проходить через цепочку INPUT. Следует назначить правила таким образом, чтобы межсетевой экран пропускал только те пакеты, которые нам нужны.
 
-The connection state `ESTABLISHED` implies that either another rule previously allowed the initial (`--ctstate NEW`) connection attempt or the connection was already active (for example an active remote SSH connection) when setting the rule:
+Первое правило цепочки INPUT будет разрешать трафик установленных соединений и любой новый трафик, относящийся к ним, например, сообщения ICMP об ошибке или эхо-ответы (пакеты, которые хост возвращает, когда его пингуют). ICMP — протокол управляющих сообщений (Internet Control Message Protocol). Некоторые сообщения ICMP имеют важное значение для управления перегрузками и определения [MTU](https://en.wikipedia.org/wiki/ru:Maximum_transmission_unit "wikipedia:ru:Maximum transmission unit"), и мы разрешаем их этим правилом:
 
 ```
 # iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 
 ```
 
-The second rule will accept all traffic from the "loopback" (lo) interface, which is necessary for many applications and services.
+Состояние соединения `ESTABLISHED` подразумевает одну из двух ситаций: либо первичная (`--ctstate NEW`) попытка соединения была одобрена ранее другим правилом, либо соединение уже было активно (например, удалённое SSH-подключение) на момент задания правила.
 
-**Note:** You can add more trusted interfaces here such as "eth1" if you do not want/need the traffic filtered by the firewall, but be warned that if you have a NAT setup that redirects any kind of traffic to this interface from anywhere else in the network (let's say a router), it will get through, regardless of any other settings you may have.
+Второе правило разрешит весь трафик от петлевого (loopback) интерфейса, который необходим многим приложениям и службам:
 
 ```
 # iptables -A INPUT -i lo -j ACCEPT
 
 ```
 
-The third rule will drop all traffic with an "INVALID" state match. Traffic can fall into four "state" categories: NEW, ESTABLISHED, RELATED or INVALID and this is what makes this a "stateful" firewall rather than a less secure "stateless" one. States are tracked using the "nf_conntrack_*" kernel modules which are loaded automatically by the kernel as you add rules.
+**Примечание:** Вы можете добавить другие интерфейсы (например, "enp2s0") в список доверенных, если не желаете, чтобы какая-то часть трафика фильтровалась файрволом; но имейте в виду, что если NAT настроен перенаправлять весь трафик из любого места сети (скажем, от маршрутизатора) к этому интерфейсу, то он пройдет мимо всех настроек, которые вы сделали.
 
-**Note:**
-
-*   This rule will drop all packets with invalid headers or checksums, invalid TCP flags, invalid ICMP messages (such as a port unreachable when we did not send anything to the host), and out of sequence packets which can be caused by sequence prediction or other similar attacks. The "DROP" target will drop a packet without any response, contrary to REJECT which politely refuses the packet. We use DROP because there is no proper "REJECT" response to packets that are INVALID, and we do not want to acknowledge that we received these packets.
-*   ICMPv6 Neighbor Discovery packets remain untracked, and will always be classified "INVALID" though they are not corrupted or the like. Keep this in mind, and accept them before this rule! iptables -A INPUT -p 41 -j ACCEPT
+Третье правило будет отбрасывать все пакеты с состоянием INVALID. Существует четыре категории состояния (state): NEW, ESTABLISHED, RELATED и INVALID. Именно наличие категорий отличает межсетевой экран с контекстной фильтрацией от менее безопасного экрана без неё. Состояния отслеживаются посредством модулей ядра `nf_conntrack_*`, которые загружаются автоматически после добавления правил.
 
 ```
 # iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
 
 ```
 
-The next rule will accept all new incoming **ICMP echo requests**, also known as pings. Only the first packet will count as NEW, the others will be handled by the RELATED, ESTABLISHED rule. Since the computer is not a router, no other ICMP traffic with state NEW needs to be allowed.
+**Примечание:**
+
+*   Это правило будет отбрасывать все пакеты с неверными заголовками или контрольными суммами, неверными флагами TCP, неправильными ICMP-сообщениями (например, входящее сообщение "порт недостижим", если мы не посылали ничего другому хосту), а также пакеты без очереди, которые могут быть результатом попыток угадывания последовательности или схожих атак. Политика DROP означает отбрасывание пакетов безо всякого ответа, в то время как REJECT отклоняет их вежливо, с уведомлением отправителя. Мы используем DROP, поскольку нет подходящего ответа REJECT для INVALID-пакетов и мы не хотим подтверждать их получение.
+*   Пакеты протокола обнаружения соседей ICMPv6 остаются неотслеживаемыми и всегда классифицируются как INVALID, хотя они по всем параметрам являются годными. Следует иметь это в виду и разрешить их перед предыдущим правилом командой `iptables -A INPUT -p 41 -j ACCEPT`.
+
+Следующее правило разрешает все новые входящие ICMP эхо запросы (ECHO_REQUEST), также известные как ping. Только первый пакет будет считаться относящимся к категории NEW, остальные будут обрабатываться правилом "RELATED, ESTABLISHED". Если компьютер не является маршрутизатором, нет необходимости разрешать какой-либо другой ICMP-трафик с состоянием NEW.
 
 ```
 # iptables -A INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
 
 ```
 
-Now we attach the TCP and UDP chains to the INPUT chain to handle all new incoming connections. Once a connection is accepted by either TCP or UDP chain, it is handled by the RELATED/ESTABLISHED traffic rule. The TCP and UDP chains will either accept new incoming connections, or politely reject them. New TCP connections must be started with SYN packets.
-
-**Note:** NEW but not SYN is the only invalid TCP flag not covered by the INVALID state. This is because they are rarely malicious packets and should not just be dropped. Instead, they are simply rejected with a TCP RESET by the next rule.
+Теперь мы прикрепим TCP- и UDP-цепочки к цепочке INPUT для обработки всех новых входящих соединений. Если соединение разрешено цепочкой TCP или UDP, оно обрабатывается правилом "RELATED, ESTABLISHED". TCP или UDP цепочки будут либо разрешать новые входящие соединения, либо вежливо отклонять их. Новые TCP соединения должны начинаться с SYN-сегмента.
 
 ```
 # iptables -A INPUT -p udp -m conntrack --ctstate NEW -j UDP
@@ -187,7 +187,9 @@ Now we attach the TCP and UDP chains to the INPUT chain to handle all new incomi
 
 ```
 
-We reject TCP connections with TCP RESET packets and UDP streams with ICMP port unreachable messages if the ports are not opened. This imitates default Linux behavior (RFC compliant), and it allows the sender to quickly close the connection and clean up.
+**Примечание:** NEW-соединение, начинающееся не с SYN-сегмента — единственный неверный флаг для протокола TCP, который не описывается состоянием INVALID. Это связано с тем, что данные пакеты редко бывают вредоносными и нет смысла просто их отбрасывать (drop). Вместо этого они отклоняются (reject) с сообщением TCP RESET в соответствии со следующим правилом.
+
+Мы отклоняем TCP-соединения пакетами TCP RESET, а UDP-потоки — сообщениями ICMP "port unreachable", если запрашиваемый порт закрыт. Это имитирует поведение Linux по умолчанию (в соответствии с RFC), и позволяет отправителю быстро закрыть соединение.
 
 ```
 # iptables -A INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
@@ -195,7 +197,7 @@ We reject TCP connections with TCP RESET packets and UDP streams with ICMP port 
 
 ```
 
-For other protocols, we add a final rule to the INPUT chain to reject all remaining incoming traffic with icmp protocol unreachable messages. This imitates Linux's default behavior.
+Для других протоколов мы добавляем последнее правило в цепочку INPUT, чтобы отклонить остальной входящий трафик с ICMP-сообщением "protocol unreachable". Это также соответствует поведению Linux по умолчанию.
 
 ```
 # iptables -A INPUT -j REJECT --reject-with icmp-proto-unreachable
@@ -204,7 +206,7 @@ For other protocols, we add a final rule to the INPUT chain to reject all remain
 
 ### Итоговый файл iptables.rules
 
-Example of `iptables.rules` file after running all the commands from above:
+Пример файла `iptables.rules` после выполнения всех команд, описанных выше:
 
  `/etc/iptables/iptables.rules` 
 ```
@@ -229,14 +231,14 @@ COMMIT
 
 ```
 
-This file can be generated and saved with:
+Файл генерируется и сохраняется командой
 
 ```
 # iptables-save -f /etc/iptables/iptables.rules
 
 ```
 
-and can be used to continue with the following sections. If you are setting up the firewall remotely via SSH, append the following rule to allow new SSH connections before continuing (adjust port as required):
+Данный файл конфигурации можно использовать как исходный для дальнейших настроек в следующих разделах. Если вы настраиваете межсетевой экран удалённо через SSH, перед продолжением добавьте правило, разрешающее новые SSH-подключения (вместо порта 22 можно выбрать нужный):
 
 ```
 -A TCP -p tcp --dport 22 -j ACCEPT
@@ -245,34 +247,34 @@ and can be used to continue with the following sections. If you are setting up t
 
 ### Цепочки TCP и UDP
 
-The TCP and UDP chains contain rules for accepting new incoming TCP connections and UDP streams to specific ports.
+Цепочки TCP и UDP содержат правила для разрешения новых TCP-соединений и UDP-потоков к определённым портам.
 
-**Note:** This is where you need to add rules to accept incoming connections, such as SSH, HTTP or other services that you want to access remotely.
+**Примечание:** Также в эти цепочки можно добавлять правила для разрешения удалённых соединений, таких как SSH, HTTP и других служб, к которым вы желаете получить удалённый доступ.
 
 #### Открытие портов для входящих соединений
 
-To accept incoming TCP connections on port 80 for a web server:
+Разрешить входящие TCP-соединения на порт 80 для веб-сервера (HTTP):
 
 ```
 # iptables -A TCP -p tcp --dport 80 -j ACCEPT
 
 ```
 
-To accept incoming TCP connections on port 443 for a web server (HTTPS):
+Разрешить входящие TCP-соединения на порт 443 для веб-сервера (HTTPS):
 
 ```
 # iptables -A TCP -p tcp --dport 443 -j ACCEPT
 
 ```
 
-To allow remote SSH connections (on port 22):
+Разрешить удаленные SSH-соединения (на порт 22):
 
 ```
 # iptables -A TCP -p tcp --dport 22 -j ACCEPT
 
 ```
 
-To accept incoming TCP/UDP requests for a [DNS server](/index.php/DNS_server "DNS server") (port 53):
+Разрешить входящие TCP/UDP запросы для [DNS-сервера](/index.php/DNS_server "DNS server") (порт 53):
 
 ```
 # iptables -A TCP -p tcp --dport 53 -j ACCEPT
@@ -280,82 +282,80 @@ To accept incoming TCP/UDP requests for a [DNS server](/index.php/DNS_server "DN
 
 ```
 
-See [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) for more advanced rules, like matching multiple ports.
+Более сложные правила, вроде проверки по нескольким портам, можно найти в [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8).
 
 #### Port knocking
 
-Port knocking is a method to externally open ports that, by default, the firewall keeps closed. It works by requiring connection attempts to a series of predefined closed ports. When the correct sequence of port "knocks" (connection attempts) is received, the firewall opens certain port(s) to allow a connection. See [Port knocking](/index.php/Port_knocking "Port knocking") for more information.
+Port knocking — способ открыть извне порты, которые файрвол по умолчанию держит закрытыми. Принцип работы port knocking заключается в создании последовательности попыток соединений с заранее выбранными закрытыми портами. При получении корректной последовательности "простукиваний" межсетевой экран открывает определенный порт и разрешает соединение. Подробная информация дана в статье [Port knocking](/index.php/Port_knocking "Port knocking").
 
 ### Защита от спуфинга
 
-**Note:** `rp_filter` is currently set to `2` by default in `/usr/lib/sysctl.d/50-default.conf`, so the following step is not necessary.
+**Примечание:** В настоящее время параметру `rp_filter` в файле `/usr/lib/sysctl.d/50-default.conf` по умолчанию присвоено значение `2`, поэтому в описанных ниже действиях нет необходимости.
 
-Blocking reserved local addresses incoming from the internet or local network is normally done through setting `rp_filter` (Reverse Path Filter) in sysctl to 1\. To do so, add the following line to your `/etc/sysctl.d/90-firewall.conf` file (see [sysctl](/index.php/Sysctl "Sysctl") for details) to enable source address verification which is built into Linux kernel itself. The verification by the kernel will handle spoofing better than individual iptables rules for each case.
+Блокировка пришедших из внешней сети пакетов с локальным адресом отправителя (что говорит о подмене адреса, address spoofing), производится посредством встроенной в ядро Linux проверки. Добавьте следующую строку в файл `/etc/sysctl.d/90-firewall.conf` (подробную информацию можно найти в статье [sysctl](/index.php/Sysctl "Sysctl")):
 
 ```
 net.ipv4.conf.all.rp_filter=1
 
 ```
 
-This can be done with netfilter instead if statistics (and better logging) are desired:
+То же самое можно сделать посредством netfilter, если необходимо ведение статистики и лог-файлов:
 
 ```
 # iptables -t raw -I PREROUTING -m rpfilter --invert -j DROP
 
 ```
 
-**Note:** There is no reason to enable this in both places. The netfilter method is the modern choice and works with IPv6 too.
+**Примечание:** Включать эту функцию одновременно в двух местах не нужно. Реализованная в netfilter проверка вполне удовлетворительна и, кроме того, работает с адресами IPv6.
 
-For niche setups where asynchronous routing is used, the `rp_filter=2` sysctl option needs to be used instead. Passing the `--loose` switch to the `rpfilter` module will accomplish the same thing with netfilter.
+Для случая асинхронной маршрутизации нужно использовать опцию sysctl `rp_filter=2`. Добавление флага `--loose` к модулю `rpfilter` сделает то же самое посредством netfilter.
 
 ### Защита от обнаружения
 
-If you are running a desktop machine, it might be a good idea to block some incoming requests.
+Если вы хотите сделать вашу машину менее заметной в сети, хорошей идеей будет блокировать некоторые входящие запросы.
 
 #### Блокирование ping-запросов
 
-A 'Ping' request is an ICMP packet sent to the destination address to ensure connectivity between the devices. If your network works well, you can safely block all ping requests. It is important to note that this *does not* actually hide your computer — any packet sent to you is rejected, so you will still show up in a simple nmap "ping scan" of an IP range.
+Запрос "ping" представляет собой ICMP-пакет, посланный с целью убедиться, что между двумя хостами есть связь. Если сеть в порядке, вы можете безопасно блокировать все ping-запросы. Нужно отметить, что это не сделает ваш компьютер необнаружимым — каждый входящий пакет будет отклоняться, поэтому вы всё ещё будете видны при простом "ping-сканировании" по диапазону IP-адресов посредством [nmap](/index.php/Nmap "Nmap"). Кроме того, нужно иметь в виду, что эта элементарная "защита" усложнит вам жизнь случае возникновения необходимости отладки сети.
 
-This is rudimentary "protection" and makes life difficult when debugging issues in the future. This should only be done for educational purposes.
-
-To block echo requests, add the following line to your `/etc/sysctl.d/90-firewall.conf` file (see [sysctl](/index.php/Sysctl "Sysctl") for details):
+Чтобы заблокировать эхо-запросы (echo requests), добавьте следующую строку в файл `/etc/sysctl.d/90-firewall.conf` (подробную информацию можно найти в статье [sysctl](/index.php/Sysctl "Sysctl")):
 
 ```
 net.ipv4.icmp_echo_ignore_all = 1
 
 ```
 
-More information is in the iptables man page, or reading the docs and examples on the webpage [http://www.snowman.net/projects/ipt_recent/](http://www.snowman.net/projects/ipt_recent/)
+Больше сведений об этой защите вы найдёте в руководстве [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8), а также в документации и примерах на странице [http://www.snowman.net/projects/ipt_recent/](http://www.snowman.net/projects/ipt_recent/)
 
 #### Обман сканеров портов
 
-**Note:**
+Сканирование портов производится с целью обнаружения тех из них, которые открыты в настоящий момент. Это позволит атакующему определить запущенные на машине службы и подобрать к ним эксплойты.
 
-*   This opens you up to a form of [DoS](https://en.wikipedia.org/wiki/Denial-of-service_attack "wikipedia:Denial-of-service attack"). An attack can send packets with spoofed IPs and get them blocked from connecting to your services.
-*   This trick may block a legitimate IP address if some packets from this address to the destination port are regarded as INVALID by module conntrack. To avoid blacklisting, a workaround is to allow all packets directed to that particular destination port.
+Состояние INVALID в правилах iptables "позаботится" обо всех типах сканирования, за исключением сканирований UDP, ACK и SYN (флаги nmap `-sU`, `-sA` и `-sS` соответственно).
 
-Port scans are used by attackers to identify open ports on your computer. This allows them to identify and fingerprint your running services and possibly launch exploits against them.
+*ACK-сканирование* не используется для определения открытых портов, но зато покажет порты, защищённые межсетевым экраном. Подобно SYN-пакету в TCP-соединениях с состоянием NEW, каждый пакет ACK-сканирования будет отклонен с отправкой ответа TCP RESET по обратному адресу. Некоторые межсетевые экраны вместо этого просто отбрасывают такие пакеты, что позволяет атакующему определить действующие правила.
 
-The INVALID state rule will take care of every type of port scan except UDP, ACK and SYN scans (-sU, -sA and -sS in nmap respectively).
+Модуль **recent** поможет обмануть остальные типы сканирования портов. Он добавляет хосты к списку недавних соединений, который используется для обнаружения и блокирования попыток атак. Просмотреть списки недавних соединений можно в каталоге `/proc/net/xt_recent/`.
 
-*ACK scans* are not used to identify open ports, but to identify ports filtered by a firewall. Due to the SYN check for all TCP connections with the state NEW, every single packet sent by an ACK scan will be correctly rejected by a TCP RESET packet. Some firewalls drop these packets instead, and this allows an attacker to map out the firewall rules.
+**Примечание:** Использование модуля resent для защиты от сканирований может привести к тому, что:
 
-The recent module can be used to trick the remaining two types of port scans. The recent module is used to add hosts to a "recent" list which can be used to fingerprint and stop certain types of attacks. Current recent lists can be viewed in `/proc/net/xt_recent/`.
+*   Система станет уязвимой к разновидности [DoS-атаки](https://en.wikipedia.org/wiki/ru:DoS-%D0%B0%D1%82%D0%B0%D0%BA%D0%B0 "wikipedia:ru:DoS-атака"). Атакующий посылает пакеты с подменёными IP-адресами, чтобы добиться их блокировки вашими службами.
+*   Может оказаться заблокированным обычный IP-адрес, если несколько пакетов с этого адреса на порт получателя будут признаны INVALID модулем conntrack. Чтобы избежать занесения в чёрный список, следует разрешить все пакеты, поступающие на этот порт.
 
 ##### SYN-сканирование
 
-In a SYN scan, the port scanner sends a SYN (synchronization) packet to every port to initiate a TCP connection. Closed ports return a TCP RESET packet, or get dropped by a strict firewall, while open ports return a SYN ACK packet.
+При SYN-сканировании сканер портов посылает синхронизационные пакеты на каждый порт с целью создать TCP-соединение. Если порт закрыт, то возвращается ответ TCP RESET, межсетевой экран просто отбрасывает входящий пакет, а открытый порт возвращает ответ SYN ACK.
 
-The `recent` module can be used to keep track of hosts with rejected connection attempts and return a TCP RESET for any SYN packet they send to open ports as if the port was closed. If an open port is the first to be scanned, a SYN ACK will still be returned, so running applications such as ssh on non-standard ports is required for this to work consistently.
+Модуль `recent` может использоваться для отслеживания хостов с отклонёнными попытками соединения и возвращения ответа TCP RESET для каждого SYN-пакета, поступившего на открытый порт, как если бы порт был закрыт. Если открытый порт оказался первым в порядке сканирования, то будет возвращён ответ SYN ACK, поэтому приложения вроде ssh следует размещать на нестандартных портах.
 
-First, insert a rule at the top of the TCP chain. This rule responds with a TCP RESET to any host that got onto the `TCP-PORTSCAN` list in the past sixty seconds. The `--update` switch causes the recent list to be updated, meaning the 60 second counter is reset.
+Сначала добавьте правило в начало цепочки TCP. Это правило будет отвечать пакетом TCP RESET любому хосту, входившему в список `TCP-PORTSCAN` в течение последних 60 секунд. Флаг `--update` управляет периодическим обновлением списка.
 
 ```
 # iptables -I TCP -p tcp -m recent --update --rsource --seconds 60 --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
 
 ```
 
-Next, the rule for rejecting TCP packets need to be modified to add hosts with rejected packets to the `TCP-PORTSCAN` list.
+Затем необходимо модифицировать правило отклонения TCP-пакетов, чтобы добавлять все хосты с отклонёнными пакетами к списку `TCP-PORTSCAN`:
 
 ```
 # iptables -D INPUT -p tcp -j REJECT --reject-with tcp-reset
@@ -365,18 +365,18 @@ Next, the rule for rejecting TCP packets need to be modified to add hosts with r
 
 ##### UDP-сканирование
 
-UDP port scans are similar to TCP SYN scans except that UDP is a "connectionless" protocol. There are no handshakes or acknowledgements. Instead, the scanner sends UDP packets to each UDP port. Closed ports should return ICMP port unreachable messages, and open ports do not return a response. Since UDP is not a "reliable" protocol, the scanner has no way of knowing if packets were lost, and has to do multiple checks for each port that does not return a response.
+Сканирование UDP схоже со сканированием TCP SYN за исключением того факта, что UDP является протоколом без установления соединения. В нём нет "рукопожатий" и подтверждений. Вместо этого сканер посылает UDP-пакеты на каждый UDP-порт. Закрытые порты должны возвращать сообщение ICMP port unreachable, а открытые не возвращают ничего. Поскольку UDP — "ненадежный" протокол, у сканера нет возможности узнать о потере пакетов, поэтому он посылает серию запросов на каждый порт, с которого не вернулся ответ.
 
-The Linux kernel sends out ICMP port unreachable messages very slowly, so a full UDP scan against a Linux machine would take over 10 hours. However, common ports could still be identified, so applying the same countermeasures against UDP scans as SYN scans is a good idea.
+Ядро Linux посылает сообщения ICMP port unreachable довольно медленно, поэтому продолжительность полного UDP-сканирования может превысить 10 часов. Однако часто используемые порты проверяются гораздо быстрее, поэтому хорошей идеей будет применить контрмеры, аналогичные защите от SYN-сканирований.
 
-First, add a rule to reject packets from hosts on the `UDP-PORTSCAN` list to the top of the UDP chain.
+Сначала добавляем правило отклонения пакетов от хостов из списка `UDP-PORTSCAN` в начало цепочки UDP:
 
 ```
 # iptables -I UDP -p udp -m recent --update --rsource --seconds 60 --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
 
 ```
 
-Next, modify the reject packets rule for UDP:
+Затем модифицируем правило отклонения пакетов для UDP:
 
 ```
 # iptables -D INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
@@ -386,7 +386,7 @@ Next, modify the reject packets rule for UDP:
 
 ##### Восстановление последнего правила
 
-If either or both of the portscanning tricks above were used, the final default rule is no longer the last rule in the INPUT chain. It needs to be the last rule, or it would intercept the *trick port scanner* rules you just added, rendering them useless. Simply delete (-D) the rule, then add it again using append (-A), which will place it at the end of the chain.
+Если вы применили хотя бы один из способов защиты выше, бывшее последним правило цепочки INPUT более таковым не является. Теперь оно находится перед правилами защиты от сканирования и те по сути бесполезны. Просто удалите (`-D`) это правило, а затем добавьте его снова (`-A`), это переместит его в конец цепочки.
 
 ```
 # iptables -D INPUT -j REJECT --reject-with icmp-proto-unreachable
@@ -396,17 +396,17 @@ If either or both of the portscanning tricks above were used, the final default 
 
 ### Защита от других типов атак
 
-See the [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl") for relevant kernel parameters.
+В статье [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP/IP_stack_hardening "Sysctl") можно найти описание важных с точки зрения безопасности параметров ядра.
 
 #### Атака полным перебором
 
-Unfortunately, bruteforce attacks on services accessible via an external IP address are common. One reason for this is that the attacks are easy to perform with the many tools available. Fortunately, there are a number of ways to protect the services against them. One is the use of appropriate `iptables` rules which activate and blacklist an IP after a set number of packets attempt to initiate a connection. Another is the use of specialised daemons that monitor the logfiles for failed attempts and blacklist accordingly.
+Доступные по внешнему IP-адресу сервисы подвергаются атакам полным перебором довольно часто. Реализовать атаку этого типа несложно, а инструментарий — обширен и доступен. К счастью, существует несколько способов защиты от атак полным перебором. Первый способ заключается в создании правил `iptables`, которые заносят IP-адрес в чёрный список после нескольких попыток установить соединение. При втором способе защиты запускается специализированный демон, который отслеживает лог-файл на предмет неудачных попыток соединения.
 
-**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, with the knowledge of your IP address, the attacker can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
+**Важно:** Защита посредством занесения адресов в чёрный список остановит простые атаки, но она полагается на дополнительный демон и успешное логирование (в случае мощной атаки может закончиться свободное место разделе, содержащем каталог `/var` с лог-файлами). Кроме того, узнав ваш IP-адрес, атакующий может посылать пакеты с подменённым адресом отправителя, чтобы добиться вашей блокировки. Элегантное решение этой проблемы заключается в использовании [ключей SSH](/index.php/SSH_keys "SSH keys").
 
-Two packages that ban IPs after too many password failures are [Fail2ban](/index.php/Fail2ban "Fail2ban") or, for `sshd` in particular, [Sshguard](/index.php/Sshguard "Sshguard"). These two applications update iptables rules to reject temporarily or permanently future connections from attackers.
+Приложения [Fail2ban](/index.php/Fail2ban_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fail2ban (Русский)") и (в случае `sshd`) [Sshguard](/index.php/Sshguard "Sshguard") используются для блокировки IP-адресов при превышении допустимого количества попыток аутентификации. Суть их работы состоит в обновлении правил iptables с целью временно или навсегда воспрепятствовать будущим соединениям атакующих.
 
-The following rules give an example configuration to mitigate SSH bruteforce attacks using `iptables`.
+Ниже представлен пример правил iptables для предотвращения атак полным перебором на сервис SSH.
 
 ```
 # iptables -N IN_SSH
@@ -417,11 +417,11 @@ The following rules give an example configuration to mitigate SSH bruteforce att
 
 ```
 
-Most of the rules should be self-explanatory: the first one allows for a maximum of three connection packets in ten seconds and drops further attempts from this IP. The next rule adds a quirk by allowing a maximum of four hits in 30 minutes. This is done because some bruteforce attacks are actually performed slow and not in a burst of attempts. The rules employ a number of additional options. To read more about them, check the original reference for this example in [compilefailure.blogspot.com](http://compilefailure.blogspot.com/2011/04/better-ssh-brute-force-prevention-with.html)
+Большая часть правил очевидна: первое разрешает три попытки соединения в течение 10 секунд, после чего дальнейшие попытки будут отклоняться. Второе — добавляет ограничение на четыре попытки в течение получаса. Дело в том, что атаки полным перебором обычно выполняются медленно и за несколько серий попыток. Дополнительную информацию об этих правилах и их опциях можно найти в оригинальной статье на сайте [compilefailure.blogspot.com](http://compilefailure.blogspot.com/2011/04/better-ssh-brute-force-prevention-with.html).
 
-The above rules can be used to protect any service, though the SSH daemon is probably the most often required one.
+Предложенные выше правила могут использоваться для защиты любой службы, но демон SSH нуждается в ней наиболее часто.
 
-In terms of order, one must ensure that `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` is at the right position in the iptables sequence: it should come before the TCP chain is attached to INPUT in order to catch new SSH connections first. If all the previous steps of this wiki have been completed, the following positioning works:
+Необходимо также убедиться, что правило `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` находится в верной позиции в последовательности iptables, перед точкой прикрепления цепочки TCP к цепочке INPUT. Это позволит успешно перехватывать новые попытки установления SSH-соединений. Если вы выполнили все предыдущие шаги в этой статье, порядок правил должен быть следующим:
 
 ```
 ...
@@ -434,47 +434,47 @@ In terms of order, one must ensure that `-A INPUT -p tcp --dport ssh -m conntrac
 
 ```
 
-**Tip:** For self-testing the rules after setup, the actual blacklisting can slow the test, making it difficult to fine-tune parameters. One can watch the incoming attempts via `cat /proc/net/xt_recent/sshbf`. To unblock the own IP during testing, root is needed `# echo / > /proc/net/xt_recent/sshbf`
+**Совет:** При проверке правил после настройки реальное занесение в чёрный список может замедлить тесты, что усложнит тонкую настройку. Входящие попытки соединений можно отслеживать посредством команды `cat /proc/net/xt_recent/sshbf`. Чтобы разблокировать собственный IP-адрес во время тестирования, вам понадобятся права root: `# echo / > /proc/net/xt_recent/sshbf`.
 
 ### IPv6
 
-If you do not use IPv6, you can consider [disabling it](/index.php/Disabling_IPv6 "Disabling IPv6"), otherwise follow these steps to enable the IPv6 firewall rules.
+Если вы не используете протокол IPv6, то лучше будет его [отключить](/index.php/Disabling_IPv6 "Disabling IPv6"). В противном случае стоит создать соответствующий набор правил межсетевого экрана.
 
-Copy the IPv4 rules used in this example as a base, and change any IPs from IPv4 format to IPv6 format:
+Скопируйте созданные ранее правила для протокола IPv4 и замените все IPv4-адреса на адреса формата IPv6:
 
 ```
 # cp /etc/iptables/iptables.rules /etc/iptables/ip6tables.rules
 
 ```
 
-A few of the rules in this example have to be adapted for use with IPv6\. The ICMP protocol has been updated in IPv6, replacing the ICMP protocol for use with IPv4\. Hence, the reject error return codes `--reject-with icmp-port-unreachable` and `--reject-with icmp-proto-unreachable` have to be converted to ICMPv6 codes.
+Некоторые правила нужно адаптировать под IPv6\. Так, для IPv6 используется обновлённая версия протокола ICMP, и коды ответов при отклонении соединений `--reject-with icmp-port-unreachable` и `--reject-with icmp-proto-unreachable` необходимо преобразовать в коды ICMPv6.
 
-The available ICMPv6 error codes are listed in [RFC 4443](https://tools.ietf.org/html/rfc4443#section-3.1), which specifies that connection attempts blocked by a firewall rule should use `--reject-with icmp6-adm-prohibited`. Doing so will basically inform the remote system that the connection was rejected by a firewall, rather than a listening service.
+Коды ошибок ICMPv6 перечислены в [RFC 4443](https://tools.ietf.org/html/rfc4443#section-3.1), согласно которому при блокировке межсетевым экраном попыток установления соединения необходимо использовать код `--reject-with icmp6-adm-prohibited`. Это проинформирует удалённую систему о том, что соединение было отклонено брандмауэром, а не прослушивающей порт службой.
 
-If it is preferred not to explicitly inform about the existence of a firewall filter, the packet may also be rejected without the message:
+Если уведомлять удалённую систему о наличии файрвола нежелательно, то можно отклонить пакет без сообщения:
 
 ```
  -A INPUT -j REJECT
 
 ```
 
-The above will reject with the default return error of `--reject-with icmp6-port-unreachable`. You should note though, that identifying a firewall is a basic feature of port scanning applications and most will identify it regardless.
+Отклонение пакетов по этому правилу будет производиться с сообщением об ошибке `--reject-with icmp6-port-unreachable`. Следует однако отметить, что одной из основных функций приложений-сканеров является как раз обнаружение межсетевых экранов и обмануть их этим правилом не получится.
 
-In the next step make sure the protocol and extension are changed to be IPv6 appropriate for the rule regarding all new incoming ICMP echo requests (pings):
+Следующее правило для протокола IPv6 настроит поведение межсетевого экрана по отношению к новым входящим пингам (ICMP echo requests):
 
 ```
 # ip6tables -A INPUT -p ipv6-icmp --icmpv6-type 128 -m conntrack --ctstate NEW -j ACCEPT
 
 ```
 
-Netfilter conntrack does not appear to track ICMPv6 Neighbor Discovery Protocol (the IPv6 equivalent of ARP), so we need to allow ICMPv6 traffic regardless of state for all directly attached subnets. The following should be inserted after dropping `--ctstate INVALID`, but before any other DROP or REJECT targets, along with a corresponding line for each directly attached subnet:
+Модуль conntrack не отслеживает действия ICMPv6 Neighbor Discovery Protocol (аналог протокола ARP), поэтому необходимо разрешить трафик ICMPv6 вне зависимости от его состояния для всех прилежащих подсетей. Следующее правило нужно вставить после правила отбрасывания некорректных пакетов `--ctstate INVALID`, но перед любыми другими правилами DROP или REJECT. Создаётся по одному правилу на каждую подсеть:
 
 ```
 # ip6tables -A INPUT -s fe80::/10 -p ipv6-icmp -j ACCEPT
 
 ```
 
-Since there is no kernel reverse path filter for IPv6, you may want to enable one in *ip6tables* with the following:
+Поскольку в ядре Linux нет встроенной фильтрации по обратному маршруту (reverse path filter) для протокола IPv6, то стоит включить её посредством ip6tables:
 
 ```
 # ip6tables -t raw -A PREROUTING -m rpfilter -j ACCEPT
@@ -484,9 +484,9 @@ Since there is no kernel reverse path filter for IPv6, you may want to enable on
 
 ### Сохранение правил
 
-The rule sets are now finished and should be saved to a file so that they can be loaded on every boot.
+Набор правил межсетевого экрана завершён и осталось только сохранить его в файл, который будет загружаться при каждом запуске системы.
 
-Save the IPv4 and IPv6 rules with these commands:
+Сохраняем правила IPv4 и IPv6 командами:
 
 ```
 # iptables-save -f /etc/iptables/iptables.rules
@@ -496,7 +496,7 @@ Save the IPv4 and IPv6 rules with these commands:
 
 ### Итоговый файл ip6tables.rules
 
-Example of `ip6tables.rules` file after running all the commands from above:
+Пример файла правил `ip6tables.rules` после выполнения представленных выше команд:
 
  `/etc/iptables/ip6tables.rules` 
 ```
@@ -522,17 +522,17 @@ COMMIT
 
 ```
 
-Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `iptables.service` and the `ip6tables.service`. Check the status of the services to make sure the rules are loaded correctly.
+В завершение [включите](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5 "Включите") и [запустите](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Запустите") службы `iptables.service` и `ip6tables.service`. Проверьте статус служб, чтобы убедиться, что правила загрузились корректно.
 
 ## Настройка NAT-шлюза
 
-This section of the guide deals with NAT gateways. It is assumed that you already read the [first part of the guide](#Firewall_for_a_single_machine) and set up the **INPUT**, **OUTPUT**, **TCP** and **UDP** chains like described above. All rules so far have been created in the **filter** table. In this section, we will also have to use the **nat** table.
+В этом разделе рассмотрена настройка межсетевого экрана для NAT-шлюза. Предполагается, что вы уже прочитали [первую часть](#Межсетевой_экран_для_одиночной_машины) данного руководства и настроили цепочки **INPUT**, **OUTPUT**, **TCP** и **UDP** как было предложено. До этого момента созданные правила относились к таблице **filter**, при настройке NAT-шлюза нам также понадобится таблица **nat**.
 
-### Таблица фильтров
+### Таблица filter
 
 #### Создание необходимых цепочек
 
-In our setup, we will create two new chains in the filter table, **fw-interfaces** and **fw-open**, using he following commands:
+Создадим две новые цепочки — **fw-interfaces** и **fw-open**:
 
 ```
 # iptables -N fw-interfaces
@@ -542,16 +542,16 @@ In our setup, we will create two new chains in the filter table, **fw-interfaces
 
 #### Цепочка FORWARD
 
-Setting up the **FORWARD** chain is similar to the **INPUT** chain in the first section.
+Настройка цепочки **FORWARD** схожа с настройкой цепочки **INPUT** в первой части.
 
-Now we set up a rule with the **conntrack** match, identical to the one in the **INPUT** chain:
+Сначала добавляем правило с модулем **conntrack**, идентичное правилу из цепочки **INPUT**:
 
 ```
 # iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 
 ```
 
-The next step is to enable forwarding for trusted interfaces and to make all packets pass the **fw-open** chain.
+Затем включаем пересылку для доверенных интерфейсов и пропускаем все пакеты через цепочку **fw-open**:
 
 ```
 # iptables -A FORWARD -j fw-interfaces 
@@ -559,7 +559,7 @@ The next step is to enable forwarding for trusted interfaces and to make all pac
 
 ```
 
-The remaining packets are denied with an **ICMP** message:
+Остальные пакеты блокируются с отправкой ICMP-сообщения:
 
 ```
 # iptables -A FORWARD -j REJECT --reject-with icmp-host-unreachable
@@ -569,31 +569,31 @@ The remaining packets are denied with an **ICMP** message:
 
 #### Цепочки fw-interfaces и fw-open
 
-The meaning of the **fw-interfaces** and **fw-open** chains is explained later, when we deal with the **POSTROUTING** and **PREROUTING** chains in the **nat** table, respectively.
+Назначение цепочек **fw-interfaces** и **fw-open** будет объяснено позже, когда мы будем работать с цепочками **POSTROUTING** и **PREROUTING** соответственно в таблице **nat**.
 
 ### Таблица nat
 
-All over this section, we assume that the outgoing interface (the one with the public internet IP) is **ppp0**. Keep in mind that you have to change the name in all following rules if your outgoing interface has another name.
+В этом разделе предполагается, что исходящий интерфейс (с публичным IP-адресом) носит имя **ppp0**. Если ваш интерфейс называется иначе, то во всех приведённых ниже правилах следует заменить название на настоящее.
 
 #### Цепочка POSTROUTING
 
-Now, we have to define who is allowed to connect to the internet. Let's assume we have the subnet **192.168.0.0/24** (which means all addresses that are of the form 192.168.0.*) on **eth0**. We first need to accept the machines on this interface in the FORWARD table, that is why we created the **fw-interfaces** chain above:
+Сначала мы должны определить, кому разрешено подключаться к сети Интернет. Предположим, имеется подсеть **192.168.0.0/24** (т.е. в неё входят все адреса в диапазоне 192.168.0.0-255), подключённая к интерфейсу **eth0**. Чтобы разрешить исходящие соединения хостам в этой подсети, настраиваем цепочку *fw-interfaces* в таблице FORWARD:
 
 ```
 # iptables -A fw-interfaces -i eth0 -j ACCEPT
 
 ```
 
-Now, we have to alter all outgoing packets so that they have our public IP address as the source address, instead of the local LAN address. To do this, we use the **MASQUERADE** target:
+Затем необходимо отредактировать все исходящие пакеты, чтобы в поле "адрес отправителя" значился публичный адрес шлюза вместо локального LAN-адреса. Для этого используем таргет **MASQUERADE**:
 
 ```
 # iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o ppp0 -j MASQUERADE
 
 ```
 
-Do not forget the **-o ppp0** parameter above. If you omit it, your network will be screwed up.
+Не забудьте указать параметр `-o ppp0`, потому что в противном случае сеть не будет функционировать.
 
-Let's assume we have another subnet, **10.3.0.0/16** (which means all addresses 10.3.*.*), on the interface **eth1**. We add the same rules as above again:
+Предположим, что есть другая подсеть, **10.3.0.0/16** (с адресами 10.3.*.*), подключённая к интерфейсу **eth1**. Добавляем аналогичные правила:
 
 ```
 # iptables -A fw-interfaces -i eth1 -j ACCEPT
@@ -601,15 +601,15 @@ Let's assume we have another subnet, **10.3.0.0/16** (which means all addresses 
 
 ```
 
-The last step is to [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") (if it is not already enabled).
+Наконец, нужно [разрешить пересылку пакетов](/index.php/Internet_sharing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Разрешите_пересылку_пакетов "Internet sharing (Русский)") (если она ещё не включена).
 
-Machines from these subnets can now use your new NAT machine as their gateway. Note that you may want to set up a DNS and [DHCP](/index.php/DHCP "DHCP") server like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or a combination of [BIND](/index.php/BIND "BIND") and [dhcpd](/index.php/Dhcpd "Dhcpd") to simplify network settings DNS resolution on the client machines. This is not the topic of this guide.
+Хосты данных подсетей теперь могут использовать вашу NAT-систему в качестве шлюза. Возможно, вы также захотите настроить DNS- и [DHCP](/index.php/DHCP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "DHCP (Русский)")-сервер, например, [dnsmasq](/index.php/Dnsmasq "Dnsmasq") или комбинацию [BIND](/index.php/BIND "BIND") и [dhcpd](/index.php/Dhcpd "Dhcpd"), с целью упрощения настройки разрешения имён (DNS resolving) на клиентских машинах, но эта тема выходит за рамки данного руководства.
 
 #### Цепочка PREROUTING
 
-Sometimes, we want to change the address of an incoming packet from the gateway to a LAN machine. To do this, we use the **fw-open** chain defined above, as well as the **PREROUTING** chain in the **nat** table in the following two simple examples.
+В некоторых случаях может понадобиться изменить адрес получателя в заголовке входящего пакета с адреса шлюза на адрес хоста в локальной сети. Для этого нужно настроить созданную ранее цепочку **fw-open**, а также цепочку **PREROUTING** таблицы nat.
 
-First, we want to change all incoming SSH packets (port 22) to the ssh server of the machine **192.168.0.5**:
+Например, чтобы изменить адрес получателя входящих SSH-пакетов (порт 22) на адрес ssh-сервера **192.168.0.5** выполните команды:
 
 ```
 # iptables -t nat -A PREROUTING -i ppp0 -p tcp --dport 22 -j DNAT --to 192.168.0.5
@@ -617,7 +617,7 @@ First, we want to change all incoming SSH packets (port 22) to the ssh server of
 
 ```
 
-The second example will show you how to change packets to a different port than the incoming port. We want to change any incoming connection on port **8000** to our web server on **192.168.0.6**, port **80**:
+Во втором примере меняется не только адрес получателя, но и порт. Порт входящего соединения **8000** заменяется на порт **80** веб-сервера по адресу **192.168.0.6**:
 
 ```
 # iptables -t nat -A PREROUTING -i ppp0 -p tcp --dport 8000 -j DNAT --to 192.168.0.6:80
@@ -625,18 +625,18 @@ The second example will show you how to change packets to a different port than 
 
 ```
 
-The same setup also works with udp packets.
+Настройка для UDP-пакетов производится аналогично.
 
 ### Сохранение правил
 
-Save the rules:
+Чтобы сохранить новые правила межсетевого экрана для NAT-шлюза, выполните:
 
 ```
 # iptables-save -f /etc/iptables/iptables.rules
 
 ```
 
-This assumes that you have followed the steps [above](#Saving_the_rules) to enable the **iptables** systemd service.
+При этом поздразумевается, что служба systemd `iptables.service` уже работает, потому что была включена [ранее](#Итоговый_файл_ip6tables.rules).
 
 ## Смотрите также
 

@@ -80,7 +80,7 @@
 | <small>5.1.13.2.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(Portugu%C3%AAs) "Category:Web admin interfaces (Português)") <small>(1)</small> |
 | <small>5.2.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
 | <small>5.2.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
-| <small>5.2.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(13)</small> |
+| <small>5.2.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(14)</small> |
 | <small>5.2.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>5.2.2.2.</small> [Shell builtins](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>5.2.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |
@@ -110,7 +110,7 @@
 | <small>6.2.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(2)</small> |
 | <small>6.3.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(4) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
 | <small>6.3.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
-| <small>6.3.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(13)</small> |
+| <small>6.3.2.</small> [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)") <small>(14)</small> |
 | <small>6.3.2.1.</small> [Console applications](/index.php/Category:Console_applications_(Portugu%C3%AAs) "Category:Console applications (Português)") <small>(1) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>6.3.2.2.</small> [Shell builtins](/index.php/Category:Shell_builtins_(Portugu%C3%AAs) "Category:Shell builtins (Português)") <small>(3)</small> |
 | <small>6.3.2.3.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)"))</small> |

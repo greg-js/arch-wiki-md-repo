@@ -202,6 +202,10 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://guake-project.org/](http://guake-project.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
 
+*   **k3rmit** — A VTE-based terminal emulator that aims to be simple, fast and effective.
+
+	[https://github.com/orhun/k3rmit](https://github.com/orhun/k3rmit) || [k3rmit-git](https://aur.archlinux.org/packages/k3rmit-git/)
+
 *   **LXTerminal** — Desktop independent terminal emulator for [LXDE](/index.php/LXDE "LXDE").
 
 	[https://wiki.lxde.org/en/LXTerminal](https://wiki.lxde.org/en/LXTerminal) || [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)

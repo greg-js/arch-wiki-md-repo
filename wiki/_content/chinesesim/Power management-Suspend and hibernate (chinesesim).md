@@ -127,7 +127,9 @@ HOOKS="base udev resume autodetect modconf block filesystems keyboard fsck"
 ```
 
 **注意:** 如果使用lvm分区，需要将resume放在lvm后面
+
 使用lvm的示例：
+
 ```
 HOOKS="base udev autodetect modconf block lvm2 resume filesystems keyboard fsck"
 

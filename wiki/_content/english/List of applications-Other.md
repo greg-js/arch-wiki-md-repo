@@ -86,6 +86,10 @@ These applications support time, task and contacts management.
 
 	[http://calcurse.org/](http://calcurse.org/) || [calcurse](https://www.archlinux.org/packages/?name=calcurse)
 
+*   **ccal** — A console program which writes a calendar together with Chinese calendar to standard output.
+
+	[http://ccal.chinesebay.com/ccal/ccal.htm](http://ccal.chinesebay.com/ccal/ccal.htm) || [ccal](https://aur.archlinux.org/packages/ccal/)
+
 *   **khal** — Command-line (non-interactive) and ncurses (interactive) calendar system (supports CalDAV)
 
 	[https://github.com/pimutils/khal](https://github.com/pimutils/khal) || [khal](https://www.archlinux.org/packages/?name=khal)

@@ -57,7 +57,7 @@ set rtp^=/usr/share/vim/vimfiles/
 
 Setting `$VISUAL` and `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") should be sufficient in most cases.
 
-Some applications may hardcode vi or vim as default editor, to use *neovim* in their place, install [neovim-drop-in](https://aur.archlinux.org/packages/neovim-drop-in/).
+Some applications may hardcode vi or vim as default editor, to use *neovim* in their place, install [neovim-symlinks](https://aur.archlinux.org/packages/neovim-symlinks/) or [neovim-drop-in](https://aur.archlinux.org/packages/neovim-drop-in/).
 
 ### Symlinking init.vim to .vimrc
 

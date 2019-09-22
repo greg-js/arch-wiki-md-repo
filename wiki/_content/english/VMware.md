@@ -327,8 +327,8 @@ By default, VMware writes a running guest system's RAM to a file on disk. If you
 
  `*Virtual_machine_name*.vmx` 
 ```
-MemTrimRate = "0" 
-sched.mem.pshare.enable = "FALSE" 
+MemTrimRate = "0"
+sched.mem.pshare.enable = "FALSE"
 prefvmx.useRecommendedLockedMemSize = "TRUE"
 mainmem.backing = "swap"
 ```

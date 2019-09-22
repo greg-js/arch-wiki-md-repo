@@ -134,7 +134,3 @@ $ comm -23 <(pacman -Sgq base | sort) pkglist.orig >> pkglist
 # pacman -Su
 
 ```
-
-## Смотрите также
-
-*   [Альтернативный способ восстановления локальной базы пакетов](/index.php/User:Xolst/Restore_local_database_2.0_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "User:Xolst/Restore local database 2.0 (Русский)")

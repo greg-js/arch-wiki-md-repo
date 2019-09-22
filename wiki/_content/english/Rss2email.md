@@ -29,7 +29,7 @@ $ r2e new *user@example.com*
 Next, subscribe to an RSS feed. For example, to subscribe to the Arch Linux package updates feed, run:
 
 ```
-$ r2e add https://www.archlinux.org/feeds/packages/ *e-mail address*
+$ r2e add *name-for-rss* https://www.archlinux.org/feeds/packages/ *e-mail address*
 
 ```
 

@@ -1,6 +1,10 @@
 Besides the questions covered below, you may find [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux") helpful. Both of the articles contain a good deal of information about Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Основни](#Основни)
     *   [1.1 Q) Какво е Arch Linux?](#Q)_Какво_е_Arch_Linux?)

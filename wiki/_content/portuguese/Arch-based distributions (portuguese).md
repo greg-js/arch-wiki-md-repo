@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2019-06-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=573656) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=581506) na versão em inglês.
 
 Artigos relacionados
 
@@ -49,7 +49,6 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 *   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [Arch Linux 32](https://archlinux32.org/) 
 *   [Arch Linux ARM](https://archlinuxarm.org/) 
-*   [Archman OS](https://sourceforge.net/projects/archman-os/) 
 *   [Archphile](https://sourceforge.net/projects/archphile/) 
 *   [ArchStrike](https://archstrike.org/) 
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/) 

@@ -1,6 +1,10 @@
 Alla katettujen kysymysten lisäksi voit tarkistaa [The Arch Way](/index.php/Arch_Linux_(Suomi) "Arch Linux (Suomi)"), [Arch Linux](/index.php/Arch_Linux "Arch Linux") artikkelit. Kaikki kolme sisältävät paljon hyvää materiaalia Arch Linuksista.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Yleistä](#Yleistä)
     *   [1.1 Q) Olen GNU/Linux -aloittelija. Pitäisikö minun käyttää Arch Linuxia?](#Q)_Olen_GNU/Linux_-aloittelija._Pitäisikö_minun_käyttää_Arch_Linuxia?)

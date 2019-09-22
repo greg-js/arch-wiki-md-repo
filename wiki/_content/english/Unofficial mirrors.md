@@ -21,14 +21,13 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [13 Netherlands](#Netherlands)
 *   [14 New Zealand](#New_Zealand)
 *   [15 Poland](#Poland)
-*   [16 Russia](#Russia)
-*   [17 South Africa](#South_Africa)
-*   [18 Sweden](#Sweden)
-*   [19 Thailand](#Thailand)
-*   [20 Turkey](#Turkey)
-*   [21 United Kingdom](#United_Kingdom)
-*   [22 United States](#United_States)
-*   [23 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
+*   [16 South Africa](#South_Africa)
+*   [17 Sweden](#Sweden)
+*   [18 Thailand](#Thailand)
+*   [19 Turkey](#Turkey)
+*   [20 United Kingdom](#United_Kingdom)
+*   [21 United States](#United_States)
+*   [22 Sourceforge (old ISOs)](#Sourceforge_(old_ISOs))
 
 ## Australia
 
@@ -81,7 +80,7 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 *   [https://mirror.mikrogravitation.org/archlinux/](https://mirror.mikrogravitation.org/archlinux/) - *IPv4/IPv6, https, rsync, 20 Gbit/s Bandwidth*
 
-*   [https://www.chaoticum.ch/mirror/arch/](https://www.chaoticum.ch/mirror/arch/) - *IPv4, https, 1Gbit/s Bandwith, server-location: Nuernberg*
+*   [https://www.chaoticum.ch/mirror/arch/](https://www.chaoticum.ch/mirror/arch/) - *IPv4, https, 1Gbit/s Bandwidth, server-location: Nuremberg*
 
 ## Indonesia
 
@@ -122,10 +121,6 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 *   [https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/](https://ftp.icm.edu.pl/pub/Linux/dist/archlinux/) - ICM UW
 *   rsync://ftp.icm.edu.pl/pub/Linux/dist/archlinux/ - ICM UW
 
-## Russia
-
-*   [http://mirrors.krasinfo.ru/archlinux/](http://mirrors.krasinfo.ru/archlinux/) - *Krasnoyarsk, Classica-Service Ltd*
-
 ## South Africa
 
 *   [http://ftp.leg.uct.ac.za/pub/linux/arch/](http://ftp.leg.uct.ac.za/pub/linux/arch/) - *University of Cape Town*
@@ -165,4 +160,4 @@ These [mirrors](/index.php/Mirrors "Mirrors") are *not* listed in `/etc/pacman.d
 
 ## Sourceforge (old ISOs)
 
-*   [http://sourceforge.net/projects/archlinux/files/](http://sourceforge.net/projects/archlinux/files/) - *ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs.*
+*   [https://sourceforge.net/projects/archlinux/files/](https://sourceforge.net/projects/archlinux/files/) - *ISO files only; Does not have any releases since 2006\. Use it only for getting older ISOs.*

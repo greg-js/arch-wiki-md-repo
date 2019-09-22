@@ -1,6 +1,10 @@
 Kromě otázek probíraných níže můžete zkusit články [The Arch Way](/index.php/The_Arch_Way_(%C4%8Cesky) "The Arch Way (Česky)") a [Arch Linux](/index.php/ArchLinux_(%C4%8Cesky) "ArchLinux (Česky)"). Oba obsahují užitečné informace o Arch Linuxu.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Obecné](#Obecné)
     *   [1.1 Q) Co je to Arch Linux?](#Q)_Co_je_to_Arch_Linux?)

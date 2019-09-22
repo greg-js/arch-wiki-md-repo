@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-08-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=577680) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2019-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=582696) na versão em inglês.
 
 Artigos relacionados
 
@@ -36,15 +36,14 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
     *   [3.6 Mostrar pacotes com um empacotador específico](#Mostrar_pacotes_com_um_empacotador_específico)
     *   [3.7 Compilar pacotes 32 bits em um sistema 64 bits](#Compilar_pacotes_32_bits_em_um_sistema_64_bits)
 *   [4 Solução de problemas](#Solução_de_problemas)
-    *   [4.1 Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura](#Makepkg_algumas_vezes_falha_ao_assinar_um_pacote_sem_perguntar_pela_palavra-chave_de_assinatura)
-    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_CMAKE)
-    *   [4.3 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_QMAKE)
-    *   [4.4 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diretório_de_instalação_para_pacotes_baseados_em_QMAKE)
-    *   [4.5 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_contém_referência_para_$srcdir)
-    *   [4.6 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
-        *   [4.6.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
-        *   [4.6.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
-    *   [4.7 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
+    *   [4.1 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_CMAKE)
+    *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS/CXXFLAGS/LDFLAGS_no_makepkg.conf_não_funcionam_para_pacotes_baseados_no_QMAKE)
+    *   [4.3 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diretório_de_instalação_para_pacotes_baseados_em_QMAKE)
+    *   [4.4 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_contém_referência_para_$srcdir)
+    *   [4.5 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_dependências_quando_por_trás_de_um_proxy)
+        *   [4.5.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
+        *   [4.5.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
+    *   [4.6 Makepkg falha, mas make obtém sucesso](#Makepkg_falha,_mas_make_obtém_sucesso)
 *   [5 Veja também](#Veja_também)
 
 ## Configuração
@@ -291,18 +290,6 @@ $ linux32 makepkg --config ~/.makepkg.i686.conf
 
 ## Solução de problemas
 
-### Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura
-
-Com o [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent agora é iniciado automaticamente pelo gpg. O problema surge no estágio do pacote de `makepkg --sign`. Para permitir os privilégios corretos, [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) executa a função `package()` iniciando o gpg-agent dentro do mesmo ambiente *fakeroot*. Na saída, o *fakeroot* limpa os semáforos fazendo com que a "escrita" termine o *pipe* para fechar para aquela instância do gpg-agent que resultará em um erro de *pipe* quebrado. Se o mesmo gpg-agent estiver em execução quando `makepkg --sign` estiver próximo de executado, então o gpg-agent retorna código de saída 2; então a seguinte saída ocorre:
-
-```
-==> Assinando pacote...
-==> ATENÇÃO: Falha em assinar arquivo de pacote.
-
-```
-
-Esse erro está atualmente sendo rastreado: [FS#49946](https://bugs.archlinux.org/task/49946). Uma solução temporária de contorno para esse problema é executar `killall gpg-agent && makepkg --sign`. Esse problema está resolvido no [pacman-git](https://aur.archlinux.org/packages/pacman-git/), especificamento no hash de commit `c6b04c04653ba9933fe978829148312e412a9ea7`
-
 ### CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE
 
 Para fazer o CMake usar as variáveis definidas no `makepkg.conf`, Basta não especificar `-DCMAKE_BUILD_TYPE` ao configurar um projeto de cmake. [[6]](https://lists.archlinux.org/pipermail/arch-dev-public/2018-March/029181.html)
@@ -374,6 +361,8 @@ Para identificar quais arquivos, execute o seguinte do diretório de compilaçã
 $ grep -R "$(pwd)/src" pkg/
 
 ```
+
+Uma causa possível seria pelo uso da macro `__FILE__` no código C/C++ com caminho completo passado para o compilador.
 
 ### Makepkg falha em baixar dependências quando por trás de um proxy
 

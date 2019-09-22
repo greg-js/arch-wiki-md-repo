@@ -130,7 +130,7 @@ Como uma alternativa para criar uma partição inteira, um arquivo swap oferece 
 
 #### Criação de arquivo swap
 
-Para sistemas de arquivos "copy-on-write", como o [Btrfs](/index.php/Btrfs "Btrfs"), primeiro crie um arquivo de tamanho zero, defina o atributo `No_COW` nele com [chattr](/index.php/Chattr "Chattr") e certifique-se que a compressão está desabilitada:
+Para sistemas de arquivos "copy-on-write", como o [Btrfs](/index.php/Btrfs "Btrfs"), primeiro crie um arquivo de tamanho zero, defina o atributo `No_COW` nele com [chattr](/index.php/Chattr_(Portugu%C3%AAs) "Chattr (Português)") e certifique-se que a compressão está desabilitada:
 
 ```
 # truncate -s 0 /swapfile

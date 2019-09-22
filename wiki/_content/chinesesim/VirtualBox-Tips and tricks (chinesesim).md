@@ -1,6 +1,10 @@
 See [VirtualBox](/index.php/VirtualBox "VirtualBox") for the main article.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 VirtualBox虚拟机从其他虚拟机导入/导出的管理](#VirtualBox虚拟机从其他虚拟机导入/导出的管理)
     *   [1.1 添加删除](#添加删除)
@@ -89,15 +93,15 @@ Finally, ask your hypervisor to use the existing virtual disk you have converted
  `/etc/systemd/system/vboxvmservice@.service` 
 ```
 [Unit]
-Description=VBox Virtual Machine %i Service
+Description=VBox Virtual Machine %i Service
 Requires=systemd-modules-load.service
 After=systemd-modules-load.service
 
 [Service]
 User=*username*
 Group=vboxusers
-ExecStart=/usr/bin/VBoxHeadless -s %i
-ExecStop=/usr/bin/VBoxManage controlvm %i savestate
+ExecStart=/usr/bin/VBoxHeadless -s %i
+ExecStop=/usr/bin/VBoxManage controlvm %i savestate
 
 [Install]
 WantedBy=multi-user.target
@@ -311,8 +315,12 @@ Adapt the above command to your need, especially the path and filename of the VM
 	On a Windows host
 
 Open a command prompt must be run as administrator.
+
 **Tip:** On Windows, open your start menu/start screen, type `cmd`, and type `Ctrl+Shift+Enter`, this is a shortcut to execute the selected program with admin rights.
-On Windows, as the disk filename convention is different from UNIX, use this command to determine what drives you have in your Windows system and their location: `# wmic diskdrive get name,size,model` 
+
+On Windows, as the disk filename convention is different from UNIX, use this command to determine what drives you have in your Windows system and their location:
+
+ `# wmic diskdrive get name,size,model` 
 ```
 Model                               Name                Size
 WDC WD40EZRX-00SPEB0 ATA Device     \\.\PHYSICALDRIVE1  4000783933440

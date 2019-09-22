@@ -3,9 +3,9 @@
 *   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
 *   [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [SDDM](/index.php/SDDM "SDDM"). Дата последней синхронизации: 10 февраля 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=566040).
+**Состояние перевода:** На этой странице представлен перевод статьи [SDDM](/index.php/SDDM "SDDM"). Дата последней синхронизации: 18 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=582701).
 
-[Simple Desktop Display Manager](https://github.com/sddm/sddm/) (SDDM) – это предпочтительный [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") Plasma.
+[Simple Desktop Display Manager](https://github.com/sddm/sddm/) (SDDM) – предпочтительный [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") Plasma.
 
 Из [Википедии](https://en.wikipedia.org/wiki/ru:Simple_Desktop_Display_Manager "wikipedia:ru:Simple Desktop Display Manager"):
 
@@ -164,7 +164,7 @@ $ getfacl ~/.face.icon
 
 ### Настройки DPI
 
-Иногда требуется задать корректные настройки PPI вашего монитора на уровне экранного менеджера. Для этого нужно найти параметр `ServerArguments` в `sddm.conf` и добавить `-dpi *ваш_dpi*` в конце строки.
+Иногда требуется задать корректные настройки PPI монитора на уровне экранного менеджера. [[3]](https://github.com/sddm/sddm/blob/master/README.md#custom-dpi) Для этого нужно добавить параметр `-dpi *ваш_dpi*` в конце строки `ServerArguments`.
 
 Например:
 
@@ -245,11 +245,11 @@ MinimumUid=500 #Мой UID равен 501
 
 SDDM загружает раскладку клавиатуры, заданную в файле `/etc/X11/xorg.conf.d/00-keyboard.conf`. Вы можете сгенерировать этот конфигурационный файл командой `localectl set-x11-keymap`. Смотрите [Keyboard configuration in Xorg (Русский)](/index.php/Keyboard_configuration_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in Xorg (Русский)") для дополнительной информации.
 
-Также SDDM может некорректно отображать раскладку как английскую, но моментально изменит её на правильную после начала ввода пароля [[3]](https://github.com/sddm/sddm/issues/202#issuecomment-76001543). Похоже, что это баг не SDDM, а [libxcb](https://www.archlinux.org/packages/?name=libxcb) (версии 1.13-1 по состоянию на 2018) [[4]](https://github.com/sddm/sddm/issues/202#issuecomment-133628462).
+Также SDDM может некорректно отображать раскладку как английскую, но моментально изменит её на правильную после начала ввода пароля [[4]](https://github.com/sddm/sddm/issues/202#issuecomment-76001543). Похоже, что это баг не SDDM, а [libxcb](https://www.archlinux.org/packages/?name=libxcb) (версии 1.13-1 по состоянию на 2018) [[5]](https://github.com/sddm/sddm/issues/202#issuecomment-133628462).
 
 ### Слишком низкое разрешение экрана
 
-Проблема может быть вызвана использованием HiDPI с мониторами с повреждённой информацией [EDID](https://en.wikipedia.org/wiki/ru:Extended_display_identification_data "wikipedia:ru:Extended display identification data") [[5]](https://github.com/sddm/sddm/issues/692). Попробуйте отключить HiDPI, если он у вас [включён](#Включение_HiDPI).
+Проблема может быть вызвана использованием HiDPI с мониторами с повреждённой информацией [EDID](https://en.wikipedia.org/wiki/ru:Extended_display_identification_data "wikipedia:ru:Extended display identification data") [[6]](https://github.com/sddm/sddm/issues/692). Попробуйте отключить HiDPI, если он у вас [включён](#Включение_HiDPI).
 
 Если же решение выше не помогает, можно попробовать задать размер экрана в файле конфигурации Xorg. Например:
 

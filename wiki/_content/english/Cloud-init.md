@@ -1,4 +1,4 @@
-[Cloud-init](https://cloud-init.io/) is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
+[Cloud-init](https://cloud-init.io/) is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud environments like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -18,25 +18,29 @@
 
 [Install](/index.php/Install "Install") the [cloud-init](https://aur.archlinux.org/packages/cloud-init/) package.
 
+If you intend to use the [growpart module](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#growpart) you will also need the [growpart](https://aur.archlinux.org/packages/growpart/) package.
+
+As of cloud-init 19.2 you can also use [netplan](https://netplan.io/) to render the network config. Install the [netplan](https://aur.archlinux.org/packages/netplan/) package to do so.
+
 ## Configuration
+
+This section only discussed the most basic settings. For a full list of available configuration options, please see the [cloud-init documentation](https://cloudinit.readthedocs.io).
 
 In order to make an Arch image cloud ready, a few steps have to be followed:
 
 *   Create a default user. You can login to your instance as this user. We will create and use a user called `arch`.
 *   Install [sudo](/index.php/Sudo "Sudo") and add the default user to sudo group. This can be used later to execute commands as privileged user.
 *   Enable password less sudo for the default user.
-*   Configure cloud-init to pull instance metadata to configure the instance. This includes but not limited to:
+*   Configure cloud-init to pull instance metadata to configure the instance. This includes, but is not limited to:
     *   Setting up the instance `hostname`
     *   Configuring instance's `resolv.conf`
     *   Configuring `~/.ssh/authorized_keys` file for the default user
 
-The cloud-init's main configuration file is `/etc/cloud/cloud.cfg`. Optionally the user can place `*.cfg` files in `/etc/cloud/cloud.cfg.d` to be loaded.
+The cloud-init's main configuration file is `/etc/cloud/cloud.cfg`. Optionally, the user can place additional `*.cfg` files in `/etc/cloud/cloud.cfg.d` to be loaded.
 
 ### Default user configuration
 
-As of February 2016, the default `/etc/cloud/cloud.cfg` shipped with the package has not been adapted to Arch, and still states that the distro is Ubuntu, therefore it requires editing.
-
-Edit `/etc/cloud/cloud.cfg` to have the following contents:
+As of September 2019, the default `/etc/cloud/cloud.cfg` includes the following contents:
 
 ```
 users:
@@ -52,8 +56,8 @@ system_info:
    default_user:
      name: arch 
      lock_passwd: true
-     gecos: Arch
-     groups: [adm, audio, cdrom, dialout, dip, floppy, netdev, plugdev, sudo, video]
+     gecos: Archlinux
+     groups: [users, power, audio, video, wheel]
      sudo: ["ALL=(ALL) NOPASSWD:ALL"]
      shell: /bin/bash
 
@@ -63,8 +67,8 @@ Under `system_info` we specify the distro as "arch". This will instruct cloud-in
 
 *   the default user's name would be `arch`
 *   the default user is password locked, which means you can not login to the instance without the ssh keys configured during boot
-*   the default user should be added to the groups `adm`, `audio`, `cdrom`, `dialout`, `dip`, `floppy`, `netdev`, `plugdev`, `sudo`, `video`
-*   the default user is allow passwordless sudo usage
+*   the default user should be added to the groups `users`, `power`, `audio`, `video`, `wheel`
+*   the default user is allowed passwordless sudo usage
 *   the default user's shell is `/bin/bash`
 
 ### Disable login as root

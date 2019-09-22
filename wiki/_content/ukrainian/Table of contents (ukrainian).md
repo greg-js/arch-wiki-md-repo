@@ -23,18 +23,18 @@
  <small>2.7.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(12)</small> |
  <small>2.7.1.</small> [Git web interfaces](/index.php/Category:Git_web_interfaces "Category:Git web interfaces") <small>(5) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
  <small>2.8.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces"))</small> |
- <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(4)</small> |
+ <small>3.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(5)</small> |
  <small>3.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
  <small>3.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
  <small>3.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(12)</small> |
  <small>3.4.</small> [Digital imaging](/index.php/Category:Digital_imaging "Category:Digital imaging") <small>(6)</small> |
  <small>3.5.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
- <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
+ <small>3.6.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(33)</small> |
  <small>3.7.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(9)</small> |
  <small>3.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Input](/index.php/Category:Input "Category:Input"))</small> |
  <small>3.8.1.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(7)</small> |
  <small>3.8.2.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(15)</small> |
- <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(23)</small> |
+ <small>3.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(25)</small> |
  <small>3.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small> |
  <small>3.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
  <small>3.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
@@ -46,18 +46,18 @@
  <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
  <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(61)</small> |
  <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(101)</small> |
+ <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(102)</small> |
  <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
  <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
  <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
  <small>3.9.16.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(15)</small> |
- <small>3.9.17.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(2)</small> |
+ <small>3.9.17.</small> [Xiaomi](/index.php/Category:Xiaomi "Category:Xiaomi") <small>(3)</small> |
  <small>3.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
  <small>3.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(19)</small> |
  <small>3.11.1.</small> [Android](/index.php/Category:Android "Category:Android") <small>(3)</small> |
  <small>3.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(17) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
- <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(24)</small> |
- <small>3.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
+ <small>3.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(25)</small> |
+ <small>3.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
  <small>3.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Multimedia](/index.php/Category:Multimedia "Category:Multimedia"))</small> |
  <small>3.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
  <small>3.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
@@ -117,7 +117,7 @@
  <small>4.14.</small> [Telephony](/index.php/Category:Telephony "Category:Telephony") <small>(2)</small> |
  <small>4.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Security](/index.php/Category:Security "Category:Security"), [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
  <small>4.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(8)</small> |
- <small>4.16.</small> [Voice over IP](/index.php/Category:Voice_over_IP "Category:Voice over IP") <small>(7)</small> |
+ <small>4.16.</small> [Voice over IP](/index.php/Category:Voice_over_IP "Category:Voice over IP") <small>(8)</small> |
  <small>4.17.</small> [Web](/index.php/Category:Web "Category:Web") <small>(4)</small> |
  <small>4.17.1.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(35) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>4.17.1.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
@@ -142,7 +142,7 @@
  <small>5.1.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |
  <small>5.1.7.1.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17) (also in [Applications](/index.php/Category:Applications "Category:Applications"), [Command-line](/index.php/Category:Command-line "Category:Command-line"))</small> |
  <small>5.1.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(11)</small> |
- <small>5.1.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(41)</small> |
+ <small>5.1.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(40)</small> |
  <small>5.1.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(10)</small> |
  <small>5.1.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
  <small>5.1.10.2.</small> [BitTorrent](/index.php/Category:BitTorrent "Category:BitTorrent") <small>(6) (also in [Peer-to-peer](/index.php/Category:Peer-to-peer "Category:Peer-to-peer"), [Protocols](/index.php/Category:Protocols "Category:Protocols"))</small> |
@@ -288,7 +288,7 @@
  <small>6.11.4.1.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs "Category:Dynamic WMs") <small>(13)</small> |
  <small>6.11.4.2.</small> [Stacking WMs](/index.php/Category:Stacking_WMs "Category:Stacking WMs") <small>(16)</small> |
  <small>6.11.4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs "Category:Tiling WMs") <small>(16)</small> |
-| <small>1.1.1.</small> [X server](/index.php/Category:X_server_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:X server (Українська)") <small>(1)</small> | <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(53)</small> |
+| <small>1.1.1.</small> [X server](/index.php/Category:X_server_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:X server (Українська)") <small>(1)</small> | <small>6.11.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(54)</small> |
  <small>6.11.5.1.</small> [Xorg commands](/index.php/Category:Xorg_commands "Category:Xorg commands") <small>(11) (also in [Commands](/index.php/Category:Commands "Category:Commands"))</small> |
  <small>6.12.</small> [Input](/index.php/Category:Input "Category:Input") <small>(2)</small> |
  <small>6.12.1.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(15) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |

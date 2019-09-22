@@ -41,21 +41,32 @@ Crostini is still rolling out to Chromebooks. If you don't see an option to enab
 
 ### Replacing the default Debian Linux container with Arch Linux
 
-The below instructions were taken from [https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux](https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux)
+The below instructions based on [https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux](https://www.reddit.com/r/Crostini/wiki/howto/run-arch-linux)
 
 1\. Install an Arch linux container
 
 Open a new terminal in Chrome (Ctrl + Alt + T). Then connect to terminal and create an arch linux container:
 
 ```
-vsh termina
-run_container.sh --container_name arch --user <gmail username> --lxd_image archlinux/current --lxd_remote [https://us.images.linuxcontainers.org/](https://us.images.linuxcontainers.org/)
+vmc container termina arch [https://us.images.linuxcontainers.org](https://us.images.linuxcontainers.org) archlinux/current
 
 ```
 
-The <gmail username> here is the same user you are logged in to your Chromebooks as, without the @gmail.com and dots. eg. foo.bar@gmail.com will set --user foobar. Apps launched from the ChromeOS launcher run under this user.
+Following error will be shown after completion:
 
-2\. Replace the default Debian container with Arch Linux.
+[Template:"Error: routine at frontends/vmc.rs:403 `container setup user(vm name,user id hash,container name,username)` failed: timeout while waiting for signal"](/index.php?title=Template:%22Error:_routine_at_frontends/vmc.rs:403_%60container_setup_user(vm_name,user_id_hash,container_name,username)%60_failed:_timeout_while_waiting_for_signal%22&action=edit&redlink=1 "Template:"Error: routine at frontends/vmc.rs:403 `container setup user(vm name,user id hash,container name,username)` failed: timeout while waiting for signal" (page does not exist)")
+
+This is expected behavior, proceed with following steps.
+
+2\. Connect to termina vm and check if arch container is present:
+
+```
+vsh termina
+lxc list
+
+```
+
+3\. Replace the default Debian container with Arch Linux.
 
 The default Debian container is named penguin. Renaming the "arch" container created above to it will cause chrome to launch Linux apps from the arch container.
 
@@ -67,18 +78,24 @@ lxc rename arch penguin
 
 ```
 
-3\. Set password for gmail username
+4\. Determine username of the default user account. It will be created automatically with container creation and username will be based on gmail username.
 
-By default the gmail user has no password set. Use lxc exec to set a password:
+```
+grep 1000:1000 /etc/passwd
+
+```
+
+5\. Set password for gmail username. By default the gmail user has no password set. Use lxc exec to set a password:
 
 ```
 lxc exec penguin -- bash
+passwd <username>
 
 ```
 
 You also might want to add [sudo](/index.php/Sudo "Sudo") and add the user to sudoers.
 
-4\. Install Crostini container tools, Wayland for GUI apps, XWayland for X11 apps.
+6\. Install Crostini container tools, Wayland for GUI apps, XWayland for X11 apps.
 
 First open a console session the the Arch Linux container.
 

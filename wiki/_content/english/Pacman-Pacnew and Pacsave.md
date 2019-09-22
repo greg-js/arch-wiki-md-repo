@@ -74,6 +74,8 @@ Going into further detail, the 3-way MD5 sum comparison results in one of the fo
 
 	All three versions are different, so leave the current version in place, install the new version with a *.pacnew* extension and warn the user about the new version. The user will be expected to manually merge any changes necessary from the new version into the current version.
 
+Rarely, when an upgraded package includes a backup file the previous version didn't, the situation is correctly handled as X/Y/Y or X/Y/Z, with X being a non-existant value.
+
 ### .pacsave
 
 If the user has modified one of the files specified in `backup` then that file will be renamed with a *.pacsave* extension and will remain in the filesystem after the rest of the package is removed.

@@ -4,7 +4,11 @@ Related articles
 *   [Arch User Repository#FAQ](/index.php/Arch_User_Repository#FAQ "Arch User Repository")
 *   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Általános](#Általános)
     *   [1.1 Mi az az Arch Linux?](#Mi_az_az_Arch_Linux?)

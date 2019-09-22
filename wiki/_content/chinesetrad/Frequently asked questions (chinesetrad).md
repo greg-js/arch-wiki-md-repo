@@ -2,7 +2,11 @@
 
 除了下面列舉的 Q&A，也建議閱讀 [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")以及 [Arch Linux 簡介](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)")這兩篇文章，裡面包含了許多跟 Arch Linux 有關的知識。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 一般](#一般)
     *   [1.1 Q) Arch Linux 是什麼？](#Q)_Arch_Linux_是什麼？)

@@ -5,7 +5,11 @@ Related articles
 
 Dit artikel behandelt de installatie van Arch Linux in virtuele machine binnen een VMware omgeving zoals bijvoorbeeld VMware ESX, VMware Workstation/Fusion en VMware Player.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 VMware Tools versus Open-VM-Tools](#VMware_Tools_versus_Open-VM-Tools)
 *   [2 Open-VM-Tools modules](#Open-VM-Tools_modules)

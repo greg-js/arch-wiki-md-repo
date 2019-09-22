@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [LVM](/index.php/LVM "LVM"), revisada por última vez el **2019-01-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=561890) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [LVM](/index.php/LVM "LVM"), revisada por última vez el **2019-09-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=LVM&diff=0&oldid=581279) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
-*   [Dm-crypt/Encrypting an Entire System (Español)#LVM sobre LUKS](/index.php/Dm-crypt/Encrypting_an_Entire_System_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt/Encrypting an Entire System (Español)")
-*   [Dm-crypt/Encrypting an Entire System (Español)#LUKS sobre LVM](/index.php/Dm-crypt/Encrypting_an_Entire_System_(Espa%C3%B1ol)#LUKS_sobre_LVM "Dm-crypt/Encrypting an Entire System (Español)")
+*   [dm-crypt (Español)/Encrypting an entire system (Español)#LVM sobre LUKS](/index.php/Dm-crypt_(Espa%C3%B1ol)/Encrypting_an_entire_system_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt (Español)/Encrypting an entire system (Español)")
+*   [dm-crypt (Español)/Encrypting an entire system (Español)#LUKS sobre LVM](/index.php/Dm-crypt_(Espa%C3%B1ol)/Encrypting_an_entire_system_(Espa%C3%B1ol)#LUKS_sobre_LVM "Dm-crypt (Español)/Encrypting an entire system (Español)")
 *   [Resizing LVM-on-LUKS](/index.php/Resizing_LVM-on-LUKS "Resizing LVM-on-LUKS")
 *   [Create root filesystem snapshots with LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM")
 
@@ -51,6 +51,8 @@ De [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logi
     *   [6.5 Agregar un volumen físico a un grupo de volúmenes](#Agregar_un_volumen_físico_a_un_grupo_de_volúmenes)
     *   [6.6 Eliminar una partición de un grupo de volúmenes](#Eliminar_una_partición_de_un_grupo_de_volúmenes)
     *   [6.7 Desactivar un grupo de volúmenes](#Desactivar_un_grupo_de_volúmenes)
+    *   [6.8 Activar grupo de volúmenes](#Activar_grupo_de_volúmenes)
+    *   [6.9 Reparar un grupo de volúmenes lógicos](#Reparar_un_grupo_de_volúmenes_lógicos)
 *   [7 Tipos de volúmenes lógicos](#Tipos_de_volúmenes_lógicos)
     *   [7.1 Instantáneas/Snapshots](#Instantáneas/Snapshots)
         *   [7.1.1 Configuración](#Configuración)
@@ -68,7 +70,7 @@ De [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logi
     *   [9.4 LVM sobre un medio extraíble](#LVM_sobre_un_medio_extraíble)
     *   [9.5 Al redimensionar un volumen lógico contiguo falla](#Al_redimensionar_un_volumen_lógico_contiguo_falla)
     *   [9.6 La orden «grub-mkconfig» informa del error «unknown filesystem»](#La_orden_«grub-mkconfig»_informa_del_error_«unknown_filesystem»)
-    *   [9.7 Dispositivo de volumen raíz aprovisionado Getting started para agotar tiempo de espera](#Dispositivo_de_volumen_raíz_aprovisionado_Getting_started_para_agotar_tiempo_de_espera)
+    *   [9.7 Dispositivo de volumen raíz aprovisionado para agotar tiempo de espera](#Dispositivo_de_volumen_raíz_aprovisionado_para_agotar_tiempo_de_espera)
     *   [9.8 Demora al apagar](#Demora_al_apagar)
 *   [10 Véase también](#Véase_también)
 
@@ -82,7 +84,7 @@ Los bloques básicos que construyen LVM son:
 
 	Physical volume —*volúmenes físicos*— (en adelante PV)
 
-	Nodo de dispositivo de bloque de Unix, utilizable para almacenamiento por LVM. Ejemplos: un disco duro, una [partición](/index.php/Partition "Partition") MBR o GPT, un archivo loopback, un dispositivo mapeador de dispositivos (por ejemplo, [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")). Alberga un encabezado LVM.
+	Nodo de dispositivo de bloque de Unix, utilizable para almacenamiento por LVM. Ejemplos: un disco duro, una [partición](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") MBR o GPT, un archivo loopback, un dispositivo mapeador de dispositivos (por ejemplo, [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")). Alberga un encabezado LVM.
 
 	Volume group —*grupo de volúmenes*— (en adelante VG)
 
@@ -137,7 +139,7 @@ LVM le da más flexibilidad que la simple partición de un disco duro para:
 *   Redimensionar/crear/borrar el tamaño de los volúmenes lógicos y físicos en línea. Los sistemas de archivos en ellos todavía tendrán que ser redimensionados, pero algunos (como ext4) apoyan el cambio de tamaño en línea.
 *   Migración en línea/vivo de volumenes lógicos, siendo utilizado por los servicios para diferentes discos sin tener que reiniciar los servicios.
 *   Realizar instantáneas que permiten hacer copias de respaldo del sistema de archivos, mientras se mantiene el tiempo de inactividad del servicio a un mínimo.
-*   Soporte para albergar distintos mapeadores de dispositivos, incluido el cifrado del sistema de archivos transparente y almacenamiento en caché de los datos de uso frecuente. Esto permite crear un sistema con (uno o más) discos físicos (cifrados con LUKS) y [LVM en la parte superior](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt/Encrypting an entire system (Español)") para permitir el cambio de tamaño y la administración de volúmenes separados (por ejemplo, para `/`, `/home`, `/backup`, etc.) sin la molestia de introducir una clave varias veces al arrancar.
+*   Soporte para albergar distintos mapeadores de dispositivos, incluido el cifrado del sistema de archivos transparente y almacenamiento en caché de los datos de uso frecuente. Esto permite crear un sistema con (uno o más) discos físicos (cifrados con LUKS) y [LVM en la parte superior](/index.php/Dm-crypt_(Espa%C3%B1ol)/Encrypting_an_entire_system_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt (Español)/Encrypting an entire system (Español)") para permitir el cambio de tamaño y la administración de volúmenes separados (por ejemplo, para `/`, `/home`, `/backup`, etc.) sin la molestia de introducir una clave varias veces al arrancar.
 
 ## Desventajas
 
@@ -146,24 +148,24 @@ LVM le da más flexibilidad que la simple partición de un disco duro para:
 
 ## Primeros pasos
 
-Asegúrese de que el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)").
+Asegúrese de tener [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalación_de_paquetes "Help:Reading (Español)") el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2).
 
 ## Instalar Arch Linux sobre LVM
 
-Se deben crear los volúmenes LVM entre el [particionado](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y el [formateado](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") durante el procedimiento de instalación. En lugar de dar formato directamente a una partición para que sea su sistema de archivos root, esta operación se hará dentro de un volumen lógico (LV).
+Se deben crear los volúmenes LVM entre el [particionado](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y el [formateado](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") durante el [procedimiento de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). En lugar de dar formato directamente a una partición para que sea su sistema de archivos root, esta operación se hará dentro de un volumen lógico (LV).
 
 Remítase primero a «Primeros pasos».
 
 He aquí un breve resumen:
 
-*   Cree la partición(s) donde residirá su volumen físico (PV). Ajuste el tipo de partición para «Linux LVM», que es 8e si usa MBR y 8e00 para GPT.
+*   Cree la [partición(s)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") donde residirá su volumen físico (PV).
 *   Cree los volúmenes físicos (PV). Si se tiene un disco lo mejor es simplemente crear un volumen físico en una partición grande. Si tiene varios discos se pueden crear particiones en cada uno de ellos y crear un volumen físico en cada partición.
 *   Cree el grupo de volúmenes (VG) y asocie todos los volúmenes físicos (PV) al mismo.
 *   Cree volúmenes lógicos (LV) dentro de su grupo de volúmenes (VG).
 *   Continúe con el paso «Formatear las particiones» de [Installation guide (Español)#Formatear las particiones](/index.php/Installation_guide_(Espa%C3%B1ol)#Formatear_las_particiones "Installation guide (Español)").
-*   Cuando llegue al paso «Crear entorno inicial ramdisk» en la guía de instalación, agregue el hook `lvm` a `/etc/mkinitcpio.conf` (vea detalles más abajo ).
+*   Cuando llegue al paso «Crear entorno inicial ramdisk» en la guía de instalación, agregue el hook `lvm2` a `/etc/mkinitcpio.conf` (vea detalles más abajo ).
 
-**Advertencia:** `/boot` no puede residir en LVM cuando se utiliza un gestor de arranque que no soporta LVM. Puede crear una partición `/boot` separada y formatearla directamente. Que se conozca, solo [GRUB](/index.php/GRUB "GRUB") soporta LVM.
+**Advertencia:** `/boot` no puede residir en LVM cuando se utiliza un gestor de arranque que no soporta LVM. Puede crear una partición `/boot` separada y formatearla directamente. Que se conozca, solo [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") soporta LVM.
 
 ### Crear particiones
 
@@ -192,7 +194,7 @@ Cree un volumen físico en ellos:
 
 ```
 
-Esta orden crea una cabecera en cada dispositivo para que se pueda utilizar para LVM. Tal como se define en [#Bloques para construir LVM](#Bloques_para_construir_LVM), el *DISPOSITIVO* puede ser un disco (por ejemplo, `/dev/sda`), una partición (por ejemplo, `/dev/sda2`) o un dispositivo Loopback.
+Esta orden crea una cabecera en cada dispositivo para que se pueda utilizar para LVM. Tal como se define en [#Bloques para construir LVM](#Bloques_para_construir_LVM), el *DISPOSITIVO* puede ser cualquier [dispositivo de bloque](/index.php/Block_device_(Espa%C3%B1ol) "Block device (Español)"), por ejemplo, un disco `/dev/sda`), una partición `/dev/sda2` o un dispositivo Loopback.
 
 Por ejemplo:
 
@@ -207,6 +209,15 @@ Puede hacer un seguimiento de los volúmenes físicos creados con:
 # pvdisplay
 
 ```
+
+También puede obtener información resumida sobre volúmenes físicos con:
+
+```
+# pvscan
+
+```
+
+**Sugerencia:** si tiene problemas con una firma de disco preexistente, puede eliminarla utilizando [wipefs](/index.php/Wipefs "Wipefs").
 
 **Nota:** si se utiliza un disco SSD sin particionarlo primero, utilice `pvcreate --dataalignment 1m /dev/sda` (para el tamaño de bloque de borrado de < 1MiB), véase por ejemplo [esto](http://serverfault.com/questions/356534/ssd-erase-block-size-lvm-pv-on-raw-device-alignment).
 
@@ -251,6 +262,8 @@ Puede hacer un seguimiento de cómo su grupo de volúmenes ha crecido con:
 # vgdisplay
 
 ```
+
+Esto también es lo que haría si quisiera agregar un disco a un RAID o grupo de réplica con discos fallidos.
 
 **Nota:** se pueden crear más de un grupo de volúmenes si es necesario, pero entonces no tendrá todo su almacenamiento presente como si fuera un disco.
 
@@ -321,7 +334,7 @@ Sus volúmenes lógicos deberian encontrarse en `/dev/NombredelGrupodedeVolúmen
 
 ```
 
-Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar las particiones](/index.php/File_systems#Mount_a_file_system "File systems") para obtener información adicional):
+Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar las particiones](/index.php/File_systems_(Espa%C3%B1ol)#Montar_un_sistema_de_archivos "File systems (Español)") para obtener información adicional):
 
 ```
 # mkfs.<*tipo_sistema_archivos*> /dev/<*grupo_de_volúmenes*>/<*volumen_lógico*>
@@ -341,7 +354,7 @@ Por ejemplo:
 
 ### Configurar mkinitcpio
 
-En caso de que su sistema de archivos raíz esté sobre LVM, tendrá que activar los hooks de [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") apropiados, de lo contrario su sistema podría no arrancar. Active:
+En caso de que su sistema de archivos raíz esté sobre LVM, tendrá que activar los hooks de [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") apropiados, de lo contrario su sistema podría no arrancar. Active:
 
 *   `udev` y `lvm2` predeterminados para initramfs basado en busybox.
 *   `systemd` y `sd-lvm2` para initramfs basado en systemd.
@@ -487,8 +500,6 @@ Vea el resultado:
 
 ###### Redimensionar partición
 
-Último paso, es necesario reducir la partición con su [herramienta de particionado](/index.php/Partitioning#Partitioning_tools "Partitioning") favorita.
-
 #### Volúmenes lógicos
 
 **Nota:** [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) proporciona, más o menos, las mismas opciones que las órdenes especializadas de [lvextend(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvextend.8) y [lvreduce(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvreduce.8), al tiempo que permite hacer ambos tipos de operaciones. A pesar de esto, todos las utilidades ofrecen una opción `-r, --resizefs` que permite cambiar el tamaño del sistema de archivos junto con el volumen lógico, mediante `fsadm(8)` (que soporta *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS")). Por lo tanto, puede ser más fácil simplemente utilizar `lvresize` para ambas operaciones y utilizar `--resizefs` para simplificar un poco las cosas, excepto si tiene necesidades específicas o desea tener un control total sobre el proceso.
@@ -524,7 +535,7 @@ Consulte [lvresize(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lvresize.8) pa
 
 ##### Cambiar el tamaño del volumen lógico y del sistema de archivos separadamente
 
-Para los sistemas de archivos no admitidos por [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) necesitará utilizar la [utilidad apropiada](/index.php/File_systems#Types_of_file_systems "File systems") para cambiar el tamaño del sistema de archivos antes de reducir el volumen lógico o después de expandirlo.
+Para los sistemas de archivos no admitidos por [fsadm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsadm.8) necesitará utilizar la [utilidad apropiada](/index.php/File_systems_(Espa%C3%B1ol)#Tipos_de_sistemas_de_archivos "File systems (Español)") para cambiar el tamaño del sistema de archivos antes de reducir el volumen lógico o después de expandirlo.
 
 Para extender el volumen lógico `mediavol` dentro del grupo de volúmenes `MyVolGroup` en 2 GiB *sin* tocar su sistema de archivos:
 
@@ -681,6 +692,13 @@ O, eliminamos todos los volúmenes vacíos:
 
 ```
 
+Por ejemplo: si tiene un disco dañado en un grupo que no se puede encontrar porque se eliminó o falló:
+
+```
+# vgreduce --removemissing --force vg0
+
+```
+
 Por último, si quiere usar la partición para algo más, y quiere evitar a LVM, piense que esa partición es un volumen fisico más:
 
 ```
@@ -698,6 +716,31 @@ Basta con invocar la orden:
 ```
 
 Esto desactivará el grupo de volúmenes y le permitirá desmontar el contenedor donde está almacenado.
+
+### Activar grupo de volúmenes
+
+```
+# vgchange -a y vg0
+
+```
+
+Esto reactivará el grupo de volúmenes si, por ejemplo, tuvo un fallo de unidad en una réplica y cambió la unidad, al ejecutar `pvcreate`, `vgextend` y `vgreduce --removemissing --force`.
+
+### Reparar un grupo de volúmenes lógicos
+
+Para iniciar el proceso de reconstrucción de la matriz de réplica degradada en este ejemplo, debe ejecutar:
+
+```
+# lvconvert --repair /dev/vg0/mirror
+
+```
+
+Puede supervisar el proceso de reconstrucción (Cpy%Sync Column output) con:
+
+```
+# lvs -a -o +devices
+
+```
 
 ## Tipos de volúmenes lógicos
 
@@ -737,9 +780,9 @@ Las instantáneas se utilizan principalmente para proporcionar una copia congela
 
 Vea [Create root filesystem snapshots with LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM") para automatizar la creación de instantáneas límpias del sistema de archivos raíz durante el inicio del sistema para respaldar y restaurar.
 
-[dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") y [dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system").
+[dm-crypt (Español)/Encrypting an entire system (Español)#LVM sobre LUKS](/index.php/Dm-crypt_(Espa%C3%B1ol)/Encrypting_an_entire_system_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt (Español)/Encrypting an entire system (Español)") y [dm-crypt (Español)/Encrypting an entire system (Español)#LUKS sobre LVM](/index.php/Dm-crypt_(Espa%C3%B1ol)/Encrypting_an_entire_system_(Espa%C3%B1ol)#LUKS_sobre_LVM "Dm-crypt (Español)/Encrypting an entire system (Español)").
 
-Si tiene volúmenes LVM no activados a través de [initramfs](/index.php/Initramfs "Initramfs"), [active](/index.php/Enable "Enable") el servicio `lvm-monitoring.service`, proporcionado por el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2).
+Si tiene volúmenes LVM no activados a través de [initramfs (Español)](/index.php/Initramfs_(Espa%C3%B1ol) "Initramfs (Español)"), [active](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") el servicio `lvm-monitoring.service`, proporcionado por el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2).
 
 ### La memoria caché de LVM
 
@@ -866,7 +909,7 @@ El módulo `dm_mod` debería cargarse automáticamente. En caso contrario, prueb
 
  `/etc/mkinitcpio.conf`  `MODULES=(dm_mod ...)` 
 
-Tendrá que [volver a crear](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") la imagen initramfs para que surtan efectos los cambios realizados.
+Tendrá que [volver a crear](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)") la imagen initramfs para que surtan efectos los cambios realizados.
 
 *   Anteponga *lvm* a la orden:
 
@@ -942,15 +985,17 @@ Para solucionar este problema, antes de extender el volumen lógico, cambie su p
 
 ### La orden «grub-mkconfig» informa del error «unknown filesystem»
 
-Asegúrese de retirar los volúmenes de instantáneas antes de generar grub.cfg
+Asegúrese de retirar los volúmenes de instantáneas antes de [generar grub.cfg](/index.php/GRUB_(Espa%C3%B1ol)#Generar_el_archivo_de_configuración_principal "GRUB (Español)").
 
-### Dispositivo de volumen raíz aprovisionado Getting started para agotar tiempo de espera
+### Dispositivo de volumen raíz aprovisionado para agotar tiempo de espera
 
-Con una gran cantidad de instantáneas, `thin_check` se ejecuta durante un tiempo suficientemente prolongado para que se agote el tiempo de espera del dispositivo raíz. Para compensar, agregue el parámetro de arranque del kernel `rootdelay=60` a la configuración de su gestor de arranque.
+Con una gran cantidad de instantáneas, `thin_check` se ejecuta durante un tiempo suficientemente prolongado para que se agote el tiempo de espera del dispositivo raíz. Para compensar, agregue el parámetro de arranque del kernel `rootdelay=60` a la configuración de su gestor de arranque. O haga que `thin_check` omita la comprobación de asignaciones de bloques (consulte [[2]](https://www.redhat.com/archives/linux-lvm/2016-January/msg00010.html)) y [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)"):
+
+ `/etc/lvm/lvm.conf`  `thin_check_options = [ "-q", "--clear-needs-check-flag", "--skip-mappings" ]` 
 
 ### Demora al apagar
 
-Si utiliza RAID, instantáneas o aprovisionamiento, y experimenta un retraso en el apagado, asegúrese de que `lvm2-monitor.service` está [iniciado](/index.php/Started "Started"). Consulte [FS#50420](https://bugs.archlinux.org/task/50420).
+Si utiliza RAID, instantáneas o aprovisionamiento, y experimenta un retraso en el apagado, asegúrese de que `lvm2-monitor.service` está [iniciado](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)"). Consulte [FS#50420](https://bugs.archlinux.org/task/50420).
 
 ## Véase también
 
