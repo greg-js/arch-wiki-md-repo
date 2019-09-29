@@ -474,7 +474,7 @@ See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1#REME
 
 ### Help command
 
-Unlike [Bash](/index.php/Bash "Bash"), Zsh does not enable a built in `help` command, instead it provides `run-help`. By default `run-help` is an alias to `man`, it can be either executed manually by prepending it to a command or it can be invoked for the currently typed command with the keyboard shortcuts `Alt+h` or `Esc+h`.
+Unlike [Bash](/index.php/Bash "Bash"), Zsh does not enable a built in `help` command, instead it provides `run-help`. By default `run-help` is an alias to `man`, it can be either executed manually by prepending it to a command or it can be invoked for the currently typed command with the keyboard shortcuts `Alt+h` or `Esc` `h`.
 
 Since by default it is just an alias to [man](/index.php/Man "Man"), it will only work on external commands. To improve its functionality, so that it works on shell builtins and other shell features, you need to use the `run-help` function. See [zshcontrib(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zshcontrib.1) for more information on the `run-help` and its assistant functions.
 

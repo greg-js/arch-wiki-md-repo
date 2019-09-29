@@ -1,6 +1,6 @@
 **Dobrodošli na [ArchWiki](/index.php/ArchWiki "ArchWiki"): vaš izvor za Arch Linux dokumentaciju na webu**
 
-Posjetite [Sadržaj](/index.php/Table_of_contents_(Bosanski) "Table of contents (Bosanski)") za listu kategorija artikala.
+Posjetite [sadržaj](/index.php/Table_of_contents_(Bosanski) "Table of contents (Bosanski)") za listu kategorija artikala.
 
 ## Distribucija
 
@@ -42,7 +42,7 @@ Posjetite [Sadržaj](/index.php/Table_of_contents_(Bosanski) "Table of contents 
 
 	Kolekcija linkova za Arch Linux community-e širom svijeta.
 
-	[IRC channeli](/index.php/IRC_channels_(Bosanski) "IRC channels (Bosanski)")
+	[IRC kanali](/index.php/IRC_channels_(Bosanski) "IRC channels (Bosanski)")
 
 	Poveži se sa ostalim Archerima za dobar razgovor.
 
@@ -56,10 +56,10 @@ Posjetite [Sadržaj](/index.php/Table_of_contents_(Bosanski) "Table of contents 
 
 	Kako pretraživati wiki, naći povezane članke i gledati wiki offline.
 
-	[Pomoć:Contributing](/index.php?title=ArchWiki:Contributing_(Bosanski)&action=edit&redlink=1 "ArchWiki:Contributing (Bosanski) (page does not exist)")
+	[Pomoć:Doprinositi](/index.php/ArchWiki:Contributing_(Bosanski) "ArchWiki:Contributing (Bosanski)")
 
 	Početna tačka za one koji žele da doprinesu wiki-u.
 
-	[Pomoć:Editovanje](/index.php?title=Help:Editing_(Bosanski)&action=edit&redlink=1 "Help:Editing (Bosanski) (page does not exist)")
+	[Pomoć:Uređivanje](/index.php/Help:Editing_(Bosanski) "Help:Editing (Bosanski)")
 
 	Tutorial vezan za editovanje članaka i uvod u wiki tekst sintaksu.

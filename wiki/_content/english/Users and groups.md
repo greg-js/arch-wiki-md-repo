@@ -250,7 +250,7 @@ To change a user's login name:
 
 ```
 
-**Warning:** Make certain that you are not logged in as the user whose name you are about to change. Open a new tty (`Ctrl+Alt+F1`) and log in as root or as another user and su to root. usermod should prevent you from doing this by mistake.
+**Warning:** Make certain that you are not logged in as the user whose name you are about to change. Open a new tty (e.g. `Ctrl+Alt+F6`) and log in as root or as another user and [elevate to root](/index.php/General_recommendations#Privilege_elevation "General recommendations"). *usermod* should prevent you from doing this by mistake.
 
 Changing a username is safe and easy when done properly, just use the [usermod](#Other_examples_of_user_management) command. If the user is associated to a group with the same name, you can rename this with the [groupmod](#Group_management) command.
 
@@ -341,11 +341,11 @@ Where:
 Example:
 
 ```
-jack:x:1001:100:Jack Smith,some comment here,,:/home/jack:/bin/bash
+jack:x:1001:1003:Jack Smith,some comment here,,:/home/jack:/bin/bash
 
 ```
 
-Broken down, this means: user `jack`, whose password is in `/etc/shadow`, whose UID is 1001 and whose primary group is 100\. Jack Smith is his full name and there is a comment associated to his account; his home directory is `/home/jack` and he is using [Bash](/index.php/Bash "Bash").
+Broken down, this means: user `jack`, whose password is in `/etc/shadow`, whose UID is 1001 and whose primary group is 1003\. Jack Smith is his full name and there is a comment associated to his account; his home directory is `/home/jack` and he is using [Bash](/index.php/Bash "Bash").
 
 The *pwck* command can be used to verify the integrity of the user database. It can sort the user list by GID at the same time, which can be helpful for comparison:
 
@@ -354,7 +354,7 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 
 ```
 
-**Note:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
+**Warning:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Group management
 
@@ -424,7 +424,7 @@ If the user is currently logged in, he must log out and in again for the change 
 
 The *grpck* command can be used to verify the integrity of the system's group files.
 
-Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package create *.pacnew* files. Alike the *.pacnew* files for the [#User database](#User_database), these can be disregarded/removed, because the install script adds any new required groups.
+**Warning:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Group list
 

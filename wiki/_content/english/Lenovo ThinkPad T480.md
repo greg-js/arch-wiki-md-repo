@@ -131,11 +131,14 @@ For two-finger scrolling activity this gives a boost from 40 Hz to 135 Hz on ave
 
 ## Power management/Throttling issues
 
-See
+Due to missing Intel Dynamic Platform and Thermal Framework *(DPTF)* support for Linux, a feature which should detect whether the laptop is used on a desk or on the lap so it can throttle the CPU in the latter case to reduce the temperature is not working and the CPU is always throttled. An Lenovo employee explained the situation and the solution Lenovo is building in a [PDF posted in their forum](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4534535/highlight/true#M13642). The firmware and EFI fixes have been [released for a different model](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4535310/highlight/true#M13653) and Lenovo has recognized that the T480 is affected, so there is hope the T480 will get the fix too.
+
+An interim fix is [throttled](https://www.archlinux.org/packages/?name=throttled) ([Github](https://github.com/erpalma/throttled)).
+
+Also see
 
 *   X1 Carbon Gen 6 [Power management/Throttling issues](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_6)#Power_management.2FThrottling_issues "Lenovo ThinkPad X1 Carbon (Gen 6)")
 *   ThinkPad T480s [Thermal Throttling Fix](/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix "Lenovo ThinkPad T480s")
-*   [https://github.com/erpalma/throttled](https://github.com/erpalma/throttled)
 
 ## UEFI/Firmware Updates
 

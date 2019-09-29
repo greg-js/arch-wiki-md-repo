@@ -4,13 +4,17 @@ Související články
 *   [Systemd](/index.php/Systemd "Systemd")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 Zavaděč](#Zavad.C4.9B.C4.8D)
-*   [2 Jádro](#J.C3.A1dro)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Zavaděč](#Zavaděč)
+*   [2 Jádro](#Jádro)
 *   [3 Initframs](#Initframs)
 *   [4 Init proces](#Init_proces)
-*   [5 Viz také](#Viz_tak.C3.A9)
+*   [5 Viz také](#Viz_také)
 
 ## Zavaděč
 

@@ -288,7 +288,7 @@ You may also need to allow the following protocols in your firewall:
 
 ## Starting
 
-Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `strongswan.service`.
+Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `strongswan-starter.service`.
 
 ### Running Strongswan in a Container
 

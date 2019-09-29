@@ -120,7 +120,7 @@ rustc 1.26.0 (a77568041 2018-05-07)
 
 ```
 
-**Note:** Rustup does not install some Rust commands that the [rust](https://www.archlinux.org/packages/?name=rust) package does include, such as `rustfmt` and `rls`. They are not included because this allows the Rust maintainers to ship a nightly of Rust with a broken `rustfmt`/`rls`. To install them, run `rustup component add rls-preview` and `rustup component add rustfmt-preview` respectively. This will also suspend updates of the nightly channel, if they break `rustfmt`/`rls`.
+**Note:** Rustup does not install some Rust commands that the [rust](https://www.archlinux.org/packages/?name=rust) package does include, such as `rustfmt` and `rls`. They are not included because this allows the Rust maintainers to ship a nightly of Rust with a broken `rustfmt`/`rls`. To install them, run `rustup component add rls` and `rustup component add rustfmt` respectively. This will also suspend updates of the nightly channel, if they break `rustfmt`/`rls`.
 
 **Note:** Rust does not do its own linking, and so you’ll need to have a linker installed. You can use [gcc](https://www.archlinux.org/packages/?name=gcc), otherwise Rust will generate the following `error: linker `cc` not found.`
 
@@ -250,7 +250,7 @@ $ cargo +nightly install racer
 [Clippy](https://github.com/Manishearth/rust-clippy) takes advantage of compiler plugin support in Nightly builds of Rust to provide a large number of additional lints for detecting and warning about a larger variety of errors and non-idiomatic Rust. Install clippy using rustup with:
 
 ```
-$ rustup component add clippy-preview
+$ rustup component add clippy
 
 ```
 

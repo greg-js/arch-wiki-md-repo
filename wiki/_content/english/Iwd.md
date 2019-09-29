@@ -19,7 +19,7 @@ iwd can work in standalone mode or in combination with comprehensive network man
     *   [2.1 iwctl](#iwctl)
         *   [2.1.1 Connect to a network](#Connect_to_a_network)
         *   [2.1.2 Disconnect from a network](#Disconnect_from_a_network)
-        *   [2.1.3 Show device information](#Show_device_information)
+        *   [2.1.3 Show device and connection information](#Show_device_and_connection_information)
         *   [2.1.4 Manage known networks](#Manage_known_networks)
 *   [3 WPA Enterprise](#WPA_Enterprise)
     *   [3.1 EAP-PWD](#EAP-PWD)
@@ -118,12 +118,19 @@ To disconnect from a network:
 
 ```
 
-#### Show device information
+#### Show device and connection information
 
-To display the details of a WiFi device, like MAC address, state and connected network:
+To display the details of a WiFi device, like MAC address:
 
 ```
 [iwd]# device *device* show
+
+```
+
+To display the connection state, including the connected network of a WiFi device:
+
+```
+[iwd]# station *device* show
 
 ```
 
@@ -164,8 +171,6 @@ If you do not want autoconnect to the AP you can set the option to False and con
 
 ### EAP-PEAP
 
-**Warning:** iwd is currently not secure against man-in-the-middle attacks since the certificate name is not validated. See the project's [TODO](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/TODO?id=0.19#n311) file.
-
 Like EAP-PWD, you also need to create a `*essid*.8021x` in the folder. Before you proceed to write the configuration file, this is also a good time to find out which CA certificate your organization uses. This is an example configuration file that uses MSCHAPv2 password authentication:
 
  `/var/lib/iwd/*essid*.8021x` 
@@ -174,6 +179,7 @@ Like EAP-PWD, you also need to create a `*essid*.8021x` in the folder. Before yo
 EAP-Method=PEAP
 EAP-Identity=anonymous@realm.edu
 EAP-PEAP-CACert=/path/to/root.crt
+EAP-PEAP-ServerDomainMask=radius.realm.edu
 EAP-PEAP-Phase2-Method=MSCHAPV2
 EAP-PEAP-Phase2-Identity=johndoe@realm.edu
 EAP-PEAP-Phase2-Password=hunter2
@@ -361,7 +367,7 @@ A low entropy pool can cause connection problems in particular noticeable after 
 
 ### Systemd unit fails on startup due to device not being available
 
-Some users have reported that the provided systemd unit does not wait for the wireless device to become available. [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803) Unfortunately, if iwd is started before udev renaming is done, the network device will be blocked and renaming will fail. Thus, the unit fails on startup. [[3]](https://iwd.wiki.kernel.org/interface_lifecycle) The issue can be fixed by forcing iwd to fallback to legacy mode by adding an option to `/etc/iwd/main.conf` as follows:
+Some users have reported that the provided systemd unit does not wait for the wireless device to become available [[2]](https://bbs.archlinux.org/viewtopic.php?id=241803). Unfortunately, if iwd is started before udev renaming is done, the network device will be blocked and renaming will fail. Thus, the unit fails on startup [[3]](https://iwd.wiki.kernel.org/interface_lifecycle#udev_interface_renaming). The issue can be fixed by forcing iwd to legacy mode and thus, not renaming newly detected devices, by adding an option to `/etc/iwd/main.conf` as follows:
 
  `/etc/iwd/main.conf` 
 ```
@@ -369,7 +375,7 @@ Some users have reported that the provided systemd unit does not wait for the wi
 use_default_interface=true
 ```
 
-Another fix is to create a systemd unit with the following content:
+Optionally, bind iwd to a specific wireless device by creating a systemd unit with the following content. As of *0.21*, it has been observed that this will not prevent iwd from renaming the wireless device later, thus the use of iwd's legacy mode is mandatory:
 
  `/etc/systemd/system/iwd@.service` 
 ```
@@ -386,7 +392,7 @@ LimitNPROC=1
 Restart=on-failure
 ```
 
-Then one can enable the `iwd@*device*.service` unit for the specific wireless *device*.
+Then, disable `iwd.service` and enable `iwd@*device*.service` unit for the specific wireless *device*.
 
 Alternatively, set a proper dependency for iwd to run after systemd/udevd by creating a [drop-in file](/index.php/Drop-in_file "Drop-in file") as follows: [[4]](https://lists.01.org/pipermail/iwd/2019-March/005837.html)
 

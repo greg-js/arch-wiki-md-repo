@@ -21,7 +21,7 @@ $ xdg-user-dirs-update
 
 ```
 
-**Tip:** To force the creation of English-named directories, `LC_ALL=C xdg-user-dirs-update` can be used.
+**Tip:** To force the creation of English-named directories, `LC_ALL=C xdg-user-dirs-update --force` can be used.
 
 When executed, it will also automatically:
 

@@ -25,7 +25,8 @@
     *   [5.10 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
     *   [5.11 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA's_proprietary_drivers)
     *   [5.12 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
-    *   [5.13 Slock after suspend](#Slock_after_suspend)
+    *   [5.13 Xorg leaking GPU memory with Nvidia proprietary drivers](#Xorg_leaking_GPU_memory_with_Nvidia_proprietary_drivers)
+    *   [5.14 Slock after suspend](#Slock_after_suspend)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -337,6 +338,10 @@ vsync = "opengl"
 ```
 
 ### Lag with Nvidia proprietary drivers and FullCompositionPipeline
+
+See [#Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver).
+
+### Xorg leaking GPU memory with Nvidia proprietary drivers
 
 See [#Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts/screenshot_issues_when_using_AMD's_Catalyst_driver).
 

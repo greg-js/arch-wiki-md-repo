@@ -27,6 +27,7 @@
     *   [4.4 Synchronize address book with CardDav contacts](#Synchronize_address_book_with_CardDav_contacts)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SMTP Error: Authentication failure](#SMTP_Error:_Authentication_failure)
+    *   [5.2 Recipient address rejected](#Recipient_address_rejected)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -344,6 +345,24 @@ You may first try to disable(comment) the following settings in *config.inc.php*
 ```
 //$config['smtp_user'] = '%u';
 //$config['smtp_pass'] = '%p';
+
+```
+
+### Recipient address rejected
+
+You may get one of these errors, depending if you use TLS or STARTTLS:
+
+```
+ 530 5.7.0 Must issue a STARTTLS command first
+ 554 5.7.1 <>: Recipient address rejected: Access denied
+
+```
+
+If that happens try adding the following lines to *config.inc.php*:
+
+```
+$config['smtp_user'] = '%u';
+$config['smtp_pass'] = '%p';
 
 ```
 

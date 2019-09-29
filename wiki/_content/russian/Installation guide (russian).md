@@ -285,7 +285,7 @@ FONT=cyr-sun16
 
 ### Настройка сети
 
-Создайте файл [hostname](/index.php/Hostname "Hostname"):
+Создайте файл [hostname](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка_имени_хоста "Network configuration (Русский)"):
 
  `/etc/hostname` 
 ```
@@ -305,7 +305,7 @@ FONT=cyr-sun16
 
 Если система имеет постоянный IP-адрес, его следует использовать вместо `127.0.1.1`.
 
-Завершите [настройку сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети") для вновь установленной среды.
+Завершите [настройку сети](/index.php/Network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network configuration (Русский)") для вновь установленной среды.
 
 ### Initramfs
 

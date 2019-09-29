@@ -59,6 +59,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [daurnimator](https://aur.archlinux.org/packages.php?K=daurnimator&SeB=m) | Daurnimator | quae at daurnimator com |
 | [dbermond](https://aur.archlinux.org/packages.php?K=dbermond&SeB=m) | Daniel Bermond | gmail-com: danielbermond |
 | [demize](https://aur.archlinux.org/packages.php?K=demize&SeB=m) | [Johannes Löthberg](/index.php/User:Kyrias "User:Kyrias") | johannes@kyriasis.com |
+| [diabonas](https://aur.archlinux.org/packages.php?K=diabonas&SeB=m) | Jonas Witschel | diabonas@archlinux.org |
 | [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | svetlemodry @ archlinux org |
 | [dvzrv](https://aur.archlinux.org/packages.php?K=dvzrv&SeB=m) | [David Runge](/index.php/User:Davezerave "User:Davezerave") | dave@sleepmap.de |
 | [eschwartz](https://aur.archlinux.org/packages.php?K=eschwartz&SeB=m) | Eli Schwartz | eschwartz@archlinux.org |
@@ -81,7 +82,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [mtorromeo](https://aur.archlinux.org/packages.php?K=mtorromeo&SeB=m) | Massimiliano Torromeo | massimiliano.torromeo@gmail.com |
 | [Muflone](https://aur.archlinux.org/packages.php?K=Muflone&SeB=m) | Fabio Castelli | muflone (at) archlinux.org |
 | [NicoHood](https://aur.archlinux.org/packages.php?K=NicoHood&SeB=m) | NicoHood | archlinux (cat) nicohood (dog) de |
-| [polyzen](https://aur.archlinux.org/packages.php?K=polyzen&SeB=m) | Daniel M. Capella | polycitizen@gmail.com |
+| [polyzen](https://aur.archlinux.org/packages.php?K=polyzen&SeB=m) | Daniel M. Capella | polyzen@archlinux.org |
 | [sangy](https://aur.archlinux.org/packages.php?K=sangy&SeB=m) | Santiago Torres-Arias | santiago ＠ archlinux ⇶ org |
 | [schivmeister](https://aur.archlinux.org/packages.php?K=schivmeister&SeB=m) | [Ray Rashif](/index.php/User:Schivmeister "User:Schivmeister") | schiv archlinux org |
 | [schuay](https://aur.archlinux.org/packages.php?K=schuay&SeB=m) | Jakob Gruber | jakob.gruber@gmail.com |

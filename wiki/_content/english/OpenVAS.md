@@ -45,7 +45,7 @@ save 60 10000
 Create `/etc/openvas/openvassd.conf` and add the following:
 
 ```
-kb_location = /var/lib/redis/redis.sock
+db_address = /var/lib/redis/redis.sock
 
 ```
 
@@ -71,7 +71,7 @@ Alternatively install [greenbone-vulnerability-manager](https://www.archlinux.or
 Create certificates for the server and clients, default values were used:
 
 ```
-# openvas-manage-certs -a
+# gvm-manage-certs -a
 
 ```
 
@@ -86,33 +86,26 @@ Update the plugins and vulnerability data:
 
 **Note:** If GSA complains that the scapdata database is missing, it may be necessary to use greenbone-scapdata-sync --refresh.
 
-[Start](/index.php/Start "Start") the `openvas-scanner` service, then rebuild the database:
-
-```
-# openvasmd --rebuild --progress
-
-```
-
 Add an administrator user account, be sure to copy the password:
 
 ```
-# openvasmd --create-user=admin --role=Admin
+# gvmd --create-user=admin --role=Admin
 
 ```
 
 You can also change the password of the user later on
 
 ```
-# openvasmd --user=admin --new-password=<password>
+# gvmd --user=admin --new-password=<password>
 
 ```
 
 ## Getting started
 
-Start the `openvasmd` daemon
+Start the `gvmd` daemon
 
 ```
-# openvasmd -p 9390 -a 127.0.0.1
+# gvmd -p 9390 -a 127.0.0.1
 
 ```
 
@@ -138,7 +131,7 @@ Redhat based systemd units are in an AUR package named [openvas-systemd](https:/
 The database needs to be migrated when moving to a new major version:
 
 ```
-# openvasmd --migrate --progress
+# gvmd --migrate
 
 ```
 

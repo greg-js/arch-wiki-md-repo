@@ -20,6 +20,7 @@
     *   [3.4 Совмещение /etc/profile и ~/.profile](#Совмещение_/etc/profile_и_~/.profile)
 *   [4 Советы и рекомендации](#Советы_и_рекомендации)
     *   [4.1 История Замены](#История_Замены)
+    *   [4.2 Хук "command not found"](#Хук_"command_not_found")
 *   [5 Решение проблем](#Решение_проблем)
     *   [5.1 Скрипты не совместимые с fish](#Скрипты_не_совместимые_с_fish)
     *   [5.2 su запускает Bash](#su_запускает_Bash)
@@ -180,6 +181,10 @@ env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PATH/s/'//g;/PATH/s/:/ /g;s/
 ### История Замены
 
 Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
+
+### Хук "command not found"
+
+[pkgfile](/index.php/Pkgfile "Pkgfile") включает хук "command not found" ("команда не найдена"), который при вводе неизвестной команды осуществляет поиск в официальных репозиториях. Если пакет [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) установлен, хук запустится по умолчанию.
 
 ## Решение проблем
 

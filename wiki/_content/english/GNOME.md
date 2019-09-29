@@ -99,6 +99,7 @@ Select the session: *GNOME*, *GNOME Classic*, or *GNOME on Xorg* from the displa
 
 *   For the GNOME on Xorg session, add to the `~/.xinitrc` file (see [here](https://gitlab.gnome.org/GNOME/gtk/issues/1390#note_344758) for details):
     ```
+    export XDG_SESSION_TYPE=x11
     export GDK_BACKEND=x11
     exec gnome-session
     ```

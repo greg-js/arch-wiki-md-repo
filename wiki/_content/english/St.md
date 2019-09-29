@@ -237,7 +237,7 @@ X Error of failed request:  BadLength (poly request too large or internal Xlib l
 
 ```
 
-In order to fix it, simply [install](/index.php/Install "Install") [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) for unicode coverage.
+In order to fix it, simply install [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/) for unicode coverage.
 
 ## See also
 

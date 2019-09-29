@@ -1,6 +1,10 @@
 [Partclone](http://partclone.org), like the well-known [Partimage](http://www.partimage.org/Main_Page), can be used to back up and restore a partition while considering only used blocks.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Using Partclone with an ext4-formatted partition](#Using_Partclone_with_an_ext4-formatted_partition)

@@ -71,7 +71,7 @@ See also [Wikipedia:Comparison of audio coding formats](https://en.wikipedia.org
 | [MPEG-1](https://en.wikipedia.org/wiki/MPEG-1 "wikipedia:MPEG-1") | [libmad](https://www.archlinux.org/packages/?name=libmad) |
 | [MP3](https://en.wikipedia.org/wiki/MP3 "wikipedia:MP3") | [lame](https://www.archlinux.org/packages/?name=lame) |
 | [Musepack](https://en.wikipedia.org/wiki/Musepack "wikipedia:Musepack") (MPC) | –  | [libmpcdec](https://www.archlinux.org/packages/?name=libmpcdec) |
-| [Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) | [opus](https://www.archlinux.org/packages/?name=opus), [opus-git](https://aur.archlinux.org/packages/opus-git/) |
+| [Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) | [opus](https://www.archlinux.org/packages/?name=opus) |
 | [Vorbis](https://en.wikipedia.org/wiki/Vorbis "wikipedia:Vorbis") | [libvorbis](https://www.archlinux.org/packages/?name=libvorbis) |
 | Speech codecs |
 | [AMR](https://en.wikipedia.org/wiki/Adaptive_Multi-Rate_audio_codec "wikipedia:Adaptive Multi-Rate audio codec") | [opencore-amr](https://www.archlinux.org/packages/?name=opencore-amr) |

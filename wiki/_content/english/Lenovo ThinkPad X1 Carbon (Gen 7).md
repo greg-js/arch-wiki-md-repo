@@ -60,7 +60,7 @@ ThinkPad X1 Carbon 7th
     *   [2.4 S3 Suspend Bug with Bluetooth Devices](#S3_Suspend_Bug_with_Bluetooth_Devices)
     *   [2.5 BIOS configurations](#BIOS_configurations)
 *   [3 Power management/Throttling issues](#Power_management/Throttling_issues)
-    *   [3.1 Throttling fix](#Throttling_fix)
+    *   [3.1 throttled](#throttled)
     *   [3.2 Touchpad TLP fix](#Touchpad_TLP_fix)
 *   [4 Audio](#Audio)
     *   [4.1 Volume controls](#Volume_controls)
@@ -167,9 +167,11 @@ Occasionally your Thinkpad will wake up immediately after suspending with certai
 
 Due to wrong configured power management registers the CPU may consume a lot less power than under windows and the thermal throttling occurs at 80°C (97°C when using Windows, see [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/)).
 
-There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) to inform Lenovo about this issue.
+Lenovo has confirmed the issue, [explained the cause](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4534535/highlight/true#M13642) and has published [updates for the embedded controller and the BIOS](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4535310/highlight/true#M13653) to LVFS (*how to install see [#BIOS Updates](#Updates)*).
 
-### Throttling fix
+### throttled
+
+**Note:** This fix has probably been superseded by the EC/BIOS updates
 
 [throttled](https://www.archlinux.org/packages/?name=throttled) replaces [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/) used previously. Install [throttled](https://www.archlinux.org/packages/?name=throttled), then run
 

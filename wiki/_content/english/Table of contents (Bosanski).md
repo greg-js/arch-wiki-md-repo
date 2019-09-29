@@ -1,8 +1,8 @@
 | [Bosanski](/index.php/Category:Bosanski "Category:Bosanski") <small>(2)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(Bosanski) "Category:About Arch (Bosanski)") <small>(5)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(Bosanski) "Category:Arch community (Bosanski)") <small>(2)</small> |
-| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Bosanski) "Category:ArchWiki (Bosanski)") <small>(0)</small> |
-| <small>1.2.1.</small> [Help](/index.php/Category:Help_(Bosanski) "Category:Help (Bosanski)") <small>(2)</small> |
+| <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Bosanski) "Category:ArchWiki (Bosanski)") <small>(2)</small> |
+| <small>1.2.1.</small> [Help](/index.php/Category:Help_(Bosanski) "Category:Help (Bosanski)") <small>(3)</small> |
 | <small>1.2.2.</small> [Lists](/index.php/Category:Lists_(Bosanski) "Category:Lists (Bosanski)") <small>(1)</small> |
 | <small>1.2.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Bosanski) "Category:Lists of software (Bosanski)") <small>(2) (also in [Software](/index.php/Category:Software_(Bosanski) "Category:Software (Bosanski)"))</small> |
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process_(Bosanski) "Category:Installation process (Bosanski)") <small>(1)</small> |

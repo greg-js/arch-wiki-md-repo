@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [mercurial](https://www.archlinux.org/packages/?name=mercurial), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [mercurial](https://www.archlinux.org/packages/?name=mercurial), available in the [Official repositories](/index.php/Official_repositories "Official repositories"). For the development version, install [mercurial-hg](https://aur.archlinux.org/packages/mercurial-hg/).
 
 ### Graphical front-ends
 

@@ -69,7 +69,7 @@ The docker storage driver (or graph driver) has a huge impact on performance. It
 
 As Arch linux ships new kernels, there is no point using the compatibility option. A good, modern choice is `overlay2`.
 
-To see the current storage driver, run `# docker info | head`; modern docker installations should already use `overlay2` by default.
+To see the current storage driver, run `# docker info | grep -i storage`; modern docker installations should already use `overlay2` by default.
 
 To set your own choice of storage driver, edit `/etc/docker/daemon.json` (create it if it does not exist):
 

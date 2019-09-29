@@ -434,7 +434,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **Surfer** — Simple keyboard based web browser, written in C.
 
-	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer](https://aur.archlinux.org/packages/surfer/)
+	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer-git](https://aur.archlinux.org/packages/surfer-git/)
 
 *   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
 
@@ -829,6 +829,14 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop client for Pydio.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
+
+*   **[rclone](/index.php?title=Rclone&action=edit&redlink=1 "Rclone (page does not exist)")** — multi-provider sync, copy, and mount client. Supports GSuite Team Drives.
+
+	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
+
+*   **[rclone-browser](/index.php?title=Rclone-browser&action=edit&redlink=1 "Rclone-browser (page does not exist)")** — Gui for Rclone
+
+	[https://github.com/kapitainsky/RcloneBrowser](https://github.com/kapitainsky/RcloneBrowser) || [rclone-browser-git](https://aur.archlinux.org/packages/rclone-browser-git/)
 
 *   **S3cmd** — Unofficial CLI for Amazon S3.
 

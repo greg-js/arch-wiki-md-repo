@@ -23,7 +23,9 @@ This article explains how to create a bridge that contains at least an ethernet 
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Wireless interface on a bridge](#Wireless_interface_on_a_bridge)
     *   [3.2 Speeding up traffic destinated to the bridge itself](#Speeding_up_traffic_destinated_to_the_bridge_itself)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 No Networking after Bridge Configuration](#No_Networking_after_Bridge_Configuration)
+*   [5 See also](#See_also)
 
 ## Creating a bridge
 
@@ -212,6 +214,36 @@ The way to let locally destinated packets be queued only once is by brouting the
 The replies from the bridge will be sent out through the br0 device (assuming your routing table is correct and sends all traffic through br0), so everything keeps working neatly, without the performance loss caused by the packet being queued twice.
 
 The redirect target is needed because the MAC address of the bridge port is not necessarily equal to the MAC address of the bridge device. The packets destinated to the bridge box will have a destination MAC address equal to that of the bridge br0, so that destination address must be changed to that of the bridge port.
+
+## Troubleshooting
+
+### No Networking after Bridge Configuration
+
+It may help to remove all IP-addresses and routes from the interface (e.g. `enp1s0` or `eth0`) that was added to the bridge and configure these parameters for the bridge instead.
+
+First of all, make sure there is no [dhcpcd](/index.php/Dhcpcd "Dhcpcd")-instance running for `eth0`, otherwise the deleted addresses may be reassigned.
+
+Remove address and route from the `eth0` interface:
+
+```
+# ip addr del *IFADDR* dev eth0
+# ip route del *IFADDR* dev eth0
+
+```
+
+Now IP-address and route for the earlier configured bridge must be set. This is usually done by starting [dhcpcd](/index.php/Dhcpcd "Dhcpcd") for this device. Otherwise, consult [Network configuration](/index.php/Network_configuration "Network configuration") for manual configuration.
+
+```
+# dhcpcd *bridge_name*
+
+```
+
+If there's no DNS yet, configure [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") or any other service that provides name resolution. The `/etc/resolv.conf` may already have been configured by [NetworkManager](/index.php/NetworkManager "NetworkManager"). If so, it's just a matter of starting the service.
+
+```
+# systemctl start systemd-resolved
+
+```
 
 ## See also
 

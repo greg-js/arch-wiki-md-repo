@@ -254,7 +254,7 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 **Note:**
 
 *   This option may not work when `SwapbuffersWait` is `false`.
-*   This option may increases memory allocation considerably and reduce performance. [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
+*   This option may increase memory allocation considerably and reduce performance. [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
 *   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
 *   This option does not work with UXA acceleration method, only with SNA.
 

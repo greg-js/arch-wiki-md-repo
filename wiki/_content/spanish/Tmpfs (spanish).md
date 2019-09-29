@@ -1,6 +1,10 @@
 Un disco RAM (ramdisk) es un área de memoria utilizada como disco. Muchas distribuciones usan /dev/ram para esto, pero en Arch no están disponibles de los dispositivos /dev/ram, por lo que hay que usar [/etc/fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") para crear un disco RAM. Es extremadamente importante acordarse de que los discos RAM se almacenan en memoria y, por consiguiente, son volátiles. Cualquier cosa almacenada en un disco RAM, se perderá si apaga el equipo o se interrumpe la alimentación de la memoria. Por lo tanto, es necesario guardar el contenido de tu disco RAM en un soporte persistente, si quieres conservarlo.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 ¿Por qué usar uno?](#¿Por_qué_usar_uno?)
 *   [2 Cómo crear un disco RAM](#Cómo_crear_un_disco_RAM)
@@ -13,7 +17,7 @@ Un disco RAM se almacena en RAM y, en consecuencia, es mucho más rápido que un
 
 ## Cómo crear un disco RAM
 
-Para crear un disco RAM, debes proceder igual que para montar cualquier otro dispositivo de almacenamiento. En primer lugar, debes elegir el punto de montaje deseado (directorio) y, a continuación, añadirlo a /etc/fastab, tal como se indica seguidamente:
+Para crear un disco RAM, debes proceder igual que para montar cualquier otro dispositivo de almacenamiento. En primer lugar, debes elegir el punto de montaje deseado (directorio) y, a continuación, añadirlo a /etc/fstab, tal como se indica seguidamente:
 
 ```
 none     /directorio/punto/montaje     ramfs  defaults   0     0

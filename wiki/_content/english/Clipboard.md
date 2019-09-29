@@ -1,7 +1,7 @@
 Related articles
 
 *   [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal")
-*   [Firefox#Middle-click errors](/index.php/Firefox#Middle-click_errors "Firefox")
+*   [Firefox#Middle-click behavior](/index.php/Firefox#Middle-click_behavior "Firefox")
 *   [GTK#Disable mouse paste](/index.php/GTK#Disable_mouse_paste "GTK")
 *   [Vim#Clipboard](/index.php/Vim#Clipboard "Vim")
 

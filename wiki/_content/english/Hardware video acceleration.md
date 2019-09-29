@@ -54,9 +54,9 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC"). For comprehensive o
 
 [NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver supports via [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils):
 
-*   VDPAU on GeForce 8 series and newer GPUs;
-*   NVDECODE on Fermi and newer GPUs [[1]](https://developer.download.nvidia.com/assets/cuda/files/NVIDIA_Video_Decoder.pdf);
-*   NVENCODE on Kepler and newer GPUs.
+*   VDPAU on [GeForce 8 series](https://en.wikipedia.org/wiki/GeForce_8_series "wikipedia:GeForce 8 series") and newer GPUs;
+*   NVDECODE on [Fermi](https://en.wikipedia.org/wiki/Fermi_(microarchitecture) and newer GPUs [[1]](https://developer.download.nvidia.com/assets/cuda/files/NVIDIA_Video_Decoder.pdf);
+*   NVENCODE on [Kepler](https://en.wikipedia.org/wiki/Kepler_(microarchitecture) and newer GPUs.
 
 ### ATI/AMD
 

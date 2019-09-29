@@ -178,7 +178,7 @@ over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTT
 
 1.  Only forwards using DNS over HTTPS when Rescached itself is queried using DNS over HTTPS.[[3]](https://github.com/shuLhan/rescached-go#integration-with-dns-over-https)
 2.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397)
-3.  From [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-25 "wikipedia:Comparison of DNS server software"): dnsmasq has limited authoritative support, intended for internal network use rather than public Internet use.
+3.  From [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software#cite_note-masqauth-26 "wikipedia:Comparison of DNS server software"): dnsmasq has limited authoritative support, intended for internal network use rather than public Internet use.
 
 ### Authoritative-only servers
 

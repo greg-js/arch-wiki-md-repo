@@ -137,6 +137,8 @@ One solution [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1826641#p1826641)
 
 Make sure that [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is uninstalled or at least disabled
 
+**Warning:** To make `optirun` working flawlessly after enabling the NVIDIA GPU card, you have to verify that your regular *user* is in `bumblebee` group and `bumblebeed.service` is enabled and started. See [Bumblebee#Installation](/index.php/Bumblebee#Installation "Bumblebee").
+
 `bumblebee` configuration, in the `[driver-nvidia]` section
 
  `/etc/bumblebee/bumblebee.conf` 

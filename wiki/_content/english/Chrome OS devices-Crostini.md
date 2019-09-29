@@ -71,29 +71,56 @@ lxc list
 The default Debian container is named penguin. Renaming the "arch" container created above to it will cause chrome to launch Linux apps from the arch container.
 
 ```
-lxc stop arch
-lxc stop penguin
+lxc stop --force arch
+lxc stop --force penguin
 lxc rename penguin debian
 lxc rename arch penguin
+lxc start penguin
 
 ```
 
-4\. Determine username of the default user account. It will be created automatically with container creation and username will be based on gmail username.
-
-```
-grep 1000:1000 /etc/passwd
-
-```
-
-5\. Set password for gmail username. By default the gmail user has no password set. Use lxc exec to set a password:
+4\. launch a bash shell on the arch container:
 
 ```
 lxc exec penguin -- bash
-passwd <username>
 
 ```
 
-You also might want to add [sudo](/index.php/Sudo "Sudo") and add the user to sudoers.
+5\. Set password for the default user based on your gmail username on the container. By default the gmail user has no password set so we need to set it:
+
+```
+passwd $(grep 1000:1000 /etc/passwd|cut -d':' -f1)
+
+```
+
+You also might want to add [sudo](/index.php/Sudo "Sudo") and add the user to the wheel group.
+
+```
+pacman -S sudo
+visudo
+
+```
+
+Uncomment this line:
+
+```
+# %wheel ALL=(ALL) ALL
+
+```
+
+Add your user to the wheel group to allow sudo commands
+
+```
+usermod -aG wheel $(grep 1000:1000 /etc/passwd|cut -d':' -f1)
+
+```
+
+Leave the container:
+
+```
+exit
+
+```
 
 6\. Install Crostini container tools, Wayland for GUI apps, XWayland for X11 apps.
 
@@ -107,10 +134,10 @@ lxc console penguin
 [Install](/index.php/Install "Install") the [cros-container-guest-tools-git](https://aur.archlinux.org/packages/cros-container-guest-tools-git/) package. Additionally install [wayland](https://www.archlinux.org/packages/?name=wayland) and [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) to be able to use GUI tools. Then enable and start the services.
 
 ```
-$ systemctl --user enable sommelier@0      # For Wayland GUI apps
-$ systemctl --user enable sommelier-x@0    # For X11 GUI apps
-$ systemctl --user start sommelier@0      # For Wayland GUI apps
-$ systemctl --user start sommelier-x@0    # For X11 GUI apps
+$ systemctl --user enable sommelier@0     # For Wayland GUI apps
+$ systemctl --user enable sommelier-x@0   # For X11 GUI apps
+$ systemctl --user start sommelier@1      # For Wayland GUI apps (low density)
+$ systemctl --user start sommelier-x@1    # For X11 GUI apps (low density)
 
 ```
 
@@ -118,7 +145,9 @@ Make sure these services are running successfully by running:
 
 ```
 $ systemctl --user status sommelier@0
+$ systemctl --user status sommelier@1
 $ systemctl --user status sommelier-x@0
+$ systemctl --user status sommelier-x@1
 
 ```
 
@@ -156,7 +185,7 @@ lxc start penguin
 
 ```
 
-Instead of using an lxc console session, I use a regular Linux terminal GUI launched from ChomeOS that prevents this issue.
+Instead of using an lxc console session, I use a regular Linux terminal GUI launched from ChromeOS that prevents this issue.
 
 ### Audio playback
 
@@ -164,7 +193,7 @@ Crostini support audio playback starting Chrome OS 74\. With [cros-container-gue
 
 ### Video playback
 
-[mpv](/index.php/Mpv "Mpv") can play videos using software rendering without any addition configuration, however this is CPU consuming and laggy experience for modern video codecs like H265\. For hardware accelerated playback GPU acceleration is required. Take into account, that GPU acceleration for Crostini is based on [Virgil 3D GPU project](https://virgil3d.github.io/), so no real GPU device pass-though is performed and hardware-specific APIs like VA-API or VPDAU are not available. However OpenGL acceleration can be used, i.e. this is example of `mpv.conf` config for [mpv] media player which enabled accelerated video and audio playback on Google Pixelbook starting Chrome OS 77:
+[mpv](/index.php/Mpv "Mpv") can play videos using software rendering without any addition configuration, however this is CPU consuming and laggy experience for modern video codecs like H265\. For hardware accelerated playback GPU acceleration is required. Take into account, that GPU acceleration for Crostini is based on [Virgil 3D GPU project](https://virgil3d.github.io/), so no real GPU device pass-though is performed and hardware-specific APIs like VA-API or VPDAU are not available. However OpenGL acceleration can be used, i.e. this is example of mpv.conf config for [mpv] media player which enabled accelerated video and audio playback on Google Pixelbook starting Chrome OS 77:
 
 ```
 vo=gpu
@@ -209,7 +238,7 @@ OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
 
 ### Fullscreen video, games and mouse capture don't work correctly
 
-Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasable.
+Currently Crostini doesn't allow linux apps to be completely fullscreen and mouse capture doesn't work correctly. So playing most Steam games is infeasible. There is an open issue about this problem: [https://bugs.chromium.org/p/chromium/issues/detail?id=927521](https://bugs.chromium.org/p/chromium/issues/detail?id=927521)
 
 ### SystemD status showed as degraded
 

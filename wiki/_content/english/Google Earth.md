@@ -22,8 +22,6 @@ From the [project web page](http://support.google.com/earth/bin/answer.py?hl=en&
 
 ## Installation
 
-As all versions depend on a 32-bit library, enable the [multilib](/index.php/Multilib "Multilib") repository first.
-
 There are multiple Google Earth versions available in the [AUR](/index.php/AUR "AUR"):
 
 *   [google-earth-pro](https://aur.archlinux.org/packages/google-earth-pro/) - Latest version (still freeware)

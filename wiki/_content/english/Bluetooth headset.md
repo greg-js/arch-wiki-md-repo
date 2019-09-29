@@ -22,11 +22,12 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.4.4 Pairing works, but connecting does not](#Pairing_works,_but_connecting_does_not)
         *   [1.4.5 Connecting works, but there are sound glitches all the time](#Connecting_works,_but_there_are_sound_glitches_all_the_time)
         *   [1.4.6 Connecting works, but I cannot play sound](#Connecting_works,_but_I_cannot_play_sound)
-        *   [1.4.7 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
-        *   [1.4.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired,_but_is_not_recognized_by_device)
-        *   [1.4.9 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
-        *   [1.4.10 Apple Airpods have low volume](#Apple_Airpods_have_low_volume)
-        *   [1.4.11 HSP problem: the bluetooth sink and source are created, but no audio is being transmitted](#HSP_problem:_the_bluetooth_sink_and_source_are_created,_but_no_audio_is_being_transmitted)
+        *   [1.4.7 Connecting works, sound plays fine until headphones become idle, then stutters](#Connecting_works,_sound_plays_fine_until_headphones_become_idle,_then_stutters)
+        *   [1.4.8 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.4.9 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired,_but_is_not_recognized_by_device)
+        *   [1.4.10 Device connects, then disconnects after a few moments](#Device_connects,_then_disconnects_after_a_few_moments)
+        *   [1.4.11 Apple Airpods have low volume](#Apple_Airpods_have_low_volume)
+        *   [1.4.12 HSP problem: the bluetooth sink and source are created, but no audio is being transmitted](#HSP_problem:_the_bluetooth_sink_and_source_are_created,_but_no_audio_is_being_transmitted)
 *   [2 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5/bluez-alsa)
 *   [3 Legacy documentation: ALSA, bluez5 and PulseAudio method](#Legacy_documentation:_ALSA,_bluez5_and_PulseAudio_method)
     *   [3.1 Install Software Packages](#Install_Software_Packages)
@@ -328,6 +329,12 @@ $ pacmd set-card-profile 2 a2dp_sink
 ```
 
 where 2 is the index of the device retrieved through `pacmd ls`.
+
+#### Connecting works, sound plays fine until headphones become idle, then stutters
+
+If the headphones play sound correctly until they become idle and then stutter on resume (e.g. because the sound is paused, or because no sound is played for a while), try disabling PulseAudio's automatic sink/source suspension on idle.
+
+See [PulseAudio/Troubleshooting#Bluetooth_headset_replay_problems](/index.php/PulseAudio/Troubleshooting#Bluetooth_headset_replay_problems "PulseAudio/Troubleshooting") for steps.
 
 #### UUIDs has unsupported type
 

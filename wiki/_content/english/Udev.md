@@ -490,7 +490,7 @@ SUBSYSTEMS=="scsi", KERNEL=="s[rg][0-9]*", ATTRS{type}=="5", GROUP="optical"
 ## See also
 
 *   [udev home page](https://www.kernel.org/pub/linux/utils/kernel/hotplug/udev/udev.html)
-*   [An Introduction to udev](https://www.linux.com/news/hardware/peripherals/180950-udev)
+*   [An Introduction to udev](https://opensource.com/article/18/11/udev)
 *   [udev mailing list information](http://vger.kernel.org/vger-lists.html#linux-hotplug)
 *   [Scripting with udev](http://jasonwryan.com/blog/2014/01/20/udev/)
 *   [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html)

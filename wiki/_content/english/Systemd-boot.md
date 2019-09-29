@@ -197,8 +197,6 @@ Most system firmware configured for EFI booting will add its own [efibootmgr](/i
 
 */EFI/Linux* is searched for specially prepared kernel files, which bundle the kernel, the init RAM disk (initrd), the kernel command line and `/etc/os-release` into one single file. This file can be easily signed for secure boot.
 
-**Note:** `systemd-boot` requires that the `os-release` file contain either `VERSION_ID` or `BUILD_ID` to generate an ID and automatically add the entry, which the Arch `os-release` does not. Either maintain your own copy with one of them, or make your bundling script generate it automatically.
-
 Put the kernel command line you want to use in a file, and create the bundle file like this:
 
  `Kernel packaging command:` 
@@ -255,6 +253,8 @@ These hotkeys will, when pressed inside the menu or during bootup, directly boot
 ## Tips and tricks
 
 ### Grml on ESP
+
+**Note:** The following instructions are not exclusive to Grml. With slight adjustments, installing other software (e.g., [SystemRescueCD](http://www.system-rescue-cd.org/)) is possible.
 
 [Grml](https://grml.org/) is a small live system with a collection of software for system administration and rescue.
 

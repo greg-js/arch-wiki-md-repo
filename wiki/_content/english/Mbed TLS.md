@@ -2,7 +2,11 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/mbed_TLS "wikipedia:mbed 
 
 	**mbed TLS** (previously **PolarSSL**) is an implementation of the TLS and SSL protocols and the respective cryptographic algorithms and support code required. It is dual-licensed with the Apache License version 2.0 (with GPLv2 also available). Stated on the website is that mbed TLS aims to be "easy to understand, use, integrate and expand".
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)

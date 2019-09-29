@@ -72,25 +72,24 @@ session         include         system-login
  `~/.config/autostart-scripts/ssh-add.sh` 
 ```
 #!/bin/sh
-ssh-add </dev/null
+ssh-add -q < /dev/null
 
 ```
 
 **Tip:** The above ssh-add.sh script will only add the default key `~/.ssh/id_rsa`. Assuming you have different SSH keys named `key1`, `key2`, `key3` in `~/.ssh/`, you may add them automatically on login by changing the above script to: `~/.config/autostart-scripts/ssh-add.sh` 
 ```
 #!/bin/sh
-ssh-add $HOME/.ssh/key1 $HOME/.ssh/key2 $HOME/.ssh/key3 </dev/null
+ssh-add -q ~/.ssh/key1 ~/.ssh/key2 ~/.ssh/key3 < /dev/null
 
 ```
 
 You also have to set the `SSH_ASKPASS` [environment variable](/index.php/Environment_variable "Environment variable") to `ksshaskpass`. For example, create the following [autostart script file](/index.php/KDE#Autostart "KDE") and mark it [executable](/index.php/Executable "Executable"):
 
- `~/.config/plasma-workspace/env/ssh-askpass.sh` 
+ `~/.config/plasma-workspace/env/askpass.sh` 
 ```
 #!/bin/sh
 
-SSH_ASKPASS='/usr/bin/ksshaskpass'
-export SSH_ASKPASS
+export SSH_ASKPASS='/usr/bin/ksshaskpass'
 ```
 
 It will ask for your password and unlock your SSH keys. Upon restart your SSH keys should be unlocked once you give your kwallet password.
@@ -98,7 +97,7 @@ It will ask for your password and unlock your SSH keys. Upon restart your SSH ke
 To add a new key and store the password with kwallet use the following command
 
 ```
-$ ssh-add /path/to/new/key </dev/null
+$ ssh-add */path/to/new/key* </dev/null
 
 ```
 
@@ -110,14 +109,16 @@ and append the key to the list of keys in `~/.config/autostart-scripts/ssh-add.s
 
 [Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 
-Run the following command to configure Git:
+Configure Git by setting the `GIT_ASKPASS` [environment variable](/index.php/Environment_variable "Environment variable"):
 
+ `~/.config/plasma-workspace/env/askpass.sh` 
 ```
-$ git config --global core.askpass /usr/bin/ksshaskpass
+#!/bin/sh
 
+export GIT_ASKPASS='/usr/bin/ksshaskpass'
 ```
 
-See [gitcredentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitcredentials.7) for details.
+See [gitcredentials(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitcredentials.7) for alternatives and more details.
 
 ## KDE Wallet for Chrome and Chromium
 

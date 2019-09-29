@@ -51,6 +51,7 @@ Different versions have different software requirements:
 *   11.0.0.31193 works on Arch 4.1.6-1 and Xorg 1.17.2-4
 *   12.1.0.41489 works on Arch 4.8.7-1 and Xorg 1.18.4, after removing the PATH statement in the install script (cdrom//Parallels Tools//install), and adding "iomem=relaxed" to kernel boot parameters.
 *   14.1.3.45485 works on Arch 5.1.16-1 and Xorg 1.20.5 when following [this guide](https://gist.github.com/mag911/1a5583a766467d6023584d738cee0d98)
+*   15.0.0.46967 works on Arch 5.3.1-1 and Xorg 1.20.5 (Parallels 15)
 
 And there are different ways to obtain them:
 

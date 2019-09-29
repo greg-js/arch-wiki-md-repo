@@ -50,6 +50,7 @@ Layouts are applied dynamically, and different layouts may be used on each works
     *   [6.11 Steam games (Half-Life, Left 4 Dead, …) and xmonad](#Steam_games_(Half-Life,_Left_4_Dead,_…)_and_xmonad)
     *   [6.12 LibreOffice - focus flicking between main window and dialog](#LibreOffice_-_focus_flicking_between_main_window_and_dialog)
     *   [6.13 Problems with finding shared libraries after update](#Problems_with_finding_shared_libraries_after_update)
+    *   [6.14 Broken/missing XMonad.Prompt and window decorations](#Broken/missing_XMonad.Prompt_and_window_decorations)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -658,6 +659,10 @@ In the case that `xmonad --recompile` can't find any modules at all (including `
 sudo ghc-pkg recache
 
 ```
+
+### Broken/missing XMonad.Prompt and window decorations
+
+XMonad by default uses the font `-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*` [[3]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Tabbed_or_other_decorated_layouts_not_shown). If this font is missing those windows simply fail to render at all. Easiest fix is to install `(xorg-fonts-misc`.
 
 ## See also
 

@@ -361,8 +361,8 @@ An encrypted directory may be backed up and restored to another location like it
 However, if you - for example - store the backup on a remote location (e.g. in the cloud) or a portable device, you might feel uncomfortable about it. In this case it also is no problem to manually move the file out of the directory before creating the backup. You can even move it permanently and still mount and access the files, if you pass its location to *encfs* via the `ENCFS6_CONFIG` environment variable. For the [#Usage](#Usage) example above:
 
 ```
-$ mv ~/.name/encfs6.xml ~/.
-$ ENCFS6_CONFIG=~/encfs6.xml encfs ~/.name ~/name
+$ mv ~/.name/.encfs6.xml ~/.
+$ ENCFS6_CONFIG=~/.encfs6.xml encfs ~/.name ~/name
 
 ```
 

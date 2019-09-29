@@ -84,19 +84,19 @@ To get rid of the [Gmail]-Stuff (or [Google Mail] as in my case) in each mailbox
  `~/.mbsyncrc` 
 ```
 Channel sync-googlemail-default
-Master :googlemail-remote:
-Slave :googlemail-local:
+Master :gmail-remote:
+Slave :gmail-local:
 # Select some mailboxes to sync
 Patterns "INBOX" "arch"
 
 Channel sync-googlemail-sent
-Master :googlemail-remote:"[Google Mail]/Gesendet"
-Slave :googlemail-local:sent
+Master :gmail-remote:"[Google Mail]/Gesendet"
+Slave :gmail-local:sent
 Create Slave
 
 Channel sync-googlemail-trash
-Master :googlemail-remote:"[Google Mail]/Papierkorb"
-Slave :googlemail-local:trash
+Master :gmail-remote:"[Google Mail]/Papierkorb"
+Slave :gmail-local:trash
 Create Slave
 
 # Get all the channels together into a group.

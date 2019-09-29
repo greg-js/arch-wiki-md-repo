@@ -1,4 +1,8 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Setting up Winfast 2000XP Tvcard](#Setting_up_Winfast_2000XP_Tvcard)
     *   [1.1 Finding the right card number](#Finding_the_right_card_number)
@@ -144,7 +148,7 @@ tuner=45 Microtune 4049 FM5
 
 ## TLG2300
 
-The TLG2300 is a device that supports analog and digital TV, also includes and FM receiver. It's identified with the following device id:
+The TLG2300 is a device that supports analog and digital TV, also includes an FM receiver. It's identified with the following device id:
 
 ```
 $ lsusb
@@ -166,7 +170,7 @@ Access: (0600/-rw-------)  Uid: (    0/    root)   Gid: (    0/    root)
 To test the analog TV with VLC, /dev/video1 is the v4l video device in my case, hw:1,0 is the audio output, NTSC standard, and the frequencies are obtained from mplayer/stream/frequency.c file.
 
 ```
-vlc v4l2:///dev/video1  :input-slave=alsa://hw:1,0 :v4l2-standard=3 :v4l2-tuner-frequency=513250
+vlc v4l2:///dev/video1  :input-slave=alsa://hw:1,0 :v4l2-standard=3 :v4l2-tuner-frequency=513250
 
 ```
 
@@ -183,7 +187,7 @@ pcm.telegent {
 You will be able to use
 
 ```
-vlc v4l2:///dev/video1  :input-slave=alsa://telegent :v4l2-standard=3 :v4l2-tuner-frequency=513250
+vlc v4l2:///dev/video1  :input-slave=alsa://telegent :v4l2-standard=3 :v4l2-tuner-frequency=513250
 
 ```
 

@@ -355,9 +355,9 @@ Partition table entries are not in disk order.
 
 *   [Wikipedia:Disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning")
 *   [Wikipedia:Binary prefix](https://en.wikipedia.org/wiki/Binary_prefix "wikipedia:Binary prefix")
-*   [Understanding Disk Drive Terminology](http://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
+*   [Understanding Disk Drive Terminology](https://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
 *   [What is a Master Boot Record (MBR)?](https://kb.iu.edu/d/aijw)
-*   Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
+*   Rod Smith's page on [What's a GPT?](https://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](https://rodsbooks.com/gdisk/booting.html)
 *   [Make the most of large drives with GPT and Linux - IBM Developer Works](https://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
 *   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
 *   [Partition Alignment](https://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)

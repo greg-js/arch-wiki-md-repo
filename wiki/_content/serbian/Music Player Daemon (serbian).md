@@ -2,7 +2,11 @@
 
 *Molim vas* pogledajte oficijalnu stranicu u instrukcija za podesavanje i resavanje eventualnih problema. Glavni programer je nazvao nasu MPD wiki stranicu *"punom ubica simptoma"*, iz cega se moze zakljuciti da oficijalne stranice sadrze bolje instrukcije.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Instaliranje MPD-a](#Instaliranje_MPD-a)
 *   [2 Daemon podesavanje: Startovanje pri podizanju sistema](#Daemon_podesavanje:_Startovanje_pri_podizanju_sistema)
@@ -30,8 +34,8 @@
         *   [5.3.3 2\. metod](#2._metod)
         *   [5.3.4 3\. metod](#3._metod)
     *   [5.4 MPD i ALSA](#MPD_i_ALSA)
-        *   [5.4.1 Opterecenost procesora (CPU) sa ALSA-om](#Opterecenost_procesora_.28CPU.29_sa_ALSA-om)
-        *   [5.4.2 Primer konfiguracije: Izlaz sa 44.1 KHz na npr. 16 bit dubini, vise programa odjednom](#Primer_konfiguracije:_Izlaz_sa_44.1_KHz_na_npr._16_bit_dubini.2C_vise_programa_odjednom)
+        *   [5.4.1 Opterecenost procesora (CPU) sa ALSA-om](#Opterecenost_procesora_(CPU)_sa_ALSA-om)
+        *   [5.4.2 Primer konfiguracije: Izlaz sa 44.1 KHz na npr. 16 bit dubini, vise programa odjednom](#Primer_konfiguracije:_Izlaz_sa_44.1_KHz_na_npr._16_bit_dubini,_vise_programa_odjednom)
     *   [5.5 Upravljaj MPD-om sa lirc-om](#Upravljaj_MPD-om_sa_lirc-om)
     *   [5.6 Kontrola MPD-a sa bluetooth telefonom](#Kontrola_MPD-a_sa_bluetooth_telefonom)
     *   [5.7 MPD i PulseAudio](#MPD_i_PulseAudio)
@@ -45,7 +49,7 @@
     *   [6.4 MPD koci na prvom pokretanju](#MPD_koci_na_prvom_pokretanju)
         *   [6.4.1 Easy Tag](#Easy_Tag)
         *   [6.4.2 KID3](#KID3)
-    *   [6.5 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_.22localhost.22_not_found:_Temporary_failure_in_name_resolution)
+    *   [6.5 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_"localhost"_not_found:_Temporary_failure_in_name_resolution)
     *   [6.6 Drugi problemi kada pokusavate da se konektujete na mpd sa klijentom](#Drugi_problemi_kada_pokusavate_da_se_konektujete_na_mpd_sa_klijentom)
         *   [6.6.1 Prvi nacin za popravku](#Prvi_nacin_za_popravku)
         *   [6.6.2 Drugi nacin za popravku](#Drugi_nacin_za_popravku)
@@ -54,7 +58,7 @@
     *   [6.7 Port 6600 already in use](#Port_6600_already_in_use)
     *   [6.8 Povezivanje na IPV6 pre IPV4](#Povezivanje_na_IPV6_pre_IPV4)
     *   [6.9 Pucketanje zvuka sa nekim audio fajlovima](#Pucketanje_zvuka_sa_nekim_audio_fajlovima)
-    *   [6.10 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_.22mpd.22:_Operation_not_permitted)
+    *   [6.10 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_"mpd":_Operation_not_permitted)
 *   [7 Spoljni linkovi](#Spoljni_linkovi)
 
 ## Instaliranje MPD-a
@@ -901,7 +905,12 @@ Brute-force pristup:
 ```
 
 **Note:** Ako obicno koristite MPD kao root, moracete da pokrenete gornje komande kao root.
-U zadnjoj verziji MPD-a, --create-db je potpuno zastareo. Baza ce biti kreirana automatski prilikom prvog pokretanja i moze se nakon toga azurirati preko vaseg klijenta (npr., mpc update). Sada mozete da koristite inotify podrsku da automatski azurira muzicku bazu. Dodajte sledece u `mpd.conf`  `auto_update "yes"` da ga omogucite.
+
+U zadnjoj verziji MPD-a, --create-db je potpuno zastareo. Baza ce biti kreirana automatski prilikom prvog pokretanja i moze se nakon toga azurirati preko vaseg klijenta (npr., mpc update). Sada mozete da koristite inotify podrsku da automatski azurira muzicku bazu. Dodajte sledece u
+
+ `mpd.conf`  `auto_update "yes"` 
+
+da ga omogucite.
 
 ### Povezivanje na IPV6 pre IPV4
 

@@ -1,3 +1,9 @@
+Related articles
+
+*   [tmux](/index.php/Tmux "Tmux")
+*   [Ratpoison](/index.php/Ratpoison "Ratpoison")
+*   [Xpra](/index.php/Xpra "Xpra")
+
 [GNU Screen](https://www.gnu.org/software/screen/) is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Programs running in Screen continue to run when their window is currently not visible and even when the whole screen session is detached from the user's terminal.
 
 See the official overview [GNU Screen manual](https://www.gnu.org/software/screen/manual/screen.html#Overview) for the description of the features.
@@ -358,10 +364,9 @@ Add following to `~/.screenrc`:
 
 ## See also
 
+*   [Wikipedia:GNU Screen](https://en.wikipedia.org/wiki/GNU_Screen "wikipedia:GNU Screen")
 *   [GNU Screen User's Manual](https://www.gnu.org/software/screen/manual/screen.html)
-*   [Gentoo Wiki - Tutorial for screen](http://wiki.gentoo.org/wiki/Screen)
+*   [Gentoo:Screen](https://wiki.gentoo.org/wiki/Screen "gentoo:Screen")
 *   [Arch Forums - .screenrc configs with screenshots](https://bbs.archlinux.org/viewtopic.php?id=55618)
 *   [Arch Forums - Regarding 256 color issue with urxvt](https://bbs.archlinux.org/viewtopic.php?id=50647)
-*   [MacOSX Hints - Automatically using screen in your shell](http://www.macosxhints.com/article.php?story=20021114055617124)
-*   [Ratpoison - A window manager based on gnu screen](/index.php/Ratpoison "Ratpoison")
-*   [Xpra - A utility to detach/reattach X programs, in a way similar as screen does for command line based programs](/index.php/Xpra "Xpra")
+*   [MacOSX Hints - Automatically using screen in your shell](https://hints.macworld.com/article.php?story=20021114055617124)

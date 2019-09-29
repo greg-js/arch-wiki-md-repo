@@ -58,7 +58,7 @@ Change `aspell-en` to your desired language support. Now you can configure the S
 
 #### Source View
 
-The requirements for Source View are as follows: [pygtksourceview2](https://www.archlinux.org/packages/?name=pygtksourceview2)
+The requirements for Source View are as follows: [gtksourceview3](https://www.archlinux.org/packages/?name=gtksourceview3)
 
 ## Troubleshooting
 

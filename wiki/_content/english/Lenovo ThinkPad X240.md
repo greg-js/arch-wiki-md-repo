@@ -1,4 +1,4 @@
-The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is a complete redesign of the X Series. This can be observed especially with devices like the touchpad, which has been changed to be a one-click touchpad instead of having the classic 5 button touchpad. The X240 is a very light device, weighing in at just 2.84 lbs (1.36 kg) and measuring 12.02" x 8.19" x 0.79".
+The [Lenovo X240](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x240) is the latest version of the Lenovo Ultrabook Series and also is a complete redesign of the X Series. This can be observed especially with devices like the touchpad, which has been changed to be a one-click touchpad instead of having the classic 5 button touchpad. The X240 is a very light device, weighing in at just 2.84 lbs (1.36 kg) and measuring 12.02" x 8.19" x 0.79".
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -10,11 +10,12 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
 *   [2 System Configuration](#System_Configuration)
     *   [2.1 Use analog sound card by default in ALSA](#Use_analog_sound_card_by_default_in_ALSA)
     *   [2.2 Touchpad](#Touchpad)
-    *   [2.3 TrackPoint](#TrackPoint)
-    *   [2.4 Keyboard](#Keyboard)
-        *   [2.4.1 Keyboard Backlight](#Keyboard_Backlight)
-    *   [2.5 Fingerprint Reader](#Fingerprint_Reader)
-        *   [2.5.1 Fingerprint Login](#Fingerprint_Login)
+    *   [2.3 Battery](#Battery)
+    *   [2.4 TrackPoint](#TrackPoint)
+    *   [2.5 Keyboard](#Keyboard)
+        *   [2.5.1 Keyboard Backlight](#Keyboard_Backlight)
+    *   [2.6 Fingerprint Reader](#Fingerprint_Reader)
+        *   [2.6.1 Fingerprint Login](#Fingerprint_Login)
 *   [3 Caveats](#Caveats)
     *   [3.1 Common hardware problems](#Common_hardware_problems)
         *   [3.1.1 NFC Reader](#NFC_Reader)
@@ -84,6 +85,22 @@ Alternatively, the same configuration may be set in `$HOME/.asoundrc`.
 The touchpad works out of the box. You will need to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 Some users may prefer to use the trackpoint over the touchpad. In that case, the touchpad can be disabled via `synclient TouchpadOff=1`(Will be gone after re-login). See [Synaptics](/index.php/Synaptics "Synaptics") for more information and options.
+
+#### Battery
+
+For an optimal power management that supports ThinkPad's conservation mode, install the following packages:
+
+*   [tlp](https://www.archlinux.org/packages/?name=tlp) – needed for advanced power management.
+*   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) (or [tp_smapi-lts](https://www.archlinux.org/packages/?name=tp_smapi-lts) if you are using the Linux-lts kernel) – needed for ThinkPad's SMAPI functionality, battery charge thresholds, recalibration and specific status output of tlp-stat
+*   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) (or [acpi_call-lts](https://www.archlinux.org/packages/?name=acpi_call-lts) if you are using the Linux-lts kernel) – needed for battery charge thresholds and recalibration. Use [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) if not running kernels from [official repositories](/index.php/Official_repositories "Official repositories").
+
+Then [Enable](/index.php/Enable "Enable")/[start](/index.php/Start "Start") `tlp.service` and `tlp-sleep.service`. For a graphical user interface for TLP, install also [tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) (written in Python).
+
+For further information, see the article about [TLP](/index.php/TLP "TLP") on this wiki. Forthermore, despite they focus on power management under Microsoft Windows, it might be useful to read the following articles from the official documentation.
+
+*   [Easy ways to extend your battery life - ideapad/Lenovo/ThinkPad laptops](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x240/solutions/ht069687)
+*   [Manage battery for your laptop in Windows 10 - ThinkPad](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x240/solutions/ht104070)
+*   [Display contrast reduced while on battery mode on ThinkPad X220](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x240/forumkb/tp02_en@tkb!!547971)
 
 #### TrackPoint
 
@@ -167,7 +184,6 @@ On some X240 and other TP 4xx models, persisting grey noise is hearable when the
 ### More later (ToDo)
 
 ```
-- Powersave
 - Thunderbolt
 
 ```

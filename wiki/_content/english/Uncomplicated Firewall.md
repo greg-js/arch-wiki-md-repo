@@ -42,7 +42,7 @@ A very simplistic configuration which will deny all by default, allow any protoc
 # ufw default deny
 # ufw allow from 192.168.0.0/24
 # ufw allow Deluge
-# ufw limit SSH
+# ufw limit ssh
 
 ```
 

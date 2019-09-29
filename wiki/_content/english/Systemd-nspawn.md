@@ -507,3 +507,4 @@ Not possible at this time (June 2019).
 *   [Creating containers with systemd-nspawn](http://lwn.net/Articles/572957/)
 *   [Presentation by Lennart Pottering on systemd-nspawn](https://www.youtube.com/results?search_query=systemd-nspawn&aq=f)
 *   [Running Firefox in a systemd-nspawn container](http://dabase.com/e/12009/)
+*   [Graphical applications in systemd-nspawn](https://patrickskiba.com/sysytemd-nspawn/2019/03/21/graphical-applications-in-systemd-nspawn.html)

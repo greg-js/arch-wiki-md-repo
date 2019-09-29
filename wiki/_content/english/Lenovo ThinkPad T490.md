@@ -7,7 +7,9 @@
 *   [1 FN Keys](#FN_Keys)
 *   [2 Touchpad](#Touchpad)
 *   [3 CPU throttling issue](#CPU_throttling_issue)
-*   [4 ACPI](#ACPI)
+*   [4 Speaker noise issue](#Speaker_noise_issue)
+*   [5 ACPI](#ACPI)
+*   [6 Also See](#Also_See)
 
 ## FN Keys
 
@@ -31,9 +33,15 @@ Even after doing this, the mouse pointer still jumps around when clicking the bu
 
 ## CPU throttling issue
 
-With newer BIOS versions (it happens on at least 1.52, but it could happen older versions too), the CPU tends to throttle down to 400 MHz earlier than it should. In particular, it can be seen when using [Bumblebee](/index.php/Bumblebee "Bumblebee").
+With the BIOS Version 1.52 (this problem is known to occur on 1.52, it might still happen on other versions too), the CPU tends to throttle down to 400 MHz earlier than it should. In particular, this can be seen when using [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-This can be worked around by installing [throttled](https://www.archlinux.org/packages/?name=throttled), as explained in [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s").
+The problem can be worked around by installing [throttled](https://www.archlinux.org/packages/?name=throttled), as explained in the wiki entry for the same problem on the [Lenovo ThinkPad T480s](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix).
+
+## Speaker noise issue
+
+The speaker on the Lenovo Thinkpad T490 may have a high static hissing noise, which doesn't change if you lower the volume, but stops if you mute the speaker or use the headphone jack. This problem can't be fixed completely as of now. Updating to the most current BIOS version will make the speaker silent while it's not playing anything without you having to mute it all the time. But as soon as the user is playing sound, the noise will be back, clearly audible in the background.
+
+Check the [Lenovo Support Website](https://support.lenovo.com/) for the newest BIOS Version.
 
 ## ACPI
 
@@ -47,3 +55,7 @@ ac_adapter)
 ```
 
 This will not work, since the T490 device is called `ACPI0003` which is not matched by the above check. The instructions in [Acpid](/index.php/Acpid "Acpid") does mention a pattern that does work and it is recommended to use this instead.
+
+## Also See
+
+*   [Lenovo Forums: A throttling fix is being investigated by Lenovo](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/m-p/4535310/highlight/true#M13653).

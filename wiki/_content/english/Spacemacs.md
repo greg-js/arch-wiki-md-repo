@@ -1,6 +1,10 @@
 [Spacemacs](https://en.wikipedia.org/wiki/Spacemacs "wikipedia:Spacemacs") is an extensible and customizable text editor, built on top of [Emacs](/index.php/Emacs "Emacs") and using [Vim](/index.php/Vim "Vim") keybindings. The goal of the project is to combine both Vim and Emacs editors, getting the best parts from each. Spacemacs distribution is based on community-driven [Emacs](/index.php/Emacs "Emacs") config, which greatly extends default Emacs behaviour and adds a lot of additional features.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Install Emacs](#Install_Emacs)
@@ -10,6 +14,7 @@
     *   [1.5 Run Spacemacs for the first time](#Run_Spacemacs_for_the_first_time)
 *   [2 Running Spacemacs](#Running_Spacemacs)
     *   [2.1 Daemon mode](#Daemon_mode)
+    *   [2.2 Systemd Module](#Systemd_Module)
 *   [3 Usage](#Usage)
     *   [3.1 Built-in Tutorial](#Built-in_Tutorial)
     *   [3.2 Basic Concepts](#Basic_Concepts)
@@ -124,6 +129,79 @@ $ emacsclient -nc -s instance1
 ```
 
 **Tip:** You can run multiple daemons with different names
+
+### Systemd Module
+
+You may want to create a systemd module to run the emacs daemon. Note, due to security concerns stemming from community ELPA packages among other reasons, running the daemon as a user-privileged systemd user module is recommend as described here.
+
+Create an emacs user systemd service file such as:
+
+ `.config/systemd/user/emacs.service` 
+```
+[Unit]
+Description=Emacs text editor
+Documentation=info:emacs man:emacs(1) [https://gnu.org/software/emacs/](https://gnu.org/software/emacs/)
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/emacs --daemon=instance1
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+```
+
+Edit your Emacs/Spacemacs desktop file as the following. Please note the changes to Exec. The rest is just nice aesthetics.
+
+ `/usr/share/applications/emacs.desktop` 
+```
+[Desktop Entry]
+Name=Spacemacs
+GenericName=Text Editor
+Comment=Edit text
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+Exec=emacsclient -nc -s instance1 %F
+Icon=/home/[!!! YOUR USER NAME HERE !!!]/.emacs.d/assets/spacemacs.svg
+Type=Application
+Terminal=false
+Categories=Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;
+```
+
+Then run...
+
+```
+# systemctl daemon-reload
+
+```
+
+```
+$ systemctl --user start emacs
+
+```
+
+Check to make sure no errors occured. If you have already been mucking around with emacs running as a daemon and get errors, I recommend enabling the user emacs service we just made and reboot. It happened to resolve my issues. It might also be useful to check your emacs service...
+
+```
+$ systemctl --user status emacs
+
+```
+
+Then, if successful, enable for persistence...
+
+```
+$ systemctl --user enable emacs
+
+```
+
+Upon completion, you may start emacs via your DE launcher and enjoy significantly reduced loading times, however emacs still does not instantly open on even very powerful systems. You may also alias the following command if you prefer. "instance1" may also be renamed as well but be sure to match the daemon's name in the service file as well.
+
+```
+$ emacsclient -nc -s instance1
+
+```
 
 ## Usage
 

@@ -194,6 +194,8 @@ rsync -a --delete --quiet -e ssh /folder/to/backup remoteuser@remotehost:/locati
 
 	groups all these options `-rlptgoD` (recursive, links, perms, times, group, owner, devices)
 
+**Note:** Rsync will try to modify any previously backed up files on the target machine to match their current state at the source machine, with each incremental backup. This means that when backing up files that are owned by root over SSH (and when preserving permissions and ownerships such as with the `-a` option), root access to the target machine is needed. The preferred way to achieve this for automation is to set up the SSH daemon to allow root to login using a [public key without password](https://unix.stackexchange.com/a/92397) and run the rsync command as root.
+
 ### Automated backup with NetworkManager
 
 This script starts a backup when network connection is established.

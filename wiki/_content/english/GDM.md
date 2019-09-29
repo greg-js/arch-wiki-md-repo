@@ -42,9 +42,10 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 Use Xorg backend](#Use_Xorg_backend)
     *   [4.5 GDM freezes with systemd](#GDM_freezes_with_systemd)
-    *   [4.6 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
-    *   [4.7 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_(GNOME_3.28))
-    *   [4.8 GDM ignore Wayland and use X.Org by default](#GDM_ignore_Wayland_and_use_X.Org_by_default)
+    *   [4.6 GDM does not start until input is provided](#GDM_does_not_start_until_input_is_provided)
+    *   [4.7 Incomplete removal of gdm](#Incomplete_removal_of_gdm)
+    *   [4.8 GDM auto-suspend (GNOME 3.28)](#GDM_auto-suspend_(GNOME_3.28))
+    *   [4.9 GDM ignore Wayland and use X.Org by default](#GDM_ignore_Wayland_and_use_X.Org_by_default)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -116,22 +117,28 @@ Next, you need to create a file in the directory with the following content:
     <file>gnome-shell.css</file>
     <file>gnome-shell-high-contrast.css</file>
     <file>icons/message-indicator-symbolic.svg</file>
+    <file>icons/pointer-double-click-symbolic.svg</file>
+    <file>icons/pointer-drag-symbolic.svg</file>
+    <file>icons/pointer-primary-click-symbolic.svg</file>
+    <file>icons/pointer-secondary-click-symbolic.svg</file>
     <file>key-enter.svg</file>
     <file>key-hide.svg</file>
     <file>key-layout.svg</file>
     <file>key-shift-latched-uppercase.svg</file>
     <file>key-shift.svg</file>
     <file>key-shift-uppercase.svg</file>
+    <file>no-events.svg</file>
     <file>noise-texture.png</file>
     <file>**filename**</file>
-    <file>no-events.svg</file>
     <file>no-notifications.svg</file>
     <file>pad-osd.css</file>
     <file>process-working.svg</file>
+    <file>toggle-off-dark.svg</file>
     <file>toggle-off-hc.svg</file>
-    <file>toggle-off-intl.svg</file>
+    <file>toggle-off.svg</file>
+    <file>toggle-on-dark.svg</file>
     <file>toggle-on-hc.svg</file>
-    <file>toggle-on-intl.svg</file>
+    <file>toggle-on.svg</file>
   </gresource>
 </gresources>
 ```
@@ -533,6 +540,17 @@ If GDM gets hang-up with `systemctl enable gdm` and `systemctl start gdm` works 
 
 ```
 
+### GDM does not start until input is provided
+
+If, after booting, the screen stays black and GDM does not start until the mouse is moved or something is typed on the keyboard, it may be due to a lack of entropy required for random number generation. To confirm, check that the following line appears inside *systemd-random-seed*’s log (which can be read using `journalctl --unit systemd-random-seed`):
+
+```
+Kernel entropy pool is not initialized yet, waiting until it is.
+
+```
+
+To fix this, you can pass the `random.trust_cpu=on` [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") if your CPU supports the *RDRAND* instruction, or you can use [haveged](/index.php/Haveged "Haveged") which also provides entropy, albeit it is of allegedly low quality. See [Debian’s article on the topic](https://wiki.debian.org/BoottimeEntropyStarvation "debian:BoottimeEntropyStarvation") for other solutions.
+
 ### Incomplete removal of gdm
 
 After removing [gdm](https://www.archlinux.org/packages/?name=gdm), [systemd](/index.php/Systemd "Systemd") may report the following:
@@ -573,7 +591,17 @@ $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power 
 
 ### GDM ignore Wayland and use X.Org by default
 
-Wayland require Kernel Mode Setting (KMS) running in order to work, and on some machines the GDM process start earlier than KMS, resulting in GDM unable to see Wayland and working only with X.Org, you can solve this problem [starting KMS earlier](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
+Wayland requires Kernel Mode Setting (KMS) running in order to work, and on some machines the GDM process start earlier than KMS, resulting in GDM unable to see Wayland and working only with X.Org. This might result in messages like the following showing up in your log:
+
+```
+ gnome-shell[569]: Failed to open gpu '/dev/dri/card0': GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Operation not permitted
+ gnome-shell[569]: Failed to create backend: No GPUs found
+ systemd[505]: gnome-shell-wayland.service: Failed with result 'protocol'.
+ systemd[505]: Failed to start GNOME Shell on Wayland.
+
+```
+
+You can solve this problem by [starting KMS earlier](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting").
 
 ## See also
 

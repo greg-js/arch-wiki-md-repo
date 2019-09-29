@@ -16,6 +16,7 @@
     *   [3.1 Testing your IR camera](#Testing_your_IR_camera)
     *   [3.2 Howdy does not seem to work](#Howdy_does_not_seem_to_work)
     *   [3.3 Errors recognizing an input device](#Errors_recognizing_an_input_device)
+    *   [3.4 GStreamer warnings in shell](#GStreamer_warnings_in_shell)
 
 ## Installation
 
@@ -78,3 +79,22 @@ frame_height = 400
 ```
 
 The width and height of your sensor output: `v4l2-ctl --list-devices --all`.
+
+### GStreamer warnings in shell
+
+You might have howdy working but get warning like this in shell:
+
+ `$sudo howdy test` 
+```
+[ WARN:0] global /build/opencv/src/opencv-4.1.1/modules/videoio/src/cap_gstreamer.cpp (1756) handleMessage OpenCV | GStreamer warning: Embedded video playback halted; module source reported: Could not read from resource.
+[ WARN:0] global /build/opencv/src/opencv-4.1.1/modules/videoio/src/cap_gstreamer.cpp (886) open OpenCV | GStreamer warning: unable to start pipeline
+[ WARN:0] global /build/opencv/src/opencv-4.1.1/modules/videoio/src/cap_gstreamer.cpp (480) isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created
+...
+
+```
+
+This is caused by upstream [opencv](https://www.archlinux.org/packages/?name=opencv) package built with default warning level `LOG_LEVEL_WARNING = 3`. The cv::utils::logging API in C++ can set log level higher in order to hide lower level warning, but this API is not exposed into python-cv2 yet.
+
+A temporary solution for this is addding an environment variable `OPENCV_LOG_LEVEL=ERROR` to your system per user or globally.
+
+**Note:** This will make the warning disappear but might hide other potential problems

@@ -51,6 +51,7 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
     *   [9.2 Windows changes boot order](#Windows_changes_boot_order)
     *   [9.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
     *   [9.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
+    *   [9.5 System boots to EFI shell after hardware change or starting other operating system](#System_boots_to_EFI_shell_after_hardware_change_or_starting_other_operating_system)
 *   [10 See also](#See_also)
 
 ## UEFI versions
@@ -561,6 +562,37 @@ Shell> cp FS0:\EFI\BOOT\bootx64.efi FS1:\EFI\Microsoft\Boot\bootmgfw.efi
 ```
 
 After reboot, any entries added to NVRAM should show up in the boot menu.
+
+### System boots to EFI shell after hardware change or starting other operating system
+
+EFI stores state on the motherboard, called EFIVARS. Your bootloader (e.g. GRUB) may need to set up these variables in a certain way in order to boot. If your hardware configuration changes, or you boot into another operating system which overwrites these variables (Windows), you may be dumped into the EFI shell upon attempting to boot Arch Linux since the EFIVARS are incorrect and EFI can no longer find your bootloader.
+
+At this point, you can use the EFI shell to find and boot your bootloader manually. Usually something like:
+
+```
+Shell> ls fs0:
+  EFI\
+  grub\
+
+Shell> ls fs0:EFI\
+  GRUB\
+
+Shell> ls fs0:EFI\GRUB\
+  grubx64.efi
+
+Shell> fs0:EFI\GRUB\grubx64.efi
+  Starting fs0:EFI\GRUB\grubx64.efi...
+
+```
+
+To prevent this happening again, you can install your bootloader to the default EFI boot location. In this setup, EFI will always find your bootloader on this drive since it is in the default location, which doesn't depend on the EFIVARS being correct. Your system should continue to boot even if another OS has changed the EFIVARS, or your hardware configuration has made the EFIVARS no longer correct for your system.
+
+To do this with GRUB's `grub-install`, use the `--removable` flag. For example (update `/boot/` to be the path to your EFI partition):
+
+```
+# grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB --removable
+
+```
 
 ## See also
 

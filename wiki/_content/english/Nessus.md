@@ -9,16 +9,14 @@
 *   [1 Installation](#Installation)
 *   [2 Post-installation setup](#Post-installation_setup)
 *   [3 Usage](#Usage)
-*   [4 Removal](#Removal)
-*   [5 See also](#See_also)
+*   [4 License](#License)
+*   [5 Plugins update](#Plugins_update)
+*   [6 Removal](#Removal)
+*   [7 See also](#See_also)
 
 ## Installation
 
-**Note:** As of May 2019, you have to follow the instructions from the AUR comments to install the [nessus](https://aur.archlinux.org/packages/nessus/) package.
-
 [Install](/index.php/Install "Install") the [nessus](https://aur.archlinux.org/packages/nessus/) package.
-
-**Note:** As of May 2019, this note is no longer valid: "As of April 26, 2016, it is no longer required to agree and download the Nessus rpm. A script will run and download the rpm from the Nessus site automatically. If it appears that nothing is happening, please be patient as the script runs wget silently. The installation will proceed after the rpm is downloaded".
 
 ## Post-installation setup
 
@@ -29,6 +27,45 @@ Register your email at [[1]](http://www.tenable.com/products/nessus/nessus-plugi
 The [nessus](https://aur.archlinux.org/packages/nessus/) package provides a `nessusd.service` unit file, see [systemd#Using units](/index.php/Systemd#Using_units "Systemd") for details.
 
 Access the web interface at [https://localhost:8834](https://localhost:8834) and/or use the commandline interface (`/opt/nessus/sbin/nessuscli`). In most browsers, you will need to manually accept the SSL certificate you created for the server.
+
+## License
+
+Stop the nessus daemon before doing anything with `/nessuscli`.
+
+```
+# systemctl stop nessusd.service
+
+```
+
+Activate the license:
+
+```
+# nessuscli fetch --register <Activation Code>
+
+```
+
+View your current license activation code:
+
+```
+# nessuscli fetch --code-in-use
+
+```
+
+## Plugins update
+
+Stop the nessus daemon before doing anything with `/nessuscli`.
+
+```
+# systemctl stop nessusd.service
+
+```
+
+Update the plugins:
+
+```
+# nessuscli update --plugins-only
+
+```
 
 ## Removal
 

@@ -32,8 +32,6 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
     *   [3.6 Use external journal to optimize performance](#Use_external_journal_to_optimize_performance)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Using file-based encryption](#Using_file-based_encryption)
-        *   [4.1.1 Enable on existing filesystem](#Enable_on_existing_filesystem)
-        *   [4.1.2 Usage](#Usage)
     *   [4.2 Enabling metadata checksums](#Enabling_metadata_checksums)
         *   [4.2.1 New filesystem](#New_filesystem)
         *   [4.2.2 Convert existing filesystem](#Convert_existing_filesystem)
@@ -248,117 +246,13 @@ You can then format a dedicated device to journal to with `mke2fs -O journal_dev
 
 ### Using file-based encryption
 
-**Note:** Ext4 forbids encrypting the root (`/`) directory and will produce an error on [kernel](/index.php/Kernel "Kernel") 4.13 and later [[5]](https://patchwork.kernel.org/patch/9787619/) [[6]](https://www.phoronix.com/scan.php?page=news_item&px=EXT4-Linux-4.13-Work).
-
-ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
-
-The encryption relies on the kernel option `CONFIG_EXT4_ENCRYPTION`, which is enabled by default, as well as the *e4crypt* command from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package.
-
-A precondition is that the filesystem is using a supported block size for encryption:
-
- `# tune2fs -l /dev/*device* | grep 'Block size'` 
-```
-Block size:               4096
-
-```
- `# getconf PAGE_SIZE` 
-```
-4096
-
-```
-
-If these values are not the same, then your filesystem will not support encryption, so **do not proceed further**.
-
-**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
-
-#### Enable on existing filesystem
-
-To enable the encryption feature flag on the filesystem:
-
-```
-# tune2fs -O encrypt /dev/*device*
-
-```
-
-**Tip:** The operation can be reverted with `debugfs -w -R "feature -encrypt" /dev/*device*`. Run [fsck](/index.php/Fsck "Fsck") before and after to ensure the integrity of the file system.
-
-#### Usage
-
-First make a directory to encrypt:
-
-```
-$ mkdir *vault*
-
-```
-
-**Note:**
-
-*   Encryption can only be applied to an empty directory. New files and subdirectories within an encrypted directory inherit its encryption policy. Encrypting already existing files is not yet supported.
-*   Applications may fail that need access to an encrypted directory (i.e. on boot) if locked.
-
-Generate and add a new key to the user's keyring. This step must be repeated every time you flush the user's keyring (i.e. logout or reboot):
-
- `$ e4crypt add_key` 
-```
-Enter passphrase (echo disabled): 
-Added key with descriptor [f88747555a6115f5]
-
-```
-
-**Tip:** By default the key is stored in the [session-keyring](http://man7.org/linux/man-pages/man7/session-keyring.7.html), see [e4crypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/e4crypt.8#COMMANDS). It is however possible to specify a different keyring using `-k`. Useful alternatives may include [user-keyring](http://man7.org/linux/man-pages/man7/user-keyring.7.html) and [user-session-keyring](http://man7.org/linux/man-pages/man7/user-session-keyring.7.html), e.g. to use user-keyring:
-```
-$ e4crypt add_key -k @u
-
-```
-
-**Warning:** If you forget your passphrase, there will be no way to decrypt your files. It also is not yet possible to change a passphrase after it has been set.
-
-**Note:** To help prevent [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack is automatically generated and stored in the ext4 filesystem superblock. Both the passphrase *and* the salt are used to derive the actual encryption key. As a consequence of this, if you have multiple ext4 filesystems with encryption enabled mounted, then `e4crypt add_key` will actually add multiple keys, one per filesystem. Although any key can be used on any filesystem, it would be wise to only use, on a given filesystem, keys using that filesystem's salt. Otherwise, you risk being unable to decrypt files on filesystem A if filesystem B is unmounted. Alternatively, you can use the `-S` option to `e4crypt add_key` to specify a salt yourself.
-
-Make sure the descriptor key is in the user's session keyring:
-
- `$ keyctl show` 
-```
-Session Keyring
-1021618178 --alswrv   1000  1000  keyring: _ses
- 176349519 --alsw-v   1000  1000   \_ logon: ext4:**f88747555a6115f5**
-
-```
-
-Assign the descriptor key to the encryption policy on the directory:
-
-```
-$ e4crypt set_policy *f88747555a6115f5* *vault*
-
-```
-
-The *vault* directory should now be accessible and readable for the current user as long as the key is in the user's keyring.
-
-If one tries to access *vault* without adding the key first into the user's keyring, filenames and their contents will be seen as encrypted gibberish.
-
-To (re)gain access to the directory, simple add the key to the user's keyring:
-
- `$ e4crypt add_key` 
-```
-Enter passphrase (echo disabled): *given passphrase*
-Added key with descriptor [f88747555a6115f5]
-
-```
-
-**Warning:**Logging in does automatically unlock home directories encrypted by this method when using GDM or console login.
-
-**Note:** For security reasons, unencrypted files are not allowed to exist in an encrypted directory. As such, attempting to move (`mv`) unencrypted files into an encrypted directory will
-
-*   fail, if both directories are on the same filesystem mount point. This happens because *mv* will only update the directory index to point to the new directory, but not the file's data inodes (which contain the crypto reference).
-*   succeed, if both directories are on different filesystem mount points (new data inodes are created).
-
-In both cases it is better to copy (`cp`) files instead, because that leaves the option to securely delete the unencrypted original with *shred* or a similar tool.
+Since Linux 4.1, ext4 natively supports file encryption. Encryption is applied at the directory level, and different directories can use different encryption keys. This is different from both [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), which is block-device level encryption, and from [eCryptfs](/index.php/ECryptfs "ECryptfs"), which is a stacked cryptographic filesystem. To use ext4's native encryption support, see the [fscrypt](/index.php/Fscrypt "Fscrypt") article.
 
 ### Enabling metadata checksums
 
 When a filesystem has been created with [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) 1.44 or later, metadata checksums should already be enabled by default. Existing filesystems may be converted to enable metadata checksum support.
 
-If the CPU supports SSE 4.2, make sure the `crc32c_intel` [kernel module](/index.php/Kernel_module "Kernel module") is loaded in order to enable the hardware accelerated CRC32C algorithm [[7]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). If not, load the `crc32c_generic` module instead.
+If the CPU supports SSE 4.2, make sure the `crc32c_intel` [kernel module](/index.php/Kernel_module "Kernel module") is loaded in order to enable the hardware accelerated CRC32C algorithm [[5]](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums#Benchmarking). If not, load the `crc32c_generic` module instead.
 
 To read more about metadata checksums, see the [ext4 wiki](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 
@@ -379,7 +273,7 @@ To enable support for ext4 metadata checksums on creating a new file system:
 
 #### Convert existing filesystem
 
-**Note:** A filesystem should not be mounted.
+**Note:** The filesystem should not be mounted.
 
 First the partition needs to be checked and optimized using `e2fsck`:
 
@@ -407,6 +301,6 @@ Finally enable checksums support:
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
 *   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
-*   Kernel commits for ext4 encryption [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Kernel commits for ext4 encryption [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

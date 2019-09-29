@@ -5,7 +5,7 @@ Related articles
 *   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
 *   [MacBookPro9,2 (Mid-2012)](/index.php/MacBookPro9,2_(Mid-2012) "MacBookPro9,2 (Mid-2012)")
 
-This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro alongside a pre-existing OSX operating system. For general help on the installation procedure see the [Installation guide](/index.php/Installation_guide "Installation guide").
+This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro alongside a pre-existing OSX operating system.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -21,16 +21,14 @@ This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro a
     *   [2.1 Dual Boot](#Dual_Boot)
         *   [2.1.1 EFI-Mode](#EFI-Mode)
         *   [2.1.2 CSM-Mode](#CSM-Mode)
-    *   [2.2 Bootloader](#Bootloader)
-        *   [2.2.1 EFI-Mode](#EFI-Mode_2)
-        *   [2.2.2 CSM-Mode or BIOS-compatibility](#CSM-Mode_or_BIOS-compatibility)
-            *   [2.2.2.1 Can't find root device](#Can't_find_root_device)
+            *   [2.1.2.1 Can't find root device](#Can't_find_root_device)
 *   [3 Network](#Network)
 *   [4 Video](#Video)
     *   [4.1 Nouveau](#Nouveau)
     *   [4.2 Nvidia](#Nvidia)
 *   [5 Backlight Control](#Backlight_Control)
 *   [6 Fan Control](#Fan_Control)
+*   [7 Audio](#Audio)
 
 ## Preparation
 
@@ -88,7 +86,6 @@ EFI/
 initramfs-linux-fallback.img
 initramfs-linux.img
 refind_linux.conf
-syslinux/ *** My bootloader of choice, see below ***
 vmlinuz-linux
 
 ```
@@ -96,6 +93,10 @@ vmlinuz-linux
 Note that the EFI/BOOT directory is normally named EFI/REFIND and that the bootx64.efi is normally named refind_x64.efi.
 
 #### EFI-Mode
+
+Consult [UEFI](/index.php/UEFI "UEFI")
+
+**Warning:** efibootmgr may brick your Mac firmware.
 
 You should now be able to boot your mac in efi-mode via the kernel's efistub feature. rEFInd should present you with an option to do so. See [here](http://www.rodsbooks.com/refind/linux.html) for more general information on the topic. This however has some drawbacks, as mentioned in the **Video** section below.
 
@@ -176,61 +177,6 @@ Even if the mbr table looks like this (*note that in the second table only the l
 
 Press 'w' to write the table to disk and reboot.
 
-### Bootloader
-
-The next important thing is the bootloader, which acts as the bridge from refind to your kernel. Based on the Mode you use to install arch, either **EFI** or **CSM**, you can choose a bootloader of your choice. But for now, We provide you with information about **Syslinux** and **Systemd-boot**, because these are the two we tested successfully for now.
-
-In both cases I assume that you managed to mount the EFI partition mentioned above to */boot/* already.
-
-Grub is the one bootloader, which can handle both the EFI and the CSM mode. But because it's mighty, it also can be complex and the configuration are far-reaching. I recommending you, unless you want to configure the smallest detail in the bootloader for an **un**forgetting adventure during a booting, to use systemd-boot (EFI-only) or syslinux (CSM-only), because both are really easy to setup.
-
-#### EFI-Mode
-
-If you do not need the power and its powersaving feature of the nvidia driver, then you should install [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [GRUB](/index.php/GRUB "GRUB"), because these bootloaders are the one which actually works fine with EFI.
-
-Here, let's do it with [systemd-boot](/index.php/Systemd-boot "Systemd-boot"): Next install systemd-boot:
-
-```
-# bootctl --path=esp install
-
-```
-
-Then you need to create a config file for systemd-boot and add an entry for the arch booting. The **sdaX** means that you have to replace it with your root partition, in this case it may be **/dev/sda3**.
-
- `# nano /boot/loader/entries/arch.conf` 
-```
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /initramfs-linux.img
-options        root=**/dev/sdaX** rw
-```
-
-As usual, for more information on configuring and using systemd-boot, see [Systemd-boot](/index.php/Systemd-boot "Systemd-boot").
-
-#### CSM-Mode or BIOS-compatibility
-
-Otherwise, if you don't want to miss out the advantages of the nvidia driver, I suggest you to install [syslinux](/index.php/Syslinux "Syslinux") or also [GRUB](/index.php/GRUB "GRUB") for the CSM-Mode. We'll use syslinux because it's the simplest to setup, but others should also work. Install it via pacman, and then just execute
-
-```
-# syslinux-install_update -i -a -m
-
-```
-
-It should detect your hybrid mbr and install itself automatically. Refer to [Syslinux](/index.php/Syslinux "Syslinux") for more details.
-
-Make sure to configure the bootloader's menu entries correctly: (syslinux)
-
-```
-LABEL arch
-MENU LABEL Arch Linux
-LINUX ../vmlinuz-linux
-APPEND root=/dev/sda3 ro vga=865
-INITRD ../initramfs-linux.img
-
-```
-
-Note that 'sda3' refers to the **gpt mapping**, 'vga=865' means 1280x800 framebuffer resolution, nicer when using the nvidia driver.
-
 ##### Can't find root device
 
 If booting fails, first try to use the initramfs-linux-fallback.img, as it includes more modules than your 'auto-detected' initramfs, and should allow the kernel to actually find your root partition. You'll then need to rebuild your regular initramfs. Rebuild it with
@@ -293,11 +239,11 @@ According to the [Debian Wiki](http://wiki.debian.org/MacBookPro) the MacBook Pr
 
 ### Nouveau
 
-Works out of the box, performance however is not that great and your system will get quite *hot* when running nouveau. Will cause issues in electron based applications! Fix by adding --disable-gpu to the .shortcut!
+Consult [Nouveau](/index.php/Nouveau "Nouveau") for general info on the driver. Works out of the box, performance however is not that great and your system will get quite *hot* when running nouveau. Will cause issues in electron based applications! Fix by adding --disable-gpu to the .shortcut!
 
 ### Nvidia
 
-The drivers work out of the box when booting the mac in csm- or legacy-mode. See [here](https://bbs.archlinux.org/viewtopic.php?id=162289) for some discussion on the topic.
+Consult [Nvidia](/index.php/Nvidia "Nvidia") for general info on the driver. The drivers work out of the box when booting the mac in csm- or legacy-mode. See [here](https://bbs.archlinux.org/viewtopic.php?id=162289) for some discussion on the topic.
 
 Running the drivers in **efi-mode** requires setting some PCI registers before the kernel modules get loaded, preferably using a udev hook or GRUB script. You can also use a efi shell script in REFind as stated [here](https://bbs.archlinux.org/viewtopic.php?pid=1833995#p1833995). Otherwise, the screen just remains black when X starts. Follow these [instructions](http://askubuntu.com/questions/264247/proprietary-nvidia-drivers-with-efi-on-mac-to-prevent-overheating/613573#613573) in order to find the appropriate PCI device IDs for which to set the registers. This approach has been confirmed to work and is still being actively discussed inside the above mentioned [thread](https://bbs.archlinux.org/viewtopic.php?pid=1522950#p1522950). The latest NVIDIA drivers are no longer supported for this MacBook's GPU you will instead need to use these ones [nvidia-340xx-dkms](https://aur.archlinux.org/packages/nvidia-340xx-dkms/)! Once installed create a config by running the command:
 
@@ -310,7 +256,7 @@ That will automatically generate a config for xorg (/etc/X11/xorg.conf). After t
 
 ## Backlight Control
 
-When using Nvidia drivers, you can use [nvidia-bl-dkms](https://aur.archlinux.org/packages/nvidia-bl-dkms/) to get controls in /sys/class/backlight/nvidia_backlight
+When using Nvidia drivers, you can use [nvidia-bl-dkms](https://aur.archlinux.org/packages/nvidia-bl-dkms/) to get controls in /sys/class/backlight/nvidia_backlight.
 
 ## Fan Control
 
@@ -321,4 +267,10 @@ For controlling the fans I recommend using mbpfan from the AUR ([mbpfan-git](htt
 
 ```
 
-**To be continued..**
+## Audio
+
+In Linux kernel 5.1 (or was it 5.2?) the MacBook Pro 7,1 started having audio issues. I have yet to find a fix even though I've been looking for months. If anyone has a fix please edit this section with your fix in it. For now the temporary fix is just rolling back the kernel to Linux 4.19\. To do that we need the Linux-LTS package:
+
+	[Install](/index.php/Install "Install") the packages [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) and [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers).
+
+If you are using grub you need to regenerate your grub config, otherwise reconfigure your bootloader to point to /boot/vmlinuz-linux-lts.

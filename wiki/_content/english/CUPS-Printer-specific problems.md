@@ -69,7 +69,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-2140 | [foomatic](/index.php/Foomatic "Foomatic") | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
 | HL-2170W | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
 | HL-2230 | [foomatic](/index.php/Foomatic "Foomatic") | Same as HL-2170W. Select HL-2170W as the driver in CUPS admin when adding a printer. |
-| HL-2250DN | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) |
+| HL-2250DN | [brother-brgenml1](https://aur.archlinux.org/packages/brother-brgenml1/) | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) is broken? |
 | HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/) |
 | HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
 | HL-3045CN | Install Brother's driver. |

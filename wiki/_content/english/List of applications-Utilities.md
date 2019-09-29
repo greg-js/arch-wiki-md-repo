@@ -118,6 +118,10 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://github.com/Swordfish90/cool-retro-term](https://github.com/Swordfish90/cool-retro-term) || [cool-retro-term](https://www.archlinux.org/packages/?name=cool-retro-term)
 
+*   **CuteCom** — A graphical serial terminal.
+
+	[https://gitlab.com/cutecom/cutecom](https://gitlab.com/cutecom/cutecom) || [cutecom](https://aur.archlinux.org/packages/cutecom/)
+
 *   **Eterm** — Terminal emulator intended as a replacement for xterm and designed for the [Enlightenment](/index.php/Enlightenment "Enlightenment") desktop.
 
 	[http://eterm.org](http://eterm.org) || [eterm](https://aur.archlinux.org/packages/eterm/)

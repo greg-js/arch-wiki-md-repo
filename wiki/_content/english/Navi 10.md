@@ -26,6 +26,7 @@ Related articles
 *   [6 Overclocking](#Overclocking)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 General](#General)
+    *   [7.2 Power Consumption](#Power_Consumption)
 
 ## Installation
 
@@ -48,7 +49,7 @@ Another way to get Navi 10 support in older kernel versions is to install [amdgp
 > 
 > [Gentoo Wiki](https://wiki.gentoo.org/wiki/Linux_firmware)
 
-While most of the blobs required by standard hardware are available in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package, the blobs needed for Navi 10 GPUs aren't. You can get these blobs by installing the [linux-firmware-agd5f-radeon-navi10](https://aur.archlinux.org/packages/linux-firmware-agd5f-radeon-navi10/) package.
+All firmware blobs needed are included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
 If you have a new enough kernel, but do not have sufficient firmware files, then you may need to boot with the `nomodeset` kernel option in order to have a working virtual console.
 
@@ -97,7 +98,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 ## GPGPU
 
-As of writing this, I wasn't able to make OpenCL work with either Clover, nor AMDGPU-PRO. For more info on GPGPU, see [GPGPU](/index.php/GPGPU "GPGPU").
+To get OpenCL working, you will need to install [opencl-amdgpu-pro-pal](https://aur.archlinux.org/packages/opencl-amdgpu-pro-pal/). For more info on see [GPGPU](/index.php/GPGPU "GPGPU").
 
 ## Overclocking
 
@@ -108,3 +109,7 @@ See [AMDGPU#Overclocking](/index.php/AMDGPU#Overclocking "AMDGPU")
 ### General
 
 See [AMDGPU#Troubleshooting](/index.php/AMDGPU#Troubleshooting "AMDGPU").
+
+### Power Consumption
+
+Some users have reported higher than usual idle power consumption when using kernel 5.3\. There is a [patch set](https://cgit.freedesktop.org/~agd5f/linux/tag/?h=drm-next-5.4-2019-08-30) available for kernel 5.4 that appears to fix the issues.

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [User:Irunarchbtw/Osu!](/index.php/User:Irunarchbtw/Osu! "User:Irunarchbtw/Osu!")
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

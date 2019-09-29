@@ -26,6 +26,9 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
 *   [1 Hardware compatibility](#Hardware_compatibility)
     *   [1.1 BIOS update](#BIOS_update)
     *   [1.2 Hybrid graphics](#Hybrid_graphics)
+        *   [1.2.1 Bumblebee](#Bumblebee)
+        *   [1.2.2 optimus-manager](#optimus-manager)
+        *   [1.2.3 Using external graphics exclusively](#Using_external_graphics_exclusively)
     *   [1.3 Thunderbolt](#Thunderbolt)
     *   [1.4 Fan control](#Fan_control)
     *   [1.5 Other hardware](#Other_hardware)
@@ -45,11 +48,15 @@ Despite not being strictly required for an Arch Linux install, a BIOS update is 
 
 BIOS updates are available via [fwupd](/index.php/Fwupd "Fwupd"), the Lenovo Vantage application on Windows, or from [Lenovo's website](https://pcsupport.lenovo.com/en/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme/downloads).
 
-The latest version, v1.23, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
+The latest version, v1.24, is highly recommended. All information on this page generally assumes the latest BIOS unless explicitly stated.
 
 ### Hybrid graphics
 
-Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee"), [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [optimus-manager](https://github.com/Askannz/optimus-manager). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU. After installing bumblebee, the HDMI port works after modifying the following files, rebooting, and executing `intel-virtual-output -f` from an X server running on the iGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
+Hybrid mode works via [Bumblebee](/index.php/Bumblebee "Bumblebee"), [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun") or [optimus-manager](/index.php/NVIDIA_Optimus#Using_optimus-manager "NVIDIA Optimus"). Both the HDMI port and DisplayPort outputs created when using either a USB-C adapter or Thunderbolt dock are wired to the Nvidia dGPU.
+
+#### Bumblebee
+
+After installing Bumblebee, the HDMI port works after modifying the following files, rebooting, and executing `intel-virtual-output -f` from an X server running on the iGPU. See [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee") for details.
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
@@ -84,7 +91,9 @@ EndSection
 
 ```
 
-While optimus-manager requires logging out to switch graphics, its NVIDIA performance is better than bumblebee's and it may also be the right choice for using external displays. This is because it does not require bumblebee's intel-virtual-output, which is plagued with performance issues. The following configuration has been found to work well:
+#### optimus-manager
+
+While optimus-manager requires logging out to switch graphics, it provides better performance and more stable external display support. The following configuration has been found to work well:
 
  `/etc/optimus-manager/optimus-manager.conf` 
 ```
@@ -101,11 +110,13 @@ switching=bbswitch
 
 ```
 
-Nvidia-only mode works fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
+#### Using external graphics exclusively
+
+Works fine with the default configuration produced by `nvidia-xconfig`, including HDMI output.
 
 ### Thunderbolt
 
-Thunderbolt works out of the box (tested with ThinkPad Thunderbolt 3 Dock); see [Thunderbolt](/index.php/Thunderbolt "Thunderbolt") for details on security. DisplayPort/HDMI port seems to be attached to the NVIDIA GPU only.
+Thunderbolt works out of the box (tested with ThinkPad Thunderbolt 3 Dock); see [Thunderbolt](/index.php/Thunderbolt "Thunderbolt") for details on security.
 
 ### Fan control
 
@@ -113,7 +124,11 @@ The fan on the right side of the laptop can be controlled by [thinkpad_acpi](/in
 
 ### Other hardware
 
-The webcam works out of the box, though it appears connected at all times, no matter the slider state (the camera reports a "disconnected" placeholder image in Windows when the protective slider is closed) - however, when the slider is closed, a completely black image is reported by the camera.
+The touchpad experience can be greatly improved by enabling "intertouch" as hinted by kernel messages. This can be done by either adding `psmouse.synaptics_intertouch=1` to the kernel command line or by creating a modprobe entry like:
+
+ `/etc/modprobe.d/psmouse.conf`  `options psmouse synaptics_intertouch=1` 
+
+The webcam works out of the box, though it reports a completely black image instead of the "disconnected" placeholder when the protective slider is closed.
 
 The fingerprint scanner is currently not supported in libfprint - a reverse engineering effort was ongoing [here](https://github.com/nmikhailov/Validity90), but seems to have stalled. Upstream libfprint bug is tracked [here](https://gitlab.freedesktop.org/libfprint/libfprint/issues/134).
 

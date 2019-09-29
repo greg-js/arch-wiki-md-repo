@@ -415,7 +415,7 @@ If enabled in BIOS, pressing Fn+F7 will disable sound, keyboard and screen backl
 
 ## Firmware Updates
 
-Dell provides firmware updates via [fwupd](/index.php/Fwupd "Fwupd"). Please note if you have used a bind mount partition for /boot or are booting via legacy BIOS/CSM instead of UEFI, you will not be able to use the fwupd utility - instead use the method below.
+Dell provides firmware updates via [fwupd](/index.php/Fwupd "Fwupd"). In order to update the BIOS make sure to also install the optional dependency [tpm2-tss](https://www.archlinux.org/packages/?name=tpm2-tss). Please note if you have used a bind mount partition for /boot or are booting via legacy BIOS/CSM instead of UEFI, you will not be able to use the fwupd utility - instead use the method below.
 
 Alternatively, the BIOS update can be downloaded from the [Dell website](https://www.dell.com/support/home/us/en/19/product-support/product/xps-13-9360-laptop/drivers) (filter by "BIOS") and placed in a location accessible to the firmware. This could be the '/boot' folder, or a FAT32 formatted USB stick. Then restart your laptop and hit F12 while starting. In the boot menu choose firmware update and select the downloaded file.
 

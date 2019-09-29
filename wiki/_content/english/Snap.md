@@ -189,7 +189,7 @@ Also, you can check what sandbox features are available in the system according 
 
 ## Graphical management
 
-KDE Discover can provide native snap support with the [discover-snap](https://aur.archlinux.org/packages/discover-snap/) package. Gnome Software Center has dropped snap support.
+Both Gnome Software Center and KDE Discover can provide native snap support. For KDE Discover install [discover-snap](https://aur.archlinux.org/packages/discover-snap/) package.
 
 ## Support
 

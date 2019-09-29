@@ -13,6 +13,9 @@ There are a variety of technologies and each manufacturer developed its own solu
     *   [2.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
         *   [2.1.1 Using bbswitch](#Using_bbswitch)
         *   [2.1.2 Using acpi_call](#Using_acpi_call)
+            *   [2.1.2.1 Turning off the GPU automatically](#Turning_off_the_GPU_automatically)
+                *   [2.1.2.1.1 At boot](#At_boot)
+                *   [2.1.2.1.2 After X server initialization](#After_X_server_initialization)
 
 ## First Generation Hybrid Model (Basic Switching)
 
@@ -101,6 +104,10 @@ Trying \_SB_.PCI0.VGA.PX02: failed
 
 See the "works"? This means the script found a bus which your GPU sits on and it has now turned off the chip. To confirm this, your battery time remaining should have increased.
 
+**Tip:** If you are experiencing trouble hibernating or suspending the system after disabling the GPU, try to enable it again by sending the corresponding acpi_call. See also [Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management").
+
+##### Turning off the GPU automatically
+
 Currently, the chip will turn back on with the next reboot. To get around this, add the kernel module to the array of modules to load at boot:
 
  `/etc/modules-load.d/acpi_call.conf` 
@@ -109,6 +116,8 @@ Currently, the chip will turn back on with the next reboot. To get around this, 
 
 acpi_call
 ```
+
+###### At boot
 
 To turn off the GPU at boot it is possible to use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd").
 
@@ -120,4 +129,6 @@ w /proc/acpi/call - - - - *\\_SB.PCI0.PEG0.PEGP._OFF*
 
 The above config will be loaded at boot by systemd. What it does is write the specific OFF signal to the `/proc/acpi/call` file. Obviously, replace the `\_SB.PCI0.PEG0.PEGP._OFF` with the one which works on your system (please note that you need to escape the backslash).
 
-**Tip:** If you are experiencing trouble hibernating or suspending the system after disabling the GPU, try to enable it again by sending the corresponding acpi_call. See also [Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management").
+###### After X server initialization
+
+On some systems, turning off the discrete GPU before the X server is initialized may hang the system. In such cases, it may be better to disable the GPU after X server initialization, which is possible with some display managers. In [LightDM](/index.php/LightDM "LightDM"), for instance, the *display-setup-script* seat configuration parameter could be used to execute a script as root that disables the GPU.

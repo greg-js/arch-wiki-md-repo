@@ -48,3 +48,5 @@ or to see all options use:
 # vnstat --longhelp
 
 ```
+
+Eye candy presentation of the data can also be achieved by [vnstati(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vnstati.1), which is part of the [vnstat](https://www.archlinux.org/packages/?name=vnstat) package.

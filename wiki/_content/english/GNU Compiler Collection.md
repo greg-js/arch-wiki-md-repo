@@ -10,7 +10,7 @@ The [GNU Compiler Collection](https://en.wikipedia.org/wiki/GNU_Compiler_Collect
 
 Other available front-ends are:
 
-*   [gcc-ada](https://www.archlinux.org/packages/?name=gcc-ada) for Ada
+*   [gcc-ada](https://www.archlinux.org/packages/?name=gcc-ada) for [Ada](/index.php/Ada "Ada")
 *   [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) for Fortran
 *   [gcc-go](https://www.archlinux.org/packages/?name=gcc-go) for [Go](/index.php/Go "Go")
 *   [gcc-objc](https://www.archlinux.org/packages/?name=gcc-objc) for Objective-C

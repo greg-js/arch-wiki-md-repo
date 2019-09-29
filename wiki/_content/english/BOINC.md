@@ -23,7 +23,6 @@ From [Wikipedia:BOINC](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC"):
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 GPU missing](#GPU_missing)
     *   [5.2 Laptop overheating and battery duration reduction](#Laptop_overheating_and_battery_duration_reduction)
-    *   [5.3 Unable to download with World Community Grid](#Unable_to_download_with_World_Community_Grid)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -166,12 +165,6 @@ If you run BIONC on a laptop with the ondemand governor (the default), it will k
 To do this on boot, create the following tmpfiles.d config:
 
  `/etc/tmpfiles.d/ondemand-ignore-nice.conf`  `w /sys/devices/system/cpu/cpufreq/ondemand/ignore_nice_load - - - - 1` 
-
-### Unable to download with World Community Grid
-
-If you are unable to download new work units for the World Community Grid project, [rebuild](/index.php/Makepkg "Makepkg") [openssl](https://www.archlinux.org/packages/?name=openssl) using a [modified PKGBUILD](http://pastebin.com/pYcYf4dr). Then [restart](/index.php/Restart "Restart") `boinc-client.service`.
-
-Your new work units should now be able to download. If you have any trouble, the original thread on the forum can be seen [here](https://bbs.archlinux.org/viewtopic.php?pid=1160393#p1160393).
 
 ## See also
 

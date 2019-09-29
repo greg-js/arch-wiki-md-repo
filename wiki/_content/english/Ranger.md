@@ -51,6 +51,8 @@ To start ranger, launch a [terminal](/index.php/List_of_applications#Terminal_em
 | Key | Command |
 | `?` | Open the manual or list keybindings, commands and settings |
 | `l`, `Enter` | Launch files |
+| `j`, `k` | Select file in the current directory |
+| `h`, `l` | Travel up and down in the directory tree |
 
 ## Configuration
 

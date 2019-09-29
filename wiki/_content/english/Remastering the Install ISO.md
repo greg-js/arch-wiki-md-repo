@@ -267,7 +267,7 @@ The newly created ISO image `arch-custom.iso` is found in the home directory. Yo
 
 ## See also
 
-*   [http://www.knoppix.net/wiki/KnoppixRemasteringHowto](http://www.knoppix.net/wiki/KnoppixRemasteringHowto)
-*   [http://syslinux.zytor.com/iso.php](http://syslinux.zytor.com/iso.php)
-*   [http://busybox.net/](http://busybox.net/)
-*   [Linux Live Kit](http://www.linux-live.org/)
+*   [Knoppix Remastering Howto](http://knoppix.net/wiki3/index.php?title=KnoppixRemasteringHowto)
+*   [ISOLINUX](https://wiki.syslinux.org/wiki/index.php?title=ISOLINUX)
+*   [BusyBox](https://busybox.net/)
+*   [Linux Live Kit](https://www.linux-live.org/)

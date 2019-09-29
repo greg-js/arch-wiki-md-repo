@@ -12,7 +12,11 @@ Polkit is used for controlling system-wide privileges. It provides an organized 
 
 Polkit works by delimiting distinct actions, e.g. running GParted, and delimiting users by group or by name, e.g. members of the wheel group. It then defines how – if at all – those users are allowed those actions, e.g. by identifying as members of the group by typing in their passwords.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
     *   [1.1 Authentication agents](#Authentication_agents)
@@ -222,6 +226,8 @@ polkit.addRule(function(action, subject) {
 Replace `wheel` by any group of your preference.
 
 This will result in automatic authentication for **any** action requiring admin rights via Polkit. As such, be careful with the group you choose to give such rights to.
+
+There is also `AUTH_ADMIN_KEEP` which allows to keep the authorization for 5 minutes. However, the authorization is per process, hence if a new process asks for an authorization within 5 minutes the new process will ask for the password again anyway.
 
 #### For specific actions
 

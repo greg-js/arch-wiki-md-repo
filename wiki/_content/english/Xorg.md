@@ -712,3 +712,5 @@ That line can also be used to give access to X to a different user than root.
 ## See also
 
 *   [Xplain](https://magcius.github.io/xplain/article/) - In-depth explanation of the X Window System
+*   [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) - Xorg's Manual Page
+*   [Gentoo/Xorg#Configuration](https://wiki.gentoo.org/wiki/Xorg/Guide/en#Configuration) - Gentoo Wiki's Xorg Configuration page

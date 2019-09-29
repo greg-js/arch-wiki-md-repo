@@ -99,6 +99,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad L380 Yoga](/index.php/Lenovo_ThinkPad_L380_Yoga "Lenovo ThinkPad L380 Yoga") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
+| Lenovo ThinkPad L390 | 2019.09.01 | Yes | Yes | Not tested | Yes | Yes | Yes | NA | Webcam, MicroSD card reader is working out of the box. Not working out of the box: Touchscreen, fingerprint reader, NFC |
 | Lenovo ThinkPad L420 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA |
 | Lenovo ThinkPad L430 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint* |
 | Lenovo ThinkPad L440 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint (Touchpad cannot be disabled, as mouse buttons are shared with Trackpoint), Fingerprint reader, SD Card Reader |
@@ -330,6 +331,11 @@ install CD version
 | Lenovo Legion Y520 | 2019.06.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not working properly), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested June 2019 / Linux 5.1.9\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
 | Lenovo Legion Y520 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 (Yes) | Tested June 2019 / Linux 5.1.5\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Some CPU throttling is possible [[2]](https://unix.stackexchange.com/questions/491944/cpu-temperatures-in-linux-throttling-or-wrong-reading). Fan control does not seem to work [[3]](https://unix.stackexchange.com/questions/523899/laptop-fan-always-says-its-running-at-8-rpm) |
 | Lenovo Legion Y730 | ??? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes), GeForce GTX 1050 Ti (Yes) | Tested September 2019 / Linux 5.2.13\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. Disable nouveau at kernel command line with module_blacklist=nouveau or nouveau.modeset=0 |
+| Lenovo Legion Y7000P-1060 | 2019.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | No | Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Yes), Mini DisplayPort (Not tested), Touchpad (Yes), NVMe SSD (Yes), GeForce GTX 1060 Mobile (Yes) | First tested Aug 2019 / Linux 5.2.9.
+
+[https://linux-hardware.org/index.php?computer=af3a4bc1494f](https://linux-hardware.org/index.php?computer=af3a4bc1494f)
+
+ |
 
 ## Special Notes (*):
 

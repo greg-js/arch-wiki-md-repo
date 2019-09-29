@@ -36,7 +36,7 @@ Related articles
     *   [6.1 Gamma](#Gamma)
     *   [6.2 LLVM assertion failure](#LLVM_assertion_failure)
     *   [6.3 Slow motion, graphical glitches, and crashes](#Slow_motion,_graphical_glitches,_and_crashes)
-    *   [6.4 Electron based applications / VS Code](#Electron_based_applications_/_VS_Code)
+    *   [6.4 Cannot open display: :0 with Electron-based applications](#Cannot_open_display:_:0_with_Electron-based_applications)
     *   [6.5 Screen recording](#Screen_recording)
     *   [6.6 Remote display](#Remote_display)
     *   [6.7 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games,_remote_desktop_and_VM_windows)
@@ -338,6 +338,7 @@ Below listed display managers which supports running Wayland compositors. The Ty
 | Name | Type | Description |
 | GDM | Runs on Wayland | [GNOME](/index.php/GNOME "GNOME") display manager. |
 | LightDM | Runs on X11 | Cross-desktop display manager. |
+| Ly | Runs in console | TUI display manager written in C |
 | SDDM | Runs on X11 | QML-based display manager. |
 
 ## Compositors
@@ -396,14 +397,9 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 
 Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
 
-### Electron based applications / VS Code
+### Cannot open display: :0 with Electron-based applications
 
-Try running with GDK_BACKEND=x11\. Example alias:
-
-```
-$ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
-
-```
+Make sure you haven't set GDK_BACKEND=wayland. Setting it globally will break Electron apps.
 
 ### Screen recording
 

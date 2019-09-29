@@ -87,7 +87,7 @@ See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_resto
 
 ### Create disk image
 
-Boot from a live media and make sure no partitions are mounted from the source hard drive.
+Boot from a live medium and make sure no partitions are mounted from the source hard drive.
 
 Then mount the external hard drive and backup the drive:
 

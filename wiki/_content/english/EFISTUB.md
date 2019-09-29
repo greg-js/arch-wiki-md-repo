@@ -3,7 +3,7 @@ Related articles
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
-The Linux kernel supports EFISTUB booting which allows [EFI](/index.php/EFI "EFI") firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels, or if compiling a the kernel one can activate it by setting `CONFIG_EFI_STUB=y` in the Kernel configuration. See [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information.
+The Linux kernel supports EFISTUB booting which allows [EFI](/index.php/EFI "EFI") firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels, or if compiling the kernel one can activate it by setting `CONFIG_EFI_STUB=y` in the Kernel configuration. See [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information.
 
 With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly using a [boot loader](/index.php/Boot_loader "Boot loader"). Using a boot loader is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
 

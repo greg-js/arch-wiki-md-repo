@@ -47,14 +47,12 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [Arch Linux 32](https://archlinux32.org/) 
 *   [Arch Linux ARM](https://archlinuxarm.org/) 
-*   [Archphile](https://sourceforge.net/projects/archphile/) 
 *   [ArchStrike](https://archstrike.org/) 
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/) 
 *   [ArcoLinux](https://sourceforge.net/projects/arcolinux/) 
 *   [Artix Linux](https://sourceforge.net/projects/artix-linux/) 
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/) 
 *   [BlackArch Linux](https://blackarch.org/) 
-*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/) 
 *   [Chakra](https://sourceforge.net/projects/chakra/) 
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/) 
@@ -64,7 +62,6 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [LinHES](http://linhes.org/) 
 *   [MagpieOS](https://sourceforge.net/projects/magpieos/) 
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/) 
-*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/) 
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/) 
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/) 
@@ -72,7 +69,6 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [Parabola](https://www.parabola.nu/) 
 *   [PuppyRus-A](https://sourceforge.net/projects/puppyrusa/) 
 *   [RaspArch](https://sourceforge.net/projects/rasparch/) 
-*   [SwagArch](https://swagarch.gitlab.io/) 
 *   [TalkingArch](https://talkingarch.tk/) 
 *   [UBOS](http://ubos.net/) 
 
@@ -83,6 +79,10 @@ These distributions are no longer developed, but show some of the history surrou
 ### 2019
 
 *   [Antergos](https://sourceforge.net/projects/antergos/) 
+*   [Archphile](https://sourceforge.net/projects/archphile/) 
+*   [BlueLight](https://github.com/BlueLightOS/bluelight) 
+*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
+*   [SwagArch](http://web.archive.org/web/20190125193812/https://swagarch.gitlab.io/) 
 
 ### 2018
 

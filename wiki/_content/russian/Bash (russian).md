@@ -30,7 +30,7 @@ Related articles
 *   [4 Советы и рекомендации](#Советы_и_рекомендации)
     *   [4.1 Настройка приглашения командной строки](#Настройка_приглашения_командной_строки)
         *   [4.1.1 Кастомизация заголовка](#Кастомизация_заголовка)
-    *   [4.2 Команда не найдена (AUR)](#Команда_не_найдена_(AUR))
+    *   [4.2 Команда не найдена](#Команда_не_найдена)
     *   [4.3 Отключение Ctrl-z в терминале](#Отключение_Ctrl-z_в_терминале)
     *   [4.4 Очистка экрана после выхода из системы](#Очистка_экрана_после_выхода_из_системы)
     *   [4.5 Автоматическая смена директории (cd) при вводе только пути](#Автоматическая_смена_директории_(cd)_при_вводе_только_пути)
@@ -223,28 +223,35 @@ export PROMPT_COMMAND='history -a;echo -en "\e]2;";history 1|sed "s/^[ \t]*[0-9]
 
 ```
 
-### Команда не найдена (AUR)
+### Команда не найдена
 
-[pkgfile](/index.php/Pkgfile "Pkgfile") включает хук "команда не найдена", который автоматически ищет в официальных источниках команды, похожие на ту, что не была распознана системой. Альтернативный хук "команда не найдена" имеется в репозитории AUR [command-not-found](https://aur.archlinux.org/packages/command-not-found/). пример использования:
+[pkgfile](/index.php/Pkgfile "Pkgfile") включает хук "command not found" ("команда не найдена"), который при вводе неизвестной команды осуществляет поиск в официальных репозиториях.
+
+Чтобы включить хук, нужно его [прочитать](/index.php/Help:Reading_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Source "Help:Reading (Русский)"). Например, добавьте с файл `.bashrc` следующую строку:
+
+ `~/.bashrc`  `source /usr/share/doc/pkgfile/command-not-found.bash` 
+
+После этого при попытке выполнить неправильную команду вы увидите следующую информацию:
 
  `$ abiword` 
 ```
-The command 'abiword' is been provided by the following packages:
+abiword may be found in the following packages:
+  extra/abiword 3.0.1-2	/usr/bin/abiword
+```
+
+**Примечание:** Чтобы это сработало, базу данных *pkgfile* нужно [синхронизировать](/index.php/Pkgfile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Установка "Pkgfile (Русский)").
+
+Альтернативный хук "command not found" можно найти в пакете [command-not-found](https://aur.archlinux.org/packages/command-not-found/). Вывод этого скрипта выглядит примерно следующим образом:
+
+ `$ abiword` 
+```
+The command 'abiword' is provided by the following packages:
 **abiword** (2.8.6-7) from extra
 	[ abiword ]
 **abiword** (2.8.6-7) from staging
 	[ abiword ]
 **abiword** (2.8.6-7) from testing
 	[ abiword ]
-
-```
-
-Для автоматического запуска:
-
- `*~/.bashrc* or *~/.zshrc*` 
-```
-[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
-
 ```
 
 ### Отключение Ctrl-z в терминале

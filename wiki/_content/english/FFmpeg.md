@@ -403,7 +403,7 @@ $ ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -vcodec h264_v
 
 #### NVIDIA NVENC/NVDEC
 
-[NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") can be used for encoding/decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from 600 series, see [Hardware video acceleration#NVIDIA](/index.php/Hardware_video_acceleration#NVIDIA "Hardware video acceleration") for details.
+[NVENC](https://en.wikipedia.org/wiki/Nvidia_NVENC "w:Nvidia NVENC") and [NVDEC](https://en.wikipedia.org/wiki/Nvidia_NVDEC "w:Nvidia NVDEC") can be used for encoding/decoding when using the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) package installed. Minimum supported GPUs are from [600 series](https://en.wikipedia.org/wiki/GeForce_600_series "wikipedia:GeForce 600 series"), see [Hardware video acceleration#NVIDIA](/index.php/Hardware_video_acceleration#NVIDIA "Hardware video acceleration") for details.
 
 The [following gist](https://gist.github.com/Brainiarc7/8b471ff91319483cdb725f615908286e) provides some techniques. NVENC is somewhat similar to [CUDA](/index.php/CUDA "CUDA"), thus it works even from terminal session. Depending on hardware NVENC is several times faster than Intel's VA-API encoders.
 

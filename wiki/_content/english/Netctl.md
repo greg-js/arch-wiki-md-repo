@@ -224,6 +224,8 @@ The *pre-shared key* (psk) now needs to replace the plain text passphrase of the
 
 If you want a graphical user interface to manage *netctl* and your connections and you are not afraid of highly experimental unofficial packages, there are some options available. [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) provides a Qt-based graphical interface, DBus daemon and KDE widget. An alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
 
+There's also an application that displays desktop notifications on profile changes and shows a tray icon: [netctl-tray](https://aur.archlinux.org/packages/netctl-tray/).
+
 ### Bonding
 
 From [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):

@@ -361,7 +361,7 @@ Related articles
         *   [6.7.2 Electronics](#Electronics)
             *   [6.7.2.1 Digital logic](#Digital_logic)
             *   [6.7.2.2 HDL](#HDL)
-            *   [6.7.2.3 MCU IDE](#MCU_IDE)
+            *   [6.7.2.3 MCU IDE and programmers](#MCU_IDE_and_programmers)
             *   [6.7.2.4 Schematic capture editor](#Schematic_capture_editor)
     *   [6.8 Telecommunication](#Telecommunication)
         *   [6.8.1 Amateur radio](#Amateur_radio)
@@ -755,7 +755,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **Surfer** — Simple keyboard based web browser, written in C.
 
-	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer](https://aur.archlinux.org/packages/surfer/)
+	[https://github.com/nihilowy/surfer](https://github.com/nihilowy/surfer) || [surfer-git](https://aur.archlinux.org/packages/surfer-git/)
 
 *   **Vimb** — A Vim-like web browser that is inspired by Pentadactyl and Vimprobable.
 
@@ -1150,6 +1150,14 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 *   **[Pydio](/index.php/Pydio "Pydio")Sync** — Desktop client for Pydio.
 
 	[https://pydio.com/](https://pydio.com/) || [pydio-sync](https://aur.archlinux.org/packages/pydio-sync/)
+
+*   **[rclone](/index.php?title=Rclone&action=edit&redlink=1 "Rclone (page does not exist)")** — multi-provider sync, copy, and mount client. Supports GSuite Team Drives.
+
+	[https://rclone.org/](https://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
+
+*   **[rclone-browser](/index.php?title=Rclone-browser&action=edit&redlink=1 "Rclone-browser (page does not exist)")** — Gui for Rclone
+
+	[https://github.com/kapitainsky/RcloneBrowser](https://github.com/kapitainsky/RcloneBrowser) || [rclone-browser-git](https://aur.archlinux.org/packages/rclone-browser-git/)
 
 *   **S3cmd** — Unofficial CLI for Amazon S3.
 
@@ -4475,6 +4483,10 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 *   **Cool Retro Term** — A good looking terminal emulator which mimics the old cathode display.
 
 	[https://github.com/Swordfish90/cool-retro-term](https://github.com/Swordfish90/cool-retro-term) || [cool-retro-term](https://www.archlinux.org/packages/?name=cool-retro-term)
+
+*   **CuteCom** — A graphical serial terminal.
+
+	[https://gitlab.com/cutecom/cutecom](https://gitlab.com/cutecom/cutecom) || [cutecom](https://aur.archlinux.org/packages/cutecom/)
 
 *   **Eterm** — Terminal emulator intended as a replacement for xterm and designed for the [Enlightenment](/index.php/Enlightenment "Enlightenment") desktop.
 
@@ -8448,6 +8460,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[https://www.cp2k.org/](https://www.cp2k.org/) || [cp2k](https://aur.archlinux.org/packages/cp2k/)
 
+*   **Fpocket** — Fpocket is a very fast open source protein pocket detection algorithm based on Voronoi tessellation.
+
+	[https://github.com/Discngine/fpocket](https://github.com/Discngine/fpocket) || [fpocket-git](https://aur.archlinux.org/packages/fpocket-git/)
+
 *   **[GROMACS](/index.php/GROMACS "GROMACS") (GROningen MAchine for Chemical Simulations)** — Versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
 
 	[http://www.gromacs.org](http://www.gromacs.org) || [gromacs](https://aur.archlinux.org/packages/gromacs/)
@@ -8468,9 +8484,17 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://www.poissonboltzmann.org/](http://www.poissonboltzmann.org/) || [pdb2pqr](https://aur.archlinux.org/packages/pdb2pqr/)
 
+*   **PMEMD** — PMEMD module of AMBER software package.
+
+	[http://ambermd.org/AmberMD.php](http://ambermd.org/AmberMD.php) || [pmemd](https://aur.archlinux.org/packages/pmemd/), [pmemd-cuda](https://aur.archlinux.org/packages/pmemd-cuda/)
+
 *   **[Quantum ESPRESSO](https://en.wikipedia.org/wiki/Quantum_ESPRESSO "wikipedia:Quantum ESPRESSO")** — Integrated suite of applications for electronic-structure calculations and materials modeling at nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials (both norm-conserving and ultrasoft).
 
 	[http://www.quantum-espresso.org/](http://www.quantum-espresso.org/) || [quantum-espresso](https://aur.archlinux.org/packages/quantum-espresso/)
+
+*   **smina** — Smina is a fork of Autodock Vina that focuses on improving scoring and minimization.
+
+	[https://sourceforge.net/projects/smina/](https://sourceforge.net/projects/smina/) || [smina-bin](https://aur.archlinux.org/packages/smina-bin/)
 
 #### Periodic table
 
@@ -8816,13 +8840,29 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
 
-##### MCU IDE
+##### MCU IDE and programmers
 
 *   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
 
 	[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
 
+*   **avrcalc** — Calculator to speed development of Atmel AVRs.
+
+	[https://sourceforge.net/projects/avrcalc](https://sourceforge.net/projects/avrcalc) || [avrcalc](https://aur.archlinux.org/packages/avrcalc/)
+
+*   **AVRDUDE** — Download/upload/manipulate the ROM and EEPROM contents of AVR microcontrollers.
+
+	[http://www.nongnu.org/avrdude/](http://www.nongnu.org/avrdude/) || [avrdude](https://www.archlinux.org/packages/?name=avrdude)
+
+*   **SPIPGM** — Tool for programming serial SPI FlashROM memories attached to PC via parallel port cable.
+
+	[http://rayer.g6.cz/programm/programe.htm](http://rayer.g6.cz/programm/programe.htm) || [spipgm-bin](https://aur.archlinux.org/packages/spipgm-bin/)
+
 ##### Schematic capture editor
+
+*   **freeroute** — Automatic PCB track router for KiCad written by Alfons Wirtz.
+
+	[http://www.freerouting.net/](http://www.freerouting.net/) || [freeroute-bin](https://aur.archlinux.org/packages/freeroute-bin/)
 
 *   **[gEDA](/index.php/GEDA "GEDA")** — Full suite and toolkit of Electronic Design Automation tools that are used for electrical circuit design, schematic capture, simulation, prototyping, and production.
 
@@ -8869,6 +8909,14 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 *   **Pothos** — The Pothos project is a complete data-flow framework for creating topologies of interconnected processing blocks.
 
 	[https://github.com/pothosware/PothosCore/wiki](https://github.com/pothosware/PothosCore/wiki) || [pothos](https://aur.archlinux.org/packages/pothos/), [pothos-git](https://aur.archlinux.org/packages/pothos-git/)
+
+*   **SDR#** — The most popular SDR program.
+
+	[https://airspy.com/](https://airspy.com/) || [sdrsharp](https://aur.archlinux.org/packages/sdrsharp/)
+
+*   **SigDigger** — Qt-based digital signal analyzer, using Suscan core and Sigutils DSP library.
+
+	[https://github.com/BatchDrake/SigDigger](https://github.com/BatchDrake/SigDigger) || [sigdigger-git](https://aur.archlinux.org/packages/sigdigger-git/)
 
 #### Amateur radio
 

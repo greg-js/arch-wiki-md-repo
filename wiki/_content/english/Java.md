@@ -272,7 +272,7 @@ Due to the fact that the JDBC-drivers often use the port in the URL to establish
 
 ### IntelliJ IDEA
 
-If you have faced the error `The selected directory is not a valid home for JDK` with the system java sdk path, you have to install a new jdk in octopi or with pacman, then select the new java sdk as the IntelliJ IDEA's JDK.
+If IntelliJ IDEA outputs `The selected directory is not a valid home for JDK` with the system Java SDK path, you may have to install a different JDK package and select it as IDEA's JDK.
 
 ### Impersonate another window manager
 

@@ -1366,7 +1366,7 @@ This example connects *spicy* to the local port `5999` which is forwarded throug
 
 #### Running a SPICE client with QEMU
 
-QEMU can automatically start a SPICE client with an appropriate socket, if the display is set to SPICE with the `-display spice-app` parameter. This will use the system's default SPICE client as the viewer.
+QEMU can automatically start a SPICE client with an appropriate socket, if the display is set to SPICE with the `-display spice-app` parameter. This will use the system's default SPICE client as the viewer, determined by your [mimeapps.list](/index.php/XDG_MIME_Applications#mimeapps.list "XDG MIME Applications") files.
 
 ### Enabling SPICE support on the guest
 

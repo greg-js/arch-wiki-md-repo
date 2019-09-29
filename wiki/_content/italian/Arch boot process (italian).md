@@ -10,7 +10,11 @@ Articoli correlati
 
 Per avviare Linux è necessario aver installato nel [Master Boot Record](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)") o nella [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") un [boot loader](/index.php/Boot_loader "Boot loader") compatibile con Linux, come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)") o [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)"). Il boot loader è responsabile per il caricamento del kernel e il [ramdisk iniziale](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") prima di iniziare il processo di boot. La procedura è piuttosto differente tra sistemi [BIOS](https://en.wikipedia.org/wiki/it:BIOS "wikipedia:it:BIOS") e [UEFI](/index.php/UEFI "UEFI"), e la descrizione dettagliata è presentata in questa pagina o quelle collegate.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Processo di boot](#Processo_di_boot)
     *   [1.1 Con BIOS](#Con_BIOS)

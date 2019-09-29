@@ -2,7 +2,7 @@ Related articles
 
 *   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
 
-[Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) is a network authentication system. See [krb5 documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/index.html).
+[Kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol) is a network authentication system. See [krb5 documentation](https://web.mit.edu/kerberos/krb5-latest/doc/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

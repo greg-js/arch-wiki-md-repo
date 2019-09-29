@@ -28,6 +28,7 @@ The Lenovo P52 is a quad or hex core Intel 8th generation Laptop.
 *   [3 lspci](#lspci)
 *   [4 Graphics](#Graphics)
     *   [4.1 Proprietary driver with bumblebee](#Proprietary_driver_with_bumblebee)
+*   [5 Touchpad](#Touchpad)
 
 ## Pre-Installation
 
@@ -199,3 +200,7 @@ EndSection
 ```
 
 At this stage, restart your machine. Then you should be able to run applications on the GPU as you normally would with `optirun`, e.g., `optirun glxgears`. If you want to use the external displays you need to keep your GPU on by running an app on `optirun` and then running `intel-virtual-output -f` (this will stay running and binds the external display ports to virtual outputs that you can use). At this stage you should be able to see and use the external ports.
+
+## Touchpad
+
+Every once in a while Linux kernel upgrades will cause issues where the Touchpad and Trackpoint stop working. Booting with kernel parameter "psmouse.elantech_smbus=0" seems to fix it. [https://bugs.archlinux.org/task/59714#comment174924](https://bugs.archlinux.org/task/59714#comment174924)

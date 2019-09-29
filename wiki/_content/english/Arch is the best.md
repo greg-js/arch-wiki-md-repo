@@ -133,6 +133,19 @@ pause
 
 ```
 
+	BIRL
+
+	Like ArnoldC, but for Bambam.
+
+```
+HORA DO SHOW
+    CE QUER VER ESSA PORRA? ("Arch is the best!
+");
+    BORA CUMPADE 0;
+BIRL
+
+```
+
 	Boo
 
 	A stablished object oriented statically typed programming language for .NET and Mono with a python inspired syntax and a special focus on metaprogramming through language and compiler extensibility features such as macros and custom compilation pipelines.

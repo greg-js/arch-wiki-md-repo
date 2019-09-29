@@ -6,6 +6,8 @@ Related articles
 
 Disk cloning is the process of making an image of a partition or of an entire hard drive. This can be useful for copying the drive to other computers and for [backup](/index.php/Backup "Backup") and [recovery](/index.php/File_recovery "File recovery") purposes.
 
+**Tip:** Over time [file systems](/index.php/File_systems "File systems") get new features and the [mkfs](/index.php/Mkfs "Mkfs") utilities change their defaults, but not all new features can be enabled without reformatting. So, when moving data to a new drive, instead of cloning the block devices or file systems, consider creating a new file system and only copy the files (and their attributes, ACLs, extended attributes, etc.) with e.g. [rsync](/index.php/Rsync#Full_system_backup "Rsync").
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents

@@ -28,6 +28,7 @@ Screen brightness might be tricky to control. On some machines physical hardware
     *   [9.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_(Intel_i915_only))
     *   [9.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_(Intel_i915_only))
     *   [9.4 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
+    *   [9.5 Backlight not working in MATE](#Backlight_not_working_in_MATE)
 
 ## Overview
 
@@ -488,3 +489,7 @@ inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
 done
 
 ```
+
+### Backlight not working in MATE
+
+Make sure the [mate-power-manager](https://www.archlinux.org/packages/?name=mate-power-manager) package is [installed](/index.php/Install "Install").

@@ -2,7 +2,11 @@
 
 *Attenzione* leggere anche la pagina ufficiale per l'installazione e la risoluzione dei problemi, lo sviluppatore principale ha indicato la nostra pagina wiki al suo stato attuale come piena di problemi (*"full of symptom killers"*), per cui la pagina ufficiale dovrebbe contenere informazioni più complete.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installare il demone](#Installare_il_demone)
 *   [2 Configurazione](#Configurazione)
@@ -15,21 +19,21 @@
     *   [3.1 Configurazione veloce](#Configurazione_veloce)
     *   [3.2 Configurazione multi-demone](#Configurazione_multi-demone)
 *   [4 Installazione del client](#Installazione_del_client)
-*   [5 Funzionalità Extra](#Funzionalit.C3.A0_Extra)
+*   [5 Funzionalità Extra](#Funzionalità_Extra)
     *   [5.1 Scrobbling su Last.fm](#Scrobbling_su_Last.fm)
         *   [5.1.1 mpdscribble](#mpdscribble)
-        *   [5.1.2 Sonata & Ario](#Sonata_.26_Ario)
+        *   [5.1.2 Sonata & Ario](#Sonata_&_Ario)
         *   [5.1.3 lastfmsubmitd](#lastfmsubmitd)
     *   [5.2 Riproduzione da Last.fm con lastfmproxy](#Riproduzione_da_Last.fm_con_lastfmproxy)
-    *   [5.3 Non riprodurre all'avvio](#Non_riprodurre_all.27avvio)
+    *   [5.3 Non riprodurre all'avvio](#Non_riprodurre_all'avvio)
         *   [5.3.1 Metodo 1](#Metodo_1)
         *   [5.3.2 Metodo 2](#Metodo_2)
         *   [5.3.3 Metodo 3](#Metodo_3)
-    *   [5.4 MPD & ALSA](#MPD_.26_ALSA)
+    *   [5.4 MPD & ALSA](#MPD_&_ALSA)
         *   [5.4.1 Elevato utilizzo della CPU con ALSA](#Elevato_utilizzo_della_CPU_con_ALSA)
     *   [5.5 Controllare MPD con lirc](#Controllare_MPD_con_lirc)
     *   [5.6 Controllare MPD tramite cellulare bluetooth](#Controllare_MPD_tramite_cellulare_bluetooth)
-    *   [5.7 MPD & PulseAudio](#MPD_.26_PulseAudio)
+    *   [5.7 MPD & PulseAudio](#MPD_&_PulseAudio)
 *   [6 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [6.1 Autorilevamento fallito](#Autorilevamento_fallito)
     *   [6.2 Permessi di esecuzione](#Permessi_di_esecuzione)
@@ -42,10 +46,10 @@
     *   [6.7 mpd --create-db si blocca](#mpd_--create-db_si_blocca)
         *   [6.7.1 Easy Tag](#Easy_Tag)
         *   [6.7.2 KID3](#KID3)
-    *   [6.8 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_.22localhost.22_not_found:_Temporary_failure_in_name_resolution)
+    *   [6.8 Cannot connect to mpd: host "localhost" not found: Temporary failure in name resolution](#Cannot_connect_to_mpd:_host_"localhost"_not_found:_Temporary_failure_in_name_resolution)
     *   [6.9 Port 6600 already in use](#Port_6600_already_in_use)
     *   [6.10 Crepitii con alcuni file audio](#Crepitii_con_alcuni_file_audio)
-    *   [6.11 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_.22mpd.22:_Operation_not_permitted)
+    *   [6.11 daemon: cannot setgid for user "mpd": Operation not permitted](#daemon:_cannot_setgid_for_user_"mpd":_Operation_not_permitted)
 *   [7 Riferimenti esterni](#Riferimenti_esterni)
 
 ## Installare il demone

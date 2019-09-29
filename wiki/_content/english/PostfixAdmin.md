@@ -47,6 +47,17 @@ $CONF['database_name'] = 'postfix_db';
 
 // globally change all instances of ''change-this-to-your.domain.tld'' 
 // to an appropriate value
+$CONF['default_aliases'] = array (
+    'abuse' => 'abuse@change-this-to-your.domain.tld',
+    'hostmaster' => 'hostmaster@change-this-to-your.domain.tld',
+    'postmaster' => 'postmaster@change-this-to-your.domain.tld',
+    'webmaster' => 'webmaster@change-this-to-your.domain.tld'
+);
+
+$CONF['vacation_domain'] = 'autoreply.change-this-to-your.domain.tld';
+
+$CONF['footer_text'] = 'Return to change-this-to-your.domain.tld';
+$CONF['footer_link'] = 'http://change-this-to-your.domain.tld';
 
 ```
 
@@ -60,6 +71,7 @@ $CONF['encrypt'] = 'dovecot:SHA512-CRYPT';
 
 As of dovecot 2, dovecotpw has been deprecated. You will also want to ensure that your config reflects the new binary name.
 
+**Note:** As of postfixadmin 2.91 this is set correctly by default.
  `/etc/webapps/postfixadmin/config.local.php` 
 ```
 $CONF['dovecotpw'] = "/usr/sbin/doveadm pw";

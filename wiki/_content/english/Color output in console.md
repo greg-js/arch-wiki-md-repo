@@ -267,6 +267,16 @@ color overstrike brightblue black
 
 ```
 
+A list of all keybindings may be found at `/usr/share/doc/most/most-fun.txt`. To get a basic `less`-like configuration, you can copy `/usr/share/doc/most/lesskeys.rc` to `~/.mostrc`. The lesskeys rc included with most does not include 'g' or 'G', so you will also have to add these lines to `~/.mostrc`:
+
+```
+setkey bob "g"
+setkey eob "G"
+
+```
+
+You may also want to set the `goto_line` keybinding in the rc if you don't like the default of 'J'.
+
 Another example showing keybindings similar to `less` (jump to line is set to 'J'):
 
 ```

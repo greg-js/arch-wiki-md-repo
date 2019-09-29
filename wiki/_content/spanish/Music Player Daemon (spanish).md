@@ -144,6 +144,7 @@ MPD no necesita ser iniciado con permisos de root. La única razón por la cual 
 3.  llamado más flexible a MPD haciendo uso de `~/.xinitrc` en vez de incluir MPD en la sección DAEMONS en `/etc/rc.conf`.
 
 Los siguientes pasos indican como iniciar MPD como un usuario normal. Debe realizar todos los pasos como usuario.
+
 **Note:** Este método no funcionará si múltiples usuarios desean acceder a MPD.
 
 *   Copie el contenido del archivo de configuración por defecto de MPD, ubicado en `/usr/share/doc/mpd/mpdconf.example` a su directorio home.
@@ -783,7 +784,12 @@ A more brute-force approach:
 ```
 
 **Note:** If you typically run MPD as root, you will need to run the above commands as root.
-In the latest version of MPD, --create-db is completely deprecated. The database will be created automagically on first run and can subsequently be updated via your client (i.e. mpc update). You can now use inotify support to automatically update your music database. Add the following to `mpd.conf`  `auto_update "yes"` to enable it.
+
+In the latest version of MPD, --create-db is completely deprecated. The database will be created automagically on first run and can subsequently be updated via your client (i.e. mpc update). You can now use inotify support to automatically update your music database. Add the following to
+
+ `mpd.conf`  `auto_update "yes"` 
+
+to enable it.
 
 ### Binding to IPV6 before IPV4
 

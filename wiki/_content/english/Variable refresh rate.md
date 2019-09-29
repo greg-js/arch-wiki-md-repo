@@ -20,7 +20,7 @@ Related articles
     *   [2.2 Enable on NVIDIA](#Enable_on_NVIDIA)
         *   [2.2.1 Using a Xorg conf file](#Using_a_Xorg_conf_file_2)
         *   [2.2.2 Via nvidia-settings](#Via_nvidia-settings)
-*   [3 Change Freesync Range of Monitor](#Change_Freesync_Range_of_Monitor)
+*   [3 Change VRR Range of a FreeSync Monitor](#Change_VRR_Range_of_a_FreeSync_Monitor)
     *   [3.1 Editing the EDID File](#Editing_the_EDID_File)
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Remove applications from Blacklist](#Remove_applications_from_Blacklist)
@@ -85,7 +85,7 @@ Gsync monitors should automatically be enabled. To enable Gsync compatible monit
 
 **Tip:** In the same menu, you can check the "show Gsync indicator" option to display an indicator that Gsync is working in the top right corner.
 
-## Change Freesync Range of Monitor
+## Change VRR Range of a FreeSync Monitor
 
 Freesync monitors usually have a limited range for VRR that are much lower than their max refresh rate. It should be possible to overclock the monitor to change the Freesync range.
 
@@ -128,8 +128,8 @@ Mesa has a list of blacklisted applications to avoid unexpected behavior, you ca
 
 ## Limitations
 
-*   For Gsync, the monitor must be plugged in via display port. For Freesync, some monitors with the HDMI 2.1 specification is supported otherwise display port will be needed.
+*   For Gsync, the monitor must be plugged in via display port. For Freesync, some monitors with the HDMI 2.1 specification are supported otherwise display port will be needed.
 *   Only one monitor may be used at a time with Gsync and possibly Freesync.
 *   Some compositors may need to be disabled before the OpenGl/Vulkan program is started.
 *   Mesa [blacklists](#Remove_applications_from_Blacklist) many applications including video players.
-*   Although tearing is much less of an issue at higher refresh rates, most Freesync monitors only have a range up to 90Hz see [Change Freesync range of Monitor](#Change_Freesync_Range_of_Monitor)
+*   Although tearing is much less noticeable at higher refresh rates, FreeSync monitors often have a limited range for their VRR of 90Hz, which can be much lower than their max refresh rate. See [Change VRR Range of a FreeSync Monitor](#Change_VRR_Range_of_a_FreeSync_Monitor).
