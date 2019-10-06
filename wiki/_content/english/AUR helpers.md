@@ -66,12 +66,13 @@ The [#Comparison tables](#Comparison_tables) columns have the following meaning:
 ### Search and build
 
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Shell completion | Specificity |
-| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | No | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | bash, zsh | – |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | bash, zsh | [modular](https://en.wikipedia.org/wiki/Modular_programming "w:Modular programming"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | No | Yes | Yes | Yes | Yes | bash, zsh | `bb-wrapper` for *pacman* wrapping, trust management |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | No | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | – | `pb` for *pacman* wrapping |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | No | Yes | Yes | No | No | No | – | [local repository](/index.php/Local_repository "Local repository") |
 | [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [Yes](https://github.com/vn971/rua/commit/0459a8b) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | [Yes](https://github.com/vn971/rua/commit/7889045) | bash, zsh, fish | [bubblewrap](/index.php/Bubblewrap "Bubblewrap"), `.pkg.tar` inspection |
+| [aurget](https://aur.archlinux.org/packages/aurget/)
+<small>([discontinued](https://github.com/pbrisbin/aurget/issues/66#issue-485245712))</small> | Bash | No | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | bash, zsh | – |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([discontinued](https://github.com/floft/spinach))</small> | Bash | [Yes](https://github.com/floft/spinach/commit/5455747) | No | No | No | No | No | – | – |
 

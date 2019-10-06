@@ -16,7 +16,9 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
         *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
         *   [1.1.3 Using U-Boot precompiled binaries](#Using_U-Boot_precompiled_binaries)
         *   [1.1.4 Login / SSH](#Login_/_SSH)
-    *   [1.2 Additional step, Wi-Fi Driver (RTL8189ES/ETV)](#Additional_step,_Wi-Fi_Driver_(RTL8189ES/ETV))
+    *   [1.2 Additional step, Wi-Fi Drivers](#Additional_step,_Wi-Fi_Drivers)
+        *   [1.2.1 RTL8189ES/ETV](#RTL8189ES/ETV)
+        *   [1.2.2 Xradio XR819](#Xradio_XR819)
 *   [2 Orange Pi PC2](#Orange_Pi_PC2)
     *   [2.1 UBoot](#UBoot)
     *   [2.2 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card_2)
@@ -127,7 +129,9 @@ SSH login for root is disabled by default. Login with the default user account a
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
 
-### Additional step, Wi-Fi Driver (RTL8189ES/ETV)
+### Additional step, Wi-Fi Drivers
+
+#### RTL8189ES/ETV
 
 This driver will require to Orange Pi Plus / Plus 2.
 
@@ -157,6 +161,27 @@ And install manually.
 # cp 8189es.ko /usr/lib/modules/4.18.11-1-ARCH/kernel/drivers/net/wireless/realtek/
 # depmod -a
 # modprobe 8189es
+
+```
+
+#### Xradio XR819
+
+This hardware will require the out of tree [xradio-git](https://aur.archlinux.org/packages/xradio-git/) kernel driver for Orange Pi Zero.
+
+```
+# pacaur -S xradio-git
+
+```
+
+Version 5.3.1-1-ARCH is working fine, but if you couldn't find the wlan0 device on the interfaces list,
+
+you'll need to burn the 201907 u-boot loader and copy the dtb file to /boot/dtbs as well from: [https://gitlab.com/vinibali/orangepi_uboot](https://gitlab.com/vinibali/orangepi_uboot).
+
+```
+# wget [https://gitlab.com/vinibali/orangepi_uboot/-/archive/master/orangepi_uboot-master.zip](https://gitlab.com/vinibali/orangepi_uboot/-/archive/master/orangepi_uboot-master.zip)
+# unzip -q
+# dd if=orangepi_uboot-master/201907/orangepi_zero/u-boot-sunxi-with-spl.bin of=/dev/mmcblk0 bs=1024 seek=8
+# cp orangepi_uboot-master/201907/dtb/sun8i-h2-plus-orangepi-zero.dtb /boot/dtbs
 
 ```
 

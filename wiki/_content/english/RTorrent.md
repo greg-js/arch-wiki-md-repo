@@ -762,7 +762,7 @@ If you want to use rtorrent with some web interfaces (e.g. rutorrent) you need t
 
 ```
 scgi_local = /home/user/rpc.socket
-execute.nothrow = chmod,777,/home/user/rpc.socket
+execute.nothrow = chmod,770,/home/user/rpc.socket
 
 ```
 

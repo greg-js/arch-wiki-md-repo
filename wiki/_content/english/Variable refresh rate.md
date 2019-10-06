@@ -128,8 +128,9 @@ Mesa has a list of blacklisted applications to avoid unexpected behavior, you ca
 
 ## Limitations
 
-*   For Gsync, the monitor must be plugged in via display port. For Freesync, some monitors with the HDMI 2.1 specification are supported otherwise display port will be needed.
+*   [Wayland](/index.php/Wayland "Wayland") is not supported.
+*   On Linux, the monitor must be plugged in via display port. Some monitors with the HDMI 2.1 specification can use FreeSync on Windows and this will likely be supported by Linux in the future. [[5]](https://www.phoronix.com/scan.php?page=news_item&px=AMD-FreeSync-2019-Update)
 *   Only one monitor may be used at a time with Gsync and possibly Freesync.
-*   Some compositors may need to be disabled before the OpenGl/Vulkan program is started.
+*   Compositors will most likely need to be disabled before the OpenGl/Vulkan program is started.
 *   Mesa [blacklists](#Remove_applications_from_Blacklist) many applications including video players.
 *   Although tearing is much less noticeable at higher refresh rates, FreeSync monitors often have a limited range for their VRR of 90Hz, which can be much lower than their max refresh rate. See [Change VRR Range of a FreeSync Monitor](#Change_VRR_Range_of_a_FreeSync_Monitor).

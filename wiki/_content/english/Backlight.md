@@ -1,48 +1,43 @@
 Screen brightness might be tricky to control. On some machines physical hardware switches are missing and software solutions may not work well. However, it is generally possible to find a functional method for a given hardware. This article aims to summarize all possible ways to adjust the backlight.
 
+There are many ways to control brightness of a monitor, laptop or integrated panel (such as the iMac). According to [these](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617) [discussions](https://lore.kernel.org/patchwork/patch/528936/#708706) and this [wiki page](https://wiki.ubuntu.com/Kernel/Debugging/Backlight) the control method can be divided into these categories:
+
+*   brightness is controlled by vendor-specified hotkey and there is no interface for the OS to adjust the brightness.
+*   brightness is controlled by either the [ACPI](#ACPI), graphic or platform driver. In this case, backlight control is exposed to the user through `/sys/class/backlight` which can be used by user-space [backlight utilities](#Backlight_utilities).
+*   brightness is controlled by writing into a graphic card register through [setpci](#setpci).
+
+**Note:** Since OLED screens have no backlight, brightness cannot be controlled by changing backlight power on laptops equipped with an OLED screen. In this case see, perceived screen brightness can only be adjusted via [software color correction](#Color_correction).
+
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
 ## Contents
 
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
-*   [1 Overview](#Overview)
-*   [2 ACPI](#ACPI)
-    *   [2.1 Kernel command-line options](#Kernel_command-line_options)
-    *   [2.2 Udev rule](#Udev_rule)
-*   [3 OLED screen brightness](#OLED_screen_brightness)
-    *   [3.1 Backlight with OLED screen in Wayland](#Backlight_with_OLED_screen_in_Wayland)
-*   [4 Switch off the backlight](#Switch_off_the_backlight)
-*   [5 Save/Restore functionality](#Save/Restore_functionality)
-*   [6 Backlight utilities](#Backlight_utilities)
-    *   [6.1 xbacklight](#xbacklight)
-    *   [6.2 setpci](#setpci)
-    *   [6.3 Using DBus with Gnome](#Using_DBus_with_Gnome)
-*   [7 Color correction](#Color_correction)
-    *   [7.1 xcalib](#xcalib)
-    *   [7.2 NVIDIA settings](#NVIDIA_settings)
-    *   [7.3 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
-*   [8 External monitors](#External_monitors)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_(Intel_i915_only))
-    *   [9.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_(Intel_i915_only))
-    *   [9.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_(Intel_i915_only))
-    *   [9.4 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
-    *   [9.5 Backlight not working in MATE](#Backlight_not_working_in_MATE)
+*   [1 Hardware interfaces](#Hardware_interfaces)
+    *   [1.1 ACPI](#ACPI)
+        *   [1.1.1 Kernel command-line options](#Kernel_command-line_options)
+        *   [1.1.2 Udev rule](#Udev_rule)
+    *   [1.2 setpci](#setpci)
+    *   [1.3 External monitors](#External_monitors)
+*   [2 Switch off the backlight](#Switch_off_the_backlight)
+*   [3 Save and restore functionality](#Save_and_restore_functionality)
+*   [4 Backlight utilities](#Backlight_utilities)
+    *   [4.1 xbacklight](#xbacklight)
+    *   [4.2 Using DBus with Gnome](#Using_DBus_with_Gnome)
+*   [5 Color correction](#Color_correction)
+    *   [5.1 NVIDIA settings](#NVIDIA_settings)
+    *   [5.2 Increase brightness above maximum level](#Increase_brightness_above_maximum_level)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_(Intel_i915_only))
+    *   [6.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_(Intel_i915_only))
+    *   [6.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_(Intel_i915_only))
+    *   [6.4 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
+    *   [6.5 Backlight not working in MATE](#Backlight_not_working_in_MATE)
 
-## Overview
+## Hardware interfaces
 
-There are many ways to control brightness of a monitor, laptop or integrated panel (such as the iMac). According to [these](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617) [discussions](https://lore.kernel.org/patchwork/patch/528936/#708706) and this [wiki page](https://wiki.ubuntu.com/Kernel/Debugging/Backlight) the control method can be divided into these categories:
-
-*   brightness is controlled by vendor-specified hotkey and there is no interface for the OS to adjust the brightness.
-*   brightness is controlled by either the ACPI, graphic or platform driver.
-*   brightness is controlled by HW register through setpci.
-
-All methods are exposed to the user through `/sys/class/backlight` and [xrandr](/index.php/Xrandr "Xrandr")/xbacklight can choose one method to control brightness. It is still not very clear which one xbacklight prefers by default.
-
-**Note:** On some new laptops with an OLED screen you can't use xbacklight since OLED screens have no backlight so while you will be able to change the brightness values this will not have any affect on the actual screen brightness. In this case see, [#OLED screen brightness](#OLED_screen_brightness)
-
-## ACPI
+### ACPI
 
 The brightness of the screen backlight is adjusted by setting the power level of the backlight LEDs or cathodes. The power level can often be controlled using the ACPI kernel module for video. An interface to this module is provided via a sysfs directory at `/sys/class/backlight/`.
 
@@ -89,7 +84,7 @@ ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="/bin/chmod g
 
 ```
 
-### Kernel command-line options
+#### Kernel command-line options
 
 Sometimes ACPI does not work well due to different motherboard implementations and ACPI quirks. This results in, for instance, inaccurate brightness notifications. This includes some laptops with dual graphics (e.g., Nvidia/Radeon dedicated GPU with Intel/AMD integrated GPU). Additionally, ACPI sometimes needs to register its own `acpi_video0` backlight even if one already exists (such as `intel_backlight`), which can be done by adding one of the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
@@ -108,7 +103,7 @@ If you find that changing the `acpi_video0` backlight does not actually change t
 *   On an Asus notebooks you might also need to load the `asus-nb-wmi` [kernel module](/index.php/Kernel_module "Kernel module").
 *   Disabling legacy boot on Dell XPS13 breaks backlight support.
 
-### Udev rule
+#### Udev rule
 
 If the ACPI interface is available, the backlight level can be set at boot using a [udev](/index.php/Udev "Udev") rule:
 
@@ -118,69 +113,39 @@ If the ACPI interface is available, the backlight level can be set at boot using
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="8"
 ```
 
-**Note:** The systemd-backlight service restores the previous backlight brightness level at boot. To prevent conflicts for the above rules, see [#Save/Restore functionality](#Save/Restore_functionality).
+**Note:** The systemd-backlight service restores the previous backlight brightness level at boot. To prevent conflicts for the above rules, see [#Save and restore functionality](#Save_and_restore_functionality).
 
 **Tip:** To set the backlight depending on power state, see [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") and use your favourite [backlight utility](#Backlight_utilities) in the script.
 
-## OLED screen brightness
+### setpci
 
-If using a desktop environment or a laptop with an OLED screen, you may notice the backlight does not function (the brightness control keys toggles the on-screen display and the brightness values can be manually adjusted in `/sys/class/backlight/intel_backlight`, but it doesn't change the actual brightness level of the screen). Since the screen is OLED (which do not have physical backlights) and until brightness control for OLED screens is supported by the kernel, you may need to shim the ACPI backlight functions to update Xrandr's "--backlight" option. This is done by monitoring the acpi_video0 (or intel_backlight) levels, and updating the xrandr brightness levels accordingly.
+In some cases (e.g. Intel Mobile 945GME [[1]](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617)), it is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
 
-For this to work, you must first install [inotify-tools](https://www.archlinux.org/packages/?name=inotify-tools) and [bc](https://www.archlinux.org/packages/?name=bc). Then, create the following file:
-
-```
-$ cat /usr/local/bin/xbacklightmon
+When using this method, you need to use `lspci` first to find out where your graphic card is.
 
 ```
-
-```
-#!/bin/sh
-#use LC_NUMERIC if you are using an European LC, else printf will not work because it expects an comma instead of a decimal point
-LC_NUMERIC="en_US.UTF-8"
-
-# modify this path to the location of your backlight class
-path=/sys/class/backlight/intel_backlight
-# get name of primary screen to adjust brightness
-primaryOutput=$(xrandr | grep -E " connected primary ?[1-9]+" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
-
-luminance() {
-    read -r level < "$path"/actual_brightness
-    factor=$((max))
-    new_brightness="$(bc -l <<< "scale = 2; $level / $factor")"
-    printf '%f
-' $new_brightness
-}
-
-read -r max < "$path"/max_brightness
-
-xrandr --output $primaryOutput --brightness "$(luminance)"
-
-inotifywait -me modify --format '' "$path"/actual_brightness | while read; do
-    xrandr --output $primaryOutput --brightness "$(luminance)"
-done
+# setpci -s 00:02.0 F4.B=0
 
 ```
 
-Then make this file executable and owned by root:
+### External monitors
+
+[DDC/CI](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC.2FCI "wikipedia:Display Data Channel") (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C. DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC. The [kernel module](/index.php/Kernel_module "Kernel module") `i2c-dev` may need to be loaded if the `/dev/i2c-*` devices do not exist.
+
+[ddcutil](http://www.ddcutil.com/) can be used to query and set brightness settings:
+
+ `# ddcutil capabilities | grep "Feature: 10"` 
+```
+  Feature: 10 (Brightness)
 
 ```
-$ chown root:root /usr/local/bin/xbacklightmon
-$ chmod 755 /usr/local/bin/xbacklightmon
+ `# ddcutil getvcp 10`  `VCP code 0x10 (Brightness                    ): current value =    60, max value =   100` 
+```
+# ddcutil setvcp 10 70
 
 ```
 
-You may test this by running the file, and using the backlight keys to test if the brightness updates. Finally, configure the script to run when you display manager starts.
-
-**Note:** The above script takes into account that your laptop screen is the primary screen if this is not the case you will need to set the name of the screen manually.
-
-While all this fixes brightness issues on laptops with OLED screens, there might still be some issues showing up, e.g.:
-
-*   Chromium and some other programs reset brightness to 100% upon their first start since reboot.
-*   Hotkeys aren't working prior to login.
-
-### Backlight with OLED screen in Wayland
-
-The above xrandr based script and commands do not work on Wayland. Instead you can use the `icc-brightness` tool to control the OLED display brightness by applying ICC color profiles (this approach works both in xorg and wayland). The tool can be found and downloaded here: [https://github.com/udifuchs/icc-brightness](https://github.com/udifuchs/icc-brightness)
+Alternatively, one may use [ddcci-driver-linux-dkms](https://aur.archlinux.org/packages/ddcci-driver-linux-dkms/) to expose external monitors in sysfs. Then, after loading the `ddcci` [kernel module](/index.php/Kernel_module "Kernel module"), one can use any [backlight utility](#Backlight_utilities).
 
 ## Switch off the backlight
 
@@ -191,26 +156,7 @@ xset dpms force off
 
 ```
 
-The backlight should switch on again on mouse movement or keyboard input. Alternately `xset s` could be used.
-
-The following example will toggle the screen saver timeout for a similar result (should be bound to a key):
-
- `~/.local/bin/xlcd.sh` 
-```
-#!/usr/bin/dash
-read lcd < /tmp/lcd
-    if [ "$lcd" -eq "0" ]; then
-        xset s
-        echo 1 > /tmp/lcd
-        sleep 1
-        notify-send -t 2000 LCD\ ON
-    else
-        xset s 3
-        echo 0 > /tmp/lcd
-        notify-send -t 2000 LCD\ OFF
-    fi
-
-```
+The backlight should switch on again on mouse movement or keyboard input. Alternately `xset s` could be used for a similar effect.
 
 If the previous commands do not work, there is a chance that *vbetool* may work. Note, however, that in this case the backlight must be manually activated again. The command is as follows:
 
@@ -228,7 +174,7 @@ $ vbetool dpms on
 
 For example, this can be put to use when closing the notebook lid using [Acpid](/index.php/Acpid "Acpid").
 
-## Save/Restore functionality
+## Save and restore functionality
 
 The [systemd](/index.php/Systemd "Systemd") package includes the service `systemd-backlight@.service`, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in [#ACPI](#ACPI), generating services for each folder found in `/sys/class/backlight/`. For example, if there is a folder named `acpi_video0`, it generates a service called `systemd-backlight@backlight:acpi_video0.service`. When using other methods of setting the backlight at boot, it is recommended to stop systemd-backlight from restoring the backlight by setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") parameter `systemd.restore_state=0`. See [systemd-backlight@.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-backlight%40.service.8) for details.
 
@@ -236,7 +182,7 @@ The [systemd](/index.php/Systemd "Systemd") package includes the service `system
 
 The [relight](https://aur.archlinux.org/packages/relight/) package provides an alternative systemd-based method of saving and restoring screen brightness.
 
-Additionally, the [brillo](https://aur.archlinux.org/packages/brillo/) and [light](https://www.archlinux.org/packages/?name=light) utilities support save/restore functionality. These two may be more useful if one wishes to restore the screen brightness on a per-user basis, however no systemd units are provided to accomplish this.
+Additionally, the [brillo](https://aur.archlinux.org/packages/brillo/) and [light](https://www.archlinux.org/packages/?name=light) utilities support save and restore functionality. These two may be more useful if one wishes to restore the screen brightness on a per-user basis, however no systemd units are provided to accomplish this.
 
 ## Backlight utilities
 
@@ -245,15 +191,15 @@ The utilities in the following table can be used to control screen brightness. A
 | Package name | Controls keyboard backlights | Reacts to ambient brightness | Language | License | Notes |
 | [acpilight](https://www.archlinux.org/packages/?name=acpilight) | Yes | No | Python3 | GPL-3.0-or-later | "xbacklight" compatible |
 | [brightd](https://aur.archlinux.org/packages/brightd/) | No | No | C | GPL-2.0 | Dims the screen when there is no user input for some time. |
-| [brillo](https://aur.archlinux.org/packages/brillo/) | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. |
 | [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) | Yes | No | C | MIT | - |
+| [brillo](https://aur.archlinux.org/packages/brillo/) | Yes | No | C | GPL-3.0-only | Supports smooth and relative adjustments. |
 | [calise](https://aur.archlinux.org/packages/calise/) | No | Yes | Python2 | GPL-3.0 | - |
 | [clight](https://aur.archlinux.org/packages/clight/) | Yes | Yes | C | GPL-3.0-or-later | Manages screen temperature and smoothly dims brightness after a timeout. Turns webcam into an ambient light sensor. |
-| [macbook-lighter](https://aur.archlinux.org/packages/macbook-lighter/) | Yes | Yes | Bash,Perl | GPL | Macbook screen/keyboard backlight CLI and auto-adjust on ambient light. |
 | [enlighten-git](https://aur.archlinux.org/packages/enlighten-git/) | No | No | C | GPL-3.0-or-later | - |
 | [illum-git](https://aur.archlinux.org/packages/illum-git/) | No | No | C | AGPL-3.0 | Reacts to key presses. |
 | [light](https://www.archlinux.org/packages/?name=light) | Yes | No | C | GPL-3.0-only | - |
 | [lux](https://aur.archlinux.org/packages/lux/) | No | No | Shell | MIT | - |
+| [macbook-lighter](https://aur.archlinux.org/packages/macbook-lighter/) | Yes | Yes | Bash,Perl | GPL | Macbook screen/keyboard backlight CLI and auto-adjust on ambient light. |
 
 ### xbacklight
 
@@ -262,7 +208,7 @@ Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/pack
 **Note:**
 
 *   xbacklight only works with [Intel](/index.php/Intel "Intel"). Other drivers (e.g. [Radeon](/index.php/Radeon "Radeon")) did not add support for the RandR backlight property.
-*   xbacklight currently does not work with the modesetting driver [[1]](https://gitlab.freedesktop.org/xorg/xserver/issues/47).
+*   xbacklight currently does not work with the modesetting driver [[2]](https://gitlab.freedesktop.org/xorg/xserver/issues/47).
 
 To set brightness to 50% of maximum:
 
@@ -276,14 +222,6 @@ Increments can be used instead of absolute values, for example to increase or de
 ```
 $ xbacklight -inc 10
 $ xbacklight -dec 10
-
-```
-
-Gamma can be set using either the [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) or [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma) package. The following commands create the same effect:
-
-```
-$ xrandr --output LVDS1 --gamma 1.0:1.0:1.0
-$ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 ```
 
@@ -304,17 +242,6 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [https://bugs.debian.o
 
 If you have enabled [Intel Fastboot](/index.php/Intel_graphics#Fastboot "Intel graphics") you might also get the `No outputs have backlight property` error. In this case, trying the above method may cause Xorg to crash on start up. You should disable it to fix the issue. It is [known](https://bugs.freedesktop.org/show_bug.cgi?id=108225) to cause issues with brightness control.
 
-### setpci
-
-It is possible to set the register of the graphic card to adjust the backlight. It means you adjust the backlight by manipulating the hardware directly, which can be risky and generally is not a good idea. Not all of the graphic cards support this method.
-
-When using this method, you need to use `lspci` first to find out where your graphic card is.
-
-```
-# setpci -s 00:02.0 F4.B=0
-
-```
-
 ### Using DBus with Gnome
 
 Brightness can also be adjusted as the gnome controls do. Changes are reflected in the gnome UI using this method.
@@ -334,9 +261,15 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 
 ## Color correction
 
+Color correction does not change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (desktop PCs or laptops with OLED screens).
+
 *   **Clight** — User daemon utility that aims to fully manage your display. It can manage the screen temperature depending on the current time of the day, just like redshift does. It tries to use [geoclue](https://www.archlinux.org/packages/?name=geoclue) to retrieve the user position if neither latitude or longitude are set in the configuration file. It also supports fixed times for sunrise and sunset.
 
 	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
+
+*   **icc-brightness** — Control OLED display brightness by applying ICC color profiles.
+
+	[https://github.com/udifuchs/icc-brightness](https://github.com/udifuchs/icc-brightness) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Monica** — Monitor calibration tool. It works as frontend to xgamma to alter the gamma correction.
 
@@ -354,19 +287,6 @@ gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gn
 
 	[https://xorg.freedesktop.org/](https://xorg.freedesktop.org/) || [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma)
 
-### xcalib
-
-**Note:** *xcalib* does *not* change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (Desktop PCs). Use `xcalib -clear` to reset the LUT.
-
-The package [xcalib](https://aur.archlinux.org/packages/xcalib/) ([upstream URL](http://xcalib.sourceforge.net/)) is available in the [AUR](/index.php/AUR "AUR") and can be used to dim the screen. A demonstration video is available on [YouTube](https://www.youtube.com/watch?v=A9xsvntT6i4). This program can correct gamma, invert colors, and reduce contrast, the latter of which we use in this case. For example, to dim down:
-
-```
-$ xcalib -co 40 -a
-
-```
-
-This program uses ICC technology to interact with X11 and while the screen is dimmed, you may find that the mouse cursor is just as bright as before.
-
 ### NVIDIA settings
 
 Users of [NVIDIA's proprietary drivers](/index.php/NVIDIA "NVIDIA") users can change display brightness via the nvidia-settings utility under "X Server Color Correction." However, note that this has absolutely nothing to do with backlight (intensity), it merely adjusts the color output. (Reducing brightness this way is a power-inefficient last resort when all other options fail; increasing brightness spoils your color output completely, in a way similar to overexposed photos.)
@@ -381,25 +301,6 @@ $ xrandr --output *output_name* --brightness 2
 ```
 
 This should roughly double luma in the image. It will sacrifice color quality for brightness, nevertheless it is particularly suited for situations where the ambient light is very bright (e.g. sunlight).
-
-## External monitors
-
-[DDC/CI](https://en.wikipedia.org/wiki/https://en.wikipedia.org/wiki/Display_Data_Channel#DDC.2FCI "wikipedia:https://en.wikipedia.org/wiki/Display Data Channel") (Display Data Channel Command Interface) can be used to communicate with external monitors implementing MCCS (Monitor Control Command Set) over I2C. DDC can control brightness, contrast, inputs, etc on supported monitors. Settings available via the OSD (On-Screen Display) panel can usually also be managed via DDC. The [kernel module](/index.php/Kernel_module "Kernel module") `i2c-dev` may need to be loaded if the `/dev/i2c-*` devices do not exist.
-
-[ddcutil](http://www.ddcutil.com/) can be used to query and set brightness settings:
-
- `# ddcutil capabilities | grep "Feature: 10"` 
-```
-  Feature: 10 (Brightness)
-
-```
- `# ddcutil getvcp 10`  `VCP code 0x10 (Brightness                    ): current value =    60, max value =   100` 
-```
-# ddcutil setvcp 10 70
-
-```
-
-Alternatively, one may use [ddcci-driver-linux-dkms](https://aur.archlinux.org/packages/ddcci-driver-linux-dkms/) to expose external monitors in sysfs. Then, after loading the `ddcci` [kernel module](/index.php/Kernel_module "Kernel module"), one can use any [backlight utility](#Backlight_utilities).
 
 ## Troubleshooting
 
@@ -432,7 +333,7 @@ To set new frequency automatically, consider writing an udev rule or install [in
 
 Symptoms:
 
-*   after installing `xf86-video-intel` systemd-backlight.service turns off the backlight during boot
+*   after installing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) systemd-backlight.service turns off the backlight during boot
     *   possible solution: mask systemd-backlight.service
 *   switching from X to another VT turns the backlight off
 *   the brightness keys are inverted (i.e. turning up the brightness makes the screen darker)
@@ -441,7 +342,7 @@ This problem may be solved by adding `i915.invert_brightness=1` to the list of [
 
 ### Unable to control eDP Panel brightness (Intel i915 only)
 
-Embedded Display Port (eDP) v1.2 introduced a new display panel control protocol for backlight and other controls that works through the AUX channel.[[2]](https://www.vesa.org/wp-content/uploads/2010/12/DisplayPort-DevCon-Presentation-eDP-Dec-2010-v3.pdf)
+Embedded Display Port (eDP) v1.2 introduced a new display panel control protocol for backlight and other controls that works through the AUX channel.[[3]](https://www.vesa.org/wp-content/uploads/2010/12/DisplayPort-DevCon-Presentation-eDP-Dec-2010-v3.pdf)
 
 By default the i915 driver tries to use PWM to control backlight brightness, which might not work.
 

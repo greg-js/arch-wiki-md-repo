@@ -3,7 +3,7 @@ Este artículo es una traducción de [Flatpak](/index.php/Flatpak "Flatpak"), re
 
 Artículos relacionados
 
-*   [Snap (Español)](/index.php/Snap_(Espa%C3%B1ol) "Snap (Español)")
+*   [Snap](/index.php/Snap_(Espa%C3%B1ol) "Snap (Español)")
 *   [bubblewrap](/index.php/Bubblewrap "Bubblewrap")
 
 Del [README](https://github.com/flatpak/flatpak/blob/master/README.md) del proyecto: "*[Flatpak](http://flatpak.org) es un sistema de compilación, distribución y ejecución de aplicaciones de escritorio aisladas en Linux.*"

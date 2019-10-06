@@ -11,6 +11,7 @@ Related articles
 *   [GNOME/Flashback](/index.php/GNOME/Flashback "GNOME/Flashback")
 *   [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring")
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
+*   [GNOME/Software](/index.php/GNOME/Software "GNOME/Software")
 *   [Official repositories#gnome-unstable](/index.php/Official_repositories#gnome-unstable "Official repositories")
 
 [GNOME](https://en.wikipedia.org/wiki/GNOME "wikipedia:GNOME") (/(ɡ)noʊm/) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](/index.php/GNU_Project "GNU Project"). The default display is [Wayland](/index.php/Wayland "Wayland") instead of [Xorg](/index.php/Xorg "Xorg").

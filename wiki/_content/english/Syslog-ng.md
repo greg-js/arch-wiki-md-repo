@@ -248,12 +248,7 @@ After understanding the logic behind syslog-ng, many possible and complex config
 
 ### Have syslog-ng reload the configuration file
 
-You can make syslog-ng re-evaluate the configuration file. You can do so manually by sending a `SIGHUP` to the process, or call the reload function with systemctl:
-
-```
-# systemctl reload syslog-ng
-
-```
+You can make syslog-ng re-evaluate the configuration file. You can do so manually by sending a `SIGHUP` to the process, or [reload](/index.php/Reload "Reload") `syslog-ng@default.service`.
 
 ### Failover Logging to Remote Host
 

@@ -39,15 +39,14 @@ The `mount` command will use fstab, if just one of either directory or device is
 
 ## Usage
 
-A simple `/etc/fstab`, using kernel name descriptors:
+A simple `/etc/fstab`, using file system UUIDs:
 
  `/etc/fstab` 
 ```
-# <device>        <dir>        <type>        <options>        <dump> <fsck>
-/dev/sda1         /            ext4          noatime          0      1
-/dev/sda2         none         swap          defaults         0      0
-/dev/sda3         /home        ext4          noatime          0      2
-
+# <device>                                <dir> <type> <options> <dump> <fsck>
+UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   noatime   0      1
+UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults  0      0
+UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   noatime   0      2
 ```
 
 *   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
@@ -99,7 +98,6 @@ LABEL=EFI         /boot        vfat          defaults         0      2
 LABEL=SYSTEM      /            ext4          defaults         0      1
 LABEL=DATA        /home        ext4          defaults         0      2
 LABEL=SWAP        none         swap          defaults         0      0
-
 ```
 
 **Note:** If any of your fields contains spaces, see [#Filepath spaces](#Filepath_spaces).
@@ -115,7 +113,6 @@ UUID=CBB6-24F2                            /boot vfat   defaults  0      2
 UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   defaults  0      1
 UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   defaults  0      2
 UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults  0      0
-
 ```
 
 ### GPT partition labels
@@ -129,7 +126,6 @@ PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   defaults  0      2
 PARTLABEL=GNU/LINUX                  /     ext4   defaults  0      1
 PARTLABEL=HOME                       /home ext4   defaults  0      2
 PARTLABEL=SWAP                       none  swap   defaults  0      0
-
 ```
 
 **Note:** If any of your fields contains spaces, see [#Filepath spaces](#Filepath_spaces).
@@ -145,7 +141,6 @@ PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   defaults  0      2
 PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   defaults  0      1
 PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   defaults  0      2
 PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults  0      0
-
 ```
 
 ## Tips and tricks
@@ -169,10 +164,10 @@ This will fsck and mount the partition only when it is first accessed, and the k
 
 #### Remote filesystem
 
-The same applies to remote filesystem mounts. If you want them to be mounted only upon access, you will need to use the `noauto,x-systemd.automount` parameters. In addition, you can use the `x-systemd.device-timeout=` option to specify how long systemd should wait for the filesystem to show up. Also, the `_netdev` option ensures systemd understands that the mount is network dependent and order it after the network is online.
+The same applies to remote filesystem mounts. If you want them to be mounted only upon access, you will need to use the `noauto,x-systemd.automount` parameters. In addition, you can use the `x-systemd.mount-timeout=` option to specify how long systemd should wait for the mount command to finish. Also, the `_netdev` option ensures systemd understands that the mount is network dependent and order it after the network is online.
 
 ```
-noauto,x-systemd.automount,x-systemd.device-timeout=30,_netdev
+noauto,x-systemd.automount,x-systemd.mount-timeout=30,_netdev
 
 ```
 

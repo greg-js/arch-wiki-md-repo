@@ -905,4 +905,8 @@ See also [Wikipedia:Comparison of deep learning software](https://en.wikipedia.o
 
 *   **[Tensorflow](https://en.wikipedia.org/wiki/Tensorflow "wikipedia:Tensorflow")** — An end-to-end open source machine learning platform.
 
-	[https://www.tensorflow.org/](https://www.tensorflow.org/) || [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow), with CPU optimization [python-tensorflow-opt](https://www.archlinux.org/packages/?name=python-tensorflow-opt), with CUDA [python-tensorflow-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-cuda), with CUDA and CPU optimizations [python-tensorflow-opt-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-opt-cuda)
+	[https://www.tensorflow.org/](https://www.tensorflow.org/) || [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow), with non x86-64 CPU optimization [python-tensorflow-opt](https://www.archlinux.org/packages/?name=python-tensorflow-opt), with CUDA [python-tensorflow-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-cuda), with CUDA and with non x86-64 CPU optimizations [python-tensorflow-opt-cuda](https://www.archlinux.org/packages/?name=python-tensorflow-opt-cuda)
+
+*   **[PyTorch](https://en.wikipedia.org/wiki/PyTorch "wikipedia:PyTorch")** — An open source machine learning framework that accelerates the path from research prototyping to production deployment.
+
+	[https://pytorch.org/](https://pytorch.org/) || [python-pytorch](https://www.archlinux.org/packages/?name=python-pytorch), with non x86-64 CPU optimization [python-pytorch-opt](https://www.archlinux.org/packages/?name=python-pytorch-opt), with CUDA [python-pytorch-cuda](https://www.archlinux.org/packages/?name=python-pytorch-cuda), with CUDA and with non x86-64 CPU optimizations [python-pytorch-opt-cuda](https://www.archlinux.org/packages/?name=python-pytorch-opt-cuda)

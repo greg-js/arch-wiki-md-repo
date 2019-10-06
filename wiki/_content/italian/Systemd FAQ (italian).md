@@ -1,16 +1,20 @@
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
 *   [1 FAQ](#FAQ)
-    *   [1.1 Perché non ricevo messaggi di log sulla console?](#Perch.C3.A9_non_ricevo_messaggi_di_log_sulla_console.3F)
-    *   [1.2 Come posso cambiare il numero di console funzionanti di default?](#Come_posso_cambiare_il_numero_di_console_funzionanti_di_default.3F)
-    *   [1.3 Come posso ottenere un output più dettagliato durante l'avvio?](#Come_posso_ottenere_un_output_pi.C3.B9_dettagliato_durante_l.27avvio.3F)
-    *   [1.4 Come evitare che la console sia pulita dopo l'avvio?](#Come_evitare_che_la_console_sia_pulita_dopo_l.27avvio.3F)
-    *   [1.5 Quali opzioni del kernel occorrono attive nel mio kernel nel caso non usassi il kernel Arch ufficiale?](#Quali_opzioni_del_kernel_occorrono_attive_nel_mio_kernel_nel_caso_non_usassi_il_kernel_Arch_ufficiale.3F)
-    *   [1.6 Quali altre unità dipendono da una unità?](#Quali_altre_unit.C3.A0_dipendono_da_una_unit.C3.A0.3F)
-    *   [1.7 Il mio computer si spegne, ma l'alimentatore resta acceso.](#Il_mio_computer_si_spegne.2C_ma_l.27alimentatore_resta_acceso.)
-    *   [1.8 Dopo la migrazione a systemd, perché non riesco a montare fakeRAID?](#Dopo_la_migrazione_a_systemd.2C_perch.C3.A9_non_riesco_a_montare_fakeRAID.3F)
-    *   [1.9 Come posso fare in modo che uno script sia eseguito al boot?](#Come_posso_fare_in_modo_che_uno_script_sia_eseguito_al_boot.3F)
-    *   [1.10 Lo stato del .service dice "active (exited)" in verde. (per iptables)](#Lo_stato_del_.service_dice_.22active_.28exited.29.22_in_verde._.28per_iptables.29)
+    *   [1.1 Perché non ricevo messaggi di log sulla console?](#Perché_non_ricevo_messaggi_di_log_sulla_console?)
+    *   [1.2 Come posso cambiare il numero di console funzionanti di default?](#Come_posso_cambiare_il_numero_di_console_funzionanti_di_default?)
+    *   [1.3 Come posso ottenere un output più dettagliato durante l'avvio?](#Come_posso_ottenere_un_output_più_dettagliato_durante_l'avvio?)
+    *   [1.4 Come evitare che la console sia pulita dopo l'avvio?](#Come_evitare_che_la_console_sia_pulita_dopo_l'avvio?)
+    *   [1.5 Quali opzioni del kernel occorrono attive nel mio kernel nel caso non usassi il kernel Arch ufficiale?](#Quali_opzioni_del_kernel_occorrono_attive_nel_mio_kernel_nel_caso_non_usassi_il_kernel_Arch_ufficiale?)
+    *   [1.6 Quali altre unità dipendono da una unità?](#Quali_altre_unità_dipendono_da_una_unità?)
+    *   [1.7 Il mio computer si spegne, ma l'alimentatore resta acceso.](#Il_mio_computer_si_spegne,_ma_l'alimentatore_resta_acceso.)
+    *   [1.8 Dopo la migrazione a systemd, perché non riesco a montare fakeRAID?](#Dopo_la_migrazione_a_systemd,_perché_non_riesco_a_montare_fakeRAID?)
+    *   [1.9 Come posso fare in modo che uno script sia eseguito al boot?](#Come_posso_fare_in_modo_che_uno_script_sia_eseguito_al_boot?)
+    *   [1.10 Lo stato del .service dice "active (exited)" in verde. (per iptables)](#Lo_stato_del_.service_dice_"active_(exited)"_in_verde._(per_iptables))
     *   [1.11 Failed to issue method call: File exists error](#Failed_to_issue_method_call:_File_exists_error)
 
 ## FAQ

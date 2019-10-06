@@ -408,6 +408,6 @@ if __name__ == "__main__":
 
 ## See also
 
-*   [http://openswan.org/](http://openswan.org/)
-*   [http://www.xelerance.com/software/xl2tpd/](http://www.xelerance.com/software/xl2tpd/)
-*   [http://strongvpn.com/forum/viewtopic.php?pid=1844/](http://strongvpn.com/forum/viewtopic.php?pid=1844/) — The main source used to write the initial revisions of this article.
+*   [https://openswan.org/](https://openswan.org/)
+*   [https://github.com/xelerance/xl2tpd](https://github.com/xelerance/xl2tpd)
+*   [https://strongvpn.com/forum/viewtopic.php?pid=1844](https://strongvpn.com/forum/viewtopic.php?pid=1844) ([archive link](https://web.archive.org/web/20130129212118/https://strongvpn.com/forum/viewtopic.php?pid=1844)) — The main source used to write the initial revisions of this article.

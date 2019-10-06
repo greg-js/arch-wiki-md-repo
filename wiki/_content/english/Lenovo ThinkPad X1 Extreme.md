@@ -37,7 +37,6 @@ This page specifically concerns the specifics of running Arch Linux on this lapt
     *   [2.2 Battery charge thresholds](#Battery_charge_thresholds)
     *   [2.3 CPU throttling workaround](#CPU_throttling_workaround)
     *   [2.4 CPU undervolting](#CPU_undervolting)
-    *   [2.5 Kernel parameters](#Kernel_parameters)
 *   [3 Specifications](#Specifications)
 
 ## Hardware compatibility
@@ -62,8 +61,6 @@ After installing Bumblebee, the HDMI port works after modifying the following fi
 ```
 Section "Device"
     Identifier "intelgpu0"
-    # pick between "modesetting" and "intel" here (intel requires xf86-video-intel)
-    #Driver "modesetting"
     Driver "intel"
 EndSection
 
@@ -146,25 +143,19 @@ Battery charging thresholds can be configured via sysfs nodes `/sys/class/power_
 
 ### CPU throttling workaround
 
-**Warning:** The safety of the settings mentioned in this section is still being investigated. The firmware limits the temperature to 80C maximum, even with the correct DPTF policy applied. This may or may not be a bug. Please don't use these settings unless you're confident you know what you're doing or the behavior is validated more.
+**Warning:** As of BIOS v1.24, overriding thermal limits will result in your laptop running out of spec under certain conditions. A proper firmware level solution [is being worked on](https://forums.lenovo.com/t5/Other-Linux-Discussions/X1C6-T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) by Lenovo, and should be available eventually.
 
-A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that CPU power limit is capped at 38W, keeping CPU temperature at 81C and resulting in maximum sustained frequency around 2850 MHz on i7-8750H.
+A stress test using [s-tui](https://aur.archlinux.org/packages/s-tui/) indicates that the CPU is limited to 38W/80C, resulting in maximum sustained frequency of around 2850 MHz on i7-8750H under heavy loads.
 
-It should be possible to modify those settings by [applying the correct DPTF policy](https://lkml.org/lkml/2018/10/10/328), however, as of BIOS 1.23, the policies seem to be ignored by the firmware.
-
-This can be worked around by using [throttled](https://www.archlinux.org/packages/?name=throttled) (previously known as [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/)) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
+This can be worked around by using [throttled](https://www.archlinux.org/packages/?name=throttled) or `intel-undervolt` (see below). It raises the power limit to 44W, which, combined with the `performance` [CPU frequency scaling governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling"), allows the CPU to run at 3100 MHz with the temperature of 95C.
 
 ### CPU undervolting
 
+**Warning:** While generally not directly dangerous to the hardware, undervolting is not supported by Lenovo or Intel. If you experience any issues whatsoever while your hardware is undervolted, reset to stock voltages and verify the issue is still present.
+
 Undervolting the CPU/Intel GPU works well with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU"). Generally -150mV seems to be a safe choice on the i7-8750H and i7-8850H CPUs, but your mileage may vary.
 
-Undervolting with -150mV on both the CPU and GPU resolved the Nvidia GPU from crashing every other day on my system with the i7-8750 chip. I was using bumblebee and intel-virtual-output to mirror my display onto an external monitor when the nvidia gpu would drop.
-
-### Kernel parameters
-
-As of March 2019, the following commonly used kernel parameters are known to work:
-
-*   `i915.enable_guc=2` - enables [GuC/HuC firmware loading](/index.php/Intel_graphics#Enable_GuC_/_HuC_firmware_loading "Intel graphics"), allowing additional hardware acceleration for some video encoding configurations (likely to be default starting with Linux 5.4)
+The effects of undervolting on system stability will vary depending on individual hardware (a.k.a. "the silicon lottery").
 
 ## Specifications
 

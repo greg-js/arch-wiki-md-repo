@@ -17,9 +17,10 @@ Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.ne
 
 *   [1 Installation](#Installation)
     *   [1.1 OpenJDK](#OpenJDK)
-    *   [1.2 Other implementations](#Other_implementations)
-    *   [1.3 Development tools](#Development_tools)
-        *   [1.3.1 Decompilers](#Decompilers)
+    *   [1.2 OpenJFX](#OpenJFX)
+    *   [1.3 Other implementations](#Other_implementations)
+    *   [1.4 Development tools](#Development_tools)
+        *   [1.4.1 Decompilers](#Decompilers)
 *   [2 Switching between JVM](#Switching_between_JVM)
     *   [2.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
     *   [2.2 Change default Java environment](#Change_default_Java_environment)
@@ -80,23 +81,32 @@ Most executables of the Java installation are provided by direct links in `/usr/
 | [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
 | [OpenJDK 7](https://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
 
+**OpenJDK GA** — Latest OpenJDK General-Availability Release build from Oracle.
+
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-bin](https://aur.archlinux.org/packages/java-openjdk-bin/)
+
+**OpenJDK EA** — Latest OpenJDK Early-Access build for development version from Oracle.
+
+	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
+
 **IcedTea-Web** — Java Web Start and the deprecated Java browser plugin.
 
 	[https://icedtea.classpath.org/wiki/IcedTea-Web](https://icedtea.classpath.org/wiki/IcedTea-Web) || [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web)
 
-**OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
+### OpenJFX
 
-	[https://openjdk.java.net/projects/openjfx/](https://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
+[OpenJFX](https://wiki.openjdk.java.net/display/OpenJFX/Main) is the open-source implementation of [JavaFX](https://en.wikipedia.org/wiki/JavaFX "wikipedia:JavaFX"). You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
 
-**OpenJFX** — Latest OpenJFX community build.
+| Version | Runtime and Developement | Documentation | Sources |
+| [OpenJFX 12](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) | [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src) |
+| [OpenJFX 11](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java11-openjfx](https://www.archlinux.org/packages/?name=java11-openjfx) | [java11-openjfx-doc](https://www.archlinux.org/packages/?name=java11-openjfx-doc) | [java11-openjfx-src](https://www.archlinux.org/packages/?name=java11-openjfx-src) |
+| [OpenJFX 8](https://wiki.openjdk.java.net/display/OpenJFX/Main) | [java8-openjfx](https://www.archlinux.org/packages/?name=java8-openjfx) | [java8-openjfx-doc](https://www.archlinux.org/packages/?name=java8-openjfx-doc) | [java8-openjfx-src](https://www.archlinux.org/packages/?name=java8-openjfx-src) |
+
+**OpenJFX GA** — Latest OpenJFX General-Availability Release build from Gluon.
 
 	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-bin](https://aur.archlinux.org/packages/java-openjfx-bin/)
 
-**OpenJDK EA** — OpenJDK Early-Access Build for latest development version.
-
-	[https://jdk.java.net](https://jdk.java.net) || [java-openjdk-ea-bin](https://aur.archlinux.org/packages/java-openjdk-ea-bin/)
-
-**OpenJFX EA** — OpenJFX Early-Access Build for latest development version.
+**OpenJFX EA** — Latest OpenJFX Early-Access build for development version from Gluon.
 
 	[https://openjfx.io/](https://openjfx.io/) || [java-openjfx-ea-bin](https://aur.archlinux.org/packages/java-openjfx-ea-bin/)
 
@@ -108,7 +118,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
 
-	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
+	[https://www.eclipse.org/openj9/](https://www.eclipse.org/openj9/) || [jdk13-openj9-bin](https://aur.archlinux.org/packages/jdk13-openj9-bin/) [jdk12-openj9-bin](https://aur.archlinux.org/packages/jdk12-openj9-bin/) [jdk11-openj9-bin](https://aur.archlinux.org/packages/jdk11-openj9-bin/) [jdk10-openjdk-openj9-bin](https://aur.archlinux.org/packages/jdk10-openjdk-openj9-bin/) [jdk9-openj9-bin](https://aur.archlinux.org/packages/jdk9-openj9-bin/) [jdk8-openj9-bin](https://aur.archlinux.org/packages/jdk8-openj9-bin/)
 
 **IBM J9** — IBM's implementation of the eighth edition of JRE.
 

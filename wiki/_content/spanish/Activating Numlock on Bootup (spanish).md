@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"), revisada por última vez el **2018-12-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=554881) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"), revisada por última vez el **2019-10-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=582086) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -29,7 +29,7 @@ Este artículo es una traducción de [Activating Numlock on Bootup](/index.php/A
 
 ### Usando un servicio separado
 
-**Sugerencia:** Estos pasos pueden ser automatizados al [instalar](/index.php/Install "Install") el paquete [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) y [habilitando](/index.php/Enabling "Enabling") el servicio `numLockOnTty`.
+**Sugerencia:** Estos pasos pueden ser automatizados al [instalar](/index.php/Install "Install") el paquete [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) y [activando](/index.php/Enabling "Enabling") el servicio `numLockOnTty`.
 
 Primero cree una secuencia de comandos *(script)* para establecer el bloqueo numérico en los TTYs relevantes:
 
@@ -44,7 +44,7 @@ done
 
 ```
 
-Entonces cree y [habilite](/index.php/Enable "Enable") un servicio systemd:
+Entonces cree y [active](/index.php/Enable "Enable") un servicio systemd:
 
  `/etc/systemd/system/numlock.service` 
 ```
@@ -70,9 +70,9 @@ Esto es más simple que usar un servicio separado y no codifica el número de VT
 ExecStartPre=/bin/sh -c 'setleds -D +num < /dev/%I'
 ```
 
-**Nota:** Si tiene algún problema, intente reemplazar `ExecStartPre` con `ExecStartPost`, y/o deshabilite la sugerencia como se describe a continuación.
+**Nota:** Si tiene algún problema, intente reemplazar `ExecStartPre` con `ExecStartPost`, y/o desactive la sugerencia como se describe a continuación.
 
-Para deshabilitar la sugerencia de activación del bloqueo numérico que se muestra en la pantalla de inicio de sesión, [edite](/index.php/Edit "Edit") `getty@tty1.service` y añada `--nohints` a las opciones de *agetty*:
+Para desactivas la sugerencia de activación del bloqueo numérico que se muestra en la pantalla de inicio de sesión, [edite](/index.php/Edit "Edit") `getty@tty1.service` y añada `--nohints` a las opciones de *agetty*:
 
 ```
 [Service]
@@ -109,7 +109,7 @@ exec window_manager
 
 ### MATE
 
-De forma predeterminada, MATE guarda el último estado al cerrar sesión y lo restaura durante el siguiente inicio de sesión. Para habilitar el bloqueo numérico en cada inicio de sesión, debe cambiar los siguientes valores DCONF:
+De forma predeterminada, MATE guarda el último estado al cerrar sesión y lo restaura durante el siguiente inicio de sesión. Para activar el bloqueo numérico en cada inicio de sesión, debe cambiar los siguientes valores DCONF:
 
 ```
 dconf write org.mate.peripherals-keyboard remember-numlock-state false
@@ -119,7 +119,7 @@ dconf write org.mate.peripherals-keyboard numlock-state 'on'
 
 ### KDE Plasma
 
-Vaya a Configuración del sistema, debajo del elemento Hardware/Dispositivos de entrada/Teclado encontrará una opción para seleccionar el comportamiento del bloqueo numérico.
+Vaya a *Configuración del sistema > Dispositivos de entrada > Teclado* y elija el comportamiento del bloqueo numérico en la sección *Bloqueo numérico en el inicio de Plasma*.
 
 ### GDM
 
@@ -162,6 +162,8 @@ En el archivo `~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml`, asegú
 <property name="RestoreNumlock" type="bool" value="true"/>
 
 ```
+
+**Nota:** Si el archivo no existe, abra Configuración > Teclado, luego marque y desmarque `Restaurar estado del bloqueo numérico al inicio`. Esto creará el archivo `keyboards.xml`.
 
 ### SDDM
 

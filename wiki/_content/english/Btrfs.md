@@ -25,6 +25,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [3.1.1 Disabling CoW](#Disabling_CoW)
         *   [3.1.2 Creating lightweight copies](#Creating_lightweight_copies)
     *   [3.2 Compression](#Compression)
+        *   [3.2.1 View compression types and ratios](#View_compression_types_and_ratios)
     *   [3.3 Subvolumes](#Subvolumes)
         *   [3.3.1 Creating a subvolume](#Creating_a_subvolume)
         *   [3.3.2 Listing subvolumes](#Listing_subvolumes)
@@ -32,7 +33,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [3.3.4 Mounting subvolumes](#Mounting_subvolumes)
         *   [3.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
     *   [3.4 Quota](#Quota)
-    *   [3.5 Commit Interval](#Commit_Interval)
+    *   [3.5 Commit interval](#Commit_interval)
     *   [3.6 SSD TRIM](#SSD_TRIM)
 *   [4 Usage](#Usage)
     *   [4.1 Swap file](#Swap_file)
@@ -163,9 +164,13 @@ See the man page on [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) for
 
 ### Compression
 
-Btrfs supports transparent compression, meaning every file on the partition is automatically compressed. This not only reduces the size of files, but can also [improve performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in some specific use cases (e.g. single thread with heavy file I/O), while obviously harming performance in other cases (e.g. multithreaded and/or cpu intensive tasks with large file I/O). Better performance is generally achieved with the fastest compress algorithms, *zstd* and *lzo*, and some [benchmarks](https://www.phoronix.com/scan.php?page=article&item=btrfs-zstd-compress) provide detailed comparisons.
+Btrfs supports transparent and automatic compression. This not only reduces the size of files, but can also [improve performance](http://www.phoronix.com/scan.php?page=article&item=btrfs_compress_2635&num=1), in some specific use cases (e.g. single thread with heavy file I/O), while obviously harming performance in other cases (e.g. multithreaded and/or cpu intensive tasks with large file I/O). Better performance is generally achieved with the fastest compress algorithms, *zstd* and *lzo*, and some [benchmarks](https://www.phoronix.com/scan.php?page=article&item=btrfs-zstd-compress) provide detailed comparisons.
 
-Compression is enabled using the `compress` mount option, which can be set to `zlib`, `lzo`, `zstd`, or `no` (for no compression). Only files created or modified after the mount option is added will be compressed.
+The `compress=*alg*` mount option enables automatically considering every file for compression, where `*alg*` is either `zlib`, `lzo`, `zstd`, or `no` (for no compression). Using this option, btrfs will check if compressing the first portion of the data shrinks it. If it does, the entire write to that file will be compressed. If it does not, none of it is compressed. With this option, if the first portion of the write does not shrink, no compression will be applied to the write even if the rest of the data would shrink tremendously. [[1]](https://btrfs.wiki.kernel.org/index.php/Compression#What_happens_to_incompressible_files.3F) This is done to prevent making the disk wait to start writing until all of the data to be written is fully given to btrfs and compressed.
+
+The `compress-force=*alg*` mount option can be used instead, which makes btrfs skip checking if compression shrinks the first portion, and enables automatic compression for every file. In a worst case scenario, this can cause (slightly) more space to be used, and CPU usage for no purpose.
+
+Only files created or modified after the mount option is added will be compressed.
 
 To apply compression to existing files, use the `btrfs filesystem defragment -c*alg*` command, where `*alg*` is either `zlib`, `lzo` or `zstd`. For example, in order to re-compress the whole file system with [zstd](https://www.archlinux.org/packages/?name=zstd), run the following command:
 
@@ -181,11 +186,16 @@ To enable compression when installing Arch to an empty Btrfs partition, use the 
 **Warning:**
 
 *   Systems using older kernels or [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) without `zstd` support may be unable to read or repair your filesystem if you use this option.
-*   Stable [GRUB](/index.php/GRUB "GRUB") and [rEFInd](/index.php/REFInd "REFInd") currently lack support for *zstd*, either switch to [grub-git](https://aur.archlinux.org/packages/grub-git/), use a separate boot partition without *zstd* or reset compression of boot files to something supported using for example the command: `$ btrfs filesystem defragment -v -clzo /boot/*` 
+*   [GRUB](/index.php/GRUB "GRUB") introduced *zstd* support in 2.04\. Make sure you have actually upgraded the bootloader installed in your MBR/ESP since then, by running `grub-install` with the appropriate options for your BIOS/UEFI setup, since that is not done automatically. See [FS#63235](https://bugs.archlinux.org/task/63235).
+*   [rEFInd](/index.php/REFInd "REFInd") before version 0.11.4 lacks support for *zstd*, either switch to [refind-efi-git](https://aur.archlinux.org/packages/refind-efi-git/), use a separate boot partition without *zstd*, or reset compression of boot files to something supported using for example the command: `$ btrfs filesystem defragment -v -clzo /boot/*` 
+
+#### View compression types and ratios
+
+[compsize](https://www.archlinux.org/packages/?name=compsize) takes a list of files (or an entire btrfs filesystem) and measures compression types used and effective compression ratios. Uncompressed size may not match the number given by other programs such as `du`, because every extent is counted once, even if it is reflinked several times, and even if part of it is no longer used anywhere but has not been garbage collected. The `-x` option keeps it on a single filesystem, which is useful in situations like `compsize -x /` to avoid it from attempting to look in non-btrfs subdirectories and fail the entire run.
 
 ### Subvolumes
 
-"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[1]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
+"A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[2]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
 Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted as `/` (by default), or another subvolume can be [mounted](#Mounting_subvolumes) instead. Subvolumes can be moved around in the filesystem and are rather identified by their id than their path.
 
@@ -249,26 +259,26 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 
-Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[2]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
+Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[3]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 ### Quota
 
 **Warning:** Qgroup is not stable yet and combining quota with (too many) snapshots of subvolumes can cause performance problems, for example when deleting snapshots. Plus there are several more [known issues](https://btrfs.wiki.kernel.org/index.php/Quota_support#Known_issues).
 
-Quota support in Btrfs is implemented at a subvolume level by the use of quota groups or qgroup: Each subvolume is assigned a quota groups in the form of *0/<subvolume id>* by default. However it is possible to create a quota group using any number if desired.
+Quota support in Btrfs is implemented at a subvolume level by the use of quota groups or qgroup: Each subvolume is assigned a quota groups in the form of *0/subvolume_id* by default. However it is possible to create a quota group using any number if desired.
 
 To use qgroups you need to enable quota first using
 
 ```
-# btrfs quota enable <path>
+# btrfs quota enable *path*
 
 ```
 
-From this point onwards newly created subvolumes will be controlled by those groups. In order to retrospectively enable them for already existing subvolumes, enable quota normally, then create a qgroup (quota group) for each of those subvolume using their *<subvolume id>* and rescan them:
+From this point onwards newly created subvolumes will be controlled by those groups. In order to retrospectively enable them for already existing subvolumes, enable quota normally, then create a qgroup (quota group) for each of those subvolume using their *subvolume_id* and rescan them:
 
 ```
-# btrfs subvolume list <path> | cut -d' ' -f2 | xargs -I{} -n1 btrfs qgroup create 0/{} <path>
-# btrfs quota rescan <path>
+# btrfs subvolume list *path* | cut -d' ' -f2 | xargs -I{} -n1 btrfs qgroup create 0/{} *path*
+# btrfs quota rescan *path*
 
 ```
 
@@ -279,11 +289,11 @@ Limits on quota groups can be applied either to the total data usage, un-shared 
 To apply a limit to a qgroup, use the command `btrfs qgroup limit`. Depending on your usage either use a total limit, unshared limit (`-e`) or compressed limit (`-c`). To show usage and limits for a given path within a filesystem use
 
 ```
-# btrfs qgroup show -reF <path>
+# btrfs qgroup show -reF *path*
 
 ```
 
-### Commit Interval
+### Commit interval
 
 The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This can be changed by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
 
@@ -304,13 +314,13 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Swap file
 
-[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7) The proper way to initialize a swap file is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
+[Swap files](/index.php/Swap_file "Swap file") in Btrfs are supported since Linux kernel 5.0.[[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ed46ff3d423780fa5173b38a844bf0fdb210a2a7) The proper way to initialize a swap file is described in [Swap file#Swap file creation](/index.php/Swap_file#Swap_file_creation "Swap file").
 
 **Note:** For kernels version 5.0+, Btfrs has native swap file support with some limitations:
 
 *   The swap file cannot be on a snapshotted subvolume. The proper procedure is to create a new subvolume to place the swap file in.
 *   It does not support swap files on file systems that span multiple devices. See [Btrfs wiki: Does btrfs support swap files?](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) and [Arch forums discussion](https://bbs.archlinux.org/viewtopic.php?pid=1849371#p1849371).
-*   Hibernation onto a swap file is currently not supported by [systemd](https://www.archlinux.org/packages/?name=systemd) [[4]](https://github.com/systemd/systemd/issues/11939).
+*   Hibernation onto a swap file is currently not supported by [systemd](https://www.archlinux.org/packages/?name=systemd) [[5]](https://github.com/systemd/systemd/issues/11939).
 
 **Warning:** Linux kernels before version 5.0, including [linux-lts](https://www.archlinux.org/packages/?name=linux-lts), do not support swap files. Using a swap file with Btrfs and a kernel prior to 5.0 can lead to file system corruption.
 
@@ -325,7 +335,7 @@ General linux userspace tools such as `df` will inaccurately report free space o
 
 **Note:** The `btrfs filesystem usage` command does not currently work correctly with `RAID5/RAID6` RAID levels.
 
-See [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
+See [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#How_much_free_space_do_I_have.3F) for more information.
 
 ### Defragmentation
 
@@ -352,7 +362,7 @@ The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says
 
 **Warning:** A running scrub process will prevent the system from suspending, see [this thread](http://comments.gmane.org/gmane.comp.file-systems.btrfs/33106) for details.
 
-##### Start manually
+#### Start manually
 
 To start a (background) scrub on the filesystem which contains `/`:
 
@@ -368,7 +378,7 @@ To check the status of a running scrub:
 
 ```
 
-##### Start with a service or timer
+#### Start with a service or timer
 
 The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an escaped path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`. You can use `systemd-escape -p */path/to/mountpoint*` to escape the path, see [systemd-escape(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-escape.1) for details.
 
@@ -376,7 +386,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 ### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[6]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[7]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 

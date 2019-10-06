@@ -10,7 +10,7 @@
 | <small>1.3.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(25)</small> |
 | <small>1.4.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>1.5.</small> [Teams](/index.php/Category:Teams "Category:Teams") <small>(6)</small> |
-| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
+| <small>2.</small> [Development](/index.php/Category:Development "Category:Development") <small>(36)</small> |
 | <small>2.1.</small> [Electronic design automation](/index.php/Category:Electronic_design_automation "Category:Electronic design automation") <small>(7) (also in [Science](/index.php/Category:Science "Category:Science"))</small> |
 | <small>2.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
 | <small>2.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
@@ -46,7 +46,7 @@
 | <small>3.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>3.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(61)</small> |
 | <small>3.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
-| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(102)</small> |
+| <small>3.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(103)</small> |
 | <small>3.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
 | <small>3.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(7)</small> |
 | <small>3.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -227,7 +227,7 @@
 | <small>5.8.1.</small> [Apache](/index.php/Category:Apache "Category:Apache") <small>(6)</small> |
 | <small>5.8.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(10) (also in [DeveloperWiki](/index.php/Category:DeveloperWiki "Category:DeveloperWiki"))</small> |
 | <small>5.8.3.</small> [Electronic Frontier Foundation](/index.php/Category:Electronic_Frontier_Foundation "Category:Electronic Frontier Foundation") <small>(3)</small> |
-| <small>5.8.4.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
+| <small>5.8.4.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(14) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
 | <small>5.8.5.</small> [GNU](/index.php/Category:GNU "Category:GNU") <small>(14)</small> |
 | <small>5.8.6.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments"))</small> |
 | <small>5.8.7.</small> [Mozilla](/index.php/Category:Mozilla "Category:Mozilla") <small>(5)</small> |
@@ -279,7 +279,7 @@
 | <small>6.10.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org "Category:Freedesktop.org") <small>(7)</small> |
 | <small>6.11.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") <small>(6)</small> |
 | <small>6.11.1.</small> [Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") <small>(17)</small> |
-| <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(13) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
+| <small>6.11.1.1.</small> [GNOME](/index.php/Category:GNOME "Category:GNOME") <small>(14) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
 | <small>6.11.1.2.</small> [KDE](/index.php/Category:KDE "Category:KDE") <small>(12) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
 | <small>6.11.1.3.</small> [Xfce](/index.php/Category:Xfce "Category:Xfce") <small>(3)</small> |
 | <small>6.11.2.</small> [Display managers](/index.php/Category:Display_managers "Category:Display managers") <small>(10)</small> |

@@ -456,14 +456,21 @@ If you prefer to see a more traditional applications menu when you click on the 
 
 ### Titlebars
 
-It is easy to enable titlebars in awesome by simply setting the variable titlebars_enabled to true in the config file. However, you may want to be able to toggle the titlebar on or off. You can do this by simply adding something like this to your key bindings:
+It is easy to enable titlebars in awesome by simply setting the variable titlebars_enabled to true in the config file. （in rules area）
 
 ```
-awful.key({ modkey, "Control" }, "t",
-   function (c)
-       -- toggle titlebar
-       awful.titlebar.toggle(c)
-   end)
+   { rule_any = {type = { "normal", "dialog" }
+     }, properties = { titlebars_enabled = true }
+   },
+
+```
+
+However, you may want to be able to toggle the titlebar on or off. You can do this by simply adding something like this to your key bindings: (in clientkeys of Key bindings. And don't put the code to the end of the clientkeys area)
+
+```
+   -- working toggle titlebar
+   awful.key({ modkey, "Control" }, "t", function (c) awful.titlebar.toggle(c)         end, 
+             {description = "Show/Hide Titlebars", group="client"}),
 
 ```
 

@@ -242,7 +242,7 @@ See also [List of applications/Documents#Stylus note-taking](/index.php/List_of_
 
 *   **Master PDF Editor** — Functional proprietary PDF editor. Free for non-commercial use.
 
-	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/), [masterpdfeditor-qt4](https://aur.archlinux.org/packages/masterpdfeditor-qt4/) for older version without restrictions
+	[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/) || [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/)
 
 *   **PDF Studio** — All-in-one proprietary PDF editor similar to Adobe Acrobat.
 

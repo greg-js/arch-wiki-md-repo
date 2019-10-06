@@ -182,8 +182,8 @@ Create [desktop launcher](/index.php/Desktop_launcher "Desktop launcher") with t
 Type=Application
 Name=AppArmor Notify
 Comment=Receive on screen notifications of AppArmor denials
-TryExec=/usr/bin/aa-notify
-Exec=/usr/bin/aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
+TryExec=aa-notify
+Exec=aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
 StartupNotify=false
 NoDisplay=true
 ```

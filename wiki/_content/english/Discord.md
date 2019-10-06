@@ -21,6 +21,7 @@ You can use one of following packages in order to install the desktop applicatio
 The [official app](https://discordapp.com/):
 
 *   Stable: [discord](https://www.archlinux.org/packages/?name=discord)
+*   Testing: [discord-ptb](https://aur.archlinux.org/packages/discord-ptb/)
 *   Nightly: [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
 
 Third-party clients:

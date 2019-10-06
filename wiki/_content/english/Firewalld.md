@@ -25,6 +25,7 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Port or service timeout](#Port_or_service_timeout)
     *   [4.2 Converting run-time configuration to permanent](#Converting_run-time_configuration_to_permanent)
+    *   [4.3 Check services details](#Check_services_details)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -177,6 +178,12 @@ You can make current temporary configuration permanent (meaning it persists thro
 
 ```
 
+### Check services details
+
+The configuration files for the default supported services are located at `/usr/lib/firewalld/services/` and user-created service files would be in `/etc/firewalld/services/`.
+
 ## See also
 
 *   [firewall-cmd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/firewall-cmd.1)
+*   [Official documentation](https://firewalld.org/documentation)
+*   [Fedora Wiki](https://fedoraproject.org/wiki/Firewalld)

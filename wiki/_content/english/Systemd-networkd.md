@@ -206,10 +206,11 @@ These files are aimed at setting network configuration variables, especially for
 
 #### [Match]
 
-*   `MACAddress=` a whitespace-separated list of hardware addresses
-*   `Name=` a white-space separated list of device names, which may contain globs (e.g. `en*`). By prefixing with `!`, the list can be inverted.
-*   `Host=` the machine hostname
-*   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
+| Parameter | Description | Accepted Values | Default Value |
+| `Name=` | Match device names, e.g. `en*`. By prefixing with `!`, the list can be inverted. | white-space separated device names with globs, logical negation (`!`) |
+| `MACAddress=` | Match MAC addresses, e.g. `MACAddress=01:23:45:67:89:ab 00-11-22-33-44-55 AABB.CCDD.EEFF` | whitespace-separated MAC addresses in full colon-, hyphen- or dot-delimited hexadecimal |
+| `Host=` | Match the hostname or machine ID of the host. | hostname string with globs, [machine ID](https://jlk.fjfi.cvut.cz/arch/manpages/man/machine-id.5.en) |
+| `Virtualization=` | Check whether the system is executed in a virtualized environment. `Virtualization=false` will only match your host machine, while `Virtualization=true` matches any container or VM. It is possible to check for a specific virtualization type or implementation. | boolean, logical negation (`!`), type (`vm`, `container`), implementation (`qemu`, `kvm`, `zvm`, `vmware`, `microsoft`, `oracle`, `xen`, `bochs`, `uml`, `bhyve`, `qnx`, `openvz`, `lxc`, `lxc-libvirt`, `systemd-nspawn`, `docker`, `podman`, `rkt`, `wsl`, `acrn`) |
 
 #### [Link]
 

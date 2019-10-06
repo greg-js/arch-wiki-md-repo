@@ -62,7 +62,7 @@ Use the "value" field of `MSC_SCAN`. This example shows that NumLock has scancod
 
 ### Using dmesg
 
-**Note:** This method does not provide *scancodes* for all keys, it only identifies the unknown keys.
+**Note:** This method only identifies unknown keys.
 
 You can get the *scancode* of a key by pressing the desired key and looking the output of `dmesg` command. For example, if you get:
 

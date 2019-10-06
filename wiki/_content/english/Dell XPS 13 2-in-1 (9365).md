@@ -76,7 +76,7 @@ By default, the soundcard automatically turns of which leads to delays when ther
 
 ### Reduce throttling
 
-The CPU seems to throttle already at around 50 to 60°C. Install [throttled](https://www.archlinux.org/packages/?name=throttled) to raise this limit. It raises it by default to 90°C. Intel's product page lists 100°C as the temperature limit. [[8]](https://ark.intel.com/content/www/de/de/ark/products/95452/intel-core-i5-7y54-processor-4m-cache-up-to-3-20-ghz.html) Though it is not recommenced to run it at such a high temperature. You can change these settings at
+The CPU seems to throttle already at around 50 to 60°C. You can install [throttled](https://www.archlinux.org/packages/?name=throttled) to raise this limit. It also has the option to change the short and long term power limit and allows undervolting. It raises the temperature limit by default to 90°C. Intel's product page lists 100°C as the temperature limit. [[8]](https://ark.intel.com/content/www/de/de/ark/products/95452/intel-core-i5-7y54-processor-4m-cache-up-to-3-20-ghz.html) Though it is not recommenced to run it at such a high temperature. You can change these settings at
 
 ```
 /etc/lenovo_fix.conf
@@ -90,4 +90,4 @@ $ sudo systemctl enable --now lenovo_fix.service
 
 ```
 
-Beware that a higher temperature might reduce the longevity of your device.
+Beware that a higher temperature might reduce the longevity of your device. The battery in the device is rated for a maximum temperature of 65°C.

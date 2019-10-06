@@ -3,7 +3,7 @@ Related articles
 *   [Zabbix](/index.php/Zabbix "Zabbix")
 *   [Munin](/index.php/Munin "Munin")
 
-[Grafana](https://grafana.com/) is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports [graphite](https://www.archlinux.org/packages/?name=graphite), [InfluxDB](/index.php/InfluxDB "InfluxDB") or opentsdb as backends.
+[Grafana](https://grafana.com/) is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports [graphite](https://www.archlinux.org/packages/?name=graphite), [InfluxDB](/index.php/InfluxDB "InfluxDB"), [Prometheus](/index.php/Prometheus "Prometheus") or opentsdb as backends.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 

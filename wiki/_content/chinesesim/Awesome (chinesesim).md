@@ -8,47 +8,51 @@
 
 本文主要内容为安装、使用、配置和自定义 awesome 窗口管理器。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 使用Awesome](#.E4.BD.BF.E7.94.A8Awesome)
-    *   [2.1 不使用登陆管理器](#.E4.B8.8D.E4.BD.BF.E7.94.A8.E7.99.BB.E9.99.86.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.2 使用登陆管理器](#.E4.BD.BF.E7.94.A8.E7.99.BB.E9.99.86.E7.AE.A1.E7.90.86.E5.99.A8)
-        *   [2.2.1 GDM, LightDM 以及其他使用 /usr/share/xsessions/ 的管理器](#GDM.2C_LightDM_.E4.BB.A5.E5.8F.8A.E5.85.B6.E4.BB.96.E4.BD.BF.E7.94.A8_.2Fusr.2Fshare.2Fxsessions.2F_.E7.9A.84.E7.AE.A1.E7.90.86.E5.99.A8)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 使用Awesome](#使用Awesome)
+    *   [2.1 不使用登陆管理器](#不使用登陆管理器)
+    *   [2.2 使用登陆管理器](#使用登陆管理器)
+        *   [2.2.1 GDM, LightDM 以及其他使用 /usr/share/xsessions/ 的管理器](#GDM,_LightDM_以及其他使用_/usr/share/xsessions/_的管理器)
         *   [2.2.2 KDM](#KDM)
-*   [3 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.1 创建配置文件](#.E5.88.9B.E5.BB.BA.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-    *   [3.2 更多的配置资源](#.E6.9B.B4.E5.A4.9A.E7.9A.84.E9.85.8D.E7.BD.AE.E8.B5.84.E6.BA.90)
-    *   [3.3 调试 rc.lua](#.E8.B0.83.E8.AF.95_rc.lua)
-        *   [3.3.1 使用 Xephyr](#.E4.BD.BF.E7.94.A8_Xephyr)
-        *   [3.3.2 使用 awmtt](#.E4.BD.BF.E7.94.A8_awmtt)
-    *   [3.4 改变键盘布局](#.E6.94.B9.E5.8F.98.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
-*   [4 主题](#.E4.B8.BB.E9.A2.98)
-    *   [4.1 设置墙纸](#.E8.AE.BE.E7.BD.AE.E5.A2.99.E7.BA.B8)
-        *   [4.1.1 version >= 3.5](#version_.3E.3D_3.5)
-        *   [4.1.2 随机墙纸](#.E9.9A.8F.E6.9C.BA.E5.A2.99.E7.BA.B8)
-*   [5 小技巧](#.E5.B0.8F.E6.8A.80.E5.B7.A7)
-    *   [5.1 使用awesome作为GNOME的窗口管理器](#.E4.BD.BF.E7.94.A8awesome.E4.BD.9C.E4.B8.BAGNOME.E7.9A.84.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [5.2 像compiz那样的平铺桌面效果](#.E5.83.8Fcompiz.E9.82.A3.E6.A0.B7.E7.9A.84.E5.B9.B3.E9.93.BA.E6.A1.8C.E9.9D.A2.E6.95.88.E6.9E.9C)
-    *   [5.3 在awesome 3中显示/隐藏wibox](#.E5.9C.A8awesome_3.E4.B8.AD.E6.98.BE.E7.A4.BA.2F.E9.9A.90.E8.97.8Fwibox)
-    *   [5.4 截图](#.E6.88.AA.E5.9B.BE)
-    *   [5.5 动态标签](#.E5.8A.A8.E6.80.81.E6.A0.87.E7.AD.BE)
+*   [3 配置](#配置)
+    *   [3.1 创建配置文件](#创建配置文件)
+    *   [3.2 更多的配置资源](#更多的配置资源)
+    *   [3.3 调试 rc.lua](#调试_rc.lua)
+        *   [3.3.1 使用 Xephyr](#使用_Xephyr)
+        *   [3.3.2 使用 awmtt](#使用_awmtt)
+    *   [3.4 改变键盘布局](#改变键盘布局)
+*   [4 主题](#主题)
+    *   [4.1 设置墙纸](#设置墙纸)
+        *   [4.1.1 version >= 3.5](#version_>=_3.5)
+        *   [4.1.2 随机墙纸](#随机墙纸)
+*   [5 小技巧](#小技巧)
+    *   [5.1 使用awesome作为GNOME的窗口管理器](#使用awesome作为GNOME的窗口管理器)
+    *   [5.2 像compiz那样的平铺桌面效果](#像compiz那样的平铺桌面效果)
+    *   [5.3 在awesome 3中显示/隐藏wibox](#在awesome_3中显示/隐藏wibox)
+    *   [5.4 截图](#截图)
+    *   [5.5 动态标签](#动态标签)
     *   [5.6 Space Invaders](#Space_Invaders)
-    *   [5.7 Naughty弹窗提醒](#Naughty.E5.BC.B9.E7.AA.97.E6.8F.90.E9.86.92)
-    *   [5.8 弹出菜单项](#.E5.BC.B9.E5.87.BA.E8.8F.9C.E5.8D.95.E9.A1.B9)
-    *   [5.9 Awesome的更多插件](#Awesome.E7.9A.84.E6.9B.B4.E5.A4.9A.E6.8F.92.E4.BB.B6)
+    *   [5.7 Naughty弹窗提醒](#Naughty弹窗提醒)
+    *   [5.8 弹出菜单项](#弹出菜单项)
+    *   [5.9 Awesome的更多插件](#Awesome的更多插件)
     *   [5.10 Transparency](#Transparency)
         *   [5.10.1 ImageMagick](#ImageMagick)
-    *   [5.11 自动运行程序](#.E8.87.AA.E5.8A.A8.E8.BF.90.E8.A1.8C.E7.A8.8B.E5.BA.8F)
-    *   [5.12 使用 awesome-client 给文本插件传递信息](#.E4.BD.BF.E7.94.A8_awesome-client_.E7.BB.99.E6.96.87.E6.9C.AC.E6.8F.92.E4.BB.B6.E4.BC.A0.E9.80.92.E4.BF.A1.E6.81.AF)
-    *   [5.13 使用其他任务栏](#.E4.BD.BF.E7.94.A8.E5.85.B6.E4.BB.96.E4.BB.BB.E5.8A.A1.E6.A0.8F)
-    *   [5.14 Fix Java (GUI appears gray only)](#Fix_Java_.28GUI_appears_gray_only.29)
-    *   [5.15 Prevent Nautilus from displaying the desktop (Gnome3)](#Prevent_Nautilus_from_displaying_the_desktop_.28Gnome3.29)
+    *   [5.11 自动运行程序](#自动运行程序)
+    *   [5.12 使用 awesome-client 给文本插件传递信息](#使用_awesome-client_给文本插件传递信息)
+    *   [5.13 使用其他任务栏](#使用其他任务栏)
+    *   [5.14 Fix Java (GUI appears gray only)](#Fix_Java_(GUI_appears_gray_only))
+    *   [5.15 Prevent Nautilus from displaying the desktop (Gnome3)](#Prevent_Nautilus_from_displaying_the_desktop_(Gnome3))
     *   [5.16 Transitioning away from Gnome3](#Transitioning_away_from_Gnome3)
     *   [5.17 Prevent the mouse scroll wheel from changing tags](#Prevent_the_mouse_scroll_wheel_from_changing_tags)
-    *   [5.18 菜单栏中的应用程序目录](#.E8.8F.9C.E5.8D.95.E6.A0.8F.E4.B8.AD.E7.9A.84.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E7.9B.AE.E5.BD.95)
-    *   [5.19 应用菜单](#.E5.BA.94.E7.94.A8.E8.8F.9C.E5.8D.95)
-    *   [5.20 标题栏](#.E6.A0.87.E9.A2.98.E6.A0.8F)
+    *   [5.18 菜单栏中的应用程序目录](#菜单栏中的应用程序目录)
+    *   [5.19 应用菜单](#应用菜单)
+    *   [5.20 标题栏](#标题栏)
     *   [5.21 Start xor jump](#Start_xor_jump)
     *   [5.22 Battery notification](#Battery_notification)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -57,7 +61,7 @@
     *   [6.3 LibreOffice](#LibreOffice)
     *   [6.4 Mod4 key](#Mod4_key)
         *   [6.4.1 Mod4 key vs. IBM ThinkPad users](#Mod4_key_vs._IBM_ThinkPad_users)
-    *   [6.5 Eclipse: cannot resize/move main window](#Eclipse:_cannot_resize.2Fmove_main_window)
+    *   [6.5 Eclipse: cannot resize/move main window](#Eclipse:_cannot_resize/move_main_window)
     *   [6.6 YouTube: fullscreen appears in background](#YouTube:_fullscreen_appears_in_background)
     *   [6.7 Starting console clients on specific tags](#Starting_console_clients_on_specific_tags)
     *   [6.8 Redirecting console output to a file](#Redirecting_console_output_to_a_file)
@@ -147,7 +151,7 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome
 用这种方式可以在不破坏现有桌面的情况下对 rc.lua 进行测试。首先把 rc.lua 复制到一个新文件 rc.lua.new，接着进行修改。然后在 [Xephyr](/index.php/Xephyr_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xephyr (简体中文)") 中运行新的 rc.lua （Xephyr 允许你在 XWindow 中植入一个新的 XWindow - （[screenshot](http://www.dante4d.cz/pub/screenie/2009-08-01-025216_1920x1200_scrot.png)）。 你可以这样测试你的新 rc.lua
 
 ```
-$ Xephyr -ac -br -noreset -screen 1152x720 :1 &
+$ Xephyr -ac -br -noreset -screen 1152x720 :1 &
 $ DISPLAY=:1.0 awesome -c ~/.config/awesome/rc.lua.new
 
 ```
@@ -706,23 +710,32 @@ app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 
 ### 标题栏
 
-你可以很容易地在配置文件中把 `titlebars_enabled` 设置为 true 来启用标题栏。如果想要切换标题栏的显示与否，可以把以下代码加入配置文件，然后通过按 `modkey + Ctrl + t` 来切换。
+你可以很容易地在配置文件中rule把 `titlebars_enabled` 设置为 true 来启用标题栏。
 
 ```
-awful.key({ modkey, "Control" }, "t",
-   function (c)
-       -- toggle titlebar
-       awful.titlebar.toggle(c)
-   end)
+   { rule_any = {type = { "normal", "dialog" }
+     }, properties = { titlebars_enabled = true }
+   },
 
 ```
 
-如果想默认情况下隐藏标题栏，仅需要在配置文件中标题栏创建后加入以下代码
+如果想要切换标题栏的显示与否，可以把以下代码加入配置文件中键位绑定部份的`clientkeys`部份中间位置（因为这段代码是以逗号结尾，请不要放在`clientkeys`的最后），然后通过按 `modkey + Ctrl + t` 来切换。
+
+```
+   -- working toggle titlebar
+   awful.key({ modkey, "Control" }, "t", function (c) awful.titlebar.toggle(c)         end, 
+             {description = "Show/Hide Titlebars", group="client"}),
+
+```
+
+如果想默认情况下隐藏标题栏，仅需要在配置文件中标题栏创建后（即 在 awful.titlebar(c) : setup { 对应的右括号前）加入以下代码
 
 ```
 awful.titlebar.hide(c)
 
 ```
+
+此代码会覆盖掉前面rule中的配置
 
 ### Start xor jump
 

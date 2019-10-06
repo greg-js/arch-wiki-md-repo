@@ -23,6 +23,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
         *   [4.3.2 Perform defragmentation](#Perform_defragmentation)
     *   [4.4 Free inode btree](#Free_inode_btree)
     *   [4.5 External XFS Journal](#External_XFS_Journal)
+    *   [4.6 Sync interval](#Sync_interval)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Root file system quota](#Root_file_system_quota)
     *   [5.2 xfs_scrub_all fails if user "nobody" can not access the mountpoint](#xfs_scrub_all_fails_if_user_"nobody"_can_not_access_the_mountpoint)
@@ -156,6 +157,12 @@ Using an external log (metadata journal) on for instance a [SSD](/index.php/SSD 
 **Warning:** Beware using flash-memory may wear-out the drive. See [Improving performance#Reduce disk reads/writes](/index.php/Improving_performance#Reduce_disk_reads/writes "Improving performance") for SSD wear-out details.
 
 To reserve an external journal with a specified size when you create an XFS file system, specify the `-l logdev=device,size=size` option to the `mkfs.xfs` command. If you omit the `size` parameter, a journal size based on the size of the file system is used. To mount the XFS file system so that it uses the external journal, specify the `-o logdev=device` option to the [mount](/index.php/Mount "Mount") command.
+
+### Sync interval
+
+XFS has it dedicated [sysctl](/index.php/Sysctl "Sysctl") variable for setting "[writeback interval](/index.php/Improving_performance#Enlarge_writeback_interval_and_buffer_size "Improving performance")". Arch has a default value of 3000, larger value is possible to set, just keep in mind that too large may result data loss in some cases:
+
+ `/etc/sysctl.d/20-xfs-sync-interval.conf`  `fs.xfs.xfssyncd_centisecs = 10000` 
 
 ## Troubleshooting
 

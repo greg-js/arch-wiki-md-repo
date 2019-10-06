@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 11 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=581959).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 29 сентября 2019\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=584090).
 
 Ссылки по теме
 
@@ -713,4 +713,6 @@ $ xhost +si:localuser:root
 
 ## Смотрите также
 
-*   [Xplain](https://magcius.github.io/xplain/article/) - Подробное объяснение системы X Window
+*   [Xplain](https://magcius.github.io/xplain/article/) — подробное объяснение оконной системы X
+*   [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) — справочная страница Xorg
+*   [Gentoo/Xorg#Configuration](https://wiki.gentoo.org/wiki/Xorg/Guide/en#Configuration) — статья о конфигурации Xorg на Gentoo Wiki

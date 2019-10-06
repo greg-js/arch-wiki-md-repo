@@ -1,6 +1,8 @@
-Bu belge, Arch Linux'u yüklemek için kullanılan canlı sistem kılavuzudur. Kurulumdan önce, [Sıkça sorulan sorulara](/index.php/Frequently_asked_questions_(T%C3%BCrk%C3%A7e) "Frequently asked questions (Türkçe)") bakmanız önerilmektedir. Bu belgede kullanılan lisanslar için, bakınız [Yardım:Okuma](/index.php/Help:Reading "Help:Reading").
+Bu belge, Arch Linux'u yüklemek için kullanılan canlı sistem kılavuzudur. Kurulumdan önce, [Sıkça sorulan sorulara](/index.php/Frequently_asked_questions_(T%C3%BCrk%C3%A7e) "Frequently asked questions (Türkçe)") bakmanız önerilmektedir. Bu belgede kullanılan düzen için, bakınız [Yardım:Okuma](/index.php/Help:Reading "Help:Reading"). Örneğin, kod örneklerinde (*italik* formatında) yer tutucular bulunabilir ve bunları uygun değerle değiştirmeniz gerekmektedir.
 
-Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programların olduğu linklere' [man pages](/index.php/Man_page "Man page"), bakınız. İnteraktif yardım için, [IRC kanalını](/index.php/IRC_channel "IRC channel") ve [forumu](https://bbs.archlinux.org/) kullanabilirsiniz.
+Daha ayrıntılı talimatlar için, bu kılavuzdan karşılık gelen [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") makalelerine ya da çeşitli programların [man sayfalarına](/index.php/Man_page "Man page") bakınız. İnteraktif yardım için, [IRC kanalını](/index.php/IRC_channel "IRC channel") ve [forumu](https://bbs.archlinux.org/) kullanabilirsiniz.
+
+Arch Linux en az 512 MB RAM'e sahip olan herhangi bir [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") uyumlu makinede çalışır. [base](https://www.archlinux.org/groups/x86_64/base/) grubundaki tüm paketleri içeren basit bir kurulum 800 megabyte'tan az bir disk alanı kaplar. Kurulum esnasında paketlerin veri havuzundan indirilmesi gerektiğinden, çalışan bir internet bağlantısı gereklidir.
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -9,13 +11,15 @@ Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index
 <label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Kurulum Öncesi](#Kurulum_Öncesi)
-    *   [1.1 Klavye düzenini ayarla](#Klavye_düzenini_ayarla)
-    *   [1.2 Önyükleme modunu doğrula](#Önyükleme_modunu_doğrula)
-    *   [1.3 İnternete bağlan](#İnternete_bağlan)
-    *   [1.4 Sistem saatini güncelle](#Sistem_saatini_güncelle)
-    *   [1.5 Diskleri bölümlendir](#Diskleri_bölümlendir)
-    *   [1.6 Bölümleri biçimlendir](#Bölümleri_biçimlendir)
-    *   [1.7 Dosya sistemerini bağla](#Dosya_sistemerini_bağla)
+    *   [1.1 İmzayı Doğrula](#İmzayı_Doğrula)
+    *   [1.2 Canlı ortamı önyükle](#Canlı_ortamı_önyükle)
+    *   [1.3 Klavye düzenini ayarla](#Klavye_düzenini_ayarla)
+    *   [1.4 Önyükleme modunu doğrula](#Önyükleme_modunu_doğrula)
+    *   [1.5 İnternete bağlan](#İnternete_bağlan)
+    *   [1.6 Sistem saatini güncelle](#Sistem_saatini_güncelle)
+    *   [1.7 Diskleri bölümlendir](#Diskleri_bölümlendir)
+    *   [1.8 Bölümleri biçimlendir](#Bölümleri_biçimlendir)
+    *   [1.9 Dosya sistemerini bağla](#Dosya_sistemerini_bağla)
 *   [2 Kurulum](#Kurulum)
     *   [2.1 Yansıları(Mirrors) seç](#Yansıları(Mirrors)_seç)
     *   [2.2 Temel paketleri kurun](#Temel_paketleri_kurun)
@@ -34,9 +38,41 @@ Daha ayrıntılı talimatlar için, bu kılavuzdan sırasıyla [ArchWiki](/index
 
 ## Kurulum Öncesi
 
-Arch Linux en az 512 MB RAM'e sahip olan herhangi bir [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") uyumlu makinede çalışır. [base](https://www.archlinux.org/groups/x86_64/base/) grubundaki tüm paketleri içeren basit bir kurulum 800 megabyte'tan az bir disk alanı kaplar. Kurulum esnasında paketlerin veri havuzundan indirilmesi gerektiğinden, çalışan bir internet bağlantısı gereklidir.
+Yükleme medyasını [Arch'ı İndirmek ve Kurmak](/index.php/Getting_and_installing_Arch "Getting and installing Arch") sayfasında açıklandığı gibi indiriniz ve aynı zamanda [GnuPG](/index.php/GnuPG "GnuPG") imzasını da edininiz.
 
-Yükleme medyasını [Arch'ı İndirmek ve Kurmak](/index.php/Getting_and_installing_Arch "Getting and installing Arch") sayfasında açıklandığı gibi indiriniz ve önyükleyiniz. İlk sanal konsola root kullanıcısı olarak giriş yapacaksınız ve [Zsh](/index.php/Zsh "Zsh") komut istemiyle karşılaşacaksınız. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) gibi yaygın komutlar [Tab tuşuyla tamamlanabilir.](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")
+### İmzayı Doğrula
+
+İmaj imzasını kullanmadan önce kontrol etmeniz önerilmektedir, özellikle eğer *HTTP yansımasından* indiriyorsanız, ki buradan indirmeler [zararlı imajlar sunabilir](https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html) eğer saldırıya uğramışsa.
+
+[GnuPG](/index.php/GnuPG "GnuPG") yüklü olan bir sistemde, şu şekilde *PGP* imzasını (*Checksum* ın altında) ISO klasörüne indirip [doğrulayın:](/index.php/GnuPG#Verify_a_signature "GnuPG")
+
+```
+ $ gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
+
+```
+
+Veya alternatif olarak, zaten kurulu olan bir Arch Linux sisteminden şunu çalıştırın:
+
+```
+ $ pacman-key -v archlinux-version-x86_64.iso.sig
+
+```
+
+**Note:**
+
+*   Eğer [https://archlinux.org](https://archlinux.org) dışında başka bir siteden indirilmişse, imza manipüle edilmiş olabilir. Bu durumda, imzayı çözme görevinde kullanılan kamu anahtarının (public key) bir başka güvenilir bir anahtar tarafından imzalandığına emin olun. `gpg` komudu kamu anahtarının parmak izini çıktılayacaktır.
+
+*   İmzanın yetkinliğini onaylamanın başka bir yöntemi ise, kamu anahtarının (public key) parmak izinin, ISO dosyasını imzalayan [Arch Linux Geliştiricisi](https://www.archlinux.org/people/developers/) 'nin anahtar parmak iziyle aynı olduğunundan emin olmaktır. Kamu anahtarı işleminin nasıl olduğuyla ilgili ayrıntılı bilgi için [Wikipedia:Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography "wikipedia:Public-key cryptography") sayfasına göz atın.
+
+### Canlı ortamı önyükle
+
+Canlı ortam bir [USB sürücüden](/index.php/USB_flash_installation_media "USB flash installation media") [optik diskten](/index.php/Optical_disc_drive#Burning "Optical disc drive") veya da [PXE](/index.php/PXE "PXE") kullanarak ağ üzerinden önyüklenebilir. Alternatif kuruluş yolları için gözatınız [Category:Installation process](/index.php/Category:Installation_process "Category:Installation process").
+
+*   Önyüklemeyi Arch kurulum ortamına yönlendirmek için genel kullanılan yöntem [Ön safhada](https://en.wikipedia.org/wiki/Power-on_self_test "wikipedia:Power-on self test") bir tuşa basmaktır. Detaylar için kendi anakartınızın kılavuzuna başvurun.
+*   Arch menüsü göründüğünde, *Arch'ı Önyükle* (*Boot Arch*) seçeneğini seçin ve `Enter` tuşuna basarak kurulum ortamına girin.
+*   [Önyükleme parametreleri](/index.php/Kernel_parameters#Configuration "Kernel parameters") için gözatınız [README.bootparams](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams). Ayrıca dahil edilmiş paket listesi için şuraya göz atınız [packages.x86_64](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
+
+İlk sanal konsola root kullanıcısı olarak giriş yapacaksınız ve [Zsh](/index.php/Zsh "Zsh") komut istemiyle karşılaşacaksınız. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) gibi yaygın komutlar [Tab tuşuyla tamamlanabilir.](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")
 
 Farklı bir konsola geçmek için, örneğin kurulum esnasında bu rehberi [ELinks](/index.php/ELinks "ELinks") ile görüntülemek için, `Alt+*ok tuşu*` [kısayolunu](/index.php/Keyboard_shortcuts "Keyboard shortcuts") kullanabilirsiniz. Yapılandırma dosyalarını [düzenlemek](/index.php/Textedit "Textedit") için, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") veya [vim](/index.php/Vim#Usage "Vim") kullanılabilir.
 

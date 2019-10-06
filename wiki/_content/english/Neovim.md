@@ -22,7 +22,7 @@
 
 [Install](/index.php/Install "Install") the [neovim](https://www.archlinux.org/packages/?name=neovim) package.
 
-**Note:** With neovim, some of its features are delegated to external "providers". For Python providers, use [python-neovim](https://www.archlinux.org/packages/?name=python-neovim) or [python2-neovim](https://aur.archlinux.org/packages/python2-neovim/).
+**Note:** With neovim, some of its features are delegated to external "providers". For Python providers, use [python-pynvim](https://www.archlinux.org/packages/?name=python-pynvim).
 
 ## Configuration
 

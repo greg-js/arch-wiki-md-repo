@@ -25,6 +25,7 @@ With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly
         *   [2.3.5 Using a startup.nsh script](#Using_a_startup.nsh_script)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Cannot create a new boot entry with efibootmgr](#Cannot_create_a_new_boot_entry_with_efibootmgr)
+    *   [3.2 Newly created boot entries are removed](#Newly_created_boot_entries_are_removed)
 *   [4 See also](#See_also)
 
 ## Preparing for EFISTUB
@@ -46,13 +47,15 @@ There are several UEFI boot managers which can provide additional options or sim
 
 ### Using UEFI Shell
 
-It is possible to launch an EFISTUB kernel from UEFI Shell as if it is a normal UEFI application. In this case the kernel parameters are passed as normal parameters to the launched EFISTUB kernel file.
+It is possible to launch an EFISTUB kernel from UEFI Shell as if it is a normal UEFI application:
 
 ```
 > fs0:
 > \vmlinuz-linux root=PARTUUID=3518bb68-d01e-45c9-b973-0b5d918aae96 rw initrd=\initramfs-linux.img
 
 ```
+
+In this case, the kernel parameters are passed as normal parameters to the launched EFISTUB kernel file.
 
 To avoid needing to remember all of your kernel parameters every time, you can save the executable command to a shell script such as `archlinux.nsh` on your UEFI System Partition, then run it with:
 
@@ -66,16 +69,18 @@ To avoid needing to remember all of your kernel parameters every time, you can s
 
 UEFI is designed to remove the need for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](/index.php/Efibootmgr "Efibootmgr") or UEFI Shell v2 to modify your motherboard's boot entries.
 
+**Note:** Outdated UEFI implementations may have compatibility issues with the Linux kernel. If there is a newer version of your UEFI with bug fixes, consider flashing it with the manufacturer's recommended tool.
+
 #### efibootmgr
 
-To create a boot entry which loads the kernel using *efibootmgr*, run a command similar to this:
+To create a boot entry with *efibootmgr* that will load the kernel:
 
 ```
 # efibootmgr --disk */dev/sdX* --part *Y* --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw initrd=\initramfs-linux.img' --verbose
 
 ```
 
-Where `*/dev/sdX*` and `*Y*` are the drive and partition number where the ESP is located. Change the `root=` parameter to reflect your Linux root partition, see [kernel parameters](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") for supported device name formats, and [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for how to obtain the corresponding value.
+Where `*/dev/sdX*` and `*Y*` are the drive and partition number where the ESP is located. Change the `root=` parameter to reflect your Linux root partition, see [kernel parameters](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") for supported device name formats, and [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for how to obtain the corresponding value. If omitted, the the first partition on `*/dev/sda*` is used as the ESP.
 
 Note that the `-u`/`--unicode` argument in quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters (e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode")).
 
@@ -86,22 +91,23 @@ After adding the boot entry, you can verify the entry was added properly with:
 
 ```
 
-To set the boot order, run:
+To set the boot order:
 
 ```
 # efibootmgr --bootorder *XXXX*,*XXXX* --verbose
 
 ```
 
-where *XXXX* is the number that appears in the output of *efibootmgr* command against each entry.
+Where *XXXX* is the number that appears in the output of *efibootmgr* command against each entry.
 
-**Tip:** It is convenient to save the command to create the boot entry in a shell script, which makes it easier to modify, for example when changing kernel parameters.
+**Tip:**
 
-**Tip:** The forum post titled [The linux kernel with build in bootloader?](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) might also be of interest.
+*   It is convenient to save the command to create the boot entry in a shell script, which makes it easier to modify, for example when changing kernel parameters. In doing so, consider automating the deletion of old boot entries, as *efibootmgr* currently [does not support editing existing entries](https://github.com/rhboot/efibootmgr/issues/49).
+*   The forum post titled [The linux kernel with build in bootloader?](https://bbs.archlinux.org/viewtopic.php?pid=1090040#p1090040) might also be of interest.
 
 #### efibootmgr with .efi file
 
-If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable *.efi* image, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) can be used directly to boot the *.efi* file:
+If using [cryptboot](https://aur.archlinux.org/packages/cryptboot/) and [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to generate your own keys for [Secure Boot](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") and sign the initramfs and kernel then create a bootable *.efi* image, *efibootmgr* can be used directly to boot the *.efi* file:
 
 ```
 # efibootmgr --create --disk /dev/sdX --part *partition_number* --label "*label*" --loader "EFI\*folder*\*file*.efi" --verbose
@@ -114,21 +120,21 @@ See [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8) for
 
 Some UEFI implementations make it difficult to modify the NVRAM successfully using *efibootmgr*. If *efibootmgr* cannot successfully create an entry, you can use the [bcfg](/index.php/UEFI#bcfg "UEFI") command in UEFI Shell v2 (i.e., from the [Arch Linux live iso](https://www.archlinux.org/download/)).
 
-First, find out the device number where your [ESP](/index.php/ESP "ESP") resides by using:
+First, find out the device number where your [ESP](/index.php/ESP "ESP") resides with:
 
 ```
 Shell> map
 
 ```
 
-In this example, `1` is used as the device number. To list the contents of the [ESP](/index.php/ESP "ESP") do:
+In this example, `1` is used as the device number. To list the contents of the [ESP](/index.php/ESP "ESP"):
 
 ```
 Shell> ls fs1:
 
 ```
 
-To view the current boot entries do:
+To view the current boot entries:
 
 ```
 Shell> bcfg boot dump
@@ -142,16 +148,16 @@ Shell> bcfg boot add *N* fs1:\vmlinuz-linux "Arch Linux"
 
 ```
 
-where `*N*` is the location where the entry will be added in the boot menu. 0 is the first menu item. Menu items already existing will be shifted in the menu without being discarded.
+Where `*N*` is the location where the entry will be added in the boot menu. 0 is the first menu item. Menu items already existing will be shifted in the menu without being discarded.
 
-To add the necessary kernel options, first create a file on your ESP:
+Add the necessary kernel options by creating a file on your ESP:
 
 ```
 Shell> edit fs1:\options.txt
 
 ```
 
-In the file add the boot line. For example:
+In the file, add the boot line. For example:
 
 ```
 root=/dev/sda2 ro initrd=\initramfs-linux.img
@@ -162,7 +168,7 @@ root=/dev/sda2 ro initrd=\initramfs-linux.img
 
 Press `F2` to save and then `F3` to exit.
 
-To add these options to your previous entry do:
+Add these options to your previous entry:
 
 ```
 Shell> bcfg boot -opt *N* fs1:\options.txt
@@ -201,7 +207,7 @@ This method will work with almost all UEFI firmware versions you may encounter i
 
 ### Cannot create a new boot entry with efibootmgr
 
-Some kernel and *efibootmgr* version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files
+Some kernel and *efibootmgr* version combinations might refuse to create new boot entries. This could be due to lack of free space in the NVRAM. You can try deleting any EFI dump files:
 
 ```
 # rm /sys/firmware/efi/efivars/dump-*
@@ -209,6 +215,10 @@ Some kernel and *efibootmgr* version combinations might refuse to create new boo
 ```
 
 Or, as a last resort, boot with the `efi_no_storage_paranoia` kernel parameter. You can also try to [downgrade](/index.php/Downgrade "Downgrade") your *efibootmgr* install to version 0.11.0\. This version works with Linux version 4.0.6\. See the bug discussion [FS#34641](https://bugs.archlinux.org/task/34641), in particular the [closing comment](https://bugs.archlinux.org/task/34641#comment111365), for more information.
+
+### Newly created boot entries are removed
+
+Some motherboards may remove boot entries after a couple of boots. This could be due to lack of free space in the NVRAM. To prevent this from occuring, it may help to reduce the amount of Linux boot entries being added by *efibootmgr* by minimizing your entry creation process, as well as reducing the amount of automatic drive boot entries by the [Compatibility Support Module (CSM)](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#CSM_booting "wikipedia:Unified Extensible Firmware Interface") by disabling it from your UEFI settings.
 
 ## See also
 

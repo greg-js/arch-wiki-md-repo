@@ -43,6 +43,8 @@ Related articles
     *   [6.14 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
     *   [6.15 Device does not show up in scan](#Device_does_not_show_up_in_scan)
     *   [6.16 Interference between Headphones and Mouse](#Interference_between_Headphones_and_Mouse)
+    *   [6.17 Bluetooth mouse laggy movements](#Bluetooth_mouse_laggy_movements)
+    *   [6.18 Adapter disappears after suspend/resume](#Adapter_disappears_after_suspend/resume)
 
 ## Installation
 
@@ -617,5 +619,46 @@ If you experience audio stuttering while using a bluetooth mouse and keyboard si
 ```
 # hciconfig hci0 lm ACCEPT,MASTER
 # hciconfig hci0 lp HOLD,SNIFF,PARK
+
+```
+
+### Bluetooth mouse laggy movements
+
+Try edit the file `/var/lib/bluetooth/XX:XX:XX:XX:XX:XX/YY:YY:YY:YY:YY:YY/info` (`XX:XX:XX:XX:XX:XX` - your Bluetooth adapter MAC-address, `YY:YY:YY:YY:YY:YY` - your mouse MAC-address) and add those lines:
+
+```
+[ConnectionParameters]
+MinInterval=6
+MaxInterval=9
+Latency=44
+Timeout=216
+
+```
+
+You can see your local adapter MAC address by running command `hcitool dev`, your can see MAC addresses of currently connected remote devices by running command `hcitool con`
+
+### Adapter disappears after suspend/resume
+
+First, find vendor and product ID of the adapter. For example:
+
+ `lsusb -tv` 
+```
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/12p, 480M
+    ID 1d6b:0002 Linux Foundation 2.0 root hub
+    ...
+    |__ Port 3: Dev 3, If 0, Class=Wireless, Driver=btusb, 12M
+        ID 8087:0025 Intel Corp. 
+    |__ Port 3: Dev 3, If 1, Class=Wireless, Driver=btusb, 12M
+        ID 8087:0025 Intel Corp. 
+    ...
+
+```
+
+In this case, the vendor ID is 8087 and the product ID is 0025.
+
+Then, use [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) to reset the adapter:
+
+```
+# usb_modeswitch -R -v <vendor ID> -p <product ID>
 
 ```

@@ -10,6 +10,8 @@ This article describes how to get [Sinhalese](https://en.wikipedia.org/wiki/Sinh
     *   [1.1 Guide to install Sinhala Unicode Font](#Guide_to_install_Sinhala_Unicode_Font)
 *   [2 Locale](#Locale)
 *   [3 Input methods](#Input_methods)
+    *   [3.1 iBus](#iBus)
+    *   [3.2 FCITX](#FCITX)
 *   [4 See also](#See_also)
 
 ## Fonts
@@ -53,7 +55,17 @@ Immediately you'll be able to read Sinhala Unicode in your programs (If not You 
 
 ## Input methods
 
-The only packaged [input method](/index.php/Input_method "Input method") for Sinhalese is [fcitx-sayura](https://www.archlinux.org/packages/?name=fcitx-sayura) for [Fcitx](/index.php/Fcitx "Fcitx").
+### iBus
+
+For Sinhala support on [ibus](https://www.archlinux.org/packages/?name=ibus) install the following package
+
+*   [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) - M17N engine for IBus
+
+Logout from the current session and log in again after installing. After that, Sinhala input methods should be available on input method configuration panel.
+
+### FCITX
+
+The only packaged fcitx based [input method](/index.php/Input_method "Input method") for Sinhalese is [fcitx-sayura](https://www.archlinux.org/packages/?name=fcitx-sayura) for [Fcitx](/index.php/Fcitx "Fcitx").
 
 While there are also [ibus-sayura](https://github.com/pravins/ibus-sayura) and [scim-sayura](https://www.sayura.net/im/), they are no longer in the [AUR](/index.php/AUR "AUR") (albeit they can still be found in the [AUR archive](/index.php/AUR_archive "AUR archive")).
 

@@ -109,6 +109,20 @@ For any Wifi issues [here](https://www.dell.com/support/article/at/de/atdhs1/sln
 
 The Bluetooth adapter sometimes becomes unavailable after waking up from suspend and can even stay deactivated and invisible after a warm reboot. End of October 2018 [a kernel patch was announced by Dell](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-9370-no-bluetooth-after-suspend/m-p/6204559#M8744). However the issue appears to remain unresolved for at least some users.
 
+A quick workaround is rmmod btusb before suspend and insert btusb after resume. To do this, you can put an executable script of any name in /lib/systemd/system-sleep/.
+
+```
+#!/bin/sh
+if [ "$1" 1 "pre" ]; then
+  systemctl stop bluetooth && rmmod btusb
+elif [ "$1" 1 "post" ]; then
+  modprobe btusb && systemctl start bluetooth
+fi
+
+```
+
+Make sure it is executable by running `sudo chmod +x /lib/systemd/system-sleep/your-script.sh`. Credit to [Cyrus Lien](https://bugs.launchpad.net/dell-sputnik/+bug/1766825/comments/26) for this workaround.
+
 ## Keyboard
 
 The keyboard backlight has a feature that makes it automatically turn off after a given timeout. This timeout can be adjusted by writing into `/sys/class/leds/dell\:\:kbd_backlight/stop_timeout`. For example,

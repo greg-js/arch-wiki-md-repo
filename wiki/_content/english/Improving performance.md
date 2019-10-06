@@ -37,9 +37,9 @@ This article provides information on basic system diagnostics relating to perfor
     *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads/writes)
         *   [2.7.1 Show disk writes](#Show_disk_writes)
         *   [2.7.2 Relocate files to tmpfs](#Relocate_files_to_tmpfs)
-        *   [2.7.3 Compiling in tmpfs](#Compiling_in_tmpfs)
-        *   [2.7.4 Optimize the filesystem](#Optimize_the_filesystem)
-        *   [2.7.5 Swap space](#Swap_space)
+        *   [2.7.3 File systems](#File_systems)
+        *   [2.7.4 Swap space](#Swap_space)
+        *   [2.7.5 Writeback interval and buffer size](#Writeback_interval_and_buffer_size)
     *   [2.8 Storage I/O scheduling with ionice](#Storage_I/O_scheduling_with_ionice)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
@@ -287,19 +287,19 @@ Relocate files, such as your browser profile, to a [tmpfs](/index.php/Tmpfs "Tmp
 
 *   Refer to [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") for syncing browser profiles. Certain browsers might need special attention, see e.g. [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM").
 *   Refer to [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") for syncing any specified folder.
-*   Refer to [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg") for improving compile times when building packages.
+*   Refer to [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg") for improving compile times by building packages in tmpfs.
 
-#### Compiling in tmpfs
+#### File systems
 
-See [Makepkg#Building from files in memory](/index.php/Makepkg#Building_from_files_in_memory "Makepkg").
-
-#### Optimize the filesystem
-
-[Filesystems](/index.php/Filesystems "Filesystems") may provide performance improvements instructions for each filesystem, e.g. [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4").
+Refer to corresponding [file system](/index.php/File_system "File system") page in case there were performance improvements instructions, e.g. [Ext4#Improving performance](/index.php/Ext4#Improving_performance "Ext4") and [XFS#Sync interval](/index.php/XFS#Sync_interval "XFS").
 
 #### Swap space
 
 See [Swap#Performance](/index.php/Swap#Performance "Swap").
+
+#### Writeback interval and buffer size
+
+See [Sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for details.
 
 ### Storage I/O scheduling with ionice
 

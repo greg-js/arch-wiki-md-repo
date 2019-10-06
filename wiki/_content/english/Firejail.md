@@ -39,7 +39,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), or the [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package. A GUI application for use with Firejail is also available, [firetools](https://aur.archlinux.org/packages/firetools/).
+[Install](/index.php/Install "Install") either [firejail](https://www.archlinux.org/packages/?name=firejail), or the [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package. A GUI application for use with Firejail is also available, [firetools](https://www.archlinux.org/packages/?name=firetools).
 
 **Note:** For information about [user_namespaces(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/user_namespaces.7) support in Arch Linux kernels see [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security"). [Firejail can use it even if it is disabled](https://github.com/netblue30/firejail/issues/1842#issuecomment-376642039).
 
@@ -151,7 +151,7 @@ To manually map individual applications execute:
 
 ### Use With hardened_malloc
 
-[hardened-malloc-git](https://aur.archlinux.org/packages/hardened-malloc-git/) is a hardened implementiation of glibc's malloc() allocator, originally written for Android but extended for use on the desktop. While not integrated into glibc yet, it can be used selectively with LD_PRELOAD. The proper way to launch an application within firejail using hardened_malloc is demonstrated below. To make it permanent, you'd need to create your own entry in /usr/local/bin for the desired application.
+[hardened_malloc](https://aur.archlinux.org/packages/hardened_malloc/) is a hardened implementation of glibc's malloc() allocator, originally written for Android but extended for use on the desktop. While not integrated into glibc yet, it can be used selectively with LD_PRELOAD. The proper way to launch an application within firejail using hardened_malloc is demonstrated below. To make it permanent, you'd need to create your own entry in /usr/local/bin for the desired application.
 
  `firejail --env=LD_PRELOAD='/usr/lib/libhardened_malloc.so' /usr/bin/firefox` 
 

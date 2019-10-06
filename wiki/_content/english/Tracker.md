@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [List of applications#Finders](/index.php/List_of_applications#Finders "List of applications")
+*   [List of applications#Full-text indexers](/index.php/List_of_applications#Full-text_indexers "List of applications")

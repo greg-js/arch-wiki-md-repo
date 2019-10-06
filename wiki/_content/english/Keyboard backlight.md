@@ -1,4 +1,47 @@
+There a various methods to control the *keyboard backlight* brightness level.
+
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
+## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 Any vendor](#Any_vendor)
+    *   [1.1 D-Bus](#D-Bus)
+
 ## Any vendor
+
+There are a variety ways to manage the brightness level and different helpers tools to accomplish this, such as [brightnessctl](https://www.archlinux.org/packages/?name=brightnessctl) or [light](https://www.archlinux.org/packages/?name=light).
+
+The the `sys` pseudo-file system exposes an interface to the keyboard backlight. The current brightness level can be get by reading `/sys/class/leds/tpacpi::kbd_backlight/brightness`. For example to get the maximum brightness level:
+
+```
+ cat /sys/class/leds/tpacpi::kbd_backlight/max_brightness
+
+```
+
+To set the brightness to 1:
+
+```
+ echo 1 | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+
+```
+
+When using `brightnessctl` you can get a list of available brightness controls with `brightnessctl --list`, then to show the kbd backlight information:
+
+```
+ brightnessctl --device='tpacpi::kbd_backlight' info
+
+```
+
+This will show the absolute and relative current value and the maximum absolute value. To set a different value:
+
+```
+ brightnessctl --device='tpacpi::kbd_backlight' set 1 
+
+```
+
+### D-Bus
 
 You can control your computer keyboard backlight via the [D-Bus](/index.php/D-Bus "D-Bus") interface. The benefits of using it are that no modification to device files is required and it is vendor agnostic.
 
@@ -49,7 +92,7 @@ if __name__ ==  '__main__':
 
 ```
 
-Alternatively the following bash oneliner will set the backlight to the value specified in argument:
+Alternatively the following bash one-liner will set the backlight to the value specified in the *argument*:
 
 ```
 setKeyboardLight () {
@@ -57,30 +100,3 @@ setKeyboardLight () {
 }
 
 ```
-
-## Asus
-
-**Warning:** The following way is not recommended. It provides world-writeable permissions to the keyboard backlight device file meaning that any and every user can control it.
-
-The keyboard backlight file is usually locked out from editing. To unlock this file at bootup, you will need to create a [systemd](/index.php/Systemd "Systemd") service.
-
- `/usr/lib/systemd/system/asus-kbd-backlight.service` 
-```
-[Unit]
-Description=Asus Keyboard Backlight
-Wants=systemd-backlight@leds:asus::kbd_backlight.service
-After=systemd-backlight@leds:asus::kbd_backlight.service
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/bin/chmod 666 /sys/class/leds/asus::kbd_backlight/brightness
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-You are now able to use a keyboard backlight changer script. For an example, see [ASUS G55VW#keyboard backlight script](/index.php/ASUS_G55VW#keyboard_backlight_script "ASUS G55VW").
-
-For an example of how you might set up a tiny daemon (running as root) that edits these files, hook it up to [dbus](/index.php/Dbus "Dbus"), and map the keyboard brightness keys to [dbus](/index.php/Dbus "Dbus") method calls, see [[1]](https://github.com/GambolingPangolin/KbdBacklight).

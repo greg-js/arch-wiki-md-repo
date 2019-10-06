@@ -1,6 +1,10 @@
 The [Asus C302](https://www.asus.com/uk/2-in-1-PCs/ASUS-Chromebook-Flip-C302CA/) ([also known as](https://www.reddit.com/r/chromeos/comments/7z6208/asus_c302ca_vs_asus_c302_any_differences/) Asus C302C and Asus C302CA) is a [Chromebook](/index.php/Chromebook "Chromebook"), which can have Linux installed. Here are some pointers on the smooth running of Arch Linux.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bootup](#Bootup)
 *   [2 Kernel Modules](#Kernel_Modules)

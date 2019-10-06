@@ -39,7 +39,7 @@ RELRO is a generic mitigation technique to harden the data sections of an ELF bi
 
 *   Full RELRO (-Wl,-z,now) during program load all dynamic symbols are resolved ,allowing for the complete GOT to be marked read-only.
 
-If an application reports partial relro, investigate if the build toolchain passes our LDFLAGS or allows overriding LDFLAGS.
+If an application reports partial relro, investigate if the build toolchain passes our LDFLAGS or allows overriding LDFLAGS. For Go packages investigate if the build method uses "build.go" as pure golang Makefile replacement which does not allow passing of LDFLAGS.
 
 ## Stack Canary
 

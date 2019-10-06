@@ -124,7 +124,7 @@ Lastly, load the VMware modules:
 
 ### Kernel modules
 
-VMware Workstation 15.1 supports kernel 5.0 out of the box. Older versions 14.1 and 12.5.7 have native support for kernels up to 4.13 and 4.12, respectively.
+VMware Workstation 15.5 supports kernel 5.3 out of the box. Older versions 14.1.7 and 12.5.9 have native support for kernels up to 4.18 and 4.12, respectively.
 
 For VMware bundle versions, a collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/). See the INSTALL document found on the repository for the most up-to-date module installation instructions for VMware Workstation versions from 12.5.5 and up.
 

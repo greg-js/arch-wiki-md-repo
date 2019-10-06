@@ -34,14 +34,9 @@ Salt is at its core a Remote Execution solution. Running pre-defined or arbitrar
 
 ### Salt Master
 
-Turning on the Salt master is easy, just turn it on! The default configuration is suitable for the vast majority of installations. The Salt master can be controlled with systemd.
+The default configuration is suitable for the vast majority of installations. [Start](/index.php/Start "Start") and [Enable](/index.php/Enable "Enable") the **salt-master** service.
 
-```
-# systemctl start salt-master
-
-```
-
-The Salt master can also be started in the foreground in debug mode, thus greatly increasing the command output:
+The Salt master can also be started in the foreground in debug mode, greatly increasing the command output:
 
 ```
 # salt-master -l debug
@@ -58,14 +53,9 @@ The Salt minion only needs to be aware of one piece of information to run, the n
 
  `/etc/salt/minion`  `master: saltmaster.example.com` 
 
-Now that the master can be found, start the minion in the same way as the master; with systemd.
+Now that the master can be found, [Start](/index.php/Start "Start") and [Enable](/index.php/Enable "Enable") the **salt-minion** service.
 
-```
-# systemctl start salt-minion
-
-```
-
-Or in debug mode
+Or to run in debug mode
 
 ```
 # salt-minion -l debug
@@ -189,7 +179,14 @@ When **state.apply** is ran, the top file is read, and the states are applied to
 
 ### Scheduling Tasks
 
-[Install](/index.php/Install "Install") [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) on the master and any minions that will be using the scheduler and restart the salt-minion service on that server. Remember, you can easily install [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) and restart the salt-minion service on all minions using a state or a salt '*' command.
+Enable the salt scheduler on the minion with
+
+```
+salt 'minion-name' schedule.enable
+
+```
+
+and [Install](/index.php/Install "Install") [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) on the master and any minions that will be using the scheduler and restart the salt-minion service on that server. Remember, you can easily install [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) and restart the salt-minion service on all minions using a state or a salt '*' command.
 
 Assume samba.sls, stored in /srv/salt, needs to be run every Monday on fs01\. This can be accomplished by placing the following into a state file and running it.
 
@@ -203,6 +200,15 @@ Assume samba.sls, stored in /srv/salt, needs to be run every Monday on fs01\. Th
        - Monday 5:00am
 
 ```
+
+Run
+
+```
+salt 'minion-name' schedule.list
+
+```
+
+to verify the job was placed on the schedule.
 
 A point to note. In the config file above, specifying state.sls for the function is how you specify job_args is receiving a state called samba. Do NOT try substituting state.sls with samba.sls or any other sls file. Function simply tells the scheduler how to treat jobs_args.
 

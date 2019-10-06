@@ -1091,7 +1091,7 @@ You can use the following website to get your device's coordinates along with a 
 47.197523, 7.698578  "thatfatnerdfromnextdoor" # Herzogenbuchsee, Switzerland
 -43.590414, 172.380892 "grawlinson" # Christchurch, New Zealand
 36.718911, -4.427087 "AlonsoLP" # Málaga, Spain
-43.600978, 1.443286 "MiniKochi" # Toulouse, France
+45.778709, 4.854122 "MiniKochi" # Lyon, France
 40.054784,-74.2006784 "cozypjsam" # Lakewood, NJ, USA
 42.815365, -1.659304 "tuxpain" # Pamplona, Spain
 40.954970, 17.297039 "max.bra" # Monopoli, Italy
@@ -1121,5 +1121,6 @@ You can use the following website to get your device's coordinates along with a 
 46.529175, 8.608885 "pipep" # Airolo, Switzerland
 50.822755, -4.365627 "Stewart Little" # Holsworthy, UK
 -33.988687, 25.472376 "lquidfire" # Port Elizabeth, South Africa
+-22.85694,-43.25912 "blx32" # Rio de Janeiro, Rio de Janeiro, Brazil
 
 ```

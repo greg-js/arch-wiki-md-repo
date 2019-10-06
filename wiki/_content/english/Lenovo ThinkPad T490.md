@@ -35,7 +35,7 @@ Even after doing this, the mouse pointer still jumps around when clicking the bu
 
 With the BIOS Version 1.52 (this problem is known to occur on 1.52, it might still happen on other versions too), the CPU tends to throttle down to 400 MHz earlier than it should. In particular, this can be seen when using [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-The problem can be worked around by installing [throttled](https://www.archlinux.org/packages/?name=throttled), as explained in the wiki entry for the same problem on the [Lenovo ThinkPad T480s](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T480s#Thermal_Throttling_Fix).
+After installing BIOS Version 1.53, this problem is fixed.
 
 ## Speaker noise issue
 

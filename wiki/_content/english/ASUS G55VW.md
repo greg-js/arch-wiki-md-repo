@@ -1,6 +1,10 @@
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS G55VW ROG Laptop
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Bootloader](#Bootloader)
     *   [1.1 Boot on usb](#Boot_on_usb)
@@ -8,7 +12,6 @@ This page contains instructions, tips, pointers, and links for installing and co
 *   [2 Graphics Drivers](#Graphics_Drivers)
 *   [3 Screen Backlight](#Screen_Backlight)
 *   [4 Other Keys](#Other_Keys)
-    *   [4.1 keyboard backlight script](#keyboard_backlight_script)
 
 ## Bootloader
 
@@ -81,7 +84,7 @@ See [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 ## Screen Backlight
 
-Using the nvidia drivers provided in the extra repo screen the backlight-adjust keys(`Fn+F5`, `Fn+F6`) do not work. To get around this, you need to grab ({aur|nvidiabl-git}). Once you have installed that package, you can map your keys to the script.
+Using the nvidia drivers provided in the extra repo screen the backlight-adjust keys(`Fn+F5`, `Fn+F6`) do not work. To get around this, you need to grab [nvidiabl-git](https://aur.archlinux.org/packages/nvidiabl-git/). Once you have installed that package, you can map your keys to the script.
 
 ## Other Keys
 
@@ -124,114 +127,3 @@ replace `3.4.6-1-ARCH` by your output for `uname -r`
 # echo 3 >> /sys/class/leds/asus\:\:kbd_backlight/brightness
 
 ```
-
-### keyboard backlight script
-
-In the same style that for screen backlight. As root, create the file `/usr/local/share/kbd_backlight`:
-
-```
-#!/bin/bash
-
-path="/sys/class/leds/asus::kbd_backlight"
-#path="/sys/class/leds/asus\:\:kbd_backlight"
-
-# max should be 3
-max=$(cat ${path}/max_brightness)
-# step: represent the difference between previous and next brightness
-step=1
-previous=$(cat ${path}/brightness)
-
-function commit {
-	if [[ $1 = [0-9]* ]]
-	then 
-		if [[ $1 -gt $max ]]
-		then 
-			next=$max
-		elif [[ $1 -lt 0 ]]
-		then 
-			next=0
-		else 
-			next=$1
-		fi
-		echo $next >> ${path}/brightness
-		exit 0
-	else 
-		exit 1
-	fi
-}
-
-case "$1" in
- up)
-     commit $(($previous + $step))
-  ;;
- down)
-     commit $(($previous - $step))
-  ;;
- max)
-	 commit $max
-  ;;
- on)
-	 $0 max
-  ;;
- off)
-	 commit 0
-  ;;
- show)
-	 echo $previous
-  ;;
- night)
-	 commit 1 
-	 ;;
- allowusers)
-	 # Allow members of users group to change brightness
-	 sudo chgrp users ${path}/brightness
-	 sudo chmod g+w ${path}/brightness
-  ;;
- disallowusers)
-	 # Allow members of users group to change brightness
-	 sudo chgrp root ${path}/brightness
-	 sudo chmod g-w ${path}/brightness
-  ;;
- *)
-	 commit	$1
-esac
-
-exit 0
-
-```
-
-Allow file to be executed :
-
-```
-# chmod +x /usr/local/share/kbd_backlight
-
-```
-
-Allow users to change brightness at each boot :
-
-```
-# echo "/bin/bash /usr/local/share/kbd_backlight allowusers" >> /etc/rc.local
-
-```
-
-Adding to `.zshrc` or `.bashrc` :
-
-```
-alias -g "kbd_backlight"="/bin/bash /usr/local/share/kbd_backlight"
-
-```
-
-allows to easy toggle backlight in terminal :
-
-```
-$ kbd_backlight up
-$ kbd_backlight down
-$ kbd_backlight max
-$ kbd_backlight off
-$ kbd_backlight night
-$ kbd_backlight 2
-$ kbd_backlight show
-
-```
-
-And finally, add some convenient keyboard shortcuts [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").

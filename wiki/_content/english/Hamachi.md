@@ -1,6 +1,10 @@
 [Hamachi](https://www.vpn.net/) is a proprietary, commercial VPN software by LogMeIn, Inc. With Hamachi you can organize two or more computers with an Internet connection into their own virtual network for direct secure communication.
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
+
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)

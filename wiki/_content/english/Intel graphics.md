@@ -31,7 +31,9 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Setting scaling mode](#Setting_scaling_mode)
     *   [5.2 Hardware accelerated H.264 decoding on GMA 4500](#Hardware_accelerated_H.264_decoding_on_GMA_4500)
-    *   [5.3 Setting brightness and gamma](#Setting_brightness_and_gamma)
+    *   [5.3 Alternative OpenGL Driver (Iris)](#Alternative_OpenGL_Driver_(Iris))
+    *   [5.4 Overriding reported OpenGL version](#Overriding_reported_OpenGL_version)
+    *   [5.5 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Tearing](#Tearing)
     *   [6.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_(VSYNC))
@@ -62,7 +64,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver for Gen4 and newer GPUs (GMA 3000 from 2006 and newer). See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). Also, the modesetting driver will not be benefited by Intel GuC/HuC/DMC firmware.
+**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver for Gen4 and newer GPUs (GMA 3000 from 2006 and newer). See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/modesetting.4). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Loading
 
@@ -228,6 +230,18 @@ where `*param*` is one of `"Full"`, `"Center"` or `"Full aspect"`.
 ### Hardware accelerated H.264 decoding on GMA 4500
 
 The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[6]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[7]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[8]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
+
+### Alternative OpenGL Driver (Iris)
+
+As of Mesa 19.2, a new OpenGL driver, Iris, is available for testing. Certain applications run faster with it. You may experimentally enable it by setting the `MESA_LOADER_DRIVER_OVERRIDE=iris` [environment variable](/index.php/Environment_variable "Environment variable") before starting any OpenGL application. This setting does not affect Vulkan applications.
+
+**Warning:** Iris is still experimental - applications might crash or render incorrectly. Use with care and [report found bugs/regressions](https://gitlab.freedesktop.org/groups/mesa/-/issues).
+
+### Overriding reported OpenGL version
+
+The `MESA_GL_VERSION_OVERRIDE` [environment variable](/index.php/Environment_variable "Environment variable") can be used to override the reported OpenGL version to any application. For example, setting `MESA_GL_VERSION_OVERRIDE=4.5` will report OpenGL 4.5.
+
+**Warning:** You can use this variable to report any known OpenGL version, even if it is not supported by the GPU. Some applications might no longer crash, some may start crashing - you probably do not want to set this variable globally.
 
 ### Setting brightness and gamma
 

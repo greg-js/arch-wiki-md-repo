@@ -23,7 +23,7 @@ Related articles
     *   [2.6 分析工具](#分析工具)
     *   [2.7 日志](#日志)
     *   [2.8 工具](#工具)
-    *   [2.9 莫尔斯码练习](#莫尔斯码练习)
+    *   [2.9 练习莫尔斯码](#练习莫尔斯码)
     *   [2.10 其他](#其他)
 
 ## 通用信息
@@ -156,7 +156,7 @@ These are audio alarm recordings of a North American English speaker that do not
 
 ### 数字语音
 
-**FreeDV** — is a Digital Voice mode for HF radio. It uses the free and open Codec2 voice codec to enable efficient narrow bandwith, low bitrate voice communication ideally suited for shortwave radio contacts. A SSB radio connected to a computer running the FreeDV GUI application are all that is needed to start using the FreeDV mode. FreeDV as well as Codec2 are available to Arch Linux via the AUR system. Both are needed for FreeDV to work!
+**FreeDV** — 是一个用于 HF 频段的数字语音模式。它使用的是开源免费的 Codec2 语音编解码器，有着窄带宽、低数据速率的特点，特别适用于短波无线电通联。使用FreeDV所需要的只有一台运行Free DV GUI程序的计算机，以及 SSB 模式的电台。对于 Arch Linux，FreeDV 和 Codec2 都可以从 AUR 获取到。两者都需要安装好才能使用 FreeDV！
 
 *   [http://www.rowetel.com/codec2.html](http://www.rowetel.com/codec2.html) [codec2](https://www.archlinux.org/packages/?name=codec2)
 
@@ -166,16 +166,16 @@ These are audio alarm recordings of a North American English speaker that do not
 
 *   [gpredict](https://aur.archlinux.org/packages/gpredict/) – 实时卫星追踪、卫星轨道预测
 *   [hamsolar](https://aur.archlinux.org/packages/hamsolar/) – 在桌面上显示当前太阳活动指数
-*   [splat](https://aur.archlinux.org/packages/splat/) – rf signal propagation, loss, and terrain analysis
+*   [splat](https://aur.archlinux.org/packages/splat/) – 无线电信号传播、损耗和地形分析
 *   [sunclock](https://aur.archlinux.org/packages/sunclock/) – Useful for predicting grayline propagation paths
-*   [xnec2c](https://aur.archlinux.org/packages/xnec2c/) – Electromagnetic antenna modeler
+*   [xnec2c](https://aur.archlinux.org/packages/xnec2c/) – 天线模拟软件
 
 ### 日志
 
 *   [cqrlog-bin](https://aur.archlinux.org/packages/cqrlog-bin/) – 常见的Linux日志程序
 *   [fdlog](https://aur.archlinux.org/packages/fdlog/) – a Field Day Logger with networked nodes
 *   [klog](https://aur.archlinux.org/packages/klog/) – 运行在KDE上的业余无线电日志程序
-*   [qle](https://aur.archlinux.org/packages/qle/) – QSO Logger and log Editor for amateur radio operators written in Perl
+*   [qle](https://aur.archlinux.org/packages/qle/) – QSO 日志记录器和编辑器，用 Perl 编写
 *   [tlf](https://aur.archlinux.org/packages/tlf/) – a console mode networked logging and contest program
 *   [trustedqsl](https://aur.archlinux.org/packages/trustedqsl/) – QSL application for ARRL's Logbook of the World
 *   [xlog](https://aur.archlinux.org/packages/xlog/) – a logging program for amateur radio operators.
@@ -187,7 +187,7 @@ These are audio alarm recordings of a North American English speaker that do not
 *   [cty](https://aur.archlinux.org/packages/cty/) – 实体（国家）、前缀、呼号等信息，供业余无线电日志程序使用
 *   [dxcc](https://aur.archlinux.org/packages/dxcc/) – a small program for determining ARRL DXCC entity of a ham radio callsign
 
-### 莫尔斯码练习
+### 练习莫尔斯码
 
 *   [aldo](https://aur.archlinux.org/packages/aldo/)
 *   [cutecw](https://aur.archlinux.org/packages/cutecw/)

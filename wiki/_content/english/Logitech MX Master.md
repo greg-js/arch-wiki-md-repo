@@ -11,6 +11,7 @@
 *   [3 Mappings for extra buttons](#Mappings_for_extra_buttons)
 *   [4 Power](#Power)
 *   [5 Smart shift](#Smart_shift)
+*   [6 Laggy mouse movements in Bluetooth mode](#Laggy_mouse_movements_in_Bluetooth_mode)
 
 ## Usage
 
@@ -123,10 +124,14 @@ $ pkill xbindkeys && xbindkeys
 
 ## Power
 
-Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar ([solaar](https://www.archlinux.org/packages/?name=solaar)) has s system tray utility.
+Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar ([solaar](https://www.archlinux.org/packages/?name=solaar)) has a system tray utility.
 
 ## Smart shift
 
 In order to change the sensitivity of changing the mouse wheel mode (between hyperfast and click-to-click), install [solaar](https://www.archlinux.org/packages/?name=solaar). A slider appears that can be set somewhere between 0 and 50 (inclusive). 0 means always in hyperfast mode, 50 means always in click-to-click mode.
 
 To change the sensitivity, change this value somewhere between 0 and 50.
+
+## Laggy mouse movements in Bluetooth mode
+
+Try this solution: [Bluetooth#Bluetooth_mouse_laggy_movements](/index.php/Bluetooth#Bluetooth_mouse_laggy_movements "Bluetooth")

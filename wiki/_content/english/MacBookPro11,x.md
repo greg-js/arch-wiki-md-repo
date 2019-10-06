@@ -48,6 +48,7 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
     *   [7.3 Backlight keys / Suspend support](#Backlight_keys_/_Suspend_support)
 *   [8 Discussions](#Discussions)
 *   [9 See also](#See_also)
+*   [10 Example](#Example)
 
 ## Overview
 
@@ -480,3 +481,7 @@ Updated 2016-07-21
 
 *   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
 *   [Mac](/index.php/Mac "Mac")
+
+## Example
+
+*   [https://github.com/GoGoGadgetRepo/ArchInstallMBP](https://github.com/GoGoGadgetRepo/ArchInstallMBP)

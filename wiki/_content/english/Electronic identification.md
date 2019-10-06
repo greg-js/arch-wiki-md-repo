@@ -84,9 +84,15 @@ For [firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/) and other
 
 #### For new cards issued since December 2018
 
-The [opensc](https://www.archlinux.org/packages/?name=opensc) package provides drivers for EstEID 2018+ [[2]](https://github.com/OpenSC/OpenSC/pull/1635).
+The [opensc-git](https://aur.archlinux.org/packages/opensc-git/) package provides drivers for EstEID 2018+ [[2]](https://github.com/OpenSC/OpenSC/pull/1635).
 
-**Note:** As of August 05 2019, the opensc package included in the repositories does not yet contain the drivers for EstEID 2018+, to get around this, you may build opensc manually from source, or alternatively, install [opensc-git](https://aur.archlinux.org/packages/opensc-git/). qdigidoc4 requires opensc which conflicts with this package. To work around this, remove the dependency on opensc in the qdigidoc4 PKGBUILD file and rebuild.
+**Note:** qdigidoc4 requires opensc but you need to remove it before installing opensc-git. To work around this, just force remove opensc with `pacman -Rdd opensc`.
+
+Currently the default pkcs11 provider for Chrome is unsuitable (it asks PIN2 on authentication) (see [[3]](https://github.com/OpenSC/OpenSC/issues/1818)). Fix it by
+
+1.  deleting `~/.pki/nssdb/pkcs11.txt`
+2.  running `/usr/bin/pksc11-register -m /usr/lib/onepin-opensc-pkcs11.so`
+3.  and appending `-m /usr/lib/onepin-opensc-pkcs11.so` to the `Exec` line of `/etc/xdg/autostart/pkcs11-register.desktop`.
 
 ### Germany
 

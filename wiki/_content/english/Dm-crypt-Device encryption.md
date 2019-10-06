@@ -966,7 +966,10 @@ The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same a
 
 #### With a keyfile embedded in the initramfs
 
-**Warning:** Use an embedded keyfile **only** if you have some form of authentication mechanism beforehand that protects the keyfile sufficiently. Otherwise auto-decryption will occur, defeating completely the purpose of block device encryption.
+**Warning:** Use an embedded keyfile **only** if you protect the keyfile sufficiently by:
+
+*   Using some form of authentication earlier in the boot process. Otherwise auto-decryption will occur, defeating completely the purpose of block device encryption.
+*   `/boot` is encrypted. Otherwise root on a different installation (including the [live environment](/index.php/Installation_guide#Boot_the_live_environment "Installation guide")) can extract your key from the initramfs, and unlock the device without any other authentication.
 
 This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Encrypted_/boot "GRUB") feature, in order to avoid entering two passphrases during boot.
 

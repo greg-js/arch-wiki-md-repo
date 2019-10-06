@@ -223,7 +223,7 @@ Refer to this page:[[1]](https://help.ubuntu.com/community/PortableDevices/iPhon
 
 #### The iFuse Way
 
-**Note:** If your device has a screen password, one must unlock the device to gain access through the USB interface.
+**Note:** If your device has a screen password, you must unlock the device to gain access through the USB interface.
 
 [Install](/index.php/Install "Install") the [ifuse](https://www.archlinux.org/packages/?name=ifuse) package.
 

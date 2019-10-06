@@ -9,47 +9,50 @@
 
 获取更详细的介绍请浏览[项目官方网站](http://www.winehq.org/)和[wiki](http://wiki.winehq.org/)页面。
 
+<input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
+
 ## Contents
 
-*   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 配置](#.E9.85.8D.E7.BD.AE)
+<label class="toctogglelabel" for="toctogglecheckbox"></label>
+
+*   [1 安装](#安装)
+*   [2 配置](#配置)
     *   [2.1 WINEPREFIX](#WINEPREFIX)
     *   [2.2 WINEARCH](#WINEARCH)
-    *   [2.3 显卡驱动](#.E6.98.BE.E5.8D.A1.E9.A9.B1.E5.8A.A8)
-    *   [2.4 声音](#.E5.A3.B0.E9.9F.B3)
-        *   [2.4.1 MIDI 支持](#MIDI_.E6.94.AF.E6.8C.81)
-    *   [2.5 其他函数库](#.E5.85.B6.E4.BB.96.E5.87.BD.E6.95.B0.E5.BA.93)
-    *   [2.6 字体](#.E5.AD.97.E4.BD.93)
-    *   [2.7 启动器和菜单](#.E5.90.AF.E5.8A.A8.E5.99.A8.E5.92.8C.E8.8F.9C.E5.8D.95)
-        *   [2.7.1 创建菜单项](#.E5.88.9B.E5.BB.BA.E8.8F.9C.E5.8D.95.E9.A1.B9)
-        *   [2.7.2 Gnome3 中清理 Wine 菜单启动项](#Gnome3_.E4.B8.AD.E6.B8.85.E7.90.86_Wine_.E8.8F.9C.E5.8D.95.E5.90.AF.E5.8A.A8.E9.A1.B9)
-        *   [2.7.3 修复 KDE 4 菜单问题](#.E4.BF.AE.E5.A4.8D_KDE_4_.E8.8F.9C.E5.8D.95.E9.97.AE.E9.A2.98)
-*   [3 运行 Windows 程序](#.E8.BF.90.E8.A1.8C_Windows_.E7.A8.8B.E5.BA.8F)
-*   [4 技巧和技巧](#.E6.8A.80.E5.B7.A7.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [4.1 取消注册Wine文件关联](#.E5.8F.96.E6.B6.88.E6.B3.A8.E5.86.8CWine.E6.96.87.E4.BB.B6.E5.85.B3.E8.81.94)
+    *   [2.3 显卡驱动](#显卡驱动)
+    *   [2.4 声音](#声音)
+        *   [2.4.1 MIDI 支持](#MIDI_支持)
+    *   [2.5 其他函数库](#其他函数库)
+    *   [2.6 字体](#字体)
+    *   [2.7 启动器和菜单](#启动器和菜单)
+        *   [2.7.1 创建菜单项](#创建菜单项)
+        *   [2.7.2 Gnome3 中清理 Wine 菜单启动项](#Gnome3_中清理_Wine_菜单启动项)
+        *   [2.7.3 修复 KDE 4 菜单问题](#修复_KDE_4_菜单问题)
+*   [3 运行 Windows 程序](#运行_Windows_程序)
+*   [4 技巧和技巧](#技巧和技巧)
+    *   [4.1 取消注册Wine文件关联](#取消注册Wine文件关联)
     *   [4.2 Dual Head with different resolutions](#Dual_Head_with_different_resolutions)
     *   [4.3 exe-thumbnailer](#exe-thumbnailer)
     *   [4.4 CSMT patch](#CSMT_patch)
     *   [4.5 CSMT via wine-staging](#CSMT_via_wine-staging)
         *   [4.5.1 Further Information](#Further_Information)
     *   [4.6 Changing the language](#Changing_the_language)
-    *   [4.7 安装 Microsoft Office](#.E5.AE.89.E8.A3.85_Microsoft_Office)
-    *   [4.8 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
-    *   [4.9 Burning optical media](#Burning_optical_media)
-    *   [4.10 OpenGL 模式](#OpenGL_.E6.A8.A1.E5.BC.8F)
-    *   [4.11 将 Wine 作为 Win16/Win32 程序的解释器](#.E5.B0.86_Wine_.E4.BD.9C.E4.B8.BA_Win16.2FWin32_.E7.A8.8B.E5.BA.8F.E7.9A.84.E8.A7.A3.E9.87.8A.E5.99.A8)
-    *   [4.12 Wine 控制台](#Wine_.E6.8E.A7.E5.88.B6.E5.8F.B0)
-    *   [4.13 Winetricks](#Winetricks)
-    *   [4.14 Installing .NET framework 4.0](#Installing_.NET_framework_4.0)
-    *   [4.15 Crackling sound when using PulseAudio](#Crackling_sound_when_using_PulseAudio)
-    *   [4.16 16 Bit Programs](#16_Bit_Programs)
-    *   [4.17 独立章节](#.E7.8B.AC.E7.AB.8B.E7.AB.A0.E8.8A.82)
-*   [5 第三方工具](#.E7.AC.AC.E4.B8.89.E6.96.B9.E5.B7.A5.E5.85.B7)
+    *   [4.7 Proper mounting of optical media images](#Proper_mounting_of_optical_media_images)
+    *   [4.8 Burning optical media](#Burning_optical_media)
+    *   [4.9 OpenGL 模式](#OpenGL_模式)
+    *   [4.10 将 Wine 作为 Win16/Win32 程序的解释器](#将_Wine_作为_Win16/Win32_程序的解释器)
+    *   [4.11 Wine 控制台](#Wine_控制台)
+    *   [4.12 Winetricks](#Winetricks)
+    *   [4.13 Installing .NET framework 4.0](#Installing_.NET_framework_4.0)
+    *   [4.14 Crackling sound when using PulseAudio](#Crackling_sound_when_using_PulseAudio)
+    *   [4.15 16 Bit Programs](#16_Bit_Programs)
+    *   [4.16 解决中文乱码](#解决中文乱码)
+*   [5 第三方工具](#第三方工具)
     *   [5.1 CrossOver](#CrossOver)
-    *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux.2FPlayOnMac)
+    *   [5.2 PlayOnLinux/PlayOnMac](#PlayOnLinux/PlayOnMac)
     *   [5.3 PyWinery](#PyWinery)
     *   [5.4 Q4wine](#Q4wine)
-*   [6 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
+*   [6 相关链接](#相关链接)
 
 ## 安装
 
@@ -71,7 +74,7 @@ Wine可通过开启[Multilib](/index.php/Multilib "Multilib")仓库来安装[win
 
 总结一下，配置`WINEARCH=win32`后，x86_64平台的Arch和i686平台的Arch完全相同。
 
-**注意:** 如果在64位环境中执行`winetricks`或其它程序出现问题，请试试创建一个新的32位`WINEPREFIX`. 参见下面的[#使用 WINEARCH](#.E4.BD.BF.E7.94.A8_WINEARCH)
+**注意:** 如果在64位环境中执行`winetricks`或其它程序出现问题，请试试创建一个新的32位`WINEPREFIX`. 参见下面的[#使用 WINEARCH](#使用_WINEARCH)
 
 ## 配置
 
@@ -125,7 +128,7 @@ export WINEARCH=win32
 
 ```
 
-**提示：** 编辑 [~/.bashrc](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.A4.96.E5.A3.B3.E5.92.8C.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F "Bash (简体中文)")，使得 WINEPREFIX 和 WINEARCH 永久生效。
+**提示：** 编辑 [~/.bashrc](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#外壳和环境变量 "Bash (简体中文)")，使得 WINEPREFIX 和 WINEARCH 永久生效。
 
 **注意:** 不必手动在 `wineprefixes` 文件夹下建立 steam 文件夹，Wine会自动创建不存在的系统目录。
 
@@ -443,7 +446,7 @@ LC_ALL=it_IT.UTF-8 wine */path/to/program*
 
 ```
 
-### 安装 Microsoft Office
+=== 安装 Microsoft Office ===/
 
 更新（2013年4月9日）：对于 Wine 1.5.27，下面所述的步骤已经不必要了。先安装 winbind（包含在 [samba](https://www.archlinux.org/packages/?name=samba) 中），然后执行：
 
@@ -509,7 +512,7 @@ To make the setting permanent, create a configuration file in `/etc/binfmt.d` wi
 
 说明一下，和 initscripts 不同，systemd 会自动挂载 `/proc/sys/fs/binfmt_misc`，所以只需要通过临时文件机制向内核写入配置即可。
 
-更多信息，参见 [Systemd (简体中文)#临时文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.B8.B4.E6.97.B6.E6.96.87.E4.BB.B6 "Systemd (简体中文)")。
+更多信息，参见 [Systemd (简体中文)#临时文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#临时文件 "Systemd (简体中文)")。
 
 现在，直接运行Windows程序试试：
 
@@ -592,7 +595,7 @@ echo 1 > /proc/sys/abi/ldt16
 
 Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/msg450821.html)
 
-### 独立章节
+### 解决中文乱码
 
 中文乱码解决，新建一个reg文件（例如 zh.reg）添加如下内容：
 

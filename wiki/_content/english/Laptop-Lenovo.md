@@ -132,6 +132,7 @@ install CD version
  | HDMI audio requires nvhda module |
 | [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA | Touchpad (No) |
 | [Lenovo ThinkPad P1](/index.php/Lenovo_ThinkPad_P1 "Lenovo ThinkPad P1") | 2018.12 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | Webcam (Yes), multi-monitor (yes) |
+| [Lenovo ThinkPad P1 (Gen 2)](/index.php/Lenovo_ThinkPad_P1_(Gen_2) "Lenovo ThinkPad P1 (Gen 2)") | 2019.09.01 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate working | NA | Webcam (not tested), multi-monitor (yes) |
 | [Lenovo ThinkPad P52s](/index.php/Lenovo_ThinkPad_P52s "Lenovo ThinkPad P52s") | 2019.02 | Yes* (See Remarks) | Yes | Yes | Yes | Yes | Suspend (Yes), Hibernate (Yes) | Not tested | Webcam (Yes), Multi-monitor (Yes), Card Reader (Yes), Smartcard Reader (Yes), NFC (No, [see this](https://github.com/nfc-tools/libnfc/issues/455)), Fingerprint (No, [see this](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745)) | *Intel graphics needs to be specified in the Xorg config for Xorg to work, see [Lenovo ThinkPad P52s](/index.php/Lenovo_ThinkPad_P52s "Lenovo ThinkPad P52s") |
 
 #### T series
@@ -160,6 +161,7 @@ install CD version
 | [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | ? | Yes | no beep | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader |
 | [Lenovo ThinkPad T490](/index.php/Lenovo_ThinkPad_T490 "Lenovo ThinkPad T490") | Yes | Yes | Yes | ? | Yes | Yes | Yes | NA | Thunderbolt 3 (USB-C); SD Card reader | Some problems with touchpad |
+| [Lenovo ThinkPad T495](/index.php?title=Lenovo_ThinkPad_T495&action=edit&redlink=1 "Lenovo ThinkPad T495 (page does not exist)") | Yes | Yes | Yes | ? | Yes | ? | Yes | NA | SD Card reader |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
@@ -219,6 +221,8 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | [Lenovo ThinkPad Yoga 260](/index.php/Lenovo_ThinkPad_Yoga_260 "Lenovo ThinkPad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | Yes | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
+| [Lenovo Yoga 530](/index.php?title=Lenovo_Yoga_530&action=edit&redlink=1 "Lenovo Yoga 530 (page does not exist)") | 2019.09.01 | Yes | Yes | Not tested | Yes | Not tested | Not tested | Not tested | SD card (Not tested), Webcam (Yes), Fingerprint Reader (Not tested), Touchscreen (Yes), Tablet (Partial) | Trouble with touchpad, but worked with kernel parameters "i8042.noloop i8042.nomux i8042.nopnp i8042.reset" and xf86-input-synaptics |
+| [Lenovo Yoga 710](/index.php?title=Lenovo_Yoga_710&action=edit&redlink=1 "Lenovo Yoga 710 (page does not exist)") | NA | Yes | Yes | Yes | Yes | Not tested | Yes | Not tested | SD card (Yes), Webcam (Yes), Touchscreen (partially) | Touchscreen worked just from sleep, not from power off. Probably easy fix, disabled for unusage |
 
 #### Helix Series
 

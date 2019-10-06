@@ -235,6 +235,8 @@ If using *tsocks*, the configuration takes place in `/etc/tsocks.conf`. See [tso
 server = 127.0.0.1
 server_port = 8080
 server_type = 5
+default_user = ""
+default_pass = ""
 ```
 
 ### curl and pacman

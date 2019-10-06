@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"), revisada por última vez el **2018-12-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=557281) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"), revisada por última vez el **2019-10-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=581420) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -37,6 +37,7 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
         *   [3.1.1 Escenario de ejemplo: módulo defectuoso](#Escenario_de_ejemplo:_módulo_defectuoso)
     *   [3.2 Reiniciar en un intérprete de línea de órdenes de superusuario y solucionar el problema](#Reiniciar_en_un_intérprete_de_línea_de_órdenes_de_superusuario_y_solucionar_el_problema)
 *   [4 Administrar paquetes](#Administrar_paquetes)
+    *   [4.1 Arreglar un sistema roto](#Arreglar_un_sistema_roto)
 *   [5 fuser](#fuser)
 *   [6 Permisos de sesión](#Permisos_de_sesión)
 *   [7 Mensaje: "error while loading shared libraries"](#Mensaje:_"error_while_loading_shared_libraries")
@@ -135,8 +136,8 @@ Tenga en cuenta que, independientemente de la opción elegida, los mensajes del 
 
 Esta es una administración básica que se aplica a la mayoría de los emuladores de terminal, incluidas las consolas virtuales (vc):
 
-*   Pulse `Ctrl+S` para pausar la salida
-*   Y `Ctrl+Q` para reanudarla
+*   Pulse `Ctrl+s` para pausar la salida
+*   Y `Ctrl+q` para reanudarla
 
 Esto pausa no solo la salida, sino también los programas que intentan imprimir en el terminal, ya que bloquearán sobre las llamadas `write()` mientras la salida esté en pausa. Si su *init* parece congelado, asegúrese de que la consola del sistema no esté en pausa.
 
@@ -146,7 +147,7 @@ Para ver los mensajes de error que ya han mostrado, véase [Mantener los mensaje
 
 El desplazamiento hacia atrás *(scrollback)* permite al usuario retroceder y ver el texto que se desplazó de la pantalla de una consola de texto. Esto es posible gracias a un búfer creado entre el adaptador de vídeo y el dispositivo de visualización llamado búfer de desplazamiento. Por defecto, las combinaciones de teclas `Shift+PageUp` y `Shift+PageDown` desplazan el búfer hacia arriba y hacia abajo respectivamente.
 
-Si al desplazarse hacia arriba hasta el final no le muestra la información suficiente, necesita expandir su búfer de desplazamiento para tener más salida. Esto se hace ajustando la consola de framebuffer del kernel (fbcon) con el [parámetro del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `fbcon=scrollback:Nk` donde `N` es el tamaño de búfer deseado es kilobytes. El tamaño predeterminado es 32k.
+Si al desplazarse hacia arriba hasta el final no le muestra la información suficiente, necesita expandir su búfer de desplazamiento para tener más salida. Esto se hace ajustando la consola de framebuffer del kernel (fbcon) con el [parámetro del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `fbcon=scrollback:Nk` donde `N` es el tamaño de búfer deseado en kilobytes. El tamaño predeterminado es 32k.
 
 Si esto no le funciona, es posible que su consola de framebuffer no esté habilitada correctamente. Véase la [documentación sobre la consola de framebuffer](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) para conocer otros parámetros, por ejemplo para cambiar el controlador de framebuffer.
 
@@ -174,7 +175,7 @@ Obtener un intérprete de línea de órdenes interactivo en algún momento del p
 *   `emergency` inicia un intérprete de línea de órdenes incluso más temprano, antes de que se instalen la mayoría de los sistemas de archivos
 *   `init=/bin/sh` (como último recurso) cambia el programa init a un intérprete de línea de órdenes de superusuario *(root)*. `rescue` y `emergency` dependen de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), pero esto debería funcionar incluso si *systemd* falla
 
-Otra opción es el intérprete de línea de órdenes de depuración de systemd que añade un intérprete de línea de órdenes de superusuario en `tty9` (accesible con Ctrl+Alt+F9). Se puede habilitar añadiendo `systemd.debug-shell` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un intérprete de línea de órdenes de superusuario en cada arranque.
+Otra opción es el intérprete de línea de órdenes de depuración de systemd que añade un intérprete de línea de órdenes de superusuario en `tty9` (accesible con `Ctrl+Alt+F9`). Se puede habilitar añadiendo `systemd.debug_shell` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Utilizar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un intérprete de línea de órdenes de superusuario en cada arranque.
 
 ### Pantalla en blanco con una tarjeta gráfica Intel
 
@@ -285,18 +286,68 @@ Necesitará un intérprete de línea de órdenes de superusuario para realizar c
 **Nota:** En este punto, el sistema de archivos raíz se montará como **solo lectura**. Ejecute `# mount -o remount,rw /` para poder realizar cambios.
 
 *   Reinicie con el parámetro del kernel `rescue`, `rd.rescue`, `single`, `s`, `S`, o { {ic|1}} para poder iniciar sesión justo después de montar los sistemas de archivos locales.
-*   Reinicie con el parámetro del kernel `systemd.debug-shell=1` para obtener un intérprete de línea de órdenes de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
+*   Reinicie con el parámetro del kernel `systemd.debug_shell` para obtener un intérprete de línea de órdenes de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
 *   Experimente reiniciando con diferentes conjuntos de parámetros del kernel para posibilitar la deshabilitación de la función del kernel que está causando el pánico. Pruebe los "viejos recursos" `acpi=off` y `nolapic`.
 
 **Sugerencia:** Véase `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del kernel de Linux para ver todos los parámetros.
 
 *   Como último recurso, arranque con el **CD de instalación de Arch Linux** y monte el sistema de archivos raíz en `/mnt` y luego ejecute `# arch-chroot /mnt`.
+*   Desactive el servicio o programa que está causando el problema, revierta la actualización defectuosa o solucione el problema de configuración.
 
-Deshabilite el servicio o programa que causa el pánico, invierta una actualización defectuosa o solucione un problema de configuración.
+**Sugerencia:** Puede ser necesario generar una nueva imagen de [disco RAM inicial](https://en.wikipedia.org/wiki/es:initrd "wikipedia:es:initrd") si la original se corrompe. Esto puede ocurrir cuando se interrumpe una actualización del kernel. Para crear una nueva, véase [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creación_de_la_imagen_y_activación "Mkinitcpio (Español)").
 
 ## Administrar paquetes
 
 Véase [solución de problemas con pacman](/index.php/Pacman_(Espa%C3%B1ol)#Solución_de_problemas "Pacman (Español)") para los temas más generales, y [solución de problemas de cifrado de paquetes con pacman](/index.php/Pacman/Package_signing_(Espa%C3%B1ol)#Solución_de_problemas "Pacman/Package signing (Español)") para los problemas con las claves PGP.
+
+### Arreglar un sistema roto
+
+Si realizó una [actualización parcial](/index.php?title=Actualizaci%C3%B3n_parcial&action=edit&redlink=1 "Actualización parcial (page does not exist)") que rompió algo, intente actualizar todos los paquetes y, si tiene éxito, posiblemente reinicie:
+
+```
+# pacman -Syu
+
+```
+
+Si generalmente inicia en una GUI y eso está fallando, tal vez pueda presionar desde `Ctrl+Alt+F1` hasta `Ctrl+Alt+F6` y llegar a un tty de trabajo para ejecutar *pacman*.
+
+Si el sistema está lo suficientemente dañado como para que no pueda ejecutar *pacman*, [inicie utilizando un ISO mensual de Arch desde una unidad flash USB, un disco óptico o una red con PXE](/index.php/Installation_guide_(Espa%C3%B1ol)#Preinstalación "Installation guide (Español)"). (No siga el resto de la guía de instalación).
+
+Monte su sistema de archivos raíz:
+
+```
+[ISO] # mount /dev/*dispositivoconelsistemadearchivosraiz* /mnt
+
+```
+
+Monte cualquier otra partición que haya creado por separado, añadiendo el prefijo `/mnt` a todas ellas, es decir:
+
+```
+[ISO] # mount /dev/*dispositivodearranque* /mnt/boot
+
+```
+
+Intente utilizar *pacman* en su sistema:
+
+```
+[ISO] # arch-chroot /mnt
+[chroot] # pacman -Syu
+
+```
+
+Si falla, salga del *chroot* e intente:
+
+```
+[ISO] # pacman -Syu --sysroot /mnt
+
+```
+
+Si eso falla, intente:
+
+```
+[ISO] # pacman -Syu --root /mnt --cachedir /mnt/var/cache/pacman/pkg
+
+```
 
 ## fuser
 
@@ -366,5 +417,5 @@ Es probable que una actualización del paquete haya agregado un `*archivo*.conf`
 *   [List of Tools for UBCD](http://wiki.ultimatebootcd.com/index.php?title=Tools) - Memtest-like tools to add to grub.cfg on UltimateBootCD.com
 *   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [REISUB](/index.php/REISUB "REISUB")
-*   [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console) en Freedesktop.org
+*   [Debug Logging to a Serial Console](https://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console) en Freedesktop.org
 *   [How to Isolate Linux ACPI Issues](https://web.archive.org/web/20120217124742/http://www.lesswatts.org/projects/acpi/debug.php) en Archive.org

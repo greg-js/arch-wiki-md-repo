@@ -262,12 +262,14 @@ Either you try to use the same key twice, or you start sxhkd twice. Check bspwmr
 
 ### Firefox context menu automatically selects first option on right click
 
-Add the following line to the `userChrome.css` file of your firefox profile
+Add the following line to the `userChrome.css` file of your Firefox profile:
 
 ```
 #contentAreaContextMenu{ margin: 5px 0 0 5px }
 
 ```
+
+The file should be located in `~/.mozilla/firefox/something.default/chrome/` (it will need to be created if you don't already have one). Also, in Firefox, you will have to go to the `about:config` page and enable the option `toolkit.legacyUserProfileCustomizations.stylesheets`; otherwise Firefox will ignore the userChrome.css file.
 
 ## See also
 

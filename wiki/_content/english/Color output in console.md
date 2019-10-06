@@ -267,11 +267,13 @@ color overstrike brightblue black
 
 ```
 
-A list of all keybindings may be found at `/usr/share/doc/most/most-fun.txt`. To get a basic `less`-like configuration, you can copy `/usr/share/doc/most/lesskeys.rc` to `~/.mostrc`. The lesskeys rc included with most does not include 'g' or 'G', so you will also have to add these lines to `~/.mostrc`:
+A list of all keybindings may be found at `/usr/share/doc/most/most-fun.txt`. To get a basic `less`/`vim`-like configuration, you can copy `/usr/share/doc/most/lesskeys.rc` to `~/.mostrc`. The lesskeys rc included with most does not include 'g' or 'G', so you will also have to add these lines to `~/.mostrc`:
 
 ```
 setkey bob "g"
 setkey eob "G"
+setkey page_down "d"
+setkey page_up "u"
 
 ```
 

@@ -97,7 +97,9 @@ systemd 不支持 3.0 版本之前的内核。
 
 ### 切换到 systemd 后，为什么 fakeRAID 没有挂载?
 
-请确保使用了 `# systemctl enable dmraid.service` 
+请确保使用了
+
+ `# systemctl enable dmraid.service` 
 
 ### 如何在启动的时候，运行自定义的一个脚本？
 

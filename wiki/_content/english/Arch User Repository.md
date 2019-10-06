@@ -274,7 +274,7 @@ It is possible the package has been adopted by a [TU](/index.php/TU "TU") and is
 
 Packages may be deleted if they did not fulfill the [rules of submission](/index.php/AUR_submission_guidelines#Rules_of_submission "AUR submission guidelines"). See the [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) for the reason for deletion.
 
-**Note:** The git repository for a deleted package typically remain available. See [AUR_submission_guidelines#Requests](/index.php/AUR_submission_guidelines#Requests "AUR submission guidelines") for details.
+**Note:** The git repository for a deleted package typically remains available. See [AUR_submission_guidelines#Requests](/index.php/AUR_submission_guidelines#Requests "AUR submission guidelines") for details.
 
 If the package used to exist in AUR3, it might not have been [migrated to AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). See the [#Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages) where these are preserved.
 

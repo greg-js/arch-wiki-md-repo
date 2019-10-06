@@ -402,13 +402,24 @@ SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
 SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
 ```
 
+To get the `DEVPATH` of all currently-connected devices, see where the symlinks in `/sys/class/net/` lead. For example:
+
+ `file /sys/class/net/*` 
+```
+/sys/class/net/enp0s20f0u4u1: symbolic link to ../../devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.1/2-4.1:1.0/net/enp0s20f0u4u1
+/sys/class/net/enp0s31f6:     symbolic link to ../../devices/pci0000:00/0000:00:1f.6/net/enp0s31f6
+/sys/class/net/lo:            symbolic link to ../../devices/virtual/net/lo
+/sys/class/net/wlp4s0:        symbolic link to ../../devices/pci0000:00/0000:00:1c.6/0000:04:00.0/net/wlp4s0
+
+```
+
 The device path should match both the new and old device name, since the rule may be executed more than once on bootup. For example, in the second rule, `"/devices/pci*/*1c.0/*/net/enp*"` would be wrong since it will stop matching once the name is changed to `en`. Only the system-default rule will fire the second time around, causing the name to be changed back to e.g. `enp1s0`.
 
-If you're using a USB network device (e.g. Android phone tethering) that has a dynamic MAC address and you want to be able to use different USB ports, you could use a rule that matched depending on vendor and model ID instead:
+If you are using a USB network device (e.g. Android phone tethering) that has a dynamic MAC address and you want to be able to use different USB ports, you could use a rule that matched depending on vendor and product ID instead:
 
- `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION="add", ENV{ID_VENDOR_ID}=="12ab", ENV{ID_MODEL_ID}=="3cd4", NAME="net2"` 
+ `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="12ab", ATTRS{idProduct}=="3cd4", NAME="net2"` 
 
-To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/*DEVPATH*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set enp1s0 down`).
+To [test](/index.php/Udev#Testing_rules_before_loading "Udev") your rules, they can be triggered directly from userspace, e.g. with `udevadm --debug test /sys/class/net/*`. Remember to first take down the interface you are trying to rename (e.g. `ip link set enp1s0 down`).
 
 **Note:** When choosing the static names **it should be avoided to use names in the format of "eth*X*" and "wlan*X*"**, because this may lead to race conditions between the kernel and udev during boot. Instead, it is better to use interface names that are not used by the kernel as default, e.g.: `net0`, `net1`, `wifi0`, `wifi1`. For further details please see the [systemd](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) documentation.
 

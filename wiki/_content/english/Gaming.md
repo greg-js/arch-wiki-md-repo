@@ -28,13 +28,14 @@ This page contains information about running games and related system configurat
 *   [4 Remote gaming](#Remote_gaming)
 *   [5 Improving performance](#Improving_performance)
     *   [5.1 Utilities](#Utilities)
-    *   [5.2 Fsync patch](#Fsync_patch)
-    *   [5.3 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
-        *   [5.3.1 Policies](#Policies)
-        *   [5.3.2 Nice levels](#Nice_levels)
-        *   [5.3.3 Core affinity](#Core_affinity)
-        *   [5.3.4 General case](#General_case)
-        *   [5.3.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
+    *   [5.2 ACO compiler](#ACO_compiler)
+    *   [5.3 Fsync patch](#Fsync_patch)
+    *   [5.4 Improving frame rates and responsiveness with scheduling policies](#Improving_frame_rates_and_responsiveness_with_scheduling_policies)
+        *   [5.4.1 Policies](#Policies)
+        *   [5.4.2 Nice levels](#Nice_levels)
+        *   [5.4.3 Core affinity](#Core_affinity)
+        *   [5.4.4 General case](#General_case)
+        *   [5.4.5 Optimus, and other helping programs](#Optimus,_and_other_helping_programs)
 *   [6 Gaming mouse](#Gaming_mouse)
 
 ## Game environments
@@ -74,6 +75,10 @@ For list of games packaged for Arch in [official repositories](/index.php/Offici
 *   **[Steam](/index.php/Steam "Steam")** — Digital distribution and communications platform developed by Valve.
 
 	[https://store.steampowered.com](https://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
+
+*   **Athenaeum** — A libre replacement to Steam.
+
+	[https://gitlab.com/librebob/athenaeum](https://gitlab.com/librebob/athenaeum) || [athenaeum-git](https://aur.archlinux.org/packages/athenaeum-git/)
 
 ## Running games
 
@@ -227,6 +232,12 @@ See also main article: [Improving performance](/index.php/Improving_performance 
 	[https://github.com/FeralInteractive/gamemode](https://github.com/FeralInteractive/gamemode) || [gamemode](https://aur.archlinux.org/packages/gamemode/), [lib32-gamemode](https://aur.archlinux.org/packages/lib32-gamemode/)
 
 **Note:** There is also a tutorial on [YouTube](https://youtu.be/4gyRyYfyGJw) that you can follow.
+
+### ACO compiler
+
+**Note:** The method shown below **only** works on AMD GPUs running the **[AMDGPU](/index.php/AMDGPU "AMDGPU")** drivers.
+
+See [AMDGPU#ACO_compiler](/index.php/AMDGPU#ACO_compiler "AMDGPU")
 
 ### Fsync patch
 

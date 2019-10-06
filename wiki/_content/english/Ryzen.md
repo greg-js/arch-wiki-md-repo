@@ -96,7 +96,7 @@ If you are using [Xorg](/index.php/Xorg "Xorg") and are experiencing screen-tear
  `/etc/X11/xorg.conf.d/20-amdgpu.conf` 
 ```
 Section "Device"
-     Identifier  "AMD"
+     Identifier "AMD"
      Driver "amdgpu"
      Option "TearFree" "true"
   EndSection

@@ -28,7 +28,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [3 Thermal Throttling Fix](#Thermal_Throttling_Fix)
 *   [4 USB-C DisplayPort](#USB-C_DisplayPort)
 *   [5 PrivacyGuard](#PrivacyGuard)
-*   [6 See also](#See_also)
+*   [6 Fix freezes/hangs on QT applications (with Intel driver)](#Fix_freezes/hangs_on_QT_applications_(with_Intel_driver))
+*   [7 See also](#See_also)
 
 ## Hardware
 
@@ -139,6 +140,10 @@ The following adapters were tested
 ## PrivacyGuard
 
 This optional feature is currently not yet supported by the vanilla kernel. There is a [kernel patch available](https://patchwork.kernel.org/patch/11109239/).
+
+## Fix freezes/hangs on QT applications (with Intel driver)
+
+See [Intel_graphics#SNA_issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
 ## See also
 

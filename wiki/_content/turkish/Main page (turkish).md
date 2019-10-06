@@ -58,7 +58,7 @@ Makale kategorilerini listelemek için [İçindekiler](/index.php/Table_of_conte
 
 	[ArchWiki:Katkı](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
 
-	Wiki'ye katkıta bulunacaklar için başlangıç noktası.
+	Wiki'ye katkıda bulunacaklar için başlangıç noktası.
 
 	[Yardım:Düzenleme](/index.php/Help:Editing "Help:Editing")
 

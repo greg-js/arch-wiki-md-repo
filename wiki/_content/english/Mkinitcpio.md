@@ -8,13 +8,13 @@ Related articles
 
 [mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/) is a Bash script used to create an [initial ramdisk](https://en.wikipedia.org/wiki/Initial_ramdisk "wikipedia:Initial ramdisk") environment. From the [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) man page:
 
-	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to `init`. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
+	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to `init`. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. *mkinitcpio* allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
 
 Traditionally, the kernel was responsible for all hardware detection and initialization tasks early in the [boot process](/index.php/Boot_process "Boot process") before mounting the root file system and passing control to `init`. However, as technology advances, these tasks have become increasingly complex.
 
 Nowadays, the root file system may be on a wide range of hardware, from SCSI to SATA to USB drives, controlled by a variety of drive controllers from different manufacturers. Additionally, the root file system may be encrypted or compressed; within a software RAID array or a logical volume group. The simple way to handle that complexity is to pass management into userspace: an initial ramdisk. See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/).
 
-mkinitcpio has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).
+*mkinitcpio* has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).
 
 <input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none">
 
@@ -54,13 +54,13 @@ mkinitcpio has been developed by the Arch Linux developers and from community co
 
 [Install](/index.php/Install "Install") the [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio) package, which is a dependency of the [linux](https://www.archlinux.org/packages/?name=linux) package, so most users will already have it installed.
 
-Advanced users may wish to install the latest development version of mkinitcpio from Git with the [mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) package.
+Advanced users may wish to install the latest development version of *mkinitcpio* from Git with the [mkinitcpio-git](https://aur.archlinux.org/packages/mkinitcpio-git/) package.
 
-**Note:** It is **highly** recommended that you follow the [arch-projects mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-projects) if you use mkinitcpio from Git!
+**Note:** It is **highly** recommended that you follow the [arch-projects mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-projects) if you use *mkinitcpio* from Git!
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the PRESETS directive of the *.preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for [linux](https://www.archlinux.org/packages/?name=linux) contain `PRESETS=('default' 'fallback')`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, the following will (re-)generate the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package:
+By default, the *mkinitcpio* script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the PRESETS directive of the *.preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for [linux](https://www.archlinux.org/packages/?name=linux) contain `PRESETS=('default' 'fallback')`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, the following will (re-)generate the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package:
 
 ```
 # mkinitcpio -p linux
@@ -124,7 +124,7 @@ Users can modify six variables within the configuration file:
 
 	`COMPRESSION_OPTIONS`
 
-	Extra arguments to pass to the `COMPRESSION` program. Usage of this setting is strongly discouraged. mkinitcpio will handle special requirements for compressors (e.g. passing `--check=crc32` to xz), and misusage can easily lead to an unbootable system.
+	Extra arguments to pass to the `COMPRESSION` program. Usage of this setting is strongly discouraged. *mkinitcpio* will handle special requirements for compressors (e.g. passing `--check=crc32` to xz), and misusage can easily lead to an unbootable system.
 
 ### MODULES
 
@@ -135,7 +135,7 @@ Modules suffixed with a `?` will not throw errors if they are not found. This mi
 **Note:**
 
 *   If using **reiser4**, it *must* be added to the modules list.
-*   If you will be needing any file system during the boot process that is not live when you run mkinitcpio — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run mkinitcpio — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
+*   If you will be needing any file system during the boot process that is not live when you run *mkinitcpio* — for example, if your LUKS encryption key file is on an **ext2** file system but no **ext2** file systems are mounted when you run *mkinitcpio* — that file system module must also be added to the MODULES list. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration") for more details.
 
 ### BINARIES and FILES
 
@@ -161,7 +161,7 @@ The default `HOOKS` setting should be sufficient for most simple, single disk se
 
 #### Build hooks
 
-Build hooks are found in `/usr/lib/initcpio/install/`, custom build hooks can be placed in `/etc/initcpio/install/`. These files are sourced by the bash shell during runtime of mkinitcpio and should contain two functions: `build` and `help`. The `build` function describes the modules, files, and binaries which will be added to the image. An API, documented by [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8), serves to facilitate the addition of these items. The `help` function outputs a description of what the hook accomplishes.
+Build hooks are found in `/usr/lib/initcpio/install/`, custom build hooks can be placed in `/etc/initcpio/install/`. These files are sourced by the bash shell during runtime of *mkinitcpio* and should contain two functions: `build` and `help`. The `build` function describes the modules, files, and binaries which will be added to the image. An API, documented by [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8), serves to facilitate the addition of these items. The `help` function outputs a description of what the hook accomplishes.
 
 For a list of all available hooks:
 
@@ -170,7 +170,7 @@ $ mkinitcpio -L
 
 ```
 
-Use mkinitcpio's `-H`/`--hookhelp` option to output help for a specific hook, for example:
+Use *mkinitcpio'*s `-H`/`--hookhelp` option to output help for a specific hook, for example:
 
 ```
 $ mkinitcpio -H udev
@@ -243,7 +243,7 @@ COMPRESSION_OPTIONS=(-9)
 
 ```
 
-**Note:** In general these should never be needed as mkinitcpio will make sure that any supported compression method has the necessary flags to produce a working image. Furthermore, misusage of this option can lead to an **unbootable system** if the kernel is unable to unpack the resultant archive.
+**Note:** In general these should never be needed as *mkinitcpio* will make sure that any supported compression method has the necessary flags to produce a working image. Furthermore, misusage of this option can lead to an **unbootable system** if the kernel is unable to unpack the resultant archive.
 
 ## Runtime customization
 
@@ -253,7 +253,7 @@ Runtime configuration options can be passed to `init` and certain hooks via the 
 
 	`root`
 
-	This is the most important parameter specified on the kernel command line, as it determines what device will be mounted as your proper root device. mkinitcpio is flexible enough to allow a wide variety of formats, for example:
+	This is the most important parameter specified on the kernel command line, as it determines what device will be mounted as your proper root device. *mkinitcpio* is flexible enough to allow a wide variety of formats, for example:
 
 ```
 root=/dev/sda1                                                # /dev node
@@ -367,7 +367,7 @@ If you are curious about what is inside the initramfs image, you can extract it 
 
 The initramfs image is an SVR4 CPIO archive, generated via the `find` and `bsdcpio` commands, optionally compressed with a compression scheme understood by the kernel. For more information on the compression schemes, see [#COMPRESSION](#COMPRESSION).
 
-mkinitcpio includes a utility called `lsinitcpio` which will list and/or extract the contents of initramfs images.
+*mkinitcpio* includes a utility called `lsinitcpio` which will list and/or extract the contents of initramfs images.
 
 You can list the files in the image with:
 
@@ -392,7 +392,7 @@ $ lsinitcpio -a /boot/initramfs-linux.img
 
 ### Recompressing a modified extracted image
 
-After extracting an image as explained above, after modifying it, you can find the command necessary to recompress it. Edit `/usr/bin/mkinitcpio` and change the line as shown below (line 531 in mkinitcpio v20-1.)
+After extracting an image as explained above, after modifying it, you can find the command necessary to recompress it. Edit `/usr/bin/mkinitcpio` and change the line as shown below (line 531 in *mkinitcpio* v20-1.)
 
 ```
 #MKINITCPIO_PROCESS_PRESET=1 "$0" "${preset_cmd[@]}"
@@ -417,18 +417,18 @@ Which corresponds to the command you need to run, which may be:
 
 ```
 
-**Warning:** It is a good idea to rename the automatically generated `/boot/initramfs-linux.img` before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
+**Warning:** It is a good idea to rename the automatically generated `/boot/initramfs-linux.img` before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run *mkinitcpio* to overwrite your changes, or fix them yourself and recompress the image.
 
 ### "/dev must be mounted" when it already is
 
-The test used by mkinitcpio to determine if `/dev` is mounted is to see if `/dev/fd/` is there. If everything else looks fine, it can be "created" manually by:
+The test used by *mkinitcpio* to determine if `/dev` is mounted is to see if `/dev/fd/` is there. If everything else looks fine, it can be "created" manually by:
 
 ```
 # ln -s /proc/self/fd /dev/
 
 ```
 
-(Obviously, `/proc` must be mounted as well. mkinitcpio requires that anyway, and that is the next thing it will check.)
+(Obviously, `/proc` must be mounted as well. *mkinitcpio* requires that anyway, and that is the next thing it will check.)
 
 ### Possibly missing firmware for module XXXX
 

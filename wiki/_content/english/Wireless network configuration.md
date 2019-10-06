@@ -81,6 +81,7 @@ The [#iw](#iw) section describes how to manually manage your wireless network in
         *   [7.4.2 iwlegacy](#iwlegacy)
         *   [7.4.3 iwlwifi](#iwlwifi)
             *   [7.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
+            *   [7.4.3.2 Firmware stack traces](#Firmware_stack_traces)
         *   [7.4.4 Disabling LED blink](#Disabling_LED_blink)
     *   [7.5 Broadcom](#Broadcom)
     *   [7.6 Other drivers/devices](#Other_drivers/devices)
@@ -572,7 +573,7 @@ Packet fragmentation improves throughput by splitting up packets with size excee
 
 #### Cause #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[3]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card. Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -600,7 +601,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 *   Disable mixed-mode authentication (e.g. only WPA2 with AES, or TKIP if the router is old)
 *   Try a fixed/free channel rather than "auto" channel (maybe the router next door is old and interfering)
 *   Disable [WPS](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup "wikipedia:Wi-Fi Protected Setup")
-*   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
+*   Disable `40MHz` channel bandwidth (lower throughput but less likely collisions)
 *   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
 
 ### Wi-Fi networks invisible because of incorrect regulatory domain
@@ -649,7 +650,7 @@ New chipset as of 2014, released under their new commercial name Mediatek. It is
 
 ### Realtek
 
-See [[5]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+See [[4]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
 
 #### rtl8192cu
 
@@ -669,19 +670,19 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[6]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[5]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
 Realtek chipsets rtl8811au/rtl8812au/rtl8814au/rtl8821au designed for various USB adapters ranging from AC600 to AC1900.
 
-Several packages provide the kernel drivers:
+Several packages provide various kernel drivers:
 
 | Chipset | Driver version | Package | Notes |
-| rtl8811au, rtl8812au, rtl8814au and rtl8821au | 5.2.20 (possibility of using 5.3.4 base) | [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) | Aircrack-ng kernel module for 8811au, 8812au, 8814au and 8821au chipsets with monitor mode and injection support. Possibility to use experimental v5.3.4 of the driver by editing PKGBUILD file. |
+| rtl8811au, rtl8812au, rtl8814au and rtl8821au | 5.6.4.1 | [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) | Aircrack-ng kernel module for 8811au, 8812au, 8814au and 8821au chipsets with monitor mode and injection support. |
 | rtl8812au | 5.2.20 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Latest official Realtek driver version for rtl8812au *only*. |
-| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | For rtl8812au the latest version 5.2.20 is recommended instead. |
-| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too. |
+| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | For rtl8812au versions 5.6.4.1 or 5.2.20 are recommended instead. |
+| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too. Reportedly has better performance than [rtl88xxau-aircrack-dkms-git](https://aur.archlinux.org/packages/rtl88xxau-aircrack-dkms-git/) |
 
 These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
 
@@ -781,7 +782,7 @@ If you have problems connecting to networks in general, random failures with you
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[7]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
@@ -795,7 +796,7 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[9]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[8]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[9]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
@@ -803,9 +804,17 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[11]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[10]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
+
+##### Firmware stack traces
+
+You may have some issue where the driver outputs stack traces & errors, which can cause some stuttering.
+
+ `dmesg`  `Microcode SW error detected.  Restarting 0x2000000.` 
+
+To fix those errors, you may downgrade the package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) or rename the last version of the firmware used by your device so that an older version is loaded (which keeps it out of pacman's ignored packages).
 
 #### Disabling LED blink
 
@@ -862,7 +871,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[12]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[11]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/) package.
 
 #### hostap_cs
 

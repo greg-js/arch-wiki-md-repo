@@ -179,31 +179,18 @@ Port 39901
 
 ### Daemon management
 
-[openssh](https://www.archlinux.org/packages/?name=openssh) comes with two kinds of [systemd](/index.php/Systemd "Systemd") service files:
+[Start/enable](/index.php/Start/enable "Start/enable") `sshd.service`. It will keep the SSH daemon permanently active and fork for each incoming connection.[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh).
 
-1.  `sshd.service`, which will keep the SSH daemon permanently active and fork for each incoming connection.[[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh#n16) It is especially suitable for systems with a large amount of SSH traffic.[[2]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n15)
-2.  `sshd.socket` + `sshd@.service`, which spawn on-demand instances of the SSH daemon per connection. Using it implies that *systemd* listens on the SSH socket and will only start the daemon process for an incoming connection. It is suggested to be the recommended way to run `sshd` in almost all cases.[[3]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/sshd.service?h=packages/openssh&id=4cadf5dff444e4b7265f8918652f4e6dff733812#n18)[[4]](http://lists.freedesktop.org/archives/systemd-devel/2011-January/001107.html)[[5]](http://0pointer.de/blog/projects/inetd.html)
+**Note:** [openssh](https://www.archlinux.org/packages/?name=openssh) 8.0p1-3 removed `sshd.socket` that used systemd's socket activation due to it being susceptible to denial of service. See [FS#62248](https://bugs.archlinux.org/task/62248) for details. If `sshd.socket` is enabled when updating to [openssh](https://www.archlinux.org/packages/?name=openssh) 8.0p1-3, the `sshd.socket` and `sshd@.service` units will be copied to `/etc/systemd/system/` and [reenabled](/index.php/Systemd#Replacement_unit_files "Systemd"). This is only done to not break existing setups, users are still advised to migrate to `sshd.service`.
 
-You can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") either `sshd.service` **or** `sshd.socket` to begin using the daemon.
+**Warning:** If you continue using `sshd.socket`, be aware of its issues:
 
-If using the socket service, you will need to [edit](/index.php/Edit "Edit") the unit file if you want it to listen on a port other than the default 22:
+*   `sshd.socket` unit may fail (e.g. due to out-of-memory situation) and `Restart=always` cannot be specified on socket units. See [systemd issue 11553](https://github.com/systemd/systemd/issues/11553).
+*   Using socket activation can result in denial of service, as too many connections can cause refusal to further activate the service. See [FS#62248](https://bugs.archlinux.org/task/62248).
 
- `# systemctl edit sshd.socket` 
-```
-[Socket]
-ListenStream=
-ListenStream=12345
-
-```
-
-**Warning:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port *and* IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`). You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
+**Note:** Using `sshd.socket` negates the `ListenAddress` setting, so it will allow connections over any address. To achieve the effect of setting `ListenAddress`, you must specify the port *and* IP for `ListenStream` (e.g. `ListenStream=192.168.1.100:22`) by [editing](/index.php/Edit "Edit") `sshd.socket`. You must also add `FreeBind=true` under `[Socket]` or else setting the IP address will have the same drawback as setting `ListenAddress`: the socket will fail to start if the network is not up in time.
 
 **Tip:** When using socket activation a transient instance of `sshd@.service` will be started for each connection (with different instance names). Therefore, neither `sshd.socket` nor the daemon's regular `sshd.service` allow to monitor connection attempts in the log. The logs of socket-activated instances of SSH can be seen with `journalctl -u "sshd@*"` or with `journalctl /usr/bin/sshd`.
-
-**Note:**
-
-*   Even the `sshd.socket` unit may fail (e.g. due to out-of-memory situation) and `Restart=always` cannot be specified on socket units. [[6]](https://github.com/systemd/systemd/issues/11553)
-*   Using socket activation can result in denial of service, as too many connections can cause refusal to further activate the service. See [FS#62248](https://bugs.archlinux.org/task/62248).
 
 ### Protection
 
@@ -1055,7 +1042,7 @@ The `reliability` (`0x04`) type-of-service should resolve the issue, as well as 
 
 ### Slow daemon startup after reboot
 
-If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[8]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
+If you are experiencing excessively long daemon startup times after reboots (e.g. several minutes before the daemon starts accepting connections), especially on headless or virtualized servers, it may be due to a lack of entropy.[[3]](https://bbs.archlinux.org/viewtopic.php?id=241954) This can be remedied by installing either [Rng-tools](/index.php/Rng-tools "Rng-tools") or [Haveged](/index.php/Haveged "Haveged"), as appropriate for your system. However, take note of the associated security implications discussed in each package's respective wiki page.
 
 ## See also
 

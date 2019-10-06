@@ -1,11 +1,11 @@
 Ссылки по теме
 
-*   [Software access point](/index.php/Software_access_point "Software access point")
+*   [Программная точка доступа](/index.php/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%B0%D1%8F_%D1%82%D0%BE%D1%87%D0%BA%D0%B0_%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0 "Программная точка доступа")
 *   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Раздача интернета](/index.php/%D0%A0%D0%B0%D0%B7%D0%B4%D0%B0%D1%87%D0%B0_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0 "Раздача интернета")
 *   [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding")
 *   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
+*   [Bluetooth (Русский)](/index.php/Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bluetooth (Русский)")
 
 Основную статью по настройке сети можно найти на странице [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
@@ -42,43 +42,57 @@
             *   [4.2.2.4 netctl](#netctl)
         *   [4.2.3 Проблемы](#Проблемы)
             *   [4.2.3.1 MS-CHAPv2](#MS-CHAPv2)
-*   [5 Решение проблем](#Решение_проблем)
-    *   [5.1 Предостережения Rfkill](#Предостережения_Rfkill)
-    *   [5.2 Уважение управляющего домена](#Уважение_управляющего_домена)
-    *   [5.3 Просмотр логов](#Просмотр_логов)
-    *   [5.4 Энергосбережение](#Энергосбережение)
-    *   [5.5 Не удалось получить IP адрес](#Не_удалось_получить_IP_адрес)
-    *   [5.6 Connection always times out](#Connection_always_times_out)
-        *   [5.6.1 Lowering the rate](#Lowering_the_rate)
-        *   [5.6.2 Понижение txpower](#Понижение_txpower)
-        *   [5.6.3 Setting rts and fragmentation thresholds](#Setting_rts_and_fragmentation_thresholds)
-    *   [5.7 Внезапные отключения](#Внезапные_отключения)
-        *   [5.7.1 Причина #1](#Причина_#1)
-        *   [5.7.2 Причина #2](#Причина_#2)
-        *   [5.7.3 Причина #3](#Причина_#3)
-*   [6 Решение проблем с драйверами и прошивками](#Решение_проблем_с_драйверами_и_прошивками)
-    *   [6.1 wlan-ng](#wlan-ng)
-    *   [6.2 rt2x00](#rt2x00)
-    *   [6.3 RT2500](#RT2500)
-    *   [6.4 RT61](#RT61)
-    *   [6.5 RT73](#RT73)
-    *   [6.6 madwifi](#madwifi)
-    *   [6.7 ath5k](#ath5k)
-    *   [6.8 ath9k](#ath9k)
-    *   [6.9 rtl8723bu](#rtl8723bu)
-    *   [6.10 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
-    *   [6.11 ipw3945 and ipw4965](#ipw3945_and_ipw4965)
-    *   [6.12 ipw3945 (Альтернативный метод)](#ipw3945_(Альтернативный_метод))
-    *   [6.13 orinoco](#orinoco)
-    *   [6.14 ndiswrapper](#ndiswrapper)
-    *   [6.15 prism54](#prism54)
-    *   [6.16 ACX100/111](#ACX100/111)
-    *   [6.17 BCM43XX](#BCM43XX)
-    *   [6.18 b43](#b43)
-    *   [6.19 rtl8187](#rtl8187)
-    *   [6.20 zd1211rw](#zd1211rw)
-    *   [6.21 Тестирование установки](#Тестирование_установки)
-*   [7 Смотрите также](#Смотрите_также)
+*   [5 Советы и хитрости](#Советы_и_хитрости)
+    *   [5.1 Соответствие регламентам](#Соответствие_регламентам)
+*   [6 Решение проблем](#Решение_проблем)
+    *   [6.1 Временный доступ к сети Интернет](#Временный_доступ_к_сети_Интернет)
+    *   [6.2 Предостережения Rfkill](#Предостережения_Rfkill)
+    *   [6.3 Просмотр логов](#Просмотр_логов)
+    *   [6.4 Энергосбережение](#Энергосбережение)
+    *   [6.5 Не удалось получить IP адрес](#Не_удалось_получить_IP_адрес)
+    *   [6.6 Не выполняется разрешение хоста по действительному IP-адресу](#Не_выполняется_разрешение_хоста_по_действительному_IP-адресу)
+    *   [6.7 Включение RTS и порог фрагментации](#Включение_RTS_и_порог_фрагментации)
+    *   [6.8 Внезапные отключения](#Внезапные_отключения)
+        *   [6.8.1 Причина #1](#Причина_#1)
+        *   [6.8.2 Причина #2](#Причина_#2)
+        *   [6.8.3 Причина #3](#Причина_#3)
+        *   [6.8.4 Причина #4](#Причина_#4)
+    *   [6.9 Wi-Fi-сеть не видна из-за несоответствия регулятивному домену](#Wi-Fi-сеть_не_видна_из-за_несоответствия_регулятивному_домену)
+*   [7 Решение проблем с драйверами и прошивками](#Решение_проблем_с_драйверами_и_прошивками)
+    *   [7.1 Ralink/Mediatek](#Ralink/Mediatek)
+        *   [7.1.1 rt2x00](#rt2x00)
+        *   [7.1.2 rt3090](#rt3090)
+        *   [7.1.3 rt3290](#rt3290)
+        *   [7.1.4 rt3573](#rt3573)
+        *   [7.1.5 rt5572](#rt5572)
+        *   [7.1.6 mt7612u](#mt7612u)
+    *   [7.2 Realtek](#Realtek)
+        *   [7.2.1 rtl8192cu](#rtl8192cu)
+        *   [7.2.2 rtl8723ae/rtl8723be](#rtl8723ae/rtl8723be)
+        *   [7.2.3 rtl88xxau](#rtl88xxau)
+        *   [7.2.4 rtl8822bu](#rtl8822bu)
+        *   [7.2.5 rtl8xxxu](#rtl8xxxu)
+    *   [7.3 Atheros](#Atheros)
+        *   [7.3.1 ath5k](#ath5k)
+        *   [7.3.2 ath9k](#ath9k)
+            *   [7.3.2.1 Power saving](#Power_saving)
+    *   [7.4 Intel](#Intel)
+        *   [7.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
+        *   [7.4.2 iwlegacy](#iwlegacy)
+        *   [7.4.3 iwlwifi](#iwlwifi)
+            *   [7.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
+        *   [7.4.4 Disabling LED blink](#Disabling_LED_blink)
+    *   [7.5 Broadcom](#Broadcom)
+    *   [7.6 Other drivers/devices](#Other_drivers/devices)
+        *   [7.6.1 Tenda w322u](#Tenda_w322u)
+        *   [7.6.2 orinoco](#orinoco)
+        *   [7.6.3 prism54](#prism54)
+        *   [7.6.4 ACX100/111](#ACX100/111)
+        *   [7.6.5 zd1211rw](#zd1211rw)
+        *   [7.6.6 hostap_cs](#hostap_cs)
+    *   [7.7 ndiswrapper](#ndiswrapper)
+    *   [7.8 backports-patched](#backports-patched)
+*   [8 Смотрите также](#Смотрите_также)
 
 ## Драйвер устройства
 
@@ -381,13 +395,21 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 
 Беспроводные сети WPA2-Enterprise, полагающиеся на аутентификацию MSCHAPv2 type-2 с использованием PEAP иногда требуют установки [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) помимо стандартного [ppp](https://www.archlinux.org/packages/?name=ppp). [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"), однако, работает "из коробки" без ppp-mppe. В любом случае, использование MSCHAPv2 не рекомендуется из-за ненадежности этого протокола, но другого варианта часто просто нет.
 
+## Советы и хитрости
+
+### Соответствие регламентам
+
 ## Решение проблем
 
 В этом разделе содержатся основные рекомендации по решению проблем, не связанных непосредственно с драйверами и прошивками. Для получения такой информации смотрите следующий раздел [#Решение проблем с драйверами и прошивками](#Решение_проблем_с_драйверами_и_прошивками).
 
+### Временный доступ к сети Интернет
+
+Если с сетевой платой возникли проблемы и нужен доступ в сеть Интернет, например, чтобы загрузить определённое ПО или задать вопрос на форумах, можно раздать интернет на компьютер с Android-смартфона посредством USB-кабеля. В статье [Android tethering#USB модем](/index.php/Android_tethering_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#USB_модем "Android tethering (Русский)") вы найдёте поднобную информацию по этому вопросу.
+
 ### Предостережения Rfkill
 
-Многие лэптопы имеют аппаратный переключатель (или кнопку) для выключения беспроводной карты, однако, она может быть также заблокировани и ядром. Этим можно управлять через rfkill. Используйте *rfkill*, чтобы посмотреть текущий статус:
+Во многих ноутбуках присутствует аппаратный переключатель (или кнопка) питания беспроводной карты, однако она может быть также заблокирована и ядром. Этим можно управлять через rfkill. Используйте *rfkill*, чтобы посмотреть текущий статус:
 
  `# rfkill list` 
 ```
@@ -397,102 +419,47 @@ WPA2 Personal, или WPA2-PSK — одна из реализаций техно
 
 ```
 
-Если карта *заблокирована аппаратно*, используйте переключатель (кнопку), чтобы разблокировать её. Если же карта заблокирована не *аппаратно*, a *программно*, используйте следующую команду:
+Если карта *заблокирована аппаратно* (hard blocked), используйте переключатель (кнопку), чтобы разблокировать её. Если же карта заблокирована не *аппаратно*, a *программно* (soft blocked), используйте следующую команду:
 
 ```
 # rfkill unblock wifi
 
 ```
 
-**Примечание:** Возможно, при нажатии аппаратной кнопки карта из состояния *hard-blocked* и *soft-unblocked* перейдёт в состояние *hard-unblocked* и *soft-blocked* (i.e. the *soft-blocked* bit is just switched no matter what). Это можно исправить, отрегулировав некоторые опции [модуля ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)") `rfkill`
+**Примечание:** Возможно, при нажатии аппаратной кнопки карта из состояния *hard-blocked* и *soft-unblocked* перейдёт в состояние *hard-unblocked* и *soft-blocked* (т.е. бит *soft-blocked* внезапно поменяет значение). Это можно исправить, отрегулировав некоторые опции [модуля ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)") `rfkill`.
 
-Дополнительная информация: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
+Включение/выключение беспроводных карт посредством аппаратных переключателей происходит с помощью [модулей ядра](/index.php/Kernel_modules_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel modules (Русский)"). При выходе новых моделей сетевых карт их драйвера могут отсутствовать в последнем стабильном релизе ядра. В этом случае стоит поискать информацию в багтрекере ядра и сообщить название модели сопроводителю соответствующего модуля, если этого ещё никто не сделал.
 
-### Уважение управляющего домена
-
-The [regulatory domain](https://en.wikipedia.org/wiki/IEEE_802.11#Regulatory_domains_and_legal_compliance "wikipedia:IEEE 802.11"), or "regdomain", is used to reconfigure wireless drivers to make sure that wireless hardware usage complies with local laws set by the FCC, ETSI and other organizations. Regdomains use [ISO 3166-1 alpha-2 country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 "wikipedia:ISO 3166-1 alpha-2"). For example, the regdomain of the United States would be "US", China would be "CN", etc.
-
-Regdomains affect the availability of wireless channels. In the 2.4GHz band, the allowed channels are 1-11 for the US, 1-14 for Japan, and 1-13 for most of the rest of the world. In the 5GHz band, the rules for allowed channels are much more complex. In either case, consult [this list of WLAN channels](https://en.wikipedia.org/wiki/List_of_WLAN_channels "wikipedia:List of WLAN channels") for more detailed information.
-
-Regdomains also affect the limit on the [effective isotropic radiated power (EIRP)](https://en.wikipedia.org/wiki/Equivalent_isotropically_radiated_power "wikipedia:Equivalent isotropically radiated power") from wireless devices. This is derived from transmit power/"tx power", and is measured in [dBm/mBm (1dBm=100mBm) or mW (log scale)](https://en.wikipedia.org/wiki/DBm "wikipedia:DBm"). In the 2.4GHz band, the maximum is 30dBm in the US and Canada, 20dBm in most of Europe, and 20dB-30dBm for the rest of the world. In the 5GHz band, maximums are usually lower. Consult the [wireless-regdb](http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/tree/db.txt) for more detailed information (EIRP dBm values are in the second set of brackets for each line).
-
-Misconfiguring the regdomain can be useful - for example, by allowing use of an unused channel when other channels are crowded, or by allowing an increase in tx power to widen transmitter range. However, **this is not recommended** as it could break local laws and cause interference with other radio devices.
-
-To configure the regdomain, install [crda](https://www.archlinux.org/packages/?name=crda) and [wireless-regdb](https://www.archlinux.org/packages/?name=wireless-regdb) and reboot (to reload the `cfg80211` module and all related drivers). Check the boot log to make sure that CRDA is being called by `cfg80211`:
-
-```
-$ dmesg | grep cfg80211
-
-```
-
-The current regdomain can be set to the United States with:
-
-```
-# iw reg set US
-
-```
-
-And queried with:
-
-```
-$ iw reg get
-
-```
-
-**Note:** Your device may be set to country "00", which is the "world regulatory domain" and contains generic settings. If this cannot be unset, CRDA may be misconfigured.
-
-However, setting the regdomain may not alter your settings. Some devices have a regdomain set in firmware/EEPROM, which dictates the limits of the device, meaning that setting regdomain in software [can only increase restrictions](http://wiki.openwrt.org/doc/howto/wireless.utilities#iw), not decrease them. For example, a CN device could be set in software to the US regdomain, but because CN has an EIRP maximum of 20dBm, the device will not be able to transmit at the US maximum of 30dBm.
-
-For example, to see if the regdomain is being set in firmware for an Atheros device:
-
-```
-$ dmesg | grep ath:
-
-```
-
-For other chipsets, it may help to search for "EEPROM", "regdomain", or simply the name of the device driver.
-
-To see if your regdomain change has been successful, and to query the number of available channels and their allowed transmit power:
-
-```
-$ iw list | grep -A 15 Frequencies:
-
-```
-
-A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant.conf`.
-
-It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` to `/etc/modprobe.d/modprobe.conf`. However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
-
-For further information, read the [wireless.kernel.org regulatory documentation](http://wireless.kernel.org/en/developers/Regulatory/).
+По [ссылке](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill) можно найти дополнительную информацию о Rfkill.
 
 ### Просмотр логов
 
-A good first measure to troubleshoot is to analyze the system's logfiles first. In order not to manually parse through them all, it can help to open a second terminal/console window and watch the kernels messages with
+При появлении проблем первым делом стоит изучить файлы системных логов. Чтобы не разбирать их вручную, стоит открыть второй терминал/консоль и отслеживать сообщения ядра, выполнив команду
 
 ```
 $ dmesg -w
 
 ```
 
-while performing the action, e.g. the wireless association attempt.
+непосредственно перед попыткой беспроводной привязки (association).
 
-When using a tool for network management, the same can be done for systemd with
-
-```
-# journalctl -f 
+Если вы используете какую-то утилиту для управления сетью, то же самое можно сделать с помощью systemd:
 
 ```
+# journalctl -f
 
-Frequently a wireless error is accompanied by a deauthentication with a particular reason code, for example:
+```
+
+Связанные с беспроводными устройствами ошибки часто сопровождаются словом *deauthentication* и кодом причины (reason), например:
 
 ```
 wlan0: deauthenticating from XX:XX:XX:XX:XX:XX by local choice (reason=3)
 
 ```
 
-Looking up [the reason code](http://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) might give a first hint.
+[Код причины](https://www.aboutcher.co.uk/2012/07/linux-wifi-deauthenticated-reason-codes/) может подсказать причину неполадок. Полезно будет также взглянуть на схему движения [управляющих сообщений](https://wireless.wiki.kernel.org/en/developers/documentation/mac80211/auth-assoc-deauth), записи в журнале появляются в соответствии с ней.
 
-The individual tools used in this article further provide options for more detailed debugging output, which can be used in a second step of the analysis, if required.
+Некоторые инструменты, описанные с следующих разделах, предлагают опции для более детализированного отладочного вывода. Они могут помочь при дальнейшем анализе неполадок.
 
 ### Энергосбережение
 
@@ -518,96 +485,79 @@ The individual tools used in this article further provide options for more detai
 
 Перед тем как изменить канал на автоматический, убедитесь что вы опустили беспроводной интерфейс. После того, как поменяете канал, можете опять поднять интерфейс.
 
-### Connection always times out
+### Не выполняется разрешение хоста по действительному IP-адресу
 
-The driver may suffer from a lot of tx excessive retries and invalid misc errors for some unknown reason, resulting in a lot of packet loss and keep disconnecting, sometimes instantly. Following tips might be helpful.
+Если вы подключились к публичной беспроводной сети с работающим серсвисом [Captive portal](https://en.wikipedia.org/wiki/ru:Captive_portal "wikipedia:ru:Captive portal"), убедитесь, что браузер отправляет запросы по протоколу HTTP, а не HTTPS, поскольку некоторые *порталы* работают только с HTTP. Если причина проблем не в этом, проверьте настройки [разрешения доменных имён](/index.php/Domain_name_resolution "Domain name resolution"). Возможно, нужно просто использовать DNS-сервер, объявленный DHCP.
 
-#### Lowering the rate
+### Включение RTS и порог фрагментации
 
-Try setting lower rate, for example 5.5M:
+Беспроводное аппаратное обеспечение по умолчанию не использует RTS и фрагментацию. Есть два способа повысить производительность (throughput) за счёт пропускной способности (bandwidth) (т.е. надёжность за счёт скорости). Это полезно в случае наличия беспроводного шума или создающих помехи соседних точек доступа, что приводит к задержкам и сбоям.
 
-```
-# iwconfig wlan0 rate 5.5M auto
-
-```
-
-Fixed option should ensure that the driver does not change the rate on its own, thus making the connection a bit more stable:
+Фрагментация пакетов увеличивает производительность за счёт разбиения пакетов с размером, превышающим порог фрагментации. Максимальное значение (2346) фактически отключает фрагментацию, поскольку не существует пакетов большего размера. Минимальное значение (256) увеличивает производительность, но требует большей пропускной способности.
 
 ```
-# iwconfig wlan0 rate 5.5M fixed
+# iw phy0 set frag 512
 
 ```
 
-#### Понижение txpower
-
-Вы можете попробовать понизить мощность передатчика. Это может сберегать энергию:
+[RTS](https://en.wikipedia.org/wiki/ru:RTS/CTS "wikipedia:ru:RTS/CTS") увеличивает производительность посредством выполнения *рукопожатий* с точкой доступа перед отправкой пакетов с размером выше порога RTS. Максимальное значение (2347) отключает RTS (т.к. пакеты не могут быть большего размера). Минимальный порог (0) включает RTS для всех пакетов, что в большинстве ситуаций несколько избыточно.
 
 ```
-# iwconfig wlan0 txpower 5
+# iw phy0 set rts 500
 
 ```
 
-Установите значение от `0` до `20`, `auto` или `off`.
-
-#### Setting rts and fragmentation thresholds
-
-Default iwconfig options have rts and fragmentation thresholds off. These options are particularly useful when there are many adjacent APs or in a noisy environment.
-
-The minimum value for fragmentation value is 256 and maximum is 2346\. In many windows drivers the maximum is the default value:
-
-```
-# iwconfig wlan0 frag 2346
-
-```
-
-For rts minimum is 0, maximum is 2347\. Once again windows drivers often use maximum as the default:
-
-```
-# iwconfig wlan0 rts 2347
-
-```
+**Примечание:** `phy0` — название беспроводного устройства, которое можно узнать с помощью команды `$ iw phy`.
 
 ### Внезапные отключения
 
 #### Причина #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[2]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's power-saving features:
+Если в *dmesg* появилось сообщение `wlan0: deauthenticating from MAC by local choice (reason=3)` и произошёл разрыв Wi-Fi соединения, то причина скорее всего кроется в слишком агрессивных настройках энергосбережения вашей беспроводной карты. Попробуйте отключить [энергосбережение](#Энергосбережение) (укажите опцию `off` вместо `on`).
 
-```
-# iwconfig wlan0 power off
-
-```
-
-See [Power saving](/index.php/Power_saving "Power saving") for tips on how to make it permanent (just specify `off` instead of `on`).
-
-If your card does not support `iwconfig wlan0 power off`, check the **BIOS** for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
+Если у вашей карты нет энергосберегающего режима, проверьте настройки энергопотребления BIOS. Отключение управления энергопотреблением PCI-Express в BIOS на Lenovo W520 решило эту проблему.
 
 #### Причина #2
 
-If you are experiencing frequent disconnections and dmesg shows messages such as
+Если происходят частые отключения и *dmesg* выдаёт сообщение вроде
 
-`ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, disconnecting`
+```
+ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, disconnecting
 
-try changing the channel bandwidth to `20MHz` through your router's settings page.
+```
+
+попробуйте изменить полосу пропускания канала на `20MHz` на странице настроек вашего маршрутизатора.
 
 #### Причина #3
 
-On some laptop models with hardware rfkill switches (e.g., Thinkpad X200 series), due to wear or bad design, the switch (or its connection to the mainboard) might become loose over time resulting in seemingly random hardblocks/disconnects when you accidentally touch the switch or move the laptop. There is no software solution to this, unless your switch is electrical and the BIOS offers the option to disable the switch. If your switch is mechanical (most are), there are lots of possible solutions, most of which aim to disable the switch: Soldering the contact point on the mainboard/wifi-card, glueing or blocking the switch, using a screw nut to tighten the switch or removing it altogether.
+В некоторых моделях ноутбуков (например, Thinkpad X200) аппаратный переключатель (или его соединение с материнской платой) из-за неудачной конструкции со временем может расшататься. В результате при случайных касаниях переключателя или перемещении ноутбука будут происходить аппаратные блокировки (hardblock) и разрывы соединения. Решить эту проблему программно нельзя, кроме случая, когда переключатель электрический — в БИОС есть настройка его отключения. Если переключатель механический (а чаще всего он именно такой), то существует несколько возможных решений, большинство из которых сводится к отключению переключателя: распаять точку соединения переключателя с материнской платой/беспроводной картой, приклеить или зафиксировать переключатель, подтянуть переключатель гайкой или удалить его насовсем.
+
+#### Причина #4
+
+Причиной частых отключений или невозможности выполнить соединение может быть нестандартная модель маршрутизатора, неправильные настройки или помехи со стороны других беспроводных устройств.
+
+Чтобы решить эту проблему, сначала попробуйте подключиться к маршрутизатору с отключённой аутентификацией.
+
+Если это сработало, включите WPA/WPA2 снова, но с ограниченными настройками. Например:
+
+*   Если маршрутизатор значительно старше вашей беспроводной карты, проверьте, функционирует ли он, выбрав работу только в беспроводном режиме.
+*   Отключите смешанную аутентификацию (например, оставьте только WPA2 с AES, или только TKIP в случае старого маршрутизатора).
+*   Попробуйте *fixed* или *free* режим канала вместо *auto* (возможно, неподалёку работает старый маршрутизатор, создающий помехи).
+*   Отключите [WPS](https://en.wikipedia.org/wiki/ru:Wi-Fi_Protected_Setup "wikipedia:ru:Wi-Fi Protected Setup").
+*   Отключите полосу пропускания `40MHz` (производительность упадёт, но зато уменьшится количество коллизий пакетов).
+*   Если у маршрутизатора есть настройки [качества обслуживания](https://en.wikipedia.org/wiki/ru:QoS "wikipedia:ru:QoS") (Quality of Service, QoS), проверьте их полноту (например, [WMM](https://en.wikipedia.org/wiki/ru:Wi-Fi_Multimedia "wikipedia:ru:Wi-Fi Multimedia") является одним из протоколов QoS; при неправильной работе ПО маршрутизатор может сообщать, что протокол работает, хотя соответствующая настройка не включена).
+
+### Wi-Fi-сеть не видна из-за несоответствия регулятивному домену
+
+При соединении по беспроводной сети список используемых на вашей машине беспроводных каналов может не совпасть с перечнем разрешённых каналов в вашей стране. В результате не получится обнаружить некоторые Wi-Fi сети. Для решения этой проблемы необходимо настроить регулятивный домен (regulatory domain), как описано в разделе [#Соответствие регламентам](#Соответствие_регламентам).
 
 ## Решение проблем с драйверами и прошивками
 
-Здесь описаны подобности о том, как можно получить драйверы для вашего устройства. Вы можете обнаружить, что для вас есть несколько вариантов, помните, что вы можете найти здесь [HCL](http://www.linuxquestions.org/hcl/index.php?cat=10%7CLQ) помощь в выборе лучшего драйвера.
+В этом разделе описана установка модулей ядра и прошивок некоторых специфических чипсетов для случаев, когда она отличается от стандартного способа.
 
-Здесь, возможно, описаны не все драйвера. Смотрите англоязычную версию статьи для получения информации по другим картам.
+Информацию о приёмах работы с модулями можно найти в статье [Модули ядра](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0 "Модули ядра").
 
-#### wlan-ng
-
-```
-pacman -S wlan-ng26 wlan-ng26-utils
-
-```
-
-Для wlan-ng вам не нужна утилита wireless-tools как сказано выше. Вместо них вам нужны утилиты из пакета wlan-ng26-utils: wlancfg и wlanctl-ng.
+### Ralink/Mediatek
 
 #### rt2x00
 
@@ -619,59 +569,29 @@ pacman -S wlan-ng26 wlan-ng26-utils
 
 Для некоторых чипов необходимы прошивки (firmware). Смотри [rt2x00 статью wiki](/index.php/Using_the_new_rt2x00_beta_driver "Using the new rt2x00 beta driver").
 
-#### RT2500
+#### rt3090
 
-Для чипсетов Ralink PCI/PCMCIA основанных rt2500 сериях (первое поколение чипов Ralink с поддержкой 802.11g).
+#### rt3290
 
- `pacman -S rt2500` 
+#### rt3573
 
-Поддержка стандартной утилиты iwconfig для шифрования WEP соединений, также могут быть использованы другие стандартные утилиты. wpa_supplicant не поддерживает стандартный wext интерфейс. Драйвер поддерживает WPA (использую встроенное шифрование), но не стандартными способами. Разрабатываемая версия wpa_supplicant (0.6.x) включает в себя поддержку специальных технологий и это может негативно сказаться на WPA соединениях, устанавливаемых вручную через iwpriv команды. Смотрите [эти инструкции](http://rt2400.cvs.sourceforge.net/*checkout*/rt2400/source/rt2500/Module/iwpriv_usage.txt) для подробностей. Некоторые применимые методы для RT61 и RT73 ниже.
+#### rt5572
 
-#### RT61
+#### mt7612u
 
-Для PCI/PCMCIA карт, основанных на чипе Ralink следующего поколения 802.11g (включена поддержка проприетарных MIMO функций). Смотри [RT61 статью wiki](/index.php/RT61_Wireless "RT61 Wireless").
+### Realtek
 
-#### RT73
+#### rtl8192cu
 
-Для USB устройств, основанных на чипах Ralink следующих поколений 802.11g (включена поддержка проприетарных MIMO функций). Смотри [RT73 статью wiki](/index.php/RT73_Wireless "RT73 Wireless").
+#### rtl8723ae/rtl8723be
 
-#### madwifi
+#### rtl88xxau
 
-```
-pacman -S madwifi
+#### rtl8822bu
 
-```
+#### rtl8xxxu
 
-Модуль называется <tt>ath_pci</tt>. Чтобы его использовать, Вы должны в rc.conf убрать загрузку ath5k и добавить два модуля madwifi:
-
-```
-MODULES=(!ath5k ath_hal ath_pci ... ...)
-
-```
-
-Некоторым пользователям, возможно, при загрузке драйвера madwifi придется использовать код региона. Это связано с использованием каналов и частот, легальных для конкретной страны/региона. Для России, например, вы должны загрузить этот модуль так:
-
-```
-modprobe ath_pci countrycode=643
-
-```
-
-Вы можете проверить настройки, использую команду <tt>iwlist</tt>. Смотрите <tt>man iwlist</tt> и [CountryCode page on the MadWifi wiki](http://madwifi-project.org/wiki/UserDocs/CountryCode) . Для использования этих настроек при загрузке, добавьте следующую строку в <tt>/etc/modprobe.d/modprobe.conf</tt>:
-
-```
-options ath_pci countrycode=643
-
-```
-
-ATTENTION: Возможно, Вам придётся удалить код страны/региона, если устройство ath0 не будет создано (kernel 2.6.21)!
-
-Особенностью драйверов madwifi является то, что переключение в режим ad-hoc осуществляется двумя командами:
-
-```
-wlanconfig ath0 destroy
-wlanconfig ath0 create wlandev wifi0 wlanmode adhoc
-
-```
+### Atheros
 
 #### ath5k
 
@@ -692,9 +612,9 @@ ath9k - это официальный драйвер компании Atheros д
 
 ath9k включен в состав ядра, начиная с версии 2.6.27\. Для дискуссий по поддержке и разработке создан [mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel).
 
-#### rtl8723bu
+##### Power saving
 
-В текущем ядре драйвер для `rtl8723bu` не рабочий. Для решения проблемы требуется самостоятельная сборка модуля из исходников, либо установка из AUR. Исходники можете найти в [GitHub репозитории](https://github.com/lwfinger/rtl8723bu). Пакеты из AUR [rtl8723bu-git](https://aur.archlinux.org/packages/rtl8723bu-git/), либо [rtl8723bu-git-dkms](https://aur.archlinux.org/packages/rtl8723bu-git-dkms/)
+### Intel
 
 #### ipw2100 and ipw2200
 
@@ -714,66 +634,60 @@ pacman -S ipw2200-fw
 
 Вам необходимо перезагрузиться, чтобы изменения были приняты.
 
-#### ipw3945 and ipw4965
+#### iwlegacy
 
-Новые драйверы Intel [iwlwifi project](http://intellinuxwireless.org/?p=iwlwifi) работают с обоими чипсетами и включены в ядра v2.6.24 и выше. Просто установите прошивки:
+#### iwlwifi
 
-```
-pacman -S iwlwifi-3945-ucode
+##### Bluetooth coexistence
 
-```
+#### Disabling LED blink
 
-или:
+### Broadcom
 
-```
-pacman -S iwlwifi-4965-ucode
+### Other drivers/devices
 
-```
-
-Если MOD_AUTOLOAD установлено в yes в /etc/rc.conf (так по умолчанию). Просто перезагрузитесь и проверьте, что драйверы работают с помощью ***ifconfig*** из терминала. Теперь можно сканировать сети через wlan0.
-
-Если вы хотите, чтобы драйвера загружались вручную при загрузке добавьте их в строку MODULES:
-
-```
-nano /etc/rc.conf
-
-```
-
-в строке MODULES=(), добавьте **iwl3945** или **iwl4965** в список, в зависимости от вашего чипсета.
-
-CTRL + X, Y для закрытия и сохранения.
-
-Теперь драйверы должны быть загружены после перезагрузки и при запуске 'ifconfig' из терминала вы увидите, что там появился новый сетевой интерфейс **wlan0**.
-
-Note: если драйверы iwlwifi, являющиеся "экспериментальными", не работают, знайте, что драйверы NETw4x32 работают отлично через ndiswrapper.
-
-#### ipw3945 (Альтернативный метод)
-
-***Note:** Этот драйвер ipw3945 должен входить в проект Intel's iwlwifi.*
-
- `pacman -S ipw3945` 
-
-Это должно установить ipw3945-ucode, ipw3945, и ipw3945d (daemon).
-
-Для инициализации устройства при загрузке отредактируйте...
-
- `nano /etc/rc.conf` 
-
-в строке modules=(), добавьте ipw3945 в список
-
-в строке daemons=(), добавьте ipw3945d в список (он должно быть ПЕРЕД network и dhcdbd/networkmanager в списке)
-
-CTRL + X, Y для закрытия и сохранения.
-
-Модуль ipw3945 должен быть загружен в процессе "Loading Modules.." и "Starting IPW3945d" должен появиться в ходе загрузки демона, и должен присутствовать интерфейс ethX.
-
-Обновление: На моём HP nc6320 Bluetooth не соединяется, пока не выгрузишь модуль ipw3945.
+#### Tenda w322u
 
 #### orinoco
 
 Часть, которая идёт с пакетом ядра и уже должна быть установлена.
 
-#### ndiswrapper
+#### prism54
+
+Скачайте файлы прошивки (firmware) для вашей карточки [с этого сайта](http://www.prism54.org/). Переименуйте файл прошивки в 'isl3890'. Если не существует, создайте директорию /lib/firmware и поместите файл 'isl3890' туда. Это должно быть сделано. ([forum source](https://bbs.archlinux.org/viewtopic.php?t=16569&start=0&postdays=0&postorder=asc&highlight=siocsifflags+such+file++directory))
+
+#### ACX100/111
+
+Установите пакеты 'tiacx' и 'tiacx-firmware' из репозитория core.
+
+```
+pacman -S tiacx tiacx-firmware
+
+```
+
+Драйвер должен сказать, какая прошивка (firmware) ему необходима; проверьте /var/log/messages.log или через команду dmesg. Переместите прошивку в '/lib/firmware'. Я делаю так:
+
+```
+ln -s /usr/share/tiacx/acx111_2.3.1.31/tiacx111c16 /lib/firmware
+
+```
+
+Hint: Если драйвер захламляет лог ядра, например потому, что запущен Kismet, вы должны добавить следующее в /etc/modprobe.d/modprobe.conf:
+
+```
+options acx debug=0
+
+```
+
+#### zd1211rw
+
+[zd1211rw](http://zd1211.wiki.sourceforge.net/) драйвер для ZyDAS ZD1211 802.11b/g USB WLAN чипсетов и он включен в ядро, в настоящее время. Смотри список поддерживаемого оборудования [здесь](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices). Только вам необходимо сначала установить файлы прошивки:
+
+ `pacman -S zd1211-firmware` 
+
+#### hostap_cs
+
+### ndiswrapper
 
 Ndiswrapper не настоящий драйвер, но с ним вы можете использовать неродные Linux драйвера для ваших беспроводных устройств. Это очень помогает во многих ситуациях. Для использования его у вас должны быть *.inf файл из windows-драйверов (*.sys файл также должен присутствовать в этой же директории). Для установки ndiswrapper вам необходимо проделать следующие шаги:
 
@@ -807,82 +721,7 @@ iwconfig
 
 и wlan0 должен присутствовать. Посмотрите следующую страницу при обнаружении проблем: [Установка Ndiswrapper](http://ndiswrapper.sourceforge.net/joomla/index.php?/component/option,com_openwiki/Itemid,33/id,installation/).
 
-#### prism54
-
-Скачайте файлы прошивки (firmware) для вашей карточки [с этого сайта](http://www.prism54.org/). Переименуйте файл прошивки в 'isl3890'. Если не существует, создайте директорию /lib/firmware и поместите файл 'isl3890' туда. Это должно быть сделано. ([forum source](https://bbs.archlinux.org/viewtopic.php?t=16569&start=0&postdays=0&postorder=asc&highlight=siocsifflags+such+file++directory))
-
-#### ACX100/111
-
-Установите пакеты 'tiacx' и 'tiacx-firmware' из репозитория core.
-
-```
-pacman -S tiacx tiacx-firmware
-
-```
-
-Драйвер должен сказать, какая прошивка (firmware) ему необходима; проверьте /var/log/messages.log или через команду dmesg. Переместите прошивку в '/lib/firmware'. Я делаю так:
-
-```
-ln -s /usr/share/tiacx/acx111_2.3.1.31/tiacx111c16 /lib/firmware
-
-```
-
-Hint: Если драйвер захламляет лог ядра, например потому, что запущен Kismet, вы должны добавить следующее в /etc/modprobe.d/modprobe.conf:
-
-```
-options acx debug=0
-
-```
-
-#### BCM43XX
-
-Пользователи, у которых чипсет из серии Broadcom 43xx имеют альтернативу ndiswrapper'у. В Ядре версии 2.6.17, драйвер bcm43xx представлен.
-
-1.  Запустите `iwconfig` или `hwd -s` для того, чтобы удостовериться, что драйвер загружен. Мой вывод hwd -s выглядит примерно так: `Network    : Broadcom Corp.|BCM94306 802.11g NIC module: unknown` 
-
-Список поддерживаемого оборудования можно найти здесь [here](http://bcm43xx.berlios.de/?go=devices).
-
-1.  Запустите `pacman -S bcm43xx-fwcutter` для установки прошивки.
-2.  Скачайте драйвера для Windows для вашей карточки откуда вы скачивали прошивку.
-3.  Распаковать драйвера с страницы Dell можно через Windows или под WINE (это .exe файл который распаковывается в C:\Dell\[driver numbers]). Или можете попробывать скачать [[3]](http://downloads.openwrt.org/sources/wl_apsta-3.130.20.0.o) или [[4]](http://freewebs.com/ronserver/bcm43xx.tar.gz). Я просто сохранил файлы на рабочий стол; вам это не надо после следующего шага.
-4.  Запустите `bcm43xx-fwcutter -w /lib/firmware /home/<user>/Desktop/wl_apsta.o` Сначала необходимо сначала создать директорию /lib/firmware.
-5.  Перезагрузитесь, и нормально настройте соединение. Вы можете добавить модуль bcm43xx в секцию modules в вашем rc.conf. Удачи!
-
-#### b43
-
-**Данный драйвер плохо работает с BCM4312 (возможны зависания при загрузке системы), для данной карты лучше использовать [broadcom-wl](/index.php/Broadcom_BCM4312 "Broadcom BCM4312") из aur**
-
-Этот драйвер - преемник драйвера bcm43xx и он включен в ядро 2.6.24.
-
-1.  Запустите `hwd -s` для определения вашей карты. Мой вывод hwd -s выглядит примерно так: `Network    : BCM4318 [AirForce One 54g] 802.11g Wireless LAN Controller module: unknown` 
-
-Список поддерживаемого оборудования находится [здесь](http://wireless.kernel.org/en/users/Drivers/b43).
-
-1.  Установите fwcutter из репозитория core: `pacman -S b43-fwcutter` 
-2.  Скачайте проприетарную версию драйверов Broadcom: `wget http://downloads.openwrt.org/sources/broadcom-wl-4.150.10.5.tar.bz2` 
-3.  Далее: `tar xjf broadcom-wl-4.150.10.5.tar.bz2`  `cd broadcom-wl-4.150.10.5/driver`  `b43-fwcutter -w /lib/firmware/ wl_apsta_mimo.o` 
-4.  Перезагрузитесь, и нормально настройте ваше оборудование. Вы также можете добавить модуль b43 в секцию modules в ваш rc.conf. Удачи!
-
-#### rtl8187
-
-Смотри [rtl8187 wiki page](/index.php/Rtl8187_wireless "Rtl8187 wireless").
-
-#### zd1211rw
-
-[zd1211rw](http://zd1211.wiki.sourceforge.net/) драйвер для ZyDAS ZD1211 802.11b/g USB WLAN чипсетов и он включен в ядро, в настоящее время. Смотри список поддерживаемого оборудования [здесь](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices). Только вам необходимо сначала установить файлы прошивки:
-
- `pacman -S zd1211-firmware` 
-
-### Тестирование установки
-
-После загрузки вашего драйвера запустите
-
-```
-iwconfig
-
-```
-
-и посмотрите, появился ли интерфейс беспроводного соединения (wlanX)
+### backports-patched
 
 ## Смотрите также
 

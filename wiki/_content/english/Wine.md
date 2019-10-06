@@ -398,7 +398,7 @@ $ WINEPREFIX=*your-prefix* setup_dxvk install
 
 With the open-source gallium-based drivers (mostly AMD cards) there is a [Gallium Direct3D state tracker](https://wiki.ixit.cz/d3d9) that aims to provide nearly-native performance for DirectX 9\. In most cases it has less visual glitches than the upstream wine and doubles the performances. It consumes much less CPU time than CSMT.
 
-To use it, install [wine-nine](https://www.archlinux.org/packages/?name=wine-nine). This is a standalone package that can be installed with any wine version. You may need to enable it with `wine ninewinecfg.exe` found in the `/usr/lib32/wine/fakedlls/` directory.
+Install [wine-nine](https://www.archlinux.org/packages/?name=wine-nine) to use it. This is a standalone package that can be installed with any wine version. Use `wine ninewinecfg` to check if it's enabled.
 
 ### Unregister existing Wine file associations
 

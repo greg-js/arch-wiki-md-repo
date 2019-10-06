@@ -294,7 +294,7 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 
 #### Symmetric
 
-Symmetric encryption does not require the generation of a key pair and can be used to simply encrypt data with a passphrase. Simply use `--symmetric` or `-c` to perform symmetic encryption:
+Symmetric encryption does not require the generation of a key pair and can be used to simply encrypt data with a passphrase. Simply use `--symmetric` or `-c` to perform symmetric encryption:
 
 ```
 $ gpg -c *doc*
@@ -931,7 +931,7 @@ When using `pinentry`, you must have the proper permissions of the terminal devi
 
 ```
 
-and then change it back after using gpg the first time. The equivalent is likely to be true with `/dev/pts/`.
+and then change it back after using gpg the first time. The equivalent is true with `/dev/pts/`.
 
 **Note:** The owner of tty *must* match with the user for which pinentry is running. Being part of the group `tty` **is not** enough.
 

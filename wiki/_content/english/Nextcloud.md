@@ -62,7 +62,6 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [7.13 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
     *   [7.14 "Reading from keychain failed with error: 'No keychain service available'"](#"Reading_from_keychain_failed_with_error:_'No_keychain_service_available'")
     *   [7.15 FolderSync: "Method Not Allowed"](#FolderSync:_"Method_Not_Allowed")
-    *   [7.16 Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"](#Nextcloud_13_:_"Unable_to_load_dynamic_library_'mcrypt.so")
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Running NextCloud in a subdirectory](#Running_NextCloud_in_a_subdirectory)
     *   [8.2 Docker](#Docker)
@@ -791,17 +790,6 @@ FolderSync needs access to `/owncloud/remote.php/webdav`, so you could create an
   </IfModule>
 
 ```
-
-### Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"
-
-Starting with php 7.2 the extension mcrypt was removed.[[6]](https://wiki.php.net/rfc/mcrypt-viking-funeral)
-
-To fix the error about mcrypt in Nextcloud logs, a version of this extension compatible with php 7.2 can be installed via PECL.
-
-1.  Install [php-pear](https://aur.archlinux.org/packages/php-pear/) if you do not have it already
-2.  Update PECL channels: `# pecl channel-update pecl.php.net` 
-3.  Install mcrypt 1.0.1: `# pecl install mcrypt-1.0.1` 
-4.  Uncomment this line in `/etc/php/php.conf`: `;extension=mcrypt.so` 
 
 ## Tips and tricks
 

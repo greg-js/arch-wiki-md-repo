@@ -532,7 +532,7 @@ This section of the guide deals with NAT gateways. It is assumed that you alread
 
 #### Creating necessary chains
 
-In our setup, we will create two new chains in the filter table, **fw-interfaces** and **fw-open**, using he following commands:
+In our setup, we will create two new chains in the filter table, **fw-interfaces** and **fw-open**, using the following commands:
 
 ```
 # iptables -N fw-interfaces
